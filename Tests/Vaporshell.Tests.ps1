@@ -19,7 +19,7 @@ $TestToken = 'TestToken'
 $TestArchive = 'TestArchive'
 $AlternativePath = 'C:\ThisSlackXml.xml'
 
-Describe "PSSlack Module PS$PSVersion" {
+Describe "Vaporshell Module PS$PSVersion" {
     Context 'Strict mode' {
 
         Set-StrictMode -Version latest

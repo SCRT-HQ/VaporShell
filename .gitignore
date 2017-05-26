@@ -1,4 +1,3 @@
-Manifest.xml
-**PSSlack.xml
-**Send-SlackUpdate.ps1
-PSSlack/X11ColorList.txt
+Helpers/*
+TODO.md
+launch.json
