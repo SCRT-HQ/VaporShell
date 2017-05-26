@@ -18,9 +18,3 @@ build: false
 #Kick off the CI/CD pipeline
 test_script:
   - ps: . .\build.ps1
-
-# Send Slack notifications for build updates
-notifications:
-- provider: Slack
-  incoming_webhook:
-    secure: Cne/08qwOJL4+nAQHifbb8TGBv3/0YgOg8eZkQej8W1WLwlE1Y0qNTdxbtXZVV2q55Q4pOjmCIXcbbjnEcxKGf1EQRwdcFoIWqbRGcPM8sQ=r4jhjYzU3uyKHTbfZRAr
