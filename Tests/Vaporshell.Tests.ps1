@@ -14,6 +14,8 @@ $ModulePath = Join-Path $ENV:BHProjectPath $ModuleName
 
 Import-Module $ModulePath -Force
 
+<# Test frame borrowed from PSSlack by Warren Frame, will be updating with tests specific to this module once it's built out
+
 $TestUri = 'TestUri'
 $TestToken = 'TestToken'
 $TestArchive = 'TestArchive'
@@ -170,3 +172,4 @@ Describe "Send-SlackMessage PS$PSVersion" {
 
 Remove-Item $ModulePath\$env:USERNAME-$env:COMPUTERNAME-PSSlack.xml -force -Confirm:$False
 Remove-Item $AlternativePath -Force -Confirm:$False
+#>
