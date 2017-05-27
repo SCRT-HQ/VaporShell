@@ -8,6 +8,6 @@ function Add-FnBase64 {
     $obj = New-Object PSObject -Property @{
         "Fn::Base64" = $ValueToEncode
     }
-    Write-Verbose "Resulting JSON from $($MyInvocation.MyCommand): $($obj | ConvertTo-Json -Depth 5 -Compress)"
+    Write-Verbose "Resulting JSON from $($MyInvocation.MyCommand): `n`t$($obj | ConvertTo-Json -Depth 5 -Compress)`n"
     return $obj
 }

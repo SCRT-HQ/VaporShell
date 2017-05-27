@@ -12,6 +12,6 @@ function Add-FnFindInMap {
     $obj = New-Object PSObject -Property @{
         "Fn::FindInMap" = @($MapName,$TopLevelKey,$SecondLevelKey)
     }
-    Write-Verbose "Resulting JSON from $($MyInvocation.MyCommand): $($obj | ConvertTo-Json -Depth 5 -Compress)"
+    Write-Verbose "Resulting JSON from $($MyInvocation.MyCommand): `n`t$($obj | ConvertTo-Json -Depth 5 -Compress)`n"
     return $obj
 }

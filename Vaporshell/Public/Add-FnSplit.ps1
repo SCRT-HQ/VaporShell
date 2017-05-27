@@ -1,12 +1,16 @@
-function Add-FnImportValue {
+function Add-FnSplit {
     [cmdletbinding()]
     Param
     (
         [parameter(Mandatory = $true,Position = 0)]
-        $ValueToImport
+        [String]
+        $Delimiter,
+        [parameter(Mandatory = $true,Position = 1)]
+        [object]
+        $SourceString
     )
     $obj = New-Object PSObject -Property @{
-        "Fn::ImportValue" = $ValueToImport
+        "Fn::Split" = @($Delimiter,$SourceString)
     }
     Write-Verbose "Resulting JSON from $($MyInvocation.MyCommand): `n`t$($obj | ConvertTo-Json -Depth 5 -Compress)`n"
     return $obj

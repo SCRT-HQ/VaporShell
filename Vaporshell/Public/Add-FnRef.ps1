@@ -9,6 +9,6 @@ function Add-FnRef {
     $obj = New-Object PSObject -Property @{
         Ref = $Ref
     }
-    Write-Verbose "Resulting JSON from $($MyInvocation.MyCommand): $($obj | ConvertTo-Json -Depth 5 -Compress)"
+    Write-Verbose "Resulting JSON from $($MyInvocation.MyCommand): `n`t$($obj | ConvertTo-Json -Depth 5 -Compress)`n"
     return $obj
 }
