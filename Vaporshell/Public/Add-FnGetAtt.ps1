@@ -3,16 +3,12 @@ function Add-FnGetAtt {
     Param
     (
         [parameter(Mandatory = $true,Position = 0)]
-        [parameter(ParameterSetName = "String")]
-        [parameter(ParameterSetName = "Fn")]
         [String]
         $LogicalNameOfResource,
-        [parameter(Mandatory = $true,Position = 1)]
-        [parameter(ParameterSetName = "String")]
+        [parameter(Mandatory = $true,Position = 1,ParameterSetName = "String")]
         [String]
         $AttributeName,
-        [parameter(Mandatory = $true,Position = 1)]
-        [parameter(ParameterSetName = "Fn")]
+        [parameter(Mandatory = $true,Position = 1,ParameterSetName = "Fn")]
         [Object]
         $AttributeNameFn
     )
