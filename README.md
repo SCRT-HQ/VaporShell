@@ -2,13 +2,17 @@
 
 ## AppVeyor Build Status
 
-**~ ~ Master ~ ~** 
+**~ ~ Master ~ ~**
+
 [![Build status](https://ci.appveyor.com/api/projects/status/8a4jsfv42tbmlym8/branch/master?svg=true)](https://ci.appveyor.com/project/nferrell/vaporshell/branch/master)
 
 **~ ~ Dev ~ ~**
+
 [![Build status](https://ci.appveyor.com/api/projects/status/8a4jsfv42tbmlym8?svg=true)](https://ci.appveyor.com/project/nferrell/vaporshell/branch/dev)
 
+
 ***
+
 
 ## Module Info
 
