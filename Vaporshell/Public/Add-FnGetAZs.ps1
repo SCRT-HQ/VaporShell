@@ -7,13 +7,16 @@ function Add-FnGetAZs {
         $Region
     )
     if (!$Region) {
-        New-Object PSObject -Property @{
-            "Fn::GetAZs" = Add-FnRef "AWS::Region"
+        Write-Verbose "No region specified! Defaulting to deployment region"
+        $obj = New-Object PSObject -Property @{
+            "Fn::GetAZs" = Add-FnRef "AWS::Region" -Verbose:$false
         }
     }
     else {
-        New-Object PSObject -Property @{
+        $obj = New-Object PSObject -Property @{
             "Fn::GetAZs" = $Region
         }
     }
+    Write-Verbose "Resulting JSON from $($MyInvocation.MyCommand): $($obj | ConvertTo-Json -Depth 5 -Compress)"
+    return $obj
 }

@@ -1,26 +1,16 @@
 function Add-FnGetAtt {
-    [cmdletbinding(DefaultParameterSetName = "String")]
+    [cmdletbinding()]
     Param
     (
         [parameter(Mandatory = $true,Position = 0)]
         [String]
         $LogicalNameOfResource,
-        [parameter(Mandatory = $true,Position = 1,ParameterSetName = "String")]
-        [String]
-        $AttributeName,
-        [parameter(Mandatory = $true,Position = 1,ParameterSetName = "Fn")]
-        [Object]
-        $AttributeNameFn
+        [parameter(Mandatory = $true,Position = 1)]
+        $AttributeName
     )
-    switch ($PsCmdlet.ParameterSetName) {
-        "String" {
-            $AN = $AttributeName
-        }
-        "Fn" {
-            $AN = $AttributeNameFn
-        }
+    $obj = New-Object PSObject -Property @{
+        "Fn::GetAtt" = @($LogicalNameOfResource,$AttributeName)
     }
-    New-Object PSObject -Property @{
-        "Fn::GetAtt" = @($LogicalNameOfResource,$AN)
-    }
+    Write-Verbose "Resulting JSON from $($MyInvocation.MyCommand): $($obj | ConvertTo-Json -Depth 5 -Compress)"
+    return $obj
 }

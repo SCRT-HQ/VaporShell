@@ -1,25 +1,13 @@
 function Add-FnBase64 {
-    [cmdletbinding(DefaultParameterSetName = "String")]
+    [cmdletbinding()]
     Param
     (
         [parameter(Mandatory = $true,Position = 0)]
-        [parameter(ParameterSetName = "String")]
-        [String]
-        $String,
-        [parameter(Mandatory = $true,Position = 0)]
-        [parameter(ParameterSetName = "Fn")]
-        [Object]
-        $Fn
+        $ValueToEncode
     )
-    switch ($PsCmdlet.ParameterSetName) {
-        "String" {
-            $ValueToEncode = $String
-        }
-        "Fn" {
-            $ValueToEncode = $Fn
-        }
-    }
-    New-Object PSObject -Property @{
+    $obj = New-Object PSObject -Property @{
         "Fn::Base64" = $ValueToEncode
     }
+    Write-Verbose "Resulting JSON from $($MyInvocation.MyCommand): $($obj | ConvertTo-Json -Depth 5 -Compress)"
+    return $obj
 }
