@@ -41,7 +41,12 @@ function Export-VaporTemplate {
     )
     Process {
         if ($Path) {
-            $TemplateObject | Select-Object AWSTemplateFormatVersion,Description,Metadata,Parameters,Mappings,Conditions,Resources,Outputs | ConvertTo-Json -Depth 100 | Out-File -FilePath $Path
+            if ($Force) {
+                $TemplateObject | Select-Object AWSTemplateFormatVersion,Description,Metadata,Parameters,Mappings,Conditions,Resources,Outputs | ConvertTo-Json -Depth 100 | Out-File -FilePath $Path -Force
+            }
+            else {
+                $TemplateObject | Select-Object AWSTemplateFormatVersion,Description,Metadata,Parameters,Mappings,Conditions,Resources,Outputs | ConvertTo-Json -Depth 100 | Out-File -FilePath $Path
+            }
         }
         else {
             $TemplateObject | Select-Object AWSTemplateFormatVersion,Description,Metadata,Parameters,Mappings,Conditions,Resources,Outputs | ConvertTo-Json -Depth 100
