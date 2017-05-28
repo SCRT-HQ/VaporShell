@@ -30,11 +30,11 @@ function Export-VaporTemplate {
     Param
     (
         [parameter(Mandatory = $true,Position = 0,ValueFromPipeline = $true)]
-        [PSTypeName('AWS.CloudFormation.Template')]
+        [PSTypeName('Vaporshell.Template')]
         $TemplateObject,
         [parameter(Mandatory = $false,Position = 1)]
         [ValidateScript({if(!$Force -and (Test-Path $_)){throw "The file '$_' already exists! Use the -Force parameter to overwrite it."}else{$true}})]
-        [String]
+        [System.String]
         $Path,
         [Switch]
         $Force

@@ -111,7 +111,7 @@
 
         [Parameter( Mandatory = $false,
             Position = 1)]
-        [string]$TypeName,
+        [string[]]$TypeName,
 
         [Parameter( Mandatory = $false,
             Position = 2)]    
@@ -143,8 +143,10 @@
                     }
                 }
                 'TypeName' {
-                    #Add specified type
-                    [void]$Object.PSObject.TypeNames.Insert(0,$TypeName)
+                    #Add specified type(s)
+                    foreach ($T in $TypeName) {
+                        [void]$Object.PSObject.TypeNames.Insert(0,$T)
+                    }
                 }
                 'DefaultProperties' {
                     # Attach default display property set

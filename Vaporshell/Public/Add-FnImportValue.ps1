@@ -44,11 +44,20 @@ function Add-FnImportValue {
     Param
     (
         [parameter(Mandatory = $true,Position = 0)]
+        [ValidateScript({
+            $allowedTypes = "Vaporshell.Condition.If","Vaporshell.Function.Base64","Vaporshell.Function.FindInMap","Vaporshell.Function.Join","Vaporshell.Function.Select","Vaporshell.Function.Split","Vaporshell.Function.Sub","Vaporshell.Function.Ref","System.String"
+            if ([string]$($_.PSTypeNames) -match "($(($allowedTypes|ForEach-Object{[RegEx]::Escape($_)}) -join '|'))") {
+                $true
+            }
+            else {
+                throw "The ValueToImport parameter only accepts the following types: $($allowedTypes -join ", "). The current types of the value are: $($_.PSTypeNames -join ", ")."
+            }
+        })]
         $ValueToImport
     )
-    $obj = New-Object PSObject -Property @{
+    $obj = [PSCustomObject][Ordered]@{
         "Fn::ImportValue" = $ValueToImport
     }
+    $obj | Add-ObjectDetail -TypeName 'Vaporshell.Function','Vaporshell.Function.ImportValue'
     Write-Verbose "Resulting JSON from $($MyInvocation.MyCommand): `n`n`t$($obj | ConvertTo-Json -Depth 5 -Compress)`n"
-    return $obj
 }

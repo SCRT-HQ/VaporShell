@@ -32,11 +32,20 @@ function Add-FnBase64 {
     Param
     (
         [parameter(Mandatory = $true,Position = 0)]
+        [ValidateScript({
+            $allowedTypes = "Vaporshell.Function","System.String"
+            if ([string]$($_.PSTypeNames) -match "($(($allowedTypes|ForEach-Object{[RegEx]::Escape($_)}) -join '|'))") {
+                $true
+            }
+            else {
+                throw "The ValueToEncode parameter only accepts the following types: $($allowedTypes -join ", "). The current types of the value are: $($_.PSTypeNames -join ", ")."
+            }
+        })]
         $ValueToEncode
     )
-    $obj = New-Object PSObject -Property @{
+    $obj = [PSCustomObject][Ordered]@{
         "Fn::Base64" = $ValueToEncode
     }
+    $obj | Add-ObjectDetail -TypeName 'Vaporshell.Function','Vaporshell.Function.Base64'
     Write-Verbose "Resulting JSON from $($MyInvocation.MyCommand): `n`n`t$($obj | ConvertTo-Json -Depth 5 -Compress)`n"
-    return $obj
 }

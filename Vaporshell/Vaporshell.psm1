@@ -12,11 +12,12 @@ Foreach ($import in @($Public + $Private)) {
     }
 }
 
-$_AWSAccountId = "AWS::AccountId"
-$_AWSStackId = "AWS::StackId"
-$_AWSNoValue = "AWS::NoValue"
-$_AWSNotificationARNs = "AWS::NotificationARNs"
-$_AWSRegion = "AWS::Region"
-$_AWSStackName = "AWS::StackName"
+# Add in Pseudo Paramater variables from private text file (allows growth in case additional parameters need to be added in)
+$vars = @()
+Get-Content -Path "$PSScriptRoot\Private\PseudoParams.txt" | ForEach-Object {
+    $name = "_$(($_ -replace "::").Trim())"
+    New-Variable -Name $name -Value $_
+    $vars += $name
+}
 
-Export-ModuleMember -Function $Public.Basename -Variable _AWSAccountId,_AWSStackId,_AWSNoValue,_AWSNotificationARNs,_AWSRegion,_AWSStackName
+Export-ModuleMember -Function $Public.Basename -Variable $vars

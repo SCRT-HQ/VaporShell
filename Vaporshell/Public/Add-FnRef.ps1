@@ -39,12 +39,12 @@ function Add-FnRef {
     Param
     (
         [parameter(Mandatory = $true,Position = 0)]
-        [String]
+        [System.String]
         $Ref
     )
-    $obj = New-Object PSObject -Property @{
+    $obj = [PSCustomObject][Ordered]@{
         Ref = $Ref
     }
+    $obj | Add-ObjectDetail -TypeName 'Vaporshell.Function','Vaporshell.Function.Ref'
     Write-Verbose "Resulting JSON from $($MyInvocation.MyCommand): `n`n`t$($obj | ConvertTo-Json -Depth 5 -Compress)`n"
-    return $obj
 }

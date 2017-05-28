@@ -40,20 +40,28 @@ function Add-FnGetAZs {
     Param
     (
         [parameter(Mandatory = $false,Position = 0)]
-        [String]
+        [ValidateScript({
+            $allowedTypes = "Vaporshell.Function.Ref","System.String"
+            if ([string]$($_.PSTypeNames) -match "($(($allowedTypes|ForEach-Object{[RegEx]::Escape($_)}) -join '|'))") {
+                $true
+            }
+            else {
+                throw "The Region parameter only accepts the following types: $($allowedTypes -join ", "). The current types of the value are: $($_.PSTypeNames -join ", ")."
+            }
+        })]
         $Region
     )
     if (!$Region) {
         Write-Verbose "No region specified! Defaulting to deployment region"
-        $obj = New-Object PSObject -Property @{
+        $obj = [PSCustomObject][Ordered]@{
             "Fn::GetAZs" = Add-FnRef "AWS::Region" -Verbose:$false
         }
     }
     else {
-        $obj = New-Object PSObject -Property @{
+        $obj = [PSCustomObject][Ordered]@{
             "Fn::GetAZs" = $Region
         }
     }
+    $obj | Add-ObjectDetail -TypeName 'Vaporshell.Function','Vaporshell.Function.GetAZs'
     Write-Verbose "Resulting JSON from $($MyInvocation.MyCommand): `n`n`t$($obj | ConvertTo-Json -Depth 5 -Compress)`n"
-    return $obj
 }

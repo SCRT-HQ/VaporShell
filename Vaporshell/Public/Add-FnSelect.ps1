@@ -43,23 +43,41 @@ function Add-FnSelect {
     Param
     (
         [parameter(Mandatory = $false,Position = 0)]
+        [ValidateScript({
+            $allowedTypes = "Vaporshell.Function.FindInMap","Vaporshell.Function.Ref","System.Int32","System.String"
+            if ([string]$($_.PSTypeNames) -match "($(($allowedTypes|ForEach-Object{[RegEx]::Escape($_)}) -join '|'))") {
+                $true
+            }
+            else {
+                throw "The Index parameter only accepts the following types: $($allowedTypes -join ", "). The current types of the value are: $($_.PSTypeNames -join ", ")."
+            }
+        })]
         $Index,
         [parameter(Mandatory = $true,Position = 1)]
+        [ValidateScript({
+            $allowedTypes = "Vaporshell.Condition.If","Vaporshell.Function.FindInMap","Vaporshell.Function.GetAtt","Vaporshell.Function.GetAZs","Vaporshell.Function.Split","Vaporshell.Function.Ref","System.String"
+            if ([string]$($_.PSTypeNames) -match "($(($allowedTypes|ForEach-Object{[RegEx]::Escape($_)}) -join '|'))") {
+                $true
+            }
+            else {
+                throw "The ListOfObjects parameter only accepts the following types: $($allowedTypes -join ", "). The current types of the value are: $($_.PSTypeNames -join ", ")."
+            }
+        })]
         $ListOfObjects
     )
     $objCount = Get-TrueCount $ListOfObjects
     if ($objCount -eq 1) {
         Write-Debug "Single object passed"
-        $obj = New-Object PSObject -Property @{
+        $obj = [PSCustomObject][Ordered]@{
             "Fn::Select" = @($Index,$ListOfObjects)
         }
     }
     else {
         Write-Debug "$objCount objects passed"
-        $obj = New-Object PSObject -Property @{
+        $obj = [PSCustomObject][Ordered]@{
             "Fn::Select" = @([string]$Index,@($ListOfObjects))
         }
     }
+    $obj | Add-ObjectDetail -TypeName 'Vaporshell.Function','Vaporshell.Function.Select'
     Write-Verbose "Resulting JSON from $($MyInvocation.MyCommand): `n`n`t$($obj | ConvertTo-Json -Depth 5 -Compress)`n"
-    return $obj
 }

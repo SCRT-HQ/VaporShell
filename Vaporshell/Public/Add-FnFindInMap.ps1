@@ -35,15 +35,42 @@ function Add-FnFindInMap {
     Param
     (
         [parameter(Mandatory = $true,Position = 0)]
+        [ValidateScript({
+            $allowedTypes = "Vaporshell.Function.FindInMap","Vaporshell.Function.Ref","System.String"
+            if ([string]$($_.PSTypeNames) -match "($(($allowedTypes|ForEach-Object{[RegEx]::Escape($_)}) -join '|'))") {
+                $true
+            }
+            else {
+                throw "The MapName parameter only accepts the following types: $($allowedTypes -join ", "). The current types of the value are: $($_.PSTypeNames -join ", ")."
+            }
+        })]
         $MapName,
         [parameter(Mandatory = $true,Position = 1)]
+        [ValidateScript({
+            $allowedTypes = "Vaporshell.Function.FindInMap","Vaporshell.Function.Ref","System.String"
+            if ([string]$($_.PSTypeNames) -match "($(($allowedTypes|ForEach-Object{[RegEx]::Escape($_)}) -join '|'))") {
+                $true
+            }
+            else {
+                throw "The TopLevelKey parameter only accepts the following types: $($allowedTypes -join ", "). The current types of the value are: $($_.PSTypeNames -join ", ")."
+            }
+        })]
         $TopLevelKey,
         [parameter(Mandatory = $true,Position = 2)]
+        [ValidateScript({
+            $allowedTypes = "Vaporshell.Function.FindInMap","Vaporshell.Function.Ref","System.String"
+            if ([string]$($_.PSTypeNames) -match "($(($allowedTypes|ForEach-Object{[RegEx]::Escape($_)}) -join '|'))") {
+                $true
+            }
+            else {
+                throw "The SecondLevelKey parameter only accepts the following types: $($allowedTypes -join ", "). The current types of the value are: $($_.PSTypeNames -join ", ")."
+            }
+        })]
         $SecondLevelKey
     )
-    $obj = New-Object PSObject -Property @{
+    $obj = [PSCustomObject][Ordered]@{
         "Fn::FindInMap" = @($MapName,$TopLevelKey,$SecondLevelKey)
     }
+    $obj | Add-ObjectDetail -TypeName 'Vaporshell.Function','Vaporshell.Function.FindInMap'
     Write-Verbose "Resulting JSON from $($MyInvocation.MyCommand): `n`n`t$($obj | ConvertTo-Json -Depth 5 -Compress)`n"
-    return $obj
 }

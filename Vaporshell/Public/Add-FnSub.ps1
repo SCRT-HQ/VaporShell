@@ -40,22 +40,22 @@ function Add-FnSub {
     Param
     (
         [parameter(Mandatory = $true,Position = 0)]
-        [String]
+        [System.String]
         $String,
         [parameter(Mandatory = $false,Position = 1)]
-        [hashtable]
+        [System.Collections.Hashtable]
         $Mapping
     )
     if ($Mapping) {
-        $obj = New-Object PSObject -Property @{
+        $obj = [PSCustomObject][Ordered]@{
             "Fn::Sub" = @($String,$Mapping)
         }
     }
     else {
-        $obj = New-Object PSObject -Property @{
+        $obj = [PSCustomObject][Ordered]@{
             "Fn::Sub" = $String
         }
     }
+    $obj | Add-ObjectDetail -TypeName 'Vaporshell.Function','Vaporshell.Function.Sub'
     Write-Verbose "Resulting JSON from $($MyInvocation.MyCommand): `n`n`t$($obj | ConvertTo-Json -Depth 5 -Compress)`n"
-    return $obj
 }
