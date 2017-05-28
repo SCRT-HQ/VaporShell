@@ -12,7 +12,7 @@ Foreach ($import in @($Public + $Private)) {
     }
 }
 
-# Add in Pseudo Paramater variables from private text file (allows growth in case additional parameters need to be added in)
+# Add in Pseudo Parameter variables from private text file (allows growth in case additional parameters need to be added in)
 $vars = @()
 Get-Content -Path "$PSScriptRoot\Private\PseudoParams.txt" | ForEach-Object {
     $name = "_$(($_ -replace "::").Trim())"
@@ -20,4 +20,4 @@ Get-Content -Path "$PSScriptRoot\Private\PseudoParams.txt" | ForEach-Object {
     $vars += $name
 }
 
-Export-ModuleMember -Function $Public.Basename -Variable $vars
+Export-ModuleMember -Function $Public.Basename -Variable $vars -Verbose:$false
