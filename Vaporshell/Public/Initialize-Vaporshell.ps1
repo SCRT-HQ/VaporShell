@@ -43,7 +43,7 @@ function Initialize-Vaporshell {
                     Write-Warning "The Metadata property was not found on the Vaporshell template. Adding the property to the template now."
                     $this | Add-Member -MemberType NoteProperty -Name "Metadata" -Value @{}
                 }
-                $this.Metadata.Add($($obj.LogicalID),$($obj | Select-Object * -ExcludeProperty LogicalID))
+                $this.Metadata.Add($($obj.LogicalID),$($obj.Data))
             }
         }
     }
@@ -54,7 +54,7 @@ function Initialize-Vaporshell {
                     Write-Warning "The Parameters property was not found on the Vaporshell template. Adding the property to the template now."
                     $this | Add-Member -MemberType NoteProperty -Name "Parameters" -Value @{}
                 }
-                $this.Parameters.Add($($obj.LogicalID),$($obj | Select-Object * -ExcludeProperty LogicalID))
+                $this.Parameters.Add($($obj.LogicalID),$($obj.Data))
             }
         }
     }
@@ -65,7 +65,7 @@ function Initialize-Vaporshell {
                     Write-Warning "The Mappings property was not found on the Vaporshell template. Adding the property to the template now."
                     $this | Add-Member -MemberType NoteProperty -Name "Mappings" -Value @{}
                 }
-                $this.Mappings.Add($($obj.LogicalID),$($obj | Select-Object * -ExcludeProperty LogicalID))
+                $this.Mappings.Add($($obj.LogicalID),$($obj.Data))
             }
         }
     }
@@ -76,7 +76,7 @@ function Initialize-Vaporshell {
                     Write-Warning "The Conditions property was not found on the Vaporshell template. Adding the property to the template now."
                     $this | Add-Member -MemberType NoteProperty -Name "Conditions" -Value @{}
                 }
-                $this.Conditions.Add($($obj.LogicalID),$($obj | Select-Object * -ExcludeProperty LogicalID))
+                $this.Conditions.Add($($obj.LogicalID),$($obj.Data))
             }
         }
     }
@@ -87,7 +87,7 @@ function Initialize-Vaporshell {
                     Write-Warning "The Resources property was not found on the Vaporshell template. Adding the property to the template now."
                     $this | Add-Member -MemberType NoteProperty -Name "Resources" -Value @{}
                 }
-                $this.Resources.Add($($obj.LogicalID),$($obj | Select-Object * -ExcludeProperty LogicalID))
+                $this.Resources.Add($($obj.LogicalID),$($obj.Data))
             }
         }
     }

@@ -1,23 +1,21 @@
-function Add-VaporResource {
+function New-VaporOutput {
     <#
     .SYNOPSIS
-        Adds an Resource object to the template
+        Adds an Output object to the template
     
     .DESCRIPTION
-        The required Resources section declares the AWS resources that you want to include in the stack, such as an Amazon EC2 instance or an Amazon S3 bucket. You must declare each resource separately; however, if you have multiple resources of the same type, you can declare them together by separating them with commas.
+        The optional Outputs section declares output values that you can import into other stacks (to create cross-stack references), return in response (to describe stack calls), or view on the AWS CloudFormation console. For example, you can output the S3 bucket name for a stack to make the bucket easier to find.
 
     .LINK
-        http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/resources-section-structure.html
+        http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/outputs-section-structure.html
     
     .PARAMETER LogicalId
-        The logical ID must be alphanumeric (A-Za-z0-9) and unique within the template. Use the logical name to reference the resource in other parts of the template. For example, if you want to map an Amazon Elastic Block Store volume to an Amazon EC2 instance, you reference the logical IDs to associate the block stores with the instance.
-
-        In addition to the logical ID, certain resources also have a physical ID, which is the actual assigned name for that resource, such as an EC2 instance ID or an S3 bucket name. Use the physical IDs to identify resources outside of AWS CloudFormation templates, but only after the resources have been created. For example, you might give an EC2 instance resource a logical ID of MyEC2Instance; but when AWS CloudFormation creates the instance, AWS CloudFormation automatically generates and assigns a physical ID (such as i-28f9ba55) to the instance. You can use this physical ID to identify the instance and view its properties (such as the DNS name) by using the Amazon EC2 console. For resources that support custom names, you can assign your own names (physical IDs) to help you quickly identify resources. For example, you can name an S3 bucket that stores logs as MyPerformanceLogs.
+        An identifier for the current output. The logical ID must be alphanumeric (a-z, A-Z, 0-9) and unique within the template.
     
-    .PARAMETER Type
-        The resource type identifies the type of resource that you are declaring. For example, AWS::EC2::Instance declares an EC2 instance. For a list of all of the resource types, see AWS Resource Types Reference.
+    .PARAMETER Description
+        A String type that describes the output value. The description can be a maximum of 4 K in length.
     
-    .PARAMETER Properties
+    .PARAMETER Value
         The value of the property returned by the aws cloudformation describe-stacks command. The value of an output can include literals, parameter references, pseudo-parameters, a mapping value, or intrinsic functions.
     
     .PARAMETER Export
@@ -32,11 +30,18 @@ function Add-VaporResource {
                 * You can't delete a stack if another stack references one of its outputs.
                 * You can't modify or remove an output value that is referenced by another stack.
                 * You can use intrinsic functions to customize the Name value of an export.
+    
+    .PARAMETER Condition
+        Logical ID of the condition that this output needs to be true in order to be provisioned.
 
     .EXAMPLE
-        $template = Initialize-Vaporshell -Description "Testing Outputs"
-        $template.AddOutput((
-            Add-VaporOutput -LogicalId "BackupLoadBalancerDNSName" -Description "The DNSName of the backup load balancer" -Value (Add-FnGetAtt -LogicalNameOfResource "BackupLoadBalancer" -AttributeName "DNSName") -Condition "CreateProdResources"
+        $template = Initialize-Vaporshell -Description "Testing Resource addition"
+        $template.AddResource((
+            New-VaporResource -LogicalId "MyInstance" -Type "AWS::EC2::Instance" -Properties ([PSCustomObject][Ordered]@{
+                "UserData" = (Add-FnBase64 -ValueToEncode (Add-FnJoin -ListOfValues "Queue=",(Add-FnRef -Ref "MyQueue")))
+                "AvailabilityZone" = "us-east-1a"
+                "ImageId" = "ami-20b65349"
+            })
         ))
 
         # When the template is exported, this will convert to: 
