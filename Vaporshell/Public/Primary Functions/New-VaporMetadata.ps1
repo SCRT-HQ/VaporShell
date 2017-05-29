@@ -24,33 +24,22 @@ function New-VaporMetadata {
         Whether to mask the parameter value whenever anyone makes a call that describes the stack. If you set the value to true, the parameter value is masked with asterisks (*****).
 
     .EXAMPLE
-        $template = Initialize-Vaporshell -Description "Testing Mapping addition"
-        $template.AddParameter(
-            (New-VaporParameter -LogicalId "DBPort" -Default 3306 -Description "TCP/IP port for the database" -Type "Number" -MinValue 1150 -MaxValue 65535),
-            (New-VaporParameter -LogicalId "DBPwd" -NoEcho -Description "The database admin account password" -Type "String" -MinLength 1 -MaxLength 41 -AllowedPattern "^[a-zA-Z0-9]*$")
+        $template = Initialize-Vaporshell -Description "Testing Metadata addition"
+        $template.AddMetadata(
+            (New-VaporMetadata -LogicalId "Instances" -Metadata @{"Description" = "Information about the instances"}),
+            (New-VaporMetadata -LogicalId "Databases" -Metadata @{"Description" = "Information about the databases"})
         )
 
         # When the template is exported, this will convert to: 
             {
                 "AWSTemplateFormatVersion":  "2010-09-09",
-                "Description":  "Testing Mapping addition",
-                "Parameters":  {
-                    "DBPwd":  {
-                        "Type":  "String",
-                        "NoEcho":  {
-                            "IsPresent":  true
-                        },
-                        "Description":  "The database admin account password",
-                        "MinLength":  1,
-                        "MaxLength":  41,
-                        "AllowedPattern":  "^[a-zA-Z0-9]*$"
+                "Description":  "Testing Metadata addition",
+                "Metadata":  {
+                    "Instances":  {
+                        "Description":  "Information about the instances"
                     },
-                    "DBPort":  {
-                        "Type":  "Number",
-                        "Default":  "3306",
-                        "Description":  "TCP/IP port for the database",
-                        "MinValue":  1150,
-                        "MaxValue":  65535
+                    "Databases":  {
+                        "Description":  "Information about the databases"
                     }
                 }
             }
@@ -75,7 +64,7 @@ function New-VaporMetadata {
         $LogicalId,
         [parameter(Mandatory = $true,Position = 1)]
         [ValidateScript({
-            $allowedTypes = "System.Collections.Hashtable","System.Management.Automation.PSCustomObject","Vaporshell.Resource.Properties"
+            $allowedTypes = "System.Collections.Hashtable","System.Management.Automation.PSCustomObject","Vaporshell.Metadata.Data"
             if ([string]$($_.PSTypeNames) -match "($(($allowedTypes|ForEach-Object{[RegEx]::Escape($_)}) -join '|'))") {
                 $true
             }
