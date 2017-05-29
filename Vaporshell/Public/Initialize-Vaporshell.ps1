@@ -98,7 +98,19 @@ function Initialize-Vaporshell {
                     Write-Warning "The Outputs property was not found on the Vaporshell template. Adding the property to the template now."
                     $this | Add-Member -MemberType NoteProperty -Name "Outputs" -Value @{}
                 }
-                $this.Outputs.Add($($obj.LogicalID),$($obj | Select-Object * -ExcludeProperty LogicalID))
+                $this.Outputs.Add($($obj.LogicalID),$($obj.Data))
+            }
+        }
+    }
+    $addTransform = {
+        Process {
+            foreach ($obj in $args) {
+                if (!($this.Transform)) {
+                    $this | Add-Member -MemberType NoteProperty -Name "Transform" -Value $($obj.Data)
+                }
+                else {
+                    throw "There is already a Transform property on this object!"
+                }
             }
         }
     }
@@ -143,6 +155,14 @@ function Initialize-Vaporshell {
         Name        = "AddOutput"
         Value       = $addOutput
     }
+    Add-Member @memberParam
+    $memberParam = @{
+        MemberType  = "ScriptMethod"
+        InputObject = $tempObj
+        Name        = "AddTransform"
+        Value       = $addTransform
+    }
+    Add-Member @memberParam
     $remMetadata = {
         Process {
             foreach ($LogicalID in $args) {
@@ -199,7 +219,6 @@ function Initialize-Vaporshell {
         }
     }
     $remOutput = {
-        param($LogicalID)
         Process {
             foreach ($LogicalID in $args) {
                 $this.Outputs.Remove($LogicalID)
@@ -209,6 +228,9 @@ function Initialize-Vaporshell {
                 }
             }
         }
+    }
+    $remTransform = {
+        $this.PSObject.Properties.Remove('Transform')
     }
     $memberParam = @{
         MemberType  = "ScriptMethod"
@@ -250,6 +272,13 @@ function Initialize-Vaporshell {
         InputObject = $tempObj
         Name        = "RemoveOutput"
         Value       = $remOutput
+    }
+    Add-Member @memberParam
+    $memberParam = @{
+        MemberType  = "ScriptMethod"
+        InputObject = $tempObj
+        Name        = "RemoveTransform"
+        Value       = $remTransform
     }
     Add-Member @memberParam
     $tempObj | Add-ObjectDetail -TypeName 'Vaporshell.Template'
