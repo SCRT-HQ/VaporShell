@@ -36,6 +36,7 @@ function Add-FnGetAZs {
     .FUNCTIONALITY
         Vaporshell
     #>
+    [OutputType('Vaporshell.Function.GetAZs')]
     [cmdletbinding()]
     Param
     (

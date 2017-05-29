@@ -260,6 +260,7 @@ function Add-FnGetAtt {
     .FUNCTIONALITY
         Vaporshell
     #>
+    [OutputType('Vaporshell.Function.GetAtt')]
     [cmdletbinding()]
     Param
     (

@@ -39,6 +39,7 @@ function Add-FnJoin {
     .FUNCTIONALITY
         Vaporshell
     #>
+    [OutputType('Vaporshell.Function.Join')]
     [cmdletbinding()]
     Param
     (

@@ -40,6 +40,7 @@ function Add-FnImportValue {
     .FUNCTIONALITY
         Vaporshell
     #>
+    [OutputType('Vaporshell.Function.ImportValue')]
     [cmdletbinding()]
     Param
     (

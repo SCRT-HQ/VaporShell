@@ -23,17 +23,48 @@ function Add-ConIf {
 
         # When the template is exported, this will convert to: {"Fn::If":["CreateNewSecurityGroup",{"Ref":"NewSecurityGroup"},{"Ref":"ExistingSecurityGroup"}]}
 
+    .NOTES
+        You can use the following functions in the Fn::If condition:
+            Fn::Base64
+            Fn::FindInMap
+            Fn::GetAtt
+            Fn::GetAZs
+            Fn::If
+            Fn::Join
+            Fn::Select
+            Ref
+
     .FUNCTIONALITY
         Vaporshell
     #>
+    [OutputType('Vaporshell.Condition.If')]
     [cmdletbinding()]
     Param
     (
         [parameter(Mandatory = $true,Position = 0)]
+        [System.String]
         $ConditionName,
         [parameter(Mandatory = $true,Position = 1)]
+        [ValidateScript({
+            $allowedTypes = "Vaporshell.Condition.If","Vaporshell.Function.Base64","Vaporshell.Function.FindInMap","Vaporshell.Function.GetAtt","Vaporshell.Function.GetAZs","Vaporshell.Function.Join","Vaporshell.Function.Select","Vaporshell.Function.Ref","System.String"
+            if ([string]$($_.PSTypeNames) -match "($(($allowedTypes|ForEach-Object{[RegEx]::Escape($_)}) -join '|'))") {
+                $true
+            }
+            else {
+                throw "The ValueToImport parameter only accepts the following types: $($allowedTypes -join ", "). The current types of the value are: $($_.PSTypeNames -join ", ")."
+            }
+        })]
         $ValueIfTrue,
         [parameter(Mandatory = $true,Position = 2)]
+        [ValidateScript({
+            $allowedTypes = "Vaporshell.Condition.If","Vaporshell.Function.Base64","Vaporshell.Function.FindInMap","Vaporshell.Function.GetAtt","Vaporshell.Function.GetAZs","Vaporshell.Function.Join","Vaporshell.Function.Select","Vaporshell.Function.Ref","System.String"
+            if ([string]$($_.PSTypeNames) -match "($(($allowedTypes|ForEach-Object{[RegEx]::Escape($_)}) -join '|'))") {
+                $true
+            }
+            else {
+                throw "The ValueToImport parameter only accepts the following types: $($allowedTypes -join ", "). The current types of the value are: $($_.PSTypeNames -join ", ")."
+            }
+        })]
         $ValueIfFalse
     )
     $obj = [PSCustomObject][Ordered]@{

@@ -28,6 +28,7 @@ function Add-FnBase64 {
     .FUNCTIONALITY
         Vaporshell
     #>
+    [OutputType('Vaporshell.Function.Base64')]
     [cmdletbinding()]
     Param
     (

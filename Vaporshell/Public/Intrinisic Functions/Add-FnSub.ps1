@@ -36,6 +36,7 @@ function Add-FnSub {
     .FUNCTIONALITY
         Vaporshell
     #>
+    [OutputType('Vaporshell.Function.Sub')]
     [cmdletbinding()]
     Param
     (

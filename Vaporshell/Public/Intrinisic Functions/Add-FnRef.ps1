@@ -35,6 +35,7 @@ function Add-FnRef {
     .FUNCTIONALITY
         Vaporshell
     #>
+    [OutputType('Vaporshell.Function.Ref')]
     [cmdletbinding()]
     Param
     (

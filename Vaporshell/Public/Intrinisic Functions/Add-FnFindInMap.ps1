@@ -31,6 +31,7 @@ function Add-FnFindInMap {
     .FUNCTIONALITY
         Vaporshell
     #>
+    [OutputType('Vaporshell.Function.FindInMap')]
     [cmdletbinding()]
     Param
     (

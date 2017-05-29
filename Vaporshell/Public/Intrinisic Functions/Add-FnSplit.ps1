@@ -38,6 +38,7 @@ function Add-FnSplit {
     .FUNCTIONALITY
         Vaporshell
     #>
+    [OutputType('Vaporshell.Function.Split')]
     [cmdletbinding()]
     Param
     (

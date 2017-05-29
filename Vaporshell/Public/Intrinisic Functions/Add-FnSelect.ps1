@@ -39,6 +39,7 @@ function Add-FnSelect {
     .FUNCTIONALITY
         Vaporshell
     #>
+    [OutputType('Vaporshell.Function.Select')]
     [cmdletbinding()]
     Param
     (

@@ -17,13 +17,30 @@ function Add-ConAnd {
 
         # When the template is exported, this will convert to: {"Fn::And":[{"Fn::Equals":["sg-mysggroup",{"Ref":"ASecurityGroup"}]},{"Fn::Equals":["Production",{"Ref":"Environment"}]}]}
 
+    .NOTES
+        You can use the following functions in this condition statement:
+            Fn::FindInMap
+            Ref
+            Other condition functions
+
     .FUNCTIONALITY
         Vaporshell
     #>
+    [OutputType('Vaporshell.Condition.And')]
     [cmdletbinding()]
     Param
     (
         [parameter(Mandatory = $true,Position = 0)]
+        [ValidateCount(2,10)]
+        [ValidateScript({
+            $allowedTypes = "Vaporshell.Function.FindInMap","Vaporshell.Function.Ref","Vaporshell.Condition"
+            if ([string]$($_.PSTypeNames) -match "($(($allowedTypes|ForEach-Object{[RegEx]::Escape($_)}) -join '|'))") {
+                $true
+            }
+            else {
+                throw "The MapName parameter only accepts the following types: $($allowedTypes -join ", "). The current types of the value are: $($_.PSTypeNames -join ", ")."
+            }
+        })]
         [System.Object[]]
         $Conditions
     )

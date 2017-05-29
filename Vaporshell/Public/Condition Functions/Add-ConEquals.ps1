@@ -20,9 +20,21 @@ function Add-ConEquals {
 
         # When the template is exported, this will convert to: {"Fn::Equals":["sg-mysggroup",{"Ref":"ASecurityGroup"}]}
 
+    .EXAMPLE
+        Add-ConEquals -FirstValue (Add-FnRef -Ref "EnvironmentType") -SecondValue "prod"
+
+        # When the template is exported, this will convert to: {"Fn::Equals":[{"Ref":"EnvironmentType"},"prod"]}
+
+    .NOTES
+        You can use the following functions in this condition statement:
+            Fn::FindInMap
+            Ref
+            Other condition functions
+
     .FUNCTIONALITY
         Vaporshell
     #>
+    [OutputType('Vaporshell.Condition.Equals')]
     [cmdletbinding()]
     Param
     (
