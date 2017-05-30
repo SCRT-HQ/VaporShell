@@ -73,26 +73,26 @@ function New-VaporCondition {
     Param
     (
         [parameter(Mandatory = $true,Position = 0)]
-        [ValidateScript({
-            if ($_ -match "^[a-zA-Z0-9]*$") {
-                $true
-            }
-            else {
-                throw 'The logical ID must be alphanumeric (a-z, A-Z, 0-9) and unique within the template.'
-            }
-        })]
+        [ValidateScript( {
+                if ($_ -match "^[a-zA-Z0-9]*$") {
+                    $true
+                }
+                else {
+                    throw 'The logical ID must be alphanumeric (a-z, A-Z, 0-9) and unique within the template.'
+                }
+            })]
         [System.String]
         $LogicalId,
         [parameter(Mandatory = $true,Position = 1)]
-        [ValidateScript({
-            $allowedTypes = "Vaporshell.Condition.And","Vaporshell.Condition.Equals","Vaporshell.Condition.If","Vaporshell.Condition.Not","Vaporshell.Condition.Or"
-            if ([string]$($_.PSTypeNames) -match "($(($allowedTypes|ForEach-Object{[RegEx]::Escape($_)}) -join '|'))") {
-                $true
-            }
-            else {
-                throw "The Condition parameter only accepts the following types: $($allowedTypes -join ", "). The current types of the value are: $($_.PSTypeNames -join ", ")."
-            }
-        })]
+        [ValidateScript( {
+                $allowedTypes = "Vaporshell.Condition.And","Vaporshell.Condition.Equals","Vaporshell.Condition.If","Vaporshell.Condition.Not","Vaporshell.Condition.Or"
+                if ([string]$($_.PSTypeNames) -match "($(($allowedTypes|ForEach-Object{[RegEx]::Escape($_)}) -join '|'))") {
+                    $true
+                }
+                else {
+                    throw "The Condition parameter only accepts the following types: $($allowedTypes -join ", "). The current types of the value are: $($_.PSTypeNames -join ", ")."
+                }
+            })]
         $Condition
     )
     $obj = [PSCustomObject][Ordered]@{

@@ -68,14 +68,14 @@ function New-VaporOutput {
     Param
     (
         [parameter(Mandatory = $true,Position = 0)]
-        [ValidateScript({
-            if ($_ -match "^[a-zA-Z0-9]*$") {
-                $true
-            }
-            else {
-                throw 'The logical ID must be alphanumeric (a-z, A-Z, 0-9) and unique within the template.'
-            }
-        })]
+        [ValidateScript( {
+                if ($_ -match "^[a-zA-Z0-9]*$") {
+                    $true
+                }
+                else {
+                    throw 'The logical ID must be alphanumeric (a-z, A-Z, 0-9) and unique within the template.'
+                }
+            })]
         [System.String]
         $LogicalId,
         [parameter(Mandatory = $false,Position = 1)]

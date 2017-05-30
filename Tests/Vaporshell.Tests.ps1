@@ -23,7 +23,7 @@ Describe "General project validation: $moduleName" {
 
     # TestCases are splatted to the script so we need hashtables
     $testCase = $scripts | Foreach-Object{@{file=$_}}         
-    It "Script <file> should be valid powershell" -TestCases $testCase {
+    It "Script <file> should be valid Powershell" -TestCases $testCase {
         param($file)
 
         $file.fullname | Should Exist
@@ -39,12 +39,7 @@ Describe "General project validation: $moduleName" {
     }
 }
 
-<# Test frame borrowed from PSSlack by Warren Frame, will be updating with tests specific to this module once it's built out
-
-$TestUri = 'TestUri'
-$TestToken = 'TestToken'
-$TestArchive = 'TestArchive'
-$AlternativePath = 'C:\ThisSlackXml.xml'
+#<# Test frame borrowed from PSSlack by Warren Frame, will be updating with tests specific to this module once it's built out
 
 Describe "Vaporshell Module PS$PSVersion" {
     Context 'Strict mode' {
@@ -55,146 +50,99 @@ Describe "Vaporshell Module PS$PSVersion" {
             $Module = Get-Module $ModuleName
             $Module.Name | Should be $ModuleName
             $Commands = $Module.ExportedCommands.Keys
-            $Commands -contains 'Find-SlackMessage' | Should Be $True
-            $Commands -contains 'Get-PSSlackConfig' | Should Be $True
-            $Commands -contains 'Set-PSSlackConfig' | Should Be $True
-            $Commands -contains 'New-SlackMessage' | Should Be $True
-            $Commands -contains 'New-SlackMessageAttachment' | Should Be $True
-            $Commands -contains 'Send-SlackMessage' | Should Be $True
-        }
-
-        It 'Should have empty values in PSSlack.xml' {
-            $Config = Import-Clixml "$ModulePath\$env:USERNAME-$env:COMPUTERNAME-PSSlack.xml"
-            $Props = $Config.PSObject.Properties.Name
-            #Loop is faster but less clear in failed tests.
-            $Props -contains 'Uri' | Should be $True
-            $Props -contains 'Token' | Should be $True
-            $Props -contains 'ArchiveUri' | Should be $True
-            $Config.Uri | Should BeNullOrEmpty
-            $Config.Token | Should BeNullOrEmpty
-            $Config.ArchiveUri | Should BeNullOrEmpty
+            $Commands -contains 'Add-ConAnd' | Should Be $True
+            $Commands -contains 'Add-ConEquals' | Should Be $True
+            $Commands -contains 'Add-ConIf' | Should Be $True
+            $Commands -contains 'Add-ConNot' | Should Be $True
+            $Commands -contains 'Add-ConOr' | Should Be $True
+            $Commands -contains 'Add-FnBase64' | Should Be $True
+            $Commands -contains 'Add-FnFindInMap' | Should Be $True
+            $Commands -contains 'Add-FnGetAtt' | Should Be $True
+            $Commands -contains 'Add-FnGetAZs' | Should Be $True
+            $Commands -contains 'Add-FnImportValue' | Should Be $True
+            $Commands -contains 'Add-FnJoin' | Should Be $True
+            $Commands -contains 'Add-FnRef' | Should Be $True
+            $Commands -contains 'Add-FnSelect' | Should Be $True
+            $Commands -contains 'Add-FnSplit' | Should Be $True
+            $Commands -contains 'Add-FnSub' | Should Be $True
+            $Commands -contains 'Add-Include' | Should Be $True
+            $Commands -contains 'Export-Vaporshell' | Should Be $True
+            $Commands -contains 'Import-Vaporshell' | Should Be $True
+            $Commands -contains 'Initialize-Vaporshell' | Should Be $True
+            $Commands -contains 'New-VaporCondition' | Should Be $True
+            $Commands -contains 'New-VaporMapping' | Should Be $True
+            $Commands -contains 'New-VaporMetadata' | Should Be $True
+            $Commands -contains 'New-VaporOutput' | Should Be $True
+            $Commands -contains 'New-VaporParameter' | Should Be $True
+            $Commands -contains 'New-VaporResource' | Should Be $True
         }
     }
 }
 
-Describe "Set-PSSlackConfig PS$PSVersion" {
+Describe "Initialize/Export/Import PS$PSVersion" {
     Context 'Strict mode' {
 
         Set-StrictMode -Version latest
 
-        It 'Should set PSSlack.xml' {
-            $Params = @{
-                Uri= $TestUri
-                Token = $TestToken
-                ArchiveUri = "$TestArchive"
-            }
-            Set-PSSlackConfig @params
-            $Config = Import-Clixml "$ModulePath\$env:USERNAME-$env:COMPUTERNAME-PSSlack.xml"
+        It 'Should build template as correct JSON and be read back without error' {
+            $testPath = "$ModulePath\Template.json"
+            $templateInit = Initialize-Vaporshell -Description "Testing"
+            $templateInit.AddMetadata(
+                (
+                    New-VaporMetadata -LogicalId "Instances" -Metadata @{"Description" = "Information about the instances"}
+                )
+            )
+            $templateInit.AddCondition(
+                (
+                    New-VaporCondition -LogicalId "CreateProdResources" -Condition (Add-ConEquals -FirstValue (Add-FnRef -Ref "EnvType") -SecondValue "prod")
+                ),
+                (
+                    Add-Include -Location "s3://MyAmazonS3BucketName/single_wait_condition.yaml"
+                )
+            )
+            $templateInit.AddMapping(
+                (
+                    New-VaporMapping -LogicalId "RegionMap" -Map ([PSCustomObject][Ordered]@{
+                            "us-east-1" = [PSCustomObject][Ordered]@{
+                                "32" = "ami-6411e20d"
+                                "64" = "ami-7a11e213"
+                            }
+                            "us-west-1" = [PSCustomObject][Ordered]@{
+                                "32" = "ami-c9c7978c"
+                                "64" = "ami-cfc7978a"
+                            }
+                        })
+                )
+            )
+            $templateInit.AddResource(
+                (
+                    New-VaporResource -LogicalId "MyInstance" -Type "AWS::EC2::Instance" -Properties ([PSCustomObject][Ordered]@{
+                            "UserProperties"   = (Add-FnBase64 -ValueToEncode (Add-FnJoin -ListOfValues "Queue=",(Add-FnRef -Ref "MyQueue")))
+                            "AvailabilityZone" = "us-east-1a"
+                            "ImageId"          = (Add-FnFindInMap -MapName "RegionMap" -TopLevelKey $_AWSRegion -SecondLevelKey "32")
+                        })
+                )
+            )
+            $templateInit.AddOutput(
+                (
+                    New-VaporOutput -LogicalId "BackupLoadBalancerDNSName" -Description "The DNSName of the backup load balancer" -Value (Add-FnGetAtt -LogicalNameOfResource "BackupLoadBalancer" -AttributeName "DNSName") -Condition "CreateProdResources" -Verbose
+                )
+            )
 
-            $Config.Uri | Should be 'System.Security.SecureString'
-            $Config.Token | Should be 'System.Security.SecureString'
-            $Config.ArchiveUri | Should be 'TestArchive'
-        }
+            Export-Vaporshell -VaporshellTemplate $template -Path $testPath -Force
+            $template = Import-Vaporshell -Path $testPath
 
-        It 'Should set a user-specified file' {
-            $Params = @{
-                Uri= $TestUri
-                Token = $TestToken
-                ArchiveUri = "$TestArchive`x"
-                Path = $AlternativePath
-            }
-            Set-PSSlackConfig @params
-            $Config = Import-Clixml $AlternativePath
-
-            $Config.Uri | Should be 'System.Security.SecureString'
-            $Config.Token | Should be 'System.Security.SecureString'
-            $Config.ArchiveUri | Should be 'TestArchivex'           
-        }
-    }
-}
-
-Describe "Get-PSSlackConfig PS$PSVersion" {
-    Context 'Strict mode' {
-
-        Set-StrictMode -Version latest
-
-        It 'Should read PSSlack.xml' {
-            $Config = Get-PSSlackConfig -Source PSSlack.xml
-
-            $Config.Uri | Should be 'TestUri'
-            $Config.Token | Should be 'TestToken'
-            $Config.ArchiveUri | Should be 'TestArchive'
-        }
-        
-        It 'Should read PSSlack variable' {
-            $Config = Get-PSSlackConfig -Source PSSlack
-
-            $Config.Uri | Should be 'TestUri'
-            $Config.Token | Should be 'TestToken'
-            $Config.ArchiveUri | Should be 'TestArchivex' #From running alternate path test before...
-        }
-
-        It 'Should read a user-specified file' {
-            # We've tested set... use it here.
-            $Params = @{
-                Uri= $TestUri
-                Token = $TestToken
-                ArchiveUri = "$TestArchive`x"
-                Path = $AlternativePath
-            }
-            Set-PSSlackConfig @params
-
-            $Config = Get-PSSlackConfig -Path $AlternativePath
-
-            $Config.Uri | Should be 'TestUri'
-            $Config.Token | Should be 'TestToken'
-            $Config.ArchiveUri | Should be 'TestArchivex'
+            $template.AWSTemplateFormatVersion | Should be 'System.String'
+            $template.Conditions | Should be 'System.Collections.Hashtable'
+            $template.Description | Should be 'System.String'
+            $template.Mappings | Should be 'System.Collections.Hashtable'
+            $template.Metadata | Should be 'System.Collections.Hashtable'
+            $template.Outputs | Should be 'System.Collections.Hashtable'
+            $template.Resources | Should be 'System.Collections.Hashtable'
         }
     }
 }
 
-# Tests have passed, rely on set-psslackconfig...
-Set-PSSlackConfig -Uri $null -Token $null -ArchiveUri $null
-
-
-Describe "Send-SlackMessage PS$PSVersion" {
-    InModuleScope $ModuleName {
-
-        Mock -ModuleName PSSlack -CommandName Send-SlackApi {
-            [pscustomobject]@{
-                PSB = $PSBoundParameters
-                Arg = $Args
-            }
-        }
-        Mock -ModuleName PSSlack -CommandName Invoke-RestMethod  {
-            [pscustomobject]@{
-                PSB = $PSBoundParameters
-                Arg = $Args
-            }
-        }
-
-        It 'Should call Send-SlackApi for token auth' {
-            $x = Send-SlackMessage -Token Token -Text 'Hi'
-            Assert-MockCalled -ModuleName PSSlack -CommandName Send-SlackApi -Scope Describe
-        }
-
-        It 'Should call Invoke-RESTMethod for Uri auth' {
-            $x = Send-SlackMessage -Uri Uri -Text 'Hi'
-            Assert-MockCalled -ModuleName PSSlack -CommandName Invoke-RestMethod -Scope Describe
-        }
-
-        It 'Should not pass parameters if not specified' {
-            $x = Send-SlackMessage -Token Token -Text 'Hi'
-            $x.arg.count | Should be 6
-            $x.arg -contains '-Body:' | Should Be $True
-            $x.arg -contains '-Method:' | Should Be $True
-            $x.arg -contains '-Token:' | Should Be $True
-            $x.arg -contains 'Token' | Should Be $True
-            $x.arg -contains 'chat.postMessage' | Should Be $True
-        }
-    }
-}
-
-Remove-Item $ModulePath\$env:USERNAME-$env:COMPUTERNAME-PSSlack.xml -force -Confirm:$False
+Remove-Item "$ModulePath\Template.json" -Force -Confirm:$False
 Remove-Item $AlternativePath -Force -Confirm:$False
 #>

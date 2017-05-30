@@ -187,14 +187,14 @@ function New-VaporParameter {
     Param
     (
         [parameter(Mandatory = $true,Position = 0)]
-        [ValidateScript({
-            if ($_ -match "^[a-zA-Z0-9]*$") {
-                $true
-            }
-            else {
-                throw 'The logical ID must be alphanumeric (a-z, A-Z, 0-9) and unique within the template.'
-            }
-        })]
+        [ValidateScript( {
+                if ($_ -match "^[a-zA-Z0-9]*$") {
+                    $true
+                }
+                else {
+                    throw 'The logical ID must be alphanumeric (a-z, A-Z, 0-9) and unique within the template.'
+                }
+            })]
         [System.String]
         $LogicalId,
         [parameter(Mandatory = $true,Position = 1)]
@@ -216,14 +216,14 @@ function New-VaporParameter {
         [System.String]
         $ConstraintDescription,
         [parameter(Mandatory = $false,Position = 7)]
-        [ValidateScript({
-            if ($_.Length -le 4000) {
-                $true
-            }
-            else {
-                throw "The description length needs to be less than 4000 characters long."
-            }
-        })]
+        [ValidateScript( {
+                if ($_.Length -le 4000) {
+                    $true
+                }
+                else {
+                    throw "The description length needs to be less than 4000 characters long."
+                }
+            })]
         [System.String]
         $Description,
         [parameter(Mandatory = $false,Position = 8)]
@@ -245,17 +245,37 @@ function New-VaporParameter {
         }
     }
     Process {
-        switch($PSBoundParameters.Keys) {
-            'Default' {$Properties | Add-Member -MemberType NoteProperty -Name Default -Value $Default}
-            'NoEcho' {$Properties | Add-Member -MemberType NoteProperty -Name NoEcho -Value $NoEcho}
-            'AllowedPattern' {$Properties | Add-Member -MemberType NoteProperty -Name AllowedPattern -Value $AllowedPattern}
-            'AllowedValues' {$Properties | Add-Member -MemberType NoteProperty -Name AllowedValues -Value @($AllowedValues)}
-            'ConstraintDescription' {$Properties | Add-Member -MemberType NoteProperty -Name ConstraintDescription -Value $ConstraintDescription}
-            'Description' {$Properties | Add-Member -MemberType NoteProperty -Name Description -Value $Description}
-            'MaxLength' {$Properties | Add-Member -MemberType NoteProperty -Name MaxLength -Value $MaxLength}
-            'MaxValue' {$Properties | Add-Member -MemberType NoteProperty -Name MaxValue -Value $MaxValue}
-            'MinLength' {$Properties | Add-Member -MemberType NoteProperty -Name MinLength -Value $MinLength}
-            'MinValue' {$Properties | Add-Member -MemberType NoteProperty -Name MinValue -Value $MinValue}
+        switch ($PSBoundParameters.Keys) {
+            'Default' {
+                $Properties | Add-Member -MemberType NoteProperty -Name Default -Value $Default
+            }
+            'NoEcho' {
+                $Properties | Add-Member -MemberType NoteProperty -Name NoEcho -Value $NoEcho
+            }
+            'AllowedPattern' {
+                $Properties | Add-Member -MemberType NoteProperty -Name AllowedPattern -Value $AllowedPattern
+            }
+            'AllowedValues' {
+                $Properties | Add-Member -MemberType NoteProperty -Name AllowedValues -Value @($AllowedValues)
+            }
+            'ConstraintDescription' {
+                $Properties | Add-Member -MemberType NoteProperty -Name ConstraintDescription -Value $ConstraintDescription
+            }
+            'Description' {
+                $Properties | Add-Member -MemberType NoteProperty -Name Description -Value $Description
+            }
+            'MaxLength' {
+                $Properties | Add-Member -MemberType NoteProperty -Name MaxLength -Value $MaxLength
+            }
+            'MaxValue' {
+                $Properties | Add-Member -MemberType NoteProperty -Name MaxValue -Value $MaxValue
+            }
+            'MinLength' {
+                $Properties | Add-Member -MemberType NoteProperty -Name MinLength -Value $MinLength
+            }
+            'MinValue' {
+                $Properties | Add-Member -MemberType NoteProperty -Name MinValue -Value $MinValue
+            }
         }
     }
     End {

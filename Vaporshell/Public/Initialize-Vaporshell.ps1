@@ -26,7 +26,7 @@ function Initialize-Vaporshell {
         [System.String]
         $FormatVersion = "2010-09-09",
         [parameter(Mandatory = $false,Position = 1)]
-        [ValidateScript({[System.Text.Encoding]::UTF8.GetByteCount($_) -lt 1024 -and [System.Text.Encoding]::UTF8.GetByteCount($_) -gt 0})]
+        [ValidateScript( {[System.Text.Encoding]::UTF8.GetByteCount($_) -lt 1024 -and [System.Text.Encoding]::UTF8.GetByteCount($_) -gt 0})]
         [System.String]
         $Description
     )
