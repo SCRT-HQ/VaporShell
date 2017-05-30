@@ -28,7 +28,7 @@ function New-VaporResource {
     .EXAMPLE
         $template = Initialize-Vaporshell -Description "Testing Resource addition"
         $template.AddResource((
-            New-VaporResource -LogicalId "MyInstance" -Type "AWS::EC2::Instance" -Properties @{
+            New-VaporResource -LogicalId "MyInstance" -Type "AWS::EC2::Instance" -Properties [PSCustomObject]@{
                 "UserProperties" = (Add-FnBase64 -ValueToEncode (Add-FnJoin -ListOfValues "Queue=",(Add-FnRef -Ref "MyQueue")))
                 "AvailabilityZone" = "us-east-1a"
                 "ImageId" = "ami-20b65349"

@@ -132,6 +132,45 @@ Describe "Initialize/Export/Import PS$PSVersion" {
             Export-Vaporshell -VaporshellTemplate $templateInit -Path $testPath -Force
             $template = Import-Vaporshell -Path $testPath
 
+            $template.AddMetadata(
+                (
+                    New-VaporMetadata -LogicalId "Databases" -Metadata @{"Description" = "Information about the Databases"}
+                )
+            )
+            $template.AddCondition(
+                (
+                    New-VaporCondition -LogicalId "CreateTestResources" -Condition (Add-ConEquals -FirstValue (Add-FnRef -Ref "EnvType") -SecondValue "test")
+                )
+            )
+            $template.AddMapping(
+                (
+                    New-VaporMapping -LogicalId "RegionMap2" -Map ([PSCustomObject][Ordered]@{
+                            "us-east-2" = [PSCustomObject][Ordered]@{
+                                "32" = "ami-6411e20d"
+                                "64" = "ami-7a11e213"
+                            }
+                            "us-west-2" = [PSCustomObject][Ordered]@{
+                                "32" = "ami-c9c7978c"
+                                "64" = "ami-cfc7978a"
+                            }
+                        })
+                )
+            )
+            $template.AddResource(
+                (
+                    New-VaporResource -LogicalId "MyInstance2" -Type "AWS::EC2::Instance" -Properties ([PSCustomObject][Ordered]@{
+                            "UserProperties"   = (Add-FnBase64 -ValueToEncode (Add-FnJoin -ListOfValues "Queue=",(Add-FnRef -Ref "MyQueue")))
+                            "AvailabilityZone" = "us-east-1b"
+                            "ImageId"          = (Add-FnFindInMap -MapName "RegionMap" -TopLevelKey $_AWSRegion -SecondLevelKey "32")
+                        })
+                )
+            )
+            $template.AddOutput(
+                (
+                    New-VaporOutput -LogicalId "PrimaryLoadBalancerDNSName" -Description "The DNSName of the primary load balancer" -Value (Add-FnGetAtt -LogicalNameOfResource "PrimaryLoadBalancer" -AttributeName "DNSName") -Condition "CreateTestResources"
+                )
+            )
+
             $template.AWSTemplateFormatVersion | Should BeOfType 'System.String'
             $template.Conditions | Should BeOfType 'System.Management.Automation.PSCustomObject'
             $template.Description | Should BeOfType 'System.String'

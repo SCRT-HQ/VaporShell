@@ -68,13 +68,11 @@ function Add-FnSelect {
     )
     $objCount = Get-TrueCount $ListOfObjects
     if ($objCount -eq 1) {
-        Write-Debug "Single object passed"
         $obj = [PSCustomObject][Ordered]@{
             "Fn::Select" = @($Index,$ListOfObjects)
         }
     }
     else {
-        Write-Debug "$objCount objects passed"
         $obj = [PSCustomObject][Ordered]@{
             "Fn::Select" = @([string]$Index,@($ListOfObjects))
         }
