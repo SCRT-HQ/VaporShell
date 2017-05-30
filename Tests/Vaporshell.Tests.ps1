@@ -46,7 +46,7 @@ Describe "Vaporshell Module PS$PSVersion" {
 
         Set-StrictMode -Version latest
 
-        It 'Should load' {
+        It 'Should load and contain all expected functions' {
             $Module = Get-Module $ModuleName
             $Module.Name | Should be $ModuleName
             $Commands = $Module.ExportedCommands.Keys
@@ -125,7 +125,7 @@ Describe "Initialize/Export/Import PS$PSVersion" {
             )
             $templateInit.AddOutput(
                 (
-                    New-VaporOutput -LogicalId "BackupLoadBalancerDNSName" -Description "The DNSName of the backup load balancer" -Value (Add-FnGetAtt -LogicalNameOfResource "BackupLoadBalancer" -AttributeName "DNSName") -Condition "CreateProdResources" -Verbose
+                    New-VaporOutput -LogicalId "BackupLoadBalancerDNSName" -Description "The DNSName of the backup load balancer" -Value (Add-FnGetAtt -LogicalNameOfResource "BackupLoadBalancer" -AttributeName "DNSName") -Condition "CreateProdResources"
                 )
             )
 
@@ -133,12 +133,12 @@ Describe "Initialize/Export/Import PS$PSVersion" {
             $template = Import-Vaporshell -Path $testPath
 
             $template.AWSTemplateFormatVersion | Should BeOfType 'System.String'
-            $template.Conditions | Should BeOfType 'System.Collections.Hashtable'
+            $template.Conditions | Should BeOfType 'System.Management.Automation.PSCustomObject'
             $template.Description | Should BeOfType 'System.String'
-            $template.Mappings | Should BeOfType 'System.Collections.Hashtable'
-            $template.Metadata | Should BeOfType 'System.Collections.Hashtable'
-            $template.Outputs | Should BeOfType 'System.Collections.Hashtable'
-            $template.Resources | Should BeOfType 'System.Collections.Hashtable'
+            $template.Mappings | Should BeOfType 'System.Management.Automation.PSCustomObject'
+            $template.Metadata | Should BeOfType 'System.Management.Automation.PSCustomObject'
+            $template.Outputs | Should BeOfType 'System.Management.Automation.PSCustomObject'
+            $template.Resources | Should BeOfType 'System.Management.Automation.PSCustomObject'
         }
     }
 }

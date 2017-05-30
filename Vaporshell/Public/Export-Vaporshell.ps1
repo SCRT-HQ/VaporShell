@@ -41,27 +41,20 @@ function Export-Vaporshell {
         [PSTypeName('Vaporshell.Template')]
         $VaporshellTemplate,
         [parameter(Mandatory = $false,Position = 1)]
-        [ValidateScript({
-            if(!$Force -and (Test-Path $_)) {
-                throw "The file '$_' already exists! Use the -Force parameter to overwrite it."
-            }
-            else {
-                $true
-            }
-        })]
         [System.String]
         $Path,
         [Switch]
         $Force
     )
+    Begin {
+        $ForcePref = @{}
+        if ($Force) {
+            $ForcePref.add("Force",$True)
+        }
+    }
     Process {
         if ($Path) {
-            if ($Force) {
-                $VaporshellTemplate | ConvertTo-Json -Depth 100 | Out-File -FilePath $Path -Force
-            }
-            else {
-                $VaporshellTemplate | ConvertTo-Json -Depth 100 | Out-File -FilePath $Path
-            }
+            $VaporshellTemplate | ConvertTo-Json -Depth 100 | Out-File -FilePath $Path @ForcePref
         }
         else {
             $VaporshellTemplate | ConvertTo-Json -Depth 100
