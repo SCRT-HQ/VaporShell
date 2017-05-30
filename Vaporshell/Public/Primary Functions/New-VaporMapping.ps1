@@ -108,8 +108,8 @@ function New-VaporMapping {
     )
     $obj = [PSCustomObject][Ordered]@{
         "LogicalId" = $LogicalId
-        "Data" = $Map
+        "Properties" = $Map
     }
     $obj | Add-ObjectDetail -TypeName 'Vaporshell.Mapping'
-    Write-Verbose "Resulting JSON from $($MyInvocation.MyCommand): `n`n`t$(@{$obj.LogicalId = $obj.Data} | ConvertTo-Json -Depth 5 -Compress)`n"
+    Write-Verbose "Resulting JSON from $($MyInvocation.MyCommand): `n`n`t$(@{$obj.LogicalId = $obj.Properties} | ConvertTo-Json -Depth 5 -Compress)`n"
 }

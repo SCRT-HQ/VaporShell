@@ -1,4 +1,4 @@
-function Add-TransInclude {
+function Add-Include {
     <#
     .SYNOPSIS
         Adds the transform function "AWS::Include" to a Vaporshell template
@@ -13,14 +13,12 @@ function Add-TransInclude {
     
     .PARAMETER Location
         The location is an Amazon S3 URI, with a specific file name in an S3 bucket. For example, s3://MyBucketName/MyFile.yaml.
-    
-    .PARAMETER Scope
-        The scope should match where you are placing the Include. Choose TopLevel when placing the include at the top level of the template and choose Embedded if you are placing it within a section of the template, i.e. Resources.
 
     .EXAMPLE
-        Add-TransInclude -Location "s3://MyAmazonS3BucketName/single_wait_condition.yaml" -Scope Embedded
+        Add-Include -Location "s3://MyAmazonS3BucketName/single_wait_condition.yaml"
 
         # When the template is exported, this will convert to: {"Fn::Transform":{"Name":"AWS::Include","Parameters":{"Location":"s3://MyAmazonS3BucketName/single_wait_condition.yaml"}}}
+        # If used at the top level, the Logical ID will be 'Transform' instead of 'Fn::Transform'.
 
     .NOTES
         When using AWS::Include, keep the following in mind:
@@ -56,35 +54,17 @@ function Add-TransInclude {
             }
         })]
         [System.String]
-        $Location,
-        [parameter(Mandatory = $true,Position = 1)]
-        [ValidateSet("TopLevel","Embedded")]
-        [System.String]
-        $Scope
+        $Location
     )
-    if ($Scope -eq "TopLevel") {
-        $obj = [PSCustomObject][Ordered]@{
-            "LogicalId" = "Transform"
-            "Data" = [PSCustomObject][Ordered]@{
-                "Name" = "AWS::Include"
-                "Parameters" = @{
-                    "Location" = $Location
-                }
+    $obj = [PSCustomObject][Ordered]@{
+        "LogicalId" = "Fn::Transform"
+        "Properties" = [PSCustomObject][Ordered]@{
+            "Name" = "AWS::Include"
+            "Parameters" = @{
+                "Location" = $Location
             }
         }
-        $obj | Add-ObjectDetail -TypeName 'Vaporshell.Transform','Vaporshell.Transform.Include','Vaporshell.Transform.Include.TopLevel'
     }
-    elseif ($Scope -eq "Embedded") {
-        $obj = [PSCustomObject][Ordered]@{
-            "LogicalId" = "Fn::Transform"
-            "Data" = [PSCustomObject][Ordered]@{
-                "Name" = "AWS::Include"
-                "Parameters" = @{
-                    "Location" = $Location
-                }
-            }
-        }
-        $obj | Add-ObjectDetail -TypeName 'Vaporshell.Transform','Vaporshell.Transform.Include'
-    }
-    Write-Verbose "Resulting JSON from $($MyInvocation.MyCommand): `n`n`t$(@{$obj.LogicalId = $obj.Data} | ConvertTo-Json -Depth 5 -Compress)`n"
+    $obj | Add-ObjectDetail -TypeName 'Vaporshell.Transform','Vaporshell.Transform.Include'
+    Write-Verbose "Resulting JSON from $($MyInvocation.MyCommand): `n`n`t$(@{$obj.LogicalId = $obj.Properties} | ConvertTo-Json -Depth 5 -Compress)`n"
 }

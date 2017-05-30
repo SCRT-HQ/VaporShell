@@ -26,7 +26,7 @@ function Initialize-Vaporshell {
         [System.String]
         $FormatVersion = "2010-09-09",
         [parameter(Mandatory = $false,Position = 1)]
-        [ValidateScript( {[System.Text.Encoding]::UTF8.GetByteCount($_) -lt 1024 -and [System.Text.Encoding]::UTF8.GetByteCount($_) -gt 0})]
+        [ValidateScript({[System.Text.Encoding]::UTF8.GetByteCount($_) -lt 1024 -and [System.Text.Encoding]::UTF8.GetByteCount($_) -gt 0})]
         [System.String]
         $Description
     )
@@ -38,78 +38,127 @@ function Initialize-Vaporshell {
     }
     $addMetadata = {
         Process {
+            $ObjName = "Metadata"
+            $allowedTypes = "Vaporshell.Transform","Vaporshell.Metadata"
             foreach ($obj in $args) {
-                if (!($this.Metadata)) {
-                    Write-Warning "The Metadata property was not found on the Vaporshell template. Adding the property to the template now."
-                    $this | Add-Member -MemberType NoteProperty -Name "Metadata" -Value @{}
+                if ([string]$($obj.PSTypeNames) -match "($(($allowedTypes|ForEach-Object{[RegEx]::Escape($_)}) -join '|'))") {
+                    if (!($this.$ObjName)) {
+                        Write-Warning "The $ObjName property was not found on the Vaporshell template. Adding the property to the template now."
+                        $this | Add-Member -MemberType NoteProperty -Name "$ObjName" -Value @{}
+                    }
+                    $this.$ObjName.Add($($obj.LogicalID),$($obj.Properties))
                 }
-                $this.Metadata.Add($($obj.LogicalID),$($obj.Data))
+                else {
+                    throw "You must use one of the following object types with this parameter: $($allowedTypes -join ", ")"
+                }
             }
         }
     }
     $addParameter = {
         Process {
+            $ObjName = "Parameters"
+            $allowedTypes = "Vaporshell.Parameter"
             foreach ($obj in $args) {
-                if (!($this.Parameters)) {
-                    Write-Warning "The Parameters property was not found on the Vaporshell template. Adding the property to the template now."
-                    $this | Add-Member -MemberType NoteProperty -Name "Parameters" -Value @{}
+                if ([string]$($obj.PSTypeNames) -match "($(($allowedTypes|ForEach-Object{[RegEx]::Escape($_)}) -join '|'))") {
+                    if (!($this.$ObjName)) {
+                        Write-Warning "The $ObjName property was not found on the Vaporshell template. Adding the property to the template now."
+                        $this | Add-Member -MemberType NoteProperty -Name "$ObjName" -Value @{}
+                    }
+                    $this.$ObjName.Add($($obj.LogicalID),$($obj.Properties))
                 }
-                $this.Parameters.Add($($obj.LogicalID),$($obj.Data))
+                else {
+                    throw "You must use one of the following object types with this parameter: $($allowedTypes -join ", ")"
+                }
             }
         }
     }
     $addMapping = {
         Process {
+            $ObjName = "Mappings"
+            $allowedTypes = "Vaporshell.Transform","Vaporshell.Mapping"
             foreach ($obj in $args) {
-                if (!($this.Mappings)) {
-                    Write-Warning "The Mappings property was not found on the Vaporshell template. Adding the property to the template now."
-                    $this | Add-Member -MemberType NoteProperty -Name "Mappings" -Value @{}
+                if ([string]$($obj.PSTypeNames) -match "($(($allowedTypes|ForEach-Object{[RegEx]::Escape($_)}) -join '|'))") {
+                    if (!($this.$ObjName)) {
+                        Write-Warning "The $ObjName property was not found on the Vaporshell template. Adding the property to the template now."
+                        $this | Add-Member -MemberType NoteProperty -Name "$ObjName" -Value @{}
+                    }
+                    $this.$ObjName.Add($($obj.LogicalID),$($obj.Properties))
                 }
-                $this.Mappings.Add($($obj.LogicalID),$($obj.Data))
+                else {
+                    throw "You must use one of the following object types with this parameter: $($allowedTypes -join ", ")"
+                }
             }
         }
     }
     $addCondition = {
         Process {
+            $ObjName = "Conditions"
+            $allowedTypes = "Vaporshell.Transform","Vaporshell.Condition"
             foreach ($obj in $args) {
-                if (!($this.Conditions)) {
-                    Write-Warning "The Conditions property was not found on the Vaporshell template. Adding the property to the template now."
-                    $this | Add-Member -MemberType NoteProperty -Name "Conditions" -Value @{}
+                if ([string]$($obj.PSTypeNames) -match "($(($allowedTypes|ForEach-Object{[RegEx]::Escape($_)}) -join '|'))") {
+                    if (!($this.$ObjName)) {
+                        Write-Warning "The $ObjName property was not found on the Vaporshell template. Adding the property to the template now."
+                        $this | Add-Member -MemberType NoteProperty -Name "$ObjName" -Value @{}
+                    }
+                    $this.$ObjName.Add($($obj.LogicalID),$($obj.Properties))
                 }
-                $this.Conditions.Add($($obj.LogicalID),$($obj.Data))
+                else {
+                    throw "You must use one of the following object types with this parameter: $($allowedTypes -join ", ")"
+                }
             }
         }
     }
     $addResource = {
         Process {
+            $ObjName = "Resources"
+            $allowedTypes = "Vaporshell.Transform","Vaporshell.Resource"
             foreach ($obj in $args) {
-                if (!($this.Resources)) {
-                    Write-Warning "The Resources property was not found on the Vaporshell template. Adding the property to the template now."
-                    $this | Add-Member -MemberType NoteProperty -Name "Resources" -Value @{}
+                if ([string]$($obj.PSTypeNames) -match "($(($allowedTypes|ForEach-Object{[RegEx]::Escape($_)}) -join '|'))") {
+                    if (!($this.$ObjName)) {
+                        Write-Warning "The $ObjName property was not found on the Vaporshell template. Adding the property to the template now."
+                        $this | Add-Member -MemberType NoteProperty -Name "$ObjName" -Value @{}
+                    }
+                    $this.$ObjName.Add($($obj.LogicalID),$($obj.Properties))
                 }
-                $this.Resources.Add($($obj.LogicalID),$($obj.Data))
+                else {
+                    throw "You must use one of the following object types with this parameter: $($allowedTypes -join ", ")"
+                }
             }
         }
     }
     $addOutput = {
         Process {
+            $ObjName = "Outputs"
+            $allowedTypes = "Vaporshell.Transform","Vaporshell.Output"
             foreach ($obj in $args) {
-                if (!($this.Outputs)) {
-                    Write-Warning "The Outputs property was not found on the Vaporshell template. Adding the property to the template now."
-                    $this | Add-Member -MemberType NoteProperty -Name "Outputs" -Value @{}
+                if ([string]$($obj.PSTypeNames) -match "($(($allowedTypes|ForEach-Object{[RegEx]::Escape($_)}) -join '|'))") {
+                    if (!($this.$ObjName)) {
+                        Write-Warning "The $ObjName property was not found on the Vaporshell template. Adding the property to the template now."
+                        $this | Add-Member -MemberType NoteProperty -Name "$ObjName" -Value @{}
+                    }
+                    $this.$ObjName.Add($($obj.LogicalID),$($obj.Properties))
                 }
-                $this.Outputs.Add($($obj.LogicalID),$($obj.Data))
+                else {
+                    throw "You must use one of the following object types with this parameter: $($allowedTypes -join ", ")"
+                }
             }
         }
     }
     $addTransform = {
         Process {
+            $ObjName = "Transform"
+            $allowedTypes = "Vaporshell.Transform.Include"
             foreach ($obj in $args) {
-                if (!($this.Transform)) {
-                    $this | Add-Member -MemberType NoteProperty -Name "Transform" -Value $($obj.Data)
+                if ([string]$($obj.PSTypeNames) -match "($(($allowedTypes|ForEach-Object{[RegEx]::Escape($_)}) -join '|'))") {
+                    if (!($this.$ObjName)) {
+                        $this | Add-Member -MemberType NoteProperty -Name "$ObjName" -Value $($obj.Properties)
+                    }
+                    else {
+                        throw "There is already a $ObjName property on this object!"
+                    }
                 }
                 else {
-                    throw "There is already a Transform property on this object!"
+                    throw "You must use one of the following object types with this parameter: $($allowedTypes -join ", ")"
                 }
             }
         }
@@ -230,7 +279,9 @@ function Initialize-Vaporshell {
         }
     }
     $remTransform = {
-        $this.PSObject.Properties.Remove('Transform')
+        if ($this.Transform) {
+            $this.PSObject.Properties.Remove('Transform')
+        }
     }
     $memberParam = @{
         MemberType  = "ScriptMethod"

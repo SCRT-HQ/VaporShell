@@ -35,20 +35,18 @@ function New-VaporOutput {
         Logical ID of the condition that this output needs to be true in order to be provisioned.
 
     .EXAMPLE
-        $template = Initialize-Vaporshell -Description "Testing Resource addition"
-        $template.AddResource((
-            New-VaporResource -LogicalId "MyInstance" -Type "AWS::EC2::Instance" -Properties ([PSCustomObject][Ordered]@{
-                "UserData" = (Add-FnBase64 -ValueToEncode (Add-FnJoin -ListOfValues "Queue=",(Add-FnRef -Ref "MyQueue")))
-                "AvailabilityZone" = "us-east-1a"
-                "ImageId" = "ami-20b65349"
-            })
-        ))
+        $template = Initialize-Vaporshell -Description "Testing Output"
+        $template.AddOutput(
+            (
+                New-VaporOutput -LogicalId "BackupLoadBalancerDNSName" -Description "The DNSName of the backup load balancer" -Value (Add-FnGetAtt -LogicalNameOfResource "BackupLoadBalancer" -AttributeName "DNSName") -Condition "CreateProdResources"
+            )
+        )
 
         # When the template is exported, this will convert to: 
             {                                                                                                                      
-                "AWSTemplateFormatVersion": "2010-09-09",                                                                            
-                "Description": "Testing Outputs",                                                                                    
-                "Outputs": {                                                                                                         
+            "AWSTemplateFormatVersion": "2010-09-09",                                                                            
+            "Description": "Testing Output",                                                                                     
+            "Outputs": {                                                                                                         
                     "BackupLoadBalancerDNSName": {                                                                                     
                     "Description": "The DNSName of the backup load balancer",                                                        
                     "Value": {                                                                                                       
@@ -60,7 +58,7 @@ function New-VaporOutput {
                     "Condition": "CreateProdResources"                                                                               
                     }                                                                                                                  
                 }                                                                                                                    
-            }
+            }  
 
     .FUNCTIONALITY
         Vaporshell
@@ -91,26 +89,26 @@ function New-VaporOutput {
         $Condition
     )
     if ($Description) {
-        $data = [PSCustomObject][Ordered]@{
+        $Properties = [PSCustomObject][Ordered]@{
             "Description" = "$Description"
             "Value" = $Value
         }
     }
     else {
-        $data = [PSCustomObject][Ordered]@{
+        $Properties = [PSCustomObject][Ordered]@{
             "Value" = $Value
         }
     }
     if ($Export) {
-        $data | Add-Member -MemberType NoteProperty -Name "Export" -Value $Export
+        $Properties | Add-Member -MemberType NoteProperty -Name "Export" -Value $Export
     }
     if ($Condition) {
-        $data | Add-Member -MemberType NoteProperty -Name "Condition" -Value $Condition
+        $Properties | Add-Member -MemberType NoteProperty -Name "Condition" -Value $Condition
     }
     $obj = [PSCustomObject][Ordered]@{
         "LogicalId" = $LogicalId
-        "Data" = $data
+        "Properties" = $Properties
     }
     $obj | Add-ObjectDetail -TypeName 'Vaporshell.Output'
-    Write-Verbose "Resulting JSON from $($MyInvocation.MyCommand): `n`n`t$(@{$obj.LogicalId = $obj.Data} | ConvertTo-Json -Depth 5 -Compress)`n"
+    Write-Verbose "Resulting JSON from $($MyInvocation.MyCommand): `n`n`t$(@{$obj.LogicalId = $obj.Properties} | ConvertTo-Json -Depth 5 -Compress)`n"
 }

@@ -22,7 +22,7 @@ function New-VaporParameter {
         An identifier for the current condition. The logical ID must be alphanumeric (a-z, A-Z, 0-9) and unique within the template.
     
     .PARAMETER Type
-        The data type for the parameter (DataType).
+        The Properties type for the parameter (PropertiesType).
 
         Required: Yes
 
@@ -113,9 +113,9 @@ function New-VaporParameter {
 
                 Group and Sort Parameters in the AWS CloudFormation Console
 
-                When you use the AWS CloudFormation console to create or update a stack, the console alphabetically lists input parameters by their logical ID. To override the default ordering, you can use the AWS::CloudFormation::Interface metadata key. By grouping and ordering parameters, you make it easier for users to specify parameter values. For example, you could group all VPC-related parameters so that they aren't scattered throughout an alphabetical list.
+                When you use the AWS CloudFormation console to create or update a stack, the console alphabetically lists input parameters by their logical ID. To override the default ordering, you can use the AWS::CloudFormation::Interface metaProperties key. By grouping and ordering parameters, you make it easier for users to specify parameter values. For example, you could group all VPC-related parameters so that they aren't scattered throughout an alphabetical list.
 
-                In the metadata key, you can specify the groups to create, the parameters to include in each group, and the order in which the console shows each parameter within its group. You can also define friendly parameter names so that the console shows descriptive names instead of logical IDs. All parameters that you reference in the metadata key must be declared in the Parameters section of the template.
+                In the metaProperties key, you can specify the groups to create, the parameters to include in each group, and the order in which the console shows each parameter within its group. You can also define friendly parameter names so that the console shows descriptive names instead of logical IDs. All parameters that you reference in the metaProperties key must be declared in the Parameters section of the template.
     
     .PARAMETER Default
         A value of the appropriate type for the template to use if no value is specified when a stack is created. If you define constraints for the parameter, you must specify a value that adheres to those constraints.
@@ -150,8 +150,8 @@ function New-VaporParameter {
     .EXAMPLE
         $template = Initialize-Vaporshell -Description "Testing Mapping addition"
         $template.AddParameter(
-            (New-VaporParameter -LogicalId "DBPort" -Default 3306 -Description "TCP/IP port for the database" -Type "Number" -MinValue 1150 -MaxValue 65535),
-            (New-VaporParameter -LogicalId "DBPwd" -NoEcho -Description "The database admin account password" -Type "String" -MinLength 1 -MaxLength 41 -AllowedPattern "^[a-zA-Z0-9]*$")
+            (New-VaporParameter -LogicalId "DBPort" -Default 3306 -Description "TCP/IP port for the Propertiesbase" -Type "Number" -MinValue 1150 -MaxValue 65535),
+            (New-VaporParameter -LogicalId "DBPwd" -NoEcho -Description "The Propertiesbase admin account password" -Type "String" -MinLength 1 -MaxLength 41 -AllowedPattern "^[a-zA-Z0-9]*$")
         )
 
         # When the template is exported, this will convert to: 
@@ -164,7 +164,7 @@ function New-VaporParameter {
                         "NoEcho":  {
                             "IsPresent":  true
                         },
-                        "Description":  "The database admin account password",
+                        "Description":  "The Propertiesbase admin account password",
                         "MinLength":  1,
                         "MaxLength":  41,
                         "AllowedPattern":  "^[a-zA-Z0-9]*$"
@@ -172,7 +172,7 @@ function New-VaporParameter {
                     "DBPort":  {
                         "Type":  "Number",
                         "Default":  "3306",
-                        "Description":  "TCP/IP port for the database",
+                        "Description":  "TCP/IP port for the Propertiesbase",
                         "MinValue":  1150,
                         "MaxValue":  65535
                     }
@@ -240,30 +240,30 @@ function New-VaporParameter {
         $MinValue
     )
     Begin {
-        $data = [PSCustomObject][Ordered]@{
+        $Properties = [PSCustomObject][Ordered]@{
             "Type" = $Type
         }
     }
     Process {
         switch($PSBoundParameters.Keys) {
-            'Default' {$data | Add-Member -MemberType NoteProperty -Name Default -Value $Default}
-            'NoEcho' {$data | Add-Member -MemberType NoteProperty -Name NoEcho -Value $NoEcho}
-            'AllowedPattern' {$data | Add-Member -MemberType NoteProperty -Name AllowedPattern -Value $AllowedPattern}
-            'AllowedValues' {$data | Add-Member -MemberType NoteProperty -Name AllowedValues -Value @($AllowedValues)}
-            'ConstraintDescription' {$data | Add-Member -MemberType NoteProperty -Name ConstraintDescription -Value $ConstraintDescription}
-            'Description' {$data | Add-Member -MemberType NoteProperty -Name Description -Value $Description}
-            'MaxLength' {$data | Add-Member -MemberType NoteProperty -Name MaxLength -Value $MaxLength}
-            'MaxValue' {$data | Add-Member -MemberType NoteProperty -Name MaxValue -Value $MaxValue}
-            'MinLength' {$data | Add-Member -MemberType NoteProperty -Name MinLength -Value $MinLength}
-            'MinValue' {$data | Add-Member -MemberType NoteProperty -Name MinValue -Value $MinValue}
+            'Default' {$Properties | Add-Member -MemberType NoteProperty -Name Default -Value $Default}
+            'NoEcho' {$Properties | Add-Member -MemberType NoteProperty -Name NoEcho -Value $NoEcho}
+            'AllowedPattern' {$Properties | Add-Member -MemberType NoteProperty -Name AllowedPattern -Value $AllowedPattern}
+            'AllowedValues' {$Properties | Add-Member -MemberType NoteProperty -Name AllowedValues -Value @($AllowedValues)}
+            'ConstraintDescription' {$Properties | Add-Member -MemberType NoteProperty -Name ConstraintDescription -Value $ConstraintDescription}
+            'Description' {$Properties | Add-Member -MemberType NoteProperty -Name Description -Value $Description}
+            'MaxLength' {$Properties | Add-Member -MemberType NoteProperty -Name MaxLength -Value $MaxLength}
+            'MaxValue' {$Properties | Add-Member -MemberType NoteProperty -Name MaxValue -Value $MaxValue}
+            'MinLength' {$Properties | Add-Member -MemberType NoteProperty -Name MinLength -Value $MinLength}
+            'MinValue' {$Properties | Add-Member -MemberType NoteProperty -Name MinValue -Value $MinValue}
         }
     }
     End {
         $obj = [PSCustomObject][Ordered]@{
             "LogicalId" = $LogicalId
-            "Data" = $data
+            "Properties" = $Properties
         }
         $obj | Add-ObjectDetail -TypeName 'Vaporshell.Parameter'
-        Write-Verbose "Resulting JSON from $($MyInvocation.MyCommand): `n`n`t$(@{$obj.LogicalId = $obj.Data} | ConvertTo-Json -Depth 5 -Compress)`n"
+        Write-Verbose "Resulting JSON from $($MyInvocation.MyCommand): `n`n`t$(@{$obj.LogicalId = $obj.Properties} | ConvertTo-Json -Depth 5 -Compress)`n"
     }
 }

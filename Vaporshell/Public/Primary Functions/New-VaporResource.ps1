@@ -29,7 +29,7 @@ function New-VaporResource {
         $template = Initialize-Vaporshell -Description "Testing Resource addition"
         $template.AddResource((
             New-VaporResource -LogicalId "MyInstance" -Type "AWS::EC2::Instance" -Properties @{
-                "UserData" = (Add-FnBase64 -ValueToEncode (Add-FnJoin -ListOfValues "Queue=",(Add-FnRef -Ref "MyQueue")))
+                "UserProperties" = (Add-FnBase64 -ValueToEncode (Add-FnJoin -ListOfValues "Queue=",(Add-FnRef -Ref "MyQueue")))
                 "AvailabilityZone" = "us-east-1a"
                 "ImageId" = "ami-20b65349"
             }
@@ -43,7 +43,7 @@ function New-VaporResource {
                     "MyInstance": {                                                                                                    
                         "Type": "AWS::EC2::Instance",                                                                                    
                         "Properties": {                                                                                                  
-                            "UserData": {                                                                                                  
+                            "UserProperties": {                                                                                                  
                                 "Fn::Base64": {                                                                                              
                                     "Fn::Join": [                                                                                              
                                         "",                                                                                                      
@@ -84,7 +84,7 @@ function New-VaporResource {
         [parameter(Mandatory = $true,Position = 1)]
         [System.String]
         $Type,
-        [parameter(Mandatory = $false,Position = 2)]
+        [parameter(Mandatory = $true,Position = 2)]
         [ValidateScript({
             $allowedTypes = "System.Collections.Hashtable","System.Management.Automation.PSCustomObject","Vaporshell.Resource.Properties"
             if ([string]$($_.PSTypeNames) -match "($(($allowedTypes|ForEach-Object{[RegEx]::Escape($_)}) -join '|'))") {
@@ -98,19 +98,16 @@ function New-VaporResource {
         [parameter(Mandatory = $false,Position = 3)]
         $Condition
     )
-    $data = [PSCustomObject][Ordered]@{
+    $Properties = [PSCustomObject][Ordered]@{
         "Type" = $Type
     }
-    if ($Properties) {
-        $data | Add-Member -MemberType NoteProperty -Name "Properties" -Value $Properties
-    }
     if ($Condition) {
-        $data | Add-Member -MemberType NoteProperty -Name "Condition" -Value $Condition
+        $Properties | Add-Member -MemberType NoteProperty -Name "Condition" -Value $Condition
     }
     $obj = [PSCustomObject][Ordered]@{
         "LogicalId" = $LogicalId
-        "Data" = $data
+        "Properties" = $Properties
     }
     $obj | Add-ObjectDetail -TypeName 'Vaporshell.Resource'
-    Write-Verbose "Resulting JSON from $($MyInvocation.MyCommand): `n`n`t$(@{$obj.LogicalId = $obj.Data} | ConvertTo-Json -Depth 5 -Compress)`n"
+    Write-Verbose "Resulting JSON from $($MyInvocation.MyCommand): `n`n`t$(@{$obj.LogicalId = $obj.Properties} | ConvertTo-Json -Depth 5 -Compress)`n"
 }
