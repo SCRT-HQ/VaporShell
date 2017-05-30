@@ -76,4 +76,4 @@ $template.AddOutput((New-VaporOutput -LogicalId "PrimaryLoadBalancerDNSName" -De
 
 
 **WORK IN PROGRESS**
-**Full documentation coming soon!**
+**Full documentation coming soon!** 
