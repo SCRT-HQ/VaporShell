@@ -6,8 +6,5 @@
 
 Powershell module for building AWS CloudFormation JSON templates using Powershell syntax, abstracting working with JSON, etc. Essentially a Powershell equivalent to Troposphere for Python.
 
-<<<<<<< HEAD
+
 **&lt;WORK IN PROGRESS>**
-=======
-**&lt;WORK IN PROGRESS>**
->>>>>>> 648783503fc387411e83ea6720e69cebc217c14a
