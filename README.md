@@ -4,7 +4,44 @@
 
 # *Vaporshell*
 
-Powershell module for building AWS CloudFormation JSON templates using Powershell syntax, abstracting working with JSON, etc. Essentially a Powershell equivalent to Troposphere for Python.
+## **cloud**
+**/kloud/**  
+_noun_  
+1. a visible mass of condensed water vapor floating in the atmosphere, typically high above the ground.
+
+***
+
+Vaporshell is a module for Powershell that allows easier and less error prone build outs of AWS CloudFormation JSON templates using familiar syntax and structure to define AWS resources, while simultaneously gaining the capabilities of Powershell and removing the need to work with JSON directly.
+
+Vaporshell allows you to either initialize a new template or import an existing template, add appropriate properties and export it out to JSON.
+
+For those that are familiar with [Troposphere for Python by CloudTools](https://github.com/cloudtools/troposphere), this aims to be an equivalent option for Powershell users.
+
+***
+
+## How to Install
+
+You can install the module directly from [Powershell Gallery](https://www.powershellgallery.com/packages/vaporshell) by running the following command in and administrator Powershell console:
+
+`Install-Module -Name Vaporshell`
+
+NOTE: This requires the PowerShellGet module. This comes standard for Windows 10, Linux and MacOS users that have Powershell, but may require installation for other OS's. [Please check out Getting Started with the Gallery](https://www.powershellgallery.com/) for more info. 
+
+***
+
+## Test Notes
+
+Continous testing and development is being done in Windows, MacOS and Linux (Ubuntu). **If your OS of choice can run Powershell, you should have no issues running this module.** 
+
+***
+
+## Disclaimer
+
+This module is only to be used to ease creation of CloudFormation templates. Any stack creations within AWS are the responsibility of the person/group deploying it, so please validate any template builds using `aws cloudformation validate-template` [validate-template](http://docs.aws.amazon.com/cli/latest/reference/cloudformation/validate-template.html)!
+
+If you find any oddities with the template build, please open an issue here on GitHub and include your script with sensitive data redacted, what you were expecting it to add to the template and what actually was added.
+
+Thanks!
 
 ***
 
@@ -75,5 +112,5 @@ $template.AddOutput((New-VaporOutput -LogicalId "PrimaryLoadBalancerDNSName" -De
 ```
 
 
-**WORK IN PROGRESS**  
+**WORK IN PROGRESS**
 **Full documentation coming soon!** 
