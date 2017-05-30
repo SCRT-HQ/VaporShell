@@ -134,17 +134,17 @@ Describe "Initialize/Export/Import PS$PSVersion" {
 
             $template.AddMetadata(
                 (
-                    New-VaporMetadata -LogicalId "Instances" -Metadata @{"Description" = "Information about the instances"} | Should Not Throw
+                    New-VaporMetadata -LogicalId "Instances" -Metadata @{"Description" = "Information about the instances"}
                 )
-            ) | Should Not Throw
+            )
             $template.AddCondition(
                 (
-                    New-VaporCondition -LogicalId "CreateProdResources" -Condition (Add-ConEquals -FirstValue (Add-FnRef -Ref "EnvType") -SecondValue "prod") | Should Not Throw
+                    New-VaporCondition -LogicalId "CreateProdResources" -Condition (Add-ConEquals -FirstValue (Add-FnRef -Ref "EnvType") -SecondValue "prod")
                 ),
                 (
                     Add-Include -Location "s3://MyAmazonS3BucketName/single_wait_condition.yaml"
                 )
-            ) | Should Not Throw
+            )
             $template.AddMapping(
                 (
                     New-VaporMapping -LogicalId "RegionMap" -Map ([PSCustomObject][Ordered]@{
@@ -158,21 +158,21 @@ Describe "Initialize/Export/Import PS$PSVersion" {
                             }
                         })
                 )
-            ) | Should Not Throw
+            )
             $template.AddResource(
                 (
                     New-VaporResource -LogicalId "MyInstance" -Type "AWS::EC2::Instance" -Properties ([PSCustomObject][Ordered]@{
                             "UserProperties"   = (Add-FnBase64 -ValueToEncode (Add-FnJoin -ListOfValues "Queue=",(Add-FnRef -Ref "MyQueue")))
                             "AvailabilityZone" = "us-east-1a"
                             "ImageId"          = (Add-FnFindInMap -MapName "RegionMap" -TopLevelKey $_AWSRegion -SecondLevelKey "32")
-                        }) | Should Not Throw
+                        })
                 )
-            ) | Should Not Throw
+            )
             $template.AddOutput(
                 (
                     New-VaporOutput -LogicalId "BackupLoadBalancerDNSName" -Description "The DNSName of the backup load balancer" -Value (Add-FnGetAtt -LogicalNameOfResource "BackupLoadBalancer" -AttributeName "DNSName") -Condition "CreateProdResources" | Should Not Throw
                 )
-            ) | Should Not Throw
+            )
 
             $template.AWSTemplateFormatVersion | Should BeOfType 'System.String'
             $template.Conditions | Should BeOfType 'System.Management.Automation.PSCustomObject'
