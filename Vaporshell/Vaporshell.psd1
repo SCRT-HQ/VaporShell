@@ -12,7 +12,7 @@
     RootModule            = 'Vaporshell.psm1'
 
     # Version number of this module.
-    ModuleVersion         = '0.0.2'
+    ModuleVersion         = '0.0.1'
 
     # ID used to uniquely identify this module
     GUID                  = 'd526494c-6e59-41ff-ad05-eedbc1473b6a'
@@ -68,7 +68,7 @@ Requires Powershell version 3.0 or higher, as it leverages ConvertTo-Json and Co
     # NestedModules = @()
 
     # Functions to export from this module
-    FunctionsToExport     = '*'
+    FunctionsToExport     = @('Add-ConAnd','Add-ConEquals','Add-ConIf','Add-ConNot','Add-ConOr','Add-FnBase64','Add-FnFindInMap','Add-FnGetAtt','Add-FnGetAZs','Add-FnImportValue','Add-FnJoin','Add-FnRef','Add-FnSelect','Add-FnSplit','Add-FnSub','Add-Include','Export-Vaporshell','Import-Vaporshell','Initialize-Vaporshell','New-VaporCondition','New-VaporMapping','New-VaporMetadata','New-VaporOutput','New-VaporParameter','New-VaporResource')
 
     # Cmdlets to export from this module
     CmdletsToExport       = @()

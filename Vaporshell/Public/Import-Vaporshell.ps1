@@ -30,7 +30,7 @@ function Import-Vaporshell {
             $allowedTypes = "Vaporshell.Transform","Vaporshell.Metadata"
             foreach ($obj in $args) {
                 if ([string]$($obj.PSTypeNames) -match "($(($allowedTypes|ForEach-Object{[RegEx]::Escape($_)}) -join '|'))") {
-                    if ($this.PSObject.Properties.Name -notcontains $ObjName) {
+                    if ( -not ($this.$ObjName)) {
                         Write-Verbose "The $ObjName property was not found on the Vaporshell template. Adding the property to the template now."
                         $this | Add-Member -MemberType NoteProperty -Name "$ObjName" -Value ([PSCustomObject]@{})
                     }
@@ -48,7 +48,7 @@ function Import-Vaporshell {
             $allowedTypes = "Vaporshell.Parameter"
             foreach ($obj in $args) {
                 if ([string]$($obj.PSTypeNames) -match "($(($allowedTypes|ForEach-Object{[RegEx]::Escape($_)}) -join '|'))") {
-                    if ($this.PSObject.Properties.Name -notcontains $ObjName) {
+                    if ( -not ($this.$ObjName)) {
                         Write-Verbose "The $ObjName property was not found on the Vaporshell template. Adding the property to the template now."
                         $this | Add-Member -MemberType NoteProperty -Name "$ObjName" -Value ([PSCustomObject]@{})
                     }
@@ -66,7 +66,7 @@ function Import-Vaporshell {
             $allowedTypes = "Vaporshell.Transform","Vaporshell.Mapping"
             foreach ($obj in $args) {
                 if ([string]$($obj.PSTypeNames) -match "($(($allowedTypes|ForEach-Object{[RegEx]::Escape($_)}) -join '|'))") {
-                    if ($this.PSObject.Properties.Name -notcontains $ObjName) {
+                    if ( -not ($this.$ObjName)) {
                         Write-Verbose "The $ObjName property was not found on the Vaporshell template. Adding the property to the template now."
                         $this | Add-Member -MemberType NoteProperty -Name "$ObjName" -Value ([PSCustomObject]@{})
                     }
@@ -84,7 +84,7 @@ function Import-Vaporshell {
             $allowedTypes = "Vaporshell.Transform","Vaporshell.Condition"
             foreach ($obj in $args) {
                 if ([string]$($obj.PSTypeNames) -match "($(($allowedTypes|ForEach-Object{[RegEx]::Escape($_)}) -join '|'))") {
-                    if ($this.PSObject.Properties.Name -notcontains $ObjName) {
+                    if ( -not ($this.$ObjName)) {
                         Write-Verbose "The $ObjName property was not found on the Vaporshell template. Adding the property to the template now."
                         $this | Add-Member -MemberType NoteProperty -Name "$ObjName" -Value ([PSCustomObject]@{})
                     }
@@ -102,7 +102,7 @@ function Import-Vaporshell {
             $allowedTypes = "Vaporshell.Transform","Vaporshell.Resource"
             foreach ($obj in $args) {
                 if ([string]$($obj.PSTypeNames) -match "($(($allowedTypes|ForEach-Object{[RegEx]::Escape($_)}) -join '|'))") {
-                    if ($this.PSObject.Properties.Name -notcontains $ObjName) {
+                    if ( -not ($this.$ObjName)) {
                         Write-Verbose "The $ObjName property was not found on the Vaporshell template. Adding the property to the template now."
                         $this | Add-Member -MemberType NoteProperty -Name "$ObjName" -Value ([PSCustomObject]@{})
                     }
@@ -120,7 +120,7 @@ function Import-Vaporshell {
             $allowedTypes = "Vaporshell.Transform","Vaporshell.Output"
             foreach ($obj in $args) {
                 if ([string]$($obj.PSTypeNames) -match "($(($allowedTypes|ForEach-Object{[RegEx]::Escape($_)}) -join '|'))") {
-                    if ($this.PSObject.Properties.Name -notcontains $ObjName) {
+                    if ( -not ($this.$ObjName)) {
                         Write-Verbose "The $ObjName property was not found on the Vaporshell template. Adding the property to the template now."
                         $this | Add-Member -MemberType NoteProperty -Name "$ObjName" -Value ([PSCustomObject]@{})
                     }
@@ -138,7 +138,7 @@ function Import-Vaporshell {
             $allowedTypes = "Vaporshell.Transform.Include"
             foreach ($obj in $args) {
                 if ([string]$($obj.PSTypeNames) -match "($(($allowedTypes|ForEach-Object{[RegEx]::Escape($_)}) -join '|'))") {
-                    if ($this.PSObject.Properties.Name -notcontains $ObjName) {
+                    if ( -not ($this.$ObjName)) {
                         $this | Add-Member -MemberType NoteProperty -Name "$ObjName" -Value $($obj.Properties)
                     }
                     else {

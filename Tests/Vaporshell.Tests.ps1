@@ -134,25 +134,22 @@ Describe "Initialize/Export/Import PS$PSVersion" {
 
             $template.AddMetadata(
                 (
-                    New-VaporMetadata -LogicalId "Instances" -Metadata @{"Description" = "Information about the instances"}
+                    New-VaporMetadata -LogicalId "Databases" -Metadata @{"Description" = "Information about the Databases"}
                 )
             )
             $template.AddCondition(
                 (
-                    New-VaporCondition -LogicalId "CreateProdResources" -Condition (Add-ConEquals -FirstValue (Add-FnRef -Ref "EnvType") -SecondValue "prod")
-                ),
-                (
-                    Add-Include -Location "s3://MyAmazonS3BucketName/single_wait_condition.yaml"
+                    New-VaporCondition -LogicalId "CreateTestResources" -Condition (Add-ConEquals -FirstValue (Add-FnRef -Ref "EnvType") -SecondValue "test")
                 )
             )
             $template.AddMapping(
                 (
-                    New-VaporMapping -LogicalId "RegionMap" -Map ([PSCustomObject][Ordered]@{
-                            "us-east-1" = [PSCustomObject][Ordered]@{
+                    New-VaporMapping -LogicalId "RegionMap2" -Map ([PSCustomObject][Ordered]@{
+                            "us-east-2" = [PSCustomObject][Ordered]@{
                                 "32" = "ami-6411e20d"
                                 "64" = "ami-7a11e213"
                             }
-                            "us-west-1" = [PSCustomObject][Ordered]@{
+                            "us-west-2" = [PSCustomObject][Ordered]@{
                                 "32" = "ami-c9c7978c"
                                 "64" = "ami-cfc7978a"
                             }
@@ -161,16 +158,16 @@ Describe "Initialize/Export/Import PS$PSVersion" {
             )
             $template.AddResource(
                 (
-                    New-VaporResource -LogicalId "MyInstance" -Type "AWS::EC2::Instance" -Properties ([PSCustomObject][Ordered]@{
+                    New-VaporResource -LogicalId "MyInstance2" -Type "AWS::EC2::Instance" -Properties ([PSCustomObject][Ordered]@{
                             "UserProperties"   = (Add-FnBase64 -ValueToEncode (Add-FnJoin -ListOfValues "Queue=",(Add-FnRef -Ref "MyQueue")))
-                            "AvailabilityZone" = "us-east-1a"
+                            "AvailabilityZone" = "us-east-1b"
                             "ImageId"          = (Add-FnFindInMap -MapName "RegionMap" -TopLevelKey $_AWSRegion -SecondLevelKey "32")
                         })
                 )
             )
             $template.AddOutput(
                 (
-                    New-VaporOutput -LogicalId "BackupLoadBalancerDNSName" -Description "The DNSName of the backup load balancer" -Value (Add-FnGetAtt -LogicalNameOfResource "BackupLoadBalancer" -AttributeName "DNSName") -Condition "CreateProdResources" | Should Not Throw
+                    New-VaporOutput -LogicalId "PrimaryLoadBalancerDNSName" -Description "The DNSName of the primary load balancer" -Value (Add-FnGetAtt -LogicalNameOfResource "PrimaryLoadBalancer" -AttributeName "DNSName") -Condition "CreateTestResources"
                 )
             )
 
