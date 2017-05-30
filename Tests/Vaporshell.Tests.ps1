@@ -130,7 +130,7 @@ Describe "Initialize/Export/Import PS$PSVersion" {
             )
 
             Export-Vaporshell -VaporshellTemplate $templateInit -Path $testPath -Force
-            $template = Import-Vaporshell -Path $testPath | Should Not Throw
+            $template = Import-Vaporshell -Path $testPath
 
             $template.AddMetadata(
                 (

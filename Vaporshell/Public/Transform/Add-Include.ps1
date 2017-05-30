@@ -60,7 +60,7 @@ function Add-Include {
         "LogicalId" = "Fn::Transform"
         "Properties" = [PSCustomObject][Ordered]@{
             "Name" = "AWS::Include"
-            "Parameters" = @{
+            "Parameters" = [PSCustomObject][Ordered]@{
                 "Location" = $Location
             }
         }

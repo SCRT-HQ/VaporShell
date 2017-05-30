@@ -23,18 +23,18 @@ function Import-Vaporshell {
         [String]
         $Path
     )
-    $tempObj = Get-Content $Path | ConvertFrom-Json
+    $tempObj = Get-Content $Path -Verbose:$false | ConvertFrom-Json -Verbose:$false
     $addMetadata = {
         Process {
             $ObjName = "Metadata"
             $allowedTypes = "Vaporshell.Transform","Vaporshell.Metadata"
             foreach ($obj in $args) {
                 if ([string]$($obj.PSTypeNames) -match "($(($allowedTypes|ForEach-Object{[RegEx]::Escape($_)}) -join '|'))") {
-                    if (!($this.$ObjName)) {
-                        Write-Warning "The $ObjName property was not found on the Vaporshell template. Adding the property to the template now."
-                        $this | Add-Member -MemberType NoteProperty -Name "$ObjName" -Value @{}
+                    if ($this.PSObject.Properties.Name -notcontains $ObjName) {
+                        Write-Verbose "The $ObjName property was not found on the Vaporshell template. Adding the property to the template now."
+                        $this | Add-Member -MemberType NoteProperty -Name "$ObjName" -Value ([PSCustomObject]@{})
                     }
-                    $this.$ObjName.Add($($obj.LogicalID),$($obj.Properties))
+                    Add-Member -InputObject $this.$ObjName -MemberType NoteProperty -Name $($obj.LogicalID) -Value $($obj.Properties)
                 }
                 else {
                     throw "You must use one of the following object types with this parameter: $($allowedTypes -join ", ")"
@@ -48,11 +48,11 @@ function Import-Vaporshell {
             $allowedTypes = "Vaporshell.Parameter"
             foreach ($obj in $args) {
                 if ([string]$($obj.PSTypeNames) -match "($(($allowedTypes|ForEach-Object{[RegEx]::Escape($_)}) -join '|'))") {
-                    if (!($this.$ObjName)) {
-                        Write-Warning "The $ObjName property was not found on the Vaporshell template. Adding the property to the template now."
-                        $this | Add-Member -MemberType NoteProperty -Name "$ObjName" -Value @{}
+                    if ($this.PSObject.Properties.Name -notcontains $ObjName) {
+                        Write-Verbose "The $ObjName property was not found on the Vaporshell template. Adding the property to the template now."
+                        $this | Add-Member -MemberType NoteProperty -Name "$ObjName" -Value ([PSCustomObject]@{})
                     }
-                    $this.$ObjName.Add($($obj.LogicalID),$($obj.Properties))
+                    Add-Member -InputObject $this.$ObjName -MemberType NoteProperty -Name $($obj.LogicalID) -Value $($obj.Properties)
                 }
                 else {
                     throw "You must use one of the following object types with this parameter: $($allowedTypes -join ", ")"
@@ -66,11 +66,11 @@ function Import-Vaporshell {
             $allowedTypes = "Vaporshell.Transform","Vaporshell.Mapping"
             foreach ($obj in $args) {
                 if ([string]$($obj.PSTypeNames) -match "($(($allowedTypes|ForEach-Object{[RegEx]::Escape($_)}) -join '|'))") {
-                    if (!($this.$ObjName)) {
-                        Write-Warning "The $ObjName property was not found on the Vaporshell template. Adding the property to the template now."
-                        $this | Add-Member -MemberType NoteProperty -Name "$ObjName" -Value @{}
+                    if ($this.PSObject.Properties.Name -notcontains $ObjName) {
+                        Write-Verbose "The $ObjName property was not found on the Vaporshell template. Adding the property to the template now."
+                        $this | Add-Member -MemberType NoteProperty -Name "$ObjName" -Value ([PSCustomObject]@{})
                     }
-                    $this.$ObjName.Add($($obj.LogicalID),$($obj.Properties))
+                    Add-Member -InputObject $this.$ObjName -MemberType NoteProperty -Name $($obj.LogicalID) -Value $($obj.Properties)
                 }
                 else {
                     throw "You must use one of the following object types with this parameter: $($allowedTypes -join ", ")"
@@ -84,11 +84,11 @@ function Import-Vaporshell {
             $allowedTypes = "Vaporshell.Transform","Vaporshell.Condition"
             foreach ($obj in $args) {
                 if ([string]$($obj.PSTypeNames) -match "($(($allowedTypes|ForEach-Object{[RegEx]::Escape($_)}) -join '|'))") {
-                    if (!($this.$ObjName)) {
-                        Write-Warning "The $ObjName property was not found on the Vaporshell template. Adding the property to the template now."
-                        $this | Add-Member -MemberType NoteProperty -Name "$ObjName" -Value @{}
+                    if ($this.PSObject.Properties.Name -notcontains $ObjName) {
+                        Write-Verbose "The $ObjName property was not found on the Vaporshell template. Adding the property to the template now."
+                        $this | Add-Member -MemberType NoteProperty -Name "$ObjName" -Value ([PSCustomObject]@{})
                     }
-                    $this.$ObjName.Add($($obj.LogicalID),$($obj.Properties))
+                    Add-Member -InputObject $this.$ObjName -MemberType NoteProperty -Name $($obj.LogicalID) -Value $($obj.Properties)
                 }
                 else {
                     throw "You must use one of the following object types with this parameter: $($allowedTypes -join ", ")"
@@ -102,11 +102,11 @@ function Import-Vaporshell {
             $allowedTypes = "Vaporshell.Transform","Vaporshell.Resource"
             foreach ($obj in $args) {
                 if ([string]$($obj.PSTypeNames) -match "($(($allowedTypes|ForEach-Object{[RegEx]::Escape($_)}) -join '|'))") {
-                    if (!($this.$ObjName)) {
-                        Write-Warning "The $ObjName property was not found on the Vaporshell template. Adding the property to the template now."
-                        $this | Add-Member -MemberType NoteProperty -Name "$ObjName" -Value @{}
+                    if ($this.PSObject.Properties.Name -notcontains $ObjName) {
+                        Write-Verbose "The $ObjName property was not found on the Vaporshell template. Adding the property to the template now."
+                        $this | Add-Member -MemberType NoteProperty -Name "$ObjName" -Value ([PSCustomObject]@{})
                     }
-                    $this.$ObjName.Add($($obj.LogicalID),$($obj.Properties))
+                    Add-Member -InputObject $this.$ObjName -MemberType NoteProperty -Name $($obj.LogicalID) -Value $($obj.Properties)
                 }
                 else {
                     throw "You must use one of the following object types with this parameter: $($allowedTypes -join ", ")"
@@ -120,11 +120,11 @@ function Import-Vaporshell {
             $allowedTypes = "Vaporshell.Transform","Vaporshell.Output"
             foreach ($obj in $args) {
                 if ([string]$($obj.PSTypeNames) -match "($(($allowedTypes|ForEach-Object{[RegEx]::Escape($_)}) -join '|'))") {
-                    if (!($this.$ObjName)) {
-                        Write-Warning "The $ObjName property was not found on the Vaporshell template. Adding the property to the template now."
-                        $this | Add-Member -MemberType NoteProperty -Name "$ObjName" -Value @{}
+                    if ($this.PSObject.Properties.Name -notcontains $ObjName) {
+                        Write-Verbose "The $ObjName property was not found on the Vaporshell template. Adding the property to the template now."
+                        $this | Add-Member -MemberType NoteProperty -Name "$ObjName" -Value ([PSCustomObject]@{})
                     }
-                    $this.$ObjName.Add($($obj.LogicalID),$($obj.Properties))
+                    Add-Member -InputObject $this.$ObjName -MemberType NoteProperty -Name $($obj.LogicalID) -Value $($obj.Properties)
                 }
                 else {
                     throw "You must use one of the following object types with this parameter: $($allowedTypes -join ", ")"
@@ -138,7 +138,7 @@ function Import-Vaporshell {
             $allowedTypes = "Vaporshell.Transform.Include"
             foreach ($obj in $args) {
                 if ([string]$($obj.PSTypeNames) -match "($(($allowedTypes|ForEach-Object{[RegEx]::Escape($_)}) -join '|'))") {
-                    if (!($this.$ObjName)) {
+                    if ($this.PSObject.Properties.Name -notcontains $ObjName) {
                         $this | Add-Member -MemberType NoteProperty -Name "$ObjName" -Value $($obj.Properties)
                     }
                     else {
@@ -202,73 +202,80 @@ function Import-Vaporshell {
     Add-Member @memberParam
     $remMetadata = {
         Process {
+            $ObjName = "Metadata"
             foreach ($LogicalID in $args) {
-                $this.Metadata.Remove($LogicalID)
-                if ($template.Metadata.Keys.Count -eq 0) {
-                    Write-Warning "All objects in the Metadata property have been removed. Removing the property from the template as well."
-                    $this.PSObject.Properties.Remove('Metadata')
+                $this.$ObjName.PSObject.Properties.Remove($LogicalID)
+                if ([string]::IsNullOrWhiteSpace($($this.$ObjName.PSObject.Properties | Out-String))) {
+                    Write-Verbose "All objects in the $ObjName property have been removed. Removing the property from the template as well."
+                    $this.PSObject.Properties.Remove($ObjName)
                 }
             }
         }
     }
     $remParameter = {
         Process {
+            $ObjName = "Parameters"
             foreach ($LogicalID in $args) {
-                $this.Parameters.Remove($LogicalID)
-                if ($template.Parameters.Keys.Count -eq 0) {
-                    Write-Warning "All objects in the Parameters property have been removed. Removing the property from the template as well."
-                    $this.PSObject.Properties.Remove('Parameters')
+                $this.$ObjName.PSObject.Properties.Remove($LogicalID)
+                if ([string]::IsNullOrWhiteSpace($($this.$ObjName.PSObject.Properties | Out-String))) {
+                    Write-Verbose "All objects in the $ObjName property have been removed. Removing the property from the template as well."
+                    $this.PSObject.Properties.Remove($ObjName)
                 }
             }
         }
     }
     $remMapping = {
         Process {
+            $ObjName = "Mappings"
             foreach ($LogicalID in $args) {
-                $this.Mappings.Remove($LogicalID)
-                if ($template.Mappings.Keys.Count -eq 0) {
-                    Write-Warning "All objects in the Mappings property have been removed. Removing the property from the template as well."
-                    $this.PSObject.Properties.Remove('Mappings')
+                $this.$ObjName.PSObject.Properties.Remove($LogicalID)
+                if ([string]::IsNullOrWhiteSpace($($this.$ObjName.PSObject.Properties | Out-String))) {
+                    Write-Verbose "All objects in the $ObjName property have been removed. Removing the property from the template as well."
+                    $this.PSObject.Properties.Remove($ObjName)
                 }
             }
         }
     }
     $remCondition = {
         Process {
+            $ObjName = "Conditions"
             foreach ($LogicalID in $args) {
-                $this.Conditions.Remove($LogicalID)
-                if ($template.Conditions.Keys.Count -eq 0) {
-                    Write-Warning "All objects in the Conditions property have been removed. Removing the property from the template as well."
-                    $this.PSObject.Properties.Remove('Conditions')
+                $this.$ObjName.PSObject.Properties.Remove($LogicalID)
+                if ([string]::IsNullOrWhiteSpace($($this.$ObjName.PSObject.Properties | Out-String))) {
+                    Write-Verbose "All objects in the $ObjName property have been removed. Removing the property from the template as well."
+                    $this.PSObject.Properties.Remove($ObjName)
                 }
             }
         }
     }
     $remResource = {
         Process {
+            $ObjName = "Resources"
             foreach ($LogicalID in $args) {
-                $this.Resources.Remove($LogicalID)
-                if ($template.Resources.Keys.Count -eq 0) {
-                    Write-Warning "All objects in the Resources property have been removed. Removing the property from the template as well."
-                    $this.PSObject.Properties.Remove('Resources')
+                $this.$ObjName.PSObject.Properties.Remove($LogicalID)
+                if ([string]::IsNullOrWhiteSpace($($this.$ObjName.PSObject.Properties | Out-String))) {
+                    Write-Verbose "All objects in the $ObjName property have been removed. Removing the property from the template as well."
+                    $this.PSObject.Properties.Remove($ObjName)
                 }
             }
         }
     }
     $remOutput = {
         Process {
+            $ObjName = "Outputs"
             foreach ($LogicalID in $args) {
-                $this.Outputs.Remove($LogicalID)
-                if ($template.Outputs.Keys.Count -eq 0) {
-                    Write-Warning "All objects in the Outputs property have been removed. Removing the property from the template as well."
-                    $this.PSObject.Properties.Remove('Outputs')
+                $this.$ObjName.PSObject.Properties.Remove($LogicalID)
+                if ([string]::IsNullOrWhiteSpace($($this.$ObjName.PSObject.Properties | Out-String))) {
+                    Write-Verbose "All objects in the $ObjName property have been removed. Removing the property from the template as well."
+                    $this.PSObject.Properties.Remove($ObjName)
                 }
             }
         }
     }
     $remTransform = {
-        if ($this.Transform) {
-            $this.PSObject.Properties.Remove('Transform')
+        $ObjName = "Transform"
+        if ($this.$ObjName) {
+            $this.PSObject.Properties.Remove($ObjName)
         }
     }
     $memberParam = @{

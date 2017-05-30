@@ -26,8 +26,8 @@ function New-VaporMetadata {
     .EXAMPLE
         $template = Initialize-Vaporshell -Description "Testing Metadata addition"
         $template.AddMetadata(
-            (New-VaporMetadata -LogicalId "Instances" -Metadata @{"Description" = "Information about the instances"}),
-            (New-VaporMetadata -LogicalId "Databases" -Metadata @{"Description" = "Information about the databases"})
+            (New-VaporMetadata -LogicalId "Instances" -Metadata [PSCustomObject]@{"Description" = "Information about the instances"}),
+            (New-VaporMetadata -LogicalId "Databases" -Metadata [PSCustomObject]@{"Description" = "Information about the databases"})
         )
 
         # When the template is exported, this will convert to: 
