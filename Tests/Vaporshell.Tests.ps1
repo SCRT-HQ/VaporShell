@@ -132,13 +132,13 @@ Describe "Initialize/Export/Import PS$PSVersion" {
             Export-Vaporshell -VaporshellTemplate $templateInit -Path $testPath -Force
             $template = Import-Vaporshell -Path $testPath
 
-            $template.AWSTemplateFormatVersion | Should be 'System.String'
-            $template.Conditions | Should be 'System.Collections.Hashtable'
-            $template.Description | Should be 'System.String'
-            $template.Mappings | Should be 'System.Collections.Hashtable'
-            $template.Metadata | Should be 'System.Collections.Hashtable'
-            $template.Outputs | Should be 'System.Collections.Hashtable'
-            $template.Resources | Should be 'System.Collections.Hashtable'
+            $template.AWSTemplateFormatVersion | Should BeOfType 'System.String'
+            $template.Conditions | Should BeOfType 'System.Collections.Hashtable'
+            $template.Description | Should BeOfType 'System.String'
+            $template.Mappings | Should BeOfType 'System.Collections.Hashtable'
+            $template.Metadata | Should BeOfType 'System.Collections.Hashtable'
+            $template.Outputs | Should BeOfType 'System.Collections.Hashtable'
+            $template.Resources | Should BeOfType 'System.Collections.Hashtable'
         }
     }
 }
