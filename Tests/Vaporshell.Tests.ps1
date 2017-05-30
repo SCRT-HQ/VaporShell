@@ -142,7 +142,4 @@ Describe "Initialize/Export/Import PS$PSVersion" {
         }
     }
 }
-
 Remove-Item "$ModulePath\Template.json" -Force -Confirm:$False
-Remove-Item $AlternativePath -Force -Confirm:$False
-#>
