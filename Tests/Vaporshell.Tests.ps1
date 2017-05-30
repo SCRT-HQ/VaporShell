@@ -129,7 +129,7 @@ Describe "Initialize/Export/Import PS$PSVersion" {
                 )
             )
 
-            Export-Vaporshell -VaporshellTemplate $template -Path $testPath -Force
+            Export-Vaporshell -VaporshellTemplate $templateInit -Path $testPath -Force
             $template = Import-Vaporshell -Path $testPath
 
             $template.AWSTemplateFormatVersion | Should be 'System.String'
