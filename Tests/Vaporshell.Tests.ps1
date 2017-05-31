@@ -119,7 +119,7 @@ Describe "Initialize/Export/Import PS$PSVersion" {
                     New-VaporResource -LogicalId "MyInstance" -Type "AWS::EC2::Instance" -Properties ([PSCustomObject][Ordered]@{
                             "UserData"   = (Add-FnBase64 -ValueToEncode (Add-FnJoin -ListOfValues "Queue=",(Add-FnRef -Ref "MyQueue")))
                             "AvailabilityZone" = "us-east-1a"
-                            "ImageId"          = (Add-FnFindInMap -MapName "RegionMap" -TopLevelKey $_AWSRegion -SecondLevelKey "32")
+                            "ImageId"          = (Add-FnFindInMap -MapName "RegionMap" -TopLevelKey "$_AWSRegion" -SecondLevelKey "32")
                         })
                 )
             )
@@ -161,7 +161,7 @@ Describe "Initialize/Export/Import PS$PSVersion" {
                     New-VaporResource -LogicalId "MyInstance2" -Type "AWS::EC2::Instance" -Properties ([PSCustomObject][Ordered]@{
                             "UserData"   = (Add-FnBase64 -ValueToEncode (Add-FnJoin -ListOfValues "Queue=",(Add-FnRef -Ref "MyQueue")))
                             "AvailabilityZone" = "us-east-1b"
-                            "ImageId"          = (Add-FnFindInMap -MapName "RegionMap" -TopLevelKey $_AWSRegion -SecondLevelKey "32")
+                            "ImageId"          = (Add-FnFindInMap -MapName "RegionMap" -TopLevelKey "$_AWSRegion" -SecondLevelKey "32")
                         })
                 )
             )
