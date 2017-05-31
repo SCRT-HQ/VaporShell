@@ -86,7 +86,7 @@ function New-VaporResource {
         $Type,
         [parameter(Mandatory = $true,Position = 2)]
         [ValidateScript( {
-                $allowedTypes = "System.Collections.Hashtable","System.Management.Automation.PSCustomObject","Vaporshell.Resource.Properties"
+                $allowedTypes = "System.Management.Automation.PSCustomObject","Vaporshell.Resource.Properties"
                 if ([string]$($_.PSTypeNames) -match "($(($allowedTypes|ForEach-Object{[RegEx]::Escape($_)}) -join '|'))") {
                     $true
                 }
@@ -98,15 +98,15 @@ function New-VaporResource {
         [parameter(Mandatory = $false,Position = 3)]
         $Condition
     )
-    $Properties = [PSCustomObject][Ordered]@{
-        "Type" = $Type
-    }
     if ($Condition) {
         $Properties | Add-Member -MemberType NoteProperty -Name "Condition" -Value $Condition
     }
     $obj = [PSCustomObject][Ordered]@{
         "LogicalId" = $LogicalId
-        "Properties" = $Properties
+        "Properties" = [PSCustomObject][Ordered]@{
+            "Type" = $Type
+            "Properties" = $Properties
+        }
     }
     $obj | Add-ObjectDetail -TypeName 'Vaporshell.Resource'
     Write-Verbose "Resulting JSON from $($MyInvocation.MyCommand): `n`n`t$(@{$obj.LogicalId = $obj.Properties} | ConvertTo-Json -Depth 5 -Compress)`n"
