@@ -34,7 +34,7 @@ function Import-Vaporshell {
                         Write-Verbose "The $ObjName property was not found on the Vaporshell template. Adding the property to the template now."
                         $this | Add-Member -MemberType NoteProperty -Name "$ObjName" -Value ([PSCustomObject]@{})
                     }
-                    Add-Member -InputObject $this.$ObjName -MemberType NoteProperty -Name $($obj.LogicalID) -Value $($obj.Properties)
+                    Add-Member -InputObject $this.$ObjName -MemberType NoteProperty -Name $($obj.LogicalID) -Value $($obj.Props)
                 }
                 else {
                     throw "You must use one of the following object types with this parameter: $($allowedTypes -join ", ")"
@@ -52,7 +52,7 @@ function Import-Vaporshell {
                         Write-Verbose "The $ObjName property was not found on the Vaporshell template. Adding the property to the template now."
                         $this | Add-Member -MemberType NoteProperty -Name "$ObjName" -Value ([PSCustomObject]@{})
                     }
-                    Add-Member -InputObject $this.$ObjName -MemberType NoteProperty -Name $($obj.LogicalID) -Value $($obj.Properties)
+                    Add-Member -InputObject $this.$ObjName -MemberType NoteProperty -Name $($obj.LogicalID) -Value $($obj.Props)
                 }
                 else {
                     throw "You must use one of the following object types with this parameter: $($allowedTypes -join ", ")"
@@ -70,7 +70,7 @@ function Import-Vaporshell {
                         Write-Verbose "The $ObjName property was not found on the Vaporshell template. Adding the property to the template now."
                         $this | Add-Member -MemberType NoteProperty -Name "$ObjName" -Value ([PSCustomObject]@{})
                     }
-                    Add-Member -InputObject $this.$ObjName -MemberType NoteProperty -Name $($obj.LogicalID) -Value $($obj.Properties)
+                    Add-Member -InputObject $this.$ObjName -MemberType NoteProperty -Name $($obj.LogicalID) -Value $($obj.Props)
                 }
                 else {
                     throw "You must use one of the following object types with this parameter: $($allowedTypes -join ", ")"
@@ -88,7 +88,7 @@ function Import-Vaporshell {
                         Write-Verbose "The $ObjName property was not found on the Vaporshell template. Adding the property to the template now."
                         $this | Add-Member -MemberType NoteProperty -Name "$ObjName" -Value ([PSCustomObject]@{})
                     }
-                    Add-Member -InputObject $this.$ObjName -MemberType NoteProperty -Name $($obj.LogicalID) -Value $($obj.Properties)
+                    Add-Member -InputObject $this.$ObjName -MemberType NoteProperty -Name $($obj.LogicalID) -Value $($obj.Props)
                 }
                 else {
                     throw "You must use one of the following object types with this parameter: $($allowedTypes -join ", ")"
@@ -106,7 +106,7 @@ function Import-Vaporshell {
                         Write-Verbose "The $ObjName property was not found on the Vaporshell template. Adding the property to the template now."
                         $this | Add-Member -MemberType NoteProperty -Name "$ObjName" -Value ([PSCustomObject]@{})
                     }
-                    Add-Member -InputObject $this.$ObjName -MemberType NoteProperty -Name $($obj.LogicalID) -Value $($obj.Properties)
+                    Add-Member -InputObject $this.$ObjName -MemberType NoteProperty -Name $($obj.LogicalID) -Value $($obj.Props)
                 }
                 else {
                     throw "You must use one of the following object types with this parameter: $($allowedTypes -join ", ")"
@@ -124,7 +124,7 @@ function Import-Vaporshell {
                         Write-Verbose "The $ObjName property was not found on the Vaporshell template. Adding the property to the template now."
                         $this | Add-Member -MemberType NoteProperty -Name "$ObjName" -Value ([PSCustomObject]@{})
                     }
-                    Add-Member -InputObject $this.$ObjName -MemberType NoteProperty -Name $($obj.LogicalID) -Value $($obj.Properties)
+                    Add-Member -InputObject $this.$ObjName -MemberType NoteProperty -Name $($obj.LogicalID) -Value $($obj.Props)
                 }
                 else {
                     throw "You must use one of the following object types with this parameter: $($allowedTypes -join ", ")"
@@ -139,7 +139,7 @@ function Import-Vaporshell {
             foreach ($obj in $args) {
                 if ([string]$($obj.PSTypeNames) -match "($(($allowedTypes|ForEach-Object{[RegEx]::Escape($_)}) -join '|'))") {
                     if ( -not ($this.$ObjName)) {
-                        $this | Add-Member -MemberType NoteProperty -Name "$ObjName" -Value $($obj.Properties)
+                        $this | Add-Member -MemberType NoteProperty -Name "$ObjName" -Value $($obj.Props)
                     }
                     else {
                         throw "There is already a $ObjName property on this object!"
