@@ -19,6 +19,12 @@ For those that are familiar with [Troposphere for Python by CloudTools](https://
 
 ***
 
+### Like what's happening and want to send over some coffee money for fuel? Invoke-Donation by clicking below!
+
+[![Donate through Paypal](http://i.imgur.com/bE5YaCm.gif)](https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&hosted_button_id=GU6CJMFGVP6ZS)
+
+***
+
 ## How to Install
 
 You can install the module directly from [Powershell Gallery](https://www.powershellgallery.com/packages/vaporshell) by running the following command in and administrator Powershell console:
