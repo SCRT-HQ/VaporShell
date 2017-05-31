@@ -99,13 +99,13 @@ function New-VaporResource {
         $Condition
     )
     if ($Condition) {
-        $Properties | Add-Member -MemberType NoteProperty -Name "Condition" -Value $Condition
+        $Properties | Add-Member -MemberType NoteProperty -Name "Condition" -Value $Condition -Force
     }
     $obj = [PSCustomObject][Ordered]@{
         "LogicalId" = $LogicalId
-        "Properties" = [PSCustomObject][Ordered]@{
+        "Props" = [PSCustomObject][Ordered]@{
             "Type" = $Type
-            "Properties" = $Properties
+            "Properties" = ($Properties)
         }
     }
     $obj | Add-ObjectDetail -TypeName 'Vaporshell.Resource'

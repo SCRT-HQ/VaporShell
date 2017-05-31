@@ -281,7 +281,7 @@ function New-VaporParameter {
     End {
         $obj = [PSCustomObject][Ordered]@{
             "LogicalId" = $LogicalId
-            "Properties" = $Properties
+            "Props" = $Properties
         }
         $obj | Add-ObjectDetail -TypeName 'Vaporshell.Parameter'
         Write-Verbose "Resulting JSON from $($MyInvocation.MyCommand): `n`n`t$(@{$obj.LogicalId = $obj.Properties} | ConvertTo-Json -Depth 5 -Compress)`n"

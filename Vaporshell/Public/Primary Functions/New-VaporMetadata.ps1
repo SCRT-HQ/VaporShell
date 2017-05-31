@@ -76,7 +76,7 @@ function New-VaporMetadata {
     )
     $obj = [PSCustomObject][Ordered]@{
         "LogicalId" = $LogicalId
-        "Properties" = $Metadata
+        "Props" = $Metadata
     }
     $obj | Add-ObjectDetail -TypeName 'Vaporshell.Metadata'
     Write-Verbose "Resulting JSON from $($MyInvocation.MyCommand): `n`n`t$(@{$obj.LogicalId = $obj.Properties} | ConvertTo-Json -Depth 5 -Compress)`n"

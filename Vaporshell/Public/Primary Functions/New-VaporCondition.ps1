@@ -97,7 +97,7 @@ function New-VaporCondition {
     )
     $obj = [PSCustomObject][Ordered]@{
         "LogicalId" = $LogicalId
-        "Properties" = $Condition
+        "Props" = $Condition
     }
     $obj | Add-ObjectDetail -TypeName 'Vaporshell.Condition'
     Write-Verbose "Resulting JSON from $($MyInvocation.MyCommand): `n`n`t$(@{$obj.LogicalId = $obj.Properties} | ConvertTo-Json -Depth 5 -Compress)`n"
