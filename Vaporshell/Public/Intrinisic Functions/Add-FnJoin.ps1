@@ -20,7 +20,7 @@ function Add-FnJoin {
     .EXAMPLE
         Add-FnSelect -Index 2 -ListOfObjects (Add-FnSplit -Delimiter "," -SourceString (Add-FnImportValue -ValueToImport "AccountSubnetIds"))
 
-        # When the template is exported, this will convert to: {"Fn::Select":["2",{"Fn::Split":[",",{"Fn::ImportValue":"AccountSubnetIds"}]}]}
+        When the template is exported, this will convert to: {"Fn::Select":["2",{"Fn::Split":[",",{"Fn::ImportValue":"AccountSubnetIds"}]}]}
 
     .NOTES
         For the Fn::Join delimiter, you cannot use any functions. You must specify a string value.

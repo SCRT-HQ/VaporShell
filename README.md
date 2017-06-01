@@ -116,6 +116,3 @@ $template.AddResource(
 )
 $template.AddOutput((New-VaporOutput -LogicalId "PrimaryLoadBalancerDNSName" -Description "The DNSName of the primary load balancer" -Value (Add-FnGetAtt -LogicalNameOfResource "PrimaryLoadBalancer" -AttributeName "DNSName") -Condition "CreateTestResources"))
 ```
-
-
-**WORK IN PROGRESS | Full documentation coming soon!** 

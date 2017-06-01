@@ -8,8 +8,8 @@ function Export-Vaporshell {
 
         Requires the Vaporshell input object to be type 'Vaporshell.Template'
     
-    .PARAMETER Vaporshell
-        The input object
+    .PARAMETER VaporshellTemplate
+        The input template object
     
     .PARAMETER Path
         Path to save the resulting JSON file.
@@ -18,9 +18,13 @@ function Export-Vaporshell {
         Forces an overwrite if the Path already exists
 
     .EXAMPLE
+        $Template = Initialize-Vaporshell -Description "This is a sample template that builds an S3 bucket"
+        # Add items to the $Template object here
         $Template | Export-Vaporshell -Path "C:\CloudFormation\Templates\S3Bucket.json" -Force
 
     .EXAMPLE
+        $Template = Initialize-Vaporshell -Description "This is a sample template that builds an S3 bucket"
+        # Add items to the $Template object here
         Export-Vaporshell -VaporshellTemplate $Template -Path "C:\CloudFormation\Templates\S3Bucket.json" -Force
 
     .FUNCTIONALITY

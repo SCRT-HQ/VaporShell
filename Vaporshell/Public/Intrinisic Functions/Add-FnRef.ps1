@@ -25,9 +25,9 @@ function Add-FnRef {
     .EXAMPLE
         # This uses the module's included variable that maps to the AWS Pseudo Parameter, "AWS::Region"
 
-        Add-FnRef -Ref $_AWSRegion
+        Add-FnRef -Ref "$_AWSRegion"
 
-        # When the template is exported, this will convert to: {"Fn::Base64":"AWS CloudFormation"}
+        When the template is exported, this will convert to: {"Ref":"AWS::Region"}
 
     .NOTES
         You cannot use any functions in the Ref function. You must specify a string that is a resource logical ID.

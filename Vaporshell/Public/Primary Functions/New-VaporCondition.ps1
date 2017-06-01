@@ -41,7 +41,7 @@ function New-VaporCondition {
             New-VaporCondition -LogicalId "CreateProdResources" -Condition (Add-ConEquals -FirstValue (Add-FnRef -Ref "EnvType") -SecondValue "prod")
         ))
 
-        # When the template is exported, this will convert to: 
+        When the template is exported, this will convert to: 
             {
                 "AWSTemplateFormatVersion":  "2010-09-09",
                 "Description":  "Testing Condition addition",

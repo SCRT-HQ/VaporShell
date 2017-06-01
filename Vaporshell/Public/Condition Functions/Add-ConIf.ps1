@@ -21,7 +21,7 @@ function Add-ConIf {
     .EXAMPLE
         Add-ConIf -ConditionName "CreateNewSecurityGroup" -ValueIfTrue (Add-FnRef -Ref "NewSecurityGroup") -ValueIfFalse (Add-FnRef -Ref "ExistingSecurityGroup")
 
-        # When the template is exported, this will convert to: {"Fn::If":["CreateNewSecurityGroup",{"Ref":"NewSecurityGroup"},{"Ref":"ExistingSecurityGroup"}]}
+        When the template is exported, this will convert to: {"Fn::If":["CreateNewSecurityGroup",{"Ref":"NewSecurityGroup"},{"Ref":"ExistingSecurityGroup"}]}
 
     .NOTES
         You can use the following functions in the Fn::If condition:

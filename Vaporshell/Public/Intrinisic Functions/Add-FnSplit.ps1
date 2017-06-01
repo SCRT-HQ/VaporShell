@@ -20,7 +20,7 @@ function Add-FnSplit {
     .EXAMPLE
         Add-FnSplit -Delimiter "," -SourceString (Add-FnImportValue -ValueToImport "AccountSubnetIds")
 
-        # When the template is exported, this will convert to: {"Fn::Split":[",",{"Fn::ImportValue":"AccountSubnetIds"}]}
+        When the template is exported, this will convert to: {"Fn::Split":[",",{"Fn::ImportValue":"AccountSubnetIds"}]}
 
     .NOTES
         For the Fn::Split delimiter, you cannot use any functions. You must specify a string value.

@@ -42,23 +42,23 @@ function New-VaporOutput {
             )
         )
 
-        # When the template is exported, this will convert to: 
-            {                                                                                                                      
-            "AWSTemplateFormatVersion": "2010-09-09",                                                                            
-            "Description": "Testing Output",                                                                                     
-            "Outputs": {                                                                                                         
-                    "BackupLoadBalancerDNSName": {                                                                                     
-                    "Description": "The DNSName of the backup load balancer",                                                        
-                    "Value": {                                                                                                       
-                        "Fn::GetAtt": [                                                                                                
-                        "BackupLoadBalancer",                                                                                        
-                        "DNSName"                                                                                                    
-                        ]                                                                                                              
-                    },                                                                                                               
-                    "Condition": "CreateProdResources"                                                                               
-                    }                                                                                                                  
-                }                                                                                                                    
-            }  
+        When the template is exported, this will convert to: 
+            {
+                "AWSTemplateFormatVersion": "2010-09-09",
+                "Description": "Testing Output",
+                "Outputs": {
+                    "BackupLoadBalancerDNSName": {
+                    "Description": "The DNSName of the backup load balancer",
+                    "Value": {
+                        "Fn::GetAtt": [
+                        "BackupLoadBalancer",
+                        "DNSName"
+                        ]
+                    },
+                    "Condition": "CreateProdResources"
+                    }
+                }
+            } 
 
     .FUNCTIONALITY
         Vaporshell

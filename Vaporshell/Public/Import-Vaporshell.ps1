@@ -15,6 +15,7 @@ function Import-Vaporshell {
     .FUNCTIONALITY
         Vaporshell
     #>
+    [OutputType('Vaporshell.Template')]
     [cmdletbinding()]
     Param
     (

@@ -15,12 +15,12 @@ function Add-FnBase64 {
     .EXAMPLE
         Add-FnBase64 -ValueToEncode "AWS CloudFormation"
 
-        # When the template is exported, this will convert to: {"Fn::Base64":"AWS CloudFormation"}
+        When the template is exported, this will convert to: {"Fn::Base64":"AWS CloudFormation"}
 
     .EXAMPLE
-        Add-FnBase64 -ValueToEncode (Add-FnRef $_AWSRegion)
+        Add-FnBase64 -ValueToEncode (Add-FnRef "$_AWSRegion"")
 
-        # When the template is exported, this will convert to: {"Fn::Base64":{"Ref":"AWS::Region"}}
+        When the template is exported, this will convert to: {"Fn::Base64":{"Ref":"AWS::Region"}}
 
     .NOTES
         You can use any function that returns a string inside the Fn::Base64 function.

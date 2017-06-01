@@ -15,7 +15,7 @@ function Add-ConNot {
     .EXAMPLE
         Add-ConNot -Condition (Add-ConEquals -FirstValue (Add-FnRef -Ref "EnvironmentType") -SecondValue "prod")
 
-        # When the template is exported, this will convert to: {"Fn::Equals":["sg-mysggroup",{"Ref":"ASecurityGroup"}]}
+        When the template is exported, this will convert to: {"Fn::Equals":["sg-mysggroup",{"Ref":"ASecurityGroup"}]}
 
     .NOTES
         You can use the following functions in this condition statement:

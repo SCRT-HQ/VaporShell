@@ -17,7 +17,7 @@ function Add-Include {
     .EXAMPLE
         Add-Include -Location "s3://MyAmazonS3BucketName/single_wait_condition.yaml"
 
-        # When the template is exported, this will convert to: {"Fn::Transform":{"Name":"AWS::Include","Parameters":{"Location":"s3://MyAmazonS3BucketName/single_wait_condition.yaml"}}}
+        When the template is exported, this will convert to: {"Fn::Transform":{"Name":"AWS::Include","Parameters":{"Location":"s3://MyAmazonS3BucketName/single_wait_condition.yaml"}}}
         # If used at the top level, the Logical ID will be 'Transform' instead of 'Fn::Transform'.
 
     .NOTES

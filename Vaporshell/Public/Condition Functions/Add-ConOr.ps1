@@ -15,7 +15,7 @@ function Add-ConOr {
     .EXAMPLE
         Add-ConOr -Conditions (Add-ConEquals -FirstValue "sg-mysggroup" -SecondValue (Add-FnRef -Ref "ASecurityGroup")),(Add-ConEquals -FirstValue "Production" -SecondValue (Add-FnRef -Ref "Environment"))
 
-        # When the template is exported, this will convert to: {"Fn::Or":[{"Fn::Equals":["sg-mysggroup",{"Ref":"ASecurityGroup"}]},{"Fn::Equals":["Production",{"Ref":"Environment"}]}]}
+        When the template is exported, this will convert to: {"Fn::Or":[{"Fn::Equals":["sg-mysggroup",{"Ref":"ASecurityGroup"}]},{"Fn::Equals":["Production",{"Ref":"Environment"}]}]}
 
     .NOTES
         You can use the following functions in this condition statement:

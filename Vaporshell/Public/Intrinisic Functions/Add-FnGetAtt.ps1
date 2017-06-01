@@ -18,7 +18,7 @@ function Add-FnGetAtt {
     .EXAMPLE
         Add-FnGetAtt -LogicalNameOfResource "MyLB" -AttributeName "DNSName"
 
-        # When the template is exported, this will convert to: {"Fn::GetAtt":["MyLB","DNSName"]}
+        When the template is exported, this will convert to: {"Fn::GetAtt":["MyLB","DNSName"]}
 
     .NOTES
         For the Fn::GetAtt logical resource name, you cannot use functions. You must specify a string that is a resource's logical ID.

@@ -19,9 +19,9 @@ function Add-FnFindInMap {
         The second-level key name, which is set to one of the keys from the list assigned to TopLevelKey. The value can be another function.
 
     .EXAMPLE
-        Add-FnFindInMap -MapName "RegionMap" -TopLevelKey (Add-FnRef -Ref $_AWSRegion) -SecondLevelKey "32"
+        Add-FnFindInMap -MapName "RegionMap" -TopLevelKey (Add-FnRef -Ref "$_AWSRegion") -SecondLevelKey "32"
 
-        # When the template is exported, this will convert to: {"Fn::FindInMap":["RegionMap",{"Ref":"AWS::Region"},"32"]}
+        When the template is exported, this will convert to: {"Fn::FindInMap":["RegionMap",{"Ref":"AWS::Region"},"32"]}
 
     .NOTES
         You can use the following functions in a Fn::FindInMap function:

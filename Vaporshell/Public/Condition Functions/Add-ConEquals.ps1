@@ -18,12 +18,12 @@ function Add-ConEquals {
     .EXAMPLE
         Add-ConEquals -FirstValue "sg-mysggroup" -SecondValue (Add-FnRef -Ref "ASecurityGroup")
 
-        # When the template is exported, this will convert to: {"Fn::Equals":["sg-mysggroup",{"Ref":"ASecurityGroup"}]}
+        When the template is exported, this will convert to: {"Fn::Equals":["sg-mysggroup",{"Ref":"ASecurityGroup"}]}
 
     .EXAMPLE
         Add-ConEquals -FirstValue (Add-FnRef -Ref "EnvironmentType") -SecondValue "prod"
 
-        # When the template is exported, this will convert to: {"Fn::Equals":[{"Ref":"EnvironmentType"},"prod"]}
+        When the template is exported, this will convert to: {"Fn::Equals":[{"Ref":"EnvironmentType"},"prod"]}
 
     .NOTES
         You can use the following functions in this condition statement:

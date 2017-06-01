@@ -7,6 +7,9 @@ function Initialize-Vaporshell {
         The starting point for your template buildout. This should always be the first thing called in your template script.
 
         This creates a PSObject, custom typed as 'Vaporshell.Template'. It builds out the containers for Metadata, Parameters, Mappings, Conditions, Resources and Outputs.
+
+    .PARAMETER FormatVersion
+        The AWSTemplateFormatVersion section (optional) identifies the capabilities of the template. The latest template format version is 2010-09-09 and is currently the only valid value.
     
     .PARAMETER Description
         The template description. Total byte count for the description has to be greater than 0 but less than 1024.

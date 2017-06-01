@@ -154,7 +154,7 @@ function New-VaporParameter {
             (New-VaporParameter -LogicalId "DBPwd" -NoEcho -Description "The Propertiesbase admin account password" -Type "String" -MinLength 1 -MaxLength 41 -AllowedPattern "^[a-zA-Z0-9]*$")
         )
 
-        # When the template is exported, this will convert to: 
+        When the template is exported, this will convert to: 
             {
                 "AWSTemplateFormatVersion":  "2010-09-09",
                 "Description":  "Testing Mapping addition",

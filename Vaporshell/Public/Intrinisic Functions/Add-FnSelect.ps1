@@ -23,7 +23,7 @@ function Add-FnSelect {
     .EXAMPLE
         Add-FnSelect -Index 2 -ListOfObjects (Add-FnSplit -Delimiter "," -SourceString (Add-FnImportValue -ValueToImport "AccountSubnetIds"))
 
-        # When the template is exported, this will convert to: {"Fn::Select":["2",{"Fn::Split":[",",{"Fn::ImportValue":"AccountSubnetIds"}]}]}
+        When the template is exported, this will convert to: {"Fn::Select":["2",{"Fn::Split":[",",{"Fn::ImportValue":"AccountSubnetIds"}]}]}
 
     .NOTES
         For the Fn::Select index value, you can use the Ref and Fn::FindInMap functions.

@@ -4,7 +4,7 @@ function Add-FnImportValue {
         Adds the intrinsic function "Fn::ImportValue" to a resource property
     
     .DESCRIPTION
-        The intrinsic function Fn::ImportValue returns the value of an output exported by another stack. You typically use this function to create cross-stack references. In the following example template snippets, Stack A exports VPC security group values and Stack B imports them.
+        The intrinsic function Fn::ImportValue returns the value of an output exported by another stack. You typically use this function to create cross-stack references.
 
         Note:
             The following restrictions apply to cross-stack references:
@@ -24,7 +24,7 @@ function Add-FnImportValue {
     .EXAMPLE
         Add-FnImportValue -ValueToImport (Add-FnSub -String "`${NetworkStackNameParameter}-SubnetID")
 
-        # When the template is exported, this will convert to: {"Fn::ImportValue":{"Fn::Sub":"${NetworkStackNameParameter}-SubnetID"}}
+        When the template is exported, this will convert to: {"Fn::ImportValue":{"Fn::Sub":"${NetworkStackNameParameter}-SubnetID"}}
 
     .NOTES
         You can use the following functions in the Fn::ImportValue function. The value of these functions can't depend on a resource.

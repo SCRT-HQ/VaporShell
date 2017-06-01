@@ -28,7 +28,7 @@ function Add-FnGetAZs {
     .EXAMPLE
         Add-FnImportValue -ValueToImport (Add-FnSub -String "`${NetworkStackNameParameter}-SubnetID")
 
-        # When the template is exported, this will convert to: {"Fn::ImportValue":{"Fn::Sub":"${NetworkStackNameParameter}-SubnetID"}}
+        When the template is exported, this will convert to: {"Fn::ImportValue":{"Fn::Sub":"${NetworkStackNameParameter}-SubnetID"}}
 
     .NOTES
         You can use the Ref function in the Fn::GetAZs function.

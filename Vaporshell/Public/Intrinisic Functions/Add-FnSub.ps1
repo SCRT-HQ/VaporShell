@@ -6,6 +6,11 @@ function Add-FnSub {
     .DESCRIPTION
         The intrinsic function Fn::Sub substitutes variables in an input string with values that you specify. In your templates, you can use this function to construct commands or outputs that include values that aren't available until you create or update a stack.
 
+        ** Important **
+            As Fn::Sub uses ${Var} syntax, it's important to remember to escape the $ at the head of the subbed variable when calling the function, otherwise Powershell will attempt to convert the variable into a value when adding it to the object and break the CloudFormation function's intended use.
+
+            Please see the example below for reference.
+
     .LINK
         http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/intrinsic-function-reference-sub.html
     
@@ -20,7 +25,7 @@ function Add-FnSub {
     .EXAMPLE
         Add-FnSub -String "www.`${Domain}" -Mapping @{Domain = (Add-FnRef -Ref "RootDomainName")}
 
-        # When the template is exported, this will convert to: {"Fn::Sub":["www.${Domain}",{"Domain":{"Ref":"RootDomainName"}}]}
+        When the template is exported, this will convert to: {"Fn::Sub":["www.${Domain}",{"Domain":{"Ref":"RootDomainName"}}]}
 
     .NOTES
         You can use the following functions in the Fn::Sub function:

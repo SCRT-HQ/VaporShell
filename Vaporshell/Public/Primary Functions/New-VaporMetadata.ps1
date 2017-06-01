@@ -30,7 +30,7 @@ function New-VaporMetadata {
             (New-VaporMetadata -LogicalId "Databases" -Metadata [PSCustomObject]@{"Description" = "Information about the databases"})
         )
 
-        # When the template is exported, this will convert to: 
+        When the template is exported, this will convert to: 
             {
                 "AWSTemplateFormatVersion":  "2010-09-09",
                 "Description":  "Testing Metadata addition",

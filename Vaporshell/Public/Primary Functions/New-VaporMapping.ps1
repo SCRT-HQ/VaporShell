@@ -46,7 +46,7 @@ function New-VaporMapping {
             })
         ))
 
-        # When the template is exported, this will convert to: 
+        When the template is exported, this will convert to: 
             {
                 "AWSTemplateFormatVersion":  "2010-09-09",
                 "Description":  "Testing Mapping addition",
