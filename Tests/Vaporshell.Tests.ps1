@@ -85,7 +85,7 @@ Describe "Initialize/Export/Import PS$PSVersion" {
         Set-StrictMode -Version latest
 
         It 'Should build template as an object' {
-            $testPath = "$ModulePath\Template.json"
+            $testPath = "C:\projects\Vaporshell\Template.json"
             $templateInit = Initialize-Vaporshell -Description "Testing"
             $templateInit.AddMetadata(
                 (
@@ -131,12 +131,144 @@ Describe "Initialize/Export/Import PS$PSVersion" {
 
         }
         It 'Should export template object as JSON' {
+            $testPath = "C:\projects\Vaporshell\Template.json"
+            $templateInit = Initialize-Vaporshell -Description "Testing"
+            $templateInit.AddMetadata(
+                (
+                    New-VaporMetadata -LogicalId "Instances" -Metadata @{"Description" = "Information about the instances"}
+                )
+            )
+            $templateInit.AddCondition(
+                (
+                    New-VaporCondition -LogicalId "CreateProdResources" -Condition (Add-ConEquals -FirstValue (Add-FnRef -Ref "EnvType") -SecondValue "prod")
+                ),
+                (
+                    Add-Include -Location "s3://MyAmazonS3BucketName/single_wait_condition.yaml"
+                )
+            )
+            $templateInit.AddMapping(
+                (
+                    New-VaporMapping -LogicalId "RegionMap" -Map ([PSCustomObject][Ordered]@{
+                            "us-east-1" = [PSCustomObject][Ordered]@{
+                                "32" = "ami-6411e20d"
+                                "64" = "ami-7a11e213"
+                            }
+                            "us-west-1" = [PSCustomObject][Ordered]@{
+                                "32" = "ami-c9c7978c"
+                                "64" = "ami-cfc7978a"
+                            }
+                        })
+                )
+            )
+            $templateInit.AddResource(
+                (
+                    New-VaporResource -LogicalId "MyInstance" -Type "AWS::EC2::Instance" -Properties ([PSCustomObject][Ordered]@{
+                            "UserData"   = (Add-FnBase64 -ValueToEncode (Add-FnJoin -ListOfValues "Queue=",(Add-FnRef -Ref "MyQueue")))
+                            "AvailabilityZone" = "us-east-1a"
+                            "ImageId"          = (Add-FnFindInMap -MapName "RegionMap" -TopLevelKey "$_AWSRegion" -SecondLevelKey "32")
+                        })
+                )
+            )
+            $templateInit.AddOutput(
+                (
+                    New-VaporOutput -LogicalId "BackupLoadBalancerDNSName" -Description "The DNSName of the backup load balancer" -Value (Add-FnGetAtt -LogicalNameOfResource "BackupLoadBalancer" -AttributeName "DNSName") -Condition "CreateProdResources"
+                )
+            )
             Export-Vaporshell -VaporshellTemplate $templateInit -Path $testPath -Force
         }
         It 'Should export import newly created JSON file as template object' {
+            $testPath = "C:\projects\Vaporshell\Template.json"
+            $templateInit = Initialize-Vaporshell -Description "Testing"
+            $templateInit.AddMetadata(
+                (
+                    New-VaporMetadata -LogicalId "Instances" -Metadata @{"Description" = "Information about the instances"}
+                )
+            )
+            $templateInit.AddCondition(
+                (
+                    New-VaporCondition -LogicalId "CreateProdResources" -Condition (Add-ConEquals -FirstValue (Add-FnRef -Ref "EnvType") -SecondValue "prod")
+                ),
+                (
+                    Add-Include -Location "s3://MyAmazonS3BucketName/single_wait_condition.yaml"
+                )
+            )
+            $templateInit.AddMapping(
+                (
+                    New-VaporMapping -LogicalId "RegionMap" -Map ([PSCustomObject][Ordered]@{
+                            "us-east-1" = [PSCustomObject][Ordered]@{
+                                "32" = "ami-6411e20d"
+                                "64" = "ami-7a11e213"
+                            }
+                            "us-west-1" = [PSCustomObject][Ordered]@{
+                                "32" = "ami-c9c7978c"
+                                "64" = "ami-cfc7978a"
+                            }
+                        })
+                )
+            )
+            $templateInit.AddResource(
+                (
+                    New-VaporResource -LogicalId "MyInstance" -Type "AWS::EC2::Instance" -Properties ([PSCustomObject][Ordered]@{
+                            "UserData"   = (Add-FnBase64 -ValueToEncode (Add-FnJoin -ListOfValues "Queue=",(Add-FnRef -Ref "MyQueue")))
+                            "AvailabilityZone" = "us-east-1a"
+                            "ImageId"          = (Add-FnFindInMap -MapName "RegionMap" -TopLevelKey "$_AWSRegion" -SecondLevelKey "32")
+                        })
+                )
+            )
+            $templateInit.AddOutput(
+                (
+                    New-VaporOutput -LogicalId "BackupLoadBalancerDNSName" -Description "The DNSName of the backup load balancer" -Value (Add-FnGetAtt -LogicalNameOfResource "BackupLoadBalancer" -AttributeName "DNSName") -Condition "CreateProdResources"
+                )
+            )
+            Export-Vaporshell -VaporshellTemplate $templateInit -Path $testPath -Force
             $template = Import-Vaporshell -Path $testPath
         }
         It 'Should export add new properties to the imported JSON object' {
+            $testPath = "C:\projects\Vaporshell\Template.json"
+            $templateInit = Initialize-Vaporshell -Description "Testing"
+            $templateInit.AddMetadata(
+                (
+                    New-VaporMetadata -LogicalId "Instances" -Metadata @{"Description" = "Information about the instances"}
+                )
+            )
+            $templateInit.AddCondition(
+                (
+                    New-VaporCondition -LogicalId "CreateProdResources" -Condition (Add-ConEquals -FirstValue (Add-FnRef -Ref "EnvType") -SecondValue "prod")
+                ),
+                (
+                    Add-Include -Location "s3://MyAmazonS3BucketName/single_wait_condition.yaml"
+                )
+            )
+            $templateInit.AddMapping(
+                (
+                    New-VaporMapping -LogicalId "RegionMap" -Map ([PSCustomObject][Ordered]@{
+                            "us-east-1" = [PSCustomObject][Ordered]@{
+                                "32" = "ami-6411e20d"
+                                "64" = "ami-7a11e213"
+                            }
+                            "us-west-1" = [PSCustomObject][Ordered]@{
+                                "32" = "ami-c9c7978c"
+                                "64" = "ami-cfc7978a"
+                            }
+                        })
+                )
+            )
+            $templateInit.AddResource(
+                (
+                    New-VaporResource -LogicalId "MyInstance" -Type "AWS::EC2::Instance" -Properties ([PSCustomObject][Ordered]@{
+                            "UserData"   = (Add-FnBase64 -ValueToEncode (Add-FnJoin -ListOfValues "Queue=",(Add-FnRef -Ref "MyQueue")))
+                            "AvailabilityZone" = "us-east-1a"
+                            "ImageId"          = (Add-FnFindInMap -MapName "RegionMap" -TopLevelKey "$_AWSRegion" -SecondLevelKey "32")
+                        })
+                )
+            )
+            $templateInit.AddOutput(
+                (
+                    New-VaporOutput -LogicalId "BackupLoadBalancerDNSName" -Description "The DNSName of the backup load balancer" -Value (Add-FnGetAtt -LogicalNameOfResource "BackupLoadBalancer" -AttributeName "DNSName") -Condition "CreateProdResources"
+                )
+            )
+            Export-Vaporshell -VaporshellTemplate $templateInit -Path $testPath -Force
+            $template = Import-Vaporshell -Path $testPath
             $template.AddMetadata(
                 (
                     New-VaporMetadata -LogicalId "Databases" -Metadata @{"Description" = "Information about the Databases"}
@@ -177,6 +309,89 @@ Describe "Initialize/Export/Import PS$PSVersion" {
             )
         }
         It 'Should show the correct types on each object' {
+            $testPath = "C:\projects\Vaporshell\Template.json"
+            $templateInit = Initialize-Vaporshell -Description "Testing"
+            $templateInit.AddMetadata(
+                (
+                    New-VaporMetadata -LogicalId "Instances" -Metadata @{"Description" = "Information about the instances"}
+                )
+            )
+            $templateInit.AddCondition(
+                (
+                    New-VaporCondition -LogicalId "CreateProdResources" -Condition (Add-ConEquals -FirstValue (Add-FnRef -Ref "EnvType") -SecondValue "prod")
+                ),
+                (
+                    Add-Include -Location "s3://MyAmazonS3BucketName/single_wait_condition.yaml"
+                )
+            )
+            $templateInit.AddMapping(
+                (
+                    New-VaporMapping -LogicalId "RegionMap" -Map ([PSCustomObject][Ordered]@{
+                            "us-east-1" = [PSCustomObject][Ordered]@{
+                                "32" = "ami-6411e20d"
+                                "64" = "ami-7a11e213"
+                            }
+                            "us-west-1" = [PSCustomObject][Ordered]@{
+                                "32" = "ami-c9c7978c"
+                                "64" = "ami-cfc7978a"
+                            }
+                        })
+                )
+            )
+            $templateInit.AddResource(
+                (
+                    New-VaporResource -LogicalId "MyInstance" -Type "AWS::EC2::Instance" -Properties ([PSCustomObject][Ordered]@{
+                            "UserData"   = (Add-FnBase64 -ValueToEncode (Add-FnJoin -ListOfValues "Queue=",(Add-FnRef -Ref "MyQueue")))
+                            "AvailabilityZone" = "us-east-1a"
+                            "ImageId"          = (Add-FnFindInMap -MapName "RegionMap" -TopLevelKey "$_AWSRegion" -SecondLevelKey "32")
+                        })
+                )
+            )
+            $templateInit.AddOutput(
+                (
+                    New-VaporOutput -LogicalId "BackupLoadBalancerDNSName" -Description "The DNSName of the backup load balancer" -Value (Add-FnGetAtt -LogicalNameOfResource "BackupLoadBalancer" -AttributeName "DNSName") -Condition "CreateProdResources"
+                )
+            )
+            Export-Vaporshell -VaporshellTemplate $templateInit -Path $testPath -Force
+            $template = Import-Vaporshell -Path $testPath
+            $template.AddMetadata(
+                (
+                    New-VaporMetadata -LogicalId "Databases" -Metadata @{"Description" = "Information about the Databases"}
+                )
+            )
+            $template.AddCondition(
+                (
+                    New-VaporCondition -LogicalId "CreateTestResources" -Condition (Add-ConEquals -FirstValue (Add-FnRef -Ref "EnvType") -SecondValue "test")
+                )
+            )
+            $template.AddMapping(
+                (
+                    New-VaporMapping -LogicalId "RegionMap2" -Map ([PSCustomObject][Ordered]@{
+                            "us-east-2" = [PSCustomObject][Ordered]@{
+                                "32" = "ami-6411e20d"
+                                "64" = "ami-7a11e213"
+                            }
+                            "us-west-2" = [PSCustomObject][Ordered]@{
+                                "32" = "ami-c9c7978c"
+                                "64" = "ami-cfc7978a"
+                            }
+                        })
+                )
+            )
+            $template.AddResource(
+                (
+                    New-VaporResource -LogicalId "MyInstance2" -Type "AWS::EC2::Instance" -Properties ([PSCustomObject][Ordered]@{
+                            "UserData"   = (Add-FnBase64 -ValueToEncode (Add-FnJoin -ListOfValues "Queue=",(Add-FnRef -Ref "MyQueue")))
+                            "AvailabilityZone" = "us-east-1b"
+                            "ImageId"          = (Add-FnFindInMap -MapName "RegionMap" -TopLevelKey "$_AWSRegion" -SecondLevelKey "32")
+                        })
+                )
+            )
+            $template.AddOutput(
+                (
+                    New-VaporOutput -LogicalId "PrimaryLoadBalancerDNSName" -Description "The DNSName of the primary load balancer" -Value (Add-FnGetAtt -LogicalNameOfResource "PrimaryLoadBalancer" -AttributeName "DNSName") -Condition "CreateTestResources"
+                )
+            )
             $template.AWSTemplateFormatVersion | Should BeOfType 'System.String'
             $template.Conditions | Should BeOfType 'System.Management.Automation.PSCustomObject'
             $template.Description | Should BeOfType 'System.String'
@@ -186,13 +401,103 @@ Describe "Initialize/Export/Import PS$PSVersion" {
             $template.Resources | Should BeOfType 'System.Management.Automation.PSCustomObject'
         }
         It 'Should re-export without issue to JSON' {
+            $testPath = "C:\projects\Vaporshell\Template.json"
+            $templateInit = Initialize-Vaporshell -Description "Testing"
+            $templateInit.AddMetadata(
+                (
+                    New-VaporMetadata -LogicalId "Instances" -Metadata @{"Description" = "Information about the instances"}
+                )
+            )
+            $templateInit.AddCondition(
+                (
+                    New-VaporCondition -LogicalId "CreateProdResources" -Condition (Add-ConEquals -FirstValue (Add-FnRef -Ref "EnvType") -SecondValue "prod")
+                ),
+                (
+                    Add-Include -Location "s3://MyAmazonS3BucketName/single_wait_condition.yaml"
+                )
+            )
+            $templateInit.AddMapping(
+                (
+                    New-VaporMapping -LogicalId "RegionMap" -Map ([PSCustomObject][Ordered]@{
+                            "us-east-1" = [PSCustomObject][Ordered]@{
+                                "32" = "ami-6411e20d"
+                                "64" = "ami-7a11e213"
+                            }
+                            "us-west-1" = [PSCustomObject][Ordered]@{
+                                "32" = "ami-c9c7978c"
+                                "64" = "ami-cfc7978a"
+                            }
+                        })
+                )
+            )
+            $templateInit.AddResource(
+                (
+                    New-VaporResource -LogicalId "MyInstance" -Type "AWS::EC2::Instance" -Properties ([PSCustomObject][Ordered]@{
+                            "UserData"   = (Add-FnBase64 -ValueToEncode (Add-FnJoin -ListOfValues "Queue=",(Add-FnRef -Ref "MyQueue")))
+                            "AvailabilityZone" = "us-east-1a"
+                            "ImageId"          = (Add-FnFindInMap -MapName "RegionMap" -TopLevelKey "$_AWSRegion" -SecondLevelKey "32")
+                        })
+                )
+            )
+            $templateInit.AddOutput(
+                (
+                    New-VaporOutput -LogicalId "BackupLoadBalancerDNSName" -Description "The DNSName of the backup load balancer" -Value (Add-FnGetAtt -LogicalNameOfResource "BackupLoadBalancer" -AttributeName "DNSName") -Condition "CreateProdResources"
+                )
+            )
+            Export-Vaporshell -VaporshellTemplate $templateInit -Path $testPath -Force
+            $template = Import-Vaporshell -Path $testPath
+            $template.AddMetadata(
+                (
+                    New-VaporMetadata -LogicalId "Databases" -Metadata @{"Description" = "Information about the Databases"}
+                )
+            )
+            $template.AddCondition(
+                (
+                    New-VaporCondition -LogicalId "CreateTestResources" -Condition (Add-ConEquals -FirstValue (Add-FnRef -Ref "EnvType") -SecondValue "test")
+                )
+            )
+            $template.AddMapping(
+                (
+                    New-VaporMapping -LogicalId "RegionMap2" -Map ([PSCustomObject][Ordered]@{
+                            "us-east-2" = [PSCustomObject][Ordered]@{
+                                "32" = "ami-6411e20d"
+                                "64" = "ami-7a11e213"
+                            }
+                            "us-west-2" = [PSCustomObject][Ordered]@{
+                                "32" = "ami-c9c7978c"
+                                "64" = "ami-cfc7978a"
+                            }
+                        })
+                )
+            )
+            $template.AddResource(
+                (
+                    New-VaporResource -LogicalId "MyInstance2" -Type "AWS::EC2::Instance" -Properties ([PSCustomObject][Ordered]@{
+                            "UserData"   = (Add-FnBase64 -ValueToEncode (Add-FnJoin -ListOfValues "Queue=",(Add-FnRef -Ref "MyQueue")))
+                            "AvailabilityZone" = "us-east-1b"
+                            "ImageId"          = (Add-FnFindInMap -MapName "RegionMap" -TopLevelKey "$_AWSRegion" -SecondLevelKey "32")
+                        })
+                )
+            )
+            $template.AddOutput(
+                (
+                    New-VaporOutput -LogicalId "PrimaryLoadBalancerDNSName" -Description "The DNSName of the primary load balancer" -Value (Add-FnGetAtt -LogicalNameOfResource "PrimaryLoadBalancer" -AttributeName "DNSName") -Condition "CreateTestResources"
+                )
+            )
+            $template.AWSTemplateFormatVersion | Should BeOfType 'System.String'
+            $template.Conditions | Should BeOfType 'System.Management.Automation.PSCustomObject'
+            $template.Description | Should BeOfType 'System.String'
+            $template.Mappings | Should BeOfType 'System.Management.Automation.PSCustomObject'
+            $template.Metadata | Should BeOfType 'System.Management.Automation.PSCustomObject'
+            $template.Outputs | Should BeOfType 'System.Management.Automation.PSCustomObject'
+            $template.Resources | Should BeOfType 'System.Management.Automation.PSCustomObject'
             $testPath2 = "C:\projects\Vaporshell\Template2.json"
-            Export-Vaporshell -VaporshellTemplate $templateInit -Path $testPath2 -Force
+            Export-Vaporshell -VaporshellTemplate $template -Path $testPath2 -Force
         }
         It 'Should pass aws cloudformation validate-template' {
-            aws cloudformation validate-template -template-body file://C:/projects/Vaporshell/Template2.json
+            aws cloudformation validate-template --template-body file://C:/projects/Vaporshell/Template2.json | Should BeOfType 'System.String'
         }
     }
 }
-Remove-Item "$ModulePath\Template.json" -Force -Confirm:$False
-Remove-Item $testPath2 -Force -Confirm:$False
+Remove-Item "C:\projects\Vaporshell\Template.json" -Force -Confirm:$False
+Remove-Item "C:\projects\Vaporshell\Template2.json" -Force -Confirm:$False
