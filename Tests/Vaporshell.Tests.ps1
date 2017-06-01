@@ -494,7 +494,14 @@ Describe "Initialize/Export/Import PS$PSVersion" {
             $testPath2 = "C:\projects\Vaporshell\Template2.json"
             Export-Vaporshell -VaporshellTemplate $template -Path $testPath2 -Force
         }
-        It 'Should pass aws cloudformation validate-template' {
+    }
+}
+Describe "Running aws cloudformation validate-template PS$PSVersion" {
+    Context 'Strict mode' {
+
+        Set-StrictMode -Version latest
+
+        It 'Should return System.String from validate-template' {
             aws cloudformation validate-template --template-body file://C:/projects/Vaporshell/Template2.json | Should BeOfType 'System.String'
         }
     }
