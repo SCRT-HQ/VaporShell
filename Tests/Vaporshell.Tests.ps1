@@ -84,7 +84,7 @@ Describe "Initialize/Export/Import PS$PSVersion" {
 
         Set-StrictMode -Version latest
 
-        It 'Should build template as correct JSON and be read back without error' {
+        It 'Should build template as an object' {
             $testPath = "$ModulePath\Template.json"
             $templateInit = Initialize-Vaporshell -Description "Testing"
             $templateInit.AddMetadata(
@@ -129,9 +129,14 @@ Describe "Initialize/Export/Import PS$PSVersion" {
                 )
             )
 
+        }
+        It 'Should export template object as JSON' {
             Export-Vaporshell -VaporshellTemplate $templateInit -Path $testPath -Force
+        }
+        It 'Should export import newly created JSON file as template object' {
             $template = Import-Vaporshell -Path $testPath
-
+        }
+        It 'Should export add new properties to the imported JSON object' {
             $template.AddMetadata(
                 (
                     New-VaporMetadata -LogicalId "Databases" -Metadata @{"Description" = "Information about the Databases"}
@@ -170,7 +175,8 @@ Describe "Initialize/Export/Import PS$PSVersion" {
                     New-VaporOutput -LogicalId "PrimaryLoadBalancerDNSName" -Description "The DNSName of the primary load balancer" -Value (Add-FnGetAtt -LogicalNameOfResource "PrimaryLoadBalancer" -AttributeName "DNSName") -Condition "CreateTestResources"
                 )
             )
-
+        }
+        It 'Should show the correct types on each object' {
             $template.AWSTemplateFormatVersion | Should BeOfType 'System.String'
             $template.Conditions | Should BeOfType 'System.Management.Automation.PSCustomObject'
             $template.Description | Should BeOfType 'System.String'
@@ -179,6 +185,14 @@ Describe "Initialize/Export/Import PS$PSVersion" {
             $template.Outputs | Should BeOfType 'System.Management.Automation.PSCustomObject'
             $template.Resources | Should BeOfType 'System.Management.Automation.PSCustomObject'
         }
+        It 'Should re-export without issue to JSON' {
+            $testPath2 = "C:\projects\Vaporshell\Template2.json"
+            Export-Vaporshell -VaporshellTemplate $templateInit -Path $testPath2 -Force
+        }
+        It 'Should pass aws cloudformation validate-template' {
+            aws cloudformation validate-template -template-body file://C:/projects/Vaporshell/Template2.json
+        }
     }
 }
 Remove-Item "$ModulePath\Template.json" -Force -Confirm:$False
+Remove-Item $testPath2 -Force -Confirm:$False
