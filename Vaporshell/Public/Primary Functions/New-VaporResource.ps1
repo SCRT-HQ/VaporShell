@@ -97,6 +97,38 @@ function New-VaporResource {
             })]
         $Properties,
         [parameter(Mandatory = $false,Position = 3)]
+        [ValidateScript( {
+                $allowedTypes = "Vaporshell.Resource.CreationPolicy"
+                if ([string]$($_.PSTypeNames) -match "($(($allowedTypes|ForEach-Object{[RegEx]::Escape($_)}) -join '|'))") {
+                    $true
+                }
+                else {
+                    throw "The CreationPolicy parameter only accepts the following types: $($allowedTypes -join ", "). The current types of the value are: $($_.PSTypeNames -join ", ")."
+                }
+            })]
+        $CreationPolicy,
+        [parameter(Mandatory = $false,Position = 4)]
+        [ValidateSet("Delete","Retain","Snapshot")]
+        [System.String]
+        $DeletionPolicy,
+        [parameter(Mandatory = $false,Position = 5)]
+        [System.String[]]
+        $DependsOn,
+        [parameter(Mandatory = $false,Position = 6)]
+        [System.Management.Automation.PSCustomObject]
+        $Metadata,
+        [parameter(Mandatory = $false,Position = 7)]
+        [ValidateScript( {
+                $allowedTypes = "Vaporshell.Resource.UpdatePolicy"
+                if ([string]$($_.PSTypeNames) -match "($(($allowedTypes|ForEach-Object{[RegEx]::Escape($_)}) -join '|'))") {
+                    $true
+                }
+                else {
+                    throw "The UpdatePolicy parameter only accepts the following types: $($allowedTypes -join ", "). The current types of the value are: $($_.PSTypeNames -join ", ")."
+                }
+            })]
+        $UpdatePolicy,
+        [parameter(Mandatory = $false,Position = 8)]
         $Condition
     )
     if ($Condition) {
@@ -109,6 +141,21 @@ function New-VaporResource {
             "Properties" = ($Properties)
         }
     }
+    if ($CreationPolicy) {
+        $obj.Props | Add-Member -MemberType NoteProperty -Name "CreationPolicy" -Value $CreationPolicy
+    }
+    if ($DeletionPolicy) {
+        $obj.Props | Add-Member -MemberType NoteProperty -Name "DeletionPolicy" -Value $DeletionPolicy
+    }
+    if ($DependsOn) {
+        $obj.Props | Add-Member -MemberType NoteProperty -Name "DependsOn" -Value $DependsOn
+    }
+    if ($Metadata) {
+        $obj.Props | Add-Member -MemberType NoteProperty -Name "Metadata" -Value $Metadata
+    }
+    if ($UpdatePolicy) {
+        $obj.Props | Add-Member -MemberType NoteProperty -Name "UpdatePolicy" -Value $UpdatePolicy
+    }
     $obj | Add-ObjectDetail -TypeName 'Vaporshell.Resource'
-    Write-Verbose "Resulting JSON from $($MyInvocation.MyCommand): `n`n`t$(@{$obj.LogicalId = $obj.Properties} | ConvertTo-Json -Depth 5 -Compress)`n"
+    Write-Verbose "Resulting JSON from $($MyInvocation.MyCommand): `n`n$(@{$obj.LogicalId = $obj.Props} | ConvertTo-Json -Depth 5)`n"
 }
