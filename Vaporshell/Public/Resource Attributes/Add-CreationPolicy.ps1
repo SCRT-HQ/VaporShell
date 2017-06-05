@@ -34,6 +34,61 @@ function Add-CreationPolicy {
 
         The value must be in ISO8601 duration format, in the form: "PT#H#M#S", where each # is the number of hours, minutes, and seconds, respectively. For best results, specify a period of time that gives your instances plenty of time to get up and running. A shorter timeout can cause a rollback.
 
+    .EXAMPLE
+        $templateInit = Initialize-Vaporshell -Description "Testing"
+        $templateInit.AddResource(
+            (
+                New-VaporResource -LogicalId "AutoScalingGroup" -Type "AWS::AutoScaling::AutoScalingGroup" -Properties ([PSCustomObject][Ordered]@{
+                        "AvailabilityZones"       = (Add-FnGetAZs -Region "$_AWSRegion")
+                        "LaunchConfigurationName" = (Add-FnRef -Ref "LaunchConfig")
+                        "DesiredCapacity"         = "3"
+                        "MinSize"                 = "1"
+                        "MaxSize"                 = "4"
+                    }) -CreationPolicy (Add-CreationPolicy -Count 3 -Timeout "PT15M") -UpdatePolicy (Add-UpdatePolicy -IgnoreUnmodifiedGroupSizeProperties True -MinInstancesInService 1 -MaxBatchSize 2 -WaitOnResourceSignals True -PauseTime "PT10M")
+            )
+        )
+
+        When the template is exported, this will convert to: 
+```json
+{
+    "AWSTemplateFormatVersion": "2010-09-09",
+    "Description": "Testing",
+    "Resources": {
+        "AutoScalingGroup": {
+            "Type": "AWS::AutoScaling::AutoScalingGroup",
+            "Properties": {
+                "AvailabilityZones": {
+                    "Fn::GetAZs": "AWS::Region"
+                },
+                "LaunchConfigurationName": {
+                    "Ref": "LaunchConfig"
+                },
+                "DesiredCapacity": "3",
+                "MinSize": "1",
+                "MaxSize": "4"
+            },
+            "CreationPolicy": {
+                "ResourceSignal": {
+                    "Count": "3",
+                    "Timeout": "PT15M"
+                }
+            },
+            "UpdatePolicy": {
+                "AutoScalingScheduledAction": {
+                    "IgnoreUnmodifiedGroupSizeProperties": "true"
+                },
+                "AutoScalingRollingUpdate": {
+                    "MinInstancesInService": "1",
+                    "MaxBatchSize": "2",
+                    "WaitOnResourceSignals": "true",
+                    "PauseTime": "PT10M"
+                }
+            }
+        }
+    }
+}
+```
+
     .FUNCTIONALITY
         Vaporshell
     #>
@@ -75,8 +130,8 @@ function Add-CreationPolicy {
         $Timeout
     )
     Begin {
-        if (!$MinSuccessfulInstancesPercent -and !$Count -and !$Timeout -and !$AutoScalingCreationPolicy -and !$ResourceSignal) {
-            throw "You must specify a value for at least one parameter."
+        if (!($PSBoundParameters.Keys.Count)) {
+            throw "No parameters passed! Please specify at least one parameter, otherwise exclude this call of $($MyInvocation.MyCommand)."
         }
         $obj = [PSCustomObject]@{}
         $ASCP = [PSCustomObject]@{}
@@ -88,14 +143,14 @@ function Add-CreationPolicy {
                 $obj | Add-Member -MemberType AutoScalingCreationPolicy -Name Count -Value $AutoScalingCreationPolicy
             }
             'MinSuccessfulInstancesPercent' {
-                $ASCP | Add-Member -MemberType NoteProperty -Name MinSuccessfulInstancesPercent -Value $MinSuccessfulInstancesPercent
+                $ASCP | Add-Member -MemberType NoteProperty -Name MinSuccessfulInstancesPercent -Value $($MinSuccessfulInstancesPercent.ToString())
                 $obj | Add-Member -MemberType NoteProperty -Name AutoScalingCreationPolicy -Value $ASCP
             }
             'ResourceSignal' {
                 $obj | Add-Member -MemberType ResourceSignal -Name Count -Value $ResourceSignal
             }
             'Count' {
-                $RS | Add-Member -MemberType NoteProperty -Name Count -Value $Count
+                $RS | Add-Member -MemberType NoteProperty -Name Count -Value $($Count.ToString())
             }
             'Timeout' {
                 $RS | Add-Member -MemberType NoteProperty -Name Timeout -Value $Timeout
@@ -107,6 +162,6 @@ function Add-CreationPolicy {
     }
     End {
         $obj | Add-ObjectDetail -TypeName 'Vaporshell.Resource.CreationPolicy'
-        Write-Verbose "Resulting JSON from $($MyInvocation.MyCommand): `n`n`t$($obj | ConvertTo-Json -Depth 5 -Compress)`n"
+        Write-Verbose "Resulting JSON from $($MyInvocation.MyCommand): `n`n`t$($obj | ConvertTo-Json -Depth 5)`n"
     }
 }

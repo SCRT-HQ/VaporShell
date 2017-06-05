@@ -58,10 +58,10 @@ function Export-Vaporshell {
     }
     Process {
         if ($Path) {
-            ConvertTo-Json -Depth 50 -InputObject $VaporshellTemplate -Verbose:$false | Set-Content -Path $Path @ForcePref -Verbose:$false 
+            ConvertTo-Json -Depth 100 -InputObject $VaporshellTemplate -Verbose:$false | Set-Content -Path $Path @ForcePref -Verbose:$false 
         }
         else {
-            ConvertTo-Json -Depth 50 -InputObject $VaporshellTemplate -Verbose:$false
+            ConvertTo-Json -Depth 100 -InputObject $VaporshellTemplate -Verbose:$false
         }
     }
 }
