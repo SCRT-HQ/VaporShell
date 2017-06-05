@@ -1,6 +1,6 @@
-| Master | Dev |
-|:------:|:---:|
-| [![Build status](https://ci.appveyor.com/api/projects/status/8a4jsfv42tbmlym8/branch/master?svg=true)](https://ci.appveyor.com/project/nferrell/vaporshell/branch/master) | [![Build status](https://ci.appveyor.com/api/projects/status/8a4jsfv42tbmlym8/branch/dev?svg=true)](https://ci.appveyor.com/project/nferrell/vaporshell/branch/dev)
+| AppVeyor (Windows) :: Master | AppVeyor (Windows) :: Dev | Travis CI (Linux/macOS) :: Master | Travis CI (Linux/macOS) :: Dev
+|:----------------------------:|:-------------------------:|:---------------------------------:|:------------------------------:|
+| [![Build status](https://ci.appveyor.com/api/projects/status/8a4jsfv42tbmlym8/branch/master?svg=true)](https://ci.appveyor.com/project/nferrell/vaporshell/branch/master) | [![Build status](https://ci.appveyor.com/api/projects/status/8a4jsfv42tbmlym8/branch/dev?svg=true)](https://ci.appveyor.com/project/nferrell/vaporshell/branch/dev) | [![Build Status](https://travis-ci.org/nferrell/Vaporshell.svg?branch=master)](https://travis-ci.org/nferrell/Vaporshell) | [![Build Status](https://travis-ci.org/nferrell/Vaporshell.svg?branch=dev)](https://travis-ci.org/nferrell/Vaporshell)
 
 # *Vaporshell*
 
