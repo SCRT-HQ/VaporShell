@@ -22,7 +22,7 @@ before_install:
       nvm install v6.0.0;
     fi
 install:
-  - rmdir ../Vaporshell --ignore-fail-on-non-empty
+  - rm -rf ../Vaporshell
   - git clone https://github.com/nferrell/Vaporshell.git ../Vaporshell
   - pushd Travis
   - ./download.sh
