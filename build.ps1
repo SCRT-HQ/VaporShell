@@ -7,4 +7,4 @@ Import-Module InvokeBuild, BuildHelpers
 Set-BuildEnvironment
 
 Invoke-Build Build .\.build.ps1
-exit ( [int]( -not $psake.build_success ) )
+exit
