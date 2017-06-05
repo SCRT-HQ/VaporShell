@@ -53,7 +53,7 @@ function New-ApiGatewayDeployment {
 
     .EXAMPLE
         $templateInit = Initialize-Vaporshell -Description "Testing New-ApiGatewayDeployment"
-        $templateInit.AddResource((New-ApiGatewayDeployment -LogicalId "GatewayDeployment" -Description "My deployment" -RestApiId (Add-FnRef -Ref "MyApi") -StageDescription (Add-ApiGatewayDeploymentStageDescription -Variables (Add-Variable -Name "ApiKey" -Value "kl234lkj23lfwe9") -CacheClusterEnabled True -CacheDataEncrypted False)))
+        $templateInit.AddResource((New-ApiGatewayDeployment -LogicalId "GatewayDeployment" -Description "My deployment" -RestApiId (Add-FnRef -Ref "MyApi") -StageDescription (Add-ApiGatewayDeploymentStageDescription -MethodSettings (Add-ApiGatewayDeploymentStageDescriptionMethodSetting -LoggingLevel ERROR) -Variables (Add-Variable -Name "ApiKey" -Value "kl234lkj23lfwe9") -CacheClusterEnabled True -CacheDataEncrypted False)))
 
         When the template is exported, this will convert to: 
 ```json
@@ -69,6 +69,9 @@ function New-ApiGatewayDeployment {
                     "Ref": "MyApi"
                 },
                 "StageDescription": {
+                    "MethodSettings": {
+                        "LoggingLevel": "ERROR"
+                    },
                     "Variables": {
                         "ApiKey": "kl234lkj23lfwe9"
                     },
@@ -197,7 +200,7 @@ function New-ApiGatewayDeployment {
     }
     End {
         $obj = New-VaporResource @ResourceParams
-        $obj | Add-ObjectDetail -TypeName 'Vaporshell.Resource.ApiGateway','Vaporshell.Resource.ApiGateway.Deployment'
+        $obj | Add-ObjectDetail -TypeName 'Vaporshell.Resource.ApiGateway.Deployment'
         Write-Verbose "Resulting JSON from $($MyInvocation.MyCommand): `n`n$(@{$obj.LogicalId = $obj.Props} | ConvertTo-Json -Depth 5)`n"
     }
 }
