@@ -2,7 +2,7 @@
 |:----------------------------:|:-------------------------:|:---------------------------------:|:------------------------------:|
 | [![Build status](https://ci.appveyor.com/api/projects/status/8a4jsfv42tbmlym8/branch/master?svg=true)](https://ci.appveyor.com/project/nferrell/vaporshell/branch/master) | [![Build status](https://ci.appveyor.com/api/projects/status/8a4jsfv42tbmlym8/branch/dev?svg=true)](https://ci.appveyor.com/project/nferrell/vaporshell/branch/dev) | _Coming soon!_ | _Coming soon!_
 
-##### _*Travis CI tests are currently being built out (not the best Linux admin myself admittedly), but the same tests being run within AppVeyor are being manually ran in terminal on an Ubuntu 16.04 LTS VM and a MacBook Pro running macOS Sierra without issue._  
+##### _*Travis CI tests are currently being built out (not the best Linux admin myself admittedly), but the same tests being run within AppVeyor are being manually ran in terminal on an Ubuntu 16.04 LTS VM and a MacBook Pro running macOS Sierra without issue._   
 
 # *Vaporshell*
 
