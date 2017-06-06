@@ -1,5 +1,8 @@
 # See http://www.appveyor.com/docs/appveyor-yml for many more options
 
+# set the clone folder for the project
+clone_folder: C:\projects\Vaporshell
+
 #Publish to PowerShell Gallery with this key
 environment:
   NuGetApiKey:
