@@ -4,7 +4,7 @@
 
 ##### _*Travis CI tests are currently being built out (not the best Linux admin myself admittedly), but the same tests being run within AppVeyor are being manually ran in terminal on an Ubuntu 16.04 LTS VM and a MacBook Pro running macOS Sierra without issue._   
 
-# *Vaporshell*
+# *Vaporshell* 
 
 ## **cloud**
 **/kloud/**  
