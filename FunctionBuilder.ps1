@@ -19,12 +19,12 @@ function Convert-SpecToFunction {
     switch ($Type) {
         Resource {
             $Dir = "$folder\Resource Types"
-            $FunctionName = "New-" + ($ShortName -replace "\..*").Replace("::","")
+            $FunctionName = "New-VS" + ($ShortName -replace "\..*").Replace("::","")
             $Synopsis = "Adds an $Name resource to the template"
         }
         Property {
             $Dir = "$folder\Resource Property Types"
-            $FunctionName = "Add-" + $ShortName.Replace("::","").Replace(".","")
+            $FunctionName = "Add-VS" + $ShortName.Replace("::","").Replace(".","")
             $Synopsis = "Adds an $Name resource property to the template"
         }
     }
