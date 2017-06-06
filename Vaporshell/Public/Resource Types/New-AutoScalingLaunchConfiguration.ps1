@@ -146,7 +146,6 @@ function New-AutoScalingLaunchConfiguration {
     .PARAMETER Condition
         Logical ID of the condition that this resource needs to be true in order for this resource to be provisioned.
 
-
     .FUNCTIONALITY
         Vaporshell
     #>
@@ -190,6 +189,8 @@ function New-AutoScalingLaunchConfiguration {
                 }
             })]
         $ClassicLinkVPCId,
+        [parameter(Mandatory = $false)]
+        $ClassicLinkVPCSecurityGroups,
         [parameter(Mandatory = $false)]
         [System.Boolean]
         $EbsOptimized,
@@ -284,6 +285,8 @@ function New-AutoScalingLaunchConfiguration {
                 }
             })]
         $RamDiskId,
+        [parameter(Mandatory = $false)]
+        $SecurityGroups,
         [parameter(Mandatory = $false)]
         [ValidateScript( {
                 $allowedTypes = "System.String","Vaporshell.Function"

@@ -98,7 +98,6 @@ function New-ECSService {
     .PARAMETER Condition
         Logical ID of the condition that this resource needs to be true in order for this resource to be provisioned.
 
-
     .FUNCTIONALITY
         Vaporshell
     #>
@@ -128,6 +127,8 @@ function New-ECSService {
                 }
             })]
         $Cluster,
+        [parameter(Mandatory = $false)]
+        $DeploymentConfiguration,
         [parameter(Mandatory = $false)]
         [Int]
         $DesiredCount,

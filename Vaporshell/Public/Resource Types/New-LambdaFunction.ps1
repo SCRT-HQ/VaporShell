@@ -118,7 +118,6 @@ function New-LambdaFunction {
     .PARAMETER Condition
         Logical ID of the condition that this resource needs to be true in order for this resource to be provisioned.
 
-
     .FUNCTIONALITY
         Vaporshell
     #>
@@ -137,6 +136,10 @@ function New-LambdaFunction {
             })]
         [System.String]
         $LogicalId,
+        [parameter(Mandatory = $true)]
+        $Code,
+        [parameter(Mandatory = $false)]
+        $DeadLetterConfig,
         [parameter(Mandatory = $false)]
         [ValidateScript( {
                 $allowedTypes = "System.String","Vaporshell.Function"
@@ -148,6 +151,8 @@ function New-LambdaFunction {
                 }
             })]
         $Description,
+        [parameter(Mandatory = $false)]
+        $Environment,
         [parameter(Mandatory = $false)]
         [ValidateScript( {
                 $allowedTypes = "System.String","Vaporshell.Function"
@@ -220,6 +225,8 @@ function New-LambdaFunction {
         [parameter(Mandatory = $false)]
         [Int]
         $Timeout,
+        [parameter(Mandatory = $false)]
+        $VpcConfig,
         [ValidateSet("Delete","Retain","Snapshot")]
         [System.String]
         $DeletionPolicy,

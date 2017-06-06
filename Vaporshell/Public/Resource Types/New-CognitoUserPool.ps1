@@ -137,7 +137,6 @@ function New-CognitoUserPool {
     .PARAMETER Condition
         Logical ID of the condition that this resource needs to be true in order for this resource to be provisioned.
 
-
     .FUNCTIONALITY
         Vaporshell
     #>
@@ -156,6 +155,10 @@ function New-CognitoUserPool {
             })]
         [System.String]
         $LogicalId,
+        [parameter(Mandatory = $false)]
+        $UserPoolTags,
+        [parameter(Mandatory = $false)]
+        $Policies,
         [parameter(Mandatory = $false)]
         [ValidateScript( {
                 $allowedTypes = "System.String","Vaporshell.Function"
@@ -178,6 +181,8 @@ function New-CognitoUserPool {
                 }
             })]
         $Schema,
+        [parameter(Mandatory = $false)]
+        $AdminCreateUserConfig,
         [parameter(Mandatory = $false)]
         [ValidateScript( {
                 $allowedTypes = "System.String","Vaporshell.Function"
@@ -212,6 +217,12 @@ function New-CognitoUserPool {
             })]
         $SmsVerificationMessage,
         [parameter(Mandatory = $false)]
+        $EmailConfiguration,
+        [parameter(Mandatory = $false)]
+        $SmsConfiguration,
+        [parameter(Mandatory = $false)]
+        $AliasAttributes,
+        [parameter(Mandatory = $false)]
         [ValidateScript( {
                 $allowedTypes = "System.String","Vaporshell.Function"
                 if ([string]$($_.PSTypeNames) -match "($(($allowedTypes|ForEach-Object{[RegEx]::Escape($_)}) -join '|'))") {
@@ -222,6 +233,12 @@ function New-CognitoUserPool {
                 }
             })]
         $EmailVerificationSubject,
+        [parameter(Mandatory = $false)]
+        $LambdaConfig,
+        [parameter(Mandatory = $false)]
+        $AutoVerifiedAttributes,
+        [parameter(Mandatory = $false)]
+        $DeviceConfiguration,
         [parameter(Mandatory = $false)]
         [ValidateScript( {
                 $allowedTypes = "System.String","Vaporshell.Function"

@@ -56,7 +56,6 @@ function New-CognitoIdentityPoolRoleAttachment {
     .PARAMETER Condition
         Logical ID of the condition that this resource needs to be true in order for this resource to be provisioned.
 
-
     .FUNCTIONALITY
         Vaporshell
     #>
@@ -75,6 +74,8 @@ function New-CognitoIdentityPoolRoleAttachment {
             })]
         [System.String]
         $LogicalId,
+        [parameter(Mandatory = $false)]
+        $RoleMappings,
         [parameter(Mandatory = $true)]
         [ValidateScript( {
                 $allowedTypes = "System.String","Vaporshell.Function"
@@ -86,6 +87,8 @@ function New-CognitoIdentityPoolRoleAttachment {
                 }
             })]
         $IdentityPoolId,
+        [parameter(Mandatory = $false)]
+        $Roles,
         [ValidateSet("Delete","Retain","Snapshot")]
         [System.String]
         $DeletionPolicy,

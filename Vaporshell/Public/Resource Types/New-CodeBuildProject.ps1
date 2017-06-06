@@ -93,7 +93,6 @@ function New-CodeBuildProject {
     .PARAMETER Condition
         Logical ID of the condition that this resource needs to be true in order for this resource to be provisioned.
 
-
     .FUNCTIONALITY
         Vaporshell
     #>
@@ -112,6 +111,8 @@ function New-CodeBuildProject {
             })]
         [System.String]
         $LogicalId,
+        [parameter(Mandatory = $false)]
+        $Artifacts,
         [parameter(Mandatory = $false)]
         [ValidateScript( {
                 $allowedTypes = "System.String","Vaporshell.Function"
@@ -135,6 +136,8 @@ function New-CodeBuildProject {
             })]
         $ServiceRole,
         [parameter(Mandatory = $false)]
+        $Environment,
+        [parameter(Mandatory = $false)]
         [ValidateScript( {
                 $allowedTypes = "System.String","Vaporshell.Function"
                 if ([string]$($_.PSTypeNames) -match "($(($allowedTypes|ForEach-Object{[RegEx]::Escape($_)}) -join '|'))") {
@@ -145,6 +148,8 @@ function New-CodeBuildProject {
                 }
             })]
         $EncryptionKey,
+        [parameter(Mandatory = $false)]
+        $Source,
         [parameter(Mandatory = $false)]
         [ValidateScript( {
                 $allowedTypes = "Vaporshell.Resource.CodeBuild.Project.Tag"

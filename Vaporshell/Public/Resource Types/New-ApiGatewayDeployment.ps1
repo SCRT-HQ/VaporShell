@@ -62,7 +62,6 @@ function New-ApiGatewayDeployment {
     .PARAMETER Condition
         Logical ID of the condition that this resource needs to be true in order for this resource to be provisioned.
 
-
     .FUNCTIONALITY
         Vaporshell
     #>
@@ -103,6 +102,8 @@ function New-ApiGatewayDeployment {
                 }
             })]
         $RestApiId,
+        [parameter(Mandatory = $false)]
+        $StageDescription,
         [parameter(Mandatory = $false)]
         [ValidateScript( {
                 $allowedTypes = "System.String","Vaporshell.Function"

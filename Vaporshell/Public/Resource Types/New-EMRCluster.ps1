@@ -130,7 +130,6 @@ function New-EMRCluster {
     .PARAMETER Condition
         Logical ID of the condition that this resource needs to be true in order for this resource to be provisioned.
 
-
     .FUNCTIONALITY
         Vaporshell
     #>
@@ -149,6 +148,8 @@ function New-EMRCluster {
             })]
         [System.String]
         $LogicalId,
+        [parameter(Mandatory = $false)]
+        $AdditionalInfo,
         [parameter(Mandatory = $false)]
         [ValidateScript( {
                 $allowedTypes = "Vaporshell.Resource.EMR.Cluster.Application"
@@ -193,6 +194,8 @@ function New-EMRCluster {
                 }
             })]
         $Configurations,
+        [parameter(Mandatory = $true)]
+        $Instances,
         [parameter(Mandatory = $true)]
         [ValidateScript( {
                 $allowedTypes = "System.String","Vaporshell.Function"

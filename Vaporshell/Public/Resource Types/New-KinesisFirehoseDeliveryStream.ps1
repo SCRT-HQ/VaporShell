@@ -62,7 +62,6 @@ function New-KinesisFirehoseDeliveryStream {
     .PARAMETER Condition
         Logical ID of the condition that this resource needs to be true in order for this resource to be provisioned.
 
-
     .FUNCTIONALITY
         Vaporshell
     #>
@@ -92,6 +91,12 @@ function New-KinesisFirehoseDeliveryStream {
                 }
             })]
         $DeliveryStreamName,
+        [parameter(Mandatory = $false)]
+        $ElasticsearchDestinationConfiguration,
+        [parameter(Mandatory = $false)]
+        $RedshiftDestinationConfiguration,
+        [parameter(Mandatory = $false)]
+        $S3DestinationConfiguration,
         [ValidateSet("Delete","Retain","Snapshot")]
         [System.String]
         $DeletionPolicy,

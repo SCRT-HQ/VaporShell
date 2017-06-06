@@ -157,7 +157,6 @@ function New-AutoScalingAutoScalingGroup {
     .PARAMETER Condition
         Logical ID of the condition that this resource needs to be true in order for this resource to be provisioned.
 
-
     .FUNCTIONALITY
         Vaporshell
     #>
@@ -176,6 +175,8 @@ function New-AutoScalingAutoScalingGroup {
             })]
         [System.String]
         $LogicalId,
+        [parameter(Mandatory = $false)]
+        $AvailabilityZones,
         [parameter(Mandatory = $false)]
         [ValidateScript( {
                 $allowedTypes = "System.String","Vaporshell.Function"
@@ -234,6 +235,8 @@ function New-AutoScalingAutoScalingGroup {
                 }
             })]
         $LaunchConfigurationName,
+        [parameter(Mandatory = $false)]
+        $LoadBalancerNames,
         [parameter(Mandatory = $true)]
         [ValidateScript( {
                 $allowedTypes = "System.String","Vaporshell.Function"
@@ -245,6 +248,8 @@ function New-AutoScalingAutoScalingGroup {
                 }
             })]
         $MaxSize,
+        [parameter(Mandatory = $false)]
+        $MetricsCollection,
         [parameter(Mandatory = $true)]
         [ValidateScript( {
                 $allowedTypes = "System.String","Vaporshell.Function"
@@ -256,6 +261,8 @@ function New-AutoScalingAutoScalingGroup {
                 }
             })]
         $MinSize,
+        [parameter(Mandatory = $false)]
+        $NotificationConfigurations,
         [parameter(Mandatory = $false)]
         [ValidateScript( {
                 $allowedTypes = "System.String","Vaporshell.Function"
@@ -278,6 +285,12 @@ function New-AutoScalingAutoScalingGroup {
                 }
             })]
         $Tags,
+        [parameter(Mandatory = $false)]
+        $TargetGroupARNs,
+        [parameter(Mandatory = $false)]
+        $TerminationPolicies,
+        [parameter(Mandatory = $false)]
+        $VPCZoneIdentifier,
         [parameter(Mandatory = $false)]
         [ValidateScript( {
                 $allowedTypes = "Vaporshell.Resource.CreationPolicy"

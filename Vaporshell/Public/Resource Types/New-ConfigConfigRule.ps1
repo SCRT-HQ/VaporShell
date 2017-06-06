@@ -74,7 +74,6 @@ function New-ConfigConfigRule {
     .PARAMETER Condition
         Logical ID of the condition that this resource needs to be true in order for this resource to be provisioned.
 
-
     .FUNCTIONALITY
         Vaporshell
     #>
@@ -116,6 +115,8 @@ function New-ConfigConfigRule {
             })]
         $Description,
         [parameter(Mandatory = $false)]
+        $InputParameters,
+        [parameter(Mandatory = $false)]
         [ValidateScript( {
                 $allowedTypes = "System.String","Vaporshell.Function"
                 if ([string]$($_.PSTypeNames) -match "($(($allowedTypes|ForEach-Object{[RegEx]::Escape($_)}) -join '|'))") {
@@ -126,6 +127,10 @@ function New-ConfigConfigRule {
                 }
             })]
         $MaximumExecutionFrequency,
+        [parameter(Mandatory = $false)]
+        $Scope,
+        [parameter(Mandatory = $true)]
+        $Source,
         [ValidateSet("Delete","Retain","Snapshot")]
         [System.String]
         $DeletionPolicy,

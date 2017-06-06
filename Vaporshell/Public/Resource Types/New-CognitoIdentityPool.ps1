@@ -101,7 +101,6 @@ function New-CognitoIdentityPool {
     .PARAMETER Condition
         Logical ID of the condition that this resource needs to be true in order for this resource to be provisioned.
 
-
     .FUNCTIONALITY
         Vaporshell
     #>
@@ -121,6 +120,8 @@ function New-CognitoIdentityPool {
         [System.String]
         $LogicalId,
         [parameter(Mandatory = $false)]
+        $PushSync,
+        [parameter(Mandatory = $false)]
         [ValidateScript( {
                 $allowedTypes = "Vaporshell.Resource.Cognito.IdentityPool.CognitoIdentityProvider"
                 if ([string]$($_.PSTypeNames) -match "($(($allowedTypes|ForEach-Object{[RegEx]::Escape($_)}) -join '|'))") {
@@ -132,6 +133,8 @@ function New-CognitoIdentityPool {
             })]
         $CognitoIdentityProviders,
         [parameter(Mandatory = $false)]
+        $CognitoEvents,
+        [parameter(Mandatory = $false)]
         [ValidateScript( {
                 $allowedTypes = "System.String","Vaporshell.Function"
                 if ([string]$($_.PSTypeNames) -match "($(($allowedTypes|ForEach-Object{[RegEx]::Escape($_)}) -join '|'))") {
@@ -142,6 +145,8 @@ function New-CognitoIdentityPool {
                 }
             })]
         $DeveloperProviderName,
+        [parameter(Mandatory = $false)]
+        $CognitoStreams,
         [parameter(Mandatory = $false)]
         [ValidateScript( {
                 $allowedTypes = "System.String","Vaporshell.Function"
@@ -156,6 +161,12 @@ function New-CognitoIdentityPool {
         [parameter(Mandatory = $true)]
         [System.Boolean]
         $AllowUnauthenticatedIdentities,
+        [parameter(Mandatory = $false)]
+        $SupportedLoginProviders,
+        [parameter(Mandatory = $false)]
+        $SamlProviderARNs,
+        [parameter(Mandatory = $false)]
+        $OpenIdConnectProviderARNs,
         [ValidateSet("Delete","Retain","Snapshot")]
         [System.String]
         $DeletionPolicy,

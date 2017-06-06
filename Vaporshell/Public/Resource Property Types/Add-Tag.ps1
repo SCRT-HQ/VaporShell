@@ -1,7 +1,7 @@
 function Add-Tag {
     <#
     .SYNOPSIS
-        Adds an AWS::ApiGateway::Method resource to the template
+        Adds an Tag resource property to the template
 
     .LINK
         http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-resource-tags.html
@@ -18,6 +18,9 @@ function Add-Tag {
 		Required: True
 		UpdateType: Immutable
 
+    .FUNCTIONALITY
+        Vaporshell
+    #>
     [OutputType('Vaporshell.Resource.Tag')]
     [cmdletbinding()]
     Param
@@ -43,7 +46,7 @@ function Add-Tag {
                     throw "This parameter only accepts the following types: $($allowedTypes -join ", "). The current types of the value are: $($_.PSTypeNames -join ", ")."
                 }
             })]
-        $Value,
+        $Value
     )
     Begin {
         $obj = [PSCustomObject]@{}

@@ -86,7 +86,6 @@ function New-IAMManagedPolicy {
     .PARAMETER Condition
         Logical ID of the condition that this resource needs to be true in order for this resource to be provisioned.
 
-
     .FUNCTIONALITY
         Vaporshell
     #>
@@ -117,6 +116,8 @@ function New-IAMManagedPolicy {
             })]
         $Description,
         [parameter(Mandatory = $false)]
+        $Groups,
+        [parameter(Mandatory = $false)]
         [ValidateScript( {
                 $allowedTypes = "System.String","Vaporshell.Function"
                 if ([string]$($_.PSTypeNames) -match "($(($allowedTypes|ForEach-Object{[RegEx]::Escape($_)}) -join '|'))") {
@@ -138,6 +139,12 @@ function New-IAMManagedPolicy {
                 }
             })]
         $Path,
+        [parameter(Mandatory = $true)]
+        $PolicyDocument,
+        [parameter(Mandatory = $false)]
+        $Roles,
+        [parameter(Mandatory = $false)]
+        $Users,
         [ValidateSet("Delete","Retain","Snapshot")]
         [System.String]
         $DeletionPolicy,

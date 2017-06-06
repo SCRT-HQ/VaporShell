@@ -90,7 +90,6 @@ function New-ElasticsearchDomain {
     .PARAMETER Condition
         Logical ID of the condition that this resource needs to be true in order for this resource to be provisioned.
 
-
     .FUNCTIONALITY
         Vaporshell
     #>
@@ -110,6 +109,8 @@ function New-ElasticsearchDomain {
         [System.String]
         $LogicalId,
         [parameter(Mandatory = $false)]
+        $AccessPolicies,
+        [parameter(Mandatory = $false)]
         [System.Collections.Hashtable]
         $AdvancedOptions,
         [parameter(Mandatory = $false)]
@@ -124,6 +125,10 @@ function New-ElasticsearchDomain {
             })]
         $DomainName,
         [parameter(Mandatory = $false)]
+        $EBSOptions,
+        [parameter(Mandatory = $false)]
+        $ElasticsearchClusterConfig,
+        [parameter(Mandatory = $false)]
         [ValidateScript( {
                 $allowedTypes = "System.String","Vaporshell.Function"
                 if ([string]$($_.PSTypeNames) -match "($(($allowedTypes|ForEach-Object{[RegEx]::Escape($_)}) -join '|'))") {
@@ -134,6 +139,8 @@ function New-ElasticsearchDomain {
                 }
             })]
         $ElasticsearchVersion,
+        [parameter(Mandatory = $false)]
+        $SnapshotOptions,
         [parameter(Mandatory = $false)]
         [ValidateScript( {
                 $allowedTypes = "Vaporshell.Resource.Elasticsearch.Domain.Tag"

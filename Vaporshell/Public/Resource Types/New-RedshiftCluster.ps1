@@ -194,7 +194,6 @@ function New-RedshiftCluster {
     .PARAMETER Condition
         Logical ID of the condition that this resource needs to be true in order for this resource to be provisioned.
 
-
     .FUNCTIONALITY
         Vaporshell
     #>
@@ -241,6 +240,8 @@ function New-RedshiftCluster {
                 }
             })]
         $ClusterParameterGroupName,
+        [parameter(Mandatory = $false)]
+        $ClusterSecurityGroups,
         [parameter(Mandatory = $false)]
         [ValidateScript( {
                 $allowedTypes = "System.String","Vaporshell.Function"
@@ -310,6 +311,8 @@ function New-RedshiftCluster {
                 }
             })]
         $HsmClientCertificateIdentifier,
+        [parameter(Mandatory = $false)]
+        $IamRoles,
         [parameter(Mandatory = $false)]
         [ValidateScript( {
                 $allowedTypes = "System.String","Vaporshell.Function"
@@ -407,6 +410,8 @@ function New-RedshiftCluster {
                 }
             })]
         $SnapshotIdentifier,
+        [parameter(Mandatory = $false)]
+        $VpcSecurityGroupIds,
         [ValidateSet("Delete","Retain","Snapshot")]
         [System.String]
         $DeletionPolicy,

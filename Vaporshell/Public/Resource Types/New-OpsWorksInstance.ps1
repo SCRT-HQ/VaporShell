@@ -172,7 +172,6 @@ function New-OpsWorksInstance {
     .PARAMETER Condition
         Logical ID of the condition that this resource needs to be true in order for this resource to be provisioned.
 
-
     .FUNCTIONALITY
         Vaporshell
     #>
@@ -261,6 +260,8 @@ function New-OpsWorksInstance {
         [System.Boolean]
         $EbsOptimized,
         [parameter(Mandatory = $false)]
+        $ElasticIps,
+        [parameter(Mandatory = $false)]
         [ValidateScript( {
                 $allowedTypes = "System.String","Vaporshell.Function"
                 if ([string]$($_.PSTypeNames) -match "($(($allowedTypes|ForEach-Object{[RegEx]::Escape($_)}) -join '|'))") {
@@ -285,6 +286,8 @@ function New-OpsWorksInstance {
                 }
             })]
         $InstanceType,
+        [parameter(Mandatory = $true)]
+        $LayerIds,
         [parameter(Mandatory = $false)]
         [ValidateScript( {
                 $allowedTypes = "System.String","Vaporshell.Function"
@@ -352,6 +355,8 @@ function New-OpsWorksInstance {
             })]
         $Tenancy,
         [parameter(Mandatory = $false)]
+        $TimeBasedAutoScaling,
+        [parameter(Mandatory = $false)]
         [ValidateScript( {
                 $allowedTypes = "System.String","Vaporshell.Function"
                 if ([string]$($_.PSTypeNames) -match "($(($allowedTypes|ForEach-Object{[RegEx]::Escape($_)}) -join '|'))") {
@@ -362,6 +367,8 @@ function New-OpsWorksInstance {
                 }
             })]
         $VirtualizationType,
+        [parameter(Mandatory = $false)]
+        $Volumes,
         [ValidateSet("Delete","Retain","Snapshot")]
         [System.String]
         $DeletionPolicy,

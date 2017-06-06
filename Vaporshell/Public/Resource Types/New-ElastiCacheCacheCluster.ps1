@@ -174,7 +174,6 @@ function New-ElastiCacheCacheCluster {
     .PARAMETER Condition
         Logical ID of the condition that this resource needs to be true in order for this resource to be provisioned.
 
-
     .FUNCTIONALITY
         Vaporshell
     #>
@@ -229,6 +228,8 @@ function New-ElastiCacheCacheCluster {
                 }
             })]
         $CacheParameterGroupName,
+        [parameter(Mandatory = $false)]
+        $CacheSecurityGroupNames,
         [parameter(Mandatory = $false)]
         [ValidateScript( {
                 $allowedTypes = "System.String","Vaporshell.Function"
@@ -302,6 +303,8 @@ function New-ElastiCacheCacheCluster {
             })]
         $PreferredAvailabilityZone,
         [parameter(Mandatory = $false)]
+        $PreferredAvailabilityZones,
+        [parameter(Mandatory = $false)]
         [ValidateScript( {
                 $allowedTypes = "System.String","Vaporshell.Function"
                 if ([string]$($_.PSTypeNames) -match "($(($allowedTypes|ForEach-Object{[RegEx]::Escape($_)}) -join '|'))") {
@@ -312,6 +315,8 @@ function New-ElastiCacheCacheCluster {
                 }
             })]
         $PreferredMaintenanceWindow,
+        [parameter(Mandatory = $false)]
+        $SnapshotArns,
         [parameter(Mandatory = $false)]
         [ValidateScript( {
                 $allowedTypes = "System.String","Vaporshell.Function"
@@ -348,6 +353,8 @@ function New-ElastiCacheCacheCluster {
                 }
             })]
         $Tags,
+        [parameter(Mandatory = $false)]
+        $VpcSecurityGroupIds,
         [ValidateSet("Delete","Retain","Snapshot")]
         [System.String]
         $DeletionPolicy,

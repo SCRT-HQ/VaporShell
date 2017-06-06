@@ -190,7 +190,6 @@ function New-OpsWorksStack {
     .PARAMETER Condition
         Logical ID of the condition that this resource needs to be true in order for this resource to be provisioned.
 
-
     .FUNCTIONALITY
         Vaporshell
     #>
@@ -224,8 +223,18 @@ function New-OpsWorksStack {
         [System.Collections.Hashtable]
         $Attributes,
         [parameter(Mandatory = $false)]
+        $ChefConfiguration,
+        [parameter(Mandatory = $false)]
+        $CloneAppIds,
+        [parameter(Mandatory = $false)]
         [System.Boolean]
         $ClonePermissions,
+        [parameter(Mandatory = $false)]
+        $ConfigurationManager,
+        [parameter(Mandatory = $false)]
+        $CustomCookbooksSource,
+        [parameter(Mandatory = $false)]
+        $CustomJson,
         [parameter(Mandatory = $false)]
         [ValidateScript( {
                 $allowedTypes = "System.String","Vaporshell.Function"

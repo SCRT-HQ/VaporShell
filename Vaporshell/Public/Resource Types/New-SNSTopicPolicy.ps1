@@ -52,7 +52,6 @@ function New-SNSTopicPolicy {
     .PARAMETER Condition
         Logical ID of the condition that this resource needs to be true in order for this resource to be provisioned.
 
-
     .FUNCTIONALITY
         Vaporshell
     #>
@@ -71,6 +70,10 @@ function New-SNSTopicPolicy {
             })]
         [System.String]
         $LogicalId,
+        [parameter(Mandatory = $true)]
+        $PolicyDocument,
+        [parameter(Mandatory = $true)]
+        $Topics,
         [ValidateSet("Delete","Retain","Snapshot")]
         [System.String]
         $DeletionPolicy,

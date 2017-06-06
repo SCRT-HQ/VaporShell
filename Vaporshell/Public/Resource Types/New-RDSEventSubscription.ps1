@@ -72,7 +72,6 @@ function New-RDSEventSubscription {
     .PARAMETER Condition
         Logical ID of the condition that this resource needs to be true in order for this resource to be provisioned.
 
-
     .FUNCTIONALITY
         Vaporshell
     #>
@@ -94,6 +93,8 @@ function New-RDSEventSubscription {
         [parameter(Mandatory = $false)]
         [System.Boolean]
         $Enabled,
+        [parameter(Mandatory = $false)]
+        $EventCategories,
         [parameter(Mandatory = $true)]
         [ValidateScript( {
                 $allowedTypes = "System.String","Vaporshell.Function"
@@ -105,6 +106,8 @@ function New-RDSEventSubscription {
                 }
             })]
         $SnsTopicArn,
+        [parameter(Mandatory = $false)]
+        $SourceIds,
         [parameter(Mandatory = $false)]
         [ValidateScript( {
                 $allowedTypes = "System.String","Vaporshell.Function"

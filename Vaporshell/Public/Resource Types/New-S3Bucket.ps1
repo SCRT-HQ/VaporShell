@@ -100,7 +100,6 @@ function New-S3Bucket {
     .PARAMETER Condition
         Logical ID of the condition that this resource needs to be true in order for this resource to be provisioned.
 
-
     .FUNCTIONALITY
         Vaporshell
     #>
@@ -142,6 +141,16 @@ function New-S3Bucket {
             })]
         $BucketName,
         [parameter(Mandatory = $false)]
+        $CorsConfiguration,
+        [parameter(Mandatory = $false)]
+        $LifecycleConfiguration,
+        [parameter(Mandatory = $false)]
+        $LoggingConfiguration,
+        [parameter(Mandatory = $false)]
+        $NotificationConfiguration,
+        [parameter(Mandatory = $false)]
+        $ReplicationConfiguration,
+        [parameter(Mandatory = $false)]
         [ValidateScript( {
                 $allowedTypes = "Vaporshell.Resource.S3.Bucket.Tag"
                 if ([string]$($_.PSTypeNames) -match "($(($allowedTypes|ForEach-Object{[RegEx]::Escape($_)}) -join '|'))") {
@@ -152,6 +161,10 @@ function New-S3Bucket {
                 }
             })]
         $Tags,
+        [parameter(Mandatory = $false)]
+        $VersioningConfiguration,
+        [parameter(Mandatory = $false)]
+        $WebsiteConfiguration,
         [ValidateSet("Delete","Retain","Snapshot")]
         [System.String]
         $DeletionPolicy,

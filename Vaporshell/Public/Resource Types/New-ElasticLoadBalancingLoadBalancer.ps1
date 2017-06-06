@@ -152,7 +152,6 @@ function New-ElasticLoadBalancingLoadBalancer {
     .PARAMETER Condition
         Logical ID of the condition that this resource needs to be true in order for this resource to be provisioned.
 
-
     .FUNCTIONALITY
         Vaporshell
     #>
@@ -172,6 +171,8 @@ function New-ElasticLoadBalancingLoadBalancer {
         [System.String]
         $LogicalId,
         [parameter(Mandatory = $false)]
+        $AccessLoggingPolicy,
+        [parameter(Mandatory = $false)]
         [ValidateScript( {
                 $allowedTypes = "Vaporshell.Resource.ElasticLoadBalancing.LoadBalancer.AppCookieStickinessPolicy"
                 if ([string]$($_.PSTypeNames) -match "($(($allowedTypes|ForEach-Object{[RegEx]::Escape($_)}) -join '|'))") {
@@ -183,8 +184,18 @@ function New-ElasticLoadBalancingLoadBalancer {
             })]
         $AppCookieStickinessPolicy,
         [parameter(Mandatory = $false)]
+        $AvailabilityZones,
+        [parameter(Mandatory = $false)]
+        $ConnectionDrainingPolicy,
+        [parameter(Mandatory = $false)]
+        $ConnectionSettings,
+        [parameter(Mandatory = $false)]
         [System.Boolean]
         $CrossZone,
+        [parameter(Mandatory = $false)]
+        $HealthCheck,
+        [parameter(Mandatory = $false)]
+        $Instances,
         [parameter(Mandatory = $false)]
         [ValidateScript( {
                 $allowedTypes = "Vaporshell.Resource.ElasticLoadBalancing.LoadBalancer.LBCookieStickinessPolicy"
@@ -240,6 +251,10 @@ function New-ElasticLoadBalancingLoadBalancer {
                 }
             })]
         $Scheme,
+        [parameter(Mandatory = $false)]
+        $SecurityGroups,
+        [parameter(Mandatory = $false)]
+        $Subnets,
         [parameter(Mandatory = $false)]
         [ValidateScript( {
                 $allowedTypes = "Vaporshell.Resource.ElasticLoadBalancing.LoadBalancer.Tag"

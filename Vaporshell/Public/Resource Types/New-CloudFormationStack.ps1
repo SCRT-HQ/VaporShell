@@ -74,7 +74,6 @@ function New-CloudFormationStack {
     .PARAMETER Condition
         Logical ID of the condition that this resource needs to be true in order for this resource to be provisioned.
 
-
     .FUNCTIONALITY
         Vaporshell
     #>
@@ -93,6 +92,8 @@ function New-CloudFormationStack {
             })]
         [System.String]
         $LogicalId,
+        [parameter(Mandatory = $false)]
+        $NotificationARNs,
         [parameter(Mandatory = $false)]
         [System.Collections.Hashtable]
         $Parameters,

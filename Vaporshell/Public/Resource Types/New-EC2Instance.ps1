@@ -233,7 +233,6 @@ function New-EC2Instance {
     .PARAMETER Condition
         Logical ID of the condition that this resource needs to be true in order for this resource to be provisioned.
 
-
     .FUNCTIONALITY
         Vaporshell
     #>
@@ -440,6 +439,10 @@ function New-EC2Instance {
                 }
             })]
         $RamdiskId,
+        [parameter(Mandatory = $false)]
+        $SecurityGroupIds,
+        [parameter(Mandatory = $false)]
+        $SecurityGroups,
         [parameter(Mandatory = $false)]
         [System.Boolean]
         $SourceDestCheck,

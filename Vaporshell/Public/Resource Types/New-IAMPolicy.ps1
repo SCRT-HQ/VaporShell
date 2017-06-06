@@ -74,7 +74,6 @@ function New-IAMPolicy {
     .PARAMETER Condition
         Logical ID of the condition that this resource needs to be true in order for this resource to be provisioned.
 
-
     .FUNCTIONALITY
         Vaporshell
     #>
@@ -93,6 +92,10 @@ function New-IAMPolicy {
             })]
         [System.String]
         $LogicalId,
+        [parameter(Mandatory = $false)]
+        $Groups,
+        [parameter(Mandatory = $true)]
+        $PolicyDocument,
         [parameter(Mandatory = $true)]
         [ValidateScript( {
                 $allowedTypes = "System.String","Vaporshell.Function"
@@ -104,6 +107,10 @@ function New-IAMPolicy {
                 }
             })]
         $PolicyName,
+        [parameter(Mandatory = $false)]
+        $Roles,
+        [parameter(Mandatory = $false)]
+        $Users,
         [ValidateSet("Delete","Retain","Snapshot")]
         [System.String]
         $DeletionPolicy,

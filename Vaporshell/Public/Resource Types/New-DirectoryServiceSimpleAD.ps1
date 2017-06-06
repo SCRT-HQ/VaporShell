@@ -86,7 +86,6 @@ function New-DirectoryServiceSimpleAD {
     .PARAMETER Condition
         Logical ID of the condition that this resource needs to be true in order for this resource to be provisioned.
 
-
     .FUNCTIONALITY
         Vaporshell
     #>
@@ -166,6 +165,8 @@ function New-DirectoryServiceSimpleAD {
                 }
             })]
         $Size,
+        [parameter(Mandatory = $true)]
+        $VpcSettings,
         [ValidateSet("Delete","Retain","Snapshot")]
         [System.String]
         $DeletionPolicy,

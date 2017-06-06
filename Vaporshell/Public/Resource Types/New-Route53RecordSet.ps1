@@ -124,7 +124,6 @@ function New-Route53RecordSet {
     .PARAMETER Condition
         Logical ID of the condition that this resource needs to be true in order for this resource to be provisioned.
 
-
     .FUNCTIONALITY
         Vaporshell
     #>
@@ -143,6 +142,8 @@ function New-Route53RecordSet {
             })]
         [System.String]
         $LogicalId,
+        [parameter(Mandatory = $false)]
+        $AliasTarget,
         [parameter(Mandatory = $false)]
         [ValidateScript( {
                 $allowedTypes = "System.String","Vaporshell.Function"
@@ -165,6 +166,8 @@ function New-Route53RecordSet {
                 }
             })]
         $Failover,
+        [parameter(Mandatory = $false)]
+        $GeoLocation,
         [parameter(Mandatory = $false)]
         [ValidateScript( {
                 $allowedTypes = "System.String","Vaporshell.Function"
@@ -220,6 +223,8 @@ function New-Route53RecordSet {
                 }
             })]
         $Region,
+        [parameter(Mandatory = $false)]
+        $ResourceRecords,
         [parameter(Mandatory = $false)]
         [ValidateScript( {
                 $allowedTypes = "System.String","Vaporshell.Function"

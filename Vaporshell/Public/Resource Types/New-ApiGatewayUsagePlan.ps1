@@ -70,7 +70,6 @@ function New-ApiGatewayUsagePlan {
     .PARAMETER Condition
         Logical ID of the condition that this resource needs to be true in order for this resource to be provisioned.
 
-
     .FUNCTIONALITY
         Vaporshell
     #>
@@ -111,6 +110,10 @@ function New-ApiGatewayUsagePlan {
                 }
             })]
         $Description,
+        [parameter(Mandatory = $false)]
+        $Quota,
+        [parameter(Mandatory = $false)]
+        $Throttle,
         [parameter(Mandatory = $false)]
         [ValidateScript( {
                 $allowedTypes = "System.String","Vaporshell.Function"

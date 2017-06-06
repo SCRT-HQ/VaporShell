@@ -266,7 +266,6 @@ function New-RDSDBInstance {
     .PARAMETER Condition
         Logical ID of the condition that this resource needs to be true in order for this resource to be provisioned.
 
-
     .FUNCTIONALITY
         Vaporshell
     #>
@@ -390,6 +389,8 @@ function New-RDSDBInstance {
                 }
             })]
         $DBParameterGroupName,
+        [parameter(Mandatory = $false)]
+        $DBSecurityGroups,
         [parameter(Mandatory = $false)]
         [ValidateScript( {
                 $allowedTypes = "System.String","Vaporshell.Function"
@@ -614,6 +615,8 @@ function New-RDSDBInstance {
                 }
             })]
         $Timezone,
+        [parameter(Mandatory = $false)]
+        $VPCSecurityGroups,
         [ValidateSet("Delete","Retain","Snapshot")]
         [System.String]
         $DeletionPolicy,

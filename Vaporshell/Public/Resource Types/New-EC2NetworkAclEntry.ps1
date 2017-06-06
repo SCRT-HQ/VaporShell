@@ -92,7 +92,6 @@ function New-EC2NetworkAclEntry {
     .PARAMETER Condition
         Logical ID of the condition that this resource needs to be true in order for this resource to be provisioned.
 
-
     .FUNCTIONALITY
         Vaporshell
     #>
@@ -126,6 +125,8 @@ function New-EC2NetworkAclEntry {
         [System.Boolean]
         $Egress,
         [parameter(Mandatory = $false)]
+        $Icmp,
+        [parameter(Mandatory = $false)]
         [ValidateScript( {
                 $allowedTypes = "System.String","Vaporshell.Function"
                 if ([string]$($_.PSTypeNames) -match "($(($allowedTypes|ForEach-Object{[RegEx]::Escape($_)}) -join '|'))") {
@@ -147,6 +148,8 @@ function New-EC2NetworkAclEntry {
                 }
             })]
         $NetworkAclId,
+        [parameter(Mandatory = $false)]
+        $PortRange,
         [parameter(Mandatory = $true)]
         [Int]
         $Protocol,

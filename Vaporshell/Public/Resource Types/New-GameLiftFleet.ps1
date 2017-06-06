@@ -108,7 +108,6 @@ function New-GameLiftFleet {
     .PARAMETER Condition
         Logical ID of the condition that this resource needs to be true in order for this resource to be provisioned.
 
-
     .FUNCTIONALITY
         Vaporshell
     #>
@@ -174,6 +173,8 @@ function New-GameLiftFleet {
                 }
             })]
         $EC2InstanceType,
+        [parameter(Mandatory = $false)]
+        $LogPaths,
         [parameter(Mandatory = $false)]
         [Int]
         $MaxSize,

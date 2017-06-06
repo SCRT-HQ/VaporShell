@@ -66,7 +66,6 @@ function New-IAMGroup {
     .PARAMETER Condition
         Logical ID of the condition that this resource needs to be true in order for this resource to be provisioned.
 
-
     .FUNCTIONALITY
         Vaporshell
     #>
@@ -96,6 +95,8 @@ function New-IAMGroup {
                 }
             })]
         $GroupName,
+        [parameter(Mandatory = $false)]
+        $ManagedPolicyArns,
         [parameter(Mandatory = $false)]
         [ValidateScript( {
                 $allowedTypes = "System.String","Vaporshell.Function"

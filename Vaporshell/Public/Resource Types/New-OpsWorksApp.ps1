@@ -118,7 +118,6 @@ function New-OpsWorksApp {
     .PARAMETER Condition
         Logical ID of the condition that this resource needs to be true in order for this resource to be provisioned.
 
-
     .FUNCTIONALITY
         Vaporshell
     #>
@@ -137,6 +136,8 @@ function New-OpsWorksApp {
             })]
         [System.String]
         $LogicalId,
+        [parameter(Mandatory = $false)]
+        $AppSource,
         [parameter(Mandatory = $false)]
         [System.Collections.Hashtable]
         $Attributes,
@@ -162,6 +163,8 @@ function New-OpsWorksApp {
                 }
             })]
         $Description,
+        [parameter(Mandatory = $false)]
+        $Domains,
         [parameter(Mandatory = $false)]
         [System.Boolean]
         $EnableSsl,
@@ -198,6 +201,8 @@ function New-OpsWorksApp {
                 }
             })]
         $Shortname,
+        [parameter(Mandatory = $false)]
+        $SslConfiguration,
         [parameter(Mandatory = $true)]
         [ValidateScript( {
                 $allowedTypes = "System.String","Vaporshell.Function"

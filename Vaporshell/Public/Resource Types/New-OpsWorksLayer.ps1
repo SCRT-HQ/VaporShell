@@ -154,7 +154,6 @@ function New-OpsWorksLayer {
     .PARAMETER Condition
         Logical ID of the condition that this resource needs to be true in order for this resource to be provisioned.
 
-
     .FUNCTIONALITY
         Vaporshell
     #>
@@ -193,12 +192,22 @@ function New-OpsWorksLayer {
                 }
             })]
         $CustomInstanceProfileArn,
+        [parameter(Mandatory = $false)]
+        $CustomJson,
+        [parameter(Mandatory = $false)]
+        $CustomRecipes,
+        [parameter(Mandatory = $false)]
+        $CustomSecurityGroupIds,
         [parameter(Mandatory = $true)]
         [System.Boolean]
         $EnableAutoHealing,
         [parameter(Mandatory = $false)]
         [System.Boolean]
         $InstallUpdatesOnBoot,
+        [parameter(Mandatory = $false)]
+        $LifecycleEventConfiguration,
+        [parameter(Mandatory = $false)]
+        $LoadBasedAutoScaling,
         [parameter(Mandatory = $true)]
         [ValidateScript( {
                 $allowedTypes = "System.String","Vaporshell.Function"
@@ -210,6 +219,8 @@ function New-OpsWorksLayer {
                 }
             })]
         $Name,
+        [parameter(Mandatory = $false)]
+        $Packages,
         [parameter(Mandatory = $true)]
         [ValidateScript( {
                 $allowedTypes = "System.String","Vaporshell.Function"

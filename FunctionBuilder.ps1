@@ -19,12 +19,13 @@ function Convert-SpecToFunction {
     switch ($Type) {
         Resource {
             $Dir = "$folder\Resource Types"
-            $FunctionName = "New-" + $ShortName.Replace("::","")
+            $FunctionName = "New-" + ($ShortName -replace "\..*").Replace("::","")
             $Synopsis = "Adds an $Name resource to the template"
         }
         Property {
             $Dir = "$folder\Resource Property Types"
-            $FunctionName = "Add-" + $ShortName.Replace("::","")
+            $FunctionName = "Add-" + $ShortName.Replace("::","").Replace(".","")
+            $Synopsis = "Adds an $Name resource property to the template"
         }
     }
     $PS1Path = "$Dir\$FunctionName.ps1"
@@ -95,15 +96,13 @@ if ($Type -ne "Property") {
     
 
     .PARAMETER Condition
-        Logical ID of the condition that this resource needs to be true in order for this resource to be provisioned.
-
-
-    .FUNCTIONALITY
-        Vaporshell
-    #>
+        Logical ID of the condition that this resource needs to be true in order for this resource to be provisioned.`n
 "@
 }
 $scriptContents += @"
+    .FUNCTIONALITY
+        Vaporshell
+    #>
     [OutputType('$TypeName')]
     [cmdletbinding()]
     Param
@@ -124,7 +123,20 @@ if ($Type -ne "Property") {
         `$LogicalId,
 "@
 }
+$PCount = 0
+$Properties | ForEach-Object {$PCount++}
+$i = 0
 foreach ($Prop in $Properties) {
+    $i++
+    if ($Type -ne "Property"){
+        $ParamName = "$($Prop.Name),"
+    }
+    elseif ($i -lt [int]$PCount) {
+        $ParamName = "$($Prop.Name),"
+    }
+    else {
+        $ParamName = "$($Prop.Name)"
+    }
     if ($Prop.Value.Required -eq "True"){
         $Mandatory = '$true'
     }
@@ -144,28 +156,28 @@ foreach ($Prop in $Properties) {
                     throw "This parameter only accepts the following types: `$(`$allowedTypes -join ", "). The current types of the value are: `$(`$_.PSTypeNames -join ", ")."
                 }
             })]
-        `$$($Prop.Name),
+        `$$ParamName
 "@
     }
     elseif ($Prop.Value.Type -eq "Map") {
         $scriptContents += @"
         [parameter(Mandatory = $Mandatory)]
         [System.Collections.Hashtable]
-        `$$($Prop.Name),
+        `$$ParamName
 "@
     }
     elseif ($Prop.Value.PrimitiveType -eq "Integer" -or $Prop.Value.PrimitiveType -eq "Double" -or $Prop.Value.PrimitiveType -eq "Number") {
         $scriptContents += @"
         [parameter(Mandatory = $Mandatory)]
         [Int]
-        `$$($Prop.Name),
+        `$$ParamName
 "@
     }
     elseif ($Prop.Value.PrimitiveType -eq "Boolean") {
         $scriptContents += @"
         [parameter(Mandatory = $Mandatory)]
         [System.Boolean]
-        `$$($Prop.Name),
+        `$$ParamName
 "@
     }
     elseif ($Prop.Value.PrimitiveType -eq "String") {
@@ -180,7 +192,13 @@ foreach ($Prop in $Properties) {
                     throw "This parameter only accepts the following types: `$(`$allowedTypes -join ", "). The current types of the value are: `$(`$_.PSTypeNames -join ", ")."
                 }
             })]
-        `$$($Prop.Name),
+        `$$ParamName
+"@
+    }
+    else{
+        $scriptContents += @"
+        [parameter(Mandatory = $Mandatory)]
+        `$$ParamName
 "@
     }
 }
