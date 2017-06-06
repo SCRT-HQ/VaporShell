@@ -36,6 +36,9 @@ function $FunctionName {
     .SYNOPSIS
         $Synopsis
 
+    .DESCRIPTION
+        $Synopsis
+
     .LINK
         $Link
 
@@ -282,8 +285,11 @@ if ($Type -ne "Property") {
                         `$ResourceParams.Add("Properties",([PSCustomObject]@{}))
                     }
                     `$val = `$((Get-Variable `$key).Value)
-                    if (`$val -eq "True" -or `$val -eq "False") {
-                        `$val = `$val.ToLower()
+                    if (`$val -eq "True") {
+                        `$val = "true"
+                    }
+                    elseif (`$val -eq "False") {
+                        `$val = "false"
                     }
                     `$ResourceParams["Properties"] | Add-Member -MemberType NoteProperty -Name `$key -Value `$val
                 }
@@ -307,8 +313,11 @@ $scriptContents += @"
     Process {
         foreach (`$key in `$PSBoundParameters.Keys) {
             `$val = `$((Get-Variable `$key).Value)
-            if (`$val -eq "True" -or `$val -eq "False") {
-                `$val = `$val.ToLower()
+            if (`$val -eq "True") {
+                `$val = "true"
+            }
+            elseif (`$val -eq "False") {
+                `$val = "false"
             }
             `$obj | Add-Member -MemberType NoteProperty -Name `$key -Value `$val
         }

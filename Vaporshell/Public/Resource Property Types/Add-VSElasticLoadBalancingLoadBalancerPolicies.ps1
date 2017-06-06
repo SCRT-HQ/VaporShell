@@ -3,6 +3,9 @@ function Add-VSElasticLoadBalancingLoadBalancerPolicies {
     .SYNOPSIS
         Adds an AWS::ElasticLoadBalancing::LoadBalancer.Policies resource property to the template
 
+    .DESCRIPTION
+        Adds an AWS::ElasticLoadBalancing::LoadBalancer.Policies resource property to the template
+
     .LINK
         http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-elb-policy.html
 
@@ -84,8 +87,11 @@ function Add-VSElasticLoadBalancingLoadBalancerPolicies {
     Process {
         foreach ($key in $PSBoundParameters.Keys) {
             $val = $((Get-Variable $key).Value)
-            if ($val -eq "True" -or $val -eq "False") {
-                $val = $val.ToLower()
+            if ($val -eq "True") {
+                $val = "true"
+            }
+            elseif ($val -eq "False") {
+                $val = "false"
             }
             $obj | Add-Member -MemberType NoteProperty -Name $key -Value $val
         }

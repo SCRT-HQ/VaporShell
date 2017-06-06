@@ -3,6 +3,9 @@ function New-VSElastiCacheSubnetGroup {
     .SYNOPSIS
         Adds an AWS::ElastiCache::SubnetGroup resource to the template
 
+    .DESCRIPTION
+        Adds an AWS::ElastiCache::SubnetGroup resource to the template
+
     .LINK
         http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-elasticache-subnetgroup.html
 
@@ -153,8 +156,11 @@ function New-VSElastiCacheSubnetGroup {
                         $ResourceParams.Add("Properties",([PSCustomObject]@{}))
                     }
                     $val = $((Get-Variable $key).Value)
-                    if ($val -eq "True" -or $val -eq "False") {
-                        $val = $val.ToLower()
+                    if ($val -eq "True") {
+                        $val = "true"
+                    }
+                    elseif ($val -eq "False") {
+                        $val = "false"
                     }
                     $ResourceParams["Properties"] | Add-Member -MemberType NoteProperty -Name $key -Value $val
                 }

@@ -3,6 +3,9 @@ function New-VSEC2VPCPeeringConnection {
     .SYNOPSIS
         Adds an AWS::EC2::VPCPeeringConnection resource to the template
 
+    .DESCRIPTION
+        Adds an AWS::EC2::VPCPeeringConnection resource to the template
+
     .LINK
         http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ec2-vpcpeeringconnection.html
 
@@ -196,8 +199,11 @@ function New-VSEC2VPCPeeringConnection {
                         $ResourceParams.Add("Properties",([PSCustomObject]@{}))
                     }
                     $val = $((Get-Variable $key).Value)
-                    if ($val -eq "True" -or $val -eq "False") {
-                        $val = $val.ToLower()
+                    if ($val -eq "True") {
+                        $val = "true"
+                    }
+                    elseif ($val -eq "False") {
+                        $val = "false"
                     }
                     $ResourceParams["Properties"] | Add-Member -MemberType NoteProperty -Name $key -Value $val
                 }

@@ -3,6 +3,9 @@ function New-VSLogsMetricFilter {
     .SYNOPSIS
         Adds an AWS::Logs::MetricFilter resource to the template
 
+    .DESCRIPTION
+        Adds an AWS::Logs::MetricFilter resource to the template
+
     .LINK
         http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-logs-metricfilter.html
 
@@ -162,8 +165,11 @@ function New-VSLogsMetricFilter {
                         $ResourceParams.Add("Properties",([PSCustomObject]@{}))
                     }
                     $val = $((Get-Variable $key).Value)
-                    if ($val -eq "True" -or $val -eq "False") {
-                        $val = $val.ToLower()
+                    if ($val -eq "True") {
+                        $val = "true"
+                    }
+                    elseif ($val -eq "False") {
+                        $val = "false"
                     }
                     $ResourceParams["Properties"] | Add-Member -MemberType NoteProperty -Name $key -Value $val
                 }

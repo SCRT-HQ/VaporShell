@@ -3,6 +3,9 @@ function Add-VSS3BucketS3KeyFilter {
     .SYNOPSIS
         Adds an AWS::S3::Bucket.S3KeyFilter resource property to the template
 
+    .DESCRIPTION
+        Adds an AWS::S3::Bucket.S3KeyFilter resource property to the template
+
     .LINK
         http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-s3-bucket-notificationconfiguration-config-filter-s3key.html
 
@@ -39,8 +42,11 @@ function Add-VSS3BucketS3KeyFilter {
     Process {
         foreach ($key in $PSBoundParameters.Keys) {
             $val = $((Get-Variable $key).Value)
-            if ($val -eq "True" -or $val -eq "False") {
-                $val = $val.ToLower()
+            if ($val -eq "True") {
+                $val = "true"
+            }
+            elseif ($val -eq "False") {
+                $val = "false"
             }
             $obj | Add-Member -MemberType NoteProperty -Name $key -Value $val
         }

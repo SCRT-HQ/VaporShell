@@ -3,6 +3,9 @@ function Add-VSCodeDeployDeploymentGroupEC2TagFilter {
     .SYNOPSIS
         Adds an AWS::CodeDeploy::DeploymentGroup.EC2TagFilter resource property to the template
 
+    .DESCRIPTION
+        Adds an AWS::CodeDeploy::DeploymentGroup.EC2TagFilter resource property to the template
+
     .LINK
         http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-codedeploy-deploymentgroup-ec2tagfilters.html
 
@@ -71,8 +74,11 @@ function Add-VSCodeDeployDeploymentGroupEC2TagFilter {
     Process {
         foreach ($key in $PSBoundParameters.Keys) {
             $val = $((Get-Variable $key).Value)
-            if ($val -eq "True" -or $val -eq "False") {
-                $val = $val.ToLower()
+            if ($val -eq "True") {
+                $val = "true"
+            }
+            elseif ($val -eq "False") {
+                $val = "false"
             }
             $obj | Add-Member -MemberType NoteProperty -Name $key -Value $val
         }

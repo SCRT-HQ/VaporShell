@@ -3,6 +3,9 @@ function New-VSElasticBeanstalkEnvironment {
     .SYNOPSIS
         Adds an AWS::ElasticBeanstalk::Environment resource to the template
 
+    .DESCRIPTION
+        Adds an AWS::ElasticBeanstalk::Environment resource to the template
+
     .LINK
         http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-beanstalk-environment.html
 
@@ -255,8 +258,11 @@ function New-VSElasticBeanstalkEnvironment {
                         $ResourceParams.Add("Properties",([PSCustomObject]@{}))
                     }
                     $val = $((Get-Variable $key).Value)
-                    if ($val -eq "True" -or $val -eq "False") {
-                        $val = $val.ToLower()
+                    if ($val -eq "True") {
+                        $val = "true"
+                    }
+                    elseif ($val -eq "False") {
+                        $val = "false"
                     }
                     $ResourceParams["Properties"] | Add-Member -MemberType NoteProperty -Name $key -Value $val
                 }

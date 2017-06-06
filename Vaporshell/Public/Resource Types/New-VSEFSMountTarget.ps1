@@ -3,6 +3,9 @@ function New-VSEFSMountTarget {
     .SYNOPSIS
         Adds an AWS::EFS::MountTarget resource to the template
 
+    .DESCRIPTION
+        Adds an AWS::EFS::MountTarget resource to the template
+
     .LINK
         http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-efs-mounttarget.html
 
@@ -170,8 +173,11 @@ function New-VSEFSMountTarget {
                         $ResourceParams.Add("Properties",([PSCustomObject]@{}))
                     }
                     $val = $((Get-Variable $key).Value)
-                    if ($val -eq "True" -or $val -eq "False") {
-                        $val = $val.ToLower()
+                    if ($val -eq "True") {
+                        $val = "true"
+                    }
+                    elseif ($val -eq "False") {
+                        $val = "false"
                     }
                     $ResourceParams["Properties"] | Add-Member -MemberType NoteProperty -Name $key -Value $val
                 }

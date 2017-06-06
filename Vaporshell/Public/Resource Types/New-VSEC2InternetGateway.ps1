@@ -3,6 +3,9 @@ function New-VSEC2InternetGateway {
     .SYNOPSIS
         Adds an AWS::EC2::InternetGateway resource to the template
 
+    .DESCRIPTION
+        Adds an AWS::EC2::InternetGateway resource to the template
+
     .LINK
         http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-internet-gateway.html
 
@@ -128,8 +131,11 @@ function New-VSEC2InternetGateway {
                         $ResourceParams.Add("Properties",([PSCustomObject]@{}))
                     }
                     $val = $((Get-Variable $key).Value)
-                    if ($val -eq "True" -or $val -eq "False") {
-                        $val = $val.ToLower()
+                    if ($val -eq "True") {
+                        $val = "true"
+                    }
+                    elseif ($val -eq "False") {
+                        $val = "false"
                     }
                     $ResourceParams["Properties"] | Add-Member -MemberType NoteProperty -Name $key -Value $val
                 }

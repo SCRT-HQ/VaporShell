@@ -3,6 +3,9 @@ function Add-VSLambdaFunctionDeadLetterConfig {
     .SYNOPSIS
         Adds an AWS::Lambda::Function.DeadLetterConfig resource property to the template
 
+    .DESCRIPTION
+        Adds an AWS::Lambda::Function.DeadLetterConfig resource property to the template
+
     .LINK
         http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-lambda-function-deadletterconfig.html
 
@@ -37,8 +40,11 @@ function Add-VSLambdaFunctionDeadLetterConfig {
     Process {
         foreach ($key in $PSBoundParameters.Keys) {
             $val = $((Get-Variable $key).Value)
-            if ($val -eq "True" -or $val -eq "False") {
-                $val = $val.ToLower()
+            if ($val -eq "True") {
+                $val = "true"
+            }
+            elseif ($val -eq "False") {
+                $val = "false"
             }
             $obj | Add-Member -MemberType NoteProperty -Name $key -Value $val
         }

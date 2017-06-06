@@ -3,6 +3,9 @@ function New-VSApplicationAutoScalingScalableTarget {
     .SYNOPSIS
         Adds an AWS::ApplicationAutoScaling::ScalableTarget resource to the template
 
+    .DESCRIPTION
+        Adds an AWS::ApplicationAutoScaling::ScalableTarget resource to the template
+
     .LINK
         http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-applicationautoscaling-scalabletarget.html
 
@@ -195,8 +198,11 @@ function New-VSApplicationAutoScalingScalableTarget {
                         $ResourceParams.Add("Properties",([PSCustomObject]@{}))
                     }
                     $val = $((Get-Variable $key).Value)
-                    if ($val -eq "True" -or $val -eq "False") {
-                        $val = $val.ToLower()
+                    if ($val -eq "True") {
+                        $val = "true"
+                    }
+                    elseif ($val -eq "False") {
+                        $val = "false"
                     }
                     $ResourceParams["Properties"] | Add-Member -MemberType NoteProperty -Name $key -Value $val
                 }
