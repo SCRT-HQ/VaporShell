@@ -2,108 +2,108 @@ function New-ApiGatewayMethod {
     <#
     .SYNOPSIS
         Adds an AWS::ApiGateway::Method resource to the template
-    
-    .DESCRIPTION
-        The AWS::ApiGateway::Method resource creates Amazon API Gateway (API Gateway) methods that define the parameters and body that clients must send in their requests.
 
     .LINK
         http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-apigateway-method.html
-    
+
     .PARAMETER LogicalId
         The logical ID must be alphanumeric (A-Za-z0-9) and unique within the template. Use the logical name to reference the resource in other parts of the template. For example, if you want to map an Amazon Elastic Block Store volume to an Amazon EC2 instance, you reference the logical IDs to associate the block stores with the instance.
 
-        In addition to the logical ID, certain resources also have a physical ID, which is the actual assigned name for that resource, such as an EC2 instance ID or an S3 bucket name. Use the physical IDs to identify resources outside of AWS CloudFormation templates, but only after the resources have been created. For example, you might give an EC2 instance resource a logical ID of MyEC2Instance; but when AWS CloudFormation creates the instance, AWS CloudFormation automatically generates and assigns a physical ID (such as i-28f9ba55) to the instance. You can use this physical ID to identify the instance and view its properties (such as the DNS name) by using the Amazon EC2 console. For resources that support custom names, you can assign your own names (physical IDs) to help you quickly identify resources. For example, you can name an S3 bucket that stores logs as MyPerformanceLogs.
-    
     .PARAMETER ApiKeyRequired
-        Indicates whether the method requires clients to submit a valid API key.
-    
+		Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-apigateway-method.html#cfn-apigateway-method-apikeyrequired
+		PrimitiveType: Boolean
+		Required: False
+		UpdateType: Mutable
+
     .PARAMETER AuthorizationType
-        The method's authorization type.
-    
+		Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-apigateway-method.html#cfn-apigateway-method-authorizationtype
+		PrimitiveType: String
+		Required: False
+		UpdateType: Mutable
+
     .PARAMETER AuthorizerId
-        The identifier of the authorizer to use on this method. If you specify this property, specify CUSTOM for the AuthorizationType property.
-    
+		Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-apigateway-method.html#cfn-apigateway-method-authorizerid
+		PrimitiveType: String
+		Required: False
+		UpdateType: Mutable
+
     .PARAMETER HttpMethod
-        The HTTP method that clients will use to call this method.
-    
+		Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-apigateway-method.html#cfn-apigateway-method-httpmethod
+		PrimitiveType: String
+		Required: True
+		UpdateType: Mutable
+
     .PARAMETER Integration
-        The back-end system that the method calls when it receives a request.
-    
+		Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-apigateway-method.html#cfn-apigateway-method-integration
+		Required: False
+		Type: Integration
+		UpdateType: Mutable
+
     .PARAMETER MethodResponses
-        The responses that can be sent to the client who calls the method.
-    
+		Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-apigateway-method.html#cfn-apigateway-method-methodresponses
+		DuplicatesAllowed: False
+		ItemType: MethodResponse
+		Required: False
+		Type: List
+		UpdateType: Mutable
+
     .PARAMETER RequestModels
-        The resources used for the response's content type. Specify response models as key-value pairs (string-to-string map), with a content type as the key and a Model resource name as the value.
-    
+		Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-apigateway-method.html#cfn-apigateway-method-requestmodels
+		DuplicatesAllowed: False
+		PrimitiveItemType: String
+		Required: False
+		Type: Map
+		UpdateType: Mutable
+
     .PARAMETER RequestParameters
-        Request parameters that API Gateway accepts. Specify request parameters as key-value pairs (string-to-Boolean map), with a source as the key and a Boolean as the value. The Boolean specifies whether a parameter is required. A source must match the following format method.request.location.name, where the location is querystring, path, or header, and name is a valid, unique parameter name.
-    
+		Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-apigateway-method.html#cfn-apigateway-method-requestparameters
+		DuplicatesAllowed: False
+		PrimitiveItemType: Boolean
+		Required: False
+		Type: Map
+		UpdateType: Mutable
+
     .PARAMETER ResourceId
-        The ID of an API Gateway resource. For root resource methods, specify the RestApi root resource ID, such as { "Fn::GetAtt": ["MyRestApi", "RootResourceId"] }.
-    
+		Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-apigateway-method.html#cfn-apigateway-method-resourceid
+		PrimitiveType: String
+		Required: False
+		UpdateType: Mutable
+
     .PARAMETER RestApiId
-        The ID of the RestApi resource in which API Gateway creates the method.
-    
+		Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-apigateway-method.html#cfn-apigateway-method-restapiid
+		PrimitiveType: String
+		Required: False
+		UpdateType: Mutable
+
     .PARAMETER DeletionPolicy
         With the DeletionPolicy attribute you can preserve or (in some cases) backup a resource when its stack is deleted. You specify a DeletionPolicy attribute for each resource that you want to control. If a resource has no DeletionPolicy attribute, AWS CloudFormation deletes the resource by default.
 
         To keep a resource when its stack is deleted, specify Retain for that resource. You can use retain for any resource. For example, you can retain a nested stack, S3 bucket, or EC2 instance so that you can continue to use or modify those resources after you delete their stacks.
 
-        You must use one of the following options: "Delete","Retain"
+        You must use one of the following options: "Delete","Retain","Snapshot"
+
 
     .PARAMETER DependsOn
         With the DependsOn attribute you can specify that the creation of a specific resource follows another. When you add a DependsOn attribute to a resource, that resource is created only after the creation of the resource specified in the DependsOn attribute.
 
         This parameter takes a string or list of strings representing Logical IDs of resources that must be created prior to this resource being created.
 
+
     .PARAMETER Metadata
         The Metadata attribute enables you to associate structured data with a resource. By adding a Metadata attribute to a resource, you can add data in JSON or YAML to the resource declaration. In addition, you can use intrinsic functions (such as GetAtt and Ref), parameters, and pseudo parameters within the Metadata attribute to add those interpreted values.
 
         You must use a PSCustomObject containing key/value pairs here. This will be returned when describing the resource using AWS CLI.
+
 
     .PARAMETER UpdatePolicy
         Use the UpdatePolicy attribute to specify how AWS CloudFormation handles updates to the AWS::AutoScaling::AutoScalingGroup resource. AWS CloudFormation invokes one of three update policies depending on the type of change you make or whether a scheduled action is associated with the Auto Scaling group.
 
         You must use the "Add-UpdatePolicy" function here.
     
+
     .PARAMETER Condition
         Logical ID of the condition that this resource needs to be true in order for this resource to be provisioned.
 
-    .EXAMPLE
-        $templateInit = Initialize-Vaporshell -Description "Testing New-ApiGatewayDeployment"
-        $templateInit.AddResource((New-ApiGatewayDeployment -LogicalId "GatewayDeployment" -Description "My deployment" -RestApiId (Add-FnRef -Ref "MyApi") -StageDescription (Add-ApiGatewayDeploymentStageDescription -MethodSettings (Add-ApiGatewayDeploymentStageDescriptionMethodSetting -LoggingLevel ERROR) -Variables (Add-Variable -Name "ApiKey" -Value "kl234lkj23lfwe9") -CacheClusterEnabled True -CacheDataEncrypted False)))
-
-        When the template is exported, this will convert to: 
-```json
-{
-    "AWSTemplateFormatVersion": "2010-09-09",
-    "Description": "Testing New-ApiGatewayDeployment",
-    "Resources": {
-        "GatewayDeployment": {
-            "Type": "AWS::ApiGateway::Method",
-            "Properties": {
-                "Description": "My deployment",
-                "RestApiId": {
-                    "Ref": "MyApi"
-                },
-                "StageDescription": {
-                    "MethodSettings": {
-                        "LoggingLevel": "ERROR"
-                    },
-                    "Variables": {
-                        "ApiKey": "kl234lkj23lfwe9"
-                    },
-                    "CacheClusterEnabled": "true",
-                    "CacheDataEncrypted": "false"
-                }
-            }
-        }
-    }
-}
-````
-    
-    .NOTES
-        When the logical ID of this resource is provided to the Ref intrinsic function, Ref returns the method ID, such as mysta-metho-01234b567890example.
 
     .FUNCTIONALITY
         Vaporshell
@@ -123,23 +123,12 @@ function New-ApiGatewayMethod {
             })]
         [System.String]
         $LogicalId,
-        [parameter(Mandatory = $false,Position = 1)]
-        [ValidateSet($true,$false)]
-        [System.String]
+        [parameter(Mandatory = $false)]
+        [System.Boolean]
         $ApiKeyRequired,
-        [parameter(Mandatory = $true,Position = 2)]
-        [System.String]
-        $AuthorizationType,
-        [parameter(Mandatory = $false,Position = 3)]
-        [System.String]
-        $AuthorizerId,
-        [parameter(Mandatory = $true,Position = 4)]
-        [System.String]
-        $HttpMethod,
-        [parameter(Mandatory = $false,Position = 1)]
-        [ValidateSet($true,$false)]
+        [parameter(Mandatory = $false)]
         [ValidateScript( {
-                $allowedTypes = "Vaporshell.Resource.ApiGateway.Method.Integration"
+                $allowedTypes = "System.String","Vaporshell.Function"
                 if ([string]$($_.PSTypeNames) -match "($(($allowedTypes|ForEach-Object{[RegEx]::Escape($_)}) -join '|'))") {
                     $true
                 }
@@ -147,8 +136,30 @@ function New-ApiGatewayMethod {
                     throw "This parameter only accepts the following types: $($allowedTypes -join ", "). The current types of the value are: $($_.PSTypeNames -join ", ")."
                 }
             })]
-        $Integration,
-        [parameter(Mandatory = $false,Position = 1)]
+        $AuthorizationType,
+        [parameter(Mandatory = $false)]
+        [ValidateScript( {
+                $allowedTypes = "System.String","Vaporshell.Function"
+                if ([string]$($_.PSTypeNames) -match "($(($allowedTypes|ForEach-Object{[RegEx]::Escape($_)}) -join '|'))") {
+                    $true
+                }
+                else {
+                    throw "This parameter only accepts the following types: $($allowedTypes -join ", "). The current types of the value are: $($_.PSTypeNames -join ", ")."
+                }
+            })]
+        $AuthorizerId,
+        [parameter(Mandatory = $true)]
+        [ValidateScript( {
+                $allowedTypes = "System.String","Vaporshell.Function"
+                if ([string]$($_.PSTypeNames) -match "($(($allowedTypes|ForEach-Object{[RegEx]::Escape($_)}) -join '|'))") {
+                    $true
+                }
+                else {
+                    throw "This parameter only accepts the following types: $($allowedTypes -join ", "). The current types of the value are: $($_.PSTypeNames -join ", ")."
+                }
+            })]
+        $HttpMethod,
+        [parameter(Mandatory = $false)]
         [ValidateScript( {
                 $allowedTypes = "Vaporshell.Resource.ApiGateway.Method.MethodResponse"
                 if ([string]$($_.PSTypeNames) -match "($(($allowedTypes|ForEach-Object{[RegEx]::Escape($_)}) -join '|'))") {
@@ -159,13 +170,13 @@ function New-ApiGatewayMethod {
                 }
             })]
         $MethodResponses,
-        [parameter(Mandatory = $false,Position = 1)]
+        [parameter(Mandatory = $false)]
         [System.Collections.Hashtable]
         $RequestModels,
-        [parameter(Mandatory = $false,Position = 1)]
+        [parameter(Mandatory = $false)]
         [System.Collections.Hashtable]
         $RequestParameters,
-        [parameter(Mandatory = $true,Position = 1)]
+        [parameter(Mandatory = $false)]
         [ValidateScript( {
                 $allowedTypes = "System.String","Vaporshell.Function"
                 if ([string]$($_.PSTypeNames) -match "($(($allowedTypes|ForEach-Object{[RegEx]::Escape($_)}) -join '|'))") {
@@ -176,7 +187,7 @@ function New-ApiGatewayMethod {
                 }
             })]
         $ResourceId,
-        [parameter(Mandatory = $true,Position = 1)]
+        [parameter(Mandatory = $false)]
         [ValidateScript( {
                 $allowedTypes = "System.String","Vaporshell.Function"
                 if ([string]$($_.PSTypeNames) -match "($(($allowedTypes|ForEach-Object{[RegEx]::Escape($_)}) -join '|'))") {
@@ -187,8 +198,7 @@ function New-ApiGatewayMethod {
                 }
             })]
         $RestApiId,
-        [parameter(Mandatory = $false)]
-        [ValidateSet("Delete","Retain")]
+        [ValidateSet("Delete","Retain","Snapshot")]
         [System.String]
         $DeletionPolicy,
         [parameter(Mandatory = $false)]
@@ -218,81 +228,34 @@ function New-ApiGatewayMethod {
         }
     }
     Process {
-        switch ($PSBoundParameters.Keys) {
-            'ApiKeyRequired' {
-                if (!($ResourceParams["Properties"])) {
-                    $ResourceParams.Add("Properties",([PSCustomObject]@{}))
+        foreach ($key in $PSBoundParameters.Keys) {
+            switch ($key) {
+                'LogicalId' {}
+                'DeletionPolicy' {
+                    $ResourceParams.Add("DeletionPolicy",$DeletionPolicy)
                 }
-                $ResourceParams["Properties"] | Add-Member -MemberType NoteProperty -Name 'ApiKeyRequired' -Value $($ApiKeyRequired.ToLower())
-            }
-            'AuthorizationType' {
-                if (!($ResourceParams["Properties"])) {
-                    $ResourceParams.Add("Properties",([PSCustomObject]@{}))
+                'DependsOn' {
+                    $ResourceParams.Add("DependsOn",$DependsOn)
                 }
-                $ResourceParams["Properties"] | Add-Member -MemberType NoteProperty -Name 'AuthorizationType' -Value $AuthorizationType
-            }
-            'AuthorizerId' {
-                if (!($ResourceParams["Properties"])) {
-                    $ResourceParams.Add("Properties",([PSCustomObject]@{}))
+                'Metadata' {
+                    $ResourceParams.Add("Metadata",$Metadata)
                 }
-                $ResourceParams["Properties"] | Add-Member -MemberType NoteProperty -Name 'AuthorizerId' -Value $AuthorizerId
-            }
-            'HttpMethod' {
-                if (!($ResourceParams["Properties"])) {
-                    $ResourceParams.Add("Properties",([PSCustomObject]@{}))
+                'UpdatePolicy' {
+                    $ResourceParams.Add("UpdatePolicy",$UpdatePolicy)
                 }
-                $ResourceParams["Properties"] | Add-Member -MemberType NoteProperty -Name 'HttpMethod' -Value $HttpMethod
-            }
-            'Integration' {
-                if (!($ResourceParams["Properties"])) {
-                    $ResourceParams.Add("Properties",([PSCustomObject]@{}))
+                'Condition' {
+                    $ResourceParams.Add("Condition",$Condition)
                 }
-                $ResourceParams["Properties"] | Add-Member -MemberType NoteProperty -Name 'Integration' -Value $Integration
-            }
-            'MethodResponses' {
-                if (!($ResourceParams["Properties"])) {
-                    $ResourceParams.Add("Properties",([PSCustomObject]@{}))
+                Default {
+                    if (!($ResourceParams["Properties"])) {
+                        $ResourceParams.Add("Properties",([PSCustomObject]@{}))
+                    }
+                    $val = $((Get-Variable $key).Value)
+                    if ($val -eq "True" -or $val -eq "False") {
+                        $val = $val.ToLower()
+                    }
+                    $ResourceParams["Properties"] | Add-Member -MemberType NoteProperty -Name $key -Value $val
                 }
-                $ResourceParams["Properties"] | Add-Member -MemberType NoteProperty -Name 'MethodResponses' -Value $MethodResponses
-            }
-            'RequestModels' {
-                if (!($ResourceParams["Properties"])) {
-                    $ResourceParams.Add("Properties",([PSCustomObject]@{}))
-                }
-                $ResourceParams["Properties"] | Add-Member -MemberType NoteProperty -Name 'RequestModels' -Value $RequestModels
-            }
-            'RequestParameters' {
-                if (!($ResourceParams["Properties"])) {
-                    $ResourceParams.Add("Properties",([PSCustomObject]@{}))
-                }
-                $ResourceParams["Properties"] | Add-Member -MemberType NoteProperty -Name 'RequestParameters' -Value $RequestParameters
-            }
-            'ResourceId' {
-                if (!($ResourceParams["Properties"])) {
-                    $ResourceParams.Add("Properties",([PSCustomObject]@{}))
-                }
-                $ResourceParams["Properties"] | Add-Member -MemberType NoteProperty -Name 'ResourceId' -Value $ResourceId
-            }
-            'RestApiId' {
-                if (!($ResourceParams["Properties"])) {
-                    $ResourceParams.Add("Properties",([PSCustomObject]@{}))
-                }
-                $ResourceParams["Properties"] | Add-Member -MemberType NoteProperty -Name 'RestApiId' -Value $RestApiId
-            }
-            'DeletionPolicy' {
-                $ResourceParams.Add("DeletionPolicy",$DeletionPolicy)
-            }
-            'DependsOn' {
-                $ResourceParams.Add("DependsOn",$DependsOn)
-            }
-            'Metadata' {
-                $ResourceParams.Add("Metadata",$Metadata)
-            }
-            'UpdatePolicy' {
-                $ResourceParams.Add("UpdatePolicy",$UpdatePolicy)
-            }
-            'Condition' {
-                $ResourceParams.Add("Condition",$Condition)
             }
         }
     }
