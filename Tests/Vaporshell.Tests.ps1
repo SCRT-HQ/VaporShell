@@ -114,7 +114,7 @@ Describe "Initialize/Export/Import PS$PSVersion" {
             )
             $templateInit.AddOutput((New-VaporOutput -LogicalId "BackupLoadBalancerDNSName" -Description "The DNSName of the backup load balancer" -Value (Add-FnGetAtt -LogicalNameOfResource "BackupLoadBalancer" -AttributeName "DNSName") -Condition "CreateProdResources"))
 
-            $testPath = "$ModPath\Helpers\test.json"
+            $testPath = "C:\projects\Vaporshell\Helpers\test.json"
 
             $fileUrl = "$((Resolve-Path $testPath).Path.Replace("\","/"))"
 
