@@ -155,7 +155,7 @@ function New-VSCodeBuildProject {
         $Source,
         [parameter(Mandatory = $false)]
         [ValidateScript( {
-                $allowedTypes = "Vaporshell.Resource.CodeBuild.Project.Tag"
+                $allowedTypes = "Vaporshell.Resource.Tag"
                 if ([string]$($_.PSTypeNames) -match "($(($allowedTypes|ForEach-Object{[RegEx]::Escape($_)}) -join '|'))") {
                     $true
                 }

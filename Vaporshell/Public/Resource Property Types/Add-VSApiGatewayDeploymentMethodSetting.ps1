@@ -128,7 +128,7 @@ function Add-VSApiGatewayDeploymentMethodSetting {
         [Int]
         $ThrottlingBurstLimit,
         [parameter(Mandatory = $false)]
-        [Int]
+        [System.Double]
         $ThrottlingRateLimit
     )
     Begin {

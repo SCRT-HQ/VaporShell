@@ -147,7 +147,7 @@ function New-VSEC2SecurityGroup {
         $SecurityGroupIngress,
         [parameter(Mandatory = $false)]
         [ValidateScript( {
-                $allowedTypes = "Vaporshell.Resource.EC2.SecurityGroup.Tag"
+                $allowedTypes = "Vaporshell.Resource.Tag"
                 if ([string]$($_.PSTypeNames) -match "($(($allowedTypes|ForEach-Object{[RegEx]::Escape($_)}) -join '|'))") {
                     $true
                 }

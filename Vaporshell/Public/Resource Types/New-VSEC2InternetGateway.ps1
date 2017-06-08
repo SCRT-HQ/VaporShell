@@ -69,7 +69,7 @@ function New-VSEC2InternetGateway {
         $LogicalId,
         [parameter(Mandatory = $false)]
         [ValidateScript( {
-                $allowedTypes = "Vaporshell.Resource.EC2.InternetGateway.Tag"
+                $allowedTypes = "Vaporshell.Resource.Tag"
                 if ([string]$($_.PSTypeNames) -match "($(($allowedTypes|ForEach-Object{[RegEx]::Escape($_)}) -join '|'))") {
                     $true
                 }

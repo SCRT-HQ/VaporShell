@@ -27,7 +27,7 @@ function Add-VSEMRClusterJobFlowInstancesConfig {
 
     .PARAMETER CoreInstanceGroup
 		Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-emr-cluster-jobflowinstancesconfig.html#cfn-emr-cluster-jobflowinstancesconfig-coreinstancegroup
-		Required: True
+		Required: False
 		Type: InstanceGroupConfig
 		UpdateType: Immutable
 
@@ -96,7 +96,7 @@ function Add-VSEMRClusterJobFlowInstancesConfig {
         $AdditionalMasterSecurityGroups,
         [parameter(Mandatory = $false)]
         $AdditionalSlaveSecurityGroups,
-        [parameter(Mandatory = $true)]
+        [parameter(Mandatory = $false)]
         $CoreInstanceGroup,
         [parameter(Mandatory = $false)]
         [ValidateScript( {

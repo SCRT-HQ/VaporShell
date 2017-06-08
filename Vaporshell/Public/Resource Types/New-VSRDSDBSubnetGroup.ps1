@@ -96,7 +96,7 @@ function New-VSRDSDBSubnetGroup {
         $SubnetIds,
         [parameter(Mandatory = $false)]
         [ValidateScript( {
-                $allowedTypes = "Vaporshell.Resource.RDS.DBSubnetGroup.Tag"
+                $allowedTypes = "Vaporshell.Resource.Tag"
                 if ([string]$($_.PSTypeNames) -match "($(($allowedTypes|ForEach-Object{[RegEx]::Escape($_)}) -join '|'))") {
                     $true
                 }

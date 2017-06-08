@@ -26,8 +26,16 @@ function New-VSRedshiftClusterParameterGroup {
 
     .PARAMETER Parameters
 		Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-redshift-clusterparametergroup.html#cfn-redshift-clusterparametergroup-parameters
-		DuplicatesAllowed: False
+		DuplicatesAllowed: True
 		ItemType: Parameter
+		Required: False
+		Type: List
+		UpdateType: Mutable
+
+    .PARAMETER Tags
+		Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-redshift-clusterparametergroup.html#cfn-redshift-clusterparametergroup-tags
+		DuplicatesAllowed: True
+		ItemType: Tag
 		Required: False
 		Type: List
 		UpdateType: Mutable
@@ -112,6 +120,17 @@ function New-VSRedshiftClusterParameterGroup {
                 }
             })]
         $Parameters,
+        [parameter(Mandatory = $false)]
+        [ValidateScript( {
+                $allowedTypes = "Vaporshell.Resource.Tag"
+                if ([string]$($_.PSTypeNames) -match "($(($allowedTypes|ForEach-Object{[RegEx]::Escape($_)}) -join '|'))") {
+                    $true
+                }
+                else {
+                    throw "This parameter only accepts the following types: $($allowedTypes -join ", "). The current types of the value are: $($_.PSTypeNames -join ", ")."
+                }
+            })]
+        $Tags,
         [ValidateSet("Delete","Retain","Snapshot")]
         [System.String]
         $DeletionPolicy,

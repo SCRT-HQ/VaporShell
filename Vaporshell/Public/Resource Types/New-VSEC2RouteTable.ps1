@@ -75,7 +75,7 @@ function New-VSEC2RouteTable {
         $LogicalId,
         [parameter(Mandatory = $false)]
         [ValidateScript( {
-                $allowedTypes = "Vaporshell.Resource.EC2.RouteTable.Tag"
+                $allowedTypes = "Vaporshell.Resource.Tag"
                 if ([string]$($_.PSTypeNames) -match "($(($allowedTypes|ForEach-Object{[RegEx]::Escape($_)}) -join '|'))") {
                     $true
                 }

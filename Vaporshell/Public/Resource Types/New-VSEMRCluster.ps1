@@ -78,6 +78,12 @@ function New-VSEMRCluster {
 		Required: False
 		UpdateType: Immutable
 
+    .PARAMETER ScaleDownBehavior
+		Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-emr-cluster.html#cfn-elasticmapreduce-cluster-scaledownbehavior
+		PrimitiveType: String
+		Required: False
+		UpdateType: Immutable
+
     .PARAMETER SecurityConfiguration
 		Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-emr-cluster.html#cfn-emr-securityconfiguration
 		PrimitiveType: String
@@ -253,6 +259,17 @@ function New-VSEMRCluster {
                     throw "This parameter only accepts the following types: $($allowedTypes -join ", "). The current types of the value are: $($_.PSTypeNames -join ", ")."
                 }
             })]
+        $ScaleDownBehavior,
+        [parameter(Mandatory = $false)]
+        [ValidateScript( {
+                $allowedTypes = "System.String","Vaporshell.Function"
+                if ([string]$($_.PSTypeNames) -match "($(($allowedTypes|ForEach-Object{[RegEx]::Escape($_)}) -join '|'))") {
+                    $true
+                }
+                else {
+                    throw "This parameter only accepts the following types: $($allowedTypes -join ", "). The current types of the value are: $($_.PSTypeNames -join ", ")."
+                }
+            })]
         $SecurityConfiguration,
         [parameter(Mandatory = $true)]
         [ValidateScript( {
@@ -267,7 +284,7 @@ function New-VSEMRCluster {
         $ServiceRole,
         [parameter(Mandatory = $false)]
         [ValidateScript( {
-                $allowedTypes = "Vaporshell.Resource.EMR.Cluster.Tag"
+                $allowedTypes = "Vaporshell.Resource.Tag"
                 if ([string]$($_.PSTypeNames) -match "($(($allowedTypes|ForEach-Object{[RegEx]::Escape($_)}) -join '|'))") {
                     $true
                 }

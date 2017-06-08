@@ -86,6 +86,12 @@ function New-VSLambdaFunction {
 		Required: False
 		UpdateType: Mutable
 
+    .PARAMETER TracingConfig
+		Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-lambda-function.html#cfn-lambda-function-tracingconfig
+		Required: False
+		Type: TracingConfig
+		UpdateType: Mutable
+
     .PARAMETER VpcConfig
 		Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-lambda-function.html#cfn-lambda-function-vpcconfig
 		Required: False
@@ -216,7 +222,7 @@ function New-VSLambdaFunction {
         $Runtime,
         [parameter(Mandatory = $false)]
         [ValidateScript( {
-                $allowedTypes = "Vaporshell.Resource.Lambda.Function.Tag"
+                $allowedTypes = "Vaporshell.Resource.Tag"
                 if ([string]$($_.PSTypeNames) -match "($(($allowedTypes|ForEach-Object{[RegEx]::Escape($_)}) -join '|'))") {
                     $true
                 }
@@ -228,6 +234,8 @@ function New-VSLambdaFunction {
         [parameter(Mandatory = $false)]
         [Int]
         $Timeout,
+        [parameter(Mandatory = $false)]
+        $TracingConfig,
         [parameter(Mandatory = $false)]
         $VpcConfig,
         [ValidateSet("Delete","Retain","Snapshot")]

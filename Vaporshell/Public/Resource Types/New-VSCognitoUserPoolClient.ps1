@@ -132,7 +132,7 @@ function New-VSCognitoUserPoolClient {
         [parameter(Mandatory = $false)]
         $ExplicitAuthFlows,
         [parameter(Mandatory = $false)]
-        [Int]
+        [System.Double]
         $RefreshTokenValidity,
         [parameter(Mandatory = $false)]
         $ReadAttributes,

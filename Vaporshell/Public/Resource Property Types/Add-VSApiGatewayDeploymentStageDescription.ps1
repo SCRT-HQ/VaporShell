@@ -198,7 +198,7 @@ function Add-VSApiGatewayDeploymentStageDescription {
         [Int]
         $ThrottlingBurstLimit,
         [parameter(Mandatory = $false)]
-        [Int]
+        [System.Double]
         $ThrottlingRateLimit,
         [parameter(Mandatory = $false)]
         [System.Collections.Hashtable]

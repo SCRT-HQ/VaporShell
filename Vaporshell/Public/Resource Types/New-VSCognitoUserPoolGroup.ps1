@@ -123,7 +123,7 @@ function New-VSCognitoUserPoolGroup {
             })]
         $UserPoolId,
         [parameter(Mandatory = $false)]
-        [Int]
+        [System.Double]
         $Precedence,
         [parameter(Mandatory = $false)]
         [ValidateScript( {

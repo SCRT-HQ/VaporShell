@@ -37,7 +37,7 @@ function Add-VSCognitoUserPoolAdminCreateUserConfig {
         [parameter(Mandatory = $false)]
         $InviteMessageTemplate,
         [parameter(Mandatory = $false)]
-        [Int]
+        [System.Double]
         $UnusedAccountValidityDays,
         [parameter(Mandatory = $false)]
         [System.Boolean]

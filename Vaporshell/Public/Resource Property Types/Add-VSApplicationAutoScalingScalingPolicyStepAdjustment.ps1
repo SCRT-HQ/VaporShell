@@ -35,10 +35,10 @@ function Add-VSApplicationAutoScalingScalingPolicyStepAdjustment {
     Param
     (
         [parameter(Mandatory = $false)]
-        [Int]
+        [System.Double]
         $MetricIntervalLowerBound,
         [parameter(Mandatory = $false)]
-        [Int]
+        [System.Double]
         $MetricIntervalUpperBound,
         [parameter(Mandatory = $true)]
         [Int]

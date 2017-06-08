@@ -32,7 +32,7 @@ function Add-VSApiGatewayUsagePlanThrottleSettings {
         [Int]
         $BurstLimit,
         [parameter(Mandatory = $false)]
-        [Int]
+        [System.Double]
         $RateLimit
     )
     Begin {

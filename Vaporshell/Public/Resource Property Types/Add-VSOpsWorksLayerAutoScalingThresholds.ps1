@@ -53,7 +53,7 @@ function Add-VSOpsWorksLayerAutoScalingThresholds {
     Param
     (
         [parameter(Mandatory = $false)]
-        [Int]
+        [System.Double]
         $CpuThreshold,
         [parameter(Mandatory = $false)]
         [Int]
@@ -62,10 +62,10 @@ function Add-VSOpsWorksLayerAutoScalingThresholds {
         [Int]
         $InstanceCount,
         [parameter(Mandatory = $false)]
-        [Int]
+        [System.Double]
         $LoadThreshold,
         [parameter(Mandatory = $false)]
-        [Int]
+        [System.Double]
         $MemoryThreshold,
         [parameter(Mandatory = $false)]
         [Int]

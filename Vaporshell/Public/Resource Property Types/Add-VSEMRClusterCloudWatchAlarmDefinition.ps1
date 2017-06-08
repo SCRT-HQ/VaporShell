@@ -134,7 +134,7 @@ function Add-VSEMRClusterCloudWatchAlarmDefinition {
             })]
         $Statistic,
         [parameter(Mandatory = $true)]
-        [Int]
+        [System.Double]
         $Threshold,
         [parameter(Mandatory = $false)]
         [ValidateScript( {

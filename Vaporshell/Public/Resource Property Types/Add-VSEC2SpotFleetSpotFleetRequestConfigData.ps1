@@ -13,7 +13,7 @@ function Add-VSEC2SpotFleetSpotFleetRequestConfigData {
 		Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-spotfleet-spotfleetrequestconfigdata.html#cfn-ec2-spotfleet-spotfleetrequestconfigdata-allocationstrategy
 		PrimitiveType: String
 		Required: False
-		UpdateType: Mutable
+		UpdateType: Immutable
 
     .PARAMETER ExcessCapacityTerminationPolicy
 		Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-spotfleet-spotfleetrequestconfigdata.html#cfn-ec2-spotfleet-spotfleetrequestconfigdata-excesscapacityterminationpolicy
@@ -25,21 +25,21 @@ function Add-VSEC2SpotFleetSpotFleetRequestConfigData {
 		Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-spotfleet-spotfleetrequestconfigdata.html#cfn-ec2-spotfleet-spotfleetrequestconfigdata-iamfleetrole
 		PrimitiveType: String
 		Required: True
-		UpdateType: Mutable
+		UpdateType: Immutable
 
     .PARAMETER LaunchSpecifications
 		Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-spotfleet-spotfleetrequestconfigdata.html#cfn-ec2-spotfleet-spotfleetrequestconfigdata-launchspecifications
 		DuplicatesAllowed: False
-		ItemType: LaunchSpecifications
+		ItemType: SpotFleetLaunchSpecification
 		Required: True
 		Type: List
-		UpdateType: Mutable
+		UpdateType: Immutable
 
     .PARAMETER SpotPrice
 		Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-spotfleet-spotfleetrequestconfigdata.html#cfn-ec2-spotfleet-spotfleetrequestconfigdata-spotprice
 		PrimitiveType: String
 		Required: True
-		UpdateType: Mutable
+		UpdateType: Immutable
 
     .PARAMETER TargetCapacity
 		Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-spotfleet-spotfleetrequestconfigdata.html#cfn-ec2-spotfleet-spotfleetrequestconfigdata-targetcapacity
@@ -51,19 +51,19 @@ function Add-VSEC2SpotFleetSpotFleetRequestConfigData {
 		Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-spotfleet-spotfleetrequestconfigdata.html#cfn-ec2-spotfleet-spotfleetrequestconfigdata-terminateinstanceswithexpiration
 		PrimitiveType: Boolean
 		Required: False
-		UpdateType: Mutable
+		UpdateType: Immutable
 
     .PARAMETER ValidFrom
 		Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-spotfleet-spotfleetrequestconfigdata.html#cfn-ec2-spotfleet-spotfleetrequestconfigdata-validfrom
 		PrimitiveType: String
 		Required: False
-		UpdateType: Mutable
+		UpdateType: Immutable
 
     .PARAMETER ValidUntil
 		Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-spotfleet-spotfleetrequestconfigdata.html#cfn-ec2-spotfleet-spotfleetrequestconfigdata-validuntil
 		PrimitiveType: String
 		Required: False
-		UpdateType: Mutable
+		UpdateType: Immutable
 
     .FUNCTIONALITY
         Vaporshell
@@ -107,7 +107,7 @@ function Add-VSEC2SpotFleetSpotFleetRequestConfigData {
         $IamFleetRole,
         [parameter(Mandatory = $true)]
         [ValidateScript( {
-                $allowedTypes = "Vaporshell.Resource.EC2.SpotFleet.LaunchSpecifications"
+                $allowedTypes = "Vaporshell.Resource.EC2.SpotFleet.SpotFleetLaunchSpecification"
                 if ([string]$($_.PSTypeNames) -match "($(($allowedTypes|ForEach-Object{[RegEx]::Escape($_)}) -join '|'))") {
                     $true
                 }

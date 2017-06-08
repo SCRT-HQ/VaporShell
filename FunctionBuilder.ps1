@@ -147,8 +147,24 @@ foreach ($Prop in $Properties) {
         $Mandatory = '$false'
     }
     if ($Prop.Value.ItemType) {
-        $ValTypeName = "$($BaseTypeName).$($Prop.Value.ItemType)"
-        $scriptContents += @"
+        if ($Prop.Value.ItemType -eq "Tag") {
+            $scriptContents += @"
+        [parameter(Mandatory = $Mandatory)]
+        [ValidateScript( {
+                `$allowedTypes = "Vaporshell.Resource.Tag"
+                if ([string]`$(`$_.PSTypeNames) -match "(`$((`$allowedTypes|ForEach-Object{[RegEx]::Escape(`$_)}) -join '|'))") {
+                    `$true
+                }
+                else {
+                    throw "This parameter only accepts the following types: `$(`$allowedTypes -join ", "). The current types of the value are: `$(`$_.PSTypeNames -join ", ")."
+                }
+            })]
+        `$$ParamName
+"@
+        }
+        else {
+            $ValTypeName = "$($BaseTypeName).$($Prop.Value.ItemType)"
+            $scriptContents += @"
         [parameter(Mandatory = $Mandatory)]
         [ValidateScript( {
                 `$allowedTypes = "$ValTypeName"
@@ -161,6 +177,7 @@ foreach ($Prop in $Properties) {
             })]
         `$$ParamName
 "@
+        }
     }
     elseif ($Prop.Value.Type -eq "Map") {
         $scriptContents += @"
@@ -169,10 +186,17 @@ foreach ($Prop in $Properties) {
         `$$ParamName
 "@
     }
-    elseif ($Prop.Value.PrimitiveType -eq "Integer" -or $Prop.Value.PrimitiveType -eq "Double" -or $Prop.Value.PrimitiveType -eq "Number") {
+    elseif ($Prop.Value.PrimitiveType -eq "Integer" -or $Prop.Value.PrimitiveType -eq "Number") {
         $scriptContents += @"
         [parameter(Mandatory = $Mandatory)]
         [Int]
+        `$$ParamName
+"@
+    }
+    elseif ($Prop.Value.PrimitiveType -eq "Double") {
+        $scriptContents += @"
+        [parameter(Mandatory = $Mandatory)]
+        [System.Double]
         `$$ParamName
 "@
     }
@@ -184,6 +208,14 @@ foreach ($Prop in $Properties) {
 "@
     }
     elseif ($Prop.Value.PrimitiveType -eq "String") {
+        if ($ParamName -eq "LoggingLevel") {
+        $scriptContents += @"
+        [parameter(Mandatory = $Mandatory)]
+        [ValidateSet("OFF","ERROR","INFO")]
+        `$$ParamName
+"@
+        }
+        else {
         $scriptContents += @"
         [parameter(Mandatory = $Mandatory)]
         [ValidateScript( {
@@ -197,6 +229,7 @@ foreach ($Prop in $Properties) {
             })]
         `$$ParamName
 "@
+        }
     }
     else{
         $scriptContents += @"

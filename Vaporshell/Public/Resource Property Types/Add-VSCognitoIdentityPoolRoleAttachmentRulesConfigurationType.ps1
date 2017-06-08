@@ -7,7 +7,7 @@ function Add-VSCognitoIdentityPoolRoleAttachmentRulesConfigurationType {
         Adds an AWS::Cognito::IdentityPoolRoleAttachment.RulesConfigurationType resource property to the template
 
     .LINK
-        
+        http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-cognito-identitypoolroleattachment-rulesconfigurationtype.html
 
     .FUNCTIONALITY
         Vaporshell

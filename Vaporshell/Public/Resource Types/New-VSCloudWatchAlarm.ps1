@@ -52,10 +52,22 @@ function New-VSCloudWatchAlarm {
 		Type: List
 		UpdateType: Mutable
 
+    .PARAMETER EvaluateLowSampleCountPercentile
+		Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-cw-alarm.html#cfn-cloudwatch-alarms-evaluatelowsamplecountpercentile
+		PrimitiveType: String
+		Required: False
+		UpdateType: Mutable
+
     .PARAMETER EvaluationPeriods
 		Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-cw-alarm.html#cfn-cloudwatch-alarms-evaluationperiods
 		PrimitiveType: Integer
 		Required: True
+		UpdateType: Mutable
+
+    .PARAMETER ExtendedStatistic
+		Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-cw-alarm.html#cfn-cloudwatch-alarms-extendedstatistic
+		PrimitiveType: String
+		Required: False
 		UpdateType: Mutable
 
     .PARAMETER InsufficientDataActions
@@ -95,13 +107,19 @@ function New-VSCloudWatchAlarm {
     .PARAMETER Statistic
 		Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-cw-alarm.html#cfn-cloudwatch-alarms-statistic
 		PrimitiveType: String
-		Required: True
+		Required: False
 		UpdateType: Mutable
 
     .PARAMETER Threshold
 		Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-cw-alarm.html#cfn-cloudwatch-alarms-threshold
 		PrimitiveType: Double
 		Required: True
+		UpdateType: Mutable
+
+    .PARAMETER TreatMissingData
+		Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-cw-alarm.html#cfn-cloudwatch-alarms-treatmissingdata
+		PrimitiveType: String
+		Required: False
 		UpdateType: Mutable
 
     .PARAMETER Unit
@@ -206,9 +224,31 @@ function New-VSCloudWatchAlarm {
                 }
             })]
         $Dimensions,
+        [parameter(Mandatory = $false)]
+        [ValidateScript( {
+                $allowedTypes = "System.String","Vaporshell.Function"
+                if ([string]$($_.PSTypeNames) -match "($(($allowedTypes|ForEach-Object{[RegEx]::Escape($_)}) -join '|'))") {
+                    $true
+                }
+                else {
+                    throw "This parameter only accepts the following types: $($allowedTypes -join ", "). The current types of the value are: $($_.PSTypeNames -join ", ")."
+                }
+            })]
+        $EvaluateLowSampleCountPercentile,
         [parameter(Mandatory = $true)]
         [Int]
         $EvaluationPeriods,
+        [parameter(Mandatory = $false)]
+        [ValidateScript( {
+                $allowedTypes = "System.String","Vaporshell.Function"
+                if ([string]$($_.PSTypeNames) -match "($(($allowedTypes|ForEach-Object{[RegEx]::Escape($_)}) -join '|'))") {
+                    $true
+                }
+                else {
+                    throw "This parameter only accepts the following types: $($allowedTypes -join ", "). The current types of the value are: $($_.PSTypeNames -join ", ")."
+                }
+            })]
+        $ExtendedStatistic,
         [parameter(Mandatory = $false)]
         $InsufficientDataActions,
         [parameter(Mandatory = $true)]
@@ -238,7 +278,7 @@ function New-VSCloudWatchAlarm {
         [parameter(Mandatory = $true)]
         [Int]
         $Period,
-        [parameter(Mandatory = $true)]
+        [parameter(Mandatory = $false)]
         [ValidateScript( {
                 $allowedTypes = "System.String","Vaporshell.Function"
                 if ([string]$($_.PSTypeNames) -match "($(($allowedTypes|ForEach-Object{[RegEx]::Escape($_)}) -join '|'))") {
@@ -250,8 +290,19 @@ function New-VSCloudWatchAlarm {
             })]
         $Statistic,
         [parameter(Mandatory = $true)]
-        [Int]
+        [System.Double]
         $Threshold,
+        [parameter(Mandatory = $false)]
+        [ValidateScript( {
+                $allowedTypes = "System.String","Vaporshell.Function"
+                if ([string]$($_.PSTypeNames) -match "($(($allowedTypes|ForEach-Object{[RegEx]::Escape($_)}) -join '|'))") {
+                    $true
+                }
+                else {
+                    throw "This parameter only accepts the following types: $($allowedTypes -join ", "). The current types of the value are: $($_.PSTypeNames -join ", ")."
+                }
+            })]
+        $TreatMissingData,
         [parameter(Mandatory = $false)]
         [ValidateScript( {
                 $allowedTypes = "System.String","Vaporshell.Function"

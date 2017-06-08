@@ -26,9 +26,9 @@ function New-VSCognitoIdentityPool {
 		UpdateType: Mutable
 
     .PARAMETER CognitoEvents
-		Type: Json
 		Required: False
 		Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-cognito-identitypool.html#cfn-cognito-identitypool-cognitoevents
+		PrimitiveType: Json
 		UpdateType: Mutable
 
     .PARAMETER DeveloperProviderName
@@ -56,9 +56,9 @@ function New-VSCognitoIdentityPool {
 		UpdateType: Mutable
 
     .PARAMETER SupportedLoginProviders
-		Type: Json
 		Required: False
 		Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-cognito-identitypool.html#cfn-cognito-identitypool-supportedloginproviders
+		PrimitiveType: Json
 		UpdateType: Mutable
 
     .PARAMETER SamlProviderARNs

@@ -45,13 +45,13 @@ function New-VSAutoScalingLifecycleHook {
     .PARAMETER NotificationTargetARN
 		Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-as-lifecyclehook.html#cfn-as-lifecyclehook-notificationtargetarn
 		PrimitiveType: String
-		Required: True
+		Required: False
 		UpdateType: Mutable
 
     .PARAMETER RoleARN
 		Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-as-lifecyclehook.html#cfn-as-lifecyclehook-rolearn
 		PrimitiveType: String
-		Required: True
+		Required: False
 		UpdateType: Mutable
 
     .PARAMETER DeletionPolicy
@@ -148,7 +148,7 @@ function New-VSAutoScalingLifecycleHook {
                 }
             })]
         $NotificationMetadata,
-        [parameter(Mandatory = $true)]
+        [parameter(Mandatory = $false)]
         [ValidateScript( {
                 $allowedTypes = "System.String","Vaporshell.Function"
                 if ([string]$($_.PSTypeNames) -match "($(($allowedTypes|ForEach-Object{[RegEx]::Escape($_)}) -join '|'))") {
@@ -159,7 +159,7 @@ function New-VSAutoScalingLifecycleHook {
                 }
             })]
         $NotificationTargetARN,
-        [parameter(Mandatory = $true)]
+        [parameter(Mandatory = $false)]
         [ValidateScript( {
                 $allowedTypes = "System.String","Vaporshell.Function"
                 if ([string]$($_.PSTypeNames) -match "($(($allowedTypes|ForEach-Object{[RegEx]::Escape($_)}) -join '|'))") {

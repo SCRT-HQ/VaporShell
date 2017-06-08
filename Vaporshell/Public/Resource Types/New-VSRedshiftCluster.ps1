@@ -12,7 +12,7 @@ function New-VSRedshiftCluster {
     .PARAMETER LogicalId
         The logical ID must be alphanumeric (A-Za-z0-9) and unique within the template. Use the logical name to reference the resource in other parts of the template. For example, if you want to map an Amazon Elastic Block Store volume to an Amazon EC2 instance, you reference the logical IDs to associate the block stores with the instance.
 
-    .PARAMETER AllowVersionUpdate
+    .PARAMETER AllowVersionUpgrade
 		Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-redshift-cluster.html#cfn-redshift-cluster-allowversionupgrade
 		PrimitiveType: Boolean
 		Required: False
@@ -38,7 +38,7 @@ function New-VSRedshiftCluster {
 
     .PARAMETER ClusterSecurityGroups
 		Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-redshift-cluster.html#cfn-redshift-cluster-clustersecuritygroups
-		DuplicatesAllowed: False
+		DuplicatesAllowed: True
 		PrimitiveItemType: String
 		Required: False
 		Type: List
@@ -82,6 +82,12 @@ function New-VSRedshiftCluster {
 
     .PARAMETER HsmClientCertificateIdentifier
 		Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-redshift-cluster.html#cfn-redshift-cluster-hsmclientcertidentifier
+		PrimitiveType: String
+		Required: False
+		UpdateType: Mutable
+
+    .PARAMETER HsmConfigurationIdentifier
+		Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-redshift-cluster.html#cfn-redshift-cluster-HsmConfigurationIdentifier
 		PrimitiveType: String
 		Required: False
 		UpdateType: Mutable
@@ -160,9 +166,17 @@ function New-VSRedshiftCluster {
 		Required: False
 		UpdateType: Immutable
 
+    .PARAMETER Tags
+		Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-redshift-cluster.html#cfn-redshift-cluster-tags
+		DuplicatesAllowed: True
+		ItemType: Tag
+		Required: False
+		Type: List
+		UpdateType: Mutable
+
     .PARAMETER VpcSecurityGroupIds
 		Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-redshift-cluster.html#cfn-redshift-cluster-vpcsecuritygroupids
-		DuplicatesAllowed: False
+		DuplicatesAllowed: True
 		PrimitiveItemType: String
 		Required: False
 		Type: List
@@ -217,7 +231,7 @@ function New-VSRedshiftCluster {
         $LogicalId,
         [parameter(Mandatory = $false)]
         [System.Boolean]
-        $AllowVersionUpdate,
+        $AllowVersionUpgrade,
         [parameter(Mandatory = $false)]
         [Int]
         $AutomatedSnapshotRetentionPeriod,
@@ -314,6 +328,17 @@ function New-VSRedshiftCluster {
                 }
             })]
         $HsmClientCertificateIdentifier,
+        [parameter(Mandatory = $false)]
+        [ValidateScript( {
+                $allowedTypes = "System.String","Vaporshell.Function"
+                if ([string]$($_.PSTypeNames) -match "($(($allowedTypes|ForEach-Object{[RegEx]::Escape($_)}) -join '|'))") {
+                    $true
+                }
+                else {
+                    throw "This parameter only accepts the following types: $($allowedTypes -join ", "). The current types of the value are: $($_.PSTypeNames -join ", ")."
+                }
+            })]
+        $HsmConfigurationIdentifier,
         [parameter(Mandatory = $false)]
         $IamRoles,
         [parameter(Mandatory = $false)]
@@ -413,6 +438,17 @@ function New-VSRedshiftCluster {
                 }
             })]
         $SnapshotIdentifier,
+        [parameter(Mandatory = $false)]
+        [ValidateScript( {
+                $allowedTypes = "Vaporshell.Resource.Tag"
+                if ([string]$($_.PSTypeNames) -match "($(($allowedTypes|ForEach-Object{[RegEx]::Escape($_)}) -join '|'))") {
+                    $true
+                }
+                else {
+                    throw "This parameter only accepts the following types: $($allowedTypes -join ", "). The current types of the value are: $($_.PSTypeNames -join ", ")."
+                }
+            })]
+        $Tags,
         [parameter(Mandatory = $false)]
         $VpcSecurityGroupIds,
         [ValidateSet("Delete","Retain","Snapshot")]

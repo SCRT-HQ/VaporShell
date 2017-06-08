@@ -20,7 +20,7 @@ function New-VSEMRSecurityConfiguration {
 
     .PARAMETER SecurityConfiguration
 		Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-emr-securityconfiguration.html#cfn-emr-securityconfiguration-securityconfiguration
-		PrimitiveType: String
+		PrimitiveType: Json
 		Required: True
 		UpdateType: Immutable
 
@@ -83,15 +83,6 @@ function New-VSEMRSecurityConfiguration {
             })]
         $Name,
         [parameter(Mandatory = $true)]
-        [ValidateScript( {
-                $allowedTypes = "System.String","Vaporshell.Function"
-                if ([string]$($_.PSTypeNames) -match "($(($allowedTypes|ForEach-Object{[RegEx]::Escape($_)}) -join '|'))") {
-                    $true
-                }
-                else {
-                    throw "This parameter only accepts the following types: $($allowedTypes -join ", "). The current types of the value are: $($_.PSTypeNames -join ", ")."
-                }
-            })]
         $SecurityConfiguration,
         [ValidateSet("Delete","Retain","Snapshot")]
         [System.String]

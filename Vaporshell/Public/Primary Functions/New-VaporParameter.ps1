@@ -198,6 +198,7 @@ function New-VaporParameter {
         [System.String]
         $LogicalId,
         [parameter(Mandatory = $true,Position = 1)]
+        [ValidateSet("String","Number","List<Number>","CommaDelimitedList","AWS::EC2::AvailabilityZone::Name","AWS::EC2::Image::Id","AWS::EC2::Instance::Id","AWS::EC2::KeyPair::KeyName","AWS::EC2::SecurityGroup::GroupName","AWS::EC2::SecurityGroup::Id","AWS::EC2::Subnet::Id","AWS::EC2::Volume::Id","AWS::EC2::VPC::Id","AWS::Route53::HostedZone::Id","List<AWS::EC2::AvailabilityZone::Name>","List<AWS::EC2::Image::Id>","List<AWS::EC2::Instance::Id>","List<AWS::EC2::SecurityGroup::GroupName>","List<AWS::EC2::SecurityGroup::Id>","List<AWS::EC2::Subnet::Id>","List<AWS::EC2::Volume::Id>","List<AWS::EC2::VPC::Id>","List<AWS::Route53::HostedZone::Id>")]
         [System.String]
         $Type,
         [parameter(Mandatory = $false,Position = 2)]
@@ -227,16 +228,16 @@ function New-VaporParameter {
         [System.String]
         $Description,
         [parameter(Mandatory = $false,Position = 8)]
-        [System.Int32]
+        [Int]
         $MaxLength,
         [parameter(Mandatory = $false,Position = 9)]
-        [System.Int32]
+        [Int]
         $MaxValue,
         [parameter(Mandatory = $false,Position = 10)]
-        [System.Int32]
+        [Int]
         $MinLength,
         [parameter(Mandatory = $false,Position = 11)]
-        [System.Int32]
+        [Int]
         $MinValue
     )
     Begin {
@@ -250,7 +251,7 @@ function New-VaporParameter {
                 $Properties | Add-Member -MemberType NoteProperty -Name Default -Value $Default
             }
             'NoEcho' {
-                $Properties | Add-Member -MemberType NoteProperty -Name NoEcho -Value $NoEcho
+                $Properties | Add-Member -MemberType NoteProperty -Name NoEcho -Value ([string]$NoEcho).ToLower()
             }
             'AllowedPattern' {
                 $Properties | Add-Member -MemberType NoteProperty -Name AllowedPattern -Value $AllowedPattern

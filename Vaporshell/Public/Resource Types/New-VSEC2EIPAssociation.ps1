@@ -18,7 +18,7 @@ function New-VSEC2EIPAssociation {
 		Required: False
 		UpdateType: Conditional
 
-    .PARAMETER Eip
+    .PARAMETER EIP
 		Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-eip-association.html#cfn-ec2-eipassociation-eip
 		PrimitiveType: String
 		Required: False
@@ -110,7 +110,7 @@ function New-VSEC2EIPAssociation {
                     throw "This parameter only accepts the following types: $($allowedTypes -join ", "). The current types of the value are: $($_.PSTypeNames -join ", ")."
                 }
             })]
-        $Eip,
+        $EIP,
         [parameter(Mandatory = $false)]
         [ValidateScript( {
                 $allowedTypes = "System.String","Vaporshell.Function"
