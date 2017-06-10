@@ -1,18 +1,11 @@
-| Build | AppVeyor (Windows) | Travis CI* (Linux / macOS) |
-|:-----:|:------------------:|:----------:|
-| Master | [![Build status](https://ci.appveyor.com/api/projects/status/8a4jsfv42tbmlym8/branch/master?svg=true)](https://ci.appveyor.com/project/nferrell/vaporshell/branch/master) |  _Coming soon!_ |
-| Dev | [![Build status](https://ci.appveyor.com/api/projects/status/8a4jsfv42tbmlym8/branch/dev?svg=true)](https://ci.appveyor.com/project/nferrell/vaporshell/branch/dev) | _Coming soon!_ | 
+| Build | AppVeyor (Windows) | Travis CI* (Linux / macOS) | Code Coverage |
+|:-----:|:------------------:|:--------------------------:|:-------------:|
+| Master | [![Build status](https://ci.appveyor.com/api/projects/status/8a4jsfv42tbmlym8/branch/master?svg=true)](https://ci.appveyor.com/project/nferrell/vaporshell/branch/master) |  _Coming soon!_ | [![Coverage Status](https://coveralls.io/repos/github/nferrell/Vaporshell/badge.svg?branch=master)](https://coveralls.io/github/nferrell/Vaporshell?branch=master) |
+| Dev | [![Build status](https://ci.appveyor.com/api/projects/status/8a4jsfv42tbmlym8/branch/dev?svg=true)](https://ci.appveyor.com/project/nferrell/vaporshell/branch/dev) | _Coming soon!_ | [![Coverage Status](https://coveralls.io/repos/github/nferrell/Vaporshell/badge.svg?branch=master)](https://coveralls.io/github/nferrell/Vaporshell?branch=dev) |
 
 ##### _*Travis CI tests are currently being built out, but the same tests being run within AppVeyor are being manually ran in terminal on an Ubuntu 16.04 LTS VM and a MacBook Pro running macOS Sierra without issue._   
 
 # *Vaporshell* 
-
-## **cloud**
-**/kloud/**  
-_noun_  
-1. a visible mass of condensed water vapor floating in the atmosphere, typically high above the ground.
-
-***
 
 Vaporshell is a module for Powershell that allows easier and less error prone build outs of AWS CloudFormation JSON templates using familiar syntax and structure to define AWS resources, while simultaneously gaining the capabilities of Powershell and removing the need to work with JSON directly.
 

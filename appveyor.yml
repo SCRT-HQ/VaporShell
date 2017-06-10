@@ -7,6 +7,8 @@ clone_folder: C:\projects\Vaporshell
 environment:
   NuGetApiKey:
     secure: Ocp1ATd6eZ0eY9+LfZ9Stp9/J1B5eFdBPMdaTRWVa4xh6/NV45ZBYtU5+eemrTWt
+  Coveralls:
+    secure: HbPIxwnQamh7cn5+oI68cfeDE0KSkfvwtlUckMyeKAYSRqDg4Iqg1zVQMIUuodLv
 
 # Allow WMF5 (i.e. PowerShellGallery functionality)
 os: WMF 5
