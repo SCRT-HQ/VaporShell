@@ -23,6 +23,8 @@ For those that are familiar with [Troposphere for Python by CloudTools](https://
 
 ## How to Install
 
+[![PS Gallery](https://img.shields.io/badge/install-PS%20Gallery-blue.svg)](https://www.powershellgallery.com/packages/Vaporshell)
+
 You can install the module directly from [Powershell Gallery](https://www.powershellgallery.com/packages/vaporshell) by running the following command in and administrator Powershell console:
 
 `Install-Module -Name Vaporshell`
