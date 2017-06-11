@@ -24,8 +24,6 @@ Task Default -Depends Deploy
 
 Task Init {
     $lines
-    Install-Module Coveralls -Force
-    Import-Module Coveralls -Force
     Set-Location $ProjectRoot
     "Build System Details:"
     Get-Item ENV:BH*
@@ -37,7 +35,7 @@ Task Test -Depends Init  {
     "`n`tSTATUS: Testing with PowerShell $PSVersion"
 
     # Gather test results. Store them in a variable and file
-    $TestResults = Invoke-Pester -Path $ProjectRoot\Tests -PassThru -OutputFormat NUnitXml -OutputFile "$ProjectRoot\$TestFile" -CodeCoverage "$ProjectRoot\Vaporshell\Public\Condition Functions\*","$ProjectRoot\Vaporshell\Public\Intrinisic Functions\*","$ProjectRoot\Vaporshell\Public\Primary Functions\*","$ProjectRoot\Vaporshell\Public\Transform\*","$ProjectRoot\Vaporshell\Public\*-Vaporshell.ps1","$ProjectRoot\Vaporshell\Vaporshell.psm1"
+    $TestResults = Invoke-Pester -Path $ProjectRoot\Tests -PassThru -OutputFormat NUnitXml -OutputFile "$ProjectRoot\$TestFile"
 
     # In Appveyor?  Upload our tests! #Abstract this into a function?
     If($ENV:BHBuildSystem -eq 'AppVeyor')
@@ -45,8 +43,6 @@ Task Test -Depends Init  {
         (New-Object 'System.Net.WebClient').UploadFile(
             "https://ci.appveyor.com/api/testresults/nunit/$($env:APPVEYOR_JOB_ID)",
             "$ProjectRoot\$TestFile" )
-        $coverage = Format-Coverage -PesterResults $TestResults -CoverallsApiToken $ENV:Coveralls -BranchName $ENV:APPVEYOR_REPO_BRANCH
-        Publish-Coverage -Coverage $coverage
     }
 
     Remove-Item "$ProjectRoot\$TestFile" -Force -ErrorAction SilentlyContinue

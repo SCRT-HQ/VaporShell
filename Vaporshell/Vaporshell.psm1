@@ -4,12 +4,7 @@ $Private = @( Get-ChildItem -Path $PSScriptRoot\Private -Recurse -Filter "*.ps1"
 
 #Dot source the files
 Foreach ($import in @($Public + $Private)) {
-    Try {
-        . $import.fullname
-    }
-    Catch {
-        Write-Error -Message "Failed to import function $($import.fullname): $_"
-    }
+    . $import.fullname
 }
 
 # Add in Pseudo Parameter variables from private text file (allows growth in case additional parameters need to be added in)

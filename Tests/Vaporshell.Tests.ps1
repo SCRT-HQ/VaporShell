@@ -110,7 +110,7 @@ Describe "Initialize/Export/Import PS$PSVersion" {
             $templateInit.AddResource(
                 (New-VSApiGatewayDeployment -LogicalId "GatewayDeployment" -Description "My deployment" -RestApiId (Add-FnRef -Ref "MyApi") -StageDescription (Add-VSApiGatewayDeploymentStageDescription -MethodSettings (Add-VSApiGatewayDeploymentMethodSetting -LoggingLevel ERROR) -CacheClusterEnabled $true -CacheDataEncrypted $false)),
                 (New-VSApiGatewayRestApi -LogicalId "MyApi" -Description "My REST API"),
-                (New-VSEC2Instance -LogicalId "MyInstance" -AvailabilityZone "us-east-1a" -ImageId (Add-FnFindInMap -MapName "RegionMap" -TopLevelKey "us-west-1" -SecondLevelKey "32") -Condition "CreateProdResources")
+                (New-VSEC2Instance -LogicalId "MyInstance" -AvailabilityZone "us-east-1a" -ImageId (Add-FnFindInMap -MapName "RegionMap" -TopLevelKey "us-west-1" -SecondLevelKey "32") -Condition "CreateProdResources" -Tags (Add-VSTag -Key "Name" -Value "MyInstance"),(Add-VSTag -Key "Environment" -Value "Production") -CreationPolicy (Add-CreationPolicy -MinSuccessfulInstancesPercent 100 -Count 1 -Timeout "PT5M") -UpdatePolicy (Add-UpdatePolicy -WillReplace $true -MaxBatchSize 2 -MinInstancesInService 2 -MinSuccessfulInstancesPercent 100 -PauseTime "PT30S" -WaitOnResourceSignals $true -IgnoreUnmodifiedGroupSizeProperties $true) -DeletionPolicy Delete -DependsOn "GatewayDeployment" -Metadata ([PSCustomObject]@{CommonName = "WebServer1"}))
             )
             $templateInit.AddOutput((New-VaporOutput -LogicalId "BackupLoadBalancerDNSName" -Description "The DNSName of the backup load balancer" -Value (Add-FnGetAtt -LogicalNameOfResource "BackupLoadBalancer" -AttributeName "DNSName") -Condition "CreateProdResources"))
 

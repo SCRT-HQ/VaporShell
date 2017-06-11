@@ -44,7 +44,7 @@ function Export-Vaporshell {
         })]
         [PSTypeName('Vaporshell.Template')]
         $VaporshellTemplate,
-        [parameter(Mandatory = $false,Position = 1)]
+        [parameter(Mandatory = $true,Position = 1)]
         [System.String]
         $Path,
         [Switch]
@@ -57,11 +57,6 @@ function Export-Vaporshell {
         }
     }
     Process {
-        if ($Path) {
-            ConvertTo-Json -Depth 100 -InputObject $VaporshellTemplate -Verbose:$false | Set-Content -Path $Path @ForcePref -Verbose:$false 
-        }
-        else {
-            ConvertTo-Json -Depth 100 -InputObject $VaporshellTemplate -Verbose:$false
-        }
+        ConvertTo-Json -Depth 100 -InputObject $VaporshellTemplate -Verbose:$false | Set-Content -Path $Path @ForcePref -Verbose:$false
     }
 }

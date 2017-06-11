@@ -627,7 +627,15 @@ function New-VSRDSDBInstance {
         [System.String[]]
         $DependsOn,
         [parameter(Mandatory = $false)]
-        [System.Management.Automation.PSCustomObject]
+        [ValidateScript( {
+                $allowedTypes = "System.Management.Automation.PSCustomObject"
+                if ([string]$($_.PSTypeNames) -match "($(($allowedTypes|ForEach-Object{[RegEx]::Escape($_)}) -join '|'))") {
+                    $true
+                }
+                else {
+                    throw "The UpdatePolicy parameter only accepts the following types: $($allowedTypes -join ", "). The current types of the value are: $($_.PSTypeNames -join ", ")."
+                }
+            })]
         $Metadata,
         [parameter(Mandatory = $false)]
         [ValidateScript( {

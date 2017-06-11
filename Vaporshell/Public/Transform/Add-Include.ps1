@@ -45,14 +45,7 @@ function Add-Include {
     Param
     (
         [parameter(Mandatory = $true,Position = 0)]
-        [ValidateScript({
-            if ($_ -match "^s3:\/\/.*") {
-                $true
-            }
-            else {
-                throw "The Location parameter must be an S3 URL such as 's3://MyAmazonS3BucketName/single_wait_condition.yaml'"
-            }
-        })]
+        [ValidatePattern("^s3:\/\/.*")]
         [System.String]
         $Location
     )
