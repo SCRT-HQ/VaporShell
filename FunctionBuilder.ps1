@@ -179,6 +179,21 @@ foreach ($Prop in $Properties) {
 "@
         }
     }
+    elseif ($Prop.Name -eq "UserData") {
+        $scriptContents += @"
+        [parameter(Mandatory = $Mandatory)]
+        [ValidateScript( {
+                `$allowedTypes = "Vaporshell.Function.Base64","Vaporshell.Resource.UserData"
+                if ([string]`$(`$_.PSTypeNames) -match "(`$((`$allowedTypes|ForEach-Object{[RegEx]::Escape(`$_)}) -join '|'))") {
+                    `$true
+                }
+                else {
+                    throw "This parameter only accepts the following types: `$(`$allowedTypes -join ", "). The current types of the value are: `$(`$_.PSTypeNames -join ", ")."
+                }
+            })]
+        `$$ParamName
+"@
+        }
     elseif ($Prop.Value.Type -eq "Map") {
         $scriptContents += @"
         [parameter(Mandatory = $Mandatory)]

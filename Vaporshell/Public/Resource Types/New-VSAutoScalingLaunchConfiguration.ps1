@@ -303,7 +303,7 @@ function New-VSAutoScalingLaunchConfiguration {
         $SpotPrice,
         [parameter(Mandatory = $false)]
         [ValidateScript( {
-                $allowedTypes = "System.String","Vaporshell.Function"
+                $allowedTypes = "Vaporshell.Function.Base64","Vaporshell.Resource.UserData"
                 if ([string]$($_.PSTypeNames) -match "($(($allowedTypes|ForEach-Object{[RegEx]::Escape($_)}) -join '|'))") {
                     $true
                 }
