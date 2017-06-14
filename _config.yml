@@ -7,7 +7,7 @@ description: |
   Take advantage of Powershell   
   to build out your CloudFormation   
   templates in AWS   
-owner: Nate Ferrell # or company name
+owner: SCRT HQ # or company name
 first_published: 2017 # if migrating another site, the year of your first publish
 email: nate@vaporshell.io
 baseurl: "" # the subpath of your site, e.g. /blog
