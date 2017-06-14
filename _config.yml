@@ -13,8 +13,9 @@ email: nate@vaporshell.io
 baseurl: "" # the subpath of your site, e.g. /blog
 url: "http://vaporshell.io" # the base hostname & protocol for your site
 social:
+  linkedin-square: https://linkedin.com/in/scrthq
   github: https://github.com/nferrell
-  #email: /contact/
+  email: /contact/nate@vaporshell.io
   #flickr:
   #instagram:
   #youtube-square:
