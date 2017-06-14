@@ -4,7 +4,9 @@
 # Site settings
 title: Vaporshell
 description: |
-  Build out CloudFormation templates with the advantages of Powershell
+  Take advantage of Powershell 
+  to build out your CloudFormation
+  templates in AWS
 owner: Nate Ferrell # or company name
 first_published: 2017 # if migrating another site, the year of your first publish
 email: nate@vaporshell.io
