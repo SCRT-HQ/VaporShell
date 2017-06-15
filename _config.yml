@@ -4,9 +4,9 @@
 # Site settings
 title: Vaporshell
 description: |
-  Take advantage of Powershell   
-  to build out your CloudFormation   
-  templates in AWS   
+  Define your Cloud   
+  with Powershell   
+  on any system.   
 owner: SCRT HQ # or company name
 first_published: 2017 # if migrating another site, the year of your first publish
 email: nate@vaporshell.io
@@ -15,7 +15,7 @@ url: "http://vaporshell.io" # the base hostname & protocol for your site
 social:
   linkedin-square: https://linkedin.com/in/scrthq
   github: https://github.com/nferrell
-  email: /contact/nate@vaporshell.io
+  email: mailto:nate@vaporshell.io
   #flickr:
   #instagram:
   #youtube-square:
