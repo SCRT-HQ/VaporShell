@@ -14,7 +14,7 @@ baseurl: "" # the subpath of your site, e.g. /blog
 url: "http://vaporshell.io" # the base hostname & protocol for your site
 social:
   linkedin-square: https://linkedin.com/in/scrthq
-  github: https://github.com/nferrell
+  github: https://github.com/scrthq
   email: mailto:nate@vaporshell.io
   #flickr:
   #instagram:
