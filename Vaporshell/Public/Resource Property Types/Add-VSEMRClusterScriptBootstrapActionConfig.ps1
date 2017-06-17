@@ -10,18 +10,18 @@ function Add-VSEMRClusterScriptBootstrapActionConfig {
         http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-emr-cluster-bootstrapactionconfig-scriptbootstrapactionconfig.html
 
     .PARAMETER Args
-		Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-emr-cluster-bootstrapactionconfig-scriptbootstrapactionconfig.html#cfn-emr-cluster-bootstrapactionconfig-scriptbootstrapaction-args
-		DuplicatesAllowed: False
-		PrimitiveItemType: String
-		Required: False
-		Type: List
-		UpdateType: Mutable
+		Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-emr-cluster-bootstrapactionconfig-scriptbootstrapactionconfig.html#cfn-emr-cluster-bootstrapactionconfig-scriptbootstrapaction-args    
+		DuplicatesAllowed: False    
+		PrimitiveItemType: String    
+		Required: False    
+		Type: List    
+		UpdateType: Mutable    
 
     .PARAMETER Path
-		Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-emr-cluster-bootstrapactionconfig-scriptbootstrapactionconfig.html#cfn-emr-cluster-bootstrapactionconfig-scriptbootstrapaction-path
-		PrimitiveType: String
-		Required: True
-		UpdateType: Mutable
+		Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-emr-cluster-bootstrapactionconfig-scriptbootstrapactionconfig.html#cfn-emr-cluster-bootstrapactionconfig-scriptbootstrapaction-path    
+		PrimitiveType: String    
+		Required: True    
+		UpdateType: Mutable    
 
     .FUNCTIONALITY
         Vaporshell

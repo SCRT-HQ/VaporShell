@@ -10,22 +10,22 @@ function Add-VSIoTTopicRuleS3Action {
         http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iot-s3.html
 
     .PARAMETER BucketName
-		Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iot-s3.html#cfn-iot-s3-bucketname
-		PrimitiveType: String
-		Required: True
-		UpdateType: Mutable
+		Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iot-s3.html#cfn-iot-s3-bucketname    
+		PrimitiveType: String    
+		Required: True    
+		UpdateType: Mutable    
 
     .PARAMETER Key
-		Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iot-s3.html#cfn-iot-s3-key
-		PrimitiveType: String
-		Required: True
-		UpdateType: Mutable
+		Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iot-s3.html#cfn-iot-s3-key    
+		PrimitiveType: String    
+		Required: True    
+		UpdateType: Mutable    
 
     .PARAMETER RoleArn
-		Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iot-s3.html#cfn-iot-s3-rolearn
-		PrimitiveType: String
-		Required: True
-		UpdateType: Mutable
+		Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iot-s3.html#cfn-iot-s3-rolearn    
+		PrimitiveType: String    
+		Required: True    
+		UpdateType: Mutable    
 
     .FUNCTIONALITY
         Vaporshell

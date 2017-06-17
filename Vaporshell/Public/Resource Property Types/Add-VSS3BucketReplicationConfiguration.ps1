@@ -10,18 +10,18 @@ function Add-VSS3BucketReplicationConfiguration {
         http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-s3-bucket-replicationconfiguration.html
 
     .PARAMETER Role
-		Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-s3-bucket-replicationconfiguration.html#cfn-s3-bucket-replicationconfiguration-role
-		PrimitiveType: String
-		Required: True
-		UpdateType: Mutable
+		Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-s3-bucket-replicationconfiguration.html#cfn-s3-bucket-replicationconfiguration-role    
+		PrimitiveType: String    
+		Required: True    
+		UpdateType: Mutable    
 
     .PARAMETER Rules
-		Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-s3-bucket-replicationconfiguration.html#cfn-s3-bucket-replicationconfiguration-rules
-		DuplicatesAllowed: False
-		ItemType: ReplicationRule
-		Required: True
-		Type: List
-		UpdateType: Mutable
+		Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-s3-bucket-replicationconfiguration.html#cfn-s3-bucket-replicationconfiguration-rules    
+		DuplicatesAllowed: False    
+		ItemType: ReplicationRule    
+		Required: True    
+		Type: List    
+		UpdateType: Mutable    
 
     .FUNCTIONALITY
         Vaporshell

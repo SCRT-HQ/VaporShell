@@ -10,16 +10,16 @@ function Add-VSWAFSqlInjectionMatchSetFieldToMatch {
         http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-waf-bytematchset-bytematchtuples-fieldtomatch.html
 
     .PARAMETER Data
-		Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-waf-bytematchset-bytematchtuples-fieldtomatch.html#cfn-waf-sizeconstraintset-sizeconstraint-fieldtomatch-data
-		PrimitiveType: String
-		Required: False
-		UpdateType: Mutable
+		Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-waf-bytematchset-bytematchtuples-fieldtomatch.html#cfn-waf-sizeconstraintset-sizeconstraint-fieldtomatch-data    
+		PrimitiveType: String    
+		Required: False    
+		UpdateType: Mutable    
 
     .PARAMETER Type
-		Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-waf-bytematchset-bytematchtuples-fieldtomatch.html#cfn-waf-sizeconstraintset-sizeconstraint-fieldtomatch-type
-		PrimitiveType: String
-		Required: True
-		UpdateType: Mutable
+		Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-waf-bytematchset-bytematchtuples-fieldtomatch.html#cfn-waf-sizeconstraintset-sizeconstraint-fieldtomatch-type    
+		PrimitiveType: String    
+		Required: True    
+		UpdateType: Mutable    
 
     .FUNCTIONALITY
         Vaporshell

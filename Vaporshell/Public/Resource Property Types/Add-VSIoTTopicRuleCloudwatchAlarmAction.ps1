@@ -10,28 +10,28 @@ function Add-VSIoTTopicRuleCloudwatchAlarmAction {
         http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iot-cloudwatchalarm.html
 
     .PARAMETER AlarmName
-		Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iot-cloudwatchalarm.html#cfn-iot-cloudwatchalarm-alarmname
-		PrimitiveType: String
-		Required: True
-		UpdateType: Mutable
+		Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iot-cloudwatchalarm.html#cfn-iot-cloudwatchalarm-alarmname    
+		PrimitiveType: String    
+		Required: True    
+		UpdateType: Mutable    
 
     .PARAMETER RoleArn
-		Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iot-cloudwatchalarm.html#cfn-iot-cloudwatchalarm-rolearn
-		PrimitiveType: String
-		Required: True
-		UpdateType: Mutable
+		Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iot-cloudwatchalarm.html#cfn-iot-cloudwatchalarm-rolearn    
+		PrimitiveType: String    
+		Required: True    
+		UpdateType: Mutable    
 
     .PARAMETER StateReason
-		Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iot-cloudwatchalarm.html#cfn-iot-cloudwatchalarm-statereason
-		PrimitiveType: String
-		Required: True
-		UpdateType: Mutable
+		Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iot-cloudwatchalarm.html#cfn-iot-cloudwatchalarm-statereason    
+		PrimitiveType: String    
+		Required: True    
+		UpdateType: Mutable    
 
     .PARAMETER StateValue
-		Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iot-cloudwatchalarm.html#cfn-iot-cloudwatchalarm-statevalue
-		PrimitiveType: String
-		Required: True
-		UpdateType: Mutable
+		Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iot-cloudwatchalarm.html#cfn-iot-cloudwatchalarm-statevalue    
+		PrimitiveType: String    
+		Required: True    
+		UpdateType: Mutable    
 
     .FUNCTIONALITY
         Vaporshell

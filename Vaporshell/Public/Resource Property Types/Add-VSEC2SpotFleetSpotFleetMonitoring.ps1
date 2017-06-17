@@ -10,10 +10,10 @@ function Add-VSEC2SpotFleetSpotFleetMonitoring {
         http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-spotfleet-spotfleetrequestconfigdata-launchspecifications-monitoring.html
 
     .PARAMETER Enabled
-		Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-spotfleet-spotfleetrequestconfigdata-launchspecifications-monitoring.html#cfn-ec2-spotfleet-spotfleetmonitoring-enabled
-		PrimitiveType: Boolean
-		Required: False
-		UpdateType: Mutable
+		Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-spotfleet-spotfleetrequestconfigdata-launchspecifications-monitoring.html#cfn-ec2-spotfleet-spotfleetmonitoring-enabled    
+		PrimitiveType: Boolean    
+		Required: False    
+		UpdateType: Mutable    
 
     .FUNCTIONALITY
         Vaporshell

@@ -10,10 +10,10 @@ function Add-VSConfigDeliveryChannelConfigSnapshotDeliveryProperties {
         http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-config-deliverychannel-configsnapshotdeliveryproperties.html
 
     .PARAMETER DeliveryFrequency
-		Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-config-deliverychannel-configsnapshotdeliveryproperties.html#cfn-config-deliverychannel-configsnapshotdeliveryproperties-deliveryfrequency
-		PrimitiveType: String
-		Required: False
-		UpdateType: Mutable
+		Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-config-deliverychannel-configsnapshotdeliveryproperties.html#cfn-config-deliverychannel-configsnapshotdeliveryproperties-deliveryfrequency    
+		PrimitiveType: String    
+		Required: False    
+		UpdateType: Mutable    
 
     .FUNCTIONALITY
         Vaporshell

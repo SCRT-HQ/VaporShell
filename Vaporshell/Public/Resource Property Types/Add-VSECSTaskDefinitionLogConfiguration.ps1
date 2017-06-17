@@ -10,18 +10,18 @@ function Add-VSECSTaskDefinitionLogConfiguration {
         http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ecs-taskdefinition-containerdefinitions-logconfiguration.html
 
     .PARAMETER LogDriver
-		Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ecs-taskdefinition-containerdefinitions-logconfiguration.html#cfn-ecs-taskdefinition-containerdefinition-logconfiguration-logdriver
-		PrimitiveType: String
-		Required: True
-		UpdateType: Immutable
+		Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ecs-taskdefinition-containerdefinitions-logconfiguration.html#cfn-ecs-taskdefinition-containerdefinition-logconfiguration-logdriver    
+		PrimitiveType: String    
+		Required: True    
+		UpdateType: Immutable    
 
     .PARAMETER Options
-		Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ecs-taskdefinition-containerdefinitions-logconfiguration.html#cfn-ecs-taskdefinition-containerdefinition-logconfiguration-options
-		DuplicatesAllowed: False
-		PrimitiveItemType: String
-		Required: False
-		Type: Map
-		UpdateType: Immutable
+		Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ecs-taskdefinition-containerdefinitions-logconfiguration.html#cfn-ecs-taskdefinition-containerdefinition-logconfiguration-options    
+		DuplicatesAllowed: False    
+		PrimitiveItemType: String    
+		Required: False    
+		Type: Map    
+		UpdateType: Immutable    
 
     .FUNCTIONALITY
         Vaporshell

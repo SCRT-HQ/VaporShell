@@ -10,24 +10,24 @@ function Add-VSDynamoDBTableLocalSecondaryIndex {
         http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-dynamodb-lsi.html
 
     .PARAMETER IndexName
-		Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-dynamodb-lsi.html#cfn-dynamodb-lsi-indexname
-		PrimitiveType: String
-		Required: True
-		UpdateType: Mutable
+		Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-dynamodb-lsi.html#cfn-dynamodb-lsi-indexname    
+		PrimitiveType: String    
+		Required: True    
+		UpdateType: Mutable    
 
     .PARAMETER KeySchema
-		Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-dynamodb-lsi.html#cfn-dynamodb-lsi-keyschema
-		DuplicatesAllowed: True
-		ItemType: KeySchema
-		Required: True
-		Type: List
-		UpdateType: Mutable
+		Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-dynamodb-lsi.html#cfn-dynamodb-lsi-keyschema    
+		DuplicatesAllowed: True    
+		ItemType: KeySchema    
+		Required: True    
+		Type: List    
+		UpdateType: Mutable    
 
     .PARAMETER Projection
-		Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-dynamodb-lsi.html#cfn-dynamodb-lsi-projection
-		Required: True
-		Type: Projection
-		UpdateType: Mutable
+		Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-dynamodb-lsi.html#cfn-dynamodb-lsi-projection    
+		Required: True    
+		Type: Projection    
+		UpdateType: Mutable    
 
     .FUNCTIONALITY
         Vaporshell

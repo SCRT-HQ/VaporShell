@@ -10,16 +10,16 @@ function Add-VSWAFRegionalSizeConstraintSetFieldToMatch {
         http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-wafregional-sizeconstraintset-fieldtomatch.html
 
     .PARAMETER Type
-		Required: True
-		Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-wafregional-sizeconstraintset-fieldtomatch.html#cfn-wafregional-sizeconstraintset-fieldtomatch-type
-		PrimitiveType: String
-		UpdateType: Mutable
+		Required: True    
+		Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-wafregional-sizeconstraintset-fieldtomatch.html#cfn-wafregional-sizeconstraintset-fieldtomatch-type    
+		PrimitiveType: String    
+		UpdateType: Mutable    
 
     .PARAMETER Data
-		Required: False
-		Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-wafregional-sizeconstraintset-fieldtomatch.html#cfn-wafregional-sizeconstraintset-fieldtomatch-data
-		PrimitiveType: String
-		UpdateType: Mutable
+		Required: False    
+		Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-wafregional-sizeconstraintset-fieldtomatch.html#cfn-wafregional-sizeconstraintset-fieldtomatch-data    
+		PrimitiveType: String    
+		UpdateType: Mutable    
 
     .FUNCTIONALITY
         Vaporshell

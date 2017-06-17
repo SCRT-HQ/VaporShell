@@ -10,18 +10,18 @@ function Add-VSDynamoDBTableProjection {
         http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-dynamodb-projectionobject.html
 
     .PARAMETER NonKeyAttributes
-		Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-dynamodb-projectionobject.html#cfn-dynamodb-projectionobj-nonkeyatt
-		DuplicatesAllowed: True
-		PrimitiveItemType: String
-		Required: False
-		Type: List
-		UpdateType: Mutable
+		Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-dynamodb-projectionobject.html#cfn-dynamodb-projectionobj-nonkeyatt    
+		DuplicatesAllowed: True    
+		PrimitiveItemType: String    
+		Required: False    
+		Type: List    
+		UpdateType: Mutable    
 
     .PARAMETER ProjectionType
-		Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-dynamodb-projectionobject.html#cfn-dynamodb-projectionobj-projtype
-		PrimitiveType: String
-		Required: False
-		UpdateType: Mutable
+		Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-dynamodb-projectionobject.html#cfn-dynamodb-projectionobj-projtype    
+		PrimitiveType: String    
+		Required: False    
+		UpdateType: Mutable    
 
     .FUNCTIONALITY
         Vaporshell

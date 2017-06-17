@@ -10,40 +10,40 @@ function Add-VSCodeBuildProjectArtifacts {
         http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-codebuild-project-artifacts.html
 
     .PARAMETER Path
-		Required: False
-		Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-codebuild-project-artifacts.html#cfn-codebuild-project-artifacts-path
-		PrimitiveType: String
-		UpdateType: Mutable
+		Required: False    
+		Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-codebuild-project-artifacts.html#cfn-codebuild-project-artifacts-path    
+		PrimitiveType: String    
+		UpdateType: Mutable    
 
     .PARAMETER Type
-		Required: False
-		Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-codebuild-project-artifacts.html#cfn-codebuild-project-artifacts-type
-		PrimitiveType: String
-		UpdateType: Mutable
+		Required: False    
+		Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-codebuild-project-artifacts.html#cfn-codebuild-project-artifacts-type    
+		PrimitiveType: String    
+		UpdateType: Mutable    
 
     .PARAMETER Packaging
-		Required: False
-		Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-codebuild-project-artifacts.html#cfn-codebuild-project-artifacts-packaging
-		PrimitiveType: String
-		UpdateType: Mutable
+		Required: False    
+		Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-codebuild-project-artifacts.html#cfn-codebuild-project-artifacts-packaging    
+		PrimitiveType: String    
+		UpdateType: Mutable    
 
     .PARAMETER Location
-		Required: False
-		Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-codebuild-project-artifacts.html#cfn-codebuild-project-artifacts-location
-		PrimitiveType: String
-		UpdateType: Mutable
+		Required: False    
+		Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-codebuild-project-artifacts.html#cfn-codebuild-project-artifacts-location    
+		PrimitiveType: String    
+		UpdateType: Mutable    
 
     .PARAMETER Name
-		Required: False
-		Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-codebuild-project-artifacts.html#cfn-codebuild-project-artifacts-name
-		PrimitiveType: String
-		UpdateType: Mutable
+		Required: False    
+		Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-codebuild-project-artifacts.html#cfn-codebuild-project-artifacts-name    
+		PrimitiveType: String    
+		UpdateType: Mutable    
 
     .PARAMETER NamespaceType
-		Required: False
-		Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-codebuild-project-artifacts.html#cfn-codebuild-project-artifacts-namespacetype
-		PrimitiveType: String
-		UpdateType: Mutable
+		Required: False    
+		Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-codebuild-project-artifacts.html#cfn-codebuild-project-artifacts-namespacetype    
+		PrimitiveType: String    
+		UpdateType: Mutable    
 
     .FUNCTIONALITY
         Vaporshell

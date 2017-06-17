@@ -10,16 +10,16 @@ function Add-VSECSTaskDefinitionVolumeFrom {
         http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ecs-taskdefinition-containerdefinitions-volumesfrom.html
 
     .PARAMETER ReadOnly
-		Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ecs-taskdefinition-containerdefinitions-volumesfrom.html#cfn-ecs-taskdefinition-containerdefinition-volumesfrom-readonly
-		PrimitiveType: Boolean
-		Required: False
-		UpdateType: Immutable
+		Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ecs-taskdefinition-containerdefinitions-volumesfrom.html#cfn-ecs-taskdefinition-containerdefinition-volumesfrom-readonly    
+		PrimitiveType: Boolean    
+		Required: False    
+		UpdateType: Immutable    
 
     .PARAMETER SourceContainer
-		Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ecs-taskdefinition-containerdefinitions-volumesfrom.html#cfn-ecs-taskdefinition-containerdefinition-volumesfrom-sourcecontainer
-		PrimitiveType: String
-		Required: False
-		UpdateType: Immutable
+		Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ecs-taskdefinition-containerdefinitions-volumesfrom.html#cfn-ecs-taskdefinition-containerdefinition-volumesfrom-sourcecontainer    
+		PrimitiveType: String    
+		Required: False    
+		UpdateType: Immutable    
 
     .FUNCTIONALITY
         Vaporshell

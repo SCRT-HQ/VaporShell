@@ -13,52 +13,52 @@ function New-VSIAMManagedPolicy {
         The logical ID must be alphanumeric (A-Za-z0-9) and unique within the template. Use the logical name to reference the resource in other parts of the template. For example, if you want to map an Amazon Elastic Block Store volume to an Amazon EC2 instance, you reference the logical IDs to associate the block stores with the instance.
 
     .PARAMETER Description
-		Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-iam-managedpolicy.html#cfn-iam-managedpolicy-description
-		PrimitiveType: String
-		Required: False
-		UpdateType: Immutable
+		Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-iam-managedpolicy.html#cfn-iam-managedpolicy-description    
+		PrimitiveType: String    
+		Required: False    
+		UpdateType: Immutable    
 
     .PARAMETER Groups
-		Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-iam-managedpolicy.html#cfn-iam-managedpolicy-groups
-		DuplicatesAllowed: False
-		PrimitiveItemType: String
-		Required: False
-		Type: List
-		UpdateType: Mutable
+		Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-iam-managedpolicy.html#cfn-iam-managedpolicy-groups    
+		DuplicatesAllowed: False    
+		PrimitiveItemType: String    
+		Required: False    
+		Type: List    
+		UpdateType: Mutable    
 
     .PARAMETER ManagedPolicyName
-		Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-iam-managedpolicy.html#cfn-iam-managedpolicy-managedpolicyname
-		PrimitiveType: String
-		Required: False
-		UpdateType: Immutable
+		Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-iam-managedpolicy.html#cfn-iam-managedpolicy-managedpolicyname    
+		PrimitiveType: String    
+		Required: False    
+		UpdateType: Immutable    
 
     .PARAMETER Path
-		Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-iam-managedpolicy.html#cfn-ec2-dhcpoptions-path
-		PrimitiveType: String
-		Required: False
-		UpdateType: Immutable
+		Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-iam-managedpolicy.html#cfn-ec2-dhcpoptions-path    
+		PrimitiveType: String    
+		Required: False    
+		UpdateType: Immutable    
 
     .PARAMETER PolicyDocument
-		Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-iam-managedpolicy.html#cfn-iam-managedpolicy-policydocument
-		PrimitiveType: Json
-		Required: True
-		UpdateType: Mutable
+		Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-iam-managedpolicy.html#cfn-iam-managedpolicy-policydocument    
+		PrimitiveType: Json    
+		Required: True    
+		UpdateType: Mutable    
 
     .PARAMETER Roles
-		Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-iam-managedpolicy.html#cfn-iam-managedpolicy-roles
-		DuplicatesAllowed: True
-		PrimitiveItemType: String
-		Required: False
-		Type: List
-		UpdateType: Mutable
+		Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-iam-managedpolicy.html#cfn-iam-managedpolicy-roles    
+		DuplicatesAllowed: True    
+		PrimitiveItemType: String    
+		Required: False    
+		Type: List    
+		UpdateType: Mutable    
 
     .PARAMETER Users
-		Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-iam-managedpolicy.html#cfn-iam-managedpolicy-users
-		DuplicatesAllowed: True
-		PrimitiveItemType: String
-		Required: False
-		Type: List
-		UpdateType: Mutable
+		Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-iam-managedpolicy.html#cfn-iam-managedpolicy-users    
+		DuplicatesAllowed: True    
+		PrimitiveItemType: String    
+		Required: False    
+		Type: List    
+		UpdateType: Mutable    
 
     .PARAMETER DeletionPolicy
         With the DeletionPolicy attribute you can preserve or (in some cases) backup a resource when its stack is deleted. You specify a DeletionPolicy attribute for each resource that you want to control. If a resource has no DeletionPolicy attribute, AWS CloudFormation deletes the resource by default.

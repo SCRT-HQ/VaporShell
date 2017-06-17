@@ -10,10 +10,10 @@ function Add-VSEMRClusterScalingTrigger {
         http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-elasticmapreduce-cluster-scalingtrigger.html
 
     .PARAMETER CloudWatchAlarmDefinition
-		Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-elasticmapreduce-cluster-scalingtrigger.html#cfn-elasticmapreduce-cluster-scalingtrigger-cloudwatchalarmdefinition
-		Required: True
-		Type: CloudWatchAlarmDefinition
-		UpdateType: Mutable
+		Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-elasticmapreduce-cluster-scalingtrigger.html#cfn-elasticmapreduce-cluster-scalingtrigger-cloudwatchalarmdefinition    
+		Required: True    
+		Type: CloudWatchAlarmDefinition    
+		UpdateType: Mutable    
 
     .FUNCTIONALITY
         Vaporshell

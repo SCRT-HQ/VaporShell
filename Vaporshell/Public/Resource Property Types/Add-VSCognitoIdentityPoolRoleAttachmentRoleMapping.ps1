@@ -10,22 +10,22 @@ function Add-VSCognitoIdentityPoolRoleAttachmentRoleMapping {
         http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-cognito-identitypoolroleattachment-rolemapping.html
 
     .PARAMETER Type
-		Required: True
-		Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-cognito-identitypoolroleattachment-rolemapping.html#cfn-cognito-identitypoolroleattachment-rolemapping-type
-		PrimitiveType: String
-		UpdateType: Mutable
+		Required: True    
+		Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-cognito-identitypoolroleattachment-rolemapping.html#cfn-cognito-identitypoolroleattachment-rolemapping-type    
+		PrimitiveType: String    
+		UpdateType: Mutable    
 
     .PARAMETER AmbiguousRoleResolution
-		Required: False
-		Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-cognito-identitypoolroleattachment-rolemapping.html#cfn-cognito-identitypoolroleattachment-rolemapping-ambiguousroleresolution
-		PrimitiveType: String
-		UpdateType: Mutable
+		Required: False    
+		Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-cognito-identitypoolroleattachment-rolemapping.html#cfn-cognito-identitypoolroleattachment-rolemapping-ambiguousroleresolution    
+		PrimitiveType: String    
+		UpdateType: Mutable    
 
     .PARAMETER RulesConfiguration
-		Type: RulesConfigurationType
-		Required: False
-		Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-cognito-identitypoolroleattachment-rolemapping.html#cfn-cognito-identitypoolroleattachment-rolemapping-rulesconfiguration
-		UpdateType: Mutable
+		Type: RulesConfigurationType    
+		Required: False    
+		Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-cognito-identitypoolroleattachment-rolemapping.html#cfn-cognito-identitypoolroleattachment-rolemapping-rulesconfiguration    
+		UpdateType: Mutable    
 
     .FUNCTIONALITY
         Vaporshell

@@ -10,16 +10,16 @@ function Add-VSTag {
         http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-resource-tags.html
 
     .PARAMETER Key
-		Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-resource-tags.html#cfn-resource-tags-key
-		PrimitiveType: String
-		Required: True
-		UpdateType: Immutable
+		Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-resource-tags.html#cfn-resource-tags-key    
+		PrimitiveType: String    
+		Required: True    
+		UpdateType: Immutable    
 
     .PARAMETER Value
-		Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-resource-tags.html#cfn-resource-tags-value
-		PrimitiveType: String
-		Required: True
-		UpdateType: Immutable
+		Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-resource-tags.html#cfn-resource-tags-value    
+		PrimitiveType: String    
+		Required: True    
+		UpdateType: Immutable    
 
     .FUNCTIONALITY
         Vaporshell

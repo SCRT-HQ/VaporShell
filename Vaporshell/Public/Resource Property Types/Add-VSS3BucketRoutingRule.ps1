@@ -10,16 +10,16 @@ function Add-VSS3BucketRoutingRule {
         http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-s3-websiteconfiguration-routingrules.html
 
     .PARAMETER RedirectRule
-		Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-s3-websiteconfiguration-routingrules.html#cfn-s3-websiteconfiguration-routingrules-redirectrule
-		Required: True
-		Type: RedirectRule
-		UpdateType: Mutable
+		Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-s3-websiteconfiguration-routingrules.html#cfn-s3-websiteconfiguration-routingrules-redirectrule    
+		Required: True    
+		Type: RedirectRule    
+		UpdateType: Mutable    
 
     .PARAMETER RoutingRuleCondition
-		Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-s3-websiteconfiguration-routingrules.html#cfn-s3-websiteconfiguration-routingrules-routingrulecondition
-		Required: False
-		Type: RoutingRuleCondition
-		UpdateType: Mutable
+		Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-s3-websiteconfiguration-routingrules.html#cfn-s3-websiteconfiguration-routingrules-routingrulecondition    
+		Required: False    
+		Type: RoutingRuleCondition    
+		UpdateType: Mutable    
 
     .FUNCTIONALITY
         Vaporshell

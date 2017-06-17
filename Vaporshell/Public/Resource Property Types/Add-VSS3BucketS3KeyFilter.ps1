@@ -10,12 +10,12 @@ function Add-VSS3BucketS3KeyFilter {
         http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-s3-bucket-notificationconfiguration-config-filter-s3key.html
 
     .PARAMETER Rules
-		Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-s3-bucket-notificationconfiguration-config-filter-s3key.html#cfn-s3-bucket-notificationconfiguraiton-config-filter-s3key-rules
-		DuplicatesAllowed: False
-		ItemType: FilterRule
-		Required: True
-		Type: List
-		UpdateType: Mutable
+		Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-s3-bucket-notificationconfiguration-config-filter-s3key.html#cfn-s3-bucket-notificationconfiguraiton-config-filter-s3key-rules    
+		DuplicatesAllowed: False    
+		ItemType: FilterRule    
+		Required: True    
+		Type: List    
+		UpdateType: Mutable    
 
     .FUNCTIONALITY
         Vaporshell

@@ -10,22 +10,22 @@ function Add-VSWAFRegionalWebACLRule {
         http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-wafregional-webacl-rule.html
 
     .PARAMETER Action
-		Type: Action
-		Required: True
-		Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-wafregional-webacl-rule.html#cfn-wafregional-webacl-rule-action
-		UpdateType: Mutable
+		Type: Action    
+		Required: True    
+		Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-wafregional-webacl-rule.html#cfn-wafregional-webacl-rule-action    
+		UpdateType: Mutable    
 
     .PARAMETER Priority
-		Required: True
-		Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-wafregional-webacl-rule.html#cfn-wafregional-webacl-rule-priority
-		PrimitiveType: Integer
-		UpdateType: Mutable
+		Required: True    
+		Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-wafregional-webacl-rule.html#cfn-wafregional-webacl-rule-priority    
+		PrimitiveType: Integer    
+		UpdateType: Mutable    
 
     .PARAMETER RuleId
-		Required: True
-		Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-wafregional-webacl-rule.html#cfn-wafregional-webacl-rule-ruleid
-		PrimitiveType: String
-		UpdateType: Mutable
+		Required: True    
+		Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-wafregional-webacl-rule.html#cfn-wafregional-webacl-rule-ruleid    
+		PrimitiveType: String    
+		UpdateType: Mutable    
 
     .FUNCTIONALITY
         Vaporshell
