@@ -7,9 +7,9 @@
         <a href="#menu" class="menuToggle"><span>Menu</span></a>
         <div id="menu">
           <ul>
-            <li><a href="index.html">Home</a></li>
+            <li><a href="{{ site.baseurl }}/index.html">Home</a></li>
             {% for my_page in site.pages %}
-            {% if my_page.title and my_page.category != glossary %}
+            {% if my_page.title and my_page.categories != glossary %}
             <li><a href="{{ my_page.url | prepend: site.baseurl }}">{{ my_page.title }}</a></li>
             {% endif %}
             {% endfor %}
