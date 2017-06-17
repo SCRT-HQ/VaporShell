@@ -56,6 +56,7 @@ _The following functions are individually built to fill a specific role in templ
     {% endfor %}
 </ul>
 
+***
 
 ## Resource Types and Property Types
 _The following functions are built via automation against Amazon's Resource Type & Resource Property Type spec sheet_
