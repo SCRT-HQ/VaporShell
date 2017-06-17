@@ -1,7 +1,7 @@
 ---
-layout: pagenodesc
+layout: glossary
 title: Initialize-Vaporshell
-category: glossary
+categories: glossary
 ---
 
 # Initialize-Vaporshell

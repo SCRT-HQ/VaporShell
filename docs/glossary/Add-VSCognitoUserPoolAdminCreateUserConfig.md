@@ -1,7 +1,7 @@
 ---
-layout: pagenodesc
+layout: glossary
 title: Add-VSCognitoUserPoolAdminCreateUserConfig
-category: glossary
+categories: glossary
 ---
 
 # Add-VSCognitoUserPoolAdminCreateUserConfig
@@ -22,9 +22,9 @@ Adds an AWS::Cognito::UserPool.AdminCreateUserConfig resource property to the te
 ## PARAMETERS
 
 ### -InviteMessageTemplate
-Type: InviteMessageTemplate
-Required: False
-Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-cognito-userpool-admincreateuserconfig.html#cfn-cognito-userpool-admincreateuserconfig-invitemessagetemplate
+Type: InviteMessageTemplate    
+Required: False    
+Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-cognito-userpool-admincreateuserconfig.html#cfn-cognito-userpool-admincreateuserconfig-invitemessagetemplate    
 UpdateType: Mutable
 
 ```yaml
@@ -40,9 +40,9 @@ Accept wildcard characters: False
 ```
 
 ### -UnusedAccountValidityDays
-Required: False
-Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-cognito-userpool-admincreateuserconfig.html#cfn-cognito-userpool-admincreateuserconfig-unusedaccountvaliditydays
-PrimitiveType: Double
+Required: False    
+Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-cognito-userpool-admincreateuserconfig.html#cfn-cognito-userpool-admincreateuserconfig-unusedaccountvaliditydays    
+PrimitiveType: Double    
 UpdateType: Mutable
 
 ```yaml
@@ -58,9 +58,9 @@ Accept wildcard characters: False
 ```
 
 ### -AllowAdminCreateUserOnly
-Required: False
-Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-cognito-userpool-admincreateuserconfig.html#cfn-cognito-userpool-admincreateuserconfig-allowadmincreateuseronly
-PrimitiveType: Boolean
+Required: False    
+Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-cognito-userpool-admincreateuserconfig.html#cfn-cognito-userpool-admincreateuserconfig-allowadmincreateuseronly    
+PrimitiveType: Boolean    
 UpdateType: Mutable
 
 ```yaml

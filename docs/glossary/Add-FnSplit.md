@@ -1,7 +1,7 @@
 ---
-layout: pagenodesc
+layout: glossary
 title: Add-FnSplit
-category: glossary
+categories: glossary
 ---
 
 # Add-FnSplit

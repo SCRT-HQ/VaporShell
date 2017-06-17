@@ -1,7 +1,7 @@
 ---
-layout: pagenodesc
+layout: glossary
 title: Add-VSS3BucketQueueConfiguration
-category: glossary
+categories: glossary
 ---
 
 # Add-VSS3BucketQueueConfiguration
@@ -21,9 +21,9 @@ Adds an AWS::S3::Bucket.QueueConfiguration resource property to the template
 ## PARAMETERS
 
 ### -Event
-Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-s3-bucket-notificationconfig-queueconfig.html#cfn-s3-bucket-notificationconfig-queueconfig-event
-PrimitiveType: String
-Required: True
+Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-s3-bucket-notificationconfig-queueconfig.html#cfn-s3-bucket-notificationconfig-queueconfig-event    
+PrimitiveType: String    
+Required: True    
 UpdateType: Mutable
 
 ```yaml
@@ -39,9 +39,9 @@ Accept wildcard characters: False
 ```
 
 ### -Filter
-Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-s3-bucket-notificationconfig-queueconfig.html#cfn-s3-bucket-notificationconfig-queueconfig-filter
-Required: False
-Type: NotificationFilter
+Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-s3-bucket-notificationconfig-queueconfig.html#cfn-s3-bucket-notificationconfig-queueconfig-filter    
+Required: False    
+Type: NotificationFilter    
 UpdateType: Mutable
 
 ```yaml
@@ -57,9 +57,9 @@ Accept wildcard characters: False
 ```
 
 ### -Queue
-Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-s3-bucket-notificationconfig-queueconfig.html#cfn-s3-bucket-notificationconfig-queueconfig-queue
-PrimitiveType: String
-Required: True
+Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-s3-bucket-notificationconfig-queueconfig.html#cfn-s3-bucket-notificationconfig-queueconfig-queue    
+PrimitiveType: String    
+Required: True    
 UpdateType: Mutable
 
 ```yaml

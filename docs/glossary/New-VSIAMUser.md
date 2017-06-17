@@ -1,7 +1,7 @@
 ---
-layout: pagenodesc
+layout: glossary
 title: New-VSIAMUser
-category: glossary
+categories: glossary
 ---
 
 # New-VSIAMUser
@@ -40,11 +40,11 @@ Accept wildcard characters: False
 ```
 
 ### -Groups
-Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iam-user.html#cfn-iam-user-groups
-DuplicatesAllowed: True
-PrimitiveItemType: String
-Required: False
-Type: List
+Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iam-user.html#cfn-iam-user-groups    
+DuplicatesAllowed: True    
+PrimitiveItemType: String    
+Required: False    
+Type: List    
 UpdateType: Mutable
 
 ```yaml
@@ -60,9 +60,9 @@ Accept wildcard characters: False
 ```
 
 ### -LoginProfile
-Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iam-user.html#cfn-iam-user-loginprofile
-Required: False
-Type: LoginProfile
+Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iam-user.html#cfn-iam-user-loginprofile    
+Required: False    
+Type: LoginProfile    
 UpdateType: Mutable
 
 ```yaml
@@ -78,11 +78,11 @@ Accept wildcard characters: False
 ```
 
 ### -ManagedPolicyArns
-Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iam-user.html#cfn-iam-user-managepolicyarns
-DuplicatesAllowed: False
-PrimitiveItemType: String
-Required: False
-Type: List
+Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iam-user.html#cfn-iam-user-managepolicyarns    
+DuplicatesAllowed: False    
+PrimitiveItemType: String    
+Required: False    
+Type: List    
 UpdateType: Mutable
 
 ```yaml
@@ -98,9 +98,9 @@ Accept wildcard characters: False
 ```
 
 ### -Path
-Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iam-user.html#cfn-iam-user-path
-PrimitiveType: String
-Required: False
+Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iam-user.html#cfn-iam-user-path    
+PrimitiveType: String    
+Required: False    
 UpdateType: Mutable
 
 ```yaml
@@ -116,11 +116,11 @@ Accept wildcard characters: False
 ```
 
 ### -Policies
-Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iam-user.html#cfn-iam-user-policies
-DuplicatesAllowed: True
-ItemType: Policy
-Required: False
-Type: List
+Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iam-user.html#cfn-iam-user-policies    
+DuplicatesAllowed: True    
+ItemType: Policy    
+Required: False    
+Type: List    
 UpdateType: Mutable
 
 ```yaml
@@ -136,9 +136,9 @@ Accept wildcard characters: False
 ```
 
 ### -UserName
-Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iam-user.html#cfn-iam-user-username
-PrimitiveType: String
-Required: False
+Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iam-user.html#cfn-iam-user-username    
+PrimitiveType: String    
+Required: False    
 UpdateType: Immutable
 
 ```yaml

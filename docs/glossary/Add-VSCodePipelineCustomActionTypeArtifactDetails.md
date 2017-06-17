@@ -1,7 +1,7 @@
 ---
-layout: pagenodesc
+layout: glossary
 title: Add-VSCodePipelineCustomActionTypeArtifactDetails
-category: glossary
+categories: glossary
 ---
 
 # Add-VSCodePipelineCustomActionTypeArtifactDetails
@@ -21,9 +21,9 @@ Adds an AWS::CodePipeline::CustomActionType.ArtifactDetails resource property to
 ## PARAMETERS
 
 ### -MaximumCount
-Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-codepipeline-customactiontype-artifactdetails.html#cfn-codepipeline-customactiontype-artifactdetails-maximumcount
-PrimitiveType: Integer
-Required: True
+Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-codepipeline-customactiontype-artifactdetails.html#cfn-codepipeline-customactiontype-artifactdetails-maximumcount    
+PrimitiveType: Integer    
+Required: True    
 UpdateType: Mutable
 
 ```yaml
@@ -39,9 +39,9 @@ Accept wildcard characters: False
 ```
 
 ### -MinimumCount
-Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-codepipeline-customactiontype-artifactdetails.html#cfn-codepipeline-customactiontype-artifactdetails-minimumcount
-PrimitiveType: Integer
-Required: True
+Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-codepipeline-customactiontype-artifactdetails.html#cfn-codepipeline-customactiontype-artifactdetails-minimumcount    
+PrimitiveType: Integer    
+Required: True    
 UpdateType: Mutable
 
 ```yaml

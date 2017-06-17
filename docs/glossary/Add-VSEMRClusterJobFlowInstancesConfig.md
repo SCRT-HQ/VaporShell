@@ -1,7 +1,7 @@
 ---
-layout: pagenodesc
+layout: glossary
 title: Add-VSEMRClusterJobFlowInstancesConfig
-category: glossary
+categories: glossary
 ---
 
 # Add-VSEMRClusterJobFlowInstancesConfig
@@ -25,11 +25,11 @@ Adds an AWS::EMR::Cluster.JobFlowInstancesConfig resource property to the templa
 ## PARAMETERS
 
 ### -AdditionalMasterSecurityGroups
-Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-emr-cluster-jobflowinstancesconfig.html#cfn-emr-cluster-jobflowinstancesconfig-additionalmastersecuritygroups
-DuplicatesAllowed: False
-PrimitiveItemType: String
-Required: False
-Type: List
+Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-emr-cluster-jobflowinstancesconfig.html#cfn-emr-cluster-jobflowinstancesconfig-additionalmastersecuritygroups    
+DuplicatesAllowed: False    
+PrimitiveItemType: String    
+Required: False    
+Type: List    
 UpdateType: Immutable
 
 ```yaml
@@ -45,11 +45,11 @@ Accept wildcard characters: False
 ```
 
 ### -AdditionalSlaveSecurityGroups
-Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-emr-cluster-jobflowinstancesconfig.html#cfn-emr-cluster-jobflowinstancesconfig-additionalslavesecuritygroups
-DuplicatesAllowed: False
-PrimitiveItemType: String
-Required: False
-Type: List
+Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-emr-cluster-jobflowinstancesconfig.html#cfn-emr-cluster-jobflowinstancesconfig-additionalslavesecuritygroups    
+DuplicatesAllowed: False    
+PrimitiveItemType: String    
+Required: False    
+Type: List    
 UpdateType: Immutable
 
 ```yaml
@@ -65,9 +65,9 @@ Accept wildcard characters: False
 ```
 
 ### -CoreInstanceGroup
-Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-emr-cluster-jobflowinstancesconfig.html#cfn-emr-cluster-jobflowinstancesconfig-coreinstancegroup
-Required: False
-Type: InstanceGroupConfig
+Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-emr-cluster-jobflowinstancesconfig.html#cfn-emr-cluster-jobflowinstancesconfig-coreinstancegroup    
+Required: False    
+Type: InstanceGroupConfig    
 UpdateType: Immutable
 
 ```yaml
@@ -83,9 +83,9 @@ Accept wildcard characters: False
 ```
 
 ### -Ec2KeyName
-Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-emr-cluster-jobflowinstancesconfig.html#cfn-emr-cluster-jobflowinstancesconfig-ec2keyname
-PrimitiveType: String
-Required: False
+Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-emr-cluster-jobflowinstancesconfig.html#cfn-emr-cluster-jobflowinstancesconfig-ec2keyname    
+PrimitiveType: String    
+Required: False    
 UpdateType: Immutable
 
 ```yaml
@@ -101,9 +101,9 @@ Accept wildcard characters: False
 ```
 
 ### -Ec2SubnetId
-Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-emr-cluster-jobflowinstancesconfig.html#cfn-emr-cluster-jobflowinstancesconfig-ec2subnetid
-PrimitiveType: String
-Required: False
+Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-emr-cluster-jobflowinstancesconfig.html#cfn-emr-cluster-jobflowinstancesconfig-ec2subnetid    
+PrimitiveType: String    
+Required: False    
 UpdateType: Immutable
 
 ```yaml
@@ -119,9 +119,9 @@ Accept wildcard characters: False
 ```
 
 ### -EmrManagedMasterSecurityGroup
-Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-emr-cluster-jobflowinstancesconfig.html#cfn-emr-cluster-jobflowinstancesconfig-emrmanagedmastersecuritygroup
-PrimitiveType: String
-Required: False
+Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-emr-cluster-jobflowinstancesconfig.html#cfn-emr-cluster-jobflowinstancesconfig-emrmanagedmastersecuritygroup    
+PrimitiveType: String    
+Required: False    
 UpdateType: Immutable
 
 ```yaml
@@ -137,9 +137,9 @@ Accept wildcard characters: False
 ```
 
 ### -EmrManagedSlaveSecurityGroup
-Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-emr-cluster-jobflowinstancesconfig.html#cfn-emr-cluster-jobflowinstancesconfig-emrmanagedslavesecuritygroup
-PrimitiveType: String
-Required: False
+Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-emr-cluster-jobflowinstancesconfig.html#cfn-emr-cluster-jobflowinstancesconfig-emrmanagedslavesecuritygroup    
+PrimitiveType: String    
+Required: False    
 UpdateType: Immutable
 
 ```yaml
@@ -155,9 +155,9 @@ Accept wildcard characters: False
 ```
 
 ### -HadoopVersion
-Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-emr-cluster-jobflowinstancesconfig.html#cfn-emr-cluster-jobflowinstancesconfig-hadoopversion
-PrimitiveType: String
-Required: False
+Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-emr-cluster-jobflowinstancesconfig.html#cfn-emr-cluster-jobflowinstancesconfig-hadoopversion    
+PrimitiveType: String    
+Required: False    
 UpdateType: Immutable
 
 ```yaml
@@ -173,9 +173,9 @@ Accept wildcard characters: False
 ```
 
 ### -MasterInstanceGroup
-Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-emr-cluster-jobflowinstancesconfig.html#cfn-emr-cluster-jobflowinstancesconfig-masterinstancegroup
-Required: True
-Type: InstanceGroupConfig
+Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-emr-cluster-jobflowinstancesconfig.html#cfn-emr-cluster-jobflowinstancesconfig-masterinstancegroup    
+Required: True    
+Type: InstanceGroupConfig    
 UpdateType: Immutable
 
 ```yaml
@@ -191,9 +191,9 @@ Accept wildcard characters: False
 ```
 
 ### -Placement
-Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-emr-cluster-jobflowinstancesconfig.html#cfn-emr-cluster-jobflowinstancesconfig-placement
-Required: False
-Type: PlacementType
+Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-emr-cluster-jobflowinstancesconfig.html#cfn-emr-cluster-jobflowinstancesconfig-placement    
+Required: False    
+Type: PlacementType    
 UpdateType: Immutable
 
 ```yaml
@@ -209,9 +209,9 @@ Accept wildcard characters: False
 ```
 
 ### -ServiceAccessSecurityGroup
-Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-emr-cluster-jobflowinstancesconfig.html#cfn-emr-cluster-jobflowinstancesconfig-serviceaccesssecuritygroup
-PrimitiveType: String
-Required: False
+Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-emr-cluster-jobflowinstancesconfig.html#cfn-emr-cluster-jobflowinstancesconfig-serviceaccesssecuritygroup    
+PrimitiveType: String    
+Required: False    
 UpdateType: Immutable
 
 ```yaml
@@ -227,9 +227,9 @@ Accept wildcard characters: False
 ```
 
 ### -TerminationProtected
-Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-emr-cluster-jobflowinstancesconfig.html#cfn-emr-cluster-jobflowinstancesconfig-terminationprotected
-PrimitiveType: Boolean
-Required: False
+Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-emr-cluster-jobflowinstancesconfig.html#cfn-emr-cluster-jobflowinstancesconfig-terminationprotected    
+PrimitiveType: Boolean    
+Required: False    
 UpdateType: Mutable
 
 ```yaml

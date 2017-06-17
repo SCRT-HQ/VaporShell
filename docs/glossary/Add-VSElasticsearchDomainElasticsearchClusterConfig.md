@@ -1,7 +1,7 @@
 ---
-layout: pagenodesc
+layout: glossary
 title: Add-VSElasticsearchDomainElasticsearchClusterConfig
-category: glossary
+categories: glossary
 ---
 
 # Add-VSElasticsearchDomainElasticsearchClusterConfig
@@ -23,9 +23,9 @@ Adds an AWS::Elasticsearch::Domain.ElasticsearchClusterConfig resource property 
 ## PARAMETERS
 
 ### -DedicatedMasterCount
-Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-elasticsearch-domain-elasticsearchclusterconfig.html#cfn-elasticsearch-domain-elasticseachclusterconfig-dedicatedmastercount
-PrimitiveType: Integer
-Required: False
+Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-elasticsearch-domain-elasticsearchclusterconfig.html#cfn-elasticsearch-domain-elasticseachclusterconfig-dedicatedmastercount    
+PrimitiveType: Integer    
+Required: False    
 UpdateType: Mutable
 
 ```yaml
@@ -41,9 +41,9 @@ Accept wildcard characters: False
 ```
 
 ### -DedicatedMasterEnabled
-Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-elasticsearch-domain-elasticsearchclusterconfig.html#cfn-elasticsearch-domain-elasticseachclusterconfig-dedicatedmasterenabled
-PrimitiveType: Boolean
-Required: False
+Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-elasticsearch-domain-elasticsearchclusterconfig.html#cfn-elasticsearch-domain-elasticseachclusterconfig-dedicatedmasterenabled    
+PrimitiveType: Boolean    
+Required: False    
 UpdateType: Mutable
 
 ```yaml
@@ -59,9 +59,9 @@ Accept wildcard characters: False
 ```
 
 ### -DedicatedMasterType
-Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-elasticsearch-domain-elasticsearchclusterconfig.html#cfn-elasticsearch-domain-elasticseachclusterconfig-dedicatedmastertype
-PrimitiveType: String
-Required: False
+Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-elasticsearch-domain-elasticsearchclusterconfig.html#cfn-elasticsearch-domain-elasticseachclusterconfig-dedicatedmastertype    
+PrimitiveType: String    
+Required: False    
 UpdateType: Mutable
 
 ```yaml
@@ -77,9 +77,9 @@ Accept wildcard characters: False
 ```
 
 ### -InstanceCount
-Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-elasticsearch-domain-elasticsearchclusterconfig.html#cfn-elasticsearch-domain-elasticseachclusterconfig-instancecount
-PrimitiveType: Integer
-Required: False
+Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-elasticsearch-domain-elasticsearchclusterconfig.html#cfn-elasticsearch-domain-elasticseachclusterconfig-instancecount    
+PrimitiveType: Integer    
+Required: False    
 UpdateType: Mutable
 
 ```yaml
@@ -95,9 +95,9 @@ Accept wildcard characters: False
 ```
 
 ### -InstanceType
-Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-elasticsearch-domain-elasticsearchclusterconfig.html#cfn-elasticsearch-domain-elasticseachclusterconfig-instnacetype
-PrimitiveType: String
-Required: False
+Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-elasticsearch-domain-elasticsearchclusterconfig.html#cfn-elasticsearch-domain-elasticseachclusterconfig-instnacetype    
+PrimitiveType: String    
+Required: False    
 UpdateType: Mutable
 
 ```yaml
@@ -113,9 +113,9 @@ Accept wildcard characters: False
 ```
 
 ### -ZoneAwarenessEnabled
-Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-elasticsearch-domain-elasticsearchclusterconfig.html#cfn-elasticsearch-domain-elasticseachclusterconfig-zoneawarenessenabled
-PrimitiveType: Boolean
-Required: False
+Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-elasticsearch-domain-elasticsearchclusterconfig.html#cfn-elasticsearch-domain-elasticseachclusterconfig-zoneawarenessenabled    
+PrimitiveType: Boolean    
+Required: False    
 UpdateType: Mutable
 
 ```yaml

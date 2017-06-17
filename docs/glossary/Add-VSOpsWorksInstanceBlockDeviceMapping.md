@@ -1,7 +1,7 @@
 ---
-layout: pagenodesc
+layout: glossary
 title: Add-VSOpsWorksInstanceBlockDeviceMapping
-category: glossary
+categories: glossary
 ---
 
 # Add-VSOpsWorksInstanceBlockDeviceMapping
@@ -22,9 +22,9 @@ Adds an AWS::OpsWorks::Instance.BlockDeviceMapping resource property to the temp
 ## PARAMETERS
 
 ### -DeviceName
-Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-opsworks-instance-blockdevicemapping.html#cfn-opsworks-instance-blockdevicemapping-devicename
-PrimitiveType: String
-Required: False
+Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-opsworks-instance-blockdevicemapping.html#cfn-opsworks-instance-blockdevicemapping-devicename    
+PrimitiveType: String    
+Required: False    
 UpdateType: Mutable
 
 ```yaml
@@ -40,9 +40,9 @@ Accept wildcard characters: False
 ```
 
 ### -Ebs
-Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-opsworks-instance-blockdevicemapping.html#cfn-opsworks-instance-blockdevicemapping-ebs
-Required: False
-Type: EbsBlockDevice
+Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-opsworks-instance-blockdevicemapping.html#cfn-opsworks-instance-blockdevicemapping-ebs    
+Required: False    
+Type: EbsBlockDevice    
 UpdateType: Mutable
 
 ```yaml
@@ -58,9 +58,9 @@ Accept wildcard characters: False
 ```
 
 ### -NoDevice
-Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-opsworks-instance-blockdevicemapping.html#cfn-opsworks-instance-blockdevicemapping-nodevice
-PrimitiveType: String
-Required: False
+Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-opsworks-instance-blockdevicemapping.html#cfn-opsworks-instance-blockdevicemapping-nodevice    
+PrimitiveType: String    
+Required: False    
 UpdateType: Mutable
 
 ```yaml
@@ -76,9 +76,9 @@ Accept wildcard characters: False
 ```
 
 ### -VirtualName
-Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-opsworks-instance-blockdevicemapping.html#cfn-opsworks-instance-blockdevicemapping-virtualname
-PrimitiveType: String
-Required: False
+Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-opsworks-instance-blockdevicemapping.html#cfn-opsworks-instance-blockdevicemapping-virtualname    
+PrimitiveType: String    
+Required: False    
 UpdateType: Mutable
 
 ```yaml

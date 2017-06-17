@@ -1,7 +1,7 @@
 ---
-layout: pagenodesc
+layout: glossary
 title: Add-VSCognitoIdentityPoolRoleAttachmentMappingRule
-category: glossary
+categories: glossary
 ---
 
 # Add-VSCognitoIdentityPoolRoleAttachmentMappingRule
@@ -22,9 +22,9 @@ Adds an AWS::Cognito::IdentityPoolRoleAttachment.MappingRule resource property t
 ## PARAMETERS
 
 ### -MatchType
-Required: True
-Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-cognito-identitypoolroleattachment-mappingrule.html#cfn-cognito-identitypoolroleattachment-mappingrule-matchtype
-PrimitiveType: String
+Required: True    
+Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-cognito-identitypoolroleattachment-mappingrule.html#cfn-cognito-identitypoolroleattachment-mappingrule-matchtype    
+PrimitiveType: String    
 UpdateType: Mutable
 
 ```yaml
@@ -40,9 +40,9 @@ Accept wildcard characters: False
 ```
 
 ### -Value
-Required: True
-Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-cognito-identitypoolroleattachment-mappingrule.html#cfn-cognito-identitypoolroleattachment-mappingrule-value
-PrimitiveType: String
+Required: True    
+Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-cognito-identitypoolroleattachment-mappingrule.html#cfn-cognito-identitypoolroleattachment-mappingrule-value    
+PrimitiveType: String    
 UpdateType: Mutable
 
 ```yaml
@@ -58,9 +58,9 @@ Accept wildcard characters: False
 ```
 
 ### -Claim
-Required: True
-Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-cognito-identitypoolroleattachment-mappingrule.html#cfn-cognito-identitypoolroleattachment-mappingrule-claim
-PrimitiveType: String
+Required: True    
+Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-cognito-identitypoolroleattachment-mappingrule.html#cfn-cognito-identitypoolroleattachment-mappingrule-claim    
+PrimitiveType: String    
 UpdateType: Mutable
 
 ```yaml
@@ -76,9 +76,9 @@ Accept wildcard characters: False
 ```
 
 ### -RoleARN
-Required: True
-Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-cognito-identitypoolroleattachment-mappingrule.html#cfn-cognito-identitypoolroleattachment-mappingrule-rolearn
-PrimitiveType: String
+Required: True    
+Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-cognito-identitypoolroleattachment-mappingrule.html#cfn-cognito-identitypoolroleattachment-mappingrule-rolearn    
+PrimitiveType: String    
 UpdateType: Mutable
 
 ```yaml

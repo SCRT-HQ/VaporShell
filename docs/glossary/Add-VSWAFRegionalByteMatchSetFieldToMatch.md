@@ -1,7 +1,7 @@
 ---
-layout: pagenodesc
+layout: glossary
 title: Add-VSWAFRegionalByteMatchSetFieldToMatch
-category: glossary
+categories: glossary
 ---
 
 # Add-VSWAFRegionalByteMatchSetFieldToMatch
@@ -21,9 +21,9 @@ Adds an AWS::WAFRegional::ByteMatchSet.FieldToMatch resource property to the tem
 ## PARAMETERS
 
 ### -Type
-Required: True
-Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-wafregional-bytematchset-fieldtomatch.html#cfn-wafregional-bytematchset-fieldtomatch-type
-PrimitiveType: String
+Required: True    
+Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-wafregional-bytematchset-fieldtomatch.html#cfn-wafregional-bytematchset-fieldtomatch-type    
+PrimitiveType: String    
 UpdateType: Mutable
 
 ```yaml
@@ -39,9 +39,9 @@ Accept wildcard characters: False
 ```
 
 ### -Data
-Required: False
-Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-wafregional-bytematchset-fieldtomatch.html#cfn-wafregional-bytematchset-fieldtomatch-data
-PrimitiveType: String
+Required: False    
+Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-wafregional-bytematchset-fieldtomatch.html#cfn-wafregional-bytematchset-fieldtomatch-data    
+PrimitiveType: String    
 UpdateType: Mutable
 
 ```yaml

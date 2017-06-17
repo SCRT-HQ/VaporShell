@@ -1,7 +1,7 @@
 ---
-layout: pagenodesc
+layout: glossary
 title: Add-VSIAMUserLoginProfile
-category: glossary
+categories: glossary
 ---
 
 # Add-VSIAMUserLoginProfile
@@ -21,9 +21,9 @@ Adds an AWS::IAM::User.LoginProfile resource property to the template
 ## PARAMETERS
 
 ### -Password
-Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iam-user-loginprofile.html#cfn-iam-user-loginprofile-password
-PrimitiveType: String
-Required: True
+Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iam-user-loginprofile.html#cfn-iam-user-loginprofile-password    
+PrimitiveType: String    
+Required: True    
 UpdateType: Mutable
 
 ```yaml
@@ -39,9 +39,9 @@ Accept wildcard characters: False
 ```
 
 ### -PasswordResetRequired
-Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iam-user-loginprofile.html#cfn-iam-user-loginprofile-passwordresetrequired
-PrimitiveType: Boolean
-Required: False
+Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iam-user-loginprofile.html#cfn-iam-user-loginprofile-passwordresetrequired    
+PrimitiveType: Boolean    
+Required: False    
 UpdateType: Mutable
 
 ```yaml

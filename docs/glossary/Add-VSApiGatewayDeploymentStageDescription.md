@@ -1,7 +1,7 @@
 ---
-layout: pagenodesc
+layout: glossary
 title: Add-VSApiGatewayDeploymentStageDescription
-category: glossary
+categories: glossary
 ---
 
 # Add-VSApiGatewayDeploymentStageDescription
@@ -25,9 +25,9 @@ Adds an AWS::ApiGateway::Deployment.StageDescription resource property to the te
 ## PARAMETERS
 
 ### -CacheClusterEnabled
-Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-apitgateway-deployment-stagedescription.html#cfn-apigateway-deployment-stagedescription-cacheclusterenabled
-PrimitiveType: Boolean
-Required: False
+Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-apitgateway-deployment-stagedescription.html#cfn-apigateway-deployment-stagedescription-cacheclusterenabled    
+PrimitiveType: Boolean    
+Required: False    
 UpdateType: Mutable
 
 ```yaml
@@ -43,9 +43,9 @@ Accept wildcard characters: False
 ```
 
 ### -CacheClusterSize
-Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-apitgateway-deployment-stagedescription.html#cfn-apigateway-deployment-stagedescription-cacheclustersize
-PrimitiveType: String
-Required: False
+Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-apitgateway-deployment-stagedescription.html#cfn-apigateway-deployment-stagedescription-cacheclustersize    
+PrimitiveType: String    
+Required: False    
 UpdateType: Mutable
 
 ```yaml
@@ -61,9 +61,9 @@ Accept wildcard characters: False
 ```
 
 ### -CacheDataEncrypted
-Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-apitgateway-deployment-stagedescription.html#cfn-apigateway-deployment-stagedescription-cachedataencrypted
-PrimitiveType: Boolean
-Required: False
+Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-apitgateway-deployment-stagedescription.html#cfn-apigateway-deployment-stagedescription-cachedataencrypted    
+PrimitiveType: Boolean    
+Required: False    
 UpdateType: Mutable
 
 ```yaml
@@ -79,9 +79,9 @@ Accept wildcard characters: False
 ```
 
 ### -CacheTtlInSeconds
-Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-apitgateway-deployment-stagedescription.html#cfn-apigateway-deployment-stagedescription-cachettlinseconds
-PrimitiveType: Integer
-Required: False
+Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-apitgateway-deployment-stagedescription.html#cfn-apigateway-deployment-stagedescription-cachettlinseconds    
+PrimitiveType: Integer    
+Required: False    
 UpdateType: Mutable
 
 ```yaml
@@ -97,9 +97,9 @@ Accept wildcard characters: False
 ```
 
 ### -CachingEnabled
-Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-apitgateway-deployment-stagedescription.html#cfn-apigateway-deployment-stagedescription-cachingenabled
-PrimitiveType: Boolean
-Required: False
+Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-apitgateway-deployment-stagedescription.html#cfn-apigateway-deployment-stagedescription-cachingenabled    
+PrimitiveType: Boolean    
+Required: False    
 UpdateType: Mutable
 
 ```yaml
@@ -115,9 +115,9 @@ Accept wildcard characters: False
 ```
 
 ### -ClientCertificateId
-Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-apitgateway-deployment-stagedescription.html#cfn-apigateway-deployment-stagedescription-clientcertificateid
-PrimitiveType: String
-Required: False
+Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-apitgateway-deployment-stagedescription.html#cfn-apigateway-deployment-stagedescription-clientcertificateid    
+PrimitiveType: String    
+Required: False    
 UpdateType: Mutable
 
 ```yaml
@@ -133,9 +133,9 @@ Accept wildcard characters: False
 ```
 
 ### -DataTraceEnabled
-Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-apitgateway-deployment-stagedescription.html#cfn-apigateway-deployment-stagedescription-datatraceenabled
-PrimitiveType: Boolean
-Required: False
+Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-apitgateway-deployment-stagedescription.html#cfn-apigateway-deployment-stagedescription-datatraceenabled    
+PrimitiveType: Boolean    
+Required: False    
 UpdateType: Mutable
 
 ```yaml
@@ -151,9 +151,9 @@ Accept wildcard characters: False
 ```
 
 ### -Description
-Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-apitgateway-deployment-stagedescription.html#cfn-apigateway-deployment-stagedescription-description
-PrimitiveType: String
-Required: False
+Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-apitgateway-deployment-stagedescription.html#cfn-apigateway-deployment-stagedescription-description    
+PrimitiveType: String    
+Required: False    
 UpdateType: Mutable
 
 ```yaml
@@ -169,9 +169,9 @@ Accept wildcard characters: False
 ```
 
 ### -LoggingLevel
-Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-apitgateway-deployment-stagedescription.html#cfn-apigateway-deployment-stagedescription-logginglevel
-PrimitiveType: String
-Required: False
+Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-apitgateway-deployment-stagedescription.html#cfn-apigateway-deployment-stagedescription-logginglevel    
+PrimitiveType: String    
+Required: False    
 UpdateType: Mutable
 
 ```yaml
@@ -187,11 +187,11 @@ Accept wildcard characters: False
 ```
 
 ### -MethodSettings
-Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-apitgateway-deployment-stagedescription.html#cfn-apigateway-deployment-stagedescription-methodsettings
-DuplicatesAllowed: False
-ItemType: MethodSetting
-Required: False
-Type: List
+Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-apitgateway-deployment-stagedescription.html#cfn-apigateway-deployment-stagedescription-methodsettings    
+DuplicatesAllowed: False    
+ItemType: MethodSetting    
+Required: False    
+Type: List    
 UpdateType: Mutable
 
 ```yaml
@@ -207,9 +207,9 @@ Accept wildcard characters: False
 ```
 
 ### -MetricsEnabled
-Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-apitgateway-deployment-stagedescription.html#cfn-apigateway-deployment-stagedescription-metricsenabled
-PrimitiveType: Boolean
-Required: False
+Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-apitgateway-deployment-stagedescription.html#cfn-apigateway-deployment-stagedescription-metricsenabled    
+PrimitiveType: Boolean    
+Required: False    
 UpdateType: Mutable
 
 ```yaml
@@ -225,9 +225,9 @@ Accept wildcard characters: False
 ```
 
 ### -StageName
-Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-apitgateway-deployment-stagedescription.html#cfn-apigateway-deployment-stagedescription-stagename
-PrimitiveType: String
-Required: False
+Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-apitgateway-deployment-stagedescription.html#cfn-apigateway-deployment-stagedescription-stagename    
+PrimitiveType: String    
+Required: False    
 UpdateType: Mutable
 
 ```yaml
@@ -243,9 +243,9 @@ Accept wildcard characters: False
 ```
 
 ### -ThrottlingBurstLimit
-Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-apitgateway-deployment-stagedescription.html#cfn-apigateway-deployment-stagedescription-throttlingburstlimit
-PrimitiveType: Integer
-Required: False
+Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-apitgateway-deployment-stagedescription.html#cfn-apigateway-deployment-stagedescription-throttlingburstlimit    
+PrimitiveType: Integer    
+Required: False    
 UpdateType: Mutable
 
 ```yaml
@@ -261,9 +261,9 @@ Accept wildcard characters: False
 ```
 
 ### -ThrottlingRateLimit
-Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-apitgateway-deployment-stagedescription.html#cfn-apigateway-deployment-stagedescription-throttlingratelimit
-PrimitiveType: Double
-Required: False
+Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-apitgateway-deployment-stagedescription.html#cfn-apigateway-deployment-stagedescription-throttlingratelimit    
+PrimitiveType: Double    
+Required: False    
 UpdateType: Mutable
 
 ```yaml
@@ -279,11 +279,11 @@ Accept wildcard characters: False
 ```
 
 ### -Variables
-Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-apitgateway-deployment-stagedescription.html#cfn-apigateway-deployment-stagedescription-variables
-DuplicatesAllowed: False
-PrimitiveItemType: String
-Required: False
-Type: Map
+Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-apitgateway-deployment-stagedescription.html#cfn-apigateway-deployment-stagedescription-variables    
+DuplicatesAllowed: False    
+PrimitiveItemType: String    
+Required: False    
+Type: Map    
 UpdateType: Mutable
 
 ```yaml

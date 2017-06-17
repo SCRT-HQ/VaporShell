@@ -1,7 +1,7 @@
 ---
-layout: pagenodesc
+layout: glossary
 title: Add-VSApiGatewayUsagePlanQuotaSettings
-category: glossary
+categories: glossary
 ---
 
 # Add-VSApiGatewayUsagePlanQuotaSettings
@@ -21,9 +21,9 @@ Adds an AWS::ApiGateway::UsagePlan.QuotaSettings resource property to the templa
 ## PARAMETERS
 
 ### -Limit
-Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-apigateway-usageplan-quotasettings.html#cfn-apigateway-usageplan-quotasettings-limit
-PrimitiveType: Integer
-Required: False
+Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-apigateway-usageplan-quotasettings.html#cfn-apigateway-usageplan-quotasettings-limit    
+PrimitiveType: Integer    
+Required: False    
 UpdateType: Mutable
 
 ```yaml
@@ -39,9 +39,9 @@ Accept wildcard characters: False
 ```
 
 ### -Offset
-Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-apigateway-usageplan-quotasettings.html#cfn-apigateway-usageplan-quotasettings-offset
-PrimitiveType: Integer
-Required: False
+Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-apigateway-usageplan-quotasettings.html#cfn-apigateway-usageplan-quotasettings-offset    
+PrimitiveType: Integer    
+Required: False    
 UpdateType: Mutable
 
 ```yaml
@@ -57,9 +57,9 @@ Accept wildcard characters: False
 ```
 
 ### -Period
-Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-apigateway-usageplan-quotasettings.html#cfn-apigateway-usageplan-quotasettings-period
-PrimitiveType: String
-Required: False
+Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-apigateway-usageplan-quotasettings.html#cfn-apigateway-usageplan-quotasettings-period    
+PrimitiveType: String    
+Required: False    
 UpdateType: Mutable
 
 ```yaml

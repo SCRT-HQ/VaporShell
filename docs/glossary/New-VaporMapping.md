@@ -1,7 +1,7 @@
 ---
-layout: pagenodesc
+layout: glossary
 title: New-VaporMapping
-category: glossary
+categories: glossary
 ---
 
 # New-VaporMapping

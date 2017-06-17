@@ -1,7 +1,7 @@
 ---
-layout: pagenodesc
+layout: glossary
 title: New-VSEC2SecurityGroupEgress
-category: glossary
+categories: glossary
 ---
 
 # New-VSEC2SecurityGroupEgress
@@ -41,9 +41,9 @@ Accept wildcard characters: False
 ```
 
 ### -CidrIp
-Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ec2-security-group-egress.html#cfn-ec2-securitygroupegress-cidrip
-PrimitiveType: String
-Required: False
+Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ec2-security-group-egress.html#cfn-ec2-securitygroupegress-cidrip    
+PrimitiveType: String    
+Required: False    
 UpdateType: Immutable
 
 ```yaml
@@ -59,9 +59,9 @@ Accept wildcard characters: False
 ```
 
 ### -CidrIpv6
-Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ec2-security-group-egress.html#cfn-ec2-securitygroupegress-cidripv6
-PrimitiveType: String
-Required: False
+Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ec2-security-group-egress.html#cfn-ec2-securitygroupegress-cidripv6    
+PrimitiveType: String    
+Required: False    
 UpdateType: Immutable
 
 ```yaml
@@ -77,9 +77,9 @@ Accept wildcard characters: False
 ```
 
 ### -DestinationPrefixListId
-Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ec2-security-group-egress.html#cfn-ec2-securitygroupegress-destinationprefixlistid
-PrimitiveType: String
-Required: False
+Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ec2-security-group-egress.html#cfn-ec2-securitygroupegress-destinationprefixlistid    
+PrimitiveType: String    
+Required: False    
 UpdateType: Immutable
 
 ```yaml
@@ -95,9 +95,9 @@ Accept wildcard characters: False
 ```
 
 ### -DestinationSecurityGroupId
-Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ec2-security-group-egress.html#cfn-ec2-securitygroupegress-destinationsecuritygroupid
-PrimitiveType: String
-Required: False
+Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ec2-security-group-egress.html#cfn-ec2-securitygroupegress-destinationsecuritygroupid    
+PrimitiveType: String    
+Required: False    
 UpdateType: Immutable
 
 ```yaml
@@ -113,9 +113,9 @@ Accept wildcard characters: False
 ```
 
 ### -FromPort
-Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ec2-security-group-egress.html#cfn-ec2-securitygroupegress-fromport
-PrimitiveType: Integer
-Required: False
+Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ec2-security-group-egress.html#cfn-ec2-securitygroupegress-fromport    
+PrimitiveType: Integer    
+Required: False    
 UpdateType: Immutable
 
 ```yaml
@@ -131,9 +131,9 @@ Accept wildcard characters: False
 ```
 
 ### -GroupId
-Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ec2-security-group-egress.html#cfn-ec2-securitygroupegress-groupid
-PrimitiveType: String
-Required: True
+Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ec2-security-group-egress.html#cfn-ec2-securitygroupegress-groupid    
+PrimitiveType: String    
+Required: True    
 UpdateType: Immutable
 
 ```yaml
@@ -149,9 +149,9 @@ Accept wildcard characters: False
 ```
 
 ### -IpProtocol
-Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ec2-security-group-egress.html#cfn-ec2-securitygroupegress-ipprotocol
-PrimitiveType: String
-Required: True
+Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ec2-security-group-egress.html#cfn-ec2-securitygroupegress-ipprotocol    
+PrimitiveType: String    
+Required: True    
 UpdateType: Immutable
 
 ```yaml
@@ -167,9 +167,9 @@ Accept wildcard characters: False
 ```
 
 ### -ToPort
-Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ec2-security-group-egress.html#cfn-ec2-securitygroupegress-toport
-PrimitiveType: Integer
-Required: False
+Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ec2-security-group-egress.html#cfn-ec2-securitygroupegress-toport    
+PrimitiveType: Integer    
+Required: False    
 UpdateType: Immutable
 
 ```yaml

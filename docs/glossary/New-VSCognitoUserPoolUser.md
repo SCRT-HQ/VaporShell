@@ -1,7 +1,7 @@
 ---
-layout: pagenodesc
+layout: glossary
 title: New-VSCognitoUserPoolUser
-category: glossary
+categories: glossary
 ---
 
 # New-VSCognitoUserPoolUser
@@ -41,10 +41,10 @@ Accept wildcard characters: False
 ```
 
 ### -ValidationData
-Type: List
-Required: False
-Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-cognito-userpooluser.html#cfn-cognito-userpooluser-validationdata
-ItemType: AttributeType
+Type: List    
+Required: False    
+Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-cognito-userpooluser.html#cfn-cognito-userpooluser-validationdata    
+ItemType: AttributeType    
 UpdateType: Immutable
 
 ```yaml
@@ -60,9 +60,9 @@ Accept wildcard characters: False
 ```
 
 ### -UserPoolId
-Required: True
-Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-cognito-userpooluser.html#cfn-cognito-userpooluser-userpoolid
-PrimitiveType: String
+Required: True    
+Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-cognito-userpooluser.html#cfn-cognito-userpooluser-userpoolid    
+PrimitiveType: String    
 UpdateType: Immutable
 
 ```yaml
@@ -78,9 +78,9 @@ Accept wildcard characters: False
 ```
 
 ### -Username
-Required: False
-Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-cognito-userpooluser.html#cfn-cognito-userpooluser-username
-PrimitiveType: String
+Required: False    
+Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-cognito-userpooluser.html#cfn-cognito-userpooluser-username    
+PrimitiveType: String    
 UpdateType: Immutable
 
 ```yaml
@@ -96,9 +96,9 @@ Accept wildcard characters: False
 ```
 
 ### -MessageAction
-Required: False
-Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-cognito-userpooluser.html#cfn-cognito-userpooluser-messageaction
-PrimitiveType: String
+Required: False    
+Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-cognito-userpooluser.html#cfn-cognito-userpooluser-messageaction    
+PrimitiveType: String    
 UpdateType: Immutable
 
 ```yaml
@@ -114,10 +114,10 @@ Accept wildcard characters: False
 ```
 
 ### -DesiredDeliveryMediums
-PrimitiveItemType: String
-Type: List
-Required: False
-Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-cognito-userpooluser.html#cfn-cognito-userpooluser-desireddeliverymediums
+PrimitiveItemType: String    
+Type: List    
+Required: False    
+Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-cognito-userpooluser.html#cfn-cognito-userpooluser-desireddeliverymediums    
 UpdateType: Immutable
 
 ```yaml
@@ -133,9 +133,9 @@ Accept wildcard characters: False
 ```
 
 ### -ForceAliasCreation
-Required: False
-Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-cognito-userpooluser.html#cfn-cognito-userpooluser-forcealiascreation
-PrimitiveType: Boolean
+Required: False    
+Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-cognito-userpooluser.html#cfn-cognito-userpooluser-forcealiascreation    
+PrimitiveType: Boolean    
 UpdateType: Immutable
 
 ```yaml
@@ -151,10 +151,10 @@ Accept wildcard characters: False
 ```
 
 ### -UserAttributes
-Type: List
-Required: False
-Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-cognito-userpooluser.html#cfn-cognito-userpooluser-userattributes
-ItemType: AttributeType
+Type: List    
+Required: False    
+Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-cognito-userpooluser.html#cfn-cognito-userpooluser-userattributes    
+ItemType: AttributeType    
 UpdateType: Immutable
 
 ```yaml

@@ -1,7 +1,7 @@
 ---
-layout: pagenodesc
+layout: glossary
 title: New-VSAutoScalingLifecycleHook
-category: glossary
+categories: glossary
 ---
 
 # New-VSAutoScalingLifecycleHook
@@ -41,9 +41,9 @@ Accept wildcard characters: False
 ```
 
 ### -AutoScalingGroupName
-Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-as-lifecyclehook.html#cfn-as-lifecyclehook-autoscalinggroupname
-PrimitiveType: String
-Required: True
+Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-as-lifecyclehook.html#cfn-as-lifecyclehook-autoscalinggroupname    
+PrimitiveType: String    
+Required: True    
 UpdateType: Immutable
 
 ```yaml
@@ -59,9 +59,9 @@ Accept wildcard characters: False
 ```
 
 ### -DefaultResult
-Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-as-lifecyclehook.html#cfn-as-lifecyclehook-defaultresult
-PrimitiveType: String
-Required: False
+Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-as-lifecyclehook.html#cfn-as-lifecyclehook-defaultresult    
+PrimitiveType: String    
+Required: False    
 UpdateType: Mutable
 
 ```yaml
@@ -77,9 +77,9 @@ Accept wildcard characters: False
 ```
 
 ### -HeartbeatTimeout
-Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-as-lifecyclehook.html#cfn-as-lifecyclehook-heartbeattimeout
-PrimitiveType: Integer
-Required: False
+Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-as-lifecyclehook.html#cfn-as-lifecyclehook-heartbeattimeout    
+PrimitiveType: Integer    
+Required: False    
 UpdateType: Mutable
 
 ```yaml
@@ -95,9 +95,9 @@ Accept wildcard characters: False
 ```
 
 ### -LifecycleTransition
-Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-as-lifecyclehook.html#cfn-as-lifecyclehook-lifecycletransition
-PrimitiveType: String
-Required: True
+Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-as-lifecyclehook.html#cfn-as-lifecyclehook-lifecycletransition    
+PrimitiveType: String    
+Required: True    
 UpdateType: Mutable
 
 ```yaml
@@ -113,9 +113,9 @@ Accept wildcard characters: False
 ```
 
 ### -NotificationMetadata
-Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-as-lifecyclehook.html#cfn-as-lifecyclehook-notificationmetadata
-PrimitiveType: String
-Required: False
+Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-as-lifecyclehook.html#cfn-as-lifecyclehook-notificationmetadata    
+PrimitiveType: String    
+Required: False    
 UpdateType: Mutable
 
 ```yaml
@@ -131,9 +131,9 @@ Accept wildcard characters: False
 ```
 
 ### -NotificationTargetARN
-Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-as-lifecyclehook.html#cfn-as-lifecyclehook-notificationtargetarn
-PrimitiveType: String
-Required: False
+Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-as-lifecyclehook.html#cfn-as-lifecyclehook-notificationtargetarn    
+PrimitiveType: String    
+Required: False    
 UpdateType: Mutable
 
 ```yaml
@@ -149,9 +149,9 @@ Accept wildcard characters: False
 ```
 
 ### -RoleARN
-Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-as-lifecyclehook.html#cfn-as-lifecyclehook-rolearn
-PrimitiveType: String
-Required: False
+Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-as-lifecyclehook.html#cfn-as-lifecyclehook-rolearn    
+PrimitiveType: String    
+Required: False    
 UpdateType: Mutable
 
 ```yaml

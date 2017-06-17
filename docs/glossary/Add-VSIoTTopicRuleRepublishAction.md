@@ -1,7 +1,7 @@
 ---
-layout: pagenodesc
+layout: glossary
 title: Add-VSIoTTopicRuleRepublishAction
-category: glossary
+categories: glossary
 ---
 
 # Add-VSIoTTopicRuleRepublishAction
@@ -21,9 +21,9 @@ Adds an AWS::IoT::TopicRule.RepublishAction resource property to the template
 ## PARAMETERS
 
 ### -RoleArn
-Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iot-republish.html#cfn-iot-republish-rolearn
-PrimitiveType: String
-Required: True
+Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iot-republish.html#cfn-iot-republish-rolearn    
+PrimitiveType: String    
+Required: True    
 UpdateType: Mutable
 
 ```yaml
@@ -39,9 +39,9 @@ Accept wildcard characters: False
 ```
 
 ### -Topic
-Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iot-republish.html#cfn-iot-republish-topic
-PrimitiveType: String
-Required: True
+Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iot-republish.html#cfn-iot-republish-topic    
+PrimitiveType: String    
+Required: True    
 UpdateType: Mutable
 
 ```yaml

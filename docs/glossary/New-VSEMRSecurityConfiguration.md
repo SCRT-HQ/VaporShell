@@ -1,7 +1,7 @@
 ---
-layout: pagenodesc
+layout: glossary
 title: New-VSEMRSecurityConfiguration
-category: glossary
+categories: glossary
 ---
 
 # New-VSEMRSecurityConfiguration
@@ -40,9 +40,9 @@ Accept wildcard characters: False
 ```
 
 ### -Name
-Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-emr-securityconfiguration.html#cfn-emr-securityconfiguration-name
-PrimitiveType: String
-Required: False
+Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-emr-securityconfiguration.html#cfn-emr-securityconfiguration-name    
+PrimitiveType: String    
+Required: False    
 UpdateType: Immutable
 
 ```yaml
@@ -58,9 +58,9 @@ Accept wildcard characters: False
 ```
 
 ### -SecurityConfiguration
-Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-emr-securityconfiguration.html#cfn-emr-securityconfiguration-securityconfiguration
-PrimitiveType: Json
-Required: True
+Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-emr-securityconfiguration.html#cfn-emr-securityconfiguration-securityconfiguration    
+PrimitiveType: Json    
+Required: True    
 UpdateType: Immutable
 
 ```yaml

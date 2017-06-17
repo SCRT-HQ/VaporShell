@@ -1,7 +1,7 @@
 ---
-layout: pagenodesc
+layout: glossary
 title: Add-VSEMRClusterApplication
-category: glossary
+categories: glossary
 ---
 
 # Add-VSEMRClusterApplication
@@ -22,11 +22,11 @@ Adds an AWS::EMR::Cluster.Application resource property to the template
 ## PARAMETERS
 
 ### -AdditionalInfo
-Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-emr-cluster-application.html#cfn-emr-cluster-application-additionalinfo
-DuplicatesAllowed: False
-PrimitiveItemType: String
-Required: False
-Type: Map
+Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-emr-cluster-application.html#cfn-emr-cluster-application-additionalinfo    
+DuplicatesAllowed: False    
+PrimitiveItemType: String    
+Required: False    
+Type: Map    
 UpdateType: Mutable
 
 ```yaml
@@ -42,11 +42,11 @@ Accept wildcard characters: False
 ```
 
 ### -Args
-Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-emr-cluster-application.html#cfn-emr-cluster-application-args
-DuplicatesAllowed: False
-PrimitiveItemType: String
-Required: False
-Type: List
+Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-emr-cluster-application.html#cfn-emr-cluster-application-args    
+DuplicatesAllowed: False    
+PrimitiveItemType: String    
+Required: False    
+Type: List    
 UpdateType: Mutable
 
 ```yaml
@@ -62,9 +62,9 @@ Accept wildcard characters: False
 ```
 
 ### -Name
-Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-emr-cluster-application.html#cfn-emr-cluster-application-name
-PrimitiveType: String
-Required: False
+Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-emr-cluster-application.html#cfn-emr-cluster-application-name    
+PrimitiveType: String    
+Required: False    
 UpdateType: Mutable
 
 ```yaml
@@ -80,9 +80,9 @@ Accept wildcard characters: False
 ```
 
 ### -Version
-Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-emr-cluster-application.html#cfn-emr-cluster-application-version
-PrimitiveType: String
-Required: False
+Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-emr-cluster-application.html#cfn-emr-cluster-application-version    
+PrimitiveType: String    
+Required: False    
 UpdateType: Mutable
 
 ```yaml

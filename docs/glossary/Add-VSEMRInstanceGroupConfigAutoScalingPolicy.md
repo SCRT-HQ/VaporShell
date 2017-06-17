@@ -1,7 +1,7 @@
 ---
-layout: pagenodesc
+layout: glossary
 title: Add-VSEMRInstanceGroupConfigAutoScalingPolicy
-category: glossary
+categories: glossary
 ---
 
 # Add-VSEMRInstanceGroupConfigAutoScalingPolicy
@@ -21,9 +21,9 @@ Adds an AWS::EMR::InstanceGroupConfig.AutoScalingPolicy resource property to the
 ## PARAMETERS
 
 ### -Constraints
-Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-elasticmapreduce-instancegroupconfig-autoscalingpolicy.html#cfn-elasticmapreduce-instancegroupconfig-autoscalingpolicy-constraints
-Required: True
-Type: ScalingConstraints
+Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-elasticmapreduce-instancegroupconfig-autoscalingpolicy.html#cfn-elasticmapreduce-instancegroupconfig-autoscalingpolicy-constraints    
+Required: True    
+Type: ScalingConstraints    
 UpdateType: Mutable
 
 ```yaml
@@ -39,11 +39,11 @@ Accept wildcard characters: False
 ```
 
 ### -Rules
-Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-elasticmapreduce-instancegroupconfig-autoscalingpolicy.html#cfn-elasticmapreduce-instancegroupconfig-autoscalingpolicy-rules
-DuplicatesAllowed: False
-ItemType: ScalingRule
-Required: True
-Type: List
+Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-elasticmapreduce-instancegroupconfig-autoscalingpolicy.html#cfn-elasticmapreduce-instancegroupconfig-autoscalingpolicy-rules    
+DuplicatesAllowed: False    
+ItemType: ScalingRule    
+Required: True    
+Type: List    
 UpdateType: Mutable
 
 ```yaml

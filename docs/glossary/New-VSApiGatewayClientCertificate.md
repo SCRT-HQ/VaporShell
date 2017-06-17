@@ -1,7 +1,7 @@
 ---
-layout: pagenodesc
+layout: glossary
 title: New-VSApiGatewayClientCertificate
-category: glossary
+categories: glossary
 ---
 
 # New-VSApiGatewayClientCertificate
@@ -39,9 +39,9 @@ Accept wildcard characters: False
 ```
 
 ### -Description
-Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-apigateway-clientcertificate.html#cfn-apigateway-clientcertificate-description
-PrimitiveType: String
-Required: False
+Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-apigateway-clientcertificate.html#cfn-apigateway-clientcertificate-description    
+PrimitiveType: String    
+Required: False    
 UpdateType: Mutable
 
 ```yaml

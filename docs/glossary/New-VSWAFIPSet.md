@@ -1,7 +1,7 @@
 ---
-layout: pagenodesc
+layout: glossary
 title: New-VSWAFIPSet
-category: glossary
+categories: glossary
 ---
 
 # New-VSWAFIPSet
@@ -39,11 +39,11 @@ Accept wildcard characters: False
 ```
 
 ### -IPSetDescriptors
-Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-waf-ipset.html#cfn-waf-ipset-ipsetdescriptors
-DuplicatesAllowed: False
-ItemType: IPSetDescriptor
-Required: False
-Type: List
+Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-waf-ipset.html#cfn-waf-ipset-ipsetdescriptors    
+DuplicatesAllowed: False    
+ItemType: IPSetDescriptor    
+Required: False    
+Type: List    
 UpdateType: Mutable
 
 ```yaml
@@ -59,9 +59,9 @@ Accept wildcard characters: False
 ```
 
 ### -Name
-Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-waf-ipset.html#cfn-waf-ipset-name
-PrimitiveType: String
-Required: True
+Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-waf-ipset.html#cfn-waf-ipset-name    
+PrimitiveType: String    
+Required: True    
 UpdateType: Immutable
 
 ```yaml

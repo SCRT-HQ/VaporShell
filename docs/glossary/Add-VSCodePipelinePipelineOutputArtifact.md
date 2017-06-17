@@ -1,7 +1,7 @@
 ---
-layout: pagenodesc
+layout: glossary
 title: Add-VSCodePipelinePipelineOutputArtifact
-category: glossary
+categories: glossary
 ---
 
 # Add-VSCodePipelinePipelineOutputArtifact
@@ -21,9 +21,9 @@ Adds an AWS::CodePipeline::Pipeline.OutputArtifact resource property to the temp
 ## PARAMETERS
 
 ### -Name
-Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-codepipeline-pipeline-stages-actions-outputartifacts.html#cfn-codepipeline-pipeline-stages-actions-outputartifacts-name
-PrimitiveType: String
-Required: True
+Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-codepipeline-pipeline-stages-actions-outputartifacts.html#cfn-codepipeline-pipeline-stages-actions-outputartifacts-name    
+PrimitiveType: String    
+Required: True    
 UpdateType: Mutable
 
 ```yaml

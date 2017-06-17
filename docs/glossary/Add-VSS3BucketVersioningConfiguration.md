@@ -1,7 +1,7 @@
 ---
-layout: pagenodesc
+layout: glossary
 title: Add-VSS3BucketVersioningConfiguration
-category: glossary
+categories: glossary
 ---
 
 # Add-VSS3BucketVersioningConfiguration
@@ -21,9 +21,9 @@ Adds an AWS::S3::Bucket.VersioningConfiguration resource property to the templat
 ## PARAMETERS
 
 ### -Status
-Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-s3-bucket-versioningconfig.html#cfn-s3-bucket-versioningconfig-status
-PrimitiveType: String
-Required: True
+Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-s3-bucket-versioningconfig.html#cfn-s3-bucket-versioningconfig-status    
+PrimitiveType: String    
+Required: True    
 UpdateType: Mutable
 
 ```yaml

@@ -1,7 +1,7 @@
 ---
-layout: pagenodesc
+layout: glossary
 title: New-VSElasticLoadBalancingLoadBalancer
-category: glossary
+categories: glossary
 ---
 
 # New-VSElasticLoadBalancingLoadBalancer
@@ -43,9 +43,9 @@ Accept wildcard characters: False
 ```
 
 ### -AccessLoggingPolicy
-Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-elb.html#cfn-ec2-elb-accessloggingpolicy
-Required: False
-Type: AccessLoggingPolicy
+Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-elb.html#cfn-ec2-elb-accessloggingpolicy    
+Required: False    
+Type: AccessLoggingPolicy    
 UpdateType: Mutable
 
 ```yaml
@@ -61,11 +61,11 @@ Accept wildcard characters: False
 ```
 
 ### -AppCookieStickinessPolicy
-Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-elb.html#cfn-ec2-elb-appcookiestickinesspolicy
-DuplicatesAllowed: False
-ItemType: AppCookieStickinessPolicy
-Required: False
-Type: List
+Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-elb.html#cfn-ec2-elb-appcookiestickinesspolicy    
+DuplicatesAllowed: False    
+ItemType: AppCookieStickinessPolicy    
+Required: False    
+Type: List    
 UpdateType: Mutable
 
 ```yaml
@@ -81,11 +81,11 @@ Accept wildcard characters: False
 ```
 
 ### -AvailabilityZones
-Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-elb.html#cfn-ec2-elb-availabilityzones
-DuplicatesAllowed: False
-PrimitiveItemType: String
-Required: False
-Type: List
+Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-elb.html#cfn-ec2-elb-availabilityzones    
+DuplicatesAllowed: False    
+PrimitiveItemType: String    
+Required: False    
+Type: List    
 UpdateType: Conditional
 
 ```yaml
@@ -101,9 +101,9 @@ Accept wildcard characters: False
 ```
 
 ### -ConnectionDrainingPolicy
-Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-elb.html#cfn-ec2-elb-connectiondrainingpolicy
-Required: False
-Type: ConnectionDrainingPolicy
+Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-elb.html#cfn-ec2-elb-connectiondrainingpolicy    
+Required: False    
+Type: ConnectionDrainingPolicy    
 UpdateType: Mutable
 
 ```yaml
@@ -119,9 +119,9 @@ Accept wildcard characters: False
 ```
 
 ### -ConnectionSettings
-Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-elb.html#cfn-ec2-elb-connectionsettings
-Required: False
-Type: ConnectionSettings
+Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-elb.html#cfn-ec2-elb-connectionsettings    
+Required: False    
+Type: ConnectionSettings    
 UpdateType: Mutable
 
 ```yaml
@@ -137,9 +137,9 @@ Accept wildcard characters: False
 ```
 
 ### -CrossZone
-Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-elb.html#cfn-ec2-elb-crosszone
-PrimitiveType: Boolean
-Required: False
+Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-elb.html#cfn-ec2-elb-crosszone    
+PrimitiveType: Boolean    
+Required: False    
 UpdateType: Mutable
 
 ```yaml
@@ -155,9 +155,9 @@ Accept wildcard characters: False
 ```
 
 ### -HealthCheck
-Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-elb.html#cfn-ec2-elb-healthcheck
-Required: False
-Type: HealthCheck
+Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-elb.html#cfn-ec2-elb-healthcheck    
+Required: False    
+Type: HealthCheck    
 UpdateType: Conditional
 
 ```yaml
@@ -173,11 +173,11 @@ Accept wildcard characters: False
 ```
 
 ### -Instances
-Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-elb.html#cfn-ec2-elb-instances
-DuplicatesAllowed: False
-PrimitiveItemType: String
-Required: False
-Type: List
+Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-elb.html#cfn-ec2-elb-instances    
+DuplicatesAllowed: False    
+PrimitiveItemType: String    
+Required: False    
+Type: List    
 UpdateType: Mutable
 
 ```yaml
@@ -193,11 +193,11 @@ Accept wildcard characters: False
 ```
 
 ### -LBCookieStickinessPolicy
-Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-elb.html#cfn-ec2-elb-lbcookiestickinesspolicy
-DuplicatesAllowed: False
-ItemType: LBCookieStickinessPolicy
-Required: False
-Type: List
+Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-elb.html#cfn-ec2-elb-lbcookiestickinesspolicy    
+DuplicatesAllowed: False    
+ItemType: LBCookieStickinessPolicy    
+Required: False    
+Type: List    
 UpdateType: Mutable
 
 ```yaml
@@ -213,11 +213,11 @@ Accept wildcard characters: False
 ```
 
 ### -Listeners
-Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-elb.html#cfn-ec2-elb-listeners
-DuplicatesAllowed: False
-ItemType: Listeners
-Required: True
-Type: List
+Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-elb.html#cfn-ec2-elb-listeners    
+DuplicatesAllowed: False    
+ItemType: Listeners    
+Required: True    
+Type: List    
 UpdateType: Mutable
 
 ```yaml
@@ -233,9 +233,9 @@ Accept wildcard characters: False
 ```
 
 ### -LoadBalancerName
-Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-elb.html#cfn-ec2-elb-elbname
-PrimitiveType: String
-Required: False
+Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-elb.html#cfn-ec2-elb-elbname    
+PrimitiveType: String    
+Required: False    
 UpdateType: Immutable
 
 ```yaml
@@ -251,11 +251,11 @@ Accept wildcard characters: False
 ```
 
 ### -Policies
-Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-elb.html#cfn-ec2-elb-policies
-DuplicatesAllowed: False
-ItemType: Policies
-Required: False
-Type: List
+Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-elb.html#cfn-ec2-elb-policies    
+DuplicatesAllowed: False    
+ItemType: Policies    
+Required: False    
+Type: List    
 UpdateType: Mutable
 
 ```yaml
@@ -271,9 +271,9 @@ Accept wildcard characters: False
 ```
 
 ### -Scheme
-Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-elb.html#cfn-ec2-elb-scheme
-PrimitiveType: String
-Required: False
+Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-elb.html#cfn-ec2-elb-scheme    
+PrimitiveType: String    
+Required: False    
 UpdateType: Immutable
 
 ```yaml
@@ -289,11 +289,11 @@ Accept wildcard characters: False
 ```
 
 ### -SecurityGroups
-Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-elb.html#cfn-ec2-elb-securitygroups
-DuplicatesAllowed: False
-PrimitiveItemType: String
-Required: False
-Type: List
+Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-elb.html#cfn-ec2-elb-securitygroups    
+DuplicatesAllowed: False    
+PrimitiveItemType: String    
+Required: False    
+Type: List    
 UpdateType: Mutable
 
 ```yaml
@@ -309,11 +309,11 @@ Accept wildcard characters: False
 ```
 
 ### -Subnets
-Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-elb.html#cfn-ec2-elb-subnets
-DuplicatesAllowed: False
-PrimitiveItemType: String
-Required: False
-Type: List
+Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-elb.html#cfn-ec2-elb-subnets    
+DuplicatesAllowed: False    
+PrimitiveItemType: String    
+Required: False    
+Type: List    
 UpdateType: Conditional
 
 ```yaml
@@ -329,11 +329,11 @@ Accept wildcard characters: False
 ```
 
 ### -Tags
-Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-elb.html#cfn-elasticloadbalancing-loadbalancer-tags
-DuplicatesAllowed: True
-ItemType: Tag
-Required: False
-Type: List
+Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-elb.html#cfn-elasticloadbalancing-loadbalancer-tags    
+DuplicatesAllowed: True    
+ItemType: Tag    
+Required: False    
+Type: List    
 UpdateType: Mutable
 
 ```yaml

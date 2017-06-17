@@ -1,7 +1,7 @@
 ---
-layout: pagenodesc
+layout: glossary
 title: Add-VSKinesisFirehoseDeliveryStreamKMSEncryptionConfig
-category: glossary
+categories: glossary
 ---
 
 # Add-VSKinesisFirehoseDeliveryStreamKMSEncryptionConfig
@@ -21,9 +21,9 @@ Adds an AWS::KinesisFirehose::DeliveryStream.KMSEncryptionConfig resource proper
 ## PARAMETERS
 
 ### -AWSKMSKeyARN
-Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-kinesisfirehose-kinesisdeliverystream-s3destinationconfiguration-encryptionconfiguration-kmsencryptionconfig.html#cfn-kinesisfirehose-kinesisdeliverystream-s3destinationconfiguration-encryptionconfiguration-kmsencryptionconfig-awskmskeyarn
-PrimitiveType: String
-Required: True
+Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-kinesisfirehose-kinesisdeliverystream-s3destinationconfiguration-encryptionconfiguration-kmsencryptionconfig.html#cfn-kinesisfirehose-kinesisdeliverystream-s3destinationconfiguration-encryptionconfiguration-kmsencryptionconfig-awskmskeyarn    
+PrimitiveType: String    
+Required: True    
 UpdateType: Mutable
 
 ```yaml

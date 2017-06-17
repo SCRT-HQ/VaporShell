@@ -1,7 +1,7 @@
 ---
-layout: pagenodesc
+layout: glossary
 title: Add-VSS3BucketCorsConfiguration
-category: glossary
+categories: glossary
 ---
 
 # Add-VSS3BucketCorsConfiguration
@@ -21,11 +21,11 @@ Adds an AWS::S3::Bucket.CorsConfiguration resource property to the template
 ## PARAMETERS
 
 ### -CorsRules
-Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-s3-bucket-cors.html#cfn-s3-bucket-cors-corsrule
-DuplicatesAllowed: False
-ItemType: CorsRule
-Required: True
-Type: List
+Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-s3-bucket-cors.html#cfn-s3-bucket-cors-corsrule    
+DuplicatesAllowed: False    
+ItemType: CorsRule    
+Required: True    
+Type: List    
 UpdateType: Mutable
 
 ```yaml

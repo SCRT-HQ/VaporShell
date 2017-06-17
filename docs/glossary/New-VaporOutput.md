@@ -1,7 +1,7 @@
 ---
-layout: pagenodesc
+layout: glossary
 title: New-VaporOutput
-category: glossary
+categories: glossary
 ---
 
 # New-VaporOutput

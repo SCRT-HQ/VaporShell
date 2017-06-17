@@ -1,7 +1,7 @@
 ---
-layout: pagenodesc
+layout: glossary
 title: New-VSApiGatewayAccount
-category: glossary
+categories: glossary
 ---
 
 # New-VSApiGatewayAccount
@@ -39,9 +39,9 @@ Accept wildcard characters: False
 ```
 
 ### -CloudWatchRoleArn
-Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-apigateway-account.html#cfn-apigateway-account-cloudwatchrolearn
-PrimitiveType: String
-Required: False
+Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-apigateway-account.html#cfn-apigateway-account-cloudwatchrolearn    
+PrimitiveType: String    
+Required: False    
 UpdateType: Mutable
 
 ```yaml

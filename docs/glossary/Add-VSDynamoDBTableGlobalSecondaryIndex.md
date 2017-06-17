@@ -1,7 +1,7 @@
 ---
-layout: pagenodesc
+layout: glossary
 title: Add-VSDynamoDBTableGlobalSecondaryIndex
-category: glossary
+categories: glossary
 ---
 
 # Add-VSDynamoDBTableGlobalSecondaryIndex
@@ -22,9 +22,9 @@ Adds an AWS::DynamoDB::Table.GlobalSecondaryIndex resource property to the templ
 ## PARAMETERS
 
 ### -IndexName
-Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-dynamodb-gsi.html#cfn-dynamodb-gsi-indexname
-PrimitiveType: String
-Required: True
+Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-dynamodb-gsi.html#cfn-dynamodb-gsi-indexname    
+PrimitiveType: String    
+Required: True    
 UpdateType: Mutable
 
 ```yaml
@@ -40,11 +40,11 @@ Accept wildcard characters: False
 ```
 
 ### -KeySchema
-Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-dynamodb-gsi.html#cfn-dynamodb-gsi-keyschema
-DuplicatesAllowed: True
-ItemType: KeySchema
-Required: True
-Type: List
+Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-dynamodb-gsi.html#cfn-dynamodb-gsi-keyschema    
+DuplicatesAllowed: True    
+ItemType: KeySchema    
+Required: True    
+Type: List    
 UpdateType: Mutable
 
 ```yaml
@@ -60,9 +60,9 @@ Accept wildcard characters: False
 ```
 
 ### -Projection
-Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-dynamodb-gsi.html#cfn-dynamodb-gsi-projection
-Required: True
-Type: Projection
+Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-dynamodb-gsi.html#cfn-dynamodb-gsi-projection    
+Required: True    
+Type: Projection    
 UpdateType: Mutable
 
 ```yaml
@@ -78,9 +78,9 @@ Accept wildcard characters: False
 ```
 
 ### -ProvisionedThroughput
-Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-dynamodb-gsi.html#cfn-dynamodb-gsi-provisionedthroughput
-Required: True
-Type: ProvisionedThroughput
+Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-dynamodb-gsi.html#cfn-dynamodb-gsi-provisionedthroughput    
+Required: True    
+Type: ProvisionedThroughput    
 UpdateType: Mutable
 
 ```yaml

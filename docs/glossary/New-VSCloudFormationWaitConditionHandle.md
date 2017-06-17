@@ -1,7 +1,7 @@
 ---
-layout: pagenodesc
+layout: glossary
 title: New-VSCloudFormationWaitConditionHandle
-category: glossary
+categories: glossary
 ---
 
 # New-VSCloudFormationWaitConditionHandle

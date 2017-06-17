@@ -1,7 +1,7 @@
 ---
-layout: pagenodesc
+layout: glossary
 title: New-VSRedshiftClusterSubnetGroup
-category: glossary
+categories: glossary
 ---
 
 # New-VSRedshiftClusterSubnetGroup
@@ -40,9 +40,9 @@ Accept wildcard characters: False
 ```
 
 ### -Description
-Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-redshift-clustersubnetgroup.html#cfn-redshift-clustersubnetgroup-description
-PrimitiveType: String
-Required: True
+Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-redshift-clustersubnetgroup.html#cfn-redshift-clustersubnetgroup-description    
+PrimitiveType: String    
+Required: True    
 UpdateType: Mutable
 
 ```yaml
@@ -58,11 +58,11 @@ Accept wildcard characters: False
 ```
 
 ### -SubnetIds
-Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-redshift-clustersubnetgroup.html#cfn-redshift-clustersubnetgroup-subnetids
-DuplicatesAllowed: True
-PrimitiveItemType: String
-Required: True
-Type: List
+Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-redshift-clustersubnetgroup.html#cfn-redshift-clustersubnetgroup-subnetids    
+DuplicatesAllowed: True    
+PrimitiveItemType: String    
+Required: True    
+Type: List    
 UpdateType: Mutable
 
 ```yaml
@@ -78,11 +78,11 @@ Accept wildcard characters: False
 ```
 
 ### -Tags
-Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-redshift-clustersubnetgroup.html#cfn-redshift-clustersubnetgroup-tags
-DuplicatesAllowed: True
-ItemType: Tag
-Required: False
-Type: List
+Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-redshift-clustersubnetgroup.html#cfn-redshift-clustersubnetgroup-tags    
+DuplicatesAllowed: True    
+ItemType: Tag    
+Required: False    
+Type: List    
 UpdateType: Mutable
 
 ```yaml

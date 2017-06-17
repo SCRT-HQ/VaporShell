@@ -1,7 +1,7 @@
 ---
-layout: pagenodesc
+layout: glossary
 title: Add-VSEMRInstanceGroupConfigConfiguration
-category: glossary
+categories: glossary
 ---
 
 # Add-VSEMRInstanceGroupConfigConfiguration
@@ -22,9 +22,9 @@ Adds an AWS::EMR::InstanceGroupConfig.Configuration resource property to the tem
 ## PARAMETERS
 
 ### -Classification
-Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-emr-cluster-configuration.html#cfn-emr-cluster-configuration-classification
-PrimitiveType: String
-Required: False
+Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-emr-cluster-configuration.html#cfn-emr-cluster-configuration-classification    
+PrimitiveType: String    
+Required: False    
 UpdateType: Immutable
 
 ```yaml
@@ -40,11 +40,11 @@ Accept wildcard characters: False
 ```
 
 ### -ConfigurationProperties
-Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-emr-cluster-configuration.html#cfn-emr-cluster-configuration-configurationproperties
-DuplicatesAllowed: False
-PrimitiveItemType: String
-Required: False
-Type: Map
+Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-emr-cluster-configuration.html#cfn-emr-cluster-configuration-configurationproperties    
+DuplicatesAllowed: False    
+PrimitiveItemType: String    
+Required: False    
+Type: Map    
 UpdateType: Immutable
 
 ```yaml
@@ -60,11 +60,11 @@ Accept wildcard characters: False
 ```
 
 ### -Configurations
-Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-emr-cluster-configuration.html#cfn-emr-cluster-configuration-configurations
-DuplicatesAllowed: False
-ItemType: Configuration
-Required: False
-Type: List
+Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-emr-cluster-configuration.html#cfn-emr-cluster-configuration-configurations    
+DuplicatesAllowed: False    
+ItemType: Configuration    
+Required: False    
+Type: List    
 UpdateType: Immutable
 
 ```yaml

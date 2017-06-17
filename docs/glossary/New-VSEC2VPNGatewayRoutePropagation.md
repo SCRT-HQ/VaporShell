@@ -1,7 +1,7 @@
 ---
-layout: pagenodesc
+layout: glossary
 title: New-VSEC2VPNGatewayRoutePropagation
-category: glossary
+categories: glossary
 ---
 
 # New-VSEC2VPNGatewayRoutePropagation
@@ -40,11 +40,11 @@ Accept wildcard characters: False
 ```
 
 ### -RouteTableIds
-Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ec2-vpn-gatewayrouteprop.html#cfn-ec2-vpngatewayrouteprop-routetableids
-DuplicatesAllowed: True
-PrimitiveItemType: String
-Required: True
-Type: List
+Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ec2-vpn-gatewayrouteprop.html#cfn-ec2-vpngatewayrouteprop-routetableids    
+DuplicatesAllowed: True    
+PrimitiveItemType: String    
+Required: True    
+Type: List    
 UpdateType: Mutable
 
 ```yaml
@@ -60,9 +60,9 @@ Accept wildcard characters: False
 ```
 
 ### -VpnGatewayId
-Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ec2-vpn-gatewayrouteprop.html#cfn-ec2-vpngatewayrouteprop-vpngatewayid
-PrimitiveType: String
-Required: True
+Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ec2-vpn-gatewayrouteprop.html#cfn-ec2-vpngatewayrouteprop-vpngatewayid    
+PrimitiveType: String    
+Required: True    
 UpdateType: Mutable
 
 ```yaml

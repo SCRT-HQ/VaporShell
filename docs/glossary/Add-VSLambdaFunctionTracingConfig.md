@@ -1,7 +1,7 @@
 ---
-layout: pagenodesc
+layout: glossary
 title: Add-VSLambdaFunctionTracingConfig
-category: glossary
+categories: glossary
 ---
 
 # Add-VSLambdaFunctionTracingConfig
@@ -21,9 +21,9 @@ Adds an AWS::Lambda::Function.TracingConfig resource property to the template
 ## PARAMETERS
 
 ### -Mode
-Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-lambda-function-tracingconfig.html#cfn-lambda-function-tracingconfig-mode
-PrimitiveType: String
-Required: False
+Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-lambda-function-tracingconfig.html#cfn-lambda-function-tracingconfig-mode    
+PrimitiveType: String    
+Required: False    
 UpdateType: Mutable
 
 ```yaml

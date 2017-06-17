@@ -1,7 +1,7 @@
 ---
-layout: pagenodesc
+layout: glossary
 title: New-VSCodePipelineCustomActionType
-category: glossary
+categories: glossary
 ---
 
 # New-VSCodePipelineCustomActionType
@@ -41,9 +41,9 @@ Accept wildcard characters: False
 ```
 
 ### -Category
-Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-codepipeline-customactiontype.html#cfn-codepipeline-customactiontype-category
-PrimitiveType: String
-Required: True
+Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-codepipeline-customactiontype.html#cfn-codepipeline-customactiontype-category    
+PrimitiveType: String    
+Required: True    
 UpdateType: Immutable
 
 ```yaml
@@ -59,11 +59,11 @@ Accept wildcard characters: False
 ```
 
 ### -ConfigurationProperties
-Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-codepipeline-customactiontype.html#cfn-codepipeline-customactiontype-configurationproperties
-DuplicatesAllowed: False
-ItemType: ConfigurationProperties
-Required: False
-Type: List
+Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-codepipeline-customactiontype.html#cfn-codepipeline-customactiontype-configurationproperties    
+DuplicatesAllowed: False    
+ItemType: ConfigurationProperties    
+Required: False    
+Type: List    
 UpdateType: Immutable
 
 ```yaml
@@ -79,9 +79,9 @@ Accept wildcard characters: False
 ```
 
 ### -InputArtifactDetails
-Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-codepipeline-customactiontype.html#cfn-codepipeline-customactiontype-inputartifactdetails
-Required: True
-Type: ArtifactDetails
+Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-codepipeline-customactiontype.html#cfn-codepipeline-customactiontype-inputartifactdetails    
+Required: True    
+Type: ArtifactDetails    
 UpdateType: Immutable
 
 ```yaml
@@ -97,9 +97,9 @@ Accept wildcard characters: False
 ```
 
 ### -OutputArtifactDetails
-Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-codepipeline-customactiontype.html#cfn-codepipeline-customactiontype-outputartifactdetails
-Required: True
-Type: ArtifactDetails
+Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-codepipeline-customactiontype.html#cfn-codepipeline-customactiontype-outputartifactdetails    
+Required: True    
+Type: ArtifactDetails    
 UpdateType: Immutable
 
 ```yaml
@@ -115,9 +115,9 @@ Accept wildcard characters: False
 ```
 
 ### -Provider
-Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-codepipeline-customactiontype.html#cfn-codepipeline-customactiontype-provider
-PrimitiveType: String
-Required: True
+Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-codepipeline-customactiontype.html#cfn-codepipeline-customactiontype-provider    
+PrimitiveType: String    
+Required: True    
 UpdateType: Immutable
 
 ```yaml
@@ -133,9 +133,9 @@ Accept wildcard characters: False
 ```
 
 ### -Settings
-Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-codepipeline-customactiontype.html#cfn-codepipeline-customactiontype-settings
-Required: False
-Type: Settings
+Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-codepipeline-customactiontype.html#cfn-codepipeline-customactiontype-settings    
+Required: False    
+Type: Settings    
 UpdateType: Immutable
 
 ```yaml
@@ -151,9 +151,9 @@ Accept wildcard characters: False
 ```
 
 ### -Version
-Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-codepipeline-customactiontype.html#cfn-codepipeline-customactiontype-version
-PrimitiveType: String
-Required: False
+Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-codepipeline-customactiontype.html#cfn-codepipeline-customactiontype-version    
+PrimitiveType: String    
+Required: False    
 UpdateType: Immutable
 
 ```yaml

@@ -1,7 +1,7 @@
 ---
-layout: pagenodesc
+layout: glossary
 title: New-VSS3BucketPolicy
-category: glossary
+categories: glossary
 ---
 
 # New-VSS3BucketPolicy
@@ -39,9 +39,9 @@ Accept wildcard characters: False
 ```
 
 ### -Bucket
-Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-s3-policy.html#cfn-s3-bucketpolicy-bucket
-PrimitiveType: String
-Required: True
+Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-s3-policy.html#cfn-s3-bucketpolicy-bucket    
+PrimitiveType: String    
+Required: True    
 UpdateType: Immutable
 
 ```yaml
@@ -57,9 +57,9 @@ Accept wildcard characters: False
 ```
 
 ### -PolicyDocument
-Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-s3-policy.html#cfn-s3-bucketpolicy-policydocument
-PrimitiveType: Json
-Required: True
+Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-s3-policy.html#cfn-s3-bucketpolicy-policydocument    
+PrimitiveType: Json    
+Required: True    
 UpdateType: Mutable
 
 ```yaml

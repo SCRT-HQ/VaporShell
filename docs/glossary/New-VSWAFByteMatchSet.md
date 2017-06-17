@@ -1,7 +1,7 @@
 ---
-layout: pagenodesc
+layout: glossary
 title: New-VSWAFByteMatchSet
-category: glossary
+categories: glossary
 ---
 
 # New-VSWAFByteMatchSet
@@ -40,11 +40,11 @@ Accept wildcard characters: False
 ```
 
 ### -ByteMatchTuples
-Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-waf-bytematchset.html#cfn-waf-bytematchset-bytematchtuples
-DuplicatesAllowed: False
-ItemType: ByteMatchTuple
-Required: False
-Type: List
+Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-waf-bytematchset.html#cfn-waf-bytematchset-bytematchtuples    
+DuplicatesAllowed: False    
+ItemType: ByteMatchTuple    
+Required: False    
+Type: List    
 UpdateType: Mutable
 
 ```yaml
@@ -60,9 +60,9 @@ Accept wildcard characters: False
 ```
 
 ### -Name
-Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-waf-bytematchset.html#cfn-waf-bytematchset-name
-PrimitiveType: String
-Required: True
+Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-waf-bytematchset.html#cfn-waf-bytematchset-name    
+PrimitiveType: String    
+Required: True    
 UpdateType: Immutable
 
 ```yaml

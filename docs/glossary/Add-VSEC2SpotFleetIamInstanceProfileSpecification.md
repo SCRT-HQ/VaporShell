@@ -1,7 +1,7 @@
 ---
-layout: pagenodesc
+layout: glossary
 title: Add-VSEC2SpotFleetIamInstanceProfileSpecification
-category: glossary
+categories: glossary
 ---
 
 # Add-VSEC2SpotFleetIamInstanceProfileSpecification
@@ -21,9 +21,9 @@ Adds an AWS::EC2::SpotFleet.IamInstanceProfileSpecification resource property to
 ## PARAMETERS
 
 ### -Arn
-Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-spotfleet-spotfleetrequestconfigdata-launchspecifications-iaminstanceprofile.html#cfn-ec2-spotfleet-iaminstanceprofilespecification-arn
-PrimitiveType: String
-Required: False
+Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-spotfleet-spotfleetrequestconfigdata-launchspecifications-iaminstanceprofile.html#cfn-ec2-spotfleet-iaminstanceprofilespecification-arn    
+PrimitiveType: String    
+Required: False    
 UpdateType: Mutable
 
 ```yaml

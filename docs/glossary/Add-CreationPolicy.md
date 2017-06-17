@@ -1,7 +1,7 @@
 ---
-layout: pagenodesc
+layout: glossary
 title: Add-CreationPolicy
-category: glossary
+categories: glossary
 ---
 
 # Add-CreationPolicy

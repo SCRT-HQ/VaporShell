@@ -1,7 +1,7 @@
 ---
-layout: pagenodesc
+layout: glossary
 title: New-VSWAFRegionalSizeConstraintSet
-category: glossary
+categories: glossary
 ---
 
 # New-VSWAFRegionalSizeConstraintSet
@@ -40,10 +40,10 @@ Accept wildcard characters: False
 ```
 
 ### -SizeConstraints
-Type: List
-Required: False
-Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-wafregional-sizeconstraintset.html#cfn-wafregional-sizeconstraintset-sizeconstraints
-ItemType: SizeConstraint
+Type: List    
+Required: False    
+Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-wafregional-sizeconstraintset.html#cfn-wafregional-sizeconstraintset-sizeconstraints    
+ItemType: SizeConstraint    
 UpdateType: Mutable
 
 ```yaml
@@ -59,9 +59,9 @@ Accept wildcard characters: False
 ```
 
 ### -Name
-Required: True
-Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-wafregional-sizeconstraintset.html#cfn-wafregional-sizeconstraintset-name
-PrimitiveType: String
+Required: True    
+Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-wafregional-sizeconstraintset.html#cfn-wafregional-sizeconstraintset-name    
+PrimitiveType: String    
 UpdateType: Immutable
 
 ```yaml

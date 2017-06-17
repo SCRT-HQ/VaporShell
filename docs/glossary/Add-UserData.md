@@ -1,7 +1,7 @@
 ---
-layout: pagenodesc
+layout: glossary
 title: Add-UserData
-category: glossary
+categories: glossary
 ---
 
 # Add-UserData

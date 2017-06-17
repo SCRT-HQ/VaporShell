@@ -1,7 +1,7 @@
 ---
-layout: pagenodesc
+layout: glossary
 title: Add-FnSub
-category: glossary
+categories: glossary
 ---
 
 # Add-FnSub

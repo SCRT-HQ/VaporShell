@@ -1,7 +1,7 @@
 ---
-layout: pagenodesc
+layout: glossary
 title: New-VSApiGatewayMethod
-category: glossary
+categories: glossary
 ---
 
 # New-VSApiGatewayMethod
@@ -42,9 +42,9 @@ Accept wildcard characters: False
 ```
 
 ### -ApiKeyRequired
-Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-apigateway-method.html#cfn-apigateway-method-apikeyrequired
-PrimitiveType: Boolean
-Required: False
+Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-apigateway-method.html#cfn-apigateway-method-apikeyrequired    
+PrimitiveType: Boolean    
+Required: False    
 UpdateType: Mutable
 
 ```yaml
@@ -60,9 +60,9 @@ Accept wildcard characters: False
 ```
 
 ### -AuthorizationType
-Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-apigateway-method.html#cfn-apigateway-method-authorizationtype
-PrimitiveType: String
-Required: False
+Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-apigateway-method.html#cfn-apigateway-method-authorizationtype    
+PrimitiveType: String    
+Required: False    
 UpdateType: Mutable
 
 ```yaml
@@ -78,9 +78,9 @@ Accept wildcard characters: False
 ```
 
 ### -AuthorizerId
-Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-apigateway-method.html#cfn-apigateway-method-authorizerid
-PrimitiveType: String
-Required: False
+Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-apigateway-method.html#cfn-apigateway-method-authorizerid    
+PrimitiveType: String    
+Required: False    
 UpdateType: Mutable
 
 ```yaml
@@ -96,9 +96,9 @@ Accept wildcard characters: False
 ```
 
 ### -HttpMethod
-Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-apigateway-method.html#cfn-apigateway-method-httpmethod
-PrimitiveType: String
-Required: True
+Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-apigateway-method.html#cfn-apigateway-method-httpmethod    
+PrimitiveType: String    
+Required: True    
 UpdateType: Mutable
 
 ```yaml
@@ -114,9 +114,9 @@ Accept wildcard characters: False
 ```
 
 ### -Integration
-Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-apigateway-method.html#cfn-apigateway-method-integration
-Required: False
-Type: Integration
+Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-apigateway-method.html#cfn-apigateway-method-integration    
+Required: False    
+Type: Integration    
 UpdateType: Mutable
 
 ```yaml
@@ -132,11 +132,11 @@ Accept wildcard characters: False
 ```
 
 ### -MethodResponses
-Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-apigateway-method.html#cfn-apigateway-method-methodresponses
-DuplicatesAllowed: False
-ItemType: MethodResponse
-Required: False
-Type: List
+Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-apigateway-method.html#cfn-apigateway-method-methodresponses    
+DuplicatesAllowed: False    
+ItemType: MethodResponse    
+Required: False    
+Type: List    
 UpdateType: Mutable
 
 ```yaml
@@ -152,11 +152,11 @@ Accept wildcard characters: False
 ```
 
 ### -RequestModels
-Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-apigateway-method.html#cfn-apigateway-method-requestmodels
-DuplicatesAllowed: False
-PrimitiveItemType: String
-Required: False
-Type: Map
+Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-apigateway-method.html#cfn-apigateway-method-requestmodels    
+DuplicatesAllowed: False    
+PrimitiveItemType: String    
+Required: False    
+Type: Map    
 UpdateType: Mutable
 
 ```yaml
@@ -172,11 +172,11 @@ Accept wildcard characters: False
 ```
 
 ### -RequestParameters
-Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-apigateway-method.html#cfn-apigateway-method-requestparameters
-DuplicatesAllowed: False
-PrimitiveItemType: Boolean
-Required: False
-Type: Map
+Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-apigateway-method.html#cfn-apigateway-method-requestparameters    
+DuplicatesAllowed: False    
+PrimitiveItemType: Boolean    
+Required: False    
+Type: Map    
 UpdateType: Mutable
 
 ```yaml
@@ -192,9 +192,9 @@ Accept wildcard characters: False
 ```
 
 ### -ResourceId
-Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-apigateway-method.html#cfn-apigateway-method-resourceid
-PrimitiveType: String
-Required: False
+Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-apigateway-method.html#cfn-apigateway-method-resourceid    
+PrimitiveType: String    
+Required: False    
 UpdateType: Mutable
 
 ```yaml
@@ -210,9 +210,9 @@ Accept wildcard characters: False
 ```
 
 ### -RestApiId
-Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-apigateway-method.html#cfn-apigateway-method-restapiid
-PrimitiveType: String
-Required: False
+Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-apigateway-method.html#cfn-apigateway-method-restapiid    
+PrimitiveType: String    
+Required: False    
 UpdateType: Mutable
 
 ```yaml

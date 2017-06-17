@@ -1,7 +1,7 @@
 ---
-layout: pagenodesc
-title: Add-VSCodePipelineCustomActionTypeSettings
-category: glossary
+external help file: Vaporshell-help.xml
+online version: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-codepipeline-customactiontype-settings.html
+schema: 2.0.0
 ---
 
 # Add-VSCodePipelineCustomActionTypeSettings
@@ -19,12 +19,21 @@ Add-VSCodePipelineCustomActionTypeSettings [[-EntityUrlTemplate] <Object>] [[-Ex
 ## DESCRIPTION
 Adds an AWS::CodePipeline::CustomActionType.Settings resource property to the template
 
+## EXAMPLES
+
+### Example 1
+```
+PS C:\> {{ Add example code here }}
+```
+
+{{ Add example description here }}
+
 ## PARAMETERS
 
 ### -EntityUrlTemplate
-Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-codepipeline-customactiontype-settings.html#cfn-codepipeline-customactiontype-settings-entityurltemplate
-PrimitiveType: String
-Required: False
+Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-codepipeline-customactiontype-settings.html#cfn-codepipeline-customactiontype-settings-entityurltemplate    
+PrimitiveType: String    
+Required: False    
 UpdateType: Mutable
 
 ```yaml
@@ -40,9 +49,9 @@ Accept wildcard characters: False
 ```
 
 ### -ExecutionUrlTemplate
-Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-codepipeline-customactiontype-settings.html#cfn-codepipeline-customactiontype-settings-executionurltemplate
-PrimitiveType: String
-Required: False
+Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-codepipeline-customactiontype-settings.html#cfn-codepipeline-customactiontype-settings-executionurltemplate    
+PrimitiveType: String    
+Required: False    
 UpdateType: Mutable
 
 ```yaml
@@ -58,9 +67,9 @@ Accept wildcard characters: False
 ```
 
 ### -RevisionUrlTemplate
-Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-codepipeline-customactiontype-settings.html#cfn-codepipeline-customactiontype-settings-revisionurltemplate
-PrimitiveType: String
-Required: False
+Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-codepipeline-customactiontype-settings.html#cfn-codepipeline-customactiontype-settings-revisionurltemplate    
+PrimitiveType: String    
+Required: False    
 UpdateType: Mutable
 
 ```yaml
@@ -76,9 +85,9 @@ Accept wildcard characters: False
 ```
 
 ### -ThirdPartyConfigurationUrl
-Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-codepipeline-customactiontype-settings.html#cfn-codepipeline-customactiontype-settings-thirdpartyconfigurationurl
-PrimitiveType: String
-Required: False
+Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-codepipeline-customactiontype-settings.html#cfn-codepipeline-customactiontype-settings-thirdpartyconfigurationurl    
+PrimitiveType: String    
+Required: False    
 UpdateType: Mutable
 
 ```yaml

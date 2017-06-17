@@ -1,7 +1,7 @@
 ---
-layout: pagenodesc
+layout: glossary
 title: New-VSWAFRegionalIPSet
-category: glossary
+categories: glossary
 ---
 
 # New-VSWAFRegionalIPSet
@@ -40,10 +40,10 @@ Accept wildcard characters: False
 ```
 
 ### -IPSetDescriptors
-Type: List
-Required: False
-Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-wafregional-ipset.html#cfn-wafregional-ipset-ipsetdescriptors
-ItemType: IPSetDescriptor
+Type: List    
+Required: False    
+Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-wafregional-ipset.html#cfn-wafregional-ipset-ipsetdescriptors    
+ItemType: IPSetDescriptor    
 UpdateType: Mutable
 
 ```yaml
@@ -59,9 +59,9 @@ Accept wildcard characters: False
 ```
 
 ### -Name
-Required: True
-Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-wafregional-ipset.html#cfn-wafregional-ipset-name
-PrimitiveType: String
+Required: True    
+Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-wafregional-ipset.html#cfn-wafregional-ipset-name    
+PrimitiveType: String    
 UpdateType: Immutable
 
 ```yaml

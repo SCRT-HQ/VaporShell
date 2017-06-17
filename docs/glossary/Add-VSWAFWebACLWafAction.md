@@ -1,7 +1,7 @@
 ---
-layout: pagenodesc
+layout: glossary
 title: Add-VSWAFWebACLWafAction
-category: glossary
+categories: glossary
 ---
 
 # Add-VSWAFWebACLWafAction
@@ -21,9 +21,9 @@ Adds an AWS::WAF::WebACL.WafAction resource property to the template
 ## PARAMETERS
 
 ### -Type
-Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-waf-webacl-action.html#cfn-waf-webacl-action-type
-PrimitiveType: String
-Required: True
+Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-waf-webacl-action.html#cfn-waf-webacl-action-type    
+PrimitiveType: String    
+Required: True    
 UpdateType: Mutable
 
 ```yaml

@@ -1,7 +1,7 @@
 ---
-layout: pagenodesc
+layout: glossary
 title: Add-VSCognitoIdentityPoolRoleAttachmentRulesConfigurationType
-category: glossary
+categories: glossary
 ---
 
 # Add-VSCognitoIdentityPoolRoleAttachmentRulesConfigurationType

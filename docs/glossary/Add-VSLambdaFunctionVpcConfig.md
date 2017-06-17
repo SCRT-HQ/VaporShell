@@ -1,7 +1,7 @@
 ---
-layout: pagenodesc
+layout: glossary
 title: Add-VSLambdaFunctionVpcConfig
-category: glossary
+categories: glossary
 ---
 
 # Add-VSLambdaFunctionVpcConfig
@@ -21,11 +21,11 @@ Adds an AWS::Lambda::Function.VpcConfig resource property to the template
 ## PARAMETERS
 
 ### -SecurityGroupIds
-Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-lambda-function-vpcconfig.html#cfn-lambda-function-vpcconfig-securitygroupids
-DuplicatesAllowed: False
-PrimitiveItemType: String
-Required: True
-Type: List
+Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-lambda-function-vpcconfig.html#cfn-lambda-function-vpcconfig-securitygroupids    
+DuplicatesAllowed: False    
+PrimitiveItemType: String    
+Required: True    
+Type: List    
 UpdateType: Mutable
 
 ```yaml
@@ -41,11 +41,11 @@ Accept wildcard characters: False
 ```
 
 ### -SubnetIds
-Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-lambda-function-vpcconfig.html#cfn-lambda-function-vpcconfig-subnetids
-DuplicatesAllowed: False
-PrimitiveItemType: String
-Required: True
-Type: List
+Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-lambda-function-vpcconfig.html#cfn-lambda-function-vpcconfig-subnetids    
+DuplicatesAllowed: False    
+PrimitiveItemType: String    
+Required: True    
+Type: List    
 UpdateType: Mutable
 
 ```yaml

@@ -1,7 +1,7 @@
 ---
-layout: pagenodesc
+layout: glossary
 title: Add-VSLambdaFunctionEnvironment
-category: glossary
+categories: glossary
 ---
 
 # Add-VSLambdaFunctionEnvironment
@@ -21,11 +21,11 @@ Adds an AWS::Lambda::Function.Environment resource property to the template
 ## PARAMETERS
 
 ### -Variables
-Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-lambda-function-environment.html#cfn-lambda-function-environment-variables
-DuplicatesAllowed: False
-PrimitiveItemType: String
-Required: False
-Type: Map
+Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-lambda-function-environment.html#cfn-lambda-function-environment-variables    
+DuplicatesAllowed: False    
+PrimitiveItemType: String    
+Required: False    
+Type: Map    
 UpdateType: Mutable
 
 ```yaml

@@ -1,7 +1,7 @@
 ---
-layout: pagenodesc
+layout: glossary
 title: Add-VSDirectoryServiceSimpleADVpcSettings
-category: glossary
+categories: glossary
 ---
 
 # Add-VSDirectoryServiceSimpleADVpcSettings
@@ -21,11 +21,11 @@ Adds an AWS::DirectoryService::SimpleAD.VpcSettings resource property to the tem
 ## PARAMETERS
 
 ### -SubnetIds
-Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-directoryservice-simplead-vpcsettings.html#cfn-directoryservice-simplead-vpcsettings-subnetids
-DuplicatesAllowed: False
-PrimitiveItemType: String
-Required: True
-Type: List
+Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-directoryservice-simplead-vpcsettings.html#cfn-directoryservice-simplead-vpcsettings-subnetids    
+DuplicatesAllowed: False    
+PrimitiveItemType: String    
+Required: True    
+Type: List    
 UpdateType: Mutable
 
 ```yaml
@@ -41,9 +41,9 @@ Accept wildcard characters: False
 ```
 
 ### -VpcId
-Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-directoryservice-simplead-vpcsettings.html#cfn-directoryservice-simplead-vpcsettings-vpcid
-PrimitiveType: String
-Required: True
+Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-directoryservice-simplead-vpcsettings.html#cfn-directoryservice-simplead-vpcsettings-vpcid    
+PrimitiveType: String    
+Required: True    
 UpdateType: Mutable
 
 ```yaml

@@ -1,7 +1,7 @@
 ---
-layout: pagenodesc
+layout: glossary
 title: Add-VSSSMAssociationTarget
-category: glossary
+categories: glossary
 ---
 
 # Add-VSSSMAssociationTarget
@@ -21,9 +21,9 @@ Adds an AWS::SSM::Association.Target resource property to the template
 ## PARAMETERS
 
 ### -Key
-Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ssm-association-target.html#cfn-ssm-association-target-key
-PrimitiveType: String
-Required: True
+Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ssm-association-target.html#cfn-ssm-association-target-key    
+PrimitiveType: String    
+Required: True    
 UpdateType: Immutable
 
 ```yaml
@@ -39,11 +39,11 @@ Accept wildcard characters: False
 ```
 
 ### -Values
-Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ssm-association-target.html#cfn-ssm-association-target-values
-DuplicatesAllowed: False
-PrimitiveItemType: String
-Required: True
-Type: List
+Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ssm-association-target.html#cfn-ssm-association-target-values    
+DuplicatesAllowed: False    
+PrimitiveItemType: String    
+Required: True    
+Type: List    
 UpdateType: Immutable
 
 ```yaml

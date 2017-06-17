@@ -1,7 +1,7 @@
 ---
-layout: pagenodesc
+layout: glossary
 title: Add-VSCodePipelinePipelineInputArtifact
-category: glossary
+categories: glossary
 ---
 
 # Add-VSCodePipelinePipelineInputArtifact
@@ -21,9 +21,9 @@ Adds an AWS::CodePipeline::Pipeline.InputArtifact resource property to the templ
 ## PARAMETERS
 
 ### -Name
-Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-codepipeline-pipeline-stages-actions-inputartifacts.html#cfn-codepipeline-pipeline-stages-actions-inputartifacts-name
-PrimitiveType: String
-Required: True
+Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-codepipeline-pipeline-stages-actions-inputartifacts.html#cfn-codepipeline-pipeline-stages-actions-inputartifacts-name    
+PrimitiveType: String    
+Required: True    
 UpdateType: Mutable
 
 ```yaml

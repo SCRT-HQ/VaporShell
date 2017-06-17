@@ -1,7 +1,7 @@
 ---
-layout: pagenodesc
+layout: glossary
 title: New-VSRoute53HealthCheck
-category: glossary
+categories: glossary
 ---
 
 # New-VSRoute53HealthCheck
@@ -40,9 +40,9 @@ Accept wildcard characters: False
 ```
 
 ### -HealthCheckConfig
-Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-route53-healthcheck.html#cfn-route53-healthcheck-healthcheckconfig
-Required: True
-Type: HealthCheckConfig
+Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-route53-healthcheck.html#cfn-route53-healthcheck-healthcheckconfig    
+Required: True    
+Type: HealthCheckConfig    
 UpdateType: Mutable
 
 ```yaml
@@ -58,11 +58,11 @@ Accept wildcard characters: False
 ```
 
 ### -HealthCheckTags
-Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-route53-healthcheck.html#cfn-route53-healthcheck-healthchecktags
-DuplicatesAllowed: True
-ItemType: HealthCheckTag
-Required: False
-Type: List
+Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-route53-healthcheck.html#cfn-route53-healthcheck-healthchecktags    
+DuplicatesAllowed: True    
+ItemType: HealthCheckTag    
+Required: False    
+Type: List    
 UpdateType: Mutable
 
 ```yaml

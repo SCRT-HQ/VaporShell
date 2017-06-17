@@ -1,7 +1,7 @@
 ---
-layout: pagenodesc
+layout: glossary
 title: Add-ConNot
-category: glossary
+categories: glossary
 ---
 
 # Add-ConNot

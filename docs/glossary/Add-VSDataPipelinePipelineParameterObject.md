@@ -1,7 +1,7 @@
 ---
-layout: pagenodesc
+layout: glossary
 title: Add-VSDataPipelinePipelineParameterObject
-category: glossary
+categories: glossary
 ---
 
 # Add-VSDataPipelinePipelineParameterObject
@@ -21,11 +21,11 @@ Adds an AWS::DataPipeline::Pipeline.ParameterObject resource property to the tem
 ## PARAMETERS
 
 ### -Attributes
-Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-datapipeline-pipeline-parameterobjects.html#cfn-datapipeline-pipeline-parameterobjects-attributes
-DuplicatesAllowed: True
-ItemType: ParameterAttribute
-Required: True
-Type: List
+Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-datapipeline-pipeline-parameterobjects.html#cfn-datapipeline-pipeline-parameterobjects-attributes    
+DuplicatesAllowed: True    
+ItemType: ParameterAttribute    
+Required: True    
+Type: List    
 UpdateType: Mutable
 
 ```yaml
@@ -41,9 +41,9 @@ Accept wildcard characters: False
 ```
 
 ### -Id
-Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-datapipeline-pipeline-parameterobjects.html#cfn-datapipeline-pipeline-parameterobject-id
-PrimitiveType: String
-Required: True
+Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-datapipeline-pipeline-parameterobjects.html#cfn-datapipeline-pipeline-parameterobject-id    
+PrimitiveType: String    
+Required: True    
 UpdateType: Mutable
 
 ```yaml

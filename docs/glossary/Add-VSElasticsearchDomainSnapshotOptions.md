@@ -1,7 +1,7 @@
 ---
-layout: pagenodesc
+layout: glossary
 title: Add-VSElasticsearchDomainSnapshotOptions
-category: glossary
+categories: glossary
 ---
 
 # Add-VSElasticsearchDomainSnapshotOptions
@@ -21,9 +21,9 @@ Adds an AWS::Elasticsearch::Domain.SnapshotOptions resource property to the temp
 ## PARAMETERS
 
 ### -AutomatedSnapshotStartHour
-Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-elasticsearch-domain-snapshotoptions.html#cfn-elasticsearch-domain-snapshotoptions-automatedsnapshotstarthour
-PrimitiveType: Integer
-Required: False
+Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-elasticsearch-domain-snapshotoptions.html#cfn-elasticsearch-domain-snapshotoptions-automatedsnapshotstarthour    
+PrimitiveType: Integer    
+Required: False    
 UpdateType: Mutable
 
 ```yaml

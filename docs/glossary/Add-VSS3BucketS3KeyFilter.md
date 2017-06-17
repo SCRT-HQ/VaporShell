@@ -1,7 +1,7 @@
 ---
-layout: pagenodesc
+layout: glossary
 title: Add-VSS3BucketS3KeyFilter
-category: glossary
+categories: glossary
 ---
 
 # Add-VSS3BucketS3KeyFilter
@@ -21,11 +21,11 @@ Adds an AWS::S3::Bucket.S3KeyFilter resource property to the template
 ## PARAMETERS
 
 ### -Rules
-Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-s3-bucket-notificationconfiguration-config-filter-s3key.html#cfn-s3-bucket-notificationconfiguraiton-config-filter-s3key-rules
-DuplicatesAllowed: False
-ItemType: FilterRule
-Required: True
-Type: List
+Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-s3-bucket-notificationconfiguration-config-filter-s3key.html#cfn-s3-bucket-notificationconfiguraiton-config-filter-s3key-rules    
+DuplicatesAllowed: False    
+ItemType: FilterRule    
+Required: True    
+Type: List    
 UpdateType: Mutable
 
 ```yaml

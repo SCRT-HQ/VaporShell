@@ -1,7 +1,7 @@
 ---
-layout: pagenodesc
+layout: glossary
 title: Add-VSAutoScalingAutoScalingGroupMetricsCollection
-category: glossary
+categories: glossary
 ---
 
 # Add-VSAutoScalingAutoScalingGroupMetricsCollection
@@ -21,9 +21,9 @@ Adds an AWS::AutoScaling::AutoScalingGroup.MetricsCollection resource property t
 ## PARAMETERS
 
 ### -Granularity
-Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-as-metricscollection.html#cfn-as-metricscollection-granularity
-PrimitiveType: String
-Required: True
+Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-as-metricscollection.html#cfn-as-metricscollection-granularity    
+PrimitiveType: String    
+Required: True    
 UpdateType: Mutable
 
 ```yaml
@@ -39,11 +39,11 @@ Accept wildcard characters: False
 ```
 
 ### -Metrics
-Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-as-metricscollection.html#cfn-as-metricscollection-metrics
-DuplicatesAllowed: True
-PrimitiveItemType: String
-Required: False
-Type: List
+Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-as-metricscollection.html#cfn-as-metricscollection-metrics    
+DuplicatesAllowed: True    
+PrimitiveItemType: String    
+Required: False    
+Type: List    
 UpdateType: Mutable
 
 ```yaml

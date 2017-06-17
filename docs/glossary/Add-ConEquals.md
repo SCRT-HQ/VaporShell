@@ -1,7 +1,7 @@
 ---
-layout: pagenodesc
+layout: glossary
 title: Add-ConEquals
-category: glossary
+categories: glossary
 ---
 
 # Add-ConEquals

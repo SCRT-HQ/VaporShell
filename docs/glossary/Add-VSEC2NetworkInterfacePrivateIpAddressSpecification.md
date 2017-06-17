@@ -1,7 +1,7 @@
 ---
-layout: pagenodesc
+layout: glossary
 title: Add-VSEC2NetworkInterfacePrivateIpAddressSpecification
-category: glossary
+categories: glossary
 ---
 
 # Add-VSEC2NetworkInterfacePrivateIpAddressSpecification
@@ -21,9 +21,9 @@ Adds an AWS::EC2::NetworkInterface.PrivateIpAddressSpecification resource proper
 ## PARAMETERS
 
 ### -Primary
-Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-network-interface-privateipspec.html#cfn-ec2-networkinterface-privateipspecification-primary
-PrimitiveType: Boolean
-Required: True
+Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-network-interface-privateipspec.html#cfn-ec2-networkinterface-privateipspecification-primary    
+PrimitiveType: Boolean    
+Required: True    
 UpdateType: Mutable
 
 ```yaml
@@ -39,9 +39,9 @@ Accept wildcard characters: False
 ```
 
 ### -PrivateIpAddress
-Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-network-interface-privateipspec.html#cfn-ec2-networkinterface-privateipspecification-privateipaddress
-PrimitiveType: String
-Required: True
+Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-network-interface-privateipspec.html#cfn-ec2-networkinterface-privateipspecification-privateipaddress    
+PrimitiveType: String    
+Required: True    
 UpdateType: Mutable
 
 ```yaml

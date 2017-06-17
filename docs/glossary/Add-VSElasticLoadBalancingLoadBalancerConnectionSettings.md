@@ -1,7 +1,7 @@
 ---
-layout: pagenodesc
+layout: glossary
 title: Add-VSElasticLoadBalancingLoadBalancerConnectionSettings
-category: glossary
+categories: glossary
 ---
 
 # Add-VSElasticLoadBalancingLoadBalancerConnectionSettings
@@ -21,9 +21,9 @@ Adds an AWS::ElasticLoadBalancing::LoadBalancer.ConnectionSettings resource prop
 ## PARAMETERS
 
 ### -IdleTimeout
-Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-elb-connectionsettings.html#cfn-elb-connectionsettings-idletimeout
-PrimitiveType: Integer
-Required: True
+Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-elb-connectionsettings.html#cfn-elb-connectionsettings-idletimeout    
+PrimitiveType: Integer    
+Required: True    
 UpdateType: Mutable
 
 ```yaml

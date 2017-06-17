@@ -1,7 +1,7 @@
 ---
-layout: pagenodesc
+layout: glossary
 title: Add-ConOr
-category: glossary
+categories: glossary
 ---
 
 # Add-ConOr

@@ -1,7 +1,7 @@
 ---
-layout: pagenodesc
+layout: glossary
 title: Add-VSS3BucketRoutingRule
-category: glossary
+categories: glossary
 ---
 
 # Add-VSS3BucketRoutingRule
@@ -21,9 +21,9 @@ Adds an AWS::S3::Bucket.RoutingRule resource property to the template
 ## PARAMETERS
 
 ### -RedirectRule
-Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-s3-websiteconfiguration-routingrules.html#cfn-s3-websiteconfiguration-routingrules-redirectrule
-Required: True
-Type: RedirectRule
+Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-s3-websiteconfiguration-routingrules.html#cfn-s3-websiteconfiguration-routingrules-redirectrule    
+Required: True    
+Type: RedirectRule    
 UpdateType: Mutable
 
 ```yaml
@@ -39,9 +39,9 @@ Accept wildcard characters: False
 ```
 
 ### -RoutingRuleCondition
-Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-s3-websiteconfiguration-routingrules.html#cfn-s3-websiteconfiguration-routingrules-routingrulecondition
-Required: False
-Type: RoutingRuleCondition
+Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-s3-websiteconfiguration-routingrules.html#cfn-s3-websiteconfiguration-routingrules-routingrulecondition    
+Required: False    
+Type: RoutingRuleCondition    
 UpdateType: Mutable
 
 ```yaml

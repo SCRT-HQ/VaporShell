@@ -1,7 +1,7 @@
 ---
-layout: pagenodesc
+layout: glossary
 title: Add-VSAutoScalingAutoScalingGroupNotificationConfigurations
-category: glossary
+categories: glossary
 ---
 
 # Add-VSAutoScalingAutoScalingGroupNotificationConfigurations
@@ -22,11 +22,11 @@ Adds an AWS::AutoScaling::AutoScalingGroup.NotificationConfigurations resource p
 ## PARAMETERS
 
 ### -NotificationTypes
-Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-as-notificationconfigurations.html#cfn-as-group-notificationconfigurations-notificationtypes
-DuplicatesAllowed: True
-PrimitiveItemType: String
-Required: False
-Type: List
+Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-as-notificationconfigurations.html#cfn-as-group-notificationconfigurations-notificationtypes    
+DuplicatesAllowed: True    
+PrimitiveItemType: String    
+Required: False    
+Type: List    
 UpdateType: Mutable
 
 ```yaml
@@ -42,9 +42,9 @@ Accept wildcard characters: False
 ```
 
 ### -TopicARN
-Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-as-notificationconfigurations.html#cfn-autoscaling-autoscalinggroup-notificationconfigurations-topicarn
-PrimitiveType: String
-Required: True
+Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-as-notificationconfigurations.html#cfn-autoscaling-autoscalinggroup-notificationconfigurations-topicarn    
+PrimitiveType: String    
+Required: True    
 UpdateType: Mutable
 
 ```yaml

@@ -1,7 +1,7 @@
 ---
-layout: pagenodesc
+layout: glossary
 title: Add-VSS3BucketNotificationConfiguration
-category: glossary
+categories: glossary
 ---
 
 # Add-VSS3BucketNotificationConfiguration
@@ -22,11 +22,11 @@ Adds an AWS::S3::Bucket.NotificationConfiguration resource property to the templ
 ## PARAMETERS
 
 ### -LambdaConfigurations
-Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-s3-bucket-notificationconfig.html#cfn-s3-bucket-notificationconfig-lambdaconfig
-DuplicatesAllowed: False
-ItemType: LambdaConfiguration
-Required: False
-Type: List
+Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-s3-bucket-notificationconfig.html#cfn-s3-bucket-notificationconfig-lambdaconfig    
+DuplicatesAllowed: False    
+ItemType: LambdaConfiguration    
+Required: False    
+Type: List    
 UpdateType: Mutable
 
 ```yaml
@@ -42,11 +42,11 @@ Accept wildcard characters: False
 ```
 
 ### -QueueConfigurations
-Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-s3-bucket-notificationconfig.html#cfn-s3-bucket-notificationconfig-queueconfig
-DuplicatesAllowed: False
-ItemType: QueueConfiguration
-Required: False
-Type: List
+Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-s3-bucket-notificationconfig.html#cfn-s3-bucket-notificationconfig-queueconfig    
+DuplicatesAllowed: False    
+ItemType: QueueConfiguration    
+Required: False    
+Type: List    
 UpdateType: Mutable
 
 ```yaml
@@ -62,11 +62,11 @@ Accept wildcard characters: False
 ```
 
 ### -TopicConfigurations
-Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-s3-bucket-notificationconfig.html#cfn-s3-bucket-notificationconfig-topicconfig
-DuplicatesAllowed: False
-ItemType: TopicConfiguration
-Required: False
-Type: List
+Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-s3-bucket-notificationconfig.html#cfn-s3-bucket-notificationconfig-topicconfig    
+DuplicatesAllowed: False    
+ItemType: TopicConfiguration    
+Required: False    
+Type: List    
 UpdateType: Mutable
 
 ```yaml

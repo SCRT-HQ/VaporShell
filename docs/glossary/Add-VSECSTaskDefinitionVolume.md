@@ -1,7 +1,7 @@
 ---
-layout: pagenodesc
+layout: glossary
 title: Add-VSECSTaskDefinitionVolume
-category: glossary
+categories: glossary
 ---
 
 # Add-VSECSTaskDefinitionVolume
@@ -21,9 +21,9 @@ Adds an AWS::ECS::TaskDefinition.Volume resource property to the template
 ## PARAMETERS
 
 ### -Host
-Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ecs-taskdefinition-volumes.html#cfn-ecs-taskdefinition-volumes-host
-Required: False
-Type: HostVolumeProperties
+Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ecs-taskdefinition-volumes.html#cfn-ecs-taskdefinition-volumes-host    
+Required: False    
+Type: HostVolumeProperties    
 UpdateType: Immutable
 
 ```yaml
@@ -39,9 +39,9 @@ Accept wildcard characters: False
 ```
 
 ### -Name
-Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ecs-taskdefinition-volumes.html#cfn-ecs-taskdefinition-volumes-name
-PrimitiveType: String
-Required: False
+Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ecs-taskdefinition-volumes.html#cfn-ecs-taskdefinition-volumes-name    
+PrimitiveType: String    
+Required: False    
 UpdateType: Immutable
 
 ```yaml

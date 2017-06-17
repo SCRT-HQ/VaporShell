@@ -1,7 +1,7 @@
 ---
-layout: pagenodesc
+layout: glossary
 title: Add-VSEC2InstanceInstanceIpv6Address
-category: glossary
+categories: glossary
 ---
 
 # Add-VSEC2InstanceInstanceIpv6Address
@@ -21,9 +21,9 @@ Adds an AWS::EC2::Instance.InstanceIpv6Address resource property to the template
 ## PARAMETERS
 
 ### -Ipv6Address
-Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-instance-instanceipv6address.html#cfn-ec2-instance-instanceipv6address-ipv6address
-PrimitiveType: String
-Required: True
+Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-instance-instanceipv6address.html#cfn-ec2-instance-instanceipv6address-ipv6address    
+PrimitiveType: String    
+Required: True    
 UpdateType: Mutable
 
 ```yaml

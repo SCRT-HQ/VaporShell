@@ -1,7 +1,7 @@
 ---
-layout: pagenodesc
+layout: glossary
 title: New-VSElasticLoadBalancingV2ListenerRule
-category: glossary
+categories: glossary
 ---
 
 # New-VSElasticLoadBalancingV2ListenerRule
@@ -40,11 +40,11 @@ Accept wildcard characters: False
 ```
 
 ### -Actions
-Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-elasticloadbalancingv2-listenerrule.html#cfn-elasticloadbalancingv2-listenerrule-actions
-DuplicatesAllowed: False
-ItemType: Action
-Required: True
-Type: List
+Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-elasticloadbalancingv2-listenerrule.html#cfn-elasticloadbalancingv2-listenerrule-actions    
+DuplicatesAllowed: False    
+ItemType: Action    
+Required: True    
+Type: List    
 UpdateType: Mutable
 
 ```yaml
@@ -60,11 +60,11 @@ Accept wildcard characters: False
 ```
 
 ### -Conditions
-Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-elasticloadbalancingv2-listenerrule.html#cfn-elasticloadbalancingv2-listenerrule-conditions
-DuplicatesAllowed: False
-ItemType: RuleCondition
-Required: True
-Type: List
+Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-elasticloadbalancingv2-listenerrule.html#cfn-elasticloadbalancingv2-listenerrule-conditions    
+DuplicatesAllowed: False    
+ItemType: RuleCondition    
+Required: True    
+Type: List    
 UpdateType: Mutable
 
 ```yaml
@@ -80,9 +80,9 @@ Accept wildcard characters: False
 ```
 
 ### -ListenerArn
-Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-elasticloadbalancingv2-listenerrule.html#cfn-elasticloadbalancingv2-listenerrule-listenerarn
-PrimitiveType: String
-Required: True
+Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-elasticloadbalancingv2-listenerrule.html#cfn-elasticloadbalancingv2-listenerrule-listenerarn    
+PrimitiveType: String    
+Required: True    
 UpdateType: Immutable
 
 ```yaml
@@ -98,9 +98,9 @@ Accept wildcard characters: False
 ```
 
 ### -Priority
-Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-elasticloadbalancingv2-listenerrule.html#cfn-elasticloadbalancingv2-listenerrule-priority
-PrimitiveType: Integer
-Required: True
+Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-elasticloadbalancingv2-listenerrule.html#cfn-elasticloadbalancingv2-listenerrule-priority    
+PrimitiveType: Integer    
+Required: True    
 UpdateType: Mutable
 
 ```yaml

@@ -1,7 +1,7 @@
 ---
-layout: pagenodesc
+layout: glossary
 title: Add-VSElasticLoadBalancingV2TargetGroupMatcher
-category: glossary
+categories: glossary
 ---
 
 # Add-VSElasticLoadBalancingV2TargetGroupMatcher
@@ -21,9 +21,9 @@ Adds an AWS::ElasticLoadBalancingV2::TargetGroup.Matcher resource property to th
 ## PARAMETERS
 
 ### -HttpCode
-Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-elasticloadbalancingv2-targetgroup-matcher.html#cfn-elasticloadbalancingv2-targetgroup-matcher-httpcode
-PrimitiveType: String
-Required: True
+Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-elasticloadbalancingv2-targetgroup-matcher.html#cfn-elasticloadbalancingv2-targetgroup-matcher-httpcode    
+PrimitiveType: String    
+Required: True    
 UpdateType: Mutable
 
 ```yaml

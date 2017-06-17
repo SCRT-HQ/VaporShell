@@ -1,7 +1,7 @@
 ---
-layout: pagenodesc
+layout: glossary
 title: Add-VSIoTTopicRuleLambdaAction
-category: glossary
+categories: glossary
 ---
 
 # Add-VSIoTTopicRuleLambdaAction
@@ -21,9 +21,9 @@ Adds an AWS::IoT::TopicRule.LambdaAction resource property to the template
 ## PARAMETERS
 
 ### -FunctionArn
-Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iot-lambda.html#cfn-iot-lambda-functionarn
-PrimitiveType: String
-Required: True
+Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iot-lambda.html#cfn-iot-lambda-functionarn    
+PrimitiveType: String    
+Required: True    
 UpdateType: Mutable
 
 ```yaml

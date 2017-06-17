@@ -1,7 +1,7 @@
 ---
-layout: pagenodesc
+layout: glossary
 title: Export-Vaporshell
-category: glossary
+categories: glossary
 ---
 
 # Export-Vaporshell

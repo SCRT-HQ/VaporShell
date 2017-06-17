@@ -1,7 +1,7 @@
 ---
-layout: pagenodesc
+layout: glossary
 title: Add-VSEC2SpotFleetGroupIdentifier
-category: glossary
+categories: glossary
 ---
 
 # Add-VSEC2SpotFleetGroupIdentifier
@@ -21,9 +21,9 @@ Adds an AWS::EC2::SpotFleet.GroupIdentifier resource property to the template
 ## PARAMETERS
 
 ### -GroupId
-Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-spotfleet-spotfleetrequestconfigdata-launchspecifications-securitygroups.html#cfn-ec2-spotfleet-groupidentifier-groupid
-PrimitiveType: String
-Required: True
+Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-spotfleet-spotfleetrequestconfigdata-launchspecifications-securitygroups.html#cfn-ec2-spotfleet-groupidentifier-groupid    
+PrimitiveType: String    
+Required: True    
 UpdateType: Mutable
 
 ```yaml

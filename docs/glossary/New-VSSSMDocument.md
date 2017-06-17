@@ -1,7 +1,7 @@
 ---
-layout: pagenodesc
+layout: glossary
 title: New-VSSSMDocument
-category: glossary
+categories: glossary
 ---
 
 # New-VSSSMDocument
@@ -39,9 +39,9 @@ Accept wildcard characters: False
 ```
 
 ### -Content
-Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ssm-document.html#cfn-ssm-document-content
-PrimitiveType: Json
-Required: True
+Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ssm-document.html#cfn-ssm-document-content    
+PrimitiveType: Json    
+Required: True    
 UpdateType: Immutable
 
 ```yaml
@@ -57,9 +57,9 @@ Accept wildcard characters: False
 ```
 
 ### -DocumentType
-Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ssm-document.html#cfn-ssm-document-documenttype
-PrimitiveType: String
-Required: False
+Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ssm-document.html#cfn-ssm-document-documenttype    
+PrimitiveType: String    
+Required: False    
 UpdateType: Immutable
 
 ```yaml

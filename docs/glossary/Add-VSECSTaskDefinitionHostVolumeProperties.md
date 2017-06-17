@@ -1,7 +1,7 @@
 ---
-layout: pagenodesc
+layout: glossary
 title: Add-VSECSTaskDefinitionHostVolumeProperties
-category: glossary
+categories: glossary
 ---
 
 # Add-VSECSTaskDefinitionHostVolumeProperties
@@ -21,9 +21,9 @@ Adds an AWS::ECS::TaskDefinition.HostVolumeProperties resource property to the t
 ## PARAMETERS
 
 ### -SourcePath
-Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ecs-taskdefinition-volumes-host.html#cfn-ecs-taskdefinition-volumes-host-sourcepath
-PrimitiveType: String
-Required: False
+Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ecs-taskdefinition-volumes-host.html#cfn-ecs-taskdefinition-volumes-host-sourcepath    
+PrimitiveType: String    
+Required: False    
 UpdateType: Immutable
 
 ```yaml

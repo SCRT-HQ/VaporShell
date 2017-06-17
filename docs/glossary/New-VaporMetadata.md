@@ -1,7 +1,7 @@
 ---
-layout: pagenodesc
+layout: glossary
 title: New-VaporMetadata
-category: glossary
+categories: glossary
 ---
 
 # New-VaporMetadata

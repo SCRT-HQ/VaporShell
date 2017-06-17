@@ -1,7 +1,7 @@
 ---
-layout: pagenodesc
+layout: glossary
 title: New-VSEC2SpotFleet
-category: glossary
+categories: glossary
 ---
 
 # New-VSEC2SpotFleet
@@ -39,9 +39,9 @@ Accept wildcard characters: False
 ```
 
 ### -SpotFleetRequestConfigData
-Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ec2-spotfleet.html#cfn-ec2-spotfleet-spotfleetrequestconfigdata
-Required: True
-Type: SpotFleetRequestConfigData
+Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ec2-spotfleet.html#cfn-ec2-spotfleet-spotfleetrequestconfigdata    
+Required: True    
+Type: SpotFleetRequestConfigData    
 UpdateType: Conditional
 
 ```yaml

@@ -1,7 +1,7 @@
 ---
-layout: pagenodesc
+layout: glossary
 title: Add-VSS3BucketReplicationConfiguration
-category: glossary
+categories: glossary
 ---
 
 # Add-VSS3BucketReplicationConfiguration
@@ -21,9 +21,9 @@ Adds an AWS::S3::Bucket.ReplicationConfiguration resource property to the templa
 ## PARAMETERS
 
 ### -Role
-Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-s3-bucket-replicationconfiguration.html#cfn-s3-bucket-replicationconfiguration-role
-PrimitiveType: String
-Required: True
+Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-s3-bucket-replicationconfiguration.html#cfn-s3-bucket-replicationconfiguration-role    
+PrimitiveType: String    
+Required: True    
 UpdateType: Mutable
 
 ```yaml
@@ -39,11 +39,11 @@ Accept wildcard characters: False
 ```
 
 ### -Rules
-Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-s3-bucket-replicationconfiguration.html#cfn-s3-bucket-replicationconfiguration-rules
-DuplicatesAllowed: False
-ItemType: ReplicationRule
-Required: True
-Type: List
+Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-s3-bucket-replicationconfiguration.html#cfn-s3-bucket-replicationconfiguration-rules    
+DuplicatesAllowed: False    
+ItemType: ReplicationRule    
+Required: True    
+Type: List    
 UpdateType: Mutable
 
 ```yaml

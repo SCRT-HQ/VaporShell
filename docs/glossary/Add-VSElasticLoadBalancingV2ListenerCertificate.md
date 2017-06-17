@@ -1,7 +1,7 @@
 ---
-layout: pagenodesc
+layout: glossary
 title: Add-VSElasticLoadBalancingV2ListenerCertificate
-category: glossary
+categories: glossary
 ---
 
 # Add-VSElasticLoadBalancingV2ListenerCertificate
@@ -21,9 +21,9 @@ Adds an AWS::ElasticLoadBalancingV2::Listener.Certificate resource property to t
 ## PARAMETERS
 
 ### -CertificateArn
-Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-elasticloadbalancingv2-listener-certificates.html#cfn-elasticloadbalancingv2-listener-certificates-certificatearn
-PrimitiveType: String
-Required: False
+Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-elasticloadbalancingv2-listener-certificates.html#cfn-elasticloadbalancingv2-listener-certificates-certificatearn    
+PrimitiveType: String    
+Required: False    
 UpdateType: Mutable
 
 ```yaml

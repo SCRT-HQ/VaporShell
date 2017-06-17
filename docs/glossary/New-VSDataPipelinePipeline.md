@@ -1,7 +1,7 @@
 ---
-layout: pagenodesc
+layout: glossary
 title: New-VSDataPipelinePipeline
-category: glossary
+categories: glossary
 ---
 
 # New-VSDataPipelinePipeline
@@ -41,9 +41,9 @@ Accept wildcard characters: False
 ```
 
 ### -Activate
-Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-datapipeline-pipeline.html#cfn-datapipeline-pipeline-activate
-PrimitiveType: Boolean
-Required: False
+Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-datapipeline-pipeline.html#cfn-datapipeline-pipeline-activate    
+PrimitiveType: Boolean    
+Required: False    
 UpdateType: Mutable
 
 ```yaml
@@ -59,9 +59,9 @@ Accept wildcard characters: False
 ```
 
 ### -Description
-Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-datapipeline-pipeline.html#cfn-datapipeline-pipeline-description
-PrimitiveType: String
-Required: False
+Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-datapipeline-pipeline.html#cfn-datapipeline-pipeline-description    
+PrimitiveType: String    
+Required: False    
 UpdateType: Immutable
 
 ```yaml
@@ -77,9 +77,9 @@ Accept wildcard characters: False
 ```
 
 ### -Name
-Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-datapipeline-pipeline.html#cfn-datapipeline-pipeline-name
-PrimitiveType: String
-Required: True
+Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-datapipeline-pipeline.html#cfn-datapipeline-pipeline-name    
+PrimitiveType: String    
+Required: True    
 UpdateType: Immutable
 
 ```yaml
@@ -95,11 +95,11 @@ Accept wildcard characters: False
 ```
 
 ### -ParameterObjects
-Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-datapipeline-pipeline.html#cfn-datapipeline-pipeline-parameterobjects
-DuplicatesAllowed: True
-ItemType: ParameterObject
-Required: True
-Type: List
+Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-datapipeline-pipeline.html#cfn-datapipeline-pipeline-parameterobjects    
+DuplicatesAllowed: True    
+ItemType: ParameterObject    
+Required: True    
+Type: List    
 UpdateType: Mutable
 
 ```yaml
@@ -115,11 +115,11 @@ Accept wildcard characters: False
 ```
 
 ### -ParameterValues
-Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-datapipeline-pipeline.html#cfn-datapipeline-pipeline-parametervalues
-DuplicatesAllowed: True
-ItemType: ParameterValue
-Required: False
-Type: List
+Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-datapipeline-pipeline.html#cfn-datapipeline-pipeline-parametervalues    
+DuplicatesAllowed: True    
+ItemType: ParameterValue    
+Required: False    
+Type: List    
 UpdateType: Mutable
 
 ```yaml
@@ -135,11 +135,11 @@ Accept wildcard characters: False
 ```
 
 ### -PipelineObjects
-Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-datapipeline-pipeline.html#cfn-datapipeline-pipeline-pipelineobjects
-DuplicatesAllowed: True
-ItemType: PipelineObject
-Required: False
-Type: List
+Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-datapipeline-pipeline.html#cfn-datapipeline-pipeline-pipelineobjects    
+DuplicatesAllowed: True    
+ItemType: PipelineObject    
+Required: False    
+Type: List    
 UpdateType: Mutable
 
 ```yaml
@@ -155,11 +155,11 @@ Accept wildcard characters: False
 ```
 
 ### -PipelineTags
-Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-datapipeline-pipeline.html#cfn-datapipeline-pipeline-pipelinetags
-DuplicatesAllowed: True
-ItemType: PipelineTag
-Required: False
-Type: List
+Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-datapipeline-pipeline.html#cfn-datapipeline-pipeline-pipelinetags    
+DuplicatesAllowed: True    
+ItemType: PipelineTag    
+Required: False    
+Type: List    
 UpdateType: Mutable
 
 ```yaml

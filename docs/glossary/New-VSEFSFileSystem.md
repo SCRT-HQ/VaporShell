@@ -1,7 +1,7 @@
 ---
-layout: pagenodesc
+layout: glossary
 title: New-VSEFSFileSystem
-category: glossary
+categories: glossary
 ---
 
 # New-VSEFSFileSystem
@@ -40,11 +40,11 @@ Accept wildcard characters: False
 ```
 
 ### -FileSystemTags
-Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-efs-filesystem.html#cfn-efs-filesystem-filesystemtags
-DuplicatesAllowed: False
-ItemType: ElasticFileSystemTag
-Required: False
-Type: List
+Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-efs-filesystem.html#cfn-efs-filesystem-filesystemtags    
+DuplicatesAllowed: False    
+ItemType: ElasticFileSystemTag    
+Required: False    
+Type: List    
 UpdateType: Mutable
 
 ```yaml
@@ -60,9 +60,9 @@ Accept wildcard characters: False
 ```
 
 ### -PerformanceMode
-Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-efs-filesystem.html#cfn-efs-filesystem-performancemode
-PrimitiveType: String
-Required: False
+Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-efs-filesystem.html#cfn-efs-filesystem-performancemode    
+PrimitiveType: String    
+Required: False    
 UpdateType: Immutable
 
 ```yaml

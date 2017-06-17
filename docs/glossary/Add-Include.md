@@ -1,7 +1,7 @@
 ---
-layout: pagenodesc
+layout: glossary
 title: Add-Include
-category: glossary
+categories: glossary
 ---
 
 # Add-Include

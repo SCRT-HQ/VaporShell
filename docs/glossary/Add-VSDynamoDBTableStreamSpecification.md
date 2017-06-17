@@ -1,7 +1,7 @@
 ---
-layout: pagenodesc
+layout: glossary
 title: Add-VSDynamoDBTableStreamSpecification
-category: glossary
+categories: glossary
 ---
 
 # Add-VSDynamoDBTableStreamSpecification
@@ -21,9 +21,9 @@ Adds an AWS::DynamoDB::Table.StreamSpecification resource property to the templa
 ## PARAMETERS
 
 ### -StreamViewType
-Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-dynamodb-streamspecification.html#cfn-dynamodb-streamspecification-streamviewtype
-PrimitiveType: String
-Required: True
+Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-dynamodb-streamspecification.html#cfn-dynamodb-streamspecification-streamviewtype    
+PrimitiveType: String    
+Required: True    
 UpdateType: Mutable
 
 ```yaml

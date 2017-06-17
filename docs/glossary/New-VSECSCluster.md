@@ -1,7 +1,7 @@
 ---
-layout: pagenodesc
+layout: glossary
 title: New-VSECSCluster
-category: glossary
+categories: glossary
 ---
 
 # New-VSECSCluster
@@ -39,9 +39,9 @@ Accept wildcard characters: False
 ```
 
 ### -ClusterName
-Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ecs-cluster.html#cfn-ecs-cluster-clustername
-PrimitiveType: String
-Required: False
+Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ecs-cluster.html#cfn-ecs-cluster-clustername    
+PrimitiveType: String    
+Required: False    
 UpdateType: Immutable
 
 ```yaml

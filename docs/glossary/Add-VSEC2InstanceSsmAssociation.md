@@ -1,7 +1,7 @@
 ---
-layout: pagenodesc
-title: Add-VSEC2InstanceSsmAssociation
-category: glossary
+external help file: Vaporshell-help.xml
+online version: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-instance-ssmassociations.html
+schema: 2.0.0
 ---
 
 # Add-VSEC2InstanceSsmAssociation
@@ -18,14 +18,23 @@ Add-VSEC2InstanceSsmAssociation [[-AssociationParameters] <Object>] [-DocumentNa
 ## DESCRIPTION
 Adds an AWS::EC2::Instance.SsmAssociation resource property to the template
 
+## EXAMPLES
+
+### Example 1
+```
+PS C:\> {{ Add example code here }}
+```
+
+{{ Add example description here }}
+
 ## PARAMETERS
 
 ### -AssociationParameters
-Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-instance-ssmassociations.html#cfn-ec2-instance-ssmassociations-associationparameters
-DuplicatesAllowed: True
-ItemType: AssociationParameter
-Required: False
-Type: List
+Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-instance-ssmassociations.html#cfn-ec2-instance-ssmassociations-associationparameters    
+DuplicatesAllowed: True    
+ItemType: AssociationParameter    
+Required: False    
+Type: List    
 UpdateType: Mutable
 
 ```yaml
@@ -41,9 +50,9 @@ Accept wildcard characters: False
 ```
 
 ### -DocumentName
-Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-instance-ssmassociations.html#cfn-ec2-instance-ssmassociations-documentname
-PrimitiveType: String
-Required: True
+Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-instance-ssmassociations.html#cfn-ec2-instance-ssmassociations-documentname    
+PrimitiveType: String    
+Required: True    
 UpdateType: Mutable
 
 ```yaml

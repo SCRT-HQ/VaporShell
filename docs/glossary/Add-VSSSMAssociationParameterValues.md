@@ -1,7 +1,7 @@
 ---
-layout: pagenodesc
+layout: glossary
 title: Add-VSSSMAssociationParameterValues
-category: glossary
+categories: glossary
 ---
 
 # Add-VSSSMAssociationParameterValues
@@ -21,11 +21,11 @@ Adds an AWS::SSM::Association.ParameterValues resource property to the template
 ## PARAMETERS
 
 ### -ParameterValues
-Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ssm-association-parametervalues.html#cfn-ssm-association-parametervalues-parametervalues
-DuplicatesAllowed: False
-PrimitiveItemType: String
-Required: True
-Type: List
+Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ssm-association-parametervalues.html#cfn-ssm-association-parametervalues-parametervalues    
+DuplicatesAllowed: False    
+PrimitiveItemType: String    
+Required: True    
+Type: List    
 UpdateType: Mutable
 
 ```yaml

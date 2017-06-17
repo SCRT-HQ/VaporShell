@@ -1,7 +1,7 @@
 ---
-layout: pagenodesc
+layout: glossary
 title: Add-FnFindInMap
-category: glossary
+categories: glossary
 ---
 
 # Add-FnFindInMap

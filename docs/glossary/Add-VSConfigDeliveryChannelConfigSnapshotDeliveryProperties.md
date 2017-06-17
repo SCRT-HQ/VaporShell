@@ -1,7 +1,7 @@
 ---
-layout: pagenodesc
+layout: glossary
 title: Add-VSConfigDeliveryChannelConfigSnapshotDeliveryProperties
-category: glossary
+categories: glossary
 ---
 
 # Add-VSConfigDeliveryChannelConfigSnapshotDeliveryProperties
@@ -21,9 +21,9 @@ Adds an AWS::Config::DeliveryChannel.ConfigSnapshotDeliveryProperties resource p
 ## PARAMETERS
 
 ### -DeliveryFrequency
-Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-config-deliverychannel-configsnapshotdeliveryproperties.html#cfn-config-deliverychannel-configsnapshotdeliveryproperties-deliveryfrequency
-PrimitiveType: String
-Required: False
+Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-config-deliverychannel-configsnapshotdeliveryproperties.html#cfn-config-deliverychannel-configsnapshotdeliveryproperties-deliveryfrequency    
+PrimitiveType: String    
+Required: False    
 UpdateType: Mutable
 
 ```yaml

@@ -1,7 +1,7 @@
 ---
-layout: pagenodesc
+layout: glossary
 title: Add-VSEMRClusterPlacementType
-category: glossary
+categories: glossary
 ---
 
 # Add-VSEMRClusterPlacementType
@@ -21,9 +21,9 @@ Adds an AWS::EMR::Cluster.PlacementType resource property to the template
 ## PARAMETERS
 
 ### -AvailabilityZone
-Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-emr-cluster-jobflowinstancesconfig-placementtype.html#aws-properties-emr-cluster-jobflowinstancesconfig-placementtype
-PrimitiveType: String
-Required: True
+Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-emr-cluster-jobflowinstancesconfig-placementtype.html#aws-properties-emr-cluster-jobflowinstancesconfig-placementtype    
+PrimitiveType: String    
+Required: True    
 UpdateType: Immutable
 
 ```yaml

@@ -1,7 +1,7 @@
 ---
-layout: pagenodesc
+layout: glossary
 title: New-VSCloudFormationCustomResource
-category: glossary
+categories: glossary
 ---
 
 # New-VSCloudFormationCustomResource
@@ -39,9 +39,9 @@ Accept wildcard characters: False
 ```
 
 ### -ServiceToken
-Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-cfn-customresource.html#cfn-customresource-servicetoken
-PrimitiveType: String
-Required: True
+Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-cfn-customresource.html#cfn-customresource-servicetoken    
+PrimitiveType: String    
+Required: True    
 UpdateType: Immutable
 
 ```yaml

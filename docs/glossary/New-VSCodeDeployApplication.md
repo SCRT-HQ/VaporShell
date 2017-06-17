@@ -1,7 +1,7 @@
 ---
-layout: pagenodesc
+layout: glossary
 title: New-VSCodeDeployApplication
-category: glossary
+categories: glossary
 ---
 
 # New-VSCodeDeployApplication
@@ -39,9 +39,9 @@ Accept wildcard characters: False
 ```
 
 ### -ApplicationName
-Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-codedeploy-application.html#cfn-codedeploy-application-applicationname
-PrimitiveType: String
-Required: False
+Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-codedeploy-application.html#cfn-codedeploy-application-applicationname    
+PrimitiveType: String    
+Required: False    
 UpdateType: Immutable
 
 ```yaml

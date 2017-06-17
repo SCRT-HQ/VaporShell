@@ -1,7 +1,7 @@
 ---
-layout: pagenodesc
+layout: glossary
 title: Add-VSEMRClusterScalingTrigger
-category: glossary
+categories: glossary
 ---
 
 # Add-VSEMRClusterScalingTrigger
@@ -21,9 +21,9 @@ Adds an AWS::EMR::Cluster.ScalingTrigger resource property to the template
 ## PARAMETERS
 
 ### -CloudWatchAlarmDefinition
-Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-elasticmapreduce-cluster-scalingtrigger.html#cfn-elasticmapreduce-cluster-scalingtrigger-cloudwatchalarmdefinition
-Required: True
-Type: CloudWatchAlarmDefinition
+Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-elasticmapreduce-cluster-scalingtrigger.html#cfn-elasticmapreduce-cluster-scalingtrigger-cloudwatchalarmdefinition    
+Required: True    
+Type: CloudWatchAlarmDefinition    
 UpdateType: Mutable
 
 ```yaml

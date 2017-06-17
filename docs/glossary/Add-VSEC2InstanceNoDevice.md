@@ -1,7 +1,7 @@
 ---
-layout: pagenodesc
+layout: glossary
 title: Add-VSEC2InstanceNoDevice
-category: glossary
+categories: glossary
 ---
 
 # Add-VSEC2InstanceNoDevice

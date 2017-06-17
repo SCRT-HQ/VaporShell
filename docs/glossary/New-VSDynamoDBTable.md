@@ -1,7 +1,7 @@
 ---
-layout: pagenodesc
+layout: glossary
 title: New-VSDynamoDBTable
-category: glossary
+categories: glossary
 ---
 
 # New-VSDynamoDBTable
@@ -41,11 +41,11 @@ Accept wildcard characters: False
 ```
 
 ### -AttributeDefinitions
-Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-dynamodb-table.html#cfn-dynamodb-table-attributedef
-DuplicatesAllowed: True
-ItemType: AttributeDefinition
-Required: True
-Type: List
+Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-dynamodb-table.html#cfn-dynamodb-table-attributedef    
+DuplicatesAllowed: True    
+ItemType: AttributeDefinition    
+Required: True    
+Type: List    
 UpdateType: Mutable
 
 ```yaml
@@ -61,11 +61,11 @@ Accept wildcard characters: False
 ```
 
 ### -GlobalSecondaryIndexes
-Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-dynamodb-table.html#cfn-dynamodb-table-gsi
-DuplicatesAllowed: True
-ItemType: GlobalSecondaryIndex
-Required: False
-Type: List
+Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-dynamodb-table.html#cfn-dynamodb-table-gsi    
+DuplicatesAllowed: True    
+ItemType: GlobalSecondaryIndex    
+Required: False    
+Type: List    
 UpdateType: Mutable
 
 ```yaml
@@ -81,11 +81,11 @@ Accept wildcard characters: False
 ```
 
 ### -KeySchema
-Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-dynamodb-table.html#cfn-dynamodb-table-keyschema
-DuplicatesAllowed: True
-ItemType: KeySchema
-Required: True
-Type: List
+Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-dynamodb-table.html#cfn-dynamodb-table-keyschema    
+DuplicatesAllowed: True    
+ItemType: KeySchema    
+Required: True    
+Type: List    
 UpdateType: Mutable
 
 ```yaml
@@ -101,11 +101,11 @@ Accept wildcard characters: False
 ```
 
 ### -LocalSecondaryIndexes
-Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-dynamodb-table.html#cfn-dynamodb-table-lsi
-DuplicatesAllowed: True
-ItemType: LocalSecondaryIndex
-Required: False
-Type: List
+Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-dynamodb-table.html#cfn-dynamodb-table-lsi    
+DuplicatesAllowed: True    
+ItemType: LocalSecondaryIndex    
+Required: False    
+Type: List    
 UpdateType: Mutable
 
 ```yaml
@@ -121,9 +121,9 @@ Accept wildcard characters: False
 ```
 
 ### -ProvisionedThroughput
-Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-dynamodb-table.html#cfn-dynamodb-table-provisionedthroughput
-Required: True
-Type: ProvisionedThroughput
+Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-dynamodb-table.html#cfn-dynamodb-table-provisionedthroughput    
+Required: True    
+Type: ProvisionedThroughput    
 UpdateType: Mutable
 
 ```yaml
@@ -139,9 +139,9 @@ Accept wildcard characters: False
 ```
 
 ### -StreamSpecification
-Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-dynamodb-table.html#cfn-dynamodb-table-streamspecification
-Required: False
-Type: StreamSpecification
+Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-dynamodb-table.html#cfn-dynamodb-table-streamspecification    
+Required: False    
+Type: StreamSpecification    
 UpdateType: Mutable
 
 ```yaml
@@ -157,9 +157,9 @@ Accept wildcard characters: False
 ```
 
 ### -TableName
-Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-dynamodb-table.html#cfn-dynamodb-table-tablename
-PrimitiveType: String
-Required: False
+Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-dynamodb-table.html#cfn-dynamodb-table-tablename    
+PrimitiveType: String    
+Required: False    
 UpdateType: Immutable
 
 ```yaml

@@ -1,7 +1,7 @@
 ---
-layout: pagenodesc
+layout: glossary
 title: New-VSECSTaskDefinition
-category: glossary
+categories: glossary
 ---
 
 # New-VSECSTaskDefinition
@@ -41,11 +41,11 @@ Accept wildcard characters: False
 ```
 
 ### -ContainerDefinitions
-Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ecs-taskdefinition.html#cfn-ecs-taskdefinition-containerdefinitions
-DuplicatesAllowed: False
-ItemType: ContainerDefinition
-Required: False
-Type: List
+Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ecs-taskdefinition.html#cfn-ecs-taskdefinition-containerdefinitions    
+DuplicatesAllowed: False    
+ItemType: ContainerDefinition    
+Required: False    
+Type: List    
 UpdateType: Immutable
 
 ```yaml
@@ -61,9 +61,9 @@ Accept wildcard characters: False
 ```
 
 ### -Family
-Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ecs-taskdefinition.html#cfn-ecs-taskdefinition-family
-PrimitiveType: String
-Required: False
+Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ecs-taskdefinition.html#cfn-ecs-taskdefinition-family    
+PrimitiveType: String    
+Required: False    
 UpdateType: Immutable
 
 ```yaml
@@ -79,9 +79,9 @@ Accept wildcard characters: False
 ```
 
 ### -NetworkMode
-Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ecs-taskdefinition.html#cfn-ecs-taskdefinition-networkmode
-PrimitiveType: String
-Required: False
+Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ecs-taskdefinition.html#cfn-ecs-taskdefinition-networkmode    
+PrimitiveType: String    
+Required: False    
 UpdateType: Immutable
 
 ```yaml
@@ -97,11 +97,11 @@ Accept wildcard characters: False
 ```
 
 ### -PlacementConstraints
-Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ecs-taskdefinition.html#cfn-ecs-taskdefinition-placementconstraints
-DuplicatesAllowed: False
-ItemType: TaskDefinitionPlacementConstraint
-Required: False
-Type: List
+Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ecs-taskdefinition.html#cfn-ecs-taskdefinition-placementconstraints    
+DuplicatesAllowed: False    
+ItemType: TaskDefinitionPlacementConstraint    
+Required: False    
+Type: List    
 UpdateType: Immutable
 
 ```yaml
@@ -117,9 +117,9 @@ Accept wildcard characters: False
 ```
 
 ### -TaskRoleArn
-Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ecs-taskdefinition.html#cfn-ecs-taskdefinition-taskrolearn
-PrimitiveType: String
-Required: False
+Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ecs-taskdefinition.html#cfn-ecs-taskdefinition-taskrolearn    
+PrimitiveType: String    
+Required: False    
 UpdateType: Immutable
 
 ```yaml
@@ -135,11 +135,11 @@ Accept wildcard characters: False
 ```
 
 ### -Volumes
-Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ecs-taskdefinition.html#cfn-ecs-taskdefinition-volumes
-DuplicatesAllowed: False
-ItemType: Volume
-Required: False
-Type: List
+Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ecs-taskdefinition.html#cfn-ecs-taskdefinition-volumes    
+DuplicatesAllowed: False    
+ItemType: Volume    
+Required: False    
+Type: List    
 UpdateType: Mutable
 
 ```yaml

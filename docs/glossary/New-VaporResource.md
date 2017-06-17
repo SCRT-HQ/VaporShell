@@ -1,7 +1,7 @@
 ---
-layout: pagenodesc
+layout: glossary
 title: New-VaporResource
-category: glossary
+categories: glossary
 ---
 
 # New-VaporResource

@@ -1,7 +1,7 @@
 ---
-layout: pagenodesc
+layout: glossary
 title: New-VSCloudFrontDistribution
-category: glossary
+categories: glossary
 ---
 
 # New-VSCloudFrontDistribution
@@ -39,9 +39,9 @@ Accept wildcard characters: False
 ```
 
 ### -DistributionConfig
-Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-cloudfront-distribution.html#cfn-cloudfront-distribution-distributionconfig
-Required: True
-Type: DistributionConfig
+Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-cloudfront-distribution.html#cfn-cloudfront-distribution-distributionconfig    
+Required: True    
+Type: DistributionConfig    
 UpdateType: Mutable
 
 ```yaml

@@ -1,7 +1,7 @@
 ---
-layout: pagenodesc
+layout: glossary
 title: New-VaporCondition
-category: glossary
+categories: glossary
 ---
 
 # New-VaporCondition

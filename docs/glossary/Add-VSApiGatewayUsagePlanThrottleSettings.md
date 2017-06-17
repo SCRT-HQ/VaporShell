@@ -1,7 +1,7 @@
 ---
-layout: pagenodesc
-title: Add-VSApiGatewayUsagePlanThrottleSettings
-category: glossary
+external help file: Vaporshell-help.xml
+online version: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-apigateway-usageplan-throttlesettings.html
+schema: 2.0.0
 ---
 
 # Add-VSApiGatewayUsagePlanThrottleSettings
@@ -18,12 +18,21 @@ Add-VSApiGatewayUsagePlanThrottleSettings [[-BurstLimit] <Int32>] [[-RateLimit] 
 ## DESCRIPTION
 Adds an AWS::ApiGateway::UsagePlan.ThrottleSettings resource property to the template
 
+## EXAMPLES
+
+### Example 1
+```
+PS C:\> {{ Add example code here }}
+```
+
+{{ Add example description here }}
+
 ## PARAMETERS
 
 ### -BurstLimit
-Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-apigateway-usageplan-throttlesettings.html#cfn-apigateway-usageplan-throttlesettings-burstlimit
-PrimitiveType: Integer
-Required: False
+Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-apigateway-usageplan-throttlesettings.html#cfn-apigateway-usageplan-throttlesettings-burstlimit    
+PrimitiveType: Integer    
+Required: False    
 UpdateType: Mutable
 
 ```yaml
@@ -39,9 +48,9 @@ Accept wildcard characters: False
 ```
 
 ### -RateLimit
-Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-apigateway-usageplan-throttlesettings.html#cfn-apigateway-usageplan-throttlesettings-ratelimit
-PrimitiveType: Double
-Required: False
+Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-apigateway-usageplan-throttlesettings.html#cfn-apigateway-usageplan-throttlesettings-ratelimit    
+PrimitiveType: Double    
+Required: False    
 UpdateType: Mutable
 
 ```yaml

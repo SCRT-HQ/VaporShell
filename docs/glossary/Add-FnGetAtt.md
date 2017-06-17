@@ -1,7 +1,7 @@
 ---
-layout: pagenodesc
+layout: glossary
 title: Add-FnGetAtt
-category: glossary
+categories: glossary
 ---
 
 # Add-FnGetAtt

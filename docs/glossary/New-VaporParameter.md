@@ -1,7 +1,7 @@
 ---
-layout: pagenodesc
+layout: glossary
 title: New-VaporParameter
-category: glossary
+categories: glossary
 ---
 
 # New-VaporParameter

@@ -1,7 +1,7 @@
 ---
-layout: pagenodesc
+layout: glossary
 title: Add-VSS3BucketLifecycleConfiguration
-category: glossary
+categories: glossary
 ---
 
 # Add-VSS3BucketLifecycleConfiguration
@@ -21,11 +21,11 @@ Adds an AWS::S3::Bucket.LifecycleConfiguration resource property to the template
 ## PARAMETERS
 
 ### -Rules
-Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-s3-bucket-lifecycleconfig.html#cfn-s3-bucket-lifecycleconfig-rules
-DuplicatesAllowed: False
-ItemType: Rule
-Required: True
-Type: List
+Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-s3-bucket-lifecycleconfig.html#cfn-s3-bucket-lifecycleconfig-rules    
+DuplicatesAllowed: False    
+ItemType: Rule    
+Required: True    
+Type: List    
 UpdateType: Mutable
 
 ```yaml

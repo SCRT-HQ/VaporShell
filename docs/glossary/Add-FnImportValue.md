@@ -1,7 +1,7 @@
 ---
-layout: pagenodesc
+layout: glossary
 title: Add-FnImportValue
-category: glossary
+categories: glossary
 ---
 
 # Add-FnImportValue

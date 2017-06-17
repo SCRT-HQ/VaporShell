@@ -1,7 +1,7 @@
 ---
-layout: pagenodesc
+layout: glossary
 title: Add-VSWAFXssMatchSetXssMatchTuple
-category: glossary
+categories: glossary
 ---
 
 # Add-VSWAFXssMatchSetXssMatchTuple
@@ -21,9 +21,9 @@ Adds an AWS::WAF::XssMatchSet.XssMatchTuple resource property to the template
 ## PARAMETERS
 
 ### -FieldToMatch
-Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-waf-xssmatchset-xssmatchtuple.html#cfn-waf-xssmatchset-xssmatchtuple-fieldtomatch
-Required: True
-Type: FieldToMatch
+Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-waf-xssmatchset-xssmatchtuple.html#cfn-waf-xssmatchset-xssmatchtuple-fieldtomatch    
+Required: True    
+Type: FieldToMatch    
 UpdateType: Mutable
 
 ```yaml
@@ -39,9 +39,9 @@ Accept wildcard characters: False
 ```
 
 ### -TextTransformation
-Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-waf-xssmatchset-xssmatchtuple.html#cfn-waf-xssmatchset-xssmatchtuple-texttransformation
-PrimitiveType: String
-Required: True
+Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-waf-xssmatchset-xssmatchtuple.html#cfn-waf-xssmatchset-xssmatchtuple-texttransformation    
+PrimitiveType: String    
+Required: True    
 UpdateType: Mutable
 
 ```yaml

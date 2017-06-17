@@ -1,7 +1,7 @@
 ---
-layout: pagenodesc
+layout: glossary
 title: Import-Vaporshell
-category: glossary
+categories: glossary
 ---
 
 # Import-Vaporshell

@@ -1,7 +1,7 @@
 ---
-layout: pagenodesc
+layout: glossary
 title: Add-FnSelect
-category: glossary
+categories: glossary
 ---
 
 # Add-FnSelect

@@ -1,7 +1,7 @@
 ---
-layout: pagenodesc
+layout: glossary
 title: Add-VSEMRInstanceGroupConfigScalingTrigger
-category: glossary
+categories: glossary
 ---
 
 # Add-VSEMRInstanceGroupConfigScalingTrigger
@@ -21,9 +21,9 @@ Adds an AWS::EMR::InstanceGroupConfig.ScalingTrigger resource property to the te
 ## PARAMETERS
 
 ### -CloudWatchAlarmDefinition
-Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-elasticmapreduce-instancegroupconfig-scalingtrigger.html#cfn-elasticmapreduce-instancegroupconfig-scalingtrigger-cloudwatchalarmdefinition
-Required: True
-Type: CloudWatchAlarmDefinition
+Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-elasticmapreduce-instancegroupconfig-scalingtrigger.html#cfn-elasticmapreduce-instancegroupconfig-scalingtrigger-cloudwatchalarmdefinition    
+Required: True    
+Type: CloudWatchAlarmDefinition    
 UpdateType: Mutable
 
 ```yaml

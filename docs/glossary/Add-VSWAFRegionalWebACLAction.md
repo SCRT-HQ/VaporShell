@@ -1,7 +1,7 @@
 ---
-layout: pagenodesc
+layout: glossary
 title: Add-VSWAFRegionalWebACLAction
-category: glossary
+categories: glossary
 ---
 
 # Add-VSWAFRegionalWebACLAction
@@ -21,9 +21,9 @@ Adds an AWS::WAFRegional::WebACL.Action resource property to the template
 ## PARAMETERS
 
 ### -Type
-Required: True
-Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-wafregional-webacl-action.html#cfn-wafregional-webacl-action-type
-PrimitiveType: String
+Required: True    
+Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-wafregional-webacl-action.html#cfn-wafregional-webacl-action-type    
+PrimitiveType: String    
 UpdateType: Mutable
 
 ```yaml

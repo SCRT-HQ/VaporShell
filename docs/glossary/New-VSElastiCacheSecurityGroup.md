@@ -1,7 +1,7 @@
 ---
-layout: pagenodesc
+layout: glossary
 title: New-VSElastiCacheSecurityGroup
-category: glossary
+categories: glossary
 ---
 
 # New-VSElastiCacheSecurityGroup
@@ -39,9 +39,9 @@ Accept wildcard characters: False
 ```
 
 ### -Description
-Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-elasticache-security-group.html#cfn-elasticache-securitygroup-description
-PrimitiveType: String
-Required: True
+Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-elasticache-security-group.html#cfn-elasticache-securitygroup-description    
+PrimitiveType: String    
+Required: True    
 UpdateType: Mutable
 
 ```yaml

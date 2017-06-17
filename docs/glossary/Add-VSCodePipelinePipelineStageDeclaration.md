@@ -1,7 +1,7 @@
 ---
-layout: pagenodesc
+layout: glossary
 title: Add-VSCodePipelinePipelineStageDeclaration
-category: glossary
+categories: glossary
 ---
 
 # Add-VSCodePipelinePipelineStageDeclaration
@@ -21,11 +21,11 @@ Adds an AWS::CodePipeline::Pipeline.StageDeclaration resource property to the te
 ## PARAMETERS
 
 ### -Actions
-Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-codepipeline-pipeline-stages.html#cfn-codepipeline-pipeline-stages-actions
-DuplicatesAllowed: False
-ItemType: ActionDeclaration
-Required: True
-Type: List
+Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-codepipeline-pipeline-stages.html#cfn-codepipeline-pipeline-stages-actions    
+DuplicatesAllowed: False    
+ItemType: ActionDeclaration    
+Required: True    
+Type: List    
 UpdateType: Mutable
 
 ```yaml
@@ -41,11 +41,11 @@ Accept wildcard characters: False
 ```
 
 ### -Blockers
-Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-codepipeline-pipeline-stages.html#cfn-codepipeline-pipeline-stages-blockers
-DuplicatesAllowed: False
-ItemType: BlockerDeclaration
-Required: False
-Type: List
+Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-codepipeline-pipeline-stages.html#cfn-codepipeline-pipeline-stages-blockers    
+DuplicatesAllowed: False    
+ItemType: BlockerDeclaration    
+Required: False    
+Type: List    
 UpdateType: Mutable
 
 ```yaml
@@ -61,9 +61,9 @@ Accept wildcard characters: False
 ```
 
 ### -Name
-Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-codepipeline-pipeline-stages.html#cfn-codepipeline-pipeline-stages-name
-PrimitiveType: String
-Required: True
+Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-codepipeline-pipeline-stages.html#cfn-codepipeline-pipeline-stages-name    
+PrimitiveType: String    
+Required: True    
 UpdateType: Mutable
 
 ```yaml

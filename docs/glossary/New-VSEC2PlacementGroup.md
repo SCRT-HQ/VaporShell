@@ -1,7 +1,7 @@
 ---
-layout: pagenodesc
+layout: glossary
 title: New-VSEC2PlacementGroup
-category: glossary
+categories: glossary
 ---
 
 # New-VSEC2PlacementGroup
@@ -39,9 +39,9 @@ Accept wildcard characters: False
 ```
 
 ### -Strategy
-Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ec2-placementgroup.html#cfn-ec2-placementgroup-strategy
-PrimitiveType: String
-Required: False
+Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ec2-placementgroup.html#cfn-ec2-placementgroup-strategy    
+PrimitiveType: String    
+Required: False    
 UpdateType: Immutable
 
 ```yaml

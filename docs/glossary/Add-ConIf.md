@@ -1,7 +1,7 @@
 ---
-layout: pagenodesc
+layout: glossary
 title: Add-ConIf
-category: glossary
+categories: glossary
 ---
 
 # Add-ConIf

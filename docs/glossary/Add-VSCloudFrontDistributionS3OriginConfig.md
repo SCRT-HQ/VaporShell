@@ -1,7 +1,7 @@
 ---
-layout: pagenodesc
+layout: glossary
 title: Add-VSCloudFrontDistributionS3OriginConfig
-category: glossary
+categories: glossary
 ---
 
 # Add-VSCloudFrontDistributionS3OriginConfig
@@ -21,9 +21,9 @@ Adds an AWS::CloudFront::Distribution.S3OriginConfig resource property to the te
 ## PARAMETERS
 
 ### -OriginAccessIdentity
-Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-cloudfront-s3origin.html#cfn-cloudfront-s3origin-originaccessidentity
-PrimitiveType: String
-Required: False
+Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-cloudfront-s3origin.html#cfn-cloudfront-s3origin-originaccessidentity    
+PrimitiveType: String    
+Required: False    
 UpdateType: Mutable
 
 ```yaml

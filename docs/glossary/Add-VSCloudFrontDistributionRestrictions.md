@@ -1,7 +1,7 @@
 ---
-layout: pagenodesc
+layout: glossary
 title: Add-VSCloudFrontDistributionRestrictions
-category: glossary
+categories: glossary
 ---
 
 # Add-VSCloudFrontDistributionRestrictions
@@ -21,9 +21,9 @@ Adds an AWS::CloudFront::Distribution.Restrictions resource property to the temp
 ## PARAMETERS
 
 ### -GeoRestriction
-Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-cloudfront-distributionconfig-restrictions.html#cfn-cloudfront-distributionconfig-restrictions-georestriction
-Required: True
-Type: GeoRestriction
+Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-cloudfront-distributionconfig-restrictions.html#cfn-cloudfront-distributionconfig-restrictions-georestriction    
+Required: True    
+Type: GeoRestriction    
 UpdateType: Mutable
 
 ```yaml

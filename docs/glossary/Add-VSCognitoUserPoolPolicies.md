@@ -1,7 +1,7 @@
 ---
-layout: pagenodesc
+layout: glossary
 title: Add-VSCognitoUserPoolPolicies
-category: glossary
+categories: glossary
 ---
 
 # Add-VSCognitoUserPoolPolicies
@@ -21,9 +21,9 @@ Adds an AWS::Cognito::UserPool.Policies resource property to the template
 ## PARAMETERS
 
 ### -PasswordPolicy
-Type: PasswordPolicy
-Required: False
-Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-cognito-userpool-policies.html#cfn-cognito-userpool-policies-passwordpolicy
+Type: PasswordPolicy    
+Required: False    
+Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-cognito-userpool-policies.html#cfn-cognito-userpool-policies-passwordpolicy    
 UpdateType: Mutable
 
 ```yaml

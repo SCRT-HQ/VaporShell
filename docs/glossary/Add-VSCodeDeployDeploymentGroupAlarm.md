@@ -1,7 +1,7 @@
 ---
-layout: pagenodesc
+layout: glossary
 title: Add-VSCodeDeployDeploymentGroupAlarm
-category: glossary
+categories: glossary
 ---
 
 # Add-VSCodeDeployDeploymentGroupAlarm
@@ -21,9 +21,9 @@ Adds an AWS::CodeDeploy::DeploymentGroup.Alarm resource property to the template
 ## PARAMETERS
 
 ### -Name
-Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-codedeploy-deploymentgroup-alarm.html#cfn-codedeploy-deploymentgroup-alarm-name
-PrimitiveType: String
-Required: False
+Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-codedeploy-deploymentgroup-alarm.html#cfn-codedeploy-deploymentgroup-alarm-name    
+PrimitiveType: String    
+Required: False    
 UpdateType: Mutable
 
 ```yaml

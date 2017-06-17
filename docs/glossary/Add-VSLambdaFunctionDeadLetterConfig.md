@@ -1,7 +1,7 @@
 ---
-layout: pagenodesc
+layout: glossary
 title: Add-VSLambdaFunctionDeadLetterConfig
-category: glossary
+categories: glossary
 ---
 
 # Add-VSLambdaFunctionDeadLetterConfig
@@ -21,9 +21,9 @@ Adds an AWS::Lambda::Function.DeadLetterConfig resource property to the template
 ## PARAMETERS
 
 ### -TargetArn
-Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-lambda-function-deadletterconfig.html#cfn-lambda-function-deadletterconfig-targetarn
-PrimitiveType: String
-Required: False
+Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-lambda-function-deadletterconfig.html#cfn-lambda-function-deadletterconfig-targetarn    
+PrimitiveType: String    
+Required: False    
 UpdateType: Mutable
 
 ```yaml

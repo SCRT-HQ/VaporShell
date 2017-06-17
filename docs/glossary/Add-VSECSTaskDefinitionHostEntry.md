@@ -1,7 +1,7 @@
 ---
-layout: pagenodesc
-title: Add-VSECSTaskDefinitionHostEntry
-category: glossary
+external help file: Vaporshell-help.xml
+online version: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ecs-taskdefinition-containerdefinitions-hostentry.html
+schema: 2.0.0
 ---
 
 # Add-VSECSTaskDefinitionHostEntry
@@ -18,12 +18,21 @@ Add-VSECSTaskDefinitionHostEntry [-Hostname] <Object> [-IpAddress] <Object>
 ## DESCRIPTION
 Adds an AWS::ECS::TaskDefinition.HostEntry resource property to the template
 
+## EXAMPLES
+
+### Example 1
+```
+PS C:\> {{ Add example code here }}
+```
+
+{{ Add example description here }}
+
 ## PARAMETERS
 
 ### -Hostname
-Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ecs-taskdefinition-containerdefinitions-hostentry.html#cfn-ecs-taskdefinition-containerdefinition-hostentry-hostname
-PrimitiveType: String
-Required: True
+Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ecs-taskdefinition-containerdefinitions-hostentry.html#cfn-ecs-taskdefinition-containerdefinition-hostentry-hostname    
+PrimitiveType: String    
+Required: True    
 UpdateType: Immutable
 
 ```yaml
@@ -39,9 +48,9 @@ Accept wildcard characters: False
 ```
 
 ### -IpAddress
-Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ecs-taskdefinition-containerdefinitions-hostentry.html#cfn-ecs-taskdefinition-containerdefinition-hostentry-ipaddress
-PrimitiveType: String
-Required: True
+Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ecs-taskdefinition-containerdefinitions-hostentry.html#cfn-ecs-taskdefinition-containerdefinition-hostentry-ipaddress    
+PrimitiveType: String    
+Required: True    
 UpdateType: Immutable
 
 ```yaml
