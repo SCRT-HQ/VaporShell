@@ -33,23 +33,21 @@ layout: landing
 <!-- Two -->
 	<section id="two" class="wrapper alt style2">
 		<section class="spotlight">
-			<div class="image"><img src="images/pic01.jpg" alt="" /></div><div class="content">
-				<h2>Full coverage of CloudFormation Resource Types and Property Types in AWS</h2>
-				<p>All 500+ Resource Type and Resource Property Type functions are generated from <a href="http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/cfn-resource-specification.html">Amazon's own specification sheet</a> directly (us-east-1). If it's available in CloudFormation, it's available in Vaporshell. Using custom resource types? You're covered as well.</p>
+			<div class="image"><img src="images/pic03.jpg" alt="" /></div><div class="content">
+				<h2>Simplify UserData</h2>
+				<p>UserData can be painful to get perfect when adding it to your resources. <code>Add-UserData</code> makes it a breeze by allowing you to source your data from a file or by adding your list of strings and/or functions. It will also automatically wrap the data in <code>Fn::Join</code> and <code>Fn::Base64</code> for you, cleaning up your template script overall.</p>
 			</div>
 		</section>
 		<section class="spotlight">
 			<div class="image"><img src="images/pic02.jpg" alt="" /></div><div class="content">
-				<h2>Tortor dolore feugiat<br />
-				elementum magna</h2>
-				<p>Aliquam ut ex ut augue consectetur interdum. Donec hendrerit imperdiet. Mauris eleifend fringilla nullam aenean mi ligula.</p>
+				<h2>Write Less, Build More</h2>
+				<p>Building CloudFormation templates with Vaporshell can take considerably less code compared to using JSON/YAML directly. Combined with the validation built into Vaporshell, this means you can build clean templates quickly.</p>
 			</div>
 		</section>
 		<section class="spotlight">
-			<div class="image"><img src="images/pic03.jpg" alt="" /></div><div class="content">
-				<h2>Augue eleifend aliquet<br />
-				sed condimentum</h2>
-				<p>Aliquam ut ex ut augue consectetur interdum. Donec hendrerit imperdiet. Mauris eleifend fringilla nullam aenean mi ligula.</p>
+			<div class="image"><img src="images/pic01.jpg" alt="" /></div><div class="content">
+				<h2>Full coverage of AWS CloudFormation</h2>
+				<p>All 500+ Resource Type and Resource Property Type functions are generated from <a href="http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/cfn-resource-specification.html">Amazon's own specification sheet</a> directly (us-east-1). If it's available in CloudFormation, it's available in Vaporshell. Using custom resource types? You're covered as well.</p>
 			</div>
 		</section>
 	</section>
@@ -64,7 +62,7 @@ layout: landing
 			<ul class="features">
 				<li class="icon fa-code">
 					<h3>CI/CD and Code Coverage</h3>
-					<p>Vaporshell is developed with CI testing through AppVeyor (Windows) and Travis CI (Linux and macOS) with Coveralls.io providing code coverage statistics. Tests include syntax validation of the resulting template with <code>aws cloudformation validate-template</code></p>
+					<p>Vaporshell is developed with CI testing through AppVeyor (Windows) and Travis CI (Linux and macOS) with Coveralls.io providing code coverage statistics</p>
 				</li>
 				<li class="icon fa-paper-plane-o">
 					<h3>Easy to Install</h3>
