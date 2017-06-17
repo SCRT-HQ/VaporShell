@@ -74,7 +74,7 @@ _The following functions are built via automation against Amazon's Resource Type
 ### Resource Property Types
 <ul>
     {% for item in site.data.glossarydata %}
-      {% if item.tag == "resource-types" or item.tag == "resource-property-types" %}
+      {% if item.tag == "resource-property-types" %}
         <li><a href="{{ "/docs/glossary/" | prepend: site.baseurl | append: item.title }}">{{ item.title }}</a></li>
       {% endif %}
     {% endfor %}
