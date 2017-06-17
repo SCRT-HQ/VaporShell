@@ -42,7 +42,7 @@ function $FunctionName {
     .LINK
         $Link
 
-"@
+"@ 
 if ($Type -ne "Property") {
     $scriptContents += @"
     .PARAMETER LogicalId
