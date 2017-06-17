@@ -7,7 +7,6 @@ else {
     Set-Location $PSScriptRoot
     Set-Location ..
 }
-$ModPath = $($pwd.Path)
 Write-Host -ForegroundColor Green "Location set to $($pwd.Path)"
 Write-Host -ForegroundColor Green "Importing Vaporshell"
 Import-Module .\Vaporshell\Vaporshell.psd1 -Verbose
@@ -15,9 +14,6 @@ Write-Host -ForegroundColor Green "Importing platyPS"
 Import-Module platyPS
 #endregion#>
 
-Get-ChildItem "C:\GDrive\PSModules\Vaporshell.io\docs\glossary" | Remove-Item -Force
-
-Start-Sleep 5
 
 New-MarkdownHelp -Module Vaporshell -Force -OutputFolder "C:\GDrive\PSModules\Vaporshell.io\docs\glossary" -Verbose
 

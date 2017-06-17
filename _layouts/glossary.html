@@ -7,18 +7,19 @@ layout: default
     <h2>{{ page.title }}</h2>
   </header>
 
-  <section class="wrapper style1">
-		<div class="inner">
-			<ul class="actions">
-				<li><a href="{{ "/docs/glossary/" | prepend: site.baseurl }}" class="button special">Back to Glossary</a></li>
-			</ul>
-		</div>
-  </section>
-
   <section class="wrapper style5">
     <div class="inner">
       {{ content }}
     </div> 
   </section>
+
+  <section id="cta" class="wrapper style4">
+		<div class="inner">
+			<ul class="actions">
+				<li><a href="{{ "/docs/glossary/" | prepend: site.baseurl }}" class="button special">Glossary</a></li>
+                <li><a href="{{ "/docs/" | prepend: site.baseurl }}" class="button">Documentation</a></li>
+			</ul>
+		</div>
+	</section>
 
 </article>
