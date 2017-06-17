@@ -8,7 +8,10 @@ layout: default
       {{ content }}
         <br>
         <br>
-        <a href="{{ "/docs/glossary/" | prepend: site.baseurl }}">Back to Glossary</a>
+        <ul class="actions">
+            <li><a href="{{ "/docs/glossary/" | prepend: site.baseurl }}" class="button special">Glossary</a></li>
+            <li><a href="{{ "/examples/" | prepend: site.baseurl }}" class="button">Examples</a></li>
+        </ul>
     </div>
   </section>
 
