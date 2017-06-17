@@ -1,6 +1,6 @@
 ---
 layout: pagenodesc
-title: Read Me
+title: About
 ---
 
 | Build | AppVeyor (Windows) | Travis CI* (Linux / macOS) | Code Coverage |
