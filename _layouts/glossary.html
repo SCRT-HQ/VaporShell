@@ -3,15 +3,20 @@ layout: default
 ---
 <article id="main">
 
+  <header>
+    <h2>{{ page.title }}</h2>
+  </header>
+  <section id="banner">
+		<div class="inner">
+			<ul class="actions">
+				<li><a href="{{ "/docs/glossary/" | prepend: site.baseurl }}" class="button special">Back to Glossary</a></li>
+			</ul>
+		</div>
+	</section>
+
   <section class="wrapper style5">
     <div class="inner">
       {{ content }}
-        <br>
-        <br>
-        <ul class="actions">
-            <li><a href="{{ "/docs/glossary/" | prepend: site.baseurl }}" class="button special">Glossary</a></li>
-            <li><a href="{{ "/examples/" | prepend: site.baseurl }}" class="button">Examples</a></li>
-        </ul>
     </div> 
   </section>
 
