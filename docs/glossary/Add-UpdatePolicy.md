@@ -1,7 +1,7 @@
 ---
-external help file: Vaporshell-help.xml
-online version: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-attribute-updatepolicy.html
-schema: 2.0.0
+layout: pagenodesc
+title: Add-UpdatePolicy
+category: glossary
 ---
 
 # Add-UpdatePolicy
@@ -75,66 +75,6 @@ AWS CloudFormation invokes one of three update policies depending on the type of
     * Update an Auto Scaling group that contains instances that don't match the current LaunchConfiguration.
 * If both the AutoScalingReplacingUpdate and AutoScalingRollingUpdate policies are specified, setting the WillReplace property to true gives AutoScalingReplacingUpdate precedence.
 * The AutoScalingScheduledAction policy applies when you update a stack that includes an Auto Scaling group with an associated scheduled action.
-
-## EXAMPLES
-
-### -------------------------- EXAMPLE 1 --------------------------
-```
-$templateInit = Initialize-Vaporshell -Description "Testing"
-```
-
-$templateInit.AddResource(
-    (
-        New-VaporResource -LogicalId "AutoScalingGroup" -Type "AWS::AutoScaling::AutoScalingGroup" -Properties (\[PSCustomObject\]\[Ordered\]@{
-                "AvailabilityZones"       = (Add-FnGetAZs -Region "$_AWSRegion")
-                "LaunchConfigurationName" = (Add-FnRef -Ref "LaunchConfig")
-                "DesiredCapacity"         = "3"
-                "MinSize"                 = "1"
-                "MaxSize"                 = "4"
-            }) -CreationPolicy (Add-CreationPolicy -Count 3 -Timeout "PT15M") -UpdatePolicy (Add-UpdatePolicy -IgnoreUnmodifiedGroupSizeProperties True -MinInstancesInService 1 -MaxBatchSize 2 -WaitOnResourceSignals True -PauseTime "PT10M")
-    )
-)
-
-When the template is exported, this will convert to: 
-\`\`\`json
-{
-"AWSTemplateFormatVersion": "2010-09-09",
-"Description": "Testing",
-"Resources": {
-"AutoScalingGroup": {
-    "Type": "AWS::AutoScaling::AutoScalingGroup",
-    "Properties": {
-        "AvailabilityZones": {
-            "Fn::GetAZs": "AWS::Region"
-        },
-        "LaunchConfigurationName": {
-            "Ref": "LaunchConfig"
-        },
-        "DesiredCapacity": "3",
-        "MinSize": "1",
-        "MaxSize": "4"
-    },
-    "CreationPolicy": {
-        "ResourceSignal": {
-            "Count": "3",
-            "Timeout": "PT15M"
-        }
-    },
-    "UpdatePolicy": {
-        "AutoScalingScheduledAction": {
-            "IgnoreUnmodifiedGroupSizeProperties": "true"
-        },
-        "AutoScalingRollingUpdate": {
-            "MinInstancesInService": "1",
-            "MaxBatchSize": "2",
-            "WaitOnResourceSignals": "true",
-            "PauseTime": "PT10M"
-        }
-    }
-}
-}
-}
-\`\`\`
 
 ## PARAMETERS
 

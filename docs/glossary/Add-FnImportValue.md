@@ -1,7 +1,7 @@
 ---
-external help file: Vaporshell-help.xml
-online version: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/intrinsic-function-reference-importvalue.html
-schema: 2.0.0
+layout: pagenodesc
+title: Add-FnImportValue
+category: glossary
 ---
 
 # Add-FnImportValue
@@ -28,15 +28,6 @@ You can use the intrinsic function Fn::ImportValue to import only values that ha
         * Similarly, the ImportValue function can't include Ref or GetAtt functions that depend on a resource.
         * You can't delete a stack if another stack references one of its outputs.
         * You can't modify or remove an output value that is referenced by another stack.
-
-## EXAMPLES
-
-### -------------------------- EXAMPLE 1 --------------------------
-```
-Add-FnImportValue -ValueToImport (Add-FnSub -String "`${NetworkStackNameParameter}-SubnetID")
-```
-
-When the template is exported, this will convert to: {"Fn::ImportValue":{"Fn::Sub":"${NetworkStackNameParameter}-SubnetID"}}
 
 ## PARAMETERS
 

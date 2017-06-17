@@ -1,7 +1,7 @@
 ---
-external help file: Vaporshell-help.xml
-online version: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-emr-cluster-bootstrapactionconfig.html
-schema: 2.0.0
+layout: pagenodesc
+title: Add-VSEMRClusterBootstrapActionConfig
+category: glossary
 ---
 
 # Add-VSEMRClusterBootstrapActionConfig
@@ -17,15 +17,6 @@ Add-VSEMRClusterBootstrapActionConfig [-Name] <Object> [-ScriptBootstrapAction] 
 
 ## DESCRIPTION
 Adds an AWS::EMR::Cluster.BootstrapActionConfig resource property to the template
-
-## EXAMPLES
-
-### Example 1
-```
-PS C:\> {{ Add example code here }}
-```
-
-{{ Add example description here }}
 
 ## PARAMETERS
 

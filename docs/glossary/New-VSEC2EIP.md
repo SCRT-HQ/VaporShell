@@ -1,7 +1,7 @@
 ---
-external help file: Vaporshell-help.xml
-online version: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-eip.html
-schema: 2.0.0
+layout: pagenodesc
+title: New-VSEC2EIP
+category: glossary
 ---
 
 # New-VSEC2EIP
@@ -18,15 +18,6 @@ New-VSEC2EIP [-LogicalId] <String> [-Domain <Object>] [-InstanceId <Object>] [-D
 
 ## DESCRIPTION
 Adds an AWS::EC2::EIP resource to the template
-
-## EXAMPLES
-
-### Example 1
-```
-PS C:\> {{ Add example code here }}
-```
-
-{{ Add example description here }}
 
 ## PARAMETERS
 

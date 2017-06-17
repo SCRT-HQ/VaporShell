@@ -1,7 +1,7 @@
 ---
-external help file: Vaporshell-help.xml
-online version: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-kinesisfirehose-kinesisdeliverystream-s3destinationconfiguration-bufferinghints.html
-schema: 2.0.0
+layout: pagenodesc
+title: Add-VSKinesisFirehoseDeliveryStreamBufferingHints
+category: glossary
 ---
 
 # Add-VSKinesisFirehoseDeliveryStreamBufferingHints
@@ -17,15 +17,6 @@ Add-VSKinesisFirehoseDeliveryStreamBufferingHints [-IntervalInSeconds] <Int32> [
 
 ## DESCRIPTION
 Adds an AWS::KinesisFirehose::DeliveryStream.BufferingHints resource property to the template
-
-## EXAMPLES
-
-### Example 1
-```
-PS C:\> {{ Add example code here }}
-```
-
-{{ Add example description here }}
 
 ## PARAMETERS
 

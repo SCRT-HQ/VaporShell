@@ -1,7 +1,7 @@
 ---
-external help file: Vaporshell-help.xml
-online version: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-gamelift-alias-routingstrategy.html
-schema: 2.0.0
+layout: pagenodesc
+title: Add-VSGameLiftAliasRoutingStrategy
+category: glossary
 ---
 
 # Add-VSGameLiftAliasRoutingStrategy
@@ -17,15 +17,6 @@ Add-VSGameLiftAliasRoutingStrategy [[-FleetId] <Object>] [[-Message] <Object>] [
 
 ## DESCRIPTION
 Adds an AWS::GameLift::Alias.RoutingStrategy resource property to the template
-
-## EXAMPLES
-
-### Example 1
-```
-PS C:\> {{ Add example code here }}
-```
-
-{{ Add example description here }}
 
 ## PARAMETERS
 

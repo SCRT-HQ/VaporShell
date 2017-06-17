@@ -1,7 +1,7 @@
 ---
-external help file: Vaporshell-help.xml
-online version: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-security-group-ingress.html
-schema: 2.0.0
+layout: pagenodesc
+title: New-VSEC2SecurityGroupIngress
+category: glossary
 ---
 
 # New-VSEC2SecurityGroupIngress
@@ -21,15 +21,6 @@ New-VSEC2SecurityGroupIngress [-LogicalId] <String> [-CidrIp <Object>] [-CidrIpv
 
 ## DESCRIPTION
 Adds an AWS::EC2::SecurityGroupIngress resource to the template
-
-## EXAMPLES
-
-### Example 1
-```
-PS C:\> {{ Add example code here }}
-```
-
-{{ Add example description here }}
 
 ## PARAMETERS
 

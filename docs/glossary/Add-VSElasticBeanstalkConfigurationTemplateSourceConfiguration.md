@@ -1,7 +1,7 @@
 ---
-external help file: Vaporshell-help.xml
-online version: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-beanstalk-configurationtemplate-sourceconfiguration.html
-schema: 2.0.0
+layout: pagenodesc
+title: Add-VSElasticBeanstalkConfigurationTemplateSourceConfiguration
+category: glossary
 ---
 
 # Add-VSElasticBeanstalkConfigurationTemplateSourceConfiguration
@@ -18,15 +18,6 @@ Add-VSElasticBeanstalkConfigurationTemplateSourceConfiguration [-ApplicationName
 
 ## DESCRIPTION
 Adds an AWS::ElasticBeanstalk::ConfigurationTemplate.SourceConfiguration resource property to the template
-
-## EXAMPLES
-
-### Example 1
-```
-PS C:\> {{ Add example code here }}
-```
-
-{{ Add example description here }}
 
 ## PARAMETERS
 

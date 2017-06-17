@@ -1,7 +1,7 @@
 ---
-external help file: Vaporshell-help.xml
-online version: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/resources-section-structure.html
-schema: 2.0.0
+layout: pagenodesc
+title: New-VaporResource
+category: glossary
 ---
 
 # New-VaporResource
@@ -20,51 +20,6 @@ New-VaporResource [-LogicalId] <String> [-Type] <String> [[-Properties] <Object>
 ## DESCRIPTION
 The required Resources section declares the AWS resources that you want to include in the stack, such as an Amazon EC2 instance or an Amazon S3 bucket.
 You must declare each resource separately; however, if you have multiple resources of the same type, you can declare them together by separating them with commas.
-
-## EXAMPLES
-
-### -------------------------- EXAMPLE 1 --------------------------
-```
-$template = Initialize-Vaporshell -Description "Testing Resource addition"
-```
-
-$template.AddResource((
-    New-VaporResource -LogicalId "MyInstance" -Type "AWS::EC2::Instance" -Properties \[PSCustomObject\]@{
-        "UserProperties" = (Add-FnBase64 -ValueToEncode (Add-FnJoin -ListOfValues "Queue=",(Add-FnRef -Ref "MyQueue")))
-        "AvailabilityZone" = "us-east-1a"
-        "ImageId" = "ami-20b65349"
-    }
-))
-
-When the template is exported, this will convert to: 
-\`\`\`json
-{
-"AWSTemplateFormatVersion": "2010-09-09",
-"Description": "Testing Resource addition",
-"Resources": {
-"MyInstance": {
-    "Type": "AWS::EC2::Instance",
-    "Properties": {
-        "UserProperties": {
-            "Fn::Base64": {
-                "Fn::Join": \[
-                    "",
-                    \[
-                        "Queue=",
-                        {    
-                        "Ref": "MyQueue"
-                        }
-                    \]
-                \]
-            }
-        },
-        "AvailabilityZone": "us-east-1a",
-        "ImageId": "ami-20b65349"
-    }  
-}    
-}
-}
-\`\`\`
 
 ## PARAMETERS
 

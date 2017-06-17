@@ -1,7 +1,7 @@
 ---
-external help file: Vaporshell-help.xml
-online version: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/intrinsic-function-reference-select.html
-schema: 2.0.0
+layout: pagenodesc
+title: Add-FnSelect
+category: glossary
 ---
 
 # Add-FnSelect
@@ -24,15 +24,6 @@ You might use a CommaDelimitedList parameter to combine the values of related pa
     ** Important **
         Fn::Select does not check for null values or if the index is out of bounds of the array.
 Both conditions will result in a stack error, so you should be certain that the index you choose is valid, and that the list contains non-null values.
-
-## EXAMPLES
-
-### -------------------------- EXAMPLE 1 --------------------------
-```
-Add-FnSelect -Index 2 -ListOfObjects (Add-FnSplit -Delimiter "," -SourceString (Add-FnImportValue -ValueToImport "AccountSubnetIds"))
-```
-
-When the template is exported, this will convert to: {"Fn::Select":\["2",{"Fn::Split":\[",",{"Fn::ImportValue":"AccountSubnetIds"}\]}\]}
 
 ## PARAMETERS
 

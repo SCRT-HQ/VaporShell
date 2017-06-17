@@ -1,7 +1,7 @@
 ---
-external help file: Vaporshell-help.xml
-online version: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-as-notificationconfigurations.html
-schema: 2.0.0
+layout: pagenodesc
+title: Add-VSAutoScalingAutoScalingGroupNotificationConfigurations
+category: glossary
 ---
 
 # Add-VSAutoScalingAutoScalingGroupNotificationConfigurations
@@ -18,15 +18,6 @@ Add-VSAutoScalingAutoScalingGroupNotificationConfigurations [[-NotificationTypes
 
 ## DESCRIPTION
 Adds an AWS::AutoScaling::AutoScalingGroup.NotificationConfigurations resource property to the template
-
-## EXAMPLES
-
-### Example 1
-```
-PS C:\> {{ Add example code here }}
-```
-
-{{ Add example description here }}
 
 ## PARAMETERS
 

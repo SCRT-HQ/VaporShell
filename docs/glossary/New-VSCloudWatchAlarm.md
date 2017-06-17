@@ -1,7 +1,7 @@
 ---
-external help file: Vaporshell-help.xml
-online version: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-cw-alarm.html
-schema: 2.0.0
+layout: pagenodesc
+title: New-VSCloudWatchAlarm
+category: glossary
 ---
 
 # New-VSCloudWatchAlarm
@@ -23,15 +23,6 @@ New-VSCloudWatchAlarm [-LogicalId] <String> [-ActionsEnabled <Boolean>] [-AlarmA
 
 ## DESCRIPTION
 Adds an AWS::CloudWatch::Alarm resource to the template
-
-## EXAMPLES
-
-### Example 1
-```
-PS C:\> {{ Add example code here }}
-```
-
-{{ Add example description here }}
 
 ## PARAMETERS
 

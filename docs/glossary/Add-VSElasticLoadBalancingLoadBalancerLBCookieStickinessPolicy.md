@@ -1,7 +1,7 @@
 ---
-external help file: Vaporshell-help.xml
-online version: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-elb-LBCookieStickinessPolicy.html
-schema: 2.0.0
+layout: pagenodesc
+title: Add-VSElasticLoadBalancingLoadBalancerLBCookieStickinessPolicy
+category: glossary
 ---
 
 # Add-VSElasticLoadBalancingLoadBalancerLBCookieStickinessPolicy
@@ -18,15 +18,6 @@ Add-VSElasticLoadBalancingLoadBalancerLBCookieStickinessPolicy [[-CookieExpirati
 
 ## DESCRIPTION
 Adds an AWS::ElasticLoadBalancing::LoadBalancer.LBCookieStickinessPolicy resource property to the template
-
-## EXAMPLES
-
-### Example 1
-```
-PS C:\> {{ Add example code here }}
-```
-
-{{ Add example description here }}
 
 ## PARAMETERS
 

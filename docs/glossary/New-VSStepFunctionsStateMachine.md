@@ -1,7 +1,7 @@
 ---
-external help file: Vaporshell-help.xml
-online version: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-stepfunctions-statemachine.html
-schema: 2.0.0
+layout: pagenodesc
+title: New-VSStepFunctionsStateMachine
+category: glossary
 ---
 
 # New-VSStepFunctionsStateMachine
@@ -19,15 +19,6 @@ New-VSStepFunctionsStateMachine [-LogicalId] <String> -DefinitionString <Object>
 
 ## DESCRIPTION
 Adds an AWS::StepFunctions::StateMachine resource to the template
-
-## EXAMPLES
-
-### Example 1
-```
-PS C:\> {{ Add example code here }}
-```
-
-{{ Add example description here }}
 
 ## PARAMETERS
 

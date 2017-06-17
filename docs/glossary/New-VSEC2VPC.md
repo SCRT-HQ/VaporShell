@@ -1,7 +1,7 @@
 ---
-external help file: Vaporshell-help.xml
-online version: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ec2-vpc.html
-schema: 2.0.0
+layout: pagenodesc
+title: New-VSEC2VPC
+category: glossary
 ---
 
 # New-VSEC2VPC
@@ -19,15 +19,6 @@ New-VSEC2VPC [-LogicalId] <String> -CidrBlock <Object> [-EnableDnsHostnames <Boo
 
 ## DESCRIPTION
 Adds an AWS::EC2::VPC resource to the template
-
-## EXAMPLES
-
-### Example 1
-```
-PS C:\> {{ Add example code here }}
-```
-
-{{ Add example description here }}
 
 ## PARAMETERS
 

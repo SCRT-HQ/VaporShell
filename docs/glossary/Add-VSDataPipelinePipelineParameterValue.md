@@ -1,7 +1,7 @@
 ---
-external help file: Vaporshell-help.xml
-online version: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-datapipeline-pipeline-parametervalues.html
-schema: 2.0.0
+layout: pagenodesc
+title: Add-VSDataPipelinePipelineParameterValue
+category: glossary
 ---
 
 # Add-VSDataPipelinePipelineParameterValue
@@ -17,15 +17,6 @@ Add-VSDataPipelinePipelineParameterValue [-Id] <Object> [-StringValue] <Object>
 
 ## DESCRIPTION
 Adds an AWS::DataPipeline::Pipeline.ParameterValue resource property to the template
-
-## EXAMPLES
-
-### Example 1
-```
-PS C:\> {{ Add example code here }}
-```
-
-{{ Add example description here }}
 
 ## PARAMETERS
 

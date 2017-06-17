@@ -1,7 +1,7 @@
 ---
-external help file: Vaporshell-help.xml
-online version: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-wafregional-sizeconstraintset-fieldtomatch.html
-schema: 2.0.0
+layout: pagenodesc
+title: Add-VSWAFRegionalSizeConstraintSetFieldToMatch
+category: glossary
 ---
 
 # Add-VSWAFRegionalSizeConstraintSetFieldToMatch
@@ -17,15 +17,6 @@ Add-VSWAFRegionalSizeConstraintSetFieldToMatch [-Type] <Object> [[-Data] <Object
 
 ## DESCRIPTION
 Adds an AWS::WAFRegional::SizeConstraintSet.FieldToMatch resource property to the template
-
-## EXAMPLES
-
-### Example 1
-```
-PS C:\> {{ Add example code here }}
-```
-
-{{ Add example description here }}
 
 ## PARAMETERS
 

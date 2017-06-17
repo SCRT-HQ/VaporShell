@@ -1,7 +1,7 @@
 ---
-external help file: Vaporshell-help.xml
-online version: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-blockdev-template.html
-schema: 2.0.0
+layout: pagenodesc
+title: Add-VSEC2InstanceEbs
+category: glossary
 ---
 
 # Add-VSEC2InstanceEbs
@@ -18,15 +18,6 @@ Add-VSEC2InstanceEbs [[-DeleteOnTermination] <Boolean>] [[-Encrypted] <Boolean>]
 
 ## DESCRIPTION
 Adds an AWS::EC2::Instance.Ebs resource property to the template
-
-## EXAMPLES
-
-### Example 1
-```
-PS C:\> {{ Add example code here }}
-```
-
-{{ Add example description here }}
 
 ## PARAMETERS
 

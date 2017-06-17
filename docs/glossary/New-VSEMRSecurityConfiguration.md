@@ -1,7 +1,7 @@
 ---
-external help file: Vaporshell-help.xml
-online version: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-emr-securityconfiguration.html
-schema: 2.0.0
+layout: pagenodesc
+title: New-VSEMRSecurityConfiguration
+category: glossary
 ---
 
 # New-VSEMRSecurityConfiguration
@@ -19,15 +19,6 @@ New-VSEMRSecurityConfiguration [-LogicalId] <String> [-Name <Object>] -SecurityC
 
 ## DESCRIPTION
 Adds an AWS::EMR::SecurityConfiguration resource to the template
-
-## EXAMPLES
-
-### Example 1
-```
-PS C:\> {{ Add example code here }}
-```
-
-{{ Add example description here }}
 
 ## PARAMETERS
 

@@ -1,7 +1,7 @@
 ---
-external help file: Vaporshell-help.xml
-online version: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-cloudfront-distribution.html
-schema: 2.0.0
+layout: pagenodesc
+title: New-VSCloudFrontDistribution
+category: glossary
 ---
 
 # New-VSCloudFrontDistribution
@@ -18,15 +18,6 @@ New-VSCloudFrontDistribution [-LogicalId] <String> -DistributionConfig <Object> 
 
 ## DESCRIPTION
 Adds an AWS::CloudFront::Distribution resource to the template
-
-## EXAMPLES
-
-### Example 1
-```
-PS C:\> {{ Add example code here }}
-```
-
-{{ Add example description here }}
 
 ## PARAMETERS
 

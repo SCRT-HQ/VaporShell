@@ -1,7 +1,7 @@
 ---
-external help file: Vaporshell-help.xml
-online version: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-wafregional-sizeconstraintset-sizeconstraint.html
-schema: 2.0.0
+layout: pagenodesc
+title: Add-VSWAFRegionalSizeConstraintSetSizeConstraint
+category: glossary
 ---
 
 # Add-VSWAFRegionalSizeConstraintSetSizeConstraint
@@ -18,15 +18,6 @@ Add-VSWAFRegionalSizeConstraintSetSizeConstraint [-ComparisonOperator] <Object> 
 
 ## DESCRIPTION
 Adds an AWS::WAFRegional::SizeConstraintSet.SizeConstraint resource property to the template
-
-## EXAMPLES
-
-### Example 1
-```
-PS C:\> {{ Add example code here }}
-```
-
-{{ Add example description here }}
 
 ## PARAMETERS
 

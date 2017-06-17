@@ -1,7 +1,7 @@
 ---
-external help file: Vaporshell-help.xml
-online version: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-emr-cluster-configuration.html
-schema: 2.0.0
+layout: pagenodesc
+title: Add-VSEMRClusterConfiguration
+category: glossary
 ---
 
 # Add-VSEMRClusterConfiguration
@@ -18,15 +18,6 @@ Add-VSEMRClusterConfiguration [[-Classification] <Object>] [[-ConfigurationPrope
 
 ## DESCRIPTION
 Adds an AWS::EMR::Cluster.Configuration resource property to the template
-
-## EXAMPLES
-
-### Example 1
-```
-PS C:\> {{ Add example code here }}
-```
-
-{{ Add example description here }}
 
 ## PARAMETERS
 

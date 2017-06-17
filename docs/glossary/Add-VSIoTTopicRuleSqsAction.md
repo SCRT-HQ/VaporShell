@@ -1,7 +1,7 @@
 ---
-external help file: Vaporshell-help.xml
-online version: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iot-sqs.html
-schema: 2.0.0
+layout: pagenodesc
+title: Add-VSIoTTopicRuleSqsAction
+category: glossary
 ---
 
 # Add-VSIoTTopicRuleSqsAction
@@ -17,15 +17,6 @@ Add-VSIoTTopicRuleSqsAction [-QueueUrl] <Object> [-RoleArn] <Object> [[-UseBase6
 
 ## DESCRIPTION
 Adds an AWS::IoT::TopicRule.SqsAction resource property to the template
-
-## EXAMPLES
-
-### Example 1
-```
-PS C:\> {{ Add example code here }}
-```
-
-{{ Add example description here }}
 
 ## PARAMETERS
 

@@ -1,7 +1,7 @@
 ---
-external help file: Vaporshell-help.xml
-online version: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-elasticmapreduce-cluster-scalingaction.html
-schema: 2.0.0
+layout: pagenodesc
+title: Add-VSEMRClusterScalingAction
+category: glossary
 ---
 
 # Add-VSEMRClusterScalingAction
@@ -17,15 +17,6 @@ Add-VSEMRClusterScalingAction [[-Market] <Object>] [-SimpleScalingPolicyConfigur
 
 ## DESCRIPTION
 Adds an AWS::EMR::Cluster.ScalingAction resource property to the template
-
-## EXAMPLES
-
-### Example 1
-```
-PS C:\> {{ Add example code here }}
-```
-
-{{ Add example description here }}
 
 ## PARAMETERS
 

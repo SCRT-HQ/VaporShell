@@ -1,7 +1,7 @@
 ---
-external help file: Vaporshell-help.xml
-online version: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-elasticmapreduce-step-keyvalue.html
-schema: 2.0.0
+layout: pagenodesc
+title: Add-VSEMRStepKeyValue
+category: glossary
 ---
 
 # Add-VSEMRStepKeyValue
@@ -17,15 +17,6 @@ Add-VSEMRStepKeyValue [[-Key] <Object>] [[-Value] <Object>]
 
 ## DESCRIPTION
 Adds an AWS::EMR::Step.KeyValue resource property to the template
-
-## EXAMPLES
-
-### Example 1
-```
-PS C:\> {{ Add example code here }}
-```
-
-{{ Add example description here }}
 
 ## PARAMETERS
 

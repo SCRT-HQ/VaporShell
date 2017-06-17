@@ -1,7 +1,7 @@
 ---
-external help file: Vaporshell-help.xml
-online version: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-internet-gateway.html
-schema: 2.0.0
+layout: pagenodesc
+title: New-VSEC2InternetGateway
+category: glossary
 ---
 
 # New-VSEC2InternetGateway
@@ -18,15 +18,6 @@ New-VSEC2InternetGateway [-LogicalId] <String> [-Tags <Object>] [-DeletionPolicy
 
 ## DESCRIPTION
 Adds an AWS::EC2::InternetGateway resource to the template
-
-## EXAMPLES
-
-### Example 1
-```
-PS C:\> {{ Add example code here }}
-```
-
-{{ Add example description here }}
 
 ## PARAMETERS
 

@@ -1,7 +1,7 @@
 ---
-external help file: Vaporshell-help.xml
-online version: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-opsworks-instance-blockdevicemapping.html
-schema: 2.0.0
+layout: pagenodesc
+title: Add-VSOpsWorksInstanceBlockDeviceMapping
+category: glossary
 ---
 
 # Add-VSOpsWorksInstanceBlockDeviceMapping
@@ -18,15 +18,6 @@ Add-VSOpsWorksInstanceBlockDeviceMapping [[-DeviceName] <Object>] [[-Ebs] <Objec
 
 ## DESCRIPTION
 Adds an AWS::OpsWorks::Instance.BlockDeviceMapping resource property to the template
-
-## EXAMPLES
-
-### Example 1
-```
-PS C:\> {{ Add example code here }}
-```
-
-{{ Add example description here }}
 
 ## PARAMETERS
 

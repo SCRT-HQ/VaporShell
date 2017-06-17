@@ -1,7 +1,7 @@
 ---
-external help file: Vaporshell-help.xml
-online version: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-elasticloadbalancingv2-loadbalancer.html
-schema: 2.0.0
+layout: pagenodesc
+title: New-VSElasticLoadBalancingV2LoadBalancer
+category: glossary
 ---
 
 # New-VSElasticLoadBalancingV2LoadBalancer
@@ -20,15 +20,6 @@ New-VSElasticLoadBalancingV2LoadBalancer [-LogicalId] <String> [-IpAddressType <
 
 ## DESCRIPTION
 Adds an AWS::ElasticLoadBalancingV2::LoadBalancer resource to the template
-
-## EXAMPLES
-
-### Example 1
-```
-PS C:\> {{ Add example code here }}
-```
-
-{{ Add example description here }}
 
 ## PARAMETERS
 

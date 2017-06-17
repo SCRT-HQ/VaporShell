@@ -1,7 +1,7 @@
 ---
-external help file: Vaporshell-help.xml
-online version: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-apitgateway-apikey-stagekey.html
-schema: 2.0.0
+layout: pagenodesc
+title: Add-VSApiGatewayApiKeyStageKey
+category: glossary
 ---
 
 # Add-VSApiGatewayApiKeyStageKey
@@ -17,15 +17,6 @@ Add-VSApiGatewayApiKeyStageKey [[-RestApiId] <Object>] [[-StageName] <Object>]
 
 ## DESCRIPTION
 Adds an AWS::ApiGateway::ApiKey.StageKey resource property to the template
-
-## EXAMPLES
-
-### Example 1
-```
-PS C:\> {{ Add example code here }}
-```
-
-{{ Add example description here }}
 
 ## PARAMETERS
 

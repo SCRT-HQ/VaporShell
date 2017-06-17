@@ -1,7 +1,7 @@
 ---
-external help file: Vaporshell-help.xml
-online version: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-cognito-userpool-admincreateuserconfig.html
-schema: 2.0.0
+layout: pagenodesc
+title: Add-VSCognitoUserPoolAdminCreateUserConfig
+category: glossary
 ---
 
 # Add-VSCognitoUserPoolAdminCreateUserConfig
@@ -18,15 +18,6 @@ Add-VSCognitoUserPoolAdminCreateUserConfig [[-InviteMessageTemplate] <Object>]
 
 ## DESCRIPTION
 Adds an AWS::Cognito::UserPool.AdminCreateUserConfig resource property to the template
-
-## EXAMPLES
-
-### Example 1
-```
-PS C:\> {{ Add example code here }}
-```
-
-{{ Add example description here }}
 
 ## PARAMETERS
 

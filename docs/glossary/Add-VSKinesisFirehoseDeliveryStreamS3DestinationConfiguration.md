@@ -1,7 +1,7 @@
 ---
-external help file: Vaporshell-help.xml
-online version: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-kinesisfirehose-kinesisdeliverystream-s3destinationconfiguration.html
-schema: 2.0.0
+layout: pagenodesc
+title: Add-VSKinesisFirehoseDeliveryStreamS3DestinationConfiguration
+category: glossary
 ---
 
 # Add-VSKinesisFirehoseDeliveryStreamS3DestinationConfiguration
@@ -19,15 +19,6 @@ Add-VSKinesisFirehoseDeliveryStreamS3DestinationConfiguration [-BucketARN] <Obje
 
 ## DESCRIPTION
 Adds an AWS::KinesisFirehose::DeliveryStream.S3DestinationConfiguration resource property to the template
-
-## EXAMPLES
-
-### Example 1
-```
-PS C:\> {{ Add example code here }}
-```
-
-{{ Add example description here }}
 
 ## PARAMETERS
 

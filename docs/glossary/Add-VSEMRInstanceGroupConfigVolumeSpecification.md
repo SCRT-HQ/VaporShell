@@ -1,7 +1,7 @@
 ---
-external help file: Vaporshell-help.xml
-online version: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-emr-ebsconfiguration-ebsblockdeviceconfig-volumespecification.html
-schema: 2.0.0
+layout: pagenodesc
+title: Add-VSEMRInstanceGroupConfigVolumeSpecification
+category: glossary
 ---
 
 # Add-VSEMRInstanceGroupConfigVolumeSpecification
@@ -17,15 +17,6 @@ Add-VSEMRInstanceGroupConfigVolumeSpecification [[-Iops] <Int32>] [-SizeInGB] <I
 
 ## DESCRIPTION
 Adds an AWS::EMR::InstanceGroupConfig.VolumeSpecification resource property to the template
-
-## EXAMPLES
-
-### Example 1
-```
-PS C:\> {{ Add example code here }}
-```
-
-{{ Add example description here }}
 
 ## PARAMETERS
 

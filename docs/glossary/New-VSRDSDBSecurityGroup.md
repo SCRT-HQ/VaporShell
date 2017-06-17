@@ -1,7 +1,7 @@
 ---
-external help file: Vaporshell-help.xml
-online version: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-rds-security-group.html
-schema: 2.0.0
+layout: pagenodesc
+title: New-VSRDSDBSecurityGroup
+category: glossary
 ---
 
 # New-VSRDSDBSecurityGroup
@@ -19,15 +19,6 @@ New-VSRDSDBSecurityGroup [-LogicalId] <String> -DBSecurityGroupIngress <Object> 
 
 ## DESCRIPTION
 Adds an AWS::RDS::DBSecurityGroup resource to the template
-
-## EXAMPLES
-
-### Example 1
-```
-PS C:\> {{ Add example code here }}
-```
-
-{{ Add example description here }}
 
 ## PARAMETERS
 

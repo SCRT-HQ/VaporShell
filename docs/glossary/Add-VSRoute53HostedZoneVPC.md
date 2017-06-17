@@ -1,7 +1,7 @@
 ---
-external help file: Vaporshell-help.xml
-online version: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-route53-hostedzone-hostedzonevpcs.html
-schema: 2.0.0
+layout: pagenodesc
+title: Add-VSRoute53HostedZoneVPC
+category: glossary
 ---
 
 # Add-VSRoute53HostedZoneVPC
@@ -17,15 +17,6 @@ Add-VSRoute53HostedZoneVPC [-VPCId] <Object> [-VPCRegion] <Object>
 
 ## DESCRIPTION
 Adds an AWS::Route53::HostedZone.VPC resource property to the template
-
-## EXAMPLES
-
-### Example 1
-```
-PS C:\> {{ Add example code here }}
-```
-
-{{ Add example description here }}
 
 ## PARAMETERS
 

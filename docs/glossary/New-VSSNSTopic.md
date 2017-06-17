@@ -1,7 +1,7 @@
 ---
-external help file: Vaporshell-help.xml
-online version: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-sns-topic.html
-schema: 2.0.0
+layout: pagenodesc
+title: New-VSSNSTopic
+category: glossary
 ---
 
 # New-VSSNSTopic
@@ -19,15 +19,6 @@ New-VSSNSTopic [-LogicalId] <String> [-DisplayName <Object>] [-Subscription <Obj
 
 ## DESCRIPTION
 Adds an AWS::SNS::Topic resource to the template
-
-## EXAMPLES
-
-### Example 1
-```
-PS C:\> {{ Add example code here }}
-```
-
-{{ Add example description here }}
 
 ## PARAMETERS
 

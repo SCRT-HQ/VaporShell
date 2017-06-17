@@ -1,7 +1,7 @@
 ---
-external help file: Vaporshell-help.xml
-online version: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ecs-service.html
-schema: 2.0.0
+layout: pagenodesc
+title: New-VSECSService
+category: glossary
 ---
 
 # New-VSECSService
@@ -21,15 +21,6 @@ New-VSECSService [-LogicalId] <String> [-Cluster <Object>] [-DeploymentConfigura
 
 ## DESCRIPTION
 Adds an AWS::ECS::Service resource to the template
-
-## EXAMPLES
-
-### Example 1
-```
-PS C:\> {{ Add example code here }}
-```
-
-{{ Add example description here }}
 
 ## PARAMETERS
 

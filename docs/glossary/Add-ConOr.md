@@ -1,7 +1,7 @@
 ---
-external help file: Vaporshell-help.xml
-online version: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/intrinsic-function-reference-conditions.html#intrinsic-function-reference-conditions-or
-schema: 2.0.0
+layout: pagenodesc
+title: Add-ConOr
+category: glossary
 ---
 
 # Add-ConOr
@@ -19,15 +19,6 @@ Add-ConOr [-Conditions] <Object[]>
 Returns true if any one of the specified conditions evaluate to true, or returns false if all of the conditions evaluates to false.
 Fn::Or acts as an OR operator.
 The minimum number of conditions that you can include is 2, and the maximum is 10.
-
-## EXAMPLES
-
-### -------------------------- EXAMPLE 1 --------------------------
-```
-Add-ConOr -Conditions (Add-ConEquals -FirstValue "sg-mysggroup" -SecondValue (Add-FnRef -Ref "ASecurityGroup")),(Add-ConEquals -FirstValue "Production" -SecondValue (Add-FnRef -Ref "Environment"))
-```
-
-When the template is exported, this will convert to: {"Fn::Or":\[{"Fn::Equals":\["sg-mysggroup",{"Ref":"ASecurityGroup"}\]},{"Fn::Equals":\["Production",{"Ref":"Environment"}\]}\]}
 
 ## PARAMETERS
 

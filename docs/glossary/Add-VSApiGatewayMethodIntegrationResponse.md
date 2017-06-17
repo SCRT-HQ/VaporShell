@@ -1,7 +1,7 @@
 ---
-external help file: Vaporshell-help.xml
-online version: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-apitgateway-method-integration-integrationresponse.html
-schema: 2.0.0
+layout: pagenodesc
+title: Add-VSApiGatewayMethodIntegrationResponse
+category: glossary
 ---
 
 # Add-VSApiGatewayMethodIntegrationResponse
@@ -18,15 +18,6 @@ Add-VSApiGatewayMethodIntegrationResponse [[-ResponseParameters] <Hashtable>]
 
 ## DESCRIPTION
 Adds an AWS::ApiGateway::Method.IntegrationResponse resource property to the template
-
-## EXAMPLES
-
-### Example 1
-```
-PS C:\> {{ Add example code here }}
-```
-
-{{ Add example description here }}
 
 ## PARAMETERS
 

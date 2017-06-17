@@ -1,7 +1,7 @@
 ---
-external help file: Vaporshell-help.xml
-online version: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/intrinsic-function-reference-getavailabilityzones.html
-schema: 2.0.0
+layout: pagenodesc
+title: Add-FnGetAZs
+category: glossary
 ---
 
 # Add-FnGetAZs
@@ -31,15 +31,6 @@ IAM permissions
     The permissions that you need in order to use the Fn::GetAZs function depend on the platform in which you're launching Amazon EC2 instances.
 For both platforms, you need permissions to the Amazon EC2 DescribeAvailabilityZones and DescribeAccountAttributes actions.
 For EC2-VPC, you also need permissions to the Amazon EC2 DescribeSubnets action.
-
-## EXAMPLES
-
-### -------------------------- EXAMPLE 1 --------------------------
-```
-Add-FnImportValue -ValueToImport (Add-FnSub -String "`${NetworkStackNameParameter}-SubnetID")
-```
-
-When the template is exported, this will convert to: {"Fn::ImportValue":{"Fn::Sub":"${NetworkStackNameParameter}-SubnetID"}}
 
 ## PARAMETERS
 

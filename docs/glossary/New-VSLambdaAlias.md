@@ -1,7 +1,7 @@
 ---
-external help file: Vaporshell-help.xml
-online version: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-lambda-alias.html
-schema: 2.0.0
+layout: pagenodesc
+title: New-VSLambdaAlias
+category: glossary
 ---
 
 # New-VSLambdaAlias
@@ -19,15 +19,6 @@ New-VSLambdaAlias [-LogicalId] <String> [-Description <Object>] -FunctionName <O
 
 ## DESCRIPTION
 Adds an AWS::Lambda::Alias resource to the template
-
-## EXAMPLES
-
-### Example 1
-```
-PS C:\> {{ Add example code here }}
-```
-
-{{ Add example description here }}
 
 ## PARAMETERS
 

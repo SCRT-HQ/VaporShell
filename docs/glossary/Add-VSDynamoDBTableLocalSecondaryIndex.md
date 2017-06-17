@@ -1,7 +1,7 @@
 ---
-external help file: Vaporshell-help.xml
-online version: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-dynamodb-lsi.html
-schema: 2.0.0
+layout: pagenodesc
+title: Add-VSDynamoDBTableLocalSecondaryIndex
+category: glossary
 ---
 
 # Add-VSDynamoDBTableLocalSecondaryIndex
@@ -17,15 +17,6 @@ Add-VSDynamoDBTableLocalSecondaryIndex [-IndexName] <Object> [-KeySchema] <Objec
 
 ## DESCRIPTION
 Adds an AWS::DynamoDB::Table.LocalSecondaryIndex resource property to the template
-
-## EXAMPLES
-
-### Example 1
-```
-PS C:\> {{ Add example code here }}
-```
-
-{{ Add example description here }}
 
 ## PARAMETERS
 

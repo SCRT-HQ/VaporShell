@@ -1,7 +1,7 @@
 ---
-external help file: Vaporshell-help.xml
-online version: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iot-lambda.html
-schema: 2.0.0
+layout: pagenodesc
+title: Add-VSIoTTopicRuleLambdaAction
+category: glossary
 ---
 
 # Add-VSIoTTopicRuleLambdaAction
@@ -17,15 +17,6 @@ Add-VSIoTTopicRuleLambdaAction [-FunctionArn] <Object>
 
 ## DESCRIPTION
 Adds an AWS::IoT::TopicRule.LambdaAction resource property to the template
-
-## EXAMPLES
-
-### Example 1
-```
-PS C:\> {{ Add example code here }}
-```
-
-{{ Add example description here }}
 
 ## PARAMETERS
 

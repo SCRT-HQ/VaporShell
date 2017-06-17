@@ -1,7 +1,7 @@
 ---
-external help file: Vaporshell-help.xml
-online version: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-gamelift-alias.html
-schema: 2.0.0
+layout: pagenodesc
+title: New-VSGameLiftAlias
+category: glossary
 ---
 
 # New-VSGameLiftAlias
@@ -19,15 +19,6 @@ New-VSGameLiftAlias [-LogicalId] <String> [-Description <Object>] -Name <Object>
 
 ## DESCRIPTION
 Adds an AWS::GameLift::Alias resource to the template
-
-## EXAMPLES
-
-### Example 1
-```
-PS C:\> {{ Add example code here }}
-```
-
-{{ Add example description here }}
 
 ## PARAMETERS
 

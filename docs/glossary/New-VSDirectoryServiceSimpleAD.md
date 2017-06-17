@@ -1,7 +1,7 @@
 ---
-external help file: Vaporshell-help.xml
-online version: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-directoryservice-simplead.html
-schema: 2.0.0
+layout: pagenodesc
+title: New-VSDirectoryServiceSimpleAD
+category: glossary
 ---
 
 # New-VSDirectoryServiceSimpleAD
@@ -20,15 +20,6 @@ New-VSDirectoryServiceSimpleAD [-LogicalId] <String> [-CreateAlias <Boolean>] [-
 
 ## DESCRIPTION
 Adds an AWS::DirectoryService::SimpleAD resource to the template
-
-## EXAMPLES
-
-### Example 1
-```
-PS C:\> {{ Add example code here }}
-```
-
-{{ Add example description here }}
 
 ## PARAMETERS
 

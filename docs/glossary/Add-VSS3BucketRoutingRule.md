@@ -1,7 +1,7 @@
 ---
-external help file: Vaporshell-help.xml
-online version: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-s3-websiteconfiguration-routingrules.html
-schema: 2.0.0
+layout: pagenodesc
+title: Add-VSS3BucketRoutingRule
+category: glossary
 ---
 
 # Add-VSS3BucketRoutingRule
@@ -17,15 +17,6 @@ Add-VSS3BucketRoutingRule [-RedirectRule] <Object> [[-RoutingRuleCondition] <Obj
 
 ## DESCRIPTION
 Adds an AWS::S3::Bucket.RoutingRule resource property to the template
-
-## EXAMPLES
-
-### Example 1
-```
-PS C:\> {{ Add example code here }}
-```
-
-{{ Add example description here }}
 
 ## PARAMETERS
 

@@ -1,7 +1,7 @@
 ---
-external help file: Vaporshell-help.xml
-online version: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-elasticsearch-domain-elasticsearchclusterconfig.html
-schema: 2.0.0
+layout: pagenodesc
+title: Add-VSElasticsearchDomainElasticsearchClusterConfig
+category: glossary
 ---
 
 # Add-VSElasticsearchDomainElasticsearchClusterConfig
@@ -19,15 +19,6 @@ Add-VSElasticsearchDomainElasticsearchClusterConfig [[-DedicatedMasterCount] <In
 
 ## DESCRIPTION
 Adds an AWS::Elasticsearch::Domain.ElasticsearchClusterConfig resource property to the template
-
-## EXAMPLES
-
-### Example 1
-```
-PS C:\> {{ Add example code here }}
-```
-
-{{ Add example description here }}
 
 ## PARAMETERS
 

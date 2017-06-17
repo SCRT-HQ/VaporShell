@@ -1,7 +1,7 @@
 ---
-external help file: Vaporshell-help.xml
-online version: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iot-s3.html
-schema: 2.0.0
+layout: pagenodesc
+title: Add-VSIoTTopicRuleS3Action
+category: glossary
 ---
 
 # Add-VSIoTTopicRuleS3Action
@@ -17,15 +17,6 @@ Add-VSIoTTopicRuleS3Action [-BucketName] <Object> [-Key] <Object> [-RoleArn] <Ob
 
 ## DESCRIPTION
 Adds an AWS::IoT::TopicRule.S3Action resource property to the template
-
-## EXAMPLES
-
-### Example 1
-```
-PS C:\> {{ Add example code here }}
-```
-
-{{ Add example description here }}
 
 ## PARAMETERS
 

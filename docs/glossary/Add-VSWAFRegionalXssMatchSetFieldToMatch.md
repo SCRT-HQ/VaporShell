@@ -1,7 +1,7 @@
 ---
-external help file: Vaporshell-help.xml
-online version: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-wafregional-xssmatchset-fieldtomatch.html
-schema: 2.0.0
+layout: pagenodesc
+title: Add-VSWAFRegionalXssMatchSetFieldToMatch
+category: glossary
 ---
 
 # Add-VSWAFRegionalXssMatchSetFieldToMatch
@@ -17,15 +17,6 @@ Add-VSWAFRegionalXssMatchSetFieldToMatch [-Type] <Object> [[-Data] <Object>]
 
 ## DESCRIPTION
 Adds an AWS::WAFRegional::XssMatchSet.FieldToMatch resource property to the template
-
-## EXAMPLES
-
-### Example 1
-```
-PS C:\> {{ Add example code here }}
-```
-
-{{ Add example description here }}
 
 ## PARAMETERS
 

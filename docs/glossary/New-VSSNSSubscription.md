@@ -1,7 +1,7 @@
 ---
-external help file: Vaporshell-help.xml
-online version: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-sns-subscription.html
-schema: 2.0.0
+layout: pagenodesc
+title: New-VSSNSSubscription
+category: glossary
 ---
 
 # New-VSSNSSubscription
@@ -19,15 +19,6 @@ New-VSSNSSubscription [-LogicalId] <String> [-Endpoint <Object>] [-Protocol <Obj
 
 ## DESCRIPTION
 Adds an AWS::SNS::Subscription resource to the template
-
-## EXAMPLES
-
-### Example 1
-```
-PS C:\> {{ Add example code here }}
-```
-
-{{ Add example description here }}
 
 ## PARAMETERS
 

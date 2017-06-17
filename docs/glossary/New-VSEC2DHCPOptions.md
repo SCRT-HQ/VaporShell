@@ -1,7 +1,7 @@
 ---
-external help file: Vaporshell-help.xml
-online version: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ec2-dhcp-options.html
-schema: 2.0.0
+layout: pagenodesc
+title: New-VSEC2DHCPOptions
+category: glossary
 ---
 
 # New-VSEC2DHCPOptions
@@ -20,15 +20,6 @@ New-VSEC2DHCPOptions [-LogicalId] <String> [-DomainName <Object>] [-DomainNameSe
 
 ## DESCRIPTION
 Adds an AWS::EC2::DHCPOptions resource to the template
-
-## EXAMPLES
-
-### Example 1
-```
-PS C:\> {{ Add example code here }}
-```
-
-{{ Add example description here }}
 
 ## PARAMETERS
 

@@ -1,7 +1,7 @@
 ---
-external help file: Vaporshell-help.xml
-online version: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-waf-xssmatchset-xssmatchtuple.html
-schema: 2.0.0
+layout: pagenodesc
+title: Import-Vaporshell
+category: glossary
 ---
 
 # Import-Vaporshell
@@ -17,13 +17,6 @@ Import-Vaporshell [-Path] <String>
 
 ## DESCRIPTION
 Allows you to import an existing CloudFormation template as a starting point.
-
-## EXAMPLES
-
-### -------------------------- EXAMPLE 1 --------------------------
-```
-$Template = Import-Vaporshell -Path "C:\CloudFormation\Templates\S3Bucket.json"
-```
 
 ## PARAMETERS
 

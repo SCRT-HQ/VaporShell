@@ -1,7 +1,7 @@
 ---
-external help file: Vaporshell-help.xml
-online version: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ec2-vpn-connection.html
-schema: 2.0.0
+layout: pagenodesc
+title: New-VSEC2VPNConnection
+category: glossary
 ---
 
 # New-VSEC2VPNConnection
@@ -19,15 +19,6 @@ New-VSEC2VPNConnection [-LogicalId] <String> -CustomerGatewayId <Object> [-Stati
 
 ## DESCRIPTION
 Adds an AWS::EC2::VPNConnection resource to the template
-
-## EXAMPLES
-
-### Example 1
-```
-PS C:\> {{ Add example code here }}
-```
-
-{{ Add example description here }}
 
 ## PARAMETERS
 

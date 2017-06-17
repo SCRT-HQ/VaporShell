@@ -1,7 +1,7 @@
 ---
-external help file: Vaporshell-help.xml
-online version: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-opsworks-instance-ebsblockdevice.html
-schema: 2.0.0
+layout: pagenodesc
+title: Add-VSOpsWorksInstanceEbsBlockDevice
+category: glossary
 ---
 
 # Add-VSOpsWorksInstanceEbsBlockDevice
@@ -18,15 +18,6 @@ Add-VSOpsWorksInstanceEbsBlockDevice [[-DeleteOnTermination] <Boolean>] [[-Iops]
 
 ## DESCRIPTION
 Adds an AWS::OpsWorks::Instance.EbsBlockDevice resource property to the template
-
-## EXAMPLES
-
-### Example 1
-```
-PS C:\> {{ Add example code here }}
-```
-
-{{ Add example description here }}
 
 ## PARAMETERS
 

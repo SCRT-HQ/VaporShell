@@ -1,7 +1,7 @@
 ---
-external help file: Vaporshell-help.xml
-online version: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-waf-sqlinjectionmatchset.html
-schema: 2.0.0
+layout: pagenodesc
+title: New-VSWAFSqlInjectionMatchSet
+category: glossary
 ---
 
 # New-VSWAFSqlInjectionMatchSet
@@ -19,15 +19,6 @@ New-VSWAFSqlInjectionMatchSet [-LogicalId] <String> -Name <Object> [-SqlInjectio
 
 ## DESCRIPTION
 Adds an AWS::WAF::SqlInjectionMatchSet resource to the template
-
-## EXAMPLES
-
-### Example 1
-```
-PS C:\> {{ Add example code here }}
-```
-
-{{ Add example description here }}
 
 ## PARAMETERS
 

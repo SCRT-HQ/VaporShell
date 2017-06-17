@@ -1,7 +1,7 @@
 ---
-external help file: Vaporshell-help.xml
-online version: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ec2-vpn-connection-route.html
-schema: 2.0.0
+layout: pagenodesc
+title: New-VSEC2VPNConnectionRoute
+category: glossary
 ---
 
 # New-VSEC2VPNConnectionRoute
@@ -19,15 +19,6 @@ New-VSEC2VPNConnectionRoute [-LogicalId] <String> -DestinationCidrBlock <Object>
 
 ## DESCRIPTION
 Adds an AWS::EC2::VPNConnectionRoute resource to the template
-
-## EXAMPLES
-
-### Example 1
-```
-PS C:\> {{ Add example code here }}
-```
-
-{{ Add example description here }}
 
 ## PARAMETERS
 

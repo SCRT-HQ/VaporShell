@@ -1,7 +1,7 @@
 ---
-external help file: Vaporshell-help.xml
-online version: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-route53-hostedzone.html
-schema: 2.0.0
+layout: pagenodesc
+title: New-VSRoute53HostedZone
+category: glossary
 ---
 
 # New-VSRoute53HostedZone
@@ -19,15 +19,6 @@ New-VSRoute53HostedZone [-LogicalId] <String> [-HostedZoneConfig <Object>] [-Hos
 
 ## DESCRIPTION
 Adds an AWS::Route53::HostedZone resource to the template
-
-## EXAMPLES
-
-### Example 1
-```
-PS C:\> {{ Add example code here }}
-```
-
-{{ Add example description here }}
 
 ## PARAMETERS
 

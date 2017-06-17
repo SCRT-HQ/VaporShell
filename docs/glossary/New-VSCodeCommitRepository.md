@@ -1,7 +1,7 @@
 ---
-external help file: Vaporshell-help.xml
-online version: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-codecommit-repository.html
-schema: 2.0.0
+layout: pagenodesc
+title: New-VSCodeCommitRepository
+category: glossary
 ---
 
 # New-VSCodeCommitRepository
@@ -19,15 +19,6 @@ New-VSCodeCommitRepository [-LogicalId] <String> -RepositoryName <Object> [-Trig
 
 ## DESCRIPTION
 Adds an AWS::CodeCommit::Repository resource to the template
-
-## EXAMPLES
-
-### Example 1
-```
-PS C:\> {{ Add example code here }}
-```
-
-{{ Add example description here }}
 
 ## PARAMETERS
 

@@ -1,7 +1,7 @@
 ---
-external help file: Vaporshell-help.xml
-online version: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-elb-connectiondrainingpolicy.html
-schema: 2.0.0
+layout: pagenodesc
+title: Add-VSElasticLoadBalancingLoadBalancerConnectionDrainingPolicy
+category: glossary
 ---
 
 # Add-VSElasticLoadBalancingLoadBalancerConnectionDrainingPolicy
@@ -17,15 +17,6 @@ Add-VSElasticLoadBalancingLoadBalancerConnectionDrainingPolicy [-Enabled] <Boole
 
 ## DESCRIPTION
 Adds an AWS::ElasticLoadBalancing::LoadBalancer.ConnectionDrainingPolicy resource property to the template
-
-## EXAMPLES
-
-### Example 1
-```
-PS C:\> {{ Add example code here }}
-```
-
-{{ Add example description here }}
 
 ## PARAMETERS
 

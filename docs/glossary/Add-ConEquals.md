@@ -1,7 +1,7 @@
 ---
-external help file: Vaporshell-help.xml
-online version: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/intrinsic-function-reference-conditions.html#intrinsic-function-reference-conditions-equals
-schema: 2.0.0
+layout: pagenodesc
+title: Add-ConEquals
+category: glossary
 ---
 
 # Add-ConEquals
@@ -18,22 +18,6 @@ Add-ConEquals [-FirstValue] <Object> [-SecondValue] <Object>
 ## DESCRIPTION
 Compares if two values are equal.
 Returns true if the two values are equal or false if they aren't.
-
-## EXAMPLES
-
-### -------------------------- EXAMPLE 1 --------------------------
-```
-Add-ConEquals -FirstValue "sg-mysggroup" -SecondValue (Add-FnRef -Ref "ASecurityGroup")
-```
-
-When the template is exported, this will convert to: {"Fn::Equals":\["sg-mysggroup",{"Ref":"ASecurityGroup"}\]}
-
-### -------------------------- EXAMPLE 2 --------------------------
-```
-Add-ConEquals -FirstValue (Add-FnRef -Ref "EnvironmentType") -SecondValue "prod"
-```
-
-When the template is exported, this will convert to: {"Fn::Equals":\[{"Ref":"EnvironmentType"},"prod"\]}
 
 ## PARAMETERS
 

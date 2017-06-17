@@ -1,7 +1,7 @@
 ---
-external help file: Vaporshell-help.xml
-online version: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-apigateway-usageplan-apistage.html
-schema: 2.0.0
+layout: pagenodesc
+title: Add-VSApiGatewayUsagePlanApiStage
+category: glossary
 ---
 
 # Add-VSApiGatewayUsagePlanApiStage
@@ -17,15 +17,6 @@ Add-VSApiGatewayUsagePlanApiStage [[-ApiId] <Object>] [[-Stage] <Object>]
 
 ## DESCRIPTION
 Adds an AWS::ApiGateway::UsagePlan.ApiStage resource property to the template
-
-## EXAMPLES
-
-### Example 1
-```
-PS C:\> {{ Add example code here }}
-```
-
-{{ Add example description here }}
 
 ## PARAMETERS
 

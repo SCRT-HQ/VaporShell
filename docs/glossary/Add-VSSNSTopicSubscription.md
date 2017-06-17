@@ -1,7 +1,7 @@
 ---
-external help file: Vaporshell-help.xml
-online version: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-sns-subscription.html
-schema: 2.0.0
+layout: pagenodesc
+title: Add-VSSNSTopicSubscription
+category: glossary
 ---
 
 # Add-VSSNSTopicSubscription
@@ -17,15 +17,6 @@ Add-VSSNSTopicSubscription [-Endpoint] <Object> [-Protocol] <Object>
 
 ## DESCRIPTION
 Adds an AWS::SNS::Topic.Subscription resource property to the template
-
-## EXAMPLES
-
-### Example 1
-```
-PS C:\> {{ Add example code here }}
-```
-
-{{ Add example description here }}
 
 ## PARAMETERS
 

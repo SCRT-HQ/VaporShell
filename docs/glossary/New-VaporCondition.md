@@ -1,7 +1,7 @@
 ---
-external help file: Vaporshell-help.xml
-online version: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/conditions-section-structure.html
-schema: 2.0.0
+layout: pagenodesc
+title: New-VaporCondition
+category: glossary
 ---
 
 # New-VaporCondition
@@ -54,33 +54,6 @@ AWS CloudFormation creates entities that are associated with a true condition an
 Use the Condition key and a condition's logical ID to associate it with a resource or output.
 To conditionally specify a property, use the Fn::If function.
 For more information, see Condition Functions.
-
-## EXAMPLES
-
-### -------------------------- EXAMPLE 1 --------------------------
-```
-$template = Initialize-Vaporshell -Description "Testing Condition addition"
-```
-
-$template.AddResource((
-    New-VaporCondition -LogicalId "CreateProdResources" -Condition (Add-ConEquals -FirstValue (Add-FnRef -Ref "EnvType") -SecondValue "prod")
-))
-
-When the template is exported, this will convert to: 
-    {
-        "AWSTemplateFormatVersion":  "2010-09-09",
-        "Description":  "Testing Condition addition",
-        "Conditions":  {
-            "CreateProdResources":  {
-                "Fn::Equals":  \[
-                    {
-                        "Ref":  "EnvType"
-                    },
-                    "prod"
-                \]
-            }
-        }
-    }
 
 ## PARAMETERS
 

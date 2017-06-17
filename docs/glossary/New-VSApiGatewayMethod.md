@@ -1,7 +1,7 @@
 ---
-external help file: Vaporshell-help.xml
-online version: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-apigateway-method.html
-schema: 2.0.0
+layout: pagenodesc
+title: New-VSApiGatewayMethod
+category: glossary
 ---
 
 # New-VSApiGatewayMethod
@@ -21,15 +21,6 @@ New-VSApiGatewayMethod [-LogicalId] <String> [-ApiKeyRequired <Boolean>] [-Autho
 
 ## DESCRIPTION
 Adds an AWS::ApiGateway::Method resource to the template
-
-## EXAMPLES
-
-### Example 1
-```
-PS C:\> {{ Add example code here }}
-```
-
-{{ Add example description here }}
 
 ## PARAMETERS
 

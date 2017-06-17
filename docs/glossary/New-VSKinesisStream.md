@@ -1,7 +1,7 @@
 ---
-external help file: Vaporshell-help.xml
-online version: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-kinesis-stream.html
-schema: 2.0.0
+layout: pagenodesc
+title: New-VSKinesisStream
+category: glossary
 ---
 
 # New-VSKinesisStream
@@ -19,15 +19,6 @@ New-VSKinesisStream [-LogicalId] <String> [-Name <Object>] -ShardCount <Int32> [
 
 ## DESCRIPTION
 Adds an AWS::Kinesis::Stream resource to the template
-
-## EXAMPLES
-
-### Example 1
-```
-PS C:\> {{ Add example code here }}
-```
-
-{{ Add example description here }}
 
 ## PARAMETERS
 

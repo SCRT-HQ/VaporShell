@@ -1,7 +1,7 @@
 ---
-external help file: Vaporshell-help.xml
-online version: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-s3-bucket-notificationconfig-lambdaconfig.html
-schema: 2.0.0
+layout: pagenodesc
+title: Add-VSS3BucketLambdaConfiguration
+category: glossary
 ---
 
 # Add-VSS3BucketLambdaConfiguration
@@ -17,15 +17,6 @@ Add-VSS3BucketLambdaConfiguration [-Event] <Object> [[-Filter] <Object>] [-Funct
 
 ## DESCRIPTION
 Adds an AWS::S3::Bucket.LambdaConfiguration resource property to the template
-
-## EXAMPLES
-
-### Example 1
-```
-PS C:\> {{ Add example code here }}
-```
-
-{{ Add example description here }}
 
 ## PARAMETERS
 

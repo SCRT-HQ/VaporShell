@@ -1,7 +1,7 @@
 ---
-external help file: Vaporshell-help.xml
-online version: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-cloudfront-forwardedvalues.html
-schema: 2.0.0
+layout: pagenodesc
+title: Add-VSCloudFrontDistributionForwardedValues
+category: glossary
 ---
 
 # Add-VSCloudFrontDistributionForwardedValues
@@ -18,15 +18,6 @@ Add-VSCloudFrontDistributionForwardedValues [[-Cookies] <Object>] [[-Headers] <O
 
 ## DESCRIPTION
 Adds an AWS::CloudFront::Distribution.ForwardedValues resource property to the template
-
-## EXAMPLES
-
-### Example 1
-```
-PS C:\> {{ Add example code here }}
-```
-
-{{ Add example description here }}
 
 ## PARAMETERS
 

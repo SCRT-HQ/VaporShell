@@ -1,7 +1,7 @@
 ---
-external help file: Vaporshell-help.xml
-online version: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-apigateway-resource.html
-schema: 2.0.0
+layout: pagenodesc
+title: New-VSApiGatewayResource
+category: glossary
 ---
 
 # New-VSApiGatewayResource
@@ -19,15 +19,6 @@ New-VSApiGatewayResource [-LogicalId] <String> -ParentId <Object> -PathPart <Obj
 
 ## DESCRIPTION
 Adds an AWS::ApiGateway::Resource resource to the template
-
-## EXAMPLES
-
-### Example 1
-```
-PS C:\> {{ Add example code here }}
-```
-
-{{ Add example description here }}
 
 ## PARAMETERS
 

@@ -1,7 +1,7 @@
 ---
-external help file: Vaporshell-help.xml
-online version: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/intrinsic-function-reference-findinmap.html
-schema: 2.0.0
+layout: pagenodesc
+title: Add-FnFindInMap
+category: glossary
 ---
 
 # Add-FnFindInMap
@@ -17,15 +17,6 @@ Add-FnFindInMap [-MapName] <Object> [-TopLevelKey] <Object> [-SecondLevelKey] <O
 
 ## DESCRIPTION
 The intrinsic function Fn::FindInMap returns the value corresponding to keys in a two-level map that is declared in the Mappings section.
-
-## EXAMPLES
-
-### -------------------------- EXAMPLE 1 --------------------------
-```
-Add-FnFindInMap -MapName "RegionMap" -TopLevelKey (Add-FnRef -Ref "$_AWSRegion") -SecondLevelKey "32"
-```
-
-When the template is exported, this will convert to: {"Fn::FindInMap":\["RegionMap",{"Ref":"AWS::Region"},"32"\]}
 
 ## PARAMETERS
 

@@ -1,7 +1,7 @@
 ---
-external help file: Vaporshell-help.xml
-online version: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-workspaces-workspace.html
-schema: 2.0.0
+layout: pagenodesc
+title: New-VSWorkSpacesWorkspace
+category: glossary
 ---
 
 # New-VSWorkSpacesWorkspace
@@ -20,15 +20,6 @@ New-VSWorkSpacesWorkspace [-LogicalId] <String> -BundleId <Object> -DirectoryId 
 
 ## DESCRIPTION
 Adds an AWS::WorkSpaces::Workspace resource to the template
-
-## EXAMPLES
-
-### Example 1
-```
-PS C:\> {{ Add example code here }}
-```
-
-{{ Add example description here }}
 
 ## PARAMETERS
 

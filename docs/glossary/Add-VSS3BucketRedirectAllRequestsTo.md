@@ -1,7 +1,7 @@
 ---
-external help file: Vaporshell-help.xml
-online version: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-s3-websiteconfiguration-redirectallrequeststo.html
-schema: 2.0.0
+layout: pagenodesc
+title: Add-VSS3BucketRedirectAllRequestsTo
+category: glossary
 ---
 
 # Add-VSS3BucketRedirectAllRequestsTo
@@ -17,15 +17,6 @@ Add-VSS3BucketRedirectAllRequestsTo [-HostName] <Object> [[-Protocol] <Object>]
 
 ## DESCRIPTION
 Adds an AWS::S3::Bucket.RedirectAllRequestsTo resource property to the template
-
-## EXAMPLES
-
-### Example 1
-```
-PS C:\> {{ Add example code here }}
-```
-
-{{ Add example description here }}
 
 ## PARAMETERS
 

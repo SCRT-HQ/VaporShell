@@ -1,7 +1,7 @@
 ---
-external help file: Vaporshell-help.xml
-online version: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-elasticmapreduce-cluster-cloudwatchalarmdefinition.html
-schema: 2.0.0
+layout: pagenodesc
+title: Add-VSEMRClusterCloudWatchAlarmDefinition
+category: glossary
 ---
 
 # Add-VSEMRClusterCloudWatchAlarmDefinition
@@ -19,15 +19,6 @@ Add-VSEMRClusterCloudWatchAlarmDefinition [-ComparisonOperator] <Object> [[-Dime
 
 ## DESCRIPTION
 Adds an AWS::EMR::Cluster.CloudWatchAlarmDefinition resource property to the template
-
-## EXAMPLES
-
-### Example 1
-```
-PS C:\> {{ Add example code here }}
-```
-
-{{ Add example description here }}
 
 ## PARAMETERS
 

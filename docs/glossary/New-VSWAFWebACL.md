@@ -1,7 +1,7 @@
 ---
-external help file: Vaporshell-help.xml
-online version: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-waf-webacl.html
-schema: 2.0.0
+layout: pagenodesc
+title: New-VSWAFWebACL
+category: glossary
 ---
 
 # New-VSWAFWebACL
@@ -19,15 +19,6 @@ New-VSWAFWebACL [-LogicalId] <String> -DefaultAction <Object> -MetricName <Objec
 
 ## DESCRIPTION
 Adds an AWS::WAF::WebACL resource to the template
-
-## EXAMPLES
-
-### Example 1
-```
-PS C:\> {{ Add example code here }}
-```
-
-{{ Add example description here }}
 
 ## PARAMETERS
 

@@ -1,7 +1,7 @@
 ---
-external help file: Vaporshell-help.xml
-online version: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/intrinsic-function-reference-conditions.html#intrinsic-function-reference-conditions-not
-schema: 2.0.0
+layout: pagenodesc
+title: Add-ConNot
+category: glossary
 ---
 
 # Add-ConNot
@@ -18,15 +18,6 @@ Add-ConNot [-Condition] <Object>
 ## DESCRIPTION
 Returns true for a condition that evaluates to false or returns false for a condition that evaluates to true.
 Fn::Not acts as a NOT operator.
-
-## EXAMPLES
-
-### -------------------------- EXAMPLE 1 --------------------------
-```
-Add-ConNot -Condition (Add-ConEquals -FirstValue (Add-FnRef -Ref "EnvironmentType") -SecondValue "prod")
-```
-
-When the template is exported, this will convert to: {"Fn::Equals":\["sg-mysggroup",{"Ref":"ASecurityGroup"}\]}
 
 ## PARAMETERS
 

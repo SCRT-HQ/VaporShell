@@ -1,7 +1,7 @@
 ---
-external help file: Vaporshell-help.xml
-online version: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-elasticsearch-domain-ebsoptions.html
-schema: 2.0.0
+layout: pagenodesc
+title: Add-VSElasticsearchDomainEBSOptions
+category: glossary
 ---
 
 # Add-VSElasticsearchDomainEBSOptions
@@ -18,15 +18,6 @@ Add-VSElasticsearchDomainEBSOptions [[-EBSEnabled] <Boolean>] [[-Iops] <Int32>] 
 
 ## DESCRIPTION
 Adds an AWS::Elasticsearch::Domain.EBSOptions resource property to the template
-
-## EXAMPLES
-
-### Example 1
-```
-PS C:\> {{ Add example code here }}
-```
-
-{{ Add example description here }}
 
 ## PARAMETERS
 

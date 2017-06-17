@@ -1,7 +1,7 @@
 ---
-external help file: Vaporshell-help.xml
-online version: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-opsworks-stack-elasticip.html
-schema: 2.0.0
+layout: pagenodesc
+title: Add-VSOpsWorksStackElasticIp
+category: glossary
 ---
 
 # Add-VSOpsWorksStackElasticIp
@@ -17,15 +17,6 @@ Add-VSOpsWorksStackElasticIp [-Ip] <Object> [[-Name] <Object>]
 
 ## DESCRIPTION
 Adds an AWS::OpsWorks::Stack.ElasticIp resource property to the template
-
-## EXAMPLES
-
-### Example 1
-```
-PS C:\> {{ Add example code here }}
-```
-
-{{ Add example description here }}
 
 ## PARAMETERS
 

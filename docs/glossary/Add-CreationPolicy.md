@@ -1,7 +1,7 @@
 ---
-external help file: Vaporshell-help.xml
-online version: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-attribute-creationpolicy.html
-schema: 2.0.0
+layout: pagenodesc
+title: Add-CreationPolicy
+category: glossary
 ---
 
 # Add-CreationPolicy
@@ -46,66 +46,6 @@ Currently, the only AWS CloudFormation resources that support creation policies 
 Use the CreationPolicy attribute when you want to wait on resource configuration actions before stack creation proceeds.
 For example, if you install and configure software applications on an EC2 instance, you might want those applications to be running before proceeding.
 In such cases, you can add a CreationPolicy attribute to the instance, and then send a success signal to the instance after the applications are installed and configured.
-
-## EXAMPLES
-
-### -------------------------- EXAMPLE 1 --------------------------
-```
-$templateInit = Initialize-Vaporshell -Description "Testing"
-```
-
-$templateInit.AddResource(
-    (
-        New-VaporResource -LogicalId "AutoScalingGroup" -Type "AWS::AutoScaling::AutoScalingGroup" -Properties (\[PSCustomObject\]\[Ordered\]@{
-                "AvailabilityZones"       = (Add-FnGetAZs -Region "$_AWSRegion")
-                "LaunchConfigurationName" = (Add-FnRef -Ref "LaunchConfig")
-                "DesiredCapacity"         = "3"
-                "MinSize"                 = "1"
-                "MaxSize"                 = "4"
-            }) -CreationPolicy (Add-CreationPolicy -Count 3 -Timeout "PT15M") -UpdatePolicy (Add-UpdatePolicy -IgnoreUnmodifiedGroupSizeProperties True -MinInstancesInService 1 -MaxBatchSize 2 -WaitOnResourceSignals True -PauseTime "PT10M")
-    )
-)
-
-When the template is exported, this will convert to: 
-\`\`\`json
-{
-"AWSTemplateFormatVersion": "2010-09-09",
-"Description": "Testing",
-"Resources": {
-"AutoScalingGroup": {
-    "Type": "AWS::AutoScaling::AutoScalingGroup",
-    "Properties": {
-        "AvailabilityZones": {
-            "Fn::GetAZs": "AWS::Region"
-        },
-        "LaunchConfigurationName": {
-            "Ref": "LaunchConfig"
-        },
-        "DesiredCapacity": "3",
-        "MinSize": "1",
-        "MaxSize": "4"
-    },
-    "CreationPolicy": {
-        "ResourceSignal": {
-            "Count": "3",
-            "Timeout": "PT15M"
-        }
-    },
-    "UpdatePolicy": {
-        "AutoScalingScheduledAction": {
-            "IgnoreUnmodifiedGroupSizeProperties": "true"
-        },
-        "AutoScalingRollingUpdate": {
-            "MinInstancesInService": "1",
-            "MaxBatchSize": "2",
-            "WaitOnResourceSignals": "true",
-            "PauseTime": "PT10M"
-        }
-    }
-}
-}
-}
-\`\`\`
 
 ## PARAMETERS
 

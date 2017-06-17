@@ -1,7 +1,7 @@
 ---
-external help file: Vaporshell-help.xml
-online version: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-wafregional-xssmatchset-xssmatchtuple.html
-schema: 2.0.0
+layout: pagenodesc
+title: Add-VSWAFRegionalXssMatchSetXssMatchTuple
+category: glossary
 ---
 
 # Add-VSWAFRegionalXssMatchSetXssMatchTuple
@@ -17,15 +17,6 @@ Add-VSWAFRegionalXssMatchSetXssMatchTuple [-TextTransformation] <Object> [-Field
 
 ## DESCRIPTION
 Adds an AWS::WAFRegional::XssMatchSet.XssMatchTuple resource property to the template
-
-## EXAMPLES
-
-### Example 1
-```
-PS C:\> {{ Add example code here }}
-```
-
-{{ Add example description here }}
 
 ## PARAMETERS
 

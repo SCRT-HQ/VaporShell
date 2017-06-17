@@ -1,7 +1,7 @@
 ---
-external help file: Vaporshell-help.xml
-online version: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-codepipeline-pipeline-disableinboundstagetransitions.html
-schema: 2.0.0
+layout: pagenodesc
+title: Add-VSCodePipelinePipelineStageTransition
+category: glossary
 ---
 
 # Add-VSCodePipelinePipelineStageTransition
@@ -17,15 +17,6 @@ Add-VSCodePipelinePipelineStageTransition [-Reason] <Object> [-StageName] <Objec
 
 ## DESCRIPTION
 Adds an AWS::CodePipeline::Pipeline.StageTransition resource property to the template
-
-## EXAMPLES
-
-### Example 1
-```
-PS C:\> {{ Add example code here }}
-```
-
-{{ Add example description here }}
 
 ## PARAMETERS
 

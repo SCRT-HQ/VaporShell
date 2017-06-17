@@ -1,7 +1,7 @@
 ---
-external help file: Vaporshell-help.xml
-online version: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/create-reusable-transform-function-snippets-and-add-to-your-template-with-aws-include-transform.html
-schema: 2.0.0
+layout: pagenodesc
+title: Add-Include
+category: glossary
 ---
 
 # Add-Include
@@ -24,16 +24,6 @@ You might have a Lambda function that you want to reuse in one or more AWS Cloud
 The AWS::Include transform lets you create a reference to a transform snippet in an Amazon S3 bucket.
 You can add AWS::Include to the Transform function in your AWS CloudFormation template.
 The AWS::Include function behaves similarly to an include, copy, or import directive in programming languages.
-
-## EXAMPLES
-
-### -------------------------- EXAMPLE 1 --------------------------
-```
-Add-Include -Location "s3://MyAmazonS3BucketName/single_wait_condition.yaml"
-```
-
-When the template is exported, this will convert to: {"Fn::Transform":{"Name":"AWS::Include","Parameters":{"Location":"s3://MyAmazonS3BucketName/single_wait_condition.yaml"}}}
-# If used at the top level, the Logical ID will be 'Transform' instead of 'Fn::Transform'.
 
 ## PARAMETERS
 

@@ -1,7 +1,7 @@
 ---
-external help file: Vaporshell-help.xml
-online version: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-as-launchconfig.html
-schema: 2.0.0
+layout: pagenodesc
+title: New-VSAutoScalingLaunchConfiguration
+category: glossary
 ---
 
 # New-VSAutoScalingLaunchConfiguration
@@ -23,15 +23,6 @@ New-VSAutoScalingLaunchConfiguration [-LogicalId] <String> [-AssociatePublicIpAd
 
 ## DESCRIPTION
 Adds an AWS::AutoScaling::LaunchConfiguration resource to the template
-
-## EXAMPLES
-
-### Example 1
-```
-PS C:\> {{ Add example code here }}
-```
-
-{{ Add example description here }}
 
 ## PARAMETERS
 

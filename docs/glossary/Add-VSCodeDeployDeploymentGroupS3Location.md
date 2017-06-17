@@ -1,7 +1,7 @@
 ---
-external help file: Vaporshell-help.xml
-online version: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-codedeploy-deploymentgroup-deployment-revision-s3location.html
-schema: 2.0.0
+layout: pagenodesc
+title: Add-VSCodeDeployDeploymentGroupS3Location
+category: glossary
 ---
 
 # Add-VSCodeDeployDeploymentGroupS3Location
@@ -18,15 +18,6 @@ Add-VSCodeDeployDeploymentGroupS3Location [-Bucket] <Object> [[-BundleType] <Obj
 
 ## DESCRIPTION
 Adds an AWS::CodeDeploy::DeploymentGroup.S3Location resource property to the template
-
-## EXAMPLES
-
-### Example 1
-```
-PS C:\> {{ Add example code here }}
-```
-
-{{ Add example description here }}
 
 ## PARAMETERS
 

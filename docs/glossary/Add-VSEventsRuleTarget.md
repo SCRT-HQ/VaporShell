@@ -1,7 +1,7 @@
 ---
-external help file: Vaporshell-help.xml
-online version: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-events-rule-target.html
-schema: 2.0.0
+layout: pagenodesc
+title: Add-VSEventsRuleTarget
+category: glossary
 ---
 
 # Add-VSEventsRuleTarget
@@ -18,15 +18,6 @@ Add-VSEventsRuleTarget [-Arn] <Object> [-Id] <Object> [[-Input] <Object>] [[-Inp
 
 ## DESCRIPTION
 Adds an AWS::Events::Rule.Target resource property to the template
-
-## EXAMPLES
-
-### Example 1
-```
-PS C:\> {{ Add example code here }}
-```
-
-{{ Add example description here }}
 
 ## PARAMETERS
 

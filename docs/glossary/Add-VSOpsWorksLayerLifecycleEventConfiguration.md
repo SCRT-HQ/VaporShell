@@ -1,7 +1,7 @@
 ---
-external help file: Vaporshell-help.xml
-online version: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-opsworks-layer-lifecycleeventconfiguration.html
-schema: 2.0.0
+layout: pagenodesc
+title: Add-VSOpsWorksLayerLifecycleEventConfiguration
+category: glossary
 ---
 
 # Add-VSOpsWorksLayerLifecycleEventConfiguration
@@ -17,15 +17,6 @@ Add-VSOpsWorksLayerLifecycleEventConfiguration [[-ShutdownEventConfiguration] <O
 
 ## DESCRIPTION
 Adds an AWS::OpsWorks::Layer.LifecycleEventConfiguration resource property to the template
-
-## EXAMPLES
-
-### Example 1
-```
-PS C:\> {{ Add example code here }}
-```
-
-{{ Add example description here }}
 
 ## PARAMETERS
 

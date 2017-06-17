@@ -1,7 +1,7 @@
 ---
-external help file: Vaporshell-help.xml
-online version: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/intrinsic-function-reference-split.html
-schema: 2.0.0
+layout: pagenodesc
+title: Add-FnSplit
+category: glossary
 ---
 
 # Add-FnSplit
@@ -22,15 +22,6 @@ After you split a string, use the Fn::Select function to pick a specific element
 
 For example, if a comma-delimited string of subnet IDs is imported to your stack template, you can split the string at each comma.
 From the list of subnet IDs, use the Fn::Select intrinsic function to specify a subnet ID for a resource.
-
-## EXAMPLES
-
-### -------------------------- EXAMPLE 1 --------------------------
-```
-Add-FnSplit -Delimiter "," -SourceString (Add-FnImportValue -ValueToImport "AccountSubnetIds")
-```
-
-When the template is exported, this will convert to: {"Fn::Split":\[",",{"Fn::ImportValue":"AccountSubnetIds"}\]}
 
 ## PARAMETERS
 

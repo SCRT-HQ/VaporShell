@@ -1,7 +1,7 @@
 ---
-external help file: Vaporshell-help.xml
-online version: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-rds-optiongroup.html
-schema: 2.0.0
+layout: pagenodesc
+title: New-VSRDSOptionGroup
+category: glossary
 ---
 
 # New-VSRDSOptionGroup
@@ -19,15 +19,6 @@ New-VSRDSOptionGroup [-LogicalId] <String> -EngineName <Object> -MajorEngineVers
 
 ## DESCRIPTION
 Adds an AWS::RDS::OptionGroup resource to the template
-
-## EXAMPLES
-
-### Example 1
-```
-PS C:\> {{ Add example code here }}
-```
-
-{{ Add example description here }}
 
 ## PARAMETERS
 

@@ -1,7 +1,7 @@
 ---
-external help file: Vaporshell-help.xml
-online version: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-attribute-updatepolicy.html
-schema: 2.0.0
+layout: pagenodesc
+title: Add-UserData
+category: glossary
 ---
 
 # Add-UserData
@@ -25,13 +25,6 @@ Add-UserData [-File] <String>
 
 ## DESCRIPTION
 {{Fill in the Description}}
-
-## EXAMPLES
-
-### -------------------------- EXAMPLE 1 --------------------------
-```
-$EC2 =
-```
 
 ## PARAMETERS
 

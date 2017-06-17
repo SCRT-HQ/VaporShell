@@ -1,7 +1,7 @@
 ---
-external help file: Vaporshell-help.xml
-online version: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-kinesisfirehose-deliverystream.html
-schema: 2.0.0
+layout: pagenodesc
+title: New-VSKinesisFirehoseDeliveryStream
+category: glossary
 ---
 
 # New-VSKinesisFirehoseDeliveryStream
@@ -20,15 +20,6 @@ New-VSKinesisFirehoseDeliveryStream [-LogicalId] <String> [-DeliveryStreamName <
 
 ## DESCRIPTION
 Adds an AWS::KinesisFirehose::DeliveryStream resource to the template
-
-## EXAMPLES
-
-### Example 1
-```
-PS C:\> {{ Add example code here }}
-```
-
-{{ Add example description here }}
 
 ## PARAMETERS
 

@@ -1,7 +1,7 @@
 ---
-external help file: Vaporshell-help.xml
-online version: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-codedeploy-deploymentgroup-deployment-revision-githublocation.html
-schema: 2.0.0
+layout: pagenodesc
+title: Add-VSCodeDeployDeploymentGroupGitHubLocation
+category: glossary
 ---
 
 # Add-VSCodeDeployDeploymentGroupGitHubLocation
@@ -17,15 +17,6 @@ Add-VSCodeDeployDeploymentGroupGitHubLocation [-CommitId] <Object> [-Repository]
 
 ## DESCRIPTION
 Adds an AWS::CodeDeploy::DeploymentGroup.GitHubLocation resource property to the template
-
-## EXAMPLES
-
-### Example 1
-```
-PS C:\> {{ Add example code here }}
-```
-
-{{ Add example description here }}
 
 ## PARAMETERS
 

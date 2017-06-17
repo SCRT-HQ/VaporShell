@@ -1,7 +1,7 @@
 ---
-external help file: Vaporshell-help.xml
-online version: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ecs-taskdefinition-containerdefinitions-hostentry.html
-schema: 2.0.0
+layout: pagenodesc
+title: Add-VSECSTaskDefinitionHostEntry
+category: glossary
 ---
 
 # Add-VSECSTaskDefinitionHostEntry
@@ -17,15 +17,6 @@ Add-VSECSTaskDefinitionHostEntry [-Hostname] <Object> [-IpAddress] <Object>
 
 ## DESCRIPTION
 Adds an AWS::ECS::TaskDefinition.HostEntry resource property to the template
-
-## EXAMPLES
-
-### Example 1
-```
-PS C:\> {{ Add example code here }}
-```
-
-{{ Add example description here }}
 
 ## PARAMETERS
 

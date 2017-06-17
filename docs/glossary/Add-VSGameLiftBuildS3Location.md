@@ -1,7 +1,7 @@
 ---
-external help file: Vaporshell-help.xml
-online version: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-gamelift-build-storagelocation.html
-schema: 2.0.0
+layout: pagenodesc
+title: Add-VSGameLiftBuildS3Location
+category: glossary
 ---
 
 # Add-VSGameLiftBuildS3Location
@@ -17,15 +17,6 @@ Add-VSGameLiftBuildS3Location [-Bucket] <Object> [-Key] <Object> [-RoleArn] <Obj
 
 ## DESCRIPTION
 Adds an AWS::GameLift::Build.S3Location resource property to the template
-
-## EXAMPLES
-
-### Example 1
-```
-PS C:\> {{ Add example code here }}
-```
-
-{{ Add example description here }}
 
 ## PARAMETERS
 

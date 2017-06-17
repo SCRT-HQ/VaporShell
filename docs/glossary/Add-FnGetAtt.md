@@ -1,7 +1,7 @@
 ---
-external help file: Vaporshell-help.xml
-online version: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/intrinsic-function-reference-getatt.html
-schema: 2.0.0
+layout: pagenodesc
+title: Add-FnGetAtt
+category: glossary
 ---
 
 # Add-FnGetAtt
@@ -17,15 +17,6 @@ Add-FnGetAtt [-LogicalNameOfResource] <String> [-AttributeName] <Object>
 
 ## DESCRIPTION
 The Fn::GetAtt intrinsic function returns the value of an attribute from a resource in the template.
-
-## EXAMPLES
-
-### -------------------------- EXAMPLE 1 --------------------------
-```
-Add-FnGetAtt -LogicalNameOfResource "MyLB" -AttributeName "DNSName"
-```
-
-When the template is exported, this will convert to: {"Fn::GetAtt":\["MyLB","DNSName"\]}
 
 ## PARAMETERS
 

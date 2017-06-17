@@ -1,7 +1,7 @@
 ---
-external help file: Vaporshell-help.xml
-online version: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-network-iface-embedded.html
-schema: 2.0.0
+layout: pagenodesc
+title: Add-VSEC2InstanceNetworkInterface
+category: glossary
 ---
 
 # Add-VSEC2InstanceNetworkInterface
@@ -20,15 +20,6 @@ Add-VSEC2InstanceNetworkInterface [[-AssociatePublicIpAddress] <Boolean>] [[-Del
 
 ## DESCRIPTION
 Adds an AWS::EC2::Instance.NetworkInterface resource property to the template
-
-## EXAMPLES
-
-### Example 1
-```
-PS C:\> {{ Add example code here }}
-```
-
-{{ Add example description here }}
 
 ## PARAMETERS
 

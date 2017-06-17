@@ -1,7 +1,7 @@
 ---
-external help file: Vaporshell-help.xml
-online version: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-opsworks-volume.html
-schema: 2.0.0
+layout: pagenodesc
+title: New-VSOpsWorksVolume
+category: glossary
 ---
 
 # New-VSOpsWorksVolume
@@ -19,15 +19,6 @@ New-VSOpsWorksVolume [-LogicalId] <String> -Ec2VolumeId <Object> [-MountPoint <O
 
 ## DESCRIPTION
 Adds an AWS::OpsWorks::Volume resource to the template
-
-## EXAMPLES
-
-### Example 1
-```
-PS C:\> {{ Add example code here }}
-```
-
-{{ Add example description here }}
 
 ## PARAMETERS
 

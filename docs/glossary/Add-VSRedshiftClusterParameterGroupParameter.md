@@ -1,7 +1,7 @@
 ---
-external help file: Vaporshell-help.xml
-online version: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-property-redshift-clusterparametergroup-parameter.html
-schema: 2.0.0
+layout: pagenodesc
+title: Add-VSRedshiftClusterParameterGroupParameter
+category: glossary
 ---
 
 # Add-VSRedshiftClusterParameterGroupParameter
@@ -17,15 +17,6 @@ Add-VSRedshiftClusterParameterGroupParameter [-ParameterName] <Object> [-Paramet
 
 ## DESCRIPTION
 Adds an AWS::Redshift::ClusterParameterGroup.Parameter resource property to the template
-
-## EXAMPLES
-
-### Example 1
-```
-PS C:\> {{ Add example code here }}
-```
-
-{{ Add example description here }}
 
 ## PARAMETERS
 

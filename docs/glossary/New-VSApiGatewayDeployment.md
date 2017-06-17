@@ -1,7 +1,7 @@
 ---
-external help file: Vaporshell-help.xml
-online version: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-apigateway-deployment.html
-schema: 2.0.0
+layout: pagenodesc
+title: New-VSApiGatewayDeployment
+category: glossary
 ---
 
 # New-VSApiGatewayDeployment
@@ -19,15 +19,6 @@ New-VSApiGatewayDeployment [-LogicalId] <String> [-Description <Object>] -RestAp
 
 ## DESCRIPTION
 Adds an AWS::ApiGateway::Deployment resource to the template
-
-## EXAMPLES
-
-### Example 1
-```
-PS C:\> {{ Add example code here }}
-```
-
-{{ Add example description here }}
 
 ## PARAMETERS
 

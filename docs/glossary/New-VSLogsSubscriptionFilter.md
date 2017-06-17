@@ -1,7 +1,7 @@
 ---
-external help file: Vaporshell-help.xml
-online version: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-logs-subscriptionfilter.html
-schema: 2.0.0
+layout: pagenodesc
+title: New-VSLogsSubscriptionFilter
+category: glossary
 ---
 
 # New-VSLogsSubscriptionFilter
@@ -19,15 +19,6 @@ New-VSLogsSubscriptionFilter [-LogicalId] <String> -DestinationArn <Object> -Fil
 
 ## DESCRIPTION
 Adds an AWS::Logs::SubscriptionFilter resource to the template
-
-## EXAMPLES
-
-### Example 1
-```
-PS C:\> {{ Add example code here }}
-```
-
-{{ Add example description here }}
 
 ## PARAMETERS
 

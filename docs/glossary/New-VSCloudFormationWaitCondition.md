@@ -1,7 +1,7 @@
 ---
-external help file: Vaporshell-help.xml
-online version: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-waitcondition.html
-schema: 2.0.0
+layout: pagenodesc
+title: New-VSCloudFormationWaitCondition
+category: glossary
 ---
 
 # New-VSCloudFormationWaitCondition
@@ -19,15 +19,6 @@ New-VSCloudFormationWaitCondition [-LogicalId] <String> [-Count <Int32>] -Handle
 
 ## DESCRIPTION
 Adds an AWS::CloudFormation::WaitCondition resource to the template
-
-## EXAMPLES
-
-### Example 1
-```
-PS C:\> {{ Add example code here }}
-```
-
-{{ Add example description here }}
 
 ## PARAMETERS
 

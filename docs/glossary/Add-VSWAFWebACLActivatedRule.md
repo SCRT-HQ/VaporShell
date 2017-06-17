@@ -1,7 +1,7 @@
 ---
-external help file: Vaporshell-help.xml
-online version: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-waf-webacl-rules.html
-schema: 2.0.0
+layout: pagenodesc
+title: Add-VSWAFWebACLActivatedRule
+category: glossary
 ---
 
 # Add-VSWAFWebACLActivatedRule
@@ -17,15 +17,6 @@ Add-VSWAFWebACLActivatedRule [-Action] <Object> [-Priority] <Int32> [-RuleId] <O
 
 ## DESCRIPTION
 Adds an AWS::WAF::WebACL.ActivatedRule resource property to the template
-
-## EXAMPLES
-
-### Example 1
-```
-PS C:\> {{ Add example code here }}
-```
-
-{{ Add example description here }}
 
 ## PARAMETERS
 

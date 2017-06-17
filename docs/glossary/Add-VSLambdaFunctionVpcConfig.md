@@ -1,7 +1,7 @@
 ---
-external help file: Vaporshell-help.xml
-online version: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-lambda-function-vpcconfig.html
-schema: 2.0.0
+layout: pagenodesc
+title: Add-VSLambdaFunctionVpcConfig
+category: glossary
 ---
 
 # Add-VSLambdaFunctionVpcConfig
@@ -17,15 +17,6 @@ Add-VSLambdaFunctionVpcConfig [-SecurityGroupIds] <Object> [-SubnetIds] <Object>
 
 ## DESCRIPTION
 Adds an AWS::Lambda::Function.VpcConfig resource property to the template
-
-## EXAMPLES
-
-### Example 1
-```
-PS C:\> {{ Add example code here }}
-```
-
-{{ Add example description here }}
 
 ## PARAMETERS
 

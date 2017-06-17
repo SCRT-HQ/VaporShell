@@ -1,7 +1,7 @@
 ---
-external help file: Vaporshell-help.xml
-online version: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-redshift-clustersecuritygroupingress.html
-schema: 2.0.0
+layout: pagenodesc
+title: New-VSRedshiftClusterSecurityGroupIngress
+category: glossary
 ---
 
 # New-VSRedshiftClusterSecurityGroupIngress
@@ -20,15 +20,6 @@ New-VSRedshiftClusterSecurityGroupIngress [-LogicalId] <String> [-CIDRIP <Object
 
 ## DESCRIPTION
 Adds an AWS::Redshift::ClusterSecurityGroupIngress resource to the template
-
-## EXAMPLES
-
-### Example 1
-```
-PS C:\> {{ Add example code here }}
-```
-
-{{ Add example description here }}
 
 ## PARAMETERS
 

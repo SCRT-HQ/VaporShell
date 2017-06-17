@@ -1,7 +1,7 @@
 ---
-external help file: Vaporshell-help.xml
-online version: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-wafregional-sqlinjectionmatchset-fieldtomatch.html
-schema: 2.0.0
+layout: pagenodesc
+title: Add-VSWAFRegionalSqlInjectionMatchSetFieldToMatch
+category: glossary
 ---
 
 # Add-VSWAFRegionalSqlInjectionMatchSetFieldToMatch
@@ -17,15 +17,6 @@ Add-VSWAFRegionalSqlInjectionMatchSetFieldToMatch [-Type] <Object> [[-Data] <Obj
 
 ## DESCRIPTION
 Adds an AWS::WAFRegional::SqlInjectionMatchSet.FieldToMatch resource property to the template
-
-## EXAMPLES
-
-### Example 1
-```
-PS C:\> {{ Add example code here }}
-```
-
-{{ Add example description here }}
 
 ## PARAMETERS
 

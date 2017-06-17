@@ -1,7 +1,7 @@
 ---
-external help file: Vaporshell-help.xml
-online version: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-spotfleet-spotfleetrequestconfigdata-launchspecifications-blockdevicemappings-ebs.html
-schema: 2.0.0
+layout: pagenodesc
+title: Add-VSEC2SpotFleetEbsBlockDevice
+category: glossary
 ---
 
 # Add-VSEC2SpotFleetEbsBlockDevice
@@ -18,15 +18,6 @@ Add-VSEC2SpotFleetEbsBlockDevice [[-DeleteOnTermination] <Boolean>] [[-Encrypted
 
 ## DESCRIPTION
 Adds an AWS::EC2::SpotFleet.EbsBlockDevice resource property to the template
-
-## EXAMPLES
-
-### Example 1
-```
-PS C:\> {{ Add example code here }}
-```
-
-{{ Add example description here }}
 
 ## PARAMETERS
 

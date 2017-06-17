@@ -1,7 +1,7 @@
 ---
-external help file: Vaporshell-help.xml
-online version: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-waf-rule-predicates.html
-schema: 2.0.0
+layout: pagenodesc
+title: Add-VSWAFRulePredicate
+category: glossary
 ---
 
 # Add-VSWAFRulePredicate
@@ -17,15 +17,6 @@ Add-VSWAFRulePredicate [-DataId] <Object> [-Negated] <Boolean> [-Type] <Object>
 
 ## DESCRIPTION
 Adds an AWS::WAF::Rule.Predicate resource property to the template
-
-## EXAMPLES
-
-### Example 1
-```
-PS C:\> {{ Add example code here }}
-```
-
-{{ Add example description here }}
 
 ## PARAMETERS
 

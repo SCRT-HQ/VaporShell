@@ -1,7 +1,7 @@
 ---
-external help file: Vaporshell-help.xml
-online version: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-cloudfront-cachebehavior.html
-schema: 2.0.0
+layout: pagenodesc
+title: Add-VSCloudFrontDistributionCacheBehavior
+category: glossary
 ---
 
 # Add-VSCloudFrontDistributionCacheBehavior
@@ -20,15 +20,6 @@ Add-VSCloudFrontDistributionCacheBehavior [[-AllowedMethods] <Object>] [[-Cached
 
 ## DESCRIPTION
 Adds an AWS::CloudFront::Distribution.CacheBehavior resource property to the template
-
-## EXAMPLES
-
-### Example 1
-```
-PS C:\> {{ Add example code here }}
-```
-
-{{ Add example description here }}
 
 ## PARAMETERS
 

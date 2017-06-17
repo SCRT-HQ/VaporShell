@@ -1,7 +1,7 @@
 ---
-external help file: Vaporshell-help.xml
-online version: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/outputs-section-structure.html
-schema: 2.0.0
+layout: pagenodesc
+title: New-VaporOutput
+category: glossary
 ---
 
 # New-VaporOutput
@@ -19,37 +19,6 @@ New-VaporOutput [-LogicalId] <String> [[-Description] <String>] [-Value] <Object
 ## DESCRIPTION
 The optional Outputs section declares output values that you can import into other stacks (to create cross-stack references), return in response (to describe stack calls), or view on the AWS CloudFormation console.
 For example, you can output the S3 bucket name for a stack to make the bucket easier to find.
-
-## EXAMPLES
-
-### -------------------------- EXAMPLE 1 --------------------------
-```
-$template = Initialize-Vaporshell -Description "Testing Output"
-```
-
-$template.AddOutput(
-    (
-        New-VaporOutput -LogicalId "BackupLoadBalancerDNSName" -Description "The DNSName of the backup load balancer" -Value (Add-FnGetAtt -LogicalNameOfResource "BackupLoadBalancer" -AttributeName "DNSName") -Condition "CreateProdResources"
-    )
-)
-
-When the template is exported, this will convert to: 
-    {
-        "AWSTemplateFormatVersion": "2010-09-09",
-        "Description": "Testing Output",
-        "Outputs": {
-            "BackupLoadBalancerDNSName": {
-            "Description": "The DNSName of the backup load balancer",
-            "Value": {
-                "Fn::GetAtt": \[
-                "BackupLoadBalancer",
-                "DNSName"
-                \]
-            },
-            "Condition": "CreateProdResources"
-            }
-        }
-    }
 
 ## PARAMETERS
 

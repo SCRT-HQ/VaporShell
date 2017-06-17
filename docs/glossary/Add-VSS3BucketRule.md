@@ -1,7 +1,7 @@
 ---
-external help file: Vaporshell-help.xml
-online version: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-s3-bucket-lifecycleconfig-rule.html
-schema: 2.0.0
+layout: pagenodesc
+title: Add-VSS3BucketRule
+category: glossary
 ---
 
 # Add-VSS3BucketRule
@@ -20,15 +20,6 @@ Add-VSS3BucketRule [[-ExpirationDate] <Object>] [[-ExpirationInDays] <Int32>] [[
 
 ## DESCRIPTION
 Adds an AWS::S3::Bucket.Rule resource property to the template
-
-## EXAMPLES
-
-### Example 1
-```
-PS C:\> {{ Add example code here }}
-```
-
-{{ Add example description here }}
 
 ## PARAMETERS
 

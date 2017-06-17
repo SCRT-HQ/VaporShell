@@ -1,7 +1,7 @@
 ---
-external help file: Vaporshell-help.xml
-online version: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-opsworks-app-datasource.html
-schema: 2.0.0
+layout: pagenodesc
+title: Add-VSOpsWorksAppDataSource
+category: glossary
 ---
 
 # Add-VSOpsWorksAppDataSource
@@ -17,15 +17,6 @@ Add-VSOpsWorksAppDataSource [[-Arn] <Object>] [[-DatabaseName] <Object>] [[-Type
 
 ## DESCRIPTION
 Adds an AWS::OpsWorks::App.DataSource resource property to the template
-
-## EXAMPLES
-
-### Example 1
-```
-PS C:\> {{ Add example code here }}
-```
-
-{{ Add example description here }}
 
 ## PARAMETERS
 

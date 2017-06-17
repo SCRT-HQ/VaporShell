@@ -1,7 +1,7 @@
 ---
-external help file: Vaporshell-help.xml
-online version: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ecs-taskdefinition.html
-schema: 2.0.0
+layout: pagenodesc
+title: New-VSECSTaskDefinition
+category: glossary
 ---
 
 # New-VSECSTaskDefinition
@@ -20,15 +20,6 @@ New-VSECSTaskDefinition [-LogicalId] <String> [-ContainerDefinitions <Object>] [
 
 ## DESCRIPTION
 Adds an AWS::ECS::TaskDefinition resource to the template
-
-## EXAMPLES
-
-### Example 1
-```
-PS C:\> {{ Add example code here }}
-```
-
-{{ Add example description here }}
 
 ## PARAMETERS
 

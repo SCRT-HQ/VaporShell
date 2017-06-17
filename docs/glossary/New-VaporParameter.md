@@ -1,7 +1,7 @@
 ---
-external help file: Vaporshell-help.xml
-online version: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/parameters-section-structure.html
-schema: 2.0.0
+layout: pagenodesc
+title: New-VaporParameter
+category: glossary
 ---
 
 # New-VaporParameter
@@ -41,43 +41,6 @@ AWS-specific parameter types are helpful in catching invalid values at the start
 ** Important **
     For sensitive parameter values (such as passwords), set the NoEcho property to true.
 That way, whenever anyone describes your stack, the parameter value is shown as asterisks (*****).
-
-## EXAMPLES
-
-### -------------------------- EXAMPLE 1 --------------------------
-```
-$template = Initialize-Vaporshell -Description "Testing Mapping addition"
-```
-
-$template.AddParameter(
-    (New-VaporParameter -LogicalId "DBPort" -Default 3306 -Description "TCP/IP port for the Propertiesbase" -Type "Number" -MinValue 1150 -MaxValue 65535),
-    (New-VaporParameter -LogicalId "DBPwd" -NoEcho -Description "The Propertiesbase admin account password" -Type "String" -MinLength 1 -MaxLength 41 -AllowedPattern "^\[a-zA-Z0-9\]*$")
-)
-
-When the template is exported, this will convert to: 
-    {
-        "AWSTemplateFormatVersion":  "2010-09-09",
-        "Description":  "Testing Mapping addition",
-        "Parameters":  {
-            "DBPwd":  {
-                "Type":  "String",
-                "NoEcho":  {
-                    "IsPresent":  true
-                },
-                "Description":  "The Propertiesbase admin account password",
-                "MinLength":  1,
-                "MaxLength":  41,
-                "AllowedPattern":  "^\[a-zA-Z0-9\]*$"
-            },
-            "DBPort":  {
-                "Type":  "Number",
-                "Default":  "3306",
-                "Description":  "TCP/IP port for the Propertiesbase",
-                "MinValue":  1150,
-                "MaxValue":  65535
-            }
-        }
-    }
 
 ## PARAMETERS
 

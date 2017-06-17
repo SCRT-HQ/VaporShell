@@ -1,7 +1,7 @@
 ---
-external help file: Vaporshell-help.xml
-online version: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-route53-healthcheck-alarmidentifier.html
-schema: 2.0.0
+layout: pagenodesc
+title: Add-VSRoute53HealthCheckAlarmIdentifier
+category: glossary
 ---
 
 # Add-VSRoute53HealthCheckAlarmIdentifier
@@ -17,15 +17,6 @@ Add-VSRoute53HealthCheckAlarmIdentifier [-Name] <Object> [-Region] <Object>
 
 ## DESCRIPTION
 Adds an AWS::Route53::HealthCheck.AlarmIdentifier resource property to the template
-
-## EXAMPLES
-
-### Example 1
-```
-PS C:\> {{ Add example code here }}
-```
-
-{{ Add example description here }}
 
 ## PARAMETERS
 

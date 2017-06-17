@@ -1,7 +1,7 @@
 ---
-external help file: Vaporshell-help.xml
-online version: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-emr-ebsconfiguration-ebsblockdeviceconfig.html
-schema: 2.0.0
+layout: pagenodesc
+title: Add-VSEMRClusterEbsBlockDeviceConfig
+category: glossary
 ---
 
 # Add-VSEMRClusterEbsBlockDeviceConfig
@@ -17,15 +17,6 @@ Add-VSEMRClusterEbsBlockDeviceConfig [-VolumeSpecification] <Object> [[-VolumesP
 
 ## DESCRIPTION
 Adds an AWS::EMR::Cluster.EbsBlockDeviceConfig resource property to the template
-
-## EXAMPLES
-
-### Example 1
-```
-PS C:\> {{ Add example code here }}
-```
-
-{{ Add example description here }}
 
 ## PARAMETERS
 

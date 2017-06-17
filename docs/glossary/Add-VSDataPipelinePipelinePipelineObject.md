@@ -1,7 +1,7 @@
 ---
-external help file: Vaporshell-help.xml
-online version: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-datapipeline-pipeline-pipelineobjects.html
-schema: 2.0.0
+layout: pagenodesc
+title: Add-VSDataPipelinePipelinePipelineObject
+category: glossary
 ---
 
 # Add-VSDataPipelinePipelinePipelineObject
@@ -17,15 +17,6 @@ Add-VSDataPipelinePipelinePipelineObject [-Fields] <Object> [-Id] <Object> [-Nam
 
 ## DESCRIPTION
 Adds an AWS::DataPipeline::Pipeline.PipelineObject resource property to the template
-
-## EXAMPLES
-
-### Example 1
-```
-PS C:\> {{ Add example code here }}
-```
-
-{{ Add example description here }}
 
 ## PARAMETERS
 

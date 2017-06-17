@@ -1,7 +1,7 @@
 ---
-external help file: Vaporshell-help.xml
-online version: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-logs-logstream.html
-schema: 2.0.0
+layout: pagenodesc
+title: New-VSLogsLogStream
+category: glossary
 ---
 
 # New-VSLogsLogStream
@@ -19,15 +19,6 @@ New-VSLogsLogStream [-LogicalId] <String> -LogGroupName <Object> [-LogStreamName
 
 ## DESCRIPTION
 Adds an AWS::Logs::LogStream resource to the template
-
-## EXAMPLES
-
-### Example 1
-```
-PS C:\> {{ Add example code here }}
-```
-
-{{ Add example description here }}
 
 ## PARAMETERS
 

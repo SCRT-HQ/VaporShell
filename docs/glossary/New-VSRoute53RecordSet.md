@@ -1,7 +1,7 @@
 ---
-external help file: Vaporshell-help.xml
-online version: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-route53-recordset.html
-schema: 2.0.0
+layout: pagenodesc
+title: New-VSRoute53RecordSet
+category: glossary
 ---
 
 # New-VSRoute53RecordSet
@@ -21,15 +21,6 @@ New-VSRoute53RecordSet [-LogicalId] <String> [-AliasTarget <Object>] [-Comment <
 
 ## DESCRIPTION
 Adds an AWS::Route53::RecordSet resource to the template
-
-## EXAMPLES
-
-### Example 1
-```
-PS C:\> {{ Add example code here }}
-```
-
-{{ Add example description here }}
 
 ## PARAMETERS
 

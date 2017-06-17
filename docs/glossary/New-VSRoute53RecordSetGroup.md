@@ -1,7 +1,7 @@
 ---
-external help file: Vaporshell-help.xml
-online version: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-route53-recordsetgroup.html
-schema: 2.0.0
+layout: pagenodesc
+title: New-VSRoute53RecordSetGroup
+category: glossary
 ---
 
 # New-VSRoute53RecordSetGroup
@@ -19,15 +19,6 @@ New-VSRoute53RecordSetGroup [-LogicalId] <String> [-Comment <Object>] [-HostedZo
 
 ## DESCRIPTION
 Adds an AWS::Route53::RecordSetGroup resource to the template
-
-## EXAMPLES
-
-### Example 1
-```
-PS C:\> {{ Add example code here }}
-```
-
-{{ Add example description here }}
 
 ## PARAMETERS
 

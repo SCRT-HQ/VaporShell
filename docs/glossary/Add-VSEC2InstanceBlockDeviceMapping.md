@@ -1,7 +1,7 @@
 ---
-external help file: Vaporshell-help.xml
-online version: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-blockdev-mapping.html
-schema: 2.0.0
+layout: pagenodesc
+title: Add-VSEC2InstanceBlockDeviceMapping
+category: glossary
 ---
 
 # Add-VSEC2InstanceBlockDeviceMapping
@@ -18,15 +18,6 @@ Add-VSEC2InstanceBlockDeviceMapping [-DeviceName] <Object> [[-Ebs] <Object>] [[-
 
 ## DESCRIPTION
 Adds an AWS::EC2::Instance.BlockDeviceMapping resource property to the template
-
-## EXAMPLES
-
-### Example 1
-```
-PS C:\> {{ Add example code here }}
-```
-
-{{ Add example description here }}
 
 ## PARAMETERS
 

@@ -1,7 +1,7 @@
 ---
-external help file: Vaporshell-help.xml
-online version: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-instance-nodevice.html
-schema: 2.0.0
+layout: pagenodesc
+title: Add-VSEC2InstanceNoDevice
+category: glossary
 ---
 
 # Add-VSEC2InstanceNoDevice
@@ -17,15 +17,6 @@ Add-VSEC2InstanceNoDevice
 
 ## DESCRIPTION
 Adds an AWS::EC2::Instance.NoDevice resource property to the template
-
-## EXAMPLES
-
-### Example 1
-```
-PS C:\> {{ Add example code here }}
-```
-
-{{ Add example description here }}
 
 ## PARAMETERS
 

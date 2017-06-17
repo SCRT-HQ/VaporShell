@@ -1,7 +1,7 @@
 ---
-external help file: Vaporshell-help.xml
-online version: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-iam-instanceprofile.html
-schema: 2.0.0
+layout: pagenodesc
+title: New-VSIAMInstanceProfile
+category: glossary
 ---
 
 # New-VSIAMInstanceProfile
@@ -19,15 +19,6 @@ New-VSIAMInstanceProfile [-LogicalId] <String> [-InstanceProfileName <Object>] [
 
 ## DESCRIPTION
 Adds an AWS::IAM::InstanceProfile resource to the template
-
-## EXAMPLES
-
-### Example 1
-```
-PS C:\> {{ Add example code here }}
-```
-
-{{ Add example description here }}
 
 ## PARAMETERS
 

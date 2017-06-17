@@ -1,7 +1,7 @@
 ---
-external help file: Vaporshell-help.xml
-online version: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-route53-healthcheck-healthcheckconfig.html
-schema: 2.0.0
+layout: pagenodesc
+title: Add-VSRoute53HealthCheckHealthCheckConfig
+category: glossary
 ---
 
 # Add-VSRoute53HealthCheckHealthCheckConfig
@@ -21,15 +21,6 @@ Add-VSRoute53HealthCheckHealthCheckConfig [[-AlarmIdentifier] <Object>] [[-Child
 
 ## DESCRIPTION
 Adds an AWS::Route53::HealthCheck.HealthCheckConfig resource property to the template
-
-## EXAMPLES
-
-### Example 1
-```
-PS C:\> {{ Add example code here }}
-```
-
-{{ Add example description here }}
 
 ## PARAMETERS
 

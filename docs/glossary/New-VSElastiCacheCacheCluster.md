@@ -1,7 +1,7 @@
 ---
-external help file: Vaporshell-help.xml
-online version: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-elasticache-cache-cluster.html
-schema: 2.0.0
+layout: pagenodesc
+title: New-VSElastiCacheCacheCluster
+category: glossary
 ---
 
 # New-VSElastiCacheCacheCluster
@@ -24,15 +24,6 @@ New-VSElastiCacheCacheCluster [-LogicalId] <String> [-AZMode <Object>] [-AutoMin
 
 ## DESCRIPTION
 Adds an AWS::ElastiCache::CacheCluster resource to the template
-
-## EXAMPLES
-
-### Example 1
-```
-PS C:\> {{ Add example code here }}
-```
-
-{{ Add example description here }}
 
 ## PARAMETERS
 

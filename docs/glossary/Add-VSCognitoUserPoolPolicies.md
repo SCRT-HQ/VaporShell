@@ -1,7 +1,7 @@
 ---
-external help file: Vaporshell-help.xml
-online version: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-cognito-userpool-policies.html
-schema: 2.0.0
+layout: pagenodesc
+title: Add-VSCognitoUserPoolPolicies
+category: glossary
 ---
 
 # Add-VSCognitoUserPoolPolicies
@@ -17,15 +17,6 @@ Add-VSCognitoUserPoolPolicies [[-PasswordPolicy] <Object>]
 
 ## DESCRIPTION
 Adds an AWS::Cognito::UserPool.Policies resource property to the template
-
-## EXAMPLES
-
-### Example 1
-```
-PS C:\> {{ Add example code here }}
-```
-
-{{ Add example description here }}
 
 ## PARAMETERS
 

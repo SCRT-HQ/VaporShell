@@ -1,7 +1,7 @@
 ---
-external help file: Vaporshell-help.xml
-online version: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/intrinsic-function-reference-conditions.html#intrinsic-function-reference-conditions-if
-schema: 2.0.0
+layout: pagenodesc
+title: Add-ConIf
+category: glossary
 ---
 
 # Add-ConIf
@@ -19,15 +19,6 @@ Add-ConIf [-ConditionName] <String> [-ValueIfTrue] <Object> [-ValueIfFalse] <Obj
 Returns one value if the specified condition evaluates to true and another value if the specified condition evaluates to false.
 Currently, AWS CloudFormation supports the Fn::If intrinsic function in the metadata attribute, update policy attribute, and property values in the Resources section and Outputs sections of a template.
 You can use the AWS::NoValue pseudo parameter as a return value to remove the corresponding property.
-
-## EXAMPLES
-
-### -------------------------- EXAMPLE 1 --------------------------
-```
-Add-ConIf -ConditionName "CreateNewSecurityGroup" -ValueIfTrue (Add-FnRef -Ref "NewSecurityGroup") -ValueIfFalse (Add-FnRef -Ref "ExistingSecurityGroup")
-```
-
-When the template is exported, this will convert to: {"Fn::If":\["CreateNewSecurityGroup",{"Ref":"NewSecurityGroup"},{"Ref":"ExistingSecurityGroup"}\]}
 
 ## PARAMETERS
 

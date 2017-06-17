@@ -1,7 +1,7 @@
 ---
-external help file: Vaporshell-help.xml
-online version: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-config-configrule-scope.html
-schema: 2.0.0
+layout: pagenodesc
+title: Add-VSConfigConfigRuleScope
+category: glossary
 ---
 
 # Add-VSConfigConfigRuleScope
@@ -18,15 +18,6 @@ Add-VSConfigConfigRuleScope [[-ComplianceResourceId] <Object>] [[-ComplianceReso
 
 ## DESCRIPTION
 Adds an AWS::Config::ConfigRule.Scope resource property to the template
-
-## EXAMPLES
-
-### Example 1
-```
-PS C:\> {{ Add example code here }}
-```
-
-{{ Add example description here }}
 
 ## PARAMETERS
 

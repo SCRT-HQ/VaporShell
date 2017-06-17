@@ -1,7 +1,7 @@
 ---
-external help file: Vaporshell-help.xml
-online version: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ec2-subnet-network-acl-assoc.html
-schema: 2.0.0
+layout: pagenodesc
+title: New-VSEC2SubnetNetworkAclAssociation
+category: glossary
 ---
 
 # New-VSEC2SubnetNetworkAclAssociation
@@ -19,15 +19,6 @@ New-VSEC2SubnetNetworkAclAssociation [-LogicalId] <String> -NetworkAclId <Object
 
 ## DESCRIPTION
 Adds an AWS::EC2::SubnetNetworkAclAssociation resource to the template
-
-## EXAMPLES
-
-### Example 1
-```
-PS C:\> {{ Add example code here }}
-```
-
-{{ Add example description here }}
 
 ## PARAMETERS
 

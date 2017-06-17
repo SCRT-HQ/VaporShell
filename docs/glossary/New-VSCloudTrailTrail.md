@@ -1,7 +1,7 @@
 ---
-external help file: Vaporshell-help.xml
-online version: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-cloudtrail-trail.html
-schema: 2.0.0
+layout: pagenodesc
+title: New-VSCloudTrailTrail
+category: glossary
 ---
 
 # New-VSCloudTrailTrail
@@ -21,15 +21,6 @@ New-VSCloudTrailTrail [-LogicalId] <String> [-CloudWatchLogsLogGroupArn <Object>
 
 ## DESCRIPTION
 Adds an AWS::CloudTrail::Trail resource to the template
-
-## EXAMPLES
-
-### Example 1
-```
-PS C:\> {{ Add example code here }}
-```
-
-{{ Add example description here }}
 
 ## PARAMETERS
 

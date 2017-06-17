@@ -1,7 +1,7 @@
 ---
-external help file: Vaporshell-help.xml
-online version: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-elasticloadbalancingv2-listener-defaultactions.html
-schema: 2.0.0
+layout: pagenodesc
+title: Add-VSElasticLoadBalancingV2ListenerAction
+category: glossary
 ---
 
 # Add-VSElasticLoadBalancingV2ListenerAction
@@ -17,15 +17,6 @@ Add-VSElasticLoadBalancingV2ListenerAction [-TargetGroupArn] <Object> [-Type] <O
 
 ## DESCRIPTION
 Adds an AWS::ElasticLoadBalancingV2::Listener.Action resource property to the template
-
-## EXAMPLES
-
-### Example 1
-```
-PS C:\> {{ Add example code here }}
-```
-
-{{ Add example description here }}
 
 ## PARAMETERS
 

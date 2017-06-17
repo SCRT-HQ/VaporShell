@@ -1,7 +1,7 @@
 ---
-external help file: Vaporshell-help.xml
-online version: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-cognito-identitypool.html
-schema: 2.0.0
+layout: pagenodesc
+title: New-VSCognitoIdentityPool
+category: glossary
 ---
 
 # New-VSCognitoIdentityPool
@@ -21,15 +21,6 @@ New-VSCognitoIdentityPool [-LogicalId] <String> [-PushSync <Object>] [-CognitoId
 
 ## DESCRIPTION
 Adds an AWS::Cognito::IdentityPool resource to the template
-
-## EXAMPLES
-
-### Example 1
-```
-PS C:\> {{ Add example code here }}
-```
-
-{{ Add example description here }}
 
 ## PARAMETERS
 

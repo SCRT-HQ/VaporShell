@@ -1,7 +1,7 @@
 ---
-external help file: Vaporshell-help.xml
-online version: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-elb.html
-schema: 2.0.0
+layout: pagenodesc
+title: New-VSElasticLoadBalancingLoadBalancer
+category: glossary
 ---
 
 # New-VSElasticLoadBalancingLoadBalancer
@@ -22,15 +22,6 @@ New-VSElasticLoadBalancingLoadBalancer [-LogicalId] <String> [-AccessLoggingPoli
 
 ## DESCRIPTION
 Adds an AWS::ElasticLoadBalancing::LoadBalancer resource to the template
-
-## EXAMPLES
-
-### Example 1
-```
-PS C:\> {{ Add example code here }}
-```
-
-{{ Add example description here }}
 
 ## PARAMETERS
 

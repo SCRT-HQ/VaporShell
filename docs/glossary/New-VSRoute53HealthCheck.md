@@ -1,7 +1,7 @@
 ---
-external help file: Vaporshell-help.xml
-online version: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-route53-healthcheck.html
-schema: 2.0.0
+layout: pagenodesc
+title: New-VSRoute53HealthCheck
+category: glossary
 ---
 
 # New-VSRoute53HealthCheck
@@ -19,15 +19,6 @@ New-VSRoute53HealthCheck [-LogicalId] <String> -HealthCheckConfig <Object> [-Hea
 
 ## DESCRIPTION
 Adds an AWS::Route53::HealthCheck resource to the template
-
-## EXAMPLES
-
-### Example 1
-```
-PS C:\> {{ Add example code here }}
-```
-
-{{ Add example description here }}
 
 ## PARAMETERS
 

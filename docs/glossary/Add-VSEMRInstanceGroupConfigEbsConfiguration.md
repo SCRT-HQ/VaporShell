@@ -1,7 +1,7 @@
 ---
-external help file: Vaporshell-help.xml
-online version: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-emr-ebsconfiguration.html
-schema: 2.0.0
+layout: pagenodesc
+title: Add-VSEMRInstanceGroupConfigEbsConfiguration
+category: glossary
 ---
 
 # Add-VSEMRInstanceGroupConfigEbsConfiguration
@@ -17,15 +17,6 @@ Add-VSEMRInstanceGroupConfigEbsConfiguration [[-EbsBlockDeviceConfigs] <Object>]
 
 ## DESCRIPTION
 Adds an AWS::EMR::InstanceGroupConfig.EbsConfiguration resource property to the template
-
-## EXAMPLES
-
-### Example 1
-```
-PS C:\> {{ Add example code here }}
-```
-
-{{ Add example description here }}
 
 ## PARAMETERS
 

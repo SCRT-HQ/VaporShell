@@ -1,7 +1,7 @@
 ---
-external help file: Vaporshell-help.xml
-online version: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-apitgateway-stage-methodsetting.html
-schema: 2.0.0
+layout: pagenodesc
+title: Add-VSApiGatewayStageMethodSetting
+category: glossary
 ---
 
 # Add-VSApiGatewayStageMethodSetting
@@ -20,15 +20,6 @@ Add-VSApiGatewayStageMethodSetting [[-CacheDataEncrypted] <Boolean>] [[-CacheTtl
 
 ## DESCRIPTION
 Adds an AWS::ApiGateway::Stage.MethodSetting resource property to the template
-
-## EXAMPLES
-
-### Example 1
-```
-PS C:\> {{ Add example code here }}
-```
-
-{{ Add example description here }}
 
 ## PARAMETERS
 

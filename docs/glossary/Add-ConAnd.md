@@ -1,7 +1,7 @@
 ---
-external help file: Vaporshell-help.xml
-online version: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/intrinsic-function-reference-conditions.html#intrinsic-function-reference-conditions-and
-schema: 2.0.0
+layout: pagenodesc
+title: Add-ConAnd
+category: glossary
 ---
 
 # Add-ConAnd
@@ -19,15 +19,6 @@ Add-ConAnd [-Conditions] <Object[]>
 Returns true if all the specified conditions evaluate to true, or returns false if any one of the conditions evaluates to false.
 Fn::And acts as an AND operator.
 The minimum number of conditions that you can include is 2, and the maximum is 10.
-
-## EXAMPLES
-
-### -------------------------- EXAMPLE 1 --------------------------
-```
-Add-ConAnd -Conditions (Add-ConEquals -FirstValue "sg-mysggroup" -SecondValue (Add-FnRef -Ref "ASecurityGroup")),(Add-ConEquals -FirstValue "Production" -SecondValue (Add-FnRef -Ref "Environment"))
-```
-
-When the template is exported, this will convert to: {"Fn::And":\[{"Fn::Equals":\["sg-mysggroup",{"Ref":"ASecurityGroup"}\]},{"Fn::Equals":\["Production",{"Ref":"Environment"}\]}\]}
 
 ## PARAMETERS
 

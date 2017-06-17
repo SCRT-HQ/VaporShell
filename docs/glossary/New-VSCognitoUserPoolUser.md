@@ -1,7 +1,7 @@
 ---
-external help file: Vaporshell-help.xml
-online version: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-cognito-userpooluser.html
-schema: 2.0.0
+layout: pagenodesc
+title: New-VSCognitoUserPoolUser
+category: glossary
 ---
 
 # New-VSCognitoUserPoolUser
@@ -20,15 +20,6 @@ New-VSCognitoUserPoolUser [-LogicalId] <String> [-ValidationData <Object>] -User
 
 ## DESCRIPTION
 Adds an AWS::Cognito::UserPoolUser resource to the template
-
-## EXAMPLES
-
-### Example 1
-```
-PS C:\> {{ Add example code here }}
-```
-
-{{ Add example description here }}
 
 ## PARAMETERS
 

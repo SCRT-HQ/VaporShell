@@ -1,7 +1,7 @@
 ---
-external help file: Vaporshell-help.xml
-online version: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-elasticloadbalancingv2-targetgroup.html
-schema: 2.0.0
+layout: pagenodesc
+title: New-VSElasticLoadBalancingV2TargetGroup
+category: glossary
 ---
 
 # New-VSElasticLoadBalancingV2TargetGroup
@@ -22,15 +22,6 @@ New-VSElasticLoadBalancingV2TargetGroup [-LogicalId] <String> [-HealthCheckInter
 
 ## DESCRIPTION
 Adds an AWS::ElasticLoadBalancingV2::TargetGroup resource to the template
-
-## EXAMPLES
-
-### Example 1
-```
-PS C:\> {{ Add example code here }}
-```
-
-{{ Add example description here }}
 
 ## PARAMETERS
 

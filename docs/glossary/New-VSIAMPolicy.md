@@ -1,7 +1,7 @@
 ---
-external help file: Vaporshell-help.xml
-online version: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-iam-policy.html
-schema: 2.0.0
+layout: pagenodesc
+title: New-VSIAMPolicy
+category: glossary
 ---
 
 # New-VSIAMPolicy
@@ -19,15 +19,6 @@ New-VSIAMPolicy [-LogicalId] <String> [-Groups <Object>] -PolicyDocument <Object
 
 ## DESCRIPTION
 Adds an AWS::IAM::Policy resource to the template
-
-## EXAMPLES
-
-### Example 1
-```
-PS C:\> {{ Add example code here }}
-```
-
-{{ Add example description here }}
 
 ## PARAMETERS
 

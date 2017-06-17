@@ -1,7 +1,7 @@
 ---
-external help file: Vaporshell-help.xml
-online version: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-opsworks-stack-chefconfiguration.html
-schema: 2.0.0
+layout: pagenodesc
+title: Add-VSOpsWorksStackChefConfiguration
+category: glossary
 ---
 
 # Add-VSOpsWorksStackChefConfiguration
@@ -17,15 +17,6 @@ Add-VSOpsWorksStackChefConfiguration [[-BerkshelfVersion] <Object>] [[-ManageBer
 
 ## DESCRIPTION
 Adds an AWS::OpsWorks::Stack.ChefConfiguration resource property to the template
-
-## EXAMPLES
-
-### Example 1
-```
-PS C:\> {{ Add example code here }}
-```
-
-{{ Add example description here }}
 
 ## PARAMETERS
 

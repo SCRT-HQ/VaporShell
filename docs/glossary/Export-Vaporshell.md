@@ -1,7 +1,7 @@
 ---
-external help file: Vaporshell-help.xml
-online version: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-waf-xssmatchset-xssmatchtuple.html
-schema: 2.0.0
+layout: pagenodesc
+title: Export-Vaporshell
+category: glossary
 ---
 
 # Export-Vaporshell
@@ -19,24 +19,6 @@ Export-Vaporshell [-VaporshellTemplate] <Object> [-Path] <String> [-Force]
 Exports the template object to JSON file.
 
 Requires the Vaporshell input object to be type 'Vaporshell.Template'
-
-## EXAMPLES
-
-### -------------------------- EXAMPLE 1 --------------------------
-```
-$Template = Initialize-Vaporshell -Description "This is a sample template that builds an S3 bucket"
-```
-
-# Add items to the $Template object here
-$Template | Export-Vaporshell -Path "C:\CloudFormation\Templates\S3Bucket.json" -Force
-
-### -------------------------- EXAMPLE 2 --------------------------
-```
-$Template = Initialize-Vaporshell -Description "This is a sample template that builds an S3 bucket"
-```
-
-# Add items to the $Template object here
-Export-Vaporshell -VaporshellTemplate $Template -Path "C:\CloudFormation\Templates\S3Bucket.json" -Force
 
 ## PARAMETERS
 

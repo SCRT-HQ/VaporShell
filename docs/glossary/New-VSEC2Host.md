@@ -1,7 +1,7 @@
 ---
-external help file: Vaporshell-help.xml
-online version: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ec2-host.html
-schema: 2.0.0
+layout: pagenodesc
+title: New-VSEC2Host
+category: glossary
 ---
 
 # New-VSEC2Host
@@ -19,15 +19,6 @@ New-VSEC2Host [-LogicalId] <String> [-AutoPlacement <Object>] -AvailabilityZone 
 
 ## DESCRIPTION
 Adds an AWS::EC2::Host resource to the template
-
-## EXAMPLES
-
-### Example 1
-```
-PS C:\> {{ Add example code here }}
-```
-
-{{ Add example description here }}
 
 ## PARAMETERS
 

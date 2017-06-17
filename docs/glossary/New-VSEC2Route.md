@@ -1,7 +1,7 @@
 ---
-external help file: Vaporshell-help.xml
-online version: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ec2-route.html
-schema: 2.0.0
+layout: pagenodesc
+title: New-VSEC2Route
+category: glossary
 ---
 
 # New-VSEC2Route
@@ -20,15 +20,6 @@ New-VSEC2Route [-LogicalId] <String> -DestinationCidrBlock <Object> [-Destinatio
 
 ## DESCRIPTION
 Adds an AWS::EC2::Route resource to the template
-
-## EXAMPLES
-
-### Example 1
-```
-PS C:\> {{ Add example code here }}
-```
-
-{{ Add example description here }}
 
 ## PARAMETERS
 

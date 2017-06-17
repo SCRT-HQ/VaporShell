@@ -1,7 +1,7 @@
 ---
-external help file: Vaporshell-help.xml
-online version: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-elasticache-security-group-ingress.html
-schema: 2.0.0
+layout: pagenodesc
+title: New-VSElastiCacheSecurityGroupIngress
+category: glossary
 ---
 
 # New-VSElastiCacheSecurityGroupIngress
@@ -19,15 +19,6 @@ New-VSElastiCacheSecurityGroupIngress [-LogicalId] <String> -CacheSecurityGroupN
 
 ## DESCRIPTION
 Adds an AWS::ElastiCache::SecurityGroupIngress resource to the template
-
-## EXAMPLES
-
-### Example 1
-```
-PS C:\> {{ Add example code here }}
-```
-
-{{ Add example description here }}
 
 ## PARAMETERS
 

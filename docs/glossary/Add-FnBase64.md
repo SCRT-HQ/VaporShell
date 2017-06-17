@@ -1,7 +1,7 @@
 ---
-external help file: Vaporshell-help.xml
-online version: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/intrinsic-function-reference-base64.html
-schema: 2.0.0
+layout: pagenodesc
+title: Add-FnBase64
+category: glossary
 ---
 
 # Add-FnBase64
@@ -18,22 +18,6 @@ Add-FnBase64 [-ValueToEncode] <Object>
 ## DESCRIPTION
 The intrinsic function Fn::Base64 returns the Base64 representation of the input string.
 This function is typically used to pass encoded data to Amazon EC2 instances by way of the UserData property.
-
-## EXAMPLES
-
-### -------------------------- EXAMPLE 1 --------------------------
-```
-Add-FnBase64 -ValueToEncode "AWS CloudFormation"
-```
-
-When the template is exported, this will convert to: {"Fn::Base64":"AWS CloudFormation"}
-
-### -------------------------- EXAMPLE 2 --------------------------
-```
-Add-FnBase64 -ValueToEncode (Add-FnRef "$_AWSRegion"")
-```
-
-When the template is exported, this will convert to: {"Fn::Base64":{"Ref":"AWS::Region"}}
 
 ## PARAMETERS
 

@@ -1,7 +1,7 @@
 ---
-external help file: Vaporshell-help.xml
-online version: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ec2-subnet.html
-schema: 2.0.0
+layout: pagenodesc
+title: New-VSEC2Subnet
+category: glossary
 ---
 
 # New-VSEC2Subnet
@@ -19,15 +19,6 @@ New-VSEC2Subnet [-LogicalId] <String> [-AvailabilityZone <Object>] -CidrBlock <O
 
 ## DESCRIPTION
 Adds an AWS::EC2::Subnet resource to the template
-
-## EXAMPLES
-
-### Example 1
-```
-PS C:\> {{ Add example code here }}
-```
-
-{{ Add example description here }}
 
 ## PARAMETERS
 

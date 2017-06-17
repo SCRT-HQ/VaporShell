@@ -1,7 +1,7 @@
 ---
-external help file: Vaporshell-help.xml
-online version: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-apigateway-usageplan.html
-schema: 2.0.0
+layout: pagenodesc
+title: New-VSApiGatewayUsagePlan
+category: glossary
 ---
 
 # New-VSApiGatewayUsagePlan
@@ -19,15 +19,6 @@ New-VSApiGatewayUsagePlan [-LogicalId] <String> [-ApiStages <Object>] [-Descript
 
 ## DESCRIPTION
 Adds an AWS::ApiGateway::UsagePlan resource to the template
-
-## EXAMPLES
-
-### Example 1
-```
-PS C:\> {{ Add example code here }}
-```
-
-{{ Add example description here }}
 
 ## PARAMETERS
 

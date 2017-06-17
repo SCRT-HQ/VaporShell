@@ -1,7 +1,7 @@
 ---
-external help file: Vaporshell-help.xml
-online version: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-as-metricscollection.html
-schema: 2.0.0
+layout: pagenodesc
+title: Add-VSAutoScalingAutoScalingGroupMetricsCollection
+category: glossary
 ---
 
 # Add-VSAutoScalingAutoScalingGroupMetricsCollection
@@ -17,15 +17,6 @@ Add-VSAutoScalingAutoScalingGroupMetricsCollection [-Granularity] <Object> [[-Me
 
 ## DESCRIPTION
 Adds an AWS::AutoScaling::AutoScalingGroup.MetricsCollection resource property to the template
-
-## EXAMPLES
-
-### Example 1
-```
-PS C:\> {{ Add example code here }}
-```
-
-{{ Add example description here }}
 
 ## PARAMETERS
 

@@ -1,7 +1,7 @@
 ---
-external help file: Vaporshell-help.xml
-online version: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-gamelift-fleet-ec2inboundpermission.html
-schema: 2.0.0
+layout: pagenodesc
+title: Add-VSGameLiftFleetIpPermission
+category: glossary
 ---
 
 # Add-VSGameLiftFleetIpPermission
@@ -17,15 +17,6 @@ Add-VSGameLiftFleetIpPermission [-FromPort] <Int32> [-IpRange] <Object> [-Protoc
 
 ## DESCRIPTION
 Adds an AWS::GameLift::Fleet.IpPermission resource property to the template
-
-## EXAMPLES
-
-### Example 1
-```
-PS C:\> {{ Add example code here }}
-```
-
-{{ Add example description here }}
 
 ## PARAMETERS
 

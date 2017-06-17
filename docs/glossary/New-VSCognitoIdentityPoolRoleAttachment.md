@@ -1,7 +1,7 @@
 ---
-external help file: Vaporshell-help.xml
-online version: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-cognito-identitypoolroleattachment.html
-schema: 2.0.0
+layout: pagenodesc
+title: New-VSCognitoIdentityPoolRoleAttachment
+category: glossary
 ---
 
 # New-VSCognitoIdentityPoolRoleAttachment
@@ -19,15 +19,6 @@ New-VSCognitoIdentityPoolRoleAttachment [-LogicalId] <String> [-RoleMappings <Ob
 
 ## DESCRIPTION
 Adds an AWS::Cognito::IdentityPoolRoleAttachment resource to the template
-
-## EXAMPLES
-
-### Example 1
-```
-PS C:\> {{ Add example code here }}
-```
-
-{{ Add example description here }}
 
 ## PARAMETERS
 

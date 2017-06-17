@@ -1,7 +1,7 @@
 ---
-external help file: Vaporshell-help.xml
-online version: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-iam-role.html
-schema: 2.0.0
+layout: pagenodesc
+title: New-VSIAMRole
+category: glossary
 ---
 
 # New-VSIAMRole
@@ -19,15 +19,6 @@ New-VSIAMRole [-LogicalId] <String> -AssumeRolePolicyDocument <Object> [-Managed
 
 ## DESCRIPTION
 Adds an AWS::IAM::Role resource to the template
-
-## EXAMPLES
-
-### Example 1
-```
-PS C:\> {{ Add example code here }}
-```
-
-{{ Add example description here }}
 
 ## PARAMETERS
 

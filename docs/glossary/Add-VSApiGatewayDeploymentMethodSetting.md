@@ -1,7 +1,7 @@
 ---
-external help file: Vaporshell-help.xml
-online version: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-apitgateway-deployment-stagedescription-methodsetting.html
-schema: 2.0.0
+layout: pagenodesc
+title: Add-VSApiGatewayDeploymentMethodSetting
+category: glossary
 ---
 
 # Add-VSApiGatewayDeploymentMethodSetting
@@ -20,15 +20,6 @@ Add-VSApiGatewayDeploymentMethodSetting [[-CacheDataEncrypted] <Boolean>] [[-Cac
 
 ## DESCRIPTION
 Adds an AWS::ApiGateway::Deployment.MethodSetting resource property to the template
-
-## EXAMPLES
-
-### Example 1
-```
-PS C:\> {{ Add example code here }}
-```
-
-{{ Add example description here }}
 
 ## PARAMETERS
 

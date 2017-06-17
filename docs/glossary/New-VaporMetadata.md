@@ -1,7 +1,7 @@
 ---
-external help file: Vaporshell-help.xml
-online version: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/metadata-section-structure.html
-schema: 2.0.0
+layout: pagenodesc
+title: New-VaporMetadata
+category: glossary
 ---
 
 # New-VaporMetadata
@@ -21,32 +21,6 @@ You can use the optional Metadata section to include arbitrary JSON or YAML obje
 ** Important **
     During a stack update, you cannot update the Metadata section by itself.
 You can update it only when you include changes that add, modify, or delete resources.
-
-## EXAMPLES
-
-### -------------------------- EXAMPLE 1 --------------------------
-```
-$template = Initialize-Vaporshell -Description "Testing Metadata addition"
-```
-
-$template.AddMetadata(
-    (New-VaporMetadata -LogicalId "Instances" -Metadata \[PSCustomObject\]@{"Description" = "Information about the instances"}),
-    (New-VaporMetadata -LogicalId "Databases" -Metadata \[PSCustomObject\]@{"Description" = "Information about the databases"})
-)
-
-When the template is exported, this will convert to: 
-    {
-        "AWSTemplateFormatVersion":  "2010-09-09",
-        "Description":  "Testing Metadata addition",
-        "Metadata":  {
-            "Instances":  {
-                "Description":  "Information about the instances"
-            },
-            "Databases":  {
-                "Description":  "Information about the databases"
-            }
-        }
-    }
 
 ## PARAMETERS
 

@@ -1,7 +1,7 @@
 ---
-external help file: Vaporshell-help.xml
-online version: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-logs-loggroup.html
-schema: 2.0.0
+layout: pagenodesc
+title: New-VSLogsLogGroup
+category: glossary
 ---
 
 # New-VSLogsLogGroup
@@ -19,15 +19,6 @@ New-VSLogsLogGroup [-LogicalId] <String> [-LogGroupName <Object>] [-RetentionInD
 
 ## DESCRIPTION
 Adds an AWS::Logs::LogGroup resource to the template
-
-## EXAMPLES
-
-### Example 1
-```
-PS C:\> {{ Add example code here }}
-```
-
-{{ Add example description here }}
 
 ## PARAMETERS
 

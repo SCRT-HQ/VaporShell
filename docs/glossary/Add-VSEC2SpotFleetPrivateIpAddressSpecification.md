@@ -1,7 +1,7 @@
 ---
-external help file: Vaporshell-help.xml
-online version: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-spotfleet-spotfleetrequestconfigdata-launchspecifications-networkinterfaces-privateipaddresses.html
-schema: 2.0.0
+layout: pagenodesc
+title: Add-VSEC2SpotFleetPrivateIpAddressSpecification
+category: glossary
 ---
 
 # Add-VSEC2SpotFleetPrivateIpAddressSpecification
@@ -17,15 +17,6 @@ Add-VSEC2SpotFleetPrivateIpAddressSpecification [[-Primary] <Boolean>] [-Private
 
 ## DESCRIPTION
 Adds an AWS::EC2::SpotFleet.PrivateIpAddressSpecification resource property to the template
-
-## EXAMPLES
-
-### Example 1
-```
-PS C:\> {{ Add example code here }}
-```
-
-{{ Add example description here }}
 
 ## PARAMETERS
 

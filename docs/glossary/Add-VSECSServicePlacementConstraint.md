@@ -1,7 +1,7 @@
 ---
-external help file: Vaporshell-help.xml
-online version: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ecs-service-placementconstraint.html
-schema: 2.0.0
+layout: pagenodesc
+title: Add-VSECSServicePlacementConstraint
+category: glossary
 ---
 
 # Add-VSECSServicePlacementConstraint
@@ -17,15 +17,6 @@ Add-VSECSServicePlacementConstraint [[-Expression] <Object>] [-Type] <Object>
 
 ## DESCRIPTION
 Adds an AWS::ECS::Service.PlacementConstraint resource property to the template
-
-## EXAMPLES
-
-### Example 1
-```
-PS C:\> {{ Add example code here }}
-```
-
-{{ Add example description here }}
 
 ## PARAMETERS
 

@@ -1,7 +1,7 @@
 ---
-external help file: Vaporshell-help.xml
-online version: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/intrinsic-function-reference-ref.html
-schema: 2.0.0
+layout: pagenodesc
+title: Add-FnRef
+category: glossary
 ---
 
 # Add-FnRef
@@ -30,17 +30,6 @@ An AWS::EC2::EIP resource, for instance, returns the IP address, and an AWS::EC2
 
     Tip
         You can also use Ref to add values to Output messages.
-
-## EXAMPLES
-
-### -------------------------- EXAMPLE 1 --------------------------
-```
-# This uses the module's included variable that maps to the AWS Pseudo Parameter, "AWS::Region"
-```
-
-Add-FnRef -Ref "$_AWSRegion"
-
-When the template is exported, this will convert to: {"Ref":"AWS::Region"}
 
 ## PARAMETERS
 

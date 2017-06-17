@@ -1,7 +1,7 @@
 ---
-external help file: Vaporshell-help.xml
-online version: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-rds-dbclusterparametergroup.html
-schema: 2.0.0
+layout: pagenodesc
+title: New-VSRDSDBClusterParameterGroup
+category: glossary
 ---
 
 # New-VSRDSDBClusterParameterGroup
@@ -19,15 +19,6 @@ New-VSRDSDBClusterParameterGroup [-LogicalId] <String> -Description <Object> -Fa
 
 ## DESCRIPTION
 Adds an AWS::RDS::DBClusterParameterGroup resource to the template
-
-## EXAMPLES
-
-### Example 1
-```
-PS C:\> {{ Add example code here }}
-```
-
-{{ Add example description here }}
 
 ## PARAMETERS
 

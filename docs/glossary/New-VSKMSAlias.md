@@ -1,7 +1,7 @@
 ---
-external help file: Vaporshell-help.xml
-online version: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-kms-alias.html
-schema: 2.0.0
+layout: pagenodesc
+title: New-VSKMSAlias
+category: glossary
 ---
 
 # New-VSKMSAlias
@@ -18,15 +18,6 @@ New-VSKMSAlias [-LogicalId] <String> -AliasName <Object> -TargetKeyId <Object> [
 
 ## DESCRIPTION
 Adds an AWS::KMS::Alias resource to the template
-
-## EXAMPLES
-
-### Example 1
-```
-PS C:\> {{ Add example code here }}
-```
-
-{{ Add example description here }}
 
 ## PARAMETERS
 

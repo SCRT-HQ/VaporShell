@@ -1,7 +1,7 @@
 ---
-external help file: Vaporshell-help.xml
-online version: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-cognito-userpool-numberattributeconstraints.html
-schema: 2.0.0
+layout: pagenodesc
+title: Add-VSCognitoUserPoolNumberAttributeConstraints
+category: glossary
 ---
 
 # Add-VSCognitoUserPoolNumberAttributeConstraints
@@ -17,15 +17,6 @@ Add-VSCognitoUserPoolNumberAttributeConstraints [[-MinValue] <Object>] [[-MaxVal
 
 ## DESCRIPTION
 Adds an AWS::Cognito::UserPool.NumberAttributeConstraints resource property to the template
-
-## EXAMPLES
-
-### Example 1
-```
-PS C:\> {{ Add example code here }}
-```
-
-{{ Add example description here }}
 
 ## PARAMETERS
 

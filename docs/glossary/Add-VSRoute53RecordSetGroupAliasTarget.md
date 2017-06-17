@@ -1,7 +1,7 @@
 ---
-external help file: Vaporshell-help.xml
-online version: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-route53-aliastarget.html
-schema: 2.0.0
+layout: pagenodesc
+title: Add-VSRoute53RecordSetGroupAliasTarget
+category: glossary
 ---
 
 # Add-VSRoute53RecordSetGroupAliasTarget
@@ -18,15 +18,6 @@ Add-VSRoute53RecordSetGroupAliasTarget [-DNSName] <Object> [[-EvaluateTargetHeal
 
 ## DESCRIPTION
 Adds an AWS::Route53::RecordSetGroup.AliasTarget resource property to the template
-
-## EXAMPLES
-
-### Example 1
-```
-PS C:\> {{ Add example code here }}
-```
-
-{{ Add example description here }}
 
 ## PARAMETERS
 

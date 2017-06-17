@@ -1,7 +1,7 @@
 ---
-external help file: Vaporshell-help.xml
-online version: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-route53-aliastarget.html
-schema: 2.0.0
+layout: pagenodesc
+title: Add-VSRoute53RecordSetAliasTarget
+category: glossary
 ---
 
 # Add-VSRoute53RecordSetAliasTarget
@@ -18,15 +18,6 @@ Add-VSRoute53RecordSetAliasTarget [-DNSName] <Object> [[-EvaluateTargetHealth] <
 
 ## DESCRIPTION
 Adds an AWS::Route53::RecordSet.AliasTarget resource property to the template
-
-## EXAMPLES
-
-### Example 1
-```
-PS C:\> {{ Add example code here }}
-```
-
-{{ Add example description here }}
 
 ## PARAMETERS
 

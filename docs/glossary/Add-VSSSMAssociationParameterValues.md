@@ -1,7 +1,7 @@
 ---
-external help file: Vaporshell-help.xml
-online version: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ssm-association-parametervalues.html
-schema: 2.0.0
+layout: pagenodesc
+title: Add-VSSSMAssociationParameterValues
+category: glossary
 ---
 
 # Add-VSSSMAssociationParameterValues
@@ -17,15 +17,6 @@ Add-VSSSMAssociationParameterValues [-ParameterValues] <Object>
 
 ## DESCRIPTION
 Adds an AWS::SSM::Association.ParameterValues resource property to the template
-
-## EXAMPLES
-
-### Example 1
-```
-PS C:\> {{ Add example code here }}
-```
-
-{{ Add example description here }}
 
 ## PARAMETERS
 

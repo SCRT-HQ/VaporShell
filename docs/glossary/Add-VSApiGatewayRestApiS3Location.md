@@ -1,7 +1,7 @@
 ---
-external help file: Vaporshell-help.xml
-online version: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-apitgateway-restapi-bodys3location.html
-schema: 2.0.0
+layout: pagenodesc
+title: Add-VSApiGatewayRestApiS3Location
+category: glossary
 ---
 
 # Add-VSApiGatewayRestApiS3Location
@@ -18,15 +18,6 @@ Add-VSApiGatewayRestApiS3Location [[-Bucket] <Object>] [[-ETag] <Object>] [[-Key
 
 ## DESCRIPTION
 Adds an AWS::ApiGateway::RestApi.S3Location resource property to the template
-
-## EXAMPLES
-
-### Example 1
-```
-PS C:\> {{ Add example code here }}
-```
-
-{{ Add example description here }}
 
 ## PARAMETERS
 

@@ -1,7 +1,7 @@
 ---
-external help file: Vaporshell-help.xml
-online version: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-opsworks-layer-lifecycleeventconfiguration-shutdowneventconfiguration.html
-schema: 2.0.0
+layout: pagenodesc
+title: Add-VSOpsWorksLayerShutdownEventConfiguration
+category: glossary
 ---
 
 # Add-VSOpsWorksLayerShutdownEventConfiguration
@@ -18,15 +18,6 @@ Add-VSOpsWorksLayerShutdownEventConfiguration [[-DelayUntilElbConnectionsDrained
 
 ## DESCRIPTION
 Adds an AWS::OpsWorks::Layer.ShutdownEventConfiguration resource property to the template
-
-## EXAMPLES
-
-### Example 1
-```
-PS C:\> {{ Add example code here }}
-```
-
-{{ Add example description here }}
 
 ## PARAMETERS
 

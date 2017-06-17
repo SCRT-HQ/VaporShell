@@ -1,7 +1,7 @@
 ---
-external help file: Vaporshell-help.xml
-online version: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ec2-security-group-egress.html
-schema: 2.0.0
+layout: pagenodesc
+title: New-VSEC2SecurityGroupEgress
+category: glossary
 ---
 
 # New-VSEC2SecurityGroupEgress
@@ -20,15 +20,6 @@ New-VSEC2SecurityGroupEgress [-LogicalId] <String> [-CidrIp <Object>] [-CidrIpv6
 
 ## DESCRIPTION
 Adds an AWS::EC2::SecurityGroupEgress resource to the template
-
-## EXAMPLES
-
-### Example 1
-```
-PS C:\> {{ Add example code here }}
-```
-
-{{ Add example description here }}
 
 ## PARAMETERS
 

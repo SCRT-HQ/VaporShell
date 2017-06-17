@@ -1,7 +1,7 @@
 ---
-external help file: Vaporshell-help.xml
-online version: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-elasticloadbalancingv2-listener.html
-schema: 2.0.0
+layout: pagenodesc
+title: New-VSElasticLoadBalancingV2Listener
+category: glossary
 ---
 
 # New-VSElasticLoadBalancingV2Listener
@@ -19,15 +19,6 @@ New-VSElasticLoadBalancingV2Listener [-LogicalId] <String> [-Certificates <Objec
 
 ## DESCRIPTION
 Adds an AWS::ElasticLoadBalancingV2::Listener resource to the template
-
-## EXAMPLES
-
-### Example 1
-```
-PS C:\> {{ Add example code here }}
-```
-
-{{ Add example description here }}
 
 ## PARAMETERS
 

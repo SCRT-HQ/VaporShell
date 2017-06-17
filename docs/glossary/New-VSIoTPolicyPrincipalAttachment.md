@@ -1,7 +1,7 @@
 ---
-external help file: Vaporshell-help.xml
-online version: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-iot-policyprincipalattachment.html
-schema: 2.0.0
+layout: pagenodesc
+title: New-VSIoTPolicyPrincipalAttachment
+category: glossary
 ---
 
 # New-VSIoTPolicyPrincipalAttachment
@@ -19,15 +19,6 @@ New-VSIoTPolicyPrincipalAttachment [-LogicalId] <String> -PolicyName <Object> -P
 
 ## DESCRIPTION
 Adds an AWS::IoT::PolicyPrincipalAttachment resource to the template
-
-## EXAMPLES
-
-### Example 1
-```
-PS C:\> {{ Add example code here }}
-```
-
-{{ Add example description here }}
 
 ## PARAMETERS
 

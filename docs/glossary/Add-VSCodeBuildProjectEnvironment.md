@@ -1,7 +1,7 @@
 ---
-external help file: Vaporshell-help.xml
-online version: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-codebuild-project-environment.html
-schema: 2.0.0
+layout: pagenodesc
+title: Add-VSCodeBuildProjectEnvironment
+category: glossary
 ---
 
 # Add-VSCodeBuildProjectEnvironment
@@ -18,15 +18,6 @@ Add-VSCodeBuildProjectEnvironment [[-Type] <Object>] [[-EnvironmentVariables] <O
 
 ## DESCRIPTION
 Adds an AWS::CodeBuild::Project.Environment resource property to the template
-
-## EXAMPLES
-
-### Example 1
-```
-PS C:\> {{ Add example code here }}
-```
-
-{{ Add example description here }}
 
 ## PARAMETERS
 

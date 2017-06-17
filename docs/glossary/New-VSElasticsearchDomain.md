@@ -1,7 +1,7 @@
 ---
-external help file: Vaporshell-help.xml
-online version: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-elasticsearch-domain.html
-schema: 2.0.0
+layout: pagenodesc
+title: New-VSElasticsearchDomain
+category: glossary
 ---
 
 # New-VSElasticsearchDomain
@@ -20,15 +20,6 @@ New-VSElasticsearchDomain [-LogicalId] <String> [-AccessPolicies <Object>] [-Adv
 
 ## DESCRIPTION
 Adds an AWS::Elasticsearch::Domain resource to the template
-
-## EXAMPLES
-
-### Example 1
-```
-PS C:\> {{ Add example code here }}
-```
-
-{{ Add example description here }}
 
 ## PARAMETERS
 

@@ -1,7 +1,7 @@
 ---
-external help file: Vaporshell-help.xml
-online version: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-iot-thing.html
-schema: 2.0.0
+layout: pagenodesc
+title: New-VSIoTThing
+category: glossary
 ---
 
 # New-VSIoTThing
@@ -19,15 +19,6 @@ New-VSIoTThing [-LogicalId] <String> [-AttributePayload <Object>] [-ThingName <O
 
 ## DESCRIPTION
 Adds an AWS::IoT::Thing resource to the template
-
-## EXAMPLES
-
-### Example 1
-```
-PS C:\> {{ Add example code here }}
-```
-
-{{ Add example description here }}
 
 ## PARAMETERS
 

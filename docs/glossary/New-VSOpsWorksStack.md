@@ -1,7 +1,7 @@
 ---
-external help file: Vaporshell-help.xml
-online version: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-opsworks-stack.html
-schema: 2.0.0
+layout: pagenodesc
+title: New-VSOpsWorksStack
+category: glossary
 ---
 
 # New-VSOpsWorksStack
@@ -25,15 +25,6 @@ New-VSOpsWorksStack [-LogicalId] <String> [-AgentVersion <Object>] [-Attributes 
 
 ## DESCRIPTION
 Adds an AWS::OpsWorks::Stack resource to the template
-
-## EXAMPLES
-
-### Example 1
-```
-PS C:\> {{ Add example code here }}
-```
-
-{{ Add example description here }}
 
 ## PARAMETERS
 

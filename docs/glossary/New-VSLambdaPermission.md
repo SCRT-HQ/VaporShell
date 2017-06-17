@@ -1,7 +1,7 @@
 ---
-external help file: Vaporshell-help.xml
-online version: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-lambda-permission.html
-schema: 2.0.0
+layout: pagenodesc
+title: New-VSLambdaPermission
+category: glossary
 ---
 
 # New-VSLambdaPermission
@@ -19,15 +19,6 @@ New-VSLambdaPermission [-LogicalId] <String> -Action <Object> -FunctionName <Obj
 
 ## DESCRIPTION
 Adds an AWS::Lambda::Permission resource to the template
-
-## EXAMPLES
-
-### Example 1
-```
-PS C:\> {{ Add example code here }}
-```
-
-{{ Add example description here }}
 
 ## PARAMETERS
 

@@ -1,7 +1,7 @@
 ---
-external help file: Vaporshell-help.xml
-online version: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-codepipeline-customactiontype-settings.html
-schema: 2.0.0
+layout: pagenodesc
+title: Add-VSCodePipelineCustomActionTypeSettings
+category: glossary
 ---
 
 # Add-VSCodePipelineCustomActionTypeSettings
@@ -18,15 +18,6 @@ Add-VSCodePipelineCustomActionTypeSettings [[-EntityUrlTemplate] <Object>] [[-Ex
 
 ## DESCRIPTION
 Adds an AWS::CodePipeline::CustomActionType.Settings resource property to the template
-
-## EXAMPLES
-
-### Example 1
-```
-PS C:\> {{ Add example code here }}
-```
-
-{{ Add example description here }}
 
 ## PARAMETERS
 

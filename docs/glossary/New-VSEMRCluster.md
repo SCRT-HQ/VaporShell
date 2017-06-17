@@ -1,7 +1,7 @@
 ---
-external help file: Vaporshell-help.xml
-online version: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-emr-cluster.html
-schema: 2.0.0
+layout: pagenodesc
+title: New-VSEMRCluster
+category: glossary
 ---
 
 # New-VSEMRCluster
@@ -22,15 +22,6 @@ New-VSEMRCluster [-LogicalId] <String> [-AdditionalInfo <Object>] [-Applications
 
 ## DESCRIPTION
 Adds an AWS::EMR::Cluster resource to the template
-
-## EXAMPLES
-
-### Example 1
-```
-PS C:\> {{ Add example code here }}
-```
-
-{{ Add example description here }}
 
 ## PARAMETERS
 

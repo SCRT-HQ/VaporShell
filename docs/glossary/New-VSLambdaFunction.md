@@ -1,7 +1,7 @@
 ---
-external help file: Vaporshell-help.xml
-online version: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-lambda-function.html
-schema: 2.0.0
+layout: pagenodesc
+title: New-VSLambdaFunction
+category: glossary
 ---
 
 # New-VSLambdaFunction
@@ -21,15 +21,6 @@ New-VSLambdaFunction [-LogicalId] <String> -Code <Object> [-DeadLetterConfig <Ob
 
 ## DESCRIPTION
 Adds an AWS::Lambda::Function resource to the template
-
-## EXAMPLES
-
-### Example 1
-```
-PS C:\> {{ Add example code here }}
-```
-
-{{ Add example description here }}
 
 ## PARAMETERS
 

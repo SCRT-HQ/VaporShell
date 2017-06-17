@@ -1,7 +1,7 @@
 ---
-external help file: Vaporshell-help.xml
-online version: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-apigateway-restapi.html
-schema: 2.0.0
+layout: pagenodesc
+title: New-VSApiGatewayRestApi
+category: glossary
 ---
 
 # New-VSApiGatewayRestApi
@@ -20,15 +20,6 @@ New-VSApiGatewayRestApi [-LogicalId] <String> [-Body <Object>] [-BodyS3Location 
 
 ## DESCRIPTION
 Adds an AWS::ApiGateway::RestApi resource to the template
-
-## EXAMPLES
-
-### Example 1
-```
-PS C:\> {{ Add example code here }}
-```
-
-{{ Add example description here }}
 
 ## PARAMETERS
 

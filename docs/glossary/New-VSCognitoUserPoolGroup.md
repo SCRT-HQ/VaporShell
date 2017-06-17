@@ -1,7 +1,7 @@
 ---
-external help file: Vaporshell-help.xml
-online version: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-cognito-userpoolgroup.html
-schema: 2.0.0
+layout: pagenodesc
+title: New-VSCognitoUserPoolGroup
+category: glossary
 ---
 
 # New-VSCognitoUserPoolGroup
@@ -19,15 +19,6 @@ New-VSCognitoUserPoolGroup [-LogicalId] <String> [-GroupName <Object>] [-Descrip
 
 ## DESCRIPTION
 Adds an AWS::Cognito::UserPoolGroup resource to the template
-
-## EXAMPLES
-
-### Example 1
-```
-PS C:\> {{ Add example code here }}
-```
-
-{{ Add example description here }}
 
 ## PARAMETERS
 

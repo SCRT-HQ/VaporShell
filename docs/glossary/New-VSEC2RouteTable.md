@@ -1,7 +1,7 @@
 ---
-external help file: Vaporshell-help.xml
-online version: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ec2-route-table.html
-schema: 2.0.0
+layout: pagenodesc
+title: New-VSEC2RouteTable
+category: glossary
 ---
 
 # New-VSEC2RouteTable
@@ -18,15 +18,6 @@ New-VSEC2RouteTable [-LogicalId] <String> [-Tags <Object>] -VpcId <Object> [-Del
 
 ## DESCRIPTION
 Adds an AWS::EC2::RouteTable resource to the template
-
-## EXAMPLES
-
-### Example 1
-```
-PS C:\> {{ Add example code here }}
-```
-
-{{ Add example description here }}
 
 ## PARAMETERS
 

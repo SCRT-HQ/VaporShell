@@ -1,7 +1,7 @@
 ---
-external help file: Vaporshell-help.xml
-online version: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/intrinsic-function-reference-join.html
-schema: 2.0.0
+layout: pagenodesc
+title: Add-FnJoin
+category: glossary
 ---
 
 # Add-FnJoin
@@ -18,15 +18,6 @@ Add-FnJoin [[-Delimiter] <String>] [-ListOfValues] <Object[]>
 ## DESCRIPTION
 The intrinsic function Fn::Join appends a set of values into a single value, separated by the specified delimiter.
 If a delimiter is the empty string, the set of values are concatenated with no delimiter.
-
-## EXAMPLES
-
-### -------------------------- EXAMPLE 1 --------------------------
-```
-Add-FnSelect -Index 2 -ListOfObjects (Add-FnSplit -Delimiter "," -SourceString (Add-FnImportValue -ValueToImport "AccountSubnetIds"))
-```
-
-When the template is exported, this will convert to: {"Fn::Select":\["2",{"Fn::Split":\[",",{"Fn::ImportValue":"AccountSubnetIds"}\]}\]}
 
 ## PARAMETERS
 

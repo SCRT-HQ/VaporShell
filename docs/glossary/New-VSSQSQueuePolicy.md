@@ -1,7 +1,7 @@
 ---
-external help file: Vaporshell-help.xml
-online version: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-sqs-policy.html
-schema: 2.0.0
+layout: pagenodesc
+title: New-VSSQSQueuePolicy
+category: glossary
 ---
 
 # New-VSSQSQueuePolicy
@@ -18,15 +18,6 @@ New-VSSQSQueuePolicy [-LogicalId] <String> -PolicyDocument <Object> -Queues <Obj
 
 ## DESCRIPTION
 Adds an AWS::SQS::QueuePolicy resource to the template
-
-## EXAMPLES
-
-### Example 1
-```
-PS C:\> {{ Add example code here }}
-```
-
-{{ Add example description here }}
 
 ## PARAMETERS
 

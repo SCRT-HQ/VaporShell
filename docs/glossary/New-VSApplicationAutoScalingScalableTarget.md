@@ -1,7 +1,7 @@
 ---
-external help file: Vaporshell-help.xml
-online version: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-applicationautoscaling-scalabletarget.html
-schema: 2.0.0
+layout: pagenodesc
+title: New-VSApplicationAutoScalingScalableTarget
+category: glossary
 ---
 
 # New-VSApplicationAutoScalingScalableTarget
@@ -20,15 +20,6 @@ New-VSApplicationAutoScalingScalableTarget [-LogicalId] <String> -MaxCapacity <I
 
 ## DESCRIPTION
 Adds an AWS::ApplicationAutoScaling::ScalableTarget resource to the template
-
-## EXAMPLES
-
-### Example 1
-```
-PS C:\> {{ Add example code here }}
-```
-
-{{ Add example description here }}
 
 ## PARAMETERS
 
