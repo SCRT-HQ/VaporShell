@@ -7,29 +7,29 @@ description: |
   Define your Cloud   
   with Powershell   
   on any system   
-owner: SCRT HQ # or company name
-first_published: 2017 # if migrating another site, the year of your first publish
+owner: "SCRT HQ"
+first_published: 2017
 email: nate@scrthq.com
 baseurl: "" # the subpath of your site, e.g. /blog
 url: "http://vaporshell.io" # the base hostname & protocol for your site
 permalink: /:category/:title
 highlighter: rouge
 social:
-  linkedin-square: https://linkedin.com/in/scrthq
   github: https://github.com/scrthq/Vaporshell
+  linkedin-square: https://linkedin.com/in/scrthq
+  reddit: https://www.reddit.com/user/scrthq/
+  #stack-overflow: https://stackoverflow.com/users/5302680/nferrell
+  #soundcloud: https://soundcloud.com/nonfuture
   email: mailto:nate@vaporshell.io
   #flickr:
   #instagram:
   #youtube-square:
   #spotify:
-  #stack-overflow:
   #vimeo:
-  reddit: https://www.reddit.com/user/scrthq/
   #stubleupon:
   #delicious:
   #pied-piper:
   #digg:
-  #soundcloud:
   #deviantart:
   #angellist:
   #tumblr-square:
