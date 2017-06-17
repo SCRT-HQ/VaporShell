@@ -56,7 +56,7 @@ $scriptContents +=@"
 "@
 $pList = $Prop.value.psobject.properties
 foreach ($p in $pList) {
-    $scriptContents += "`t`t$($p.Name): $($p.Value)"
+    $scriptContents += "`t`t$($p.Name): $($p.Value)    "
 }
 $scriptContents += ""
 }
