@@ -3,6 +3,12 @@ layout: pagenodesc
 title: About
 ---
 
+|       | Master | Dev |
+|:-----:|:------:|:---:|
+| AppVeyor (Windows) | [![Build status](https://ci.appveyor.com/api/projects/status/8a4jsfv42tbmlym8/branch/master?svg=true)](https://ci.appveyor.com/project/nferrell/vaporshell/branch/master) | [![Build status](https://ci.appveyor.com/api/projects/status/8a4jsfv42tbmlym8/branch/dev?svg=true)](https://ci.appveyor.com/project/nferrell/vaporshell/branch/dev) |
+| Travis CI* (Linux / macOS) | _Coming soon!_ |  _Coming soon!_ |
+| Code Coverage | [![Coverage Status](https://coveralls.io/repos/github/nferrell/Vaporshell/badge.svg?branch=dev)](https://coveralls.io/github/nferrell/Vaporshell?branch=master) | [![Coverage Status](https://coveralls.io/repos/github/nferrell/Vaporshell/badge.svg?branch=dev)](https://coveralls.io/github/nferrell/Vaporshell?branch=dev) |
+
 | Build | AppVeyor (Windows) | Travis CI* (Linux / macOS) | Code Coverage |
 |:-----:|:------------------:|:--------------------------:|:-------------:|
 | Master | [![Build status](https://ci.appveyor.com/api/projects/status/8a4jsfv42tbmlym8/branch/master?svg=true)](https://ci.appveyor.com/project/nferrell/vaporshell/branch/master) |  _Coming soon!_ | [![Coverage Status](https://coveralls.io/repos/github/nferrell/Vaporshell/badge.svg?branch=dev)](https://coveralls.io/github/nferrell/Vaporshell?branch=master) |
