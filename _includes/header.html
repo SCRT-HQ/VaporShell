@@ -9,7 +9,7 @@
           <ul>
             <li><a href="{{ site.baseurl }}/index.html">Home</a></li>
             {% for my_page in site.pages %}
-            {% if my_page.title and my_page.categories contains "menu" %}
+            {% if my_page.title and my_page.category != "glossary" %}
             <li><a href="{{ my_page.url | prepend: site.baseurl }}">{{ my_page.title }}</a></li>
             {% endif %}
             {% endfor %}
