@@ -7,7 +7,7 @@ layout: landing
 			<h2>{{ site.title }}</h2>
 			<p>{{ site.description | markdownify }}</p>
 			<ul class="actions">
-				<li><a href="http://vaporshell.io/docs" class="button special fit">Documentation</a></li>
+				<li><a href="{{ "/docs" | prepend: site.url }}" class="button special fit">Documentation</a></li>
 			</ul>
 		</div>
 		<a href="#one" class="more scrolly">Learn More</a>
@@ -92,12 +92,12 @@ layout: landing
 	<section id="cta" class="wrapper style4">
 		<div class="inner">
 			<header>
-				<h2>Arcue ut vel commodo</h2>
-				<p>Aliquam ut ex ut augue consectetur interdum endrerit imperdiet amet eleifend fringilla.</p>
+				<h2>Ready to Dive In?</h2>
+				<p>Check out the documentation to get started or head straight to the glossary for help with a specific function</p>
 			</header>
 			<ul class="actions vertical">
-				<li><a href="#" class="button fit special">Activate</a></li>
-				<li><a href="#" class="button fit">Learn More</a></li>
+				<li><a href="{{ "/docs" | prepend: site.url }}" class="button fit special">Documentation</a></li>
+				<li><a href="{{ "/docs/glossary" | prepend: site.url }}" class="button fit">Glossary</a></li>
 			</ul>
 		</div>
 	</section>
