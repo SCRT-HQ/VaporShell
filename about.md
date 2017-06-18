@@ -58,7 +58,7 @@ Thanks!
 ## Examples
 _Full documentation is being prepared right now._
 
-```powershell
+```perl
 $templateInit = $null
 $templateInit = Initialize-Vaporshell -Description "Testing"
 $templateInit.AddMetadata((New-VaporMetadata -LogicalId "Instances" -Metadata @{"Description" = "Information about the instances"}))
