@@ -387,6 +387,7 @@ $scriptContents += @"
 Set-Content -Value $scriptContents -Path $PS1Path -Force
 }
 
+
 $URL = "https://d1uauaxba7bl26.cloudfront.net/latest/CloudFormationResourceSpecification.json"
 $specs = (New-Object System.Net.WebClient).DownloadString($URL) | ConvertFrom-Json
 
