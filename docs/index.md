@@ -4,5 +4,5 @@ title: Documentation
 categories: menu
 ---
 
-## Table of Contents
+## Coming soon!
 
