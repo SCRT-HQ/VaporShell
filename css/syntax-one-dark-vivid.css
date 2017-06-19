@@ -18,12 +18,11 @@ pre.highlight {
 }
 
 .highlight .err {
-    color: #960050;
-    background-color: #1e0010
+    color: #e19ef5
 }
 
 .highlight .k {
-    color: #e19ef5
+    color: #f9867b
 }
 
 .highlight .l {
@@ -31,7 +30,7 @@ pre.highlight {
 }
 
 .highlight .n {
-    color: #dee2f7
+    color: #f92672
 }
 
 .highlight .o {
@@ -135,7 +134,7 @@ pre.highlight {
 }
 
 .highlight .nf {
-    color: #dee2f7
+    color: #56b6c2
 }
 
 .highlight .nl {
