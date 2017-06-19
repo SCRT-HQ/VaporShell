@@ -149,6 +149,10 @@ pre.highlight {
     color: #dee2f7
 }
 
+.highlight .pi {
+    color: #f92672
+}
+
 .highlight .py {
     color: #fdce68
 }
