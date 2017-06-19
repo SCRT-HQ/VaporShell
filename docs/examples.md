@@ -1,6 +1,8 @@
 ---
 layout: comingsoon
 title: Examples
-description: CloudFormation templates built with Vaporshell
+description: CloudFormation template examples built with Vaporshell
 categories: menu
 ---
+
+## Coming soon!

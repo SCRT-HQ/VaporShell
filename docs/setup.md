@@ -1,4 +1,7 @@
 ---
 layout: comingsoon
-title: Getting Started
+title: Getting Setup
+description: Taking the first steps on the ladder to the cloud
 ---
+
+## Coming soon!
