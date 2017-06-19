@@ -8,9 +8,8 @@ categories: menu
     <p>Have an issue, suggestion, comment, etc? Send it over!</p>
     <form method="POST" action="http://formspree.io/nate@vaporshell.io">
         <div class="row uniform">
-            <div class="6u$ 12u$(xsmall)">
+            <div class="6u$">
                 <input type="email" name="email" id="email" value="" placeholder="Your email" />
-                <input type="text" name="_subject" value="" placeholder="Subject" />
             </div>
             <div class="12u$">
                 <textarea name="message" id="message" placeholder="Enter your message" rows="6"></textarea>
@@ -20,6 +19,7 @@ categories: menu
                     <li><input type="submit" value="Send Message" class="special" /></li>
                     <li><input type="reset" value="Reset" /></li>
                     <input type="hidden" name="_next" value="{{ site.url }}" />
+                    <input type="hidden" name="_subject" value="New Contact Submission:{{ site.title }}" />
                 </ul>
             </div>
         </div>
