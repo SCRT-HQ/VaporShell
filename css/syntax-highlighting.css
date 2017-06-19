@@ -1,63 +1,270 @@
-/* The Pygments "friendly" theme */
-/* .highlighter-rouge { background: #eeeeee; } */
-.highlight .hll { background-color: #ffffcc }
-.highlight .c { color: #60a0b0; font-style: italic } /* Comment */
-.highlight .err { border: 1px solid #FF0000 } /* Error */
-.highlight .k { color: #007020; font-weight: bold } /* Keyword */
-.highlight .o { color: #666666 } /* Operator */
-.highlight .cm { color: #60a0b0; font-style: italic } /* Comment.Multiline */
-.highlight .cp { color: #007020 } /* Comment.Preproc */
-.highlight .c1 { color: #60a0b0; font-style: italic } /* Comment.Single */
-.highlight .cs { color: #60a0b0; background-color: #fff0f0 } /* Comment.Special */
-.highlight .gd { color: #A00000 } /* Generic.Deleted */
-.highlight .ge { font-style: italic } /* Generic.Emph */
-.highlight .gr { color: #FF0000 } /* Generic.Error */
-.highlight .gh { color: #000080; font-weight: bold } /* Generic.Heading */
-.highlight .gi { color: #00A000 } /* Generic.Inserted */
-.highlight .go { color: #808080 } /* Generic.Output */
-.highlight .gp { color: #c65d09; font-weight: bold } /* Generic.Prompt */
-.highlight .gs { font-weight: bold } /* Generic.Strong */
-.highlight .gu { color: #800080; font-weight: bold } /* Generic.Subheading */
-.highlight .gt { color: #0040D0 } /* Generic.Traceback */
-.highlight .kc { color: #007020; font-weight: bold } /* Keyword.Constant */
-.highlight .kd { color: #007020; font-weight: bold } /* Keyword.Declaration */
-.highlight .kn { color: #007020; font-weight: bold } /* Keyword.Namespace */
-.highlight .kp { color: #007020 } /* Keyword.Pseudo */
-.highlight .kr { color: #007020; font-weight: bold } /* Keyword.Reserved */
-.highlight .kt { color: #902000 } /* Keyword.Type */
-.highlight .m { color: #40a070 } /* Literal.Number */
-.highlight .s { color: #4070a0 } /* Literal.String */
-.highlight .na { color: #4070a0 } /* Name.Attribute */
-.highlight .nb { color: #007020 } /* Name.Builtin */
-.highlight .nc { color: #0e84b5; font-weight: bold } /* Name.Class */
-.highlight .no { color: #60add5 } /* Name.Constant */
-.highlight .nd { color: #555555; font-weight: bold } /* Name.Decorator */
-.highlight .ni { color: #d55537; font-weight: bold } /* Name.Entity */
-.highlight .ne { color: #007020 } /* Name.Exception */
-.highlight .nf { color: #06287e } /* Name.Function */
-.highlight .nl { color: #002070; font-weight: bold } /* Name.Label */
-.highlight .nn { color: #0e84b5; font-weight: bold } /* Name.Namespace */
-.highlight .nt { color: #062873; font-weight: bold } /* Name.Tag */
-.highlight .nv { color: #bb60d5 } /* Name.Variable */
-.highlight .ow { color: #007020; font-weight: bold } /* Operator.Word */
-.highlight .w { color: #bbbbbb } /* Text.Whitespace */
-.highlight .mf { color: #40a070 } /* Literal.Number.Float */
-.highlight .mh { color: #40a070 } /* Literal.Number.Hex */
-.highlight .mi { color: #40a070 } /* Literal.Number.Integer */
-.highlight .mo { color: #40a070 } /* Literal.Number.Oct */
-.highlight .sb { color: #4070a0 } /* Literal.String.Backtick */
-.highlight .sc { color: #4070a0 } /* Literal.String.Char */
-.highlight .sd { color: #4070a0; font-style: italic } /* Literal.String.Doc */
-.highlight .s2 { color: #4070a0 } /* Literal.String.Double */
-.highlight .se { color: #4070a0; font-weight: bold } /* Literal.String.Escape */
-.highlight .sh { color: #4070a0 } /* Literal.String.Heredoc */
-.highlight .si { color: #70a0d0; font-style: italic } /* Literal.String.Interpol */
-.highlight .sx { color: #c65d09 } /* Literal.String.Other */
-.highlight .sr { color: #235388 } /* Literal.String.Regex */
-.highlight .s1 { color: #4070a0 } /* Literal.String.Single */
-.highlight .ss { color: #517918 } /* Literal.String.Symbol */
-.highlight .bp { color: #007020 } /* Name.Builtin.Pseudo */
-.highlight .vc { color: #bb60d5 } /* Name.Variable.Class */
-.highlight .vg { color: #bb60d5 } /* Name.Variable.Global */
-.highlight .vi { color: #bb60d5 } /* Name.Variable.Instance */
-.highlight .il { color: #40a070 } /* Literal.Number.Integer.Long */
+/** The Pygments "friendly" theme 
+
+.highlighter-rouge {
+    background: #272822;
+}
+*/
+
+.highlight,
+pre.highlight {
+    background: #282c34;
+    color: #abb2bf
+}
+
+.highlight pre {
+    background: #282c34
+}
+
+.highlight .hll {
+    background: #282c34
+}
+
+.highlight .c {
+    color: #5c6370;
+    font-style: italic
+}
+
+.highlight .err {
+    color: #960050;
+    background-color: #1e0010
+}
+
+.highlight .k {
+    color: #c678dd
+}
+
+.highlight .l {
+    color: #98c379
+}
+
+.highlight .n {
+    color: #abb2bf
+}
+
+.highlight .o {
+    color: #abb2bf
+}
+
+.highlight .p {
+    color: #abb2bf
+}
+
+.highlight .cm {
+    color: #5c6370;
+    font-style: italic
+}
+
+.highlight .cp {
+    color: #5c6370;
+    font-style: italic
+}
+
+.highlight .c1 {
+    color: #5c6370;
+    font-style: italic
+}
+
+.highlight .cs {
+    color: #5c6370;
+    font-style: italic
+}
+
+.highlight .ge {
+    font-style: italic
+}
+
+.highlight .gs {
+    font-weight: 700
+}
+
+.highlight .kc {
+    color: #c678dd
+}
+
+.highlight .kd {
+    color: #c678dd
+}
+
+.highlight .kn {
+    color: #c678dd
+}
+
+.highlight .kp {
+    color: #c678dd
+}
+
+.highlight .kr {
+    color: #c678dd
+}
+
+.highlight .kt {
+    color: #c678dd
+}
+
+.highlight .ld {
+    color: #98c379
+}
+
+.highlight .m {
+    color: #d19a66
+}
+
+.highlight .s {
+    color: #98c379
+}
+
+.highlight .na {
+    color: #d19a66
+}
+
+.highlight .nb {
+    color: #e5c07b
+}
+
+.highlight .nc {
+    color: #e5c07b
+}
+
+.highlight .no {
+    color: #e5c07b
+}
+
+.highlight .nd {
+    color: #e5c07b
+}
+
+.highlight .ni {
+    color: #e5c07b
+}
+
+.highlight .ne {
+    color: #e5c07b
+}
+
+.highlight .nf {
+    color: #abb2bf
+}
+
+.highlight .nl {
+    color: #e5c07b
+}
+
+.highlight .nn {
+    color: #abb2bf
+}
+
+.highlight .nx {
+    color: #abb2bf
+}
+
+.highlight .py {
+    color: #e5c07b
+}
+
+.highlight .nt {
+    color: #e06c75
+}
+
+.highlight .nv {
+    color: #e5c07b
+}
+
+.highlight .ow {
+    font-weight: 700
+}
+
+.highlight .w {
+    color: #f8f8f2
+}
+
+.highlight .mf {
+    color: #d19a66
+}
+
+.highlight .mh {
+    color: #d19a66
+}
+
+.highlight .mi {
+    color: #d19a66
+}
+
+.highlight .mo {
+    color: #d19a66
+}
+
+.highlight .sb {
+    color: #98c379
+}
+
+.highlight .sc {
+    color: #98c379
+}
+
+.highlight .sd {
+    color: #98c379
+}
+
+.highlight .s2 {
+    color: #98c379
+}
+
+.highlight .se {
+    color: #98c379
+}
+
+.highlight .sh {
+    color: #98c379
+}
+
+.highlight .si {
+    color: #98c379
+}
+
+.highlight .sx {
+    color: #98c379
+}
+
+.highlight .sr {
+    color: #56b6c2
+}
+
+.highlight .s1 {
+    color: #98c379
+}
+
+.highlight .ss {
+    color: #56b6c2
+}
+
+.highlight .bp {
+    color: #e5c07b
+}
+
+.highlight .vc {
+    color: #e5c07b
+}
+
+.highlight .vg {
+    color: #e5c07b
+}
+
+.highlight .vi {
+    color: #e06c75
+}
+
+.highlight .il {
+    color: #d19a66
+}
+
+.highlight .gu {
+    color: #75715e
+}
+
+.highlight .gd {
+    color: #f92672
+}
+
+.highlight .gi {
+    color: #a6e22e
+}
