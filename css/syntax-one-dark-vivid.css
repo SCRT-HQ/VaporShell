@@ -1,7 +1,7 @@
 .highlight,
 pre.highlight {
     background: #31343f;
-    color: #dee2f7
+    color: #56b6c2
 }
 
 .highlight pre {
@@ -22,7 +22,7 @@ pre.highlight {
 }
 
 .highlight .k {
-    color: #f9867b
+    color: #e19ef5
 }
 
 .highlight .l {
@@ -34,7 +34,7 @@ pre.highlight {
 }
 
 .highlight .o {
-    color: #56b6c2
+    color: #e19ef5
 }
 
 .highlight .p {
@@ -158,7 +158,7 @@ pre.highlight {
 }
 
 .highlight .nv {
-    color: #56b6c2
+    color: #f9867b
 }
 
 .highlight .ow {
