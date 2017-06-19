@@ -1,7 +1,7 @@
-title	url	icon
-Home	/	home
-Documentation	/docs	book
-Examples	/docs/examples	code
-Glossary	/docs/glossary	info-circle
-Contact	/contact	envelope-o
-RSS Feed	/feed.xml	feed
+"title","url","icon"
+"Home","/","home"
+"Documentation","/docs","book"
+"Examples","/docs/examples","code"
+"Glossary","/docs/glossary","info-circle"
+"Contact","/contact","envelope-o"
+"RSS Feed","/feed.xml","feed"
