@@ -16,8 +16,6 @@
     <meta name="twitter:description" value="{% if page.excerpt %}{{ page.excerpt | strip_html | strip_newlines | truncate: 160 }}{% else %}{{ site.description }}{% endif %}" />
     <meta name="twitter:image" content="{{ "/images/mainUnfurl.png " | prepend: site.url }}" />
     <meta name="twitter:url" value="{{ site.url }}" />
-    <meta name="twitter:label1" value="{{ page.title }}" />
-    <meta name="twitter:data1" value="{% if page.excerpt %}{{ page.excerpt | strip_html | strip_newlines | truncate: 160 }}{% else %}{{ site.description }}{% endif %}" />
     <!--[if lte IE 8]><script src="{{ "/js/ie/html5shiv.js" | prepend: site.baseurl }}"></script><![endif]-->
     <link rel="canonical" href="{{ page.url | replace:'index.html','' | prepend: site.baseurl | prepend: site.url }}">
     <link rel="stylesheet" href="{{ " /css/main.css " | prepend: site.baseurl }}" />
