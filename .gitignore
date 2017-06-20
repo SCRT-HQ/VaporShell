@@ -1,3 +1,6 @@
+# Project ignores
+_ignored
+
 # Jekyll ignores
 .sass-cache/
 _site
