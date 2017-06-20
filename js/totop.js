@@ -9,7 +9,7 @@ jQuery(document).ready(function($){
 		$back_to_top = $('.cd-top');
 
 	//hide or show the "back to top" link
-	$(#s4-workspace).scroll(function(){
+	$('#s4-workspace').scroll(function(){
 		( $(this).scrollTop() > offset ) ? $back_to_top.addClass('cd-is-visible') : $back_to_top.removeClass('cd-is-visible cd-fade-out');
 		if( $(this).scrollTop() > offset_opacity ) { 
 			$back_to_top.addClass('cd-fade-out');
@@ -19,7 +19,7 @@ jQuery(document).ready(function($){
 	//smooth scroll to top
 	$back_to_top.on('click', function(event){
 		event.preventDefault();
-		$('body,html').animate({
+		$('#s4-workspace').animate({
 			scrollTop: 0 ,
 		 	}, scroll_top_duration
 		);
