@@ -1,11 +1,13 @@
 .highlight,
 pre.highlight {
     background: #31343f;
-    color: #56b6c2
+    color: #56b6c2;
+    font-family: 'Droid Sans Mono', monospace
 }
 
 .highlight pre {
-    background: #31343f
+    background: #31343f;
+    font-family: 'Droid Sans Mono', monospace
 }
 
 .highlight .hll {
