@@ -9,8 +9,8 @@ title: Documentation
     - [Prerequisites](#prerequisites)
     - [Installing the Module](#installing-the-module)
 - [Bare Minimums](#bare-minimums)
-    - [Initializing the Template Object](#initializing-the-template-object)
-    - [Adding a Resource](#adding-a-resource)
+    - [Create the Template Object](#create-the-template-object)
+    - [Add a Resource (or 20)](#add-a-resource-or-20)
 
 <!-- /TOC -->
 
@@ -43,12 +43,10 @@ Install-Module -Name Vaporshell
 
 ## Bare Minimums
 
-### Initializing the Template Object
+### Create the Template Object
 
 The first thing you will need to do in your build script is import Vaporshell into the current session:  
-```powershell
-Import-Module Vaporshell
-```
+`Import-Module Vaporshell`
 
 Next, you need to initialize a new template OR import an existing JSON template to build onto:  
 _NOTE: YAML templates are not yet supported with Vaporshell_
@@ -57,20 +55,16 @@ _NOTE: YAML templates are not yet supported with Vaporshell_
 * Parameters:
     - FormatVersion: Defaults to '2010-09-09' -- currently the only available Format Version for CloudFormation
     - Description: The description of your template. Not required if that's preferred.
-```powershell
-$template = Initialize-Vaporshell -Description "CloudFormation Template 1"
-```
+`$template = Initialize-Vaporshell -Description "CloudFormation Template 1"`
 
-OR
+_OR_
 
 **Import**
 * Parameters:
     - Path: This is the path to your existing JSON template file
-```powershell
-$template = Import-Vaporshell -Path ".\CFNtemplate00.json"
-```
+`$template = Import-Vaporshell -Path ".\CFNtemplate00.json"`
 
-### Adding a Resource
+### Add a Resource (or 20)
 CloudFormation templates require at least 1 resource to work at all. To add a resource to you'll used the `AddResource()` script method on the `$template` object. Here's a quick conversion of an AWS sample template into Vaporshell followed by the JSON example from AWS:
 
 
@@ -94,7 +88,7 @@ $template.AddOutput(
 ```
 
 
-[Amazon S3 bucket with a deletion policy](https://s3-us-west-1.amazonaws.com/cloudformation-templates-us-west-1/S3_Website_Bucket_With_Retain_On_Delete.template)
+JSON sample: [Amazon S3 bucket with a deletion policy](https://s3-us-west-1.amazonaws.com/cloudformation-templates-us-west-1/S3_Website_Bucket_With_Retain_On_Delete.template)
 ```json
 {
   "AWSTemplateFormatVersion" : "2010-09-09",
