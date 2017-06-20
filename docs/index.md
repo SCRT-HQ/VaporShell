@@ -20,7 +20,7 @@ title: Documentation
 In order to install Vaporshell from the Powershell Gallery and run it successfully once installed, the following must be true:
 
 1. Powershell v3.0 or greater is installed.
-    - If you are running on Windows, you can check this off.
+    - If you are running on Windows, you can check this off after confirming the installed version via running `$PSVersionTable` to show your PS version Typically, you'll only be on a lower version if you're running Windows 7 / Server 2008 and have not upgraded WMF yet.
     - If you are not running Windows, head over to the official [Powershell GitHub page](https://github.com/powershell/powershell#get-powershell) for details on how to install Powershell on your system.
 2. The PowershellGet module is installed.
     - If you are running Windows 10, WMF 5.1, or are running Linux or macOS, you're covered.
