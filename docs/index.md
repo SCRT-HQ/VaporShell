@@ -31,13 +31,11 @@ In order to install Vaporshell from the Powershell Gallery and run it successful
 ### Installing the Module
 
 To install Vaporshell from the PowershellGallery, open Powershell and run the following command:  
-```powershell
-Install-Module -Name Vaporshell -Scope CurrentUser
-```
-> _If you would like to install for all users, run the following command in an **elevated** Powershell prompt:_
-```powershell
-Install-Module -Name Vaporshell
-```
+`Install-Module -Name Vaporshell -Scope CurrentUser`
+
+_If you would like to install for all users, run the following command in an **elevated** Powershell prompt:_  
+`Install-Module -Name Vaporshell`
+
 
 ***
 
