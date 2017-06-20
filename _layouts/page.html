@@ -3,17 +3,27 @@ layout: default
 ---
 <article id="main">
 
+  {% unless page.style contains "nohead" %}
   <header>
     <h2>{{ page.title }}</h2>
     {% if page.description %}
       <p>{{ page.description }}</p>
     {% endif %}
   </header>
+  {% endunless %}
 
-  <section class="wrapper style5">
-    <div class="inner">
-      {{ content }}
-    </div>
-  </section>
+  {% if page.style contains "multi" %}
+    {{ content }}
+  {% else %}
+    {% if page.style contains "blue" %}
+    <section class="wrapper style1 special">
+    {% else %}
+    <section class="wrapper style5">
+    {% endif %}
+      <div class="inner">
+        {{ content }}
+      </div>
+    </section>
+  {% endif %}
 
 </article>

@@ -2,7 +2,6 @@
 layout: page
 title: Glossary
 description: Help content for each function in Vaporshell
-categories: menu
 ---
 
 ## Static Functions
