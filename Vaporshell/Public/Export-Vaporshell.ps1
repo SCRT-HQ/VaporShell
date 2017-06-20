@@ -55,7 +55,6 @@ function Export-Vaporshell {
         $Force
     )
     Begin {
-        $Path = (Resolve-Path $Path).Path
         $ForcePref = @{}
         if ($Force) {
             $ForcePref.add("Force",$True)
@@ -69,6 +68,7 @@ function Export-Vaporshell {
         if ($ValidateTemplate) {
             if (Get-Command aws) {
                 Write-Verbose "Validating template"
+                $Path = (Resolve-Path $Path).Path
                 $fileUrl = "$($Path.Replace("\","/"))"
                 if ($val = aws cloudformation validate-template --template-body fileb://$fileUrl) {
                     Write-Host -ForegroundColor Green "The template was validated successfully!`n"
