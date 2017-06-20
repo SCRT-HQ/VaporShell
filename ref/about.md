@@ -1,5 +1,5 @@
 ---
-layout: pagenodesc
+layout: page
 title: About
 ---
 

@@ -5,7 +5,9 @@ layout: default
 
   <header>
     <h2>{{ page.title }}</h2>
-    <p>{{ page.description }}</p>
+    {% if page.description %}
+      <p>{{ page.description }}</p>
+    {% endif %}
   </header>
 
   <section class="wrapper style5">
