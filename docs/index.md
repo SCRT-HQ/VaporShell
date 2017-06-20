@@ -1,6 +1,5 @@
 ---
-layout: page
-style: comingsoonoff
+layout: page 
 title: Documentation
 ---
 
