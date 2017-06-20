@@ -13,7 +13,7 @@ email: nate@scrthq.com
 baseurl: "" # the subpath of your site, e.g. /blog
 url: "http://vaporshell.io" # the base hostname & protocol for your site
 permalink: /:category/:title
-highlighter: rouge
+highlighter: pygments
 social:
   github: https://github.com/scrthq/Vaporshell
   linkedin-square: https://linkedin.com/in/scrthq
