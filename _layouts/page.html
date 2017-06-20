@@ -14,16 +14,30 @@ layout: default
 
   {% if page.style contains "multi" %}
     {{ content }}
-  {% else %}
-    {% if page.style contains "blue" %}
+  {% elseif page.style contains "comingsoon" %}
     <section class="wrapper style1 special">
-    {% else %}
-    <section class="wrapper style5">
-    {% endif %}
       <div class="inner">
-        {{ content }}
+          <header class="major">
+              <h2>Whoops!</h2>
+              <p>The page you requested is still being worked on, but should be available soon! If you have any questions, send a message for additional info via our <a href="{{ "/contact" | prepend: site.url }}">Contact Form</a>!</p>
+          </header>
+          <ul class="icons major">
+              <li><span class="icon fa-envelope-o major style1"><span class="label">Mail</span></span></li>
+              <li><span class="icon fa-paper-plane-o major style2"><span class="label">Sent</span></span></li>
+              <li><span class="icon fa-check-square-o major style3"><span class="label">Successfully</span></span></li>
+          </ul>
       </div>
     </section>
+  {% else %}
+    {% if page.style contains "blue" %}
+      <section class="wrapper style1 special">
+    {% else %}
+      <section class="wrapper style5">
+    {% endif %}
+        <div class="inner">
+          {{ content }}
+        </div>
+      </section>
   {% endif %}
 
 </article>

@@ -1,5 +1,6 @@
 ---
-layout: comingsoon
+layout: page
+style: comingsoon
 title: Documentation
 description: Let's get started!
 ---
