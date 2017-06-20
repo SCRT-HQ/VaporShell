@@ -9,7 +9,7 @@ jQuery(document).ready(function($){
 		$back_to_top = $('.cd-top');
 
 	//hide or show the "back to top" link
-	$(window).scroll(function(){
+	$(#s4-workspace).scroll(function(){
 		( $(this).scrollTop() > offset ) ? $back_to_top.addClass('cd-is-visible') : $back_to_top.removeClass('cd-is-visible cd-fade-out');
 		if( $(this).scrollTop() > offset_opacity ) { 
 			$back_to_top.addClass('cd-fade-out');
