@@ -19,8 +19,6 @@ toadd: listbelow
     - [Begin: Import and Initialize](#begin-import-and-initialize)
     - [Process: Fill It Out](#process-fill-it-out)
     - [End: Export and Validate](#end-export-and-validate)
-    - [Export](#export)
-    - [Validate](#validate)
 
 <!-- /TOC -->
 
@@ -145,7 +143,6 @@ JSON sample: [Amazon S3 bucket with a deletion policy](https://s3-us-west-1.amaz
 
 ### End: Export and Validate
 
-### Export
 Once you have your template object filled out, the next step is to export it to a template file. At the end of your template script you would just need to add the following:  
 ```powershell
 # Set your template path (update to your preferred template location - this is just an example)
@@ -154,8 +151,6 @@ $JSON = ".\path\to\template.json"
 # Export the template to file, including -Force to overwrite an existing template (not required)
 Export-Vaporshell -Path $path -VaporshellTemplate $template -Force
 ```
-
-### Validate
 
 Want to also leverage AWS CLI Tools to validate the exported template? As long as the AWS CLI Tools are installed, configured (minimum is adding the key, secret and setting the default region), you can add the `-ValidateTemplate` switch to the `Export-Vaporshell` call:  
 ```powershell
