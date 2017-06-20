@@ -7,17 +7,17 @@ toadd: "Tips, Tricks and Gotchas" "Approaching It Differently"
 
 <!-- TOC -->
 
-- [Setting Up](#setting-up)
+- [Setting Up Vaporshell](#setting-up-vaporshell)
     - [Prerequisites](#prerequisites)
     - [Installing the Module](#installing-the-module)
-- [Template Building Basics](#template-building-basics)
+- [Building a Vaporshell Template](#building-a-vaporshell-template)
     - [Begin: Import and Initialize](#begin-import-and-initialize)
     - [Process: Fill It Out](#process-fill-it-out)
     - [End: Export and Validate](#end-export-and-validate)
 
 <!-- /TOC -->
 
-## Setting Up
+## Setting Up Vaporshell
 ### Prerequisites
 
 In order to install Vaporshell from the Powershell Gallery and run it successfully once installed, the following must be true:
@@ -50,7 +50,7 @@ _If you would like to install for all users, run the following command in an **e
 
 ***
 
-## Template Building Basics
+## Building a Vaporshell Template
 
 ### Begin: Import and Initialize
 
