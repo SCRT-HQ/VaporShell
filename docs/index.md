@@ -8,9 +8,14 @@ title: Documentation
 - [Setting Up](#setting-up)
     - [Prerequisites](#prerequisites)
     - [Installing the Module](#installing-the-module)
-- [Bare Minimums](#bare-minimums)
-    - [Create the Template Object](#create-the-template-object)
-    - [Add a Resource (or 20)](#add-a-resource-or-20)
+- [Template Building Basics](#template-building-basics)
+    - [Begin: Import and Initialize](#begin-import-and-initialize)
+    - [Process: Fill It Out](#process-fill-it-out)
+    - [End: Export and Validate](#end-export-and-validate)
+    - [Export](#export)
+    - [Validate](#validate)
+- [Tips, Tricks and Gotchas](#tips-tricks-and-gotchas)
+- [Approaching It Differently](#approaching-it-differently)
 
 <!-- /TOC -->
 
@@ -28,6 +33,14 @@ In order to install Vaporshell from the Powershell Gallery and run it successful
         1. [Upgrading your WMF installation to the latest version](http://aka.ms/wmf5latest)
         2. [Installing the module via MSI installer directly](http://go.microsoft.com/fwlink/?LinkID=746217&clcid=0x409)
 
+**BONUS:** Support for validating the template has been added into `Export-Vaporshell`, with create-stack planned to be added soon as well. To ensure cross-platform compatibility, these leverage the [AWS CLI tools](http://docs.aws.amazon.com/cli/latest/userguide/cli-chap-welcome.html). In order to take advantage of them, you will need to have the AWS CLI tools [installed](http://docs.aws.amazon.com/cli/latest/userguide/installing.html), [configured](http://docs.aws.amazon.com/cli/latest/userguide/cli-chap-getting-started.html#cli-quick-configuration) and **available in your PATH**.  
+
+Running `Export-Vaporshell -Path $file -ValidateTemplate` is the same as running the following command against the resulting JSON template:
+
+`aws cloudformation validate-template --template-body fileb://$fileUrlConverted`
+
+Have any suggestions to extend that? Let us know! [Click here to view the AWS CLI command reference for Cloudformation](http://docs.aws.amazon.com/cli/latest/reference/cloudformation/index.html)
+
 ### Installing the Module
 
 To install Vaporshell from the PowershellGallery, open Powershell and run the following command:  
@@ -39,9 +52,9 @@ _If you would like to install for all users, run the following command in an **e
 
 ***
 
-## Bare Minimums
+## Template Building Basics
 
-### Create the Template Object
+### Begin: Import and Initialize
 
 The first thing you will need to do in your build script is import Vaporshell into the current session:  
 `Import-Module Vaporshell`
@@ -62,8 +75,10 @@ _OR_
     - Path: This is the path to your existing JSON template file  
 `$template = Import-Vaporshell -Path ".\CFNtemplate00.json"`
 
-### Add a Resource (or 20)
-CloudFormation templates require at least 1 resource to work at all. To add a resource to the template, you'll use the `AddResource()` script method found on the template object. Here's a quick conversion of an AWS sample template into Vaporshell followed by the JSON example from AWS:
+### Process: Fill It Out
+The `Vaporshell.Template` object contains ScriptMethods to add and remove items from the template. For example, to add a resource to the template, you'll use the `AddResource()` script method found on the template object. You would do the same for Parameters (`AddParameter()`), Metadata (`AddMetadata()`), Outputs (`AddOutput()`), etc. Need to remove something? Call the appropriate `Remove*()` method and pass the Logical ID of the item you are trying to remove as the parameter, i.e. `$template.RemoveResource("S3Bucket")`.
+
+Here's a quick conversion of an [AWS sample template](https://s3-us-west-1.amazonaws.com/cloudformation-templates-us-west-1/S3_Website_Bucket_With_Retain_On_Delete.template) into Vaporshell, followed by the JSON example from AWS. This template adds 1 Resource (an S3 Bucket) and 2 Outputs:
 
 
 ```powershell
@@ -122,3 +137,29 @@ JSON sample: [Amazon S3 bucket with a deletion policy](https://s3-us-west-1.amaz
   } 
 }
 ```
+
+### End: Export and Validate
+
+### Export
+Once you have your template object filled out, the next step is to export it to a template file. At the end of your template script you would just need to add the following:  
+```powershell
+# Set your template path (update to your preferred template location - this is just an example)
+$JSON = ".\path\to\template.json"
+
+# Export the template to file, including -Force to overwrite an existing template (not required)
+Export-Vaporshell -Path $path -VaporshellTemplate $template -Force
+```
+
+### Validate
+
+Want to also leverage AWS CLI Tools to validate the exported template? As long as the AWS CLI Tools are installed, configured (minimum is adding the key, secret and setting the default region), you can add the `-ValidateTemplate` switch to the `Export-Vaporshell` call:  
+```powershell
+Export-Vaporshell -Path $path -VaporshellTemplate $template -ValidateTemplate
+```
+
+
+## Tips, Tricks and Gotchas
+
+
+
+## Approaching It Differently
