@@ -65,7 +65,7 @@ _OR_
 `$template = Import-Vaporshell -Path ".\CFNtemplate00.json"`
 
 ### Add a Resource (or 20)
-CloudFormation templates require at least 1 resource to work at all. To add a resource to you'll used the `AddResource()` script method on the `$template` object. Here's a quick conversion of an AWS sample template into Vaporshell followed by the JSON example from AWS:
+CloudFormation templates require at least 1 resource to work at all. To add a resource to you'll use the `AddResource()` script method on the template object. Here's a quick conversion of an AWS sample template into Vaporshell followed by the JSON example from AWS:
 
 
 ```powershell
