@@ -1,6 +1,7 @@
 ---
 layout: page 
 title: Documentation
+description: Getting started with Vaporshell
 ---
 
 <!-- TOC -->
