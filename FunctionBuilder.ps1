@@ -42,7 +42,7 @@ function $FunctionName {
     .LINK
         $Link
 
-"@
+"@ 
 if ($Type -ne "Property") {
     $scriptContents += @"
     .PARAMETER LogicalId
@@ -56,7 +56,7 @@ $scriptContents +=@"
 "@
 $pList = $Prop.value.psobject.properties
 foreach ($p in $pList) {
-    $scriptContents += "`t`t$($p.Name): $($p.Value)"
+    $scriptContents += "`t`t$($p.Name): $($p.Value)    "
 }
 $scriptContents += ""
 }
