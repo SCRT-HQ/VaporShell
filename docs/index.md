@@ -54,14 +54,14 @@ _NOTE: YAML templates are not yet supported with Vaporshell_
 **Initialize**
 * Parameters:
     - FormatVersion: Defaults to '2010-09-09' -- currently the only available Format Version for CloudFormation
-    - Description: The description of your template. Not required if that's preferred.
+    - Description: The description of your template. Not required if that's preferred.  
 `$template = Initialize-Vaporshell -Description "CloudFormation Template 1"`
 
 _OR_
 
 **Import**
 * Parameters:
-    - Path: This is the path to your existing JSON template file
+    - Path: This is the path to your existing JSON template file  
 `$template = Import-Vaporshell -Path ".\CFNtemplate00.json"`
 
 ### Add a Resource (or 20)
@@ -69,6 +69,9 @@ CloudFormation templates require at least 1 resource to work at all. To add a re
 
 
 ```powershell
+# Import the module
+Import-Module Vaporshell
+
 # Initialize the template
 $template = Initialize-Vaporshell -Description "AWS CloudFormation Sample Template S3_Website_Bucket_With_Retain_On_Delete: Sample template showing how to create a publicly accessible S3 bucket configured for website access with a deletion policy of retail on delete. **WARNING** This template creates an S3 bucket that will NOT be deleted when the stack is deleted. You will be billed for the AWS resources used if you create a stack from this template."
 
