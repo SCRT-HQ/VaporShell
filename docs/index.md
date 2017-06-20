@@ -2,16 +2,11 @@
 layout: page 
 title: Documentation
 description: Getting started with Vaporshell
-toadd: listbelow
-## Tips, Tricks and Gotchas
-## Approaching It Differently
-
+toadd: "Tips, Tricks and Gotchas" "Approaching It Differently"
 ---
 
 <!-- TOC -->
 
-- [Tips, Tricks and Gotchas](#tips-tricks-and-gotchas)
-- [Approaching It Differently](#approaching-it-differently)
 - [Setting Up](#setting-up)
     - [Prerequisites](#prerequisites)
     - [Installing the Module](#installing-the-module)
