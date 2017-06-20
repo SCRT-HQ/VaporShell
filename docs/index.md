@@ -169,7 +169,9 @@ The beauty of leveraging Powershell is that you can organize your template build
 
 Here are a couple examples of different approaches to laying out a template script:
 
-1. Storing your Vaporshell objects in variables at the top of the script, adding them in after using the variables.
+***
+
+Store your Vaporshell objects in variables at the top of the script, adding them in after using the variables.
 _This approach allows you to clearly list your resources, parameters, etc, at the top of the script_
 
 ```powershell
@@ -191,7 +193,9 @@ $JSON = ".\path\to\template.json"
 Export-Vaporshell -Path $path -VaporshellTemplate $template -Force -ValidateTemplate -Verbose
 ```
 
-2. Storing your Vaporshell objects in external scripts, then **dot source** to add them to the template.
+***
+
+Store your Vaporshell objects in external scripts, then **dot source** the script files to add them to the template.
 _This allows external resource sharing so you can cut down on code even further. Dot sourcing is critical to ensure that the external script is loaded into the current session, not called in an external process!_
 
 ```powershell
