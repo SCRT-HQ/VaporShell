@@ -146,12 +146,12 @@ Once you have your template object filled out, the next step is to export it to 
 $JSON = ".\path\to\template.json"
 
 # Export the template to file, including -Force to overwrite an existing template (not required)
-Export-Vaporshell -Path $path -VaporshellTemplate $template -Force
+Export-Vaporshell -Path $JSON -VaporshellTemplate $template -Force
 ```
 
 Want to also leverage AWS CLI Tools to validate the exported template? As long as the AWS CLI Tools are installed, configured (minimum is adding the key, secret and setting the default region), you can add the `-ValidateTemplate` switch to the `Export-Vaporshell` call:  
 ```powershell
-Export-Vaporshell -Path $path -VaporshellTemplate $template -ValidateTemplate
+Export-Vaporshell -Path $JSON -VaporshellTemplate $template -ValidateTemplate
 ```
 
 ***
@@ -213,7 +213,7 @@ $template.AddOutput($websiteUrl,$s3BucketSecureUrl)
 
 # Export and validate
 $JSON = ".\path\to\template.json"
-Export-Vaporshell -Path $path -VaporshellTemplate $template -Force -ValidateTemplate -Verbose
+Export-Vaporshell -Path $JSON -VaporshellTemplate $template -Force -ValidateTemplate -Verbose
 ```
 
 ***
@@ -235,5 +235,5 @@ $template.AddOutput( (. ".\websiteUrl.ps1"), (. ".\s3BucketSecureUrl.ps1") )
 
 # Export and validate
 $JSON = "C:\Templates\template.json"
-Export-Vaporshell -Path $path -VaporshellTemplate $template -Force -ValidateTemplate -Verbose
+Export-Vaporshell -Path $JSON -VaporshellTemplate $template -Force -ValidateTemplate -Verbose
 ```
