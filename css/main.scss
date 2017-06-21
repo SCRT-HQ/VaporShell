@@ -8,8 +8,7 @@ $baseurl: '{{ site.baseurl }}/images';
 @import 'libs/functions';
 @import 'libs/mixins';
 @import 'font-awesome.min.css';
-@import url('https://fonts.googleapis.com/css?family=Droid+Sans+Mono');
-@import 'syntax-one-dark-vivid.css';
+@import 'syntax-one-dark-vivid.scss';
 @import url('http://fonts.googleapis.com/css?family=Open+Sans:400,400italic,600,600italic,800,800italic');
 
 /*
@@ -217,12 +216,9 @@ $baseurl: '{{ site.baseurl }}/images';
 
 	code {
 		background: _palette(border-bg);
-		border-radius: 3px;
 		font-family: _font(family-fixed);
 		font-size: 0.9em;
 		letter-spacing: 0;
-		margin: 0 0.25em;
-		padding: 0.25em 0.65em;
 	}
 
 	pre {

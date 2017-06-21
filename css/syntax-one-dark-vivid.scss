@@ -1,3 +1,44 @@
+@import url('https://fonts.googleapis.com/css?family=Droid+Sans+Mono');
+
+@mixin unselectable() {
+    -webkit-touch-callout: none;
+    -webkit-user-select: none;
+    -khtml-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+}
+@mixin opacity($opacity) {
+    opacity: $opacity;
+    $opacity-ie: $opacity * 100;
+    filter: alpha(opacity=$opacity-ie); //IE8
+}
+.lineno-container > figure > pre {
+    padding: 0px;
+}
+
+.highlight {
+    pre.lineno {
+        border: none;
+        @include opacity(0.6);  
+    }
+
+    .lineno {
+        @include unselectable();
+    }
+
+    .gutter {
+        border-right: 1px solid #DFDFDF;
+    }
+
+    pre {
+        pre {
+        border: none;
+        margin-bottom: 0px;
+        }
+    }
+}
+
 .highlight,
 pre.highlight {
     background: #31343f;
