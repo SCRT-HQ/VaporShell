@@ -16,7 +16,6 @@ description: Getting started with Vaporshell
 - [Tips, Tricks and Gotchas](#tips-tricks-and-gotchas)
     - [Powershell First](#powershell-first)
     - [Pseudo Parameters as Built-In Variables](#pseudo-parameters-as-built-in-variables)
-    - [Adding UserData](#adding-userdata)
 - [Different Strokes](#different-strokes)
 
 <!-- /TOC -->
@@ -184,9 +183,8 @@ Here's a table of the variables for a quick reference:
 |   $_AWSStackId   |     AWS::StackId    |
 |  $_AWSStackName  |    AWS::StackName   |
 
-### Adding UserData
 
-Working with UserData in CloudFormation templates is error prone. With Vaporshell, you have the option to 
+***
 
 ## Different Strokes
 
