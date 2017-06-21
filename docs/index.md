@@ -6,23 +6,25 @@ description: Getting started with Vaporshell
 
 <!-- TOC -->
 
-    - [Setting Up Vaporshell](#setting-up-vaporshell)
-        - [Prerequisites](#prerequisites)
-        - [Installing the Module](#installing-the-module)
-    - [Building a Vaporshell Template](#building-a-vaporshell-template)
-        - [Begin: Import and Initialize](#begin-import-and-initialize)
-        - [Process: Fill It Out](#process-fill-it-out)
-- [Import the module](#import-the-module)
-- [Initialize the template](#initialize-the-template)
-- [Add the S3 bucket resource to the template object](#add-the-s3-bucket-resource-to-the-template-object)
-- [Add multiple Outputs to the template](#add-multiple-outputs-to-the-template)
-        - [End: Export and Validate](#end-export-and-validate)
-    - [Tips, Tricks and Gotchas](#tips-tricks-and-gotchas)
-        - [Powershell First](#powershell-first)
-        - [Pseudo Parameters as Built-In Variables](#pseudo-parameters-as-built-in-variables)
-    - [Different Strokes](#different-strokes)
+1. [Setting Up Vaporshell](#setting-up-vaporshell)
+    1. [Prerequisites](#prerequisites)
+    2. [Installing the Module](#installing-the-module)
+2. [Building a Vaporshell Template](#building-a-vaporshell-template)
+    1. [Begin: Import and Initialize](#begin-import-and-initialize)
+    2. [Process: Fill It Out](#process-fill-it-out)
+        1. [Import the module](#import-the-module)
+        2. [Initialize the template](#initialize-the-template)
+        3. [Add the S3 bucket resource to the template object](#add-the-s3-bucket-resource-to-the-template-object)
+        4. [Add multiple Outputs to the template](#add-multiple-outputs-to-the-template)
+    1. [End: Export and Validate](#end-export-and-validate)
+1. [Tips, Tricks and Gotchas](#tips-tricks-and-gotchas)
+    1. [Powershell First](#powershell-first)
+    2. [Pseudo Parameters as Built-In Variables](#pseudo-parameters-as-built-in-variables)
+2. [Different Strokes](#different-strokes)
 
 <!-- /TOC -->
+
+
 
 ## Setting Up Vaporshell
 ### Prerequisites
