@@ -86,7 +86,7 @@ The `Vaporshell.Template` object contains ScriptMethods to add and remove items 
 
 Here's a quick conversion of an [AWS sample template](https://s3-us-west-1.amazonaws.com/cloudformation-templates-us-west-1/S3_Website_Bucket_With_Retain_On_Delete.template) into Vaporshell, followed by the JSON example from AWS. This template adds 1 Resource (an S3 Bucket) and 2 Outputs:
 
-
+<figure class="lineno-container">
 {% highlight powershell linenos %}
 # Import the module
 Import-Module Vaporshell
@@ -108,6 +108,7 @@ $template.AddOutput(
     (New-VaporOutput -LogicalId "S3BucketSecureURL" -Value (Add-FnJoin -ListOfValues "https://",(Add-FnGetAtt -LogicalNameOfResource "S3Bucket" -AttributeName "DomainName")) -Description "Name of S3 bucket to hold website content")
 )
 {% endhighlight %}
+</figure>
 
 
 JSON sample: [Amazon S3 bucket with a deletion policy](https://s3-us-west-1.amazonaws.com/cloudformation-templates-us-west-1/S3_Website_Bucket_With_Retain_On_Delete.template)
