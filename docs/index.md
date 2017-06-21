@@ -6,17 +6,21 @@ description: Getting started with Vaporshell
 
 <!-- TOC -->
 
-- [Setting Up Vaporshell](#setting-up-vaporshell)
-    - [Prerequisites](#prerequisites)
-    - [Installing the Module](#installing-the-module)
-- [Building a Vaporshell Template](#building-a-vaporshell-template)
-    - [Begin: Import and Initialize](#begin-import-and-initialize)
-    - [Process: Fill It Out](#process-fill-it-out)
-    - [End: Export and Validate](#end-export-and-validate)
-- [Tips, Tricks and Gotchas](#tips-tricks-and-gotchas)
-    - [Powershell First](#powershell-first)
-    - [Pseudo Parameters as Built-In Variables](#pseudo-parameters-as-built-in-variables)
-- [Different Strokes](#different-strokes)
+    - [Setting Up Vaporshell](#setting-up-vaporshell)
+        - [Prerequisites](#prerequisites)
+        - [Installing the Module](#installing-the-module)
+    - [Building a Vaporshell Template](#building-a-vaporshell-template)
+        - [Begin: Import and Initialize](#begin-import-and-initialize)
+        - [Process: Fill It Out](#process-fill-it-out)
+- [Import the module](#import-the-module)
+- [Initialize the template](#initialize-the-template)
+- [Add the S3 bucket resource to the template object](#add-the-s3-bucket-resource-to-the-template-object)
+- [Add multiple Outputs to the template](#add-multiple-outputs-to-the-template)
+        - [End: Export and Validate](#end-export-and-validate)
+    - [Tips, Tricks and Gotchas](#tips-tricks-and-gotchas)
+        - [Powershell First](#powershell-first)
+        - [Pseudo Parameters as Built-In Variables](#pseudo-parameters-as-built-in-variables)
+    - [Different Strokes](#different-strokes)
 
 <!-- /TOC -->
 
@@ -81,7 +85,7 @@ The `Vaporshell.Template` object contains ScriptMethods to add and remove items 
 Here's a quick conversion of an [AWS sample template](https://s3-us-west-1.amazonaws.com/cloudformation-templates-us-west-1/S3_Website_Bucket_With_Retain_On_Delete.template) into Vaporshell, followed by the JSON example from AWS. This template adds 1 Resource (an S3 Bucket) and 2 Outputs:
 
 
-```powershell
+{% highlight powershell linenos %}
 # Import the module
 Import-Module Vaporshell
 
@@ -101,11 +105,11 @@ $template.AddOutput(
     # Add the S3BucketSecureURL output
     (New-VaporOutput -LogicalId "S3BucketSecureURL" -Value (Add-FnJoin -ListOfValues "https://",(Add-FnGetAtt -LogicalNameOfResource "S3Bucket" -AttributeName "DomainName")) -Description "Name of S3 bucket to hold website content")
 )
-```
+{% endhighlight %}
 
 
 JSON sample: [Amazon S3 bucket with a deletion policy](https://s3-us-west-1.amazonaws.com/cloudformation-templates-us-west-1/S3_Website_Bucket_With_Retain_On_Delete.template)
-```json
+{% highlight json linenos %}
 {
   "AWSTemplateFormatVersion" : "2010-09-09",
 
@@ -136,7 +140,7 @@ JSON sample: [Amazon S3 bucket with a deletion policy](https://s3-us-west-1.amaz
     }
   } 
 }
-```
+{% endhighlight %}
 
 ### End: Export and Validate
 
