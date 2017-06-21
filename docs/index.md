@@ -86,7 +86,6 @@ The `Vaporshell.Template` object contains ScriptMethods to add and remove items 
 
 Here's a quick conversion of an [AWS sample template](https://s3-us-west-1.amazonaws.com/cloudformation-templates-us-west-1/S3_Website_Bucket_With_Retain_On_Delete.template) into Vaporshell, followed by the JSON example from AWS. This template adds 1 Resource (an S3 Bucket) and 2 Outputs:
 
-<figure class="lineno-container">
 {% highlight powershell linenos %}
 # Import the module
 Import-Module Vaporshell
@@ -108,10 +107,10 @@ $template.AddOutput(
     (New-VaporOutput -LogicalId "S3BucketSecureURL" -Value (Add-FnJoin -ListOfValues "https://",(Add-FnGetAtt -LogicalNameOfResource "S3Bucket" -AttributeName "DomainName")) -Description "Name of S3 bucket to hold website content")
 )
 {% endhighlight %}
-</figure>
 
 
 JSON sample: [Amazon S3 bucket with a deletion policy](https://s3-us-west-1.amazonaws.com/cloudformation-templates-us-west-1/S3_Website_Bucket_With_Retain_On_Delete.template)
+
 {% highlight json linenos %}
 {
   "AWSTemplateFormatVersion" : "2010-09-09",
@@ -148,18 +147,18 @@ JSON sample: [Amazon S3 bucket with a deletion policy](https://s3-us-west-1.amaz
 ### End: Export and Validate
 
 Once you have your template object filled out, the next step is to export it to a template file. At the end of your template script you would just need to add the following:  
-```powershell
+{% highlight powershell linenos %}
 # Set your template path (update to your preferred template location - this is just an example)
 $JSON = ".\path\to\template.json"
 
 # Export the template to file, including -Force to overwrite an existing template (not required)
 Export-Vaporshell -Path $JSON -VaporshellTemplate $template -Force
-```
+{% endhighlight %}
 
 Want to also leverage AWS CLI Tools to validate the exported template? As long as the AWS CLI Tools are installed, configured (minimum is adding the key, secret and setting the default region), you can add the `-ValidateTemplate` switch to the `Export-Vaporshell` call:  
-```powershell
+{% highlight powershell linenos %}
 Export-Vaporshell -Path $JSON -VaporshellTemplate $template -ValidateTemplate
-```
+{% endhighlight %}
 
 ***
 
@@ -169,9 +168,9 @@ Export-Vaporshell -Path $JSON -VaporshellTemplate $template -ValidateTemplate
 
 **Vaporshell is pure Powershell and should be approached accordingly**  
 This means that you should work with commands the same as you would on any other script. The most common case in point is wrapping your commands in parentheses when adding them in as Parameter Values. In the following example, you can see the parentheses around the full `New-VaporOutput` command, as well as around the value of the `-Value` parameter, as we're using another function to add an `Fn::GetAtt` Intrinsic Function for the value.
-```powershell
+{% highlight powershell linenos %}
 $template.AddOutput(  (New-VaporOutput -LogicalId "WebsiteURL" -Value (Add-FnGetAtt -LogicalNameOfResource "S3Bucket" -AttributeName "WebsiteURL") -Description "URL for website hosted on S3")  )
-```
+{% endhighlight %}
 ### Pseudo Parameters as Built-In Variables
 
 Having trouble remembering those Pseudo Parameters? Vaporshell includes them as imported variables for convenience. They all begin with `$_AWS`, so start typing then tab to cycle through them in most ISE's.
@@ -204,7 +203,7 @@ Here are a couple examples of different approaches to laying out a template scri
 Store your Vaporshell objects in variables at the top of the script, adding them in after using the variables.
 _This approach allows you to clearly list your resources, parameters, etc, at the top of the script_
 
-```powershell
+{% highlight powershell linenos %}
 # Import the module
 Import-Module Vaporshell
 
@@ -221,14 +220,14 @@ $template.AddOutput($websiteUrl,$s3BucketSecureUrl)
 # Export and validate
 $JSON = ".\path\to\template.json"
 Export-Vaporshell -Path $JSON -VaporshellTemplate $template -Force -ValidateTemplate -Verbose
-```
+{% endhighlight %}
 
 ***
 
 Store your Vaporshell objects in external scripts, then **dot source** the script files to add them to the template.
 _This allows external resource sharing so you can cut down on code even further. Dot sourcing is critical to ensure that the external script is loaded into the current session, not called in an external process!_
 
-```powershell
+{% highlight powershell linenos %}
 # Import the module
 Import-Module Vaporshell
 
@@ -243,4 +242,4 @@ $template.AddOutput( (. ".\websiteUrl.ps1"), (. ".\s3BucketSecureUrl.ps1") )
 # Export and validate
 $JSON = "C:\Templates\template.json"
 Export-Vaporshell -Path $JSON -VaporshellTemplate $template -Force -ValidateTemplate -Verbose
-```
+{% endhighlight %}
