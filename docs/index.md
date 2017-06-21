@@ -14,6 +14,9 @@ description: Getting started with Vaporshell
     - [Process: Fill It Out](#process-fill-it-out)
     - [End: Export and Validate](#end-export-and-validate)
 - [Tips, Tricks and Gotchas](#tips-tricks-and-gotchas)
+    - [Powershell First](#powershell-first)
+    - [Pseudo Parameters as Built-In Variables](#pseudo-parameters-as-built-in-variables)
+    - [Adding UserData](#adding-userdata)
 - [Different Strokes](#different-strokes)
 
 <!-- /TOC -->
@@ -47,7 +50,6 @@ To install Vaporshell from the PowershellGallery, open Powershell and run the fo
 
 _If you would like to install for all users, run the following command in an **elevated** Powershell prompt:_  
 `Install-Module -Name Vaporshell`
-
 
 ***
 
@@ -153,15 +155,38 @@ Want to also leverage AWS CLI Tools to validate the exported template? As long a
 Export-Vaporshell -Path $path -VaporshellTemplate $template -ValidateTemplate
 ```
 
+***
 
 ## Tips, Tricks and Gotchas
+
+### Powershell First
 
 **Vaporshell is pure Powershell and should be approached accordingly**  
 This means that you should work with commands the same as you would on any other script. The most common case in point is wrapping your commands in parentheses when adding them in as Parameter Values. In the following example, you can see the parentheses around the full `New-VaporOutput` command, as well as around the value of the `-Value` parameter, as we're using another function to add an `Fn::GetAtt` Intrinsic Function for the value.
 ```powershell
 $template.AddOutput(  (New-VaporOutput -LogicalId "WebsiteURL" -Value (Add-FnGetAtt -LogicalNameOfResource "S3Bucket" -AttributeName "WebsiteURL") -Description "URL for website hosted on S3")  )
 ```
+### Pseudo Parameters as Built-In Variables
 
+Having trouble remembering those Pseudo Parameters? Vaporshell includes them as imported variables for convenience. They all begin with `$_AWS`, so start typing then tab to cycle through them in most ISE's.
+
+**When using these in commands, i.e. `Add-FnRef -Ref "$_AWSRegion"`, make sure you surround the variable in double quotes to cast to string indefinitely**
+
+Here's a table of the variables for a quick reference:
+
+| Pseudo Parameter | Vaporshell Variable |
+|:----------------:|:-------------------:|
+|  $_AWSAccountId  |    AWS::AccountId   |
+|   $_AWSInclude   |     AWS::Include    |
+| $_AWSNotificationARNs | AWS::NotificationARNs |
+|   $_AWSNoValue   |     AWS::NoValue    |
+|    $_AWSRegion   |     AWS::Region     |
+|   $_AWSStackId   |     AWS::StackId    |
+|  $_AWSStackName  |    AWS::StackName   |
+
+### Adding UserData
+
+Working with UserData in CloudFormation templates is error prone. With Vaporshell, you have the option to 
 
 ## Different Strokes
 
