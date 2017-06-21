@@ -231,6 +231,8 @@ $baseurl: '{{ site.baseurl }}/images';
 			display: block;
 			line-height: 1.75em;
 			overflow-x: auto;
+			padding: 0px;
+			padding-left: 0px;
 		}
 	}
 
