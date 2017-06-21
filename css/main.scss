@@ -55,15 +55,18 @@ $baseurl: '{{ site.baseurl }}/images';
 .highlight {
     pre.lineno {
         border: none;
+        color: #DFDFDF;
         @include opacity(0.6);
     }
 
     .lineno {
         @include unselectable();
+        color: #DFDFDF;
     }
 
     .gutter {
         border-right: 1px solid #DFDFDF;
+        background: #31343f;
     }
 
     pre {
@@ -235,7 +238,7 @@ pre {
         display: block;
         line-height: 1.75em;
         overflow-x: auto;
-        padding: 0px;
+        padding: 0.5em;
         padding-left: 0px;
         padding-top: 0px;
         padding-bottom: 0px;
@@ -734,7 +737,6 @@ table {
     width: 100%;
     tbody {
         tr {
-            border: solid 1px _palette(border);
             border-left: 0;
             border-right: 0;
             &:nth-child(2n+1) {
