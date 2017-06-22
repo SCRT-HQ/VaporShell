@@ -27,7 +27,9 @@ Export-Vaporshell -Path $path -VaporshellTemplate $template -Force -ValidateTemp
 {% endhighlight %}
 
 
-<ul class="actions">
-    <li><a href="{{ "/docs/tips" | prepend: site.url }}" class="button fit">Tips & Tricks</a></li>
-    <li><a href="{{ "/docs/glossary" | prepend: site.url }}" class="button special fit">Glossary</a></li>
-</ul>
+<center>
+    <ul class="actions">
+        <li><a href="{{ "/docs/tips" | prepend: site.url }}" class="button fit">Tips & Tricks</a></li>
+        <li><a href="{{ "/docs/glossary" | prepend: site.url }}" class="button special fit">Glossary</a></li>
+    </ul>
+</center>

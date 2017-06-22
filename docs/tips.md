@@ -97,7 +97,10 @@ $JSON = "C:\Templates\template.json"
 Export-Vaporshell -Path $JSON -VaporshellTemplate $template -Force -ValidateTemplate -Verbose
 {% endhighlight %}
 
-<ul class="actions">
-    <li><a href="{{ "/docs/digest" | prepend: site.url }}" class="button fit">Module Digest</a></li>
-    <li><a href="{{ "/docs/examples" | prepend: site.url }}" class="button special fit">Examples</a></li>
-</ul>
+
+<center>
+    <ul class="actions">
+        <li><a href="{{ "/docs/digest" | prepend: site.url }}" class="button fit">Module Digest</a></li>
+        <li><a href="{{ "/docs/examples" | prepend: site.url }}" class="button special fit">Examples</a></li>
+    </ul>
+</center>

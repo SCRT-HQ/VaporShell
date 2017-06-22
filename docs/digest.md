@@ -10,7 +10,7 @@ data2: Deep
 
 <!-- TOC -->
 
-1. [The Vaporshell.Template Object](#the-vaporshelltemplate-object)
+- [The Vaporshell.Template Object](#the-vaporshelltemplate-object)
 
 <!-- /TOC -->
 
@@ -19,7 +19,9 @@ data2: Deep
 
 
 
-<ul class="actions">
-    <li><a href="{{ "/docs" | prepend: site.url }}" class="button fit">Getting Started</a></li>
-    <li><a href="{{ "/docs/tips" | prepend: site.url }}" class="button special fit">Tips & Tricks</a></li>
-</ul>
+<center>
+    <ul class="actions">
+        <li><a href="{{ "/docs" | prepend: site.url }}" class="button fit">Getting Started</a></li>
+        <li><a href="{{ "/docs/tips" | prepend: site.url }}" class="button special fit">Tips & Tricks</a></li>
+    </ul>
+</center>

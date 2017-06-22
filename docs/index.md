@@ -10,14 +10,14 @@ data2: Shallow
 
 <!-- TOC -->
 
-1. [Setting Up Vaporshell](#setting-up-vaporshell)
-    1. [Prerequisites](#prerequisites)
-    2. [Installing the Module](#installing-the-module)
-2. [Building a Vaporshell Template](#building-a-vaporshell-template)
-    1. [Begin: Import and Initialize](#begin-import-and-initialize)
-    2. [Process: Fill It Out](#process-fill-it-out)
-    3. [End: Export and Validate](#end-export-and-validate)
-3. [Diving Deeper](#diving-deeper)
+- [Setting Up Vaporshell](#setting-up-vaporshell)
+    - [Prerequisites](#prerequisites)
+    - [Installing the Module](#installing-the-module)
+- [Building a Vaporshell Template](#building-a-vaporshell-template)
+    - [Begin: Import and Initialize](#begin-import-and-initialize)
+    - [Process: Fill It Out](#process-fill-it-out)
+    - [End: Export and Validate](#end-export-and-validate)
+- [Diving Deeper](#diving-deeper)
 
 <!-- /TOC -->
 
@@ -163,7 +163,9 @@ Export-Vaporshell -Path $JSON -VaporshellTemplate $template -ValidateTemplate
 
 At this point, you've covered Vaporshell at a high level. Time to dive a bit deeper and get into the details:
 
-<ul class="actions">
-    <li><a href="{{ site.url }}" class="button fit">Home</a></li>
-    <li><a href="{{ "/docs/digest" | prepend: site.url }}" class="button special fit">Module Digest</a></li>
-</ul>
+<center>
+    <ul class="actions">
+        <li><a href="{{ site.url }}" class="button fit">Home</a></li>
+        <li><a href="{{ "/docs/digest" | prepend: site.url }}" class="button special fit">Module Digest</a></li>
+    </ul>
+</center>
