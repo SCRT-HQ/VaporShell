@@ -90,7 +90,11 @@ td.gutter.gl {
 .wrapper.style5 code {
     background: #31343f;
     color: #56b6c2;
-    font-family: 'Droid Sans Mono', monospace
+    font-family: 'Droid Sans Mono', monospace;
+    padding-left: 3px;
+    padding-right: 3px;
+    padding-bottom: 1px;
+    padding-top: 1px;
 }
 
 /* Basic */
