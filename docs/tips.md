@@ -9,17 +9,17 @@ data1: Documentation
 <!-- TOC -->
 
 - [Tips, Tricks and Gotchas](#tips-tricks-and-gotchas)
-    - [Powershell First](#powershell-first)
+    - [Remember the Parentheses!](#remember-the-parentheses)
 - [Different Strokes](#different-strokes)
 
 <!-- /TOC -->
 
 ## Tips, Tricks and Gotchas
 
-### Powershell First
+### Remember the Parentheses!
 
 **Vaporshell is pure Powershell and should be approached accordingly**  
-This means that you should work with commands the same as you would on any other script. The most common case in point is wrapping your commands in parentheses when adding them in as Parameter Values. In the following example, you can see the parentheses around the full `New-VaporOutput` command, as well as around the value of the `-Value` parameter, as we're using another function to add an `Fn::GetAtt` Intrinsic Function for the value.
+This means that you should work with commands the same as you would on any other script. The most common case in point is wrapping your commands in parentheses when adding them in as Parameter Values. In the following example, you can see the parentheses around the full `New-VaporOutput` command, as well as around the value of the `-Value` parameter, as we're using the `Add-FnGetAtt` function to add an `Fn::GetAtt` Intrinsic Function for the value.
 {% highlight powershell linenos %}
 $template.AddOutput(  (New-VaporOutput -LogicalId "WebsiteURL" -Value (Add-FnGetAtt -LogicalNameOfResource "S3Bucket" -AttributeName "WebsiteURL") -Description "URL for website hosted on S3")  )
 {% endhighlight %}

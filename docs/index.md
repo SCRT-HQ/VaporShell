@@ -84,18 +84,18 @@ The `Vaporshell.Template` object contains ScriptMethods to add and remove items 
 Here's a quick conversion of an [AWS sample template](https://s3-us-west-1.amazonaws.com/cloudformation-templates-us-west-1/S3_Website_Bucket_With_Retain_On_Delete.template) into Vaporshell, followed by the JSON example from AWS. This template adds 1 Resource (an S3 Bucket) and 2 Outputs:
 
 {% highlight powershell linenos %}
-\# Import the module
+<# Import the module #>
 Import-Module Vaporshell
 
-\# Initialize the template
+<# Initialize the template #>
 $template = Initialize-Vaporshell -Description "AWS CloudFormation Sample Template S3_Website_Bucket_With_Retain_On_Delete: Sample template showing how to create a publicly accessible S3 bucket configured for website access with a deletion policy of retail on delete. **WARNING** This template creates an S3 bucket that will NOT be deleted when the stack is deleted. You will be billed for the AWS resources used if you create a stack from this template."
 
-\# Add the S3 bucket resource to the template object
+<# Add the S3 bucket resource to the template object #>
 $template.AddResource(
     (New-VSS3Bucket -LogicalId "S3Bucket" -AccessControl "PublicRead" -WebsiteConfiguration (Add-VSS3BucketWebsiteConfiguration -IndexDocument "index.html" -ErrorDocument "error.html") -DeletionPolicy Retain)
 )
 
-\# Add multiple Outputs to the template
+<# Add multiple Outputs to the template #>
 $template.AddOutput(
     # Add the WebsiteURL output
     (New-VaporOutput -LogicalId "WebsiteURL" -Value (Add-FnGetAtt -LogicalNameOfResource "S3Bucket" -AttributeName "WebsiteURL") -Description "URL for website hosted on S3"),
@@ -145,10 +145,10 @@ JSON sample: [Amazon S3 bucket with a deletion policy](https://s3-us-west-1.amaz
 
 Once you have your template object filled out, the next step is to export it to a template file. At the end of your template script you would just need to add the following:  
 {% highlight powershell linenos %}
-\# Set your template path (update to your preferred template location - this is just an example)
+<# Set your template path (update to your preferred template location - this is just an example) #>
 $JSON = ".\path\to\template.json"
 
-\# Export the template to file, including -Force to overwrite an existing template (not required)
+<# Export the template to file, including -Force to overwrite an existing template (not required) #>
 Export-Vaporshell -Path $JSON -VaporshellTemplate $template -Force
 {% endhighlight %}
 
