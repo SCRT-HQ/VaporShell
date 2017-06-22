@@ -245,10 +245,9 @@ Here's a table of the variables for a quick reference:
 
 
 <br />
-<br />
 <center>
     <ul class="actions">
         <li><a href="{{ "/docs" | prepend: site.url }}" class="button fit"><i class="fa fa-chevron-left"></i> Getting Started</a></li>
-        <li><a href="{{ "/docs/tips" | prepend: site.url }}" class="button special fit"><i class="fa fa-chevron-right"></i> Tips & Tricks</a></li>
+        <li><a href="{{ "/docs/tips" | prepend: site.url }}" class="button special fit">Tips & Tricks <i class="fa fa-chevron-right"></i></a></li>
     </ul>
 </center>
