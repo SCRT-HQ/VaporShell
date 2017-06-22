@@ -3,12 +3,14 @@
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <title>{% if page.title %}{{ page.title | escape }}{% else %}{{ site.title | escape }}{% endif %}</title>
     <meta name="description" content="{% if page.excerpt %}{{ page.excerpt | strip_html | strip_newlines | truncate: 160 }}{% else %}{{ site.description }}{% endif %}">
+
     <!-- facebook open graph tags -->
     <meta property="og:type" content="website" />
     <meta property="og:url" content="{{ page.url }}" />
     <meta property="og:title" content="{{ page.title }}" />
-    <meta property="og:description" content="{% if page.description %}{{ page.description | strip_html | strip_newlines | truncate: 160 }}{% else %}{{ site.description }}{% endif %}" />
+    <meta property="og:description" content="{% if page.excerpt %}{{ page.excerpt | strip_html | strip_newlines | truncate: 160 }}{% else %}{{ site.description }}{% endif %}" />
     <meta property="og:image" content="{{ "/images/mainUnfurl.png" | prepend: site.url }}" />
+
     <!-- twitter card tags additive with the og: tags -->
     <meta name="twitter:card" content="summary_large_image">
     <meta name="twitter:domain" value="{{ site.url }}" />
@@ -16,6 +18,18 @@
     <meta name="twitter:description" value="{% if page.excerpt %}{{ page.excerpt | strip_html | strip_newlines | truncate: 160 }}{% else %}{{ site.description }}{% endif %}" />
     <meta name="twitter:image" content="{{ "/images/mainUnfurl.png" | prepend: site.url }}" />
     <meta name="twitter:url" value="{{ site.url }}" />
+    {% if page.label1 %}
+        <meta name="twitter:label1" content="{{ page.label1 }}" />
+    {% endif %}
+    {% if page.data1 %}
+        <meta name="twitter:data1" content="{{ page.data1 }}" />
+    {% endif %}
+    {% if page.label2 %}
+        <meta name="twitter:label2" content="{{ page.label2 }}" />
+    {% endif %}
+    {% if page.data2 %}
+        <meta name="twitter:data2" content="{{ page.data2 }}" />
+    {% endif %}
     <!--[if lte IE 8]><script src="{{ "/js/ie/html5shiv.js" | prepend: site.baseurl }}"></script><![endif]-->
     <link rel="canonical" href="{{ page.url | replace:'index.html','' | prepend: site.baseurl | prepend: site.url }}">
     <link rel="stylesheet" href="{{ " /css/main.css " | prepend: site.baseurl }}" />
