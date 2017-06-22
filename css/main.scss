@@ -60,7 +60,7 @@ $baseurl: '{{ site.baseurl }}/images';
         @include opacity(0.6);
     }
 
-	pre.table,pre.th,pre.tr,pre.td {
+	td {
 		background: #31343f;
 	}
 
