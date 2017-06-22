@@ -243,6 +243,9 @@ Here's a table of the variables for a quick reference:
 |  $_AWSStackName  |    AWS::StackName   |
 
 
+
+<br />
+<br />
 <center>
     <ul class="actions">
         <li><a href="{{ "/docs" | prepend: site.url }}" class="button fit"><i class="fa fa-chevron-left"></i> Getting Started</a></li>

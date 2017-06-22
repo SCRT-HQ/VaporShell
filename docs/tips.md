@@ -80,6 +80,9 @@ Export-Vaporshell -Path $JSON -VaporshellTemplate $template -Force -ValidateTemp
 {% endhighlight %}
 
 
+
+<br />
+<br />
 <center>
     <ul class="actions">
         <li><a href="{{ "/docs/digest" | prepend: site.url }}" class="button fit"><i class="fa fa-chevron-left"></i> Module Digest</a></li>

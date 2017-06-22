@@ -163,6 +163,8 @@ Export-Vaporshell -Path $JSON -VaporshellTemplate $template -ValidateTemplate
 
 At this point, you've covered Vaporshell at a high level. Head to the Module Digest to dive deeper!
 
+<br />
+<br />
 <center>
     <ul class="actions">
         <li><a href="{{ site.url }}" class="button fit"><i class="fa fa-chevron-left"></i> Home</a></li>
