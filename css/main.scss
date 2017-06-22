@@ -72,10 +72,6 @@ $baseurl: '{{ site.baseurl }}/images';
     .gutter {
         border-right: 1px solid #DFDFDF;
         background: #31343f;
-        text-align: center;
-        td {
-            width: 28px;
-        }
     }
 
     pre {
@@ -84,6 +80,11 @@ $baseurl: '{{ site.baseurl }}/images';
             margin-bottom: 0px;
         }
     }
+}
+
+td.gutter.gl {
+    width: 28px;
+    text-align: center;
 }
 
 /* Basic */
