@@ -10,7 +10,6 @@ data1: Documentation
 
 - [Tips, Tricks and Gotchas](#tips-tricks-and-gotchas)
     - [Powershell First](#powershell-first)
-    - [Pseudo Parameters as Built-In Variables](#pseudo-parameters-as-built-in-variables)
 - [Different Strokes](#different-strokes)
 
 <!-- /TOC -->
@@ -24,23 +23,6 @@ This means that you should work with commands the same as you would on any other
 {% highlight powershell linenos %}
 $template.AddOutput(  (New-VaporOutput -LogicalId "WebsiteURL" -Value (Add-FnGetAtt -LogicalNameOfResource "S3Bucket" -AttributeName "WebsiteURL") -Description "URL for website hosted on S3")  )
 {% endhighlight %}
-### Pseudo Parameters as Built-In Variables
-
-Having trouble remembering those Pseudo Parameters? Vaporshell includes them as imported variables for convenience. They all begin with `$_AWS`, so start typing then tab to cycle through them in most ISE's.
-
-**When using these in commands, i.e. `Add-FnRef -Ref "$_AWSRegion"`, make sure you surround the variable in double quotes to cast to string indefinitely**
-
-Here's a table of the variables for a quick reference:
-
-| Pseudo Parameter | Vaporshell Variable |
-|:----------------:|:-------------------:|
-|  $_AWSAccountId  |    AWS::AccountId   |
-|   $_AWSInclude   |     AWS::Include    |
-| $_AWSNotificationARNs | AWS::NotificationARNs |
-|   $_AWSNoValue   |     AWS::NoValue    |
-|    $_AWSRegion   |     AWS::Region     |
-|   $_AWSStackId   |     AWS::StackId    |
-|  $_AWSStackName  |    AWS::StackName   |
 
 
 ***
@@ -100,7 +82,7 @@ Export-Vaporshell -Path $JSON -VaporshellTemplate $template -Force -ValidateTemp
 
 <center>
     <ul class="actions">
-        <li><a href="{{ "/docs/digest" | prepend: site.url }}" class="button fit">Module Digest</a></li>
-        <li><a href="{{ "/docs/examples" | prepend: site.url }}" class="button special fit">Examples</a></li>
+        <li><a href="{{ "/docs/digest" | prepend: site.url }}" class="button fit"><i class="fa fa-chevron-left"></i> Module Digest</a></li>
+        <li><a href="{{ "/docs/examples" | prepend: site.url }}" class="button special fit"><i class="fa fa-chevron-right"></i> Examples</a></li>
     </ul>
 </center>

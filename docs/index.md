@@ -79,7 +79,7 @@ _OR_
 `$template = Import-Vaporshell -Path ".\CFNtemplate00.json"`
 
 ### Process: Fill It Out
-The `Vaporshell.Template` object contains ScriptMethods to add and remove items from the template. For example, to add a resource to the template, you'll use the `AddResource()` script method found on the template object. You would do the same for Parameters (`AddParameter()`), Metadata (`AddMetadata()`), Outputs (`AddOutput()`), etc. Need to remove something? Call the appropriate `Remove*()` method and pass the Logical ID of the item you are trying to remove as the parameter, i.e. `$template.RemoveResource("S3Bucket")`.
+The `Vaporshell.Template` object contains ScriptMethods to add and remove items from the template. For example, to add a resource to the template, you'll use the `AddResource()` script method found on the template object. You would do the same for Parameters (`AddParameter()`), Metadata (`AddMetadata()`), Outputs (`AddOutput()`), etc. Need to remove something? Call the appropriate `Remove*()` method and pass the Logical ID of the item you are trying to remove as the parameter, i.e. `$template.RemoveResource("S3Bucket")`. These are covered completely in the [Module Digest](http://vaporshell.io/docs/digest)!
 
 Here's a quick conversion of an [AWS sample template](https://s3-us-west-1.amazonaws.com/cloudformation-templates-us-west-1/S3_Website_Bucket_With_Retain_On_Delete.template) into Vaporshell, followed by the JSON example from AWS. This template adds 1 Resource (an S3 Bucket) and 2 Outputs:
 
@@ -161,11 +161,11 @@ Export-Vaporshell -Path $JSON -VaporshellTemplate $template -ValidateTemplate
 
 ## Diving Deeper
 
-At this point, you've covered Vaporshell at a high level. Time to dive a bit deeper and get into the details:
+At this point, you've covered Vaporshell at a high level. Head to the Module Digest to dive deeper!
 
 <center>
     <ul class="actions">
-        <li><a href="{{ site.url }}" class="button fit">Home</a></li>
-        <li><a href="{{ "/docs/digest" | prepend: site.url }}" class="button special fit">Module Digest</a></li>
+        <li><a href="{{ site.url }}" class="button fit"><i class="fa fa-chevron-left"></i> Home</a></li>
+        <li><a href="{{ "/docs/digest" | prepend: site.url }}" class="button special fit"><i class="fa fa-chevron-right"></i> Module Digest</a></li>
     </ul>
 </center>
