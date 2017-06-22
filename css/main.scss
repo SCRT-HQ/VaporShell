@@ -60,6 +60,10 @@ $baseurl: '{{ site.baseurl }}/images';
         @include opacity(0.6);
     }
 
+	pre.table,pre.th,pre.tr,pre.td {
+		background: #31343f;
+	}
+
     .lineno {
         @include unselectable();
         color: #DFDFDF;
@@ -76,10 +80,6 @@ $baseurl: '{{ site.baseurl }}/images';
             margin-bottom: 0px;
         }
     }
-}
-
-.highlight table,th,tr,td {
-	background: #31343f;
 }
 
 /* Basic */
