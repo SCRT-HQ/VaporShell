@@ -76,11 +76,11 @@ $baseurl: '{{ site.baseurl }}/images';
             margin-bottom: 0px;
         }
     }
-	td {
-		background: #31343f;
-	}
 }
 
+code table,th,tr,td {
+		background: #31343f;
+	}
 
 /* Basic */
 
