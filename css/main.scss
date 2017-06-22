@@ -78,9 +78,9 @@ $baseurl: '{{ site.baseurl }}/images';
     }
 }
 
-code table,th,tr,td {
-		background: #31343f;
-	}
+.highlight table,th,tr,td {
+	background: #31343f;
+}
 
 /* Basic */
 
