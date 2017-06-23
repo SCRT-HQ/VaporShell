@@ -7,7 +7,7 @@ function Convert-SpecToFunction {
       [parameter(Mandatory=$true,Position=1)]
       [ValidateSet("Resource","Property")]
       [String]
-      $Type
+      $ResourceType
     )
     $folder = "$($pwd.Path)\Vaporshell\Public"
     $Name = $Resource.Name
@@ -16,7 +16,7 @@ function Convert-SpecToFunction {
     $ShortName = $Name.Replace("AWS::","")
     $BaseTypeName = "Vaporshell.Resource." + ($ShortName -replace "\..*").Replace("::",".")
     $TypeName = "Vaporshell.Resource." + $ShortName.Replace("::",".")
-    switch ($Type) {
+    switch ($ResourceType) {
         Resource {
             $Dir = "$folder\Resource Types"
             $FunctionName = "New-VS" + ($ShortName -replace "\..*").Replace("::","")
@@ -43,7 +43,7 @@ function $FunctionName {
         $Link
 
 "@ 
-if ($Type -ne "Property") {
+if ($ResourceType -ne "Property") {
     $scriptContents += @"
     .PARAMETER LogicalId
         The logical ID must be alphanumeric (A-Za-z0-9) and unique within the template. Use the logical name to reference the resource in other parts of the template. For example, if you want to map an Amazon Elastic Block Store volume to an Amazon EC2 instance, you reference the logical IDs to associate the block stores with the instance.`n
@@ -70,7 +70,7 @@ if ($Name -eq "AWS::AutoScaling::AutoScalingGroup" -or $Name -eq "AWS::EC2::Inst
 "@
 }
 
-if ($Type -ne "Property") {
+if ($ResourceType -ne "Property") {
     $scriptContents += @"    
     .PARAMETER DeletionPolicy
         With the DeletionPolicy attribute you can preserve or (in some cases) backup a resource when its stack is deleted. You specify a DeletionPolicy attribute for each resource that you want to control. If a resource has no DeletionPolicy attribute, AWS CloudFormation deletes the resource by default.
@@ -111,7 +111,7 @@ $scriptContents += @"
     Param
     (
 "@
-if ($Type -ne "Property") {
+if ($ResourceType -ne "Property") {
         $scriptContents += @"
         [parameter(Mandatory = `$true,Position = 0)]
         [ValidateScript( {
@@ -131,7 +131,7 @@ $Properties | ForEach-Object {$PCount++}
 $i = 0
 foreach ($Prop in $Properties) {
     $i++
-    if ($Type -ne "Property"){
+    if ($ResourceType -ne "Property"){
         $ParamName = "$($Prop.Name),"
     }
     elseif ($i -lt [int]$PCount) {
@@ -254,7 +254,7 @@ foreach ($Prop in $Properties) {
     }
 }
 
-if ($Type -ne "Property") {
+if ($ResourceType -ne "Property") {
     if ($Name -eq "AWS::AutoScaling::AutoScalingGroup" -or $Name -eq "AWS::EC2::Instance" -or $Name -eq "AWS::CloudFormation::WaitCondition") {
         $scriptContents += @"
         [parameter(Mandatory = `$false)]
@@ -336,6 +336,18 @@ if ($Type -ne "Property") {
                 'Condition' {
                     `$ResourceParams.Add("Condition",`$Condition)
                 }
+"@
+    foreach ($Prop in $Properties | Where-Object {$_.Value.Type -eq "List"}) {
+        $scriptContents += @"
+                '$($Prop.Name)' {
+                    if (!(`$ResourceParams["Properties"])) {
+                        `$ResourceParams.Add("Properties",([PSCustomObject]@{}))
+                    }
+                    `$ResourceParams["Properties"] | Add-Member -MemberType NoteProperty -Name $($Prop.Name) -Value @(`$$($Prop.Name))
+                }
+"@
+    }
+        $scriptContents += @"
                 Default {
                     if (!(`$ResourceParams["Properties"])) {
                         `$ResourceParams.Add("Properties",([PSCustomObject]@{}))
@@ -393,10 +405,10 @@ $specs = (New-Object System.Net.WebClient).DownloadString($URL) | ConvertFrom-Js
 
 foreach ($resource in $specs.PropertyTypes.psobject.Properties) {
     $resource.Name
-    Convert-SpecToFunction -Resource $resource -Type Property
+    Convert-SpecToFunction -Resource $resource -ResourceType Property
 }
 
 foreach ($resource in $specs.ResourceTypes.psobject.Properties) {
     $resource.Name
-    Convert-SpecToFunction -Resource $resource -Type Resource
+    Convert-SpecToFunction -Resource $resource -ResourceType Resource
 }

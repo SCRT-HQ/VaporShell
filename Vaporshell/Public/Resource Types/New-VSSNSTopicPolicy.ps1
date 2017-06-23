@@ -133,6 +133,12 @@ function New-VSSNSTopicPolicy {
                 'Condition' {
                     $ResourceParams.Add("Condition",$Condition)
                 }
+                'Topics' {
+                    if (!($ResourceParams["Properties"])) {
+                        $ResourceParams.Add("Properties",([PSCustomObject]@{}))
+                    }
+                    $ResourceParams["Properties"] | Add-Member -MemberType NoteProperty -Name Topics -Value @($Topics)
+                }
                 Default {
                     if (!($ResourceParams["Properties"])) {
                         $ResourceParams.Add("Properties",([PSCustomObject]@{}))

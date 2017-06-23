@@ -223,6 +223,24 @@ function New-VSEC2SecurityGroup {
                 'Condition' {
                     $ResourceParams.Add("Condition",$Condition)
                 }
+                'SecurityGroupEgress' {
+                    if (!($ResourceParams["Properties"])) {
+                        $ResourceParams.Add("Properties",([PSCustomObject]@{}))
+                    }
+                    $ResourceParams["Properties"] | Add-Member -MemberType NoteProperty -Name SecurityGroupEgress -Value @($SecurityGroupEgress)
+                }
+                'SecurityGroupIngress' {
+                    if (!($ResourceParams["Properties"])) {
+                        $ResourceParams.Add("Properties",([PSCustomObject]@{}))
+                    }
+                    $ResourceParams["Properties"] | Add-Member -MemberType NoteProperty -Name SecurityGroupIngress -Value @($SecurityGroupIngress)
+                }
+                'Tags' {
+                    if (!($ResourceParams["Properties"])) {
+                        $ResourceParams.Add("Properties",([PSCustomObject]@{}))
+                    }
+                    $ResourceParams["Properties"] | Add-Member -MemberType NoteProperty -Name Tags -Value @($Tags)
+                }
                 Default {
                     if (!($ResourceParams["Properties"])) {
                         $ResourceParams.Add("Properties",([PSCustomObject]@{}))

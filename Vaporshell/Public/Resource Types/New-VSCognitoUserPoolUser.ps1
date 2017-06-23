@@ -220,6 +220,24 @@ function New-VSCognitoUserPoolUser {
                 'Condition' {
                     $ResourceParams.Add("Condition",$Condition)
                 }
+                'ValidationData' {
+                    if (!($ResourceParams["Properties"])) {
+                        $ResourceParams.Add("Properties",([PSCustomObject]@{}))
+                    }
+                    $ResourceParams["Properties"] | Add-Member -MemberType NoteProperty -Name ValidationData -Value @($ValidationData)
+                }
+                'DesiredDeliveryMediums' {
+                    if (!($ResourceParams["Properties"])) {
+                        $ResourceParams.Add("Properties",([PSCustomObject]@{}))
+                    }
+                    $ResourceParams["Properties"] | Add-Member -MemberType NoteProperty -Name DesiredDeliveryMediums -Value @($DesiredDeliveryMediums)
+                }
+                'UserAttributes' {
+                    if (!($ResourceParams["Properties"])) {
+                        $ResourceParams.Add("Properties",([PSCustomObject]@{}))
+                    }
+                    $ResourceParams["Properties"] | Add-Member -MemberType NoteProperty -Name UserAttributes -Value @($UserAttributes)
+                }
                 Default {
                     if (!($ResourceParams["Properties"])) {
                         $ResourceParams.Add("Properties",([PSCustomObject]@{}))

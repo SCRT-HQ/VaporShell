@@ -150,6 +150,12 @@ function New-VSWAFRegionalIPSet {
                 'Condition' {
                     $ResourceParams.Add("Condition",$Condition)
                 }
+                'IPSetDescriptors' {
+                    if (!($ResourceParams["Properties"])) {
+                        $ResourceParams.Add("Properties",([PSCustomObject]@{}))
+                    }
+                    $ResourceParams["Properties"] | Add-Member -MemberType NoteProperty -Name IPSetDescriptors -Value @($IPSetDescriptors)
+                }
                 Default {
                     if (!($ResourceParams["Properties"])) {
                         $ResourceParams.Add("Properties",([PSCustomObject]@{}))

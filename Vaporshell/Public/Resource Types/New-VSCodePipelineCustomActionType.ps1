@@ -209,6 +209,12 @@ function New-VSCodePipelineCustomActionType {
                 'Condition' {
                     $ResourceParams.Add("Condition",$Condition)
                 }
+                'ConfigurationProperties' {
+                    if (!($ResourceParams["Properties"])) {
+                        $ResourceParams.Add("Properties",([PSCustomObject]@{}))
+                    }
+                    $ResourceParams["Properties"] | Add-Member -MemberType NoteProperty -Name ConfigurationProperties -Value @($ConfigurationProperties)
+                }
                 Default {
                     if (!($ResourceParams["Properties"])) {
                         $ResourceParams.Add("Properties",([PSCustomObject]@{}))

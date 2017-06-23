@@ -226,6 +226,24 @@ function New-VSCognitoIdentityPool {
                 'Condition' {
                     $ResourceParams.Add("Condition",$Condition)
                 }
+                'CognitoIdentityProviders' {
+                    if (!($ResourceParams["Properties"])) {
+                        $ResourceParams.Add("Properties",([PSCustomObject]@{}))
+                    }
+                    $ResourceParams["Properties"] | Add-Member -MemberType NoteProperty -Name CognitoIdentityProviders -Value @($CognitoIdentityProviders)
+                }
+                'SamlProviderARNs' {
+                    if (!($ResourceParams["Properties"])) {
+                        $ResourceParams.Add("Properties",([PSCustomObject]@{}))
+                    }
+                    $ResourceParams["Properties"] | Add-Member -MemberType NoteProperty -Name SamlProviderARNs -Value @($SamlProviderARNs)
+                }
+                'OpenIdConnectProviderARNs' {
+                    if (!($ResourceParams["Properties"])) {
+                        $ResourceParams.Add("Properties",([PSCustomObject]@{}))
+                    }
+                    $ResourceParams["Properties"] | Add-Member -MemberType NoteProperty -Name OpenIdConnectProviderARNs -Value @($OpenIdConnectProviderARNs)
+                }
                 Default {
                     if (!($ResourceParams["Properties"])) {
                         $ResourceParams.Add("Properties",([PSCustomObject]@{}))

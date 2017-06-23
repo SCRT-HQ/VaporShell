@@ -256,6 +256,12 @@ function New-VSApiGatewayStage {
                 'Condition' {
                     $ResourceParams.Add("Condition",$Condition)
                 }
+                'MethodSettings' {
+                    if (!($ResourceParams["Properties"])) {
+                        $ResourceParams.Add("Properties",([PSCustomObject]@{}))
+                    }
+                    $ResourceParams["Properties"] | Add-Member -MemberType NoteProperty -Name MethodSettings -Value @($MethodSettings)
+                }
                 Default {
                     if (!($ResourceParams["Properties"])) {
                         $ResourceParams.Add("Properties",([PSCustomObject]@{}))

@@ -246,6 +246,12 @@ function New-VSAutoScalingScalingPolicy {
                 'Condition' {
                     $ResourceParams.Add("Condition",$Condition)
                 }
+                'StepAdjustments' {
+                    if (!($ResourceParams["Properties"])) {
+                        $ResourceParams.Add("Properties",([PSCustomObject]@{}))
+                    }
+                    $ResourceParams["Properties"] | Add-Member -MemberType NoteProperty -Name StepAdjustments -Value @($StepAdjustments)
+                }
                 Default {
                     if (!($ResourceParams["Properties"])) {
                         $ResourceParams.Add("Properties",([PSCustomObject]@{}))

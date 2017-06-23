@@ -273,6 +273,18 @@ function New-VSGameLiftFleet {
                 'Condition' {
                     $ResourceParams.Add("Condition",$Condition)
                 }
+                'EC2InboundPermissions' {
+                    if (!($ResourceParams["Properties"])) {
+                        $ResourceParams.Add("Properties",([PSCustomObject]@{}))
+                    }
+                    $ResourceParams["Properties"] | Add-Member -MemberType NoteProperty -Name EC2InboundPermissions -Value @($EC2InboundPermissions)
+                }
+                'LogPaths' {
+                    if (!($ResourceParams["Properties"])) {
+                        $ResourceParams.Add("Properties",([PSCustomObject]@{}))
+                    }
+                    $ResourceParams["Properties"] | Add-Member -MemberType NoteProperty -Name LogPaths -Value @($LogPaths)
+                }
                 Default {
                     if (!($ResourceParams["Properties"])) {
                         $ResourceParams.Add("Properties",([PSCustomObject]@{}))

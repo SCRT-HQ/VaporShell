@@ -133,6 +133,12 @@ function New-VSSQSQueuePolicy {
                 'Condition' {
                     $ResourceParams.Add("Condition",$Condition)
                 }
+                'Queues' {
+                    if (!($ResourceParams["Properties"])) {
+                        $ResourceParams.Add("Properties",([PSCustomObject]@{}))
+                    }
+                    $ResourceParams["Properties"] | Add-Member -MemberType NoteProperty -Name Queues -Value @($Queues)
+                }
                 Default {
                     if (!($ResourceParams["Properties"])) {
                         $ResourceParams.Add("Properties",([PSCustomObject]@{}))

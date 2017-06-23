@@ -150,6 +150,12 @@ function New-VSWAFRegionalByteMatchSet {
                 'Condition' {
                     $ResourceParams.Add("Condition",$Condition)
                 }
+                'ByteMatchTuples' {
+                    if (!($ResourceParams["Properties"])) {
+                        $ResourceParams.Add("Properties",([PSCustomObject]@{}))
+                    }
+                    $ResourceParams["Properties"] | Add-Member -MemberType NoteProperty -Name ByteMatchTuples -Value @($ByteMatchTuples)
+                }
                 Default {
                     if (!($ResourceParams["Properties"])) {
                         $ResourceParams.Add("Properties",([PSCustomObject]@{}))

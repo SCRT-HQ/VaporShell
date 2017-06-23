@@ -178,6 +178,18 @@ function New-VSRoute53HostedZone {
                 'Condition' {
                     $ResourceParams.Add("Condition",$Condition)
                 }
+                'HostedZoneTags' {
+                    if (!($ResourceParams["Properties"])) {
+                        $ResourceParams.Add("Properties",([PSCustomObject]@{}))
+                    }
+                    $ResourceParams["Properties"] | Add-Member -MemberType NoteProperty -Name HostedZoneTags -Value @($HostedZoneTags)
+                }
+                'VPCs' {
+                    if (!($ResourceParams["Properties"])) {
+                        $ResourceParams.Add("Properties",([PSCustomObject]@{}))
+                    }
+                    $ResourceParams["Properties"] | Add-Member -MemberType NoteProperty -Name VPCs -Value @($VPCs)
+                }
                 Default {
                     if (!($ResourceParams["Properties"])) {
                         $ResourceParams.Add("Properties",([PSCustomObject]@{}))

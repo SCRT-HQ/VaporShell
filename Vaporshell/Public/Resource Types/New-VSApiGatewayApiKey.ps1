@@ -177,6 +177,12 @@ function New-VSApiGatewayApiKey {
                 'Condition' {
                     $ResourceParams.Add("Condition",$Condition)
                 }
+                'StageKeys' {
+                    if (!($ResourceParams["Properties"])) {
+                        $ResourceParams.Add("Properties",([PSCustomObject]@{}))
+                    }
+                    $ResourceParams["Properties"] | Add-Member -MemberType NoteProperty -Name StageKeys -Value @($StageKeys)
+                }
                 Default {
                     if (!($ResourceParams["Properties"])) {
                         $ResourceParams.Add("Properties",([PSCustomObject]@{}))

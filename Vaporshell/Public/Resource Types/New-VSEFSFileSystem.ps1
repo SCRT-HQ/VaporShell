@@ -151,6 +151,12 @@ function New-VSEFSFileSystem {
                 'Condition' {
                     $ResourceParams.Add("Condition",$Condition)
                 }
+                'FileSystemTags' {
+                    if (!($ResourceParams["Properties"])) {
+                        $ResourceParams.Add("Properties",([PSCustomObject]@{}))
+                    }
+                    $ResourceParams["Properties"] | Add-Member -MemberType NoteProperty -Name FileSystemTags -Value @($FileSystemTags)
+                }
                 Default {
                     if (!($ResourceParams["Properties"])) {
                         $ResourceParams.Add("Properties",([PSCustomObject]@{}))

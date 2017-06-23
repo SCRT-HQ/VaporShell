@@ -204,6 +204,18 @@ function New-VSCodePipelinePipeline {
                 'Condition' {
                     $ResourceParams.Add("Condition",$Condition)
                 }
+                'DisableInboundStageTransitions' {
+                    if (!($ResourceParams["Properties"])) {
+                        $ResourceParams.Add("Properties",([PSCustomObject]@{}))
+                    }
+                    $ResourceParams["Properties"] | Add-Member -MemberType NoteProperty -Name DisableInboundStageTransitions -Value @($DisableInboundStageTransitions)
+                }
+                'Stages' {
+                    if (!($ResourceParams["Properties"])) {
+                        $ResourceParams.Add("Properties",([PSCustomObject]@{}))
+                    }
+                    $ResourceParams["Properties"] | Add-Member -MemberType NoteProperty -Name Stages -Value @($Stages)
+                }
                 Default {
                     if (!($ResourceParams["Properties"])) {
                         $ResourceParams.Add("Properties",([PSCustomObject]@{}))

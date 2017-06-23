@@ -151,6 +151,12 @@ function New-VSWAFSizeConstraintSet {
                 'Condition' {
                     $ResourceParams.Add("Condition",$Condition)
                 }
+                'SizeConstraints' {
+                    if (!($ResourceParams["Properties"])) {
+                        $ResourceParams.Add("Properties",([PSCustomObject]@{}))
+                    }
+                    $ResourceParams["Properties"] | Add-Member -MemberType NoteProperty -Name SizeConstraints -Value @($SizeConstraints)
+                }
                 Default {
                     if (!($ResourceParams["Properties"])) {
                         $ResourceParams.Add("Properties",([PSCustomObject]@{}))

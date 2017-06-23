@@ -175,6 +175,12 @@ function New-VSWAFRegionalWebACL {
                 'Condition' {
                     $ResourceParams.Add("Condition",$Condition)
                 }
+                'Rules' {
+                    if (!($ResourceParams["Properties"])) {
+                        $ResourceParams.Add("Properties",([PSCustomObject]@{}))
+                    }
+                    $ResourceParams["Properties"] | Add-Member -MemberType NoteProperty -Name Rules -Value @($Rules)
+                }
                 Default {
                     if (!($ResourceParams["Properties"])) {
                         $ResourceParams.Add("Properties",([PSCustomObject]@{}))

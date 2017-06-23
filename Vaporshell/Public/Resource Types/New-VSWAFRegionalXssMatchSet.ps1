@@ -150,6 +150,12 @@ function New-VSWAFRegionalXssMatchSet {
                 'Condition' {
                     $ResourceParams.Add("Condition",$Condition)
                 }
+                'XssMatchTuples' {
+                    if (!($ResourceParams["Properties"])) {
+                        $ResourceParams.Add("Properties",([PSCustomObject]@{}))
+                    }
+                    $ResourceParams["Properties"] | Add-Member -MemberType NoteProperty -Name XssMatchTuples -Value @($XssMatchTuples)
+                }
                 Default {
                     if (!($ResourceParams["Properties"])) {
                         $ResourceParams.Add("Properties",([PSCustomObject]@{}))

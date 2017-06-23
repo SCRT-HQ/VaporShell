@@ -266,6 +266,30 @@ function New-VSCodeDeployDeploymentGroup {
                 'Condition' {
                     $ResourceParams.Add("Condition",$Condition)
                 }
+                'AutoScalingGroups' {
+                    if (!($ResourceParams["Properties"])) {
+                        $ResourceParams.Add("Properties",([PSCustomObject]@{}))
+                    }
+                    $ResourceParams["Properties"] | Add-Member -MemberType NoteProperty -Name AutoScalingGroups -Value @($AutoScalingGroups)
+                }
+                'Ec2TagFilters' {
+                    if (!($ResourceParams["Properties"])) {
+                        $ResourceParams.Add("Properties",([PSCustomObject]@{}))
+                    }
+                    $ResourceParams["Properties"] | Add-Member -MemberType NoteProperty -Name Ec2TagFilters -Value @($Ec2TagFilters)
+                }
+                'OnPremisesInstanceTagFilters' {
+                    if (!($ResourceParams["Properties"])) {
+                        $ResourceParams.Add("Properties",([PSCustomObject]@{}))
+                    }
+                    $ResourceParams["Properties"] | Add-Member -MemberType NoteProperty -Name OnPremisesInstanceTagFilters -Value @($OnPremisesInstanceTagFilters)
+                }
+                'TriggerConfigurations' {
+                    if (!($ResourceParams["Properties"])) {
+                        $ResourceParams.Add("Properties",([PSCustomObject]@{}))
+                    }
+                    $ResourceParams["Properties"] | Add-Member -MemberType NoteProperty -Name TriggerConfigurations -Value @($TriggerConfigurations)
+                }
                 Default {
                     if (!($ResourceParams["Properties"])) {
                         $ResourceParams.Add("Properties",([PSCustomObject]@{}))

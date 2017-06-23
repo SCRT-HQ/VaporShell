@@ -150,6 +150,12 @@ function New-VSWAFRegionalSqlInjectionMatchSet {
                 'Condition' {
                     $ResourceParams.Add("Condition",$Condition)
                 }
+                'SqlInjectionMatchTuples' {
+                    if (!($ResourceParams["Properties"])) {
+                        $ResourceParams.Add("Properties",([PSCustomObject]@{}))
+                    }
+                    $ResourceParams["Properties"] | Add-Member -MemberType NoteProperty -Name SqlInjectionMatchTuples -Value @($SqlInjectionMatchTuples)
+                }
                 Default {
                     if (!($ResourceParams["Properties"])) {
                         $ResourceParams.Add("Properties",([PSCustomObject]@{}))

@@ -168,6 +168,12 @@ function New-VSSNSTopic {
                 'Condition' {
                     $ResourceParams.Add("Condition",$Condition)
                 }
+                'Subscription' {
+                    if (!($ResourceParams["Properties"])) {
+                        $ResourceParams.Add("Properties",([PSCustomObject]@{}))
+                    }
+                    $ResourceParams["Properties"] | Add-Member -MemberType NoteProperty -Name Subscription -Value @($Subscription)
+                }
                 Default {
                     if (!($ResourceParams["Properties"])) {
                         $ResourceParams.Add("Properties",([PSCustomObject]@{}))

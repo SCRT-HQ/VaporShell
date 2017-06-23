@@ -159,6 +159,12 @@ function New-VSElastiCacheSubnetGroup {
                 'Condition' {
                     $ResourceParams.Add("Condition",$Condition)
                 }
+                'SubnetIds' {
+                    if (!($ResourceParams["Properties"])) {
+                        $ResourceParams.Add("Properties",([PSCustomObject]@{}))
+                    }
+                    $ResourceParams["Properties"] | Add-Member -MemberType NoteProperty -Name SubnetIds -Value @($SubnetIds)
+                }
                 Default {
                     if (!($ResourceParams["Properties"])) {
                         $ResourceParams.Add("Properties",([PSCustomObject]@{}))

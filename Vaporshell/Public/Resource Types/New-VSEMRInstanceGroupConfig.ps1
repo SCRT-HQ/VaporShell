@@ -261,6 +261,12 @@ function New-VSEMRInstanceGroupConfig {
                 'Condition' {
                     $ResourceParams.Add("Condition",$Condition)
                 }
+                'Configurations' {
+                    if (!($ResourceParams["Properties"])) {
+                        $ResourceParams.Add("Properties",([PSCustomObject]@{}))
+                    }
+                    $ResourceParams["Properties"] | Add-Member -MemberType NoteProperty -Name Configurations -Value @($Configurations)
+                }
                 Default {
                     if (!($ResourceParams["Properties"])) {
                         $ResourceParams.Add("Properties",([PSCustomObject]@{}))

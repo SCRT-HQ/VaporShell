@@ -178,6 +178,18 @@ function New-VSRDSEventSubscription {
                 'Condition' {
                     $ResourceParams.Add("Condition",$Condition)
                 }
+                'EventCategories' {
+                    if (!($ResourceParams["Properties"])) {
+                        $ResourceParams.Add("Properties",([PSCustomObject]@{}))
+                    }
+                    $ResourceParams["Properties"] | Add-Member -MemberType NoteProperty -Name EventCategories -Value @($EventCategories)
+                }
+                'SourceIds' {
+                    if (!($ResourceParams["Properties"])) {
+                        $ResourceParams.Add("Properties",([PSCustomObject]@{}))
+                    }
+                    $ResourceParams["Properties"] | Add-Member -MemberType NoteProperty -Name SourceIds -Value @($SourceIds)
+                }
                 Default {
                     if (!($ResourceParams["Properties"])) {
                         $ResourceParams.Add("Properties",([PSCustomObject]@{}))

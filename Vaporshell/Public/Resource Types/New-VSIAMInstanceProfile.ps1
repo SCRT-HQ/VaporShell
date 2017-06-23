@@ -159,6 +159,12 @@ function New-VSIAMInstanceProfile {
                 'Condition' {
                     $ResourceParams.Add("Condition",$Condition)
                 }
+                'Roles' {
+                    if (!($ResourceParams["Properties"])) {
+                        $ResourceParams.Add("Properties",([PSCustomObject]@{}))
+                    }
+                    $ResourceParams["Properties"] | Add-Member -MemberType NoteProperty -Name Roles -Value @($Roles)
+                }
                 Default {
                     if (!($ResourceParams["Properties"])) {
                         $ResourceParams.Add("Properties",([PSCustomObject]@{}))

@@ -184,6 +184,12 @@ function New-VSApiGatewayUsagePlan {
                 'Condition' {
                     $ResourceParams.Add("Condition",$Condition)
                 }
+                'ApiStages' {
+                    if (!($ResourceParams["Properties"])) {
+                        $ResourceParams.Add("Properties",([PSCustomObject]@{}))
+                    }
+                    $ResourceParams["Properties"] | Add-Member -MemberType NoteProperty -Name ApiStages -Value @($ApiStages)
+                }
                 Default {
                     if (!($ResourceParams["Properties"])) {
                         $ResourceParams.Add("Properties",([PSCustomObject]@{}))

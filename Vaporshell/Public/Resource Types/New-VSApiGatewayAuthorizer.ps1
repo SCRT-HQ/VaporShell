@@ -253,6 +253,12 @@ function New-VSApiGatewayAuthorizer {
                 'Condition' {
                     $ResourceParams.Add("Condition",$Condition)
                 }
+                'ProviderARNs' {
+                    if (!($ResourceParams["Properties"])) {
+                        $ResourceParams.Add("Properties",([PSCustomObject]@{}))
+                    }
+                    $ResourceParams["Properties"] | Add-Member -MemberType NoteProperty -Name ProviderARNs -Value @($ProviderARNs)
+                }
                 Default {
                     if (!($ResourceParams["Properties"])) {
                         $ResourceParams.Add("Properties",([PSCustomObject]@{}))

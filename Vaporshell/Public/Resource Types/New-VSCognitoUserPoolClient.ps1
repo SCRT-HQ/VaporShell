@@ -194,6 +194,24 @@ function New-VSCognitoUserPoolClient {
                 'Condition' {
                     $ResourceParams.Add("Condition",$Condition)
                 }
+                'ExplicitAuthFlows' {
+                    if (!($ResourceParams["Properties"])) {
+                        $ResourceParams.Add("Properties",([PSCustomObject]@{}))
+                    }
+                    $ResourceParams["Properties"] | Add-Member -MemberType NoteProperty -Name ExplicitAuthFlows -Value @($ExplicitAuthFlows)
+                }
+                'ReadAttributes' {
+                    if (!($ResourceParams["Properties"])) {
+                        $ResourceParams.Add("Properties",([PSCustomObject]@{}))
+                    }
+                    $ResourceParams["Properties"] | Add-Member -MemberType NoteProperty -Name ReadAttributes -Value @($ReadAttributes)
+                }
+                'WriteAttributes' {
+                    if (!($ResourceParams["Properties"])) {
+                        $ResourceParams.Add("Properties",([PSCustomObject]@{}))
+                    }
+                    $ResourceParams["Properties"] | Add-Member -MemberType NoteProperty -Name WriteAttributes -Value @($WriteAttributes)
+                }
                 Default {
                     if (!($ResourceParams["Properties"])) {
                         $ResourceParams.Add("Properties",([PSCustomObject]@{}))

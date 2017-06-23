@@ -142,6 +142,12 @@ function New-VSEC2VPNGatewayRoutePropagation {
                 'Condition' {
                     $ResourceParams.Add("Condition",$Condition)
                 }
+                'RouteTableIds' {
+                    if (!($ResourceParams["Properties"])) {
+                        $ResourceParams.Add("Properties",([PSCustomObject]@{}))
+                    }
+                    $ResourceParams["Properties"] | Add-Member -MemberType NoteProperty -Name RouteTableIds -Value @($RouteTableIds)
+                }
                 Default {
                     if (!($ResourceParams["Properties"])) {
                         $ResourceParams.Add("Properties",([PSCustomObject]@{}))

@@ -142,6 +142,12 @@ function New-VSRoute53HealthCheck {
                 'Condition' {
                     $ResourceParams.Add("Condition",$Condition)
                 }
+                'HealthCheckTags' {
+                    if (!($ResourceParams["Properties"])) {
+                        $ResourceParams.Add("Properties",([PSCustomObject]@{}))
+                    }
+                    $ResourceParams["Properties"] | Add-Member -MemberType NoteProperty -Name HealthCheckTags -Value @($HealthCheckTags)
+                }
                 Default {
                     if (!($ResourceParams["Properties"])) {
                         $ResourceParams.Add("Properties",([PSCustomObject]@{}))

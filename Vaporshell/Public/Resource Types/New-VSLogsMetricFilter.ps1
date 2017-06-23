@@ -168,6 +168,12 @@ function New-VSLogsMetricFilter {
                 'Condition' {
                     $ResourceParams.Add("Condition",$Condition)
                 }
+                'MetricTransformations' {
+                    if (!($ResourceParams["Properties"])) {
+                        $ResourceParams.Add("Properties",([PSCustomObject]@{}))
+                    }
+                    $ResourceParams["Properties"] | Add-Member -MemberType NoteProperty -Name MetricTransformations -Value @($MetricTransformations)
+                }
                 Default {
                     if (!($ResourceParams["Properties"])) {
                         $ResourceParams.Add("Properties",([PSCustomObject]@{}))

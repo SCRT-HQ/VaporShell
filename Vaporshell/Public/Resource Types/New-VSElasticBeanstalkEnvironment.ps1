@@ -261,6 +261,12 @@ function New-VSElasticBeanstalkEnvironment {
                 'Condition' {
                     $ResourceParams.Add("Condition",$Condition)
                 }
+                'OptionSettings' {
+                    if (!($ResourceParams["Properties"])) {
+                        $ResourceParams.Add("Properties",([PSCustomObject]@{}))
+                    }
+                    $ResourceParams["Properties"] | Add-Member -MemberType NoteProperty -Name OptionSettings -Value @($OptionSettings)
+                }
                 Default {
                     if (!($ResourceParams["Properties"])) {
                         $ResourceParams.Add("Properties",([PSCustomObject]@{}))

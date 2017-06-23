@@ -185,6 +185,12 @@ function New-VSRoute53RecordSetGroup {
                 'Condition' {
                     $ResourceParams.Add("Condition",$Condition)
                 }
+                'RecordSets' {
+                    if (!($ResourceParams["Properties"])) {
+                        $ResourceParams.Add("Properties",([PSCustomObject]@{}))
+                    }
+                    $ResourceParams["Properties"] | Add-Member -MemberType NoteProperty -Name RecordSets -Value @($RecordSets)
+                }
                 Default {
                     if (!($ResourceParams["Properties"])) {
                         $ResourceParams.Add("Properties",([PSCustomObject]@{}))

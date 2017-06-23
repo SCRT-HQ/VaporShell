@@ -213,6 +213,18 @@ function New-VSElasticLoadBalancingV2Listener {
                 'Condition' {
                     $ResourceParams.Add("Condition",$Condition)
                 }
+                'Certificates' {
+                    if (!($ResourceParams["Properties"])) {
+                        $ResourceParams.Add("Properties",([PSCustomObject]@{}))
+                    }
+                    $ResourceParams["Properties"] | Add-Member -MemberType NoteProperty -Name Certificates -Value @($Certificates)
+                }
+                'DefaultActions' {
+                    if (!($ResourceParams["Properties"])) {
+                        $ResourceParams.Add("Properties",([PSCustomObject]@{}))
+                    }
+                    $ResourceParams["Properties"] | Add-Member -MemberType NoteProperty -Name DefaultActions -Value @($DefaultActions)
+                }
                 Default {
                     if (!($ResourceParams["Properties"])) {
                         $ResourceParams.Add("Properties",([PSCustomObject]@{}))

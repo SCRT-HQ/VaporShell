@@ -327,6 +327,24 @@ function New-VSOpsWorksLayer {
                 'Condition' {
                     $ResourceParams.Add("Condition",$Condition)
                 }
+                'CustomSecurityGroupIds' {
+                    if (!($ResourceParams["Properties"])) {
+                        $ResourceParams.Add("Properties",([PSCustomObject]@{}))
+                    }
+                    $ResourceParams["Properties"] | Add-Member -MemberType NoteProperty -Name CustomSecurityGroupIds -Value @($CustomSecurityGroupIds)
+                }
+                'Packages' {
+                    if (!($ResourceParams["Properties"])) {
+                        $ResourceParams.Add("Properties",([PSCustomObject]@{}))
+                    }
+                    $ResourceParams["Properties"] | Add-Member -MemberType NoteProperty -Name Packages -Value @($Packages)
+                }
+                'VolumeConfigurations' {
+                    if (!($ResourceParams["Properties"])) {
+                        $ResourceParams.Add("Properties",([PSCustomObject]@{}))
+                    }
+                    $ResourceParams["Properties"] | Add-Member -MemberType NoteProperty -Name VolumeConfigurations -Value @($VolumeConfigurations)
+                }
                 Default {
                     if (!($ResourceParams["Properties"])) {
                         $ResourceParams.Add("Properties",([PSCustomObject]@{}))

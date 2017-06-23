@@ -142,6 +142,12 @@ function New-VSIAMUserToGroupAddition {
                 'Condition' {
                     $ResourceParams.Add("Condition",$Condition)
                 }
+                'Users' {
+                    if (!($ResourceParams["Properties"])) {
+                        $ResourceParams.Add("Properties",([PSCustomObject]@{}))
+                    }
+                    $ResourceParams["Properties"] | Add-Member -MemberType NoteProperty -Name Users -Value @($Users)
+                }
                 Default {
                     if (!($ResourceParams["Properties"])) {
                         $ResourceParams.Add("Properties",([PSCustomObject]@{}))
