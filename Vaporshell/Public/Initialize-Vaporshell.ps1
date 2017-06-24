@@ -116,6 +116,9 @@ function Initialize-Vaporshell {
             $ObjName = "Resources"
             $allowedTypes = "Vaporshell.Transform","Vaporshell.Resource"
             foreach ($obj in $args) {
+                if ($obj.Props.Type -like "AWS::Serverless*" -and $this.Transform -ne "AWS::Serverless-2016-10-31") {
+                    $this.Transform = "AWS::Serverless-2016-10-31"
+                }
                 if ([string]$($obj.PSTypeNames) -match "($(($allowedTypes|ForEach-Object{[RegEx]::Escape($_)}) -join '|'))") {
                     if ( -not ($this.$ObjName)) {
                         Write-Verbose "The $ObjName property was not found on the Vaporshell template. Adding the property to the template now."
