@@ -46,6 +46,7 @@ function Add-UserData {
     )
     Begin {
         $Values = @()
+        $Path = (Resolve-Path -Path $File).Path
     }
     Process {
         switch ($PSBoundParameters.Keys) {
@@ -54,8 +55,41 @@ function Add-UserData {
             }
             'File' {
                 $Values = @()
-                Get-Content $File | ForEach-Object {
+                if ($Path -like "*.ps1") {
+                    $Windows = $true
+                    $tag = "powershell"
+                }
+                elseif ($Path -like "*.bat" -or $Path -like "*.cmd") {
+                    $Windows = $true
+                    $tag = "script"
+                }
+                else {
+                    $Windows = $false
+                }
+                [System.Collections.ArrayList]$fileContents = Get-Content $Path
+                do {
+                    if ([string]::IsNullOrWhiteSpace($fileContents[0])){
+                        $fileContents.RemoveAt(0)
+                    }
+                } until (!([string]::IsNullOrWhiteSpace($fileContents[0])))
+                do {
+                    $lastIndex = $fileContents.Count - 1
+                    if ([string]::IsNullOrWhiteSpace($fileContents[$lastIndex])){
+                        $fileContents.RemoveAt($lastIndex)
+                    }
+                } until (!([string]::IsNullOrWhiteSpace($fileContents[$lastIndex - 1])))
+                if ($Windows) {
+                    if ($fileContents[0] -notlike "<$($tag)>*") {
+                        $Values += "<$($tag)>"
+                    }
+                }
+                $fileContents | ForEach-Object {
                     $Values += "$($_)`n"
+                }
+                if ($Windows) {
+                    if ($fileContents[$fileContents.Count - 1] -notlike "</$($tag)>*") {
+                        $Values += "</$($tag)>"
+                    }
                 }
             }
         }
