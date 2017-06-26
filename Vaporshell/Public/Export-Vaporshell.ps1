@@ -44,7 +44,11 @@ function Export-Vaporshell {
             })]
         [PSTypeName('Vaporshell.Template')]
         $VaporshellTemplate,
-        [parameter(Mandatory = $true,Position = 1)]
+        [parameter(Mandatory = $false,Position = 1)]
+        [ValidateSet("JSON","YAML")]
+        [System.String]
+        $As = "JSON",
+        [parameter(Mandatory = $false,Position = 2)]
         [System.String]
         $Path,
         [parameter(Mandatory = $false)]
@@ -61,23 +65,43 @@ function Export-Vaporshell {
         }
     }
     Process {
-        Write-Verbose "Exporting template to: $Path"
-        ConvertTo-Json -Depth 100 -InputObject $VaporshellTemplate -Verbose:$false | Set-Content -Path $Path @ForcePref -Verbose:$false
+        Write-Verbose "Converting template object to JSON"
+        $JSON = ConvertTo-Json -Depth 100 -InputObject $VaporshellTemplate -Verbose:$false
     }
     End {
-        if ($ValidateTemplate) {
-            if (Get-Command aws) {
-                Write-Verbose "Validating template"
-                $Path = (Resolve-Path $Path).Path
-                $fileUrl = "$($Path.Replace("\","/"))"
-                if ($val = aws cloudformation validate-template --template-body fileb://$fileUrl) {
-                    Write-Host -ForegroundColor Green "The template was validated successfully!`n"
-                    return $val
-                }
+        if ($As -eq "YAML") {
+            if (Get-Command cfn-flip -ErrorAction SilentlyContinue) {
+                Write-Verbose "Converting JSON to YAML with cfn-flip"
+                $Final = $JSON | cfn-flip
             }
             else {
-                Write-Warning "AWS CLI tools not found in PATH! Skipping validation to prevent failure."
+                Write-Warning "cfn-flip not found in PATH! Skipping conversion to YAML to prevent failure."
+                $Final = $JSON
             }
+        }
+        else {
+            $Final = $JSON
+        }
+        if ($Path) {
+            Write-Verbose "Exporting template to: $Path"
+            $Final | Set-Content -Path $Path @ForcePref -Verbose:$false
+            if ($ValidateTemplate) {
+                if (Get-Command aws -ErrorAction SilentlyContinue) {
+                    Write-Verbose "Validating template"
+                    $Path = (Resolve-Path $Path).Path
+                    $fileUrl = "$($Path.Replace("\","/"))"
+                    if ($val = aws cloudformation validate-template --template-body fileb://$fileUrl) {
+                        Write-Host -ForegroundColor Green "The template was validated successfully!`n"
+                        return $val
+                    }
+                }
+                else {
+                    Write-Warning "AWS CLI tools not found in PATH! Skipping validation to prevent failure."
+                }
+            }
+        }
+        else {
+            return $Final
         }
     }
 }
