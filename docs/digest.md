@@ -23,6 +23,9 @@ data2: Deep
         - [Resource Types](#resource-types)
         - [Resource Property Types](#resource-property-types)
         - [Resource Attributes](#resource-attributes)
+        - [Adding UserData](#adding-userdata)
+            - [Using the String parameter](#using-the-string-parameter)
+            - [Using the File parameter](#using-the-file-parameter)
     - [Outputs](#outputs)
     - [Transforms](#transforms)
         - [Includes](#includes)
@@ -182,6 +185,47 @@ Resource Attributes are typically policies surrounding resources, such as Creati
 - `Add-UpdatePolicy`
 
 [AWS Documentation on Resource Attributes](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-product-attribute-reference.html)
+
+
+#### Adding UserData
+
+Adding UserData to a Resource with Vaporshell is designed to be quick and easy with the `Add-UserData` function. You have the option to either provide an array of Strings and/or Intrinsic Functions, a single String or Intrinsic Function, or even read from a local file.
+
+Important items to remember when using `Add-UserData`:
+- Special characters in `-String` parameter values should be written in Powershell format (i.e. `n instead of \n). These will be converted to JSON format once the Vaporshell template is exported.
+- If using the `-File` parameter, the local file must not contain any Intrinsic Functions, as they will be escaped when the template object is exported and taken as string literals.
+- If using the `-File` parameter with Powershell or CMD script files (Windows-centric UserData), you do not need to place the powershell/script open and close tags in the script file. This allows you to develop and test the script without them to prevent errors from unknown commands being run.
+    - If the file is a .ps1, `Add-UserData` will add in the open `<powershell>` and close `</powershell>` tags if the script file does not already contain them. 
+    - If the file is a .bat or .cmd, it will add in `<script>` and `</script>` if not already present on the file itself.
+
+##### Using the String parameter
+
+Here's an example of how you would use the String parameter:
+
+{% highlight powershell linenos %}
+New-VSEC2Instance -UserData (Add-UserData -String `
+    "#!/bin/bash -xe`n",
+    "yum update -y aws-cfn-bootstrap`n",
+    "/opt/aws/bin/cfn-init -v \`n",
+    "    --stack Stack1 \`n",
+    "    --resource LaunchConfig \`n",
+    "    --configsets wordpress_install \`n",
+    "    --region ", (Add-FnRef "$_AWSRegion"), "`n",
+    "/opt/aws/bin/cfn-signal -e $? \`n",
+    "    --stack Stack1 \`n",
+    "    --resource WebServerGroup \`n",
+    "    --region ", (Add-FnRef "$_AWSRegion"), "`n" ) -LogicalId "MyInstance" -AvailabilityZone "us-west-1a" -ImageId "ami-6411e20d"
+{% endhighlight %}
+
+
+##### Using the File parameter
+
+Here's an example of how you would do the same thing using the File parameter:
+{% highlight powershell linenos %}
+New-VSEC2Instance -UserData (Add-UserData -File "C:\GDrive\PSModules\Vaporshell\Helpers\UserData.sh") -LogicalId "MyInstance" -AvailabilityZone "us-west-1a" -ImageId "ami-6411e20d"
+{% endhighlight %}
+
+**NOTE: This file will explicitly state the region, not leverage the Ref Intrinsic Function to pull the deployment region**
 
 ### Outputs
 
