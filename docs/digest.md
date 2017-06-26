@@ -223,7 +223,7 @@ New-VSEC2Instance -UserData (Add-UserData -String `
 Here's an example of how you would do the same thing using the File parameter:
 {% highlight powershell linenos %}
 New-VSEC2Instance -UserData (Add-UserData -File ".\UserData.sh") -LogicalId "MyInstance" -AvailabilityZone "us-west-1a" -ImageId "ami-6411e20d"
-{% endhighlight %}
+{% endhighlight %}    
 
 **NOTE: This file will explicitly state the region, not leverage the Ref Intrinsic Function to pull the deployment region**
 
