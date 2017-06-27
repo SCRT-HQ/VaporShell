@@ -175,7 +175,7 @@ function New-SAMFunction {
                 }
             })]
         $Environment,
-        [parameter(Mandatory = $true)]
+        [parameter(Mandatory = $false)]
         [ValidateScript( {
                 $allowedTypes = "Vaporshell.Resource.Lambda.Function.VpcConfig","System.Collections.Hashtable"
                 if ([string]$($_.PSTypeNames) -match "($(($allowedTypes|ForEach-Object{[RegEx]::Escape($_)}) -join '|'))") {
