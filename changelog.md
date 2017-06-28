@@ -22,6 +22,7 @@ description: Changes within each release of Vaporshell
 
 <!-- /TOC -->
 
+***
 
 ## Upcoming
 
@@ -32,6 +33,8 @@ description: Changes within each release of Vaporshell
 ### Long-Term
 
 - Add support for other Cloud Providers such as Google Cloud Platform, Azure
+
+***
 
 ## Historical
 
