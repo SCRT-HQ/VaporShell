@@ -38,7 +38,7 @@ description: Changes within each release of Vaporshell
 ### 1.0.0
 
 - Added full YAML support for import and export via leveraging `cfn-flip` from awslabs
-- All functional issues resolved, ready to declare v1!
+- All functional issues resolved, ready to declare v1! :beers:
 
 
 ### 0.7.10
