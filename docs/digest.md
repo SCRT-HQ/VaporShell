@@ -29,6 +29,7 @@ data2: Deep
     - [Outputs](#outputs)
     - [Transforms](#transforms)
         - [Includes](#includes)
+        - [Serverless](#serverless)
 - [Intrinsic Functions](#intrinsic-functions)
 - [Condition Functions](#condition-functions)
 - [Pseudo Parameters](#pseudo-parameters)
@@ -223,7 +224,7 @@ New-VSEC2Instance -UserData (Add-UserData -String `
 Here's an example of how you would do the same thing using the File parameter:
 {% highlight powershell linenos %}
 New-VSEC2Instance -UserData (Add-UserData -File ".\UserData.sh") -LogicalId "MyInstance" -AvailabilityZone "us-west-1a" -ImageId "ami-6411e20d"
-{% endhighlight %}    
+{% endhighlight %}
 
 **NOTE: This file will explicitly state the region, not leverage the Ref Intrinsic Function to pull the deployment region**
 
@@ -236,13 +237,121 @@ You add outputs to an already existing `Vaporshell.Template` object by using the
 
 ### Transforms
 
-_At this time, only `Includes` transforms are supported. **Serverless Application Model (SAM) support is in development and planned for release soon!**_
-
 #### Includes
 
 You can add an Includes at the top-level of an already existing `Vaporshell.Template` object by using the object's `AddTransform()` script property combined with `Add-Include` passed in as the parameter.
 
 You can also use the AWS::Include transform anywhere within the AWS CloudFormation template except in the template parameters section or the template version field. For example, you can use AWS::Include in the mappings section.
+
+
+#### Serverless
+
+Vaporshell has full coverage of the Serverless transform resources as of version 0.7.10. If you add any Serverless resources to the template object via `$template.AddResource()`, it will automatically add the top-level Transform.
+
+Here's an example of using Serverless transforms to build this [example template found on awslabs' GitHub](https://github.com/awslabs/serverless-application-model/blob/master/examples/2016-10-31/api_backend/template.yaml):
+
+{% highlight powershell linenos %}
+$t = Initialize-Vaporshell -Description "Simple CRUD webservice. State is stored in a SimpleTable (DynamoDB) resource."
+$t.AddResource(
+    ( New-SAMFunction -LogicalId "GetFunction" -Handler "index.get" -Runtime "nodejs4.3" -CodeUri "s3://<bucket>/api_backend.zip" -Policies "AmazonDynamoDBReadOnlyAccess" -Environment (@{TABLE_NAME = (Add-FnRef "Table")}) -Events (Add-SAMApiEventSource -LogicalId "GetResource" -Path "/resource/{resourceId}" -Method "get") ),
+    ( New-SAMFunction -LogicalId "PutFunction" -Handler "index.put" -Runtime "nodejs4.3" -CodeUri "s3://<bucket>/api_backend.zip" -Policies "AmazonDynamoDBFullAccess" -Environment (@{TABLE_NAME = (Add-FnRef "Table")}) -Events (Add-SAMApiEventSource -LogicalId "PutResource" -Path "/resource/{resourceId}" -Method "put") ),
+    ( New-SAMFunction -LogicalId "DeleteFunction" -Handler "index.delete" -Runtime "nodejs4.3" -CodeUri "s3://<bucket>/api_backend.zip" -Policies "AmazonDynamoDBFullAccess" -Environment (@{TABLE_NAME = (Add-FnRef "Table")}) -Events (Add-SAMApiEventSource -LogicalId "DeleteResource" -Path "/resource/{resourceId}" -Method "delete") ),
+    ( New-SAMSimpleTable -LogicalId "Table" )
+)
+Export-Vaporshell -VaporshellTemplate $t
+{% endhighlight %}
+
+
+Resulting JSON:
+
+{% highlight json linenos %}
+{
+    "AWSTemplateFormatVersion": "2010-09-09",
+    "Description": "Simple CRUD webservice. State is stored in a SimpleTable (DynamoDB) resource.",
+    "Transform": "AWS::Serverless-2016-10-31",
+    "Resources": {
+        "GetFunction": {
+            "Type": "AWS::Serverless::Function",
+            "Properties": {
+                "Handler": "index.get",
+                "Runtime": "nodejs4.3",
+                "CodeUri": "s3://\u003cbucket\u003e/api_backend.zip",
+                "Policies": "AmazonDynamoDBReadOnlyAccess",
+                "Environment": {
+                    "Variables": {
+                        "TABLE_NAME": {
+                            "Ref": "Table"
+                        }
+                    }
+                },
+                "Events": {
+                    "GetResource": {
+                        "Properties": {
+                            "Path": "/resource/{resourceId}",
+                            "Method": "get"
+                        },
+                        "Type": "Api"
+                    }
+                }
+            }
+        },
+        "PutFunction": {
+            "Type": "AWS::Serverless::Function",
+            "Properties": {
+                "Handler": "index.put",
+                "Runtime": "nodejs4.3",
+                "CodeUri": "s3://\u003cbucket\u003e/api_backend.zip",
+                "Policies": "AmazonDynamoDBFullAccess",
+                "Environment": {
+                    "Variables": {
+                        "TABLE_NAME": {
+                            "Ref": "Table"
+                        }
+                    }
+                },
+                "Events": {
+                    "PutResource": {
+                        "Properties": {
+                            "Path": "/resource/{resourceId}",
+                            "Method": "put"
+                        },
+                        "Type": "Api"
+                    }
+                }
+            }
+        },
+        "DeleteFunction": {
+            "Type": "AWS::Serverless::Function",
+            "Properties": {
+                "Handler": "index.delete",
+                "Runtime": "nodejs4.3",
+                "CodeUri": "s3://\u003cbucket\u003e/api_backend.zip",
+                "Policies": "AmazonDynamoDBFullAccess",
+                "Environment": {
+                    "Variables": {
+                        "TABLE_NAME": {
+                            "Ref": "Table"
+                        }
+                    }
+                },
+                "Events": {
+                    "DeleteResource": {
+                        "Properties": {
+                            "Path": "/resource/{resourceId}",
+                            "Method": "delete"
+                        },
+                        "Type": "Api"
+                    }
+                }
+            }
+        },
+        "Table": {
+            "Type": "AWS::Serverless::SimpleTable"
+        }
+    }
+}
+{% endhighlight %}
+
 
 
 ## Intrinsic Functions
