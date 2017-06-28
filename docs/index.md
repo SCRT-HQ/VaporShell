@@ -71,13 +71,12 @@ _If you would like to install for all users, run the following command in an **e
 The first thing you will need to do in your build script is import Vaporshell into the current session:  
 `Import-Module Vaporshell`
 
-Next, you need to initialize a new template OR import an existing JSON template to build onto:  
-_NOTE: YAML templates are not yet supported with Vaporshell_
+Next, you need to initialize a new template OR import an existing template to build onto:  
 
 **Initialize**
 * Parameters:
     - FormatVersion: Defaults to '2010-09-09' -- currently the only available Format Version for CloudFormation
-    - Description: The description of your template. Not required if that's preferred.  
+    - Description: The description of your template.   
 `$template = Initialize-Vaporshell -Description "CloudFormation Template 1"`
 
 _OR_
