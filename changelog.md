@@ -9,6 +9,7 @@ description: Changes within each release of Vaporshell
     - [In-Progress](#in-progress)
     - [Long-Term](#long-term)
 - [Historical](#historical)
+    - [1.0.0](#100)
     - [0.7.10](#0710)
     - [0.7.9](#079)
     - [0.7.8](#078)
@@ -26,15 +27,18 @@ description: Changes within each release of Vaporshell
 
 ### In-Progress
 
-- [Issue #2](https://github.com/scrthq/Vaporshell/issues/2): YAML output options using cfn-flip
 - [Issue #3](https://github.com/scrthq/Vaporshell/issues/3): Enable external config files for template reuse across environments
 
 ### Long-Term
 
 - Add support for other Cloud Providers such as Google Cloud Platform, Azure
 
-
 ## Historical
+
+### 1.0.0
+
+- Added full YAML support for import and export via leveraging `cfn-flip` from awslabs
+- All functional issues resolved, ready to declare v1!
 ### 0.7.10
 
 - Added full Serverless coverage
