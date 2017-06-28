@@ -12,7 +12,7 @@
     RootModule            = 'Vaporshell.psm1'
 
     # Version number of this module.
-    ModuleVersion         = '0.7.1'
+    ModuleVersion         = '1.0.0'
 
     # ID used to uniquely identify this module
     GUID                  = 'd526494c-6e59-41ff-ad05-eedbc1473b6a'
@@ -27,9 +27,26 @@
     Copyright             = '(c) SCRT HQ 2017 . All rights reserved.'
 
     # Description of the functionality provided by this module
-    Description           = 'Powershell module for building AWS CloudFormation JSON templates using Powershell syntax, abstracting working with JSON, etc. Essentially a Powershell equivalent to Troposphere for Python.
+    Description           = 'Powershell module for building AWS CloudFormation JSON templates using Powershell syntax, abstracting working with JSON, etc.
 
-Requires Powershell version 3.0 or higher, as it leverages ConvertTo-Json and ConvertFrom-Json to work with the template files.'
+Requires Powershell version 3.0 or higher, as it leverages ConvertTo-Json and ConvertFrom-Json to work with the template files.
+
+
+## Getting Started
+
+<http://vaporshell.io/docs/examples>
+
+***
+
+## Module Digest
+
+<http://vaporshell.io/docs/digest>
+
+***
+
+## Examples
+
+<http://vaporshell.io/docs/examples>'
 
     # Minimum version of the Windows PowerShell engine required by this module
     PowerShellVersion     = '3.0'
@@ -94,13 +111,13 @@ Requires Powershell version 3.0 or higher, as it leverages ConvertTo-Json and Co
         PSData = @{
 
             # Tags applied to this module. These help with module discovery in online galleries.
-            Tags       = 'AWS','CloudFormation','CFN','JSON'
+            Tags       = 'AWS','CloudFormation','CFN','JSON','YAML'
 
             # A URL to the license for this module.
             # LicenseUri = ''
 
             # A URL to the main website for this project.
-            ProjectUri = 'https://github.com/nferrell/Vaporshell'
+            ProjectUri = 'http://vaporshell.io'
 
             # A URL to an icon representing this module.
             IconUri    = 'https://spotinst.com/app/themes/spotinst-theme/dist/images/features/elastigroup/intro/icons/cloudformation.svg'
@@ -116,7 +133,7 @@ Requires Powershell version 3.0 or higher, as it leverages ConvertTo-Json and Co
     } # End of PrivateData hashtable
 
     # HelpInfo URI of this module
-    HelpInfoURI           = 'https://github.com/nferrell/Vaporshell/wiki'
+    HelpInfoURI           = 'http://vaporshell.io/docs/'
 
     # Default prefix for commands exported from this module. Override the default prefix using Import-Module -Prefix.
     # DefaultCommandPrefix = ''

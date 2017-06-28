@@ -24,7 +24,16 @@ function Import-Vaporshell {
         [String]
         $Path
     )
-    $tempObj = Get-Content $Path -Verbose:$false | ConvertFrom-Json -Verbose:$false
+    $temp = Get-Content $Path -Verbose:$false
+    if ($temp -contains "Resources:") {
+        if (Get-Command cfn-flip -ErrorAction SilentlyContinue) {
+            $temp = cfn-flip $Path
+        }
+        else {
+            throw "Template appears to be YAML but cfn-flip is not found in PATH. Unable to convert to JSON to import into Powershell. Please install cfn-flip then restart this console."
+        }
+    }
+    $tempObj = $temp | ConvertFrom-Json -Verbose:$false
     $addMetadata = {
         Process {
             $ObjName = "Metadata"
