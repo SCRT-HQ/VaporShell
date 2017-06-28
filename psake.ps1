@@ -68,7 +68,8 @@ Task Build -Depends Test {
 
     # Bump the module version
     $Version = Get-NextPSGalleryVersion -Name $env:BHProjectName
-    Update-Metadata -Path $env:BHPSModuleManifest -PropertyName ModuleVersion -Value $Version
+    Update-Metadata -Path $env:BHPSModuleManifest -PropertyName ModuleVersion -Value "1.0.0" #$Version
+    
     #Update-Metadata -Path $env:BHPSModuleManifest -Increment Build
 }
 
