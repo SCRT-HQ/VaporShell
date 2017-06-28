@@ -15,7 +15,7 @@ Vaporshell allows you to either initialize a new template or import an existing 
 
 ### Like what's happening and want to send over some coffee money for fuel? Invoke-Donation by clicking below!
 
-[![Donate through Paypal](https://img.shields.io/badge/paypal-donate-brightgreen.svg)](https://gratipay.com/Vaporshell) [![Donate through Gratipay](https://img.shields.io/gratipay/user/scrthq.svg)](https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&hosted_button_id=GU6CJMFGVP6ZS)
+[![Donate through Paypal](https://img.shields.io/badge/paypal-donate-brightgreen.svg)](https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&hosted_button_id=GU6CJMFGVP6ZS) [![Donate through Gratipay](https://img.shields.io/gratipay/user/scrthq.svg)](https://gratipay.com/Vaporshell)
 
 ***
 
