@@ -15,8 +15,6 @@ url: "http://vaporshell.io" # the base hostname & protocol for your site
 permalink: /:category/:title
 highlighter: rouge
 google_analytics: UA-101420411-1
-gems:
-  - jemoji
 social:
   github: https://github.com/scrthq/Vaporshell
   linkedin-square: https://linkedin.com/in/scrthq
