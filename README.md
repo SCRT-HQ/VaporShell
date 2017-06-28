@@ -38,12 +38,6 @@ Vaporshell allows you to either initialize a new template or import an existing 
 
 ***
 
-## Test Notes
-
-Continous testing and development is being done in Windows, MacOS and Linux (Ubuntu). **If your OS of choice can run Powershell, you should have no issues running this module.** 
-
-***
-
 ## Disclaimer
 
 This module is only to be used to ease creation of CloudFormation templates. Any stack creations within AWS are the responsibility of the person/group deploying it, so please validate any template builds using `aws cloudformation validate-template`! ([Click here for documentation from AWS](http://docs.aws.amazon.com/cli/latest/reference/cloudformation/validate-template.html))
