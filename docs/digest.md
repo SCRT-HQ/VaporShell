@@ -353,7 +353,7 @@ Resulting JSON:
 {% endhighlight %}
 
 
-Resulting YAML (if cfn-flip is installed as well):
+Resulting YAML ([if cfn-flip is installed](https://github.com/awslabs/aws-cfn-template-flip) as well):
 
 {% highlight yaml linenos %}
 AWSTemplateFormatVersion: '2010-09-09'
