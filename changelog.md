@@ -39,6 +39,8 @@ description: Changes within each release of Vaporshell
 
 - Added full YAML support for import and export via leveraging `cfn-flip` from awslabs
 - All functional issues resolved, ready to declare v1!
+
+
 ### 0.7.10
 
 - Added full Serverless coverage
@@ -53,6 +55,7 @@ description: Changes within each release of Vaporshell
 ### 0.7.8
 
 - Added `-ValidateTemplate` parameter to leverage `aws cloudformation validate-template` for syntax validation
+
 
 ### 0.7.7
 
