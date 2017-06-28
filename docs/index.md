@@ -43,6 +43,15 @@ Running `Export-Vaporshell -Path $path -VaporshellTemplate $template -ValidateTe
 
 `aws cloudformation validate-template --template-body fileb://$fileUrlConverted`
 
+**BONUS PT 2:** Want to work in YAML instead? We leverage AWSLabs' `cfn-flip` to convert between JSON and YAML, as `cfn-flip` is cross-platform and is designed specifically for converting CloudFormation templates. [Click here to check the GitHub page out](https://github.com/awslabs/aws-cfn-template-flip); **you will need to use `pip` to install `cfn-flip`**  
+
+Running `Export-Vaporshell -Path $path -VaporshellTemplate $template -As YAML` would be the same as running the following command against the resulting JSON template file:
+
+{% highlight powershell linenos %}
+Export-Vaporshell -Path $path -VaporshellTemplate $template
+cfn-flip $path | Set-Content $path -Force
+{% endhighlight %}
+
 Have any suggestions to extend that? Let us know! [Click here to view the AWS CLI command reference for Cloudformation](http://docs.aws.amazon.com/cli/latest/reference/cloudformation/index.html)
 
 ### Installing the Module

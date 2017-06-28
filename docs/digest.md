@@ -353,6 +353,65 @@ Resulting JSON:
 {% endhighlight %}
 
 
+Resulting YAML (if cfn-flip is installed as well):
+
+{% highlight yaml linenos %}
+AWSTemplateFormatVersion: '2010-09-09'
+Description: Simple CRUD webservice. State is stored in a SimpleTable (DynamoDB) resource.
+Transform: AWS::Serverless-2016-10-31
+Resources:
+  GetFunction:
+    Type: AWS::Serverless::Function
+    Properties:
+      Handler: index.get
+      Runtime: nodejs4.3
+      CodeUri: s3://<bucket>/api_backend.zip
+      Policies: AmazonDynamoDBReadOnlyAccess
+      Environment:
+        Variables:
+          TABLE_NAME: !Ref 'Table'
+      Events:
+        GetResource:
+          Properties:
+            Path: /resource/{resourceId}
+            Method: get
+          Type: Api
+  PutFunction:
+    Type: AWS::Serverless::Function
+    Properties:
+      Handler: index.put
+      Runtime: nodejs4.3
+      CodeUri: s3://<bucket>/api_backend.zip
+      Policies: AmazonDynamoDBFullAccess
+      Environment:
+        Variables:
+          TABLE_NAME: !Ref 'Table'
+      Events:
+        PutResource:
+          Properties:
+            Path: /resource/{resourceId}
+            Method: put
+          Type: Api
+  DeleteFunction:
+    Type: AWS::Serverless::Function
+    Properties:
+      Handler: index.delete
+      Runtime: nodejs4.3
+      CodeUri: s3://<bucket>/api_backend.zip
+      Policies: AmazonDynamoDBFullAccess
+      Environment:
+        Variables:
+          TABLE_NAME: !Ref 'Table'
+      Events:
+        DeleteResource:
+          Properties:
+            Path: /resource/{resourceId}
+            Method: delete
+          Type: Api
+  Table:
+    Type: AWS::Serverless::SimpleTable
+{% endhighlight %}
+
 
 ## Intrinsic Functions
 

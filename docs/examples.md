@@ -7,10 +7,15 @@ data1: Examples
 ---
 <!-- TOC -->
 
-- [Amazon S3 bucket with a deletion policy](#amazon-s3-bucket-with-a-deletion-policy)
+- [General Templates](#general-templates)
+    - [Amazon S3 bucket with a deletion policy](#amazon-s3-bucket-with-a-deletion-policy)
+- [Serverless](#serverless)
+    - [API Backend](#api-backend)
 
 <!-- /TOC -->
-## Amazon S3 bucket with a deletion policy 
+## General Templates  
+
+### Amazon S3 bucket with a deletion policy 
 
 [Link to AWS sample](https://s3-us-west-1.amazonaws.com/cloudformation-templates-us-west-1/S3_Website_Bucket_With_Retain_On_Delete.template)
 
@@ -24,6 +29,25 @@ $template.AddOutput(
 )
 $JSON = ".\path\to\template.json"
 Export-Vaporshell -Path $path -VaporshellTemplate $template -Force -ValidateTemplate -Verbose
+{% endhighlight %}
+
+
+## Serverless
+
+### API Backend
+
+- [GitHub Sample Folder](https://github.com/awslabs/serverless-application-model/tree/master/examples/2016-10-31/api_backend)
+- [AWS Sample Template](https://github.com/awslabs/serverless-application-model/blob/master/examples/2016-10-31/api_backend/template.yaml)
+
+{% highlight powershell linenos %}
+$t = Initialize-Vaporshell -Description "Simple CRUD webservice. State is stored in a SimpleTable (DynamoDB) resource."
+$t.AddResource(
+    ( New-SAMFunction -LogicalId "GetFunction" -Handler "index.get" -Runtime "nodejs4.3" -CodeUri "s3://<bucket>/api_backend.zip" -Policies "AmazonDynamoDBReadOnlyAccess" -Environment (@{TABLE_NAME = (Add-FnRef "Table")}) -Events (Add-SAMApiEventSource -LogicalId "GetResource" -Path "/resource/{resourceId}" -Method "get") ),
+    ( New-SAMFunction -LogicalId "PutFunction" -Handler "index.put" -Runtime "nodejs4.3" -CodeUri "s3://<bucket>/api_backend.zip" -Policies "AmazonDynamoDBFullAccess" -Environment (@{TABLE_NAME = (Add-FnRef "Table")}) -Events (Add-SAMApiEventSource -LogicalId "PutResource" -Path "/resource/{resourceId}" -Method "put") ),
+    ( New-SAMFunction -LogicalId "DeleteFunction" -Handler "index.delete" -Runtime "nodejs4.3" -CodeUri "s3://<bucket>/api_backend.zip" -Policies "AmazonDynamoDBFullAccess" -Environment (@{TABLE_NAME = (Add-FnRef "Table")}) -Events (Add-SAMApiEventSource -LogicalId "DeleteResource" -Path "/resource/{resourceId}" -Method "delete") ),
+    ( New-SAMSimpleTable -LogicalId "Table" )
+)
+Export-Vaporshell -VaporshellTemplate $t
 {% endhighlight %}
 
 
