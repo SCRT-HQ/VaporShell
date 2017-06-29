@@ -1,7 +1,7 @@
 ---
 layout: page 
-title: Upcoming & Historical Changes
-description: Changes within each release of Vaporshell
+title: Change Log
+description: Changes within each release of Vaporshell and plans upcoming
 ---
 <!-- TOC -->
 
@@ -33,6 +33,7 @@ description: Changes within each release of Vaporshell
 ### Long-Term
 
 - Add support for other Cloud Providers such as Google Cloud Platform, Azure
+
 
 ***
 
