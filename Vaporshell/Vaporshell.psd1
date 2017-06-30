@@ -32,21 +32,38 @@
 Requires Powershell version 3.0 or higher, as it leverages ConvertTo-Json and ConvertFrom-Json to work with the template files.
 
 
-## Getting Started
+**WORKS ON ALL PLATFORMS THAT CAN RUN POWERSHELL**
 
-<http://vaporshell.io/docs/examples>
 
-***
+Recommended Additional Installs:
 
-## Module Digest
+- AWS CLI Tools: http://docs.aws.amazon.com/cli/latest/userguide/installing.html
+    - Allows you to use the -ValidateTemplate switch on Export-Vaporshell
 
-<http://vaporshell.io/docs/digest>
+- AWS cfn-flip: https://github.com/awslabs/aws-cfn-template-flip
+    - Allows you to work with YAML for both importing templates and exporting templates.
 
-***
 
-## Examples
+~ ~ ~ Getting Started ~ ~ ~
 
-<http://vaporshell.io/docs/examples>'
+http://vaporshell.io/docs/examples
+
+
+~ ~ ~ Module Digest ~ ~ ~
+
+http://vaporshell.io/docs/digest
+
+
+~ ~ ~ Examples ~ ~ ~
+
+http://vaporshell.io/docs/examples
+
+
+~ ~ ~ Change Log ~ ~ ~
+
+http://vaporshell.io/changelog
+
+'
 
     # Minimum version of the Windows PowerShell engine required by this module
     PowerShellVersion     = '3.0'

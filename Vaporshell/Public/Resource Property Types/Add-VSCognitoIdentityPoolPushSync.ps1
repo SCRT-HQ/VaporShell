@@ -47,15 +47,15 @@ function Add-VSCognitoIdentityPoolPushSync {
         $obj = [PSCustomObject]@{}
     }
     Process {
-        foreach ($key in $PSBoundParameters.Keys) {
-            $val = $((Get-Variable $key).Value)
+        foreach ($psParamKey in $PSBoundParameters.Keys) {
+            $val = $((Get-Variable $psParamKey).Value)
             if ($val -eq "True") {
                 $val = "true"
             }
             elseif ($val -eq "False") {
                 $val = "false"
             }
-            $obj | Add-Member -MemberType NoteProperty -Name $key -Value $val
+            $obj | Add-Member -MemberType NoteProperty -Name $psParamKey -Value $val
         }
     }
     End {

@@ -11,8 +11,18 @@ function Export-Vaporshell {
     .PARAMETER VaporshellTemplate
         The input template object
     
+    .PARAMETER As
+        Specify JSON or YAML for your preferred output. Defaults to JSON.
+
+        **Important**: In order to use YAML, you must have cfn-flip installed: https://github.com/awslabs/aws-cfn-template-flip
+    
     .PARAMETER Path
         Path to save the resulting JSON file.
+    
+    .PARAMETER ValidateTemplate
+        Runs `aws cloudformation validate-template` against the resulting file.
+
+        **Important**: In order to use this switch, you must have AWS CLI Tools installed and configured: http://docs.aws.amazon.com/cli/latest/userguide/installing.html
     
     .PARAMETER Force
         Forces an overwrite if the Path already exists

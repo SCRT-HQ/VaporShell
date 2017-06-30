@@ -1,4 +1,17 @@
-function Update-VSResources {
+function Update-VSResourceFunctions {
+    <#
+    .SYNOPSIS
+        Updates the Resource and Property Type functions
+    
+    .DESCRIPTION
+        Updates the Resource and Property Type functions
+    
+    .PARAMETER Region
+        The AWS region by location whose specification sheet you'd like to use to update your functions
+
+    .FUNCTIONALITY
+        Vaporshell
+    #>
     Param
     (
         [parameter(Mandatory = $false,Position = 0)]
@@ -25,7 +38,7 @@ function Update-VSResources {
     }
 
     $URL = $regHash[$Region]
-    $specs = (New-Object System.Net.WebClient).DownloadString($URL) | ConvertFrom-Json
+    $specs = (Invoke-WebRequest $URL).Content | ConvertFrom-Json
 
     foreach ($resource in $specs.PropertyTypes.psobject.Properties) {
         Write-Verbose "Updating $($resource.Name)"
