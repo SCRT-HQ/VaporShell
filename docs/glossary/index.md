@@ -65,6 +65,16 @@ _The following functions are individually built to fill a specific role in templ
 ## Resource Types and Property Types
 _The following functions are built via automation against Amazon's Resource Type & Resource Property Type spec sheet_
 
+### Serverless
+<ul>
+    {% for item in site.data.glossarydata %}
+      {% if item.tag == "serverless" %}
+        <li><a href="{{ "/docs/glossary/" | prepend: site.baseurl | append: item.title }}">{{ item.title }}</a></li>
+      {% endif %}
+    {% endfor %}
+</ul>
+
+
 ### Resource Types
 <ul>
     {% for item in site.data.glossarydata %}

@@ -2,6 +2,10 @@
 layout: glossary
 title: Add-VSRoute53RecordSetGeoLocation
 categories: glossary
+label1: Category
+data1: Documentation
+label2: Depth
+data2: Deep
 ---
 
 # Add-VSRoute53RecordSetGeoLocation

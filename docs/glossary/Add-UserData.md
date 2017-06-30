@@ -2,17 +2,18 @@
 layout: glossary
 title: Add-UserData
 categories: glossary
+label1: Category
+data1: Documentation
+label2: Depth
+data2: Deep
 ---
 
 # Add-UserData
 
 ## SYNOPSIS
-Adds UserData to a resource on the template.  
-
+Adds UserData to a resource on the template.
 For single values (i.e.
-in AutoScaling Launch Configurations), it adds the single value wrapped in `Fn::Base64`.  
-
-For multiple values, it automatically adds it as `{"Fn::Base64": {"Fn::Join": ["",[VALUES...] ] } }` to reduce the amount of scripting needed.
+in AutoScaling Launch Configurations), it adds the single For multiple values, it automatically adds it as {"Fn::Base64": {"Fn::Join": \["",\[VALUES...\] \] } } to reduce the amount of scripting needed.
 
 ## SYNTAX
 

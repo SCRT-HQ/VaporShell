@@ -2,6 +2,10 @@
 layout: glossary
 title: Add-VSEC2SpotFleetSpotFleetRequestConfigData
 categories: glossary
+label1: Category
+data1: Documentation
+label2: Depth
+data2: Deep
 ---
 
 # Add-VSEC2SpotFleetSpotFleetRequestConfigData

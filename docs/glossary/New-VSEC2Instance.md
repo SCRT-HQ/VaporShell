@@ -2,6 +2,10 @@
 layout: glossary
 title: New-VSEC2Instance
 categories: glossary
+label1: Category
+data1: Documentation
+label2: Depth
+data2: Deep
 ---
 
 # New-VSEC2Instance

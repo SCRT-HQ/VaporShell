@@ -2,6 +2,10 @@
 layout: glossary
 title: New-VSS3BucketPolicy
 categories: glossary
+label1: Category
+data1: Documentation
+label2: Depth
+data2: Deep
 ---
 
 # New-VSS3BucketPolicy

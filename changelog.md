@@ -9,6 +9,7 @@ description: Changes within each release of Vaporshell and plans upcoming
     - [In-Progress](#in-progress)
     - [Long-Term](#long-term)
 - [Historical](#historical)
+    - [1.1.0](#110)
     - [1.0.0](#100)
     - [0.7.10](#0710)
     - [0.7.9](#079)
@@ -38,6 +39,11 @@ description: Changes within each release of Vaporshell and plans upcoming
 ***
 
 ## Historical
+
+### 1.1.0
+
+- Added `Update-VSResourceFunctions`
+- Updated all Resource and Property Type functions
 
 ### 1.0.0
 

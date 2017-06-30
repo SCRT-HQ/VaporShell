@@ -2,6 +2,10 @@
 layout: glossary
 title: Add-VSEMRClusterScalingConstraints
 categories: glossary
+label1: Category
+data1: Documentation
+label2: Depth
+data2: Deep
 ---
 
 # Add-VSEMRClusterScalingConstraints
