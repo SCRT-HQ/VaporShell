@@ -80,6 +80,16 @@ layout: landing
 					<h3>Always Up-to-Date</h3>
 					<p>Due to Vaporshell leveraging AWS' specification sheet for Resource function creation, Vaporshell will typically be updated before most are aware those resources are available within CloudFormation.</p>
 				</li>
+
+				<li class="icon fa-check-square-o">
+					<h3>Inline Template Validation</h3>
+					<p>With the <a href="http://docs.aws.amazon.com/cli/latest/userguide/installing.html">AWS CLI Tools</a> installed, you can perform inline template file validation by including the -ValidateTemplate switch with Export-Vaporshell:<br /> <code>Export-Vaporshell $template -Path ~\templates\myTemplate.template -ValidateTemplate</code></p>
+				</li>
+				<li class="icon fa-list">
+					<h3>YAML Support</h3>
+					<p>With AWSLabs' <code>cfn-flip</code> installed alongside Vaporshell, you can import templates from YAML and export templates to YAML. <code>cfn-flip</code> is installable via <code>pip</code>; more details on <code>cfn-flip</code> can be found on AWSLabs' GitHub: <a href="https://github.com/awslabs/aws-cfn-template-flip">awslabs/aws-cfn-template-flip</a></p>
+				</li>
+
 				<li class="icon fa-coffee">
 					<h3>Free, Forever</h3>
 					<p>Vaporshell is developed under the MIT license and will always be free to download and use for whatever you'd like. Check the license details on the <a href="https://github.com/scrthq/Vaporshell/blob/master/LICENSE">project's GitHub</a>.<br /><br />
