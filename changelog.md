@@ -9,6 +9,7 @@ description: Changes within each release of Vaporshell and plans/ideas for the f
     - [In-Progress](#in-progress)
     - [Long-Term](#long-term)
 - [Historical](#historical)
+    - [1.1.5](#115)
     - [1.1.0](#110)
     - [1.0.0](#100)
     - [0.7.10](#0710)
@@ -39,6 +40,11 @@ description: Changes within each release of Vaporshell and plans/ideas for the f
 ***
 
 ## Historical
+
+### 1.1.5
+
+- Fixed default Powershell JSON output formatting when using ConvertTo-Json; default formatting caused a large template to exceed CloudFormation's limits due to the extra spacing. Added in the private function `Format-Json` and set the default output to be cleaned up in `Export-Vaporshell`
+
 
 ### 1.1.0
 
