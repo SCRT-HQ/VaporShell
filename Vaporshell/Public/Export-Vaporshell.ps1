@@ -76,7 +76,7 @@ function Export-Vaporshell {
     }
     Process {
         Write-Verbose "Converting template object to JSON"
-        $JSON = ConvertTo-Json -Depth 100 -InputObject $VaporshellTemplate -Verbose:$false
+        $JSON = ConvertTo-Json -Depth 100 -InputObject $VaporshellTemplate -Verbose:$false | Format-Json
     }
     End {
         if ($As -eq "YAML") {

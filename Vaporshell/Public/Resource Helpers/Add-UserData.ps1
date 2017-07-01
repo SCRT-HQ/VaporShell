@@ -46,7 +46,6 @@ function Add-UserData {
     )
     Begin {
         $Values = @()
-        $Path = (Resolve-Path -Path $File).Path
     }
     Process {
         switch ($PSBoundParameters.Keys) {
@@ -54,7 +53,7 @@ function Add-UserData {
                 $Values = $String
             }
             'File' {
-                $Values = @()
+                $Path = (Resolve-Path -Path $File).Path
                 if ($Path -like "*.ps1") {
                     $Windows = $true
                     $tag = "powershell"

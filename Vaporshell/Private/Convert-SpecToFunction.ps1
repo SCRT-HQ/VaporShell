@@ -152,7 +152,7 @@ foreach ($Prop in $Properties) {
             $scriptContents += @"
         [parameter(Mandatory = $Mandatory)]
         [ValidateScript( {
-                `$allowedTypes = "Vaporshell.Resource.Tag"
+                `$allowedTypes = "Vaporshell.Resource.Tag","System.Management.Automation.PSCustomObject"
                 if ([string]`$(`$_.PSTypeNames) -match "(`$((`$allowedTypes|ForEach-Object{[RegEx]::Escape(`$_)}) -join '|'))") {
                     `$true
                 }
