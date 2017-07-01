@@ -1,7 +1,7 @@
 ---
 layout: page 
 title: Change Log
-description: Changes within each release of Vaporshell and plans/ideas for the future
+description: Changes within each release of Vaporshell and plans/ideas for the future 
 ---
 <!-- TOC -->
 
