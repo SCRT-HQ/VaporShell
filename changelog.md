@@ -9,6 +9,7 @@ description: Changes within each release of Vaporshell and plans/ideas for the f
     - [In-Progress](#in-progress)
     - [Long-Term](#long-term)
 - [Historical](#historical)
+    - [1.1.6](#116)
     - [1.1.5](#115)
     - [1.1.0](#110)
     - [1.0.0](#100)
@@ -40,6 +41,11 @@ description: Changes within each release of Vaporshell and plans/ideas for the f
 ***
 
 ## Historical
+
+### 1.1.6
+
+- Improved module load times from 1 min 35 secs to ~1 second
+
 
 ### 1.1.5
 
