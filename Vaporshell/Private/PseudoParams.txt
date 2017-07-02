@@ -1,0 +1,7 @@
+AWS::AccountId
+AWS::StackId
+AWS::NoValue
+AWS::NotificationARNs
+AWS::Region
+AWS::StackName
+AWS::Include
