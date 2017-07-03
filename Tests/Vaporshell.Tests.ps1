@@ -86,10 +86,10 @@ Describe "Initialize/Export/Import PS$PSVersion" {
             $testPath = "C:\projects\Vaporshell\Template.json"
             $templateInit = $null
             $templateInit = Initialize-Vaporshell -Description "Testing template build"
-            $templateInit.AddParameter((New-VaporParameter -LogicalId "EnvType" -Type String -Default "test" -AllowedValues "test","prod" -Description "Environment type"))
+            $templateInit.AddParameter((New-VaporParameter -LogicalId "EnvTypeString" -Type String -Default "test" -AllowedValues "test","prod" -Description "Environment type"))
             $templateInit.AddMetadata((New-VaporMetadata -LogicalId "Instances" -Metadata @{"Description" = "Information about the instances"}))
             $templateInit.AddCondition(
-                (New-VaporCondition -LogicalId "CreateProdResources" -Condition (Add-ConEquals -FirstValue (Add-FnRef -Ref "EnvType") -SecondValue "prod")),
+                (New-VaporCondition -LogicalId "CreateProdResources" -Condition (Add-ConEquals -FirstValue (Add-FnRef -Ref "EnvTypeString") -SecondValue "prod")),
                 (Add-Include -Location "s3://MyAmazonS3BucketName/single_wait_condition.yaml")
             )
             $templateInit.AddMapping(
@@ -130,7 +130,7 @@ Describe "Initialize/Export/Import PS$PSVersion" {
             )
             $template.AddCondition(
                 (
-                    New-VaporCondition -LogicalId "CreateTestResources" -Condition (Add-ConEquals -FirstValue (Add-FnRef -Ref "EnvType") -SecondValue "test")
+                    New-VaporCondition -LogicalId "CreateTestResources" -Condition (Add-ConEquals -FirstValue (Add-FnRef -Ref "EnvTypeString") -SecondValue "test")
                 )
             )
             $template.AddMapping(
