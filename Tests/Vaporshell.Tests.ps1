@@ -15,7 +15,7 @@ Import-Module $ModulePath -Force
 
 $projectRoot = Resolve-Path "$PSScriptRoot\.."
 $moduleRoot = Split-Path (Resolve-Path "$projectRoot\*\*.psd1")
-$udFile = "$moduleRoot\Public\Initialize-Vaporshell.ps1"
+$udFile = "$moduleRoot\Public\Transform\Add-Include.ps1"
 
 Describe "General project validation: $moduleName" {
 
