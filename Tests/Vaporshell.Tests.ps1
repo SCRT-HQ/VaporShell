@@ -15,7 +15,7 @@ Import-Module $ModulePath -Force
 
 $projectRoot = Resolve-Path "$PSScriptRoot\.."
 $moduleRoot = Split-Path (Resolve-Path "$projectRoot\*\*.psd1")
-$udFile = "$moduleRoot\Public\Transform\Add-Include.ps1"
+$udFile = (Resolve-Path ".\UserData.sh").Path
 
 Describe "General project validation: $moduleName" {
 
