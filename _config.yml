@@ -24,6 +24,7 @@ google_site_verification: 643aMdQ5fl2YkpOa4sL_M3ROwM_notMk5MrfDkrgmww
 
 gems:
   - jekyll-seo-tag
+  
 social:
   github: https://github.com/scrthq/Vaporshell
   linkedin-square: https://linkedin.com/in/scrthq
