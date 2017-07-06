@@ -58,5 +58,10 @@ social:
 
 # Build settings
 markdown: kramdown
+kramdown:
+ input: GFM
+ auto_ids: true
+ hard_wrap: false
+ syntax_highlighter: rouge
 #sass:
 #  style: compressed
