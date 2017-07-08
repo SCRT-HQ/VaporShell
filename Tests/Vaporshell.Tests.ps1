@@ -5,24 +5,24 @@ $ModulePath = Join-Path $ENV:BHProjectPath $ModuleName
 # Verbose output for non-master builds on appveyor
 # Handy for troubleshooting.
 # Splat @Verbose against commands as needed (here or in pester tests)
-    $Verbose = @{}
-    if($ENV:BHBranchName -notlike "master" -or $env:BHCommitMessage -match "!verbose")
-    {
-        $Verbose.add("Verbose",$True)
-    }
+$Verbose = @{}
+if ($ENV:BHBranchName -notlike "master" -or $env:BHCommitMessage -match "!verbose") {
+    $Verbose.add("Verbose",$True)
+}
 
 
 Import-Module $ModulePath -Force
 
 $projectRoot = Resolve-Path "$PSScriptRoot\.."
 $moduleRoot = Split-Path (Resolve-Path "$projectRoot\*\*.psd1")
+$udFile = (Resolve-Path ".\Tests\UserData.sh").Path
 
 Describe "General project validation: $moduleName" {
 
     $scripts = Get-ChildItem $projectRoot -Include *.ps1,*.psm1,*.psd1 -Recurse
 
     # TestCases are splatted to the script so we need hashtables
-    $testCase = $scripts | Foreach-Object{@{file=$_}}         
+    $testCase = $scripts | Foreach-Object {@{file = $_}}         
     It "Script <file> should be valid Powershell" -TestCases $testCase {
         param($file)
 
@@ -38,8 +38,6 @@ Describe "General project validation: $moduleName" {
         {Import-Module (Join-Path $moduleRoot "$moduleName.psd1") -force } | Should Not Throw
     }
 }
-
-#<# Test frame borrowed from PSSlack by Warren Frame, will be updating with tests specific to this module once it's built out
 
 Describe "Vaporshell Module PS$PSVersion" {
     Context 'Strict mode' {
@@ -88,23 +86,23 @@ Describe "Initialize/Export/Import PS$PSVersion" {
             $testPath = "C:\projects\Vaporshell\Template.json"
             $templateInit = $null
             $templateInit = Initialize-Vaporshell -Description "Testing template build"
-            $templateInit.AddParameter((New-VaporParameter -LogicalId "EnvType" -Type String -Default "test" -AllowedValues "test","prod" -Description "Environment type"))
+            $templateInit.AddParameter((New-VaporParameter -LogicalId "EnvTypeString" -Type String -Default "test" -AllowedValues "test","prod" -Description "Environment type"))
             $templateInit.AddMetadata((New-VaporMetadata -LogicalId "Instances" -Metadata @{"Description" = "Information about the instances"}))
             $templateInit.AddCondition(
-                (New-VaporCondition -LogicalId "CreateProdResources" -Condition (Add-ConEquals -FirstValue (Add-FnRef -Ref "EnvType") -SecondValue "prod")),
+                (New-VaporCondition -LogicalId "CreateProdResources" -Condition (Add-ConEquals -FirstValue (Add-FnRef -Ref "EnvTypeString") -SecondValue "prod")),
                 (Add-Include -Location "s3://MyAmazonS3BucketName/single_wait_condition.yaml")
             )
             $templateInit.AddMapping(
                 (New-VaporMapping -LogicalId "RegionMap" -Map ([PSCustomObject][Ordered]@{
-                        "us-east-1" = [PSCustomObject][Ordered]@{
-                            "32" = "ami-6411e20d"
-                            "64" = "ami-7a11e213"
-                        }
-                        "us-west-1" = [PSCustomObject][Ordered]@{
-                            "32" = "ami-c9c7978c"
-                            "64" = "ami-cfc7978a"
-                        }
-                    })
+                            "us-east-1" = [PSCustomObject][Ordered]@{
+                                "32" = "ami-6411e20d"
+                                "64" = "ami-7a11e213"
+                            }
+                            "us-west-1" = [PSCustomObject][Ordered]@{
+                                "32" = "ami-c9c7978c"
+                                "64" = "ami-cfc7978a"
+                            }
+                        })
                 )
             )
             $templateInit.AddResource(
@@ -132,7 +130,7 @@ Describe "Initialize/Export/Import PS$PSVersion" {
             )
             $template.AddCondition(
                 (
-                    New-VaporCondition -LogicalId "CreateTestResources" -Condition (Add-ConEquals -FirstValue (Add-FnRef -Ref "EnvType") -SecondValue "test")
+                    New-VaporCondition -LogicalId "CreateTestResources" -Condition (Add-ConEquals -FirstValue (Add-FnRef -Ref "EnvTypeString") -SecondValue "test")
                 )
             )
             $template.AddMapping(
@@ -162,6 +160,27 @@ Describe "Initialize/Export/Import PS$PSVersion" {
                     New-VaporOutput -LogicalId "PrimaryLoadBalancerDNSName" -Description "The DNSName of the primary load balancer" -Value (Add-FnGetAtt -LogicalNameOfResource "PrimaryLoadBalancer" -AttributeName "DNSName") -Condition "CreateTestResources"
                 )
             )
+            $vp1Params = @{
+                    "LogicalID"             = "EnvType"
+                    "Type"                  = "AWS::EC2::VPC::Id"
+                    "Description"           = "VpcId of your existing Virtual Private Cloud (VPC)"
+                    "ConstraintDescription" = "must be the VPC Id of an existing Virtual Private Cloud."
+                }
+            $vp2Params = @{
+                    "LogicalID"             = "EnvType2"
+                    "Type"                  = "AWS::EC2::VPC::Id"
+                    "Description"           = "VpcId of your existing Virtual Private Cloud (VPC)2"
+                    "ConstraintDescription" = "must be the VPC Id of an existing Virtual Private Cloud.2"
+                }
+            $template.AddParameter((New-VaporParameter @vp1Params))
+            $template.AddParameter((New-VaporParameter @vp2Params))
+            $template.AddResource(
+                (New-VSApiGatewayDeployment -LogicalId "GatewayDeployment3" -Description "My deployment" -RestApiId (Add-FnRef -Ref "MyApi") -StageDescription (Add-VSApiGatewayDeploymentStageDescription -MethodSettings (Add-VSApiGatewayDeploymentMethodSetting -LoggingLevel ERROR) -CacheClusterEnabled $true -CacheDataEncrypted $false)),
+                (New-VSApiGatewayRestApi -LogicalId "MyApi3" -Description "My REST API"),
+                (New-VSEC2Instance -LogicalId "MyInstance3" -AvailabilityZone "us-east-1a" -ImageId (Add-FnFindInMap -MapName "RegionMap" -TopLevelKey "us-west-1" -SecondLevelKey "32") -Condition "CreateProdResources" -Tags (Add-VSTag -Key "Name" -Value "MyInstance"),(Add-VSTag -Key "Environment" -Value "Production") -CreationPolicy (Add-CreationPolicy -MinSuccessfulInstancesPercent 100 -Count 1 -Timeout "PT5M") -UpdatePolicy (Add-UpdatePolicy -WillReplace $true -MaxBatchSize 2 -MinInstancesInService 2 -MinSuccessfulInstancesPercent 100 -PauseTime "PT30S" -WaitOnResourceSignals $true -IgnoreUnmodifiedGroupSizeProperties $true) -DeletionPolicy Delete -DependsOn "GatewayDeployment3" -Metadata ([PSCustomObject]@{CommonName = "WebServer1"}) -UserData (Add-UserData -File $udFile))
+            )
+            $template.AddOutput((New-VaporOutput -LogicalId "BackupLoadBalancerDNSName3" -Description "The DNSName of the backup load balancer" -Value (Add-FnGetAtt -LogicalNameOfResource "BackupLoadBalancer3" -AttributeName "DNSName") -Condition "CreateProdResources"))
+
             Export-Vaporshell -VaporshellTemplate $template -Path $testPath -Force
         }
         It 'Should show the correct types on each object' {

@@ -151,3 +151,4 @@ if [[ "$success" != 0 ]]; then
     echo "ERROR: PowerShell failed to install!" >&2
     exit "$success"
 fi
+
