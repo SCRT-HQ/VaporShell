@@ -13,19 +13,14 @@ osx_image: xcode8.1
 matrix:
   fast_finish: true
 
-before_install:
-  - if [[ "$TRAVIS_OS_NAME" == "osx" ]]; then
-      brew update;
-      brew install openssl;
-      mkdir -p /usr/local/lib;
-      ln -s /usr/local/opt/openssl/lib/libcrypto.1.0.0.dylib /usr/local/lib/;
-      ln -s /usr/local/opt/openssl/lib/libssl.1.0.0.dylib /usr/local/lib/;
-    fi
-  - if [[ "$TRAVIS_OS_NAME" == "linux" ]]; then
-      nvm install v6.0.0;
-    fi
+addons:
+  artifacts:
+    paths:
+      - $(ls powershell*{deb,pkg,AppImage} | tr "\n" ":")
+      - pester-tests.xml
+
 install:
-  - pushd Travis
+  - pushd tools
   - ./download.sh
   - popd
   # Default 2.0.0 Ruby is buggy
@@ -39,7 +34,8 @@ install:
 
 script:
   - ulimit -n 4096
-  - powershell -File Travis/travis.ps1
+  - powershell -File tools/travis.ps1
+  # spellcheck
   - if [[ "$TRAVIS_OS_NAME" == "linux" ]]; then
       mdspell '**/*.md' '!powershell/**/*.md' --ignore-numbers --ignore-acronyms --report;
     fi
