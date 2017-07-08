@@ -196,7 +196,7 @@ Describe "Initialize/Export/Import PS$PSVersion" {
         }
     }
 }
-if (Get-Command aws) {
+if (Get-Command aws -ErrorAction SilentlyContinue) {
     Describe "Running aws cloudformation validate-template PS$PSVersion" {
         Context 'Strict mode' {
 
