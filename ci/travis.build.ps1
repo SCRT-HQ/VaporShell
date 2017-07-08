@@ -41,7 +41,7 @@ task Init {
     "`n"
 }
 
-task Test Init, {
+task Build {
     $lines
     "`n`tSTATUS: Testing with PowerShell $PSVersion"
 
@@ -56,3 +56,5 @@ task Test Init, {
     }
     "`n"
 }
+
+task . Init, Build
