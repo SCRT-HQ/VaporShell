@@ -9,7 +9,7 @@ trap '
 
 get_url() {
     fork=$2
-    release=v6.0.0-beta.1
+    release=v6.0.0-beta.3
     echo "https://github.com/$fork/PowerShell/releases/download/$release/$1"
 }
 
@@ -26,7 +26,7 @@ case "$OSTYPE" in
                     sudo yum install -y curl
                 fi
 
-                package=powershell-6.0.0_beta.1-1.el7.centos.x86_64.rpm
+                package=powershell-6.0.0_beta.3-1.el7.x86_64.rpm
                 ;;
             ubuntu)
                 if ! hash curl 2>/dev/null; then
@@ -36,10 +36,10 @@ case "$OSTYPE" in
 
                 case "$VERSION_ID" in
                     14.04)
-                        package=powershell_6.0.0-beta.1-1ubuntu1.14.04.1_amd64.deb
+                        package=powershell_6.0.0-beta.3-1ubuntu1.14.04.1_amd64.deb
                         ;;
                     16.04)
-                        package=powershell_6.0.0-beta.1-1ubuntu1.16.04.1_amd64.deb
+                        package=powershell_6.0.0-beta.3-1ubuntu1.16.04.1_amd64.deb
                         ;;
                     *)
                         echo "Ubuntu $VERSION_ID is not supported!" >&2
@@ -52,12 +52,10 @@ case "$OSTYPE" in
                     sudo zypper install -y curl
                 fi
 
-
+                
                 case "$VERSION_ID" in
                     42.1)
-                        # TODO during next release remove fork and fix package name
-                        fork=TravisEz13
-                        package=powershell-6.0.0_beta.1-1.suse.42.1.x86_64.rpm
+                        package=powershell-6.0.0_beta.3-1.suse.42.1.x86_64.rpm
                         ;;
                     *)
                         echo "OpenSUSE $VERSION_ID is not supported!" >&2
@@ -71,7 +69,7 @@ case "$OSTYPE" in
         ;;
     darwin*)
         # We don't check for curl as macOS should have a system version
-        package=powershell-6.0.0-beta.1-osx.10.12-x64.pkg
+        package=powershell-6.0.0-beta.3-osx.10.12-x64.pkg
         ;;
     *)
         echo "$OSTYPE is not supported!" >&2
@@ -115,7 +113,6 @@ case "$OSTYPE" in
     darwin*)
         patched=0
         if hash brew 2>/dev/null; then
-            brew update
             if [[ ! -d $(brew --prefix openssl) ]]; then
                echo "Installing OpenSSL with brew..."
                if ! brew install openssl; then
@@ -125,7 +122,7 @@ case "$OSTYPE" in
                    echo "ERROR: curl failed to build against OpenSSL; SSL functions will not work..." >&2
                    # Still not fatal
                else
-                   # OpenSSL installation succeeded; reme           mber to patch System.Net.Http after PowerShell installation
+                   # OpenSSL installation succeeded; remember to patch System.Net.Http after PowerShell installation
                    patched=1
                fi
             fi

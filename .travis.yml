@@ -8,7 +8,10 @@ os:
   - osx
 sudo: required
 dist: trusty
-osx_image: xcode8.3
+osx_image: xcode8.1
+
+matrix:
+  fast_finish: true
 
 before_install:
   - if [[ "$TRAVIS_OS_NAME" == "osx" ]]; then
@@ -22,12 +25,21 @@ before_install:
       nvm install v6.0.0;
     fi
 install:
-  - rm -rf ../Vaporshell
-  - git clone https://github.com/nferrell/Vaporshell.git ../Vaporshell
   - pushd Travis
   - ./download.sh
   - popd
+  # Default 2.0.0 Ruby is buggy
+  # Default bundler version is buggy
+  - if [[ "$TRAVIS_OS_NAME" == "osx" ]]; then rvm install ruby-2.3.1; rvm use 2.3.1; fi
+  # spellcheck
+  - if [[ "$TRAVIS_OS_NAME" == "linux" ]]; then
+      nvm install 6.4.0 &&
+      npm install -g markdown-spellcheck@0.11.0;
+    fi
 
 script:
   - ulimit -n 4096
   - powershell -File Travis/travis.ps1
+  - if [[ "$TRAVIS_OS_NAME" == "linux" ]]; then
+      mdspell '**/*.md' '!powershell/**/*.md' --ignore-numbers --ignore-acronyms --report;
+    fi
