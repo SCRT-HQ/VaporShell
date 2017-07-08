@@ -13,7 +13,12 @@ if ($env:TRAVIS) {
     Set-Location $PSScriptRoot
 
     Invoke-Build -Safe -Result Result -File .\travis.build.ps1
-    exit ( [int]( $Result.Error ) )
+    if ($Result.Error) {
+        exit 1
+    }
+    else {
+        exit 0
+    }
 
 }
 else {
