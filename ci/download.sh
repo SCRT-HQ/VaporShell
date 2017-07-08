@@ -79,14 +79,23 @@ case "$OSTYPE" in
         ;;
 esac
 
+echo "Downloading Powershell"
 curl -L -o "$package" $(get_url "$package" "$fork")
 
-#curl -O https://bootstrap.pypa.io/get-pip.py
-#python3 get-pip.py --user
-#pip3 install --user --upgrade awscli
-#export PATH=~/.local/bin:$PATH
-#aws --version
-#pip3 install --user --upgrade awscli
+echo "Downloading pip3"
+curl -O https://bootstrap.pypa.io/get-pip.py
+python3 get-pip.py --user
+echo "+++++ python3 and pip3 versions:"
+python3 -V
+pip3 -V
+echo "Installing awscli"
+pip3 install --user --upgrade awscli
+echo "Updating PATH"
+export PATH=~/.local/bin:$PATH
+echo "+++++ awscli version:"
+aws --version
+echo "Upgrading awscli if needed"
+pip3 install --user --upgrade awscli
 
 
 if [[ ! -r "$package" ]]; then
