@@ -13,7 +13,7 @@ get_url() {
     echo "https://github.com/$fork/PowerShell/releases/download/$release/$1"
 }
 
-fork="PowerShell"
+fork="scrthq"
 # Get OS specific asset ID and package name
 case "$OSTYPE" in
     linux*)
