@@ -7,7 +7,7 @@ $ModulePath = Resolve-Path "$projectRoot\$ModuleName"
 # Handy for troubleshooting.
 # Splat @Verbose against commands as needed (here or in pester tests)
 $Verbose = @{}
-if ($ENV:BHBranchName -notlike "master" -or $env:BHCommitMessage -match "!verbose" -or $ENV:TRAVIS_COMMIT_MESSAGE -match "!verbose") {
+if ($ENV:BHBranchName -eq "dev" -or $env:BHCommitMessage -match "!verbose" -or $ENV:TRAVIS_COMMIT_MESSAGE -match "!verbose" -or $ENV:TRAVIS_BRANCH -eq "dev" ) {
     $Verbose.add("Verbose",$True)
 }
 
@@ -196,18 +196,19 @@ Describe "Initialize/Export/Import PS$PSVersion" {
         }
     }
 }
-if (Get-Command aws -ErrorAction SilentlyContinue) {
-    Describe "Running aws cloudformation validate-template PS$PSVersion" {
-        It 'Should return System.String from validate-template' {
-            $testPath = "$projectRoot\Template.json"
-            $fileUrl = "$((Resolve-Path $testPath).Path.Replace("\","/"))"
-            try {
-                $valid = aws cloudformation validate-template --template-body fileb://$fileUrl
-                $valid | Should BeOfType 'System.String'
-            }
-            catch {
-                Write-Verbose $_
-            }
+Describe "Running aws cloudformation validate-template PS$PSVersion" {
+    It 'Should return System.String from validate-template' {
+        $testPath = "$projectRoot\Template.json"
+        $fileUrl = "$((Resolve-Path $testPath).Path.Replace("\","/"))"
+        try {
+            $valid = aws cloudformation validate-template --template-body fileb://$fileUrl
+            $valid | Should BeOfType 'System.String'
+        }
+        catch {
+            $VerbPref = $VerbosePreference
+            $VerbosePreference = "Continue"
+            Write-Verbose $_
+            $VerbosePreference = $VerbPref
         }
     }
 }

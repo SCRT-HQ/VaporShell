@@ -47,7 +47,7 @@ Task Test -Depends Init  {
         (New-Object 'System.Net.WebClient').UploadFile(
             "https://ci.appveyor.com/api/testresults/nunit/$($env:APPVEYOR_JOB_ID)",
             "$ProjectRoot\$TestFile" )
-        $coverage = Format-Coverage -PesterResults $TestResults -CoverallsApiToken $ENV:Coveralls -BranchName $ENV:APPVEYOR_REPO_BRANCH
+        $coverage = Format-Coverage -PesterResults $TestResults -CoverallsApiToken $ENV:Coveralls -BranchName $ENV:APPVEYOR_REPO_BRANCH -RootFolder $ProjectRoot
         Publish-Coverage -Coverage $coverage
     }
 
