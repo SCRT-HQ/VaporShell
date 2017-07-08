@@ -96,6 +96,8 @@ echo "+++++ awscli version:"
 aws --version
 echo "Upgrading awscli if needed"
 pip3 install --user --upgrade awscli
+echo "Installing awscli"
+pip3 install cfn_flip
 
 
 if [[ ! -r "$package" ]]; then
