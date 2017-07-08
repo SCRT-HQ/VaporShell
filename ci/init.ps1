@@ -1,7 +1,5 @@
 ﻿param($Task = 'Default')
 
-Set-Location $PSScriptRoot
-
 if ($env:TRAVIS) {
     Write-Host -ForegroundColor Yellow "============================
     Build system: Travis CI
@@ -11,6 +9,9 @@ if ($env:TRAVIS) {
 
     # Build the code and perform tests
     Import-module InvokeBuild
+    
+    Set-Location $PSScriptRoot
+
     Invoke-Build -Safe -Result Result -File .\travis.build.ps1
     if ($Result.Error) {
         # build failed, $Result.Error is the error
@@ -36,6 +37,8 @@ else {
     Import-Module Psake, BuildHelpers, Coveralls
 
     Set-BuildEnvironment
+
+    Set-Location $PSScriptRoot
 
     Invoke-psake .\psake.ps1 -taskList $Task -nologo
     exit ( [int]( -not $psake.build_success ) )
