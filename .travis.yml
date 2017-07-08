@@ -23,10 +23,10 @@ before_install:
       nvm install v6.0.0;
     fi
 install:
-  - pushd build
+  - pushd ci
   - ./download.sh
   - popd
 
 script:
   - ulimit -n 4096
-  - powershell -File build/travis.ps1
+  - powershell -File ci/init.ps1

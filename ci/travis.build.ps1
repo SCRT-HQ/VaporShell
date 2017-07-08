@@ -16,11 +16,10 @@ param(
 # TODO: Move some properties to script param() in order to use as parameters.
 
     # Find the build folder based on build system
-        $ProjectRoot = $ENV:BHProjectPath
-        if(-not $ProjectRoot)
-        {
-            $ProjectRoot = $PSScriptRoot
-        }
+    if ($pwd.Path -like "*ci*") {
+        Set-Location ..
+    }
+    $ProjectRoot = $pwd.Path
 
     $Timestamp = Get-Date -Uformat "%Y%m%d-%H%M%S"
     $PSVersion = $PSVersionTable.PSVersion.Major
@@ -28,7 +27,7 @@ param(
     $lines = '----------------------------------------------------------------------'
 
     $Verbose = @{}
-    if($ENV:BHCommitMessage -match "!verbose")
+    if($ENV:TRAVIS_COMMIT_MESSAGE -match "!verbose")
     {
         $Verbose = @{Verbose = $True}
     }
@@ -51,16 +50,6 @@ task Test Init, {
     # Gather test results. Store them in a variable and file
     $TestResults = Invoke-Pester -Path $ProjectRoot\Tests -PassThru -OutputFormat NUnitXml -OutputFile "$ProjectRoot\$TestFile"
 
-    # In Appveyor?  Upload our tests! #Abstract this into a function?
-    If($ENV:BHBuildSystem -eq 'AppVeyor')
-    {
-        (New-Object 'System.Net.WebClient').UploadFile(
-            "https://ci.appveyor.com/api/testresults/nunit/$($env:APPVEYOR_JOB_ID)",
-            "$ProjectRoot\$TestFile" )
-    }
-
-    Remove-Item "$ProjectRoot\$TestFile" -Force -ErrorAction SilentlyContinue
-
     # Failed tests?
     # Need to tell psake or it will proceed to the deployment. Danger!
     if($TestResults.FailedCount -gt 0)
@@ -68,26 +57,4 @@ task Test Init, {
         Write-Error "Failed '$($TestResults.FailedCount)' tests, build failed"
     }
     "`n"
-}
-
-task Build Test, {
-    $lines
-    
-    # Load the module, read the exported functions, update the psd1 FunctionsToExport
-    Set-ModuleFunctions @Verbose
-
-    # Bump the module version
-    $Version = Get-NextPSGalleryVersion -Name $env:BHProjectName
-    Update-Metadata -Path $env:BHPSModuleManifest -PropertyName ModuleVersion -Value $Version
-}
-
-task Deploy Build, {
-    $lines
-
-    $Params = @{
-        Path = $ProjectRoot
-        Force = $true
-        Recurse = $false # We keep psdeploy artifacts, avoid deploying those : )
-    }
-    Invoke-PSDeploy @Verbose @Params
 }

@@ -3,9 +3,11 @@
 Properties {
     # Find the build folder based on build system
         $ProjectRoot = $ENV:BHProjectPath
-        if(-not $ProjectRoot)
-        {
-            $ProjectRoot = $PSScriptRoot
+        if(-not $ProjectRoot) {
+            if ($pwd.Path -like "*ci*") {
+                Set-Location ..
+            }
+            $ProjectRoot = $pwd.Path
         }
 
     $Timestamp = Get-Date -Uformat "%Y%m%d-%H%M%S"
