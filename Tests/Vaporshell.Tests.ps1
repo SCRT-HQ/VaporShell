@@ -196,7 +196,7 @@ Describe "Initialize/Export/Import PS$PSVersion" {
         }
     }
 }
-if ($env:APPVEYOR) {
+if (Get-Command aws) {
     Describe "Running aws cloudformation validate-template PS$PSVersion" {
         Context 'Strict mode' {
 

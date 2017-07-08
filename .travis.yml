@@ -1,4 +1,6 @@
 language: cpp
+python:
+  - "3.4"
 
 git:
   depth: 1000
@@ -11,6 +13,10 @@ dist: trusty
 osx_image: xcode8.3
 
 before_install:
+  - sudo apt-get -y install python3-pip python-dev
+  - python3 -V
+  - pip3 -V
+  - sudo pip3 install --upgrade --user awscli
   - chmod +x ci/download.sh
   - if [[ "$TRAVIS_OS_NAME" == "osx" ]]; then
       brew update;
