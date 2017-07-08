@@ -81,6 +81,14 @@ esac
 
 curl -L -o "$package" $(get_url "$package" "$fork")
 
+#curl -O https://bootstrap.pypa.io/get-pip.py
+#python3 get-pip.py --user
+#pip3 install --user --upgrade awscli
+#export PATH=~/.local/bin:$PATH
+#aws --version
+#pip3 install --user --upgrade awscli
+
+
 if [[ ! -r "$package" ]]; then
     echo "ERROR: $package failed to download! Aborting..." >&2
     exit 1

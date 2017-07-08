@@ -42,4 +42,5 @@ install:
 
 script:
   - ulimit -n 4096
+  - export PATH=~/.local/bin:$PATH
   - powershell -File ci/init.ps1
