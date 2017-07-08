@@ -20,22 +20,17 @@ before_install:
       mkdir -p /usr/local/lib;
       ln -s /usr/local/opt/openssl/lib/libcrypto.1.0.0.dylib /usr/local/lib/;
       ln -s /usr/local/opt/openssl/lib/libssl.1.0.0.dylib /usr/local/lib/;
+      rvm install ruby-2.3.1;
+      rvm use 2.3.1;
     fi
   - if [[ "$TRAVIS_OS_NAME" == "linux" ]]; then
       nvm install v6.0.0;
     fi
+
 install:
   - pushd Travis
   - ./download.sh
   - popd
-  # Default 2.0.0 Ruby is buggy
-  # Default bundler version is buggy
-  - if [[ "$TRAVIS_OS_NAME" == "osx" ]]; then rvm install ruby-2.3.1; rvm use 2.3.1; fi
-  # spellcheck
-  - if [[ "$TRAVIS_OS_NAME" == "linux" ]]; then
-      nvm install 6.4.0 &&
-      npm install -g markdown-spellcheck@0.11.0;
-    fi
 
 script:
   - ulimit -n 4096
