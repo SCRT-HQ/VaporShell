@@ -196,15 +196,17 @@ Describe "Initialize/Export/Import PS$PSVersion" {
         }
     }
 }
-Describe "Running aws cloudformation validate-template PS$PSVersion" {
-    Context 'Strict mode' {
+if ($env:APPVEYOR) {
+    Describe "Running aws cloudformation validate-template PS$PSVersion" {
+        Context 'Strict mode' {
 
-        Set-StrictMode -Version latest
+            Set-StrictMode -Version latest
 
-        It 'Should return System.String from validate-template' {
-            $testPath = "$projectRoot\Template.json"
-            $fileUrl = "$((Resolve-Path $testPath).Path.Replace("\","/"))"
-            aws cloudformation validate-template --template-body fileb://$fileUrl | Should BeOfType 'System.String'
+            It 'Should return System.String from validate-template' {
+                $testPath = "$projectRoot\Template.json"
+                $fileUrl = "$((Resolve-Path $testPath).Path.Replace("\","/"))"
+                aws cloudformation validate-template --template-body fileb://$fileUrl | Should BeOfType 'System.String'
+            }
         }
     }
 }
