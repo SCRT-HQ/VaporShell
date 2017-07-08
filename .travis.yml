@@ -17,6 +17,7 @@ before_install:
   - python3 -V
   - pip3 -V
   - sudo pip3 install --upgrade --user awscli
+  - export PATH=$PATH:$HOME/.local/bin
   - chmod +x ci/download.sh
   - if [[ "$TRAVIS_OS_NAME" == "osx" ]]; then
       brew update;
