@@ -33,13 +33,11 @@ param(
     }
 
 # TODO: Default task. If it is the first then any name can be used instead.
-task . Deploy
-
 task Init {
     $lines
     Set-Location $ProjectRoot
     "Build System Details:"
-    Get-Item ENV:BH*
+    Get-Item ENV:TRAVIS*
     "`n"
 }
 
