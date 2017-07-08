@@ -21,9 +21,9 @@ before_install:
   - if [[ "$TRAVIS_OS_NAME" == "linux" ]]; then
       nvm install v6.0.0;
     fi
+  - chmod +x download.sh
 install:
   - pushd build
-  - git update-index --chmod=+x download.sh
   - ./download.sh
   - popd
 
