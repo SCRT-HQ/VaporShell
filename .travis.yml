@@ -12,6 +12,10 @@ sudo: required
 dist: trusty
 osx_image: xcode8.3
 
+notifications:
+  slack:
+    secure: JQZ3Jnam8qQoKFGeiqBZ9vtYeEZyt81WM5LXHtVaiDTDldc9K7KQR3j0j9ubAS01TM4go6PYJ8yW3AoxTlUISejJgJQJahgrLhfwqNv77TpvCuJH9iuwarS8b3KCo72owxyw+rLWz4UX0x+e+RVuuDRA2HhvOGxOP56FcW/Ix75ZGOVCWRTbgkagKLfbOwUuuWFH6MNfqdD4lVtQ97nxzypNUJ+iakKQmpxFKo01d79azTpfmvcr+uttkIZawu0vXdiZp8UUXqiMNGPg7yykMUm9bF1EkJ1b5/RAbsl8nvhWHrsFUv659CWsxp9LlGdJ9iXueV7SCdHsd6ZzDTwVXpJo/YTtVMjyhZKuUBKk/v/kPNUbelTIr5KlnqTF/Tb2dS38ADGDHS52ZDwBtCkPTrkZmgnckxF5g6uv8v15GWbatnntLIdyGoNQgAqPDYatuK/Jf13LmqOZg3kh6W8/L86+WEqHFuybpk7i27NW8YKYgzjDMa6Hyo5BLZK/33UCImf8qfEtp2K13a7WLeUsCmIuThIwhY8MtBIT3c24WdDnFXdHveDzFvKaPTjsMdyNUnpfGXmyMDnWDsKMjuR2FHjZeMcTAPFuDa4d2Peq7Yn4vqplaagyA59h+EeK1D4bHT+JuuJ+FwhEPUooU+vllP+/Z99O2wALXfD2m3fTuhE=
+
 before_install:
   - chmod +x ci/download.sh
   - if [[ "$TRAVIS_OS_NAME" == "osx" ]]; then
@@ -39,7 +43,3 @@ install:
 script:
   - ulimit -n 4096
   - powershell -File ci/init.ps1
-notifications:
-  slack:
-    rooms:
-      secure: iz1UiFt7Azg+pDmhmYcMy8qULbh/AaX8V5l3WXaKUYU7P7N2/GbB+uT623cFXEo34EKU0SkFWxSMK4fUzl4y+uJV5CVs/XJ6CFceymO+o7L6h/uBcbnW21mO1o/XWamegSlmmG9VTZCPG6BXDBFacLvRMgta8Bwut4rPzHwlnQGJihKzENEJKsrLTABq3at4TLsASiqut4c68KaAtK3euW0M3ZA/vvP3kbpMaZwDsJ7bTIuZrFTZ46GePtBPVklXJCUJh9X50cZt7jT90cOQD0456uSURlBm2AVfXpFK1N0WhRIHqy67Ub8sL7zwuCIROFlKm0NOU0OB2s2Vvqb8yGiA9MbO8nv1HsdIaR01a1DA/vglnkAnnYJoYWZjh7lUI10Lb7vmNIz3EIt5BtP/zXueZSbjik6cyhmt9eQcziq/fzblWIOPa3DxnE/PthzisbmxvQUMVQ2qUgiQ1Rf1WQDpSUTUeur80MAcaG27Q3EbE463bwCCcr912UzBTFaz026wFVB2EBYQTZsf9SI5/7TKF0dHQMf6yTG4NNfNarr4Zv9/Tunj4V3nKiFlIsgpxF38OOytRytK+qGGQR+E8VSv79Et3pltKCUaym674PLVgSgCx2dq2xUuJ/PQvPZv6x3piiS6VWgsnPqzk9vZhV7qQSv/Cp5+sEYqPC5yQBw=
