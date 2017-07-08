@@ -15,7 +15,7 @@ if ($ENV:BHBranchName -notlike "master" -or $env:BHCommitMessage -match "!verbos
 Import-Module $ModulePath -Force
 
 $moduleRoot = Split-Path (Resolve-Path "$projectRoot\*\*.psd1")
-$udFile = (Resolve-Path ".\Tests\UserData.sh").Path
+$udFile = (Resolve-Path "$projectRoot\Tests\UserData.sh").Path
 
 Describe "General project validation: $moduleName" {
 
