@@ -1,19 +1,19 @@
 $PSVersion = $PSVersionTable.PSVersion.Major
-$ModuleName = $ENV:BHProjectName
-$ModulePath = Join-Path $ENV:BHProjectPath $ModuleName
+$ModuleName = "Vaporshell"
+$projectRoot = Resolve-Path "$PSScriptRoot\.."
+$ModulePath = Resolve-Path "$projectRoot\$ModuleName"
 
 # Verbose output for non-master builds on appveyor
 # Handy for troubleshooting.
 # Splat @Verbose against commands as needed (here or in pester tests)
 $Verbose = @{}
-if ($ENV:BHBranchName -notlike "master" -or $env:BHCommitMessage -match "!verbose") {
+if ($ENV:BHBranchName -notlike "master" -or $env:BHCommitMessage -match "!verbose" -or $ENV:TRAVIS_COMMIT_MESSAGE -match "!verbose") {
     $Verbose.add("Verbose",$True)
 }
 
 
 Import-Module $ModulePath -Force
 
-$projectRoot = Resolve-Path "$PSScriptRoot\.."
 $moduleRoot = Split-Path (Resolve-Path "$projectRoot\*\*.psd1")
 $udFile = (Resolve-Path ".\Tests\UserData.sh").Path
 
@@ -83,7 +83,7 @@ Describe "Initialize/Export/Import PS$PSVersion" {
         Set-StrictMode -Version latest
 
         It 'Should build template as an object then export to JSON' {
-            $testPath = "C:\projects\Vaporshell\Template.json"
+            $testPath = "$projectRoot\Template.json"
             $templateInit = $null
             $templateInit = Initialize-Vaporshell -Description "Testing template build"
             $templateInit.AddParameter((New-VaporParameter -LogicalId "EnvTypeString" -Type String -Default "test" -AllowedValues "test","prod" -Description "Environment type"))
@@ -112,16 +112,16 @@ Describe "Initialize/Export/Import PS$PSVersion" {
             )
             $templateInit.AddOutput((New-VaporOutput -LogicalId "BackupLoadBalancerDNSName" -Description "The DNSName of the backup load balancer" -Value (Add-FnGetAtt -LogicalNameOfResource "BackupLoadBalancer" -AttributeName "DNSName") -Condition "CreateProdResources"))
 
-            $testPath = "C:\projects\Vaporshell\Template.json"
+            $testPath = "$projectRoot\Template.json"
 
             Export-Vaporshell -VaporshellTemplate $templateInit -Path $testPath -Force
         }
         It 'Should export import existing CloudFormation template as Vaporshell.Template' {
-            $testPath = "C:\projects\Vaporshell\Template.json"
+            $testPath = "$projectRoot\Template.json"
             $template = Import-Vaporshell -Path $testPath
         }
         It 'Should export add new properties to the imported JSON object' {
-            $testPath = "C:\projects\Vaporshell\Template.json"
+            $testPath = "$projectRoot\Template.json"
             $template = Import-Vaporshell -Path $testPath
             $template.AddMetadata(
                 (
@@ -184,7 +184,7 @@ Describe "Initialize/Export/Import PS$PSVersion" {
             Export-Vaporshell -VaporshellTemplate $template -Path $testPath -Force
         }
         It 'Should show the correct types on each object' {
-            $testPath = "C:\projects\Vaporshell\Template.json"
+            $testPath = "$projectRoot\Template.json"
             $template = Import-Vaporshell -Path $testPath
             $template.AWSTemplateFormatVersion | Should BeOfType 'System.String'
             $template.Conditions | Should BeOfType 'System.Management.Automation.PSCustomObject'
@@ -202,11 +202,11 @@ Describe "Running aws cloudformation validate-template PS$PSVersion" {
         Set-StrictMode -Version latest
 
         It 'Should return System.String from validate-template' {
-            $testPath = "C:\projects\Vaporshell\Template.json"
+            $testPath = "$projectRoot\Template.json"
             $fileUrl = "$((Resolve-Path $testPath).Path.Replace("\","/"))"
             aws cloudformation validate-template --template-body fileb://$fileUrl | Should BeOfType 'System.String'
         }
     }
 }
-Remove-Item "C:\projects\Vaporshell\Template.json" -Force -Confirm:$False -ErrorAction SilentlyContinue
-Remove-Item "C:\projects\Vaporshell\Template2.json" -Force -Confirm:$False -ErrorAction SilentlyContinue
+Remove-Item "$projectRoot\Template.json" -Force -Confirm:$False -ErrorAction SilentlyContinue
+Remove-Item "$projectRoot\Template2.json" -Force -Confirm:$False -ErrorAction SilentlyContinue
