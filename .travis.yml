@@ -11,7 +11,7 @@ dist: trusty
 osx_image: xcode8.3
 
 before_install:
-  - chmod +x build/download.sh
+  - chmod +x ci/download.sh
   - if [[ "$TRAVIS_OS_NAME" == "osx" ]]; then
       brew update;
       brew install openssl;
