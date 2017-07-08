@@ -23,6 +23,7 @@ before_install:
     fi
 install:
   - pushd build
+  - git update-index --chmod=+x download.sh
   - ./download.sh
   - popd
 
