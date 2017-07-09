@@ -4,3 +4,4 @@ launch.json
 **.DS_Store
 **insync**
 vaporshell-snippets**
+TestResults**.xml

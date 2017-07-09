@@ -3,9 +3,11 @@
 Properties {
     # Find the build folder based on build system
         $ProjectRoot = $ENV:BHProjectPath
-        if(-not $ProjectRoot)
-        {
-            $ProjectRoot = $PSScriptRoot
+        if(-not $ProjectRoot) {
+            if ($pwd.Path -like "*ci*") {
+                Set-Location ..
+            }
+            $ProjectRoot = $pwd.Path
         }
 
     $Timestamp = Get-Date -Uformat "%Y%m%d-%H%M%S"
@@ -20,7 +22,7 @@ Properties {
     }
 }
 
-Task Default -Depends Deploy
+Task Default -Depends Test
 
 Task Init {
     $lines
@@ -45,8 +47,11 @@ Task Test -Depends Init  {
         (New-Object 'System.Net.WebClient').UploadFile(
             "https://ci.appveyor.com/api/testresults/nunit/$($env:APPVEYOR_JOB_ID)",
             "$ProjectRoot\$TestFile" )
-        $coverage = Format-Coverage -PesterResults $TestResults -CoverallsApiToken $ENV:Coveralls -BranchName $ENV:APPVEYOR_REPO_BRANCH
-        Publish-Coverage -Coverage $coverage
+        
+        #$files = Get-ChildItem "$ProjectRoot\Vaporshell" -Include *.ps1,*.psm1 -Recurse | Where-Object {$_.Name -notlike "Add-VS*" -and $_.Name -notlike "New-VS*" -and $_.FullName -notlike "*\Private\*" -and $_.Name -ne "Update-VSResourceFunctions.ps1"}
+        #$coverage = Format-Coverage -Include $files -CoverallsApiToken $ENV:Coveralls -BranchName $ENV:APPVEYOR_REPO_BRANCH -Verbose
+        $coverage = Format-Coverage -PesterResults $TestResults -CoverallsApiToken $ENV:Coveralls -BranchName $ENV:APPVEYOR_REPO_BRANCH -Verbose
+        Publish-Coverage -Coverage $coverage -Verbose
     }
 
     Remove-Item "$ProjectRoot\$TestFile" -Force -ErrorAction SilentlyContinue
@@ -63,14 +68,20 @@ Task Test -Depends Init  {
 Task Build -Depends Test {
     $lines
     
-    # Load the module, read the exported functions, update the psd1 FunctionsToExport
-    Set-ModuleFunctions @Verbose
+    if ($env:APPVEYOR) {
+        # Load the module, read the exported functions, update the psd1 FunctionsToExport
+        Set-ModuleFunctions @Verbose
 
-    # Bump the module version
-    #S$Version = Get-NextPSGalleryVersion -Name $env:BHProjectName
-    Update-Metadata -Path $env:BHPSModuleManifest -PropertyName ModuleVersion -Value "1.1.6" #$Version
-    
-    #Update-Metadata -Path $env:BHPSModuleManifest -Increment Minor
+        # Bump the module version
+        #S$Version = Get-NextPSGalleryVersion -Name $env:BHProjectName
+        Update-Metadata -Path $env:BHPSModuleManifest -PropertyName ModuleVersion -Value "1.2.0" #$Version
+        
+        #Update-Metadata -Path $env:BHPSModuleManifest -Increment Minor
+    }
+    else {
+        Write-Host -ForegroundColor Magenta "Build system is not AppVeyor -- skipping module update!"
+    }
+
 }
 
 Task Deploy -Depends Build {

@@ -1,89 +1,43 @@
 $PSVersion = $PSVersionTable.PSVersion.Major
-$ModuleName = $ENV:BHProjectName
-$ModulePath = Join-Path $ENV:BHProjectPath $ModuleName
+$ModuleName = "Vaporshell"
+$projectRoot = Resolve-Path "$PSScriptRoot\.."
+$ModulePath = Resolve-Path "$projectRoot\$ModuleName"
 
 # Verbose output for non-master builds on appveyor
 # Handy for troubleshooting.
 # Splat @Verbose against commands as needed (here or in pester tests)
 $Verbose = @{}
-if ($ENV:BHBranchName -notlike "master" -or $env:BHCommitMessage -match "!verbose") {
+if ($ENV:BHBranchName -eq "dev" -or $env:BHCommitMessage -match "!verbose" -or $ENV:TRAVIS_COMMIT_MESSAGE -match "!verbose" -or $ENV:TRAVIS_BRANCH -eq "dev" ) {
     $Verbose.add("Verbose",$True)
 }
 
-
-Import-Module $ModulePath -Force
-
-$projectRoot = Resolve-Path "$PSScriptRoot\.."
 $moduleRoot = Split-Path (Resolve-Path "$projectRoot\*\*.psd1")
-$udFile = (Resolve-Path ".\Tests\UserData.sh").Path
+$udFile = (Resolve-Path "$projectRoot\Tests\UserData.sh").Path
 
-Describe "General project validation: $moduleName" {
+Import-Module $ModulePath -Force -ArgumentList $true
 
-    $scripts = Get-ChildItem $projectRoot -Include *.ps1,*.psm1,*.psd1 -Recurse
+Describe "Module tests: $ModuleName" {
+    Context "Confirm files are valid Powershell syntax" {
+        $scripts = Get-ChildItem $projectRoot -Include *.ps1,*.psm1,*.psd1 -Recurse
 
-    # TestCases are splatted to the script so we need hashtables
-    $testCase = $scripts | Foreach-Object {@{file = $_}}         
-    It "Script <file> should be valid Powershell" -TestCases $testCase {
-        param($file)
+        # TestCases are splatted to the script so we need hashtables
+        $testCase = $scripts | Foreach-Object {@{file = $_}}         
+        It "Script <file> should be valid Powershell" -TestCases $testCase {
+            param($file)
 
-        $file.fullname | Should Exist
+            $file.fullname | Should Exist
 
-        $contents = Get-Content -Path $file.fullname -ErrorAction Stop
-        $errors = $null
-        $null = [System.Management.Automation.PSParser]::Tokenize($contents, [ref]$errors)
-        $errors.Count | Should Be 0
-    }
-
-    It "Module '$moduleName' can import cleanly" {
-        {Import-Module (Join-Path $moduleRoot "$moduleName.psd1") -force } | Should Not Throw
-    }
-}
-
-Describe "Vaporshell Module PS$PSVersion" {
-    Context 'Strict mode' {
-
-        Set-StrictMode -Version latest
-
-        It 'Should load and contain all expected functions' {
-            $Module = Get-Module $ModuleName
-            $Module.Name | Should be $ModuleName
-            $Commands = $Module.ExportedCommands.Keys
-            $Commands -contains 'Add-ConAnd' | Should Be $True
-            $Commands -contains 'Add-ConEquals' | Should Be $True
-            $Commands -contains 'Add-ConIf' | Should Be $True
-            $Commands -contains 'Add-ConNot' | Should Be $True
-            $Commands -contains 'Add-ConOr' | Should Be $True
-            $Commands -contains 'Add-FnBase64' | Should Be $True
-            $Commands -contains 'Add-FnFindInMap' | Should Be $True
-            $Commands -contains 'Add-FnGetAtt' | Should Be $True
-            $Commands -contains 'Add-FnGetAZs' | Should Be $True
-            $Commands -contains 'Add-FnImportValue' | Should Be $True
-            $Commands -contains 'Add-FnJoin' | Should Be $True
-            $Commands -contains 'Add-FnRef' | Should Be $True
-            $Commands -contains 'Add-FnSelect' | Should Be $True
-            $Commands -contains 'Add-FnSplit' | Should Be $True
-            $Commands -contains 'Add-FnSub' | Should Be $True
-            $Commands -contains 'Add-Include' | Should Be $True
-            $Commands -contains 'Export-Vaporshell' | Should Be $True
-            $Commands -contains 'Import-Vaporshell' | Should Be $True
-            $Commands -contains 'Initialize-Vaporshell' | Should Be $True
-            $Commands -contains 'New-VaporCondition' | Should Be $True
-            $Commands -contains 'New-VaporMapping' | Should Be $True
-            $Commands -contains 'New-VaporMetadata' | Should Be $True
-            $Commands -contains 'New-VaporOutput' | Should Be $True
-            $Commands -contains 'New-VaporParameter' | Should Be $True
-            $Commands -contains 'New-VaporResource' | Should Be $True
+            $contents = Get-Content -Path $file.fullname -ErrorAction Stop
+            $errors = $null
+            $null = [System.Management.Automation.PSParser]::Tokenize($contents, [ref]$errors)
+            $errors.Count | Should Be 0
         }
     }
-}
-
-Describe "Initialize/Export/Import PS$PSVersion" {
     Context 'Strict mode' {
-
         Set-StrictMode -Version latest
 
         It 'Should build template as an object then export to JSON' {
-            $testPath = "C:\projects\Vaporshell\Template.json"
+            $testPath = "$projectRoot\Template.json"
             $templateInit = $null
             $templateInit = Initialize-Vaporshell -Description "Testing template build"
             $templateInit.AddParameter((New-VaporParameter -LogicalId "EnvTypeString" -Type String -Default "test" -AllowedValues "test","prod" -Description "Environment type"))
@@ -112,16 +66,16 @@ Describe "Initialize/Export/Import PS$PSVersion" {
             )
             $templateInit.AddOutput((New-VaporOutput -LogicalId "BackupLoadBalancerDNSName" -Description "The DNSName of the backup load balancer" -Value (Add-FnGetAtt -LogicalNameOfResource "BackupLoadBalancer" -AttributeName "DNSName") -Condition "CreateProdResources"))
 
-            $testPath = "C:\projects\Vaporshell\Template.json"
+            $testPath = "$projectRoot\Template.json"
 
             Export-Vaporshell -VaporshellTemplate $templateInit -Path $testPath -Force
         }
         It 'Should export import existing CloudFormation template as Vaporshell.Template' {
-            $testPath = "C:\projects\Vaporshell\Template.json"
+            $testPath = "$projectRoot\Template.json"
             $template = Import-Vaporshell -Path $testPath
         }
         It 'Should export add new properties to the imported JSON object' {
-            $testPath = "C:\projects\Vaporshell\Template.json"
+            $testPath = "$projectRoot\Template.json"
             $template = Import-Vaporshell -Path $testPath
             $template.AddMetadata(
                 (
@@ -184,7 +138,7 @@ Describe "Initialize/Export/Import PS$PSVersion" {
             Export-Vaporshell -VaporshellTemplate $template -Path $testPath -Force
         }
         It 'Should show the correct types on each object' {
-            $testPath = "C:\projects\Vaporshell\Template.json"
+            $testPath = "$projectRoot\Template.json"
             $template = Import-Vaporshell -Path $testPath
             $template.AWSTemplateFormatVersion | Should BeOfType 'System.String'
             $template.Conditions | Should BeOfType 'System.Management.Automation.PSCustomObject'
@@ -194,19 +148,20 @@ Describe "Initialize/Export/Import PS$PSVersion" {
             $template.Outputs | Should BeOfType 'System.Management.Automation.PSCustomObject'
             $template.Resources | Should BeOfType 'System.Management.Automation.PSCustomObject'
         }
-    }
-}
-Describe "Running aws cloudformation validate-template PS$PSVersion" {
-    Context 'Strict mode' {
-
-        Set-StrictMode -Version latest
-
-        It 'Should return System.String from validate-template' {
-            $testPath = "C:\projects\Vaporshell\Template.json"
-            $fileUrl = "$((Resolve-Path $testPath).Path.Replace("\","/"))"
-            aws cloudformation validate-template --template-body fileb://$fileUrl | Should BeOfType 'System.String'
+        if ($env:APPVEYOR -or $env:TRAVIS_OS_NAME -ne "osx") {
+            It 'Should return System.String from validate-template directly' {
+                $testPath = "$projectRoot\Template.json"
+                $fileUrl = "$((Resolve-Path $testPath).Path.Replace("\","/"))"
+                $valid = aws cloudformation validate-template --template-body file://$fileUrl
+                $valid | Should BeOfType 'System.String'
+            }
+            It 'Should export the template to YAML using cfn-flip and validate using awscli from Export-Vaporshell' {
+                $testPath = "$projectRoot\Template.yaml"
+                $template = Import-Vaporshell -Path "$projectRoot\Template.json"
+                $valid = Export-Vaporshell -VaporshellTemplate $template -As YAML -Path $testPath -ValidateTemplate -Force
+                $valid | Should BeOfType 'System.String'
+            }
         }
     }
 }
-Remove-Item "C:\projects\Vaporshell\Template.json" -Force -Confirm:$False -ErrorAction SilentlyContinue
-Remove-Item "C:\projects\Vaporshell\Template2.json" -Force -Confirm:$False -ErrorAction SilentlyContinue
+Remove-Item "$projectRoot\Template.json","$projectRoot\Template.yaml","$projectRoot\Template2.json"  -Force -Confirm:$False -ErrorAction SilentlyContinue
