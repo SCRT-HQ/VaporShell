@@ -1,17 +1,24 @@
 ﻿param($Task = 'Default')
+if ($env:APPVEYOR) {
+    $BS = "AppVeyor"
+}
+elseif ($env:TRAVIS) {
+    $BS = "Travis CI"
+}
+else {
+    $BS = "Unknown"
+}
 
-Write-Host "
+Write-Host -ForegroundColor Green "
 ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 
 Current directory: $($pwd.Path)
+Build system: $BS
 
 ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 "
 
 if ($env:TRAVIS) {
-    Write-Host -ForegroundColor Yellow "===============================
-    Build system: Travis CI
-==============================="
     # Install InvokeBuild
     Install-Module InvokeBuild, Pester -Scope CurrentUser -Force -AllowClobber
 
@@ -30,15 +37,6 @@ if ($env:TRAVIS) {
 
 }
 else {
-    if ($env:APPVEYOR) {
-        $BS = "AppVeyor"
-    } 
-    else {
-        $BS = "Unknown"
-    }
-    Write-Host -ForegroundColor Magenta "===============================
-    Build system: $BS
-==============================="
     # Grab nuget bits, install modules, set build variables, start build.
     Get-PackageProvider -Name NuGet -ForceBootstrap | Out-Null
 
@@ -46,8 +44,6 @@ else {
     Import-Module Psake, BuildHelpers, Coveralls
 
     Set-BuildEnvironment
-
-    #Set-Location $PSScriptRoot
 
     Invoke-psake .\ci\psake.ps1 -taskList $Task -nologo
     exit ( [int]( -not $psake.build_success ) )

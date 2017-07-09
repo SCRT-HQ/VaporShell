@@ -155,6 +155,7 @@ Describe "Module tests: $ModuleName" {
         }
         It 'Should export the template to YAML using cfn-flip and validate using awscli from Export-Vaporshell' {
             $testPath = "$projectRoot\Template.yaml"
+            $template = Import-Vaporshell -Path "$projectRoot\Template.json"
             Export-Vaporshell -VaporshellTemplate $template -As YAML -Path $testPath -ValidateTemplate -Force
         }
     }
