@@ -32,12 +32,12 @@ function Add-ConNot {
     (
         [parameter(Mandatory = $true,Position = 0)]
         [ValidateScript({
-            $allowedTypes = "Vaporshell.Function.FindInMap","Vaporshell.Function.Ref","Vaporshell.Condition"
+            $allowedTypes = "Vaporshell.Function","Vaporshell.Condition"
             if ([string]$($_.PSTypeNames) -match "($(($allowedTypes|ForEach-Object{[RegEx]::Escape($_)}) -join '|'))") {
                 $true
             }
             else {
-                throw "The MapName parameter only accepts the following types: $($allowedTypes -join ", "). The current types of the value are: $($_.PSTypeNames -join ", ")."
+                throw "This parameter only accepts the following types: $($allowedTypes -join ", "). The current types of the value are: $($_.PSTypeNames -join ", ")."
             }
         })]
         $Condition

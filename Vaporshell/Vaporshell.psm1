@@ -1,22 +1,32 @@
+Param
+(
+  [parameter(Position=0)]
+  $ForceDotSource = $false
+)
 #Get public and private function definition files.
 $Public = @( Get-ChildItem -Path $PSScriptRoot\Public -Recurse -Filter "*.ps1" -ErrorAction SilentlyContinue )
 $Private = @( Get-ChildItem -Path $PSScriptRoot\Private -Recurse -Filter "*.ps1" -ErrorAction SilentlyContinue )
 
-#Execute a scriptblock to load each function instead of  (Issue #5)
+#Execute a scriptblock to load each function instead of dot sourcing (Issue #5)
 foreach ($file in @($Public + $Private)) {
-    $ExecutionContext.InvokeCommand.InvokeScript(
-        $false, 
-        (
-            [scriptblock]::Create(
-                [io.file]::ReadAllText(
-                    $file.FullName,
-                    [Text.Encoding]::UTF8
+    if ($ForceDotSource) {
+        . $file.FullName
+    }
+    else {
+        $ExecutionContext.InvokeCommand.InvokeScript(
+            $false, 
+            (
+                [scriptblock]::Create(
+                    [io.file]::ReadAllText(
+                        $file.FullName,
+                        [Text.Encoding]::UTF8
+                    )
                 )
-            )
-        ), 
-        $null, 
-        $null
-    )
+            ), 
+            $null, 
+            $null
+        )
+    }
 }
 
 

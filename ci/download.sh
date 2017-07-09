@@ -79,7 +79,26 @@ case "$OSTYPE" in
         ;;
 esac
 
+echo "Downloading Powershell"
 curl -L -o "$package" $(get_url "$package" "$fork")
+
+echo "Downloading pip3"
+curl -O https://bootstrap.pypa.io/get-pip.py
+python3 get-pip.py --user
+echo "+++++ python3 and pip3 versions:"
+python3 -V
+pip3 -V
+echo "Installing awscli"
+pip3 install --user --upgrade awscli
+echo "Updating PATH"
+export PATH=~/.local/bin:$PATH
+echo "+++++ awscli version:"
+aws --version
+echo "Upgrading awscli if needed"
+pip3 install --user --upgrade awscli
+echo "Installing awscli"
+pip3 install cfn_flip
+
 
 if [[ ! -r "$package" ]]; then
     echo "ERROR: $package failed to download! Aborting..." >&2
@@ -151,3 +170,4 @@ if [[ "$success" != 0 ]]; then
     echo "ERROR: PowerShell failed to install!" >&2
     exit "$success"
 fi
+

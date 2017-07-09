@@ -55,7 +55,7 @@ function Add-FnGetAZs {
     if (!$Region) {
         Write-Verbose "No region specified! Defaulting to deployment region"
         $obj = [PSCustomObject][Ordered]@{
-            "Fn::GetAZs" = Add-FnRef "AWS::Region" -Verbose:$false
+            "Fn::GetAZs" = (Add-FnRef "AWS::Region" -Verbose:$false)
         }
     }
     else {
