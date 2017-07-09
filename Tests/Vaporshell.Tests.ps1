@@ -162,6 +162,10 @@ Describe "Module tests: $ModuleName" {
                 $valid | Should BeOfType 'System.String'
             }
         }
+        It 'Should import the module fine without dot sourcing the ps1 files' {
+            Remove-Module $ModuleName -ErrorAction SilentlyContinue
+            Import-Module $ModuleName -Force
+        }
     }
 }
 Remove-Item "$projectRoot\Template.json","$projectRoot\Template.yaml","$projectRoot\Template2.json"  -Force -Confirm:$False -ErrorAction SilentlyContinue
