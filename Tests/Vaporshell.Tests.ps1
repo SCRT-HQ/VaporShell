@@ -13,6 +13,7 @@ if ($ENV:BHBranchName -eq "dev" -or $env:BHCommitMessage -match "!verbose" -or $
 
 $moduleRoot = Split-Path (Resolve-Path "$projectRoot\*\*.psd1")
 $udFile = (Resolve-Path "$projectRoot\Tests\UserData.sh").Path
+<<<<<<< HEAD
 
 Import-Module $ModulePath -Force -ArgumentList $true
 
@@ -27,6 +28,22 @@ Describe "Module tests: $ModuleName" {
 
             $file.fullname | Should Exist
 
+=======
+
+Import-Module $ModulePath -Force -ArgumentList $true
+
+Describe "Module tests: $ModuleName" {
+    Context "Confirm files are valid Powershell syntax" {
+        $scripts = Get-ChildItem $projectRoot -Include *.ps1,*.psm1,*.psd1 -Recurse
+
+        # TestCases are splatted to the script so we need hashtables
+        $testCase = $scripts | Foreach-Object {@{file = $_}}         
+        It "Script <file> should be valid Powershell" -TestCases $testCase {
+            param($file)
+
+            $file.fullname | Should Exist
+
+>>>>>>> e2be8dc32282c0b4ca2d7576a97da616d0438f92
             $contents = Get-Content -Path $file.fullname -ErrorAction Stop
             $errors = $null
             $null = [System.Management.Automation.PSParser]::Tokenize($contents, [ref]$errors)
@@ -169,6 +186,7 @@ Describe "Module tests: $ModuleName" {
                 $valid | Should BeOfType 'System.String'
             }
         }
+<<<<<<< HEAD
         It 'Should run remaining condition functions' {
             $x = Add-ConAnd -Conditions (Add-ConIf -ConditionName "CreateTestResources" -ValueIfTrue "test" -ValueIfFalse "$_AWSNoValue"),(Add-ConNot -Condition (Add-FnImportValue -ValueToImport "VPCName")),(Add-ConEquals -FirstValue (Add-FnRef "Environment") -SecondValue "prod"),(Add-ConOr -Conditions (Add-ConIf -ConditionName "CreateTestResources" -ValueIfTrue "test" -ValueIfFalse "$_AWSNoValue"),(Add-ConNot -Condition (Add-FnSplit -Delimiter "," -SourceString "test,string,goodness")))
             $x.PSTypeNames[0] | Should Be 'Vaporshell.Condition.And'
@@ -243,6 +261,8 @@ Describe "Module load test: Standard method" {
     It 'Should import the module fine without dot sourcing the ps1 files' {
         Remove-Module $ModuleName -ErrorAction SilentlyContinue
         Import-Module $ModulePath -Force
+=======
+>>>>>>> e2be8dc32282c0b4ca2d7576a97da616d0438f92
     }
 }
 Remove-Item "$projectRoot\Template.json","$projectRoot\Template.yaml","$projectRoot\Template2.json"  -Force -Confirm:$False -ErrorAction SilentlyContinue

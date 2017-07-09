@@ -25,7 +25,7 @@ else {
 }
 if(
     $env:BHProjectName -and $env:BHProjectName.Count -eq 1 -and
-    $env:BHBuildSystem -ne 'Unknown' -and
+    $buildSystem -eq 'AppVeyor' -and
     $env:BHBranchName -eq "master" -and
     $env:BHCommitMessage -match '!deploy'
 )
