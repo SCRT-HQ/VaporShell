@@ -34,13 +34,17 @@ else {
     # Grab nuget bits, install modules, set build variables, start build.
     Get-PackageProvider -Name NuGet -ForceBootstrap | Out-Null
 
-    Install-Module Psake, PSDeploy, Pester, BuildHelpers, Coveralls -Force -Scope CurrentUser
+    Install-Module Psake, PSDeploy, Pester, BuildHelpers, Coveralls -Force -Scope CurrentUser -AllowClobber
     Import-Module Psake, BuildHelpers, Coveralls
+
+    Set-Location ..
 
     Set-BuildEnvironment
 
-    Set-Location $PSScriptRoot
+    #Set-Location $PSScriptRoot
 
-    Invoke-psake .\psake.ps1 -taskList $Task -nologo
+    Invoke-psake .\ci\psake.ps1 -taskList $Task -nologo
     exit ( [int]( -not $psake.build_success ) )
 }
+
+#Get-Item Env:BH* | Remove-Item

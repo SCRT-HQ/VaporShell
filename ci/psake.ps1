@@ -39,7 +39,7 @@ Task Test -Depends Init  {
     "`n`tSTATUS: Testing with PowerShell $PSVersion"
 
     # Gather test results. Store them in a variable and file
-    $TestResults = Invoke-Pester -Path $ProjectRoot\Tests -PassThru -OutputFormat NUnitXml -OutputFile "$ProjectRoot\$TestFile" -CodeCoverage "$ProjectRoot\Vaporshell\Public\Condition Functions\*","$ProjectRoot\Vaporshell\Public\Intrinsic Functions\*","$ProjectRoot\Vaporshell\Public\Primary Functions\*","$ProjectRoot\Vaporshell\Public\Transform\*","$ProjectRoot\Vaporshell\Public\*-Vaporshell.ps1","$ProjectRoot\Vaporshell\Vaporshell.psm1"
+    $TestResults = Invoke-Pester -Path $ProjectRoot\Tests -PassThru -OutputFormat NUnitXml -OutputFile "$ProjectRoot\$TestFile" # -CodeCoverage "$ProjectRoot\Vaporshell\Public\Condition Functions\*","$ProjectRoot\Vaporshell\Public\Intrinsic Functions\*","$ProjectRoot\Vaporshell\Public\Primary Functions\*","$ProjectRoot\Vaporshell\Public\Transform\*","$ProjectRoot\Vaporshell\Public\*-Vaporshell.ps1","$ProjectRoot\Vaporshell\Vaporshell.psm1"
 
     # In Appveyor?  Upload our tests! #Abstract this into a function?
     If($ENV:BHBuildSystem -eq 'AppVeyor')
@@ -47,7 +47,10 @@ Task Test -Depends Init  {
         (New-Object 'System.Net.WebClient').UploadFile(
             "https://ci.appveyor.com/api/testresults/nunit/$($env:APPVEYOR_JOB_ID)",
             "$ProjectRoot\$TestFile" )
-        $coverage = Format-Coverage -PesterResults $TestResults -CoverallsApiToken $ENV:Coveralls -BranchName $ENV:APPVEYOR_REPO_BRANCH -RootFolder $ProjectRoot
+        
+        $files = Get-ChildItem "$ProjectRoot\Vaporshell" -Include *.ps1,*.psm1 -Recurse | Where-Object {$_.Name -notlike "Add-VS*" -and $_.Name -notlike "New-VS*" -and $_.FullName -notlike "*\Private\*" -and $_.Name -ne "Update-VSResourceFunctions.ps1"}
+        $coverage = Format-Coverage -Include $files -CoverallsApiToken $ENV:Coveralls -BranchName $ENV:APPVEYOR_REPO_BRANCH -RootFolder ..\
+        #$coverage = Format-Coverage -PesterResults $TestResults -CoverallsApiToken $ENV:Coveralls -BranchName $ENV:APPVEYOR_REPO_BRANCH -RootFolder ..\
         Publish-Coverage -Coverage $coverage
     }
 
@@ -65,14 +68,20 @@ Task Test -Depends Init  {
 Task Build -Depends Test {
     $lines
     
-    # Load the module, read the exported functions, update the psd1 FunctionsToExport
-    Set-ModuleFunctions @Verbose
+    if ($env:APPVEYOR) {
+        # Load the module, read the exported functions, update the psd1 FunctionsToExport
+        Set-ModuleFunctions @Verbose
 
-    # Bump the module version
-    #S$Version = Get-NextPSGalleryVersion -Name $env:BHProjectName
-    Update-Metadata -Path $env:BHPSModuleManifest -PropertyName ModuleVersion -Value "1.1.6" #$Version
-    
-    #Update-Metadata -Path $env:BHPSModuleManifest -Increment Minor
+        # Bump the module version
+        #S$Version = Get-NextPSGalleryVersion -Name $env:BHProjectName
+        Update-Metadata -Path $env:BHPSModuleManifest -PropertyName ModuleVersion -Value "1.1.6" #$Version
+        
+        #Update-Metadata -Path $env:BHPSModuleManifest -Increment Minor
+    }
+    else {
+        Write-Host -ForegroundColor Magenta "Build system is not AppVeyor -- skipping module update!"
+    }
+
 }
 
 Task Deploy -Depends Build {
