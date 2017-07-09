@@ -36,7 +36,7 @@ Describe "Module tests: $ModuleName" {
         Set-StrictMode -Version latest
 
         It 'Should build template as an object then export to JSON' {
-            $testPath = "TestDrive:\Template.json"
+            $testPath = "$projectRoot\Template.json"
             $templateInit = $null
             $templateInit = Initialize-Vaporshell -Description "Testing template build"
             $templateInit.AddParameter((New-VaporParameter -LogicalId "EnvTypeString" -Type String -Default "test" -AllowedValues "test","prod" -Description "Environment type"))
@@ -65,16 +65,16 @@ Describe "Module tests: $ModuleName" {
             )
             $templateInit.AddOutput((New-VaporOutput -LogicalId "BackupLoadBalancerDNSName" -Description "The DNSName of the backup load balancer" -Value (Add-FnGetAtt -LogicalNameOfResource "BackupLoadBalancer" -AttributeName "DNSName") -Condition "CreateProdResources"))
 
-            $testPath = "TestDrive:\Template.json"
+            $testPath = "$projectRoot\Template.json"
 
             Export-Vaporshell -VaporshellTemplate $templateInit -Path $testPath -Force
         }
         It 'Should export import existing CloudFormation template as Vaporshell.Template' {
-            $testPath = "TestDrive:\Template.json"
+            $testPath = "$projectRoot\Template.json"
             $template = Import-Vaporshell -Path $testPath
         }
         It 'Should export add new properties to the imported JSON object' {
-            $testPath = "TestDrive:\Template.json"
+            $testPath = "$projectRoot\Template.json"
             $template = Import-Vaporshell -Path $testPath
             $template.AddMetadata(
                 (
@@ -137,7 +137,7 @@ Describe "Module tests: $ModuleName" {
             Export-Vaporshell -VaporshellTemplate $template -Path $testPath -Force
         }
         It 'Should show the correct types on each object' {
-            $testPath = "TestDrive:\Template.json"
+            $testPath = "$projectRoot\Template.json"
             $template = Import-Vaporshell -Path $testPath
             $template.AWSTemplateFormatVersion | Should BeOfType 'System.String'
             $template.Conditions | Should BeOfType 'System.Management.Automation.PSCustomObject'
@@ -148,15 +148,15 @@ Describe "Module tests: $ModuleName" {
             $template.Resources | Should BeOfType 'System.Management.Automation.PSCustomObject'
         }
         It 'Should return System.String from validate-template directly' {
-            $testPath = "TestDrive:\Template.json"
+            $testPath = "$projectRoot\Template.json"
             $fileUrl = "$((Resolve-Path $testPath).Path.Replace("\","/"))"
             $valid = aws cloudformation validate-template --template-body file://$fileUrl
             $valid | Should BeOfType 'System.String'
         }
         It 'Should export the template to YAML using cfn-flip and validate using awscli from Export-Vaporshell' {
-            $testPath = "TestDrive:\Template.yaml"
+            $testPath = "$projectRoot\Template.yaml"
             Export-Vaporshell -VaporshellTemplate $template -As YAML -Path $testPath -ValidateTemplate -Force
         }
     }
 }
-Remove-Item "TestDrive:\Template.json","TestDrive:\Template.yaml","TestDrive:\Template2.json"  -Force -Confirm:$False -ErrorAction SilentlyContinue
+Remove-Item "$projectRoot\Template.json","$projectRoot\Template.yaml","$projectRoot\Template2.json"  -Force -Confirm:$False -ErrorAction SilentlyContinue
