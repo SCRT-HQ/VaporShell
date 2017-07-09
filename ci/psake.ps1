@@ -22,7 +22,7 @@ Properties {
     }
 }
 
-Task Default -Depends Test
+Task Default -Depends Init,Test,Build,Deploy
 
 Task Init {
     $lines
@@ -68,7 +68,7 @@ Task Test -Depends Init  {
 Task Build -Depends Test {
     $lines
     
-    if ($env:APPVEYOR) {
+    if ($ENV:BHBuildSystem -eq 'AppVeyor') {
         # Load the module, read the exported functions, update the psd1 FunctionsToExport
         Set-ModuleFunctions @Verbose
 
