@@ -69,6 +69,13 @@ Describe "Module tests: $ModuleName" {
             $testPath = "$projectRoot\Template.json"
 
             Export-Vaporshell -VaporshellTemplate $templateInit -Path $testPath -Force
+
+            {$templateInit.RemoveCondition("CreateProdResources")} | Should Not throw
+            {$templateInit.RemoveMapping("RegionMap")} | Should Not throw
+            {$templateInit.RemoveParameter("EnvTypeString")} | Should Not throw
+            {$templateInit.RemoveMetadata("Instances")} | Should Not throw
+            {$templateInit.RemoveResource("GatewayDeployment")} | Should Not throw
+            {$templateInit.RemoveOutput("BackupLoadBalancerDNSName")} | Should Not throw
         }
         It 'Should export import existing CloudFormation template as Vaporshell.Template' {
             $testPath = "$projectRoot\Template.json"
@@ -175,6 +182,14 @@ Describe "Module tests: $ModuleName" {
             {Add-FnFindInMap -MapName "Map" -TopLevelKey "First" -SecondLevelKey 2} | Should throw
             {Add-FnSplit -Delimiter "," -SourceString 1} | Should throw
             {Add-FnImportValue -ValueToImport 1} | Should throw
+            {Add-FnSub -String "www.`${Domain}" -Mapping @{Domain = (Add-FnRef -Ref "RootDomainName")}} | Should Not throw
+            {Add-FnSub -String "/opt/aws/bin/cfn-init -v --stack ${AWS::StackName} --resource LaunchConfig --configsets wordpress_install --region ${AWS::Region}"} | Should Not throw
+            {Add-FnGetAZs} | Should Not throw
+            {Add-FnGetAZs -Region $_AWSRegion} | Should Not throw
+            {Add-FnGetAZs -Region 1} | Should throw
+            {Add-FnSelect -Index 1 -ListOfObjects (Add-FnSplit -Delimiter "," -SourceString "one,two,three")} | Should Not throw
+            {Add-FnSelect -Index (@{}) -ListOfObjects (Add-FnSplit -Delimiter "," -SourceString "one,two,three")} | Should throw
+            {Add-FnSelect -Index 1 -ListOfObjects 1} | Should throw
         }
         It 'Should throw primary functions' {
             {New-VaporResource -LogicalId "!@#$%*&"} | Should throw "Cannot validate argument on parameter 'LogicalId'. The logical ID must be alphanumeric (a-z, A-Z, 0-9) and unique within the template."
@@ -198,7 +213,7 @@ Describe "Module tests: $ModuleName" {
             $t = Initialize-Vaporshell
             {Export-Vaporshell -VaporshellTemplate $t} | Should throw "Cannot validate argument on parameter 'VaporshellTemplate'. Unable to find any resources on this Vaporshell template. Resources are required in CloudFormation templates at the minimum."
             {$t.AddTransform("Fail")} | Should throw "You must use one of the following object types with this parameter: Vaporshell.Transform.Include"
-            $t.AddTransform((Add-Include -Location "s3://file.yaml"))
+            {$t.AddTransform((Add-Include -Location "s3://file.yaml"))} | Should Not throw
             $t.AddResource((New-SAMSimpleTable -LogicalId "Table"))
             $t.Transform = "asfd"
             $t.AddResource((New-SAMSimpleTable -LogicalId "Table2"))
@@ -209,6 +224,15 @@ Describe "Module tests: $ModuleName" {
             {$t.AddMetadata("Fail")} | Should throw "You must use one of the following object types with this parameter: Vaporshell.Transform, Vaporshell.Metadata"
             {$t.AddMapping("Fail")} | Should throw "You must use one of the following object types with this parameter: Vaporshell.Transform, Vaporshell.Mapping"
             {$t.AddMapping("Fail")} | Should throw "You must use one of the following object types with this parameter: Vaporshell.Transform, Vaporshell.Mapping"
+        }
+        It 'Should function the same for imported templates' {
+            $t = Import-Vaporshell -Path "$projectRoot\Template.yaml"
+            {$t.RemoveCondition("CreateProdResources","Fn::Transform","CreateTestResources")} | Should Not throw
+            {$t.RemoveMapping("RegionMap","RegionMap2")} | Should Not throw
+            {$t.RemoveParameter("EnvTypeString","EnvType","EnvType2")} | Should Not throw
+            {$t.RemoveMetadata("Instances","Databases")} | Should Not throw
+            {$t.RemoveResource("GatewayDeployment","MyApi","MyInstance","MyInstance2","GatewayDeployment3","MyApi3","MyInstance3")} | Should Not throw
+            {$t.RemoveOutput("BackupLoadBalancerDNSName","PrimaryLoadBalancerDNSName","BackupLoadBalancerDNSName3")} | Should Not throw
         }
     }
 }
