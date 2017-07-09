@@ -162,10 +162,60 @@ Describe "Module tests: $ModuleName" {
                 $valid | Should BeOfType 'System.String'
             }
         }
-        It 'Should import the module fine without dot sourcing the ps1 files' {
-            Remove-Module $ModuleName -ErrorAction SilentlyContinue
-            Import-Module $ModuleName -Force
+        It 'Should run remaining condition functions' {
+            $x = Add-ConAnd -Conditions (Add-ConIf -ConditionName "CreateTestResources" -ValueIfTrue "test" -ValueIfFalse "$_AWSNoValue"),(Add-ConNot -Condition (Add-FnImportValue -ValueToImport "VPCName")),(Add-ConEquals -FirstValue (Add-FnRef "Environment") -SecondValue "prod"),(Add-ConOr -Conditions (Add-ConIf -ConditionName "CreateTestResources" -ValueIfTrue "test" -ValueIfFalse "$_AWSNoValue"),(Add-ConNot -Condition (Add-FnSplit -Delimiter "," -SourceString "test,string,goodness")))
+            $x.PSTypeNames[0] | Should Be 'Vaporshell.Condition.And'
         }
+        It 'Should throw intrinsic functions' {
+            {Add-FnJoin -ListOfValues 1} | Should throw
+            {Add-FnBase64 -ValueToEncode 1} | Should throw
+            {Add-FnGetAtt -LogicalNameOfResource "Vapor" -AttributeName 1} | Should throw
+            {Add-FnFindInMap -MapName 0 -TopLevelKey "First" -SecondLevelKey "Second"} | Should throw
+            {Add-FnFindInMap -MapName "Map" -TopLevelKey 1 -SecondLevelKey "Second"} | Should throw
+            {Add-FnFindInMap -MapName "Map" -TopLevelKey "First" -SecondLevelKey 2} | Should throw
+            {Add-FnSplit -Delimiter "," -SourceString 1} | Should throw
+            {Add-FnImportValue -ValueToImport 1} | Should throw
+        }
+        It 'Should throw primary functions' {
+            {New-VaporResource -LogicalId "!@#$%*&"} | Should throw "Cannot validate argument on parameter 'LogicalId'. The logical ID must be alphanumeric (a-z, A-Z, 0-9) and unique within the template."
+            {New-VaporResource -LogicalId "Tests" -Properties 1} | Should throw "Cannot validate argument on parameter 'Properties'. The Properties parameter only accepts the following types: System.Management.Automation.PSCustomObject, Vaporshell.Resource.Properties. The current types of the value are: System.Int32, System.ValueType, System.Object."
+            {New-VaporResource -LogicalId "Tests" -Properties ([PSCustomObject]@{Name="Test"}) -Type "AWS::EC2::Instance" -CreationPolicy 1} | Should throw "Cannot validate argument on parameter 'CreationPolicy'. The CreationPolicy parameter only accepts the following types: Vaporshell.Resource.CreationPolicy. The current types of the value are: System.Int32, System.ValueType, System.Object."
+            {New-VaporResource -LogicalId "Tests" -Properties ([PSCustomObject]@{Name="Test"}) -Type "AWS::EC2::Instance" -UpdatePolicy 1} | Should throw "Cannot validate argument on parameter 'UpdatePolicy'. The UpdatePolicy parameter only accepts the following types: Vaporshell.Resource.UpdatePolicy. The current types of the value are: System.Int32, System.ValueType, System.Object."
+            {New-VaporResource -LogicalId "Tests" -Properties ([PSCustomObject]@{Name="Test"}) -Type "AWS::EC2::Instance" -Metadata 1} | Should throw "Cannot validate argument on parameter 'Metadata'. The UpdatePolicy parameter only accepts the following types: System.Management.Automation.PSCustomObject. The current types of the value are: System.Int32, System.ValueType, System.Object."
+            {New-VaporMetadata -LogicalId "!@#$%*&"} | Should throw
+            {New-VaporMetadata -LogicalId "Test" -Metadata 1} | Should throw
+            {New-VaporMapping -LogicalId "!@#$%*&"} | Should throw
+            {New-VaporMapping -LogicalId "Test" -Map 1} | Should throw
+            {New-VaporCondition -LogicalId "!@#$%*&"} | Should throw
+            {New-VaporCondition -LogicalId "Test" -Condition 1} | Should throw
+            {New-VaporOutput -LogicalId "!@#$%*&"} | Should throw
+            {New-VaporOutput -LogicalId "Test" -Value "String" -Export "Export"} | Should Not throw
+            {New-VaporParameter -LogicalId "!@#$%*&"} | Should throw
+            {New-VaporParameter -LogicalId "PW" -Description "$(1..5000)"} | Should throw "Cannot validate argument on parameter 'Description'. The description length needs to be less than 4000 characters long."
+            {New-VaporParameter -LogicalId "PW" -NoEcho -Type String -AllowedPattern ".*" -MaxLength 50 -MinLength 1 -MaxValue 50 -MinValue 1 -Default "woooo"} | Should Not throw
+        }
+        It 'Should throw main commands' {
+            $t = Initialize-Vaporshell
+            {Export-Vaporshell -VaporshellTemplate $t} | Should throw "Cannot validate argument on parameter 'VaporshellTemplate'. Unable to find any resources on this Vaporshell template. Resources are required in CloudFormation templates at the minimum."
+            {$t.AddTransform("Fail")} | Should throw "You must use one of the following object types with this parameter: Vaporshell.Transform.Include"
+            $t.AddTransform((Add-Include -Location "s3://file.yaml"))
+            $t.AddResource((New-SAMSimpleTable -LogicalId "Table"))
+            $t.Transform = "asfd"
+            $t.AddResource((New-SAMSimpleTable -LogicalId "Table2"))
+            {Export-Vaporshell -VaporshellTemplate $t | Should BeOfType 'String'} | Should Not throw
+            {$t.AddResource("Fail")} | Should throw "You must use one of the following object types with this parameter: Vaporshell.Transform, Vaporshell.Resource"
+            {$t.AddCondition("Fail")} | Should throw "You must use one of the following object types with this parameter: Vaporshell.Transform, Vaporshell.Condition"
+            {$t.AddParameter("Fail")} | Should throw "You must use one of the following object types with this parameter: Vaporshell.Parameter"
+            {$t.AddMetadata("Fail")} | Should throw "You must use one of the following object types with this parameter: Vaporshell.Transform, Vaporshell.Metadata"
+            {$t.AddMapping("Fail")} | Should throw "You must use one of the following object types with this parameter: Vaporshell.Transform, Vaporshell.Mapping"
+            {$t.AddMapping("Fail")} | Should throw "You must use one of the following object types with this parameter: Vaporshell.Transform, Vaporshell.Mapping"
+        }
+    }
+}
+Describe "Module load test: Standard method" {
+    It 'Should import the module fine without dot sourcing the ps1 files' {
+        Remove-Module $ModuleName -ErrorAction SilentlyContinue
+        Import-Module $ModulePath -Force
     }
 }
 Remove-Item "$projectRoot\Template.json","$projectRoot\Template.yaml","$projectRoot\Template2.json"  -Force -Confirm:$False -ErrorAction SilentlyContinue
