@@ -225,14 +225,16 @@ Describe "Module tests: $ModuleName" {
             {$t.AddMapping("Fail")} | Should throw "You must use one of the following object types with this parameter: Vaporshell.Transform, Vaporshell.Mapping"
             {$t.AddMapping("Fail")} | Should throw "You must use one of the following object types with this parameter: Vaporshell.Transform, Vaporshell.Mapping"
         }
-        It 'Should function the same for imported templates' {
-            $t = Import-Vaporshell -Path "$projectRoot\Template.yaml"
-            {$t.RemoveCondition("CreateProdResources","Fn::Transform","CreateTestResources")} | Should Not throw
-            {$t.RemoveMapping("RegionMap","RegionMap2")} | Should Not throw
-            {$t.RemoveParameter("EnvTypeString","EnvType","EnvType2")} | Should Not throw
-            {$t.RemoveMetadata("Instances","Databases")} | Should Not throw
-            {$t.RemoveResource("GatewayDeployment","MyApi","MyInstance","MyInstance2","GatewayDeployment3","MyApi3","MyInstance3")} | Should Not throw
-            {$t.RemoveOutput("BackupLoadBalancerDNSName","PrimaryLoadBalancerDNSName","BackupLoadBalancerDNSName3")} | Should Not throw
+        if ($env:APPVEYOR -or $env:TRAVIS_OS_NAME -ne "osx") {
+            It 'Should function the same for imported templates' {
+                $t = Import-Vaporshell -Path "$projectRoot\Template.yaml"
+                {$t.RemoveCondition("CreateProdResources","Fn::Transform","CreateTestResources")} | Should Not throw
+                {$t.RemoveMapping("RegionMap","RegionMap2")} | Should Not throw
+                {$t.RemoveParameter("EnvTypeString","EnvType","EnvType2")} | Should Not throw
+                {$t.RemoveMetadata("Instances","Databases")} | Should Not throw
+                {$t.RemoveResource("GatewayDeployment","MyApi","MyInstance","MyInstance2","GatewayDeployment3","MyApi3","MyInstance3")} | Should Not throw
+                {$t.RemoveOutput("BackupLoadBalancerDNSName","PrimaryLoadBalancerDNSName","BackupLoadBalancerDNSName3")} | Should Not throw
+            }
         }
     }
 }
