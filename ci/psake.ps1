@@ -22,7 +22,7 @@ Properties {
     }
 }
 
-Task Default -Depends Deploy
+Task Default -Depends Test
 
 Task Init {
     $lines
@@ -49,9 +49,9 @@ Task Test -Depends Init  {
             "$ProjectRoot\$TestFile" )
         
         $files = Get-ChildItem "$ProjectRoot\Vaporshell" -Include *.ps1,*.psm1 -Recurse | Where-Object {$_.Name -notlike "Add-VS*" -and $_.Name -notlike "New-VS*" -and $_.FullName -notlike "*\Private\*" -and $_.Name -ne "Update-VSResourceFunctions.ps1"}
-        $coverage = Format-Coverage -Include $files -CoverallsApiToken $ENV:Coveralls -BranchName $ENV:APPVEYOR_REPO_BRANCH -RootFolder ..\
+        $coverage = Format-Coverage -Include $files -CoverallsApiToken $ENV:Coveralls -BranchName $ENV:APPVEYOR_REPO_BRANCH -Verbose
         #$coverage = Format-Coverage -PesterResults $TestResults -CoverallsApiToken $ENV:Coveralls -BranchName $ENV:APPVEYOR_REPO_BRANCH -RootFolder ..\
-        Publish-Coverage -Coverage $coverage
+        Publish-Coverage -Coverage $coverage -Verbose
     }
 
     Remove-Item "$ProjectRoot\$TestFile" -Force -ErrorAction SilentlyContinue
