@@ -14,6 +14,8 @@ if ($ENV:BHBranchName -eq "dev" -or $env:BHCommitMessage -match "!verbose" -or $
 $moduleRoot = Split-Path (Resolve-Path "$projectRoot\*\*.psd1")
 $udFile = (Resolve-Path "$projectRoot\Tests\UserData.sh").Path
 
+Import-Module $ModulePath -Force -ArgumentList $true
+
 Describe "Module tests: $ModuleName" {
     Context "Confirm files are valid Powershell syntax" {
         $scripts = Get-ChildItem $projectRoot -Include *.ps1,*.psm1,*.psd1 -Recurse
@@ -32,7 +34,6 @@ Describe "Module tests: $ModuleName" {
         }
     }
     Context 'Strict mode' {
-        Import-Module $ModulePath -Force
         Set-StrictMode -Version latest
 
         It 'Should build template as an object then export to JSON' {
@@ -147,16 +148,19 @@ Describe "Module tests: $ModuleName" {
             $template.Outputs | Should BeOfType 'System.Management.Automation.PSCustomObject'
             $template.Resources | Should BeOfType 'System.Management.Automation.PSCustomObject'
         }
-        It 'Should return System.String from validate-template directly' {
-            $testPath = "$projectRoot\Template.json"
-            $fileUrl = "$((Resolve-Path $testPath).Path.Replace("\","/"))"
-            $valid = aws cloudformation validate-template --template-body file://$fileUrl
-            $valid | Should BeOfType 'System.String'
-        }
-        It 'Should export the template to YAML using cfn-flip and validate using awscli from Export-Vaporshell' {
-            $testPath = "$projectRoot\Template.yaml"
-            $template = Import-Vaporshell -Path "$projectRoot\Template.json"
-            Export-Vaporshell -VaporshellTemplate $template -As YAML -Path $testPath -ValidateTemplate -Force
+        if ($env:APPVEYOR -or $env:TRAVIS_OS_NAME -ne "osx") {
+            It 'Should return System.String from validate-template directly' {
+                $testPath = "$projectRoot\Template.json"
+                $fileUrl = "$((Resolve-Path $testPath).Path.Replace("\","/"))"
+                $valid = aws cloudformation validate-template --template-body file://$fileUrl
+                $valid | Should BeOfType 'System.String'
+            }
+            It 'Should export the template to YAML using cfn-flip and validate using awscli from Export-Vaporshell' {
+                $testPath = "$projectRoot\Template.yaml"
+                $template = Import-Vaporshell -Path "$projectRoot\Template.json"
+                $valid = Export-Vaporshell -VaporshellTemplate $template -As YAML -Path $testPath -ValidateTemplate -Force
+                $valid | Should BeOfType 'System.String'
+            }
         }
     }
 }
