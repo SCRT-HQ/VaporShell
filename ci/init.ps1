@@ -1,5 +1,13 @@
 ﻿param($Task = 'Default')
 
+Write-Host "
+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+
+Current directory: $($pwd.Path)
+
+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+"
+
 if ($env:TRAVIS) {
     Write-Host -ForegroundColor Yellow "===============================
     Build system: Travis CI
@@ -36,8 +44,6 @@ else {
 
     Install-Module Psake, PSDeploy, Pester, BuildHelpers, Coveralls -Force -Scope CurrentUser -AllowClobber
     Import-Module Psake, BuildHelpers, Coveralls
-
-    Set-Location ..
 
     Set-BuildEnvironment
 
