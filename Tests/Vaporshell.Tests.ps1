@@ -32,7 +32,7 @@ Describe "Module tests: $ModuleName" {
             $null = [System.Management.Automation.PSParser]::Tokenize($contents, [ref]$errors)
             $errors.Count | Should Be 0
         }
-    } 
+    }
     Context 'Strict mode' {
         Set-StrictMode -Version latest
 
