@@ -227,7 +227,8 @@ Describe "Module tests: $ModuleName" {
         }
         if ($env:APPVEYOR -or $env:TRAVIS_OS_NAME -ne "osx") {
             It 'Should function the same for imported templates' {
-                $t = Import-Vaporshell -Path "$projectRoot\Template.yaml"
+                $path = (Resolve-Path "$projectRoot\Template.yaml").Path
+                $t = Import-Vaporshell -Path $path
                 {$t.RemoveCondition("CreateProdResources","Fn::Transform","CreateTestResources")} | Should Not throw
                 {$t.RemoveMapping("RegionMap","RegionMap2")} | Should Not throw
                 {$t.RemoveParameter("EnvTypeString","EnvType","EnvType2")} | Should Not throw
