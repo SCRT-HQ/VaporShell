@@ -25,11 +25,12 @@ else {
 }
 if(
     $env:BHProjectName -and $env:BHProjectName.Count -eq 1 -and
-    $buildSystem -eq 'AppVeyor' -and
+    $env:BHBuildSystem -ne 'Unknown' -and
     $env:BHBranchName -eq "master" -and
     $env:BHCommitMessage -match '!deploy'
 )
 {
+    Write-Host -ForegroundColor Magenta "`n!!!!!  Deploying  !!!!!`n"
     Deploy Module {
         By PSGalleryModule {
             FromSource $ENV:BHProjectName
