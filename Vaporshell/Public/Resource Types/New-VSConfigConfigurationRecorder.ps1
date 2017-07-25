@@ -24,7 +24,7 @@ function New-VSConfigConfigurationRecorder {
 		Type: RecordingGroup    
 		UpdateType: Mutable    
 
-    .PARAMETER RoleArn
+    .PARAMETER RoleARN
 		Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-config-configurationrecorder.html#cfn-config-configurationrecorder-rolearn    
 		PrimitiveType: String    
 		Required: True    
@@ -100,7 +100,7 @@ function New-VSConfigConfigurationRecorder {
                     throw "This parameter only accepts the following types: $($allowedTypes -join ", "). The current types of the value are: $($_.PSTypeNames -join ", ")."
                 }
             })]
-        $RoleArn,
+        $RoleARN,
         [ValidateSet("Delete","Retain","Snapshot")]
         [System.String]
         $DeletionPolicy,
@@ -161,14 +161,7 @@ function New-VSConfigConfigurationRecorder {
                     if (!($ResourceParams["Properties"])) {
                         $ResourceParams.Add("Properties",([PSCustomObject]@{}))
                     }
-                    $val = $((Get-Variable $key).Value)
-                    if ($val -eq "True") {
-                        $val = "true"
-                    }
-                    elseif ($val -eq "False") {
-                        $val = "false"
-                    }
-                    $ResourceParams["Properties"] | Add-Member -MemberType NoteProperty -Name $key -Value $val
+                    $ResourceParams["Properties"] | Add-Member -MemberType NoteProperty -Name $key -Value $PSBoundParameters.$key
                 }
             }
         }

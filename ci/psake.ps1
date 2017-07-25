@@ -73,10 +73,14 @@ Task Build -Depends Test {
         Set-ModuleFunctions @Verbose
 
         # Bump the module version
-        #S$Version = Get-NextPSGalleryVersion -Name $env:BHProjectName
-        Update-Metadata -Path $env:BHPSModuleManifest -PropertyName ModuleVersion -Value "1.2.0" #$Version
+        <#
+        $Version = Get-NextPSGalleryVersion -Name $env:BHProjectName
+        Update-Metadata -Path $env:BHPSModuleManifest -PropertyName ModuleVersion -Value $Version
+        #>
         
-        #Update-Metadata -Path $env:BHPSModuleManifest -Increment Minor
+        #Update-Metadata -Path $env:BHPSModuleManifest -PropertyName ModuleVersion -Value "1.2.1"
+
+        Update-Metadata -Path $env:BHPSModuleManifest -Increment Build
     }
     else {
         Write-Host -ForegroundColor Magenta "Build system is not AppVeyor -- skipping module update!"

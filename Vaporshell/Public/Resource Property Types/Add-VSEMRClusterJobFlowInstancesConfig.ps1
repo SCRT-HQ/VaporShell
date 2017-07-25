@@ -25,6 +25,12 @@ function Add-VSEMRClusterJobFlowInstancesConfig {
 		Type: List    
 		UpdateType: Immutable    
 
+    .PARAMETER CoreInstanceFleet
+		Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-emr-cluster-jobflowinstancesconfig.html#cfn-elasticmapreduce-cluster-jobflowinstancesconfig-coreinstancefleet    
+		Required: False    
+		Type: InstanceFleetConfig    
+		UpdateType: Immutable    
+
     .PARAMETER CoreInstanceGroup
 		Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-emr-cluster-jobflowinstancesconfig.html#cfn-emr-cluster-jobflowinstancesconfig-coreinstancegroup    
 		Required: False    
@@ -61,9 +67,15 @@ function Add-VSEMRClusterJobFlowInstancesConfig {
 		Required: False    
 		UpdateType: Immutable    
 
+    .PARAMETER MasterInstanceFleet
+		Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-emr-cluster-jobflowinstancesconfig.html#cfn-elasticmapreduce-cluster-jobflowinstancesconfig-masterinstancefleet    
+		Required: False    
+		Type: InstanceFleetConfig    
+		UpdateType: Immutable    
+
     .PARAMETER MasterInstanceGroup
-		Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-emr-cluster-jobflowinstancesconfig.html#cfn-emr-cluster-jobflowinstancesconfig-masterinstancegroup    
-		Required: True    
+		Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-emr-cluster-jobflowinstancesconfig.html#cfn-emr-cluster-jobflowinstancesconfig-coreinstancegroup    
+		Required: False    
 		Type: InstanceGroupConfig    
 		UpdateType: Immutable    
 
@@ -96,6 +108,8 @@ function Add-VSEMRClusterJobFlowInstancesConfig {
         $AdditionalMasterSecurityGroups,
         [parameter(Mandatory = $false)]
         $AdditionalSlaveSecurityGroups,
+        [parameter(Mandatory = $false)]
+        $CoreInstanceFleet,
         [parameter(Mandatory = $false)]
         $CoreInstanceGroup,
         [parameter(Mandatory = $false)]
@@ -153,7 +167,9 @@ function Add-VSEMRClusterJobFlowInstancesConfig {
                 }
             })]
         $HadoopVersion,
-        [parameter(Mandatory = $true)]
+        [parameter(Mandatory = $false)]
+        $MasterInstanceFleet,
+        [parameter(Mandatory = $false)]
         $MasterInstanceGroup,
         [parameter(Mandatory = $false)]
         $Placement,
@@ -176,15 +192,8 @@ function Add-VSEMRClusterJobFlowInstancesConfig {
         $obj = [PSCustomObject]@{}
     }
     Process {
-        foreach ($psParamKey in $PSBoundParameters.Keys) {
-            $val = $((Get-Variable $psParamKey).Value)
-            if ($val -eq "True") {
-                $val = "true"
-            }
-            elseif ($val -eq "False") {
-                $val = "false"
-            }
-            $obj | Add-Member -MemberType NoteProperty -Name $psParamKey -Value $val
+        foreach ($key in $PSBoundParameters.Keys) {
+            $obj | Add-Member -MemberType NoteProperty -Name $key -Value $PSBoundParameters.$key
         }
     }
     End {

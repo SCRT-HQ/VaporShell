@@ -10,13 +10,13 @@ function Add-VSCodeBuildProjectEnvironmentVariable {
         http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-codebuild-project-environmentvariable.html
 
     .PARAMETER Value
-		Required: False    
+		Required: True    
 		Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-codebuild-project-environmentvariable.html#cfn-codebuild-project-environmentvariable-value    
 		PrimitiveType: String    
 		UpdateType: Mutable    
 
     .PARAMETER Name
-		Required: False    
+		Required: True    
 		Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-codebuild-project-environmentvariable.html#cfn-codebuild-project-environmentvariable-name    
 		PrimitiveType: String    
 		UpdateType: Mutable    
@@ -28,7 +28,7 @@ function Add-VSCodeBuildProjectEnvironmentVariable {
     [cmdletbinding()]
     Param
     (
-        [parameter(Mandatory = $false)]
+        [parameter(Mandatory = $true)]
         [ValidateScript( {
                 $allowedTypes = "System.String","Vaporshell.Function"
                 if ([string]$($_.PSTypeNames) -match "($(($allowedTypes|ForEach-Object{[RegEx]::Escape($_)}) -join '|'))") {
@@ -39,7 +39,7 @@ function Add-VSCodeBuildProjectEnvironmentVariable {
                 }
             })]
         $Value,
-        [parameter(Mandatory = $false)]
+        [parameter(Mandatory = $true)]
         [ValidateScript( {
                 $allowedTypes = "System.String","Vaporshell.Function"
                 if ([string]$($_.PSTypeNames) -match "($(($allowedTypes|ForEach-Object{[RegEx]::Escape($_)}) -join '|'))") {
@@ -55,15 +55,8 @@ function Add-VSCodeBuildProjectEnvironmentVariable {
         $obj = [PSCustomObject]@{}
     }
     Process {
-        foreach ($psParamKey in $PSBoundParameters.Keys) {
-            $val = $((Get-Variable $psParamKey).Value)
-            if ($val -eq "True") {
-                $val = "true"
-            }
-            elseif ($val -eq "False") {
-                $val = "false"
-            }
-            $obj | Add-Member -MemberType NoteProperty -Name $psParamKey -Value $val
+        foreach ($key in $PSBoundParameters.Keys) {
+            $obj | Add-Member -MemberType NoteProperty -Name $key -Value $PSBoundParameters.$key
         }
     }
     End {

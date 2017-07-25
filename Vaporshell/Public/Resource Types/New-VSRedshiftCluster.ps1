@@ -106,6 +106,12 @@ function New-VSRedshiftCluster {
 		Required: False    
 		UpdateType: Immutable    
 
+    .PARAMETER LoggingProperties
+		Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-redshift-cluster.html#cfn-redshift-cluster-loggingproperties    
+		Required: False    
+		Type: LoggingProperties    
+		UpdateType: Mutable    
+
     .PARAMETER MasterUserPassword
 		Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-redshift-cluster.html#cfn-redshift-cluster-masteruserpassword    
 		PrimitiveType: String    
@@ -352,6 +358,8 @@ function New-VSRedshiftCluster {
                 }
             })]
         $KmsKeyId,
+        [parameter(Mandatory = $false)]
+        $LoggingProperties,
         [parameter(Mandatory = $true)]
         [ValidateScript( {
                 $allowedTypes = "System.String","Vaporshell.Function"
@@ -535,14 +543,7 @@ function New-VSRedshiftCluster {
                     if (!($ResourceParams["Properties"])) {
                         $ResourceParams.Add("Properties",([PSCustomObject]@{}))
                     }
-                    $val = $((Get-Variable $key).Value)
-                    if ($val -eq "True") {
-                        $val = "true"
-                    }
-                    elseif ($val -eq "False") {
-                        $val = "false"
-                    }
-                    $ResourceParams["Properties"] | Add-Member -MemberType NoteProperty -Name $key -Value $val
+                    $ResourceParams["Properties"] | Add-Member -MemberType NoteProperty -Name $key -Value $PSBoundParameters.$key
                 }
             }
         }

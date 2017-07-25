@@ -18,6 +18,12 @@ function New-VSKinesisStream {
 		Required: False    
 		UpdateType: Immutable    
 
+    .PARAMETER RetentionPeriodHours
+		Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-kinesis-stream.html#cfn-kinesis-stream-retentionperiodhours    
+		PrimitiveType: Integer    
+		Required: False    
+		UpdateType: Mutable    
+
     .PARAMETER ShardCount
 		Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-kinesis-stream.html#cfn-kinesis-stream-shardcount    
 		PrimitiveType: Integer    
@@ -90,6 +96,9 @@ function New-VSKinesisStream {
                 }
             })]
         $Name,
+        [parameter(Mandatory = $false)]
+        [Int]
+        $RetentionPeriodHours,
         [parameter(Mandatory = $true)]
         [Int]
         $ShardCount,
@@ -170,14 +179,7 @@ function New-VSKinesisStream {
                     if (!($ResourceParams["Properties"])) {
                         $ResourceParams.Add("Properties",([PSCustomObject]@{}))
                     }
-                    $val = $((Get-Variable $key).Value)
-                    if ($val -eq "True") {
-                        $val = "true"
-                    }
-                    elseif ($val -eq "False") {
-                        $val = "false"
-                    }
-                    $ResourceParams["Properties"] | Add-Member -MemberType NoteProperty -Name $key -Value $val
+                    $ResourceParams["Properties"] | Add-Member -MemberType NoteProperty -Name $key -Value $PSBoundParameters.$key
                 }
             }
         }

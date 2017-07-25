@@ -16,7 +16,7 @@ function Add-VSCodeBuildProjectArtifacts {
 		UpdateType: Mutable    
 
     .PARAMETER Type
-		Required: False    
+		Required: True    
 		Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-codebuild-project-artifacts.html#cfn-codebuild-project-artifacts-type    
 		PrimitiveType: String    
 		UpdateType: Mutable    
@@ -63,7 +63,7 @@ function Add-VSCodeBuildProjectArtifacts {
                 }
             })]
         $Path,
-        [parameter(Mandatory = $false)]
+        [parameter(Mandatory = $true)]
         [ValidateScript( {
                 $allowedTypes = "System.String","Vaporshell.Function"
                 if ([string]$($_.PSTypeNames) -match "($(($allowedTypes|ForEach-Object{[RegEx]::Escape($_)}) -join '|'))") {
@@ -123,15 +123,8 @@ function Add-VSCodeBuildProjectArtifacts {
         $obj = [PSCustomObject]@{}
     }
     Process {
-        foreach ($psParamKey in $PSBoundParameters.Keys) {
-            $val = $((Get-Variable $psParamKey).Value)
-            if ($val -eq "True") {
-                $val = "true"
-            }
-            elseif ($val -eq "False") {
-                $val = "false"
-            }
-            $obj | Add-Member -MemberType NoteProperty -Name $psParamKey -Value $val
+        foreach ($key in $PSBoundParameters.Keys) {
+            $obj | Add-Member -MemberType NoteProperty -Name $key -Value $PSBoundParameters.$key
         }
     }
     End {

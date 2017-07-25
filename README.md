@@ -18,15 +18,22 @@ Vaporshell allows you to either initialize a new template or import an existing 
 
 ***
 
-## Getting Started
+## Getting Started (Documentation)
 
-<http://vaporshell.io/docs/examples>
+<http://vaporshell.io/docs>
 
 ***
 
-## Module Digest
+## Module Digest (Deeper Dive)
 
 <http://vaporshell.io/docs/digest>
+
+***
+
+## Tips & Tricks
+
+<http://vaporshell.io/docs/tips>
+
 
 ***
 
