@@ -14,7 +14,7 @@ function New-VSCodeBuildProject {
 
     .PARAMETER Artifacts
 		Type: Artifacts    
-		Required: False    
+		Required: True    
 		Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-codebuild-project.html#cfn-codebuild-project-artifacts    
 		UpdateType: Mutable    
 
@@ -25,14 +25,14 @@ function New-VSCodeBuildProject {
 		UpdateType: Mutable    
 
     .PARAMETER ServiceRole
-		Required: False    
+		Required: True    
 		Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-codebuild-project.html#cfn-codebuild-project-servicerole    
 		PrimitiveType: String    
 		UpdateType: Mutable    
 
     .PARAMETER Environment
 		Type: Environment    
-		Required: False    
+		Required: True    
 		Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-codebuild-project.html#cfn-codebuild-project-environment    
 		UpdateType: Mutable    
 
@@ -44,7 +44,7 @@ function New-VSCodeBuildProject {
 
     .PARAMETER Source
 		Type: Source    
-		Required: False    
+		Required: True    
 		Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-codebuild-project.html#cfn-codebuild-project-source    
 		UpdateType: Mutable    
 
@@ -114,7 +114,7 @@ function New-VSCodeBuildProject {
             })]
         [System.String]
         $LogicalId,
-        [parameter(Mandatory = $false)]
+        [parameter(Mandatory = $true)]
         $Artifacts,
         [parameter(Mandatory = $false)]
         [ValidateScript( {
@@ -127,7 +127,7 @@ function New-VSCodeBuildProject {
                 }
             })]
         $Description,
-        [parameter(Mandatory = $false)]
+        [parameter(Mandatory = $true)]
         [ValidateScript( {
                 $allowedTypes = "System.String","Vaporshell.Function"
                 if ([string]$($_.PSTypeNames) -match "($(($allowedTypes|ForEach-Object{[RegEx]::Escape($_)}) -join '|'))") {
@@ -138,7 +138,7 @@ function New-VSCodeBuildProject {
                 }
             })]
         $ServiceRole,
-        [parameter(Mandatory = $false)]
+        [parameter(Mandatory = $true)]
         $Environment,
         [parameter(Mandatory = $false)]
         [ValidateScript( {
@@ -151,7 +151,7 @@ function New-VSCodeBuildProject {
                 }
             })]
         $EncryptionKey,
-        [parameter(Mandatory = $false)]
+        [parameter(Mandatory = $true)]
         $Source,
         [parameter(Mandatory = $false)]
         [ValidateScript( {
@@ -244,14 +244,7 @@ function New-VSCodeBuildProject {
                     if (!($ResourceParams["Properties"])) {
                         $ResourceParams.Add("Properties",([PSCustomObject]@{}))
                     }
-                    $val = $((Get-Variable $key).Value)
-                    if ($val -eq "True") {
-                        $val = "true"
-                    }
-                    elseif ($val -eq "False") {
-                        $val = "false"
-                    }
-                    $ResourceParams["Properties"] | Add-Member -MemberType NoteProperty -Name $key -Value $val
+                    $ResourceParams["Properties"] | Add-Member -MemberType NoteProperty -Name $key -Value $PSBoundParameters.$key
                 }
             }
         }

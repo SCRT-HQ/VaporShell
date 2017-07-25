@@ -10,7 +10,7 @@ function Add-VSCodeBuildProjectEnvironment {
         http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-codebuild-project-environment.html
 
     .PARAMETER Type
-		Required: False    
+		Required: True    
 		Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-codebuild-project-environment.html#cfn-codebuild-project-environment-type    
 		PrimitiveType: String    
 		UpdateType: Mutable    
@@ -22,14 +22,20 @@ function Add-VSCodeBuildProjectEnvironment {
 		ItemType: EnvironmentVariable    
 		UpdateType: Mutable    
 
-    .PARAMETER Image
+    .PARAMETER PrivilegedMode
 		Required: False    
+		Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-codebuild-project-environment.html#cfn-codebuild-project-environment-privilegedmode    
+		PrimitiveType: Boolean    
+		UpdateType: Mutable    
+
+    .PARAMETER Image
+		Required: True    
 		Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-codebuild-project-environment.html#cfn-codebuild-project-environment-image    
 		PrimitiveType: String    
 		UpdateType: Mutable    
 
     .PARAMETER ComputeType
-		Required: False    
+		Required: True    
 		Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-codebuild-project-environment.html#cfn-codebuild-project-environment-computetype    
 		PrimitiveType: String    
 		UpdateType: Mutable    
@@ -41,7 +47,7 @@ function Add-VSCodeBuildProjectEnvironment {
     [cmdletbinding()]
     Param
     (
-        [parameter(Mandatory = $false)]
+        [parameter(Mandatory = $true)]
         [ValidateScript( {
                 $allowedTypes = "System.String","Vaporshell.Function"
                 if ([string]$($_.PSTypeNames) -match "($(($allowedTypes|ForEach-Object{[RegEx]::Escape($_)}) -join '|'))") {
@@ -64,6 +70,9 @@ function Add-VSCodeBuildProjectEnvironment {
             })]
         $EnvironmentVariables,
         [parameter(Mandatory = $false)]
+        [System.Boolean]
+        $PrivilegedMode,
+        [parameter(Mandatory = $true)]
         [ValidateScript( {
                 $allowedTypes = "System.String","Vaporshell.Function"
                 if ([string]$($_.PSTypeNames) -match "($(($allowedTypes|ForEach-Object{[RegEx]::Escape($_)}) -join '|'))") {
@@ -74,7 +83,7 @@ function Add-VSCodeBuildProjectEnvironment {
                 }
             })]
         $Image,
-        [parameter(Mandatory = $false)]
+        [parameter(Mandatory = $true)]
         [ValidateScript( {
                 $allowedTypes = "System.String","Vaporshell.Function"
                 if ([string]$($_.PSTypeNames) -match "($(($allowedTypes|ForEach-Object{[RegEx]::Escape($_)}) -join '|'))") {
@@ -90,15 +99,8 @@ function Add-VSCodeBuildProjectEnvironment {
         $obj = [PSCustomObject]@{}
     }
     Process {
-        foreach ($psParamKey in $PSBoundParameters.Keys) {
-            $val = $((Get-Variable $psParamKey).Value)
-            if ($val -eq "True") {
-                $val = "true"
-            }
-            elseif ($val -eq "False") {
-                $val = "false"
-            }
-            $obj | Add-Member -MemberType NoteProperty -Name $psParamKey -Value $val
+        foreach ($key in $PSBoundParameters.Keys) {
+            $obj | Add-Member -MemberType NoteProperty -Name $key -Value $PSBoundParameters.$key
         }
     }
     End {

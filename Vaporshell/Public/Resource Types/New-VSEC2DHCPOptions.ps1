@@ -42,8 +42,10 @@ function New-VSEC2DHCPOptions {
 
     .PARAMETER NtpServers
 		Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ec2-dhcp-options.html#cfn-ec2-dhcpoptions-ntpservers    
-		PrimitiveType: String    
+		DuplicatesAllowed: True    
+		PrimitiveItemType: String    
 		Required: False    
+		Type: List    
 		UpdateType: Immutable    
 
     .PARAMETER Tags
@@ -120,15 +122,6 @@ function New-VSEC2DHCPOptions {
         [Int]
         $NetbiosNodeType,
         [parameter(Mandatory = $false)]
-        [ValidateScript( {
-                $allowedTypes = "System.String","Vaporshell.Function"
-                if ([string]$($_.PSTypeNames) -match "($(($allowedTypes|ForEach-Object{[RegEx]::Escape($_)}) -join '|'))") {
-                    $true
-                }
-                else {
-                    throw "This parameter only accepts the following types: $($allowedTypes -join ", "). The current types of the value are: $($_.PSTypeNames -join ", ")."
-                }
-            })]
         $NtpServers,
         [parameter(Mandatory = $false)]
         [ValidateScript( {
@@ -209,6 +202,12 @@ function New-VSEC2DHCPOptions {
                     }
                     $ResourceParams["Properties"] | Add-Member -MemberType NoteProperty -Name NetbiosNameServers -Value @($NetbiosNameServers)
                 }
+                'NtpServers' {
+                    if (!($ResourceParams["Properties"])) {
+                        $ResourceParams.Add("Properties",([PSCustomObject]@{}))
+                    }
+                    $ResourceParams["Properties"] | Add-Member -MemberType NoteProperty -Name NtpServers -Value @($NtpServers)
+                }
                 'Tags' {
                     if (!($ResourceParams["Properties"])) {
                         $ResourceParams.Add("Properties",([PSCustomObject]@{}))
@@ -219,14 +218,7 @@ function New-VSEC2DHCPOptions {
                     if (!($ResourceParams["Properties"])) {
                         $ResourceParams.Add("Properties",([PSCustomObject]@{}))
                     }
-                    $val = $((Get-Variable $key).Value)
-                    if ($val -eq "True") {
-                        $val = "true"
-                    }
-                    elseif ($val -eq "False") {
-                        $val = "false"
-                    }
-                    $ResourceParams["Properties"] | Add-Member -MemberType NoteProperty -Name $key -Value $val
+                    $ResourceParams["Properties"] | Add-Member -MemberType NoteProperty -Name $key -Value $PSBoundParameters.$key
                 }
             }
         }

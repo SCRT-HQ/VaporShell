@@ -48,6 +48,12 @@ function New-VSRDSDBInstance {
 		Required: False    
 		UpdateType: Immutable    
 
+    .PARAMETER CopyTagsToSnapshot
+		Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-rds-database-instance.html#cfn-rds-dbinstance-copytagstosnapshot    
+		PrimitiveType: Boolean    
+		Required: False    
+		UpdateType: Mutable    
+
     .PARAMETER DBClusterIdentifier
 		Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-rds-database-instance.html#cfn-rds-dbinstance-dbclusteridentifier    
 		PrimitiveType: String    
@@ -337,6 +343,9 @@ function New-VSRDSDBInstance {
                 }
             })]
         $CharacterSetName,
+        [parameter(Mandatory = $false)]
+        [System.Boolean]
+        $CopyTagsToSnapshot,
         [parameter(Mandatory = $false)]
         [ValidateScript( {
                 $allowedTypes = "System.String","Vaporshell.Function"
@@ -698,14 +707,7 @@ function New-VSRDSDBInstance {
                     if (!($ResourceParams["Properties"])) {
                         $ResourceParams.Add("Properties",([PSCustomObject]@{}))
                     }
-                    $val = $((Get-Variable $key).Value)
-                    if ($val -eq "True") {
-                        $val = "true"
-                    }
-                    elseif ($val -eq "False") {
-                        $val = "false"
-                    }
-                    $ResourceParams["Properties"] | Add-Member -MemberType NoteProperty -Name $key -Value $val
+                    $ResourceParams["Properties"] | Add-Member -MemberType NoteProperty -Name $key -Value $PSBoundParameters.$key
                 }
             }
         }

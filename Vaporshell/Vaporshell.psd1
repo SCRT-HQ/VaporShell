@@ -12,7 +12,7 @@
     RootModule            = 'Vaporshell.psm1'
 
     # Version number of this module.
-    ModuleVersion         = '1.1.6'
+    ModuleVersion         = '1.2.1'
 
     # ID used to uniquely identify this module
     GUID                  = 'd526494c-6e59-41ff-ad05-eedbc1473b6a'
@@ -46,7 +46,7 @@ Recommended Additional Installs:
 
 ~ ~ ~ Getting Started ~ ~ ~
 
-http://vaporshell.io/docs/examples
+http://vaporshell.io/docs
 
 
 ~ ~ ~ Module Digest ~ ~ ~
@@ -62,6 +62,16 @@ http://vaporshell.io/docs/examples
 ~ ~ ~ Change Log ~ ~ ~
 
 http://vaporshell.io/changelog
+
+
+~ ~ ~ Disclaimer ~ ~ ~
+
+This module is only to be used to ease creation of CloudFormation templates. Any stack creations within AWS are the responsibility of the person/group deploying it, so please validate any template builds using `aws cloudformation validate-template`! ([Click here for documentation from AWS](http://docs.aws.amazon.com/cli/latest/reference/cloudformation/validate-template.html))
+
+If you find any oddities with the template build, please open an issue here on GitHub and include your script with sensitive data redacted, what you were expecting it to add to the template and what actually was added.
+
+Thanks!
+Nate Ferrell @ SCRT HQ
 
 '
 

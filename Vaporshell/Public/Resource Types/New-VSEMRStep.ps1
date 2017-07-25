@@ -7,31 +7,31 @@ function New-VSEMRStep {
         Adds an AWS::EMR::Step resource to the template
 
     .LINK
-        http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-elasticmapreduce-step.html
+        http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-emr-step.html
 
     .PARAMETER LogicalId
         The logical ID must be alphanumeric (A-Za-z0-9) and unique within the template. Use the logical name to reference the resource in other parts of the template. For example, if you want to map an Amazon Elastic Block Store volume to an Amazon EC2 instance, you reference the logical IDs to associate the block stores with the instance.
 
     .PARAMETER ActionOnFailure
-		Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-elasticmapreduce-step.html#cfn-elasticmapreduce-step-actiononfailure    
+		Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-emr-step.html#cfn-elasticmapreduce-step-actiononfailure    
 		PrimitiveType: String    
 		Required: True    
 		UpdateType: Immutable    
 
     .PARAMETER HadoopJarStep
-		Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-elasticmapreduce-step.html#cfn-elasticmapreduce-step-hadoopjarstep    
+		Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-emr-step.html#cfn-elasticmapreduce-step-hadoopjarstep    
 		Required: True    
 		Type: HadoopJarStepConfig    
 		UpdateType: Immutable    
 
     .PARAMETER JobFlowId
-		Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-elasticmapreduce-step.html#cfn-elasticmapreduce-step-jobflowid    
+		Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-emr-step.html#cfn-elasticmapreduce-step-jobflowid    
 		PrimitiveType: String    
 		Required: True    
 		UpdateType: Immutable    
 
     .PARAMETER Name
-		Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-elasticmapreduce-step.html#cfn-elasticmapreduce-step-name    
+		Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-emr-step.html#cfn-elasticmapreduce-step-name    
 		PrimitiveType: String    
 		Required: True    
 		UpdateType: Immutable    
@@ -178,14 +178,7 @@ function New-VSEMRStep {
                     if (!($ResourceParams["Properties"])) {
                         $ResourceParams.Add("Properties",([PSCustomObject]@{}))
                     }
-                    $val = $((Get-Variable $key).Value)
-                    if ($val -eq "True") {
-                        $val = "true"
-                    }
-                    elseif ($val -eq "False") {
-                        $val = "false"
-                    }
-                    $ResourceParams["Properties"] | Add-Member -MemberType NoteProperty -Name $key -Value $val
+                    $ResourceParams["Properties"] | Add-Member -MemberType NoteProperty -Name $key -Value $PSBoundParameters.$key
                 }
             }
         }

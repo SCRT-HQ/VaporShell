@@ -48,15 +48,8 @@ function Add-VSAutoScalingScalingPolicyStepAdjustment {
         $obj = [PSCustomObject]@{}
     }
     Process {
-        foreach ($psParamKey in $PSBoundParameters.Keys) {
-            $val = $((Get-Variable $psParamKey).Value)
-            if ($val -eq "True") {
-                $val = "true"
-            }
-            elseif ($val -eq "False") {
-                $val = "false"
-            }
-            $obj | Add-Member -MemberType NoteProperty -Name $psParamKey -Value $val
+        foreach ($key in $PSBoundParameters.Keys) {
+            $obj | Add-Member -MemberType NoteProperty -Name $key -Value $PSBoundParameters.$key
         }
     }
     End {

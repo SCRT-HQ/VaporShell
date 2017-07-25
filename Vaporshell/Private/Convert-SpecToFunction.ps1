@@ -353,14 +353,7 @@ if ($ResourceType -ne "Property") {
                     if (!(`$ResourceParams["Properties"])) {
                         `$ResourceParams.Add("Properties",([PSCustomObject]@{}))
                     }
-                    `$val = `$((Get-Variable `$key).Value)
-                    if (`$val -eq "True") {
-                        `$val = "true"
-                    }
-                    elseif (`$val -eq "False") {
-                        `$val = "false"
-                    }
-                    `$ResourceParams["Properties"] | Add-Member -MemberType NoteProperty -Name `$key -Value `$val
+                    `$ResourceParams["Properties"] | Add-Member -MemberType NoteProperty -Name `$key -Value `$PSBoundParameters.`$key
                 }
             }
         }
@@ -380,15 +373,8 @@ $scriptContents += @"
         `$obj = [PSCustomObject]@{}
     }
     Process {
-        foreach (`$psParamKey in `$PSBoundParameters.Keys) {
-            `$val = `$((Get-Variable `$psParamKey).Value)
-            if (`$val -eq "True") {
-                `$val = "true"
-            }
-            elseif (`$val -eq "False") {
-                `$val = "false"
-            }
-            `$obj | Add-Member -MemberType NoteProperty -Name `$psParamKey -Value `$val
+        foreach (`$key in `$PSBoundParameters.Keys) {
+            `$obj | Add-Member -MemberType NoteProperty -Name `$key -Value `$PSBoundParameters.`$key
         }
     }
     End {

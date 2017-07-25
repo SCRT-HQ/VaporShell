@@ -50,6 +50,14 @@ function New-VSElasticBeanstalkEnvironment {
 		Required: False    
 		UpdateType: Immutable    
 
+    .PARAMETER Tags
+		Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-beanstalk-environment.html#cfn-elasticbeanstalk-environment-tags    
+		DuplicatesAllowed: True    
+		ItemType: Tag    
+		Required: False    
+		Type: List    
+		UpdateType: Mutable    
+
     .PARAMETER TemplateName
 		Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-beanstalk-environment.html#cfn-beanstalk-environment-templatename    
 		PrimitiveType: String    
@@ -183,6 +191,17 @@ function New-VSElasticBeanstalkEnvironment {
         $SolutionStackName,
         [parameter(Mandatory = $false)]
         [ValidateScript( {
+                $allowedTypes = "Vaporshell.Resource.Tag","System.Management.Automation.PSCustomObject"
+                if ([string]$($_.PSTypeNames) -match "($(($allowedTypes|ForEach-Object{[RegEx]::Escape($_)}) -join '|'))") {
+                    $true
+                }
+                else {
+                    throw "This parameter only accepts the following types: $($allowedTypes -join ", "). The current types of the value are: $($_.PSTypeNames -join ", ")."
+                }
+            })]
+        $Tags,
+        [parameter(Mandatory = $false)]
+        [ValidateScript( {
                 $allowedTypes = "System.String","Vaporshell.Function"
                 if ([string]$($_.PSTypeNames) -match "($(($allowedTypes|ForEach-Object{[RegEx]::Escape($_)}) -join '|'))") {
                     $true
@@ -267,18 +286,17 @@ function New-VSElasticBeanstalkEnvironment {
                     }
                     $ResourceParams["Properties"] | Add-Member -MemberType NoteProperty -Name OptionSettings -Value @($OptionSettings)
                 }
+                'Tags' {
+                    if (!($ResourceParams["Properties"])) {
+                        $ResourceParams.Add("Properties",([PSCustomObject]@{}))
+                    }
+                    $ResourceParams["Properties"] | Add-Member -MemberType NoteProperty -Name Tags -Value @($Tags)
+                }
                 Default {
                     if (!($ResourceParams["Properties"])) {
                         $ResourceParams.Add("Properties",([PSCustomObject]@{}))
                     }
-                    $val = $((Get-Variable $key).Value)
-                    if ($val -eq "True") {
-                        $val = "true"
-                    }
-                    elseif ($val -eq "False") {
-                        $val = "false"
-                    }
-                    $ResourceParams["Properties"] | Add-Member -MemberType NoteProperty -Name $key -Value $val
+                    $ResourceParams["Properties"] | Add-Member -MemberType NoteProperty -Name $key -Value $PSBoundParameters.$key
                 }
             }
         }

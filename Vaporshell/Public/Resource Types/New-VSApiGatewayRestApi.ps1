@@ -12,6 +12,14 @@ function New-VSApiGatewayRestApi {
     .PARAMETER LogicalId
         The logical ID must be alphanumeric (A-Za-z0-9) and unique within the template. Use the logical name to reference the resource in other parts of the template. For example, if you want to map an Amazon Elastic Block Store volume to an Amazon EC2 instance, you reference the logical IDs to associate the block stores with the instance.
 
+    .PARAMETER BinaryMediaTypes
+		Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-apigateway-restapi.html#cfn-apigateway-restapi-binarymediatypes    
+		DuplicatesAllowed: False    
+		PrimitiveItemType: String    
+		Required: False    
+		Type: List    
+		UpdateType: Mutable    
+
     .PARAMETER Body
 		Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-apigateway-restapi.html#cfn-apigateway-restapi-body    
 		PrimitiveType: Json    
@@ -109,6 +117,8 @@ function New-VSApiGatewayRestApi {
             })]
         [System.String]
         $LogicalId,
+        [parameter(Mandatory = $false)]
+        $BinaryMediaTypes,
         [parameter(Mandatory = $false)]
         $Body,
         [parameter(Mandatory = $false)]
@@ -219,18 +229,17 @@ function New-VSApiGatewayRestApi {
                 'Condition' {
                     $ResourceParams.Add("Condition",$Condition)
                 }
+                'BinaryMediaTypes' {
+                    if (!($ResourceParams["Properties"])) {
+                        $ResourceParams.Add("Properties",([PSCustomObject]@{}))
+                    }
+                    $ResourceParams["Properties"] | Add-Member -MemberType NoteProperty -Name BinaryMediaTypes -Value @($BinaryMediaTypes)
+                }
                 Default {
                     if (!($ResourceParams["Properties"])) {
                         $ResourceParams.Add("Properties",([PSCustomObject]@{}))
                     }
-                    $val = $((Get-Variable $key).Value)
-                    if ($val -eq "True") {
-                        $val = "true"
-                    }
-                    elseif ($val -eq "False") {
-                        $val = "false"
-                    }
-                    $ResourceParams["Properties"] | Add-Member -MemberType NoteProperty -Name $key -Value $val
+                    $ResourceParams["Properties"] | Add-Member -MemberType NoteProperty -Name $key -Value $PSBoundParameters.$key
                 }
             }
         }

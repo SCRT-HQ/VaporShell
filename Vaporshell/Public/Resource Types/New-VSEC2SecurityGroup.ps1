@@ -27,7 +27,7 @@ function New-VSEC2SecurityGroup {
     .PARAMETER SecurityGroupEgress
 		Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-security-group.html#cfn-ec2-securitygroup-securitygroupegress    
 		DuplicatesAllowed: True    
-		ItemType: Rule    
+		ItemType: Egress    
 		Required: False    
 		Type: List    
 		UpdateType: Mutable    
@@ -35,7 +35,7 @@ function New-VSEC2SecurityGroup {
     .PARAMETER SecurityGroupIngress
 		Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-security-group.html#cfn-ec2-securitygroup-securitygroupingress    
 		DuplicatesAllowed: True    
-		ItemType: Rule    
+		ItemType: Ingress    
 		Required: False    
 		Type: List    
 		UpdateType: Mutable    
@@ -125,7 +125,7 @@ function New-VSEC2SecurityGroup {
         $GroupName,
         [parameter(Mandatory = $false)]
         [ValidateScript( {
-                $allowedTypes = "Vaporshell.Resource.EC2.SecurityGroup.Rule"
+                $allowedTypes = "Vaporshell.Resource.EC2.SecurityGroup.Egress"
                 if ([string]$($_.PSTypeNames) -match "($(($allowedTypes|ForEach-Object{[RegEx]::Escape($_)}) -join '|'))") {
                     $true
                 }
@@ -136,7 +136,7 @@ function New-VSEC2SecurityGroup {
         $SecurityGroupEgress,
         [parameter(Mandatory = $false)]
         [ValidateScript( {
-                $allowedTypes = "Vaporshell.Resource.EC2.SecurityGroup.Rule"
+                $allowedTypes = "Vaporshell.Resource.EC2.SecurityGroup.Ingress"
                 if ([string]$($_.PSTypeNames) -match "($(($allowedTypes|ForEach-Object{[RegEx]::Escape($_)}) -join '|'))") {
                     $true
                 }
@@ -245,14 +245,7 @@ function New-VSEC2SecurityGroup {
                     if (!($ResourceParams["Properties"])) {
                         $ResourceParams.Add("Properties",([PSCustomObject]@{}))
                     }
-                    $val = $((Get-Variable $key).Value)
-                    if ($val -eq "True") {
-                        $val = "true"
-                    }
-                    elseif ($val -eq "False") {
-                        $val = "false"
-                    }
-                    $ResourceParams["Properties"] | Add-Member -MemberType NoteProperty -Name $key -Value $val
+                    $ResourceParams["Properties"] | Add-Member -MemberType NoteProperty -Name $key -Value $PSBoundParameters.$key
                 }
             }
         }

@@ -54,6 +54,12 @@ function New-VSApplicationAutoScalingScalingPolicy {
 		Type: StepScalingPolicyConfiguration    
 		UpdateType: Mutable    
 
+    .PARAMETER TargetTrackingScalingPolicyConfiguration
+		Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-applicationautoscaling-scalingpolicy.html#cfn-applicationautoscaling-scalingpolicy-targettrackingscalingpolicyconfiguration    
+		Required: False    
+		Type: TargetTrackingScalingPolicyConfiguration    
+		UpdateType: Mutable    
+
     .PARAMETER DeletionPolicy
         With the DeletionPolicy attribute you can preserve or (in some cases) backup a resource when its stack is deleted. You specify a DeletionPolicy attribute for each resource that you want to control. If a resource has no DeletionPolicy attribute, AWS CloudFormation deletes the resource by default.
 
@@ -169,6 +175,8 @@ function New-VSApplicationAutoScalingScalingPolicy {
         $ServiceNamespace,
         [parameter(Mandatory = $false)]
         $StepScalingPolicyConfiguration,
+        [parameter(Mandatory = $false)]
+        $TargetTrackingScalingPolicyConfiguration,
         [ValidateSet("Delete","Retain","Snapshot")]
         [System.String]
         $DeletionPolicy,
@@ -229,14 +237,7 @@ function New-VSApplicationAutoScalingScalingPolicy {
                     if (!($ResourceParams["Properties"])) {
                         $ResourceParams.Add("Properties",([PSCustomObject]@{}))
                     }
-                    $val = $((Get-Variable $key).Value)
-                    if ($val -eq "True") {
-                        $val = "true"
-                    }
-                    elseif ($val -eq "False") {
-                        $val = "false"
-                    }
-                    $ResourceParams["Properties"] | Add-Member -MemberType NoteProperty -Name $key -Value $val
+                    $ResourceParams["Properties"] | Add-Member -MemberType NoteProperty -Name $key -Value $PSBoundParameters.$key
                 }
             }
         }

@@ -72,8 +72,10 @@ function New-VSAutoScalingAutoScalingGroup {
 
     .PARAMETER MetricsCollection
 		Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-as-group.html#cfn-as-group-metricscollection    
+		DuplicatesAllowed: True    
+		ItemType: MetricsCollection    
 		Required: False    
-		Type: MetricsCollection    
+		Type: List    
 		UpdateType: Mutable    
 
     .PARAMETER MinSize
@@ -84,8 +86,10 @@ function New-VSAutoScalingAutoScalingGroup {
 
     .PARAMETER NotificationConfigurations
 		Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-as-group.html#cfn-as-group-notificationconfigurations    
+		DuplicatesAllowed: True    
+		ItemType: NotificationConfiguration    
 		Required: False    
-		Type: NotificationConfigurations    
+		Type: List    
 		UpdateType: Mutable    
 
     .PARAMETER PlacementGroup
@@ -252,6 +256,15 @@ function New-VSAutoScalingAutoScalingGroup {
             })]
         $MaxSize,
         [parameter(Mandatory = $false)]
+        [ValidateScript( {
+                $allowedTypes = "Vaporshell.Resource.AutoScaling.AutoScalingGroup.MetricsCollection"
+                if ([string]$($_.PSTypeNames) -match "($(($allowedTypes|ForEach-Object{[RegEx]::Escape($_)}) -join '|'))") {
+                    $true
+                }
+                else {
+                    throw "This parameter only accepts the following types: $($allowedTypes -join ", "). The current types of the value are: $($_.PSTypeNames -join ", ")."
+                }
+            })]
         $MetricsCollection,
         [parameter(Mandatory = $true)]
         [ValidateScript( {
@@ -265,6 +278,15 @@ function New-VSAutoScalingAutoScalingGroup {
             })]
         $MinSize,
         [parameter(Mandatory = $false)]
+        [ValidateScript( {
+                $allowedTypes = "Vaporshell.Resource.AutoScaling.AutoScalingGroup.NotificationConfiguration"
+                if ([string]$($_.PSTypeNames) -match "($(($allowedTypes|ForEach-Object{[RegEx]::Escape($_)}) -join '|'))") {
+                    $true
+                }
+                else {
+                    throw "This parameter only accepts the following types: $($allowedTypes -join ", "). The current types of the value are: $($_.PSTypeNames -join ", ")."
+                }
+            })]
         $NotificationConfigurations,
         [parameter(Mandatory = $false)]
         [ValidateScript( {
@@ -376,6 +398,18 @@ function New-VSAutoScalingAutoScalingGroup {
                     }
                     $ResourceParams["Properties"] | Add-Member -MemberType NoteProperty -Name LoadBalancerNames -Value @($LoadBalancerNames)
                 }
+                'MetricsCollection' {
+                    if (!($ResourceParams["Properties"])) {
+                        $ResourceParams.Add("Properties",([PSCustomObject]@{}))
+                    }
+                    $ResourceParams["Properties"] | Add-Member -MemberType NoteProperty -Name MetricsCollection -Value @($MetricsCollection)
+                }
+                'NotificationConfigurations' {
+                    if (!($ResourceParams["Properties"])) {
+                        $ResourceParams.Add("Properties",([PSCustomObject]@{}))
+                    }
+                    $ResourceParams["Properties"] | Add-Member -MemberType NoteProperty -Name NotificationConfigurations -Value @($NotificationConfigurations)
+                }
                 'Tags' {
                     if (!($ResourceParams["Properties"])) {
                         $ResourceParams.Add("Properties",([PSCustomObject]@{}))
@@ -404,14 +438,7 @@ function New-VSAutoScalingAutoScalingGroup {
                     if (!($ResourceParams["Properties"])) {
                         $ResourceParams.Add("Properties",([PSCustomObject]@{}))
                     }
-                    $val = $((Get-Variable $key).Value)
-                    if ($val -eq "True") {
-                        $val = "true"
-                    }
-                    elseif ($val -eq "False") {
-                        $val = "false"
-                    }
-                    $ResourceParams["Properties"] | Add-Member -MemberType NoteProperty -Name $key -Value $val
+                    $ResourceParams["Properties"] | Add-Member -MemberType NoteProperty -Name $key -Value $PSBoundParameters.$key
                 }
             }
         }
