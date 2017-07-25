@@ -9,7 +9,7 @@ description: Changes within each release of Vaporshell and plans/ideas for the f
     - [In-Progress](#in-progress)
     - [Long-Term](#long-term)
 - [Historical](#historical)
-    - [1.2.1](#121)
+    - [1.2.2](#122)
     - [1.2.0](#120)
     - [1.1.5](#115)
     - [1.1.0](#110)
@@ -43,7 +43,7 @@ description: Changes within each release of Vaporshell and plans/ideas for the f
 
 ## Historical
 
-### 1.2.1
+### 1.2.2
 
 - Updated module manifest description for PSGallery
 - Updated Resource and Property Types to include new entries from AWS Specifications
