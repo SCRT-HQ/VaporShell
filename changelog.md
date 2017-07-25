@@ -9,6 +9,7 @@ description: Changes within each release of Vaporshell and plans/ideas for the f
     - [In-Progress](#in-progress)
     - [Long-Term](#long-term)
 - [Historical](#historical)
+    - [1.2.1](#121)
     - [1.2.0](#120)
     - [1.1.5](#115)
     - [1.1.0](#110)
@@ -41,6 +42,13 @@ description: Changes within each release of Vaporshell and plans/ideas for the f
 ***
 
 ## Historical
+
+### 1.2.1
+
+- Updated module manifest description for PSGallery
+- Updated Resource and Property Types to include new entries from AWS Specifications
+- Updated Convert-SpecToFunction to clean up bool attribute addition (intermittent conversion from bool to string) and also leverage $PSBoundParameters (slight speed and cleanliness boost)
+
 
 ### 1.2.0
 
