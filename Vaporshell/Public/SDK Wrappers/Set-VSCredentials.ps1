@@ -17,7 +17,7 @@ function Set-VSCredentials {
         $Region
     )
     Begin {
-        Import-AWSSDK
+        Import-AWSSDK -Verbose:$false
         $optProps = @{}
         if ($PSBoundParameters.Keys -contains "AccessKey") {
             Write-Verbose "Setting AccessKey"

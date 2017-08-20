@@ -41,8 +41,10 @@ Describe "Module tests: $ModuleName" {
             $newFunctionCount = (Get-Command -Module Vaporshell).Count
             $newFunctionCount -ge $currentFunctionCount | Should Be $true
         }
-        It 'Should set the credentials correctly on the shared file' {
-            Set-VSCredentials -AccessKey $Env:AWS_ACCESS_KEY_ID -SecretKey $Env:AWS_SECRET_ACCESS_KEY -Region "USWest1"
+        if ($env:APPVEYOR) {
+            It 'Should set the credentials correctly on the shared file' {
+                Set-VSCredentials -AccessKey $Env:AWS_ACCESS_KEY_ID -SecretKey $Env:AWS_SECRET_ACCESS_KEY -Region "USWest1"
+            }
         }
     }
     Context 'Strict mode' {
@@ -167,7 +169,7 @@ Describe "Module tests: $ModuleName" {
             $template.Outputs | Should BeOfType 'System.Management.Automation.PSCustomObject'
             $template.Resources | Should BeOfType 'System.Management.Automation.PSCustomObject'
         }
-        if ($env:APPVEYOR -or $env:TRAVIS_OS_NAME -ne "osx") {
+        if ($env:APPVEYOR) {
             It 'Should export the template to YAML using cfn-flip and validate using the AWS SDK from Export-Vaporshell' {
                 $testPath = "$projectRoot\Template.yaml"
                 $template = Import-Vaporshell -Path "$projectRoot\Template.json"
@@ -231,7 +233,7 @@ Describe "Module tests: $ModuleName" {
             {$t.AddMapping("Fail")} | Should throw "You must use one of the following object types with this parameter: Vaporshell.Transform, Vaporshell.Mapping"
             {$t.AddMapping("Fail")} | Should throw "You must use one of the following object types with this parameter: Vaporshell.Transform, Vaporshell.Mapping"
         }
-        if ($env:APPVEYOR -or $env:TRAVIS_OS_NAME -ne "osx") {
+        if ($env:APPVEYOR) {
             It 'Should function the same for imported templates' {
                 $path = (Resolve-Path "$projectRoot\Template.yaml").Path
                 $t = Import-Vaporshell -Path $path
