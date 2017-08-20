@@ -11,6 +11,7 @@ function Confirm-TemplateIsValid {
         $ProfileName = "default"
     )
     Begin {
+        Import-AWSSDK
         $resolvedPath = (Resolve-Path $Path).Path
         Write-Verbose "Validating template file: $resolvedPath"
     }

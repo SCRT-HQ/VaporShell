@@ -29,8 +29,12 @@ foreach ($file in @($Public + $Private)) {
         )
     }
 }
-
-Import-AWSSDK -Verbose
+if ($env:CI) {
+    Import-AWSSDK -Verbose
+}
+else {
+    Import-AWSSDK
+}
 
 # Add in Pseudo Parameter variables from private text file (allows growth in case additional parameters need to be added in)
 $vars = @()

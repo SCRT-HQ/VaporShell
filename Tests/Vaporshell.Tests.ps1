@@ -168,17 +168,11 @@ Describe "Module tests: $ModuleName" {
             $template.Resources | Should BeOfType 'System.Management.Automation.PSCustomObject'
         }
         if ($env:APPVEYOR -or $env:TRAVIS_OS_NAME -ne "osx") {
-            It 'Should return System.String from validate-template directly' {
-                $testPath = "$projectRoot\Template.json"
-                $fileUrl = "$((Resolve-Path $testPath).Path.Replace("\","/"))"
-                $valid = aws cloudformation validate-template --template-body file://$fileUrl
-                $valid | Should BeOfType 'System.String'
-            }
-            It 'Should export the template to YAML using cfn-flip and validate using awscli from Export-Vaporshell' {
+            It 'Should export the template to YAML using cfn-flip and validate using the AWS SDK from Export-Vaporshell' {
                 $testPath = "$projectRoot\Template.yaml"
                 $template = Import-Vaporshell -Path "$projectRoot\Template.json"
                 $valid = Export-Vaporshell -VaporshellTemplate $template -As YAML -Path $testPath -ValidateTemplate -Force
-                $valid | Should BeOfType 'System.String'
+                $valid | Should BeOfType 'Amazon.CloudFormation.Model.ValidateTemplateResponse'
             }
         }
         It 'Should run remaining condition functions' {
