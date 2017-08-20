@@ -27,8 +27,6 @@ before_install:
       ln -s /usr/local/opt/openssl/lib/libssl.1.0.0.dylib /usr/local/lib/;
     fi
   - if [[ "$TRAVIS_OS_NAME" == "linux" ]]; then
-      chmod +x ci/awscreds.sh;
-      ./ci/awscreds.sh;
       sudo apt-get -y install python3;
       nvm install v6.0.0;
     fi

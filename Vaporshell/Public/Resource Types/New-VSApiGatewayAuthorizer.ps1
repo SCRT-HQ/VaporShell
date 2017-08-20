@@ -102,6 +102,8 @@ function New-VSApiGatewayAuthorizer {
     #>
     [OutputType('Vaporshell.Resource.ApiGateway.Authorizer')]
     [cmdletbinding()]
+    [Diagnostics.CodeAnalysis.SuppressMessageAttribute("PSAvoidUsingPlainTextForPassword","AuthorizerCredentials")]
+    [Diagnostics.CodeAnalysis.SuppressMessageAttribute("PSAvoidUsingUserNameAndPasswordParams","")]
     Param
     (
         [parameter(Mandatory = $true,Position = 0)]

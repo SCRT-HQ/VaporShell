@@ -15,6 +15,7 @@ $moduleRoot = Split-Path (Resolve-Path "$projectRoot\*\*.psd1")
 $udFile = (Resolve-Path "$projectRoot\Tests\UserData.sh").Path
 
 Import-Module $ModulePath -Force -ArgumentList $true
+$currentFunctionCount = (Get-Command -Module Vaporshell).Count
 
 Describe "Module tests: $ModuleName" {
     Context "Confirm files are valid Powershell syntax" {
@@ -31,6 +32,19 @@ Describe "Module tests: $ModuleName" {
             $errors = $null
             $null = [System.Management.Automation.PSParser]::Tokenize($contents, [ref]$errors)
             $errors.Count | Should Be 0
+        }
+        
+        It 'Should update Resource/Property Type functions' {
+            Update-VSResourceFunctions
+            Remove-Module Vaporshell
+            Import-Module $ModulePath -Force -ArgumentList $true
+            $newFunctionCount = (Get-Command -Module Vaporshell).Count
+            $newFunctionCount -ge $currentFunctionCount | Should Be $true
+        }
+        if ($env:APPVEYOR) {
+            It 'Should set the credentials correctly on the shared file' {
+                Set-VSCredentials -AccessKey $Env:AWS_ACCESS_KEY_ID -SecretKey $Env:AWS_SECRET_ACCESS_KEY -Region "USWest1"
+            }
         }
     }
     Context 'Strict mode' {
@@ -122,17 +136,17 @@ Describe "Module tests: $ModuleName" {
                 )
             )
             $vp1Params = @{
-                    "LogicalID"             = "EnvType"
-                    "Type"                  = "AWS::EC2::VPC::Id"
-                    "Description"           = "VpcId of your existing Virtual Private Cloud (VPC)"
-                    "ConstraintDescription" = "must be the VPC Id of an existing Virtual Private Cloud."
-                }
+                "LogicalID"             = "EnvType"
+                "Type"                  = "AWS::EC2::VPC::Id"
+                "Description"           = "VpcId of your existing Virtual Private Cloud (VPC)"
+                "ConstraintDescription" = "must be the VPC Id of an existing Virtual Private Cloud."
+            }
             $vp2Params = @{
-                    "LogicalID"             = "EnvType2"
-                    "Type"                  = "AWS::EC2::VPC::Id"
-                    "Description"           = "VpcId of your existing Virtual Private Cloud (VPC)2"
-                    "ConstraintDescription" = "must be the VPC Id of an existing Virtual Private Cloud.2"
-                }
+                "LogicalID"             = "EnvType2"
+                "Type"                  = "AWS::EC2::VPC::Id"
+                "Description"           = "VpcId of your existing Virtual Private Cloud (VPC)2"
+                "ConstraintDescription" = "must be the VPC Id of an existing Virtual Private Cloud.2"
+            }
             $template.AddParameter((New-VaporParameter @vp1Params))
             $template.AddParameter((New-VaporParameter @vp2Params))
             $template.AddResource(
@@ -155,18 +169,12 @@ Describe "Module tests: $ModuleName" {
             $template.Outputs | Should BeOfType 'System.Management.Automation.PSCustomObject'
             $template.Resources | Should BeOfType 'System.Management.Automation.PSCustomObject'
         }
-        if ($env:APPVEYOR -or $env:TRAVIS_OS_NAME -ne "osx") {
-            It 'Should return System.String from validate-template directly' {
-                $testPath = "$projectRoot\Template.json"
-                $fileUrl = "$((Resolve-Path $testPath).Path.Replace("\","/"))"
-                $valid = aws cloudformation validate-template --template-body file://$fileUrl
-                $valid | Should BeOfType 'System.String'
-            }
-            It 'Should export the template to YAML using cfn-flip and validate using awscli from Export-Vaporshell' {
+        if ($env:APPVEYOR) {
+            It 'Should export the template to YAML using cfn-flip and validate using the AWS SDK from Export-Vaporshell' {
                 $testPath = "$projectRoot\Template.yaml"
                 $template = Import-Vaporshell -Path "$projectRoot\Template.json"
                 $valid = Export-Vaporshell -VaporshellTemplate $template -As YAML -Path $testPath -ValidateTemplate -Force
-                $valid | Should BeOfType 'System.String'
+                $valid | Should BeOfType 'Amazon.CloudFormation.Model.ValidateTemplateResponse'
             }
         }
         It 'Should run remaining condition functions' {
@@ -194,9 +202,9 @@ Describe "Module tests: $ModuleName" {
         It 'Should throw primary functions' {
             {New-VaporResource -LogicalId "!@#$%*&"} | Should throw "Cannot validate argument on parameter 'LogicalId'. The logical ID must be alphanumeric (a-z, A-Z, 0-9) and unique within the template."
             {New-VaporResource -LogicalId "Tests" -Properties 1} | Should throw "Cannot validate argument on parameter 'Properties'. The Properties parameter only accepts the following types: System.Management.Automation.PSCustomObject, Vaporshell.Resource.Properties. The current types of the value are: System.Int32, System.ValueType, System.Object."
-            {New-VaporResource -LogicalId "Tests" -Properties ([PSCustomObject]@{Name="Test"}) -Type "AWS::EC2::Instance" -CreationPolicy 1} | Should throw "Cannot validate argument on parameter 'CreationPolicy'. The CreationPolicy parameter only accepts the following types: Vaporshell.Resource.CreationPolicy. The current types of the value are: System.Int32, System.ValueType, System.Object."
-            {New-VaporResource -LogicalId "Tests" -Properties ([PSCustomObject]@{Name="Test"}) -Type "AWS::EC2::Instance" -UpdatePolicy 1} | Should throw "Cannot validate argument on parameter 'UpdatePolicy'. The UpdatePolicy parameter only accepts the following types: Vaporshell.Resource.UpdatePolicy. The current types of the value are: System.Int32, System.ValueType, System.Object."
-            {New-VaporResource -LogicalId "Tests" -Properties ([PSCustomObject]@{Name="Test"}) -Type "AWS::EC2::Instance" -Metadata 1} | Should throw "Cannot validate argument on parameter 'Metadata'. The UpdatePolicy parameter only accepts the following types: System.Management.Automation.PSCustomObject. The current types of the value are: System.Int32, System.ValueType, System.Object."
+            {New-VaporResource -LogicalId "Tests" -Properties ([PSCustomObject]@{Name = "Test"}) -Type "AWS::EC2::Instance" -CreationPolicy 1} | Should throw "Cannot validate argument on parameter 'CreationPolicy'. The CreationPolicy parameter only accepts the following types: Vaporshell.Resource.CreationPolicy. The current types of the value are: System.Int32, System.ValueType, System.Object."
+            {New-VaporResource -LogicalId "Tests" -Properties ([PSCustomObject]@{Name = "Test"}) -Type "AWS::EC2::Instance" -UpdatePolicy 1} | Should throw "Cannot validate argument on parameter 'UpdatePolicy'. The UpdatePolicy parameter only accepts the following types: Vaporshell.Resource.UpdatePolicy. The current types of the value are: System.Int32, System.ValueType, System.Object."
+            {New-VaporResource -LogicalId "Tests" -Properties ([PSCustomObject]@{Name = "Test"}) -Type "AWS::EC2::Instance" -Metadata 1} | Should throw "Cannot validate argument on parameter 'Metadata'. The UpdatePolicy parameter only accepts the following types: System.Management.Automation.PSCustomObject. The current types of the value are: System.Int32, System.ValueType, System.Object."
             {New-VaporMetadata -LogicalId "!@#$%*&"} | Should throw
             {New-VaporMetadata -LogicalId "Test" -Metadata 1} | Should throw
             {New-VaporMapping -LogicalId "!@#$%*&"} | Should throw
@@ -225,7 +233,7 @@ Describe "Module tests: $ModuleName" {
             {$t.AddMapping("Fail")} | Should throw "You must use one of the following object types with this parameter: Vaporshell.Transform, Vaporshell.Mapping"
             {$t.AddMapping("Fail")} | Should throw "You must use one of the following object types with this parameter: Vaporshell.Transform, Vaporshell.Mapping"
         }
-        if ($env:APPVEYOR -or $env:TRAVIS_OS_NAME -ne "osx") {
+        if ($env:APPVEYOR) {
             It 'Should function the same for imported templates' {
                 $path = (Resolve-Path "$projectRoot\Template.yaml").Path
                 $t = Import-Vaporshell -Path $path

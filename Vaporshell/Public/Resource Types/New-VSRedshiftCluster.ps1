@@ -222,6 +222,8 @@ function New-VSRedshiftCluster {
     #>
     [OutputType('Vaporshell.Resource.Redshift.Cluster')]
     [cmdletbinding()]
+    [Diagnostics.CodeAnalysis.SuppressMessageAttribute("PSAvoidUsingPlainTextForPassword","MasterUserPassword")]
+    [Diagnostics.CodeAnalysis.SuppressMessageAttribute("PSAvoidUsingUserNameAndPasswordParams","")]
     Param
     (
         [parameter(Mandatory = $true,Position = 0)]

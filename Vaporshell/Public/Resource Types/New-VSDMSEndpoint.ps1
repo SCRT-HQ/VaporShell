@@ -143,6 +143,8 @@ function New-VSDMSEndpoint {
     #>
     [OutputType('Vaporshell.Resource.DMS.Endpoint')]
     [cmdletbinding()]
+    [Diagnostics.CodeAnalysis.SuppressMessageAttribute("PSAvoidUsingPlainTextForPassword","Password")]
+    [Diagnostics.CodeAnalysis.SuppressMessageAttribute("PSAvoidUsingUserNameAndPasswordParams","")]
     Param
     (
         [parameter(Mandatory = $true,Position = 0)]

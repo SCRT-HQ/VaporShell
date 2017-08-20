@@ -32,6 +32,8 @@ function Add-VSOpsWorksStackRdsDbInstance {
     #>
     [OutputType('Vaporshell.Resource.OpsWorks.Stack.RdsDbInstance')]
     [cmdletbinding()]
+    [Diagnostics.CodeAnalysis.SuppressMessageAttribute("PSAvoidUsingPlainTextForPassword","DbPassword")]
+    [Diagnostics.CodeAnalysis.SuppressMessageAttribute("PSAvoidUsingUserNameAndPasswordParams","")]
     Param
     (
         [parameter(Mandatory = $true)]

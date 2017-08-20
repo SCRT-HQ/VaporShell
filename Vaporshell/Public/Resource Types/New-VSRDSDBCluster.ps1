@@ -158,6 +158,8 @@ function New-VSRDSDBCluster {
     #>
     [OutputType('Vaporshell.Resource.RDS.DBCluster')]
     [cmdletbinding()]
+    [Diagnostics.CodeAnalysis.SuppressMessageAttribute("PSAvoidUsingPlainTextForPassword","MasterUserPassword")]
+    [Diagnostics.CodeAnalysis.SuppressMessageAttribute("PSAvoidUsingUserNameAndPasswordParams","")]
     Param
     (
         [parameter(Mandatory = $true,Position = 0)]

@@ -82,6 +82,8 @@ function New-VSDirectoryServiceMicrosoftAD {
     #>
     [OutputType('Vaporshell.Resource.DirectoryService.MicrosoftAD')]
     [cmdletbinding()]
+    [Diagnostics.CodeAnalysis.SuppressMessageAttribute("PSAvoidUsingPlainTextForPassword","Password")]
+    [Diagnostics.CodeAnalysis.SuppressMessageAttribute("PSAvoidUsingUserNameAndPasswordParams","")]
     Param
     (
         [parameter(Mandatory = $true,Position = 0)]

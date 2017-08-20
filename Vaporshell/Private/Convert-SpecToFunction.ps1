@@ -9,7 +9,7 @@ function Convert-SpecToFunction {
       [String]
       $ResourceType
     )
-    $ModPath = $((Get-Module Vaporshell).ModuleBase)
+    $ModPath = $Script:VaporshellPath
     $folder = "$($ModPath)\Public"
     $Name = $Resource.Name
     $Link = $Resource.Value.Documentation
@@ -109,6 +109,18 @@ $scriptContents += @"
     #>
     [OutputType('$TypeName')]
     [cmdletbinding()]
+"@
+if ($passProps = $Properties.Name | Where-Object {$_ -like "*Password*" -or $_ -like "*Credential*"}) {
+    foreach ($passProp in $passProps) {
+        $scriptContents += @"
+    [Diagnostics.CodeAnalysis.SuppressMessageAttribute("PSAvoidUsingPlainTextForPassword","$passProp")]
+"@
+    }
+    $scriptContents += @"
+    [Diagnostics.CodeAnalysis.SuppressMessageAttribute("PSAvoidUsingUserNameAndPasswordParams","")]
+"@
+}
+$scriptContents += @"
     Param
     (
 "@
@@ -383,5 +395,5 @@ $scriptContents += @"
 }
 "@
 }
-Set-Content -Value $scriptContents -Path $PS1Path -Force
+Set-Content -Value $scriptContents -Path $PS1Path -Encoding UTF8 -Force
 }
