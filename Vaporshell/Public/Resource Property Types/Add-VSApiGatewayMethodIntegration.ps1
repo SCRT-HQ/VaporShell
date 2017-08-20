@@ -82,6 +82,8 @@ function Add-VSApiGatewayMethodIntegration {
     #>
     [OutputType('Vaporshell.Resource.ApiGateway.Method.Integration')]
     [cmdletbinding()]
+    [Diagnostics.CodeAnalysis.SuppressMessageAttribute("PSAvoidUsingPlainTextForPassword","Credentials")]
+    [Diagnostics.CodeAnalysis.SuppressMessageAttribute("PSAvoidUsingUserNameAndPasswordParams","")]
     Param
     (
         [parameter(Mandatory = $false)]

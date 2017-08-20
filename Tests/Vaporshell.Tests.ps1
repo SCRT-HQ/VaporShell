@@ -15,6 +15,7 @@ $moduleRoot = Split-Path (Resolve-Path "$projectRoot\*\*.psd1")
 $udFile = (Resolve-Path "$projectRoot\Tests\UserData.sh").Path
 
 Import-Module $ModulePath -Force -ArgumentList $true
+$currentFunctionCount = (Get-Command -Module Vaporshell).Count
 
 Describe "Module tests: $ModuleName" {
     Context "Confirm files are valid Powershell syntax" {
@@ -32,6 +33,16 @@ Describe "Module tests: $ModuleName" {
             $null = [System.Management.Automation.PSParser]::Tokenize($contents, [ref]$errors)
             $errors.Count | Should Be 0
         }
+        
+        It 'Should update Resource/Property Type functions' {
+            Update-VSResourceFunctions
+            Remove-Module Vaporshell
+            Import-Module $ModulePath -Force -ArgumentList $true
+            $newFunctionCount = (Get-Command -Module Vaporshell).Count
+            $newFunctionCount -ge $currentFunctionCount | Should Be $true
+        }
+        It 'Should set the credentials correctly on the shared file' {
+            Set-VSCredentials -AccessKey $Env:AWS_ACCESS_KEY_ID -SecretKey $Env:AWS_SECRET_ACCESS_KEY -Region $Env:AWS_DEFAULT_REGION
     }
     Context 'Strict mode' {
         Set-StrictMode -Version latest
@@ -122,17 +133,17 @@ Describe "Module tests: $ModuleName" {
                 )
             )
             $vp1Params = @{
-                    "LogicalID"             = "EnvType"
-                    "Type"                  = "AWS::EC2::VPC::Id"
-                    "Description"           = "VpcId of your existing Virtual Private Cloud (VPC)"
-                    "ConstraintDescription" = "must be the VPC Id of an existing Virtual Private Cloud."
-                }
+                "LogicalID"             = "EnvType"
+                "Type"                  = "AWS::EC2::VPC::Id"
+                "Description"           = "VpcId of your existing Virtual Private Cloud (VPC)"
+                "ConstraintDescription" = "must be the VPC Id of an existing Virtual Private Cloud."
+            }
             $vp2Params = @{
-                    "LogicalID"             = "EnvType2"
-                    "Type"                  = "AWS::EC2::VPC::Id"
-                    "Description"           = "VpcId of your existing Virtual Private Cloud (VPC)2"
-                    "ConstraintDescription" = "must be the VPC Id of an existing Virtual Private Cloud.2"
-                }
+                "LogicalID"             = "EnvType2"
+                "Type"                  = "AWS::EC2::VPC::Id"
+                "Description"           = "VpcId of your existing Virtual Private Cloud (VPC)2"
+                "ConstraintDescription" = "must be the VPC Id of an existing Virtual Private Cloud.2"
+            }
             $template.AddParameter((New-VaporParameter @vp1Params))
             $template.AddParameter((New-VaporParameter @vp2Params))
             $template.AddResource(
@@ -194,9 +205,9 @@ Describe "Module tests: $ModuleName" {
         It 'Should throw primary functions' {
             {New-VaporResource -LogicalId "!@#$%*&"} | Should throw "Cannot validate argument on parameter 'LogicalId'. The logical ID must be alphanumeric (a-z, A-Z, 0-9) and unique within the template."
             {New-VaporResource -LogicalId "Tests" -Properties 1} | Should throw "Cannot validate argument on parameter 'Properties'. The Properties parameter only accepts the following types: System.Management.Automation.PSCustomObject, Vaporshell.Resource.Properties. The current types of the value are: System.Int32, System.ValueType, System.Object."
-            {New-VaporResource -LogicalId "Tests" -Properties ([PSCustomObject]@{Name="Test"}) -Type "AWS::EC2::Instance" -CreationPolicy 1} | Should throw "Cannot validate argument on parameter 'CreationPolicy'. The CreationPolicy parameter only accepts the following types: Vaporshell.Resource.CreationPolicy. The current types of the value are: System.Int32, System.ValueType, System.Object."
-            {New-VaporResource -LogicalId "Tests" -Properties ([PSCustomObject]@{Name="Test"}) -Type "AWS::EC2::Instance" -UpdatePolicy 1} | Should throw "Cannot validate argument on parameter 'UpdatePolicy'. The UpdatePolicy parameter only accepts the following types: Vaporshell.Resource.UpdatePolicy. The current types of the value are: System.Int32, System.ValueType, System.Object."
-            {New-VaporResource -LogicalId "Tests" -Properties ([PSCustomObject]@{Name="Test"}) -Type "AWS::EC2::Instance" -Metadata 1} | Should throw "Cannot validate argument on parameter 'Metadata'. The UpdatePolicy parameter only accepts the following types: System.Management.Automation.PSCustomObject. The current types of the value are: System.Int32, System.ValueType, System.Object."
+            {New-VaporResource -LogicalId "Tests" -Properties ([PSCustomObject]@{Name = "Test"}) -Type "AWS::EC2::Instance" -CreationPolicy 1} | Should throw "Cannot validate argument on parameter 'CreationPolicy'. The CreationPolicy parameter only accepts the following types: Vaporshell.Resource.CreationPolicy. The current types of the value are: System.Int32, System.ValueType, System.Object."
+            {New-VaporResource -LogicalId "Tests" -Properties ([PSCustomObject]@{Name = "Test"}) -Type "AWS::EC2::Instance" -UpdatePolicy 1} | Should throw "Cannot validate argument on parameter 'UpdatePolicy'. The UpdatePolicy parameter only accepts the following types: Vaporshell.Resource.UpdatePolicy. The current types of the value are: System.Int32, System.ValueType, System.Object."
+            {New-VaporResource -LogicalId "Tests" -Properties ([PSCustomObject]@{Name = "Test"}) -Type "AWS::EC2::Instance" -Metadata 1} | Should throw "Cannot validate argument on parameter 'Metadata'. The UpdatePolicy parameter only accepts the following types: System.Management.Automation.PSCustomObject. The current types of the value are: System.Int32, System.ValueType, System.Object."
             {New-VaporMetadata -LogicalId "!@#$%*&"} | Should throw
             {New-VaporMetadata -LogicalId "Test" -Metadata 1} | Should throw
             {New-VaporMapping -LogicalId "!@#$%*&"} | Should throw

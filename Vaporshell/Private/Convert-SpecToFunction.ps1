@@ -109,6 +109,18 @@ $scriptContents += @"
     #>
     [OutputType('$TypeName')]
     [cmdletbinding()]
+"@
+if ($passProps = $Properties.Name | Where-Object {$_ -like "*Password*" -or $_ -like "*Credential*"}) {
+    foreach ($passProp in $passProps) {
+        $scriptContents += @"
+    [Diagnostics.CodeAnalysis.SuppressMessageAttribute("PSAvoidUsingPlainTextForPassword","$passProp")]
+"@
+    }
+    $scriptContents += @"
+    [Diagnostics.CodeAnalysis.SuppressMessageAttribute("PSAvoidUsingUserNameAndPasswordParams","")]
+"@
+}
+$scriptContents += @"
     Param
     (
 "@

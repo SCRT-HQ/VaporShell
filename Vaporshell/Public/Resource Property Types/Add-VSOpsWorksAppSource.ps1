@@ -50,6 +50,8 @@ function Add-VSOpsWorksAppSource {
     #>
     [OutputType('Vaporshell.Resource.OpsWorks.App.Source')]
     [cmdletbinding()]
+    [Diagnostics.CodeAnalysis.SuppressMessageAttribute("PSAvoidUsingPlainTextForPassword","Password")]
+    [Diagnostics.CodeAnalysis.SuppressMessageAttribute("PSAvoidUsingUserNameAndPasswordParams","")]
     Param
     (
         [parameter(Mandatory = $false)]

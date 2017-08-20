@@ -20,6 +20,8 @@ function Add-VSCognitoUserPoolPolicies {
     #>
     [OutputType('Vaporshell.Resource.Cognito.UserPool.Policies')]
     [cmdletbinding()]
+    [Diagnostics.CodeAnalysis.SuppressMessageAttribute("PSAvoidUsingPlainTextForPassword","PasswordPolicy")]
+    [Diagnostics.CodeAnalysis.SuppressMessageAttribute("PSAvoidUsingUserNameAndPasswordParams","")]
     Param
     (
         [parameter(Mandatory = $false)]

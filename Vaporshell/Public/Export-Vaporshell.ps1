@@ -96,7 +96,8 @@ function Export-Vaporshell {
             Write-Verbose "Exporting template to: $Path"
             $Final | Set-Content -Path $Path @ForcePref -Verbose:$false
             if ($ValidateTemplate) {
-                if (Get-Command aws -ErrorAction SilentlyContinue) {
+                Confirm-TemplateIsValid -Path $Path
+                <# if (Get-Command aws -ErrorAction SilentlyContinue) {
                     Write-Verbose "Validating template"
                     $Path = (Resolve-Path $Path).Path
                     $fileUrl = "$($Path.Replace("\","/"))"
@@ -107,7 +108,7 @@ function Export-Vaporshell {
                 }
                 else {
                     Write-Warning "AWS CLI tools not found in PATH! Skipping validation to prevent failure."
-                }
+                } #>
             }
         }
         else {
