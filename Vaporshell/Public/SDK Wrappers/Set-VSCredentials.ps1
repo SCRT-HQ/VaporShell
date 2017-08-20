@@ -1,29 +1,21 @@
 function Set-VSCredentials {
     [cmdletbinding()]
-    [Diagnostics.CodeAnalysis.SuppressMessageAttribute("PSAvoidUsingPlainTextForPassword","CredentialStore")]
-    [Diagnostics.CodeAnalysis.SuppressMessageAttribute("PSAvoidUsingUserNameAndPasswordParams","")]
     Param
     (
-      [parameter(Mandatory=$false,Position=0)]
-      [String]
-      $ProfileName = "default",
-      [parameter(Mandatory=$false)]
-      [String]
-      $AccessKey,
-      [parameter(Mandatory=$false)]
-      [String]
-      $SecretKey
+        [parameter(Mandatory = $false,Position = 0)]
+        [String]
+        $ProfileName = "default",
+        [parameter(Mandatory = $false)]
+        [String]
+        $AccessKey,
+        [parameter(Mandatory = $false)]
+        [String]
+        $SecretKey,
+        [parameter(Mandatory = $false)]
+        [ValidateSet("APNortheast1","APNortheast2","APSouth1","APSoutheast1","APSoutheast2","CACentral1","CNNorth1","EUCentral1","EUWest1","EUWest2","SAEast1","USEast1","USEast2","USGovCloudWest1","USWest1","USWest2")]
+        [String]
+        $Region
     )
-    DynamicParam {
-        $ParamAttrib  = New-Object System.Management.Automation.ParameterAttribute -Property @{Mandatory = $false;ParameterSetName = '__AllParameterSets'}
-        $AttribColl = New-Object  System.Collections.ObjectModel.Collection[System.Attribute]
-        $AttribColl.Add($ParamAttrib)
-        $AttribColl.Add((New-Object  System.Management.Automation.ValidateSetAttribute(([Amazon.RegionEndpoint]).GetFields().Name)))
-        $RuntimeParam  = New-Object System.Management.Automation.RuntimeDefinedParameter('Region',  [string], $AttribColl)
-        $RuntimeParamDic  = New-Object System.Management.Automation.RuntimeDefinedParameterDictionary
-        $RuntimeParamDic.Add('Region', $RuntimeParam)
-        return  $RuntimeParamDic
-    }
     Begin {
         $optProps = @{}
         if ($PSBoundParameters.Keys -contains "AccessKey") {

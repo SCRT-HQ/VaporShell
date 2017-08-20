@@ -9,7 +9,7 @@ function Convert-SpecToFunction {
       [String]
       $ResourceType
     )
-    $ModPath = $((Get-Module Vaporshell).ModuleBase)
+    $ModPath = $Script:VaporshellPath
     $folder = "$($ModPath)\Public"
     $Name = $Resource.Name
     $Link = $Resource.Value.Documentation
@@ -395,5 +395,5 @@ $scriptContents += @"
 }
 "@
 }
-Set-Content -Value $scriptContents -Path $PS1Path -Force
+Set-Content -Value $scriptContents -Path $PS1Path -Encoding UTF8 -Force
 }

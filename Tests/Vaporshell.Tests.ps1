@@ -42,7 +42,7 @@ Describe "Module tests: $ModuleName" {
             $newFunctionCount -ge $currentFunctionCount | Should Be $true
         }
         It 'Should set the credentials correctly on the shared file' {
-            Set-VSCredentials -AccessKey $Env:AWS_ACCESS_KEY_ID -SecretKey $Env:AWS_SECRET_ACCESS_KEY -Region $Env:AWS_DEFAULT_REGION
+            Set-VSCredentials -AccessKey $Env:AWS_ACCESS_KEY_ID -SecretKey $Env:AWS_SECRET_ACCESS_KEY -Region "USWest1"
         }
     }
     Context 'Strict mode' {
