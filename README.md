@@ -1,52 +1,52 @@
 | Build | AppVeyor (Windows) | Travis CI (Linux / macOS) | Code Coverage |
 |:-----:|:------------------:|:--------------------------:|:-------------:|
-| Master | [![Build status](https://ci.appveyor.com/api/projects/status/8a4jsfv42tbmlym8/branch/master?svg=true)](https://ci.appveyor.com/project/nferrell/vaporshell/branch/master) |  [![Build Status](https://travis-ci.org/scrthq/Vaporshell.svg?branch=master)](https://travis-ci.org/scrthq/Vaporshell) | [![Coverage Status](https://coveralls.io/repos/github/scrthq/Vaporshell/badge.svg?branch=dev)](https://coveralls.io/github/scrthq/Vaporshell?branch=master) |
-| Dev | [![Build status](https://ci.appveyor.com/api/projects/status/8a4jsfv42tbmlym8/branch/dev?svg=true)](https://ci.appveyor.com/project/nferrell/vaporshell/branch/dev) | [![Build Status](https://travis-ci.org/scrthq/Vaporshell.svg?branch=dev)](https://travis-ci.org/scrthq/Vaporshell) | [![Coverage Status](https://coveralls.io/repos/github/scrthq/Vaporshell/badge.svg?branch=dev)](https://coveralls.io/github/scrthq/Vaporshell?branch=dev) |
+| Master | [![Build status](https://ci.appveyor.com/api/projects/status/8a4jsfv42tbmlym8/branch/master?svg=true)](https://ci.appveyor.com/project/nferrell/VaporShell/branch/master) |  [![Build Status](https://travis-ci.org/scrthq/VaporShell.svg?branch=master)](https://travis-ci.org/scrthq/VaporShell) | [![Coverage Status](https://coveralls.io/repos/github/scrthq/VaporShell/badge.svg?branch=dev)](https://coveralls.io/github/scrthq/VaporShell?branch=master) |
+| Dev | [![Build status](https://ci.appveyor.com/api/projects/status/8a4jsfv42tbmlym8/branch/dev?svg=true)](https://ci.appveyor.com/project/nferrell/VaporShell/branch/dev) | [![Build Status](https://travis-ci.org/scrthq/VaporShell.svg?branch=dev)](https://travis-ci.org/scrthq/VaporShell) | [![Coverage Status](https://coveralls.io/repos/github/scrthq/VaporShell/badge.svg?branch=dev)](https://coveralls.io/github/scrthq/VaporShell?branch=dev) |
 
 
-# *Vaporshell* 
+# *VaporShell* 
 
-[Vaporshell](http://vaporshell.io/) is a module for Powershell that allows easier and less error prone build outs of AWS CloudFormation JSON templates using familiar syntax and structure to define AWS resources, while simultaneously gaining the capabilities of Powershell and removing the need to work with JSON directly.
+[VaporShell](http://VaporShell.io/) is a module for Powershell that allows easier and less error prone build outs of AWS CloudFormation JSON templates using familiar syntax and structure to define AWS resources, while simultaneously gaining the capabilities of Powershell and removing the need to work with JSON directly.
 
-Vaporshell allows you to either initialize a new template or import an existing template, add appropriate properties and export it out to JSON.
+VaporShell allows you to either initialize a new template or import an existing template, add appropriate properties and export it out to JSON.
 
 ***
 
 ### Like what's happening and want to send over some coffee money for fuel? Invoke-Donation by clicking below!
 
-[![Donate through Paypal](https://img.shields.io/badge/paypal-donate-brightgreen.svg)](https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&hosted_button_id=GU6CJMFGVP6ZS) [![Donate through Gratipay](https://img.shields.io/gratipay/user/scrthq.svg)](https://gratipay.com/Vaporshell)
+[![Donate through Paypal](https://img.shields.io/badge/paypal-donate-brightgreen.svg)](https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&hosted_button_id=GU6CJMFGVP6ZS) [![Donate through Gratipay](https://img.shields.io/gratipay/user/scrthq.svg)](https://gratipay.com/VaporShell)
 
 ***
 
 ## Getting Started (Documentation)
 
-http://vaporshell.io/docs
+http://VaporShell.io/docs
 
 ***
 
 ## Module Digest (Deeper Dive)
 
-http://vaporshell.io/docs/digest
+http://VaporShell.io/docs/digest
 
 ***
 
 ## Tips & Tricks
 
-http://vaporshell.io/docs/tips
+http://VaporShell.io/docs/tips
 
 
 ***
 
 ## Examples
 
-http://vaporshell.io/docs/examples
+http://VaporShell.io/docs/examples
 
 
 ***
 
 ## Change Log
 
-http://vaporshell.io/changelog
+http://VaporShell.io/changelog
 
 ***
 
