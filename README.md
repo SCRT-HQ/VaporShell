@@ -6,6 +6,8 @@
 
 # *VaporShell* 
 
+[![Join the chat at https://gitter.im/VaporShell/Lobby](https://badges.gitter.im/VaporShell/Lobby.svg)](https://gitter.im/VaporShell/Lobby?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge&utm_content=badge)
+
 [VaporShell](http://VaporShell.io/) is a module for Powershell that allows easier and less error prone build outs of AWS CloudFormation JSON templates using familiar syntax and structure to define AWS resources, while simultaneously gaining the capabilities of Powershell and removing the need to work with JSON directly.
 
 VaporShell allows you to either initialize a new template or import an existing template, add appropriate properties and export it out to JSON.
