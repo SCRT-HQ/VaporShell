@@ -1,4 +1,4 @@
-function New-VSLogsMetricFilter {
+﻿function New-VSLogsMetricFilter {
     <#
     .SYNOPSIS
         Adds an AWS::Logs::MetricFilter resource to the template
@@ -26,7 +26,7 @@ function New-VSLogsMetricFilter {
 
     .PARAMETER MetricTransformations
 		Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-logs-metricfilter.html#cfn-cwl-metricfilter-metrictransformations    
-		DuplicatesAllowed: True    
+		DuplicatesAllowed: False    
 		ItemType: MetricTransformation    
 		Required: True    
 		Type: List    

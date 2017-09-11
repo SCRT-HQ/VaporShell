@@ -16,24 +16,56 @@ function Import-Vaporshell {
         Vaporshell
     #>
     [OutputType('Vaporshell.Template')]
-    [cmdletbinding()]
+    [cmdletbinding(DefaultParameterSetName = "Path")]
     Param
     (
-        [parameter(Mandatory = $true,Position = 0)]
-        [ValidateScript({Test-Path $_})]
+        [parameter(Mandatory = $true,Position = 0,ParameterSetName = "Path")]
+        [Alias("FullName")]
+        [ValidateScript( {Test-Path $_})]
         [String]
-        $Path
+        $Path,
+        [parameter(Mandatory = $true,Position = 0,ValueFromPipeline = $true,ParameterSetName = "TemplateBody")]
+        [String]
+        $TemplateBody,
+        [parameter(Mandatory = $true,Position = 0,ParameterSetName = "RawUrl")]
+        [String]
+        $RawUrl
     )
-    $temp = Get-Content $Path -Verbose:$false
-    if ($temp -contains "Resources:") {
+    if ($PSCmdlet.ParameterSetName -eq "Path") {
+        $TemplateBody = [System.IO.File]::ReadAllText((Resolve-Path $Path))
+    }
+    elseif ($PSCmdlet.ParameterSetName -eq "RawUrl") {
+        $TemplateBody = (Invoke-WebRequest -Uri $RawUrl).Content
+    }
+    if ($TemplateBody -match "Resources:") {
         if (Get-Command cfn-flip -ErrorAction SilentlyContinue) {
-            $temp = cfn-flip $Path
+            $TemplateBody = ($TemplateBody | cfn-flip)
         }
         else {
-            throw "Template appears to be YAML but cfn-flip is not found in PATH. Unable to convert to JSON to import into Powershell. Please install cfn-flip then restart this console."
+            $PSCmdlet.ThrowTerminatingError((New-VSError -String "Template appears to be YAML but cfn-flip is not found in PATH. Unable to convert to JSON to import into Powershell. Please install cfn-flip then restart this console."))
         }
     }
-    $tempObj = $temp | ConvertFrom-Json -Verbose:$false
+    $tempObj = ConvertFrom-Json -InputObject $TemplateBody -Verbose:$false
+    $toJSON = {
+        Export-Vaporshell -VaporshellTemplate $this -As JSON -Verbose:$false
+    }
+    $memberParam = @{
+        MemberType  = "ScriptMethod"
+        InputObject = $tempObj
+        Name        = "ToJson"
+        Value       = $toJSON
+    }
+    Add-Member @memberParam
+    $toYAML = {
+        Export-Vaporshell -VaporshellTemplate $this -As YAML -Verbose:$false
+    }
+    $memberParam = @{
+        MemberType  = "ScriptMethod"
+        InputObject = $tempObj
+        Name        = "ToYaml"
+        Value       = $toYAML
+    }
+    Add-Member @memberParam
     $addMetadata = {
         Process {
             $ObjName = "Metadata"

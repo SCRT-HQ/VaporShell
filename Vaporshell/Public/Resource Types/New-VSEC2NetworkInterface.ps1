@@ -1,4 +1,4 @@
-function New-VSEC2NetworkInterface {
+﻿function New-VSEC2NetworkInterface {
     <#
     .SYNOPSIS
         Adds an AWS::EC2::NetworkInterface resource to the template
@@ -20,7 +20,7 @@ function New-VSEC2NetworkInterface {
 
     .PARAMETER GroupSet
 		Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ec2-network-interface.html#cfn-awsec2networkinterface-groupset    
-		DuplicatesAllowed: True    
+		DuplicatesAllowed: False    
 		PrimitiveItemType: String    
 		Required: False    
 		Type: List    
@@ -52,7 +52,7 @@ function New-VSEC2NetworkInterface {
 
     .PARAMETER PrivateIpAddresses
 		Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ec2-network-interface.html#cfn-awsec2networkinterface-privateipaddresses    
-		DuplicatesAllowed: True    
+		DuplicatesAllowed: False    
 		ItemType: PrivateIpAddressSpecification    
 		Required: False    
 		Type: List    

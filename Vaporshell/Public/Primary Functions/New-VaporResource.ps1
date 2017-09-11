@@ -105,7 +105,7 @@ function New-VaporResource {
                     $true
                 }
                 else {
-                    throw 'The logical ID must be alphanumeric (a-z, A-Z, 0-9) and unique within the template.'
+                    $PSCmdlet.ThrowTerminatingError((New-VSError -String 'The LogicalID must be alphanumeric (a-z, A-Z, 0-9) and unique within the template.'))
                 }
             })]
         [System.String]
@@ -115,12 +115,12 @@ function New-VaporResource {
         $Type,
         [parameter(Mandatory = $false,Position = 2)]
         [ValidateScript( {
-                $allowedTypes = "System.Management.Automation.PSCustomObject","Vaporshell.Resource.Properties"
+                $allowedTypes = "System.Management.Automation.PSCustomObject","Vaporshell.Resource.Properties","System.Collections.Hashtable"
                 if ([string]$($_.PSTypeNames) -match "($(($allowedTypes|ForEach-Object{[RegEx]::Escape($_)}) -join '|'))") {
                     $true
                 }
                 else {
-                    throw "The Properties parameter only accepts the following types: $($allowedTypes -join ", "). The current types of the value are: $($_.PSTypeNames -join ", ")."
+                    $PSCmdlet.ThrowTerminatingError((New-VSError -String "This parameter only accepts the following types: $($allowedTypes -join ", "). The current types of the value are: $($_.PSTypeNames -join ", ")."))
                 }
             })]
         $Properties,
@@ -131,7 +131,7 @@ function New-VaporResource {
                     $true
                 }
                 else {
-                    throw "The CreationPolicy parameter only accepts the following types: $($allowedTypes -join ", "). The current types of the value are: $($_.PSTypeNames -join ", ")."
+                    $PSCmdlet.ThrowTerminatingError((New-VSError -String "This parameter only accepts the following types: $($allowedTypes -join ", "). The current types of the value are: $($_.PSTypeNames -join ", ")."))
                 }
             })]
         $CreationPolicy,
@@ -149,7 +149,7 @@ function New-VaporResource {
                     $true
                 }
                 else {
-                    throw "The UpdatePolicy parameter only accepts the following types: $($allowedTypes -join ", "). The current types of the value are: $($_.PSTypeNames -join ", ")."
+                    $PSCmdlet.ThrowTerminatingError((New-VSError -String "This parameter only accepts the following types: $($allowedTypes -join ", "). The current types of the value are: $($_.PSTypeNames -join ", ")."))
                 }
             })]
         $Metadata,
@@ -160,7 +160,7 @@ function New-VaporResource {
                     $true
                 }
                 else {
-                    throw "The UpdatePolicy parameter only accepts the following types: $($allowedTypes -join ", "). The current types of the value are: $($_.PSTypeNames -join ", ")."
+                    $PSCmdlet.ThrowTerminatingError((New-VSError -String "This parameter only accepts the following types: $($allowedTypes -join ", "). The current types of the value are: $($_.PSTypeNames -join ", ")."))
                 }
             })]
         $UpdatePolicy,
@@ -177,7 +177,7 @@ function New-VaporResource {
         $obj.Props | Add-Member -MemberType NoteProperty -Name "Condition" -Value $Condition -Force
     }
     if ($Properties) {
-        $obj.Props | Add-Member -MemberType NoteProperty -Name "Properties" -Value $Properties -Force
+        $obj.Props | Add-Member -MemberType NoteProperty -Name "Properties" -Value ([PSCustomObject]$Properties) -Force
     }
     if ($CreationPolicy) {
         $obj.Props | Add-Member -MemberType NoteProperty -Name "CreationPolicy" -Value $CreationPolicy

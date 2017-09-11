@@ -1,4 +1,4 @@
-function New-VSECSService {
+﻿function New-VSECSService {
     <#
     .SYNOPSIS
         Adds an AWS::ECS::Service resource to the template
@@ -27,7 +27,7 @@ function New-VSECSService {
     .PARAMETER DesiredCount
 		Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ecs-service.html#cfn-ecs-service-desiredcount    
 		PrimitiveType: Integer    
-		Required: False    
+		Required: True    
 		UpdateType: Mutable    
 
     .PARAMETER LoadBalancers
@@ -132,7 +132,7 @@ function New-VSECSService {
         $Cluster,
         [parameter(Mandatory = $false)]
         $DeploymentConfiguration,
-        [parameter(Mandatory = $false)]
+        [parameter(Mandatory = $true)]
         [Int]
         $DesiredCount,
         [parameter(Mandatory = $false)]

@@ -19,7 +19,8 @@ function Update-VSResourceFunctions {
         [String]
         $Region = "NVirginia"
     )
-
+    $BeforeTypeCount = (Get-ChildItem -Path (Resolve-Path "$script:VaporshellPath\Public\Resource Types").Path).Count
+    $BeforePropCount = (Get-ChildItem -Path (Resolve-Path "$script:VaporshellPath\Public\Resource Property Types").Path).Count
     $regHash = @{
         Mumbai        = "https://d2senuesg1djtx.cloudfront.net/latest/gzip/CloudFormationResourceSpecification.json"
         Seoul         = "https://d1ane3fvebulky.cloudfront.net/latest/gzip/CloudFormationResourceSpecification.json"
@@ -49,4 +50,9 @@ function Update-VSResourceFunctions {
         Write-Verbose "Updating $($resource.Name)"
         Convert-SpecToFunction -Resource $resource -ResourceType Resource
     }
+    $AfterTypeCount = (Get-ChildItem -Path (Resolve-Path "$script:VaporshellPath\Public\Resource Types").Path).Count
+    $AfterPropCount = (Get-ChildItem -Path (Resolve-Path "$script:VaporshellPath\Public\Resource Property Types").Path).Count
+    $newType = $AfterTypeCount - $BeforeTypeCount
+    $newProp = $AfterPropCount - $BeforePropCount
+    Write-Verbose "`n`n$newType new Resource Type and $newProp Resource Property Type functions added to Vaporshell [$($newType + $newProp) total]`n"
 }

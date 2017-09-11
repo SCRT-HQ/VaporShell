@@ -1,4 +1,4 @@
-function New-VSElasticLoadBalancingV2TargetGroup {
+﻿function New-VSElasticLoadBalancingV2TargetGroup {
     <#
     .SYNOPSIS
         Adds an AWS::ElasticLoadBalancingV2::TargetGroup resource to the template
@@ -87,6 +87,12 @@ function New-VSElasticLoadBalancingV2TargetGroup {
 		Required: False    
 		Type: List    
 		UpdateType: Mutable    
+
+    .PARAMETER TargetType
+		Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-elasticloadbalancingv2-targetgroup.html#cfn-elasticloadbalancingv2-targetgroup-targettype    
+		PrimitiveType: String    
+		Required: False    
+		UpdateType: Immutable    
 
     .PARAMETER Targets
 		Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-elasticloadbalancingv2-targetgroup.html#cfn-elasticloadbalancingv2-targetgroup-targets    
@@ -246,6 +252,17 @@ function New-VSElasticLoadBalancingV2TargetGroup {
                 }
             })]
         $TargetGroupAttributes,
+        [parameter(Mandatory = $false)]
+        [ValidateScript( {
+                $allowedTypes = "System.String","Vaporshell.Function"
+                if ([string]$($_.PSTypeNames) -match "($(($allowedTypes|ForEach-Object{[RegEx]::Escape($_)}) -join '|'))") {
+                    $true
+                }
+                else {
+                    throw "This parameter only accepts the following types: $($allowedTypes -join ", "). The current types of the value are: $($_.PSTypeNames -join ", ")."
+                }
+            })]
+        $TargetType,
         [parameter(Mandatory = $false)]
         [ValidateScript( {
                 $allowedTypes = "Vaporshell.Resource.ElasticLoadBalancingV2.TargetGroup.TargetDescription"

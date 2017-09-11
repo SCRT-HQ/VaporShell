@@ -57,6 +57,26 @@ function Initialize-Vaporshell {
             }
         }
     }
+    $toJSON = {
+        Export-Vaporshell -VaporshellTemplate $this -As JSON -Verbose:$false
+    }
+    $memberParam = @{
+        MemberType  = "ScriptMethod"
+        InputObject = $tempObj
+        Name        = "ToJson"
+        Value       = $toJSON
+    }
+    Add-Member @memberParam
+    $toYAML = {
+        Export-Vaporshell -VaporshellTemplate $this -As YAML -Verbose:$false
+    }
+    $memberParam = @{
+        MemberType  = "ScriptMethod"
+        InputObject = $tempObj
+        Name        = "ToYaml"
+        Value       = $toYAML
+    }
+    Add-Member @memberParam
     $addParameter = {
         Process {
             $ObjName = "Parameters"

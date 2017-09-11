@@ -1,4 +1,4 @@
-function Add-VSConfigConfigurationRecorderRecordingGroup {
+﻿function Add-VSConfigConfigurationRecorderRecordingGroup {
     <#
     .SYNOPSIS
         Adds an AWS::Config::ConfigurationRecorder.RecordingGroup resource property to the template
@@ -23,7 +23,7 @@ function Add-VSConfigConfigurationRecorderRecordingGroup {
 
     .PARAMETER ResourceTypes
 		Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-config-configurationrecorder-recordinggroup.html#cfn-config-configurationrecorder-recordinggroup-resourcetypes    
-		DuplicatesAllowed: True    
+		DuplicatesAllowed: False    
 		PrimitiveItemType: String    
 		Required: False    
 		Type: List    

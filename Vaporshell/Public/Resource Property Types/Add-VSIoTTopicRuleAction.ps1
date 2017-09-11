@@ -1,4 +1,4 @@
-function Add-VSIoTTopicRuleAction {
+﻿function Add-VSIoTTopicRuleAction {
     <#
     .SYNOPSIS
         Adds an AWS::IoT::TopicRule.Action resource property to the template
@@ -7,70 +7,76 @@ function Add-VSIoTTopicRuleAction {
         Adds an AWS::IoT::TopicRule.Action resource property to the template
 
     .LINK
-        http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iot-actions.html
+        http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iot-topicrule-action.html
 
     .PARAMETER CloudwatchAlarm
-		Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iot-actions.html#cfn-iot-action-cloudwatchalarm    
+		Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iot-topicrule-action.html#cfn-iot-topicrule-action-cloudwatchalarm    
 		Required: False    
 		Type: CloudwatchAlarmAction    
 		UpdateType: Mutable    
 
     .PARAMETER CloudwatchMetric
-		Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iot-actions.html#cfn-iot-action-cloudwatchmetric    
+		Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iot-topicrule-action.html#cfn-iot-topicrule-action-cloudwatchmetric    
 		Required: False    
 		Type: CloudwatchMetricAction    
 		UpdateType: Mutable    
 
     .PARAMETER DynamoDB
-		Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iot-actions.html#cfn-iot-action-dynamodb    
+		Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iot-topicrule-action.html#cfn-iot-topicrule-action-dynamodb    
 		Required: False    
 		Type: DynamoDBAction    
 		UpdateType: Mutable    
 
+    .PARAMETER DynamoDBv2
+		Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iot-topicrule-action.html#cfn-iot-topicrule-action-dynamodbv2    
+		Required: False    
+		Type: DynamoDBv2Action    
+		UpdateType: Mutable    
+
     .PARAMETER Elasticsearch
-		Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iot-actions.html#cfn-iot-action-elasticsearch    
+		Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iot-topicrule-action.html#cfn-iot-topicrule-action-elasticsearch    
 		Required: False    
 		Type: ElasticsearchAction    
 		UpdateType: Mutable    
 
     .PARAMETER Firehose
-		Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iot-actions.html#cfn-iot-action-firehose    
+		Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iot-topicrule-action.html#cfn-iot-topicrule-action-firehose    
 		Required: False    
 		Type: FirehoseAction    
 		UpdateType: Mutable    
 
     .PARAMETER Kinesis
-		Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iot-actions.html#cfn-iot-action-kinesis    
+		Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iot-topicrule-action.html#cfn-iot-topicrule-action-kinesis    
 		Required: False    
 		Type: KinesisAction    
 		UpdateType: Mutable    
 
     .PARAMETER Lambda
-		Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iot-actions.html#cfn-iot-action-lambda    
+		Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iot-topicrule-action.html#cfn-iot-topicrule-action-lambda    
 		Required: False    
 		Type: LambdaAction    
 		UpdateType: Mutable    
 
     .PARAMETER Republish
-		Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iot-actions.html#cfn-iot-action-republish    
+		Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iot-topicrule-action.html#cfn-iot-topicrule-action-republish    
 		Required: False    
 		Type: RepublishAction    
 		UpdateType: Mutable    
 
     .PARAMETER S3
-		Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iot-actions.html#cfn-iot-action-s3    
+		Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iot-topicrule-action.html#cfn-iot-topicrule-action-s3    
 		Required: False    
 		Type: S3Action    
 		UpdateType: Mutable    
 
     .PARAMETER Sns
-		Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iot-actions.html#cfn-iot-action-sns    
+		Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iot-topicrule-action.html#cfn-iot-topicrule-action-sns    
 		Required: False    
 		Type: SnsAction    
 		UpdateType: Mutable    
 
     .PARAMETER Sqs
-		Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iot-actions.html#cfn-iot-action-sqs    
+		Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iot-topicrule-action.html#cfn-iot-topicrule-action-sqs    
 		Required: False    
 		Type: SqsAction    
 		UpdateType: Mutable    
@@ -88,6 +94,8 @@ function Add-VSIoTTopicRuleAction {
         $CloudwatchMetric,
         [parameter(Mandatory = $false)]
         $DynamoDB,
+        [parameter(Mandatory = $false)]
+        $DynamoDBv2,
         [parameter(Mandatory = $false)]
         $Elasticsearch,
         [parameter(Mandatory = $false)]

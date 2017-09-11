@@ -192,7 +192,7 @@ function New-VaporParameter {
                     $true
                 }
                 else {
-                    throw 'The logical ID must be alphanumeric (a-z, A-Z, 0-9) and unique within the template.'
+                    $PSCmdlet.ThrowTerminatingError((New-VSError -String 'The LogicalID must be alphanumeric (a-z, A-Z, 0-9) and unique within the template.'))
                 }
             })]
         [System.String]
@@ -222,7 +222,7 @@ function New-VaporParameter {
                     $true
                 }
                 else {
-                    throw "The description length needs to be less than 4000 characters long."
+                    $PSCmdlet.ThrowTerminatingError((New-VSError -String "The description length needs to be less than 4000 characters long."))
                 }
             })]
         [System.String]

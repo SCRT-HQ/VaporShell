@@ -1,4 +1,4 @@
-function Add-VSEventsRuleTarget {
+﻿function Add-VSEventsRuleTarget {
     <#
     .SYNOPSIS
         Adds an AWS::Events::Rule.Target resource property to the template
@@ -13,6 +13,12 @@ function Add-VSEventsRuleTarget {
 		Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-events-rule-target.html#cfn-events-rule-target-arn    
 		PrimitiveType: String    
 		Required: True    
+		UpdateType: Mutable    
+
+    .PARAMETER EcsParameters
+		Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-events-rule-target.html#cfn-events-rule-target-ecsparameters    
+		Required: False    
+		Type: EcsParameters    
 		UpdateType: Mutable    
 
     .PARAMETER Id
@@ -33,10 +39,28 @@ function Add-VSEventsRuleTarget {
 		Required: False    
 		UpdateType: Mutable    
 
+    .PARAMETER InputTransformer
+		Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-events-rule-target.html#cfn-events-rule-target-inputtransformer    
+		Required: False    
+		Type: InputTransformer    
+		UpdateType: Mutable    
+
+    .PARAMETER KinesisParameters
+		Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-events-rule-target.html#cfn-events-rule-target-kinesisparameters    
+		Required: False    
+		Type: KinesisParameters    
+		UpdateType: Mutable    
+
     .PARAMETER RoleArn
 		Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-events-rule-target.html#cfn-events-rule-target-rolearn    
 		PrimitiveType: String    
 		Required: False    
+		UpdateType: Mutable    
+
+    .PARAMETER RunCommandParameters
+		Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-events-rule-target.html#cfn-events-rule-target-runcommandparameters    
+		Required: False    
+		Type: RunCommandParameters    
 		UpdateType: Mutable    
 
     .FUNCTIONALITY
@@ -57,6 +81,8 @@ function Add-VSEventsRuleTarget {
                 }
             })]
         $Arn,
+        [parameter(Mandatory = $false)]
+        $EcsParameters,
         [parameter(Mandatory = $true)]
         [ValidateScript( {
                 $allowedTypes = "System.String","Vaporshell.Function"
@@ -91,6 +117,10 @@ function Add-VSEventsRuleTarget {
             })]
         $InputPath,
         [parameter(Mandatory = $false)]
+        $InputTransformer,
+        [parameter(Mandatory = $false)]
+        $KinesisParameters,
+        [parameter(Mandatory = $false)]
         [ValidateScript( {
                 $allowedTypes = "System.String","Vaporshell.Function"
                 if ([string]$($_.PSTypeNames) -match "($(($allowedTypes|ForEach-Object{[RegEx]::Escape($_)}) -join '|'))") {
@@ -100,7 +130,9 @@ function Add-VSEventsRuleTarget {
                     throw "This parameter only accepts the following types: $($allowedTypes -join ", "). The current types of the value are: $($_.PSTypeNames -join ", ")."
                 }
             })]
-        $RoleArn
+        $RoleArn,
+        [parameter(Mandatory = $false)]
+        $RunCommandParameters
     )
     Begin {
         $obj = [PSCustomObject]@{}

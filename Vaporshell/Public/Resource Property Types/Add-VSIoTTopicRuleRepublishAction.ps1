@@ -1,4 +1,4 @@
-function Add-VSIoTTopicRuleRepublishAction {
+﻿function Add-VSIoTTopicRuleRepublishAction {
     <#
     .SYNOPSIS
         Adds an AWS::IoT::TopicRule.RepublishAction resource property to the template
@@ -7,16 +7,16 @@ function Add-VSIoTTopicRuleRepublishAction {
         Adds an AWS::IoT::TopicRule.RepublishAction resource property to the template
 
     .LINK
-        http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iot-republish.html
+        http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iot-topicrule-republishaction.html
 
     .PARAMETER RoleArn
-		Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iot-republish.html#cfn-iot-republish-rolearn    
+		Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iot-topicrule-republishaction.html#cfn-iot-topicrule-republishaction-rolearn    
 		PrimitiveType: String    
 		Required: True    
 		UpdateType: Mutable    
 
     .PARAMETER Topic
-		Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iot-republish.html#cfn-iot-republish-topic    
+		Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iot-topicrule-republishaction.html#cfn-iot-topicrule-republishaction-topic    
 		PrimitiveType: String    
 		Required: True    
 		UpdateType: Mutable    

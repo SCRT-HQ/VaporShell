@@ -1,7 +1,9 @@
 Param
 (
   [parameter(Position=0)]
-  $ForceDotSource = $false
+  $ForceDotSource = $false,
+  [parameter(Position=1)]
+  $QuietLoad = $false
 )
 #Get public and private function definition files.
 $Public = @( Get-ChildItem -Path $PSScriptRoot\Public -Recurse -Filter "*.ps1" -ErrorAction SilentlyContinue )
@@ -29,7 +31,7 @@ foreach ($file in @($Public + $Private)) {
         )
     }
 }
-if ($env:CI) {
+if ($env:CI -or $QuietLoad) {
     Import-AWSSDK
 }
 else {

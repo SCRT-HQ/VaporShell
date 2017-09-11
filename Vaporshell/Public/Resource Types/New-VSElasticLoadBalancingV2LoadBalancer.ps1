@@ -1,4 +1,4 @@
-function New-VSElasticLoadBalancingV2LoadBalancer {
+﻿function New-VSElasticLoadBalancingV2LoadBalancer {
     <#
     .SYNOPSIS
         Adds an AWS::ElasticLoadBalancingV2::LoadBalancer resource to the template
@@ -46,6 +46,14 @@ function New-VSElasticLoadBalancingV2LoadBalancer {
 		Type: List    
 		UpdateType: Mutable    
 
+    .PARAMETER SubnetMappings
+		Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-elasticloadbalancingv2-loadbalancer.html#cfn-elasticloadbalancingv2-loadbalancer-subnetmappings    
+		DuplicatesAllowed: False    
+		ItemType: SubnetMapping    
+		Required: False    
+		Type: List    
+		UpdateType: Immutable    
+
     .PARAMETER Subnets
 		Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-elasticloadbalancingv2-loadbalancer.html#cfn-elasticloadbalancingv2-loadbalancer-subnets    
 		DuplicatesAllowed: False    
@@ -61,6 +69,12 @@ function New-VSElasticLoadBalancingV2LoadBalancer {
 		Required: False    
 		Type: List    
 		UpdateType: Mutable    
+
+    .PARAMETER Type
+		Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-elasticloadbalancingv2-loadbalancer.html#cfn-elasticloadbalancingv2-loadbalancer-type    
+		PrimitiveType: String    
+		Required: False    
+		UpdateType: Immutable    
 
     .PARAMETER DeletionPolicy
         With the DeletionPolicy attribute you can preserve or (in some cases) backup a resource when its stack is deleted. You specify a DeletionPolicy attribute for each resource that you want to control. If a resource has no DeletionPolicy attribute, AWS CloudFormation deletes the resource by default.
@@ -156,6 +170,17 @@ function New-VSElasticLoadBalancingV2LoadBalancer {
         [parameter(Mandatory = $false)]
         $SecurityGroups,
         [parameter(Mandatory = $false)]
+        [ValidateScript( {
+                $allowedTypes = "Vaporshell.Resource.ElasticLoadBalancingV2.LoadBalancer.SubnetMapping"
+                if ([string]$($_.PSTypeNames) -match "($(($allowedTypes|ForEach-Object{[RegEx]::Escape($_)}) -join '|'))") {
+                    $true
+                }
+                else {
+                    throw "This parameter only accepts the following types: $($allowedTypes -join ", "). The current types of the value are: $($_.PSTypeNames -join ", ")."
+                }
+            })]
+        $SubnetMappings,
+        [parameter(Mandatory = $false)]
         $Subnets,
         [parameter(Mandatory = $false)]
         [ValidateScript( {
@@ -168,6 +193,17 @@ function New-VSElasticLoadBalancingV2LoadBalancer {
                 }
             })]
         $Tags,
+        [parameter(Mandatory = $false)]
+        [ValidateScript( {
+                $allowedTypes = "System.String","Vaporshell.Function"
+                if ([string]$($_.PSTypeNames) -match "($(($allowedTypes|ForEach-Object{[RegEx]::Escape($_)}) -join '|'))") {
+                    $true
+                }
+                else {
+                    throw "This parameter only accepts the following types: $($allowedTypes -join ", "). The current types of the value are: $($_.PSTypeNames -join ", ")."
+                }
+            })]
+        $Type,
         [ValidateSet("Delete","Retain","Snapshot")]
         [System.String]
         $DeletionPolicy,
@@ -235,6 +271,12 @@ function New-VSElasticLoadBalancingV2LoadBalancer {
                         $ResourceParams.Add("Properties",([PSCustomObject]@{}))
                     }
                     $ResourceParams["Properties"] | Add-Member -MemberType NoteProperty -Name SecurityGroups -Value @($SecurityGroups)
+                }
+                'SubnetMappings' {
+                    if (!($ResourceParams["Properties"])) {
+                        $ResourceParams.Add("Properties",([PSCustomObject]@{}))
+                    }
+                    $ResourceParams["Properties"] | Add-Member -MemberType NoteProperty -Name SubnetMappings -Value @($SubnetMappings)
                 }
                 'Subnets' {
                     if (!($ResourceParams["Properties"])) {

@@ -49,7 +49,7 @@ function Export-Vaporshell {
                     $true
                 }
                 else {
-                    throw "Unable to find any resources on this Vaporshell template. Resources are required in CloudFormation templates at the minimum."
+                    $PSCmdlet.ThrowTerminatingError((New-VSError -String "Unable to find any resources on this Vaporshell template. Resources are required in CloudFormation templates at the minimum."))
                 }
             })]
         [PSTypeName('Vaporshell.Template')]
@@ -92,27 +92,15 @@ function Export-Vaporshell {
         else {
             $Final = $JSON
         }
+        if ($ValidateTemplate) {
+            $Final | Get-TemplateValidation
+        }
         if ($Path) {
             Write-Verbose "Exporting template to: $Path"
             $Final | Set-Content -Path $Path @ForcePref -Verbose:$false
-            if ($ValidateTemplate) {
-                Confirm-TemplateIsValid -Path $Path
-                <# if (Get-Command aws -ErrorAction SilentlyContinue) {
-                    Write-Verbose "Validating template"
-                    $Path = (Resolve-Path $Path).Path
-                    $fileUrl = "$($Path.Replace("\","/"))"
-                    if ($val = aws cloudformation validate-template --template-body file://$fileUrl) {
-                        Write-Verbose "The template was validated successfully!"
-                        return $val
-                    }
-                }
-                else {
-                    Write-Warning "AWS CLI tools not found in PATH! Skipping validation to prevent failure."
-                } #>
-            }
         }
         else {
-            return $Final
+            return ($Final -join "`n")
         }
     }
 }
