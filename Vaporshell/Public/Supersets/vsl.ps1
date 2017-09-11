@@ -1,4 +1,5 @@
 function vsl {
+    [cmdletbinding()]
     Param
     (
         [parameter(Mandatory = $true,Position = 0)]
@@ -7,9 +8,9 @@ function vsl {
         [parameter(Mandatory = $false,Position = 1,ValueFromRemainingArguments = $true)]
         $vars
     )
-    $pkgAvails = @("TemplateBody","TemplateFile","S3Bucket","S3Prefix","KMSKeyId","OutputTemplateFile","UseJson","Force","ProfileName")
+    $pkgAvails = @("TemplateBody","TemplateFile","S3Bucket","S3Prefix","KMSKeyId","OutputTemplateFile","UseJson","Force","ProfileName","Verbose","Debug")
     $pkgParams = @{}
-    $dplAvails = @("TemplateBody","TemplateFile","StackName","Parameters","Capabilities","DoNotExecute","RoleARN","NotificationARNs","ProfileName")
+    $dplAvails = @("TemplateBody","TemplateFile","StackName","Parameters","Capabilities","DoNotExecute","RoleARN","NotificationARNs","ProfileName","Verbose","Debug")
     $dplParams = @{}
     $aliasHash = @{
         parameteroverrides = "Parameters"
@@ -35,6 +36,20 @@ function vsl {
                 }
                 else {
                     $paramHash[$lastvar][$side[0]] = $side[1]
+                }
+            }
+            elseif (($_ -eq "true" -or $_ -eq "false") -and $_ -is [System.String]) {
+                if ($_ -eq "true") {
+                    $val = $true
+                }
+                else {
+                    $val = $false
+                }
+                if ($i -eq 1) {
+                    $paramHash[$lastvar] = $val
+                }
+                else {
+                    $paramHash[$lastvar] += $val
                 }
             }
             else {
@@ -64,18 +79,21 @@ function vsl {
             $dplParams[$key] = $paramHash[$key]
         }
     }
+    if ($paramHash["Verbose"]) {
+
+    }
     switch ($action) {
         package {
-            VSPackage @pkgParams -Verbose:$false
+            Invoke-VSPackage @pkgParams
         }
         deploy {
-            VSDeploy @dplParams -Verbose:$false
+            Invoke-VSDeploy @dplParams
         }
         vaporize {
             if ($dplParams.Keys -contains "TemplateFile") {
                 $dplParams.Remove("TemplateFile")
             }
-            VSPackage @pkgParams | VSDeploy @dplParams
+            Invoke-VSPackage @pkgParams | Invoke-VSDeploy @dplParams
         }
     }
 }
