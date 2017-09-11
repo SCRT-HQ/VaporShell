@@ -78,7 +78,7 @@ Task Build -Depends Test {
         Update-Metadata -Path $env:BHPSModuleManifest -PropertyName ModuleVersion -Value $Version
         #>
         
-        Update-Metadata -Path $env:BHPSModuleManifest -PropertyName ModuleVersion -Value "1.3.0"
+        Update-Metadata -Path $env:BHPSModuleManifest -PropertyName ModuleVersion -Value "2.0.0"
 
         #Update-Metadata -Path $env:BHPSModuleManifest -Increment Minor
     }
