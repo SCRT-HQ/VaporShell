@@ -11,14 +11,15 @@ function vsl {
         [parameter(Mandatory = $false,Position = 1,ValueFromRemainingArguments = $true)]
         $vars
     )    
-    if ($help) {
+    if ($help -or $vars -match '^--help$') {
         $message = switch ($action) {
             package {@'
+vsl package --template-file <value> --s3-bucket <value> [--s3-prefix <value>] [--kms-key-id <value>] [--output-template-file <value>] [--use-json] [--force-upload] [--profile-name <value>] [--verbose {info (default)|full}]
+
+
 ~ ~ ~ DESCRIPTION ~ ~ ~
 
 Packages the local artifacts (local paths) that your AWS CloudFormation template references. The command uploads local artifacts, such as source code for an AWS Lambda function or a Swagger file for an AWS API Gateway REST API, to an S3 bucket. The command returns a copy of your template, replacing references to local artifacts with the S3 location where the command uploaded the artifacts.
-
-Use this command to quickly upload local artifacts that might be required by your template. After you package your template's artifacts, run the deploy command to deploy the returned template.
 
 This command can upload local artifacts specified by following properties of a resource:
 
@@ -33,20 +34,8 @@ To specify a local artifact in your template, specify a path to a local file or 
 
 For example, if your AWS Lambda function source code is in the /home/user/code/lambdafunction/ folder, specify `` CodeUri: /home/user/code/lambdafunction`` for the AWS::Serverless::Function resource. The command returns a template and replaces the local path with the S3 location: CodeUri: s3://mybucket/lambdafunction.zip.
 
-If you specify a file, the command directly uploads it to the S3 bucket. If you specify a folder, the command zips the folder and then uploads the .zip file. For most resources, if you don't specify a path, the command zips and uploads the current working directory. The exception is AWS::ApiGateway::RestApi; if you don't specify a BodyS3Location, this command will not upload an artifact to S3.
-
-Before the command uploads artifacts, it checks if the artifacts are already present in the S3 bucket to prevent unnecessary uploads. The command uses MD5 checksums to compare files. If the values match, the command doesn't upload the artifacts. Use the --force flag to skip this check and always upload the artifacts.
-
-
-
-~ ~ ~ SYNTAX ~ ~ ~
-
-vsl package --template-file <value> --s3-bucket <value> [--s3-prefix <value>] [--kms-key-id <value>] [--output-template-file <value>] [--use-json] [--force-upload] [--profile-name <value>] [--verbose]
-
-
 
 ~ ~ ~ OPTIONS ~ ~ ~
-
 
 REQUIRED
     --tf, --template-file (string) The path where your AWS CloudFormation template is located.
@@ -67,10 +56,13 @@ OPTIONAL
     
     --pn, --profile-name (string) The name of the saved configuration you would like to use for this command. Defaults to $env:AWS_PROFILE if set.
 
-    --v, --verbose (boolean) Enables verbose output on the console
+    --v, --verbose (boolean | string) Enables verbose output on the console. Passing no following value with treat this as a boolean 'true'. Passing 'info' as the value will achieve the same result as passing nothing. Passing 'full' as the value will enable full verbosity (useful for debugging what parameters are being passed to the different functions throughout the command).
 '@
             }
             deploy {@'
+vsl deploy --template-file <value> --stack-name <value> [--parameter-overrides <value> [<value>...]] [--capabilities <value> [<value>...]] [--no-execute-changeset] [--role-arn <value>] [--notification-arns <value> [<value>...]] [--profile-name <value>] [--verbose {info (default)|full}]
+            
+            
 ~ ~ ~ DESCRIPTION ~ ~ ~
 
 Deploys the specified AWS CloudFormation template by creating and then executing a change set. The command terminates after AWS CloudFormation executes the change set. If you want to view the change set before AWS CloudFormation executes it, use the --no-execute-changeset flag.
@@ -78,15 +70,7 @@ Deploys the specified AWS CloudFormation template by creating and then executing
 To update a stack, specify the name of an existing stack. To create a new stack, specify a new stack name.
 
 
-
-~ ~ ~ SYNTAX ~ ~ ~
-
-vsl deploy --template-file <value> --stack-name <value> [--parameter-overrides <value> [<value>...]] [--capabilities <value> [<value>...]] [--no-execute-changeset] [--role-arn <value>] [--notification-arns <value> [<value>...]] [--profile-name <value>] [--verbose]
-
-
-
 ~ ~ ~ OPTIONS ~ ~ ~
-
 
 REQUIRED
     --tf, --template-file (string) The path where your AWS CloudFormation template is located.
@@ -107,24 +91,19 @@ OPTIONAL
     
     --pn, --profile-name (string) The name of the saved configuration you would like to use for this command. Defaults to $env:AWS_PROFILE if set.
 
-    --v, --verbose (boolean) Enables verbose output on the console
+    --v, --verbose (boolean | string) Enables verbose output on the console. Passing no following value with treat this as a boolean 'true'. Passing 'info' as the value will achieve the same result as passing nothing. Passing 'full' as the value will enable full verbosity (useful for debugging what parameters are being passed to the different functions throughout the command).
 '@
             }
             vaporize {@'
+vsl vaporize --template-file <value> --stack-name <value> --s3-bucket <value> [--s3-prefix <value>] [--parameter-overrides <value> [<value>...]] [--capabilities <value> [<value>...]] [--no-execute-changeset] [--role-arn <value>] [--notification-arns <value> [<value>...]] [--kms-key-id <value>] [--output-template-file <value>] [--use-json] [--force-upload] [--profile-name <value>] [--verbose {info (default)|full}]
+
+
 ~ ~ ~ DESCRIPTION ~ ~ ~
 
 Combines both package and deploy into one command.
 
 
-
-~ ~ ~ SYNTAX ~ ~ ~
-
-vsl vaporize --template-file <value> --stack-name <value> --s3-bucket <value> [--s3-prefix <value>] [--parameter-overrides <value> [<value>...]] [--capabilities <value> [<value>...]] [--no-execute-changeset] [--role-arn <value>] [--notification-arns <value> [<value>...]] [--kms-key-id <value>] [--output-template-file <value>] [--use-json] [--force-upload] [--profile-name <value>] [--verbose]
-
-
-
 ~ ~ ~ OPTIONS ~ ~ ~
-
 
 REQUIRED
     --tf, --template-file (string) The path where your AWS CloudFormation template is located.
@@ -155,9 +134,9 @@ OPTIONAL
 
     --force-upload (boolean) Indicates whether to override existing files in the S3 bucket. Specify this flag to upload artifacts even if they match existing artifacts in the S3 bucket.
     
-    --pn, --profile-name (string) The name of the saved configuration you would like to use for this command. Defaults to $env:AWS_PROFILE if set.
+    --pn, --prof, --profile-name (string) The name of the saved configuration you would like to use for this command. Defaults to $env:AWS_PROFILE if set.
 
-    --v, --verbose (boolean) Enables verbose output on the console
+    --v, --verbose (boolean | string) Enables verbose output on the console. Passing no following value with treat this as a boolean 'true'. Passing 'info' as the value will achieve the same result as passing nothing. Passing 'full' as the value will enable full verbosity (useful for debugging what parameters are being passed to the different functions throughout the command).
 '@
             }
         }
@@ -176,6 +155,7 @@ OPTIONAL
             sn = "StackName"
             s3 = "S3Bucket"
             pn = "ProfileName"
+            prof = "ProfileName"
             v = "Verbose"
             f = "Force"
         }
@@ -191,7 +171,12 @@ OPTIONAL
             }
             else {
                 $i++
-                if ($_ -like "*=*" -and $_ -is [System.String]) {
+                if ($lastvar -eq "verbose") {
+                    if ($_ -eq "full") {
+                        $fullVerbose = $true
+                    }
+                }
+                elseif ($_ -like "*=*" -and $_ -is [System.String]) {
                     $side = $_.Split("=").Trim('"')
                     if ($i -eq 1) {
                         $paramHash[$lastvar] = @{$side[0] = $side[1]}
@@ -247,18 +232,24 @@ OPTIONAL
             Write-Verbose "vsl parameters:`n$($paramHash | Format-Table -AutoSize | Out-String)"
             $VerbosePreference = $VerboseSaved
         }
+        $verbProf = @{
+            Verbose = $false
+        }
+        if ($fullVerbose) {
+            $verbProf["Verbose"] = $true
+        }
         switch ($action) {
             package {
-                Invoke-VSPackage @pkgParams -Verbose:$false
+                Invoke-VSPackage @pkgParams @verbProf
             }
             deploy {
-                Invoke-VSDeploy @dplParams -Verbose:$false
+                Invoke-VSDeploy @dplParams @verbProf
             }
             vaporize {
                 if ($dplParams.Keys -contains "TemplateFile") {
                     $dplParams.Remove("TemplateFile")
                 }
-                Invoke-VSPackage @pkgParams -Verbose:$false | Invoke-VSDeploy @dplParams -Verbose:$false
+                Invoke-VSPackage @pkgParams @verbProf | Invoke-VSDeploy @dplParams @verbProf
             }
         }
     }

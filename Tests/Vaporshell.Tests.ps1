@@ -200,11 +200,11 @@ Describe "Module tests: $ModuleName" {
             {Add-FnSelect -Index 1 -ListOfObjects 1} | Should throw
         }
         It 'Should throw primary functions' {
-            {New-VaporResource -LogicalId "!@#$%*&"} | Should throw "Cannot validate argument on parameter 'LogicalId'. The logical ID must be alphanumeric (a-z, A-Z, 0-9) and unique within the template."
-            {New-VaporResource -LogicalId "Tests" -Properties 1} | Should throw "Cannot validate argument on parameter 'Properties'. The Properties parameter only accepts the following types: System.Management.Automation.PSCustomObject, Vaporshell.Resource.Properties. The current types of the value are: System.Int32, System.ValueType, System.Object."
-            {New-VaporResource -LogicalId "Tests" -Properties ([PSCustomObject]@{Name = "Test"}) -Type "AWS::EC2::Instance" -CreationPolicy 1} | Should throw "Cannot validate argument on parameter 'CreationPolicy'. The CreationPolicy parameter only accepts the following types: Vaporshell.Resource.CreationPolicy. The current types of the value are: System.Int32, System.ValueType, System.Object."
-            {New-VaporResource -LogicalId "Tests" -Properties ([PSCustomObject]@{Name = "Test"}) -Type "AWS::EC2::Instance" -UpdatePolicy 1} | Should throw "Cannot validate argument on parameter 'UpdatePolicy'. The UpdatePolicy parameter only accepts the following types: Vaporshell.Resource.UpdatePolicy. The current types of the value are: System.Int32, System.ValueType, System.Object."
-            {New-VaporResource -LogicalId "Tests" -Properties ([PSCustomObject]@{Name = "Test"}) -Type "AWS::EC2::Instance" -Metadata 1} | Should throw "Cannot validate argument on parameter 'Metadata'. The UpdatePolicy parameter only accepts the following types: System.Management.Automation.PSCustomObject. The current types of the value are: System.Int32, System.ValueType, System.Object."
+            {New-VaporResource -LogicalId "!@#$%*&"} | Should throw "The LogicalID must be alphanumeric (a-z, A-Z, 0-9) and unique within the template."
+            {New-VaporResource -LogicalId "Tests" -Properties 1} | Should throw "This parameter only accepts the following types: System.Management.Automation.PSCustomObject, Vaporshell.Resource.Properties. The current types of the value are: System.Int32, System.ValueType, System.Object."
+            {New-VaporResource -LogicalId "Tests" -Properties ([PSCustomObject]@{Name = "Test"}) -Type "AWS::EC2::Instance" -CreationPolicy 1} | Should throw "This parameter only accepts the following types: Vaporshell.Resource.CreationPolicy. The current types of the value are: System.Int32, System.ValueType, System.Object."
+            {New-VaporResource -LogicalId "Tests" -Properties ([PSCustomObject]@{Name = "Test"}) -Type "AWS::EC2::Instance" -UpdatePolicy 1} | Should throw "This parameter only accepts the following types: Vaporshell.Resource.UpdatePolicy. The current types of the value are: System.Int32, System.ValueType, System.Object."
+            {New-VaporResource -LogicalId "Tests" -Properties ([PSCustomObject]@{Name = "Test"}) -Type "AWS::EC2::Instance" -Metadata 1} | Should throw "This parameter only accepts the following types: System.Management.Automation.PSCustomObject. The current types of the value are: System.Int32, System.ValueType, System.Object."
             {New-VaporMetadata -LogicalId "!@#$%*&"} | Should throw
             {New-VaporMetadata -LogicalId "Test" -Metadata 1} | Should throw
             {New-VaporMapping -LogicalId "!@#$%*&"} | Should throw
@@ -214,12 +214,12 @@ Describe "Module tests: $ModuleName" {
             {New-VaporOutput -LogicalId "!@#$%*&"} | Should throw
             {New-VaporOutput -LogicalId "Test" -Value "String" -Export "Export"} | Should Not throw
             {New-VaporParameter -LogicalId "!@#$%*&"} | Should throw
-            {New-VaporParameter -LogicalId "PW" -Description "$(1..5000)"} | Should throw "Cannot validate argument on parameter 'Description'. The description length needs to be less than 4000 characters long."
+            {New-VaporParameter -LogicalId "PW" -Description "$(1..5000)"} | Should throw "The description length needs to be less than 4000 characters long."
             {New-VaporParameter -LogicalId "PW" -NoEcho -Type String -AllowedPattern ".*" -MaxLength 50 -MinLength 1 -MaxValue 50 -MinValue 1 -Default "woooo"} | Should Not throw
         }
         It 'Should throw main commands' {
             $t = Initialize-Vaporshell
-            {Export-Vaporshell -VaporshellTemplate $t} | Should throw "Cannot validate argument on parameter 'VaporshellTemplate'. Unable to find any resources on this Vaporshell template. Resources are required in CloudFormation templates at the minimum."
+            {Export-Vaporshell -VaporshellTemplate $t} | Should throw "Unable to find any resources on this Vaporshell template. Resources are required in CloudFormation templates at the minimum."
             {$t.AddTransform("Fail")} | Should throw "You must use one of the following object types with this parameter: Vaporshell.Transform.Include"
             {$t.AddTransform((Add-Include -Location "s3://file.yaml"))} | Should Not throw
             $t.AddResource((New-SAMSimpleTable -LogicalId "Table"))

@@ -93,7 +93,7 @@ function Export-Vaporshell {
             $Final = $JSON
         }
         if ($ValidateTemplate) {
-            $Final | Get-TemplateValidation
+            Get-TemplateValidation -TemplateBody ($Final -join "`n")
         }
         if ($Path) {
             Write-Verbose "Exporting template to: $Path"
