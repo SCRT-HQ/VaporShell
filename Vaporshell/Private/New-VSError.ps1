@@ -10,7 +10,7 @@ function New-VSError {
         Result { $Exception = "$($result.Exception.InnerException.Message)" }
         String { $Exception = "$String" }
     }
-    $e = New-Object "Amazon.Runtime.AmazonClientException" $Exception
+    $e = New-Object "System.Exception" $Exception
     $errorRecord = New-Object 'System.Management.Automation.ErrorRecord' $e, $null, ([System.Management.Automation.ErrorCategory]::InvalidOperation), $null
     return $errorRecord
 }
