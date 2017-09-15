@@ -19,13 +19,10 @@ Removes a Stack Set.
 Remove-VSStackSet [-StackSetName] <String> [[-ProfileName] <String>] [-WhatIf] [-Confirm]
 ```
 
-## DESCRIPTION
-{{Fill in the Description}}
 
 ## PARAMETERS
 
 ### -StackSetName
-{{Fill StackSetName Description}}
 
 ```yaml
 Type: String

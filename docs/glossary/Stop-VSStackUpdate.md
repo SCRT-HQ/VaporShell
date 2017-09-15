@@ -21,9 +21,6 @@ You can cancel only stacks that are in the UPDATE_IN_PROGRESS state.
 Stop-VSStackUpdate [[-ClientRequestToken] <String>] [[-StackName] <String>] [[-ProfileName] <String>]
 ```
 
-## DESCRIPTION
-{{Fill in the Description}}
-
 ## PARAMETERS
 
 ### -ClientRequestToken

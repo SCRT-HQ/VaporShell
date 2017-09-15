@@ -20,9 +20,6 @@ New-VSS3Bucket [-BucketName] <String> [-BucketRegionName <String>] [-CannedACL <
  [-ProfileName <String>]
 ```
 
-## DESCRIPTION
-{{Fill in the Description}}
-
 ## PARAMETERS
 
 ### -BucketName

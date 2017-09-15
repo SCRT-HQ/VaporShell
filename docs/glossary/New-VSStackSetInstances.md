@@ -21,9 +21,6 @@ New-VSStackSetInstances [-StackSetName] <String> [[-Accounts] <String[]>] [[-Ope
  [-WhatIf] [-Confirm]
 ```
 
-## DESCRIPTION
-{{Fill in the Description}}
-
 ## PARAMETERS
 
 ### -StackSetName

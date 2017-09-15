@@ -51,7 +51,6 @@ Accept wildcard characters: False
 ```
 
 ### -TemplateBody
-{{Fill TemplateBody Description}}
 
 ```yaml
 Type: String
@@ -66,7 +65,6 @@ Accept wildcard characters: False
 ```
 
 ### -RawUrl
-{{Fill RawUrl Description}}
 
 ```yaml
 Type: String

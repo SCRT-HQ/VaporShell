@@ -20,9 +20,6 @@ Colorizes events based on event type.
 Watch-VSStackEvents [-StackId] <String> [-InNewWindow] [[-RefreshRate] <Int32>] [[-ProfileName] <String>]
 ```
 
-## DESCRIPTION
-{{Fill in the Description}}
-
 ## PARAMETERS
 
 ### -StackId

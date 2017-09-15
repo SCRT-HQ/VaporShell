@@ -30,9 +30,6 @@ Get-TemplateValidation [-TemplateBody] <String> [-ProfileName <String>]
 Get-TemplateValidation [-TemplateUrl] <String> [-ProfileName <String>]
 ```
 
-## DESCRIPTION
-{{Fill in the Description}}
-
 ## PARAMETERS
 
 ### -TemplateBody

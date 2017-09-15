@@ -20,9 +20,6 @@ New-VSS3Object [-BucketName] <String> [-CannedACL <String>] [-ContentBody <Strin
  [-Key <String>] [-KMSKeyId <String>] [-ProfileName <String>]
 ```
 
-## DESCRIPTION
-{{Fill in the Description}}
-
 ## PARAMETERS
 
 ### -BucketName

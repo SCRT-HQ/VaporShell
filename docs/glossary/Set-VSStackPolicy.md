@@ -30,9 +30,6 @@ Set-VSStackPolicy [-StackName <String>] [-Path] <String> [-ProfileName <String>]
 Set-VSStackPolicy [-StackName <String>] [-StackPolicyURL] <String> [-ProfileName <String>]
 ```
 
-## DESCRIPTION
-{{Fill in the Description}}
-
 ## PARAMETERS
 
 ### -StackName

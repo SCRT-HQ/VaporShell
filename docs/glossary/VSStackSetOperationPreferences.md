@@ -11,7 +11,6 @@ data2: Deep
 # VSStackSetOperationPreferences
 
 ## SYNOPSIS
-{{Fill in the Synopsis}}
 
 ## SYNTAX
 
@@ -39,13 +38,9 @@ VSStackSetOperationPreferences [-FailureTolerancePercentage] <Int32> [-MaxConcur
  [[-RegionOrder] <String[]>]
 ```
 
-## DESCRIPTION
-{{Fill in the Description}}
-
 ## PARAMETERS
 
 ### -FailureToleranceCount
-{{Fill FailureToleranceCount Description}}
 
 ```yaml
 Type: Int32
@@ -60,7 +55,6 @@ Accept wildcard characters: False
 ```
 
 ### -FailureTolerancePercentage
-{{Fill FailureTolerancePercentage Description}}
 
 ```yaml
 Type: Int32
@@ -75,7 +69,6 @@ Accept wildcard characters: False
 ```
 
 ### -MaxConcurrentCount
-{{Fill MaxConcurrentCount Description}}
 
 ```yaml
 Type: Int32
@@ -90,7 +83,6 @@ Accept wildcard characters: False
 ```
 
 ### -MaxConcurrentPercentage
-{{Fill MaxConcurrentPercentage Description}}
 
 ```yaml
 Type: Int32
@@ -105,7 +97,6 @@ Accept wildcard characters: False
 ```
 
 ### -RegionOrder
-{{Fill RegionOrder Description}}
 
 ```yaml
 Type: String[]

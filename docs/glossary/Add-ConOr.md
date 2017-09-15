@@ -27,7 +27,6 @@ The minimum number of conditions that you can include is 2, and the maximum is 1
 ## PARAMETERS
 
 ### -Conditions
-{{Fill Conditions Description}}
 
 ```yaml
 Type: Object[]

@@ -19,9 +19,6 @@ Gets the location of a specific S3 bucket
 Get-VSS3BucketLocation [-BucketName] <String> [-ProfileName <String>]
 ```
 
-## DESCRIPTION
-{{Fill in the Description}}
-
 ## PARAMETERS
 
 ### -BucketName

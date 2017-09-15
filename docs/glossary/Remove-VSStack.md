@@ -20,8 +20,6 @@ Remove-VSStack [-StackName] <String> [[-ClientRequestToken] <String>] [[-RetainR
  [[-RoleARN] <String>] [[-ProfileName] <String>] [-WhatIf] [-Confirm]
 ```
 
-## DESCRIPTION
-{{Fill in the Description}}
 
 ## PARAMETERS
 

@@ -22,9 +22,6 @@ Resume-VSStackUpdateRollback [[-StackName] <String>] [[-ClientRequestToken] <Str
  [[-ResourcesToSkip] <String[]>] [[-RoleARN] <String>] [[-ProfileName] <String>]
 ```
 
-## DESCRIPTION
-{{Fill in the Description}}
-
 ## PARAMETERS
 
 ### -StackName

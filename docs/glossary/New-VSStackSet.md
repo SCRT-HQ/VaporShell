@@ -36,9 +36,6 @@ New-VSStackSet [-TemplateUrl] <String> -StackSetName <String> [-Capabilities <St
  [-ProfileName <String>] [-WhatIf] [-Confirm]
 ```
 
-## DESCRIPTION
-{{Fill in the Description}}
-
 ## PARAMETERS
 
 ### -TemplateBody

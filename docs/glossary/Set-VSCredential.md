@@ -21,9 +21,6 @@ Set-VSCredential [[-AccessKey] <String>] [[-SecretKey] <String>] [[-Region] <Str
  [[-ProfileName] <String>]
 ```
 
-## DESCRIPTION
-{{Fill in the Description}}
-
 ## PARAMETERS
 
 ### -AccessKey

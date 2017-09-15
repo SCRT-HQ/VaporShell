@@ -21,9 +21,6 @@ Remove-VSStackSetInstances [-StackSetName] <String> [[-Accounts] <String[]>] [[-
  [[-ProfileName] <String>] [-WhatIf] [-Confirm]
 ```
 
-## DESCRIPTION
-{{Fill in the Description}}
-
 ## PARAMETERS
 
 ### -StackSetName

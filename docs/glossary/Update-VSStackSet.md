@@ -45,9 +45,6 @@ Update-VSStackSet [-UsePreviousTemplate] [-Capabilities <String[]>] [-Descriptio
  [-StackSetName <String>] [-Tags <String>] [-ProfileName <String>] [-WhatIf] [-Confirm]
 ```
 
-## DESCRIPTION
-{{Fill in the Description}}
-
 ## PARAMETERS
 
 ### -TemplateBody

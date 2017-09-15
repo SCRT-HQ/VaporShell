@@ -11,7 +11,6 @@ data2: Deep
 # VSStackParameter
 
 ## SYNOPSIS
-{{Fill in the Synopsis}}
 
 ## SYNTAX
 
@@ -19,13 +18,9 @@ data2: Deep
 VSStackParameter [[-ParameterKey] <String>] [[-ParameterValue] <String>] [[-UsePreviousValue] <Boolean>]
 ```
 
-## DESCRIPTION
-{{Fill in the Description}}
-
 ## PARAMETERS
 
 ### -ParameterKey
-{{Fill ParameterKey Description}}
 
 ```yaml
 Type: String
@@ -40,7 +35,6 @@ Accept wildcard characters: False
 ```
 
 ### -ParameterValue
-{{Fill ParameterValue Description}}
 
 ```yaml
 Type: String
@@ -55,7 +49,6 @@ Accept wildcard characters: False
 ```
 
 ### -UsePreviousValue
-{{Fill UsePreviousValue Description}}
 
 ```yaml
 Type: Boolean

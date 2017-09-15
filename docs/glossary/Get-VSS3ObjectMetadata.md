@@ -19,9 +19,6 @@ Gets an S3 object's metadata
 Get-VSS3ObjectMetadata [-BucketName] <String> [-Key] <String> [-ProfileName <String>]
 ```
 
-## DESCRIPTION
-{{Fill in the Description}}
-
 ## PARAMETERS
 
 ### -BucketName

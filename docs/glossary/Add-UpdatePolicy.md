@@ -182,7 +182,6 @@ Accept wildcard characters: False
 ```
 
 ### -MinSuccessfulInstancesPercent
-{{Fill MinSuccessfulInstancesPercent Description}}
 
 ```yaml
 Type: Int32
@@ -242,7 +241,6 @@ Accept wildcard characters: False
 ```
 
 ### -WaitOnResourceSignals
-{{Fill WaitOnResourceSignals Description}}
 
 ```yaml
 Type: Boolean

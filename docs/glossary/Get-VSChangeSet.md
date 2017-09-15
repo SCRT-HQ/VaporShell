@@ -25,9 +25,6 @@ Get-VSChangeSet [-Description] [-ChangeSetName <String>] -StackName <String> [-P
 Get-VSChangeSet [-List] -StackName <String> [-ProfileName <String>]
 ```
 
-## DESCRIPTION
-{{Fill in the Description}}
-
 ## PARAMETERS
 
 ### -Description

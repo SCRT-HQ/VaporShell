@@ -51,9 +51,6 @@ Update-VSStack [-UsePreviousTemplate] [-Capabilities <String[]>] [-ClientRequest
  [-ProfileName <String>] [-WhatIf] [-Confirm]
 ```
 
-## DESCRIPTION
-{{Fill in the Description}}
-
 ## PARAMETERS
 
 ### -TemplateBody

@@ -11,21 +11,15 @@ data2: Deep
 # VSStackTag
 
 ## SYNOPSIS
-{{Fill in the Synopsis}}
 
 ## SYNTAX
 
 ```
 VSStackTag [[-Key] <String>] [[-Value] <String>]
 ```
-
-## DESCRIPTION
-{{Fill in the Description}}
-
 ## PARAMETERS
 
 ### -Key
-{{Fill Key Description}}
 
 ```yaml
 Type: String
@@ -40,7 +34,6 @@ Accept wildcard characters: False
 ```
 
 ### -Value
-{{Fill Value Description}}
 
 ```yaml
 Type: String

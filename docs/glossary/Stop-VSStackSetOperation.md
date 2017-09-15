@@ -20,9 +20,6 @@ Stop-VSStackSetOperation [[-StackSetName] <String>] [[-OperationId] <String>] [[
  [-WhatIf] [-Confirm]
 ```
 
-## DESCRIPTION
-{{Fill in the Description}}
-
 ## PARAMETERS
 
 ### -StackSetName

@@ -19,9 +19,6 @@ Gets the list of S3 bucket names, owners and creation dates.
 Get-VSS3BucketList [[-ProfileName] <String>]
 ```
 
-## DESCRIPTION
-{{Fill in the Description}}
-
 ## PARAMETERS
 
 ### -ProfileName

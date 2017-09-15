@@ -19,9 +19,6 @@ Retrieves your account's AWS CloudFormation limits, such as the maximum number o
 Get-VSAccountLimits [[-ProfileName] <String>]
 ```
 
-## DESCRIPTION
-{{Fill in the Description}}
-
 ## PARAMETERS
 
 ### -ProfileName

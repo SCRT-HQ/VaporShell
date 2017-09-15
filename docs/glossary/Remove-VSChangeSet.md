@@ -20,9 +20,6 @@ Remove-VSChangeSet [[-ChangeSetName] <String>] [[-StackName] <String>] [[-Profil
  [-Confirm]
 ```
 
-## DESCRIPTION
-{{Fill in the Description}}
-
 ## PARAMETERS
 
 ### -ChangeSetName

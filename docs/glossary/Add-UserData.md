@@ -27,9 +27,6 @@ Add-UserData [-String] <Object>
 Add-UserData [-File] <String>
 ```
 
-## DESCRIPTION
-{{Fill in the Description}}
-
 ## PARAMETERS
 
 ### -String

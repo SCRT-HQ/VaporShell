@@ -41,8 +41,6 @@ New-VSStack [-TemplateUrl] <String> [-StackName <String>] [-Capabilities <String
  [-ProfileName <String>] [-WhatIf] [-Confirm]
 ```
 
-## DESCRIPTION
-{{Fill in the Description}}
 
 ## PARAMETERS
 
