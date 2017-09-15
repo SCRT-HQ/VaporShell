@@ -18,8 +18,9 @@ Adds an AWS::EC2::SpotFleet.SpotFleetRequestConfigData resource property to the 
 ```
 Add-VSEC2SpotFleetSpotFleetRequestConfigData [[-AllocationStrategy] <Object>]
  [[-ExcessCapacityTerminationPolicy] <Object>] [-IamFleetRole] <Object> [-LaunchSpecifications] <Object>
- [-SpotPrice] <Object> [-TargetCapacity] <Int32> [[-TerminateInstancesWithExpiration] <Boolean>]
- [[-ValidFrom] <Object>] [[-ValidUntil] <Object>]
+ [[-ReplaceUnhealthyInstances] <Boolean>] [-SpotPrice] <Object> [-TargetCapacity] <Int32>
+ [[-TerminateInstancesWithExpiration] <Boolean>] [[-Type] <Object>] [[-ValidFrom] <Object>]
+ [[-ValidUntil] <Object>]
 ```
 
 ## DESCRIPTION
@@ -101,6 +102,24 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
+### -ReplaceUnhealthyInstances
+Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-spotfleet-spotfleetrequestconfigdata.html#cfn-ec2-spotfleet-spotfleetrequestconfigdata-replaceunhealthyinstances    
+PrimitiveType: Boolean    
+Required: False    
+UpdateType: Immutable
+
+```yaml
+Type: Boolean
+Parameter Sets: (All)
+Aliases: 
+
+Required: False
+Position: 5
+Default value: False
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
 ### -SpotPrice
 Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-spotfleet-spotfleetrequestconfigdata.html#cfn-ec2-spotfleet-spotfleetrequestconfigdata-spotprice    
 PrimitiveType: String    
@@ -113,7 +132,7 @@ Parameter Sets: (All)
 Aliases: 
 
 Required: True
-Position: 5
+Position: 6
 Default value: None
 Accept pipeline input: False
 Accept wildcard characters: False
@@ -131,7 +150,7 @@ Parameter Sets: (All)
 Aliases: 
 
 Required: True
-Position: 6
+Position: 7
 Default value: 0
 Accept pipeline input: False
 Accept wildcard characters: False
@@ -149,8 +168,26 @@ Parameter Sets: (All)
 Aliases: 
 
 Required: False
-Position: 7
+Position: 8
 Default value: False
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### -Type
+Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-spotfleet-spotfleetrequestconfigdata.html#cfn-ec2-spotfleet-spotfleetrequestconfigdata-type    
+PrimitiveType: String    
+Required: False    
+UpdateType: Immutable
+
+```yaml
+Type: Object
+Parameter Sets: (All)
+Aliases: 
+
+Required: False
+Position: 9
+Default value: None
 Accept pipeline input: False
 Accept wildcard characters: False
 ```
@@ -167,7 +204,7 @@ Parameter Sets: (All)
 Aliases: 
 
 Required: False
-Position: 8
+Position: 10
 Default value: None
 Accept pipeline input: False
 Accept wildcard characters: False
@@ -185,7 +222,7 @@ Parameter Sets: (All)
 Aliases: 
 
 Required: False
-Position: 9
+Position: 11
 Default value: None
 Accept pipeline input: False
 Accept wildcard characters: False

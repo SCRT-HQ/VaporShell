@@ -16,8 +16,8 @@ Adds an AWS::SSM::Parameter resource to the template
 ## SYNTAX
 
 ```
-New-VSSSMParameter [-LogicalId] <String> -Type <Object> [-Description <Object>] -Value <Object>
- [-Name <Object>] [-DeletionPolicy <String>] [-DependsOn <String[]>] [-Metadata <Object>]
+New-VSSSMParameter [-LogicalId] <String> -Type <Object> [-Description <Object>] [-AllowedPattern <Object>]
+ -Value <Object> [-Name <Object>] [-DeletionPolicy <String>] [-DependsOn <String[]>] [-Metadata <Object>]
  [-UpdatePolicy <Object>] [-Condition <Object>]
 ```
 
@@ -64,6 +64,24 @@ Accept wildcard characters: False
 ### -Description
 Required: False    
 Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ssm-parameter.html#cfn-ssm-parameter-description    
+PrimitiveType: String    
+UpdateType: Mutable
+
+```yaml
+Type: Object
+Parameter Sets: (All)
+Aliases: 
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### -AllowedPattern
+Required: False    
+Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ssm-parameter.html#cfn-ssm-parameter-allowedpattern    
 PrimitiveType: String    
 UpdateType: Mutable
 

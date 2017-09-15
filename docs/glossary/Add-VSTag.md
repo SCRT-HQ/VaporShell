@@ -28,7 +28,7 @@ Adds an Tag resource property to the template
 Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-resource-tags.html#cfn-resource-tags-key    
 PrimitiveType: String    
 Required: True    
-UpdateType: Immutable
+UpdateType: Mutable
 
 ```yaml
 Type: Object
@@ -46,7 +46,7 @@ Accept wildcard characters: False
 Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-resource-tags.html#cfn-resource-tags-value    
 PrimitiveType: String    
 Required: True    
-UpdateType: Immutable
+UpdateType: Mutable
 
 ```yaml
 Type: Object

@@ -16,8 +16,9 @@ Adds an AWS::IoT::TopicRule.DynamoDBAction resource property to the template
 ## SYNTAX
 
 ```
-Add-VSIoTTopicRuleDynamoDBAction [-HashKeyField] <Object> [-HashKeyValue] <Object> [[-PayloadField] <Object>]
- [-RangeKeyField] <Object> [-RangeKeyValue] <Object> [-RoleArn] <Object> [-TableName] <Object>
+Add-VSIoTTopicRuleDynamoDBAction [-HashKeyField] <Object> [[-HashKeyType] <Object>] [-HashKeyValue] <Object>
+ [[-PayloadField] <Object>] [-RangeKeyField] <Object> [[-RangeKeyType] <Object>] [-RangeKeyValue] <Object>
+ [-RoleArn] <Object> [-TableName] <Object>
 ```
 
 ## DESCRIPTION
@@ -26,7 +27,7 @@ Adds an AWS::IoT::TopicRule.DynamoDBAction resource property to the template
 ## PARAMETERS
 
 ### -HashKeyField
-Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iot-dynamodb.html#cfn-iot-dynamodb-hashkeyfield    
+Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iot-topicrule-dynamodbaction.html#cfn-iot-topicrule-dynamodbaction-hashkeyfield    
 PrimitiveType: String    
 Required: True    
 UpdateType: Mutable
@@ -43,26 +44,8 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
-### -HashKeyValue
-Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iot-dynamodb.html#cfn-iot-dynamodb-hashkeyvalue    
-PrimitiveType: String    
-Required: True    
-UpdateType: Mutable
-
-```yaml
-Type: Object
-Parameter Sets: (All)
-Aliases: 
-
-Required: True
-Position: 2
-Default value: None
-Accept pipeline input: False
-Accept wildcard characters: False
-```
-
-### -PayloadField
-Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iot-dynamodb.html#cfn-iot-dynamodb-payloadfield    
+### -HashKeyType
+Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iot-topicrule-dynamodbaction.html#cfn-iot-topicrule-dynamodbaction-hashkeytype    
 PrimitiveType: String    
 Required: False    
 UpdateType: Mutable
@@ -73,14 +56,14 @@ Parameter Sets: (All)
 Aliases: 
 
 Required: False
-Position: 3
+Position: 2
 Default value: None
 Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
-### -RangeKeyField
-Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iot-dynamodb.html#cfn-iot-dynamodb-rangekeyfield    
+### -HashKeyValue
+Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iot-topicrule-dynamodbaction.html#cfn-iot-topicrule-dynamodbaction-hashkeyvalue    
 PrimitiveType: String    
 Required: True    
 UpdateType: Mutable
@@ -91,14 +74,32 @@ Parameter Sets: (All)
 Aliases: 
 
 Required: True
+Position: 3
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### -PayloadField
+Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iot-topicrule-dynamodbaction.html#cfn-iot-topicrule-dynamodbaction-payloadfield    
+PrimitiveType: String    
+Required: False    
+UpdateType: Mutable
+
+```yaml
+Type: Object
+Parameter Sets: (All)
+Aliases: 
+
+Required: False
 Position: 4
 Default value: None
 Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
-### -RangeKeyValue
-Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iot-dynamodb.html#cfn-iot-dynamodb-rangekeyvalue    
+### -RangeKeyField
+Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iot-topicrule-dynamodbaction.html#cfn-iot-topicrule-dynamodbaction-rangekeyfield    
 PrimitiveType: String    
 Required: True    
 UpdateType: Mutable
@@ -115,10 +116,10 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
-### -RoleArn
-Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iot-dynamodb.html#cfn-iot-dynamodb-rolearn    
+### -RangeKeyType
+Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iot-topicrule-dynamodbaction.html#cfn-iot-topicrule-dynamodbaction-rangekeytype    
 PrimitiveType: String    
-Required: True    
+Required: False    
 UpdateType: Mutable
 
 ```yaml
@@ -126,15 +127,15 @@ Type: Object
 Parameter Sets: (All)
 Aliases: 
 
-Required: True
+Required: False
 Position: 6
 Default value: None
 Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
-### -TableName
-Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iot-dynamodb.html#cfn-iot-dynamodb-tablename    
+### -RangeKeyValue
+Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iot-topicrule-dynamodbaction.html#cfn-iot-topicrule-dynamodbaction-rangekeyvalue    
 PrimitiveType: String    
 Required: True    
 UpdateType: Mutable
@@ -151,6 +152,42 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
+### -RoleArn
+Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iot-topicrule-dynamodbaction.html#cfn-iot-topicrule-dynamodbaction-rolearn    
+PrimitiveType: String    
+Required: True    
+UpdateType: Mutable
+
+```yaml
+Type: Object
+Parameter Sets: (All)
+Aliases: 
+
+Required: True
+Position: 8
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### -TableName
+Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iot-topicrule-dynamodbaction.html#cfn-iot-topicrule-dynamodbaction-tablename    
+PrimitiveType: String    
+Required: True    
+UpdateType: Mutable
+
+```yaml
+Type: Object
+Parameter Sets: (All)
+Aliases: 
+
+Required: True
+Position: 9
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
 ## INPUTS
 
 ## OUTPUTS
@@ -161,5 +198,5 @@ Accept wildcard characters: False
 
 ## RELATED LINKS
 
-[http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iot-dynamodb.html](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iot-dynamodb.html)
+[http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iot-topicrule-dynamodbaction.html](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iot-topicrule-dynamodbaction.html)
 

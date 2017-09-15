@@ -182,7 +182,7 @@ Accept wildcard characters: False
 Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-instance.html#cfn-ec2-instance-iaminstanceprofile    
 PrimitiveType: String    
 Required: False    
-UpdateType: Immutable
+UpdateType: Mutable
 
 ```yaml
 Type: Object

@@ -81,7 +81,7 @@ Accept wildcard characters: False
 
 ### -MetricTransformations
 Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-logs-metricfilter.html#cfn-cwl-metricfilter-metrictransformations    
-DuplicatesAllowed: True    
+DuplicatesAllowed: False    
 ItemType: MetricTransformation    
 Required: True    
 Type: List    

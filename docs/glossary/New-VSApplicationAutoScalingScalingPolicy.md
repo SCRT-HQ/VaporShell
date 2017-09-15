@@ -18,8 +18,9 @@ Adds an AWS::ApplicationAutoScaling::ScalingPolicy resource to the template
 ```
 New-VSApplicationAutoScalingScalingPolicy [-LogicalId] <String> -PolicyName <Object> -PolicyType <Object>
  [-ResourceId <Object>] [-ScalableDimension <Object>] [-ScalingTargetId <Object>] [-ServiceNamespace <Object>]
- [-StepScalingPolicyConfiguration <Object>] [-DeletionPolicy <String>] [-DependsOn <String[]>]
- [-Metadata <Object>] [-UpdatePolicy <Object>] [-Condition <Object>]
+ [-StepScalingPolicyConfiguration <Object>] [-TargetTrackingScalingPolicyConfiguration <Object>]
+ [-DeletionPolicy <String>] [-DependsOn <String[]>] [-Metadata <Object>] [-UpdatePolicy <Object>]
+ [-Condition <Object>]
 ```
 
 ## DESCRIPTION
@@ -156,6 +157,24 @@ Accept wildcard characters: False
 Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-applicationautoscaling-scalingpolicy.html#cfn-applicationautoscaling-scalingpolicy-stepscalingpolicyconfiguration    
 Required: False    
 Type: StepScalingPolicyConfiguration    
+UpdateType: Mutable
+
+```yaml
+Type: Object
+Parameter Sets: (All)
+Aliases: 
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### -TargetTrackingScalingPolicyConfiguration
+Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-applicationautoscaling-scalingpolicy.html#cfn-applicationautoscaling-scalingpolicy-targettrackingscalingpolicyconfiguration    
+Required: False    
+Type: TargetTrackingScalingPolicyConfiguration    
 UpdateType: Mutable
 
 ```yaml

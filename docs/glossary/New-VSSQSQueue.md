@@ -17,7 +17,8 @@ Adds an AWS::SQS::Queue resource to the template
 
 ```
 New-VSSQSQueue [-LogicalId] <String> [-ContentBasedDeduplication <Boolean>] [-DelaySeconds <Int32>]
- [-FifoQueue <Boolean>] [-MaximumMessageSize <Int32>] [-MessageRetentionPeriod <Int32>] [-QueueName <Object>]
+ [-FifoQueue <Boolean>] [-KmsDataKeyReusePeriodSeconds <Int32>] [-KmsMasterKeyId <Object>]
+ [-MaximumMessageSize <Int32>] [-MessageRetentionPeriod <Int32>] [-QueueName <Object>]
  [-ReceiveMessageWaitTimeSeconds <Int32>] [-RedrivePolicy <Object>] [-VisibilityTimeout <Int32>]
  [-DeletionPolicy <String>] [-DependsOn <String[]>] [-Metadata <Object>] [-UpdatePolicy <Object>]
  [-Condition <Object>]
@@ -95,6 +96,42 @@ Aliases:
 Required: False
 Position: Named
 Default value: False
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### -KmsDataKeyReusePeriodSeconds
+Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-sqs-queues.html#aws-sqs-queue-kmsdatakeyreuseperiodseconds    
+PrimitiveType: Integer    
+Required: False    
+UpdateType: Mutable
+
+```yaml
+Type: Int32
+Parameter Sets: (All)
+Aliases: 
+
+Required: False
+Position: Named
+Default value: 0
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### -KmsMasterKeyId
+Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-sqs-queues.html#aws-sqs-queue-kmsmasterkeyid    
+PrimitiveType: String    
+Required: False    
+UpdateType: Mutable
+
+```yaml
+Type: Object
+Parameter Sets: (All)
+Aliases: 
+
+Required: False
+Position: Named
+Default value: None
 Accept pipeline input: False
 Accept wildcard characters: False
 ```

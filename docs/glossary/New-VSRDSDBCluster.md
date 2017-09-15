@@ -20,9 +20,9 @@ New-VSRDSDBCluster [-LogicalId] <String> [-AvailabilityZones <Object>] [-BackupR
  [-DBClusterParameterGroupName <Object>] [-DBSubnetGroupName <Object>] [-DatabaseName <Object>]
  -Engine <Object> [-EngineVersion <Object>] [-KmsKeyId <Object>] [-MasterUserPassword <Object>]
  [-MasterUsername <Object>] [-Port <Int32>] [-PreferredBackupWindow <Object>]
- [-PreferredMaintenanceWindow <Object>] [-SnapshotIdentifier <Object>] [-StorageEncrypted <Boolean>]
- [-Tags <Object>] [-VpcSecurityGroupIds <Object>] [-DeletionPolicy <String>] [-DependsOn <String[]>]
- [-Metadata <Object>] [-UpdatePolicy <Object>] [-Condition <Object>]
+ [-PreferredMaintenanceWindow <Object>] [-ReplicationSourceIdentifier <Object>] [-SnapshotIdentifier <Object>]
+ [-StorageEncrypted <Boolean>] [-Tags <Object>] [-VpcSecurityGroupIds <Object>] [-DeletionPolicy <String>]
+ [-DependsOn <String[]>] [-Metadata <Object>] [-UpdatePolicy <Object>] [-Condition <Object>]
 ```
 
 ## DESCRIPTION
@@ -265,6 +265,24 @@ Accept wildcard characters: False
 
 ### -PreferredMaintenanceWindow
 Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-rds-dbcluster.html#cfn-rds-dbcluster-preferredmaintenancewindow    
+PrimitiveType: String    
+Required: False    
+UpdateType: Mutable
+
+```yaml
+Type: Object
+Parameter Sets: (All)
+Aliases: 
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### -ReplicationSourceIdentifier
+Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-rds-dbcluster.html#cfn-rds-dbcluster-replicationsourceidentifier    
 PrimitiveType: String    
 Required: False    
 UpdateType: Mutable

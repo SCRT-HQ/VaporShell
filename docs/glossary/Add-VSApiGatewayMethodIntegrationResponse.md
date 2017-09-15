@@ -17,7 +17,7 @@ Adds an AWS::ApiGateway::Method.IntegrationResponse resource property to the tem
 
 ```
 Add-VSApiGatewayMethodIntegrationResponse [[-ResponseParameters] <Hashtable>]
- [[-ResponseTemplates] <Hashtable>] [[-SelectionPattern] <Object>] [[-StatusCode] <Object>]
+ [[-ResponseTemplates] <Hashtable>] [[-SelectionPattern] <Object>] [-StatusCode] <Object>
 ```
 
 ## DESCRIPTION
@@ -86,7 +86,7 @@ Accept wildcard characters: False
 ### -StatusCode
 Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-apitgateway-method-integration-integrationresponse.html#cfn-apigateway-method-integration-integrationresponse-statuscode    
 PrimitiveType: String    
-Required: False    
+Required: True    
 UpdateType: Mutable
 
 ```yaml
@@ -94,7 +94,7 @@ Type: Object
 Parameter Sets: (All)
 Aliases: 
 
-Required: False
+Required: True
 Position: 4
 Default value: None
 Accept pipeline input: False

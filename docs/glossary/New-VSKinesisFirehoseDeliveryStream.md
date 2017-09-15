@@ -17,9 +17,9 @@ Adds an AWS::KinesisFirehose::DeliveryStream resource to the template
 
 ```
 New-VSKinesisFirehoseDeliveryStream [-LogicalId] <String> [-DeliveryStreamName <Object>]
- [-ElasticsearchDestinationConfiguration <Object>] [-RedshiftDestinationConfiguration <Object>]
- [-S3DestinationConfiguration <Object>] [-DeletionPolicy <String>] [-DependsOn <String[]>] [-Metadata <Object>]
- [-UpdatePolicy <Object>] [-Condition <Object>]
+ [-ElasticsearchDestinationConfiguration <Object>] [-ExtendedS3DestinationConfiguration <Object>]
+ [-RedshiftDestinationConfiguration <Object>] [-S3DestinationConfiguration <Object>] [-DeletionPolicy <String>]
+ [-DependsOn <String[]>] [-Metadata <Object>] [-UpdatePolicy <Object>] [-Condition <Object>]
 ```
 
 ## DESCRIPTION
@@ -45,7 +45,7 @@ Accept wildcard characters: False
 ```
 
 ### -DeliveryStreamName
-Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-kinesisfirehose-deliverystream.html#cfn-kinesisfirehose-deliverstream-deliverystreamname    
+Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-kinesisfirehose-deliverystream.html#cfn-kinesisfirehose-deliverystream-deliverystreamname    
 PrimitiveType: String    
 Required: False    
 UpdateType: Immutable
@@ -63,9 +63,27 @@ Accept wildcard characters: False
 ```
 
 ### -ElasticsearchDestinationConfiguration
-Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-kinesisfirehose-deliverystream.html#cfn-kinesisfirehose-deliverstream-elasticsearchdestinationconfiguration    
+Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-kinesisfirehose-deliverystream.html#cfn-kinesisfirehose-deliverystream-elasticsearchdestinationconfiguration    
 Required: False    
 Type: ElasticsearchDestinationConfiguration    
+UpdateType: Mutable
+
+```yaml
+Type: Object
+Parameter Sets: (All)
+Aliases: 
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### -ExtendedS3DestinationConfiguration
+Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-kinesisfirehose-deliverystream.html#cfn-kinesisfirehose-deliverystream-extendeds3destinationconfiguration    
+Required: False    
+Type: ExtendedS3DestinationConfiguration    
 UpdateType: Mutable
 
 ```yaml

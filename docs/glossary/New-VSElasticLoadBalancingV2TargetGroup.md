@@ -19,9 +19,9 @@ Adds an AWS::ElasticLoadBalancingV2::TargetGroup resource to the template
 New-VSElasticLoadBalancingV2TargetGroup [-LogicalId] <String> [-HealthCheckIntervalSeconds <Int32>]
  [-HealthCheckPath <Object>] [-HealthCheckPort <Object>] [-HealthCheckProtocol <Object>]
  [-HealthCheckTimeoutSeconds <Int32>] [-HealthyThresholdCount <Int32>] [-Matcher <Object>] [-Name <Object>]
- -Port <Int32> -Protocol <Object> [-Tags <Object>] [-TargetGroupAttributes <Object>] [-Targets <Object>]
- [-UnhealthyThresholdCount <Int32>] -VpcId <Object> [-DeletionPolicy <String>] [-DependsOn <String[]>]
- [-Metadata <Object>] [-UpdatePolicy <Object>] [-Condition <Object>]
+ -Port <Int32> -Protocol <Object> [-Tags <Object>] [-TargetGroupAttributes <Object>] [-TargetType <Object>]
+ [-Targets <Object>] [-UnhealthyThresholdCount <Int32>] -VpcId <Object> [-DeletionPolicy <String>]
+ [-DependsOn <String[]>] [-Metadata <Object>] [-UpdatePolicy <Object>] [-Condition <Object>]
 ```
 
 ## DESCRIPTION
@@ -253,6 +253,24 @@ ItemType: TargetGroupAttribute
 Required: False    
 Type: List    
 UpdateType: Mutable
+
+```yaml
+Type: Object
+Parameter Sets: (All)
+Aliases: 
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### -TargetType
+Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-elasticloadbalancingv2-targetgroup.html#cfn-elasticloadbalancingv2-targetgroup-targettype    
+PrimitiveType: String    
+Required: False    
+UpdateType: Immutable
 
 ```yaml
 Type: Object

@@ -18,7 +18,7 @@ Adds an AWS::ElasticBeanstalk::Environment resource to the template
 ```
 New-VSElasticBeanstalkEnvironment [-LogicalId] <String> -ApplicationName <Object> [-CNAMEPrefix <Object>]
  [-Description <Object>] [-EnvironmentName <Object>] [-OptionSettings <Object>] [-SolutionStackName <Object>]
- [-TemplateName <Object>] [-Tier <Object>] [-VersionLabel <Object>] [-DeletionPolicy <String>]
+ [-Tags <Object>] [-TemplateName <Object>] [-Tier <Object>] [-VersionLabel <Object>] [-DeletionPolicy <String>]
  [-DependsOn <String[]>] [-Metadata <Object>] [-UpdatePolicy <Object>] [-Condition <Object>]
 ```
 
@@ -141,6 +141,26 @@ Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws
 PrimitiveType: String    
 Required: False    
 UpdateType: Immutable
+
+```yaml
+Type: Object
+Parameter Sets: (All)
+Aliases: 
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### -Tags
+Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-beanstalk-environment.html#cfn-elasticbeanstalk-environment-tags    
+DuplicatesAllowed: True    
+ItemType: Tag    
+Required: False    
+Type: List    
+UpdateType: Mutable
 
 ```yaml
 Type: Object

@@ -17,10 +17,11 @@ Adds an AWS::EMR::Cluster.JobFlowInstancesConfig resource property to the templa
 
 ```
 Add-VSEMRClusterJobFlowInstancesConfig [[-AdditionalMasterSecurityGroups] <Object>]
- [[-AdditionalSlaveSecurityGroups] <Object>] [[-CoreInstanceGroup] <Object>] [[-Ec2KeyName] <Object>]
- [[-Ec2SubnetId] <Object>] [[-EmrManagedMasterSecurityGroup] <Object>]
- [[-EmrManagedSlaveSecurityGroup] <Object>] [[-HadoopVersion] <Object>] [-MasterInstanceGroup] <Object>
- [[-Placement] <Object>] [[-ServiceAccessSecurityGroup] <Object>] [[-TerminationProtected] <Boolean>]
+ [[-AdditionalSlaveSecurityGroups] <Object>] [[-CoreInstanceFleet] <Object>] [[-CoreInstanceGroup] <Object>]
+ [[-Ec2KeyName] <Object>] [[-Ec2SubnetId] <Object>] [[-EmrManagedMasterSecurityGroup] <Object>]
+ [[-EmrManagedSlaveSecurityGroup] <Object>] [[-HadoopVersion] <Object>] [[-MasterInstanceFleet] <Object>]
+ [[-MasterInstanceGroup] <Object>] [[-Placement] <Object>] [[-ServiceAccessSecurityGroup] <Object>]
+ [[-TerminationProtected] <Boolean>]
 ```
 
 ## DESCRIPTION
@@ -68,6 +69,24 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
+### -CoreInstanceFleet
+Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-emr-cluster-jobflowinstancesconfig.html#cfn-elasticmapreduce-cluster-jobflowinstancesconfig-coreinstancefleet    
+Required: False    
+Type: InstanceFleetConfig    
+UpdateType: Immutable
+
+```yaml
+Type: Object
+Parameter Sets: (All)
+Aliases: 
+
+Required: False
+Position: 3
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
 ### -CoreInstanceGroup
 Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-emr-cluster-jobflowinstancesconfig.html#cfn-emr-cluster-jobflowinstancesconfig-coreinstancegroup    
 Required: False    
@@ -80,7 +99,7 @@ Parameter Sets: (All)
 Aliases: 
 
 Required: False
-Position: 3
+Position: 4
 Default value: None
 Accept pipeline input: False
 Accept wildcard characters: False
@@ -98,7 +117,7 @@ Parameter Sets: (All)
 Aliases: 
 
 Required: False
-Position: 4
+Position: 5
 Default value: None
 Accept pipeline input: False
 Accept wildcard characters: False
@@ -116,7 +135,7 @@ Parameter Sets: (All)
 Aliases: 
 
 Required: False
-Position: 5
+Position: 6
 Default value: None
 Accept pipeline input: False
 Accept wildcard characters: False
@@ -134,7 +153,7 @@ Parameter Sets: (All)
 Aliases: 
 
 Required: False
-Position: 6
+Position: 7
 Default value: None
 Accept pipeline input: False
 Accept wildcard characters: False
@@ -152,7 +171,7 @@ Parameter Sets: (All)
 Aliases: 
 
 Required: False
-Position: 7
+Position: 8
 Default value: None
 Accept pipeline input: False
 Accept wildcard characters: False
@@ -170,15 +189,33 @@ Parameter Sets: (All)
 Aliases: 
 
 Required: False
-Position: 8
+Position: 9
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### -MasterInstanceFleet
+Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-emr-cluster-jobflowinstancesconfig.html#cfn-elasticmapreduce-cluster-jobflowinstancesconfig-masterinstancefleet    
+Required: False    
+Type: InstanceFleetConfig    
+UpdateType: Immutable
+
+```yaml
+Type: Object
+Parameter Sets: (All)
+Aliases: 
+
+Required: False
+Position: 10
 Default value: None
 Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
 ### -MasterInstanceGroup
-Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-emr-cluster-jobflowinstancesconfig.html#cfn-emr-cluster-jobflowinstancesconfig-masterinstancegroup    
-Required: True    
+Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-emr-cluster-jobflowinstancesconfig.html#cfn-emr-cluster-jobflowinstancesconfig-coreinstancegroup    
+Required: False    
 Type: InstanceGroupConfig    
 UpdateType: Immutable
 
@@ -187,8 +224,8 @@ Type: Object
 Parameter Sets: (All)
 Aliases: 
 
-Required: True
-Position: 9
+Required: False
+Position: 11
 Default value: None
 Accept pipeline input: False
 Accept wildcard characters: False
@@ -206,7 +243,7 @@ Parameter Sets: (All)
 Aliases: 
 
 Required: False
-Position: 10
+Position: 12
 Default value: None
 Accept pipeline input: False
 Accept wildcard characters: False
@@ -224,7 +261,7 @@ Parameter Sets: (All)
 Aliases: 
 
 Required: False
-Position: 11
+Position: 13
 Default value: None
 Accept pipeline input: False
 Accept wildcard characters: False
@@ -242,7 +279,7 @@ Parameter Sets: (All)
 Aliases: 
 
 Required: False
-Position: 12
+Position: 14
 Default value: False
 Accept pipeline input: False
 Accept wildcard characters: False

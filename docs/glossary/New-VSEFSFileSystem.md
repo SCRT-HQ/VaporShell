@@ -16,9 +16,9 @@ Adds an AWS::EFS::FileSystem resource to the template
 ## SYNTAX
 
 ```
-New-VSEFSFileSystem [-LogicalId] <String> [-FileSystemTags <Object>] [-PerformanceMode <Object>]
- [-DeletionPolicy <String>] [-DependsOn <String[]>] [-Metadata <Object>] [-UpdatePolicy <Object>]
- [-Condition <Object>]
+New-VSEFSFileSystem [-LogicalId] <String> [-Encrypted <Boolean>] [-FileSystemTags <Object>]
+ [-KmsKeyId <Object>] [-PerformanceMode <Object>] [-DeletionPolicy <String>] [-DependsOn <String[]>]
+ [-Metadata <Object>] [-UpdatePolicy <Object>] [-Condition <Object>]
 ```
 
 ## DESCRIPTION
@@ -43,6 +43,24 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
+### -Encrypted
+Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-efs-filesystem.html#cfn-efs-filesystem-encrypted    
+PrimitiveType: Boolean    
+Required: False    
+UpdateType: Immutable
+
+```yaml
+Type: Boolean
+Parameter Sets: (All)
+Aliases: 
+
+Required: False
+Position: Named
+Default value: False
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
 ### -FileSystemTags
 Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-efs-filesystem.html#cfn-efs-filesystem-filesystemtags    
 DuplicatesAllowed: False    
@@ -50,6 +68,24 @@ ItemType: ElasticFileSystemTag
 Required: False    
 Type: List    
 UpdateType: Mutable
+
+```yaml
+Type: Object
+Parameter Sets: (All)
+Aliases: 
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### -KmsKeyId
+Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-efs-filesystem.html#cfn-efs-filesystem-kmskeyid    
+PrimitiveType: String    
+Required: False    
+UpdateType: Immutable
 
 ```yaml
 Type: Object

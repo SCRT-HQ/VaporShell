@@ -16,16 +16,34 @@ Adds an AWS::S3::Bucket.Rule resource property to the template
 ## SYNTAX
 
 ```
-Add-VSS3BucketRule [[-ExpirationDate] <Object>] [[-ExpirationInDays] <Int32>] [[-Id] <Object>]
- [[-NoncurrentVersionExpirationInDays] <Int32>] [[-NoncurrentVersionTransition] <Object>]
- [[-NoncurrentVersionTransitions] <Object>] [[-Prefix] <Object>] [-Status] <Object> [[-Transition] <Object>]
- [[-Transitions] <Object>]
+Add-VSS3BucketRule [[-AbortIncompleteMultipartUpload] <Object>] [[-ExpirationDate] <Object>]
+ [[-ExpirationInDays] <Int32>] [[-Id] <Object>] [[-NoncurrentVersionExpirationInDays] <Int32>]
+ [[-NoncurrentVersionTransition] <Object>] [[-NoncurrentVersionTransitions] <Object>] [[-Prefix] <Object>]
+ [-Status] <Object> [[-TagFilters] <Object>] [[-Transition] <Object>] [[-Transitions] <Object>]
 ```
 
 ## DESCRIPTION
 Adds an AWS::S3::Bucket.Rule resource property to the template
 
 ## PARAMETERS
+
+### -AbortIncompleteMultipartUpload
+Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-s3-bucket-lifecycleconfig-rule.html#cfn-s3-bucket-rule-abortincompletemultipartupload    
+Required: False    
+Type: AbortIncompleteMultipartUpload    
+UpdateType: Mutable
+
+```yaml
+Type: Object
+Parameter Sets: (All)
+Aliases: 
+
+Required: False
+Position: 1
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
 
 ### -ExpirationDate
 Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-s3-bucket-lifecycleconfig-rule.html#cfn-s3-bucket-lifecycleconfig-rule-expirationdate    
@@ -39,7 +57,7 @@ Parameter Sets: (All)
 Aliases: 
 
 Required: False
-Position: 1
+Position: 2
 Default value: None
 Accept pipeline input: False
 Accept wildcard characters: False
@@ -57,7 +75,7 @@ Parameter Sets: (All)
 Aliases: 
 
 Required: False
-Position: 2
+Position: 3
 Default value: 0
 Accept pipeline input: False
 Accept wildcard characters: False
@@ -75,7 +93,7 @@ Parameter Sets: (All)
 Aliases: 
 
 Required: False
-Position: 3
+Position: 4
 Default value: None
 Accept pipeline input: False
 Accept wildcard characters: False
@@ -93,7 +111,7 @@ Parameter Sets: (All)
 Aliases: 
 
 Required: False
-Position: 4
+Position: 5
 Default value: 0
 Accept pipeline input: False
 Accept wildcard characters: False
@@ -111,7 +129,7 @@ Parameter Sets: (All)
 Aliases: 
 
 Required: False
-Position: 5
+Position: 6
 Default value: None
 Accept pipeline input: False
 Accept wildcard characters: False
@@ -119,8 +137,10 @@ Accept wildcard characters: False
 
 ### -NoncurrentVersionTransitions
 Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-s3-bucket-lifecycleconfig-rule.html#cfn-s3-bucket-lifecycleconfig-rule-noncurrentversiontransitions    
+DuplicatesAllowed: False    
+ItemType: NoncurrentVersionTransition    
 Required: False    
-Type: NoncurrentVersionTransition    
+Type: List    
 UpdateType: Mutable
 
 ```yaml
@@ -129,7 +149,7 @@ Parameter Sets: (All)
 Aliases: 
 
 Required: False
-Position: 6
+Position: 7
 Default value: None
 Accept pipeline input: False
 Accept wildcard characters: False
@@ -147,7 +167,7 @@ Parameter Sets: (All)
 Aliases: 
 
 Required: False
-Position: 7
+Position: 8
 Default value: None
 Accept pipeline input: False
 Accept wildcard characters: False
@@ -165,7 +185,27 @@ Parameter Sets: (All)
 Aliases: 
 
 Required: True
-Position: 8
+Position: 9
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### -TagFilters
+Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-s3-bucket-lifecycleconfig-rule.html#cfn-s3-bucket-rule-tagfilters    
+DuplicatesAllowed: False    
+ItemType: TagFilter    
+Required: False    
+Type: List    
+UpdateType: Mutable
+
+```yaml
+Type: Object
+Parameter Sets: (All)
+Aliases: 
+
+Required: False
+Position: 10
 Default value: None
 Accept pipeline input: False
 Accept wildcard characters: False
@@ -183,7 +223,7 @@ Parameter Sets: (All)
 Aliases: 
 
 Required: False
-Position: 9
+Position: 11
 Default value: None
 Accept pipeline input: False
 Accept wildcard characters: False
@@ -191,8 +231,10 @@ Accept wildcard characters: False
 
 ### -Transitions
 Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-s3-bucket-lifecycleconfig-rule.html#cfn-s3-bucket-lifecycleconfig-rule-transitions    
+DuplicatesAllowed: False    
+ItemType: Transition    
 Required: False    
-Type: Transition    
+Type: List    
 UpdateType: Mutable
 
 ```yaml
@@ -201,7 +243,7 @@ Parameter Sets: (All)
 Aliases: 
 
 Required: False
-Position: 10
+Position: 12
 Default value: None
 Accept pipeline input: False
 Accept wildcard characters: False

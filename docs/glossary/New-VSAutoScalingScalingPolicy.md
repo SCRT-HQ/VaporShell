@@ -16,11 +16,11 @@ Adds an AWS::AutoScaling::ScalingPolicy resource to the template
 ## SYNTAX
 
 ```
-New-VSAutoScalingScalingPolicy [-LogicalId] <String> -AdjustmentType <Object> -AutoScalingGroupName <Object>
+New-VSAutoScalingScalingPolicy [-LogicalId] <String> [-AdjustmentType <Object>] -AutoScalingGroupName <Object>
  [-Cooldown <Object>] [-EstimatedInstanceWarmup <Int32>] [-MetricAggregationType <Object>]
  [-MinAdjustmentMagnitude <Int32>] [-PolicyType <Object>] [-ScalingAdjustment <Int32>]
- [-StepAdjustments <Object>] [-DeletionPolicy <String>] [-DependsOn <String[]>] [-Metadata <Object>]
- [-UpdatePolicy <Object>] [-Condition <Object>]
+ [-StepAdjustments <Object>] [-TargetTrackingConfiguration <Object>] [-DeletionPolicy <String>]
+ [-DependsOn <String[]>] [-Metadata <Object>] [-UpdatePolicy <Object>] [-Condition <Object>]
 ```
 
 ## DESCRIPTION
@@ -48,7 +48,7 @@ Accept wildcard characters: False
 ### -AdjustmentType
 Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-as-policy.html#cfn-as-scalingpolicy-adjustmenttype    
 PrimitiveType: String    
-Required: True    
+Required: False    
 UpdateType: Mutable
 
 ```yaml
@@ -56,7 +56,7 @@ Type: Object
 Parameter Sets: (All)
 Aliases: 
 
-Required: True
+Required: False
 Position: Named
 Default value: None
 Accept pipeline input: False
@@ -195,6 +195,24 @@ DuplicatesAllowed: False
 ItemType: StepAdjustment    
 Required: False    
 Type: List    
+UpdateType: Mutable
+
+```yaml
+Type: Object
+Parameter Sets: (All)
+Aliases: 
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### -TargetTrackingConfiguration
+Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-as-policy.html#cfn-autoscaling-scalingpolicy-targettrackingconfiguration    
+Required: False    
+Type: TargetTrackingConfiguration    
 UpdateType: Mutable
 
 ```yaml

@@ -16,9 +16,10 @@ Adds an AWS::Lambda::Permission resource to the template
 ## SYNTAX
 
 ```
-New-VSLambdaPermission [-LogicalId] <String> -Action <Object> -FunctionName <Object> -Principal <Object>
- [-SourceAccount <Object>] [-SourceArn <Object>] [-DeletionPolicy <String>] [-DependsOn <String[]>]
- [-Metadata <Object>] [-UpdatePolicy <Object>] [-Condition <Object>]
+New-VSLambdaPermission [-LogicalId] <String> -Action <Object> [-EventSourceToken <Object>]
+ -FunctionName <Object> -Principal <Object> [-SourceAccount <Object>] [-SourceArn <Object>]
+ [-DeletionPolicy <String>] [-DependsOn <String[]>] [-Metadata <Object>] [-UpdatePolicy <Object>]
+ [-Condition <Object>]
 ```
 
 ## DESCRIPTION
@@ -55,6 +56,24 @@ Parameter Sets: (All)
 Aliases: 
 
 Required: True
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### -EventSourceToken
+Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-lambda-permission.html#cfn-lambda-permission-eventsourcetoken    
+PrimitiveType: String    
+Required: False    
+UpdateType: Immutable
+
+```yaml
+Type: Object
+Parameter Sets: (All)
+Aliases: 
+
+Required: False
 Position: Named
 Default value: None
 Accept pipeline input: False

@@ -16,8 +16,7 @@ Adds an AWS::CodeBuild::Project.Source resource property to the template
 ## SYNTAX
 
 ```
-Add-VSCodeBuildProjectSource [[-Type] <Object>] [[-Auth] <Object>] [[-BuildSpec] <Object>]
- [[-Location] <Object>]
+Add-VSCodeBuildProjectSource [-Type] <Object> [[-Auth] <Object>] [[-BuildSpec] <Object>] [[-Location] <Object>]
 ```
 
 ## DESCRIPTION
@@ -26,7 +25,7 @@ Adds an AWS::CodeBuild::Project.Source resource property to the template
 ## PARAMETERS
 
 ### -Type
-Required: False    
+Required: True    
 Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-codebuild-project-source.html#cfn-codebuild-project-source-type    
 PrimitiveType: String    
 UpdateType: Mutable
@@ -36,7 +35,7 @@ Type: Object
 Parameter Sets: (All)
 Aliases: 
 
-Required: False
+Required: True
 Position: 1
 Default value: None
 Accept pipeline input: False

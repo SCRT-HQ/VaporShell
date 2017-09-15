@@ -16,7 +16,7 @@ Adds an AWS::EC2::Route resource to the template
 ## SYNTAX
 
 ```
-New-VSEC2Route [-LogicalId] <String> -DestinationCidrBlock <Object> [-DestinationIpv6CidrBlock <Object>]
+New-VSEC2Route [-LogicalId] <String> [-DestinationCidrBlock <Object>] [-DestinationIpv6CidrBlock <Object>]
  [-GatewayId <Object>] [-InstanceId <Object>] [-NatGatewayId <Object>] [-NetworkInterfaceId <Object>]
  -RouteTableId <Object> [-VpcPeeringConnectionId <Object>] [-DeletionPolicy <String>] [-DependsOn <String[]>]
  [-Metadata <Object>] [-UpdatePolicy <Object>] [-Condition <Object>]
@@ -47,7 +47,7 @@ Accept wildcard characters: False
 ### -DestinationCidrBlock
 Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ec2-route.html#cfn-ec2-route-destinationcidrblock    
 PrimitiveType: String    
-Required: True    
+Required: False    
 UpdateType: Immutable
 
 ```yaml
@@ -55,7 +55,7 @@ Type: Object
 Parameter Sets: (All)
 Aliases: 
 
-Required: True
+Required: False
 Position: Named
 Default value: None
 Accept pipeline input: False

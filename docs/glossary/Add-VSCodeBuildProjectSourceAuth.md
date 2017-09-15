@@ -16,7 +16,7 @@ Adds an AWS::CodeBuild::Project.SourceAuth resource property to the template
 ## SYNTAX
 
 ```
-Add-VSCodeBuildProjectSourceAuth [[-Type] <Object>] [[-Resource] <Object>]
+Add-VSCodeBuildProjectSourceAuth [-Type] <Object> [[-Resource] <Object>]
 ```
 
 ## DESCRIPTION
@@ -25,7 +25,7 @@ Adds an AWS::CodeBuild::Project.SourceAuth resource property to the template
 ## PARAMETERS
 
 ### -Type
-Required: False    
+Required: True    
 Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-codebuild-project-sourceauth.html#cfn-codebuild-project-sourceauth-type    
 PrimitiveType: String    
 UpdateType: Mutable
@@ -35,7 +35,7 @@ Type: Object
 Parameter Sets: (All)
 Aliases: 
 
-Required: False
+Required: True
 Position: 1
 Default value: None
 Accept pipeline input: False

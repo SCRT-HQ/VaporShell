@@ -18,7 +18,7 @@ Adds an AWS::ApiGateway::Authorizer resource to the template
 ```
 New-VSApiGatewayAuthorizer [-LogicalId] <String> [-AuthorizerCredentials <Object>]
  [-AuthorizerResultTtlInSeconds <Int32>] [-AuthorizerUri <Object>] [-IdentitySource <Object>]
- [-IdentityValidationExpression <Object>] [-Name <Object>] [-ProviderARNs <Object>] [-RestApiId <Object>]
+ [-IdentityValidationExpression <Object>] [-Name <Object>] [-ProviderARNs <Object>] -RestApiId <Object>
  [-Type <Object>] [-DeletionPolicy <String>] [-DependsOn <String[]>] [-Metadata <Object>]
  [-UpdatePolicy <Object>] [-Condition <Object>]
 ```
@@ -176,7 +176,7 @@ Accept wildcard characters: False
 ### -RestApiId
 Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-apigateway-authorizer.html#cfn-apigateway-authorizer-restapiid    
 PrimitiveType: String    
-Required: False    
+Required: True    
 UpdateType: Immutable
 
 ```yaml
@@ -184,7 +184,7 @@ Type: Object
 Parameter Sets: (All)
 Aliases: 
 
-Required: False
+Required: True
 Position: Named
 Default value: None
 Accept pipeline input: False

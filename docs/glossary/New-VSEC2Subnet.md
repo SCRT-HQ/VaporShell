@@ -16,9 +16,10 @@ Adds an AWS::EC2::Subnet resource to the template
 ## SYNTAX
 
 ```
-New-VSEC2Subnet [-LogicalId] <String> [-AvailabilityZone <Object>] -CidrBlock <Object>
- [-MapPublicIpOnLaunch <Boolean>] [-Tags <Object>] -VpcId <Object> [-DeletionPolicy <String>]
- [-DependsOn <String[]>] [-Metadata <Object>] [-UpdatePolicy <Object>] [-Condition <Object>]
+New-VSEC2Subnet [-LogicalId] <String> [-AssignIpv6AddressOnCreation <Boolean>] [-AvailabilityZone <Object>]
+ -CidrBlock <Object> [-Ipv6CidrBlock <Object>] [-MapPublicIpOnLaunch <Boolean>] [-Tags <Object>]
+ -VpcId <Object> [-DeletionPolicy <String>] [-DependsOn <String[]>] [-Metadata <Object>]
+ [-UpdatePolicy <Object>] [-Condition <Object>]
 ```
 
 ## DESCRIPTION
@@ -39,6 +40,24 @@ Aliases:
 Required: True
 Position: 1
 Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### -AssignIpv6AddressOnCreation
+Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ec2-subnet.html#cfn-ec2-subnet-assignipv6addressoncreation    
+PrimitiveType: Boolean    
+Required: False    
+UpdateType: Mutable
+
+```yaml
+Type: Boolean
+Parameter Sets: (All)
+Aliases: 
+
+Required: False
+Position: Named
+Default value: False
 Accept pipeline input: False
 Accept wildcard characters: False
 ```
@@ -73,6 +92,24 @@ Parameter Sets: (All)
 Aliases: 
 
 Required: True
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### -Ipv6CidrBlock
+Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ec2-subnet.html#cfn-ec2-subnet-ipv6cidrblock    
+PrimitiveType: String    
+Required: False    
+UpdateType: Immutable
+
+```yaml
+Type: Object
+Parameter Sets: (All)
+Aliases: 
+
+Required: False
 Position: Named
 Default value: None
 Accept pipeline input: False

@@ -16,7 +16,7 @@ Adds an AWS::CodeBuild::Project.Artifacts resource property to the template
 ## SYNTAX
 
 ```
-Add-VSCodeBuildProjectArtifacts [[-Path] <Object>] [[-Type] <Object>] [[-Packaging] <Object>]
+Add-VSCodeBuildProjectArtifacts [[-Path] <Object>] [-Type] <Object> [[-Packaging] <Object>]
  [[-Location] <Object>] [[-Name] <Object>] [[-NamespaceType] <Object>]
 ```
 
@@ -44,7 +44,7 @@ Accept wildcard characters: False
 ```
 
 ### -Type
-Required: False    
+Required: True    
 Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-codebuild-project-artifacts.html#cfn-codebuild-project-artifacts-type    
 PrimitiveType: String    
 UpdateType: Mutable
@@ -54,7 +54,7 @@ Type: Object
 Parameter Sets: (All)
 Aliases: 
 
-Required: False
+Required: True
 Position: 2
 Default value: None
 Accept pipeline input: False

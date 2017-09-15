@@ -16,7 +16,7 @@ Adds an AWS::ApiGateway::BasePathMapping resource to the template
 ## SYNTAX
 
 ```
-New-VSApiGatewayBasePathMapping [-LogicalId] <String> [-BasePath <Object>] [-DomainName <Object>]
+New-VSApiGatewayBasePathMapping [-LogicalId] <String> [-BasePath <Object>] -DomainName <Object>
  [-RestApiId <Object>] [-Stage <Object>] [-DeletionPolicy <String>] [-DependsOn <String[]>]
  [-Metadata <Object>] [-UpdatePolicy <Object>] [-Condition <Object>]
 ```
@@ -64,7 +64,7 @@ Accept wildcard characters: False
 ### -DomainName
 Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-apigateway-basepathmapping.html#cfn-apigateway-basepathmapping-domainname    
 PrimitiveType: String    
-Required: False    
+Required: True    
 UpdateType: Immutable
 
 ```yaml
@@ -72,7 +72,7 @@ Type: Object
 Parameter Sets: (All)
 Aliases: 
 
-Required: False
+Required: True
 Position: Named
 Default value: None
 Accept pipeline input: False

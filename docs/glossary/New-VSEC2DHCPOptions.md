@@ -122,8 +122,10 @@ Accept wildcard characters: False
 
 ### -NtpServers
 Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ec2-dhcp-options.html#cfn-ec2-dhcpoptions-ntpservers    
-PrimitiveType: String    
+DuplicatesAllowed: True    
+PrimitiveItemType: String    
 Required: False    
+Type: List    
 UpdateType: Immutable
 
 ```yaml

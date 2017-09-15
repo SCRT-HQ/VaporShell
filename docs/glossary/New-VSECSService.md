@@ -17,7 +17,7 @@ Adds an AWS::ECS::Service resource to the template
 
 ```
 New-VSECSService [-LogicalId] <String> [-Cluster <Object>] [-DeploymentConfiguration <Object>]
- [-DesiredCount <Int32>] [-LoadBalancers <Object>] [-PlacementConstraints <Object>]
+ -DesiredCount <Int32> [-LoadBalancers <Object>] [-PlacementConstraints <Object>]
  [-PlacementStrategies <Object>] [-Role <Object>] [-ServiceName <Object>] -TaskDefinition <Object>
  [-DeletionPolicy <String>] [-DependsOn <String[]>] [-Metadata <Object>] [-UpdatePolicy <Object>]
  [-Condition <Object>]
@@ -84,7 +84,7 @@ Accept wildcard characters: False
 ### -DesiredCount
 Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ecs-service.html#cfn-ecs-service-desiredcount    
 PrimitiveType: Integer    
-Required: False    
+Required: True    
 UpdateType: Mutable
 
 ```yaml
@@ -92,7 +92,7 @@ Type: Int32
 Parameter Sets: (All)
 Aliases: 
 
-Required: False
+Required: True
 Position: Named
 Default value: 0
 Accept pipeline input: False

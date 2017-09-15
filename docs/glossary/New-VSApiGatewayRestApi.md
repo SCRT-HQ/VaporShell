@@ -16,10 +16,10 @@ Adds an AWS::ApiGateway::RestApi resource to the template
 ## SYNTAX
 
 ```
-New-VSApiGatewayRestApi [-LogicalId] <String> [-Body <Object>] [-BodyS3Location <Object>] [-CloneFrom <Object>]
- [-Description <Object>] [-FailOnWarnings <Boolean>] [-Mode <Object>] [-Name <Object>]
- [-Parameters <Hashtable>] [-DeletionPolicy <String>] [-DependsOn <String[]>] [-Metadata <Object>]
- [-UpdatePolicy <Object>] [-Condition <Object>]
+New-VSApiGatewayRestApi [-LogicalId] <String> [-BinaryMediaTypes <Object>] [-Body <Object>]
+ [-BodyS3Location <Object>] [-CloneFrom <Object>] [-Description <Object>] [-FailOnWarnings <Boolean>]
+ [-Mode <Object>] [-Name <Object>] [-Parameters <Hashtable>] [-DeletionPolicy <String>] [-DependsOn <String[]>]
+ [-Metadata <Object>] [-UpdatePolicy <Object>] [-Condition <Object>]
 ```
 
 ## DESCRIPTION
@@ -39,6 +39,26 @@ Aliases:
 
 Required: True
 Position: 1
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### -BinaryMediaTypes
+Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-apigateway-restapi.html#cfn-apigateway-restapi-binarymediatypes    
+DuplicatesAllowed: False    
+PrimitiveItemType: String    
+Required: False    
+Type: List    
+UpdateType: Mutable
+
+```yaml
+Type: Object
+Parameter Sets: (All)
+Aliases: 
+
+Required: False
+Position: Named
 Default value: None
 Accept pipeline input: False
 Accept wildcard characters: False

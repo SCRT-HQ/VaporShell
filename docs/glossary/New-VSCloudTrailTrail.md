@@ -17,10 +17,11 @@ Adds an AWS::CloudTrail::Trail resource to the template
 
 ```
 New-VSCloudTrailTrail [-LogicalId] <String> [-CloudWatchLogsLogGroupArn <Object>]
- [-CloudWatchLogsRoleArn <Object>] [-EnableLogFileValidation <Boolean>] [-IncludeGlobalServiceEvents <Boolean>]
- -IsLogging <Boolean> [-IsMultiRegionTrail <Boolean>] [-KMSKeyId <Object>] -S3BucketName <Object>
- [-S3KeyPrefix <Object>] [-SnsTopicName <Object>] [-DeletionPolicy <String>] [-DependsOn <String[]>]
- [-Metadata <Object>] [-UpdatePolicy <Object>] [-Condition <Object>]
+ [-CloudWatchLogsRoleArn <Object>] [-EnableLogFileValidation <Boolean>] [-EventSelectors <Object>]
+ [-IncludeGlobalServiceEvents <Boolean>] -IsLogging <Boolean> [-IsMultiRegionTrail <Boolean>]
+ [-KMSKeyId <Object>] -S3BucketName <Object> [-S3KeyPrefix <Object>] [-SnsTopicName <Object>] [-Tags <Object>]
+ [-TrailName <Object>] [-DeletionPolicy <String>] [-DependsOn <String[]>] [-Metadata <Object>]
+ [-UpdatePolicy <Object>] [-Condition <Object>]
 ```
 
 ## DESCRIPTION
@@ -95,6 +96,26 @@ Aliases:
 Required: False
 Position: Named
 Default value: False
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### -EventSelectors
+Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-cloudtrail-trail.html#cfn-cloudtrail-trail-eventselectors    
+DuplicatesAllowed: False    
+ItemType: EventSelector    
+Required: False    
+Type: List    
+UpdateType: Mutable
+
+```yaml
+Type: Object
+Parameter Sets: (All)
+Aliases: 
+
+Required: False
+Position: Named
+Default value: None
 Accept pipeline input: False
 Accept wildcard characters: False
 ```
@@ -212,6 +233,44 @@ Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws
 PrimitiveType: String    
 Required: False    
 UpdateType: Mutable
+
+```yaml
+Type: Object
+Parameter Sets: (All)
+Aliases: 
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### -Tags
+Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-cloudtrail-trail.html#cfn-cloudtrail-trail-tags    
+DuplicatesAllowed: True    
+ItemType: Tag    
+Required: False    
+Type: List    
+UpdateType: Mutable
+
+```yaml
+Type: Object
+Parameter Sets: (All)
+Aliases: 
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### -TrailName
+Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-cloudtrail-trail.html#cfn-cloudtrail-trail-trailname    
+PrimitiveType: String    
+Required: False    
+UpdateType: Immutable
 
 ```yaml
 Type: Object

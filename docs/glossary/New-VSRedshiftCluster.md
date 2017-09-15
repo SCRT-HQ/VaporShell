@@ -21,11 +21,11 @@ New-VSRedshiftCluster [-LogicalId] <String> [-AllowVersionUpgrade <Boolean>]
  [-ClusterSecurityGroups <Object>] [-ClusterSubnetGroupName <Object>] -ClusterType <Object>
  [-ClusterVersion <Object>] -DBName <Object> [-ElasticIp <Object>] [-Encrypted <Boolean>]
  [-HsmClientCertificateIdentifier <Object>] [-HsmConfigurationIdentifier <Object>] [-IamRoles <Object>]
- [-KmsKeyId <Object>] -MasterUserPassword <Object> -MasterUsername <Object> -NodeType <Object>
- [-NumberOfNodes <Int32>] [-OwnerAccount <Object>] [-Port <Int32>] [-PreferredMaintenanceWindow <Object>]
- [-PubliclyAccessible <Boolean>] [-SnapshotClusterIdentifier <Object>] [-SnapshotIdentifier <Object>]
- [-Tags <Object>] [-VpcSecurityGroupIds <Object>] [-DeletionPolicy <String>] [-DependsOn <String[]>]
- [-Metadata <Object>] [-UpdatePolicy <Object>] [-Condition <Object>]
+ [-KmsKeyId <Object>] [-LoggingProperties <Object>] -MasterUserPassword <Object> -MasterUsername <Object>
+ -NodeType <Object> [-NumberOfNodes <Int32>] [-OwnerAccount <Object>] [-Port <Int32>]
+ [-PreferredMaintenanceWindow <Object>] [-PubliclyAccessible <Boolean>] [-SnapshotClusterIdentifier <Object>]
+ [-SnapshotIdentifier <Object>] [-Tags <Object>] [-VpcSecurityGroupIds <Object>] [-DeletionPolicy <String>]
+ [-DependsOn <String[]>] [-Metadata <Object>] [-UpdatePolicy <Object>] [-Condition <Object>]
 ```
 
 ## DESCRIPTION
@@ -72,7 +72,7 @@ Accept wildcard characters: False
 Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-redshift-cluster.html#cfn-redshift-cluster-automatedsnapshotretentionperiod    
 PrimitiveType: Integer    
 Required: False    
-UpdateType: Immutable
+UpdateType: Mutable
 
 ```yaml
 Type: Int32
@@ -311,6 +311,24 @@ Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws
 PrimitiveType: String    
 Required: False    
 UpdateType: Immutable
+
+```yaml
+Type: Object
+Parameter Sets: (All)
+Aliases: 
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### -LoggingProperties
+Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-redshift-cluster.html#cfn-redshift-cluster-loggingproperties    
+Required: False    
+Type: LoggingProperties    
+UpdateType: Mutable
 
 ```yaml
 Type: Object

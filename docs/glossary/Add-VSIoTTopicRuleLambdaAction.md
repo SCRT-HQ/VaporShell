@@ -16,7 +16,7 @@ Adds an AWS::IoT::TopicRule.LambdaAction resource property to the template
 ## SYNTAX
 
 ```
-Add-VSIoTTopicRuleLambdaAction [-FunctionArn] <Object>
+Add-VSIoTTopicRuleLambdaAction [[-FunctionArn] <Object>]
 ```
 
 ## DESCRIPTION
@@ -25,9 +25,9 @@ Adds an AWS::IoT::TopicRule.LambdaAction resource property to the template
 ## PARAMETERS
 
 ### -FunctionArn
-Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iot-lambda.html#cfn-iot-lambda-functionarn    
+Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iot-topicrule-lambdaaction.html#cfn-iot-topicrule-lambdaaction-functionarn    
 PrimitiveType: String    
-Required: True    
+Required: False    
 UpdateType: Mutable
 
 ```yaml
@@ -35,7 +35,7 @@ Type: Object
 Parameter Sets: (All)
 Aliases: 
 
-Required: True
+Required: False
 Position: 1
 Default value: None
 Accept pipeline input: False
@@ -52,5 +52,5 @@ Accept wildcard characters: False
 
 ## RELATED LINKS
 
-[http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iot-lambda.html](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iot-lambda.html)
+[http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iot-topicrule-lambdaaction.html](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iot-topicrule-lambdaaction.html)
 

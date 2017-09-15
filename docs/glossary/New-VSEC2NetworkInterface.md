@@ -17,7 +17,7 @@ Adds an AWS::EC2::NetworkInterface resource to the template
 
 ```
 New-VSEC2NetworkInterface [-LogicalId] <String> [-Description <Object>] [-GroupSet <Object>]
- [-Ipv6AddressCount <Int32>] [-Ipv6Addresses <Object>] [-PrivateIpAddress <Object>]
+ [-InterfaceType <Object>] [-Ipv6AddressCount <Int32>] [-Ipv6Addresses <Object>] [-PrivateIpAddress <Object>]
  [-PrivateIpAddresses <Object>] [-SecondaryPrivateIpAddressCount <Int32>] [-SourceDestCheck <Boolean>]
  -SubnetId <Object> [-Tags <Object>] [-DeletionPolicy <String>] [-DependsOn <String[]>] [-Metadata <Object>]
  [-UpdatePolicy <Object>] [-Condition <Object>]
@@ -65,11 +65,29 @@ Accept wildcard characters: False
 
 ### -GroupSet
 Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ec2-network-interface.html#cfn-awsec2networkinterface-groupset    
-DuplicatesAllowed: True    
+DuplicatesAllowed: False    
 PrimitiveItemType: String    
 Required: False    
 Type: List    
 UpdateType: Mutable
+
+```yaml
+Type: Object
+Parameter Sets: (All)
+Aliases: 
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### -InterfaceType
+Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ec2-network-interface.html#cfn-ec2-networkinterface-interfacetype    
+PrimitiveType: String    
+Required: False    
+UpdateType: Immutable
 
 ```yaml
 Type: Object
@@ -139,7 +157,7 @@ Accept wildcard characters: False
 
 ### -PrivateIpAddresses
 Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ec2-network-interface.html#cfn-awsec2networkinterface-privateipaddresses    
-DuplicatesAllowed: True    
+DuplicatesAllowed: False    
 ItemType: PrivateIpAddressSpecification    
 Required: False    
 Type: List    

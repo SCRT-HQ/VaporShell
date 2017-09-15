@@ -63,7 +63,7 @@ Accept wildcard characters: False
 
 ### -ResourceTypes
 Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-config-configurationrecorder-recordinggroup.html#cfn-config-configurationrecorder-recordinggroup-resourcetypes    
-DuplicatesAllowed: True    
+DuplicatesAllowed: False    
 PrimitiveItemType: String    
 Required: False    
 Type: List    

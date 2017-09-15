@@ -83,7 +83,7 @@ Accept wildcard characters: False
 ### -SecurityGroupEgress
 Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-security-group.html#cfn-ec2-securitygroup-securitygroupegress    
 DuplicatesAllowed: True    
-ItemType: Rule    
+ItemType: Egress    
 Required: False    
 Type: List    
 UpdateType: Mutable
@@ -103,7 +103,7 @@ Accept wildcard characters: False
 ### -SecurityGroupIngress
 Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-security-group.html#cfn-ec2-securitygroup-securitygroupingress    
 DuplicatesAllowed: True    
-ItemType: Rule    
+ItemType: Ingress    
 Required: False    
 Type: List    
 UpdateType: Mutable

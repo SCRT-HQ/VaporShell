@@ -18,7 +18,7 @@ Adds an AWS::ApiGateway::Method resource to the template
 ```
 New-VSApiGatewayMethod [-LogicalId] <String> [-ApiKeyRequired <Boolean>] [-AuthorizationType <Object>]
  [-AuthorizerId <Object>] -HttpMethod <Object> [-Integration <Object>] [-MethodResponses <Object>]
- [-RequestModels <Hashtable>] [-RequestParameters <Hashtable>] [-ResourceId <Object>] [-RestApiId <Object>]
+ [-RequestModels <Hashtable>] [-RequestParameters <Hashtable>] -ResourceId <Object> -RestApiId <Object>
  [-DeletionPolicy <String>] [-DependsOn <String[]>] [-Metadata <Object>] [-UpdatePolicy <Object>]
  [-Condition <Object>]
 ```
@@ -198,7 +198,7 @@ Accept wildcard characters: False
 ### -ResourceId
 Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-apigateway-method.html#cfn-apigateway-method-resourceid    
 PrimitiveType: String    
-Required: False    
+Required: True    
 UpdateType: Mutable
 
 ```yaml
@@ -206,7 +206,7 @@ Type: Object
 Parameter Sets: (All)
 Aliases: 
 
-Required: False
+Required: True
 Position: Named
 Default value: None
 Accept pipeline input: False
@@ -216,7 +216,7 @@ Accept wildcard characters: False
 ### -RestApiId
 Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-apigateway-method.html#cfn-apigateway-method-restapiid    
 PrimitiveType: String    
-Required: False    
+Required: True    
 UpdateType: Mutable
 
 ```yaml
@@ -224,7 +224,7 @@ Type: Object
 Parameter Sets: (All)
 Aliases: 
 
-Required: False
+Required: True
 Position: Named
 Default value: None
 Accept pipeline input: False

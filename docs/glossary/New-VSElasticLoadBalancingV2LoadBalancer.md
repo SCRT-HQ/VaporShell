@@ -18,8 +18,8 @@ Adds an AWS::ElasticLoadBalancingV2::LoadBalancer resource to the template
 ```
 New-VSElasticLoadBalancingV2LoadBalancer [-LogicalId] <String> [-IpAddressType <Object>]
  [-LoadBalancerAttributes <Object>] [-Name <Object>] [-Scheme <Object>] [-SecurityGroups <Object>]
- [-Subnets <Object>] [-Tags <Object>] [-DeletionPolicy <String>] [-DependsOn <String[]>] [-Metadata <Object>]
- [-UpdatePolicy <Object>] [-Condition <Object>]
+ [-SubnetMappings <Object>] [-Subnets <Object>] [-Tags <Object>] [-Type <Object>] [-DeletionPolicy <String>]
+ [-DependsOn <String[]>] [-Metadata <Object>] [-UpdatePolicy <Object>] [-Condition <Object>]
 ```
 
 ## DESCRIPTION
@@ -138,6 +138,26 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
+### -SubnetMappings
+Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-elasticloadbalancingv2-loadbalancer.html#cfn-elasticloadbalancingv2-loadbalancer-subnetmappings    
+DuplicatesAllowed: False    
+ItemType: SubnetMapping    
+Required: False    
+Type: List    
+UpdateType: Immutable
+
+```yaml
+Type: Object
+Parameter Sets: (All)
+Aliases: 
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
 ### -Subnets
 Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-elasticloadbalancingv2-loadbalancer.html#cfn-elasticloadbalancingv2-loadbalancer-subnets    
 DuplicatesAllowed: False    
@@ -165,6 +185,24 @@ ItemType: Tag
 Required: False    
 Type: List    
 UpdateType: Mutable
+
+```yaml
+Type: Object
+Parameter Sets: (All)
+Aliases: 
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### -Type
+Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-elasticloadbalancingv2-loadbalancer.html#cfn-elasticloadbalancingv2-loadbalancer-type    
+PrimitiveType: String    
+Required: False    
+UpdateType: Immutable
 
 ```yaml
 Type: Object

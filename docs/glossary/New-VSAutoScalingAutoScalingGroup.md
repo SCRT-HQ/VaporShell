@@ -215,8 +215,10 @@ Accept wildcard characters: False
 
 ### -MetricsCollection
 Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-as-group.html#cfn-as-group-metricscollection    
+DuplicatesAllowed: True    
+ItemType: MetricsCollection    
 Required: False    
-Type: MetricsCollection    
+Type: List    
 UpdateType: Mutable
 
 ```yaml
@@ -251,8 +253,10 @@ Accept wildcard characters: False
 
 ### -NotificationConfigurations
 Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-as-group.html#cfn-as-group-notificationconfigurations    
+DuplicatesAllowed: True    
+ItemType: NotificationConfiguration    
 Required: False    
-Type: NotificationConfigurations    
+Type: List    
 UpdateType: Mutable
 
 ```yaml

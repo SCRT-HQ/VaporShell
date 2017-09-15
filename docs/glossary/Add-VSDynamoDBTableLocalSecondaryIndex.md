@@ -44,7 +44,7 @@ Accept wildcard characters: False
 
 ### -KeySchema
 Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-dynamodb-lsi.html#cfn-dynamodb-lsi-keyschema    
-DuplicatesAllowed: True    
+DuplicatesAllowed: False    
 ItemType: KeySchema    
 Required: True    
 Type: List    

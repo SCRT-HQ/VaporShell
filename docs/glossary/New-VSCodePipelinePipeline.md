@@ -86,7 +86,7 @@ Accept wildcard characters: False
 Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-codepipeline-pipeline.html#cfn-codepipeline-pipeline-name    
 PrimitiveType: String    
 Required: False    
-UpdateType: Mutable
+UpdateType: Immutable
 
 ```yaml
 Type: Object

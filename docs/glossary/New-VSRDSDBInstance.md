@@ -18,8 +18,8 @@ Adds an AWS::RDS::DBInstance resource to the template
 ```
 New-VSRDSDBInstance [-LogicalId] <String> [-AllocatedStorage <Object>] [-AllowMajorVersionUpgrade <Boolean>]
  [-AutoMinorVersionUpgrade <Boolean>] [-AvailabilityZone <Object>] [-BackupRetentionPeriod <Object>]
- [-CharacterSetName <Object>] [-DBClusterIdentifier <Object>] -DBInstanceClass <Object>
- [-DBInstanceIdentifier <Object>] [-DBName <Object>] [-DBParameterGroupName <Object>]
+ [-CharacterSetName <Object>] [-CopyTagsToSnapshot <Boolean>] [-DBClusterIdentifier <Object>]
+ -DBInstanceClass <Object> [-DBInstanceIdentifier <Object>] [-DBName <Object>] [-DBParameterGroupName <Object>]
  [-DBSecurityGroups <Object>] [-DBSnapshotIdentifier <Object>] [-DBSubnetGroupName <Object>] [-Domain <Object>]
  [-DomainIAMRoleName <Object>] [-Engine <Object>] [-EngineVersion <Object>] [-Iops <Int32>]
  [-KmsKeyId <Object>] [-LicenseModel <Object>] [-MasterUserPassword <Object>] [-MasterUsername <Object>]
@@ -157,6 +157,24 @@ Aliases:
 Required: False
 Position: Named
 Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### -CopyTagsToSnapshot
+Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-rds-database-instance.html#cfn-rds-dbinstance-copytagstosnapshot    
+PrimitiveType: Boolean    
+Required: False    
+UpdateType: Mutable
+
+```yaml
+Type: Boolean
+Parameter Sets: (All)
+Aliases: 
+
+Required: False
+Position: Named
+Default value: False
 Accept pipeline input: False
 Accept wildcard characters: False
 ```

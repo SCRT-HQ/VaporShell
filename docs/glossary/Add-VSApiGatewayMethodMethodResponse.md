@@ -17,7 +17,7 @@ Adds an AWS::ApiGateway::Method.MethodResponse resource property to the template
 
 ```
 Add-VSApiGatewayMethodMethodResponse [[-ResponseModels] <Hashtable>] [[-ResponseParameters] <Hashtable>]
- [[-StatusCode] <Object>]
+ [-StatusCode] <Object>
 ```
 
 ## DESCRIPTION
@@ -68,7 +68,7 @@ Accept wildcard characters: False
 ### -StatusCode
 Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-apitgateway-method-methodresponse.html#cfn-apigateway-method-methodresponse-statuscode    
 PrimitiveType: String    
-Required: False    
+Required: True    
 UpdateType: Mutable
 
 ```yaml
@@ -76,7 +76,7 @@ Type: Object
 Parameter Sets: (All)
 Aliases: 
 
-Required: False
+Required: True
 Position: 3
 Default value: None
 Accept pipeline input: False

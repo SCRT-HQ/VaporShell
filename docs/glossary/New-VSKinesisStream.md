@@ -16,9 +16,9 @@ Adds an AWS::Kinesis::Stream resource to the template
 ## SYNTAX
 
 ```
-New-VSKinesisStream [-LogicalId] <String> [-Name <Object>] -ShardCount <Int32> [-Tags <Object>]
- [-DeletionPolicy <String>] [-DependsOn <String[]>] [-Metadata <Object>] [-UpdatePolicy <Object>]
- [-Condition <Object>]
+New-VSKinesisStream [-LogicalId] <String> [-Name <Object>] [-RetentionPeriodHours <Int32>] -ShardCount <Int32>
+ [-Tags <Object>] [-DeletionPolicy <String>] [-DependsOn <String[]>] [-Metadata <Object>]
+ [-UpdatePolicy <Object>] [-Condition <Object>]
 ```
 
 ## DESCRIPTION
@@ -57,6 +57,24 @@ Aliases:
 Required: False
 Position: Named
 Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### -RetentionPeriodHours
+Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-kinesis-stream.html#cfn-kinesis-stream-retentionperiodhours    
+PrimitiveType: Integer    
+Required: False    
+UpdateType: Mutable
+
+```yaml
+Type: Int32
+Parameter Sets: (All)
+Aliases: 
+
+Required: False
+Position: Named
+Default value: 0
 Accept pipeline input: False
 Accept wildcard characters: False
 ```

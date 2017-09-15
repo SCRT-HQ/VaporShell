@@ -16,8 +16,8 @@ Adds an AWS::CodeBuild::Project.Environment resource property to the template
 ## SYNTAX
 
 ```
-Add-VSCodeBuildProjectEnvironment [[-Type] <Object>] [[-EnvironmentVariables] <Object>] [[-Image] <Object>]
- [[-ComputeType] <Object>]
+Add-VSCodeBuildProjectEnvironment [-Type] <Object> [[-EnvironmentVariables] <Object>]
+ [[-PrivilegedMode] <Boolean>] [-Image] <Object> [-ComputeType] <Object>
 ```
 
 ## DESCRIPTION
@@ -26,7 +26,7 @@ Adds an AWS::CodeBuild::Project.Environment resource property to the template
 ## PARAMETERS
 
 ### -Type
-Required: False    
+Required: True    
 Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-codebuild-project-environment.html#cfn-codebuild-project-environment-type    
 PrimitiveType: String    
 UpdateType: Mutable
@@ -36,7 +36,7 @@ Type: Object
 Parameter Sets: (All)
 Aliases: 
 
-Required: False
+Required: True
 Position: 1
 Default value: None
 Accept pipeline input: False
@@ -62,8 +62,26 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
-### -Image
+### -PrivilegedMode
 Required: False    
+Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-codebuild-project-environment.html#cfn-codebuild-project-environment-privilegedmode    
+PrimitiveType: Boolean    
+UpdateType: Mutable
+
+```yaml
+Type: Boolean
+Parameter Sets: (All)
+Aliases: 
+
+Required: False
+Position: 3
+Default value: False
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### -Image
+Required: True    
 Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-codebuild-project-environment.html#cfn-codebuild-project-environment-image    
 PrimitiveType: String    
 UpdateType: Mutable
@@ -73,15 +91,15 @@ Type: Object
 Parameter Sets: (All)
 Aliases: 
 
-Required: False
-Position: 3
+Required: True
+Position: 4
 Default value: None
 Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
 ### -ComputeType
-Required: False    
+Required: True    
 Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-codebuild-project-environment.html#cfn-codebuild-project-environment-computetype    
 PrimitiveType: String    
 UpdateType: Mutable
@@ -91,8 +109,8 @@ Type: Object
 Parameter Sets: (All)
 Aliases: 
 
-Required: False
-Position: 4
+Required: True
+Position: 5
 Default value: None
 Accept pipeline input: False
 Accept wildcard characters: False

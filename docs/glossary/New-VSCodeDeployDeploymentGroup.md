@@ -17,8 +17,9 @@ Adds an AWS::CodeDeploy::DeploymentGroup resource to the template
 
 ```
 New-VSCodeDeployDeploymentGroup [-LogicalId] <String> [-AlarmConfiguration <Object>] -ApplicationName <Object>
- [-AutoScalingGroups <Object>] [-Deployment <Object>] [-DeploymentConfigName <Object>]
- [-DeploymentGroupName <Object>] [-Ec2TagFilters <Object>] [-OnPremisesInstanceTagFilters <Object>]
+ [-AutoRollbackConfiguration <Object>] [-AutoScalingGroups <Object>] [-Deployment <Object>]
+ [-DeploymentConfigName <Object>] [-DeploymentGroupName <Object>] [-DeploymentStyle <Object>]
+ [-Ec2TagFilters <Object>] [-LoadBalancerInfo <Object>] [-OnPremisesInstanceTagFilters <Object>]
  -ServiceRoleArn <Object> [-TriggerConfigurations <Object>] [-DeletionPolicy <String>] [-DependsOn <String[]>]
  [-Metadata <Object>] [-UpdatePolicy <Object>] [-Condition <Object>]
 ```
@@ -75,6 +76,24 @@ Parameter Sets: (All)
 Aliases: 
 
 Required: True
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### -AutoRollbackConfiguration
+Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-codedeploy-deploymentgroup.html#cfn-codedeploy-deploymentgroup-autorollbackconfiguration    
+Required: False    
+Type: AutoRollbackConfiguration    
+UpdateType: Mutable
+
+```yaml
+Type: Object
+Parameter Sets: (All)
+Aliases: 
+
+Required: False
 Position: Named
 Default value: None
 Accept pipeline input: False
@@ -155,12 +174,48 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
+### -DeploymentStyle
+Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-codedeploy-deploymentgroup.html#cfn-codedeploy-deploymentgroup-deploymentstyle    
+Required: False    
+Type: DeploymentStyle    
+UpdateType: Mutable
+
+```yaml
+Type: Object
+Parameter Sets: (All)
+Aliases: 
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
 ### -Ec2TagFilters
 Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-codedeploy-deploymentgroup.html#cfn-codedeploy-deploymentgroup-ec2tagfilters    
 DuplicatesAllowed: False    
 ItemType: EC2TagFilter    
 Required: False    
 Type: List    
+UpdateType: Mutable
+
+```yaml
+Type: Object
+Parameter Sets: (All)
+Aliases: 
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### -LoadBalancerInfo
+Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-codedeploy-deploymentgroup.html#cfn-codedeploy-deploymentgroup-loadbalancerinfo    
+Required: False    
+Type: LoadBalancerInfo    
 UpdateType: Mutable
 
 ```yaml

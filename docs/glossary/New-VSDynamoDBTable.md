@@ -16,10 +16,11 @@ Adds an AWS::DynamoDB::Table resource to the template
 ## SYNTAX
 
 ```
-New-VSDynamoDBTable [-LogicalId] <String> -AttributeDefinitions <Object> [-GlobalSecondaryIndexes <Object>]
+New-VSDynamoDBTable [-LogicalId] <String> [-AttributeDefinitions <Object>] [-GlobalSecondaryIndexes <Object>]
  -KeySchema <Object> [-LocalSecondaryIndexes <Object>] -ProvisionedThroughput <Object>
- [-StreamSpecification <Object>] [-TableName <Object>] [-DeletionPolicy <String>] [-DependsOn <String[]>]
- [-Metadata <Object>] [-UpdatePolicy <Object>] [-Condition <Object>]
+ [-StreamSpecification <Object>] [-TableName <Object>] [-Tags <Object>] [-TimeToLiveSpecification <Object>]
+ [-DeletionPolicy <String>] [-DependsOn <String[]>] [-Metadata <Object>] [-UpdatePolicy <Object>]
+ [-Condition <Object>]
 ```
 
 ## DESCRIPTION
@@ -48,7 +49,7 @@ Accept wildcard characters: False
 Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-dynamodb-table.html#cfn-dynamodb-table-attributedef    
 DuplicatesAllowed: True    
 ItemType: AttributeDefinition    
-Required: True    
+Required: False    
 Type: List    
 UpdateType: Mutable
 
@@ -57,7 +58,7 @@ Type: Object
 Parameter Sets: (All)
 Aliases: 
 
-Required: True
+Required: False
 Position: Named
 Default value: None
 Accept pipeline input: False
@@ -86,7 +87,7 @@ Accept wildcard characters: False
 
 ### -KeySchema
 Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-dynamodb-table.html#cfn-dynamodb-table-keyschema    
-DuplicatesAllowed: True    
+DuplicatesAllowed: False    
 ItemType: KeySchema    
 Required: True    
 Type: List    
@@ -165,6 +166,44 @@ Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws
 PrimitiveType: String    
 Required: False    
 UpdateType: Immutable
+
+```yaml
+Type: Object
+Parameter Sets: (All)
+Aliases: 
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### -Tags
+Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-dynamodb-table.html#cfn-dynamodb-table-tags    
+DuplicatesAllowed: True    
+ItemType: Tag    
+Required: False    
+Type: List    
+UpdateType: Mutable
+
+```yaml
+Type: Object
+Parameter Sets: (All)
+Aliases: 
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### -TimeToLiveSpecification
+Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-dynamodb-table.html#cfn-dynamodb-table-timetolivespecification    
+Required: False    
+Type: TimeToLiveSpecification    
+UpdateType: Mutable
 
 ```yaml
 Type: Object

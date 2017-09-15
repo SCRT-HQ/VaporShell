@@ -17,7 +17,7 @@ Adds an AWS::Config::ConfigurationRecorder resource to the template
 
 ```
 New-VSConfigConfigurationRecorder [-LogicalId] <String> [-Name <Object>] [-RecordingGroup <Object>]
- -RoleArn <Object> [-DeletionPolicy <String>] [-DependsOn <String[]>] [-Metadata <Object>]
+ -RoleARN <Object> [-DeletionPolicy <String>] [-DependsOn <String[]>] [-Metadata <Object>]
  [-UpdatePolicy <Object>] [-Condition <Object>]
 ```
 
@@ -79,7 +79,7 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
-### -RoleArn
+### -RoleARN
 Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-config-configurationrecorder.html#cfn-config-configurationrecorder-rolearn    
 PrimitiveType: String    
 Required: True    

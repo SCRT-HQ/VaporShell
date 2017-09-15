@@ -16,8 +16,9 @@ Adds an AWS::Events::Rule.Target resource property to the template
 ## SYNTAX
 
 ```
-Add-VSEventsRuleTarget [-Arn] <Object> [-Id] <Object> [[-Input] <Object>] [[-InputPath] <Object>]
- [[-RoleArn] <Object>]
+Add-VSEventsRuleTarget [-Arn] <Object> [[-EcsParameters] <Object>] [-Id] <Object> [[-Input] <Object>]
+ [[-InputPath] <Object>] [[-InputTransformer] <Object>] [[-KinesisParameters] <Object>] [[-RoleArn] <Object>]
+ [[-RunCommandParameters] <Object>]
 ```
 
 ## DESCRIPTION
@@ -43,6 +44,24 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
+### -EcsParameters
+Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-events-rule-target.html#cfn-events-rule-target-ecsparameters    
+Required: False    
+Type: EcsParameters    
+UpdateType: Mutable
+
+```yaml
+Type: Object
+Parameter Sets: (All)
+Aliases: 
+
+Required: False
+Position: 2
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
 ### -Id
 Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-events-rule-target.html#cfn-events-rule-target-id    
 PrimitiveType: String    
@@ -55,7 +74,7 @@ Parameter Sets: (All)
 Aliases: 
 
 Required: True
-Position: 2
+Position: 3
 Default value: None
 Accept pipeline input: False
 Accept wildcard characters: False
@@ -73,7 +92,7 @@ Parameter Sets: (All)
 Aliases: 
 
 Required: False
-Position: 3
+Position: 4
 Default value: None
 Accept pipeline input: False
 Accept wildcard characters: False
@@ -91,7 +110,43 @@ Parameter Sets: (All)
 Aliases: 
 
 Required: False
-Position: 4
+Position: 5
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### -InputTransformer
+Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-events-rule-target.html#cfn-events-rule-target-inputtransformer    
+Required: False    
+Type: InputTransformer    
+UpdateType: Mutable
+
+```yaml
+Type: Object
+Parameter Sets: (All)
+Aliases: 
+
+Required: False
+Position: 6
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### -KinesisParameters
+Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-events-rule-target.html#cfn-events-rule-target-kinesisparameters    
+Required: False    
+Type: KinesisParameters    
+UpdateType: Mutable
+
+```yaml
+Type: Object
+Parameter Sets: (All)
+Aliases: 
+
+Required: False
+Position: 7
 Default value: None
 Accept pipeline input: False
 Accept wildcard characters: False
@@ -109,7 +164,25 @@ Parameter Sets: (All)
 Aliases: 
 
 Required: False
-Position: 5
+Position: 8
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### -RunCommandParameters
+Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-events-rule-target.html#cfn-events-rule-target-runcommandparameters    
+Required: False    
+Type: RunCommandParameters    
+UpdateType: Mutable
+
+```yaml
+Type: Object
+Parameter Sets: (All)
+Aliases: 
+
+Required: False
+Position: 9
 Default value: None
 Accept pipeline input: False
 Accept wildcard characters: False

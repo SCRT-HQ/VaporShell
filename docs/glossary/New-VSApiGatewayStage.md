@@ -17,9 +17,10 @@ Adds an AWS::ApiGateway::Stage resource to the template
 
 ```
 New-VSApiGatewayStage [-LogicalId] <String> [-CacheClusterEnabled <Boolean>] [-CacheClusterSize <Object>]
- [-ClientCertificateId <Object>] [-DeploymentId <Object>] [-Description <Object>] [-MethodSettings <Object>]
- [-RestApiId <Object>] [-StageName <Object>] [-Variables <Hashtable>] [-DeletionPolicy <String>]
- [-DependsOn <String[]>] [-Metadata <Object>] [-UpdatePolicy <Object>] [-Condition <Object>]
+ [-ClientCertificateId <Object>] [-DeploymentId <Object>] [-Description <Object>]
+ [-DocumentationVersion <Object>] [-MethodSettings <Object>] -RestApiId <Object> [-StageName <Object>]
+ [-Variables <Hashtable>] [-DeletionPolicy <String>] [-DependsOn <String[]>] [-Metadata <Object>]
+ [-UpdatePolicy <Object>] [-Condition <Object>]
 ```
 
 ## DESCRIPTION
@@ -134,6 +135,24 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
+### -DocumentationVersion
+Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-apigateway-stage.html#cfn-apigateway-stage-documentationversion    
+PrimitiveType: String    
+Required: False    
+UpdateType: Mutable
+
+```yaml
+Type: Object
+Parameter Sets: (All)
+Aliases: 
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
 ### -MethodSettings
 Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-apigateway-stage.html#cfn-apigateway-stage-methodsettings    
 DuplicatesAllowed: False    
@@ -157,7 +176,7 @@ Accept wildcard characters: False
 ### -RestApiId
 Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-apigateway-stage.html#cfn-apigateway-stage-restapiid    
 PrimitiveType: String    
-Required: False    
+Required: True    
 UpdateType: Immutable
 
 ```yaml
@@ -165,7 +184,7 @@ Type: Object
 Parameter Sets: (All)
 Aliases: 
 
-Required: False
+Required: True
 Position: Named
 Default value: None
 Accept pipeline input: False

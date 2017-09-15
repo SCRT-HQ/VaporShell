@@ -16,10 +16,10 @@ Adds an AWS::CodeBuild::Project resource to the template
 ## SYNTAX
 
 ```
-New-VSCodeBuildProject [-LogicalId] <String> [-Artifacts <Object>] [-Description <Object>]
- [-ServiceRole <Object>] [-Environment <Object>] [-EncryptionKey <Object>] [-Source <Object>] [-Tags <Object>]
- [-Name <Object>] [-TimeoutInMinutes <Int32>] [-DeletionPolicy <String>] [-DependsOn <String[]>]
- [-Metadata <Object>] [-UpdatePolicy <Object>] [-Condition <Object>]
+New-VSCodeBuildProject [-LogicalId] <String> -Artifacts <Object> [-Description <Object>] -ServiceRole <Object>
+ -Environment <Object> [-EncryptionKey <Object>] -Source <Object> [-Tags <Object>] [-Name <Object>]
+ [-TimeoutInMinutes <Int32>] [-DeletionPolicy <String>] [-DependsOn <String[]>] [-Metadata <Object>]
+ [-UpdatePolicy <Object>] [-Condition <Object>]
 ```
 
 ## DESCRIPTION
@@ -46,7 +46,7 @@ Accept wildcard characters: False
 
 ### -Artifacts
 Type: Artifacts    
-Required: False    
+Required: True    
 Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-codebuild-project.html#cfn-codebuild-project-artifacts    
 UpdateType: Mutable
 
@@ -55,7 +55,7 @@ Type: Object
 Parameter Sets: (All)
 Aliases: 
 
-Required: False
+Required: True
 Position: Named
 Default value: None
 Accept pipeline input: False
@@ -81,7 +81,7 @@ Accept wildcard characters: False
 ```
 
 ### -ServiceRole
-Required: False    
+Required: True    
 Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-codebuild-project.html#cfn-codebuild-project-servicerole    
 PrimitiveType: String    
 UpdateType: Mutable
@@ -91,7 +91,7 @@ Type: Object
 Parameter Sets: (All)
 Aliases: 
 
-Required: False
+Required: True
 Position: Named
 Default value: None
 Accept pipeline input: False
@@ -100,7 +100,7 @@ Accept wildcard characters: False
 
 ### -Environment
 Type: Environment    
-Required: False    
+Required: True    
 Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-codebuild-project.html#cfn-codebuild-project-environment    
 UpdateType: Mutable
 
@@ -109,7 +109,7 @@ Type: Object
 Parameter Sets: (All)
 Aliases: 
 
-Required: False
+Required: True
 Position: Named
 Default value: None
 Accept pipeline input: False
@@ -136,7 +136,7 @@ Accept wildcard characters: False
 
 ### -Source
 Type: Source    
-Required: False    
+Required: True    
 Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-codebuild-project.html#cfn-codebuild-project-source    
 UpdateType: Mutable
 
@@ -145,7 +145,7 @@ Type: Object
 Parameter Sets: (All)
 Aliases: 
 
-Required: False
+Required: True
 Position: Named
 Default value: None
 Accept pipeline input: False

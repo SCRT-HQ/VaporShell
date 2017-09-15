@@ -43,7 +43,10 @@ Accept wildcard characters: False
 ```
 
 ### -As
-{{Fill As Description}}
+Specify JSON or YAML for your preferred output.
+Defaults to JSON.
+
+**Important**: In order to use YAML, you must have cfn-flip installed: https://github.com/awslabs/aws-cfn-template-flip
 
 ```yaml
 Type: String
@@ -73,7 +76,9 @@ Accept wildcard characters: False
 ```
 
 ### -ValidateTemplate
-{{Fill ValidateTemplate Description}}
+Runs \`aws cloudformation validate-template\` against the resulting file.
+
+**Important**: In order to use this switch, you must have AWS CLI Tools installed and configured: http://docs.aws.amazon.com/cli/latest/userguide/installing.html
 
 ```yaml
 Type: SwitchParameter
