@@ -1,4 +1,8 @@
 function ResolveS3Endpoint {
+    <#
+    .SYNOPSIS
+    Resolves the S3 endpoint most appropriate for each region.
+    #>
     Param
     (
       [parameter(Mandatory=$true,Position=0)]

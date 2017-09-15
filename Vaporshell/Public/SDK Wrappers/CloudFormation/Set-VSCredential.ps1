@@ -1,4 +1,41 @@
-function Set-VSCredentials {
+function Set-VSCredential {
+    <#
+    .SYNOPSIS
+    Sets or updates the provided ProfileName on the Shared Credentials file (~\.aws\credentials).
+    
+    .PARAMETER AccessKey
+    The access key to be used in the AWSCredentials.
+    
+    .PARAMETER SecretKey
+    The secret key to use when creating AWSCredentials.
+    
+    .PARAMETER Region
+    AWS Region to use with this credential set
+    
+    .PARAMETER ExternalID
+    The external id to use in assume role AWSCredentials.
+    
+    .PARAMETER MfaSerial
+    The serial number of the MFA to use in assume role AWSCredentials.
+    
+    .PARAMETER RoleArn
+    The role ARN to use when creating assume role or federated AWSCredentials.
+    
+    .PARAMETER SourceProfile
+    When this CredentialProfileOptions object references another CredentialProfile, the name of the referenced CredentialProfile.
+    
+    .PARAMETER Token
+    The session token to be used to create AWSCredentials.
+    
+    .PARAMETER ProfileName
+     The name that you would like to set for this credential profile. If no ProfileName is provided, it defaults to the AWS_PROFILE environment variable. If that is not set, it uses "default".
+    
+    .EXAMPLE
+    Set-VSCredential -AccessKey lkjsdfkjio323823kl -SecretKey l38234sdfsdflk+23kjlkfs/skljf_k -Region USWest1
+    
+    .FUNCTIONALITY
+    VaporShell
+    #>
     [cmdletbinding()]
     Param
     (

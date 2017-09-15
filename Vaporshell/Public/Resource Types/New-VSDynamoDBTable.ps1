@@ -118,7 +118,7 @@
                     $true
                 }
                 else {
-                    throw 'The logical ID must be alphanumeric (a-z, A-Z, 0-9) and unique within the template.'
+                    $PSCmdlet.ThrowTerminatingError((New-VSError -String 'The LogicalID must be alphanumeric (a-z, A-Z, 0-9) and unique within the template.'))
                 }
             })]
         [System.String]
@@ -130,7 +130,7 @@
                     $true
                 }
                 else {
-                    throw "This parameter only accepts the following types: $($allowedTypes -join ", "). The current types of the value are: $($_.PSTypeNames -join ", ")."
+                    $PSCmdlet.ThrowTerminatingError((New-VSError -String "This parameter only accepts the following types: $($allowedTypes -join ", "). The current types of the value are: $($_.PSTypeNames -join ", ")."))
                 }
             })]
         $AttributeDefinitions,
@@ -141,7 +141,7 @@
                     $true
                 }
                 else {
-                    throw "This parameter only accepts the following types: $($allowedTypes -join ", "). The current types of the value are: $($_.PSTypeNames -join ", ")."
+                    $PSCmdlet.ThrowTerminatingError((New-VSError -String "This parameter only accepts the following types: $($allowedTypes -join ", "). The current types of the value are: $($_.PSTypeNames -join ", ")."))
                 }
             })]
         $GlobalSecondaryIndexes,
@@ -152,7 +152,7 @@
                     $true
                 }
                 else {
-                    throw "This parameter only accepts the following types: $($allowedTypes -join ", "). The current types of the value are: $($_.PSTypeNames -join ", ")."
+                    $PSCmdlet.ThrowTerminatingError((New-VSError -String "This parameter only accepts the following types: $($allowedTypes -join ", "). The current types of the value are: $($_.PSTypeNames -join ", ")."))
                 }
             })]
         $KeySchema,
@@ -163,7 +163,7 @@
                     $true
                 }
                 else {
-                    throw "This parameter only accepts the following types: $($allowedTypes -join ", "). The current types of the value are: $($_.PSTypeNames -join ", ")."
+                    $PSCmdlet.ThrowTerminatingError((New-VSError -String "This parameter only accepts the following types: $($allowedTypes -join ", "). The current types of the value are: $($_.PSTypeNames -join ", ")."))
                 }
             })]
         $LocalSecondaryIndexes,
@@ -178,7 +178,7 @@
                     $true
                 }
                 else {
-                    throw "This parameter only accepts the following types: $($allowedTypes -join ", "). The current types of the value are: $($_.PSTypeNames -join ", ")."
+                    $PSCmdlet.ThrowTerminatingError((New-VSError -String "This parameter only accepts the following types: $($allowedTypes -join ", "). The current types of the value are: $($_.PSTypeNames -join ", ")."))
                 }
             })]
         $TableName,
@@ -189,7 +189,7 @@
                     $true
                 }
                 else {
-                    throw "This parameter only accepts the following types: $($allowedTypes -join ", "). The current types of the value are: $($_.PSTypeNames -join ", ")."
+                    $PSCmdlet.ThrowTerminatingError((New-VSError -String "This parameter only accepts the following types: $($allowedTypes -join ", "). The current types of the value are: $($_.PSTypeNames -join ", ")."))
                 }
             })]
         $Tags,
@@ -208,7 +208,7 @@
                     $true
                 }
                 else {
-                    throw "The UpdatePolicy parameter only accepts the following types: $($allowedTypes -join ", "). The current types of the value are: $($_.PSTypeNames -join ", ")."
+                    $PSCmdlet.ThrowTerminatingError((New-VSError -String "The UpdatePolicy parameter only accepts the following types: $($allowedTypes -join ", "). The current types of the value are: $($_.PSTypeNames -join ", ")."))
                 }
             })]
         $Metadata,
@@ -219,7 +219,7 @@
                     $true
                 }
                 else {
-                    throw "This parameter only accepts the following types: $($allowedTypes -join ", "). The current types of the value are: $($_.PSTypeNames -join ", ")."
+                    $PSCmdlet.ThrowTerminatingError((New-VSError -String "This parameter only accepts the following types: $($allowedTypes -join ", "). The current types of the value are: $($_.PSTypeNames -join ", ")."))
                 }
             })]
         $UpdatePolicy,
@@ -235,47 +235,47 @@
     Process {
         foreach ($key in $PSBoundParameters.Keys) {
             switch ($key) {
-                'LogicalId' {}
-                'DeletionPolicy' {
+                LogicalId {}
+                DeletionPolicy {
                     $ResourceParams.Add("DeletionPolicy",$DeletionPolicy)
                 }
-                'DependsOn' {
+                DependsOn {
                     $ResourceParams.Add("DependsOn",$DependsOn)
                 }
-                'Metadata' {
+                Metadata {
                     $ResourceParams.Add("Metadata",$Metadata)
                 }
-                'UpdatePolicy' {
+                UpdatePolicy {
                     $ResourceParams.Add("UpdatePolicy",$UpdatePolicy)
                 }
-                'Condition' {
+                Condition {
                     $ResourceParams.Add("Condition",$Condition)
                 }
-                'AttributeDefinitions' {
+                AttributeDefinitions {
                     if (!($ResourceParams["Properties"])) {
                         $ResourceParams.Add("Properties",([PSCustomObject]@{}))
                     }
                     $ResourceParams["Properties"] | Add-Member -MemberType NoteProperty -Name AttributeDefinitions -Value @($AttributeDefinitions)
                 }
-                'GlobalSecondaryIndexes' {
+                GlobalSecondaryIndexes {
                     if (!($ResourceParams["Properties"])) {
                         $ResourceParams.Add("Properties",([PSCustomObject]@{}))
                     }
                     $ResourceParams["Properties"] | Add-Member -MemberType NoteProperty -Name GlobalSecondaryIndexes -Value @($GlobalSecondaryIndexes)
                 }
-                'KeySchema' {
+                KeySchema {
                     if (!($ResourceParams["Properties"])) {
                         $ResourceParams.Add("Properties",([PSCustomObject]@{}))
                     }
                     $ResourceParams["Properties"] | Add-Member -MemberType NoteProperty -Name KeySchema -Value @($KeySchema)
                 }
-                'LocalSecondaryIndexes' {
+                LocalSecondaryIndexes {
                     if (!($ResourceParams["Properties"])) {
                         $ResourceParams.Add("Properties",([PSCustomObject]@{}))
                     }
                     $ResourceParams["Properties"] | Add-Member -MemberType NoteProperty -Name LocalSecondaryIndexes -Value @($LocalSecondaryIndexes)
                 }
-                'Tags' {
+                Tags {
                     if (!($ResourceParams["Properties"])) {
                         $ResourceParams.Add("Properties",([PSCustomObject]@{}))
                     }
@@ -285,7 +285,7 @@
                     if (!($ResourceParams["Properties"])) {
                         $ResourceParams.Add("Properties",([PSCustomObject]@{}))
                     }
-                    $ResourceParams["Properties"] | Add-Member -MemberType NoteProperty -Name $key -Value $PSBoundParameters.$key
+                    $ResourceParams["Properties"] | Add-Member -MemberType NoteProperty -Name $key -Value $PSBoundParameters[$key]
                 }
             }
         }

@@ -31,7 +31,7 @@ function Invoke-VSDeploy {
     Amazon Simple Notification Service topic Amazon Resource Names (ARNs) that AWS CloudFormation associates with the stack.
     
     .PARAMETER ProfileName
-    The name of the configuration profile to deploy the stack with. Defaults to $env:AWS_PROFILE, if available.
+    The name of the configuration profile to deploy the stack with. Defaults to $env:AWS_PROFILE, if set.
     
     .FUNCTIONALITY
     Vaporshell
@@ -131,9 +131,12 @@ function Invoke-VSDeploy {
                 Write-Host -ForegroundColor Magenta "." -NoNewline
                 $changeSetDetails = Get-VSChangeSet -Description -ChangeSetName $changeSet.Id -StackName $changeSet.StackId -Verbose:$false @prof
             }
-            until ($changeSetDetails.ExecutionStatus.Value -eq "AVAILABLE" -or $i -ge 60)
+            until ($changeSetDetails.ExecutionStatus.Value -eq "AVAILABLE" -or $changeSetDetails.Status.Value -eq "FAILED" -or $i -ge 60)
             Write-Host ""
-            if ($changeSetDetails.ExecutionStatus.Value -ne "AVAILABLE") {
+            if ($changeSetDetails.Status.Value -eq "FAILED") {
+                Write-Warning "Change Set FAILED! Reason: $($changeSetDetails.StatusReason)"
+            }
+            elseif ($i -ge 60) {
                 Write-Warning "Change Set is not showing as available to execute after 60 seconds! Returning details"
                 return $changeSetDetails
             }

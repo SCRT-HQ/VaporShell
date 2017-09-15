@@ -20,9 +20,7 @@ function Export-Vaporshell {
         Path to save the resulting JSON file.
     
     .PARAMETER ValidateTemplate
-        Runs `aws cloudformation validate-template` against the resulting file.
-
-        **Important**: In order to use this switch, you must have AWS CLI Tools installed and configured: http://docs.aws.amazon.com/cli/latest/userguide/installing.html
+        Validates the template using the AWS .NET SDK
     
     .PARAMETER Force
         Forces an overwrite if the Path already exists

@@ -31,7 +31,7 @@ function Invoke-VSPackage {
     Indicates whether to override existing files in the S3 bucket. Specify this flag to upload artifacts even if they match existing artifacts in the S3 bucket.
     
     .PARAMETER ProfileName
-    The name of the configuration profile to deploy the stack with. Defaults to $env:AWS_PROFILE, if available.
+    The name of the configuration profile to deploy the stack with. Defaults to $env:AWS_PROFILE, if set.
     
     .FUNCTIONALITY
     Vaporshell

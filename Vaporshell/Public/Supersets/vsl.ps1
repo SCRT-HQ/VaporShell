@@ -1,4 +1,41 @@
 function vsl {
+    <#
+    .SYNOPSIS
+    CLI style superset of VaporShell focused on packaging and deployment of CloudFormation stacks.
+
+    For detailed parameter explanation, please run the following command with the action you'd like help with:
+
+    vsl $action --help #actions: package | deploy | vaporize
+    
+    .DESCRIPTION
+    CLI style superset of VaporShell focused on packaging and deployment of CloudFormation stacks. Allows you to build stacks with detailed transforms like SAM templates containing local resources with one easy command.
+    
+    .PARAMETER action
+    The action that you'd like to do; options for this are: package, deploy, and vaporize (package AND deploy rolled into one).
+    
+    .PARAMETER help
+    Switch to show help for the chosen action.
+    
+    .PARAMETER parameters
+    The arguments to pass to vsl in CLI style:
+
+    --template-file <value> --stack-name <value> --s3-bucket <value> [--s3-prefix <value>] [--parameter-overrides <value> [<value>...]] [--capabilities <value> [<value>...]] [--no-execute-changeset] [--role-arn <value>] [--notification-arns <value> [<value>...]] [--kms-key-id <value>] [--output-template-file <value>] [--use-json] [--force-upload] [--profile-name <value>] [--verbose {info (default)|full}]
+    
+    .EXAMPLE
+    # Packages and deploys a SAM template. This includes zipping up the CodeURI folder, uploading to S3, adjusting the template with the S3 object location for CodeURI, creating the Change Set, then executing once the Change Set becomes available.
+
+    vsl vaporize --tf ".\Helpers\SAM\schedule\template.yaml" --sn testSAMdeployment --s3 scrthq-package --pn scrthq --capabilities iam --v --f
+
+    .EXAMPLE
+    # Gets detailed help for the vaporize action
+
+    vsl vaporize --help
+    # OR
+    vsl vaporize -help
+    
+    .NOTES
+    General notes
+    #>
     [cmdletbinding()]
     Param
     (
@@ -9,9 +46,9 @@ function vsl {
         [switch]
         $help,
         [parameter(Mandatory = $false,Position = 1,ValueFromRemainingArguments = $true)]
-        $vars
+        $parameters
     )    
-    if ($help -or $vars -match '^--help$') {
+    if ($help -or $parameters -match '^--help$') {
         $message = switch ($action) {
             package {@'
 vsl package --template-file <value> --s3-bucket <value> [--s3-prefix <value>] [--kms-key-id <value>] [--output-template-file <value>] [--use-json] [--force-upload] [--profile-name <value>] [--verbose {info (default)|full}]
@@ -118,7 +155,7 @@ OPTIONAL
     
     --parameter-overrides (list) A list of parameter structures that specify input parameters for your stack template. If you're updating a stack and you don't specify a parameter, the command uses the stack's existing value. For new stacks, you must specify parameters that don't have a default value. Syntax: ParameterKey1=ParameterValue1 ParameterKey2=ParameterValue2 ...
     
-    --capabilities (list) A list of capabilities that you must specify before AWS Cloudformation can create certain stacks. Some stack templates might include resources that can affect permissions in your AWS account, for example, by creating new AWS Identity and Access Management (IAM) users. For those stacks, you must explicitly acknowledge their capabilities by specifying this parameter. The only valid values are CAPABILITY_IAM and CAPABILITY_NAMED_IAM. If you have IAM resources, you can specify either capability. If you have IAM resources with custom names, you must specify CAPABILITY_NAMED_IAM. If you don't specify this parameter, this action returns an InsufficientCapabilities error.
+    --caps, --capabilities (list) A list of capabilities that you must specify before AWS Cloudformation can create certain stacks. Some stack templates might include resources that can affect permissions in your AWS account, for example, by creating new AWS Identity and Access Management (IAM) users. For those stacks, you must explicitly acknowledge their capabilities by specifying this parameter. The only valid values are CAPABILITY_IAM and CAPABILITY_NAMED_IAM. If you have IAM resources, you can specify either capability. If you have IAM resources with custom names, you must specify CAPABILITY_NAMED_IAM. If you don't specify this parameter, this action returns an InsufficientCapabilities error. Short names for 
 
     --no-execute-changeset (boolean) Indicates whether to execute the change set. Specify this flag if you want to view your stack changes before executing the change set. The command creates an AWS CloudFormation change set and then exits without executing the change set. After you view the change set, execute it to implement your changes.
 
@@ -151,6 +188,7 @@ OPTIONAL
             parameteroverrides = "Parameters"
             noexecutechangeset = "DoNotExecute"
             forceupload        = "Force"
+            caps = "Capabilities"
             tf = "TemplateFile"
             sn = "StackName"
             s3 = "S3Bucket"
@@ -159,8 +197,12 @@ OPTIONAL
             v = "Verbose"
             f = "Force"
         }
+        $capsHash = @{
+            named = "CAPABILITY_NAMED_IAM"
+            iam = "CAPABILITY_IAM"
+        }
         $paramHash = @{}
-        $vars | ForEach-Object {
+        $parameters | ForEach-Object {
             if ($_ -match '^--') {
                 $i = 0
                 $lastvar = $_ -replace '-'
@@ -174,6 +216,23 @@ OPTIONAL
                 if ($lastvar -eq "verbose") {
                     if ($_ -eq "full") {
                         $fullVerbose = $true
+                    }
+                }
+                elseif ($lastvar -eq "Capabilities") {
+                    if ($capsHash[$_]) {
+                        $val = $capsHash[$_]
+                    }
+                    elseif ($_ -ne "CAPABILITY_NAMED_IAM" -and $_ -ne "CAPABILITY_IAM") {
+                        $PSCmdlet.ThrowTerminatingError((New-VSError -String "You must specify 'named', 'iam', 'CAPABILITY_NAMED_IAM', or 'CAPABILITY_IAM' for -capabilities!"))
+                    }
+                    else {
+                        $val = $_
+                    }
+                    if ($i -eq 1) {
+                        $paramHash[$lastvar] = $val
+                    }
+                    else {
+                        $paramHash[$lastvar] += $val
                     }
                 }
                 elseif ($_ -like "*=*" -and $_ -is [System.String]) {

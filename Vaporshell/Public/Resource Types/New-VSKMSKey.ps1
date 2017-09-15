@@ -84,7 +84,7 @@
                     $true
                 }
                 else {
-                    throw 'The logical ID must be alphanumeric (a-z, A-Z, 0-9) and unique within the template.'
+                    $PSCmdlet.ThrowTerminatingError((New-VSError -String 'The LogicalID must be alphanumeric (a-z, A-Z, 0-9) and unique within the template.'))
                 }
             })]
         [System.String]
@@ -96,7 +96,7 @@
                     $true
                 }
                 else {
-                    throw "This parameter only accepts the following types: $($allowedTypes -join ", "). The current types of the value are: $($_.PSTypeNames -join ", ")."
+                    $PSCmdlet.ThrowTerminatingError((New-VSError -String "This parameter only accepts the following types: $($allowedTypes -join ", "). The current types of the value are: $($_.PSTypeNames -join ", ")."))
                 }
             })]
         $Description,
@@ -108,16 +108,14 @@
         $Enabled,
         [parameter(Mandatory = $true)]
         [ValidateScript( {
-                try {
-                    $convertible = ConvertTo-Json -InputObject  -Depth 10 -ErrorAction Stop
-                    Remove-Variable convertible -ErrorAction SilentlyContinue
+                $allowedTypes = "System.String","System.Collections.Hashtable","System.Management.Automation.PSCustomObject"
+                if ([string]$($_.PSTypeNames) -match "($(($allowedTypes|ForEach-Object{[RegEx]::Escape($_)}) -join '|'))") {
                     $true
                 }
-                catch {
-                    throw "You must specify a JSON string for this parameter!"
+                else {
+                    $PSCmdlet.ThrowTerminatingError((New-VSError -String "This parameter only accepts the following types: $($allowedTypes -join ", "). The current types of the value are: $($_.PSTypeNames -join ", ")."))
                 }
             })]
-        [System.String]
         $KeyPolicy,
         [parameter(Mandatory = $false)]
         [ValidateScript( {
@@ -126,7 +124,7 @@
                     $true
                 }
                 else {
-                    throw "This parameter only accepts the following types: $($allowedTypes -join ", "). The current types of the value are: $($_.PSTypeNames -join ", ")."
+                    $PSCmdlet.ThrowTerminatingError((New-VSError -String "This parameter only accepts the following types: $($allowedTypes -join ", "). The current types of the value are: $($_.PSTypeNames -join ", ")."))
                 }
             })]
         $KeyUsage,
@@ -143,7 +141,7 @@
                     $true
                 }
                 else {
-                    throw "The UpdatePolicy parameter only accepts the following types: $($allowedTypes -join ", "). The current types of the value are: $($_.PSTypeNames -join ", ")."
+                    $PSCmdlet.ThrowTerminatingError((New-VSError -String "The UpdatePolicy parameter only accepts the following types: $($allowedTypes -join ", "). The current types of the value are: $($_.PSTypeNames -join ", ")."))
                 }
             })]
         $Metadata,
@@ -154,7 +152,7 @@
                     $true
                 }
                 else {
-                    throw "This parameter only accepts the following types: $($allowedTypes -join ", "). The current types of the value are: $($_.PSTypeNames -join ", ")."
+                    $PSCmdlet.ThrowTerminatingError((New-VSError -String "This parameter only accepts the following types: $($allowedTypes -join ", "). The current types of the value are: $($_.PSTypeNames -join ", ")."))
                 }
             })]
         $UpdatePolicy,
@@ -170,27 +168,44 @@
     Process {
         foreach ($key in $PSBoundParameters.Keys) {
             switch ($key) {
-                'LogicalId' {}
-                'DeletionPolicy' {
+                LogicalId {}
+                DeletionPolicy {
                     $ResourceParams.Add("DeletionPolicy",$DeletionPolicy)
                 }
-                'DependsOn' {
+                DependsOn {
                     $ResourceParams.Add("DependsOn",$DependsOn)
                 }
-                'Metadata' {
+                Metadata {
                     $ResourceParams.Add("Metadata",$Metadata)
                 }
-                'UpdatePolicy' {
+                UpdatePolicy {
                     $ResourceParams.Add("UpdatePolicy",$UpdatePolicy)
                 }
-                'Condition' {
+                Condition {
                     $ResourceParams.Add("Condition",$Condition)
+                }
+                KeyPolicy {
+                    if (($PSBoundParameters[$key]).PSObject.TypeNames -contains "System.String"){
+                        try {
+                            $JSONObject = (ConvertFrom-Json -InputObject $PSBoundParameters[$key] -ErrorAction Stop)
+                        }
+                        catch {
+                            $PSCmdlet.ThrowTerminatingError((New-VSError -String "Unable to convert parameter '$key' string value to PSObject! Please use a JSON string OR provide a Hashtable or PSCustomObject instead!"))
+                        }
+                    }
+                    else {
+                        $JSONObject = ([PSCustomObject]$PSBoundParameters[$key])
+                    }
+                    if (!($ResourceParams["Properties"])) {
+                        $ResourceParams.Add("Properties",([PSCustomObject]@{}))
+                    }
+                    $ResourceParams["Properties"] | Add-Member -MemberType NoteProperty -Name $key -Value $JSONObject
                 }
                 Default {
                     if (!($ResourceParams["Properties"])) {
                         $ResourceParams.Add("Properties",([PSCustomObject]@{}))
                     }
-                    $ResourceParams["Properties"] | Add-Member -MemberType NoteProperty -Name $key -Value $PSBoundParameters.$key
+                    $ResourceParams["Properties"] | Add-Member -MemberType NoteProperty -Name $key -Value $PSBoundParameters[$key]
                 }
             }
         }

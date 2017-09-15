@@ -1,4 +1,26 @@
 function Set-VSStackPolicy {
+    <#
+    .SYNOPSIS
+    Sets the Stack Policy.
+    
+    .PARAMETER StackName
+    The name or unique stack ID that you want to associate a policy with.
+    
+    .PARAMETER StackPolicyBody
+    Structure containing the stack policy body.
+    
+    .PARAMETER Path
+    Path to the local Stack Policy file
+    
+    .PARAMETER StackPolicyURL
+    Location of a file containing the stack policy. The URL must point to a policy (maximum size: 16 KB) located in an S3 bucket in the same region as the stack. 
+
+    .PARAMETER ProfileName
+    The name of the configuration profile to deploy the stack with. Defaults to $env:AWS_PROFILE, if set.
+    
+    .FUNCTIONALITY
+    Vaporshell
+    #>
     [cmdletbinding(DefaultParameterSetName = "StackPolicyBody")]
     Param
     (

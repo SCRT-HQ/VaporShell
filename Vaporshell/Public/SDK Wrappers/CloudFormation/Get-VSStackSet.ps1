@@ -1,4 +1,32 @@
 function Get-VSStackSet {
+    <#
+    .SYNOPSIS
+    Gets information about a Stack Set
+    
+    .DESCRIPTION
+    Gets information about a Stack Set
+    
+    .PARAMETER Description
+    Returns the description of the specified stack set.
+    
+    .PARAMETER List
+    Returns summary information about stack sets that are associated with the user.
+    
+    .PARAMETER StackSetName
+    The name or the unique stack ID of the stack set that you want to get information for.
+    
+    .PARAMETER MaxResults
+    The maximum number of results to be returned with a single call.
+    
+    .PARAMETER Status
+    The status of the stack sets that you want to get summary information about.
+    
+    .PARAMETER ProfileName
+    The name of the configuration profile to deploy the stack with. Defaults to $env:AWS_PROFILE, if set.
+    
+    .FUNCTIONALITY
+    Vaporshell
+    #>
     [cmdletbinding(DefaultParameterSetName = "Description")]
     Param
     (
@@ -8,12 +36,6 @@ function Get-VSStackSet {
         [parameter(ParameterSetName = "ListStackSets")]
         [Switch]
         $List,
-        [parameter(Mandatory = $false)]
-        [String]
-        $StackInstanceAccount,
-        [parameter(Mandatory = $false)]
-        [String]
-        $StackInstanceRegion,
         [parameter(Mandatory = $false)]
         [String]
         $StackSetName,

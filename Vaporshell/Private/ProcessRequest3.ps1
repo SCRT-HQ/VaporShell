@@ -1,4 +1,8 @@
 function ProcessRequest3 {
+    <#
+    .SYNOPSIS
+    Receives AWS SDK requests, then sends them to the appropriate processor function depending on PowerShell version, as PSv3 does not allow dot sourcing method names.
+    #>
     [cmdletbinding()]
     Param
     (
@@ -46,7 +50,7 @@ function ProcessRequest3 {
             else {
                 $results += $result
             }
-            if ($result.NextToken) {
+            if ($result.NextToken -and !$request.MaxResults) {
                 $Request.NextToken = $result.NextToken
                 $done = $false
             }

@@ -1,4 +1,17 @@
 function Remove-VSStackSet {
+    <#
+    .SYNOPSIS
+    Removes a Stack Set.
+    
+    .PARAMETER StackName
+    The name or the unique stack ID that is associated with the stack.
+
+    .PARAMETER ProfileName
+    The name of the configuration profile to deploy the stack with. Defaults to $env:AWS_PROFILE, if set.
+    
+    .FUNCTIONALITY
+    Vaporshell
+    #>
     [cmdletbinding(SupportsShouldProcess = $true,ConfirmImpact = "High")]
     Param
     (
