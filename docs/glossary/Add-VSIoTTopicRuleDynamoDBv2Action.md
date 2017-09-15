@@ -64,7 +64,7 @@ Accept wildcard characters: False
 
 ## OUTPUTS
 
-### Vaporshell.Resource.IoT.TopicRule.DynamoDBv2Action
+### VaporShell.Resource.IoT.TopicRule.DynamoDBv2Action
 
 ## NOTES
 

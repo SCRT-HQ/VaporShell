@@ -100,7 +100,7 @@ Accept wildcard characters: False
 
 ## OUTPUTS
 
-### Vaporshell.Resource.GameLift.Fleet.IpPermission
+### VaporShell.Resource.GameLift.Fleet.IpPermission
 
 ## NOTES
 

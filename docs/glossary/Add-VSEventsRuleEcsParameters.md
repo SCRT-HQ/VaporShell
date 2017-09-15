@@ -64,7 +64,7 @@ Accept wildcard characters: False
 
 ## OUTPUTS
 
-### Vaporshell.Resource.Events.Rule.EcsParameters
+### VaporShell.Resource.Events.Rule.EcsParameters
 
 ## NOTES
 

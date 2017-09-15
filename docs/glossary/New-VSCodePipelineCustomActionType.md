@@ -270,7 +270,7 @@ Accept wildcard characters: False
 
 ## OUTPUTS
 
-### Vaporshell.Resource.CodePipeline.CustomActionType
+### VaporShell.Resource.CodePipeline.CustomActionType
 
 ## NOTES
 

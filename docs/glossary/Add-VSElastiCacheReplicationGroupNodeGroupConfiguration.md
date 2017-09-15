@@ -103,7 +103,7 @@ Accept wildcard characters: False
 
 ## OUTPUTS
 
-### Vaporshell.Resource.ElastiCache.ReplicationGroup.NodeGroupConfiguration
+### VaporShell.Resource.ElastiCache.ReplicationGroup.NodeGroupConfiguration
 
 ## NOTES
 

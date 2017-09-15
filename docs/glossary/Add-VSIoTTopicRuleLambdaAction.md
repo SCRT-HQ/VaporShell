@@ -46,7 +46,7 @@ Accept wildcard characters: False
 
 ## OUTPUTS
 
-### Vaporshell.Resource.IoT.TopicRule.LambdaAction
+### VaporShell.Resource.IoT.TopicRule.LambdaAction
 
 ## NOTES
 

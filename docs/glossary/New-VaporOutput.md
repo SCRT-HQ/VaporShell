@@ -119,7 +119,7 @@ Accept wildcard characters: False
 
 ## OUTPUTS
 
-### Vaporshell.Output
+### VaporShell.Output
 
 ## NOTES
 

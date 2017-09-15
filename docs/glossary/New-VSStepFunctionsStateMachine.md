@@ -177,7 +177,7 @@ Accept wildcard characters: False
 
 ## OUTPUTS
 
-### Vaporshell.Resource.StepFunctions.StateMachine
+### VaporShell.Resource.StepFunctions.StateMachine
 
 ## NOTES
 

@@ -233,7 +233,7 @@ Accept wildcard characters: False
 
 ## OUTPUTS
 
-### Vaporshell.Resource.EC2.VPNConnection
+### VaporShell.Resource.EC2.VPNConnection
 
 ## NOTES
 

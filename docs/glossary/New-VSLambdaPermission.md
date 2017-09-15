@@ -250,7 +250,7 @@ Accept wildcard characters: False
 
 ## OUTPUTS
 
-### Vaporshell.Resource.Lambda.Permission
+### VaporShell.Resource.Lambda.Permission
 
 ## NOTES
 

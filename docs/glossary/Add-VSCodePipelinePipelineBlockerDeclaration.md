@@ -64,7 +64,7 @@ Accept wildcard characters: False
 
 ## OUTPUTS
 
-### Vaporshell.Resource.CodePipeline.Pipeline.BlockerDeclaration
+### VaporShell.Resource.CodePipeline.Pipeline.BlockerDeclaration
 
 ## NOTES
 

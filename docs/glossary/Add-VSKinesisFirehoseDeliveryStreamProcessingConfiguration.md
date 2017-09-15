@@ -66,7 +66,7 @@ Accept wildcard characters: False
 
 ## OUTPUTS
 
-### Vaporshell.Resource.KinesisFirehose.DeliveryStream.ProcessingConfiguration
+### VaporShell.Resource.KinesisFirehose.DeliveryStream.ProcessingConfiguration
 
 ## NOTES
 

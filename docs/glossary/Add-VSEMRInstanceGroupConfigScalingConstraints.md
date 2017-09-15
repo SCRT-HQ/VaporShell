@@ -64,7 +64,7 @@ Accept wildcard characters: False
 
 ## OUTPUTS
 
-### Vaporshell.Resource.EMR.InstanceGroupConfig.ScalingConstraints
+### VaporShell.Resource.EMR.InstanceGroupConfig.ScalingConstraints
 
 ## NOTES
 

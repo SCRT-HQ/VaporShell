@@ -64,7 +64,7 @@ Accept wildcard characters: False
 
 ## OUTPUTS
 
-### Vaporshell.Resource.EC2.NetworkAclEntry.PortRange
+### VaporShell.Resource.EC2.NetworkAclEntry.PortRange
 
 ## NOTES
 

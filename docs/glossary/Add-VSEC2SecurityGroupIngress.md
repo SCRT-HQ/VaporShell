@@ -174,7 +174,7 @@ Accept wildcard characters: False
 
 ## OUTPUTS
 
-### Vaporshell.Resource.EC2.SecurityGroup.Ingress
+### VaporShell.Resource.EC2.SecurityGroup.Ingress
 
 ## NOTES
 

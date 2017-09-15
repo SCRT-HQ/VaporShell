@@ -66,7 +66,7 @@ Accept wildcard characters: False
 
 ## OUTPUTS
 
-### Vaporshell.Resource.EMR.Cluster.EbsConfiguration
+### VaporShell.Resource.EMR.Cluster.EbsConfiguration
 
 ## NOTES
 

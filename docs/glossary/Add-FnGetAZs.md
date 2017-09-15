@@ -63,7 +63,7 @@ Accept wildcard characters: False
 
 ## OUTPUTS
 
-### Vaporshell.Function.GetAZs
+### VaporShell.Function.GetAZs
 
 ## NOTES
 You can use the Ref function in the Fn::GetAZs function.

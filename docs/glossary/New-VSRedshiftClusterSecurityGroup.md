@@ -179,7 +179,7 @@ Accept wildcard characters: False
 
 ## OUTPUTS
 
-### Vaporshell.Resource.Redshift.ClusterSecurityGroup
+### VaporShell.Resource.Redshift.ClusterSecurityGroup
 
 ## NOTES
 

@@ -178,7 +178,7 @@ Accept wildcard characters: False
 
 ## OUTPUTS
 
-### Vaporshell.Resource.WAFRegional.XssMatchSet
+### VaporShell.Resource.WAFRegional.XssMatchSet
 
 ## NOTES
 

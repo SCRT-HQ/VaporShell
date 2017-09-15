@@ -101,7 +101,7 @@ Accept wildcard characters: False
 
 ## OUTPUTS
 
-### Vaporshell.Resource.CloudFront.Distribution.CustomErrorResponse
+### VaporShell.Resource.CloudFront.Distribution.CustomErrorResponse
 
 ## NOTES
 

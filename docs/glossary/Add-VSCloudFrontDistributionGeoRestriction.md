@@ -66,7 +66,7 @@ Accept wildcard characters: False
 
 ## OUTPUTS
 
-### Vaporshell.Resource.CloudFront.Distribution.GeoRestriction
+### VaporShell.Resource.CloudFront.Distribution.GeoRestriction
 
 ## NOTES
 

@@ -119,7 +119,7 @@ Accept wildcard characters: False
 
 ## OUTPUTS
 
-### Vaporshell.Resource.S3.Bucket.RedirectRule
+### VaporShell.Resource.S3.Bucket.RedirectRule
 
 ## NOTES
 

@@ -83,7 +83,7 @@ Accept wildcard characters: False
 
 ## OUTPUTS
 
-### Vaporshell.Resource.Batch.JobDefinition.MountPoints
+### VaporShell.Resource.Batch.JobDefinition.MountPoints
 
 ## NOTES
 

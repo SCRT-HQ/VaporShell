@@ -65,7 +65,7 @@ Accept wildcard characters: False
 
 ## OUTPUTS
 
-### Vaporshell.Resource.ElasticBeanstalk.ConfigurationTemplate.SourceConfiguration
+### VaporShell.Resource.ElasticBeanstalk.ConfigurationTemplate.SourceConfiguration
 
 ## NOTES
 

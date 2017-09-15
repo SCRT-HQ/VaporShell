@@ -64,7 +64,7 @@ Accept wildcard characters: False
 
 ## OUTPUTS
 
-### Vaporshell.Resource.OpsWorks.Stack.StackConfigurationManager
+### VaporShell.Resource.OpsWorks.Stack.StackConfigurationManager
 
 ## NOTES
 

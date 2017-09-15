@@ -28,7 +28,7 @@ Adds an AWS::EC2::Instance.NoDevice resource property to the template
 
 ## OUTPUTS
 
-### Vaporshell.Resource.EC2.Instance.NoDevice
+### VaporShell.Resource.EC2.Instance.NoDevice
 
 ## NOTES
 

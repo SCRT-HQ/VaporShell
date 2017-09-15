@@ -217,7 +217,7 @@ Accept wildcard characters: False
 
 ## OUTPUTS
 
-### Vaporshell.Resource.ElasticLoadBalancingV2.ListenerRule
+### VaporShell.Resource.ElasticLoadBalancingV2.ListenerRule
 
 ## NOTES
 

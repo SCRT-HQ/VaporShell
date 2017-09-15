@@ -103,7 +103,7 @@ Accept wildcard characters: False
 
 ## OUTPUTS
 
-### Vaporshell.Resource.DynamoDB.Table.GlobalSecondaryIndex
+### VaporShell.Resource.DynamoDB.Table.GlobalSecondaryIndex
 
 ## NOTES
 

@@ -235,7 +235,7 @@ Accept wildcard characters: False
 
 ## OUTPUTS
 
-### Vaporshell.Resource.IAM.Role
+### VaporShell.Resource.IAM.Role
 
 ## NOTES
 

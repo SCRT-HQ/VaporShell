@@ -64,7 +64,7 @@ Accept wildcard characters: False
 
 ## OUTPUTS
 
-### Vaporshell.Resource.S3.Bucket.NoncurrentVersionTransition
+### VaporShell.Resource.S3.Bucket.NoncurrentVersionTransition
 
 ## NOTES
 

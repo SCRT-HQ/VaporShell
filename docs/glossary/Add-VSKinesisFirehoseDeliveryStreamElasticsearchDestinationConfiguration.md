@@ -229,7 +229,7 @@ Accept wildcard characters: False
 
 ## OUTPUTS
 
-### Vaporshell.Resource.KinesisFirehose.DeliveryStream.ElasticsearchDestinationConfiguration
+### VaporShell.Resource.KinesisFirehose.DeliveryStream.ElasticsearchDestinationConfiguration
 
 ## NOTES
 

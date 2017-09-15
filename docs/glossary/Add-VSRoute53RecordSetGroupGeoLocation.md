@@ -83,7 +83,7 @@ Accept wildcard characters: False
 
 ## OUTPUTS
 
-### Vaporshell.Resource.Route53.RecordSetGroup.GeoLocation
+### VaporShell.Resource.Route53.RecordSetGroup.GeoLocation
 
 ## NOTES
 

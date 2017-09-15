@@ -46,7 +46,7 @@ Accept wildcard characters: False
 
 ## OUTPUTS
 
-### Vaporshell.Resource.CodeDeploy.DeploymentGroup.Alarm
+### VaporShell.Resource.CodeDeploy.DeploymentGroup.Alarm
 
 ## NOTES
 

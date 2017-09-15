@@ -177,7 +177,7 @@ Accept wildcard characters: False
 
 ## OUTPUTS
 
-### Vaporshell.Resource.IoT.Thing
+### VaporShell.Resource.IoT.Thing
 
 ## NOTES
 

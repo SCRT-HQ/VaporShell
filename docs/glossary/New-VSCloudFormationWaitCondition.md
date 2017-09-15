@@ -214,7 +214,7 @@ Accept wildcard characters: False
 
 ## OUTPUTS
 
-### Vaporshell.Resource.CloudFormation.WaitCondition
+### VaporShell.Resource.CloudFormation.WaitCondition
 
 ## NOTES
 

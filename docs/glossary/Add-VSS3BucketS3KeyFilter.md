@@ -48,7 +48,7 @@ Accept wildcard characters: False
 
 ## OUTPUTS
 
-### Vaporshell.Resource.S3.Bucket.S3KeyFilter
+### VaporShell.Resource.S3.Bucket.S3KeyFilter
 
 ## NOTES
 

@@ -64,7 +64,7 @@ Accept wildcard characters: False
 
 ## OUTPUTS
 
-### Vaporshell.Resource.KinesisAnalytics.Application.KinesisStreamsInput
+### VaporShell.Resource.KinesisAnalytics.Application.KinesisStreamsInput
 
 ## NOTES
 

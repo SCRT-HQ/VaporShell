@@ -119,7 +119,7 @@ Accept wildcard characters: False
 
 ## OUTPUTS
 
-### Vaporshell.Resource.IoT.TopicRule.ElasticsearchAction
+### VaporShell.Resource.IoT.TopicRule.ElasticsearchAction
 
 ## NOTES
 

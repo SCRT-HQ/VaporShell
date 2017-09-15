@@ -46,7 +46,7 @@ Accept wildcard characters: False
 
 ## OUTPUTS
 
-### Vaporshell.Resource.CodeDeploy.DeploymentGroup.DeploymentStyle
+### VaporShell.Resource.CodeDeploy.DeploymentGroup.DeploymentStyle
 
 ## NOTES
 

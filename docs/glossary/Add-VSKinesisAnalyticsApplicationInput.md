@@ -119,7 +119,7 @@ Accept wildcard characters: False
 
 ## OUTPUTS
 
-### Vaporshell.Resource.KinesisAnalytics.Application.Input
+### VaporShell.Resource.KinesisAnalytics.Application.Input
 
 ## NOTES
 

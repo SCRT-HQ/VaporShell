@@ -48,7 +48,7 @@ Accept wildcard characters: False
 A 2 level collection of key/value pairs.
 If you would like your collection to remain ordered the same as called, use an ordered PSCustomObject, otherwise a hashtable is fine.
 
-You can use any of these 3 types for this parameter; "System.Collections.Hashtable","System.Management.Automation.PSCustomObject","Vaporshell.Mapping.Map"
+You can use any of these 3 types for this parameter; "System.Collections.Hashtable","System.Management.Automation.PSCustomObject","VaporShell.Mapping.Map"
 
 ```yaml
 Type: Object
@@ -66,7 +66,7 @@ Accept wildcard characters: False
 
 ## OUTPUTS
 
-### Vaporshell.Mapping
+### VaporShell.Mapping
 
 ## NOTES
 

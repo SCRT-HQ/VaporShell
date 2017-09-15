@@ -101,7 +101,7 @@ Accept wildcard characters: False
 
 ## OUTPUTS
 
-### Vaporshell.Resource.EC2.SpotFleet.BlockDeviceMapping
+### VaporShell.Resource.EC2.SpotFleet.BlockDeviceMapping
 
 ## NOTES
 

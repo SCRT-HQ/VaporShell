@@ -87,7 +87,7 @@ Accept wildcard characters: False
 
 ## OUTPUTS
 
-### Vaporshell.Resource.EMR.InstanceGroupConfig.Configuration
+### VaporShell.Resource.EMR.InstanceGroupConfig.Configuration
 
 ## NOTES
 

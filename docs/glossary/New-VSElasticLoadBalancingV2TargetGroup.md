@@ -438,7 +438,7 @@ Accept wildcard characters: False
 
 ## OUTPUTS
 
-### Vaporshell.Resource.ElasticLoadBalancingV2.TargetGroup
+### VaporShell.Resource.ElasticLoadBalancingV2.TargetGroup
 
 ## NOTES
 

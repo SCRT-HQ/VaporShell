@@ -64,7 +64,7 @@ Accept wildcard characters: False
 
 ## OUTPUTS
 
-### Vaporshell.Resource.IAM.Group.Policy
+### VaporShell.Resource.IAM.Group.Policy
 
 ## NOTES
 

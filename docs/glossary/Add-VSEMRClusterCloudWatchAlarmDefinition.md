@@ -194,7 +194,7 @@ Accept wildcard characters: False
 
 ## OUTPUTS
 
-### Vaporshell.Resource.EMR.Cluster.CloudWatchAlarmDefinition
+### VaporShell.Resource.EMR.Cluster.CloudWatchAlarmDefinition
 
 ## NOTES
 

@@ -64,7 +64,7 @@ Accept wildcard characters: False
 
 ## OUTPUTS
 
-### Vaporshell.Resource.CodeBuild.Project.SourceAuth
+### VaporShell.Resource.CodeBuild.Project.SourceAuth
 
 ## NOTES
 

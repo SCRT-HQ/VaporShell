@@ -217,7 +217,7 @@ Accept wildcard characters: False
 
 ## OUTPUTS
 
-### Vaporshell.Resource.IAM.Group
+### VaporShell.Resource.IAM.Group
 
 ## NOTES
 

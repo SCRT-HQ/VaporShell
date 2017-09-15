@@ -233,7 +233,7 @@ Accept wildcard characters: False
 
 ## OUTPUTS
 
-### Vaporshell.Resource.EC2.VPC
+### VaporShell.Resource.EC2.VPC
 
 ## NOTES
 

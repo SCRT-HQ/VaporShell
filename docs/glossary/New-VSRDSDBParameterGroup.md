@@ -217,7 +217,7 @@ Accept wildcard characters: False
 
 ## OUTPUTS
 
-### Vaporshell.Resource.RDS.DBParameterGroup
+### VaporShell.Resource.RDS.DBParameterGroup
 
 ## NOTES
 

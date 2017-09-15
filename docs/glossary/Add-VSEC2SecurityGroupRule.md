@@ -156,7 +156,7 @@ Accept wildcard characters: False
 
 ## OUTPUTS
 
-### Vaporshell.Resource.EC2.SecurityGroup.Rule
+### VaporShell.Resource.EC2.SecurityGroup.Rule
 
 ## NOTES
 

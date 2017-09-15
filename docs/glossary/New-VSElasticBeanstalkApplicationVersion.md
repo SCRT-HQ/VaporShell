@@ -195,7 +195,7 @@ Accept wildcard characters: False
 
 ## OUTPUTS
 
-### Vaporshell.Resource.ElasticBeanstalk.ApplicationVersion
+### VaporShell.Resource.ElasticBeanstalk.ApplicationVersion
 
 ## NOTES
 

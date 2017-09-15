@@ -477,7 +477,7 @@ Accept wildcard characters: False
 
 ## OUTPUTS
 
-### Vaporshell.Resource.OpsWorks.Layer
+### VaporShell.Resource.OpsWorks.Layer
 
 ## NOTES
 

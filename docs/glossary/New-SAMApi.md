@@ -154,7 +154,7 @@ Accept wildcard characters: False
 
 ## OUTPUTS
 
-### Vaporshell.Serverless.Api
+### VaporShell.Serverless.Api
 
 ## NOTES
 Return values  

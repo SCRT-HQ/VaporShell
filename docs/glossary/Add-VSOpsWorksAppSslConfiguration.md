@@ -82,7 +82,7 @@ Accept wildcard characters: False
 
 ## OUTPUTS
 
-### Vaporshell.Resource.OpsWorks.App.SslConfiguration
+### VaporShell.Resource.OpsWorks.App.SslConfiguration
 
 ## NOTES
 

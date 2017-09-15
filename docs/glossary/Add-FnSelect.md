@@ -67,7 +67,7 @@ Accept wildcard characters: False
 
 ## OUTPUTS
 
-### Vaporshell.Function.Select
+### VaporShell.Function.Select
 
 ## NOTES
 For the Fn::Select index value, you can use the Ref and Fn::FindInMap functions.

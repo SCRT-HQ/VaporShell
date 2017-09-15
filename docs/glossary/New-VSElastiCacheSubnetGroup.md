@@ -197,7 +197,7 @@ Accept wildcard characters: False
 
 ## OUTPUTS
 
-### Vaporshell.Resource.ElastiCache.SubnetGroup
+### VaporShell.Resource.ElastiCache.SubnetGroup
 
 ## NOTES
 

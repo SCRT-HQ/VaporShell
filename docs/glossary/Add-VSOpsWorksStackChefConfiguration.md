@@ -64,7 +64,7 @@ Accept wildcard characters: False
 
 ## OUTPUTS
 
-### Vaporshell.Resource.OpsWorks.Stack.ChefConfiguration
+### VaporShell.Resource.OpsWorks.Stack.ChefConfiguration
 
 ## NOTES
 

@@ -178,7 +178,7 @@ Accept wildcard characters: False
 
 ## OUTPUTS
 
-### Vaporshell.Resource.WAFRegional.IPSet
+### VaporShell.Resource.WAFRegional.IPSet
 
 ## NOTES
 

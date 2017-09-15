@@ -82,7 +82,7 @@ Accept wildcard characters: False
 
 ## OUTPUTS
 
-### Vaporshell.Resource.ECS.TaskDefinition.Ulimit
+### VaporShell.Resource.ECS.TaskDefinition.Ulimit
 
 ## NOTES
 

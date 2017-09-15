@@ -83,7 +83,7 @@ Accept wildcard characters: False
 
 ## OUTPUTS
 
-### Vaporshell.Resource.CodeDeploy.DeploymentGroup.Deployment
+### VaporShell.Resource.CodeDeploy.DeploymentGroup.Deployment
 
 ## NOTES
 

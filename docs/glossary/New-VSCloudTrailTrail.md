@@ -382,7 +382,7 @@ Accept wildcard characters: False
 
 ## OUTPUTS
 
-### Vaporshell.Resource.CloudTrail.Trail
+### VaporShell.Resource.CloudTrail.Trail
 
 ## NOTES
 

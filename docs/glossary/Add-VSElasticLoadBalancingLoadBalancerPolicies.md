@@ -125,7 +125,7 @@ Accept wildcard characters: False
 
 ## OUTPUTS
 
-### Vaporshell.Resource.ElasticLoadBalancing.LoadBalancer.Policies
+### VaporShell.Resource.ElasticLoadBalancing.LoadBalancer.Policies
 
 ## NOTES
 

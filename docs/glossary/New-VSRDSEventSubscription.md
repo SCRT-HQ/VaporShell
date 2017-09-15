@@ -235,7 +235,7 @@ Accept wildcard characters: False
 
 ## OUTPUTS
 
-### Vaporshell.Resource.RDS.EventSubscription
+### VaporShell.Resource.RDS.EventSubscription
 
 ## NOTES
 

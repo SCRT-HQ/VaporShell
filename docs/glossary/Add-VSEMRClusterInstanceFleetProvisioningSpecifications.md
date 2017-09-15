@@ -46,7 +46,7 @@ Accept wildcard characters: False
 
 ## OUTPUTS
 
-### Vaporshell.Resource.EMR.Cluster.InstanceFleetProvisioningSpecifications
+### VaporShell.Resource.EMR.Cluster.InstanceFleetProvisioningSpecifications
 
 ## NOTES
 

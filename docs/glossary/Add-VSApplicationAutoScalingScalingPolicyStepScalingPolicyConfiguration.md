@@ -122,7 +122,7 @@ Accept wildcard characters: False
 
 ## OUTPUTS
 
-### Vaporshell.Resource.ApplicationAutoScaling.ScalingPolicy.StepScalingPolicyConfiguration
+### VaporShell.Resource.ApplicationAutoScaling.ScalingPolicy.StepScalingPolicyConfiguration
 
 ## NOTES
 

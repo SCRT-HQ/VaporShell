@@ -64,7 +64,7 @@ Accept wildcard characters: False
 
 ## OUTPUTS
 
-### Vaporshell.Resource.IAM.User.LoginProfile
+### VaporShell.Resource.IAM.User.LoginProfile
 
 ## NOTES
 

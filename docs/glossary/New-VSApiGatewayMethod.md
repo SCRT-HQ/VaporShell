@@ -329,7 +329,7 @@ Accept wildcard characters: False
 
 ## OUTPUTS
 
-### Vaporshell.Resource.ApiGateway.Method
+### VaporShell.Resource.ApiGateway.Method
 
 ## NOTES
 

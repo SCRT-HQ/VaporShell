@@ -82,7 +82,7 @@ Accept wildcard characters: False
 
 ## OUTPUTS
 
-### Vaporshell.Resource.GameLift.Build.S3Location
+### VaporShell.Resource.GameLift.Build.S3Location
 
 ## NOTES
 

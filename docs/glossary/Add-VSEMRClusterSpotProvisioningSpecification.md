@@ -83,7 +83,7 @@ Accept wildcard characters: False
 
 ## OUTPUTS
 
-### Vaporshell.Resource.EMR.Cluster.SpotProvisioningSpecification
+### VaporShell.Resource.EMR.Cluster.SpotProvisioningSpecification
 
 ## NOTES
 

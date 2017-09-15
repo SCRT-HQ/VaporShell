@@ -76,7 +76,7 @@ Accept wildcard characters: False
 
 ## OUTPUTS
 
-### Vaporshell.Condition.If
+### VaporShell.Condition.If
 
 ## NOTES
 You can use the following functions in the Fn::If condition:

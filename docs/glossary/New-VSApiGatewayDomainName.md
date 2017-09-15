@@ -177,7 +177,7 @@ Accept wildcard characters: False
 
 ## OUTPUTS
 
-### Vaporshell.Resource.ApiGateway.DomainName
+### VaporShell.Resource.ApiGateway.DomainName
 
 ## NOTES
 

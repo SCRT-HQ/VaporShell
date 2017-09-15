@@ -231,7 +231,7 @@ Accept wildcard characters: False
 
 ## OUTPUTS
 
-### Vaporshell.Resource.EC2.EIPAssociation
+### VaporShell.Resource.EC2.EIPAssociation
 
 ## NOTES
 

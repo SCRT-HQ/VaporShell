@@ -292,7 +292,7 @@ Accept wildcard characters: False
 
 ## OUTPUTS
 
-### Vaporshell.Resource.CloudFront.Distribution.DistributionConfig
+### VaporShell.Resource.CloudFront.Distribution.DistributionConfig
 
 ## NOTES
 

@@ -64,7 +64,7 @@ Accept wildcard characters: False
 
 ## OUTPUTS
 
-### Vaporshell.Resource.CodePipeline.Pipeline.EncryptionKey
+### VaporShell.Resource.CodePipeline.Pipeline.EncryptionKey
 
 ## NOTES
 

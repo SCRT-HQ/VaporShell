@@ -84,7 +84,7 @@ Accept wildcard characters: False
 
 ## OUTPUTS
 
-### Vaporshell.Resource.DynamoDB.Table.LocalSecondaryIndex
+### VaporShell.Resource.DynamoDB.Table.LocalSecondaryIndex
 
 ## NOTES
 

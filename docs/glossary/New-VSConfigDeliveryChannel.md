@@ -231,7 +231,7 @@ Accept wildcard characters: False
 
 ## OUTPUTS
 
-### Vaporshell.Resource.Config.DeliveryChannel
+### VaporShell.Resource.Config.DeliveryChannel
 
 ## NOTES
 

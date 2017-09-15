@@ -82,7 +82,7 @@ Accept wildcard characters: False
 
 ## OUTPUTS
 
-### Vaporshell.Resource.IoT.TopicRule.SnsAction
+### VaporShell.Resource.IoT.TopicRule.SnsAction
 
 ## NOTES
 

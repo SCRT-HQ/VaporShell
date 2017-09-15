@@ -64,7 +64,7 @@ Accept wildcard characters: False
 
 ## OUTPUTS
 
-### Vaporshell.Resource.CodeDeploy.DeploymentConfig.MinimumHealthyHosts
+### VaporShell.Resource.CodeDeploy.DeploymentConfig.MinimumHealthyHosts
 
 ## NOTES
 

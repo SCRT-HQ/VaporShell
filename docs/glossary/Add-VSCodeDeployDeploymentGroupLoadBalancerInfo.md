@@ -48,7 +48,7 @@ Accept wildcard characters: False
 
 ## OUTPUTS
 
-### Vaporshell.Resource.CodeDeploy.DeploymentGroup.LoadBalancerInfo
+### VaporShell.Resource.CodeDeploy.DeploymentGroup.LoadBalancerInfo
 
 ## NOTES
 

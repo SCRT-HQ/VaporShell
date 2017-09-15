@@ -48,7 +48,7 @@ Accept wildcard characters: False
 
 ## OUTPUTS
 
-### Vaporshell.Resource.IoT.Thing.AttributePayload
+### VaporShell.Resource.IoT.Thing.AttributePayload
 
 ## NOTES
 

@@ -213,7 +213,7 @@ Accept wildcard characters: False
 
 ## OUTPUTS
 
-### Vaporshell.Resource.ApiGateway.BasePathMapping
+### VaporShell.Resource.ApiGateway.BasePathMapping
 
 ## NOTES
 

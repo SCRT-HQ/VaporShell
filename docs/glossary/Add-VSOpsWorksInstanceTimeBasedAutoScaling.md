@@ -170,7 +170,7 @@ Accept wildcard characters: False
 
 ## OUTPUTS
 
-### Vaporshell.Resource.OpsWorks.Instance.TimeBasedAutoScaling
+### VaporShell.Resource.OpsWorks.Instance.TimeBasedAutoScaling
 
 ## NOTES
 

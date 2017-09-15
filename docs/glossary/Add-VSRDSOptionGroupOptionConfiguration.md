@@ -123,7 +123,7 @@ Accept wildcard characters: False
 
 ## OUTPUTS
 
-### Vaporshell.Resource.RDS.OptionGroup.OptionConfiguration
+### VaporShell.Resource.RDS.OptionGroup.OptionConfiguration
 
 ## NOTES
 

@@ -1,6 +1,6 @@
 ---
 layout: glossary
-title: Initialize-Vaporshell
+title: Initialize-VaporShell
 categories: glossary
 label1: Category
 data1: Documentation
@@ -8,7 +8,7 @@ label2: Depth
 data2: Deep
 ---
 
-# Initialize-Vaporshell
+# Initialize-VaporShell
 
 ## SYNOPSIS
 The starting point for your template buildout.
@@ -17,14 +17,14 @@ This should always be the first thing called in your template script.
 ## SYNTAX
 
 ```
-Initialize-Vaporshell [[-FormatVersion] <String>] [[-Description] <String>]
+Initialize-VaporShell [[-FormatVersion] <String>] [[-Description] <String>]
 ```
 
 ## DESCRIPTION
 The starting point for your template buildout.
 This should always be the first thing called in your template script.
 
-This creates a PSObject, custom typed as 'Vaporshell.Template'.
+This creates a PSObject, custom typed as 'VaporShell.Template'.
 It builds out the containers for Metadata, Parameters, Mappings, Conditions, Resources and Outputs.
 
 ## PARAMETERS
@@ -65,7 +65,7 @@ Accept wildcard characters: False
 
 ## OUTPUTS
 
-### Vaporshell.Template
+### VaporShell.Template
 
 ## NOTES
 

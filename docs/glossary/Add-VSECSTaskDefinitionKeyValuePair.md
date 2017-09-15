@@ -64,7 +64,7 @@ Accept wildcard characters: False
 
 ## OUTPUTS
 
-### Vaporshell.Resource.ECS.TaskDefinition.KeyValuePair
+### VaporShell.Resource.ECS.TaskDefinition.KeyValuePair
 
 ## NOTES
 

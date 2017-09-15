@@ -46,7 +46,7 @@ Accept wildcard characters: False
 
 ## OUTPUTS
 
-### Vaporshell.Resource.DynamoDB.Table.StreamSpecification
+### VaporShell.Resource.DynamoDB.Table.StreamSpecification
 
 ## NOTES
 

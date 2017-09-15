@@ -82,7 +82,7 @@ Accept wildcard characters: False
 
 ## OUTPUTS
 
-### Vaporshell.Resource.OpsWorks.App.EnvironmentVariable
+### VaporShell.Resource.OpsWorks.App.EnvironmentVariable
 
 ## NOTES
 

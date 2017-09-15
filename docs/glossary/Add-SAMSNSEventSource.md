@@ -59,7 +59,7 @@ Accept wildcard characters: False
 
 ## OUTPUTS
 
-### Vaporshell.Serverless.EventSource.SNS
+### VaporShell.Serverless.EventSource.SNS
 
 ## NOTES
 

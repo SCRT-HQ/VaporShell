@@ -64,7 +64,7 @@ Accept wildcard characters: False
 
 ## OUTPUTS
 
-### Vaporshell.Resource.DynamoDB.Table.KeySchema
+### VaporShell.Resource.DynamoDB.Table.KeySchema
 
 ## NOTES
 

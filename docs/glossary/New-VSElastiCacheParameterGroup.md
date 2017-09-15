@@ -197,7 +197,7 @@ Accept wildcard characters: False
 
 ## OUTPUTS
 
-### Vaporshell.Resource.ElastiCache.ParameterGroup
+### VaporShell.Resource.ElastiCache.ParameterGroup
 
 ## NOTES
 

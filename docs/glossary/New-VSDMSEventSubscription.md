@@ -271,7 +271,7 @@ Accept wildcard characters: False
 
 ## OUTPUTS
 
-### Vaporshell.Resource.DMS.EventSubscription
+### VaporShell.Resource.DMS.EventSubscription
 
 ## NOTES
 

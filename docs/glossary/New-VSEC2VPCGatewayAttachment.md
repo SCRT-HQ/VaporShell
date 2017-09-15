@@ -195,7 +195,7 @@ Accept wildcard characters: False
 
 ## OUTPUTS
 
-### Vaporshell.Resource.EC2.VPCGatewayAttachment
+### VaporShell.Resource.EC2.VPCGatewayAttachment
 
 ## NOTES
 

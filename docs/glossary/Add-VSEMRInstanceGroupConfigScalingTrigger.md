@@ -46,7 +46,7 @@ Accept wildcard characters: False
 
 ## OUTPUTS
 
-### Vaporshell.Resource.EMR.InstanceGroupConfig.ScalingTrigger
+### VaporShell.Resource.EMR.InstanceGroupConfig.ScalingTrigger
 
 ## NOTES
 

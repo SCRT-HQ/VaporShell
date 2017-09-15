@@ -64,7 +64,7 @@ Accept wildcard characters: False
 
 ## OUTPUTS
 
-### Vaporshell.Resource.Redshift.Cluster.LoggingProperties
+### VaporShell.Resource.Redshift.Cluster.LoggingProperties
 
 ## NOTES
 

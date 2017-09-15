@@ -121,7 +121,7 @@ Accept wildcard characters: False
 
 ## OUTPUTS
 
-### Vaporshell.Resource.EMR.Cluster.InstanceFleetConfig
+### VaporShell.Resource.EMR.Cluster.InstanceFleetConfig
 
 ## NOTES
 

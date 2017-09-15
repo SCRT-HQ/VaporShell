@@ -93,7 +93,7 @@ Accept wildcard characters: False
 
 ## OUTPUTS
 
-### Vaporshell.Serverless.EventSource.DynamoDB
+### VaporShell.Serverless.EventSource.DynamoDB
 
 ## NOTES
 

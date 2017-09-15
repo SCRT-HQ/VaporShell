@@ -158,7 +158,7 @@ Accept wildcard characters: False
 
 ## OUTPUTS
 
-### Vaporshell.Resource.CodeDeploy.Application
+### VaporShell.Resource.CodeDeploy.Application
 
 ## NOTES
 

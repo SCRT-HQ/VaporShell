@@ -285,7 +285,7 @@ Accept wildcard characters: False
 
 ## OUTPUTS
 
-### Vaporshell.Resource.Route53.RecordSetGroup.RecordSet
+### VaporShell.Resource.Route53.RecordSetGroup.RecordSet
 
 ## NOTES
 

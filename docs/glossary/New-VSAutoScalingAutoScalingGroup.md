@@ -486,7 +486,7 @@ Accept wildcard characters: False
 
 ## OUTPUTS
 
-### Vaporshell.Resource.AutoScaling.AutoScalingGroup
+### VaporShell.Resource.AutoScaling.AutoScalingGroup
 
 ## NOTES
 

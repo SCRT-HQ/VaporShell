@@ -236,7 +236,7 @@ Accept wildcard characters: False
 
 ## OUTPUTS
 
-### Vaporshell.Resource.ApiGateway.GatewayResponse
+### VaporShell.Resource.ApiGateway.GatewayResponse
 
 ## NOTES
 

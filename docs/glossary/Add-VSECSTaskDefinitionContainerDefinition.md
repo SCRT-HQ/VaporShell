@@ -529,7 +529,7 @@ Accept wildcard characters: False
 
 ## OUTPUTS
 
-### Vaporshell.Resource.ECS.TaskDefinition.ContainerDefinition
+### VaporShell.Resource.ECS.TaskDefinition.ContainerDefinition
 
 ## NOTES
 

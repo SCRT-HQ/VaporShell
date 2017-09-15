@@ -314,7 +314,7 @@ Accept wildcard characters: False
 
 ## OUTPUTS
 
-### Vaporshell.Resource.ElasticLoadBalancingV2.LoadBalancer
+### VaporShell.Resource.ElasticLoadBalancingV2.LoadBalancer
 
 ## NOTES
 

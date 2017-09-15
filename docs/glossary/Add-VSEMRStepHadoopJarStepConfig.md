@@ -105,7 +105,7 @@ Accept wildcard characters: False
 
 ## OUTPUTS
 
-### Vaporshell.Resource.EMR.Step.HadoopJarStepConfig
+### VaporShell.Resource.EMR.Step.HadoopJarStepConfig
 
 ## NOTES
 

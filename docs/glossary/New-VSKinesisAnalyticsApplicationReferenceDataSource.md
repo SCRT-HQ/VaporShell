@@ -177,7 +177,7 @@ Accept wildcard characters: False
 
 ## OUTPUTS
 
-### Vaporshell.Resource.KinesisAnalytics.ApplicationReferenceDataSource
+### VaporShell.Resource.KinesisAnalytics.ApplicationReferenceDataSource
 
 ## NOTES
 

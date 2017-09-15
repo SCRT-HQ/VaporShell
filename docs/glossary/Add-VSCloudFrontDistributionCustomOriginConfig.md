@@ -103,7 +103,7 @@ Accept wildcard characters: False
 
 ## OUTPUTS
 
-### Vaporshell.Resource.CloudFront.Distribution.CustomOriginConfig
+### VaporShell.Resource.CloudFront.Distribution.CustomOriginConfig
 
 ## NOTES
 

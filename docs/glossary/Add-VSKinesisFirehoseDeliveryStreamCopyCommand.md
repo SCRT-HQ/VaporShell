@@ -83,7 +83,7 @@ Accept wildcard characters: False
 
 ## OUTPUTS
 
-### Vaporshell.Resource.KinesisFirehose.DeliveryStream.CopyCommand
+### VaporShell.Resource.KinesisFirehose.DeliveryStream.CopyCommand
 
 ## NOTES
 

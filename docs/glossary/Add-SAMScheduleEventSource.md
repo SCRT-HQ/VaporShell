@@ -76,7 +76,7 @@ Accept wildcard characters: False
 
 ## OUTPUTS
 
-### Vaporshell.Serverless.EventSource.Schedule
+### VaporShell.Serverless.EventSource.Schedule
 
 ## NOTES
 

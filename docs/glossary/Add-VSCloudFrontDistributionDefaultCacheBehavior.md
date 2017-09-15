@@ -235,7 +235,7 @@ Accept wildcard characters: False
 
 ## OUTPUTS
 
-### Vaporshell.Resource.CloudFront.Distribution.DefaultCacheBehavior
+### VaporShell.Resource.CloudFront.Distribution.DefaultCacheBehavior
 
 ## NOTES
 

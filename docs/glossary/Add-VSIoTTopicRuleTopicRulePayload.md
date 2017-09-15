@@ -121,7 +121,7 @@ Accept wildcard characters: False
 
 ## OUTPUTS
 
-### Vaporshell.Resource.IoT.TopicRule.TopicRulePayload
+### VaporShell.Resource.IoT.TopicRule.TopicRulePayload
 
 ## NOTES
 

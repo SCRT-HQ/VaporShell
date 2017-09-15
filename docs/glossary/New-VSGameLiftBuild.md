@@ -195,7 +195,7 @@ Accept wildcard characters: False
 
 ## OUTPUTS
 
-### Vaporshell.Resource.GameLift.Build
+### VaporShell.Resource.GameLift.Build
 
 ## NOTES
 

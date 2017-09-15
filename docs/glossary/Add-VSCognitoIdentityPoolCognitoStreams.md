@@ -83,7 +83,7 @@ Accept wildcard characters: False
 
 ## OUTPUTS
 
-### Vaporshell.Resource.Cognito.IdentityPool.CognitoStreams
+### VaporShell.Resource.Cognito.IdentityPool.CognitoStreams
 
 ## NOTES
 

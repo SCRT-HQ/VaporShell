@@ -46,7 +46,7 @@ Accept wildcard characters: False
 
 ## OUTPUTS
 
-### Vaporshell.Resource.ECS.TaskDefinition.HostVolumeProperties
+### VaporShell.Resource.ECS.TaskDefinition.HostVolumeProperties
 
 ## NOTES
 

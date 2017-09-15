@@ -237,7 +237,7 @@ Accept wildcard characters: False
 
 ## OUTPUTS
 
-### Vaporshell.Resource.CloudFormation.Stack
+### VaporShell.Resource.CloudFormation.Stack
 
 ## NOTES
 

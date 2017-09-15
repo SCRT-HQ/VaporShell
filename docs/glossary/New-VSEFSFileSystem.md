@@ -215,7 +215,7 @@ Accept wildcard characters: False
 
 ## OUTPUTS
 
-### Vaporshell.Resource.EFS.FileSystem
+### VaporShell.Resource.EFS.FileSystem
 
 ## NOTES
 

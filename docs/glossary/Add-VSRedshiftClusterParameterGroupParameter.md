@@ -64,7 +64,7 @@ Accept wildcard characters: False
 
 ## OUTPUTS
 
-### Vaporshell.Resource.Redshift.ClusterParameterGroup.Parameter
+### VaporShell.Resource.Redshift.ClusterParameterGroup.Parameter
 
 ## NOTES
 

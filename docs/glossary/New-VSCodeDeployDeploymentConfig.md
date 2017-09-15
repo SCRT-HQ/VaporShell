@@ -177,7 +177,7 @@ Accept wildcard characters: False
 
 ## OUTPUTS
 
-### Vaporshell.Resource.CodeDeploy.DeploymentConfig
+### VaporShell.Resource.CodeDeploy.DeploymentConfig
 
 ## NOTES
 

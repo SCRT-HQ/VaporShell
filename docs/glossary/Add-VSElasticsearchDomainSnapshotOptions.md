@@ -46,7 +46,7 @@ Accept wildcard characters: False
 
 ## OUTPUTS
 
-### Vaporshell.Resource.Elasticsearch.Domain.SnapshotOptions
+### VaporShell.Resource.Elasticsearch.Domain.SnapshotOptions
 
 ## NOTES
 

@@ -66,7 +66,7 @@ Accept wildcard characters: False
 
 ## OUTPUTS
 
-### Vaporshell.Resource.ECS.TaskDefinition.LogConfiguration
+### VaporShell.Resource.ECS.TaskDefinition.LogConfiguration
 
 ## NOTES
 

@@ -100,7 +100,7 @@ Accept wildcard characters: False
 
 ## OUTPUTS
 
-### Vaporshell.Resource.CodeBuild.Project.Source
+### VaporShell.Resource.CodeBuild.Project.Source
 
 ## NOTES
 

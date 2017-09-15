@@ -65,7 +65,7 @@ Accept wildcard characters: False
 
 ## OUTPUTS
 
-### Vaporshell.Resource.ApplicationAutoScaling.ScalingPolicy.PredefinedMetricSpecification
+### VaporShell.Resource.ApplicationAutoScaling.ScalingPolicy.PredefinedMetricSpecification
 
 ## NOTES
 

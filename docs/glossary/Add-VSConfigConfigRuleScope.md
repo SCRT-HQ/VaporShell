@@ -103,7 +103,7 @@ Accept wildcard characters: False
 
 ## OUTPUTS
 
-### Vaporshell.Resource.Config.ConfigRule.Scope
+### VaporShell.Resource.Config.ConfigRule.Scope
 
 ## NOTES
 

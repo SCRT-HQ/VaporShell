@@ -138,7 +138,7 @@ Accept wildcard characters: False
 
 ## OUTPUTS
 
-### Vaporshell.Resource.Elasticsearch.Domain.ElasticsearchClusterConfig
+### VaporShell.Resource.Elasticsearch.Domain.ElasticsearchClusterConfig
 
 ## NOTES
 

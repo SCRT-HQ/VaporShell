@@ -215,7 +215,7 @@ Accept wildcard characters: False
 
 ## OUTPUTS
 
-### Vaporshell.Resource.Kinesis.Stream
+### VaporShell.Resource.Kinesis.Stream
 
 ## NOTES
 

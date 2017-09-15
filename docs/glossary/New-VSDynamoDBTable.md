@@ -315,7 +315,7 @@ Accept wildcard characters: False
 
 ## OUTPUTS
 
-### Vaporshell.Resource.DynamoDB.Table
+### VaporShell.Resource.DynamoDB.Table
 
 ## NOTES
 

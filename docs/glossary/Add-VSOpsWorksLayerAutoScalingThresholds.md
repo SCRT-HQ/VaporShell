@@ -138,7 +138,7 @@ Accept wildcard characters: False
 
 ## OUTPUTS
 
-### Vaporshell.Resource.OpsWorks.Layer.AutoScalingThresholds
+### VaporShell.Resource.OpsWorks.Layer.AutoScalingThresholds
 
 ## NOTES
 

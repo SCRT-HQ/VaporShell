@@ -66,7 +66,7 @@ Accept wildcard characters: False
 
 ## OUTPUTS
 
-### Vaporshell.Resource.S3.Bucket.ReplicationConfiguration
+### VaporShell.Resource.S3.Bucket.ReplicationConfiguration
 
 ## NOTES
 

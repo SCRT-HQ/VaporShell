@@ -82,7 +82,7 @@ Accept wildcard characters: False
 
 ## OUTPUTS
 
-### Vaporshell.Resource.CodePipeline.Pipeline.ArtifactStore
+### VaporShell.Resource.CodePipeline.Pipeline.ArtifactStore
 
 ## NOTES
 

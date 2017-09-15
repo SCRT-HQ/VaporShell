@@ -158,7 +158,7 @@ Accept wildcard characters: False
 
 ## OUTPUTS
 
-### Vaporshell.Resource.CloudFormation.CustomResource
+### VaporShell.Resource.CloudFormation.CustomResource
 
 ## NOTES
 

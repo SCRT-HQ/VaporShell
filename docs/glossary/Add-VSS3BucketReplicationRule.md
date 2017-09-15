@@ -100,7 +100,7 @@ Accept wildcard characters: False
 
 ## OUTPUTS
 
-### Vaporshell.Resource.S3.Bucket.ReplicationRule
+### VaporShell.Resource.S3.Bucket.ReplicationRule
 
 ## NOTES
 

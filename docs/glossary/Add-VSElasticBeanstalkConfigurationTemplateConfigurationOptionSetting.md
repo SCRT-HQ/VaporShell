@@ -83,7 +83,7 @@ Accept wildcard characters: False
 
 ## OUTPUTS
 
-### Vaporshell.Resource.ElasticBeanstalk.ConfigurationTemplate.ConfigurationOptionSetting
+### VaporShell.Resource.ElasticBeanstalk.ConfigurationTemplate.ConfigurationOptionSetting
 
 ## NOTES
 

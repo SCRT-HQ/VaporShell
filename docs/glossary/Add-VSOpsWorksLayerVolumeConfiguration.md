@@ -137,7 +137,7 @@ Accept wildcard characters: False
 
 ## OUTPUTS
 
-### Vaporshell.Resource.OpsWorks.Layer.VolumeConfiguration
+### VaporShell.Resource.OpsWorks.Layer.VolumeConfiguration
 
 ## NOTES
 

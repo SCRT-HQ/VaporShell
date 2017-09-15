@@ -46,7 +46,7 @@ Accept wildcard characters: False
 
 ## OUTPUTS
 
-### Vaporshell.Resource.CloudFront.Distribution.S3OriginConfig
+### VaporShell.Resource.CloudFront.Distribution.S3OriginConfig
 
 ## NOTES
 

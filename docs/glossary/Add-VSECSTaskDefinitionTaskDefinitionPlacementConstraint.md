@@ -64,7 +64,7 @@ Accept wildcard characters: False
 
 ## OUTPUTS
 
-### Vaporshell.Resource.ECS.TaskDefinition.TaskDefinitionPlacementConstraint
+### VaporShell.Resource.ECS.TaskDefinition.TaskDefinitionPlacementConstraint
 
 ## NOTES
 

@@ -211,7 +211,7 @@ Accept wildcard characters: False
 
 ## OUTPUTS
 
-### Vaporshell.Resource.ApiGateway.Deployment.MethodSetting
+### VaporShell.Resource.ApiGateway.Deployment.MethodSetting
 
 ## NOTES
 

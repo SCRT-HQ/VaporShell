@@ -219,7 +219,7 @@ Accept wildcard characters: False
 
 ## OUTPUTS
 
-### Vaporshell.Resource.ApiGateway.Method.Integration
+### VaporShell.Resource.ApiGateway.Method.Integration
 
 ## NOTES
 

@@ -96,7 +96,7 @@ Accept wildcard characters: False
 
 ## OUTPUTS
 
-### Vaporshell.Condition
+### VaporShell.Condition
 
 ## NOTES
 You can use the following intrinsic functions to define conditions:

@@ -307,7 +307,7 @@ Accept wildcard characters: False
 
 ## OUTPUTS
 
-### Vaporshell.Resource.ApiGateway.Authorizer
+### VaporShell.Resource.ApiGateway.Authorizer
 
 ## NOTES
 

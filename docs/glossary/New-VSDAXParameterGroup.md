@@ -195,7 +195,7 @@ Accept wildcard characters: False
 
 ## OUTPUTS
 
-### Vaporshell.Resource.DAX.ParameterGroup
+### VaporShell.Resource.DAX.ParameterGroup
 
 ## NOTES
 

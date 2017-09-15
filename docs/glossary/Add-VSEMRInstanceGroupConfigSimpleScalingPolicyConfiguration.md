@@ -83,7 +83,7 @@ Accept wildcard characters: False
 
 ## OUTPUTS
 
-### Vaporshell.Resource.EMR.InstanceGroupConfig.SimpleScalingPolicyConfiguration
+### VaporShell.Resource.EMR.InstanceGroupConfig.SimpleScalingPolicyConfiguration
 
 ## NOTES
 

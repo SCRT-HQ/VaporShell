@@ -399,7 +399,7 @@ Accept wildcard characters: False
 
 ## OUTPUTS
 
-### Vaporshell.Resource.DMS.ReplicationInstance
+### VaporShell.Resource.DMS.ReplicationInstance
 
 ## NOTES
 

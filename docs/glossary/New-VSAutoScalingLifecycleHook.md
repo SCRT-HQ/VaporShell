@@ -268,7 +268,7 @@ Accept wildcard characters: False
 
 ## OUTPUTS
 
-### Vaporshell.Resource.AutoScaling.LifecycleHook
+### VaporShell.Resource.AutoScaling.LifecycleHook
 
 ## NOTES
 

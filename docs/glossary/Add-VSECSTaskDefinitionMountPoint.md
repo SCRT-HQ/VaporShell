@@ -83,7 +83,7 @@ Accept wildcard characters: False
 
 ## OUTPUTS
 
-### Vaporshell.Resource.ECS.TaskDefinition.MountPoint
+### VaporShell.Resource.ECS.TaskDefinition.MountPoint
 
 ## NOTES
 

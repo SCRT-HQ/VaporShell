@@ -250,7 +250,7 @@ Accept wildcard characters: False
 
 ## OUTPUTS
 
-### Vaporshell.Resource.WorkSpaces.Workspace
+### VaporShell.Resource.WorkSpaces.Workspace
 
 ## NOTES
 

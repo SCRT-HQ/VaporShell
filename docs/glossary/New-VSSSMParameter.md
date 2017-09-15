@@ -231,7 +231,7 @@ Accept wildcard characters: False
 
 ## OUTPUTS
 
-### Vaporshell.Resource.SSM.Parameter
+### VaporShell.Resource.SSM.Parameter
 
 ## NOTES
 

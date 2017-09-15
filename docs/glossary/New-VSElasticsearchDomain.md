@@ -290,7 +290,7 @@ Accept wildcard characters: False
 
 ## OUTPUTS
 
-### Vaporshell.Resource.Elasticsearch.Domain
+### VaporShell.Resource.Elasticsearch.Domain
 
 ## NOTES
 

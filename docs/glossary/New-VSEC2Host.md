@@ -195,7 +195,7 @@ Accept wildcard characters: False
 
 ## OUTPUTS
 
-### Vaporshell.Resource.EC2.Host
+### VaporShell.Resource.EC2.Host
 
 ## NOTES
 

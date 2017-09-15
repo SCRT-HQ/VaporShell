@@ -83,7 +83,7 @@ Accept wildcard characters: False
 
 ## OUTPUTS
 
-### Vaporshell.Resource.EMR.InstanceFleetConfig.SpotProvisioningSpecification
+### VaporShell.Resource.EMR.InstanceFleetConfig.SpotProvisioningSpecification
 
 ## NOTES
 

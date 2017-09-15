@@ -101,7 +101,7 @@ Accept wildcard characters: False
 
 ## OUTPUTS
 
-### Vaporshell.Resource.CodePipeline.Pipeline.ActionTypeId
+### VaporShell.Resource.CodePipeline.Pipeline.ActionTypeId
 
 ## NOTES
 

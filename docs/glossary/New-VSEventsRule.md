@@ -270,7 +270,7 @@ Accept wildcard characters: False
 
 ## OUTPUTS
 
-### Vaporshell.Resource.Events.Rule
+### VaporShell.Resource.Events.Rule
 
 ## NOTES
 

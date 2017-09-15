@@ -64,7 +64,7 @@ Accept wildcard characters: False
 
 ## OUTPUTS
 
-### Vaporshell.Resource.Cognito.UserPool.EmailConfiguration
+### VaporShell.Resource.Cognito.UserPool.EmailConfiguration
 
 ## NOTES
 

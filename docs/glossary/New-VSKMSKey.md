@@ -231,7 +231,7 @@ Accept wildcard characters: False
 
 ## OUTPUTS
 
-### Vaporshell.Resource.KMS.Key
+### VaporShell.Resource.KMS.Key
 
 ## NOTES
 

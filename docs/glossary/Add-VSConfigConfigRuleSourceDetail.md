@@ -83,7 +83,7 @@ Accept wildcard characters: False
 
 ## OUTPUTS
 
-### Vaporshell.Resource.Config.ConfigRule.SourceDetail
+### VaporShell.Resource.Config.ConfigRule.SourceDetail
 
 ## NOTES
 

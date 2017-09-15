@@ -214,7 +214,7 @@ Accept wildcard characters: False
 
 ## OUTPUTS
 
-### Vaporshell.Resource.KinesisAnalytics.Application
+### VaporShell.Resource.KinesisAnalytics.Application
 
 ## NOTES
 

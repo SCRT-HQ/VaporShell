@@ -64,7 +64,7 @@ Accept wildcard characters: False
 
 ## OUTPUTS
 
-### Vaporshell.Resource.OpsWorks.Stack.ElasticIp
+### VaporShell.Resource.OpsWorks.Stack.ElasticIp
 
 ## NOTES
 

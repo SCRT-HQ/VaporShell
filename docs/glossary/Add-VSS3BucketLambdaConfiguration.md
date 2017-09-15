@@ -82,7 +82,7 @@ Accept wildcard characters: False
 
 ## OUTPUTS
 
-### Vaporshell.Resource.S3.Bucket.LambdaConfiguration
+### VaporShell.Resource.S3.Bucket.LambdaConfiguration
 
 ## NOTES
 

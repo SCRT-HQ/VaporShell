@@ -64,7 +64,7 @@ Accept wildcard characters: False
 
 ## OUTPUTS
 
-### Vaporshell.Resource.S3.Bucket.RoutingRuleCondition
+### VaporShell.Resource.S3.Bucket.RoutingRuleCondition
 
 ## NOTES
 

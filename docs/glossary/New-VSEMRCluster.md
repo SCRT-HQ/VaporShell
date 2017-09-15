@@ -422,7 +422,7 @@ Accept wildcard characters: False
 
 ## OUTPUTS
 
-### Vaporshell.Resource.EMR.Cluster
+### VaporShell.Resource.EMR.Cluster
 
 ## NOTES
 

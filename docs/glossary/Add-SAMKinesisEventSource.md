@@ -93,7 +93,7 @@ Accept wildcard characters: False
 
 ## OUTPUTS
 
-### Vaporshell.Serverless.EventSource.Kinesis
+### VaporShell.Serverless.EventSource.Kinesis
 
 ## NOTES
 

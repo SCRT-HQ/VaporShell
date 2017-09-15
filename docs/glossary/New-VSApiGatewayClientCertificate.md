@@ -158,7 +158,7 @@ Accept wildcard characters: False
 
 ## OUTPUTS
 
-### Vaporshell.Resource.ApiGateway.ClientCertificate
+### VaporShell.Resource.ApiGateway.ClientCertificate
 
 ## NOTES
 

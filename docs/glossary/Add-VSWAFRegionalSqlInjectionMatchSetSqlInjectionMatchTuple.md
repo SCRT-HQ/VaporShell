@@ -65,7 +65,7 @@ Accept wildcard characters: False
 
 ## OUTPUTS
 
-### Vaporshell.Resource.WAFRegional.SqlInjectionMatchSet.SqlInjectionMatchTuple
+### VaporShell.Resource.WAFRegional.SqlInjectionMatchSet.SqlInjectionMatchTuple
 
 ## NOTES
 

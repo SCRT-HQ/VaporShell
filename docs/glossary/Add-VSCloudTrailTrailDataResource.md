@@ -66,7 +66,7 @@ Accept wildcard characters: False
 
 ## OUTPUTS
 
-### Vaporshell.Resource.CloudTrail.Trail.DataResource
+### VaporShell.Resource.CloudTrail.Trail.DataResource
 
 ## NOTES
 

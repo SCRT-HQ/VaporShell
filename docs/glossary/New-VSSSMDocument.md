@@ -176,7 +176,7 @@ Accept wildcard characters: False
 
 ## OUTPUTS
 
-### Vaporshell.Resource.SSM.Document
+### VaporShell.Resource.SSM.Document
 
 ## NOTES
 

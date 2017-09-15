@@ -46,7 +46,7 @@ Accept wildcard characters: False
 
 ## OUTPUTS
 
-### Vaporshell.Resource.OpsWorks.Layer.LifecycleEventConfiguration
+### VaporShell.Resource.OpsWorks.Layer.LifecycleEventConfiguration
 
 ## NOTES
 

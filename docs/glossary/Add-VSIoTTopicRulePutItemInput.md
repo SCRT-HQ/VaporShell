@@ -46,7 +46,7 @@ Accept wildcard characters: False
 
 ## OUTPUTS
 
-### Vaporshell.Resource.IoT.TopicRule.PutItemInput
+### VaporShell.Resource.IoT.TopicRule.PutItemInput
 
 ## NOTES
 

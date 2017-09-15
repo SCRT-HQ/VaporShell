@@ -192,7 +192,7 @@ Accept wildcard characters: False
 
 ## OUTPUTS
 
-### Vaporshell.Resource.IoT.TopicRule.DynamoDBAction
+### VaporShell.Resource.IoT.TopicRule.DynamoDBAction
 
 ## NOTES
 

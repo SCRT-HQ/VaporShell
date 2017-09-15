@@ -196,7 +196,7 @@ Accept wildcard characters: False
 
 ## OUTPUTS
 
-### Vaporshell.Resource.CodeCommit.Repository
+### VaporShell.Resource.CodeCommit.Repository
 
 ## NOTES
 

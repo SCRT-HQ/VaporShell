@@ -457,7 +457,7 @@ Accept wildcard characters: False
 
 ## OUTPUTS
 
-### Vaporshell.Resource.AutoScaling.LaunchConfiguration
+### VaporShell.Resource.AutoScaling.LaunchConfiguration
 
 ## NOTES
 

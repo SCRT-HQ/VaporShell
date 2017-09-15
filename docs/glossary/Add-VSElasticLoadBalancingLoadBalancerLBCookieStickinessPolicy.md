@@ -65,7 +65,7 @@ Accept wildcard characters: False
 
 ## OUTPUTS
 
-### Vaporshell.Resource.ElasticLoadBalancing.LoadBalancer.LBCookieStickinessPolicy
+### VaporShell.Resource.ElasticLoadBalancing.LoadBalancer.LBCookieStickinessPolicy
 
 ## NOTES
 

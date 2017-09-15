@@ -76,7 +76,7 @@ Accept wildcard characters: False
 
 ## OUTPUTS
 
-### Vaporshell.Serverless.S3LocationObject
+### VaporShell.Serverless.S3LocationObject
 
 ## NOTES
 

@@ -628,7 +628,7 @@ Accept wildcard characters: False
 
 ## OUTPUTS
 
-### Vaporshell.Resource.ElastiCache.ReplicationGroup
+### VaporShell.Resource.ElastiCache.ReplicationGroup
 
 ## NOTES
 

@@ -64,7 +64,7 @@ Accept wildcard characters: False
 
 ## OUTPUTS
 
-### Vaporshell.Resource.IoT.TopicRule.RepublishAction
+### VaporShell.Resource.IoT.TopicRule.RepublishAction
 
 ## NOTES
 

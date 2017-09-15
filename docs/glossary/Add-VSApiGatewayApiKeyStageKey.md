@@ -64,7 +64,7 @@ Accept wildcard characters: False
 
 ## OUTPUTS
 
-### Vaporshell.Resource.ApiGateway.ApiKey.StageKey
+### VaporShell.Resource.ApiGateway.ApiKey.StageKey
 
 ## NOTES
 

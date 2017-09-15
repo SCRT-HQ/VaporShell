@@ -66,7 +66,7 @@ Accept wildcard characters: False
 
 ## OUTPUTS
 
-### Vaporshell.Resource.AutoScaling.AutoScalingGroup.MetricsCollection
+### VaporShell.Resource.AutoScaling.AutoScalingGroup.MetricsCollection
 
 ## NOTES
 

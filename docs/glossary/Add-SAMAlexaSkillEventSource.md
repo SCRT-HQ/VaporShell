@@ -44,7 +44,7 @@ Accept wildcard characters: False
 
 ## OUTPUTS
 
-### Vaporshell.Serverless.EventSource.AlexaSkill
+### VaporShell.Serverless.EventSource.AlexaSkill
 
 ## NOTES
 

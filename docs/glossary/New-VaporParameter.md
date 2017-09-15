@@ -341,7 +341,7 @@ Accept wildcard characters: False
 
 ## OUTPUTS
 
-### Vaporshell.Parameter
+### VaporShell.Parameter
 
 ## NOTES
 

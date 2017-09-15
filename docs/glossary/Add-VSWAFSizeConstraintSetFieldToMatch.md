@@ -64,7 +64,7 @@ Accept wildcard characters: False
 
 ## OUTPUTS
 
-### Vaporshell.Resource.WAF.SizeConstraintSet.FieldToMatch
+### VaporShell.Resource.WAF.SizeConstraintSet.FieldToMatch
 
 ## NOTES
 

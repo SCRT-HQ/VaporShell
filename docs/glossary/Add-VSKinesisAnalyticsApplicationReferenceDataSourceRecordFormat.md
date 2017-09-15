@@ -65,7 +65,7 @@ Accept wildcard characters: False
 
 ## OUTPUTS
 
-### Vaporshell.Resource.KinesisAnalytics.ApplicationReferenceDataSource.RecordFormat
+### VaporShell.Resource.KinesisAnalytics.ApplicationReferenceDataSource.RecordFormat
 
 ## NOTES
 

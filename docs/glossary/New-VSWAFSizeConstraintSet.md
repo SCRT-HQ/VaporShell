@@ -179,7 +179,7 @@ Accept wildcard characters: False
 
 ## OUTPUTS
 
-### Vaporshell.Resource.WAF.SizeConstraintSet
+### VaporShell.Resource.WAF.SizeConstraintSet
 
 ## NOTES
 

@@ -83,7 +83,7 @@ Accept wildcard characters: False
 
 ## OUTPUTS
 
-### Vaporshell.Resource.CodeDeploy.DeploymentGroup.RevisionLocation
+### VaporShell.Resource.CodeDeploy.DeploymentGroup.RevisionLocation
 
 ## NOTES
 

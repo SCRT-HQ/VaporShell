@@ -68,7 +68,7 @@ Accept wildcard characters: False
 
 ## OUTPUTS
 
-### Vaporshell.Resource.Lambda.Function.VpcConfig
+### VaporShell.Resource.Lambda.Function.VpcConfig
 
 ## NOTES
 

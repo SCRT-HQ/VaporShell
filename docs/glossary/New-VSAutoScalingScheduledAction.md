@@ -268,7 +268,7 @@ Accept wildcard characters: False
 
 ## OUTPUTS
 
-### Vaporshell.Resource.AutoScaling.ScheduledAction
+### VaporShell.Resource.AutoScaling.ScheduledAction
 
 ## NOTES
 

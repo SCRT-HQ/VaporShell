@@ -326,7 +326,7 @@ Accept wildcard characters: False
 
 ## OUTPUTS
 
-### Vaporshell.Resource.ElasticBeanstalk.Environment
+### VaporShell.Resource.ElasticBeanstalk.Environment
 
 ## NOTES
 

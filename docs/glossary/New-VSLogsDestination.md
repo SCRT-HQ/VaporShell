@@ -213,7 +213,7 @@ Accept wildcard characters: False
 
 ## OUTPUTS
 
-### Vaporshell.Resource.Logs.Destination
+### VaporShell.Resource.Logs.Destination
 
 ## NOTES
 

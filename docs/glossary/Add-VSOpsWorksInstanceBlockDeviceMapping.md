@@ -101,7 +101,7 @@ Accept wildcard characters: False
 
 ## OUTPUTS
 
-### Vaporshell.Resource.OpsWorks.Instance.BlockDeviceMapping
+### VaporShell.Resource.OpsWorks.Instance.BlockDeviceMapping
 
 ## NOTES
 

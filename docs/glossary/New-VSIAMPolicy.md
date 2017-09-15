@@ -237,7 +237,7 @@ Accept wildcard characters: False
 
 ## OUTPUTS
 
-### Vaporshell.Resource.IAM.Policy
+### VaporShell.Resource.IAM.Policy
 
 ## NOTES
 

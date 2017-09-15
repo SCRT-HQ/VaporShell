@@ -232,7 +232,7 @@ Accept wildcard characters: False
 
 ## OUTPUTS
 
-### Vaporshell.Resource.KinesisFirehose.DeliveryStream
+### VaporShell.Resource.KinesisFirehose.DeliveryStream
 
 ## NOTES
 

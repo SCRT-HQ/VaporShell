@@ -215,7 +215,7 @@ Accept wildcard characters: False
 
 ## OUTPUTS
 
-### Vaporshell.Resource.WAF.WebACL
+### VaporShell.Resource.WAF.WebACL
 
 ## NOTES
 

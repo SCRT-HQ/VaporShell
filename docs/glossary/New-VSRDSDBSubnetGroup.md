@@ -199,7 +199,7 @@ Accept wildcard characters: False
 
 ## OUTPUTS
 
-### Vaporshell.Resource.RDS.DBSubnetGroup
+### VaporShell.Resource.RDS.DBSubnetGroup
 
 ## NOTES
 

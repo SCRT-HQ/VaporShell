@@ -46,7 +46,7 @@ Accept wildcard characters: False
 
 ## OUTPUTS
 
-### Vaporshell.Resource.Cognito.UserPool.Policies
+### VaporShell.Resource.Cognito.UserPool.Policies
 
 ## NOTES
 

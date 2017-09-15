@@ -213,7 +213,7 @@ Accept wildcard characters: False
 
 ## OUTPUTS
 
-### Vaporshell.Resource.OpsWorks.UserProfile
+### VaporShell.Resource.OpsWorks.UserProfile
 
 ## NOTES
 

@@ -46,7 +46,7 @@ Accept wildcard characters: False
 
 ## OUTPUTS
 
-### Vaporshell.Resource.Batch.JobDefinition.RetryStrategy
+### VaporShell.Resource.Batch.JobDefinition.RetryStrategy
 
 ## NOTES
 

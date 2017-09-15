@@ -705,7 +705,7 @@ Accept wildcard characters: False
 
 ## OUTPUTS
 
-### Vaporshell.Resource.EC2.Instance
+### VaporShell.Resource.EC2.Instance
 
 ## NOTES
 

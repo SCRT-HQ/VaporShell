@@ -149,7 +149,7 @@ Accept wildcard characters: False
 
 ## OUTPUTS
 
-### Vaporshell.Resource.CreationPolicy
+### VaporShell.Resource.CreationPolicy
 
 ## NOTES
 

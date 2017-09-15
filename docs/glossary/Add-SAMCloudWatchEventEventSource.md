@@ -94,7 +94,7 @@ Accept wildcard characters: False
 
 ## OUTPUTS
 
-### Vaporshell.Serverless.EventSource.CloudWatchEvent
+### VaporShell.Serverless.EventSource.CloudWatchEvent
 
 ## NOTES
 

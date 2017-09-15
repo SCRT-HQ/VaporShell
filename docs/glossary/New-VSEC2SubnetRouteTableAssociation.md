@@ -177,7 +177,7 @@ Accept wildcard characters: False
 
 ## OUTPUTS
 
-### Vaporshell.Resource.EC2.SubnetRouteTableAssociation
+### VaporShell.Resource.EC2.SubnetRouteTableAssociation
 
 ## NOTES
 

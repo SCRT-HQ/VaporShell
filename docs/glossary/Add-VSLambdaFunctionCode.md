@@ -101,7 +101,7 @@ Accept wildcard characters: False
 
 ## OUTPUTS
 
-### Vaporshell.Resource.Lambda.Function.Code
+### VaporShell.Resource.Lambda.Function.Code
 
 ## NOTES
 

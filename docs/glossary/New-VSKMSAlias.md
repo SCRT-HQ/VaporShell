@@ -176,7 +176,7 @@ Accept wildcard characters: False
 
 ## OUTPUTS
 
-### Vaporshell.Resource.KMS.Alias
+### VaporShell.Resource.KMS.Alias
 
 ## NOTES
 

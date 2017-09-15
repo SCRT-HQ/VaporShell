@@ -85,7 +85,7 @@ Accept wildcard characters: False
 
 ## OUTPUTS
 
-### Vaporshell.Resource.CloudTrail.Trail.EventSelector
+### VaporShell.Resource.CloudTrail.Trail.EventSelector
 
 ## NOTES
 

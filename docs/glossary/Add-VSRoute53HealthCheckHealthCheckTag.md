@@ -64,7 +64,7 @@ Accept wildcard characters: False
 
 ## OUTPUTS
 
-### Vaporshell.Resource.Route53.HealthCheck.HealthCheckTag
+### VaporShell.Resource.Route53.HealthCheck.HealthCheckTag
 
 ## NOTES
 

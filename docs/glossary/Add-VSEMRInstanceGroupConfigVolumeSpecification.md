@@ -82,7 +82,7 @@ Accept wildcard characters: False
 
 ## OUTPUTS
 
-### Vaporshell.Resource.EMR.InstanceGroupConfig.VolumeSpecification
+### VaporShell.Resource.EMR.InstanceGroupConfig.VolumeSpecification
 
 ## NOTES
 

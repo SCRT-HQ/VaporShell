@@ -64,7 +64,7 @@ Accept wildcard characters: False
 
 ## OUTPUTS
 
-### Vaporshell.Resource.DynamoDB.Table.AttributeDefinition
+### VaporShell.Resource.DynamoDB.Table.AttributeDefinition
 
 ## NOTES
 

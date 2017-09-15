@@ -214,7 +214,7 @@ Accept wildcard characters: False
 
 ## OUTPUTS
 
-### Vaporshell.Resource.Batch.JobQueue
+### VaporShell.Resource.Batch.JobQueue
 
 ## NOTES
 

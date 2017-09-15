@@ -47,7 +47,7 @@ Accept wildcard characters: False
 ### -Metadata
 Key/Value pair.
 
-You can use any of these 3 types for this parameter; "System.Collections.Hashtable","System.Management.Automation.PSCustomObject","Vaporshell.Metadata.Data"
+You can use any of these 3 types for this parameter; "System.Collections.Hashtable","System.Management.Automation.PSCustomObject","VaporShell.Metadata.Data"
 
 ```yaml
 Type: Object
@@ -65,7 +65,7 @@ Accept wildcard characters: False
 
 ## OUTPUTS
 
-### Vaporshell.Metadata
+### VaporShell.Metadata
 
 ## NOTES
 

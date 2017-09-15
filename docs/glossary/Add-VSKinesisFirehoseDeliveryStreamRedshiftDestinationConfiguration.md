@@ -174,7 +174,7 @@ Accept wildcard characters: False
 
 ## OUTPUTS
 
-### Vaporshell.Resource.KinesisFirehose.DeliveryStream.RedshiftDestinationConfiguration
+### VaporShell.Resource.KinesisFirehose.DeliveryStream.RedshiftDestinationConfiguration
 
 ## NOTES
 

@@ -140,7 +140,7 @@ Accept wildcard characters: False
 
 ## OUTPUTS
 
-### Vaporshell.Resource.CloudFormation.WaitConditionHandle
+### VaporShell.Resource.CloudFormation.WaitConditionHandle
 
 ## NOTES
 

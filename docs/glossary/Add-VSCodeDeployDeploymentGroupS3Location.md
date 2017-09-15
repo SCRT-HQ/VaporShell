@@ -119,7 +119,7 @@ Accept wildcard characters: False
 
 ## OUTPUTS
 
-### Vaporshell.Resource.CodeDeploy.DeploymentGroup.S3Location
+### VaporShell.Resource.CodeDeploy.DeploymentGroup.S3Location
 
 ## NOTES
 

@@ -129,7 +129,7 @@ Accept wildcard characters: False
 
 ## OUTPUTS
 
-### Vaporshell.Resource.OpsWorks.Layer.Recipes
+### VaporShell.Resource.OpsWorks.Layer.Recipes
 
 ## NOTES
 

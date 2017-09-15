@@ -65,7 +65,7 @@ Accept wildcard characters: False
 
 ## OUTPUTS
 
-### Vaporshell.Resource.Cognito.IdentityPool.PushSync
+### VaporShell.Resource.Cognito.IdentityPool.PushSync
 
 ## NOTES
 

@@ -64,7 +64,7 @@ Accept wildcard characters: False
 
 ## OUTPUTS
 
-### Vaporshell.Resource.ApiGateway.UsagePlan.ThrottleSettings
+### VaporShell.Resource.ApiGateway.UsagePlan.ThrottleSettings
 
 ## NOTES
 

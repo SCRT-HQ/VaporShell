@@ -213,7 +213,7 @@ Accept wildcard characters: False
 
 ## OUTPUTS
 
-### Vaporshell.Resource.EC2.TrunkInterfaceAssociation
+### VaporShell.Resource.EC2.TrunkInterfaceAssociation
 
 ## NOTES
 

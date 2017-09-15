@@ -158,7 +158,7 @@ Accept wildcard characters: False
 
 ## OUTPUTS
 
-### Vaporshell.Resource.ApiGateway.Account
+### VaporShell.Resource.ApiGateway.Account
 
 ## NOTES
 

@@ -214,7 +214,7 @@ Accept wildcard characters: False
 
 ## OUTPUTS
 
-### Vaporshell.Resource.Redshift.ClusterSecurityGroupIngress
+### VaporShell.Resource.Redshift.ClusterSecurityGroupIngress
 
 ## NOTES
 

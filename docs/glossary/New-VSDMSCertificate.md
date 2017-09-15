@@ -195,7 +195,7 @@ Accept wildcard characters: False
 
 ## OUTPUTS
 
-### Vaporshell.Resource.DMS.Certificate
+### VaporShell.Resource.DMS.Certificate
 
 ## NOTES
 

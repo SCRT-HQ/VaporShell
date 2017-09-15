@@ -59,7 +59,7 @@ Accept wildcard characters: False
 
 ## OUTPUTS
 
-### Vaporshell.Condition.Equals
+### VaporShell.Condition.Equals
 
 ## NOTES
 You can use the following functions in this condition statement:

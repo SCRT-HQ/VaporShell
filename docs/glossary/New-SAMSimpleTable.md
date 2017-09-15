@@ -82,7 +82,7 @@ Accept wildcard characters: False
 
 ## OUTPUTS
 
-### Vaporshell.Serverless.SimpleTable
+### VaporShell.Serverless.SimpleTable
 
 ## NOTES
 Return values

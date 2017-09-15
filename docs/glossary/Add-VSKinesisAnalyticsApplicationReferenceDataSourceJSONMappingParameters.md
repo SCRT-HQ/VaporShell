@@ -46,7 +46,7 @@ Accept wildcard characters: False
 
 ## OUTPUTS
 
-### Vaporshell.Resource.KinesisAnalytics.ApplicationReferenceDataSource.JSONMappingParameters
+### VaporShell.Resource.KinesisAnalytics.ApplicationReferenceDataSource.JSONMappingParameters
 
 ## NOTES
 

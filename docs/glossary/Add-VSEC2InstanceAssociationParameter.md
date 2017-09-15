@@ -66,7 +66,7 @@ Accept wildcard characters: False
 
 ## OUTPUTS
 
-### Vaporshell.Resource.EC2.Instance.AssociationParameter
+### VaporShell.Resource.EC2.Instance.AssociationParameter
 
 ## NOTES
 

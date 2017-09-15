@@ -28,7 +28,7 @@ Adds an AWS::Cognito::IdentityPoolRoleAttachment.RulesConfigurationType resource
 
 ## OUTPUTS
 
-### Vaporshell.Resource.Cognito.IdentityPoolRoleAttachment.RulesConfigurationType
+### VaporShell.Resource.Cognito.IdentityPoolRoleAttachment.RulesConfigurationType
 
 ## NOTES
 

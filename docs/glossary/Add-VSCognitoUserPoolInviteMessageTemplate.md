@@ -83,7 +83,7 @@ Accept wildcard characters: False
 
 ## OUTPUTS
 
-### Vaporshell.Resource.Cognito.UserPool.InviteMessageTemplate
+### VaporShell.Resource.Cognito.UserPool.InviteMessageTemplate
 
 ## NOTES
 

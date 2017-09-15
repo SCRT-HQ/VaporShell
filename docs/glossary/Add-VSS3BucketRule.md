@@ -253,7 +253,7 @@ Accept wildcard characters: False
 
 ## OUTPUTS
 
-### Vaporshell.Resource.S3.Bucket.Rule
+### VaporShell.Resource.S3.Bucket.Rule
 
 ## NOTES
 

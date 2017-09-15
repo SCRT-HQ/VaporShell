@@ -76,7 +76,7 @@ Accept wildcard characters: False
 
 ## OUTPUTS
 
-### Vaporshell.Serverless.EventSource.IoTRule
+### VaporShell.Serverless.EventSource.IoTRule
 
 ## NOTES
 

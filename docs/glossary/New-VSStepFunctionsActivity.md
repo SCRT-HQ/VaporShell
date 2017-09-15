@@ -158,7 +158,7 @@ Accept wildcard characters: False
 
 ## OUTPUTS
 
-### Vaporshell.Resource.StepFunctions.Activity
+### VaporShell.Resource.StepFunctions.Activity
 
 ## NOTES
 

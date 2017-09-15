@@ -179,7 +179,7 @@ Accept wildcard characters: False
 
 ## OUTPUTS
 
-### Vaporshell.Resource.IAM.UserToGroupAddition
+### VaporShell.Resource.IAM.UserToGroupAddition
 
 ## NOTES
 

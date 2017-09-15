@@ -215,7 +215,7 @@ Accept wildcard characters: False
 
 ## OUTPUTS
 
-### Vaporshell.Resource.RDS.DBClusterParameterGroup
+### VaporShell.Resource.RDS.DBClusterParameterGroup
 
 ## NOTES
 

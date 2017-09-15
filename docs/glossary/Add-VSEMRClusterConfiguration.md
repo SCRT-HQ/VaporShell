@@ -87,7 +87,7 @@ Accept wildcard characters: False
 
 ## OUTPUTS
 
-### Vaporshell.Resource.EMR.Cluster.Configuration
+### VaporShell.Resource.EMR.Cluster.Configuration
 
 ## NOTES
 

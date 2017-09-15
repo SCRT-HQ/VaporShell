@@ -120,7 +120,7 @@ Accept wildcard characters: False
 
 ## OUTPUTS
 
-### Vaporshell.Resource.CloudFront.Distribution.ViewerCertificate
+### VaporShell.Resource.CloudFront.Distribution.ViewerCertificate
 
 ## NOTES
 

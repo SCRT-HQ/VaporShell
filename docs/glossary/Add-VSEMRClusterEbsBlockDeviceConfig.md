@@ -64,7 +64,7 @@ Accept wildcard characters: False
 
 ## OUTPUTS
 
-### Vaporshell.Resource.EMR.Cluster.EbsBlockDeviceConfig
+### VaporShell.Resource.EMR.Cluster.EbsBlockDeviceConfig
 
 ## NOTES
 

@@ -270,7 +270,7 @@ Accept wildcard characters: False
 
 ## OUTPUTS
 
-### Vaporshell.Resource.EMR.InstanceFleetConfig
+### VaporShell.Resource.EMR.InstanceFleetConfig
 
 ## NOTES
 

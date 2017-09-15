@@ -46,7 +46,7 @@ Accept wildcard characters: False
 
 ## OUTPUTS
 
-### Vaporshell.Resource.EC2.SpotFleet.SpotFleetMonitoring
+### VaporShell.Resource.EC2.SpotFleet.SpotFleetMonitoring
 
 ## NOTES
 

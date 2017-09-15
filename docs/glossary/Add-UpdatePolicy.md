@@ -299,7 +299,7 @@ Accept wildcard characters: False
 
 ## OUTPUTS
 
-### Vaporshell.Resource.UpdatePolicy
+### VaporShell.Resource.UpdatePolicy
 
 ## NOTES
 

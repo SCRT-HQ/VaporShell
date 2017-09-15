@@ -194,7 +194,7 @@ Accept wildcard characters: False
 
 ## OUTPUTS
 
-### Vaporshell.Resource.EMR.InstanceGroupConfig.CloudWatchAlarmDefinition
+### VaporShell.Resource.EMR.InstanceGroupConfig.CloudWatchAlarmDefinition
 
 ## NOTES
 

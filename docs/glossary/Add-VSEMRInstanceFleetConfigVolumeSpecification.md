@@ -82,7 +82,7 @@ Accept wildcard characters: False
 
 ## OUTPUTS
 
-### Vaporshell.Resource.EMR.InstanceFleetConfig.VolumeSpecification
+### VaporShell.Resource.EMR.InstanceFleetConfig.VolumeSpecification
 
 ## NOTES
 

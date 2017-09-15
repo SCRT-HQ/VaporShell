@@ -64,7 +64,7 @@ Accept wildcard characters: False
 
 ## OUTPUTS
 
-### Vaporshell.Resource.CertificateManager.Certificate.DomainValidationOption
+### VaporShell.Resource.CertificateManager.Certificate.DomainValidationOption
 
 ## NOTES
 

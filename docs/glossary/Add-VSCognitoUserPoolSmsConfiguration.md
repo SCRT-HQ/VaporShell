@@ -64,7 +64,7 @@ Accept wildcard characters: False
 
 ## OUTPUTS
 
-### Vaporshell.Resource.Cognito.UserPool.SmsConfiguration
+### VaporShell.Resource.Cognito.UserPool.SmsConfiguration
 
 ## NOTES
 

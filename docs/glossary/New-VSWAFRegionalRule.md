@@ -196,7 +196,7 @@ Accept wildcard characters: False
 
 ## OUTPUTS
 
-### Vaporshell.Resource.WAFRegional.Rule
+### VaporShell.Resource.WAFRegional.Rule
 
 ## NOTES
 

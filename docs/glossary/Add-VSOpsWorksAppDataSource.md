@@ -82,7 +82,7 @@ Accept wildcard characters: False
 
 ## OUTPUTS
 
-### Vaporshell.Resource.OpsWorks.App.DataSource
+### VaporShell.Resource.OpsWorks.App.DataSource
 
 ## NOTES
 

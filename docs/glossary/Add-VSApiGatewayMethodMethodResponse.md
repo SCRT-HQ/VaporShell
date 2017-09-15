@@ -87,7 +87,7 @@ Accept wildcard characters: False
 
 ## OUTPUTS
 
-### Vaporshell.Resource.ApiGateway.Method.MethodResponse
+### VaporShell.Resource.ApiGateway.Method.MethodResponse
 
 ## NOTES
 

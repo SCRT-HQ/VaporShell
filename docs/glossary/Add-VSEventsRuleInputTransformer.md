@@ -66,7 +66,7 @@ Accept wildcard characters: False
 
 ## OUTPUTS
 
-### Vaporshell.Resource.Events.Rule.InputTransformer
+### VaporShell.Resource.Events.Rule.InputTransformer
 
 ## NOTES
 

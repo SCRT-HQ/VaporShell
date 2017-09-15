@@ -250,7 +250,7 @@ Accept wildcard characters: False
 
 ## OUTPUTS
 
-### Vaporshell.Resource.Config.ConfigRule
+### VaporShell.Resource.Config.ConfigRule
 
 ## NOTES
 

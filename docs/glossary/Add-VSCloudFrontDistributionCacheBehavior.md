@@ -253,7 +253,7 @@ Accept wildcard characters: False
 
 ## OUTPUTS
 
-### Vaporshell.Resource.CloudFront.Distribution.CacheBehavior
+### VaporShell.Resource.CloudFront.Distribution.CacheBehavior
 
 ## NOTES
 

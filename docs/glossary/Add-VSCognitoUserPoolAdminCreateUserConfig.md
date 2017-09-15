@@ -83,7 +83,7 @@ Accept wildcard characters: False
 
 ## OUTPUTS
 
-### Vaporshell.Resource.Cognito.UserPool.AdminCreateUserConfig
+### VaporShell.Resource.Cognito.UserPool.AdminCreateUserConfig
 
 ## NOTES
 

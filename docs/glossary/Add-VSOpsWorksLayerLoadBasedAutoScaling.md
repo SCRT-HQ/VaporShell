@@ -82,7 +82,7 @@ Accept wildcard characters: False
 
 ## OUTPUTS
 
-### Vaporshell.Resource.OpsWorks.Layer.LoadBasedAutoScaling
+### VaporShell.Resource.OpsWorks.Layer.LoadBasedAutoScaling
 
 ## NOTES
 

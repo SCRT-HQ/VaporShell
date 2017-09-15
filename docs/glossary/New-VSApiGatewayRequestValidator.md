@@ -213,7 +213,7 @@ Accept wildcard characters: False
 
 ## OUTPUTS
 
-### Vaporshell.Resource.ApiGateway.RequestValidator
+### VaporShell.Resource.ApiGateway.RequestValidator
 
 ## NOTES
 

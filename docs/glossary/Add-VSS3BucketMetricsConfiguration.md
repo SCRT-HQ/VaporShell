@@ -84,7 +84,7 @@ Accept wildcard characters: False
 
 ## OUTPUTS
 
-### Vaporshell.Resource.S3.Bucket.MetricsConfiguration
+### VaporShell.Resource.S3.Bucket.MetricsConfiguration
 
 ## NOTES
 

@@ -361,7 +361,7 @@ Accept wildcard characters: False
 
 ## OUTPUTS
 
-### Vaporshell.Resource.DAX.Cluster
+### VaporShell.Resource.DAX.Cluster
 
 ## NOTES
 

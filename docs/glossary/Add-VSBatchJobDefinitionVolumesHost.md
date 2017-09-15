@@ -46,7 +46,7 @@ Accept wildcard characters: False
 
 ## OUTPUTS
 
-### Vaporshell.Resource.Batch.JobDefinition.VolumesHost
+### VaporShell.Resource.Batch.JobDefinition.VolumesHost
 
 ## NOTES
 

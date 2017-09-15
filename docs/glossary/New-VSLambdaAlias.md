@@ -213,7 +213,7 @@ Accept wildcard characters: False
 
 ## OUTPUTS
 
-### Vaporshell.Resource.Lambda.Alias
+### VaporShell.Resource.Lambda.Alias
 
 ## NOTES
 

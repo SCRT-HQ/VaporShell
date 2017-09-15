@@ -213,7 +213,7 @@ Accept wildcard characters: False
 
 ## OUTPUTS
 
-### Vaporshell.Resource.Logs.SubscriptionFilter
+### VaporShell.Resource.Logs.SubscriptionFilter
 
 ## NOTES
 

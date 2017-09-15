@@ -82,7 +82,7 @@ Accept wildcard characters: False
 
 ## OUTPUTS
 
-### Vaporshell.Resource.ECS.TaskDefinition.PortMapping
+### VaporShell.Resource.ECS.TaskDefinition.PortMapping
 
 ## NOTES
 

@@ -326,7 +326,7 @@ Accept wildcard characters: False
 
 ## OUTPUTS
 
-### Vaporshell.Resource.EC2.SpotFleet.SpotFleetLaunchSpecification
+### VaporShell.Resource.EC2.SpotFleet.SpotFleetLaunchSpecification
 
 ## NOTES
 

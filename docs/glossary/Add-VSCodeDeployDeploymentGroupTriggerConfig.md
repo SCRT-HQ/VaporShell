@@ -85,7 +85,7 @@ Accept wildcard characters: False
 
 ## OUTPUTS
 
-### Vaporshell.Resource.CodeDeploy.DeploymentGroup.TriggerConfig
+### VaporShell.Resource.CodeDeploy.DeploymentGroup.TriggerConfig
 
 ## NOTES
 

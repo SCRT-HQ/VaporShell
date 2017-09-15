@@ -220,7 +220,7 @@ Accept wildcard characters: False
 
 ## OUTPUTS
 
-### Vaporshell.Resource.CertificateManager.Certificate
+### VaporShell.Resource.CertificateManager.Certificate
 
 ## NOTES
 

@@ -82,7 +82,7 @@ Accept wildcard characters: False
 
 ## OUTPUTS
 
-### Vaporshell.Resource.CodeDeploy.DeploymentGroup.TagFilter
+### VaporShell.Resource.CodeDeploy.DeploymentGroup.TagFilter
 
 ## NOTES
 

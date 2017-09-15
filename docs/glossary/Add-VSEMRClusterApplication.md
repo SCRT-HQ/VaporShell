@@ -105,7 +105,7 @@ Accept wildcard characters: False
 
 ## OUTPUTS
 
-### Vaporshell.Resource.EMR.Cluster.Application
+### VaporShell.Resource.EMR.Cluster.Application
 
 ## NOTES
 

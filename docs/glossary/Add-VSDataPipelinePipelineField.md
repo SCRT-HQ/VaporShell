@@ -82,7 +82,7 @@ Accept wildcard characters: False
 
 ## OUTPUTS
 
-### Vaporshell.Resource.DataPipeline.Pipeline.Field
+### VaporShell.Resource.DataPipeline.Pipeline.Field
 
 ## NOTES
 

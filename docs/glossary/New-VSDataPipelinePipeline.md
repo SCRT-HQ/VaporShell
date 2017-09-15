@@ -276,7 +276,7 @@ Accept wildcard characters: False
 
 ## OUTPUTS
 
-### Vaporshell.Resource.DataPipeline.Pipeline
+### VaporShell.Resource.DataPipeline.Pipeline
 
 ## NOTES
 

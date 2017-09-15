@@ -66,7 +66,7 @@ Accept wildcard characters: False
 
 ## OUTPUTS
 
-### Vaporshell.Resource.AutoScaling.AutoScalingGroup.NotificationConfiguration
+### VaporShell.Resource.AutoScaling.AutoScalingGroup.NotificationConfiguration
 
 ## NOTES
 

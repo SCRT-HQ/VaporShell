@@ -82,7 +82,7 @@ Accept wildcard characters: False
 
 ## OUTPUTS
 
-### Vaporshell.Resource.Batch.JobDefinition.Ulimit
+### VaporShell.Resource.Batch.JobDefinition.Ulimit
 
 ## NOTES
 

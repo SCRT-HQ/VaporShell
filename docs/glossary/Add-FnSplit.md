@@ -64,7 +64,7 @@ Accept wildcard characters: False
 
 ## OUTPUTS
 
-### Vaporshell.Function.Split
+### VaporShell.Function.Split
 
 ## NOTES
 For the Fn::Split delimiter, you cannot use any functions.

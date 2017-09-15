@@ -289,7 +289,7 @@ Accept wildcard characters: False
 
 ## OUTPUTS
 
-### Vaporshell.Resource.EMR.Cluster.JobFlowInstancesConfig
+### VaporShell.Resource.EMR.Cluster.JobFlowInstancesConfig
 
 ## NOTES
 

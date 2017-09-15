@@ -64,7 +64,7 @@ Accept wildcard characters: False
 
 ## OUTPUTS
 
-### Vaporshell.Function.Join
+### VaporShell.Function.Join
 
 ## NOTES
 For the Fn::Join delimiter, you cannot use any functions.

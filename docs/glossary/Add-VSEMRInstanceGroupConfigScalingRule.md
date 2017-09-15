@@ -101,7 +101,7 @@ Accept wildcard characters: False
 
 ## OUTPUTS
 
-### Vaporshell.Resource.EMR.InstanceGroupConfig.ScalingRule
+### VaporShell.Resource.EMR.InstanceGroupConfig.ScalingRule
 
 ## NOTES
 

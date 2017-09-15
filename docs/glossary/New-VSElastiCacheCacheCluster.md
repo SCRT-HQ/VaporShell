@@ -534,7 +534,7 @@ Accept wildcard characters: False
 
 ## OUTPUTS
 
-### Vaporshell.Resource.ElastiCache.CacheCluster
+### VaporShell.Resource.ElastiCache.CacheCluster
 
 ## NOTES
 

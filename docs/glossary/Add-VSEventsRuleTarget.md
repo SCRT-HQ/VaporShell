@@ -192,7 +192,7 @@ Accept wildcard characters: False
 
 ## OUTPUTS
 
-### Vaporshell.Resource.Events.Rule.Target
+### VaporShell.Resource.Events.Rule.Target
 
 ## NOTES
 

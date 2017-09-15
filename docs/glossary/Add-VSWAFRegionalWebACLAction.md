@@ -46,7 +46,7 @@ Accept wildcard characters: False
 
 ## OUTPUTS
 
-### Vaporshell.Resource.WAFRegional.WebACL.Action
+### VaporShell.Resource.WAFRegional.WebACL.Action
 
 ## NOTES
 

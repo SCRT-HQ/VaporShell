@@ -83,7 +83,7 @@ Accept wildcard characters: False
 
 ## OUTPUTS
 
-### Vaporshell.Resource.Route53.RecordSetGroup.AliasTarget
+### VaporShell.Resource.Route53.RecordSetGroup.AliasTarget
 
 ## NOTES
 

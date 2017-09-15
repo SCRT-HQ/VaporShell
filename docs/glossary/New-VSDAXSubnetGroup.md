@@ -196,7 +196,7 @@ Accept wildcard characters: False
 
 ## OUTPUTS
 
-### Vaporshell.Resource.DAX.SubnetGroup
+### VaporShell.Resource.DAX.SubnetGroup
 
 ## NOTES
 

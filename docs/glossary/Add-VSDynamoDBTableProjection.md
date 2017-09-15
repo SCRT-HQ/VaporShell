@@ -66,7 +66,7 @@ Accept wildcard characters: False
 
 ## OUTPUTS
 
-### Vaporshell.Resource.DynamoDB.Table.Projection
+### VaporShell.Resource.DynamoDB.Table.Projection
 
 ## NOTES
 

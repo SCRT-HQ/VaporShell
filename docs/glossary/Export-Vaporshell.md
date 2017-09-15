@@ -1,6 +1,6 @@
 ---
 layout: glossary
-title: Export-Vaporshell
+title: Export-VaporShell
 categories: glossary
 label1: Category
 data1: Documentation
@@ -8,7 +8,7 @@ label2: Depth
 data2: Deep
 ---
 
-# Export-Vaporshell
+# Export-VaporShell
 
 ## SYNOPSIS
 Exports the template object to JSON file.
@@ -16,18 +16,18 @@ Exports the template object to JSON file.
 ## SYNTAX
 
 ```
-Export-Vaporshell [-VaporshellTemplate] <Object> [[-As] <String>] [[-Path] <String>] [-ValidateTemplate]
+Export-VaporShell [-VaporShellTemplate] <Object> [[-As] <String>] [[-Path] <String>] [-ValidateTemplate]
  [-Force]
 ```
 
 ## DESCRIPTION
 Exports the template object to JSON file.
 
-Requires the Vaporshell input object to be type 'Vaporshell.Template'
+Requires the VaporShell input object to be type 'VaporShell.Template'
 
 ## PARAMETERS
 
-### -VaporshellTemplate
+### -VaporShellTemplate
 The input template object
 
 ```yaml

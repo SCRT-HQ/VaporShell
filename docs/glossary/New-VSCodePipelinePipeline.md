@@ -254,7 +254,7 @@ Accept wildcard characters: False
 
 ## OUTPUTS
 
-### Vaporshell.Resource.CodePipeline.Pipeline
+### VaporShell.Resource.CodePipeline.Pipeline
 
 ## NOTES
 

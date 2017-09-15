@@ -46,7 +46,7 @@ Accept wildcard characters: False
 
 ## OUTPUTS
 
-### Vaporshell.Resource.EMR.Cluster.ScalingTrigger
+### VaporShell.Resource.EMR.Cluster.ScalingTrigger
 
 ## NOTES
 

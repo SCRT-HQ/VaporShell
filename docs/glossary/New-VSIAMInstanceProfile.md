@@ -197,7 +197,7 @@ Accept wildcard characters: False
 
 ## OUTPUTS
 
-### Vaporshell.Resource.IAM.InstanceProfile
+### VaporShell.Resource.IAM.InstanceProfile
 
 ## NOTES
 

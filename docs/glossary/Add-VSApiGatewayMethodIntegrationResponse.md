@@ -105,7 +105,7 @@ Accept wildcard characters: False
 
 ## OUTPUTS
 
-### Vaporshell.Resource.ApiGateway.Method.IntegrationResponse
+### VaporShell.Resource.ApiGateway.Method.IntegrationResponse
 
 ## NOTES
 

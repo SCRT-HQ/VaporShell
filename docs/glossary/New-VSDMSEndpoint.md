@@ -433,7 +433,7 @@ Accept wildcard characters: False
 
 ## OUTPUTS
 
-### Vaporshell.Resource.DMS.Endpoint
+### VaporShell.Resource.DMS.Endpoint
 
 ## NOTES
 

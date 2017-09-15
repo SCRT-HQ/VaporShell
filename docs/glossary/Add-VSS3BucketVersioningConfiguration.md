@@ -46,7 +46,7 @@ Accept wildcard characters: False
 
 ## OUTPUTS
 
-### Vaporshell.Resource.S3.Bucket.VersioningConfiguration
+### VaporShell.Resource.S3.Bucket.VersioningConfiguration
 
 ## NOTES
 

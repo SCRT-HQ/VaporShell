@@ -199,7 +199,7 @@ Accept wildcard characters: False
 
 ## OUTPUTS
 
-### Vaporshell.Resource.Redshift.ClusterSubnetGroup
+### VaporShell.Resource.Redshift.ClusterSubnetGroup
 
 ## NOTES
 

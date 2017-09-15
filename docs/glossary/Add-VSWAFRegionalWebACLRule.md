@@ -82,7 +82,7 @@ Accept wildcard characters: False
 
 ## OUTPUTS
 
-### Vaporshell.Resource.WAFRegional.WebACL.Rule
+### VaporShell.Resource.WAFRegional.WebACL.Rule
 
 ## NOTES
 

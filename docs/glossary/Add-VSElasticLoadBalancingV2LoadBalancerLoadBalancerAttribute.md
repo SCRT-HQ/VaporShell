@@ -64,7 +64,7 @@ Accept wildcard characters: False
 
 ## OUTPUTS
 
-### Vaporshell.Resource.ElasticLoadBalancingV2.LoadBalancer.LoadBalancerAttribute
+### VaporShell.Resource.ElasticLoadBalancingV2.LoadBalancer.LoadBalancerAttribute
 
 ## NOTES
 

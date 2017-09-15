@@ -232,7 +232,7 @@ Accept wildcard characters: False
 
 ## OUTPUTS
 
-### Vaporshell.Resource.Batch.JobDefinition
+### VaporShell.Resource.Batch.JobDefinition
 
 ## NOTES
 

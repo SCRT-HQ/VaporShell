@@ -46,7 +46,7 @@ Accept wildcard characters: False
 
 ## OUTPUTS
 
-### Vaporshell.Resource.KinesisAnalytics.Application.InputParallelism
+### VaporShell.Resource.KinesisAnalytics.Application.InputParallelism
 
 ## NOTES
 

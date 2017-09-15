@@ -139,7 +139,7 @@ Accept wildcard characters: False
 
 ## OUTPUTS
 
-### Vaporshell.Resource.ElasticLoadBalancing.LoadBalancer.Listeners
+### VaporShell.Resource.ElasticLoadBalancing.LoadBalancer.Listeners
 
 ## NOTES
 

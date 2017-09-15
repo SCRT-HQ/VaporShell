@@ -323,7 +323,7 @@ Accept wildcard characters: False
 
 ## OUTPUTS
 
-### Vaporshell.Resource.EC2.SecurityGroupIngress
+### VaporShell.Resource.EC2.SecurityGroupIngress
 
 ## NOTES
 

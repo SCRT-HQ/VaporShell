@@ -345,7 +345,7 @@ Accept wildcard characters: False
 
 ## OUTPUTS
 
-### Vaporshell.Resource.GameLift.Fleet
+### VaporShell.Resource.GameLift.Fleet
 
 ## NOTES
 

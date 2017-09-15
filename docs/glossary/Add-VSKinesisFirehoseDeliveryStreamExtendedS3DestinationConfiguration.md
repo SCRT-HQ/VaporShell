@@ -211,7 +211,7 @@ Accept wildcard characters: False
 
 ## OUTPUTS
 
-### Vaporshell.Resource.KinesisFirehose.DeliveryStream.ExtendedS3DestinationConfiguration
+### VaporShell.Resource.KinesisFirehose.DeliveryStream.ExtendedS3DestinationConfiguration
 
 ## NOTES
 

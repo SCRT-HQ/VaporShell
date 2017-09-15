@@ -46,7 +46,7 @@ Accept wildcard characters: False
 
 ## OUTPUTS
 
-### Vaporshell.Resource.ElasticLoadBalancingV2.TargetGroup.Matcher
+### VaporShell.Resource.ElasticLoadBalancingV2.TargetGroup.Matcher
 
 ## NOTES
 

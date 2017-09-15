@@ -68,7 +68,7 @@ Accept wildcard characters: False
 
 ## OUTPUTS
 
-### Vaporshell.Function.Sub
+### VaporShell.Function.Sub
 
 ## NOTES
 You can use the following functions in the Fn::Sub function:

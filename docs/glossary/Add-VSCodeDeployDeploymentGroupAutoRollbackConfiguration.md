@@ -66,7 +66,7 @@ Accept wildcard characters: False
 
 ## OUTPUTS
 
-### Vaporshell.Resource.CodeDeploy.DeploymentGroup.AutoRollbackConfiguration
+### VaporShell.Resource.CodeDeploy.DeploymentGroup.AutoRollbackConfiguration
 
 ## NOTES
 

@@ -64,7 +64,7 @@ Accept wildcard characters: False
 
 ## OUTPUTS
 
-### Vaporshell.Resource.CloudFront.Distribution.OriginCustomHeader
+### VaporShell.Resource.CloudFront.Distribution.OriginCustomHeader
 
 ## NOTES
 

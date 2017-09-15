@@ -195,7 +195,7 @@ Accept wildcard characters: False
 
 ## OUTPUTS
 
-### Vaporshell.Resource.IAM.AccessKey
+### VaporShell.Resource.IAM.AccessKey
 
 ## NOTES
 

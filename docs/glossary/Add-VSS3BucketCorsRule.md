@@ -145,7 +145,7 @@ Accept wildcard characters: False
 
 ## OUTPUTS
 
-### Vaporshell.Resource.S3.Bucket.CorsRule
+### VaporShell.Resource.S3.Bucket.CorsRule
 
 ## NOTES
 

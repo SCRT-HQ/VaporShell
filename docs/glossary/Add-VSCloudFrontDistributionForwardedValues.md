@@ -105,7 +105,7 @@ Accept wildcard characters: False
 
 ## OUTPUTS
 
-### Vaporshell.Resource.CloudFront.Distribution.ForwardedValues
+### VaporShell.Resource.CloudFront.Distribution.ForwardedValues
 
 ## NOTES
 

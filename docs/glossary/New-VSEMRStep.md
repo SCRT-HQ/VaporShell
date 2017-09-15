@@ -213,7 +213,7 @@ Accept wildcard characters: False
 
 ## OUTPUTS
 
-### Vaporshell.Resource.EMR.Step
+### VaporShell.Resource.EMR.Step
 
 ## NOTES
 

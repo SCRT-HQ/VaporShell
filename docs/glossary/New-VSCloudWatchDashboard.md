@@ -177,7 +177,7 @@ Accept wildcard characters: False
 
 ## OUTPUTS
 
-### Vaporshell.Resource.CloudWatch.Dashboard
+### VaporShell.Resource.CloudWatch.Dashboard
 
 ## NOTES
 

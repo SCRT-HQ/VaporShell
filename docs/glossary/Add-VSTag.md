@@ -64,7 +64,7 @@ Accept wildcard characters: False
 
 ## OUTPUTS
 
-### Vaporshell.Resource.Tag
+### VaporShell.Resource.Tag
 
 ## NOTES
 

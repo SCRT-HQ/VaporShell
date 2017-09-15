@@ -101,7 +101,7 @@ Accept wildcard characters: False
 
 ## OUTPUTS
 
-### Vaporshell.Resource.RDS.DBSecurityGroup.Ingress
+### VaporShell.Resource.RDS.DBSecurityGroup.Ingress
 
 ## NOTES
 

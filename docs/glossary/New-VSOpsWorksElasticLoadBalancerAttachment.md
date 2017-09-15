@@ -177,7 +177,7 @@ Accept wildcard characters: False
 
 ## OUTPUTS
 
-### Vaporshell.Resource.OpsWorks.ElasticLoadBalancerAttachment
+### VaporShell.Resource.OpsWorks.ElasticLoadBalancerAttachment
 
 ## NOTES
 

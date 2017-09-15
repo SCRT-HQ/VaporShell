@@ -66,7 +66,7 @@ Accept wildcard characters: False
 
 ## OUTPUTS
 
-### Vaporshell.Resource.SSM.Association.Target
+### VaporShell.Resource.SSM.Association.Target
 
 ## NOTES
 

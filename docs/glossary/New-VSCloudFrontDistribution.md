@@ -158,7 +158,7 @@ Accept wildcard characters: False
 
 ## OUTPUTS
 
-### Vaporshell.Resource.CloudFront.Distribution
+### VaporShell.Resource.CloudFront.Distribution
 
 ## NOTES
 

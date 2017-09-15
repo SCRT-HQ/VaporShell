@@ -176,7 +176,7 @@ Accept wildcard characters: False
 
 ## OUTPUTS
 
-### Vaporshell.Resource.S3.BucketPolicy
+### VaporShell.Resource.S3.BucketPolicy
 
 ## NOTES
 

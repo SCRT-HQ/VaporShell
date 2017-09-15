@@ -82,7 +82,7 @@ Accept wildcard characters: False
 
 ## OUTPUTS
 
-### Vaporshell.Resource.OpsWorks.Stack.RdsDbInstance
+### VaporShell.Resource.OpsWorks.Stack.RdsDbInstance
 
 ## NOTES
 

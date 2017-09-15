@@ -270,7 +270,7 @@ Accept wildcard characters: False
 
 ## OUTPUTS
 
-### Vaporshell.Resource.EC2.Subnet
+### VaporShell.Resource.EC2.Subnet
 
 ## NOTES
 

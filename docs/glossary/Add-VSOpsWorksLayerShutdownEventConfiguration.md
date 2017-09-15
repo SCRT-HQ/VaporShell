@@ -65,7 +65,7 @@ Accept wildcard characters: False
 
 ## OUTPUTS
 
-### Vaporshell.Resource.OpsWorks.Layer.ShutdownEventConfiguration
+### VaporShell.Resource.OpsWorks.Layer.ShutdownEventConfiguration
 
 ## NOTES
 

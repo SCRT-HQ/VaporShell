@@ -286,7 +286,7 @@ Accept wildcard characters: False
 
 ## OUTPUTS
 
-### Vaporshell.Resource.DirectoryService.SimpleAD
+### VaporShell.Resource.DirectoryService.SimpleAD
 
 ## NOTES
 

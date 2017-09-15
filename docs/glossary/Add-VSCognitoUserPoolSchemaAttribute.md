@@ -156,7 +156,7 @@ Accept wildcard characters: False
 
 ## OUTPUTS
 
-### Vaporshell.Resource.Cognito.UserPool.SchemaAttribute
+### VaporShell.Resource.Cognito.UserPool.SchemaAttribute
 
 ## NOTES
 

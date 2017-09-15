@@ -77,7 +77,7 @@ Accept wildcard characters: False
 
 ## OUTPUTS
 
-### Vaporshell.Function.FindInMap
+### VaporShell.Function.FindInMap
 
 ## NOTES
 You can use the following functions in a Fn::FindInMap function:

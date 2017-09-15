@@ -101,7 +101,7 @@ Accept wildcard characters: False
 
 ## OUTPUTS
 
-### Vaporshell.Resource.AutoScaling.LaunchConfiguration.BlockDeviceMapping
+### VaporShell.Resource.AutoScaling.LaunchConfiguration.BlockDeviceMapping
 
 ## NOTES
 

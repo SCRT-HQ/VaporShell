@@ -176,7 +176,7 @@ Accept wildcard characters: False
 
 ## OUTPUTS
 
-### Vaporshell.Resource.EC2.NatGateway
+### VaporShell.Resource.EC2.NatGateway
 
 ## NOTES
 

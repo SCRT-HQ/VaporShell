@@ -179,7 +179,7 @@ Accept wildcard characters: False
 
 ## OUTPUTS
 
-### Vaporshell.Resource.EC2.VPNGatewayRoutePropagation
+### VaporShell.Resource.EC2.VPNGatewayRoutePropagation
 
 ## NOTES
 

@@ -1,7 +1,7 @@
 ---
 layout: page
 title: Glossary
-description: Help content for each function in Vaporshell
+description: Help content for each function in VaporShell
 label1: Category
 data1: Documentation
 label2: Depth
@@ -11,7 +11,7 @@ data2: Deep
 ## Static Functions
 _The following functions are individually built to fill a specific role in template creation_
 
-### Vaporshell Core
+### VaporShell Core
 <ul>
     {% for item in site.data.glossarydata %}
       {% if item.tag == "core-functions" or item.tag == "primary-functions" %}
@@ -89,6 +89,30 @@ _The following functions are built via automation against Amazon's Resource Type
 <ul>
     {% for item in site.data.glossarydata %}
       {% if item.tag == "resource-property-types" %}
+        <li><a href="{{ "/docs/glossary/" | prepend: site.baseurl | append: item.title }}">{{ item.title }}</a></li>
+      {% endif %}
+    {% endfor %}
+</ul>
+
+***
+
+## SDK Integrations
+_The following functions wrap the AWS .NET SDK to provide full CloudFormation management capabilities directly from VaporShell_
+
+### CLI Tools
+<ul>
+    {% for item in site.data.glossarydata %}
+      {% if item.tag == "supersets" %}
+        <li><a href="{{ "/docs/glossary/" | prepend: site.baseurl | append: item.title }}">{{ item.title }}</a></li>
+      {% endif %}
+    {% endfor %}
+</ul>
+
+
+### SDK Wrappers
+<ul>
+    {% for item in site.data.glossarydata %}
+      {% if item.tag == "sdk-wrappers" %}
         <li><a href="{{ "/docs/glossary/" | prepend: site.baseurl | append: item.title }}">{{ item.title }}</a></li>
       {% endif %}
     {% endfor %}

@@ -179,7 +179,7 @@ Accept wildcard characters: False
 
 ## OUTPUTS
 
-### Vaporshell.Resource.WAF.ByteMatchSet
+### VaporShell.Resource.WAF.ByteMatchSet
 
 ## NOTES
 

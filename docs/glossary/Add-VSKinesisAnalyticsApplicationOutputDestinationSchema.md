@@ -46,7 +46,7 @@ Accept wildcard characters: False
 
 ## OUTPUTS
 
-### Vaporshell.Resource.KinesisAnalytics.ApplicationOutput.DestinationSchema
+### VaporShell.Resource.KinesisAnalytics.ApplicationOutput.DestinationSchema
 
 ## NOTES
 

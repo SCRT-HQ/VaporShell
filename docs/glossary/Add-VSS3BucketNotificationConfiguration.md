@@ -89,7 +89,7 @@ Accept wildcard characters: False
 
 ## OUTPUTS
 
-### Vaporshell.Resource.S3.Bucket.NotificationConfiguration
+### VaporShell.Resource.S3.Bucket.NotificationConfiguration
 
 ## NOTES
 

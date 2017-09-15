@@ -101,7 +101,7 @@ Accept wildcard characters: False
 
 ## OUTPUTS
 
-### Vaporshell.Resource.KinesisAnalytics.ApplicationOutput.Output
+### VaporShell.Resource.KinesisAnalytics.ApplicationOutput.Output
 
 ## NOTES
 

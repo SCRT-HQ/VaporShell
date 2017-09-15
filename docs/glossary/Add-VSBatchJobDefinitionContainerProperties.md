@@ -252,7 +252,7 @@ Accept wildcard characters: False
 
 ## OUTPUTS
 
-### Vaporshell.Resource.Batch.JobDefinition.ContainerProperties
+### VaporShell.Resource.Batch.JobDefinition.ContainerProperties
 
 ## NOTES
 

@@ -477,7 +477,7 @@ Accept wildcard characters: False
 
 ## OUTPUTS
 
-### Vaporshell.Resource.CloudWatch.Alarm
+### VaporShell.Resource.CloudWatch.Alarm
 
 ## NOTES
 

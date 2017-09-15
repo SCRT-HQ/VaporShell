@@ -325,7 +325,7 @@ Accept wildcard characters: False
 
 ## OUTPUTS
 
-### Vaporshell.Resource.AutoScaling.ScalingPolicy
+### VaporShell.Resource.AutoScaling.ScalingPolicy
 
 ## NOTES
 

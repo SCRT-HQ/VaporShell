@@ -101,7 +101,7 @@ Accept wildcard characters: False
 
 ## OUTPUTS
 
-### Vaporshell.Resource.ECS.Service.LoadBalancer
+### VaporShell.Resource.ECS.Service.LoadBalancer
 
 ## NOTES
 

@@ -64,7 +64,7 @@ Accept wildcard characters: False
 
 ## OUTPUTS
 
-### Vaporshell.Resource.EMR.Step.KeyValue
+### VaporShell.Resource.EMR.Step.KeyValue
 
 ## NOTES
 

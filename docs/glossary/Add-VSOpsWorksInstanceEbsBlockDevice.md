@@ -119,7 +119,7 @@ Accept wildcard characters: False
 
 ## OUTPUTS
 
-### Vaporshell.Resource.OpsWorks.Instance.EbsBlockDevice
+### VaporShell.Resource.OpsWorks.Instance.EbsBlockDevice
 
 ## NOTES
 

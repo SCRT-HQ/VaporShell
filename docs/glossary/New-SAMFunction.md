@@ -273,7 +273,7 @@ Accept wildcard characters: False
 
 ## OUTPUTS
 
-### Vaporshell.Serverless.Function
+### VaporShell.Serverless.Function
 
 ## NOTES
 Return values  

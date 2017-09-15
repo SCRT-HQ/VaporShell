@@ -660,7 +660,7 @@ Accept wildcard characters: False
 
 ## OUTPUTS
 
-### Vaporshell.Resource.Redshift.Cluster
+### VaporShell.Resource.Redshift.Cluster
 
 ## NOTES
 

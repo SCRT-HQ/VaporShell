@@ -56,7 +56,7 @@ Accept wildcard characters: False
 
 ## OUTPUTS
 
-### Vaporshell.Function.Ref
+### VaporShell.Function.Ref
 
 ## NOTES
 You cannot use any functions in the Ref function.

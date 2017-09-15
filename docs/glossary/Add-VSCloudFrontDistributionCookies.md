@@ -66,7 +66,7 @@ Accept wildcard characters: False
 
 ## OUTPUTS
 
-### Vaporshell.Resource.CloudFront.Distribution.Cookies
+### VaporShell.Resource.CloudFront.Distribution.Cookies
 
 ## NOTES
 

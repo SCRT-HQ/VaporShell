@@ -195,7 +195,7 @@ Accept wildcard characters: False
 
 ## OUTPUTS
 
-### Vaporshell.Resource.ApiGateway.UsagePlanKey
+### VaporShell.Resource.ApiGateway.UsagePlanKey
 
 ## NOTES
 

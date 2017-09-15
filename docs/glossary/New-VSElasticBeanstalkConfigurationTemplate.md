@@ -252,7 +252,7 @@ Accept wildcard characters: False
 
 ## OUTPUTS
 
-### Vaporshell.Resource.ElasticBeanstalk.ConfigurationTemplate
+### VaporShell.Resource.ElasticBeanstalk.ConfigurationTemplate
 
 ## NOTES
 

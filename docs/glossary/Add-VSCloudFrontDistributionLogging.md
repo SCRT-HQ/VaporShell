@@ -82,7 +82,7 @@ Accept wildcard characters: False
 
 ## OUTPUTS
 
-### Vaporshell.Resource.CloudFront.Distribution.Logging
+### VaporShell.Resource.CloudFront.Distribution.Logging
 
 ## NOTES
 

@@ -46,7 +46,7 @@ Accept wildcard characters: False
 
 ## OUTPUTS
 
-### Vaporshell.Resource.Events.Rule.KinesisParameters
+### VaporShell.Resource.Events.Rule.KinesisParameters
 
 ## NOTES
 

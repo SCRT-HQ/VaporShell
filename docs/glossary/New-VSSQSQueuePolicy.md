@@ -178,7 +178,7 @@ Accept wildcard characters: False
 
 ## OUTPUTS
 
-### Vaporshell.Resource.SQS.QueuePolicy
+### VaporShell.Resource.SQS.QueuePolicy
 
 ## NOTES
 

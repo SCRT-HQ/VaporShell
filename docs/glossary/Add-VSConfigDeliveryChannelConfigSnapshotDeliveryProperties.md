@@ -46,7 +46,7 @@ Accept wildcard characters: False
 
 ## OUTPUTS
 
-### Vaporshell.Resource.Config.DeliveryChannel.ConfigSnapshotDeliveryProperties
+### VaporShell.Resource.Config.DeliveryChannel.ConfigSnapshotDeliveryProperties
 
 ## NOTES
 

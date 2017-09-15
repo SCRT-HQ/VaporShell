@@ -64,7 +64,7 @@ Accept wildcard characters: False
 
 ## OUTPUTS
 
-### Vaporshell.Resource.SNS.Topic.Subscription
+### VaporShell.Resource.SNS.Topic.Subscription
 
 ## NOTES
 

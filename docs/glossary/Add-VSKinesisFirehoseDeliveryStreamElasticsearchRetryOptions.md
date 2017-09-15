@@ -46,7 +46,7 @@ Accept wildcard characters: False
 
 ## OUTPUTS
 
-### Vaporshell.Resource.KinesisFirehose.DeliveryStream.ElasticsearchRetryOptions
+### VaporShell.Resource.KinesisFirehose.DeliveryStream.ElasticsearchRetryOptions
 
 ## NOTES
 

@@ -177,7 +177,7 @@ Accept wildcard characters: False
 
 ## OUTPUTS
 
-### Vaporshell.Resource.ElasticBeanstalk.Application
+### VaporShell.Resource.ElasticBeanstalk.Application
 
 ## NOTES
 

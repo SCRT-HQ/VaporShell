@@ -66,7 +66,7 @@ Accept wildcard characters: False
 
 ## OUTPUTS
 
-### Vaporshell.Resource.DirectoryService.MicrosoftAD.VpcSettings
+### VaporShell.Resource.DirectoryService.MicrosoftAD.VpcSettings
 
 ## NOTES
 

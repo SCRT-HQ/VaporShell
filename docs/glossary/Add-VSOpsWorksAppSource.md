@@ -137,7 +137,7 @@ Accept wildcard characters: False
 
 ## OUTPUTS
 
-### Vaporshell.Resource.OpsWorks.App.Source
+### VaporShell.Resource.OpsWorks.App.Source
 
 ## NOTES
 

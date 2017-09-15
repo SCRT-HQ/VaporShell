@@ -11,7 +11,7 @@ data2: Deep
 # Add-Include
 
 ## SYNOPSIS
-Adds the transform function "AWS::Include" to a Vaporshell template
+Adds the transform function "AWS::Include" to a VaporShell template
 
 ## SYNTAX
 
@@ -51,7 +51,7 @@ Accept wildcard characters: False
 
 ## OUTPUTS
 
-### Vaporshell.Transform.Include
+### VaporShell.Transform.Include
 
 ## NOTES
 When using AWS::Include, keep the following in mind:

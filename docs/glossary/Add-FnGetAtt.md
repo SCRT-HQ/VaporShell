@@ -59,7 +59,7 @@ Accept wildcard characters: False
 
 ## OUTPUTS
 
-### Vaporshell.Function.GetAtt
+### VaporShell.Function.GetAtt
 
 ## NOTES
 For the Fn::GetAtt logical resource name, you cannot use functions.

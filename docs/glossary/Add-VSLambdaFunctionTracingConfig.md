@@ -46,7 +46,7 @@ Accept wildcard characters: False
 
 ## OUTPUTS
 
-### Vaporshell.Resource.Lambda.Function.TracingConfig
+### VaporShell.Resource.Lambda.Function.TracingConfig
 
 ## NOTES
 

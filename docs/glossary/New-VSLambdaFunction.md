@@ -397,7 +397,7 @@ Accept wildcard characters: False
 
 ## OUTPUTS
 
-### Vaporshell.Resource.Lambda.Function
+### VaporShell.Resource.Lambda.Function
 
 ## NOTES
 

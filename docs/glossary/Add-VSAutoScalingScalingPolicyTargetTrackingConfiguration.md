@@ -101,7 +101,7 @@ Accept wildcard characters: False
 
 ## OUTPUTS
 
-### Vaporshell.Resource.AutoScaling.ScalingPolicy.TargetTrackingConfiguration
+### VaporShell.Resource.AutoScaling.ScalingPolicy.TargetTrackingConfiguration
 
 ## NOTES
 

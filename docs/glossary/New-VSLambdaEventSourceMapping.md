@@ -231,7 +231,7 @@ Accept wildcard characters: False
 
 ## OUTPUTS
 
-### Vaporshell.Resource.Lambda.EventSourceMapping
+### VaporShell.Resource.Lambda.EventSourceMapping
 
 ## NOTES
 

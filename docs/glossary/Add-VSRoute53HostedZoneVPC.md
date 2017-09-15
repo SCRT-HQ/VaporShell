@@ -64,7 +64,7 @@ Accept wildcard characters: False
 
 ## OUTPUTS
 
-### Vaporshell.Resource.Route53.HostedZone.VPC
+### VaporShell.Resource.Route53.HostedZone.VPC
 
 ## NOTES
 

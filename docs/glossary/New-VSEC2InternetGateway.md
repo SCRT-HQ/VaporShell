@@ -160,7 +160,7 @@ Accept wildcard characters: False
 
 ## OUTPUTS
 
-### Vaporshell.Resource.EC2.InternetGateway
+### VaporShell.Resource.EC2.InternetGateway
 
 ## NOTES
 

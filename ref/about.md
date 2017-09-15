@@ -5,17 +5,17 @@ title: About
 
 |       | Master | Dev |
 |:-----:|:------:|:---:|
-| AppVeyor (Windows) | [![Build status](https://ci.appveyor.com/api/projects/status/8a4jsfv42tbmlym8/branch/master?svg=true)](https://ci.appveyor.com/project/nferrell/vaporshell/branch/master) | [![Build status](https://ci.appveyor.com/api/projects/status/8a4jsfv42tbmlym8/branch/dev?svg=true)](https://ci.appveyor.com/project/nferrell/vaporshell/branch/dev) |
+| AppVeyor (Windows) | [![Build status](https://ci.appveyor.com/api/projects/status/8a4jsfv42tbmlym8/branch/master?svg=true)](https://ci.appveyor.com/project/nferrell/VaporShell/branch/master) | [![Build status](https://ci.appveyor.com/api/projects/status/8a4jsfv42tbmlym8/branch/dev?svg=true)](https://ci.appveyor.com/project/nferrell/VaporShell/branch/dev) |
 | Travis CI* (Linux / macOS) | _Coming soon!_ |  _Coming soon!_ |
-| Coveralls | [![Coverage Status](https://coveralls.io/repos/github/nferrell/Vaporshell/badge.svg?branch=dev)](https://coveralls.io/github/nferrell/Vaporshell?branch=master) | [![Coverage Status](https://coveralls.io/repos/github/nferrell/Vaporshell/badge.svg?branch=dev)](https://coveralls.io/github/nferrell/Vaporshell?branch=dev) |
+| Coveralls | [![Coverage Status](https://coveralls.io/repos/github/nferrell/VaporShell/badge.svg?branch=dev)](https://coveralls.io/github/nferrell/VaporShell?branch=master) | [![Coverage Status](https://coveralls.io/repos/github/nferrell/VaporShell/badge.svg?branch=dev)](https://coveralls.io/github/nferrell/VaporShell?branch=dev) |
 
 ##### _*Travis CI tests are currently being built out, but the same tests being run within AppVeyor are being manually ran in terminal on an Ubuntu 16.04 LTS VM and a MacBook Pro running macOS Sierra without issue._  
 
-# *Vaporshell* 
+# *VaporShell* 
 
-Vaporshell is a module for Powershell that allows easier and less error prone build outs of AWS CloudFormation JSON templates using familiar syntax and structure to define AWS resources, while simultaneously gaining the capabilities of Powershell and removing the need to work with JSON directly.
+VaporShell is a module for Powershell that allows easier and less error prone build outs of AWS CloudFormation JSON templates using familiar syntax and structure to define AWS resources, while simultaneously gaining the capabilities of Powershell and removing the need to work with JSON directly.
 
-Vaporshell allows you to either initialize a new template or import an existing template, add appropriate properties and export it out to JSON.
+VaporShell allows you to either initialize a new template or import an existing template, add appropriate properties and export it out to JSON.
 
 For those that are familiar with [Troposphere for Python by CloudTools](https://github.com/cloudtools/troposphere), this aims to be an equivalent option for Powershell users.
 
@@ -29,11 +29,11 @@ For those that are familiar with [Troposphere for Python by CloudTools](https://
 
 ## How to Install
 
-[![PS Gallery](https://img.shields.io/badge/install-PS%20Gallery-blue.svg)](https://www.powershellgallery.com/packages/Vaporshell)
+[![PS Gallery](https://img.shields.io/badge/install-PS%20Gallery-blue.svg)](https://www.powershellgallery.com/packages/VaporShell)
 
-You can install the module directly from [Powershell Gallery](https://www.powershellgallery.com/packages/vaporshell) by running the following command in and administrator Powershell console:
+You can install the module directly from [Powershell Gallery](https://www.powershellgallery.com/packages/VaporShell) by running the following command in and administrator Powershell console:
 
-`Install-Module -Name Vaporshell`
+`Install-Module -Name VaporShell`
 
 NOTE: This requires the PowerShellGet module. This comes standard for Windows 10, Linux and MacOS users that have Powershell, but may require installation for other OS's. [Please check out Getting Started with the Gallery](https://www.powershellgallery.com/) for more info. 
 
@@ -60,7 +60,7 @@ _Full documentation is being prepared right now._
 
 ```powershell
 $templateInit = $null
-$templateInit = Initialize-Vaporshell -Description "Testing"
+$templateInit = Initialize-VaporShell -Description "Testing"
 $templateInit.AddMetadata((New-VaporMetadata -LogicalId "Instances" -Metadata @{"Description" = "Information about the instances"}))
 $templateInit.AddCondition(
     (New-VaporCondition -LogicalId "CreateProdResources" -Condition (Add-ConEquals -FirstValue (Add-FnRef -Ref "EnvType") -SecondValue "prod")),
@@ -91,10 +91,10 @@ $templateInit.AddOutput((New-VaporOutput -LogicalId "BackupLoadBalancerDNSName" 
 
 # Export the initial Template object to JSON
 $testPath = "$($PSScriptRoot)\test.json"
-Export-Vaporshell -VaporshellTemplate $templateInit -Path $testPath -Force
+Export-VaporShell -VaporShellTemplate $templateInit -Path $testPath -Force
 
 # Import a template file and add new properties to the template
-$template = Import-Vaporshell -Path $testPath
+$template = Import-VaporShell -Path $testPath
 $template.AddMetadata((New-VaporMetadata -LogicalId "Databases" -Metadata @{"Description" = "Information about the Databases"}))
 $template.AddCondition((New-VaporCondition -LogicalId "CreateTestResources" -Condition (Add-ConEquals -FirstValue (Add-FnRef -Ref "EnvType") -SecondValue "test")))
 $template.AddMapping(

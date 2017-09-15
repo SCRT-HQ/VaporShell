@@ -46,7 +46,7 @@ Accept wildcard characters: False
 
 ## OUTPUTS
 
-### Vaporshell.Resource.CodeDeploy.DeploymentGroup.ELBInfo
+### VaporShell.Resource.CodeDeploy.DeploymentGroup.ELBInfo
 
 ## NOTES
 

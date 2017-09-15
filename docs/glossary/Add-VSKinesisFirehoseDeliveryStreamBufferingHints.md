@@ -64,7 +64,7 @@ Accept wildcard characters: False
 
 ## OUTPUTS
 
-### Vaporshell.Resource.KinesisFirehose.DeliveryStream.BufferingHints
+### VaporShell.Resource.KinesisFirehose.DeliveryStream.BufferingHints
 
 ## NOTES
 

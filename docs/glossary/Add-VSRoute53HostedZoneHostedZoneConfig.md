@@ -46,7 +46,7 @@ Accept wildcard characters: False
 
 ## OUTPUTS
 
-### Vaporshell.Resource.Route53.HostedZone.HostedZoneConfig
+### VaporShell.Resource.Route53.HostedZone.HostedZoneConfig
 
 ## NOTES
 

@@ -250,7 +250,7 @@ Accept wildcard characters: False
 
 ## OUTPUTS
 
-### Vaporshell.Resource.ApplicationAutoScaling.ScalableTarget
+### VaporShell.Resource.ApplicationAutoScaling.ScalableTarget
 
 ## NOTES
 

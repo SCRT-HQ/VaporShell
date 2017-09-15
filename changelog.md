@@ -1,7 +1,7 @@
 ---
 layout: page 
 title: Change Log
-description: Changes within each release of Vaporshell and plans/ideas for the future 
+description: Changes within each release of VaporShell and plans/ideas for the future 
 ---
 <!-- TOC -->
 
@@ -32,7 +32,7 @@ description: Changes within each release of Vaporshell and plans/ideas for the f
 
 ### In-Progress
 
-- [Issue #3](https://github.com/scrthq/Vaporshell/issues/3): Enable external config files for template reuse across environments
+- [Issue #3](https://github.com/scrthq/VaporShell/issues/3): Enable external config files for template reuse across environments
 
 ### Long-Term
 
@@ -53,12 +53,12 @@ description: Changes within each release of Vaporshell and plans/ideas for the f
 ### 1.2.0
 
 - Restored Coveralls coverage in Pester tests
-- Adjusted Export-Vaporshell -ValidateTemplate to use file:// for the templateBody vs fileb:// (errors during Travis tests on Linux)
+- Adjusted Export-VaporShell -ValidateTemplate to use file:// for the templateBody vs fileb:// (errors during Travis tests on Linux)
 
 
 ### 1.1.5
 
-- Fixed default Powershell JSON output formatting when using ConvertTo-Json; default formatting caused a large template to exceed CloudFormation's limits due to the extra spacing. Added in the private function `Format-Json` and set the default output to be cleaned up in `Export-Vaporshell`
+- Fixed default Powershell JSON output formatting when using ConvertTo-Json; default formatting caused a large template to exceed CloudFormation's limits due to the extra spacing. Added in the private function `Format-Json` and set the default output to be cleaned up in `Export-VaporShell`
 
 
 ### 1.1.0

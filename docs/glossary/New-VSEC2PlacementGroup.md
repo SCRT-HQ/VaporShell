@@ -158,7 +158,7 @@ Accept wildcard characters: False
 
 ## OUTPUTS
 
-### Vaporshell.Resource.EC2.PlacementGroup
+### VaporShell.Resource.EC2.PlacementGroup
 
 ## NOTES
 

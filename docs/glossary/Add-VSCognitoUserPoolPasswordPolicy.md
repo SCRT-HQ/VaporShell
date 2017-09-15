@@ -119,7 +119,7 @@ Accept wildcard characters: False
 
 ## OUTPUTS
 
-### Vaporshell.Resource.Cognito.UserPool.PasswordPolicy
+### VaporShell.Resource.Cognito.UserPool.PasswordPolicy
 
 ## NOTES
 

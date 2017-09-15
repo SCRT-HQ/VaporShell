@@ -450,7 +450,7 @@ Accept wildcard characters: False
 
 ## OUTPUTS
 
-### Vaporshell.Resource.ElasticLoadBalancing.LoadBalancer
+### VaporShell.Resource.ElasticLoadBalancing.LoadBalancer
 
 ## NOTES
 

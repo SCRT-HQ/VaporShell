@@ -195,7 +195,7 @@ Accept wildcard characters: False
 
 ## OUTPUTS
 
-### Vaporshell.Resource.ElastiCache.SecurityGroupIngress
+### VaporShell.Resource.ElastiCache.SecurityGroupIngress
 
 ## NOTES
 

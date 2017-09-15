@@ -137,7 +137,7 @@ Accept wildcard characters: False
 
 ## OUTPUTS
 
-### Vaporshell.Resource.CodeBuild.Project.Artifacts
+### VaporShell.Resource.CodeBuild.Project.Artifacts
 
 ## NOTES
 

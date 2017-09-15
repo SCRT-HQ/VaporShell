@@ -195,7 +195,7 @@ Accept wildcard characters: False
 
 ## OUTPUTS
 
-### Vaporshell.Resource.ApiGateway.Resource
+### VaporShell.Resource.ApiGateway.Resource
 
 ## NOTES
 

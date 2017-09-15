@@ -64,7 +64,7 @@ Accept wildcard characters: False
 
 ## OUTPUTS
 
-### Vaporshell.Resource.EMR.Cluster.BootstrapActionConfig
+### VaporShell.Resource.EMR.Cluster.BootstrapActionConfig
 
 ## NOTES
 

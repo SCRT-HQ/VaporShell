@@ -101,7 +101,7 @@ Accept wildcard characters: False
 
 ## OUTPUTS
 
-### Vaporshell.Resource.ApiGateway.RestApi.S3Location
+### VaporShell.Resource.ApiGateway.RestApi.S3Location
 
 ## NOTES
 

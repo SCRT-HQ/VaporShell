@@ -233,7 +233,7 @@ Accept wildcard characters: False
 
 ## OUTPUTS
 
-### Vaporshell.Resource.EC2.VPCPeeringConnection
+### VaporShell.Resource.EC2.VPCPeeringConnection
 
 ## NOTES
 

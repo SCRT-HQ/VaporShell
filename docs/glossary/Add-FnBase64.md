@@ -44,7 +44,7 @@ Accept wildcard characters: False
 
 ## OUTPUTS
 
-### Vaporshell.Function.Base64
+### VaporShell.Function.Base64
 
 ## NOTES
 You can use any function that returns a string inside the Fn::Base64 function.

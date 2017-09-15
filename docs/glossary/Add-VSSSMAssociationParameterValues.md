@@ -48,7 +48,7 @@ Accept wildcard characters: False
 
 ## OUTPUTS
 
-### Vaporshell.Resource.SSM.Association.ParameterValues
+### VaporShell.Resource.SSM.Association.ParameterValues
 
 ## NOTES
 

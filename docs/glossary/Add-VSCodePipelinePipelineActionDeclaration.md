@@ -160,7 +160,7 @@ Accept wildcard characters: False
 
 ## OUTPUTS
 
-### Vaporshell.Resource.CodePipeline.Pipeline.ActionDeclaration
+### VaporShell.Resource.CodePipeline.Pipeline.ActionDeclaration
 
 ## NOTES
 

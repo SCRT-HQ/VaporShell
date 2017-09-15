@@ -215,7 +215,7 @@ Accept wildcard characters: False
 
 ## OUTPUTS
 
-### Vaporshell.Resource.EFS.MountTarget
+### VaporShell.Resource.EFS.MountTarget
 
 ## NOTES
 

@@ -177,7 +177,7 @@ Accept wildcard characters: False
 
 ## OUTPUTS
 
-### Vaporshell.Resource.Logs.LogGroup
+### VaporShell.Resource.Logs.LogGroup
 
 ## NOTES
 

@@ -82,7 +82,7 @@ Accept wildcard characters: False
 
 ## OUTPUTS
 
-### Vaporshell.Resource.WAF.Rule.Predicate
+### VaporShell.Resource.WAF.Rule.Predicate
 
 ## NOTES
 

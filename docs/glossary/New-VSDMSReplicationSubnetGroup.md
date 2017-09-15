@@ -215,7 +215,7 @@ Accept wildcard characters: False
 
 ## OUTPUTS
 
-### Vaporshell.Resource.DMS.ReplicationSubnetGroup
+### VaporShell.Resource.DMS.ReplicationSubnetGroup
 
 ## NOTES
 

@@ -177,7 +177,7 @@ Accept wildcard characters: False
 
 ## OUTPUTS
 
-### Vaporshell.Resource.ECR.Repository
+### VaporShell.Resource.ECR.Repository
 
 ## NOTES
 

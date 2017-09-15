@@ -83,7 +83,7 @@ Accept wildcard characters: False
 
 ## OUTPUTS
 
-### Vaporshell.Resource.AutoScaling.ScalingPolicy.StepAdjustment
+### VaporShell.Resource.AutoScaling.ScalingPolicy.StepAdjustment
 
 ## NOTES
 

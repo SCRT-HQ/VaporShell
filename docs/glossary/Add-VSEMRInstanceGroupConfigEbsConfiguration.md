@@ -66,7 +66,7 @@ Accept wildcard characters: False
 
 ## OUTPUTS
 
-### Vaporshell.Resource.EMR.InstanceGroupConfig.EbsConfiguration
+### VaporShell.Resource.EMR.InstanceGroupConfig.EbsConfiguration
 
 ## NOTES
 

@@ -177,7 +177,7 @@ Accept wildcard characters: False
 
 ## OUTPUTS
 
-### Vaporshell.Resource.WAFRegional.WebACLAssociation
+### VaporShell.Resource.WAFRegional.WebACLAssociation
 
 ## NOTES
 

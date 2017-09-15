@@ -46,7 +46,7 @@ Accept wildcard characters: False
 
 ## OUTPUTS
 
-### Vaporshell.Resource.EC2.SpotFleet.InstanceIpv6Address
+### VaporShell.Resource.EC2.SpotFleet.InstanceIpv6Address
 
 ## NOTES
 

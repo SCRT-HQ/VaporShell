@@ -531,7 +531,7 @@ Accept wildcard characters: False
 
 ## OUTPUTS
 
-### Vaporshell.Resource.OpsWorks.Instance
+### VaporShell.Resource.OpsWorks.Instance
 
 ## NOTES
 

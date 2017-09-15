@@ -64,7 +64,7 @@ Accept wildcard characters: False
 
 ## OUTPUTS
 
-### Vaporshell.Resource.RDS.OptionGroup.OptionSetting
+### VaporShell.Resource.RDS.OptionGroup.OptionSetting
 
 ## NOTES
 

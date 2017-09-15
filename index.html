@@ -1,119 +1,131 @@
----
-layout: landing
----
+--- layout: landing ---
 <!-- Banner -->
-	<section id="banner">
-		<div class="inner">
-			<h2>{{ site.title }}</h2>
-			<p>{{ site.description | markdownify }}</p>
-			<ul class="actions vertical">
-				<li><a href="{{ "/docs" | prepend: site.url }}" class="button special">Docs</a></li>
-				<li><a href="https://github.com/scrthq/vaporshell" class="button">GitHub</a></li>
-				<li><a href="https://www.powershellgallery.com/packages/Vaporshell" class="button">PS Gallery</a></li>
-			</ul>
-		</div>
-		<a href="#one" class="more scrolly">Learn More</a>
-	</section>
+<section id="banner">
+    <div class="inner">
+        <h2>{{ site.title }}</h2>
+        <p>{{ site.description | markdownify }}</p>
+        <ul class="actions vertical">
+            <li><a href="{{ " /docs " | prepend: site.url }}" class="button special">Docs</a></li>
+            <li><a href="https://github.com/scrthq/VaporShell" class="button">GitHub</a></li>
+            <li><a href="https://www.powershellgallery.com/packages/VaporShell" class="button">PS Gallery</a></li>
+        </ul>
+    </div>
+    <a href="#one" class="more scrolly">Learn More</a>
+</section>
 
 <!-- One -->
-	<section id="one" class="wrapper style1 special">
-		<div class="inner">
-			<header class="major">
-				<h2>Developed and continuously tested in Powershell<br />
-				versions 3.0 - 6.0-beta on Windows, Linux and macOS.</h2>
-				<p>Define your AWS Infrastructure as Code with any operating system.<br />
-				If you can run Powershell, you can use Vaporshell to create your stack.</p>
-			</header>
-			<ul class="icons major">
-				<li><span class="icon fa-code major style1"><span class="label">Define</span></span></li>
-				<li><span class="icon fa-cogs major style2"><span class="label">Build</span></span></li>
-				<li><span class="icon fa-cloud major style3"><span class="label">Cloud</span></span></li>
-			</ul>
-		</div>
-	</section>
+<section id="one" class="wrapper style1 special">
+    <div class="inner">
+        <header class="major">
+            <h2>Developed and continuously tested in Powershell<br /> versions 3.0 - 6.0-beta on Windows, Linux and macOS.</h2>
+            <p>Define your AWS Infrastructure as Code with any operating system.<br /> If you can run Powershell, you can use VaporShell to create your stack.</p>
+        </header>
+        <ul class="icons major">
+            <li><span class="icon fa-code major style1"><span class="label">Define</span></span>
+            </li>
+            <li><span class="icon fa-cogs major style2"><span class="label">Build</span></span>
+            </li>
+            <li><span class="icon fa-cloud major style3"><span class="label">Cloud</span></span>
+            </li>
+        </ul>
+    </div>
+</section>
 
 <!-- Two -->
-	<section id="two" class="wrapper alt style2">
-		<section class="spotlight">
-			<div class="image"><img src="images/pic01.jpg" alt="" /></div><div class="content">
-				<h2>Full coverage of AWS CloudFormation Resources</h2>
-				<p>All 500+ Resource Type and Resource Property Type functions are generated from <a href="http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/cfn-resource-specification.html">Amazon's own specification sheet</a> directly (us-east-1). If it's available in CloudFormation, it's available in Vaporshell. Using custom resource types? No problem. Serverless Transforms? You're covered as well.</p>
-			</div>
-		</section>
-		<section class="spotlight">
-			<div class="image"><img src="images/pic02.jpg" alt="" /></div><div class="content">
-				<h2>Write Less, Build More</h2>
-				<p>Building CloudFormation templates with Vaporshell can take considerably less code compared to using JSON/YAML directly. Combined with the validation built into Vaporshell, this means you can build clean templates quickly.</p>
-			</div>
-		</section>
-		<section class="spotlight">
-			<div class="image"><img src="images/pic03.jpg" alt="" /></div><div class="content">
-				<h2>Simplify UserData</h2>
-				<p>UserData can be painful to get perfect when adding it to your resources. <code>Add-UserData</code> makes it a breeze by allowing you to source your data from a file or by adding your list of strings and/or functions. It will also automatically wrap the data in <code>Fn::Join</code> and <code>Fn::Base64</code> for you, cleaning up your template script overall.</p>
-			</div>
-		</section>
-	</section>
+<section id="two" class="wrapper alt style2">
+    <section class="spotlight">
+        <div class="image"><img src="images/pic01.jpg" alt="" /></div>
+        <div class="content">
+            <h2>Full coverage of AWS CloudFormation Resources</h2>
+            <p>All 500+ Resource Type and Resource Property Type functions are generated from <a href="http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/cfn-resource-specification.html">Amazon's own specification sheet</a> directly (us-east-1).
+                If it's available in CloudFormation, it's available in VaporShell. Using custom resource types? No problem. Serverless Transforms? You're covered as well.</p>
+        </div>
+    </section>
+    <section class="spotlight">
+        <div class="image"><img src="images/pic02.jpg" alt="" /></div>
+        <div class="content">
+            <h2>Write Less, Build More</h2>
+            <p>Building CloudFormation templates with VaporShell can take considerably less code compared to using JSON/YAML directly. Combined with the validation built into VaporShell, this means you can build clean templates quickly.</p>
+        </div>
+    </section>
+    <section class="spotlight">
+        <div class="image"><img src="images/pic03.jpg" alt="" /></div>
+        <div class="content">
+            <h2>Simplify UserData</h2>
+            <p>UserData can be painful to get perfect when adding it to your resources. <code>Add-UserData</code> makes it a breeze by allowing you to source your data from a file or by adding your list of strings and/or functions. It will also automatically
+                wrap the data in <code>Fn::Join</code> and <code>Fn::Base64</code> for you, cleaning up your template script overall.</p>
+        </div>
+    </section>
+</section>
 
 <!-- Three -->
-	<section id="three" class="wrapper style3 special">
-		<div class="inner">
-			<header class="major">
-				<h2>Built with a DevOps mindset</h2>
-				<p>Vaporshell is built from the ground up using proven methods to ensure reliability where it's needed most; your Cloud backbone.</p>
-			</header>
-			<ul class="features">
-				<li class="icon fa-code-fork">
-					<h3>Continuous Integration</h3>
-					<p>Vaporshell is developed with CI through AppVeyor (Windows) and Travis CI (Linux / macOS) with Coveralls.io providing code coverage statistics for tests performed.<br /><br />
-					<a href="https://ci.appveyor.com/project/nferrell/vaporshell/branch/master"><img src="https://ci.appveyor.com/api/projects/status/8a4jsfv42tbmlym8/branch/master?svg=true" alt="Build Status" /></a>   <a href="https://travis-ci.org/scrthq/Vaporshell"><img src="https://travis-ci.org/scrthq/Vaporshell.svg?branch=master" alt="Build Status" /></a>   <a href='https://coveralls.io/github/scrthq/Vaporshell?branch=master'><img src='https://coveralls.io/repos/github/scrthq/Vaporshell/badge.svg?branch=master' alt='Coverage Status' /></a></p>
-				</li>
-				<li class="icon fa-hand-spock-o">
-					<h3>Unlimited Flexbility</h3>
-					<p>Building your CloudFormation templates in Powershell allows incredible flexbility. Build resource templates as individual script files and source them dynamically, leverage external configurations, etc. Automate your workflow.</p>
-				</li>
-				<li class="icon fa-bolt">
-					<h3>Easy to Install</h3>
-					<p>Installation is as easy as running <code>Install-Module -Name Vaporshell -Scope CurrentUser</code> from a Powershell prompt. Full details can be found on the <a href="https://www.powershellgallery.com/packages/vaporshell">Powershell Gallery</a><br /><br />
-					<a href="https://www.powershellgallery.com/packages/vaporshell"><img src="https://img.shields.io/badge/psgallery-install-blue.svg" alt="Install from Powershell Gallery" /></a></p>
-				</li>
-				<li class="icon fa-code">
-					<h3>Always Up-to-Date</h3>
-					<p>Due to Vaporshell leveraging AWS' specification sheet for Resource function creation, Vaporshell will typically be updated before most are aware those resources are available within CloudFormation.</p>
-				</li>
+<section id="three" class="wrapper style3 special">
+    <div class="inner">
+        <header class="major">
+            <h2>Built with a DevOps mindset</h2>
+            <p>VaporShell is built from the ground up using proven methods to ensure reliability where it's needed most; your Cloud backbone.</p>
+        </header>
+        <ul class="features">
+            <li class="icon fa-code-fork">
+                <h3>Continuous Integration</h3>
+                <p>VaporShell is developed with CI through AppVeyor (Windows) and Travis CI (Linux / macOS) with Coveralls.io providing code coverage statistics for tests performed.<br /><br />
+                    <a href="https://ci.appveyor.com/project/nferrell/VaporShell/branch/master"><img src="https://ci.appveyor.com/api/projects/status/8a4jsfv42tbmlym8/branch/master?svg=true" alt="Build Status" /></a>
+                    <a href="https://travis-ci.org/scrthq/VaporShell"><img src="https://travis-ci.org/scrthq/VaporShell.svg?branch=master" alt="Build Status" /></a>
+                    <a href='https://coveralls.io/github/scrthq/VaporShell?branch=master'><img src='https://coveralls.io/repos/github/scrthq/VaporShell/badge.svg?branch=master' alt='Coverage Status' /></a>
+                </p>
+            </li>
+            <li class="icon fa-hand-spock-o">
+                <h3>Unlimited Flexbility</h3>
+                <p>Building your CloudFormation templates in Powershell allows incredible flexbility. Build resource templates as individual script files and source them dynamically, leverage external configurations, etc. Automate your workflow.</p>
+            </li>
+            <li class="icon fa-bolt">
+                <h3>Easy to Install</h3>
+                <p>Installation is as easy as running <code>Install-Module -Name VaporShell -Scope CurrentUser</code> from a Powershell prompt. Full details can be found on the <a href="https://www.powershellgallery.com/packages/VaporShell">Powershell Gallery</a><br
+                    /><br />
+                    <a href="https://www.powershellgallery.com/packages/VaporShell"><img src="https://img.shields.io/badge/psgallery-install-blue.svg" alt="Install from Powershell Gallery" /></a>
+                </p>
+            </li>
+            <li class="icon fa-code">
+                <h3>Always Up-to-Date</h3>
+                <p>Due to VaporShell leveraging AWS' specification sheet for Resource function creation, VaporShell will typically be updated before most are aware those resources are available within CloudFormation.</p>
+            </li>
 
-				<li class="icon fa-check-square-o">
-					<h3>Inline Template Validation</h3>
-					<p>With the <a href="http://docs.aws.amazon.com/cli/latest/userguide/installing.html">AWS CLI Tools</a> installed, you can perform inline template file validation by including the -ValidateTemplate switch with Export-Vaporshell:<br /> <code>Export-Vaporshell $template -Path ~\templates\myTemplate.template -ValidateTemplate</code></p>
-				</li>
-				<li class="icon fa-list">
-					<h3>YAML Support</h3>
-					<p>With AWSLabs' <code>cfn-flip</code> installed alongside Vaporshell, you can import templates from YAML and export templates to YAML. <code>cfn-flip</code> is installable via <code>pip</code>; more details on <code>cfn-flip</code> can be found on AWSLabs' GitHub: <a href="https://github.com/awslabs/aws-cfn-template-flip">awslabs/aws-cfn-template-flip</a></p>
-				</li>
+            <li class="icon fa-check-square-o">
+                <h3>Inline Template Validation</h3>
+                <p>With the <a href="http://docs.aws.amazon.com/cli/latest/userguide/installing.html">AWS CLI Tools</a> installed, you can perform inline template file validation by including the -ValidateTemplate switch with Export-VaporShell:<br /> <code>Export-VaporShell $template -Path ~\templates\myTemplate.template -ValidateTemplate</code></p>
+            </li>
+            <li class="icon fa-list">
+                <h3>YAML Support</h3>
+                <p>With AWSLabs' <code>cfn-flip</code> installed alongside VaporShell, you can import templates from YAML and export templates to YAML. <code>cfn-flip</code> is installable via <code>pip</code>; more details on <code>cfn-flip</code> can be
+                    found on AWSLabs' GitHub: <a href="https://github.com/awslabs/aws-cfn-template-flip">awslabs/aws-cfn-template-flip</a></p>
+            </li>
 
-				<li class="icon fa-coffee">
-					<h3>Free, Forever</h3>
-					<p>Vaporshell is developed under the MIT license and will always be free to download and use for whatever you'd like. Check the license details on the <a href="https://github.com/scrthq/Vaporshell/blob/master/LICENSE">project's GitHub</a>.<br /><br />
-					Coffee donations always accepted though!<br /><br />
-					<a href="https://gratipay.com/Vaporshell"><img src="https://img.shields.io/gratipay/user/scrthq.svg" alt="Donate with Gratipay" /></a>   <a href="https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&hosted_button_id=GU6CJMFGVP6ZS"><img src="https://img.shields.io/badge/paypal-donate-brightgreen.svg" alt="Donate with Paypal" /></a></p>
-				</li>
-				<li class="icon fa-lightbulb-o">
-					<h3>Community Driven</h3>
-					<p>Want to add functionality? Feel free to fork the repo and build your own add-ons. Have an issue or enhancement request? It will be handled ASAP, just send over the details via <a href="https://github.com/scrthq/Vaporshell/issues">GitHub issue</a> or <a href="mailto:nate@vaporshell.io">email</a>! Want to chat quickly about something? Join us in the <a href="http://slack.poshcode.org/">#vaporshell channel on the Powershell team Slack</a>!</p>
-				</li>
-			</ul>
-		</div>
-	</section>
+            <li class="icon fa-coffee">
+                <h3>Free, Forever</h3>
+                <p>VaporShell is developed under the MIT license and will always be free to download and use for whatever you'd like. Check the license details on the <a href="https://github.com/scrthq/VaporShell/blob/master/LICENSE">project's GitHub</a>.<br
+                    /><br /> Coffee donations always accepted though!<br /><br />
+                    <a href="https://gratipay.com/VaporShell"><img src="https://img.shields.io/gratipay/user/scrthq.svg" alt="Donate with Gratipay" /></a>
+                    <a href="https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&hosted_button_id=GU6CJMFGVP6ZS"><img src="https://img.shields.io/badge/paypal-donate-brightgreen.svg" alt="Donate with Paypal" /></a>
+                </p>
+            </li>
+            <li class="icon fa-lightbulb-o">
+                <h3>Community Driven</h3>
+                <p>Want to add functionality? Feel free to fork the repo and build your own add-ons. Have an issue or enhancement request? It will be handled ASAP, just send over the details via <a href="https://github.com/scrthq/VaporShell/issues">GitHub issue</a>                    or <a href="mailto:nate@VaporShell.io">email</a>! Want to chat quickly about something? Join us in the <a href="http://slack.poshcode.org/">#VaporShell channel on the Powershell team Slack</a>!</p>
+            </li>
+        </ul>
+    </div>
+</section>
 
 <!-- CTA -->
-	<section id="cta" class="wrapper style4">
-		<div class="inner">
-			<header>
-				<h2>Ready to Dive In?</h2>
-				<p>Check out the documentation to get started or head straight to the glossary for help with a specific function</p>
-			</header>
-			<ul class="actions vertical">
-				<li><a href="{{ "/docs" | prepend: site.url }}" class="button special small fit">Docs</a></li>
-				<li><a href="{{ "/docs/glossary" | prepend: site.url }}" class="button small fit">Glossary</a></li>
-			</ul>
-		</div>
-	</section>
+<section id="cta" class="wrapper style4">
+    <div class="inner">
+        <header>
+            <h2>Ready to Dive In?</h2>
+            <p>Check out the documentation to get started or head straight to the glossary for help with a specific function</p>
+        </header>
+        <ul class="actions vertical">
+            <li><a href="{{ " /docs " | prepend: site.url }}" class="button special small fit">Docs</a></li>
+            <li><a href="{{ " /docs/glossary " | prepend: site.url }}" class="button small fit">Glossary</a></li>
+        </ul>
+    </div>
+</section>

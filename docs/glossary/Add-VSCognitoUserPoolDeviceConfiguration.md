@@ -65,7 +65,7 @@ Accept wildcard characters: False
 
 ## OUTPUTS
 
-### Vaporshell.Resource.Cognito.UserPool.DeviceConfiguration
+### VaporShell.Resource.Cognito.UserPool.DeviceConfiguration
 
 ## NOTES
 

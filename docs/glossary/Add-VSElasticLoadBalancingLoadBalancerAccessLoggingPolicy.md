@@ -101,7 +101,7 @@ Accept wildcard characters: False
 
 ## OUTPUTS
 
-### Vaporshell.Resource.ElasticLoadBalancing.LoadBalancer.AccessLoggingPolicy
+### VaporShell.Resource.ElasticLoadBalancing.LoadBalancer.AccessLoggingPolicy
 
 ## NOTES
 

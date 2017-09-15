@@ -326,7 +326,7 @@ Accept wildcard characters: False
 
 ## OUTPUTS
 
-### Vaporshell.Resource.Cognito.IdentityPool
+### VaporShell.Resource.Cognito.IdentityPool
 
 ## NOTES
 

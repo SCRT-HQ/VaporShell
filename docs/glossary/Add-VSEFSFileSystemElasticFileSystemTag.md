@@ -64,7 +64,7 @@ Accept wildcard characters: False
 
 ## OUTPUTS
 
-### Vaporshell.Resource.EFS.FileSystem.ElasticFileSystemTag
+### VaporShell.Resource.EFS.FileSystem.ElasticFileSystemTag
 
 ## NOTES
 

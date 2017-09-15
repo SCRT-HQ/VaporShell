@@ -100,7 +100,7 @@ Accept wildcard characters: False
 
 ## OUTPUTS
 
-### Vaporshell.Resource.EMR.Cluster.ScalingRule
+### VaporShell.Resource.EMR.Cluster.ScalingRule
 
 ## NOTES
 

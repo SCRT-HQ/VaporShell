@@ -140,7 +140,7 @@ Accept wildcard characters: False
 
 ## OUTPUTS
 
-### Vaporshell.Resource.EMR.InstanceFleetConfig.InstanceTypeConfig
+### VaporShell.Resource.EMR.InstanceFleetConfig.InstanceTypeConfig
 
 ## NOTES
 

@@ -64,7 +64,7 @@ Accept wildcard characters: False
 
 ## OUTPUTS
 
-### Vaporshell.Resource.Cognito.UserPoolUser.AttributeType
+### VaporShell.Resource.Cognito.UserPoolUser.AttributeType
 
 ## NOTES
 

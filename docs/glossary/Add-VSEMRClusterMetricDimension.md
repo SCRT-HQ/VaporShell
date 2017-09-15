@@ -64,7 +64,7 @@ Accept wildcard characters: False
 
 ## OUTPUTS
 
-### Vaporshell.Resource.EMR.Cluster.MetricDimension
+### VaporShell.Resource.EMR.Cluster.MetricDimension
 
 ## NOTES
 

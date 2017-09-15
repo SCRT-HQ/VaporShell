@@ -46,7 +46,7 @@ Accept wildcard characters: False
 
 ## OUTPUTS
 
-### Vaporshell.Resource.EMR.Cluster.PlacementType
+### VaporShell.Resource.EMR.Cluster.PlacementType
 
 ## NOTES
 

@@ -195,7 +195,7 @@ Accept wildcard characters: False
 
 ## OUTPUTS
 
-### Vaporshell.Resource.Lambda.Version
+### VaporShell.Resource.Lambda.Version
 
 ## NOTES
 

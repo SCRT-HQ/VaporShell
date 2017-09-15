@@ -231,7 +231,7 @@ Accept wildcard characters: False
 
 ## OUTPUTS
 
-### Vaporshell.Resource.Cognito.UserPoolGroup
+### VaporShell.Resource.Cognito.UserPoolGroup
 
 ## NOTES
 

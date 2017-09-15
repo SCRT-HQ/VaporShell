@@ -64,7 +64,7 @@ Accept wildcard characters: False
 
 ## OUTPUTS
 
-### Vaporshell.Resource.CloudWatch.Alarm.Dimension
+### VaporShell.Resource.CloudWatch.Alarm.Dimension
 
 ## NOTES
 

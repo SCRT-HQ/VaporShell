@@ -178,7 +178,7 @@ Accept wildcard characters: False
 
 ## OUTPUTS
 
-### Vaporshell.Resource.WAFRegional.SqlInjectionMatchSet
+### VaporShell.Resource.WAFRegional.SqlInjectionMatchSet
 
 ## NOTES
 

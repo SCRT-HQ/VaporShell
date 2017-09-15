@@ -174,7 +174,7 @@ Accept wildcard characters: False
 
 ## OUTPUTS
 
-### Vaporshell.Resource.Cognito.UserPool.LambdaConfig
+### VaporShell.Resource.Cognito.UserPool.LambdaConfig
 
 ## NOTES
 

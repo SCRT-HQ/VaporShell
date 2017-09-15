@@ -65,7 +65,7 @@ Accept wildcard characters: False
 
 ## OUTPUTS
 
-### Vaporshell.Resource.KinesisAnalytics.Application.CSVMappingParameters
+### VaporShell.Resource.KinesisAnalytics.Application.CSVMappingParameters
 
 ## NOTES
 

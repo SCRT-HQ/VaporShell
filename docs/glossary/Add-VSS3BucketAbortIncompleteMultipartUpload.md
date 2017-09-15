@@ -46,7 +46,7 @@ Accept wildcard characters: False
 
 ## OUTPUTS
 
-### Vaporshell.Resource.S3.Bucket.AbortIncompleteMultipartUpload
+### VaporShell.Resource.S3.Bucket.AbortIncompleteMultipartUpload
 
 ## NOTES
 

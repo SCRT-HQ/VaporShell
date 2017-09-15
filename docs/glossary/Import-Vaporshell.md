@@ -1,6 +1,6 @@
 ---
 layout: glossary
-title: Import-Vaporshell
+title: Import-VaporShell
 categories: glossary
 label1: Category
 data1: Documentation
@@ -8,7 +8,7 @@ label2: Depth
 data2: Deep
 ---
 
-# Import-Vaporshell
+# Import-VaporShell
 
 ## SYNOPSIS
 Allows you to import an existing CloudFormation template as a starting point.
@@ -17,17 +17,17 @@ Allows you to import an existing CloudFormation template as a starting point.
 
 ### Path (Default)
 ```
-Import-Vaporshell [-Path] <String>
+Import-VaporShell [-Path] <String>
 ```
 
 ### TemplateBody
 ```
-Import-Vaporshell [-TemplateBody] <String>
+Import-VaporShell [-TemplateBody] <String>
 ```
 
 ### RawUrl
 ```
-Import-Vaporshell [-RawUrl] <String>
+Import-VaporShell [-RawUrl] <String>
 ```
 
 ## DESCRIPTION
@@ -84,7 +84,7 @@ Accept wildcard characters: False
 
 ## OUTPUTS
 
-### Vaporshell.Template
+### VaporShell.Template
 
 ## NOTES
 

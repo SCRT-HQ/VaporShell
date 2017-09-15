@@ -327,7 +327,7 @@ Accept wildcard characters: False
 
 ## OUTPUTS
 
-### Vaporshell.Resource.ApiGateway.Stage
+### VaporShell.Resource.ApiGateway.Stage
 
 ## NOTES
 

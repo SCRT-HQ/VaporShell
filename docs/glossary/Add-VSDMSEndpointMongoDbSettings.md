@@ -228,7 +228,7 @@ Accept wildcard characters: False
 
 ## OUTPUTS
 
-### Vaporshell.Resource.DMS.Endpoint.MongoDbSettings
+### VaporShell.Resource.DMS.Endpoint.MongoDbSettings
 
 ## NOTES
 

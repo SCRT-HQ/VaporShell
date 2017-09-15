@@ -46,7 +46,7 @@ Accept wildcard characters: False
 
 ## OUTPUTS
 
-### Vaporshell.Resource.Lambda.Function.DeadLetterConfig
+### VaporShell.Resource.Lambda.Function.DeadLetterConfig
 
 ## NOTES
 

@@ -176,7 +176,7 @@ Accept wildcard characters: False
 
 ## OUTPUTS
 
-### Vaporshell.Resource.EMR.Cluster.InstanceGroupConfig
+### VaporShell.Resource.EMR.Cluster.InstanceGroupConfig
 
 ## NOTES
 

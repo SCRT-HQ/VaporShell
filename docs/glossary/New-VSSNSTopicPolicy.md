@@ -178,7 +178,7 @@ Accept wildcard characters: False
 
 ## OUTPUTS
 
-### Vaporshell.Resource.SNS.TopicPolicy
+### VaporShell.Resource.SNS.TopicPolicy
 
 ## NOTES
 

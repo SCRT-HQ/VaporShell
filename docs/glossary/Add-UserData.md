@@ -35,7 +35,7 @@ Add-UserData [-File] <String>
 ### -String
 An array of strings and/or Instrinsic Functions.
 
-IMPORTANT: You must specify new lines in Powershell syntax so it identifies it as a new line when converting to JSON via Export-Vaporshell.
+IMPORTANT: You must specify new lines in Powershell syntax so it identifies it as a new line when converting to JSON via Export-VaporShell.
 This will convert \`n \[backtick n\] into \n \[backslash n\] in the resulting JSON template.
 
 ```yaml
@@ -71,7 +71,7 @@ Accept wildcard characters: False
 
 ## OUTPUTS
 
-### Vaporshell.Resource.UserData
+### VaporShell.Resource.UserData
 
 ## NOTES
 

@@ -195,7 +195,7 @@ Accept wildcard characters: False
 
 ## OUTPUTS
 
-### Vaporshell.Resource.Cognito.IdentityPoolRoleAttachment
+### VaporShell.Resource.Cognito.IdentityPoolRoleAttachment
 
 ## NOTES
 

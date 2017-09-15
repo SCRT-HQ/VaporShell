@@ -64,7 +64,7 @@ Accept wildcard characters: False
 
 ## OUTPUTS
 
-### Vaporshell.Resource.EC2.NetworkInterface.PrivateIpAddressSpecification
+### VaporShell.Resource.EC2.NetworkInterface.PrivateIpAddressSpecification
 
 ## NOTES
 

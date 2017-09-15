@@ -156,7 +156,7 @@ Accept wildcard characters: False
 
 ## OUTPUTS
 
-### Vaporshell.Resource.DMS.Endpoint.S3Settings
+### VaporShell.Resource.DMS.Endpoint.S3Settings
 
 ## NOTES
 

@@ -119,7 +119,7 @@ Accept wildcard characters: False
 
 ## OUTPUTS
 
-### Vaporshell.Resource.ApiGateway.DocumentationPart.Location
+### VaporShell.Resource.ApiGateway.DocumentationPart.Location
 
 ## NOTES
 

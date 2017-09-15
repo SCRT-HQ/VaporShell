@@ -94,7 +94,7 @@ Accept wildcard characters: False
 
 ## OUTPUTS
 
-### Vaporshell.Serverless.EventSource.S3
+### VaporShell.Serverless.EventSource.S3
 
 ## NOTES
 

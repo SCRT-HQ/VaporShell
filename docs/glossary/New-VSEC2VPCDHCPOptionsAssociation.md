@@ -177,7 +177,7 @@ Accept wildcard characters: False
 
 ## OUTPUTS
 
-### Vaporshell.Resource.EC2.VPCDHCPOptionsAssociation
+### VaporShell.Resource.EC2.VPCDHCPOptionsAssociation
 
 ## NOTES
 

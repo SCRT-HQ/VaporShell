@@ -139,7 +139,7 @@ Accept wildcard characters: False
 
 ## OUTPUTS
 
-### Vaporshell.Resource.CloudFront.Distribution.Origin
+### VaporShell.Resource.CloudFront.Distribution.Origin
 
 ## NOTES
 

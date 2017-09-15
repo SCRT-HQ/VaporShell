@@ -64,7 +64,7 @@ Accept wildcard characters: False
 
 ## OUTPUTS
 
-### Vaporshell.Resource.DataPipeline.Pipeline.ParameterAttribute
+### VaporShell.Resource.DataPipeline.Pipeline.ParameterAttribute
 
 ## NOTES
 

@@ -158,7 +158,7 @@ Accept wildcard characters: False
 
 ## OUTPUTS
 
-### Vaporshell.Resource.EC2.EgressOnlyInternetGateway
+### VaporShell.Resource.EC2.EgressOnlyInternetGateway
 
 ## NOTES
 

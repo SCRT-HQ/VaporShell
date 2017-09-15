@@ -246,7 +246,7 @@ Accept wildcard characters: False
 
 ## OUTPUTS
 
-### Vaporshell.Resource.IoT.TopicRule.Action
+### VaporShell.Resource.IoT.TopicRule.Action
 
 ## NOTES
 

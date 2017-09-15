@@ -48,7 +48,7 @@ Accept wildcard characters: False
 
 ## OUTPUTS
 
-### Vaporshell.Resource.Lambda.Function.Environment
+### VaporShell.Resource.Lambda.Function.Environment
 
 ## NOTES
 

@@ -64,7 +64,7 @@ Accept wildcard characters: False
 
 ## OUTPUTS
 
-### Vaporshell.Resource.DynamoDB.Table.ProvisionedThroughput
+### VaporShell.Resource.DynamoDB.Table.ProvisionedThroughput
 
 ## NOTES
 

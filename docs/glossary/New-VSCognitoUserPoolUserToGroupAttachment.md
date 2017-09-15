@@ -195,7 +195,7 @@ Accept wildcard characters: False
 
 ## OUTPUTS
 
-### Vaporshell.Resource.Cognito.UserPoolUserToGroupAttachment
+### VaporShell.Resource.Cognito.UserPoolUserToGroupAttachment
 
 ## NOTES
 

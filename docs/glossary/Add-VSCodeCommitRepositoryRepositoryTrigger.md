@@ -121,7 +121,7 @@ Accept wildcard characters: False
 
 ## OUTPUTS
 
-### Vaporshell.Resource.CodeCommit.Repository.RepositoryTrigger
+### VaporShell.Resource.CodeCommit.Repository.RepositoryTrigger
 
 ## NOTES
 

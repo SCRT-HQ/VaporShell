@@ -841,7 +841,7 @@ Accept wildcard characters: False
 
 ## OUTPUTS
 
-### Vaporshell.Resource.RDS.DBInstance
+### VaporShell.Resource.RDS.DBInstance
 
 ## NOTES
 

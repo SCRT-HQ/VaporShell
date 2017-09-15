@@ -82,7 +82,7 @@ Accept wildcard characters: False
 
 ## OUTPUTS
 
-### Vaporshell.Resource.ApiGateway.UsagePlan.QuotaSettings
+### VaporShell.Resource.ApiGateway.UsagePlan.QuotaSettings
 
 ## NOTES
 

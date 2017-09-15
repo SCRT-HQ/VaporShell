@@ -268,7 +268,7 @@ Accept wildcard characters: False
 
 ## OUTPUTS
 
-### Vaporshell.Resource.Batch.ComputeEnvironment.ComputeResources
+### VaporShell.Resource.Batch.ComputeEnvironment.ComputeResources
 
 ## NOTES
 

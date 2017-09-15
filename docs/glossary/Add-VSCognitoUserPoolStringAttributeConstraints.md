@@ -64,7 +64,7 @@ Accept wildcard characters: False
 
 ## OUTPUTS
 
-### Vaporshell.Resource.Cognito.UserPool.StringAttributeConstraints
+### VaporShell.Resource.Cognito.UserPool.StringAttributeConstraints
 
 ## NOTES
 

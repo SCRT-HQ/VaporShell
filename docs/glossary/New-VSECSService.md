@@ -311,7 +311,7 @@ Accept wildcard characters: False
 
 ## OUTPUTS
 
-### Vaporshell.Resource.ECS.Service
+### VaporShell.Resource.ECS.Service
 
 ## NOTES
 

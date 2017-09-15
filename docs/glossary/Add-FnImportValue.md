@@ -54,7 +54,7 @@ Accept wildcard characters: False
 
 ## OUTPUTS
 
-### Vaporshell.Function.ImportValue
+### VaporShell.Function.ImportValue
 
 ## NOTES
 You can use the following functions in the Fn::ImportValue function.

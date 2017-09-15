@@ -72,7 +72,7 @@ Accept wildcard characters: False
 This is a collection of Resource properties are additional options that you can specify for a resource.
 For example, for each EC2 instance, you must specify an Amazon Machine Image (AMI) ID for that instance.
 
-You can use any of these 3 types for this parameter; "System.Collections.Hashtable","System.Management.Automation.PSCustomObject","Vaporshell.Resource.Properties"
+You can use any of these 3 types for this parameter; "System.Collections.Hashtable","System.Management.Automation.PSCustomObject","VaporShell.Resource.Properties"
 
 ```yaml
 Type: Object
@@ -203,7 +203,7 @@ Accept wildcard characters: False
 
 ## OUTPUTS
 
-### Vaporshell.Resource
+### VaporShell.Resource
 
 ## NOTES
 

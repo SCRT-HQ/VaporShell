@@ -197,7 +197,7 @@ Accept wildcard characters: False
 
 ## OUTPUTS
 
-### Vaporshell.Resource.Logs.MetricFilter
+### VaporShell.Resource.Logs.MetricFilter
 
 ## NOTES
 

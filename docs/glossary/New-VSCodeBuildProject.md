@@ -305,7 +305,7 @@ Accept wildcard characters: False
 
 ## OUTPUTS
 
-### Vaporshell.Resource.CodeBuild.Project
+### VaporShell.Resource.CodeBuild.Project
 
 ## NOTES
 

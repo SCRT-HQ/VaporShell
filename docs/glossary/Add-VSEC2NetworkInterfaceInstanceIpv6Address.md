@@ -46,7 +46,7 @@ Accept wildcard characters: False
 
 ## OUTPUTS
 
-### Vaporshell.Resource.EC2.NetworkInterface.InstanceIpv6Address
+### VaporShell.Resource.EC2.NetworkInterface.InstanceIpv6Address
 
 ## NOTES
 

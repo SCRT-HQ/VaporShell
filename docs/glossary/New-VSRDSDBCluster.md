@@ -473,7 +473,7 @@ Accept wildcard characters: False
 
 ## OUTPUTS
 
-### Vaporshell.Resource.RDS.DBCluster
+### VaporShell.Resource.RDS.DBCluster
 
 ## NOTES
 

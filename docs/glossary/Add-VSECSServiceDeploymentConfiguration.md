@@ -64,7 +64,7 @@ Accept wildcard characters: False
 
 ## OUTPUTS
 
-### Vaporshell.Resource.ECS.Service.DeploymentConfiguration
+### VaporShell.Resource.ECS.Service.DeploymentConfiguration
 
 ## NOTES
 

@@ -64,7 +64,7 @@ Accept wildcard characters: False
 
 ## OUTPUTS
 
-### Vaporshell.Resource.Batch.JobDefinition.Environment
+### VaporShell.Resource.Batch.JobDefinition.Environment
 
 ## NOTES
 

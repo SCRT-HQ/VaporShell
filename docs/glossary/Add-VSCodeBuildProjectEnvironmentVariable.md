@@ -64,7 +64,7 @@ Accept wildcard characters: False
 
 ## OUTPUTS
 
-### Vaporshell.Resource.CodeBuild.Project.EnvironmentVariable
+### VaporShell.Resource.CodeBuild.Project.EnvironmentVariable
 
 ## NOTES
 

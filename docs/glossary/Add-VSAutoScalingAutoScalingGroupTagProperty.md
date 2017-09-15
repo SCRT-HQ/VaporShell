@@ -82,7 +82,7 @@ Accept wildcard characters: False
 
 ## OUTPUTS
 
-### Vaporshell.Resource.AutoScaling.AutoScalingGroup.TagProperty
+### VaporShell.Resource.AutoScaling.AutoScalingGroup.TagProperty
 
 ## NOTES
 

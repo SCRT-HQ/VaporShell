@@ -249,7 +249,7 @@ Accept wildcard characters: False
 
 ## OUTPUTS
 
-### Vaporshell.Resource.DirectoryService.MicrosoftAD
+### VaporShell.Resource.DirectoryService.MicrosoftAD
 
 ## NOTES
 

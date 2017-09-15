@@ -64,7 +64,7 @@ Accept wildcard characters: False
 
 ## OUTPUTS
 
-### Vaporshell.Resource.WAFRegional.ByteMatchSet.FieldToMatch
+### VaporShell.Resource.WAFRegional.ByteMatchSet.FieldToMatch
 
 ## NOTES
 

@@ -177,7 +177,7 @@ Accept wildcard characters: False
 
 ## OUTPUTS
 
-### Vaporshell.Resource.IoT.Certificate
+### VaporShell.Resource.IoT.Certificate
 
 ## NOTES
 

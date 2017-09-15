@@ -83,7 +83,7 @@ Accept wildcard characters: False
 
 ## OUTPUTS
 
-### Vaporshell.Resource.Cognito.IdentityPoolRoleAttachment.RoleMapping
+### VaporShell.Resource.Cognito.IdentityPoolRoleAttachment.RoleMapping
 
 ## NOTES
 

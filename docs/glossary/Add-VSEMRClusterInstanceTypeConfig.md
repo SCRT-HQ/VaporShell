@@ -140,7 +140,7 @@ Accept wildcard characters: False
 
 ## OUTPUTS
 
-### Vaporshell.Resource.EMR.Cluster.InstanceTypeConfig
+### VaporShell.Resource.EMR.Cluster.InstanceTypeConfig
 
 ## NOTES
 

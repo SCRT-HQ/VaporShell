@@ -103,7 +103,7 @@ Accept wildcard characters: False
 
 ## OUTPUTS
 
-### Vaporshell.Resource.S3.Bucket.WebsiteConfiguration
+### VaporShell.Resource.S3.Bucket.WebsiteConfiguration
 
 ## NOTES
 

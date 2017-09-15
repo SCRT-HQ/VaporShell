@@ -233,7 +233,7 @@ Accept wildcard characters: False
 
 ## OUTPUTS
 
-### Vaporshell.Resource.ApiGateway.UsagePlan
+### VaporShell.Resource.ApiGateway.UsagePlan
 
 ## NOTES
 

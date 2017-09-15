@@ -158,7 +158,7 @@ Accept wildcard characters: False
 
 ## OUTPUTS
 
-### Vaporshell.Resource.SDB.Domain
+### VaporShell.Resource.SDB.Domain
 
 ## NOTES
 

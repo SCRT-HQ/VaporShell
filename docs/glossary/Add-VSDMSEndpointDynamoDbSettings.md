@@ -46,7 +46,7 @@ Accept wildcard characters: False
 
 ## OUTPUTS
 
-### Vaporshell.Resource.DMS.Endpoint.DynamoDbSettings
+### VaporShell.Resource.DMS.Endpoint.DynamoDbSettings
 
 ## NOTES
 

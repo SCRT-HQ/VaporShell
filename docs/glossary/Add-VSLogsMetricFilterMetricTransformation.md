@@ -83,7 +83,7 @@ Accept wildcard characters: False
 
 ## OUTPUTS
 
-### Vaporshell.Resource.Logs.MetricFilter.MetricTransformation
+### VaporShell.Resource.Logs.MetricFilter.MetricTransformation
 
 ## NOTES
 

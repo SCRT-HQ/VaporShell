@@ -256,7 +256,7 @@ Accept wildcard characters: False
 
 ## OUTPUTS
 
-### Vaporshell.Resource.ECS.TaskDefinition
+### VaporShell.Resource.ECS.TaskDefinition
 
 ## NOTES
 

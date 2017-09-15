@@ -64,7 +64,7 @@ Accept wildcard characters: False
 
 ## OUTPUTS
 
-### Vaporshell.Resource.ApiGateway.UsagePlan.ApiStage
+### VaporShell.Resource.ApiGateway.UsagePlan.ApiStage
 
 ## NOTES
 

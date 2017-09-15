@@ -308,7 +308,7 @@ Accept wildcard characters: False
 
 ## OUTPUTS
 
-### Vaporshell.Resource.ApiGateway.RestApi
+### VaporShell.Resource.ApiGateway.RestApi
 
 ## NOTES
 

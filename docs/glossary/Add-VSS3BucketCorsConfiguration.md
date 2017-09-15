@@ -48,7 +48,7 @@ Accept wildcard characters: False
 
 ## OUTPUTS
 
-### Vaporshell.Resource.S3.Bucket.CorsConfiguration
+### VaporShell.Resource.S3.Bucket.CorsConfiguration
 
 ## NOTES
 

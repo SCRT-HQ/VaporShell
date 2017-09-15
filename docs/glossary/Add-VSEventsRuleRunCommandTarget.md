@@ -66,7 +66,7 @@ Accept wildcard characters: False
 
 ## OUTPUTS
 
-### Vaporshell.Resource.Events.Rule.RunCommandTarget
+### VaporShell.Resource.Events.Rule.RunCommandTarget
 
 ## NOTES
 

@@ -66,7 +66,7 @@ Accept wildcard characters: False
 
 ## OUTPUTS
 
-### Vaporshell.Resource.EMR.Cluster.AutoScalingPolicy
+### VaporShell.Resource.EMR.Cluster.AutoScalingPolicy
 
 ## NOTES
 

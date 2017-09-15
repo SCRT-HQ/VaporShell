@@ -306,7 +306,7 @@ Accept wildcard characters: False
 
 ## OUTPUTS
 
-### Vaporshell.Resource.DMS.ReplicationTask
+### VaporShell.Resource.DMS.ReplicationTask
 
 ## NOTES
 

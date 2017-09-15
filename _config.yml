@@ -2,7 +2,7 @@
 #
 
 # Site settings
-title: Vaporshell
+title: VaporShell
 description: |
   Define your Cloud   
   with Powershell   
@@ -11,7 +11,7 @@ owner: "SCRT HQ"
 first_published: 2017
 email: nate@scrthq.com
 baseurl: "" # the subpath of your site, e.g. /blog
-url: "http://vaporshell.io" # the base hostname & protocol for your site
+url: "http://VaporShell.io" # the base hostname & protocol for your site
 permalink: /:category/:title
 highlighter: rouge
 google_analytics: UA-101420411-1
@@ -21,12 +21,9 @@ author:
   twitter: scrthq
 
 google_site_verification: 643aMdQ5fl2YkpOa4sL_M3ROwM_notMk5MrfDkrgmww
-
-gems:
-  - jekyll-seo-tag
   
 social:
-  github: https://github.com/scrthq/Vaporshell
+  github: https://github.com/scrthq/VaporShell
   linkedin-square: https://linkedin.com/in/scrthq
   twitter: https://twitter.com/scrthq
   #reddit: https://www.reddit.com/user/scrthq/

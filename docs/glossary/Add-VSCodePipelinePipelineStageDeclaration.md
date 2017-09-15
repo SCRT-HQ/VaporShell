@@ -86,7 +86,7 @@ Accept wildcard characters: False
 
 ## OUTPUTS
 
-### Vaporshell.Resource.CodePipeline.Pipeline.StageDeclaration
+### VaporShell.Resource.CodePipeline.Pipeline.StageDeclaration
 
 ## NOTES
 

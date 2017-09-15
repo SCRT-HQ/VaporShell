@@ -64,7 +64,7 @@ Accept wildcard characters: False
 
 ## OUTPUTS
 
-### Vaporshell.Resource.WAF.XssMatchSet.XssMatchTuple
+### VaporShell.Resource.WAF.XssMatchSet.XssMatchTuple
 
 ## NOTES
 

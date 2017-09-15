@@ -46,7 +46,7 @@ Accept wildcard characters: False
 
 ## OUTPUTS
 
-### Vaporshell.Condition.And
+### VaporShell.Condition.And
 
 ## NOTES
 You can use the following functions in this condition statement:

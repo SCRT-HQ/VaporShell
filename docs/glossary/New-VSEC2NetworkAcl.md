@@ -178,7 +178,7 @@ Accept wildcard characters: False
 
 ## OUTPUTS
 
-### Vaporshell.Resource.EC2.NetworkAcl
+### VaporShell.Resource.EC2.NetworkAcl
 
 ## NOTES
 

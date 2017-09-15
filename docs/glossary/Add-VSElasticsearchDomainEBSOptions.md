@@ -101,7 +101,7 @@ Accept wildcard characters: False
 
 ## OUTPUTS
 
-### Vaporshell.Resource.Elasticsearch.Domain.EBSOptions
+### VaporShell.Resource.Elasticsearch.Domain.EBSOptions
 
 ## NOTES
 

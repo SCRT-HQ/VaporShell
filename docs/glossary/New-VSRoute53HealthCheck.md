@@ -179,7 +179,7 @@ Accept wildcard characters: False
 
 ## OUTPUTS
 
-### Vaporshell.Resource.Route53.HealthCheck
+### VaporShell.Resource.Route53.HealthCheck
 
 ## NOTES
 

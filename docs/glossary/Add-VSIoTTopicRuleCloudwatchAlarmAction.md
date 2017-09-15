@@ -101,7 +101,7 @@ Accept wildcard characters: False
 
 ## OUTPUTS
 
-### Vaporshell.Resource.IoT.TopicRule.CloudwatchAlarmAction
+### VaporShell.Resource.IoT.TopicRule.CloudwatchAlarmAction
 
 ## NOTES
 

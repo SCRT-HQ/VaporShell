@@ -79,7 +79,7 @@ Accept wildcard characters: False
 
 ## OUTPUTS
 
-### Vaporshell.Serverless.EnvironmentVariable
+### VaporShell.Serverless.EnvironmentVariable
 
 ## NOTES
 

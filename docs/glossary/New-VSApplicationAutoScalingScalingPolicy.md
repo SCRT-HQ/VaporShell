@@ -287,7 +287,7 @@ Accept wildcard characters: False
 
 ## OUTPUTS
 
-### Vaporshell.Resource.ApplicationAutoScaling.ScalingPolicy
+### VaporShell.Resource.ApplicationAutoScaling.ScalingPolicy
 
 ## NOTES
 

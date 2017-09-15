@@ -83,7 +83,7 @@ Accept wildcard characters: False
 
 ## OUTPUTS
 
-### Vaporshell.Resource.KinesisFirehose.DeliveryStream.CloudWatchLoggingOptions
+### VaporShell.Resource.KinesisFirehose.DeliveryStream.CloudWatchLoggingOptions
 
 ## NOTES
 

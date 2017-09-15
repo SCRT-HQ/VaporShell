@@ -66,7 +66,7 @@ Accept wildcard characters: False
 
 ## OUTPUTS
 
-### Vaporshell.Resource.ElasticLoadBalancingV2.ListenerRule.RuleCondition
+### VaporShell.Resource.ElasticLoadBalancingV2.ListenerRule.RuleCondition
 
 ## NOTES
 

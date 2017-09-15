@@ -64,7 +64,7 @@ Accept wildcard characters: False
 
 ## OUTPUTS
 
-### Vaporshell.Resource.DynamoDB.Table.TimeToLiveSpecification
+### VaporShell.Resource.DynamoDB.Table.TimeToLiveSpecification
 
 ## NOTES
 

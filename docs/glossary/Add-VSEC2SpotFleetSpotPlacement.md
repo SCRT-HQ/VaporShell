@@ -64,7 +64,7 @@ Accept wildcard characters: False
 
 ## OUTPUTS
 
-### Vaporshell.Resource.EC2.SpotFleet.SpotPlacement
+### VaporShell.Resource.EC2.SpotFleet.SpotPlacement
 
 ## NOTES
 

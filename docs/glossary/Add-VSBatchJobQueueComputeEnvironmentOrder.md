@@ -64,7 +64,7 @@ Accept wildcard characters: False
 
 ## OUTPUTS
 
-### Vaporshell.Resource.Batch.JobQueue.ComputeEnvironmentOrder
+### VaporShell.Resource.Batch.JobQueue.ComputeEnvironmentOrder
 
 ## NOTES
 

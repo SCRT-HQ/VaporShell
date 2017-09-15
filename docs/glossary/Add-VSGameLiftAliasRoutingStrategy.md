@@ -82,7 +82,7 @@ Accept wildcard characters: False
 
 ## OUTPUTS
 
-### Vaporshell.Resource.GameLift.Alias.RoutingStrategy
+### VaporShell.Resource.GameLift.Alias.RoutingStrategy
 
 ## NOTES
 

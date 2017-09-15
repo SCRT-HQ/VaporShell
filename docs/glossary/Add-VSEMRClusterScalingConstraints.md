@@ -64,7 +64,7 @@ Accept wildcard characters: False
 
 ## OUTPUTS
 
-### Vaporshell.Resource.EMR.Cluster.ScalingConstraints
+### VaporShell.Resource.EMR.Cluster.ScalingConstraints
 
 ## NOTES
 

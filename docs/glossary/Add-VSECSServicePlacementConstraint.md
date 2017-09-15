@@ -64,7 +64,7 @@ Accept wildcard characters: False
 
 ## OUTPUTS
 
-### Vaporshell.Resource.ECS.Service.PlacementConstraint
+### VaporShell.Resource.ECS.Service.PlacementConstraint
 
 ## NOTES
 

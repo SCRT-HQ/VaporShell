@@ -158,7 +158,7 @@ Accept wildcard characters: False
 
 ## OUTPUTS
 
-### Vaporshell.Resource.ECS.Cluster
+### VaporShell.Resource.ECS.Cluster
 
 ## NOTES
 

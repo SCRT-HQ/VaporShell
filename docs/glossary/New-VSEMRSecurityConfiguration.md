@@ -177,7 +177,7 @@ Accept wildcard characters: False
 
 ## OUTPUTS
 
-### Vaporshell.Resource.EMR.SecurityConfiguration
+### VaporShell.Resource.EMR.SecurityConfiguration
 
 ## NOTES
 

@@ -85,7 +85,7 @@ Accept wildcard characters: False
 
 ## OUTPUTS
 
-### Vaporshell.Resource.Config.ConfigurationRecorder.RecordingGroup
+### VaporShell.Resource.Config.ConfigurationRecorder.RecordingGroup
 
 ## NOTES
 

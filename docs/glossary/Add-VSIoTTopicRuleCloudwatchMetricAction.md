@@ -137,7 +137,7 @@ Accept wildcard characters: False
 
 ## OUTPUTS
 
-### Vaporshell.Resource.IoT.TopicRule.CloudwatchMetricAction
+### VaporShell.Resource.IoT.TopicRule.CloudwatchMetricAction
 
 ## NOTES
 

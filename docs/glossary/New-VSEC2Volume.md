@@ -306,7 +306,7 @@ Accept wildcard characters: False
 
 ## OUTPUTS
 
-### Vaporshell.Resource.EC2.Volume
+### VaporShell.Resource.EC2.Volume
 
 ## NOTES
 

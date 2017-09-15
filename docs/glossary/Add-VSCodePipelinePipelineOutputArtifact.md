@@ -46,7 +46,7 @@ Accept wildcard characters: False
 
 ## OUTPUTS
 
-### Vaporshell.Resource.CodePipeline.Pipeline.OutputArtifact
+### VaporShell.Resource.CodePipeline.Pipeline.OutputArtifact
 
 ## NOTES
 

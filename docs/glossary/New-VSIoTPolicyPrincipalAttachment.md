@@ -177,7 +177,7 @@ Accept wildcard characters: False
 
 ## OUTPUTS
 
-### Vaporshell.Resource.IoT.PolicyPrincipalAttachment
+### VaporShell.Resource.IoT.PolicyPrincipalAttachment
 
 ## NOTES
 

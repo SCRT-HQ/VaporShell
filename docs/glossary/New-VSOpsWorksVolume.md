@@ -213,7 +213,7 @@ Accept wildcard characters: False
 
 ## OUTPUTS
 
-### Vaporshell.Resource.OpsWorks.Volume
+### VaporShell.Resource.OpsWorks.Volume
 
 ## NOTES
 

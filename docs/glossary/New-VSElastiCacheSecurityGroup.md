@@ -158,7 +158,7 @@ Accept wildcard characters: False
 
 ## OUTPUTS
 
-### Vaporshell.Resource.ElastiCache.SecurityGroup
+### VaporShell.Resource.ElastiCache.SecurityGroup
 
 ## NOTES
 

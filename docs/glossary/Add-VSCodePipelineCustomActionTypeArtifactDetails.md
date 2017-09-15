@@ -64,7 +64,7 @@ Accept wildcard characters: False
 
 ## OUTPUTS
 
-### Vaporshell.Resource.CodePipeline.CustomActionType.ArtifactDetails
+### VaporShell.Resource.CodePipeline.CustomActionType.ArtifactDetails
 
 ## NOTES
 

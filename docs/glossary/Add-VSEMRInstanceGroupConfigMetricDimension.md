@@ -64,7 +64,7 @@ Accept wildcard characters: False
 
 ## OUTPUTS
 
-### Vaporshell.Resource.EMR.InstanceGroupConfig.MetricDimension
+### VaporShell.Resource.EMR.InstanceGroupConfig.MetricDimension
 
 ## NOTES
 

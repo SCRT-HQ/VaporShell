@@ -342,7 +342,7 @@ Accept wildcard characters: False
 
 ## OUTPUTS
 
-### Vaporshell.Resource.SQS.Queue
+### VaporShell.Resource.SQS.Queue
 
 ## NOTES
 
