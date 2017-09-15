@@ -1,47 +1,37 @@
 ---
 layout: page 
 title: Change Log
-description: Changes within each release of VaporShell and plans/ideas for the future 
 ---
 <!-- TOC -->
 
-- [Upcoming](#upcoming)
-    - [In-Progress](#in-progress)
-    - [Long-Term](#long-term)
-- [Historical](#historical)
-    - [1.2.2](#122)
-    - [1.2.0](#120)
-    - [1.1.5](#115)
-    - [1.1.0](#110)
-    - [1.0.0](#100)
-    - [0.7.10](#0710)
-    - [0.7.9](#079)
-    - [0.7.8](#078)
-    - [0.7.7](#077)
-    - [0.7.6](#076)
-    - [0.7.5](#075)
-    - [0.7.4](#074)
-    - [0.7.3](#073)
-    - [0.7.2](#072)
+- [2.0.0](#200)
+- [1.2.3](#123)
+- [1.2.2](#122)
+- [1.2.0](#120)
+- [1.1.5](#115)
+- [1.1.0](#110)
+- [1.0.0](#100)
+- [0.7.10](#0710)
+- [0.7.09](#0709)
+- [0.7.08](#0708)
+- [0.7.07](#0707)
+- [0.7.06](#0706)
+- [0.7.05](#0705)
+- [0.7.04](#0704)
+- [0.7.03](#0703)
+- [0.7.02](#0702)
 
 <!-- /TOC -->
 
-***
+### 2.0.0
 
-## Upcoming
-
-### In-Progress
-
-- [Issue #3](https://github.com/scrthq/VaporShell/issues/3): Enable external config files for template reuse across environments
-
-### Long-Term
-
-- Add support for other Cloud Providers such as Google Cloud Platform, Azure
+- Completely wrapped the AWS .NET SDK's CloudFormation model, allowing for full stack / change set / stack set management from VaporShell
+- Fixed Export-VaporShell to work with PowerShell v3 and v4 ([Issue #15](https://github.com/scrthq/VaporShell/issues/15))
 
 
-***
+### 1.2.3
 
-## Historical
+- Added native template validation via the AWS .NET SDK (core and 45)
 
 ### 1.2.2
 
@@ -78,41 +68,41 @@ description: Changes within each release of VaporShell and plans/ideas for the f
 - Expanded `Add-UserData` functionality to detect ps1, bat & cmd files and tag them if needed
 
 
-### 0.7.9
+### 0.7.09
 
 - Fixed issue where List parameters with single values were being cast as a single string/object instead of an array with a single string/object
 
 
-### 0.7.8
+### 0.7.08
 
 - Added `-ValidateTemplate` parameter to leverage `aws cloudformation validate-template` for syntax validation
 
 
-### 0.7.7
+### 0.7.07
 
 - AppVeyor config updates
 
 
-### 0.7.6 
+### 0.7.06 
 
 - Added in FunctionBuilder and finished building all resource and resource property types
 
 
-### 0.7.5 
+### 0.7.05 
 
 - Added `Add-UserData`
 
 
-### 0.7.4 
+### 0.7.04 
 
 - Added Coveralls.io code coverage grading to CI process
 
 
-### 0.7.3
+### 0.7.03
 
 - Expanded AppVeyor tests
 
 
-### 0.7.2
+### 0.7.02
 
 - Updated module minor version to 7
