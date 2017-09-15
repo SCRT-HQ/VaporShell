@@ -26,14 +26,14 @@ data2: Shallow
 ## Setting Up VaporShell
 ### Prerequisites
 
-In order to install VaporShell from the Powershell Gallery and run it successfully once installed, the following must be true:
+In order to install VaporShell from the PowerShell Gallery and run it successfully once installed, the following must be true:
 
-1. Powershell v3.0 or greater is installed.
+1. PowerShell v3.0 or greater is installed.
     - If you are running on Windows, you can check this off after confirming the installed version via running `$PSVersionTable` to show your PS version. Typically, you'll only be on a lower version if you're running Windows 7 / Server 2008 and have not upgraded WMF yet.
-    - If you are not running Windows, head over to the official [Powershell GitHub page](https://github.com/powershell/powershell#get-powershell) for details on how to install Powershell on your system.
-2. The PowershellGet module is installed.
+    - If you are not running Windows, head over to the official [PowerShell GitHub page](https://github.com/PowerShell/PowerShell#get-PowerShell) for details on how to install PowerShell on your system.
+2. The PowerShellGet module is installed.
     - If you are running Windows 10, WMF 5.1, or are running Linux or macOS, you're covered.
-    - If you do not have it, you can install PowershellGet by:
+    - If you do not have it, you can install PowerShellGet by:
         1. [Upgrading your WMF installation to the latest version](http://aka.ms/wmf5latest)
         2. [Installing the module via MSI installer directly](http://go.microsoft.com/fwlink/?LinkID=746217&clcid=0x409)
 
@@ -47,7 +47,7 @@ Running `Export-VaporShell -Path $path -VaporShellTemplate $template -ValidateTe
 
 Running `Export-VaporShell -Path $path -VaporShellTemplate $template -As YAML` would be the same as running the following command against the resulting JSON template file:
 
-{% highlight powershell linenos %}
+{% highlight PowerShell linenos %}
 Export-VaporShell -Path $path -VaporShellTemplate $template
 cfn-flip $path | Set-Content $path -Force
 {% endhighlight %}
@@ -56,10 +56,10 @@ Have any suggestions to extend that? Let us know! [Click here to view the AWS CL
 
 ### Installing the Module
 
-To install VaporShell from the PowershellGallery, open Powershell and run the following command:  
+To install VaporShell from the PowerShellGallery, open PowerShell and run the following command:  
 `Install-Module -Name VaporShell -Scope CurrentUser`
 
-_If you would like to install for all users, run the following command in an **elevated** Powershell prompt:_  
+_If you would like to install for all users, run the following command in an **elevated** PowerShell prompt:_  
 `Install-Module -Name VaporShell`
 
 ***
@@ -91,7 +91,7 @@ The `VaporShell.Template` object contains ScriptMethods to add and remove items 
 
 Here's a quick conversion of an [AWS sample template](https://s3-us-west-1.amazonaws.com/cloudformation-templates-us-west-1/S3_Website_Bucket_With_Retain_On_Delete.template) into VaporShell, followed by the JSON example from AWS. This template adds 1 Resource (an S3 Bucket) and 2 Outputs:
 
-{% highlight powershell linenos %}
+{% highlight PowerShell linenos %}
 <# Import the module #>
 Import-Module VaporShell
 
@@ -152,7 +152,7 @@ JSON sample: [Amazon S3 bucket with a deletion policy](https://s3-us-west-1.amaz
 ### End: Export and Validate
 
 Once you have your template object filled out, the next step is to export it to a template file. At the end of your template script you would just need to add the following:  
-{% highlight powershell linenos %}
+{% highlight PowerShell linenos %}
 <# Set your template path (update to your preferred template location - this is just an example) #>
 $JSON = ".\path\to\template.json"
 
@@ -161,7 +161,7 @@ Export-VaporShell -Path $JSON -VaporShellTemplate $template -Force
 {% endhighlight %}
 
 Want to also leverage AWS CLI Tools to validate the exported template? As long as the AWS CLI Tools are installed, configured (minimum is adding the key, secret and setting the default region), you can add the `-ValidateTemplate` switch to the `Export-VaporShell` call:  
-{% highlight powershell linenos %}
+{% highlight PowerShell linenos %}
 Export-VaporShell -Path $JSON -VaporShellTemplate $template -ValidateTemplate
 {% endhighlight %}
 

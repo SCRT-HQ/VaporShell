@@ -41,21 +41,21 @@ data2: Deep
 The `VaporShell.Template` is created when you either initialize a new template with `Initialize-VaporShell` or import an existing one with `Import-VaporShell`. This object includes an Add and Remove script method for each of the following template attributes (examples of each for reference):
 
 - Metadata  
-{% highlight powershell linenos %}
+{% highlight PowerShell linenos %}
 $template = Initialize-VaporShell
 $template.AddMetadata( (New-VaporMetadata -LogicalId "Instances" -Metadata @{Description = "These are my instances"}) )
 $template.RemoveMetadata( "Instances" )
 {% endhighlight %}
 
 - Parameters  
-{% highlight powershell linenos %}
+{% highlight PowerShell linenos %}
 $template = Initialize-VaporShell
 $template.AddParameter( (New-VaporParameter -LogicalId "DBPassword" -Type String -NoEcho ) )
 $template.RemoveParameter( "DBPassword" )
 {% endhighlight %}
 
 - Mappings  
-{% highlight powershell linenos %}
+{% highlight PowerShell linenos %}
 $template = Initialize-VaporShell
 $template.AddMapping( (New-VaporMapping -LogicalId "RegionMap" -Map @{
             "us-east-1" = @{
@@ -73,21 +73,21 @@ $template.RemoveMapping( "RegionMap" )
 {% endhighlight %}
 
 - Conditions  
-{% highlight powershell linenos %}
+{% highlight PowerShell linenos %}
 $template = Initialize-VaporShell
 $template.AddCondition( (New-VaporCondition -LogicalId "CreateProdResources" -Condition (Add-ConEquals -FirstValue (Add-FnRef -Ref "EnvType") -SecondValue "prod") ) )
 $template.RemoveCondition( "CreateProdResources" )
 {% endhighlight %}
 
 - Resources  
-{% highlight powershell linenos %}
+{% highlight PowerShell linenos %}
 $template = Initialize-VaporShell
 $template.AddResource( (New-VSApiGatewayRestApi -LogicalId "MyApi" -Description "My REST API") )
 $template.RemoveResource( "MyApi" )
 {% endhighlight %}
 
 - Outputs  
-{% highlight powershell linenos %}
+{% highlight PowerShell linenos %}
 $template = Initialize-VaporShell
 $template.AddOutput( (New-VaporOutput -LogicalId "BackupLoadBalancerDNSName" -Description "The DNSName of the backup load balancer" -Value (Add-FnGetAtt -LogicalNameOfResource "BackupLoadBalancer" -AttributeName "DNSName") ) )
 $template.RemoveOutput( "BackupLoadBalancerDNSName" )
@@ -95,7 +95,7 @@ $template.RemoveOutput( "BackupLoadBalancerDNSName" )
 
 - Transforms  
 _If you'd like to add/remove a top level transform, you would use the following script methods:_
-{% highlight powershell linenos %}
+{% highlight PowerShell linenos %}
 $template = Initialize-VaporShell
 $template.AddTransform( (Add-Include -Location "s3://MyAmazonS3BucketName/single_wait_condition.yaml") )
 $template.RemoveTransform( )
@@ -170,7 +170,7 @@ Resource Property Types are typically not passed directly into a template attrib
 
 Here's an example of a resource property [ApiGatewayDeploymentStageDescription] passed in as a parameter for a resource [ApiGatewayDeployment], with another resource property passed into it [ApiGatewayDeploymentMethodSetting]:
 
-{% highlight powershell linenos %}
+{% highlight PowerShell linenos %}
 $template.AddResource(
     (New-VSApiGatewayDeployment -LogicalId "GatewayDeployment" -StageDescription (Add-VSApiGatewayDeploymentStageDescription -MethodSettings (Add-VSApiGatewayDeploymentMethodSetting -LoggingLevel ERROR) ) )
 )
@@ -193,17 +193,17 @@ Resource Attributes are typically policies surrounding resources, such as Creati
 Adding UserData to a Resource with VaporShell is designed to be quick and easy with the `Add-UserData` function. You have the option to either provide an array of Strings and/or Intrinsic Functions, a single String or Intrinsic Function, or even read from a local file.
 
 Important items to remember when using `Add-UserData`:
-- Special characters in `-String` parameter values should be written in Powershell format (i.e. `n instead of \n). These will be converted to JSON format once the VaporShell template is exported.
+- Special characters in `-String` parameter values should be written in PowerShell format (i.e. `n instead of \n). These will be converted to JSON format once the VaporShell template is exported.
 - If using the `-File` parameter, the local file must not contain any Intrinsic Functions, as they will be escaped when the template object is exported and taken as string literals.
-- If using the `-File` parameter with Powershell or CMD script files (Windows-centric UserData), you do not need to place the powershell/script open and close tags in the script file. This allows you to develop and test the script without them to prevent errors from unknown commands being run.
-    - If the file is a .ps1, `Add-UserData` will add in the open `<powershell>` and close `</powershell>` tags if the script file does not already contain them. 
+- If using the `-File` parameter with PowerShell or CMD script files (Windows-centric UserData), you do not need to place the PowerShell/script open and close tags in the script file. This allows you to develop and test the script without them to prevent errors from unknown commands being run.
+    - If the file is a .ps1, `Add-UserData` will add in the open `<PowerShell>` and close `</PowerShell>` tags if the script file does not already contain them. 
     - If the file is a .bat or .cmd, it will add in `<script>` and `</script>` if not already present on the file itself.
 
 ##### Using the String parameter
 
 Here's an example of how you would use the String parameter:
 
-{% highlight powershell linenos %}
+{% highlight PowerShell linenos %}
 New-VSEC2Instance -UserData (Add-UserData -String `
     "#!/bin/bash -xe`n",
     "yum update -y aws-cfn-bootstrap`n",
@@ -222,7 +222,7 @@ New-VSEC2Instance -UserData (Add-UserData -String `
 ##### Using the File parameter
 
 Here's an example of how you would do the same thing using the File parameter:
-{% highlight powershell linenos %}
+{% highlight PowerShell linenos %}
 New-VSEC2Instance -UserData (Add-UserData -File ".\UserData.sh") -LogicalId "MyInstance" -AvailabilityZone "us-west-1a" -ImageId "ami-6411e20d"
 {% endhighlight %}
 
@@ -250,7 +250,7 @@ VaporShell has full coverage of the Serverless transform resources as of version
 
 Here's an example of using Serverless transforms to build this [example template found on awslabs' GitHub](https://github.com/awslabs/serverless-application-model/blob/master/examples/2016-10-31/api_backend/template.yaml):
 
-{% highlight powershell linenos %}
+{% highlight PowerShell linenos %}
 $t = Initialize-VaporShell -Description "Simple CRUD webservice. State is stored in a SimpleTable (DynamoDB) resource."
 $t.AddResource(
     ( New-SAMFunction -LogicalId "GetFunction" -Handler "index.get" -Runtime "nodejs4.3" -CodeUri "s3://<bucket>/api_backend.zip" -Policies "AmazonDynamoDBReadOnlyAccess" -Environment (@{TABLE_NAME = (Add-FnRef "Table")}) -Events (Add-SAMApiEventSource -LogicalId "GetResource" -Path "/resource/{resourceId}" -Method "get") ),
@@ -421,7 +421,7 @@ VaporShell includes functions for each Intrinsic function. You can find more inf
 
 Here's an example where the `Add-FnRef` function is used to fill out the RestApiId for an APIGatewayDeployment:
 
-{% highlight powershell linenos %}
+{% highlight PowerShell linenos %}
 $template.AddResource(
     (New-VSApiGatewayDeployment -LogicalId "GatewayDeployment" -RestApiId (Add-FnRef -Ref "MyApi"))
 )

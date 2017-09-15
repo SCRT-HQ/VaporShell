@@ -2,6 +2,7 @@
 _ignored**
 ref/**
 **insync**
+.vscode
 
 # Jekyll ignores
 .sass-cache/

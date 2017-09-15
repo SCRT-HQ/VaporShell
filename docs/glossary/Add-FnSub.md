@@ -24,7 +24,7 @@ The intrinsic function Fn::Sub substitutes variables in an input string with val
 In your templates, you can use this function to construct commands or outputs that include values that aren't available until you create or update a stack.
 
 ** Important **
-    As Fn::Sub uses ${Var} syntax, it's important to remember to escape the $ at the head of the subbed variable when calling the function, otherwise Powershell will attempt to convert the variable into a value when adding it to the object and break the CloudFormation function's intended use.
+    As Fn::Sub uses ${Var} syntax, it's important to remember to escape the $ at the head of the subbed variable when calling the function, otherwise PowerShell will attempt to convert the variable into a value when adding it to the object and break the CloudFormation function's intended use.
 
     Please see the example below for reference.
 
@@ -34,7 +34,7 @@ In your templates, you can use this function to construct commands or outputs th
 Input string with the Variable names surrounded in braces, i.e.
 "/opt/aws/bin/cfn-init -v --stack ${AWS::StackName} --resource LaunchConfig --configsets wordpress_install --region ${AWS::Region}"
 
-You MUST escape the dollar sign before each variable brace when using this module, otherwise Powershell will attempt to convert it to a variable and not take it as a literal string.
+You MUST escape the dollar sign before each variable brace when using this module, otherwise PowerShell will attempt to convert it to a variable and not take it as a literal string.
 
 ```yaml
 Type: String

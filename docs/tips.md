@@ -18,9 +18,9 @@ data1: Documentation
 
 ### Remember the Parentheses!
 
-**VaporShell is pure Powershell and should be approached accordingly**  
+**VaporShell is pure PowerShell and should be approached accordingly**  
 This means that you should work with commands the same as you would on any other script. The most common case in point is wrapping your commands in parentheses when adding them in as Parameter Values. In the following example, you can see the parentheses around the full `New-VaporOutput` command, as well as around the value of the `-Value` parameter, as we're using the `Add-FnGetAtt` function to add an `Fn::GetAtt` Intrinsic Function for the value.
-{% highlight powershell linenos %}
+{% highlight PowerShell linenos %}
 $template.AddOutput(  (New-VaporOutput -LogicalId "WebsiteURL" -Value (Add-FnGetAtt -LogicalNameOfResource "S3Bucket" -AttributeName "WebsiteURL") -Description "URL for website hosted on S3")  )
 {% endhighlight %}
 
@@ -29,7 +29,7 @@ $template.AddOutput(  (New-VaporOutput -LogicalId "WebsiteURL" -Value (Add-FnGet
 
 ## Different Strokes
 
-The beauty of leveraging Powershell is that you can organize your template builds in whatever way works best for you; the only constant being that you'll need to keep your `Import-Module VaporShell` at the top of the script to prevent errors from functions not being found. 
+The beauty of leveraging PowerShell is that you can organize your template builds in whatever way works best for you; the only constant being that you'll need to keep your `Import-Module VaporShell` at the top of the script to prevent errors from functions not being found. 
 
 Here are a couple examples of different approaches to laying out a template script:
 
@@ -38,7 +38,7 @@ Here are a couple examples of different approaches to laying out a template scri
 Store your VaporShell objects in variables at the top of the script, adding them in after using the variables.
 _This approach allows you to clearly list your resources, parameters, etc, at the top of the script_
 
-{% highlight powershell linenos %}
+{% highlight PowerShell linenos %}
 \# Import the module
 Import-Module VaporShell
 
@@ -62,7 +62,7 @@ Export-VaporShell -Path $JSON -VaporShellTemplate $template -Force -ValidateTemp
 Store your VaporShell objects in external scripts, then **dot source** the script files to add them to the template.
 _This allows external resource sharing so you can cut down on code even further. Dot sourcing is critical to ensure that the external script is loaded into the current session, not called in an external process!_
 
-{% highlight powershell linenos %}
+{% highlight PowerShell linenos %}
 \# Import the module
 Import-Module VaporShell
 

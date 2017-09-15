@@ -13,11 +13,11 @@ title: About
 
 # *VaporShell* 
 
-VaporShell is a module for Powershell that allows easier and less error prone build outs of AWS CloudFormation JSON templates using familiar syntax and structure to define AWS resources, while simultaneously gaining the capabilities of Powershell and removing the need to work with JSON directly.
+VaporShell is a module for PowerShell that allows easier and less error prone build outs of AWS CloudFormation JSON templates using familiar syntax and structure to define AWS resources, while simultaneously gaining the capabilities of PowerShell and removing the need to work with JSON directly.
 
 VaporShell allows you to either initialize a new template or import an existing template, add appropriate properties and export it out to JSON.
 
-For those that are familiar with [Troposphere for Python by CloudTools](https://github.com/cloudtools/troposphere), this aims to be an equivalent option for Powershell users.
+For those that are familiar with [Troposphere for Python by CloudTools](https://github.com/cloudtools/troposphere), this aims to be an equivalent option for PowerShell users.
 
 ***
 
@@ -29,19 +29,19 @@ For those that are familiar with [Troposphere for Python by CloudTools](https://
 
 ## How to Install
 
-[![PS Gallery](https://img.shields.io/badge/install-PS%20Gallery-blue.svg)](https://www.powershellgallery.com/packages/VaporShell)
+[![PS Gallery](https://img.shields.io/badge/install-PS%20Gallery-blue.svg)](https://www.PowerShellgallery.com/packages/VaporShell)
 
-You can install the module directly from [Powershell Gallery](https://www.powershellgallery.com/packages/VaporShell) by running the following command in and administrator Powershell console:
+You can install the module directly from [PowerShell Gallery](https://www.PowerShellgallery.com/packages/VaporShell) by running the following command in and administrator PowerShell console:
 
 `Install-Module -Name VaporShell`
 
-NOTE: This requires the PowerShellGet module. This comes standard for Windows 10, Linux and MacOS users that have Powershell, but may require installation for other OS's. [Please check out Getting Started with the Gallery](https://www.powershellgallery.com/) for more info. 
+NOTE: This requires the PowerShellGet module. This comes standard for Windows 10, Linux and MacOS users that have PowerShell, but may require installation for other OS's. [Please check out Getting Started with the Gallery](https://www.PowerShellgallery.com/) for more info. 
 
 ***
 
 ## Test Notes
 
-Continous testing and development is being done in Windows, MacOS and Linux (Ubuntu). **If your OS of choice can run Powershell, you should have no issues running this module.** 
+Continous testing and development is being done in Windows, MacOS and Linux (Ubuntu). **If your OS of choice can run PowerShell, you should have no issues running this module.** 
 
 ***
 
@@ -58,7 +58,7 @@ Thanks!
 ## Examples
 _Full documentation is being prepared right now._
 
-```powershell
+```PowerShell
 $templateInit = $null
 $templateInit = Initialize-VaporShell -Description "Testing"
 $templateInit.AddMetadata((New-VaporMetadata -LogicalId "Instances" -Metadata @{"Description" = "Information about the instances"}))
