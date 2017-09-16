@@ -8,7 +8,7 @@
   <strong>Build | Package | Deploy</strong>
 </div>
 <div align="center">
-  A PowerShell module for AWS CloudFormation :cloud:
+  A PowerShell module for building, packaging and deploying AWS CloudFormation templates :cloud:
 </div>
 
 <br />
