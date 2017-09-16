@@ -17,7 +17,10 @@ Write-Host "Uncompressing the Zip file to $($targetondisk)" -ForegroundColor Cya
 $destination = $shell_app.namespace($targetondisk)
 $destination.Copyhere($zip_file.items(), 0x10)
 # Rename and import
-Write-Host "Renaming folder" -ForegroundColor Cyan
-Rename-Item -Path ($targetondisk+"\VaporShell-master") -NewName "VaporShell" -Force
+Write-Host "Moving module folder to direct module path" -ForegroundColor Cyan
+Move-Item -Path "$targetondisk\VaporShell-master\VaporShell" -Destination $targetondisk -Force
+Write-Host -ForegroundColor Cyan "Cleaning up extra files"
+Remove-Item -Path "$targetondisk\VaporShell-master" -Force -Recurse -Confirm:$false
+Remove-Item -Path $file -Force -Confirm:$false
 Write-Host "Module has been installed" -ForegroundColor Green
 Import-Module -Name VaporShell
