@@ -47,22 +47,34 @@ function Import-Vaporshell {
     }
     $tempObj = ConvertFrom-Json -InputObject $TemplateBody -Verbose:$false
     $toJSON = {
-        Export-Vaporshell -VaporshellTemplate $this -As JSON -Verbose:$false
+        Process {
+            $outFile = @{}
+            foreach ($obj in $args) {
+                $outFile["Path"] = $obj
+            }
+            Export-Vaporshell -VaporshellTemplate $this -As JSON -Verbose:$false @outFile -Force
+        }
     }
     $memberParam = @{
         MemberType  = "ScriptMethod"
         InputObject = $tempObj
-        Name        = "ToJson"
+        Name        = "ToJSON"
         Value       = $toJSON
     }
     Add-Member @memberParam
     $toYAML = {
-        Export-Vaporshell -VaporshellTemplate $this -As YAML -Verbose:$false
+        Process {
+            $outFile = @{}
+            foreach ($obj in $args) {
+                $outFile["Path"] = $obj
+            }
+            Export-Vaporshell -VaporshellTemplate $this -As YAML -Verbose:$false @outFile -Force
+        }
     }
     $memberParam = @{
         MemberType  = "ScriptMethod"
         InputObject = $tempObj
-        Name        = "ToYaml"
+        Name        = "ToYAML"
         Value       = $toYAML
     }
     Add-Member @memberParam

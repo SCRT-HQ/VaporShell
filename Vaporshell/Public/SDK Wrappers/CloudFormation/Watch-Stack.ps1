@@ -21,9 +21,9 @@ function Watch-Stack {
     Param
     (
         [parameter(Mandatory = $true, ValueFromPipelineByPropertyName = $true)]
-        [Alias("StackName")]
+        [Alias("StackId")]
         [String]
-        $StackId,
+        $StackName,
         [parameter(Mandatory = $false)]
         [Switch]
         $InNewWindow,
@@ -41,7 +41,7 @@ function Watch-Stack {
             return
         }
         else {
-            $command = "Import-Module `"$($Script:VaporshellPath)\Vaporshell.psd1`" -ArgumentList `$false,`$true -Verbose:`$false;Clear-Host;. '$($Script:VaporshellPath)\bin\SetWatchWindow.ps1' -StackId '$StackId';Watch-Stack -StackId '$StackId' -RefreshRate $RefreshRate"
+            $command = "Import-Module `"$($Script:VaporshellPath)\Vaporshell.psd1`" -ArgumentList `$false,`$true -Verbose:`$false;Clear-Host;. '$($Script:VaporshellPath)\bin\SetWatchWindow.ps1' -StackId '$StackName';Watch-Stack -StackName '$StackName' -RefreshRate $RefreshRate"
             if ($ProfileName) {
                 $command += " -ProfileName '$ProfileName'"
             }
@@ -56,12 +56,12 @@ function Watch-Stack {
             $prof["ProfileName"] = $ProfileName
         }
         $strings = @()
-        $head = "`nSTACK ID : $StackId`nREFRESH  : $RefreshRate seconds`n"
+        $head = "`nSTACK NAME : $StackName`nREFRESH  : $RefreshRate seconds`n"
         Colorize $head
         do {
             try {
-                $results = Get-VSStack -Events -StackId "$StackId" @prof -ErrorAction Stop
-                $StackId = $results[0].StackId
+                $results = Get-VSStack -Events -StackId "$StackName" @prof -ErrorAction Stop -Verbose:$false
+                $StackName = $results[0].StackId
                 $stack = ($results | Sort-Object timestamp | Select-Object Timestamp,ResourceStatus,StackName,ResourceType,ResourceStatusReason | Format-Table -AutoSize | Out-String) -split "`n" | Where-Object {!([String]::IsNullOrWhiteSpace($_)) -and $strings -notcontains $_.Trim()}
                 $strings += $stack | ForEach-Object {$_.Trim()}
                 Colorize $stack

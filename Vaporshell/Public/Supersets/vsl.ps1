@@ -51,7 +51,7 @@ function vsl {
     if ($help -or $parameters -match '^--help$') {
         $message = switch ($action) {
             package {@'
-vsl package --template-file <value> --s3-bucket <value> [--s3-prefix <value>] [--kms-key-id <value>] [--output-template-file <value>] [--use-json] [--force-upload] [--profile-name <value>] [--verbose {info (default)|full}]
+vsl package --template-file <value> --s3-bucket <value> [--s3-prefix <value>] [--kms-key-id <value>] [--output-template-file <value>] [--use-json] [--force-upload] [--profile-name <value>] [--verbose]
 
 
 ~ ~ ~ DESCRIPTION ~ ~ ~
@@ -76,6 +76,8 @@ For example, if your AWS Lambda function source code is in the /home/user/code/l
 
 REQUIRED
     --tf, --template-file (string) The path where your AWS CloudFormation template is located.
+        OR
+    --tb, --template-body (string) The stringified template body
 
     --s3, --s3-bucket (string) The name of the S3 bucket where this command uploads the artifacts that are referenced in your template.
 
@@ -93,11 +95,11 @@ OPTIONAL
     
     --pn, --profile-name (string) The name of the saved configuration you would like to use for this command. Defaults to $env:AWS_PROFILE if set.
 
-    --v, --verbose (boolean | string) Enables verbose output on the console. Passing no following value with treat this as a boolean 'true'. Passing 'info' as the value will achieve the same result as passing nothing. Passing 'full' as the value will enable full verbosity (useful for debugging what parameters are being passed to the different functions throughout the command).
+    --v, --verbose (boolean | string) Enables verbose output on the console.
 '@
             }
             deploy {@'
-vsl deploy --template-file <value> --stack-name <value> [--parameter-overrides <value> [<value>...]] [--capabilities <value> [<value>...]] [--no-execute-changeset] [--role-arn <value>] [--notification-arns <value> [<value>...]] [--profile-name <value>] [--verbose {info (default)|full}]
+vsl deploy --template-file <value> --stack-name <value> [--parameter-overrides <value> [<value>...]] [--capabilities <value> [<value>...]] [--no-execute-changeset] [--role-arn <value>] [--notification-arns <value> [<value>...]] [--profile-name <value>] [--verbose]
             
             
 ~ ~ ~ DESCRIPTION ~ ~ ~
@@ -111,11 +113,15 @@ To update a stack, specify the name of an existing stack. To create a new stack,
 
 REQUIRED
     --tf, --template-file (string) The path where your AWS CloudFormation template is located.
+        OR
+    --tb, --template-body (string) The stringified template body
 
     --sn, --stack-name (string) The name of the AWS CloudFormation stack you're deploying to. If you specify an existing stack, the command updates the stack. If you specify a new stack, the command creates it.
 
 
 OPTIONAL
+    --w, --watch (boolean) Immediately starts Watch-Stack after deployment executes. If in Windows, it will open a new window, otherwise it will display in your current terminal window
+
     --parameter-overrides (list) A list of parameter structures that specify input parameters for your stack template. If you're updating a stack and you don't specify a parameter, the command uses the stack's existing value. For new stacks, you must specify parameters that don't have a default value. Syntax: ParameterKey1=ParameterValue1 ParameterKey2=ParameterValue2 ...
 
     --capabilities (list) A list of capabilities that you must specify before AWS Cloudformation can create certain stacks. Some stack templates might include resources that can affect permissions in your AWS account, for example, by creating new AWS Identity and Access Management (IAM) users. For those stacks, you must explicitly acknowledge their capabilities by specifying this parameter. The only valid values are CAPABILITY_IAM and CAPABILITY_NAMED_IAM. If you have IAM resources, you can specify either capability. If you have IAM resources with custom names, you must specify CAPABILITY_NAMED_IAM. If you don't specify this parameter, this action returns an InsufficientCapabilities error.
@@ -128,11 +134,11 @@ OPTIONAL
     
     --pn, --profile-name (string) The name of the saved configuration you would like to use for this command. Defaults to $env:AWS_PROFILE if set.
 
-    --v, --verbose (boolean | string) Enables verbose output on the console. Passing no following value with treat this as a boolean 'true'. Passing 'info' as the value will achieve the same result as passing nothing. Passing 'full' as the value will enable full verbosity (useful for debugging what parameters are being passed to the different functions throughout the command).
+    --v, --verbose (boolean) Enables verbose output on the console.
 '@
             }
             vaporize {@'
-vsl vaporize --template-file <value> --stack-name <value> --s3-bucket <value> [--s3-prefix <value>] [--parameter-overrides <value> [<value>...]] [--capabilities <value> [<value>...]] [--no-execute-changeset] [--role-arn <value>] [--notification-arns <value> [<value>...]] [--kms-key-id <value>] [--output-template-file <value>] [--use-json] [--force-upload] [--profile-name <value>] [--verbose {info (default)|full}]
+vsl vaporize --template-file <value> --stack-name <value> [--s3-bucket <value>] [--s3-prefix <value>] [--parameter-overrides <value> [<value>...]] [--capabilities <value> [<value>...]] [--no-execute-changeset] [--role-arn <value>] [--notification-arns <value> [<value>...]] [--kms-key-id <value>] [--output-template-file <value>] [--use-json] [--force-upload] [--profile-name <value>] [--verbose]
 
 
 ~ ~ ~ DESCRIPTION ~ ~ ~
@@ -144,13 +150,17 @@ Combines both package and deploy into one command.
 
 REQUIRED
     --tf, --template-file (string) The path where your AWS CloudFormation template is located.
+        OR
+    --tb, --template-body (string) The stringified template body
     
     --sn, --stack-name (string) The name of the AWS CloudFormation stack you're deploying to. If you specify an existing stack, the command updates the stack. If you specify a new stack, the command creates it.
 
-    --s3, --s3-bucket (string) The name of the S3 bucket where this command uploads the artifacts that are referenced in your template.
-
 
 OPTIONAL
+    --w, --watch (boolean) Immediately starts Watch-Stack after deployment executes. If in Windows, it will open a new window, otherwise it will display in your current terminal window
+
+    --s3, --s3-bucket (string) The name of the S3 bucket where this command uploads the artifacts that are referenced in your template.
+
     --s3-prefix (string) A prefix name that the command adds to the artifacts' name when it uploads them to the S3 bucket. The prefix name is a path name (folder name) for the S3 bucket.
     
     --parameter-overrides (list) A list of parameter structures that specify input parameters for your stack template. If you're updating a stack and you don't specify a parameter, the command uses the stack's existing value. For new stacks, you must specify parameters that don't have a default value. Syntax: ParameterKey1=ParameterValue1 ParameterKey2=ParameterValue2 ...
@@ -173,35 +183,43 @@ OPTIONAL
     
     --pn, --prof, --profile-name (string) The name of the saved configuration you would like to use for this command. Defaults to $env:AWS_PROFILE if set.
 
-    --v, --verbose (boolean | string) Enables verbose output on the console. Passing no following value with treat this as a boolean 'true'. Passing 'info' as the value will achieve the same result as passing nothing. Passing 'full' as the value will enable full verbosity (useful for debugging what parameters are being passed to the different functions throughout the command).
+    --v, --verbose (boolean) Enables verbose output on the console.
 '@
             }
         }
         Write-Host $message
     }
     else {
-        $pkgAvails = @("TemplateBody","TemplateFile","S3Bucket","S3Prefix","KMSKeyId","OutputTemplateFile","UseJson","Force","ProfileName")
-        $pkgParams = @{}
-        $dplAvails = @("TemplateBody","TemplateFile","StackName","Parameters","Capabilities","DoNotExecute","RoleARN","NotificationARNs","ProfileName")
+        $paramHash = @{}
         $dplParams = @{}
+        $pkgParams = @{}
+        if ($parameters -match '^--v$' -or $parameters -match '^--verbose$') {
+            $VerboseSaved = $VerbosePreference
+            $VerbosePreference = "Continue"
+            $paramHash["Verbose"] = $true
+        }
+        Write-Verbose "Parsing parameters"
+        $pkgAvails = @("TemplateBody","TemplateFile","S3Bucket","S3Prefix","KMSKeyId","OutputTemplateFile","UseJson","Force","ProfileName","Verbose")
+        $dplAvails = @("TemplateBody","TemplateFile","StackName","Parameters","Capabilities","DoNotExecute","RoleARN","NotificationARNs","Watch","ProfileName","Verbose")
         $aliasHash = @{
             parameteroverrides = "Parameters"
             noexecutechangeset = "DoNotExecute"
             forceupload        = "Force"
             caps = "Capabilities"
             tf = "TemplateFile"
+            tb = "TemplateBody"
             sn = "StackName"
             s3 = "S3Bucket"
             pn = "ProfileName"
             prof = "ProfileName"
             v = "Verbose"
             f = "Force"
+            w = "Watch"
         }
         $capsHash = @{
             named = "CAPABILITY_NAMED_IAM"
             iam = "CAPABILITY_IAM"
         }
-        $paramHash = @{}
         $parameters | ForEach-Object {
             if ($_ -match '^--') {
                 $i = 0
@@ -213,12 +231,7 @@ OPTIONAL
             }
             else {
                 $i++
-                if ($lastvar -eq "verbose") {
-                    if ($_ -eq "full") {
-                        $fullVerbose = $true
-                    }
-                }
-                elseif ($lastvar -eq "Capabilities") {
+                if ($lastvar -eq "Capabilities") {
                     if ($capsHash[$_]) {
                         $val = $capsHash[$_]
                     }
@@ -268,14 +281,17 @@ OPTIONAL
                 }
             }
         }
-        if ($paramHash.Keys -notcontains "templatefile") {
-            $PSCmdlet.ThrowTerminatingError((New-VSError -String "--template-file not found in argument list! You must specify a template-file path for all actions"))
+        if ($paramHash.Keys -notcontains "templatefile" -and $paramHash.Keys -notcontains "templatebody") {
+            $PSCmdlet.ThrowTerminatingError((New-VSError -String "--template-file and --template-body not found in argument list! You must specify one for all actions"))
         }
         if ($paramHash.Keys -notcontains "stackname" -and ($action -eq "deploy" -or $action -eq "vaporize")) {
             $PSCmdlet.ThrowTerminatingError((New-VSError -String "--stack-name not found in argument list! You must specify a stack-name for either 'vsl deploy' or 'vsl vaporize'"))
         }
-        if ($paramHash.Keys -notcontains "s3bucket" -and ($action -eq "package" -or $action -eq "vaporize")) {
-            $PSCmdlet.ThrowTerminatingError((New-VSError -String "--s3-bucket not found in argument list! You must specify an s3-bucket for either 'vsl package' or 'vsl vaporize'"))
+        if ($paramHash.Keys -notcontains "s3bucket" -and $paramHash.Keys -notcontains "stackname" -and ($action -eq "package" -or $action -eq "vaporize")) {
+            $PSCmdlet.ThrowTerminatingError((New-VSError -String "--s3-bucket and --stackname not found in argument list! You must specify an s3-bucket for either 'vsl package' or 'vsl vaporize' or specify --stackname to upload to a bucket with the same name as the stack"))
+        }
+        if ($paramHash.Keys -notcontains "S3Bucket" -and $paramHash.Keys -contains "StackName") {
+            $paramHash["S3Bucket"] = ($paramHash["StackName"]).ToLower()
         }
         foreach ($key in $paramHash.Keys) {
             if ($pkgAvails -contains $key) {
@@ -285,31 +301,27 @@ OPTIONAL
                 $dplParams[$key] = $paramHash[$key]
             }
         }
-        if ($paramHash["Verbose"]) {
-            $VerboseSaved = $VerbosePreference
-            $VerbosePreference = "Continue"
-            Write-Verbose "vsl parameters:`n$($paramHash | Format-Table -AutoSize | Out-String)"
-            $VerbosePreference = $VerboseSaved
-        }
-        $verbProf = @{
-            Verbose = $false
-        }
-        if ($fullVerbose) {
-            $verbProf["Verbose"] = $true
-        }
-        switch ($action) {
-            package {
-                Invoke-VSPackage @pkgParams @verbProf
-            }
-            deploy {
-                Invoke-VSDeploy @dplParams @verbProf
-            }
-            vaporize {
-                if ($dplParams.Keys -contains "TemplateFile") {
-                    $dplParams.Remove("TemplateFile")
+        Write-Verbose "Parsed parameters:`n$($paramHash | Format-Table -AutoSize | Out-String)"
+        Write-Verbose "Invoking action: $action"
+        $VerbosePreference = $VerboseSaved
+        try {
+            switch ($action) {
+                package {
+                    Invoke-VSPackage @pkgParams
                 }
-                Invoke-VSPackage @pkgParams @verbProf | Invoke-VSDeploy @dplParams @verbProf
+                deploy {
+                    Invoke-VSDeploy @dplParams
+                }
+                vaporize {
+                    if ($dplParams.Keys -contains "TemplateFile") {
+                        $dplParams.Remove("TemplateFile")
+                    }
+                    Invoke-VSPackage @pkgParams | Invoke-VSDeploy @dplParams
+                }
             }
+        }
+        catch {
+            $PSCmdlet.ThrowTerminatingError($_)
         }
     }
 }

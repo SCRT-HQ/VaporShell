@@ -97,13 +97,14 @@ function Invoke-VSPackage {
             $s3Params["KMSKeyId"] = $KMSKeyId
         }
         try {
-            $bucketLoc = Get-VSS3BucketLocation -BucketName "$S3Bucket" @prof
+            Write-Verbose "Checking if bucket '$S3Bucket' exists"
+            $bucketLoc = Get-VSS3BucketLocation -BucketName "$S3Bucket" @prof -Verbose:$false
             Write-Verbose "Bucket '$S3Bucket' found in $($bucketLoc.Value)"
         }
         catch {
             if ($Force) {
                 Write-Verbose "Creating new bucket '$S3Bucket'"
-                New-VSS3Bucket -BucketName "$S3Bucket" @prof
+                New-VSS3Bucket -BucketName "$S3Bucket" @prof -Verbose:$false
             }
             else {
                 $PSCmdlet.ThrowTerminatingError($_)
@@ -111,7 +112,6 @@ function Invoke-VSPackage {
         }
     }
     Process {
-        Write-Verbose "Adding System.IO.Compression.Filesystem assembly"
         Add-Type -AssemblyName "System.IO.Compression.Filesystem"
         if ($PSCmdlet.ParameterSetName -eq "TemplateFile") {
             Write-Verbose "Getting TemplateBody from TemplateFile path"
@@ -170,20 +170,21 @@ function Invoke-VSPackage {
                                 $outFile = $filePath
                             }
                             if ($Force) {
-                                Write-Verbose "Creating object!"
-                                $obj = New-VSS3Object -Key $key -FilePath $outFile @s3Params @prof
+                                Write-Verbose "Uploading object!"
+                                $obj = New-VSS3Object -Key $key -FilePath $outFile @s3Params @prof -Verbose:$false
                             }
                             else {
-                                $existsMeta = Get-VSS3ObjectMetadata -BucketName $baseUrl -Key $key -ErrorAction SilentlyContinue
+                                Write-Verbose "Checking if object exists in bucket"
+                                $existsMeta = Get-VSS3ObjectMetadata -BucketName $baseUrl -Key $key -ErrorAction SilentlyContinue -Verbose:$false
                                 if (!$existsMeta) {
-                                    Write-Verbose "Object not found -- creating!"
-                                    $obj = New-VSS3Object -Key $key -FilePath $outFile @s3Params @prof
+                                    Write-Verbose "Object not found -- uploading!"
+                                    $obj = New-VSS3Object -Key $key -FilePath $outFile @s3Params @prof -Verbose:$false
                                 }
                                 elseif ($existsMeta.ContentLength -eq (Get-Item $outFile).Length) {
-                                    Write-Verbose "Object '$key' already exists in bucket and is the same length. No action apparently necessary -- If this file needs to be reuploaded, re-run this command with the Force parameter included."
+                                    Write-Verbose "Object '$key' already exists in bucket and is the same size. No action apparently necessary -- If this file needs to be reuploaded, re-run this command with the Force parameter included."
                                 }
                                 else {
-                                    Write-Verbose "Object already exists at this location and Force parameter not used. No action taken to prevent accidental overwrites. -- If this file needs to be overwritten, re-run this command with the Force parameter included."
+                                    Write-Verbose "Object already exists at this location and Force parameter not used. No action taken to prevent accidental overwrites. -- If this object needs to be overwritten, re-run this command with the Force parameter included."
                                 }
                             }
                             $Resource.Properties.$propName = "s3://$baseUrl/$key"
@@ -209,6 +210,7 @@ function Invoke-VSPackage {
         else {
             $finalParams["As"] = "YAML"
         }
+    Write-Verbose "Exporting resolved template"
     Export-Vaporshell -VaporshellTemplate $tempPSON @finalParams -Force
     }
 }

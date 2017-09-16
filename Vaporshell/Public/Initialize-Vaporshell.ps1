@@ -39,6 +39,38 @@ function Initialize-Vaporshell {
     if ($Description) {
         $tempObj | Add-Member -MemberType NoteProperty -Name "Description" -Value "$Description"
     }
+    $toJSON = {
+        Process {
+            $outFile = @{}
+            foreach ($obj in $args) {
+                $outFile["Path"] = $obj
+            }
+            Export-Vaporshell -VaporshellTemplate $this -As JSON -Verbose:$false @outFile -Force
+        }
+    }
+    $memberParam = @{
+        MemberType  = "ScriptMethod"
+        InputObject = $tempObj
+        Name        = "ToJSON"
+        Value       = $toJSON
+    }
+    Add-Member @memberParam
+    $toYAML = {
+        Process {
+            $outFile = @{}
+            foreach ($obj in $args) {
+                $outFile["Path"] = $obj
+            }
+            Export-Vaporshell -VaporshellTemplate $this -As YAML -Verbose:$false @outFile -Force
+        }
+    }
+    $memberParam = @{
+        MemberType  = "ScriptMethod"
+        InputObject = $tempObj
+        Name        = "ToYAML"
+        Value       = $toYAML
+    }
+    Add-Member @memberParam
     $addMetadata = {
         Process {
             $ObjName = "Metadata"
@@ -57,26 +89,6 @@ function Initialize-Vaporshell {
             }
         }
     }
-    $toJSON = {
-        Export-Vaporshell -VaporshellTemplate $this -As JSON -Verbose:$false
-    }
-    $memberParam = @{
-        MemberType  = "ScriptMethod"
-        InputObject = $tempObj
-        Name        = "ToJson"
-        Value       = $toJSON
-    }
-    Add-Member @memberParam
-    $toYAML = {
-        Export-Vaporshell -VaporshellTemplate $this -As YAML -Verbose:$false
-    }
-    $memberParam = @{
-        MemberType  = "ScriptMethod"
-        InputObject = $tempObj
-        Name        = "ToYaml"
-        Value       = $toYAML
-    }
-    Add-Member @memberParam
     $addParameter = {
         Process {
             $ObjName = "Parameters"

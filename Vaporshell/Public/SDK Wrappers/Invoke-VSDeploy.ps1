@@ -78,6 +78,9 @@ function Invoke-VSDeploy {
         [System.String[]]
         $NotificationARNs,
         [parameter(Mandatory = $false)]
+        [Switch]
+        $Watch,
+        [parameter(Mandatory = $false)]
         [String]
         $ProfileName = $env:AWS_PROFILE
     )
@@ -100,39 +103,37 @@ function Invoke-VSDeploy {
         $changeSetParams["TemplateBody"] = $TemplateBody
         $changeSetParams["ChangeSetName"] = "$($StackName)-$(Get-Date -Format "yyyyMMdd-HHmmss")"
         foreach ($key in $PSBoundParameters.Keys) {
-            if ((Get-Command New-VSChangeSet).Parameters.Keys -contains $key) {
+            if ((Get-Command New-VSChangeSet).Parameters.Keys -contains $key -and $key -ne "Verbose") {
                 $changeSetParams[$key] = $PSBoundParameters[$key]
             }
         }
         try {
             Write-Verbose "Creating change set as UPDATE"
-            $changeSet = New-VSChangeSet @changeSetParams
+            $changeSet = New-VSChangeSet @changeSetParams -Verbose:$false
             Write-Verbose "Change Set type 'UPDATE' created"
         }
         catch {
             try {
-                $changeSet = New-VSChangeSet @changeSetParams -ChangeSetType CREATE
+                $changeSet = New-VSChangeSet @changeSetParams -ChangeSetType CREATE -Verbose:$false
                 Write-Verbose "Change Set type 'CREATE' created"
             }
             catch {
                 $PSCmdlet.ThrowTerminatingError($_)
             }
         }
-        $changeSetDetails = Get-VSChangeSet -Description -ChangeSetName $changeSet.Id -StackName $changeSet.StackId @prof
+        $changeSetDetails = Get-VSChangeSet -Description -ChangeSetName $changeSet.Id -StackName $changeSet.StackId @prof -Verbose:$false
         if ($DoNotExecute) {
             return $changeSetDetails
         }
         else {
             $i=0
-            Write-Host -ForegroundColor Magenta "Waiting for change set to be available." -NoNewline
+            Write-Verbose "Waiting for change set to be available to execute"
             do {
                 $i++
                 Start-Sleep 1
-                Write-Host -ForegroundColor Magenta "." -NoNewline
                 $changeSetDetails = Get-VSChangeSet -Description -ChangeSetName $changeSet.Id -StackName $changeSet.StackId -Verbose:$false @prof
             }
             until ($changeSetDetails.ExecutionStatus.Value -eq "AVAILABLE" -or $changeSetDetails.Status.Value -eq "FAILED" -or $i -ge 60)
-            Write-Host ""
             if ($changeSetDetails.Status.Value -eq "FAILED") {
                 Write-Warning "Change Set FAILED! Reason: $($changeSetDetails.StatusReason)"
             }
@@ -144,7 +145,13 @@ function Invoke-VSDeploy {
                 Write-Verbose "Executing Change Set after $i seconds"
                 try {
                     $execution = Invoke-VSChangeSetExecution -ChangeSetName $changeSetDetails.ChangeSetId -StackName $changeSetDetails.StackId @prof
-                    return $changeSetDetails | Select-Object *,@{N="ExecutionResponse";E={$execution}}
+                    if ($Watch) {
+                        Write-Verbose "Watching deployment!"
+                        Watch-Stack -StackName $StackName
+                    }
+                    else {
+                        return $changeSetDetails | Select-Object *,@{N="ExecutionResponse";E={$execution}}
+                    }
                 }
                 catch {
                     $PSCmdlet.ThrowTerminatingError($_)
