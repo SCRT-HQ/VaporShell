@@ -107,12 +107,12 @@ $vsl.ToYAML($TemplateFile)
 vsl vaporize --tf $TemplateFile --sn sched-func --capabilities iam --v --f --w
 
 ```
-Want to see more examples? Check out the [Examples page][http://vaporshell.io/docs/examples].
+Want to see more examples? Check out the [Examples page](http://vaporshell.io/docs/examples).
 
 
 ## Installation
 
-On PowerShell 5+? Install directly from the PowerShell Gallery:
+On PowerShell 5+ or [have PowerShellGet installed](https://www.microsoft.com/en-us/download/details.aspx?id=51451)? Install directly from the PowerShell Gallery:
 
 ```powershell
 Install-Module VaporShell -Scope CurrentUser
