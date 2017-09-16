@@ -78,6 +78,7 @@
 - [Features](#features)
 - [Example](#example)
 - [In Action](#in-action)
+- [Prerequisites](#prerequisites)
 - [Installation](#installation)
 - [License](#license)
 
@@ -88,24 +89,27 @@
 - __goes turbo:__ package and deploy your templates **fast** with one command, `vsl vaporize`
 
 ## Example
-This example...
-1. Initializes a VaporShell object
-2. Adds a Serverless function with local code as the CodeUri and a schedule of 5 minutes
-3. Saves the template as YAML
-4. Resolves dependancies and uploads them to an S3 bucket named the same as the stack name "sched-func"
-5. Creates a change set with the resolved template
-6. Executes the change set
-7. Follows with `Watch-Stack` to show colorized Stack Events as they happen
 
 ```powershell
+#1 Initialize a VaporShell object
 $vsl = Initialize-VaporShell -Description "An even more updated function triggered on a timer."
+#2 Add a Serverless function with local code as the CodeUri and a schedule of 5 minutes
 $vsl.AddResource(
     ( New-SAMFunction -LogicalId "ScheduledFunction" -Handler "index.handler" -Runtime "nodejs6.10" -CodeUri ".\code" -Events (Add-SAMScheduleEventSource -LogicalId Timer -Schedule "rate(5 minutes)"))
 )
 $TemplateFile = ".\sched-func.yaml"
+#3 Save the template as YAML (uses cfn-flip to convert to/from YAML)
 $vsl.ToYAML($TemplateFile)
-
-vsl vaporize --tf $TemplateFile --sn sched-func --capabilities iam --v --f --w
+<#
+#4 Package and deploy the template file (--tf $TemplateFile) as a change set with parameters:
+    - stack name (--sn) 'sched-func'
+    - S3 bucket also named 'sched-func' (defaults to the stack name if --s3 is not passed)
+    - capabilities: CAPABILITY_IAM (--caps iam)
+    - Verbose (--v) enabled
+    - Force (--f) enabled (make sure that the bucket is created and objects are uploaded)
+    - Watch (--w) the stack events in colorized output after executing the change
+#>
+vsl vaporize --tf $TemplateFile --sn sched-func --caps iam --v --f --w
 
 ```
 Want to see more examples? Check out the [Examples page](http://vaporshell.io/docs/examples).
@@ -116,6 +120,18 @@ Want to see more examples? Check out the [Examples page](http://vaporshell.io/do
 ![Watch-Stack in action](http://vaporshell.io/images/Watch-Stacks.gif)
 
 
+## Prerequisites
+
+- PowerShell v3+
+- .NET 4.5.0+ OR .netstandard 1.3+
+  - if you have PowerShell 4+, you're covered!
+
+
+### Recommended
+
+If you are working with YAML templates, you will need to install AWS Labs' [`cfn-flip`](https://github.com/awslabs/aws-cfn-template-flip). VaporShell uses `cfn-flip` under the hood to work with YAML templates, as PowerShell does not natively support YAML at this time.
+
+
 ## Installation
 
 On PowerShell 5+ or [have PowerShellGet installed](https://www.microsoft.com/en-us/download/details.aspx?id=51451)? Install directly from the PowerShell Gallery:
@@ -124,7 +140,7 @@ On PowerShell 5+ or [have PowerShellGet installed](https://www.microsoft.com/en-
 Install-Module VaporShell -Scope CurrentUser
 ```
 
-Not on PowerShell 5+? Got you covered too.
+Not on PowerShell 5+ and can't install PowerShellGet? Got you covered too.
 
 ```powershell
 Invoke-Expression (New-Object Net.WebClient).DownloadString("https://raw.githubusercontent.com/scrthq/VaporShell/master/Install-VaporShell.ps1")
