@@ -32,17 +32,17 @@
   <!-- PS Gallery -->
   <a href="https://www.PowerShellGallery.com/packages/VaporShell">
     <img src="https://img.shields.io/badge/psgallery-install-blue.svg"
-      alt="Install from PowerShell Gallery" title="Install from PowerShell Gallery" />
+      alt="PowerShell Gallery - Install VaporShell" title="PowerShell Gallery - Install VaporShell" />
   </a>
   <!-- Gitter -->
   <a href="https://gitter.im/VaporShell/Lobby?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge&utm_content=badge">
     <img src="https://badges.gitter.im/VaporShell/Lobby.svg"
-      alt="Join the chat at https://gitter.im/VaporShell/Lobby" title="Join the chat at https://gitter.im/VaporShell/Lobby" />
+      alt="Gitter - Chat" title="Gitter - Chat" />
   </a>
-  <!-- PayPal -->
-  <a href="https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&hosted_button_id=GU6CJMFGVP6ZS">
-    <img src="https://img.shields.io/badge/paypal-donate-brightgreen.svg"
-      alt="Donate with PayPal" title="Donate with PayPal" />
+  <!-- Gratipay -->
+  <a href="https://gratipay.com/VaporShell">
+    <img src="https://img.shields.io/gratipay/user/scrthq.svg"
+      alt="Gratipay - Donate" title="Gratipay - Donate" />
   </a>
 </div>
 
