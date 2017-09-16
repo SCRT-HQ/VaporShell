@@ -71,7 +71,7 @@
 </div>
 
 <div align="center">
-  <sub>Built by <a href="https://twitter.com/scrthq">Nate Ferrell</a>. Looking for <a href="mailto:nate@vaporshell.io?Subject=Contributor%20here!" target="_top">contributors</a>!
+  <sub>Built by <a href="https://twitter.com/scrthq">Nate Ferrell</a>. Looking for contributors!
 </div>
 
 ## Table of Contents
