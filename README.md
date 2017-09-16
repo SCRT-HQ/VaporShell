@@ -135,7 +135,7 @@ Want to see more examples? Check out the [Examples page](http://vaporshell.io/do
 
 ### Recommended
 
-If you are working with YAML templates, you will need to install AWS Labs' [`cfn-flip`](https://github.com/awslabs/aws-cfn-template-flip). VaporShell uses `cfn-flip` under the hood to work with YAML templates, as PowerShell does not natively support YAML at this time.
+If you are working with YAML templates, you will need to install AWS Labs' [`cfn-flip`](https://github.com/awslabs/aws-cfn-template-flip). VaporShell uses `cfn-flip` under the hood to work with YAML templates, as PowerShell does not natively support YAML at this time. If you are fine working in JSON, then `cfn-flip` is not needed.
 
 
 ## Installation
