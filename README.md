@@ -20,8 +20,8 @@
       alt="AppVeyor - Windows Build Status" />
   </a>
   <!-- Travis CI -->
-  <a href="https://travis-ci.org/scrthq/Vaporshell">
-    <img src="https://travis-ci.org/scrthq/Vaporshell.svg?branch=master"
+  <a href="https://travis-ci.org/scrthq/VaporShell">
+    <img src="https://travis-ci.org/scrthq/VaporShell.svg?branch=master"
       alt="Travis CI - Linux / macOS Build Status" />
   </a>
   <!-- Coveralls -->
