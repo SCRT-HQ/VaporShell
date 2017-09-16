@@ -81,14 +81,6 @@
 ## Table of Contents
 - [Features](#features)
 - [Example](#example)
-- [Philosophy](#philosophy)
-- [Events](#events)
-- [State](#state)
-- [Routing](#routing)
-- [Server Rendering](#server-rendering)
-- [Optimizations](#optimizations)
-- [FAQ](#faq)
-- [API](#api)
 - [Installation](#installation)
 - [License](#license)
 
@@ -132,7 +124,9 @@ Install-Module VaporShell -Scope CurrentUser
 
 Not on PowerShell 5+? Got you covered too.
 
-1. 
+```powershell
+Invoke-Expression (New-Object Net.WebClient).DownloadString("https://raw.githubusercontent.com/scrthq/VaporShell/master/Install-VaporShell.ps1")
+```
 
 ## License
 [Apache 2.0](https://tldrlegal.com/license/apache-license-2.0-(apache-2.0))
