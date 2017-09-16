@@ -17,32 +17,32 @@
   <!-- AppVeyor -->
   <a href="https://ci.appveyor.com/project/nferrell/vaporshell/branch/master">
     <img src="https://ci.appveyor.com/api/projects/status/8a4jsfv42tbmlym8/branch/master?svg=true"
-      alt="AppVeyor - Windows Build Status" />
+      alt="AppVeyor - Windows Build Status" title="AppVeyor - Windows Build Status" />
   </a>
   <!-- Travis CI -->
   <a href="https://travis-ci.org/scrthq/VaporShell">
     <img src="https://travis-ci.org/scrthq/VaporShell.svg?branch=master"
-      alt="Travis CI - Linux / macOS Build Status" />
+      alt="Travis CI - Linux / macOS Build Status" title="Travis CI - Linux / macOS Build Status" />
   </a>
   <!-- Coveralls -->
   <a href="https://coveralls.io/github/scrthq/Vaporshell?branch=master">
     <img src="https://coveralls.io/repos/github/scrthq/Vaporshell/badge.svg?branch=master"
-      alt="Coveralls.io - Code Coverage" />
+      alt="Coveralls.io - Code Coverage" title="Coveralls.io - Code Coverage" />
   </a>
   <!-- PS Gallery -->
   <a href="https://www.PowerShellGallery.com/packages/VaporShell">
     <img src="https://img.shields.io/badge/psgallery-install-blue.svg"
-      alt="Install from PowerShell Gallery" />
+      alt="Install from PowerShell Gallery" title="Install from PowerShell Gallery" />
   </a>
   <!-- Gitter -->
   <a href="https://gitter.im/VaporShell/Lobby?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge&utm_content=badge">
     <img src="https://badges.gitter.im/VaporShell/Lobby.svg"
-      alt="Join the chat at https://gitter.im/VaporShell/Lobby" />
+      alt="Join the chat at https://gitter.im/VaporShell/Lobby" title="Join the chat at https://gitter.im/VaporShell/Lobby" />
   </a>
   <!-- PayPal -->
   <a href="https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&hosted_button_id=GU6CJMFGVP6ZS">
     <img src="https://img.shields.io/badge/paypal-donate-brightgreen.svg"
-      alt="Donate with PayPal" />
+      alt="Donate with PayPal" title="Donate with PayPal" />
   </a>
 </div>
 
