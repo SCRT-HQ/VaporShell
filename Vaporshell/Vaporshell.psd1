@@ -12,7 +12,7 @@
     RootModule            = 'Vaporshell.psm1'
 
     # Version number of this module.
-    ModuleVersion         = '1.2.1'
+    ModuleVersion         = '2.0.0'
 
     # ID used to uniquely identify this module
     GUID                  = 'd526494c-6e59-41ff-ad05-eedbc1473b6a'
@@ -29,16 +29,13 @@
     # Description of the functionality provided by this module
     Description           = 'Powershell module for building AWS CloudFormation JSON templates using Powershell syntax, abstracting working with JSON, etc.
 
-Requires Powershell version 3.0 or higher, as it leverages ConvertTo-Json and ConvertFrom-Json to work with the template files.
+Requires Powershell version 3.0 or higher, as it leverages ConvertTo-Json and ConvertFrom-Json to work with the template files. For all SDK commands, you must have .NET Framework 4.5.0+ or .NetStandard 1.3.0+
 
 
 **WORKS ON ALL PLATFORMS THAT CAN RUN POWERSHELL**
 
 
 Recommended Additional Installs:
-
-- AWS CLI Tools: http://docs.aws.amazon.com/cli/latest/userguide/installing.html
-    - Allows you to use the -ValidateTemplate switch on Export-Vaporshell
 
 - AWS cfn-flip: https://github.com/awslabs/aws-cfn-template-flip
     - Allows you to work with YAML for both importing templates and exporting templates.
@@ -66,7 +63,7 @@ http://vaporshell.io/changelog
 
 ~ ~ ~ Disclaimer ~ ~ ~
 
-This module is only to be used to ease creation of CloudFormation templates. Any stack creations within AWS are the responsibility of the person/group deploying it, so please validate any template builds using `aws cloudformation validate-template`! ([Click here for documentation from AWS](http://docs.aws.amazon.com/cli/latest/reference/cloudformation/validate-template.html))
+Deploying CloudFormation templates
 
 If you find any oddities with the template build, please open an issue here on GitHub and include your script with sensitive data redacted, what you were expecting it to add to the template and what actually was added.
 
@@ -85,7 +82,7 @@ Nate Ferrell @ SCRT HQ
     # PowerShellHostVersion = ''
 
     # Minimum version of Microsoft .NET Framework required by this module
-    # DotNetFrameworkVersion = ''
+    DotNetFrameworkVersion = '4.5.0'
 
     # Minimum version of the common language runtime (CLR) required by this module
     # CLRVersion = ''

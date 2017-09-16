@@ -1,4 +1,4 @@
-function Add-VSRoute53RecordSetGeoLocation {
+﻿function Add-VSRoute53RecordSetGeoLocation {
     <#
     .SYNOPSIS
         Adds an AWS::Route53::RecordSet.GeoLocation resource property to the template
@@ -41,7 +41,7 @@ function Add-VSRoute53RecordSetGeoLocation {
                     $true
                 }
                 else {
-                    throw "This parameter only accepts the following types: $($allowedTypes -join ", "). The current types of the value are: $($_.PSTypeNames -join ", ")."
+                    $PSCmdlet.ThrowTerminatingError((New-VSError -String "This parameter only accepts the following types: $($allowedTypes -join ", "). The current types of the value are: $($_.PSTypeNames -join ", ")."))
                 }
             })]
         $ContinentCode,
@@ -52,7 +52,7 @@ function Add-VSRoute53RecordSetGeoLocation {
                     $true
                 }
                 else {
-                    throw "This parameter only accepts the following types: $($allowedTypes -join ", "). The current types of the value are: $($_.PSTypeNames -join ", ")."
+                    $PSCmdlet.ThrowTerminatingError((New-VSError -String "This parameter only accepts the following types: $($allowedTypes -join ", "). The current types of the value are: $($_.PSTypeNames -join ", ")."))
                 }
             })]
         $CountryCode,
@@ -63,7 +63,7 @@ function Add-VSRoute53RecordSetGeoLocation {
                     $true
                 }
                 else {
-                    throw "This parameter only accepts the following types: $($allowedTypes -join ", "). The current types of the value are: $($_.PSTypeNames -join ", ")."
+                    $PSCmdlet.ThrowTerminatingError((New-VSError -String "This parameter only accepts the following types: $($allowedTypes -join ", "). The current types of the value are: $($_.PSTypeNames -join ", ")."))
                 }
             })]
         $SubdivisionCode

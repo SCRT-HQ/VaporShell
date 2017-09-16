@@ -1,4 +1,4 @@
-function Add-VSKinesisAnalyticsApplicationReferenceDataSourceS3ReferenceDataSource {
+﻿function Add-VSKinesisAnalyticsApplicationReferenceDataSourceS3ReferenceDataSource {
     <#
     .SYNOPSIS
         Adds an AWS::KinesisAnalytics::ApplicationReferenceDataSource.S3ReferenceDataSource resource property to the template
@@ -41,7 +41,7 @@ function Add-VSKinesisAnalyticsApplicationReferenceDataSourceS3ReferenceDataSour
                     $true
                 }
                 else {
-                    throw "This parameter only accepts the following types: $($allowedTypes -join ", "). The current types of the value are: $($_.PSTypeNames -join ", ")."
+                    $PSCmdlet.ThrowTerminatingError((New-VSError -String "This parameter only accepts the following types: $($allowedTypes -join ", "). The current types of the value are: $($_.PSTypeNames -join ", ")."))
                 }
             })]
         $BucketARN,
@@ -52,7 +52,7 @@ function Add-VSKinesisAnalyticsApplicationReferenceDataSourceS3ReferenceDataSour
                     $true
                 }
                 else {
-                    throw "This parameter only accepts the following types: $($allowedTypes -join ", "). The current types of the value are: $($_.PSTypeNames -join ", ")."
+                    $PSCmdlet.ThrowTerminatingError((New-VSError -String "This parameter only accepts the following types: $($allowedTypes -join ", "). The current types of the value are: $($_.PSTypeNames -join ", ")."))
                 }
             })]
         $FileKey,
@@ -63,7 +63,7 @@ function Add-VSKinesisAnalyticsApplicationReferenceDataSourceS3ReferenceDataSour
                     $true
                 }
                 else {
-                    throw "This parameter only accepts the following types: $($allowedTypes -join ", "). The current types of the value are: $($_.PSTypeNames -join ", ")."
+                    $PSCmdlet.ThrowTerminatingError((New-VSError -String "This parameter only accepts the following types: $($allowedTypes -join ", "). The current types of the value are: $($_.PSTypeNames -join ", ")."))
                 }
             })]
         $ReferenceRoleARN

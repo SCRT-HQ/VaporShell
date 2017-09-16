@@ -1,4 +1,4 @@
-function Add-VSDynamoDBTableProvisionedThroughput {
+﻿function Add-VSDynamoDBTableProvisionedThroughput {
     <#
     .SYNOPSIS
         Adds an AWS::DynamoDB::Table.ProvisionedThroughput resource property to the template
@@ -11,13 +11,13 @@ function Add-VSDynamoDBTableProvisionedThroughput {
 
     .PARAMETER ReadCapacityUnits
 		Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-dynamodb-provisionedthroughput.html#cfn-dynamodb-provisionedthroughput-readcapacityunits    
-		PrimitiveType: Integer    
+		PrimitiveType: Long    
 		Required: True    
 		UpdateType: Mutable    
 
     .PARAMETER WriteCapacityUnits
 		Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-dynamodb-provisionedthroughput.html#cfn-dynamodb-provisionedthroughput-writecapacityunits    
-		PrimitiveType: Integer    
+		PrimitiveType: Long    
 		Required: True    
 		UpdateType: Mutable    
 
@@ -29,10 +29,8 @@ function Add-VSDynamoDBTableProvisionedThroughput {
     Param
     (
         [parameter(Mandatory = $true)]
-        [Int]
         $ReadCapacityUnits,
         [parameter(Mandatory = $true)]
-        [Int]
         $WriteCapacityUnits
     )
     Begin {

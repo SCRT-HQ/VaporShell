@@ -1,4 +1,4 @@
-function Add-VSApplicationAutoScalingScalingPolicyCustomizedMetricSpecification {
+﻿function Add-VSApplicationAutoScalingScalingPolicyCustomizedMetricSpecification {
     <#
     .SYNOPSIS
         Adds an AWS::ApplicationAutoScaling::ScalingPolicy.CustomizedMetricSpecification resource property to the template
@@ -55,7 +55,7 @@ function Add-VSApplicationAutoScalingScalingPolicyCustomizedMetricSpecification 
                     $true
                 }
                 else {
-                    throw "This parameter only accepts the following types: $($allowedTypes -join ", "). The current types of the value are: $($_.PSTypeNames -join ", ")."
+                    $PSCmdlet.ThrowTerminatingError((New-VSError -String "This parameter only accepts the following types: $($allowedTypes -join ", "). The current types of the value are: $($_.PSTypeNames -join ", ")."))
                 }
             })]
         $Dimensions,
@@ -66,7 +66,7 @@ function Add-VSApplicationAutoScalingScalingPolicyCustomizedMetricSpecification 
                     $true
                 }
                 else {
-                    throw "This parameter only accepts the following types: $($allowedTypes -join ", "). The current types of the value are: $($_.PSTypeNames -join ", ")."
+                    $PSCmdlet.ThrowTerminatingError((New-VSError -String "This parameter only accepts the following types: $($allowedTypes -join ", "). The current types of the value are: $($_.PSTypeNames -join ", ")."))
                 }
             })]
         $MetricName,
@@ -77,7 +77,7 @@ function Add-VSApplicationAutoScalingScalingPolicyCustomizedMetricSpecification 
                     $true
                 }
                 else {
-                    throw "This parameter only accepts the following types: $($allowedTypes -join ", "). The current types of the value are: $($_.PSTypeNames -join ", ")."
+                    $PSCmdlet.ThrowTerminatingError((New-VSError -String "This parameter only accepts the following types: $($allowedTypes -join ", "). The current types of the value are: $($_.PSTypeNames -join ", ")."))
                 }
             })]
         $Namespace,
@@ -88,7 +88,7 @@ function Add-VSApplicationAutoScalingScalingPolicyCustomizedMetricSpecification 
                     $true
                 }
                 else {
-                    throw "This parameter only accepts the following types: $($allowedTypes -join ", "). The current types of the value are: $($_.PSTypeNames -join ", ")."
+                    $PSCmdlet.ThrowTerminatingError((New-VSError -String "This parameter only accepts the following types: $($allowedTypes -join ", "). The current types of the value are: $($_.PSTypeNames -join ", ")."))
                 }
             })]
         $Statistic,
@@ -99,7 +99,7 @@ function Add-VSApplicationAutoScalingScalingPolicyCustomizedMetricSpecification 
                     $true
                 }
                 else {
-                    throw "This parameter only accepts the following types: $($allowedTypes -join ", "). The current types of the value are: $($_.PSTypeNames -join ", ")."
+                    $PSCmdlet.ThrowTerminatingError((New-VSError -String "This parameter only accepts the following types: $($allowedTypes -join ", "). The current types of the value are: $($_.PSTypeNames -join ", ")."))
                 }
             })]
         $Unit

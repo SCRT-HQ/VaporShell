@@ -1,4 +1,4 @@
-function Add-VSEC2NetworkAclEntryIcmp {
+﻿function Add-VSEC2NetworkAclEntryIcmp {
     <#
     .SYNOPSIS
         Adds an AWS::EC2::NetworkAclEntry.Icmp resource property to the template

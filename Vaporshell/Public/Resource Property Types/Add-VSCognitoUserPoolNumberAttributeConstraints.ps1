@@ -1,4 +1,4 @@
-function Add-VSCognitoUserPoolNumberAttributeConstraints {
+﻿function Add-VSCognitoUserPoolNumberAttributeConstraints {
     <#
     .SYNOPSIS
         Adds an AWS::Cognito::UserPool.NumberAttributeConstraints resource property to the template
@@ -35,7 +35,7 @@ function Add-VSCognitoUserPoolNumberAttributeConstraints {
                     $true
                 }
                 else {
-                    throw "This parameter only accepts the following types: $($allowedTypes -join ", "). The current types of the value are: $($_.PSTypeNames -join ", ")."
+                    $PSCmdlet.ThrowTerminatingError((New-VSError -String "This parameter only accepts the following types: $($allowedTypes -join ", "). The current types of the value are: $($_.PSTypeNames -join ", ")."))
                 }
             })]
         $MinValue,
@@ -46,7 +46,7 @@ function Add-VSCognitoUserPoolNumberAttributeConstraints {
                     $true
                 }
                 else {
-                    throw "This parameter only accepts the following types: $($allowedTypes -join ", "). The current types of the value are: $($_.PSTypeNames -join ", ")."
+                    $PSCmdlet.ThrowTerminatingError((New-VSError -String "This parameter only accepts the following types: $($allowedTypes -join ", "). The current types of the value are: $($_.PSTypeNames -join ", ")."))
                 }
             })]
         $MaxValue

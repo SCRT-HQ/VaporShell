@@ -1,4 +1,4 @@
-function Add-VSTag {
+﻿function Add-VSTag {
     <#
     .SYNOPSIS
         Adds an Tag resource property to the template
@@ -13,13 +13,13 @@ function Add-VSTag {
 		Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-resource-tags.html#cfn-resource-tags-key    
 		PrimitiveType: String    
 		Required: True    
-		UpdateType: Immutable    
+		UpdateType: Mutable    
 
     .PARAMETER Value
 		Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-resource-tags.html#cfn-resource-tags-value    
 		PrimitiveType: String    
 		Required: True    
-		UpdateType: Immutable    
+		UpdateType: Mutable    
 
     .FUNCTIONALITY
         Vaporshell
@@ -35,7 +35,7 @@ function Add-VSTag {
                     $true
                 }
                 else {
-                    throw "This parameter only accepts the following types: $($allowedTypes -join ", "). The current types of the value are: $($_.PSTypeNames -join ", ")."
+                    $PSCmdlet.ThrowTerminatingError((New-VSError -String "This parameter only accepts the following types: $($allowedTypes -join ", "). The current types of the value are: $($_.PSTypeNames -join ", ")."))
                 }
             })]
         $Key,
@@ -46,7 +46,7 @@ function Add-VSTag {
                     $true
                 }
                 else {
-                    throw "This parameter only accepts the following types: $($allowedTypes -join ", "). The current types of the value are: $($_.PSTypeNames -join ", ")."
+                    $PSCmdlet.ThrowTerminatingError((New-VSError -String "This parameter only accepts the following types: $($allowedTypes -join ", "). The current types of the value are: $($_.PSTypeNames -join ", ")."))
                 }
             })]
         $Value

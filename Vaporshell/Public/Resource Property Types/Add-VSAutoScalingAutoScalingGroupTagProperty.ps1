@@ -1,4 +1,4 @@
-function Add-VSAutoScalingAutoScalingGroupTagProperty {
+﻿function Add-VSAutoScalingAutoScalingGroupTagProperty {
     <#
     .SYNOPSIS
         Adds an AWS::AutoScaling::AutoScalingGroup.TagProperty resource property to the template
@@ -41,7 +41,7 @@ function Add-VSAutoScalingAutoScalingGroupTagProperty {
                     $true
                 }
                 else {
-                    throw "This parameter only accepts the following types: $($allowedTypes -join ", "). The current types of the value are: $($_.PSTypeNames -join ", ")."
+                    $PSCmdlet.ThrowTerminatingError((New-VSError -String "This parameter only accepts the following types: $($allowedTypes -join ", "). The current types of the value are: $($_.PSTypeNames -join ", ")."))
                 }
             })]
         $Key,
@@ -55,7 +55,7 @@ function Add-VSAutoScalingAutoScalingGroupTagProperty {
                     $true
                 }
                 else {
-                    throw "This parameter only accepts the following types: $($allowedTypes -join ", "). The current types of the value are: $($_.PSTypeNames -join ", ")."
+                    $PSCmdlet.ThrowTerminatingError((New-VSError -String "This parameter only accepts the following types: $($allowedTypes -join ", "). The current types of the value are: $($_.PSTypeNames -join ", ")."))
                 }
             })]
         $Value

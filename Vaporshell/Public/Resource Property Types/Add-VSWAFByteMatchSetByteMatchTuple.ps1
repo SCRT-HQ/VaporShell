@@ -1,4 +1,4 @@
-function Add-VSWAFByteMatchSetByteMatchTuple {
+﻿function Add-VSWAFByteMatchSetByteMatchTuple {
     <#
     .SYNOPSIS
         Adds an AWS::WAF::ByteMatchSet.ByteMatchTuple resource property to the template
@@ -55,7 +55,7 @@ function Add-VSWAFByteMatchSetByteMatchTuple {
                     $true
                 }
                 else {
-                    throw "This parameter only accepts the following types: $($allowedTypes -join ", "). The current types of the value are: $($_.PSTypeNames -join ", ")."
+                    $PSCmdlet.ThrowTerminatingError((New-VSError -String "This parameter only accepts the following types: $($allowedTypes -join ", "). The current types of the value are: $($_.PSTypeNames -join ", ")."))
                 }
             })]
         $PositionalConstraint,
@@ -66,7 +66,7 @@ function Add-VSWAFByteMatchSetByteMatchTuple {
                     $true
                 }
                 else {
-                    throw "This parameter only accepts the following types: $($allowedTypes -join ", "). The current types of the value are: $($_.PSTypeNames -join ", ")."
+                    $PSCmdlet.ThrowTerminatingError((New-VSError -String "This parameter only accepts the following types: $($allowedTypes -join ", "). The current types of the value are: $($_.PSTypeNames -join ", ")."))
                 }
             })]
         $TargetString,
@@ -77,7 +77,7 @@ function Add-VSWAFByteMatchSetByteMatchTuple {
                     $true
                 }
                 else {
-                    throw "This parameter only accepts the following types: $($allowedTypes -join ", "). The current types of the value are: $($_.PSTypeNames -join ", ")."
+                    $PSCmdlet.ThrowTerminatingError((New-VSError -String "This parameter only accepts the following types: $($allowedTypes -join ", "). The current types of the value are: $($_.PSTypeNames -join ", ")."))
                 }
             })]
         $TargetStringBase64,
@@ -88,7 +88,7 @@ function Add-VSWAFByteMatchSetByteMatchTuple {
                     $true
                 }
                 else {
-                    throw "This parameter only accepts the following types: $($allowedTypes -join ", "). The current types of the value are: $($_.PSTypeNames -join ", ")."
+                    $PSCmdlet.ThrowTerminatingError((New-VSError -String "This parameter only accepts the following types: $($allowedTypes -join ", "). The current types of the value are: $($_.PSTypeNames -join ", ")."))
                 }
             })]
         $TextTransformation

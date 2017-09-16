@@ -1,4 +1,4 @@
-function Add-VSEC2InstanceBlockDeviceMapping {
+﻿function Add-VSEC2InstanceBlockDeviceMapping {
     <#
     .SYNOPSIS
         Adds an AWS::EC2::Instance.BlockDeviceMapping resource property to the template
@@ -47,7 +47,7 @@ function Add-VSEC2InstanceBlockDeviceMapping {
                     $true
                 }
                 else {
-                    throw "This parameter only accepts the following types: $($allowedTypes -join ", "). The current types of the value are: $($_.PSTypeNames -join ", ")."
+                    $PSCmdlet.ThrowTerminatingError((New-VSError -String "This parameter only accepts the following types: $($allowedTypes -join ", "). The current types of the value are: $($_.PSTypeNames -join ", ")."))
                 }
             })]
         $DeviceName,
@@ -62,7 +62,7 @@ function Add-VSEC2InstanceBlockDeviceMapping {
                     $true
                 }
                 else {
-                    throw "This parameter only accepts the following types: $($allowedTypes -join ", "). The current types of the value are: $($_.PSTypeNames -join ", ")."
+                    $PSCmdlet.ThrowTerminatingError((New-VSError -String "This parameter only accepts the following types: $($allowedTypes -join ", "). The current types of the value are: $($_.PSTypeNames -join ", ")."))
                 }
             })]
         $VirtualName

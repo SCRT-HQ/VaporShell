@@ -1,4 +1,4 @@
-function Add-VSEMRClusterEbsBlockDeviceConfig {
+﻿function Add-VSEMRClusterEbsBlockDeviceConfig {
     <#
     .SYNOPSIS
         Adds an AWS::EMR::Cluster.EbsBlockDeviceConfig resource property to the template

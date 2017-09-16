@@ -1,4 +1,4 @@
-function Add-VSApiGatewayStageMethodSetting {
+﻿function Add-VSApiGatewayStageMethodSetting {
     <#
     .SYNOPSIS
         Adds an AWS::ApiGateway::Stage.MethodSetting resource property to the template
@@ -95,7 +95,7 @@ function Add-VSApiGatewayStageMethodSetting {
                     $true
                 }
                 else {
-                    throw "This parameter only accepts the following types: $($allowedTypes -join ", "). The current types of the value are: $($_.PSTypeNames -join ", ")."
+                    $PSCmdlet.ThrowTerminatingError((New-VSError -String "This parameter only accepts the following types: $($allowedTypes -join ", "). The current types of the value are: $($_.PSTypeNames -join ", ")."))
                 }
             })]
         $HttpMethod,
@@ -106,7 +106,7 @@ function Add-VSApiGatewayStageMethodSetting {
                     $true
                 }
                 else {
-                    throw "This parameter only accepts the following types: $($allowedTypes -join ", "). The current types of the value are: $($_.PSTypeNames -join ", ")."
+                    $PSCmdlet.ThrowTerminatingError((New-VSError -String "This parameter only accepts the following types: $($allowedTypes -join ", "). The current types of the value are: $($_.PSTypeNames -join ", ")."))
                 }
             })]
         $LoggingLevel,
@@ -120,7 +120,7 @@ function Add-VSApiGatewayStageMethodSetting {
                     $true
                 }
                 else {
-                    throw "This parameter only accepts the following types: $($allowedTypes -join ", "). The current types of the value are: $($_.PSTypeNames -join ", ")."
+                    $PSCmdlet.ThrowTerminatingError((New-VSError -String "This parameter only accepts the following types: $($allowedTypes -join ", "). The current types of the value are: $($_.PSTypeNames -join ", ")."))
                 }
             })]
         $ResourcePath,

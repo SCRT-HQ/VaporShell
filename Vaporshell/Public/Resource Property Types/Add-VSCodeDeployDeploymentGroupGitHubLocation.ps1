@@ -1,4 +1,4 @@
-function Add-VSCodeDeployDeploymentGroupGitHubLocation {
+﻿function Add-VSCodeDeployDeploymentGroupGitHubLocation {
     <#
     .SYNOPSIS
         Adds an AWS::CodeDeploy::DeploymentGroup.GitHubLocation resource property to the template
@@ -35,7 +35,7 @@ function Add-VSCodeDeployDeploymentGroupGitHubLocation {
                     $true
                 }
                 else {
-                    throw "This parameter only accepts the following types: $($allowedTypes -join ", "). The current types of the value are: $($_.PSTypeNames -join ", ")."
+                    $PSCmdlet.ThrowTerminatingError((New-VSError -String "This parameter only accepts the following types: $($allowedTypes -join ", "). The current types of the value are: $($_.PSTypeNames -join ", ")."))
                 }
             })]
         $CommitId,
@@ -46,7 +46,7 @@ function Add-VSCodeDeployDeploymentGroupGitHubLocation {
                     $true
                 }
                 else {
-                    throw "This parameter only accepts the following types: $($allowedTypes -join ", "). The current types of the value are: $($_.PSTypeNames -join ", ")."
+                    $PSCmdlet.ThrowTerminatingError((New-VSError -String "This parameter only accepts the following types: $($allowedTypes -join ", "). The current types of the value are: $($_.PSTypeNames -join ", ")."))
                 }
             })]
         $Repository

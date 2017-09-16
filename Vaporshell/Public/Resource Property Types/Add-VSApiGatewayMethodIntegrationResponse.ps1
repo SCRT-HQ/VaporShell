@@ -1,4 +1,4 @@
-function Add-VSApiGatewayMethodIntegrationResponse {
+﻿function Add-VSApiGatewayMethodIntegrationResponse {
     <#
     .SYNOPSIS
         Adds an AWS::ApiGateway::Method.IntegrationResponse resource property to the template
@@ -34,7 +34,7 @@ function Add-VSApiGatewayMethodIntegrationResponse {
     .PARAMETER StatusCode
 		Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-apitgateway-method-integration-integrationresponse.html#cfn-apigateway-method-integration-integrationresponse-statuscode    
 		PrimitiveType: String    
-		Required: False    
+		Required: True    
 		UpdateType: Mutable    
 
     .FUNCTIONALITY
@@ -57,18 +57,18 @@ function Add-VSApiGatewayMethodIntegrationResponse {
                     $true
                 }
                 else {
-                    throw "This parameter only accepts the following types: $($allowedTypes -join ", "). The current types of the value are: $($_.PSTypeNames -join ", ")."
+                    $PSCmdlet.ThrowTerminatingError((New-VSError -String "This parameter only accepts the following types: $($allowedTypes -join ", "). The current types of the value are: $($_.PSTypeNames -join ", ")."))
                 }
             })]
         $SelectionPattern,
-        [parameter(Mandatory = $false)]
+        [parameter(Mandatory = $true)]
         [ValidateScript( {
                 $allowedTypes = "System.String","Vaporshell.Function"
                 if ([string]$($_.PSTypeNames) -match "($(($allowedTypes|ForEach-Object{[RegEx]::Escape($_)}) -join '|'))") {
                     $true
                 }
                 else {
-                    throw "This parameter only accepts the following types: $($allowedTypes -join ", "). The current types of the value are: $($_.PSTypeNames -join ", ")."
+                    $PSCmdlet.ThrowTerminatingError((New-VSError -String "This parameter only accepts the following types: $($allowedTypes -join ", "). The current types of the value are: $($_.PSTypeNames -join ", ")."))
                 }
             })]
         $StatusCode

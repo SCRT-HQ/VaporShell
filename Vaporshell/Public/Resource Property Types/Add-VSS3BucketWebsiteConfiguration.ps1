@@ -1,4 +1,4 @@
-function Add-VSS3BucketWebsiteConfiguration {
+﻿function Add-VSS3BucketWebsiteConfiguration {
     <#
     .SYNOPSIS
         Adds an AWS::S3::Bucket.WebsiteConfiguration resource property to the template
@@ -49,7 +49,7 @@ function Add-VSS3BucketWebsiteConfiguration {
                     $true
                 }
                 else {
-                    throw "This parameter only accepts the following types: $($allowedTypes -join ", "). The current types of the value are: $($_.PSTypeNames -join ", ")."
+                    $PSCmdlet.ThrowTerminatingError((New-VSError -String "This parameter only accepts the following types: $($allowedTypes -join ", "). The current types of the value are: $($_.PSTypeNames -join ", ")."))
                 }
             })]
         $ErrorDocument,
@@ -60,7 +60,7 @@ function Add-VSS3BucketWebsiteConfiguration {
                     $true
                 }
                 else {
-                    throw "This parameter only accepts the following types: $($allowedTypes -join ", "). The current types of the value are: $($_.PSTypeNames -join ", ")."
+                    $PSCmdlet.ThrowTerminatingError((New-VSError -String "This parameter only accepts the following types: $($allowedTypes -join ", "). The current types of the value are: $($_.PSTypeNames -join ", ")."))
                 }
             })]
         $IndexDocument,
@@ -73,7 +73,7 @@ function Add-VSS3BucketWebsiteConfiguration {
                     $true
                 }
                 else {
-                    throw "This parameter only accepts the following types: $($allowedTypes -join ", "). The current types of the value are: $($_.PSTypeNames -join ", ")."
+                    $PSCmdlet.ThrowTerminatingError((New-VSError -String "This parameter only accepts the following types: $($allowedTypes -join ", "). The current types of the value are: $($_.PSTypeNames -join ", ")."))
                 }
             })]
         $RoutingRules

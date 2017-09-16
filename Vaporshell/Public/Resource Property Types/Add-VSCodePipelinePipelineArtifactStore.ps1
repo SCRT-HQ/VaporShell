@@ -1,4 +1,4 @@
-function Add-VSCodePipelinePipelineArtifactStore {
+﻿function Add-VSCodePipelinePipelineArtifactStore {
     <#
     .SYNOPSIS
         Adds an AWS::CodePipeline::Pipeline.ArtifactStore resource property to the template
@@ -43,7 +43,7 @@ function Add-VSCodePipelinePipelineArtifactStore {
                     $true
                 }
                 else {
-                    throw "This parameter only accepts the following types: $($allowedTypes -join ", "). The current types of the value are: $($_.PSTypeNames -join ", ")."
+                    $PSCmdlet.ThrowTerminatingError((New-VSError -String "This parameter only accepts the following types: $($allowedTypes -join ", "). The current types of the value are: $($_.PSTypeNames -join ", ")."))
                 }
             })]
         $Location,
@@ -54,7 +54,7 @@ function Add-VSCodePipelinePipelineArtifactStore {
                     $true
                 }
                 else {
-                    throw "This parameter only accepts the following types: $($allowedTypes -join ", "). The current types of the value are: $($_.PSTypeNames -join ", ")."
+                    $PSCmdlet.ThrowTerminatingError((New-VSError -String "This parameter only accepts the following types: $($allowedTypes -join ", "). The current types of the value are: $($_.PSTypeNames -join ", ")."))
                 }
             })]
         $Type

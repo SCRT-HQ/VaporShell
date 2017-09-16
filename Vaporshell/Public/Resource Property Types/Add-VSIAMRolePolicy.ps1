@@ -1,4 +1,4 @@
-function Add-VSIAMRolePolicy {
+﻿function Add-VSIAMRolePolicy {
     <#
     .SYNOPSIS
         Adds an AWS::IAM::Role.Policy resource property to the template
@@ -29,6 +29,15 @@ function Add-VSIAMRolePolicy {
     Param
     (
         [parameter(Mandatory = $true)]
+        [ValidateScript( {
+                $allowedTypes = "System.String","System.Collections.Hashtable","System.Management.Automation.PSCustomObject"
+                if ([string]$($_.PSTypeNames) -match "($(($allowedTypes|ForEach-Object{[RegEx]::Escape($_)}) -join '|'))") {
+                    $true
+                }
+                else {
+                    $PSCmdlet.ThrowTerminatingError((New-VSError -String "This parameter only accepts the following types: $($allowedTypes -join ", "). The current types of the value are: $($_.PSTypeNames -join ", ")."))
+                }
+            })]
         $PolicyDocument,
         [parameter(Mandatory = $true)]
         [ValidateScript( {
@@ -37,7 +46,7 @@ function Add-VSIAMRolePolicy {
                     $true
                 }
                 else {
-                    throw "This parameter only accepts the following types: $($allowedTypes -join ", "). The current types of the value are: $($_.PSTypeNames -join ", ")."
+                    $PSCmdlet.ThrowTerminatingError((New-VSError -String "This parameter only accepts the following types: $($allowedTypes -join ", "). The current types of the value are: $($_.PSTypeNames -join ", ")."))
                 }
             })]
         $PolicyName

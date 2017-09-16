@@ -1,4 +1,4 @@
-function Add-VSCognitoUserPoolEmailConfiguration {
+﻿function Add-VSCognitoUserPoolEmailConfiguration {
     <#
     .SYNOPSIS
         Adds an AWS::Cognito::UserPool.EmailConfiguration resource property to the template
@@ -35,7 +35,7 @@ function Add-VSCognitoUserPoolEmailConfiguration {
                     $true
                 }
                 else {
-                    throw "This parameter only accepts the following types: $($allowedTypes -join ", "). The current types of the value are: $($_.PSTypeNames -join ", ")."
+                    $PSCmdlet.ThrowTerminatingError((New-VSError -String "This parameter only accepts the following types: $($allowedTypes -join ", "). The current types of the value are: $($_.PSTypeNames -join ", ")."))
                 }
             })]
         $ReplyToEmailAddress,
@@ -46,7 +46,7 @@ function Add-VSCognitoUserPoolEmailConfiguration {
                     $true
                 }
                 else {
-                    throw "This parameter only accepts the following types: $($allowedTypes -join ", "). The current types of the value are: $($_.PSTypeNames -join ", ")."
+                    $PSCmdlet.ThrowTerminatingError((New-VSError -String "This parameter only accepts the following types: $($allowedTypes -join ", "). The current types of the value are: $($_.PSTypeNames -join ", ")."))
                 }
             })]
         $SourceArn

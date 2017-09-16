@@ -1,4 +1,4 @@
-function Add-VSEC2InstanceInstanceIpv6Address {
+﻿function Add-VSEC2InstanceInstanceIpv6Address {
     <#
     .SYNOPSIS
         Adds an AWS::EC2::Instance.InstanceIpv6Address resource property to the template
@@ -29,7 +29,7 @@ function Add-VSEC2InstanceInstanceIpv6Address {
                     $true
                 }
                 else {
-                    throw "This parameter only accepts the following types: $($allowedTypes -join ", "). The current types of the value are: $($_.PSTypeNames -join ", ")."
+                    $PSCmdlet.ThrowTerminatingError((New-VSError -String "This parameter only accepts the following types: $($allowedTypes -join ", "). The current types of the value are: $($_.PSTypeNames -join ", ")."))
                 }
             })]
         $Ipv6Address

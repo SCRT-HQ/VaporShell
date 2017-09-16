@@ -1,4 +1,4 @@
-function Add-VSCloudFrontDistributionOriginCustomHeader {
+﻿function Add-VSCloudFrontDistributionOriginCustomHeader {
     <#
     .SYNOPSIS
         Adds an AWS::CloudFront::Distribution.OriginCustomHeader resource property to the template
@@ -35,7 +35,7 @@ function Add-VSCloudFrontDistributionOriginCustomHeader {
                     $true
                 }
                 else {
-                    throw "This parameter only accepts the following types: $($allowedTypes -join ", "). The current types of the value are: $($_.PSTypeNames -join ", ")."
+                    $PSCmdlet.ThrowTerminatingError((New-VSError -String "This parameter only accepts the following types: $($allowedTypes -join ", "). The current types of the value are: $($_.PSTypeNames -join ", ")."))
                 }
             })]
         $HeaderName,
@@ -46,7 +46,7 @@ function Add-VSCloudFrontDistributionOriginCustomHeader {
                     $true
                 }
                 else {
-                    throw "This parameter only accepts the following types: $($allowedTypes -join ", "). The current types of the value are: $($_.PSTypeNames -join ", ")."
+                    $PSCmdlet.ThrowTerminatingError((New-VSError -String "This parameter only accepts the following types: $($allowedTypes -join ", "). The current types of the value are: $($_.PSTypeNames -join ", ")."))
                 }
             })]
         $HeaderValue

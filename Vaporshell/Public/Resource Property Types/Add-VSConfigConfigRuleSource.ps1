@@ -1,4 +1,4 @@
-function Add-VSConfigConfigRuleSource {
+﻿function Add-VSConfigConfigRuleSource {
     <#
     .SYNOPSIS
         Adds an AWS::Config::ConfigRule.Source resource property to the template
@@ -43,7 +43,7 @@ function Add-VSConfigConfigRuleSource {
                     $true
                 }
                 else {
-                    throw "This parameter only accepts the following types: $($allowedTypes -join ", "). The current types of the value are: $($_.PSTypeNames -join ", ")."
+                    $PSCmdlet.ThrowTerminatingError((New-VSError -String "This parameter only accepts the following types: $($allowedTypes -join ", "). The current types of the value are: $($_.PSTypeNames -join ", ")."))
                 }
             })]
         $Owner,
@@ -54,7 +54,7 @@ function Add-VSConfigConfigRuleSource {
                     $true
                 }
                 else {
-                    throw "This parameter only accepts the following types: $($allowedTypes -join ", "). The current types of the value are: $($_.PSTypeNames -join ", ")."
+                    $PSCmdlet.ThrowTerminatingError((New-VSError -String "This parameter only accepts the following types: $($allowedTypes -join ", "). The current types of the value are: $($_.PSTypeNames -join ", ")."))
                 }
             })]
         $SourceDetails,
@@ -65,7 +65,7 @@ function Add-VSConfigConfigRuleSource {
                     $true
                 }
                 else {
-                    throw "This parameter only accepts the following types: $($allowedTypes -join ", "). The current types of the value are: $($_.PSTypeNames -join ", ")."
+                    $PSCmdlet.ThrowTerminatingError((New-VSError -String "This parameter only accepts the following types: $($allowedTypes -join ", "). The current types of the value are: $($_.PSTypeNames -join ", ")."))
                 }
             })]
         $SourceIdentifier

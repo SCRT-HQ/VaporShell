@@ -1,4 +1,4 @@
-function Add-VSS3BucketCorsConfiguration {
+﻿function Add-VSS3BucketCorsConfiguration {
     <#
     .SYNOPSIS
         Adds an AWS::S3::Bucket.CorsConfiguration resource property to the template
@@ -31,7 +31,7 @@ function Add-VSS3BucketCorsConfiguration {
                     $true
                 }
                 else {
-                    throw "This parameter only accepts the following types: $($allowedTypes -join ", "). The current types of the value are: $($_.PSTypeNames -join ", ")."
+                    $PSCmdlet.ThrowTerminatingError((New-VSError -String "This parameter only accepts the following types: $($allowedTypes -join ", "). The current types of the value are: $($_.PSTypeNames -join ", ")."))
                 }
             })]
         $CorsRules

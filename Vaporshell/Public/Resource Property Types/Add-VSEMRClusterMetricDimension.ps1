@@ -1,4 +1,4 @@
-function Add-VSEMRClusterMetricDimension {
+﻿function Add-VSEMRClusterMetricDimension {
     <#
     .SYNOPSIS
         Adds an AWS::EMR::Cluster.MetricDimension resource property to the template
@@ -35,7 +35,7 @@ function Add-VSEMRClusterMetricDimension {
                     $true
                 }
                 else {
-                    throw "This parameter only accepts the following types: $($allowedTypes -join ", "). The current types of the value are: $($_.PSTypeNames -join ", ")."
+                    $PSCmdlet.ThrowTerminatingError((New-VSError -String "This parameter only accepts the following types: $($allowedTypes -join ", "). The current types of the value are: $($_.PSTypeNames -join ", ")."))
                 }
             })]
         $Key,
@@ -46,7 +46,7 @@ function Add-VSEMRClusterMetricDimension {
                     $true
                 }
                 else {
-                    throw "This parameter only accepts the following types: $($allowedTypes -join ", "). The current types of the value are: $($_.PSTypeNames -join ", ")."
+                    $PSCmdlet.ThrowTerminatingError((New-VSError -String "This parameter only accepts the following types: $($allowedTypes -join ", "). The current types of the value are: $($_.PSTypeNames -join ", ")."))
                 }
             })]
         $Value

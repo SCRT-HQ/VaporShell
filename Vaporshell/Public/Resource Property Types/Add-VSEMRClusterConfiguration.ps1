@@ -1,4 +1,4 @@
-function Add-VSEMRClusterConfiguration {
+﻿function Add-VSEMRClusterConfiguration {
     <#
     .SYNOPSIS
         Adds an AWS::EMR::Cluster.Configuration resource property to the template
@@ -45,7 +45,7 @@ function Add-VSEMRClusterConfiguration {
                     $true
                 }
                 else {
-                    throw "This parameter only accepts the following types: $($allowedTypes -join ", "). The current types of the value are: $($_.PSTypeNames -join ", ")."
+                    $PSCmdlet.ThrowTerminatingError((New-VSError -String "This parameter only accepts the following types: $($allowedTypes -join ", "). The current types of the value are: $($_.PSTypeNames -join ", ")."))
                 }
             })]
         $Classification,
@@ -59,7 +59,7 @@ function Add-VSEMRClusterConfiguration {
                     $true
                 }
                 else {
-                    throw "This parameter only accepts the following types: $($allowedTypes -join ", "). The current types of the value are: $($_.PSTypeNames -join ", ")."
+                    $PSCmdlet.ThrowTerminatingError((New-VSError -String "This parameter only accepts the following types: $($allowedTypes -join ", "). The current types of the value are: $($_.PSTypeNames -join ", ")."))
                 }
             })]
         $Configurations

@@ -38,7 +38,7 @@ function Add-ConAnd {
                 $true
             }
             else {
-                throw "The MapName parameter only accepts the following types: $($allowedTypes -join ", "). The current types of the value are: $($_.PSTypeNames -join ", ")."
+                $PSCmdlet.ThrowTerminatingError((New-VSError -String "The MapName parameter only accepts the following types: $($allowedTypes -join ", "). The current types of the value are: $($_.PSTypeNames -join ", ")."))
             }
         })]
         [System.Object[]]

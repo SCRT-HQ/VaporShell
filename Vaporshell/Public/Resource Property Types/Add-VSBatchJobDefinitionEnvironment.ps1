@@ -1,4 +1,4 @@
-function Add-VSBatchJobDefinitionEnvironment {
+﻿function Add-VSBatchJobDefinitionEnvironment {
     <#
     .SYNOPSIS
         Adds an AWS::Batch::JobDefinition.Environment resource property to the template
@@ -35,7 +35,7 @@ function Add-VSBatchJobDefinitionEnvironment {
                     $true
                 }
                 else {
-                    throw "This parameter only accepts the following types: $($allowedTypes -join ", "). The current types of the value are: $($_.PSTypeNames -join ", ")."
+                    $PSCmdlet.ThrowTerminatingError((New-VSError -String "This parameter only accepts the following types: $($allowedTypes -join ", "). The current types of the value are: $($_.PSTypeNames -join ", ")."))
                 }
             })]
         $Value,
@@ -46,7 +46,7 @@ function Add-VSBatchJobDefinitionEnvironment {
                     $true
                 }
                 else {
-                    throw "This parameter only accepts the following types: $($allowedTypes -join ", "). The current types of the value are: $($_.PSTypeNames -join ", ")."
+                    $PSCmdlet.ThrowTerminatingError((New-VSError -String "This parameter only accepts the following types: $($allowedTypes -join ", "). The current types of the value are: $($_.PSTypeNames -join ", ")."))
                 }
             })]
         $Name

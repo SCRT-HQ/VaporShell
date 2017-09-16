@@ -1,4 +1,4 @@
-function Add-VSEC2InstanceAssociationParameter {
+﻿function Add-VSEC2InstanceAssociationParameter {
     <#
     .SYNOPSIS
         Adds an AWS::EC2::Instance.AssociationParameter resource property to the template
@@ -37,7 +37,7 @@ function Add-VSEC2InstanceAssociationParameter {
                     $true
                 }
                 else {
-                    throw "This parameter only accepts the following types: $($allowedTypes -join ", "). The current types of the value are: $($_.PSTypeNames -join ", ")."
+                    $PSCmdlet.ThrowTerminatingError((New-VSError -String "This parameter only accepts the following types: $($allowedTypes -join ", "). The current types of the value are: $($_.PSTypeNames -join ", ")."))
                 }
             })]
         $Key,

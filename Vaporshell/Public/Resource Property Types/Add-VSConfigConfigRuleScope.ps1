@@ -1,4 +1,4 @@
-function Add-VSConfigConfigRuleScope {
+﻿function Add-VSConfigConfigRuleScope {
     <#
     .SYNOPSIS
         Adds an AWS::Config::ConfigRule.Scope resource property to the template
@@ -49,7 +49,7 @@ function Add-VSConfigConfigRuleScope {
                     $true
                 }
                 else {
-                    throw "This parameter only accepts the following types: $($allowedTypes -join ", "). The current types of the value are: $($_.PSTypeNames -join ", ")."
+                    $PSCmdlet.ThrowTerminatingError((New-VSError -String "This parameter only accepts the following types: $($allowedTypes -join ", "). The current types of the value are: $($_.PSTypeNames -join ", ")."))
                 }
             })]
         $ComplianceResourceId,
@@ -62,7 +62,7 @@ function Add-VSConfigConfigRuleScope {
                     $true
                 }
                 else {
-                    throw "This parameter only accepts the following types: $($allowedTypes -join ", "). The current types of the value are: $($_.PSTypeNames -join ", ")."
+                    $PSCmdlet.ThrowTerminatingError((New-VSError -String "This parameter only accepts the following types: $($allowedTypes -join ", "). The current types of the value are: $($_.PSTypeNames -join ", ")."))
                 }
             })]
         $TagKey,
@@ -73,7 +73,7 @@ function Add-VSConfigConfigRuleScope {
                     $true
                 }
                 else {
-                    throw "This parameter only accepts the following types: $($allowedTypes -join ", "). The current types of the value are: $($_.PSTypeNames -join ", ")."
+                    $PSCmdlet.ThrowTerminatingError((New-VSError -String "This parameter only accepts the following types: $($allowedTypes -join ", "). The current types of the value are: $($_.PSTypeNames -join ", ")."))
                 }
             })]
         $TagValue

@@ -1,4 +1,4 @@
-function Add-VSOpsWorksStackRdsDbInstance {
+﻿function Add-VSOpsWorksStackRdsDbInstance {
     <#
     .SYNOPSIS
         Adds an AWS::OpsWorks::Stack.RdsDbInstance resource property to the template
@@ -43,7 +43,7 @@ function Add-VSOpsWorksStackRdsDbInstance {
                     $true
                 }
                 else {
-                    throw "This parameter only accepts the following types: $($allowedTypes -join ", "). The current types of the value are: $($_.PSTypeNames -join ", ")."
+                    $PSCmdlet.ThrowTerminatingError((New-VSError -String "This parameter only accepts the following types: $($allowedTypes -join ", "). The current types of the value are: $($_.PSTypeNames -join ", ")."))
                 }
             })]
         $DbPassword,
@@ -54,7 +54,7 @@ function Add-VSOpsWorksStackRdsDbInstance {
                     $true
                 }
                 else {
-                    throw "This parameter only accepts the following types: $($allowedTypes -join ", "). The current types of the value are: $($_.PSTypeNames -join ", ")."
+                    $PSCmdlet.ThrowTerminatingError((New-VSError -String "This parameter only accepts the following types: $($allowedTypes -join ", "). The current types of the value are: $($_.PSTypeNames -join ", ")."))
                 }
             })]
         $DbUser,
@@ -65,7 +65,7 @@ function Add-VSOpsWorksStackRdsDbInstance {
                     $true
                 }
                 else {
-                    throw "This parameter only accepts the following types: $($allowedTypes -join ", "). The current types of the value are: $($_.PSTypeNames -join ", ")."
+                    $PSCmdlet.ThrowTerminatingError((New-VSError -String "This parameter only accepts the following types: $($allowedTypes -join ", "). The current types of the value are: $($_.PSTypeNames -join ", ")."))
                 }
             })]
         $RdsDbInstanceArn

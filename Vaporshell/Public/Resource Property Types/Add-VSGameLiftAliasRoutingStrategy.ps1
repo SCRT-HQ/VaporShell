@@ -1,4 +1,4 @@
-function Add-VSGameLiftAliasRoutingStrategy {
+﻿function Add-VSGameLiftAliasRoutingStrategy {
     <#
     .SYNOPSIS
         Adds an AWS::GameLift::Alias.RoutingStrategy resource property to the template
@@ -41,7 +41,7 @@ function Add-VSGameLiftAliasRoutingStrategy {
                     $true
                 }
                 else {
-                    throw "This parameter only accepts the following types: $($allowedTypes -join ", "). The current types of the value are: $($_.PSTypeNames -join ", ")."
+                    $PSCmdlet.ThrowTerminatingError((New-VSError -String "This parameter only accepts the following types: $($allowedTypes -join ", "). The current types of the value are: $($_.PSTypeNames -join ", ")."))
                 }
             })]
         $FleetId,
@@ -52,7 +52,7 @@ function Add-VSGameLiftAliasRoutingStrategy {
                     $true
                 }
                 else {
-                    throw "This parameter only accepts the following types: $($allowedTypes -join ", "). The current types of the value are: $($_.PSTypeNames -join ", ")."
+                    $PSCmdlet.ThrowTerminatingError((New-VSError -String "This parameter only accepts the following types: $($allowedTypes -join ", "). The current types of the value are: $($_.PSTypeNames -join ", ")."))
                 }
             })]
         $Message,
@@ -63,7 +63,7 @@ function Add-VSGameLiftAliasRoutingStrategy {
                     $true
                 }
                 else {
-                    throw "This parameter only accepts the following types: $($allowedTypes -join ", "). The current types of the value are: $($_.PSTypeNames -join ", ")."
+                    $PSCmdlet.ThrowTerminatingError((New-VSError -String "This parameter only accepts the following types: $($allowedTypes -join ", "). The current types of the value are: $($_.PSTypeNames -join ", ")."))
                 }
             })]
         $Type

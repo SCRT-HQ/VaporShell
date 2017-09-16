@@ -1,4 +1,4 @@
-function Add-VSLambdaFunctionEnvironment {
+﻿function Add-VSLambdaFunctionEnvironment {
     <#
     .SYNOPSIS
         Adds an AWS::Lambda::Function.Environment resource property to the template

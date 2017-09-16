@@ -1,4 +1,4 @@
-function Add-VSS3BucketRule {
+﻿function Add-VSS3BucketRule {
     <#
     .SYNOPSIS
         Adds an AWS::S3::Bucket.Rule resource property to the template
@@ -8,6 +8,12 @@ function Add-VSS3BucketRule {
 
     .LINK
         http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-s3-bucket-lifecycleconfig-rule.html
+
+    .PARAMETER AbortIncompleteMultipartUpload
+		Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-s3-bucket-lifecycleconfig-rule.html#cfn-s3-bucket-rule-abortincompletemultipartupload    
+		Required: False    
+		Type: AbortIncompleteMultipartUpload    
+		UpdateType: Mutable    
 
     .PARAMETER ExpirationDate
 		Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-s3-bucket-lifecycleconfig-rule.html#cfn-s3-bucket-lifecycleconfig-rule-expirationdate    
@@ -41,8 +47,10 @@ function Add-VSS3BucketRule {
 
     .PARAMETER NoncurrentVersionTransitions
 		Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-s3-bucket-lifecycleconfig-rule.html#cfn-s3-bucket-lifecycleconfig-rule-noncurrentversiontransitions    
+		DuplicatesAllowed: False    
+		ItemType: NoncurrentVersionTransition    
 		Required: False    
-		Type: NoncurrentVersionTransition    
+		Type: List    
 		UpdateType: Mutable    
 
     .PARAMETER Prefix
@@ -57,6 +65,14 @@ function Add-VSS3BucketRule {
 		Required: True    
 		UpdateType: Mutable    
 
+    .PARAMETER TagFilters
+		Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-s3-bucket-lifecycleconfig-rule.html#cfn-s3-bucket-rule-tagfilters    
+		DuplicatesAllowed: False    
+		ItemType: TagFilter    
+		Required: False    
+		Type: List    
+		UpdateType: Mutable    
+
     .PARAMETER Transition
 		Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-s3-bucket-lifecycleconfig-rule.html#cfn-s3-bucket-lifecycleconfig-rule-transition    
 		Required: False    
@@ -65,8 +81,10 @@ function Add-VSS3BucketRule {
 
     .PARAMETER Transitions
 		Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-s3-bucket-lifecycleconfig-rule.html#cfn-s3-bucket-lifecycleconfig-rule-transitions    
+		DuplicatesAllowed: False    
+		ItemType: Transition    
 		Required: False    
-		Type: Transition    
+		Type: List    
 		UpdateType: Mutable    
 
     .FUNCTIONALITY
@@ -76,6 +94,8 @@ function Add-VSS3BucketRule {
     [cmdletbinding()]
     Param
     (
+        [parameter(Mandatory = $false)]
+        $AbortIncompleteMultipartUpload,
         [parameter(Mandatory = $false)]
         $ExpirationDate,
         [parameter(Mandatory = $false)]
@@ -88,7 +108,7 @@ function Add-VSS3BucketRule {
                     $true
                 }
                 else {
-                    throw "This parameter only accepts the following types: $($allowedTypes -join ", "). The current types of the value are: $($_.PSTypeNames -join ", ")."
+                    $PSCmdlet.ThrowTerminatingError((New-VSError -String "This parameter only accepts the following types: $($allowedTypes -join ", "). The current types of the value are: $($_.PSTypeNames -join ", ")."))
                 }
             })]
         $Id,
@@ -98,6 +118,15 @@ function Add-VSS3BucketRule {
         [parameter(Mandatory = $false)]
         $NoncurrentVersionTransition,
         [parameter(Mandatory = $false)]
+        [ValidateScript( {
+                $allowedTypes = "Vaporshell.Resource.S3.Bucket.NoncurrentVersionTransition"
+                if ([string]$($_.PSTypeNames) -match "($(($allowedTypes|ForEach-Object{[RegEx]::Escape($_)}) -join '|'))") {
+                    $true
+                }
+                else {
+                    $PSCmdlet.ThrowTerminatingError((New-VSError -String "This parameter only accepts the following types: $($allowedTypes -join ", "). The current types of the value are: $($_.PSTypeNames -join ", ")."))
+                }
+            })]
         $NoncurrentVersionTransitions,
         [parameter(Mandatory = $false)]
         [ValidateScript( {
@@ -106,7 +135,7 @@ function Add-VSS3BucketRule {
                     $true
                 }
                 else {
-                    throw "This parameter only accepts the following types: $($allowedTypes -join ", "). The current types of the value are: $($_.PSTypeNames -join ", ")."
+                    $PSCmdlet.ThrowTerminatingError((New-VSError -String "This parameter only accepts the following types: $($allowedTypes -join ", "). The current types of the value are: $($_.PSTypeNames -join ", ")."))
                 }
             })]
         $Prefix,
@@ -117,13 +146,33 @@ function Add-VSS3BucketRule {
                     $true
                 }
                 else {
-                    throw "This parameter only accepts the following types: $($allowedTypes -join ", "). The current types of the value are: $($_.PSTypeNames -join ", ")."
+                    $PSCmdlet.ThrowTerminatingError((New-VSError -String "This parameter only accepts the following types: $($allowedTypes -join ", "). The current types of the value are: $($_.PSTypeNames -join ", ")."))
                 }
             })]
         $Status,
         [parameter(Mandatory = $false)]
+        [ValidateScript( {
+                $allowedTypes = "Vaporshell.Resource.S3.Bucket.TagFilter"
+                if ([string]$($_.PSTypeNames) -match "($(($allowedTypes|ForEach-Object{[RegEx]::Escape($_)}) -join '|'))") {
+                    $true
+                }
+                else {
+                    $PSCmdlet.ThrowTerminatingError((New-VSError -String "This parameter only accepts the following types: $($allowedTypes -join ", "). The current types of the value are: $($_.PSTypeNames -join ", ")."))
+                }
+            })]
+        $TagFilters,
+        [parameter(Mandatory = $false)]
         $Transition,
         [parameter(Mandatory = $false)]
+        [ValidateScript( {
+                $allowedTypes = "Vaporshell.Resource.S3.Bucket.Transition"
+                if ([string]$($_.PSTypeNames) -match "($(($allowedTypes|ForEach-Object{[RegEx]::Escape($_)}) -join '|'))") {
+                    $true
+                }
+                else {
+                    $PSCmdlet.ThrowTerminatingError((New-VSError -String "This parameter only accepts the following types: $($allowedTypes -join ", "). The current types of the value are: $($_.PSTypeNames -join ", ")."))
+                }
+            })]
         $Transitions
     )
     Begin {

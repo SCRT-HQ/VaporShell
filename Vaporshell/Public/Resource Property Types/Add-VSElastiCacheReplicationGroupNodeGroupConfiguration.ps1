@@ -1,4 +1,4 @@
-function Add-VSElastiCacheReplicationGroupNodeGroupConfiguration {
+﻿function Add-VSElastiCacheReplicationGroupNodeGroupConfiguration {
     <#
     .SYNOPSIS
         Adds an AWS::ElastiCache::ReplicationGroup.NodeGroupConfiguration resource property to the template
@@ -49,7 +49,7 @@ function Add-VSElastiCacheReplicationGroupNodeGroupConfiguration {
                     $true
                 }
                 else {
-                    throw "This parameter only accepts the following types: $($allowedTypes -join ", "). The current types of the value are: $($_.PSTypeNames -join ", ")."
+                    $PSCmdlet.ThrowTerminatingError((New-VSError -String "This parameter only accepts the following types: $($allowedTypes -join ", "). The current types of the value are: $($_.PSTypeNames -join ", ")."))
                 }
             })]
         $PrimaryAvailabilityZone,
@@ -65,7 +65,7 @@ function Add-VSElastiCacheReplicationGroupNodeGroupConfiguration {
                     $true
                 }
                 else {
-                    throw "This parameter only accepts the following types: $($allowedTypes -join ", "). The current types of the value are: $($_.PSTypeNames -join ", ")."
+                    $PSCmdlet.ThrowTerminatingError((New-VSError -String "This parameter only accepts the following types: $($allowedTypes -join ", "). The current types of the value are: $($_.PSTypeNames -join ", ")."))
                 }
             })]
         $Slots

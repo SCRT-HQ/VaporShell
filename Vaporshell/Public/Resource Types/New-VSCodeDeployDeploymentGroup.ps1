@@ -1,4 +1,4 @@
-function New-VSCodeDeployDeploymentGroup {
+﻿function New-VSCodeDeployDeploymentGroup {
     <#
     .SYNOPSIS
         Adds an AWS::CodeDeploy::DeploymentGroup resource to the template
@@ -23,6 +23,12 @@ function New-VSCodeDeployDeploymentGroup {
 		PrimitiveType: String    
 		Required: True    
 		UpdateType: Immutable    
+
+    .PARAMETER AutoRollbackConfiguration
+		Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-codedeploy-deploymentgroup.html#cfn-codedeploy-deploymentgroup-autorollbackconfiguration    
+		Required: False    
+		Type: AutoRollbackConfiguration    
+		UpdateType: Mutable    
 
     .PARAMETER AutoScalingGroups
 		Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-codedeploy-deploymentgroup.html#cfn-codedeploy-deploymentgroup-autoscalinggroups    
@@ -50,12 +56,24 @@ function New-VSCodeDeployDeploymentGroup {
 		Required: False    
 		UpdateType: Immutable    
 
+    .PARAMETER DeploymentStyle
+		Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-codedeploy-deploymentgroup.html#cfn-codedeploy-deploymentgroup-deploymentstyle    
+		Required: False    
+		Type: DeploymentStyle    
+		UpdateType: Mutable    
+
     .PARAMETER Ec2TagFilters
 		Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-codedeploy-deploymentgroup.html#cfn-codedeploy-deploymentgroup-ec2tagfilters    
 		DuplicatesAllowed: False    
 		ItemType: EC2TagFilter    
 		Required: False    
 		Type: List    
+		UpdateType: Mutable    
+
+    .PARAMETER LoadBalancerInfo
+		Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-codedeploy-deploymentgroup.html#cfn-codedeploy-deploymentgroup-loadbalancerinfo    
+		Required: False    
+		Type: LoadBalancerInfo    
 		UpdateType: Mutable    
 
     .PARAMETER OnPremisesInstanceTagFilters
@@ -122,7 +140,7 @@ function New-VSCodeDeployDeploymentGroup {
                     $true
                 }
                 else {
-                    throw 'The logical ID must be alphanumeric (a-z, A-Z, 0-9) and unique within the template.'
+                    $PSCmdlet.ThrowTerminatingError((New-VSError -String 'The LogicalID must be alphanumeric (a-z, A-Z, 0-9) and unique within the template.'))
                 }
             })]
         [System.String]
@@ -136,10 +154,12 @@ function New-VSCodeDeployDeploymentGroup {
                     $true
                 }
                 else {
-                    throw "This parameter only accepts the following types: $($allowedTypes -join ", "). The current types of the value are: $($_.PSTypeNames -join ", ")."
+                    $PSCmdlet.ThrowTerminatingError((New-VSError -String "This parameter only accepts the following types: $($allowedTypes -join ", "). The current types of the value are: $($_.PSTypeNames -join ", ")."))
                 }
             })]
         $ApplicationName,
+        [parameter(Mandatory = $false)]
+        $AutoRollbackConfiguration,
         [parameter(Mandatory = $false)]
         $AutoScalingGroups,
         [parameter(Mandatory = $false)]
@@ -151,7 +171,7 @@ function New-VSCodeDeployDeploymentGroup {
                     $true
                 }
                 else {
-                    throw "This parameter only accepts the following types: $($allowedTypes -join ", "). The current types of the value are: $($_.PSTypeNames -join ", ")."
+                    $PSCmdlet.ThrowTerminatingError((New-VSError -String "This parameter only accepts the following types: $($allowedTypes -join ", "). The current types of the value are: $($_.PSTypeNames -join ", ")."))
                 }
             })]
         $DeploymentConfigName,
@@ -162,10 +182,12 @@ function New-VSCodeDeployDeploymentGroup {
                     $true
                 }
                 else {
-                    throw "This parameter only accepts the following types: $($allowedTypes -join ", "). The current types of the value are: $($_.PSTypeNames -join ", ")."
+                    $PSCmdlet.ThrowTerminatingError((New-VSError -String "This parameter only accepts the following types: $($allowedTypes -join ", "). The current types of the value are: $($_.PSTypeNames -join ", ")."))
                 }
             })]
         $DeploymentGroupName,
+        [parameter(Mandatory = $false)]
+        $DeploymentStyle,
         [parameter(Mandatory = $false)]
         [ValidateScript( {
                 $allowedTypes = "Vaporshell.Resource.CodeDeploy.DeploymentGroup.EC2TagFilter"
@@ -173,10 +195,12 @@ function New-VSCodeDeployDeploymentGroup {
                     $true
                 }
                 else {
-                    throw "This parameter only accepts the following types: $($allowedTypes -join ", "). The current types of the value are: $($_.PSTypeNames -join ", ")."
+                    $PSCmdlet.ThrowTerminatingError((New-VSError -String "This parameter only accepts the following types: $($allowedTypes -join ", "). The current types of the value are: $($_.PSTypeNames -join ", ")."))
                 }
             })]
         $Ec2TagFilters,
+        [parameter(Mandatory = $false)]
+        $LoadBalancerInfo,
         [parameter(Mandatory = $false)]
         [ValidateScript( {
                 $allowedTypes = "Vaporshell.Resource.CodeDeploy.DeploymentGroup.TagFilter"
@@ -184,7 +208,7 @@ function New-VSCodeDeployDeploymentGroup {
                     $true
                 }
                 else {
-                    throw "This parameter only accepts the following types: $($allowedTypes -join ", "). The current types of the value are: $($_.PSTypeNames -join ", ")."
+                    $PSCmdlet.ThrowTerminatingError((New-VSError -String "This parameter only accepts the following types: $($allowedTypes -join ", "). The current types of the value are: $($_.PSTypeNames -join ", ")."))
                 }
             })]
         $OnPremisesInstanceTagFilters,
@@ -195,7 +219,7 @@ function New-VSCodeDeployDeploymentGroup {
                     $true
                 }
                 else {
-                    throw "This parameter only accepts the following types: $($allowedTypes -join ", "). The current types of the value are: $($_.PSTypeNames -join ", ")."
+                    $PSCmdlet.ThrowTerminatingError((New-VSError -String "This parameter only accepts the following types: $($allowedTypes -join ", "). The current types of the value are: $($_.PSTypeNames -join ", ")."))
                 }
             })]
         $ServiceRoleArn,
@@ -206,7 +230,7 @@ function New-VSCodeDeployDeploymentGroup {
                     $true
                 }
                 else {
-                    throw "This parameter only accepts the following types: $($allowedTypes -join ", "). The current types of the value are: $($_.PSTypeNames -join ", ")."
+                    $PSCmdlet.ThrowTerminatingError((New-VSError -String "This parameter only accepts the following types: $($allowedTypes -join ", "). The current types of the value are: $($_.PSTypeNames -join ", ")."))
                 }
             })]
         $TriggerConfigurations,
@@ -223,7 +247,7 @@ function New-VSCodeDeployDeploymentGroup {
                     $true
                 }
                 else {
-                    throw "The UpdatePolicy parameter only accepts the following types: $($allowedTypes -join ", "). The current types of the value are: $($_.PSTypeNames -join ", ")."
+                    $PSCmdlet.ThrowTerminatingError((New-VSError -String "The UpdatePolicy parameter only accepts the following types: $($allowedTypes -join ", "). The current types of the value are: $($_.PSTypeNames -join ", ")."))
                 }
             })]
         $Metadata,
@@ -234,7 +258,7 @@ function New-VSCodeDeployDeploymentGroup {
                     $true
                 }
                 else {
-                    throw "This parameter only accepts the following types: $($allowedTypes -join ", "). The current types of the value are: $($_.PSTypeNames -join ", ")."
+                    $PSCmdlet.ThrowTerminatingError((New-VSError -String "This parameter only accepts the following types: $($allowedTypes -join ", "). The current types of the value are: $($_.PSTypeNames -join ", ")."))
                 }
             })]
         $UpdatePolicy,
@@ -250,41 +274,41 @@ function New-VSCodeDeployDeploymentGroup {
     Process {
         foreach ($key in $PSBoundParameters.Keys) {
             switch ($key) {
-                'LogicalId' {}
-                'DeletionPolicy' {
+                LogicalId {}
+                DeletionPolicy {
                     $ResourceParams.Add("DeletionPolicy",$DeletionPolicy)
                 }
-                'DependsOn' {
+                DependsOn {
                     $ResourceParams.Add("DependsOn",$DependsOn)
                 }
-                'Metadata' {
+                Metadata {
                     $ResourceParams.Add("Metadata",$Metadata)
                 }
-                'UpdatePolicy' {
+                UpdatePolicy {
                     $ResourceParams.Add("UpdatePolicy",$UpdatePolicy)
                 }
-                'Condition' {
+                Condition {
                     $ResourceParams.Add("Condition",$Condition)
                 }
-                'AutoScalingGroups' {
+                AutoScalingGroups {
                     if (!($ResourceParams["Properties"])) {
                         $ResourceParams.Add("Properties",([PSCustomObject]@{}))
                     }
                     $ResourceParams["Properties"] | Add-Member -MemberType NoteProperty -Name AutoScalingGroups -Value @($AutoScalingGroups)
                 }
-                'Ec2TagFilters' {
+                Ec2TagFilters {
                     if (!($ResourceParams["Properties"])) {
                         $ResourceParams.Add("Properties",([PSCustomObject]@{}))
                     }
                     $ResourceParams["Properties"] | Add-Member -MemberType NoteProperty -Name Ec2TagFilters -Value @($Ec2TagFilters)
                 }
-                'OnPremisesInstanceTagFilters' {
+                OnPremisesInstanceTagFilters {
                     if (!($ResourceParams["Properties"])) {
                         $ResourceParams.Add("Properties",([PSCustomObject]@{}))
                     }
                     $ResourceParams["Properties"] | Add-Member -MemberType NoteProperty -Name OnPremisesInstanceTagFilters -Value @($OnPremisesInstanceTagFilters)
                 }
-                'TriggerConfigurations' {
+                TriggerConfigurations {
                     if (!($ResourceParams["Properties"])) {
                         $ResourceParams.Add("Properties",([PSCustomObject]@{}))
                     }
@@ -294,7 +318,7 @@ function New-VSCodeDeployDeploymentGroup {
                     if (!($ResourceParams["Properties"])) {
                         $ResourceParams.Add("Properties",([PSCustomObject]@{}))
                     }
-                    $ResourceParams["Properties"] | Add-Member -MemberType NoteProperty -Name $key -Value $PSBoundParameters.$key
+                    $ResourceParams["Properties"] | Add-Member -MemberType NoteProperty -Name $key -Value $PSBoundParameters[$key]
                 }
             }
         }

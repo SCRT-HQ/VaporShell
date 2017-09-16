@@ -1,4 +1,4 @@
-function Add-VSCloudFrontDistributionViewerCertificate {
+﻿function Add-VSCloudFrontDistributionViewerCertificate {
     <#
     .SYNOPSIS
         Adds an AWS::CloudFront::Distribution.ViewerCertificate resource property to the template
@@ -53,7 +53,7 @@ function Add-VSCloudFrontDistributionViewerCertificate {
                     $true
                 }
                 else {
-                    throw "This parameter only accepts the following types: $($allowedTypes -join ", "). The current types of the value are: $($_.PSTypeNames -join ", ")."
+                    $PSCmdlet.ThrowTerminatingError((New-VSError -String "This parameter only accepts the following types: $($allowedTypes -join ", "). The current types of the value are: $($_.PSTypeNames -join ", ")."))
                 }
             })]
         $AcmCertificateArn,
@@ -67,7 +67,7 @@ function Add-VSCloudFrontDistributionViewerCertificate {
                     $true
                 }
                 else {
-                    throw "This parameter only accepts the following types: $($allowedTypes -join ", "). The current types of the value are: $($_.PSTypeNames -join ", ")."
+                    $PSCmdlet.ThrowTerminatingError((New-VSError -String "This parameter only accepts the following types: $($allowedTypes -join ", "). The current types of the value are: $($_.PSTypeNames -join ", ")."))
                 }
             })]
         $IamCertificateId,
@@ -78,7 +78,7 @@ function Add-VSCloudFrontDistributionViewerCertificate {
                     $true
                 }
                 else {
-                    throw "This parameter only accepts the following types: $($allowedTypes -join ", "). The current types of the value are: $($_.PSTypeNames -join ", ")."
+                    $PSCmdlet.ThrowTerminatingError((New-VSError -String "This parameter only accepts the following types: $($allowedTypes -join ", "). The current types of the value are: $($_.PSTypeNames -join ", ")."))
                 }
             })]
         $MinimumProtocolVersion,
@@ -89,7 +89,7 @@ function Add-VSCloudFrontDistributionViewerCertificate {
                     $true
                 }
                 else {
-                    throw "This parameter only accepts the following types: $($allowedTypes -join ", "). The current types of the value are: $($_.PSTypeNames -join ", ")."
+                    $PSCmdlet.ThrowTerminatingError((New-VSError -String "This parameter only accepts the following types: $($allowedTypes -join ", "). The current types of the value are: $($_.PSTypeNames -join ", ")."))
                 }
             })]
         $SslSupportMethod

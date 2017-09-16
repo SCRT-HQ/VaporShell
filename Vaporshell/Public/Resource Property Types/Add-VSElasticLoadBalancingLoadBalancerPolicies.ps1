@@ -1,4 +1,4 @@
-function Add-VSElasticLoadBalancingLoadBalancerPolicies {
+﻿function Add-VSElasticLoadBalancingLoadBalancerPolicies {
     <#
     .SYNOPSIS
         Adds an AWS::ElasticLoadBalancing::LoadBalancer.Policies resource property to the template
@@ -65,7 +65,7 @@ function Add-VSElasticLoadBalancingLoadBalancerPolicies {
                     $true
                 }
                 else {
-                    throw "This parameter only accepts the following types: $($allowedTypes -join ", "). The current types of the value are: $($_.PSTypeNames -join ", ")."
+                    $PSCmdlet.ThrowTerminatingError((New-VSError -String "This parameter only accepts the following types: $($allowedTypes -join ", "). The current types of the value are: $($_.PSTypeNames -join ", ")."))
                 }
             })]
         $PolicyName,
@@ -76,7 +76,7 @@ function Add-VSElasticLoadBalancingLoadBalancerPolicies {
                     $true
                 }
                 else {
-                    throw "This parameter only accepts the following types: $($allowedTypes -join ", "). The current types of the value are: $($_.PSTypeNames -join ", ")."
+                    $PSCmdlet.ThrowTerminatingError((New-VSError -String "This parameter only accepts the following types: $($allowedTypes -join ", "). The current types of the value are: $($_.PSTypeNames -join ", ")."))
                 }
             })]
         $PolicyType

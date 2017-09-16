@@ -1,4 +1,4 @@
-function Add-VSApiGatewayUsagePlanApiStage {
+﻿function Add-VSApiGatewayUsagePlanApiStage {
     <#
     .SYNOPSIS
         Adds an AWS::ApiGateway::UsagePlan.ApiStage resource property to the template
@@ -35,7 +35,7 @@ function Add-VSApiGatewayUsagePlanApiStage {
                     $true
                 }
                 else {
-                    throw "This parameter only accepts the following types: $($allowedTypes -join ", "). The current types of the value are: $($_.PSTypeNames -join ", ")."
+                    $PSCmdlet.ThrowTerminatingError((New-VSError -String "This parameter only accepts the following types: $($allowedTypes -join ", "). The current types of the value are: $($_.PSTypeNames -join ", ")."))
                 }
             })]
         $ApiId,
@@ -46,7 +46,7 @@ function Add-VSApiGatewayUsagePlanApiStage {
                     $true
                 }
                 else {
-                    throw "This parameter only accepts the following types: $($allowedTypes -join ", "). The current types of the value are: $($_.PSTypeNames -join ", ")."
+                    $PSCmdlet.ThrowTerminatingError((New-VSError -String "This parameter only accepts the following types: $($allowedTypes -join ", "). The current types of the value are: $($_.PSTypeNames -join ", ")."))
                 }
             })]
         $Stage

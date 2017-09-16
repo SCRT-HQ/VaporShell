@@ -1,4 +1,4 @@
-function Add-VSS3BucketLoggingConfiguration {
+﻿function Add-VSS3BucketLoggingConfiguration {
     <#
     .SYNOPSIS
         Adds an AWS::S3::Bucket.LoggingConfiguration resource property to the template
@@ -35,7 +35,7 @@ function Add-VSS3BucketLoggingConfiguration {
                     $true
                 }
                 else {
-                    throw "This parameter only accepts the following types: $($allowedTypes -join ", "). The current types of the value are: $($_.PSTypeNames -join ", ")."
+                    $PSCmdlet.ThrowTerminatingError((New-VSError -String "This parameter only accepts the following types: $($allowedTypes -join ", "). The current types of the value are: $($_.PSTypeNames -join ", ")."))
                 }
             })]
         $DestinationBucketName,
@@ -46,7 +46,7 @@ function Add-VSS3BucketLoggingConfiguration {
                     $true
                 }
                 else {
-                    throw "This parameter only accepts the following types: $($allowedTypes -join ", "). The current types of the value are: $($_.PSTypeNames -join ", ")."
+                    $PSCmdlet.ThrowTerminatingError((New-VSError -String "This parameter only accepts the following types: $($allowedTypes -join ", "). The current types of the value are: $($_.PSTypeNames -join ", ")."))
                 }
             })]
         $LogFilePrefix

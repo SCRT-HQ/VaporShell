@@ -1,4 +1,4 @@
-function Add-VSRoute53HealthCheckAlarmIdentifier {
+﻿function Add-VSRoute53HealthCheckAlarmIdentifier {
     <#
     .SYNOPSIS
         Adds an AWS::Route53::HealthCheck.AlarmIdentifier resource property to the template
@@ -35,7 +35,7 @@ function Add-VSRoute53HealthCheckAlarmIdentifier {
                     $true
                 }
                 else {
-                    throw "This parameter only accepts the following types: $($allowedTypes -join ", "). The current types of the value are: $($_.PSTypeNames -join ", ")."
+                    $PSCmdlet.ThrowTerminatingError((New-VSError -String "This parameter only accepts the following types: $($allowedTypes -join ", "). The current types of the value are: $($_.PSTypeNames -join ", ")."))
                 }
             })]
         $Name,
@@ -46,7 +46,7 @@ function Add-VSRoute53HealthCheckAlarmIdentifier {
                     $true
                 }
                 else {
-                    throw "This parameter only accepts the following types: $($allowedTypes -join ", "). The current types of the value are: $($_.PSTypeNames -join ", ")."
+                    $PSCmdlet.ThrowTerminatingError((New-VSError -String "This parameter only accepts the following types: $($allowedTypes -join ", "). The current types of the value are: $($_.PSTypeNames -join ", ")."))
                 }
             })]
         $Region

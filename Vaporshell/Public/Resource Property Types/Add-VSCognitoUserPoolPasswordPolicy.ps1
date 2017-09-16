@@ -1,4 +1,4 @@
-function Add-VSCognitoUserPoolPasswordPolicy {
+﻿function Add-VSCognitoUserPoolPasswordPolicy {
     <#
     .SYNOPSIS
         Adds an AWS::Cognito::UserPool.PasswordPolicy resource property to the template

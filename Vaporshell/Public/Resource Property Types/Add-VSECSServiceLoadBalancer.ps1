@@ -1,4 +1,4 @@
-function Add-VSECSServiceLoadBalancer {
+﻿function Add-VSECSServiceLoadBalancer {
     <#
     .SYNOPSIS
         Adds an AWS::ECS::Service.LoadBalancer resource property to the template
@@ -47,7 +47,7 @@ function Add-VSECSServiceLoadBalancer {
                     $true
                 }
                 else {
-                    throw "This parameter only accepts the following types: $($allowedTypes -join ", "). The current types of the value are: $($_.PSTypeNames -join ", ")."
+                    $PSCmdlet.ThrowTerminatingError((New-VSError -String "This parameter only accepts the following types: $($allowedTypes -join ", "). The current types of the value are: $($_.PSTypeNames -join ", ")."))
                 }
             })]
         $ContainerName,
@@ -61,7 +61,7 @@ function Add-VSECSServiceLoadBalancer {
                     $true
                 }
                 else {
-                    throw "This parameter only accepts the following types: $($allowedTypes -join ", "). The current types of the value are: $($_.PSTypeNames -join ", ")."
+                    $PSCmdlet.ThrowTerminatingError((New-VSError -String "This parameter only accepts the following types: $($allowedTypes -join ", "). The current types of the value are: $($_.PSTypeNames -join ", ")."))
                 }
             })]
         $LoadBalancerName,
@@ -72,7 +72,7 @@ function Add-VSECSServiceLoadBalancer {
                     $true
                 }
                 else {
-                    throw "This parameter only accepts the following types: $($allowedTypes -join ", "). The current types of the value are: $($_.PSTypeNames -join ", ")."
+                    $PSCmdlet.ThrowTerminatingError((New-VSError -String "This parameter only accepts the following types: $($allowedTypes -join ", "). The current types of the value are: $($_.PSTypeNames -join ", ")."))
                 }
             })]
         $TargetGroupArn

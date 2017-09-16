@@ -1,4 +1,4 @@
-function Add-VSECSServicePlacementStrategy {
+﻿function Add-VSECSServicePlacementStrategy {
     <#
     .SYNOPSIS
         Adds an AWS::ECS::Service.PlacementStrategy resource property to the template
@@ -35,7 +35,7 @@ function Add-VSECSServicePlacementStrategy {
                     $true
                 }
                 else {
-                    throw "This parameter only accepts the following types: $($allowedTypes -join ", "). The current types of the value are: $($_.PSTypeNames -join ", ")."
+                    $PSCmdlet.ThrowTerminatingError((New-VSError -String "This parameter only accepts the following types: $($allowedTypes -join ", "). The current types of the value are: $($_.PSTypeNames -join ", ")."))
                 }
             })]
         $Field,
@@ -46,7 +46,7 @@ function Add-VSECSServicePlacementStrategy {
                     $true
                 }
                 else {
-                    throw "This parameter only accepts the following types: $($allowedTypes -join ", "). The current types of the value are: $($_.PSTypeNames -join ", ")."
+                    $PSCmdlet.ThrowTerminatingError((New-VSError -String "This parameter only accepts the following types: $($allowedTypes -join ", "). The current types of the value are: $($_.PSTypeNames -join ", ")."))
                 }
             })]
         $Type

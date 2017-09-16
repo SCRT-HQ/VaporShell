@@ -1,4 +1,4 @@
-function Add-VSS3BucketReplicationConfiguration {
+﻿function Add-VSS3BucketReplicationConfiguration {
     <#
     .SYNOPSIS
         Adds an AWS::S3::Bucket.ReplicationConfiguration resource property to the template
@@ -37,7 +37,7 @@ function Add-VSS3BucketReplicationConfiguration {
                     $true
                 }
                 else {
-                    throw "This parameter only accepts the following types: $($allowedTypes -join ", "). The current types of the value are: $($_.PSTypeNames -join ", ")."
+                    $PSCmdlet.ThrowTerminatingError((New-VSError -String "This parameter only accepts the following types: $($allowedTypes -join ", "). The current types of the value are: $($_.PSTypeNames -join ", ")."))
                 }
             })]
         $Role,
@@ -48,7 +48,7 @@ function Add-VSS3BucketReplicationConfiguration {
                     $true
                 }
                 else {
-                    throw "This parameter only accepts the following types: $($allowedTypes -join ", "). The current types of the value are: $($_.PSTypeNames -join ", ")."
+                    $PSCmdlet.ThrowTerminatingError((New-VSError -String "This parameter only accepts the following types: $($allowedTypes -join ", "). The current types of the value are: $($_.PSTypeNames -join ", ")."))
                 }
             })]
         $Rules

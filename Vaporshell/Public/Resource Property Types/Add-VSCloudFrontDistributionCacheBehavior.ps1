@@ -1,4 +1,4 @@
-function Add-VSCloudFrontDistributionCacheBehavior {
+﻿function Add-VSCloudFrontDistributionCacheBehavior {
     <#
     .SYNOPSIS
         Adds an AWS::CloudFront::Distribution.CacheBehavior resource property to the template
@@ -116,7 +116,7 @@ function Add-VSCloudFrontDistributionCacheBehavior {
                     $true
                 }
                 else {
-                    throw "This parameter only accepts the following types: $($allowedTypes -join ", "). The current types of the value are: $($_.PSTypeNames -join ", ")."
+                    $PSCmdlet.ThrowTerminatingError((New-VSError -String "This parameter only accepts the following types: $($allowedTypes -join ", "). The current types of the value are: $($_.PSTypeNames -join ", ")."))
                 }
             })]
         $PathPattern,
@@ -130,7 +130,7 @@ function Add-VSCloudFrontDistributionCacheBehavior {
                     $true
                 }
                 else {
-                    throw "This parameter only accepts the following types: $($allowedTypes -join ", "). The current types of the value are: $($_.PSTypeNames -join ", ")."
+                    $PSCmdlet.ThrowTerminatingError((New-VSError -String "This parameter only accepts the following types: $($allowedTypes -join ", "). The current types of the value are: $($_.PSTypeNames -join ", ")."))
                 }
             })]
         $TargetOriginId,
@@ -143,7 +143,7 @@ function Add-VSCloudFrontDistributionCacheBehavior {
                     $true
                 }
                 else {
-                    throw "This parameter only accepts the following types: $($allowedTypes -join ", "). The current types of the value are: $($_.PSTypeNames -join ", ")."
+                    $PSCmdlet.ThrowTerminatingError((New-VSError -String "This parameter only accepts the following types: $($allowedTypes -join ", "). The current types of the value are: $($_.PSTypeNames -join ", ")."))
                 }
             })]
         $ViewerProtocolPolicy

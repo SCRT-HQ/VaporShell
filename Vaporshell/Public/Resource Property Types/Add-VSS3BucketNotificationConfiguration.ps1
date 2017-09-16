@@ -1,4 +1,4 @@
-function Add-VSS3BucketNotificationConfiguration {
+﻿function Add-VSS3BucketNotificationConfiguration {
     <#
     .SYNOPSIS
         Adds an AWS::S3::Bucket.NotificationConfiguration resource property to the template
@@ -47,7 +47,7 @@ function Add-VSS3BucketNotificationConfiguration {
                     $true
                 }
                 else {
-                    throw "This parameter only accepts the following types: $($allowedTypes -join ", "). The current types of the value are: $($_.PSTypeNames -join ", ")."
+                    $PSCmdlet.ThrowTerminatingError((New-VSError -String "This parameter only accepts the following types: $($allowedTypes -join ", "). The current types of the value are: $($_.PSTypeNames -join ", ")."))
                 }
             })]
         $LambdaConfigurations,
@@ -58,7 +58,7 @@ function Add-VSS3BucketNotificationConfiguration {
                     $true
                 }
                 else {
-                    throw "This parameter only accepts the following types: $($allowedTypes -join ", "). The current types of the value are: $($_.PSTypeNames -join ", ")."
+                    $PSCmdlet.ThrowTerminatingError((New-VSError -String "This parameter only accepts the following types: $($allowedTypes -join ", "). The current types of the value are: $($_.PSTypeNames -join ", ")."))
                 }
             })]
         $QueueConfigurations,
@@ -69,7 +69,7 @@ function Add-VSS3BucketNotificationConfiguration {
                     $true
                 }
                 else {
-                    throw "This parameter only accepts the following types: $($allowedTypes -join ", "). The current types of the value are: $($_.PSTypeNames -join ", ")."
+                    $PSCmdlet.ThrowTerminatingError((New-VSError -String "This parameter only accepts the following types: $($allowedTypes -join ", "). The current types of the value are: $($_.PSTypeNames -join ", ")."))
                 }
             })]
         $TopicConfigurations

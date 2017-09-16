@@ -1,4 +1,4 @@
-function Add-VSKinesisFirehoseDeliveryStreamBufferingHints {
+﻿function Add-VSKinesisFirehoseDeliveryStreamBufferingHints {
     <#
     .SYNOPSIS
         Adds an AWS::KinesisFirehose::DeliveryStream.BufferingHints resource property to the template
@@ -7,16 +7,16 @@ function Add-VSKinesisFirehoseDeliveryStreamBufferingHints {
         Adds an AWS::KinesisFirehose::DeliveryStream.BufferingHints resource property to the template
 
     .LINK
-        http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-kinesisfirehose-kinesisdeliverystream-s3destinationconfiguration-bufferinghints.html
+        http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-kinesisfirehose-deliverystream-bufferinghints.html
 
     .PARAMETER IntervalInSeconds
-		Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-kinesisfirehose-kinesisdeliverystream-s3destinationconfiguration-bufferinghints.html#cfn-kinesisfirehose-kinesisdeliverystream-s3destinationconfiguration-bufferinghints-intervalinseconds    
+		Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-kinesisfirehose-deliverystream-bufferinghints.html#cfn-kinesisfirehose-deliverystream-bufferinghints-intervalinseconds    
 		PrimitiveType: Integer    
 		Required: True    
 		UpdateType: Mutable    
 
     .PARAMETER SizeInMBs
-		Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-kinesisfirehose-kinesisdeliverystream-s3destinationconfiguration-bufferinghints.html#cfn-kinesisfirehose-kinesisdeliverystream-s3destinationconfiguration-bufferinghints-sizeinmbs    
+		Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-kinesisfirehose-deliverystream-bufferinghints.html#cfn-kinesisfirehose-deliverystream-bufferinghints-sizeinmbs    
 		PrimitiveType: Integer    
 		Required: True    
 		UpdateType: Mutable    

@@ -1,4 +1,4 @@
-function Add-VSCodePipelinePipelineOutputArtifact {
+﻿function Add-VSCodePipelinePipelineOutputArtifact {
     <#
     .SYNOPSIS
         Adds an AWS::CodePipeline::Pipeline.OutputArtifact resource property to the template
@@ -29,7 +29,7 @@ function Add-VSCodePipelinePipelineOutputArtifact {
                     $true
                 }
                 else {
-                    throw "This parameter only accepts the following types: $($allowedTypes -join ", "). The current types of the value are: $($_.PSTypeNames -join ", ")."
+                    $PSCmdlet.ThrowTerminatingError((New-VSError -String "This parameter only accepts the following types: $($allowedTypes -join ", "). The current types of the value are: $($_.PSTypeNames -join ", ")."))
                 }
             })]
         $Name

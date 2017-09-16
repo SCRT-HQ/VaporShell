@@ -1,4 +1,4 @@
-function Add-VSEC2SpotFleetSpotFleetRequestConfigData {
+﻿function Add-VSEC2SpotFleetSpotFleetRequestConfigData {
     <#
     .SYNOPSIS
         Adds an AWS::EC2::SpotFleet.SpotFleetRequestConfigData resource property to the template
@@ -35,6 +35,12 @@ function Add-VSEC2SpotFleetSpotFleetRequestConfigData {
 		Type: List    
 		UpdateType: Immutable    
 
+    .PARAMETER ReplaceUnhealthyInstances
+		Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-spotfleet-spotfleetrequestconfigdata.html#cfn-ec2-spotfleet-spotfleetrequestconfigdata-replaceunhealthyinstances    
+		PrimitiveType: Boolean    
+		Required: False    
+		UpdateType: Immutable    
+
     .PARAMETER SpotPrice
 		Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-spotfleet-spotfleetrequestconfigdata.html#cfn-ec2-spotfleet-spotfleetrequestconfigdata-spotprice    
 		PrimitiveType: String    
@@ -50,6 +56,12 @@ function Add-VSEC2SpotFleetSpotFleetRequestConfigData {
     .PARAMETER TerminateInstancesWithExpiration
 		Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-spotfleet-spotfleetrequestconfigdata.html#cfn-ec2-spotfleet-spotfleetrequestconfigdata-terminateinstanceswithexpiration    
 		PrimitiveType: Boolean    
+		Required: False    
+		UpdateType: Immutable    
+
+    .PARAMETER Type
+		Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-spotfleet-spotfleetrequestconfigdata.html#cfn-ec2-spotfleet-spotfleetrequestconfigdata-type    
+		PrimitiveType: String    
 		Required: False    
 		UpdateType: Immutable    
 
@@ -79,7 +91,7 @@ function Add-VSEC2SpotFleetSpotFleetRequestConfigData {
                     $true
                 }
                 else {
-                    throw "This parameter only accepts the following types: $($allowedTypes -join ", "). The current types of the value are: $($_.PSTypeNames -join ", ")."
+                    $PSCmdlet.ThrowTerminatingError((New-VSError -String "This parameter only accepts the following types: $($allowedTypes -join ", "). The current types of the value are: $($_.PSTypeNames -join ", ")."))
                 }
             })]
         $AllocationStrategy,
@@ -90,7 +102,7 @@ function Add-VSEC2SpotFleetSpotFleetRequestConfigData {
                     $true
                 }
                 else {
-                    throw "This parameter only accepts the following types: $($allowedTypes -join ", "). The current types of the value are: $($_.PSTypeNames -join ", ")."
+                    $PSCmdlet.ThrowTerminatingError((New-VSError -String "This parameter only accepts the following types: $($allowedTypes -join ", "). The current types of the value are: $($_.PSTypeNames -join ", ")."))
                 }
             })]
         $ExcessCapacityTerminationPolicy,
@@ -101,7 +113,7 @@ function Add-VSEC2SpotFleetSpotFleetRequestConfigData {
                     $true
                 }
                 else {
-                    throw "This parameter only accepts the following types: $($allowedTypes -join ", "). The current types of the value are: $($_.PSTypeNames -join ", ")."
+                    $PSCmdlet.ThrowTerminatingError((New-VSError -String "This parameter only accepts the following types: $($allowedTypes -join ", "). The current types of the value are: $($_.PSTypeNames -join ", ")."))
                 }
             })]
         $IamFleetRole,
@@ -112,10 +124,13 @@ function Add-VSEC2SpotFleetSpotFleetRequestConfigData {
                     $true
                 }
                 else {
-                    throw "This parameter only accepts the following types: $($allowedTypes -join ", "). The current types of the value are: $($_.PSTypeNames -join ", ")."
+                    $PSCmdlet.ThrowTerminatingError((New-VSError -String "This parameter only accepts the following types: $($allowedTypes -join ", "). The current types of the value are: $($_.PSTypeNames -join ", ")."))
                 }
             })]
         $LaunchSpecifications,
+        [parameter(Mandatory = $false)]
+        [System.Boolean]
+        $ReplaceUnhealthyInstances,
         [parameter(Mandatory = $true)]
         [ValidateScript( {
                 $allowedTypes = "System.String","Vaporshell.Function"
@@ -123,7 +138,7 @@ function Add-VSEC2SpotFleetSpotFleetRequestConfigData {
                     $true
                 }
                 else {
-                    throw "This parameter only accepts the following types: $($allowedTypes -join ", "). The current types of the value are: $($_.PSTypeNames -join ", ")."
+                    $PSCmdlet.ThrowTerminatingError((New-VSError -String "This parameter only accepts the following types: $($allowedTypes -join ", "). The current types of the value are: $($_.PSTypeNames -join ", ")."))
                 }
             })]
         $SpotPrice,
@@ -140,7 +155,18 @@ function Add-VSEC2SpotFleetSpotFleetRequestConfigData {
                     $true
                 }
                 else {
-                    throw "This parameter only accepts the following types: $($allowedTypes -join ", "). The current types of the value are: $($_.PSTypeNames -join ", ")."
+                    $PSCmdlet.ThrowTerminatingError((New-VSError -String "This parameter only accepts the following types: $($allowedTypes -join ", "). The current types of the value are: $($_.PSTypeNames -join ", ")."))
+                }
+            })]
+        $Type,
+        [parameter(Mandatory = $false)]
+        [ValidateScript( {
+                $allowedTypes = "System.String","Vaporshell.Function"
+                if ([string]$($_.PSTypeNames) -match "($(($allowedTypes|ForEach-Object{[RegEx]::Escape($_)}) -join '|'))") {
+                    $true
+                }
+                else {
+                    $PSCmdlet.ThrowTerminatingError((New-VSError -String "This parameter only accepts the following types: $($allowedTypes -join ", "). The current types of the value are: $($_.PSTypeNames -join ", ")."))
                 }
             })]
         $ValidFrom,
@@ -151,7 +177,7 @@ function Add-VSEC2SpotFleetSpotFleetRequestConfigData {
                     $true
                 }
                 else {
-                    throw "This parameter only accepts the following types: $($allowedTypes -join ", "). The current types of the value are: $($_.PSTypeNames -join ", ")."
+                    $PSCmdlet.ThrowTerminatingError((New-VSError -String "This parameter only accepts the following types: $($allowedTypes -join ", "). The current types of the value are: $($_.PSTypeNames -join ", ")."))
                 }
             })]
         $ValidUntil

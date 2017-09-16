@@ -1,4 +1,4 @@
-function Add-VSDynamoDBTableLocalSecondaryIndex {
+﻿function Add-VSDynamoDBTableLocalSecondaryIndex {
     <#
     .SYNOPSIS
         Adds an AWS::DynamoDB::Table.LocalSecondaryIndex resource property to the template
@@ -17,7 +17,7 @@ function Add-VSDynamoDBTableLocalSecondaryIndex {
 
     .PARAMETER KeySchema
 		Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-dynamodb-lsi.html#cfn-dynamodb-lsi-keyschema    
-		DuplicatesAllowed: True    
+		DuplicatesAllowed: False    
 		ItemType: KeySchema    
 		Required: True    
 		Type: List    
@@ -43,7 +43,7 @@ function Add-VSDynamoDBTableLocalSecondaryIndex {
                     $true
                 }
                 else {
-                    throw "This parameter only accepts the following types: $($allowedTypes -join ", "). The current types of the value are: $($_.PSTypeNames -join ", ")."
+                    $PSCmdlet.ThrowTerminatingError((New-VSError -String "This parameter only accepts the following types: $($allowedTypes -join ", "). The current types of the value are: $($_.PSTypeNames -join ", ")."))
                 }
             })]
         $IndexName,
@@ -54,7 +54,7 @@ function Add-VSDynamoDBTableLocalSecondaryIndex {
                     $true
                 }
                 else {
-                    throw "This parameter only accepts the following types: $($allowedTypes -join ", "). The current types of the value are: $($_.PSTypeNames -join ", ")."
+                    $PSCmdlet.ThrowTerminatingError((New-VSError -String "This parameter only accepts the following types: $($allowedTypes -join ", "). The current types of the value are: $($_.PSTypeNames -join ", ")."))
                 }
             })]
         $KeySchema,

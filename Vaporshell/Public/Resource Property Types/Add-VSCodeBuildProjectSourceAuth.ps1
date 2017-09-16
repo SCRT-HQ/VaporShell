@@ -1,4 +1,4 @@
-function Add-VSCodeBuildProjectSourceAuth {
+﻿function Add-VSCodeBuildProjectSourceAuth {
     <#
     .SYNOPSIS
         Adds an AWS::CodeBuild::Project.SourceAuth resource property to the template
@@ -35,7 +35,7 @@ function Add-VSCodeBuildProjectSourceAuth {
                     $true
                 }
                 else {
-                    throw "This parameter only accepts the following types: $($allowedTypes -join ", "). The current types of the value are: $($_.PSTypeNames -join ", ")."
+                    $PSCmdlet.ThrowTerminatingError((New-VSError -String "This parameter only accepts the following types: $($allowedTypes -join ", "). The current types of the value are: $($_.PSTypeNames -join ", ")."))
                 }
             })]
         $Type,
@@ -46,7 +46,7 @@ function Add-VSCodeBuildProjectSourceAuth {
                     $true
                 }
                 else {
-                    throw "This parameter only accepts the following types: $($allowedTypes -join ", "). The current types of the value are: $($_.PSTypeNames -join ", ")."
+                    $PSCmdlet.ThrowTerminatingError((New-VSError -String "This parameter only accepts the following types: $($allowedTypes -join ", "). The current types of the value are: $($_.PSTypeNames -join ", ")."))
                 }
             })]
         $Resource

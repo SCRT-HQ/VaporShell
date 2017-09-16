@@ -1,4 +1,4 @@
-function Add-VSDynamoDBTableGlobalSecondaryIndex {
+﻿function Add-VSDynamoDBTableGlobalSecondaryIndex {
     <#
     .SYNOPSIS
         Adds an AWS::DynamoDB::Table.GlobalSecondaryIndex resource property to the template
@@ -17,7 +17,7 @@ function Add-VSDynamoDBTableGlobalSecondaryIndex {
 
     .PARAMETER KeySchema
 		Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-dynamodb-gsi.html#cfn-dynamodb-gsi-keyschema    
-		DuplicatesAllowed: True    
+		DuplicatesAllowed: False    
 		ItemType: KeySchema    
 		Required: True    
 		Type: List    
@@ -49,7 +49,7 @@ function Add-VSDynamoDBTableGlobalSecondaryIndex {
                     $true
                 }
                 else {
-                    throw "This parameter only accepts the following types: $($allowedTypes -join ", "). The current types of the value are: $($_.PSTypeNames -join ", ")."
+                    $PSCmdlet.ThrowTerminatingError((New-VSError -String "This parameter only accepts the following types: $($allowedTypes -join ", "). The current types of the value are: $($_.PSTypeNames -join ", ")."))
                 }
             })]
         $IndexName,
@@ -60,7 +60,7 @@ function Add-VSDynamoDBTableGlobalSecondaryIndex {
                     $true
                 }
                 else {
-                    throw "This parameter only accepts the following types: $($allowedTypes -join ", "). The current types of the value are: $($_.PSTypeNames -join ", ")."
+                    $PSCmdlet.ThrowTerminatingError((New-VSError -String "This parameter only accepts the following types: $($allowedTypes -join ", "). The current types of the value are: $($_.PSTypeNames -join ", ")."))
                 }
             })]
         $KeySchema,

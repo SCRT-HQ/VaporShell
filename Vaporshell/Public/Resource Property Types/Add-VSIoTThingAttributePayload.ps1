@@ -1,4 +1,4 @@
-function Add-VSIoTThingAttributePayload {
+﻿function Add-VSIoTThingAttributePayload {
     <#
     .SYNOPSIS
         Adds an AWS::IoT::Thing.AttributePayload resource property to the template

@@ -1,4 +1,4 @@
-function Add-VSEMRInstanceFleetConfigInstanceTypeConfig {
+﻿function Add-VSEMRInstanceFleetConfigInstanceTypeConfig {
     <#
     .SYNOPSIS
         Adds an AWS::EMR::InstanceFleetConfig.InstanceTypeConfig resource property to the template
@@ -61,7 +61,7 @@ function Add-VSEMRInstanceFleetConfigInstanceTypeConfig {
                     $true
                 }
                 else {
-                    throw "This parameter only accepts the following types: $($allowedTypes -join ", "). The current types of the value are: $($_.PSTypeNames -join ", ")."
+                    $PSCmdlet.ThrowTerminatingError((New-VSError -String "This parameter only accepts the following types: $($allowedTypes -join ", "). The current types of the value are: $($_.PSTypeNames -join ", ")."))
                 }
             })]
         $BidPrice,
@@ -75,7 +75,7 @@ function Add-VSEMRInstanceFleetConfigInstanceTypeConfig {
                     $true
                 }
                 else {
-                    throw "This parameter only accepts the following types: $($allowedTypes -join ", "). The current types of the value are: $($_.PSTypeNames -join ", ")."
+                    $PSCmdlet.ThrowTerminatingError((New-VSError -String "This parameter only accepts the following types: $($allowedTypes -join ", "). The current types of the value are: $($_.PSTypeNames -join ", ")."))
                 }
             })]
         $Configurations,
@@ -88,7 +88,7 @@ function Add-VSEMRInstanceFleetConfigInstanceTypeConfig {
                     $true
                 }
                 else {
-                    throw "This parameter only accepts the following types: $($allowedTypes -join ", "). The current types of the value are: $($_.PSTypeNames -join ", ")."
+                    $PSCmdlet.ThrowTerminatingError((New-VSError -String "This parameter only accepts the following types: $($allowedTypes -join ", "). The current types of the value are: $($_.PSTypeNames -join ", ")."))
                 }
             })]
         $InstanceType,

@@ -1,4 +1,4 @@
-function Add-VSDataPipelinePipelineParameterValue {
+﻿function Add-VSDataPipelinePipelineParameterValue {
     <#
     .SYNOPSIS
         Adds an AWS::DataPipeline::Pipeline.ParameterValue resource property to the template
@@ -35,7 +35,7 @@ function Add-VSDataPipelinePipelineParameterValue {
                     $true
                 }
                 else {
-                    throw "This parameter only accepts the following types: $($allowedTypes -join ", "). The current types of the value are: $($_.PSTypeNames -join ", ")."
+                    $PSCmdlet.ThrowTerminatingError((New-VSError -String "This parameter only accepts the following types: $($allowedTypes -join ", "). The current types of the value are: $($_.PSTypeNames -join ", ")."))
                 }
             })]
         $Id,
@@ -46,7 +46,7 @@ function Add-VSDataPipelinePipelineParameterValue {
                     $true
                 }
                 else {
-                    throw "This parameter only accepts the following types: $($allowedTypes -join ", "). The current types of the value are: $($_.PSTypeNames -join ", ")."
+                    $PSCmdlet.ThrowTerminatingError((New-VSError -String "This parameter only accepts the following types: $($allowedTypes -join ", "). The current types of the value are: $($_.PSTypeNames -join ", ")."))
                 }
             })]
         $StringValue

@@ -1,4 +1,4 @@
-function Add-VSBatchJobDefinitionRetryStrategy {
+﻿function Add-VSBatchJobDefinitionRetryStrategy {
     <#
     .SYNOPSIS
         Adds an AWS::Batch::JobDefinition.RetryStrategy resource property to the template

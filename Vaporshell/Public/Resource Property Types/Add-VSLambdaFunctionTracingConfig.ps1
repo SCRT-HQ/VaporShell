@@ -1,4 +1,4 @@
-function Add-VSLambdaFunctionTracingConfig {
+﻿function Add-VSLambdaFunctionTracingConfig {
     <#
     .SYNOPSIS
         Adds an AWS::Lambda::Function.TracingConfig resource property to the template
@@ -29,7 +29,7 @@ function Add-VSLambdaFunctionTracingConfig {
                     $true
                 }
                 else {
-                    throw "This parameter only accepts the following types: $($allowedTypes -join ", "). The current types of the value are: $($_.PSTypeNames -join ", ")."
+                    $PSCmdlet.ThrowTerminatingError((New-VSError -String "This parameter only accepts the following types: $($allowedTypes -join ", "). The current types of the value are: $($_.PSTypeNames -join ", ")."))
                 }
             })]
         $Mode

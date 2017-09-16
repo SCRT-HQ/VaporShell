@@ -1,4 +1,4 @@
-function Add-VSElasticLoadBalancingV2ListenerCertificate {
+﻿function Add-VSElasticLoadBalancingV2ListenerCertificate {
     <#
     .SYNOPSIS
         Adds an AWS::ElasticLoadBalancingV2::Listener.Certificate resource property to the template
@@ -29,7 +29,7 @@ function Add-VSElasticLoadBalancingV2ListenerCertificate {
                     $true
                 }
                 else {
-                    throw "This parameter only accepts the following types: $($allowedTypes -join ", "). The current types of the value are: $($_.PSTypeNames -join ", ")."
+                    $PSCmdlet.ThrowTerminatingError((New-VSError -String "This parameter only accepts the following types: $($allowedTypes -join ", "). The current types of the value are: $($_.PSTypeNames -join ", ")."))
                 }
             })]
         $CertificateArn

@@ -1,4 +1,4 @@
-function Add-VSCognitoIdentityPoolRoleAttachmentRulesConfigurationType {
+﻿function Add-VSCognitoIdentityPoolRoleAttachmentRulesConfigurationType {
     <#
     .SYNOPSIS
         Adds an AWS::Cognito::IdentityPoolRoleAttachment.RulesConfigurationType resource property to the template

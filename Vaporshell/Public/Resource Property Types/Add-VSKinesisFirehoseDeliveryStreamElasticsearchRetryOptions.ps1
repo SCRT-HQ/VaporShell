@@ -1,4 +1,4 @@
-function Add-VSKinesisFirehoseDeliveryStreamElasticsearchRetryOptions {
+﻿function Add-VSKinesisFirehoseDeliveryStreamElasticsearchRetryOptions {
     <#
     .SYNOPSIS
         Adds an AWS::KinesisFirehose::DeliveryStream.ElasticsearchRetryOptions resource property to the template
@@ -7,10 +7,10 @@ function Add-VSKinesisFirehoseDeliveryStreamElasticsearchRetryOptions {
         Adds an AWS::KinesisFirehose::DeliveryStream.ElasticsearchRetryOptions resource property to the template
 
     .LINK
-        http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-kinesisfirehose-kinesisdeliverystream-elasticsearchdestinationconfiguration-retryoptions.html
+        http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-kinesisfirehose-deliverystream-elasticsearchretryoptions.html
 
     .PARAMETER DurationInSeconds
-		Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-kinesisfirehose-kinesisdeliverystream-elasticsearchdestinationconfiguration-retryoptions.html#cfn-kinesisfirehose-kinesisdeliverystream-elasticsearchdestinationconfiguration-retryoptions-durationinseconds    
+		Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-kinesisfirehose-deliverystream-elasticsearchretryoptions.html#cfn-kinesisfirehose-deliverystream-elasticsearchretryoptions-durationinseconds    
 		PrimitiveType: Integer    
 		Required: True    
 		UpdateType: Mutable    

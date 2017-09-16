@@ -1,4 +1,4 @@
-function Add-VSDynamoDBTableAttributeDefinition {
+﻿function Add-VSDynamoDBTableAttributeDefinition {
     <#
     .SYNOPSIS
         Adds an AWS::DynamoDB::Table.AttributeDefinition resource property to the template
@@ -35,7 +35,7 @@ function Add-VSDynamoDBTableAttributeDefinition {
                     $true
                 }
                 else {
-                    throw "This parameter only accepts the following types: $($allowedTypes -join ", "). The current types of the value are: $($_.PSTypeNames -join ", ")."
+                    $PSCmdlet.ThrowTerminatingError((New-VSError -String "This parameter only accepts the following types: $($allowedTypes -join ", "). The current types of the value are: $($_.PSTypeNames -join ", ")."))
                 }
             })]
         $AttributeName,
@@ -46,7 +46,7 @@ function Add-VSDynamoDBTableAttributeDefinition {
                     $true
                 }
                 else {
-                    throw "This parameter only accepts the following types: $($allowedTypes -join ", "). The current types of the value are: $($_.PSTypeNames -join ", ")."
+                    $PSCmdlet.ThrowTerminatingError((New-VSError -String "This parameter only accepts the following types: $($allowedTypes -join ", "). The current types of the value are: $($_.PSTypeNames -join ", ")."))
                 }
             })]
         $AttributeType

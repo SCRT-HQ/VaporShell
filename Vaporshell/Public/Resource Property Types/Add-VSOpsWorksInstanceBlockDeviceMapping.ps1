@@ -1,4 +1,4 @@
-function Add-VSOpsWorksInstanceBlockDeviceMapping {
+﻿function Add-VSOpsWorksInstanceBlockDeviceMapping {
     <#
     .SYNOPSIS
         Adds an AWS::OpsWorks::Instance.BlockDeviceMapping resource property to the template
@@ -47,7 +47,7 @@ function Add-VSOpsWorksInstanceBlockDeviceMapping {
                     $true
                 }
                 else {
-                    throw "This parameter only accepts the following types: $($allowedTypes -join ", "). The current types of the value are: $($_.PSTypeNames -join ", ")."
+                    $PSCmdlet.ThrowTerminatingError((New-VSError -String "This parameter only accepts the following types: $($allowedTypes -join ", "). The current types of the value are: $($_.PSTypeNames -join ", ")."))
                 }
             })]
         $DeviceName,
@@ -60,7 +60,7 @@ function Add-VSOpsWorksInstanceBlockDeviceMapping {
                     $true
                 }
                 else {
-                    throw "This parameter only accepts the following types: $($allowedTypes -join ", "). The current types of the value are: $($_.PSTypeNames -join ", ")."
+                    $PSCmdlet.ThrowTerminatingError((New-VSError -String "This parameter only accepts the following types: $($allowedTypes -join ", "). The current types of the value are: $($_.PSTypeNames -join ", ")."))
                 }
             })]
         $NoDevice,
@@ -71,7 +71,7 @@ function Add-VSOpsWorksInstanceBlockDeviceMapping {
                     $true
                 }
                 else {
-                    throw "This parameter only accepts the following types: $($allowedTypes -join ", "). The current types of the value are: $($_.PSTypeNames -join ", ")."
+                    $PSCmdlet.ThrowTerminatingError((New-VSError -String "This parameter only accepts the following types: $($allowedTypes -join ", "). The current types of the value are: $($_.PSTypeNames -join ", ")."))
                 }
             })]
         $VirtualName

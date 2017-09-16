@@ -1,4 +1,4 @@
-function Add-VSCognitoUserPoolStringAttributeConstraints {
+﻿function Add-VSCognitoUserPoolStringAttributeConstraints {
     <#
     .SYNOPSIS
         Adds an AWS::Cognito::UserPool.StringAttributeConstraints resource property to the template
@@ -35,7 +35,7 @@ function Add-VSCognitoUserPoolStringAttributeConstraints {
                     $true
                 }
                 else {
-                    throw "This parameter only accepts the following types: $($allowedTypes -join ", "). The current types of the value are: $($_.PSTypeNames -join ", ")."
+                    $PSCmdlet.ThrowTerminatingError((New-VSError -String "This parameter only accepts the following types: $($allowedTypes -join ", "). The current types of the value are: $($_.PSTypeNames -join ", ")."))
                 }
             })]
         $MinLength,
@@ -46,7 +46,7 @@ function Add-VSCognitoUserPoolStringAttributeConstraints {
                     $true
                 }
                 else {
-                    throw "This parameter only accepts the following types: $($allowedTypes -join ", "). The current types of the value are: $($_.PSTypeNames -join ", ")."
+                    $PSCmdlet.ThrowTerminatingError((New-VSError -String "This parameter only accepts the following types: $($allowedTypes -join ", "). The current types of the value are: $($_.PSTypeNames -join ", ")."))
                 }
             })]
         $MaxLength

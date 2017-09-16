@@ -1,4 +1,4 @@
-function Add-VSEC2NetworkAclEntryPortRange {
+﻿function Add-VSEC2NetworkAclEntryPortRange {
     <#
     .SYNOPSIS
         Adds an AWS::EC2::NetworkAclEntry.PortRange resource property to the template

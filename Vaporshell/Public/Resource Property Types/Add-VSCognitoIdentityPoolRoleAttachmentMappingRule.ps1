@@ -1,4 +1,4 @@
-function Add-VSCognitoIdentityPoolRoleAttachmentMappingRule {
+﻿function Add-VSCognitoIdentityPoolRoleAttachmentMappingRule {
     <#
     .SYNOPSIS
         Adds an AWS::Cognito::IdentityPoolRoleAttachment.MappingRule resource property to the template
@@ -47,7 +47,7 @@ function Add-VSCognitoIdentityPoolRoleAttachmentMappingRule {
                     $true
                 }
                 else {
-                    throw "This parameter only accepts the following types: $($allowedTypes -join ", "). The current types of the value are: $($_.PSTypeNames -join ", ")."
+                    $PSCmdlet.ThrowTerminatingError((New-VSError -String "This parameter only accepts the following types: $($allowedTypes -join ", "). The current types of the value are: $($_.PSTypeNames -join ", ")."))
                 }
             })]
         $MatchType,
@@ -58,7 +58,7 @@ function Add-VSCognitoIdentityPoolRoleAttachmentMappingRule {
                     $true
                 }
                 else {
-                    throw "This parameter only accepts the following types: $($allowedTypes -join ", "). The current types of the value are: $($_.PSTypeNames -join ", ")."
+                    $PSCmdlet.ThrowTerminatingError((New-VSError -String "This parameter only accepts the following types: $($allowedTypes -join ", "). The current types of the value are: $($_.PSTypeNames -join ", ")."))
                 }
             })]
         $Value,
@@ -69,7 +69,7 @@ function Add-VSCognitoIdentityPoolRoleAttachmentMappingRule {
                     $true
                 }
                 else {
-                    throw "This parameter only accepts the following types: $($allowedTypes -join ", "). The current types of the value are: $($_.PSTypeNames -join ", ")."
+                    $PSCmdlet.ThrowTerminatingError((New-VSError -String "This parameter only accepts the following types: $($allowedTypes -join ", "). The current types of the value are: $($_.PSTypeNames -join ", ")."))
                 }
             })]
         $Claim,
@@ -80,7 +80,7 @@ function Add-VSCognitoIdentityPoolRoleAttachmentMappingRule {
                     $true
                 }
                 else {
-                    throw "This parameter only accepts the following types: $($allowedTypes -join ", "). The current types of the value are: $($_.PSTypeNames -join ", ")."
+                    $PSCmdlet.ThrowTerminatingError((New-VSError -String "This parameter only accepts the following types: $($allowedTypes -join ", "). The current types of the value are: $($_.PSTypeNames -join ", ")."))
                 }
             })]
         $RoleARN

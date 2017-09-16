@@ -1,4 +1,4 @@
-function Add-VSCognitoIdentityPoolCognitoStreams {
+﻿function Add-VSCognitoIdentityPoolCognitoStreams {
     <#
     .SYNOPSIS
         Adds an AWS::Cognito::IdentityPool.CognitoStreams resource property to the template
@@ -41,7 +41,7 @@ function Add-VSCognitoIdentityPoolCognitoStreams {
                     $true
                 }
                 else {
-                    throw "This parameter only accepts the following types: $($allowedTypes -join ", "). The current types of the value are: $($_.PSTypeNames -join ", ")."
+                    $PSCmdlet.ThrowTerminatingError((New-VSError -String "This parameter only accepts the following types: $($allowedTypes -join ", "). The current types of the value are: $($_.PSTypeNames -join ", ")."))
                 }
             })]
         $StreamingStatus,
@@ -52,7 +52,7 @@ function Add-VSCognitoIdentityPoolCognitoStreams {
                     $true
                 }
                 else {
-                    throw "This parameter only accepts the following types: $($allowedTypes -join ", "). The current types of the value are: $($_.PSTypeNames -join ", ")."
+                    $PSCmdlet.ThrowTerminatingError((New-VSError -String "This parameter only accepts the following types: $($allowedTypes -join ", "). The current types of the value are: $($_.PSTypeNames -join ", ")."))
                 }
             })]
         $StreamName,
@@ -63,7 +63,7 @@ function Add-VSCognitoIdentityPoolCognitoStreams {
                     $true
                 }
                 else {
-                    throw "This parameter only accepts the following types: $($allowedTypes -join ", "). The current types of the value are: $($_.PSTypeNames -join ", ")."
+                    $PSCmdlet.ThrowTerminatingError((New-VSError -String "This parameter only accepts the following types: $($allowedTypes -join ", "). The current types of the value are: $($_.PSTypeNames -join ", ")."))
                 }
             })]
         $RoleArn

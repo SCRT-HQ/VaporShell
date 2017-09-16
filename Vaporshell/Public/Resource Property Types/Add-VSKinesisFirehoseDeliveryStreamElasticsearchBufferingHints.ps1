@@ -1,4 +1,4 @@
-function Add-VSKinesisFirehoseDeliveryStreamElasticsearchBufferingHints {
+﻿function Add-VSKinesisFirehoseDeliveryStreamElasticsearchBufferingHints {
     <#
     .SYNOPSIS
         Adds an AWS::KinesisFirehose::DeliveryStream.ElasticsearchBufferingHints resource property to the template
@@ -7,16 +7,16 @@ function Add-VSKinesisFirehoseDeliveryStreamElasticsearchBufferingHints {
         Adds an AWS::KinesisFirehose::DeliveryStream.ElasticsearchBufferingHints resource property to the template
 
     .LINK
-        http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-kinesisfirehose-kinesisdeliverystream-elasticsearchdestinationconfiguration.html
+        http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-kinesisfirehose-deliverystream-elasticsearchbufferinghints.html
 
     .PARAMETER IntervalInSeconds
-		Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-kinesisfirehose-kinesisdeliverystream-elasticsearchdestinationconfiguration.html#cfn-kinesisfirehose-kinesisdeliverystream-elasticsearchdestinationconfiguration-bufferinghints-intervalinseconds    
+		Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-kinesisfirehose-deliverystream-elasticsearchbufferinghints.html#cfn-kinesisfirehose-deliverystream-elasticsearchbufferinghints-intervalinseconds    
 		PrimitiveType: Integer    
 		Required: True    
 		UpdateType: Mutable    
 
     .PARAMETER SizeInMBs
-		Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-kinesisfirehose-kinesisdeliverystream-elasticsearchdestinationconfiguration.html#cfn-kinesisfirehose-kinesisdeliverystream-elasticsearchdestinationconfiguration-bufferinghints-sizeinmbs    
+		Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-kinesisfirehose-deliverystream-elasticsearchbufferinghints.html#cfn-kinesisfirehose-deliverystream-elasticsearchbufferinghints-sizeinmbs    
 		PrimitiveType: Integer    
 		Required: True    
 		UpdateType: Mutable    

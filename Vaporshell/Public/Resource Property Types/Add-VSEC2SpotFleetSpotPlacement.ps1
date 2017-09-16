@@ -1,4 +1,4 @@
-function Add-VSEC2SpotFleetSpotPlacement {
+﻿function Add-VSEC2SpotFleetSpotPlacement {
     <#
     .SYNOPSIS
         Adds an AWS::EC2::SpotFleet.SpotPlacement resource property to the template
@@ -35,7 +35,7 @@ function Add-VSEC2SpotFleetSpotPlacement {
                     $true
                 }
                 else {
-                    throw "This parameter only accepts the following types: $($allowedTypes -join ", "). The current types of the value are: $($_.PSTypeNames -join ", ")."
+                    $PSCmdlet.ThrowTerminatingError((New-VSError -String "This parameter only accepts the following types: $($allowedTypes -join ", "). The current types of the value are: $($_.PSTypeNames -join ", ")."))
                 }
             })]
         $AvailabilityZone,
@@ -46,7 +46,7 @@ function Add-VSEC2SpotFleetSpotPlacement {
                     $true
                 }
                 else {
-                    throw "This parameter only accepts the following types: $($allowedTypes -join ", "). The current types of the value are: $($_.PSTypeNames -join ", ")."
+                    $PSCmdlet.ThrowTerminatingError((New-VSError -String "This parameter only accepts the following types: $($allowedTypes -join ", "). The current types of the value are: $($_.PSTypeNames -join ", ")."))
                 }
             })]
         $GroupName

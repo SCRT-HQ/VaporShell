@@ -1,4 +1,4 @@
-function Add-VSKinesisAnalyticsApplicationKinesisStreamsInput {
+﻿function Add-VSKinesisAnalyticsApplicationKinesisStreamsInput {
     <#
     .SYNOPSIS
         Adds an AWS::KinesisAnalytics::Application.KinesisStreamsInput resource property to the template
@@ -35,7 +35,7 @@ function Add-VSKinesisAnalyticsApplicationKinesisStreamsInput {
                     $true
                 }
                 else {
-                    throw "This parameter only accepts the following types: $($allowedTypes -join ", "). The current types of the value are: $($_.PSTypeNames -join ", ")."
+                    $PSCmdlet.ThrowTerminatingError((New-VSError -String "This parameter only accepts the following types: $($allowedTypes -join ", "). The current types of the value are: $($_.PSTypeNames -join ", ")."))
                 }
             })]
         $ResourceARN,
@@ -46,7 +46,7 @@ function Add-VSKinesisAnalyticsApplicationKinesisStreamsInput {
                     $true
                 }
                 else {
-                    throw "This parameter only accepts the following types: $($allowedTypes -join ", "). The current types of the value are: $($_.PSTypeNames -join ", ")."
+                    $PSCmdlet.ThrowTerminatingError((New-VSError -String "This parameter only accepts the following types: $($allowedTypes -join ", "). The current types of the value are: $($_.PSTypeNames -join ", ")."))
                 }
             })]
         $RoleARN

@@ -1,4 +1,4 @@
-function Add-VSElasticLoadBalancingV2ListenerAction {
+﻿function Add-VSElasticLoadBalancingV2ListenerAction {
     <#
     .SYNOPSIS
         Adds an AWS::ElasticLoadBalancingV2::Listener.Action resource property to the template
@@ -35,7 +35,7 @@ function Add-VSElasticLoadBalancingV2ListenerAction {
                     $true
                 }
                 else {
-                    throw "This parameter only accepts the following types: $($allowedTypes -join ", "). The current types of the value are: $($_.PSTypeNames -join ", ")."
+                    $PSCmdlet.ThrowTerminatingError((New-VSError -String "This parameter only accepts the following types: $($allowedTypes -join ", "). The current types of the value are: $($_.PSTypeNames -join ", ")."))
                 }
             })]
         $TargetGroupArn,
@@ -46,7 +46,7 @@ function Add-VSElasticLoadBalancingV2ListenerAction {
                     $true
                 }
                 else {
-                    throw "This parameter only accepts the following types: $($allowedTypes -join ", "). The current types of the value are: $($_.PSTypeNames -join ", ")."
+                    $PSCmdlet.ThrowTerminatingError((New-VSError -String "This parameter only accepts the following types: $($allowedTypes -join ", "). The current types of the value are: $($_.PSTypeNames -join ", ")."))
                 }
             })]
         $Type

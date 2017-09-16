@@ -1,4 +1,4 @@
-function Add-VSCognitoUserPoolUserAttributeType {
+﻿function Add-VSCognitoUserPoolUserAttributeType {
     <#
     .SYNOPSIS
         Adds an AWS::Cognito::UserPoolUser.AttributeType resource property to the template
@@ -35,7 +35,7 @@ function Add-VSCognitoUserPoolUserAttributeType {
                     $true
                 }
                 else {
-                    throw "This parameter only accepts the following types: $($allowedTypes -join ", "). The current types of the value are: $($_.PSTypeNames -join ", ")."
+                    $PSCmdlet.ThrowTerminatingError((New-VSError -String "This parameter only accepts the following types: $($allowedTypes -join ", "). The current types of the value are: $($_.PSTypeNames -join ", ")."))
                 }
             })]
         $Value,
@@ -46,7 +46,7 @@ function Add-VSCognitoUserPoolUserAttributeType {
                     $true
                 }
                 else {
-                    throw "This parameter only accepts the following types: $($allowedTypes -join ", "). The current types of the value are: $($_.PSTypeNames -join ", ")."
+                    $PSCmdlet.ThrowTerminatingError((New-VSError -String "This parameter only accepts the following types: $($allowedTypes -join ", "). The current types of the value are: $($_.PSTypeNames -join ", ")."))
                 }
             })]
         $Name

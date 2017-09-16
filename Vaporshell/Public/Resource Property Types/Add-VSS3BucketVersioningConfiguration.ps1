@@ -1,4 +1,4 @@
-function Add-VSS3BucketVersioningConfiguration {
+﻿function Add-VSS3BucketVersioningConfiguration {
     <#
     .SYNOPSIS
         Adds an AWS::S3::Bucket.VersioningConfiguration resource property to the template
@@ -29,7 +29,7 @@ function Add-VSS3BucketVersioningConfiguration {
                     $true
                 }
                 else {
-                    throw "This parameter only accepts the following types: $($allowedTypes -join ", "). The current types of the value are: $($_.PSTypeNames -join ", ")."
+                    $PSCmdlet.ThrowTerminatingError((New-VSError -String "This parameter only accepts the following types: $($allowedTypes -join ", "). The current types of the value are: $($_.PSTypeNames -join ", ")."))
                 }
             })]
         $Status

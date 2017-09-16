@@ -1,4 +1,4 @@
-function Add-VSWAFRegionalSizeConstraintSetSizeConstraint {
+﻿function Add-VSWAFRegionalSizeConstraintSetSizeConstraint {
     <#
     .SYNOPSIS
         Adds an AWS::WAFRegional::SizeConstraintSet.SizeConstraint resource property to the template
@@ -47,7 +47,7 @@ function Add-VSWAFRegionalSizeConstraintSetSizeConstraint {
                     $true
                 }
                 else {
-                    throw "This parameter only accepts the following types: $($allowedTypes -join ", "). The current types of the value are: $($_.PSTypeNames -join ", ")."
+                    $PSCmdlet.ThrowTerminatingError((New-VSError -String "This parameter only accepts the following types: $($allowedTypes -join ", "). The current types of the value are: $($_.PSTypeNames -join ", ")."))
                 }
             })]
         $ComparisonOperator,
@@ -61,7 +61,7 @@ function Add-VSWAFRegionalSizeConstraintSetSizeConstraint {
                     $true
                 }
                 else {
-                    throw "This parameter only accepts the following types: $($allowedTypes -join ", "). The current types of the value are: $($_.PSTypeNames -join ", ")."
+                    $PSCmdlet.ThrowTerminatingError((New-VSError -String "This parameter only accepts the following types: $($allowedTypes -join ", "). The current types of the value are: $($_.PSTypeNames -join ", ")."))
                 }
             })]
         $TextTransformation,

@@ -1,4 +1,4 @@
-function Add-VSS3BucketRoutingRuleCondition {
+﻿function Add-VSS3BucketRoutingRuleCondition {
     <#
     .SYNOPSIS
         Adds an AWS::S3::Bucket.RoutingRuleCondition resource property to the template
@@ -35,7 +35,7 @@ function Add-VSS3BucketRoutingRuleCondition {
                     $true
                 }
                 else {
-                    throw "This parameter only accepts the following types: $($allowedTypes -join ", "). The current types of the value are: $($_.PSTypeNames -join ", ")."
+                    $PSCmdlet.ThrowTerminatingError((New-VSError -String "This parameter only accepts the following types: $($allowedTypes -join ", "). The current types of the value are: $($_.PSTypeNames -join ", ")."))
                 }
             })]
         $HttpErrorCodeReturnedEquals,
@@ -46,7 +46,7 @@ function Add-VSS3BucketRoutingRuleCondition {
                     $true
                 }
                 else {
-                    throw "This parameter only accepts the following types: $($allowedTypes -join ", "). The current types of the value are: $($_.PSTypeNames -join ", ")."
+                    $PSCmdlet.ThrowTerminatingError((New-VSError -String "This parameter only accepts the following types: $($allowedTypes -join ", "). The current types of the value are: $($_.PSTypeNames -join ", ")."))
                 }
             })]
         $KeyPrefixEquals

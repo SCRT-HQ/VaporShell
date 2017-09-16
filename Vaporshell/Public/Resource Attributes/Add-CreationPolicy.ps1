@@ -131,7 +131,7 @@ function Add-CreationPolicy {
     )
     Begin {
         if (!($PSBoundParameters.Keys.Count)) {
-            throw "No parameters passed! Please specify at least one parameter, otherwise exclude this call of $($MyInvocation.MyCommand)."
+            $PSCmdlet.ThrowTerminatingError((New-VSError -String "No parameters passed! Please specify at least one parameter, otherwise exclude this call of $($MyInvocation.MyCommand)."))
         }
         $obj = [PSCustomObject]@{}
         $ASCP = [PSCustomObject]@{}

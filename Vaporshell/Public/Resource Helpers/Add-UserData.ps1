@@ -28,7 +28,7 @@ function Add-UserData {
                     $true
                 }
                 else {
-                    throw "The Properties parameter only accepts the following types: $($allowedTypes -join ", "). The current types of the value are: $($_.PSTypeNames -join ", ")."
+                    $PSCmdlet.ThrowTerminatingError((New-VSError -String "This parameter only accepts the following types: $($allowedTypes -join ", "). The current types of the value are: $($_.PSTypeNames -join ", ")."))
                 }
             })]
         $String,
@@ -38,7 +38,7 @@ function Add-UserData {
                     $true
                 }
                 else {
-                    throw "You must specify a valid file path -- unable to find the path $_"
+                    $PSCmdlet.ThrowTerminatingError((New-VSError -String "You must specify a valid file path -- unable to find the path $_"))
                 }
             })]
         [System.String]

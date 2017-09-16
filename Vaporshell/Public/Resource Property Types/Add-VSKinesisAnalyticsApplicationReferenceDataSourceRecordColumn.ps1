@@ -1,4 +1,4 @@
-function Add-VSKinesisAnalyticsApplicationReferenceDataSourceRecordColumn {
+﻿function Add-VSKinesisAnalyticsApplicationReferenceDataSourceRecordColumn {
     <#
     .SYNOPSIS
         Adds an AWS::KinesisAnalytics::ApplicationReferenceDataSource.RecordColumn resource property to the template
@@ -41,7 +41,7 @@ function Add-VSKinesisAnalyticsApplicationReferenceDataSourceRecordColumn {
                     $true
                 }
                 else {
-                    throw "This parameter only accepts the following types: $($allowedTypes -join ", "). The current types of the value are: $($_.PSTypeNames -join ", ")."
+                    $PSCmdlet.ThrowTerminatingError((New-VSError -String "This parameter only accepts the following types: $($allowedTypes -join ", "). The current types of the value are: $($_.PSTypeNames -join ", ")."))
                 }
             })]
         $Mapping,
@@ -52,7 +52,7 @@ function Add-VSKinesisAnalyticsApplicationReferenceDataSourceRecordColumn {
                     $true
                 }
                 else {
-                    throw "This parameter only accepts the following types: $($allowedTypes -join ", "). The current types of the value are: $($_.PSTypeNames -join ", ")."
+                    $PSCmdlet.ThrowTerminatingError((New-VSError -String "This parameter only accepts the following types: $($allowedTypes -join ", "). The current types of the value are: $($_.PSTypeNames -join ", ")."))
                 }
             })]
         $SqlType,
@@ -63,7 +63,7 @@ function Add-VSKinesisAnalyticsApplicationReferenceDataSourceRecordColumn {
                     $true
                 }
                 else {
-                    throw "This parameter only accepts the following types: $($allowedTypes -join ", "). The current types of the value are: $($_.PSTypeNames -join ", ")."
+                    $PSCmdlet.ThrowTerminatingError((New-VSError -String "This parameter only accepts the following types: $($allowedTypes -join ", "). The current types of the value are: $($_.PSTypeNames -join ", ")."))
                 }
             })]
         $Name

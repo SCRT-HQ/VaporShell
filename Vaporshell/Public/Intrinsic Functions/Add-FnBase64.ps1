@@ -39,7 +39,7 @@ function Add-FnBase64 {
                 $true
             }
             else {
-                throw "The ValueToEncode parameter only accepts the following types: $($allowedTypes -join ", "). The current types of the value are: $($_.PSTypeNames -join ", ")."
+                $PSCmdlet.ThrowTerminatingError((New-VSError -String "This parameter only accepts the following types: $($allowedTypes -join ", "). The current types of the value are: $($_.PSTypeNames -join ", ")."))
             }
         })]
         $ValueToEncode

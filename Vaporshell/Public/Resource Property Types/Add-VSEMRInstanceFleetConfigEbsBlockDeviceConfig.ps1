@@ -1,4 +1,4 @@
-function Add-VSEMRInstanceFleetConfigEbsBlockDeviceConfig {
+﻿function Add-VSEMRInstanceFleetConfigEbsBlockDeviceConfig {
     <#
     .SYNOPSIS
         Adds an AWS::EMR::InstanceFleetConfig.EbsBlockDeviceConfig resource property to the template

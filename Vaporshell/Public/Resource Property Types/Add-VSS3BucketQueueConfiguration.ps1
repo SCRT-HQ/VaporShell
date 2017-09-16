@@ -1,4 +1,4 @@
-function Add-VSS3BucketQueueConfiguration {
+﻿function Add-VSS3BucketQueueConfiguration {
     <#
     .SYNOPSIS
         Adds an AWS::S3::Bucket.QueueConfiguration resource property to the template
@@ -41,7 +41,7 @@ function Add-VSS3BucketQueueConfiguration {
                     $true
                 }
                 else {
-                    throw "This parameter only accepts the following types: $($allowedTypes -join ", "). The current types of the value are: $($_.PSTypeNames -join ", ")."
+                    $PSCmdlet.ThrowTerminatingError((New-VSError -String "This parameter only accepts the following types: $($allowedTypes -join ", "). The current types of the value are: $($_.PSTypeNames -join ", ")."))
                 }
             })]
         $Event,
@@ -54,7 +54,7 @@ function Add-VSS3BucketQueueConfiguration {
                     $true
                 }
                 else {
-                    throw "This parameter only accepts the following types: $($allowedTypes -join ", "). The current types of the value are: $($_.PSTypeNames -join ", ")."
+                    $PSCmdlet.ThrowTerminatingError((New-VSError -String "This parameter only accepts the following types: $($allowedTypes -join ", "). The current types of the value are: $($_.PSTypeNames -join ", ")."))
                 }
             })]
         $Queue

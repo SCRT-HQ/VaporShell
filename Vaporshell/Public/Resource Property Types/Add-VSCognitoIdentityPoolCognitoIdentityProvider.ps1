@@ -1,4 +1,4 @@
-function Add-VSCognitoIdentityPoolCognitoIdentityProvider {
+﻿function Add-VSCognitoIdentityPoolCognitoIdentityProvider {
     <#
     .SYNOPSIS
         Adds an AWS::Cognito::IdentityPool.CognitoIdentityProvider resource property to the template
@@ -44,7 +44,7 @@ function Add-VSCognitoIdentityPoolCognitoIdentityProvider {
                     $true
                 }
                 else {
-                    throw "This parameter only accepts the following types: $($allowedTypes -join ", "). The current types of the value are: $($_.PSTypeNames -join ", ")."
+                    $PSCmdlet.ThrowTerminatingError((New-VSError -String "This parameter only accepts the following types: $($allowedTypes -join ", "). The current types of the value are: $($_.PSTypeNames -join ", ")."))
                 }
             })]
         $ProviderName,
@@ -55,7 +55,7 @@ function Add-VSCognitoIdentityPoolCognitoIdentityProvider {
                     $true
                 }
                 else {
-                    throw "This parameter only accepts the following types: $($allowedTypes -join ", "). The current types of the value are: $($_.PSTypeNames -join ", ")."
+                    $PSCmdlet.ThrowTerminatingError((New-VSError -String "This parameter only accepts the following types: $($allowedTypes -join ", "). The current types of the value are: $($_.PSTypeNames -join ", ")."))
                 }
             })]
         $ClientId
