@@ -77,6 +77,7 @@
 ## Table of Contents
 - [Features](#features)
 - [Example](#example)
+- [In Action](#in-action)
 - [Installation](#installation)
 - [License](#license)
 
@@ -108,6 +109,11 @@ vsl vaporize --tf $TemplateFile --sn sched-func --capabilities iam --v --f --w
 
 ```
 Want to see more examples? Check out the [Examples page](http://vaporshell.io/docs/examples).
+
+
+## In Action
+
+![Watch-Stack in action](http://vaporshell.io/images/Watch-Stacks.gif)
 
 
 ## Installation
