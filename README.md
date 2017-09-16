@@ -71,7 +71,7 @@
 </div>
 
 <div align="center">
-  <sub>Built by <a href="https://twitter.com/scrthq">Nate Ferrell</a>. Looking for <a href="https://github.com/scrthq/VaporShell/blob/master/GitHub/CONTRIBUTING.md">contributors</a>!
+  <sub>Built by <a href="https://twitter.com/scrthq">Nate Ferrell</a>. Looking for <a href="mailto:nate@vaporshell.io">contributors</a>!
 </div>
 
 ## Table of Contents
