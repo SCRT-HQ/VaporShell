@@ -8,7 +8,7 @@ function Colorize {
     Process {
         foreach ($row in $Strings) {
             if ($row -like "*STACK ID *" -or $row -like "REFRESH *") {
-                Write-Host -ForegroundColor Black -BackgroundColor Magenta $row
+                Write-Host -ForegroundColor Black -BackgroundColor Cyan $row
             }
             elseif ($row -like "*FAILED*") {
                 Write-Host -ForegroundColor Black -BackgroundColor Red $row
