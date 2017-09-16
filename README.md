@@ -59,11 +59,11 @@
     <a href="http://vaporshell.io/docs/examples">
       Examples
     </a>
-    <span> | </span>
-    <a href="https://github.com/scrthq/VaporShell/blob/master/.github/CONTRIBUTING.md">
+    <span> | </span><!-- 
+    <a href="https://github.com/scrthq/VaporShell/blob/master/GitHub/CONTRIBUTING.md">
       Contributing
     </a>
-    <span> | </span>
+    <span> | </span> -->
     <a href="https://gitter.im/VaporShell/Lobby">
       Chat
     </a>
@@ -71,11 +71,7 @@
 </div>
 
 <div align="center">
-  <sub>Built by
-  <a href="https://twitter.com/scrthq">Nate Ferrell</a> and
-  <a href="https://github.com/scrthq/VaporShell/graphs/contributors">
-    contributors
-  </a>
+  <sub>Built by <a href="https://twitter.com/scrthq">Nate Ferrell</a>. Looking for <a href="https://github.com/scrthq/VaporShell/blob/master/GitHub/CONTRIBUTING.md">contributors</a>!
 </div>
 
 ## Table of Contents
@@ -127,6 +123,7 @@ Not on PowerShell 5+? Got you covered too.
 ```powershell
 Invoke-Expression (New-Object Net.WebClient).DownloadString("https://raw.githubusercontent.com/scrthq/VaporShell/master/Install-VaporShell.ps1")
 ```
+**Please inspect code before you run it. Here's a handy link to that raw content for you to review: [Install-VaporShell.ps1](https://raw.githubusercontent.com/scrthq/VaporShell/master/Install-VaporShell.ps1)**
 
 ## License
 [Apache 2.0](https://tldrlegal.com/license/apache-license-2.0-(apache-2.0))
