@@ -1,7 +1,7 @@
 <h1 align="center">VaporShell</h1>
 
 <div align="center">
-  :pencil: ... :package: ... :rocket:
+  :pencil: ......... :package: ......... :rocket:
 </div>
 
 <div align="center">
