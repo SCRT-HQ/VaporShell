@@ -93,15 +93,21 @@
 ```powershell
 #1 Initialize a VaporShell object
 $vsl = Initialize-VaporShell -Description "An even more updated function triggered on a timer."
+
 #2 Add a Serverless function with local code as the CodeUri and a schedule of 5 minutes
-$vsl.AddResource(
-    ( New-SAMFunction -LogicalId "ScheduledFunction" -Handler "index.handler" -Runtime "nodejs6.10" -CodeUri ".\code" -Events (Add-SAMScheduleEventSource -LogicalId Timer -Schedule "rate(5 minutes)"))
-)
+$samFunction = New-SAMFunction `
+    -LogicalId "ScheduledFunction" `
+    -Handler "index.handler" `
+    -Runtime "nodejs6.10" `
+    -CodeUri ".\code" `
+    -Events (Add-SAMScheduleEventSource -LogicalId Timer -Schedule "rate(5 minutes)")
+$vsl.AddResource($samFunction)
 $TemplateFile = ".\sched-func.yaml"
-#3 Save the template as YAML (uses cfn-flip to convert to/from YAML)
+
+#3 Save the template as YAML using the VaporShell object's ToYAML() method (uses cfn-flip to convert to/from YAML)
 $vsl.ToYAML($TemplateFile)
-<#
-#4 Package and deploy the template file (--tf $TemplateFile) as a change set with parameters:
+
+<#4 Package and deploy the template file (--tf $TemplateFile) as a change set with parameters:
     - stack name (--sn) 'sched-func'
     - S3 bucket also named 'sched-func' (defaults to the stack name if --s3 is not passed)
     - capabilities: CAPABILITY_IAM (--caps iam)
