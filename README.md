@@ -76,7 +76,7 @@
 
 ## Table of Contents
 - [Features](#features)
-- [Example](#example)
+- [Examples](#examples)
 - [In Action](#in-action)
 - [Prerequisites](#prerequisites)
 - [Installation](#installation)
@@ -88,13 +88,13 @@
 - __validates everything:__ built to make resulting templates reliable by leveraging parameter validation built into PowerShell
 - __goes turbo:__ package and deploy your templates **fast** with one command; `vsl vaporize`
 
-## Example
+## Examples
 
 ```powershell
 #1 Initialize a VaporShell object
 $vsl = Initialize-VaporShell -Description "A function triggered on a timer."
 
-#2 Add a Serverless function with local code as the CodeUri and a schedule of 5 minutes
+#2 Add a Serverless function with local code as the CodeUri and a schedule of 5 minutes (split into multiple lines for readability)
 $samFunction = New-SAMFunction `
     -LogicalId "ScheduledFunction" `
     -Handler "index.handler" `
@@ -123,6 +123,7 @@ Want to see more examples? Check out the [Examples page](http://vaporshell.io/do
 
 ## In Action
 
+This is a deployment being watched via `Watch-Stack $stackName` to show the col
 ![Watch-Stack in action](http://vaporshell.io/images/Watch-Stacks.gif)
 
 
