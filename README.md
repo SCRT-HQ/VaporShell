@@ -83,16 +83,16 @@
 - [License](#license)
 
 ## Features
-- __100% coverage:__ if CloudFormation can, VaporShell can too
+- __built from AWS's CFN spec sheet:__ 100% coverage of all available CloudFormation resource and property types
 - __runs on any OS:__ developed and tested in Windows, Ubuntu, and macOS on PowerShell v3-6
-- __validates everything:__ built to make resultant templates reliable
-- __goes turbo:__ package and deploy your templates **fast** with one command, `vsl vaporize`
+- __validates everything:__ built to make resulting templates reliable by leveraging parameter validation built into PowerShell
+- __goes turbo:__ package and deploy your templates **fast** with one command; `vsl vaporize`
 
 ## Example
 
 ```powershell
 #1 Initialize a VaporShell object
-$vsl = Initialize-VaporShell -Description "An even more updated function triggered on a timer."
+$vsl = Initialize-VaporShell -Description "A function triggered on a timer."
 
 #2 Add a Serverless function with local code as the CodeUri and a schedule of 5 minutes
 $samFunction = New-SAMFunction `
