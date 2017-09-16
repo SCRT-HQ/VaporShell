@@ -39,10 +39,10 @@
     <img src="https://badges.gitter.im/VaporShell/Lobby.svg"
       alt="Join the chat at https://gitter.im/VaporShell/Lobby" />
   </a>
-  <!-- Gratipay -->
-  <a href="https://gratipay.com/VaporShell">
-    <img src="https://img.shields.io/gratipay/user/scrthq.svg"
-      alt="Donate with Gratipay" />
+  <!-- PayPal -->
+  <a href="https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&hosted_button_id=GU6CJMFGVP6ZS">
+    <img src="https://img.shields.io/badge/paypal-donate-brightgreen.svg"
+      alt="Donate with PayPal" />
   </a>
 </div>
 
