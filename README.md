@@ -1,7 +1,11 @@
 <h1 align="center">VaporShell</h1>
 
 <div align="center">
+<<<<<<< HEAD
   :pencil:   |   :package:   |   :rocket:
+=======
+  :pencil: ......... :package: ......... :rocket:
+>>>>>>> b37a04787102853d14ce5ceb514dd7a7d481d319
 </div>
 
 <div align="center">
@@ -71,12 +75,20 @@
 </div>
 
 <div align="center">
+<<<<<<< HEAD
   <sub>Built by <a href="https://twitter.com/scrthq">Nate Ferrell</a>. Looking for <a href="mailto:nate@vaporshell.io?Subject=Contributor%20here!" target="_top">contributors</a>!
+=======
+  <sub>Built by <a href="https://twitter.com/scrthq">Nate Ferrell</a>. Looking for contributors!
+>>>>>>> b37a04787102853d14ce5ceb514dd7a7d481d319
 </div>
 
 ## Table of Contents
 - [Features](#features)
 - [Example](#example)
+<<<<<<< HEAD
+=======
+- [In Action](#in-action)
+>>>>>>> b37a04787102853d14ce5ceb514dd7a7d481d319
 - [Installation](#installation)
 - [License](#license)
 
@@ -107,12 +119,25 @@ $vsl.ToYAML($TemplateFile)
 vsl vaporize --tf $TemplateFile --sn sched-func --capabilities iam --v --f --w
 
 ```
+<<<<<<< HEAD
 Want to see more examples? Check out the [Examples page][http://vaporshell.io/docs/examples].
+=======
+Want to see more examples? Check out the [Examples page](http://vaporshell.io/docs/examples).
+
+
+## In Action
+
+![Watch-Stack in action](http://vaporshell.io/images/Watch-Stacks.gif)
+>>>>>>> b37a04787102853d14ce5ceb514dd7a7d481d319
 
 
 ## Installation
 
+<<<<<<< HEAD
 On PowerShell 5+? Install directly from the PowerShell Gallery:
+=======
+On PowerShell 5+ or [have PowerShellGet installed](https://www.microsoft.com/en-us/download/details.aspx?id=51451)? Install directly from the PowerShell Gallery:
+>>>>>>> b37a04787102853d14ce5ceb514dd7a7d481d319
 
 ```powershell
 Install-Module VaporShell -Scope CurrentUser
