@@ -131,6 +131,29 @@ Set-VSCredential -AccessKey $accessKey -SecretKey $secretKey -Region USWest1 -Pr
 
 ### Template Skeleton
 
+When building templates with VaporShell, there are typically a few items that you're going to want to include in your build script:
+
+1. Create a template object by calling one of these into a variable...
+    - `$template = Initialize-VaporShell`
+        - Use when starting from scratch
+    - `$template = Import-VaporShell -Path .\template.json`
+        - Use when importing from an existing template to build off of
+2. Build out your template by using the object's ScriptMethods:
+    - `$template.AddResource()`
+    - `$template.AddParameter()`
+    - `$template.AddOutput()`
+    - etc....
+3. Export your template to local file or `stdout` (useful for piping directly into `New-VSStack` or other functions that support TemplateBody as pipeline input)
+    - `Export-VaporShell -VaporshellTemplate $template -Path .\template.json`
+        - This will output the template as `template.json` in your working directory
+    - `Export-VaporShell -VaporshellTemplate $template`
+        - This will output the template to `stdout` as a single string.
+    - `$template.ToJSON()`
+        - This script method on the template object performs the same function as `Export-VaporShell -VaporshellTemplate $template` and outputs the string template as JSON to `stdout`.
+    - `$template.ToYAML()`
+        - This does the same thing as the `ToJSON()` script method, but outputs to YAML (`cfn-flip` required)
+
+See the next section for a quick walkthrough on tying those together!
 
 
 ## Examples
