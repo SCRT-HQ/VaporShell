@@ -33,11 +33,15 @@ function ProcessRequest3 {
             $endPoint = ($sharedFile.ListProfiles() | Where-Object {$_.Name -eq $ProfileName}).Region
             $storedCreds = New-Object Amazon.Runtime.StoredProfileAWSCredentials $ProfileName -ErrorAction Stop
             Write-Verbose "Building '$service' client in region '$($endPoint.DisplayName)' [$($endPoint.SystemName)]"
-            $client = New-Object "Amazon.$($service).Amazon$($service)Client" $storedCreds,$endPoint -ErrorAction Stop
+            if ($endPoint) {
+                $client = New-Object "Amazon.$($service).Amazon$($service)Client" $storedCreds,$endPoint -ErrorAction Stop
+            }
+            else {
+                return (New-VSError -String "No region set for profile '$ProfileName'! Please run the following to set a region:`n`nSet-VSCredential -ProfileName $ProfileName -Region <PREFERRED REGION>")
+            }
         }
         catch {
-            Write-Error $_
-            return
+            return (New-VSError -String "$($Error[0].Exception.Message)")
         }
         Write-Verbose "Processing request:`n$($PSBoundParameters | Format-Table -AutoSize | Out-String)"
         $i = 0
