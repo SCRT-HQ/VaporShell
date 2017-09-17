@@ -79,7 +79,7 @@
 - [Features](#features)
 - [Prerequisites](#prerequisites)
 - [Installation](#installation)
-- [Getting Started](#getting-started)
+- [Tips](#tips)
 - [Examples](#examples)
 - [In Action](#in-action)
 - [License](#license)
@@ -118,9 +118,9 @@ Invoke-Expression (New-Object Net.WebClient).DownloadString("https://raw.githubu
 **Please inspect code before you run it. Here's a handy link to that raw content for you to review: [Install-VaporShell.ps1](https://raw.githubusercontent.com/scrthq/VaporShell/master/Install-VaporShell.ps1)**
 
 
-## Getting Started
+## Tips
 
-### Setting Credentials
+### Working with Credentials
 
 If you are planning on packaging or deploying to CloudFormation, you will need to setup credentials in your local Shared Credentials file. _If you are using the AWS CLI and have setup credentials already, then you should already be ready to go._
 
@@ -130,7 +130,7 @@ You can update or add a credential profile with `Set-VSCredential`:
 Set-VSCredential -AccessKey $accessKey -SecretKey $secretKey -Region USWest1 -ProfileName DevAccount
 ```
 
-### Template Skeleton
+### Bare Necessities
 
 When building templates with VaporShell, there are typically a few items that you're going to want to include in your build script:
 
@@ -154,7 +154,7 @@ When building templates with VaporShell, there are typically a few items that yo
     - `$template.ToYAML()`
         - This does the same thing as the `ToJSON()` script method, but outputs to YAML (`cfn-flip` required)
 
-See the next section for a quick walkthrough on tying those together!
+See the next section for a quick example on tying those together!
 
 
 ## Examples
