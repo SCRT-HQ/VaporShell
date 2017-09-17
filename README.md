@@ -71,15 +71,15 @@
 </div>
 
 <div align="center">
-  <sub>Built by <a href="https://twitter.com/scrthq">Nate Ferrell</a>. Looking for contributors!
+  <sub>Built with :heart: by <a href="https://twitter.com/scrthq">Nate Ferrell</a>. Looking for contributors!
 </div>
 
 ## Table of Contents
 - [Features](#features)
-- [Examples](#examples)
-- [In Action](#in-action)
 - [Prerequisites](#prerequisites)
 - [Installation](#installation)
+- [Examples](#examples)
+- [In Action](#in-action)
 - [License](#license)
 
 ## Features
@@ -87,6 +87,33 @@
 - __runs on any OS:__ developed and tested in Windows, Ubuntu, and macOS on PowerShell v3-6
 - __validates everything:__ built to make resulting templates reliable by leveraging parameter validation built into PowerShell
 - __goes turbo:__ package and deploy your templates **fast** with one command; `vsl vaporize`
+
+
+## Prerequisites
+
+- PowerShell 3+
+  - On Linux or macOS? [Grab PowerShell 6 here!](https://github.com/powershell/powershell#get-powershell)
+- .NET 4.5.0+ OR .netstandard 1.3+
+  - if you have PowerShell 4 or greater, you're covered!
+
+**Recommended:** [ AWS Labs `cfn-flip`](https://github.com/awslabs/aws-cfn-template-flip)
+> If you are working with YAML templates, you will need to install `cfn-flip`. VaporShell uses `cfn-flip` under the hood to work with YAML templates, as PowerShell does not natively support YAML at this time. If you are only working in JSON, then `cfn-flip` is not needed.
+
+
+## Installation
+
+On PowerShell 5+ or [have PowerShellGet installed](https://www.microsoft.com/en-us/download/details.aspx?id=51451)? Install directly from the PowerShell Gallery:
+
+```powershell
+Install-Module VaporShell -Scope CurrentUser
+```
+
+Not on PowerShell 5+ and can't install PowerShellGet? You're covered as well:
+
+```powershell
+Invoke-Expression (New-Object Net.WebClient).DownloadString("https://raw.githubusercontent.com/scrthq/VaporShell/master/Install-VaporShell.ps1")
+```
+**Please inspect code before you run it. Here's a handy link to that raw content for you to review: [Install-VaporShell.ps1](https://raw.githubusercontent.com/scrthq/VaporShell/master/Install-VaporShell.ps1)**
 
 ## Examples
 
@@ -125,34 +152,6 @@ Want to see more examples? Check out the [Examples page](http://vaporshell.io/do
 
 This is a deployment being watched via `Watch-Stack $stackName` to show the col
 ![Watch-Stack in action](http://vaporshell.io/images/Watch-Stacks.gif)
-
-
-## Prerequisites
-
-- PowerShell v3+
-- .NET 4.5.0+ OR .netstandard 1.3+
-  - if you have PowerShell 4+, you're covered!
-
-
-### Recommended
-
-If you are working with YAML templates, you will need to install AWS Labs' [`cfn-flip`](https://github.com/awslabs/aws-cfn-template-flip). VaporShell uses `cfn-flip` under the hood to work with YAML templates, as PowerShell does not natively support YAML at this time. If you are fine working in JSON, then `cfn-flip` is not needed.
-
-
-## Installation
-
-On PowerShell 5+ or [have PowerShellGet installed](https://www.microsoft.com/en-us/download/details.aspx?id=51451)? Install directly from the PowerShell Gallery:
-
-```powershell
-Install-Module VaporShell -Scope CurrentUser
-```
-
-Not on PowerShell 5+ and can't install PowerShellGet? Got you covered too.
-
-```powershell
-Invoke-Expression (New-Object Net.WebClient).DownloadString("https://raw.githubusercontent.com/scrthq/VaporShell/master/Install-VaporShell.ps1")
-```
-**Please inspect code before you run it. Here's a handy link to that raw content for you to review: [Install-VaporShell.ps1](https://raw.githubusercontent.com/scrthq/VaporShell/master/Install-VaporShell.ps1)**
 
 ## License
 [Apache 2.0](https://tldrlegal.com/license/apache-license-2.0-(apache-2.0))
