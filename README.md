@@ -175,7 +175,7 @@ $TemplateFile = ".\sched-func.yaml"
 #3 Save the template as YAML using the VaporShell object's ToYAML() method (uses cfn-flip to convert to/from YAML)
 $vsl.ToYAML($TemplateFile)
 
-<#4 Package and deploy the template file (--tf $TemplateFile) as a change set with parameters:
+<#4 Package and deploy (vsl vaporize) the template file (--tf $TemplateFile) as a change set with parameters:
     - stack name (--sn) 'sched-func'
     - S3 bucket also named 'sched-func' (defaults to the stack name if --s3 is not passed)
     - capabilities: CAPABILITY_IAM (--caps iam)
