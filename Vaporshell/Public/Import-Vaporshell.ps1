@@ -46,6 +46,19 @@ function Import-Vaporshell {
         }
     }
     $tempObj = ConvertFrom-Json -InputObject $TemplateBody -Verbose:$false
+    if ($tempObj.TemplateBody) {
+        $tempObj = $tempObj.TemplateBody
+    }
+    $toString = {
+        Export-Vaporshell -VaporshellTemplate $this -As JSON -Verbose:$false -Force
+    }
+    $memberParam = @{
+        MemberType  = "ScriptMethod"
+        InputObject = $tempObj
+        Name        = "ToString"
+        Value       = $toString
+    }
+    Add-Member @memberParam -Force
     $toJSON = {
         Process {
             $outFile = @{}
