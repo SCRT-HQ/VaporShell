@@ -79,6 +79,7 @@
 - [Features](#features)
 - [Prerequisites](#prerequisites)
 - [Installation](#installation)
+- [Getting Started](#getting-started)
 - [Examples](#examples)
 - [In Action](#in-action)
 - [License](#license)
