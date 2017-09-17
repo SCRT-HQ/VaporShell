@@ -71,8 +71,9 @@
 </div>
 
 <div align="center">
-  <sub>Built with :heart: by <a href="https://twitter.com/scrthq">Nate Ferrell</a>. Looking for contributors!
+  <sub>Built with ❤︎ by <a href="https://twitter.com/scrthq">Nate Ferrell</a>. Looking for contributors!
 </div>
+
 
 ## Table of Contents
 - [Features](#features)
@@ -114,6 +115,23 @@ Not on PowerShell 5+ and can't install PowerShellGet? You're covered as well:
 Invoke-Expression (New-Object Net.WebClient).DownloadString("https://raw.githubusercontent.com/scrthq/VaporShell/master/Install-VaporShell.ps1")
 ```
 **Please inspect code before you run it. Here's a handy link to that raw content for you to review: [Install-VaporShell.ps1](https://raw.githubusercontent.com/scrthq/VaporShell/master/Install-VaporShell.ps1)**
+
+
+## Getting Started
+
+### Setting Credentials
+
+If you are planning on packaging or deploying to CloudFormation, you will need to setup credentials in your local Shared Credentials file. _If you are using the AWS CLI and have setup credentials already, then you should already be ready to go._
+
+You can update or add a credential profile with `Set-VSCredential`:
+
+```powershell
+Set-VSCredential -AccessKey $accessKey -SecretKey $secretKey -Region USWest1 -ProfileName DevAccount
+```
+
+### Template Skeleton
+
+
 
 ## Examples
 
