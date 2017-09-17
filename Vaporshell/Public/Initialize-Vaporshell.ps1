@@ -39,6 +39,16 @@ function Initialize-Vaporshell {
     if ($Description) {
         $tempObj | Add-Member -MemberType NoteProperty -Name "Description" -Value "$Description"
     }
+    $toString = {
+        Export-Vaporshell -VaporshellTemplate $this -As JSON -Verbose:$false -Force
+    }
+    $memberParam = @{
+        MemberType  = "ScriptMethod"
+        InputObject = $tempObj
+        Name        = "ToString"
+        Value       = $toString
+    }
+    Add-Member @memberParam -Force
     $toJSON = {
         Process {
             $outFile = @{}
