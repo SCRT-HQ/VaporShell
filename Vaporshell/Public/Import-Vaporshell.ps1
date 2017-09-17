@@ -46,6 +46,9 @@ function Import-Vaporshell {
         }
     }
     $tempObj = ConvertFrom-Json -InputObject $TemplateBody -Verbose:$false
+    if ($tempObj.TemplateBody) {
+        $tempObj = $tempObj.TemplateBody
+    }
     $toJSON = {
         Process {
             $outFile = @{}
