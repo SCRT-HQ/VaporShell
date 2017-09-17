@@ -168,7 +168,7 @@ Want to see more examples? Check out the [Examples page](http://vaporshell.io/do
 
 ## In Action
 
-This is a deployment being watched via `Watch-Stack $stackName` to show the col
+This is a deployment being watched via `Watch-Stack $stackName` to show stack creation and deletion mid deploy:
 ![Watch-Stack in action](http://vaporshell.io/images/Watch-Stacks.gif)
 
 ## License
