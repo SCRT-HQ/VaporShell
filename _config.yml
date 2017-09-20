@@ -11,7 +11,7 @@ owner: "SCRT HQ"
 first_published: 2017
 email: nate@scrthq.com
 baseurl: "" # the subpath of your site, e.g. /blog
-url: "http://VaporShell.io" # the base hostname & protocol for your site
+url: "http://vaporshell.io" # the base hostname & protocol for your site
 permalink: /:category/:title
 highlighter: rouge
 google_analytics: UA-101420411-1
