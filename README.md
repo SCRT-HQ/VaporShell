@@ -86,9 +86,9 @@
 
 ## Features
 - __built from AWS's CFN spec sheet:__ 100% coverage of all available CloudFormation resource and property types
-- __runs on any OS:__ developed and tested in Windows, Ubuntu, and macOS on PowerShell v3-6
+- __runs on any operating system:__ developed and tested in Windows, Ubuntu, and macOS on PowerShell v3-6
 - __validates everything:__ built to make resulting templates reliable by leveraging parameter validation built into PowerShell
-- __goes turbo:__ package and deploy your templates **fast** with one command; `vsl vaporize`
+- __goes turbo:__ package and deploy your templates **fast** with one command: `vsl vaporize`
 
 
 ## Prerequisites
@@ -99,7 +99,7 @@
   - if you have PowerShell 4 or greater, you're covered!
 
 **Recommended:** [ AWS Labs `cfn-flip`](https://github.com/awslabs/aws-cfn-template-flip)
-> If you are working with YAML templates, you will need to install `cfn-flip`. VaporShell uses `cfn-flip` under the hood to work with YAML templates, as PowerShell does not natively support YAML at this time. If you are only working in JSON, then `cfn-flip` is not needed.
+> If you are working with YAML templates, you need to install `cfn-flip`. VaporShell uses `cfn-flip` under the hood to work with YAML templates, as PowerShell does not natively support YAML at this time. If you are only working in JSON, then `cfn-flip` isn't necessary.
 
 
 ## Installation
@@ -115,14 +115,14 @@ Not on PowerShell 5+ and can't install PowerShellGet? You're covered as well:
 ```powershell
 Invoke-Expression (New-Object Net.WebClient).DownloadString("https://raw.githubusercontent.com/scrthq/VaporShell/master/Install-VaporShell.ps1")
 ```
-**Please inspect code before you run it. Here's a handy link to that raw content for you to review: [Install-VaporShell.ps1](https://raw.githubusercontent.com/scrthq/VaporShell/master/Install-VaporShell.ps1)**
+**Please inspect code before you run it. Here's a handy link to that raw content for you to review: [Install-VaporShell.ps1](https://raw.githubusercontent.com/scrthq/VaporShell/master/Install-VaporShell.ps1)**.
 
 
 ## Tips
 
 ### Working with Credentials
 
-If you are planning on packaging or deploying to CloudFormation, you will need to setup credentials in your local Shared Credentials file. _If you are using the AWS CLI and have setup credentials already, then you should already be ready to go._
+If you are planning on packaging or deploying to CloudFormation, you will need to setup credentials in your local Shared Credentials file. _If you are using the AWS command-line interface (CLI) and already have setup credentials, then you should be ready to go._
 
 You can update or add a credential profile with `Set-VSCredential`:
 
@@ -132,9 +132,9 @@ Set-VSCredential -AccessKey $accessKey -SecretKey $secretKey -Region USWest1 -Pr
 
 ### Bare Necessities
 
-When building templates with VaporShell, there are typically a few items that you're going to want to include in your build script:
+When building templates with VaporShell, there are typically a few items that you'll want to include in your build script:
 
-1. Create a template object by calling one of these into a variable...
+1. Create a template object by calling one of these into a variable
     - `$template = Initialize-VaporShell`
         - Use when starting from scratch
     - `$template = Import-VaporShell -Path .\template.json`
@@ -148,13 +148,13 @@ When building templates with VaporShell, there are typically a few items that yo
     - `Export-VaporShell -VaporshellTemplate $template -Path .\template.json`
         - This will output the template as `template.json` in your working directory
     - `Export-VaporShell -VaporshellTemplate $template`
-        - This will output the template to `stdout` as a single string.
+        - This will output the template to `stdout` as a single string
     - `$template.ToJSON()`
-        - This script method on the template object performs the same function as `Export-VaporShell -VaporshellTemplate $template` and outputs the string template as JSON to `stdout`.
+        - This script method on the template object performs the same function as `Export-VaporShell -VaporshellTemplate $template` and outputs the string template as JSON to `stdout`
     - `$template.ToYAML()`
         - This does the same thing as the `ToJSON()` script method, but outputs to YAML (`cfn-flip` required)
 
-See the next section for a quick example on tying those together!
+See the next section for a quick example that ties those together!
 
 
 ## Examples
@@ -187,12 +187,12 @@ $vsl.ToYAML($TemplateFile)
 vsl vaporize --tf $TemplateFile --sn sched-func --caps iam --v --f --w
 
 ```
-Want to see more examples? Check out the [Examples page](http://vaporshell.io/docs/examples).
+Check out the [Examples page](http://vaporshell.io/docs/examples) for more.
 
 
 ## In Action
 
-This is a deployment being watched via `Watch-Stack $stackName` to show stack creation and deletion mid deploy:
+This is a deployment being watched via `Watch-Stack $stackName` to show stack creation and deletion mid-deploy:
 ![Watch-Stack in action](http://vaporshell.io/images/Watch-Stacks.gif)
 
 ## License
