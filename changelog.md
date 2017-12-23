@@ -4,6 +4,8 @@ title: Change Log
 ---
 <!-- TOC -->
 
+- [2.1.0](#210)
+- [2.0.3](#203)
 - [2.0.0](#200)
 - [1.2.3](#123)
 - [1.2.2](#122)
@@ -22,6 +24,18 @@ title: Change Log
 - [0.7.02](#0702)
 
 <!-- /TOC -->
+
+### 2.1.0
+
+- Updated resource and property types, adding another 107 functions to the module
+- Updated `Watch-Stack` for ConEmu users so that it will create a new tab in ConEmu with the `-InNewWindow` parameter instead of launching a PowerShell.exe window
+
+
+### 2.0.3
+
+- Added `ToJSON()`,`ToYAML()` methods to Template object to allow quick conversion to either format
+- Added `ToString()` method to Template object to output to JSON string to pass the template object directly to `-TemplateBody` parameters when creating stacks/change sets
+
 
 ### 2.0.0
 
