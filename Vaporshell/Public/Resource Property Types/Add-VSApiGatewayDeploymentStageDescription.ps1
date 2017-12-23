@@ -83,12 +83,6 @@
 		Required: False    
 		UpdateType: Mutable    
 
-    .PARAMETER StageName
-		Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-apigateway-deployment-stagedescription.html#cfn-apigateway-deployment-stagedescription-stagename    
-		PrimitiveType: String    
-		Required: False    
-		UpdateType: Mutable    
-
     .PARAMETER ThrottlingBurstLimit
 		Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-apigateway-deployment-stagedescription.html#cfn-apigateway-deployment-stagedescription-throttlingburstlimit    
 		PrimitiveType: Integer    
@@ -200,17 +194,6 @@
         [parameter(Mandatory = $false)]
         [System.Boolean]
         $MetricsEnabled,
-        [parameter(Mandatory = $false)]
-        [ValidateScript( {
-                $allowedTypes = "System.String","Vaporshell.Function"
-                if ([string]$($_.PSTypeNames) -match "($(($allowedTypes|ForEach-Object{[RegEx]::Escape($_)}) -join '|'))") {
-                    $true
-                }
-                else {
-                    $PSCmdlet.ThrowTerminatingError((New-VSError -String "This parameter only accepts the following types: $($allowedTypes -join ", "). The current types of the value are: $($_.PSTypeNames -join ", ")."))
-                }
-            })]
-        $StageName,
         [parameter(Mandatory = $false)]
         [Int]
         $ThrottlingBurstLimit,

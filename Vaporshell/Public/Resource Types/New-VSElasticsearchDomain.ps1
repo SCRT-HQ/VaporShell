@@ -64,6 +64,12 @@
 		Type: List    
 		UpdateType: Mutable    
 
+    .PARAMETER VPCOptions
+		Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-elasticsearch-domain.html#cfn-elasticsearch-domain-vpcoptions    
+		Required: False    
+		Type: VPCOptions    
+		UpdateType: Mutable    
+
     .PARAMETER DeletionPolicy
         With the DeletionPolicy attribute you can preserve or (in some cases) backup a resource when its stack is deleted. You specify a DeletionPolicy attribute for each resource that you want to control. If a resource has no DeletionPolicy attribute, AWS CloudFormation deletes the resource by default.
 
@@ -164,6 +170,8 @@
                 }
             })]
         $Tags,
+        [parameter(Mandatory = $false)]
+        $VPCOptions,
         [ValidateSet("Delete","Retain","Snapshot")]
         [System.String]
         $DeletionPolicy,

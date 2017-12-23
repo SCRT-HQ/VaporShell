@@ -34,7 +34,7 @@
 		Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ec2-subnet.html#cfn-ec2-subnet-ipv6cidrblock    
 		PrimitiveType: String    
 		Required: False    
-		UpdateType: Immutable    
+		UpdateType: Mutable    
 
     .PARAMETER MapPublicIpOnLaunch
 		Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ec2-subnet.html#cfn-ec2-subnet-mappubliciponlaunch    

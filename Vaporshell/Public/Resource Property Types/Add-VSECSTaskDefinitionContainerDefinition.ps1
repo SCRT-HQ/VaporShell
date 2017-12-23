@@ -111,6 +111,12 @@
 		Type: List    
 		UpdateType: Immutable    
 
+    .PARAMETER LinuxParameters
+		Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ecs-taskdefinition-containerdefinitions.html#cfn-ecs-taskdefinition-containerdefinition-linuxparameters    
+		Required: False    
+		Type: LinuxParameters    
+		UpdateType: Immutable    
+
     .PARAMETER LogConfiguration
 		Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ecs-taskdefinition-containerdefinitions.html#cfn-ecs-taskdefinition-containerdefinition-logconfiguration    
 		Required: False    
@@ -266,6 +272,8 @@
         $Image,
         [parameter(Mandatory = $false)]
         $Links,
+        [parameter(Mandatory = $false)]
+        $LinuxParameters,
         [parameter(Mandatory = $false)]
         $LogConfiguration,
         [parameter(Mandatory = $false)]

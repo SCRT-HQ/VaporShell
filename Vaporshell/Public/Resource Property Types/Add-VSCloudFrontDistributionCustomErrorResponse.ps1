@@ -7,30 +7,30 @@
         Adds an AWS::CloudFront::Distribution.CustomErrorResponse resource property to the template
 
     .LINK
-        http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-cloudfront-distributionconfig-customerrorresponse.html
+        http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-cloudfront-distribution-customerrorresponse.html
+
+    .PARAMETER ResponseCode
+		Required: False    
+		Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-cloudfront-distribution-customerrorresponse.html#cfn-cloudfront-distribution-customerrorresponse-responsecode    
+		PrimitiveType: Integer    
+		UpdateType: Mutable    
 
     .PARAMETER ErrorCachingMinTTL
-		Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-cloudfront-distributionconfig-customerrorresponse.html#cfn-cloudfront-distributionconfig-customerrorresponse-errorcachingminttl    
-		PrimitiveType: Long    
 		Required: False    
+		Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-cloudfront-distribution-customerrorresponse.html#cfn-cloudfront-distribution-customerrorresponse-errorcachingminttl    
+		PrimitiveType: Double    
 		UpdateType: Mutable    
 
     .PARAMETER ErrorCode
-		Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-cloudfront-distributionconfig-customerrorresponse.html#cfn-cloudfront-distributionconfig-customerrorresponse-errorcode    
-		PrimitiveType: Integer    
 		Required: True    
-		UpdateType: Mutable    
-
-    .PARAMETER ResponseCode
-		Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-cloudfront-distributionconfig-customerrorresponse.html#cfn-cloudfront-distributionconfig-customerrorresponse-responsecode    
+		Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-cloudfront-distribution-customerrorresponse.html#cfn-cloudfront-distribution-customerrorresponse-errorcode    
 		PrimitiveType: Integer    
-		Required: False    
 		UpdateType: Mutable    
 
     .PARAMETER ResponsePagePath
-		Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-cloudfront-distributionconfig-customerrorresponse.html#cfn-cloudfront-distributionconfig-customerrorresponse-responsepagepath    
-		PrimitiveType: String    
 		Required: False    
+		Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-cloudfront-distribution-customerrorresponse.html#cfn-cloudfront-distribution-customerrorresponse-responsepagepath    
+		PrimitiveType: String    
 		UpdateType: Mutable    
 
     .FUNCTIONALITY
@@ -41,13 +41,14 @@
     Param
     (
         [parameter(Mandatory = $false)]
+        [Int]
+        $ResponseCode,
+        [parameter(Mandatory = $false)]
+        [System.Double]
         $ErrorCachingMinTTL,
         [parameter(Mandatory = $true)]
         [Int]
         $ErrorCode,
-        [parameter(Mandatory = $false)]
-        [Int]
-        $ResponseCode,
         [parameter(Mandatory = $false)]
         [ValidateScript( {
                 $allowedTypes = "System.String","Vaporshell.Function"

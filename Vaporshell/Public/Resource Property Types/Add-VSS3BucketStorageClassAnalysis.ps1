@@ -1,0 +1,39 @@
+﻿function Add-VSS3BucketStorageClassAnalysis {
+    <#
+    .SYNOPSIS
+        Adds an AWS::S3::Bucket.StorageClassAnalysis resource property to the template
+
+    .DESCRIPTION
+        Adds an AWS::S3::Bucket.StorageClassAnalysis resource property to the template
+
+    .LINK
+        http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-s3-bucket-storageclassanalysis.html
+
+    .PARAMETER DataExport
+		Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-s3-bucket-storageclassanalysis.html#cfn-s3-bucket-storageclassanalysis-dataexport    
+		Required: False    
+		Type: DataExport    
+		UpdateType: Mutable    
+
+    .FUNCTIONALITY
+        Vaporshell
+    #>
+    [OutputType('Vaporshell.Resource.S3.Bucket.StorageClassAnalysis')]
+    [cmdletbinding()]
+    Param
+    (
+        [parameter(Mandatory = $false)]
+        $DataExport
+    )
+    Begin {
+        $obj = [PSCustomObject]@{}
+    }
+    Process {
+        foreach ($key in $PSBoundParameters.Keys) {
+            $obj | Add-Member -MemberType NoteProperty -Name $key -Value $PSBoundParameters.$key
+        }
+    }
+    End {
+        $obj | Add-ObjectDetail -TypeName 'Vaporshell.Resource.S3.Bucket.StorageClassAnalysis'
+    }
+}

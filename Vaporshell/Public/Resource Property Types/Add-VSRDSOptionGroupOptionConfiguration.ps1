@@ -29,6 +29,12 @@
 		Type: OptionSetting    
 		UpdateType: Mutable    
 
+    .PARAMETER OptionVersion
+		Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-rds-optiongroup-optionconfigurations.html#cfn-rds-optiongroup-optionconfiguration-optionversion    
+		PrimitiveType: String    
+		Required: False    
+		UpdateType: Mutable    
+
     .PARAMETER Port
 		Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-rds-optiongroup-optionconfigurations.html#cfn-rds-optiongroup-optionconfigurations-port    
 		PrimitiveType: Integer    
@@ -65,6 +71,17 @@
         $OptionName,
         [parameter(Mandatory = $false)]
         $OptionSettings,
+        [parameter(Mandatory = $false)]
+        [ValidateScript( {
+                $allowedTypes = "System.String","Vaporshell.Function"
+                if ([string]$($_.PSTypeNames) -match "($(($allowedTypes|ForEach-Object{[RegEx]::Escape($_)}) -join '|'))") {
+                    $true
+                }
+                else {
+                    $PSCmdlet.ThrowTerminatingError((New-VSError -String "This parameter only accepts the following types: $($allowedTypes -join ", "). The current types of the value are: $($_.PSTypeNames -join ", ")."))
+                }
+            })]
+        $OptionVersion,
         [parameter(Mandatory = $false)]
         [Int]
         $Port,

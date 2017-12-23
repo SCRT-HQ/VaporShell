@@ -56,6 +56,14 @@
 		Required: False    
 		UpdateType: Mutable    
 
+    .PARAMETER LifecycleHookSpecificationList
+		Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-as-group.html#cfn-autoscaling-autoscalinggroup-lifecyclehookspecificationlist    
+		DuplicatesAllowed: True    
+		ItemType: LifecycleHookSpecification    
+		Required: False    
+		Type: List    
+		UpdateType: Mutable    
+
     .PARAMETER LoadBalancerNames
 		Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-as-group.html#cfn-as-group-loadbalancernames    
 		DuplicatesAllowed: True    
@@ -243,6 +251,17 @@
             })]
         $LaunchConfigurationName,
         [parameter(Mandatory = $false)]
+        [ValidateScript( {
+                $allowedTypes = "Vaporshell.Resource.AutoScaling.AutoScalingGroup.LifecycleHookSpecification"
+                if ([string]$($_.PSTypeNames) -match "($(($allowedTypes|ForEach-Object{[RegEx]::Escape($_)}) -join '|'))") {
+                    $true
+                }
+                else {
+                    $PSCmdlet.ThrowTerminatingError((New-VSError -String "This parameter only accepts the following types: $($allowedTypes -join ", "). The current types of the value are: $($_.PSTypeNames -join ", ")."))
+                }
+            })]
+        $LifecycleHookSpecificationList,
+        [parameter(Mandatory = $false)]
         $LoadBalancerNames,
         [parameter(Mandatory = $true)]
         [ValidateScript( {
@@ -391,6 +410,12 @@
                         $ResourceParams.Add("Properties",([PSCustomObject]@{}))
                     }
                     $ResourceParams["Properties"] | Add-Member -MemberType NoteProperty -Name AvailabilityZones -Value @($AvailabilityZones)
+                }
+                LifecycleHookSpecificationList {
+                    if (!($ResourceParams["Properties"])) {
+                        $ResourceParams.Add("Properties",([PSCustomObject]@{}))
+                    }
+                    $ResourceParams["Properties"] | Add-Member -MemberType NoteProperty -Name LifecycleHookSpecificationList -Value @($LifecycleHookSpecificationList)
                 }
                 LoadBalancerNames {
                     if (!($ResourceParams["Properties"])) {

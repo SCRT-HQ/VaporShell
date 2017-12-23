@@ -44,6 +44,14 @@
 		Required: True    
 		UpdateType: Immutable    
 
+    .PARAMETER VpnTunnelOptionsSpecifications
+		Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ec2-vpn-connection.html#cfn-ec2-vpnconnection-vpntunneloptionsspecifications    
+		DuplicatesAllowed: False    
+		ItemType: VpnTunnelOptionsSpecification    
+		Required: False    
+		Type: List    
+		UpdateType: Immutable    
+
     .PARAMETER DeletionPolicy
         With the DeletionPolicy attribute you can preserve or (in some cases) backup a resource when its stack is deleted. You specify a DeletionPolicy attribute for each resource that you want to control. If a resource has no DeletionPolicy attribute, AWS CloudFormation deletes the resource by default.
 
@@ -138,6 +146,17 @@
                 }
             })]
         $VpnGatewayId,
+        [parameter(Mandatory = $false)]
+        [ValidateScript( {
+                $allowedTypes = "Vaporshell.Resource.EC2.VPNConnection.VpnTunnelOptionsSpecification"
+                if ([string]$($_.PSTypeNames) -match "($(($allowedTypes|ForEach-Object{[RegEx]::Escape($_)}) -join '|'))") {
+                    $true
+                }
+                else {
+                    $PSCmdlet.ThrowTerminatingError((New-VSError -String "This parameter only accepts the following types: $($allowedTypes -join ", "). The current types of the value are: $($_.PSTypeNames -join ", ")."))
+                }
+            })]
+        $VpnTunnelOptionsSpecifications,
         [ValidateSet("Delete","Retain","Snapshot")]
         [System.String]
         $DeletionPolicy,
@@ -199,6 +218,12 @@
                         $ResourceParams.Add("Properties",([PSCustomObject]@{}))
                     }
                     $ResourceParams["Properties"] | Add-Member -MemberType NoteProperty -Name Tags -Value @($Tags)
+                }
+                VpnTunnelOptionsSpecifications {
+                    if (!($ResourceParams["Properties"])) {
+                        $ResourceParams.Add("Properties",([PSCustomObject]@{}))
+                    }
+                    $ResourceParams["Properties"] | Add-Member -MemberType NoteProperty -Name VpnTunnelOptionsSpecifications -Value @($VpnTunnelOptionsSpecifications)
                 }
                 Default {
                     if (!($ResourceParams["Properties"])) {

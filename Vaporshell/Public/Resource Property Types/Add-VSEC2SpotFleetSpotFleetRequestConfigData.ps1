@@ -44,7 +44,7 @@
     .PARAMETER SpotPrice
 		Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-spotfleet-spotfleetrequestconfigdata.html#cfn-ec2-spotfleet-spotfleetrequestconfigdata-spotprice    
 		PrimitiveType: String    
-		Required: True    
+		Required: False    
 		UpdateType: Immutable    
 
     .PARAMETER TargetCapacity
@@ -131,7 +131,7 @@
         [parameter(Mandatory = $false)]
         [System.Boolean]
         $ReplaceUnhealthyInstances,
-        [parameter(Mandatory = $true)]
+        [parameter(Mandatory = $false)]
         [ValidateScript( {
                 $allowedTypes = "System.String","Vaporshell.Function"
                 if ([string]$($_.PSTypeNames) -match "($(($allowedTypes|ForEach-Object{[RegEx]::Escape($_)}) -join '|'))") {

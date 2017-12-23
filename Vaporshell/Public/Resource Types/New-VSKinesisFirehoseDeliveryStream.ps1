@@ -18,6 +18,12 @@
 		Required: False    
 		UpdateType: Immutable    
 
+    .PARAMETER DeliveryStreamType
+		Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-kinesisfirehose-deliverystream.html#cfn-kinesisfirehose-deliverystream-deliverystreamtype    
+		PrimitiveType: String    
+		Required: False    
+		UpdateType: Immutable    
+
     .PARAMETER ElasticsearchDestinationConfiguration
 		Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-kinesisfirehose-deliverystream.html#cfn-kinesisfirehose-deliverystream-elasticsearchdestinationconfiguration    
 		Required: False    
@@ -28,6 +34,12 @@
 		Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-kinesisfirehose-deliverystream.html#cfn-kinesisfirehose-deliverystream-extendeds3destinationconfiguration    
 		Required: False    
 		Type: ExtendedS3DestinationConfiguration    
+		UpdateType: Mutable    
+
+    .PARAMETER KinesisStreamSourceConfiguration
+		Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-kinesisfirehose-deliverystream.html#cfn-kinesisfirehose-deliverystream-kinesisstreamsourceconfiguration    
+		Required: False    
+		Type: KinesisStreamSourceConfiguration    
 		UpdateType: Mutable    
 
     .PARAMETER RedshiftDestinationConfiguration
@@ -101,9 +113,22 @@
             })]
         $DeliveryStreamName,
         [parameter(Mandatory = $false)]
+        [ValidateScript( {
+                $allowedTypes = "System.String","Vaporshell.Function"
+                if ([string]$($_.PSTypeNames) -match "($(($allowedTypes|ForEach-Object{[RegEx]::Escape($_)}) -join '|'))") {
+                    $true
+                }
+                else {
+                    $PSCmdlet.ThrowTerminatingError((New-VSError -String "This parameter only accepts the following types: $($allowedTypes -join ", "). The current types of the value are: $($_.PSTypeNames -join ", ")."))
+                }
+            })]
+        $DeliveryStreamType,
+        [parameter(Mandatory = $false)]
         $ElasticsearchDestinationConfiguration,
         [parameter(Mandatory = $false)]
         $ExtendedS3DestinationConfiguration,
+        [parameter(Mandatory = $false)]
+        $KinesisStreamSourceConfiguration,
         [parameter(Mandatory = $false)]
         $RedshiftDestinationConfiguration,
         [parameter(Mandatory = $false)]

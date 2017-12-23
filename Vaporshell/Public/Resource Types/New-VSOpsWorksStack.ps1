@@ -146,6 +146,14 @@
 		Required: False    
 		UpdateType: Immutable    
 
+    .PARAMETER Tags
+		Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-opsworks-stack.html#cfn-opsworks-stack-tags    
+		DuplicatesAllowed: True    
+		ItemType: Tag    
+		Required: False    
+		Type: List    
+		UpdateType: Mutable    
+
     .PARAMETER UseCustomCookbooks
 		Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-opsworks-stack.html#usecustcookbooks    
 		PrimitiveType: Boolean    
@@ -391,6 +399,17 @@
             })]
         $SourceStackId,
         [parameter(Mandatory = $false)]
+        [ValidateScript( {
+                $allowedTypes = "Vaporshell.Resource.Tag","System.Management.Automation.PSCustomObject"
+                if ([string]$($_.PSTypeNames) -match "($(($allowedTypes|ForEach-Object{[RegEx]::Escape($_)}) -join '|'))") {
+                    $true
+                }
+                else {
+                    $PSCmdlet.ThrowTerminatingError((New-VSError -String "This parameter only accepts the following types: $($allowedTypes -join ", "). The current types of the value are: $($_.PSTypeNames -join ", ")."))
+                }
+            })]
+        $Tags,
+        [parameter(Mandatory = $false)]
         [System.Boolean]
         $UseCustomCookbooks,
         [parameter(Mandatory = $false)]
@@ -480,6 +499,12 @@
                         $ResourceParams.Add("Properties",([PSCustomObject]@{}))
                     }
                     $ResourceParams["Properties"] | Add-Member -MemberType NoteProperty -Name RdsDbInstances -Value @($RdsDbInstances)
+                }
+                Tags {
+                    if (!($ResourceParams["Properties"])) {
+                        $ResourceParams.Add("Properties",([PSCustomObject]@{}))
+                    }
+                    $ResourceParams["Properties"] | Add-Member -MemberType NoteProperty -Name Tags -Value @($Tags)
                 }
                 CustomJson {
                     if (($PSBoundParameters[$key]).PSObject.TypeNames -contains "System.String"){

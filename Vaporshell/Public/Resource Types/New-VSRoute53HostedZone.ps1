@@ -32,6 +32,12 @@
 		Required: True    
 		UpdateType: Immutable    
 
+    .PARAMETER QueryLoggingConfig
+		Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-route53-hostedzone.html#cfn-route53-hostedzone-queryloggingconfig    
+		Required: False    
+		Type: QueryLoggingConfig    
+		UpdateType: Mutable    
+
     .PARAMETER VPCs
 		Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-route53-hostedzone.html#cfn-route53-hostedzone-vpcs    
 		DuplicatesAllowed: True    
@@ -111,6 +117,8 @@
                 }
             })]
         $Name,
+        [parameter(Mandatory = $false)]
+        $QueryLoggingConfig,
         [parameter(Mandatory = $false)]
         [ValidateScript( {
                 $allowedTypes = "Vaporshell.Resource.Route53.HostedZone.VPC"

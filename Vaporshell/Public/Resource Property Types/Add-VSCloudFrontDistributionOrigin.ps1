@@ -7,44 +7,43 @@
         Adds an AWS::CloudFront::Distribution.Origin resource property to the template
 
     .LINK
-        http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-cloudfront-origin.html
+        http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-cloudfront-distribution-origin.html
 
-    .PARAMETER CustomOriginConfig
-		Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-cloudfront-origin.html#cfn-cloudfront-origin-customorigin    
+    .PARAMETER OriginCustomHeaders
+		Type: List    
 		Required: False    
-		Type: CustomOriginConfig    
+		Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-cloudfront-distribution-origin.html#cfn-cloudfront-distribution-origin-origincustomheaders    
+		ItemType: OriginCustomHeader    
 		UpdateType: Mutable    
 
     .PARAMETER DomainName
-		Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-cloudfront-origin.html#cfn-cloudfront-origin-domainname    
-		PrimitiveType: String    
 		Required: True    
-		UpdateType: Mutable    
-
-    .PARAMETER Id
-		Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-cloudfront-origin.html#cfn-cloudfront-origin-id    
+		Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-cloudfront-distribution-origin.html#cfn-cloudfront-distribution-origin-domainname    
 		PrimitiveType: String    
-		Required: True    
-		UpdateType: Mutable    
-
-    .PARAMETER OriginCustomHeaders
-		Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-cloudfront-origin.html#cfn-cloudfront-origin-origincustomheaders    
-		DuplicatesAllowed: False    
-		ItemType: OriginCustomHeader    
-		Required: False    
-		Type: List    
-		UpdateType: Mutable    
-
-    .PARAMETER OriginPath
-		Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-cloudfront-origin.html#cfn-cloudfront-origin-originpath    
-		PrimitiveType: String    
-		Required: False    
 		UpdateType: Mutable    
 
     .PARAMETER S3OriginConfig
-		Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-cloudfront-origin.html#cfn-cloudfront-origin-s3origin    
-		Required: False    
 		Type: S3OriginConfig    
+		Required: False    
+		Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-cloudfront-distribution-origin.html#cfn-cloudfront-distribution-origin-s3originconfig    
+		UpdateType: Mutable    
+
+    .PARAMETER OriginPath
+		Required: False    
+		Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-cloudfront-distribution-origin.html#cfn-cloudfront-distribution-origin-originpath    
+		PrimitiveType: String    
+		UpdateType: Mutable    
+
+    .PARAMETER Id
+		Required: True    
+		Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-cloudfront-distribution-origin.html#cfn-cloudfront-distribution-origin-id    
+		PrimitiveType: String    
+		UpdateType: Mutable    
+
+    .PARAMETER CustomOriginConfig
+		Type: CustomOriginConfig    
+		Required: False    
+		Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-cloudfront-distribution-origin.html#cfn-cloudfront-distribution-origin-customoriginconfig    
 		UpdateType: Mutable    
 
     .FUNCTIONALITY
@@ -55,7 +54,16 @@
     Param
     (
         [parameter(Mandatory = $false)]
-        $CustomOriginConfig,
+        [ValidateScript( {
+                $allowedTypes = "Vaporshell.Resource.CloudFront.Distribution.OriginCustomHeader"
+                if ([string]$($_.PSTypeNames) -match "($(($allowedTypes|ForEach-Object{[RegEx]::Escape($_)}) -join '|'))") {
+                    $true
+                }
+                else {
+                    $PSCmdlet.ThrowTerminatingError((New-VSError -String "This parameter only accepts the following types: $($allowedTypes -join ", "). The current types of the value are: $($_.PSTypeNames -join ", ")."))
+                }
+            })]
+        $OriginCustomHeaders,
         [parameter(Mandatory = $true)]
         [ValidateScript( {
                 $allowedTypes = "System.String","Vaporshell.Function"
@@ -67,6 +75,19 @@
                 }
             })]
         $DomainName,
+        [parameter(Mandatory = $false)]
+        $S3OriginConfig,
+        [parameter(Mandatory = $false)]
+        [ValidateScript( {
+                $allowedTypes = "System.String","Vaporshell.Function"
+                if ([string]$($_.PSTypeNames) -match "($(($allowedTypes|ForEach-Object{[RegEx]::Escape($_)}) -join '|'))") {
+                    $true
+                }
+                else {
+                    $PSCmdlet.ThrowTerminatingError((New-VSError -String "This parameter only accepts the following types: $($allowedTypes -join ", "). The current types of the value are: $($_.PSTypeNames -join ", ")."))
+                }
+            })]
+        $OriginPath,
         [parameter(Mandatory = $true)]
         [ValidateScript( {
                 $allowedTypes = "System.String","Vaporshell.Function"
@@ -79,29 +100,7 @@
             })]
         $Id,
         [parameter(Mandatory = $false)]
-        [ValidateScript( {
-                $allowedTypes = "Vaporshell.Resource.CloudFront.Distribution.OriginCustomHeader"
-                if ([string]$($_.PSTypeNames) -match "($(($allowedTypes|ForEach-Object{[RegEx]::Escape($_)}) -join '|'))") {
-                    $true
-                }
-                else {
-                    $PSCmdlet.ThrowTerminatingError((New-VSError -String "This parameter only accepts the following types: $($allowedTypes -join ", "). The current types of the value are: $($_.PSTypeNames -join ", ")."))
-                }
-            })]
-        $OriginCustomHeaders,
-        [parameter(Mandatory = $false)]
-        [ValidateScript( {
-                $allowedTypes = "System.String","Vaporshell.Function"
-                if ([string]$($_.PSTypeNames) -match "($(($allowedTypes|ForEach-Object{[RegEx]::Escape($_)}) -join '|'))") {
-                    $true
-                }
-                else {
-                    $PSCmdlet.ThrowTerminatingError((New-VSError -String "This parameter only accepts the following types: $($allowedTypes -join ", "). The current types of the value are: $($_.PSTypeNames -join ", ")."))
-                }
-            })]
-        $OriginPath,
-        [parameter(Mandatory = $false)]
-        $S3OriginConfig
+        $CustomOriginConfig
     )
     Begin {
         $obj = [PSCustomObject]@{}

@@ -50,6 +50,12 @@
 		Type: List    
 		UpdateType: Mutable    
 
+    .PARAMETER OperationName
+		Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-apigateway-method.html#cfn-apigateway-method-operationname    
+		PrimitiveType: String    
+		Required: False    
+		UpdateType: Mutable    
+
     .PARAMETER RequestModels
 		Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-apigateway-method.html#cfn-apigateway-method-requestmodels    
 		DuplicatesAllowed: False    
@@ -64,6 +70,12 @@
 		PrimitiveItemType: Boolean    
 		Required: False    
 		Type: Map    
+		UpdateType: Mutable    
+
+    .PARAMETER RequestValidatorId
+		Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-apigateway-method.html#cfn-apigateway-method-requestvalidatorid    
+		PrimitiveType: String    
+		Required: False    
 		UpdateType: Mutable    
 
     .PARAMETER ResourceId
@@ -175,11 +187,33 @@
             })]
         $MethodResponses,
         [parameter(Mandatory = $false)]
+        [ValidateScript( {
+                $allowedTypes = "System.String","Vaporshell.Function"
+                if ([string]$($_.PSTypeNames) -match "($(($allowedTypes|ForEach-Object{[RegEx]::Escape($_)}) -join '|'))") {
+                    $true
+                }
+                else {
+                    $PSCmdlet.ThrowTerminatingError((New-VSError -String "This parameter only accepts the following types: $($allowedTypes -join ", "). The current types of the value are: $($_.PSTypeNames -join ", ")."))
+                }
+            })]
+        $OperationName,
+        [parameter(Mandatory = $false)]
         [System.Collections.Hashtable]
         $RequestModels,
         [parameter(Mandatory = $false)]
         [System.Collections.Hashtable]
         $RequestParameters,
+        [parameter(Mandatory = $false)]
+        [ValidateScript( {
+                $allowedTypes = "System.String","Vaporshell.Function"
+                if ([string]$($_.PSTypeNames) -match "($(($allowedTypes|ForEach-Object{[RegEx]::Escape($_)}) -join '|'))") {
+                    $true
+                }
+                else {
+                    $PSCmdlet.ThrowTerminatingError((New-VSError -String "This parameter only accepts the following types: $($allowedTypes -join ", "). The current types of the value are: $($_.PSTypeNames -join ", ")."))
+                }
+            })]
+        $RequestValidatorId,
         [parameter(Mandatory = $true)]
         [ValidateScript( {
                 $allowedTypes = "System.String","Vaporshell.Function"

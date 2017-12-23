@@ -7,32 +7,43 @@
         Adds an AWS::CloudFront::Distribution.CustomOriginConfig resource property to the template
 
     .LINK
-        http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-cloudfront-customorigin.html
+        http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-cloudfront-distribution-customoriginconfig.html
 
-    .PARAMETER HTTPPort
-		Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-cloudfront-customorigin.html#cfn-cloudfront-customorigin-httpport    
-		PrimitiveType: Integer    
+    .PARAMETER OriginReadTimeout
 		Required: False    
+		Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-cloudfront-distribution-customoriginconfig.html#cfn-cloudfront-distribution-customoriginconfig-originreadtimeout    
+		PrimitiveType: Integer    
 		UpdateType: Mutable    
 
     .PARAMETER HTTPSPort
-		Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-cloudfront-customorigin.html#cfn-cloudfront-customorigin-httpsport    
-		PrimitiveType: Integer    
 		Required: False    
+		Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-cloudfront-distribution-customoriginconfig.html#cfn-cloudfront-distribution-customoriginconfig-httpsport    
+		PrimitiveType: Integer    
 		UpdateType: Mutable    
 
-    .PARAMETER OriginProtocolPolicy
-		Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-cloudfront-customorigin.html#cfn-cloudfront-customorigin-originprotocolpolicy    
-		PrimitiveType: String    
-		Required: True    
+    .PARAMETER OriginKeepaliveTimeout
+		Required: False    
+		Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-cloudfront-distribution-customoriginconfig.html#cfn-cloudfront-distribution-customoriginconfig-originkeepalivetimeout    
+		PrimitiveType: Integer    
 		UpdateType: Mutable    
 
     .PARAMETER OriginSSLProtocols
-		Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-cloudfront-customorigin.html#cfn-cloudfront-customorigin-originsslprotocols    
-		DuplicatesAllowed: False    
 		PrimitiveItemType: String    
-		Required: False    
 		Type: List    
+		Required: False    
+		Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-cloudfront-distribution-customoriginconfig.html#cfn-cloudfront-distribution-customoriginconfig-originsslprotocols    
+		UpdateType: Mutable    
+
+    .PARAMETER HTTPPort
+		Required: False    
+		Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-cloudfront-distribution-customoriginconfig.html#cfn-cloudfront-distribution-customoriginconfig-httpport    
+		PrimitiveType: Integer    
+		UpdateType: Mutable    
+
+    .PARAMETER OriginProtocolPolicy
+		Required: True    
+		Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-cloudfront-distribution-customoriginconfig.html#cfn-cloudfront-distribution-customoriginconfig-originprotocolpolicy    
+		PrimitiveType: String    
 		UpdateType: Mutable    
 
     .FUNCTIONALITY
@@ -44,10 +55,18 @@
     (
         [parameter(Mandatory = $false)]
         [Int]
-        $HTTPPort,
+        $OriginReadTimeout,
         [parameter(Mandatory = $false)]
         [Int]
         $HTTPSPort,
+        [parameter(Mandatory = $false)]
+        [Int]
+        $OriginKeepaliveTimeout,
+        [parameter(Mandatory = $false)]
+        $OriginSSLProtocols,
+        [parameter(Mandatory = $false)]
+        [Int]
+        $HTTPPort,
         [parameter(Mandatory = $true)]
         [ValidateScript( {
                 $allowedTypes = "System.String","Vaporshell.Function"
@@ -58,9 +77,7 @@
                     $PSCmdlet.ThrowTerminatingError((New-VSError -String "This parameter only accepts the following types: $($allowedTypes -join ", "). The current types of the value are: $($_.PSTypeNames -join ", ")."))
                 }
             })]
-        $OriginProtocolPolicy,
-        [parameter(Mandatory = $false)]
-        $OriginSSLProtocols
+        $OriginProtocolPolicy
     )
     Begin {
         $obj = [PSCustomObject]@{}
