@@ -42,7 +42,7 @@
     .PARAMETER Prefix
 		Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-kinesisfirehose-deliverystream-s3destinationconfiguration.html#cfn-kinesisfirehose-deliverystream-s3destinationconfiguration-prefix    
 		PrimitiveType: String    
-		Required: True    
+		Required: False    
 		UpdateType: Mutable    
 
     .PARAMETER RoleARN
@@ -86,7 +86,7 @@
         $CompressionFormat,
         [parameter(Mandatory = $false)]
         $EncryptionConfiguration,
-        [parameter(Mandatory = $true)]
+        [parameter(Mandatory = $false)]
         [ValidateScript( {
                 $allowedTypes = "System.String","Vaporshell.Function"
                 if ([string]$($_.PSTypeNames) -match "($(($allowedTypes|ForEach-Object{[RegEx]::Escape($_)}) -join '|'))") {

@@ -45,7 +45,11 @@ function Watch-Stack {
             if ($ProfileName) {
                 $command += " -ProfileName '$ProfileName'"
             }
-            Start-Process powershell -ArgumentList "-noprofile -noexit -command & {$command}"
+            $poshArg = "-noprofile -noexit -command & {$command}"
+            if ($env:ConEmuBaseDir) {
+                $poshArg += " -new_console:t:`"$StackName`""
+            }
+            Start-Process powershell -ArgumentList $poshArg
         }
     }
     else {

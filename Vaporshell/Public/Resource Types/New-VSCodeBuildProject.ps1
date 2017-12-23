@@ -18,6 +18,12 @@
 		Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-codebuild-project.html#cfn-codebuild-project-artifacts    
 		UpdateType: Mutable    
 
+    .PARAMETER BadgeEnabled
+		Required: False    
+		Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-codebuild-project.html#cfn-codebuild-project-badgeenabled    
+		PrimitiveType: Boolean    
+		UpdateType: Mutable    
+
     .PARAMETER Description
 		Required: False    
 		Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-codebuild-project.html#cfn-codebuild-project-description    
@@ -28,6 +34,12 @@
 		Required: True    
 		Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-codebuild-project.html#cfn-codebuild-project-servicerole    
 		PrimitiveType: String    
+		UpdateType: Mutable    
+
+    .PARAMETER VpcConfig
+		Type: VpcConfig    
+		Required: False    
+		Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-codebuild-project.html#cfn-codebuild-project-vpcconfig    
 		UpdateType: Mutable    
 
     .PARAMETER Environment
@@ -65,6 +77,12 @@
 		Required: False    
 		Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-codebuild-project.html#cfn-codebuild-project-timeoutinminutes    
 		PrimitiveType: Integer    
+		UpdateType: Mutable    
+
+    .PARAMETER Cache
+		Type: ProjectCache    
+		Required: False    
+		Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-codebuild-project.html#cfn-codebuild-project-cache    
 		UpdateType: Mutable    
 
     .PARAMETER DeletionPolicy
@@ -117,6 +135,9 @@
         [parameter(Mandatory = $true)]
         $Artifacts,
         [parameter(Mandatory = $false)]
+        [System.Boolean]
+        $BadgeEnabled,
+        [parameter(Mandatory = $false)]
         [ValidateScript( {
                 $allowedTypes = "System.String","Vaporshell.Function"
                 if ([string]$($_.PSTypeNames) -match "($(($allowedTypes|ForEach-Object{[RegEx]::Escape($_)}) -join '|'))") {
@@ -138,6 +159,8 @@
                 }
             })]
         $ServiceRole,
+        [parameter(Mandatory = $false)]
+        $VpcConfig,
         [parameter(Mandatory = $true)]
         $Environment,
         [parameter(Mandatory = $false)]
@@ -178,6 +201,8 @@
         [parameter(Mandatory = $false)]
         [Int]
         $TimeoutInMinutes,
+        [parameter(Mandatory = $false)]
+        $Cache,
         [ValidateSet("Delete","Retain","Snapshot")]
         [System.String]
         $DeletionPolicy,

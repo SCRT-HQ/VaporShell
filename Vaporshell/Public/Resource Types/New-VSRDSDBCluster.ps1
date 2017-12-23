@@ -14,8 +14,10 @@
 
     .PARAMETER AvailabilityZones
 		Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-rds-dbcluster.html#cfn-rds-dbcluster-availabilityzones    
-		PrimitiveType: String    
+		DuplicatesAllowed: False    
+		PrimitiveItemType: String    
 		Required: False    
+		Type: List    
 		UpdateType: Immutable    
 
     .PARAMETER BackupRetentionPeriod
@@ -174,15 +176,6 @@
         [System.String]
         $LogicalId,
         [parameter(Mandatory = $false)]
-        [ValidateScript( {
-                $allowedTypes = "System.String","Vaporshell.Function"
-                if ([string]$($_.PSTypeNames) -match "($(($allowedTypes|ForEach-Object{[RegEx]::Escape($_)}) -join '|'))") {
-                    $true
-                }
-                else {
-                    $PSCmdlet.ThrowTerminatingError((New-VSError -String "This parameter only accepts the following types: $($allowedTypes -join ", "). The current types of the value are: $($_.PSTypeNames -join ", ")."))
-                }
-            })]
         $AvailabilityZones,
         [parameter(Mandatory = $false)]
         [Int]
@@ -393,6 +386,12 @@
                 }
                 Condition {
                     $ResourceParams.Add("Condition",$Condition)
+                }
+                AvailabilityZones {
+                    if (!($ResourceParams["Properties"])) {
+                        $ResourceParams.Add("Properties",([PSCustomObject]@{}))
+                    }
+                    $ResourceParams["Properties"] | Add-Member -MemberType NoteProperty -Name AvailabilityZones -Value @($AvailabilityZones)
                 }
                 Tags {
                     if (!($ResourceParams["Properties"])) {

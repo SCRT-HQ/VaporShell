@@ -7,36 +7,36 @@
         Adds an AWS::CloudFront::Distribution.ViewerCertificate resource property to the template
 
     .LINK
-        http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-cloudfront-distributionconfig-viewercertificate.html
-
-    .PARAMETER AcmCertificateArn
-		Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-cloudfront-distributionconfig-viewercertificate.html#cfn-cloudfront-distributionconfig-viewercertificate-acmcertificatearn    
-		PrimitiveType: String    
-		Required: False    
-		UpdateType: Mutable    
-
-    .PARAMETER CloudFrontDefaultCertificate
-		Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-cloudfront-distributionconfig-viewercertificate.html#cfn-cloudfront-distributionconfig-viewercertificate-cloudfrontdefaultcertificate    
-		PrimitiveType: Boolean    
-		Required: False    
-		UpdateType: Mutable    
+        http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-cloudfront-distribution-viewercertificate.html
 
     .PARAMETER IamCertificateId
-		Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-cloudfront-distributionconfig-viewercertificate.html#cfn-cloudfront-distributionconfig-viewercertificate-iamcertificateid    
-		PrimitiveType: String    
 		Required: False    
-		UpdateType: Mutable    
-
-    .PARAMETER MinimumProtocolVersion
-		Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-cloudfront-distributionconfig-viewercertificate.html#cfn-cloudfront-distributionconfig-viewercertificate-sslsupportmethod    
+		Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-cloudfront-distribution-viewercertificate.html#cfn-cloudfront-distribution-viewercertificate-iamcertificateid    
 		PrimitiveType: String    
-		Required: False    
 		UpdateType: Mutable    
 
     .PARAMETER SslSupportMethod
-		Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-cloudfront-distributionconfig-viewercertificate.html#cfn-cloudfront-distributionconfig-viewercertificate-minimumprotocolversion    
-		PrimitiveType: String    
 		Required: False    
+		Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-cloudfront-distribution-viewercertificate.html#cfn-cloudfront-distribution-viewercertificate-sslsupportmethod    
+		PrimitiveType: String    
+		UpdateType: Mutable    
+
+    .PARAMETER MinimumProtocolVersion
+		Required: False    
+		Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-cloudfront-distribution-viewercertificate.html#cfn-cloudfront-distribution-viewercertificate-minimumprotocolversion    
+		PrimitiveType: String    
+		UpdateType: Mutable    
+
+    .PARAMETER CloudFrontDefaultCertificate
+		Required: False    
+		Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-cloudfront-distribution-viewercertificate.html#cfn-cloudfront-distribution-viewercertificate-cloudfrontdefaultcertificate    
+		PrimitiveType: Boolean    
+		UpdateType: Mutable    
+
+    .PARAMETER AcmCertificateArn
+		Required: False    
+		Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-cloudfront-distribution-viewercertificate.html#cfn-cloudfront-distribution-viewercertificate-acmcertificatearn    
+		PrimitiveType: String    
 		UpdateType: Mutable    
 
     .FUNCTIONALITY
@@ -46,20 +46,6 @@
     [cmdletbinding()]
     Param
     (
-        [parameter(Mandatory = $false)]
-        [ValidateScript( {
-                $allowedTypes = "System.String","Vaporshell.Function"
-                if ([string]$($_.PSTypeNames) -match "($(($allowedTypes|ForEach-Object{[RegEx]::Escape($_)}) -join '|'))") {
-                    $true
-                }
-                else {
-                    $PSCmdlet.ThrowTerminatingError((New-VSError -String "This parameter only accepts the following types: $($allowedTypes -join ", "). The current types of the value are: $($_.PSTypeNames -join ", ")."))
-                }
-            })]
-        $AcmCertificateArn,
-        [parameter(Mandatory = $false)]
-        [System.Boolean]
-        $CloudFrontDefaultCertificate,
         [parameter(Mandatory = $false)]
         [ValidateScript( {
                 $allowedTypes = "System.String","Vaporshell.Function"
@@ -81,7 +67,7 @@
                     $PSCmdlet.ThrowTerminatingError((New-VSError -String "This parameter only accepts the following types: $($allowedTypes -join ", "). The current types of the value are: $($_.PSTypeNames -join ", ")."))
                 }
             })]
-        $MinimumProtocolVersion,
+        $SslSupportMethod,
         [parameter(Mandatory = $false)]
         [ValidateScript( {
                 $allowedTypes = "System.String","Vaporshell.Function"
@@ -92,7 +78,21 @@
                     $PSCmdlet.ThrowTerminatingError((New-VSError -String "This parameter only accepts the following types: $($allowedTypes -join ", "). The current types of the value are: $($_.PSTypeNames -join ", ")."))
                 }
             })]
-        $SslSupportMethod
+        $MinimumProtocolVersion,
+        [parameter(Mandatory = $false)]
+        [System.Boolean]
+        $CloudFrontDefaultCertificate,
+        [parameter(Mandatory = $false)]
+        [ValidateScript( {
+                $allowedTypes = "System.String","Vaporshell.Function"
+                if ([string]$($_.PSTypeNames) -match "($(($allowedTypes|ForEach-Object{[RegEx]::Escape($_)}) -join '|'))") {
+                    $true
+                }
+                else {
+                    $PSCmdlet.ThrowTerminatingError((New-VSError -String "This parameter only accepts the following types: $($allowedTypes -join ", "). The current types of the value are: $($_.PSTypeNames -join ", ")."))
+                }
+            })]
+        $AcmCertificateArn
     )
     Begin {
         $obj = [PSCustomObject]@{}

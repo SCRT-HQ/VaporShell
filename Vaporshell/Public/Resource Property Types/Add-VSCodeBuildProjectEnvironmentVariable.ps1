@@ -9,6 +9,12 @@
     .LINK
         http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-codebuild-project-environmentvariable.html
 
+    .PARAMETER Type
+		Required: False    
+		Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-codebuild-project-environmentvariable.html#cfn-codebuild-project-environmentvariable-type    
+		PrimitiveType: String    
+		UpdateType: Mutable    
+
     .PARAMETER Value
 		Required: True    
 		Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-codebuild-project-environmentvariable.html#cfn-codebuild-project-environmentvariable-value    
@@ -28,6 +34,17 @@
     [cmdletbinding()]
     Param
     (
+        [parameter(Mandatory = $false)]
+        [ValidateScript( {
+                $allowedTypes = "System.String","Vaporshell.Function"
+                if ([string]$($_.PSTypeNames) -match "($(($allowedTypes|ForEach-Object{[RegEx]::Escape($_)}) -join '|'))") {
+                    $true
+                }
+                else {
+                    $PSCmdlet.ThrowTerminatingError((New-VSError -String "This parameter only accepts the following types: $($allowedTypes -join ", "). The current types of the value are: $($_.PSTypeNames -join ", ")."))
+                }
+            })]
+        $Type,
         [parameter(Mandatory = $true)]
         [ValidateScript( {
                 $allowedTypes = "System.String","Vaporshell.Function"

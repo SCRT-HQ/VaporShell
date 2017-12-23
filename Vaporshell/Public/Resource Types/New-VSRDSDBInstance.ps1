@@ -144,7 +144,7 @@
 		Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-rds-database-instance.html#cfn-rds-dbinstance-licensemodel    
 		PrimitiveType: String    
 		Required: False    
-		UpdateType: Immutable    
+		UpdateType: Mutable    
 
     .PARAMETER MasterUserPassword
 		Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-rds-database-instance.html#cfn-rds-dbinstance-masteruserpassword    
@@ -208,6 +208,12 @@
 
     .PARAMETER SourceDBInstanceIdentifier
 		Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-rds-database-instance.html#cfn-rds-dbinstance-sourcedbinstanceidentifier    
+		PrimitiveType: String    
+		Required: False    
+		UpdateType: Immutable    
+
+    .PARAMETER SourceRegion
+		Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-rds-database-instance.html#cfn-rds-dbinstance-sourceregion    
 		PrimitiveType: String    
 		Required: False    
 		UpdateType: Immutable    
@@ -593,6 +599,17 @@
                 }
             })]
         $SourceDBInstanceIdentifier,
+        [parameter(Mandatory = $false)]
+        [ValidateScript( {
+                $allowedTypes = "System.String","Vaporshell.Function"
+                if ([string]$($_.PSTypeNames) -match "($(($allowedTypes|ForEach-Object{[RegEx]::Escape($_)}) -join '|'))") {
+                    $true
+                }
+                else {
+                    $PSCmdlet.ThrowTerminatingError((New-VSError -String "This parameter only accepts the following types: $($allowedTypes -join ", "). The current types of the value are: $($_.PSTypeNames -join ", ")."))
+                }
+            })]
+        $SourceRegion,
         [parameter(Mandatory = $false)]
         [System.Boolean]
         $StorageEncrypted,

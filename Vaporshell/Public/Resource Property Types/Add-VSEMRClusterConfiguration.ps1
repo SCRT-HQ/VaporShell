@@ -7,16 +7,16 @@
         Adds an AWS::EMR::Cluster.Configuration resource property to the template
 
     .LINK
-        http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-emr-cluster-configuration.html
+        http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-elasticmapreduce-cluster-configuration.html
 
     .PARAMETER Classification
-		Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-emr-cluster-configuration.html#cfn-emr-cluster-configuration-classification    
+		Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-elasticmapreduce-cluster-configuration.html#cfn-elasticmapreduce-cluster-configuration-classification    
 		PrimitiveType: String    
 		Required: False    
 		UpdateType: Mutable    
 
     .PARAMETER ConfigurationProperties
-		Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-emr-cluster-configuration.html#cfn-emr-cluster-configuration-configurationproperties    
+		Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-elasticmapreduce-cluster-configuration.html#cfn-elasticmapreduce-cluster-configuration-configurationproperties    
 		DuplicatesAllowed: False    
 		PrimitiveItemType: String    
 		Required: False    
@@ -24,7 +24,7 @@
 		UpdateType: Mutable    
 
     .PARAMETER Configurations
-		Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-emr-cluster-configuration.html#cfn-emr-cluster-configuration-configurations    
+		Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-elasticmapreduce-cluster-configuration.html#cfn-elasticmapreduce-cluster-configuration-configurations    
 		DuplicatesAllowed: False    
 		ItemType: Configuration    
 		Required: False    

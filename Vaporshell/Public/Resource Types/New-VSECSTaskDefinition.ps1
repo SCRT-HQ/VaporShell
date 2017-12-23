@@ -20,8 +20,26 @@
 		Type: List    
 		UpdateType: Immutable    
 
+    .PARAMETER Cpu
+		Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ecs-taskdefinition.html#cfn-ecs-taskdefinition-cpu    
+		PrimitiveType: String    
+		Required: False    
+		UpdateType: Immutable    
+
+    .PARAMETER ExecutionRoleArn
+		Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ecs-taskdefinition.html#cfn-ecs-taskdefinition-executionrolearn    
+		PrimitiveType: String    
+		Required: False    
+		UpdateType: Immutable    
+
     .PARAMETER Family
 		Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ecs-taskdefinition.html#cfn-ecs-taskdefinition-family    
+		PrimitiveType: String    
+		Required: False    
+		UpdateType: Immutable    
+
+    .PARAMETER Memory
+		Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ecs-taskdefinition.html#cfn-ecs-taskdefinition-memory    
 		PrimitiveType: String    
 		Required: False    
 		UpdateType: Immutable    
@@ -36,6 +54,14 @@
 		Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ecs-taskdefinition.html#cfn-ecs-taskdefinition-placementconstraints    
 		DuplicatesAllowed: False    
 		ItemType: TaskDefinitionPlacementConstraint    
+		Required: False    
+		Type: List    
+		UpdateType: Immutable    
+
+    .PARAMETER RequiresCompatibilities
+		Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ecs-taskdefinition.html#cfn-ecs-taskdefinition-requirescompatibilities    
+		DuplicatesAllowed: False    
+		PrimitiveItemType: String    
 		Required: False    
 		Type: List    
 		UpdateType: Immutable    
@@ -122,7 +148,40 @@
                     $PSCmdlet.ThrowTerminatingError((New-VSError -String "This parameter only accepts the following types: $($allowedTypes -join ", "). The current types of the value are: $($_.PSTypeNames -join ", ")."))
                 }
             })]
+        $Cpu,
+        [parameter(Mandatory = $false)]
+        [ValidateScript( {
+                $allowedTypes = "System.String","Vaporshell.Function"
+                if ([string]$($_.PSTypeNames) -match "($(($allowedTypes|ForEach-Object{[RegEx]::Escape($_)}) -join '|'))") {
+                    $true
+                }
+                else {
+                    $PSCmdlet.ThrowTerminatingError((New-VSError -String "This parameter only accepts the following types: $($allowedTypes -join ", "). The current types of the value are: $($_.PSTypeNames -join ", ")."))
+                }
+            })]
+        $ExecutionRoleArn,
+        [parameter(Mandatory = $false)]
+        [ValidateScript( {
+                $allowedTypes = "System.String","Vaporshell.Function"
+                if ([string]$($_.PSTypeNames) -match "($(($allowedTypes|ForEach-Object{[RegEx]::Escape($_)}) -join '|'))") {
+                    $true
+                }
+                else {
+                    $PSCmdlet.ThrowTerminatingError((New-VSError -String "This parameter only accepts the following types: $($allowedTypes -join ", "). The current types of the value are: $($_.PSTypeNames -join ", ")."))
+                }
+            })]
         $Family,
+        [parameter(Mandatory = $false)]
+        [ValidateScript( {
+                $allowedTypes = "System.String","Vaporshell.Function"
+                if ([string]$($_.PSTypeNames) -match "($(($allowedTypes|ForEach-Object{[RegEx]::Escape($_)}) -join '|'))") {
+                    $true
+                }
+                else {
+                    $PSCmdlet.ThrowTerminatingError((New-VSError -String "This parameter only accepts the following types: $($allowedTypes -join ", "). The current types of the value are: $($_.PSTypeNames -join ", ")."))
+                }
+            })]
+        $Memory,
         [parameter(Mandatory = $false)]
         [ValidateScript( {
                 $allowedTypes = "System.String","Vaporshell.Function"
@@ -145,6 +204,8 @@
                 }
             })]
         $PlacementConstraints,
+        [parameter(Mandatory = $false)]
+        $RequiresCompatibilities,
         [parameter(Mandatory = $false)]
         [ValidateScript( {
                 $allowedTypes = "System.String","Vaporshell.Function"
@@ -234,6 +295,12 @@
                         $ResourceParams.Add("Properties",([PSCustomObject]@{}))
                     }
                     $ResourceParams["Properties"] | Add-Member -MemberType NoteProperty -Name PlacementConstraints -Value @($PlacementConstraints)
+                }
+                RequiresCompatibilities {
+                    if (!($ResourceParams["Properties"])) {
+                        $ResourceParams.Add("Properties",([PSCustomObject]@{}))
+                    }
+                    $ResourceParams["Properties"] | Add-Member -MemberType NoteProperty -Name RequiresCompatibilities -Value @($RequiresCompatibilities)
                 }
                 Volumes {
                     if (!($ResourceParams["Properties"])) {

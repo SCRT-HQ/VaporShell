@@ -44,6 +44,12 @@
 		Required: False    
 		UpdateType: Mutable    
 
+    .PARAMETER EndpointConfiguration
+		Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-apigateway-restapi.html#cfn-apigateway-restapi-endpointconfiguration    
+		Required: False    
+		Type: EndpointConfiguration    
+		UpdateType: Mutable    
+
     .PARAMETER FailOnWarnings
 		Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-apigateway-restapi.html#cfn-apigateway-restapi-failonwarnings    
 		PrimitiveType: Boolean    
@@ -154,6 +160,8 @@
                 }
             })]
         $Description,
+        [parameter(Mandatory = $false)]
+        $EndpointConfiguration,
         [parameter(Mandatory = $false)]
         [System.Boolean]
         $FailOnWarnings,

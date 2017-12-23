@@ -50,6 +50,14 @@
 		Required: False    
 		UpdateType: Conditional    
 
+    .PARAMETER ElasticGpuSpecifications
+		Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-instance.html#cfn-ec2-instance-elasticgpuspecifications    
+		DuplicatesAllowed: False    
+		ItemType: ElasticGpuSpecification    
+		Required: False    
+		Type: List    
+		UpdateType: Immutable    
+
     .PARAMETER HostId
 		Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-instance.html#cfn-ec2-instance-hostid    
 		PrimitiveType: String    
@@ -304,6 +312,17 @@
         [parameter(Mandatory = $false)]
         [System.Boolean]
         $EbsOptimized,
+        [parameter(Mandatory = $false)]
+        [ValidateScript( {
+                $allowedTypes = "Vaporshell.Resource.EC2.Instance.ElasticGpuSpecification"
+                if ([string]$($_.PSTypeNames) -match "($(($allowedTypes|ForEach-Object{[RegEx]::Escape($_)}) -join '|'))") {
+                    $true
+                }
+                else {
+                    $PSCmdlet.ThrowTerminatingError((New-VSError -String "This parameter only accepts the following types: $($allowedTypes -join ", "). The current types of the value are: $($_.PSTypeNames -join ", ")."))
+                }
+            })]
+        $ElasticGpuSpecifications,
         [parameter(Mandatory = $false)]
         [ValidateScript( {
                 $allowedTypes = "System.String","Vaporshell.Function"
@@ -590,6 +609,12 @@
                         $ResourceParams.Add("Properties",([PSCustomObject]@{}))
                     }
                     $ResourceParams["Properties"] | Add-Member -MemberType NoteProperty -Name BlockDeviceMappings -Value @($BlockDeviceMappings)
+                }
+                ElasticGpuSpecifications {
+                    if (!($ResourceParams["Properties"])) {
+                        $ResourceParams.Add("Properties",([PSCustomObject]@{}))
+                    }
+                    $ResourceParams["Properties"] | Add-Member -MemberType NoteProperty -Name ElasticGpuSpecifications -Value @($ElasticGpuSpecifications)
                 }
                 Ipv6Addresses {
                     if (!($ResourceParams["Properties"])) {

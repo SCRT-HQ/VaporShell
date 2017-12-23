@@ -7,10 +7,10 @@
         Adds an AWS::EMR::Cluster.Application resource property to the template
 
     .LINK
-        http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-emr-cluster-application.html
+        http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-elasticmapreduce-cluster-application.html
 
     .PARAMETER AdditionalInfo
-		Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-emr-cluster-application.html#cfn-emr-cluster-application-additionalinfo    
+		Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-elasticmapreduce-cluster-application.html#cfn-elasticmapreduce-cluster-application-additionalinfo    
 		DuplicatesAllowed: False    
 		PrimitiveItemType: String    
 		Required: False    
@@ -18,7 +18,7 @@
 		UpdateType: Mutable    
 
     .PARAMETER Args
-		Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-emr-cluster-application.html#cfn-emr-cluster-application-args    
+		Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-elasticmapreduce-cluster-application.html#cfn-elasticmapreduce-cluster-application-args    
 		DuplicatesAllowed: False    
 		PrimitiveItemType: String    
 		Required: False    
@@ -26,13 +26,13 @@
 		UpdateType: Mutable    
 
     .PARAMETER Name
-		Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-emr-cluster-application.html#cfn-emr-cluster-application-name    
+		Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-elasticmapreduce-cluster-application.html#cfn-elasticmapreduce-cluster-application-name    
 		PrimitiveType: String    
 		Required: False    
 		UpdateType: Mutable    
 
     .PARAMETER Version
-		Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-emr-cluster-application.html#cfn-emr-cluster-application-version    
+		Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-elasticmapreduce-cluster-application.html#cfn-elasticmapreduce-cluster-application-version    
 		PrimitiveType: String    
 		Required: False    
 		UpdateType: Mutable    

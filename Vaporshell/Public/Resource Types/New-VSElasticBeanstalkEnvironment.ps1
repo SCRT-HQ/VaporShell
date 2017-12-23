@@ -39,9 +39,15 @@
     .PARAMETER OptionSettings
 		Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-beanstalk-environment.html#cfn-beanstalk-environment-optionsettings    
 		DuplicatesAllowed: True    
-		ItemType: OptionSettings    
+		ItemType: OptionSetting    
 		Required: False    
 		Type: List    
+		UpdateType: Mutable    
+
+    .PARAMETER PlatformArn
+		Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-beanstalk-environment.html#cfn-beanstalk-environment-platformarn    
+		PrimitiveType: String    
+		Required: False    
 		UpdateType: Mutable    
 
     .PARAMETER SolutionStackName
@@ -169,7 +175,7 @@
         $EnvironmentName,
         [parameter(Mandatory = $false)]
         [ValidateScript( {
-                $allowedTypes = "Vaporshell.Resource.ElasticBeanstalk.Environment.OptionSettings"
+                $allowedTypes = "Vaporshell.Resource.ElasticBeanstalk.Environment.OptionSetting"
                 if ([string]$($_.PSTypeNames) -match "($(($allowedTypes|ForEach-Object{[RegEx]::Escape($_)}) -join '|'))") {
                     $true
                 }
@@ -178,6 +184,17 @@
                 }
             })]
         $OptionSettings,
+        [parameter(Mandatory = $false)]
+        [ValidateScript( {
+                $allowedTypes = "System.String","Vaporshell.Function"
+                if ([string]$($_.PSTypeNames) -match "($(($allowedTypes|ForEach-Object{[RegEx]::Escape($_)}) -join '|'))") {
+                    $true
+                }
+                else {
+                    $PSCmdlet.ThrowTerminatingError((New-VSError -String "This parameter only accepts the following types: $($allowedTypes -join ", "). The current types of the value are: $($_.PSTypeNames -join ", ")."))
+                }
+            })]
+        $PlatformArn,
         [parameter(Mandatory = $false)]
         [ValidateScript( {
                 $allowedTypes = "System.String","Vaporshell.Function"

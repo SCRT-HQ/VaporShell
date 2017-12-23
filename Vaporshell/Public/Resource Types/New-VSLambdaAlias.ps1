@@ -36,6 +36,12 @@
 		Required: True    
 		UpdateType: Immutable    
 
+    .PARAMETER RoutingConfig
+		Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-lambda-alias.html#cfn-lambda-alias-routingconfig    
+		Required: False    
+		Type: AliasRoutingConfiguration    
+		UpdateType: Mutable    
+
     .PARAMETER DeletionPolicy
         With the DeletionPolicy attribute you can preserve or (in some cases) backup a resource when its stack is deleted. You specify a DeletionPolicy attribute for each resource that you want to control. If a resource has no DeletionPolicy attribute, AWS CloudFormation deletes the resource by default.
 
@@ -127,6 +133,8 @@
                 }
             })]
         $Name,
+        [parameter(Mandatory = $false)]
+        $RoutingConfig,
         [ValidateSet("Delete","Retain","Snapshot")]
         [System.String]
         $DeletionPolicy,

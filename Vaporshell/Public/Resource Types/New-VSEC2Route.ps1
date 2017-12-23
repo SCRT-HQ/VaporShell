@@ -24,6 +24,12 @@
 		Required: False    
 		UpdateType: Mutable    
 
+    .PARAMETER EgressOnlyInternetGatewayId
+		Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ec2-route.html#cfn-ec2-route-egressonlyinternetgatewayid    
+		PrimitiveType: String    
+		Required: False    
+		UpdateType: Mutable    
+
     .PARAMETER GatewayId
 		Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ec2-route.html#cfn-ec2-route-gatewayid    
 		PrimitiveType: String    
@@ -129,6 +135,17 @@
                 }
             })]
         $DestinationIpv6CidrBlock,
+        [parameter(Mandatory = $false)]
+        [ValidateScript( {
+                $allowedTypes = "System.String","Vaporshell.Function"
+                if ([string]$($_.PSTypeNames) -match "($(($allowedTypes|ForEach-Object{[RegEx]::Escape($_)}) -join '|'))") {
+                    $true
+                }
+                else {
+                    $PSCmdlet.ThrowTerminatingError((New-VSError -String "This parameter only accepts the following types: $($allowedTypes -join ", "). The current types of the value are: $($_.PSTypeNames -join ", ")."))
+                }
+            })]
+        $EgressOnlyInternetGatewayId,
         [parameter(Mandatory = $false)]
         [ValidateScript( {
                 $allowedTypes = "System.String","Vaporshell.Function"

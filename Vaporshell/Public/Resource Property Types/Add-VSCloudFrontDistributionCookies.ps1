@@ -7,20 +7,19 @@
         Adds an AWS::CloudFront::Distribution.Cookies resource property to the template
 
     .LINK
-        http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-cloudfront-forwardedvalues-cookies.html
-
-    .PARAMETER Forward
-		Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-cloudfront-forwardedvalues-cookies.html#cfn-cloudfront-forwardedvalues-cookies-forward    
-		PrimitiveType: String    
-		Required: True    
-		UpdateType: Mutable    
+        http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-cloudfront-distribution-cookies.html
 
     .PARAMETER WhitelistedNames
-		Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-cloudfront-forwardedvalues-cookies.html#cfn-cloudfront-forwardedvalues-cookies-whitelistednames    
-		DuplicatesAllowed: False    
 		PrimitiveItemType: String    
-		Required: False    
 		Type: List    
+		Required: False    
+		Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-cloudfront-distribution-cookies.html#cfn-cloudfront-distribution-cookies-whitelistednames    
+		UpdateType: Mutable    
+
+    .PARAMETER Forward
+		Required: True    
+		Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-cloudfront-distribution-cookies.html#cfn-cloudfront-distribution-cookies-forward    
+		PrimitiveType: String    
 		UpdateType: Mutable    
 
     .FUNCTIONALITY
@@ -30,6 +29,8 @@
     [cmdletbinding()]
     Param
     (
+        [parameter(Mandatory = $false)]
+        $WhitelistedNames,
         [parameter(Mandatory = $true)]
         [ValidateScript( {
                 $allowedTypes = "System.String","Vaporshell.Function"
@@ -40,9 +41,7 @@
                     $PSCmdlet.ThrowTerminatingError((New-VSError -String "This parameter only accepts the following types: $($allowedTypes -join ", "). The current types of the value are: $($_.PSTypeNames -join ", ")."))
                 }
             })]
-        $Forward,
-        [parameter(Mandatory = $false)]
-        $WhitelistedNames
+        $Forward
     )
     Begin {
         $obj = [PSCustomObject]@{}

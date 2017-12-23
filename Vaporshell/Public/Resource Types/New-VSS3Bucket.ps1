@@ -24,6 +24,14 @@
 		Required: False    
 		UpdateType: Mutable    
 
+    .PARAMETER AnalyticsConfigurations
+		Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-s3-bucket.html#cfn-s3-bucket-analyticsconfigurations    
+		DuplicatesAllowed: False    
+		ItemType: AnalyticsConfiguration    
+		Required: False    
+		Type: List    
+		UpdateType: Mutable    
+
     .PARAMETER BucketName
 		Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-s3-bucket.html#cfn-s3-bucket-name    
 		PrimitiveType: String    
@@ -34,6 +42,14 @@
 		Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-s3-bucket.html#cfn-s3-bucket-crossoriginconfig    
 		Required: False    
 		Type: CorsConfiguration    
+		UpdateType: Mutable    
+
+    .PARAMETER InventoryConfigurations
+		Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-s3-bucket.html#cfn-s3-bucket-inventoryconfigurations    
+		DuplicatesAllowed: False    
+		ItemType: InventoryConfiguration    
+		Required: False    
+		Type: List    
 		UpdateType: Mutable    
 
     .PARAMETER LifecycleConfiguration
@@ -150,6 +166,17 @@
         $AccessControl,
         [parameter(Mandatory = $false)]
         [ValidateScript( {
+                $allowedTypes = "Vaporshell.Resource.S3.Bucket.AnalyticsConfiguration"
+                if ([string]$($_.PSTypeNames) -match "($(($allowedTypes|ForEach-Object{[RegEx]::Escape($_)}) -join '|'))") {
+                    $true
+                }
+                else {
+                    $PSCmdlet.ThrowTerminatingError((New-VSError -String "This parameter only accepts the following types: $($allowedTypes -join ", "). The current types of the value are: $($_.PSTypeNames -join ", ")."))
+                }
+            })]
+        $AnalyticsConfigurations,
+        [parameter(Mandatory = $false)]
+        [ValidateScript( {
                 $allowedTypes = "System.String","Vaporshell.Function"
                 if ([string]$($_.PSTypeNames) -match "($(($allowedTypes|ForEach-Object{[RegEx]::Escape($_)}) -join '|'))") {
                     $true
@@ -161,6 +188,17 @@
         $BucketName,
         [parameter(Mandatory = $false)]
         $CorsConfiguration,
+        [parameter(Mandatory = $false)]
+        [ValidateScript( {
+                $allowedTypes = "Vaporshell.Resource.S3.Bucket.InventoryConfiguration"
+                if ([string]$($_.PSTypeNames) -match "($(($allowedTypes|ForEach-Object{[RegEx]::Escape($_)}) -join '|'))") {
+                    $true
+                }
+                else {
+                    $PSCmdlet.ThrowTerminatingError((New-VSError -String "This parameter only accepts the following types: $($allowedTypes -join ", "). The current types of the value are: $($_.PSTypeNames -join ", ")."))
+                }
+            })]
+        $InventoryConfigurations,
         [parameter(Mandatory = $false)]
         $LifecycleConfiguration,
         [parameter(Mandatory = $false)]
@@ -250,6 +288,18 @@
                 }
                 Condition {
                     $ResourceParams.Add("Condition",$Condition)
+                }
+                AnalyticsConfigurations {
+                    if (!($ResourceParams["Properties"])) {
+                        $ResourceParams.Add("Properties",([PSCustomObject]@{}))
+                    }
+                    $ResourceParams["Properties"] | Add-Member -MemberType NoteProperty -Name AnalyticsConfigurations -Value @($AnalyticsConfigurations)
+                }
+                InventoryConfigurations {
+                    if (!($ResourceParams["Properties"])) {
+                        $ResourceParams.Add("Properties",([PSCustomObject]@{}))
+                    }
+                    $ResourceParams["Properties"] | Add-Member -MemberType NoteProperty -Name InventoryConfigurations -Value @($InventoryConfigurations)
                 }
                 MetricsConfigurations {
                     if (!($ResourceParams["Properties"])) {

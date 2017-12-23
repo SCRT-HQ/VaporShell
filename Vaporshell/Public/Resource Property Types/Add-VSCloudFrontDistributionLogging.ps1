@@ -7,24 +7,24 @@
         Adds an AWS::CloudFront::Distribution.Logging resource property to the template
 
     .LINK
-        http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-cloudfront-logging.html
-
-    .PARAMETER Bucket
-		Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-cloudfront-logging.html#cfn-cloudfront-logging-bucket    
-		PrimitiveType: String    
-		Required: True    
-		UpdateType: Mutable    
+        http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-cloudfront-distribution-logging.html
 
     .PARAMETER IncludeCookies
-		Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-cloudfront-logging.html#cfn-cloudfront-logging-includecookies    
-		PrimitiveType: Boolean    
 		Required: False    
+		Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-cloudfront-distribution-logging.html#cfn-cloudfront-distribution-logging-includecookies    
+		PrimitiveType: Boolean    
+		UpdateType: Mutable    
+
+    .PARAMETER Bucket
+		Required: True    
+		Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-cloudfront-distribution-logging.html#cfn-cloudfront-distribution-logging-bucket    
+		PrimitiveType: String    
 		UpdateType: Mutable    
 
     .PARAMETER Prefix
-		Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-cloudfront-logging.html#cfn-cloudfront-logging-prefix    
-		PrimitiveType: String    
 		Required: False    
+		Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-cloudfront-distribution-logging.html#cfn-cloudfront-distribution-logging-prefix    
+		PrimitiveType: String    
 		UpdateType: Mutable    
 
     .FUNCTIONALITY
@@ -34,6 +34,9 @@
     [cmdletbinding()]
     Param
     (
+        [parameter(Mandatory = $false)]
+        [System.Boolean]
+        $IncludeCookies,
         [parameter(Mandatory = $true)]
         [ValidateScript( {
                 $allowedTypes = "System.String","Vaporshell.Function"
@@ -45,9 +48,6 @@
                 }
             })]
         $Bucket,
-        [parameter(Mandatory = $false)]
-        [System.Boolean]
-        $IncludeCookies,
         [parameter(Mandatory = $false)]
         [ValidateScript( {
                 $allowedTypes = "System.String","Vaporshell.Function"

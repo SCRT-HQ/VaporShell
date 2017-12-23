@@ -7,98 +7,100 @@
         Adds an AWS::CloudFront::Distribution.DistributionConfig resource property to the template
 
     .LINK
-        http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-cloudfront-distributionconfig.html
+        http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-cloudfront-distribution-distributionconfig.html
 
-    .PARAMETER Aliases
-		Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-cloudfront-distributionconfig.html#cfn-cloudfront-distributionconfig-aliases    
-		DuplicatesAllowed: False    
-		PrimitiveItemType: String    
+    .PARAMETER Logging
+		Type: Logging    
 		Required: False    
-		Type: List    
-		UpdateType: Mutable    
-
-    .PARAMETER CacheBehaviors
-		Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-cloudfront-distributionconfig.html#cfn-cloudfront-distributionconfig-cachebehaviors    
-		DuplicatesAllowed: False    
-		ItemType: CacheBehavior    
-		Required: False    
-		Type: List    
+		Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-cloudfront-distribution-distributionconfig.html#cfn-cloudfront-distribution-distributionconfig-logging    
 		UpdateType: Mutable    
 
     .PARAMETER Comment
-		Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-cloudfront-distributionconfig.html#cfn-cloudfront-distributionconfig-comment    
+		Required: False    
+		Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-cloudfront-distribution-distributionconfig.html#cfn-cloudfront-distribution-distributionconfig-comment    
 		PrimitiveType: String    
-		Required: False    
-		UpdateType: Mutable    
-
-    .PARAMETER CustomErrorResponses
-		Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-cloudfront-distributionconfig.html#cfn-cloudfront-distributionconfig-customerrorresponses    
-		DuplicatesAllowed: False    
-		ItemType: CustomErrorResponse    
-		Required: False    
-		Type: List    
-		UpdateType: Mutable    
-
-    .PARAMETER DefaultCacheBehavior
-		Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-cloudfront-distributionconfig.html#cfn-cloudfront-distributionconfig-defaultcachebehavior    
-		Required: True    
-		Type: DefaultCacheBehavior    
 		UpdateType: Mutable    
 
     .PARAMETER DefaultRootObject
-		Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-cloudfront-distributionconfig.html#cfn-cloudfront-distributionconfig-defaultrootobject    
+		Required: False    
+		Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-cloudfront-distribution-distributionconfig.html#cfn-cloudfront-distribution-distributionconfig-defaultrootobject    
 		PrimitiveType: String    
-		Required: False    
-		UpdateType: Mutable    
-
-    .PARAMETER Enabled
-		Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-cloudfront-distributionconfig.html#cfn-cloudfront-distributionconfig-enabled    
-		PrimitiveType: Boolean    
-		Required: True    
-		UpdateType: Mutable    
-
-    .PARAMETER HttpVersion
-		Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-cloudfront-distributionconfig.html#cfn-cloudfront-distributionconfig-httpversion    
-		PrimitiveType: String    
-		Required: False    
-		UpdateType: Mutable    
-
-    .PARAMETER Logging
-		Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-cloudfront-distributionconfig.html#cfn-cloudfront-distributionconfig-logging    
-		Required: False    
-		Type: Logging    
 		UpdateType: Mutable    
 
     .PARAMETER Origins
-		Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-cloudfront-distributionconfig.html#cfn-cloudfront-distributionconfig-origins    
-		DuplicatesAllowed: False    
-		ItemType: Origin    
-		Required: True    
 		Type: List    
-		UpdateType: Mutable    
-
-    .PARAMETER PriceClass
-		Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-cloudfront-distributionconfig.html#cfn-cloudfront-distributionconfig-priceclass    
-		PrimitiveType: String    
 		Required: False    
-		UpdateType: Mutable    
-
-    .PARAMETER Restrictions
-		Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-cloudfront-distributionconfig.html#cfn-cloudfront-distributionconfig-restrictions    
-		Required: False    
-		Type: Restrictions    
+		Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-cloudfront-distribution-distributionconfig.html#cfn-cloudfront-distribution-distributionconfig-origins    
+		ItemType: Origin    
 		UpdateType: Mutable    
 
     .PARAMETER ViewerCertificate
-		Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-cloudfront-distributionconfig.html#cfn-cloudfront-distributionconfig-viewercertificate    
-		Required: False    
 		Type: ViewerCertificate    
+		Required: False    
+		Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-cloudfront-distribution-distributionconfig.html#cfn-cloudfront-distribution-distributionconfig-viewercertificate    
+		UpdateType: Mutable    
+
+    .PARAMETER PriceClass
+		Required: False    
+		Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-cloudfront-distribution-distributionconfig.html#cfn-cloudfront-distribution-distributionconfig-priceclass    
+		PrimitiveType: String    
+		UpdateType: Mutable    
+
+    .PARAMETER DefaultCacheBehavior
+		Type: DefaultCacheBehavior    
+		Required: False    
+		Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-cloudfront-distribution-distributionconfig.html#cfn-cloudfront-distribution-distributionconfig-defaultcachebehavior    
+		UpdateType: Mutable    
+
+    .PARAMETER CustomErrorResponses
+		Type: List    
+		Required: False    
+		Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-cloudfront-distribution-distributionconfig.html#cfn-cloudfront-distribution-distributionconfig-customerrorresponses    
+		ItemType: CustomErrorResponse    
+		UpdateType: Mutable    
+
+    .PARAMETER Enabled
+		Required: True    
+		Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-cloudfront-distribution-distributionconfig.html#cfn-cloudfront-distribution-distributionconfig-enabled    
+		PrimitiveType: Boolean    
+		UpdateType: Mutable    
+
+    .PARAMETER Aliases
+		PrimitiveItemType: String    
+		Type: List    
+		Required: False    
+		Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-cloudfront-distribution-distributionconfig.html#cfn-cloudfront-distribution-distributionconfig-aliases    
+		UpdateType: Mutable    
+
+    .PARAMETER IPV6Enabled
+		Required: False    
+		Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-cloudfront-distribution-distributionconfig.html#cfn-cloudfront-distribution-distributionconfig-ipv6enabled    
+		PrimitiveType: Boolean    
 		UpdateType: Mutable    
 
     .PARAMETER WebACLId
-		Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-cloudfront-distributionconfig.html#cfn-cloudfront-distributionconfig-webaclid    
-		PrimitiveType: String    
 		Required: False    
+		Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-cloudfront-distribution-distributionconfig.html#cfn-cloudfront-distribution-distributionconfig-webaclid    
+		PrimitiveType: String    
+		UpdateType: Mutable    
+
+    .PARAMETER HttpVersion
+		Required: False    
+		Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-cloudfront-distribution-distributionconfig.html#cfn-cloudfront-distribution-distributionconfig-httpversion    
+		PrimitiveType: String    
+		UpdateType: Mutable    
+
+    .PARAMETER Restrictions
+		Type: Restrictions    
+		Required: False    
+		Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-cloudfront-distribution-distributionconfig.html#cfn-cloudfront-distribution-distributionconfig-restrictions    
+		UpdateType: Mutable    
+
+    .PARAMETER CacheBehaviors
+		Type: List    
+		Required: False    
+		Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-cloudfront-distribution-distributionconfig.html#cfn-cloudfront-distribution-distributionconfig-cachebehaviors    
+		ItemType: CacheBehavior    
 		UpdateType: Mutable    
 
     .FUNCTIONALITY
@@ -109,18 +111,7 @@
     Param
     (
         [parameter(Mandatory = $false)]
-        $Aliases,
-        [parameter(Mandatory = $false)]
-        [ValidateScript( {
-                $allowedTypes = "Vaporshell.Resource.CloudFront.Distribution.CacheBehavior"
-                if ([string]$($_.PSTypeNames) -match "($(($allowedTypes|ForEach-Object{[RegEx]::Escape($_)}) -join '|'))") {
-                    $true
-                }
-                else {
-                    $PSCmdlet.ThrowTerminatingError((New-VSError -String "This parameter only accepts the following types: $($allowedTypes -join ", "). The current types of the value are: $($_.PSTypeNames -join ", ")."))
-                }
-            })]
-        $CacheBehaviors,
+        $Logging,
         [parameter(Mandatory = $false)]
         [ValidateScript( {
                 $allowedTypes = "System.String","Vaporshell.Function"
@@ -134,19 +125,6 @@
         $Comment,
         [parameter(Mandatory = $false)]
         [ValidateScript( {
-                $allowedTypes = "Vaporshell.Resource.CloudFront.Distribution.CustomErrorResponse"
-                if ([string]$($_.PSTypeNames) -match "($(($allowedTypes|ForEach-Object{[RegEx]::Escape($_)}) -join '|'))") {
-                    $true
-                }
-                else {
-                    $PSCmdlet.ThrowTerminatingError((New-VSError -String "This parameter only accepts the following types: $($allowedTypes -join ", "). The current types of the value are: $($_.PSTypeNames -join ", ")."))
-                }
-            })]
-        $CustomErrorResponses,
-        [parameter(Mandatory = $true)]
-        $DefaultCacheBehavior,
-        [parameter(Mandatory = $false)]
-        [ValidateScript( {
                 $allowedTypes = "System.String","Vaporshell.Function"
                 if ([string]$($_.PSTypeNames) -match "($(($allowedTypes|ForEach-Object{[RegEx]::Escape($_)}) -join '|'))") {
                     $true
@@ -156,23 +134,7 @@
                 }
             })]
         $DefaultRootObject,
-        [parameter(Mandatory = $true)]
-        [System.Boolean]
-        $Enabled,
         [parameter(Mandatory = $false)]
-        [ValidateScript( {
-                $allowedTypes = "System.String","Vaporshell.Function"
-                if ([string]$($_.PSTypeNames) -match "($(($allowedTypes|ForEach-Object{[RegEx]::Escape($_)}) -join '|'))") {
-                    $true
-                }
-                else {
-                    $PSCmdlet.ThrowTerminatingError((New-VSError -String "This parameter only accepts the following types: $($allowedTypes -join ", "). The current types of the value are: $($_.PSTypeNames -join ", ")."))
-                }
-            })]
-        $HttpVersion,
-        [parameter(Mandatory = $false)]
-        $Logging,
-        [parameter(Mandatory = $true)]
         [ValidateScript( {
                 $allowedTypes = "Vaporshell.Resource.CloudFront.Distribution.Origin"
                 if ([string]$($_.PSTypeNames) -match "($(($allowedTypes|ForEach-Object{[RegEx]::Escape($_)}) -join '|'))") {
@@ -183,19 +145,6 @@
                 }
             })]
         $Origins,
-        [parameter(Mandatory = $false)]
-        [ValidateScript( {
-                $allowedTypes = "System.String","Vaporshell.Function"
-                if ([string]$($_.PSTypeNames) -match "($(($allowedTypes|ForEach-Object{[RegEx]::Escape($_)}) -join '|'))") {
-                    $true
-                }
-                else {
-                    $PSCmdlet.ThrowTerminatingError((New-VSError -String "This parameter only accepts the following types: $($allowedTypes -join ", "). The current types of the value are: $($_.PSTypeNames -join ", ")."))
-                }
-            })]
-        $PriceClass,
-        [parameter(Mandatory = $false)]
-        $Restrictions,
         [parameter(Mandatory = $false)]
         $ViewerCertificate,
         [parameter(Mandatory = $false)]
@@ -208,7 +157,63 @@
                     $PSCmdlet.ThrowTerminatingError((New-VSError -String "This parameter only accepts the following types: $($allowedTypes -join ", "). The current types of the value are: $($_.PSTypeNames -join ", ")."))
                 }
             })]
-        $WebACLId
+        $PriceClass,
+        [parameter(Mandatory = $false)]
+        $DefaultCacheBehavior,
+        [parameter(Mandatory = $false)]
+        [ValidateScript( {
+                $allowedTypes = "Vaporshell.Resource.CloudFront.Distribution.CustomErrorResponse"
+                if ([string]$($_.PSTypeNames) -match "($(($allowedTypes|ForEach-Object{[RegEx]::Escape($_)}) -join '|'))") {
+                    $true
+                }
+                else {
+                    $PSCmdlet.ThrowTerminatingError((New-VSError -String "This parameter only accepts the following types: $($allowedTypes -join ", "). The current types of the value are: $($_.PSTypeNames -join ", ")."))
+                }
+            })]
+        $CustomErrorResponses,
+        [parameter(Mandatory = $true)]
+        [System.Boolean]
+        $Enabled,
+        [parameter(Mandatory = $false)]
+        $Aliases,
+        [parameter(Mandatory = $false)]
+        [System.Boolean]
+        $IPV6Enabled,
+        [parameter(Mandatory = $false)]
+        [ValidateScript( {
+                $allowedTypes = "System.String","Vaporshell.Function"
+                if ([string]$($_.PSTypeNames) -match "($(($allowedTypes|ForEach-Object{[RegEx]::Escape($_)}) -join '|'))") {
+                    $true
+                }
+                else {
+                    $PSCmdlet.ThrowTerminatingError((New-VSError -String "This parameter only accepts the following types: $($allowedTypes -join ", "). The current types of the value are: $($_.PSTypeNames -join ", ")."))
+                }
+            })]
+        $WebACLId,
+        [parameter(Mandatory = $false)]
+        [ValidateScript( {
+                $allowedTypes = "System.String","Vaporshell.Function"
+                if ([string]$($_.PSTypeNames) -match "($(($allowedTypes|ForEach-Object{[RegEx]::Escape($_)}) -join '|'))") {
+                    $true
+                }
+                else {
+                    $PSCmdlet.ThrowTerminatingError((New-VSError -String "This parameter only accepts the following types: $($allowedTypes -join ", "). The current types of the value are: $($_.PSTypeNames -join ", ")."))
+                }
+            })]
+        $HttpVersion,
+        [parameter(Mandatory = $false)]
+        $Restrictions,
+        [parameter(Mandatory = $false)]
+        [ValidateScript( {
+                $allowedTypes = "Vaporshell.Resource.CloudFront.Distribution.CacheBehavior"
+                if ([string]$($_.PSTypeNames) -match "($(($allowedTypes|ForEach-Object{[RegEx]::Escape($_)}) -join '|'))") {
+                    $true
+                }
+                else {
+                    $PSCmdlet.ThrowTerminatingError((New-VSError -String "This parameter only accepts the following types: $($allowedTypes -join ", "). The current types of the value are: $($_.PSTypeNames -join ", ")."))
+                }
+            })]
+        $CacheBehaviors
     )
     Begin {
         $obj = [PSCustomObject]@{}

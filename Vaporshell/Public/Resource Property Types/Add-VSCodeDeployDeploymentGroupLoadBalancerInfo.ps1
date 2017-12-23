@@ -17,6 +17,14 @@
 		Type: List    
 		UpdateType: Mutable    
 
+    .PARAMETER TargetGroupInfoList
+		Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-codedeploy-deploymentgroup-loadbalancerinfo.html#cfn-codedeploy-deploymentgroup-loadbalancerinfo-targetgroupinfolist    
+		DuplicatesAllowed: False    
+		ItemType: TargetGroupInfo    
+		Required: False    
+		Type: List    
+		UpdateType: Mutable    
+
     .FUNCTIONALITY
         Vaporshell
     #>
@@ -34,7 +42,18 @@
                     $PSCmdlet.ThrowTerminatingError((New-VSError -String "This parameter only accepts the following types: $($allowedTypes -join ", "). The current types of the value are: $($_.PSTypeNames -join ", ")."))
                 }
             })]
-        $ElbInfoList
+        $ElbInfoList,
+        [parameter(Mandatory = $false)]
+        [ValidateScript( {
+                $allowedTypes = "Vaporshell.Resource.CodeDeploy.DeploymentGroup.TargetGroupInfo"
+                if ([string]$($_.PSTypeNames) -match "($(($allowedTypes|ForEach-Object{[RegEx]::Escape($_)}) -join '|'))") {
+                    $true
+                }
+                else {
+                    $PSCmdlet.ThrowTerminatingError((New-VSError -String "This parameter only accepts the following types: $($allowedTypes -join ", "). The current types of the value are: $($_.PSTypeNames -join ", ")."))
+                }
+            })]
+        $TargetGroupInfoList
     )
     Begin {
         $obj = [PSCustomObject]@{}

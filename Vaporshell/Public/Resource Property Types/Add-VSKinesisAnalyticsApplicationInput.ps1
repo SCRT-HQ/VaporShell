@@ -33,6 +33,12 @@
 		Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-kinesisanalytics-application-input.html#cfn-kinesisanalytics-application-input-kinesisfirehoseinput    
 		UpdateType: Mutable    
 
+    .PARAMETER InputProcessingConfiguration
+		Type: InputProcessingConfiguration    
+		Required: False    
+		Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-kinesisanalytics-application-input.html#cfn-kinesisanalytics-application-input-inputprocessingconfiguration    
+		UpdateType: Mutable    
+
     .PARAMETER InputParallelism
 		Type: InputParallelism    
 		Required: False    
@@ -63,6 +69,8 @@
         $KinesisStreamsInput,
         [parameter(Mandatory = $false)]
         $KinesisFirehoseInput,
+        [parameter(Mandatory = $false)]
+        $InputProcessingConfiguration,
         [parameter(Mandatory = $false)]
         $InputParallelism
     )

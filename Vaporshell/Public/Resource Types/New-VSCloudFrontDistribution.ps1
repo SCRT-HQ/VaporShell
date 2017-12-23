@@ -7,15 +7,22 @@
         Adds an AWS::CloudFront::Distribution resource to the template
 
     .LINK
-        http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-cloudfront-distribution.html
+        http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-cloudfront-distribution.html
 
     .PARAMETER LogicalId
         The logical ID must be alphanumeric (A-Za-z0-9) and unique within the template. Use the logical name to reference the resource in other parts of the template. For example, if you want to map an Amazon Elastic Block Store volume to an Amazon EC2 instance, you reference the logical IDs to associate the block stores with the instance.
 
     .PARAMETER DistributionConfig
-		Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-cloudfront-distribution.html#cfn-cloudfront-distribution-distributionconfig    
-		Required: True    
 		Type: DistributionConfig    
+		Required: True    
+		Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-cloudfront-distribution.html#cfn-cloudfront-distribution-distributionconfig    
+		UpdateType: Mutable    
+
+    .PARAMETER Tags
+		Type: List    
+		Required: False    
+		Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-cloudfront-distribution.html#cfn-cloudfront-distribution-tags    
+		ItemType: Tag    
 		UpdateType: Mutable    
 
     .PARAMETER DeletionPolicy
@@ -67,6 +74,17 @@
         $LogicalId,
         [parameter(Mandatory = $true)]
         $DistributionConfig,
+        [parameter(Mandatory = $false)]
+        [ValidateScript( {
+                $allowedTypes = "Vaporshell.Resource.Tag","System.Management.Automation.PSCustomObject"
+                if ([string]$($_.PSTypeNames) -match "($(($allowedTypes|ForEach-Object{[RegEx]::Escape($_)}) -join '|'))") {
+                    $true
+                }
+                else {
+                    $PSCmdlet.ThrowTerminatingError((New-VSError -String "This parameter only accepts the following types: $($allowedTypes -join ", "). The current types of the value are: $($_.PSTypeNames -join ", ")."))
+                }
+            })]
+        $Tags,
         [ValidateSet("Delete","Retain","Snapshot")]
         [System.String]
         $DeletionPolicy,
@@ -122,6 +140,12 @@
                 }
                 Condition {
                     $ResourceParams.Add("Condition",$Condition)
+                }
+                Tags {
+                    if (!($ResourceParams["Properties"])) {
+                        $ResourceParams.Add("Properties",([PSCustomObject]@{}))
+                    }
+                    $ResourceParams["Properties"] | Add-Member -MemberType NoteProperty -Name Tags -Value @($Tags)
                 }
                 Default {
                     if (!($ResourceParams["Properties"])) {

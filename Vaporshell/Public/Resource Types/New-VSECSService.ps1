@@ -27,8 +27,14 @@
     .PARAMETER DesiredCount
 		Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ecs-service.html#cfn-ecs-service-desiredcount    
 		PrimitiveType: Integer    
-		Required: True    
+		Required: False    
 		UpdateType: Mutable    
+
+    .PARAMETER LaunchType
+		Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ecs-service.html#cfn-ecs-service-launchtype    
+		PrimitiveType: String    
+		Required: False    
+		UpdateType: Immutable    
 
     .PARAMETER LoadBalancers
 		Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ecs-service.html#cfn-ecs-service-loadbalancers    
@@ -37,6 +43,12 @@
 		Required: False    
 		Type: List    
 		UpdateType: Immutable    
+
+    .PARAMETER NetworkConfiguration
+		Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ecs-service.html#cfn-ecs-service-networkconfiguration    
+		Required: False    
+		Type: NetworkConfiguration    
+		UpdateType: Mutable    
 
     .PARAMETER PlacementConstraints
 		Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ecs-service.html#cfn-ecs-service-placementconstraints    
@@ -52,6 +64,12 @@
 		ItemType: PlacementStrategy    
 		Required: False    
 		Type: List    
+		UpdateType: Immutable    
+
+    .PARAMETER PlatformVersion
+		Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ecs-service.html#cfn-ecs-service-platformversion    
+		PrimitiveType: String    
+		Required: False    
 		UpdateType: Immutable    
 
     .PARAMETER Role
@@ -132,9 +150,20 @@
         $Cluster,
         [parameter(Mandatory = $false)]
         $DeploymentConfiguration,
-        [parameter(Mandatory = $true)]
+        [parameter(Mandatory = $false)]
         [Int]
         $DesiredCount,
+        [parameter(Mandatory = $false)]
+        [ValidateScript( {
+                $allowedTypes = "System.String","Vaporshell.Function"
+                if ([string]$($_.PSTypeNames) -match "($(($allowedTypes|ForEach-Object{[RegEx]::Escape($_)}) -join '|'))") {
+                    $true
+                }
+                else {
+                    $PSCmdlet.ThrowTerminatingError((New-VSError -String "This parameter only accepts the following types: $($allowedTypes -join ", "). The current types of the value are: $($_.PSTypeNames -join ", ")."))
+                }
+            })]
+        $LaunchType,
         [parameter(Mandatory = $false)]
         [ValidateScript( {
                 $allowedTypes = "Vaporshell.Resource.ECS.Service.LoadBalancer"
@@ -146,6 +175,8 @@
                 }
             })]
         $LoadBalancers,
+        [parameter(Mandatory = $false)]
+        $NetworkConfiguration,
         [parameter(Mandatory = $false)]
         [ValidateScript( {
                 $allowedTypes = "Vaporshell.Resource.ECS.Service.PlacementConstraint"
@@ -168,6 +199,17 @@
                 }
             })]
         $PlacementStrategies,
+        [parameter(Mandatory = $false)]
+        [ValidateScript( {
+                $allowedTypes = "System.String","Vaporshell.Function"
+                if ([string]$($_.PSTypeNames) -match "($(($allowedTypes|ForEach-Object{[RegEx]::Escape($_)}) -join '|'))") {
+                    $true
+                }
+                else {
+                    $PSCmdlet.ThrowTerminatingError((New-VSError -String "This parameter only accepts the following types: $($allowedTypes -join ", "). The current types of the value are: $($_.PSTypeNames -join ", ")."))
+                }
+            })]
+        $PlatformVersion,
         [parameter(Mandatory = $false)]
         [ValidateScript( {
                 $allowedTypes = "System.String","Vaporshell.Function"
