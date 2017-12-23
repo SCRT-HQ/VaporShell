@@ -39,6 +39,9 @@ task Init {
     "Build System Details:"
     Get-Item ENV:TRAVIS*
     "`n"
+    $lines
+    "PSVersionTable"
+    $PSVersionTable | Format-List
 }
 
 task Build {
