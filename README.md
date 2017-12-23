@@ -85,7 +85,7 @@
 - [License](#license)
 
 ## Features
-- __built from AWS's CloudFormation spec sheet:__ 100% coverage of all available resource and property types
+- __built from AWS's [CloudFormation spec sheet](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/cfn-resource-specification.html):__ 100% coverage of all available resource and property types
 - __runs on any OS:__ developed and tested in Windows, Ubuntu, and macOS on PowerShell v3-6
 - __validates everything:__ built to make resulting templates reliable by leveraging parameter validation built into PowerShell
 - __goes turbo:__ package and deploy your templates **fast** with one command; `vsl vaporize`
@@ -154,7 +154,6 @@ When building templates with VaporShell, there are typically a few items that yo
     - `$template.ToYAML()`
         - This does the same thing as the `ToJSON()` script method, but outputs to YAML (`cfn-flip` required)
 
-See the next section for a quick example on tying those together!
 
 
 ## Examples
