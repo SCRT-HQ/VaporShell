@@ -4,6 +4,7 @@ title: Change Log
 ---
 <!-- TOC -->
 
+- [2.1.1](#211)
 - [2.1.0](#210)
 - [2.0.3](#203)
 - [2.0.0](#200)
@@ -24,6 +25,10 @@ title: Change Log
 - [0.7.02](#0702)
 
 <!-- /TOC -->
+
+### 2.1.1
+
+- Updated Colorize to match against ROLLBACK events
 
 ### 2.1.0
 
