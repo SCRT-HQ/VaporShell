@@ -199,5 +199,5 @@ This is a deployment being watched via `Watch-Stack $stackName` to show stack cr
 
 ## Changelog
 
-[Changelog](https://github.com/scrthq/VaporShell/blob/master/README.md)
+[Changelog](https://github.com/scrthq/VaporShell/blob/master/CHANGELOG.md)
 
