@@ -41,6 +41,7 @@ function Watch-Stack {
             return
         }
         else {
+            $conEmu = "$env:programfiles\ConEmu\Conemu64.exe"
             $command = "Import-Module `"$($Script:VaporshellPath)\Vaporshell.psd1`" -ArgumentList `$false,`$true -Verbose:`$false;Clear-Host;. '$($Script:VaporshellPath)\bin\SetWatchWindow.ps1' -StackId '$StackName';Watch-Stack -StackName '$StackName' -RefreshRate $RefreshRate"
             if ($ProfileName) {
                 $command += " -ProfileName '$ProfileName'"
@@ -49,7 +50,12 @@ function Watch-Stack {
             if ($env:ConEmuBaseDir) {
                 $poshArg += " -new_console:t:`"$StackName`""
             }
-            Start-Process powershell -ArgumentList $poshArg
+            if ((Test-Path $conEmu) -and !$env:ConEmuBaseDir) {
+                Start-Process $conEmu -ArgumentList '/title',"`"$StackName`"",'/cmd','powershell.exe','-noexit','-command',"& {$command}"
+            }
+            else {
+                Start-Process powershell -ArgumentList $poshArg
+            }
         }
     }
     else {

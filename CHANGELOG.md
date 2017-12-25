@@ -5,6 +5,7 @@
 <!-- TOC -->
 
 - [Changelog](#changelog)
+    - [2.1.2](#212)
     - [2.1.1](#211)
     - [2.1.0](#210)
     - [2.0.3](#203)
@@ -26,6 +27,10 @@
     - [0.7.02](#0702)
 
 <!-- /TOC -->
+
+## 2.1.2
+
+- Added additional ConEmu support to `Watch-Stack`
 
 ## 2.1.1
 
