@@ -30,6 +30,7 @@ title: Change Log
 
 - Updated Colorize to match against ROLLBACK events
 
+
 ### 2.1.0
 
 - Updated resource and property types, adding another 107 functions to the module
