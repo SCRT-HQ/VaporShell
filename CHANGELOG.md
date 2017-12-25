@@ -30,7 +30,7 @@
 
 ## 2.1.2
 
-- Added additional ConEmu support to `Watch-Stack`
+- Added additional ConEmu support to `Watch-Stack` 
 
 ## 2.1.1
 
