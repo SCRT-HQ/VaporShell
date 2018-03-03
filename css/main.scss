@@ -39,10 +39,6 @@ grid: ( gutters: 1.5em)));
     filter: alpha(opacity=$opacity-ie); //IE8
 }
 
-* {
-    font-family: 'Mina', sans-serif;
-}
-
 .lineno-container>figure>pre {
     padding: 0px;
     background: #31343f;
