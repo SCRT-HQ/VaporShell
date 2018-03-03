@@ -1,9 +1,7 @@
-# See http://www.appveyor.com/docs/appveyor-yml for many more options
-
-# set the clone folder for the project
 clone_folder: C:\projects\Vaporshell
 
-#Publish to PowerShell Gallery with this key
+image: Visual Studio 2017
+
 environment:
   NuGetApiKey:
     secure: Ocp1ATd6eZ0eY9+LfZ9Stp9/J1B5eFdBPMdaTRWVa4xh6/NV45ZBYtU5+eemrTWt
@@ -14,13 +12,11 @@ environment:
       PYTHON_VERSION: "2.7.8"
       PYTHON_ARCH: "32"
 
-# Allow WMF5 (i.e. PowerShellGallery functionality)
-os: WMF 5
-
-# Skip on updates to the readme.
-# We can force this by adding [skip ci] or [ci skip] anywhere in commit message 
 skip_commits:
-  message: /updated readme.*|update readme.*s/
+  message: /updated readme.*|update readme.*s|\[skip ci\]|\[ci skip\]/
+
+only_commits:
+  message: /!deploy|!build|!ci|\[ci\]/
 
 build: false
 
@@ -30,6 +26,6 @@ init:
 install:
   - "%PYTHON%/Scripts/pip.exe install cfn_flip"
 
-#Kick off the CI/CD pipeline
 test_script:
+  - pwsh: . .\ci\init.ps1
   - ps: . .\ci\init.ps1
