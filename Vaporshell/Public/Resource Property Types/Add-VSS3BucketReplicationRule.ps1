@@ -27,6 +27,12 @@
 		Required: True    
 		UpdateType: Mutable    
 
+    .PARAMETER SourceSelectionCriteria
+		Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-s3-bucket-replicationconfiguration-rules.html#cfn-s3-bucket-replicationrule-sourceselectioncriteria    
+		Required: False    
+		Type: SourceSelectionCriteria    
+		UpdateType: Mutable    
+
     .PARAMETER Status
 		Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-s3-bucket-replicationconfiguration-rules.html#cfn-s3-bucket-replicationconfiguration-rules-status    
 		PrimitiveType: String    
@@ -64,6 +70,8 @@
                 }
             })]
         $Prefix,
+        [parameter(Mandatory = $false)]
+        $SourceSelectionCriteria,
         [parameter(Mandatory = $true)]
         [ValidateScript( {
                 $allowedTypes = "System.String","Vaporshell.Function"

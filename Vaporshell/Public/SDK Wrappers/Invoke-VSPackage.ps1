@@ -104,7 +104,7 @@ function Invoke-VSPackage {
         catch {
             if ($Force) {
                 Write-Verbose "Creating new bucket '$S3Bucket'"
-                New-VSS3Bucket -BucketName "$S3Bucket" @prof -Verbose:$false
+                New-VSS3Box -BucketName "$S3Bucket" @prof -Verbose:$false
             }
             else {
                 $PSCmdlet.ThrowTerminatingError($_)
@@ -181,10 +181,12 @@ function Invoke-VSPackage {
                                     $obj = New-VSS3Object -Key $key -FilePath $outFile @s3Params @prof -Verbose:$false
                                 }
                                 elseif ($existsMeta.ContentLength -eq (Get-Item $outFile).Length) {
-                                    Write-Verbose "Object '$key' already exists in bucket and is the same size. No action apparently necessary -- If this file needs to be reuploaded, re-run this command with the Force parameter included."
+                                    Write-Warning "Object '$key' already exists in bucket and is the same size. No action apparently necessary -- If this file needs to be reuploaded, re-run this command with the Force parameter included."
+                                    return
                                 }
                                 else {
-                                    Write-Verbose "Object already exists at this location and Force parameter not used. No action taken to prevent accidental overwrites. -- If this object needs to be overwritten, re-run this command with the Force parameter included."
+                                    Write-Warning "Object already exists at this location and Force parameter not used. No action taken to prevent accidental overwrites. -- If this object needs to be overwritten, re-run this command with the Force parameter included."
+                                    return
                                 }
                             }
                             $Resource.Properties.$propName = "s3://$baseUrl/$key"
@@ -197,7 +199,7 @@ function Invoke-VSPackage {
                 $tempPSON.Resources.$res = $Resource
             }
             catch {
-                Write-Error $_
+                $PSCmdlet.ThrowTerminatingError($_)
             }
         }
         $finalParams = @{}

@@ -78,7 +78,7 @@
 		Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-elasticache-cache-cluster.html#cfn-elasticache-cachecluster-numcachenodes    
 		PrimitiveType: Integer    
 		Required: True    
-		UpdateType: Mutable    
+		UpdateType: Conditional    
 
     .PARAMETER Port
 		Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-elasticache-cache-cluster.html#cfn-elasticache-cachecluster-port    

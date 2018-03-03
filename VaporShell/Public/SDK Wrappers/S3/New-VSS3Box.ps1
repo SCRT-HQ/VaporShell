@@ -1,7 +1,7 @@
-function New-VSS3Bucket {
+function New-VSS3Box {
     <#
     .SYNOPSIS
-    Creates a new bucket in S3
+    Creates a new bucket in S3. Due to auto-generated resource functions already using the function name 'New-VSS3Bucket', this has been renamed to prevent collisions.
     
     .PARAMETER BucketName
     The name of the bucket to be created.

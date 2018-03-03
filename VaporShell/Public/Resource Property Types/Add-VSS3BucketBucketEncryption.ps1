@@ -1,30 +1,32 @@
-﻿function Add-VSCodePipelinePipelineOutputArtifact {
+﻿function Add-VSS3BucketBucketEncryption {
     <#
     .SYNOPSIS
-        Adds an AWS::CodePipeline::Pipeline.OutputArtifact resource property to the template
+        Adds an AWS::S3::Bucket.BucketEncryption resource property to the template
 
     .DESCRIPTION
-        Adds an AWS::CodePipeline::Pipeline.OutputArtifact resource property to the template
+        Adds an AWS::S3::Bucket.BucketEncryption resource property to the template
 
     .LINK
-        http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-codepipeline-pipeline-outputartifact.html
+        http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-s3-bucket-bucketencryption.html
 
-    .PARAMETER Name
+    .PARAMETER ServerSideEncryptionConfiguration
+		Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-s3-bucket-bucketencryption.html#cfn-s3-bucket-bucketencryption-serversideencryptionconfiguration    
+		DuplicatesAllowed: False    
+		ItemType: ServerSideEncryptionRule    
 		Required: True    
-		Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-codepipeline-pipeline-outputartifact.html#cfn-codepipeline-pipeline-outputartifact-name    
-		PrimitiveType: String    
+		Type: List    
 		UpdateType: Mutable    
 
     .FUNCTIONALITY
         Vaporshell
     #>
-    [OutputType('Vaporshell.Resource.CodePipeline.Pipeline.OutputArtifact')]
+    [OutputType('Vaporshell.Resource.S3.Bucket.BucketEncryption')]
     [cmdletbinding()]
     Param
     (
         [parameter(Mandatory = $true)]
         [ValidateScript( {
-                $allowedTypes = "System.String","Vaporshell.Function"
+                $allowedTypes = "Vaporshell.Resource.S3.Bucket.ServerSideEncryptionRule"
                 if ([string]$($_.PSTypeNames) -match "($(($allowedTypes|ForEach-Object{[RegEx]::Escape($_)}) -join '|'))") {
                     $true
                 }
@@ -32,7 +34,7 @@
                     $PSCmdlet.ThrowTerminatingError((New-VSError -String "This parameter only accepts the following types: $($allowedTypes -join ", "). The current types of the value are: $($_.PSTypeNames -join ", ")."))
                 }
             })]
-        $Name
+        $ServerSideEncryptionConfiguration
     )
     Begin {
         $obj = [PSCustomObject]@{}
@@ -43,6 +45,6 @@
         }
     }
     End {
-        $obj | Add-ObjectDetail -TypeName 'Vaporshell.Resource.CodePipeline.Pipeline.OutputArtifact'
+        $obj | Add-ObjectDetail -TypeName 'Vaporshell.Resource.S3.Bucket.BucketEncryption'
     }
 }

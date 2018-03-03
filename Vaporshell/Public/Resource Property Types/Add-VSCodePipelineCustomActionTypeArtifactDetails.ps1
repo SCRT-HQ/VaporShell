@@ -9,16 +9,16 @@
     .LINK
         http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-codepipeline-customactiontype-artifactdetails.html
 
-    .PARAMETER MaximumCount
-		Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-codepipeline-customactiontype-artifactdetails.html#cfn-codepipeline-customactiontype-artifactdetails-maximumcount    
-		PrimitiveType: Integer    
-		Required: True    
-		UpdateType: Mutable    
-
     .PARAMETER MinimumCount
+		Required: True    
 		Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-codepipeline-customactiontype-artifactdetails.html#cfn-codepipeline-customactiontype-artifactdetails-minimumcount    
 		PrimitiveType: Integer    
+		UpdateType: Mutable    
+
+    .PARAMETER MaximumCount
 		Required: True    
+		Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-codepipeline-customactiontype-artifactdetails.html#cfn-codepipeline-customactiontype-artifactdetails-maximumcount    
+		PrimitiveType: Integer    
 		UpdateType: Mutable    
 
     .FUNCTIONALITY
@@ -30,10 +30,10 @@
     (
         [parameter(Mandatory = $true)]
         [Int]
-        $MaximumCount,
+        $MinimumCount,
         [parameter(Mandatory = $true)]
         [Int]
-        $MinimumCount
+        $MaximumCount
     )
     Begin {
         $obj = [PSCustomObject]@{}

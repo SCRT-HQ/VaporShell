@@ -14,20 +14,21 @@ Write-Host -ForegroundColor Green "
 
 Current directory: $($pwd.Path)
 Build system: $BS
+PowerShell version: $($PSVersionTable.PSVersion.ToString())
 
 ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 "
 
-if ($env:TRAVIS) {
+if ($PSVersionTable.PSVersion.Major -ge 6) {
     # Install InvokeBuild
-    Install-Module InvokeBuild, Pester -Scope CurrentUser -Force -AllowClobber
+    Install-Module InvokeBuild, Pester -Scope CurrentUser -Force -AllowClobber -SkipPublisherCheck
 
     # Build the code and perform tests
     Import-module InvokeBuild
 
     Set-Location $PSScriptRoot
 
-    Invoke-Build -Safe -Result Result -File .\travis.build.ps1
+    Invoke-Build -Safe -Result Result -File .\pwsh.build.ps1
     if ($Result.Error) {
         exit 1
     }
@@ -40,7 +41,7 @@ else {
     # Grab nuget bits, install modules, set build variables, start build.
     Get-PackageProvider -Name NuGet -ForceBootstrap | Out-Null
 
-    Install-Module Psake, PSDeploy, Pester, BuildHelpers, Coveralls -Force -Scope CurrentUser -AllowClobber
+    Install-Module Psake, PSDeploy, Pester, BuildHelpers, Coveralls -Force -Scope CurrentUser -AllowClobber -SkipPublisherCheck
     Import-Module Psake, BuildHelpers, Coveralls
 
     Set-BuildEnvironment

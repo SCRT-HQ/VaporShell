@@ -30,6 +30,12 @@
 		Required: True    
 		UpdateType: Mutable    
 
+    .PARAMETER StreamEncryption
+		Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-kinesis-stream.html#cfn-kinesis-stream-streamencryption    
+		Required: False    
+		Type: StreamEncryption    
+		UpdateType: Mutable    
+
     .PARAMETER Tags
 		Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-kinesis-stream.html#cfn-kinesis-stream-tags    
 		DuplicatesAllowed: True    
@@ -102,6 +108,8 @@
         [parameter(Mandatory = $true)]
         [Int]
         $ShardCount,
+        [parameter(Mandatory = $false)]
+        $StreamEncryption,
         [parameter(Mandatory = $false)]
         [ValidateScript( {
                 $allowedTypes = "Vaporshell.Resource.Tag","System.Management.Automation.PSCustomObject"

@@ -1,28 +1,28 @@
-﻿function Add-VSCodePipelinePipelineOutputArtifact {
+﻿function Add-VSEC2InstanceCreditSpecification {
     <#
     .SYNOPSIS
-        Adds an AWS::CodePipeline::Pipeline.OutputArtifact resource property to the template
+        Adds an AWS::EC2::Instance.CreditSpecification resource property to the template
 
     .DESCRIPTION
-        Adds an AWS::CodePipeline::Pipeline.OutputArtifact resource property to the template
+        Adds an AWS::EC2::Instance.CreditSpecification resource property to the template
 
     .LINK
-        http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-codepipeline-pipeline-outputartifact.html
+        http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-instance-creditspecification.html
 
-    .PARAMETER Name
-		Required: True    
-		Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-codepipeline-pipeline-outputartifact.html#cfn-codepipeline-pipeline-outputartifact-name    
+    .PARAMETER CPUCredits
+		Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-instance-creditspecification.html#cfn-ec2-instance-creditspecification-cpucredits    
 		PrimitiveType: String    
+		Required: False    
 		UpdateType: Mutable    
 
     .FUNCTIONALITY
         Vaporshell
     #>
-    [OutputType('Vaporshell.Resource.CodePipeline.Pipeline.OutputArtifact')]
+    [OutputType('Vaporshell.Resource.EC2.Instance.CreditSpecification')]
     [cmdletbinding()]
     Param
     (
-        [parameter(Mandatory = $true)]
+        [parameter(Mandatory = $false)]
         [ValidateScript( {
                 $allowedTypes = "System.String","Vaporshell.Function"
                 if ([string]$($_.PSTypeNames) -match "($(($allowedTypes|ForEach-Object{[RegEx]::Escape($_)}) -join '|'))") {
@@ -32,7 +32,7 @@
                     $PSCmdlet.ThrowTerminatingError((New-VSError -String "This parameter only accepts the following types: $($allowedTypes -join ", "). The current types of the value are: $($_.PSTypeNames -join ", ")."))
                 }
             })]
-        $Name
+        $CPUCredits
     )
     Begin {
         $obj = [PSCustomObject]@{}
@@ -43,6 +43,6 @@
         }
     }
     End {
-        $obj | Add-ObjectDetail -TypeName 'Vaporshell.Resource.CodePipeline.Pipeline.OutputArtifact'
+        $obj | Add-ObjectDetail -TypeName 'Vaporshell.Resource.EC2.Instance.CreditSpecification'
     }
 }

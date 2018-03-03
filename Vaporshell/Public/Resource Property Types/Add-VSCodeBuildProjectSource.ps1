@@ -27,6 +27,18 @@
 		PrimitiveType: String    
 		UpdateType: Mutable    
 
+    .PARAMETER GitCloneDepth
+		Required: False    
+		Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-codebuild-project-source.html#cfn-codebuild-project-source-gitclonedepth    
+		PrimitiveType: Integer    
+		UpdateType: Mutable    
+
+    .PARAMETER InsecureSsl
+		Required: False    
+		Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-codebuild-project-source.html#cfn-codebuild-project-source-insecuressl    
+		PrimitiveType: Boolean    
+		UpdateType: Mutable    
+
     .PARAMETER Location
 		Required: False    
 		Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-codebuild-project-source.html#cfn-codebuild-project-source-location    
@@ -64,6 +76,12 @@
                 }
             })]
         $BuildSpec,
+        [parameter(Mandatory = $false)]
+        [Int]
+        $GitCloneDepth,
+        [parameter(Mandatory = $false)]
+        [System.Boolean]
+        $InsecureSsl,
         [parameter(Mandatory = $false)]
         [ValidateScript( {
                 $allowedTypes = "System.String","Vaporshell.Function"

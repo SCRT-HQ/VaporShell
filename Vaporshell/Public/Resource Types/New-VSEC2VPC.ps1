@@ -34,7 +34,7 @@
 		Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ec2-vpc.html#cfn-aws-ec2-vpc-instancetenancy    
 		PrimitiveType: String    
 		Required: False    
-		UpdateType: Immutable    
+		UpdateType: Mutable    
 
     .PARAMETER Tags
 		Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ec2-vpc.html#cfn-aws-ec2-vpc-tags    

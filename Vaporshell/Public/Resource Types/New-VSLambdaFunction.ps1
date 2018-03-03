@@ -60,6 +60,12 @@
 		Required: False    
 		UpdateType: Mutable    
 
+    .PARAMETER ReservedConcurrentExecutions
+		Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-lambda-function.html#cfn-lambda-function-reservedconcurrentexecutions    
+		PrimitiveType: Integer    
+		Required: False    
+		UpdateType: Mutable    
+
     .PARAMETER Role
 		Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-lambda-function.html#cfn-lambda-function-role    
 		PrimitiveType: String    
@@ -198,6 +204,9 @@
         [parameter(Mandatory = $false)]
         [Int]
         $MemorySize,
+        [parameter(Mandatory = $false)]
+        [Int]
+        $ReservedConcurrentExecutions,
         [parameter(Mandatory = $true)]
         [ValidateScript( {
                 $allowedTypes = "System.String","Vaporshell.Function"

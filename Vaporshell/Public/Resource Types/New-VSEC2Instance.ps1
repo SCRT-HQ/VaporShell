@@ -38,6 +38,12 @@
 		Type: List    
 		UpdateType: Conditional    
 
+    .PARAMETER CreditSpecification
+		Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-instance.html#cfn-ec2-instance-creditspecification    
+		Required: False    
+		Type: CreditSpecification    
+		UpdateType: Mutable    
+
     .PARAMETER DisableApiTermination
 		Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-instance.html#cfn-ec2-instance-disableapitermination    
 		PrimitiveType: Boolean    
@@ -306,6 +312,8 @@
                 }
             })]
         $BlockDeviceMappings,
+        [parameter(Mandatory = $false)]
+        $CreditSpecification,
         [parameter(Mandatory = $false)]
         [System.Boolean]
         $DisableApiTermination,

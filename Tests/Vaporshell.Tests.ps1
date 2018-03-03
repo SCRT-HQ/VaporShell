@@ -17,6 +17,14 @@ $udFile = (Resolve-Path "$projectRoot\Tests\UserData.sh").Path
 Import-Module $ModulePath -Force -ArgumentList $true
 $currentFunctionCount = (Get-Command -Module Vaporshell).Count
 
+Describe "Previous build validation" {
+    Context "Failure breadcrumb from previous build" {
+        It "Should not exist" {
+            "$projectRoot\BuildFailed.txt" | Should -Not -Exist
+        }
+    }
+}
+
 Describe "Module tests: $ModuleName" {
     Context "Confirm files are valid Powershell syntax" {
         $scripts = Get-ChildItem $projectRoot -Include *.ps1,*.psm1,*.psd1 -Recurse
@@ -47,6 +55,17 @@ Describe "Module tests: $ModuleName" {
             }
         }
     }
+
+    Context "Confirm there are no duplicate function names in private and public folders" {
+        It 'Should have no duplicate functions' {
+            $functions = Get-ChildItem "$moduleRoot\Public" -Recurse -Include *.ps1 | Select-Object -ExpandProperty BaseName
+            $functions += Get-ChildItem "$moduleRoot\Private" -Recurse -Include *.ps1 | Select-Object -ExpandProperty BaseName
+            ($functions | Group-Object | Where-Object {$_.Count -gt 1}).Count | Should -BeLessThan 1
+        }
+    }
+}
+
+Describe "Unit tests" {
     Context 'Strict mode' {
         Set-StrictMode -Version latest
 

@@ -12,6 +12,42 @@
     .PARAMETER LogicalId
         The logical ID must be alphanumeric (A-Za-z0-9) and unique within the template. Use the logical name to reference the resource in other parts of the template. For example, if you want to map an Amazon Elastic Block Store volume to an Amazon EC2 instance, you reference the logical IDs to associate the block stores with the instance.
 
+    .PARAMETER Description
+		Required: False    
+		Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-codebuild-project.html#cfn-codebuild-project-description    
+		PrimitiveType: String    
+		UpdateType: Mutable    
+
+    .PARAMETER VpcConfig
+		Type: VpcConfig    
+		Required: False    
+		Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-codebuild-project.html#cfn-codebuild-project-vpcconfig    
+		UpdateType: Mutable    
+
+    .PARAMETER EncryptionKey
+		Required: False    
+		Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-codebuild-project.html#cfn-codebuild-project-encryptionkey    
+		PrimitiveType: String    
+		UpdateType: Mutable    
+
+    .PARAMETER Triggers
+		Type: ProjectTriggers    
+		Required: False    
+		Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-codebuild-project.html#cfn-codebuild-project-triggers    
+		UpdateType: Mutable    
+
+    .PARAMETER Source
+		Type: Source    
+		Required: True    
+		Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-codebuild-project.html#cfn-codebuild-project-source    
+		UpdateType: Mutable    
+
+    .PARAMETER Name
+		Required: False    
+		Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-codebuild-project.html#cfn-codebuild-project-name    
+		PrimitiveType: String    
+		UpdateType: Immutable    
+
     .PARAMETER Artifacts
 		Type: Artifacts    
 		Required: True    
@@ -24,22 +60,10 @@
 		PrimitiveType: Boolean    
 		UpdateType: Mutable    
 
-    .PARAMETER Description
-		Required: False    
-		Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-codebuild-project.html#cfn-codebuild-project-description    
-		PrimitiveType: String    
-		UpdateType: Mutable    
-
     .PARAMETER ServiceRole
 		Required: True    
 		Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-codebuild-project.html#cfn-codebuild-project-servicerole    
 		PrimitiveType: String    
-		UpdateType: Mutable    
-
-    .PARAMETER VpcConfig
-		Type: VpcConfig    
-		Required: False    
-		Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-codebuild-project.html#cfn-codebuild-project-vpcconfig    
 		UpdateType: Mutable    
 
     .PARAMETER Environment
@@ -48,30 +72,12 @@
 		Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-codebuild-project.html#cfn-codebuild-project-environment    
 		UpdateType: Mutable    
 
-    .PARAMETER EncryptionKey
-		Required: False    
-		Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-codebuild-project.html#cfn-codebuild-project-encryptionkey    
-		PrimitiveType: String    
-		UpdateType: Mutable    
-
-    .PARAMETER Source
-		Type: Source    
-		Required: True    
-		Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-codebuild-project.html#cfn-codebuild-project-source    
-		UpdateType: Mutable    
-
     .PARAMETER Tags
 		Type: List    
 		Required: False    
 		Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-codebuild-project.html#cfn-codebuild-project-tags    
 		ItemType: Tag    
 		UpdateType: Mutable    
-
-    .PARAMETER Name
-		Required: False    
-		Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-codebuild-project.html#cfn-codebuild-project-name    
-		PrimitiveType: String    
-		UpdateType: Immutable    
 
     .PARAMETER TimeoutInMinutes
 		Required: False    
@@ -132,11 +138,6 @@
             })]
         [System.String]
         $LogicalId,
-        [parameter(Mandatory = $true)]
-        $Artifacts,
-        [parameter(Mandatory = $false)]
-        [System.Boolean]
-        $BadgeEnabled,
         [parameter(Mandatory = $false)]
         [ValidateScript( {
                 $allowedTypes = "System.String","Vaporshell.Function"
@@ -148,21 +149,8 @@
                 }
             })]
         $Description,
-        [parameter(Mandatory = $true)]
-        [ValidateScript( {
-                $allowedTypes = "System.String","Vaporshell.Function"
-                if ([string]$($_.PSTypeNames) -match "($(($allowedTypes|ForEach-Object{[RegEx]::Escape($_)}) -join '|'))") {
-                    $true
-                }
-                else {
-                    $PSCmdlet.ThrowTerminatingError((New-VSError -String "This parameter only accepts the following types: $($allowedTypes -join ", "). The current types of the value are: $($_.PSTypeNames -join ", ")."))
-                }
-            })]
-        $ServiceRole,
         [parameter(Mandatory = $false)]
         $VpcConfig,
-        [parameter(Mandatory = $true)]
-        $Environment,
         [parameter(Mandatory = $false)]
         [ValidateScript( {
                 $allowedTypes = "System.String","Vaporshell.Function"
@@ -174,19 +162,10 @@
                 }
             })]
         $EncryptionKey,
+        [parameter(Mandatory = $false)]
+        $Triggers,
         [parameter(Mandatory = $true)]
         $Source,
-        [parameter(Mandatory = $false)]
-        [ValidateScript( {
-                $allowedTypes = "Vaporshell.Resource.Tag","System.Management.Automation.PSCustomObject"
-                if ([string]$($_.PSTypeNames) -match "($(($allowedTypes|ForEach-Object{[RegEx]::Escape($_)}) -join '|'))") {
-                    $true
-                }
-                else {
-                    $PSCmdlet.ThrowTerminatingError((New-VSError -String "This parameter only accepts the following types: $($allowedTypes -join ", "). The current types of the value are: $($_.PSTypeNames -join ", ")."))
-                }
-            })]
-        $Tags,
         [parameter(Mandatory = $false)]
         [ValidateScript( {
                 $allowedTypes = "System.String","Vaporshell.Function"
@@ -198,6 +177,35 @@
                 }
             })]
         $Name,
+        [parameter(Mandatory = $true)]
+        $Artifacts,
+        [parameter(Mandatory = $false)]
+        [System.Boolean]
+        $BadgeEnabled,
+        [parameter(Mandatory = $true)]
+        [ValidateScript( {
+                $allowedTypes = "System.String","Vaporshell.Function"
+                if ([string]$($_.PSTypeNames) -match "($(($allowedTypes|ForEach-Object{[RegEx]::Escape($_)}) -join '|'))") {
+                    $true
+                }
+                else {
+                    $PSCmdlet.ThrowTerminatingError((New-VSError -String "This parameter only accepts the following types: $($allowedTypes -join ", "). The current types of the value are: $($_.PSTypeNames -join ", ")."))
+                }
+            })]
+        $ServiceRole,
+        [parameter(Mandatory = $true)]
+        $Environment,
+        [parameter(Mandatory = $false)]
+        [ValidateScript( {
+                $allowedTypes = "Vaporshell.Resource.Tag","System.Management.Automation.PSCustomObject"
+                if ([string]$($_.PSTypeNames) -match "($(($allowedTypes|ForEach-Object{[RegEx]::Escape($_)}) -join '|'))") {
+                    $true
+                }
+                else {
+                    $PSCmdlet.ThrowTerminatingError((New-VSError -String "This parameter only accepts the following types: $($allowedTypes -join ", "). The current types of the value are: $($_.PSTypeNames -join ", ")."))
+                }
+            })]
+        $Tags,
         [parameter(Mandatory = $false)]
         [Int]
         $TimeoutInMinutes,

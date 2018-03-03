@@ -32,6 +32,12 @@
 		Type: List    
 		UpdateType: Mutable    
 
+    .PARAMETER BucketEncryption
+		Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-s3-bucket.html#cfn-s3-bucket-bucketencryption    
+		Required: False    
+		Type: BucketEncryption    
+		UpdateType: Mutable    
+
     .PARAMETER BucketName
 		Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-s3-bucket.html#cfn-s3-bucket-name    
 		PrimitiveType: String    
@@ -175,6 +181,8 @@
                 }
             })]
         $AnalyticsConfigurations,
+        [parameter(Mandatory = $false)]
+        $BucketEncryption,
         [parameter(Mandatory = $false)]
         [ValidateScript( {
                 $allowedTypes = "System.String","Vaporshell.Function"

@@ -1,7 +1,10 @@
-<h1 align="center">VaporShell</h1>
+<center><img src="https://vaporshell.io/images/VAPORSHELL-VARIATION2-B.png" alt="VaporShell" style="height: 200px;" align="center"/></center>
+
+***
+</br></br>
 
 <div align="center">
-  :pencil: ......... :package: ......... :rocket:
+  :pencil: &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; :package: &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; :rocket:
 </div>
 
 <div align="center">
@@ -18,45 +21,50 @@
   <a href="https://ci.appveyor.com/project/nferrell/vaporshell/branch/master">
     <img src="https://ci.appveyor.com/api/projects/status/8a4jsfv42tbmlym8/branch/master?svg=true"
       alt="AppVeyor - Windows Build Status" title="AppVeyor - Windows Build Status" />
-  </a>
+  </a>&nbsp;&nbsp;&nbsp;
   <!-- Travis CI -->
   <a href="https://travis-ci.org/scrthq/VaporShell">
     <img src="https://travis-ci.org/scrthq/VaporShell.svg?branch=master"
       alt="Travis CI - Linux / macOS Build Status" title="Travis CI - Linux / macOS Build Status" />
-  </a>
+  </a>&nbsp;&nbsp;&nbsp;
   <!-- Coveralls -->
   <a href="https://coveralls.io/github/scrthq/Vaporshell?branch=master">
     <img src="https://coveralls.io/repos/github/scrthq/Vaporshell/badge.svg?branch=master"
       alt="Coveralls.io - Code Coverage" title="Coveralls.io - Code Coverage" />
-  </a>
+  </a>&nbsp;&nbsp;&nbsp;
   <!-- PS Gallery -->
   <a href="https://www.PowerShellGallery.com/packages/VaporShell">
-    <img src="https://img.shields.io/badge/psgallery-install-blue.svg"
+    <img src="https://img.shields.io/powershellgallery/dt/Vaporshell.svg?style=flat"
       alt="PowerShell Gallery - Install VaporShell" title="PowerShell Gallery - Install VaporShell" />
-  </a>
+  </a>&nbsp;&nbsp;&nbsp;
   <!-- Gitter -->
   <a href="https://gitter.im/VaporShell/Lobby?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge&utm_content=badge">
     <img src="https://badges.gitter.im/VaporShell/Lobby.svg"
       alt="Gitter - Chat" title="Gitter - Chat" />
-  </a>
-  <!-- Gratipay -->
-  <a href="https://gratipay.com/VaporShell">
-    <img src="https://img.shields.io/gratipay/user/scrthq.svg"
-      alt="Gratipay - Donate" title="Gratipay - Donate" />
+  </a>&nbsp;&nbsp;&nbsp;
+  <!-- Slack Invite -->
+  <a href="https://scrthq-slack-invite.herokuapp.com/">
+    <img src="https://img.shields.io/badge/chat-on%20slack-orange.svg?style=flat&logo=slack"
+      alt="Slack - Chat" title="Slack - Chat" />
+  </a>&nbsp;&nbsp;&nbsp;
+  <!-- Slack Status -->
+  <a href="https://scrthq-slack-invite.herokuapp.com/">
+    <img src="https://scrthq-slack-invite.herokuapp.com/badge.svg"
+      alt="Slack - Status" title="Slack - Status" />
   </a>
 </div>
 
 <div align="center">
   <h3>
-    <a href="http://vaporshell.io">
+    <a href="https://vaporshell.io">
       Website
     </a>
     <span> | </span>
-    <a href="http://vaporshell.io/docs/">
+    <a href="https://vaporshell.io/docs/">
       Docs
     </a>
     <span> | </span>
-    <a href="http://vaporshell.io/docs/examples">
+    <a href="https://vaporshell.io/docs/examples">
       Examples
     </a>
     <span> | </span><!-- 
@@ -186,13 +194,13 @@ $vsl.ToYAML($TemplateFile)
 vsl vaporize --tf $TemplateFile --sn sched-func --caps iam --v --f --w
 
 ```
-Check out the [Examples page](http://vaporshell.io/docs/examples) for more.
+Check out the [Examples page](https://vaporshell.io/docs/examples) for more.
 
 
 ## In Action
 
 This is a deployment being watched via `Watch-Stack $stackName` to show stack creation and deletion mid-deploy:
-![Watch-Stack in action](http://vaporshell.io/images/Watch-Stacks.gif)
+![Watch-Stack in action](https://vaporshell.io/images/Watch-Stacks.gif)
 
 ## License
 [Apache 2.0](https://tldrlegal.com/license/apache-license-2.0-(apache-2.0))

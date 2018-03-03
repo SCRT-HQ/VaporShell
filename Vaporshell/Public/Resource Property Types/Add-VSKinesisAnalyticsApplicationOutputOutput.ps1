@@ -15,6 +15,12 @@
 		Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-kinesisanalytics-applicationoutput-output.html#cfn-kinesisanalytics-applicationoutput-output-destinationschema    
 		UpdateType: Mutable    
 
+    .PARAMETER LambdaOutput
+		Type: LambdaOutput    
+		Required: False    
+		Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-kinesisanalytics-applicationoutput-output.html#cfn-kinesisanalytics-applicationoutput-output-lambdaoutput    
+		UpdateType: Mutable    
+
     .PARAMETER KinesisFirehoseOutput
 		Type: KinesisFirehoseOutput    
 		Required: False    
@@ -42,6 +48,8 @@
     (
         [parameter(Mandatory = $true)]
         $DestinationSchema,
+        [parameter(Mandatory = $false)]
+        $LambdaOutput,
         [parameter(Mandatory = $false)]
         $KinesisFirehoseOutput,
         [parameter(Mandatory = $false)]

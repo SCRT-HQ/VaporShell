@@ -1,24 +1,24 @@
-﻿function Add-VSCodePipelinePipelineOutputArtifact {
+﻿function Add-VSS3BucketEncryptionConfiguration {
     <#
     .SYNOPSIS
-        Adds an AWS::CodePipeline::Pipeline.OutputArtifact resource property to the template
+        Adds an AWS::S3::Bucket.EncryptionConfiguration resource property to the template
 
     .DESCRIPTION
-        Adds an AWS::CodePipeline::Pipeline.OutputArtifact resource property to the template
+        Adds an AWS::S3::Bucket.EncryptionConfiguration resource property to the template
 
     .LINK
-        http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-codepipeline-pipeline-outputartifact.html
+        http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-s3-bucket-encryptionconfiguration.html
 
-    .PARAMETER Name
-		Required: True    
-		Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-codepipeline-pipeline-outputartifact.html#cfn-codepipeline-pipeline-outputartifact-name    
+    .PARAMETER ReplicaKmsKeyID
+		Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-s3-bucket-encryptionconfiguration.html#cfn-s3-bucket-encryptionconfiguration-replicakmskeyid    
 		PrimitiveType: String    
+		Required: True    
 		UpdateType: Mutable    
 
     .FUNCTIONALITY
         Vaporshell
     #>
-    [OutputType('Vaporshell.Resource.CodePipeline.Pipeline.OutputArtifact')]
+    [OutputType('Vaporshell.Resource.S3.Bucket.EncryptionConfiguration')]
     [cmdletbinding()]
     Param
     (
@@ -32,7 +32,7 @@
                     $PSCmdlet.ThrowTerminatingError((New-VSError -String "This parameter only accepts the following types: $($allowedTypes -join ", "). The current types of the value are: $($_.PSTypeNames -join ", ")."))
                 }
             })]
-        $Name
+        $ReplicaKmsKeyID
     )
     Begin {
         $obj = [PSCustomObject]@{}
@@ -43,6 +43,6 @@
         }
     }
     End {
-        $obj | Add-ObjectDetail -TypeName 'Vaporshell.Resource.CodePipeline.Pipeline.OutputArtifact'
+        $obj | Add-ObjectDetail -TypeName 'Vaporshell.Resource.S3.Bucket.EncryptionConfiguration'
     }
 }

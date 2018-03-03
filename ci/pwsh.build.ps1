@@ -3,17 +3,13 @@
 	Build script invoked by Invoke-Build.
 
 .Description
-	TODO: Declare build script parameters as usual by param().
 	The parameters are specified for Invoke-Build on invoking.
 #>
-
-# TODO: [CmdletBinding()] is optional but recommended for strict name checks.
 [CmdletBinding()]
 param(
 )
 # PSake makes variables declared here available in other scriptblocks
 # Init some things
-# TODO: Move some properties to script param() in order to use as parameters.
 
     # Find the build folder based on build system
     if ($pwd.Path -like "*ci*") {
@@ -32,7 +28,6 @@ param(
         $Verbose = @{Verbose = $True}
     }
 
-# TODO: Default task. If it is the first then any name can be used instead.
 task Init {
     $lines
     Set-Location $ProjectRoot
@@ -41,7 +36,7 @@ task Init {
     "`n"
     $lines
     "PSVersionTable"
-    $PSVersionTable | Format-List
+    $PSVersionTable
 }
 
 task Build {
@@ -51,10 +46,21 @@ task Build {
     # Gather test results. Store them in a variable and file
     $TestResults = Invoke-Pester -Path $ProjectRoot\Tests -PassThru -OutputFormat NUnitXml -OutputFile "$ProjectRoot\$TestFile"
 
+    # In Appveyor?  Upload our tests! #Abstract this into a function?
+    If($ENV:BHBuildSystem -eq 'AppVeyor')
+    {
+        (New-Object 'System.Net.WebClient').UploadFile(
+            "https://ci.appveyor.com/api/testresults/nunit/$($env:APPVEYOR_JOB_ID)",
+            "$ProjectRoot\$TestFile" )
+    }
+
+    Remove-Item "$ProjectRoot\$TestFile" -Force -ErrorAction SilentlyContinue
+
     # Failed tests?
     # Need to tell psake or it will proceed to the deployment. Danger!
     if($TestResults.FailedCount -gt 0)
     {
+        New-Item -Path "$projectRoot\BuildFailed.txt" -Name "BuildFailed.txt" -ItemType File -Force
         Write-Error "Failed '$($TestResults.FailedCount)' tests, build failed"
     }
     "`n"

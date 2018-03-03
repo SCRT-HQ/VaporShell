@@ -30,6 +30,12 @@
 		Required: False    
 		UpdateType: Mutable    
 
+    .PARAMETER HealthCheckGracePeriodSeconds
+		Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ecs-service.html#cfn-ecs-service-healthcheckgraceperiodseconds    
+		PrimitiveType: Integer    
+		Required: False    
+		UpdateType: Mutable    
+
     .PARAMETER LaunchType
 		Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ecs-service.html#cfn-ecs-service-launchtype    
 		PrimitiveType: String    
@@ -153,6 +159,9 @@
         [parameter(Mandatory = $false)]
         [Int]
         $DesiredCount,
+        [parameter(Mandatory = $false)]
+        [Int]
+        $HealthCheckGracePeriodSeconds,
         [parameter(Mandatory = $false)]
         [ValidateScript( {
                 $allowedTypes = "System.String","Vaporshell.Function"

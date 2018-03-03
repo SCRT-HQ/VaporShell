@@ -18,7 +18,7 @@
 		ItemType: AttributeDefinition    
 		Required: False    
 		Type: List    
-		UpdateType: Mutable    
+		UpdateType: Conditional    
 
     .PARAMETER GlobalSecondaryIndexes
 		Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-dynamodb-table.html#cfn-dynamodb-table-gsi    
@@ -34,7 +34,7 @@
 		ItemType: KeySchema    
 		Required: True    
 		Type: List    
-		UpdateType: Mutable    
+		UpdateType: Immutable    
 
     .PARAMETER LocalSecondaryIndexes
 		Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-dynamodb-table.html#cfn-dynamodb-table-lsi    
@@ -42,13 +42,19 @@
 		ItemType: LocalSecondaryIndex    
 		Required: False    
 		Type: List    
-		UpdateType: Mutable    
+		UpdateType: Immutable    
 
     .PARAMETER ProvisionedThroughput
 		Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-dynamodb-table.html#cfn-dynamodb-table-provisionedthroughput    
 		Required: True    
 		Type: ProvisionedThroughput    
 		UpdateType: Mutable    
+
+    .PARAMETER SSESpecification
+		Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-dynamodb-table.html#cfn-dynamodb-table-ssespecification    
+		Required: False    
+		Type: SSESpecification    
+		UpdateType: Conditional    
 
     .PARAMETER StreamSpecification
 		Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-dynamodb-table.html#cfn-dynamodb-table-streamspecification    
@@ -169,6 +175,8 @@
         $LocalSecondaryIndexes,
         [parameter(Mandatory = $true)]
         $ProvisionedThroughput,
+        [parameter(Mandatory = $false)]
+        $SSESpecification,
         [parameter(Mandatory = $false)]
         $StreamSpecification,
         [parameter(Mandatory = $false)]
