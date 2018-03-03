@@ -12,7 +12,7 @@
     RootModule             = 'Vaporshell.psm1'
 
     # Version number of this module.
-    ModuleVersion          = '2.1.2'
+    ModuleVersion          = '2.2.0'
 
     # ID used to uniquely identify this module
     GUID                   = 'd526494c-6e59-41ff-ad05-eedbc1473b6a'
@@ -39,7 +39,7 @@ Prerequisites
 For further information, please checkout the README on the GitHub page and the module website:
 
 Readme: https://github.com/scrthq/VaporShell/blob/master/README.md
-Website: http://vaporshell.io/
+Website: https://vaporshell.io/
 "
 
     # Minimum version of the Windows PowerShell engine required by this module
@@ -127,7 +127,7 @@ Website: http://vaporshell.io/
     } # End of PrivateData hashtable
 
     # HelpInfo URI of this module
-    HelpInfoURI            = 'http://vaporshell.io/docs/'
+    HelpInfoURI            = 'https://vaporshell.io/docs/'
 
     # Default prefix for commands exported from this module. Override the default prefix using Import-Module -Prefix.
     # DefaultCommandPrefix = ''

@@ -5,6 +5,7 @@
 <!-- TOC -->
 
 - [Changelog](#changelog)
+    - [2.2.0](#220)
     - [2.1.2](#212)
     - [2.1.1](#211)
     - [2.1.0](#210)
@@ -27,6 +28,13 @@
     - [0.7.02](#0702)
 
 <!-- /TOC -->
+
+## 2.2.0
+
+- Updated Travis-CI tests to use latest PowerShell release
+- Updated AppVeyor tests to test in both PowerShell Core and Windows PowerShell
+- Updated resource types/property types to latest spec sheet
+- **Renamed New-VSS3Bucket to New-VSS3Box to prevent duplicate function name collision**
 
 ## 2.1.2
 
