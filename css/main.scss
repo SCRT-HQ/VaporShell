@@ -1,16 +1,10 @@
---- 
-
---- 
-
-$baseurl: '{{ site.baseurl }}/images';
-
+--- --- $baseurl: '{{ site.baseurl }}/images';
 @import 'libs/vars';
 @import 'libs/functions';
 @import 'libs/mixins';
 @import 'font-awesome.min.css';
 @import 'syntax-one-dark-vivid.css';
-@import url('https://fonts.googleapis.com/css?family=Droid+Sans+Mono');
-@import url('http://fonts.googleapis.com/css?family=Open+Sans:400,400italic,600,600italic,800,800italic');
+@import url('https://fonts.googleapis.com/css?family=Mina|Nova+Mono');
 
 /*
 	Spectral by HTML5 UP
@@ -19,22 +13,17 @@ $baseurl: '{{ site.baseurl }}/images';
 */
 
 @import 'libs/skel';
-
-@include skel-breakpoints(( 
-    xlarge: '(max-width: 1680px)',
-    large: '(max-width: 1280px)',
-    medium: '(max-width: 980px)',
-    small: '(max-width: 736px)',
-    xsmall: '(max-width: 480px)'
-));
-
-@include skel-layout(( 
-    reset: 'full',
-    boxModel: 'border',
-    grid: ( gutters: 1.5em )
-));
+@include skel-breakpoints(( xlarge: '(max-width: 1680px)',
+large: '(max-width: 1280px)',
+medium: '(max-width: 980px)',
+small: '(max-width: 736px)',
+xsmall: '(max-width: 480px)'));
+@include skel-layout(( reset: 'full',
+boxModel: 'border',
+grid: ( gutters: 1.5em)));
 
 /* Syntax Highlighting */
+
 @mixin unselectable() {
     -webkit-touch-callout: none;
     -webkit-user-select: none;
@@ -43,12 +32,18 @@ $baseurl: '{{ site.baseurl }}/images';
     -ms-user-select: none;
     user-select: none;
 }
+
 @mixin opacity($opacity) {
     opacity: $opacity;
     $opacity-ie: $opacity * 100;
     filter: alpha(opacity=$opacity-ie); //IE8
 }
-.lineno-container > figure > pre {
+
+* {
+    font-family: 'Mina', sans-serif;
+}
+
+.lineno-container>figure>pre {
     padding: 0px;
     background: #31343f;
 }
@@ -59,21 +54,17 @@ $baseurl: '{{ site.baseurl }}/images';
         color: #DFDFDF;
         @include opacity(0.6);
     }
-
-	td {
-		background: #31343f;
-	}
-
+    td {
+        background: #31343f;
+    }
     .lineno {
         @include unselectable();
         color: #DFDFDF;
     }
-
     .gutter {
         border-right: 1px solid #DFDFDF;
         background: #31343f;
     }
-
     pre {
         pre {
             border: none;
@@ -90,12 +81,13 @@ td.gutter.gl {
 .wrapper.style5 code {
     background: #31343f;
     color: #56b6c2;
-    font-family: 'Droid Sans Mono', monospace;
+    font-family: 'Nova Mono', monospace;
     padding-left: 3px;
     padding-right: 3px;
     padding-bottom: 1px;
     padding-top: 1px;
 }
+
 
 /* Basic */
 
@@ -105,11 +97,14 @@ td.gutter.gl {
 
 body {
     background: _palette(bg);
-    
     &.is-loading {
-        *, *:before, *:after {
-            @include vendor('animation', 'none !important');
-            @include vendor('transition', 'none !important');
+        *,
+        *:before,
+        *:after {
+            @include vendor('animation',
+            'none !important');
+            @include vendor('transition',
+            'none !important');
         }
     }
 }
@@ -244,14 +239,14 @@ blockquote {
 
 code {
     background: _palette(border-bg);
-    font-family: 'Droid Sans Mono', monospace;
+    font-family: 'Nova Mono', monospace;
     font-size: 0.9em;
     letter-spacing: 0;
 }
 
 pre {
     -webkit-overflow-scrolling: touch;
-    font-family: 'Droid Sans Mono', monospace;
+    font-family: 'Nova Mono', monospace;
     font-size: 0.9em;
     margin: 0 0 _size(element-margin) 0;
     code {
