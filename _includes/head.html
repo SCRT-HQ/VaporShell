@@ -9,14 +9,14 @@
     <meta property="og:url" content="{{ page.url }}" />
     <meta property="og:title" content="{{ page.title }}" />
     <meta property="og:description" content="{% if page.excerpt %}{{ page.excerpt | strip_html | strip_newlines | truncate: 160 }}{% else %}{{ site.description }}{% endif %}" />
-    <meta property="og:image" content="{{ " /images/mainUnfurl.png " | prepend: site.url }}" />
+    <meta property="og:image" content="{{ "/images/VAPORSHELL-TWIT-BANNER.png" | prepend: site.url }}" />
 
     <!-- twitter card tags additive with the og: tags -->
     <meta name="twitter:card" content="summary_large_image">
     <meta name="twitter:domain" value="{{ site.url }}" />
     <meta name="twitter:title" value="{{ site.title }}" />
     <meta name="twitter:description" value="{% if page.excerpt %}{{ page.excerpt | strip_html | strip_newlines | truncate: 160 }}{% else %}{{ site.description }}{% endif %}" />
-    <meta name="twitter:image" content="{{ " /images/mainUnfurl.png " | prepend: site.url }}" />
+    <meta name="twitter:image" content="{{ "/images/VAPORSHELL-TWIT-BANNER.png" | prepend: site.url }}" />
     <meta name="twitter:url" value="{{ site.url }}" /> {% if page.label1 %}
     <meta name="twitter:label1" content="{{ page.label1 }}" /> {% endif %} {% if page.data1 %}
     <meta name="twitter:data1" content="{{ page.data1 }}" /> {% endif %} {% if page.label2 %}
