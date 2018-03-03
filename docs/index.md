@@ -87,7 +87,7 @@ _OR_
 `$template = Import-VaporShell -Path ".\CFNtemplate00.json"`
 
 ### Process: Fill It Out
-The `VaporShell.Template` object contains ScriptMethods to add and remove items from the template. For example, to add a resource to the template, you'll use the `AddResource()` script method found on the template object. You would do the same for Parameters (`AddParameter()`), Metadata (`AddMetadata()`), Outputs (`AddOutput()`), etc. Need to remove something? Call the appropriate `Remove*()` method and pass the Logical ID of the item you are trying to remove as the parameter, i.e. `$template.RemoveResource("S3Bucket")`. These are covered completely in the [Module Digest](http://VaporShell.io/docs/digest)!
+The `VaporShell.Template` object contains ScriptMethods to add and remove items from the template. For example, to add a resource to the template, you'll use the `AddResource()` script method found on the template object. You would do the same for Parameters (`AddParameter()`), Metadata (`AddMetadata()`), Outputs (`AddOutput()`), etc. Need to remove something? Call the appropriate `Remove*()` method and pass the Logical ID of the item you are trying to remove as the parameter, i.e. `$template.RemoveResource("S3Bucket")`. These are covered completely in the [Module Digest](https://vaporshell.io/docs/digest)!
 
 Here's a quick conversion of an [AWS sample template](https://s3-us-west-1.amazonaws.com/cloudformation-templates-us-west-1/S3_Website_Bucket_With_Retain_On_Delete.template) into VaporShell, followed by the JSON example from AWS. This template adds 1 Resource (an S3 Bucket) and 2 Outputs:
 

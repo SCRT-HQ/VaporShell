@@ -161,7 +161,7 @@ You add resources to an already existing `VaporShell.Template` object by using t
 
 VaporShell also comes with ~200 specific Resource Type functions to make things easier. These all use `New-VaporResource` to compile the final object, so you are free to use any of those with the `AddResource()` script method as well. **To make them easier to identify, all Resource Type functions follow this naming convention: `New-VS{ResourceName}`**
 
-You can view the available resource type functions on the glossary page: [Resource Types](http://VaporShell.io/docs/glossary#resource-types)
+You can view the available resource type functions on the glossary page: [Resource Types](https://vaporshell.io/docs/glossary#resource-types)
 
 
 #### Resource Property Types
@@ -417,7 +417,7 @@ Resources:
 
 AWS CloudFormation provides several built-in functions that help you manage your stacks. Use intrinsic functions in your templates to assign values to properties that are not available until runtime. 
 
-VaporShell includes functions for each Intrinsic function. You can find more info [in the Glossary](http://VaporShell.io/docs/glossary/#intrinsic-functions).
+VaporShell includes functions for each Intrinsic function. You can find more info [in the Glossary](https://vaporshell.io/docs/glossary/#intrinsic-functions).
 
 Here's an example where the `Add-FnRef` function is used to fill out the RestApiId for an APIGatewayDeployment:
 
@@ -434,7 +434,7 @@ You can use intrinsic functions, such as `Add-FnIf`, ``Add-FnEquals`, and `Add-F
 
 You define all conditions in the Conditions section of a template except for `Add-FnIf` conditions. You can use the `Add-FnIf` condition in the metadata attribute, update policy attribute, and property values in the Resources section and Outputs sections of a template.
 
-You can find more info [in the Glossary](http://VaporShell.io/docs/glossary/#condition-functions).
+You can find more info [in the Glossary](https://vaporshell.io/docs/glossary/#condition-functions).
 
 ## Pseudo Parameters
 
