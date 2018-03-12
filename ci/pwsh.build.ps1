@@ -44,7 +44,7 @@ task Build {
     "`n`tSTATUS: Testing with PowerShell $PSVersion"
 
     # Gather test results. Store them in a variable and file
-    $TestResults = Invoke-Pester -Path $ProjectRoot\Tests -PassThru -OutputFormat NUnitXml -OutputFile (Resolve-Path"$ProjectRoot\$TestFile").Path
+    $TestResults = Invoke-Pester -Path $ProjectRoot\Tests -PassThru -OutputFormat NUnitXml -OutputFile (Resolve-Path "$ProjectRoot\$TestFile").Path
 
     # In Appveyor?  Upload our tests! #Abstract this into a function?
     If($env:APPVEYOR)
@@ -54,7 +54,7 @@ task Build {
         $content.Save("$ProjectRoot\$TestFile") #>
         (New-Object 'System.Net.WebClient').UploadFile(
             ([Uri]"https://ci.appveyor.com/api/testresults/nunit/$($env:APPVEYOR_JOB_ID)"),
-            (Resolve-Path"$ProjectRoot\$TestFile").Path )
+            (Resolve-Path "$ProjectRoot\$TestFile").Path )
     }
 
     Remove-Item "$ProjectRoot\$TestFile" -Force -ErrorAction SilentlyContinue
