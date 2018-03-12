@@ -5,6 +5,7 @@
 <!-- TOC -->
 
 - [Changelog](#changelog)
+    - [2.3.0](#230)
     - [2.2.0](#220)
     - [2.1.2](#212)
     - [2.1.1](#211)
@@ -28,6 +29,14 @@
     - [0.7.02](#0702)
 
 <!-- /TOC -->
+
+## 2.3.0
+
+- Added new intrinsic function `Fn::Cidr` as `Add-FnCidr`
+- Added `Convert-TemplateToVaporShellScript` function to convert existing CloudFormation templates to VaporShell scripts
+- Updated `Update-VSResourceFunctions` to build type dictionary for use with `Convert-TemplateToVaporShellScript`
+- Updated resource types/property types to latest spec sheet
+- Added Ubuntu image to appveyor.yml to run tests in Linux in AppVeyor as well as Windows
 
 ## 2.2.0
 

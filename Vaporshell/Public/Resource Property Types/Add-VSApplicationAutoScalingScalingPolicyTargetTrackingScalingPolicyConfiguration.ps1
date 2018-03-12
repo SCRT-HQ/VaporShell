@@ -15,6 +15,12 @@
 		Type: CustomizedMetricSpecification    
 		UpdateType: Mutable    
 
+    .PARAMETER DisableScaleIn
+		Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-applicationautoscaling-scalingpolicy-targettrackingscalingpolicyconfiguration.html#cfn-applicationautoscaling-scalingpolicy-targettrackingscalingpolicyconfiguration-disablescalein    
+		PrimitiveType: Boolean    
+		Required: False    
+		UpdateType: Mutable    
+
     .PARAMETER PredefinedMetricSpecification
 		Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-applicationautoscaling-scalingpolicy-targettrackingscalingpolicyconfiguration.html#cfn-applicationautoscaling-scalingpolicy-targettrackingscalingpolicyconfiguration-predefinedmetricspecification    
 		Required: False    
@@ -48,6 +54,9 @@
     (
         [parameter(Mandatory = $false)]
         $CustomizedMetricSpecification,
+        [parameter(Mandatory = $false)]
+        [System.Boolean]
+        $DisableScaleIn,
         [parameter(Mandatory = $false)]
         $PredefinedMetricSpecification,
         [parameter(Mandatory = $false)]

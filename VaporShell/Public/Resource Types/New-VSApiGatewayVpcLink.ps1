@@ -1,60 +1,35 @@
-﻿function New-VSCodePipelineCustomActionType {
+﻿function New-VSApiGatewayVpcLink {
     <#
     .SYNOPSIS
-        Adds an AWS::CodePipeline::CustomActionType resource to the template
+        Adds an AWS::ApiGateway::VpcLink resource to the template
 
     .DESCRIPTION
-        Adds an AWS::CodePipeline::CustomActionType resource to the template
+        Adds an AWS::ApiGateway::VpcLink resource to the template
 
     .LINK
-        http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-codepipeline-customactiontype.html
+        http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-apigateway-vpclink.html
 
     .PARAMETER LogicalId
         The logical ID must be alphanumeric (A-Za-z0-9) and unique within the template. Use the logical name to reference the resource in other parts of the template. For example, if you want to map an Amazon Elastic Block Store volume to an Amazon EC2 instance, you reference the logical IDs to associate the block stores with the instance.
 
-    .PARAMETER Category
-		Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-codepipeline-customactiontype.html#cfn-codepipeline-customactiontype-category    
-		PrimitiveType: String    
-		Required: True    
-		UpdateType: Immutable    
-
-    .PARAMETER ConfigurationProperties
-		Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-codepipeline-customactiontype.html#cfn-codepipeline-customactiontype-configurationproperties    
-		DuplicatesAllowed: False    
-		ItemType: ConfigurationProperties    
+    .PARAMETER Description
 		Required: False    
+		Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-apigateway-vpclink.html#cfn-apigateway-vpclink-description    
+		PrimitiveType: String    
+		UpdateType: Mutable    
+
+    .PARAMETER TargetArns
+		PrimitiveItemType: String    
 		Type: List    
-		UpdateType: Immutable    
-
-    .PARAMETER InputArtifactDetails
-		Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-codepipeline-customactiontype.html#cfn-codepipeline-customactiontype-inputartifactdetails    
 		Required: True    
-		Type: ArtifactDetails    
+		Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-apigateway-vpclink.html#cfn-apigateway-vpclink-targetarns    
 		UpdateType: Immutable    
 
-    .PARAMETER OutputArtifactDetails
-		Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-codepipeline-customactiontype.html#cfn-codepipeline-customactiontype-outputartifactdetails    
+    .PARAMETER Name
 		Required: True    
-		Type: ArtifactDetails    
-		UpdateType: Immutable    
-
-    .PARAMETER Provider
-		Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-codepipeline-customactiontype.html#cfn-codepipeline-customactiontype-provider    
+		Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-apigateway-vpclink.html#cfn-apigateway-vpclink-name    
 		PrimitiveType: String    
-		Required: True    
-		UpdateType: Immutable    
-
-    .PARAMETER Settings
-		Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-codepipeline-customactiontype.html#cfn-codepipeline-customactiontype-settings    
-		Required: False    
-		Type: Settings    
-		UpdateType: Immutable    
-
-    .PARAMETER Version
-		Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-codepipeline-customactiontype.html#cfn-codepipeline-customactiontype-version    
-		PrimitiveType: String    
-		Required: False    
-		UpdateType: Immutable    
+		UpdateType: Mutable    
 
     .PARAMETER DeletionPolicy
         With the DeletionPolicy attribute you can preserve or (in some cases) backup a resource when its stack is deleted. You specify a DeletionPolicy attribute for each resource that you want to control. If a resource has no DeletionPolicy attribute, AWS CloudFormation deletes the resource by default.
@@ -88,7 +63,7 @@
     .FUNCTIONALITY
         Vaporshell
     #>
-    [OutputType('Vaporshell.Resource.CodePipeline.CustomActionType')]
+    [OutputType('Vaporshell.Resource.ApiGateway.VpcLink')]
     [cmdletbinding()]
     Param
     (
@@ -103,45 +78,6 @@
             })]
         [System.String]
         $LogicalId,
-        [parameter(Mandatory = $true)]
-        [ValidateScript( {
-                $allowedTypes = "System.String","Vaporshell.Function"
-                if ([string]$($_.PSTypeNames) -match "($(($allowedTypes|ForEach-Object{[RegEx]::Escape($_)}) -join '|'))") {
-                    $true
-                }
-                else {
-                    $PSCmdlet.ThrowTerminatingError((New-VSError -String "This parameter only accepts the following types: $($allowedTypes -join ", "). The current types of the value are: $($_.PSTypeNames -join ", ")."))
-                }
-            })]
-        $Category,
-        [parameter(Mandatory = $false)]
-        [ValidateScript( {
-                $allowedTypes = "Vaporshell.Resource.CodePipeline.CustomActionType.ConfigurationProperties"
-                if ([string]$($_.PSTypeNames) -match "($(($allowedTypes|ForEach-Object{[RegEx]::Escape($_)}) -join '|'))") {
-                    $true
-                }
-                else {
-                    $PSCmdlet.ThrowTerminatingError((New-VSError -String "This parameter only accepts the following types: $($allowedTypes -join ", "). The current types of the value are: $($_.PSTypeNames -join ", ")."))
-                }
-            })]
-        $ConfigurationProperties,
-        [parameter(Mandatory = $true)]
-        $InputArtifactDetails,
-        [parameter(Mandatory = $true)]
-        $OutputArtifactDetails,
-        [parameter(Mandatory = $true)]
-        [ValidateScript( {
-                $allowedTypes = "System.String","Vaporshell.Function"
-                if ([string]$($_.PSTypeNames) -match "($(($allowedTypes|ForEach-Object{[RegEx]::Escape($_)}) -join '|'))") {
-                    $true
-                }
-                else {
-                    $PSCmdlet.ThrowTerminatingError((New-VSError -String "This parameter only accepts the following types: $($allowedTypes -join ", "). The current types of the value are: $($_.PSTypeNames -join ", ")."))
-                }
-            })]
-        $Provider,
-        [parameter(Mandatory = $false)]
-        $Settings,
         [parameter(Mandatory = $false)]
         [ValidateScript( {
                 $allowedTypes = "System.String","Vaporshell.Function"
@@ -152,7 +88,20 @@
                     $PSCmdlet.ThrowTerminatingError((New-VSError -String "This parameter only accepts the following types: $($allowedTypes -join ", "). The current types of the value are: $($_.PSTypeNames -join ", ")."))
                 }
             })]
-        $Version,
+        $Description,
+        [parameter(Mandatory = $true)]
+        $TargetArns,
+        [parameter(Mandatory = $true)]
+        [ValidateScript( {
+                $allowedTypes = "System.String","Vaporshell.Function"
+                if ([string]$($_.PSTypeNames) -match "($(($allowedTypes|ForEach-Object{[RegEx]::Escape($_)}) -join '|'))") {
+                    $true
+                }
+                else {
+                    $PSCmdlet.ThrowTerminatingError((New-VSError -String "This parameter only accepts the following types: $($allowedTypes -join ", "). The current types of the value are: $($_.PSTypeNames -join ", ")."))
+                }
+            })]
+        $Name,
         [ValidateSet("Delete","Retain","Snapshot")]
         [System.String]
         $DeletionPolicy,
@@ -187,7 +136,7 @@
     Begin {
         $ResourceParams = @{
             LogicalId = $LogicalId
-            Type = "AWS::CodePipeline::CustomActionType"
+            Type = "AWS::ApiGateway::VpcLink"
         }
     }
     Process {
@@ -209,11 +158,11 @@
                 Condition {
                     $ResourceParams.Add("Condition",$Condition)
                 }
-                ConfigurationProperties {
+                TargetArns {
                     if (!($ResourceParams["Properties"])) {
                         $ResourceParams.Add("Properties",([PSCustomObject]@{}))
                     }
-                    $ResourceParams["Properties"] | Add-Member -MemberType NoteProperty -Name ConfigurationProperties -Value @($ConfigurationProperties)
+                    $ResourceParams["Properties"] | Add-Member -MemberType NoteProperty -Name TargetArns -Value @($TargetArns)
                 }
                 Default {
                     if (!($ResourceParams["Properties"])) {
@@ -226,7 +175,7 @@
     }
     End {
         $obj = New-VaporResource @ResourceParams
-        $obj | Add-ObjectDetail -TypeName 'Vaporshell.Resource.CodePipeline.CustomActionType'
+        $obj | Add-ObjectDetail -TypeName 'Vaporshell.Resource.ApiGateway.VpcLink'
         Write-Verbose "Resulting JSON from $($MyInvocation.MyCommand): `n`n$(@{$obj.LogicalId = $obj.Props} | ConvertTo-Json -Depth 5)`n"
     }
 }

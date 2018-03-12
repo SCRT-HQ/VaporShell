@@ -77,6 +77,14 @@
 		Required: False    
 		UpdateType: Mutable    
 
+    .PARAMETER Regions
+		Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-route53-healthcheck-healthcheckconfig.html#cfn-route53-healthcheck-healthcheckconfig-regions    
+		DuplicatesAllowed: False    
+		PrimitiveItemType: String    
+		Required: False    
+		Type: List    
+		UpdateType: Mutable    
+
     .PARAMETER RequestInterval
 		Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-route53-healthcheck-healthcheckconfig.html#cfn-route53-healthcheck-healthcheckconfig-requestinterval    
 		PrimitiveType: Integer    
@@ -163,6 +171,8 @@
         [parameter(Mandatory = $false)]
         [Int]
         $Port,
+        [parameter(Mandatory = $false)]
+        $Regions,
         [parameter(Mandatory = $false)]
         [Int]
         $RequestInterval,

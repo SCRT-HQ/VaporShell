@@ -9,6 +9,12 @@
     .LINK
         http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ssm-patchbaseline-rule.html
 
+    .PARAMETER EnableNonSecurity
+		Required: False    
+		Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ssm-patchbaseline-rule.html#cfn-ssm-patchbaseline-rule-enablenonsecurity    
+		PrimitiveType: Boolean    
+		UpdateType: Mutable    
+
     .PARAMETER PatchFilterGroup
 		Type: PatchFilterGroup    
 		Required: False    
@@ -34,6 +40,9 @@
     [cmdletbinding()]
     Param
     (
+        [parameter(Mandatory = $false)]
+        [System.Boolean]
+        $EnableNonSecurity,
         [parameter(Mandatory = $false)]
         $PatchFilterGroup,
         [parameter(Mandatory = $false)]

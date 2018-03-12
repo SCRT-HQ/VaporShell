@@ -19,6 +19,8 @@ function Update-VSResourceFunctions {
         [String]
         $Region = "NVirginia"
     )
+    $typeDictPath = Join-Path (Resolve-Path "$script:VaporshellPath\bin") "TypeToFunctionDict.ps1"
+    $typeDict = @('@{')
     $BeforeTypeCount = (Get-ChildItem -Path (Resolve-Path "$script:VaporshellPath\Public\Resource Types").Path).Count
     $BeforePropCount = (Get-ChildItem -Path (Resolve-Path "$script:VaporshellPath\Public\Resource Property Types").Path).Count
     $regHash = @{
@@ -42,14 +44,25 @@ function Update-VSResourceFunctions {
     $specs = (Invoke-WebRequest $URL).Content | ConvertFrom-Json
 
     foreach ($resource in $specs.PropertyTypes.psobject.Properties) {
-        Write-Verbose "Updating $($resource.Name)"
+        $Name = $resource.Name
+        $ShortName = $Name.Replace("AWS::","")
+        $FunctionName = "Add-VS" + $ShortName.Replace("::","").Replace(".","")
+        $typeDict += "`t'$Name' = '$FunctionName'"
+        Write-Verbose "Updating $FunctionName [$Name]"
         Convert-SpecToFunction -Resource $resource -ResourceType Property
     }
 
     foreach ($resource in $specs.ResourceTypes.psobject.Properties) {
-        Write-Verbose "Updating $($resource.Name)"
+        $Name = $resource.Name
+        $ShortName = $Name.Replace("AWS::","")
+        $FunctionName = "New-VS" + ($ShortName -replace "\..*").Replace("::","")
+        $typeDict += "`t'$Name' = '$FunctionName'"
+        Write-Verbose "Updating $FunctionName [$Name]"
         Convert-SpecToFunction -Resource $resource -ResourceType Resource
     }
+    $typeDict += '}'
+    Write-Verbose "Saving Type Dictionary"
+    Set-Content -Value $typeDict -Path $typeDictPath -Encoding UTF8 -Force
     $AfterTypeCount = (Get-ChildItem -Path (Resolve-Path "$script:VaporshellPath\Public\Resource Types").Path).Count
     $AfterPropCount = (Get-ChildItem -Path (Resolve-Path "$script:VaporshellPath\Public\Resource Property Types").Path).Count
     $newType = $AfterTypeCount - $BeforeTypeCount

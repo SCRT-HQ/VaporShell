@@ -1,28 +1,28 @@
-﻿function Add-VSCodePipelinePipelineInputArtifact {
+﻿function Add-VSEC2SpotFleetSpotFleetTagSpecification {
     <#
     .SYNOPSIS
-        Adds an AWS::CodePipeline::Pipeline.InputArtifact resource property to the template
+        Adds an AWS::EC2::SpotFleet.SpotFleetTagSpecification resource property to the template
 
     .DESCRIPTION
-        Adds an AWS::CodePipeline::Pipeline.InputArtifact resource property to the template
+        Adds an AWS::EC2::SpotFleet.SpotFleetTagSpecification resource property to the template
 
     .LINK
-        http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-codepipeline-pipeline-stages-actions-inputartifacts.html
+        http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-spotfleet-spotfleetrequestconfigdata-launchspecifications-tagspecifications.html
 
-    .PARAMETER Name
-		Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-codepipeline-pipeline-stages-actions-inputartifacts.html#cfn-codepipeline-pipeline-stages-actions-inputartifacts-name    
+    .PARAMETER ResourceType
+		Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-spotfleet-spotfleetrequestconfigdata-launchspecifications-tagspecifications.html#cfn-ec2-spotfleet-spotfleettagspecification-resourcetype    
 		PrimitiveType: String    
-		Required: True    
+		Required: False    
 		UpdateType: Mutable    
 
     .FUNCTIONALITY
         Vaporshell
     #>
-    [OutputType('Vaporshell.Resource.CodePipeline.Pipeline.InputArtifact')]
+    [OutputType('Vaporshell.Resource.EC2.SpotFleet.SpotFleetTagSpecification')]
     [cmdletbinding()]
     Param
     (
-        [parameter(Mandatory = $true)]
+        [parameter(Mandatory = $false)]
         [ValidateScript( {
                 $allowedTypes = "System.String","Vaporshell.Function"
                 if ([string]$($_.PSTypeNames) -match "($(($allowedTypes|ForEach-Object{[RegEx]::Escape($_)}) -join '|'))") {
@@ -32,7 +32,7 @@
                     $PSCmdlet.ThrowTerminatingError((New-VSError -String "This parameter only accepts the following types: $($allowedTypes -join ", "). The current types of the value are: $($_.PSTypeNames -join ", ")."))
                 }
             })]
-        $Name
+        $ResourceType
     )
     Begin {
         $obj = [PSCustomObject]@{}
@@ -43,6 +43,6 @@
         }
     }
     End {
-        $obj | Add-ObjectDetail -TypeName 'Vaporshell.Resource.CodePipeline.Pipeline.InputArtifact'
+        $obj | Add-ObjectDetail -TypeName 'Vaporshell.Resource.EC2.SpotFleet.SpotFleetTagSpecification'
     }
 }

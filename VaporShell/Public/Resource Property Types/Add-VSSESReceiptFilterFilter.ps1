@@ -1,28 +1,36 @@
-﻿function Add-VSCodePipelinePipelineInputArtifact {
+﻿function Add-VSSESReceiptFilterFilter {
     <#
     .SYNOPSIS
-        Adds an AWS::CodePipeline::Pipeline.InputArtifact resource property to the template
+        Adds an AWS::SES::ReceiptFilter.Filter resource property to the template
 
     .DESCRIPTION
-        Adds an AWS::CodePipeline::Pipeline.InputArtifact resource property to the template
+        Adds an AWS::SES::ReceiptFilter.Filter resource property to the template
 
     .LINK
-        http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-codepipeline-pipeline-stages-actions-inputartifacts.html
+        http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ses-receiptfilter-filter.html
+
+    .PARAMETER IpFilter
+		Type: IpFilter    
+		Required: True    
+		Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ses-receiptfilter-filter.html#cfn-ses-receiptfilter-filter-ipfilter    
+		UpdateType: Mutable    
 
     .PARAMETER Name
-		Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-codepipeline-pipeline-stages-actions-inputartifacts.html#cfn-codepipeline-pipeline-stages-actions-inputartifacts-name    
+		Required: False    
+		Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ses-receiptfilter-filter.html#cfn-ses-receiptfilter-filter-name    
 		PrimitiveType: String    
-		Required: True    
 		UpdateType: Mutable    
 
     .FUNCTIONALITY
         Vaporshell
     #>
-    [OutputType('Vaporshell.Resource.CodePipeline.Pipeline.InputArtifact')]
+    [OutputType('Vaporshell.Resource.SES.ReceiptFilter.Filter')]
     [cmdletbinding()]
     Param
     (
         [parameter(Mandatory = $true)]
+        $IpFilter,
+        [parameter(Mandatory = $false)]
         [ValidateScript( {
                 $allowedTypes = "System.String","Vaporshell.Function"
                 if ([string]$($_.PSTypeNames) -match "($(($allowedTypes|ForEach-Object{[RegEx]::Escape($_)}) -join '|'))") {
@@ -43,6 +51,6 @@
         }
     }
     End {
-        $obj | Add-ObjectDetail -TypeName 'Vaporshell.Resource.CodePipeline.Pipeline.InputArtifact'
+        $obj | Add-ObjectDetail -TypeName 'Vaporshell.Resource.SES.ReceiptFilter.Filter'
     }
 }

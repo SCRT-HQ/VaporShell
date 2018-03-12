@@ -1,6 +1,8 @@
 clone_folder: C:\projects\Vaporshell
 
-image: Visual Studio 2017
+image: 
+- Ubuntu
+- Visual Studio 2017
 
 environment:
   NuGetApiKey:
@@ -28,4 +30,4 @@ install:
 
 test_script:
   - pwsh: . .\ci\init.ps1
-  - ps: . .\ci\init.ps1
+  - ps: if ($isWindows) {. .\ci\init.ps1}

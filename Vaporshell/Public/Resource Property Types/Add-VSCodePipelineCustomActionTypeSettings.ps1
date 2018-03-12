@@ -10,27 +10,27 @@
         http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-codepipeline-customactiontype-settings.html
 
     .PARAMETER EntityUrlTemplate
-		Required: False    
 		Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-codepipeline-customactiontype-settings.html#cfn-codepipeline-customactiontype-settings-entityurltemplate    
 		PrimitiveType: String    
+		Required: False    
 		UpdateType: Mutable    
 
     .PARAMETER ExecutionUrlTemplate
-		Required: False    
 		Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-codepipeline-customactiontype-settings.html#cfn-codepipeline-customactiontype-settings-executionurltemplate    
 		PrimitiveType: String    
+		Required: False    
 		UpdateType: Mutable    
 
     .PARAMETER RevisionUrlTemplate
-		Required: False    
 		Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-codepipeline-customactiontype-settings.html#cfn-codepipeline-customactiontype-settings-revisionurltemplate    
 		PrimitiveType: String    
+		Required: False    
 		UpdateType: Mutable    
 
     .PARAMETER ThirdPartyConfigurationUrl
-		Required: False    
 		Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-codepipeline-customactiontype-settings.html#cfn-codepipeline-customactiontype-settings-thirdpartyconfigurationurl    
 		PrimitiveType: String    
+		Required: False    
 		UpdateType: Mutable    
 
     .FUNCTIONALITY
