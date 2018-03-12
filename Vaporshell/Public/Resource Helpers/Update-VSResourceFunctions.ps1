@@ -19,7 +19,7 @@ function Update-VSResourceFunctions {
         [String]
         $Region = "NVirginia"
     )
-    $typeDictPath = Join-Path (Resolve-Path "$script:VaporshellPath\bin") "TypeToFunctionDict.ps1"
+    $typeDictPath = Join-Path (Join-Path $script:VaporshellPath "bin") "TypeToFunctionDict.ps1"
     $typeDict = @('@{')
     $BeforeTypeCount = (Get-ChildItem -Path (Resolve-Path "$script:VaporshellPath\Public\Resource Types").Path).Count
     $BeforePropCount = (Get-ChildItem -Path (Resolve-Path "$script:VaporshellPath\Public\Resource Property Types").Path).Count
