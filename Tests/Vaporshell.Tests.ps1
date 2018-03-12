@@ -1,7 +1,7 @@
 $PSVersion = $PSVersionTable.PSVersion.Major
 $ModuleName = "VaporShell"
 $projectRoot = Resolve-Path "$PSScriptRoot\.."
-$ModulePath = Resolve-Path "$projectRoot\$ModuleName"
+$ModulePath = Join-Path (Join-Path $projectRoot $ModuleName) "$($ModuleName).psd1"
 
 # Verbose output for non-master builds on appveyor
 # Handy for troubleshooting.
