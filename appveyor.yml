@@ -24,11 +24,10 @@ init:
   - ps: Write-Host $env:PYTHON $env:PYTHON_VERSION $env:PYTHON_ARCH
 
 install:
-  - sh: |
-    sudo apt-get install python-pip python-dev build-essential
-    sudo pip install --upgrade pip
-    sudo pip install --upgrade virtualenv
-    sudo pip install cfn_flip
+  - sh: sudo apt-get install python-pip python-dev build-essential
+  - sh: sudo pip install --upgrade pip
+  - sh: sudo pip install --upgrade virtualenv
+  - sh: sudo pip install cfn_flip
   - cmd: "%PYTHON%/Scripts/pip.exe install cfn_flip"
 
 test_script:
