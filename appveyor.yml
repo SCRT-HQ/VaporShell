@@ -3,6 +3,7 @@ image:
   - Visual Studio 2017
 
 environment:
+  APPVEYOR_YML_DISABLE_PS_LINUX: true
   NuGetApiKey:
     secure: Ocp1ATd6eZ0eY9+LfZ9Stp9/J1B5eFdBPMdaTRWVa4xh6/NV45ZBYtU5+eemrTWt
   Coveralls:
@@ -32,4 +33,4 @@ install:
 
 test_script:
   - pwsh: . .\ci\init.ps1
-  - ps: if ($isWindows) {. .\ci\init.ps1}
+  - ps: . .\ci\init.ps1
