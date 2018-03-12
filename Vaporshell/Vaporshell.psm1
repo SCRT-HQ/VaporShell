@@ -40,7 +40,7 @@ else {
 
 # Add in Pseudo Parameter variables from private text file (allows growth in case additional parameters need to be added in)
 $vars = @()
-$varDict = . (Join-Path (Join-Path $VaporshellPath "Private") "PseudoParams.ps1")
+$varDict = . (Join-Path (Join-Path $PSScriptRoot "Private") "PseudoParams.ps1")
 ForEach ($key in $varDict.Keys) {
     New-Variable -Name $varDict[$key] -Value $key
     $vars += $varDict[$key]
