@@ -18,7 +18,8 @@ if(
     $env:BHProjectName -and $env:BHProjectName.Count -eq 1 -and
     $env:BHBuildSystem -ne 'Unknown' -and
     $env:BHBranchName -eq "master" -and
-    $env:BHCommitMessage -match '!deploy'
+    $env:BHCommitMessage -match '!deploy' -and
+    $env:APPVEYOR_BUILD_WORKER_IMAGE -like '*2017*'
 )
 {
     Deploy Module {
