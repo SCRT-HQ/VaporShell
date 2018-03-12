@@ -44,7 +44,7 @@ task Build {
     "`n`tSTATUS: Testing with PowerShell $PSVersion"
 
     # Gather test results. Store them in a variable and file
-    $TestResults = Invoke-Pester -Path $ProjectRoot\Tests -PassThru -OutputFormat NUnitXml -OutputFile "$ProjectRoot\$TestFile"
+    $TestResults = Invoke-Pester -Path $ProjectRoot\Tests -PassThru -OutputFormat NUnitXml -OutputFile (Resolve-Path"$ProjectRoot\$TestFile").Path
 
     # In Appveyor?  Upload our tests! #Abstract this into a function?
     If($env:APPVEYOR)
