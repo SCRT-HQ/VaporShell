@@ -20,7 +20,7 @@ function Convert-ToVSCommand {
             'Fn::Sub'         = 'Add-FnSub'
         }
         $typeDict = . (Join-Path (Join-Path $script:VaporshellPath "bin") "TypeToFunctionDict.ps1")
-        $varDict = . (Join-Path (Join-Path $script:VaporshellPath "Private") "PseudoParams.ps1")
+        $varDict = . (Join-Path (Join-Path $script:VaporshellPath "bin") "PseudoParams.ps1")
     }
     Process {
         foreach ($object in $InputObject) {
