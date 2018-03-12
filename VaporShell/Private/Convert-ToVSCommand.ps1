@@ -27,4 +27,4 @@ function Convert-ToVSCommand {
 
         }
     }
-}
+} 
