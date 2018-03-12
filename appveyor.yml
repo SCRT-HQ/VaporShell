@@ -10,15 +10,7 @@ environment:
   Coveralls:
     secure: r4c1f5ysoobhV4DGF9zc18yl+buyh7LoV7kRr7aUFvrcjd7VFmj71EPN0Egs9gOQ
   matrix:
-    - image: Ubuntu
-
-    - image: Visual Studio 2015
-      PYTHON: "C:\\Python27"
-      PYTHON_VERSION: "2.7.8"
-      PYTHON_ARCH: "32"
-
-    - image: Visual Studio 2017
-      PYTHON: "C:\\Python27"
+    - PYTHON: "C:\\Python27"
       PYTHON_VERSION: "2.7.8"
       PYTHON_ARCH: "32"
 
@@ -42,7 +34,7 @@ install:
       sudo pip install --upgrade pip
       sudo pip install --upgrade virtualenv
       sudo pip install cfn_flip
-  - ps: & $env:PYTHON/Scripts/pip.exe install cfn_flip
+  - cmd: "%PYTHON%/Scripts/pip.exe install cfn_flip"
 
 test_script:
   - pwsh: if ($env:APPVEYOR_BUILD_WORKER_IMAGE -notlike '*2015*') {. .\ci\init.ps1}
