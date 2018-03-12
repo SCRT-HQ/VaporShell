@@ -53,8 +53,8 @@ task Build {
         $content.'test-results'.'test-suite'.type = "Powershell"
         $content.Save("$ProjectRoot\$TestFile") #>
         (New-Object 'System.Net.WebClient').UploadFile(
-            "https://ci.appveyor.com/api/testresults/nunit/$($env:APPVEYOR_JOB_ID)",
-            "$ProjectRoot\$TestFile" )
+            ([Uri]"https://ci.appveyor.com/api/testresults/nunit/$($env:APPVEYOR_JOB_ID)"),
+            (Resolve-Path"$ProjectRoot\$TestFile").Path )
     }
 
     Remove-Item "$ProjectRoot\$TestFile" -Force -ErrorAction SilentlyContinue
