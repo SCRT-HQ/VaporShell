@@ -40,10 +40,10 @@ else {
 
 # Add in Pseudo Parameter variables from private text file (allows growth in case additional parameters need to be added in)
 $vars = @()
-Get-Content -Path "$PSScriptRoot\Private\PseudoParams.txt" | ForEach-Object {
-    $name = "_$(($_ -replace "::").Trim())"
-    New-Variable -Name $name -Value "$(($_).Trim())"
-    $vars += $name
+$varDict = . "$VaporshellPath\Private\PseudoParams.ps1"
+ForEach ($key in $varDict.Keys) {
+    New-Variable -Name $varDict[$key] -Value $key
+    $vars += $varDict[$key]
 }
 
 Export-ModuleMember -Function $Public.Basename -Variable $vars -Verbose:$false

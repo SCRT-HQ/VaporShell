@@ -22,6 +22,9 @@ function Convert-TemplateToVaporShellScript {
             'Fn::Split'       = 'Add-FnSplit'
             'Fn::Sub'         = 'Add-FnSub'
         }
+        $typeDictPath = Join-Path (Resolve-Path "$script:VaporshellPath\bin") "TypeToFunctionDict.ps1"
+        $typeDict = . $typeDictPath
+        $varDict = . "$VaporshellPath\Private\PseudoParams.ps1"
     }
     Process {
         foreach ($tempPath in $Path) {
@@ -41,6 +44,15 @@ function Convert-TemplateToVaporShellScript {
                 $final += "#region Add Outputs to template"
                 foreach ($prop in $tempFull.Outputs.PSObject.Properties.Name) {
                     $command = "New-VaporOutput -LogicalId `"$($prop)`""
+                    if ($tempFull.Outputs.$prop.Description) {
+                        $command += " -Description `"$($tempFull.Outputs.$prop.Description)`""
+                    }
+                    $command += " -Value "
+                    if ($tempFull.Outputs.$prop.Value -is 'System.Management.Automation.PSCustomObject') {
+
+                    }
+
+                    $final += $command
                 }
                 $final += "#endregion Add Outputs to template"
                 $final += ""

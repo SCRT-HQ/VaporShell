@@ -37,6 +37,7 @@
 - Updated `Update-VSResourceFunctions` to build type dictionary for use with `Convert-TemplateToVaporShellScript`
 - Updated resource types/property types to latest spec sheet
 - Added Ubuntu image to appveyor.yml to run tests in Linux in AppVeyor as well as Windows
+- Updated Pseudo Parameters to current list from AWS for convenience variables exported on module import
 
 ## 2.2.0
 

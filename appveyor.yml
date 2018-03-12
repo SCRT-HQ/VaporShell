@@ -1,8 +1,8 @@
 clone_folder: C:\projects\Vaporshell
 
 image: 
-#- Ubuntu
-- Visual Studio 2017
+  #- Ubuntu
+  - Visual Studio 2017
 
 environment:
   NuGetApiKey:
