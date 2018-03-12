@@ -20,8 +20,11 @@ only_commits:
 
 build: false
 
+init:
+  - ps: Write-Host $env:PYTHON $env:PYTHON_VERSION $env:PYTHON_ARCH
+
 install:
-  - pip install cfn_flip"
+  - "%PYTHON%/Scripts/pip.exe install cfn_flip"
 
 test_script:
   - pwsh: . .\ci\init.ps1
