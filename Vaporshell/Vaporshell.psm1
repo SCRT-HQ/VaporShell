@@ -6,8 +6,8 @@ Param
   $QuietLoad = $false
 )
 #Get public and private function definition files.
-$Public = @( Get-ChildItem -Path $PSScriptRoot\Public -Recurse -Filter "*.ps1" -ErrorAction SilentlyContinue )
-$Private = @( Get-ChildItem -Path $PSScriptRoot\Private -Recurse -Filter "*.ps1" -ErrorAction SilentlyContinue )
+$Public = @( Get-ChildItem -Path (Join-Path $PSScriptRoot "Public") -Recurse -Filter "*.ps1" -ErrorAction SilentlyContinue )
+$Private = @( Get-ChildItem -Path (Join-Path $PSScriptRoot "Private") -Recurse -Filter "*.ps1" -ErrorAction SilentlyContinue )
 $VaporshellPath = $PSScriptRoot
 
 #Execute a scriptblock to load each function instead of dot sourcing (Issue #5)
