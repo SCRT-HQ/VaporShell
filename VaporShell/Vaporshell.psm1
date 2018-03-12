@@ -8,7 +8,7 @@ Param
 #Get public and private function definition files.
 $Public = @( Get-ChildItem -Path (Join-Path $PSScriptRoot "Public") -Recurse -Filter "*.ps1" -ErrorAction SilentlyContinue )
 $Private = @( Get-ChildItem -Path (Join-Path $PSScriptRoot "Private") -Recurse -Filter "*.ps1" -ErrorAction SilentlyContinue )
-$VaporshellPath = $PSScriptRoot
+$VaporshellPath = (Resolve-Path $PSScriptRoot).Path
 
 #Execute a scriptblock to load each function instead of dot sourcing (Issue #5)
 foreach ($file in @($Public + $Private)) {
@@ -40,7 +40,7 @@ else {
 
 # Add in Pseudo Parameter variables from private text file (allows growth in case additional parameters need to be added in)
 $vars = @()
-$varDict = . (Resolve-Path (Join-Path (Join-Path $PSScriptRoot "bin") "PseudoParams.ps1"))
+$varDict = . (Resolve-Path (Join-Path $VaporshellPath "bin") "PseudoParams.ps1").Path
 ForEach ($key in $varDict.Keys) {
     New-Variable -Name $varDict[$key] -Value $key
     $vars += $varDict[$key]

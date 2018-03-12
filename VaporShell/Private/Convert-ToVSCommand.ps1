@@ -19,8 +19,8 @@ function Convert-ToVSCommand {
             'Fn::Split'       = 'Add-FnSplit'
             'Fn::Sub'         = 'Add-FnSub'
         }
-        $typeDict = . (Resolve-Path (Join-Path (Join-Path $script:VaporshellPath "bin") "TypeToFunctionDict.ps1"))
-        $varDict = . (Resolve-Path (Join-Path (Join-Path $script:VaporshellPath "bin") "PseudoParams.ps1"))
+        $typeDict = . (Resolve-Path (Join-Path ($script:VaporshellPath) "bin") "TypeToFunctionDict.ps1").Path
+        $varDict = . (Resolve-Path (Join-Path (Join-Path $script:VaporshellPath "bin") "PseudoParams.ps1")).Path
     }
     Process {
         foreach ($object in $InputObject) {
