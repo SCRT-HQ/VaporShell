@@ -6,7 +6,7 @@ function Convert-ToVSCommand {
         $InputObject
     )
     Begin {
-        $funcHash = @{
+        $funcDict = @{
             'Ref'             = 'Add-FnRef'
             'Fn::Base64'      = 'Add-FnBase64'
             'Fn::Cidr'        = 'Add-FnCidr'
@@ -19,8 +19,7 @@ function Convert-ToVSCommand {
             'Fn::Split'       = 'Add-FnSplit'
             'Fn::Sub'         = 'Add-FnSub'
         }
-        $typeDictPath = Join-Path (Resolve-Path "$script:VaporshellPath\bin") "TypeToFunctionDict.ps1"
-        $typeDict = . $typeDictPath
+        $typeDict = . (Join-Path (Join-Path $script:VaporshellPath "bin") "TypeToFunctionDict.ps1")
         $varDict = . (Join-Path (Join-Path $script:VaporshellPath "Private") "PseudoParams.ps1")
     }
     Process {
