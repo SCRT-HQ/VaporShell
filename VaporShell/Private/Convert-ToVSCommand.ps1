@@ -21,7 +21,7 @@ function Convert-ToVSCommand {
         }
         $typeDictPath = Join-Path (Resolve-Path "$script:VaporshellPath\bin") "TypeToFunctionDict.ps1"
         $typeDict = . $typeDictPath
-        $varDict = . (Resolve-Path "$script:VaporshellPath\Private\PseudoParams.ps1").Path
+        $varDict = . (Join-Path (Join-Path $script:VaporshellPath "Private") "PseudoParams.ps1")
     }
     Process {
         foreach ($object in $InputObject) {
