@@ -1,5 +1,3 @@
-clone_folder: C:\projects\Vaporshell
-
 image: 
   - Ubuntu
   - Visual Studio 2017
