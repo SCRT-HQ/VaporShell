@@ -51,7 +51,7 @@ Describe "Module tests: $ModuleName" {
         }
         if ($env:APPVEYOR) {
             It 'Should set the credentials correctly on the shared file' {
-                Set-VSCredential -AccessKey $Env:AWS_ACCESS_KEY_ID -SecretKey $Env:AWS_SECRET_ACCESS_KEY -Region "USWest1" -ProfileName 'default'
+                Set-VSCredential -AccessKey $Env:AWS_ACCESS_KEY_ID -SecretKey $Env:AWS_SECRET_ACCESS_KEY -Region "USEast1" -ProfileName 'default'
             }
         }
     }
