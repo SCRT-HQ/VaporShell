@@ -83,7 +83,7 @@ init:
   - ps: Write-Host $env:PYTHON $env:PYTHON_VERSION $env:PYTHON_ARCH
 
 install:
-  - sh: | 
+  - sh: |-
       sudo apt-get -y install python-pip python-dev build-essential
       sudo pip install --upgrade pip
       sudo pip install --upgrade virtualenv
@@ -91,7 +91,7 @@ install:
   - cmd: "%PYTHON%/Scripts/pip.exe install cfn_flip"
 
 test_script:
-  - pwsh: | 
+  - pwsh: |-
       if ($env:APPVEYOR_BUILD_WORKER_IMAGE -notlike '*2015*') {
         $string = "Running PowerShell $($PSVersionTable.PSVersion.ToString()) tests on image '$env:APPVEYOR_BUILD_WORKER_IMAGE'"
         Add-AppveyorMessage -Message $string -Category Information
@@ -102,7 +102,7 @@ test_script:
         Add-AppveyorMessage -Message $string -Category Warning
         Write-Warning $string
       \}
-  - ps: |
+  - ps: |-
       $string = "Running PowerShell $($PSVersionTable.PSVersion.ToString()) tests on image '$env:APPVEYOR_BUILD_WORKER_IMAGE'"
       Add-AppveyorMessage -Message $string -Category Information
       Write-Host -ForegroundColor Magenta $string
