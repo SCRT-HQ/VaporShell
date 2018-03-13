@@ -97,11 +97,11 @@ test_script:
         Add-AppveyorMessage -Message $string -Category Information
         Write-Host -ForegroundColor Magenta $string
         . .\ci\init.ps1
-      } else { 
+      \} else { 
         $string = "Skipping PowerShell $($PSVersionTable.PSVersion.ToString()) tests on image '$env:APPVEYOR_BUILD_WORKER_IMAGE'"
         Add-AppveyorMessage -Message $string -Category Warning
         Write-Warning $string
-      }
+      \}
   - ps: |
       $string = "Running PowerShell $($PSVersionTable.PSVersion.ToString()) tests on image '$env:APPVEYOR_BUILD_WORKER_IMAGE'"
       Add-AppveyorMessage -Message $string -Category Information
