@@ -9,10 +9,6 @@ environment:
     secure: Ocp1ATd6eZ0eY9+LfZ9Stp9/J1B5eFdBPMdaTRWVa4xh6/NV45ZBYtU5+eemrTWt
   Coveralls:
     secure: r4c1f5ysoobhV4DGF9zc18yl+buyh7LoV7kRr7aUFvrcjd7VFmj71EPN0Egs9gOQ
-  matrix:
-    - PYTHON: "C:\\Python27"
-      PYTHON_VERSION: "2.7.8"
-      PYTHON_ARCH: "32"
 
 matrix:
   fast_finish: true
