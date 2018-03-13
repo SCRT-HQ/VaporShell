@@ -63,9 +63,7 @@ Describe "Module tests: $ModuleName" {
             ($functions | Group-Object | Where-Object {$_.Count -gt 1}).Count | Should -BeLessThan 1
         }
     }
-}
 
-Describe "Unit tests" {
     Context 'Strict mode' {
         Set-StrictMode -Version latest
 
