@@ -40,16 +40,16 @@ test_script:
   - pwsh: >-
       if ($env:APPVEYOR_BUILD_WORKER_IMAGE -notlike '*2015*') {
         $string = "Running PowerShell $($PSVersionTable.PSVersion.ToString()) tests on image '$env:APPVEYOR_BUILD_WORKER_IMAGE'";
-        appveyor.exe $string -Category Information;
+        Invoke-RestMethod -Method Post -Uri ([Uri]"$($env:APPVEYOR_API_URL)api/build/messages") -Body "$(@{message = $string; category = "information"} | ConvertTo-Json)";
         Write-Host -ForegroundColor Magenta $string;
         . .\ci\init.ps1;
       } else {
         $string = "Skipping PowerShell $($PSVersionTable.PSVersion.ToString()) tests on image '$env:APPVEYOR_BUILD_WORKER_IMAGE'";
-        appveyor.exe $string -Category Warning;
+        Invoke-RestMethod -Method Post -Uri ([Uri]"$($env:APPVEYOR_API_URL)api/build/messages") -Body "$(@{message = $string; category = "warning"} | ConvertTo-Json)";
         Write-Warning $string;
       }
   - ps: >-
       $string = "Running PowerShell $($PSVersionTable.PSVersion.ToString()) tests on image '$env:APPVEYOR_BUILD_WORKER_IMAGE'";
-      appveyor.exe $string -Category Information;
+      Invoke-RestMethod -Method Post -Uri ([Uri]"$($env:APPVEYOR_API_URL)api/build/messages") -Body "$(@{message = $string; category = "information"} | ConvertTo-Json)";
       Write-Host -ForegroundColor Magenta $string;
       . .\ci\init.ps1;
