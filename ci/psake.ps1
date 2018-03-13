@@ -47,11 +47,10 @@ Task Test -Depends Init  {
         (New-Object 'System.Net.WebClient').UploadFile(
             "https://ci.appveyor.com/api/testresults/nunit/$($env:APPVEYOR_JOB_ID)",
             "$ProjectRoot\$TestFile" )
-        
-        #$files = Get-ChildItem "$ProjectRoot\Vaporshell" -Include *.ps1,*.psm1 -Recurse | Where-Object {$_.Name -notlike "Add-VS*" -and $_.Name -notlike "New-VS*" -and $_.FullName -notlike "*\Private\*" -and $_.Name -ne "Update-VSResourceFunctions.ps1"}
-        #$coverage = Format-Coverage -Include $files -CoverallsApiToken $ENV:Coveralls -BranchName $ENV:APPVEYOR_REPO_BRANCH -Verbose
-        $coverage = Format-Coverage -PesterResults $TestResults -CoverallsApiToken $ENV:Coveralls -BranchName $ENV:APPVEYOR_REPO_BRANCH -Verbose
-        Publish-Coverage -Coverage $coverage -Verbose
+        if ($env:APPVEYOR_BUILD_WORKER_IMAGE -like '*2017*') {
+            $coverage = Format-Coverage -PesterResults $TestResults -CoverallsApiToken $ENV:Coveralls -BranchName $ENV:APPVEYOR_REPO_BRANCH -Verbose
+            Publish-Coverage -Coverage $coverage -Verbose
+        }
     }
 
     Remove-Item "$ProjectRoot\$TestFile" -Force -ErrorAction SilentlyContinue
