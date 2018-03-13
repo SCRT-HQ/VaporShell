@@ -37,5 +37,13 @@ install:
   - cmd: "%PYTHON%/Scripts/pip.exe install cfn_flip"
 
 test_script:
-  - pwsh: if ($env:APPVEYOR_BUILD_WORKER_IMAGE -notlike '*2015*') {. .\ci\init.ps1}
-  - ps: . .\ci\init.ps1
+  - pwsh: | 
+      if ($env:APPVEYOR_BUILD_WORKER_IMAGE -notlike '*2015*') {
+        Write-Host -ForegroundColor Magenta "Running PowerShell $($PSVersionTable.PSVersion.ToString()) tests on image '$env:APPVEYOR_BUILD_WORKER_IMAGE'"
+        . .\ci\init.ps1
+      } else {
+        Write-Host -ForegroundColor Yellow "Skipping PowerShell $($PSVersionTable.PSVersion.ToString()) tests on image '$env:APPVEYOR_BUILD_WORKER_IMAGE'"
+      }
+  - ps: |
+      Write-Host -ForegroundColor Magenta "Running PowerShell $($PSVersionTable.PSVersion.ToString()) tests on image '$env:APPVEYOR_BUILD_WORKER_IMAGE'"
+      . .\ci\init.ps1
