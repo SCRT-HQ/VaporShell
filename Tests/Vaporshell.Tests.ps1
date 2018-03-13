@@ -70,7 +70,7 @@ Describe "Unit tests" {
         Set-StrictMode -Version latest
 
         It 'Should build template as an object then export to JSON' {
-            $testPath = "$projectRoot\Template.json"
+            $testPath = "TestDrive:\Template.json"
             $templateInit = $null
             $templateInit = Initialize-Vaporshell -Description "Testing template build"
             $templateInit.AddParameter((New-VaporParameter -LogicalId "EnvTypeString" -Type String -Default "test" -AllowedValues "test","prod" -Description "Environment type"))
@@ -99,7 +99,7 @@ Describe "Unit tests" {
             )
             $templateInit.AddOutput((New-VaporOutput -LogicalId "BackupLoadBalancerDNSName" -Description "The DNSName of the backup load balancer" -Value (Add-FnGetAtt -LogicalNameOfResource "BackupLoadBalancer" -AttributeName "DNSName") -Condition "CreateProdResources"))
 
-            $testPath = "$projectRoot\Template.json"
+            $testPath = "TestDrive:\Template.json"
 
             Export-Vaporshell -VaporshellTemplate $templateInit -Path $testPath -Force
 
@@ -111,11 +111,11 @@ Describe "Unit tests" {
             {$templateInit.RemoveOutput("BackupLoadBalancerDNSName")} | Should Not throw
         }
         It 'Should export import existing CloudFormation template as Vaporshell.Template' {
-            $testPath = "$projectRoot\Template.json"
+            $testPath = "TestDrive:\Template.json"
             $template = Import-Vaporshell -Path $testPath
         }
         It 'Should export add new properties to the imported JSON object' {
-            $testPath = "$projectRoot\Template.json"
+            $testPath = "TestDrive:\Template.json"
             $template = Import-Vaporshell -Path $testPath
             $template.AddMetadata(
                 (
@@ -178,7 +178,7 @@ Describe "Unit tests" {
             Export-Vaporshell -VaporshellTemplate $template -Path $testPath -Force
         }
         It 'Should show the correct types on each object' {
-            $testPath = "$projectRoot\Template.json"
+            $testPath = Join-Path $projectRoot "Template.json"
             $template = Import-Vaporshell -Path $testPath
             $template.AWSTemplateFormatVersion | Should BeOfType 'System.String'
             $template.Conditions | Should BeOfType 'System.Management.Automation.PSCustomObject'
@@ -190,8 +190,8 @@ Describe "Unit tests" {
         }
         if ($env:APPVEYOR) {
             It 'Should export the template to YAML using cfn-flip and validate using the AWS SDK from Export-Vaporshell' {
-                $testPath = "$projectRoot\Template.yaml"
-                $template = Import-Vaporshell -Path "$projectRoot\Template.json"
+                $testPath = "TestDrive:\Template.yaml"
+                $template = Import-Vaporshell -Path "TestDrive:\Template.json"
                 $valid = Export-Vaporshell -VaporshellTemplate $template -As YAML -Path $testPath -ValidateTemplate -Force
                 $valid | Should BeOfType 'Amazon.CloudFormation.Model.ValidateTemplateResponse'
             }
@@ -254,7 +254,7 @@ Describe "Unit tests" {
         }
         if ($env:APPVEYOR) {
             It 'Should function the same for imported templates' {
-                $path = (Resolve-Path "$projectRoot\Template.yaml").Path
+                $path = (Resolve-Path "TestDrive:\Template.yaml").Path
                 $t = Import-Vaporshell -Path $path
                 {$t.RemoveCondition("CreateProdResources","Fn::Transform","CreateTestResources")} | Should Not throw
                 {$t.RemoveMapping("RegionMap","RegionMap2")} | Should Not throw
