@@ -38,20 +38,20 @@ install:
 
 test_script:
   - pwsh: >-
-      Import-Module AppVeyor
+      Import-Module AppVeyor;
       if ($env:APPVEYOR_BUILD_WORKER_IMAGE -notlike '*2015*') {
-        $string = "Running PowerShell $($PSVersionTable.PSVersion.ToString()) tests on image '$env:APPVEYOR_BUILD_WORKER_IMAGE'"
-        Add-AppveyorMessage -Message $string -Category Information
-        Write-Host -ForegroundColor Magenta $string
-        . .\ci\init.ps1
+        $string = "Running PowerShell $($PSVersionTable.PSVersion.ToString()) tests on image '$env:APPVEYOR_BUILD_WORKER_IMAGE'";
+        Add-AppveyorMessage -Message $string -Category Information;
+        Write-Host -ForegroundColor Magenta $string;
+        . .\ci\init.ps1;
       } else {
-        $string = "Skipping PowerShell $($PSVersionTable.PSVersion.ToString()) tests on image '$env:APPVEYOR_BUILD_WORKER_IMAGE'"
-        Add-AppveyorMessage -Message $string -Category Warning
-        Write-Warning $string
+        $string = "Skipping PowerShell $($PSVersionTable.PSVersion.ToString()) tests on image '$env:APPVEYOR_BUILD_WORKER_IMAGE'";
+        Add-AppveyorMessage -Message $string -Category Warning;
+        Write-Warning $string;
       }
   - ps: >-
-      Import-Module AppVeyor
-      $string = "Running PowerShell $($PSVersionTable.PSVersion.ToString()) tests on image '$env:APPVEYOR_BUILD_WORKER_IMAGE'"
-      Add-AppveyorMessage -Message $string -Category Information
-      Write-Host -ForegroundColor Magenta $string
-      . .\ci\init.ps1
+      Import-Module AppVeyor;
+      $string = "Running PowerShell $($PSVersionTable.PSVersion.ToString()) tests on image '$env:APPVEYOR_BUILD_WORKER_IMAGE'";
+      Add-AppveyorMessage -Message $string -Category Information;
+      Write-Host -ForegroundColor Magenta $string;
+      . .\ci\init.ps1;
