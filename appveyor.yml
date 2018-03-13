@@ -22,6 +22,10 @@ only_commits:
 build: false
 
 init:
+  - cmd: |
+      set PYTHON=C:\Python27
+      set PYTHON_VERSION=2.7.8
+      set PYTHON_ARCH=32
   - ps: Write-Host $env:PYTHON $env:PYTHON_VERSION $env:PYTHON_ARCH
 
 install:
@@ -30,11 +34,7 @@ install:
       sudo -H pip install --upgrade pip
       sudo -H pip install --upgrade virtualenv
       sudo -H pip install cfn_flip
-  - cmd: |
-      set PYTHON=C:\Python27
-      set PYTHON_VERSION=2.7.8
-      set PYTHON_ARCH=32
-      %PYTHON%/Scripts/pip.exe install cfn_flip
+  - cmd: "%PYTHON%/Scripts/pip.exe install cfn_flip"
 
 test_script:
   - pwsh: >-
