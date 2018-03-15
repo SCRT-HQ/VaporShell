@@ -15,6 +15,9 @@ environment:
       PYTHON_VERSION: "2.7.8"
       PYTHON_ARCH: "32"
 
+matrix:
+  fast_finish: true
+
 skip_commits:
   message: /updated readme.*|update readme.*s|\[skip ci\]|\[ci skip\]/
 
@@ -37,13 +40,16 @@ test_script:
   - pwsh: >-
       if ($env:APPVEYOR_BUILD_WORKER_IMAGE -notlike '*2015*') {
         $string = "Running PowerShell $($PSVersionTable.PSVersion.ToString()) tests on image '$env:APPVEYOR_BUILD_WORKER_IMAGE'";
+        appveyor AddMessage $string;
         Write-Host -ForegroundColor Magenta $string;
         . .\ci\init.ps1;
       } else {
         $string = "Skipping PowerShell $($PSVersionTable.PSVersion.ToString()) tests on image '$env:APPVEYOR_BUILD_WORKER_IMAGE'";
+        appveyor AddMessage $string;
         Write-Warning $string;
       }
   - ps: >-
       $string = "Running PowerShell $($PSVersionTable.PSVersion.ToString()) tests on image '$env:APPVEYOR_BUILD_WORKER_IMAGE'";
+      appveyor AddMessage $string;
       Write-Host -ForegroundColor Magenta $string;
       . .\ci\init.ps1;
