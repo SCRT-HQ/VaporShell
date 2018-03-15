@@ -40,16 +40,13 @@ test_script:
   - pwsh: >-
       if ($env:APPVEYOR_BUILD_WORKER_IMAGE -notlike '*2015*') {
         $string = "Running PowerShell $($PSVersionTable.PSVersion.ToString()) tests on image '$env:APPVEYOR_BUILD_WORKER_IMAGE'";
-        appveyor AddMessage $string;
         Write-Host -ForegroundColor Magenta $string;
         . .\ci\init.ps1;
       } else {
         $string = "Skipping PowerShell $($PSVersionTable.PSVersion.ToString()) tests on image '$env:APPVEYOR_BUILD_WORKER_IMAGE'";
-        appveyor AddMessage $string;
         Write-Warning $string;
       }
   - ps: >-
       $string = "Running PowerShell $($PSVersionTable.PSVersion.ToString()) tests on image '$env:APPVEYOR_BUILD_WORKER_IMAGE'";
-      appveyor AddMessage $string;
       Write-Host -ForegroundColor Magenta $string;
       . .\ci\init.ps1;
