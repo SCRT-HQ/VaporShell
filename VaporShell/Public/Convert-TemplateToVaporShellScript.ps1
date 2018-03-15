@@ -14,11 +14,11 @@ function Convert-TemplateToVaporShellScript {
 
             $final = @('#region Initialize VaporShell template object')
             
-            $tempInit = '$template = Initialize-Vaporshell'
+            $command = '$template = Initialize-Vaporshell'
             if ($tempFull.Description) {
-                $tempInit += " -Description `"$($tempFull.Description)`""
+                $command += " -Description `"$($tempFull.Description)`""
             }
-            $final += $tempInit
+            $final += $command
             $final += "#endregion Initialize VaporShell template object"
             $final += ""
 

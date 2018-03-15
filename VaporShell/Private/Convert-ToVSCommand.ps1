@@ -23,8 +23,23 @@ function Convert-ToVSCommand {
         $varDict = . (Resolve-Path (Join-Path (Join-Path $script:VaporshellPath "bin") "PseudoParams.ps1")).Path
     }
     Process {
+        $parenth = 0
+        $final = ""
         foreach ($object in $InputObject) {
-
+            if ($object -is 'System.String') {
+                $final += '"'
+                foreach ($pseudo in $varDict.Keys) {
+                    if ($object -match $pseudo) {
+                        $object = $object.Replace("$pseudo","`$$($varDict[$pseudo])")
+                    }
+                }
+                $final += $object
+                $final += '"'
+            }
+            elseif ($object -is 'System.Management.Automation.PSCustomObject') {
+                $
+            }
         }
+        $final
     }
 }
