@@ -4,7 +4,10 @@ function Convert-ToVSCommand {
         [parameter(Mandatory = $true,Position = 0)]
         [Object]
         $Object,
-        [parameter(Mandatory = $false,Position = 0)]
+        [parameter(Mandatory = $true,Position = 1)]
+        [string]
+        $InputFunction,
+        [parameter(Mandatory = $false,Position = 2)]
         [string]
         $OutputType
     )
@@ -26,7 +29,6 @@ function Convert-ToVSCommand {
         $varDict = . (Resolve-Path (Join-Path (Join-Path $script:VaporshellPath "bin") "PseudoParams.ps1")).Path
     }
     Process {
-        $parenth = 0
         $final = ""
         if ($Object -is 'System.String' -and $Object -eq "True") {
             $final += '$true'
