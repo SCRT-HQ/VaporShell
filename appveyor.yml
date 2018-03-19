@@ -1,8 +1,10 @@
-clone_folder: C:\projects\Vaporshell
-
-image: Visual Studio 2017
+image: 
+  - Ubuntu
+  - Visual Studio 2015
+  - Visual Studio 2017
 
 environment:
+  APPVEYOR_YML_DISABLE_PS_LINUX: true
   NuGetApiKey:
     secure: Ocp1ATd6eZ0eY9+LfZ9Stp9/J1B5eFdBPMdaTRWVa4xh6/NV45ZBYtU5+eemrTWt
   Coveralls:
@@ -11,6 +13,9 @@ environment:
     - PYTHON: "C:\\Python27"
       PYTHON_VERSION: "2.7.8"
       PYTHON_ARCH: "32"
+
+matrix:
+  fast_finish: true
 
 skip_commits:
   message: /updated readme.*|update readme.*s|\[skip ci\]|\[ci skip\]/
@@ -21,11 +26,27 @@ only_commits:
 build: false
 
 init:
-  - "ECHO %PYTHON% %PYTHON_VERSION% %PYTHON_ARCH%"
+  - ps: Write-Host $env:PYTHON $env:PYTHON_VERSION $env:PYTHON_ARCH
 
 install:
-  - "%PYTHON%/Scripts/pip.exe install cfn_flip"
-
+  - sh: | 
+      sudo -H apt-get -y install python-pip python-dev build-essential
+      sudo -H pip install --upgrade pip
+      sudo -H pip install --upgrade virtualenv
+      sudo -H pip install --upgrade setuptools
+      sudo -H pip install cfn_flip
+  - cmd: "%PYTHON%/Scripts/pip.exe install cfn_flip"
 test_script:
-  - pwsh: . .\ci\init.ps1
-  - ps: . .\ci\init.ps1
+  - pwsh: >-
+      if ($env:APPVEYOR_BUILD_WORKER_IMAGE -notlike '*2015*') {
+        $string = "Running PowerShell $($PSVersionTable.PSVersion.ToString()) tests on image '$env:APPVEYOR_BUILD_WORKER_IMAGE'";
+        Write-Host -ForegroundColor Magenta $string;
+        . .\ci\init.ps1;
+      } else {
+        $string = "Skipping PowerShell $($PSVersionTable.PSVersion.ToString()) tests on image '$env:APPVEYOR_BUILD_WORKER_IMAGE'";
+        Write-Warning $string;
+      }
+  - ps: >-
+      $string = "Running PowerShell $($PSVersionTable.PSVersion.ToString()) tests on image '$env:APPVEYOR_BUILD_WORKER_IMAGE'";
+      Write-Host -ForegroundColor Magenta $string;
+      . .\ci\init.ps1;
