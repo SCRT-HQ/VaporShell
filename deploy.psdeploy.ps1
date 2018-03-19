@@ -19,7 +19,7 @@ if(
     $env:BHBuildSystem -ne 'Unknown' -and
     $env:BHBranchName -eq "master" -and
     $env:BHCommitMessage -match '!deploy' -and
-    $env:APPVEYOR_BUILD_WORKER_IMAGE -like '*2017*'
+    $env:APPVEYOR_BUILD_WORKER_IMAGE -eq 'Visual Studio 2017'
 )
 {
     Deploy Module {
