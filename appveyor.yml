@@ -1,7 +1,7 @@
-image: 
-  - Ubuntu
-  - Visual Studio 2015
-  - Visual Studio 2017
+#image: 
+#  - Ubuntu
+#  - Visual Studio 2015
+#  - Visual Studio 2017
 
 environment:
   APPVEYOR_YML_DISABLE_PS_LINUX: true
@@ -10,7 +10,18 @@ environment:
   Coveralls:
     secure: r4c1f5ysoobhV4DGF9zc18yl+buyh7LoV7kRr7aUFvrcjd7VFmj71EPN0Egs9gOQ
   matrix:
-    - PYTHON: "C:\\Python27"
+    - APPVEYOR_BUILD_WORKER_IMAGE: "Ubuntu"
+      RunTestsIn: "PowerShell Core"
+
+    - APPVEYOR_BUILD_WORKER_IMAGE: "Visual Studio 2017"
+      RunTestsIn: "PowerShell Core"
+      PYTHON: "C:\\Python27"
+      PYTHON_VERSION: "2.7.8"
+      PYTHON_ARCH: "32"
+
+    - APPVEYOR_BUILD_WORKER_IMAGE: "Visual Studio 2017"
+      RunTestsIn: "Windows PowerShell"
+      PYTHON: "C:\\Python27"
       PYTHON_VERSION: "2.7.8"
       PYTHON_ARCH: "32"
 
@@ -39,15 +50,14 @@ install:
 
 test_script:
   - pwsh: >-
-      if ($env:APPVEYOR_BUILD_WORKER_IMAGE -notlike '*2015*') {
-        $string = "Running PowerShell $($PSVersionTable.PSVersion.ToString()) tests on image '$env:APPVEYOR_BUILD_WORKER_IMAGE'";
+      if ($env:RunTestsIn -eq 'PowerShell Core') {
+        $string = "Running $(env:RunTestsIn) tests on image '$env:APPVEYOR_BUILD_WORKER_IMAGE'";
         Write-Host -ForegroundColor Magenta $string;
         . .\ci\init.ps1;
-      } else {
-        $string = "Skipping PowerShell $($PSVersionTable.PSVersion.ToString()) tests on image '$env:APPVEYOR_BUILD_WORKER_IMAGE'";
-        Write-Warning $string;
       }
   - ps: >-
-      $string = "Running PowerShell $($PSVersionTable.PSVersion.ToString()) tests on image '$env:APPVEYOR_BUILD_WORKER_IMAGE'";
-      Write-Host -ForegroundColor Magenta $string;
-      . .\ci\init.ps1;
+      if ($env:RunTestsIn -eq 'Windows PowerShell') {
+        $string = "Running $(env:RunTestsIn) tests on image '$env:APPVEYOR_BUILD_WORKER_IMAGE'";
+        Write-Host -ForegroundColor Magenta $string;
+        . .\ci\init.ps1;
+      }
