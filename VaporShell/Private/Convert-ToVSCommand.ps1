@@ -1,9 +1,12 @@
 function Convert-ToVSCommand {
     Param
     (
-        [parameter(Mandatory = $true,Position = 0,ValueFromPipeline = $true)]
-        [Object[]]
-        $InputObject
+        [parameter(Mandatory = $true,Position = 0)]
+        [Object]
+        $Object,
+        [parameter(Mandatory = $false,Position = 0)]
+        [string]
+        $OutputType
     )
     Begin {
         $funcDict = @{
@@ -25,31 +28,29 @@ function Convert-ToVSCommand {
     Process {
         $parenth = 0
         $final = ""
-        foreach ($object in $InputObject) {
-            if ($object -is 'System.String' -and $object -eq "True") {
-                $final += '$true'
-            }
-            elseif ($object -is 'System.String' -and $object -eq "False") {
-                $final += '$true'
-            }
-            elseif ($object -is 'System.String') {
-                $final += '"'
-                foreach ($pseudo in $varDict.Keys) {
-                    if ($object -match $pseudo) {
-                        $object = $object.Replace("$pseudo","`$$($varDict[$pseudo])")
-                    }
+        if ($Object -is 'System.String' -and $Object -eq "True") {
+            $final += '$true'
+        }
+        elseif ($Object -is 'System.String' -and $Object -eq "False") {
+            $final += '$true'
+        }
+        elseif ($Object -is 'System.String') {
+            $final += '"'
+            foreach ($pseudo in $varDict.Keys) {
+                if ($Object -match $pseudo) {
+                    $Object = $Object.Replace("$pseudo","`$$($varDict[$pseudo])")
                 }
-                $final += $object
-                $final += '"'
             }
-            elseif ($object -is 'System.Management.Automation.PSCustomObject') {
-                $final += "("
-                if ($typeDict.Keys -contains $object.PSObject.Properties.Name) {
+            $final += $Object
+            $final += '"'
+        }
+        elseif ($Object -is 'System.Management.Automation.PSCustomObject') {
+            $final += "("
+            if ($typeDict.Keys -contains $Object.PSObject.Properties.Name) {
 
-                }
-                elseif ($object.PSObject.Properties.Name) {}
-                $final += ")"
             }
+            elseif ($Object.PSObject.Properties.Name) {}
+            $final += ")"
         }
         $final
     }

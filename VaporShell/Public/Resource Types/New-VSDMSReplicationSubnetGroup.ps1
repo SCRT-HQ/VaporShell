@@ -199,7 +199,7 @@ function New-VSDMSReplicationSubnetGroup {
         }
     }
     End {
-        $obj = New-VaporResource @ResourceParams
+        $obj = New-VaporResource @ResourceParams -Verbose:$false
         $obj | Add-ObjectDetail -TypeName 'Vaporshell.Resource.DMS.ReplicationSubnetGroup'
         Write-Verbose "Resulting JSON from $($MyInvocation.MyCommand): `n`n$(@{$obj.LogicalId = $obj.Props} | ConvertTo-Json -Depth 5)`n"
     }

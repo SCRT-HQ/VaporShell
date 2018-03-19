@@ -279,7 +279,7 @@ function New-VSEC2Route {
         }
     }
     End {
-        $obj = New-VaporResource @ResourceParams
+        $obj = New-VaporResource @ResourceParams -Verbose:$false
         $obj | Add-ObjectDetail -TypeName 'Vaporshell.Resource.EC2.Route'
         Write-Verbose "Resulting JSON from $($MyInvocation.MyCommand): `n`n$(@{$obj.LogicalId = $obj.Props} | ConvertTo-Json -Depth 5)`n"
     }
