@@ -13,46 +13,47 @@
         The logical ID must be alphanumeric (A-Za-z0-9) and unique within the template. Use the logical name to reference the resource in other parts of the template. For example, if you want to map an Amazon Elastic Block Store volume to an Amazon EC2 instance, you reference the logical IDs to associate the block stores with the instance.
 
     .PARAMETER Category
-		Required: True    
 		Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-codepipeline-customactiontype.html#cfn-codepipeline-customactiontype-category    
 		PrimitiveType: String    
-		UpdateType: Immutable    
-
-    .PARAMETER InputArtifactDetails
-		Type: ArtifactDetails    
 		Required: True    
-		Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-codepipeline-customactiontype.html#cfn-codepipeline-customactiontype-inputartifactdetails    
-		UpdateType: Immutable    
-
-    .PARAMETER Version
-		Required: False    
-		Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-codepipeline-customactiontype.html#cfn-codepipeline-customactiontype-version    
-		PrimitiveType: String    
-		UpdateType: Immutable    
-
-    .PARAMETER OutputArtifactDetails
-		Type: ArtifactDetails    
-		Required: True    
-		Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-codepipeline-customactiontype.html#cfn-codepipeline-customactiontype-outputartifactdetails    
 		UpdateType: Immutable    
 
     .PARAMETER ConfigurationProperties
-		Type: List    
-		Required: False    
 		Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-codepipeline-customactiontype.html#cfn-codepipeline-customactiontype-configurationproperties    
+		DuplicatesAllowed: False    
 		ItemType: ConfigurationProperties    
+		Required: False    
+		Type: List    
 		UpdateType: Immutable    
 
-    .PARAMETER Settings
-		Type: Settings    
-		Required: False    
-		Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-codepipeline-customactiontype.html#cfn-codepipeline-customactiontype-settings    
+    .PARAMETER InputArtifactDetails
+		Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-codepipeline-customactiontype.html#cfn-codepipeline-customactiontype-inputartifactdetails    
+		Required: True    
+		Type: ArtifactDetails    
+		UpdateType: Immutable    
+
+    .PARAMETER OutputArtifactDetails
+		Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-codepipeline-customactiontype.html#cfn-codepipeline-customactiontype-outputartifactdetails    
+		Required: True    
+		Type: ArtifactDetails    
 		UpdateType: Immutable    
 
     .PARAMETER Provider
-		Required: True    
 		Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-codepipeline-customactiontype.html#cfn-codepipeline-customactiontype-provider    
 		PrimitiveType: String    
+		Required: True    
+		UpdateType: Immutable    
+
+    .PARAMETER Settings
+		Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-codepipeline-customactiontype.html#cfn-codepipeline-customactiontype-settings    
+		Required: False    
+		Type: Settings    
+		UpdateType: Immutable    
+
+    .PARAMETER Version
+		Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-codepipeline-customactiontype.html#cfn-codepipeline-customactiontype-version    
+		PrimitiveType: String    
+		Required: False    
 		UpdateType: Immutable    
 
     .PARAMETER DeletionPolicy
@@ -113,21 +114,6 @@
                 }
             })]
         $Category,
-        [parameter(Mandatory = $true)]
-        $InputArtifactDetails,
-        [parameter(Mandatory = $false)]
-        [ValidateScript( {
-                $allowedTypes = "System.String","Vaporshell.Function"
-                if ([string]$($_.PSTypeNames) -match "($(($allowedTypes|ForEach-Object{[RegEx]::Escape($_)}) -join '|'))") {
-                    $true
-                }
-                else {
-                    $PSCmdlet.ThrowTerminatingError((New-VSError -String "This parameter only accepts the following types: $($allowedTypes -join ", "). The current types of the value are: $($_.PSTypeNames -join ", ")."))
-                }
-            })]
-        $Version,
-        [parameter(Mandatory = $true)]
-        $OutputArtifactDetails,
         [parameter(Mandatory = $false)]
         [ValidateScript( {
                 $allowedTypes = "Vaporshell.Resource.CodePipeline.CustomActionType.ConfigurationProperties"
@@ -139,8 +125,10 @@
                 }
             })]
         $ConfigurationProperties,
-        [parameter(Mandatory = $false)]
-        $Settings,
+        [parameter(Mandatory = $true)]
+        $InputArtifactDetails,
+        [parameter(Mandatory = $true)]
+        $OutputArtifactDetails,
         [parameter(Mandatory = $true)]
         [ValidateScript( {
                 $allowedTypes = "System.String","Vaporshell.Function"
@@ -152,6 +140,19 @@
                 }
             })]
         $Provider,
+        [parameter(Mandatory = $false)]
+        $Settings,
+        [parameter(Mandatory = $false)]
+        [ValidateScript( {
+                $allowedTypes = "System.String","Vaporshell.Function"
+                if ([string]$($_.PSTypeNames) -match "($(($allowedTypes|ForEach-Object{[RegEx]::Escape($_)}) -join '|'))") {
+                    $true
+                }
+                else {
+                    $PSCmdlet.ThrowTerminatingError((New-VSError -String "This parameter only accepts the following types: $($allowedTypes -join ", "). The current types of the value are: $($_.PSTypeNames -join ", ")."))
+                }
+            })]
+        $Version,
         [ValidateSet("Delete","Retain","Snapshot")]
         [System.String]
         $DeletionPolicy,
@@ -188,9 +189,10 @@
             LogicalId = $LogicalId
             Type = "AWS::CodePipeline::CustomActionType"
         }
+        $commonParams = @('Verbose','Debug','ErrorAction','WarningAction','InformationAction','ErrorVariable','WarningVariable','InformationVariable','OutVariable','OutBuffer','PipelineVariable')
     }
     Process {
-        foreach ($key in $PSBoundParameters.Keys) {
+        foreach ($key in $PSBoundParameters.Keys | Where-Object {$commonParams -notcontains $_}) {
             switch ($key) {
                 LogicalId {}
                 DeletionPolicy {

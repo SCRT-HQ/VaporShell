@@ -191,9 +191,10 @@
             LogicalId = $LogicalId
             Type = "AWS::DMS::EventSubscription"
         }
+        $commonParams = @('Verbose','Debug','ErrorAction','WarningAction','InformationAction','ErrorVariable','WarningVariable','InformationVariable','OutVariable','OutBuffer','PipelineVariable')
     }
     Process {
-        foreach ($key in $PSBoundParameters.Keys) {
+        foreach ($key in $PSBoundParameters.Keys | Where-Object {$commonParams -notcontains $_}) {
             switch ($key) {
                 LogicalId {}
                 DeletionPolicy {
