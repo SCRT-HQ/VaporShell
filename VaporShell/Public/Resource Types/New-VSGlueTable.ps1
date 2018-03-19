@@ -1,4 +1,4 @@
-﻿function New-VSGlueTable {
+function New-VSGlueTable {
     <#
     .SYNOPSIS
         Adds an AWS::Glue::Table resource to the template

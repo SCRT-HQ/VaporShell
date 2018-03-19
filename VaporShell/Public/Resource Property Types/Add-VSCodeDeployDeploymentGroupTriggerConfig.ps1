@@ -1,4 +1,4 @@
-﻿function Add-VSCodeDeployDeploymentGroupTriggerConfig {
+function Add-VSCodeDeployDeploymentGroupTriggerConfig {
     <#
     .SYNOPSIS
         Adds an AWS::CodeDeploy::DeploymentGroup.TriggerConfig resource property to the template

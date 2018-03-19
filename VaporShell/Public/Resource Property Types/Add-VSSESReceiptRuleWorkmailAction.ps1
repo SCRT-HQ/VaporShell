@@ -1,4 +1,4 @@
-﻿function Add-VSSESReceiptRuleWorkmailAction {
+function Add-VSSESReceiptRuleWorkmailAction {
     <#
     .SYNOPSIS
         Adds an AWS::SES::ReceiptRule.WorkmailAction resource property to the template

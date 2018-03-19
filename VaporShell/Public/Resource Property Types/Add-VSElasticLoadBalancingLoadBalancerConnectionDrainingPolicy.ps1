@@ -1,4 +1,4 @@
-﻿function Add-VSElasticLoadBalancingLoadBalancerConnectionDrainingPolicy {
+function Add-VSElasticLoadBalancingLoadBalancerConnectionDrainingPolicy {
     <#
     .SYNOPSIS
         Adds an AWS::ElasticLoadBalancing::LoadBalancer.ConnectionDrainingPolicy resource property to the template

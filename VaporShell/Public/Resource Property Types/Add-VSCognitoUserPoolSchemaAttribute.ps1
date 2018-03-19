@@ -1,4 +1,4 @@
-﻿function Add-VSCognitoUserPoolSchemaAttribute {
+function Add-VSCognitoUserPoolSchemaAttribute {
     <#
     .SYNOPSIS
         Adds an AWS::Cognito::UserPool.SchemaAttribute resource property to the template

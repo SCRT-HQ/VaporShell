@@ -1,4 +1,4 @@
-﻿function New-VSIoTCertificate {
+function New-VSIoTCertificate {
     <#
     .SYNOPSIS
         Adds an AWS::IoT::Certificate resource to the template

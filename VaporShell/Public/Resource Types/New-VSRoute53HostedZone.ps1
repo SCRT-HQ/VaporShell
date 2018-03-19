@@ -1,4 +1,4 @@
-﻿function New-VSRoute53HostedZone {
+function New-VSRoute53HostedZone {
     <#
     .SYNOPSIS
         Adds an AWS::Route53::HostedZone resource to the template

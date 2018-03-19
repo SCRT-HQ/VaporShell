@@ -1,4 +1,4 @@
-﻿function New-VSEC2VPNGatewayRoutePropagation {
+function New-VSEC2VPNGatewayRoutePropagation {
     <#
     .SYNOPSIS
         Adds an AWS::EC2::VPNGatewayRoutePropagation resource to the template

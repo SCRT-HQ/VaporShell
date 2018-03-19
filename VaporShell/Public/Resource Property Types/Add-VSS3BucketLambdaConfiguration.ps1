@@ -1,4 +1,4 @@
-﻿function Add-VSS3BucketLambdaConfiguration {
+function Add-VSS3BucketLambdaConfiguration {
     <#
     .SYNOPSIS
         Adds an AWS::S3::Bucket.LambdaConfiguration resource property to the template

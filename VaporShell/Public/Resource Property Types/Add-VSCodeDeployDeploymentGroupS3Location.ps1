@@ -1,4 +1,4 @@
-﻿function Add-VSCodeDeployDeploymentGroupS3Location {
+function Add-VSCodeDeployDeploymentGroupS3Location {
     <#
     .SYNOPSIS
         Adds an AWS::CodeDeploy::DeploymentGroup.S3Location resource property to the template

@@ -1,4 +1,4 @@
-﻿function Add-VSECSTaskDefinitionContainerDefinition {
+function Add-VSECSTaskDefinitionContainerDefinition {
     <#
     .SYNOPSIS
         Adds an AWS::ECS::TaskDefinition.ContainerDefinition resource property to the template

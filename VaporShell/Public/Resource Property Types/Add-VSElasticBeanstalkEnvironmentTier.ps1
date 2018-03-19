@@ -1,4 +1,4 @@
-﻿function Add-VSElasticBeanstalkEnvironmentTier {
+function Add-VSElasticBeanstalkEnvironmentTier {
     <#
     .SYNOPSIS
         Adds an AWS::ElasticBeanstalk::Environment.Tier resource property to the template

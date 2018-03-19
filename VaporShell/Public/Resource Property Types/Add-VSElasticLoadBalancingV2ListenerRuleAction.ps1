@@ -1,4 +1,4 @@
-﻿function Add-VSElasticLoadBalancingV2ListenerRuleAction {
+function Add-VSElasticLoadBalancingV2ListenerRuleAction {
     <#
     .SYNOPSIS
         Adds an AWS::ElasticLoadBalancingV2::ListenerRule.Action resource property to the template

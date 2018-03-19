@@ -1,4 +1,4 @@
-﻿function Add-VSSSMPatchBaselinePatchFilter {
+function Add-VSSSMPatchBaselinePatchFilter {
     <#
     .SYNOPSIS
         Adds an AWS::SSM::PatchBaseline.PatchFilter resource property to the template

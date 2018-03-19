@@ -1,4 +1,4 @@
-﻿function Add-VSWAFRegionalSizeConstraintSetFieldToMatch {
+function Add-VSWAFRegionalSizeConstraintSetFieldToMatch {
     <#
     .SYNOPSIS
         Adds an AWS::WAFRegional::SizeConstraintSet.FieldToMatch resource property to the template

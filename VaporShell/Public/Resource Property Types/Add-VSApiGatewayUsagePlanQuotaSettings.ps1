@@ -1,4 +1,4 @@
-﻿function Add-VSApiGatewayUsagePlanQuotaSettings {
+function Add-VSApiGatewayUsagePlanQuotaSettings {
     <#
     .SYNOPSIS
         Adds an AWS::ApiGateway::UsagePlan.QuotaSettings resource property to the template

@@ -1,4 +1,4 @@
-﻿function Add-VSBatchJobDefinitionVolumes {
+function Add-VSBatchJobDefinitionVolumes {
     <#
     .SYNOPSIS
         Adds an AWS::Batch::JobDefinition.Volumes resource property to the template

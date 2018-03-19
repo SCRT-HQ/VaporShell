@@ -1,4 +1,4 @@
-﻿function New-VSEC2FlowLog {
+function New-VSEC2FlowLog {
     <#
     .SYNOPSIS
         Adds an AWS::EC2::FlowLog resource to the template

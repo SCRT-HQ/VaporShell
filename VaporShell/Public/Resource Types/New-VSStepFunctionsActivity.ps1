@@ -1,4 +1,4 @@
-﻿function New-VSStepFunctionsActivity {
+function New-VSStepFunctionsActivity {
     <#
     .SYNOPSIS
         Adds an AWS::StepFunctions::Activity resource to the template

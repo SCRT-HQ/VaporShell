@@ -1,4 +1,4 @@
-﻿function Add-VSS3BucketStorageClassAnalysis {
+function Add-VSS3BucketStorageClassAnalysis {
     <#
     .SYNOPSIS
         Adds an AWS::S3::Bucket.StorageClassAnalysis resource property to the template

@@ -1,4 +1,4 @@
-﻿function Add-VSECSTaskDefinitionDevice {
+function Add-VSECSTaskDefinitionDevice {
     <#
     .SYNOPSIS
         Adds an AWS::ECS::TaskDefinition.Device resource property to the template

@@ -1,4 +1,4 @@
-﻿function New-VSLogsLogStream {
+function New-VSLogsLogStream {
     <#
     .SYNOPSIS
         Adds an AWS::Logs::LogStream resource to the template

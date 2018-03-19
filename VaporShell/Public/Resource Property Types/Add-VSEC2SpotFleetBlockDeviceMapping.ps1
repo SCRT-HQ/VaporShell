@@ -1,4 +1,4 @@
-﻿function Add-VSEC2SpotFleetBlockDeviceMapping {
+function Add-VSEC2SpotFleetBlockDeviceMapping {
     <#
     .SYNOPSIS
         Adds an AWS::EC2::SpotFleet.BlockDeviceMapping resource property to the template

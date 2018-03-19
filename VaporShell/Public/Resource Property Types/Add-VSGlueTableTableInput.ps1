@@ -1,4 +1,4 @@
-﻿function Add-VSGlueTableTableInput {
+function Add-VSGlueTableTableInput {
     <#
     .SYNOPSIS
         Adds an AWS::Glue::Table.TableInput resource property to the template

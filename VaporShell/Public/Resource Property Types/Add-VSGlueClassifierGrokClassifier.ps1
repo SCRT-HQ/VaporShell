@@ -1,4 +1,4 @@
-﻿function Add-VSGlueClassifierGrokClassifier {
+function Add-VSGlueClassifierGrokClassifier {
     <#
     .SYNOPSIS
         Adds an AWS::Glue::Classifier.GrokClassifier resource property to the template

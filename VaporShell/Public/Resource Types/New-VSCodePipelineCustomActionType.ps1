@@ -1,4 +1,4 @@
-﻿function New-VSCodePipelineCustomActionType {
+function New-VSCodePipelineCustomActionType {
     <#
     .SYNOPSIS
         Adds an AWS::CodePipeline::CustomActionType resource to the template

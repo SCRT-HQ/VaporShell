@@ -1,4 +1,4 @@
-﻿function Add-VSIoTTopicRuleS3Action {
+function Add-VSIoTTopicRuleS3Action {
     <#
     .SYNOPSIS
         Adds an AWS::IoT::TopicRule.S3Action resource property to the template

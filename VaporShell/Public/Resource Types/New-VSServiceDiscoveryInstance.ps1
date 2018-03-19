@@ -1,4 +1,4 @@
-﻿function New-VSServiceDiscoveryInstance {
+function New-VSServiceDiscoveryInstance {
     <#
     .SYNOPSIS
         Adds an AWS::ServiceDiscovery::Instance resource to the template

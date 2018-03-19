@@ -1,4 +1,4 @@
-﻿function Add-VSS3BucketWebsiteConfiguration {
+function Add-VSS3BucketWebsiteConfiguration {
     <#
     .SYNOPSIS
         Adds an AWS::S3::Bucket.WebsiteConfiguration resource property to the template

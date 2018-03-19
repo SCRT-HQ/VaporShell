@@ -1,4 +1,4 @@
-﻿function Add-VSAutoScalingAutoScalingGroupNotificationConfiguration {
+function Add-VSAutoScalingAutoScalingGroupNotificationConfiguration {
     <#
     .SYNOPSIS
         Adds an AWS::AutoScaling::AutoScalingGroup.NotificationConfiguration resource property to the template

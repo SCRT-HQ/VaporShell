@@ -1,4 +1,4 @@
-﻿function Add-VSSESConfigurationSetEventDestinationEventDestination {
+function Add-VSSESConfigurationSetEventDestinationEventDestination {
     <#
     .SYNOPSIS
         Adds an AWS::SES::ConfigurationSetEventDestination.EventDestination resource property to the template

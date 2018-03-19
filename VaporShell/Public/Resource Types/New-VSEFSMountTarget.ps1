@@ -1,4 +1,4 @@
-﻿function New-VSEFSMountTarget {
+function New-VSEFSMountTarget {
     <#
     .SYNOPSIS
         Adds an AWS::EFS::MountTarget resource to the template

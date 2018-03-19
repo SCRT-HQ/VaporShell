@@ -1,4 +1,4 @@
-﻿function New-VSOpsWorksUserProfile {
+function New-VSOpsWorksUserProfile {
     <#
     .SYNOPSIS
         Adds an AWS::OpsWorks::UserProfile resource to the template

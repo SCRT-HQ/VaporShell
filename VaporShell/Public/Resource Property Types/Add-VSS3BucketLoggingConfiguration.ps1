@@ -1,4 +1,4 @@
-﻿function Add-VSS3BucketLoggingConfiguration {
+function Add-VSS3BucketLoggingConfiguration {
     <#
     .SYNOPSIS
         Adds an AWS::S3::Bucket.LoggingConfiguration resource property to the template

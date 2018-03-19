@@ -1,4 +1,4 @@
-﻿function Add-VSKinesisFirehoseDeliveryStreamElasticsearchDestinationConfiguration {
+function Add-VSKinesisFirehoseDeliveryStreamElasticsearchDestinationConfiguration {
     <#
     .SYNOPSIS
         Adds an AWS::KinesisFirehose::DeliveryStream.ElasticsearchDestinationConfiguration resource property to the template

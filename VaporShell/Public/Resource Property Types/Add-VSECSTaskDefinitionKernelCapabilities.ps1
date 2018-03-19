@@ -1,4 +1,4 @@
-﻿function Add-VSECSTaskDefinitionKernelCapabilities {
+function Add-VSECSTaskDefinitionKernelCapabilities {
     <#
     .SYNOPSIS
         Adds an AWS::ECS::TaskDefinition.KernelCapabilities resource property to the template

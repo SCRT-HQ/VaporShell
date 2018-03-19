@@ -1,4 +1,4 @@
-﻿function Add-VSGameLiftFleetIpPermission {
+function Add-VSGameLiftFleetIpPermission {
     <#
     .SYNOPSIS
         Adds an AWS::GameLift::Fleet.IpPermission resource property to the template

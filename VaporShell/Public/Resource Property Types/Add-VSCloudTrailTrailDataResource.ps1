@@ -1,4 +1,4 @@
-﻿function Add-VSCloudTrailTrailDataResource {
+function Add-VSCloudTrailTrailDataResource {
     <#
     .SYNOPSIS
         Adds an AWS::CloudTrail::Trail.DataResource resource property to the template

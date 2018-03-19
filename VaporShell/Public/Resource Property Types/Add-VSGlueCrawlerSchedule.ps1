@@ -1,4 +1,4 @@
-﻿function Add-VSGlueCrawlerSchedule {
+function Add-VSGlueCrawlerSchedule {
     <#
     .SYNOPSIS
         Adds an AWS::Glue::Crawler.Schedule resource property to the template

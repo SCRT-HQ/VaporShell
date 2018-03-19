@@ -1,4 +1,4 @@
-﻿function Add-VSOpsWorksStackRdsDbInstance {
+function Add-VSOpsWorksStackRdsDbInstance {
     <#
     .SYNOPSIS
         Adds an AWS::OpsWorks::Stack.RdsDbInstance resource property to the template

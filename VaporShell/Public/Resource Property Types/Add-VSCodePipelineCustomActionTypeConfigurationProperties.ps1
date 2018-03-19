@@ -1,4 +1,4 @@
-﻿function Add-VSCodePipelineCustomActionTypeConfigurationProperties {
+function Add-VSCodePipelineCustomActionTypeConfigurationProperties {
     <#
     .SYNOPSIS
         Adds an AWS::CodePipeline::CustomActionType.ConfigurationProperties resource property to the template

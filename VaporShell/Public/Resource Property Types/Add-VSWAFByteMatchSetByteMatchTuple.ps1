@@ -1,4 +1,4 @@
-﻿function Add-VSWAFByteMatchSetByteMatchTuple {
+function Add-VSWAFByteMatchSetByteMatchTuple {
     <#
     .SYNOPSIS
         Adds an AWS::WAF::ByteMatchSet.ByteMatchTuple resource property to the template

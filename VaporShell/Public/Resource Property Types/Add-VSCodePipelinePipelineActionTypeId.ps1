@@ -1,4 +1,4 @@
-﻿function Add-VSCodePipelinePipelineActionTypeId {
+function Add-VSCodePipelinePipelineActionTypeId {
     <#
     .SYNOPSIS
         Adds an AWS::CodePipeline::Pipeline.ActionTypeId resource property to the template

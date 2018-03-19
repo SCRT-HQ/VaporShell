@@ -1,4 +1,4 @@
-﻿function New-VSElastiCacheSecurityGroupIngress {
+function New-VSElastiCacheSecurityGroupIngress {
     <#
     .SYNOPSIS
         Adds an AWS::ElastiCache::SecurityGroupIngress resource to the template

@@ -1,4 +1,4 @@
-﻿function Add-VSKinesisFirehoseDeliveryStreamCopyCommand {
+function Add-VSKinesisFirehoseDeliveryStreamCopyCommand {
     <#
     .SYNOPSIS
         Adds an AWS::KinesisFirehose::DeliveryStream.CopyCommand resource property to the template

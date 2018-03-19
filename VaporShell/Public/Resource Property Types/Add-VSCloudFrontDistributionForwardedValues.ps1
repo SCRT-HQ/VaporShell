@@ -1,4 +1,4 @@
-﻿function Add-VSCloudFrontDistributionForwardedValues {
+function Add-VSCloudFrontDistributionForwardedValues {
     <#
     .SYNOPSIS
         Adds an AWS::CloudFront::Distribution.ForwardedValues resource property to the template

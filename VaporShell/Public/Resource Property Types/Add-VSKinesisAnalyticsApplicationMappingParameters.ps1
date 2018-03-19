@@ -1,4 +1,4 @@
-﻿function Add-VSKinesisAnalyticsApplicationMappingParameters {
+function Add-VSKinesisAnalyticsApplicationMappingParameters {
     <#
     .SYNOPSIS
         Adds an AWS::KinesisAnalytics::Application.MappingParameters resource property to the template

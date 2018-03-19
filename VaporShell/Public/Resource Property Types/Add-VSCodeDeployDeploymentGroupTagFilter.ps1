@@ -1,4 +1,4 @@
-﻿function Add-VSCodeDeployDeploymentGroupTagFilter {
+function Add-VSCodeDeployDeploymentGroupTagFilter {
     <#
     .SYNOPSIS
         Adds an AWS::CodeDeploy::DeploymentGroup.TagFilter resource property to the template

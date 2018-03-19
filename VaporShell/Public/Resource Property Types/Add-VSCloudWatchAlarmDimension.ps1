@@ -1,4 +1,4 @@
-﻿function Add-VSCloudWatchAlarmDimension {
+function Add-VSCloudWatchAlarmDimension {
     <#
     .SYNOPSIS
         Adds an AWS::CloudWatch::Alarm.Dimension resource property to the template

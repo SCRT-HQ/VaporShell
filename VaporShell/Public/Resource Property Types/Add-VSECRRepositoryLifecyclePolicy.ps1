@@ -1,4 +1,4 @@
-﻿function Add-VSECRRepositoryLifecyclePolicy {
+function Add-VSECRRepositoryLifecyclePolicy {
     <#
     .SYNOPSIS
         Adds an AWS::ECR::Repository.LifecyclePolicy resource property to the template

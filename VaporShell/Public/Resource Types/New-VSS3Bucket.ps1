@@ -1,4 +1,4 @@
-﻿function New-VSS3Bucket {
+function New-VSS3Bucket {
     <#
     .SYNOPSIS
         Adds an AWS::S3::Bucket resource to the template

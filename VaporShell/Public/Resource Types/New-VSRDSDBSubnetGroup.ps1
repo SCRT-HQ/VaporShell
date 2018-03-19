@@ -1,4 +1,4 @@
-﻿function New-VSRDSDBSubnetGroup {
+function New-VSRDSDBSubnetGroup {
     <#
     .SYNOPSIS
         Adds an AWS::RDS::DBSubnetGroup resource to the template

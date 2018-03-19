@@ -1,4 +1,4 @@
-﻿function Add-VSGlueTriggerPredicate {
+function Add-VSGlueTriggerPredicate {
     <#
     .SYNOPSIS
         Adds an AWS::Glue::Trigger.Predicate resource property to the template

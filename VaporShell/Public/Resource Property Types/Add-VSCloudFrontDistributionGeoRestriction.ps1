@@ -1,4 +1,4 @@
-﻿function Add-VSCloudFrontDistributionGeoRestriction {
+function Add-VSCloudFrontDistributionGeoRestriction {
     <#
     .SYNOPSIS
         Adds an AWS::CloudFront::Distribution.GeoRestriction resource property to the template

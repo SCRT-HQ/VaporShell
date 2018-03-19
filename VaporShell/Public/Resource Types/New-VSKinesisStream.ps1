@@ -1,4 +1,4 @@
-﻿function New-VSKinesisStream {
+function New-VSKinesisStream {
     <#
     .SYNOPSIS
         Adds an AWS::Kinesis::Stream resource to the template

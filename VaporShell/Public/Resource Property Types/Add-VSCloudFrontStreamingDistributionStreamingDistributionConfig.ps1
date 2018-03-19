@@ -1,4 +1,4 @@
-﻿function Add-VSCloudFrontStreamingDistributionStreamingDistributionConfig {
+function Add-VSCloudFrontStreamingDistributionStreamingDistributionConfig {
     <#
     .SYNOPSIS
         Adds an AWS::CloudFront::StreamingDistribution.StreamingDistributionConfig resource property to the template

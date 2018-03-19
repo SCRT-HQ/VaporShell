@@ -1,4 +1,4 @@
-﻿function Add-VSBatchJobQueueComputeEnvironmentOrder {
+function Add-VSBatchJobQueueComputeEnvironmentOrder {
     <#
     .SYNOPSIS
         Adds an AWS::Batch::JobQueue.ComputeEnvironmentOrder resource property to the template

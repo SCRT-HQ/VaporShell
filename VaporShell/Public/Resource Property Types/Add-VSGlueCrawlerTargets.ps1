@@ -1,4 +1,4 @@
-﻿function Add-VSGlueCrawlerTargets {
+function Add-VSGlueCrawlerTargets {
     <#
     .SYNOPSIS
         Adds an AWS::Glue::Crawler.Targets resource property to the template

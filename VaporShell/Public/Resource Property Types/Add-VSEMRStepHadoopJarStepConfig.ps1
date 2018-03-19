@@ -1,4 +1,4 @@
-﻿function Add-VSEMRStepHadoopJarStepConfig {
+function Add-VSEMRStepHadoopJarStepConfig {
     <#
     .SYNOPSIS
         Adds an AWS::EMR::Step.HadoopJarStepConfig resource property to the template

@@ -1,4 +1,4 @@
-﻿function Add-VSEC2InstanceAssociationParameter {
+function Add-VSEC2InstanceAssociationParameter {
     <#
     .SYNOPSIS
         Adds an AWS::EC2::Instance.AssociationParameter resource property to the template

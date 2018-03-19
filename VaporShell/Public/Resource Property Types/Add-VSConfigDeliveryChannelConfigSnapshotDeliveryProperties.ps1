@@ -1,4 +1,4 @@
-﻿function Add-VSConfigDeliveryChannelConfigSnapshotDeliveryProperties {
+function Add-VSConfigDeliveryChannelConfigSnapshotDeliveryProperties {
     <#
     .SYNOPSIS
         Adds an AWS::Config::DeliveryChannel.ConfigSnapshotDeliveryProperties resource property to the template

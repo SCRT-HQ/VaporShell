@@ -1,4 +1,4 @@
-﻿function New-VSEC2VPCDHCPOptionsAssociation {
+function New-VSEC2VPCDHCPOptionsAssociation {
     <#
     .SYNOPSIS
         Adds an AWS::EC2::VPCDHCPOptionsAssociation resource to the template

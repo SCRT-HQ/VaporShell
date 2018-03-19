@@ -1,4 +1,4 @@
-﻿function New-VSGlueJob {
+function New-VSGlueJob {
     <#
     .SYNOPSIS
         Adds an AWS::Glue::Job resource to the template

@@ -1,4 +1,4 @@
-﻿function Add-VSWAFWebACLActivatedRule {
+function Add-VSWAFWebACLActivatedRule {
     <#
     .SYNOPSIS
         Adds an AWS::WAF::WebACL.ActivatedRule resource property to the template

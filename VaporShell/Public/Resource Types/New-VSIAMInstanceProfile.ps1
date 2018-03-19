@@ -1,4 +1,4 @@
-﻿function New-VSIAMInstanceProfile {
+function New-VSIAMInstanceProfile {
     <#
     .SYNOPSIS
         Adds an AWS::IAM::InstanceProfile resource to the template

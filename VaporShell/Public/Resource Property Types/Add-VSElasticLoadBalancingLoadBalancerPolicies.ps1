@@ -1,4 +1,4 @@
-﻿function Add-VSElasticLoadBalancingLoadBalancerPolicies {
+function Add-VSElasticLoadBalancingLoadBalancerPolicies {
     <#
     .SYNOPSIS
         Adds an AWS::ElasticLoadBalancing::LoadBalancer.Policies resource property to the template

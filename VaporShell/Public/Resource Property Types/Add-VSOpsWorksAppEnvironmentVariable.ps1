@@ -1,4 +1,4 @@
-﻿function Add-VSOpsWorksAppEnvironmentVariable {
+function Add-VSOpsWorksAppEnvironmentVariable {
     <#
     .SYNOPSIS
         Adds an AWS::OpsWorks::App.EnvironmentVariable resource property to the template

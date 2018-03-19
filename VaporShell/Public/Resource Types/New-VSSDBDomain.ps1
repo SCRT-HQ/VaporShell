@@ -1,4 +1,4 @@
-﻿function New-VSSDBDomain {
+function New-VSSDBDomain {
     <#
     .SYNOPSIS
         Adds an AWS::SDB::Domain resource to the template

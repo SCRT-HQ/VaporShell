@@ -1,4 +1,4 @@
-﻿function Add-VSEC2InstanceEbs {
+function Add-VSEC2InstanceEbs {
     <#
     .SYNOPSIS
         Adds an AWS::EC2::Instance.Ebs resource property to the template

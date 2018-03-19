@@ -1,4 +1,4 @@
-﻿function Add-VSCognitoUserPoolSmsConfiguration {
+function Add-VSCognitoUserPoolSmsConfiguration {
     <#
     .SYNOPSIS
         Adds an AWS::Cognito::UserPool.SmsConfiguration resource property to the template

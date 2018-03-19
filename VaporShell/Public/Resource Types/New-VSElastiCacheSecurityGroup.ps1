@@ -1,4 +1,4 @@
-﻿function New-VSElastiCacheSecurityGroup {
+function New-VSElastiCacheSecurityGroup {
     <#
     .SYNOPSIS
         Adds an AWS::ElastiCache::SecurityGroup resource to the template

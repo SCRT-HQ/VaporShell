@@ -1,4 +1,4 @@
-﻿function Add-VSCodeBuildProjectProjectCache {
+function Add-VSCodeBuildProjectProjectCache {
     <#
     .SYNOPSIS
         Adds an AWS::CodeBuild::Project.ProjectCache resource property to the template

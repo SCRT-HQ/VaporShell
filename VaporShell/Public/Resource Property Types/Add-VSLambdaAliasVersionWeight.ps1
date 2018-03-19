@@ -1,4 +1,4 @@
-﻿function Add-VSLambdaAliasVersionWeight {
+function Add-VSLambdaAliasVersionWeight {
     <#
     .SYNOPSIS
         Adds an AWS::Lambda::Alias.VersionWeight resource property to the template

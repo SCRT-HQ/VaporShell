@@ -1,4 +1,4 @@
-﻿function Add-VSApiGatewayUsagePlanThrottleSettings {
+function Add-VSApiGatewayUsagePlanThrottleSettings {
     <#
     .SYNOPSIS
         Adds an AWS::ApiGateway::UsagePlan.ThrottleSettings resource property to the template

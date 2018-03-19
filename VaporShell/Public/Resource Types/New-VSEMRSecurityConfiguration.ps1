@@ -1,4 +1,4 @@
-﻿function New-VSEMRSecurityConfiguration {
+function New-VSEMRSecurityConfiguration {
     <#
     .SYNOPSIS
         Adds an AWS::EMR::SecurityConfiguration resource to the template

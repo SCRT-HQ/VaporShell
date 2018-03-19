@@ -1,4 +1,4 @@
-﻿function Add-VSKinesisFirehoseDeliveryStreamProcessorParameter {
+function Add-VSKinesisFirehoseDeliveryStreamProcessorParameter {
     <#
     .SYNOPSIS
         Adds an AWS::KinesisFirehose::DeliveryStream.ProcessorParameter resource property to the template

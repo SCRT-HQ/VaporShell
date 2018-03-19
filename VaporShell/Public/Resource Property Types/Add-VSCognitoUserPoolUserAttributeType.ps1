@@ -1,4 +1,4 @@
-﻿function Add-VSCognitoUserPoolUserAttributeType {
+function Add-VSCognitoUserPoolUserAttributeType {
     <#
     .SYNOPSIS
         Adds an AWS::Cognito::UserPoolUser.AttributeType resource property to the template

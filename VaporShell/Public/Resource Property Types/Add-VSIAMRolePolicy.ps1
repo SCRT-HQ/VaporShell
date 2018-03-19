@@ -1,4 +1,4 @@
-﻿function Add-VSIAMRolePolicy {
+function Add-VSIAMRolePolicy {
     <#
     .SYNOPSIS
         Adds an AWS::IAM::Role.Policy resource property to the template

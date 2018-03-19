@@ -1,4 +1,4 @@
-﻿function Add-VSElasticBeanstalkApplicationVersionSourceBundle {
+function Add-VSElasticBeanstalkApplicationVersionSourceBundle {
     <#
     .SYNOPSIS
         Adds an AWS::ElasticBeanstalk::ApplicationVersion.SourceBundle resource property to the template

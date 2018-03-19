@@ -1,4 +1,4 @@
-﻿function Add-VSWAFRegionalRulePredicate {
+function Add-VSWAFRegionalRulePredicate {
     <#
     .SYNOPSIS
         Adds an AWS::WAFRegional::Rule.Predicate resource property to the template

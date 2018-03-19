@@ -1,4 +1,4 @@
-﻿function Add-VSWAFRegionalXssMatchSetFieldToMatch {
+function Add-VSWAFRegionalXssMatchSetFieldToMatch {
     <#
     .SYNOPSIS
         Adds an AWS::WAFRegional::XssMatchSet.FieldToMatch resource property to the template

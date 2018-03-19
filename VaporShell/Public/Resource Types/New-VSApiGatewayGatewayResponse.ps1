@@ -1,4 +1,4 @@
-﻿function New-VSApiGatewayGatewayResponse {
+function New-VSApiGatewayGatewayResponse {
     <#
     .SYNOPSIS
         Adds an AWS::ApiGateway::GatewayResponse resource to the template

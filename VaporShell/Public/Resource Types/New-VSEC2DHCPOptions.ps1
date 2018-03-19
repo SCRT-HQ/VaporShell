@@ -1,4 +1,4 @@
-﻿function New-VSEC2DHCPOptions {
+function New-VSEC2DHCPOptions {
     <#
     .SYNOPSIS
         Adds an AWS::EC2::DHCPOptions resource to the template

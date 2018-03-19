@@ -1,4 +1,4 @@
-﻿function New-VSGuardDutyMember {
+function New-VSGuardDutyMember {
     <#
     .SYNOPSIS
         Adds an AWS::GuardDuty::Member resource to the template

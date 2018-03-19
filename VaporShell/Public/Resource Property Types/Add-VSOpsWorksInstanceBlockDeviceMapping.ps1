@@ -1,4 +1,4 @@
-﻿function Add-VSOpsWorksInstanceBlockDeviceMapping {
+function Add-VSOpsWorksInstanceBlockDeviceMapping {
     <#
     .SYNOPSIS
         Adds an AWS::OpsWorks::Instance.BlockDeviceMapping resource property to the template

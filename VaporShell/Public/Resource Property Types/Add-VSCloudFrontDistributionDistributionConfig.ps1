@@ -1,4 +1,4 @@
-﻿function Add-VSCloudFrontDistributionDistributionConfig {
+function Add-VSCloudFrontDistributionDistributionConfig {
     <#
     .SYNOPSIS
         Adds an AWS::CloudFront::Distribution.DistributionConfig resource property to the template

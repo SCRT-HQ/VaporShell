@@ -1,4 +1,4 @@
-﻿function Add-VSSSMPatchBaselinePatchSource {
+function Add-VSSSMPatchBaselinePatchSource {
     <#
     .SYNOPSIS
         Adds an AWS::SSM::PatchBaseline.PatchSource resource property to the template

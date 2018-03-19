@@ -1,4 +1,4 @@
-﻿function Add-VSS3BucketAccessControlTranslation {
+function Add-VSS3BucketAccessControlTranslation {
     <#
     .SYNOPSIS
         Adds an AWS::S3::Bucket.AccessControlTranslation resource property to the template

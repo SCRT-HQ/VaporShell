@@ -1,4 +1,4 @@
-﻿function Add-VSECSTaskDefinitionKeyValuePair {
+function Add-VSECSTaskDefinitionKeyValuePair {
     <#
     .SYNOPSIS
         Adds an AWS::ECS::TaskDefinition.KeyValuePair resource property to the template

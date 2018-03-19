@@ -1,4 +1,4 @@
-﻿function New-VSEC2Volume {
+function New-VSEC2Volume {
     <#
     .SYNOPSIS
         Adds an AWS::EC2::Volume resource to the template

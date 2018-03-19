@@ -1,4 +1,4 @@
-﻿function Add-VSCodeDeployDeploymentGroupTargetGroupInfo {
+function Add-VSCodeDeployDeploymentGroupTargetGroupInfo {
     <#
     .SYNOPSIS
         Adds an AWS::CodeDeploy::DeploymentGroup.TargetGroupInfo resource property to the template

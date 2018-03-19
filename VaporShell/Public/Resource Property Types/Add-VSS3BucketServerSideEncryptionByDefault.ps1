@@ -1,4 +1,4 @@
-﻿function Add-VSS3BucketServerSideEncryptionByDefault {
+function Add-VSS3BucketServerSideEncryptionByDefault {
     <#
     .SYNOPSIS
         Adds an AWS::S3::Bucket.ServerSideEncryptionByDefault resource property to the template

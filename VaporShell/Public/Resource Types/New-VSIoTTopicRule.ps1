@@ -1,4 +1,4 @@
-﻿function New-VSIoTTopicRule {
+function New-VSIoTTopicRule {
     <#
     .SYNOPSIS
         Adds an AWS::IoT::TopicRule resource to the template

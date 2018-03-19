@@ -1,4 +1,4 @@
-﻿function Add-VSS3BucketRule {
+function Add-VSS3BucketRule {
     <#
     .SYNOPSIS
         Adds an AWS::S3::Bucket.Rule resource property to the template

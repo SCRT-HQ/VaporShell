@@ -1,4 +1,4 @@
-﻿function Add-VSKinesisFirehoseDeliveryStreamCloudWatchLoggingOptions {
+function Add-VSKinesisFirehoseDeliveryStreamCloudWatchLoggingOptions {
     <#
     .SYNOPSIS
         Adds an AWS::KinesisFirehose::DeliveryStream.CloudWatchLoggingOptions resource property to the template

@@ -1,4 +1,4 @@
-﻿function Add-VSCloudFrontDistributionRestrictions {
+function Add-VSCloudFrontDistributionRestrictions {
     <#
     .SYNOPSIS
         Adds an AWS::CloudFront::Distribution.Restrictions resource property to the template

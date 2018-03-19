@@ -47,8 +47,9 @@ function Update-VSResourceFunctions {
         $Name = $resource.Name
         $ShortName = $Name.Replace("AWS::","")
         $FunctionName = "Add-VS" + $ShortName.Replace("::","").Replace(".","")
-        $typeDict += "`t'$Name' = '$FunctionName'"
-        Write-Verbose "Updating $FunctionName [$Name]"
+        $TypeName = "Vaporshell.Resource." + $ShortName.Replace("::",".")
+        $typeDict += "`t'$TypeName' = '$FunctionName'"
+        Write-Verbose "Updating $FunctionName [$TypeName]"
         Convert-SpecToFunction -Resource $resource -ResourceType Property
     }
 

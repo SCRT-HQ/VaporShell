@@ -1,4 +1,4 @@
-﻿function Add-VSCognitoIdentityPoolRoleAttachmentRoleMapping {
+function Add-VSCognitoIdentityPoolRoleAttachmentRoleMapping {
     <#
     .SYNOPSIS
         Adds an AWS::Cognito::IdentityPoolRoleAttachment.RoleMapping resource property to the template

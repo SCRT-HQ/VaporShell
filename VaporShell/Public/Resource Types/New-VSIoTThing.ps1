@@ -1,4 +1,4 @@
-﻿function New-VSIoTThing {
+function New-VSIoTThing {
     <#
     .SYNOPSIS
         Adds an AWS::IoT::Thing resource to the template

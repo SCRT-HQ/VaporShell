@@ -1,4 +1,4 @@
-﻿function Add-VSSESReceiptRuleStopAction {
+function Add-VSSESReceiptRuleStopAction {
     <#
     .SYNOPSIS
         Adds an AWS::SES::ReceiptRule.StopAction resource property to the template

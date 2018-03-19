@@ -1,4 +1,4 @@
-﻿function Add-VSDMSEndpointMongoDbSettings {
+function Add-VSDMSEndpointMongoDbSettings {
     <#
     .SYNOPSIS
         Adds an AWS::DMS::Endpoint.MongoDbSettings resource property to the template

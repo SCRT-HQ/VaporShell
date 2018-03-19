@@ -1,4 +1,4 @@
-﻿function Add-VSEC2InstanceNoDevice {
+function Add-VSEC2InstanceNoDevice {
     <#
     .SYNOPSIS
         Adds an AWS::EC2::Instance.NoDevice resource property to the template

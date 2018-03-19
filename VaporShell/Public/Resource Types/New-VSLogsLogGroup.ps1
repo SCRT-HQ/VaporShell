@@ -1,4 +1,4 @@
-﻿function New-VSLogsLogGroup {
+function New-VSLogsLogGroup {
     <#
     .SYNOPSIS
         Adds an AWS::Logs::LogGroup resource to the template

@@ -1,4 +1,4 @@
-﻿function New-VSEC2VPC {
+function New-VSEC2VPC {
     <#
     .SYNOPSIS
         Adds an AWS::EC2::VPC resource to the template

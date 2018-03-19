@@ -1,4 +1,4 @@
-﻿function Add-VSOpsWorksAppSslConfiguration {
+function Add-VSOpsWorksAppSslConfiguration {
     <#
     .SYNOPSIS
         Adds an AWS::OpsWorks::App.SslConfiguration resource property to the template

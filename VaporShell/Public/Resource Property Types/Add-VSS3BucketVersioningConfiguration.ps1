@@ -1,4 +1,4 @@
-﻿function Add-VSS3BucketVersioningConfiguration {
+function Add-VSS3BucketVersioningConfiguration {
     <#
     .SYNOPSIS
         Adds an AWS::S3::Bucket.VersioningConfiguration resource property to the template

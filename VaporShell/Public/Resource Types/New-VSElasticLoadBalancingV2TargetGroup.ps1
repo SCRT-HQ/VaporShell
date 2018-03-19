@@ -1,4 +1,4 @@
-﻿function New-VSElasticLoadBalancingV2TargetGroup {
+function New-VSElasticLoadBalancingV2TargetGroup {
     <#
     .SYNOPSIS
         Adds an AWS::ElasticLoadBalancingV2::TargetGroup resource to the template

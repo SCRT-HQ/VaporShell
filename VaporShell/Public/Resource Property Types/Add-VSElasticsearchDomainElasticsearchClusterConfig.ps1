@@ -1,4 +1,4 @@
-﻿function Add-VSElasticsearchDomainElasticsearchClusterConfig {
+function Add-VSElasticsearchDomainElasticsearchClusterConfig {
     <#
     .SYNOPSIS
         Adds an AWS::Elasticsearch::Domain.ElasticsearchClusterConfig resource property to the template

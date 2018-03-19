@@ -1,4 +1,4 @@
-﻿function New-VSWAFRegionalXssMatchSet {
+function New-VSWAFRegionalXssMatchSet {
     <#
     .SYNOPSIS
         Adds an AWS::WAFRegional::XssMatchSet resource to the template

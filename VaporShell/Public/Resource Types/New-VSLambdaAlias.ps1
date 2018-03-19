@@ -1,4 +1,4 @@
-﻿function New-VSLambdaAlias {
+function New-VSLambdaAlias {
     <#
     .SYNOPSIS
         Adds an AWS::Lambda::Alias resource to the template

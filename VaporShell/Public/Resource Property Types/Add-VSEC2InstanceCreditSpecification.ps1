@@ -1,4 +1,4 @@
-﻿function Add-VSEC2InstanceCreditSpecification {
+function Add-VSEC2InstanceCreditSpecification {
     <#
     .SYNOPSIS
         Adds an AWS::EC2::Instance.CreditSpecification resource property to the template

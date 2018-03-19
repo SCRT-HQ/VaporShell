@@ -1,4 +1,4 @@
-﻿function Add-VSECSTaskDefinitionTaskDefinitionPlacementConstraint {
+function Add-VSECSTaskDefinitionTaskDefinitionPlacementConstraint {
     <#
     .SYNOPSIS
         Adds an AWS::ECS::TaskDefinition.TaskDefinitionPlacementConstraint resource property to the template

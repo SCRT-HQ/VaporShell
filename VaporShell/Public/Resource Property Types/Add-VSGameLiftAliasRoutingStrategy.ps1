@@ -1,4 +1,4 @@
-﻿function Add-VSGameLiftAliasRoutingStrategy {
+function Add-VSGameLiftAliasRoutingStrategy {
     <#
     .SYNOPSIS
         Adds an AWS::GameLift::Alias.RoutingStrategy resource property to the template

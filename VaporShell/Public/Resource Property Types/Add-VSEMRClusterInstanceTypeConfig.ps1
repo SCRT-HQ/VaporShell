@@ -1,4 +1,4 @@
-﻿function Add-VSEMRClusterInstanceTypeConfig {
+function Add-VSEMRClusterInstanceTypeConfig {
     <#
     .SYNOPSIS
         Adds an AWS::EMR::Cluster.InstanceTypeConfig resource property to the template

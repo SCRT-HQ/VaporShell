@@ -1,4 +1,4 @@
-﻿function New-VSCodeDeployApplication {
+function New-VSCodeDeployApplication {
     <#
     .SYNOPSIS
         Adds an AWS::CodeDeploy::Application resource to the template

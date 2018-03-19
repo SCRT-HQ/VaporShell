@@ -1,4 +1,4 @@
-﻿function New-VSRDSDBCluster {
+function New-VSRDSDBCluster {
     <#
     .SYNOPSIS
         Adds an AWS::RDS::DBCluster resource to the template

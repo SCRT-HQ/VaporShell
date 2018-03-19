@@ -1,4 +1,4 @@
-﻿function Add-VSWAFRegionalSqlInjectionMatchSetSqlInjectionMatchTuple {
+function Add-VSWAFRegionalSqlInjectionMatchSetSqlInjectionMatchTuple {
     <#
     .SYNOPSIS
         Adds an AWS::WAFRegional::SqlInjectionMatchSet.SqlInjectionMatchTuple resource property to the template

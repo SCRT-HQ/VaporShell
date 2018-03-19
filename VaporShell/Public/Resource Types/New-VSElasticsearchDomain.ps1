@@ -1,4 +1,4 @@
-﻿function New-VSElasticsearchDomain {
+function New-VSElasticsearchDomain {
     <#
     .SYNOPSIS
         Adds an AWS::Elasticsearch::Domain resource to the template

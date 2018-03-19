@@ -1,4 +1,4 @@
-﻿function Add-VSOpsWorksLayerRecipes {
+function Add-VSOpsWorksLayerRecipes {
     <#
     .SYNOPSIS
         Adds an AWS::OpsWorks::Layer.Recipes resource property to the template

@@ -1,4 +1,4 @@
-﻿function Add-VSEC2SpotFleetInstanceNetworkInterfaceSpecification {
+function Add-VSEC2SpotFleetInstanceNetworkInterfaceSpecification {
     <#
     .SYNOPSIS
         Adds an AWS::EC2::SpotFleet.InstanceNetworkInterfaceSpecification resource property to the template

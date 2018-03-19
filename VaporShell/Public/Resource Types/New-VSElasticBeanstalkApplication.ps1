@@ -1,4 +1,4 @@
-﻿function New-VSElasticBeanstalkApplication {
+function New-VSElasticBeanstalkApplication {
     <#
     .SYNOPSIS
         Adds an AWS::ElasticBeanstalk::Application resource to the template

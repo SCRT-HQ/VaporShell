@@ -1,4 +1,4 @@
-﻿function New-VSECRRepository {
+function New-VSECRRepository {
     <#
     .SYNOPSIS
         Adds an AWS::ECR::Repository resource to the template

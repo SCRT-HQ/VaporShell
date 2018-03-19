@@ -1,4 +1,4 @@
-﻿function Add-VSCodePipelinePipelineOutputArtifact {
+function Add-VSCodePipelinePipelineOutputArtifact {
     <#
     .SYNOPSIS
         Adds an AWS::CodePipeline::Pipeline.OutputArtifact resource property to the template

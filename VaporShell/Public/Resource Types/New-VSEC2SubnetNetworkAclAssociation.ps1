@@ -1,4 +1,4 @@
-﻿function New-VSEC2SubnetNetworkAclAssociation {
+function New-VSEC2SubnetNetworkAclAssociation {
     <#
     .SYNOPSIS
         Adds an AWS::EC2::SubnetNetworkAclAssociation resource to the template

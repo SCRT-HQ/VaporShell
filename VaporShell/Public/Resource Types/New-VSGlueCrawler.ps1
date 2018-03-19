@@ -1,4 +1,4 @@
-﻿function New-VSGlueCrawler {
+function New-VSGlueCrawler {
     <#
     .SYNOPSIS
         Adds an AWS::Glue::Crawler resource to the template

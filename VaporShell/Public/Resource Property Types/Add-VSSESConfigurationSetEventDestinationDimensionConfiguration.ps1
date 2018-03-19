@@ -1,4 +1,4 @@
-﻿function Add-VSSESConfigurationSetEventDestinationDimensionConfiguration {
+function Add-VSSESConfigurationSetEventDestinationDimensionConfiguration {
     <#
     .SYNOPSIS
         Adds an AWS::SES::ConfigurationSetEventDestination.DimensionConfiguration resource property to the template

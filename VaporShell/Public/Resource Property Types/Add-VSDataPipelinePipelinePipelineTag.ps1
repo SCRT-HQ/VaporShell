@@ -1,4 +1,4 @@
-﻿function Add-VSDataPipelinePipelinePipelineTag {
+function Add-VSDataPipelinePipelinePipelineTag {
     <#
     .SYNOPSIS
         Adds an AWS::DataPipeline::Pipeline.PipelineTag resource property to the template

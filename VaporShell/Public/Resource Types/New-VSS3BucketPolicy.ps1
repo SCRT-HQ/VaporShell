@@ -1,4 +1,4 @@
-﻿function New-VSS3BucketPolicy {
+function New-VSS3BucketPolicy {
     <#
     .SYNOPSIS
         Adds an AWS::S3::BucketPolicy resource to the template

@@ -1,4 +1,4 @@
-﻿function Add-VSCodeDeployDeploymentConfigMinimumHealthyHosts {
+function Add-VSCodeDeployDeploymentConfigMinimumHealthyHosts {
     <#
     .SYNOPSIS
         Adds an AWS::CodeDeploy::DeploymentConfig.MinimumHealthyHosts resource property to the template

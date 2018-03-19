@@ -1,4 +1,4 @@
-﻿function New-VSDirectoryServiceSimpleAD {
+function New-VSDirectoryServiceSimpleAD {
     <#
     .SYNOPSIS
         Adds an AWS::DirectoryService::SimpleAD resource to the template

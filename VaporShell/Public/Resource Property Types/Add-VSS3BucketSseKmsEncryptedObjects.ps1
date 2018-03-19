@@ -1,4 +1,4 @@
-﻿function Add-VSS3BucketSseKmsEncryptedObjects {
+function Add-VSS3BucketSseKmsEncryptedObjects {
     <#
     .SYNOPSIS
         Adds an AWS::S3::Bucket.SseKmsEncryptedObjects resource property to the template

@@ -1,4 +1,4 @@
-﻿function Add-VSEMRClusterInstanceFleetConfig {
+function Add-VSEMRClusterInstanceFleetConfig {
     <#
     .SYNOPSIS
         Adds an AWS::EMR::Cluster.InstanceFleetConfig resource property to the template

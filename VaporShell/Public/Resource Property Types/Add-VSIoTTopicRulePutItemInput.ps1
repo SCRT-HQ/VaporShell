@@ -1,4 +1,4 @@
-﻿function Add-VSIoTTopicRulePutItemInput {
+function Add-VSIoTTopicRulePutItemInput {
     <#
     .SYNOPSIS
         Adds an AWS::IoT::TopicRule.PutItemInput resource property to the template

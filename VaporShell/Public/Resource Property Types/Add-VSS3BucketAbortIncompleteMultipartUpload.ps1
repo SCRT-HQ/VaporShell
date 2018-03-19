@@ -1,4 +1,4 @@
-﻿function Add-VSS3BucketAbortIncompleteMultipartUpload {
+function Add-VSS3BucketAbortIncompleteMultipartUpload {
     <#
     .SYNOPSIS
         Adds an AWS::S3::Bucket.AbortIncompleteMultipartUpload resource property to the template

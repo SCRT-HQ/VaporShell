@@ -1,4 +1,4 @@
-﻿function Add-VSGameLiftBuildS3Location {
+function Add-VSGameLiftBuildS3Location {
     <#
     .SYNOPSIS
         Adds an AWS::GameLift::Build.S3Location resource property to the template

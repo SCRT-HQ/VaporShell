@@ -1,4 +1,4 @@
-﻿function New-VSSSMDocument {
+function New-VSSSMDocument {
     <#
     .SYNOPSIS
         Adds an AWS::SSM::Document resource to the template

@@ -1,4 +1,4 @@
-﻿function Add-VSDataPipelinePipelineParameterAttribute {
+function Add-VSDataPipelinePipelineParameterAttribute {
     <#
     .SYNOPSIS
         Adds an AWS::DataPipeline::Pipeline.ParameterAttribute resource property to the template

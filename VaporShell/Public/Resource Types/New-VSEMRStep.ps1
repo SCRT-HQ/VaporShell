@@ -1,4 +1,4 @@
-﻿function New-VSEMRStep {
+function New-VSEMRStep {
     <#
     .SYNOPSIS
         Adds an AWS::EMR::Step resource to the template

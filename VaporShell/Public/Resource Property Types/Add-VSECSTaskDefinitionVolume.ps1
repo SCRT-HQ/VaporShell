@@ -1,4 +1,4 @@
-﻿function Add-VSECSTaskDefinitionVolume {
+function Add-VSECSTaskDefinitionVolume {
     <#
     .SYNOPSIS
         Adds an AWS::ECS::TaskDefinition.Volume resource property to the template

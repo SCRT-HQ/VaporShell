@@ -1,4 +1,4 @@
-﻿function Add-VSCodePipelinePipelineActionDeclaration {
+function Add-VSCodePipelinePipelineActionDeclaration {
     <#
     .SYNOPSIS
         Adds an AWS::CodePipeline::Pipeline.ActionDeclaration resource property to the template

@@ -1,4 +1,4 @@
-﻿function Add-VSCognitoIdentityPoolCognitoIdentityProvider {
+function Add-VSCognitoIdentityPoolCognitoIdentityProvider {
     <#
     .SYNOPSIS
         Adds an AWS::Cognito::IdentityPool.CognitoIdentityProvider resource property to the template

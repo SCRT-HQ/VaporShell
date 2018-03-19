@@ -1,4 +1,4 @@
-﻿function New-VSWorkSpacesWorkspace {
+function New-VSWorkSpacesWorkspace {
     <#
     .SYNOPSIS
         Adds an AWS::WorkSpaces::Workspace resource to the template

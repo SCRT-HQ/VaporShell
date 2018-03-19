@@ -1,4 +1,4 @@
-﻿function New-VSIAMAccessKey {
+function New-VSIAMAccessKey {
     <#
     .SYNOPSIS
         Adds an AWS::IAM::AccessKey resource to the template

@@ -1,4 +1,4 @@
-﻿function Add-VSKinesisAnalyticsApplicationRecordFormat {
+function Add-VSKinesisAnalyticsApplicationRecordFormat {
     <#
     .SYNOPSIS
         Adds an AWS::KinesisAnalytics::Application.RecordFormat resource property to the template

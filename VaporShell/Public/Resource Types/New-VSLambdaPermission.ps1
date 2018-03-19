@@ -1,4 +1,4 @@
-﻿function New-VSLambdaPermission {
+function New-VSLambdaPermission {
     <#
     .SYNOPSIS
         Adds an AWS::Lambda::Permission resource to the template

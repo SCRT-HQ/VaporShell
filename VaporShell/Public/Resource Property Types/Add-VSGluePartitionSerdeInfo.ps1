@@ -1,4 +1,4 @@
-﻿function Add-VSGluePartitionSerdeInfo {
+function Add-VSGluePartitionSerdeInfo {
     <#
     .SYNOPSIS
         Adds an AWS::Glue::Partition.SerdeInfo resource property to the template
