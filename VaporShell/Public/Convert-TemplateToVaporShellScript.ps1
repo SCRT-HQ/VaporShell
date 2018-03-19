@@ -8,6 +8,9 @@ function Convert-TemplateToVaporShellScript {
         [String[]]
         $Path
     )
+    Begin {
+        $typeDict = . (Resolve-Path (Join-Path (Join-Path ($script:VaporshellPath) "bin") "TypeToFunctionDict.ps1")).Path
+    }
     Process {
         foreach ($tempPath in $Path) {
             $tempFull = Import-Vaporshell -Path $tempPath
@@ -23,9 +26,11 @@ function Convert-TemplateToVaporShellScript {
             $final += ""
 
             if ($tempFull.Outputs) {
+                $commandArray = @()
                 $final += "#region Add Outputs to template"
+                $final += '$template.AddOutput('
                 foreach ($prop in $tempFull.Outputs.PSObject.Properties.Name) {
-                    $command = "New-VaporOutput -LogicalId `"$($prop)`""
+                    $command = "`t(New-VaporOutput -LogicalId `"$($prop)`""
                     if ($tempFull.Outputs.$prop.Description) {
                         $command += " -Description `"$($tempFull.Outputs.$prop.Description)`""
                     }
@@ -33,12 +38,14 @@ function Convert-TemplateToVaporShellScript {
                     if ($tempFull.Outputs.$prop.Value -is 'System.Management.Automation.PSCustomObject') {
 
                     }
-
-                    $final += $command
+                    $commandArray += $command
                 }
+                $final += $($commandArray -join ",`n")
+                $final += ")"
                 $final += "#endregion Add Outputs to template"
                 $final += ""
             }
+            
         }
     }
 }

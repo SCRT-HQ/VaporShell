@@ -335,9 +335,10 @@ function $FunctionName {
             LogicalId = `$LogicalId
             Type = "$Name"
         }
+        `$commonParams = @('Verbose','Debug','ErrorAction','WarningAction','InformationAction','ErrorVariable','WarningVariable','InformationVariable','OutVariable','OutBuffer','PipelineVariable')
     }
     Process {
-        foreach (`$key in `$PSBoundParameters.Keys) {
+        foreach (`$key in `$PSBoundParameters.Keys | Where-Object {`$commonParams -notcontains `$_}) {
             switch (`$key) {
                 LogicalId {}
 "@
@@ -419,9 +420,10 @@ function $FunctionName {
     )
     Begin {
         `$obj = [PSCustomObject]@{}
+        `$commonParams = @('Verbose','Debug','ErrorAction','WarningAction','InformationAction','ErrorVariable','WarningVariable','InformationVariable','OutVariable','OutBuffer','PipelineVariable')
     }
     Process {
-        foreach (`$key in `$PSBoundParameters.Keys) {
+        foreach (`$key in `$PSBoundParameters.Keys | Where-Object {`$commonParams -notcontains `$_}) {
             `$obj | Add-Member -MemberType NoteProperty -Name `$key -Value `$PSBoundParameters.`$key
         }
     }

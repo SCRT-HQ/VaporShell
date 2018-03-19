@@ -26,7 +26,13 @@ function Convert-ToVSCommand {
         $parenth = 0
         $final = ""
         foreach ($object in $InputObject) {
-            if ($object -is 'System.String') {
+            if ($object -is 'System.String' -and $object -eq "True") {
+                $final += '$true'
+            }
+            elseif ($object -is 'System.String' -and $object -eq "False") {
+                $final += '$true'
+            }
+            elseif ($object -is 'System.String') {
                 $final += '"'
                 foreach ($pseudo in $varDict.Keys) {
                     if ($object -match $pseudo) {
@@ -37,7 +43,12 @@ function Convert-ToVSCommand {
                 $final += '"'
             }
             elseif ($object -is 'System.Management.Automation.PSCustomObject') {
-                $
+                $final += "("
+                if ($typeDict.Keys -contains $object.PSObject.Properties.Name) {
+
+                }
+                elseif ($object.PSObject.Properties.Name) {}
+                $final += ")"
             }
         }
         $final
