@@ -34,7 +34,7 @@ function Convert-TemplateToVaporShellScript {
                     if ($tempFull.Outputs.$prop.Description) {
                         $command += " -Description `"$($tempFull.Outputs.$prop.Description)`""
                     }
-                    $command += " -Value "
+                    $command += " -Value $(Convert-ToVSCommand $tempFull.Outputs.$prop.Value)"
                     if ($tempFull.Outputs.$prop.Value -is 'System.Management.Automation.PSCustomObject') {
 
                     }
