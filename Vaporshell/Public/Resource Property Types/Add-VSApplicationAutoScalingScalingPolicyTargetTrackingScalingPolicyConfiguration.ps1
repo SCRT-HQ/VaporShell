@@ -15,6 +15,12 @@
 		Type: CustomizedMetricSpecification    
 		UpdateType: Mutable    
 
+    .PARAMETER DisableScaleIn
+		Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-applicationautoscaling-scalingpolicy-targettrackingscalingpolicyconfiguration.html#cfn-applicationautoscaling-scalingpolicy-targettrackingscalingpolicyconfiguration-disablescalein    
+		PrimitiveType: Boolean    
+		Required: False    
+		UpdateType: Mutable    
+
     .PARAMETER PredefinedMetricSpecification
 		Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-applicationautoscaling-scalingpolicy-targettrackingscalingpolicyconfiguration.html#cfn-applicationautoscaling-scalingpolicy-targettrackingscalingpolicyconfiguration-predefinedmetricspecification    
 		Required: False    
@@ -49,6 +55,9 @@
         [parameter(Mandatory = $false)]
         $CustomizedMetricSpecification,
         [parameter(Mandatory = $false)]
+        [System.Boolean]
+        $DisableScaleIn,
+        [parameter(Mandatory = $false)]
         $PredefinedMetricSpecification,
         [parameter(Mandatory = $false)]
         [Int]
@@ -62,9 +71,10 @@
     )
     Begin {
         $obj = [PSCustomObject]@{}
+        $commonParams = @('Verbose','Debug','ErrorAction','WarningAction','InformationAction','ErrorVariable','WarningVariable','InformationVariable','OutVariable','OutBuffer','PipelineVariable')
     }
     Process {
-        foreach ($key in $PSBoundParameters.Keys) {
+        foreach ($key in $PSBoundParameters.Keys | Where-Object {$commonParams -notcontains $_}) {
             $obj | Add-Member -MemberType NoteProperty -Name $key -Value $PSBoundParameters.$key
         }
     }

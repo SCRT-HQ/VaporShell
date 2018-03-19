@@ -9,6 +9,12 @@
     .LINK
         http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ssm-patchbaseline-rule.html
 
+    .PARAMETER EnableNonSecurity
+		Required: False    
+		Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ssm-patchbaseline-rule.html#cfn-ssm-patchbaseline-rule-enablenonsecurity    
+		PrimitiveType: Boolean    
+		UpdateType: Mutable    
+
     .PARAMETER PatchFilterGroup
 		Type: PatchFilterGroup    
 		Required: False    
@@ -35,6 +41,9 @@
     Param
     (
         [parameter(Mandatory = $false)]
+        [System.Boolean]
+        $EnableNonSecurity,
+        [parameter(Mandatory = $false)]
         $PatchFilterGroup,
         [parameter(Mandatory = $false)]
         [Int]
@@ -53,9 +62,10 @@
     )
     Begin {
         $obj = [PSCustomObject]@{}
+        $commonParams = @('Verbose','Debug','ErrorAction','WarningAction','InformationAction','ErrorVariable','WarningVariable','InformationVariable','OutVariable','OutBuffer','PipelineVariable')
     }
     Process {
-        foreach ($key in $PSBoundParameters.Keys) {
+        foreach ($key in $PSBoundParameters.Keys | Where-Object {$commonParams -notcontains $_}) {
             $obj | Add-Member -MemberType NoteProperty -Name $key -Value $PSBoundParameters.$key
         }
     }

@@ -77,6 +77,14 @@
 		Required: False    
 		UpdateType: Mutable    
 
+    .PARAMETER Regions
+		Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-route53-healthcheck-healthcheckconfig.html#cfn-route53-healthcheck-healthcheckconfig-regions    
+		DuplicatesAllowed: False    
+		PrimitiveItemType: String    
+		Required: False    
+		Type: List    
+		UpdateType: Mutable    
+
     .PARAMETER RequestInterval
 		Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-route53-healthcheck-healthcheckconfig.html#cfn-route53-healthcheck-healthcheckconfig-requestinterval    
 		PrimitiveType: Integer    
@@ -164,6 +172,8 @@
         [Int]
         $Port,
         [parameter(Mandatory = $false)]
+        $Regions,
+        [parameter(Mandatory = $false)]
         [Int]
         $RequestInterval,
         [parameter(Mandatory = $false)]
@@ -202,9 +212,10 @@
     )
     Begin {
         $obj = [PSCustomObject]@{}
+        $commonParams = @('Verbose','Debug','ErrorAction','WarningAction','InformationAction','ErrorVariable','WarningVariable','InformationVariable','OutVariable','OutBuffer','PipelineVariable')
     }
     Process {
-        foreach ($key in $PSBoundParameters.Keys) {
+        foreach ($key in $PSBoundParameters.Keys | Where-Object {$commonParams -notcontains $_}) {
             $obj | Add-Member -MemberType NoteProperty -Name $key -Value $PSBoundParameters.$key
         }
     }

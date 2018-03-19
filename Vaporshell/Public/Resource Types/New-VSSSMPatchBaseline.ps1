@@ -44,6 +44,12 @@
 		PrimitiveType: String    
 		UpdateType: Mutable    
 
+    .PARAMETER ApprovedPatchesEnableNonSecurity
+		Required: False    
+		Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ssm-patchbaseline.html#cfn-ssm-patchbaseline-approvedpatchesenablenonsecurity    
+		PrimitiveType: Boolean    
+		UpdateType: Mutable    
+
     .PARAMETER ApprovalRules
 		Type: RuleGroup    
 		Required: False    
@@ -54,6 +60,13 @@
 		Type: PatchFilterGroup    
 		Required: False    
 		Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ssm-patchbaseline.html#cfn-ssm-patchbaseline-globalfilters    
+		UpdateType: Mutable    
+
+    .PARAMETER Sources
+		Type: List    
+		Required: False    
+		Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ssm-patchbaseline.html#cfn-ssm-patchbaseline-sources    
+		ItemType: PatchSource    
 		UpdateType: Mutable    
 
     .PARAMETER Name
@@ -154,9 +167,23 @@
             })]
         $ApprovedPatchesComplianceLevel,
         [parameter(Mandatory = $false)]
+        [System.Boolean]
+        $ApprovedPatchesEnableNonSecurity,
+        [parameter(Mandatory = $false)]
         $ApprovalRules,
         [parameter(Mandatory = $false)]
         $GlobalFilters,
+        [parameter(Mandatory = $false)]
+        [ValidateScript( {
+                $allowedTypes = "Vaporshell.Resource.SSM.PatchBaseline.PatchSource"
+                if ([string]$($_.PSTypeNames) -match "($(($allowedTypes|ForEach-Object{[RegEx]::Escape($_)}) -join '|'))") {
+                    $true
+                }
+                else {
+                    $PSCmdlet.ThrowTerminatingError((New-VSError -String "This parameter only accepts the following types: $($allowedTypes -join ", "). The current types of the value are: $($_.PSTypeNames -join ", ")."))
+                }
+            })]
+        $Sources,
         [parameter(Mandatory = $true)]
         [ValidateScript( {
                 $allowedTypes = "System.String","Vaporshell.Function"
@@ -206,9 +233,10 @@
             LogicalId = $LogicalId
             Type = "AWS::SSM::PatchBaseline"
         }
+        $commonParams = @('Verbose','Debug','ErrorAction','WarningAction','InformationAction','ErrorVariable','WarningVariable','InformationVariable','OutVariable','OutBuffer','PipelineVariable')
     }
     Process {
-        foreach ($key in $PSBoundParameters.Keys) {
+        foreach ($key in $PSBoundParameters.Keys | Where-Object {$commonParams -notcontains $_}) {
             switch ($key) {
                 LogicalId {}
                 DeletionPolicy {
@@ -237,6 +265,12 @@
                         $ResourceParams.Add("Properties",([PSCustomObject]@{}))
                     }
                     $ResourceParams["Properties"] | Add-Member -MemberType NoteProperty -Name PatchGroups -Value @($PatchGroups)
+                }
+                Sources {
+                    if (!($ResourceParams["Properties"])) {
+                        $ResourceParams.Add("Properties",([PSCustomObject]@{}))
+                    }
+                    $ResourceParams["Properties"] | Add-Member -MemberType NoteProperty -Name Sources -Value @($Sources)
                 }
                 RejectedPatches {
                     if (!($ResourceParams["Properties"])) {

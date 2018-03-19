@@ -5,6 +5,7 @@
 <!-- TOC -->
 
 - [Changelog](#changelog)
+    - [2.2.1](#221)
     - [2.2.0](#220)
     - [2.1.2](#212)
     - [2.1.1](#211)
@@ -28,6 +29,10 @@
     - [0.7.02](#0702)
 
 <!-- /TOC -->
+
+## 2.2.1
+
+- Fixed [issue #25](https://github.com/scrthq/VaporShell/issues/25) by updating `Convert-SpecToFunction` to exclude common parameters from being added as properties to outputted resource and resource property objects
 
 ## 2.2.0
 
