@@ -47,12 +47,12 @@ test_script:
   - pwsh: >-
       if ($env:RunTestsIn -eq 'PowerShell Core') {
         $string = "Running $($env:RunTestsIn) tests on image '$env:APPVEYOR_BUILD_WORKER_IMAGE'";
-        Write-Host -ForegroundColor Magenta $string;
+        Write-Host -ForegroundColor Cyan $string;
         . .\ci\init.ps1;
       }
   - ps: >-
       if ($env:RunTestsIn -eq 'Windows PowerShell') {
         $string = "Running $($env:RunTestsIn) tests on image '$env:APPVEYOR_BUILD_WORKER_IMAGE'";
-        Write-Host -ForegroundColor Magenta $string;
+        Write-Host -ForegroundColor Cyan $string;
         . .\ci\init.ps1;
       }
