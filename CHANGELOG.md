@@ -41,7 +41,7 @@
 
 ## 2.2.0
 
-- Updated Travis-CI tests to use latest PowerShell release
+- Updated Travis-CI tests to use latest PowerShell release` 
 - Updated AppVeyor tests to test in both PowerShell Core and Windows PowerShell
 - Updated resource types/property types to latest spec sheet
 - **Renamed New-VSS3Bucket to New-VSS3Box to prevent duplicate function name collision**
