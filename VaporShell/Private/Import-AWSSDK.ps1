@@ -13,11 +13,11 @@ function Import-AWSSDK {
     catch {
         if ($PSVersionTable.PSVersion.Major -ge 6) {
             Write-Verbose "Loading AWS SDK for *NetCore*!"
-            $sdkPath = (Join-Path $Script:VaporshellPath "bin\NetCore" -Resolve)
+            $sdkPath = (Join-Path (Join-Path $Script:VaporshellPath "bin") "NetCore" -Resolve)
         }
         else {
             Write-Verbose "Loading AWS SDK for *Net45*!"
-            $sdkPath = (Join-Path $Script:VaporshellPath "bin\Net45" -Resolve)
+            $sdkPath = (Join-Path (Join-Path $Script:VaporshellPath "bin") "Net45" -Resolve)
         }
         Get-ChildItem $sdkPath -Filter "*.dll" | ForEach-Object {
             $dll = $_          
