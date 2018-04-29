@@ -43,9 +43,13 @@ if (!([AppDomain]::CurrentDomain.GetAssemblies() | Where-Object {$_.Location -li
     }
 }
 
-# Add Intrinsic Function short aliases
+# Add Intrinsic and Condition Function short aliases
 $aliases = @()
 Get-ChildItem "$PSScriptRoot\Public\Intrinsic Functions" | ForEach-Object {
+    $aliases += ($_.BaseName).Replace('Add-','')
+    New-Alias -Name ($_.BaseName).Replace('Add-','') -Value $_.BaseName -Force
+}
+Get-ChildItem "$PSScriptRoot\Public\Condition Functions" | ForEach-Object {
     $aliases += ($_.BaseName).Replace('Add-','')
     New-Alias -Name ($_.BaseName).Replace('Add-','') -Value $_.BaseName -Force
 }
