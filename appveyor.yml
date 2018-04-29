@@ -1,6 +1,6 @@
 image: 
   - Ubuntu
-  - Visual Studio 2015
+  - WMF 4
   - Visual Studio 2017
 
 environment:
