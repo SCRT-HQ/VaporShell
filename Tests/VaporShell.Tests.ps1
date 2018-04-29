@@ -1,5 +1,5 @@
 $PSVersion = $PSVersionTable.PSVersion.Major
-$ModuleName = "Vaporshell"
+$ModuleName = "VaporShell"
 $projectRoot = Resolve-Path "$PSScriptRoot\.."
 $ModulePath = Resolve-Path "$projectRoot\$ModuleName"
 

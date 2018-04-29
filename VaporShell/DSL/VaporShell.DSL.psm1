@@ -50,9 +50,21 @@ function Template {
             Write-Verbose "Adding Condition '$($object.LogicalId)' to template"
             $template.AddCondition($object)
         }
+        foreach ($object in $script:templateObjects['Parameters']) {
+            Write-Verbose "Adding Parameter '$($object.LogicalId)' to template"
+            $template.AddParameter($object)
+        }
         foreach ($object in $script:templateObjects['Outputs']) {
             Write-Verbose "Adding Output '$($object.LogicalId)' to template"
             $template.AddOutput($object)
+        }
+        foreach ($object in $script:templateObjects['Transforms']) {
+            Write-Verbose "Adding Transform '$($object.LogicalId)' to template"
+            $template.AddTransform($object)
+        }
+        foreach ($object in $script:templateObjects['Metadata']) {
+            Write-Verbose "Adding Metadata '$($object.LogicalId)' to template"
+            $template.AddMetadata($object)
         }
         return $template
     }
