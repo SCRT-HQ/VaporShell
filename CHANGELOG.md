@@ -1,10 +1,9 @@
 # Changelog 
 
-***
-
 <!-- TOC -->
 
 - [Changelog](#changelog)
+    - [2.3.0](#230)
     - [2.2.1](#221)
     - [2.2.0](#220)
     - [2.1.2](#212)
@@ -29,6 +28,12 @@
     - [0.7.02](#0702)
 
 <!-- /TOC -->
+
+## 2.3.0
+
+- Added DSL wrapper to allow a different style of template building
+- Added short aliases for all Condition and Intrinsic functions
+- Removed private function Import-AWSSDK and added SDK import to PSM1
 
 ## 2.2.1
 

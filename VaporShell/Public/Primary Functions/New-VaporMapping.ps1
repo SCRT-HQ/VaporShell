@@ -106,6 +106,9 @@ function New-VaporMapping {
             })]
         $Map
     )
+    if ($Map -is [System.Collections.Hashtable]) {
+        $Map = [PSCustomObject]$Map
+    }
     $obj = [PSCustomObject][Ordered]@{
         "LogicalId" = $LogicalId
         "Props" = $Map
