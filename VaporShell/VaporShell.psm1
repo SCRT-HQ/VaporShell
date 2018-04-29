@@ -53,5 +53,7 @@ Get-Content -Path "$PSScriptRoot\Private\PseudoParams.txt" | ForEach-Object {
     $vars += $name
 }
 
-Import-Module "$PSScriptRoot\DSL\VaporShell.DSL.psm1" -DisableNameChecking -Force -Verbose:$false
+$DSLModulePath = (Resolve-Path "$PSScriptRoot\DSL\VaporShell.DSL.psm1").Path
+Import-Module $DSLModulePath -DisableNameChecking -Force -Verbose:$false
+
 Export-ModuleMember -Function ($Public.Basename + (Get-Command -Module VaporShell.DSL).Name) -Variable $vars -Alias $aliases -Verbose:$false
