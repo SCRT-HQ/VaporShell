@@ -59,7 +59,7 @@ function Template {
             $template.AddOutput($object)
         }
         foreach ($object in $script:templateObjects['Transforms']) {
-            Write-Verbose "Adding Transform '$($object.LogicalId)' to template"
+            Write-Verbose "Adding Include Location '$($object.Props.Parameters.Location)' to template"
             $template.AddTransform($object)
         }
         foreach ($object in $script:templateObjects['Metadata']) {
@@ -203,5 +203,101 @@ function Output {
         $script:templateObjects['Outputs'].Add($object) | Out-Null
     }
 }
+function Condition {
+    [CmdletBinding()]
+    Param
+    (
+        [parameter(Mandatory = $true,Position = 0)]
+        [ValidateScript( {
+                if ($_ -match "^[a-zA-Z0-9]*$") {
+                    $true
+                }
+                else {
+                    $PSCmdlet.ThrowTerminatingError((New-VSError -String 'The LogicalID must be alphanumeric (a-z, A-Z, 0-9) and unique within the template.'))
+                }
+            })]
+        [System.String]
+        $LogicalId,
+        [parameter(Mandatory = $true,Position = 1)]
+        [ValidateScript( {
+                $allowedTypes = "Vaporshell.Condition.And","Vaporshell.Condition.Equals","Vaporshell.Condition.If","Vaporshell.Condition.Not","Vaporshell.Condition.Or"
+                if ([string]$($_.PSTypeNames) -match "($(($allowedTypes|ForEach-Object{[RegEx]::Escape($_)}) -join '|'))") {
+                    $true
+                }
+                else {
+                    $PSCmdlet.ThrowTerminatingError((New-VSError -String "This parameter only accepts the following types: $($allowedTypes -join ", "). The current types of the value are: $($_.PSTypeNames -join ", ")."))
+                }
+            })]
+        $Condition
+    )
+    Process {
+        $object = New-VaporCondition -LogicalId $LogicalId -Condition $Condition
+        $script:templateObjects['Conditions'].Add($object) | Out-Null
+    }
+}
+function Parameter {
+    [CmdletBinding()]
+    Param
+    (
+        [parameter(Mandatory = $true,Position = 0)]
+        [ValidateScript( {
+                if ($_ -match "^[a-zA-Z0-9]*$") {
+                    $true
+                }
+                else {
+                    $PSCmdlet.ThrowTerminatingError((New-VSError -String 'The LogicalID must be alphanumeric (a-z, A-Z, 0-9) and unique within the template.'))
+                }
+            })]
+        [System.String]
+        $LogicalId,
+        [parameter(Mandatory = $true,Position = 1)]
+        [System.Management.Automation.ScriptBlock]
+        $Properties
+    )
+    Process {
+        $scriptBlockString = "`$props = @{$($PSBoundParameters['Properties'].ToString())}; New-VaporParameter -LogicalId '$($PSBoundParameters['LogicalId'])' @props"
+        $newScriptBlock = [ScriptBlock]::Create($scriptBlockString)
+        $object = & $newScriptBlock
+        $script:templateObjects['Parameters'].Add($object) | Out-Null
+    }
+}
+function Metadata {
+    [CmdletBinding()]
+    Param
+    (
+        [parameter(Mandatory = $true,Position = 0)]
+        [ValidateScript( {
+                if ($_ -match "^[a-zA-Z0-9]*$") {
+                    $true
+                }
+                else {
+                    $PSCmdlet.ThrowTerminatingError((New-VSError -String 'The LogicalID must be alphanumeric (a-z, A-Z, 0-9) and unique within the template.'))
+                }
+            })]
+        [System.String]
+        $LogicalId,
+        [parameter(Mandatory = $true,Position = 1)]
+        [Hashtable]
+        $Metadata
+    )
+    Process {
+        $object = New-VaporMetadata -LogicalId $LogicalId -Metadata $Metadata -Verbose:$false
+        $script:templateObjects['Metadata'].Add($object) | Out-Null
+    }
+}
+function Transform {
+    [CmdletBinding()]
+    Param
+    (
+        [parameter(Mandatory = $true,Position = 0)]
+        [ValidatePattern("^s3:\/\/.*")]
+        [System.String]
+        $Location
+    )
+    Process {
+        $object = Add-Include -Location $Location -Verbose:$false
+        $script:templateObjects['Transforms'].Add($object) | Out-Null
+    }
+}
 
-Export-ModuleMember -Function Template,Resource,Mapping,CustomResource,Output
+Export-ModuleMember -Function Template,Resource,Mapping,CustomResource,Output,Condition,Parameter,Metadata,Transform

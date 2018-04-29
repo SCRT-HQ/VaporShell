@@ -29,6 +29,8 @@ foreach ($file in @($Public + $Private)) {
         )
     }
 }
+
+# Load AWS .NET SDK if not already loaded
 if (!([AppDomain]::CurrentDomain.GetAssemblies() | Where-Object {$_.Location -like "*AWSSDK.CloudFormation.dll"})) {
     if ($IsCoreCLR) {
         Write-Verbose "Loading AWS SDK for *NetCore*!"
