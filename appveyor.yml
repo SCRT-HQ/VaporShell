@@ -7,7 +7,7 @@ environment:
   matrix:
     - APPVEYOR_BUILD_WORKER_IMAGE: Ubuntu
       PowerShellEdition: "Core"
-    - APPVEYOR_BUILD_WORKER_IMAGE: WMF 4
+    - APPVEYOR_BUILD_WORKER_IMAGE: Visual Studio 2013
       PowerShellEdition: "4"
       PYTHON: "C:\\Python27"
       PYTHON_VERSION: "2.7.8"
@@ -42,7 +42,7 @@ install:
   - cmd: "%PYTHON%/Scripts/pip.exe install cfn_flip"
 test_script:
   - pwsh: >-
-      if ($env:APPVEYOR_BUILD_WORKER_IMAGE -notlike '*2015*') {
+      if ($env:APPVEYOR_BUILD_WORKER_IMAGE -notlike '*2013*') {
         $string = "Running PowerShell $($PSVersionTable.PSVersion.ToString()) tests on image '$env:APPVEYOR_BUILD_WORKER_IMAGE'";
         Write-Host -ForegroundColor Magenta $string;
         . .\ci\init.ps1;
