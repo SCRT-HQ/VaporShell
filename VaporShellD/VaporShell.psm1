@@ -1,9 +1,7 @@
 Param
 (
   [parameter(Position=0)]
-  $ForceDotSource = $false,
-  [parameter(Position=1)]
-  $QuietLoad = $false
+  $ForceDotSource = $false
 )
 #Get public and private function definition files.
 $Public = @( Get-ChildItem -Path $PSScriptRoot\Public -Recurse -Filter "*.ps1" -ErrorAction SilentlyContinue )
