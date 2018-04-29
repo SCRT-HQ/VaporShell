@@ -38,6 +38,13 @@ else {
     Import-AWSSDK -Verbose
 }
 
+# Add Intrinsic Function short aliases
+$aliases = @()
+Get-ChildItem "$PSScriptRoot\Public\Intrinsic Functions" | ForEach-Object {
+    $aliases += ($_.BaseName).Replace('Add-','')
+    New-Alias -Name ($_.BaseName).Replace('Add-','') -Value $_.BaseName -Force
+}
+
 # Add in Pseudo Parameter variables from private text file (allows growth in case additional parameters need to be added in)
 $vars = @()
 Get-Content -Path "$PSScriptRoot\Private\PseudoParams.txt" | ForEach-Object {
@@ -46,4 +53,5 @@ Get-Content -Path "$PSScriptRoot\Private\PseudoParams.txt" | ForEach-Object {
     $vars += $name
 }
 
-Export-ModuleMember -Function $Public.Basename -Variable $vars -Verbose:$false
+Import-Module "$PSScriptRoot\DSL\VaporShell.DSL.psm1" -DisableNameChecking -Force -Verbose:$false
+Export-ModuleMember -Function ($Public.Basename + (Get-Command -Module VaporShell.DSL).Name) -Variable $vars -Alias $aliases -Verbose:$false

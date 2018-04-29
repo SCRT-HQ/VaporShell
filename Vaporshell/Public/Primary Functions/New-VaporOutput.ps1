@@ -100,6 +100,11 @@ function New-VaporOutput {
         }
     }
     if ($Export) {
+        if (($Export -is [System.Collections.Hashtable] -and $Export.Keys -notcontains 'Name') -or ($Export -is [System.Management.Automation.PSCustomObject] -and $Export.PSObject.Properties.Name -notcontains 'Name')) {
+            $Export = @{
+                Name = $Export
+            }
+        }
         $Properties | Add-Member -MemberType NoteProperty -Name "Export" -Value $Export
     }
     if ($Condition) {
