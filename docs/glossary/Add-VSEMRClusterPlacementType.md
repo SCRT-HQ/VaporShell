@@ -6,6 +6,7 @@ label1: Category
 data1: Documentation
 label2: Depth
 data2: Deep
+schema: 2.0.0
 ---
 
 # Add-VSEMRClusterPlacementType
@@ -16,7 +17,7 @@ Adds an AWS::EMR::Cluster.PlacementType resource property to the template
 ## SYNTAX
 
 ```
-Add-VSEMRClusterPlacementType [-AvailabilityZone] <Object>
+Add-VSEMRClusterPlacementType [-AvailabilityZone] <Object> [<CommonParameters>]
 ```
 
 ## DESCRIPTION
@@ -25,7 +26,7 @@ Adds an AWS::EMR::Cluster.PlacementType resource property to the template
 ## PARAMETERS
 
 ### -AvailabilityZone
-Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-emr-cluster-jobflowinstancesconfig-placementtype.html#aws-properties-emr-cluster-jobflowinstancesconfig-placementtype    
+Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-elasticmapreduce-cluster-placementtype.html#cfn-elasticmapreduce-cluster-placementtype-availabilityzone    
 PrimitiveType: String    
 Required: True    
 UpdateType: Immutable
@@ -33,7 +34,7 @@ UpdateType: Immutable
 ```yaml
 Type: Object
 Parameter Sets: (All)
-Aliases: 
+Aliases:
 
 Required: True
 Position: 1
@@ -42,15 +43,19 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
+### CommonParameters
+This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction, and -WarningVariable.
+For more information, see about_CommonParameters (http://go.microsoft.com/fwlink/?LinkID=113216).
+
 ## INPUTS
 
 ## OUTPUTS
 
-### VaporShell.Resource.EMR.Cluster.PlacementType
+### Vaporshell.Resource.EMR.Cluster.PlacementType
 
 ## NOTES
 
 ## RELATED LINKS
 
-[http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-emr-cluster-jobflowinstancesconfig-placementtype.html](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-emr-cluster-jobflowinstancesconfig-placementtype.html)
+[http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-elasticmapreduce-cluster-placementtype.html](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-elasticmapreduce-cluster-placementtype.html)
 

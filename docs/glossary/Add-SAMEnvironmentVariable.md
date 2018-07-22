@@ -6,6 +6,7 @@ label1: Category
 data1: Documentation
 label2: Depth
 data2: Deep
+schema: 2.0.0
 ---
 
 # Add-SAMEnvironmentVariable
@@ -17,12 +18,12 @@ The object describing the environment properties of a function.
 
 ### Single (Default)
 ```
-Add-SAMEnvironmentVariable [-Name] <String> [-Value] <Object>
+Add-SAMEnvironmentVariable [-Name] <String> [-Value] <Object> [<CommonParameters>]
 ```
 
 ### Hashtable
 ```
-Add-SAMEnvironmentVariable [-Hashtable] <Hashtable>
+Add-SAMEnvironmentVariable [-Hashtable] <Hashtable> [<CommonParameters>]
 ```
 
 ## DESCRIPTION
@@ -36,7 +37,7 @@ A hashtable of environment variables
 ```yaml
 Type: Hashtable
 Parameter Sets: Hashtable
-Aliases: 
+Aliases:
 
 Required: True
 Position: 1
@@ -51,7 +52,7 @@ The name of the environment variable
 ```yaml
 Type: String
 Parameter Sets: Single
-Aliases: 
+Aliases:
 
 Required: True
 Position: 1
@@ -66,7 +67,7 @@ The value of the environment variable
 ```yaml
 Type: Object
 Parameter Sets: Single
-Aliases: 
+Aliases:
 
 Required: True
 Position: 2
@@ -75,11 +76,15 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
+### CommonParameters
+This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction, and -WarningVariable.
+For more information, see about_CommonParameters (http://go.microsoft.com/fwlink/?LinkID=113216).
+
 ## INPUTS
 
 ## OUTPUTS
 
-### VaporShell.Serverless.EnvironmentVariable
+### Vaporshell.Serverless.EnvironmentVariable
 
 ## NOTES
 

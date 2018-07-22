@@ -6,6 +6,7 @@ label1: Category
 data1: Documentation
 label2: Depth
 data2: Deep
+schema: 2.0.0
 ---
 
 # Add-VSLogsMetricFilterMetricTransformation
@@ -16,14 +17,32 @@ Adds an AWS::Logs::MetricFilter.MetricTransformation resource property to the te
 ## SYNTAX
 
 ```
-Add-VSLogsMetricFilterMetricTransformation [-MetricName] <Object> [-MetricNamespace] <Object>
- [-MetricValue] <Object>
+Add-VSLogsMetricFilterMetricTransformation [[-DefaultValue] <Double>] [-MetricName] <Object>
+ [-MetricNamespace] <Object> [-MetricValue] <Object> [<CommonParameters>]
 ```
 
 ## DESCRIPTION
 Adds an AWS::Logs::MetricFilter.MetricTransformation resource property to the template
 
 ## PARAMETERS
+
+### -DefaultValue
+Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-logs-metricfilter-metrictransformation.html#cfn-cwl-metricfilter-metrictransformation-defaultvalue    
+PrimitiveType: Double    
+Required: False    
+UpdateType: Mutable
+
+```yaml
+Type: Double
+Parameter Sets: (All)
+Aliases:
+
+Required: False
+Position: 1
+Default value: 0
+Accept pipeline input: False
+Accept wildcard characters: False
+```
 
 ### -MetricName
 Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-logs-metricfilter-metrictransformation.html#cfn-cwl-metricfilter-metrictransformation-metricname    
@@ -34,10 +53,10 @@ UpdateType: Mutable
 ```yaml
 Type: Object
 Parameter Sets: (All)
-Aliases: 
+Aliases:
 
 Required: True
-Position: 1
+Position: 2
 Default value: None
 Accept pipeline input: False
 Accept wildcard characters: False
@@ -52,10 +71,10 @@ UpdateType: Mutable
 ```yaml
 Type: Object
 Parameter Sets: (All)
-Aliases: 
+Aliases:
 
 Required: True
-Position: 2
+Position: 3
 Default value: None
 Accept pipeline input: False
 Accept wildcard characters: False
@@ -70,20 +89,24 @@ UpdateType: Mutable
 ```yaml
 Type: Object
 Parameter Sets: (All)
-Aliases: 
+Aliases:
 
 Required: True
-Position: 3
+Position: 4
 Default value: None
 Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
+### CommonParameters
+This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction, and -WarningVariable.
+For more information, see about_CommonParameters (http://go.microsoft.com/fwlink/?LinkID=113216).
+
 ## INPUTS
 
 ## OUTPUTS
 
-### VaporShell.Resource.Logs.MetricFilter.MetricTransformation
+### Vaporshell.Resource.Logs.MetricFilter.MetricTransformation
 
 ## NOTES
 

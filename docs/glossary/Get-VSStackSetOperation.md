@@ -6,6 +6,7 @@ label1: Category
 data1: Documentation
 label2: Depth
 data2: Deep
+schema: 2.0.0
 ---
 
 # Get-VSStackSetOperation
@@ -18,17 +19,19 @@ Gets information about Stack Set Operations
 ### Description (Default)
 ```
 Get-VSStackSetOperation [-Description] -StackSetName <String> [-OperationId <String>] [-ProfileName <String>]
+ [<CommonParameters>]
 ```
 
 ### ListStackSetOperations
 ```
 Get-VSStackSetOperation [-List] -StackSetName <String> [-MaxResults <Int32>] [-ProfileName <String>]
+ [<CommonParameters>]
 ```
 
 ### ListStackSetOperationResults
 ```
 Get-VSStackSetOperation [-ListResults] -StackSetName <String> [-OperationId <String>] [-MaxResults <Int32>]
- [-ProfileName <String>]
+ [-ProfileName <String>] [<CommonParameters>]
 ```
 
 ## DESCRIPTION
@@ -42,7 +45,7 @@ Returns the description of the specified stack set operation.
 ```yaml
 Type: SwitchParameter
 Parameter Sets: Description
-Aliases: 
+Aliases:
 
 Required: False
 Position: Named
@@ -57,7 +60,7 @@ Returns summary information about operations performed on a stack set.
 ```yaml
 Type: SwitchParameter
 Parameter Sets: ListStackSetOperations
-Aliases: 
+Aliases:
 
 Required: False
 Position: Named
@@ -72,7 +75,7 @@ Returns summary information about the results of a stack set operation.
 ```yaml
 Type: SwitchParameter
 Parameter Sets: ListStackSetOperationResults
-Aliases: 
+Aliases:
 
 Required: False
 Position: Named
@@ -87,7 +90,7 @@ The name or unique ID of the stack set that you want to list stack instances for
 ```yaml
 Type: String
 Parameter Sets: (All)
-Aliases: 
+Aliases:
 
 Required: True
 Position: Named
@@ -102,7 +105,7 @@ The unique ID of the stack set operation.
 ```yaml
 Type: String
 Parameter Sets: Description, ListStackSetOperationResults
-Aliases: 
+Aliases:
 
 Required: False
 Position: Named
@@ -117,7 +120,7 @@ The maximum number of results to be returned with a single call.
 ```yaml
 Type: Int32
 Parameter Sets: ListStackSetOperations, ListStackSetOperationResults
-Aliases: 
+Aliases:
 
 Required: False
 Position: Named
@@ -133,7 +136,7 @@ Defaults to $env:AWS_PROFILE, if set.
 ```yaml
 Type: String
 Parameter Sets: (All)
-Aliases: 
+Aliases:
 
 Required: False
 Position: Named
@@ -142,6 +145,10 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
+### CommonParameters
+This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction, and -WarningVariable.
+For more information, see about_CommonParameters (http://go.microsoft.com/fwlink/?LinkID=113216).
+
 ## INPUTS
 
 ## OUTPUTS
@@ -149,4 +156,3 @@ Accept wildcard characters: False
 ## NOTES
 
 ## RELATED LINKS
-

@@ -6,6 +6,7 @@ label1: Category
 data1: Documentation
 label2: Depth
 data2: Deep
+schema: 2.0.0
 ---
 
 # Add-FnSelect
@@ -16,7 +17,7 @@ Adds the intrinsic function "Fn::Select" to a resource property
 ## SYNTAX
 
 ```
-Add-FnSelect [[-Index] <Object>] [-ListOfObjects] <Object>
+Add-FnSelect [[-Index] <Object>] [-ListOfObjects] <Object> [<CommonParameters>]
 ```
 
 ## DESCRIPTION
@@ -38,7 +39,7 @@ This must be a value from zero to N-1, where N represents the number of elements
 ```yaml
 Type: Object
 Parameter Sets: (All)
-Aliases: 
+Aliases:
 
 Required: False
 Position: 1
@@ -54,7 +55,7 @@ This list must not be null, nor can it have null entries.
 ```yaml
 Type: Object
 Parameter Sets: (All)
-Aliases: 
+Aliases:
 
 Required: True
 Position: 2
@@ -63,11 +64,15 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
+### CommonParameters
+This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction, and -WarningVariable.
+For more information, see about_CommonParameters (http://go.microsoft.com/fwlink/?LinkID=113216).
+
 ## INPUTS
 
 ## OUTPUTS
 
-### VaporShell.Function.Select
+### Vaporshell.Function.Select
 
 ## NOTES
 For the Fn::Select index value, you can use the Ref and Fn::FindInMap functions.

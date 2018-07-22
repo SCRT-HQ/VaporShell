@@ -6,6 +6,7 @@ label1: Category
 data1: Documentation
 label2: Depth
 data2: Deep
+schema: 2.0.0
 ---
 
 # Add-VSRDSDBSecurityGroupIngress
@@ -17,7 +18,7 @@ Adds an AWS::RDS::DBSecurityGroup.Ingress resource property to the template
 
 ```
 Add-VSRDSDBSecurityGroupIngress [[-CIDRIP] <Object>] [[-EC2SecurityGroupId] <Object>]
- [[-EC2SecurityGroupName] <Object>] [[-EC2SecurityGroupOwnerId] <Object>]
+ [[-EC2SecurityGroupName] <Object>] [[-EC2SecurityGroupOwnerId] <Object>] [<CommonParameters>]
 ```
 
 ## DESCRIPTION
@@ -34,7 +35,7 @@ UpdateType: Mutable
 ```yaml
 Type: Object
 Parameter Sets: (All)
-Aliases: 
+Aliases:
 
 Required: False
 Position: 1
@@ -52,7 +53,7 @@ UpdateType: Immutable
 ```yaml
 Type: Object
 Parameter Sets: (All)
-Aliases: 
+Aliases:
 
 Required: False
 Position: 2
@@ -70,7 +71,7 @@ UpdateType: Immutable
 ```yaml
 Type: Object
 Parameter Sets: (All)
-Aliases: 
+Aliases:
 
 Required: False
 Position: 3
@@ -88,7 +89,7 @@ UpdateType: Immutable
 ```yaml
 Type: Object
 Parameter Sets: (All)
-Aliases: 
+Aliases:
 
 Required: False
 Position: 4
@@ -97,11 +98,15 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
+### CommonParameters
+This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction, and -WarningVariable.
+For more information, see about_CommonParameters (http://go.microsoft.com/fwlink/?LinkID=113216).
+
 ## INPUTS
 
 ## OUTPUTS
 
-### VaporShell.Resource.RDS.DBSecurityGroup.Ingress
+### Vaporshell.Resource.RDS.DBSecurityGroup.Ingress
 
 ## NOTES
 

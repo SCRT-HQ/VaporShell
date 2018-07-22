@@ -6,6 +6,7 @@ label1: Category
 data1: Documentation
 label2: Depth
 data2: Deep
+schema: 2.0.0
 ---
 
 # Invoke-VSDeploy
@@ -18,15 +19,15 @@ Creates a change set then executes it
 ### TemplateFile (Default)
 ```
 Invoke-VSDeploy [-TemplateFile] <String> [-StackName] <String> [-Parameters <Object>]
- [-Capabilities <String[]>] [-DoNotExecute] [-RoleARN <String>] [-NotificationARNs <String[]>]
- [-ProfileName <String>]
+ [-Capabilities <String[]>] [-DoNotExecute] [-RoleARN <String>] [-NotificationARNs <String[]>] [-Watch]
+ [-ProfileName <String>] [<CommonParameters>]
 ```
 
 ### TemplateBody
 ```
 Invoke-VSDeploy [-TemplateBody] <String> [-StackName] <String> [-Parameters <Object>]
- [-Capabilities <String[]>] [-DoNotExecute] [-RoleARN <String>] [-NotificationARNs <String[]>]
- [-ProfileName <String>]
+ [-Capabilities <String[]>] [-DoNotExecute] [-RoleARN <String>] [-NotificationARNs <String[]>] [-Watch]
+ [-ProfileName <String>] [<CommonParameters>]
 ```
 
 ## DESCRIPTION
@@ -42,7 +43,7 @@ A JSON or YAML string containing the template body.
 ```yaml
 Type: String
 Parameter Sets: TemplateBody
-Aliases: 
+Aliases:
 
 Required: True
 Position: 1
@@ -57,7 +58,7 @@ The path to the local file containing the template.
 ```yaml
 Type: String
 Parameter Sets: TemplateFile
-Aliases: 
+Aliases:
 
 Required: True
 Position: 1
@@ -74,7 +75,7 @@ If you specify a new stack, the command creates it.
 ```yaml
 Type: String
 Parameter Sets: (All)
-Aliases: 
+Aliases:
 
 Required: True
 Position: 2
@@ -111,7 +112,7 @@ If you have IAM resources with custom names, you must specify CAPABILITY_NAMED_I
 ```yaml
 Type: String[]
 Parameter Sets: (All)
-Aliases: 
+Aliases:
 
 Required: False
 Position: Named
@@ -144,7 +145,7 @@ The Amazon Resource Name (ARN) of an AWS Identity and Access Management (IAM) ro
 ```yaml
 Type: String
 Parameter Sets: (All)
-Aliases: 
+Aliases:
 
 Required: False
 Position: Named
@@ -159,11 +160,26 @@ Amazon Simple Notification Service topic Amazon Resource Names (ARNs) that AWS C
 ```yaml
 Type: String[]
 Parameter Sets: (All)
-Aliases: 
+Aliases:
 
 Required: False
 Position: Named
 Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### -Watch
+{{Fill Watch Description}}
+
+```yaml
+Type: SwitchParameter
+Parameter Sets: (All)
+Aliases:
+
+Required: False
+Position: Named
+Default value: False
 Accept pipeline input: False
 Accept wildcard characters: False
 ```
@@ -175,7 +191,7 @@ Defaults to $env:AWS_PROFILE, if set.
 ```yaml
 Type: String
 Parameter Sets: (All)
-Aliases: 
+Aliases:
 
 Required: False
 Position: Named
@@ -184,6 +200,10 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
+### CommonParameters
+This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction, and -WarningVariable.
+For more information, see about_CommonParameters (http://go.microsoft.com/fwlink/?LinkID=113216).
+
 ## INPUTS
 
 ## OUTPUTS
@@ -191,4 +211,3 @@ Accept wildcard characters: False
 ## NOTES
 
 ## RELATED LINKS
-

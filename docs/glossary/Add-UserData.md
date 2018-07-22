@@ -6,6 +6,7 @@ label1: Category
 data1: Documentation
 label2: Depth
 data2: Deep
+schema: 2.0.0
 ---
 
 # Add-UserData
@@ -19,26 +20,29 @@ in AutoScaling Launch Configurations), it adds the single For multiple values, i
 
 ### String (Default)
 ```
-Add-UserData [-String] <Object>
+Add-UserData [-String] <Object> [<CommonParameters>]
 ```
 
 ### File
 ```
-Add-UserData [-File] <String>
+Add-UserData [-File] <String> [<CommonParameters>]
 ```
+
+## DESCRIPTION
+{{Fill in the Description}}
 
 ## PARAMETERS
 
 ### -String
 An array of strings and/or Instrinsic Functions.
 
-IMPORTANT: You must specify new lines in PowerShell syntax so it identifies it as a new line when converting to JSON via Export-VaporShell.
+IMPORTANT: You must specify new lines in Powershell syntax so it identifies it as a new line when converting to JSON via Export-Vaporshell.
 This will convert \`n \[backtick n\] into \n \[backslash n\] in the resulting JSON template.
 
 ```yaml
 Type: Object
 Parameter Sets: String
-Aliases: 
+Aliases:
 
 Required: True
 Position: 1
@@ -55,7 +59,7 @@ Use the String parameter if you'd like to include functions in the array.
 ```yaml
 Type: String
 Parameter Sets: File
-Aliases: 
+Aliases:
 
 Required: True
 Position: 1
@@ -64,13 +68,16 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
+### CommonParameters
+This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction, and -WarningVariable.
+For more information, see about_CommonParameters (http://go.microsoft.com/fwlink/?LinkID=113216).
+
 ## INPUTS
 
 ## OUTPUTS
 
-### VaporShell.Resource.UserData
+### Vaporshell.Resource.UserData
 
 ## NOTES
 
 ## RELATED LINKS
-

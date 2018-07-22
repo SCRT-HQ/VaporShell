@@ -6,6 +6,7 @@ label1: Category
 data1: Documentation
 label2: Depth
 data2: Deep
+schema: 2.0.0
 ---
 
 # New-VSStackSet
@@ -19,22 +20,25 @@ Creates a new Stack Set
 ```
 New-VSStackSet [-Path] <String> -StackSetName <String> [-Capabilities <String[]>]
  [-ClientRequestToken <String>] [-Description <String>] [-Parameters <Object>] [-Tags <String>]
- [-ProfileName <String>] [-WhatIf] [-Confirm]
+ [-ProfileName <String>] [-WhatIf] [-Confirm] [<CommonParameters>]
 ```
 
 ### TemplateBody
 ```
 New-VSStackSet [-TemplateBody] <String> -StackSetName <String> [-Capabilities <String[]>]
  [-ClientRequestToken <String>] [-Description <String>] [-Parameters <Object>] [-Tags <String>]
- [-ProfileName <String>] [-WhatIf] [-Confirm]
+ [-ProfileName <String>] [-WhatIf] [-Confirm] [<CommonParameters>]
 ```
 
 ### TemplateUrl
 ```
 New-VSStackSet [-TemplateUrl] <String> -StackSetName <String> [-Capabilities <String[]>]
  [-ClientRequestToken <String>] [-Description <String>] [-Parameters <Object>] [-Tags <String>]
- [-ProfileName <String>] [-WhatIf] [-Confirm]
+ [-ProfileName <String>] [-WhatIf] [-Confirm] [<CommonParameters>]
 ```
+
+## DESCRIPTION
+{{Fill in the Description}}
 
 ## PARAMETERS
 
@@ -44,7 +48,7 @@ Structure containing the template body with a minimum length of 1 byte and a max
 ```yaml
 Type: String
 Parameter Sets: TemplateBody
-Aliases: 
+Aliases:
 
 Required: True
 Position: 1
@@ -59,7 +63,7 @@ File path to the local template file.
 ```yaml
 Type: String
 Parameter Sets: Path
-Aliases: 
+Aliases:
 
 Required: True
 Position: 1
@@ -75,7 +79,7 @@ The URL must point to a template (max size: 460,800 bytes) that is located in an
 ```yaml
 Type: String
 Parameter Sets: TemplateUrl
-Aliases: 
+Aliases:
 
 Required: True
 Position: 1
@@ -93,7 +97,7 @@ It must start with an alphabetic character and can't be longer than 128 characte
 ```yaml
 Type: String
 Parameter Sets: (All)
-Aliases: 
+Aliases:
 
 Required: True
 Position: Named
@@ -116,7 +120,7 @@ If you don't specify this parameter, this action returns an InsufficientCapabili
 ```yaml
 Type: String[]
 Parameter Sets: (All)
-Aliases: 
+Aliases:
 
 Required: False
 Position: Named
@@ -134,7 +138,7 @@ If you don't specify an operation ID, the SDK generates one automatically.
 ```yaml
 Type: String
 Parameter Sets: (All)
-Aliases: 
+Aliases:
 
 Required: False
 Position: Named
@@ -150,7 +154,7 @@ You can use the description to identify the stack set's purpose or other importa
 ```yaml
 Type: String
 Parameter Sets: (All)
-Aliases: 
+Aliases:
 
 Required: False
 Position: Named
@@ -165,7 +169,7 @@ The input parameters for the stack set template.
 ```yaml
 Type: Object
 Parameter Sets: (All)
-Aliases: 
+Aliases:
 
 Required: False
 Position: Named
@@ -182,7 +186,7 @@ You can specify a maximum of 50 tags.
 ```yaml
 Type: String
 Parameter Sets: (All)
-Aliases: 
+Aliases:
 
 Required: False
 Position: Named
@@ -198,7 +202,7 @@ Defaults to $env:AWS_PROFILE, if set.
 ```yaml
 Type: String
 Parameter Sets: (All)
-Aliases: 
+Aliases:
 
 Required: False
 Position: Named
@@ -238,6 +242,10 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
+### CommonParameters
+This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction, and -WarningVariable.
+For more information, see about_CommonParameters (http://go.microsoft.com/fwlink/?LinkID=113216).
+
 ## INPUTS
 
 ## OUTPUTS
@@ -245,4 +253,3 @@ Accept wildcard characters: False
 ## NOTES
 
 ## RELATED LINKS
-

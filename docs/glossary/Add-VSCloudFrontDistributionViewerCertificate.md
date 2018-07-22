@@ -6,6 +6,7 @@ label1: Category
 data1: Documentation
 label2: Depth
 data2: Deep
+schema: 2.0.0
 ---
 
 # Add-VSCloudFrontDistributionViewerCertificate
@@ -16,9 +17,9 @@ Adds an AWS::CloudFront::Distribution.ViewerCertificate resource property to the
 ## SYNTAX
 
 ```
-Add-VSCloudFrontDistributionViewerCertificate [[-AcmCertificateArn] <Object>]
- [[-CloudFrontDefaultCertificate] <Boolean>] [[-IamCertificateId] <Object>]
- [[-MinimumProtocolVersion] <Object>] [[-SslSupportMethod] <Object>]
+Add-VSCloudFrontDistributionViewerCertificate [[-IamCertificateId] <Object>] [[-SslSupportMethod] <Object>]
+ [[-MinimumProtocolVersion] <Object>] [[-CloudFrontDefaultCertificate] <Boolean>]
+ [[-AcmCertificateArn] <Object>] [<CommonParameters>]
 ```
 
 ## DESCRIPTION
@@ -26,16 +27,16 @@ Adds an AWS::CloudFront::Distribution.ViewerCertificate resource property to the
 
 ## PARAMETERS
 
-### -AcmCertificateArn
-Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-cloudfront-distributionconfig-viewercertificate.html#cfn-cloudfront-distributionconfig-viewercertificate-acmcertificatearn    
-PrimitiveType: String    
+### -IamCertificateId
 Required: False    
+Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-cloudfront-distribution-viewercertificate.html#cfn-cloudfront-distribution-viewercertificate-iamcertificateid    
+PrimitiveType: String    
 UpdateType: Mutable
 
 ```yaml
 Type: Object
 Parameter Sets: (All)
-Aliases: 
+Aliases:
 
 Required: False
 Position: 1
@@ -44,34 +45,34 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
-### -CloudFrontDefaultCertificate
-Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-cloudfront-distributionconfig-viewercertificate.html#cfn-cloudfront-distributionconfig-viewercertificate-cloudfrontdefaultcertificate    
-PrimitiveType: Boolean    
+### -SslSupportMethod
 Required: False    
-UpdateType: Mutable
-
-```yaml
-Type: Boolean
-Parameter Sets: (All)
-Aliases: 
-
-Required: False
-Position: 2
-Default value: False
-Accept pipeline input: False
-Accept wildcard characters: False
-```
-
-### -IamCertificateId
-Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-cloudfront-distributionconfig-viewercertificate.html#cfn-cloudfront-distributionconfig-viewercertificate-iamcertificateid    
+Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-cloudfront-distribution-viewercertificate.html#cfn-cloudfront-distribution-viewercertificate-sslsupportmethod    
 PrimitiveType: String    
-Required: False    
 UpdateType: Mutable
 
 ```yaml
 Type: Object
 Parameter Sets: (All)
-Aliases: 
+Aliases:
+
+Required: False
+Position: 2
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### -MinimumProtocolVersion
+Required: False    
+Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-cloudfront-distribution-viewercertificate.html#cfn-cloudfront-distribution-viewercertificate-minimumprotocolversion    
+PrimitiveType: String    
+UpdateType: Mutable
+
+```yaml
+Type: Object
+Parameter Sets: (All)
+Aliases:
 
 Required: False
 Position: 3
@@ -80,34 +81,34 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
-### -MinimumProtocolVersion
-Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-cloudfront-distributionconfig-viewercertificate.html#cfn-cloudfront-distributionconfig-viewercertificate-sslsupportmethod    
-PrimitiveType: String    
+### -CloudFrontDefaultCertificate
 Required: False    
+Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-cloudfront-distribution-viewercertificate.html#cfn-cloudfront-distribution-viewercertificate-cloudfrontdefaultcertificate    
+PrimitiveType: Boolean    
 UpdateType: Mutable
 
 ```yaml
-Type: Object
+Type: Boolean
 Parameter Sets: (All)
-Aliases: 
+Aliases:
 
 Required: False
 Position: 4
-Default value: None
+Default value: False
 Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
-### -SslSupportMethod
-Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-cloudfront-distributionconfig-viewercertificate.html#cfn-cloudfront-distributionconfig-viewercertificate-minimumprotocolversion    
-PrimitiveType: String    
+### -AcmCertificateArn
 Required: False    
+Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-cloudfront-distribution-viewercertificate.html#cfn-cloudfront-distribution-viewercertificate-acmcertificatearn    
+PrimitiveType: String    
 UpdateType: Mutable
 
 ```yaml
 Type: Object
 Parameter Sets: (All)
-Aliases: 
+Aliases:
 
 Required: False
 Position: 5
@@ -116,15 +117,19 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
+### CommonParameters
+This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction, and -WarningVariable.
+For more information, see about_CommonParameters (http://go.microsoft.com/fwlink/?LinkID=113216).
+
 ## INPUTS
 
 ## OUTPUTS
 
-### VaporShell.Resource.CloudFront.Distribution.ViewerCertificate
+### Vaporshell.Resource.CloudFront.Distribution.ViewerCertificate
 
 ## NOTES
 
 ## RELATED LINKS
 
-[http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-cloudfront-distributionconfig-viewercertificate.html](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-cloudfront-distributionconfig-viewercertificate.html)
+[http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-cloudfront-distribution-viewercertificate.html](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-cloudfront-distribution-viewercertificate.html)
 

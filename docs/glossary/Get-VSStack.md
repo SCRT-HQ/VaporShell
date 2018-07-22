@@ -6,6 +6,7 @@ label1: Category
 data1: Documentation
 label2: Depth
 data2: Deep
+schema: 2.0.0
 ---
 
 # Get-VSStack
@@ -17,90 +18,97 @@ Gets info about a stack or list of stacks
 
 ### Description (Default)
 ```
-Get-VSStack [-Description] [-StackId <String>] [-ProfileName <String>]
+Get-VSStack [-Description] [-StackId <String>] [-ProfileName <String>] [<CommonParameters>]
 ```
 
 ### ListStacks
 ```
-Get-VSStack [-List] [-StackStatusFilter <String>] [-ProfileName <String>]
+Get-VSStack [-List] [-StackStatusFilter <String>] [-ProfileName <String>] [<CommonParameters>]
 ```
 
 ### Policy
 ```
-Get-VSStack [-Policy] [-StackId <String>] [-ProfileName <String>]
+Get-VSStack [-Policy] [-StackId <String>] [-ProfileName <String>] [<CommonParameters>]
 ```
 
 ### Template
 ```
 Get-VSStack [-Template] [-StackId <String>] [-ChangeSetName <String>] [-TemplateStage <String>]
- [-ProfileName <String>]
+ [-ProfileName <String>] [<CommonParameters>]
 ```
 
 ### Events
 ```
-Get-VSStack [-Events] [-StackId <String>] [-Colorize] [-ProfileName <String>]
+Get-VSStack [-Events] [-StackId <String>] [-Colorize] [-ProfileName <String>] [<CommonParameters>]
 ```
 
 ### Resource
 ```
 Get-VSStack [-Resource] [-StackId <String>] [-LogicalResourceId <String>] [-ProfileName <String>]
+ [<CommonParameters>]
 ```
 
 ### ResourcesStackId
 ```
 Get-VSStack [-Resources] [-StackId <String>] [-LogicalResourceId <String>] [-ProfileName <String>]
+ [<CommonParameters>]
 ```
 
 ### ResourcesPhysicalId
 ```
 Get-VSStack [-Resources] [-LogicalResourceId <String>] [-PhysicalResourceId <String>] [-ProfileName <String>]
+ [<CommonParameters>]
 ```
 
 ### ResourceList
 ```
-Get-VSStack [-ResourceList] [-StackId <String>] [-ProfileName <String>]
+Get-VSStack [-ResourceList] [-StackId <String>] [-ProfileName <String>] [<CommonParameters>]
 ```
 
 ### ExportList
 ```
-Get-VSStack [-ExportList] [-ProfileName <String>]
+Get-VSStack [-ExportList] [-ProfileName <String>] [<CommonParameters>]
 ```
 
 ### ImportList
 ```
-Get-VSStack [-ImportList] [-ExportName <String>] [-ProfileName <String>]
+Get-VSStack [-ImportList] [-ExportName <String>] [-ProfileName <String>] [<CommonParameters>]
 ```
 
 ### SummaryUrl
 ```
 Get-VSStack [-Summary] [-StackId <String>] [-StackSetName <String>] [-TemplateUrl <String>]
- [-ProfileName <String>]
+ [-ProfileName <String>] [<CommonParameters>]
 ```
 
 ### SummaryBody
 ```
 Get-VSStack [-Summary] [-StackId <String>] [-StackSetName <String>] [-TemplateBody <String>]
- [-ProfileName <String>]
+ [-ProfileName <String>] [<CommonParameters>]
 ```
 
 ### SummaryPath
 ```
 Get-VSStack [-Summary] [-StackId <String>] [-StackSetName <String>] [-Path <String>] [-ProfileName <String>]
+ [<CommonParameters>]
 ```
 
 ### EstimatedCostPath
 ```
 Get-VSStack [-EstimatedCost] [-Path <String>] [-Parameters <Parameter[]>] [-ProfileName <String>]
+ [<CommonParameters>]
 ```
 
 ### EstimatedCostUrl
 ```
 Get-VSStack [-EstimatedCost] [-TemplateUrl <String>] [-Parameters <Parameter[]>] [-ProfileName <String>]
+ [<CommonParameters>]
 ```
 
 ### EstimatedCostBody
 ```
 Get-VSStack [-EstimatedCost] [-TemplateBody <String>] [-Parameters <Parameter[]>] [-ProfileName <String>]
+ [<CommonParameters>]
 ```
 
 ## DESCRIPTION
@@ -116,7 +124,7 @@ If the stack does not exist, an AmazonCloudFormationException is returned.
 ```yaml
 Type: SwitchParameter
 Parameter Sets: Description
-Aliases: 
+Aliases:
 
 Required: False
 Position: Named
@@ -133,7 +141,7 @@ If no StackStatusFilter is specified, summary information for all stacks is retu
 ```yaml
 Type: SwitchParameter
 Parameter Sets: ListStacks
-Aliases: 
+Aliases:
 
 Required: False
 Position: Named
@@ -149,7 +157,7 @@ If a stack doesn't have a policy, a null value is returned.
 ```yaml
 Type: SwitchParameter
 Parameter Sets: Policy
-Aliases: 
+Aliases:
 
 Required: False
 Position: Named
@@ -165,7 +173,7 @@ You can get the template for running or deleted stacks.
 ```yaml
 Type: SwitchParameter
 Parameter Sets: Template
-Aliases: 
+Aliases:
 
 Required: False
 Position: Named
@@ -180,7 +188,7 @@ Returns all stack related events for a specified stack in reverse chronological 
 ```yaml
 Type: SwitchParameter
 Parameter Sets: Events
-Aliases: 
+Aliases:
 
 Required: False
 Position: Named
@@ -195,7 +203,7 @@ Returns a description of the specified resource in the specified stack.
 ```yaml
 Type: SwitchParameter
 Parameter Sets: Resource
-Aliases: 
+Aliases:
 
 Required: False
 Position: Named
@@ -212,7 +220,7 @@ If PhysicalResourceId is specified, the associated resources of the stack that t
 ```yaml
 Type: SwitchParameter
 Parameter Sets: ResourcesStackId, ResourcesPhysicalId
-Aliases: 
+Aliases:
 
 Required: False
 Position: Named
@@ -227,7 +235,7 @@ Returns descriptions of all resources of the specified stack.
 ```yaml
 Type: SwitchParameter
 Parameter Sets: ResourceList
-Aliases: 
+Aliases:
 
 Required: False
 Position: Named
@@ -244,7 +252,7 @@ To import values, use the Fn::ImportValue function.
 ```yaml
 Type: SwitchParameter
 Parameter Sets: ExportList
-Aliases: 
+Aliases:
 
 Required: False
 Position: Named
@@ -261,7 +269,7 @@ To see the exported output values in your account, see ListExports.
 ```yaml
 Type: SwitchParameter
 Parameter Sets: ImportList
-Aliases: 
+Aliases:
 
 Required: False
 Position: Named
@@ -280,7 +288,7 @@ If the template does not exist, a ValidationError is returned.
 ```yaml
 Type: SwitchParameter
 Parameter Sets: SummaryUrl, SummaryBody, SummaryPath
-Aliases: 
+Aliases:
 
 Required: False
 Position: Named
@@ -296,7 +304,7 @@ The return value is an AWS Simple Monthly Calculator URL with a query string tha
 ```yaml
 Type: SwitchParameter
 Parameter Sets: EstimatedCostPath, EstimatedCostUrl, EstimatedCostBody
-Aliases: 
+Aliases:
 
 Required: False
 Position: Named
@@ -326,7 +334,7 @@ The logical name of the resource as specified in the template.
 ```yaml
 Type: String
 Parameter Sets: Resource, ResourcesStackId, ResourcesPhysicalId
-Aliases: 
+Aliases:
 
 Required: False
 Position: Named
@@ -343,7 +351,7 @@ You can pass the EC2 InstanceId to DescribeStackResources to find which stack th
 ```yaml
 Type: String
 Parameter Sets: ResourcesPhysicalId
-Aliases: 
+Aliases:
 
 Required: False
 Position: Named
@@ -358,7 +366,7 @@ The name or unique ID of the stack set from which the stack was created.
 ```yaml
 Type: String
 Parameter Sets: SummaryUrl, SummaryBody, SummaryPath
-Aliases: 
+Aliases:
 
 Required: False
 Position: Named
@@ -374,7 +382,7 @@ AWS CloudFormation returns the stack names that are importing this value.
 ```yaml
 Type: String
 Parameter Sets: ImportList
-Aliases: 
+Aliases:
 
 Required: False
 Position: Named
@@ -390,7 +398,7 @@ If you specify a name, you must also specify the StackName.
 ```yaml
 Type: String
 Parameter Sets: Template
-Aliases: 
+Aliases:
 
 Required: False
 Position: Named
@@ -409,7 +417,7 @@ By default, AWS CloudFormation specifies Original.
 ```yaml
 Type: String
 Parameter Sets: Template
-Aliases: 
+Aliases:
 
 Required: False
 Position: Named
@@ -424,7 +432,7 @@ Structure containing the template body with a minimum length of 1 byte and a max
 ```yaml
 Type: String
 Parameter Sets: SummaryBody
-Aliases: 
+Aliases:
 
 Required: False
 Position: Named
@@ -436,7 +444,7 @@ Accept wildcard characters: False
 ```yaml
 Type: String
 Parameter Sets: EstimatedCostBody
-Aliases: 
+Aliases:
 
 Required: False
 Position: Named
@@ -452,7 +460,7 @@ The URL must point to a template that is located in an Amazon S3 bucket.
 ```yaml
 Type: String
 Parameter Sets: SummaryUrl, EstimatedCostUrl
-Aliases: 
+Aliases:
 
 Required: False
 Position: Named
@@ -467,7 +475,7 @@ Absolute or relative file path to the template file you would like to summarize.
 ```yaml
 Type: String
 Parameter Sets: SummaryPath, EstimatedCostPath
-Aliases: 
+Aliases:
 
 Required: False
 Position: Named
@@ -482,7 +490,7 @@ A list of Parameter structures that specify input parameters.
 ```yaml
 Type: Parameter[]
 Parameter Sets: EstimatedCostPath, EstimatedCostUrl, EstimatedCostBody
-Aliases: 
+Aliases:
 
 Required: False
 Position: Named
@@ -499,7 +507,7 @@ For a complete list of stack status codes, see the StackStatus parameter of the 
 ```yaml
 Type: String
 Parameter Sets: ListStacks
-Aliases: 
+Aliases:
 
 Required: False
 Position: Named
@@ -514,7 +522,7 @@ Used with -Events to output colorized events.
 ```yaml
 Type: SwitchParameter
 Parameter Sets: Events
-Aliases: 
+Aliases:
 
 Required: False
 Position: Named
@@ -530,7 +538,7 @@ Defaults to $env:AWS_PROFILE, if set.
 ```yaml
 Type: String
 Parameter Sets: (All)
-Aliases: 
+Aliases:
 
 Required: False
 Position: Named
@@ -539,6 +547,10 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
+### CommonParameters
+This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction, and -WarningVariable.
+For more information, see about_CommonParameters (http://go.microsoft.com/fwlink/?LinkID=113216).
+
 ## INPUTS
 
 ## OUTPUTS
@@ -546,4 +558,3 @@ Accept wildcard characters: False
 ## NOTES
 
 ## RELATED LINKS
-

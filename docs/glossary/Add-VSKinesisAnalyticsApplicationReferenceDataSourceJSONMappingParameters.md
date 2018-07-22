@@ -6,6 +6,7 @@ label1: Category
 data1: Documentation
 label2: Depth
 data2: Deep
+schema: 2.0.0
 ---
 
 # Add-VSKinesisAnalyticsApplicationReferenceDataSourceJSONMappingParameters
@@ -17,6 +18,7 @@ Adds an AWS::KinesisAnalytics::ApplicationReferenceDataSource.JSONMappingParamet
 
 ```
 Add-VSKinesisAnalyticsApplicationReferenceDataSourceJSONMappingParameters [-RecordRowPath] <Object>
+ [<CommonParameters>]
 ```
 
 ## DESCRIPTION
@@ -33,7 +35,7 @@ UpdateType: Mutable
 ```yaml
 Type: Object
 Parameter Sets: (All)
-Aliases: 
+Aliases:
 
 Required: True
 Position: 1
@@ -42,11 +44,15 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
+### CommonParameters
+This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction, and -WarningVariable.
+For more information, see about_CommonParameters (http://go.microsoft.com/fwlink/?LinkID=113216).
+
 ## INPUTS
 
 ## OUTPUTS
 
-### VaporShell.Resource.KinesisAnalytics.ApplicationReferenceDataSource.JSONMappingParameters
+### Vaporshell.Resource.KinesisAnalytics.ApplicationReferenceDataSource.JSONMappingParameters
 
 ## NOTES
 

@@ -6,6 +6,7 @@ label1: Category
 data1: Documentation
 label2: Depth
 data2: Deep
+schema: 2.0.0
 ---
 
 # Get-TemplateValidation
@@ -17,18 +18,21 @@ Confirms if a template is valid, throws an error if not.
 
 ### Path (Default)
 ```
-Get-TemplateValidation [-Path] <String> [-ProfileName <String>]
+Get-TemplateValidation [-Path] <String> [-ProfileName <String>] [<CommonParameters>]
 ```
 
 ### TemplateBody
 ```
-Get-TemplateValidation [-TemplateBody] <String> [-ProfileName <String>]
+Get-TemplateValidation [-TemplateBody] <String> [-ProfileName <String>] [<CommonParameters>]
 ```
 
 ### TemplateUrl
 ```
-Get-TemplateValidation [-TemplateUrl] <String> [-ProfileName <String>]
+Get-TemplateValidation [-TemplateUrl] <String> [-ProfileName <String>] [<CommonParameters>]
 ```
+
+## DESCRIPTION
+{{Fill in the Description}}
 
 ## PARAMETERS
 
@@ -38,7 +42,7 @@ String formatted body in either JSON or YAML.
 ```yaml
 Type: String
 Parameter Sets: TemplateBody
-Aliases: 
+Aliases:
 
 Required: True
 Position: 1
@@ -53,7 +57,7 @@ The path to a local template file.
 ```yaml
 Type: String
 Parameter Sets: Path
-Aliases: 
+Aliases:
 
 Required: True
 Position: 1
@@ -69,7 +73,7 @@ The URL must point to a template (max size: 460,800 bytes) that is located in an
 ```yaml
 Type: String
 Parameter Sets: TemplateUrl
-Aliases: 
+Aliases:
 
 Required: True
 Position: 1
@@ -85,7 +89,7 @@ Defaults to $env:AWS_PROFILE, if set.
 ```yaml
 Type: String
 Parameter Sets: (All)
-Aliases: 
+Aliases:
 
 Required: False
 Position: Named
@@ -94,6 +98,10 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
+### CommonParameters
+This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction, and -WarningVariable.
+For more information, see about_CommonParameters (http://go.microsoft.com/fwlink/?LinkID=113216).
+
 ## INPUTS
 
 ## OUTPUTS
@@ -101,4 +109,3 @@ Accept wildcard characters: False
 ## NOTES
 
 ## RELATED LINKS
-

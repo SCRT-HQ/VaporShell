@@ -6,6 +6,7 @@ label1: Category
 data1: Documentation
 label2: Depth
 data2: Deep
+schema: 2.0.0
 ---
 
 # Add-UpdatePolicy
@@ -21,7 +22,7 @@ Add-UpdatePolicy [[-AutoScalingReplacingUpdate] <PSCustomObject>] [[-WillReplace
  [[-AutoScalingRollingUpdate] <PSCustomObject>] [[-MaxBatchSize] <Int32>] [[-MinInstancesInService] <Int32>]
  [[-MinSuccessfulInstancesPercent] <Int32>] [[-PauseTime] <String>] [[-SuspendProcesses] <String[]>]
  [[-WaitOnResourceSignals] <Boolean>] [[-AutoScalingScheduledAction] <PSCustomObject>]
- [[-IgnoreUnmodifiedGroupSizeProperties] <Boolean>]
+ [[-IgnoreUnmodifiedGroupSizeProperties] <Boolean>] [<CommonParameters>]
 ```
 
 ### AutoScalingScheduledActionDetails
@@ -30,7 +31,7 @@ Add-UpdatePolicy [[-AutoScalingReplacingUpdate] <PSCustomObject>] [[-WillReplace
  [[-AutoScalingRollingUpdate] <PSCustomObject>] [[-MaxBatchSize] <Int32>] [[-MinInstancesInService] <Int32>]
  [[-MinSuccessfulInstancesPercent] <Int32>] [[-PauseTime] <String>] [[-SuspendProcesses] <String[]>]
  [[-WaitOnResourceSignals] <Boolean>] [[-AutoScalingScheduledAction] <PSCustomObject>]
- [[-IgnoreUnmodifiedGroupSizeProperties] <Boolean>]
+ [[-IgnoreUnmodifiedGroupSizeProperties] <Boolean>] [<CommonParameters>]
 ```
 
 ### AutoScalingScheduledAction
@@ -39,7 +40,7 @@ Add-UpdatePolicy [[-AutoScalingReplacingUpdate] <PSCustomObject>] [[-WillReplace
  [[-AutoScalingRollingUpdate] <PSCustomObject>] [[-MaxBatchSize] <Int32>] [[-MinInstancesInService] <Int32>]
  [[-MinSuccessfulInstancesPercent] <Int32>] [[-PauseTime] <String>] [[-SuspendProcesses] <String[]>]
  [[-WaitOnResourceSignals] <Boolean>] [[-AutoScalingScheduledAction] <PSCustomObject>]
- [[-IgnoreUnmodifiedGroupSizeProperties] <Boolean>]
+ [[-IgnoreUnmodifiedGroupSizeProperties] <Boolean>] [<CommonParameters>]
 ```
 
 ### AutoScalingRollingUpdate
@@ -48,7 +49,7 @@ Add-UpdatePolicy [[-AutoScalingReplacingUpdate] <PSCustomObject>] [[-WillReplace
  [[-AutoScalingRollingUpdate] <PSCustomObject>] [[-MaxBatchSize] <Int32>] [[-MinInstancesInService] <Int32>]
  [[-MinSuccessfulInstancesPercent] <Int32>] [[-PauseTime] <String>] [[-SuspendProcesses] <String[]>]
  [[-WaitOnResourceSignals] <Boolean>] [[-AutoScalingScheduledAction] <PSCustomObject>]
- [[-IgnoreUnmodifiedGroupSizeProperties] <Boolean>]
+ [[-IgnoreUnmodifiedGroupSizeProperties] <Boolean>] [<CommonParameters>]
 ```
 
 ### AutoScalingReplacingUpdate
@@ -57,7 +58,7 @@ Add-UpdatePolicy [[-AutoScalingReplacingUpdate] <PSCustomObject>] [[-WillReplace
  [[-AutoScalingRollingUpdate] <PSCustomObject>] [[-MaxBatchSize] <Int32>] [[-MinInstancesInService] <Int32>]
  [[-MinSuccessfulInstancesPercent] <Int32>] [[-PauseTime] <String>] [[-SuspendProcesses] <String[]>]
  [[-WaitOnResourceSignals] <Boolean>] [[-AutoScalingScheduledAction] <PSCustomObject>]
- [[-IgnoreUnmodifiedGroupSizeProperties] <Boolean>]
+ [[-IgnoreUnmodifiedGroupSizeProperties] <Boolean>] [<CommonParameters>]
 ```
 
 ### AutoScalingReplacingUpdateDetails
@@ -66,7 +67,7 @@ Add-UpdatePolicy [[-AutoScalingReplacingUpdate] <PSCustomObject>] [[-WillReplace
  [[-AutoScalingRollingUpdate] <PSCustomObject>] [[-MaxBatchSize] <Int32>] [[-MinInstancesInService] <Int32>]
  [[-MinSuccessfulInstancesPercent] <Int32>] [[-PauseTime] <String>] [[-SuspendProcesses] <String[]>]
  [[-WaitOnResourceSignals] <Boolean>] [[-AutoScalingScheduledAction] <PSCustomObject>]
- [[-IgnoreUnmodifiedGroupSizeProperties] <Boolean>]
+ [[-IgnoreUnmodifiedGroupSizeProperties] <Boolean>] [<CommonParameters>]
 ```
 
 ## DESCRIPTION
@@ -95,7 +96,7 @@ Use this if you are customizing the AutoScalingReplacingUpdate properties outsid
 ```yaml
 Type: PSCustomObject
 Parameter Sets: (All)
-Aliases: 
+Aliases:
 
 Required: False
 Position: 1
@@ -118,7 +119,7 @@ If the minimum number of instances (specified by the WillReplace property) don't
 ```yaml
 Type: Boolean
 Parameter Sets: (All)
-Aliases: 
+Aliases:
 
 Required: False
 Position: 2
@@ -142,7 +143,7 @@ Use this if you are customizing the AutoScalingRollingUpdate properties outside 
 ```yaml
 Type: PSCustomObject
 Parameter Sets: (All)
-Aliases: 
+Aliases:
 
 Required: False
 Position: 3
@@ -157,7 +158,7 @@ Specifies the maximum number of instances that AWS CloudFormation updates.
 ```yaml
 Type: Int32
 Parameter Sets: (All)
-Aliases: 
+Aliases:
 
 Required: False
 Position: 4
@@ -172,7 +173,7 @@ Specifies the minimum number of instances that must be in service within the Aut
 ```yaml
 Type: Int32
 Parameter Sets: (All)
-Aliases: 
+Aliases:
 
 Required: False
 Position: 5
@@ -182,11 +183,12 @@ Accept wildcard characters: False
 ```
 
 ### -MinSuccessfulInstancesPercent
+{{Fill MinSuccessfulInstancesPercent Description}}
 
 ```yaml
 Type: Int32
 Parameter Sets: (All)
-Aliases: 
+Aliases:
 
 Required: False
 Position: 6
@@ -213,7 +215,7 @@ If the WaitOnAutoScalingRollingUpdates property is set to true, the default is P
 ```yaml
 Type: String
 Parameter Sets: (All)
-Aliases: 
+Aliases:
 
 Required: False
 Position: 7
@@ -231,7 +233,7 @@ For valid values, see the \`ScalingProcesses.member.N parameter\` for the Suspen
 ```yaml
 Type: String[]
 Parameter Sets: (All)
-Aliases: 
+Aliases:
 
 Required: False
 Position: 8
@@ -241,11 +243,12 @@ Accept wildcard characters: False
 ```
 
 ### -WaitOnResourceSignals
+{{Fill WaitOnResourceSignals Description}}
 
 ```yaml
 Type: Boolean
 Parameter Sets: (All)
-Aliases: 
+Aliases:
 
 Required: False
 Position: 9
@@ -268,7 +271,7 @@ Use this if you are customizing the AutoScalingScheduledAction properties outsid
 ```yaml
 Type: PSCustomObject
 Parameter Sets: (All)
-Aliases: 
+Aliases:
 
 Required: False
 Position: 10
@@ -284,7 +287,7 @@ If you modify any of the group size property values in your template, AWS CloudF
 ```yaml
 Type: Boolean
 Parameter Sets: (All)
-Aliases: 
+Aliases:
 
 Required: False
 Position: 11
@@ -293,11 +296,15 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
+### CommonParameters
+This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction, and -WarningVariable.
+For more information, see about_CommonParameters (http://go.microsoft.com/fwlink/?LinkID=113216).
+
 ## INPUTS
 
 ## OUTPUTS
 
-### VaporShell.Resource.UpdatePolicy
+### Vaporshell.Resource.UpdatePolicy
 
 ## NOTES
 

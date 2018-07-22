@@ -6,6 +6,7 @@ label1: Category
 data1: Documentation
 label2: Depth
 data2: Deep
+schema: 2.0.0
 ---
 
 # Add-ConEquals
@@ -16,7 +17,7 @@ Adds the condition function "Fn::Equals" to a resource property
 ## SYNTAX
 
 ```
-Add-ConEquals [-FirstValue] <Object> [-SecondValue] <Object>
+Add-ConEquals [-FirstValue] <Object> [-SecondValue] <Object> [<CommonParameters>]
 ```
 
 ## DESCRIPTION
@@ -31,7 +32,7 @@ A value of any type that you want to compare against the SecondValue
 ```yaml
 Type: Object
 Parameter Sets: (All)
-Aliases: 
+Aliases:
 
 Required: True
 Position: 1
@@ -46,7 +47,7 @@ A value of any type that you want to compare against the FirstValue
 ```yaml
 Type: Object
 Parameter Sets: (All)
-Aliases: 
+Aliases:
 
 Required: True
 Position: 2
@@ -55,11 +56,15 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
+### CommonParameters
+This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction, and -WarningVariable.
+For more information, see about_CommonParameters (http://go.microsoft.com/fwlink/?LinkID=113216).
+
 ## INPUTS
 
 ## OUTPUTS
 
-### VaporShell.Condition.Equals
+### Vaporshell.Condition.Equals
 
 ## NOTES
 You can use the following functions in this condition statement:

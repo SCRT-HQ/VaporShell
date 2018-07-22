@@ -6,6 +6,7 @@ label1: Category
 data1: Documentation
 label2: Depth
 data2: Deep
+schema: 2.0.0
 ---
 
 # Resume-VSStackUpdateRollback
@@ -19,8 +20,11 @@ By continuing the rollback, you can return your stack to a working state (the UP
 
 ```
 Resume-VSStackUpdateRollback [[-StackName] <String>] [[-ClientRequestToken] <String>]
- [[-ResourcesToSkip] <String[]>] [[-RoleARN] <String>] [[-ProfileName] <String>]
+ [[-ResourcesToSkip] <String[]>] [[-RoleARN] <String>] [[-ProfileName] <String>] [<CommonParameters>]
 ```
+
+## DESCRIPTION
+{{Fill in the Description}}
 
 ## PARAMETERS
 
@@ -32,7 +36,7 @@ Instead, use this operation on the parent stack (the stack that contains the AWS
 ```yaml
 Type: String
 Parameter Sets: (All)
-Aliases: 
+Aliases:
 
 Required: False
 Position: 1
@@ -49,7 +53,7 @@ You might retry ContinueUpdateRollback requests to ensure that AWS CloudFormatio
 ```yaml
 Type: String
 Parameter Sets: (All)
-Aliases: 
+Aliases:
 
 Required: False
 Position: 2
@@ -67,7 +71,7 @@ To check why a resource update failed, use the DescribeStackResources action, an
 ```yaml
 Type: String[]
 Parameter Sets: (All)
-Aliases: 
+Aliases:
 
 Required: False
 Position: 3
@@ -88,7 +92,7 @@ If no role is available, AWS CloudFormation uses a temporary session that is gen
 ```yaml
 Type: String
 Parameter Sets: (All)
-Aliases: 
+Aliases:
 
 Required: False
 Position: 4
@@ -104,7 +108,7 @@ Defaults to $env:AWS_PROFILE, if set.
 ```yaml
 Type: String
 Parameter Sets: (All)
-Aliases: 
+Aliases:
 
 Required: False
 Position: 5
@@ -113,6 +117,10 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
+### CommonParameters
+This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction, and -WarningVariable.
+For more information, see about_CommonParameters (http://go.microsoft.com/fwlink/?LinkID=113216).
+
 ## INPUTS
 
 ## OUTPUTS
@@ -120,4 +128,3 @@ Accept wildcard characters: False
 ## NOTES
 
 ## RELATED LINKS
-

@@ -1,14 +1,15 @@
 ---
 layout: glossary
-title: Export-VaporShell
+title: Export-Vaporshell
 categories: glossary
 label1: Category
 data1: Documentation
 label2: Depth
 data2: Deep
+schema: 2.0.0
 ---
 
-# Export-VaporShell
+# Export-Vaporshell
 
 ## SYNOPSIS
 Exports the template object to JSON file.
@@ -16,24 +17,24 @@ Exports the template object to JSON file.
 ## SYNTAX
 
 ```
-Export-VaporShell [-VaporShellTemplate] <Object> [[-As] <String>] [[-Path] <String>] [-ValidateTemplate]
- [-Force]
+Export-Vaporshell [-VaporshellTemplate] <Object> [[-As] <String>] [[-Path] <String>] [-ValidateTemplate]
+ [-Force] [<CommonParameters>]
 ```
 
 ## DESCRIPTION
 Exports the template object to JSON file.
 
-Requires the VaporShell input object to be type 'VaporShell.Template'
+Requires the Vaporshell input object to be type 'Vaporshell.Template'
 
 ## PARAMETERS
 
-### -VaporShellTemplate
+### -VaporshellTemplate
 The input template object
 
 ```yaml
 Type: Object
 Parameter Sets: (All)
-Aliases: 
+Aliases:
 
 Required: True
 Position: 1
@@ -51,7 +52,7 @@ Defaults to JSON.
 ```yaml
 Type: String
 Parameter Sets: (All)
-Aliases: 
+Aliases:
 
 Required: False
 Position: 2
@@ -66,7 +67,7 @@ Path to save the resulting JSON file.
 ```yaml
 Type: String
 Parameter Sets: (All)
-Aliases: 
+Aliases:
 
 Required: False
 Position: 3
@@ -81,7 +82,7 @@ Validates the template using the AWS .NET SDK
 ```yaml
 Type: SwitchParameter
 Parameter Sets: (All)
-Aliases: 
+Aliases:
 
 Required: False
 Position: Named
@@ -96,7 +97,7 @@ Forces an overwrite if the Path already exists
 ```yaml
 Type: SwitchParameter
 Parameter Sets: (All)
-Aliases: 
+Aliases:
 
 Required: False
 Position: Named
@@ -105,6 +106,10 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
+### CommonParameters
+This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction, and -WarningVariable.
+For more information, see about_CommonParameters (http://go.microsoft.com/fwlink/?LinkID=113216).
+
 ## INPUTS
 
 ## OUTPUTS
@@ -112,4 +117,3 @@ Accept wildcard characters: False
 ## NOTES
 
 ## RELATED LINKS
-

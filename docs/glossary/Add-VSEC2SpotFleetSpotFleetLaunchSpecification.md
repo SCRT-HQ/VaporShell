@@ -6,6 +6,7 @@ label1: Category
 data1: Documentation
 label2: Depth
 data2: Deep
+schema: 2.0.0
 ---
 
 # Add-VSEC2SpotFleetSpotFleetLaunchSpecification
@@ -20,7 +21,7 @@ Add-VSEC2SpotFleetSpotFleetLaunchSpecification [[-BlockDeviceMappings] <Object>]
  [[-IamInstanceProfile] <Object>] [-ImageId] <Object> [-InstanceType] <Object> [[-KernelId] <Object>]
  [[-KeyName] <Object>] [[-Monitoring] <Object>] [[-NetworkInterfaces] <Object>] [[-Placement] <Object>]
  [[-RamdiskId] <Object>] [[-SecurityGroups] <Object>] [[-SpotPrice] <Object>] [[-SubnetId] <Object>]
- [[-UserData] <Object>] [[-WeightedCapacity] <Double>]
+ [[-TagSpecifications] <Object>] [[-UserData] <Object>] [[-WeightedCapacity] <Double>] [<CommonParameters>]
 ```
 
 ## DESCRIPTION
@@ -39,7 +40,7 @@ UpdateType: Mutable
 ```yaml
 Type: Object
 Parameter Sets: (All)
-Aliases: 
+Aliases:
 
 Required: False
 Position: 1
@@ -57,7 +58,7 @@ UpdateType: Mutable
 ```yaml
 Type: Boolean
 Parameter Sets: (All)
-Aliases: 
+Aliases:
 
 Required: False
 Position: 2
@@ -75,7 +76,7 @@ UpdateType: Mutable
 ```yaml
 Type: Object
 Parameter Sets: (All)
-Aliases: 
+Aliases:
 
 Required: False
 Position: 3
@@ -93,7 +94,7 @@ UpdateType: Mutable
 ```yaml
 Type: Object
 Parameter Sets: (All)
-Aliases: 
+Aliases:
 
 Required: True
 Position: 4
@@ -111,7 +112,7 @@ UpdateType: Mutable
 ```yaml
 Type: Object
 Parameter Sets: (All)
-Aliases: 
+Aliases:
 
 Required: True
 Position: 5
@@ -129,7 +130,7 @@ UpdateType: Mutable
 ```yaml
 Type: Object
 Parameter Sets: (All)
-Aliases: 
+Aliases:
 
 Required: False
 Position: 6
@@ -147,7 +148,7 @@ UpdateType: Mutable
 ```yaml
 Type: Object
 Parameter Sets: (All)
-Aliases: 
+Aliases:
 
 Required: False
 Position: 7
@@ -165,7 +166,7 @@ UpdateType: Mutable
 ```yaml
 Type: Object
 Parameter Sets: (All)
-Aliases: 
+Aliases:
 
 Required: False
 Position: 8
@@ -185,7 +186,7 @@ UpdateType: Mutable
 ```yaml
 Type: Object
 Parameter Sets: (All)
-Aliases: 
+Aliases:
 
 Required: False
 Position: 9
@@ -203,7 +204,7 @@ UpdateType: Mutable
 ```yaml
 Type: Object
 Parameter Sets: (All)
-Aliases: 
+Aliases:
 
 Required: False
 Position: 10
@@ -221,7 +222,7 @@ UpdateType: Mutable
 ```yaml
 Type: Object
 Parameter Sets: (All)
-Aliases: 
+Aliases:
 
 Required: False
 Position: 11
@@ -241,7 +242,7 @@ UpdateType: Mutable
 ```yaml
 Type: Object
 Parameter Sets: (All)
-Aliases: 
+Aliases:
 
 Required: False
 Position: 12
@@ -259,7 +260,7 @@ UpdateType: Mutable
 ```yaml
 Type: Object
 Parameter Sets: (All)
-Aliases: 
+Aliases:
 
 Required: False
 Position: 13
@@ -277,10 +278,30 @@ UpdateType: Mutable
 ```yaml
 Type: Object
 Parameter Sets: (All)
-Aliases: 
+Aliases:
 
 Required: False
 Position: 14
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### -TagSpecifications
+Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-spotfleet-spotfleetrequestconfigdata-launchspecifications.html#cfn-ec2-spotfleet-spotfleetlaunchspecification-tagspecifications    
+DuplicatesAllowed: False    
+ItemType: SpotFleetTagSpecification    
+Required: False    
+Type: List    
+UpdateType: Mutable
+
+```yaml
+Type: Object
+Parameter Sets: (All)
+Aliases:
+
+Required: False
+Position: 15
 Default value: None
 Accept pipeline input: False
 Accept wildcard characters: False
@@ -295,10 +316,10 @@ UpdateType: Mutable
 ```yaml
 Type: Object
 Parameter Sets: (All)
-Aliases: 
+Aliases:
 
 Required: False
-Position: 15
+Position: 16
 Default value: None
 Accept pipeline input: False
 Accept wildcard characters: False
@@ -313,20 +334,24 @@ UpdateType: Mutable
 ```yaml
 Type: Double
 Parameter Sets: (All)
-Aliases: 
+Aliases:
 
 Required: False
-Position: 16
+Position: 17
 Default value: 0
 Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
+### CommonParameters
+This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction, and -WarningVariable.
+For more information, see about_CommonParameters (http://go.microsoft.com/fwlink/?LinkID=113216).
+
 ## INPUTS
 
 ## OUTPUTS
 
-### VaporShell.Resource.EC2.SpotFleet.SpotFleetLaunchSpecification
+### Vaporshell.Resource.EC2.SpotFleet.SpotFleetLaunchSpecification
 
 ## NOTES
 

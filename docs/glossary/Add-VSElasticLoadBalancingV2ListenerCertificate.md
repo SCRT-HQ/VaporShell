@@ -6,6 +6,7 @@ label1: Category
 data1: Documentation
 label2: Depth
 data2: Deep
+schema: 2.0.0
 ---
 
 # Add-VSElasticLoadBalancingV2ListenerCertificate
@@ -16,7 +17,7 @@ Adds an AWS::ElasticLoadBalancingV2::Listener.Certificate resource property to t
 ## SYNTAX
 
 ```
-Add-VSElasticLoadBalancingV2ListenerCertificate [[-CertificateArn] <Object>]
+Add-VSElasticLoadBalancingV2ListenerCertificate [[-CertificateArn] <Object>] [<CommonParameters>]
 ```
 
 ## DESCRIPTION
@@ -33,7 +34,7 @@ UpdateType: Mutable
 ```yaml
 Type: Object
 Parameter Sets: (All)
-Aliases: 
+Aliases:
 
 Required: False
 Position: 1
@@ -42,11 +43,15 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
+### CommonParameters
+This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction, and -WarningVariable.
+For more information, see about_CommonParameters (http://go.microsoft.com/fwlink/?LinkID=113216).
+
 ## INPUTS
 
 ## OUTPUTS
 
-### VaporShell.Resource.ElasticLoadBalancingV2.Listener.Certificate
+### Vaporshell.Resource.ElasticLoadBalancingV2.Listener.Certificate
 
 ## NOTES
 

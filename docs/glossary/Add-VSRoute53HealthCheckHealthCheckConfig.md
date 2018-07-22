@@ -6,6 +6,7 @@ label1: Category
 data1: Documentation
 label2: Depth
 data2: Deep
+schema: 2.0.0
 ---
 
 # Add-VSRoute53HealthCheckHealthCheckConfig
@@ -19,8 +20,9 @@ Adds an AWS::Route53::HealthCheck.HealthCheckConfig resource property to the tem
 Add-VSRoute53HealthCheckHealthCheckConfig [[-AlarmIdentifier] <Object>] [[-ChildHealthChecks] <Object>]
  [[-EnableSNI] <Boolean>] [[-FailureThreshold] <Int32>] [[-FullyQualifiedDomainName] <Object>]
  [[-HealthThreshold] <Int32>] [[-IPAddress] <Object>] [[-InsufficientDataHealthStatus] <Object>]
- [[-Inverted] <Boolean>] [[-MeasureLatency] <Boolean>] [[-Port] <Int32>] [[-RequestInterval] <Int32>]
- [[-ResourcePath] <Object>] [[-SearchString] <Object>] [-Type] <Object>
+ [[-Inverted] <Boolean>] [[-MeasureLatency] <Boolean>] [[-Port] <Int32>] [[-Regions] <Object>]
+ [[-RequestInterval] <Int32>] [[-ResourcePath] <Object>] [[-SearchString] <Object>] [-Type] <Object>
+ [<CommonParameters>]
 ```
 
 ## DESCRIPTION
@@ -37,7 +39,7 @@ UpdateType: Mutable
 ```yaml
 Type: Object
 Parameter Sets: (All)
-Aliases: 
+Aliases:
 
 Required: False
 Position: 1
@@ -57,7 +59,7 @@ UpdateType: Mutable
 ```yaml
 Type: Object
 Parameter Sets: (All)
-Aliases: 
+Aliases:
 
 Required: False
 Position: 2
@@ -75,7 +77,7 @@ UpdateType: Mutable
 ```yaml
 Type: Boolean
 Parameter Sets: (All)
-Aliases: 
+Aliases:
 
 Required: False
 Position: 3
@@ -93,7 +95,7 @@ UpdateType: Mutable
 ```yaml
 Type: Int32
 Parameter Sets: (All)
-Aliases: 
+Aliases:
 
 Required: False
 Position: 4
@@ -111,7 +113,7 @@ UpdateType: Mutable
 ```yaml
 Type: Object
 Parameter Sets: (All)
-Aliases: 
+Aliases:
 
 Required: False
 Position: 5
@@ -129,7 +131,7 @@ UpdateType: Mutable
 ```yaml
 Type: Int32
 Parameter Sets: (All)
-Aliases: 
+Aliases:
 
 Required: False
 Position: 6
@@ -147,7 +149,7 @@ UpdateType: Mutable
 ```yaml
 Type: Object
 Parameter Sets: (All)
-Aliases: 
+Aliases:
 
 Required: False
 Position: 7
@@ -165,7 +167,7 @@ UpdateType: Mutable
 ```yaml
 Type: Object
 Parameter Sets: (All)
-Aliases: 
+Aliases:
 
 Required: False
 Position: 8
@@ -183,7 +185,7 @@ UpdateType: Mutable
 ```yaml
 Type: Boolean
 Parameter Sets: (All)
-Aliases: 
+Aliases:
 
 Required: False
 Position: 9
@@ -201,7 +203,7 @@ UpdateType: Immutable
 ```yaml
 Type: Boolean
 Parameter Sets: (All)
-Aliases: 
+Aliases:
 
 Required: False
 Position: 10
@@ -219,11 +221,31 @@ UpdateType: Mutable
 ```yaml
 Type: Int32
 Parameter Sets: (All)
-Aliases: 
+Aliases:
 
 Required: False
 Position: 11
 Default value: 0
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### -Regions
+Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-route53-healthcheck-healthcheckconfig.html#cfn-route53-healthcheck-healthcheckconfig-regions    
+DuplicatesAllowed: False    
+PrimitiveItemType: String    
+Required: False    
+Type: List    
+UpdateType: Mutable
+
+```yaml
+Type: Object
+Parameter Sets: (All)
+Aliases:
+
+Required: False
+Position: 12
+Default value: None
 Accept pipeline input: False
 Accept wildcard characters: False
 ```
@@ -237,10 +259,10 @@ UpdateType: Immutable
 ```yaml
 Type: Int32
 Parameter Sets: (All)
-Aliases: 
+Aliases:
 
 Required: False
-Position: 12
+Position: 13
 Default value: 0
 Accept pipeline input: False
 Accept wildcard characters: False
@@ -255,10 +277,10 @@ UpdateType: Mutable
 ```yaml
 Type: Object
 Parameter Sets: (All)
-Aliases: 
+Aliases:
 
 Required: False
-Position: 13
+Position: 14
 Default value: None
 Accept pipeline input: False
 Accept wildcard characters: False
@@ -273,10 +295,10 @@ UpdateType: Mutable
 ```yaml
 Type: Object
 Parameter Sets: (All)
-Aliases: 
+Aliases:
 
 Required: False
-Position: 14
+Position: 15
 Default value: None
 Accept pipeline input: False
 Accept wildcard characters: False
@@ -291,20 +313,24 @@ UpdateType: Immutable
 ```yaml
 Type: Object
 Parameter Sets: (All)
-Aliases: 
+Aliases:
 
 Required: True
-Position: 15
+Position: 16
 Default value: None
 Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
+### CommonParameters
+This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction, and -WarningVariable.
+For more information, see about_CommonParameters (http://go.microsoft.com/fwlink/?LinkID=113216).
+
 ## INPUTS
 
 ## OUTPUTS
 
-### VaporShell.Resource.Route53.HealthCheck.HealthCheckConfig
+### Vaporshell.Resource.Route53.HealthCheck.HealthCheckConfig
 
 ## NOTES
 

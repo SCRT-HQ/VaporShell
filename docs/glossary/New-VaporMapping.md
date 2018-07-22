@@ -6,6 +6,7 @@ label1: Category
 data1: Documentation
 label2: Depth
 data2: Deep
+schema: 2.0.0
 ---
 
 # New-VaporMapping
@@ -16,7 +17,7 @@ Adds a Mapping object to the template
 ## SYNTAX
 
 ```
-New-VaporMapping [-LogicalId] <String> [-Map] <Object>
+New-VaporMapping [-LogicalId] <String> [-Map] <Object> [<CommonParameters>]
 ```
 
 ## DESCRIPTION
@@ -35,7 +36,7 @@ The logical ID must be alphanumeric (a-z, A-Z, 0-9) and unique within the templa
 ```yaml
 Type: String
 Parameter Sets: (All)
-Aliases: 
+Aliases:
 
 Required: True
 Position: 1
@@ -48,12 +49,12 @@ Accept wildcard characters: False
 A 2 level collection of key/value pairs.
 If you would like your collection to remain ordered the same as called, use an ordered PSCustomObject, otherwise a hashtable is fine.
 
-You can use any of these 3 types for this parameter; "System.Collections.Hashtable","System.Management.Automation.PSCustomObject","VaporShell.Mapping.Map"
+You can use any of these 3 types for this parameter; "System.Collections.Hashtable","System.Management.Automation.PSCustomObject","Vaporshell.Mapping.Map"
 
 ```yaml
 Type: Object
 Parameter Sets: (All)
-Aliases: 
+Aliases:
 
 Required: True
 Position: 2
@@ -62,11 +63,15 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
+### CommonParameters
+This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction, and -WarningVariable.
+For more information, see about_CommonParameters (http://go.microsoft.com/fwlink/?LinkID=113216).
+
 ## INPUTS
 
 ## OUTPUTS
 
-### VaporShell.Mapping
+### Vaporshell.Mapping
 
 ## NOTES
 

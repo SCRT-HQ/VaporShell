@@ -6,6 +6,7 @@ label1: Category
 data1: Documentation
 label2: Depth
 data2: Deep
+schema: 2.0.0
 ---
 
 # Add-VSEMRClusterCloudWatchAlarmDefinition
@@ -18,7 +19,7 @@ Adds an AWS::EMR::Cluster.CloudWatchAlarmDefinition resource property to the tem
 ```
 Add-VSEMRClusterCloudWatchAlarmDefinition [-ComparisonOperator] <Object> [[-Dimensions] <Object>]
  [[-EvaluationPeriods] <Int32>] [-MetricName] <Object> [[-Namespace] <Object>] [-Period] <Int32>
- [[-Statistic] <Object>] [-Threshold] <Double> [[-Unit] <Object>]
+ [[-Statistic] <Object>] [-Threshold] <Double> [[-Unit] <Object>] [<CommonParameters>]
 ```
 
 ## DESCRIPTION
@@ -35,7 +36,7 @@ UpdateType: Mutable
 ```yaml
 Type: Object
 Parameter Sets: (All)
-Aliases: 
+Aliases:
 
 Required: True
 Position: 1
@@ -55,7 +56,7 @@ UpdateType: Mutable
 ```yaml
 Type: Object
 Parameter Sets: (All)
-Aliases: 
+Aliases:
 
 Required: False
 Position: 2
@@ -73,7 +74,7 @@ UpdateType: Mutable
 ```yaml
 Type: Int32
 Parameter Sets: (All)
-Aliases: 
+Aliases:
 
 Required: False
 Position: 3
@@ -91,7 +92,7 @@ UpdateType: Mutable
 ```yaml
 Type: Object
 Parameter Sets: (All)
-Aliases: 
+Aliases:
 
 Required: True
 Position: 4
@@ -109,7 +110,7 @@ UpdateType: Mutable
 ```yaml
 Type: Object
 Parameter Sets: (All)
-Aliases: 
+Aliases:
 
 Required: False
 Position: 5
@@ -127,7 +128,7 @@ UpdateType: Mutable
 ```yaml
 Type: Int32
 Parameter Sets: (All)
-Aliases: 
+Aliases:
 
 Required: True
 Position: 6
@@ -145,7 +146,7 @@ UpdateType: Mutable
 ```yaml
 Type: Object
 Parameter Sets: (All)
-Aliases: 
+Aliases:
 
 Required: False
 Position: 7
@@ -163,7 +164,7 @@ UpdateType: Mutable
 ```yaml
 Type: Double
 Parameter Sets: (All)
-Aliases: 
+Aliases:
 
 Required: True
 Position: 8
@@ -181,7 +182,7 @@ UpdateType: Mutable
 ```yaml
 Type: Object
 Parameter Sets: (All)
-Aliases: 
+Aliases:
 
 Required: False
 Position: 9
@@ -190,11 +191,15 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
+### CommonParameters
+This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction, and -WarningVariable.
+For more information, see about_CommonParameters (http://go.microsoft.com/fwlink/?LinkID=113216).
+
 ## INPUTS
 
 ## OUTPUTS
 
-### VaporShell.Resource.EMR.Cluster.CloudWatchAlarmDefinition
+### Vaporshell.Resource.EMR.Cluster.CloudWatchAlarmDefinition
 
 ## NOTES
 

@@ -6,6 +6,7 @@ label1: Category
 data1: Documentation
 label2: Depth
 data2: Deep
+schema: 2.0.0
 ---
 
 # Add-VSOpsWorksLayerAutoScalingThresholds
@@ -18,7 +19,7 @@ Adds an AWS::OpsWorks::Layer.AutoScalingThresholds resource property to the temp
 ```
 Add-VSOpsWorksLayerAutoScalingThresholds [[-CpuThreshold] <Double>] [[-IgnoreMetricsTime] <Int32>]
  [[-InstanceCount] <Int32>] [[-LoadThreshold] <Double>] [[-MemoryThreshold] <Double>]
- [[-ThresholdsWaitTime] <Int32>]
+ [[-ThresholdsWaitTime] <Int32>] [<CommonParameters>]
 ```
 
 ## DESCRIPTION
@@ -35,7 +36,7 @@ UpdateType: Mutable
 ```yaml
 Type: Double
 Parameter Sets: (All)
-Aliases: 
+Aliases:
 
 Required: False
 Position: 1
@@ -53,7 +54,7 @@ UpdateType: Mutable
 ```yaml
 Type: Int32
 Parameter Sets: (All)
-Aliases: 
+Aliases:
 
 Required: False
 Position: 2
@@ -71,7 +72,7 @@ UpdateType: Mutable
 ```yaml
 Type: Int32
 Parameter Sets: (All)
-Aliases: 
+Aliases:
 
 Required: False
 Position: 3
@@ -89,7 +90,7 @@ UpdateType: Mutable
 ```yaml
 Type: Double
 Parameter Sets: (All)
-Aliases: 
+Aliases:
 
 Required: False
 Position: 4
@@ -107,7 +108,7 @@ UpdateType: Mutable
 ```yaml
 Type: Double
 Parameter Sets: (All)
-Aliases: 
+Aliases:
 
 Required: False
 Position: 5
@@ -125,7 +126,7 @@ UpdateType: Mutable
 ```yaml
 Type: Int32
 Parameter Sets: (All)
-Aliases: 
+Aliases:
 
 Required: False
 Position: 6
@@ -134,11 +135,15 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
+### CommonParameters
+This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction, and -WarningVariable.
+For more information, see about_CommonParameters (http://go.microsoft.com/fwlink/?LinkID=113216).
+
 ## INPUTS
 
 ## OUTPUTS
 
-### VaporShell.Resource.OpsWorks.Layer.AutoScalingThresholds
+### Vaporshell.Resource.OpsWorks.Layer.AutoScalingThresholds
 
 ## NOTES
 

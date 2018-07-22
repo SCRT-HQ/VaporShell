@@ -6,6 +6,7 @@ label1: Category
 data1: Documentation
 label2: Depth
 data2: Deep
+schema: 2.0.0
 ---
 
 # Add-VSApiGatewayDeploymentStageDescription
@@ -20,8 +21,8 @@ Add-VSApiGatewayDeploymentStageDescription [[-CacheClusterEnabled] <Boolean>] [[
  [[-CacheDataEncrypted] <Boolean>] [[-CacheTtlInSeconds] <Int32>] [[-CachingEnabled] <Boolean>]
  [[-ClientCertificateId] <Object>] [[-DataTraceEnabled] <Boolean>] [[-Description] <Object>]
  [[-DocumentationVersion] <Object>] [[-LoggingLevel] <Object>] [[-MethodSettings] <Object>]
- [[-MetricsEnabled] <Boolean>] [[-StageName] <Object>] [[-ThrottlingBurstLimit] <Int32>]
- [[-ThrottlingRateLimit] <Double>] [[-Variables] <Hashtable>]
+ [[-MetricsEnabled] <Boolean>] [[-ThrottlingBurstLimit] <Int32>] [[-ThrottlingRateLimit] <Double>]
+ [[-Variables] <Hashtable>] [<CommonParameters>]
 ```
 
 ## DESCRIPTION
@@ -38,7 +39,7 @@ UpdateType: Mutable
 ```yaml
 Type: Boolean
 Parameter Sets: (All)
-Aliases: 
+Aliases:
 
 Required: False
 Position: 1
@@ -56,7 +57,7 @@ UpdateType: Mutable
 ```yaml
 Type: Object
 Parameter Sets: (All)
-Aliases: 
+Aliases:
 
 Required: False
 Position: 2
@@ -74,7 +75,7 @@ UpdateType: Mutable
 ```yaml
 Type: Boolean
 Parameter Sets: (All)
-Aliases: 
+Aliases:
 
 Required: False
 Position: 3
@@ -92,7 +93,7 @@ UpdateType: Mutable
 ```yaml
 Type: Int32
 Parameter Sets: (All)
-Aliases: 
+Aliases:
 
 Required: False
 Position: 4
@@ -110,7 +111,7 @@ UpdateType: Mutable
 ```yaml
 Type: Boolean
 Parameter Sets: (All)
-Aliases: 
+Aliases:
 
 Required: False
 Position: 5
@@ -128,7 +129,7 @@ UpdateType: Mutable
 ```yaml
 Type: Object
 Parameter Sets: (All)
-Aliases: 
+Aliases:
 
 Required: False
 Position: 6
@@ -146,7 +147,7 @@ UpdateType: Mutable
 ```yaml
 Type: Boolean
 Parameter Sets: (All)
-Aliases: 
+Aliases:
 
 Required: False
 Position: 7
@@ -164,7 +165,7 @@ UpdateType: Mutable
 ```yaml
 Type: Object
 Parameter Sets: (All)
-Aliases: 
+Aliases:
 
 Required: False
 Position: 8
@@ -182,7 +183,7 @@ UpdateType: Mutable
 ```yaml
 Type: Object
 Parameter Sets: (All)
-Aliases: 
+Aliases:
 
 Required: False
 Position: 9
@@ -200,7 +201,7 @@ UpdateType: Mutable
 ```yaml
 Type: Object
 Parameter Sets: (All)
-Aliases: 
+Aliases:
 
 Required: False
 Position: 10
@@ -220,7 +221,7 @@ UpdateType: Mutable
 ```yaml
 Type: Object
 Parameter Sets: (All)
-Aliases: 
+Aliases:
 
 Required: False
 Position: 11
@@ -238,29 +239,11 @@ UpdateType: Mutable
 ```yaml
 Type: Boolean
 Parameter Sets: (All)
-Aliases: 
+Aliases:
 
 Required: False
 Position: 12
 Default value: False
-Accept pipeline input: False
-Accept wildcard characters: False
-```
-
-### -StageName
-Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-apigateway-deployment-stagedescription.html#cfn-apigateway-deployment-stagedescription-stagename    
-PrimitiveType: String    
-Required: False    
-UpdateType: Mutable
-
-```yaml
-Type: Object
-Parameter Sets: (All)
-Aliases: 
-
-Required: False
-Position: 13
-Default value: None
 Accept pipeline input: False
 Accept wildcard characters: False
 ```
@@ -274,10 +257,10 @@ UpdateType: Mutable
 ```yaml
 Type: Int32
 Parameter Sets: (All)
-Aliases: 
+Aliases:
 
 Required: False
-Position: 14
+Position: 13
 Default value: 0
 Accept pipeline input: False
 Accept wildcard characters: False
@@ -292,10 +275,10 @@ UpdateType: Mutable
 ```yaml
 Type: Double
 Parameter Sets: (All)
-Aliases: 
+Aliases:
 
 Required: False
-Position: 15
+Position: 14
 Default value: 0
 Accept pipeline input: False
 Accept wildcard characters: False
@@ -312,20 +295,24 @@ UpdateType: Mutable
 ```yaml
 Type: Hashtable
 Parameter Sets: (All)
-Aliases: 
+Aliases:
 
 Required: False
-Position: 16
+Position: 15
 Default value: None
 Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
+### CommonParameters
+This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction, and -WarningVariable.
+For more information, see about_CommonParameters (http://go.microsoft.com/fwlink/?LinkID=113216).
+
 ## INPUTS
 
 ## OUTPUTS
 
-### VaporShell.Resource.ApiGateway.Deployment.StageDescription
+### Vaporshell.Resource.ApiGateway.Deployment.StageDescription
 
 ## NOTES
 

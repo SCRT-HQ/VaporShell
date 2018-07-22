@@ -6,6 +6,7 @@ label1: Category
 data1: Documentation
 label2: Depth
 data2: Deep
+schema: 2.0.0
 ---
 
 # New-VaporCondition
@@ -16,7 +17,7 @@ Adds a Condition object to the template
 ## SYNTAX
 
 ```
-New-VaporCondition [-LogicalId] <String> [-Condition] <Object>
+New-VaporCondition [-LogicalId] <String> [-Condition] <Object> [<CommonParameters>]
 ```
 
 ## DESCRIPTION
@@ -68,7 +69,7 @@ The logical ID must be alphanumeric (a-z, A-Z, 0-9) and unique within the templa
 ```yaml
 Type: String
 Parameter Sets: (All)
-Aliases: 
+Aliases:
 
 Required: True
 Position: 1
@@ -83,7 +84,7 @@ Logical ID of the condition that this resource needs to be true in order to be p
 ```yaml
 Type: Object
 Parameter Sets: (All)
-Aliases: 
+Aliases:
 
 Required: True
 Position: 2
@@ -92,11 +93,15 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
+### CommonParameters
+This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction, and -WarningVariable.
+For more information, see about_CommonParameters (http://go.microsoft.com/fwlink/?LinkID=113216).
+
 ## INPUTS
 
 ## OUTPUTS
 
-### VaporShell.Condition
+### Vaporshell.Condition
 
 ## NOTES
 You can use the following intrinsic functions to define conditions:

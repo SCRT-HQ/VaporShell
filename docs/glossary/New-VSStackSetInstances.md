@@ -6,6 +6,7 @@ label1: Category
 data1: Documentation
 label2: Depth
 data2: Deep
+schema: 2.0.0
 ---
 
 # New-VSStackSetInstances
@@ -18,8 +19,11 @@ Creates new Stack Set Instances.
 ```
 New-VSStackSetInstances [-StackSetName] <String> [[-Accounts] <String[]>] [[-OperationId] <String>]
  [[-OperationPreferences] <StackSetOperationPreferences>] [[-Regions] <String[]>] [[-ProfileName] <String>]
- [-WhatIf] [-Confirm]
+ [-WhatIf] [-Confirm] [<CommonParameters>]
 ```
+
+## DESCRIPTION
+{{Fill in the Description}}
 
 ## PARAMETERS
 
@@ -29,7 +33,7 @@ The name or unique ID of the stack set that you want to create stack instances f
 ```yaml
 Type: String
 Parameter Sets: (All)
-Aliases: 
+Aliases:
 
 Required: True
 Position: 1
@@ -44,7 +48,7 @@ The names of one or more AWS accounts that you want to create stack instances in
 ```yaml
 Type: String[]
 Parameter Sets: (All)
-Aliases: 
+Aliases:
 
 Required: False
 Position: 2
@@ -63,7 +67,7 @@ Repeating this stack set operation with a new operation ID retries all stack ins
 ```yaml
 Type: String
 Parameter Sets: (All)
-Aliases: 
+Aliases:
 
 Required: False
 Position: 3
@@ -78,7 +82,7 @@ Preferences for how AWS CloudFormation performs this stack set operation.
 ```yaml
 Type: StackSetOperationPreferences
 Parameter Sets: (All)
-Aliases: 
+Aliases:
 
 Required: False
 Position: 4
@@ -93,7 +97,7 @@ The names of one or more regions where you want to create stack instances using 
 ```yaml
 Type: String[]
 Parameter Sets: (All)
-Aliases: 
+Aliases:
 
 Required: False
 Position: 5
@@ -109,7 +113,7 @@ Defaults to $env:AWS_PROFILE, if set.
 ```yaml
 Type: String
 Parameter Sets: (All)
-Aliases: 
+Aliases:
 
 Required: False
 Position: 6
@@ -149,6 +153,10 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
+### CommonParameters
+This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction, and -WarningVariable.
+For more information, see about_CommonParameters (http://go.microsoft.com/fwlink/?LinkID=113216).
+
 ## INPUTS
 
 ## OUTPUTS
@@ -156,4 +164,3 @@ Accept wildcard characters: False
 ## NOTES
 
 ## RELATED LINKS
-

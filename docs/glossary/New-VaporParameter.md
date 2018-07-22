@@ -6,6 +6,7 @@ label1: Category
 data1: Documentation
 label2: Depth
 data2: Deep
+schema: 2.0.0
 ---
 
 # New-VaporParameter
@@ -19,7 +20,7 @@ Adds a Parameter object to the template
 New-VaporParameter [-LogicalId] <String> [-Type] <String> [[-Default] <String>] [-NoEcho]
  [[-AllowedPattern] <String>] [[-AllowedValues] <String[]>] [[-ConstraintDescription] <String>]
  [[-Description] <String>] [[-MaxLength] <Int32>] [[-MaxValue] <Int32>] [[-MinLength] <Int32>]
- [[-MinValue] <Int32>]
+ [[-MinValue] <Int32>] [<CommonParameters>]
 ```
 
 ## DESCRIPTION
@@ -55,7 +56,7 @@ The logical ID must be alphanumeric (a-z, A-Z, 0-9) and unique within the templa
 ```yaml
 Type: String
 Parameter Sets: (All)
-Aliases: 
+Aliases:
 
 Required: True
 Position: 1
@@ -176,7 +177,7 @@ All parameters that you reference in the metaProperties key must be declared in 
 ```yaml
 Type: String
 Parameter Sets: (All)
-Aliases: 
+Aliases:
 
 Required: True
 Position: 2
@@ -192,7 +193,7 @@ If you define constraints for the parameter, you must specify a value that adher
 ```yaml
 Type: String
 Parameter Sets: (All)
-Aliases: 
+Aliases:
 
 Required: False
 Position: 3
@@ -208,7 +209,7 @@ If you set the value to true, the parameter value is masked with asterisks (****
 ```yaml
 Type: SwitchParameter
 Parameter Sets: (All)
-Aliases: 
+Aliases:
 
 Required: False
 Position: 4
@@ -223,7 +224,7 @@ A regular expression that represents the patterns you want to allow for String t
 ```yaml
 Type: String
 Parameter Sets: (All)
-Aliases: 
+Aliases:
 
 Required: False
 Position: 5
@@ -238,7 +239,7 @@ An array containing the list of values allowed for the parameter.
 ```yaml
 Type: String[]
 Parameter Sets: (All)
-Aliases: 
+Aliases:
 
 Required: False
 Position: 6
@@ -253,7 +254,7 @@ A string that explains the constraint when the constraint is violated.
 ```yaml
 Type: String
 Parameter Sets: (All)
-Aliases: 
+Aliases:
 
 Required: False
 Position: 7
@@ -268,7 +269,7 @@ A string of up to 4000 characters that describes the parameter.
 ```yaml
 Type: String
 Parameter Sets: (All)
-Aliases: 
+Aliases:
 
 Required: False
 Position: 8
@@ -283,7 +284,7 @@ An integer value that determines the largest number of characters you want to al
 ```yaml
 Type: Int32
 Parameter Sets: (All)
-Aliases: 
+Aliases:
 
 Required: False
 Position: 9
@@ -298,7 +299,7 @@ A numeric value that determines the largest numeric value you want to allow for 
 ```yaml
 Type: Int32
 Parameter Sets: (All)
-Aliases: 
+Aliases:
 
 Required: False
 Position: 10
@@ -313,7 +314,7 @@ An integer value that determines the smallest number of characters you want to a
 ```yaml
 Type: Int32
 Parameter Sets: (All)
-Aliases: 
+Aliases:
 
 Required: False
 Position: 11
@@ -328,7 +329,7 @@ A numeric value that determines the smallest numeric value you want to allow for
 ```yaml
 Type: Int32
 Parameter Sets: (All)
-Aliases: 
+Aliases:
 
 Required: False
 Position: 12
@@ -337,11 +338,15 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
+### CommonParameters
+This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction, and -WarningVariable.
+For more information, see about_CommonParameters (http://go.microsoft.com/fwlink/?LinkID=113216).
+
 ## INPUTS
 
 ## OUTPUTS
 
-### VaporShell.Parameter
+### Vaporshell.Parameter
 
 ## NOTES
 

@@ -6,17 +6,18 @@ label1: Category
 data1: Documentation
 label2: Depth
 data2: Deep
+schema: 2.0.0
 ---
 
 # Add-Include
 
 ## SYNOPSIS
-Adds the transform function "AWS::Include" to a VaporShell template
+Adds the transform function "AWS::Include" to a Vaporshell template
 
 ## SYNTAX
 
 ```
-Add-Include [-Location] <String>
+Add-Include [-Location] <String> [<CommonParameters>]
 ```
 
 ## DESCRIPTION
@@ -38,7 +39,7 @@ For example, s3://MyBucketName/MyFile.yaml.
 ```yaml
 Type: String
 Parameter Sets: (All)
-Aliases: 
+Aliases:
 
 Required: True
 Position: 1
@@ -47,11 +48,15 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
+### CommonParameters
+This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction, and -WarningVariable.
+For more information, see about_CommonParameters (http://go.microsoft.com/fwlink/?LinkID=113216).
+
 ## INPUTS
 
 ## OUTPUTS
 
-### VaporShell.Transform.Include
+### Vaporshell.Transform.Include
 
 ## NOTES
 When using AWS::Include, keep the following in mind:

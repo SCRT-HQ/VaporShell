@@ -6,6 +6,7 @@ label1: Category
 data1: Documentation
 label2: Depth
 data2: Deep
+schema: 2.0.0
 ---
 
 # Add-FnGetAZs
@@ -16,7 +17,7 @@ Adds the intrinsic function "Fn::GetAZs" to a resource property
 ## SYNTAX
 
 ```
-Add-FnGetAZs [[-Region] <Object>]
+Add-FnGetAZs [[-Region] <Object>] [<CommonParameters>]
 ```
 
 ## DESCRIPTION
@@ -50,7 +51,7 @@ If you would like to default this to the stack deployment region, simply exclude
 ```yaml
 Type: Object
 Parameter Sets: (All)
-Aliases: 
+Aliases:
 
 Required: False
 Position: 1
@@ -59,11 +60,15 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
+### CommonParameters
+This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction, and -WarningVariable.
+For more information, see about_CommonParameters (http://go.microsoft.com/fwlink/?LinkID=113216).
+
 ## INPUTS
 
 ## OUTPUTS
 
-### VaporShell.Function.GetAZs
+### Vaporshell.Function.GetAZs
 
 ## NOTES
 You can use the Ref function in the Fn::GetAZs function.

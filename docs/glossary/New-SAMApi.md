@@ -6,6 +6,7 @@ label1: Category
 data1: Documentation
 label2: Depth
 data2: Deep
+schema: 2.0.0
 ---
 
 # New-SAMApi
@@ -19,12 +20,14 @@ Adds an AWS::Serverless::Api resource to the template
 ```
 New-SAMApi [-LogicalId] <String> -StageName <Object> -DefinitionUri <Object>
  [-DescripCacheClusterEnabledtion <Boolean>] [-CacheClusterSize <String>] [-Variables <Hashtable>]
+ [<CommonParameters>]
 ```
 
 ### DefinitionBody
 ```
 New-SAMApi [-LogicalId] <String> -StageName <Object> -DefinitionBody <String>
  [-DescripCacheClusterEnabledtion <Boolean>] [-CacheClusterSize <String>] [-Variables <Hashtable>]
+ [<CommonParameters>]
 ```
 
 ## DESCRIPTION
@@ -44,7 +47,7 @@ For example, if you want to map an Amazon Elastic Block Store volume to an Amazo
 ```yaml
 Type: String
 Parameter Sets: (All)
-Aliases: 
+Aliases:
 
 Required: True
 Position: 1
@@ -60,7 +63,7 @@ The name of the stage, which API Gateway uses as the first path segment in the i
 ```yaml
 Type: Object
 Parameter Sets: (All)
-Aliases: 
+Aliases:
 
 Required: True
 Position: Named
@@ -77,7 +80,7 @@ Either one of DefinitionUri or DefinitionBody must be specified.
 ```yaml
 Type: Object
 Parameter Sets: DefinitionUri
-Aliases: 
+Aliases:
 
 Required: True
 Position: Named
@@ -94,7 +97,7 @@ Either one of DefinitionUri or DefinitionBody must be specified.
 ```yaml
 Type: String
 Parameter Sets: DefinitionBody
-Aliases: 
+Aliases:
 
 Required: True
 Position: Named
@@ -104,11 +107,12 @@ Accept wildcard characters: False
 ```
 
 ### -DescripCacheClusterEnabledtion
+{{Fill DescripCacheClusterEnabledtion Description}}
 
 ```yaml
 Type: Boolean
 Parameter Sets: (All)
-Aliases: 
+Aliases:
 
 Required: False
 Position: Named
@@ -123,7 +127,7 @@ The stage's cache cluster size.
 ```yaml
 Type: String
 Parameter Sets: (All)
-Aliases: 
+Aliases:
 
 Required: False
 Position: Named
@@ -140,7 +144,7 @@ Values must match the following regular expression: \[A-Za-z0-9._~:/?#&amp;=,-\]
 ```yaml
 Type: Hashtable
 Parameter Sets: (All)
-Aliases: 
+Aliases:
 
 Required: False
 Position: Named
@@ -149,11 +153,15 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
+### CommonParameters
+This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction, and -WarningVariable.
+For more information, see about_CommonParameters (http://go.microsoft.com/fwlink/?LinkID=113216).
+
 ## INPUTS
 
 ## OUTPUTS
 
-### VaporShell.Serverless.Api
+### Vaporshell.Serverless.Api
 
 ## NOTES
 Return values  

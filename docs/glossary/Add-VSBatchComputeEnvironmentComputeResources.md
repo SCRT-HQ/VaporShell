@@ -6,6 +6,7 @@ label1: Category
 data1: Documentation
 label2: Depth
 data2: Deep
+schema: 2.0.0
 ---
 
 # Add-VSBatchComputeEnvironmentComputeResources
@@ -19,7 +20,7 @@ Adds an AWS::Batch::ComputeEnvironment.ComputeResources resource property to the
 Add-VSBatchComputeEnvironmentComputeResources [[-SpotIamFleetRole] <Object>] [-MaxvCpus] <Int32>
  [[-BidPercentage] <Int32>] [-SecurityGroupIds] <Object> [-Subnets] <Object> [-Type] <Object>
  [-MinvCpus] <Int32> [[-ImageId] <Object>] [-InstanceRole] <Object> [-InstanceTypes] <Object>
- [[-Ec2KeyPair] <Object>] [[-Tags] <Object>] [[-DesiredvCpus] <Int32>]
+ [[-Ec2KeyPair] <Object>] [[-Tags] <Object>] [[-DesiredvCpus] <Int32>] [<CommonParameters>]
 ```
 
 ## DESCRIPTION
@@ -36,7 +37,7 @@ UpdateType: Immutable
 ```yaml
 Type: Object
 Parameter Sets: (All)
-Aliases: 
+Aliases:
 
 Required: False
 Position: 1
@@ -54,7 +55,7 @@ UpdateType: Mutable
 ```yaml
 Type: Int32
 Parameter Sets: (All)
-Aliases: 
+Aliases:
 
 Required: True
 Position: 2
@@ -72,7 +73,7 @@ UpdateType: Immutable
 ```yaml
 Type: Int32
 Parameter Sets: (All)
-Aliases: 
+Aliases:
 
 Required: False
 Position: 3
@@ -91,7 +92,7 @@ UpdateType: Immutable
 ```yaml
 Type: Object
 Parameter Sets: (All)
-Aliases: 
+Aliases:
 
 Required: True
 Position: 4
@@ -110,7 +111,7 @@ UpdateType: Immutable
 ```yaml
 Type: Object
 Parameter Sets: (All)
-Aliases: 
+Aliases:
 
 Required: True
 Position: 5
@@ -128,7 +129,7 @@ UpdateType: Immutable
 ```yaml
 Type: Object
 Parameter Sets: (All)
-Aliases: 
+Aliases:
 
 Required: True
 Position: 6
@@ -146,7 +147,7 @@ UpdateType: Mutable
 ```yaml
 Type: Int32
 Parameter Sets: (All)
-Aliases: 
+Aliases:
 
 Required: True
 Position: 7
@@ -164,7 +165,7 @@ UpdateType: Immutable
 ```yaml
 Type: Object
 Parameter Sets: (All)
-Aliases: 
+Aliases:
 
 Required: False
 Position: 8
@@ -182,7 +183,7 @@ UpdateType: Immutable
 ```yaml
 Type: Object
 Parameter Sets: (All)
-Aliases: 
+Aliases:
 
 Required: True
 Position: 9
@@ -201,7 +202,7 @@ UpdateType: Immutable
 ```yaml
 Type: Object
 Parameter Sets: (All)
-Aliases: 
+Aliases:
 
 Required: True
 Position: 10
@@ -219,7 +220,7 @@ UpdateType: Immutable
 ```yaml
 Type: Object
 Parameter Sets: (All)
-Aliases: 
+Aliases:
 
 Required: False
 Position: 11
@@ -237,7 +238,7 @@ UpdateType: Immutable
 ```yaml
 Type: Object
 Parameter Sets: (All)
-Aliases: 
+Aliases:
 
 Required: False
 Position: 12
@@ -255,7 +256,7 @@ UpdateType: Mutable
 ```yaml
 Type: Int32
 Parameter Sets: (All)
-Aliases: 
+Aliases:
 
 Required: False
 Position: 13
@@ -264,11 +265,15 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
+### CommonParameters
+This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction, and -WarningVariable.
+For more information, see about_CommonParameters (http://go.microsoft.com/fwlink/?LinkID=113216).
+
 ## INPUTS
 
 ## OUTPUTS
 
-### VaporShell.Resource.Batch.ComputeEnvironment.ComputeResources
+### Vaporshell.Resource.Batch.ComputeEnvironment.ComputeResources
 
 ## NOTES
 

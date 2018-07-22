@@ -6,6 +6,7 @@ label1: Category
 data1: Documentation
 label2: Depth
 data2: Deep
+schema: 2.0.0
 ---
 
 # Add-SAMCloudWatchEventEventSource
@@ -17,7 +18,7 @@ Adds a CloudWatchEvent Event Source to a Serverless Application Model resource
 
 ```
 Add-SAMCloudWatchEventEventSource [-LogicalId] <String> -Pattern <Object> [-JSONInput <String>]
- [-InputPath <String>]
+ [-InputPath <String>] [<CommonParameters>]
 ```
 
 ## DESCRIPTION
@@ -32,7 +33,7 @@ Use the logical name to reference the resource in other parts of the template.
 ```yaml
 Type: String
 Parameter Sets: (All)
-Aliases: 
+Aliases:
 
 Required: True
 Position: 1
@@ -51,7 +52,7 @@ http://docs.aws.amazon.com/AmazonCloudWatch/latest/events/CloudWatchEventsandEve
 ```yaml
 Type: Object
 Parameter Sets: (All)
-Aliases: 
+Aliases:
 
 Required: True
 Position: Named
@@ -66,7 +67,7 @@ JSON-formatted string to pass to the function as the event body.
 ```yaml
 Type: String
 Parameter Sets: (All)
-Aliases: 
+Aliases:
 
 Required: False
 Position: Named
@@ -81,7 +82,7 @@ JSONPath describing the part of the event to pass to the function.
 ```yaml
 Type: String
 Parameter Sets: (All)
-Aliases: 
+Aliases:
 
 Required: False
 Position: Named
@@ -90,11 +91,15 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
+### CommonParameters
+This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction, and -WarningVariable.
+For more information, see about_CommonParameters (http://go.microsoft.com/fwlink/?LinkID=113216).
+
 ## INPUTS
 
 ## OUTPUTS
 
-### VaporShell.Serverless.EventSource.CloudWatchEvent
+### Vaporshell.Serverless.EventSource.CloudWatchEvent
 
 ## NOTES
 

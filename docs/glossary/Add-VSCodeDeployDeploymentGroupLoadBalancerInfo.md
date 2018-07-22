@@ -6,6 +6,7 @@ label1: Category
 data1: Documentation
 label2: Depth
 data2: Deep
+schema: 2.0.0
 ---
 
 # Add-VSCodeDeployDeploymentGroupLoadBalancerInfo
@@ -16,7 +17,8 @@ Adds an AWS::CodeDeploy::DeploymentGroup.LoadBalancerInfo resource property to t
 ## SYNTAX
 
 ```
-Add-VSCodeDeployDeploymentGroupLoadBalancerInfo [[-ElbInfoList] <Object>]
+Add-VSCodeDeployDeploymentGroupLoadBalancerInfo [[-ElbInfoList] <Object>] [[-TargetGroupInfoList] <Object>]
+ [<CommonParameters>]
 ```
 
 ## DESCRIPTION
@@ -35,7 +37,7 @@ UpdateType: Mutable
 ```yaml
 Type: Object
 Parameter Sets: (All)
-Aliases: 
+Aliases:
 
 Required: False
 Position: 1
@@ -44,11 +46,35 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
+### -TargetGroupInfoList
+Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-codedeploy-deploymentgroup-loadbalancerinfo.html#cfn-codedeploy-deploymentgroup-loadbalancerinfo-targetgroupinfolist    
+DuplicatesAllowed: False    
+ItemType: TargetGroupInfo    
+Required: False    
+Type: List    
+UpdateType: Mutable
+
+```yaml
+Type: Object
+Parameter Sets: (All)
+Aliases:
+
+Required: False
+Position: 2
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### CommonParameters
+This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction, and -WarningVariable.
+For more information, see about_CommonParameters (http://go.microsoft.com/fwlink/?LinkID=113216).
+
 ## INPUTS
 
 ## OUTPUTS
 
-### VaporShell.Resource.CodeDeploy.DeploymentGroup.LoadBalancerInfo
+### Vaporshell.Resource.CodeDeploy.DeploymentGroup.LoadBalancerInfo
 
 ## NOTES
 

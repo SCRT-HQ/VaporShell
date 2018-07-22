@@ -6,6 +6,7 @@ label1: Category
 data1: Documentation
 label2: Depth
 data2: Deep
+schema: 2.0.0
 ---
 
 # New-VSS3Object
@@ -17,8 +18,11 @@ Uploads an object to S3
 
 ```
 New-VSS3Object [-BucketName] <String> [-CannedACL <String>] [-ContentBody <String>] [-FilePath <String>]
- [-Key <String>] [-KMSKeyId <String>] [-ProfileName <String>]
+ [-Key <String>] [-KMSKeyId <String>] [-ProfileName <String>] [<CommonParameters>]
 ```
+
+## DESCRIPTION
+{{Fill in the Description}}
 
 ## PARAMETERS
 
@@ -28,7 +32,7 @@ The name of the bucket to contain the object.
 ```yaml
 Type: String
 Parameter Sets: (All)
-Aliases: 
+Aliases:
 
 Required: True
 Position: 1
@@ -44,7 +48,7 @@ Valid options are: "NoACL","Private","PublicRead","PublicReadWrite","Authenticat
 ```yaml
 Type: String
 Parameter Sets: (All)
-Aliases: 
+Aliases:
 
 Required: False
 Position: Named
@@ -61,7 +65,7 @@ The content type will be set to 'text/plain'.
 ```yaml
 Type: String
 Parameter Sets: (All)
-Aliases: 
+Aliases:
 
 Required: False
 Position: Named
@@ -77,7 +81,7 @@ If this is set the request will upload the specified file to S3.
 ```yaml
 Type: String
 Parameter Sets: (All)
-Aliases: 
+Aliases:
 
 Required: False
 Position: Named
@@ -92,7 +96,7 @@ The key used to identify the object in S3.
 ```yaml
 Type: String
 Parameter Sets: (All)
-Aliases: 
+Aliases:
 
 Required: False
 Position: Named
@@ -108,7 +112,7 @@ If a key id is not specified, the default key will be used for encryption and de
 ```yaml
 Type: String
 Parameter Sets: (All)
-Aliases: 
+Aliases:
 
 Required: False
 Position: Named
@@ -124,7 +128,7 @@ Defaults to $env:AWS_PROFILE, if set.
 ```yaml
 Type: String
 Parameter Sets: (All)
-Aliases: 
+Aliases:
 
 Required: False
 Position: Named
@@ -133,6 +137,10 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
+### CommonParameters
+This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction, and -WarningVariable.
+For more information, see about_CommonParameters (http://go.microsoft.com/fwlink/?LinkID=113216).
+
 ## INPUTS
 
 ## OUTPUTS
@@ -140,4 +148,3 @@ Accept wildcard characters: False
 ## NOTES
 
 ## RELATED LINKS
-

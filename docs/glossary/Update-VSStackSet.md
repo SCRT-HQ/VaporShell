@@ -6,6 +6,7 @@ label1: Category
 data1: Documentation
 label2: Depth
 data2: Deep
+schema: 2.0.0
 ---
 
 # Update-VSStackSet
@@ -21,29 +22,32 @@ Subsequent CreateStackInstances calls on the specified stack set use the updated
 ```
 Update-VSStackSet [-Path] <String> [-Capabilities <String[]>] [-Description <String>] [-OperationId <String>]
  [-OperationPreferences <StackSetOperationPreferences>] [-Parameters <Parameter[]>] [-StackSetName <String>]
- [-Tags <String>] [-ProfileName <String>] [-WhatIf] [-Confirm]
+ [-Tags <String>] [-ProfileName <String>] [-WhatIf] [-Confirm] [<CommonParameters>]
 ```
 
 ### TemplateBody
 ```
 Update-VSStackSet [-TemplateBody] <String> [-Capabilities <String[]>] [-Description <String>]
  [-OperationId <String>] [-OperationPreferences <StackSetOperationPreferences>] [-Parameters <Parameter[]>]
- [-StackSetName <String>] [-Tags <String>] [-ProfileName <String>] [-WhatIf] [-Confirm]
+ [-StackSetName <String>] [-Tags <String>] [-ProfileName <String>] [-WhatIf] [-Confirm] [<CommonParameters>]
 ```
 
 ### TemplateUrl
 ```
 Update-VSStackSet [-TemplateUrl] <String> [-Capabilities <String[]>] [-Description <String>]
  [-OperationId <String>] [-OperationPreferences <StackSetOperationPreferences>] [-Parameters <Parameter[]>]
- [-StackSetName <String>] [-Tags <String>] [-ProfileName <String>] [-WhatIf] [-Confirm]
+ [-StackSetName <String>] [-Tags <String>] [-ProfileName <String>] [-WhatIf] [-Confirm] [<CommonParameters>]
 ```
 
 ### UsePreviousTemplate
 ```
 Update-VSStackSet [-UsePreviousTemplate] [-Capabilities <String[]>] [-Description <String>]
  [-OperationId <String>] [-OperationPreferences <StackSetOperationPreferences>] [-Parameters <Parameter[]>]
- [-StackSetName <String>] [-Tags <String>] [-ProfileName <String>] [-WhatIf] [-Confirm]
+ [-StackSetName <String>] [-Tags <String>] [-ProfileName <String>] [-WhatIf] [-Confirm] [<CommonParameters>]
 ```
+
+## DESCRIPTION
+{{Fill in the Description}}
 
 ## PARAMETERS
 
@@ -53,7 +57,7 @@ The structure that contains the template body, with a minimum length of 1 byte a
 ```yaml
 Type: String
 Parameter Sets: TemplateBody
-Aliases: 
+Aliases:
 
 Required: True
 Position: 1
@@ -68,7 +72,7 @@ The path to the local file containing the template.
 ```yaml
 Type: String
 Parameter Sets: Path
-Aliases: 
+Aliases:
 
 Required: True
 Position: 1
@@ -84,7 +88,7 @@ The URL must point to a template (maximum size: 460,800 bytes) that is located i
 ```yaml
 Type: String
 Parameter Sets: TemplateUrl
-Aliases: 
+Aliases:
 
 Required: True
 Position: 1
@@ -99,7 +103,7 @@ Use the existing template that's associated with the stack set that you're updat
 ```yaml
 Type: SwitchParameter
 Parameter Sets: UsePreviousTemplate
-Aliases: 
+Aliases:
 
 Required: True
 Position: Named
@@ -118,7 +122,7 @@ The following resources require you to specify this parameter: AWS::IAM::AccessK
 ```yaml
 Type: String[]
 Parameter Sets: (All)
-Aliases: 
+Aliases:
 
 Required: False
 Position: Named
@@ -133,7 +137,7 @@ A brief description of updates that you are making.
 ```yaml
 Type: String
 Parameter Sets: (All)
-Aliases: 
+Aliases:
 
 Required: False
 Position: Named
@@ -152,7 +156,7 @@ Repeating this stack set operation with a new operation ID retries all stack ins
 ```yaml
 Type: String
 Parameter Sets: (All)
-Aliases: 
+Aliases:
 
 Required: False
 Position: Named
@@ -167,7 +171,7 @@ Preferences for how AWS CloudFormation performs this stack set operation.
 ```yaml
 Type: StackSetOperationPreferences
 Parameter Sets: (All)
-Aliases: 
+Aliases:
 
 Required: False
 Position: Named
@@ -182,7 +186,7 @@ A list of input parameters for the stack set template.
 ```yaml
 Type: Parameter[]
 Parameter Sets: (All)
-Aliases: 
+Aliases:
 
 Required: False
 Position: Named
@@ -197,7 +201,7 @@ The name or unique ID of the stack set that you want to update.
 ```yaml
 Type: String
 Parameter Sets: (All)
-Aliases: 
+Aliases:
 
 Required: False
 Position: Named
@@ -222,7 +226,7 @@ If you don't have the necessary permission(s), the entire UpdateStackSet action 
 ```yaml
 Type: String
 Parameter Sets: (All)
-Aliases: 
+Aliases:
 
 Required: False
 Position: Named
@@ -238,7 +242,7 @@ Defaults to $env:AWS_PROFILE, if set.
 ```yaml
 Type: String
 Parameter Sets: (All)
-Aliases: 
+Aliases:
 
 Required: False
 Position: Named
@@ -278,6 +282,10 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
+### CommonParameters
+This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction, and -WarningVariable.
+For more information, see about_CommonParameters (http://go.microsoft.com/fwlink/?LinkID=113216).
+
 ## INPUTS
 
 ## OUTPUTS
@@ -285,4 +293,3 @@ Accept wildcard characters: False
 ## NOTES
 
 ## RELATED LINKS
-

@@ -6,6 +6,7 @@ label1: Category
 data1: Documentation
 label2: Depth
 data2: Deep
+schema: 2.0.0
 ---
 
 # Set-VSCredential
@@ -18,8 +19,11 @@ Sets or updates the provided ProfileName on the Shared Credentials file (~\.aws\
 ```
 Set-VSCredential [[-AccessKey] <String>] [[-SecretKey] <String>] [[-Region] <String>] [[-ExternalID] <String>]
  [[-MfaSerial] <String>] [[-RoleArn] <String>] [[-SourceProfile] <String>] [[-Token] <String>]
- [[-ProfileName] <String>]
+ [[-ProfileName] <String>] [<CommonParameters>]
 ```
+
+## DESCRIPTION
+{{Fill in the Description}}
 
 ## PARAMETERS
 
@@ -29,7 +33,7 @@ The access key to be used in the AWSCredentials.
 ```yaml
 Type: String
 Parameter Sets: (All)
-Aliases: 
+Aliases:
 
 Required: False
 Position: 1
@@ -44,7 +48,7 @@ The secret key to use when creating AWSCredentials.
 ```yaml
 Type: String
 Parameter Sets: (All)
-Aliases: 
+Aliases:
 
 Required: False
 Position: 2
@@ -59,7 +63,7 @@ AWS Region to use with this credential set
 ```yaml
 Type: String
 Parameter Sets: (All)
-Aliases: 
+Aliases:
 
 Required: False
 Position: 3
@@ -74,7 +78,7 @@ The external id to use in assume role AWSCredentials.
 ```yaml
 Type: String
 Parameter Sets: (All)
-Aliases: 
+Aliases:
 
 Required: False
 Position: 4
@@ -89,7 +93,7 @@ The serial number of the MFA to use in assume role AWSCredentials.
 ```yaml
 Type: String
 Parameter Sets: (All)
-Aliases: 
+Aliases:
 
 Required: False
 Position: 5
@@ -104,7 +108,7 @@ The role ARN to use when creating assume role or federated AWSCredentials.
 ```yaml
 Type: String
 Parameter Sets: (All)
-Aliases: 
+Aliases:
 
 Required: False
 Position: 6
@@ -119,7 +123,7 @@ When this CredentialProfileOptions object references another CredentialProfile, 
 ```yaml
 Type: String
 Parameter Sets: (All)
-Aliases: 
+Aliases:
 
 Required: False
 Position: 7
@@ -134,7 +138,7 @@ The session token to be used to create AWSCredentials.
 ```yaml
 Type: String
 Parameter Sets: (All)
-Aliases: 
+Aliases:
 
 Required: False
 Position: 8
@@ -151,7 +155,7 @@ If that is not set, it uses "default".
 ```yaml
 Type: String
 Parameter Sets: (All)
-Aliases: 
+Aliases:
 
 Required: False
 Position: 9
@@ -160,6 +164,10 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
+### CommonParameters
+This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction, and -WarningVariable.
+For more information, see about_CommonParameters (http://go.microsoft.com/fwlink/?LinkID=113216).
+
 ## INPUTS
 
 ## OUTPUTS
@@ -167,4 +175,3 @@ Accept wildcard characters: False
 ## NOTES
 
 ## RELATED LINKS
-

@@ -6,6 +6,7 @@ label1: Category
 data1: Documentation
 label2: Depth
 data2: Deep
+schema: 2.0.0
 ---
 
 # Add-VSKinesisFirehoseDeliveryStreamS3DestinationConfiguration
@@ -18,7 +19,7 @@ Adds an AWS::KinesisFirehose::DeliveryStream.S3DestinationConfiguration resource
 ```
 Add-VSKinesisFirehoseDeliveryStreamS3DestinationConfiguration [-BucketARN] <Object> [-BufferingHints] <Object>
  [[-CloudWatchLoggingOptions] <Object>] [-CompressionFormat] <Object> [[-EncryptionConfiguration] <Object>]
- [-Prefix] <Object> [-RoleARN] <Object>
+ [[-Prefix] <Object>] [-RoleARN] <Object> [<CommonParameters>]
 ```
 
 ## DESCRIPTION
@@ -35,7 +36,7 @@ UpdateType: Mutable
 ```yaml
 Type: Object
 Parameter Sets: (All)
-Aliases: 
+Aliases:
 
 Required: True
 Position: 1
@@ -53,7 +54,7 @@ UpdateType: Mutable
 ```yaml
 Type: Object
 Parameter Sets: (All)
-Aliases: 
+Aliases:
 
 Required: True
 Position: 2
@@ -71,7 +72,7 @@ UpdateType: Mutable
 ```yaml
 Type: Object
 Parameter Sets: (All)
-Aliases: 
+Aliases:
 
 Required: False
 Position: 3
@@ -89,7 +90,7 @@ UpdateType: Mutable
 ```yaml
 Type: Object
 Parameter Sets: (All)
-Aliases: 
+Aliases:
 
 Required: True
 Position: 4
@@ -107,7 +108,7 @@ UpdateType: Mutable
 ```yaml
 Type: Object
 Parameter Sets: (All)
-Aliases: 
+Aliases:
 
 Required: False
 Position: 5
@@ -119,15 +120,15 @@ Accept wildcard characters: False
 ### -Prefix
 Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-kinesisfirehose-deliverystream-s3destinationconfiguration.html#cfn-kinesisfirehose-deliverystream-s3destinationconfiguration-prefix    
 PrimitiveType: String    
-Required: True    
+Required: False    
 UpdateType: Mutable
 
 ```yaml
 Type: Object
 Parameter Sets: (All)
-Aliases: 
+Aliases:
 
-Required: True
+Required: False
 Position: 6
 Default value: None
 Accept pipeline input: False
@@ -143,7 +144,7 @@ UpdateType: Mutable
 ```yaml
 Type: Object
 Parameter Sets: (All)
-Aliases: 
+Aliases:
 
 Required: True
 Position: 7
@@ -152,11 +153,15 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
+### CommonParameters
+This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction, and -WarningVariable.
+For more information, see about_CommonParameters (http://go.microsoft.com/fwlink/?LinkID=113216).
+
 ## INPUTS
 
 ## OUTPUTS
 
-### VaporShell.Resource.KinesisFirehose.DeliveryStream.S3DestinationConfiguration
+### Vaporshell.Resource.KinesisFirehose.DeliveryStream.S3DestinationConfiguration
 
 ## NOTES
 

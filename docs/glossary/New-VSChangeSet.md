@@ -6,6 +6,7 @@ label1: Category
 data1: Documentation
 label2: Depth
 data2: Deep
+schema: 2.0.0
 ---
 
 # New-VSChangeSet
@@ -20,7 +21,7 @@ Creates a new Change Set.
 New-VSChangeSet [-Path] <String> -ChangeSetName <String> -StackName <String> [-Capabilities <String[]>]
  [-ChangeSetType <String>] [-ClientToken <String>] [-Description <String>] [-NotificationARNs <String[]>]
  [-Parameters <Object>] [-ResourceTypes <String[]>] [-RoleARN <String>] [-Tags <String>]
- [-ProfileName <String>]
+ [-ProfileName <String>] [<CommonParameters>]
 ```
 
 ### TemplateBody
@@ -28,7 +29,7 @@ New-VSChangeSet [-Path] <String> -ChangeSetName <String> -StackName <String> [-C
 New-VSChangeSet [-TemplateBody] <String> -ChangeSetName <String> -StackName <String> [-Capabilities <String[]>]
  [-ChangeSetType <String>] [-ClientToken <String>] [-Description <String>] [-NotificationARNs <String[]>]
  [-Parameters <Object>] [-ResourceTypes <String[]>] [-RoleARN <String>] [-Tags <String>]
- [-ProfileName <String>]
+ [-ProfileName <String>] [<CommonParameters>]
 ```
 
 ### TemplateUrl
@@ -36,7 +37,7 @@ New-VSChangeSet [-TemplateBody] <String> -ChangeSetName <String> -StackName <Str
 New-VSChangeSet [-TemplateUrl] <String> -ChangeSetName <String> -StackName <String> [-Capabilities <String[]>]
  [-ChangeSetType <String>] [-ClientToken <String>] [-Description <String>] [-NotificationARNs <String[]>]
  [-Parameters <Object>] [-ResourceTypes <String[]>] [-RoleARN <String>] [-Tags <String>]
- [-ProfileName <String>]
+ [-ProfileName <String>] [<CommonParameters>]
 ```
 
 ### UsePreviousTemplate
@@ -44,7 +45,7 @@ New-VSChangeSet [-TemplateUrl] <String> -ChangeSetName <String> -StackName <Stri
 New-VSChangeSet [-UsePreviousTemplate] -ChangeSetName <String> -StackName <String> [-Capabilities <String[]>]
  [-ChangeSetType <String>] [-ClientToken <String>] [-Description <String>] [-NotificationARNs <String[]>]
  [-Parameters <Object>] [-ResourceTypes <String[]>] [-RoleARN <String>] [-Tags <String>]
- [-ProfileName <String>]
+ [-ProfileName <String>] [<CommonParameters>]
 ```
 
 ## DESCRIPTION
@@ -58,7 +59,7 @@ The body of the template to be used for this change set.
 ```yaml
 Type: String
 Parameter Sets: TemplateBody
-Aliases: 
+Aliases:
 
 Required: True
 Position: 1
@@ -73,7 +74,7 @@ The path to the template file to be used with this change set.
 ```yaml
 Type: String
 Parameter Sets: Path
-Aliases: 
+Aliases:
 
 Required: True
 Position: 1
@@ -88,7 +89,7 @@ The S3 Url to the template file to be used with this change set.
 ```yaml
 Type: String
 Parameter Sets: TemplateUrl
-Aliases: 
+Aliases:
 
 Required: True
 Position: 1
@@ -103,7 +104,7 @@ A flag to indicate that this change set should use the previous template.
 ```yaml
 Type: SwitchParameter
 Parameter Sets: UsePreviousTemplate
-Aliases: 
+Aliases:
 
 Required: True
 Position: 1
@@ -121,7 +122,7 @@ It must start with an alphabetic character and cannot exceed 128 characters.
 ```yaml
 Type: String
 Parameter Sets: (All)
-Aliases: 
+Aliases:
 
 Required: True
 Position: Named
@@ -137,7 +138,7 @@ AWS CloudFormation generates the change set by comparing this stack's informatio
 ```yaml
 Type: String
 Parameter Sets: (All)
-Aliases: 
+Aliases:
 
 Required: True
 Position: Named
@@ -160,7 +161,7 @@ If you don't specify this parameter, this action returns an InsufficientCapabili
 ```yaml
 Type: String[]
 Parameter Sets: (All)
-Aliases: 
+Aliases:
 
 Required: False
 Position: Named
@@ -177,7 +178,7 @@ To create a change set for an existing stack, specify UPDATE.
 ```yaml
 Type: String
 Parameter Sets: (All)
-Aliases: 
+Aliases:
 
 Required: False
 Position: Named
@@ -194,7 +195,7 @@ You might retry CreateChangeSet requests to ensure that AWS CloudFormation succe
 ```yaml
 Type: String
 Parameter Sets: (All)
-Aliases: 
+Aliases:
 
 Required: False
 Position: Named
@@ -209,7 +210,7 @@ A description to help you identify this change set.
 ```yaml
 Type: String
 Parameter Sets: (All)
-Aliases: 
+Aliases:
 
 Required: False
 Position: Named
@@ -225,7 +226,7 @@ To remove all associated notification topics, specify an empty list.
 ```yaml
 Type: String[]
 Parameter Sets: (All)
-Aliases: 
+Aliases:
 
 Required: False
 Position: Named
@@ -240,7 +241,7 @@ A list of Parameter structures that specify input parameters for the change set
 ```yaml
 Type: Object
 Parameter Sets: (All)
-Aliases: 
+Aliases:
 
 Required: False
 Position: Named
@@ -258,7 +259,7 @@ AWS Identity and Access Management (IAM) uses this parameter for condition keys 
 ```yaml
 Type: String[]
 Parameter Sets: (All)
-Aliases: 
+Aliases:
 
 Required: False
 Position: Named
@@ -279,7 +280,7 @@ If no role is available, AWS CloudFormation uses a temporary session that is gen
 ```yaml
 Type: String
 Parameter Sets: (All)
-Aliases: 
+Aliases:
 
 Required: False
 Position: Named
@@ -296,7 +297,7 @@ You can specify a maximum of 50 tags.
 ```yaml
 Type: String
 Parameter Sets: (All)
-Aliases: 
+Aliases:
 
 Required: False
 Position: Named
@@ -312,7 +313,7 @@ Defaults to $env:AWS_PROFILE, if set.
 ```yaml
 Type: String
 Parameter Sets: (All)
-Aliases: 
+Aliases:
 
 Required: False
 Position: Named
@@ -321,6 +322,10 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
+### CommonParameters
+This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction, and -WarningVariable.
+For more information, see about_CommonParameters (http://go.microsoft.com/fwlink/?LinkID=113216).
+
 ## INPUTS
 
 ## OUTPUTS
@@ -328,4 +333,3 @@ Accept wildcard characters: False
 ## NOTES
 
 ## RELATED LINKS
-

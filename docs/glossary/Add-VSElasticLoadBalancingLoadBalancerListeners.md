@@ -6,6 +6,7 @@ label1: Category
 data1: Documentation
 label2: Depth
 data2: Deep
+schema: 2.0.0
 ---
 
 # Add-VSElasticLoadBalancingLoadBalancerListeners
@@ -18,6 +19,7 @@ Adds an AWS::ElasticLoadBalancing::LoadBalancer.Listeners resource property to t
 ```
 Add-VSElasticLoadBalancingLoadBalancerListeners [-InstancePort] <Object> [[-InstanceProtocol] <Object>]
  [-LoadBalancerPort] <Object> [[-PolicyNames] <Object>] [-Protocol] <Object> [[-SSLCertificateId] <Object>]
+ [<CommonParameters>]
 ```
 
 ## DESCRIPTION
@@ -34,7 +36,7 @@ UpdateType: Mutable
 ```yaml
 Type: Object
 Parameter Sets: (All)
-Aliases: 
+Aliases:
 
 Required: True
 Position: 1
@@ -52,7 +54,7 @@ UpdateType: Mutable
 ```yaml
 Type: Object
 Parameter Sets: (All)
-Aliases: 
+Aliases:
 
 Required: False
 Position: 2
@@ -70,7 +72,7 @@ UpdateType: Mutable
 ```yaml
 Type: Object
 Parameter Sets: (All)
-Aliases: 
+Aliases:
 
 Required: True
 Position: 3
@@ -90,7 +92,7 @@ UpdateType: Mutable
 ```yaml
 Type: Object
 Parameter Sets: (All)
-Aliases: 
+Aliases:
 
 Required: False
 Position: 4
@@ -108,7 +110,7 @@ UpdateType: Mutable
 ```yaml
 Type: Object
 Parameter Sets: (All)
-Aliases: 
+Aliases:
 
 Required: True
 Position: 5
@@ -126,7 +128,7 @@ UpdateType: Mutable
 ```yaml
 Type: Object
 Parameter Sets: (All)
-Aliases: 
+Aliases:
 
 Required: False
 Position: 6
@@ -135,11 +137,15 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
+### CommonParameters
+This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction, and -WarningVariable.
+For more information, see about_CommonParameters (http://go.microsoft.com/fwlink/?LinkID=113216).
+
 ## INPUTS
 
 ## OUTPUTS
 
-### VaporShell.Resource.ElasticLoadBalancing.LoadBalancer.Listeners
+### Vaporshell.Resource.ElasticLoadBalancing.LoadBalancer.Listeners
 
 ## NOTES
 

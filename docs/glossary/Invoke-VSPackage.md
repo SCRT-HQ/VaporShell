@@ -6,6 +6,7 @@ label1: Category
 data1: Documentation
 label2: Depth
 data2: Deep
+schema: 2.0.0
 ---
 
 # Invoke-VSPackage
@@ -18,13 +19,13 @@ Packages the local artifacts (local paths) that your AWS CloudFormation template
 ### TemplateFile (Default)
 ```
 Invoke-VSPackage [-TemplateFile] <String> [-S3Bucket] <String> [-S3Prefix <String>] [-KMSKeyId <String>]
- [-OutputTemplateFile <String>] [-UseJson] [-Force] [-ProfileName <String>]
+ [-OutputTemplateFile <String>] [-UseJson] [-Force] [-ProfileName <String>] [<CommonParameters>]
 ```
 
 ### TemplateBody
 ```
 Invoke-VSPackage [-TemplateBody] <String> [-S3Bucket] <String> [-S3Prefix <String>] [-KMSKeyId <String>]
- [-OutputTemplateFile <String>] [-UseJson] [-Force] [-ProfileName <String>]
+ [-OutputTemplateFile <String>] [-UseJson] [-Force] [-ProfileName <String>] [<CommonParameters>]
 ```
 
 ## DESCRIPTION
@@ -40,7 +41,7 @@ A JSON or YAML string containing the template body.
 ```yaml
 Type: String
 Parameter Sets: TemplateBody
-Aliases: 
+Aliases:
 
 Required: True
 Position: 1
@@ -55,7 +56,7 @@ The path to the local file containing the template.
 ```yaml
 Type: String
 Parameter Sets: TemplateFile
-Aliases: 
+Aliases:
 
 Required: True
 Position: 1
@@ -70,7 +71,7 @@ The name of the S3 bucket where this command uploads the artifacts that are refe
 ```yaml
 Type: String
 Parameter Sets: (All)
-Aliases: 
+Aliases:
 
 Required: True
 Position: 2
@@ -86,7 +87,7 @@ The prefix name is a path name (folder name) for the S3 bucket.
 ```yaml
 Type: String
 Parameter Sets: (All)
-Aliases: 
+Aliases:
 
 Required: False
 Position: Named
@@ -101,7 +102,7 @@ The ID of an AWS KMS key that the command uses to encrypt artifacts that are at 
 ```yaml
 Type: String
 Parameter Sets: (All)
-Aliases: 
+Aliases:
 
 Required: False
 Position: Named
@@ -117,7 +118,7 @@ If you don't specify a path, the command writes the template to the standard out
 ```yaml
 Type: String
 Parameter Sets: (All)
-Aliases: 
+Aliases:
 
 Required: False
 Position: Named
@@ -133,7 +134,7 @@ YAML is used by default (if cfn-flip is available).
 ```yaml
 Type: SwitchParameter
 Parameter Sets: (All)
-Aliases: 
+Aliases:
 
 Required: False
 Position: Named
@@ -165,7 +166,7 @@ Defaults to $env:AWS_PROFILE, if set.
 ```yaml
 Type: String
 Parameter Sets: (All)
-Aliases: 
+Aliases:
 
 Required: False
 Position: Named
@@ -174,6 +175,10 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
+### CommonParameters
+This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction, and -WarningVariable.
+For more information, see about_CommonParameters (http://go.microsoft.com/fwlink/?LinkID=113216).
+
 ## INPUTS
 
 ## OUTPUTS
@@ -181,4 +186,3 @@ Accept wildcard characters: False
 ## NOTES
 
 ## RELATED LINKS
-

@@ -6,6 +6,7 @@ label1: Category
 data1: Documentation
 label2: Depth
 data2: Deep
+schema: 2.0.0
 ---
 
 # Remove-VSStack
@@ -17,9 +18,11 @@ Removes a Stack.
 
 ```
 Remove-VSStack [-StackName] <String> [[-ClientRequestToken] <String>] [[-RetainResources] <String[]>]
- [[-RoleARN] <String>] [[-ProfileName] <String>] [-WhatIf] [-Confirm]
+ [[-RoleARN] <String>] [[-ProfileName] <String>] [-WhatIf] [-Confirm] [<CommonParameters>]
 ```
 
+## DESCRIPTION
+{{Fill in the Description}}
 
 ## PARAMETERS
 
@@ -46,7 +49,7 @@ You might retry DeleteStack requests to ensure that AWS CloudFormation successfu
 ```yaml
 Type: String
 Parameter Sets: (All)
-Aliases: 
+Aliases:
 
 Required: False
 Position: 2
@@ -63,7 +66,7 @@ Retaining resources is useful when you cannot delete a resource, such as a non-e
 ```yaml
 Type: String[]
 Parameter Sets: (All)
-Aliases: 
+Aliases:
 
 Required: False
 Position: 3
@@ -81,7 +84,7 @@ If no role is available, AWS CloudFormation uses a temporary session that is gen
 ```yaml
 Type: String
 Parameter Sets: (All)
-Aliases: 
+Aliases:
 
 Required: False
 Position: 4
@@ -97,7 +100,7 @@ Defaults to $env:AWS_PROFILE, if set.
 ```yaml
 Type: String
 Parameter Sets: (All)
-Aliases: 
+Aliases:
 
 Required: False
 Position: 5
@@ -137,6 +140,10 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
+### CommonParameters
+This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction, and -WarningVariable.
+For more information, see about_CommonParameters (http://go.microsoft.com/fwlink/?LinkID=113216).
+
 ## INPUTS
 
 ## OUTPUTS
@@ -144,4 +151,3 @@ Accept wildcard characters: False
 ## NOTES
 
 ## RELATED LINKS
-

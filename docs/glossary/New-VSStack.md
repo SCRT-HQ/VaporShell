@@ -6,6 +6,7 @@ label1: Category
 data1: Documentation
 label2: Depth
 data2: Deep
+schema: 2.0.0
 ---
 
 # New-VSStack
@@ -20,7 +21,7 @@ Creates a new stack
 New-VSStack [-Path] <String> [-StackName <String>] [-Capabilities <String[]>] [-ClientRequestToken <String>]
  [-DisableRollback <Boolean>] [-NotificationARNs <String[]>] [-OnFailure <String>] [-Parameters <Object>]
  [-ResourceTypes <String[]>] [-RoleARN <String>] [-StackPolicyBody <String>] [-StackPolicyURL <String>]
- [-Tags <String>] [-TimeoutInMinutes <Int32>] [-ProfileName <String>] [-WhatIf] [-Confirm]
+ [-Tags <String>] [-TimeoutInMinutes <Int32>] [-ProfileName <String>] [-WhatIf] [-Confirm] [<CommonParameters>]
 ```
 
 ### TemplateBody
@@ -29,7 +30,7 @@ New-VSStack [-TemplateBody] <String> [-StackName <String>] [-Capabilities <Strin
  [-ClientRequestToken <String>] [-DisableRollback <Boolean>] [-NotificationARNs <String[]>]
  [-OnFailure <String>] [-Parameters <Object>] [-ResourceTypes <String[]>] [-RoleARN <String>]
  [-StackPolicyBody <String>] [-StackPolicyURL <String>] [-Tags <String>] [-TimeoutInMinutes <Int32>]
- [-ProfileName <String>] [-WhatIf] [-Confirm]
+ [-ProfileName <String>] [-WhatIf] [-Confirm] [<CommonParameters>]
 ```
 
 ### TemplateUrl
@@ -38,9 +39,11 @@ New-VSStack [-TemplateUrl] <String> [-StackName <String>] [-Capabilities <String
  [-ClientRequestToken <String>] [-DisableRollback <Boolean>] [-NotificationARNs <String[]>]
  [-OnFailure <String>] [-Parameters <Object>] [-ResourceTypes <String[]>] [-RoleARN <String>]
  [-StackPolicyBody <String>] [-StackPolicyURL <String>] [-Tags <String>] [-TimeoutInMinutes <Int32>]
- [-ProfileName <String>] [-WhatIf] [-Confirm]
+ [-ProfileName <String>] [-WhatIf] [-Confirm] [<CommonParameters>]
 ```
 
+## DESCRIPTION
+{{Fill in the Description}}
 
 ## PARAMETERS
 
@@ -50,7 +53,7 @@ Structure containing the template body with a minimum length of 1 byte and a max
 ```yaml
 Type: String
 Parameter Sets: TemplateBody
-Aliases: 
+Aliases:
 
 Required: True
 Position: 1
@@ -65,7 +68,7 @@ File path to the local template file.
 ```yaml
 Type: String
 Parameter Sets: Path
-Aliases: 
+Aliases:
 
 Required: True
 Position: 1
@@ -81,7 +84,7 @@ The URL must point to a template (max size: 460,800 bytes) that is located in an
 ```yaml
 Type: String
 Parameter Sets: TemplateUrl
-Aliases: 
+Aliases:
 
 Required: True
 Position: 1
@@ -99,7 +102,7 @@ It must start with an alphabetic character and cannot be longer than 128 charact
 ```yaml
 Type: String
 Parameter Sets: (All)
-Aliases: 
+Aliases:
 
 Required: False
 Position: Named
@@ -122,7 +125,7 @@ If you don't specify this parameter, this action returns an InsufficientCapabili
 ```yaml
 Type: String[]
 Parameter Sets: (All)
-Aliases: 
+Aliases:
 
 Required: False
 Position: Named
@@ -144,7 +147,7 @@ For example, if you create a stack using the console, each stack event would be 
 ```yaml
 Type: String
 Parameter Sets: (All)
-Aliases: 
+Aliases:
 
 Required: False
 Position: Named
@@ -161,7 +164,7 @@ Default: false
 ```yaml
 Type: Boolean
 Parameter Sets: (All)
-Aliases: 
+Aliases:
 
 Required: False
 Position: Named
@@ -177,7 +180,7 @@ You can find your SNS topic ARNs using the SNS console or your Command Line Inte
 ```yaml
 Type: String[]
 Parameter Sets: (All)
-Aliases: 
+Aliases:
 
 Required: False
 Position: Named
@@ -195,7 +198,7 @@ Default: ROLLBACK
 ```yaml
 Type: String
 Parameter Sets: (All)
-Aliases: 
+Aliases:
 
 Required: False
 Position: Named
@@ -210,7 +213,7 @@ A list of Parameter structures that specify input parameters for the stack.
 ```yaml
 Type: Object
 Parameter Sets: (All)
-Aliases: 
+Aliases:
 
 Required: False
 Position: Named
@@ -229,7 +232,7 @@ AWS Identity and Access Management (IAM) uses this parameter for AWS CloudFormat
 ```yaml
 Type: String[]
 Parameter Sets: (All)
-Aliases: 
+Aliases:
 
 Required: False
 Position: Named
@@ -250,7 +253,7 @@ If no role is available, AWS CloudFormation uses a temporary session that is gen
 ```yaml
 Type: String
 Parameter Sets: (All)
-Aliases: 
+Aliases:
 
 Required: False
 Position: Named
@@ -265,7 +268,7 @@ Structure containing the template body with a minimum length of 1 byte and a max
 ```yaml
 Type: String
 Parameter Sets: (All)
-Aliases: 
+Aliases:
 
 Required: False
 Position: Named
@@ -281,7 +284,7 @@ The URL must point to a template (max size: 460,800 bytes) that is located in an
 ```yaml
 Type: String
 Parameter Sets: (All)
-Aliases: 
+Aliases:
 
 Required: False
 Position: Named
@@ -298,7 +301,7 @@ You can specify a maximum of 50 tags.
 ```yaml
 Type: String
 Parameter Sets: (All)
-Aliases: 
+Aliases:
 
 Required: False
 Position: Named
@@ -313,7 +316,7 @@ The amount of time that can pass before the stack status becomes CREATE_FAILED; 
 ```yaml
 Type: Int32
 Parameter Sets: (All)
-Aliases: 
+Aliases:
 
 Required: False
 Position: Named
@@ -329,7 +332,7 @@ Defaults to $env:AWS_PROFILE, if set.
 ```yaml
 Type: String
 Parameter Sets: (All)
-Aliases: 
+Aliases:
 
 Required: False
 Position: Named
@@ -369,6 +372,10 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
+### CommonParameters
+This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction, and -WarningVariable.
+For more information, see about_CommonParameters (http://go.microsoft.com/fwlink/?LinkID=113216).
+
 ## INPUTS
 
 ## OUTPUTS
@@ -376,4 +383,3 @@ Accept wildcard characters: False
 ## NOTES
 
 ## RELATED LINKS
-

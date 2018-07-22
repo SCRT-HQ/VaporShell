@@ -6,6 +6,7 @@ label1: Category
 data1: Documentation
 label2: Depth
 data2: Deep
+schema: 2.0.0
 ---
 
 # Add-VSEC2SpotFleetSpotFleetRequestConfigData
@@ -17,10 +18,10 @@ Adds an AWS::EC2::SpotFleet.SpotFleetRequestConfigData resource property to the 
 
 ```
 Add-VSEC2SpotFleetSpotFleetRequestConfigData [[-AllocationStrategy] <Object>]
- [[-ExcessCapacityTerminationPolicy] <Object>] [-IamFleetRole] <Object> [-LaunchSpecifications] <Object>
- [[-ReplaceUnhealthyInstances] <Boolean>] [-SpotPrice] <Object> [-TargetCapacity] <Int32>
+ [[-ExcessCapacityTerminationPolicy] <Object>] [-IamFleetRole] <Object> [[-LaunchSpecifications] <Object>]
+ [[-ReplaceUnhealthyInstances] <Boolean>] [[-SpotPrice] <Object>] [-TargetCapacity] <Int32>
  [[-TerminateInstancesWithExpiration] <Boolean>] [[-Type] <Object>] [[-ValidFrom] <Object>]
- [[-ValidUntil] <Object>]
+ [[-ValidUntil] <Object>] [<CommonParameters>]
 ```
 
 ## DESCRIPTION
@@ -37,7 +38,7 @@ UpdateType: Immutable
 ```yaml
 Type: Object
 Parameter Sets: (All)
-Aliases: 
+Aliases:
 
 Required: False
 Position: 1
@@ -55,7 +56,7 @@ UpdateType: Mutable
 ```yaml
 Type: Object
 Parameter Sets: (All)
-Aliases: 
+Aliases:
 
 Required: False
 Position: 2
@@ -73,7 +74,7 @@ UpdateType: Immutable
 ```yaml
 Type: Object
 Parameter Sets: (All)
-Aliases: 
+Aliases:
 
 Required: True
 Position: 3
@@ -86,16 +87,16 @@ Accept wildcard characters: False
 Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-spotfleet-spotfleetrequestconfigdata.html#cfn-ec2-spotfleet-spotfleetrequestconfigdata-launchspecifications    
 DuplicatesAllowed: False    
 ItemType: SpotFleetLaunchSpecification    
-Required: True    
+Required: False    
 Type: List    
 UpdateType: Immutable
 
 ```yaml
 Type: Object
 Parameter Sets: (All)
-Aliases: 
+Aliases:
 
-Required: True
+Required: False
 Position: 4
 Default value: None
 Accept pipeline input: False
@@ -111,7 +112,7 @@ UpdateType: Immutable
 ```yaml
 Type: Boolean
 Parameter Sets: (All)
-Aliases: 
+Aliases:
 
 Required: False
 Position: 5
@@ -123,15 +124,15 @@ Accept wildcard characters: False
 ### -SpotPrice
 Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-spotfleet-spotfleetrequestconfigdata.html#cfn-ec2-spotfleet-spotfleetrequestconfigdata-spotprice    
 PrimitiveType: String    
-Required: True    
+Required: False    
 UpdateType: Immutable
 
 ```yaml
 Type: Object
 Parameter Sets: (All)
-Aliases: 
+Aliases:
 
-Required: True
+Required: False
 Position: 6
 Default value: None
 Accept pipeline input: False
@@ -147,7 +148,7 @@ UpdateType: Mutable
 ```yaml
 Type: Int32
 Parameter Sets: (All)
-Aliases: 
+Aliases:
 
 Required: True
 Position: 7
@@ -165,7 +166,7 @@ UpdateType: Immutable
 ```yaml
 Type: Boolean
 Parameter Sets: (All)
-Aliases: 
+Aliases:
 
 Required: False
 Position: 8
@@ -183,7 +184,7 @@ UpdateType: Immutable
 ```yaml
 Type: Object
 Parameter Sets: (All)
-Aliases: 
+Aliases:
 
 Required: False
 Position: 9
@@ -201,7 +202,7 @@ UpdateType: Immutable
 ```yaml
 Type: Object
 Parameter Sets: (All)
-Aliases: 
+Aliases:
 
 Required: False
 Position: 10
@@ -219,7 +220,7 @@ UpdateType: Immutable
 ```yaml
 Type: Object
 Parameter Sets: (All)
-Aliases: 
+Aliases:
 
 Required: False
 Position: 11
@@ -228,11 +229,15 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
+### CommonParameters
+This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction, and -WarningVariable.
+For more information, see about_CommonParameters (http://go.microsoft.com/fwlink/?LinkID=113216).
+
 ## INPUTS
 
 ## OUTPUTS
 
-### VaporShell.Resource.EC2.SpotFleet.SpotFleetRequestConfigData
+### Vaporshell.Resource.EC2.SpotFleet.SpotFleetRequestConfigData
 
 ## NOTES
 

@@ -6,6 +6,7 @@ label1: Category
 data1: Documentation
 label2: Depth
 data2: Deep
+schema: 2.0.0
 ---
 
 # Add-VSLambdaFunctionEnvironment
@@ -16,7 +17,7 @@ Adds an AWS::Lambda::Function.Environment resource property to the template
 ## SYNTAX
 
 ```
-Add-VSLambdaFunctionEnvironment [[-Variables] <Hashtable>]
+Add-VSLambdaFunctionEnvironment [[-Variables] <Hashtable>] [<CommonParameters>]
 ```
 
 ## DESCRIPTION
@@ -35,7 +36,7 @@ UpdateType: Mutable
 ```yaml
 Type: Hashtable
 Parameter Sets: (All)
-Aliases: 
+Aliases:
 
 Required: False
 Position: 1
@@ -44,11 +45,15 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
+### CommonParameters
+This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction, and -WarningVariable.
+For more information, see about_CommonParameters (http://go.microsoft.com/fwlink/?LinkID=113216).
+
 ## INPUTS
 
 ## OUTPUTS
 
-### VaporShell.Resource.Lambda.Function.Environment
+### Vaporshell.Resource.Lambda.Function.Environment
 
 ## NOTES
 

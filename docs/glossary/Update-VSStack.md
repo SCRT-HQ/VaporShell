@@ -6,6 +6,7 @@ label1: Category
 data1: Documentation
 label2: Depth
 data2: Deep
+schema: 2.0.0
 ---
 
 # Update-VSStack
@@ -21,7 +22,7 @@ Update-VSStack [-Path] <String> [-Capabilities <String[]>] [-ClientRequestToken 
  [-NotificationARNs <String[]>] [-Parameters <Parameter[]>] [-ResourceTypes <String[]>] [-RoleARN <String>]
  [-StackName <String>] [-StackPolicyBody <String>] [-StackPolicyURL <String>]
  [-StackPolicyDuringUpdateBody <String>] [-StackPolicyDuringUpdateURL <String>] [-Tags <String>]
- [-ProfileName <String>] [-WhatIf] [-Confirm]
+ [-ProfileName <String>] [-WhatIf] [-Confirm] [<CommonParameters>]
 ```
 
 ### TemplateBody
@@ -30,7 +31,7 @@ Update-VSStack [-TemplateBody] <String> [-Capabilities <String[]>] [-ClientReque
  [-NotificationARNs <String[]>] [-Parameters <Parameter[]>] [-ResourceTypes <String[]>] [-RoleARN <String>]
  [-StackName <String>] [-StackPolicyBody <String>] [-StackPolicyURL <String>]
  [-StackPolicyDuringUpdateBody <String>] [-StackPolicyDuringUpdateURL <String>] [-Tags <String>]
- [-ProfileName <String>] [-WhatIf] [-Confirm]
+ [-ProfileName <String>] [-WhatIf] [-Confirm] [<CommonParameters>]
 ```
 
 ### TemplateUrl
@@ -39,7 +40,7 @@ Update-VSStack [-TemplateUrl] <String> [-Capabilities <String[]>] [-ClientReques
  [-NotificationARNs <String[]>] [-Parameters <Parameter[]>] [-ResourceTypes <String[]>] [-RoleARN <String>]
  [-StackName <String>] [-StackPolicyBody <String>] [-StackPolicyURL <String>]
  [-StackPolicyDuringUpdateBody <String>] [-StackPolicyDuringUpdateURL <String>] [-Tags <String>]
- [-ProfileName <String>] [-WhatIf] [-Confirm]
+ [-ProfileName <String>] [-WhatIf] [-Confirm] [<CommonParameters>]
 ```
 
 ### UsePreviousTemplate
@@ -48,8 +49,11 @@ Update-VSStack [-UsePreviousTemplate] [-Capabilities <String[]>] [-ClientRequest
  [-NotificationARNs <String[]>] [-Parameters <Parameter[]>] [-ResourceTypes <String[]>] [-RoleARN <String>]
  [-StackName <String>] [-StackPolicyBody <String>] [-StackPolicyURL <String>]
  [-StackPolicyDuringUpdateBody <String>] [-StackPolicyDuringUpdateURL <String>] [-Tags <String>]
- [-ProfileName <String>] [-WhatIf] [-Confirm]
+ [-ProfileName <String>] [-WhatIf] [-Confirm] [<CommonParameters>]
 ```
+
+## DESCRIPTION
+{{Fill in the Description}}
 
 ## PARAMETERS
 
@@ -60,7 +64,7 @@ Structure containing the template body with a minimum length of 1 byte and a max
 ```yaml
 Type: String
 Parameter Sets: TemplateBody
-Aliases: 
+Aliases:
 
 Required: True
 Position: 1
@@ -75,7 +79,7 @@ The path to the local file containing the stack template.
 ```yaml
 Type: String
 Parameter Sets: Path
-Aliases: 
+Aliases:
 
 Required: True
 Position: 1
@@ -91,7 +95,7 @@ The URL must point to a template that is located in an Amazon S3 bucket.
 ```yaml
 Type: String
 Parameter Sets: TemplateUrl
-Aliases: 
+Aliases:
 
 Required: True
 Position: 1
@@ -106,7 +110,7 @@ Reuse the existing template that is associated with the stack that you are updat
 ```yaml
 Type: SwitchParameter
 Parameter Sets: UsePreviousTemplate
-Aliases: 
+Aliases:
 
 Required: True
 Position: Named
@@ -125,7 +129,7 @@ The following resources require you to specify this parameter: AWS::IAM::AccessK
 ```yaml
 Type: String[]
 Parameter Sets: (All)
-Aliases: 
+Aliases:
 
 Required: False
 Position: Named
@@ -142,7 +146,7 @@ You might retry UpdateStack requests to ensure that AWS CloudFormation successfu
 ```yaml
 Type: String
 Parameter Sets: (All)
-Aliases: 
+Aliases:
 
 Required: False
 Position: Named
@@ -158,7 +162,7 @@ Specify an empty list to remove all notification topics.
 ```yaml
 Type: String[]
 Parameter Sets: (All)
-Aliases: 
+Aliases:
 
 Required: False
 Position: Named
@@ -174,7 +178,7 @@ For more information, see the Parameter data type.
 ```yaml
 Type: Parameter[]
 Parameter Sets: (All)
-Aliases: 
+Aliases:
 
 Required: False
 Position: Named
@@ -192,7 +196,7 @@ AWS Identity and Access Management (IAM) uses this parameter for AWS CloudFormat
 ```yaml
 Type: String[]
 Parameter Sets: (All)
-Aliases: 
+Aliases:
 
 Required: False
 Position: Named
@@ -213,7 +217,7 @@ If no role is available, AWS CloudFormation uses a temporary session that is gen
 ```yaml
 Type: String
 Parameter Sets: (All)
-Aliases: 
+Aliases:
 
 Required: False
 Position: Named
@@ -228,7 +232,7 @@ The name or unique stack ID of the stack to update.
 ```yaml
 Type: String
 Parameter Sets: (All)
-Aliases: 
+Aliases:
 
 Required: False
 Position: Named
@@ -246,7 +250,7 @@ If you do not specify a stack policy, the current policy that is associated with
 ```yaml
 Type: String
 Parameter Sets: (All)
-Aliases: 
+Aliases:
 
 Required: False
 Position: Named
@@ -262,7 +266,7 @@ The URL must point to a policy (max size: 16KB) located in an S3 bucket in the s
 ```yaml
 Type: String
 Parameter Sets: (All)
-Aliases: 
+Aliases:
 
 Required: False
 Position: Named
@@ -277,7 +281,7 @@ Structure containing the temporary overriding stack policy body.
 ```yaml
 Type: String
 Parameter Sets: (All)
-Aliases: 
+Aliases:
 
 Required: False
 Position: Named
@@ -293,7 +297,7 @@ The URL must point to a policy (max size: 16KB) located in an S3 bucket in the s
 ```yaml
 Type: String
 Parameter Sets: (All)
-Aliases: 
+Aliases:
 
 Required: False
 Position: Named
@@ -312,7 +316,7 @@ If you specify an empty value, AWS CloudFormation removes all associated tags.
 ```yaml
 Type: String
 Parameter Sets: (All)
-Aliases: 
+Aliases:
 
 Required: False
 Position: Named
@@ -328,7 +332,7 @@ Defaults to $env:AWS_PROFILE, if set.
 ```yaml
 Type: String
 Parameter Sets: (All)
-Aliases: 
+Aliases:
 
 Required: False
 Position: Named
@@ -368,6 +372,10 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
+### CommonParameters
+This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction, and -WarningVariable.
+For more information, see about_CommonParameters (http://go.microsoft.com/fwlink/?LinkID=113216).
+
 ## INPUTS
 
 ## OUTPUTS
@@ -375,4 +383,3 @@ Accept wildcard characters: False
 ## NOTES
 
 ## RELATED LINKS
-

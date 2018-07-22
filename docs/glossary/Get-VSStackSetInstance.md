@@ -6,6 +6,7 @@ label1: Category
 data1: Documentation
 label2: Depth
 data2: Deep
+schema: 2.0.0
 ---
 
 # Get-VSStackSetInstance
@@ -18,13 +19,13 @@ Gets information about an Instance of a Stack Set
 ### Description (Default)
 ```
 Get-VSStackSetInstance [-Description] [-StackInstanceAccount <String>] [-StackInstanceRegion <String>]
- [-StackSetName <String>] [-ProfileName <String>]
+ [-StackSetName <String>] [-ProfileName <String>] [<CommonParameters>]
 ```
 
 ### ListStackInstances
 ```
 Get-VSStackSetInstance [-List] [-StackInstanceAccount <String>] [-StackInstanceRegion <String>]
- [-StackSetName <String>] [-MaxResults <Int32>] [-ProfileName <String>]
+ [-StackSetName <String>] [-MaxResults <Int32>] [-ProfileName <String>] [<CommonParameters>]
 ```
 
 ## DESCRIPTION
@@ -38,7 +39,7 @@ Returns the stack instance that's associated with the specified stack set, AWS a
 ```yaml
 Type: SwitchParameter
 Parameter Sets: Description
-Aliases: 
+Aliases:
 
 Required: False
 Position: Named
@@ -54,7 +55,7 @@ You can filter for stack instances that are associated with a specific AWS accou
 ```yaml
 Type: SwitchParameter
 Parameter Sets: ListStackInstances
-Aliases: 
+Aliases:
 
 Required: False
 Position: Named
@@ -69,7 +70,7 @@ The name of the AWS account that you want to list stack instances for.
 ```yaml
 Type: String
 Parameter Sets: (All)
-Aliases: 
+Aliases:
 
 Required: False
 Position: Named
@@ -84,7 +85,7 @@ The name of the region where you want to list stack instances.
 ```yaml
 Type: String
 Parameter Sets: (All)
-Aliases: 
+Aliases:
 
 Required: False
 Position: Named
@@ -99,7 +100,7 @@ The name or unique ID of the stack set that you want to list stack instances for
 ```yaml
 Type: String
 Parameter Sets: (All)
-Aliases: 
+Aliases:
 
 Required: False
 Position: Named
@@ -114,7 +115,7 @@ The maximum number of results to be returned with a single call.
 ```yaml
 Type: Int32
 Parameter Sets: ListStackInstances
-Aliases: 
+Aliases:
 
 Required: False
 Position: Named
@@ -130,7 +131,7 @@ Defaults to $env:AWS_PROFILE, if set.
 ```yaml
 Type: String
 Parameter Sets: (All)
-Aliases: 
+Aliases:
 
 Required: False
 Position: Named
@@ -139,6 +140,10 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
+### CommonParameters
+This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction, and -WarningVariable.
+For more information, see about_CommonParameters (http://go.microsoft.com/fwlink/?LinkID=113216).
+
 ## INPUTS
 
 ## OUTPUTS
@@ -146,4 +151,3 @@ Accept wildcard characters: False
 ## NOTES
 
 ## RELATED LINKS
-

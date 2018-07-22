@@ -6,6 +6,7 @@ label1: Category
 data1: Documentation
 label2: Depth
 data2: Deep
+schema: 2.0.0
 ---
 
 # Watch-Stack
@@ -17,18 +18,22 @@ Colorizes events based on event type.
 ## SYNTAX
 
 ```
-Watch-Stack [-StackId] <String> [-InNewWindow] [[-RefreshRate] <Int32>] [[-ProfileName] <String>]
+Watch-Stack [-StackName] <String> [-InNewWindow] [[-RefreshRate] <Int32>] [[-ProfileName] <String>]
+ [<CommonParameters>]
 ```
+
+## DESCRIPTION
+{{Fill in the Description}}
 
 ## PARAMETERS
 
-### -StackId
-The Stack ID or name of the stack that you'd like to watch events for.
+### -StackName
+{{Fill StackName Description}}
 
 ```yaml
 Type: String
 Parameter Sets: (All)
-Aliases: StackName
+Aliases: StackId
 
 Required: True
 Position: 1
@@ -45,7 +50,7 @@ So you can continue working in your current console.
 ```yaml
 Type: SwitchParameter
 Parameter Sets: (All)
-Aliases: 
+Aliases:
 
 Required: False
 Position: Named
@@ -61,7 +66,7 @@ Defaults to 2.
 ```yaml
 Type: Int32
 Parameter Sets: (All)
-Aliases: 
+Aliases:
 
 Required: False
 Position: 2
@@ -77,7 +82,7 @@ Defaults to $env:AWS_PROFILE, if set.
 ```yaml
 Type: String
 Parameter Sets: (All)
-Aliases: 
+Aliases:
 
 Required: False
 Position: 3
@@ -86,6 +91,10 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
+### CommonParameters
+This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction, and -WarningVariable.
+For more information, see about_CommonParameters (http://go.microsoft.com/fwlink/?LinkID=113216).
+
 ## INPUTS
 
 ## OUTPUTS
@@ -93,4 +102,3 @@ Accept wildcard characters: False
 ## NOTES
 
 ## RELATED LINKS
-

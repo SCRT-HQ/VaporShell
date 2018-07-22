@@ -6,6 +6,7 @@ label1: Category
 data1: Documentation
 label2: Depth
 data2: Deep
+schema: 2.0.0
 ---
 
 # Add-CreationPolicy
@@ -18,25 +19,25 @@ Adds a CreationPolicy property to a resoure on the template
 ### CountTimeout (Default)
 ```
 Add-CreationPolicy [[-AutoScalingCreationPolicy] <PSCustomObject>] [[-MinSuccessfulInstancesPercent] <Int32>]
- [[-ResourceSignal] <PSCustomObject>] [[-Count] <Int32>] [[-Timeout] <String>]
+ [[-ResourceSignal] <PSCustomObject>] [[-Count] <Int32>] [[-Timeout] <String>] [<CommonParameters>]
 ```
 
 ### ResourceSignal
 ```
 Add-CreationPolicy [[-AutoScalingCreationPolicy] <PSCustomObject>] [[-MinSuccessfulInstancesPercent] <Int32>]
- [[-ResourceSignal] <PSCustomObject>] [[-Count] <Int32>] [[-Timeout] <String>]
+ [[-ResourceSignal] <PSCustomObject>] [[-Count] <Int32>] [[-Timeout] <String>] [<CommonParameters>]
 ```
 
 ### AutoScalingCreationPolicy
 ```
 Add-CreationPolicy [[-AutoScalingCreationPolicy] <PSCustomObject>] [[-MinSuccessfulInstancesPercent] <Int32>]
- [[-ResourceSignal] <PSCustomObject>] [[-Count] <Int32>] [[-Timeout] <String>]
+ [[-ResourceSignal] <PSCustomObject>] [[-Count] <Int32>] [[-Timeout] <String>] [<CommonParameters>]
 ```
 
 ### MinSuccessfulInstancesPercent
 ```
 Add-CreationPolicy [[-AutoScalingCreationPolicy] <PSCustomObject>] [[-MinSuccessfulInstancesPercent] <Int32>]
- [[-ResourceSignal] <PSCustomObject>] [[-Count] <Int32>] [[-Timeout] <String>]
+ [[-ResourceSignal] <PSCustomObject>] [[-Count] <Int32>] [[-Timeout] <String>] [<CommonParameters>]
 ```
 
 ## DESCRIPTION
@@ -62,7 +63,7 @@ Use this if you are customizing the AutoScalingCreationPolicy properties outside
 ```yaml
 Type: PSCustomObject
 Parameter Sets: (All)
-Aliases: 
+Aliases:
 
 Required: False
 Position: 1
@@ -81,7 +82,7 @@ If an instance doesn't send a signal within the time specified by the Timeout pr
 ```yaml
 Type: Int32
 Parameter Sets: (All)
-Aliases: 
+Aliases:
 
 Required: False
 Position: 2
@@ -99,7 +100,7 @@ Use this if you are customizing the ResourceSignal properties outside of Count a
 ```yaml
 Type: PSCustomObject
 Parameter Sets: (All)
-Aliases: 
+Aliases:
 
 Required: False
 Position: 3
@@ -115,7 +116,7 @@ If the resource receives a failure signal or doesn't receive the specified numbe
 ```yaml
 Type: Int32
 Parameter Sets: (All)
-Aliases: 
+Aliases:
 
 Required: False
 Position: 4
@@ -136,7 +137,7 @@ A shorter timeout can cause a rollback.
 ```yaml
 Type: String
 Parameter Sets: (All)
-Aliases: 
+Aliases:
 
 Required: False
 Position: 5
@@ -145,11 +146,15 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
+### CommonParameters
+This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction, and -WarningVariable.
+For more information, see about_CommonParameters (http://go.microsoft.com/fwlink/?LinkID=113216).
+
 ## INPUTS
 
 ## OUTPUTS
 
-### VaporShell.Resource.CreationPolicy
+### Vaporshell.Resource.CreationPolicy
 
 ## NOTES
 

@@ -6,6 +6,7 @@ label1: Category
 data1: Documentation
 label2: Depth
 data2: Deep
+schema: 2.0.0
 ---
 
 # Add-ConAnd
@@ -16,7 +17,7 @@ Adds the condition function "Fn::And" to a resource property
 ## SYNTAX
 
 ```
-Add-ConAnd [-Conditions] <Object[]>
+Add-ConAnd [-Conditions] <Object[]> [<CommonParameters>]
 ```
 
 ## DESCRIPTION
@@ -33,7 +34,7 @@ There must be at least 2 conditions but no more than 10 defined.
 ```yaml
 Type: Object[]
 Parameter Sets: (All)
-Aliases: 
+Aliases:
 
 Required: True
 Position: 1
@@ -42,11 +43,15 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
+### CommonParameters
+This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction, and -WarningVariable.
+For more information, see about_CommonParameters (http://go.microsoft.com/fwlink/?LinkID=113216).
+
 ## INPUTS
 
 ## OUTPUTS
 
-### VaporShell.Condition.And
+### Vaporshell.Condition.And
 
 ## NOTES
 You can use the following functions in this condition statement:

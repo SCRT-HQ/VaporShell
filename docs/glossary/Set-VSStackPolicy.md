@@ -6,6 +6,7 @@ label1: Category
 data1: Documentation
 label2: Depth
 data2: Deep
+schema: 2.0.0
 ---
 
 # Set-VSStackPolicy
@@ -18,17 +19,21 @@ Sets the Stack Policy.
 ### StackPolicyBody (Default)
 ```
 Set-VSStackPolicy [-StackName <String>] [-StackPolicyBody] <String> [-ProfileName <String>]
+ [<CommonParameters>]
 ```
 
 ### Path
 ```
-Set-VSStackPolicy [-StackName <String>] [-Path] <String> [-ProfileName <String>]
+Set-VSStackPolicy [-StackName <String>] [-Path] <String> [-ProfileName <String>] [<CommonParameters>]
 ```
 
 ### StackPolicyURL
 ```
-Set-VSStackPolicy [-StackName <String>] [-StackPolicyURL] <String> [-ProfileName <String>]
+Set-VSStackPolicy [-StackName <String>] [-StackPolicyURL] <String> [-ProfileName <String>] [<CommonParameters>]
 ```
+
+## DESCRIPTION
+{{Fill in the Description}}
 
 ## PARAMETERS
 
@@ -38,7 +43,7 @@ The name or unique stack ID that you want to associate a policy with.
 ```yaml
 Type: String
 Parameter Sets: (All)
-Aliases: 
+Aliases:
 
 Required: False
 Position: Named
@@ -53,7 +58,7 @@ Structure containing the stack policy body.
 ```yaml
 Type: String
 Parameter Sets: StackPolicyBody
-Aliases: 
+Aliases:
 
 Required: True
 Position: 1
@@ -68,7 +73,7 @@ Path to the local Stack Policy file
 ```yaml
 Type: String
 Parameter Sets: Path
-Aliases: 
+Aliases:
 
 Required: True
 Position: 1
@@ -84,7 +89,7 @@ The URL must point to a policy (maximum size: 16 KB) located in an S3 bucket in 
 ```yaml
 Type: String
 Parameter Sets: StackPolicyURL
-Aliases: 
+Aliases:
 
 Required: True
 Position: 1
@@ -100,7 +105,7 @@ Defaults to $env:AWS_PROFILE, if set.
 ```yaml
 Type: String
 Parameter Sets: (All)
-Aliases: 
+Aliases:
 
 Required: False
 Position: Named
@@ -109,6 +114,10 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
+### CommonParameters
+This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction, and -WarningVariable.
+For more information, see about_CommonParameters (http://go.microsoft.com/fwlink/?LinkID=113216).
+
 ## INPUTS
 
 ## OUTPUTS
@@ -116,4 +125,3 @@ Accept wildcard characters: False
 ## NOTES
 
 ## RELATED LINKS
-

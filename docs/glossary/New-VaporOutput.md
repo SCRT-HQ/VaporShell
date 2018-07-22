@@ -6,6 +6,7 @@ label1: Category
 data1: Documentation
 label2: Depth
 data2: Deep
+schema: 2.0.0
 ---
 
 # New-VaporOutput
@@ -17,7 +18,7 @@ Adds an Output object to the template
 
 ```
 New-VaporOutput [-LogicalId] <String> [[-Description] <String>] [-Value] <Object> [[-Export] <Object>]
- [[-Condition] <Object>]
+ [[-Condition] <Object>] [<CommonParameters>]
 ```
 
 ## DESCRIPTION
@@ -33,7 +34,7 @@ The logical ID must be alphanumeric (a-z, A-Z, 0-9) and unique within the templa
 ```yaml
 Type: String
 Parameter Sets: (All)
-Aliases: 
+Aliases:
 
 Required: True
 Position: 1
@@ -49,7 +50,7 @@ The description can be a maximum of 4 K in length.
 ```yaml
 Type: String
 Parameter Sets: (All)
-Aliases: 
+Aliases:
 
 Required: False
 Position: 2
@@ -65,7 +66,7 @@ The value of an output can include literals, parameter references, pseudo-parame
 ```yaml
 Type: Object
 Parameter Sets: (All)
-Aliases: 
+Aliases:
 
 Required: True
 Position: 3
@@ -91,7 +92,7 @@ You can use the intrinsic function Fn::ImportValue to import only values that ha
 ```yaml
 Type: Object
 Parameter Sets: (All)
-Aliases: 
+Aliases:
 
 Required: False
 Position: 4
@@ -106,7 +107,7 @@ Logical ID of the condition that this output needs to be true in order to be pro
 ```yaml
 Type: Object
 Parameter Sets: (All)
-Aliases: 
+Aliases:
 
 Required: False
 Position: 5
@@ -115,11 +116,15 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
+### CommonParameters
+This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction, and -WarningVariable.
+For more information, see about_CommonParameters (http://go.microsoft.com/fwlink/?LinkID=113216).
+
 ## INPUTS
 
 ## OUTPUTS
 
-### VaporShell.Output
+### Vaporshell.Output
 
 ## NOTES
 

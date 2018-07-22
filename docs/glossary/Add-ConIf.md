@@ -6,6 +6,7 @@ label1: Category
 data1: Documentation
 label2: Depth
 data2: Deep
+schema: 2.0.0
 ---
 
 # Add-ConIf
@@ -16,7 +17,7 @@ Adds the condition function "Fn::If" to a resource property
 ## SYNTAX
 
 ```
-Add-ConIf [-ConditionName] <String> [-ValueIfTrue] <Object> [-ValueIfFalse] <Object>
+Add-ConIf [-ConditionName] <String> [-ValueIfTrue] <Object> [-ValueIfFalse] <Object> [<CommonParameters>]
 ```
 
 ## DESCRIPTION
@@ -33,7 +34,7 @@ Use the condition's name to reference it.
 ```yaml
 Type: String
 Parameter Sets: (All)
-Aliases: 
+Aliases:
 
 Required: True
 Position: 1
@@ -48,7 +49,7 @@ A value to be returned if the specified condition evaluates to true.
 ```yaml
 Type: Object
 Parameter Sets: (All)
-Aliases: 
+Aliases:
 
 Required: True
 Position: 2
@@ -63,7 +64,7 @@ A value to be returned if the specified condition evaluates to false.
 ```yaml
 Type: Object
 Parameter Sets: (All)
-Aliases: 
+Aliases:
 
 Required: True
 Position: 3
@@ -72,11 +73,15 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
+### CommonParameters
+This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction, and -WarningVariable.
+For more information, see about_CommonParameters (http://go.microsoft.com/fwlink/?LinkID=113216).
+
 ## INPUTS
 
 ## OUTPUTS
 
-### VaporShell.Condition.If
+### Vaporshell.Condition.If
 
 ## NOTES
 You can use the following functions in the Fn::If condition:

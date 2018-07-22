@@ -6,6 +6,7 @@ label1: Category
 data1: Documentation
 label2: Depth
 data2: Deep
+schema: 2.0.0
 ---
 
 # Add-VSIoTTopicRuleDynamoDBAction
@@ -17,8 +18,8 @@ Adds an AWS::IoT::TopicRule.DynamoDBAction resource property to the template
 
 ```
 Add-VSIoTTopicRuleDynamoDBAction [-HashKeyField] <Object> [[-HashKeyType] <Object>] [-HashKeyValue] <Object>
- [[-PayloadField] <Object>] [-RangeKeyField] <Object> [[-RangeKeyType] <Object>] [-RangeKeyValue] <Object>
- [-RoleArn] <Object> [-TableName] <Object>
+ [[-PayloadField] <Object>] [[-RangeKeyField] <Object>] [[-RangeKeyType] <Object>] [[-RangeKeyValue] <Object>]
+ [-RoleArn] <Object> [-TableName] <Object> [<CommonParameters>]
 ```
 
 ## DESCRIPTION
@@ -35,7 +36,7 @@ UpdateType: Mutable
 ```yaml
 Type: Object
 Parameter Sets: (All)
-Aliases: 
+Aliases:
 
 Required: True
 Position: 1
@@ -53,7 +54,7 @@ UpdateType: Mutable
 ```yaml
 Type: Object
 Parameter Sets: (All)
-Aliases: 
+Aliases:
 
 Required: False
 Position: 2
@@ -71,7 +72,7 @@ UpdateType: Mutable
 ```yaml
 Type: Object
 Parameter Sets: (All)
-Aliases: 
+Aliases:
 
 Required: True
 Position: 3
@@ -89,7 +90,7 @@ UpdateType: Mutable
 ```yaml
 Type: Object
 Parameter Sets: (All)
-Aliases: 
+Aliases:
 
 Required: False
 Position: 4
@@ -101,15 +102,15 @@ Accept wildcard characters: False
 ### -RangeKeyField
 Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iot-topicrule-dynamodbaction.html#cfn-iot-topicrule-dynamodbaction-rangekeyfield    
 PrimitiveType: String    
-Required: True    
+Required: False    
 UpdateType: Mutable
 
 ```yaml
 Type: Object
 Parameter Sets: (All)
-Aliases: 
+Aliases:
 
-Required: True
+Required: False
 Position: 5
 Default value: None
 Accept pipeline input: False
@@ -125,7 +126,7 @@ UpdateType: Mutable
 ```yaml
 Type: Object
 Parameter Sets: (All)
-Aliases: 
+Aliases:
 
 Required: False
 Position: 6
@@ -137,15 +138,15 @@ Accept wildcard characters: False
 ### -RangeKeyValue
 Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iot-topicrule-dynamodbaction.html#cfn-iot-topicrule-dynamodbaction-rangekeyvalue    
 PrimitiveType: String    
-Required: True    
+Required: False    
 UpdateType: Mutable
 
 ```yaml
 Type: Object
 Parameter Sets: (All)
-Aliases: 
+Aliases:
 
-Required: True
+Required: False
 Position: 7
 Default value: None
 Accept pipeline input: False
@@ -161,7 +162,7 @@ UpdateType: Mutable
 ```yaml
 Type: Object
 Parameter Sets: (All)
-Aliases: 
+Aliases:
 
 Required: True
 Position: 8
@@ -179,7 +180,7 @@ UpdateType: Mutable
 ```yaml
 Type: Object
 Parameter Sets: (All)
-Aliases: 
+Aliases:
 
 Required: True
 Position: 9
@@ -188,11 +189,15 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
+### CommonParameters
+This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction, and -WarningVariable.
+For more information, see about_CommonParameters (http://go.microsoft.com/fwlink/?LinkID=113216).
+
 ## INPUTS
 
 ## OUTPUTS
 
-### VaporShell.Resource.IoT.TopicRule.DynamoDBAction
+### Vaporshell.Resource.IoT.TopicRule.DynamoDBAction
 
 ## NOTES
 

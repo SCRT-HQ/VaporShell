@@ -6,6 +6,7 @@ label1: Category
 data1: Documentation
 label2: Depth
 data2: Deep
+schema: 2.0.0
 ---
 
 # Add-VSECSTaskDefinitionContainerDefinition
@@ -19,11 +20,12 @@ Adds an AWS::ECS::TaskDefinition.ContainerDefinition resource property to the te
 Add-VSECSTaskDefinitionContainerDefinition [[-Command] <Object>] [[-Cpu] <Int32>]
  [[-DisableNetworking] <Boolean>] [[-DnsSearchDomains] <Object>] [[-DnsServers] <Object>]
  [[-DockerLabels] <Hashtable>] [[-DockerSecurityOptions] <Object>] [[-EntryPoint] <Object>]
- [[-Environment] <Object>] [[-Essential] <Boolean>] [[-ExtraHosts] <Object>] [[-Hostname] <Object>]
- [[-Image] <Object>] [[-Links] <Object>] [[-LogConfiguration] <Object>] [[-Memory] <Int32>]
- [[-MemoryReservation] <Int32>] [[-MountPoints] <Object>] [[-Name] <Object>] [[-PortMappings] <Object>]
- [[-Privileged] <Boolean>] [[-ReadonlyRootFilesystem] <Boolean>] [[-Ulimits] <Object>] [[-User] <Object>]
- [[-VolumesFrom] <Object>] [[-WorkingDirectory] <Object>]
+ [[-Environment] <Object>] [[-Essential] <Boolean>] [[-ExtraHosts] <Object>] [[-HealthCheck] <Object>]
+ [[-Hostname] <Object>] [[-Image] <Object>] [[-Links] <Object>] [[-LinuxParameters] <Object>]
+ [[-LogConfiguration] <Object>] [[-Memory] <Int32>] [[-MemoryReservation] <Int32>] [[-MountPoints] <Object>]
+ [[-Name] <Object>] [[-PortMappings] <Object>] [[-Privileged] <Boolean>] [[-ReadonlyRootFilesystem] <Boolean>]
+ [[-Ulimits] <Object>] [[-User] <Object>] [[-VolumesFrom] <Object>] [[-WorkingDirectory] <Object>]
+ [<CommonParameters>]
 ```
 
 ## DESCRIPTION
@@ -42,7 +44,7 @@ UpdateType: Immutable
 ```yaml
 Type: Object
 Parameter Sets: (All)
-Aliases: 
+Aliases:
 
 Required: False
 Position: 1
@@ -60,7 +62,7 @@ UpdateType: Immutable
 ```yaml
 Type: Int32
 Parameter Sets: (All)
-Aliases: 
+Aliases:
 
 Required: False
 Position: 2
@@ -78,7 +80,7 @@ UpdateType: Immutable
 ```yaml
 Type: Boolean
 Parameter Sets: (All)
-Aliases: 
+Aliases:
 
 Required: False
 Position: 3
@@ -98,7 +100,7 @@ UpdateType: Immutable
 ```yaml
 Type: Object
 Parameter Sets: (All)
-Aliases: 
+Aliases:
 
 Required: False
 Position: 4
@@ -118,7 +120,7 @@ UpdateType: Immutable
 ```yaml
 Type: Object
 Parameter Sets: (All)
-Aliases: 
+Aliases:
 
 Required: False
 Position: 5
@@ -138,7 +140,7 @@ UpdateType: Immutable
 ```yaml
 Type: Hashtable
 Parameter Sets: (All)
-Aliases: 
+Aliases:
 
 Required: False
 Position: 6
@@ -158,7 +160,7 @@ UpdateType: Immutable
 ```yaml
 Type: Object
 Parameter Sets: (All)
-Aliases: 
+Aliases:
 
 Required: False
 Position: 7
@@ -178,7 +180,7 @@ UpdateType: Immutable
 ```yaml
 Type: Object
 Parameter Sets: (All)
-Aliases: 
+Aliases:
 
 Required: False
 Position: 8
@@ -198,7 +200,7 @@ UpdateType: Immutable
 ```yaml
 Type: Object
 Parameter Sets: (All)
-Aliases: 
+Aliases:
 
 Required: False
 Position: 9
@@ -216,7 +218,7 @@ UpdateType: Immutable
 ```yaml
 Type: Boolean
 Parameter Sets: (All)
-Aliases: 
+Aliases:
 
 Required: False
 Position: 10
@@ -236,10 +238,28 @@ UpdateType: Immutable
 ```yaml
 Type: Object
 Parameter Sets: (All)
-Aliases: 
+Aliases:
 
 Required: False
 Position: 11
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### -HealthCheck
+Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ecs-taskdefinition-containerdefinitions.html#cfn-ecs-taskdefinition-containerdefinition-healthcheck    
+Required: False    
+Type: HealthCheck    
+UpdateType: Immutable
+
+```yaml
+Type: Object
+Parameter Sets: (All)
+Aliases:
+
+Required: False
+Position: 12
 Default value: None
 Accept pipeline input: False
 Accept wildcard characters: False
@@ -254,10 +274,10 @@ UpdateType: Immutable
 ```yaml
 Type: Object
 Parameter Sets: (All)
-Aliases: 
+Aliases:
 
 Required: False
-Position: 12
+Position: 13
 Default value: None
 Accept pipeline input: False
 Accept wildcard characters: False
@@ -272,10 +292,10 @@ UpdateType: Immutable
 ```yaml
 Type: Object
 Parameter Sets: (All)
-Aliases: 
+Aliases:
 
 Required: False
-Position: 13
+Position: 14
 Default value: None
 Accept pipeline input: False
 Accept wildcard characters: False
@@ -292,10 +312,28 @@ UpdateType: Immutable
 ```yaml
 Type: Object
 Parameter Sets: (All)
-Aliases: 
+Aliases:
 
 Required: False
-Position: 14
+Position: 15
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### -LinuxParameters
+Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ecs-taskdefinition-containerdefinitions.html#cfn-ecs-taskdefinition-containerdefinition-linuxparameters    
+Required: False    
+Type: LinuxParameters    
+UpdateType: Immutable
+
+```yaml
+Type: Object
+Parameter Sets: (All)
+Aliases:
+
+Required: False
+Position: 16
 Default value: None
 Accept pipeline input: False
 Accept wildcard characters: False
@@ -310,10 +348,10 @@ UpdateType: Immutable
 ```yaml
 Type: Object
 Parameter Sets: (All)
-Aliases: 
+Aliases:
 
 Required: False
-Position: 15
+Position: 17
 Default value: None
 Accept pipeline input: False
 Accept wildcard characters: False
@@ -328,10 +366,10 @@ UpdateType: Immutable
 ```yaml
 Type: Int32
 Parameter Sets: (All)
-Aliases: 
+Aliases:
 
 Required: False
-Position: 16
+Position: 18
 Default value: 0
 Accept pipeline input: False
 Accept wildcard characters: False
@@ -346,10 +384,10 @@ UpdateType: Immutable
 ```yaml
 Type: Int32
 Parameter Sets: (All)
-Aliases: 
+Aliases:
 
 Required: False
-Position: 17
+Position: 19
 Default value: 0
 Accept pipeline input: False
 Accept wildcard characters: False
@@ -366,10 +404,10 @@ UpdateType: Immutable
 ```yaml
 Type: Object
 Parameter Sets: (All)
-Aliases: 
+Aliases:
 
 Required: False
-Position: 18
+Position: 20
 Default value: None
 Accept pipeline input: False
 Accept wildcard characters: False
@@ -384,10 +422,10 @@ UpdateType: Immutable
 ```yaml
 Type: Object
 Parameter Sets: (All)
-Aliases: 
+Aliases:
 
 Required: False
-Position: 19
+Position: 21
 Default value: None
 Accept pipeline input: False
 Accept wildcard characters: False
@@ -404,10 +442,10 @@ UpdateType: Immutable
 ```yaml
 Type: Object
 Parameter Sets: (All)
-Aliases: 
+Aliases:
 
 Required: False
-Position: 20
+Position: 22
 Default value: None
 Accept pipeline input: False
 Accept wildcard characters: False
@@ -422,10 +460,10 @@ UpdateType: Immutable
 ```yaml
 Type: Boolean
 Parameter Sets: (All)
-Aliases: 
+Aliases:
 
 Required: False
-Position: 21
+Position: 23
 Default value: False
 Accept pipeline input: False
 Accept wildcard characters: False
@@ -440,10 +478,10 @@ UpdateType: Immutable
 ```yaml
 Type: Boolean
 Parameter Sets: (All)
-Aliases: 
+Aliases:
 
 Required: False
-Position: 22
+Position: 24
 Default value: False
 Accept pipeline input: False
 Accept wildcard characters: False
@@ -460,10 +498,10 @@ UpdateType: Immutable
 ```yaml
 Type: Object
 Parameter Sets: (All)
-Aliases: 
+Aliases:
 
 Required: False
-Position: 23
+Position: 25
 Default value: None
 Accept pipeline input: False
 Accept wildcard characters: False
@@ -478,10 +516,10 @@ UpdateType: Immutable
 ```yaml
 Type: Object
 Parameter Sets: (All)
-Aliases: 
+Aliases:
 
 Required: False
-Position: 24
+Position: 26
 Default value: None
 Accept pipeline input: False
 Accept wildcard characters: False
@@ -498,10 +536,10 @@ UpdateType: Immutable
 ```yaml
 Type: Object
 Parameter Sets: (All)
-Aliases: 
+Aliases:
 
 Required: False
-Position: 25
+Position: 27
 Default value: None
 Accept pipeline input: False
 Accept wildcard characters: False
@@ -516,20 +554,24 @@ UpdateType: Immutable
 ```yaml
 Type: Object
 Parameter Sets: (All)
-Aliases: 
+Aliases:
 
 Required: False
-Position: 26
+Position: 28
 Default value: None
 Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
+### CommonParameters
+This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction, and -WarningVariable.
+For more information, see about_CommonParameters (http://go.microsoft.com/fwlink/?LinkID=113216).
+
 ## INPUTS
 
 ## OUTPUTS
 
-### VaporShell.Resource.ECS.TaskDefinition.ContainerDefinition
+### Vaporshell.Resource.ECS.TaskDefinition.ContainerDefinition
 
 ## NOTES
 

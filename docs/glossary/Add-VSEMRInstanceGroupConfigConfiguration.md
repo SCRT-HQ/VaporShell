@@ -6,6 +6,7 @@ label1: Category
 data1: Documentation
 label2: Depth
 data2: Deep
+schema: 2.0.0
 ---
 
 # Add-VSEMRInstanceGroupConfigConfiguration
@@ -17,7 +18,7 @@ Adds an AWS::EMR::InstanceGroupConfig.Configuration resource property to the tem
 
 ```
 Add-VSEMRInstanceGroupConfigConfiguration [[-Classification] <Object>] [[-ConfigurationProperties] <Hashtable>]
- [[-Configurations] <Object>]
+ [[-Configurations] <Object>] [<CommonParameters>]
 ```
 
 ## DESCRIPTION
@@ -34,7 +35,7 @@ UpdateType: Immutable
 ```yaml
 Type: Object
 Parameter Sets: (All)
-Aliases: 
+Aliases:
 
 Required: False
 Position: 1
@@ -54,7 +55,7 @@ UpdateType: Immutable
 ```yaml
 Type: Hashtable
 Parameter Sets: (All)
-Aliases: 
+Aliases:
 
 Required: False
 Position: 2
@@ -74,7 +75,7 @@ UpdateType: Immutable
 ```yaml
 Type: Object
 Parameter Sets: (All)
-Aliases: 
+Aliases:
 
 Required: False
 Position: 3
@@ -83,11 +84,15 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
+### CommonParameters
+This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction, and -WarningVariable.
+For more information, see about_CommonParameters (http://go.microsoft.com/fwlink/?LinkID=113216).
+
 ## INPUTS
 
 ## OUTPUTS
 
-### VaporShell.Resource.EMR.InstanceGroupConfig.Configuration
+### Vaporshell.Resource.EMR.InstanceGroupConfig.Configuration
 
 ## NOTES
 

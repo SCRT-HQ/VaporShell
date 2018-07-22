@@ -6,6 +6,7 @@ label1: Category
 data1: Documentation
 label2: Depth
 data2: Deep
+schema: 2.0.0
 ---
 
 # Add-SAMIoTRuleEventSource
@@ -16,7 +17,7 @@ Adds a IoTRule Event Source to a Serverless Application Model resource
 ## SYNTAX
 
 ```
-Add-SAMIoTRuleEventSource [-LogicalId] <String> -Sql <Object> [-AwsIotSqlVersion <String>]
+Add-SAMIoTRuleEventSource [-LogicalId] <String> -Sql <Object> [-AwsIotSqlVersion <String>] [<CommonParameters>]
 ```
 
 ## DESCRIPTION
@@ -31,7 +32,7 @@ Use the logical name to reference the resource in other parts of the template.
 ```yaml
 Type: String
 Parameter Sets: (All)
-Aliases: 
+Aliases:
 
 Required: True
 Position: 1
@@ -48,7 +49,7 @@ For more information, see Rules for AWS IoT in the AWS IoT Developer Guide: http
 ```yaml
 Type: Object
 Parameter Sets: (All)
-Aliases: 
+Aliases:
 
 Required: True
 Position: Named
@@ -63,7 +64,7 @@ The version of the SQL rules engine to use when evaluating the rule.
 ```yaml
 Type: String
 Parameter Sets: (All)
-Aliases: 
+Aliases:
 
 Required: False
 Position: Named
@@ -72,11 +73,15 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
+### CommonParameters
+This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction, and -WarningVariable.
+For more information, see about_CommonParameters (http://go.microsoft.com/fwlink/?LinkID=113216).
+
 ## INPUTS
 
 ## OUTPUTS
 
-### VaporShell.Serverless.EventSource.IoTRule
+### Vaporshell.Serverless.EventSource.IoTRule
 
 ## NOTES
 
