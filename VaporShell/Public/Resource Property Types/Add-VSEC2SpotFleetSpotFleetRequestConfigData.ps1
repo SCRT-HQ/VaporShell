@@ -31,7 +31,7 @@
 		Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-spotfleet-spotfleetrequestconfigdata.html#cfn-ec2-spotfleet-spotfleetrequestconfigdata-launchspecifications    
 		DuplicatesAllowed: False    
 		ItemType: SpotFleetLaunchSpecification    
-		Required: True    
+		Required: False    
 		Type: List    
 		UpdateType: Immutable    
 
@@ -117,7 +117,7 @@
                 }
             })]
         $IamFleetRole,
-        [parameter(Mandatory = $true)]
+        [parameter(Mandatory = $false)]
         [ValidateScript( {
                 $allowedTypes = "Vaporshell.Resource.EC2.SpotFleet.SpotFleetLaunchSpecification"
                 if ([string]$($_.PSTypeNames) -match "($(($allowedTypes|ForEach-Object{[RegEx]::Escape($_)}) -join '|'))") {

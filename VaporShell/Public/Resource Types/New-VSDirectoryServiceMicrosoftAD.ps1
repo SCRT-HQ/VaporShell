@@ -18,6 +18,12 @@
 		Required: False    
 		UpdateType: Immutable    
 
+    .PARAMETER Edition
+		Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-directoryservice-microsoftad.html#cfn-directoryservice-microsoftad-edition    
+		PrimitiveType: String    
+		Required: False    
+		UpdateType: Immutable    
+
     .PARAMETER EnableSso
 		Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-directoryservice-microsoftad.html#cfn-directoryservice-microsoftad-enablesso    
 		PrimitiveType: Boolean    
@@ -100,6 +106,17 @@
         [parameter(Mandatory = $false)]
         [System.Boolean]
         $CreateAlias,
+        [parameter(Mandatory = $false)]
+        [ValidateScript( {
+                $allowedTypes = "System.String","Vaporshell.Function"
+                if ([string]$($_.PSTypeNames) -match "($(($allowedTypes|ForEach-Object{[RegEx]::Escape($_)}) -join '|'))") {
+                    $true
+                }
+                else {
+                    $PSCmdlet.ThrowTerminatingError((New-VSError -String "This parameter only accepts the following types: $($allowedTypes -join ", "). The current types of the value are: $($_.PSTypeNames -join ", ")."))
+                }
+            })]
+        $Edition,
         [parameter(Mandatory = $false)]
         [System.Boolean]
         $EnableSso,

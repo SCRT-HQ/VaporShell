@@ -44,6 +44,12 @@
 		Type: List    
 		UpdateType: Immutable    
 
+    .PARAMETER PointInTimeRecoverySpecification
+		Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-dynamodb-table.html#cfn-dynamodb-table-pointintimerecoveryspecification    
+		Required: False    
+		Type: PointInTimeRecoverySpecification    
+		UpdateType: Mutable    
+
     .PARAMETER ProvisionedThroughput
 		Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-dynamodb-table.html#cfn-dynamodb-table-provisionedthroughput    
 		Required: True    
@@ -173,6 +179,8 @@
                 }
             })]
         $LocalSecondaryIndexes,
+        [parameter(Mandatory = $false)]
+        $PointInTimeRecoverySpecification,
         [parameter(Mandatory = $true)]
         $ProvisionedThroughput,
         [parameter(Mandatory = $false)]

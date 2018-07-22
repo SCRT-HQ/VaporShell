@@ -15,6 +15,44 @@
 		PrimitiveType: Boolean    
 		UpdateType: Mutable    
 
+    .PARAMETER LambdaFunctionAssociations
+		Type: List    
+		Required: False    
+		Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-cloudfront-distribution-defaultcachebehavior.html#cfn-cloudfront-distribution-defaultcachebehavior-lambdafunctionassociations    
+		ItemType: LambdaFunctionAssociation    
+		UpdateType: Mutable    
+
+    .PARAMETER TargetOriginId
+		Required: True    
+		Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-cloudfront-distribution-defaultcachebehavior.html#cfn-cloudfront-distribution-defaultcachebehavior-targetoriginid    
+		PrimitiveType: String    
+		UpdateType: Mutable    
+
+    .PARAMETER ViewerProtocolPolicy
+		Required: True    
+		Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-cloudfront-distribution-defaultcachebehavior.html#cfn-cloudfront-distribution-defaultcachebehavior-viewerprotocolpolicy    
+		PrimitiveType: String    
+		UpdateType: Mutable    
+
+    .PARAMETER TrustedSigners
+		PrimitiveItemType: String    
+		Type: List    
+		Required: False    
+		Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-cloudfront-distribution-defaultcachebehavior.html#cfn-cloudfront-distribution-defaultcachebehavior-trustedsigners    
+		UpdateType: Mutable    
+
+    .PARAMETER DefaultTTL
+		Required: False    
+		Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-cloudfront-distribution-defaultcachebehavior.html#cfn-cloudfront-distribution-defaultcachebehavior-defaultttl    
+		PrimitiveType: Double    
+		UpdateType: Mutable    
+
+    .PARAMETER FieldLevelEncryptionId
+		Required: False    
+		Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-cloudfront-distribution-defaultcachebehavior.html#cfn-cloudfront-distribution-defaultcachebehavior-fieldlevelencryptionid    
+		PrimitiveType: String    
+		UpdateType: Mutable    
+
     .PARAMETER AllowedMethods
 		PrimitiveItemType: String    
 		Type: List    
@@ -29,29 +67,10 @@
 		Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-cloudfront-distribution-defaultcachebehavior.html#cfn-cloudfront-distribution-defaultcachebehavior-cachedmethods    
 		UpdateType: Mutable    
 
-    .PARAMETER LambdaFunctionAssociations
-		Type: List    
-		Required: False    
-		Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-cloudfront-distribution-defaultcachebehavior.html#cfn-cloudfront-distribution-defaultcachebehavior-lambdafunctionassociations    
-		ItemType: LambdaFunctionAssociation    
-		UpdateType: Mutable    
-
     .PARAMETER SmoothStreaming
 		Required: False    
 		Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-cloudfront-distribution-defaultcachebehavior.html#cfn-cloudfront-distribution-defaultcachebehavior-smoothstreaming    
 		PrimitiveType: Boolean    
-		UpdateType: Mutable    
-
-    .PARAMETER TargetOriginId
-		Required: True    
-		Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-cloudfront-distribution-defaultcachebehavior.html#cfn-cloudfront-distribution-defaultcachebehavior-targetoriginid    
-		PrimitiveType: String    
-		UpdateType: Mutable    
-
-    .PARAMETER ViewerProtocolPolicy
-		Required: True    
-		Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-cloudfront-distribution-defaultcachebehavior.html#cfn-cloudfront-distribution-defaultcachebehavior-viewerprotocolpolicy    
-		PrimitiveType: String    
 		UpdateType: Mutable    
 
     .PARAMETER ForwardedValues
@@ -72,19 +91,6 @@
 		PrimitiveType: Double    
 		UpdateType: Mutable    
 
-    .PARAMETER TrustedSigners
-		PrimitiveItemType: String    
-		Type: List    
-		Required: False    
-		Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-cloudfront-distribution-defaultcachebehavior.html#cfn-cloudfront-distribution-defaultcachebehavior-trustedsigners    
-		UpdateType: Mutable    
-
-    .PARAMETER DefaultTTL
-		Required: False    
-		Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-cloudfront-distribution-defaultcachebehavior.html#cfn-cloudfront-distribution-defaultcachebehavior-defaultttl    
-		PrimitiveType: Double    
-		UpdateType: Mutable    
-
     .FUNCTIONALITY
         Vaporshell
     #>
@@ -96,10 +102,6 @@
         [System.Boolean]
         $Compress,
         [parameter(Mandatory = $false)]
-        $AllowedMethods,
-        [parameter(Mandatory = $false)]
-        $CachedMethods,
-        [parameter(Mandatory = $false)]
         [ValidateScript( {
                 $allowedTypes = "Vaporshell.Resource.CloudFront.Distribution.LambdaFunctionAssociation"
                 if ([string]$($_.PSTypeNames) -match "($(($allowedTypes|ForEach-Object{[RegEx]::Escape($_)}) -join '|'))") {
@@ -110,9 +112,6 @@
                 }
             })]
         $LambdaFunctionAssociations,
-        [parameter(Mandatory = $false)]
-        [System.Boolean]
-        $SmoothStreaming,
         [parameter(Mandatory = $true)]
         [ValidateScript( {
                 $allowedTypes = "System.String","Vaporshell.Function"
@@ -135,6 +134,29 @@
                 }
             })]
         $ViewerProtocolPolicy,
+        [parameter(Mandatory = $false)]
+        $TrustedSigners,
+        [parameter(Mandatory = $false)]
+        [System.Double]
+        $DefaultTTL,
+        [parameter(Mandatory = $false)]
+        [ValidateScript( {
+                $allowedTypes = "System.String","Vaporshell.Function"
+                if ([string]$($_.PSTypeNames) -match "($(($allowedTypes|ForEach-Object{[RegEx]::Escape($_)}) -join '|'))") {
+                    $true
+                }
+                else {
+                    $PSCmdlet.ThrowTerminatingError((New-VSError -String "This parameter only accepts the following types: $($allowedTypes -join ", "). The current types of the value are: $($_.PSTypeNames -join ", ")."))
+                }
+            })]
+        $FieldLevelEncryptionId,
+        [parameter(Mandatory = $false)]
+        $AllowedMethods,
+        [parameter(Mandatory = $false)]
+        $CachedMethods,
+        [parameter(Mandatory = $false)]
+        [System.Boolean]
+        $SmoothStreaming,
         [parameter(Mandatory = $true)]
         $ForwardedValues,
         [parameter(Mandatory = $false)]
@@ -142,12 +164,7 @@
         $MinTTL,
         [parameter(Mandatory = $false)]
         [System.Double]
-        $MaxTTL,
-        [parameter(Mandatory = $false)]
-        $TrustedSigners,
-        [parameter(Mandatory = $false)]
-        [System.Double]
-        $DefaultTTL
+        $MaxTTL
     )
     Begin {
         $obj = [PSCustomObject]@{}

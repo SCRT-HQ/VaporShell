@@ -26,6 +26,12 @@
 		Type: List    
 		UpdateType: Mutable    
 
+    .PARAMETER MaxSessionDuration
+		Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-iam-role.html#cfn-iam-role-maxsessionduration    
+		PrimitiveType: Integer    
+		Required: False    
+		UpdateType: Mutable    
+
     .PARAMETER Path
 		Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-iam-role.html#cfn-iam-role-path    
 		PrimitiveType: String    
@@ -106,6 +112,9 @@
         $AssumeRolePolicyDocument,
         [parameter(Mandatory = $false)]
         $ManagedPolicyArns,
+        [parameter(Mandatory = $false)]
+        [Int]
+        $MaxSessionDuration,
         [parameter(Mandatory = $false)]
         [ValidateScript( {
                 $allowedTypes = "System.String","Vaporshell.Function"

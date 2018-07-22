@@ -36,6 +36,12 @@
 		PrimitiveType: String    
 		UpdateType: Mutable    
 
+    .PARAMETER DisableEmailNotification
+		Required: False    
+		Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-guardduty-member.html#cfn-guardduty-member-disableemailnotification    
+		PrimitiveType: Boolean    
+		UpdateType: Mutable    
+
     .PARAMETER DetectorId
 		Required: True    
 		Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-guardduty-member.html#cfn-guardduty-member-detectorid    
@@ -133,6 +139,9 @@
                 }
             })]
         $Message,
+        [parameter(Mandatory = $false)]
+        [System.Boolean]
+        $DisableEmailNotification,
         [parameter(Mandatory = $true)]
         [ValidateScript( {
                 $allowedTypes = "System.String","Vaporshell.Function"

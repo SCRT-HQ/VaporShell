@@ -39,7 +39,7 @@
     .PARAMETER StartingPosition
 		Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-lambda-eventsourcemapping.html#cfn-lambda-eventsourcemapping-startingposition    
 		PrimitiveType: String    
-		Required: True    
+		Required: False    
 		UpdateType: Immutable    
 
     .PARAMETER DeletionPolicy
@@ -117,7 +117,7 @@
                 }
             })]
         $FunctionName,
-        [parameter(Mandatory = $true)]
+        [parameter(Mandatory = $false)]
         [ValidateScript( {
                 $allowedTypes = "System.String","Vaporshell.Function"
                 if ([string]$($_.PSTypeNames) -match "($(($allowedTypes|ForEach-Object{[RegEx]::Escape($_)}) -join '|'))") {

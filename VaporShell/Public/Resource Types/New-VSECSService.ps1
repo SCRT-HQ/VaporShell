@@ -90,6 +90,14 @@
 		Required: False    
 		UpdateType: Immutable    
 
+    .PARAMETER ServiceRegistries
+		Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ecs-service.html#cfn-ecs-service-serviceregistries    
+		DuplicatesAllowed: False    
+		ItemType: ServiceRegistry    
+		Required: False    
+		Type: List    
+		UpdateType: Mutable    
+
     .PARAMETER TaskDefinition
 		Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ecs-service.html#cfn-ecs-service-taskdefinition    
 		PrimitiveType: String    
@@ -241,6 +249,17 @@
                 }
             })]
         $ServiceName,
+        [parameter(Mandatory = $false)]
+        [ValidateScript( {
+                $allowedTypes = "Vaporshell.Resource.ECS.Service.ServiceRegistry"
+                if ([string]$($_.PSTypeNames) -match "($(($allowedTypes|ForEach-Object{[RegEx]::Escape($_)}) -join '|'))") {
+                    $true
+                }
+                else {
+                    $PSCmdlet.ThrowTerminatingError((New-VSError -String "This parameter only accepts the following types: $($allowedTypes -join ", "). The current types of the value are: $($_.PSTypeNames -join ", ")."))
+                }
+            })]
+        $ServiceRegistries,
         [parameter(Mandatory = $true)]
         [ValidateScript( {
                 $allowedTypes = "System.String","Vaporshell.Function"
@@ -326,6 +345,12 @@
                         $ResourceParams.Add("Properties",([PSCustomObject]@{}))
                     }
                     $ResourceParams["Properties"] | Add-Member -MemberType NoteProperty -Name PlacementStrategies -Value @($PlacementStrategies)
+                }
+                ServiceRegistries {
+                    if (!($ResourceParams["Properties"])) {
+                        $ResourceParams.Add("Properties",([PSCustomObject]@{}))
+                    }
+                    $ResourceParams["Properties"] | Add-Member -MemberType NoteProperty -Name ServiceRegistries -Value @($ServiceRegistries)
                 }
                 Default {
                     if (!($ResourceParams["Properties"])) {

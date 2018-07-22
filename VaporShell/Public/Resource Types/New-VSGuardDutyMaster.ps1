@@ -25,7 +25,7 @@
 		UpdateType: Immutable    
 
     .PARAMETER InvitationId
-		Required: True    
+		Required: False    
 		Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-guardduty-master.html#cfn-guardduty-master-invitationid    
 		PrimitiveType: String    
 		UpdateType: Immutable    
@@ -99,7 +99,7 @@
                 }
             })]
         $MasterId,
-        [parameter(Mandatory = $true)]
+        [parameter(Mandatory = $false)]
         [ValidateScript( {
                 $allowedTypes = "System.String","Vaporshell.Function"
                 if ([string]$($_.PSTypeNames) -match "($(($allowedTypes|ForEach-Object{[RegEx]::Escape($_)}) -join '|'))") {

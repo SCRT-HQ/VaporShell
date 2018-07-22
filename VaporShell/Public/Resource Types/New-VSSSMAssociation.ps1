@@ -36,6 +36,12 @@
 		Required: True    
 		UpdateType: Immutable    
 
+    .PARAMETER OutputLocation
+		Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ssm-association.html#cfn-ssm-association-outputlocation    
+		Required: False    
+		Type: InstanceAssociationOutputLocation    
+		UpdateType: Mutable    
+
     .PARAMETER Parameters
 		Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ssm-association.html#cfn-ssm-association-parameters    
 		DuplicatesAllowed: False    
@@ -149,6 +155,8 @@
                 }
             })]
         $Name,
+        [parameter(Mandatory = $false)]
+        $OutputLocation,
         [parameter(Mandatory = $false)]
         [ValidateScript( {
                 $allowedTypes = "Vaporshell.Resource.SSM.Association.ParameterValues"

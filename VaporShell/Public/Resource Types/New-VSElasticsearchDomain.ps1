@@ -50,6 +50,12 @@
 		Required: False    
 		UpdateType: Immutable    
 
+    .PARAMETER EncryptionAtRestOptions
+		Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-elasticsearch-domain.html#cfn-elasticsearch-domain-encryptionatrestoptions    
+		Required: False    
+		Type: EncryptionAtRestOptions    
+		UpdateType: Immutable    
+
     .PARAMETER SnapshotOptions
 		Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-elasticsearch-domain.html#cfn-elasticsearch-domain-snapshotoptions    
 		Required: False    
@@ -157,6 +163,8 @@
                 }
             })]
         $ElasticsearchVersion,
+        [parameter(Mandatory = $false)]
+        $EncryptionAtRestOptions,
         [parameter(Mandatory = $false)]
         $SnapshotOptions,
         [parameter(Mandatory = $false)]

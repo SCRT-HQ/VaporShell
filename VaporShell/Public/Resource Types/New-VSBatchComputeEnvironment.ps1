@@ -32,7 +32,7 @@
 
     .PARAMETER ComputeResources
 		Type: ComputeResources    
-		Required: True    
+		Required: False    
 		Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-batch-computeenvironment.html#cfn-batch-computeenvironment-computeresources    
 		UpdateType: Mutable    
 
@@ -122,7 +122,7 @@
                 }
             })]
         $ComputeEnvironmentName,
-        [parameter(Mandatory = $true)]
+        [parameter(Mandatory = $false)]
         $ComputeResources,
         [parameter(Mandatory = $false)]
         [ValidateScript( {

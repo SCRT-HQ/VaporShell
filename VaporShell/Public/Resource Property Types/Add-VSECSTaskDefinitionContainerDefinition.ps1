@@ -91,6 +91,12 @@
 		Type: List    
 		UpdateType: Immutable    
 
+    .PARAMETER HealthCheck
+		Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ecs-taskdefinition-containerdefinitions.html#cfn-ecs-taskdefinition-containerdefinition-healthcheck    
+		Required: False    
+		Type: HealthCheck    
+		UpdateType: Immutable    
+
     .PARAMETER Hostname
 		Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ecs-taskdefinition-containerdefinitions.html#cfn-ecs-taskdefinition-containerdefinition-hostname    
 		PrimitiveType: String    
@@ -248,6 +254,8 @@
                 }
             })]
         $ExtraHosts,
+        [parameter(Mandatory = $false)]
+        $HealthCheck,
         [parameter(Mandatory = $false)]
         [ValidateScript( {
                 $allowedTypes = "System.String","Vaporshell.Function"

@@ -12,14 +12,14 @@
     .PARAMETER Enabled
 		Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-kinesisfirehose-deliverystream-processingconfiguration.html#cfn-kinesisfirehose-deliverystream-processingconfiguration-enabled    
 		PrimitiveType: Boolean    
-		Required: True    
+		Required: False    
 		UpdateType: Mutable    
 
     .PARAMETER Processors
 		Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-kinesisfirehose-deliverystream-processingconfiguration.html#cfn-kinesisfirehose-deliverystream-processingconfiguration-processors    
 		DuplicatesAllowed: False    
 		ItemType: Processor    
-		Required: True    
+		Required: False    
 		Type: List    
 		UpdateType: Mutable    
 
@@ -30,10 +30,10 @@
     [cmdletbinding()]
     Param
     (
-        [parameter(Mandatory = $true)]
+        [parameter(Mandatory = $false)]
         [System.Boolean]
         $Enabled,
-        [parameter(Mandatory = $true)]
+        [parameter(Mandatory = $false)]
         [ValidateScript( {
                 $allowedTypes = "Vaporshell.Resource.KinesisFirehose.DeliveryStream.Processor"
                 if ([string]$($_.PSTypeNames) -match "($(($allowedTypes|ForEach-Object{[RegEx]::Escape($_)}) -join '|'))") {

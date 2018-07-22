@@ -78,7 +78,7 @@
 		Type: List    
 		Required: False    
 		Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-cognito-userpool.html#cfn-cognito-userpool-aliasattributes    
-		UpdateType: Mutable    
+		UpdateType: Immutable    
 
     .PARAMETER EmailVerificationSubject
 		Required: False    
@@ -91,6 +91,13 @@
 		Required: False    
 		Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-cognito-userpool.html#cfn-cognito-userpool-lambdaconfig    
 		UpdateType: Mutable    
+
+    .PARAMETER UsernameAttributes
+		PrimitiveItemType: String    
+		Type: List    
+		Required: False    
+		Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-cognito-userpool.html#cfn-cognito-userpool-usernameattributes    
+		UpdateType: Immutable    
 
     .PARAMETER AutoVerifiedAttributes
 		PrimitiveItemType: String    
@@ -248,6 +255,8 @@
         [parameter(Mandatory = $false)]
         $LambdaConfig,
         [parameter(Mandatory = $false)]
+        $UsernameAttributes,
+        [parameter(Mandatory = $false)]
         $AutoVerifiedAttributes,
         [parameter(Mandatory = $false)]
         $DeviceConfiguration,
@@ -330,6 +339,12 @@
                         $ResourceParams.Add("Properties",([PSCustomObject]@{}))
                     }
                     $ResourceParams["Properties"] | Add-Member -MemberType NoteProperty -Name AliasAttributes -Value @($AliasAttributes)
+                }
+                UsernameAttributes {
+                    if (!($ResourceParams["Properties"])) {
+                        $ResourceParams.Add("Properties",([PSCustomObject]@{}))
+                    }
+                    $ResourceParams["Properties"] | Add-Member -MemberType NoteProperty -Name UsernameAttributes -Value @($UsernameAttributes)
                 }
                 AutoVerifiedAttributes {
                     if (!($ResourceParams["Properties"])) {

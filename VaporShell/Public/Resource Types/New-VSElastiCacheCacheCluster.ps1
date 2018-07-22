@@ -28,7 +28,7 @@
 		Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-elasticache-cache-cluster.html#cfn-elasticache-cachecluster-cachenodetype    
 		PrimitiveType: String    
 		Required: True    
-		UpdateType: Immutable    
+		UpdateType: Mutable    
 
     .PARAMETER CacheParameterGroupName
 		Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-elasticache-cache-cluster.html#cfn-elasticache-cachecluster-cacheparametergroupname    

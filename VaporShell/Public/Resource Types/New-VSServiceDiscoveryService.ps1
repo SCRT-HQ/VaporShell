@@ -18,6 +18,12 @@
 		PrimitiveType: String    
 		UpdateType: Mutable    
 
+    .PARAMETER HealthCheckCustomConfig
+		Type: HealthCheckCustomConfig    
+		Required: False    
+		Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-servicediscovery-service.html#cfn-servicediscovery-service-healthcheckcustomconfig    
+		UpdateType: Mutable    
+
     .PARAMETER DnsConfig
 		Type: DnsConfig    
 		Required: True    
@@ -94,6 +100,8 @@
                 }
             })]
         $Description,
+        [parameter(Mandatory = $false)]
+        $HealthCheckCustomConfig,
         [parameter(Mandatory = $true)]
         $DnsConfig,
         [parameter(Mandatory = $false)]

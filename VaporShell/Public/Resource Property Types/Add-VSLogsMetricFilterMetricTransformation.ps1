@@ -9,6 +9,12 @@
     .LINK
         http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-logs-metricfilter-metrictransformation.html
 
+    .PARAMETER DefaultValue
+		Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-logs-metricfilter-metrictransformation.html#cfn-cwl-metricfilter-metrictransformation-defaultvalue    
+		PrimitiveType: Double    
+		Required: False    
+		UpdateType: Mutable    
+
     .PARAMETER MetricName
 		Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-logs-metricfilter-metrictransformation.html#cfn-cwl-metricfilter-metrictransformation-metricname    
 		PrimitiveType: String    
@@ -34,6 +40,9 @@
     [cmdletbinding()]
     Param
     (
+        [parameter(Mandatory = $false)]
+        [System.Double]
+        $DefaultValue,
         [parameter(Mandatory = $true)]
         [ValidateScript( {
                 $allowedTypes = "System.String","Vaporshell.Function"

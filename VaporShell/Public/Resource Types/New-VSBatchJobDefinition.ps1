@@ -24,6 +24,12 @@
 		PrimitiveType: Json    
 		UpdateType: Mutable    
 
+    .PARAMETER Timeout
+		Type: Timeout    
+		Required: False    
+		Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-batch-jobdefinition.html#cfn-batch-jobdefinition-timeout    
+		UpdateType: Mutable    
+
     .PARAMETER ContainerProperties
 		Type: ContainerProperties    
 		Required: True    
@@ -111,6 +117,8 @@
                 }
             })]
         $Parameters,
+        [parameter(Mandatory = $false)]
+        $Timeout,
         [parameter(Mandatory = $true)]
         $ContainerProperties,
         [parameter(Mandatory = $false)]

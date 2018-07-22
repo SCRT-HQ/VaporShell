@@ -16,19 +16,19 @@
 		Required: False    
 		Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-athena-namedquery.html#cfn-athena-namedquery-description    
 		PrimitiveType: String    
-		UpdateType: Mutable    
+		UpdateType: Immutable    
 
     .PARAMETER QueryString
 		Required: True    
 		Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-athena-namedquery.html#cfn-athena-namedquery-querystring    
 		PrimitiveType: String    
-		UpdateType: Mutable    
+		UpdateType: Immutable    
 
     .PARAMETER Database
 		Required: True    
 		Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-athena-namedquery.html#cfn-athena-namedquery-database    
 		PrimitiveType: String    
-		UpdateType: Mutable    
+		UpdateType: Immutable    
 
     .PARAMETER Name
 		Required: False    

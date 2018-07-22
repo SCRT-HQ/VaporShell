@@ -79,7 +79,7 @@
     .PARAMETER ImageId
 		Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-instance.html#cfn-ec2-instance-imageid    
 		PrimitiveType: String    
-		Required: True    
+		Required: False    
 		UpdateType: Immutable    
 
     .PARAMETER InstanceInitiatedShutdownBehavior
@@ -118,6 +118,12 @@
 		Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-instance.html#cfn-ec2-instance-keyname    
 		PrimitiveType: String    
 		Required: False    
+		UpdateType: Immutable    
+
+    .PARAMETER LaunchTemplate
+		Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-instance.html#cfn-ec2-instance-launchtemplate    
+		Required: False    
+		Type: LaunchTemplateSpecification    
 		UpdateType: Immutable    
 
     .PARAMETER Monitoring
@@ -353,7 +359,7 @@
                 }
             })]
         $IamInstanceProfile,
-        [parameter(Mandatory = $true)]
+        [parameter(Mandatory = $false)]
         [ValidateScript( {
                 $allowedTypes = "System.String","Vaporshell.Function"
                 if ([string]$($_.PSTypeNames) -match "($(($allowedTypes|ForEach-Object{[RegEx]::Escape($_)}) -join '|'))") {
@@ -422,6 +428,8 @@
                 }
             })]
         $KeyName,
+        [parameter(Mandatory = $false)]
+        $LaunchTemplate,
         [parameter(Mandatory = $false)]
         [System.Boolean]
         $Monitoring,

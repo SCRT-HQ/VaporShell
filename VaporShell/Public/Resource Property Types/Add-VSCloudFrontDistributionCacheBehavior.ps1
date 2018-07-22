@@ -47,6 +47,12 @@
 		PrimitiveType: Double    
 		UpdateType: Mutable    
 
+    .PARAMETER FieldLevelEncryptionId
+		Required: False    
+		Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-cloudfront-distribution-cachebehavior.html#cfn-cloudfront-distribution-cachebehavior-fieldlevelencryptionid    
+		PrimitiveType: String    
+		UpdateType: Mutable    
+
     .PARAMETER AllowedMethods
 		PrimitiveItemType: String    
 		Type: List    
@@ -139,6 +145,17 @@
         [parameter(Mandatory = $false)]
         [System.Double]
         $DefaultTTL,
+        [parameter(Mandatory = $false)]
+        [ValidateScript( {
+                $allowedTypes = "System.String","Vaporshell.Function"
+                if ([string]$($_.PSTypeNames) -match "($(($allowedTypes|ForEach-Object{[RegEx]::Escape($_)}) -join '|'))") {
+                    $true
+                }
+                else {
+                    $PSCmdlet.ThrowTerminatingError((New-VSError -String "This parameter only accepts the following types: $($allowedTypes -join ", "). The current types of the value are: $($_.PSTypeNames -join ", ")."))
+                }
+            })]
+        $FieldLevelEncryptionId,
         [parameter(Mandatory = $false)]
         $AllowedMethods,
         [parameter(Mandatory = $true)]

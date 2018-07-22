@@ -15,6 +15,12 @@
 		PrimitiveType: String    
 		UpdateType: Mutable    
 
+    .PARAMETER ReportBuildStatus
+		Required: False    
+		Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-codebuild-project-source.html#cfn-codebuild-project-source-reportbuildstatus    
+		PrimitiveType: Boolean    
+		UpdateType: Mutable    
+
     .PARAMETER Auth
 		Type: SourceAuth    
 		Required: False    
@@ -63,6 +69,9 @@
                 }
             })]
         $Type,
+        [parameter(Mandatory = $false)]
+        [System.Boolean]
+        $ReportBuildStatus,
         [parameter(Mandatory = $false)]
         $Auth,
         [parameter(Mandatory = $false)]
