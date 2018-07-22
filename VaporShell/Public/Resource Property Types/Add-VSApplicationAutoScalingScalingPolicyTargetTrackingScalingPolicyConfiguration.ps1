@@ -75,7 +75,11 @@
     }
     Process {
         foreach ($key in $PSBoundParameters.Keys | Where-Object {$commonParams -notcontains $_}) {
-            $obj | Add-Member -MemberType NoteProperty -Name $key -Value $PSBoundParameters.$key
+            switch ($key) {
+                Default {
+                    $obj | Add-Member -MemberType NoteProperty -Name $key -Value $PSBoundParameters.$key
+                }
+            }
         }
     }
     End {

@@ -424,7 +424,31 @@ function $FunctionName {
     }
     Process {
         foreach (`$key in `$PSBoundParameters.Keys | Where-Object {`$commonParams -notcontains `$_}) {
-            `$obj | Add-Member -MemberType NoteProperty -Name `$key -Value `$PSBoundParameters.`$key
+            switch (`$key) {
+"@
+        foreach ($Prop in $Properties | Where-Object {$_.Value.PrimitiveType -eq "Json"}) {
+            $scriptContents += @"
+                $($Prop.Name) {
+                    if ((`$PSBoundParameters[`$key]).PSObject.TypeNames -contains "System.String"){
+                        try {
+                            `$JSONObject = (ConvertFrom-Json -InputObject `$PSBoundParameters[`$key] -ErrorAction Stop)
+                        }
+                        catch {
+                            `$PSCmdlet.ThrowTerminatingError((New-VSError -String "Unable to convert parameter '`$key' string value to PSObject! Please use a JSON string OR provide a Hashtable or PSCustomObject instead!"))
+                        }
+                    }
+                    else {
+                        `$JSONObject = ([PSCustomObject]`$PSBoundParameters[`$key])
+                    }
+                    `$obj | Add-Member -MemberType NoteProperty -Name `$key -Value `$JSONObject
+                }
+"@
+        }
+        $scriptContents += @"
+                Default {
+                    `$obj | Add-Member -MemberType NoteProperty -Name `$key -Value `$PSBoundParameters.`$key
+                }
+            }
         }
     }
     End {
