@@ -3,6 +3,7 @@
 <!-- TOC -->
 
 - [Changelog](#changelog)
+    - [2.4.0](#240)
     - [2.3.0](#230)
     - [2.2.1](#221)
     - [2.2.0](#220)
@@ -28,6 +29,10 @@
     - [0.7.02](#0702)
 
 <!-- /TOC -->
+
+## 2.4.0
+
+- Added `ToString()` method override to `New-VaporResource` for convenience during template building [Issue #34](https://github.com/scrthq/VaporShell/issues/34)
 
 ## 2.3.0
 

@@ -21,10 +21,22 @@
 		PrimitiveType: String    
 		UpdateType: Mutable    
 
+    .PARAMETER OverrideArtifactName
+		Required: False    
+		Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-codebuild-project-artifacts.html#cfn-codebuild-project-artifacts-overrideartifactname    
+		PrimitiveType: Boolean    
+		UpdateType: Mutable    
+
     .PARAMETER Packaging
 		Required: False    
 		Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-codebuild-project-artifacts.html#cfn-codebuild-project-artifacts-packaging    
 		PrimitiveType: String    
+		UpdateType: Mutable    
+
+    .PARAMETER EncryptionDisabled
+		Required: False    
+		Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-codebuild-project-artifacts.html#cfn-codebuild-project-artifacts-encryptiondisabled    
+		PrimitiveType: Boolean    
 		UpdateType: Mutable    
 
     .PARAMETER Location
@@ -75,6 +87,9 @@
             })]
         $Type,
         [parameter(Mandatory = $false)]
+        [System.Boolean]
+        $OverrideArtifactName,
+        [parameter(Mandatory = $false)]
         [ValidateScript( {
                 $allowedTypes = "System.String","Vaporshell.Function"
                 if ([string]$($_.PSTypeNames) -match "($(($allowedTypes|ForEach-Object{[RegEx]::Escape($_)}) -join '|'))") {
@@ -85,6 +100,9 @@
                 }
             })]
         $Packaging,
+        [parameter(Mandatory = $false)]
+        [System.Boolean]
+        $EncryptionDisabled,
         [parameter(Mandatory = $false)]
         [ValidateScript( {
                 $allowedTypes = "System.String","Vaporshell.Function"

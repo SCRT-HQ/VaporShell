@@ -194,6 +194,7 @@ function New-VaporResource {
     if ($UpdatePolicy) {
         $obj.Props | Add-Member -MemberType NoteProperty -Name "UpdatePolicy" -Value $UpdatePolicy
     }
+    $obj | Add-Member -MemberType ScriptMethod -Name ToString -Value {$this.LogicalId} -Force
     $obj | Add-ObjectDetail -TypeName 'Vaporshell.Resource'
     Write-Verbose "Resulting JSON from $($MyInvocation.MyCommand): `n`n$(@{$obj.LogicalId = $obj.Props} | ConvertTo-Json -Depth 5)`n"
 }
