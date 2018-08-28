@@ -1,4 +1,4 @@
-﻿function New-VSAppSyncGraphQLApi {
+function New-VSAppSyncGraphQLApi {
     <#
     .SYNOPSIS
         Adds an AWS::AppSync::GraphQLApi resource to the template
@@ -95,7 +95,7 @@
         $UserPoolConfig,
         [parameter(Mandatory = $true)]
         [ValidateScript( {
-                $allowedTypes = "System.String","Vaporshell.Function"
+                $allowedTypes = "System.String","Vaporshell.Function","Vaporshell.Condition"
                 if ([string]$($_.PSTypeNames) -match "($(($allowedTypes|ForEach-Object{[RegEx]::Escape($_)}) -join '|'))") {
                     $true
                 }
@@ -106,7 +106,7 @@
         $Name,
         [parameter(Mandatory = $true)]
         [ValidateScript( {
-                $allowedTypes = "System.String","Vaporshell.Function"
+                $allowedTypes = "System.String","Vaporshell.Function","Vaporshell.Condition"
                 if ([string]$($_.PSTypeNames) -match "($(($allowedTypes|ForEach-Object{[RegEx]::Escape($_)}) -join '|'))") {
                     $true
                 }

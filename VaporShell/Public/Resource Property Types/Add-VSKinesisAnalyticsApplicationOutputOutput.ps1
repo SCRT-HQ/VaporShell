@@ -1,4 +1,4 @@
-﻿function Add-VSKinesisAnalyticsApplicationOutputOutput {
+function Add-VSKinesisAnalyticsApplicationOutputOutput {
     <#
     .SYNOPSIS
         Adds an AWS::KinesisAnalytics::ApplicationOutput.Output resource property to the template
@@ -56,7 +56,7 @@
         $KinesisStreamsOutput,
         [parameter(Mandatory = $false)]
         [ValidateScript( {
-                $allowedTypes = "System.String","Vaporshell.Function"
+                $allowedTypes = "System.String","Vaporshell.Function","Vaporshell.Condition"
                 if ([string]$($_.PSTypeNames) -match "($(($allowedTypes|ForEach-Object{[RegEx]::Escape($_)}) -join '|'))") {
                     $true
                 }

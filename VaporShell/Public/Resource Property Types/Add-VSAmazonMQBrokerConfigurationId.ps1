@@ -1,4 +1,4 @@
-﻿function Add-VSAmazonMQBrokerConfigurationId {
+function Add-VSAmazonMQBrokerConfigurationId {
     <#
     .SYNOPSIS
         Adds an AWS::AmazonMQ::Broker.ConfigurationId resource property to the template
@@ -33,7 +33,7 @@
         $Revision,
         [parameter(Mandatory = $true)]
         [ValidateScript( {
-                $allowedTypes = "System.String","Vaporshell.Function"
+                $allowedTypes = "System.String","Vaporshell.Function","Vaporshell.Condition"
                 if ([string]$($_.PSTypeNames) -match "($(($allowedTypes|ForEach-Object{[RegEx]::Escape($_)}) -join '|'))") {
                     $true
                 }

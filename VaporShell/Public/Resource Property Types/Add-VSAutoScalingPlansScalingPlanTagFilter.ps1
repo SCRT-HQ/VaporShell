@@ -1,4 +1,4 @@
-﻿function Add-VSAutoScalingPlansScalingPlanTagFilter {
+function Add-VSAutoScalingPlansScalingPlanTagFilter {
     <#
     .SYNOPSIS
         Adds an AWS::AutoScalingPlans::ScalingPlan.TagFilter resource property to the template
@@ -33,7 +33,7 @@
         $Values,
         [parameter(Mandatory = $true)]
         [ValidateScript( {
-                $allowedTypes = "System.String","Vaporshell.Function"
+                $allowedTypes = "System.String","Vaporshell.Function","Vaporshell.Condition"
                 if ([string]$($_.PSTypeNames) -match "($(($allowedTypes|ForEach-Object{[RegEx]::Escape($_)}) -join '|'))") {
                     $true
                 }

@@ -1,4 +1,4 @@
-﻿function New-VSCodePipelinePipeline {
+function New-VSCodePipelinePipeline {
     <#
     .SYNOPSIS
         Adds an AWS::CodePipeline::Pipeline resource to the template
@@ -114,7 +114,7 @@
         $DisableInboundStageTransitions,
         [parameter(Mandatory = $false)]
         [ValidateScript( {
-                $allowedTypes = "System.String","Vaporshell.Function"
+                $allowedTypes = "System.String","Vaporshell.Function","Vaporshell.Condition"
                 if ([string]$($_.PSTypeNames) -match "($(($allowedTypes|ForEach-Object{[RegEx]::Escape($_)}) -join '|'))") {
                     $true
                 }
@@ -128,7 +128,7 @@
         $RestartExecutionOnUpdate,
         [parameter(Mandatory = $true)]
         [ValidateScript( {
-                $allowedTypes = "System.String","Vaporshell.Function"
+                $allowedTypes = "System.String","Vaporshell.Function","Vaporshell.Condition"
                 if ([string]$($_.PSTypeNames) -match "($(($allowedTypes|ForEach-Object{[RegEx]::Escape($_)}) -join '|'))") {
                     $true
                 }

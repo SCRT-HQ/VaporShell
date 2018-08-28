@@ -1,4 +1,4 @@
-﻿function New-VSSageMakerNotebookInstanceLifecycleConfig {
+function New-VSSageMakerNotebookInstanceLifecycleConfig {
     <#
     .SYNOPSIS
         Adds an AWS::SageMaker::NotebookInstanceLifecycleConfig resource to the template
@@ -92,7 +92,7 @@
         $OnStart,
         [parameter(Mandatory = $false)]
         [ValidateScript( {
-                $allowedTypes = "System.String","Vaporshell.Function"
+                $allowedTypes = "System.String","Vaporshell.Function","Vaporshell.Condition"
                 if ([string]$($_.PSTypeNames) -match "($(($allowedTypes|ForEach-Object{[RegEx]::Escape($_)}) -join '|'))") {
                     $true
                 }

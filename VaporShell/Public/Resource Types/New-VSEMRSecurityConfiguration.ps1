@@ -1,4 +1,4 @@
-﻿function New-VSEMRSecurityConfiguration {
+function New-VSEMRSecurityConfiguration {
     <#
     .SYNOPSIS
         Adds an AWS::EMR::SecurityConfiguration resource to the template
@@ -73,7 +73,7 @@
         $LogicalId,
         [parameter(Mandatory = $false)]
         [ValidateScript( {
-                $allowedTypes = "System.String","Vaporshell.Function"
+                $allowedTypes = "System.String","Vaporshell.Function","Vaporshell.Condition"
                 if ([string]$($_.PSTypeNames) -match "($(($allowedTypes|ForEach-Object{[RegEx]::Escape($_)}) -join '|'))") {
                     $true
                 }

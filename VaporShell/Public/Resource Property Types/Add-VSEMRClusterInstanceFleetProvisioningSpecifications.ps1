@@ -1,4 +1,4 @@
-﻿function Add-VSEMRClusterInstanceFleetProvisioningSpecifications {
+function Add-VSEMRClusterInstanceFleetProvisioningSpecifications {
     <#
     .SYNOPSIS
         Adds an AWS::EMR::Cluster.InstanceFleetProvisioningSpecifications resource property to the template

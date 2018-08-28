@@ -1,4 +1,4 @@
-﻿function New-VSConfigConfigurationAggregator {
+function New-VSConfigConfigurationAggregator {
     <#
     .SYNOPSIS
         Adds an AWS::Config::ConfigurationAggregator resource to the template
@@ -91,7 +91,7 @@
         $AccountAggregationSources,
         [parameter(Mandatory = $true)]
         [ValidateScript( {
-                $allowedTypes = "System.String","Vaporshell.Function"
+                $allowedTypes = "System.String","Vaporshell.Function","Vaporshell.Condition"
                 if ([string]$($_.PSTypeNames) -match "($(($allowedTypes|ForEach-Object{[RegEx]::Escape($_)}) -join '|'))") {
                     $true
                 }

@@ -1,4 +1,4 @@
-﻿function Add-VSEMRClusterScriptBootstrapActionConfig {
+function Add-VSEMRClusterScriptBootstrapActionConfig {
     <#
     .SYNOPSIS
         Adds an AWS::EMR::Cluster.ScriptBootstrapActionConfig resource property to the template
@@ -34,7 +34,7 @@
         $Args,
         [parameter(Mandatory = $true)]
         [ValidateScript( {
-                $allowedTypes = "System.String","Vaporshell.Function"
+                $allowedTypes = "System.String","Vaporshell.Function","Vaporshell.Condition"
                 if ([string]$($_.PSTypeNames) -match "($(($allowedTypes|ForEach-Object{[RegEx]::Escape($_)}) -join '|'))") {
                     $true
                 }

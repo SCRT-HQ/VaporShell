@@ -1,4 +1,4 @@
-﻿function Add-VSRDSOptionGroupOptionConfiguration {
+function Add-VSRDSOptionGroupOptionConfiguration {
     <#
     .SYNOPSIS
         Adds an AWS::RDS::OptionGroup.OptionConfiguration resource property to the template
@@ -60,7 +60,7 @@
         $DBSecurityGroupMemberships,
         [parameter(Mandatory = $true)]
         [ValidateScript( {
-                $allowedTypes = "System.String","Vaporshell.Function"
+                $allowedTypes = "System.String","Vaporshell.Function","Vaporshell.Condition"
                 if ([string]$($_.PSTypeNames) -match "($(($allowedTypes|ForEach-Object{[RegEx]::Escape($_)}) -join '|'))") {
                     $true
                 }
@@ -73,7 +73,7 @@
         $OptionSettings,
         [parameter(Mandatory = $false)]
         [ValidateScript( {
-                $allowedTypes = "System.String","Vaporshell.Function"
+                $allowedTypes = "System.String","Vaporshell.Function","Vaporshell.Condition"
                 if ([string]$($_.PSTypeNames) -match "($(($allowedTypes|ForEach-Object{[RegEx]::Escape($_)}) -join '|'))") {
                     $true
                 }

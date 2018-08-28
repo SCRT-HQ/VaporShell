@@ -1,4 +1,4 @@
-﻿function Add-VSApplicationAutoScalingScalableTargetScheduledAction {
+function Add-VSApplicationAutoScalingScalableTargetScheduledAction {
     <#
     .SYNOPSIS
         Adds an AWS::ApplicationAutoScaling::ScalableTarget.ScheduledAction resource property to the template
@@ -52,7 +52,7 @@
         $ScalableTargetAction,
         [parameter(Mandatory = $true)]
         [ValidateScript( {
-                $allowedTypes = "System.String","Vaporshell.Function"
+                $allowedTypes = "System.String","Vaporshell.Function","Vaporshell.Condition"
                 if ([string]$($_.PSTypeNames) -match "($(($allowedTypes|ForEach-Object{[RegEx]::Escape($_)}) -join '|'))") {
                     $true
                 }
@@ -63,7 +63,7 @@
         $Schedule,
         [parameter(Mandatory = $true)]
         [ValidateScript( {
-                $allowedTypes = "System.String","Vaporshell.Function"
+                $allowedTypes = "System.String","Vaporshell.Function","Vaporshell.Condition"
                 if ([string]$($_.PSTypeNames) -match "($(($allowedTypes|ForEach-Object{[RegEx]::Escape($_)}) -join '|'))") {
                     $true
                 }

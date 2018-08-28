@@ -1,4 +1,4 @@
-﻿function New-VSCloudFormationStack {
+function New-VSCloudFormationStack {
     <#
     .SYNOPSIS
         Adds an AWS::CloudFormation::Stack resource to the template
@@ -113,7 +113,7 @@
         $Tags,
         [parameter(Mandatory = $true)]
         [ValidateScript( {
-                $allowedTypes = "System.String","Vaporshell.Function"
+                $allowedTypes = "System.String","Vaporshell.Function","Vaporshell.Condition"
                 if ([string]$($_.PSTypeNames) -match "($(($allowedTypes|ForEach-Object{[RegEx]::Escape($_)}) -join '|'))") {
                     $true
                 }

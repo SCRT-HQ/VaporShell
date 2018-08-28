@@ -1,4 +1,4 @@
-﻿function Add-VSCognitoUserPoolSchemaAttribute {
+function Add-VSCognitoUserPoolSchemaAttribute {
     <#
     .SYNOPSIS
         Adds an AWS::Cognito::UserPool.SchemaAttribute resource property to the template
@@ -66,7 +66,7 @@
         $Mutable,
         [parameter(Mandatory = $false)]
         [ValidateScript( {
-                $allowedTypes = "System.String","Vaporshell.Function"
+                $allowedTypes = "System.String","Vaporshell.Function","Vaporshell.Condition"
                 if ([string]$($_.PSTypeNames) -match "($(($allowedTypes|ForEach-Object{[RegEx]::Escape($_)}) -join '|'))") {
                     $true
                 }
@@ -84,7 +84,7 @@
         $NumberAttributeConstraints,
         [parameter(Mandatory = $false)]
         [ValidateScript( {
-                $allowedTypes = "System.String","Vaporshell.Function"
+                $allowedTypes = "System.String","Vaporshell.Function","Vaporshell.Condition"
                 if ([string]$($_.PSTypeNames) -match "($(($allowedTypes|ForEach-Object{[RegEx]::Escape($_)}) -join '|'))") {
                     $true
                 }

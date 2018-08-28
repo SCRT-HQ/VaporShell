@@ -1,4 +1,4 @@
-﻿function Add-VSKinesisFirehoseDeliveryStreamCloudWatchLoggingOptions {
+function Add-VSKinesisFirehoseDeliveryStreamCloudWatchLoggingOptions {
     <#
     .SYNOPSIS
         Adds an AWS::KinesisFirehose::DeliveryStream.CloudWatchLoggingOptions resource property to the template
@@ -39,7 +39,7 @@
         $Enabled,
         [parameter(Mandatory = $false)]
         [ValidateScript( {
-                $allowedTypes = "System.String","Vaporshell.Function"
+                $allowedTypes = "System.String","Vaporshell.Function","Vaporshell.Condition"
                 if ([string]$($_.PSTypeNames) -match "($(($allowedTypes|ForEach-Object{[RegEx]::Escape($_)}) -join '|'))") {
                     $true
                 }
@@ -50,7 +50,7 @@
         $LogGroupName,
         [parameter(Mandatory = $false)]
         [ValidateScript( {
-                $allowedTypes = "System.String","Vaporshell.Function"
+                $allowedTypes = "System.String","Vaporshell.Function","Vaporshell.Condition"
                 if ([string]$($_.PSTypeNames) -match "($(($allowedTypes|ForEach-Object{[RegEx]::Escape($_)}) -join '|'))") {
                     $true
                 }

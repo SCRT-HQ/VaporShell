@@ -1,4 +1,4 @@
-﻿function Add-VSGlueTriggerAction {
+function Add-VSGlueTriggerAction {
     <#
     .SYNOPSIS
         Adds an AWS::Glue::Trigger.Action resource property to the template
@@ -30,7 +30,7 @@
     (
         [parameter(Mandatory = $false)]
         [ValidateScript( {
-                $allowedTypes = "System.String","Vaporshell.Function"
+                $allowedTypes = "System.String","Vaporshell.Function","Vaporshell.Condition"
                 if ([string]$($_.PSTypeNames) -match "($(($allowedTypes|ForEach-Object{[RegEx]::Escape($_)}) -join '|'))") {
                     $true
                 }

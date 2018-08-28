@@ -1,4 +1,4 @@
-﻿function Add-VSCloudFrontStreamingDistributionStreamingDistributionConfig {
+function Add-VSCloudFrontStreamingDistributionStreamingDistributionConfig {
     <#
     .SYNOPSIS
         Adds an AWS::CloudFront::StreamingDistribution.StreamingDistributionConfig resource property to the template
@@ -63,7 +63,7 @@
         $Logging,
         [parameter(Mandatory = $true)]
         [ValidateScript( {
-                $allowedTypes = "System.String","Vaporshell.Function"
+                $allowedTypes = "System.String","Vaporshell.Function","Vaporshell.Condition"
                 if ([string]$($_.PSTypeNames) -match "($(($allowedTypes|ForEach-Object{[RegEx]::Escape($_)}) -join '|'))") {
                     $true
                 }
@@ -74,7 +74,7 @@
         $Comment,
         [parameter(Mandatory = $false)]
         [ValidateScript( {
-                $allowedTypes = "System.String","Vaporshell.Function"
+                $allowedTypes = "System.String","Vaporshell.Function","Vaporshell.Condition"
                 if ([string]$($_.PSTypeNames) -match "($(($allowedTypes|ForEach-Object{[RegEx]::Escape($_)}) -join '|'))") {
                     $true
                 }

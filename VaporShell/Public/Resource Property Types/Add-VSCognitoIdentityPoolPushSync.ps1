@@ -1,4 +1,4 @@
-﻿function Add-VSCognitoIdentityPoolPushSync {
+function Add-VSCognitoIdentityPoolPushSync {
     <#
     .SYNOPSIS
         Adds an AWS::Cognito::IdentityPool.PushSync resource property to the template
@@ -33,7 +33,7 @@
         $ApplicationArns,
         [parameter(Mandatory = $false)]
         [ValidateScript( {
-                $allowedTypes = "System.String","Vaporshell.Function"
+                $allowedTypes = "System.String","Vaporshell.Function","Vaporshell.Condition"
                 if ([string]$($_.PSTypeNames) -match "($(($allowedTypes|ForEach-Object{[RegEx]::Escape($_)}) -join '|'))") {
                     $true
                 }

@@ -1,4 +1,4 @@
-﻿function Add-VSS3BucketWebsiteConfiguration {
+function Add-VSS3BucketWebsiteConfiguration {
     <#
     .SYNOPSIS
         Adds an AWS::S3::Bucket.WebsiteConfiguration resource property to the template
@@ -44,7 +44,7 @@
     (
         [parameter(Mandatory = $false)]
         [ValidateScript( {
-                $allowedTypes = "System.String","Vaporshell.Function"
+                $allowedTypes = "System.String","Vaporshell.Function","Vaporshell.Condition"
                 if ([string]$($_.PSTypeNames) -match "($(($allowedTypes|ForEach-Object{[RegEx]::Escape($_)}) -join '|'))") {
                     $true
                 }
@@ -55,7 +55,7 @@
         $ErrorDocument,
         [parameter(Mandatory = $false)]
         [ValidateScript( {
-                $allowedTypes = "System.String","Vaporshell.Function"
+                $allowedTypes = "System.String","Vaporshell.Function","Vaporshell.Condition"
                 if ([string]$($_.PSTypeNames) -match "($(($allowedTypes|ForEach-Object{[RegEx]::Escape($_)}) -join '|'))") {
                     $true
                 }

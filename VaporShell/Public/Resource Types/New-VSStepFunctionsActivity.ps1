@@ -1,4 +1,4 @@
-﻿function New-VSStepFunctionsActivity {
+function New-VSStepFunctionsActivity {
     <#
     .SYNOPSIS
         Adds an AWS::StepFunctions::Activity resource to the template
@@ -67,7 +67,7 @@
         $LogicalId,
         [parameter(Mandatory = $true)]
         [ValidateScript( {
-                $allowedTypes = "System.String","Vaporshell.Function"
+                $allowedTypes = "System.String","Vaporshell.Function","Vaporshell.Condition"
                 if ([string]$($_.PSTypeNames) -match "($(($allowedTypes|ForEach-Object{[RegEx]::Escape($_)}) -join '|'))") {
                     $true
                 }

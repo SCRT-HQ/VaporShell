@@ -1,4 +1,4 @@
-﻿function Add-VSSSMAssociationParameterValues {
+function Add-VSSSMAssociationParameterValues {
     <#
     .SYNOPSIS
         Adds an AWS::SSM::Association.ParameterValues resource property to the template

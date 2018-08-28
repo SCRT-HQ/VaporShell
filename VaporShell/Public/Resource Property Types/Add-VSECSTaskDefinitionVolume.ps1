@@ -1,4 +1,4 @@
-﻿function Add-VSECSTaskDefinitionVolume {
+function Add-VSECSTaskDefinitionVolume {
     <#
     .SYNOPSIS
         Adds an AWS::ECS::TaskDefinition.Volume resource property to the template
@@ -32,7 +32,7 @@
         $Host,
         [parameter(Mandatory = $false)]
         [ValidateScript( {
-                $allowedTypes = "System.String","Vaporshell.Function"
+                $allowedTypes = "System.String","Vaporshell.Function","Vaporshell.Condition"
                 if ([string]$($_.PSTypeNames) -match "($(($allowedTypes|ForEach-Object{[RegEx]::Escape($_)}) -join '|'))") {
                     $true
                 }

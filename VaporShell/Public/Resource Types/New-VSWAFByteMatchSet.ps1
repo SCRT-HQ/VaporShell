@@ -1,4 +1,4 @@
-﻿function New-VSWAFByteMatchSet {
+function New-VSWAFByteMatchSet {
     <#
     .SYNOPSIS
         Adds an AWS::WAF::ByteMatchSet resource to the template
@@ -86,7 +86,7 @@
         $ByteMatchTuples,
         [parameter(Mandatory = $true)]
         [ValidateScript( {
-                $allowedTypes = "System.String","Vaporshell.Function"
+                $allowedTypes = "System.String","Vaporshell.Function","Vaporshell.Condition"
                 if ([string]$($_.PSTypeNames) -match "($(($allowedTypes|ForEach-Object{[RegEx]::Escape($_)}) -join '|'))") {
                     $true
                 }

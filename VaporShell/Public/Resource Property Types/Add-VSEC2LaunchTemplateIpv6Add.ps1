@@ -1,4 +1,4 @@
-﻿function Add-VSEC2LaunchTemplateIpv6Add {
+function Add-VSEC2LaunchTemplateIpv6Add {
     <#
     .SYNOPSIS
         Adds an AWS::EC2::LaunchTemplate.Ipv6Add resource property to the template
@@ -24,7 +24,7 @@
     (
         [parameter(Mandatory = $false)]
         [ValidateScript( {
-                $allowedTypes = "System.String","Vaporshell.Function"
+                $allowedTypes = "System.String","Vaporshell.Function","Vaporshell.Condition"
                 if ([string]$($_.PSTypeNames) -match "($(($allowedTypes|ForEach-Object{[RegEx]::Escape($_)}) -join '|'))") {
                     $true
                 }

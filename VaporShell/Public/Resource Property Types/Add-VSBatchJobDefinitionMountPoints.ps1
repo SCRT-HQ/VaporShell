@@ -1,4 +1,4 @@
-﻿function Add-VSBatchJobDefinitionMountPoints {
+function Add-VSBatchJobDefinitionMountPoints {
     <#
     .SYNOPSIS
         Adds an AWS::Batch::JobDefinition.MountPoints resource property to the template
@@ -39,7 +39,7 @@
         $ReadOnly,
         [parameter(Mandatory = $false)]
         [ValidateScript( {
-                $allowedTypes = "System.String","Vaporshell.Function"
+                $allowedTypes = "System.String","Vaporshell.Function","Vaporshell.Condition"
                 if ([string]$($_.PSTypeNames) -match "($(($allowedTypes|ForEach-Object{[RegEx]::Escape($_)}) -join '|'))") {
                     $true
                 }
@@ -50,7 +50,7 @@
         $SourceVolume,
         [parameter(Mandatory = $false)]
         [ValidateScript( {
-                $allowedTypes = "System.String","Vaporshell.Function"
+                $allowedTypes = "System.String","Vaporshell.Function","Vaporshell.Condition"
                 if ([string]$($_.PSTypeNames) -match "($(($allowedTypes|ForEach-Object{[RegEx]::Escape($_)}) -join '|'))") {
                     $true
                 }

@@ -1,4 +1,4 @@
-﻿function New-VSSESReceiptFilter {
+function New-VSSESReceiptFilter {
     <#
     .SYNOPSIS
         Adds an AWS::SES::ReceiptFilter resource to the template

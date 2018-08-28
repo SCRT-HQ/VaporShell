@@ -1,4 +1,4 @@
-﻿function Add-VSS3BucketS3KeyFilter {
+function Add-VSS3BucketS3KeyFilter {
     <#
     .SYNOPSIS
         Adds an AWS::S3::Bucket.S3KeyFilter resource property to the template

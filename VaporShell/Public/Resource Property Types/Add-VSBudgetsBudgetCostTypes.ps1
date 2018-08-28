@@ -1,4 +1,4 @@
-﻿function Add-VSBudgetsBudgetCostTypes {
+function Add-VSBudgetsBudgetCostTypes {
     <#
     .SYNOPSIS
         Adds an AWS::Budgets::Budget.CostTypes resource property to the template

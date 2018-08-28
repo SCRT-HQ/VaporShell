@@ -1,4 +1,4 @@
-﻿function Add-VSGluePartitionSkewedInfo {
+function Add-VSGluePartitionSkewedInfo {
     <#
     .SYNOPSIS
         Adds an AWS::Glue::Partition.SkewedInfo resource property to the template

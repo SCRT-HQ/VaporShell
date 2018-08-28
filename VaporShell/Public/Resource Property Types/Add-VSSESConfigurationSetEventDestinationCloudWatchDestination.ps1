@@ -1,4 +1,4 @@
-﻿function Add-VSSESConfigurationSetEventDestinationCloudWatchDestination {
+function Add-VSSESConfigurationSetEventDestinationCloudWatchDestination {
     <#
     .SYNOPSIS
         Adds an AWS::SES::ConfigurationSetEventDestination.CloudWatchDestination resource property to the template

@@ -1,4 +1,4 @@
-﻿function Add-VSSESConfigurationSetEventDestinationEventDestination {
+function Add-VSSESConfigurationSetEventDestinationEventDestination {
     <#
     .SYNOPSIS
         Adds an AWS::SES::ConfigurationSetEventDestination.EventDestination resource property to the template
@@ -56,7 +56,7 @@
         $MatchingEventTypes,
         [parameter(Mandatory = $false)]
         [ValidateScript( {
-                $allowedTypes = "System.String","Vaporshell.Function"
+                $allowedTypes = "System.String","Vaporshell.Function","Vaporshell.Condition"
                 if ([string]$($_.PSTypeNames) -match "($(($allowedTypes|ForEach-Object{[RegEx]::Escape($_)}) -join '|'))") {
                     $true
                 }

@@ -1,4 +1,4 @@
-﻿function Add-VSSSMMaintenanceWindowTaskTaskInvocationParameters {
+function Add-VSSSMMaintenanceWindowTaskTaskInvocationParameters {
     <#
     .SYNOPSIS
         Adds an AWS::SSM::MaintenanceWindowTask.TaskInvocationParameters resource property to the template

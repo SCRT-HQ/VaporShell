@@ -1,4 +1,4 @@
-﻿function Add-VSConfigConfigurationRecorderRecordingGroup {
+function Add-VSConfigConfigurationRecorderRecordingGroup {
     <#
     .SYNOPSIS
         Adds an AWS::Config::ConfigurationRecorder.RecordingGroup resource property to the template

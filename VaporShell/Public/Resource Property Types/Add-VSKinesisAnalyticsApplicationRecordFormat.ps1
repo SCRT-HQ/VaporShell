@@ -1,4 +1,4 @@
-﻿function Add-VSKinesisAnalyticsApplicationRecordFormat {
+function Add-VSKinesisAnalyticsApplicationRecordFormat {
     <#
     .SYNOPSIS
         Adds an AWS::KinesisAnalytics::Application.RecordFormat resource property to the template
@@ -32,7 +32,7 @@
         $MappingParameters,
         [parameter(Mandatory = $true)]
         [ValidateScript( {
-                $allowedTypes = "System.String","Vaporshell.Function"
+                $allowedTypes = "System.String","Vaporshell.Function","Vaporshell.Condition"
                 if ([string]$($_.PSTypeNames) -match "($(($allowedTypes|ForEach-Object{[RegEx]::Escape($_)}) -join '|'))") {
                     $true
                 }

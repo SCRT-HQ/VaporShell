@@ -1,4 +1,4 @@
-﻿function Add-VSCodePipelinePipelineStageDeclaration {
+function Add-VSCodePipelinePipelineStageDeclaration {
     <#
     .SYNOPSIS
         Adds an AWS::CodePipeline::Pipeline.StageDeclaration resource property to the template
@@ -62,7 +62,7 @@
         $Blockers,
         [parameter(Mandatory = $true)]
         [ValidateScript( {
-                $allowedTypes = "System.String","Vaporshell.Function"
+                $allowedTypes = "System.String","Vaporshell.Function","Vaporshell.Condition"
                 if ([string]$($_.PSTypeNames) -match "($(($allowedTypes|ForEach-Object{[RegEx]::Escape($_)}) -join '|'))") {
                     $true
                 }

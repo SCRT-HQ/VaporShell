@@ -1,4 +1,4 @@
-﻿function New-VSRDSDBSecurityGroup {
+function New-VSRDSDBSecurityGroup {
     <#
     .SYNOPSIS
         Adds an AWS::RDS::DBSecurityGroup resource to the template
@@ -100,7 +100,7 @@
         $DBSecurityGroupIngress,
         [parameter(Mandatory = $false)]
         [ValidateScript( {
-                $allowedTypes = "System.String","Vaporshell.Function"
+                $allowedTypes = "System.String","Vaporshell.Function","Vaporshell.Condition"
                 if ([string]$($_.PSTypeNames) -match "($(($allowedTypes|ForEach-Object{[RegEx]::Escape($_)}) -join '|'))") {
                     $true
                 }
@@ -111,7 +111,7 @@
         $EC2VpcId,
         [parameter(Mandatory = $true)]
         [ValidateScript( {
-                $allowedTypes = "System.String","Vaporshell.Function"
+                $allowedTypes = "System.String","Vaporshell.Function","Vaporshell.Condition"
                 if ([string]$($_.PSTypeNames) -match "($(($allowedTypes|ForEach-Object{[RegEx]::Escape($_)}) -join '|'))") {
                     $true
                 }

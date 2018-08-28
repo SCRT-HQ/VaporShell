@@ -1,4 +1,4 @@
-﻿function Add-VSOpsWorksAppEnvironmentVariable {
+function Add-VSOpsWorksAppEnvironmentVariable {
     <#
     .SYNOPSIS
         Adds an AWS::OpsWorks::App.EnvironmentVariable resource property to the template
@@ -36,7 +36,7 @@
     (
         [parameter(Mandatory = $true)]
         [ValidateScript( {
-                $allowedTypes = "System.String","Vaporshell.Function"
+                $allowedTypes = "System.String","Vaporshell.Function","Vaporshell.Condition"
                 if ([string]$($_.PSTypeNames) -match "($(($allowedTypes|ForEach-Object{[RegEx]::Escape($_)}) -join '|'))") {
                     $true
                 }
@@ -50,7 +50,7 @@
         $Secure,
         [parameter(Mandatory = $true)]
         [ValidateScript( {
-                $allowedTypes = "System.String","Vaporshell.Function"
+                $allowedTypes = "System.String","Vaporshell.Function","Vaporshell.Condition"
                 if ([string]$($_.PSTypeNames) -match "($(($allowedTypes|ForEach-Object{[RegEx]::Escape($_)}) -join '|'))") {
                     $true
                 }

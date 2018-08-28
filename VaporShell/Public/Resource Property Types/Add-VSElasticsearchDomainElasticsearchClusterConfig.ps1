@@ -1,4 +1,4 @@
-﻿function Add-VSElasticsearchDomainElasticsearchClusterConfig {
+function Add-VSElasticsearchDomainElasticsearchClusterConfig {
     <#
     .SYNOPSIS
         Adds an AWS::Elasticsearch::Domain.ElasticsearchClusterConfig resource property to the template
@@ -60,7 +60,7 @@
         $DedicatedMasterEnabled,
         [parameter(Mandatory = $false)]
         [ValidateScript( {
-                $allowedTypes = "System.String","Vaporshell.Function"
+                $allowedTypes = "System.String","Vaporshell.Function","Vaporshell.Condition"
                 if ([string]$($_.PSTypeNames) -match "($(($allowedTypes|ForEach-Object{[RegEx]::Escape($_)}) -join '|'))") {
                     $true
                 }
@@ -74,7 +74,7 @@
         $InstanceCount,
         [parameter(Mandatory = $false)]
         [ValidateScript( {
-                $allowedTypes = "System.String","Vaporshell.Function"
+                $allowedTypes = "System.String","Vaporshell.Function","Vaporshell.Condition"
                 if ([string]$($_.PSTypeNames) -match "($(($allowedTypes|ForEach-Object{[RegEx]::Escape($_)}) -join '|'))") {
                     $true
                 }

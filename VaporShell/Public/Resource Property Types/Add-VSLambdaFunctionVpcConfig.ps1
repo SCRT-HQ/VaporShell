@@ -1,4 +1,4 @@
-﻿function Add-VSLambdaFunctionVpcConfig {
+function Add-VSLambdaFunctionVpcConfig {
     <#
     .SYNOPSIS
         Adds an AWS::Lambda::Function.VpcConfig resource property to the template

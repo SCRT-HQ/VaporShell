@@ -1,4 +1,4 @@
-﻿function New-VSEC2EgressOnlyInternetGateway {
+function New-VSEC2EgressOnlyInternetGateway {
     <#
     .SYNOPSIS
         Adds an AWS::EC2::EgressOnlyInternetGateway resource to the template
@@ -67,7 +67,7 @@
         $LogicalId,
         [parameter(Mandatory = $true)]
         [ValidateScript( {
-                $allowedTypes = "System.String","Vaporshell.Function"
+                $allowedTypes = "System.String","Vaporshell.Function","Vaporshell.Condition"
                 if ([string]$($_.PSTypeNames) -match "($(($allowedTypes|ForEach-Object{[RegEx]::Escape($_)}) -join '|'))") {
                     $true
                 }

@@ -1,4 +1,4 @@
-﻿function Add-VSElasticBeanstalkConfigurationTemplateSourceConfiguration {
+function Add-VSElasticBeanstalkConfigurationTemplateSourceConfiguration {
     <#
     .SYNOPSIS
         Adds an AWS::ElasticBeanstalk::ConfigurationTemplate.SourceConfiguration resource property to the template
@@ -30,7 +30,7 @@
     (
         [parameter(Mandatory = $true)]
         [ValidateScript( {
-                $allowedTypes = "System.String","Vaporshell.Function"
+                $allowedTypes = "System.String","Vaporshell.Function","Vaporshell.Condition"
                 if ([string]$($_.PSTypeNames) -match "($(($allowedTypes|ForEach-Object{[RegEx]::Escape($_)}) -join '|'))") {
                     $true
                 }
@@ -41,7 +41,7 @@
         $ApplicationName,
         [parameter(Mandatory = $true)]
         [ValidateScript( {
-                $allowedTypes = "System.String","Vaporshell.Function"
+                $allowedTypes = "System.String","Vaporshell.Function","Vaporshell.Condition"
                 if ([string]$($_.PSTypeNames) -match "($(($allowedTypes|ForEach-Object{[RegEx]::Escape($_)}) -join '|'))") {
                     $true
                 }

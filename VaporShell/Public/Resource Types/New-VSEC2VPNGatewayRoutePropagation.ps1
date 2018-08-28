@@ -1,4 +1,4 @@
-﻿function New-VSEC2VPNGatewayRoutePropagation {
+function New-VSEC2VPNGatewayRoutePropagation {
     <#
     .SYNOPSIS
         Adds an AWS::EC2::VPNGatewayRoutePropagation resource to the template
@@ -77,7 +77,7 @@
         $RouteTableIds,
         [parameter(Mandatory = $true)]
         [ValidateScript( {
-                $allowedTypes = "System.String","Vaporshell.Function"
+                $allowedTypes = "System.String","Vaporshell.Function","Vaporshell.Condition"
                 if ([string]$($_.PSTypeNames) -match "($(($allowedTypes|ForEach-Object{[RegEx]::Escape($_)}) -join '|'))") {
                     $true
                 }

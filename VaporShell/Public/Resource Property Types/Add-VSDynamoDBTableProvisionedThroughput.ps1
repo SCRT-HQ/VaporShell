@@ -1,4 +1,4 @@
-﻿function Add-VSDynamoDBTableProvisionedThroughput {
+function Add-VSDynamoDBTableProvisionedThroughput {
     <#
     .SYNOPSIS
         Adds an AWS::DynamoDB::Table.ProvisionedThroughput resource property to the template

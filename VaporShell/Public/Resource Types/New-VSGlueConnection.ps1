@@ -1,4 +1,4 @@
-﻿function New-VSGlueConnection {
+function New-VSGlueConnection {
     <#
     .SYNOPSIS
         Adds an AWS::Glue::Connection resource to the template
@@ -75,7 +75,7 @@
         $ConnectionInput,
         [parameter(Mandatory = $true)]
         [ValidateScript( {
-                $allowedTypes = "System.String","Vaporshell.Function"
+                $allowedTypes = "System.String","Vaporshell.Function","Vaporshell.Condition"
                 if ([string]$($_.PSTypeNames) -match "($(($allowedTypes|ForEach-Object{[RegEx]::Escape($_)}) -join '|'))") {
                     $true
                 }

@@ -1,4 +1,4 @@
-﻿function Add-VSConfigConfigurationAggregatorOrganizationAggregationSource {
+function Add-VSConfigConfigurationAggregatorOrganizationAggregationSource {
     <#
     .SYNOPSIS
         Adds an AWS::Config::ConfigurationAggregator.OrganizationAggregationSource resource property to the template
@@ -42,7 +42,7 @@
         $AwsRegions,
         [parameter(Mandatory = $true)]
         [ValidateScript( {
-                $allowedTypes = "System.String","Vaporshell.Function"
+                $allowedTypes = "System.String","Vaporshell.Function","Vaporshell.Condition"
                 if ([string]$($_.PSTypeNames) -match "($(($allowedTypes|ForEach-Object{[RegEx]::Escape($_)}) -join '|'))") {
                     $true
                 }

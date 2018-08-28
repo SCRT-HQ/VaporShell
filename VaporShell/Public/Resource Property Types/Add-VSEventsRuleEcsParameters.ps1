@@ -1,4 +1,4 @@
-﻿function Add-VSEventsRuleEcsParameters {
+function Add-VSEventsRuleEcsParameters {
     <#
     .SYNOPSIS
         Adds an AWS::Events::Rule.EcsParameters resource property to the template
@@ -33,7 +33,7 @@
         $TaskCount,
         [parameter(Mandatory = $true)]
         [ValidateScript( {
-                $allowedTypes = "System.String","Vaporshell.Function"
+                $allowedTypes = "System.String","Vaporshell.Function","Vaporshell.Condition"
                 if ([string]$($_.PSTypeNames) -match "($(($allowedTypes|ForEach-Object{[RegEx]::Escape($_)}) -join '|'))") {
                     $true
                 }

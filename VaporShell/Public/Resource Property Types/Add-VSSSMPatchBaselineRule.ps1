@@ -1,4 +1,4 @@
-﻿function Add-VSSSMPatchBaselineRule {
+function Add-VSSSMPatchBaselineRule {
     <#
     .SYNOPSIS
         Adds an AWS::SSM::PatchBaseline.Rule resource property to the template
@@ -50,7 +50,7 @@
         $ApproveAfterDays,
         [parameter(Mandatory = $false)]
         [ValidateScript( {
-                $allowedTypes = "System.String","Vaporshell.Function"
+                $allowedTypes = "System.String","Vaporshell.Function","Vaporshell.Condition"
                 if ([string]$($_.PSTypeNames) -match "($(($allowedTypes|ForEach-Object{[RegEx]::Escape($_)}) -join '|'))") {
                     $true
                 }

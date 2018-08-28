@@ -1,4 +1,4 @@
-﻿function Add-VSCloudTrailTrailDataResource {
+function Add-VSCloudTrailTrailDataResource {
     <#
     .SYNOPSIS
         Adds an AWS::CloudTrail::Trail.DataResource resource property to the template
@@ -32,7 +32,7 @@
     (
         [parameter(Mandatory = $true)]
         [ValidateScript( {
-                $allowedTypes = "System.String","Vaporshell.Function"
+                $allowedTypes = "System.String","Vaporshell.Function","Vaporshell.Condition"
                 if ([string]$($_.PSTypeNames) -match "($(($allowedTypes|ForEach-Object{[RegEx]::Escape($_)}) -join '|'))") {
                     $true
                 }

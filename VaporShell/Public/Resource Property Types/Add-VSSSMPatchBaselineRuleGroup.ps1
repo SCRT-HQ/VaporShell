@@ -1,4 +1,4 @@
-﻿function Add-VSSSMPatchBaselineRuleGroup {
+function Add-VSSSMPatchBaselineRuleGroup {
     <#
     .SYNOPSIS
         Adds an AWS::SSM::PatchBaseline.RuleGroup resource property to the template
