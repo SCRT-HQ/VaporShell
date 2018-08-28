@@ -1,4 +1,4 @@
-﻿function Add-VSS3BucketSourceSelectionCriteria {
+function Add-VSS3BucketSourceSelectionCriteria {
     <#
     .SYNOPSIS
         Adds an AWS::S3::Bucket.SourceSelectionCriteria resource property to the template

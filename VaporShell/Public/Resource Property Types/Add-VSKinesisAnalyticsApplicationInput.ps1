@@ -1,4 +1,4 @@
-﻿function Add-VSKinesisAnalyticsApplicationInput {
+function Add-VSKinesisAnalyticsApplicationInput {
     <#
     .SYNOPSIS
         Adds an AWS::KinesisAnalytics::Application.Input resource property to the template
@@ -54,7 +54,7 @@
     (
         [parameter(Mandatory = $true)]
         [ValidateScript( {
-                $allowedTypes = "System.String","Vaporshell.Function"
+                $allowedTypes = "System.String","Vaporshell.Function","Vaporshell.Condition"
                 if ([string]$($_.PSTypeNames) -match "($(($allowedTypes|ForEach-Object{[RegEx]::Escape($_)}) -join '|'))") {
                     $true
                 }

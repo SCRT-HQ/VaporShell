@@ -1,4 +1,4 @@
-﻿function New-VSGlueDatabase {
+function New-VSGlueDatabase {
     <#
     .SYNOPSIS
         Adds an AWS::Glue::Database resource to the template
@@ -75,7 +75,7 @@
         $DatabaseInput,
         [parameter(Mandatory = $true)]
         [ValidateScript( {
-                $allowedTypes = "System.String","Vaporshell.Function"
+                $allowedTypes = "System.String","Vaporshell.Function","Vaporshell.Condition"
                 if ([string]$($_.PSTypeNames) -match "($(($allowedTypes|ForEach-Object{[RegEx]::Escape($_)}) -join '|'))") {
                     $true
                 }

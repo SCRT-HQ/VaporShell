@@ -1,4 +1,4 @@
-﻿function New-VSWAFRegionalSqlInjectionMatchSet {
+function New-VSWAFRegionalSqlInjectionMatchSet {
     <#
     .SYNOPSIS
         Adds an AWS::WAFRegional::SqlInjectionMatchSet resource to the template
@@ -85,7 +85,7 @@
         $SqlInjectionMatchTuples,
         [parameter(Mandatory = $true)]
         [ValidateScript( {
-                $allowedTypes = "System.String","Vaporshell.Function"
+                $allowedTypes = "System.String","Vaporshell.Function","Vaporshell.Condition"
                 if ([string]$($_.PSTypeNames) -match "($(($allowedTypes|ForEach-Object{[RegEx]::Escape($_)}) -join '|'))") {
                     $true
                 }

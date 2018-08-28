@@ -1,4 +1,4 @@
-﻿function New-VSEC2NetworkAcl {
+function New-VSEC2NetworkAcl {
     <#
     .SYNOPSIS
         Adds an AWS::EC2::NetworkAcl resource to the template
@@ -86,7 +86,7 @@
         $Tags,
         [parameter(Mandatory = $true)]
         [ValidateScript( {
-                $allowedTypes = "System.String","Vaporshell.Function"
+                $allowedTypes = "System.String","Vaporshell.Function","Vaporshell.Condition"
                 if ([string]$($_.PSTypeNames) -match "($(($allowedTypes|ForEach-Object{[RegEx]::Escape($_)}) -join '|'))") {
                     $true
                 }

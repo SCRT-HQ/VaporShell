@@ -1,4 +1,4 @@
-﻿function Add-VSDynamoDBTableProjection {
+function Add-VSDynamoDBTableProjection {
     <#
     .SYNOPSIS
         Adds an AWS::DynamoDB::Table.Projection resource property to the template
@@ -34,7 +34,7 @@
         $NonKeyAttributes,
         [parameter(Mandatory = $false)]
         [ValidateScript( {
-                $allowedTypes = "System.String","Vaporshell.Function"
+                $allowedTypes = "System.String","Vaporshell.Function","Vaporshell.Condition"
                 if ([string]$($_.PSTypeNames) -match "($(($allowedTypes|ForEach-Object{[RegEx]::Escape($_)}) -join '|'))") {
                     $true
                 }

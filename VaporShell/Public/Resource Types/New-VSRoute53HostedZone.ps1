@@ -1,4 +1,4 @@
-﻿function New-VSRoute53HostedZone {
+function New-VSRoute53HostedZone {
     <#
     .SYNOPSIS
         Adds an AWS::Route53::HostedZone resource to the template
@@ -108,7 +108,7 @@
         $HostedZoneTags,
         [parameter(Mandatory = $true)]
         [ValidateScript( {
-                $allowedTypes = "System.String","Vaporshell.Function"
+                $allowedTypes = "System.String","Vaporshell.Function","Vaporshell.Condition"
                 if ([string]$($_.PSTypeNames) -match "($(($allowedTypes|ForEach-Object{[RegEx]::Escape($_)}) -join '|'))") {
                     $true
                 }

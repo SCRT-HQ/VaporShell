@@ -1,4 +1,4 @@
-﻿function Add-VSOpsWorksLayerLoadBasedAutoScaling {
+function Add-VSOpsWorksLayerLoadBasedAutoScaling {
     <#
     .SYNOPSIS
         Adds an AWS::OpsWorks::Layer.LoadBasedAutoScaling resource property to the template

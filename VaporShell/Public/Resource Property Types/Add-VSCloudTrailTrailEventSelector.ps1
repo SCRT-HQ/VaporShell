@@ -1,4 +1,4 @@
-﻿function Add-VSCloudTrailTrailEventSelector {
+function Add-VSCloudTrailTrailEventSelector {
     <#
     .SYNOPSIS
         Adds an AWS::CloudTrail::Trail.EventSelector resource property to the template
@@ -52,7 +52,7 @@
         $IncludeManagementEvents,
         [parameter(Mandatory = $false)]
         [ValidateScript( {
-                $allowedTypes = "System.String","Vaporshell.Function"
+                $allowedTypes = "System.String","Vaporshell.Function","Vaporshell.Condition"
                 if ([string]$($_.PSTypeNames) -match "($(($allowedTypes|ForEach-Object{[RegEx]::Escape($_)}) -join '|'))") {
                     $true
                 }

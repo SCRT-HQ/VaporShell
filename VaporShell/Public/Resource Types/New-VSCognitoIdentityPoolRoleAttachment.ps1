@@ -1,4 +1,4 @@
-﻿function New-VSCognitoIdentityPoolRoleAttachment {
+function New-VSCognitoIdentityPoolRoleAttachment {
     <#
     .SYNOPSIS
         Adds an AWS::Cognito::IdentityPoolRoleAttachment resource to the template
@@ -90,7 +90,7 @@
         $RoleMappings,
         [parameter(Mandatory = $true)]
         [ValidateScript( {
-                $allowedTypes = "System.String","Vaporshell.Function"
+                $allowedTypes = "System.String","Vaporshell.Function","Vaporshell.Condition"
                 if ([string]$($_.PSTypeNames) -match "($(($allowedTypes|ForEach-Object{[RegEx]::Escape($_)}) -join '|'))") {
                     $true
                 }

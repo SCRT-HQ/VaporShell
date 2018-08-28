@@ -1,4 +1,4 @@
-﻿function Add-VSEC2LaunchTemplateIamInstanceProfile {
+function Add-VSEC2LaunchTemplateIamInstanceProfile {
     <#
     .SYNOPSIS
         Adds an AWS::EC2::LaunchTemplate.IamInstanceProfile resource property to the template
@@ -30,7 +30,7 @@
     (
         [parameter(Mandatory = $false)]
         [ValidateScript( {
-                $allowedTypes = "System.String","Vaporshell.Function"
+                $allowedTypes = "System.String","Vaporshell.Function","Vaporshell.Condition"
                 if ([string]$($_.PSTypeNames) -match "($(($allowedTypes|ForEach-Object{[RegEx]::Escape($_)}) -join '|'))") {
                     $true
                 }
@@ -41,7 +41,7 @@
         $Arn,
         [parameter(Mandatory = $false)]
         [ValidateScript( {
-                $allowedTypes = "System.String","Vaporshell.Function"
+                $allowedTypes = "System.String","Vaporshell.Function","Vaporshell.Condition"
                 if ([string]$($_.PSTypeNames) -match "($(($allowedTypes|ForEach-Object{[RegEx]::Escape($_)}) -join '|'))") {
                     $true
                 }

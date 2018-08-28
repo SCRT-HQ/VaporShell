@@ -1,4 +1,4 @@
-﻿function New-VSSESConfigurationSet {
+function New-VSSESConfigurationSet {
     <#
     .SYNOPSIS
         Adds an AWS::SES::ConfigurationSet resource to the template
@@ -67,7 +67,7 @@
         $LogicalId,
         [parameter(Mandatory = $false)]
         [ValidateScript( {
-                $allowedTypes = "System.String","Vaporshell.Function"
+                $allowedTypes = "System.String","Vaporshell.Function","Vaporshell.Condition"
                 if ([string]$($_.PSTypeNames) -match "($(($allowedTypes|ForEach-Object{[RegEx]::Escape($_)}) -join '|'))") {
                     $true
                 }

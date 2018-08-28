@@ -1,4 +1,4 @@
-﻿function New-VSCloudFormationCustomResource {
+function New-VSCloudFormationCustomResource {
     <#
     .SYNOPSIS
         Adds an AWS::CloudFormation::CustomResource resource to the template
@@ -67,7 +67,7 @@
         $LogicalId,
         [parameter(Mandatory = $true)]
         [ValidateScript( {
-                $allowedTypes = "System.String","Vaporshell.Function"
+                $allowedTypes = "System.String","Vaporshell.Function","Vaporshell.Condition"
                 if ([string]$($_.PSTypeNames) -match "($(($allowedTypes|ForEach-Object{[RegEx]::Escape($_)}) -join '|'))") {
                     $true
                 }

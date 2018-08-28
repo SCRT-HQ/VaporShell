@@ -1,4 +1,4 @@
-﻿function Add-VSEC2SpotFleetPrivateIpAddressSpecification {
+function Add-VSEC2SpotFleetPrivateIpAddressSpecification {
     <#
     .SYNOPSIS
         Adds an AWS::EC2::SpotFleet.PrivateIpAddressSpecification resource property to the template
@@ -33,7 +33,7 @@
         $Primary,
         [parameter(Mandatory = $true)]
         [ValidateScript( {
-                $allowedTypes = "System.String","Vaporshell.Function"
+                $allowedTypes = "System.String","Vaporshell.Function","Vaporshell.Condition"
                 if ([string]$($_.PSTypeNames) -match "($(($allowedTypes|ForEach-Object{[RegEx]::Escape($_)}) -join '|'))") {
                     $true
                 }

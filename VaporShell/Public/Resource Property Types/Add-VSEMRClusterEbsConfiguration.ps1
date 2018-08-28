@@ -1,4 +1,4 @@
-﻿function Add-VSEMRClusterEbsConfiguration {
+function Add-VSEMRClusterEbsConfiguration {
     <#
     .SYNOPSIS
         Adds an AWS::EMR::Cluster.EbsConfiguration resource property to the template

@@ -1,4 +1,4 @@
-﻿function Add-VSCloudFrontDistributionCustomOriginConfig {
+function Add-VSCloudFrontDistributionCustomOriginConfig {
     <#
     .SYNOPSIS
         Adds an AWS::CloudFront::Distribution.CustomOriginConfig resource property to the template
@@ -69,7 +69,7 @@
         $HTTPPort,
         [parameter(Mandatory = $true)]
         [ValidateScript( {
-                $allowedTypes = "System.String","Vaporshell.Function"
+                $allowedTypes = "System.String","Vaporshell.Function","Vaporshell.Condition"
                 if ([string]$($_.PSTypeNames) -match "($(($allowedTypes|ForEach-Object{[RegEx]::Escape($_)}) -join '|'))") {
                     $true
                 }

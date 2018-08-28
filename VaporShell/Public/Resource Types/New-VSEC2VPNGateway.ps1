@@ -1,4 +1,4 @@
-﻿function New-VSEC2VPNGateway {
+function New-VSEC2VPNGateway {
     <#
     .SYNOPSIS
         Adds an AWS::EC2::VPNGateway resource to the template
@@ -94,7 +94,7 @@
         $Tags,
         [parameter(Mandatory = $true)]
         [ValidateScript( {
-                $allowedTypes = "System.String","Vaporshell.Function"
+                $allowedTypes = "System.String","Vaporshell.Function","Vaporshell.Condition"
                 if ([string]$($_.PSTypeNames) -match "($(($allowedTypes|ForEach-Object{[RegEx]::Escape($_)}) -join '|'))") {
                     $true
                 }

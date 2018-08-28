@@ -1,4 +1,4 @@
-﻿function Add-VSCognitoUserPoolDeviceConfiguration {
+function Add-VSCognitoUserPoolDeviceConfiguration {
     <#
     .SYNOPSIS
         Adds an AWS::Cognito::UserPool.DeviceConfiguration resource property to the template

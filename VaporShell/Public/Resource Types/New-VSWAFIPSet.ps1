@@ -1,4 +1,4 @@
-﻿function New-VSWAFIPSet {
+function New-VSWAFIPSet {
     <#
     .SYNOPSIS
         Adds an AWS::WAF::IPSet resource to the template
@@ -86,7 +86,7 @@
         $IPSetDescriptors,
         [parameter(Mandatory = $true)]
         [ValidateScript( {
-                $allowedTypes = "System.String","Vaporshell.Function"
+                $allowedTypes = "System.String","Vaporshell.Function","Vaporshell.Condition"
                 if ([string]$($_.PSTypeNames) -match "($(($allowedTypes|ForEach-Object{[RegEx]::Escape($_)}) -join '|'))") {
                     $true
                 }

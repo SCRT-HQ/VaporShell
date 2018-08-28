@@ -1,4 +1,4 @@
-﻿function Add-VSOpsWorksLayerVolumeConfiguration {
+function Add-VSOpsWorksLayerVolumeConfiguration {
     <#
     .SYNOPSIS
         Adds an AWS::OpsWorks::Layer.VolumeConfiguration resource property to the template
@@ -57,7 +57,7 @@
         $Iops,
         [parameter(Mandatory = $false)]
         [ValidateScript( {
-                $allowedTypes = "System.String","Vaporshell.Function"
+                $allowedTypes = "System.String","Vaporshell.Function","Vaporshell.Condition"
                 if ([string]$($_.PSTypeNames) -match "($(($allowedTypes|ForEach-Object{[RegEx]::Escape($_)}) -join '|'))") {
                     $true
                 }
@@ -77,7 +77,7 @@
         $Size,
         [parameter(Mandatory = $false)]
         [ValidateScript( {
-                $allowedTypes = "System.String","Vaporshell.Function"
+                $allowedTypes = "System.String","Vaporshell.Function","Vaporshell.Condition"
                 if ([string]$($_.PSTypeNames) -match "($(($allowedTypes|ForEach-Object{[RegEx]::Escape($_)}) -join '|'))") {
                     $true
                 }

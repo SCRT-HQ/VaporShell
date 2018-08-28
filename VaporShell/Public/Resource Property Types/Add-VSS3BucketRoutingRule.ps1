@@ -1,4 +1,4 @@
-﻿function Add-VSS3BucketRoutingRule {
+function Add-VSS3BucketRoutingRule {
     <#
     .SYNOPSIS
         Adds an AWS::S3::Bucket.RoutingRule resource property to the template

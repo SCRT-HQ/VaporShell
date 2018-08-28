@@ -1,4 +1,4 @@
-﻿function Add-VSCodePipelinePipelineArtifactStore {
+function Add-VSCodePipelinePipelineArtifactStore {
     <#
     .SYNOPSIS
         Adds an AWS::CodePipeline::Pipeline.ArtifactStore resource property to the template
@@ -38,7 +38,7 @@
         $EncryptionKey,
         [parameter(Mandatory = $true)]
         [ValidateScript( {
-                $allowedTypes = "System.String","Vaporshell.Function"
+                $allowedTypes = "System.String","Vaporshell.Function","Vaporshell.Condition"
                 if ([string]$($_.PSTypeNames) -match "($(($allowedTypes|ForEach-Object{[RegEx]::Escape($_)}) -join '|'))") {
                     $true
                 }
@@ -49,7 +49,7 @@
         $Location,
         [parameter(Mandatory = $true)]
         [ValidateScript( {
-                $allowedTypes = "System.String","Vaporshell.Function"
+                $allowedTypes = "System.String","Vaporshell.Function","Vaporshell.Condition"
                 if ([string]$($_.PSTypeNames) -match "($(($allowedTypes|ForEach-Object{[RegEx]::Escape($_)}) -join '|'))") {
                     $true
                 }

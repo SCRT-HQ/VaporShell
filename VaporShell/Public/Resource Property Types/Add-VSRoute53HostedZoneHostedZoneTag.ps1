@@ -1,4 +1,4 @@
-﻿function Add-VSRoute53HostedZoneHostedZoneTag {
+function Add-VSRoute53HostedZoneHostedZoneTag {
     <#
     .SYNOPSIS
         Adds an AWS::Route53::HostedZone.HostedZoneTag resource property to the template
@@ -30,7 +30,7 @@
     (
         [parameter(Mandatory = $true)]
         [ValidateScript( {
-                $allowedTypes = "System.String","Vaporshell.Function"
+                $allowedTypes = "System.String","Vaporshell.Function","Vaporshell.Condition"
                 if ([string]$($_.PSTypeNames) -match "($(($allowedTypes|ForEach-Object{[RegEx]::Escape($_)}) -join '|'))") {
                     $true
                 }
@@ -41,7 +41,7 @@
         $Key,
         [parameter(Mandatory = $true)]
         [ValidateScript( {
-                $allowedTypes = "System.String","Vaporshell.Function"
+                $allowedTypes = "System.String","Vaporshell.Function","Vaporshell.Condition"
                 if ([string]$($_.PSTypeNames) -match "($(($allowedTypes|ForEach-Object{[RegEx]::Escape($_)}) -join '|'))") {
                     $true
                 }

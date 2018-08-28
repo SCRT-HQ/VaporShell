@@ -1,4 +1,4 @@
-﻿function Add-VSCloudFrontDistributionCookies {
+function Add-VSCloudFrontDistributionCookies {
     <#
     .SYNOPSIS
         Adds an AWS::CloudFront::Distribution.Cookies resource property to the template
@@ -33,7 +33,7 @@
         $WhitelistedNames,
         [parameter(Mandatory = $true)]
         [ValidateScript( {
-                $allowedTypes = "System.String","Vaporshell.Function"
+                $allowedTypes = "System.String","Vaporshell.Function","Vaporshell.Condition"
                 if ([string]$($_.PSTypeNames) -match "($(($allowedTypes|ForEach-Object{[RegEx]::Escape($_)}) -join '|'))") {
                     $true
                 }

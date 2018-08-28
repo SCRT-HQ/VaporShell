@@ -1,4 +1,4 @@
-﻿function Add-VSCognitoIdentityPoolCognitoIdentityProvider {
+function Add-VSCognitoIdentityPoolCognitoIdentityProvider {
     <#
     .SYNOPSIS
         Adds an AWS::Cognito::IdentityPool.CognitoIdentityProvider resource property to the template
@@ -39,7 +39,7 @@
         $ServerSideTokenCheck,
         [parameter(Mandatory = $false)]
         [ValidateScript( {
-                $allowedTypes = "System.String","Vaporshell.Function"
+                $allowedTypes = "System.String","Vaporshell.Function","Vaporshell.Condition"
                 if ([string]$($_.PSTypeNames) -match "($(($allowedTypes|ForEach-Object{[RegEx]::Escape($_)}) -join '|'))") {
                     $true
                 }
@@ -50,7 +50,7 @@
         $ProviderName,
         [parameter(Mandatory = $false)]
         [ValidateScript( {
-                $allowedTypes = "System.String","Vaporshell.Function"
+                $allowedTypes = "System.String","Vaporshell.Function","Vaporshell.Condition"
                 if ([string]$($_.PSTypeNames) -match "($(($allowedTypes|ForEach-Object{[RegEx]::Escape($_)}) -join '|'))") {
                     $true
                 }

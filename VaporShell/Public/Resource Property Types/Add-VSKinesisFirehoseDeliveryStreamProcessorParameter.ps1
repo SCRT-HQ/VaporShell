@@ -1,4 +1,4 @@
-﻿function Add-VSKinesisFirehoseDeliveryStreamProcessorParameter {
+function Add-VSKinesisFirehoseDeliveryStreamProcessorParameter {
     <#
     .SYNOPSIS
         Adds an AWS::KinesisFirehose::DeliveryStream.ProcessorParameter resource property to the template
@@ -30,7 +30,7 @@
     (
         [parameter(Mandatory = $true)]
         [ValidateScript( {
-                $allowedTypes = "System.String","Vaporshell.Function"
+                $allowedTypes = "System.String","Vaporshell.Function","Vaporshell.Condition"
                 if ([string]$($_.PSTypeNames) -match "($(($allowedTypes|ForEach-Object{[RegEx]::Escape($_)}) -join '|'))") {
                     $true
                 }
@@ -41,7 +41,7 @@
         $ParameterName,
         [parameter(Mandatory = $true)]
         [ValidateScript( {
-                $allowedTypes = "System.String","Vaporshell.Function"
+                $allowedTypes = "System.String","Vaporshell.Function","Vaporshell.Condition"
                 if ([string]$($_.PSTypeNames) -match "($(($allowedTypes|ForEach-Object{[RegEx]::Escape($_)}) -join '|'))") {
                     $true
                 }

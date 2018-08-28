@@ -1,4 +1,4 @@
-﻿function Add-VSCloudFrontDistributionCustomErrorResponse {
+function Add-VSCloudFrontDistributionCustomErrorResponse {
     <#
     .SYNOPSIS
         Adds an AWS::CloudFront::Distribution.CustomErrorResponse resource property to the template
@@ -51,7 +51,7 @@
         $ErrorCode,
         [parameter(Mandatory = $false)]
         [ValidateScript( {
-                $allowedTypes = "System.String","Vaporshell.Function"
+                $allowedTypes = "System.String","Vaporshell.Function","Vaporshell.Condition"
                 if ([string]$($_.PSTypeNames) -match "($(($allowedTypes|ForEach-Object{[RegEx]::Escape($_)}) -join '|'))") {
                     $true
                 }

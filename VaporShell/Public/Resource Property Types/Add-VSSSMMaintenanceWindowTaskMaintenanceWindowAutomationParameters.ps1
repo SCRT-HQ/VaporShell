@@ -1,4 +1,4 @@
-﻿function Add-VSSSMMaintenanceWindowTaskMaintenanceWindowAutomationParameters {
+function Add-VSSSMMaintenanceWindowTaskMaintenanceWindowAutomationParameters {
     <#
     .SYNOPSIS
         Adds an AWS::SSM::MaintenanceWindowTask.MaintenanceWindowAutomationParameters resource property to the template
@@ -41,7 +41,7 @@
         $Parameters,
         [parameter(Mandatory = $false)]
         [ValidateScript( {
-                $allowedTypes = "System.String","Vaporshell.Function"
+                $allowedTypes = "System.String","Vaporshell.Function","Vaporshell.Condition"
                 if ([string]$($_.PSTypeNames) -match "($(($allowedTypes|ForEach-Object{[RegEx]::Escape($_)}) -join '|'))") {
                     $true
                 }

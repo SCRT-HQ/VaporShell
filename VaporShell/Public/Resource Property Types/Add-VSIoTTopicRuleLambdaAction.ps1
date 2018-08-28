@@ -1,4 +1,4 @@
-﻿function Add-VSIoTTopicRuleLambdaAction {
+function Add-VSIoTTopicRuleLambdaAction {
     <#
     .SYNOPSIS
         Adds an AWS::IoT::TopicRule.LambdaAction resource property to the template
@@ -24,7 +24,7 @@
     (
         [parameter(Mandatory = $false)]
         [ValidateScript( {
-                $allowedTypes = "System.String","Vaporshell.Function"
+                $allowedTypes = "System.String","Vaporshell.Function","Vaporshell.Condition"
                 if ([string]$($_.PSTypeNames) -match "($(($allowedTypes|ForEach-Object{[RegEx]::Escape($_)}) -join '|'))") {
                     $true
                 }

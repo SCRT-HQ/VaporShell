@@ -1,4 +1,4 @@
-﻿function Add-VSElasticsearchDomainEncryptionAtRestOptions {
+function Add-VSElasticsearchDomainEncryptionAtRestOptions {
     <#
     .SYNOPSIS
         Adds an AWS::Elasticsearch::Domain.EncryptionAtRestOptions resource property to the template
@@ -33,7 +33,7 @@
         $Enabled,
         [parameter(Mandatory = $false)]
         [ValidateScript( {
-                $allowedTypes = "System.String","Vaporshell.Function"
+                $allowedTypes = "System.String","Vaporshell.Function","Vaporshell.Condition"
                 if ([string]$($_.PSTypeNames) -match "($(($allowedTypes|ForEach-Object{[RegEx]::Escape($_)}) -join '|'))") {
                     $true
                 }

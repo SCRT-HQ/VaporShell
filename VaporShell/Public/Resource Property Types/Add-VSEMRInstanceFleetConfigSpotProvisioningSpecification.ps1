@@ -1,4 +1,4 @@
-﻿function Add-VSEMRInstanceFleetConfigSpotProvisioningSpecification {
+function Add-VSEMRInstanceFleetConfigSpotProvisioningSpecification {
     <#
     .SYNOPSIS
         Adds an AWS::EMR::InstanceFleetConfig.SpotProvisioningSpecification resource property to the template
@@ -39,7 +39,7 @@
         $BlockDurationMinutes,
         [parameter(Mandatory = $true)]
         [ValidateScript( {
-                $allowedTypes = "System.String","Vaporshell.Function"
+                $allowedTypes = "System.String","Vaporshell.Function","Vaporshell.Condition"
                 if ([string]$($_.PSTypeNames) -match "($(($allowedTypes|ForEach-Object{[RegEx]::Escape($_)}) -join '|'))") {
                     $true
                 }

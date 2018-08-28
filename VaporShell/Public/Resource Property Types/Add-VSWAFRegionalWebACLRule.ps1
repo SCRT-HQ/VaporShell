@@ -1,4 +1,4 @@
-﻿function Add-VSWAFRegionalWebACLRule {
+function Add-VSWAFRegionalWebACLRule {
     <#
     .SYNOPSIS
         Adds an AWS::WAFRegional::WebACL.Rule resource property to the template
@@ -41,7 +41,7 @@
         $Priority,
         [parameter(Mandatory = $true)]
         [ValidateScript( {
-                $allowedTypes = "System.String","Vaporshell.Function"
+                $allowedTypes = "System.String","Vaporshell.Function","Vaporshell.Condition"
                 if ([string]$($_.PSTypeNames) -match "($(($allowedTypes|ForEach-Object{[RegEx]::Escape($_)}) -join '|'))") {
                     $true
                 }

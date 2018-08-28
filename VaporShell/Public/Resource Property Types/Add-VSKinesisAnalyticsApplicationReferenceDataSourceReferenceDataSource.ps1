@@ -1,4 +1,4 @@
-﻿function Add-VSKinesisAnalyticsApplicationReferenceDataSourceReferenceDataSource {
+function Add-VSKinesisAnalyticsApplicationReferenceDataSourceReferenceDataSource {
     <#
     .SYNOPSIS
         Adds an AWS::KinesisAnalytics::ApplicationReferenceDataSource.ReferenceDataSource resource property to the template
@@ -38,7 +38,7 @@
         $ReferenceSchema,
         [parameter(Mandatory = $false)]
         [ValidateScript( {
-                $allowedTypes = "System.String","Vaporshell.Function"
+                $allowedTypes = "System.String","Vaporshell.Function","Vaporshell.Condition"
                 if ([string]$($_.PSTypeNames) -match "($(($allowedTypes|ForEach-Object{[RegEx]::Escape($_)}) -join '|'))") {
                     $true
                 }

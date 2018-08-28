@@ -1,4 +1,4 @@
-﻿function Add-VSElasticBeanstalkApplicationApplicationVersionLifecycleConfig {
+function Add-VSElasticBeanstalkApplicationApplicationVersionLifecycleConfig {
     <#
     .SYNOPSIS
         Adds an AWS::ElasticBeanstalk::Application.ApplicationVersionLifecycleConfig resource property to the template

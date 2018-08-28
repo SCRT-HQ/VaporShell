@@ -1,4 +1,4 @@
-﻿function Add-VSAutoScalingLaunchConfigurationBlockDevice {
+function Add-VSAutoScalingLaunchConfigurationBlockDevice {
     <#
     .SYNOPSIS
         Adds an AWS::AutoScaling::LaunchConfiguration.BlockDevice resource property to the template
@@ -63,7 +63,7 @@
         $Iops,
         [parameter(Mandatory = $false)]
         [ValidateScript( {
-                $allowedTypes = "System.String","Vaporshell.Function"
+                $allowedTypes = "System.String","Vaporshell.Function","Vaporshell.Condition"
                 if ([string]$($_.PSTypeNames) -match "($(($allowedTypes|ForEach-Object{[RegEx]::Escape($_)}) -join '|'))") {
                     $true
                 }
@@ -77,7 +77,7 @@
         $VolumeSize,
         [parameter(Mandatory = $false)]
         [ValidateScript( {
-                $allowedTypes = "System.String","Vaporshell.Function"
+                $allowedTypes = "System.String","Vaporshell.Function","Vaporshell.Condition"
                 if ([string]$($_.PSTypeNames) -match "($(($allowedTypes|ForEach-Object{[RegEx]::Escape($_)}) -join '|'))") {
                     $true
                 }

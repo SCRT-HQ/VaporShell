@@ -1,4 +1,4 @@
-﻿function Add-VSWAFWebACLActivatedRule {
+function Add-VSWAFWebACLActivatedRule {
     <#
     .SYNOPSIS
         Adds an AWS::WAF::WebACL.ActivatedRule resource property to the template
@@ -11,7 +11,7 @@
 
     .PARAMETER Action
 		Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-waf-webacl-rules.html#cfn-waf-webacl-rules-action    
-		Required: True    
+		Required: False    
 		Type: WafAction    
 		UpdateType: Mutable    
 
@@ -34,14 +34,14 @@
     [cmdletbinding()]
     Param
     (
-        [parameter(Mandatory = $true)]
+        [parameter(Mandatory = $false)]
         $Action,
         [parameter(Mandatory = $true)]
         [Int]
         $Priority,
         [parameter(Mandatory = $true)]
         [ValidateScript( {
-                $allowedTypes = "System.String","Vaporshell.Function"
+                $allowedTypes = "System.String","Vaporshell.Function","Vaporshell.Condition"
                 if ([string]$($_.PSTypeNames) -match "($(($allowedTypes|ForEach-Object{[RegEx]::Escape($_)}) -join '|'))") {
                     $true
                 }

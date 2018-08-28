@@ -1,4 +1,4 @@
-﻿function Add-VSEMRClusterScalingConstraints {
+function Add-VSEMRClusterScalingConstraints {
     <#
     .SYNOPSIS
         Adds an AWS::EMR::Cluster.ScalingConstraints resource property to the template

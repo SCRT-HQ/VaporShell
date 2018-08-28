@@ -1,4 +1,4 @@
-﻿function Add-VSCodeDeployDeploymentGroupTriggerConfig {
+function Add-VSCodeDeployDeploymentGroupTriggerConfig {
     <#
     .SYNOPSIS
         Adds an AWS::CodeDeploy::DeploymentGroup.TriggerConfig resource property to the template
@@ -40,7 +40,7 @@
         $TriggerEvents,
         [parameter(Mandatory = $false)]
         [ValidateScript( {
-                $allowedTypes = "System.String","Vaporshell.Function"
+                $allowedTypes = "System.String","Vaporshell.Function","Vaporshell.Condition"
                 if ([string]$($_.PSTypeNames) -match "($(($allowedTypes|ForEach-Object{[RegEx]::Escape($_)}) -join '|'))") {
                     $true
                 }
@@ -51,7 +51,7 @@
         $TriggerName,
         [parameter(Mandatory = $false)]
         [ValidateScript( {
-                $allowedTypes = "System.String","Vaporshell.Function"
+                $allowedTypes = "System.String","Vaporshell.Function","Vaporshell.Condition"
                 if ([string]$($_.PSTypeNames) -match "($(($allowedTypes|ForEach-Object{[RegEx]::Escape($_)}) -join '|'))") {
                     $true
                 }

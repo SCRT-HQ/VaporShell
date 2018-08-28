@@ -1,4 +1,4 @@
-﻿function New-VSElasticsearchDomain {
+function New-VSElasticsearchDomain {
     <#
     .SYNOPSIS
         Adds an AWS::Elasticsearch::Domain resource to the template
@@ -139,7 +139,7 @@
         $AdvancedOptions,
         [parameter(Mandatory = $false)]
         [ValidateScript( {
-                $allowedTypes = "System.String","Vaporshell.Function"
+                $allowedTypes = "System.String","Vaporshell.Function","Vaporshell.Condition"
                 if ([string]$($_.PSTypeNames) -match "($(($allowedTypes|ForEach-Object{[RegEx]::Escape($_)}) -join '|'))") {
                     $true
                 }
@@ -154,7 +154,7 @@
         $ElasticsearchClusterConfig,
         [parameter(Mandatory = $false)]
         [ValidateScript( {
-                $allowedTypes = "System.String","Vaporshell.Function"
+                $allowedTypes = "System.String","Vaporshell.Function","Vaporshell.Condition"
                 if ([string]$($_.PSTypeNames) -match "($(($allowedTypes|ForEach-Object{[RegEx]::Escape($_)}) -join '|'))") {
                     $true
                 }

@@ -1,4 +1,4 @@
-﻿function New-VSIoTThing {
+function New-VSIoTThing {
     <#
     .SYNOPSIS
         Adds an AWS::IoT::Thing resource to the template
@@ -75,7 +75,7 @@
         $AttributePayload,
         [parameter(Mandatory = $false)]
         [ValidateScript( {
-                $allowedTypes = "System.String","Vaporshell.Function"
+                $allowedTypes = "System.String","Vaporshell.Function","Vaporshell.Condition"
                 if ([string]$($_.PSTypeNames) -match "($(($allowedTypes|ForEach-Object{[RegEx]::Escape($_)}) -join '|'))") {
                     $true
                 }

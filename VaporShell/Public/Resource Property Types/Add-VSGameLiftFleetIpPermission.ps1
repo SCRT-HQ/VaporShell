@@ -1,4 +1,4 @@
-﻿function Add-VSGameLiftFleetIpPermission {
+function Add-VSGameLiftFleetIpPermission {
     <#
     .SYNOPSIS
         Adds an AWS::GameLift::Fleet.IpPermission resource property to the template
@@ -45,7 +45,7 @@
         $FromPort,
         [parameter(Mandatory = $true)]
         [ValidateScript( {
-                $allowedTypes = "System.String","Vaporshell.Function"
+                $allowedTypes = "System.String","Vaporshell.Function","Vaporshell.Condition"
                 if ([string]$($_.PSTypeNames) -match "($(($allowedTypes|ForEach-Object{[RegEx]::Escape($_)}) -join '|'))") {
                     $true
                 }
@@ -56,7 +56,7 @@
         $IpRange,
         [parameter(Mandatory = $true)]
         [ValidateScript( {
-                $allowedTypes = "System.String","Vaporshell.Function"
+                $allowedTypes = "System.String","Vaporshell.Function","Vaporshell.Condition"
                 if ([string]$($_.PSTypeNames) -match "($(($allowedTypes|ForEach-Object{[RegEx]::Escape($_)}) -join '|'))") {
                     $true
                 }

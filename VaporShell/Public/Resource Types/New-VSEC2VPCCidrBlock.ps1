@@ -1,4 +1,4 @@
-﻿function New-VSEC2VPCCidrBlock {
+function New-VSEC2VPCCidrBlock {
     <#
     .SYNOPSIS
         Adds an AWS::EC2::VPCCidrBlock resource to the template
@@ -82,7 +82,7 @@
         $AmazonProvidedIpv6CidrBlock,
         [parameter(Mandatory = $false)]
         [ValidateScript( {
-                $allowedTypes = "System.String","Vaporshell.Function"
+                $allowedTypes = "System.String","Vaporshell.Function","Vaporshell.Condition"
                 if ([string]$($_.PSTypeNames) -match "($(($allowedTypes|ForEach-Object{[RegEx]::Escape($_)}) -join '|'))") {
                     $true
                 }
@@ -93,7 +93,7 @@
         $CidrBlock,
         [parameter(Mandatory = $true)]
         [ValidateScript( {
-                $allowedTypes = "System.String","Vaporshell.Function"
+                $allowedTypes = "System.String","Vaporshell.Function","Vaporshell.Condition"
                 if ([string]$($_.PSTypeNames) -match "($(($allowedTypes|ForEach-Object{[RegEx]::Escape($_)}) -join '|'))") {
                     $true
                 }

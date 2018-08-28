@@ -1,4 +1,4 @@
-﻿function Add-VSWAFXssMatchSetXssMatchTuple {
+function Add-VSWAFXssMatchSetXssMatchTuple {
     <#
     .SYNOPSIS
         Adds an AWS::WAF::XssMatchSet.XssMatchTuple resource property to the template
@@ -32,7 +32,7 @@
         $FieldToMatch,
         [parameter(Mandatory = $true)]
         [ValidateScript( {
-                $allowedTypes = "System.String","Vaporshell.Function"
+                $allowedTypes = "System.String","Vaporshell.Function","Vaporshell.Condition"
                 if ([string]$($_.PSTypeNames) -match "($(($allowedTypes|ForEach-Object{[RegEx]::Escape($_)}) -join '|'))") {
                     $true
                 }

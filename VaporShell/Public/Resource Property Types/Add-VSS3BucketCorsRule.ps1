@@ -1,4 +1,4 @@
-﻿function Add-VSS3BucketCorsRule {
+function Add-VSS3BucketCorsRule {
     <#
     .SYNOPSIS
         Adds an AWS::S3::Bucket.CorsRule resource property to the template
@@ -70,7 +70,7 @@
         $ExposedHeaders,
         [parameter(Mandatory = $false)]
         [ValidateScript( {
-                $allowedTypes = "System.String","Vaporshell.Function"
+                $allowedTypes = "System.String","Vaporshell.Function","Vaporshell.Condition"
                 if ([string]$($_.PSTypeNames) -match "($(($allowedTypes|ForEach-Object{[RegEx]::Escape($_)}) -join '|'))") {
                     $true
                 }

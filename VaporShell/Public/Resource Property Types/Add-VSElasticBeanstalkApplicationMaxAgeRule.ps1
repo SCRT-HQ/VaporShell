@@ -1,4 +1,4 @@
-﻿function Add-VSElasticBeanstalkApplicationMaxAgeRule {
+function Add-VSElasticBeanstalkApplicationMaxAgeRule {
     <#
     .SYNOPSIS
         Adds an AWS::ElasticBeanstalk::Application.MaxAgeRule resource property to the template

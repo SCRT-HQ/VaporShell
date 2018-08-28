@@ -1,4 +1,4 @@
-﻿function Add-VSS3BucketDataExport {
+function Add-VSS3BucketDataExport {
     <#
     .SYNOPSIS
         Adds an AWS::S3::Bucket.DataExport resource property to the template
@@ -32,7 +32,7 @@
         $Destination,
         [parameter(Mandatory = $true)]
         [ValidateScript( {
-                $allowedTypes = "System.String","Vaporshell.Function"
+                $allowedTypes = "System.String","Vaporshell.Function","Vaporshell.Condition"
                 if ([string]$($_.PSTypeNames) -match "($(($allowedTypes|ForEach-Object{[RegEx]::Escape($_)}) -join '|'))") {
                     $true
                 }

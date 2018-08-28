@@ -1,4 +1,4 @@
-﻿function Add-VSEMRInstanceFleetConfigInstanceTypeConfig {
+function Add-VSEMRInstanceFleetConfigInstanceTypeConfig {
     <#
     .SYNOPSIS
         Adds an AWS::EMR::InstanceFleetConfig.InstanceTypeConfig resource property to the template
@@ -56,7 +56,7 @@
     (
         [parameter(Mandatory = $false)]
         [ValidateScript( {
-                $allowedTypes = "System.String","Vaporshell.Function"
+                $allowedTypes = "System.String","Vaporshell.Function","Vaporshell.Condition"
                 if ([string]$($_.PSTypeNames) -match "($(($allowedTypes|ForEach-Object{[RegEx]::Escape($_)}) -join '|'))") {
                     $true
                 }
@@ -83,7 +83,7 @@
         $EbsConfiguration,
         [parameter(Mandatory = $true)]
         [ValidateScript( {
-                $allowedTypes = "System.String","Vaporshell.Function"
+                $allowedTypes = "System.String","Vaporshell.Function","Vaporshell.Condition"
                 if ([string]$($_.PSTypeNames) -match "($(($allowedTypes|ForEach-Object{[RegEx]::Escape($_)}) -join '|'))") {
                     $true
                 }

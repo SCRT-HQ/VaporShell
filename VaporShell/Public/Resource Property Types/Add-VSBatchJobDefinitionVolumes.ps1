@@ -1,4 +1,4 @@
-﻿function Add-VSBatchJobDefinitionVolumes {
+function Add-VSBatchJobDefinitionVolumes {
     <#
     .SYNOPSIS
         Adds an AWS::Batch::JobDefinition.Volumes resource property to the template
@@ -32,7 +32,7 @@
         $Host,
         [parameter(Mandatory = $false)]
         [ValidateScript( {
-                $allowedTypes = "System.String","Vaporshell.Function"
+                $allowedTypes = "System.String","Vaporshell.Function","Vaporshell.Condition"
                 if ([string]$($_.PSTypeNames) -match "($(($allowedTypes|ForEach-Object{[RegEx]::Escape($_)}) -join '|'))") {
                     $true
                 }

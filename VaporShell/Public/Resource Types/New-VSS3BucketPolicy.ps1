@@ -1,4 +1,4 @@
-﻿function New-VSS3BucketPolicy {
+function New-VSS3BucketPolicy {
     <#
     .SYNOPSIS
         Adds an AWS::S3::BucketPolicy resource to the template
@@ -73,7 +73,7 @@
         $LogicalId,
         [parameter(Mandatory = $true)]
         [ValidateScript( {
-                $allowedTypes = "System.String","Vaporshell.Function"
+                $allowedTypes = "System.String","Vaporshell.Function","Vaporshell.Condition"
                 if ([string]$($_.PSTypeNames) -match "($(($allowedTypes|ForEach-Object{[RegEx]::Escape($_)}) -join '|'))") {
                     $true
                 }

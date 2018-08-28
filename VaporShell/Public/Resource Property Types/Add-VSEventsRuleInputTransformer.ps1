@@ -1,4 +1,4 @@
-﻿function Add-VSEventsRuleInputTransformer {
+function Add-VSEventsRuleInputTransformer {
     <#
     .SYNOPSIS
         Adds an AWS::Events::Rule.InputTransformer resource property to the template
@@ -35,7 +35,7 @@
         $InputPathsMap,
         [parameter(Mandatory = $true)]
         [ValidateScript( {
-                $allowedTypes = "System.String","Vaporshell.Function"
+                $allowedTypes = "System.String","Vaporshell.Function","Vaporshell.Condition"
                 if ([string]$($_.PSTypeNames) -match "($(($allowedTypes|ForEach-Object{[RegEx]::Escape($_)}) -join '|'))") {
                     $true
                 }

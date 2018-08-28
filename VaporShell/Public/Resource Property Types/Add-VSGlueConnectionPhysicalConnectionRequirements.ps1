@@ -1,4 +1,4 @@
-﻿function Add-VSGlueConnectionPhysicalConnectionRequirements {
+function Add-VSGlueConnectionPhysicalConnectionRequirements {
     <#
     .SYNOPSIS
         Adds an AWS::Glue::Connection.PhysicalConnectionRequirements resource property to the template
@@ -37,7 +37,7 @@
     (
         [parameter(Mandatory = $false)]
         [ValidateScript( {
-                $allowedTypes = "System.String","Vaporshell.Function"
+                $allowedTypes = "System.String","Vaporshell.Function","Vaporshell.Condition"
                 if ([string]$($_.PSTypeNames) -match "($(($allowedTypes|ForEach-Object{[RegEx]::Escape($_)}) -join '|'))") {
                     $true
                 }
@@ -50,7 +50,7 @@
         $SecurityGroupIdList,
         [parameter(Mandatory = $false)]
         [ValidateScript( {
-                $allowedTypes = "System.String","Vaporshell.Function"
+                $allowedTypes = "System.String","Vaporshell.Function","Vaporshell.Condition"
                 if ([string]$($_.PSTypeNames) -match "($(($allowedTypes|ForEach-Object{[RegEx]::Escape($_)}) -join '|'))") {
                     $true
                 }
