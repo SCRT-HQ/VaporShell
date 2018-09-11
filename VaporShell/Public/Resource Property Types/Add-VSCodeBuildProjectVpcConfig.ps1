@@ -12,12 +12,12 @@ function Add-VSCodeBuildProjectVpcConfig {
     .PARAMETER Subnets
 		PrimitiveItemType: String    
 		Type: List    
-		Required: True    
+		Required: False    
 		Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-codebuild-project-vpcconfig.html#cfn-codebuild-project-vpcconfig-subnets    
 		UpdateType: Mutable    
 
     .PARAMETER VpcId
-		Required: True    
+		Required: False    
 		Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-codebuild-project-vpcconfig.html#cfn-codebuild-project-vpcconfig-vpcid    
 		PrimitiveType: String    
 		UpdateType: Mutable    
@@ -25,7 +25,7 @@ function Add-VSCodeBuildProjectVpcConfig {
     .PARAMETER SecurityGroupIds
 		PrimitiveItemType: String    
 		Type: List    
-		Required: True    
+		Required: False    
 		Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-codebuild-project-vpcconfig.html#cfn-codebuild-project-vpcconfig-securitygroupids    
 		UpdateType: Mutable    
 
@@ -36,9 +36,9 @@ function Add-VSCodeBuildProjectVpcConfig {
     [cmdletbinding()]
     Param
     (
-        [parameter(Mandatory = $true)]
+        [parameter(Mandatory = $false)]
         $Subnets,
-        [parameter(Mandatory = $true)]
+        [parameter(Mandatory = $false)]
         [ValidateScript( {
                 $allowedTypes = "System.String","Vaporshell.Function","Vaporshell.Condition"
                 if ([string]$($_.PSTypeNames) -match "($(($allowedTypes|ForEach-Object{[RegEx]::Escape($_)}) -join '|'))") {
@@ -49,7 +49,7 @@ function Add-VSCodeBuildProjectVpcConfig {
                 }
             })]
         $VpcId,
-        [parameter(Mandatory = $true)]
+        [parameter(Mandatory = $false)]
         $SecurityGroupIds
     )
     Begin {

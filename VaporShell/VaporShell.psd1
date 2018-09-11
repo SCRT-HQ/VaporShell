@@ -12,7 +12,7 @@
     RootModule             = 'VaporShell.psm1'
 
     # Version number of this module.
-    ModuleVersion          = '2.4.1'
+    ModuleVersion          = '2.5.0'
 
     # ID used to uniquely identify this module
     GUID                   = 'd526494c-6e59-41ff-ad05-eedbc1473b6a'

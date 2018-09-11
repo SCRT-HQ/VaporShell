@@ -35,6 +35,14 @@ function Add-VSEC2SpotFleetSpotFleetRequestConfigData {
 		Type: List    
 		UpdateType: Immutable    
 
+    .PARAMETER LaunchTemplateConfigs
+		Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-spotfleet-spotfleetrequestconfigdata.html#cfn-ec2-spotfleet-spotfleetrequestconfigdata-launchtemplateconfigs    
+		DuplicatesAllowed: False    
+		ItemType: LaunchTemplateConfig    
+		Required: False    
+		Type: List    
+		UpdateType: Immutable    
+
     .PARAMETER ReplaceUnhealthyInstances
 		Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-spotfleet-spotfleetrequestconfigdata.html#cfn-ec2-spotfleet-spotfleetrequestconfigdata-replaceunhealthyinstances    
 		PrimitiveType: Boolean    
@@ -128,6 +136,17 @@ function Add-VSEC2SpotFleetSpotFleetRequestConfigData {
                 }
             })]
         $LaunchSpecifications,
+        [parameter(Mandatory = $false)]
+        [ValidateScript( {
+                $allowedTypes = "Vaporshell.Resource.EC2.SpotFleet.LaunchTemplateConfig"
+                if ([string]$($_.PSTypeNames) -match "($(($allowedTypes|ForEach-Object{[RegEx]::Escape($_)}) -join '|'))") {
+                    $true
+                }
+                else {
+                    $PSCmdlet.ThrowTerminatingError((New-VSError -String "This parameter only accepts the following types: $($allowedTypes -join ", "). The current types of the value are: $($_.PSTypeNames -join ", ")."))
+                }
+            })]
+        $LaunchTemplateConfigs,
         [parameter(Mandatory = $false)]
         [System.Boolean]
         $ReplaceUnhealthyInstances,

@@ -62,6 +62,12 @@ function New-VSAutoScalingAutoScalingGroup {
 		Required: False    
 		UpdateType: Mutable    
 
+    .PARAMETER LaunchTemplate
+		Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-as-group.html#cfn-as-group-launchtemplate    
+		Required: False    
+		Type: LaunchTemplateSpecification    
+		UpdateType: Mutable    
+
     .PARAMETER LifecycleHookSpecificationList
 		Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-as-group.html#cfn-autoscaling-autoscalinggroup-lifecyclehookspecificationlist    
 		DuplicatesAllowed: True    
@@ -273,6 +279,8 @@ function New-VSAutoScalingAutoScalingGroup {
                 }
             })]
         $LaunchConfigurationName,
+        [parameter(Mandatory = $false)]
+        $LaunchTemplate,
         [parameter(Mandatory = $false)]
         [ValidateScript( {
                 $allowedTypes = "Vaporshell.Resource.AutoScaling.AutoScalingGroup.LifecycleHookSpecification"
