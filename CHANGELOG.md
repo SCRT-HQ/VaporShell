@@ -2,33 +2,45 @@
 
 <!-- TOC -->
 
-- [2.4.1](#241)
-- [2.4.0](#240)
-- [2.3.0](#230)
-- [2.2.1](#221)
-- [2.2.0](#220)
-- [2.1.2](#212)
-- [2.1.1](#211)
-- [2.1.0](#210)
-- [2.0.3](#203)
-- [2.0.0](#200)
-- [1.2.3](#123)
-- [1.2.2](#122)
-- [1.2.0](#120)
-- [1.1.5](#115)
-- [1.1.0](#110)
-- [1.0.0](#100)
-- [0.7.10](#0710)
-- [0.7.09](#0709)
-- [0.7.08](#0708)
-- [0.7.07](#0707)
-- [0.7.06](#0706)
-- [0.7.05](#0705)
-- [0.7.04](#0704)
-- [0.7.03](#0703)
-- [0.7.02](#0702)
+* [2.5.1](#251)
+* [2.5.0](#250)
+* [2.4.1](#241)
+* [2.4.0](#240)
+* [2.3.0](#230)
+* [2.2.1](#221)
+* [2.2.0](#220)
+* [2.1.2](#212)
+* [2.1.1](#211)
+* [2.1.0](#210)
+* [2.0.3](#203)
+* [2.0.0](#200)
+* [1.2.3](#123)
+* [1.2.2](#122)
+* [1.2.0](#120)
+* [1.1.5](#115)
+* [1.1.0](#110)
+* [1.0.0](#100)
+* [0.7.10](#0710)
+* [0.7.09](#0709)
+* [0.7.08](#0708)
+* [0.7.07](#0707)
+* [0.7.06](#0706)
+* [0.7.05](#0705)
+* [0.7.04](#0704)
+* [0.7.03](#0703)
+* [0.7.02](#0702)
 
 <!-- /TOC -->
+
+## 2.5.1
+
+- Updated script methods on `Initialize-VaporShell` and `Import-VaporShell`
+- Updated `Add-UserData` with new `-UseJoin` parameter to add UserData using Fn::Join for readability if preferred and `-Replace` to supply a hashtable of values to replace in your UserData with script values
+- Updated overall performance in `Add-UserData`
+
+## 2.5.0
+
+- Added `Import-VSTemplateConfig` to enable external template usage for dynamic templates
 
 ## 2.4.1
 
@@ -57,7 +69,7 @@
 
 ## 2.1.2
 
-- Added additional ConEmu support to `Watch-Stack` 
+- Added additional ConEmu support to `Watch-Stack`
 
 ## 2.1.1
 
@@ -112,7 +124,7 @@
 ## 1.0.0
 
 - Added full YAML support for import and export via leveraging `cfn-flip` from awslabs
-- All functional issues resolved, ready to declare v1!  
+- All functional issues resolved, ready to declare v1!
 
 
 ## 0.7.10
@@ -136,17 +148,17 @@
 - AppVeyor config updates
 
 
-## 0.7.06 
+## 0.7.06
 
 - Added in FunctionBuilder and finished building all resource and resource property types
 
 
-## 0.7.05 
+## 0.7.05
 
 - Added `Add-UserData`
 
 
-## 0.7.04 
+## 0.7.04
 
 - Added Coveralls.io code coverage grading to CI process
 

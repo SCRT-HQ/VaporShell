@@ -12,7 +12,7 @@
     RootModule             = 'VaporShell.psm1'
 
     # Version number of this module.
-    ModuleVersion          = '2.5.0'
+    ModuleVersion          = '2.5.1'
 
     # ID used to uniquely identify this module
     GUID                   = 'd526494c-6e59-41ff-ad05-eedbc1473b6a'
@@ -28,9 +28,9 @@
 
     # Description of the functionality provided by this module
     Description            = "A PowerShell module for building, packaging and deploying AWS CloudFormation templates
-    
+
 Prerequisites
-    
+
 - PowerShell 3+
     - On Linux or macOS? Grab PowerShell 6 here: https://github.com/powershell/powershell#get-powershell
 - .NET 4.5.0+ OR .netstandard 1.3+
@@ -123,7 +123,7 @@ Website: https://vaporshell.io/
             # ExternalModuleDependencies = ''
 
         } # End of PSData hashtable
-    
+
     } # End of PrivateData hashtable
 
     # HelpInfo URI of this module

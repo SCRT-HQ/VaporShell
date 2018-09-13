@@ -2,7 +2,7 @@ function Initialize-Vaporshell {
     <#
     .SYNOPSIS
         The starting point for your template buildout. This should always be the first thing called in your template script.
-    
+
     .DESCRIPTION
         The starting point for your template buildout. This should always be the first thing called in your template script.
 
@@ -10,7 +10,7 @@ function Initialize-Vaporshell {
 
     .PARAMETER FormatVersion
         The AWSTemplateFormatVersion section (optional) identifies the capabilities of the template. The latest template format version is 2010-09-09 and is currently the only valid value.
-    
+
     .PARAMETER Description
         The template description. Total byte count for the description has to be greater than 0 but less than 1024.
 
@@ -40,7 +40,17 @@ function Initialize-Vaporshell {
         $tempObj | Add-Member -MemberType NoteProperty -Name "Description" -Value "$Description"
     }
     $toString = {
-        Export-Vaporshell -VaporshellTemplate $this -As JSON -Verbose:$false -Force
+        Process {
+            $params = @{
+                VaporshellTemplate = $this
+                As = 'JSON'
+                Force = $true
+            }
+            if ($args[0]) {
+                $params['Verbose'] = $args[0]
+            }
+            Export-Vaporshell @params
+        }
     }
     $memberParam = @{
         MemberType  = "ScriptMethod"
@@ -51,11 +61,18 @@ function Initialize-Vaporshell {
     Add-Member @memberParam -Force
     $toJSON = {
         Process {
-            $outFile = @{}
-            foreach ($obj in $args) {
-                $outFile["Path"] = $obj
+            $params = @{
+                VaporshellTemplate = $this
+                As = 'JSON'
+                Force = $true
             }
-            Export-Vaporshell -VaporshellTemplate $this -As JSON -Verbose:$false @outFile -Force
+            if ($args[0]) {
+                $params['Path'] = $args[0]
+            }
+            if ($args[1]) {
+                $params['Verbose'] = $args[1]
+            }
+            Export-Vaporshell @params
         }
     }
     $memberParam = @{
@@ -67,11 +84,18 @@ function Initialize-Vaporshell {
     Add-Member @memberParam
     $toYAML = {
         Process {
-            $outFile = @{}
-            foreach ($obj in $args) {
-                $outFile["Path"] = $obj
+            $params = @{
+                VaporshellTemplate = $this
+                As = 'YAML'
+                Force = $true
             }
-            Export-Vaporshell -VaporshellTemplate $this -As YAML -Verbose:$false @outFile -Force
+            if ($args[0]) {
+                $params['Path'] = $args[0]
+            }
+            if ($args[1]) {
+                $params['Verbose'] = $args[1]
+            }
+            Export-Vaporshell @params
         }
     }
     $memberParam = @{
@@ -79,6 +103,27 @@ function Initialize-Vaporshell {
         InputObject = $tempObj
         Name        = "ToYAML"
         Value       = $toYAML
+    }
+    Add-Member @memberParam
+    $validate = {
+        Process {
+            $params = @{
+                TemplateBody = $this.ToJSON()
+            }
+            if ($args[0]) {
+                $params['ProfileName'] = $args[0]
+            }
+            if ($args[1]) {
+                $params['Verbose'] = $args[1]
+            }
+            Get-TemplateValidation @params
+        }
+    }
+    $memberParam = @{
+        MemberType  = "ScriptMethod"
+        InputObject = $tempObj
+        Name        = "Validate"
+        Value       = $validate
     }
     Add-Member @memberParam
     $addMetadata = {

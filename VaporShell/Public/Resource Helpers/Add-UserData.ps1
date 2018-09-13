@@ -2,17 +2,17 @@ function Add-UserData {
     <#
     .SYNOPSIS
         Adds UserData to a resource on the template. For single values (i.e. in AutoScaling Launch Configurations), it adds the single For multiple values, it automatically adds it as {"Fn::Base64": {"Fn::Join": ["",[VALUES...] ] } } to reduce the amount of scripting needed.
-    
+
     .PARAMETER String
         An array of strings and/or Instrinsic Functions.
 
         IMPORTANT: You must specify new lines in Powershell syntax so it identifies it as a new line when converting to JSON via Export-Vaporshell. This will convert `n [backtick n] into \n [backslash n] in the resulting JSON template.
-    
+
     .PARAMETER File
         The path of the script file to convert to UserData. This cannot contain any Intrinsic functions such as Ref in it. Use the String parameter if you'd like to include functions in the array.
 
     .EXAMPLE
-        $EC2 = 
+        $EC2 =
 
     .FUNCTIONALITY
         Vaporshell
@@ -42,63 +42,66 @@ function Add-UserData {
                 }
             })]
         [System.String]
-        $File
+        $File,
+        [parameter(Mandatory = $false)]
+        [hashtable]
+        $Replace,
+        [parameter(Mandatory = $false)]
+        [switch]
+        $UseJoin
     )
     Begin {
-        $Values = @()
+        $Values = ""
     }
     Process {
         switch ($PSBoundParameters.Keys) {
             'String' {
-                $Values = $String
+                $Values += $String
             }
             'File' {
-                $Path = (Resolve-Path -Path $File).Path
-                if ($Path -like "*.ps1") {
-                    $Windows = $true
-                    $tag = "powershell"
-                }
-                elseif ($Path -like "*.bat" -or $Path -like "*.cmd") {
-                    $Windows = $true
-                    $tag = "script"
-                }
-                else {
-                    $Windows = $false
-                }
-                [System.Collections.ArrayList]$fileContents = Get-Content $Path
-                do {
-                    if ([string]::IsNullOrWhiteSpace($fileContents[0])){
-                        $fileContents.RemoveAt(0)
+                $item = Get-Item $File
+                switch ($item.Extension) {
+                    '.ps1' {
+                        $Windows = $true
+                        $tag = "powershell"
                     }
-                } until (!([string]::IsNullOrWhiteSpace($fileContents[0])))
-                do {
-                    $lastIndex = $fileContents.Count - 1
-                    if ([string]::IsNullOrWhiteSpace($fileContents[$lastIndex])){
-                        $fileContents.RemoveAt($lastIndex)
+                    '.bat' {
+                        $Windows = $true
+                        $tag = "script"
                     }
-                } until (!([string]::IsNullOrWhiteSpace($fileContents[$lastIndex - 1])))
-                if ($Windows) {
-                    if ($fileContents[0] -notlike "<$($tag)>*") {
-                        $Values += "<$($tag)>"
+                    '.cmd' {
+                        $Windows = $true
+                        $tag = "script"
+                    }
+                    Default {
+                        $Windows = $false
                     }
                 }
-                $fileContents | ForEach-Object {
-                    $Values += "$($_)`n"
-                }
-                if ($Windows) {
-                    if ($fileContents[$fileContents.Count - 1] -notlike "</$($tag)>*") {
-                        $Values += "</$($tag)>"
+                $fileContents = (Get-Content $item.FullName | Where-Object {$_}) -join "`n"
+                if ($Windows -and $fileContents -notlike "<$($tag)>*") {
+                    if ($fileContents[0] -notlike "<$($tag)>`n*") {
+                        $Values += "<$($tag)>`n"
                     }
+                }
+                $Values += $fileContents
+                if ($Windows -and $fileContents -notlike "*</$($tag)>*") {
+                    $Values += "`n</$($tag)>"
                 }
             }
         }
     }
     End {
-        if ($Values.Count -gt 1) {
-            $obj = Add-FnBase64 -ValueToEncode (Add-FnJoin -ListOfValues $Values)
+        if ($PSBoundParameters.Keys -contains 'Replace') {
+            foreach ($key in $PSBoundParameters['Replace'].Keys) {
+                Write-Verbose "Replacing [$key] with [$($PSBoundParameters['Replace'][$key])]"
+                $Values = $Values.Replace($key,$PSBoundParameters['Replace'][$key])
+            }
+        }
+        if ($UseJoin) {
+            $obj = Add-FnBase64 -ValueToEncode (Add-FnJoin "" ($Values -split "`n") -Verbose:$false) -Verbose:$false
         }
         else {
-            $obj = Add-FnBase64 -ValueToEncode ($Values | Select-Object -First 1)
+            $obj = Add-FnBase64 -ValueToEncode $Values -Verbose:$false
         }
         $obj | Add-ObjectDetail -TypeName 'Vaporshell.Resource.UserData'
         Write-Verbose "Resulting JSON from $($MyInvocation.MyCommand): `n`n`t$($obj | ConvertTo-Json -Depth 5)`n"

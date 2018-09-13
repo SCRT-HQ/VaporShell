@@ -2,10 +2,10 @@ function Import-Vaporshell {
     <#
     .SYNOPSIS
         Allows you to import an existing CloudFormation template as a starting point.
-    
+
     .DESCRIPTION
         Allows you to import an existing CloudFormation template as a starting point.
-    
+
     .PARAMETER Path
         The path to the existing template.
 
@@ -50,7 +50,17 @@ function Import-Vaporshell {
         $tempObj = $tempObj.TemplateBody
     }
     $toString = {
-        Export-Vaporshell -VaporshellTemplate $this -As JSON -Verbose:$false -Force
+        Process {
+            $params = @{
+                VaporshellTemplate = $this
+                As = 'JSON'
+                Force = $true
+            }
+            if ($args[0]) {
+                $params['Verbose'] = $args[0]
+            }
+            Export-Vaporshell @params
+        }
     }
     $memberParam = @{
         MemberType  = "ScriptMethod"
@@ -61,11 +71,18 @@ function Import-Vaporshell {
     Add-Member @memberParam -Force
     $toJSON = {
         Process {
-            $outFile = @{}
-            foreach ($obj in $args) {
-                $outFile["Path"] = $obj
+            $params = @{
+                VaporshellTemplate = $this
+                As = 'JSON'
+                Force = $true
             }
-            Export-Vaporshell -VaporshellTemplate $this -As JSON -Verbose:$false @outFile -Force
+            if ($args[0]) {
+                $params['Path'] = $args[0]
+            }
+            if ($args[1]) {
+                $params['Verbose'] = $args[1]
+            }
+            Export-Vaporshell @params
         }
     }
     $memberParam = @{
@@ -77,11 +94,18 @@ function Import-Vaporshell {
     Add-Member @memberParam
     $toYAML = {
         Process {
-            $outFile = @{}
-            foreach ($obj in $args) {
-                $outFile["Path"] = $obj
+            $params = @{
+                VaporshellTemplate = $this
+                As = 'YAML'
+                Force = $true
             }
-            Export-Vaporshell -VaporshellTemplate $this -As YAML -Verbose:$false @outFile -Force
+            if ($args[0]) {
+                $params['Path'] = $args[0]
+            }
+            if ($args[1]) {
+                $params['Verbose'] = $args[1]
+            }
+            Export-Vaporshell @params
         }
     }
     $memberParam = @{
@@ -89,6 +113,27 @@ function Import-Vaporshell {
         InputObject = $tempObj
         Name        = "ToYAML"
         Value       = $toYAML
+    }
+    Add-Member @memberParam
+    $validate = {
+        Process {
+            $params = @{
+                TemplateBody = $this.ToJSON()
+            }
+            if ($args[0]) {
+                $params['ProfileName'] = $args[0]
+            }
+            if ($args[1]) {
+                $params['Verbose'] = $args[1]
+            }
+            Get-TemplateValidation @params
+        }
+    }
+    $memberParam = @{
+        MemberType  = "ScriptMethod"
+        InputObject = $tempObj
+        Name        = "Validate"
+        Value       = $validate
     }
     Add-Member @memberParam
     $addMetadata = {
