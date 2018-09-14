@@ -2,19 +2,19 @@ function Watch-Stack {
     <#
     .SYNOPSIS
     Watches Stack Events as they happen. Colorizes events based on event type.
-    
+
     .PARAMETER StackId
     The Stack ID or name of the stack that you'd like to watch events for.
-    
+
     .PARAMETER InNewWindow
     WINDOWS ONLY (For now). Watch events in a new PowerShell window. So you can continue working in your current console.
-    
+
     .PARAMETER RefreshRate
     The rate in seconds that you'd like the event list to poll for new events. Defaults to 2.
 
     .PARAMETER ProfileName
     The name of the configuration profile to deploy the stack with. Defaults to $env:AWS_PROFILE, if set.
-    
+
     .FUNCTIONALITY
     Vaporshell
     #>
@@ -68,14 +68,30 @@ function Watch-Stack {
         $strings = @()
         $head = "`nSTACK NAME : $StackName`nREFRESH  : $RefreshRate seconds`n"
         Colorize $head
+        $private:tableHeaderAdded = $false
+        $resTypeLength = 30
         do {
             try {
-                $results = Get-VSStack -Events -StackId "$StackName" @prof -ErrorAction Stop -Verbose:$false
+                $results = Get-VSStack -Events -StackId "$StackName" @prof -ErrorAction Stop -Verbose:$false | Sort-Object timestamp
                 $StackName = $results[0].StackId
-                $stack = ($results | Sort-Object timestamp | Select-Object Timestamp,ResourceStatus,StackName,ResourceType,ResourceStatusReason | Format-Table -AutoSize | Out-String) -split "`n" | Where-Object {!([String]::IsNullOrWhiteSpace($_)) -and $strings -notcontains $_.Trim()}
+                $snLength = $results[0].StackName.Length
+                $stack = $results | Sort-Object TimeStamp | ForEach-Object {
+                    if (!$private:tableHeaderAdded) {
+                        "{0,-20} {1,-20} {2,-$($snLength)} {3,-$resTypeLength} {4,-35}" -f 'Timestamp','ResourceStatus','StackName','ResourceType','ResourceStatusReason'
+                        "{0,-20} {1,-20} {2,-$($snLength)} {3,-$resTypeLength} {4,-35}" -f '---------','--------------','---------','------------','--------------------'
+                        $private:tableHeaderAdded = $true
+                    }
+                    if ($_.ResourceType.Length -gt $resTypeLength) {
+                        $resTypeLength = $_.ResourceType.Length
+                    }
+                    $formatted = "{0,-20} {1,-20} {2,-$($snLength)} {3,-$resTypeLength} {4,-35}" -f $_.Timestamp,$_.ResourceStatus,$_.StackName,$_.ResourceType,$_.ResourceStatusReason
+                    if ($strings -notcontains $formatted.Trim()) {
+                        $formatted.Trim()
+                    }
+                }
                 $strings += $stack | ForEach-Object {$_.Trim()}
                 Colorize $stack
-                if ($i -ge 1 -and $stack -clike '*_COMPLETE*AWS::CloudFormation::Stack*') {
+                if ($i -ge 1 -and ($stack -clike '*_COMPLETE*AWS::CloudFormation::Stack*' -or $stack -clike '*Stack creation time exceeded the specified timeout*')) {
                     $cont = $false
                 }
                 else {
