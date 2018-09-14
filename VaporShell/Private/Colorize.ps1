@@ -5,13 +5,13 @@ function Colorize {
         [String[]]
         $Strings
     )
-    
+
     Process {
         foreach ($row in $Strings) {
             if ($row -like "*STACK NAME *" -or $row -like "*REFRESH *") {
                 Write-Host -ForegroundColor Black -BackgroundColor Cyan $row
             }
-            elseif ($row -like "*FAILED*") {
+            elseif ($row -like "*_FAILED*") {
                 Write-Host -ForegroundColor Black -BackgroundColor Red $row
             }
             elseif ($row -like "*REVIEW_IN_PROGRESS*") {
