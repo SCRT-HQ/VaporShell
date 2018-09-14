@@ -18,7 +18,7 @@
 
 <div align="center">
   <!-- AppVeyor -->
-  <a href="https://ci.appveyor.com/project/nferrell/vaporshell/branch/master">
+  <a href="https://ci.appveyor.com/project/scrthq/vaporshell/branch/master">
     <img src="https://ci.appveyor.com/api/projects/status/8a4jsfv42tbmlym8/branch/master?svg=true"
       alt="AppVeyor - Windows Build Status" title="AppVeyor - Windows Build Status" />
   </a>&nbsp;&nbsp;&nbsp;
@@ -67,7 +67,7 @@
     <a href="https://vaporshell.io/docs/examples">
       Examples
     </a>
-    <span> | </span><!-- 
+    <span> | </span><!--
     <a href="https://github.com/scrthq/VaporShell/blob/master/GitHub/CONTRIBUTING.md">
       Contributing
     </a>
@@ -84,13 +84,17 @@
 
 
 ## Table of Contents
+- [Table of Contents](#table-of-contents)
 - [Features](#features)
 - [Prerequisites](#prerequisites)
 - [Installation](#installation)
 - [Tips](#tips)
+  - [Working with Credentials](#working-with-credentials)
+  - [Bare Necessities](#bare-necessities)
 - [Examples](#examples)
 - [In Action](#in-action)
 - [License](#license)
+- [Changelog](#changelog)
 
 ## Features
 
@@ -208,4 +212,3 @@ This is a deployment being watched via `Watch-Stack $stackName` to show stack cr
 ## Changelog
 
 [Changelog](https://github.com/scrthq/VaporShell/blob/master/CHANGELOG.md)
-
