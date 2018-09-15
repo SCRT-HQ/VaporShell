@@ -43,7 +43,7 @@
 
 ## 2.5.3
 
-- Fixed bug in `Watch-Stack` updates found in
+- Fixed bug in `Watch-Stack` updates found in v2.5.2
 
 ## 2.5.2
 
