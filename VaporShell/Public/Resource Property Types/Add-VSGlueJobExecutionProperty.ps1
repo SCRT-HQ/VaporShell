@@ -41,5 +41,6 @@ function Add-VSGlueJobExecutionProperty {
     }
     End {
         $obj | Add-ObjectDetail -TypeName 'Vaporshell.Resource.Glue.Job.ExecutionProperty'
+        Write-Verbose "Resulting JSON from $($MyInvocation.MyCommand): `n`n$($obj | ConvertTo-Json -Depth 5)`n"
     }
 }

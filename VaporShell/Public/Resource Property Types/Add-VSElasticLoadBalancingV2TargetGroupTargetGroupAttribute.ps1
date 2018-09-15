@@ -66,5 +66,6 @@ function Add-VSElasticLoadBalancingV2TargetGroupTargetGroupAttribute {
     }
     End {
         $obj | Add-ObjectDetail -TypeName 'Vaporshell.Resource.ElasticLoadBalancingV2.TargetGroup.TargetGroupAttribute'
+        Write-Verbose "Resulting JSON from $($MyInvocation.MyCommand): `n`n$($obj | ConvertTo-Json -Depth 5)`n"
     }
 }

@@ -11,8 +11,14 @@ function Add-UserData {
     .PARAMETER File
         The path of the script file to convert to UserData. This cannot contain any Intrinsic functions such as Ref in it. Use the String parameter if you'd like to include functions in the array.
 
-    .EXAMPLE
-        $EC2 =
+    .PARAMETER Replace
+        A hashtable of keys to replace in your UserData file with the corresponding values.
+
+    .PARAMETER Persist
+        If true and the UserData file does not already include it, adds the <persist>true</persist> tag to the end of the UserData file.
+
+    .PARAMETER UseJoin
+        If true, uses Fn::Join to add the UserData contents as an array of strings. If false or excluded, content is
 
     .FUNCTIONALITY
         Vaporshell
@@ -48,6 +54,9 @@ function Add-UserData {
         $Replace,
         [parameter(Mandatory = $false)]
         [switch]
+        $Persist,
+        [parameter(Mandatory = $false)]
+        [switch]
         $UseJoin
     )
     Begin {
@@ -77,7 +86,7 @@ function Add-UserData {
                         $Windows = $false
                     }
                 }
-                $fileContents = (Get-Content $item.FullName | Where-Object {$_}) -join "`n"
+                $fileContents = ([System.IO.File]::ReadAllLines($item.FullName) | Where-Object {$_}) -join "`n"
                 if ($Windows -and $fileContents -notlike "<$($tag)>*") {
                     if ($fileContents[0] -notlike "<$($tag)>`n*") {
                         $Values += "<$($tag)>`n"
@@ -86,6 +95,9 @@ function Add-UserData {
                 $Values += $fileContents
                 if ($Windows -and $fileContents -notlike "*</$($tag)>*") {
                     $Values += "`n</$($tag)>"
+                }
+                if ($Persist -and $fileContents -notlike "*<persist>true</persist>*") {
+                    $Values += "`n<persist>true</persist>"
                 }
             }
         }
@@ -104,6 +116,6 @@ function Add-UserData {
             $obj = Add-FnBase64 -ValueToEncode $Values -Verbose:$false
         }
         $obj | Add-ObjectDetail -TypeName 'Vaporshell.Resource.UserData'
-        Write-Verbose "Resulting JSON from $($MyInvocation.MyCommand): `n`n`t$($obj | ConvertTo-Json -Depth 5)`n"
+        Write-Verbose "Resulting JSON from $($MyInvocation.MyCommand): `n`n$($obj | ConvertTo-Json -Depth 5)`n"
     }
 }

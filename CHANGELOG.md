@@ -2,6 +2,8 @@
 
 <!-- TOC -->
 
+- [2.5.4](#254)
+- [2.5.3](#253)
 - [2.5.2](#252)
 - [2.5.1](#251)
 - [2.5.0](#250)
@@ -32,6 +34,16 @@
 - [0.7.02](#0702)
 
 <!-- /TOC -->
+
+## 2.5.4
+
+- Updated `Add-UserData` with `-Persist` switch to allow flagging the UserData as persistent by adding the `<persist>true</persist>` tag on the bottom of the contents.
+- Updated all Resource Property Type functions to include Verbose output of the resulting JSON object
+- Updated `Add-VSLambdaFunctionCode` with `-ZipFilePath` parameter to enable passing of a file path instead of reading ZipFile as string only
+
+## 2.5.3
+
+- Fixed bug in `Watch-Stack` updates found in
 
 ## 2.5.2
 

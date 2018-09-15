@@ -157,5 +157,6 @@ function Add-VSKinesisFirehoseDeliveryStreamExtendedS3DestinationConfiguration {
     }
     End {
         $obj | Add-ObjectDetail -TypeName 'Vaporshell.Resource.KinesisFirehose.DeliveryStream.ExtendedS3DestinationConfiguration'
+        Write-Verbose "Resulting JSON from $($MyInvocation.MyCommand): `n`n$($obj | ConvertTo-Json -Depth 5)`n"
     }
 }

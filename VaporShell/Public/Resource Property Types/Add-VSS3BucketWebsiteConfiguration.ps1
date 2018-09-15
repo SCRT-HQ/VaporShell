@@ -93,5 +93,6 @@ function Add-VSS3BucketWebsiteConfiguration {
     }
     End {
         $obj | Add-ObjectDetail -TypeName 'Vaporshell.Resource.S3.Bucket.WebsiteConfiguration'
+        Write-Verbose "Resulting JSON from $($MyInvocation.MyCommand): `n`n$($obj | ConvertTo-Json -Depth 5)`n"
     }
 }

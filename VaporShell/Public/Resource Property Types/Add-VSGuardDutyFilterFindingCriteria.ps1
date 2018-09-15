@@ -71,5 +71,6 @@ function Add-VSGuardDutyFilterFindingCriteria {
     }
     End {
         $obj | Add-ObjectDetail -TypeName 'Vaporshell.Resource.GuardDuty.Filter.FindingCriteria'
+        Write-Verbose "Resulting JSON from $($MyInvocation.MyCommand): `n`n$($obj | ConvertTo-Json -Depth 5)`n"
     }
 }

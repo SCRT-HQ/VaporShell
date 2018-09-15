@@ -83,7 +83,10 @@ function Add-VSLambdaFunctionCode {
                     $PSCmdlet.ThrowTerminatingError((New-VSError -String "This parameter only accepts the following types: $($allowedTypes -join ", "). The current types of the value are: $($_.PSTypeNames -join ", ")."))
                 }
             })]
-        $ZipFile
+        $ZipFile,
+        [parameter(Mandatory = $false)]
+        [ValidateScript({Test-Path $_})]
+        $ZipFilePath
     )
     Begin {
         $obj = [PSCustomObject]@{}
@@ -92,6 +95,9 @@ function Add-VSLambdaFunctionCode {
     Process {
         foreach ($key in $PSBoundParameters.Keys | Where-Object {$commonParams -notcontains $_}) {
             switch ($key) {
+                ZipFilePath {
+                    $obj | Add-Member -MemberType NoteProperty -Name 'ZipFile' -Value ([System.IO.File]::ReadAllText($ZipFilePath))
+                }
                 Default {
                     $obj | Add-Member -MemberType NoteProperty -Name $key -Value $PSBoundParameters.$key
                 }
@@ -100,5 +106,6 @@ function Add-VSLambdaFunctionCode {
     }
     End {
         $obj | Add-ObjectDetail -TypeName 'Vaporshell.Resource.Lambda.Function.Code'
+        Write-Verbose "Resulting JSON from $($MyInvocation.MyCommand): `n`n$($obj | ConvertTo-Json -Depth 5)`n"
     }
 }

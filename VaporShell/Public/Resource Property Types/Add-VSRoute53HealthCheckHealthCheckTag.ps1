@@ -66,5 +66,6 @@ function Add-VSRoute53HealthCheckHealthCheckTag {
     }
     End {
         $obj | Add-ObjectDetail -TypeName 'Vaporshell.Resource.Route53.HealthCheck.HealthCheckTag'
+        Write-Verbose "Resulting JSON from $($MyInvocation.MyCommand): `n`n$($obj | ConvertTo-Json -Depth 5)`n"
     }
 }

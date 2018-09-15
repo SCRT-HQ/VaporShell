@@ -66,5 +66,6 @@ function Add-VSEC2VPNConnectionVpnTunnelOptionsSpecification {
     }
     End {
         $obj | Add-ObjectDetail -TypeName 'Vaporshell.Resource.EC2.VPNConnection.VpnTunnelOptionsSpecification'
+        Write-Verbose "Resulting JSON from $($MyInvocation.MyCommand): `n`n$($obj | ConvertTo-Json -Depth 5)`n"
     }
 }

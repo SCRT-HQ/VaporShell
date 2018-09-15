@@ -163,5 +163,6 @@ function Add-VSEMRInstanceGroupConfigCloudWatchAlarmDefinition {
     }
     End {
         $obj | Add-ObjectDetail -TypeName 'Vaporshell.Resource.EMR.InstanceGroupConfig.CloudWatchAlarmDefinition'
+        Write-Verbose "Resulting JSON from $($MyInvocation.MyCommand): `n`n$($obj | ConvertTo-Json -Depth 5)`n"
     }
 }

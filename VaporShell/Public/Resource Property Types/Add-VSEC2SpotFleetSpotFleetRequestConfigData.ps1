@@ -216,5 +216,6 @@ function Add-VSEC2SpotFleetSpotFleetRequestConfigData {
     }
     End {
         $obj | Add-ObjectDetail -TypeName 'Vaporshell.Resource.EC2.SpotFleet.SpotFleetRequestConfigData'
+        Write-Verbose "Resulting JSON from $($MyInvocation.MyCommand): `n`n$($obj | ConvertTo-Json -Depth 5)`n"
     }
 }

@@ -83,5 +83,6 @@ function Add-VSEC2InstanceLaunchTemplateSpecification {
     }
     End {
         $obj | Add-ObjectDetail -TypeName 'Vaporshell.Resource.EC2.Instance.LaunchTemplateSpecification'
+        Write-Verbose "Resulting JSON from $($MyInvocation.MyCommand): `n`n$($obj | ConvertTo-Json -Depth 5)`n"
     }
 }

@@ -59,5 +59,6 @@ function Add-VSDirectoryServiceMicrosoftADVpcSettings {
     }
     End {
         $obj | Add-ObjectDetail -TypeName 'Vaporshell.Resource.DirectoryService.MicrosoftAD.VpcSettings'
+        Write-Verbose "Resulting JSON from $($MyInvocation.MyCommand): `n`n$($obj | ConvertTo-Json -Depth 5)`n"
     }
 }

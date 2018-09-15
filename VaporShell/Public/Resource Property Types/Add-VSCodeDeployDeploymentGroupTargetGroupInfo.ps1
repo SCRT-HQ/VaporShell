@@ -49,5 +49,6 @@ function Add-VSCodeDeployDeploymentGroupTargetGroupInfo {
     }
     End {
         $obj | Add-ObjectDetail -TypeName 'Vaporshell.Resource.CodeDeploy.DeploymentGroup.TargetGroupInfo'
+        Write-Verbose "Resulting JSON from $($MyInvocation.MyCommand): `n`n$($obj | ConvertTo-Json -Depth 5)`n"
     }
 }

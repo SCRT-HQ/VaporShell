@@ -66,5 +66,6 @@ function Add-VSCloudFrontStreamingDistributionS3Origin {
     }
     End {
         $obj | Add-ObjectDetail -TypeName 'Vaporshell.Resource.CloudFront.StreamingDistribution.S3Origin'
+        Write-Verbose "Resulting JSON from $($MyInvocation.MyCommand): `n`n$($obj | ConvertTo-Json -Depth 5)`n"
     }
 }

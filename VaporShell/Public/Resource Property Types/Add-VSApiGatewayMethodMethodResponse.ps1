@@ -71,5 +71,6 @@ function Add-VSApiGatewayMethodMethodResponse {
     }
     End {
         $obj | Add-ObjectDetail -TypeName 'Vaporshell.Resource.ApiGateway.Method.MethodResponse'
+        Write-Verbose "Resulting JSON from $($MyInvocation.MyCommand): `n`n$($obj | ConvertTo-Json -Depth 5)`n"
     }
 }

@@ -66,5 +66,6 @@ function Add-VSCloud9EnvironmentEC2Repository {
     }
     End {
         $obj | Add-ObjectDetail -TypeName 'Vaporshell.Resource.Cloud9.EnvironmentEC2.Repository'
+        Write-Verbose "Resulting JSON from $($MyInvocation.MyCommand): `n`n$($obj | ConvertTo-Json -Depth 5)`n"
     }
 }

@@ -50,5 +50,6 @@ function Add-VSApiGatewayUsagePlanThrottleSettings {
     }
     End {
         $obj | Add-ObjectDetail -TypeName 'Vaporshell.Resource.ApiGateway.UsagePlan.ThrottleSettings'
+        Write-Verbose "Resulting JSON from $($MyInvocation.MyCommand): `n`n$($obj | ConvertTo-Json -Depth 5)`n"
     }
 }

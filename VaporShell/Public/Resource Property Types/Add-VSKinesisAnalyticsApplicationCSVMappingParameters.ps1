@@ -66,5 +66,6 @@ function Add-VSKinesisAnalyticsApplicationCSVMappingParameters {
     }
     End {
         $obj | Add-ObjectDetail -TypeName 'Vaporshell.Resource.KinesisAnalytics.Application.CSVMappingParameters'
+        Write-Verbose "Resulting JSON from $($MyInvocation.MyCommand): `n`n$($obj | ConvertTo-Json -Depth 5)`n"
     }
 }

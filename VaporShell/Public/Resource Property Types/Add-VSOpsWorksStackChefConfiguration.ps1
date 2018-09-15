@@ -58,5 +58,6 @@ function Add-VSOpsWorksStackChefConfiguration {
     }
     End {
         $obj | Add-ObjectDetail -TypeName 'Vaporshell.Resource.OpsWorks.Stack.ChefConfiguration'
+        Write-Verbose "Resulting JSON from $($MyInvocation.MyCommand): `n`n$($obj | ConvertTo-Json -Depth 5)`n"
     }
 }

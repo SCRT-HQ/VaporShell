@@ -66,5 +66,6 @@ function Add-VSApplicationAutoScalingScalingPolicyMetricDimension {
     }
     End {
         $obj | Add-ObjectDetail -TypeName 'Vaporshell.Resource.ApplicationAutoScaling.ScalingPolicy.MetricDimension'
+        Write-Verbose "Resulting JSON from $($MyInvocation.MyCommand): `n`n$($obj | ConvertTo-Json -Depth 5)`n"
     }
 }

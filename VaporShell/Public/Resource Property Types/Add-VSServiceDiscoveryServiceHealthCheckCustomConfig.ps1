@@ -41,5 +41,6 @@ function Add-VSServiceDiscoveryServiceHealthCheckCustomConfig {
     }
     End {
         $obj | Add-ObjectDetail -TypeName 'Vaporshell.Resource.ServiceDiscovery.Service.HealthCheckCustomConfig'
+        Write-Verbose "Resulting JSON from $($MyInvocation.MyCommand): `n`n$($obj | ConvertTo-Json -Depth 5)`n"
     }
 }

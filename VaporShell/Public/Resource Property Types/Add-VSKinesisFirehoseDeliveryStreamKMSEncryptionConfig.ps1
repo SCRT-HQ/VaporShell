@@ -49,5 +49,6 @@ function Add-VSKinesisFirehoseDeliveryStreamKMSEncryptionConfig {
     }
     End {
         $obj | Add-ObjectDetail -TypeName 'Vaporshell.Resource.KinesisFirehose.DeliveryStream.KMSEncryptionConfig'
+        Write-Verbose "Resulting JSON from $($MyInvocation.MyCommand): `n`n$($obj | ConvertTo-Json -Depth 5)`n"
     }
 }

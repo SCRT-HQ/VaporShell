@@ -100,5 +100,6 @@ function Add-VSIoTTopicRuleCloudwatchAlarmAction {
     }
     End {
         $obj | Add-ObjectDetail -TypeName 'Vaporshell.Resource.IoT.TopicRule.CloudwatchAlarmAction'
+        Write-Verbose "Resulting JSON from $($MyInvocation.MyCommand): `n`n$($obj | ConvertTo-Json -Depth 5)`n"
     }
 }

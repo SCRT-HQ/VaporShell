@@ -75,5 +75,6 @@ function Add-VSRoute53RecordSetGroupAliasTarget {
     }
     End {
         $obj | Add-ObjectDetail -TypeName 'Vaporshell.Resource.Route53.RecordSetGroup.AliasTarget'
+        Write-Verbose "Resulting JSON from $($MyInvocation.MyCommand): `n`n$($obj | ConvertTo-Json -Depth 5)`n"
     }
 }

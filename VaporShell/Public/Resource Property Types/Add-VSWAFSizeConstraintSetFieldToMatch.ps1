@@ -66,5 +66,6 @@ function Add-VSWAFSizeConstraintSetFieldToMatch {
     }
     End {
         $obj | Add-ObjectDetail -TypeName 'Vaporshell.Resource.WAF.SizeConstraintSet.FieldToMatch'
+        Write-Verbose "Resulting JSON from $($MyInvocation.MyCommand): `n`n$($obj | ConvertTo-Json -Depth 5)`n"
     }
 }

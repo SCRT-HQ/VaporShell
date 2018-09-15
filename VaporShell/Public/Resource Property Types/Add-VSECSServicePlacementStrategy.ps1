@@ -66,5 +66,6 @@ function Add-VSECSServicePlacementStrategy {
     }
     End {
         $obj | Add-ObjectDetail -TypeName 'Vaporshell.Resource.ECS.Service.PlacementStrategy'
+        Write-Verbose "Resulting JSON from $($MyInvocation.MyCommand): `n`n$($obj | ConvertTo-Json -Depth 5)`n"
     }
 }

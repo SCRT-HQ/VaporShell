@@ -103,5 +103,6 @@ function Add-VSRDSOptionGroupOptionConfiguration {
     }
     End {
         $obj | Add-ObjectDetail -TypeName 'Vaporshell.Resource.RDS.OptionGroup.OptionConfiguration'
+        Write-Verbose "Resulting JSON from $($MyInvocation.MyCommand): `n`n$($obj | ConvertTo-Json -Depth 5)`n"
     }
 }

@@ -67,5 +67,6 @@ function Add-VSApiGatewayUsagePlanQuotaSettings {
     }
     End {
         $obj | Add-ObjectDetail -TypeName 'Vaporshell.Resource.ApiGateway.UsagePlan.QuotaSettings'
+        Write-Verbose "Resulting JSON from $($MyInvocation.MyCommand): `n`n$($obj | ConvertTo-Json -Depth 5)`n"
     }
 }

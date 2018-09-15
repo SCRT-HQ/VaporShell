@@ -49,5 +49,6 @@ function Add-VSEC2NetworkInterfaceInstanceIpv6Address {
     }
     End {
         $obj | Add-ObjectDetail -TypeName 'Vaporshell.Resource.EC2.NetworkInterface.InstanceIpv6Address'
+        Write-Verbose "Resulting JSON from $($MyInvocation.MyCommand): `n`n$($obj | ConvertTo-Json -Depth 5)`n"
     }
 }

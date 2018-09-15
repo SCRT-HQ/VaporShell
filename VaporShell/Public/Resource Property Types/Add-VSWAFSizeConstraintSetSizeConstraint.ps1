@@ -83,5 +83,6 @@ function Add-VSWAFSizeConstraintSetSizeConstraint {
     }
     End {
         $obj | Add-ObjectDetail -TypeName 'Vaporshell.Resource.WAF.SizeConstraintSet.SizeConstraint'
+        Write-Verbose "Resulting JSON from $($MyInvocation.MyCommand): `n`n$($obj | ConvertTo-Json -Depth 5)`n"
     }
 }

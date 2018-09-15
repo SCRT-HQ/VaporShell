@@ -66,5 +66,6 @@ function Add-VSCognitoUserPoolUserAttributeType {
     }
     End {
         $obj | Add-ObjectDetail -TypeName 'Vaporshell.Resource.Cognito.UserPoolUser.AttributeType'
+        Write-Verbose "Resulting JSON from $($MyInvocation.MyCommand): `n`n$($obj | ConvertTo-Json -Depth 5)`n"
     }
 }

@@ -182,5 +182,6 @@ function Add-VSSSMMaintenanceWindowTaskMaintenanceWindowRunCommandParameters {
     }
     End {
         $obj | Add-ObjectDetail -TypeName 'Vaporshell.Resource.SSM.MaintenanceWindowTask.MaintenanceWindowRunCommandParameters'
+        Write-Verbose "Resulting JSON from $($MyInvocation.MyCommand): `n`n$($obj | ConvertTo-Json -Depth 5)`n"
     }
 }

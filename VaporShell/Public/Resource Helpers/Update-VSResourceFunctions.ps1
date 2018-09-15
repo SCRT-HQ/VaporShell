@@ -2,10 +2,10 @@ function Update-VSResourceFunctions {
     <#
     .SYNOPSIS
         Updates the Resource and Property Type functions
-    
+
     .DESCRIPTION
         Updates the Resource and Property Type functions
-    
+
     .PARAMETER Region
         The AWS region by location whose specification sheet you'd like to use to update your functions
 
@@ -40,15 +40,13 @@ function Update-VSResourceFunctions {
 
     $URL = $regHash[$Region]
     $specs = (Invoke-WebRequest $URL).Content | ConvertFrom-Json
-
-    foreach ($resource in $specs.PropertyTypes.psobject.Properties) {
-        Write-Verbose "Updating $($resource.Name)"
-        Convert-SpecToFunction -Resource $resource -ResourceType Property
-    }
-
-    foreach ($resource in $specs.ResourceTypes.psobject.Properties) {
-        Write-Verbose "Updating $($resource.Name)"
+    foreach ($resource in $specs.ResourceTypes.psobject.Properties | Sort-Object Name) {
+        Write-Verbose "Updating Resource Type [$($resource.Name)]"
         Convert-SpecToFunction -Resource $resource -ResourceType Resource
+    }
+    foreach ($resource in $specs.PropertyTypes.psobject.Properties | Sort-Object Name) {
+        Write-Verbose "Updating Resource Property [$($resource.Name)]"
+        Convert-SpecToFunction -Resource $resource -ResourceType Property
     }
     $AfterTypeCount = (Get-ChildItem -Path (Resolve-Path "$script:VaporshellPath\Public\Resource Types").Path).Count
     $AfterPropCount = (Get-ChildItem -Path (Resolve-Path "$script:VaporshellPath\Public\Resource Property Types").Path).Count

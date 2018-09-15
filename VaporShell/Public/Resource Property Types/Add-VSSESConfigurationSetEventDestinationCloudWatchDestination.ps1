@@ -50,5 +50,6 @@ function Add-VSSESConfigurationSetEventDestinationCloudWatchDestination {
     }
     End {
         $obj | Add-ObjectDetail -TypeName 'Vaporshell.Resource.SES.ConfigurationSetEventDestination.CloudWatchDestination'
+        Write-Verbose "Resulting JSON from $($MyInvocation.MyCommand): `n`n$($obj | ConvertTo-Json -Depth 5)`n"
     }
 }

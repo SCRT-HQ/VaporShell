@@ -83,5 +83,6 @@ function Add-VSKinesisAnalyticsApplicationReferenceDataSourceS3ReferenceDataSour
     }
     End {
         $obj | Add-ObjectDetail -TypeName 'Vaporshell.Resource.KinesisAnalytics.ApplicationReferenceDataSource.S3ReferenceDataSource'
+        Write-Verbose "Resulting JSON from $($MyInvocation.MyCommand): `n`n$($obj | ConvertTo-Json -Depth 5)`n"
     }
 }

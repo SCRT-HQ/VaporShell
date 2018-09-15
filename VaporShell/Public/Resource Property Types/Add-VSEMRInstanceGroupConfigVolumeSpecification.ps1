@@ -67,5 +67,6 @@ function Add-VSEMRInstanceGroupConfigVolumeSpecification {
     }
     End {
         $obj | Add-ObjectDetail -TypeName 'Vaporshell.Resource.EMR.InstanceGroupConfig.VolumeSpecification'
+        Write-Verbose "Resulting JSON from $($MyInvocation.MyCommand): `n`n$($obj | ConvertTo-Json -Depth 5)`n"
     }
 }

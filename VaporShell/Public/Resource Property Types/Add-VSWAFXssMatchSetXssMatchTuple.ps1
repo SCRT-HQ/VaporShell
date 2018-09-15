@@ -57,5 +57,6 @@ function Add-VSWAFXssMatchSetXssMatchTuple {
     }
     End {
         $obj | Add-ObjectDetail -TypeName 'Vaporshell.Resource.WAF.XssMatchSet.XssMatchTuple'
+        Write-Verbose "Resulting JSON from $($MyInvocation.MyCommand): `n`n$($obj | ConvertTo-Json -Depth 5)`n"
     }
 }

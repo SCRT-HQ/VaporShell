@@ -59,5 +59,6 @@ function Add-VSSSMAssociationTarget {
     }
     End {
         $obj | Add-ObjectDetail -TypeName 'Vaporshell.Resource.SSM.Association.Target'
+        Write-Verbose "Resulting JSON from $($MyInvocation.MyCommand): `n`n$($obj | ConvertTo-Json -Depth 5)`n"
     }
 }

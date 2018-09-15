@@ -66,5 +66,6 @@ function Add-VSWAFRegionalByteMatchSetFieldToMatch {
     }
     End {
         $obj | Add-ObjectDetail -TypeName 'Vaporshell.Resource.WAFRegional.ByteMatchSet.FieldToMatch'
+        Write-Verbose "Resulting JSON from $($MyInvocation.MyCommand): `n`n$($obj | ConvertTo-Json -Depth 5)`n"
     }
 }

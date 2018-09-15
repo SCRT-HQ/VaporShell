@@ -12,7 +12,7 @@
     RootModule             = 'VaporShell.psm1'
 
     # Version number of this module.
-    ModuleVersion          = '2.5.3'
+    ModuleVersion          = '2.5.4'
 
     # ID used to uniquely identify this module
     GUID                   = 'd526494c-6e59-41ff-ad05-eedbc1473b6a'
@@ -105,7 +105,7 @@ Website: https://vaporshell.io/
         PSData = @{
 
             # Tags applied to this module. These help with module discovery in online galleries.
-            Tags       = 'AWS','CloudFormation','CFN','JSON','YAML'
+            Tags       = 'AWS','CloudFormation','CFN','JSON','YAML','PSEdition_Core','PSEdition_Desktop'
 
             # A URL to the license for this module.
             LicenseUri = 'https://github.com/scrthq/VaporShell/blob/master/LICENSE'
@@ -127,7 +127,7 @@ Website: https://vaporshell.io/
     } # End of PrivateData hashtable
 
     # HelpInfo URI of this module
-    HelpInfoURI            = 'https://vaporshell.io/docs/'
+    # HelpInfoURI            = 'https://vaporshell.io/docs/'
 
     # Default prefix for commands exported from this module. Override the default prefix using Import-Module -Prefix.
     # DefaultCommandPrefix = ''

@@ -66,5 +66,6 @@ function Add-VSKinesisAnalyticsApplicationOutputKinesisFirehoseOutput {
     }
     End {
         $obj | Add-ObjectDetail -TypeName 'Vaporshell.Resource.KinesisAnalytics.ApplicationOutput.KinesisFirehoseOutput'
+        Write-Verbose "Resulting JSON from $($MyInvocation.MyCommand): `n`n$($obj | ConvertTo-Json -Depth 5)`n"
     }
 }

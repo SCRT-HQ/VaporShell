@@ -66,5 +66,6 @@ function Add-VSRoute53HostedZoneHostedZoneTag {
     }
     End {
         $obj | Add-ObjectDetail -TypeName 'Vaporshell.Resource.Route53.HostedZone.HostedZoneTag'
+        Write-Verbose "Resulting JSON from $($MyInvocation.MyCommand): `n`n$($obj | ConvertTo-Json -Depth 5)`n"
     }
 }

@@ -83,5 +83,6 @@ function Add-VSConfigConfigRuleSourceDetail {
     }
     End {
         $obj | Add-ObjectDetail -TypeName 'Vaporshell.Resource.Config.ConfigRule.SourceDetail'
+        Write-Verbose "Resulting JSON from $($MyInvocation.MyCommand): `n`n$($obj | ConvertTo-Json -Depth 5)`n"
     }
 }

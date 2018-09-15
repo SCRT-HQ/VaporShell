@@ -203,5 +203,6 @@ function Add-VSEMRClusterJobFlowInstancesConfig {
     }
     End {
         $obj | Add-ObjectDetail -TypeName 'Vaporshell.Resource.EMR.Cluster.JobFlowInstancesConfig'
+        Write-Verbose "Resulting JSON from $($MyInvocation.MyCommand): `n`n$($obj | ConvertTo-Json -Depth 5)`n"
     }
 }

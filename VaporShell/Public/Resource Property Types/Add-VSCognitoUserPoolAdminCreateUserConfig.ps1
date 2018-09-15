@@ -58,5 +58,6 @@ function Add-VSCognitoUserPoolAdminCreateUserConfig {
     }
     End {
         $obj | Add-ObjectDetail -TypeName 'Vaporshell.Resource.Cognito.UserPool.AdminCreateUserConfig'
+        Write-Verbose "Resulting JSON from $($MyInvocation.MyCommand): `n`n$($obj | ConvertTo-Json -Depth 5)`n"
     }
 }

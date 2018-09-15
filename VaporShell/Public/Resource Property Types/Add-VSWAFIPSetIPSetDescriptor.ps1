@@ -66,5 +66,6 @@ function Add-VSWAFIPSetIPSetDescriptor {
     }
     End {
         $obj | Add-ObjectDetail -TypeName 'Vaporshell.Resource.WAF.IPSet.IPSetDescriptor'
+        Write-Verbose "Resulting JSON from $($MyInvocation.MyCommand): `n`n$($obj | ConvertTo-Json -Depth 5)`n"
     }
 }

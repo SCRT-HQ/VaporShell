@@ -66,5 +66,6 @@ function Add-VSRedshiftClusterParameterGroupParameter {
     }
     End {
         $obj | Add-ObjectDetail -TypeName 'Vaporshell.Resource.Redshift.ClusterParameterGroup.Parameter'
+        Write-Verbose "Resulting JSON from $($MyInvocation.MyCommand): `n`n$($obj | ConvertTo-Json -Depth 5)`n"
     }
 }

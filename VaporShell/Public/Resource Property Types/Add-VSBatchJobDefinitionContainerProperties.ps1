@@ -200,5 +200,6 @@ function Add-VSBatchJobDefinitionContainerProperties {
     }
     End {
         $obj | Add-ObjectDetail -TypeName 'Vaporshell.Resource.Batch.JobDefinition.ContainerProperties'
+        Write-Verbose "Resulting JSON from $($MyInvocation.MyCommand): `n`n$($obj | ConvertTo-Json -Depth 5)`n"
     }
 }

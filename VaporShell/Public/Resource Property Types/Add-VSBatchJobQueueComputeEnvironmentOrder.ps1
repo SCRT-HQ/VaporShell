@@ -58,5 +58,6 @@ function Add-VSBatchJobQueueComputeEnvironmentOrder {
     }
     End {
         $obj | Add-ObjectDetail -TypeName 'Vaporshell.Resource.Batch.JobQueue.ComputeEnvironmentOrder'
+        Write-Verbose "Resulting JSON from $($MyInvocation.MyCommand): `n`n$($obj | ConvertTo-Json -Depth 5)`n"
     }
 }

@@ -83,5 +83,6 @@ function Add-VSGameLiftBuildS3Location {
     }
     End {
         $obj | Add-ObjectDetail -TypeName 'Vaporshell.Resource.GameLift.Build.S3Location'
+        Write-Verbose "Resulting JSON from $($MyInvocation.MyCommand): `n`n$($obj | ConvertTo-Json -Depth 5)`n"
     }
 }

@@ -58,5 +58,6 @@ function Add-VSLambdaAliasVersionWeight {
     }
     End {
         $obj | Add-ObjectDetail -TypeName 'Vaporshell.Resource.Lambda.Alias.VersionWeight'
+        Write-Verbose "Resulting JSON from $($MyInvocation.MyCommand): `n`n$($obj | ConvertTo-Json -Depth 5)`n"
     }
 }

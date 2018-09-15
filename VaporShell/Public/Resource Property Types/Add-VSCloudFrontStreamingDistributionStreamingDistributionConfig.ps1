@@ -108,5 +108,6 @@ function Add-VSCloudFrontStreamingDistributionStreamingDistributionConfig {
     }
     End {
         $obj | Add-ObjectDetail -TypeName 'Vaporshell.Resource.CloudFront.StreamingDistribution.StreamingDistributionConfig'
+        Write-Verbose "Resulting JSON from $($MyInvocation.MyCommand): `n`n$($obj | ConvertTo-Json -Depth 5)`n"
     }
 }

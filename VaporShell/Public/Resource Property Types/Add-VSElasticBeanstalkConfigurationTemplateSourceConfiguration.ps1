@@ -66,5 +66,6 @@ function Add-VSElasticBeanstalkConfigurationTemplateSourceConfiguration {
     }
     End {
         $obj | Add-ObjectDetail -TypeName 'Vaporshell.Resource.ElasticBeanstalk.ConfigurationTemplate.SourceConfiguration'
+        Write-Verbose "Resulting JSON from $($MyInvocation.MyCommand): `n`n$($obj | ConvertTo-Json -Depth 5)`n"
     }
 }

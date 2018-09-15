@@ -43,7 +43,7 @@ function $FunctionName {
     .LINK
         $Link
 
-"@ 
+"@
     if ($ResourceType -ne "Property") {
         $scriptContents += @"
     .PARAMETER LogicalId
@@ -72,7 +72,7 @@ function $FunctionName {
     }
 
     if ($ResourceType -ne "Property") {
-        $scriptContents += @"    
+        $scriptContents += @"
     .PARAMETER DeletionPolicy
         With the DeletionPolicy attribute you can preserve or (in some cases) backup a resource when its stack is deleted. You specify a DeletionPolicy attribute for each resource that you want to control. If a resource has no DeletionPolicy attribute, AWS CloudFormation deletes the resource by default.
 
@@ -97,7 +97,7 @@ function $FunctionName {
         Use the UpdatePolicy attribute to specify how AWS CloudFormation handles updates to the AWS::AutoScaling::AutoScalingGroup resource. AWS CloudFormation invokes one of three update policies depending on the type of change you make or whether a scheduled action is associated with the Auto Scaling group.
 
         You must use the "Add-UpdatePolicy" function here.
-    
+
 
     .PARAMETER Condition
         Logical ID of the condition that this resource needs to be true in order for this resource to be provisioned.`n
@@ -258,6 +258,24 @@ function $FunctionName {
         `$$ParamName
 "@
             }
+            elseif ($FunctionName -eq 'Add-VSLambdaFunctionCode' -and $ParamName -eq 'ZipFile') {
+                $scriptContents += @"
+        [parameter(Mandatory = $Mandatory)]
+        [ValidateScript( {
+                `$allowedTypes = "System.String","Vaporshell.Function","Vaporshell.Condition"
+                if ([string]`$(`$_.PSTypeNames) -match "(`$((`$allowedTypes|ForEach-Object{[RegEx]::Escape(`$_)}) -join '|'))") {
+                    `$true
+                }
+                else {
+                    `$PSCmdlet.ThrowTerminatingError((New-VSError -String "This parameter only accepts the following types: `$(`$allowedTypes -join ", "). The current types of the value are: `$(`$_.PSTypeNames -join ", ")."))
+                }
+            })]
+        `$$ParamName,
+        [parameter(Mandatory = `$false)]
+        [ValidateScript({Test-Path `$_})]
+        `$ZipFilePath
+"@
+            }
             else {
                 $scriptContents += @"
         [parameter(Mandatory = $Mandatory)]
@@ -281,7 +299,6 @@ function $FunctionName {
 "@
         }
     }
-
     if ($ResourceType -ne "Property") {
         if ($Name -eq "AWS::AutoScaling::AutoScalingGroup" -or $Name -eq "AWS::EC2::Instance" -or $Name -eq "AWS::CloudFormation::WaitCondition") {
             $scriptContents += @"
@@ -444,6 +461,13 @@ function $FunctionName {
                 }
 "@
         }
+        if ($FunctionName -eq 'Add-VSLambdaFunctionCode') {
+            $scriptContents += @"
+                ZipFilePath {
+                    `$obj | Add-Member -MemberType NoteProperty -Name 'ZipFile' -Value ([System.IO.File]::ReadAllText(`$ZipFilePath))
+                }
+"@
+        }
         $scriptContents += @"
                 Default {
                     `$obj | Add-Member -MemberType NoteProperty -Name `$key -Value `$PSBoundParameters.`$key
@@ -453,6 +477,7 @@ function $FunctionName {
     }
     End {
         `$obj | Add-ObjectDetail -TypeName '$TypeName'
+        Write-Verbose "Resulting JSON from `$(`$MyInvocation.MyCommand): ``n``n`$(`$obj | ConvertTo-Json -Depth 5)``n"
     }
 }
 "@
