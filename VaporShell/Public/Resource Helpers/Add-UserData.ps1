@@ -110,7 +110,7 @@ function Add-UserData {
             }
         }
         if ($UseJoin) {
-            $obj = Add-FnBase64 -ValueToEncode (Add-FnJoin "" ($Values -split "`n") -Verbose:$false) -Verbose:$false
+            $obj = Add-FnBase64 -ValueToEncode (Add-FnJoin "`n" ($Values -split "`n") -Verbose:$false) -Verbose:$false
         }
         else {
             $obj = Add-FnBase64 -ValueToEncode $Values -Verbose:$false

@@ -25,8 +25,10 @@ function Add-VSRDSOptionGroupOptionConfiguration {
 
     .PARAMETER OptionSettings
 		Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-rds-optiongroup-optionconfigurations.html#cfn-rds-optiongroup-optionconfigurations-optionsettings    
+		DuplicatesAllowed: False    
+		ItemType: OptionSetting    
 		Required: False    
-		Type: OptionSetting    
+		Type: List    
 		UpdateType: Mutable    
 
     .PARAMETER OptionVersion
@@ -70,6 +72,15 @@ function Add-VSRDSOptionGroupOptionConfiguration {
             })]
         $OptionName,
         [parameter(Mandatory = $false)]
+        [ValidateScript( {
+                $allowedTypes = "Vaporshell.Resource.RDS.OptionGroup.OptionSetting"
+                if ([string]$($_.PSTypeNames) -match "($(($allowedTypes|ForEach-Object{[RegEx]::Escape($_)}) -join '|'))") {
+                    $true
+                }
+                else {
+                    $PSCmdlet.ThrowTerminatingError((New-VSError -String "This parameter only accepts the following types: $($allowedTypes -join ", "). The current types of the value are: $($_.PSTypeNames -join ", ")."))
+                }
+            })]
         $OptionSettings,
         [parameter(Mandatory = $false)]
         [ValidateScript( {

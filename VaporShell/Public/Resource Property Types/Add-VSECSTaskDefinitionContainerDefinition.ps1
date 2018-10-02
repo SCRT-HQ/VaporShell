@@ -175,6 +175,12 @@ function Add-VSECSTaskDefinitionContainerDefinition {
 		Required: False    
 		UpdateType: Immutable    
 
+    .PARAMETER RepositoryCredentials
+		Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ecs-taskdefinition-containerdefinitions.html#cfn-ecs-taskdefinition-containerdefinition-repositorycredentials    
+		Required: False    
+		Type: RepositoryCredentials    
+		UpdateType: Immutable    
+
     .PARAMETER Ulimits
 		Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ecs-taskdefinition-containerdefinitions.html#cfn-ecs-taskdefinition-containerdefinition-ulimits    
 		DuplicatesAllowed: False    
@@ -208,6 +214,8 @@ function Add-VSECSTaskDefinitionContainerDefinition {
     #>
     [OutputType('Vaporshell.Resource.ECS.TaskDefinition.ContainerDefinition')]
     [cmdletbinding()]
+    [Diagnostics.CodeAnalysis.SuppressMessageAttribute("PSAvoidUsingPlainTextForPassword","RepositoryCredentials")]
+    [Diagnostics.CodeAnalysis.SuppressMessageAttribute("PSAvoidUsingUserNameAndPasswordParams","")]
     Param
     (
         [parameter(Mandatory = $false)]
@@ -329,6 +337,8 @@ function Add-VSECSTaskDefinitionContainerDefinition {
         [parameter(Mandatory = $false)]
         [System.Boolean]
         $ReadonlyRootFilesystem,
+        [parameter(Mandatory = $false)]
+        $RepositoryCredentials,
         [parameter(Mandatory = $false)]
         [ValidateScript( {
                 $allowedTypes = "Vaporshell.Resource.ECS.TaskDefinition.Ulimit"

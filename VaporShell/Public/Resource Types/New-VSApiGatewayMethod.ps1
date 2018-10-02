@@ -18,6 +18,14 @@ function New-VSApiGatewayMethod {
 		Required: False    
 		UpdateType: Mutable    
 
+    .PARAMETER AuthorizationScopes
+		Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-apigateway-method.html#cfn-apigateway-method-authorizationscopes    
+		DuplicatesAllowed: False    
+		PrimitiveItemType: String    
+		Required: False    
+		Type: List    
+		UpdateType: Mutable    
+
     .PARAMETER AuthorizationType
 		Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-apigateway-method.html#cfn-apigateway-method-authorizationtype    
 		PrimitiveType: String    
@@ -140,6 +148,8 @@ function New-VSApiGatewayMethod {
         [parameter(Mandatory = $false)]
         [System.Boolean]
         $ApiKeyRequired,
+        [parameter(Mandatory = $false)]
+        $AuthorizationScopes,
         [parameter(Mandatory = $false)]
         [ValidateScript( {
                 $allowedTypes = "System.String","Vaporshell.Function","Vaporshell.Condition"
@@ -292,6 +302,12 @@ function New-VSApiGatewayMethod {
                 }
                 Condition {
                     $ResourceParams.Add("Condition",$Condition)
+                }
+                AuthorizationScopes {
+                    if (!($ResourceParams["Properties"])) {
+                        $ResourceParams.Add("Properties",([PSCustomObject]@{}))
+                    }
+                    $ResourceParams["Properties"] | Add-Member -MemberType NoteProperty -Name AuthorizationScopes -Value @($AuthorizationScopes)
                 }
                 MethodResponses {
                     if (!($ResourceParams["Properties"])) {

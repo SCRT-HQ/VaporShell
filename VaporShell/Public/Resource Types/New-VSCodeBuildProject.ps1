@@ -24,6 +24,13 @@ function New-VSCodeBuildProject {
 		Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-codebuild-project.html#cfn-codebuild-project-vpcconfig    
 		UpdateType: Mutable    
 
+    .PARAMETER SecondarySources
+		Type: List    
+		Required: False    
+		Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-codebuild-project.html#cfn-codebuild-project-secondarysources    
+		ItemType: Source    
+		UpdateType: Mutable    
+
     .PARAMETER EncryptionKey
 		Required: False    
 		Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-codebuild-project.html#cfn-codebuild-project-encryptionkey    
@@ -34,6 +41,13 @@ function New-VSCodeBuildProject {
 		Type: ProjectTriggers    
 		Required: False    
 		Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-codebuild-project.html#cfn-codebuild-project-triggers    
+		UpdateType: Mutable    
+
+    .PARAMETER SecondaryArtifacts
+		Type: List    
+		Required: False    
+		Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-codebuild-project.html#cfn-codebuild-project-secondaryartifacts    
+		ItemType: Artifacts    
 		UpdateType: Mutable    
 
     .PARAMETER Source
@@ -58,6 +72,12 @@ function New-VSCodeBuildProject {
 		Required: False    
 		Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-codebuild-project.html#cfn-codebuild-project-badgeenabled    
 		PrimitiveType: Boolean    
+		UpdateType: Mutable    
+
+    .PARAMETER LogsConfig
+		Type: LogsConfig    
+		Required: False    
+		Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-codebuild-project.html#cfn-codebuild-project-logsconfig    
 		UpdateType: Mutable    
 
     .PARAMETER ServiceRole
@@ -153,6 +173,17 @@ function New-VSCodeBuildProject {
         $VpcConfig,
         [parameter(Mandatory = $false)]
         [ValidateScript( {
+                $allowedTypes = "Vaporshell.Resource.CodeBuild.Project.Source"
+                if ([string]$($_.PSTypeNames) -match "($(($allowedTypes|ForEach-Object{[RegEx]::Escape($_)}) -join '|'))") {
+                    $true
+                }
+                else {
+                    $PSCmdlet.ThrowTerminatingError((New-VSError -String "This parameter only accepts the following types: $($allowedTypes -join ", "). The current types of the value are: $($_.PSTypeNames -join ", ")."))
+                }
+            })]
+        $SecondarySources,
+        [parameter(Mandatory = $false)]
+        [ValidateScript( {
                 $allowedTypes = "System.String","Vaporshell.Function","Vaporshell.Condition"
                 if ([string]$($_.PSTypeNames) -match "($(($allowedTypes|ForEach-Object{[RegEx]::Escape($_)}) -join '|'))") {
                     $true
@@ -164,6 +195,17 @@ function New-VSCodeBuildProject {
         $EncryptionKey,
         [parameter(Mandatory = $false)]
         $Triggers,
+        [parameter(Mandatory = $false)]
+        [ValidateScript( {
+                $allowedTypes = "Vaporshell.Resource.CodeBuild.Project.Artifacts"
+                if ([string]$($_.PSTypeNames) -match "($(($allowedTypes|ForEach-Object{[RegEx]::Escape($_)}) -join '|'))") {
+                    $true
+                }
+                else {
+                    $PSCmdlet.ThrowTerminatingError((New-VSError -String "This parameter only accepts the following types: $($allowedTypes -join ", "). The current types of the value are: $($_.PSTypeNames -join ", ")."))
+                }
+            })]
+        $SecondaryArtifacts,
         [parameter(Mandatory = $true)]
         $Source,
         [parameter(Mandatory = $false)]
@@ -182,6 +224,8 @@ function New-VSCodeBuildProject {
         [parameter(Mandatory = $false)]
         [System.Boolean]
         $BadgeEnabled,
+        [parameter(Mandatory = $false)]
+        $LogsConfig,
         [parameter(Mandatory = $true)]
         [ValidateScript( {
                 $allowedTypes = "System.String","Vaporshell.Function","Vaporshell.Condition"
@@ -267,6 +311,18 @@ function New-VSCodeBuildProject {
                 }
                 Condition {
                     $ResourceParams.Add("Condition",$Condition)
+                }
+                SecondarySources {
+                    if (!($ResourceParams["Properties"])) {
+                        $ResourceParams.Add("Properties",([PSCustomObject]@{}))
+                    }
+                    $ResourceParams["Properties"] | Add-Member -MemberType NoteProperty -Name SecondarySources -Value @($SecondarySources)
+                }
+                SecondaryArtifacts {
+                    if (!($ResourceParams["Properties"])) {
+                        $ResourceParams.Add("Properties",([PSCustomObject]@{}))
+                    }
+                    $ResourceParams["Properties"] | Add-Member -MemberType NoteProperty -Name SecondaryArtifacts -Value @($SecondaryArtifacts)
                 }
                 Tags {
                     if (!($ResourceParams["Properties"])) {

@@ -56,6 +56,12 @@ function New-VSRDSDBCluster {
 		Required: True    
 		UpdateType: Immutable    
 
+    .PARAMETER EngineMode
+		Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-rds-dbcluster.html#cfn-rds-dbcluster-enginemode    
+		PrimitiveType: String    
+		Required: False    
+		UpdateType: Immutable    
+
     .PARAMETER EngineVersion
 		Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-rds-dbcluster.html#cfn-rds-dbcluster-engineversion    
 		PrimitiveType: String    
@@ -102,6 +108,12 @@ function New-VSRDSDBCluster {
 		Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-rds-dbcluster.html#cfn-rds-dbcluster-replicationsourceidentifier    
 		PrimitiveType: String    
 		Required: False    
+		UpdateType: Mutable    
+
+    .PARAMETER ScalingConfiguration
+		Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-rds-dbcluster.html#cfn-rds-dbcluster-scalingconfiguration    
+		Required: False    
+		Type: ScalingConfiguration    
 		UpdateType: Mutable    
 
     .PARAMETER SnapshotIdentifier
@@ -251,6 +263,17 @@ function New-VSRDSDBCluster {
                     $PSCmdlet.ThrowTerminatingError((New-VSError -String "This parameter only accepts the following types: $($allowedTypes -join ", "). The current types of the value are: $($_.PSTypeNames -join ", ")."))
                 }
             })]
+        $EngineMode,
+        [parameter(Mandatory = $false)]
+        [ValidateScript( {
+                $allowedTypes = "System.String","Vaporshell.Function","Vaporshell.Condition"
+                if ([string]$($_.PSTypeNames) -match "($(($allowedTypes|ForEach-Object{[RegEx]::Escape($_)}) -join '|'))") {
+                    $true
+                }
+                else {
+                    $PSCmdlet.ThrowTerminatingError((New-VSError -String "This parameter only accepts the following types: $($allowedTypes -join ", "). The current types of the value are: $($_.PSTypeNames -join ", ")."))
+                }
+            })]
         $EngineVersion,
         [parameter(Mandatory = $false)]
         [ValidateScript( {
@@ -321,6 +344,8 @@ function New-VSRDSDBCluster {
                 }
             })]
         $ReplicationSourceIdentifier,
+        [parameter(Mandatory = $false)]
+        $ScalingConfiguration,
         [parameter(Mandatory = $false)]
         [ValidateScript( {
                 $allowedTypes = "System.String","Vaporshell.Function","Vaporshell.Condition"

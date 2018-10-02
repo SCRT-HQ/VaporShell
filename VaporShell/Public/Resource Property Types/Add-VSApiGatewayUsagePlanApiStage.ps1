@@ -21,6 +21,14 @@ function Add-VSApiGatewayUsagePlanApiStage {
 		Required: False    
 		UpdateType: Mutable    
 
+    .PARAMETER Throttle
+		Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-apigateway-usageplan-apistage.html#cfn-apigateway-usageplan-apistage-throttle    
+		DuplicatesAllowed: False    
+		ItemType: ThrottleSettings    
+		Required: False    
+		Type: Map    
+		UpdateType: Mutable    
+
     .FUNCTIONALITY
         Vaporshell
     #>
@@ -49,7 +57,18 @@ function Add-VSApiGatewayUsagePlanApiStage {
                     $PSCmdlet.ThrowTerminatingError((New-VSError -String "This parameter only accepts the following types: $($allowedTypes -join ", "). The current types of the value are: $($_.PSTypeNames -join ", ")."))
                 }
             })]
-        $Stage
+        $Stage,
+        [parameter(Mandatory = $false)]
+        [ValidateScript( {
+                $allowedTypes = "Vaporshell.Resource.ApiGateway.UsagePlan.ThrottleSettings"
+                if ([string]$($_.PSTypeNames) -match "($(($allowedTypes|ForEach-Object{[RegEx]::Escape($_)}) -join '|'))") {
+                    $true
+                }
+                else {
+                    $PSCmdlet.ThrowTerminatingError((New-VSError -String "This parameter only accepts the following types: $($allowedTypes -join ", "). The current types of the value are: $($_.PSTypeNames -join ", ")."))
+                }
+            })]
+        $Throttle
     )
     Begin {
         $obj = [PSCustomObject]@{}

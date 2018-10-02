@@ -9,6 +9,12 @@ function Add-VSApiGatewayDeploymentStageDescription {
     .LINK
         http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-apigateway-deployment-stagedescription.html
 
+    .PARAMETER AccessLogSetting
+		Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-apigateway-deployment-stagedescription.html#cfn-apigateway-deployment-stagedescription-accesslogsetting    
+		Required: False    
+		Type: AccessLogSetting    
+		UpdateType: Mutable    
+
     .PARAMETER CacheClusterEnabled
 		Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-apigateway-deployment-stagedescription.html#cfn-apigateway-deployment-stagedescription-cacheclusterenabled    
 		PrimitiveType: Boolean    
@@ -37,6 +43,12 @@ function Add-VSApiGatewayDeploymentStageDescription {
 		Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-apigateway-deployment-stagedescription.html#cfn-apigateway-deployment-stagedescription-cachingenabled    
 		PrimitiveType: Boolean    
 		Required: False    
+		UpdateType: Mutable    
+
+    .PARAMETER CanarySetting
+		Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-apigateway-deployment-stagedescription.html#cfn-apigateway-deployment-stagedescription-canarysetting    
+		Required: False    
+		Type: CanarySetting    
 		UpdateType: Mutable    
 
     .PARAMETER ClientCertificateId
@@ -111,6 +123,8 @@ function Add-VSApiGatewayDeploymentStageDescription {
     Param
     (
         [parameter(Mandatory = $false)]
+        $AccessLogSetting,
+        [parameter(Mandatory = $false)]
         [System.Boolean]
         $CacheClusterEnabled,
         [parameter(Mandatory = $false)]
@@ -133,6 +147,8 @@ function Add-VSApiGatewayDeploymentStageDescription {
         [parameter(Mandatory = $false)]
         [System.Boolean]
         $CachingEnabled,
+        [parameter(Mandatory = $false)]
+        $CanarySetting,
         [parameter(Mandatory = $false)]
         [ValidateScript( {
                 $allowedTypes = "System.String","Vaporshell.Function","Vaporshell.Condition"

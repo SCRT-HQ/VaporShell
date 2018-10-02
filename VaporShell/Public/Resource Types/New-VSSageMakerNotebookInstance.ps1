@@ -46,7 +46,7 @@ function New-VSSageMakerNotebookInstance {
 		Required: False    
 		Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-sagemaker-notebookinstance.html#cfn-sagemaker-notebookinstance-lifecycleconfigname    
 		PrimitiveType: String    
-		UpdateType: Immutable    
+		UpdateType: Mutable    
 
     .PARAMETER SecurityGroupIds
 		PrimitiveItemType: String    

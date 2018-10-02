@@ -1,28 +1,16 @@
-function Add-VSECSTaskDefinitionVolume {
+function Add-VSECSTaskDefinitionRepositoryCredentials {
     <#
     .SYNOPSIS
-        Adds an AWS::ECS::TaskDefinition.Volume resource property to the template
+        Adds an AWS::ECS::TaskDefinition.RepositoryCredentials resource property to the template
 
     .DESCRIPTION
-        Adds an AWS::ECS::TaskDefinition.Volume resource property to the template
+        Adds an AWS::ECS::TaskDefinition.RepositoryCredentials resource property to the template
 
     .LINK
-        http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ecs-taskdefinition-volumes.html
+        http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ecs-taskdefinition-repositorycredentials.html
 
-    .PARAMETER DockerVolumeConfiguration
-		Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ecs-taskdefinition-volumes.html#cfn-ecs-taskdefinition-volume-dockervolumeconfiguration    
-		Required: False    
-		Type: DockerVolumeConfiguration    
-		UpdateType: Immutable    
-
-    .PARAMETER Host
-		Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ecs-taskdefinition-volumes.html#cfn-ecs-taskdefinition-volumes-host    
-		Required: False    
-		Type: HostVolumeProperties    
-		UpdateType: Immutable    
-
-    .PARAMETER Name
-		Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ecs-taskdefinition-volumes.html#cfn-ecs-taskdefinition-volumes-name    
+    .PARAMETER CredentialsParameter
+		Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ecs-taskdefinition-repositorycredentials.html#cfn-ecs-taskdefinition-repositorycredentials-credentialsparameter    
 		PrimitiveType: String    
 		Required: False    
 		UpdateType: Immutable    
@@ -30,14 +18,12 @@ function Add-VSECSTaskDefinitionVolume {
     .FUNCTIONALITY
         Vaporshell
     #>
-    [OutputType('Vaporshell.Resource.ECS.TaskDefinition.Volume')]
+    [OutputType('Vaporshell.Resource.ECS.TaskDefinition.RepositoryCredentials')]
     [cmdletbinding()]
+    [Diagnostics.CodeAnalysis.SuppressMessageAttribute("PSAvoidUsingPlainTextForPassword","CredentialsParameter")]
+    [Diagnostics.CodeAnalysis.SuppressMessageAttribute("PSAvoidUsingUserNameAndPasswordParams","")]
     Param
     (
-        [parameter(Mandatory = $false)]
-        $DockerVolumeConfiguration,
-        [parameter(Mandatory = $false)]
-        $Host,
         [parameter(Mandatory = $false)]
         [ValidateScript( {
                 $allowedTypes = "System.String","Vaporshell.Function","Vaporshell.Condition"
@@ -48,7 +34,7 @@ function Add-VSECSTaskDefinitionVolume {
                     $PSCmdlet.ThrowTerminatingError((New-VSError -String "This parameter only accepts the following types: $($allowedTypes -join ", "). The current types of the value are: $($_.PSTypeNames -join ", ")."))
                 }
             })]
-        $Name
+        $CredentialsParameter
     )
     Begin {
         $obj = [PSCustomObject]@{}
@@ -64,7 +50,7 @@ function Add-VSECSTaskDefinitionVolume {
         }
     }
     End {
-        $obj | Add-ObjectDetail -TypeName 'Vaporshell.Resource.ECS.TaskDefinition.Volume'
+        $obj | Add-ObjectDetail -TypeName 'Vaporshell.Resource.ECS.TaskDefinition.RepositoryCredentials'
         Write-Verbose "Resulting JSON from $($MyInvocation.MyCommand): `n`n$($obj | ConvertTo-Json -Depth 5)`n"
     }
 }

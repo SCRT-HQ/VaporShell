@@ -12,6 +12,12 @@ function New-VSApiGatewayDeployment {
     .PARAMETER LogicalId
         The logical ID must be alphanumeric (A-Za-z0-9) and unique within the template. Use the logical name to reference the resource in other parts of the template. For example, if you want to map an Amazon Elastic Block Store volume to an Amazon EC2 instance, you reference the logical IDs to associate the block stores with the instance.
 
+    .PARAMETER DeploymentCanarySettings
+		Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-apigateway-deployment.html#cfn-apigateway-deployment-deploymentcanarysettings    
+		Required: False    
+		Type: DeploymentCanarySettings    
+		UpdateType: Immutable    
+
     .PARAMETER Description
 		Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-apigateway-deployment.html#cfn-apigateway-deployment-description    
 		PrimitiveType: String    
@@ -83,6 +89,8 @@ function New-VSApiGatewayDeployment {
             })]
         [System.String]
         $LogicalId,
+        [parameter(Mandatory = $false)]
+        $DeploymentCanarySettings,
         [parameter(Mandatory = $false)]
         [ValidateScript( {
                 $allowedTypes = "System.String","Vaporshell.Function","Vaporshell.Condition"

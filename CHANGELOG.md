@@ -2,6 +2,7 @@
 
 <!-- TOC -->
 
+- [2.5.5](#255)
 - [2.5.4](#254)
 - [2.5.3](#253)
 - [2.5.2](#252)
@@ -34,6 +35,11 @@
 - [0.7.02](#0702)
 
 <!-- /TOC -->
+
+## 2.5.5
+
+- Fixed `Add-UserData`'s use of `Fn::Join` so that it automatically sets `\n` as the delimiter with the `-UseJoin` parameter
+- Updated Resource Type and Property Type functions to latest CloudFormation spec
 
 ## 2.5.4
 

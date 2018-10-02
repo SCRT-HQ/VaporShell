@@ -1,28 +1,22 @@
-function Add-VSCodeDeployDeploymentGroupEC2TagFilter {
+function Add-VSApiGatewayStageAccessLogSetting {
     <#
     .SYNOPSIS
-        Adds an AWS::CodeDeploy::DeploymentGroup.EC2TagFilter resource property to the template
+        Adds an AWS::ApiGateway::Stage.AccessLogSetting resource property to the template
 
     .DESCRIPTION
-        Adds an AWS::CodeDeploy::DeploymentGroup.EC2TagFilter resource property to the template
+        Adds an AWS::ApiGateway::Stage.AccessLogSetting resource property to the template
 
     .LINK
-        http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-codedeploy-deploymentgroup-ec2tagfilter.html
+        http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-apigateway-stage-accesslogsetting.html
 
-    .PARAMETER Key
-		Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-codedeploy-deploymentgroup-ec2tagfilter.html#cfn-codedeploy-deploymentgroup-ec2tagfilter-key    
+    .PARAMETER DestinationArn
+		Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-apigateway-stage-accesslogsetting.html#cfn-apigateway-stage-accesslogsetting-destinationarn    
 		PrimitiveType: String    
 		Required: False    
 		UpdateType: Mutable    
 
-    .PARAMETER Type
-		Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-codedeploy-deploymentgroup-ec2tagfilter.html#cfn-codedeploy-deploymentgroup-ec2tagfilter-type    
-		PrimitiveType: String    
-		Required: False    
-		UpdateType: Mutable    
-
-    .PARAMETER Value
-		Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-codedeploy-deploymentgroup-ec2tagfilter.html#cfn-codedeploy-deploymentgroup-ec2tagfilter-value    
+    .PARAMETER Format
+		Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-apigateway-stage-accesslogsetting.html#cfn-apigateway-stage-accesslogsetting-format    
 		PrimitiveType: String    
 		Required: False    
 		UpdateType: Mutable    
@@ -30,7 +24,7 @@ function Add-VSCodeDeployDeploymentGroupEC2TagFilter {
     .FUNCTIONALITY
         Vaporshell
     #>
-    [OutputType('Vaporshell.Resource.CodeDeploy.DeploymentGroup.EC2TagFilter')]
+    [OutputType('Vaporshell.Resource.ApiGateway.Stage.AccessLogSetting')]
     [cmdletbinding()]
     Param
     (
@@ -44,7 +38,7 @@ function Add-VSCodeDeployDeploymentGroupEC2TagFilter {
                     $PSCmdlet.ThrowTerminatingError((New-VSError -String "This parameter only accepts the following types: $($allowedTypes -join ", "). The current types of the value are: $($_.PSTypeNames -join ", ")."))
                 }
             })]
-        $Key,
+        $DestinationArn,
         [parameter(Mandatory = $false)]
         [ValidateScript( {
                 $allowedTypes = "System.String","Vaporshell.Function","Vaporshell.Condition"
@@ -55,18 +49,7 @@ function Add-VSCodeDeployDeploymentGroupEC2TagFilter {
                     $PSCmdlet.ThrowTerminatingError((New-VSError -String "This parameter only accepts the following types: $($allowedTypes -join ", "). The current types of the value are: $($_.PSTypeNames -join ", ")."))
                 }
             })]
-        $Type,
-        [parameter(Mandatory = $false)]
-        [ValidateScript( {
-                $allowedTypes = "System.String","Vaporshell.Function","Vaporshell.Condition"
-                if ([string]$($_.PSTypeNames) -match "($(($allowedTypes|ForEach-Object{[RegEx]::Escape($_)}) -join '|'))") {
-                    $true
-                }
-                else {
-                    $PSCmdlet.ThrowTerminatingError((New-VSError -String "This parameter only accepts the following types: $($allowedTypes -join ", "). The current types of the value are: $($_.PSTypeNames -join ", ")."))
-                }
-            })]
-        $Value
+        $Format
     )
     Begin {
         $obj = [PSCustomObject]@{}
@@ -82,7 +65,7 @@ function Add-VSCodeDeployDeploymentGroupEC2TagFilter {
         }
     }
     End {
-        $obj | Add-ObjectDetail -TypeName 'Vaporshell.Resource.CodeDeploy.DeploymentGroup.EC2TagFilter'
+        $obj | Add-ObjectDetail -TypeName 'Vaporshell.Resource.ApiGateway.Stage.AccessLogSetting'
         Write-Verbose "Resulting JSON from $($MyInvocation.MyCommand): `n`n$($obj | ConvertTo-Json -Depth 5)`n"
     }
 }

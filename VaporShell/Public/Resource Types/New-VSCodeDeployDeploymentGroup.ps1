@@ -70,6 +70,12 @@ function New-VSCodeDeployDeploymentGroup {
 		Type: List    
 		UpdateType: Mutable    
 
+    .PARAMETER Ec2TagSet
+		Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-codedeploy-deploymentgroup.html#cfn-codedeploy-deploymentgroup-ec2tagset    
+		Required: False    
+		Type: EC2TagSet    
+		UpdateType: Mutable    
+
     .PARAMETER LoadBalancerInfo
 		Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-codedeploy-deploymentgroup.html#cfn-codedeploy-deploymentgroup-loadbalancerinfo    
 		Required: False    
@@ -82,6 +88,12 @@ function New-VSCodeDeployDeploymentGroup {
 		ItemType: TagFilter    
 		Required: False    
 		Type: List    
+		UpdateType: Mutable    
+
+    .PARAMETER OnPremisesTagSet
+		Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-codedeploy-deploymentgroup.html#cfn-codedeploy-deploymentgroup-onpremisestagset    
+		Required: False    
+		Type: OnPremisesTagSet    
 		UpdateType: Mutable    
 
     .PARAMETER ServiceRoleArn
@@ -200,6 +212,8 @@ function New-VSCodeDeployDeploymentGroup {
             })]
         $Ec2TagFilters,
         [parameter(Mandatory = $false)]
+        $Ec2TagSet,
+        [parameter(Mandatory = $false)]
         $LoadBalancerInfo,
         [parameter(Mandatory = $false)]
         [ValidateScript( {
@@ -212,6 +226,8 @@ function New-VSCodeDeployDeploymentGroup {
                 }
             })]
         $OnPremisesInstanceTagFilters,
+        [parameter(Mandatory = $false)]
+        $OnPremisesTagSet,
         [parameter(Mandatory = $true)]
         [ValidateScript( {
                 $allowedTypes = "System.String","Vaporshell.Function","Vaporshell.Condition"

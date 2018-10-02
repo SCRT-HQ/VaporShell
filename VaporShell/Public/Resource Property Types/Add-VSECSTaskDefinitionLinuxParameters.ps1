@@ -29,6 +29,20 @@ function Add-VSECSTaskDefinitionLinuxParameters {
 		Required: False    
 		UpdateType: Immutable    
 
+    .PARAMETER SharedMemorySize
+		Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ecs-taskdefinition-linuxparameters.html#cfn-ecs-taskdefinition-linuxparameters-sharedmemorysize    
+		PrimitiveType: Integer    
+		Required: False    
+		UpdateType: Immutable    
+
+    .PARAMETER Tmpfs
+		Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ecs-taskdefinition-linuxparameters.html#cfn-ecs-taskdefinition-linuxparameters-tmpfs    
+		DuplicatesAllowed: False    
+		ItemType: Tmpfs    
+		Required: False    
+		Type: List    
+		UpdateType: Immutable    
+
     .FUNCTIONALITY
         Vaporshell
     #>
@@ -51,7 +65,21 @@ function Add-VSECSTaskDefinitionLinuxParameters {
         $Devices,
         [parameter(Mandatory = $false)]
         [System.Boolean]
-        $InitProcessEnabled
+        $InitProcessEnabled,
+        [parameter(Mandatory = $false)]
+        [Int]
+        $SharedMemorySize,
+        [parameter(Mandatory = $false)]
+        [ValidateScript( {
+                $allowedTypes = "Vaporshell.Resource.ECS.TaskDefinition.Tmpfs"
+                if ([string]$($_.PSTypeNames) -match "($(($allowedTypes|ForEach-Object{[RegEx]::Escape($_)}) -join '|'))") {
+                    $true
+                }
+                else {
+                    $PSCmdlet.ThrowTerminatingError((New-VSError -String "This parameter only accepts the following types: $($allowedTypes -join ", "). The current types of the value are: $($_.PSTypeNames -join ", ")."))
+                }
+            })]
+        $Tmpfs
     )
     Begin {
         $obj = [PSCustomObject]@{}

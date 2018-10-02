@@ -1,34 +1,44 @@
-function Add-VSECSServiceServiceRegistry {
+function Add-VSECSTaskDefinitionDockerVolumeConfiguration {
     <#
     .SYNOPSIS
-        Adds an AWS::ECS::Service.ServiceRegistry resource property to the template
+        Adds an AWS::ECS::TaskDefinition.DockerVolumeConfiguration resource property to the template
 
     .DESCRIPTION
-        Adds an AWS::ECS::Service.ServiceRegistry resource property to the template
+        Adds an AWS::ECS::TaskDefinition.DockerVolumeConfiguration resource property to the template
 
     .LINK
-        http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ecs-service-serviceregistry.html
+        http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ecs-taskdefinition-dockervolumeconfiguration.html
 
-    .PARAMETER ContainerName
-		Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ecs-service-serviceregistry.html#cfn-ecs-service-serviceregistry-containername    
+    .PARAMETER Autoprovision
+		Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ecs-taskdefinition-dockervolumeconfiguration.html#cfn-ecs-taskdefinition-dockervolumeconfiguration-autoprovision    
+		PrimitiveType: Boolean    
+		Required: False    
+		UpdateType: Immutable    
+
+    .PARAMETER Driver
+		Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ecs-taskdefinition-dockervolumeconfiguration.html#cfn-ecs-taskdefinition-dockervolumeconfiguration-driver    
 		PrimitiveType: String    
 		Required: False    
 		UpdateType: Immutable    
 
-    .PARAMETER ContainerPort
-		Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ecs-service-serviceregistry.html#cfn-ecs-service-serviceregistry-containerport    
-		PrimitiveType: Integer    
+    .PARAMETER DriverOpts
+		Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ecs-taskdefinition-dockervolumeconfiguration.html#cfn-ecs-taskdefinition-dockervolumeconfiguration-driveropts    
+		DuplicatesAllowed: False    
+		PrimitiveItemType: String    
 		Required: False    
+		Type: Map    
 		UpdateType: Immutable    
 
-    .PARAMETER Port
-		Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ecs-service-serviceregistry.html#cfn-ecs-service-serviceregistry-port    
-		PrimitiveType: Integer    
+    .PARAMETER Labels
+		Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ecs-taskdefinition-dockervolumeconfiguration.html#cfn-ecs-taskdefinition-dockervolumeconfiguration-labels    
+		DuplicatesAllowed: False    
+		PrimitiveItemType: String    
 		Required: False    
+		Type: Map    
 		UpdateType: Immutable    
 
-    .PARAMETER RegistryArn
-		Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ecs-service-serviceregistry.html#cfn-ecs-service-serviceregistry-registryarn    
+    .PARAMETER Scope
+		Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ecs-taskdefinition-dockervolumeconfiguration.html#cfn-ecs-taskdefinition-dockervolumeconfiguration-scope    
 		PrimitiveType: String    
 		Required: False    
 		UpdateType: Immutable    
@@ -36,27 +46,13 @@ function Add-VSECSServiceServiceRegistry {
     .FUNCTIONALITY
         Vaporshell
     #>
-    [OutputType('Vaporshell.Resource.ECS.Service.ServiceRegistry')]
+    [OutputType('Vaporshell.Resource.ECS.TaskDefinition.DockerVolumeConfiguration')]
     [cmdletbinding()]
     Param
     (
         [parameter(Mandatory = $false)]
-        [ValidateScript( {
-                $allowedTypes = "System.String","Vaporshell.Function","Vaporshell.Condition"
-                if ([string]$($_.PSTypeNames) -match "($(($allowedTypes|ForEach-Object{[RegEx]::Escape($_)}) -join '|'))") {
-                    $true
-                }
-                else {
-                    $PSCmdlet.ThrowTerminatingError((New-VSError -String "This parameter only accepts the following types: $($allowedTypes -join ", "). The current types of the value are: $($_.PSTypeNames -join ", ")."))
-                }
-            })]
-        $ContainerName,
-        [parameter(Mandatory = $false)]
-        [Int]
-        $ContainerPort,
-        [parameter(Mandatory = $false)]
-        [Int]
-        $Port,
+        [System.Boolean]
+        $Autoprovision,
         [parameter(Mandatory = $false)]
         [ValidateScript( {
                 $allowedTypes = "System.String","Vaporshell.Function","Vaporshell.Condition"
@@ -67,7 +63,24 @@ function Add-VSECSServiceServiceRegistry {
                     $PSCmdlet.ThrowTerminatingError((New-VSError -String "This parameter only accepts the following types: $($allowedTypes -join ", "). The current types of the value are: $($_.PSTypeNames -join ", ")."))
                 }
             })]
-        $RegistryArn
+        $Driver,
+        [parameter(Mandatory = $false)]
+        [System.Collections.Hashtable]
+        $DriverOpts,
+        [parameter(Mandatory = $false)]
+        [System.Collections.Hashtable]
+        $Labels,
+        [parameter(Mandatory = $false)]
+        [ValidateScript( {
+                $allowedTypes = "System.String","Vaporshell.Function","Vaporshell.Condition"
+                if ([string]$($_.PSTypeNames) -match "($(($allowedTypes|ForEach-Object{[RegEx]::Escape($_)}) -join '|'))") {
+                    $true
+                }
+                else {
+                    $PSCmdlet.ThrowTerminatingError((New-VSError -String "This parameter only accepts the following types: $($allowedTypes -join ", "). The current types of the value are: $($_.PSTypeNames -join ", ")."))
+                }
+            })]
+        $Scope
     )
     Begin {
         $obj = [PSCustomObject]@{}
@@ -83,7 +96,7 @@ function Add-VSECSServiceServiceRegistry {
         }
     }
     End {
-        $obj | Add-ObjectDetail -TypeName 'Vaporshell.Resource.ECS.Service.ServiceRegistry'
+        $obj | Add-ObjectDetail -TypeName 'Vaporshell.Resource.ECS.TaskDefinition.DockerVolumeConfiguration'
         Write-Verbose "Resulting JSON from $($MyInvocation.MyCommand): `n`n$($obj | ConvertTo-Json -Depth 5)`n"
     }
 }

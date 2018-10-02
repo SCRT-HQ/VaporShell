@@ -63,6 +63,12 @@ function Add-VSEventsRuleTarget {
 		Type: RunCommandParameters    
 		UpdateType: Mutable    
 
+    .PARAMETER SqsParameters
+		Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-events-rule-target.html#cfn-events-rule-target-sqsparameters    
+		Required: False    
+		Type: SqsParameters    
+		UpdateType: Mutable    
+
     .FUNCTIONALITY
         Vaporshell
     #>
@@ -132,7 +138,9 @@ function Add-VSEventsRuleTarget {
             })]
         $RoleArn,
         [parameter(Mandatory = $false)]
-        $RunCommandParameters
+        $RunCommandParameters,
+        [parameter(Mandatory = $false)]
+        $SqsParameters
     )
     Begin {
         $obj = [PSCustomObject]@{}

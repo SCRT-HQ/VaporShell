@@ -21,6 +21,12 @@ function Add-VSCodeBuildProjectArtifacts {
 		PrimitiveType: String    
 		UpdateType: Mutable    
 
+    .PARAMETER ArtifactIdentifier
+		Required: False    
+		Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-codebuild-project-artifacts.html#cfn-codebuild-project-artifacts-artifactidentifier    
+		PrimitiveType: String    
+		UpdateType: Mutable    
+
     .PARAMETER OverrideArtifactName
 		Required: False    
 		Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-codebuild-project-artifacts.html#cfn-codebuild-project-artifacts-overrideartifactname    
@@ -86,6 +92,17 @@ function Add-VSCodeBuildProjectArtifacts {
                 }
             })]
         $Type,
+        [parameter(Mandatory = $false)]
+        [ValidateScript( {
+                $allowedTypes = "System.String","Vaporshell.Function","Vaporshell.Condition"
+                if ([string]$($_.PSTypeNames) -match "($(($allowedTypes|ForEach-Object{[RegEx]::Escape($_)}) -join '|'))") {
+                    $true
+                }
+                else {
+                    $PSCmdlet.ThrowTerminatingError((New-VSError -String "This parameter only accepts the following types: $($allowedTypes -join ", "). The current types of the value are: $($_.PSTypeNames -join ", ")."))
+                }
+            })]
+        $ArtifactIdentifier,
         [parameter(Mandatory = $false)]
         [System.Boolean]
         $OverrideArtifactName,

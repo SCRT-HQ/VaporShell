@@ -80,7 +80,7 @@ function New-VSElastiCacheReplicationGroup {
 		ItemType: NodeGroupConfiguration    
 		Required: False    
 		Type: List    
-		UpdateType: Immutable    
+		UpdateType: Conditional    
 
     .PARAMETER NotificationTopicArn
 		Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-elasticache-replicationgroup.html#cfn-elasticache-replicationgroup-notificationtopicarn    
@@ -98,7 +98,7 @@ function New-VSElastiCacheReplicationGroup {
 		Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-elasticache-replicationgroup.html#cfn-elasticache-replicationgroup-numnodegroups    
 		PrimitiveType: Integer    
 		Required: False    
-		UpdateType: Immutable    
+		UpdateType: Conditional    
 
     .PARAMETER Port
 		Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-elasticache-replicationgroup.html#cfn-elasticache-replicationgroup-port    
