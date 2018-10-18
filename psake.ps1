@@ -192,14 +192,12 @@ Export-ModuleMember -Function (Get-Command -Module VaporShell.DSL).Name -Variabl
     }
     "    Created compiled module at [$outputModDir]!"
     '    Output version directory contents:'
-    Get-ChildItem $outputModVerDir | Select-Object Mode,Length,Name | Format-Table -Autosize
+    Get-ChildItem $outputModVerDir | Format-Table -Autosize
 } -description 'Compiles module from source'
 
 $pesterScriptBlock = {
     '    Pushing location...'
-    Push-Location .
-    "    Setting location to $outputModDir..."
-    Set-Location -PassThru $outputModDir
+    Push-Location $outputModDir -PassThru
     if (-not $ENV:BHProjectPath) {
         '    Setting Build Environment...'
         Set-BuildEnvironment -Path $PSScriptRoot\..
