@@ -1,4 +1,4 @@
-function Add-VSBatchJobDefinitionContainerProperties {
+﻿function Add-VSBatchJobDefinitionContainerProperties {
     <#
     .SYNOPSIS
         Adds an AWS::Batch::JobDefinition.ContainerProperties resource property to the template

@@ -1,4 +1,4 @@
-function New-VSEC2RouteTable {
+﻿function New-VSEC2RouteTable {
     <#
     .SYNOPSIS
         Adds an AWS::EC2::RouteTable resource to the template

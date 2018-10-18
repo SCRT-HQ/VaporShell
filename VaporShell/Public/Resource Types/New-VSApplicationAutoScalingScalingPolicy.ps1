@@ -1,4 +1,4 @@
-function New-VSApplicationAutoScalingScalingPolicy {
+﻿function New-VSApplicationAutoScalingScalingPolicy {
     <#
     .SYNOPSIS
         Adds an AWS::ApplicationAutoScaling::ScalingPolicy resource to the template

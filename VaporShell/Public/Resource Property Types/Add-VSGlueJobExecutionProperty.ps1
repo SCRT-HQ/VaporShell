@@ -1,4 +1,4 @@
-function Add-VSGlueJobExecutionProperty {
+﻿function Add-VSGlueJobExecutionProperty {
     <#
     .SYNOPSIS
         Adds an AWS::Glue::Job.ExecutionProperty resource property to the template

@@ -1,4 +1,4 @@
-function New-VSApiGatewayAccount {
+﻿function New-VSApiGatewayAccount {
     <#
     .SYNOPSIS
         Adds an AWS::ApiGateway::Account resource to the template

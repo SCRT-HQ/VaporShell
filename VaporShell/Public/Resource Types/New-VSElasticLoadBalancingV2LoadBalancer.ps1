@@ -1,4 +1,4 @@
-function New-VSElasticLoadBalancingV2LoadBalancer {
+﻿function New-VSElasticLoadBalancingV2LoadBalancer {
     <#
     .SYNOPSIS
         Adds an AWS::ElasticLoadBalancingV2::LoadBalancer resource to the template

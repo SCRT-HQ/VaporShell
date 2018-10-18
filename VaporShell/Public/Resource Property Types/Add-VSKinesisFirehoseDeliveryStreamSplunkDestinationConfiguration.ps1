@@ -1,4 +1,4 @@
-function Add-VSKinesisFirehoseDeliveryStreamSplunkDestinationConfiguration {
+﻿function Add-VSKinesisFirehoseDeliveryStreamSplunkDestinationConfiguration {
     <#
     .SYNOPSIS
         Adds an AWS::KinesisFirehose::DeliveryStream.SplunkDestinationConfiguration resource property to the template

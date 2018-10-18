@@ -1,4 +1,4 @@
-function New-VSConfigConfigRule {
+﻿function New-VSConfigConfigRule {
     <#
     .SYNOPSIS
         Adds an AWS::Config::ConfigRule resource to the template

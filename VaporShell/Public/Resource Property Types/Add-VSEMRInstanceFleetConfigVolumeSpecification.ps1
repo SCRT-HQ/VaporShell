@@ -1,4 +1,4 @@
-function Add-VSEMRInstanceFleetConfigVolumeSpecification {
+﻿function Add-VSEMRInstanceFleetConfigVolumeSpecification {
     <#
     .SYNOPSIS
         Adds an AWS::EMR::InstanceFleetConfig.VolumeSpecification resource property to the template

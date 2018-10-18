@@ -1,4 +1,4 @@
-function Add-VSEMRInstanceGroupConfigScalingRule {
+﻿function Add-VSEMRInstanceGroupConfigScalingRule {
     <#
     .SYNOPSIS
         Adds an AWS::EMR::InstanceGroupConfig.ScalingRule resource property to the template

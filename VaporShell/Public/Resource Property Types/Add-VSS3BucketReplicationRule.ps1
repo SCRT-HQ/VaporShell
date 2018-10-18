@@ -1,4 +1,4 @@
-function Add-VSS3BucketReplicationRule {
+﻿function Add-VSS3BucketReplicationRule {
     <#
     .SYNOPSIS
         Adds an AWS::S3::Bucket.ReplicationRule resource property to the template

@@ -1,4 +1,4 @@
-function New-VSDMSReplicationTask {
+﻿function New-VSDMSReplicationTask {
     <#
     .SYNOPSIS
         Adds an AWS::DMS::ReplicationTask resource to the template

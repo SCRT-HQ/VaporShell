@@ -1,4 +1,4 @@
-function Add-VSApiGatewayStageAccessLogSetting {
+﻿function Add-VSApiGatewayStageAccessLogSetting {
     <#
     .SYNOPSIS
         Adds an AWS::ApiGateway::Stage.AccessLogSetting resource property to the template

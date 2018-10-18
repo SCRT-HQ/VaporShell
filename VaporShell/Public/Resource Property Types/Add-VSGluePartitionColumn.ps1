@@ -1,4 +1,4 @@
-function Add-VSGluePartitionColumn {
+﻿function Add-VSGluePartitionColumn {
     <#
     .SYNOPSIS
         Adds an AWS::Glue::Partition.Column resource property to the template

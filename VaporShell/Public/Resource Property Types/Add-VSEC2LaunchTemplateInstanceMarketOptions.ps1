@@ -1,4 +1,4 @@
-function Add-VSEC2LaunchTemplateInstanceMarketOptions {
+﻿function Add-VSEC2LaunchTemplateInstanceMarketOptions {
     <#
     .SYNOPSIS
         Adds an AWS::EC2::LaunchTemplate.InstanceMarketOptions resource property to the template

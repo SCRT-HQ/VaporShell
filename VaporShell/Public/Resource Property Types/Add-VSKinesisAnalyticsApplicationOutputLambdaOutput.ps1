@@ -1,4 +1,4 @@
-function Add-VSKinesisAnalyticsApplicationOutputLambdaOutput {
+﻿function Add-VSKinesisAnalyticsApplicationOutputLambdaOutput {
     <#
     .SYNOPSIS
         Adds an AWS::KinesisAnalytics::ApplicationOutput.LambdaOutput resource property to the template

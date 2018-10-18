@@ -1,4 +1,4 @@
-function New-VSSSMPatchBaseline {
+﻿function New-VSSSMPatchBaseline {
     <#
     .SYNOPSIS
         Adds an AWS::SSM::PatchBaseline resource to the template

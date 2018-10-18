@@ -1,4 +1,4 @@
-function Add-VSApiGatewayRestApiEndpointConfiguration {
+﻿function Add-VSApiGatewayRestApiEndpointConfiguration {
     <#
     .SYNOPSIS
         Adds an AWS::ApiGateway::RestApi.EndpointConfiguration resource property to the template

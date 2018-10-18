@@ -1,4 +1,4 @@
-function Add-VSEMRInstanceGroupConfigVolumeSpecification {
+﻿function Add-VSEMRInstanceGroupConfigVolumeSpecification {
     <#
     .SYNOPSIS
         Adds an AWS::EMR::InstanceGroupConfig.VolumeSpecification resource property to the template

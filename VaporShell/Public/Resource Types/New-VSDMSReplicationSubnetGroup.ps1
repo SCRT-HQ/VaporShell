@@ -1,4 +1,4 @@
-function New-VSDMSReplicationSubnetGroup {
+﻿function New-VSDMSReplicationSubnetGroup {
     <#
     .SYNOPSIS
         Adds an AWS::DMS::ReplicationSubnetGroup resource to the template

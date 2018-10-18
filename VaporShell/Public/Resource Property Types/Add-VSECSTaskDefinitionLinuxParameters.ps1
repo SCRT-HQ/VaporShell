@@ -1,4 +1,4 @@
-function Add-VSECSTaskDefinitionLinuxParameters {
+﻿function Add-VSECSTaskDefinitionLinuxParameters {
     <#
     .SYNOPSIS
         Adds an AWS::ECS::TaskDefinition.LinuxParameters resource property to the template

@@ -1,4 +1,4 @@
-function Add-VSAutoScalingScalingPolicyStepAdjustment {
+﻿function Add-VSAutoScalingScalingPolicyStepAdjustment {
     <#
     .SYNOPSIS
         Adds an AWS::AutoScaling::ScalingPolicy.StepAdjustment resource property to the template

@@ -1,4 +1,4 @@
-function Add-VSEMRClusterCloudWatchAlarmDefinition {
+﻿function Add-VSEMRClusterCloudWatchAlarmDefinition {
     <#
     .SYNOPSIS
         Adds an AWS::EMR::Cluster.CloudWatchAlarmDefinition resource property to the template

@@ -1,4 +1,4 @@
-function Add-VSCodePipelineWebhookWebhookFilterRule {
+﻿function Add-VSCodePipelineWebhookWebhookFilterRule {
     <#
     .SYNOPSIS
         Adds an AWS::CodePipeline::Webhook.WebhookFilterRule resource property to the template

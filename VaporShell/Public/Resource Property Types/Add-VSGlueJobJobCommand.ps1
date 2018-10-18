@@ -1,4 +1,4 @@
-function Add-VSGlueJobJobCommand {
+﻿function Add-VSGlueJobJobCommand {
     <#
     .SYNOPSIS
         Adds an AWS::Glue::Job.JobCommand resource property to the template

@@ -1,4 +1,4 @@
-function New-VSSNSTopicPolicy {
+﻿function New-VSSNSTopicPolicy {
     <#
     .SYNOPSIS
         Adds an AWS::SNS::TopicPolicy resource to the template

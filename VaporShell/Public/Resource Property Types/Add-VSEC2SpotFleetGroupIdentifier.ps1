@@ -1,4 +1,4 @@
-function Add-VSEC2SpotFleetGroupIdentifier {
+﻿function Add-VSEC2SpotFleetGroupIdentifier {
     <#
     .SYNOPSIS
         Adds an AWS::EC2::SpotFleet.GroupIdentifier resource property to the template

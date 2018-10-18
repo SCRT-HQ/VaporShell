@@ -1,4 +1,4 @@
-function Add-VSIoTTopicRuleFirehoseAction {
+﻿function Add-VSIoTTopicRuleFirehoseAction {
     <#
     .SYNOPSIS
         Adds an AWS::IoT::TopicRule.FirehoseAction resource property to the template

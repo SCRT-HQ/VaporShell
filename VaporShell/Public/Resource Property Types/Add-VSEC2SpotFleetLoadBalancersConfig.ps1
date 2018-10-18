@@ -1,4 +1,4 @@
-function Add-VSEC2SpotFleetLoadBalancersConfig {
+﻿function Add-VSEC2SpotFleetLoadBalancersConfig {
     <#
     .SYNOPSIS
         Adds an AWS::EC2::SpotFleet.LoadBalancersConfig resource property to the template

@@ -1,4 +1,4 @@
-function Add-VSEMRInstanceGroupConfigMetricDimension {
+﻿function Add-VSEMRInstanceGroupConfigMetricDimension {
     <#
     .SYNOPSIS
         Adds an AWS::EMR::InstanceGroupConfig.MetricDimension resource property to the template

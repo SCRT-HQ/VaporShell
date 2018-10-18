@@ -1,4 +1,4 @@
-function Add-VSServiceCatalogCloudFormationProductProvisioningArtifactProperties {
+﻿function Add-VSServiceCatalogCloudFormationProductProvisioningArtifactProperties {
     <#
     .SYNOPSIS
         Adds an AWS::ServiceCatalog::CloudFormationProduct.ProvisioningArtifactProperties resource property to the template

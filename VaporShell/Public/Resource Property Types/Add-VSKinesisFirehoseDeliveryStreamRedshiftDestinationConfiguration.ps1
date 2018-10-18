@@ -1,4 +1,4 @@
-function Add-VSKinesisFirehoseDeliveryStreamRedshiftDestinationConfiguration {
+﻿function Add-VSKinesisFirehoseDeliveryStreamRedshiftDestinationConfiguration {
     <#
     .SYNOPSIS
         Adds an AWS::KinesisFirehose::DeliveryStream.RedshiftDestinationConfiguration resource property to the template
@@ -62,8 +62,8 @@ function Add-VSKinesisFirehoseDeliveryStreamRedshiftDestinationConfiguration {
     #>
     [OutputType('Vaporshell.Resource.KinesisFirehose.DeliveryStream.RedshiftDestinationConfiguration')]
     [cmdletbinding()]
-    [Diagnostics.CodeAnalysis.SuppressMessageAttribute("PSAvoidUsingPlainTextForPassword","Password")]
-    [Diagnostics.CodeAnalysis.SuppressMessageAttribute("PSAvoidUsingUserNameAndPasswordParams","")]
+    [Diagnostics.CodeAnalysis.SuppressMessageAttribute("PSAvoidUsingPlainTextForPassword")]
+    [Diagnostics.CodeAnalysis.SuppressMessageAttribute("PSAvoidUsingUserNameAndPasswordParams")]
     Param
     (
         [parameter(Mandatory = $false)]

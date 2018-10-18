@@ -1,4 +1,4 @@
-function Add-VSCloudFrontDistributionCacheBehavior {
+﻿function Add-VSCloudFrontDistributionCacheBehavior {
     <#
     .SYNOPSIS
         Adds an AWS::CloudFront::Distribution.CacheBehavior resource property to the template

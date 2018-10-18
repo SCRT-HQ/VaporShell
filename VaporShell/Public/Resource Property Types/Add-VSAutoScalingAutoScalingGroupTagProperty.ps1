@@ -1,4 +1,4 @@
-function Add-VSAutoScalingAutoScalingGroupTagProperty {
+﻿function Add-VSAutoScalingAutoScalingGroupTagProperty {
     <#
     .SYNOPSIS
         Adds an AWS::AutoScaling::AutoScalingGroup.TagProperty resource property to the template

@@ -1,4 +1,4 @@
-function Add-VSECSServiceLoadBalancer {
+﻿function Add-VSECSServiceLoadBalancer {
     <#
     .SYNOPSIS
         Adds an AWS::ECS::Service.LoadBalancer resource property to the template

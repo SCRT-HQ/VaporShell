@@ -1,4 +1,4 @@
-function New-VSECSTaskDefinition {
+﻿function New-VSECSTaskDefinition {
     <#
     .SYNOPSIS
         Adds an AWS::ECS::TaskDefinition resource to the template

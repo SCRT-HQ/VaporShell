@@ -1,4 +1,4 @@
-function Add-VSConfigConfigRuleScope {
+﻿function Add-VSConfigConfigRuleScope {
     <#
     .SYNOPSIS
         Adds an AWS::Config::ConfigRule.Scope resource property to the template

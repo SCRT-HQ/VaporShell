@@ -1,4 +1,4 @@
-function Add-VSWAFXssMatchSetFieldToMatch {
+﻿function Add-VSWAFXssMatchSetFieldToMatch {
     <#
     .SYNOPSIS
         Adds an AWS::WAF::XssMatchSet.FieldToMatch resource property to the template

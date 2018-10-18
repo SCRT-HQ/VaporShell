@@ -1,4 +1,4 @@
-function New-VSLogsDestination {
+﻿function New-VSLogsDestination {
     <#
     .SYNOPSIS
         Adds an AWS::Logs::Destination resource to the template

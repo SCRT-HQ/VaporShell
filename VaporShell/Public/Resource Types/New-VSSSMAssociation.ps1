@@ -1,4 +1,4 @@
-function New-VSSSMAssociation {
+﻿function New-VSSSMAssociation {
     <#
     .SYNOPSIS
         Adds an AWS::SSM::Association resource to the template

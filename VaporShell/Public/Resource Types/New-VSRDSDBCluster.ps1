@@ -1,4 +1,4 @@
-function New-VSRDSDBCluster {
+﻿function New-VSRDSDBCluster {
     <#
     .SYNOPSIS
         Adds an AWS::RDS::DBCluster resource to the template
@@ -178,8 +178,8 @@ function New-VSRDSDBCluster {
     #>
     [OutputType('Vaporshell.Resource.RDS.DBCluster')]
     [cmdletbinding()]
-    [Diagnostics.CodeAnalysis.SuppressMessageAttribute("PSAvoidUsingPlainTextForPassword","MasterUserPassword")]
-    [Diagnostics.CodeAnalysis.SuppressMessageAttribute("PSAvoidUsingUserNameAndPasswordParams","")]
+    [Diagnostics.CodeAnalysis.SuppressMessageAttribute("PSAvoidUsingPlainTextForPassword")]
+    [Diagnostics.CodeAnalysis.SuppressMessageAttribute("PSAvoidUsingUserNameAndPasswordParams")]
     Param
     (
         [parameter(Mandatory = $true,Position = 0)]

@@ -1,4 +1,4 @@
-function Add-VSS3BucketFilterRule {
+﻿function Add-VSS3BucketFilterRule {
     <#
     .SYNOPSIS
         Adds an AWS::S3::Bucket.FilterRule resource property to the template

@@ -1,8 +1,12 @@
-Param
-(
-  [parameter(Position=0)]
-  $ForceDotSource = $false
-)
+<#
+    ~ ~ ~ IMPORTANT! ~ ~ ~
+
+    This file is only for local development so that
+    Update-VSResourceFunctions still works as expected.
+
+    Please make any PSM1 content changes in the
+    Compile task of the psake.ps1 build script.
+#>
 #Get public and private function definition files.
 $Public = @( Get-ChildItem -Path $PSScriptRoot\Public -Recurse -Filter "*.ps1" -ErrorAction SilentlyContinue )
 $Private = @( Get-ChildItem -Path $PSScriptRoot\Private -Recurse -Filter "*.ps1" -ErrorAction SilentlyContinue )
@@ -10,24 +14,19 @@ $VaporshellPath = $PSScriptRoot
 
 #Execute a scriptblock to load each function instead of dot sourcing (Issue #5)
 foreach ($file in @($Public + $Private)) {
-    if ($ForceDotSource) {
-        . $file.FullName
-    }
-    else {
-        $ExecutionContext.InvokeCommand.InvokeScript(
-            $false, 
-            (
-                [scriptblock]::Create(
-                    [io.file]::ReadAllText(
-                        $file.FullName,
-                        [Text.Encoding]::UTF8
-                    )
+    $ExecutionContext.InvokeCommand.InvokeScript(
+        $false,
+        (
+            [scriptblock]::Create(
+                [io.file]::ReadAllText(
+                    $file.FullName,
+                    [Text.Encoding]::UTF8
                 )
-            ), 
-            $null, 
-            $null
-        )
-    }
+            )
+        ),
+        $null,
+        $null
+    )
 }
 
 # Load AWS .NET SDK if not already loaded

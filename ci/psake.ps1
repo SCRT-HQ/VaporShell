@@ -26,8 +26,10 @@ Task Default -Depends Init,Test,Build,Deploy
 
 Task Init {
     $lines
-    Install-Module Coveralls -Force
-    Import-Module Coveralls -Force
+    if ($PSVersionTable.PSVersion.Major -lt 6) {
+        Install-Module Coveralls -Force
+        Import-Module Coveralls -Force
+    }
     Set-Location $ProjectRoot
     "Build System Details:"
     Get-Item ENV:BH*
@@ -66,7 +68,7 @@ Task Test -Depends Init  {
 
 Task Build -Depends Test {
     $lines
-    
+
     if ($ENV:BHBuildSystem -eq 'AppVeyor' -and $env:BHCommitMessage -match '!deploy' -and $env:BHBranchName -eq "master") {
         # Load the module, read the exported functions, update the psd1 FunctionsToExport
         Set-ModuleFunctions @Verbose

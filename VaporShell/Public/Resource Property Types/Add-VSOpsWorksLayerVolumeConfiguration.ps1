@@ -1,4 +1,4 @@
-function Add-VSOpsWorksLayerVolumeConfiguration {
+﻿function Add-VSOpsWorksLayerVolumeConfiguration {
     <#
     .SYNOPSIS
         Adds an AWS::OpsWorks::Layer.VolumeConfiguration resource property to the template

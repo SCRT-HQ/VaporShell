@@ -1,4 +1,4 @@
-function Add-VSApiGatewayMethodIntegration {
+﻿function Add-VSApiGatewayMethodIntegration {
     <#
     .SYNOPSIS
         Adds an AWS::ApiGateway::Method.Integration resource property to the template
@@ -106,8 +106,8 @@ function Add-VSApiGatewayMethodIntegration {
     #>
     [OutputType('Vaporshell.Resource.ApiGateway.Method.Integration')]
     [cmdletbinding()]
-    [Diagnostics.CodeAnalysis.SuppressMessageAttribute("PSAvoidUsingPlainTextForPassword","Credentials")]
-    [Diagnostics.CodeAnalysis.SuppressMessageAttribute("PSAvoidUsingUserNameAndPasswordParams","")]
+    [Diagnostics.CodeAnalysis.SuppressMessageAttribute("PSAvoidUsingPlainTextForPassword")]
+    [Diagnostics.CodeAnalysis.SuppressMessageAttribute("PSAvoidUsingUserNameAndPasswordParams")]
     Param
     (
         [parameter(Mandatory = $false)]

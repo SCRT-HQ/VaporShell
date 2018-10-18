@@ -1,4 +1,4 @@
-function New-VSConfigConfigurationAggregator {
+﻿function New-VSConfigConfigurationAggregator {
     <#
     .SYNOPSIS
         Adds an AWS::Config::ConfigurationAggregator resource to the template

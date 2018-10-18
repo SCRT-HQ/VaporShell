@@ -1,4 +1,4 @@
-function Add-VSWAFSqlInjectionMatchSetFieldToMatch {
+﻿function Add-VSWAFSqlInjectionMatchSetFieldToMatch {
     <#
     .SYNOPSIS
         Adds an AWS::WAF::SqlInjectionMatchSet.FieldToMatch resource property to the template

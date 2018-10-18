@@ -1,4 +1,4 @@
-function Add-VSS3BucketMetricsConfiguration {
+﻿function Add-VSS3BucketMetricsConfiguration {
     <#
     .SYNOPSIS
         Adds an AWS::S3::Bucket.MetricsConfiguration resource property to the template

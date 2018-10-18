@@ -1,4 +1,4 @@
-function Add-VSS3BucketReplicationDestination {
+﻿function Add-VSS3BucketReplicationDestination {
     <#
     .SYNOPSIS
         Adds an AWS::S3::Bucket.ReplicationDestination resource property to the template

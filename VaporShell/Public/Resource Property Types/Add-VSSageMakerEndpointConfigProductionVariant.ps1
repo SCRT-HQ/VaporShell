@@ -1,4 +1,4 @@
-function Add-VSSageMakerEndpointConfigProductionVariant {
+﻿function Add-VSSageMakerEndpointConfigProductionVariant {
     <#
     .SYNOPSIS
         Adds an AWS::SageMaker::EndpointConfig.ProductionVariant resource property to the template

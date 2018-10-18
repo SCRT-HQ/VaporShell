@@ -1,4 +1,4 @@
-function New-VSEC2NatGateway {
+﻿function New-VSEC2NatGateway {
     <#
     .SYNOPSIS
         Adds an AWS::EC2::NatGateway resource to the template

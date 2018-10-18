@@ -1,4 +1,4 @@
-function Add-VSCloudFrontStreamingDistributionS3Origin {
+﻿function Add-VSCloudFrontStreamingDistributionS3Origin {
     <#
     .SYNOPSIS
         Adds an AWS::CloudFront::StreamingDistribution.S3Origin resource property to the template

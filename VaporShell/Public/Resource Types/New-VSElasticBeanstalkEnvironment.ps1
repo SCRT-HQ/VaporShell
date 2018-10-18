@@ -1,4 +1,4 @@
-function New-VSElasticBeanstalkEnvironment {
+﻿function New-VSElasticBeanstalkEnvironment {
     <#
     .SYNOPSIS
         Adds an AWS::ElasticBeanstalk::Environment resource to the template

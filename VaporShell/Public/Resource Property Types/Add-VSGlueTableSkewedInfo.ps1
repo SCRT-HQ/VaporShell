@@ -1,4 +1,4 @@
-function Add-VSGlueTableSkewedInfo {
+﻿function Add-VSGlueTableSkewedInfo {
     <#
     .SYNOPSIS
         Adds an AWS::Glue::Table.SkewedInfo resource property to the template

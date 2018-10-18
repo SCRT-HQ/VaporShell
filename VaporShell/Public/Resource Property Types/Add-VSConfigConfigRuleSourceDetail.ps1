@@ -1,4 +1,4 @@
-function Add-VSConfigConfigRuleSourceDetail {
+﻿function Add-VSConfigConfigRuleSourceDetail {
     <#
     .SYNOPSIS
         Adds an AWS::Config::ConfigRule.SourceDetail resource property to the template

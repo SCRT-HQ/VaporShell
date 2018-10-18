@@ -1,4 +1,4 @@
-function New-VSApiGatewayDocumentationPart {
+﻿function New-VSApiGatewayDocumentationPart {
     <#
     .SYNOPSIS
         Adds an AWS::ApiGateway::DocumentationPart resource to the template

@@ -1,4 +1,4 @@
-function New-VSIoTPolicyPrincipalAttachment {
+﻿function New-VSIoTPolicyPrincipalAttachment {
     <#
     .SYNOPSIS
         Adds an AWS::IoT::PolicyPrincipalAttachment resource to the template

@@ -1,4 +1,4 @@
-function New-VSConfigConfigurationRecorder {
+﻿function New-VSConfigConfigurationRecorder {
     <#
     .SYNOPSIS
         Adds an AWS::Config::ConfigurationRecorder resource to the template

@@ -1,4 +1,4 @@
-function Add-VSRoute53HealthCheckAlarmIdentifier {
+﻿function Add-VSRoute53HealthCheckAlarmIdentifier {
     <#
     .SYNOPSIS
         Adds an AWS::Route53::HealthCheck.AlarmIdentifier resource property to the template

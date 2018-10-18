@@ -1,4 +1,4 @@
-function Add-VSAppSyncDataSourceHttpConfig {
+﻿function Add-VSAppSyncDataSourceHttpConfig {
     <#
     .SYNOPSIS
         Adds an AWS::AppSync::DataSource.HttpConfig resource property to the template

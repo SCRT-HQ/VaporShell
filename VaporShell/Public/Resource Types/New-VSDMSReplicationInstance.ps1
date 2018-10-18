@@ -1,4 +1,4 @@
-function New-VSDMSReplicationInstance {
+﻿function New-VSDMSReplicationInstance {
     <#
     .SYNOPSIS
         Adds an AWS::DMS::ReplicationInstance resource to the template

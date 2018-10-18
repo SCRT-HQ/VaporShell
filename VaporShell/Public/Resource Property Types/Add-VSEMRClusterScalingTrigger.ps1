@@ -1,4 +1,4 @@
-function Add-VSEMRClusterScalingTrigger {
+﻿function Add-VSEMRClusterScalingTrigger {
     <#
     .SYNOPSIS
         Adds an AWS::EMR::Cluster.ScalingTrigger resource property to the template

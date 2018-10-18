@@ -1,4 +1,4 @@
-function Add-VSS3BucketAnalyticsConfiguration {
+﻿function Add-VSS3BucketAnalyticsConfiguration {
     <#
     .SYNOPSIS
         Adds an AWS::S3::Bucket.AnalyticsConfiguration resource property to the template

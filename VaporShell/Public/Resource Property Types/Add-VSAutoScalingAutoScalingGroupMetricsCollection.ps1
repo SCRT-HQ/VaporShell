@@ -1,4 +1,4 @@
-function Add-VSAutoScalingAutoScalingGroupMetricsCollection {
+﻿function Add-VSAutoScalingAutoScalingGroupMetricsCollection {
     <#
     .SYNOPSIS
         Adds an AWS::AutoScaling::AutoScalingGroup.MetricsCollection resource property to the template

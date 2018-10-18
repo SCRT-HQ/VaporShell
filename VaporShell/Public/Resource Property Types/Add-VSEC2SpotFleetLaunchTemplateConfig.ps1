@@ -1,4 +1,4 @@
-function Add-VSEC2SpotFleetLaunchTemplateConfig {
+﻿function Add-VSEC2SpotFleetLaunchTemplateConfig {
     <#
     .SYNOPSIS
         Adds an AWS::EC2::SpotFleet.LaunchTemplateConfig resource property to the template

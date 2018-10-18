@@ -1,4 +1,4 @@
-function Add-VSGuardDutyFilterCondition {
+﻿function Add-VSGuardDutyFilterCondition {
     <#
     .SYNOPSIS
         Adds an AWS::GuardDuty::Filter.Condition resource property to the template

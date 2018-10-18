@@ -1,4 +1,4 @@
-function Add-VSDataPipelinePipelineField {
+﻿function Add-VSDataPipelinePipelineField {
     <#
     .SYNOPSIS
         Adds an AWS::DataPipeline::Pipeline.Field resource property to the template

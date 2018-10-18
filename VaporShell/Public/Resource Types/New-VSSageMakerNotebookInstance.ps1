@@ -1,4 +1,4 @@
-function New-VSSageMakerNotebookInstance {
+﻿function New-VSSageMakerNotebookInstance {
     <#
     .SYNOPSIS
         Adds an AWS::SageMaker::NotebookInstance resource to the template

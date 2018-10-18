@@ -1,4 +1,4 @@
-function Add-VSSSMMaintenanceWindowTaskMaintenanceWindowAutomationParameters {
+﻿function Add-VSSSMMaintenanceWindowTaskMaintenanceWindowAutomationParameters {
     <#
     .SYNOPSIS
         Adds an AWS::SSM::MaintenanceWindowTask.MaintenanceWindowAutomationParameters resource property to the template

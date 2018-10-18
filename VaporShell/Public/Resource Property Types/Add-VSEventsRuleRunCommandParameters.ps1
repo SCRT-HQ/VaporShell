@@ -1,4 +1,4 @@
-function Add-VSEventsRuleRunCommandParameters {
+﻿function Add-VSEventsRuleRunCommandParameters {
     <#
     .SYNOPSIS
         Adds an AWS::Events::Rule.RunCommandParameters resource property to the template

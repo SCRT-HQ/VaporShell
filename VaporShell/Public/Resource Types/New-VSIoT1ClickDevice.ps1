@@ -1,4 +1,4 @@
-function New-VSIoT1ClickDevice {
+﻿function New-VSIoT1ClickDevice {
     <#
     .SYNOPSIS
         Adds an AWS::IoT1Click::Device resource to the template

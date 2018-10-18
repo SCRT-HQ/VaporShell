@@ -1,4 +1,4 @@
-function Add-VSElasticsearchDomainVPCOptions {
+﻿function Add-VSElasticsearchDomainVPCOptions {
     <#
     .SYNOPSIS
         Adds an AWS::Elasticsearch::Domain.VPCOptions resource property to the template

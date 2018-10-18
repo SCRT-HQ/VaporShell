@@ -1,4 +1,4 @@
-function Add-VSLambdaFunctionDeadLetterConfig {
+﻿function Add-VSLambdaFunctionDeadLetterConfig {
     <#
     .SYNOPSIS
         Adds an AWS::Lambda::Function.DeadLetterConfig resource property to the template

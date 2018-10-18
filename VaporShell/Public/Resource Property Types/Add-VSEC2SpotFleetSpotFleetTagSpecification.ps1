@@ -1,4 +1,4 @@
-function Add-VSEC2SpotFleetSpotFleetTagSpecification {
+﻿function Add-VSEC2SpotFleetSpotFleetTagSpecification {
     <#
     .SYNOPSIS
         Adds an AWS::EC2::SpotFleet.SpotFleetTagSpecification resource property to the template

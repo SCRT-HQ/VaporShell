@@ -1,4 +1,4 @@
-function Add-VSECSTaskDefinitionUlimit {
+﻿function Add-VSECSTaskDefinitionUlimit {
     <#
     .SYNOPSIS
         Adds an AWS::ECS::TaskDefinition.Ulimit resource property to the template

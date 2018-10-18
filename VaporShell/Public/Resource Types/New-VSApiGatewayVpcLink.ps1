@@ -1,4 +1,4 @@
-function New-VSApiGatewayVpcLink {
+﻿function New-VSApiGatewayVpcLink {
     <#
     .SYNOPSIS
         Adds an AWS::ApiGateway::VpcLink resource to the template

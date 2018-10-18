@@ -1,4 +1,4 @@
-function New-VSApiGatewayClientCertificate {
+﻿function New-VSApiGatewayClientCertificate {
     <#
     .SYNOPSIS
         Adds an AWS::ApiGateway::ClientCertificate resource to the template

@@ -1,4 +1,4 @@
-function New-VSECSService {
+﻿function New-VSECSService {
     <#
     .SYNOPSIS
         Adds an AWS::ECS::Service resource to the template

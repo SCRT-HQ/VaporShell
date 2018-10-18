@@ -1,4 +1,4 @@
-function Add-VSIoT1ClickProjectPlacementTemplate {
+﻿function Add-VSIoT1ClickProjectPlacementTemplate {
     <#
     .SYNOPSIS
         Adds an AWS::IoT1Click::Project.PlacementTemplate resource property to the template

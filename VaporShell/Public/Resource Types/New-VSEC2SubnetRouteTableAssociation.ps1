@@ -1,4 +1,4 @@
-function New-VSEC2SubnetRouteTableAssociation {
+﻿function New-VSEC2SubnetRouteTableAssociation {
     <#
     .SYNOPSIS
         Adds an AWS::EC2::SubnetRouteTableAssociation resource to the template

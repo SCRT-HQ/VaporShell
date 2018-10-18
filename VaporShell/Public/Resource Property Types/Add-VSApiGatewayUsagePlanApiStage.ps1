@@ -1,4 +1,4 @@
-function Add-VSApiGatewayUsagePlanApiStage {
+﻿function Add-VSApiGatewayUsagePlanApiStage {
     <#
     .SYNOPSIS
         Adds an AWS::ApiGateway::UsagePlan.ApiStage resource property to the template

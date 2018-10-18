@@ -1,4 +1,4 @@
-function Add-VSEC2LaunchTemplateMonitoring {
+﻿function Add-VSEC2LaunchTemplateMonitoring {
     <#
     .SYNOPSIS
         Adds an AWS::EC2::LaunchTemplate.Monitoring resource property to the template

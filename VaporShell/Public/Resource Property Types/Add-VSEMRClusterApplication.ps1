@@ -1,4 +1,4 @@
-function Add-VSEMRClusterApplication {
+﻿function Add-VSEMRClusterApplication {
     <#
     .SYNOPSIS
         Adds an AWS::EMR::Cluster.Application resource property to the template

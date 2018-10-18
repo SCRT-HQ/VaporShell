@@ -1,4 +1,4 @@
-function New-VSAutoScalingLifecycleHook {
+﻿function New-VSAutoScalingLifecycleHook {
     <#
     .SYNOPSIS
         Adds an AWS::AutoScaling::LifecycleHook resource to the template

@@ -1,4 +1,4 @@
-function New-VSGuardDutyDetector {
+﻿function New-VSGuardDutyDetector {
     <#
     .SYNOPSIS
         Adds an AWS::GuardDuty::Detector resource to the template

@@ -1,4 +1,4 @@
-function Add-VSEMRClusterKerberosAttributes {
+﻿function Add-VSEMRClusterKerberosAttributes {
     <#
     .SYNOPSIS
         Adds an AWS::EMR::Cluster.KerberosAttributes resource property to the template
@@ -44,10 +44,8 @@ function Add-VSEMRClusterKerberosAttributes {
     #>
     [OutputType('Vaporshell.Resource.EMR.Cluster.KerberosAttributes')]
     [cmdletbinding()]
-    [Diagnostics.CodeAnalysis.SuppressMessageAttribute("PSAvoidUsingPlainTextForPassword","ADDomainJoinPassword")]
-    [Diagnostics.CodeAnalysis.SuppressMessageAttribute("PSAvoidUsingPlainTextForPassword","CrossRealmTrustPrincipalPassword")]
-    [Diagnostics.CodeAnalysis.SuppressMessageAttribute("PSAvoidUsingPlainTextForPassword","KdcAdminPassword")]
-    [Diagnostics.CodeAnalysis.SuppressMessageAttribute("PSAvoidUsingUserNameAndPasswordParams","")]
+    [Diagnostics.CodeAnalysis.SuppressMessageAttribute("PSAvoidUsingPlainTextForPassword")]
+    [Diagnostics.CodeAnalysis.SuppressMessageAttribute("PSAvoidUsingUserNameAndPasswordParams")]
     Param
     (
         [parameter(Mandatory = $false)]

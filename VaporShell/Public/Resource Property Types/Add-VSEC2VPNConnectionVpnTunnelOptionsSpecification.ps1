@@ -1,4 +1,4 @@
-function Add-VSEC2VPNConnectionVpnTunnelOptionsSpecification {
+﻿function Add-VSEC2VPNConnectionVpnTunnelOptionsSpecification {
     <#
     .SYNOPSIS
         Adds an AWS::EC2::VPNConnection.VpnTunnelOptionsSpecification resource property to the template

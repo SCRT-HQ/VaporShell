@@ -1,4 +1,4 @@
-function New-VSCertificateManagerCertificate {
+﻿function New-VSCertificateManagerCertificate {
     <#
     .SYNOPSIS
         Adds an AWS::CertificateManager::Certificate resource to the template

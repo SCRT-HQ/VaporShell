@@ -91,14 +91,8 @@ python3 get-pip.py --user
 echo "+++++ python3 and pip3 versions:"
 python3 -V
 pip3 -V
-# echo "Installing awscli"
-# pip3 install --user --upgrade awscli
 echo "Updating PATH"
 export PATH=~/.local/bin:$PATH
-# echo "+++++ awscli version:"
-# aws --version
-# echo "Upgrading awscli if needed"
-# pip3 install --user --upgrade awscli
 echo "Installing cfn_flip"
 pip3 install cfn_flip
 
@@ -173,4 +167,3 @@ if [[ "$success" != 0 ]]; then
     echo "ERROR: PowerShell failed to install!" >&2
     exit "$success"
 fi
-

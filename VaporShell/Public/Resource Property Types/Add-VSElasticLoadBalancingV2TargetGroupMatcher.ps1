@@ -1,4 +1,4 @@
-function Add-VSElasticLoadBalancingV2TargetGroupMatcher {
+﻿function Add-VSElasticLoadBalancingV2TargetGroupMatcher {
     <#
     .SYNOPSIS
         Adds an AWS::ElasticLoadBalancingV2::TargetGroup.Matcher resource property to the template

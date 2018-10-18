@@ -1,4 +1,4 @@
-function Add-VSCloudFrontDistributionCustomOriginConfig {
+﻿function Add-VSCloudFrontDistributionCustomOriginConfig {
     <#
     .SYNOPSIS
         Adds an AWS::CloudFront::Distribution.CustomOriginConfig resource property to the template

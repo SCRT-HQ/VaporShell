@@ -1,4 +1,4 @@
-function Add-VSEFSFileSystemElasticFileSystemTag {
+﻿function Add-VSEFSFileSystemElasticFileSystemTag {
     <#
     .SYNOPSIS
         Adds an AWS::EFS::FileSystem.ElasticFileSystemTag resource property to the template

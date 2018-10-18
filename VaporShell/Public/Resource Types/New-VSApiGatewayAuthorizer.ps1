@@ -1,4 +1,4 @@
-function New-VSApiGatewayAuthorizer {
+﻿function New-VSApiGatewayAuthorizer {
     <#
     .SYNOPSIS
         Adds an AWS::ApiGateway::Authorizer resource to the template
@@ -108,8 +108,8 @@ function New-VSApiGatewayAuthorizer {
     #>
     [OutputType('Vaporshell.Resource.ApiGateway.Authorizer')]
     [cmdletbinding()]
-    [Diagnostics.CodeAnalysis.SuppressMessageAttribute("PSAvoidUsingPlainTextForPassword","AuthorizerCredentials")]
-    [Diagnostics.CodeAnalysis.SuppressMessageAttribute("PSAvoidUsingUserNameAndPasswordParams","")]
+    [Diagnostics.CodeAnalysis.SuppressMessageAttribute("PSAvoidUsingPlainTextForPassword")]
+    [Diagnostics.CodeAnalysis.SuppressMessageAttribute("PSAvoidUsingUserNameAndPasswordParams")]
     Param
     (
         [parameter(Mandatory = $true,Position = 0)]

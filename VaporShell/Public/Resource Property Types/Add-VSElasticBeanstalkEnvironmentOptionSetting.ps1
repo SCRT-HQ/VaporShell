@@ -1,4 +1,4 @@
-function Add-VSElasticBeanstalkEnvironmentOptionSetting {
+﻿function Add-VSElasticBeanstalkEnvironmentOptionSetting {
     <#
     .SYNOPSIS
         Adds an AWS::ElasticBeanstalk::Environment.OptionSetting resource property to the template

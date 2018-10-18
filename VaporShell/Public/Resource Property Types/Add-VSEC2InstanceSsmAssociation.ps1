@@ -1,4 +1,4 @@
-function Add-VSEC2InstanceSsmAssociation {
+﻿function Add-VSEC2InstanceSsmAssociation {
     <#
     .SYNOPSIS
         Adds an AWS::EC2::Instance.SsmAssociation resource property to the template

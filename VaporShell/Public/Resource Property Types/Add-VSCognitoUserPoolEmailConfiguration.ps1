@@ -1,4 +1,4 @@
-function Add-VSCognitoUserPoolEmailConfiguration {
+﻿function Add-VSCognitoUserPoolEmailConfiguration {
     <#
     .SYNOPSIS
         Adds an AWS::Cognito::UserPool.EmailConfiguration resource property to the template

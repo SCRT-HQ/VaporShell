@@ -1,4 +1,4 @@
-function New-VSEC2VolumeAttachment {
+﻿function New-VSEC2VolumeAttachment {
     <#
     .SYNOPSIS
         Adds an AWS::EC2::VolumeAttachment resource to the template

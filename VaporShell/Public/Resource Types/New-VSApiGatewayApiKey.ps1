@@ -1,4 +1,4 @@
-function New-VSApiGatewayApiKey {
+﻿function New-VSApiGatewayApiKey {
     <#
     .SYNOPSIS
         Adds an AWS::ApiGateway::ApiKey resource to the template

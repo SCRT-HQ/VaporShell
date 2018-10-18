@@ -1,4 +1,4 @@
-function New-VSApiGatewayRestApi {
+﻿function New-VSApiGatewayRestApi {
     <#
     .SYNOPSIS
         Adds an AWS::ApiGateway::RestApi resource to the template

@@ -1,4 +1,4 @@
-function Add-VSCodePipelinePipelineBlockerDeclaration {
+﻿function Add-VSCodePipelinePipelineBlockerDeclaration {
     <#
     .SYNOPSIS
         Adds an AWS::CodePipeline::Pipeline.BlockerDeclaration resource property to the template

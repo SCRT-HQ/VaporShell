@@ -1,4 +1,4 @@
-function Add-VSAutoScalingPlansScalingPlanCustomizedScalingMetricSpecification {
+﻿function Add-VSAutoScalingPlansScalingPlanCustomizedScalingMetricSpecification {
     <#
     .SYNOPSIS
         Adds an AWS::AutoScalingPlans::ScalingPlan.CustomizedScalingMetricSpecification resource property to the template

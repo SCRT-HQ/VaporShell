@@ -1,4 +1,4 @@
-function Add-VSEC2SpotFleetSpotPlacement {
+﻿function Add-VSEC2SpotFleetSpotPlacement {
     <#
     .SYNOPSIS
         Adds an AWS::EC2::SpotFleet.SpotPlacement resource property to the template

@@ -1,4 +1,4 @@
-function Add-VSIoTTopicRuleSqsAction {
+﻿function Add-VSIoTTopicRuleSqsAction {
     <#
     .SYNOPSIS
         Adds an AWS::IoT::TopicRule.SqsAction resource property to the template

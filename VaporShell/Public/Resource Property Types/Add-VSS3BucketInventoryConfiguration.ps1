@@ -1,4 +1,4 @@
-function Add-VSS3BucketInventoryConfiguration {
+﻿function Add-VSS3BucketInventoryConfiguration {
     <#
     .SYNOPSIS
         Adds an AWS::S3::Bucket.InventoryConfiguration resource property to the template

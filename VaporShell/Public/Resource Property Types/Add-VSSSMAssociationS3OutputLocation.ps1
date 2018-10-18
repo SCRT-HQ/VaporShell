@@ -1,4 +1,4 @@
-function Add-VSSSMAssociationS3OutputLocation {
+﻿function Add-VSSSMAssociationS3OutputLocation {
     <#
     .SYNOPSIS
         Adds an AWS::SSM::Association.S3OutputLocation resource property to the template

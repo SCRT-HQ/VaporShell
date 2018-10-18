@@ -1,4 +1,4 @@
-function Add-VSSSMMaintenanceWindowTaskTarget {
+﻿function Add-VSSSMMaintenanceWindowTaskTarget {
     <#
     .SYNOPSIS
         Adds an AWS::SSM::MaintenanceWindowTask.Target resource property to the template

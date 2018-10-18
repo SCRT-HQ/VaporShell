@@ -1,4 +1,4 @@
-function New-VSInspectorAssessmentTarget {
+﻿function New-VSInspectorAssessmentTarget {
     <#
     .SYNOPSIS
         Adds an AWS::Inspector::AssessmentTarget resource to the template

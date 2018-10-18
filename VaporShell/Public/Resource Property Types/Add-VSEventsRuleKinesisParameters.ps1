@@ -1,4 +1,4 @@
-function Add-VSEventsRuleKinesisParameters {
+﻿function Add-VSEventsRuleKinesisParameters {
     <#
     .SYNOPSIS
         Adds an AWS::Events::Rule.KinesisParameters resource property to the template

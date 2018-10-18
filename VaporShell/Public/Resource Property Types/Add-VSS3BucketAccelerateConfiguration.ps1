@@ -1,4 +1,4 @@
-function Add-VSS3BucketAccelerateConfiguration {
+﻿function Add-VSS3BucketAccelerateConfiguration {
     <#
     .SYNOPSIS
         Adds an AWS::S3::Bucket.AccelerateConfiguration resource property to the template

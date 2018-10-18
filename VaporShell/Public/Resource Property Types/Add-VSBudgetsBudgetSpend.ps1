@@ -1,4 +1,4 @@
-function Add-VSBudgetsBudgetSpend {
+﻿function Add-VSBudgetsBudgetSpend {
     <#
     .SYNOPSIS
         Adds an AWS::Budgets::Budget.Spend resource property to the template

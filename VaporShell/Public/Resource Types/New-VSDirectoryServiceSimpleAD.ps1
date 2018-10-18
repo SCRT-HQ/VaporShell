@@ -1,4 +1,4 @@
-function New-VSDirectoryServiceSimpleAD {
+﻿function New-VSDirectoryServiceSimpleAD {
     <#
     .SYNOPSIS
         Adds an AWS::DirectoryService::SimpleAD resource to the template
@@ -94,8 +94,8 @@ function New-VSDirectoryServiceSimpleAD {
     #>
     [OutputType('Vaporshell.Resource.DirectoryService.SimpleAD')]
     [cmdletbinding()]
-    [Diagnostics.CodeAnalysis.SuppressMessageAttribute("PSAvoidUsingPlainTextForPassword","Password")]
-    [Diagnostics.CodeAnalysis.SuppressMessageAttribute("PSAvoidUsingUserNameAndPasswordParams","")]
+    [Diagnostics.CodeAnalysis.SuppressMessageAttribute("PSAvoidUsingPlainTextForPassword")]
+    [Diagnostics.CodeAnalysis.SuppressMessageAttribute("PSAvoidUsingUserNameAndPasswordParams")]
     Param
     (
         [parameter(Mandatory = $true,Position = 0)]

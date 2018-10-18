@@ -1,4 +1,4 @@
-function Add-VSOpsWorksStackElasticIp {
+﻿function Add-VSOpsWorksStackElasticIp {
     <#
     .SYNOPSIS
         Adds an AWS::OpsWorks::Stack.ElasticIp resource property to the template

@@ -1,4 +1,4 @@
-function Add-VSCodePipelineCustomActionTypeSettings {
+﻿function Add-VSCodePipelineCustomActionTypeSettings {
     <#
     .SYNOPSIS
         Adds an AWS::CodePipeline::CustomActionType.Settings resource property to the template

@@ -1,4 +1,4 @@
-function Add-VSS3BucketRedirectRule {
+﻿function Add-VSS3BucketRedirectRule {
     <#
     .SYNOPSIS
         Adds an AWS::S3::Bucket.RedirectRule resource property to the template

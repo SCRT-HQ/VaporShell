@@ -1,4 +1,4 @@
-function Add-VSEC2SpotFleetIamInstanceProfileSpecification {
+﻿function Add-VSEC2SpotFleetIamInstanceProfileSpecification {
     <#
     .SYNOPSIS
         Adds an AWS::EC2::SpotFleet.IamInstanceProfileSpecification resource property to the template

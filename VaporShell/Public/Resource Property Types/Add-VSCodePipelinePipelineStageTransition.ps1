@@ -1,4 +1,4 @@
-function Add-VSCodePipelinePipelineStageTransition {
+﻿function Add-VSCodePipelinePipelineStageTransition {
     <#
     .SYNOPSIS
         Adds an AWS::CodePipeline::Pipeline.StageTransition resource property to the template

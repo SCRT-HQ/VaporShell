@@ -1,4 +1,4 @@
-function New-VSWAFRegionalRule {
+﻿function New-VSWAFRegionalRule {
     <#
     .SYNOPSIS
         Adds an AWS::WAFRegional::Rule resource to the template

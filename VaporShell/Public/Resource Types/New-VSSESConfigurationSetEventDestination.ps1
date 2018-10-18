@@ -1,4 +1,4 @@
-function New-VSSESConfigurationSetEventDestination {
+﻿function New-VSSESConfigurationSetEventDestination {
     <#
     .SYNOPSIS
         Adds an AWS::SES::ConfigurationSetEventDestination resource to the template

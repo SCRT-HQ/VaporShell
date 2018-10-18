@@ -1,4 +1,4 @@
-function Add-VSIoTTopicRuleElasticsearchAction {
+﻿function Add-VSIoTTopicRuleElasticsearchAction {
     <#
     .SYNOPSIS
         Adds an AWS::IoT::TopicRule.ElasticsearchAction resource property to the template

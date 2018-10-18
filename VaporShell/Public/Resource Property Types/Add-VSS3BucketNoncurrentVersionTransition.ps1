@@ -1,4 +1,4 @@
-function Add-VSS3BucketNoncurrentVersionTransition {
+﻿function Add-VSS3BucketNoncurrentVersionTransition {
     <#
     .SYNOPSIS
         Adds an AWS::S3::Bucket.NoncurrentVersionTransition resource property to the template

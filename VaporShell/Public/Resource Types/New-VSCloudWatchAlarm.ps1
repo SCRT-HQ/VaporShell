@@ -1,4 +1,4 @@
-function New-VSCloudWatchAlarm {
+﻿function New-VSCloudWatchAlarm {
     <#
     .SYNOPSIS
         Adds an AWS::CloudWatch::Alarm resource to the template

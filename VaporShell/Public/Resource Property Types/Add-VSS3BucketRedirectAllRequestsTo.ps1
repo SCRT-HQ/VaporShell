@@ -1,4 +1,4 @@
-function Add-VSS3BucketRedirectAllRequestsTo {
+﻿function Add-VSS3BucketRedirectAllRequestsTo {
     <#
     .SYNOPSIS
         Adds an AWS::S3::Bucket.RedirectAllRequestsTo resource property to the template

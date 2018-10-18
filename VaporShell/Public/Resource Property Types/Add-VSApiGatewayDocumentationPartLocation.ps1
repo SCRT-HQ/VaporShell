@@ -1,4 +1,4 @@
-function Add-VSApiGatewayDocumentationPartLocation {
+﻿function Add-VSApiGatewayDocumentationPartLocation {
     <#
     .SYNOPSIS
         Adds an AWS::ApiGateway::DocumentationPart.Location resource property to the template

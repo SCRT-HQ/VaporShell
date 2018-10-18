@@ -1,4 +1,4 @@
-function New-VSElastiCacheParameterGroup {
+﻿function New-VSElastiCacheParameterGroup {
     <#
     .SYNOPSIS
         Adds an AWS::ElastiCache::ParameterGroup resource to the template

@@ -1,4 +1,4 @@
-function Add-VSEC2LaunchTemplateIamInstanceProfile {
+﻿function Add-VSEC2LaunchTemplateIamInstanceProfile {
     <#
     .SYNOPSIS
         Adds an AWS::EC2::LaunchTemplate.IamInstanceProfile resource property to the template

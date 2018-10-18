@@ -1,4 +1,4 @@
-function New-VSECSCluster {
+﻿function New-VSECSCluster {
     <#
     .SYNOPSIS
         Adds an AWS::ECS::Cluster resource to the template

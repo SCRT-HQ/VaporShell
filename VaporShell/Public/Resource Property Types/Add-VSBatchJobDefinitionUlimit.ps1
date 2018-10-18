@@ -1,4 +1,4 @@
-function Add-VSBatchJobDefinitionUlimit {
+﻿function Add-VSBatchJobDefinitionUlimit {
     <#
     .SYNOPSIS
         Adds an AWS::Batch::JobDefinition.Ulimit resource property to the template

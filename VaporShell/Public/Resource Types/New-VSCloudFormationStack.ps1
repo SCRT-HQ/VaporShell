@@ -1,4 +1,4 @@
-function New-VSCloudFormationStack {
+﻿function New-VSCloudFormationStack {
     <#
     .SYNOPSIS
         Adds an AWS::CloudFormation::Stack resource to the template

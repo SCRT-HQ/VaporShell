@@ -1,4 +1,4 @@
-function Add-VSECSTaskDefinitionMountPoint {
+﻿function Add-VSECSTaskDefinitionMountPoint {
     <#
     .SYNOPSIS
         Adds an AWS::ECS::TaskDefinition.MountPoint resource property to the template

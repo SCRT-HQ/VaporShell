@@ -1,4 +1,4 @@
-function Add-VSIoTTopicRuleRepublishAction {
+﻿function Add-VSIoTTopicRuleRepublishAction {
     <#
     .SYNOPSIS
         Adds an AWS::IoT::TopicRule.RepublishAction resource property to the template

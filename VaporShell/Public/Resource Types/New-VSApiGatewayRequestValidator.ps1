@@ -1,4 +1,4 @@
-function New-VSApiGatewayRequestValidator {
+﻿function New-VSApiGatewayRequestValidator {
     <#
     .SYNOPSIS
         Adds an AWS::ApiGateway::RequestValidator resource to the template

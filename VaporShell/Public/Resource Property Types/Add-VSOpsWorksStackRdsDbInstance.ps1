@@ -1,4 +1,4 @@
-function Add-VSOpsWorksStackRdsDbInstance {
+﻿function Add-VSOpsWorksStackRdsDbInstance {
     <#
     .SYNOPSIS
         Adds an AWS::OpsWorks::Stack.RdsDbInstance resource property to the template
@@ -32,8 +32,8 @@ function Add-VSOpsWorksStackRdsDbInstance {
     #>
     [OutputType('Vaporshell.Resource.OpsWorks.Stack.RdsDbInstance')]
     [cmdletbinding()]
-    [Diagnostics.CodeAnalysis.SuppressMessageAttribute("PSAvoidUsingPlainTextForPassword","DbPassword")]
-    [Diagnostics.CodeAnalysis.SuppressMessageAttribute("PSAvoidUsingUserNameAndPasswordParams","")]
+    [Diagnostics.CodeAnalysis.SuppressMessageAttribute("PSAvoidUsingPlainTextForPassword")]
+    [Diagnostics.CodeAnalysis.SuppressMessageAttribute("PSAvoidUsingUserNameAndPasswordParams")]
     Param
     (
         [parameter(Mandatory = $true)]

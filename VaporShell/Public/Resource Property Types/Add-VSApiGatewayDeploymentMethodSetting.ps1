@@ -1,4 +1,4 @@
-function Add-VSApiGatewayDeploymentMethodSetting {
+﻿function Add-VSApiGatewayDeploymentMethodSetting {
     <#
     .SYNOPSIS
         Adds an AWS::ApiGateway::Deployment.MethodSetting resource property to the template

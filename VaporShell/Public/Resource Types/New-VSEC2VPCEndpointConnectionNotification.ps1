@@ -1,4 +1,4 @@
-function New-VSEC2VPCEndpointConnectionNotification {
+﻿function New-VSEC2VPCEndpointConnectionNotification {
     <#
     .SYNOPSIS
         Adds an AWS::EC2::VPCEndpointConnectionNotification resource to the template

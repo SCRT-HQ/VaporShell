@@ -1,4 +1,4 @@
-function New-VSApiGatewayDocumentationVersion {
+﻿function New-VSApiGatewayDocumentationVersion {
     <#
     .SYNOPSIS
         Adds an AWS::ApiGateway::DocumentationVersion resource to the template

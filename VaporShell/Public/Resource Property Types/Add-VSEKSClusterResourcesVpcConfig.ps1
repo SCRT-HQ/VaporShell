@@ -1,4 +1,4 @@
-function Add-VSEKSClusterResourcesVpcConfig {
+﻿function Add-VSEKSClusterResourcesVpcConfig {
     <#
     .SYNOPSIS
         Adds an AWS::EKS::Cluster.ResourcesVpcConfig resource property to the template
