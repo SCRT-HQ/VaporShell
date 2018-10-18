@@ -107,7 +107,7 @@ $VaporshellPath = $PSScriptRoot
 
     '    Creating Variable hash...'
     $varHash = @("@{")
-    Get-Content -Path "$PSScriptRoot\VaporShell\Private\PseudoParams.txt" | ForEach-Object {
+    Get-Content -Path "$($env:BHPSModulePath)\Private\PseudoParams.txt" | ForEach-Object {
         $name = "_$(($_ -replace "::").Trim())"
         $varHash += "    '$name' = '$($_.Trim())'"
     }
@@ -115,11 +115,11 @@ $VaporshellPath = $PSScriptRoot
 
     '    Creating Alias hash...'
     $aliasHash = @("@{")
-    Get-ChildItem "$PSScriptRoot\VaporShell\Public\Intrinsic Functions" | ForEach-Object {
+    Get-ChildItem "$($env:BHPSModulePath)\Public\Intrinsic Functions" | ForEach-Object {
         $name = ($_.BaseName).Replace('Add-','')
         $aliasHash += "    '$name' = '$($_.BaseName.Trim())'"
     }
-    Get-ChildItem "$PSScriptRoot\VaporShell\Public\Condition Functions" | ForEach-Object {
+    Get-ChildItem "$($env:BHPSModulePath)\Public\Condition Functions" | ForEach-Object {
         $name = ($_.BaseName).Replace('Add-','')
         $aliasHash += "    '$name' = '$($_.BaseName.Trim())'"
     }
@@ -168,19 +168,19 @@ Export-ModuleMember -Function (Get-Command -Module VaporShell.DSL).Name -Variabl
 
     '    Updating manifest...'
     $dslModuleName = "VaporShell.DSL"
-    Import-Module "$PSScriptRoot\VaporShell\DSL\$($dslModuleName).psm1" -DisableNameChecking -Force -Verbose:$false
+    Import-Module "$($env:BHPSModulePath)\DSL\$($dslModuleName).psm1" -DisableNameChecking -Force -Verbose:$false
     $dslFunctions = (Get-Command -Module $dslModuleName).Name
     Remove-Module $dslModuleName -Force -Verbose:$false -ErrorAction SilentlyContinue
 
     $aliases = @()
-    Get-ChildItem "$PSScriptRoot\VaporShell\Public\Intrinsic Functions" | ForEach-Object {
+    Get-ChildItem "$($env:BHPSModulePath)\Public\Intrinsic Functions" | ForEach-Object {
         $aliases += ($_.BaseName).Replace('Add-','')
     }
-    Get-ChildItem "$PSScriptRoot\VaporShell\Public\Condition Functions" | ForEach-Object {
+    Get-ChildItem "$($env:BHPSModulePath)\Public\Condition Functions" | ForEach-Object {
         $aliases += ($_.BaseName).Replace('Add-','')
     }
     $vars = @()
-    Get-Content -Path "$PSScriptRoot\VaporShell\Private\PseudoParams.txt" | ForEach-Object {
+    Get-Content -Path "$($env:BHPSModulePath)\Private\PseudoParams.txt" | ForEach-Object {
         $vars += "_$(($_ -replace "::").Trim())"
     }
 
