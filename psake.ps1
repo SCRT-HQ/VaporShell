@@ -196,14 +196,18 @@ Export-ModuleMember -Function (Get-Command -Module VaporShell.DSL).Name -Variabl
 } -description 'Compiles module from source'
 
 $pesterScriptBlock = {
-    Push-Location
+    '    Pushing location...'
+    Push-Location .
+    "    Setting location to $outputModDir..."
     Set-Location -PassThru $outputModDir
-    if(-not $ENV:BHProjectPath) {
+    if (-not $ENV:BHProjectPath) {
+        '    Setting Build Environment...'
         Set-BuildEnvironment -Path $PSScriptRoot\..
     }
 
     $origModulePath = $env:PSModulePath
     if ( $env:PSModulePath.split($pathSeperator) -notcontains $outputDir ) {
+        '    Updating PSModulePath to include OutputDir...'
         $env:PSModulePath = ($outputDir + $pathSeperator + $origModulePath)
     }
     "    Removing and reimporting $($env:BHProjectName) module..."
