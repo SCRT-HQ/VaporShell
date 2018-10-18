@@ -196,6 +196,9 @@ Export-ModuleMember -Function (Get-Command -Module VaporShell.DSL).Name -Variabl
 } -description 'Compiles module from source'
 
 $pesterScriptBlock = {
+    "    Getting correctly cased FullName for $outputModDir..."
+    $outputModDir = (Get-ChildItem (Split-Path $outputModDir -Parent) -Directory | Where-Object {$_.Name -eq (Get-Item $outputModDir).Name}).FullName
+    "    FullName resolved to $outputModDir..."
     '    Pushing location...'
     Push-Location $outputModDir -PassThru
     if (-not $ENV:BHProjectPath) {
