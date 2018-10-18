@@ -213,7 +213,7 @@ $pesterScriptBlock = {
     $coverage = @{}
     if ($PSVersionTable.PSVersion.Major -lt 6) {
         $coveredFunctions = @()
-        "$ProjectRoot\Vaporshell\Public\Condition Functions\*","$ProjectRoot\Vaporshell\Public\Intrinsic Functions\*","$ProjectRoot\Vaporshell\Public\Primary Functions\*","$ProjectRoot\Vaporshell\Public\Transform\*","$ProjectRoot\Vaporshell\Public\*-Vaporshell.ps1" | Foreach-Object {
+        "$($env:BHPSModulePath)\Public\Condition Functions\*","$($env:BHPSModulePath)\Public\Intrinsic Functions\*","$($env:BHPSModulePath)\Public\Primary Functions\*","$($env:BHPSModulePath)\Public\Transform\*","$($env:BHPSModulePath)\Public\*-Vaporshell.ps1" | Foreach-Object {
             foreach ($item in (Get-Item $_)) {
                 $coveredFunctions += @{
                     Path = (Join-Path $outputModVerDir "$($env:BHProjectName).psm1")
@@ -225,16 +225,17 @@ $pesterScriptBlock = {
         # $coverage['CodeCoverage'] = $coveredFunctions
     }
     '    Invoking Pester...'
-    $testResults = Invoke-Pester -Path $tests -PassThru -OutputFile $testResultsXml -OutputFormat NUnitXml @coverage
+    $testResults = Invoke-Pester -Path $tests -PassThru -OutputFile $testResultsXml -OutputFormat NUnitXml #@coverage
     '    Pester invocation complete!'
     # Upload test artifacts to AppVeyor
     If ($env:APPVEYOR) {
+        '    Uploading Pester results to AppVeyor...'
         (New-Object 'System.Net.WebClient').UploadFile(
             ([Uri]"https://ci.appveyor.com/api/testresults/nunit/$($env:APPVEYOR_JOB_ID)"),
             $testResultsXml
         )
         if ($PSVersionTable.PSVersion.Major -lt 6 -and $null -ne $env:Coveralls -and $coverage.Keys -contains 'CodeCoverage') {
-            Write-Verbose "Uploading Code Coverage to Coveralls"
+            '    Uploading Code Coverage to Coveralls...'
             $coverage = Format-Coverage -PesterResults $TestResults -CoverallsApiToken $env:Coveralls -BranchName $ENV:APPVEYOR_REPO_BRANCH -Verbose
             Publish-Coverage -Coverage $coverage -Verbose
         }
