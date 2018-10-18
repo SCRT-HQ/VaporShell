@@ -206,7 +206,7 @@ $pesterScriptBlock = {
     if ( $env:PSModulePath.split($pathSeperator) -notcontains $outputDir ) {
         $env:PSModulePath = ($outputDir + $pathSeperator + $origModulePath)
     }
-
+    "    Removing and reimporting $($env:BHProjectName) module..."
     Remove-Module $ENV:BHProjectName -ErrorAction SilentlyContinue -Verbose:$false
     Import-Module -Name $outputModDir -Force -Verbose:$false
     $testResultsXml = Join-Path -Path $outputDir -ChildPath $TestFile
