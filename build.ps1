@@ -79,8 +79,8 @@ function Resolve-Module {
     }
 }
 
-$requiredModules = @('BuildHelpers', 'psake')
-if ($env:AppVeyor) {
+$requiredModules = @('BuildHelpers','psake')
+if ($ENV:APPVEYOR) {
     $requiredModules += 'PSDeploy'
 }
 

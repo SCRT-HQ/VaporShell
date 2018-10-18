@@ -33,6 +33,9 @@ task Init {
     Set-Location $ProjectRoot
     "Build System Details:"
     Get-Item ENV:BH*
+    if ($env:APPVEYOR) {
+        Get-Item ENV:APPVEYOR*
+    }
     "`n"
 
     "  Installing the latest version of Pester"
