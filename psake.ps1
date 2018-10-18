@@ -200,7 +200,13 @@ $pesterScriptBlock = {
     $outputModDir = (Get-ChildItem (Split-Path $outputModDir -Parent) -Directory | Where-Object {$_.Name -eq (Get-Item $outputModDir).Name}).FullName
     "    FullName resolved to $outputModDir..."
     '    Pushing location...'
-    Push-Location $outputModDir -PassThru
+    try {
+        Push-Location $outputModDir -PassThru
+    }
+    catch {
+        $_
+        Write-Error $_
+    }
     if (-not $ENV:BHProjectPath) {
         '    Setting Build Environment...'
         Set-BuildEnvironment -Path $PSScriptRoot\..
