@@ -50,7 +50,7 @@ task Init {
 task Update -depends Init {
     '    Updating Resource and Property Type functions with current AWS spec sheet...'
     Remove-Module $($env:BHProjectName) -ErrorAction SilentlyContinue -Force -Verbose:$false
-    Import-Module "$PSScriptRoot\$($env:BHProjectName)\$($env:BHProjectName).psd1" -Force -Verbose:$false
+    Import-Module $env:BHPSModuleManifest -Force -Verbose:$false
     Update-VSResourceFunctions
     Remove-Module $($env:BHProjectName) -Force -Verbose:$false
 } -description 'Updates module functions before compilation'
