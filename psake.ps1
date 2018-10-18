@@ -9,6 +9,7 @@ Properties {
         }
         $ProjectRoot = $pwd.Path
     }
+    $moduleName = "VaporShell"
     $sut = $env:BHModulePath
     $tests = "$projectRoot\Tests"
     $Timestamp = Get-Date -Uformat "%Y%m%d-%H%M%S"
@@ -44,6 +45,9 @@ task Init {
         "  Installing the latest version of Coveralls"
         Install-Module Coveralls -Repository PSGallery -Scope CurrentUser -ErrorAction Stop -Force -Confirm:$false -Verbose:$false
         Import-Module Coveralls -Force -Verbose:$false
+    }
+    if ($env:BHProjectName -cne $moduleName) {
+        $env:BHProjectName = $moduleName
     }
 } -description 'Initialize build environment'
 
