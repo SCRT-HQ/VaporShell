@@ -224,15 +224,16 @@ $pesterScriptBlock = {
         # Commented out due to extra time this takes when running against the compiled module
         # $coverage['CodeCoverage'] = $coveredFunctions
     }
+    '    Invoking Pester...'
     $testResults = Invoke-Pester -Path $tests -PassThru -OutputFile $testResultsXml -OutputFormat NUnitXml @coverage
-
+    '    Pester invocation complete!'
     # Upload test artifacts to AppVeyor
     If ($env:APPVEYOR) {
         (New-Object 'System.Net.WebClient').UploadFile(
             ([Uri]"https://ci.appveyor.com/api/testresults/nunit/$($env:APPVEYOR_JOB_ID)"),
             $testResultsXml
         )
-        if ($PSVersionTable.PSVersion.Major -lt 6 -and $null -ne $env:Coveralls -and $null -ne ($coverage.Keys | Where-Object {$_})) {
+        if ($PSVersionTable.PSVersion.Major -lt 6 -and $null -ne $env:Coveralls -and $coverage.Keys -contains 'CodeCoverage') {
             Write-Verbose "Uploading Code Coverage to Coveralls"
             $coverage = Format-Coverage -PesterResults $TestResults -CoverallsApiToken $env:Coveralls -BranchName $ENV:APPVEYOR_REPO_BRANCH -Verbose
             Publish-Coverage -Coverage $coverage -Verbose

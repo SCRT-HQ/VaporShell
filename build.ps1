@@ -79,7 +79,12 @@ function Resolve-Module {
     }
 }
 
-'BuildHelpers', 'psake' | Resolve-Module -UpdateModules:$PSBoundParameters['UpdateModules'] -Verbose:$PSBoundParameters['Verbose']
+$requiredModules = @('BuildHelpers', 'psake')
+if ($env:AppVeyor) {
+    $requiredModules += 'PSDeploy'
+}
+
+$requiredModules | Resolve-Module -UpdateModules:$PSBoundParameters['UpdateModules'] -Verbose:$PSBoundParameters['Verbose']
 
 if ($Help) {
     Get-PSakeScriptTasks -buildFile "$PSScriptRoot\psake.ps1" |
