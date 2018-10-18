@@ -17,6 +17,7 @@ environment:
 matrix:
   fast_finish: true
 
+
 skip_commits:
   message: /updated readme.*|update readme.*s|\[skip ci\]|\[ci skip\]/
 
