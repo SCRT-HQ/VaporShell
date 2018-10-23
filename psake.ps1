@@ -248,13 +248,13 @@ $pesterScriptBlock = {
             ([Uri]"https://ci.appveyor.com/api/testresults/nunit/$($env:APPVEYOR_JOB_ID)"),
             $testResultsXml
         )
-        if ($PSVersionTable.PSVersion.Major -lt 6 -and $null -ne $env:Coveralls -and $coverage.Keys -contains 'CodeCoverage') {
-            '    Uploading Code Coverage to Coveralls...'
-            $coverage = Format-Coverage -PesterResults $TestResults -CoverallsApiToken $env:Coveralls -BranchName $ENV:APPVEYOR_REPO_BRANCH -Verbose
-            Publish-Coverage -Coverage $coverage -Verbose
-        }
+        Remove-Item $testResultsXml -Force -ErrorAction SilentlyContinue
     }
-    Remove-Item $testResultsXml -Force -ErrorAction SilentlyContinue
+    if ($PSVersionTable.PSVersion.Major -lt 6 -and $null -ne $env:Coveralls -and $coverage.Keys -contains 'CodeCoverage') {
+        '    Uploading Code Coverage to Coveralls...'
+        $coverage = Format-Coverage -PesterResults $TestResults -CoverallsApiToken $env:Coveralls -BranchName $ENV:APPVEYOR_REPO_BRANCH -Verbose
+        Publish-Coverage -Coverage $coverage -Verbose
+    }
 
     if ($testResults.FailedCount -gt 0) {
         $testResults | Format-List
