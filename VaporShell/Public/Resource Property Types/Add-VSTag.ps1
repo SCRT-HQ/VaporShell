@@ -1,4 +1,4 @@
-function Add-VSTag {
+﻿function Add-VSTag {
     <#
     .SYNOPSIS
         Adds an Tag resource property to the template

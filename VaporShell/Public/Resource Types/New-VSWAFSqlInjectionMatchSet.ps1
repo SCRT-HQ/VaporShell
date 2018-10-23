@@ -1,4 +1,4 @@
-function New-VSWAFSqlInjectionMatchSet {
+﻿function New-VSWAFSqlInjectionMatchSet {
     <#
     .SYNOPSIS
         Adds an AWS::WAF::SqlInjectionMatchSet resource to the template

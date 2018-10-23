@@ -1,4 +1,4 @@
-function Add-VSCodeDeployDeploymentGroupGitHubLocation {
+﻿function Add-VSCodeDeployDeploymentGroupGitHubLocation {
     <#
     .SYNOPSIS
         Adds an AWS::CodeDeploy::DeploymentGroup.GitHubLocation resource property to the template

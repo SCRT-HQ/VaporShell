@@ -1,4 +1,4 @@
-function New-VSRDSOptionGroup {
+﻿function New-VSRDSOptionGroup {
     <#
     .SYNOPSIS
         Adds an AWS::RDS::OptionGroup resource to the template

@@ -1,4 +1,4 @@
-function Add-VSWAFSizeConstraintSetFieldToMatch {
+﻿function Add-VSWAFSizeConstraintSetFieldToMatch {
     <#
     .SYNOPSIS
         Adds an AWS::WAF::SizeConstraintSet.FieldToMatch resource property to the template

@@ -1,4 +1,4 @@
-function New-VSEC2VPCEndpoint {
+﻿function New-VSEC2VPCEndpoint {
     <#
     .SYNOPSIS
         Adds an AWS::EC2::VPCEndpoint resource to the template

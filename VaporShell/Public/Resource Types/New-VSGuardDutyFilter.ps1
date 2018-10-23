@@ -1,4 +1,4 @@
-function New-VSGuardDutyFilter {
+﻿function New-VSGuardDutyFilter {
     <#
     .SYNOPSIS
         Adds an AWS::GuardDuty::Filter resource to the template

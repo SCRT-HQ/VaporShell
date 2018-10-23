@@ -1,4 +1,4 @@
-function Add-VSOpsWorksAppDataSource {
+﻿function Add-VSOpsWorksAppDataSource {
     <#
     .SYNOPSIS
         Adds an AWS::OpsWorks::App.DataSource resource property to the template

@@ -1,4 +1,4 @@
-function Add-VSIAMUserLoginProfile {
+﻿function Add-VSIAMUserLoginProfile {
     <#
     .SYNOPSIS
         Adds an AWS::IAM::User.LoginProfile resource property to the template
@@ -26,9 +26,8 @@ function Add-VSIAMUserLoginProfile {
     #>
     [OutputType('Vaporshell.Resource.IAM.User.LoginProfile')]
     [cmdletbinding()]
-    [Diagnostics.CodeAnalysis.SuppressMessageAttribute("PSAvoidUsingPlainTextForPassword","Password")]
-    [Diagnostics.CodeAnalysis.SuppressMessageAttribute("PSAvoidUsingPlainTextForPassword","PasswordResetRequired")]
-    [Diagnostics.CodeAnalysis.SuppressMessageAttribute("PSAvoidUsingUserNameAndPasswordParams","")]
+    [Diagnostics.CodeAnalysis.SuppressMessageAttribute("PSAvoidUsingPlainTextForPassword")]
+    [Diagnostics.CodeAnalysis.SuppressMessageAttribute("PSAvoidUsingUserNameAndPasswordParams")]
     Param
     (
         [parameter(Mandatory = $true)]

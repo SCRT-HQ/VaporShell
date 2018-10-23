@@ -1,4 +1,4 @@
-function New-VSRDSDBParameterGroup {
+﻿function New-VSRDSDBParameterGroup {
     <#
     .SYNOPSIS
         Adds an AWS::RDS::DBParameterGroup resource to the template

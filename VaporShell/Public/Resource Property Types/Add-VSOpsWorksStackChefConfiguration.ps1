@@ -1,4 +1,4 @@
-function Add-VSOpsWorksStackChefConfiguration {
+﻿function Add-VSOpsWorksStackChefConfiguration {
     <#
     .SYNOPSIS
         Adds an AWS::OpsWorks::Stack.ChefConfiguration resource property to the template

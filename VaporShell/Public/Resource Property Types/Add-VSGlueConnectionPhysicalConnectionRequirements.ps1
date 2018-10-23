@@ -1,4 +1,4 @@
-function Add-VSGlueConnectionPhysicalConnectionRequirements {
+﻿function Add-VSGlueConnectionPhysicalConnectionRequirements {
     <#
     .SYNOPSIS
         Adds an AWS::Glue::Connection.PhysicalConnectionRequirements resource property to the template

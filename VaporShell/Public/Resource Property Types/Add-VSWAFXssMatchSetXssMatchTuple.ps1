@@ -1,4 +1,4 @@
-function Add-VSWAFXssMatchSetXssMatchTuple {
+﻿function Add-VSWAFXssMatchSetXssMatchTuple {
     <#
     .SYNOPSIS
         Adds an AWS::WAF::XssMatchSet.XssMatchTuple resource property to the template

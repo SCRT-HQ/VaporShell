@@ -1,4 +1,4 @@
-function Add-VSElasticLoadBalancingLoadBalancerAccessLoggingPolicy {
+﻿function Add-VSElasticLoadBalancingLoadBalancerAccessLoggingPolicy {
     <#
     .SYNOPSIS
         Adds an AWS::ElasticLoadBalancing::LoadBalancer.AccessLoggingPolicy resource property to the template

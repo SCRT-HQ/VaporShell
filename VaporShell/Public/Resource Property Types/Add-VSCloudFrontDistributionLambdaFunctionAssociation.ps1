@@ -1,4 +1,4 @@
-function Add-VSCloudFrontDistributionLambdaFunctionAssociation {
+﻿function Add-VSCloudFrontDistributionLambdaFunctionAssociation {
     <#
     .SYNOPSIS
         Adds an AWS::CloudFront::Distribution.LambdaFunctionAssociation resource property to the template

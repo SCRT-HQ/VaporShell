@@ -1,4 +1,4 @@
-function Add-VSDynamoDBTablePointInTimeRecoverySpecification {
+﻿function Add-VSDynamoDBTablePointInTimeRecoverySpecification {
     <#
     .SYNOPSIS
         Adds an AWS::DynamoDB::Table.PointInTimeRecoverySpecification resource property to the template

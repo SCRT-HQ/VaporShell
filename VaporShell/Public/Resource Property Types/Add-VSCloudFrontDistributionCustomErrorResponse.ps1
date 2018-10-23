@@ -1,4 +1,4 @@
-function Add-VSCloudFrontDistributionCustomErrorResponse {
+﻿function Add-VSCloudFrontDistributionCustomErrorResponse {
     <#
     .SYNOPSIS
         Adds an AWS::CloudFront::Distribution.CustomErrorResponse resource property to the template

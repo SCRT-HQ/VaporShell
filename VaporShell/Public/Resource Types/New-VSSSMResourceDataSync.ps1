@@ -1,4 +1,4 @@
-function New-VSSSMResourceDataSync {
+﻿function New-VSSSMResourceDataSync {
     <#
     .SYNOPSIS
         Adds an AWS::SSM::ResourceDataSync resource to the template

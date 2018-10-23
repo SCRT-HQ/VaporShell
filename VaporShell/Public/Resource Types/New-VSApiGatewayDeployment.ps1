@@ -1,4 +1,4 @@
-function New-VSApiGatewayDeployment {
+﻿function New-VSApiGatewayDeployment {
     <#
     .SYNOPSIS
         Adds an AWS::ApiGateway::Deployment resource to the template

@@ -1,4 +1,4 @@
-function New-VSKMSKey {
+﻿function New-VSKMSKey {
     <#
     .SYNOPSIS
         Adds an AWS::KMS::Key resource to the template

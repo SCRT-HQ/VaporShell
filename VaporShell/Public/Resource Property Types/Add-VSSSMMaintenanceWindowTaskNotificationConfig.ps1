@@ -1,4 +1,4 @@
-function Add-VSSSMMaintenanceWindowTaskNotificationConfig {
+﻿function Add-VSSSMMaintenanceWindowTaskNotificationConfig {
     <#
     .SYNOPSIS
         Adds an AWS::SSM::MaintenanceWindowTask.NotificationConfig resource property to the template

@@ -1,4 +1,4 @@
-function Add-VSOpsWorksStackSource {
+﻿function Add-VSOpsWorksStackSource {
     <#
     .SYNOPSIS
         Adds an AWS::OpsWorks::Stack.Source resource property to the template
@@ -50,8 +50,8 @@ function Add-VSOpsWorksStackSource {
     #>
     [OutputType('Vaporshell.Resource.OpsWorks.Stack.Source')]
     [cmdletbinding()]
-    [Diagnostics.CodeAnalysis.SuppressMessageAttribute("PSAvoidUsingPlainTextForPassword","Password")]
-    [Diagnostics.CodeAnalysis.SuppressMessageAttribute("PSAvoidUsingUserNameAndPasswordParams","")]
+    [Diagnostics.CodeAnalysis.SuppressMessageAttribute("PSAvoidUsingPlainTextForPassword")]
+    [Diagnostics.CodeAnalysis.SuppressMessageAttribute("PSAvoidUsingUserNameAndPasswordParams")]
     Param
     (
         [parameter(Mandatory = $false)]

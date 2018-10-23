@@ -1,4 +1,4 @@
-function Add-VSS3BucketDataExport {
+﻿function Add-VSS3BucketDataExport {
     <#
     .SYNOPSIS
         Adds an AWS::S3::Bucket.DataExport resource property to the template

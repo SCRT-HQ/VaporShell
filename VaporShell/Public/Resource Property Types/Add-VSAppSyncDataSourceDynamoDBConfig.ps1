@@ -1,4 +1,4 @@
-function Add-VSAppSyncDataSourceDynamoDBConfig {
+﻿function Add-VSAppSyncDataSourceDynamoDBConfig {
     <#
     .SYNOPSIS
         Adds an AWS::AppSync::DataSource.DynamoDBConfig resource property to the template
@@ -32,8 +32,8 @@ function Add-VSAppSyncDataSourceDynamoDBConfig {
     #>
     [OutputType('Vaporshell.Resource.AppSync.DataSource.DynamoDBConfig')]
     [cmdletbinding()]
-    [Diagnostics.CodeAnalysis.SuppressMessageAttribute("PSAvoidUsingPlainTextForPassword","UseCallerCredentials")]
-    [Diagnostics.CodeAnalysis.SuppressMessageAttribute("PSAvoidUsingUserNameAndPasswordParams","")]
+    [Diagnostics.CodeAnalysis.SuppressMessageAttribute("PSAvoidUsingPlainTextForPassword")]
+    [Diagnostics.CodeAnalysis.SuppressMessageAttribute("PSAvoidUsingUserNameAndPasswordParams")]
     Param
     (
         [parameter(Mandatory = $true)]

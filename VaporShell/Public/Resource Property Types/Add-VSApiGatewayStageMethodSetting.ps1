@@ -1,4 +1,4 @@
-function Add-VSApiGatewayStageMethodSetting {
+﻿function Add-VSApiGatewayStageMethodSetting {
     <#
     .SYNOPSIS
         Adds an AWS::ApiGateway::Stage.MethodSetting resource property to the template

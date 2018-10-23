@@ -1,4 +1,4 @@
-function Add-VSEMRInstanceGroupConfigCloudWatchAlarmDefinition {
+﻿function Add-VSEMRInstanceGroupConfigCloudWatchAlarmDefinition {
     <#
     .SYNOPSIS
         Adds an AWS::EMR::InstanceGroupConfig.CloudWatchAlarmDefinition resource property to the template

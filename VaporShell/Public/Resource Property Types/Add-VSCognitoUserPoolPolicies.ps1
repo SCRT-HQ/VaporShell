@@ -1,4 +1,4 @@
-function Add-VSCognitoUserPoolPolicies {
+﻿function Add-VSCognitoUserPoolPolicies {
     <#
     .SYNOPSIS
         Adds an AWS::Cognito::UserPool.Policies resource property to the template
@@ -20,8 +20,8 @@ function Add-VSCognitoUserPoolPolicies {
     #>
     [OutputType('Vaporshell.Resource.Cognito.UserPool.Policies')]
     [cmdletbinding()]
-    [Diagnostics.CodeAnalysis.SuppressMessageAttribute("PSAvoidUsingPlainTextForPassword","PasswordPolicy")]
-    [Diagnostics.CodeAnalysis.SuppressMessageAttribute("PSAvoidUsingUserNameAndPasswordParams","")]
+    [Diagnostics.CodeAnalysis.SuppressMessageAttribute("PSAvoidUsingPlainTextForPassword")]
+    [Diagnostics.CodeAnalysis.SuppressMessageAttribute("PSAvoidUsingUserNameAndPasswordParams")]
     Param
     (
         [parameter(Mandatory = $false)]

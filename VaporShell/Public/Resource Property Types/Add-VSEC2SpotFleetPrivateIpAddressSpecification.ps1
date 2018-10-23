@@ -1,4 +1,4 @@
-function Add-VSEC2SpotFleetPrivateIpAddressSpecification {
+﻿function Add-VSEC2SpotFleetPrivateIpAddressSpecification {
     <#
     .SYNOPSIS
         Adds an AWS::EC2::SpotFleet.PrivateIpAddressSpecification resource property to the template

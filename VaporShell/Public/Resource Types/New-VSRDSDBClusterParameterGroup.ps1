@@ -1,4 +1,4 @@
-function New-VSRDSDBClusterParameterGroup {
+﻿function New-VSRDSDBClusterParameterGroup {
     <#
     .SYNOPSIS
         Adds an AWS::RDS::DBClusterParameterGroup resource to the template

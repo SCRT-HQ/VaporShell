@@ -1,4 +1,4 @@
-function Add-VSCloud9EnvironmentEC2Repository {
+﻿function Add-VSCloud9EnvironmentEC2Repository {
     <#
     .SYNOPSIS
         Adds an AWS::Cloud9::EnvironmentEC2.Repository resource property to the template

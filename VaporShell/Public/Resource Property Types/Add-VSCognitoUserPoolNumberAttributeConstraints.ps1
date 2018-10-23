@@ -1,4 +1,4 @@
-function Add-VSCognitoUserPoolNumberAttributeConstraints {
+﻿function Add-VSCognitoUserPoolNumberAttributeConstraints {
     <#
     .SYNOPSIS
         Adds an AWS::Cognito::UserPool.NumberAttributeConstraints resource property to the template

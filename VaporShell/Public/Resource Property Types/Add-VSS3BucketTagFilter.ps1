@@ -1,4 +1,4 @@
-function Add-VSS3BucketTagFilter {
+﻿function Add-VSS3BucketTagFilter {
     <#
     .SYNOPSIS
         Adds an AWS::S3::Bucket.TagFilter resource property to the template

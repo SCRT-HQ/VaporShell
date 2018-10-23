@@ -1,4 +1,4 @@
-function Add-VSCloudFrontDistributionCookies {
+﻿function Add-VSCloudFrontDistributionCookies {
     <#
     .SYNOPSIS
         Adds an AWS::CloudFront::Distribution.Cookies resource property to the template

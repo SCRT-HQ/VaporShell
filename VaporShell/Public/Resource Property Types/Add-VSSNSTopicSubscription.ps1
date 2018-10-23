@@ -1,4 +1,4 @@
-function Add-VSSNSTopicSubscription {
+﻿function Add-VSSNSTopicSubscription {
     <#
     .SYNOPSIS
         Adds an AWS::SNS::Topic.Subscription resource property to the template

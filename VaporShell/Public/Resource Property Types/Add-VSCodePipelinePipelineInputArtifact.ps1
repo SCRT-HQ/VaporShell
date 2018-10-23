@@ -1,4 +1,4 @@
-function Add-VSCodePipelinePipelineInputArtifact {
+﻿function Add-VSCodePipelinePipelineInputArtifact {
     <#
     .SYNOPSIS
         Adds an AWS::CodePipeline::Pipeline.InputArtifact resource property to the template

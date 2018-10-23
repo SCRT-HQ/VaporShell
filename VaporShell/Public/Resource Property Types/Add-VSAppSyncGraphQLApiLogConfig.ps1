@@ -1,4 +1,4 @@
-function Add-VSAppSyncGraphQLApiLogConfig {
+﻿function Add-VSAppSyncGraphQLApiLogConfig {
     <#
     .SYNOPSIS
         Adds an AWS::AppSync::GraphQLApi.LogConfig resource property to the template

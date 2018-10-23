@@ -1,4 +1,4 @@
-function Add-VSEMRInstanceGroupConfigSimpleScalingPolicyConfiguration {
+﻿function Add-VSEMRInstanceGroupConfigSimpleScalingPolicyConfiguration {
     <#
     .SYNOPSIS
         Adds an AWS::EMR::InstanceGroupConfig.SimpleScalingPolicyConfiguration resource property to the template

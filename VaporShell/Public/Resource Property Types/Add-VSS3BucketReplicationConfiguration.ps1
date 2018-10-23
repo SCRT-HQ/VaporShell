@@ -1,4 +1,4 @@
-function Add-VSS3BucketReplicationConfiguration {
+﻿function Add-VSS3BucketReplicationConfiguration {
     <#
     .SYNOPSIS
         Adds an AWS::S3::Bucket.ReplicationConfiguration resource property to the template

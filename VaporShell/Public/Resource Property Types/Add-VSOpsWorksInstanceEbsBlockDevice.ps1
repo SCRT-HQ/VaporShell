@@ -1,4 +1,4 @@
-function Add-VSOpsWorksInstanceEbsBlockDevice {
+﻿function Add-VSOpsWorksInstanceEbsBlockDevice {
     <#
     .SYNOPSIS
         Adds an AWS::OpsWorks::Instance.EbsBlockDevice resource property to the template

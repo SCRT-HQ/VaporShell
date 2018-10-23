@@ -1,4 +1,4 @@
-function New-VSGlueClassifier {
+﻿function New-VSGlueClassifier {
     <#
     .SYNOPSIS
         Adds an AWS::Glue::Classifier resource to the template

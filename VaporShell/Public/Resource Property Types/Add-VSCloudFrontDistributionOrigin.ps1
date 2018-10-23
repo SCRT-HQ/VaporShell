@@ -1,4 +1,4 @@
-function Add-VSCloudFrontDistributionOrigin {
+﻿function Add-VSCloudFrontDistributionOrigin {
     <#
     .SYNOPSIS
         Adds an AWS::CloudFront::Distribution.Origin resource property to the template

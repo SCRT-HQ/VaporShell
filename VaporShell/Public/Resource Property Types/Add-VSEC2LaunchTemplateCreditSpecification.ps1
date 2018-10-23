@@ -1,4 +1,4 @@
-function Add-VSEC2LaunchTemplateCreditSpecification {
+﻿function Add-VSEC2LaunchTemplateCreditSpecification {
     <#
     .SYNOPSIS
         Adds an AWS::EC2::LaunchTemplate.CreditSpecification resource property to the template

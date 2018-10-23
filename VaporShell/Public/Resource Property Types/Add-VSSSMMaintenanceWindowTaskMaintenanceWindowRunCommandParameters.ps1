@@ -1,4 +1,4 @@
-function Add-VSSSMMaintenanceWindowTaskMaintenanceWindowRunCommandParameters {
+﻿function Add-VSSSMMaintenanceWindowTaskMaintenanceWindowRunCommandParameters {
     <#
     .SYNOPSIS
         Adds an AWS::SSM::MaintenanceWindowTask.MaintenanceWindowRunCommandParameters resource property to the template

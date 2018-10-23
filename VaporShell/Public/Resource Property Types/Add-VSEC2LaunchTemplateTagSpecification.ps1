@@ -1,4 +1,4 @@
-function Add-VSEC2LaunchTemplateTagSpecification {
+﻿function Add-VSEC2LaunchTemplateTagSpecification {
     <#
     .SYNOPSIS
         Adds an AWS::EC2::LaunchTemplate.TagSpecification resource property to the template

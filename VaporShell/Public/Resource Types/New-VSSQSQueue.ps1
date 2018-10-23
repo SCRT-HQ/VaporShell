@@ -1,4 +1,4 @@
-function New-VSSQSQueue {
+﻿function New-VSSQSQueue {
     <#
     .SYNOPSIS
         Adds an AWS::SQS::Queue resource to the template

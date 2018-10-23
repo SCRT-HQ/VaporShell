@@ -1,4 +1,4 @@
-function Add-VSDMSEndpointS3Settings {
+﻿function Add-VSDMSEndpointS3Settings {
     <#
     .SYNOPSIS
         Adds an AWS::DMS::Endpoint.S3Settings resource property to the template

@@ -1,4 +1,4 @@
-function Add-VSECSTaskDefinitionContainerDefinition {
+﻿function Add-VSECSTaskDefinitionContainerDefinition {
     <#
     .SYNOPSIS
         Adds an AWS::ECS::TaskDefinition.ContainerDefinition resource property to the template
@@ -214,8 +214,8 @@ function Add-VSECSTaskDefinitionContainerDefinition {
     #>
     [OutputType('Vaporshell.Resource.ECS.TaskDefinition.ContainerDefinition')]
     [cmdletbinding()]
-    [Diagnostics.CodeAnalysis.SuppressMessageAttribute("PSAvoidUsingPlainTextForPassword","RepositoryCredentials")]
-    [Diagnostics.CodeAnalysis.SuppressMessageAttribute("PSAvoidUsingUserNameAndPasswordParams","")]
+    [Diagnostics.CodeAnalysis.SuppressMessageAttribute("PSAvoidUsingPlainTextForPassword")]
+    [Diagnostics.CodeAnalysis.SuppressMessageAttribute("PSAvoidUsingUserNameAndPasswordParams")]
     Param
     (
         [parameter(Mandatory = $false)]

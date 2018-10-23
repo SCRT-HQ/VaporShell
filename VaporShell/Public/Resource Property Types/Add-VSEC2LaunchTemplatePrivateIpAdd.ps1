@@ -1,4 +1,4 @@
-function Add-VSEC2LaunchTemplatePrivateIpAdd {
+﻿function Add-VSEC2LaunchTemplatePrivateIpAdd {
     <#
     .SYNOPSIS
         Adds an AWS::EC2::LaunchTemplate.PrivateIpAdd resource property to the template

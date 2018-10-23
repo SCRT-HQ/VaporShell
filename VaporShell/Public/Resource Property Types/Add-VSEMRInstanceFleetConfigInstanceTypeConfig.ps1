@@ -1,4 +1,4 @@
-function Add-VSEMRInstanceFleetConfigInstanceTypeConfig {
+﻿function Add-VSEMRInstanceFleetConfigInstanceTypeConfig {
     <#
     .SYNOPSIS
         Adds an AWS::EMR::InstanceFleetConfig.InstanceTypeConfig resource property to the template

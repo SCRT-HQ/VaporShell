@@ -1,4 +1,4 @@
-function Add-VSBudgetsBudgetNotificationWithSubscribers {
+﻿function Add-VSBudgetsBudgetNotificationWithSubscribers {
     <#
     .SYNOPSIS
         Adds an AWS::Budgets::Budget.NotificationWithSubscribers resource property to the template

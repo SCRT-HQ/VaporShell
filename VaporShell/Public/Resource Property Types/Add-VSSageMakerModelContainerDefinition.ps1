@@ -1,4 +1,4 @@
-function Add-VSSageMakerModelContainerDefinition {
+﻿function Add-VSSageMakerModelContainerDefinition {
     <#
     .SYNOPSIS
         Adds an AWS::SageMaker::Model.ContainerDefinition resource property to the template

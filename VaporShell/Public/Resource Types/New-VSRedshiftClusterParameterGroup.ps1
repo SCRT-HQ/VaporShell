@@ -1,4 +1,4 @@
-function New-VSRedshiftClusterParameterGroup {
+﻿function New-VSRedshiftClusterParameterGroup {
     <#
     .SYNOPSIS
         Adds an AWS::Redshift::ClusterParameterGroup resource to the template

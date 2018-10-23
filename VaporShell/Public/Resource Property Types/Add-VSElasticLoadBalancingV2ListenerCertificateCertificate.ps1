@@ -1,4 +1,4 @@
-function Add-VSElasticLoadBalancingV2ListenerCertificateCertificate {
+﻿function Add-VSElasticLoadBalancingV2ListenerCertificateCertificate {
     <#
     .SYNOPSIS
         Adds an AWS::ElasticLoadBalancingV2::ListenerCertificate.Certificate resource property to the template

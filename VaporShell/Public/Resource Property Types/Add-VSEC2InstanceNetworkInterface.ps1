@@ -1,4 +1,4 @@
-function Add-VSEC2InstanceNetworkInterface {
+﻿function Add-VSEC2InstanceNetworkInterface {
     <#
     .SYNOPSIS
         Adds an AWS::EC2::Instance.NetworkInterface resource property to the template

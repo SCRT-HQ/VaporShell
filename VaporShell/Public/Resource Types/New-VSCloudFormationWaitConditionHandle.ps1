@@ -1,4 +1,4 @@
-function New-VSCloudFormationWaitConditionHandle {
+﻿function New-VSCloudFormationWaitConditionHandle {
     <#
     .SYNOPSIS
         Adds an AWS::CloudFormation::WaitConditionHandle resource to the template

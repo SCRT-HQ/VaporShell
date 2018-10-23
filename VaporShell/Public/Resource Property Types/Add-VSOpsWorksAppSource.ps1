@@ -1,4 +1,4 @@
-function Add-VSOpsWorksAppSource {
+﻿function Add-VSOpsWorksAppSource {
     <#
     .SYNOPSIS
         Adds an AWS::OpsWorks::App.Source resource property to the template
@@ -50,8 +50,8 @@ function Add-VSOpsWorksAppSource {
     #>
     [OutputType('Vaporshell.Resource.OpsWorks.App.Source')]
     [cmdletbinding()]
-    [Diagnostics.CodeAnalysis.SuppressMessageAttribute("PSAvoidUsingPlainTextForPassword","Password")]
-    [Diagnostics.CodeAnalysis.SuppressMessageAttribute("PSAvoidUsingUserNameAndPasswordParams","")]
+    [Diagnostics.CodeAnalysis.SuppressMessageAttribute("PSAvoidUsingPlainTextForPassword")]
+    [Diagnostics.CodeAnalysis.SuppressMessageAttribute("PSAvoidUsingUserNameAndPasswordParams")]
     Param
     (
         [parameter(Mandatory = $false)]

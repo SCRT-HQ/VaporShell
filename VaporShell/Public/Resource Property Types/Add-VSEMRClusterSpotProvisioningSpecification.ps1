@@ -1,4 +1,4 @@
-function Add-VSEMRClusterSpotProvisioningSpecification {
+﻿function Add-VSEMRClusterSpotProvisioningSpecification {
     <#
     .SYNOPSIS
         Adds an AWS::EMR::Cluster.SpotProvisioningSpecification resource property to the template

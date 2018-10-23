@@ -1,4 +1,4 @@
-function Add-VSKinesisStreamStreamEncryption {
+﻿function Add-VSKinesisStreamStreamEncryption {
     <#
     .SYNOPSIS
         Adds an AWS::Kinesis::Stream.StreamEncryption resource property to the template

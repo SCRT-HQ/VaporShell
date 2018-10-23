@@ -1,4 +1,4 @@
-function Add-VSAmazonMQBrokerUser {
+﻿function Add-VSAmazonMQBrokerUser {
     <#
     .SYNOPSIS
         Adds an AWS::AmazonMQ::Broker.User resource property to the template
@@ -39,8 +39,8 @@ function Add-VSAmazonMQBrokerUser {
     #>
     [OutputType('Vaporshell.Resource.AmazonMQ.Broker.User')]
     [cmdletbinding()]
-    [Diagnostics.CodeAnalysis.SuppressMessageAttribute("PSAvoidUsingPlainTextForPassword","Password")]
-    [Diagnostics.CodeAnalysis.SuppressMessageAttribute("PSAvoidUsingUserNameAndPasswordParams","")]
+    [Diagnostics.CodeAnalysis.SuppressMessageAttribute("PSAvoidUsingPlainTextForPassword")]
+    [Diagnostics.CodeAnalysis.SuppressMessageAttribute("PSAvoidUsingUserNameAndPasswordParams")]
     Param
     (
         [parameter(Mandatory = $true)]

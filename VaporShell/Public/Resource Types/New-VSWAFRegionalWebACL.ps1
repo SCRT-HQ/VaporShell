@@ -1,4 +1,4 @@
-function New-VSWAFRegionalWebACL {
+﻿function New-VSWAFRegionalWebACL {
     <#
     .SYNOPSIS
         Adds an AWS::WAFRegional::WebACL resource to the template

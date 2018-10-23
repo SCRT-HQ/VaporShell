@@ -1,4 +1,4 @@
-function New-VSOpsWorksLayer {
+﻿function New-VSOpsWorksLayer {
     <#
     .SYNOPSIS
         Adds an AWS::OpsWorks::Layer resource to the template

@@ -1,4 +1,4 @@
-function Add-VSCloudFrontCloudFrontOriginAccessIdentityCloudFrontOriginAccessIdentityConfig {
+﻿function Add-VSCloudFrontCloudFrontOriginAccessIdentityCloudFrontOriginAccessIdentityConfig {
     <#
     .SYNOPSIS
         Adds an AWS::CloudFront::CloudFrontOriginAccessIdentity.CloudFrontOriginAccessIdentityConfig resource property to the template

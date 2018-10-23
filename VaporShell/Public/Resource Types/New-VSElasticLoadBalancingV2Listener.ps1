@@ -1,4 +1,4 @@
-function New-VSElasticLoadBalancingV2Listener {
+﻿function New-VSElasticLoadBalancingV2Listener {
     <#
     .SYNOPSIS
         Adds an AWS::ElasticLoadBalancingV2::Listener resource to the template

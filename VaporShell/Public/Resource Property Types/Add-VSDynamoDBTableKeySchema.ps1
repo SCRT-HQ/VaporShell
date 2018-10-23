@@ -1,4 +1,4 @@
-function Add-VSDynamoDBTableKeySchema {
+﻿function Add-VSDynamoDBTableKeySchema {
     <#
     .SYNOPSIS
         Adds an AWS::DynamoDB::Table.KeySchema resource property to the template

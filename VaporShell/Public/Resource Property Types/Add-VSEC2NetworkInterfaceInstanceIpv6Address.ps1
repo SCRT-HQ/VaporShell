@@ -1,4 +1,4 @@
-function Add-VSEC2NetworkInterfaceInstanceIpv6Address {
+﻿function Add-VSEC2NetworkInterfaceInstanceIpv6Address {
     <#
     .SYNOPSIS
         Adds an AWS::EC2::NetworkInterface.InstanceIpv6Address resource property to the template

@@ -1,4 +1,4 @@
-function Add-VSKinesisFirehoseDeliveryStreamElasticsearchRetryOptions {
+﻿function Add-VSKinesisFirehoseDeliveryStreamElasticsearchRetryOptions {
     <#
     .SYNOPSIS
         Adds an AWS::KinesisFirehose::DeliveryStream.ElasticsearchRetryOptions resource property to the template

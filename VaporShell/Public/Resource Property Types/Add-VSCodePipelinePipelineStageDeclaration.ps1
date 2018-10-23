@@ -1,4 +1,4 @@
-function Add-VSCodePipelinePipelineStageDeclaration {
+﻿function Add-VSCodePipelinePipelineStageDeclaration {
     <#
     .SYNOPSIS
         Adds an AWS::CodePipeline::Pipeline.StageDeclaration resource property to the template

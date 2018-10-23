@@ -1,4 +1,4 @@
-function New-VSDMSEventSubscription {
+﻿function New-VSDMSEventSubscription {
     <#
     .SYNOPSIS
         Adds an AWS::DMS::EventSubscription resource to the template

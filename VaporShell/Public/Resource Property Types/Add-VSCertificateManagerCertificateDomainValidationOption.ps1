@@ -1,4 +1,4 @@
-function Add-VSCertificateManagerCertificateDomainValidationOption {
+﻿function Add-VSCertificateManagerCertificateDomainValidationOption {
     <#
     .SYNOPSIS
         Adds an AWS::CertificateManager::Certificate.DomainValidationOption resource property to the template

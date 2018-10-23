@@ -1,4 +1,4 @@
-function Add-VSIoTTopicRuleCloudwatchAlarmAction {
+﻿function Add-VSIoTTopicRuleCloudwatchAlarmAction {
     <#
     .SYNOPSIS
         Adds an AWS::IoT::TopicRule.CloudwatchAlarmAction resource property to the template

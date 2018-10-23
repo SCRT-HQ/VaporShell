@@ -1,4 +1,4 @@
-function Add-VSElasticsearchDomainEBSOptions {
+﻿function Add-VSElasticsearchDomainEBSOptions {
     <#
     .SYNOPSIS
         Adds an AWS::Elasticsearch::Domain.EBSOptions resource property to the template

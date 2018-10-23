@@ -1,4 +1,4 @@
-function Add-VSEMRInstanceGroupConfigAutoScalingPolicy {
+﻿function Add-VSEMRInstanceGroupConfigAutoScalingPolicy {
     <#
     .SYNOPSIS
         Adds an AWS::EMR::InstanceGroupConfig.AutoScalingPolicy resource property to the template

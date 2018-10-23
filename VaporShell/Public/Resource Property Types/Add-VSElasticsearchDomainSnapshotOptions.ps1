@@ -1,4 +1,4 @@
-function Add-VSElasticsearchDomainSnapshotOptions {
+﻿function Add-VSElasticsearchDomainSnapshotOptions {
     <#
     .SYNOPSIS
         Adds an AWS::Elasticsearch::Domain.SnapshotOptions resource property to the template

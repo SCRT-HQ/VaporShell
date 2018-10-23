@@ -1,4 +1,4 @@
-function New-VSServiceCatalogCloudFormationProduct {
+﻿function New-VSServiceCatalogCloudFormationProduct {
     <#
     .SYNOPSIS
         Adds an AWS::ServiceCatalog::CloudFormationProduct resource to the template

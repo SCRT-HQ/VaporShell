@@ -1,4 +1,4 @@
-function New-VSCloudWatchDashboard {
+﻿function New-VSCloudWatchDashboard {
     <#
     .SYNOPSIS
         Adds an AWS::CloudWatch::Dashboard resource to the template

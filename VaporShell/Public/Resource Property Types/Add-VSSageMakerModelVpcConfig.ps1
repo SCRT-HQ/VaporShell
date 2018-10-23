@@ -1,4 +1,4 @@
-function Add-VSSageMakerModelVpcConfig {
+﻿function Add-VSSageMakerModelVpcConfig {
     <#
     .SYNOPSIS
         Adds an AWS::SageMaker::Model.VpcConfig resource property to the template

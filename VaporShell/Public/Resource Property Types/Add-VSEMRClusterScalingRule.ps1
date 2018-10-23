@@ -1,4 +1,4 @@
-function Add-VSEMRClusterScalingRule {
+﻿function Add-VSEMRClusterScalingRule {
     <#
     .SYNOPSIS
         Adds an AWS::EMR::Cluster.ScalingRule resource property to the template

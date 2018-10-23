@@ -1,4 +1,4 @@
-function Add-VSECSTaskDefinitionRepositoryCredentials {
+﻿function Add-VSECSTaskDefinitionRepositoryCredentials {
     <#
     .SYNOPSIS
         Adds an AWS::ECS::TaskDefinition.RepositoryCredentials resource property to the template
@@ -20,8 +20,8 @@ function Add-VSECSTaskDefinitionRepositoryCredentials {
     #>
     [OutputType('Vaporshell.Resource.ECS.TaskDefinition.RepositoryCredentials')]
     [cmdletbinding()]
-    [Diagnostics.CodeAnalysis.SuppressMessageAttribute("PSAvoidUsingPlainTextForPassword","CredentialsParameter")]
-    [Diagnostics.CodeAnalysis.SuppressMessageAttribute("PSAvoidUsingUserNameAndPasswordParams","")]
+    [Diagnostics.CodeAnalysis.SuppressMessageAttribute("PSAvoidUsingPlainTextForPassword")]
+    [Diagnostics.CodeAnalysis.SuppressMessageAttribute("PSAvoidUsingUserNameAndPasswordParams")]
     Param
     (
         [parameter(Mandatory = $false)]

@@ -1,4 +1,4 @@
-function New-VSNeptuneDBInstance {
+﻿function New-VSNeptuneDBInstance {
     <#
     .SYNOPSIS
         Adds an AWS::Neptune::DBInstance resource to the template

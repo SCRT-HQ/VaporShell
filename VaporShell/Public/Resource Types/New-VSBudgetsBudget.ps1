@@ -1,4 +1,4 @@
-function New-VSBudgetsBudget {
+﻿function New-VSBudgetsBudget {
     <#
     .SYNOPSIS
         Adds an AWS::Budgets::Budget resource to the template

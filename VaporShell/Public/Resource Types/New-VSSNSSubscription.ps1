@@ -1,4 +1,4 @@
-function New-VSSNSSubscription {
+﻿function New-VSSNSSubscription {
     <#
     .SYNOPSIS
         Adds an AWS::SNS::Subscription resource to the template

@@ -1,4 +1,4 @@
-function Add-VSEC2LaunchTemplateBlockDeviceMapping {
+﻿function Add-VSEC2LaunchTemplateBlockDeviceMapping {
     <#
     .SYNOPSIS
         Adds an AWS::EC2::LaunchTemplate.BlockDeviceMapping resource property to the template

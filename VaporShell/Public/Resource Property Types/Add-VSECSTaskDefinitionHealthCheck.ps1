@@ -1,4 +1,4 @@
-function Add-VSECSTaskDefinitionHealthCheck {
+﻿function Add-VSECSTaskDefinitionHealthCheck {
     <#
     .SYNOPSIS
         Adds an AWS::ECS::TaskDefinition.HealthCheck resource property to the template

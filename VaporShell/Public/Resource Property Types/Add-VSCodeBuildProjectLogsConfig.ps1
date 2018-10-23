@@ -1,4 +1,4 @@
-function Add-VSCodeBuildProjectLogsConfig {
+﻿function Add-VSCodeBuildProjectLogsConfig {
     <#
     .SYNOPSIS
         Adds an AWS::CodeBuild::Project.LogsConfig resource property to the template

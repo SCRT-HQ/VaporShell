@@ -1,4 +1,4 @@
-function New-VSWAFWebACL {
+﻿function New-VSWAFWebACL {
     <#
     .SYNOPSIS
         Adds an AWS::WAF::WebACL resource to the template

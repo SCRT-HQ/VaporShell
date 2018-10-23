@@ -1,4 +1,4 @@
-function Add-VSS3BucketTopicConfiguration {
+﻿function Add-VSS3BucketTopicConfiguration {
     <#
     .SYNOPSIS
         Adds an AWS::S3::Bucket.TopicConfiguration resource property to the template

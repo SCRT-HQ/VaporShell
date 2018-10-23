@@ -1,4 +1,4 @@
-function Add-VSGlueDatabaseDatabaseInput {
+﻿function Add-VSGlueDatabaseDatabaseInput {
     <#
     .SYNOPSIS
         Adds an AWS::Glue::Database.DatabaseInput resource property to the template

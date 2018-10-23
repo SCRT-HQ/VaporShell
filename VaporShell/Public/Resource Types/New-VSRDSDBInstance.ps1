@@ -1,4 +1,4 @@
-function New-VSRDSDBInstance {
+﻿function New-VSRDSDBInstance {
     <#
     .SYNOPSIS
         Adds an AWS::RDS::DBInstance resource to the template
@@ -286,8 +286,8 @@ function New-VSRDSDBInstance {
     #>
     [OutputType('Vaporshell.Resource.RDS.DBInstance')]
     [cmdletbinding()]
-    [Diagnostics.CodeAnalysis.SuppressMessageAttribute("PSAvoidUsingPlainTextForPassword","MasterUserPassword")]
-    [Diagnostics.CodeAnalysis.SuppressMessageAttribute("PSAvoidUsingUserNameAndPasswordParams","")]
+    [Diagnostics.CodeAnalysis.SuppressMessageAttribute("PSAvoidUsingPlainTextForPassword")]
+    [Diagnostics.CodeAnalysis.SuppressMessageAttribute("PSAvoidUsingUserNameAndPasswordParams")]
     Param
     (
         [parameter(Mandatory = $true,Position = 0)]

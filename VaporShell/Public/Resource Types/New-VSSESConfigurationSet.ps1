@@ -1,4 +1,4 @@
-function New-VSSESConfigurationSet {
+﻿function New-VSSESConfigurationSet {
     <#
     .SYNOPSIS
         Adds an AWS::SES::ConfigurationSet resource to the template

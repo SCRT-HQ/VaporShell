@@ -1,4 +1,4 @@
-function Add-VSCodeBuildProjectEnvironment {
+﻿function Add-VSCodeBuildProjectEnvironment {
     <#
     .SYNOPSIS
         Adds an AWS::CodeBuild::Project.Environment resource property to the template

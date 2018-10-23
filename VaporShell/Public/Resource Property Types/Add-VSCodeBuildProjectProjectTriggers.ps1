@@ -1,4 +1,4 @@
-function Add-VSCodeBuildProjectProjectTriggers {
+﻿function Add-VSCodeBuildProjectProjectTriggers {
     <#
     .SYNOPSIS
         Adds an AWS::CodeBuild::Project.ProjectTriggers resource property to the template

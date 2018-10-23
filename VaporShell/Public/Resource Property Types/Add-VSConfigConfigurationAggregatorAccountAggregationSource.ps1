@@ -1,4 +1,4 @@
-function Add-VSConfigConfigurationAggregatorAccountAggregationSource {
+﻿function Add-VSConfigConfigurationAggregatorAccountAggregationSource {
     <#
     .SYNOPSIS
         Adds an AWS::Config::ConfigurationAggregator.AccountAggregationSource resource property to the template

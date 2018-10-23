@@ -1,4 +1,4 @@
-function Add-VSEMRClusterScalingAction {
+﻿function Add-VSEMRClusterScalingAction {
     <#
     .SYNOPSIS
         Adds an AWS::EMR::Cluster.ScalingAction resource property to the template

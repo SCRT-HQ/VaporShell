@@ -1,4 +1,4 @@
-function Add-VSElasticBeanstalkApplicationMaxCountRule {
+﻿function Add-VSElasticBeanstalkApplicationMaxCountRule {
     <#
     .SYNOPSIS
         Adds an AWS::ElasticBeanstalk::Application.MaxCountRule resource property to the template

@@ -1,4 +1,4 @@
-function Add-VSECSServiceDeploymentConfiguration {
+﻿function Add-VSECSServiceDeploymentConfiguration {
     <#
     .SYNOPSIS
         Adds an AWS::ECS::Service.DeploymentConfiguration resource property to the template

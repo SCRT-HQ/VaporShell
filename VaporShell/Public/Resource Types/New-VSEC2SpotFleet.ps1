@@ -1,4 +1,4 @@
-function New-VSEC2SpotFleet {
+﻿function New-VSEC2SpotFleet {
     <#
     .SYNOPSIS
         Adds an AWS::EC2::SpotFleet resource to the template

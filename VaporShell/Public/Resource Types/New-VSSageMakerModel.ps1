@@ -1,4 +1,4 @@
-function New-VSSageMakerModel {
+﻿function New-VSSageMakerModel {
     <#
     .SYNOPSIS
         Adds an AWS::SageMaker::Model resource to the template

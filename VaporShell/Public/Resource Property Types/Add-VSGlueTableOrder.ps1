@@ -1,4 +1,4 @@
-function Add-VSGlueTableOrder {
+﻿function Add-VSGlueTableOrder {
     <#
     .SYNOPSIS
         Adds an AWS::Glue::Table.Order resource property to the template

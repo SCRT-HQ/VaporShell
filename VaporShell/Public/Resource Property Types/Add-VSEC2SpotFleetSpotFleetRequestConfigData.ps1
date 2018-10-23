@@ -1,4 +1,4 @@
-function Add-VSEC2SpotFleetSpotFleetRequestConfigData {
+﻿function Add-VSEC2SpotFleetSpotFleetRequestConfigData {
     <#
     .SYNOPSIS
         Adds an AWS::EC2::SpotFleet.SpotFleetRequestConfigData resource property to the template

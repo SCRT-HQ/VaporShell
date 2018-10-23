@@ -1,4 +1,4 @@
-function Add-VSSESReceiptFilterIpFilter {
+﻿function Add-VSSESReceiptFilterIpFilter {
     <#
     .SYNOPSIS
         Adds an AWS::SES::ReceiptFilter.IpFilter resource property to the template

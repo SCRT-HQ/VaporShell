@@ -1,4 +1,4 @@
-function New-VSAthenaNamedQuery {
+﻿function New-VSAthenaNamedQuery {
     <#
     .SYNOPSIS
         Adds an AWS::Athena::NamedQuery resource to the template

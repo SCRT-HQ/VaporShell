@@ -1,4 +1,4 @@
-function Add-VSDynamoDBTableLocalSecondaryIndex {
+﻿function Add-VSDynamoDBTableLocalSecondaryIndex {
     <#
     .SYNOPSIS
         Adds an AWS::DynamoDB::Table.LocalSecondaryIndex resource property to the template

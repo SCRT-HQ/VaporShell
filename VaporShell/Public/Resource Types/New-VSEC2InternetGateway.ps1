@@ -1,4 +1,4 @@
-function New-VSEC2InternetGateway {
+﻿function New-VSEC2InternetGateway {
     <#
     .SYNOPSIS
         Adds an AWS::EC2::InternetGateway resource to the template

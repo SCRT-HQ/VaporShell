@@ -1,4 +1,4 @@
-function Add-VSEMRClusterJobFlowInstancesConfig {
+﻿function Add-VSEMRClusterJobFlowInstancesConfig {
     <#
     .SYNOPSIS
         Adds an AWS::EMR::Cluster.JobFlowInstancesConfig resource property to the template

@@ -1,7 +1,7 @@
 $PSVersion = $PSVersionTable.PSVersion.Major
-$ModuleName = "VaporShell"
-$projectRoot = Resolve-Path "$PSScriptRoot\.."
-$ModulePath = Resolve-Path "$projectRoot\$ModuleName"
+$projectRoot = Resolve-Path "$PSScriptRoot\..\.."
+$ModulePath = Resolve-Path "$projectRoot\out\$($env:BHProjectName)"
+$decompiledModulePath = Resolve-Path "$projectRoot\$($env:BHProjectName)"
 
 # Verbose output for non-master builds on appveyor
 # Handy for troubleshooting.
@@ -11,26 +11,18 @@ if ($ENV:BHBranchName -eq "dev" -or $env:BHCommitMessage -match "!verbose" -or $
     $Verbose.add("Verbose",$True)
 }
 
-$moduleRoot = Split-Path (Resolve-Path "$projectRoot\*\*.psd1")
-$udFile = (Resolve-Path "$projectRoot\Tests\UserData.sh").Path
+$moduleRoot = Split-Path (Resolve-Path "$ModulePath\*\*.psd1")
+$udFile = (Resolve-Path "$PSScriptRoot\..\Assets\UserData.sh").Path
 
-Import-Module $ModulePath -Force -ArgumentList $true
+Write-Verbose "Importing $($env:BHProjectName) module at [$ModulePath]"
+Import-Module $ModulePath -Force -ArgumentList $true -Verbose:$false
 $currentFunctionCount = (Get-Command -Module Vaporshell).Count
 
-Describe "Previous build validation" {
-    Context "Failure breadcrumb from previous build" {
-        It "Should not exist" {
-            "$projectRoot\BuildFailed.txt" | Should -Not -Exist
-        }
-    }
-}
-
-Describe "Module tests: $ModuleName" {
+Describe "Module tests: $($env:BHProjectName)" {
     Context "Confirm files are valid Powershell syntax" {
-        $scripts = Get-ChildItem $projectRoot -Include *.ps1,*.psm1,*.psd1 -Recurse
+        $scripts = Get-ChildItem $decompiledModulePath -Include *.ps1,*.psm1,*.psd1 -Recurse
 
-        # TestCases are splatted to the script so we need hashtables
-        $testCase = $scripts | Foreach-Object {@{file = $_}}         
+        $testCase = $scripts | Foreach-Object {@{file = $_}}
         It "Script <file> should be valid Powershell" -TestCases $testCase {
             param($file)
 
@@ -41,25 +33,25 @@ Describe "Module tests: $ModuleName" {
             $null = [System.Management.Automation.PSParser]::Tokenize($contents, [ref]$errors)
             $errors.Count | Should Be 0
         }
-        
-        It 'Should update Resource/Property Type functions' {
-            Update-VSResourceFunctions
-            Remove-Module Vaporshell
-            Import-Module $ModulePath -Force -ArgumentList $true
-            $newFunctionCount = (Get-Command -Module Vaporshell).Count
-            $newFunctionCount -ge $currentFunctionCount | Should Be $true
-        }
-        if ($env:APPVEYOR) {
-            It 'Should set the credentials correctly on the shared file' {
-                Set-VSCredential -AccessKey $Env:AWS_ACCESS_KEY_ID -SecretKey $Env:AWS_SECRET_ACCESS_KEY -Region "USWest1"
-            }
+    }
+    Context "Confirm private functions are not exported on module import" {
+        $testCase = Get-ChildItem "$decompiledModulePath\Private" -Recurse -Include *.ps1 | Foreach-Object {@{item = $_.BaseName}}
+        It "Should throw when checking for <item> in the module commands" -TestCases $testCase {
+            param($item)
+            {Get-Command -Name $item -Module $env:BHProjectName -ErrorAction Stop} | Should -Throw "The term '$item' is not recognized as the name of a cmdlet, function, script file, or operable program."
         }
     }
-
+    Context "Confirm Development Tool functions are not exported with compiled module" {
+        $testCase = Get-ChildItem "$decompiledModulePath\Public\Development Tools" -Recurse -Include *.ps1 | Foreach-Object {@{item = $_.BaseName}}
+        It "Should throw when checking for <item> in the module commands" -TestCases $testCase {
+            param($item)
+            {Get-Command -Name $item -Module $env:BHProjectName -ErrorAction Stop} | Should -Throw "The term '$item' is not recognized as the name of a cmdlet, function, script file, or operable program."
+        }
+    }
     Context "Confirm there are no duplicate function names in private and public folders" {
         It 'Should have no duplicate functions' {
-            $functions = Get-ChildItem "$moduleRoot\Public" -Recurse -Include *.ps1 | Select-Object -ExpandProperty BaseName
-            $functions += Get-ChildItem "$moduleRoot\Private" -Recurse -Include *.ps1 | Select-Object -ExpandProperty BaseName
+            $functions = Get-ChildItem "$decompiledModulePath\Public" -Recurse -Include *.ps1 | Select-Object -ExpandProperty BaseName
+            $functions += Get-ChildItem "$decompiledModulePath\Private" -Recurse -Include *.ps1 | Select-Object -ExpandProperty BaseName
             ($functions | Group-Object | Where-Object {$_.Count -gt 1}).Count | Should -BeLessThan 1
         }
     }
@@ -68,7 +60,11 @@ Describe "Module tests: $ModuleName" {
 Describe "Unit tests" {
     Context 'Strict mode' {
         Set-StrictMode -Version latest
-
+        if ($env:AWS_ACCESS_KEY_ID -and $env:AWS_SECRET_ACCESS_KEY) {
+            It 'Should set the credentials correctly on the shared file' {
+                Set-VSCredential -AccessKey $env:AWS_ACCESS_KEY_ID -SecretKey $env:AWS_SECRET_ACCESS_KEY -Region "USWest2" -ProfileName 'pester'
+            }
+        }
         It 'Should build template as an object then export to JSON' {
             $testPath = "$projectRoot\Template.json"
             $templateInit = $null
@@ -223,7 +219,7 @@ Describe "Unit tests" {
             {New-VaporResource -LogicalId "Tests" -Properties 1} | Should throw "This parameter only accepts the following types: System.Management.Automation.PSCustomObject, Vaporshell.Resource.Properties, System.Collections.Hashtable. The current types of the value are: System.Int32, System.ValueType, System.Object."
             {New-VaporResource -LogicalId "Tests" -Properties ([PSCustomObject]@{Name = "Test"}) -Type "AWS::EC2::Instance" -CreationPolicy 1} | Should throw "This parameter only accepts the following types: Vaporshell.Resource.CreationPolicy. The current types of the value are: System.Int32, System.ValueType, System.Object."
             {New-VaporResource -LogicalId "Tests" -Properties ([PSCustomObject]@{Name = "Test"}) -Type "AWS::EC2::Instance" -UpdatePolicy 1} | Should throw "This parameter only accepts the following types: Vaporshell.Resource.UpdatePolicy. The current types of the value are: System.Int32, System.ValueType, System.Object."
-            {New-VaporResource -LogicalId "Tests" -Properties ([PSCustomObject]@{Name = "Test"}) -Type "AWS::EC2::Instance" -Metadata 1} | Should throw "This parameter only accepts the following types: System.Management.Automation.PSCustomObject. The current types of the value are: System.Int32, System.ValueType, System.Object." 
+            {New-VaporResource -LogicalId "Tests" -Properties ([PSCustomObject]@{Name = "Test"}) -Type "AWS::EC2::Instance" -Metadata 1} | Should throw "This parameter only accepts the following types: System.Management.Automation.PSCustomObject. The current types of the value are: System.Int32, System.ValueType, System.Object."
             {New-VaporMetadata -LogicalId "!@#$%*&"} | Should throw
             {New-VaporMetadata -LogicalId "Test" -Metadata 1} | Should throw
             {New-VaporMapping -LogicalId "!@#$%*&"} | Should throw
@@ -264,12 +260,6 @@ Describe "Unit tests" {
                 {$t.RemoveOutput("BackupLoadBalancerDNSName","PrimaryLoadBalancerDNSName","BackupLoadBalancerDNSName3")} | Should Not throw
             }
         }
-    }
-}
-Describe "Module load test: Standard method" {
-    It 'Should import the module fine without dot sourcing the ps1 files' {
-        Remove-Module $ModuleName -ErrorAction SilentlyContinue
-        Import-Module $ModulePath -Force
     }
 }
 Remove-Item "$projectRoot\Template.json","$projectRoot\Template.yaml","$projectRoot\Template2.json"  -Force -Confirm:$False -ErrorAction SilentlyContinue

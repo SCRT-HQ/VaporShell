@@ -1,4 +1,4 @@
-function Add-VSApiGatewayDeploymentDeploymentCanarySettings {
+﻿function Add-VSApiGatewayDeploymentDeploymentCanarySettings {
     <#
     .SYNOPSIS
         Adds an AWS::ApiGateway::Deployment.DeploymentCanarySettings resource property to the template

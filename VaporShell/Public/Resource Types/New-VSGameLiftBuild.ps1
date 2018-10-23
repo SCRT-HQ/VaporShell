@@ -1,4 +1,4 @@
-function New-VSGameLiftBuild {
+﻿function New-VSGameLiftBuild {
     <#
     .SYNOPSIS
         Adds an AWS::GameLift::Build resource to the template

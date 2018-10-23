@@ -1,4 +1,4 @@
-function New-VSAppSyncDataSource {
+﻿function New-VSAppSyncDataSource {
     <#
     .SYNOPSIS
         Adds an AWS::AppSync::DataSource resource to the template

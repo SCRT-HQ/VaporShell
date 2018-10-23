@@ -1,4 +1,4 @@
-function New-VSGameLiftAlias {
+﻿function New-VSGameLiftAlias {
     <#
     .SYNOPSIS
         Adds an AWS::GameLift::Alias resource to the template

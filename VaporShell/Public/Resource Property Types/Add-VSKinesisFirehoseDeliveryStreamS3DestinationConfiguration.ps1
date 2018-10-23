@@ -1,4 +1,4 @@
-function Add-VSKinesisFirehoseDeliveryStreamS3DestinationConfiguration {
+﻿function Add-VSKinesisFirehoseDeliveryStreamS3DestinationConfiguration {
     <#
     .SYNOPSIS
         Adds an AWS::KinesisFirehose::DeliveryStream.S3DestinationConfiguration resource property to the template

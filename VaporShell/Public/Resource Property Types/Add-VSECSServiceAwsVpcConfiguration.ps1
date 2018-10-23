@@ -1,4 +1,4 @@
-function Add-VSECSServiceAwsVpcConfiguration {
+﻿function Add-VSECSServiceAwsVpcConfiguration {
     <#
     .SYNOPSIS
         Adds an AWS::ECS::Service.AwsVpcConfiguration resource property to the template

@@ -1,4 +1,4 @@
-function New-VSRedshiftCluster {
+﻿function New-VSRedshiftCluster {
     <#
     .SYNOPSIS
         Adds an AWS::Redshift::Cluster resource to the template
@@ -228,8 +228,8 @@ function New-VSRedshiftCluster {
     #>
     [OutputType('Vaporshell.Resource.Redshift.Cluster')]
     [cmdletbinding()]
-    [Diagnostics.CodeAnalysis.SuppressMessageAttribute("PSAvoidUsingPlainTextForPassword","MasterUserPassword")]
-    [Diagnostics.CodeAnalysis.SuppressMessageAttribute("PSAvoidUsingUserNameAndPasswordParams","")]
+    [Diagnostics.CodeAnalysis.SuppressMessageAttribute("PSAvoidUsingPlainTextForPassword")]
+    [Diagnostics.CodeAnalysis.SuppressMessageAttribute("PSAvoidUsingUserNameAndPasswordParams")]
     Param
     (
         [parameter(Mandatory = $true,Position = 0)]

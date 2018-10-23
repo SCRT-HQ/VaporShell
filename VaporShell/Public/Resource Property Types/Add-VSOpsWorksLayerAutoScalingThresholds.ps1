@@ -1,4 +1,4 @@
-function Add-VSOpsWorksLayerAutoScalingThresholds {
+﻿function Add-VSOpsWorksLayerAutoScalingThresholds {
     <#
     .SYNOPSIS
         Adds an AWS::OpsWorks::Layer.AutoScalingThresholds resource property to the template

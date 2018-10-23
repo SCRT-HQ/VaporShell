@@ -1,4 +1,4 @@
-function New-VSAppSyncGraphQLApi {
+﻿function New-VSAppSyncGraphQLApi {
     <#
     .SYNOPSIS
         Adds an AWS::AppSync::GraphQLApi resource to the template

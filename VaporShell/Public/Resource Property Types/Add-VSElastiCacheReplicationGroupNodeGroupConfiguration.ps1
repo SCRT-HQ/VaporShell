@@ -1,4 +1,4 @@
-function Add-VSElastiCacheReplicationGroupNodeGroupConfiguration {
+﻿function Add-VSElastiCacheReplicationGroupNodeGroupConfiguration {
     <#
     .SYNOPSIS
         Adds an AWS::ElastiCache::ReplicationGroup.NodeGroupConfiguration resource property to the template

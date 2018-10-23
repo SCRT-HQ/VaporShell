@@ -1,4 +1,4 @@
-function Add-VSElasticsearchDomainEncryptionAtRestOptions {
+﻿function Add-VSElasticsearchDomainEncryptionAtRestOptions {
     <#
     .SYNOPSIS
         Adds an AWS::Elasticsearch::Domain.EncryptionAtRestOptions resource property to the template

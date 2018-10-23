@@ -1,4 +1,4 @@
-function Add-VSRoute53RecordSetGroupGeoLocation {
+﻿function Add-VSRoute53RecordSetGroupGeoLocation {
     <#
     .SYNOPSIS
         Adds an AWS::Route53::RecordSetGroup.GeoLocation resource property to the template

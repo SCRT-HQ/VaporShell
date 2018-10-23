@@ -1,4 +1,4 @@
-function Add-VSLambdaAliasAliasRoutingConfiguration {
+﻿function Add-VSLambdaAliasAliasRoutingConfiguration {
     <#
     .SYNOPSIS
         Adds an AWS::Lambda::Alias.AliasRoutingConfiguration resource property to the template
