@@ -1,47 +1,39 @@
-﻿function New-VSApiGatewayUsagePlan {
+﻿function New-VSEventsEventBusPolicy {
     <#
     .SYNOPSIS
-        Adds an AWS::ApiGateway::UsagePlan resource to the template
+        Adds an AWS::Events::EventBusPolicy resource to the template
 
     .DESCRIPTION
-        Adds an AWS::ApiGateway::UsagePlan resource to the template
+        Adds an AWS::Events::EventBusPolicy resource to the template
 
     .LINK
-        http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-apigateway-usageplan.html
+        http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-events-eventbuspolicy.html
 
     .PARAMETER LogicalId
         The logical ID must be alphanumeric (A-Za-z0-9) and unique within the template. Use the logical name to reference the resource in other parts of the template. For example, if you want to map an Amazon Elastic Block Store volume to an Amazon EC2 instance, you reference the logical IDs to associate the block stores with the instance.
 
-    .PARAMETER ApiStages
-		Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-apigateway-usageplan.html#cfn-apigateway-usageplan-apistages    
-		DuplicatesAllowed: False    
-		ItemType: ApiStage    
+    .PARAMETER Condition
+		Type: Condition    
 		Required: False    
-		Type: List    
+		Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-events-eventbuspolicy.html#cfn-events-eventbuspolicy-condition    
 		UpdateType: Mutable    
 
-    .PARAMETER Description
-		Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-apigateway-usageplan.html#cfn-apigateway-usageplan-description    
+    .PARAMETER Action
+		Required: True    
+		Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-events-eventbuspolicy.html#cfn-events-eventbuspolicy-action    
 		PrimitiveType: String    
-		Required: False    
 		UpdateType: Mutable    
 
-    .PARAMETER Quota
-		Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-apigateway-usageplan.html#cfn-apigateway-usageplan-quota    
-		Required: False    
-		Type: QuotaSettings    
-		UpdateType: Mutable    
-
-    .PARAMETER Throttle
-		Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-apigateway-usageplan.html#cfn-apigateway-usageplan-throttle    
-		Required: False    
-		Type: ThrottleSettings    
-		UpdateType: Mutable    
-
-    .PARAMETER UsagePlanName
-		Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-apigateway-usageplan.html#cfn-apigateway-usageplan-usageplanname    
+    .PARAMETER StatementId
+		Required: True    
+		Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-events-eventbuspolicy.html#cfn-events-eventbuspolicy-statementid    
 		PrimitiveType: String    
-		Required: False    
+		UpdateType: Immutable    
+
+    .PARAMETER Principal
+		Required: True    
+		Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-events-eventbuspolicy.html#cfn-events-eventbuspolicy-principal    
+		PrimitiveType: String    
 		UpdateType: Mutable    
 
     .PARAMETER DeletionPolicy
@@ -68,13 +60,10 @@
         Use the UpdatePolicy attribute to specify how AWS CloudFormation handles updates to the AWS::AutoScaling::AutoScalingGroup resource. AWS CloudFormation invokes one of three update policies depending on the type of change you make or whether a scheduled action is associated with the Auto Scaling group.
 
         You must use the "Add-UpdatePolicy" function here.
-    .PARAMETER Condition
-        Logical ID of the condition that this resource needs to be true in order for this resource to be provisioned.
-
     .FUNCTIONALITY
         Vaporshell
     #>
-    [OutputType('Vaporshell.Resource.ApiGateway.UsagePlan')]
+    [OutputType('Vaporshell.Resource.Events.EventBusPolicy')]
     [cmdletbinding()]
     Param
     (
@@ -90,17 +79,8 @@
         [System.String]
         $LogicalId,
         [parameter(Mandatory = $false)]
-        [ValidateScript( {
-                $allowedTypes = "Vaporshell.Resource.ApiGateway.UsagePlan.ApiStage"
-                if ([string]$($_.PSTypeNames) -match "($(($allowedTypes|ForEach-Object{[RegEx]::Escape($_)}) -join '|'))") {
-                    $true
-                }
-                else {
-                    $PSCmdlet.ThrowTerminatingError((New-VSError -String "This parameter only accepts the following types: $($allowedTypes -join ", "). The current types of the value are: $($_.PSTypeNames -join ", ")."))
-                }
-            })]
-        $ApiStages,
-        [parameter(Mandatory = $false)]
+        $Condition,
+        [parameter(Mandatory = $true)]
         [ValidateScript( {
                 $allowedTypes = "System.String","Vaporshell.Function","Vaporshell.Condition"
                 if ([string]$($_.PSTypeNames) -match "($(($allowedTypes|ForEach-Object{[RegEx]::Escape($_)}) -join '|'))") {
@@ -110,12 +90,8 @@
                     $PSCmdlet.ThrowTerminatingError((New-VSError -String "This parameter only accepts the following types: $($allowedTypes -join ", "). The current types of the value are: $($_.PSTypeNames -join ", ")."))
                 }
             })]
-        $Description,
-        [parameter(Mandatory = $false)]
-        $Quota,
-        [parameter(Mandatory = $false)]
-        $Throttle,
-        [parameter(Mandatory = $false)]
+        $Action,
+        [parameter(Mandatory = $true)]
         [ValidateScript( {
                 $allowedTypes = "System.String","Vaporshell.Function","Vaporshell.Condition"
                 if ([string]$($_.PSTypeNames) -match "($(($allowedTypes|ForEach-Object{[RegEx]::Escape($_)}) -join '|'))") {
@@ -125,7 +101,18 @@
                     $PSCmdlet.ThrowTerminatingError((New-VSError -String "This parameter only accepts the following types: $($allowedTypes -join ", "). The current types of the value are: $($_.PSTypeNames -join ", ")."))
                 }
             })]
-        $UsagePlanName,
+        $StatementId,
+        [parameter(Mandatory = $true)]
+        [ValidateScript( {
+                $allowedTypes = "System.String","Vaporshell.Function","Vaporshell.Condition"
+                if ([string]$($_.PSTypeNames) -match "($(($allowedTypes|ForEach-Object{[RegEx]::Escape($_)}) -join '|'))") {
+                    $true
+                }
+                else {
+                    $PSCmdlet.ThrowTerminatingError((New-VSError -String "This parameter only accepts the following types: $($allowedTypes -join ", "). The current types of the value are: $($_.PSTypeNames -join ", ")."))
+                }
+            })]
+        $Principal,
         [ValidateSet("Delete","Retain","Snapshot")]
         [System.String]
         $DeletionPolicy,
@@ -142,25 +129,12 @@
                     $PSCmdlet.ThrowTerminatingError((New-VSError -String "The UpdatePolicy parameter only accepts the following types: $($allowedTypes -join ", "). The current types of the value are: $($_.PSTypeNames -join ", ")."))
                 }
             })]
-        $Metadata,
-        [parameter(Mandatory = $false)]
-        [ValidateScript( {
-                $allowedTypes = "Vaporshell.Resource.UpdatePolicy"
-                if ([string]$($_.PSTypeNames) -match "($(($allowedTypes|ForEach-Object{[RegEx]::Escape($_)}) -join '|'))") {
-                    $true
-                }
-                else {
-                    $PSCmdlet.ThrowTerminatingError((New-VSError -String "This parameter only accepts the following types: $($allowedTypes -join ", "). The current types of the value are: $($_.PSTypeNames -join ", ")."))
-                }
-            })]
-        $UpdatePolicy,
-        [parameter(Mandatory = $false)]
-        $Condition
+        $Metadata
     )
     Begin {
         $ResourceParams = @{
             LogicalId = $LogicalId
-            Type = "AWS::ApiGateway::UsagePlan"
+            Type = "AWS::Events::EventBusPolicy"
         }
         $commonParams = @('Verbose','Debug','ErrorAction','WarningAction','InformationAction','ErrorVariable','WarningVariable','InformationVariable','OutVariable','OutBuffer','PipelineVariable')
     }
@@ -183,12 +157,6 @@
                 Condition {
                     $ResourceParams.Add("Condition",$Condition)
                 }
-                ApiStages {
-                    if (!($ResourceParams["Properties"])) {
-                        $ResourceParams.Add("Properties",([PSCustomObject]@{}))
-                    }
-                    $ResourceParams["Properties"] | Add-Member -MemberType NoteProperty -Name ApiStages -Value @($ApiStages)
-                }
                 Default {
                     if (!($ResourceParams["Properties"])) {
                         $ResourceParams.Add("Properties",([PSCustomObject]@{}))
@@ -200,7 +168,7 @@
     }
     End {
         $obj = New-VaporResource @ResourceParams
-        $obj | Add-ObjectDetail -TypeName 'Vaporshell.Resource.ApiGateway.UsagePlan'
+        $obj | Add-ObjectDetail -TypeName 'Vaporshell.Resource.Events.EventBusPolicy'
         Write-Verbose "Resulting JSON from $($MyInvocation.MyCommand): `n`n$(@{$obj.LogicalId = $obj.Props} | ConvertTo-Json -Depth 5)`n"
     }
 }
