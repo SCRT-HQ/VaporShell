@@ -2,7 +2,9 @@
 [cmdletbinding(DefaultParameterSetName = 'task')]
 param(
     [parameter(ParameterSetName = 'task', Position = 0)]
-    [string[]]$Task = 'Default',
+    [ValidateSet('Init','Update','Clean','Compile','Pester','PesterOnly','Deploy')]
+    [string[]]
+    $Task = @('Init','Update','Clean','Compile','Pester'),
 
     [parameter(ParameterSetName = 'help')]
     [switch]$Help,
@@ -79,12 +81,7 @@ function Resolve-Module {
     }
 }
 
-$requiredModules = @('BuildHelpers','psake')
-if ($ENV:APPVEYOR) {
-    $requiredModules += 'PSDeploy'
-}
-
-$requiredModules | Resolve-Module -UpdateModules:$PSBoundParameters['UpdateModules'] -Verbose:$PSBoundParameters['Verbose']
+'BuildHelpers','psake' | Resolve-Module -UpdateModules:$PSBoundParameters['UpdateModules'] -Verbose:$PSBoundParameters['Verbose']
 
 if ($Help) {
     Get-PSakeScriptTasks -buildFile "$PSScriptRoot\psake.ps1" |
@@ -93,12 +90,23 @@ if ($Help) {
 }
 else {
     Set-BuildEnvironment -Force
-    $Task = if ($ENV:BHBuildSystem -eq 'AppVeyor' -and $env:BHCommitMessage -match '!deploy' -and $env:BHBranchName -eq "master" -and $PSVersionTable.PSVersion.Major -lt 6 -and $env:APPVEYOR_PULL_REQUEST_NUMBER -eq $null) {
-        'Deploy'
+    if ($ENV:BHBuildSystem -eq 'VSTS' -and $env:BHCommitMessage -notmatch '!deploy' -and $env:BHBranchName -eq "master" -and $PSVersionTable.PSVersion.Major -lt 6 -and -not [String]::IsNullOrEmpty($env:NugetApiKey) -and $Task -eq 'Deploy') {
+        Write-Host ""
+        Write-Warning "Current build system is $($ENV:BHBuildSystem), but commit message does not match '!deploy'. Skipping psake for this job..."
+        Write-Host ""
+        exit 0
     }
-    else {
-        $Task
+    elseif ($ENV:BHBuildSystem -eq 'VSTS' -and $env:BHCommitMessage -match '!deploy' -and $env:BHBranchName -eq "master" -and $PSVersionTable.PSVersion.Major -lt 6 -and -not [String]::IsNullOrEmpty($env:NugetApiKey)) {
+        $Task = 'Deploy'
     }
+    elseif ($ENV:BHBuildSystem -ne 'VSTS' -and $Task -eq 'Deploy') {
+        Write-Host ""
+        Write-Warning "Current build system is $($ENV:BHBuildSystem). Changing to default task list..."
+        Write-Host ""
+        $Task = @('Init','Update','Clean','Compile','Pester')
+    }
+    Write-Host -ForegroundColor Green "Modules successfully resolved..."
+    Write-Host -ForegroundColor Green "Invoking psake with task list: [ $($Task -join ', ') ]`n"
     Invoke-psake -buildFile "$PSScriptRoot\psake.ps1" -taskList $Task -nologo -Verbose:$PSBoundParameters['Verbose']
     exit ( [int]( -not $psake.build_success ) )
 }

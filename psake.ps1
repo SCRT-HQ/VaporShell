@@ -13,7 +13,7 @@ Properties {
     $sut = $env:BHModulePath
     $tests = "$projectRoot\Tests"
     $Timestamp = Get-Date -Uformat "%Y%m%d-%H%M%S"
-    $PSVersion = $PSVersionTable.PSVersion.Major
+    $PSVersion = $PSVersionTable.PSVersion.ToString()
     $TestFile = "TestResults_PS$PSVersion`_$TimeStamp.xml"
     $outputDir = Join-Path -Path $projectRoot -ChildPath 'out'
     $outputModDir = Join-Path -Path $outputDir -ChildPath $env:BHProjectName
@@ -288,8 +288,8 @@ task Analyze -Depends Pester {
     }
 } -description 'Run PSScriptAnalyzer'
 
-Task Deploy -Depends Analyze {
-    if ($env:BHBuildSystem -eq 'AppVeyor' -and $env:BHCommitMessage -match '!deploy' -and $env:BHBranchName -eq "master") {
+Task Deploy -Depends Compile {
+    if ($env:BHBuildSystem -eq 'VSTS' -and $env:BHCommitMessage -match '!deploy' -and $env:BHBranchName -eq "master") {
         # Load the module, read the exported functions, update the psd1 FunctionsToExport
         $commParsed = $env:BHCommitMessage | Select-String -Pattern '\sv\d\.\d\.\d\s'
         if ($commParsed) {
@@ -331,34 +331,17 @@ Task Deploy -Depends Analyze {
         }
         # Bump the module version
         if ($versionToDeploy) {
-            if(
-                $env:BHProjectName -and $env:BHProjectName.Count -eq 1 -and
-                $env:BHBuildSystem -eq 'AppVeyor' -and
-                $env:BHBranchName -eq "master" -and
-                $env:BHCommitMessage -match '!deploy' -and
-                $env:APPVEYOR_BUILD_WORKER_IMAGE -eq 'Visual Studio 2017' -and
-                $env:APPVEYOR_PULL_REQUEST_NUMBER -eq $null
-            ) {
-                Update-Metadata -Path (Join-Path $outputModVerDir "$($env:BHProjectName).psd1") -PropertyName ModuleVersion -Value $versionToDeploy
-                "    Publishing version [$($versionToDeploy)] to PSGallery..."
-                Publish-Module -Path $outputModVerDir -NuGetApiKey $env:NugetApiKey -Repository PSGallery
-            }
-            else {
-                "    Skipping deployment: To deploy, ensure that...`n" +
-                "      * You are building in AppVeyor (Current: $ENV:BHBuildSystem)`n" +
-                "      * You are committing to the master branch (Current: $ENV:BHBranchName) `n" +
-                "      * You are not building a Pull Request (Current: $ENV:APPVEYOR_PULL_REQUEST_NUMBER) `n" +
-                "      * Your commit message includes !deploy (Current: $ENV:BHCommitMessage) `n" +
-                "      * Your build image is Visual Studio 2017 (Current: $ENV:APPVEYOR_BUILD_WORKER_IMAGE)" |
-                    Write-Host
-            }
+            Update-Metadata -Path (Join-Path $outputModVerDir "$($env:BHProjectName).psd1") -PropertyName ModuleVersion -Value $versionToDeploy
+            "    Publishing version [$($versionToDeploy)] to PSGallery..."
+            Publish-Module -Path $outputModVerDir -NuGetApiKey $env:NugetApiKey -Repository PSGallery
         }
         else {
-            "    No module version matched! Deployment skipped"
+            Write-Host -ForegroundColor Yellow "No module version matched! Negating deployment to prevent errors"
+            $env:BHCommitMessage = $env:BHCommitMessage.Replace('!deploy','')
         }
 
     }
     else {
-        "    Build system is not AppVeyor, commit message does not contain '!deploy' and/or branch is not 'master'!`n    Deployment skipped"
+        Write-Host -ForegroundColor Magenta "Build system is not VSTS, commit message does not contain '!deploy' and/or branch is not 'master' -- skipping module update!"
     }
 } -description 'Deploy module to PSGallery'
