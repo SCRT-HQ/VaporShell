@@ -5,4 +5,4 @@ launch.json
 **insync**
 vaporshell-snippets**
 TestResults**.xml
-out/*
+BuildOutput/*

@@ -97,11 +97,14 @@ function $FunctionName {
         Use the UpdatePolicy attribute to specify how AWS CloudFormation handles updates to the AWS::AutoScaling::AutoScalingGroup resource. AWS CloudFormation invokes one of three update policies depending on the type of change you make or whether a scheduled action is associated with the Auto Scaling group.
 
         You must use the "Add-UpdatePolicy" function here.
+"@
 
-
+        if ($Name -ne 'AWS::Events::EventBusPolicy') {
+            $scriptContents += @"
     .PARAMETER Condition
         Logical ID of the condition that this resource needs to be true in order for this resource to be provisioned.`n
 "@
+        }
     }
     $scriptContents += @"
     .FUNCTIONALITY
@@ -328,6 +331,9 @@ function $FunctionName {
                     `$PSCmdlet.ThrowTerminatingError((New-VSError -String "The UpdatePolicy parameter only accepts the following types: `$(`$allowedTypes -join ", "). The current types of the value are: `$(`$_.PSTypeNames -join ", ")."))
                 }
             })]
+"@
+        if ($Name -ne 'AWS::Events::EventBusPolicy') {
+            $scriptContents += @"
         `$Metadata,
         [parameter(Mandatory = `$false)]
         [ValidateScript( {
@@ -342,6 +348,14 @@ function $FunctionName {
         `$UpdatePolicy,
         [parameter(Mandatory = `$false)]
         `$Condition
+"@
+        }
+        else {
+            $scriptContents += @"
+        `$Metadata
+"@
+        }
+        $scriptContents += @"
     )
     Begin {
         `$ResourceParams = @{
