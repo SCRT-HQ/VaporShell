@@ -102,7 +102,7 @@ else {
     if (
         $Task -eq 'Deploy' -and (
             $ENV:BHBuildSystem -ne 'VSTS' -or
-            $env:SourceBranch -like '*pull*' -or
+            $env:BUILD_SOURCEBRANCH -like '*pull*' -or
             $env:BHCommitMessage -notmatch '!deploy' -or
             $env:BHBranchName -ne 'master' -or
             $PSVersionTable.PSVersion.Major -ne 5 -or
@@ -112,7 +112,7 @@ else {
         "Task is 'Deploy', but conditions are not correct for deployment:`n" +
         "    + Current build system is VSTS     : $($env:BHBuildSystem -eq 'VSTS') [$env:BHBuildSystem]`n" +
         "    + Current branch is master         : $($env:BHBranchName -eq 'master') [$env:BHBranchName]`n" +
-        "    + Source is not a pull request	    : $($env:SourceBranch -notlike '*pull*') [$env:SourceBranch]`n" +
+        "    + Source is not a pull request	    : $($env:BUILD_SOURCEBRANCH -notlike '*pull*') [$env:BUILD_SOURCEBRANCH]`n" +
         "    + Commit message matches '!deploy' : $($env:BHCommitMessage -match '!deploy') [$env:BHCommitMessage]`n" +
         "    + Current PS major version is 5    : $($PSVersionTable.PSVersion.Major -eq 5) [$($PSVersionTable.PSVersion.ToString())]`n" +
         "    + NuGet API key is not null        : $($null -ne $env:NugetApiKey)`n" +

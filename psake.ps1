@@ -34,9 +34,7 @@ task Init {
     "----------------------------------------"
     "Build System Details:"
     Get-Item ENV:BH*
-    "----------------------------------------"
-    "Full Env Details:"
-    Get-Item ENV:*
+    Get-Item ENV:BUILD_*
     "----------------------------------------"
     "`n"
 
