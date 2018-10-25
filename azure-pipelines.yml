@@ -25,8 +25,8 @@ phases:
   - task: PublishBuildArtifacts@1
     displayName: 'Publish Artifact: Compiled Module'
     inputs:
-      PathtoPublish: out/VaporShell
-      ArtifactName: VaporShell
+      PathtoPublish: BuildOutput
+      ArtifactName: BuildOutput
 
 
 - phase: Phase_2
@@ -127,6 +127,7 @@ phases:
 
   steps:
   - powershell: |
-      $Env:NuGetApiKey = '$(NuGetApiKey)'
+      $env:SourceBranch = '$(Build.SourceBranch)'
+      $env:NuGetApiKey = '$(NuGetApiKey)'
       . ./build.ps1 -Task Deploy
     displayName: Deploy to PowerShell Gallery

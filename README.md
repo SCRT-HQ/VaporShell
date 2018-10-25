@@ -17,16 +17,11 @@
 <br />
 
 <div align="center">
-  <!-- AppVeyor -->
-  <a href="https://ci.appveyor.com/project/scrthq/vaporshell/branch/master">
-    <img src="https://ci.appveyor.com/api/projects/status/8a4jsfv42tbmlym8/branch/master?svg=true"
-      alt="AppVeyor - Windows Build Status" title="AppVeyor - Windows Build Status" />
-  </a>&nbsp;&nbsp;&nbsp;
-  <!-- Travis CI -->
-  <a href="https://travis-ci.org/scrthq/VaporShell">
-    <img src="https://travis-ci.org/scrthq/VaporShell.svg?branch=master"
-      alt="Travis CI - Linux / macOS Build Status" title="Travis CI - Linux / macOS Build Status" />
-  </a>&nbsp;&nbsp;&nbsp;
+  <!-- Azure Pipelines -->
+  <a href="https://dev.azure.com/scrthq/SCRT%20HQ/_build/latest?definitionId=3">
+    <img src="https://dev.azure.com/scrthq/SCRT%20HQ/_apis/build/status/VaporShell-CI"
+      alt="Azure Pipelines" title="Azure Pipelines" />
+  </a>&nbsp;&nbsp;&nbsp;&nbsp;
   <!-- Coveralls -->
   <a href="https://coveralls.io/github/scrthq/Vaporshell?branch=master">
     <img src="https://coveralls.io/repos/github/scrthq/Vaporshell/badge.svg?branch=master"

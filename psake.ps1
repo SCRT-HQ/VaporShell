@@ -15,7 +15,7 @@ Properties {
     $Timestamp = Get-Date -Uformat "%Y%m%d-%H%M%S"
     $PSVersion = $PSVersionTable.PSVersion.ToString()
     $TestFile = "TestResults_PS$PSVersion`_$TimeStamp.xml"
-    $outputDir = Join-Path -Path $projectRoot -ChildPath 'out'
+    $outputDir = $env:BHBuildOutput
     $outputModDir = Join-Path -Path $outputDir -ChildPath $env:BHProjectName
     $manifest = Import-PowerShellDataFile -Path $env:BHPSModuleManifest
     $outputModVerDir = Join-Path -Path $outputModDir -ChildPath $manifest.ModuleVersion
@@ -56,17 +56,17 @@ task Init {
 
 task Update -depends Init {
     '    Updating Resource and Property Type functions with current AWS spec sheet...'
-    Remove-Module $($env:BHProjectName) -ErrorAction SilentlyContinue -Force -Verbose:$false
+    Remove-Module $env:BHProjectName -ErrorAction SilentlyContinue -Force -Verbose:$false
     Import-Module $env:BHPSModuleManifest -Force -Verbose:$false
     Update-VSResourceFunctions
-    Remove-Module $($env:BHProjectName) -Force -Verbose:$false
+    Remove-Module $env:BHProjectName -Force -Verbose:$false
 } -description 'Updates module functions before compilation'
 
 task Clean -depends Update {
     Remove-Module -Name $env:BHProjectName -Force -ErrorAction SilentlyContinue -Verbose:$false
 
     if (Test-Path -Path $outputDir) {
-        Get-ChildItem -Path $outputDir -Recurse -File | Where-Object {$_.FullName -notlike "*dll"} | Remove-Item -Force -Recurse
+        Get-ChildItem -Path $outputDir -Recurse -File | Where-Object {$_.FullName -notlike "*dll" -or $_.Name -like "Test*.xml"} | Remove-Item -Force -Recurse
     } else {
         New-Item -Path $outputDir -ItemType Directory > $null
     }
