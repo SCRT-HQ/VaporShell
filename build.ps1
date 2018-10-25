@@ -99,28 +99,30 @@ if ($Help) {
 else {
     'BuildHelpers' | Resolve-Module @update @verbose
     Set-BuildEnvironment -Force
-    if ($Task -eq 'Deploy') {
-        if (
+    if (
+        $Task -eq 'Deploy' -and (
             $ENV:BHBuildSystem -ne 'VSTS' -or
             $env:BHCommitMessage -notmatch '!deploy' -or
             $env:BHBranchName -ne "master" -or
             $PSVersionTable.PSVersion.Major -eq 5 -or
             $null -eq $env:NugetApiKey
-        ) {
-            "    Task is 'Deploy', but conditions are not correct for deployment:`n" +
-            "        - Current build system is VSTS     : $env:BHBuildSystem`n" +
-            "        - Current branch is master         : $env:BHBranchName`n" +
-            "        - Commit message matches '!deploy' : $env:BHCommitMessage`n" +
-            "        - Current PS version is 5          : $($PSVersionTable.PSVersion.ToString())`n" +
-            "        - NugetApiKey is not '`$null'      : $($null -ne $env:NugetApiKey)`n`n" +
-            "    Skipping psake for this job!" |
-            Write-Host
-            exit 0
-        }
+        )
+    ) {
+        "    Task is 'Deploy', but conditions are not correct for deployment:`n" +
+        "        - Current build system is VSTS     : $env:BHBuildSystem`n" +
+        "        - Current branch is master         : $env:BHBranchName`n" +
+        "        - Commit message matches '!deploy' : $env:BHCommitMessage`n" +
+        "        - Current PS version is 5          : $($PSVersionTable.PSVersion.ToString())`n" +
+        "        - NugetApiKey is not '`$null'      : $($null -ne $env:NugetApiKey)`n`n" +
+        "    Skipping psake for this job!" |
+        Write-Host
+        exit 0
     }
-    'psake' | Resolve-Module @update @verbose
-    Write-Host -ForegroundColor Green "Modules successfully resolved..."
-    Write-Host -ForegroundColor Green "Invoking psake with task list: [ $($Task -join ', ') ]`n"
-    Invoke-psake -buildFile "$PSScriptRoot\psake.ps1" -taskList $Task -nologo @verbose
-    exit ( [int]( -not $psake.build_success ) )
+    else {
+        'psake' | Resolve-Module @update @verbose
+        Write-Host -ForegroundColor Green "Modules successfully resolved..."
+        Write-Host -ForegroundColor Green "Invoking psake with task list: [ $($Task -join ', ') ]`n"
+        Invoke-psake -buildFile "$PSScriptRoot\psake.ps1" -taskList $Task -nologo @verbose
+        exit ( [int]( -not $psake.build_success ) )
+    }
 }
