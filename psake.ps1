@@ -31,11 +31,13 @@ task default -depends Pester
 
 task Init {
     Set-Location $ProjectRoot
+    "----------------------------------------"
     "Build System Details:"
     Get-Item ENV:BH*
-    if ($env:APPVEYOR) {
-        Get-Item ENV:APPVEYOR*
-    }
+    "----------------------------------------"
+    "Full Env Details:"
+    Get-Item ENV:*
+    "----------------------------------------"
     "`n"
 
     "  Installing the latest version of Pester"
