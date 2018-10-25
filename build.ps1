@@ -108,14 +108,13 @@ else {
             $null -eq $env:NugetApiKey
         )
     ) {
-        "    Task is 'Deploy', but conditions are not correct for deployment:`n" +
-        "        - Current build system is VSTS     : $env:BHBuildSystem`n" +
-        "        - Current branch is master         : $env:BHBranchName`n" +
-        "        - Commit message matches '!deploy' : $env:BHCommitMessage`n" +
-        "        - Current PS version is 5          : $($PSVersionTable.PSVersion.ToString())`n" +
-        "        - NugetApiKey is not '`$null'      : $($null -ne $env:NugetApiKey)`n`n" +
-        "    Skipping psake for this job!" |
-        Write-Host
+        "Task is 'Deploy', but conditions are not correct for deployment:`n" +
+        "    + Current build system is VSTS     : $env:BHBuildSystem`n" +
+        "    + Current branch is master         : $env:BHBranchName`n" +
+        "    + Commit message matches '!deploy' : $env:BHCommitMessage`n" +
+        "    + Current PS version is 5          : $($PSVersionTable.PSVersion.ToString())`n" +
+        "    + NuGet API key is not null        : $($null -ne $env:NugetApiKey)`n" +
+        "Skipping psake for this job!" | Write-Host -ForegroundColor Yellow
         exit 0
     }
     else {
