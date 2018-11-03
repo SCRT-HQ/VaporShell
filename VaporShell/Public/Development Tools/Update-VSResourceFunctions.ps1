@@ -53,4 +53,13 @@ function Update-VSResourceFunctions {
     $newType = $AfterTypeCount - $BeforeTypeCount
     $newProp = $AfterPropCount - $BeforePropCount
     Write-Verbose "`n`n$newType new Resource Type and $newProp Resource Property Type functions added to Vaporshell [$($newType + $newProp) total]`n"
+    Write-Host "Resource function update stats:"
+    [PSCustomObject][Ordered]@{
+        'Resource Type Functions [Before]' = $BeforeTypeCount
+        'Resource Type Functions [After]' = $AfterTypeCount
+        'Resource Type Functions [Diff]' = $newType
+        'Resource Prop Functions [Before]' = $BeforePropCount
+        'Resource Prop Functions [After]' = $AfterPropCount
+        'Resource Prop Functions [Diff]' = $newProp
+    }
 }
