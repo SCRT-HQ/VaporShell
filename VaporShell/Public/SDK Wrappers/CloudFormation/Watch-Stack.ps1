@@ -99,8 +99,16 @@ function Watch-Stack {
                     }
                 }
                 Colorize $stack
-                if ($i -ge 1 -and ($stack -clike '*_COMPLETE*AWS::CloudFormation::Stack*' -or $stack -clike '*Stack creation time exceeded the specified timeout*')) {
-                    $cont = $false
+                if ($i -ge 1 -and $stack -match '.*_(COMPLETE|FAILED).*AWS::CloudFormation::Stack.*') {
+                    $stackStatus = (Get-VSStack -StackId "$StackName" @prof).StackStatus.Value
+                    if ($stackStatus -match '.*_(COMPLETE|FAILED)$') {
+                        Write-Verbose "Stack status: $stackStatus"
+                        $cont = $false
+                    }
+                    else {
+                        Start-Sleep $RefreshRate
+                        $i++
+                    }
                 }
                 else {
                     Start-Sleep $RefreshRate
