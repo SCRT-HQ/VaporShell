@@ -15,7 +15,7 @@ Properties {
     $Timestamp = Get-Date -Uformat "%Y%m%d-%H%M%S"
     $PSVersion = $PSVersionTable.PSVersion.ToString()
     $TestFile = "TestResults_PS$PSVersion`_$TimeStamp.xml"
-    $outputDir = Join-Path -Path $projectRoot -ChildPath 'out'
+    $outputDir = Join-Path -Path $projectRoot -ChildPath 'BuildOutput'
     $outputModDir = Join-Path -Path $outputDir -ChildPath $env:BHProjectName
     $manifest = Import-PowerShellDataFile -Path $env:BHPSModuleManifest
     $outputModVerDir = Join-Path -Path $outputModDir -ChildPath $manifest.ModuleVersion
@@ -38,14 +38,14 @@ task Init {
     }
     "`n"
 
-    "  Installing the latest version of Pester"
+    "    Installing the latest version of Pester"
     Install-Module -Name Pester -Repository PSGallery -Scope CurrentUser -AllowClobber -SkipPublisherCheck -Confirm:$false -ErrorAction Stop -Force -Verbose:$false
     Import-Module -Name Pester -Verbose:$false -Force
-    "  Installing the latest version of PSScriptAnalyzer"
+    "    Installing the latest version of PSScriptAnalyzer"
     Install-Module -Name PSScriptAnalyzer -Repository PSGallery -Scope CurrentUser -AllowClobber -SkipPublisherCheck -Confirm:$false -ErrorAction Stop -Force -Verbose:$false
     Import-Module -Name PSScriptAnalyzer -Verbose:$false -Force
-    if ($env:BHBuildSystem -eq 'AppVeyor' -and $PSVersionTable.PSVersion.Major -lt 6) {
-        "  Installing the latest version of Coveralls"
+    if ($env:BHBuildSystem -eq 'VSTS' -and $PSVersionTable.PSVersion.Major -lt 6) {
+        "    Installing the latest version of Coveralls"
         Install-Module Coveralls -Repository PSGallery -Scope CurrentUser -ErrorAction Stop -Force -Confirm:$false -Verbose:$false
         Import-Module Coveralls -Force -Verbose:$false
     }
@@ -241,15 +241,6 @@ $pesterScriptBlock = {
     '    Invoking Pester...'
     $testResults = Invoke-Pester -Path $tests -PassThru -OutputFile $testResultsXml -OutputFormat NUnitXml #@coverage
     '    Pester invocation complete!'
-    # Upload test artifacts to AppVeyor
-    If ($env:APPVEYOR) {
-        '    Uploading Pester results to AppVeyor...'
-        (New-Object 'System.Net.WebClient').UploadFile(
-            ([Uri]"https://ci.appveyor.com/api/testresults/nunit/$($env:APPVEYOR_JOB_ID)"),
-            $testResultsXml
-        )
-        Remove-Item $testResultsXml -Force -ErrorAction SilentlyContinue
-    }
     if ($PSVersionTable.PSVersion.Major -lt 6 -and $null -ne $env:Coveralls -and $coverage.Keys -contains 'CodeCoverage') {
         '    Uploading Code Coverage to Coveralls...'
         $coverage = Format-Coverage -PesterResults $TestResults -CoverallsApiToken $env:Coveralls -BranchName $ENV:APPVEYOR_REPO_BRANCH -Verbose
