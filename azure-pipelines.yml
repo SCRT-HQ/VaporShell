@@ -25,8 +25,8 @@ phases:
   - task: PublishBuildArtifacts@1
     displayName: 'Publish Artifact: Compiled Module'
     inputs:
-      PathtoPublish: out/VaporShell
-      ArtifactName: VaporShell
+      PathtoPublish: BuildOutput
+      ArtifactName: BuildOutput
 
 
 - phase: Phase_2
@@ -121,7 +121,7 @@ phases:
   - Phase_3
   - Phase_4
   - Phase_5
-  condition: succeeded()
+  condition: and(succeeded(), in(variables['Build.Reason'], 'IndividualCI', 'BatchedCI'), eq(variables['Build.SourceBranch'], 'refs/heads/master'), startsWith(variables['Build.SourceVersionMessage'], '!deploy'))
   queue:
     name: Hosted VS2017
 
