@@ -51,6 +51,12 @@
 		Required: False    
 		UpdateType: Mutable    
 
+    .PARAMETER MultiValueAnswer
+		Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-route53-recordset.html#cfn-route53-recordset-multivalueanswer    
+		PrimitiveType: Boolean    
+		Required: False    
+		UpdateType: Mutable    
+
     .PARAMETER Name
 		Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-route53-recordset.html#cfn-route53-recordset-name    
 		PrimitiveType: String    
@@ -161,6 +167,9 @@
                 }
             })]
         $HostedZoneName,
+        [parameter(Mandatory = $false)]
+        [System.Boolean]
+        $MultiValueAnswer,
         [parameter(Mandatory = $true)]
         [ValidateScript( {
                 $allowedTypes = "System.String","Vaporshell.Function","Vaporshell.Condition"

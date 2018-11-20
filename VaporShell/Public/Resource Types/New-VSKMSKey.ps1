@@ -42,6 +42,12 @@
 		Required: False    
 		UpdateType: Immutable    
 
+    .PARAMETER PendingWindowInDays
+		Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-kms-key.html#cfn-kms-key-pendingwindowindays    
+		PrimitiveType: Integer    
+		Required: False    
+		UpdateType: Mutable    
+
     .PARAMETER Tags
 		Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-kms-key.html#cfn-kms-key-tags    
 		DuplicatesAllowed: True    
@@ -134,6 +140,9 @@
                 }
             })]
         $KeyUsage,
+        [parameter(Mandatory = $false)]
+        [Int]
+        $PendingWindowInDays,
         [parameter(Mandatory = $false)]
         [ValidateScript( {
                 $allowedTypes = "Vaporshell.Resource.Tag","System.Management.Automation.PSCustomObject"

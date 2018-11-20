@@ -107,6 +107,12 @@
 		Required: False    
 		UpdateType: Mutable    
 
+    .PARAMETER TracingEnabled
+		Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-apigateway-deployment-stagedescription.html#cfn-apigateway-deployment-stagedescription-tracingenabled    
+		PrimitiveType: Boolean    
+		Required: False    
+		UpdateType: Mutable    
+
     .PARAMETER Variables
 		Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-apigateway-deployment-stagedescription.html#cfn-apigateway-deployment-stagedescription-variables    
 		DuplicatesAllowed: False    
@@ -216,6 +222,9 @@
         [parameter(Mandatory = $false)]
         [System.Double]
         $ThrottlingRateLimit,
+        [parameter(Mandatory = $false)]
+        [System.Boolean]
+        $TracingEnabled,
         [parameter(Mandatory = $false)]
         [System.Collections.Hashtable]
         $Variables

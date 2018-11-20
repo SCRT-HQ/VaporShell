@@ -80,6 +80,12 @@
 		Required: False    
 		UpdateType: Immutable    
 
+    .PARAMETER TracingEnabled
+		Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-apigateway-stage.html#cfn-apigateway-stage-tracingenabled    
+		PrimitiveType: Boolean    
+		Required: False    
+		UpdateType: Mutable    
+
     .PARAMETER Variables
 		Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-apigateway-stage.html#cfn-apigateway-stage-variables    
 		DuplicatesAllowed: False    
@@ -228,6 +234,9 @@
                 }
             })]
         $StageName,
+        [parameter(Mandatory = $false)]
+        [System.Boolean]
+        $TracingEnabled,
         [parameter(Mandatory = $false)]
         [System.Collections.Hashtable]
         $Variables,

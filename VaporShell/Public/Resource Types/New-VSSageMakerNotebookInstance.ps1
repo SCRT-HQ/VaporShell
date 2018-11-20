@@ -18,6 +18,12 @@
 		PrimitiveType: String    
 		UpdateType: Immutable    
 
+    .PARAMETER VolumeSizeInGB
+		Required: False    
+		Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-sagemaker-notebookinstance.html#cfn-sagemaker-notebookinstance-volumesizeingb    
+		PrimitiveType: Integer    
+		UpdateType: Mutable    
+
     .PARAMETER DirectInternetAccess
 		Required: False    
 		Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-sagemaker-notebookinstance.html#cfn-sagemaker-notebookinstance-directinternetaccess    
@@ -124,6 +130,9 @@
                 }
             })]
         $KmsKeyId,
+        [parameter(Mandatory = $false)]
+        [Int]
+        $VolumeSizeInGB,
         [parameter(Mandatory = $false)]
         [ValidateScript( {
                 $allowedTypes = "System.String","Vaporshell.Function","Vaporshell.Condition"

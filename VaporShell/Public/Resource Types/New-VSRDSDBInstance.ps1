@@ -116,6 +116,26 @@
 		Required: False    
 		UpdateType: Mutable    
 
+    .PARAMETER EnableCloudwatchLogsExports
+		Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-rds-database-instance.html#cfn-rds-dbinstance-enablecloudwatchlogsexports    
+		DuplicatesAllowed: False    
+		PrimitiveItemType: String    
+		Required: False    
+		Type: List    
+		UpdateType: Mutable    
+
+    .PARAMETER EnableIAMDatabaseAuthentication
+		Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-rds-database-instance.html#cfn-rds-dbinstance-enableiamdatabaseauthentication    
+		PrimitiveType: Boolean    
+		Required: False    
+		UpdateType: Mutable    
+
+    .PARAMETER EnablePerformanceInsights
+		Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-rds-database-instance.html#cfn-rds-dbinstance-enableperformanceinsights    
+		PrimitiveType: Boolean    
+		Required: False    
+		UpdateType: Mutable    
+
     .PARAMETER Engine
 		Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-rds-database-instance.html#cfn-rds-dbinstance-engine    
 		PrimitiveType: String    
@@ -182,6 +202,18 @@
 		Required: False    
 		UpdateType: Mutable    
 
+    .PARAMETER PerformanceInsightsKMSKeyId
+		Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-rds-database-instance.html#cfn-rds-dbinstance-performanceinsightskmskeyid    
+		PrimitiveType: String    
+		Required: False    
+		UpdateType: Conditional    
+
+    .PARAMETER PerformanceInsightsRetentionPeriod
+		Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-rds-database-instance.html#cfn-rds-dbinstance-performanceinsightsretentionperiod    
+		PrimitiveType: Integer    
+		Required: False    
+		UpdateType: Mutable    
+
     .PARAMETER Port
 		Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-rds-database-instance.html#cfn-rds-dbinstance-port    
 		PrimitiveType: String    
@@ -199,6 +231,20 @@
 		PrimitiveType: String    
 		Required: False    
 		UpdateType: Conditional    
+
+    .PARAMETER ProcessorFeatures
+		Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-rds-database-instance.html#cfn-rds-dbinstance-processorfeatures    
+		DuplicatesAllowed: False    
+		ItemType: ProcessorFeature    
+		Required: False    
+		Type: List    
+		UpdateType: Mutable    
+
+    .PARAMETER PromotionTier
+		Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-rds-database-instance.html#cfn-rds-dbinstance-promotiontier    
+		PrimitiveType: Integer    
+		Required: False    
+		UpdateType: Mutable    
 
     .PARAMETER PubliclyAccessible
 		Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-rds-database-instance.html#cfn-rds-dbinstance-publiclyaccessible    
@@ -454,6 +500,14 @@
             })]
         $DomainIAMRoleName,
         [parameter(Mandatory = $false)]
+        $EnableCloudwatchLogsExports,
+        [parameter(Mandatory = $false)]
+        [System.Boolean]
+        $EnableIAMDatabaseAuthentication,
+        [parameter(Mandatory = $false)]
+        [System.Boolean]
+        $EnablePerformanceInsights,
+        [parameter(Mandatory = $false)]
         [ValidateScript( {
                 $allowedTypes = "System.String","Vaporshell.Function","Vaporshell.Condition"
                 if ([string]$($_.PSTypeNames) -match "($(($allowedTypes|ForEach-Object{[RegEx]::Escape($_)}) -join '|'))") {
@@ -560,6 +614,20 @@
                     $PSCmdlet.ThrowTerminatingError((New-VSError -String "This parameter only accepts the following types: $($allowedTypes -join ", "). The current types of the value are: $($_.PSTypeNames -join ", ")."))
                 }
             })]
+        $PerformanceInsightsKMSKeyId,
+        [parameter(Mandatory = $false)]
+        [Int]
+        $PerformanceInsightsRetentionPeriod,
+        [parameter(Mandatory = $false)]
+        [ValidateScript( {
+                $allowedTypes = "System.String","Vaporshell.Function","Vaporshell.Condition"
+                if ([string]$($_.PSTypeNames) -match "($(($allowedTypes|ForEach-Object{[RegEx]::Escape($_)}) -join '|'))") {
+                    $true
+                }
+                else {
+                    $PSCmdlet.ThrowTerminatingError((New-VSError -String "This parameter only accepts the following types: $($allowedTypes -join ", "). The current types of the value are: $($_.PSTypeNames -join ", ")."))
+                }
+            })]
         $Port,
         [parameter(Mandatory = $false)]
         [ValidateScript( {
@@ -583,6 +651,20 @@
                 }
             })]
         $PreferredMaintenanceWindow,
+        [parameter(Mandatory = $false)]
+        [ValidateScript( {
+                $allowedTypes = "Vaporshell.Resource.RDS.DBInstance.ProcessorFeature"
+                if ([string]$($_.PSTypeNames) -match "($(($allowedTypes|ForEach-Object{[RegEx]::Escape($_)}) -join '|'))") {
+                    $true
+                }
+                else {
+                    $PSCmdlet.ThrowTerminatingError((New-VSError -String "This parameter only accepts the following types: $($allowedTypes -join ", "). The current types of the value are: $($_.PSTypeNames -join ", ")."))
+                }
+            })]
+        $ProcessorFeatures,
+        [parameter(Mandatory = $false)]
+        [Int]
+        $PromotionTier,
         [parameter(Mandatory = $false)]
         [System.Boolean]
         $PubliclyAccessible,
@@ -708,6 +790,18 @@
                         $ResourceParams.Add("Properties",([PSCustomObject]@{}))
                     }
                     $ResourceParams["Properties"] | Add-Member -MemberType NoteProperty -Name DBSecurityGroups -Value @($DBSecurityGroups)
+                }
+                EnableCloudwatchLogsExports {
+                    if (!($ResourceParams["Properties"])) {
+                        $ResourceParams.Add("Properties",([PSCustomObject]@{}))
+                    }
+                    $ResourceParams["Properties"] | Add-Member -MemberType NoteProperty -Name EnableCloudwatchLogsExports -Value @($EnableCloudwatchLogsExports)
+                }
+                ProcessorFeatures {
+                    if (!($ResourceParams["Properties"])) {
+                        $ResourceParams.Add("Properties",([PSCustomObject]@{}))
+                    }
+                    $ResourceParams["Properties"] | Add-Member -MemberType NoteProperty -Name ProcessorFeatures -Value @($ProcessorFeatures)
                 }
                 Tags {
                     if (!($ResourceParams["Properties"])) {
