@@ -45,6 +45,12 @@
 		Type: FirehoseAction    
 		UpdateType: Mutable    
 
+    .PARAMETER IotAnalytics
+		Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iot-topicrule-action.html#cfn-iot-topicrule-action-iotanalytics    
+		Required: False    
+		Type: IotAnalyticsAction    
+		UpdateType: Mutable    
+
     .PARAMETER Kinesis
 		Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iot-topicrule-action.html#cfn-iot-topicrule-action-kinesis    
 		Required: False    
@@ -81,6 +87,12 @@
 		Type: SqsAction    
 		UpdateType: Mutable    
 
+    .PARAMETER StepFunctions
+		Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iot-topicrule-action.html#cfn-iot-topicrule-action-stepfunctions    
+		Required: False    
+		Type: StepFunctionsAction    
+		UpdateType: Mutable    
+
     .FUNCTIONALITY
         Vaporshell
     #>
@@ -101,6 +113,8 @@
         [parameter(Mandatory = $false)]
         $Firehose,
         [parameter(Mandatory = $false)]
+        $IotAnalytics,
+        [parameter(Mandatory = $false)]
         $Kinesis,
         [parameter(Mandatory = $false)]
         $Lambda,
@@ -111,7 +125,9 @@
         [parameter(Mandatory = $false)]
         $Sns,
         [parameter(Mandatory = $false)]
-        $Sqs
+        $Sqs,
+        [parameter(Mandatory = $false)]
+        $StepFunctions
     )
     Begin {
         $obj = [PSCustomObject]@{}

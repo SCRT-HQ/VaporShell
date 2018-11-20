@@ -9,6 +9,12 @@
     .LINK
         http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-opsworks-layer-volumeconfiguration.html
 
+    .PARAMETER Encrypted
+		Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-opsworks-layer-volumeconfiguration.html#cfn-opsworks-layer-volumeconfiguration-encrypted    
+		PrimitiveType: Boolean    
+		Required: False    
+		UpdateType: Mutable    
+
     .PARAMETER Iops
 		Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-opsworks-layer-volumeconfiguration.html#cfn-opsworks-layer-volconfig-iops    
 		PrimitiveType: Integer    
@@ -52,6 +58,9 @@
     [cmdletbinding()]
     Param
     (
+        [parameter(Mandatory = $false)]
+        [System.Boolean]
+        $Encrypted,
         [parameter(Mandatory = $false)]
         [Int]
         $Iops,

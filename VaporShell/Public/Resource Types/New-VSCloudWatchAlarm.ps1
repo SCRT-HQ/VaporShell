@@ -44,6 +44,12 @@
 		Required: True    
 		UpdateType: Mutable    
 
+    .PARAMETER DatapointsToAlarm
+		Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-cw-alarm.html#cfn-cloudwatch-alarm-datapointstoalarm    
+		PrimitiveType: Integer    
+		Required: False    
+		UpdateType: Mutable    
+
     .PARAMETER Dimensions
 		Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-cw-alarm.html#cfn-cloudwatch-alarms-dimension    
 		DuplicatesAllowed: True    
@@ -211,6 +217,9 @@
                 }
             })]
         $ComparisonOperator,
+        [parameter(Mandatory = $false)]
+        [Int]
+        $DatapointsToAlarm,
         [parameter(Mandatory = $false)]
         [ValidateScript( {
                 $allowedTypes = "Vaporshell.Resource.CloudWatch.Alarm.Dimension"

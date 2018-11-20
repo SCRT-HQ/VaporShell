@@ -20,6 +20,12 @@
 		Type: List    
 		UpdateType: Immutable    
 
+    .PARAMETER BacktrackWindow
+		Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-rds-dbcluster.html#cfn-rds-dbcluster-backtrackwindow    
+		PrimitiveType: Long    
+		Required: False    
+		UpdateType: Mutable    
+
     .PARAMETER BackupRetentionPeriod
 		Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-rds-dbcluster.html#cfn-rds-dbcluster-backuprententionperiod    
 		PrimitiveType: Integer    
@@ -49,6 +55,20 @@
 		PrimitiveType: String    
 		Required: False    
 		UpdateType: Immutable    
+
+    .PARAMETER EnableCloudwatchLogsExports
+		Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-rds-dbcluster.html#cfn-rds-dbcluster-enablecloudwatchlogsexports    
+		DuplicatesAllowed: False    
+		PrimitiveItemType: String    
+		Required: False    
+		Type: List    
+		UpdateType: Mutable    
+
+    .PARAMETER EnableIAMDatabaseAuthentication
+		Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-rds-dbcluster.html#cfn-rds-dbcluster-enableiamdatabaseauthentication    
+		PrimitiveType: Boolean    
+		Required: False    
+		UpdateType: Mutable    
 
     .PARAMETER Engine
 		Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-rds-dbcluster.html#cfn-rds-dbcluster-engine    
@@ -194,6 +214,8 @@
         [parameter(Mandatory = $false)]
         $AvailabilityZones,
         [parameter(Mandatory = $false)]
+        $BacktrackWindow,
+        [parameter(Mandatory = $false)]
         [Int]
         $BackupRetentionPeriod,
         [parameter(Mandatory = $false)]
@@ -240,6 +262,11 @@
                 }
             })]
         $DatabaseName,
+        [parameter(Mandatory = $false)]
+        $EnableCloudwatchLogsExports,
+        [parameter(Mandatory = $false)]
+        [System.Boolean]
+        $EnableIAMDatabaseAuthentication,
         [parameter(Mandatory = $true)]
         [ValidateScript( {
                 $allowedTypes = "System.String","Vaporshell.Function","Vaporshell.Condition"
@@ -433,6 +460,12 @@
                         $ResourceParams.Add("Properties",([PSCustomObject]@{}))
                     }
                     $ResourceParams["Properties"] | Add-Member -MemberType NoteProperty -Name AvailabilityZones -Value @($AvailabilityZones)
+                }
+                EnableCloudwatchLogsExports {
+                    if (!($ResourceParams["Properties"])) {
+                        $ResourceParams.Add("Properties",([PSCustomObject]@{}))
+                    }
+                    $ResourceParams["Properties"] | Add-Member -MemberType NoteProperty -Name EnableCloudwatchLogsExports -Value @($EnableCloudwatchLogsExports)
                 }
                 Tags {
                     if (!($ResourceParams["Properties"])) {

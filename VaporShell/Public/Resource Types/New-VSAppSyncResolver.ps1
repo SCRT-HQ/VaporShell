@@ -24,8 +24,14 @@
 		PrimitiveType: String    
 		UpdateType: Immutable    
 
+    .PARAMETER PipelineConfig
+		Type: PipelineConfig    
+		Required: False    
+		Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-appsync-resolver.html#cfn-appsync-resolver-pipelineconfig    
+		UpdateType: Mutable    
+
     .PARAMETER DataSourceName
-		Required: True    
+		Required: False    
 		Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-appsync-resolver.html#cfn-appsync-resolver-datasourcename    
 		PrimitiveType: String    
 		UpdateType: Mutable    
@@ -39,6 +45,12 @@
     .PARAMETER ResponseMappingTemplate
 		Required: False    
 		Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-appsync-resolver.html#cfn-appsync-resolver-responsemappingtemplate    
+		PrimitiveType: String    
+		UpdateType: Mutable    
+
+    .PARAMETER Kind
+		Required: False    
+		Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-appsync-resolver.html#cfn-appsync-resolver-kind    
 		PrimitiveType: String    
 		UpdateType: Mutable    
 
@@ -127,7 +139,9 @@
                 }
             })]
         $TypeName,
-        [parameter(Mandatory = $true)]
+        [parameter(Mandatory = $false)]
+        $PipelineConfig,
+        [parameter(Mandatory = $false)]
         [ValidateScript( {
                 $allowedTypes = "System.String","Vaporshell.Function","Vaporshell.Condition"
                 if ([string]$($_.PSTypeNames) -match "($(($allowedTypes|ForEach-Object{[RegEx]::Escape($_)}) -join '|'))") {
@@ -160,6 +174,17 @@
                 }
             })]
         $ResponseMappingTemplate,
+        [parameter(Mandatory = $false)]
+        [ValidateScript( {
+                $allowedTypes = "System.String","Vaporshell.Function","Vaporshell.Condition"
+                if ([string]$($_.PSTypeNames) -match "($(($allowedTypes|ForEach-Object{[RegEx]::Escape($_)}) -join '|'))") {
+                    $true
+                }
+                else {
+                    $PSCmdlet.ThrowTerminatingError((New-VSError -String "This parameter only accepts the following types: $($allowedTypes -join ", "). The current types of the value are: $($_.PSTypeNames -join ", ")."))
+                }
+            })]
+        $Kind,
         [parameter(Mandatory = $false)]
         [ValidateScript( {
                 $allowedTypes = "System.String","Vaporshell.Function","Vaporshell.Condition"

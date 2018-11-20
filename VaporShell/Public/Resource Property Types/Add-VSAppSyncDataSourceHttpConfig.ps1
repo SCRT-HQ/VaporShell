@@ -15,6 +15,12 @@
 		PrimitiveType: String    
 		UpdateType: Mutable    
 
+    .PARAMETER AuthorizationConfig
+		Type: AuthorizationConfig    
+		Required: False    
+		Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-appsync-datasource-httpconfig.html#cfn-appsync-datasource-httpconfig-authorizationconfig    
+		UpdateType: Mutable    
+
     .FUNCTIONALITY
         Vaporshell
     #>
@@ -32,7 +38,9 @@
                     $PSCmdlet.ThrowTerminatingError((New-VSError -String "This parameter only accepts the following types: $($allowedTypes -join ", "). The current types of the value are: $($_.PSTypeNames -join ", ")."))
                 }
             })]
-        $Endpoint
+        $Endpoint,
+        [parameter(Mandatory = $false)]
+        $AuthorizationConfig
     )
     Begin {
         $obj = [PSCustomObject]@{}

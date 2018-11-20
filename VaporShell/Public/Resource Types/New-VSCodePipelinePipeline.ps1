@@ -14,8 +14,16 @@
 
     .PARAMETER ArtifactStore
 		Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-codepipeline-pipeline.html#cfn-codepipeline-pipeline-artifactstore    
-		Required: True    
+		Required: False    
 		Type: ArtifactStore    
+		UpdateType: Mutable    
+
+    .PARAMETER ArtifactStores
+		Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-codepipeline-pipeline.html#cfn-codepipeline-pipeline-artifactstores    
+		DuplicatesAllowed: False    
+		ItemType: ArtifactStoreMap    
+		Required: False    
+		Type: List    
 		UpdateType: Mutable    
 
     .PARAMETER DisableInboundStageTransitions
@@ -97,8 +105,19 @@
             })]
         [System.String]
         $LogicalId,
-        [parameter(Mandatory = $true)]
+        [parameter(Mandatory = $false)]
         $ArtifactStore,
+        [parameter(Mandatory = $false)]
+        [ValidateScript( {
+                $allowedTypes = "Vaporshell.Resource.CodePipeline.Pipeline.ArtifactStoreMap"
+                if ([string]$($_.PSTypeNames) -match "($(($allowedTypes|ForEach-Object{[RegEx]::Escape($_)}) -join '|'))") {
+                    $true
+                }
+                else {
+                    $PSCmdlet.ThrowTerminatingError((New-VSError -String "This parameter only accepts the following types: $($allowedTypes -join ", "). The current types of the value are: $($_.PSTypeNames -join ", ")."))
+                }
+            })]
+        $ArtifactStores,
         [parameter(Mandatory = $false)]
         [ValidateScript( {
                 $allowedTypes = "Vaporshell.Resource.CodePipeline.Pipeline.StageTransition"
@@ -202,6 +221,12 @@
                 }
                 Condition {
                     $ResourceParams.Add("Condition",$Condition)
+                }
+                ArtifactStores {
+                    if (!($ResourceParams["Properties"])) {
+                        $ResourceParams.Add("Properties",([PSCustomObject]@{}))
+                    }
+                    $ResourceParams["Properties"] | Add-Member -MemberType NoteProperty -Name ArtifactStores -Value @($ArtifactStores)
                 }
                 DisableInboundStageTransitions {
                     if (!($ResourceParams["Properties"])) {

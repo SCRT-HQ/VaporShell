@@ -26,9 +26,15 @@
 
     .PARAMETER DnsConfig
 		Type: DnsConfig    
-		Required: True    
+		Required: False    
 		Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-servicediscovery-service.html#cfn-servicediscovery-service-dnsconfig    
 		UpdateType: Mutable    
+
+    .PARAMETER NamespaceId
+		Required: False    
+		Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-servicediscovery-service.html#cfn-servicediscovery-service-namespaceid    
+		PrimitiveType: String    
+		UpdateType: Immutable    
 
     .PARAMETER HealthCheckConfig
 		Type: HealthCheckConfig    
@@ -100,8 +106,19 @@
         $Description,
         [parameter(Mandatory = $false)]
         $HealthCheckCustomConfig,
-        [parameter(Mandatory = $true)]
+        [parameter(Mandatory = $false)]
         $DnsConfig,
+        [parameter(Mandatory = $false)]
+        [ValidateScript( {
+                $allowedTypes = "System.String","Vaporshell.Function","Vaporshell.Condition"
+                if ([string]$($_.PSTypeNames) -match "($(($allowedTypes|ForEach-Object{[RegEx]::Escape($_)}) -join '|'))") {
+                    $true
+                }
+                else {
+                    $PSCmdlet.ThrowTerminatingError((New-VSError -String "This parameter only accepts the following types: $($allowedTypes -join ", "). The current types of the value are: $($_.PSTypeNames -join ", ")."))
+                }
+            })]
+        $NamespaceId,
         [parameter(Mandatory = $false)]
         $HealthCheckConfig,
         [parameter(Mandatory = $false)]

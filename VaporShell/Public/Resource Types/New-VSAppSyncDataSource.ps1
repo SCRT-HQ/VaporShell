@@ -36,6 +36,12 @@
 		Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-appsync-datasource.html#cfn-appsync-datasource-httpconfig    
 		UpdateType: Mutable    
 
+    .PARAMETER RelationalDatabaseConfig
+		Type: RelationalDatabaseConfig    
+		Required: False    
+		Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-appsync-datasource.html#cfn-appsync-datasource-relationaldatabaseconfig    
+		UpdateType: Mutable    
+
     .PARAMETER LambdaConfig
 		Type: LambdaConfig    
 		Required: False    
@@ -146,6 +152,8 @@
         $ServiceRoleArn,
         [parameter(Mandatory = $false)]
         $HttpConfig,
+        [parameter(Mandatory = $false)]
+        $RelationalDatabaseConfig,
         [parameter(Mandatory = $false)]
         $LambdaConfig,
         [parameter(Mandatory = $true)]

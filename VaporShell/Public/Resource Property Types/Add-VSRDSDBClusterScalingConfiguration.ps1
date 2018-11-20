@@ -27,8 +27,8 @@
 		Required: False    
 		UpdateType: Mutable    
 
-    .PARAMETER SecondsBeforeAutoPause
-		Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-rds-dbcluster-scalingconfiguration.html#cfn-rds-dbcluster-scalingconfiguration-secondsbeforeautopause    
+    .PARAMETER SecondsUntilAutoPause
+		Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-rds-dbcluster-scalingconfiguration.html#cfn-rds-dbcluster-scalingconfiguration-secondsuntilautopause    
 		PrimitiveType: Integer    
 		Required: False    
 		UpdateType: Mutable    
@@ -51,7 +51,7 @@
         $MinCapacity,
         [parameter(Mandatory = $false)]
         [Int]
-        $SecondsBeforeAutoPause
+        $SecondsUntilAutoPause
     )
     Begin {
         $obj = [PSCustomObject]@{}
