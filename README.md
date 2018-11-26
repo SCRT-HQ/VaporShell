@@ -21,11 +21,6 @@
   <a href="https://dev.azure.com/scrthq/SCRT%20HQ/_build/latest?definitionId=3">
     <img src="https://dev.azure.com/scrthq/SCRT%20HQ/_apis/build/status/VaporShell-CI"
       alt="Azure Pipelines" title="Azure Pipelines" />
-  </a>&nbsp;&nbsp;&nbsp;&nbsp;
-  <!-- Coveralls -->
-  <a href="https://coveralls.io/github/scrthq/Vaporshell?branch=master">
-    <img src="https://coveralls.io/repos/github/scrthq/Vaporshell/badge.svg?branch=master"
-      alt="Coveralls.io - Code Coverage" title="Coveralls.io - Code Coverage" />
   </a>&nbsp;&nbsp;&nbsp;
   <!-- PS Gallery -->
   <a href="https://www.PowerShellGallery.com/packages/VaporShell">
