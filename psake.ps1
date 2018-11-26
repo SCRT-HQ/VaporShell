@@ -249,6 +249,7 @@ $pesterScriptBlock = {
         '    Including CodeCoverage report'
         # Commented out due to extra time this takes when running against the compiled module
         ### $pesterParams['CodeCoverage'] = $coveredFunctions
+        $pesterParams['CodeCoverage'] = (Join-Path $outputModVerDir "$($env:BHProjectName).psm1")
     }
     if ($global:ExcludeTag) {
         $pesterParams['ExcludeTag'] = $global:ExcludeTag
