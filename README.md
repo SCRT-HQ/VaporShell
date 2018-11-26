@@ -79,17 +79,17 @@
 
 
 ## Table of Contents
-- [Table of Contents](#table-of-contents)
-- [Features](#features)
-- [Prerequisites](#prerequisites)
-- [Installation](#installation)
-- [Tips](#tips)
-  - [Working with Credentials](#working-with-credentials)
-  - [Bare Necessities](#bare-necessities)
-- [Examples](#examples)
-- [In Action](#in-action)
-- [License](#license)
-- [Changelog](#changelog)
+* [Table of Contents](#table-of-contents)
+* [Features](#features)
+* [Prerequisites](#prerequisites)
+* [Installation](#installation)
+* [Tips](#tips)
+  * [Working with Credentials](#working-with-credentials)
+  * [Bare Necessities](#bare-necessities)
+* [Examples](#examples)
+* [In Action](#in-action)
+* [License](#license)
+* [Changelog](#changelog)
 
 ## Features
 
@@ -112,19 +112,29 @@
 
 ## Installation
 
-On PowerShell 5+ or [have PowerShellGet installed](https://www.microsoft.com/en-us/download/details.aspx?id=51451)? Install directly from the PowerShell Gallery:
+**[Preferred]** On PowerShell 5+ or [have PowerShellGet installed](https://www.microsoft.com/en-us/download/details.aspx?id=51451)? Install directly from the PowerShell Gallery:
 
 ```powershell
 Install-Module VaporShell -Scope CurrentUser
 ```
 
-Not on PowerShell 5+ and can't install PowerShellGet? You're covered as well:
+**[Alternative]** Not on PowerShell 5+, can't install PowerShellGet, or policies blocking installation from remote sources? You're covered as well:
 
-```powershell
-Invoke-Expression (New-Object Net.WebClient).DownloadString("https://raw.githubusercontent.com/scrthq/VaporShell/master/Install-VaporShell.ps1")
-```
-**Please inspect code before you run it. Here's a handy link to that raw content for you to review: [Install-VaporShell.ps1](https://raw.githubusercontent.com/scrthq/VaporShell/master/Install-VaporShell.ps1)**.
+1. Head to the [Releases](https://github.com/scrthq/VaporShell/releases) section in the repo
+2. Download the *VaporShell.zip* file attached to the latest release.
+3. **If on Windows**: Right-click the downloaded zip, select Properties, then unblock the file.
+    > _This is to prevent having to unblock each file individually after unzipping._
+4. Unzip the archive.
+5. (Optional) Place the module folder somewhere in your `PSModulePath`.
+    > _You can view the paths listed by running the environment variable `$env:PSModulePath`_
+6. Import the module, using the full path to the PSD1 file in place of `VaporShell` if the unzipped module folder is not in your `PSModulePath`:
+    ```powershell
+    # In $env:PSModulePath
+    Import-Module VaporShell
 
+    # Otherwise, provide the path to the manifest file:
+    Import-Module -Path C:\MyPSModules\VaporShell\2.6.2\VaporShell.psd1
+    ```
 
 ## Tips
 
