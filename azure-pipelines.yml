@@ -19,7 +19,7 @@ phases:
     name: Hosted VS2017
 
   steps:
-  - powershell: . ./build.ps1 -Task Init,Clean,Compile
+  - powershell: . ./build.ps1
     displayName: Compile Module
 
   - task: PublishBuildArtifacts@1
@@ -38,7 +38,13 @@ phases:
     name: Hosted VS2017
 
   steps:
-  - powershell: . ./build.ps1
+  - task: DownloadBuildArtifacts@0
+    displayName: 'Download Build Artifacts'
+    inputs:
+      artifactName: BuildOutput
+      downloadPath: '$(Build.SourcesDirectory)'
+
+  - powershell: . ./build.ps1 -Task PesterOnly
     displayName: Test Module
 
   - task: PublishTestResults@2
@@ -58,7 +64,13 @@ phases:
     name: Hosted Ubuntu 1604
 
   steps:
-  - powershell: . ./build.ps1
+  - task: DownloadBuildArtifacts@0
+    displayName: 'Download Build Artifacts'
+    inputs:
+      artifactName: BuildOutput
+      downloadPath: '$(Build.SourcesDirectory)'
+
+  - powershell: . ./build.ps1 -Task PesterOnly
     displayName: Test Module
 
   - task: PublishTestResults@2
@@ -78,7 +90,13 @@ phases:
     name: Hosted macOS
 
   steps:
-  - powershell: . ./build.ps1
+  - task: DownloadBuildArtifacts@0
+    displayName: 'Download Build Artifacts'
+    inputs:
+      artifactName: BuildOutput
+      downloadPath: '$(Build.SourcesDirectory)'
+
+  - powershell: . ./build.ps1 -Task PesterOnly
     displayName: Test Module
 
   - task: PublishTestResults@2
@@ -101,9 +119,15 @@ phases:
   - script: 'choco install powershell-core --yes'
     displayName: 'Install Powershell v6'
 
+  - task: DownloadBuildArtifacts@0
+    displayName: 'Download Build Artifacts'
+    inputs:
+      artifactName: BuildOutput
+      downloadPath: '$(Build.SourcesDirectory)'
+
   - powershell: |
       $Env:Path = [Environment]::GetEnvironmentVariable('Path',[EnvironmentVariableTarget]::Machine)
-      pwsh -command ". ./build.ps1"
+      pwsh -command ". ./build.ps1 -Task PesterOnly"
     displayName: Test Module
 
   - task: PublishTestResults@2
@@ -126,8 +150,18 @@ phases:
     name: Hosted VS2017
 
   steps:
+  - task: DownloadBuildArtifacts@0
+    displayName: 'Download Build Artifacts'
+    inputs:
+      artifactName: BuildOutput
+      downloadPath: '$(Build.SourcesDirectory)'
+
   - powershell: |
-      $env:SourceBranch = '$(Build.SourceBranch)'
-      $env:NuGetApiKey = '$(NuGetApiKey)'
+      $Env:GitHubPAT = '$(GitHub.PAT)'
+      $Env:NuGetApiKey = '$(NuGetApiKey)'
+      $Env:TwitterAccessSecret = '$(Twitter.AccessSecret)'
+      $Env:TwitterAccessToken = '$(Twitter.AccessToken)'
+      $Env:TwitterConsumerKey = '$(Twitter.ConsumerKey)'
+      $Env:TwitterConsumerSecret = '$(Twitter.ConsumerSecret)'
       . ./build.ps1 -Task Deploy
     displayName: Deploy to PowerShell Gallery

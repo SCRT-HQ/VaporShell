@@ -127,6 +127,7 @@ function Update-VSStack {
                 }
                 Tags {
                     $tagList = New-Object 'System.Collections.Generic.List[Amazon.CloudFormation.Model.Tag]'
+                    $tagList.Add((VSStackTag -Key BuiltWith -Value VaporShell))
                     if ($null -ne $Tags) {
                         foreach ($key in $Tags.Keys) {
                             $tagList.Add((VSStackTag -Key $key -Value $Tags[$key]))

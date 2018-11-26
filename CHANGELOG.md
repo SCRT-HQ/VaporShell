@@ -2,6 +2,7 @@
 
 <!-- TOC -->
 
+* [2.6.2](#262)
 * [2.6.1](#261)
 * [2.6.0](#260)
 * [2.5.5](#255)
@@ -37,6 +38,13 @@
 * [0.7.02](#0702)
 
 <!-- /TOC -->
+
+## 2.6.2
+
+* [Issue #41](https://github.com/scrthq/VaporShell/issues/41)
+  * Fixed: `Update-VSStack` and `Update-VSStackSet` were removing the `BuiltWith = VaporShell` tags if not explicitly included when updating Tags.
+* Miscellaneous
+  * Brought Resource Type and Property Type functions up to current spec sheet.
 
 ## 2.6.1
 
