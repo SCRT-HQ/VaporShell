@@ -33,14 +33,7 @@ task Init {
     Set-Location $ProjectRoot
     "Build System Details:"
     Get-Item ENV:BH*
-    if ($env:APPVEYOR) {
-        Get-Item ENV:APPVEYOR*
-    }
-    "`n"
-
-    "    Installing the latest version of Pester"
-    Install-Module -Name Pester -Repository PSGallery -Scope CurrentUser -AllowClobber -SkipPublisherCheck -Confirm:$false -ErrorAction Stop -Force -Verbose:$false
-    Import-Module -Name Pester -Verbose:$false -Force
+    Get-Item ENV:BUILD*
     if ($env:BHProjectName -cne $moduleName) {
         $env:BHProjectName = $moduleName
     }
@@ -196,6 +189,9 @@ Task Import -Depends Compile {
 } -description 'Imports the newly compiled module'
 
 $pesterScriptBlock = {
+    "    Installing the latest version of Pester"
+    Install-Module -Name Pester -Repository PSGallery -Scope CurrentUser -AllowClobber -SkipPublisherCheck -Confirm:$false -ErrorAction Stop -Force -Verbose:$false
+    Import-Module -Name Pester -Verbose:$false -Force
     "    Getting correctly cased FullName for $outputModDir..."
     $outputModDir = (Get-ChildItem (Split-Path $outputModDir -Parent) -Directory | Where-Object {$_.Name -eq (Get-Item $outputModDir).Name}).FullName
     "    FullName resolved to $outputModDir..."
