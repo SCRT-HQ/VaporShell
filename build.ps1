@@ -2,9 +2,9 @@
 [cmdletbinding(DefaultParameterSetName = 'task')]
 param(
     [parameter(ParameterSetName = 'task', Position = 0)]
-    [ValidateSet('Init','Update','Clean','Compile','Pester','PesterOnly','Deploy')]
+    [ValidateSet('Init','Update','Clean','Compile','Import','Pester','PesterOnly','Deploy')]
     [string[]]
-    $Task = @('Init','Update','Clean','Compile','Pester'),
+    $Task = @('Init','Update','Clean','Compile','Import'),
 
     [parameter(ParameterSetName = 'help')]
     [switch]$Help,
@@ -97,33 +97,63 @@ if ($Help) {
         Format-Table -Property Name, Description, Alias, DependsOn
 }
 else {
-    'BuildHelpers' | Resolve-Module @update -Verbose
-    Set-BuildEnvironment -Force
     if (
-        $Task -eq 'Deploy' -and (
-            $ENV:BHBuildSystem -ne 'VSTS' -or
-            $env:SourceBranch -like '*pull*' -or
-            $env:BHCommitMessage -notmatch '!deploy' -or
-            $env:BHBranchName -ne 'master' -or
+        $Task -eq 'Deploy' -and -not $Force -and (
+            $ENV:BUILD_BUILDURI -notlike 'vstfs:*' -or
+            $env:BUILD_SOURCEBRANCH -like '*pull*' -or
+            $env:BUILD_SOURCEVERSIONMESSAGE -notmatch '!deploy' -or
+            $env:BUILD_SOURCEBRANCHNAME -ne 'master' -or
             $PSVersionTable.PSVersion.Major -ne 5 -or
             $null -eq $env:NugetApiKey
         )
     ) {
         "Task is 'Deploy', but conditions are not correct for deployment:`n" +
-        "    + Current build system is VSTS     : $($env:BHBuildSystem -eq 'VSTS') [$env:BHBuildSystem]`n" +
-        "    + Current branch is master         : $($env:BHBranchName -eq 'master') [$env:BHBranchName]`n" +
-        "    + Source is not a pull request	    : $($env:SourceBranch -notlike '*pull*') [$env:SourceBranch]`n" +
-        "    + Commit message matches '!deploy' : $($env:BHCommitMessage -match '!deploy') [$env:BHCommitMessage]`n" +
+        "    + Current build system is VSTS     : $($env:BUILD_BUILDURI -like 'vstfs:*') [$env:BUILD_BUILDURI]`n" +
+        "    + Current branch is master         : $($env:BUILD_SOURCEBRANCHNAME -eq 'master') [$env:BUILD_SOURCEBRANCHNAME]`n" +
+        "    + Source is not a pull request	    : $($env:BUILD_SOURCEBRANCH -notlike '*pull*') [$env:BUILD_SOURCEBRANCH]`n" +
         "    + Current PS major version is 5    : $($PSVersionTable.PSVersion.Major -eq 5) [$($PSVersionTable.PSVersion.ToString())]`n" +
         "    + NuGet API key is not null        : $($null -ne $env:NugetApiKey)`n" +
+        "    + Build script is not Force ran    : $($Force)`n" +
+        "    + Commit message matches '!deploy' : $($env:BUILD_SOURCEVERSIONMESSAGE -match '!deploy') [$env:BUILD_SOURCEVERSIONMESSAGE]`n" +
         "Skipping psake for this job!" | Write-Host -ForegroundColor Yellow
         exit 0
     }
     else {
-        'psake' | Resolve-Module @update -Verbose
+        if ($Task -eq 'Deploy') {
+            "Task is 'Deploy' and conditions are correct for deployment:`n" +
+            "    + Build script is Force ran        : $($Force)`n" +
+            "    + Current build system is VSTS     : $($env:BUILD_BUILDURI -like 'vstfs:*') [$env:BUILD_BUILDURI]`n" +
+            "    + Current branch is master         : $($env:BUILD_SOURCEBRANCHNAME -eq 'master') [$env:BUILD_SOURCEBRANCHNAME]`n" +
+            "    + Source is not a pull request     : $($env:BUILD_SOURCEBRANCH -notlike '*pull*') [$env:BUILD_SOURCEBRANCH]`n" +
+            "    + Current PS major version is 5    : $($PSVersionTable.PSVersion.Major -eq 5) [$($PSVersionTable.PSVersion.ToString())]`n" +
+            "    + NuGet API key is not null        : $($null -ne $env:NugetApiKey)`n" +
+            "    + Commit message matches '!deploy' : $($env:BUILD_SOURCEVERSIONMESSAGE -match '!deploy') [$env:BUILD_SOURCEVERSIONMESSAGE]"| Write-Host -ForegroundColor Green
+        }
+        'BuildHelpers','psake' | Resolve-Module @update -Verbose
+        Set-BuildEnvironment -Force
         Write-Host -ForegroundColor Green "Modules successfully resolved..."
         Write-Host -ForegroundColor Green "Invoking psake with task list: [ $($Task -join ', ') ]`n"
-        Invoke-psake -buildFile "$PSScriptRoot\psake.ps1" -taskList $Task -nologo @verbose
+        $psakeParams = @{
+            nologo = $true
+            buildFile = "$PSScriptRoot\psake.ps1"
+            taskList = $Task
+        }
+        if ($Task -eq 'TestOnly') {
+            $global:ExcludeTag = @('Module')
+        }
+        else {
+            $global:ExcludeTag = $null
+        }
+        if ($Force) {
+            $global:ForceDeploy = $true
+        }
+        else {
+            $global:ForceDeploy = $false
+        }
+        Invoke-psake @psakeParams @verbose
+        if ($Task -contains 'Import' -and $psake.build_success) {
+            Import-Module ([System.IO.Path]::Combine($env:BHBuildOutput,$env:BHProjectName)) -Verbose:$false
+        }
         exit ( [int]( -not $psake.build_success ) )
     }
 }

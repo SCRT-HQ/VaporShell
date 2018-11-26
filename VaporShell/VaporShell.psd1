@@ -12,7 +12,7 @@
     RootModule             = 'VaporShell.psm1'
 
     # Version number of this module.
-    ModuleVersion          = '2.6.1'
+    ModuleVersion          = '2.6.2'
 
     # ID used to uniquely identify this module
     GUID                   = 'd526494c-6e59-41ff-ad05-eedbc1473b6a'
@@ -105,7 +105,7 @@ Website: https://vaporshell.io/
         PSData = @{
 
             # Tags applied to this module. These help with module discovery in online galleries.
-            Tags       = 'AWS','CloudFormation','CFN','JSON','YAML','PSEdition_Core','PSEdition_Desktop'
+            Tags       = 'AWS','CloudFormation','CFN','JSON','YAML','IaC','InfrastructureAsCode','PSEdition_Core','PSEdition_Desktop'
 
             # A URL to the license for this module.
             LicenseUri = 'https://github.com/scrthq/VaporShell/blob/master/LICENSE'

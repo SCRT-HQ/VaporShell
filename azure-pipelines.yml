@@ -128,6 +128,12 @@ phases:
   steps:
   - powershell: |
       $env:SourceBranch = '$(Build.SourceBranch)'
-      $env:NuGetApiKey = '$(NuGetApiKey)'
+      $env:Coveralls = '$(Coveralls)'
+      $Env:GitHubPAT = '$(GitHub.PAT)'
+      $Env:NuGetApiKey = '$(NuGetApiKey)'
+      $Env:TwitterAccessSecret = '$(Twitter.AccessSecret)'
+      $Env:TwitterAccessToken = '$(Twitter.AccessToken)'
+      $Env:TwitterConsumerKey = '$(Twitter.ConsumerKey)'
+      $Env:TwitterConsumerSecret = '$(Twitter.ConsumerSecret)'
       . ./build.ps1 -Task Deploy
     displayName: Deploy to PowerShell Gallery
