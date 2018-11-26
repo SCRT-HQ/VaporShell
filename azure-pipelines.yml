@@ -72,9 +72,7 @@ phases:
       artifactName: BuildOutput
       downloadPath: '$(Build.SourcesDirectory)'
 
-  - powershell: |
-      $env:Coveralls = '$(Coveralls)'
-      . ./build.ps1 -Task PesterOnly
+  - powershell: . ./build.ps1 -Task PesterOnly
     displayName: Test Module
 
   - task: PublishTestResults@2
@@ -100,9 +98,7 @@ phases:
       artifactName: BuildOutput
       downloadPath: '$(Build.SourcesDirectory)'
 
-  - powershell: |
-      $env:Coveralls = '$(Coveralls)'
-      . ./build.ps1 -Task PesterOnly
+  - powershell: . ./build.ps1 -Task PesterOnly
     displayName: Test Module
 
   - task: PublishTestResults@2
@@ -132,7 +128,6 @@ phases:
       downloadPath: '$(Build.SourcesDirectory)'
 
   - powershell: |
-      $env:Coveralls = '$(Coveralls)'
       $Env:Path = [Environment]::GetEnvironmentVariable('Path',[EnvironmentVariableTarget]::Machine)
       pwsh -command ". ./build.ps1 -Task PesterOnly"
     displayName: Test Module
