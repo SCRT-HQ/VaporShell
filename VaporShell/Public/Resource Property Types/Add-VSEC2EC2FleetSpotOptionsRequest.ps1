@@ -1,48 +1,40 @@
-﻿function Add-VSDynamoDBTableGlobalSecondaryIndex {
+﻿function Add-VSEC2EC2FleetSpotOptionsRequest {
     <#
     .SYNOPSIS
-        Adds an AWS::DynamoDB::Table.GlobalSecondaryIndex resource property to the template
+        Adds an AWS::EC2::EC2Fleet.SpotOptionsRequest resource property to the template
 
     .DESCRIPTION
-        Adds an AWS::DynamoDB::Table.GlobalSecondaryIndex resource property to the template
+        Adds an AWS::EC2::EC2Fleet.SpotOptionsRequest resource property to the template
 
     .LINK
-        http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-dynamodb-gsi.html
+        http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-ec2fleet-spotoptionsrequest.html
 
-    .PARAMETER IndexName
-		Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-dynamodb-gsi.html#cfn-dynamodb-gsi-indexname    
-		PrimitiveType: String    
-		Required: True    
-		UpdateType: Mutable    
-
-    .PARAMETER KeySchema
-		Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-dynamodb-gsi.html#cfn-dynamodb-gsi-keyschema    
-		DuplicatesAllowed: False    
-		ItemType: KeySchema    
-		Required: True    
-		Type: List    
-		UpdateType: Mutable    
-
-    .PARAMETER Projection
-		Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-dynamodb-gsi.html#cfn-dynamodb-gsi-projection    
-		Required: True    
-		Type: Projection    
-		UpdateType: Mutable    
-
-    .PARAMETER ProvisionedThroughput
-		Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-dynamodb-gsi.html#cfn-dynamodb-gsi-provisionedthroughput    
+    .PARAMETER AllocationStrategy
 		Required: False    
-		Type: ProvisionedThroughput    
+		Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-ec2fleet-spotoptionsrequest.html#cfn-ec2-ec2fleet-spotoptionsrequest-allocationstrategy    
+		PrimitiveType: String    
+		UpdateType: Mutable    
+
+    .PARAMETER InstanceInterruptionBehavior
+		Required: False    
+		Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-ec2fleet-spotoptionsrequest.html#cfn-ec2-ec2fleet-spotoptionsrequest-instanceinterruptionbehavior    
+		PrimitiveType: String    
+		UpdateType: Mutable    
+
+    .PARAMETER InstancePoolsToUseCount
+		Required: False    
+		Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-ec2fleet-spotoptionsrequest.html#cfn-ec2-ec2fleet-spotoptionsrequest-instancepoolstousecount    
+		PrimitiveType: Integer    
 		UpdateType: Mutable    
 
     .FUNCTIONALITY
         Vaporshell
     #>
-    [OutputType('Vaporshell.Resource.DynamoDB.Table.GlobalSecondaryIndex')]
+    [OutputType('Vaporshell.Resource.EC2.EC2Fleet.SpotOptionsRequest')]
     [cmdletbinding()]
     Param
     (
-        [parameter(Mandatory = $true)]
+        [parameter(Mandatory = $false)]
         [ValidateScript( {
                 $allowedTypes = "System.String","Vaporshell.Function","Vaporshell.Condition"
                 if ([string]$($_.PSTypeNames) -match "($(($allowedTypes|ForEach-Object{[RegEx]::Escape($_)}) -join '|'))") {
@@ -52,10 +44,10 @@
                     $PSCmdlet.ThrowTerminatingError((New-VSError -String "This parameter only accepts the following types: $($allowedTypes -join ", "). The current types of the value are: $($_.PSTypeNames -join ", ")."))
                 }
             })]
-        $IndexName,
-        [parameter(Mandatory = $true)]
+        $AllocationStrategy,
+        [parameter(Mandatory = $false)]
         [ValidateScript( {
-                $allowedTypes = "Vaporshell.Resource.DynamoDB.Table.KeySchema"
+                $allowedTypes = "System.String","Vaporshell.Function","Vaporshell.Condition"
                 if ([string]$($_.PSTypeNames) -match "($(($allowedTypes|ForEach-Object{[RegEx]::Escape($_)}) -join '|'))") {
                     $true
                 }
@@ -63,11 +55,10 @@
                     $PSCmdlet.ThrowTerminatingError((New-VSError -String "This parameter only accepts the following types: $($allowedTypes -join ", "). The current types of the value are: $($_.PSTypeNames -join ", ")."))
                 }
             })]
-        $KeySchema,
-        [parameter(Mandatory = $true)]
-        $Projection,
+        $InstanceInterruptionBehavior,
         [parameter(Mandatory = $false)]
-        $ProvisionedThroughput
+        [Int]
+        $InstancePoolsToUseCount
     )
     Begin {
         $obj = [PSCustomObject]@{}
@@ -83,7 +74,7 @@
         }
     }
     End {
-        $obj | Add-ObjectDetail -TypeName 'Vaporshell.Resource.DynamoDB.Table.GlobalSecondaryIndex'
+        $obj | Add-ObjectDetail -TypeName 'Vaporshell.Resource.EC2.EC2Fleet.SpotOptionsRequest'
         Write-Verbose "Resulting JSON from $($MyInvocation.MyCommand): `n`n$($obj | ConvertTo-Json -Depth 5)`n"
     }
 }

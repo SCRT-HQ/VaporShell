@@ -1,44 +1,36 @@
-﻿function Add-VSDynamoDBTableGlobalSecondaryIndex {
+﻿function Add-VSAlexaASKSkillAuthenticationConfiguration {
     <#
     .SYNOPSIS
-        Adds an AWS::DynamoDB::Table.GlobalSecondaryIndex resource property to the template
+        Adds an Alexa::ASK::Skill.AuthenticationConfiguration resource property to the template
 
     .DESCRIPTION
-        Adds an AWS::DynamoDB::Table.GlobalSecondaryIndex resource property to the template
+        Adds an Alexa::ASK::Skill.AuthenticationConfiguration resource property to the template
 
     .LINK
-        http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-dynamodb-gsi.html
+        http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ask-skill-authenticationconfiguration.html
 
-    .PARAMETER IndexName
-		Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-dynamodb-gsi.html#cfn-dynamodb-gsi-indexname    
+    .PARAMETER RefreshToken
+		Required: True    
+		Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ask-skill-authenticationconfiguration.html#cfn-ask-skill-authenticationconfiguration-refreshtoken    
 		PrimitiveType: String    
-		Required: True    
 		UpdateType: Mutable    
 
-    .PARAMETER KeySchema
-		Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-dynamodb-gsi.html#cfn-dynamodb-gsi-keyschema    
-		DuplicatesAllowed: False    
-		ItemType: KeySchema    
+    .PARAMETER ClientSecret
 		Required: True    
-		Type: List    
+		Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ask-skill-authenticationconfiguration.html#cfn-ask-skill-authenticationconfiguration-clientsecret    
+		PrimitiveType: String    
 		UpdateType: Mutable    
 
-    .PARAMETER Projection
-		Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-dynamodb-gsi.html#cfn-dynamodb-gsi-projection    
+    .PARAMETER ClientId
 		Required: True    
-		Type: Projection    
-		UpdateType: Mutable    
-
-    .PARAMETER ProvisionedThroughput
-		Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-dynamodb-gsi.html#cfn-dynamodb-gsi-provisionedthroughput    
-		Required: False    
-		Type: ProvisionedThroughput    
+		Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ask-skill-authenticationconfiguration.html#cfn-ask-skill-authenticationconfiguration-clientid    
+		PrimitiveType: String    
 		UpdateType: Mutable    
 
     .FUNCTIONALITY
         Vaporshell
     #>
-    [OutputType('Vaporshell.Resource.DynamoDB.Table.GlobalSecondaryIndex')]
+    [OutputType('Vaporshell.Resource.Alexa.ASK.Skill.AuthenticationConfiguration')]
     [cmdletbinding()]
     Param
     (
@@ -52,10 +44,10 @@
                     $PSCmdlet.ThrowTerminatingError((New-VSError -String "This parameter only accepts the following types: $($allowedTypes -join ", "). The current types of the value are: $($_.PSTypeNames -join ", ")."))
                 }
             })]
-        $IndexName,
+        $RefreshToken,
         [parameter(Mandatory = $true)]
         [ValidateScript( {
-                $allowedTypes = "Vaporshell.Resource.DynamoDB.Table.KeySchema"
+                $allowedTypes = "System.String","Vaporshell.Function","Vaporshell.Condition"
                 if ([string]$($_.PSTypeNames) -match "($(($allowedTypes|ForEach-Object{[RegEx]::Escape($_)}) -join '|'))") {
                     $true
                 }
@@ -63,11 +55,18 @@
                     $PSCmdlet.ThrowTerminatingError((New-VSError -String "This parameter only accepts the following types: $($allowedTypes -join ", "). The current types of the value are: $($_.PSTypeNames -join ", ")."))
                 }
             })]
-        $KeySchema,
+        $ClientSecret,
         [parameter(Mandatory = $true)]
-        $Projection,
-        [parameter(Mandatory = $false)]
-        $ProvisionedThroughput
+        [ValidateScript( {
+                $allowedTypes = "System.String","Vaporshell.Function","Vaporshell.Condition"
+                if ([string]$($_.PSTypeNames) -match "($(($allowedTypes|ForEach-Object{[RegEx]::Escape($_)}) -join '|'))") {
+                    $true
+                }
+                else {
+                    $PSCmdlet.ThrowTerminatingError((New-VSError -String "This parameter only accepts the following types: $($allowedTypes -join ", "). The current types of the value are: $($_.PSTypeNames -join ", ")."))
+                }
+            })]
+        $ClientId
     )
     Begin {
         $obj = [PSCustomObject]@{}
@@ -83,7 +82,7 @@
         }
     }
     End {
-        $obj | Add-ObjectDetail -TypeName 'Vaporshell.Resource.DynamoDB.Table.GlobalSecondaryIndex'
+        $obj | Add-ObjectDetail -TypeName 'Vaporshell.Resource.Alexa.ASK.Skill.AuthenticationConfiguration'
         Write-Verbose "Resulting JSON from $($MyInvocation.MyCommand): `n`n$($obj | ConvertTo-Json -Depth 5)`n"
     }
 }

@@ -84,6 +84,12 @@
 		Type: NotificationConfiguration    
 		UpdateType: Mutable    
 
+    .PARAMETER PublicAccessBlockConfiguration
+		Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-s3-bucket.html#cfn-s3-bucket-publicaccessblockconfiguration    
+		Required: False    
+		Type: PublicAccessBlockConfiguration    
+		UpdateType: Mutable    
+
     .PARAMETER ReplicationConfiguration
 		Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-s3-bucket.html#cfn-s3-bucket-replicationconfiguration    
 		Required: False    
@@ -222,6 +228,8 @@
         $MetricsConfigurations,
         [parameter(Mandatory = $false)]
         $NotificationConfiguration,
+        [parameter(Mandatory = $false)]
+        $PublicAccessBlockConfiguration,
         [parameter(Mandatory = $false)]
         $ReplicationConfiguration,
         [parameter(Mandatory = $false)]

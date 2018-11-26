@@ -9,10 +9,40 @@
     .LINK
         http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-elasticloadbalancingv2-listenerrule-actions.html
 
+    .PARAMETER AuthenticateCognitoConfig
+		Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-elasticloadbalancingv2-listenerrule-actions.html#cfn-elasticloadbalancingv2-listenerrule-action-authenticatecognitoconfig    
+		Required: False    
+		Type: AuthenticateCognitoConfig    
+		UpdateType: Mutable    
+
+    .PARAMETER AuthenticateOidcConfig
+		Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-elasticloadbalancingv2-listenerrule-actions.html#cfn-elasticloadbalancingv2-listenerrule-action-authenticateoidcconfig    
+		Required: False    
+		Type: AuthenticateOidcConfig    
+		UpdateType: Mutable    
+
+    .PARAMETER FixedResponseConfig
+		Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-elasticloadbalancingv2-listenerrule-actions.html#cfn-elasticloadbalancingv2-listenerrule-action-fixedresponseconfig    
+		Required: False    
+		Type: FixedResponseConfig    
+		UpdateType: Mutable    
+
+    .PARAMETER Order
+		Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-elasticloadbalancingv2-listenerrule-actions.html#cfn-elasticloadbalancingv2-listenerrule-action-order    
+		PrimitiveType: Integer    
+		Required: False    
+		UpdateType: Mutable    
+
+    .PARAMETER RedirectConfig
+		Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-elasticloadbalancingv2-listenerrule-actions.html#cfn-elasticloadbalancingv2-listenerrule-action-redirectconfig    
+		Required: False    
+		Type: RedirectConfig    
+		UpdateType: Mutable    
+
     .PARAMETER TargetGroupArn
 		Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-elasticloadbalancingv2-listenerrule-actions.html#cfn-elasticloadbalancingv2-listener-actions-targetgrouparn    
 		PrimitiveType: String    
-		Required: True    
+		Required: False    
 		UpdateType: Mutable    
 
     .PARAMETER Type
@@ -28,7 +58,18 @@
     [cmdletbinding()]
     Param
     (
-        [parameter(Mandatory = $true)]
+        [parameter(Mandatory = $false)]
+        $AuthenticateCognitoConfig,
+        [parameter(Mandatory = $false)]
+        $AuthenticateOidcConfig,
+        [parameter(Mandatory = $false)]
+        $FixedResponseConfig,
+        [parameter(Mandatory = $false)]
+        [Int]
+        $Order,
+        [parameter(Mandatory = $false)]
+        $RedirectConfig,
+        [parameter(Mandatory = $false)]
         [ValidateScript( {
                 $allowedTypes = "System.String","Vaporshell.Function","Vaporshell.Condition"
                 if ([string]$($_.PSTypeNames) -match "($(($allowedTypes|ForEach-Object{[RegEx]::Escape($_)}) -join '|'))") {

@@ -56,6 +56,12 @@
 		Required: False    
 		UpdateType: Immutable    
 
+    .PARAMETER DeletionProtection
+		Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-rds-dbcluster.html#cfn-rds-dbcluster-deletionprotection    
+		PrimitiveType: Boolean    
+		Required: False    
+		UpdateType: Mutable    
+
     .PARAMETER EnableCloudwatchLogsExports
 		Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-rds-dbcluster.html#cfn-rds-dbcluster-enablecloudwatchlogsexports    
 		DuplicatesAllowed: False    
@@ -262,6 +268,9 @@
                 }
             })]
         $DatabaseName,
+        [parameter(Mandatory = $false)]
+        [System.Boolean]
+        $DeletionProtection,
         [parameter(Mandatory = $false)]
         $EnableCloudwatchLogsExports,
         [parameter(Mandatory = $false)]

@@ -1,47 +1,52 @@
-﻿function Add-VSDynamoDBTableGlobalSecondaryIndex {
+﻿function Add-VSEMRClusterStepConfig {
     <#
     .SYNOPSIS
-        Adds an AWS::DynamoDB::Table.GlobalSecondaryIndex resource property to the template
+        Adds an AWS::EMR::Cluster.StepConfig resource property to the template
 
     .DESCRIPTION
-        Adds an AWS::DynamoDB::Table.GlobalSecondaryIndex resource property to the template
+        Adds an AWS::EMR::Cluster.StepConfig resource property to the template
 
     .LINK
-        http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-dynamodb-gsi.html
+        http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-elasticmapreduce-cluster-stepconfig.html
 
-    .PARAMETER IndexName
-		Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-dynamodb-gsi.html#cfn-dynamodb-gsi-indexname    
+    .PARAMETER ActionOnFailure
+		Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-elasticmapreduce-cluster-stepconfig.html#cfn-elasticmapreduce-cluster-stepconfig-actiononfailure    
+		PrimitiveType: String    
+		Required: False    
+		UpdateType: Mutable    
+
+    .PARAMETER HadoopJarStep
+		Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-elasticmapreduce-cluster-stepconfig.html#cfn-elasticmapreduce-cluster-stepconfig-hadoopjarstep    
+		Required: True    
+		Type: HadoopJarStepConfig    
+		UpdateType: Mutable    
+
+    .PARAMETER Name
+		Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-elasticmapreduce-cluster-stepconfig.html#cfn-elasticmapreduce-cluster-stepconfig-name    
 		PrimitiveType: String    
 		Required: True    
-		UpdateType: Mutable    
-
-    .PARAMETER KeySchema
-		Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-dynamodb-gsi.html#cfn-dynamodb-gsi-keyschema    
-		DuplicatesAllowed: False    
-		ItemType: KeySchema    
-		Required: True    
-		Type: List    
-		UpdateType: Mutable    
-
-    .PARAMETER Projection
-		Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-dynamodb-gsi.html#cfn-dynamodb-gsi-projection    
-		Required: True    
-		Type: Projection    
-		UpdateType: Mutable    
-
-    .PARAMETER ProvisionedThroughput
-		Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-dynamodb-gsi.html#cfn-dynamodb-gsi-provisionedthroughput    
-		Required: False    
-		Type: ProvisionedThroughput    
 		UpdateType: Mutable    
 
     .FUNCTIONALITY
         Vaporshell
     #>
-    [OutputType('Vaporshell.Resource.DynamoDB.Table.GlobalSecondaryIndex')]
+    [OutputType('Vaporshell.Resource.EMR.Cluster.StepConfig')]
     [cmdletbinding()]
     Param
     (
+        [parameter(Mandatory = $false)]
+        [ValidateScript( {
+                $allowedTypes = "System.String","Vaporshell.Function","Vaporshell.Condition"
+                if ([string]$($_.PSTypeNames) -match "($(($allowedTypes|ForEach-Object{[RegEx]::Escape($_)}) -join '|'))") {
+                    $true
+                }
+                else {
+                    $PSCmdlet.ThrowTerminatingError((New-VSError -String "This parameter only accepts the following types: $($allowedTypes -join ", "). The current types of the value are: $($_.PSTypeNames -join ", ")."))
+                }
+            })]
+        $ActionOnFailure,
+        [parameter(Mandatory = $true)]
+        $HadoopJarStep,
         [parameter(Mandatory = $true)]
         [ValidateScript( {
                 $allowedTypes = "System.String","Vaporshell.Function","Vaporshell.Condition"
@@ -52,22 +57,7 @@
                     $PSCmdlet.ThrowTerminatingError((New-VSError -String "This parameter only accepts the following types: $($allowedTypes -join ", "). The current types of the value are: $($_.PSTypeNames -join ", ")."))
                 }
             })]
-        $IndexName,
-        [parameter(Mandatory = $true)]
-        [ValidateScript( {
-                $allowedTypes = "Vaporshell.Resource.DynamoDB.Table.KeySchema"
-                if ([string]$($_.PSTypeNames) -match "($(($allowedTypes|ForEach-Object{[RegEx]::Escape($_)}) -join '|'))") {
-                    $true
-                }
-                else {
-                    $PSCmdlet.ThrowTerminatingError((New-VSError -String "This parameter only accepts the following types: $($allowedTypes -join ", "). The current types of the value are: $($_.PSTypeNames -join ", ")."))
-                }
-            })]
-        $KeySchema,
-        [parameter(Mandatory = $true)]
-        $Projection,
-        [parameter(Mandatory = $false)]
-        $ProvisionedThroughput
+        $Name
     )
     Begin {
         $obj = [PSCustomObject]@{}
@@ -83,7 +73,7 @@
         }
     }
     End {
-        $obj | Add-ObjectDetail -TypeName 'Vaporshell.Resource.DynamoDB.Table.GlobalSecondaryIndex'
+        $obj | Add-ObjectDetail -TypeName 'Vaporshell.Resource.EMR.Cluster.StepConfig'
         Write-Verbose "Resulting JSON from $($MyInvocation.MyCommand): `n`n$($obj | ConvertTo-Json -Depth 5)`n"
     }
 }

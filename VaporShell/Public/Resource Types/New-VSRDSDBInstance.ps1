@@ -104,6 +104,18 @@
 		Required: False    
 		UpdateType: Immutable    
 
+    .PARAMETER DeleteAutomatedBackups
+		Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-rds-database-instance.html#cfn-rds-dbinstance-deleteautomatedbackups    
+		PrimitiveType: Boolean    
+		Required: False    
+		UpdateType: Mutable    
+
+    .PARAMETER DeletionProtection
+		Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-rds-database-instance.html#cfn-rds-dbinstance-deletionprotection    
+		PrimitiveType: Boolean    
+		Required: False    
+		UpdateType: Mutable    
+
     .PARAMETER Domain
 		Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-rds-database-instance.html#cfn-rds-dbinstance-domain    
 		PrimitiveType: String    
@@ -477,6 +489,12 @@
                 }
             })]
         $DBSubnetGroupName,
+        [parameter(Mandatory = $false)]
+        [System.Boolean]
+        $DeleteAutomatedBackups,
+        [parameter(Mandatory = $false)]
+        [System.Boolean]
+        $DeletionProtection,
         [parameter(Mandatory = $false)]
         [ValidateScript( {
                 $allowedTypes = "System.String","Vaporshell.Function","Vaporshell.Condition"

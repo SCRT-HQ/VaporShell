@@ -52,7 +52,7 @@
 
     .PARAMETER ProvisionedThroughput
 		Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-dynamodb-table.html#cfn-dynamodb-table-provisionedthroughput    
-		Required: True    
+		Required: False    
 		Type: ProvisionedThroughput    
 		UpdateType: Mutable    
 
@@ -179,7 +179,7 @@
         $LocalSecondaryIndexes,
         [parameter(Mandatory = $false)]
         $PointInTimeRecoverySpecification,
-        [parameter(Mandatory = $true)]
+        [parameter(Mandatory = $false)]
         $ProvisionedThroughput,
         [parameter(Mandatory = $false)]
         $SSESpecification,

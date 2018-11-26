@@ -24,6 +24,12 @@
 		PrimitiveType: Json    
 		UpdateType: Mutable    
 
+    .PARAMETER NodeProperties
+		Type: NodeProperties    
+		Required: False    
+		Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-batch-jobdefinition.html#cfn-batch-jobdefinition-nodeproperties    
+		UpdateType: Mutable    
+
     .PARAMETER Timeout
 		Type: Timeout    
 		Required: False    
@@ -32,7 +38,7 @@
 
     .PARAMETER ContainerProperties
 		Type: ContainerProperties    
-		Required: True    
+		Required: False    
 		Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-batch-jobdefinition.html#cfn-batch-jobdefinition-containerproperties    
 		UpdateType: Mutable    
 
@@ -116,8 +122,10 @@
             })]
         $Parameters,
         [parameter(Mandatory = $false)]
+        $NodeProperties,
+        [parameter(Mandatory = $false)]
         $Timeout,
-        [parameter(Mandatory = $true)]
+        [parameter(Mandatory = $false)]
         $ContainerProperties,
         [parameter(Mandatory = $false)]
         [ValidateScript( {

@@ -87,13 +87,13 @@
     .PARAMETER MetricName
 		Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-cw-alarm.html#cfn-cloudwatch-alarms-metricname    
 		PrimitiveType: String    
-		Required: True    
+		Required: False    
 		UpdateType: Mutable    
 
     .PARAMETER Namespace
 		Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-cw-alarm.html#cfn-cloudwatch-alarms-namespace    
 		PrimitiveType: String    
-		Required: True    
+		Required: False    
 		UpdateType: Mutable    
 
     .PARAMETER OKActions
@@ -107,7 +107,7 @@
     .PARAMETER Period
 		Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-cw-alarm.html#cfn-cloudwatch-alarms-period    
 		PrimitiveType: Integer    
-		Required: True    
+		Required: False    
 		UpdateType: Mutable    
 
     .PARAMETER Statistic
@@ -258,7 +258,7 @@
         $ExtendedStatistic,
         [parameter(Mandatory = $false)]
         $InsufficientDataActions,
-        [parameter(Mandatory = $true)]
+        [parameter(Mandatory = $false)]
         [ValidateScript( {
                 $allowedTypes = "System.String","Vaporshell.Function","Vaporshell.Condition"
                 if ([string]$($_.PSTypeNames) -match "($(($allowedTypes|ForEach-Object{[RegEx]::Escape($_)}) -join '|'))") {
@@ -269,7 +269,7 @@
                 }
             })]
         $MetricName,
-        [parameter(Mandatory = $true)]
+        [parameter(Mandatory = $false)]
         [ValidateScript( {
                 $allowedTypes = "System.String","Vaporshell.Function","Vaporshell.Condition"
                 if ([string]$($_.PSTypeNames) -match "($(($allowedTypes|ForEach-Object{[RegEx]::Escape($_)}) -join '|'))") {
@@ -282,7 +282,7 @@
         $Namespace,
         [parameter(Mandatory = $false)]
         $OKActions,
-        [parameter(Mandatory = $true)]
+        [parameter(Mandatory = $false)]
         [Int]
         $Period,
         [parameter(Mandatory = $false)]

@@ -67,6 +67,12 @@
 		Required: False    
 		UpdateType: Immutable    
 
+    .PARAMETER KeepJobFlowAliveWhenNoSteps
+		Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-elasticmapreduce-cluster-jobflowinstancesconfig.html#cfn-elasticmapreduce-cluster-jobflowinstancesconfig-keepjobflowalivewhennosteps    
+		PrimitiveType: Boolean    
+		Required: False    
+		UpdateType: Immutable    
+
     .PARAMETER MasterInstanceFleet
 		Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-elasticmapreduce-cluster-jobflowinstancesconfig.html#cfn-elasticmapreduce-cluster-jobflowinstancesconfig-masterinstancefleet    
 		Required: False    
@@ -167,6 +173,9 @@
                 }
             })]
         $HadoopVersion,
+        [parameter(Mandatory = $false)]
+        [System.Boolean]
+        $KeepJobFlowAliveWhenNoSteps,
         [parameter(Mandatory = $false)]
         $MasterInstanceFleet,
         [parameter(Mandatory = $false)]

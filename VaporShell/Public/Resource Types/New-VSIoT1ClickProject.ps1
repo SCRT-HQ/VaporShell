@@ -25,7 +25,7 @@
 		UpdateType: Mutable    
 
     .PARAMETER ProjectName
-		Required: True    
+		Required: False    
 		Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-iot1click-project.html#cfn-iot1click-project-projectname    
 		PrimitiveType: String    
 		UpdateType: Immutable    
@@ -88,7 +88,7 @@
         $Description,
         [parameter(Mandatory = $true)]
         $PlacementTemplate,
-        [parameter(Mandatory = $true)]
+        [parameter(Mandatory = $false)]
         [ValidateScript( {
                 $allowedTypes = "System.String","Vaporshell.Function","Vaporshell.Condition"
                 if ([string]$($_.PSTypeNames) -match "($(($allowedTypes|ForEach-Object{[RegEx]::Escape($_)}) -join '|'))") {

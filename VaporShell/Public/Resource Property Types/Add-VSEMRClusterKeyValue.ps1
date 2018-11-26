@@ -1,48 +1,34 @@
-﻿function Add-VSDynamoDBTableGlobalSecondaryIndex {
+﻿function Add-VSEMRClusterKeyValue {
     <#
     .SYNOPSIS
-        Adds an AWS::DynamoDB::Table.GlobalSecondaryIndex resource property to the template
+        Adds an AWS::EMR::Cluster.KeyValue resource property to the template
 
     .DESCRIPTION
-        Adds an AWS::DynamoDB::Table.GlobalSecondaryIndex resource property to the template
+        Adds an AWS::EMR::Cluster.KeyValue resource property to the template
 
     .LINK
-        http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-dynamodb-gsi.html
+        http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-elasticmapreduce-cluster-keyvalue.html
 
-    .PARAMETER IndexName
-		Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-dynamodb-gsi.html#cfn-dynamodb-gsi-indexname    
+    .PARAMETER Key
+		Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-elasticmapreduce-cluster-keyvalue.html#cfn-elasticmapreduce-cluster-keyvalue-key    
 		PrimitiveType: String    
-		Required: True    
-		UpdateType: Mutable    
-
-    .PARAMETER KeySchema
-		Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-dynamodb-gsi.html#cfn-dynamodb-gsi-keyschema    
-		DuplicatesAllowed: False    
-		ItemType: KeySchema    
-		Required: True    
-		Type: List    
-		UpdateType: Mutable    
-
-    .PARAMETER Projection
-		Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-dynamodb-gsi.html#cfn-dynamodb-gsi-projection    
-		Required: True    
-		Type: Projection    
-		UpdateType: Mutable    
-
-    .PARAMETER ProvisionedThroughput
-		Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-dynamodb-gsi.html#cfn-dynamodb-gsi-provisionedthroughput    
 		Required: False    
-		Type: ProvisionedThroughput    
+		UpdateType: Mutable    
+
+    .PARAMETER Value
+		Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-elasticmapreduce-cluster-keyvalue.html#cfn-elasticmapreduce-cluster-keyvalue-value    
+		PrimitiveType: String    
+		Required: False    
 		UpdateType: Mutable    
 
     .FUNCTIONALITY
         Vaporshell
     #>
-    [OutputType('Vaporshell.Resource.DynamoDB.Table.GlobalSecondaryIndex')]
+    [OutputType('Vaporshell.Resource.EMR.Cluster.KeyValue')]
     [cmdletbinding()]
     Param
     (
-        [parameter(Mandatory = $true)]
+        [parameter(Mandatory = $false)]
         [ValidateScript( {
                 $allowedTypes = "System.String","Vaporshell.Function","Vaporshell.Condition"
                 if ([string]$($_.PSTypeNames) -match "($(($allowedTypes|ForEach-Object{[RegEx]::Escape($_)}) -join '|'))") {
@@ -52,10 +38,10 @@
                     $PSCmdlet.ThrowTerminatingError((New-VSError -String "This parameter only accepts the following types: $($allowedTypes -join ", "). The current types of the value are: $($_.PSTypeNames -join ", ")."))
                 }
             })]
-        $IndexName,
-        [parameter(Mandatory = $true)]
+        $Key,
+        [parameter(Mandatory = $false)]
         [ValidateScript( {
-                $allowedTypes = "Vaporshell.Resource.DynamoDB.Table.KeySchema"
+                $allowedTypes = "System.String","Vaporshell.Function","Vaporshell.Condition"
                 if ([string]$($_.PSTypeNames) -match "($(($allowedTypes|ForEach-Object{[RegEx]::Escape($_)}) -join '|'))") {
                     $true
                 }
@@ -63,11 +49,7 @@
                     $PSCmdlet.ThrowTerminatingError((New-VSError -String "This parameter only accepts the following types: $($allowedTypes -join ", "). The current types of the value are: $($_.PSTypeNames -join ", ")."))
                 }
             })]
-        $KeySchema,
-        [parameter(Mandatory = $true)]
-        $Projection,
-        [parameter(Mandatory = $false)]
-        $ProvisionedThroughput
+        $Value
     )
     Begin {
         $obj = [PSCustomObject]@{}
@@ -83,7 +65,7 @@
         }
     }
     End {
-        $obj | Add-ObjectDetail -TypeName 'Vaporshell.Resource.DynamoDB.Table.GlobalSecondaryIndex'
+        $obj | Add-ObjectDetail -TypeName 'Vaporshell.Resource.EMR.Cluster.KeyValue'
         Write-Verbose "Resulting JSON from $($MyInvocation.MyCommand): `n`n$($obj | ConvertTo-Json -Depth 5)`n"
     }
 }

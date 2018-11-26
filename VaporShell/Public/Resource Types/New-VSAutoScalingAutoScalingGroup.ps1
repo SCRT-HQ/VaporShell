@@ -104,6 +104,12 @@
 		Required: True    
 		UpdateType: Mutable    
 
+    .PARAMETER MixedInstancesPolicy
+		Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-as-group.html#cfn-as-group-mixedinstancespolicy    
+		Required: False    
+		Type: MixedInstancesPolicy    
+		UpdateType: Mutable    
+
     .PARAMETER NotificationConfigurations
 		Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-as-group.html#cfn-as-group-notificationconfigurations    
 		DuplicatesAllowed: True    
@@ -325,6 +331,8 @@
                 }
             })]
         $MinSize,
+        [parameter(Mandatory = $false)]
+        $MixedInstancesPolicy,
         [parameter(Mandatory = $false)]
         [ValidateScript( {
                 $allowedTypes = "Vaporshell.Resource.AutoScaling.AutoScalingGroup.NotificationConfiguration"
