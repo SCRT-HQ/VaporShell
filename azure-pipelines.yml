@@ -44,9 +44,7 @@ phases:
       artifactName: BuildOutput
       downloadPath: '$(Build.SourcesDirectory)'
 
-  - powershell: |
-      $env:Coveralls = '$(Coveralls)'
-      . ./build.ps1 -Task PesterOnly
+  - powershell: . ./build.ps1 -Task PesterOnly
     displayName: Test Module
 
   - task: PublishTestResults@2

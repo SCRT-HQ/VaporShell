@@ -41,14 +41,6 @@ task Init {
     "    Installing the latest version of Pester"
     Install-Module -Name Pester -Repository PSGallery -Scope CurrentUser -AllowClobber -SkipPublisherCheck -Confirm:$false -ErrorAction Stop -Force -Verbose:$false
     Import-Module -Name Pester -Verbose:$false -Force
-    "    Installing the latest version of PSScriptAnalyzer"
-    Install-Module -Name PSScriptAnalyzer -Repository PSGallery -Scope CurrentUser -AllowClobber -SkipPublisherCheck -Confirm:$false -ErrorAction Stop -Force -Verbose:$false
-    Import-Module -Name PSScriptAnalyzer -Verbose:$false -Force
-    if ($env:BHBuildSystem -eq 'VSTS' -and $PSVersionTable.PSVersion.Major -lt 6) {
-        "    Installing the latest version of Coveralls"
-        Install-Module Coveralls -Repository PSGallery -Scope CurrentUser -ErrorAction Stop -Force -Confirm:$false -Verbose:$false
-        Import-Module Coveralls -Force -Verbose:$false
-    }
     if ($env:BHProjectName -cne $moduleName) {
         $env:BHProjectName = $moduleName
     }
@@ -235,22 +227,6 @@ $pesterScriptBlock = {
         PassThru     = $true
         Path         = $tests
     }
-    if ($ENV:BHBuildSystem -eq 'VSTS' -and $PSVersionTable.PSVersion.Major -lt 6 -and $null -ne $env:Coveralls) {
-        '    Building list of functions to include for Code Coverage...'
-        $coveredFunctions = @()
-        "$($env:BHPSModulePath)\Public\Condition Functions\*","$($env:BHPSModulePath)\Public\Intrinsic Functions\*","$($env:BHPSModulePath)\Public\Primary Functions\*","$($env:BHPSModulePath)\Public\Transform\*","$($env:BHPSModulePath)\Public\*-Vaporshell.ps1" | Foreach-Object {
-            foreach ($item in (Get-Item $_)) {
-                $coveredFunctions += @{
-                    Path = (Join-Path $outputModVerDir "$($env:BHProjectName).psm1")
-                    Function = $item.BaseName
-                }
-            }
-        }
-        '    Including CodeCoverage report'
-        # Commented out due to extra time this takes when running against the compiled module
-        ### $pesterParams['CodeCoverage'] = $coveredFunctions
-        $pesterParams['CodeCoverage'] = (Join-Path $outputModVerDir "$($env:BHProjectName).psm1")
-    }
     if ($global:ExcludeTag) {
         $pesterParams['ExcludeTag'] = $global:ExcludeTag
         "    Invoking Pester and excluding tag(s) [$($global:ExcludeTag -join ', ')]..."
@@ -260,12 +236,6 @@ $pesterScriptBlock = {
     }
     $testResults = Invoke-Pester @pesterParams
     '    Pester invocation complete!'
-    if ($ENV:BHBuildSystem -eq 'VSTS' -and $PSVersionTable.PSVersion.Major -lt 6 -and $null -ne $env:Coveralls -and $pesterParams.Keys -contains 'CodeCoverage') {
-        '    Formatting test results into a Coveralls coverage report...'
-        $coverage = Format-Coverage -PesterResults $TestResults -CoverallsApiToken $env:Coveralls -BranchName $env:BHBranchName -Verbose
-        '    Uploading coverage report to Coveralls...'
-        Publish-Coverage -Coverage $coverage -Verbose
-    }
     if ($testResults.FailedCount -gt 0) {
         $testResults | Format-List
         Write-Error -Message 'One or more Pester tests failed. Build cannot continue!'
@@ -298,7 +268,7 @@ task Analyze -Depends Pester {
     }
 } -description 'Run PSScriptAnalyzer'
 
-Task Deploy -Depends Import {
+Task Deploy -Depends Init {
     function Publish-GitHubRelease {
         <#
             .SYNOPSIS
