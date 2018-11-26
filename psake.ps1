@@ -246,9 +246,9 @@ $pesterScriptBlock = {
                 }
             }
         }
-        # Commented out due to extra time this takes when running against the compiled module
         '    Including CodeCoverage report'
-        $pesterParams['CodeCoverage'] = $coveredFunctions
+        # Commented out due to extra time this takes when running against the compiled module
+        ### $pesterParams['CodeCoverage'] = $coveredFunctions
     }
     if ($global:ExcludeTag) {
         $pesterParams['ExcludeTag'] = $global:ExcludeTag
