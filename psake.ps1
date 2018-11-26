@@ -422,7 +422,7 @@ Task Deploy -Depends Init {
     # In `$env:PSModulePath
     Import-Module $($env:BHProjectName)
 
-    # Otherwise, provide the path to the manifest:
+    # Otherwise, provide the path to the manifest file:
     Import-Module -Path C:\MyPSModules\$($env:BHProjectName)\$($versionToDeploy.ToString())\$($env:BHProjectName).psd1
     ``````
 "@
