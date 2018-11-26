@@ -427,7 +427,7 @@ Task Deploy -Depends Init {
     Import-Module $($env:BHProjectName)
 
     # Otherwise, provide the path to the manifest:
-    Import-Module -Path C:\$($env:BHProjectName)\$($versionToDeploy.ToString())\$($env:BHProjectName).psd1
+    Import-Module -Path C:\MyPSModules\$($env:BHProjectName)\$($versionToDeploy.ToString())\$($env:BHProjectName).psd1
     ``````
 "@
                     $gitHubParams = @{
