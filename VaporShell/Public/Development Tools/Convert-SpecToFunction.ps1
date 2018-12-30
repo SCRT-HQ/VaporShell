@@ -114,10 +114,12 @@ function $FunctionName {
     [cmdletbinding()]
 "@
     if ($passProps = $Properties.Name | Where-Object {$_ -like "*Password*" -or $_ -like "*Credential*"}) {
+        foreach ($pProp in $passProps) {
             $scriptContents += @"
-    [Diagnostics.CodeAnalysis.SuppressMessageAttribute("PSAvoidUsingPlainTextForPassword")]
-    [Diagnostics.CodeAnalysis.SuppressMessageAttribute("PSAvoidUsingUserNameAndPasswordParams")]
+    [Diagnostics.CodeAnalysis.SuppressMessageAttribute("PSAvoidUsingPlainTextForPassword","$pProp")]
+    [Diagnostics.CodeAnalysis.SuppressMessageAttribute("PSAvoidUsingUserNameAndPasswordParams","$pProp")]
 "@
+        }
     }
     $scriptContents += @"
     Param

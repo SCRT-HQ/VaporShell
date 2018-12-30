@@ -64,6 +64,14 @@
 		Type: List    
 		UpdateType: Immutable    
 
+    .PARAMETER ElasticInferenceAccelerators
+		Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-instance.html#cfn-ec2-instance-elasticinferenceaccelerators    
+		DuplicatesAllowed: False    
+		ItemType: ElasticInferenceAccelerator    
+		Required: False    
+		Type: List    
+		UpdateType: Immutable    
+
     .PARAMETER HostId
 		Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-instance.html#cfn-ec2-instance-hostid    
 		PrimitiveType: String    
@@ -124,6 +132,14 @@
 		Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-instance.html#cfn-ec2-instance-launchtemplate    
 		Required: False    
 		Type: LaunchTemplateSpecification    
+		UpdateType: Immutable    
+
+    .PARAMETER LicenseSpecifications
+		Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-instance.html#cfn-ec2-instance-licensespecifications    
+		DuplicatesAllowed: False    
+		ItemType: LicenseSpecification    
+		Required: False    
+		Type: List    
 		UpdateType: Immutable    
 
     .PARAMETER Monitoring
@@ -337,6 +353,17 @@
         $ElasticGpuSpecifications,
         [parameter(Mandatory = $false)]
         [ValidateScript( {
+                $allowedTypes = "Vaporshell.Resource.EC2.Instance.ElasticInferenceAccelerator"
+                if ([string]$($_.PSTypeNames) -match "($(($allowedTypes|ForEach-Object{[RegEx]::Escape($_)}) -join '|'))") {
+                    $true
+                }
+                else {
+                    $PSCmdlet.ThrowTerminatingError((New-VSError -String "This parameter only accepts the following types: $($allowedTypes -join ", "). The current types of the value are: $($_.PSTypeNames -join ", ")."))
+                }
+            })]
+        $ElasticInferenceAccelerators,
+        [parameter(Mandatory = $false)]
+        [ValidateScript( {
                 $allowedTypes = "System.String","Vaporshell.Function","Vaporshell.Condition"
                 if ([string]$($_.PSTypeNames) -match "($(($allowedTypes|ForEach-Object{[RegEx]::Escape($_)}) -join '|'))") {
                     $true
@@ -428,6 +455,17 @@
         $KeyName,
         [parameter(Mandatory = $false)]
         $LaunchTemplate,
+        [parameter(Mandatory = $false)]
+        [ValidateScript( {
+                $allowedTypes = "Vaporshell.Resource.EC2.Instance.LicenseSpecification"
+                if ([string]$($_.PSTypeNames) -match "($(($allowedTypes|ForEach-Object{[RegEx]::Escape($_)}) -join '|'))") {
+                    $true
+                }
+                else {
+                    $PSCmdlet.ThrowTerminatingError((New-VSError -String "This parameter only accepts the following types: $($allowedTypes -join ", "). The current types of the value are: $($_.PSTypeNames -join ", ")."))
+                }
+            })]
+        $LicenseSpecifications,
         [parameter(Mandatory = $false)]
         [System.Boolean]
         $Monitoring,
@@ -631,11 +669,23 @@
                     }
                     $ResourceParams["Properties"] | Add-Member -MemberType NoteProperty -Name ElasticGpuSpecifications -Value @($ElasticGpuSpecifications)
                 }
+                ElasticInferenceAccelerators {
+                    if (!($ResourceParams["Properties"])) {
+                        $ResourceParams.Add("Properties",([PSCustomObject]@{}))
+                    }
+                    $ResourceParams["Properties"] | Add-Member -MemberType NoteProperty -Name ElasticInferenceAccelerators -Value @($ElasticInferenceAccelerators)
+                }
                 Ipv6Addresses {
                     if (!($ResourceParams["Properties"])) {
                         $ResourceParams.Add("Properties",([PSCustomObject]@{}))
                     }
                     $ResourceParams["Properties"] | Add-Member -MemberType NoteProperty -Name Ipv6Addresses -Value @($Ipv6Addresses)
+                }
+                LicenseSpecifications {
+                    if (!($ResourceParams["Properties"])) {
+                        $ResourceParams.Add("Properties",([PSCustomObject]@{}))
+                    }
+                    $ResourceParams["Properties"] | Add-Member -MemberType NoteProperty -Name LicenseSpecifications -Value @($LicenseSpecifications)
                 }
                 NetworkInterfaces {
                     if (!($ResourceParams["Properties"])) {

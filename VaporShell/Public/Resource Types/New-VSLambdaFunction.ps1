@@ -54,6 +54,14 @@
 		Required: False    
 		UpdateType: Mutable    
 
+    .PARAMETER Layers
+		Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-lambda-function.html#cfn-lambda-function-layers    
+		DuplicatesAllowed: False    
+		PrimitiveItemType: String    
+		Required: False    
+		Type: List    
+		UpdateType: Mutable    
+
     .PARAMETER MemorySize
 		Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-lambda-function.html#cfn-lambda-function-memorysize    
 		PrimitiveType: Integer    
@@ -200,6 +208,8 @@
             })]
         $KmsKeyArn,
         [parameter(Mandatory = $false)]
+        $Layers,
+        [parameter(Mandatory = $false)]
         [Int]
         $MemorySize,
         [parameter(Mandatory = $false)]
@@ -301,6 +311,12 @@
                 }
                 Condition {
                     $ResourceParams.Add("Condition",$Condition)
+                }
+                Layers {
+                    if (!($ResourceParams["Properties"])) {
+                        $ResourceParams.Add("Properties",([PSCustomObject]@{}))
+                    }
+                    $ResourceParams["Properties"] | Add-Member -MemberType NoteProperty -Name Layers -Value @($Layers)
                 }
                 Tags {
                     if (!($ResourceParams["Properties"])) {

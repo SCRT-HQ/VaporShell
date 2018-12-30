@@ -20,8 +20,8 @@
     #>
     [OutputType('Vaporshell.Resource.ECS.TaskDefinition.RepositoryCredentials')]
     [cmdletbinding()]
-    [Diagnostics.CodeAnalysis.SuppressMessageAttribute("PSAvoidUsingPlainTextForPassword")]
-    [Diagnostics.CodeAnalysis.SuppressMessageAttribute("PSAvoidUsingUserNameAndPasswordParams")]
+    [Diagnostics.CodeAnalysis.SuppressMessageAttribute("PSAvoidUsingPlainTextForPassword","CredentialsParameter")]
+    [Diagnostics.CodeAnalysis.SuppressMessageAttribute("PSAvoidUsingUserNameAndPasswordParams","CredentialsParameter")]
     Param
     (
         [parameter(Mandatory = $false)]
