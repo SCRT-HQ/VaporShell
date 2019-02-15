@@ -13,6 +13,19 @@ param(
 )
 
 # build/init script borrowed from PoshBot x Brandon Olin
+Get-PackageProvider -Name Nuget -ForceBootstrap -Verbose:$false | Out-Null
+Set-PSRepository -Name PSGallery -InstallationPolicy Trusted -Verbose:$false
+$PSDefaultParameterValues = @{
+    '*-Module:Verbose' = $false
+    'Import-Module:ErrorAction' = 'Stop'
+    'Import-Module:Force' = $true
+    'Import-Module:Verbose' = $false
+    'Install-Module:AllowClobber' = $true
+    'Install-Module:ErrorAction' = 'Stop'
+    'Install-Module:Force' = $true
+    'Install-Module:Scope' = 'CurrentUser'
+    'Install-Module:Verbose' = $false
+}
 
 function Resolve-Module {
     [Cmdletbinding()]
@@ -22,24 +35,6 @@ function Resolve-Module {
 
         [switch]$UpdateModules
     )
-
-    begin {
-        Get-PackageProvider -Name Nuget -ForceBootstrap -Verbose:$false | Out-Null
-        Set-PSRepository -Name PSGallery -InstallationPolicy Trusted -Verbose:$false
-
-        $PSDefaultParameterValues = @{
-            '*-Module:Verbose' = $false
-            'Install-Module:ErrorAction' = 'Stop'
-            'Install-Module:Force' = $true
-            'Install-Module:Scope' = 'CurrentUser'
-            'Install-Module:Verbose' = $false
-            'Install-Module:AllowClobber' = $true
-            'Import-Module:ErrorAction' = 'Stop'
-            'Import-Module:Verbose' = $false
-            'Import-Module:Force' = $true
-        }
-    }
-
     process {
         foreach ($moduleName in $Name) {
             $versionToImport = ''
@@ -129,7 +124,14 @@ else {
             "    + NuGet API key is not null        : $($null -ne $env:NugetApiKey)`n" +
             "    + Commit message matches '!deploy' : $($env:BUILD_SOURCEVERSIONMESSAGE -match '!deploy') [$env:BUILD_SOURCEVERSIONMESSAGE]"| Write-Host -ForegroundColor Green
         }
-        'BuildHelpers','psake' | Resolve-Module @update -Verbose
+        $bH = Get-Module BuildHelpers -ListAvailable | Where-Object {$_.Version -eq [System.Version]'2.0.1'}
+        if ($null -eq $bh) {
+            "    Installing BuildHelpers v2.0.1"
+            Install-Module BuildHelpers -RequiredVersion '2.0.1' -Repository PSGallery -Force -AllowClobber -SkipPublisherCheck -Scope CurrentUser
+        }
+        "    Importing BuildHelpers v2.0.1"
+        Import-Module BuildHelpers -RequiredVersion '2.0.1'
+        'psake' | Resolve-Module @update -Verbose
         Set-BuildEnvironment -Force
         Write-Host -ForegroundColor Green "Modules successfully resolved..."
         Write-Host -ForegroundColor Green "Invoking psake with task list: [ $($Task -join ', ') ]`n"
