@@ -63,8 +63,8 @@
     #>
     [OutputType('Vaporshell.Resource.AppStream.DirectoryConfig')]
     [cmdletbinding()]
-    [Diagnostics.CodeAnalysis.SuppressMessageAttribute("PSAvoidUsingPlainTextForPassword")]
-    [Diagnostics.CodeAnalysis.SuppressMessageAttribute("PSAvoidUsingUserNameAndPasswordParams")]
+    [Diagnostics.CodeAnalysis.SuppressMessageAttribute("PSAvoidUsingPlainTextForPassword","ServiceAccountCredentials")]
+    [Diagnostics.CodeAnalysis.SuppressMessageAttribute("PSAvoidUsingUserNameAndPasswordParams","ServiceAccountCredentials")]
     Param
     (
         [parameter(Mandatory = $true,Position = 0)]

@@ -80,8 +80,11 @@ function Resource {
         $ParameterAttribute = New-Object System.Management.Automation.ParameterAttribute
         $ParameterAttribute.Mandatory = $true
         $ParameterAttribute.Position = 0
-        $AttributeCollection.Add($ParameterAttribute) 
-        $arrSet = (Get-ChildItem "$PSScriptRoot\..\Public\Resource Types").BaseName.Replace('New-VS','') | Sort-Object
+        $AttributeCollection.Add($ParameterAttribute)
+        $prevErrAct = $ErrorActionPreference
+        $ErrorActionPreference = 'SilentlyContinue'
+        $arrSet = (Get-Command -Module VaporShell | Where-Object {$_.OutputType -and $_.OutputType -like '*Vaporshell.Resource.*' -and $_.Name -Like 'New-VS*'} -ErrorAction SilentlyContinue).Name.Replace('New-VS','') | Sort-Object
+        $ErrorActionPreference = $prevErrAct
         $ValidateSetAttribute = New-Object System.Management.Automation.ValidateSetAttribute($arrSet)
         $AttributeCollection.Add($ValidateSetAttribute)
         $RuntimeParameter = New-Object System.Management.Automation.RuntimeDefinedParameter($ParamName_ResourceType, [System.String], $AttributeCollection)

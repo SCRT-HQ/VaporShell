@@ -20,7 +20,7 @@
 
     .PARAMETER PrimaryContainer
 		Type: ContainerDefinition    
-		Required: True    
+		Required: False    
 		Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-sagemaker-model.html#cfn-sagemaker-model-primarycontainer    
 		UpdateType: Immutable    
 
@@ -34,6 +34,13 @@
 		Type: VpcConfig    
 		Required: False    
 		Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-sagemaker-model.html#cfn-sagemaker-model-vpcconfig    
+		UpdateType: Immutable    
+
+    .PARAMETER Containers
+		Type: List    
+		Required: False    
+		Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-sagemaker-model.html#cfn-sagemaker-model-containers    
+		ItemType: ContainerDefinition    
 		UpdateType: Immutable    
 
     .PARAMETER Tags
@@ -99,7 +106,7 @@
                 }
             })]
         $ExecutionRoleArn,
-        [parameter(Mandatory = $true)]
+        [parameter(Mandatory = $false)]
         $PrimaryContainer,
         [parameter(Mandatory = $false)]
         [ValidateScript( {
@@ -114,6 +121,17 @@
         $ModelName,
         [parameter(Mandatory = $false)]
         $VpcConfig,
+        [parameter(Mandatory = $false)]
+        [ValidateScript( {
+                $allowedTypes = "Vaporshell.Resource.SageMaker.Model.ContainerDefinition"
+                if ([string]$($_.PSTypeNames) -match "($(($allowedTypes|ForEach-Object{[RegEx]::Escape($_)}) -join '|'))") {
+                    $true
+                }
+                else {
+                    $PSCmdlet.ThrowTerminatingError((New-VSError -String "This parameter only accepts the following types: $($allowedTypes -join ", "). The current types of the value are: $($_.PSTypeNames -join ", ")."))
+                }
+            })]
+        $Containers,
         [parameter(Mandatory = $false)]
         [ValidateScript( {
                 $allowedTypes = "Vaporshell.Resource.Tag","System.Management.Automation.PSCustomObject"
@@ -181,6 +199,12 @@
                 }
                 Condition {
                     $ResourceParams.Add("Condition",$Condition)
+                }
+                Containers {
+                    if (!($ResourceParams["Properties"])) {
+                        $ResourceParams.Add("Properties",([PSCustomObject]@{}))
+                    }
+                    $ResourceParams["Properties"] | Add-Member -MemberType NoteProperty -Name Containers -Value @($Containers)
                 }
                 Tags {
                     if (!($ResourceParams["Properties"])) {

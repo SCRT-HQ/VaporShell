@@ -29,7 +29,7 @@
 		Required: False    
 		Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-servicecatalog-cloudformationprovisionedproduct.html#cfn-servicecatalog-cloudformationprovisionedproduct-productname    
 		PrimitiveType: String    
-		UpdateType: Immutable    
+		UpdateType: Mutable    
 
     .PARAMETER ProvisioningArtifactName
 		Required: False    
@@ -54,7 +54,7 @@
 		Required: False    
 		Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-servicecatalog-cloudformationprovisionedproduct.html#cfn-servicecatalog-cloudformationprovisionedproduct-productid    
 		PrimitiveType: String    
-		UpdateType: Immutable    
+		UpdateType: Mutable    
 
     .PARAMETER Tags
 		Type: List    

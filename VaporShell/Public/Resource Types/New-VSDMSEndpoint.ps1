@@ -30,6 +30,12 @@
 		PrimitiveType: String    
 		UpdateType: Mutable    
 
+    .PARAMETER ElasticsearchSettings
+		Type: ElasticsearchSettings    
+		Required: False    
+		Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-dms-endpoint.html#cfn-dms-endpoint-elasticsearchsettings    
+		UpdateType: Mutable    
+
     .PARAMETER S3Settings
 		Type: S3Settings    
 		Required: False    
@@ -46,6 +52,12 @@
 		Type: DynamoDbSettings    
 		Required: False    
 		Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-dms-endpoint.html#cfn-dms-endpoint-dynamodbsettings    
+		UpdateType: Mutable    
+
+    .PARAMETER KinesisSettings
+		Type: KinesisSettings    
+		Required: False    
+		Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-dms-endpoint.html#cfn-dms-endpoint-kinesissettings    
 		UpdateType: Mutable    
 
     .PARAMETER Username
@@ -141,8 +153,8 @@
     #>
     [OutputType('Vaporshell.Resource.DMS.Endpoint')]
     [cmdletbinding()]
-    [Diagnostics.CodeAnalysis.SuppressMessageAttribute("PSAvoidUsingPlainTextForPassword")]
-    [Diagnostics.CodeAnalysis.SuppressMessageAttribute("PSAvoidUsingUserNameAndPasswordParams")]
+    [Diagnostics.CodeAnalysis.SuppressMessageAttribute("PSAvoidUsingPlainTextForPassword","Password")]
+    [Diagnostics.CodeAnalysis.SuppressMessageAttribute("PSAvoidUsingUserNameAndPasswordParams","Password")]
     Param
     (
         [parameter(Mandatory = $true,Position = 0)]
@@ -182,6 +194,8 @@
             })]
         $DatabaseName,
         [parameter(Mandatory = $false)]
+        $ElasticsearchSettings,
+        [parameter(Mandatory = $false)]
         $S3Settings,
         [parameter(Mandatory = $true)]
         [ValidateScript( {
@@ -196,6 +210,8 @@
         $EngineName,
         [parameter(Mandatory = $false)]
         $DynamoDbSettings,
+        [parameter(Mandatory = $false)]
+        $KinesisSettings,
         [parameter(Mandatory = $false)]
         [ValidateScript( {
                 $allowedTypes = "System.String","Vaporshell.Function","Vaporshell.Condition"
