@@ -2,6 +2,7 @@
 
 <!-- TOC -->
 
+* [2.6.3](#263)
 * [2.6.2](#262)
 * [2.6.1](#261)
 * [2.6.0](#260)
@@ -38,6 +39,13 @@
 * [0.7.02](#0702)
 
 <!-- /TOC -->
+
+## 2.6.3
+
+* [Issue #44](https://github.com/scrthq/VaporShell/issues/44)
+  * Fixed: `Resource` from the DSL module was no longer resolving the available types after the CI/CD pipeline switched to compiling the module into a single PSM1 before deploying to the PowerShell Gallery.
+* Miscellaneous
+  * Brought Resource Type and Property Type functions up to current spec sheet.
 
 ## 2.6.2
 
