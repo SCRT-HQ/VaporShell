@@ -29,12 +29,6 @@
 		PrimitiveType: String    
 		UpdateType: Mutable    
 
-    .PARAMETER InstanceInitiatedShutdownBehavior
-		Required: False    
-		Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-launchtemplate-launchtemplatedata.html#cfn-ec2-launchtemplate-launchtemplatedata-instanceinitiatedshutdownbehavior    
-		PrimitiveType: String    
-		UpdateType: Mutable    
-
     .PARAMETER BlockDeviceMappings
 		Type: List    
 		Required: False    
@@ -54,28 +48,9 @@
 		PrimitiveType: String    
 		UpdateType: Mutable    
 
-    .PARAMETER SecurityGroupIds
-		PrimitiveItemType: String    
-		Type: List    
-		Required: False    
-		Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-launchtemplate-launchtemplatedata.html#cfn-ec2-launchtemplate-launchtemplatedata-securitygroupids    
-		UpdateType: Mutable    
-
     .PARAMETER EbsOptimized
 		Required: False    
 		Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-launchtemplate-launchtemplatedata.html#cfn-ec2-launchtemplate-launchtemplatedata-ebsoptimized    
-		PrimitiveType: Boolean    
-		UpdateType: Mutable    
-
-    .PARAMETER KeyName
-		Required: False    
-		Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-launchtemplate-launchtemplatedata.html#cfn-ec2-launchtemplate-launchtemplatedata-keyname    
-		PrimitiveType: String    
-		UpdateType: Mutable    
-
-    .PARAMETER DisableApiTermination
-		Required: False    
-		Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-launchtemplate-launchtemplatedata.html#cfn-ec2-launchtemplate-launchtemplatedata-disableapitermination    
 		PrimitiveType: Boolean    
 		UpdateType: Mutable    
 
@@ -86,16 +61,17 @@
 		ItemType: ElasticGpuSpecification    
 		UpdateType: Mutable    
 
+    .PARAMETER ElasticInferenceAccelerators
+		Type: List    
+		Required: False    
+		Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-launchtemplate-launchtemplatedata.html#cfn-ec2-launchtemplate-launchtemplatedata-elasticinferenceaccelerators    
+		ItemType: LaunchTemplateElasticInferenceAccelerator    
+		UpdateType: Mutable    
+
     .PARAMETER Placement
 		Type: Placement    
 		Required: False    
 		Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-launchtemplate-launchtemplatedata.html#cfn-ec2-launchtemplate-launchtemplatedata-placement    
-		UpdateType: Mutable    
-
-    .PARAMETER InstanceMarketOptions
-		Type: InstanceMarketOptions    
-		Required: False    
-		Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-launchtemplate-launchtemplatedata.html#cfn-ec2-launchtemplate-launchtemplatedata-instancemarketoptions    
 		UpdateType: Mutable    
 
     .PARAMETER NetworkInterfaces
@@ -117,16 +93,72 @@
 		PrimitiveType: String    
 		UpdateType: Mutable    
 
+    .PARAMETER Monitoring
+		Type: Monitoring    
+		Required: False    
+		Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-launchtemplate-launchtemplatedata.html#cfn-ec2-launchtemplate-launchtemplatedata-monitoring    
+		UpdateType: Mutable    
+
+    .PARAMETER HibernationOptions
+		Type: HibernationOptions    
+		Required: False    
+		Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-launchtemplate-launchtemplatedata.html#cfn-ec2-launchtemplate-launchtemplatedata-hibernationoptions    
+		UpdateType: Mutable    
+
+    .PARAMETER LicenseSpecifications
+		Type: List    
+		Required: False    
+		Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-launchtemplate-launchtemplatedata.html#cfn-ec2-launchtemplate-launchtemplatedata-licensespecifications    
+		ItemType: LicenseSpecification    
+		UpdateType: Mutable    
+
+    .PARAMETER InstanceInitiatedShutdownBehavior
+		Required: False    
+		Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-launchtemplate-launchtemplatedata.html#cfn-ec2-launchtemplate-launchtemplatedata-instanceinitiatedshutdownbehavior    
+		PrimitiveType: String    
+		UpdateType: Mutable    
+
+    .PARAMETER CpuOptions
+		Type: CpuOptions    
+		Required: False    
+		Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-launchtemplate-launchtemplatedata.html#cfn-ec2-launchtemplate-launchtemplatedata-cpuoptions    
+		UpdateType: Mutable    
+
+    .PARAMETER SecurityGroupIds
+		PrimitiveItemType: String    
+		Type: List    
+		Required: False    
+		Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-launchtemplate-launchtemplatedata.html#cfn-ec2-launchtemplate-launchtemplatedata-securitygroupids    
+		UpdateType: Mutable    
+
+    .PARAMETER KeyName
+		Required: False    
+		Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-launchtemplate-launchtemplatedata.html#cfn-ec2-launchtemplate-launchtemplatedata-keyname    
+		PrimitiveType: String    
+		UpdateType: Mutable    
+
+    .PARAMETER DisableApiTermination
+		Required: False    
+		Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-launchtemplate-launchtemplatedata.html#cfn-ec2-launchtemplate-launchtemplatedata-disableapitermination    
+		PrimitiveType: Boolean    
+		UpdateType: Mutable    
+
+    .PARAMETER InstanceMarketOptions
+		Type: InstanceMarketOptions    
+		Required: False    
+		Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-launchtemplate-launchtemplatedata.html#cfn-ec2-launchtemplate-launchtemplatedata-instancemarketoptions    
+		UpdateType: Mutable    
+
     .PARAMETER RamDiskId
 		Required: False    
 		Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-launchtemplate-launchtemplatedata.html#cfn-ec2-launchtemplate-launchtemplatedata-ramdiskid    
 		PrimitiveType: String    
 		UpdateType: Mutable    
 
-    .PARAMETER Monitoring
-		Type: Monitoring    
+    .PARAMETER CapacityReservationSpecification
+		Type: CapacityReservationSpecification    
 		Required: False    
-		Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-launchtemplate-launchtemplatedata.html#cfn-ec2-launchtemplate-launchtemplatedata-monitoring    
+		Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-launchtemplate-launchtemplatedata.html#cfn-ec2-launchtemplate-launchtemplatedata-capacityreservationspecification    
 		UpdateType: Mutable    
 
     .PARAMETER CreditSpecification
@@ -168,17 +200,6 @@
         $UserData,
         [parameter(Mandatory = $false)]
         [ValidateScript( {
-                $allowedTypes = "System.String","Vaporshell.Function","Vaporshell.Condition"
-                if ([string]$($_.PSTypeNames) -match "($(($allowedTypes|ForEach-Object{[RegEx]::Escape($_)}) -join '|'))") {
-                    $true
-                }
-                else {
-                    $PSCmdlet.ThrowTerminatingError((New-VSError -String "This parameter only accepts the following types: $($allowedTypes -join ", "). The current types of the value are: $($_.PSTypeNames -join ", ")."))
-                }
-            })]
-        $InstanceInitiatedShutdownBehavior,
-        [parameter(Mandatory = $false)]
-        [ValidateScript( {
                 $allowedTypes = "Vaporshell.Resource.EC2.LaunchTemplate.BlockDeviceMapping"
                 if ([string]$($_.PSTypeNames) -match "($(($allowedTypes|ForEach-Object{[RegEx]::Escape($_)}) -join '|'))") {
                     $true
@@ -202,24 +223,8 @@
             })]
         $KernelId,
         [parameter(Mandatory = $false)]
-        $SecurityGroupIds,
-        [parameter(Mandatory = $false)]
         [System.Boolean]
         $EbsOptimized,
-        [parameter(Mandatory = $false)]
-        [ValidateScript( {
-                $allowedTypes = "System.String","Vaporshell.Function","Vaporshell.Condition"
-                if ([string]$($_.PSTypeNames) -match "($(($allowedTypes|ForEach-Object{[RegEx]::Escape($_)}) -join '|'))") {
-                    $true
-                }
-                else {
-                    $PSCmdlet.ThrowTerminatingError((New-VSError -String "This parameter only accepts the following types: $($allowedTypes -join ", "). The current types of the value are: $($_.PSTypeNames -join ", ")."))
-                }
-            })]
-        $KeyName,
-        [parameter(Mandatory = $false)]
-        [System.Boolean]
-        $DisableApiTermination,
         [parameter(Mandatory = $false)]
         [ValidateScript( {
                 $allowedTypes = "Vaporshell.Resource.EC2.LaunchTemplate.ElasticGpuSpecification"
@@ -232,9 +237,18 @@
             })]
         $ElasticGpuSpecifications,
         [parameter(Mandatory = $false)]
-        $Placement,
+        [ValidateScript( {
+                $allowedTypes = "Vaporshell.Resource.EC2.LaunchTemplate.LaunchTemplateElasticInferenceAccelerator"
+                if ([string]$($_.PSTypeNames) -match "($(($allowedTypes|ForEach-Object{[RegEx]::Escape($_)}) -join '|'))") {
+                    $true
+                }
+                else {
+                    $PSCmdlet.ThrowTerminatingError((New-VSError -String "This parameter only accepts the following types: $($allowedTypes -join ", "). The current types of the value are: $($_.PSTypeNames -join ", ")."))
+                }
+            })]
+        $ElasticInferenceAccelerators,
         [parameter(Mandatory = $false)]
-        $InstanceMarketOptions,
+        $Placement,
         [parameter(Mandatory = $false)]
         [ValidateScript( {
                 $allowedTypes = "Vaporshell.Resource.EC2.LaunchTemplate.NetworkInterface"
@@ -269,6 +283,52 @@
             })]
         $InstanceType,
         [parameter(Mandatory = $false)]
+        $Monitoring,
+        [parameter(Mandatory = $false)]
+        $HibernationOptions,
+        [parameter(Mandatory = $false)]
+        [ValidateScript( {
+                $allowedTypes = "Vaporshell.Resource.EC2.LaunchTemplate.LicenseSpecification"
+                if ([string]$($_.PSTypeNames) -match "($(($allowedTypes|ForEach-Object{[RegEx]::Escape($_)}) -join '|'))") {
+                    $true
+                }
+                else {
+                    $PSCmdlet.ThrowTerminatingError((New-VSError -String "This parameter only accepts the following types: $($allowedTypes -join ", "). The current types of the value are: $($_.PSTypeNames -join ", ")."))
+                }
+            })]
+        $LicenseSpecifications,
+        [parameter(Mandatory = $false)]
+        [ValidateScript( {
+                $allowedTypes = "System.String","Vaporshell.Function","Vaporshell.Condition"
+                if ([string]$($_.PSTypeNames) -match "($(($allowedTypes|ForEach-Object{[RegEx]::Escape($_)}) -join '|'))") {
+                    $true
+                }
+                else {
+                    $PSCmdlet.ThrowTerminatingError((New-VSError -String "This parameter only accepts the following types: $($allowedTypes -join ", "). The current types of the value are: $($_.PSTypeNames -join ", ")."))
+                }
+            })]
+        $InstanceInitiatedShutdownBehavior,
+        [parameter(Mandatory = $false)]
+        $CpuOptions,
+        [parameter(Mandatory = $false)]
+        $SecurityGroupIds,
+        [parameter(Mandatory = $false)]
+        [ValidateScript( {
+                $allowedTypes = "System.String","Vaporshell.Function","Vaporshell.Condition"
+                if ([string]$($_.PSTypeNames) -match "($(($allowedTypes|ForEach-Object{[RegEx]::Escape($_)}) -join '|'))") {
+                    $true
+                }
+                else {
+                    $PSCmdlet.ThrowTerminatingError((New-VSError -String "This parameter only accepts the following types: $($allowedTypes -join ", "). The current types of the value are: $($_.PSTypeNames -join ", ")."))
+                }
+            })]
+        $KeyName,
+        [parameter(Mandatory = $false)]
+        [System.Boolean]
+        $DisableApiTermination,
+        [parameter(Mandatory = $false)]
+        $InstanceMarketOptions,
+        [parameter(Mandatory = $false)]
         [ValidateScript( {
                 $allowedTypes = "System.String","Vaporshell.Function","Vaporshell.Condition"
                 if ([string]$($_.PSTypeNames) -match "($(($allowedTypes|ForEach-Object{[RegEx]::Escape($_)}) -join '|'))") {
@@ -280,7 +340,7 @@
             })]
         $RamDiskId,
         [parameter(Mandatory = $false)]
-        $Monitoring,
+        $CapacityReservationSpecification,
         [parameter(Mandatory = $false)]
         $CreditSpecification
     )

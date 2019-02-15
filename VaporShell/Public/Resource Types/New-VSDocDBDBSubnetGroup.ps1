@@ -1,29 +1,41 @@
-﻿function New-VSECSCluster {
+﻿function New-VSDocDBDBSubnetGroup {
     <#
     .SYNOPSIS
-        Adds an AWS::ECS::Cluster resource to the template
+        Adds an AWS::DocDB::DBSubnetGroup resource to the template
 
     .DESCRIPTION
-        Adds an AWS::ECS::Cluster resource to the template
+        Adds an AWS::DocDB::DBSubnetGroup resource to the template
 
     .LINK
-        http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ecs-cluster.html
+        http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-docdb-dbsubnetgroup.html
 
     .PARAMETER LogicalId
         The logical ID must be alphanumeric (A-Za-z0-9) and unique within the template. Use the logical name to reference the resource in other parts of the template. For example, if you want to map an Amazon Elastic Block Store volume to an Amazon EC2 instance, you reference the logical IDs to associate the block stores with the instance.
 
-    .PARAMETER ClusterName
-		Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ecs-cluster.html#cfn-ecs-cluster-clustername    
-		PrimitiveType: String    
+    .PARAMETER DBSubnetGroupName
 		Required: False    
+		Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-docdb-dbsubnetgroup.html#cfn-docdb-dbsubnetgroup-dbsubnetgroupname    
+		PrimitiveType: String    
 		UpdateType: Immutable    
 
-    .PARAMETER Tags
-		Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ecs-cluster.html#cfn-ecs-cluster-tags    
-		DuplicatesAllowed: True    
-		ItemType: Tag    
-		Required: False    
+    .PARAMETER DBSubnetGroupDescription
+		Required: True    
+		Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-docdb-dbsubnetgroup.html#cfn-docdb-dbsubnetgroup-dbsubnetgroupdescription    
+		PrimitiveType: String    
+		UpdateType: Mutable    
+
+    .PARAMETER SubnetIds
+		PrimitiveItemType: String    
 		Type: List    
+		Required: True    
+		Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-docdb-dbsubnetgroup.html#cfn-docdb-dbsubnetgroup-subnetids    
+		UpdateType: Mutable    
+
+    .PARAMETER Tags
+		Type: List    
+		Required: False    
+		Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-docdb-dbsubnetgroup.html#cfn-docdb-dbsubnetgroup-tags    
+		ItemType: Tag    
 		UpdateType: Mutable    
 
     .PARAMETER DeletionPolicy
@@ -56,7 +68,7 @@
     .FUNCTIONALITY
         Vaporshell
     #>
-    [OutputType('Vaporshell.Resource.ECS.Cluster')]
+    [OutputType('Vaporshell.Resource.DocDB.DBSubnetGroup')]
     [cmdletbinding()]
     Param
     (
@@ -81,7 +93,20 @@
                     $PSCmdlet.ThrowTerminatingError((New-VSError -String "This parameter only accepts the following types: $($allowedTypes -join ", "). The current types of the value are: $($_.PSTypeNames -join ", ")."))
                 }
             })]
-        $ClusterName,
+        $DBSubnetGroupName,
+        [parameter(Mandatory = $true)]
+        [ValidateScript( {
+                $allowedTypes = "System.String","Vaporshell.Function","Vaporshell.Condition"
+                if ([string]$($_.PSTypeNames) -match "($(($allowedTypes|ForEach-Object{[RegEx]::Escape($_)}) -join '|'))") {
+                    $true
+                }
+                else {
+                    $PSCmdlet.ThrowTerminatingError((New-VSError -String "This parameter only accepts the following types: $($allowedTypes -join ", "). The current types of the value are: $($_.PSTypeNames -join ", ")."))
+                }
+            })]
+        $DBSubnetGroupDescription,
+        [parameter(Mandatory = $true)]
+        $SubnetIds,
         [parameter(Mandatory = $false)]
         [ValidateScript( {
                 $allowedTypes = "Vaporshell.Resource.Tag","System.Management.Automation.PSCustomObject"
@@ -127,7 +152,7 @@
     Begin {
         $ResourceParams = @{
             LogicalId = $LogicalId
-            Type = "AWS::ECS::Cluster"
+            Type = "AWS::DocDB::DBSubnetGroup"
         }
         $commonParams = @('Verbose','Debug','ErrorAction','WarningAction','InformationAction','ErrorVariable','WarningVariable','InformationVariable','OutVariable','OutBuffer','PipelineVariable')
     }
@@ -150,6 +175,12 @@
                 Condition {
                     $ResourceParams.Add("Condition",$Condition)
                 }
+                SubnetIds {
+                    if (!($ResourceParams["Properties"])) {
+                        $ResourceParams.Add("Properties",([PSCustomObject]@{}))
+                    }
+                    $ResourceParams["Properties"] | Add-Member -MemberType NoteProperty -Name SubnetIds -Value @($SubnetIds)
+                }
                 Tags {
                     if (!($ResourceParams["Properties"])) {
                         $ResourceParams.Add("Properties",([PSCustomObject]@{}))
@@ -167,7 +198,7 @@
     }
     End {
         $obj = New-VaporResource @ResourceParams
-        $obj | Add-ObjectDetail -TypeName 'Vaporshell.Resource.ECS.Cluster'
+        $obj | Add-ObjectDetail -TypeName 'Vaporshell.Resource.DocDB.DBSubnetGroup'
         Write-Verbose "Resulting JSON from $($MyInvocation.MyCommand): `n`n$(@{$obj.LogicalId = $obj.Props} | ConvertTo-Json -Depth 5)`n"
     }
 }

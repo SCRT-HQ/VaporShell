@@ -302,6 +302,12 @@
 		Required: False    
 		UpdateType: Immutable    
 
+    .PARAMETER UseDefaultProcessorFeatures
+		Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-rds-database-instance.html#cfn-rds-dbinstance-usedefaultprocessorfeatures    
+		PrimitiveType: Boolean    
+		Required: False    
+		UpdateType: Mutable    
+
     .PARAMETER VPCSecurityGroups
 		Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-rds-database-instance.html#cfn-rds-dbinstance-vpcsecuritygroups    
 		DuplicatesAllowed: True    
@@ -744,6 +750,9 @@
                 }
             })]
         $Timezone,
+        [parameter(Mandatory = $false)]
+        [System.Boolean]
+        $UseDefaultProcessorFeatures,
         [parameter(Mandatory = $false)]
         $VPCSecurityGroups,
         [ValidateSet("Delete","Retain","Snapshot")]

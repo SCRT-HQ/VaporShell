@@ -52,7 +52,7 @@
     .PARAMETER ValidFrom
 		Required: False    
 		Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ec2-ec2fleet.html#cfn-ec2-ec2fleet-validfrom    
-		PrimitiveType: Integer    
+		PrimitiveType: String    
 		UpdateType: Immutable    
 
     .PARAMETER ReplaceUnhealthyInstances
@@ -77,7 +77,7 @@
     .PARAMETER ValidUntil
 		Required: False    
 		Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ec2-ec2fleet.html#cfn-ec2-ec2fleet-validuntil    
-		PrimitiveType: Integer    
+		PrimitiveType: String    
 		UpdateType: Immutable    
 
     .PARAMETER DeletionPolicy
@@ -165,7 +165,15 @@
         [parameter(Mandatory = $false)]
         $SpotOptions,
         [parameter(Mandatory = $false)]
-        [Int]
+        [ValidateScript( {
+                $allowedTypes = "System.String","Vaporshell.Function","Vaporshell.Condition"
+                if ([string]$($_.PSTypeNames) -match "($(($allowedTypes|ForEach-Object{[RegEx]::Escape($_)}) -join '|'))") {
+                    $true
+                }
+                else {
+                    $PSCmdlet.ThrowTerminatingError((New-VSError -String "This parameter only accepts the following types: $($allowedTypes -join ", "). The current types of the value are: $($_.PSTypeNames -join ", ")."))
+                }
+            })]
         $ValidFrom,
         [parameter(Mandatory = $false)]
         [System.Boolean]
@@ -185,7 +193,15 @@
         [System.Boolean]
         $TerminateInstancesWithExpiration,
         [parameter(Mandatory = $false)]
-        [Int]
+        [ValidateScript( {
+                $allowedTypes = "System.String","Vaporshell.Function","Vaporshell.Condition"
+                if ([string]$($_.PSTypeNames) -match "($(($allowedTypes|ForEach-Object{[RegEx]::Escape($_)}) -join '|'))") {
+                    $true
+                }
+                else {
+                    $PSCmdlet.ThrowTerminatingError((New-VSError -String "This parameter only accepts the following types: $($allowedTypes -join ", "). The current types of the value are: $($_.PSTypeNames -join ", ")."))
+                }
+            })]
         $ValidUntil,
         [ValidateSet("Delete","Retain","Snapshot")]
         [System.String]

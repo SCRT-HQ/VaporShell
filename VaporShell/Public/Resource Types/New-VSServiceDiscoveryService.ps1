@@ -22,7 +22,7 @@
 		Type: HealthCheckCustomConfig    
 		Required: False    
 		Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-servicediscovery-service.html#cfn-servicediscovery-service-healthcheckcustomconfig    
-		UpdateType: Mutable    
+		UpdateType: Immutable    
 
     .PARAMETER DnsConfig
 		Type: DnsConfig    

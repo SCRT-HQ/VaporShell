@@ -56,6 +56,12 @@
 		Type: EncryptionAtRestOptions    
 		UpdateType: Immutable    
 
+    .PARAMETER NodeToNodeEncryptionOptions
+		Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-elasticsearch-domain.html#cfn-elasticsearch-domain-nodetonodeencryptionoptions    
+		Required: False    
+		Type: NodeToNodeEncryptionOptions    
+		UpdateType: Immutable    
+
     .PARAMETER SnapshotOptions
 		Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-elasticsearch-domain.html#cfn-elasticsearch-domain-snapshotoptions    
 		Required: False    
@@ -163,6 +169,8 @@
         $ElasticsearchVersion,
         [parameter(Mandatory = $false)]
         $EncryptionAtRestOptions,
+        [parameter(Mandatory = $false)]
+        $NodeToNodeEncryptionOptions,
         [parameter(Mandatory = $false)]
         $SnapshotOptions,
         [parameter(Mandatory = $false)]

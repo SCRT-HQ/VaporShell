@@ -1,37 +1,30 @@
-﻿function Add-VSCodeBuildProjectProjectTriggers {
+﻿function Add-VSEC2LaunchTemplateLicenseSpecification {
     <#
     .SYNOPSIS
-        Adds an AWS::CodeBuild::Project.ProjectTriggers resource property to the template
+        Adds an AWS::EC2::LaunchTemplate.LicenseSpecification resource property to the template
 
     .DESCRIPTION
-        Adds an AWS::CodeBuild::Project.ProjectTriggers resource property to the template
+        Adds an AWS::EC2::LaunchTemplate.LicenseSpecification resource property to the template
 
     .LINK
-        http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-codebuild-project-projecttriggers.html
+        http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-launchtemplate-licensespecification.html
 
-    .PARAMETER FilterGroups
-		Type: List    
+    .PARAMETER LicenseConfigurationArn
 		Required: False    
-		Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-codebuild-project-projecttriggers.html#cfn-codebuild-project-projecttriggers-filtergroups    
-		ItemType: FilterGroup    
-		UpdateType: Mutable    
-
-    .PARAMETER Webhook
-		Required: False    
-		Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-codebuild-project-projecttriggers.html#cfn-codebuild-project-projecttriggers-webhook    
-		PrimitiveType: Boolean    
+		Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-launchtemplate-licensespecification.html#cfn-ec2-launchtemplate-licensespecification-licenseconfigurationarn    
+		PrimitiveType: String    
 		UpdateType: Mutable    
 
     .FUNCTIONALITY
         Vaporshell
     #>
-    [OutputType('Vaporshell.Resource.CodeBuild.Project.ProjectTriggers')]
+    [OutputType('Vaporshell.Resource.EC2.LaunchTemplate.LicenseSpecification')]
     [cmdletbinding()]
     Param
     (
         [parameter(Mandatory = $false)]
         [ValidateScript( {
-                $allowedTypes = "Vaporshell.Resource.CodeBuild.Project.FilterGroup"
+                $allowedTypes = "System.String","Vaporshell.Function","Vaporshell.Condition"
                 if ([string]$($_.PSTypeNames) -match "($(($allowedTypes|ForEach-Object{[RegEx]::Escape($_)}) -join '|'))") {
                     $true
                 }
@@ -39,10 +32,7 @@
                     $PSCmdlet.ThrowTerminatingError((New-VSError -String "This parameter only accepts the following types: $($allowedTypes -join ", "). The current types of the value are: $($_.PSTypeNames -join ", ")."))
                 }
             })]
-        $FilterGroups,
-        [parameter(Mandatory = $false)]
-        [System.Boolean]
-        $Webhook
+        $LicenseConfigurationArn
     )
     Begin {
         $obj = [PSCustomObject]@{}
@@ -58,7 +48,7 @@
         }
     }
     End {
-        $obj | Add-ObjectDetail -TypeName 'Vaporshell.Resource.CodeBuild.Project.ProjectTriggers'
+        $obj | Add-ObjectDetail -TypeName 'Vaporshell.Resource.EC2.LaunchTemplate.LicenseSpecification'
         Write-Verbose "Resulting JSON from $($MyInvocation.MyCommand): `n`n$($obj | ConvertTo-Json -Depth 5)`n"
     }
 }

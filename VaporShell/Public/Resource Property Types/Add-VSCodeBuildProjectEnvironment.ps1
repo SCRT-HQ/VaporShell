@@ -28,10 +28,22 @@
 		PrimitiveType: Boolean    
 		UpdateType: Mutable    
 
+    .PARAMETER ImagePullCredentialsType
+		Required: False    
+		Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-codebuild-project-environment.html#cfn-codebuild-project-environment-imagepullcredentialstype    
+		PrimitiveType: String    
+		UpdateType: Mutable    
+
     .PARAMETER Image
 		Required: True    
 		Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-codebuild-project-environment.html#cfn-codebuild-project-environment-image    
 		PrimitiveType: String    
+		UpdateType: Mutable    
+
+    .PARAMETER RegistryCredential
+		Type: RegistryCredential    
+		Required: False    
+		Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-codebuild-project-environment.html#cfn-codebuild-project-environment-registrycredential    
 		UpdateType: Mutable    
 
     .PARAMETER ComputeType
@@ -51,6 +63,10 @@
     #>
     [OutputType('Vaporshell.Resource.CodeBuild.Project.Environment')]
     [cmdletbinding()]
+    [Diagnostics.CodeAnalysis.SuppressMessageAttribute("PSAvoidUsingPlainTextForPassword","ImagePullCredentialsType")]
+    [Diagnostics.CodeAnalysis.SuppressMessageAttribute("PSAvoidUsingUserNameAndPasswordParams","ImagePullCredentialsType")]
+    [Diagnostics.CodeAnalysis.SuppressMessageAttribute("PSAvoidUsingPlainTextForPassword","RegistryCredential")]
+    [Diagnostics.CodeAnalysis.SuppressMessageAttribute("PSAvoidUsingUserNameAndPasswordParams","RegistryCredential")]
     Param
     (
         [parameter(Mandatory = $true)]
@@ -78,6 +94,17 @@
         [parameter(Mandatory = $false)]
         [System.Boolean]
         $PrivilegedMode,
+        [parameter(Mandatory = $false)]
+        [ValidateScript( {
+                $allowedTypes = "System.String","Vaporshell.Function","Vaporshell.Condition"
+                if ([string]$($_.PSTypeNames) -match "($(($allowedTypes|ForEach-Object{[RegEx]::Escape($_)}) -join '|'))") {
+                    $true
+                }
+                else {
+                    $PSCmdlet.ThrowTerminatingError((New-VSError -String "This parameter only accepts the following types: $($allowedTypes -join ", "). The current types of the value are: $($_.PSTypeNames -join ", ")."))
+                }
+            })]
+        $ImagePullCredentialsType,
         [parameter(Mandatory = $true)]
         [ValidateScript( {
                 $allowedTypes = "System.String","Vaporshell.Function","Vaporshell.Condition"
@@ -89,6 +116,8 @@
                 }
             })]
         $Image,
+        [parameter(Mandatory = $false)]
+        $RegistryCredential,
         [parameter(Mandatory = $true)]
         [ValidateScript( {
                 $allowedTypes = "System.String","Vaporshell.Function","Vaporshell.Condition"

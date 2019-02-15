@@ -24,23 +24,28 @@
   </a>&nbsp;&nbsp;&nbsp;
   <!-- PS Gallery -->
   <a href="https://www.PowerShellGallery.com/packages/VaporShell">
-    <img src="https://img.shields.io/powershellgallery/dt/Vaporshell.svg?style=flat"
+    <img src="https://img.shields.io/powershellgallery/dt/Vaporshell.svg?style=flat&logo=powershell"
       alt="PowerShell Gallery - Install VaporShell" title="PowerShell Gallery - Install VaporShell" />
   </a>&nbsp;&nbsp;&nbsp;
-  <!-- Gitter -->
-  <a href="https://gitter.im/VaporShell/Lobby?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge&utm_content=badge">
-    <img src="https://badges.gitter.im/VaporShell/Lobby.svg"
-      alt="Gitter - Chat" title="Gitter - Chat" />
-  </a>&nbsp;&nbsp;&nbsp;
+  <!-- Discord -->
+  <a href="https://discord.gg/G66zVG7">
+    <img src="https://img.shields.io/discord/235574673155293194.svg?label=Discord&logo=discord"
+      alt="Discord - Chat" title="Discord - Chat" />
+  </a>&nbsp;&nbsp;&nbsp;&nbsp;
   <!-- Slack Invite -->
   <a href="https://scrthq-slack-invite.herokuapp.com/">
     <img src="https://img.shields.io/badge/chat-on%20slack-orange.svg?style=flat&logo=slack"
       alt="Slack - Chat" title="Slack - Chat" />
   </a>&nbsp;&nbsp;&nbsp;
-  <!-- Slack Status -->
+  <!-- Slack Status
   <a href="https://scrthq-slack-invite.herokuapp.com/">
     <img src="https://scrthq-slack-invite.herokuapp.com/badge.svg"
       alt="Slack - Status" title="Slack - Status" />
+  </a>&nbsp;&nbsp;&nbsp; -->
+  <!-- Gitter -->
+  <a href="https://gitter.im/VaporShell/Lobby?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge&utm_content=badge">
+    <img src="https://img.shields.io/gitter/room/scrthq/VaporShell.svg?logo=gitter&style=plastic"
+      alt="Gitter - Chat" title="Gitter - Chat" />
   </a>
 </div>
 
