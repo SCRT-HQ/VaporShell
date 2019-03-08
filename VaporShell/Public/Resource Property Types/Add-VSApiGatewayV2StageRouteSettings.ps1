@@ -1,4 +1,4 @@
-﻿function Add-VSApiGatewayV2StageRouteSettings {
+function Add-VSApiGatewayV2StageRouteSettings {
     <#
     .SYNOPSIS
         Adds an AWS::ApiGatewayV2::Stage.RouteSettings resource property to the template

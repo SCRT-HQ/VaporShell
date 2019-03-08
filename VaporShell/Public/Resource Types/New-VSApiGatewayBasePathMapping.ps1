@@ -1,4 +1,4 @@
-﻿function New-VSApiGatewayBasePathMapping {
+function New-VSApiGatewayBasePathMapping {
     <#
     .SYNOPSIS
         Adds an AWS::ApiGateway::BasePathMapping resource to the template

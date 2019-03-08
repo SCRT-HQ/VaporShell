@@ -1,4 +1,4 @@
-﻿function Add-VSCodeDeployDeploymentGroupLoadBalancerInfo {
+function Add-VSCodeDeployDeploymentGroupLoadBalancerInfo {
     <#
     .SYNOPSIS
         Adds an AWS::CodeDeploy::DeploymentGroup.LoadBalancerInfo resource property to the template

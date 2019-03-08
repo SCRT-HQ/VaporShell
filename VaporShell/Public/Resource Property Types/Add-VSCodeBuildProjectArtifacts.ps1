@@ -1,4 +1,4 @@
-﻿function Add-VSCodeBuildProjectArtifacts {
+function Add-VSCodeBuildProjectArtifacts {
     <#
     .SYNOPSIS
         Adds an AWS::CodeBuild::Project.Artifacts resource property to the template

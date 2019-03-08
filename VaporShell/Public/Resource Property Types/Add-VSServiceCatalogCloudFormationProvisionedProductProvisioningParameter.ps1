@@ -1,4 +1,4 @@
-﻿function Add-VSServiceCatalogCloudFormationProvisionedProductProvisioningParameter {
+function Add-VSServiceCatalogCloudFormationProvisionedProductProvisioningParameter {
     <#
     .SYNOPSIS
         Adds an AWS::ServiceCatalog::CloudFormationProvisionedProduct.ProvisioningParameter resource property to the template

@@ -1,4 +1,4 @@
-﻿function Add-VSGlueClassifierXMLClassifier {
+function Add-VSGlueClassifierXMLClassifier {
     <#
     .SYNOPSIS
         Adds an AWS::Glue::Classifier.XMLClassifier resource property to the template

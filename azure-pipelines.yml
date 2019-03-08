@@ -19,21 +19,6 @@ phases:
     name: Hosted VS2017
 
   steps:
-  - task: DotNetCoreCLI@2
-    displayName: Compile C# Class Library
-    inputs:
-      command: restore
-      includeNuGetOrg: true
-      projects: ./VaporShell/Classes/VaporShell.csproj
-      
-  - task: DotNetCoreCLI@2
-    displayName: Compile C# Class Library
-    inputs:
-      command: build
-      includeNuGetOrg: true
-      configuration: Release
-      projects: ./VaporShell/Classes/VaporShell.csproj
-
   - powershell: . ./build.ps1
     displayName: Compile PowerShell Module
 
@@ -42,12 +27,6 @@ phases:
     inputs:
       PathtoPublish: BuildOutput
       ArtifactName: BuildOutput
-
-  - task: PublishBuildArtifacts@1
-    displayName: 'Publish Artifact: Root Class Folder'
-    inputs:
-      PathtoPublish: ./VaporShell/Classes
-      ArtifactName: Classes
 
 
 - phase: Phase_2
@@ -137,9 +116,6 @@ phases:
     name: Hosted VS2017
 
   steps:
-  - script: 'choco install powershell-core --yes'
-    displayName: 'Install Powershell v6'
-
   - task: DownloadBuildArtifacts@0
     displayName: 'Download Build Artifacts'
     inputs:

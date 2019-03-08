@@ -1,4 +1,4 @@
-﻿function New-VSCodePipelineWebhook {
+function New-VSCodePipelineWebhook {
     <#
     .SYNOPSIS
         Adds an AWS::CodePipeline::Webhook resource to the template

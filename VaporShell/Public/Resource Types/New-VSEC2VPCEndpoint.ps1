@@ -1,4 +1,4 @@
-﻿function New-VSEC2VPCEndpoint {
+function New-VSEC2VPCEndpoint {
     <#
     .SYNOPSIS
         Adds an AWS::EC2::VPCEndpoint resource to the template
@@ -54,7 +54,7 @@
 		Type: List    
 		UpdateType: Mutable    
 
-    .PARAMETER VPCEndpointType
+    .PARAMETER VpcEndpointType
 		Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ec2-vpcendpoint.html#cfn-ec2-vpcendpoint-vpcendpointtype    
 		PrimitiveType: String    
 		Required: False    
@@ -152,7 +152,7 @@
                     $PSCmdlet.ThrowTerminatingError((New-VSError -String "This parameter only accepts the following types: $($allowedTypes -join ", "). The current types of the value are: $($_.PSTypeNames -join ", ")."))
                 }
             })]
-        $VPCEndpointType,
+        $VpcEndpointType,
         [parameter(Mandatory = $true)]
         [ValidateScript( {
                 $allowedTypes = "System.String","Vaporshell.Function","Vaporshell.Condition"

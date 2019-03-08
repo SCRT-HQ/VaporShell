@@ -1,4 +1,4 @@
-﻿function Add-VSCodeBuildProjectProjectCache {
+function Add-VSCodeBuildProjectProjectCache {
     <#
     .SYNOPSIS
         Adds an AWS::CodeBuild::Project.ProjectCache resource property to the template
@@ -8,6 +8,13 @@
 
     .LINK
         http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-codebuild-project-projectcache.html
+
+    .PARAMETER Modes
+		PrimitiveItemType: String    
+		Type: List    
+		Required: False    
+		Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-codebuild-project-projectcache.html#cfn-codebuild-project-projectcache-modes    
+		UpdateType: Mutable    
 
     .PARAMETER Type
 		Required: True    
@@ -28,6 +35,8 @@
     [cmdletbinding()]
     Param
     (
+        [parameter(Mandatory = $false)]
+        $Modes,
         [parameter(Mandatory = $true)]
         [ValidateScript( {
                 $allowedTypes = "System.String","Vaporshell.Function","Vaporshell.Condition"

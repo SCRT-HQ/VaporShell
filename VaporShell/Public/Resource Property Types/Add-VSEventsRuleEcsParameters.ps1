@@ -1,4 +1,4 @@
-﻿function Add-VSEventsRuleEcsParameters {
+function Add-VSEventsRuleEcsParameters {
     <#
     .SYNOPSIS
         Adds an AWS::Events::Rule.EcsParameters resource property to the template

@@ -1,4 +1,4 @@
-﻿function New-VSSecretsManagerRotationSchedule {
+function New-VSSecretsManagerRotationSchedule {
     <#
     .SYNOPSIS
         Adds an AWS::SecretsManager::RotationSchedule resource to the template

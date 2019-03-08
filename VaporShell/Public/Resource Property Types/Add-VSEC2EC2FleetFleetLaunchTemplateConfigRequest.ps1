@@ -1,4 +1,4 @@
-﻿function Add-VSEC2EC2FleetFleetLaunchTemplateConfigRequest {
+function Add-VSEC2EC2FleetFleetLaunchTemplateConfigRequest {
     <#
     .SYNOPSIS
         Adds an AWS::EC2::EC2Fleet.FleetLaunchTemplateConfigRequest resource property to the template

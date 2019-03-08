@@ -1,4 +1,4 @@
-﻿function Add-VSECSTaskDefinitionDockerVolumeConfiguration {
+function Add-VSECSTaskDefinitionDockerVolumeConfiguration {
     <#
     .SYNOPSIS
         Adds an AWS::ECS::TaskDefinition.DockerVolumeConfiguration resource property to the template

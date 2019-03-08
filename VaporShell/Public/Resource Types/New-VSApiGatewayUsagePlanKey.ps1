@@ -1,4 +1,4 @@
-﻿function New-VSApiGatewayUsagePlanKey {
+function New-VSApiGatewayUsagePlanKey {
     <#
     .SYNOPSIS
         Adds an AWS::ApiGateway::UsagePlanKey resource to the template

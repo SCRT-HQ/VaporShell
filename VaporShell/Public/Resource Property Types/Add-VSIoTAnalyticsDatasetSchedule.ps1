@@ -1,4 +1,4 @@
-﻿function Add-VSIoTAnalyticsDatasetSchedule {
+function Add-VSIoTAnalyticsDatasetSchedule {
     <#
     .SYNOPSIS
         Adds an AWS::IoTAnalytics::Dataset.Schedule resource property to the template

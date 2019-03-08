@@ -1,4 +1,4 @@
-﻿function Add-VSEC2InstanceVolume {
+function Add-VSEC2InstanceVolume {
     <#
     .SYNOPSIS
         Adds an AWS::EC2::Instance.Volume resource property to the template

@@ -1,4 +1,4 @@
-﻿function Add-VSSageMakerNotebookInstanceLifecycleConfigNotebookInstanceLifecycleHook {
+function Add-VSSageMakerNotebookInstanceLifecycleConfigNotebookInstanceLifecycleHook {
     <#
     .SYNOPSIS
         Adds an AWS::SageMaker::NotebookInstanceLifecycleConfig.NotebookInstanceLifecycleHook resource property to the template

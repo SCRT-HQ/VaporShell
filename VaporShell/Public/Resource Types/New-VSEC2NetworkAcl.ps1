@@ -1,4 +1,4 @@
-﻿function New-VSEC2NetworkAcl {
+function New-VSEC2NetworkAcl {
     <#
     .SYNOPSIS
         Adds an AWS::EC2::NetworkAcl resource to the template

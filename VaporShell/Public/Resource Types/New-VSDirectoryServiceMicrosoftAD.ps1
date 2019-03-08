@@ -1,4 +1,4 @@
-﻿function New-VSDirectoryServiceMicrosoftAD {
+function New-VSDirectoryServiceMicrosoftAD {
     <#
     .SYNOPSIS
         Adds an AWS::DirectoryService::MicrosoftAD resource to the template

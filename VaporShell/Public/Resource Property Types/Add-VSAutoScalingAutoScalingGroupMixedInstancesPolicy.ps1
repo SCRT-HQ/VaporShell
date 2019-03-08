@@ -1,4 +1,4 @@
-﻿function Add-VSAutoScalingAutoScalingGroupMixedInstancesPolicy {
+function Add-VSAutoScalingAutoScalingGroupMixedInstancesPolicy {
     <#
     .SYNOPSIS
         Adds an AWS::AutoScaling::AutoScalingGroup.MixedInstancesPolicy resource property to the template

@@ -1,4 +1,4 @@
-﻿function New-VSEC2Host {
+function New-VSEC2Host {
     <#
     .SYNOPSIS
         Adds an AWS::EC2::Host resource to the template

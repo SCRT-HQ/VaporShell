@@ -1,4 +1,4 @@
-﻿function Add-VSLambdaLayerVersionContent {
+function Add-VSLambdaLayerVersionContent {
     <#
     .SYNOPSIS
         Adds an AWS::Lambda::LayerVersion.Content resource property to the template

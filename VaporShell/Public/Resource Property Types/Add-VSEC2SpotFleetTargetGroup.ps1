@@ -1,4 +1,4 @@
-﻿function Add-VSEC2SpotFleetTargetGroup {
+function Add-VSEC2SpotFleetTargetGroup {
     <#
     .SYNOPSIS
         Adds an AWS::EC2::SpotFleet.TargetGroup resource property to the template

@@ -2,6 +2,7 @@
 
 <!-- TOC -->
 
+* [2.7.0 - 2019-03-08](#270---2019-03-08)
 * [2.6.3](#263)
 * [2.6.2](#262)
 * [2.6.1](#261)
@@ -39,6 +40,16 @@
 * [0.7.02](#0702)
 
 <!-- /TOC -->
+
+## 2.7.0 - 2019-03-08
+
+* [Issue #48](https://github.com/scrthq/VaporShell/issues/48)
+  * Fixed: `Export-VaporShell` was having various failures due to the `Format-Json` private function called during JSON conversion.
+* Miscellaneous
+  * Brought Resource Type and Property Type functions up to current spec sheet.
+  * Added: `Watch` and `Force` parameters to `New-VSStack` and `New-VSChangeSet` to watch and/or force stack creation.
+  * Added: `Watch` parameter to `Remove-VSStack` and `Invoke-VSChangeSetExecution` to watch stack events.
+  * Updated: `Watch-Stack` to handle multiple stack watching at once.
 
 ## 2.6.3
 

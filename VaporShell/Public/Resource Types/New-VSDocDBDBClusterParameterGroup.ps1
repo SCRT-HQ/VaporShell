@@ -1,4 +1,4 @@
-﻿function New-VSDocDBDBClusterParameterGroup {
+function New-VSDocDBDBClusterParameterGroup {
     <#
     .SYNOPSIS
         Adds an AWS::DocDB::DBClusterParameterGroup resource to the template

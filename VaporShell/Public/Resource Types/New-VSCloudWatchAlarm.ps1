@@ -1,4 +1,4 @@
-﻿function New-VSCloudWatchAlarm {
+function New-VSCloudWatchAlarm {
     <#
     .SYNOPSIS
         Adds an AWS::CloudWatch::Alarm resource to the template
@@ -88,6 +88,14 @@
 		Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-cw-alarm.html#cfn-cloudwatch-alarms-metricname    
 		PrimitiveType: String    
 		Required: False    
+		UpdateType: Mutable    
+
+    .PARAMETER Metrics
+		Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-cw-alarm.html#cfn-cloudwatch-alarm-metrics    
+		DuplicatesAllowed: False    
+		ItemType: MetricDataQuery    
+		Required: False    
+		Type: List    
 		UpdateType: Mutable    
 
     .PARAMETER Namespace
@@ -271,6 +279,17 @@
         $MetricName,
         [parameter(Mandatory = $false)]
         [ValidateScript( {
+                $allowedTypes = "Vaporshell.Resource.CloudWatch.Alarm.MetricDataQuery"
+                if ([string]$($_.PSTypeNames) -match "($(($allowedTypes|ForEach-Object{[RegEx]::Escape($_)}) -join '|'))") {
+                    $true
+                }
+                else {
+                    $PSCmdlet.ThrowTerminatingError((New-VSError -String "This parameter only accepts the following types: $($allowedTypes -join ", "). The current types of the value are: $($_.PSTypeNames -join ", ")."))
+                }
+            })]
+        $Metrics,
+        [parameter(Mandatory = $false)]
+        [ValidateScript( {
                 $allowedTypes = "System.String","Vaporshell.Function","Vaporshell.Condition"
                 if ([string]$($_.PSTypeNames) -match "($(($allowedTypes|ForEach-Object{[RegEx]::Escape($_)}) -join '|'))") {
                     $true
@@ -395,6 +414,12 @@
                         $ResourceParams.Add("Properties",([PSCustomObject]@{}))
                     }
                     $ResourceParams["Properties"] | Add-Member -MemberType NoteProperty -Name InsufficientDataActions -Value @($InsufficientDataActions)
+                }
+                Metrics {
+                    if (!($ResourceParams["Properties"])) {
+                        $ResourceParams.Add("Properties",([PSCustomObject]@{}))
+                    }
+                    $ResourceParams["Properties"] | Add-Member -MemberType NoteProperty -Name Metrics -Value @($Metrics)
                 }
                 OKActions {
                     if (!($ResourceParams["Properties"])) {

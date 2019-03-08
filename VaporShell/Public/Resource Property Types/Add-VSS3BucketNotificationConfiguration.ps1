@@ -1,4 +1,4 @@
-﻿function Add-VSS3BucketNotificationConfiguration {
+function Add-VSS3BucketNotificationConfiguration {
     <#
     .SYNOPSIS
         Adds an AWS::S3::Bucket.NotificationConfiguration resource property to the template

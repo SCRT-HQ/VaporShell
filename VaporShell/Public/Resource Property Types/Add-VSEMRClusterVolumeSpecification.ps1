@@ -1,4 +1,4 @@
-﻿function Add-VSEMRClusterVolumeSpecification {
+function Add-VSEMRClusterVolumeSpecification {
     <#
     .SYNOPSIS
         Adds an AWS::EMR::Cluster.VolumeSpecification resource property to the template

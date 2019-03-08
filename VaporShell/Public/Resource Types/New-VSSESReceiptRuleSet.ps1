@@ -1,4 +1,4 @@
-﻿function New-VSSESReceiptRuleSet {
+function New-VSSESReceiptRuleSet {
     <#
     .SYNOPSIS
         Adds an AWS::SES::ReceiptRuleSet resource to the template

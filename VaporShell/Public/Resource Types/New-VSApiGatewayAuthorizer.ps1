@@ -1,4 +1,4 @@
-﻿function New-VSApiGatewayAuthorizer {
+function New-VSApiGatewayAuthorizer {
     <#
     .SYNOPSIS
         Adds an AWS::ApiGateway::Authorizer resource to the template
@@ -71,7 +71,7 @@
     .PARAMETER Type
 		Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-apigateway-authorizer.html#cfn-apigateway-authorizer-type    
 		PrimitiveType: String    
-		Required: False    
+		Required: True    
 		UpdateType: Mutable    
 
     .PARAMETER DeletionPolicy
@@ -203,7 +203,7 @@
                 }
             })]
         $RestApiId,
-        [parameter(Mandatory = $false)]
+        [parameter(Mandatory = $true)]
         [ValidateScript( {
                 $allowedTypes = "System.String","Vaporshell.Function","Vaporshell.Condition"
                 if ([string]$($_.PSTypeNames) -match "($(($allowedTypes|ForEach-Object{[RegEx]::Escape($_)}) -join '|'))") {

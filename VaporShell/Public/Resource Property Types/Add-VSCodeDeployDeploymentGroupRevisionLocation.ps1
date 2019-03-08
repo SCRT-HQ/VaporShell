@@ -1,4 +1,4 @@
-﻿function Add-VSCodeDeployDeploymentGroupRevisionLocation {
+function Add-VSCodeDeployDeploymentGroupRevisionLocation {
     <#
     .SYNOPSIS
         Adds an AWS::CodeDeploy::DeploymentGroup.RevisionLocation resource property to the template

@@ -1,4 +1,4 @@
-﻿function Add-VSAppSyncGraphQLApiUserPoolConfig {
+function Add-VSAppSyncGraphQLApiUserPoolConfig {
     <#
     .SYNOPSIS
         Adds an AWS::AppSync::GraphQLApi.UserPoolConfig resource property to the template

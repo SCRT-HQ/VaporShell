@@ -1,4 +1,4 @@
-﻿function Add-VSEMRClusterSimpleScalingPolicyConfiguration {
+function Add-VSEMRClusterSimpleScalingPolicyConfiguration {
     <#
     .SYNOPSIS
         Adds an AWS::EMR::Cluster.SimpleScalingPolicyConfiguration resource property to the template

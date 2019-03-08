@@ -1,4 +1,4 @@
-﻿function Add-VSS3BucketPublicAccessBlockConfiguration {
+function Add-VSS3BucketPublicAccessBlockConfiguration {
     <#
     .SYNOPSIS
         Adds an AWS::S3::Bucket.PublicAccessBlockConfiguration resource property to the template

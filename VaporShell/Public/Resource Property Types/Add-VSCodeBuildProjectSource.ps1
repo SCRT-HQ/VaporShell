@@ -1,4 +1,4 @@
-﻿function Add-VSCodeBuildProjectSource {
+function Add-VSCodeBuildProjectSource {
     <#
     .SYNOPSIS
         Adds an AWS::CodeBuild::Project.Source resource property to the template

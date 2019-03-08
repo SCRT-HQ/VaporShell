@@ -1,4 +1,4 @@
-﻿function Add-VSRoute53HostedZoneVPC {
+function Add-VSRoute53HostedZoneVPC {
     <#
     .SYNOPSIS
         Adds an AWS::Route53::HostedZone.VPC resource property to the template

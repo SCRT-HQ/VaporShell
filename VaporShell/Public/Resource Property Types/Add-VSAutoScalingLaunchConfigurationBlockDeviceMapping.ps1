@@ -1,4 +1,4 @@
-﻿function Add-VSAutoScalingLaunchConfigurationBlockDeviceMapping {
+function Add-VSAutoScalingLaunchConfigurationBlockDeviceMapping {
     <#
     .SYNOPSIS
         Adds an AWS::AutoScaling::LaunchConfiguration.BlockDeviceMapping resource property to the template

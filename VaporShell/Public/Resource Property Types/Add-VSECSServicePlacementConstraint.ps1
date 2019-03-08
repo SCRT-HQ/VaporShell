@@ -1,4 +1,4 @@
-﻿function Add-VSECSServicePlacementConstraint {
+function Add-VSECSServicePlacementConstraint {
     <#
     .SYNOPSIS
         Adds an AWS::ECS::Service.PlacementConstraint resource property to the template

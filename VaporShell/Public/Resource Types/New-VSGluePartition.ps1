@@ -1,4 +1,4 @@
-﻿function New-VSGluePartition {
+function New-VSGluePartition {
     <#
     .SYNOPSIS
         Adds an AWS::Glue::Partition resource to the template

@@ -1,4 +1,4 @@
-﻿function Add-VSAlexaASKSkillAuthenticationConfiguration {
+function Add-VSAlexaASKSkillAuthenticationConfiguration {
     <#
     .SYNOPSIS
         Adds an Alexa::ASK::Skill.AuthenticationConfiguration resource property to the template

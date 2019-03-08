@@ -1,4 +1,4 @@
-﻿function Add-VSEC2LaunchTemplateLicenseSpecification {
+function Add-VSEC2LaunchTemplateLicenseSpecification {
     <#
     .SYNOPSIS
         Adds an AWS::EC2::LaunchTemplate.LicenseSpecification resource property to the template

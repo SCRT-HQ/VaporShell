@@ -1,4 +1,4 @@
-﻿function New-VSSSMMaintenanceWindowTask {
+function New-VSSSMMaintenanceWindowTask {
     <#
     .SYNOPSIS
         Adds an AWS::SSM::MaintenanceWindowTask resource to the template

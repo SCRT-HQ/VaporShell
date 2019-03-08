@@ -1,4 +1,4 @@
-﻿function Add-VSEC2LaunchTemplateLaunchTemplateData {
+function Add-VSEC2LaunchTemplateLaunchTemplateData {
     <#
     .SYNOPSIS
         Adds an AWS::EC2::LaunchTemplate.LaunchTemplateData resource property to the template

@@ -1,4 +1,4 @@
-﻿function Add-VSAmazonMQBrokerMaintenanceWindow {
+function Add-VSAmazonMQBrokerMaintenanceWindow {
     <#
     .SYNOPSIS
         Adds an AWS::AmazonMQ::Broker.MaintenanceWindow resource property to the template

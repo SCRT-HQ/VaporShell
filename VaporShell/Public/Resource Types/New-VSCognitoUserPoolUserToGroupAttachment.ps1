@@ -1,4 +1,4 @@
-﻿function New-VSCognitoUserPoolUserToGroupAttachment {
+function New-VSCognitoUserPoolUserToGroupAttachment {
     <#
     .SYNOPSIS
         Adds an AWS::Cognito::UserPoolUserToGroupAttachment resource to the template

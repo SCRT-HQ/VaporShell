@@ -1,4 +1,4 @@
-﻿function Add-VSElasticLoadBalancingLoadBalancerLBCookieStickinessPolicy {
+function Add-VSElasticLoadBalancingLoadBalancerLBCookieStickinessPolicy {
     <#
     .SYNOPSIS
         Adds an AWS::ElasticLoadBalancing::LoadBalancer.LBCookieStickinessPolicy resource property to the template

@@ -1,4 +1,4 @@
-﻿function Add-VSKinesisFirehoseDeliveryStreamElasticsearchBufferingHints {
+function Add-VSKinesisFirehoseDeliveryStreamElasticsearchBufferingHints {
     <#
     .SYNOPSIS
         Adds an AWS::KinesisFirehose::DeliveryStream.ElasticsearchBufferingHints resource property to the template

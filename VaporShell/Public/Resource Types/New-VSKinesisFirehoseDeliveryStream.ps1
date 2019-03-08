@@ -1,4 +1,4 @@
-﻿function New-VSKinesisFirehoseDeliveryStream {
+function New-VSKinesisFirehoseDeliveryStream {
     <#
     .SYNOPSIS
         Adds an AWS::KinesisFirehose::DeliveryStream resource to the template

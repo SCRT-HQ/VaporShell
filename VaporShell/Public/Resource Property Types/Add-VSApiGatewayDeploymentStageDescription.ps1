@@ -1,4 +1,4 @@
-﻿function Add-VSApiGatewayDeploymentStageDescription {
+function Add-VSApiGatewayDeploymentStageDescription {
     <#
     .SYNOPSIS
         Adds an AWS::ApiGateway::Deployment.StageDescription resource property to the template

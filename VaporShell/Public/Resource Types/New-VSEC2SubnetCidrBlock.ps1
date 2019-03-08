@@ -1,4 +1,4 @@
-﻿function New-VSEC2SubnetCidrBlock {
+function New-VSEC2SubnetCidrBlock {
     <#
     .SYNOPSIS
         Adds an AWS::EC2::SubnetCidrBlock resource to the template

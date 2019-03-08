@@ -1,4 +1,4 @@
-﻿function Add-VSOpsWorksLayerLifecycleEventConfiguration {
+function Add-VSOpsWorksLayerLifecycleEventConfiguration {
     <#
     .SYNOPSIS
         Adds an AWS::OpsWorks::Layer.LifecycleEventConfiguration resource property to the template

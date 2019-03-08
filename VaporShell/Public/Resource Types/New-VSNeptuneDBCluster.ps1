@@ -1,4 +1,4 @@
-﻿function New-VSNeptuneDBCluster {
+function New-VSNeptuneDBCluster {
     <#
     .SYNOPSIS
         Adds an AWS::Neptune::DBCluster resource to the template

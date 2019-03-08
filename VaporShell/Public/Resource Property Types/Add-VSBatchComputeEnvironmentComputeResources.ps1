@@ -1,4 +1,4 @@
-﻿function Add-VSBatchComputeEnvironmentComputeResources {
+function Add-VSBatchComputeEnvironmentComputeResources {
     <#
     .SYNOPSIS
         Adds an AWS::Batch::ComputeEnvironment.ComputeResources resource property to the template

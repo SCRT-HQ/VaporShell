@@ -1,4 +1,4 @@
-﻿function Add-VSDAXClusterSSESpecification {
+function Add-VSDAXClusterSSESpecification {
     <#
     .SYNOPSIS
         Adds an AWS::DAX::Cluster.SSESpecification resource property to the template

@@ -1,4 +1,4 @@
-﻿function Add-VSCodeDeployDeploymentGroupOnPremisesTagSet {
+function Add-VSCodeDeployDeploymentGroupOnPremisesTagSet {
     <#
     .SYNOPSIS
         Adds an AWS::CodeDeploy::DeploymentGroup.OnPremisesTagSet resource property to the template

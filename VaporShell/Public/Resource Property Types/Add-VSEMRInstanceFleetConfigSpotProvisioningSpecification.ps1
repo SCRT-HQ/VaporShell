@@ -1,4 +1,4 @@
-﻿function Add-VSEMRInstanceFleetConfigSpotProvisioningSpecification {
+function Add-VSEMRInstanceFleetConfigSpotProvisioningSpecification {
     <#
     .SYNOPSIS
         Adds an AWS::EMR::InstanceFleetConfig.SpotProvisioningSpecification resource property to the template

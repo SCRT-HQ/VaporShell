@@ -1,4 +1,4 @@
-﻿function Add-VSCodeCommitRepositoryRepositoryTrigger {
+function Add-VSCodeCommitRepositoryRepositoryTrigger {
     <#
     .SYNOPSIS
         Adds an AWS::CodeCommit::Repository.RepositoryTrigger resource property to the template
