@@ -1,30 +1,30 @@
-﻿function Add-VSTag {
+﻿function Add-VSKinesisAnalyticsV2ApplicationCSVMappingParameters {
     <#
     .SYNOPSIS
-        Adds an Tag resource property to the template
+        Adds an AWS::KinesisAnalyticsV2::Application.CSVMappingParameters resource property to the template
 
     .DESCRIPTION
-        Adds an Tag resource property to the template
+        Adds an AWS::KinesisAnalyticsV2::Application.CSVMappingParameters resource property to the template
 
     .LINK
-        http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iotanalytics-datastore-tag.html
+        http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-kinesisanalyticsv2-application-csvmappingparameters.html
 
-    .PARAMETER Value
+    .PARAMETER RecordRowDelimiter
 		Required: True    
-		Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iotanalytics-datastore-tag.html#cfn-iotanalytics-datastore-tag-value    
+		Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-kinesisanalyticsv2-application-csvmappingparameters.html#cfn-kinesisanalyticsv2-application-csvmappingparameters-recordrowdelimiter    
 		PrimitiveType: String    
 		UpdateType: Mutable    
 
-    .PARAMETER Key
+    .PARAMETER RecordColumnDelimiter
 		Required: True    
-		Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iotanalytics-datastore-tag.html#cfn-iotanalytics-datastore-tag-key    
+		Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-kinesisanalyticsv2-application-csvmappingparameters.html#cfn-kinesisanalyticsv2-application-csvmappingparameters-recordcolumndelimiter    
 		PrimitiveType: String    
 		UpdateType: Mutable    
 
     .FUNCTIONALITY
         Vaporshell
     #>
-    [OutputType('Vaporshell.Resource.Tag')]
+    [OutputType('Vaporshell.Resource.KinesisAnalyticsV2.Application.CSVMappingParameters')]
     [cmdletbinding()]
     Param
     (
@@ -38,7 +38,7 @@
                     $PSCmdlet.ThrowTerminatingError((New-VSError -String "This parameter only accepts the following types: $($allowedTypes -join ", "). The current types of the value are: $($_.PSTypeNames -join ", ")."))
                 }
             })]
-        $Value,
+        $RecordRowDelimiter,
         [parameter(Mandatory = $true)]
         [ValidateScript( {
                 $allowedTypes = "System.String","Vaporshell.Function","Vaporshell.Condition"
@@ -49,7 +49,7 @@
                     $PSCmdlet.ThrowTerminatingError((New-VSError -String "This parameter only accepts the following types: $($allowedTypes -join ", "). The current types of the value are: $($_.PSTypeNames -join ", ")."))
                 }
             })]
-        $Key
+        $RecordColumnDelimiter
     )
     Begin {
         $obj = [PSCustomObject]@{}
@@ -65,7 +65,7 @@
         }
     }
     End {
-        $obj | Add-ObjectDetail -TypeName 'Vaporshell.Resource.Tag'
+        $obj | Add-ObjectDetail -TypeName 'Vaporshell.Resource.KinesisAnalyticsV2.Application.CSVMappingParameters'
         Write-Verbose "Resulting JSON from $($MyInvocation.MyCommand): `n`n$($obj | ConvertTo-Json -Depth 5)`n"
     }
 }

@@ -1,30 +1,30 @@
-﻿function Add-VSTag {
+﻿function Add-VSFSxFileSystemTagEntry {
     <#
     .SYNOPSIS
-        Adds an Tag resource property to the template
+        Adds an AWS::FSx::FileSystem.TagEntry resource property to the template
 
     .DESCRIPTION
-        Adds an Tag resource property to the template
+        Adds an AWS::FSx::FileSystem.TagEntry resource property to the template
 
     .LINK
-        http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iotanalytics-datastore-tag.html
+        http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-fsx-filesystem-tagentry.html
 
     .PARAMETER Value
 		Required: True    
-		Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iotanalytics-datastore-tag.html#cfn-iotanalytics-datastore-tag-value    
+		Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-fsx-filesystem-tagentry.html#cfn-fsx-filesystem-tagentry-value    
 		PrimitiveType: String    
 		UpdateType: Mutable    
 
     .PARAMETER Key
 		Required: True    
-		Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iotanalytics-datastore-tag.html#cfn-iotanalytics-datastore-tag-key    
+		Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-fsx-filesystem-tagentry.html#cfn-fsx-filesystem-tagentry-key    
 		PrimitiveType: String    
 		UpdateType: Mutable    
 
     .FUNCTIONALITY
         Vaporshell
     #>
-    [OutputType('Vaporshell.Resource.Tag')]
+    [OutputType('Vaporshell.Resource.FSx.FileSystem.TagEntry')]
     [cmdletbinding()]
     Param
     (
@@ -65,7 +65,7 @@
         }
     }
     End {
-        $obj | Add-ObjectDetail -TypeName 'Vaporshell.Resource.Tag'
+        $obj | Add-ObjectDetail -TypeName 'Vaporshell.Resource.FSx.FileSystem.TagEntry'
         Write-Verbose "Resulting JSON from $($MyInvocation.MyCommand): `n`n$($obj | ConvertTo-Json -Depth 5)`n"
     }
 }

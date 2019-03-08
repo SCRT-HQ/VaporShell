@@ -1,0 +1,27 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+  <PropertyGroup>
+    <Configuration>Release</Configuration>
+    <RestoreProjectStyle>PackageReference</RestoreProjectStyle>
+    <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
+    <CopyLocalLockFileAssemblies>true</CopyLocalLockFileAssemblies>
+    <TargetFrameworks>net45;netstandard2.0</TargetFrameworks>
+    <AssemblyName>VaporShell</AssemblyName>
+    <PackageVersion>1.0.0</PackageVersion>
+    <ApplicationIcon />
+    <OutputType>Library</OutputType>
+    <StartupObject />
+    <Authors>Nate Ferrell</Authors>
+    <Company>SCRT HQ</Company>
+    <PackageTags>CloudFormation IaC AWS Amazon Automation DevOps InfrastructureAsCode</PackageTags>
+    <Description>A class library designed for abstracting CloudFormation template compilation from either C# or PowerShell.</Description>
+    <PackageDescription>A class library designed for abstracting CloudFormation template compilation from either C# or PowerShell.</PackageDescription>
+    <PackageLicenseExpression>Apache-2.0</PackageLicenseExpression>
+    <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
+    <PackageProjectUrl>https://github.com/scrthq/Vaporshell</PackageProjectUrl>
+    <RepositoryUrl>https://github.com/scrthq/Vaporshell</RepositoryUrl>
+  </PropertyGroup>
+  <ItemGroup>
+    <PackageReference Include="Newtonsoft.Json" Version="12.0.1" />
+    <PackageReference Include="YamlDotNet" Version="5.4.0" />
+  </ItemGroup>
+</Project>

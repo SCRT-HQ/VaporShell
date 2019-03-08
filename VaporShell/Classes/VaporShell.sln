@@ -1,0 +1,25 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.28606.126
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "VaporShell", "VaporShell.csproj", "{FD9755A6-4E90-421D-842A-C59C0D33F72D}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{FD9755A6-4E90-421D-842A-C59C0D33F72D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{FD9755A6-4E90-421D-842A-C59C0D33F72D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{FD9755A6-4E90-421D-842A-C59C0D33F72D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{FD9755A6-4E90-421D-842A-C59C0D33F72D}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {5C909F88-7B07-4F66-BCCE-54DFDE5E5825}
+	EndGlobalSection
+EndGlobal
