@@ -1,4 +1,4 @@
-﻿function Add-VSEC2LaunchTemplatePlacement {
+function Add-VSEC2LaunchTemplatePlacement {
     <#
     .SYNOPSIS
         Adds an AWS::EC2::LaunchTemplate.Placement resource property to the template

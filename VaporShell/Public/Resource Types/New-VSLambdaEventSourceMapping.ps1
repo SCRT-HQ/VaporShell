@@ -1,4 +1,4 @@
-﻿function New-VSLambdaEventSourceMapping {
+function New-VSLambdaEventSourceMapping {
     <#
     .SYNOPSIS
         Adds an AWS::Lambda::EventSourceMapping resource to the template

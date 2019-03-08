@@ -1,4 +1,4 @@
-﻿function Add-VSIoTAnalyticsPipelineDatastore {
+function Add-VSIoTAnalyticsPipelineDatastore {
     <#
     .SYNOPSIS
         Adds an AWS::IoTAnalytics::Pipeline.Datastore resource property to the template

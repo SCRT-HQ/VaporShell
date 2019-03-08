@@ -1,4 +1,4 @@
-﻿function New-VSEC2Subnet {
+function New-VSEC2Subnet {
     <#
     .SYNOPSIS
         Adds an AWS::EC2::Subnet resource to the template

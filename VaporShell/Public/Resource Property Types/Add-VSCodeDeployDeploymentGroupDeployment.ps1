@@ -1,4 +1,4 @@
-﻿function Add-VSCodeDeployDeploymentGroupDeployment {
+function Add-VSCodeDeployDeploymentGroupDeployment {
     <#
     .SYNOPSIS
         Adds an AWS::CodeDeploy::DeploymentGroup.Deployment resource property to the template

@@ -1,4 +1,4 @@
-﻿function Add-VSEC2LaunchTemplateCapacityReservationSpecification {
+function Add-VSEC2LaunchTemplateCapacityReservationSpecification {
     <#
     .SYNOPSIS
         Adds an AWS::EC2::LaunchTemplate.CapacityReservationSpecification resource property to the template

@@ -1,4 +1,4 @@
-﻿function Add-VSAppStreamStackUserSetting {
+function Add-VSAppStreamStackUserSetting {
     <#
     .SYNOPSIS
         Adds an AWS::AppStream::Stack.UserSetting resource property to the template

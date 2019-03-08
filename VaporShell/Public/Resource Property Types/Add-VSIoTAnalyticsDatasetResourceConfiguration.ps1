@@ -1,4 +1,4 @@
-﻿function Add-VSIoTAnalyticsDatasetResourceConfiguration {
+function Add-VSIoTAnalyticsDatasetResourceConfiguration {
     <#
     .SYNOPSIS
         Adds an AWS::IoTAnalytics::Dataset.ResourceConfiguration resource property to the template

@@ -1,4 +1,4 @@
-﻿function Add-VSAutoScalingPlansScalingPlanScalingInstruction {
+function Add-VSAutoScalingPlansScalingPlanScalingInstruction {
     <#
     .SYNOPSIS
         Adds an AWS::AutoScalingPlans::ScalingPlan.ScalingInstruction resource property to the template

@@ -1,4 +1,4 @@
-﻿function New-VSSNSSubscription {
+function New-VSSNSSubscription {
     <#
     .SYNOPSIS
         Adds an AWS::SNS::Subscription resource to the template
@@ -33,7 +33,7 @@
     .PARAMETER Protocol
 		Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-sns-subscription.html#cfn-sns-protocol    
 		PrimitiveType: String    
-		Required: False    
+		Required: True    
 		UpdateType: Immutable    
 
     .PARAMETER RawMessageDelivery
@@ -51,7 +51,7 @@
     .PARAMETER TopicArn
 		Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-sns-subscription.html#topicarn    
 		PrimitiveType: String    
-		Required: False    
+		Required: True    
 		UpdateType: Immutable    
 
     .PARAMETER DeletionPolicy
@@ -132,7 +132,7 @@
                 }
             })]
         $FilterPolicy,
-        [parameter(Mandatory = $false)]
+        [parameter(Mandatory = $true)]
         [ValidateScript( {
                 $allowedTypes = "System.String","Vaporshell.Function","Vaporshell.Condition"
                 if ([string]$($_.PSTypeNames) -match "($(($allowedTypes|ForEach-Object{[RegEx]::Escape($_)}) -join '|'))") {
@@ -157,7 +157,7 @@
                 }
             })]
         $Region,
-        [parameter(Mandatory = $false)]
+        [parameter(Mandatory = $true)]
         [ValidateScript( {
                 $allowedTypes = "System.String","Vaporshell.Function","Vaporshell.Condition"
                 if ([string]$($_.PSTypeNames) -match "($(($allowedTypes|ForEach-Object{[RegEx]::Escape($_)}) -join '|'))") {

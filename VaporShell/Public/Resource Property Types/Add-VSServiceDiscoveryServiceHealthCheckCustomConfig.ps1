@@ -1,4 +1,4 @@
-﻿function Add-VSServiceDiscoveryServiceHealthCheckCustomConfig {
+function Add-VSServiceDiscoveryServiceHealthCheckCustomConfig {
     <#
     .SYNOPSIS
         Adds an AWS::ServiceDiscovery::Service.HealthCheckCustomConfig resource property to the template

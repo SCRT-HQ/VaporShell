@@ -1,4 +1,4 @@
-﻿function New-VSGuardDutyIPSet {
+function New-VSGuardDutyIPSet {
     <#
     .SYNOPSIS
         Adds an AWS::GuardDuty::IPSet resource to the template

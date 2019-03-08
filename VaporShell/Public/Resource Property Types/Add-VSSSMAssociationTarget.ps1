@@ -1,4 +1,4 @@
-﻿function Add-VSSSMAssociationTarget {
+function Add-VSSSMAssociationTarget {
     <#
     .SYNOPSIS
         Adds an AWS::SSM::Association.Target resource property to the template

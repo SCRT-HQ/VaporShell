@@ -1,4 +1,4 @@
-﻿function New-VSConfigAggregationAuthorization {
+function New-VSConfigAggregationAuthorization {
     <#
     .SYNOPSIS
         Adds an AWS::Config::AggregationAuthorization resource to the template

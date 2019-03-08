@@ -1,4 +1,4 @@
-﻿function Add-VSAppStreamFleetVpcConfig {
+function Add-VSAppStreamFleetVpcConfig {
     <#
     .SYNOPSIS
         Adds an AWS::AppStream::Fleet.VpcConfig resource property to the template

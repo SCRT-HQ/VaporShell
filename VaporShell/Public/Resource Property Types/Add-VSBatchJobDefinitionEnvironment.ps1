@@ -1,4 +1,4 @@
-﻿function Add-VSBatchJobDefinitionEnvironment {
+function Add-VSBatchJobDefinitionEnvironment {
     <#
     .SYNOPSIS
         Adds an AWS::Batch::JobDefinition.Environment resource property to the template

@@ -1,4 +1,4 @@
-﻿function Add-VSDLMLifecyclePolicyPolicyDetails {
+function Add-VSDLMLifecyclePolicyPolicyDetails {
     <#
     .SYNOPSIS
         Adds an AWS::DLM::LifecyclePolicy.PolicyDetails resource property to the template

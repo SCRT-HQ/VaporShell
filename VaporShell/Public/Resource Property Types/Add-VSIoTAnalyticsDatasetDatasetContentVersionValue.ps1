@@ -1,4 +1,4 @@
-﻿function Add-VSIoTAnalyticsDatasetDatasetContentVersionValue {
+function Add-VSIoTAnalyticsDatasetDatasetContentVersionValue {
     <#
     .SYNOPSIS
         Adds an AWS::IoTAnalytics::Dataset.DatasetContentVersionValue resource property to the template

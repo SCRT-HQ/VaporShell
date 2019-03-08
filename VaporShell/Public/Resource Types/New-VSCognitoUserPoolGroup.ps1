@@ -1,4 +1,4 @@
-﻿function New-VSCognitoUserPoolGroup {
+function New-VSCognitoUserPoolGroup {
     <#
     .SYNOPSIS
         Adds an AWS::Cognito::UserPoolGroup resource to the template

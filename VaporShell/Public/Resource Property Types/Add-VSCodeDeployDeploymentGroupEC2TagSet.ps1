@@ -1,4 +1,4 @@
-﻿function Add-VSCodeDeployDeploymentGroupEC2TagSet {
+function Add-VSCodeDeployDeploymentGroupEC2TagSet {
     <#
     .SYNOPSIS
         Adds an AWS::CodeDeploy::DeploymentGroup.EC2TagSet resource property to the template

@@ -1,4 +1,4 @@
-﻿function Add-VSCognitoUserPoolLambdaConfig {
+function Add-VSCognitoUserPoolLambdaConfig {
     <#
     .SYNOPSIS
         Adds an AWS::Cognito::UserPool.LambdaConfig resource property to the template

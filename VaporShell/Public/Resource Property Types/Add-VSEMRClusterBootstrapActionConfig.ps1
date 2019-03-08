@@ -1,4 +1,4 @@
-﻿function Add-VSEMRClusterBootstrapActionConfig {
+function Add-VSEMRClusterBootstrapActionConfig {
     <#
     .SYNOPSIS
         Adds an AWS::EMR::Cluster.BootstrapActionConfig resource property to the template

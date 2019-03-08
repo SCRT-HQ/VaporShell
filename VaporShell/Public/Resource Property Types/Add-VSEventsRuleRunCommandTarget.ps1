@@ -1,4 +1,4 @@
-﻿function Add-VSEventsRuleRunCommandTarget {
+function Add-VSEventsRuleRunCommandTarget {
     <#
     .SYNOPSIS
         Adds an AWS::Events::Rule.RunCommandTarget resource property to the template

@@ -1,4 +1,4 @@
-﻿function Add-VSEC2LaunchTemplateElasticGpuSpecification {
+function Add-VSEC2LaunchTemplateElasticGpuSpecification {
     <#
     .SYNOPSIS
         Adds an AWS::EC2::LaunchTemplate.ElasticGpuSpecification resource property to the template

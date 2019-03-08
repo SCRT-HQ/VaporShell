@@ -1,4 +1,4 @@
-﻿function Add-VSApiGatewayMethodIntegrationResponse {
+function Add-VSApiGatewayMethodIntegrationResponse {
     <#
     .SYNOPSIS
         Adds an AWS::ApiGateway::Method.IntegrationResponse resource property to the template

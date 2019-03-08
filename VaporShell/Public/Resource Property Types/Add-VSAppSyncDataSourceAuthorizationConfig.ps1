@@ -1,4 +1,4 @@
-﻿function Add-VSAppSyncDataSourceAuthorizationConfig {
+function Add-VSAppSyncDataSourceAuthorizationConfig {
     <#
     .SYNOPSIS
         Adds an AWS::AppSync::DataSource.AuthorizationConfig resource property to the template

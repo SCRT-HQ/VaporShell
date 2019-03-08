@@ -1,4 +1,4 @@
-﻿function New-VSElasticLoadBalancingV2TargetGroup {
+function New-VSElasticLoadBalancingV2TargetGroup {
     <#
     .SYNOPSIS
         Adds an AWS::ElasticLoadBalancingV2::TargetGroup resource to the template
@@ -11,6 +11,12 @@
 
     .PARAMETER LogicalId
         The logical ID must be alphanumeric (A-Za-z0-9) and unique within the template. Use the logical name to reference the resource in other parts of the template. For example, if you want to map an Amazon Elastic Block Store volume to an Amazon EC2 instance, you reference the logical IDs to associate the block stores with the instance.
+
+    .PARAMETER HealthCheckEnabled
+		Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-elasticloadbalancingv2-targetgroup.html#cfn-elasticloadbalancingv2-targetgroup-healthcheckenabled    
+		PrimitiveType: Boolean    
+		Required: False    
+		UpdateType: Mutable    
 
     .PARAMETER HealthCheckIntervalSeconds
 		Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-elasticloadbalancingv2-targetgroup.html#cfn-elasticloadbalancingv2-targetgroup-healthcheckintervalseconds    
@@ -63,13 +69,13 @@
     .PARAMETER Port
 		Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-elasticloadbalancingv2-targetgroup.html#cfn-elasticloadbalancingv2-targetgroup-port    
 		PrimitiveType: Integer    
-		Required: True    
+		Required: False    
 		UpdateType: Immutable    
 
     .PARAMETER Protocol
 		Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-elasticloadbalancingv2-targetgroup.html#cfn-elasticloadbalancingv2-targetgroup-protocol    
 		PrimitiveType: String    
-		Required: True    
+		Required: False    
 		UpdateType: Immutable    
 
     .PARAMETER Tags
@@ -111,7 +117,7 @@
     .PARAMETER VpcId
 		Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-elasticloadbalancingv2-targetgroup.html#cfn-elasticloadbalancingv2-targetgroup-vpcid    
 		PrimitiveType: String    
-		Required: True    
+		Required: False    
 		UpdateType: Immutable    
 
     .PARAMETER DeletionPolicy
@@ -159,6 +165,9 @@
             })]
         [System.String]
         $LogicalId,
+        [parameter(Mandatory = $false)]
+        [System.Boolean]
+        $HealthCheckEnabled,
         [parameter(Mandatory = $false)]
         [Int]
         $HealthCheckIntervalSeconds,
@@ -214,10 +223,10 @@
                 }
             })]
         $Name,
-        [parameter(Mandatory = $true)]
+        [parameter(Mandatory = $false)]
         [Int]
         $Port,
-        [parameter(Mandatory = $true)]
+        [parameter(Mandatory = $false)]
         [ValidateScript( {
                 $allowedTypes = "System.String","Vaporshell.Function","Vaporshell.Condition"
                 if ([string]$($_.PSTypeNames) -match "($(($allowedTypes|ForEach-Object{[RegEx]::Escape($_)}) -join '|'))") {
@@ -275,7 +284,7 @@
         [parameter(Mandatory = $false)]
         [Int]
         $UnhealthyThresholdCount,
-        [parameter(Mandatory = $true)]
+        [parameter(Mandatory = $false)]
         [ValidateScript( {
                 $allowedTypes = "System.String","Vaporshell.Function","Vaporshell.Condition"
                 if ([string]$($_.PSTypeNames) -match "($(($allowedTypes|ForEach-Object{[RegEx]::Escape($_)}) -join '|'))") {

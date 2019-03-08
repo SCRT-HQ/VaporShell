@@ -1,4 +1,4 @@
-﻿function Add-VSAppSyncDataSourceLambdaConfig {
+function Add-VSAppSyncDataSourceLambdaConfig {
     <#
     .SYNOPSIS
         Adds an AWS::AppSync::DataSource.LambdaConfig resource property to the template

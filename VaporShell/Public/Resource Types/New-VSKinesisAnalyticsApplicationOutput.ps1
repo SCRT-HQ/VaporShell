@@ -1,4 +1,4 @@
-﻿function New-VSKinesisAnalyticsApplicationOutput {
+function New-VSKinesisAnalyticsApplicationOutput {
     <#
     .SYNOPSIS
         Adds an AWS::KinesisAnalytics::ApplicationOutput resource to the template

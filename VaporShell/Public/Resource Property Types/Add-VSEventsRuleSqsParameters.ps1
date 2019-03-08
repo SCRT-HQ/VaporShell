@@ -1,4 +1,4 @@
-﻿function Add-VSEventsRuleSqsParameters {
+function Add-VSEventsRuleSqsParameters {
     <#
     .SYNOPSIS
         Adds an AWS::Events::Rule.SqsParameters resource property to the template

@@ -1,4 +1,4 @@
-﻿function Add-VSApplicationAutoScalingScalingPolicyPredefinedMetricSpecification {
+function Add-VSApplicationAutoScalingScalingPolicyPredefinedMetricSpecification {
     <#
     .SYNOPSIS
         Adds an AWS::ApplicationAutoScaling::ScalingPolicy.PredefinedMetricSpecification resource property to the template

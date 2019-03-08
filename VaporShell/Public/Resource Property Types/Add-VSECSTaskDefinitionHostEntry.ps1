@@ -1,4 +1,4 @@
-﻿function Add-VSECSTaskDefinitionHostEntry {
+function Add-VSECSTaskDefinitionHostEntry {
     <#
     .SYNOPSIS
         Adds an AWS::ECS::TaskDefinition.HostEntry resource property to the template

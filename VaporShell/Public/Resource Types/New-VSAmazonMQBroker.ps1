@@ -1,4 +1,4 @@
-﻿function New-VSAmazonMQBroker {
+function New-VSAmazonMQBroker {
     <#
     .SYNOPSIS
         Adds an AWS::AmazonMQ::Broker resource to the template

@@ -1,4 +1,4 @@
-﻿function Add-VSDynamoDBTableSSESpecification {
+function Add-VSDynamoDBTableSSESpecification {
     <#
     .SYNOPSIS
         Adds an AWS::DynamoDB::Table.SSESpecification resource property to the template

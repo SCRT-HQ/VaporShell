@@ -1,4 +1,4 @@
-﻿function Add-VSDynamoDBTableGlobalSecondaryIndex {
+function Add-VSDynamoDBTableGlobalSecondaryIndex {
     <#
     .SYNOPSIS
         Adds an AWS::DynamoDB::Table.GlobalSecondaryIndex resource property to the template

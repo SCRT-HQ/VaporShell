@@ -1,4 +1,4 @@
-﻿function Add-VSS3BucketCorsRule {
+function Add-VSS3BucketCorsRule {
     <#
     .SYNOPSIS
         Adds an AWS::S3::Bucket.CorsRule resource property to the template

@@ -1,4 +1,4 @@
-﻿function Add-VSIoTAnalyticsDatasetVariable {
+function Add-VSIoTAnalyticsDatasetVariable {
     <#
     .SYNOPSIS
         Adds an AWS::IoTAnalytics::Dataset.Variable resource property to the template

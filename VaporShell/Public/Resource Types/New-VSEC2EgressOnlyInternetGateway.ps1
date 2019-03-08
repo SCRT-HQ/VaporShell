@@ -1,4 +1,4 @@
-﻿function New-VSEC2EgressOnlyInternetGateway {
+function New-VSEC2EgressOnlyInternetGateway {
     <#
     .SYNOPSIS
         Adds an AWS::EC2::EgressOnlyInternetGateway resource to the template

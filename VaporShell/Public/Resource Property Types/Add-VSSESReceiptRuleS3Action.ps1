@@ -1,4 +1,4 @@
-﻿function Add-VSSESReceiptRuleS3Action {
+function Add-VSSESReceiptRuleS3Action {
     <#
     .SYNOPSIS
         Adds an AWS::SES::ReceiptRule.S3Action resource property to the template

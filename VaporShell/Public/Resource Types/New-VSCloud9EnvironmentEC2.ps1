@@ -1,4 +1,4 @@
-﻿function New-VSCloud9EnvironmentEC2 {
+function New-VSCloud9EnvironmentEC2 {
     <#
     .SYNOPSIS
         Adds an AWS::Cloud9::EnvironmentEC2 resource to the template

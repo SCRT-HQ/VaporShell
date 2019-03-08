@@ -1,4 +1,4 @@
-﻿function Add-VSWAFRulePredicate {
+function Add-VSWAFRulePredicate {
     <#
     .SYNOPSIS
         Adds an AWS::WAF::Rule.Predicate resource property to the template

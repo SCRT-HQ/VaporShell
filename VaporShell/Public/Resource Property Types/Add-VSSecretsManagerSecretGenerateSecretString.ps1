@@ -1,4 +1,4 @@
-﻿function Add-VSSecretsManagerSecretGenerateSecretString {
+function Add-VSSecretsManagerSecretGenerateSecretString {
     <#
     .SYNOPSIS
         Adds an AWS::SecretsManager::Secret.GenerateSecretString resource property to the template

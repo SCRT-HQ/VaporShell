@@ -1,4 +1,4 @@
-﻿function New-VSCodeBuildProject {
+function New-VSCodeBuildProject {
     <#
     .SYNOPSIS
         Adds an AWS::CodeBuild::Project resource to the template

@@ -1,4 +1,4 @@
-﻿function New-VSEventsRule {
+function New-VSEventsRule {
     <#
     .SYNOPSIS
         Adds an AWS::Events::Rule resource to the template

@@ -1,4 +1,4 @@
-﻿function Add-VSECSTaskDefinitionTmpfs {
+function Add-VSECSTaskDefinitionTmpfs {
     <#
     .SYNOPSIS
         Adds an AWS::ECS::TaskDefinition.Tmpfs resource property to the template

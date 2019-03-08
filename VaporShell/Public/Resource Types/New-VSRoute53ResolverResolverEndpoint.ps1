@@ -1,4 +1,4 @@
-﻿function New-VSRoute53ResolverResolverEndpoint {
+function New-VSRoute53ResolverResolverEndpoint {
     <#
     .SYNOPSIS
         Adds an AWS::Route53Resolver::ResolverEndpoint resource to the template

@@ -1,4 +1,4 @@
-﻿function New-VSGlueDevEndpoint {
+function New-VSGlueDevEndpoint {
     <#
     .SYNOPSIS
         Adds an AWS::Glue::DevEndpoint resource to the template

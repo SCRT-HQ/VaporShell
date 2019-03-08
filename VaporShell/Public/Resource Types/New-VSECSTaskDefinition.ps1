@@ -1,4 +1,4 @@
-﻿function New-VSECSTaskDefinition {
+function New-VSECSTaskDefinition {
     <#
     .SYNOPSIS
         Adds an AWS::ECS::TaskDefinition resource to the template
@@ -65,14 +65,6 @@
 		Required: False    
 		Type: List    
 		UpdateType: Immutable    
-
-    .PARAMETER Tags
-		Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ecs-taskdefinition.html#cfn-ecs-taskdefinition-tags    
-		DuplicatesAllowed: True    
-		ItemType: Tag    
-		Required: False    
-		Type: List    
-		UpdateType: Mutable    
 
     .PARAMETER TaskRoleArn
 		Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ecs-taskdefinition.html#cfn-ecs-taskdefinition-taskrolearn    
@@ -214,17 +206,6 @@
         $RequiresCompatibilities,
         [parameter(Mandatory = $false)]
         [ValidateScript( {
-                $allowedTypes = "Vaporshell.Resource.Tag","System.Management.Automation.PSCustomObject"
-                if ([string]$($_.PSTypeNames) -match "($(($allowedTypes|ForEach-Object{[RegEx]::Escape($_)}) -join '|'))") {
-                    $true
-                }
-                else {
-                    $PSCmdlet.ThrowTerminatingError((New-VSError -String "This parameter only accepts the following types: $($allowedTypes -join ", "). The current types of the value are: $($_.PSTypeNames -join ", ")."))
-                }
-            })]
-        $Tags,
-        [parameter(Mandatory = $false)]
-        [ValidateScript( {
                 $allowedTypes = "System.String","Vaporshell.Function","Vaporshell.Condition"
                 if ([string]$($_.PSTypeNames) -match "($(($allowedTypes|ForEach-Object{[RegEx]::Escape($_)}) -join '|'))") {
                     $true
@@ -319,12 +300,6 @@
                         $ResourceParams.Add("Properties",([PSCustomObject]@{}))
                     }
                     $ResourceParams["Properties"] | Add-Member -MemberType NoteProperty -Name RequiresCompatibilities -Value @($RequiresCompatibilities)
-                }
-                Tags {
-                    if (!($ResourceParams["Properties"])) {
-                        $ResourceParams.Add("Properties",([PSCustomObject]@{}))
-                    }
-                    $ResourceParams["Properties"] | Add-Member -MemberType NoteProperty -Name Tags -Value @($Tags)
                 }
                 Volumes {
                     if (!($ResourceParams["Properties"])) {

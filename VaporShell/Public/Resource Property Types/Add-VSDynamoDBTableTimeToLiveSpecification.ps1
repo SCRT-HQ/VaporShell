@@ -1,4 +1,4 @@
-﻿function Add-VSDynamoDBTableTimeToLiveSpecification {
+function Add-VSDynamoDBTableTimeToLiveSpecification {
     <#
     .SYNOPSIS
         Adds an AWS::DynamoDB::Table.TimeToLiveSpecification resource property to the template

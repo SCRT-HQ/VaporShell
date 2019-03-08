@@ -1,4 +1,4 @@
-﻿function Add-VSWAFRegionalWebACLAction {
+function Add-VSWAFRegionalWebACLAction {
     <#
     .SYNOPSIS
         Adds an AWS::WAFRegional::WebACL.Action resource property to the template

@@ -1,4 +1,4 @@
-﻿function Add-VSEMRStepKeyValue {
+function Add-VSEMRStepKeyValue {
     <#
     .SYNOPSIS
         Adds an AWS::EMR::Step.KeyValue resource property to the template

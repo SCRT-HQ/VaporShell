@@ -1,4 +1,4 @@
-﻿function Add-VSDLMLifecyclePolicySchedule {
+function Add-VSDLMLifecyclePolicySchedule {
     <#
     .SYNOPSIS
         Adds an AWS::DLM::LifecyclePolicy.Schedule resource property to the template

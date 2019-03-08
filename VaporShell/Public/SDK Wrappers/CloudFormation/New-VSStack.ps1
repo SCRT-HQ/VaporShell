@@ -51,8 +51,14 @@ function New-VSStack {
     .PARAMETER TimeoutInMinutes
     The amount of time that can pass before the stack status becomes CREATE_FAILED; if DisableRollback is not set or is set to false, the stack will be rolled back.
 
+    .PARAMETER Watch
+    If $true, runs Watch-Stack to show the colorized output of the stack events.
+
     .PARAMETER ProfileName
     The name of the configuration profile to deploy the stack with. Defaults to $env:AWS_PROFILE, if set.
+
+    .PARAMETER Force
+    If $true, bypasses ShouldProcess and creates the stack. If the stack already exists and a change set is created instead, the change set will also be executed as soon as it's ready.
 
     .FUNCTIONALITY
     Vaporshell
@@ -119,65 +125,90 @@ function New-VSStack {
         [Int]
         $TimeoutInMinutes,
         [parameter(Mandatory = $false)]
+        [switch]
+        $Watch,
+        [parameter(Mandatory = $false)]
         [String]
-        $ProfileName = $env:AWS_PROFILE
+        $ProfileName = $env:AWS_PROFILE,
+        [parameter(Mandatory = $false)]
+        [switch]
+        $Force
     )
     Begin {
         $tagList = New-Object 'System.Collections.Generic.List[Amazon.CloudFormation.Model.Tag]'
         $tagList.Add((VSStackTag -Key BuiltWith -Value VaporShell))
     }
     Process {
-        $method = "CreateStack"
-        $requestType = "Amazon.CloudFormation.Model.$($method)Request"
-        $request = New-Object $requestType
-        foreach ($key in $PSBoundParameters.Keys) {
-            switch ($key) {
-                Path {
-                    $resolvedPath = (Resolve-Path $Path).Path
-                    $request.TemplateBody = [System.IO.File]::ReadAllText($resolvedPath)
-                }
-                Parameters {
-                    if ($Parameters[0] -is [Amazon.CloudFormation.Model.Parameter]) {
-                        $request.Parameters = $Parameters
-                    }
-                    elseif ($Parameters -is [System.Collections.Hashtable]) {
-                        $parRay = @()
-                        foreach ($parKey in $Parameters.Keys) {
-                            $parRay += VSStackParameter -ParameterKey $parKey -ParameterValue $Parameters[$parKey]
-                        }
-                        $request.Parameters = $parRay
-                    }
-                    elseif ($Parameters -is [System.Management.Automation.PSCustomObject]) {
-                        $parRay = @()
-                        foreach ($parProp in $Parameters.PSObject.Properties.Name) {
-                            $parRay += VSStackParameter -ParameterKey $parProp -ParameterValue $Parameters.$parProp
-                        }
-                        $request.Parameters = $parRay
-                    }
-                }
-                Tags {
-                    foreach ($key in $Tags.Keys) {
-                        $tagList.Add((VSStackTag -Key $key -Value $Tags[$key]))
-                    }
-                }
-                Default {
-                    if ($request.PSObject.Properties.Name -contains $key) {
-                        $request.$key = $PSBoundParameters[$key]
-                    }
+        Write-Verbose "Checking if Stack '$StackName' exists and creating a Change Set instead if so."
+        try {
+            Get-VSStack -StackName $StackName -ErrorAction Stop | Out-Null
+            $changeSetParams = $PSBoundParameters
+            @('DisableRollback','OnFailure','StackPolicyBody','StackPolicyURL','TimeoutInMinutes') | ForEach-Object {
+                if ($changeSetParams.ContainsKey($_)) {
+                    $changeSetParams.Remove($_)
                 }
             }
+            Write-Verbose "A Stack with name '$StackName' already exists -- creating a Change Set instead."
+            New-VSChangeSet @changeSetParams
         }
-        $request.Tags = $tagList
-        if ($PSCmdlet.ShouldProcess($request)) {
-            $results = ProcessRequest $PSCmdlet.ParameterSetName $ProfileName $method $request
-            if (!$results) {
-                return
+        catch {
+            Write-Verbose "Stack '$StackName' not found -- creating the Stack now."
+            $method = "CreateStack"
+            $requestType = "Amazon.CloudFormation.Model.$($method)Request"
+            $request = New-Object $requestType
+            foreach ($key in $PSBoundParameters.Keys) {
+                switch ($key) {
+                    Path {
+                        $resolvedPath = (Resolve-Path $Path).Path
+                        $request.TemplateBody = [System.IO.File]::ReadAllText($resolvedPath)
+                    }
+                    Parameters {
+                        if ($Parameters[0] -is [Amazon.CloudFormation.Model.Parameter]) {
+                            $request.Parameters = $Parameters
+                        }
+                        elseif ($Parameters -is [System.Collections.Hashtable]) {
+                            $parRay = @()
+                            foreach ($parKey in $Parameters.Keys) {
+                                $parRay += VSStackParameter -ParameterKey $parKey -ParameterValue $Parameters[$parKey]
+                            }
+                            $request.Parameters = $parRay
+                        }
+                        elseif ($Parameters -is [System.Management.Automation.PSCustomObject]) {
+                            $parRay = @()
+                            foreach ($parProp in $Parameters.PSObject.Properties.Name) {
+                                $parRay += VSStackParameter -ParameterKey $parProp -ParameterValue $Parameters.$parProp
+                            }
+                            $request.Parameters = $parRay
+                        }
+                    }
+                    Tags {
+                        foreach ($key in $Tags.Keys) {
+                            $tagList.Add((VSStackTag -Key $key -Value $Tags[$key]))
+                        }
+                    }
+                    Default {
+                        if ($request.PSObject.Properties.Name -contains $key) {
+                            $request.$key = $PSBoundParameters[$key]
+                        }
+                    }
+                }
             }
-            elseif ($results -is 'System.Management.Automation.ErrorRecord') {
-                $PSCmdlet.ThrowTerminatingError($results)
-            }
-            elseif ($results) {
-                return $results
+            $request.Tags = $tagList
+            if ($Force -or $PSCmdlet.ShouldProcess($request)) {
+                $results = ProcessRequest $PSCmdlet.ParameterSetName $ProfileName $method $request
+                if (!$results) {
+                    return
+                }
+                elseif ($results -is 'System.Management.Automation.ErrorRecord') {
+                    $PSCmdlet.ThrowTerminatingError($results)
+                }
+                elseif ($results) {
+                    $results
+                    if ($Watch) {
+                        Write-Verbose "Watching Stack!"
+                        $results | Watch-Stack -ProfileName $ProfileName -Verbose:$false
+                    }
+                }
             }
         }
     }

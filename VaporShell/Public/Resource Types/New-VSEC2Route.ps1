@@ -1,4 +1,4 @@
-﻿function New-VSEC2Route {
+function New-VSEC2Route {
     <#
     .SYNOPSIS
         Adds an AWS::EC2::Route resource to the template

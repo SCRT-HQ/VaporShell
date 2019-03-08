@@ -1,4 +1,4 @@
-﻿function Add-VSAutoScalingAutoScalingGroupLifecycleHookSpecification {
+function Add-VSAutoScalingAutoScalingGroupLifecycleHookSpecification {
     <#
     .SYNOPSIS
         Adds an AWS::AutoScaling::AutoScalingGroup.LifecycleHookSpecification resource property to the template

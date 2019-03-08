@@ -51,8 +51,14 @@ function New-VSChangeSet {
     .PARAMETER Tags
     Key-value pairs to associate with this stack. AWS CloudFormation also propagates these tags to resources in the stack. You can specify a maximum of 50 tags.
 
+    .PARAMETER Watch
+    If $true, runs Watch-Stack to show the colorized output of the stack events.
+
     .PARAMETER ProfileName
     The name of the configuration profile to deploy the stack with. Defaults to $env:AWS_PROFILE, if set.
+
+    .PARAMETER Force
+    If $true, executes the change set as soon as it's ready.
 
     .FUNCTIONALITY
     Vaporshell
@@ -74,22 +80,31 @@ function New-VSChangeSet {
         [Switch]
         $UsePreviousTemplate,
         [parameter(Mandatory = $true)]
-        [String]
-        $ChangeSetName,
-        [parameter(Mandatory = $true)]
+        [Alias('StackId')]
         [String]
         $StackName,
+        [parameter(Mandatory = $false)]
+        [ValidateScript({
+            if ($_.Length -gt 128 -or $_ -notmatch "^[a-zA-Z][-a-zA-Z0-9]+$") {
+                throw "A change set name can contain only alphanumeric, case sensitive characters and hyphens. It must start with an alphabetic character and cannot exceed 128 characters."
+            }
+            else {
+                $true
+            }
+        })]
+        [String]
+        $ChangeSetName,
         [parameter(Mandatory = $false)]
         [ValidateSet("CAPABILITY_IAM","CAPABILITY_NAMED_IAM")]
         [String[]]
         $Capabilities,
         [parameter(Mandatory = $false)]
-        [ValidateSet("CREATE","UPDATE")]
-        [String]
+        [Amazon.CloudFormation.ChangeSetType]
         $ChangeSetType,
         [parameter(Mandatory = $false)]
+        [Alias('ClientToken')]
         [String]
-        $ClientToken,
+        $ClientRequestToken,
         [parameter(Mandatory = $false)]
         [String]
         $Description,
@@ -117,12 +132,22 @@ function New-VSChangeSet {
         [Hashtable]
         $Tags,
         [parameter(Mandatory = $false)]
+        [switch]
+        $Watch,
+        [parameter(Mandatory = $false)]
         [String]
-        $ProfileName = $env:AWS_PROFILE
+        $ProfileName = $env:AWS_PROFILE,
+        [parameter(Mandatory = $false)]
+        [switch]
+        $Force
     )
     Begin {
         $tagList = New-Object 'System.Collections.Generic.List[Amazon.CloudFormation.Model.Tag]'
         $tagList.Add((VSStackTag -Key BuiltWith -Value VaporShell))
+        if (-not $PSBoundParameters.ContainsKey('ChangeSetName')) {
+            $ChangeSetName = "$StackName-$(Get-Date -Format "yyyy-MM-dd-HH-mm-ss")"
+            $PSBoundParameters['ChangeSetName'] = $ChangeSetName
+        }
     }
     Process {
         if ($PSBoundParameters.Keys -notcontains "Description") {
@@ -133,6 +158,9 @@ function New-VSChangeSet {
         $request = New-Object $requestType
         foreach ($key in $PSBoundParameters.Keys) {
             switch ($key) {
+                ClientRequestToken {
+                    $request.ClientToken = $ClientRequestToken
+                }
                 Path {
                     $request.TemplateBody = [System.IO.File]::ReadAllText((Resolve-Path $Path))
                 }
@@ -160,9 +188,6 @@ function New-VSChangeSet {
                         $tagList.Add((VSStackTag -Key $key -Value $Tags[$key]))
                     }
                 }
-                ChangeSetType {
-                    $request.ChangeSetType = [Amazon.CloudFormation.ChangeSetType]::$ChangeSetType
-                }
                 Default {
                     if ($request.PSObject.Properties.Name -contains $key) {
                         $request.$key = $PSBoundParameters[$key]
@@ -179,7 +204,31 @@ function New-VSChangeSet {
             $PSCmdlet.ThrowTerminatingError($results)
         }
         elseif ($results) {
-            return $results
+            $results
+            if ($Force) {
+                $execParams = @{
+                    ChangeSetName = $ChangeSetName
+                    StackName = $StackName
+                    ProfileName = $ProfileName
+                }
+                if ($PSBoundParameters.ContainsKey('ClientRequestToken')) {
+                    $execParams['ClientRequestToken'] = $PSBoundParameters['ClientRequestToken']
+                }
+                Write-Verbose "Waiting until Change Set is ready..."
+                $i = 0
+                do {
+                    Start-Sleep 2
+                    $csStatus = Get-VSChangeSet -ChangeSetName $ChangeSetName -StackName $StackName -Verbose:$false
+                    $i++
+                }
+                until ($csStatus.ExecutionStatus -eq 'AVAILABLE' -or $i -ge 150)
+                Write-Verbose "Executing Change Set!"
+                Invoke-VSChangeSetExecution @execParams
+            }
+            if ($Watch) {
+                Write-Verbose "Watching Stack!"
+                $results | Watch-Stack -ProfileName $ProfileName -Verbose:$false
+            }
         }
     }
 }

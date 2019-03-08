@@ -1,4 +1,4 @@
-﻿function New-VSStepFunctionsStateMachine {
+function New-VSStepFunctionsStateMachine {
     <#
     .SYNOPSIS
         Adds an AWS::StepFunctions::StateMachine resource to the template

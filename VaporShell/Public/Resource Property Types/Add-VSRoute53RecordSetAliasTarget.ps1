@@ -1,4 +1,4 @@
-﻿function Add-VSRoute53RecordSetAliasTarget {
+function Add-VSRoute53RecordSetAliasTarget {
     <#
     .SYNOPSIS
         Adds an AWS::Route53::RecordSet.AliasTarget resource property to the template

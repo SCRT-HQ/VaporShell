@@ -1,4 +1,4 @@
-﻿function Add-VSRoute53HostedZoneQueryLoggingConfig {
+function Add-VSRoute53HostedZoneQueryLoggingConfig {
     <#
     .SYNOPSIS
         Adds an AWS::Route53::HostedZone.QueryLoggingConfig resource property to the template

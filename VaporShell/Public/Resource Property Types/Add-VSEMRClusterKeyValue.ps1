@@ -1,4 +1,4 @@
-﻿function Add-VSEMRClusterKeyValue {
+function Add-VSEMRClusterKeyValue {
     <#
     .SYNOPSIS
         Adds an AWS::EMR::Cluster.KeyValue resource property to the template

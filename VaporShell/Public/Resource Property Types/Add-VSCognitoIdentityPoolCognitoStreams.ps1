@@ -1,4 +1,4 @@
-﻿function Add-VSCognitoIdentityPoolCognitoStreams {
+function Add-VSCognitoIdentityPoolCognitoStreams {
     <#
     .SYNOPSIS
         Adds an AWS::Cognito::IdentityPool.CognitoStreams resource property to the template

@@ -1,4 +1,4 @@
-﻿function New-VSRedshiftCluster {
+function New-VSRedshiftCluster {
     <#
     .SYNOPSIS
         Adds an AWS::Redshift::Cluster resource to the template

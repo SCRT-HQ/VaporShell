@@ -1,4 +1,4 @@
-﻿function New-VSCloudFormationCustomResource {
+function New-VSCloudFormationCustomResource {
     <#
     .SYNOPSIS
         Adds an AWS::CloudFormation::CustomResource resource to the template

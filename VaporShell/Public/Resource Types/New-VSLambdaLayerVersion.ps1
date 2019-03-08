@@ -1,4 +1,4 @@
-﻿function New-VSLambdaLayerVersion {
+function New-VSLambdaLayerVersion {
     <#
     .SYNOPSIS
         Adds an AWS::Lambda::LayerVersion resource to the template

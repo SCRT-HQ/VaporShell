@@ -1,4 +1,4 @@
-﻿function Add-VSBatchJobDefinitionMountPoints {
+function Add-VSBatchJobDefinitionMountPoints {
     <#
     .SYNOPSIS
         Adds an AWS::Batch::JobDefinition.MountPoints resource property to the template

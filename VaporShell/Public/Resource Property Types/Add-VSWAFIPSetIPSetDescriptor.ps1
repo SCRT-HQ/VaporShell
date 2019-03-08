@@ -1,4 +1,4 @@
-﻿function Add-VSWAFIPSetIPSetDescriptor {
+function Add-VSWAFIPSetIPSetDescriptor {
     <#
     .SYNOPSIS
         Adds an AWS::WAF::IPSet.IPSetDescriptor resource property to the template

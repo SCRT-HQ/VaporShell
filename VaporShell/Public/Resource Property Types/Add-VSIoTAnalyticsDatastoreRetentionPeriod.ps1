@@ -1,4 +1,4 @@
-﻿function Add-VSIoTAnalyticsDatastoreRetentionPeriod {
+function Add-VSIoTAnalyticsDatastoreRetentionPeriod {
     <#
     .SYNOPSIS
         Adds an AWS::IoTAnalytics::Datastore.RetentionPeriod resource property to the template

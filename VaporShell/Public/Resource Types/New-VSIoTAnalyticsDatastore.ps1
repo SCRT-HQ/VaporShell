@@ -1,4 +1,4 @@
-﻿function New-VSIoTAnalyticsDatastore {
+function New-VSIoTAnalyticsDatastore {
     <#
     .SYNOPSIS
         Adds an AWS::IoTAnalytics::Datastore resource to the template
