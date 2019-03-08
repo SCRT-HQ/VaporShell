@@ -28,12 +28,6 @@ phases:
       PathtoPublish: BuildOutput
       ArtifactName: BuildOutput
 
-  - task: PublishBuildArtifacts@1
-    displayName: 'Publish Artifact: Root Class Folder'
-    inputs:
-      PathtoPublish: ./VaporShell/Classes
-      ArtifactName: Classes
-
 
 - phase: Phase_2
   displayName: Test Module on Windows (PSv5)
