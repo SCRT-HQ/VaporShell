@@ -16,7 +16,7 @@ jobs:
   pool:
     vmImage: 'windows-2019'
   steps:
-  - powershell: . ./build.ps1 -Task @('Init','Update','Clean','CompileCSharp','Compile','Import')
+  - powershell: . ./build.ps1 -Task @('Update','Compile','Import')
     displayName: Compile PowerShell Module
   - task: PublishBuildArtifacts@1
     displayName: 'Publish Artifact: Compiled Module'
@@ -118,7 +118,7 @@ jobs:
     - PS6UbuTest
     - PS6MacTest
     - PS6WinTest
-  condition: and(succeeded(), in(variables['Build.Reason'], 'IndividualCI', 'BatchedCI'), eq(variables#['Build.SourceBranch'], 'refs/heads/master'))
+  condition: and(succeeded(), in(variables['Build.Reason'], 'IndividualCI', 'BatchedCI'), eq(variables['Build.SourceBranch'], 'refs/heads/master'))
   pool:
     vmImage: 'windows-2019'
   steps:
