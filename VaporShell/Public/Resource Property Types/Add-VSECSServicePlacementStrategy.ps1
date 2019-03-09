@@ -1,4 +1,4 @@
-function Add-VSECSServicePlacementStrategy {
+﻿function Add-VSECSServicePlacementStrategy {
     <#
     .SYNOPSIS
         Adds an AWS::ECS::Service.PlacementStrategy resource property to the template

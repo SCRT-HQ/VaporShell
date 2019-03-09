@@ -1,4 +1,4 @@
-function New-VSIoTAnalyticsChannel {
+﻿function New-VSIoTAnalyticsChannel {
     <#
     .SYNOPSIS
         Adds an AWS::IoTAnalytics::Channel resource to the template

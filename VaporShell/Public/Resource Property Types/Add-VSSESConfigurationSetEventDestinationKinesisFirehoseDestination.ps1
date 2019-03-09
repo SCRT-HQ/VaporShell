@@ -1,4 +1,4 @@
-function Add-VSSESConfigurationSetEventDestinationKinesisFirehoseDestination {
+﻿function Add-VSSESConfigurationSetEventDestinationKinesisFirehoseDestination {
     <#
     .SYNOPSIS
         Adds an AWS::SES::ConfigurationSetEventDestination.KinesisFirehoseDestination resource property to the template

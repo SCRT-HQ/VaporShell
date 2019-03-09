@@ -1,4 +1,4 @@
-function New-VSEFSFileSystem {
+﻿function New-VSEFSFileSystem {
     <#
     .SYNOPSIS
         Adds an AWS::EFS::FileSystem resource to the template

@@ -1,4 +1,4 @@
-function New-VSRedshiftClusterSecurityGroupIngress {
+﻿function New-VSRedshiftClusterSecurityGroupIngress {
     <#
     .SYNOPSIS
         Adds an AWS::Redshift::ClusterSecurityGroupIngress resource to the template

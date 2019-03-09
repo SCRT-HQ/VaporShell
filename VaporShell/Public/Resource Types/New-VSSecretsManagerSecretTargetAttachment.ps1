@@ -1,4 +1,4 @@
-function New-VSSecretsManagerSecretTargetAttachment {
+﻿function New-VSSecretsManagerSecretTargetAttachment {
     <#
     .SYNOPSIS
         Adds an AWS::SecretsManager::SecretTargetAttachment resource to the template

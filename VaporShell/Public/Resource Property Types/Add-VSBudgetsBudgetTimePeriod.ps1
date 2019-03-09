@@ -1,4 +1,4 @@
-function Add-VSBudgetsBudgetTimePeriod {
+﻿function Add-VSBudgetsBudgetTimePeriod {
     <#
     .SYNOPSIS
         Adds an AWS::Budgets::Budget.TimePeriod resource property to the template

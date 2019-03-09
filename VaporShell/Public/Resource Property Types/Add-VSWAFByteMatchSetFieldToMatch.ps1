@@ -1,4 +1,4 @@
-function Add-VSWAFByteMatchSetFieldToMatch {
+﻿function Add-VSWAFByteMatchSetFieldToMatch {
     <#
     .SYNOPSIS
         Adds an AWS::WAF::ByteMatchSet.FieldToMatch resource property to the template

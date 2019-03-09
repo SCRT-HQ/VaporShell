@@ -1,4 +1,4 @@
-function New-VSSSMMaintenanceWindow {
+﻿function New-VSSSMMaintenanceWindow {
     <#
     .SYNOPSIS
         Adds an AWS::SSM::MaintenanceWindow resource to the template

@@ -1,4 +1,4 @@
-function New-VSCloudFrontDistribution {
+﻿function New-VSCloudFrontDistribution {
     <#
     .SYNOPSIS
         Adds an AWS::CloudFront::Distribution resource to the template

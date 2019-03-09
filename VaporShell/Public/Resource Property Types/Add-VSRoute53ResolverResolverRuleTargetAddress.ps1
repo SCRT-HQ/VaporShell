@@ -1,4 +1,4 @@
-function Add-VSRoute53ResolverResolverRuleTargetAddress {
+﻿function Add-VSRoute53ResolverResolverRuleTargetAddress {
     <#
     .SYNOPSIS
         Adds an AWS::Route53Resolver::ResolverRule.TargetAddress resource property to the template

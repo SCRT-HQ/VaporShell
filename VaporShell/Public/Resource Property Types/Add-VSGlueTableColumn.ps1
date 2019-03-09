@@ -1,4 +1,4 @@
-function Add-VSGlueTableColumn {
+﻿function Add-VSGlueTableColumn {
     <#
     .SYNOPSIS
         Adds an AWS::Glue::Table.Column resource property to the template

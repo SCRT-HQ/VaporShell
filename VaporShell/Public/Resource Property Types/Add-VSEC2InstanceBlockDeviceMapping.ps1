@@ -1,4 +1,4 @@
-function Add-VSEC2InstanceBlockDeviceMapping {
+﻿function Add-VSEC2InstanceBlockDeviceMapping {
     <#
     .SYNOPSIS
         Adds an AWS::EC2::Instance.BlockDeviceMapping resource property to the template

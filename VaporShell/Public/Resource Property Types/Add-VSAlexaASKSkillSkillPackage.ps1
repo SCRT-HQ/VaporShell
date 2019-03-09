@@ -1,4 +1,4 @@
-function Add-VSAlexaASKSkillSkillPackage {
+﻿function Add-VSAlexaASKSkillSkillPackage {
     <#
     .SYNOPSIS
         Adds an Alexa::ASK::Skill.SkillPackage resource property to the template

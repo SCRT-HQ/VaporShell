@@ -1,4 +1,4 @@
-function New-VSOpsWorksCMServer {
+﻿function New-VSOpsWorksCMServer {
     <#
     .SYNOPSIS
         Adds an AWS::OpsWorksCM::Server resource to the template

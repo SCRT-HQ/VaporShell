@@ -1,4 +1,4 @@
-function New-VSFSxFileSystem {
+﻿function New-VSFSxFileSystem {
     <#
     .SYNOPSIS
         Adds an AWS::FSx::FileSystem resource to the template

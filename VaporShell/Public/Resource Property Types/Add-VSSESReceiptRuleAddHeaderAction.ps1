@@ -1,4 +1,4 @@
-function Add-VSSESReceiptRuleAddHeaderAction {
+﻿function Add-VSSESReceiptRuleAddHeaderAction {
     <#
     .SYNOPSIS
         Adds an AWS::SES::ReceiptRule.AddHeaderAction resource property to the template

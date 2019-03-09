@@ -1,4 +1,4 @@
-function Add-VSEC2EC2FleetOnDemandOptionsRequest {
+﻿function Add-VSEC2EC2FleetOnDemandOptionsRequest {
     <#
     .SYNOPSIS
         Adds an AWS::EC2::EC2Fleet.OnDemandOptionsRequest resource property to the template

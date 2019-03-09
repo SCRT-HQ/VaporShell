@@ -1,4 +1,4 @@
-function Add-VSBudgetsBudgetSubscriber {
+﻿function Add-VSBudgetsBudgetSubscriber {
     <#
     .SYNOPSIS
         Adds an AWS::Budgets::Budget.Subscriber resource property to the template

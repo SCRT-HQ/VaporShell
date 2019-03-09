@@ -1,4 +1,4 @@
-function New-VSIAMManagedPolicy {
+﻿function New-VSIAMManagedPolicy {
     <#
     .SYNOPSIS
         Adds an AWS::IAM::ManagedPolicy resource to the template

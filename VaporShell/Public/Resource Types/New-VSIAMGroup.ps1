@@ -1,4 +1,4 @@
-function New-VSIAMGroup {
+﻿function New-VSIAMGroup {
     <#
     .SYNOPSIS
         Adds an AWS::IAM::Group resource to the template

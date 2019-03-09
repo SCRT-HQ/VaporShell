@@ -1,4 +1,4 @@
-function New-VSDAXCluster {
+﻿function New-VSDAXCluster {
     <#
     .SYNOPSIS
         Adds an AWS::DAX::Cluster resource to the template

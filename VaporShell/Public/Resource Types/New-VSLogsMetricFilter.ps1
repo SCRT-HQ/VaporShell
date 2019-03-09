@@ -1,4 +1,4 @@
-function New-VSLogsMetricFilter {
+﻿function New-VSLogsMetricFilter {
     <#
     .SYNOPSIS
         Adds an AWS::Logs::MetricFilter resource to the template

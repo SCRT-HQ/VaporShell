@@ -1,4 +1,4 @@
-function Add-VSEC2EC2FleetTagRequest {
+﻿function Add-VSEC2EC2FleetTagRequest {
     <#
     .SYNOPSIS
         Adds an AWS::EC2::EC2Fleet.TagRequest resource property to the template

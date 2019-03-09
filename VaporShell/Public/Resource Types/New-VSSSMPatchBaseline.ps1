@@ -1,4 +1,4 @@
-function New-VSSSMPatchBaseline {
+﻿function New-VSSSMPatchBaseline {
     <#
     .SYNOPSIS
         Adds an AWS::SSM::PatchBaseline resource to the template
@@ -17,6 +17,38 @@ function New-VSSSMPatchBaseline {
 		Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ssm-patchbaseline.html#cfn-ssm-patchbaseline-operatingsystem    
 		PrimitiveType: String    
 		UpdateType: Immutable    
+
+    .PARAMETER Description
+		Required: False    
+		Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ssm-patchbaseline.html#cfn-ssm-patchbaseline-description    
+		PrimitiveType: String    
+		UpdateType: Mutable    
+
+    .PARAMETER ApprovalRules
+		Type: RuleGroup    
+		Required: False    
+		Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ssm-patchbaseline.html#cfn-ssm-patchbaseline-approvalrules    
+		UpdateType: Mutable    
+
+    .PARAMETER Sources
+		Type: List    
+		Required: False    
+		Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ssm-patchbaseline.html#cfn-ssm-patchbaseline-sources    
+		ItemType: PatchSource    
+		UpdateType: Mutable    
+
+    .PARAMETER Name
+		Required: True    
+		Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ssm-patchbaseline.html#cfn-ssm-patchbaseline-name    
+		PrimitiveType: String    
+		UpdateType: Mutable    
+
+    .PARAMETER RejectedPatches
+		PrimitiveItemType: String    
+		Type: List    
+		Required: False    
+		Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ssm-patchbaseline.html#cfn-ssm-patchbaseline-rejectedpatches    
+		UpdateType: Mutable    
 
     .PARAMETER ApprovedPatches
 		PrimitiveItemType: String    
@@ -38,12 +70,6 @@ function New-VSSSMPatchBaseline {
 		Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ssm-patchbaseline.html#cfn-ssm-patchbaseline-patchgroups    
 		UpdateType: Mutable    
 
-    .PARAMETER Description
-		Required: False    
-		Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ssm-patchbaseline.html#cfn-ssm-patchbaseline-description    
-		PrimitiveType: String    
-		UpdateType: Mutable    
-
     .PARAMETER ApprovedPatchesComplianceLevel
 		Required: False    
 		Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ssm-patchbaseline.html#cfn-ssm-patchbaseline-approvedpatchescompliancelevel    
@@ -56,36 +82,17 @@ function New-VSSSMPatchBaseline {
 		PrimitiveType: Boolean    
 		UpdateType: Mutable    
 
-    .PARAMETER ApprovalRules
-		Type: RuleGroup    
-		Required: False    
-		Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ssm-patchbaseline.html#cfn-ssm-patchbaseline-approvalrules    
-		UpdateType: Mutable    
-
     .PARAMETER GlobalFilters
 		Type: PatchFilterGroup    
 		Required: False    
 		Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ssm-patchbaseline.html#cfn-ssm-patchbaseline-globalfilters    
 		UpdateType: Mutable    
 
-    .PARAMETER Sources
+    .PARAMETER Tags
 		Type: List    
 		Required: False    
-		Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ssm-patchbaseline.html#cfn-ssm-patchbaseline-sources    
-		ItemType: PatchSource    
-		UpdateType: Mutable    
-
-    .PARAMETER Name
-		Required: True    
-		Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ssm-patchbaseline.html#cfn-ssm-patchbaseline-name    
-		PrimitiveType: String    
-		UpdateType: Mutable    
-
-    .PARAMETER RejectedPatches
-		PrimitiveItemType: String    
-		Type: List    
-		Required: False    
-		Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ssm-patchbaseline.html#cfn-ssm-patchbaseline-rejectedpatches    
+		Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ssm-patchbaseline.html#cfn-ssm-patchbaseline-tags    
+		ItemType: Tag    
 		UpdateType: Mutable    
 
     .PARAMETER DeletionPolicy
@@ -145,21 +152,6 @@ function New-VSSSMPatchBaseline {
             })]
         $OperatingSystem,
         [parameter(Mandatory = $false)]
-        $ApprovedPatches,
-        [parameter(Mandatory = $false)]
-        [ValidateScript( {
-                $allowedTypes = "System.String","Vaporshell.Function","Vaporshell.Condition"
-                if ([string]$($_.PSTypeNames) -match "($(($allowedTypes|ForEach-Object{[RegEx]::Escape($_)}) -join '|'))") {
-                    $true
-                }
-                else {
-                    $PSCmdlet.ThrowTerminatingError((New-VSError -String "This parameter only accepts the following types: $($allowedTypes -join ", "). The current types of the value are: $($_.PSTypeNames -join ", ")."))
-                }
-            })]
-        $RejectedPatchesAction,
-        [parameter(Mandatory = $false)]
-        $PatchGroups,
-        [parameter(Mandatory = $false)]
         [ValidateScript( {
                 $allowedTypes = "System.String","Vaporshell.Function","Vaporshell.Condition"
                 if ([string]$($_.PSTypeNames) -match "($(($allowedTypes|ForEach-Object{[RegEx]::Escape($_)}) -join '|'))") {
@@ -171,23 +163,7 @@ function New-VSSSMPatchBaseline {
             })]
         $Description,
         [parameter(Mandatory = $false)]
-        [ValidateScript( {
-                $allowedTypes = "System.String","Vaporshell.Function","Vaporshell.Condition"
-                if ([string]$($_.PSTypeNames) -match "($(($allowedTypes|ForEach-Object{[RegEx]::Escape($_)}) -join '|'))") {
-                    $true
-                }
-                else {
-                    $PSCmdlet.ThrowTerminatingError((New-VSError -String "This parameter only accepts the following types: $($allowedTypes -join ", "). The current types of the value are: $($_.PSTypeNames -join ", ")."))
-                }
-            })]
-        $ApprovedPatchesComplianceLevel,
-        [parameter(Mandatory = $false)]
-        [System.Boolean]
-        $ApprovedPatchesEnableNonSecurity,
-        [parameter(Mandatory = $false)]
         $ApprovalRules,
-        [parameter(Mandatory = $false)]
-        $GlobalFilters,
         [parameter(Mandatory = $false)]
         [ValidateScript( {
                 $allowedTypes = "Vaporshell.Resource.SSM.PatchBaseline.PatchSource"
@@ -212,6 +188,48 @@ function New-VSSSMPatchBaseline {
         $Name,
         [parameter(Mandatory = $false)]
         $RejectedPatches,
+        [parameter(Mandatory = $false)]
+        $ApprovedPatches,
+        [parameter(Mandatory = $false)]
+        [ValidateScript( {
+                $allowedTypes = "System.String","Vaporshell.Function","Vaporshell.Condition"
+                if ([string]$($_.PSTypeNames) -match "($(($allowedTypes|ForEach-Object{[RegEx]::Escape($_)}) -join '|'))") {
+                    $true
+                }
+                else {
+                    $PSCmdlet.ThrowTerminatingError((New-VSError -String "This parameter only accepts the following types: $($allowedTypes -join ", "). The current types of the value are: $($_.PSTypeNames -join ", ")."))
+                }
+            })]
+        $RejectedPatchesAction,
+        [parameter(Mandatory = $false)]
+        $PatchGroups,
+        [parameter(Mandatory = $false)]
+        [ValidateScript( {
+                $allowedTypes = "System.String","Vaporshell.Function","Vaporshell.Condition"
+                if ([string]$($_.PSTypeNames) -match "($(($allowedTypes|ForEach-Object{[RegEx]::Escape($_)}) -join '|'))") {
+                    $true
+                }
+                else {
+                    $PSCmdlet.ThrowTerminatingError((New-VSError -String "This parameter only accepts the following types: $($allowedTypes -join ", "). The current types of the value are: $($_.PSTypeNames -join ", ")."))
+                }
+            })]
+        $ApprovedPatchesComplianceLevel,
+        [parameter(Mandatory = $false)]
+        [System.Boolean]
+        $ApprovedPatchesEnableNonSecurity,
+        [parameter(Mandatory = $false)]
+        $GlobalFilters,
+        [parameter(Mandatory = $false)]
+        [ValidateScript( {
+                $allowedTypes = "Vaporshell.Resource.Tag","System.Management.Automation.PSCustomObject"
+                if ([string]$($_.PSTypeNames) -match "($(($allowedTypes|ForEach-Object{[RegEx]::Escape($_)}) -join '|'))") {
+                    $true
+                }
+                else {
+                    $PSCmdlet.ThrowTerminatingError((New-VSError -String "This parameter only accepts the following types: $($allowedTypes -join ", "). The current types of the value are: $($_.PSTypeNames -join ", ")."))
+                }
+            })]
+        $Tags,
         [ValidateSet("Delete","Retain","Snapshot")]
         [System.String]
         $DeletionPolicy,
@@ -269,6 +287,18 @@ function New-VSSSMPatchBaseline {
                 Condition {
                     $ResourceParams.Add("Condition",$Condition)
                 }
+                Sources {
+                    if (!($ResourceParams["Properties"])) {
+                        $ResourceParams.Add("Properties",([PSCustomObject]@{}))
+                    }
+                    $ResourceParams["Properties"] | Add-Member -MemberType NoteProperty -Name Sources -Value @($Sources)
+                }
+                RejectedPatches {
+                    if (!($ResourceParams["Properties"])) {
+                        $ResourceParams.Add("Properties",([PSCustomObject]@{}))
+                    }
+                    $ResourceParams["Properties"] | Add-Member -MemberType NoteProperty -Name RejectedPatches -Value @($RejectedPatches)
+                }
                 ApprovedPatches {
                     if (!($ResourceParams["Properties"])) {
                         $ResourceParams.Add("Properties",([PSCustomObject]@{}))
@@ -281,17 +311,11 @@ function New-VSSSMPatchBaseline {
                     }
                     $ResourceParams["Properties"] | Add-Member -MemberType NoteProperty -Name PatchGroups -Value @($PatchGroups)
                 }
-                Sources {
+                Tags {
                     if (!($ResourceParams["Properties"])) {
                         $ResourceParams.Add("Properties",([PSCustomObject]@{}))
                     }
-                    $ResourceParams["Properties"] | Add-Member -MemberType NoteProperty -Name Sources -Value @($Sources)
-                }
-                RejectedPatches {
-                    if (!($ResourceParams["Properties"])) {
-                        $ResourceParams.Add("Properties",([PSCustomObject]@{}))
-                    }
-                    $ResourceParams["Properties"] | Add-Member -MemberType NoteProperty -Name RejectedPatches -Value @($RejectedPatches)
+                    $ResourceParams["Properties"] | Add-Member -MemberType NoteProperty -Name Tags -Value @($Tags)
                 }
                 Default {
                     if (!($ResourceParams["Properties"])) {

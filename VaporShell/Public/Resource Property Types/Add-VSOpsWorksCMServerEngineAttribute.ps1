@@ -1,4 +1,4 @@
-function Add-VSOpsWorksCMServerEngineAttribute {
+﻿function Add-VSOpsWorksCMServerEngineAttribute {
     <#
     .SYNOPSIS
         Adds an AWS::OpsWorksCM::Server.EngineAttribute resource property to the template

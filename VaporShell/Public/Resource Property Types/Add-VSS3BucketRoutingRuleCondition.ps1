@@ -1,4 +1,4 @@
-function Add-VSS3BucketRoutingRuleCondition {
+﻿function Add-VSS3BucketRoutingRuleCondition {
     <#
     .SYNOPSIS
         Adds an AWS::S3::Bucket.RoutingRuleCondition resource property to the template

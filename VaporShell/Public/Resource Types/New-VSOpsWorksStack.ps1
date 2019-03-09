@@ -1,4 +1,4 @@
-function New-VSOpsWorksStack {
+﻿function New-VSOpsWorksStack {
     <#
     .SYNOPSIS
         Adds an AWS::OpsWorks::Stack resource to the template

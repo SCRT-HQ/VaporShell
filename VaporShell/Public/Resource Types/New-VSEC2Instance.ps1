@@ -1,4 +1,4 @@
-function New-VSEC2Instance {
+﻿function New-VSEC2Instance {
     <#
     .SYNOPSIS
         Adds an AWS::EC2::Instance resource to the template

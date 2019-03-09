@@ -1,4 +1,4 @@
-function Add-VSKinesisAnalyticsV2ApplicationParallelismConfiguration {
+﻿function Add-VSKinesisAnalyticsV2ApplicationParallelismConfiguration {
     <#
     .SYNOPSIS
         Adds an AWS::KinesisAnalyticsV2::Application.ParallelismConfiguration resource property to the template

@@ -1,4 +1,4 @@
-function Add-VSAutoScalingAutoScalingGroupLaunchTemplateSpecification {
+﻿function Add-VSAutoScalingAutoScalingGroupLaunchTemplateSpecification {
     <#
     .SYNOPSIS
         Adds an AWS::AutoScaling::AutoScalingGroup.LaunchTemplateSpecification resource property to the template

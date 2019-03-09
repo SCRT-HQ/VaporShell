@@ -1,4 +1,4 @@
-function New-VSEC2VPNConnection {
+﻿function New-VSEC2VPNConnection {
     <#
     .SYNOPSIS
         Adds an AWS::EC2::VPNConnection resource to the template

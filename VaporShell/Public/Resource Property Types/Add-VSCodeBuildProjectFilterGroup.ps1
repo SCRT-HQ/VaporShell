@@ -1,4 +1,4 @@
-function Add-VSCodeBuildProjectFilterGroup {
+﻿function Add-VSCodeBuildProjectFilterGroup {
     <#
     .SYNOPSIS
         Adds an AWS::CodeBuild::Project.FilterGroup resource property to the template

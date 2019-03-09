@@ -1,4 +1,4 @@
-function Add-VSGlueTableStorageDescriptor {
+﻿function Add-VSGlueTableStorageDescriptor {
     <#
     .SYNOPSIS
         Adds an AWS::Glue::Table.StorageDescriptor resource property to the template

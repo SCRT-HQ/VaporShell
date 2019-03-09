@@ -1,4 +1,4 @@
-function New-VSGlueTrigger {
+﻿function New-VSGlueTrigger {
     <#
     .SYNOPSIS
         Adds an AWS::Glue::Trigger resource to the template

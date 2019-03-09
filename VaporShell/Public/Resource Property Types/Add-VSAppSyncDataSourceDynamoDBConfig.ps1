@@ -1,4 +1,4 @@
-function Add-VSAppSyncDataSourceDynamoDBConfig {
+﻿function Add-VSAppSyncDataSourceDynamoDBConfig {
     <#
     .SYNOPSIS
         Adds an AWS::AppSync::DataSource.DynamoDBConfig resource property to the template

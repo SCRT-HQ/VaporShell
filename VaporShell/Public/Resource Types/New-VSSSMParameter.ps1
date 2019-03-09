@@ -1,4 +1,4 @@
-function New-VSSSMParameter {
+﻿function New-VSSSMParameter {
     <#
     .SYNOPSIS
         Adds an AWS::SSM::Parameter resource to the template

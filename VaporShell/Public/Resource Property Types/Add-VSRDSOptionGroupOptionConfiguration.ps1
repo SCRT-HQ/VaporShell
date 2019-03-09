@@ -1,4 +1,4 @@
-function Add-VSRDSOptionGroupOptionConfiguration {
+﻿function Add-VSRDSOptionGroupOptionConfiguration {
     <#
     .SYNOPSIS
         Adds an AWS::RDS::OptionGroup.OptionConfiguration resource property to the template

@@ -1,4 +1,4 @@
-function New-VSEC2VPNGateway {
+﻿function New-VSEC2VPNGateway {
     <#
     .SYNOPSIS
         Adds an AWS::EC2::VPNGateway resource to the template

@@ -1,4 +1,4 @@
-function New-VSRedshiftClusterSubnetGroup {
+﻿function New-VSRedshiftClusterSubnetGroup {
     <#
     .SYNOPSIS
         Adds an AWS::Redshift::ClusterSubnetGroup resource to the template

@@ -1,4 +1,4 @@
-function New-VSServiceCatalogLaunchNotificationConstraint {
+﻿function New-VSServiceCatalogLaunchNotificationConstraint {
     <#
     .SYNOPSIS
         Adds an AWS::ServiceCatalog::LaunchNotificationConstraint resource to the template

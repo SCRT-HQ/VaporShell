@@ -1,4 +1,4 @@
-function Add-VSCodeDeployDeploymentGroupAlarm {
+﻿function Add-VSCodeDeployDeploymentGroupAlarm {
     <#
     .SYNOPSIS
         Adds an AWS::CodeDeploy::DeploymentGroup.Alarm resource property to the template

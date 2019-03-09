@@ -1,4 +1,4 @@
-function Add-VSEventsRuleInputTransformer {
+﻿function Add-VSEventsRuleInputTransformer {
     <#
     .SYNOPSIS
         Adds an AWS::Events::Rule.InputTransformer resource property to the template

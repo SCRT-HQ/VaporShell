@@ -1,4 +1,4 @@
-function Add-VSGluePartitionOrder {
+﻿function Add-VSGluePartitionOrder {
     <#
     .SYNOPSIS
         Adds an AWS::Glue::Partition.Order resource property to the template

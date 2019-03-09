@@ -1,4 +1,4 @@
-function Add-VSIoTTopicRuleStepFunctionsAction {
+﻿function Add-VSIoTTopicRuleStepFunctionsAction {
     <#
     .SYNOPSIS
         Adds an AWS::IoT::TopicRule.StepFunctionsAction resource property to the template

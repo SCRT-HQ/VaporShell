@@ -1,4 +1,4 @@
-function New-VSApplicationAutoScalingScalableTarget {
+﻿function New-VSApplicationAutoScalingScalableTarget {
     <#
     .SYNOPSIS
         Adds an AWS::ApplicationAutoScaling::ScalableTarget resource to the template

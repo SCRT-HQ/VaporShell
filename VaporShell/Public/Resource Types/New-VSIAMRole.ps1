@@ -1,4 +1,4 @@
-function New-VSIAMRole {
+﻿function New-VSIAMRole {
     <#
     .SYNOPSIS
         Adds an AWS::IAM::Role resource to the template

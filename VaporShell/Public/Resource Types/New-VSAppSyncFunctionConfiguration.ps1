@@ -1,4 +1,4 @@
-function New-VSAppSyncFunctionConfiguration {
+﻿function New-VSAppSyncFunctionConfiguration {
     <#
     .SYNOPSIS
         Adds an AWS::AppSync::FunctionConfiguration resource to the template

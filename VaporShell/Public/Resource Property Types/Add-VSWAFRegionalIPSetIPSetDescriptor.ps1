@@ -1,4 +1,4 @@
-function Add-VSWAFRegionalIPSetIPSetDescriptor {
+﻿function Add-VSWAFRegionalIPSetIPSetDescriptor {
     <#
     .SYNOPSIS
         Adds an AWS::WAFRegional::IPSet.IPSetDescriptor resource property to the template

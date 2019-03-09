@@ -1,4 +1,4 @@
-function Add-VSEMRInstanceGroupConfigConfiguration {
+﻿function Add-VSEMRInstanceGroupConfigConfiguration {
     <#
     .SYNOPSIS
         Adds an AWS::EMR::InstanceGroupConfig.Configuration resource property to the template

@@ -1,4 +1,4 @@
-function New-VSInspectorResourceGroup {
+﻿function New-VSInspectorResourceGroup {
     <#
     .SYNOPSIS
         Adds an AWS::Inspector::ResourceGroup resource to the template

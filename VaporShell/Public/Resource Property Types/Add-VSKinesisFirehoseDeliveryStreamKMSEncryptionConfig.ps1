@@ -1,4 +1,4 @@
-function Add-VSKinesisFirehoseDeliveryStreamKMSEncryptionConfig {
+﻿function Add-VSKinesisFirehoseDeliveryStreamKMSEncryptionConfig {
     <#
     .SYNOPSIS
         Adds an AWS::KinesisFirehose::DeliveryStream.KMSEncryptionConfig resource property to the template

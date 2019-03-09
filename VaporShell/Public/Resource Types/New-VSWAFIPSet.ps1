@@ -1,4 +1,4 @@
-function New-VSWAFIPSet {
+﻿function New-VSWAFIPSet {
     <#
     .SYNOPSIS
         Adds an AWS::WAF::IPSet resource to the template

@@ -1,4 +1,4 @@
-function Add-VSKinesisAnalyticsV2ApplicationKinesisStreamsInput {
+﻿function Add-VSKinesisAnalyticsV2ApplicationKinesisStreamsInput {
     <#
     .SYNOPSIS
         Adds an AWS::KinesisAnalyticsV2::Application.KinesisStreamsInput resource property to the template

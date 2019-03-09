@@ -1,4 +1,4 @@
-function Add-VSS3BucketTransition {
+﻿function Add-VSS3BucketTransition {
     <#
     .SYNOPSIS
         Adds an AWS::S3::Bucket.Transition resource property to the template

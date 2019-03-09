@@ -1,4 +1,4 @@
-function Add-VSECSTaskDefinitionRepositoryCredentials {
+﻿function Add-VSECSTaskDefinitionRepositoryCredentials {
     <#
     .SYNOPSIS
         Adds an AWS::ECS::TaskDefinition.RepositoryCredentials resource property to the template

@@ -1,4 +1,4 @@
-function Add-VSCodeDeployDeploymentGroupAutoRollbackConfiguration {
+﻿function Add-VSCodeDeployDeploymentGroupAutoRollbackConfiguration {
     <#
     .SYNOPSIS
         Adds an AWS::CodeDeploy::DeploymentGroup.AutoRollbackConfiguration resource property to the template

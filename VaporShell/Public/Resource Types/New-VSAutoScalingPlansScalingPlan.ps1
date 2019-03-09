@@ -1,4 +1,4 @@
-function New-VSAutoScalingPlansScalingPlan {
+﻿function New-VSAutoScalingPlansScalingPlan {
     <#
     .SYNOPSIS
         Adds an AWS::AutoScalingPlans::ScalingPlan resource to the template

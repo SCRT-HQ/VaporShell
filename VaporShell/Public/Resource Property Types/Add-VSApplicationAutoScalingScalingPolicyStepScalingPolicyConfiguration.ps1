@@ -1,4 +1,4 @@
-function Add-VSApplicationAutoScalingScalingPolicyStepScalingPolicyConfiguration {
+﻿function Add-VSApplicationAutoScalingScalingPolicyStepScalingPolicyConfiguration {
     <#
     .SYNOPSIS
         Adds an AWS::ApplicationAutoScaling::ScalingPolicy.StepScalingPolicyConfiguration resource property to the template

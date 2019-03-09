@@ -1,4 +1,4 @@
-function Add-VSSSMMaintenanceWindowTaskLoggingInfo {
+﻿function Add-VSSSMMaintenanceWindowTaskLoggingInfo {
     <#
     .SYNOPSIS
         Adds an AWS::SSM::MaintenanceWindowTask.LoggingInfo resource property to the template

@@ -1,4 +1,4 @@
-function Add-VSAppSyncDataSourceRdsHttpEndpointConfig {
+﻿function Add-VSAppSyncDataSourceRdsHttpEndpointConfig {
     <#
     .SYNOPSIS
         Adds an AWS::AppSync::DataSource.RdsHttpEndpointConfig resource property to the template

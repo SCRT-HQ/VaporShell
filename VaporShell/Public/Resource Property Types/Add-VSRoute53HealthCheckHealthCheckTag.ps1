@@ -1,4 +1,4 @@
-function Add-VSRoute53HealthCheckHealthCheckTag {
+﻿function Add-VSRoute53HealthCheckHealthCheckTag {
     <#
     .SYNOPSIS
         Adds an AWS::Route53::HealthCheck.HealthCheckTag resource property to the template

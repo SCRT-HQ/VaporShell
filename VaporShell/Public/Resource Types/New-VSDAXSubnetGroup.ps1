@@ -1,4 +1,4 @@
-function New-VSDAXSubnetGroup {
+﻿function New-VSDAXSubnetGroup {
     <#
     .SYNOPSIS
         Adds an AWS::DAX::SubnetGroup resource to the template

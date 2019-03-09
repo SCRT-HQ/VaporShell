@@ -1,4 +1,4 @@
-function Add-VSEventsRuleTarget {
+﻿function Add-VSEventsRuleTarget {
     <#
     .SYNOPSIS
         Adds an AWS::Events::Rule.Target resource property to the template

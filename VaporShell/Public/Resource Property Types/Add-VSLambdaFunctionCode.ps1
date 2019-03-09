@@ -1,4 +1,4 @@
-function Add-VSLambdaFunctionCode {
+﻿function Add-VSLambdaFunctionCode {
     <#
     .SYNOPSIS
         Adds an AWS::Lambda::Function.Code resource property to the template

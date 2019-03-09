@@ -1,4 +1,4 @@
-function New-VSLogsSubscriptionFilter {
+﻿function New-VSLogsSubscriptionFilter {
     <#
     .SYNOPSIS
         Adds an AWS::Logs::SubscriptionFilter resource to the template

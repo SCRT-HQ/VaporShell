@@ -1,4 +1,4 @@
-function Add-VSIoTTopicRuleCloudwatchMetricAction {
+﻿function Add-VSIoTTopicRuleCloudwatchMetricAction {
     <#
     .SYNOPSIS
         Adds an AWS::IoT::TopicRule.CloudwatchMetricAction resource property to the template

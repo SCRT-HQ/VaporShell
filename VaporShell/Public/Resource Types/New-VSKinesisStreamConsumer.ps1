@@ -1,4 +1,4 @@
-function New-VSKinesisStreamConsumer {
+﻿function New-VSKinesisStreamConsumer {
     <#
     .SYNOPSIS
         Adds an AWS::Kinesis::StreamConsumer resource to the template

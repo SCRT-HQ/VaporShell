@@ -1,4 +1,4 @@
-function New-VSCodeDeployDeploymentConfig {
+﻿function New-VSCodeDeployDeploymentConfig {
     <#
     .SYNOPSIS
         Adds an AWS::CodeDeploy::DeploymentConfig resource to the template

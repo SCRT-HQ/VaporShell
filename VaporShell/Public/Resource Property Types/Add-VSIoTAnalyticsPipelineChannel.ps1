@@ -1,4 +1,4 @@
-function Add-VSIoTAnalyticsPipelineChannel {
+﻿function Add-VSIoTAnalyticsPipelineChannel {
     <#
     .SYNOPSIS
         Adds an AWS::IoTAnalytics::Pipeline.Channel resource property to the template

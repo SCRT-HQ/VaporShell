@@ -1,4 +1,4 @@
-function Add-VSEC2InstanceElasticInferenceAccelerator {
+﻿function Add-VSEC2InstanceElasticInferenceAccelerator {
     <#
     .SYNOPSIS
         Adds an AWS::EC2::Instance.ElasticInferenceAccelerator resource property to the template

@@ -1,4 +1,4 @@
-function Add-VSAutoScalingAutoScalingGroupLaunchTemplateOverrides {
+﻿function Add-VSAutoScalingAutoScalingGroupLaunchTemplateOverrides {
     <#
     .SYNOPSIS
         Adds an AWS::AutoScaling::AutoScalingGroup.LaunchTemplateOverrides resource property to the template

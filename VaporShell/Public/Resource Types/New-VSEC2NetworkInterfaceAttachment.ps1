@@ -1,4 +1,4 @@
-function New-VSEC2NetworkInterfaceAttachment {
+﻿function New-VSEC2NetworkInterfaceAttachment {
     <#
     .SYNOPSIS
         Adds an AWS::EC2::NetworkInterfaceAttachment resource to the template

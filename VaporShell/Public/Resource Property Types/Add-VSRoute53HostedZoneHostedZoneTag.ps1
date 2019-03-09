@@ -1,4 +1,4 @@
-function Add-VSRoute53HostedZoneHostedZoneTag {
+﻿function Add-VSRoute53HostedZoneHostedZoneTag {
     <#
     .SYNOPSIS
         Adds an AWS::Route53::HostedZone.HostedZoneTag resource property to the template

@@ -1,4 +1,4 @@
-function Add-VSRDSDBClusterScalingConfiguration {
+﻿function Add-VSRDSDBClusterScalingConfiguration {
     <#
     .SYNOPSIS
         Adds an AWS::RDS::DBCluster.ScalingConfiguration resource property to the template

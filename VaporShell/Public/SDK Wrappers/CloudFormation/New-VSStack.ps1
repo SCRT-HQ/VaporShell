@@ -140,8 +140,7 @@ function New-VSStack {
     }
     Process {
         Write-Verbose "Checking if Stack '$StackName' exists and creating a Change Set instead if so."
-        try {
-            Get-VSStack -StackName $StackName -ErrorAction Stop | Out-Null
+        if ($null -ne (Get-VSStack -StackName $StackName -ErrorAction SilentlyContinue)) {
             $changeSetParams = $PSBoundParameters
             @('DisableRollback','OnFailure','StackPolicyBody','StackPolicyURL','TimeoutInMinutes') | ForEach-Object {
                 if ($changeSetParams.ContainsKey($_)) {
@@ -151,7 +150,7 @@ function New-VSStack {
             Write-Verbose "A Stack with name '$StackName' already exists -- creating a Change Set instead."
             New-VSChangeSet @changeSetParams
         }
-        catch {
+        else {
             Write-Verbose "Stack '$StackName' not found -- creating the Stack now."
             $method = "CreateStack"
             $requestType = "Amazon.CloudFormation.Model.$($method)Request"

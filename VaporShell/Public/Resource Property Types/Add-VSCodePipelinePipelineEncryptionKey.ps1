@@ -1,4 +1,4 @@
-function Add-VSCodePipelinePipelineEncryptionKey {
+﻿function Add-VSCodePipelinePipelineEncryptionKey {
     <#
     .SYNOPSIS
         Adds an AWS::CodePipeline::Pipeline.EncryptionKey resource property to the template

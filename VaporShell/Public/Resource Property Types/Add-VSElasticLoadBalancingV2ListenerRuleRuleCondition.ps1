@@ -1,4 +1,4 @@
-function Add-VSElasticLoadBalancingV2ListenerRuleRuleCondition {
+﻿function Add-VSElasticLoadBalancingV2ListenerRuleRuleCondition {
     <#
     .SYNOPSIS
         Adds an AWS::ElasticLoadBalancingV2::ListenerRule.RuleCondition resource property to the template

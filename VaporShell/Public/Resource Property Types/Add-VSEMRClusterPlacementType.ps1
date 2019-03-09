@@ -1,4 +1,4 @@
-function Add-VSEMRClusterPlacementType {
+﻿function Add-VSEMRClusterPlacementType {
     <#
     .SYNOPSIS
         Adds an AWS::EMR::Cluster.PlacementType resource property to the template

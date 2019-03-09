@@ -1,4 +1,4 @@
-function Add-VSEMRClusterKerberosAttributes {
+﻿function Add-VSEMRClusterKerberosAttributes {
     <#
     .SYNOPSIS
         Adds an AWS::EMR::Cluster.KerberosAttributes resource property to the template

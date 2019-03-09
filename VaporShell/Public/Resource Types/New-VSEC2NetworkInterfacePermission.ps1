@@ -1,4 +1,4 @@
-function New-VSEC2NetworkInterfacePermission {
+﻿function New-VSEC2NetworkInterfacePermission {
     <#
     .SYNOPSIS
         Adds an AWS::EC2::NetworkInterfacePermission resource to the template

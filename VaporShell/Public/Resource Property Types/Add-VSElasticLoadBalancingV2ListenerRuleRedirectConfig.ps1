@@ -1,4 +1,4 @@
-function Add-VSElasticLoadBalancingV2ListenerRuleRedirectConfig {
+﻿function Add-VSElasticLoadBalancingV2ListenerRuleRedirectConfig {
     <#
     .SYNOPSIS
         Adds an AWS::ElasticLoadBalancingV2::ListenerRule.RedirectConfig resource property to the template

@@ -1,4 +1,4 @@
-function New-VSWAFRegionalSqlInjectionMatchSet {
+﻿function New-VSWAFRegionalSqlInjectionMatchSet {
     <#
     .SYNOPSIS
         Adds an AWS::WAFRegional::SqlInjectionMatchSet resource to the template

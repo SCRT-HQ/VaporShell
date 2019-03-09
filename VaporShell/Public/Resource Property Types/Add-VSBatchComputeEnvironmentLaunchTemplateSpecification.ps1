@@ -1,4 +1,4 @@
-function Add-VSBatchComputeEnvironmentLaunchTemplateSpecification {
+﻿function Add-VSBatchComputeEnvironmentLaunchTemplateSpecification {
     <#
     .SYNOPSIS
         Adds an AWS::Batch::ComputeEnvironment.LaunchTemplateSpecification resource property to the template

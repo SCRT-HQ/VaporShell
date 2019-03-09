@@ -1,4 +1,4 @@
-function New-VSIoT1ClickPlacement {
+﻿function New-VSIoT1ClickPlacement {
     <#
     .SYNOPSIS
         Adds an AWS::IoT1Click::Placement resource to the template

@@ -1,4 +1,4 @@
-function Add-VSEC2EC2FleetSpotOptionsRequest {
+﻿function Add-VSEC2EC2FleetSpotOptionsRequest {
     <#
     .SYNOPSIS
         Adds an AWS::EC2::EC2Fleet.SpotOptionsRequest resource property to the template

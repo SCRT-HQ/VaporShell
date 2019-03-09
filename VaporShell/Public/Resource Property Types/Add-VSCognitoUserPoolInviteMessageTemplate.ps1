@@ -1,4 +1,4 @@
-function Add-VSCognitoUserPoolInviteMessageTemplate {
+﻿function Add-VSCognitoUserPoolInviteMessageTemplate {
     <#
     .SYNOPSIS
         Adds an AWS::Cognito::UserPool.InviteMessageTemplate resource property to the template

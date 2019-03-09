@@ -1,4 +1,4 @@
-function Add-VSRoboMakerSimulationApplicationSimulationSoftwareSuite {
+﻿function Add-VSRoboMakerSimulationApplicationSimulationSoftwareSuite {
     <#
     .SYNOPSIS
         Adds an AWS::RoboMaker::SimulationApplication.SimulationSoftwareSuite resource property to the template

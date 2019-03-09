@@ -1,4 +1,4 @@
-function New-VSAppStreamImageBuilder {
+﻿function New-VSAppStreamImageBuilder {
     <#
     .SYNOPSIS
         Adds an AWS::AppStream::ImageBuilder resource to the template

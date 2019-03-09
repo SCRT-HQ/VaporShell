@@ -1,4 +1,4 @@
-function New-VSAppStreamFleet {
+﻿function New-VSAppStreamFleet {
     <#
     .SYNOPSIS
         Adds an AWS::AppStream::Fleet resource to the template

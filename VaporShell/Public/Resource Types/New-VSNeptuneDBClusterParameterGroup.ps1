@@ -1,4 +1,4 @@
-function New-VSNeptuneDBClusterParameterGroup {
+﻿function New-VSNeptuneDBClusterParameterGroup {
     <#
     .SYNOPSIS
         Adds an AWS::Neptune::DBClusterParameterGroup resource to the template

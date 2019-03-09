@@ -1,4 +1,4 @@
-function New-VSEC2PlacementGroup {
+﻿function New-VSEC2PlacementGroup {
     <#
     .SYNOPSIS
         Adds an AWS::EC2::PlacementGroup resource to the template

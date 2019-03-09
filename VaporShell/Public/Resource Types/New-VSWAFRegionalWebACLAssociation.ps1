@@ -1,4 +1,4 @@
-function New-VSWAFRegionalWebACLAssociation {
+﻿function New-VSWAFRegionalWebACLAssociation {
     <#
     .SYNOPSIS
         Adds an AWS::WAFRegional::WebACLAssociation resource to the template

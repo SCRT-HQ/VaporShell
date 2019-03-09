@@ -1,4 +1,4 @@
-function Add-VSKinesisAnalyticsV2ApplicationOutputKinesisStreamsOutput {
+﻿function Add-VSKinesisAnalyticsV2ApplicationOutputKinesisStreamsOutput {
     <#
     .SYNOPSIS
         Adds an AWS::KinesisAnalyticsV2::ApplicationOutput.KinesisStreamsOutput resource property to the template

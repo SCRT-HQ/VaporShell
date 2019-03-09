@@ -1,4 +1,4 @@
-function Add-VSGluePartitionPartitionInput {
+﻿function Add-VSGluePartitionPartitionInput {
     <#
     .SYNOPSIS
         Adds an AWS::Glue::Partition.PartitionInput resource property to the template

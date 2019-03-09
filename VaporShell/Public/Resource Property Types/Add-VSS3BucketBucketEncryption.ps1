@@ -1,4 +1,4 @@
-function Add-VSS3BucketBucketEncryption {
+﻿function Add-VSS3BucketBucketEncryption {
     <#
     .SYNOPSIS
         Adds an AWS::S3::Bucket.BucketEncryption resource property to the template

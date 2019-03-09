@@ -1,4 +1,4 @@
-function New-VSRoute53ResolverResolverRule {
+﻿function New-VSRoute53ResolverResolverRule {
     <#
     .SYNOPSIS
         Adds an AWS::Route53Resolver::ResolverRule resource to the template

@@ -1,4 +1,4 @@
-function Add-VSAppSyncDataSourceAwsIamConfig {
+﻿function Add-VSAppSyncDataSourceAwsIamConfig {
     <#
     .SYNOPSIS
         Adds an AWS::AppSync::DataSource.AwsIamConfig resource property to the template

@@ -2,6 +2,7 @@
 
 <!-- TOC -->
 
+* [2.7.1 - 2019-03-09](#271---2019-03-09)
 * [2.7.0 - 2019-03-08](#270---2019-03-08)
 * [2.6.3](#263)
 * [2.6.2](#262)
@@ -40,6 +41,14 @@
 * [0.7.02](#0702)
 
 <!-- /TOC -->
+
+## 2.7.1 - 2019-03-09
+
+* Miscellaneous
+  * Brought Resource Type and Property Type functions up to current spec sheet.
+  * Fixed: Bug in `New-VSStack` introduced in v2.7.0. Initial check if stack exists was in a `try` block, followed by the call to `New-VSChangeSet` if so. If `New-VSChangeSet` fails (i.e. missing Capabilities), it would break out of the `try` block and then try to create the stack new. Since the stack does actually exist in this scenario, that throws an expected Stack Exists error and hides the actual error coming from `New-VSChangeSet`.
+  * Added: `Add-PolicyAction` helper function to enable tab-completion for IAM policy actions, i.e. `clouddirectory:RemoveFacetFromObject` or `organizations:ListHandshakesForAccount`
+  * Added: Examples folder in-repo to house any example scripts.
 
 ## 2.7.0 - 2019-03-08
 

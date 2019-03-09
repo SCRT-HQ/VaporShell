@@ -1,4 +1,4 @@
-function Add-VSIoTAnalyticsPipelineFilter {
+﻿function Add-VSIoTAnalyticsPipelineFilter {
     <#
     .SYNOPSIS
         Adds an AWS::IoTAnalytics::Pipeline.Filter resource property to the template

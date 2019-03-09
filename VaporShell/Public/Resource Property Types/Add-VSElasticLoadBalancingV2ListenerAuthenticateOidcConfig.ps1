@@ -1,4 +1,4 @@
-function Add-VSElasticLoadBalancingV2ListenerAuthenticateOidcConfig {
+﻿function Add-VSElasticLoadBalancingV2ListenerAuthenticateOidcConfig {
     <#
     .SYNOPSIS
         Adds an AWS::ElasticLoadBalancingV2::Listener.AuthenticateOidcConfig resource property to the template

@@ -1,4 +1,4 @@
-function New-VSGuardDutyMaster {
+﻿function New-VSGuardDutyMaster {
     <#
     .SYNOPSIS
         Adds an AWS::GuardDuty::Master resource to the template

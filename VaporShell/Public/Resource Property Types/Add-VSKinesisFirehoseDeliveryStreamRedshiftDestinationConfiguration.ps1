@@ -1,4 +1,4 @@
-function Add-VSKinesisFirehoseDeliveryStreamRedshiftDestinationConfiguration {
+﻿function Add-VSKinesisFirehoseDeliveryStreamRedshiftDestinationConfiguration {
     <#
     .SYNOPSIS
         Adds an AWS::KinesisFirehose::DeliveryStream.RedshiftDestinationConfiguration resource property to the template

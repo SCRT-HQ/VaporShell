@@ -1,4 +1,4 @@
-function New-VSIAMServiceLinkedRole {
+﻿function New-VSIAMServiceLinkedRole {
     <#
     .SYNOPSIS
         Adds an AWS::IAM::ServiceLinkedRole resource to the template

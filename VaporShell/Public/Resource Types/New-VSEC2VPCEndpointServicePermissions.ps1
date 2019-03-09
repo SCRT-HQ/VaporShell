@@ -1,4 +1,4 @@
-function New-VSEC2VPCEndpointServicePermissions {
+﻿function New-VSEC2VPCEndpointServicePermissions {
     <#
     .SYNOPSIS
         Adds an AWS::EC2::VPCEndpointServicePermissions resource to the template

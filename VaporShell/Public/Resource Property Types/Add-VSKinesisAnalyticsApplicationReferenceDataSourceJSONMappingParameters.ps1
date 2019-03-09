@@ -1,4 +1,4 @@
-function Add-VSKinesisAnalyticsApplicationReferenceDataSourceJSONMappingParameters {
+﻿function Add-VSKinesisAnalyticsApplicationReferenceDataSourceJSONMappingParameters {
     <#
     .SYNOPSIS
         Adds an AWS::KinesisAnalytics::ApplicationReferenceDataSource.JSONMappingParameters resource property to the template

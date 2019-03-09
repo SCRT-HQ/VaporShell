@@ -1,4 +1,4 @@
-function Add-VSGlueCrawlerJdbcTarget {
+﻿function Add-VSGlueCrawlerJdbcTarget {
     <#
     .SYNOPSIS
         Adds an AWS::Glue::Crawler.JdbcTarget resource property to the template

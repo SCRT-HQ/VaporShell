@@ -1,4 +1,4 @@
-function Add-VSAppStreamStackStorageConnector {
+﻿function Add-VSAppStreamStackStorageConnector {
     <#
     .SYNOPSIS
         Adds an AWS::AppStream::Stack.StorageConnector resource property to the template

@@ -1,4 +1,4 @@
-function New-VSGuardDutyThreatIntelSet {
+﻿function New-VSGuardDutyThreatIntelSet {
     <#
     .SYNOPSIS
         Adds an AWS::GuardDuty::ThreatIntelSet resource to the template

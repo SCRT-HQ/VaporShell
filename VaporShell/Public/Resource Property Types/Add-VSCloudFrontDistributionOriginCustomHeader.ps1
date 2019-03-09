@@ -1,4 +1,4 @@
-function Add-VSCloudFrontDistributionOriginCustomHeader {
+﻿function Add-VSCloudFrontDistributionOriginCustomHeader {
     <#
     .SYNOPSIS
         Adds an AWS::CloudFront::Distribution.OriginCustomHeader resource property to the template

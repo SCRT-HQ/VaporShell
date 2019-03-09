@@ -1,4 +1,4 @@
-function New-VSAppStreamUser {
+﻿function New-VSAppStreamUser {
     <#
     .SYNOPSIS
         Adds an AWS::AppStream::User resource to the template

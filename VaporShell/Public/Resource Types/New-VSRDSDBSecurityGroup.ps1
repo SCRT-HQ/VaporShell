@@ -1,4 +1,4 @@
-function New-VSRDSDBSecurityGroup {
+﻿function New-VSRDSDBSecurityGroup {
     <#
     .SYNOPSIS
         Adds an AWS::RDS::DBSecurityGroup resource to the template

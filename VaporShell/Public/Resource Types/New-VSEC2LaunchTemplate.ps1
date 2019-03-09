@@ -1,4 +1,4 @@
-function New-VSEC2LaunchTemplate {
+﻿function New-VSEC2LaunchTemplate {
     <#
     .SYNOPSIS
         Adds an AWS::EC2::LaunchTemplate resource to the template

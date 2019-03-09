@@ -1,4 +1,4 @@
-function Add-VSDLMLifecyclePolicyRetainRule {
+﻿function Add-VSDLMLifecyclePolicyRetainRule {
     <#
     .SYNOPSIS
         Adds an AWS::DLM::LifecyclePolicy.RetainRule resource property to the template

@@ -1,4 +1,4 @@
-function New-VSApiGatewayV2Authorizer {
+﻿function New-VSApiGatewayV2Authorizer {
     <#
     .SYNOPSIS
         Adds an AWS::ApiGatewayV2::Authorizer resource to the template

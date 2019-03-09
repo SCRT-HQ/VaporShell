@@ -1,4 +1,4 @@
-function Add-VSIAMGroupPolicy {
+﻿function Add-VSIAMGroupPolicy {
     <#
     .SYNOPSIS
         Adds an AWS::IAM::Group.Policy resource property to the template

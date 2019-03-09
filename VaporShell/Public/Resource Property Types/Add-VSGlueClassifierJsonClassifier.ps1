@@ -1,4 +1,4 @@
-function Add-VSGlueClassifierJsonClassifier {
+﻿function Add-VSGlueClassifierJsonClassifier {
     <#
     .SYNOPSIS
         Adds an AWS::Glue::Classifier.JsonClassifier resource property to the template

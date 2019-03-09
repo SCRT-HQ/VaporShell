@@ -1,4 +1,4 @@
-function New-VSRDSDBInstance {
+﻿function New-VSRDSDBInstance {
     <#
     .SYNOPSIS
         Adds an AWS::RDS::DBInstance resource to the template

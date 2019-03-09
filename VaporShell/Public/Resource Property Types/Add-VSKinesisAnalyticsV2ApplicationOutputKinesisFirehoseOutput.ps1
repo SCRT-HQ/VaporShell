@@ -1,4 +1,4 @@
-function Add-VSKinesisAnalyticsV2ApplicationOutputKinesisFirehoseOutput {
+﻿function Add-VSKinesisAnalyticsV2ApplicationOutputKinesisFirehoseOutput {
     <#
     .SYNOPSIS
         Adds an AWS::KinesisAnalyticsV2::ApplicationOutput.KinesisFirehoseOutput resource property to the template

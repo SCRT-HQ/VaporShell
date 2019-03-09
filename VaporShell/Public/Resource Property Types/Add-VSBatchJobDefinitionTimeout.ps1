@@ -1,4 +1,4 @@
-function Add-VSBatchJobDefinitionTimeout {
+﻿function Add-VSBatchJobDefinitionTimeout {
     <#
     .SYNOPSIS
         Adds an AWS::Batch::JobDefinition.Timeout resource property to the template

@@ -1,4 +1,4 @@
-function New-VSKinesisAnalyticsV2ApplicationReferenceDataSource {
+﻿function New-VSKinesisAnalyticsV2ApplicationReferenceDataSource {
     <#
     .SYNOPSIS
         Adds an AWS::KinesisAnalyticsV2::ApplicationReferenceDataSource resource to the template

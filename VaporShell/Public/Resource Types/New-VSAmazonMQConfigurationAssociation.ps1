@@ -1,4 +1,4 @@
-function New-VSAmazonMQConfigurationAssociation {
+﻿function New-VSAmazonMQConfigurationAssociation {
     <#
     .SYNOPSIS
         Adds an AWS::AmazonMQ::ConfigurationAssociation resource to the template

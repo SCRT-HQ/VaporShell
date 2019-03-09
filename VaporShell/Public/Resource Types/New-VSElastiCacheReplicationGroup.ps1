@@ -1,4 +1,4 @@
-function New-VSElastiCacheReplicationGroup {
+﻿function New-VSElastiCacheReplicationGroup {
     <#
     .SYNOPSIS
         Adds an AWS::ElastiCache::ReplicationGroup resource to the template

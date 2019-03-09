@@ -1,4 +1,4 @@
-function Add-VSApplicationAutoScalingScalingPolicyTargetTrackingScalingPolicyConfiguration {
+﻿function Add-VSApplicationAutoScalingScalingPolicyTargetTrackingScalingPolicyConfiguration {
     <#
     .SYNOPSIS
         Adds an AWS::ApplicationAutoScaling::ScalingPolicy.TargetTrackingScalingPolicyConfiguration resource property to the template

@@ -1,4 +1,4 @@
-function Add-VSAmazonMQBrokerUser {
+﻿function Add-VSAmazonMQBrokerUser {
     <#
     .SYNOPSIS
         Adds an AWS::AmazonMQ::Broker.User resource property to the template

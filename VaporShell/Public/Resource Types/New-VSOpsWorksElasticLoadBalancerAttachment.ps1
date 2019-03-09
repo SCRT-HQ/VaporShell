@@ -1,4 +1,4 @@
-function New-VSOpsWorksElasticLoadBalancerAttachment {
+﻿function New-VSOpsWorksElasticLoadBalancerAttachment {
     <#
     .SYNOPSIS
         Adds an AWS::OpsWorks::ElasticLoadBalancerAttachment resource to the template

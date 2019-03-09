@@ -1,4 +1,4 @@
-function Add-VSKinesisAnalyticsV2ApplicationSqlApplicationConfiguration {
+﻿function Add-VSKinesisAnalyticsV2ApplicationSqlApplicationConfiguration {
     <#
     .SYNOPSIS
         Adds an AWS::KinesisAnalyticsV2::Application.SqlApplicationConfiguration resource property to the template

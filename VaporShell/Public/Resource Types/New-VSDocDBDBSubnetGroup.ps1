@@ -1,4 +1,4 @@
-function New-VSDocDBDBSubnetGroup {
+﻿function New-VSDocDBDBSubnetGroup {
     <#
     .SYNOPSIS
         Adds an AWS::DocDB::DBSubnetGroup resource to the template

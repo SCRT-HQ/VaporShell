@@ -1,4 +1,4 @@
-function Add-VSLambdaFunctionTracingConfig {
+﻿function Add-VSLambdaFunctionTracingConfig {
     <#
     .SYNOPSIS
         Adds an AWS::Lambda::Function.TracingConfig resource property to the template

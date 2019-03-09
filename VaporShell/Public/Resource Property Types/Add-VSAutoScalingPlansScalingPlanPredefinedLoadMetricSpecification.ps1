@@ -1,4 +1,4 @@
-function Add-VSAutoScalingPlansScalingPlanPredefinedLoadMetricSpecification {
+﻿function Add-VSAutoScalingPlansScalingPlanPredefinedLoadMetricSpecification {
     <#
     .SYNOPSIS
         Adds an AWS::AutoScalingPlans::ScalingPlan.PredefinedLoadMetricSpecification resource property to the template

@@ -1,4 +1,4 @@
-function New-VSWAFXssMatchSet {
+﻿function New-VSWAFXssMatchSet {
     <#
     .SYNOPSIS
         Adds an AWS::WAF::XssMatchSet resource to the template

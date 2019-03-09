@@ -1,4 +1,4 @@
-function New-VSCloudFrontStreamingDistribution {
+﻿function New-VSCloudFrontStreamingDistribution {
     <#
     .SYNOPSIS
         Adds an AWS::CloudFront::StreamingDistribution resource to the template

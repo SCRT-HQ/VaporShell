@@ -1,4 +1,4 @@
-function New-VSAutoScalingScheduledAction {
+﻿function New-VSAutoScalingScheduledAction {
     <#
     .SYNOPSIS
         Adds an AWS::AutoScaling::ScheduledAction resource to the template

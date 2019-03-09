@@ -1,4 +1,4 @@
-function New-VSAlexaASKSkill {
+﻿function New-VSAlexaASKSkill {
     <#
     .SYNOPSIS
         Adds an Alexa::ASK::Skill resource to the template

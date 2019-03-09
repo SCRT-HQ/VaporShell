@@ -1,4 +1,4 @@
-function Add-VSIoTAnalyticsDatasetTriggeringDataset {
+﻿function Add-VSIoTAnalyticsDatasetTriggeringDataset {
     <#
     .SYNOPSIS
         Adds an AWS::IoTAnalytics::Dataset.TriggeringDataset resource property to the template

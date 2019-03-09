@@ -1,4 +1,4 @@
-function Add-VSKinesisAnalyticsV2ApplicationMonitoringConfiguration {
+﻿function Add-VSKinesisAnalyticsV2ApplicationMonitoringConfiguration {
     <#
     .SYNOPSIS
         Adds an AWS::KinesisAnalyticsV2::Application.MonitoringConfiguration resource property to the template

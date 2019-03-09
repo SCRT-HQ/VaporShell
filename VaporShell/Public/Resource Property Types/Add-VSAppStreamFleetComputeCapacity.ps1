@@ -1,4 +1,4 @@
-function Add-VSAppStreamFleetComputeCapacity {
+﻿function Add-VSAppStreamFleetComputeCapacity {
     <#
     .SYNOPSIS
         Adds an AWS::AppStream::Fleet.ComputeCapacity resource property to the template

@@ -1,4 +1,4 @@
-function Add-VSEMRClusterStepConfig {
+﻿function Add-VSEMRClusterStepConfig {
     <#
     .SYNOPSIS
         Adds an AWS::EMR::Cluster.StepConfig resource property to the template

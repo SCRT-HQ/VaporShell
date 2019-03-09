@@ -1,4 +1,4 @@
-function New-VSDocDBDBCluster {
+﻿function New-VSDocDBDBCluster {
     <#
     .SYNOPSIS
         Adds an AWS::DocDB::DBCluster resource to the template

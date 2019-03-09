@@ -1,4 +1,4 @@
-function Add-VSCloudFrontStreamingDistributionTrustedSigners {
+﻿function Add-VSCloudFrontStreamingDistributionTrustedSigners {
     <#
     .SYNOPSIS
         Adds an AWS::CloudFront::StreamingDistribution.TrustedSigners resource property to the template

@@ -1,4 +1,4 @@
-function New-VSDMSCertificate {
+﻿function New-VSDMSCertificate {
     <#
     .SYNOPSIS
         Adds an AWS::DMS::Certificate resource to the template

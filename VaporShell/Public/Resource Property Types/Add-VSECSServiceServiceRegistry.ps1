@@ -1,4 +1,4 @@
-function Add-VSECSServiceServiceRegistry {
+﻿function Add-VSECSServiceServiceRegistry {
     <#
     .SYNOPSIS
         Adds an AWS::ECS::Service.ServiceRegistry resource property to the template

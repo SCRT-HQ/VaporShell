@@ -1,4 +1,4 @@
-function Add-VSDMSEndpointDynamoDbSettings {
+﻿function Add-VSDMSEndpointDynamoDbSettings {
     <#
     .SYNOPSIS
         Adds an AWS::DMS::Endpoint.DynamoDbSettings resource property to the template

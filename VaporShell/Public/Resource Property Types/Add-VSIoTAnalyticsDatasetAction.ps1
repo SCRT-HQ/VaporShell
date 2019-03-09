@@ -1,4 +1,4 @@
-function Add-VSIoTAnalyticsDatasetAction {
+﻿function Add-VSIoTAnalyticsDatasetAction {
     <#
     .SYNOPSIS
         Adds an AWS::IoTAnalytics::Dataset.Action resource property to the template

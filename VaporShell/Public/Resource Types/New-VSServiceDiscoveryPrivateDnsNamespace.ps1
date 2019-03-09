@@ -1,4 +1,4 @@
-function New-VSServiceDiscoveryPrivateDnsNamespace {
+﻿function New-VSServiceDiscoveryPrivateDnsNamespace {
     <#
     .SYNOPSIS
         Adds an AWS::ServiceDiscovery::PrivateDnsNamespace resource to the template

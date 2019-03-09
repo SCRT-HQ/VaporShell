@@ -1,4 +1,4 @@
-function Add-VSIoTTopicRuleSnsAction {
+﻿function Add-VSIoTTopicRuleSnsAction {
     <#
     .SYNOPSIS
         Adds an AWS::IoT::TopicRule.SnsAction resource property to the template

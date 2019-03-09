@@ -1,4 +1,4 @@
-function Add-VSIoTAnalyticsPipelineActivity {
+﻿function Add-VSIoTAnalyticsPipelineActivity {
     <#
     .SYNOPSIS
         Adds an AWS::IoTAnalytics::Pipeline.Activity resource property to the template

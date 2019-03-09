@@ -1,4 +1,4 @@
-function Add-VSCloudWatchAlarmMetricDataQuery {
+﻿function Add-VSCloudWatchAlarmMetricDataQuery {
     <#
     .SYNOPSIS
         Adds an AWS::CloudWatch::Alarm.MetricDataQuery resource property to the template

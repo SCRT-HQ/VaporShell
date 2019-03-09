@@ -1,4 +1,4 @@
-function New-VSApiGatewayV2Model {
+﻿function New-VSApiGatewayV2Model {
     <#
     .SYNOPSIS
         Adds an AWS::ApiGatewayV2::Model resource to the template

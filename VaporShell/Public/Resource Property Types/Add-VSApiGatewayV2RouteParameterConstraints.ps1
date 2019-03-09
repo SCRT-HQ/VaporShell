@@ -1,4 +1,4 @@
-function Add-VSApiGatewayV2RouteParameterConstraints {
+﻿function Add-VSApiGatewayV2RouteParameterConstraints {
     <#
     .SYNOPSIS
         Adds an AWS::ApiGatewayV2::Route.ParameterConstraints resource property to the template

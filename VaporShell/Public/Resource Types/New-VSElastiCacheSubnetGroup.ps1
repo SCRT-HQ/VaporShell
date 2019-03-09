@@ -1,4 +1,4 @@
-function New-VSElastiCacheSubnetGroup {
+﻿function New-VSElastiCacheSubnetGroup {
     <#
     .SYNOPSIS
         Adds an AWS::ElastiCache::SubnetGroup resource to the template

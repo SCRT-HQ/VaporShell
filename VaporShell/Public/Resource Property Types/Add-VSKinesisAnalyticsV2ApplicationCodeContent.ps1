@@ -1,4 +1,4 @@
-function Add-VSKinesisAnalyticsV2ApplicationCodeContent {
+﻿function Add-VSKinesisAnalyticsV2ApplicationCodeContent {
     <#
     .SYNOPSIS
         Adds an AWS::KinesisAnalyticsV2::Application.CodeContent resource property to the template

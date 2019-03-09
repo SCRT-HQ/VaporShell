@@ -1,4 +1,4 @@
-function New-VSBatchJobQueue {
+﻿function New-VSBatchJobQueue {
     <#
     .SYNOPSIS
         Adds an AWS::Batch::JobQueue resource to the template

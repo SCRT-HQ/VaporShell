@@ -1,4 +1,4 @@
-function New-VSEC2TransitGatewayRouteTablePropagation {
+﻿function New-VSEC2TransitGatewayRouteTablePropagation {
     <#
     .SYNOPSIS
         Adds an AWS::EC2::TransitGatewayRouteTablePropagation resource to the template

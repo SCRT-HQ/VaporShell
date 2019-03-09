@@ -1,4 +1,4 @@
-function New-VSIAMUserToGroupAddition {
+﻿function New-VSIAMUserToGroupAddition {
     <#
     .SYNOPSIS
         Adds an AWS::IAM::UserToGroupAddition resource to the template

@@ -1,4 +1,4 @@
-function Add-VSGlueCrawlerSchemaChangePolicy {
+﻿function Add-VSGlueCrawlerSchemaChangePolicy {
     <#
     .SYNOPSIS
         Adds an AWS::Glue::Crawler.SchemaChangePolicy resource property to the template

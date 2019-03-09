@@ -1,4 +1,4 @@
-function New-VSDataPipelinePipeline {
+﻿function New-VSDataPipelinePipeline {
     <#
     .SYNOPSIS
         Adds an AWS::DataPipeline::Pipeline resource to the template

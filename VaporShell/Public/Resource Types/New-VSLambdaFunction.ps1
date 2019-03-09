@@ -1,4 +1,4 @@
-function New-VSLambdaFunction {
+﻿function New-VSLambdaFunction {
     <#
     .SYNOPSIS
         Adds an AWS::Lambda::Function resource to the template

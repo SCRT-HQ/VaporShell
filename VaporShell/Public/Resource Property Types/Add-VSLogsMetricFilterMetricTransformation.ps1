@@ -1,4 +1,4 @@
-function Add-VSLogsMetricFilterMetricTransformation {
+﻿function Add-VSLogsMetricFilterMetricTransformation {
     <#
     .SYNOPSIS
         Adds an AWS::Logs::MetricFilter.MetricTransformation resource property to the template

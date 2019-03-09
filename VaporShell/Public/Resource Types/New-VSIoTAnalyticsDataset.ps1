@@ -1,4 +1,4 @@
-function New-VSIoTAnalyticsDataset {
+﻿function New-VSIoTAnalyticsDataset {
     <#
     .SYNOPSIS
         Adds an AWS::IoTAnalytics::Dataset resource to the template

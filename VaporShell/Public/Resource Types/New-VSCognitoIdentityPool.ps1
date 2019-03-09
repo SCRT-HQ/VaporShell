@@ -1,4 +1,4 @@
-function New-VSCognitoIdentityPool {
+﻿function New-VSCognitoIdentityPool {
     <#
     .SYNOPSIS
         Adds an AWS::Cognito::IdentityPool resource to the template

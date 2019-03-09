@@ -1,4 +1,4 @@
-function New-VSAutoScalingLaunchConfiguration {
+﻿function New-VSAutoScalingLaunchConfiguration {
     <#
     .SYNOPSIS
         Adds an AWS::AutoScaling::LaunchConfiguration resource to the template

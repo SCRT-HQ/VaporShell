@@ -1,4 +1,4 @@
-function New-VSIoTThingPrincipalAttachment {
+﻿function New-VSIoTThingPrincipalAttachment {
     <#
     .SYNOPSIS
         Adds an AWS::IoT::ThingPrincipalAttachment resource to the template

@@ -1,4 +1,4 @@
-function Add-VSGlueTriggerAction {
+﻿function Add-VSGlueTriggerAction {
     <#
     .SYNOPSIS
         Adds an AWS::Glue::Trigger.Action resource property to the template

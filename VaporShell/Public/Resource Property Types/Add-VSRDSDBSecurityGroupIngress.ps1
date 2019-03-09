@@ -1,4 +1,4 @@
-function Add-VSRDSDBSecurityGroupIngress {
+﻿function Add-VSRDSDBSecurityGroupIngress {
     <#
     .SYNOPSIS
         Adds an AWS::RDS::DBSecurityGroup.Ingress resource property to the template

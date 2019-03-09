@@ -1,4 +1,4 @@
-function New-VSConfigDeliveryChannel {
+﻿function New-VSConfigDeliveryChannel {
     <#
     .SYNOPSIS
         Adds an AWS::Config::DeliveryChannel resource to the template

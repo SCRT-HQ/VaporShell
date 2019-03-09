@@ -1,4 +1,4 @@
-function Add-VSAppStreamImageBuilderDomainJoinInfo {
+﻿function Add-VSAppStreamImageBuilderDomainJoinInfo {
     <#
     .SYNOPSIS
         Adds an AWS::AppStream::ImageBuilder.DomainJoinInfo resource property to the template

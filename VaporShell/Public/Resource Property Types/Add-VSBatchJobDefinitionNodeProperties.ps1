@@ -1,4 +1,4 @@
-function Add-VSBatchJobDefinitionNodeProperties {
+﻿function Add-VSBatchJobDefinitionNodeProperties {
     <#
     .SYNOPSIS
         Adds an AWS::Batch::JobDefinition.NodeProperties resource property to the template

@@ -1,4 +1,4 @@
-function Add-VSECSServiceNetworkConfiguration {
+﻿function Add-VSECSServiceNetworkConfiguration {
     <#
     .SYNOPSIS
         Adds an AWS::ECS::Service.NetworkConfiguration resource property to the template

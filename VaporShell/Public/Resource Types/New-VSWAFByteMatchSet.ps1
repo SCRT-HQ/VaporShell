@@ -1,4 +1,4 @@
-function New-VSWAFByteMatchSet {
+﻿function New-VSWAFByteMatchSet {
     <#
     .SYNOPSIS
         Adds an AWS::WAF::ByteMatchSet resource to the template

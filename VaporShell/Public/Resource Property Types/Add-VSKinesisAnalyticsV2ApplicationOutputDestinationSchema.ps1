@@ -1,4 +1,4 @@
-function Add-VSKinesisAnalyticsV2ApplicationOutputDestinationSchema {
+﻿function Add-VSKinesisAnalyticsV2ApplicationOutputDestinationSchema {
     <#
     .SYNOPSIS
         Adds an AWS::KinesisAnalyticsV2::ApplicationOutput.DestinationSchema resource property to the template

@@ -1,4 +1,4 @@
-function Add-VSGlueJobConnectionsList {
+﻿function Add-VSGlueJobConnectionsList {
     <#
     .SYNOPSIS
         Adds an AWS::Glue::Job.ConnectionsList resource property to the template

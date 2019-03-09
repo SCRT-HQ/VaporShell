@@ -1,4 +1,4 @@
-function New-VSWAFRule {
+﻿function New-VSWAFRule {
     <#
     .SYNOPSIS
         Adds an AWS::WAF::Rule resource to the template

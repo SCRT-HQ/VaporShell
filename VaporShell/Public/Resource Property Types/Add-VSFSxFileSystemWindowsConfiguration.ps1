@@ -1,4 +1,4 @@
-function Add-VSFSxFileSystemWindowsConfiguration {
+﻿function Add-VSFSxFileSystemWindowsConfiguration {
     <#
     .SYNOPSIS
         Adds an AWS::FSx::FileSystem.WindowsConfiguration resource property to the template

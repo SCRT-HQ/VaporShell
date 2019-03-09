@@ -1,4 +1,4 @@
-function Add-VSIoTTopicRuleIotAnalyticsAction {
+﻿function Add-VSIoTTopicRuleIotAnalyticsAction {
     <#
     .SYNOPSIS
         Adds an AWS::IoT::TopicRule.IotAnalyticsAction resource property to the template

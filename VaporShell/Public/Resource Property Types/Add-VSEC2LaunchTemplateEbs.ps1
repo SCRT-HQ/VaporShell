@@ -1,4 +1,4 @@
-function Add-VSEC2LaunchTemplateEbs {
+﻿function Add-VSEC2LaunchTemplateEbs {
     <#
     .SYNOPSIS
         Adds an AWS::EC2::LaunchTemplate.Ebs resource property to the template

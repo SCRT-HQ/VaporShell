@@ -1,4 +1,4 @@
-function Add-VSApiGatewayDomainNameEndpointConfiguration {
+﻿function Add-VSApiGatewayDomainNameEndpointConfiguration {
     <#
     .SYNOPSIS
         Adds an AWS::ApiGateway::DomainName.EndpointConfiguration resource property to the template

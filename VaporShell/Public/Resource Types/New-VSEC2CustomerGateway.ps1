@@ -1,4 +1,4 @@
-function New-VSEC2CustomerGateway {
+﻿function New-VSEC2CustomerGateway {
     <#
     .SYNOPSIS
         Adds an AWS::EC2::CustomerGateway resource to the template

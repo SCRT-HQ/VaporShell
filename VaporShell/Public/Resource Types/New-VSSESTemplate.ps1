@@ -1,4 +1,4 @@
-function New-VSSESTemplate {
+﻿function New-VSSESTemplate {
     <#
     .SYNOPSIS
         Adds an AWS::SES::Template resource to the template

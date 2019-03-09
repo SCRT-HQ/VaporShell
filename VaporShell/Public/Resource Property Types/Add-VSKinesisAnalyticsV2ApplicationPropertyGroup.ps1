@@ -1,4 +1,4 @@
-function Add-VSKinesisAnalyticsV2ApplicationPropertyGroup {
+﻿function Add-VSKinesisAnalyticsV2ApplicationPropertyGroup {
     <#
     .SYNOPSIS
         Adds an AWS::KinesisAnalyticsV2::Application.PropertyGroup resource property to the template

@@ -1,4 +1,4 @@
-function New-VSServiceCatalogTagOptionAssociation {
+﻿function New-VSServiceCatalogTagOptionAssociation {
     <#
     .SYNOPSIS
         Adds an AWS::ServiceCatalog::TagOptionAssociation resource to the template

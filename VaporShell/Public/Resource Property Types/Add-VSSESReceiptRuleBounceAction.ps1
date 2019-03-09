@@ -1,4 +1,4 @@
-function Add-VSSESReceiptRuleBounceAction {
+﻿function Add-VSSESReceiptRuleBounceAction {
     <#
     .SYNOPSIS
         Adds an AWS::SES::ReceiptRule.BounceAction resource property to the template

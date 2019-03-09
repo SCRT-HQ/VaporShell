@@ -1,4 +1,4 @@
-function Add-VSRoute53RecordSetGroupRecordSet {
+﻿function Add-VSRoute53RecordSetGroupRecordSet {
     <#
     .SYNOPSIS
         Adds an AWS::Route53::RecordSetGroup.RecordSet resource property to the template

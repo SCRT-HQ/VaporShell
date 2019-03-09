@@ -1,4 +1,4 @@
-function Add-VSAppSyncDataSourceRelationalDatabaseConfig {
+﻿function Add-VSAppSyncDataSourceRelationalDatabaseConfig {
     <#
     .SYNOPSIS
         Adds an AWS::AppSync::DataSource.RelationalDatabaseConfig resource property to the template

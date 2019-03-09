@@ -1,4 +1,4 @@
-function New-VSSQSQueuePolicy {
+﻿function New-VSSQSQueuePolicy {
     <#
     .SYNOPSIS
         Adds an AWS::SQS::QueuePolicy resource to the template

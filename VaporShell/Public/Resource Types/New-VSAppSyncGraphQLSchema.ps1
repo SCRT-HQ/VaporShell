@@ -1,4 +1,4 @@
-function New-VSAppSyncGraphQLSchema {
+﻿function New-VSAppSyncGraphQLSchema {
     <#
     .SYNOPSIS
         Adds an AWS::AppSync::GraphQLSchema resource to the template

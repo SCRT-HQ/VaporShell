@@ -1,4 +1,4 @@
-function New-VSIoT1ClickProject {
+﻿function New-VSIoT1ClickProject {
     <#
     .SYNOPSIS
         Adds an AWS::IoT1Click::Project resource to the template

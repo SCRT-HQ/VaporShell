@@ -1,4 +1,4 @@
-function Add-VSKinesisAnalyticsV2ApplicationInputLambdaProcessor {
+﻿function Add-VSKinesisAnalyticsV2ApplicationInputLambdaProcessor {
     <#
     .SYNOPSIS
         Adds an AWS::KinesisAnalyticsV2::Application.InputLambdaProcessor resource property to the template

@@ -1,4 +1,4 @@
-function New-VSGlueDatabase {
+﻿function New-VSGlueDatabase {
     <#
     .SYNOPSIS
         Adds an AWS::Glue::Database resource to the template

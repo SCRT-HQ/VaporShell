@@ -1,4 +1,4 @@
-function Add-VSGlueConnectionConnectionInput {
+﻿function Add-VSGlueConnectionConnectionInput {
     <#
     .SYNOPSIS
         Adds an AWS::Glue::Connection.ConnectionInput resource property to the template

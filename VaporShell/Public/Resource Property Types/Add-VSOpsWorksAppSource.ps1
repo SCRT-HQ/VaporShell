@@ -1,4 +1,4 @@
-function Add-VSOpsWorksAppSource {
+﻿function Add-VSOpsWorksAppSource {
     <#
     .SYNOPSIS
         Adds an AWS::OpsWorks::App.Source resource property to the template

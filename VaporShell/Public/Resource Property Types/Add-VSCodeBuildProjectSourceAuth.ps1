@@ -1,4 +1,4 @@
-function Add-VSCodeBuildProjectSourceAuth {
+﻿function Add-VSCodeBuildProjectSourceAuth {
     <#
     .SYNOPSIS
         Adds an AWS::CodeBuild::Project.SourceAuth resource property to the template

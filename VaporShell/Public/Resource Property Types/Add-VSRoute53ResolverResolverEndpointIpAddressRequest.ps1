@@ -1,4 +1,4 @@
-function Add-VSRoute53ResolverResolverEndpointIpAddressRequest {
+﻿function Add-VSRoute53ResolverResolverEndpointIpAddressRequest {
     <#
     .SYNOPSIS
         Adds an AWS::Route53Resolver::ResolverEndpoint.IpAddressRequest resource property to the template

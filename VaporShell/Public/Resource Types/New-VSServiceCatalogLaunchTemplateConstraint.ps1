@@ -1,4 +1,4 @@
-function New-VSServiceCatalogLaunchTemplateConstraint {
+﻿function New-VSServiceCatalogLaunchTemplateConstraint {
     <#
     .SYNOPSIS
         Adds an AWS::ServiceCatalog::LaunchTemplateConstraint resource to the template

@@ -1,4 +1,4 @@
-function Add-VSIoTAnalyticsPipelineAddAttributes {
+﻿function Add-VSIoTAnalyticsPipelineAddAttributes {
     <#
     .SYNOPSIS
         Adds an AWS::IoTAnalytics::Pipeline.AddAttributes resource property to the template

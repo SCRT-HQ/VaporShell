@@ -1,4 +1,4 @@
-function Add-VSDMSEndpointElasticsearchSettings {
+﻿function Add-VSDMSEndpointElasticsearchSettings {
     <#
     .SYNOPSIS
         Adds an AWS::DMS::Endpoint.ElasticsearchSettings resource property to the template

@@ -1,4 +1,4 @@
-function Add-VSIoTAnalyticsDatasetDeltaTime {
+﻿function Add-VSIoTAnalyticsDatasetDeltaTime {
     <#
     .SYNOPSIS
         Adds an AWS::IoTAnalytics::Dataset.DeltaTime resource property to the template

@@ -1,4 +1,4 @@
-function New-VSEC2TransitGateway {
+﻿function New-VSEC2TransitGateway {
     <#
     .SYNOPSIS
         Adds an AWS::EC2::TransitGateway resource to the template

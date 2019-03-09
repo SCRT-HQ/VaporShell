@@ -1,4 +1,4 @@
-function Add-VSKinesisAnalyticsV2ApplicationCloudWatchLoggingOptionCloudWatchLoggingOption {
+﻿function Add-VSKinesisAnalyticsV2ApplicationCloudWatchLoggingOptionCloudWatchLoggingOption {
     <#
     .SYNOPSIS
         Adds an AWS::KinesisAnalyticsV2::ApplicationCloudWatchLoggingOption.CloudWatchLoggingOption resource property to the template

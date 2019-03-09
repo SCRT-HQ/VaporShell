@@ -1,4 +1,4 @@
-function Add-VSKinesisAnalyticsV2ApplicationEnvironmentProperties {
+﻿function Add-VSKinesisAnalyticsV2ApplicationEnvironmentProperties {
     <#
     .SYNOPSIS
         Adds an AWS::KinesisAnalyticsV2::Application.EnvironmentProperties resource property to the template

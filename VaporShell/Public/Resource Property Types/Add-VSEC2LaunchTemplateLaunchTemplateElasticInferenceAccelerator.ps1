@@ -1,4 +1,4 @@
-function Add-VSEC2LaunchTemplateLaunchTemplateElasticInferenceAccelerator {
+﻿function Add-VSEC2LaunchTemplateLaunchTemplateElasticInferenceAccelerator {
     <#
     .SYNOPSIS
         Adds an AWS::EC2::LaunchTemplate.LaunchTemplateElasticInferenceAccelerator resource property to the template

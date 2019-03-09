@@ -1,4 +1,4 @@
-function Add-VSEC2EC2FleetFleetLaunchTemplateOverridesRequest {
+﻿function Add-VSEC2EC2FleetFleetLaunchTemplateOverridesRequest {
     <#
     .SYNOPSIS
         Adds an AWS::EC2::EC2Fleet.FleetLaunchTemplateOverridesRequest resource property to the template

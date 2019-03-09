@@ -1,4 +1,4 @@
-function Add-VSDMSEndpointKinesisSettings {
+﻿function Add-VSDMSEndpointKinesisSettings {
     <#
     .SYNOPSIS
         Adds an AWS::DMS::Endpoint.KinesisSettings resource property to the template

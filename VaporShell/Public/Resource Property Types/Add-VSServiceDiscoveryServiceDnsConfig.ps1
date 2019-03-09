@@ -1,4 +1,4 @@
-function Add-VSServiceDiscoveryServiceDnsConfig {
+﻿function Add-VSServiceDiscoveryServiceDnsConfig {
     <#
     .SYNOPSIS
         Adds an AWS::ServiceDiscovery::Service.DnsConfig resource property to the template

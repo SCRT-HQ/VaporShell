@@ -1,4 +1,4 @@
-function New-VSEMRInstanceFleetConfig {
+﻿function New-VSEMRInstanceFleetConfig {
     <#
     .SYNOPSIS
         Adds an AWS::EMR::InstanceFleetConfig resource to the template

@@ -1,4 +1,4 @@
-function New-VSEC2EIPAssociation {
+﻿function New-VSEC2EIPAssociation {
     <#
     .SYNOPSIS
         Adds an AWS::EC2::EIPAssociation resource to the template

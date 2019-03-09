@@ -1,4 +1,4 @@
-function Add-VSIoTAnalyticsDatasetContainerAction {
+﻿function Add-VSIoTAnalyticsDatasetContainerAction {
     <#
     .SYNOPSIS
         Adds an AWS::IoTAnalytics::Dataset.ContainerAction resource property to the template

@@ -1,4 +1,4 @@
-function New-VSCloudTrailTrail {
+﻿function New-VSCloudTrailTrail {
     <#
     .SYNOPSIS
         Adds an AWS::CloudTrail::Trail resource to the template

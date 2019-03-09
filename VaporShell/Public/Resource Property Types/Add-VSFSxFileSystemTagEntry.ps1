@@ -1,4 +1,4 @@
-function Add-VSFSxFileSystemTagEntry {
+﻿function Add-VSFSxFileSystemTagEntry {
     <#
     .SYNOPSIS
         Adds an AWS::FSx::FileSystem.TagEntry resource property to the template

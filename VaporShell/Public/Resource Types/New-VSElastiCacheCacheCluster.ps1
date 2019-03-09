@@ -1,4 +1,4 @@
-function New-VSElastiCacheCacheCluster {
+﻿function New-VSElastiCacheCacheCluster {
     <#
     .SYNOPSIS
         Adds an AWS::ElastiCache::CacheCluster resource to the template

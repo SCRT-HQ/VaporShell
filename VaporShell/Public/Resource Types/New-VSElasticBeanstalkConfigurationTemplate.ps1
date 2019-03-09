@@ -1,4 +1,4 @@
-function New-VSElasticBeanstalkConfigurationTemplate {
+﻿function New-VSElasticBeanstalkConfigurationTemplate {
     <#
     .SYNOPSIS
         Adds an AWS::ElasticBeanstalk::ConfigurationTemplate resource to the template

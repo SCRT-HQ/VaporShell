@@ -1,4 +1,4 @@
-function Add-VSCodePipelineCustomActionTypeArtifactDetails {
+﻿function Add-VSCodePipelineCustomActionTypeArtifactDetails {
     <#
     .SYNOPSIS
         Adds an AWS::CodePipeline::CustomActionType.ArtifactDetails resource property to the template

@@ -1,4 +1,4 @@
-function New-VSRoute53HealthCheck {
+﻿function New-VSRoute53HealthCheck {
     <#
     .SYNOPSIS
         Adds an AWS::Route53::HealthCheck resource to the template

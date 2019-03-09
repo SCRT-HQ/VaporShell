@@ -1,4 +1,4 @@
-function Add-VSIoTAnalyticsChannelRetentionPeriod {
+﻿function Add-VSIoTAnalyticsChannelRetentionPeriod {
     <#
     .SYNOPSIS
         Adds an AWS::IoTAnalytics::Channel.RetentionPeriod resource property to the template

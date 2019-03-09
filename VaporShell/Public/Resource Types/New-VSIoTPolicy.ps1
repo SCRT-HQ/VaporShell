@@ -1,4 +1,4 @@
-function New-VSIoTPolicy {
+﻿function New-VSIoTPolicy {
     <#
     .SYNOPSIS
         Adds an AWS::IoT::Policy resource to the template

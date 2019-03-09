@@ -1,4 +1,4 @@
-function New-VSCognitoUserPoolClient {
+﻿function New-VSCognitoUserPoolClient {
     <#
     .SYNOPSIS
         Adds an AWS::Cognito::UserPoolClient resource to the template

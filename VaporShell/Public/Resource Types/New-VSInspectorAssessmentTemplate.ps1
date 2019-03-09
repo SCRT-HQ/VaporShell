@@ -1,4 +1,4 @@
-function New-VSInspectorAssessmentTemplate {
+﻿function New-VSInspectorAssessmentTemplate {
     <#
     .SYNOPSIS
         Adds an AWS::Inspector::AssessmentTemplate resource to the template

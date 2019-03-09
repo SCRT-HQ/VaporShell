@@ -1,4 +1,4 @@
-function Add-VSElasticLoadBalancingV2LoadBalancerSubnetMapping {
+﻿function Add-VSElasticLoadBalancingV2LoadBalancerSubnetMapping {
     <#
     .SYNOPSIS
         Adds an AWS::ElasticLoadBalancingV2::LoadBalancer.SubnetMapping resource property to the template

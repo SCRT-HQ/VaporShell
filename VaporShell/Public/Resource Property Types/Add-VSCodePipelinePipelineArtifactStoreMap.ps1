@@ -1,4 +1,4 @@
-function Add-VSCodePipelinePipelineArtifactStoreMap {
+﻿function Add-VSCodePipelinePipelineArtifactStoreMap {
     <#
     .SYNOPSIS
         Adds an AWS::CodePipeline::Pipeline.ArtifactStoreMap resource property to the template

@@ -1,4 +1,4 @@
-function New-VSEC2SecurityGroup {
+﻿function New-VSEC2SecurityGroup {
     <#
     .SYNOPSIS
         Adds an AWS::EC2::SecurityGroup resource to the template

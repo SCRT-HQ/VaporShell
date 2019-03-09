@@ -1,4 +1,4 @@
-function New-VSAppStreamStackUserAssociation {
+﻿function New-VSAppStreamStackUserAssociation {
     <#
     .SYNOPSIS
         Adds an AWS::AppStream::StackUserAssociation resource to the template

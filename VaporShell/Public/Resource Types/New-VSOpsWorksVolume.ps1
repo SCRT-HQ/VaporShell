@@ -1,4 +1,4 @@
-function New-VSOpsWorksVolume {
+﻿function New-VSOpsWorksVolume {
     <#
     .SYNOPSIS
         Adds an AWS::OpsWorks::Volume resource to the template

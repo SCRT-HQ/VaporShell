@@ -1,4 +1,4 @@
-function Add-VSCloudFrontDistributionLogging {
+﻿function Add-VSCloudFrontDistributionLogging {
     <#
     .SYNOPSIS
         Adds an AWS::CloudFront::Distribution.Logging resource property to the template

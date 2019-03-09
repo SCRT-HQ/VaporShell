@@ -1,4 +1,4 @@
-function Add-VSWorkSpacesWorkspaceWorkspaceProperties {
+﻿function Add-VSWorkSpacesWorkspaceWorkspaceProperties {
     <#
     .SYNOPSIS
         Adds an AWS::WorkSpaces::Workspace.WorkspaceProperties resource property to the template

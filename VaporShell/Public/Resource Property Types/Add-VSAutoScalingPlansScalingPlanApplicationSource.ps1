@@ -1,4 +1,4 @@
-function Add-VSAutoScalingPlansScalingPlanApplicationSource {
+﻿function Add-VSAutoScalingPlansScalingPlanApplicationSource {
     <#
     .SYNOPSIS
         Adds an AWS::AutoScalingPlans::ScalingPlan.ApplicationSource resource property to the template

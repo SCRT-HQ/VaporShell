@@ -1,4 +1,4 @@
-function Add-VSIAMUserLoginProfile {
+﻿function Add-VSIAMUserLoginProfile {
     <#
     .SYNOPSIS
         Adds an AWS::IAM::User.LoginProfile resource property to the template

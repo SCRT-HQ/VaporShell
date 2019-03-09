@@ -1,4 +1,4 @@
-function Add-VSIoTTopicRuleLambdaAction {
+﻿function Add-VSIoTTopicRuleLambdaAction {
     <#
     .SYNOPSIS
         Adds an AWS::IoT::TopicRule.LambdaAction resource property to the template

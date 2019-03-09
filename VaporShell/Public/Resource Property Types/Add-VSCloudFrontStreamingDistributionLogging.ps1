@@ -1,4 +1,4 @@
-function Add-VSCloudFrontStreamingDistributionLogging {
+﻿function Add-VSCloudFrontStreamingDistributionLogging {
     <#
     .SYNOPSIS
         Adds an AWS::CloudFront::StreamingDistribution.Logging resource property to the template

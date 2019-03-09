@@ -1,4 +1,4 @@
-function Add-VSRDSDBInstanceProcessorFeature {
+﻿function Add-VSRDSDBInstanceProcessorFeature {
     <#
     .SYNOPSIS
         Adds an AWS::RDS::DBInstance.ProcessorFeature resource property to the template

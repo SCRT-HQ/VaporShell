@@ -1,4 +1,4 @@
-function Add-VSCognitoIdentityPoolPushSync {
+﻿function Add-VSCognitoIdentityPoolPushSync {
     <#
     .SYNOPSIS
         Adds an AWS::Cognito::IdentityPool.PushSync resource property to the template

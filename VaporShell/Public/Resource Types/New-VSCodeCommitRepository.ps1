@@ -1,4 +1,4 @@
-function New-VSCodeCommitRepository {
+﻿function New-VSCodeCommitRepository {
     <#
     .SYNOPSIS
         Adds an AWS::CodeCommit::Repository resource to the template
