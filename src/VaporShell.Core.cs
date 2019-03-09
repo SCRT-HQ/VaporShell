@@ -11,9 +11,6 @@ namespace VaporShell.Core {
         Retain,
         Snapshot
     }
-    public class Function {
-        public Function() { }
-    }
     public class AutoScalingCreationPolicy {
         public int MinSuccessfulInstancesPercent { get; set; }
 

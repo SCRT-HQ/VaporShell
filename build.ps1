@@ -2,18 +2,16 @@
 [cmdletbinding(DefaultParameterSetName = 'task')]
 param(
     [parameter(ParameterSetName = 'task', Position = 0)]
-    [ValidateSet('Init','Update','Clean','Compile','Import','Pester','PesterOnly','Deploy')]
+    [ValidateSet('Init','Update','Clean','Compile','CompileCSharp','Import','Pester','PesterOnly','Deploy')]
     [string[]]
-    $Task = @('Init','Update','Clean','Compile','Import'),
-
+    $Task = @('Init','Clean','CompileCSharp','Compile','Import'),
+    [parameter(ParameterSetName = 'task')]
+    [switch]
+    $UpdateModules,
     [parameter(ParameterSetName = 'help')]
-    [switch]$Help,
-
-    [switch]$UpdateModules
+    [switch]
+    $Help
 )
-
-Write-Host 'PS >_ Get-Command dotnet'
-Get-Command dotnet
 
 # build/init script borrowed from PoshBot x Brandon Olin
 Get-PackageProvider -Name Nuget -ForceBootstrap -Verbose:$false | Out-Null
@@ -137,12 +135,6 @@ else {
         'psake' | Resolve-Module @update -Verbose
         Set-BuildEnvironment -Force
         Write-Host -ForegroundColor Green "Modules successfully resolved..."
-        Write-Host -ForegroundColor Green "Invoking psake with task list: [ $($Task -join ', ') ]`n"
-        $psakeParams = @{
-            nologo = $true
-            buildFile = "$PSScriptRoot\psake.ps1"
-            taskList = $Task
-        }
         if ($Task -eq 'TestOnly') {
             $global:ExcludeTag = @('Module')
         }
@@ -155,8 +147,14 @@ else {
         else {
             $global:ForceDeploy = $false
         }
+        Write-Host -ForegroundColor Green "Invoking psake with task list: [ $($Task -join ', ') ]`n"
+        $psakeParams = @{
+            nologo = $true
+            buildFile = "$PSScriptRoot\psake.ps1"
+            taskList = $Task
+        }
         Invoke-psake @psakeParams @verbose
-        if ($Task -contains 'Import' -and $psake.build_success) {
+        if ($finalTasks -contains 'Import' -and $psake.build_success) {
             Import-Module ([System.IO.Path]::Combine($env:BHBuildOutput,$env:BHProjectName)) -Verbose:$false
         }
         exit ( [int]( -not $psake.build_success ) )
