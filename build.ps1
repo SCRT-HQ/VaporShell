@@ -4,7 +4,7 @@ param(
     [parameter(ParameterSetName = 'task', Position = 0)]
     [ValidateSet('Init','Update','Clean','Compile','CompileCSharp','Import','Pester','PesterOnly','Deploy')]
     [string[]]
-    $Task = @('Init','Clean','CompileCSharp','Compile','Import'),
+    $Task = @('Compile','Import'),
     [parameter(ParameterSetName = 'task')]
     [switch]
     $UpdateModules,
@@ -27,6 +27,27 @@ $PSDefaultParameterValues = @{
     'Install-Module:Scope' = 'CurrentUser'
     'Install-Module:Verbose' = $false
 }
+
+function Show-Colors ([Switch]$Grid) {
+    $colors = [enum]::GetValues([System.ConsoleColor])
+    if ($Grid) {
+        Foreach ($bgcolor in $colors) {
+            Foreach ($fgcolor in $colors) {
+                Write-Host "$fgcolor|"  -ForegroundColor $fgcolor -BackgroundColor $bgcolor -NoNewLine
+            }
+            Write-Host " on $bgcolor"
+        }
+    }
+    else {
+        $max = ($colors | ForEach-Object { "$_ ".Length } | Measure-Object -Maximum).Maximum
+        foreach ( $color in $colors ) {
+            Write-Host (" {0,2} {1,$max} " -f [int]$color,$color) -NoNewline
+            Write-Host "$color" -Foreground $color
+        }
+    }
+}
+
+Show-Colors -Grid
 
 function Resolve-Module {
     [Cmdletbinding()]

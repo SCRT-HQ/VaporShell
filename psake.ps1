@@ -38,8 +38,6 @@ task Init {
     if ($env:BHProjectName -cne $moduleName) {
         $env:BHProjectName = $moduleName
     }
-    Write-Host 'PS >_ Get-Command dotnet'
-    Get-Command dotnet -ErrorAction Stop
 } -description 'Initialize build environment'
 
 task Update -depends Init {
@@ -52,24 +50,31 @@ task Update -depends Init {
 
 task Clean -depends Init {
     Remove-Module -Name $env:BHProjectName -Force -ErrorAction SilentlyContinue -Verbose:$false
-
     if (Test-Path -Path $outputDir) {
-        Get-ChildItem -Path $outputDir -Recurse -File | Where-Object {$_.FullName -notlike "*dll" -or $_.Name -like "Test*.xml"} | Remove-Item -Force -Recurse
+        $allClean = $true
+        Get-ChildItem -Path $outputDir -Recurse -File | ForEach-Object {
+            $item = $_
+            try {
+                $item | Remove-Item -Force
+            }
+            catch {
+                $err = $_
+                Write-Warning "[Skipped]`n`t [$($item.FullName)]`n`t Error: $($err.Exception.Message)"
+                $allClean = $false
+            }
+        }
+        if ($allClean) {
+            Write-Host -ForegroundColor Green "All files successfully cleaned! Removing folder structure now"
+            Write-Host -ForegroundColor Magenta "PS >_ Remove-Item $outputModDir -Recurse -Force"
+            Remove-Item $outputModDir -Recurse -Force
+        }
     } else {
         New-Item -Path $outputDir -ItemType Directory > $null
     }
     "    Cleaned previous output directory [$outputDir]"
 } -description 'Cleans module output directory'
 
-task CompileCSharp -depends Init {
-    Push-Location "$PSScriptRoot\src"
-    "    Running:`n      - dotnet clean`n      - dotnet build -c $buildConfiguration --force"
-    dotnet clean
-    dotnet build -c $buildConfiguration --force
-    Pop-Location
-}
-
-task Compile -depends Update,Clean,CompileCSharp {
+task CompilePowerShell -depends Clean {
     $functionsToExport = @()
     New-Item -Path $outputModDir -ItemType Directory -ErrorAction SilentlyContinue > $null
     New-Item -Path $outputModVerDir -ItemType Directory -ErrorAction SilentlyContinue > $null
@@ -127,18 +132,23 @@ $VaporshellPath = $PSScriptRoot
     '    Setting remainder of PSM1 contents...'
 @"
 
-# Load AWS .NET SDK if not already loaded
-if (!([AppDomain]::CurrentDomain.GetAssemblies() | Where-Object {`$_.Location -like "*AWSSDK.CloudFormation.dll"})) {
-    if (`$IsCoreCLR) {
-        Write-Verbose "Loading AWS SDK for *NetCore*!"
-        `$sdkPath = (Join-Path `$Script:VaporshellPath "bin\NetCore" -Resolve)
-    }
-    else {
-        Write-Verbose "Loading AWS SDK for *Net45*!"
-        `$sdkPath = (Join-Path `$Script:VaporshellPath "bin\Net45" -Resolve)
-    }
-    Get-ChildItem `$sdkPath -Filter "*.dll" | ForEach-Object {
+# Load the .NET assemblies
+if (`$PSVersionTable.PSVersion.Major -ge 6) {
+    Write-Verbose "Loading the *netcore* assemblies!"
+    `$sdkPath = (Join-Path `$Script:VaporshellPath "bin\NetCore" -Resolve)
+}
+else {
+    Write-Verbose "Loading the *net45* assemblies!"
+    `$sdkPath = (Join-Path `$Script:VaporshellPath "bin\Net45" -Resolve)
+}
+Get-ChildItem `$sdkPath -Filter "*.dll" | ForEach-Object {
+    `$assName = `$_.Name
+    try {
         [reflection.assembly]::LoadFrom("`$(`$_.FullName)") | Out-Null
+        Write-Verbose "Loaded: `$assName"
+    }
+    catch {
+        Write-Verbose "Failed to load: `$assName"
     }
 }
 
@@ -194,9 +204,38 @@ Export-ModuleMember -Function (Get-Command -Module VaporShell.DSL).Name -Variabl
     Get-ChildItem $outputModVerDir | Format-Table -Autosize
 } -description 'Compiles module from source'
 
+task CompileCSharp -depends CompilePowerShell {
+    Write-Host -ForegroundColor Magenta 'PS >_ Get-Command dotnet | Select-Object Name,Version'
+    Write-Host (Get-Command dotnet | Select-Object Name,Version | Out-String)
+    Push-Location "$PSScriptRoot\src"
+    Write-Host -ForegroundColor Magenta "PS >_ dotnet clean"
+    dotnet clean | Write-Host
+    Write-Host -ForegroundColor Magenta "PS >_ dotnet build -c $buildConfiguration --force"
+    dotnet build -c $buildConfiguration --force | Write-Host
+    Get-ChildItem ".\bin\$buildConfiguration\net45" | ForEach-Object {
+        try {
+            $_ | Copy-Item -Destination "$outputModVerDir\bin\Net45" -Force
+        }
+        catch {
+            Write-Warning $_.Exception.Message
+        }
+    }
+    Get-ChildItem ".\bin\$buildConfiguration\netstandard2.0" | ForEach-Object {
+        try {
+            $_ | Copy-Item -Destination "$outputModVerDir\bin\NetCore" -Force
+        }
+        catch {
+            Write-Warning $_.Exception.Message
+        }
+    }
+    Pop-Location
+}
+
+task Compile -depends CompileCSharp
+
 Task Import -Depends Init {
     '    Testing import of compiled module'
-    Import-Module (Join-Path $outputModVerDir "$($env:BHProjectName).psd1")
+    Import-Module (Join-Path $outputModVerDir "$($env:BHProjectName).psd1") -Verbose:$false
 } -description 'Imports the newly compiled module'
 
 $pesterScriptBlock = {
