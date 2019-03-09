@@ -1,7 +1,8 @@
 AWS::AccountId
-AWS::StackId
-AWS::NoValue
-AWS::NotificationARNs
-AWS::Region
-AWS::StackName
 AWS::Include
+AWS::NotificationARNs
+AWS::NoValue
+AWS::Region
+AWS::StackId
+AWS::StackName
+AWS::URLSuffix

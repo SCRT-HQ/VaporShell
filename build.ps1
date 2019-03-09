@@ -12,6 +12,9 @@ param(
     [switch]$UpdateModules
 )
 
+Write-Host 'PS >_ Get-Command dotnet'
+Get-Command dotnet
+
 # build/init script borrowed from PoshBot x Brandon Olin
 Get-PackageProvider -Name Nuget -ForceBootstrap -Verbose:$false | Out-Null
 Set-PSRepository -Name PSGallery -InstallationPolicy Trusted -Verbose:$false

@@ -2,21 +2,21 @@ function New-VaporResource {
     <#
     .SYNOPSIS
         Adds a Resource object to the template
-    
+
     .DESCRIPTION
         The required Resources section declares the AWS resources that you want to include in the stack, such as an Amazon EC2 instance or an Amazon S3 bucket. You must declare each resource separately; however, if you have multiple resources of the same type, you can declare them together by separating them with commas.
 
     .LINK
         http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/resources-section-structure.html
-    
+
     .PARAMETER LogicalId
         The logical ID must be alphanumeric (A-Za-z0-9) and unique within the template. Use the logical name to reference the resource in other parts of the template. For example, if you want to map an Amazon Elastic Block Store volume to an Amazon EC2 instance, you reference the logical IDs to associate the block stores with the instance.
 
         In addition to the logical ID, certain resources also have a physical ID, which is the actual assigned name for that resource, such as an EC2 instance ID or an S3 bucket name. Use the physical IDs to identify resources outside of AWS CloudFormation templates, but only after the resources have been created. For example, you might give an EC2 instance resource a logical ID of MyEC2Instance; but when AWS CloudFormation creates the instance, AWS CloudFormation automatically generates and assigns a physical ID (such as i-28f9ba55) to the instance. You can use this physical ID to identify the instance and view its properties (such as the DNS name) by using the Amazon EC2 console. For resources that support custom names, you can assign your own names (physical IDs) to help you quickly identify resources. For example, you can name an S3 bucket that stores logs as MyPerformanceLogs.
-    
+
     .PARAMETER Type
         The resource type identifies the type of resource that you are declaring. For example, AWS::EC2::Instance declares an EC2 instance. For a list of all of the resource types, see AWS Resource Types Reference.
-    
+
     .PARAMETER Properties
         This is a collection of Resource properties are additional options that you can specify for a resource. For example, for each EC2 instance, you must specify an Amazon Machine Image (AMI) ID for that instance.
 
@@ -48,7 +48,7 @@ function New-VaporResource {
         Use the UpdatePolicy attribute to specify how AWS CloudFormation handles updates to the AWS::AutoScaling::AutoScalingGroup resource. AWS CloudFormation invokes one of three update policies depending on the type of change you make or whether a scheduled action is associated with the Auto Scaling group.
 
         You must use the "Add-UpdatePolicy" function here.
-    
+
     .PARAMETER Condition
         Logical ID of the condition that this resource needs to be true in order for this resource to be provisioned.
 
@@ -62,7 +62,7 @@ function New-VaporResource {
             }
         ))
 
-        When the template is exported, this will convert to: 
+        When the template is exported, this will convert to:
 ```json
 {
     "AWSTemplateFormatVersion": "2010-09-09",
@@ -77,7 +77,7 @@ function New-VaporResource {
                             "",
                             [
                                 "Queue=",
-                                {    
+                                {
                                 "Ref": "MyQueue"
                                 }
                             ]
@@ -86,8 +86,8 @@ function New-VaporResource {
                 },
                 "AvailabilityZone": "us-east-1a",
                 "ImageId": "ami-20b65349"
-            }  
-        }    
+            }
+        }
     }
 }
 ```
