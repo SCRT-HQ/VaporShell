@@ -27,12 +27,19 @@ Properties {
     }
 }
 
+. "$PSScriptRoot\ci\sbfunctions.ps1"
+
 #Task Default -Depends Init,Test,Build,Deploy
 task default -depends Pester
 
+FormatTaskName "
+----------------------------------------------------------------------
+Executing task: {0}
+----------------------------------------------------------------------"
+
 task Init {
     Set-Location $ProjectRoot
-    "Build System Details:"
+    &$log "Build System Details:"
     Get-Item ENV:BH*
     Get-Item ENV:BUILD*
     if ($env:BHProjectName -cne $moduleName) {
@@ -41,7 +48,7 @@ task Init {
 } -description 'Initialize build environment'
 
 task Update -depends Init {
-    '    Updating Resource and Property Type functions with current AWS spec sheet...'
+    &$log 'Updating Resource and Property Type functions with current AWS spec sheet...'
     Remove-Module $env:BHProjectName -ErrorAction SilentlyContinue -Force -Verbose:$false
     Import-Module $env:BHPSModuleManifest -Force -Verbose:$false
     Update-VSResourceFunctions
@@ -64,16 +71,16 @@ task Clean -depends Init {
             }
         }
         if ($allClean) {
-            Write-Host -ForegroundColor Green "All files successfully cleaned! Removing folder structure now"
+            &$log "All files successfully cleaned! Removing folder structure now"
             if (Test-Path $outputModDir) {
-                Write-Host -ForegroundColor Magenta "PS >_ Remove-Item $outputModDir -Recurse -Force"
+                &$log -c "Remove-Item $outputModDir -Recurse -Force"
                 Remove-Item $outputModDir -Recurse -Force
             }
         }
     } else {
         New-Item -Path $outputDir -ItemType Directory > $null
     }
-    "    Cleaned previous output directory [$outputDir]"
+    &$log "Cleaned previous output directory [$outputDir]"
 } -description 'Cleans module output directory'
 
 task CompilePowerShell -depends Clean {
@@ -82,7 +89,7 @@ task CompilePowerShell -depends Clean {
     New-Item -Path $outputModVerDir -ItemType Directory -ErrorAction SilentlyContinue > $null
 
     # Append items to psm1
-    '    Creating psm1...'
+    &$log 'Creating psm1...'
 @'
 Param(
     # This no longer does anything as of v2.6.0, leaving for backwards compatiblity
@@ -93,47 +100,47 @@ $VaporshellPath = $PSScriptRoot
 '@ | Set-Content -Path (Join-Path -Path $outputModVerDir -ChildPath "$($ENV:BHProjectName).psm1") -Encoding UTF8 -Force
     $psm1 = Get-Item (Join-Path -Path $outputModVerDir -ChildPath "$($ENV:BHProjectName).psm1")
 
-    '    Adding Private functions to psm1...'
+    &$log 'Adding Private functions to psm1...'
     Get-ChildItem -Path (Join-Path -Path $sut -ChildPath 'Private') -Recurse -File | Where-Object {$_.Name -ne 'PseudoParams.txt'} | ForEach-Object {
         "$(Get-Content $_.FullName -Raw)`n" | Add-Content -Path $psm1 -Encoding UTF8
     }
-    '    Adding Public functions to psm1...'
+    &$log 'Adding Public functions to psm1...'
     Get-ChildItem -Path (Join-Path -Path $sut -ChildPath 'Public') -Recurse -File | Where-Object {$_.FullName -notlike "*Development Tools*"} | ForEach-Object {
         "$(Get-Content $_.FullName -Raw)`nExport-ModuleMember -Function '$($_.BaseName)'`n" | Add-Content -Path $psm1 -Encoding UTF8
         $functionsToExport += $_.BaseName
     }
 
-    '    Copying bin path...'
+    &$log 'Copying bin path...'
     New-Item -Path "$outputModVerDir\bin" -ItemType Directory -ErrorAction SilentlyContinue > $null
     New-Item -Path "$outputModVerDir\bin\Net45" -ItemType Directory -ErrorAction SilentlyContinue > $null
     New-Item -Path "$outputModVerDir\bin\NetCore" -ItemType Directory -ErrorAction SilentlyContinue > $null
     Copy-Item -Path "$sut\bin\*" -Destination "$outputModVerDir\bin" -Recurse -ErrorAction SilentlyContinue
 
-    '    Copying DSL module...'
+    &$log 'Copying DSL module...'
     New-Item -Path "$outputModVerDir\DSL" -ItemType Directory -ErrorAction SilentlyContinue > $null
     Copy-Item -Path "$sut\DSL\*" -Destination "$outputModVerDir\DSL" -Recurse -ErrorAction SilentlyContinue
 
-    '    Creating Variable hash...'
+    &$log 'Creating Variable hash...'
     $varHash = @("@{")
     Get-Content -Path "$($env:BHPSModulePath)\Private\PseudoParams.txt" | ForEach-Object {
         $name = "_$(($_ -replace "::").Trim())"
-        $varHash += "    '$name' = '$($_.Trim())'"
+        $varHash += &$log "'$name' = '$($_.Trim())'"
     }
     $varHash += "}"
 
-    '    Creating Alias hash...'
+    &$log 'Creating Alias hash...'
     $aliasHash = @("@{")
     Get-ChildItem "$($env:BHPSModulePath)\Public\Intrinsic Functions" | ForEach-Object {
         $name = ($_.BaseName).Replace('Add-','')
-        $aliasHash += "    '$name' = '$($_.BaseName.Trim())'"
+        $aliasHash += &$log "'$name' = '$($_.BaseName.Trim())'"
     }
     Get-ChildItem "$($env:BHPSModulePath)\Public\Condition Functions" | ForEach-Object {
         $name = ($_.BaseName).Replace('Add-','')
-        $aliasHash += "    '$name' = '$($_.BaseName.Trim())'"
+        $aliasHash += &$log "'$name' = '$($_.BaseName.Trim())'"
     }
     $aliasHash += "}"
 
-    '    Setting remainder of PSM1 contents...'
+    &$log 'Setting remainder of PSM1 contents...'
 @"
 
 # Load the .NET assemblies
@@ -179,10 +186,10 @@ Import-Module `$DSLModulePath -DisableNameChecking -Force
 Export-ModuleMember -Function (Get-Command -Module VaporShell.DSL).Name -Variable `$vars -Alias `$aliases
 "@ | Add-Content -Path $psm1 -Encoding UTF8
 
-    '    Copying manifest...'
+    &$log 'Copying manifest...'
     Copy-Item -Path $env:BHPSModuleManifest -Destination $outputModVerDir
 
-    '    Updating manifest...'
+    &$log 'Updating manifest...'
     $dslModuleName = "VaporShell.DSL"
     Import-Module "$($env:BHPSModulePath)\DSL\$($dslModuleName).psm1" -DisableNameChecking -Force -Verbose:$false
     $dslFunctions = (Get-Command -Module $dslModuleName).Name
@@ -203,21 +210,21 @@ Export-ModuleMember -Function (Get-Command -Module VaporShell.DSL).Name -Variabl
     Update-ModuleManifest -Path (Get-ChildItem $outputModVerDir | Where-Object {$_.Name -eq "$($env:BHProjectName).psd1"}).FullName -FunctionsToExport (($functionsToExport + $dslFunctions) | Sort-Object) -AliasesToExport ($aliases | Sort-Object) -VariablesToExport $vars
 
     if ((Get-ChildItem $outputModVerDir | Where-Object {$_.Name -eq "$($env:BHProjectName).psd1"}).BaseName -cne $env:BHProjectName) {
-        '    Renaming manifest to correct casing...'
+        &$log 'Renaming manifest to correct casing...'
         Rename-Item (Join-Path $outputModVerDir "$($env:BHProjectName).psd1") -NewName "$($env:BHProjectName).psd1" -Force
     }
-    "    Created compiled module at [$outputModDir]!"
-    '    Output version directory contents:'
+    &$log "Created compiled module at [$outputModDir]!"
+    &$log 'Output version directory contents:'
     Get-ChildItem $outputModVerDir | Format-Table -Autosize
 } -description 'Compiles module from source'
 
 task CompileCSharp -depends CompilePowerShell {
-    Write-Host -ForegroundColor Magenta 'PS >_ Get-Command dotnet | Select-Object Name,Version'
-    Write-Host (Get-Command dotnet | Select-Object Name,Version | Out-String)
+    &$log -c 'Get-Command dotnet | Select-Object Name,Version'
+    &$log -x "$(Get-Command dotnet | Select-Object Name,Version | Out-String)"
     Push-Location "$PSScriptRoot\src"
-    Write-Host -ForegroundColor Magenta "PS >_ dotnet clean"
+    &$log -c "dotnet clean"
     dotnet clean | Write-Host
-    Write-Host -ForegroundColor Magenta "PS >_ dotnet build -c $buildConfiguration --force"
+    &$log -c "dotnet build -c $buildConfiguration --force"
     dotnet build -c $buildConfiguration --force | Write-Host
     Get-ChildItem ".\bin\$buildConfiguration\net45" -Filter "*.dll" | ForEach-Object {
         try {
@@ -241,18 +248,18 @@ task CompileCSharp -depends CompilePowerShell {
 task Compile -depends CompileCSharp
 
 Task Import -Depends Init {
-    '    Testing import of compiled module'
+    &$log 'Testing import of compiled module'
     Import-Module (Join-Path $outputModVerDir "$($env:BHProjectName).psd1") -Verbose:$false
 } -description 'Imports the newly compiled module'
 
 $pesterScriptBlock = {
-    "    Installing the latest version of Pester"
+    &$log "Installing the latest version of Pester"
     Install-Module -Name Pester -Repository PSGallery -Scope CurrentUser -AllowClobber -SkipPublisherCheck -Confirm:$false -ErrorAction Stop -Force -Verbose:$false
     Import-Module -Name Pester -Verbose:$false -Force
-    "    Getting correctly cased FullName for $outputModDir..."
+    &$log "Getting correctly cased FullName for $outputModDir..."
     $outputModDir = (Get-ChildItem (Split-Path $outputModDir -Parent) -Directory | Where-Object {$_.Name -eq (Get-Item $outputModDir).Name}).FullName
-    "    FullName resolved to $outputModDir..."
-    '    Pushing location...'
+    &$log "FullName resolved to $outputModDir..."
+    &$log 'Pushing location...'
     try {
         Push-Location $outputModDir -PassThru
     }
@@ -261,16 +268,16 @@ $pesterScriptBlock = {
         Write-Error $_
     }
     if (-not $ENV:BHProjectPath) {
-        '    Setting Build Environment...'
+        &$log 'Setting Build Environment...'
         Set-BuildEnvironment -Path $PSScriptRoot\..
     }
 
     $origModulePath = $env:PSModulePath
     if ( $env:PSModulePath.split($pathSeperator) -notcontains $outputDir ) {
-        '    Updating PSModulePath to include OutputDir...'
+        &$log 'Updating PSModulePath to include OutputDir...'
         $env:PSModulePath = ($outputDir + $pathSeperator + $origModulePath)
     }
-    "    Removing and reimporting $($env:BHProjectName) module..."
+    &$log "Removing and reimporting $($env:BHProjectName) module..."
     Remove-Module $ENV:BHProjectName -ErrorAction SilentlyContinue -Verbose:$false
     Import-Module -Name $outputModDir -Force -Verbose:$false
     $testResultsXml = Join-Path -Path $outputDir -ChildPath $TestFile
@@ -282,13 +289,13 @@ $pesterScriptBlock = {
     }
     if ($global:ExcludeTag) {
         $pesterParams['ExcludeTag'] = $global:ExcludeTag
-        "    Invoking Pester and excluding tag(s) [$($global:ExcludeTag -join ', ')]..."
+        &$log "Invoking Pester and excluding tag(s) [$($global:ExcludeTag -join ', ')]..."
     }
     else {
-        '    Invoking Pester...'
+        &$log 'Invoking Pester...'
     }
     $testResults = Invoke-Pester @pesterParams
-    '    Pester invocation complete!'
+    &$log 'Pester invocation complete!'
     if ($testResults.FailedCount -gt 0) {
         $testResults | Format-List
         Write-Error -Message 'One or more Pester tests failed. Build cannot continue!'
@@ -307,7 +314,7 @@ task Analyze -Depends Pester {
     $warnings = $analysis | Where-Object {$_.Severity -eq 'Warning'}
 
     if (($errors.Count -eq 0) -and ($warnings.Count -eq 0)) {
-        '    PSScriptAnalyzer passed without errors or warnings'
+        &$log 'PSScriptAnalyzer passed without errors or warnings'
     }
 
     if (@($errors).Count -gt 0) {
@@ -399,7 +406,7 @@ Task Deploy -Depends Init {
     }
     if (($env:BHBuildSystem -eq 'VSTS' -and $env:BHCommitMessage -match '!deploy' -and $env:BHBranchName -eq "master") -or $global:ForceDeploy -eq $true) {
         if ($null -eq (Get-Module PoshTwit -ListAvailable)) {
-            "    Installing PoshTwit module..."
+            &$log "Installing PoshTwit module..."
             Install-Module PoshTwit -Scope CurrentUser
         }
         Import-Module PoshTwit -Verbose:$false
@@ -446,24 +453,24 @@ Task Deploy -Depends Init {
         if ($versionToDeploy) {
             try {
                 if ($ENV:BHBuildSystem -eq 'VSTS' -and -not [String]::IsNullOrEmpty($env:NugetApiKey)) {
-                    "    Publishing version [$($versionToDeploy)] to PSGallery..."
+                    &$log "Publishing version [$($versionToDeploy)] to PSGallery..."
                     Update-Metadata -Path (Join-Path $outputModVerDir "$($env:BHProjectName).psd1") -PropertyName ModuleVersion -Value $versionToDeploy
                     Publish-Module -Path $outputModVerDir -NuGetApiKey $env:NugetApiKey -Repository PSGallery
-                    "    Deployment successful!"
+                    &$log "Deployment successful!"
                 }
                 else {
-                    "    [SKIPPED] Deployment of version [$($versionToDeploy)] to PSGallery"
+                    &$log "[SKIPPED] Deployment of version [$($versionToDeploy)] to PSGallery"
                 }
                 $commitId = git rev-parse --verify HEAD
                 if (-not [String]::IsNullOrEmpty($env:GitHubPAT)) {
-                    "    Creating Release ZIP..."
+                    &$log "Creating Release ZIP..."
                     $zipPath = [System.IO.Path]::Combine($PSScriptRoot,"$($env:BHProjectName).zip")
                     if (Test-Path $zipPath) {
                         Remove-Item $zipPath -Force
                     }
                     Add-Type -Assembly System.IO.Compression.FileSystem
                     [System.IO.Compression.ZipFile]::CreateFromDirectory($outputModDir,$zipPath)
-                    "    Publishing Release v$($versionToDeploy) @ commit Id [$($commitId)] to GitHub..."
+                    &$log "Publishing Release v$($versionToDeploy) @ commit Id [$($commitId)] to GitHub..."
                     $ReleaseNotes = "# Changelog`n`n"
                     $ReleaseNotes += (git log -1 --pretty=%B | Select-Object -Skip 2) -join "`n"
                     $ReleaseNotes += "`n`n***`n`n# Instructions`n`n"
@@ -493,29 +500,30 @@ Task Deploy -Depends Init {
                         GitHubApiKey     = $env:GitHubPAT
                         Draft            = $false
                     }
+                    &$log -c 'Publish-GitHubRelease @gitHubParams'
                     Publish-GitHubRelease @gitHubParams
-                    "    Release creation successful!"
+                    &$log "Release creation successful!"
                 }
                 else {
-                    "    [SKIPPED] Publishing Release v$($versionToDeploy) @ commit Id [$($commitId)] to GitHub"
+                    &$log "[SKIPPED] Publishing Release v$($versionToDeploy) @ commit Id [$($commitId)] to GitHub"
                 }
                 if ($ENV:BHBuildSystem -eq 'VSTS' -and -not [String]::IsNullOrEmpty($env:TwitterAccessSecret) -and -not [String]::IsNullOrEmpty($env:TwitterAccessToken) -and -not [String]::IsNullOrEmpty($env:TwitterConsumerKey) -and -not [String]::IsNullOrEmpty($env:TwitterConsumerSecret)) {
-                    "    Publishing tweet about new release..."
+                    &$log "Publishing tweet about new release..."
                     $manifest = Import-PowerShellDataFile -Path (Join-Path $outputModVerDir "$($env:BHProjectName).psd1")
                     $text = "#$($env:BHProjectName) v$($versionToDeploy) is now available on the #PSGallery! https://www.powershellgallery.com/packages/$($env:BHProjectName) #PowerShell"
                     $manifest.PrivateData.PSData.Tags | Foreach-Object {
                         $text += " #$($_)"
                     }
                     if ($text.Length -gt 280) {
-                        "    Trimming [$($text.Length - 280)] extra characters from tweet text to get to 280 character limit..."
+                        &$log "Trimming [$($text.Length - 280)] extra characters from tweet text to get to 280 character limit..."
                         $text = $text.Substring(0,280)
                     }
-                    "    Tweet text: $text"
+                    &$log "Tweet text: $text"
                     Publish-Tweet -Tweet $text -ConsumerKey $env:TwitterConsumerKey -ConsumerSecret $env:TwitterConsumerSecret -AccessToken $env:TwitterAccessToken -AccessSecret $env:TwitterAccessSecret
-                    "    Tweet successful!"
+                    &$log "Tweet successful!"
                 }
                 else {
-                    "    [SKIPPED] Twitter update of new release"
+                    &$log "[SKIPPED] Twitter update of new release"
                 }
             }
             catch {

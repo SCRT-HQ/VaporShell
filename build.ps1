@@ -13,44 +13,66 @@ param(
     $Help
 )
 
-$heading = {
-    param(
-        [parameter(Position = 0,ValueFromRemainingArguments)]
-        [String]
-        $Title
-    )
-    $lines = '----------------------------------------------------------------------'
-    @(
-        ''
-        $lines
-        $($Title -join " ")
-        $lines
-    ) | Write-Host
-}
-$summary = {
-    param(
-        [parameter(Position = 0)]
-        [String]
-        $Project,
-        [parameter(Position = 1,ValueFromRemainingArguments)]
-        [String[]]
-        $State
-    )
-    &$heading Environment Summary
-    @(
-        "Project : $Project"
-        "State   : $($State -join " ")"
-        "Engine  : PowerShell $($PSVersionTable.PSVersion.ToString())"
-        "Host OS : $(if($PSVersionTable.PSVersion.Major -le 5 -or $IsWindows){"Windows"}elseif($IsLinux){"Linux"}elseif($IsMacOS){"macOS"}else{"[UNKNOWN]"})"
-        "PWD     : $PWD"
-        ''
-    ) | Write-Host
-}
+$env:_BuildStart = Get-Date -Format 'o'
+
+. "$PSScriptRoot\ci\sbfunctions.ps1"
+
 &$summary VaporShell Build started
 
+&$heading Setting environment variables
+$projectName = 'VaporShell'
+$gitVars = if (Test-Path Env:\TF_BUILD) {
+    @{
+        BHBranchName = $env:BUILD_SOURCEBRANCHNAME
+        BHPSModuleManifest = "$PSScriptRoot\$projectName\$projectName.psd1"
+        BHPSModulePath = "$PSScriptRoot\$projectName"
+        BHProjectName = "$projectName"
+        BHBuildNumber = $env:BUILD_BUILDNUMBER
+        BHModulePath = "$PSScriptRoot\$projectName"
+        BHBuildOutput = "$PSScriptRoot\BuildOutput"
+        BHBuildSystem = 'VSTS'
+        BHProjectPath = $env:SYSTEM_DEFAULTWORKINGDIRECTORY
+        BHCommitMessage = $env:BUILD_SOURCEVERSIONMESSAGE
+    }
+}
+else {
+    @{
+        BHBranchName = $((git rev-parse --abbrev-ref HEAD).Trim())
+        BHPSModuleManifest = "$PSScriptRoot\$projectName\$projectName.psd1"
+        BHPSModulePath = "$PSScriptRoot\$projectName"
+        BHProjectName = "$projectName"
+        BHBuildNumber = 'Unknown'
+        BHModulePath = "$PSScriptRoot\$projectName"
+        BHBuildOutput = "$PSScriptRoot\BuildOutput"
+        BHBuildSystem = [System.Environment]::MachineName
+        BHProjectPath = $PSScriptRoot
+        BHCommitMessage = $((git log --format=%B -n 1).Trim())
+    }
+}
+foreach ($var in $gitVars.Keys) {
+    &$setEnvVar $var $gitVars[$var]
+}
+
+
+&$heading Setting package feeds
 # build/init script borrowed from PoshBot x Brandon Olin
+&$log -c 'Get-PackageProvider -Name Nuget -ForceBootstrap -Verbose:$false | Out-Null'
 Get-PackageProvider -Name Nuget -ForceBootstrap -Verbose:$false | Out-Null
+&$log -c 'Set-PSRepository -Name PSGallery -InstallationPolicy Trusted -Verbose:$false'
 Set-PSRepository -Name PSGallery -InstallationPolicy Trusted -Verbose:$false
+&$log -c @'
+$PSDefaultParameterValues = @{
+    '*-Module:Verbose' = $false
+    'Import-Module:ErrorAction' = 'Stop'
+    'Import-Module:Force' = $true
+    'Import-Module:Verbose' = $false
+    'Install-Module:AllowClobber' = $true
+    'Install-Module:ErrorAction' = 'Stop'
+    'Install-Module:Force' = $true
+    'Install-Module:Scope' = 'CurrentUser'
+    'Install-Module:Verbose' = $false
+}
+'@
 $PSDefaultParameterValues = @{
     '*-Module:Verbose' = $false
     'Import-Module:ErrorAction' = 'Stop'
@@ -122,12 +144,16 @@ if ($PSBoundParameters.ContainsKey('Verbose')) {
 }
 
 if ($Help) {
+    &$heading Getting help
+    &$log -c '"psake" | Resolve-Module @update -Verbose'
     'psake' | Resolve-Module @update -Verbose
+    &$log psake script tasks:
     Get-PSakeScriptTasks -buildFile "$PSScriptRoot\psake.ps1" |
         Sort-Object -Property Name |
         Format-Table -Property Name, Description, Alias, DependsOn
 }
 else {
+    &$heading Finalizing build prerequisites
     if (
         $Task -eq 'Deploy' -and -not $Force -and (
             $ENV:BUILD_BUILDURI -notlike 'vstfs:*' -or
@@ -160,17 +186,20 @@ else {
             "    + NuGet API key is not null        : $($null -ne $env:NugetApiKey)`n" +
             "    + Commit message matches '!deploy' : $($env:BUILD_SOURCEVERSIONMESSAGE -match '!deploy') [$env:BUILD_SOURCEVERSIONMESSAGE]"| Write-Host -ForegroundColor Green
         }
+        <#
         $bH = Get-Module BuildHelpers -ListAvailable | Where-Object {$_.Version -eq [System.Version]'2.0.1'}
         if ($null -eq $bh) {
             "    Installing BuildHelpers v2.0.1"
-            Install-Module BuildHelpers -RequiredVersion '2.0.1' -Repository PSGallery -Force -AllowClobber -SkipPublisherCheck -Scope CurrentUser
+            Install-Module BuildHelpers-Repository PSGallery -Force -AllowClobber -SkipPublisherCheck -Scope CurrentUser #-RequiredVersion '2.0.1'
         }
         "    Importing BuildHelpers v2.0.1"
-        Import-Module BuildHelpers -RequiredVersion '2.0.1'
-        'psake' | Resolve-Module @update -Verbose
+        Import-Module BuildHelpers #-RequiredVersion '2.0.1'
         Set-BuildEnvironment -Force
-        Write-Host -ForegroundColor Green "Modules successfully resolved..."
-        if ($Task -eq 'TestOnly') {
+        #>
+        &$log Resolving necessary modules
+        'psake' | Resolve-Module @update -Verbose
+        &$log Modules successfully resolved
+        if ($Task -in @('TestOnly','PesterOnly')) {
             $global:ExcludeTag = @('Module')
         }
         else {
@@ -182,7 +211,7 @@ else {
         else {
             $global:ForceDeploy = $false
         }
-        Write-Host -ForegroundColor Green "Invoking psake with task list: [ $($Task -join ', ') ]`n"
+        &$heading "Invoking psake with task list: [ $($Task -join ', ') ]"
         $psakeParams = @{
             nologo = $true
             buildFile = "$PSScriptRoot\psake.ps1"
@@ -190,6 +219,7 @@ else {
         }
         Invoke-psake @psakeParams @verbose
         if ($finalTasks -contains 'Import' -and $psake.build_success) {
+            &$heading "Importing $env:BHProjectName to local scope"
             Import-Module ([System.IO.Path]::Combine($env:BHBuildOutput,$env:BHProjectName)) -Verbose:$false
         }
         &$summary VaporShell Build finished
