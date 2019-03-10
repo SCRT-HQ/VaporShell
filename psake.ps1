@@ -105,6 +105,8 @@ $VaporshellPath = $PSScriptRoot
 
     '    Copying bin path...'
     New-Item -Path "$outputModVerDir\bin" -ItemType Directory -ErrorAction SilentlyContinue > $null
+    New-Item -Path "$outputModVerDir\bin\Net45" -ItemType Directory -ErrorAction SilentlyContinue > $null
+    New-Item -Path "$outputModVerDir\bin\NetCore" -ItemType Directory -ErrorAction SilentlyContinue > $null
     Copy-Item -Path "$sut\bin\*" -Destination "$outputModVerDir\bin" -Recurse -ErrorAction SilentlyContinue
 
     '    Copying DSL module...'
@@ -143,7 +145,7 @@ else {
     Write-Verbose "Loading the *net45* assemblies!"
     `$sdkPath = (Join-Path `$Script:VaporshellPath "bin\Net45" -Resolve)
 }
-(Get-ChildItem `$sdkPath -Filter "AWSSDK*.dll").BaseName,'Newtonsoft.Json','YamlDotNet','VaporShell'  | ForEach-Object {
+'AWSSDK.Core','AWSSDK.SecurityToken','AWSSDK.CloudFormation','AWSSDK.S3','Newtonsoft.Json','YamlDotNet','VaporShell'  | ForEach-Object {
     `$assName = "`$(`$_).dll"
     `$assPath = (Join-Path `$sdkPath `$assName)
     if (Test-Path `$assPath) {
