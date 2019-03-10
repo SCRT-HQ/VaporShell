@@ -26,8 +26,8 @@ Set-BuildVariables
 
 Add-Heading Setting package feeds
 # build/init script borrowed from PoshBot x Brandon Olin
-Write-BuildLog -c 'Get-PackageProvider -Name Nuget -ForceBootstrap -Verbose:$false | Out-Null'
-Get-PackageProvider -Name Nuget -ForceBootstrap -Verbose:$false | Out-Null
+Write-BuildLog -c 'Get-PackageProvider -Name Nuget -ForceBootstrap -Verbose:$false'
+Get-PackageProvider -Name Nuget -ForceBootstrap -Verbose:$false
 Write-BuildLog -c 'Set-PSRepository -Name PSGallery -InstallationPolicy Trusted -Verbose:$false'
 Set-PSRepository -Name PSGallery -InstallationPolicy Trusted -Verbose:$false
 Write-BuildLog -c @'
