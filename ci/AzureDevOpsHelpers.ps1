@@ -139,12 +139,13 @@ function Write-BuildError {
 }
 
 function Write-BuildLog {
+    [CmdletBinding()]
     param(
         [parameter(Mandatory,Position = 0,ValueFromRemainingArguments,ValueFromPipeline)]
         [System.Object]
         $Message,
         [parameter()]
-        [Alias('c')]
+        [Alias('c','Command')]
         [Switch]
         $Cmd,
         [parameter()]
@@ -161,7 +162,11 @@ function Write-BuildLog {
         $Clean
     )
     Begin {
-        if ($Severe) {
+        if ($PSBoundParameters.ContainsKey('Debug') -and $PSBoundParameters['Debug'] -eq $true) {
+            $fg = 'Yellow'
+            $lvl = '##[debug]   '
+        }
+        elseif ($Severe) {
             $fg = 'Red'
             $lvl = '##[error]   '
         }
@@ -210,6 +215,17 @@ function Write-BuildLog {
 }
 Set-Alias -Name Log -Value Write-BuildLog -Force
 
+function Invoke-CommandWithLog {
+    [CmdletBinding()]
+    Param (
+        [parameter(Mandatory,Position=0)]
+        [ScriptBlock]
+        $ScriptBlock
+    )
+    Write-BuildLog -Command ($ScriptBlock.ToString() -join "`n")
+    $ScriptBlock.Invoke()
+}
+
 function Set-EnvironmentVariable {
     param(
         [parameter(Position = 0)]
@@ -220,7 +236,7 @@ function Set-EnvironmentVariable {
         $Value
     )
     $fullVal = $Value -join " "
-    Write-BuildLog "Setting env variable '$Name' to '$fullVal'"
+    Write-BuildLog -Debug "Setting env variable '$Name' to '$fullVal'"
     Set-Item -Path Env:\$Name -Value $fullVal -Force
     if ($IsCI) {
         "##vso[task.setvariable variable=$Name]$fullVal" | Write-Host

@@ -47,47 +47,59 @@ task Init {
 
 task Update -depends Init {
     Write-BuildLog 'Updating Resource and Property Type functions with current AWS spec sheet...'
-    Remove-Module $env:BHProjectName -ErrorAction SilentlyContinue -Force -Verbose:$false
-    Import-Module $env:BHPSModuleManifest -Force -Verbose:$false
-    Update-VSResourceFunctions -Verbose
-    Remove-Module $env:BHProjectName -Force -Verbose:$false
+    Invoke-CommandWithLog {Remove-Module $env:BHProjectName -ErrorAction SilentlyContinue -Force -Verbose:$false}
+    Invoke-CommandWithLog {Import-Module $env:BHPSModuleManifest -Force -Verbose:$false}
+    Invoke-CommandWithLog {Update-VSResourceFunctions -Verbose}
+    Invoke-CommandWithLog {Remove-Module $env:BHProjectName -Force -Verbose:$false}
 } -description 'Updates module functions before compilation'
 
 task Clean -depends Init {
-    Remove-Module -Name $env:BHProjectName -Force -ErrorAction SilentlyContinue -Verbose:$false
+    Invoke-CommandWithLog {Remove-Module -Name $env:BHProjectName -Force -ErrorAction SilentlyContinue -Verbose:$false}
     if (Test-Path -Path $outputDir) {
         $allClean = $true
-        Get-ChildItem -Path $outputDir -Recurse -File | ForEach-Object {
+        Invoke-CommandWithLog {Get-ChildItem -Path $outputDir -Recurse -File | ForEach-Object {
             $item = $_
             try {
+                Write-BuildLog -Debug "Removing item: $($item.FullName)"
                 $item | Remove-Item -Force
             }
             catch {
                 $err = $_
-                Write-Warning "[Skipped]`n`t [$($item.FullName)]`n`t Error: $($err.Exception.Message)"
+                Write-BuildWarning "[Skipped]`n`t [$($item.FullName)]`n`t Error: $($err.Exception.Message)"
                 $allClean = $false
             }
-        }
+        }}
         if ($allClean) {
             Write-BuildLog "All files successfully cleaned! Removing folder structure now"
             if (Test-Path $outputModDir) {
-                Write-BuildLog -c "Remove-Item $outputModDir -Recurse -Force"
-                Remove-Item $outputModDir -Recurse -Force
+                Write-BuildLog -Debug "Removing item: $($item.FullName)"
+                Invoke-CommandWithLog {
+                    Get-ChildItem $outputModDir -Recurse | ForEach-Object {
+                        $item = $_
+                        try {
+                            Write-BuildLog -Debug "Removing item: $($item.FullName)"
+                            $item | Remove-Item -Recurse -Force
+                        }
+                        catch {}
+                    }
+                }
             }
         }
     } else {
-        New-Item -Path $outputDir -ItemType Directory > $null
+        Invoke-CommandWithLog {New-Item -Path $outputDir -ItemType Directory}
     }
     Write-BuildLog "Cleaned previous output directory [$outputDir]"
 } -description 'Cleans module output directory'
 
 task CompilePowerShell -depends Clean {
-    $functionsToExport = @()
-    New-Item -Path $outputModDir -ItemType Directory -ErrorAction SilentlyContinue > $null
-    New-Item -Path $outputModVerDir -ItemType Directory -ErrorAction SilentlyContinue > $null
+    Invoke-CommandWithLog {
+        $functionsToExport = @()
+        New-Item -Path $outputModDir -ItemType Directory -ErrorAction SilentlyContinue > $null
+        New-Item -Path $outputModVerDir -ItemType Directory -ErrorAction SilentlyContinue > $null
+    }
 
     # Append items to psm1
-    Write-BuildLog 'Creating psm1...'
+    Write-BuildLog -Debug 'Creating psm1...'
 @'
 Param(
     # This no longer does anything as of v2.6.0, leaving for backwards compatiblity
@@ -98,27 +110,27 @@ $VaporshellPath = $PSScriptRoot
 '@ | Set-Content -Path (Join-Path -Path $outputModVerDir -ChildPath "$($ENV:BHProjectName).psm1") -Encoding UTF8 -Force
     $psm1 = Get-Item (Join-Path -Path $outputModVerDir -ChildPath "$($ENV:BHProjectName).psm1")
 
-    Write-BuildLog 'Adding Private functions to psm1...'
+    Write-BuildLog -Debug 'Adding Private functions to psm1...'
     Get-ChildItem -Path (Join-Path -Path $sut -ChildPath 'Private') -Recurse -File | Where-Object {$_.Name -ne 'PseudoParams.txt'} | ForEach-Object {
         "$(Get-Content $_.FullName -Raw)`n" | Add-Content -Path $psm1 -Encoding UTF8
     }
-    Write-BuildLog 'Adding Public functions to psm1...'
+    Write-BuildLog -Debug 'Adding Public functions to psm1...'
     Get-ChildItem -Path (Join-Path -Path $sut -ChildPath 'Public') -Recurse -File | Where-Object {$_.FullName -notlike "*Development Tools*"} | ForEach-Object {
         "$(Get-Content $_.FullName -Raw)`nExport-ModuleMember -Function '$($_.BaseName)'`n" | Add-Content -Path $psm1 -Encoding UTF8
         $functionsToExport += $_.BaseName
     }
 
-    Write-BuildLog 'Copying bin path...'
+    Write-BuildLog -Debug 'Copying bin path...'
     New-Item -Path "$outputModVerDir\bin" -ItemType Directory -ErrorAction SilentlyContinue > $null
     New-Item -Path "$outputModVerDir\bin\Net45" -ItemType Directory -ErrorAction SilentlyContinue > $null
     New-Item -Path "$outputModVerDir\bin\NetCore" -ItemType Directory -ErrorAction SilentlyContinue > $null
     Copy-Item -Path "$sut\bin\*" -Destination "$outputModVerDir\bin" -Recurse -ErrorAction SilentlyContinue
 
-    Write-BuildLog 'Copying DSL module...'
+    Write-BuildLog -Debug 'Copying DSL module...'
     New-Item -Path "$outputModVerDir\DSL" -ItemType Directory -ErrorAction SilentlyContinue > $null
     Copy-Item -Path "$sut\DSL\*" -Destination "$outputModVerDir\DSL" -Recurse -ErrorAction SilentlyContinue
 
-    Write-BuildLog 'Creating Variable hash...'
+    Write-BuildLog -Debug 'Creating Variable hash...'
     $varHash = @("@{")
     Get-Content -Path "$($env:BHPSModulePath)\Private\PseudoParams.txt" | ForEach-Object {
         $name = "_$(($_ -replace "::").Trim())"
@@ -126,7 +138,7 @@ $VaporshellPath = $PSScriptRoot
     }
     $varHash += "}"
 
-    Write-BuildLog 'Creating Alias hash...'
+    Write-BuildLog -Debug 'Creating Alias hash...'
     $aliasHash = @("@{")
     Get-ChildItem "$($env:BHPSModulePath)\Public\Intrinsic Functions" | ForEach-Object {
         $name = ($_.BaseName).Replace('Add-','')
@@ -138,7 +150,7 @@ $VaporshellPath = $PSScriptRoot
     }
     $aliasHash += "}"
 
-    Write-BuildLog 'Setting remainder of PSM1 contents...'
+    Write-BuildLog -Debug 'Setting remainder of PSM1 contents...'
 @"
 
 # Load the .NET assemblies
@@ -184,10 +196,10 @@ Import-Module `$DSLModulePath -DisableNameChecking -Force
 Export-ModuleMember -Function (Get-Command -Module VaporShell.DSL).Name -Variable `$vars -Alias `$aliases
 "@ | Add-Content -Path $psm1 -Encoding UTF8
 
-    Write-BuildLog 'Copying manifest...'
+    Write-BuildLog -Debug 'Copying manifest...'
     Copy-Item -Path $env:BHPSModuleManifest -Destination $outputModVerDir
 
-    Write-BuildLog 'Updating manifest...'
+    Write-BuildLog -Debug 'Updating manifest...'
     $dslModuleName = "VaporShell.DSL"
     Import-Module "$($env:BHPSModulePath)\DSL\$($dslModuleName).psm1" -DisableNameChecking -Force -Verbose:$false
     $dslFunctions = (Get-Command -Module $dslModuleName).Name
@@ -208,39 +220,40 @@ Export-ModuleMember -Function (Get-Command -Module VaporShell.DSL).Name -Variabl
     Update-ModuleManifest -Path (Get-ChildItem $outputModVerDir | Where-Object {$_.Name -eq "$($env:BHProjectName).psd1"}).FullName -FunctionsToExport (($functionsToExport + $dslFunctions) | Sort-Object) -AliasesToExport ($aliases | Sort-Object) -VariablesToExport $vars
 
     if ((Get-ChildItem $outputModVerDir | Where-Object {$_.Name -eq "$($env:BHProjectName).psd1"}).BaseName -cne $env:BHProjectName) {
-        Write-BuildLog 'Renaming manifest to correct casing...'
+        Write-BuildLog -Debug 'Renaming manifest to correct casing...'
         Rename-Item (Join-Path $outputModVerDir "$($env:BHProjectName).psd1") -NewName "$($env:BHProjectName).psd1" -Force
     }
     Write-BuildLog "Created compiled module at [$outputModDir]!"
     Write-BuildLog 'Output version directory contents:'
-    Get-ChildItem $outputModVerDir | Format-Table -Autosize
+    Invoke-CommandWithLog {Get-ChildItem $outputModVerDir | Format-Table -Autosize}
 } -description 'Compiles module from source'
 
 task CompileCSharp -depends CompilePowerShell {
-    Write-BuildLog -c 'Get-Command dotnet | Select-Object Name,Version'
-    Write-BuildLog -x "$(Get-Command dotnet | Select-Object Name,Version | Out-String)"
-    Push-Location "$PSScriptRoot\src"
-    Write-BuildLog -c "dotnet clean"
-    dotnet clean | Write-Host
-    Write-BuildLog -c "dotnet build -c $buildConfiguration --force"
-    dotnet build -c $buildConfiguration --force | Write-Host
-    Get-ChildItem ".\bin\$buildConfiguration\net45" -Filter "*.dll" | ForEach-Object {
-        try {
-            $_ | Copy-Item -Destination "$outputModVerDir\bin\Net45" -Force
-        }
-        catch {
-            Write-Warning $_.Exception.Message
-        }
-    }
-    Get-ChildItem ".\bin\$buildConfiguration\netstandard2.0" -Filter "*.dll" | ForEach-Object {
-        try {
-            $_ | Copy-Item -Destination "$outputModVerDir\bin\NetCore" -Force
-        }
-        catch {
-            Write-Warning $_.Exception.Message
+    Invoke-CommandWithLog {Get-Command dotnet | Select-Object Name,Version | Out-String | Write-BuildLog}
+    Invoke-CommandWithLog {Push-Location "$PSScriptRoot\src"}
+    Invoke-CommandWithLog {dotnet clean}
+    Invoke-CommandWithLog {dotnet build -c $buildConfiguration --force}
+    Invoke-CommandWithLog {
+        Get-ChildItem ".\bin\$buildConfiguration\net45" -Filter "*.dll" | ForEach-Object {
+            try {
+                $_ | Copy-Item -Destination "$outputModVerDir\bin\Net45" -Force
+            }
+            catch {
+                Write-BuildWarning $_.Exception.Message
+            }
         }
     }
-    Pop-Location
+    Invoke-CommandWithLog {
+        Get-ChildItem ".\bin\$buildConfiguration\netstandard2.0" -Filter "*.dll" | ForEach-Object {
+            try {
+                $_ | Copy-Item -Destination "$outputModVerDir\bin\NetCore" -Force
+            }
+            catch {
+                Write-BuildWarning $_.Exception.Message
+            }
+        }
+    }
+    Invoke-CommandWithLog {Pop-Location}
 }
 
 task Compile -depends CompileCSharp,Import
