@@ -19,6 +19,19 @@ function Resolve-Module {
 
         [switch]$UpdateModules
     )
+    Begin {
+        $PSDefaultParameterValues = @{
+            '*-Module:Verbose' = $false
+            'Import-Module:ErrorAction' = 'Stop'
+            'Import-Module:Force' = $true
+            'Import-Module:Verbose' = $false
+            'Install-Module:AllowClobber' = $true
+            'Install-Module:ErrorAction' = 'Stop'
+            'Install-Module:Force' = $true
+            'Install-Module:Scope' = 'CurrentUser'
+            'Install-Module:Verbose' = $false
+        }
+    }
     process {
         foreach ($moduleName in $Name) {
             $versionToImport = ''
