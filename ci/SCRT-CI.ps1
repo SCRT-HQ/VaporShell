@@ -68,15 +68,15 @@ function Add-Heading {
         [Switch]
         $Passthru
     )
-    $lines = '[section]******************************************************************************'
+    $lines = '##[section]******************************************************************************'
     $msgList = if ($IsCI) {
         ''
-        "##[section]$Title"
+        "##[section] $Title"
     }
     else {
         ''
         $lines
-        "[section] $Title"
+        "##[section] $Title"
         $lines
     }
     if ($Passthru) {
@@ -161,7 +161,7 @@ function Write-BuildLog {
     Begin {
         if ($Severe) {
             $fg = 'Red'
-            $lvl = '##[error]'
+            $lvl = '##[error]  '
         }
         elseif ($Warning) {
             $fg = 'Yellow'
@@ -173,7 +173,7 @@ function Write-BuildLog {
         }
         else {
             $fg = 'White'
-            $lvl = '##[info]'
+            $lvl = '##[info]   '
         }
     }
     Process {
