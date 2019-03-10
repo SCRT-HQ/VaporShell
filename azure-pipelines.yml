@@ -45,6 +45,29 @@ jobs:
       testResultsFiles: '**/Test*.xml'
     condition: succeededOrFailed()
 
+- job: PS6WinTest
+  displayName: Pester [PS Core - Windows]
+  dependsOn: Compile
+  condition: succeeded()
+  pool:
+    vmImage: 'windows-2019'
+  steps:
+  - task: DownloadBuildArtifacts@0
+    displayName: 'Download Build Artifacts'
+    inputs:
+      artifactName: BuildOutput
+      downloadPath: '$(Build.SourcesDirectory)'
+  - powershell: |
+      $Env:Path = [Environment]::GetEnvironmentVariable('Path',[EnvironmentVariableTarget]::Machine)
+      pwsh -command ". ./build.ps1 -Task PesterOnly"
+    displayName: Test Module
+  - task: PublishTestResults@2
+    displayName: 'Publish Test Results **/Test*.xml'
+    inputs:
+      testRunner: NUnit
+      testResultsFiles: '**/Test*.xml'
+    condition: succeededOrFailed()
+
 - job: PS6UbuTest
   displayName: Pester [PS Core - Linux]
   dependsOn: Compile
@@ -87,37 +110,14 @@ jobs:
       testResultsFiles: '**/Test*.xml'
     condition: succeededOrFailed()
 
-- job: PS6WinTest
-  displayName: Pester [PS Core - Windows]
-  dependsOn: Compile
-  condition: succeeded()
-  pool:
-    vmImage: 'windows-2019'
-  steps:
-  - task: DownloadBuildArtifacts@0
-    displayName: 'Download Build Artifacts'
-    inputs:
-      artifactName: BuildOutput
-      downloadPath: '$(Build.SourcesDirectory)'
-  - powershell: |
-      $Env:Path = [Environment]::GetEnvironmentVariable('Path',[EnvironmentVariableTarget]::Machine)
-      pwsh -command ". ./build.ps1 -Task PesterOnly"
-    displayName: Test Module
-  - task: PublishTestResults@2
-    displayName: 'Publish Test Results **/Test*.xml'
-    inputs:
-      testRunner: NUnit
-      testResultsFiles: '**/Test*.xml'
-    condition: succeededOrFailed()
-
 - job: Deploy
   displayName: Deploy Module
   dependsOn:
     - Compile
     - PS5Test
+    - PS6WinTest
     - PS6UbuTest
     - PS6MacTest
-    - PS6WinTest
   condition: and(succeeded(), in(variables['Build.Reason'], 'IndividualCI', 'BatchedCI'), eq(variables['Build.SourceBranch'], 'refs/heads/master'))
   pool:
     vmImage: 'windows-2019'

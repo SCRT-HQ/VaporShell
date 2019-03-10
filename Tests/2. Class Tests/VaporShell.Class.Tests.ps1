@@ -65,35 +65,36 @@ Describe "Class tests: $($env:BHProjectName)" {
                 }
             }
         }
-        It "Creates a Template" {
+        It "Should create a Template" {
             $template | Should -Not -BeNullOrEmpty
             $template | Should -BeOfType [VaporShell.Core.Template]
         }
-        It "Creates an S3 Bucket" {
+        It "Should create an S3 Bucket" {
             $S3 | Should -Not -BeNullOrEmpty
             $S3 | Should -BeOfType [VaporShell.Resource.S3.Bucket]
         }
-        It "Adds the S3 bucket to the template" {
+        It "Should add the S3 bucket to the template" {
             $template.AddResource($S3) | Should -BeNullOrEmpty
             $template.Resources.LogicalId | Should -Contain $S3.LogicalId
         }
-        It "Adds a second S3 bucket to the template" {
+        It "Should add a second S3 bucket to the template" {
             $template.AddResource($S32) | Should -BeNullOrEmpty
             $template.Resources.LogicalId | Should -Contain $S32.LogicalId
             $template.Resources.LogicalId.Count | Should -BeExactly 2
         }
-        It "Fails to add a third S3 Bucket with duplicate LogicalId" {
+        It "Should fail to add a third S3 Bucket with duplicate LogicalId" {
             {$template.AddResource($S33)} | Should -Throw
-            $template.Resources.LogicalId | Should -Contain $S33.LogicalId
             $template.Resources.LogicalId.Count | Should -BeExactly 2
         }
         It "Should cast to Json" {
             {$template.ToJson()} | Should -Not -Throw
             {$template.ToJson($true)} | Should -Not -Throw
             {$template.ToJson($false)} | Should -Not -Throw
+            $template.ToJson() | Should -BeOfType [System.String]
         }
         It "Should cast to Yaml" {
             {$template.ToYaml()} | Should -Not -Throw
+            $template.ToYaml() | Should -BeOfType [System.String]
         }
     }
 }

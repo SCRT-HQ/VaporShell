@@ -2,7 +2,7 @@
 [cmdletbinding(DefaultParameterSetName = 'task')]
 param(
     [parameter(ParameterSetName = 'task', Position = 0)]
-    [ValidateSet('Init','Update','Clean','Compile','CompileCSharp','Import','Pester','PesterOnly','Deploy')]
+    [ValidateSet('Init','Update','Clean','Compile','CompilePowerShell','CompileCSharp','Import','Pester','PesterOnly','Deploy')]
     [string[]]
     $Task = @('Compile','Import'),
     [parameter(ParameterSetName = 'task')]
@@ -12,16 +12,41 @@ param(
     [switch]
     $Help
 )
-$buildState = "Started"
-@(
-    ""
-    "----------------------------------------------------------------------"
-    "Environment Summary"
-    "----------------------------------------------------------------------"
-    "State   : $buildState"
-    "Engine  : PowerShell $($PSVersionTable.PSVersion.ToString())"
-    "Host OS : $(if($PSVersionTable.PSVersion.Major -le 5 -or $IsWindows){"Windows"}elseif($IsLinux){"Linux"}elseif($IsMacOS){"macOS"}else{"[UNKNOWN]"})`n"
-) | Write-Host
+
+$heading = {
+    param(
+        [parameter(Position = 0,ValueFromRemainingArguments)]
+        [String]
+        $Title
+    )
+    $lines = '----------------------------------------------------------------------'
+    @(
+        ''
+        $lines
+        $($Title -join " ")
+        $lines
+    ) | Write-Host
+}
+$summary = {
+    param(
+        [parameter(Position = 0)]
+        [String]
+        $Project,
+        [parameter(Position = 1,ValueFromRemainingArguments)]
+        [String[]]
+        $State
+    )
+    &$heading Environment Summary
+    @(
+        "Project : $Project"
+        "State   : $($State -join " ")"
+        "Engine  : PowerShell $($PSVersionTable.PSVersion.ToString())"
+        "Host OS : $(if($PSVersionTable.PSVersion.Major -le 5 -or $IsWindows){"Windows"}elseif($IsLinux){"Linux"}elseif($IsMacOS){"macOS"}else{"[UNKNOWN]"})"
+        "PWD     : $PWD"
+        ''
+    ) | Write-Host
+}
+&$summary VaporShell Build started
 
 # build/init script borrowed from PoshBot x Brandon Olin
 Get-PackageProvider -Name Nuget -ForceBootstrap -Verbose:$false | Out-Null
@@ -167,16 +192,7 @@ else {
         if ($finalTasks -contains 'Import' -and $psake.build_success) {
             Import-Module ([System.IO.Path]::Combine($env:BHBuildOutput,$env:BHProjectName)) -Verbose:$false
         }
-        $buildState = "Finished"
-        @(
-            ""
-            "----------------------------------------------------------------------"
-            "Environment Summary"
-            "----------------------------------------------------------------------"
-            "State   : $buildState"
-            "Engine  : PowerShell $($PSVersionTable.PSVersion.ToString())"
-            "Host OS : $(if($PSVersionTable.PSVersion.Major -le 5 -or $IsWindows){"Windows"}elseif($IsLinux){"Linux"}elseif($IsMacOS){"macOS"}else{"[UNKNOWN]"})`n"
-        ) | Write-Host
+        &$summary VaporShell Build finished
         exit ( [int]( -not $psake.build_success ) )
     }
 }

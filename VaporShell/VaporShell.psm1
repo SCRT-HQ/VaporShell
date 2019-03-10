@@ -30,13 +30,13 @@ foreach ($file in @($Public + $Private)) {
 }
 
 # Load the .NET assemblies
-if ($PSVersionTable.PSVersion.Major -ge 6) {
+$sdkPath = if ($PSVersionTable.PSVersion.Major -ge 6) {
     Write-Verbose "Loading the *netcore* assemblies!"
-    $sdkPath = (Join-Path $Script:VaporshellPath "bin\NetCore" -Resolve)
+    Join-Path $Script:VaporshellPath "bin\NetCore" -Resolve
 }
 else {
     Write-Verbose "Loading the *net45* assemblies!"
-    $sdkPath = (Join-Path $Script:VaporshellPath "bin\Net45" -Resolve)
+    Join-Path $Script:VaporshellPath "bin\Net45" -Resolve
 }
 'AWSSDK.Core','AWSSDK.SecurityToken','AWSSDK.CloudFormation','AWSSDK.S3','Newtonsoft.Json','YamlDotNet','VaporShell'  | ForEach-Object {
     $assName = "$($_).dll"
