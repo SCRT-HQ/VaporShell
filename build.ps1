@@ -21,15 +21,13 @@ $env:BuildScriptPath = $PSScriptRoot
 
 Add-EnvironmentSummary "Build started"
 
-if ($IsCI) {
-    Write-Host "##[info]    Grey info text"
-    Write-Host "##[verbose] Grey verbose text"
-    Write-Host "##[section] Green section text"
-    Write-Host "##[command] Blue command text"
-    Write-Host "##[debug]   Purple debug text"
-    Write-Host "##[warning] Orange warning text"
-    Write-Host "##[error]   Red error text"
-}
+Write-Host -ForegroundColor Gray    "##[info]    Gray info text"
+Write-Host -ForegroundColor Gray    "##[verbose] Gray verbose text"
+Write-Host -ForegroundColor Green   "##[section] Green section text"
+Write-Host -ForegroundColor Blue    "##[command] Blue command text"
+Write-Host -ForegroundColor Magenta "##[debug]   Purple debug text"
+Write-Host -ForegroundColor Yellow  "##[warning] Orange warning text"
+Write-Host -ForegroundColor Red     "##[error]   Red error text"
 
 Set-BuildVariables
 
