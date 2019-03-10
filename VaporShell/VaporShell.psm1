@@ -47,7 +47,7 @@ else {
             Write-Verbose "Loaded: $assName"
         }
         catch {
-            Write-Warning "Failed to load: $assName``n``t  $($_.Exception.Message)"
+            Write-Warning "Failed to load: $assName`n`t  $($_.Exception.Message)"
         }
     }
 }
