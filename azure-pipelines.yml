@@ -17,7 +17,7 @@ jobs:
     vmImage: 'windows-2019'
   steps:
   - powershell: . ./build.ps1 -Task @('Update','Compile','Import')
-    displayName: Compile PowerShell Module
+    displayName: Compile Module
   - task: PublishBuildArtifacts@1
     displayName: 'Publish Artifact: Compiled Module'
     inputs:

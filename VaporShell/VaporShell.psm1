@@ -48,22 +48,18 @@ Get-ChildItem $sdkPath -Filter "AWSSDK*.dll" | ForEach-Object {
         Write-Warning "Failed to load: $assName"
     }
 }
-Get-ChildItem $sdkPath -Filter "*.dll" | Where-Object {$_.Name -notmatch "(AWSSDK|VaporShell)"} | ForEach-Object {
-    $assName = $_.Name
-    try {
-        [reflection.assembly]::LoadFrom("$($_.FullName)") | Out-Null
-        Write-Verbose "Loaded: $assName"
+(Get-ChildItem $sdkPath -Filter "AWSSDK*.dll").BaseName,'Newtonsoft.Json','YamlDotNet','VaporShell'  | ForEach-Object {
+    $assName = "$($_).dll"
+    $assPath = (Join-Path $sdkPath $assName)
+    if (Test-Path $assPath) {
+        try {
+            [System.Reflection.Assembly]::LoadFrom($assPath) | Out-Null
+            Write-Verbose "Loaded: $assName"
+        }
+        catch {
+            Write-Warning "Failed to load: $assName``n``t  $($_.Exception.Message)"
+        }
     }
-    catch {
-        Write-Warning "Failed to load: $assName"
-    }
-}
-try {
-    Add-Type (Join-Path $sdkPath "$($env:BHProjectName).dll") -ReferencedAssemblies 'Newtonsoft.Json.dll','YamlDotNet.dll' # ((Join-Path `$sdkPath 'Newtonsoft.Json.dll'),(Join-Path `$sdkPath 'YamlDotNet.dll'))
-    Write-Verbose "Loaded: $($env:BHProjectName).dll"
-}
-catch {
-    Write-Warning "Failed to load: $($env:BHProjectName).dll"
 }
 
 # Add Intrinsic and Condition Function short aliases

@@ -12,13 +12,16 @@ param(
     [switch]
     $Help
 )
-
-Write-Host "`n----------------------------------------------------------------------"
-Write-Host "Environment Summary"
-Write-Host "----------------------------------------------------------------------"
-Write-Host "State   : Started"
-Write-Host "Engine  : PowerShell $($PSVersionTable.PSVersion.ToString())"
-Write-Host "Host OS : $(if($PSVersionTable.PSVersion.Major -le 5 -or $IsWindows){"Windows"}elseif($IsLinux){"Linux"}elseif($IsMacOS){"macOS"}else{"[UNKNOWN]"})`n"
+$buildState = "Started"
+@(
+    ""
+    "----------------------------------------------------------------------"
+    "Environment Summary"
+    "----------------------------------------------------------------------"
+    "State   : $buildState"
+    "Engine  : PowerShell $($PSVersionTable.PSVersion.ToString())"
+    "Host OS : $(if($PSVersionTable.PSVersion.Major -le 5 -or $IsWindows){"Windows"}elseif($IsLinux){"Linux"}elseif($IsMacOS){"macOS"}else{"[UNKNOWN]"})`n"
+) | Write-Host
 
 # build/init script borrowed from PoshBot x Brandon Olin
 Get-PackageProvider -Name Nuget -ForceBootstrap -Verbose:$false | Out-Null
@@ -164,12 +167,16 @@ else {
         if ($finalTasks -contains 'Import' -and $psake.build_success) {
             Import-Module ([System.IO.Path]::Combine($env:BHBuildOutput,$env:BHProjectName)) -Verbose:$false
         }
-        Write-Host "`n----------------------------------------------------------------------"
-        Write-Host "Environment Summary"
-        Write-Host "----------------------------------------------------------------------"
-        Write-Host "State   : Started"
-        Write-Host "Engine  : PowerShell $($PSVersionTable.PSVersion.ToString())"
-        Write-Host "Host OS : $(if($PSVersionTable.PSVersion.Major -le 5 -or $IsWindows){"Windows"}elseif($IsLinux){"Linux"}elseif($IsMacOS){"macOS"}else{"[UNKNOWN]"})`n"
+        $buildState = "Finished"
+        @(
+            ""
+            "----------------------------------------------------------------------"
+            "Environment Summary"
+            "----------------------------------------------------------------------"
+            "State   : $buildState"
+            "Engine  : PowerShell $($PSVersionTable.PSVersion.ToString())"
+            "Host OS : $(if($PSVersionTable.PSVersion.Major -le 5 -or $IsWindows){"Windows"}elseif($IsLinux){"Linux"}elseif($IsMacOS){"macOS"}else{"[UNKNOWN]"})`n"
+        ) | Write-Host
         exit ( [int]( -not $psake.build_success ) )
     }
 }

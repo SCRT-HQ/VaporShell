@@ -143,35 +143,18 @@ else {
     Write-Verbose "Loading the *net45* assemblies!"
     `$sdkPath = (Join-Path `$Script:VaporshellPath "bin\Net45" -Resolve)
 }
-Get-ChildItem `$sdkPath -Filter "AWS*.dll" | ForEach-Object {
-    `$assName = `$_.Name
-    try {
-        [reflection.assembly]::LoadFrom("`$(`$_.FullName)") | Out-Null
-        Write-Verbose "Loaded: `$assName"
+(Get-ChildItem `$sdkPath -Filter "AWSSDK*.dll").BaseName,'Newtonsoft.Json','YamlDotNet','VaporShell'  | ForEach-Object {
+    `$assName = "`$(`$_).dll"
+    `$assPath = (Join-Path `$sdkPath `$assName)
+    if (Test-Path `$assPath) {
+        try {
+            [System.Reflection.Assembly]::LoadFrom(`$assPath) | Out-Null
+            Write-Verbose "Loaded: `$assName"
+        }
+        catch {
+            Write-Warning "Failed to load: `$assName``n``t  `$(`$_.Exception.Message)"
+        }
     }
-    catch {
-        Write-Warning "Failed to load: `$assName``n``t  `$(`$_.Exception.Message)"
-    }
-}
-#<#
-Get-ChildItem `$sdkPath -Filter "*.dll" | Where-Object {`$_.Name -notmatch "(AWS|VaporShell)"}  | ForEach-Object {
-    `$assName = `$_.Name
-    try {
-        [reflection.assembly]::LoadFrom("`$(`$_.FullName)") | Out-Null
-        Write-Verbose "Loaded: `$assName"
-    }
-    catch {
-        Write-Warning "Failed to load: `$assName``n``t  `$(`$_.Exception.Message)"
-    }
-}
-#>
-try {
-    [reflection.assembly]::LoadFrom((Join-Path `$sdkPath "VaporShell.dll")) | Out-Null
-    ###Add-Type (Join-Path `$sdkPath "VaporShell.dll") -ReferencedAssemblies @((Join-Path `$sdkPath 'Newtonsoft.Json.dll'),(Join-Path `$sdkPath 'YamlDotNet.dll'))
-    Write-Verbose "Loaded: VaporShell.dll"
-}
-catch {
-    Write-Warning "Failed to load: VaporShell.dll``n``t  `$(`$_.Exception.Message)"
 }
 
 `$aliases = @()
@@ -234,7 +217,7 @@ task CompileCSharp -depends CompilePowerShell {
     dotnet clean | Write-Host
     Write-Host -ForegroundColor Magenta "PS >_ dotnet build -c $buildConfiguration --force"
     dotnet build -c $buildConfiguration --force | Write-Host
-    Get-ChildItem ".\bin\$buildConfiguration\net45" | ForEach-Object {
+    Get-ChildItem ".\bin\$buildConfiguration\net45" -Filter "*.dll" | ForEach-Object {
         try {
             $_ | Copy-Item -Destination "$outputModVerDir\bin\Net45" -Force
         }
@@ -242,7 +225,7 @@ task CompileCSharp -depends CompilePowerShell {
             Write-Warning $_.Exception.Message
         }
     }
-    Get-ChildItem ".\bin\$buildConfiguration\netstandard2.0" | ForEach-Object {
+    Get-ChildItem ".\bin\$buildConfiguration\netstandard2.0" -Filter "*.dll" | ForEach-Object {
         try {
             $_ | Copy-Item -Destination "$outputModVerDir\bin\NetCore" -Force
         }
