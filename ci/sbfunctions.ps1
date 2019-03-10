@@ -93,3 +93,39 @@ $setEnvVar = {
         "##vso[task.setvariable variable=$Name]$fullVal" | Write-Host
     }
 }
+&$heading 'Setting environment variables if needed'
+$gitVars = if (Test-Path Env:\TF_BUILD) {
+    @{
+        BHBranchName = $env:BUILD_SOURCEBRANCHNAME
+        BHPSModuleManifest = "$env:BuildScriptPath\$env:BuildProjectName\$env:BuildProjectName.psd1"
+        BHPSModulePath = "$env:BuildScriptPath\$env:BuildProjectName"
+        BHProjectName = $env:BuildProjectName
+        BHBuildNumber = $env:BUILD_BUILDNUMBER
+        BHModulePath = "$env:BuildScriptPath\$env:BuildProjectName"
+        BHBuildOutput = "$env:BuildScriptPath\BuildOutput"
+        BHBuildSystem = 'VSTS'
+        BHProjectPath = $env:SYSTEM_DEFAULTWORKINGDIRECTORY
+        BHCommitMessage = $env:BUILD_SOURCEVERSIONMESSAGE
+    }
+}
+else {
+    @{
+        BHBranchName = $((git rev-parse --abbrev-ref HEAD).Trim())
+        BHPSModuleManifest = "$env:BuildScriptPath\$env:BuildProjectName\$env:BuildProjectName.psd1"
+        BHPSModulePath = "$env:BuildScriptPath\$env:BuildProjectName"
+        BHProjectName = $env:BuildProjectName
+        BHBuildNumber = 'Unknown'
+        BHModulePath = "$env:BuildScriptPath\$env:BuildProjectName"
+        BHBuildOutput = "$env:BuildScriptPath\BuildOutput"
+        BHBuildSystem = [System.Environment]::MachineName
+        BHProjectPath = $env:BuildScriptPath
+        BHCommitMessage = $((git log --format=%B -n 1).Trim())
+    }
+}
+foreach ($var in $gitVars.Keys) {
+    if (-not (Test-Path Env:\$var)) {
+        &$setEnvVar $var $gitVars[$var]
+    }
+}
+
+Set-Location $env:BuildScriptPath

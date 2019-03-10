@@ -124,7 +124,7 @@ $VaporshellPath = $PSScriptRoot
     $varHash = @("@{")
     Get-Content -Path "$($env:BHPSModulePath)\Private\PseudoParams.txt" | ForEach-Object {
         $name = "_$(($_ -replace "::").Trim())"
-        $varHash += &$log "'$name' = '$($_.Trim())'"
+        $varHash += "    '$name' = '$($_.Trim())'"
     }
     $varHash += "}"
 
@@ -132,11 +132,11 @@ $VaporshellPath = $PSScriptRoot
     $aliasHash = @("@{")
     Get-ChildItem "$($env:BHPSModulePath)\Public\Intrinsic Functions" | ForEach-Object {
         $name = ($_.BaseName).Replace('Add-','')
-        $aliasHash += &$log "'$name' = '$($_.BaseName.Trim())'"
+        $aliasHash += "    '$name' = '$($_.BaseName.Trim())'"
     }
     Get-ChildItem "$($env:BHPSModulePath)\Public\Condition Functions" | ForEach-Object {
         $name = ($_.BaseName).Replace('Add-','')
-        $aliasHash += &$log "'$name' = '$($_.BaseName.Trim())'"
+        $aliasHash += "    '$name' = '$($_.BaseName.Trim())'"
     }
     $aliasHash += "}"
 

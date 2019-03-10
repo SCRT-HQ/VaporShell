@@ -13,46 +13,46 @@ param(
     $Help
 )
 
+$env:BuildProjectName = 'VaporShell'
 $env:_BuildStart = Get-Date -Format 'o'
+$env:BuildScriptPath = $PSScriptRoot
+
+$heading = {
+    param(
+        [parameter(Position = 0,ValueFromRemainingArguments)]
+        [String]
+        $Title
+    )
+    $lines = '----------------------------------------------------------------------'
+    @(
+        ''
+        $lines
+        $($Title -join " ")
+        $lines
+    ) | Write-Host -ForegroundColor Cyan
+}
+$summary = {
+    param(
+        [parameter(Position = 0)]
+        [String]
+        $Project,
+        [parameter(Position = 1,ValueFromRemainingArguments)]
+        [String[]]
+        $State
+    )
+    &$heading Environment Summary
+    @(
+        "Project : $Project"
+        "State   : $($State -join " ")"
+        "Engine  : PowerShell $($PSVersionTable.PSVersion.ToString())"
+        "Host OS : $(if($PSVersionTable.PSVersion.Major -le 5 -or $IsWindows){"Windows"}elseif($IsLinux){"Linux"}elseif($IsMacOS){"macOS"}else{"[UNKNOWN]"})"
+        "PWD     : $PWD"
+        ''
+    ) | Write-Host
+}
+&$summary $env:BuildProjectName Build started
 
 . "$PSScriptRoot\ci\sbfunctions.ps1"
-
-&$summary VaporShell Build started
-
-&$heading Setting environment variables
-$projectName = 'VaporShell'
-$gitVars = if (Test-Path Env:\TF_BUILD) {
-    @{
-        BHBranchName = $env:BUILD_SOURCEBRANCHNAME
-        BHPSModuleManifest = "$PSScriptRoot\$projectName\$projectName.psd1"
-        BHPSModulePath = "$PSScriptRoot\$projectName"
-        BHProjectName = "$projectName"
-        BHBuildNumber = $env:BUILD_BUILDNUMBER
-        BHModulePath = "$PSScriptRoot\$projectName"
-        BHBuildOutput = "$PSScriptRoot\BuildOutput"
-        BHBuildSystem = 'VSTS'
-        BHProjectPath = $env:SYSTEM_DEFAULTWORKINGDIRECTORY
-        BHCommitMessage = $env:BUILD_SOURCEVERSIONMESSAGE
-    }
-}
-else {
-    @{
-        BHBranchName = $((git rev-parse --abbrev-ref HEAD).Trim())
-        BHPSModuleManifest = "$PSScriptRoot\$projectName\$projectName.psd1"
-        BHPSModulePath = "$PSScriptRoot\$projectName"
-        BHProjectName = "$projectName"
-        BHBuildNumber = 'Unknown'
-        BHModulePath = "$PSScriptRoot\$projectName"
-        BHBuildOutput = "$PSScriptRoot\BuildOutput"
-        BHBuildSystem = [System.Environment]::MachineName
-        BHProjectPath = $PSScriptRoot
-        BHCommitMessage = $((git log --format=%B -n 1).Trim())
-    }
-}
-foreach ($var in $gitVars.Keys) {
-    &$setEnvVar $var $gitVars[$var]
-}
-
 
 &$heading Setting package feeds
 # build/init script borrowed from PoshBot x Brandon Olin
@@ -219,10 +219,10 @@ else {
         }
         Invoke-psake @psakeParams @verbose
         if ($finalTasks -contains 'Import' -and $psake.build_success) {
-            &$heading "Importing $env:BHProjectName to local scope"
-            Import-Module ([System.IO.Path]::Combine($env:BHBuildOutput,$env:BHProjectName)) -Verbose:$false
+            &$heading "Importing $env:BuildProjectName to local scope"
+            Import-Module ([System.IO.Path]::Combine($env:BHBuildOutput,$env:BuildProjectName)) -Verbose:$false
         }
-        &$summary VaporShell Build finished
+        &$summary $env:BuildProjectName Build finished
         exit ( [int]( -not $psake.build_success ) )
     }
 }
