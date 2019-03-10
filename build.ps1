@@ -21,6 +21,18 @@ $env:BuildScriptPath = $PSScriptRoot
 
 Add-EnvironmentSummary "Build started"
 
+if ($IsCI) {
+    Write-Host "##[info]    Grey info text"
+    Write-Host "##[verbose] ? verbose text"
+    Write-Host "##[info]    Grey info text"
+    Write-Host "##[section] Green section text"
+    Write-Host "##[command] Blue command text"
+    Write-Host "##[debug]   Purple debug text"
+    Write-Host "##[warning] Orange warning text"
+    Write-Host "##[error]   Red error text"
+    Write-Host "##[severe]  ? severe text"
+}
+
 Set-BuildVariables
 
 Add-Heading "Setting package feeds"
