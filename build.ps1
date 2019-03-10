@@ -21,7 +21,6 @@ $env:BuildScriptPath = $PSScriptRoot
 
 Add-EnvironmentSummary "Build started"
 
-
 Set-BuildVariables
 
 Add-Heading "Setting package feeds"
