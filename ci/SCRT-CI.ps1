@@ -1,6 +1,6 @@
 New-Variable -Name IsCI -Value $($IsCI -or (Test-Path Env:\TF_BUILD)) -Scope Global -Force -Option AllScope
 
-if ($IsCI) {
+if ($false) {
     Write-Host "##[info] This is an info test!"
     Write-Host "##[section] This is colored green!"
     Write-Host "##[command] This is colored blue!"
@@ -64,15 +64,27 @@ function Add-Heading {
     param(
         [parameter(Position = 0,ValueFromRemainingArguments)]
         [String]
-        $Title
+        $Title,
+        [Switch]
+        $Passthru
     )
-    $lines = '----------------------------------------------------------------------'
-    @(
+    $lines = '[section]******************************************************************************'
+    $msgList = if ($IsCI) {
+        ''
+        "##[section]$Title"
+    }
+    else {
         ''
         $lines
-        $($Title -join " ")
+        "[section] $Title"
         $lines
-    ) | Write-Host -ForegroundColor Cyan
+    }
+    if ($Passthru) {
+        $msgList
+    }
+    else {
+        $msgList | Write-Host -ForegroundColor Cyan
+    }
 }
 Set-Alias -Name Heading -Value Add-Heading -Force
 
@@ -149,33 +161,49 @@ function Write-BuildLog {
     Begin {
         if ($Severe) {
             $fg = 'Red'
-            $lvl = '##[error] '
+            $lvl = '##[error]'
         }
         elseif ($Warning) {
             $fg = 'Yellow'
-            $lvl = '##[warning] '
+            $lvl = '##[warning]'
         }
         elseif ($Cmd) {
-            $fg = 'Blue'
-            $lvl = '##[command] PS > '
+            $fg = 'Magenta'
+            $lvl = '##[command]'
         }
         else {
             $fg = 'White'
-            $lvl = '##[info] '
+            $lvl = '##[info]'
         }
     }
     Process {
         $fmtMsg = if ($Clean){
-            $lvl + $Message
+            $Message -split "[\r\n]" | Where-Object {$_} | ForEach-Object {
+                $lvl + $_
+            }
         }
         else {
             $date = "[$((Get-Date).ToString("HH:mm:ss")) +$(((Get-Date) - (Get-Date $env:_BuildStart)).ToString())] "
-            $lvl + $date + $Message
+            if ($Cmd) {
+                $i = 0
+                $Message -split "[\r\n]" | Where-Object {$_} | ForEach-Object {
+                    $tag = if ($i -eq 0) {
+                        'PS > '
+                    }
+                    else {
+                        '>> '
+                    }
+                    $lvl + $date + $tag + $_
+                    $i++
+                }
+            }
+            else {
+                $Message -split "[\r\n]" | Where-Object {$_} | ForEach-Object {
+                    $lvl + $date + $_
+                }
+            }
         }
-        Write-Host -ForegroundColor $fg $fmtMsg
-        if ($IsCI) {
-
-        }
+        Write-Host -ForegroundColor $fg $($fmtMsg -join "`n")
     }
 }
 Set-Alias -Name Log -Value Write-BuildLog -Force
