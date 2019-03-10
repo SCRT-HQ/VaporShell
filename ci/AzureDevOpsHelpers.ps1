@@ -60,6 +60,14 @@ function Resolve-Module {
     }
 }
 
+function Get-PsakeTaskSectionFormatter {
+    $sb = {
+        param($String)
+        "$((Add-Heading "Executing task: {0}" -PassThru) -join "`n")" -f $String
+    }
+    return $sb
+}
+
 function Add-Heading {
     param(
         [parameter(Position = 0,ValueFromRemainingArguments)]

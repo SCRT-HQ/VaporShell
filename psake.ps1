@@ -34,10 +34,7 @@ Set-BuildVariables
 #Task Default -Depends Init,Test,Build,Deploy
 task default -depends Pester
 
-FormatTaskName {
-    param($String)
-    "$((Add-Heading "Executing task: {0}" -PassThru) -join "`n")" -f $String
-}
+FormatTaskName (Get-PsakeTaskSectionFormatter)
 
 task Init {
     Set-Location $ProjectRoot
