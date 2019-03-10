@@ -29,19 +29,41 @@ foreach ($file in @($Public + $Private)) {
     )
 }
 
-# Load AWS .NET SDK if not already loaded
-if (!([AppDomain]::CurrentDomain.GetAssemblies() | Where-Object {$_.Location -like "*AWSSDK.CloudFormation.dll"})) {
-    if ($IsCoreCLR) {
-        Write-Verbose "Loading AWS SDK for *NetCore*!"
-        $sdkPath = (Join-Path $Script:VaporshellPath "bin\NetCore" -Resolve)
-    }
-    else {
-        Write-Verbose "Loading AWS SDK for *Net45*!"
-        $sdkPath = (Join-Path $Script:VaporshellPath "bin\Net45" -Resolve)
-    }
-    Get-ChildItem $sdkPath -Filter "*.dll" | ForEach-Object {
+# Load the .NET assemblies
+if ($PSVersionTable.PSVersion.Major -ge 6) {
+    Write-Verbose "Loading the *netcore* assemblies!"
+    $sdkPath = (Join-Path $Script:VaporshellPath "bin\NetCore" -Resolve)
+}
+else {
+    Write-Verbose "Loading the *net45* assemblies!"
+    $sdkPath = (Join-Path $Script:VaporshellPath "bin\Net45" -Resolve)
+}
+Get-ChildItem $sdkPath -Filter "AWSSDK*.dll" | ForEach-Object {
+    $assName = $_.Name
+    try {
         [reflection.assembly]::LoadFrom("$($_.FullName)") | Out-Null
+        Write-Verbose "Loaded: $assName"
     }
+    catch {
+        Write-Warning "Failed to load: $assName"
+    }
+}
+Get-ChildItem $sdkPath -Filter "*.dll" | Where-Object {$_.Name -notmatch "(AWSSDK|VaporShell)"} | ForEach-Object {
+    $assName = $_.Name
+    try {
+        [reflection.assembly]::LoadFrom("$($_.FullName)") | Out-Null
+        Write-Verbose "Loaded: $assName"
+    }
+    catch {
+        Write-Warning "Failed to load: $assName"
+    }
+}
+try {
+    Add-Type (Join-Path $sdkPath "$($env:BHProjectName).dll") -ReferencedAssemblies 'Newtonsoft.Json.dll','YamlDotNet.dll' # ((Join-Path `$sdkPath 'Newtonsoft.Json.dll'),(Join-Path `$sdkPath 'YamlDotNet.dll'))
+    Write-Verbose "Loaded: $($env:BHProjectName).dll"
+}
+catch {
+    Write-Warning "Failed to load: $($env:BHProjectName).dll"
 }
 
 # Add Intrinsic and Condition Function short aliases

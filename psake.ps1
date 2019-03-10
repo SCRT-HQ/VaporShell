@@ -65,8 +65,10 @@ task Clean -depends Init {
         }
         if ($allClean) {
             Write-Host -ForegroundColor Green "All files successfully cleaned! Removing folder structure now"
-            Write-Host -ForegroundColor Magenta "PS >_ Remove-Item $outputModDir -Recurse -Force"
-            Remove-Item $outputModDir -Recurse -Force
+            if (Test-Path $outputModDir) {
+                Write-Host -ForegroundColor Magenta "PS >_ Remove-Item $outputModDir -Recurse -Force"
+                Remove-Item $outputModDir -Recurse -Force
+            }
         }
     } else {
         New-Item -Path $outputDir -ItemType Directory > $null
@@ -141,15 +143,35 @@ else {
     Write-Verbose "Loading the *net45* assemblies!"
     `$sdkPath = (Join-Path `$Script:VaporshellPath "bin\Net45" -Resolve)
 }
-Get-ChildItem `$sdkPath -Filter "*.dll" | ForEach-Object {
+Get-ChildItem `$sdkPath -Filter "AWS*.dll" | ForEach-Object {
     `$assName = `$_.Name
     try {
         [reflection.assembly]::LoadFrom("`$(`$_.FullName)") | Out-Null
         Write-Verbose "Loaded: `$assName"
     }
     catch {
-        Write-Verbose "Failed to load: `$assName"
+        Write-Warning "Failed to load: `$assName``n``t  `$(`$_.Exception.Message)"
     }
+}
+#<#
+Get-ChildItem `$sdkPath -Filter "*.dll" | Where-Object {`$_.Name -notmatch "(AWS|VaporShell)"}  | ForEach-Object {
+    `$assName = `$_.Name
+    try {
+        [reflection.assembly]::LoadFrom("`$(`$_.FullName)") | Out-Null
+        Write-Verbose "Loaded: `$assName"
+    }
+    catch {
+        Write-Warning "Failed to load: `$assName``n``t  `$(`$_.Exception.Message)"
+    }
+}
+#>
+try {
+    [reflection.assembly]::LoadFrom((Join-Path `$sdkPath "VaporShell.dll")) | Out-Null
+    ###Add-Type (Join-Path `$sdkPath "VaporShell.dll") -ReferencedAssemblies @((Join-Path `$sdkPath 'Newtonsoft.Json.dll'),(Join-Path `$sdkPath 'YamlDotNet.dll'))
+    Write-Verbose "Loaded: VaporShell.dll"
+}
+catch {
+    Write-Warning "Failed to load: VaporShell.dll``n``t  `$(`$_.Exception.Message)"
 }
 
 `$aliases = @()
@@ -290,7 +312,7 @@ $pesterScriptBlock = {
     $env:PSModulePath = $origModulePath
 }
 
-task Pester -Depends Init,Update,Clean,Compile,Import $pesterScriptBlock -description 'Run Pester tests'
+task Pester -Depends Compile,Import $pesterScriptBlock -description 'Run Pester tests'
 
 task PesterOnly -Depends Import $pesterScriptBlock -description 'Run Pester tests only (no Update/Clean/Compile)'
 

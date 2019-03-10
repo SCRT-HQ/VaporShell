@@ -1,4 +1,6 @@
-﻿using System;
+﻿using System.Reflection;
+using System.Runtime.InteropServices;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using Newtonsoft.Json;
@@ -20,7 +22,7 @@ namespace VaporShell.Core {
                 this.MinSuccessfulInstancesPercent = MinSuccessfulInstancesPercent;
             }
             else {
-                throw new System.Exception("MinSuccessfulInstancesPercent must be between 0 - 100! Value provided: " + MinSuccessfulInstancesPercent);
+                throw new ArgumentException("MinSuccessfulInstancesPercent must be between 0 - 100! Value provided: " + MinSuccessfulInstancesPercent);
             }
         }
     }
@@ -348,16 +350,11 @@ namespace VaporShell.Core {
         public void AddResource(Resource item, bool addToMain = true) {
             var logId = item.GetLogicalId();
             if (addToMain) {
-                var removals = new List<object>();
                 Resources.ForEach(x => {
                     if (x.LogicalId == logId) {
-                        Console.WriteLine("WARNING: Removing existing resource to prevent conflict\n\t └ LogicalId to remove: " + logId);
-                        removals.Add(x);
+                        throw new ArgumentException("A resource with LogicalId of '" + logId + "' already exists on this TypeLibImportClassAttribute. Remove it first if you need to replace or use a different, unique LogicalId for this ResourceAttributes.");
                     }
                 });
-                foreach (Resource x in removals) {
-                    Resources.Remove(x);
-                }
                 Resources.Add(item);
                 _updatedAt = DateTime.Now;
             }

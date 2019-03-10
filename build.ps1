@@ -13,6 +13,13 @@ param(
     $Help
 )
 
+Write-Host "`n----------------------------------------------------------------------"
+Write-Host "Environment Summary"
+Write-Host "----------------------------------------------------------------------"
+Write-Host "State   : Started"
+Write-Host "Engine  : PowerShell $($PSVersionTable.PSVersion.ToString())"
+Write-Host "Host OS : $(if($PSVersionTable.PSVersion.Major -le 5 -or $IsWindows){"Windows"}elseif($IsLinux){"Linux"}elseif($IsMacOS){"macOS"}else{"[UNKNOWN]"})`n"
+
 # build/init script borrowed from PoshBot x Brandon Olin
 Get-PackageProvider -Name Nuget -ForceBootstrap -Verbose:$false | Out-Null
 Set-PSRepository -Name PSGallery -InstallationPolicy Trusted -Verbose:$false
@@ -27,27 +34,6 @@ $PSDefaultParameterValues = @{
     'Install-Module:Scope' = 'CurrentUser'
     'Install-Module:Verbose' = $false
 }
-
-function Show-Colors ([Switch]$Grid) {
-    $colors = [enum]::GetValues([System.ConsoleColor])
-    if ($Grid) {
-        Foreach ($bgcolor in $colors) {
-            Foreach ($fgcolor in $colors) {
-                Write-Host "$fgcolor|"  -ForegroundColor $fgcolor -BackgroundColor $bgcolor -NoNewLine
-            }
-            Write-Host " on $bgcolor"
-        }
-    }
-    else {
-        $max = ($colors | ForEach-Object { "$_ ".Length } | Measure-Object -Maximum).Maximum
-        foreach ( $color in $colors ) {
-            Write-Host (" {0,2} {1,$max} " -f [int]$color,$color) -NoNewline
-            Write-Host "$color" -Foreground $color
-        }
-    }
-}
-
-Show-Colors -Grid
 
 function Resolve-Module {
     [Cmdletbinding()]
@@ -178,6 +164,12 @@ else {
         if ($finalTasks -contains 'Import' -and $psake.build_success) {
             Import-Module ([System.IO.Path]::Combine($env:BHBuildOutput,$env:BHProjectName)) -Verbose:$false
         }
+        Write-Host "`n----------------------------------------------------------------------"
+        Write-Host "Environment Summary"
+        Write-Host "----------------------------------------------------------------------"
+        Write-Host "State   : Started"
+        Write-Host "Engine  : PowerShell $($PSVersionTable.PSVersion.ToString())"
+        Write-Host "Host OS : $(if($PSVersionTable.PSVersion.Major -le 5 -or $IsWindows){"Windows"}elseif($IsLinux){"Linux"}elseif($IsMacOS){"macOS"}else{"[UNKNOWN]"})`n"
         exit ( [int]( -not $psake.build_success ) )
     }
 }
