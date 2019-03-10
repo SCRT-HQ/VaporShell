@@ -92,11 +92,10 @@ task Clean -depends Init {
 } -description 'Cleans module output directory'
 
 task CompilePowerShell -depends Clean {
-    Invoke-CommandWithLog {
-        $functionsToExport = @()
-        New-Item -Path $outputModDir -ItemType Directory -ErrorAction SilentlyContinue > $null
-        New-Item -Path $outputModVerDir -ItemType Directory -ErrorAction SilentlyContinue > $null
-    }
+    $functionsToExport = @()
+    Write-BuildLog -Debug 'Creating BuildOutput folders...'
+    New-Item -Path $outputModDir -ItemType Directory -ErrorAction SilentlyContinue > $null
+    New-Item -Path $outputModVerDir -ItemType Directory -ErrorAction SilentlyContinue > $null
 
     # Append items to psm1
     Write-BuildLog -Debug 'Creating psm1...'
@@ -264,6 +263,10 @@ Task Import -Depends Init {
 } -description 'Imports the newly compiled module'
 
 $pesterScriptBlock = {
+    . "$PSScriptRoot\ci\AzureDevOpsHelpers.ps1"
+
+    Set-BuildVariables
+
     Write-BuildLog "Installing the latest version of Pester"
     Install-Module -Name Pester -Repository PSGallery -Scope CurrentUser -AllowClobber -SkipPublisherCheck -Confirm:$false -ErrorAction Stop -Force -Verbose:$false
     Import-Module -Name Pester -Verbose:$false -Force
@@ -280,7 +283,7 @@ $pesterScriptBlock = {
     }
     if (-not $ENV:BHProjectPath) {
         Write-BuildLog 'Setting Build Environment...'
-        Set-BuildEnvironment -Path $PSScriptRoot\..
+        Set-BuildVariables
     }
 
     $origModulePath = $env:PSModulePath
@@ -340,6 +343,9 @@ task Analyze -Depends Pester {
 } -description 'Run PSScriptAnalyzer'
 
 Task Deploy -Depends Init {
+    . "$PSScriptRoot\ci\AzureDevOpsHelpers.ps1"
+
+    Set-BuildVariables
     function Publish-GitHubRelease {
         <#
             .SYNOPSIS
