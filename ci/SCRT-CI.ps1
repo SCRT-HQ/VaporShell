@@ -68,17 +68,11 @@ function Add-Heading {
         [Switch]
         $Passthru
     )
-    $lines = '##[section]******************************************************************************'
-    $msgList = if ($IsCI) {
+    $date = "[$((Get-Date).ToString("HH:mm:ss")) +$(((Get-Date) - (Get-Date $env:_BuildStart)).ToString())]"
+    $msgList = @(
         ''
-        "##[section] $Title"
-    }
-    else {
-        ''
-        $lines
-        "##[section] $Title"
-        $lines
-    }
+        "##[section] $date $Title"
+    )
     if ($Passthru) {
         $msgList
     }
