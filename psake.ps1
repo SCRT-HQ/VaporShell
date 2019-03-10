@@ -27,7 +27,7 @@ Properties {
     }
 }
 
-. "$PSScriptRoot\ci\SCRT-CI.ps1"
+. "$PSScriptRoot\ci\AzureDevOpsHelpers.ps1"
 
 Set-BuildVariables
 
@@ -42,8 +42,7 @@ FormatTaskName {
 task Init {
     Set-Location $ProjectRoot
     Write-BuildLog "Build System Details:"
-    Get-Item ENV:BH*
-    Get-Item ENV:BUILD*
+    Write-BuildLog "$((Get-ChildItem Env: | Where-Object {$_.Name -match "^(BUILD_|SYSTEM_|BH)"} | Sort-Object Name | Format-Table Name,Value -AutoSize | Out-String).Trim())"
     if ($env:BHProjectName -cne $moduleName) {
         $env:BHProjectName = $moduleName
     }
@@ -53,7 +52,7 @@ task Update -depends Init {
     Write-BuildLog 'Updating Resource and Property Type functions with current AWS spec sheet...'
     Remove-Module $env:BHProjectName -ErrorAction SilentlyContinue -Force -Verbose:$false
     Import-Module $env:BHPSModuleManifest -Force -Verbose:$false
-    Update-VSResourceFunctions
+    Update-VSResourceFunctions -Verbose
     Remove-Module $env:BHProjectName -Force -Verbose:$false
 } -description 'Updates module functions before compilation'
 
@@ -247,7 +246,7 @@ task CompileCSharp -depends CompilePowerShell {
     Pop-Location
 }
 
-task Compile -depends CompileCSharp
+task Compile -depends CompileCSharp,Import
 
 Task Import -Depends Init {
     Write-BuildLog 'Testing import of compiled module'

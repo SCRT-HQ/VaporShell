@@ -1,4 +1,4 @@
-﻿function New-VSRoboMakerSimulationApplicationVersion {
+function New-VSRoboMakerSimulationApplicationVersion {
     <#
     .SYNOPSIS
         Adds an AWS::RoboMaker::SimulationApplicationVersion resource to the template

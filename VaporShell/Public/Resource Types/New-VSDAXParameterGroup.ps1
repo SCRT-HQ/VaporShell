@@ -1,4 +1,4 @@
-﻿function New-VSDAXParameterGroup {
+function New-VSDAXParameterGroup {
     <#
     .SYNOPSIS
         Adds an AWS::DAX::ParameterGroup resource to the template

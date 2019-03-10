@@ -1,4 +1,4 @@
-﻿function Add-VSRoboMakerSimulationApplicationRenderingEngine {
+function Add-VSRoboMakerSimulationApplicationRenderingEngine {
     <#
     .SYNOPSIS
         Adds an AWS::RoboMaker::SimulationApplication.RenderingEngine resource property to the template

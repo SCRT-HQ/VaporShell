@@ -1,4 +1,4 @@
-﻿function Add-VSSecretsManagerRotationScheduleRotationRules {
+function Add-VSSecretsManagerRotationScheduleRotationRules {
     <#
     .SYNOPSIS
         Adds an AWS::SecretsManager::RotationSchedule.RotationRules resource property to the template

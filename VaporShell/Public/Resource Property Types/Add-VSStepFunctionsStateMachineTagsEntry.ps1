@@ -1,4 +1,4 @@
-﻿function Add-VSStepFunctionsStateMachineTagsEntry {
+function Add-VSStepFunctionsStateMachineTagsEntry {
     <#
     .SYNOPSIS
         Adds an AWS::StepFunctions::StateMachine.TagsEntry resource property to the template

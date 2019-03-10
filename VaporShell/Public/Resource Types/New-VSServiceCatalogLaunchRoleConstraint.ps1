@@ -1,4 +1,4 @@
-﻿function New-VSServiceCatalogLaunchRoleConstraint {
+function New-VSServiceCatalogLaunchRoleConstraint {
     <#
     .SYNOPSIS
         Adds an AWS::ServiceCatalog::LaunchRoleConstraint resource to the template

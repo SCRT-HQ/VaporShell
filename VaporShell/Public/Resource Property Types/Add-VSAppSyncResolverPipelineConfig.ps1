@@ -1,4 +1,4 @@
-﻿function Add-VSAppSyncResolverPipelineConfig {
+function Add-VSAppSyncResolverPipelineConfig {
     <#
     .SYNOPSIS
         Adds an AWS::AppSync::Resolver.PipelineConfig resource property to the template

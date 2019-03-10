@@ -1,4 +1,4 @@
-﻿function Add-VSEC2LaunchTemplateCpuOptions {
+function Add-VSEC2LaunchTemplateCpuOptions {
     <#
     .SYNOPSIS
         Adds an AWS::EC2::LaunchTemplate.CpuOptions resource property to the template

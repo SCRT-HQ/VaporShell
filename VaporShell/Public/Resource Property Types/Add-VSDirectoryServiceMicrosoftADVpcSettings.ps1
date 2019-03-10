@@ -1,4 +1,4 @@
-﻿function Add-VSDirectoryServiceMicrosoftADVpcSettings {
+function Add-VSDirectoryServiceMicrosoftADVpcSettings {
     <#
     .SYNOPSIS
         Adds an AWS::DirectoryService::MicrosoftAD.VpcSettings resource property to the template

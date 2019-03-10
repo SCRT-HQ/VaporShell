@@ -1,4 +1,4 @@
-﻿function Add-VSEventsEventBusPolicyCondition {
+function Add-VSEventsEventBusPolicyCondition {
     <#
     .SYNOPSIS
         Adds an AWS::Events::EventBusPolicy.Condition resource property to the template

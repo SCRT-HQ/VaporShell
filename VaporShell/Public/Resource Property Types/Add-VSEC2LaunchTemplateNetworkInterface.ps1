@@ -1,4 +1,4 @@
-﻿function Add-VSEC2LaunchTemplateNetworkInterface {
+function Add-VSEC2LaunchTemplateNetworkInterface {
     <#
     .SYNOPSIS
         Adds an AWS::EC2::LaunchTemplate.NetworkInterface resource property to the template

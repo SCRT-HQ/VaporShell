@@ -1,4 +1,4 @@
-﻿function New-VSAppStreamStack {
+function New-VSAppStreamStack {
     <#
     .SYNOPSIS
         Adds an AWS::AppStream::Stack resource to the template

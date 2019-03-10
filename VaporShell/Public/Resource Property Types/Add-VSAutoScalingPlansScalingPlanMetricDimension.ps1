@@ -1,4 +1,4 @@
-﻿function Add-VSAutoScalingPlansScalingPlanMetricDimension {
+function Add-VSAutoScalingPlansScalingPlanMetricDimension {
     <#
     .SYNOPSIS
         Adds an AWS::AutoScalingPlans::ScalingPlan.MetricDimension resource property to the template

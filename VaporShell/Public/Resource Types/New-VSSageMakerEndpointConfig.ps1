@@ -1,4 +1,4 @@
-﻿function New-VSSageMakerEndpointConfig {
+function New-VSSageMakerEndpointConfig {
     <#
     .SYNOPSIS
         Adds an AWS::SageMaker::EndpointConfig resource to the template

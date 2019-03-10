@@ -1,4 +1,4 @@
-﻿function Add-VSAmazonMQConfigurationAssociationConfigurationId {
+function Add-VSAmazonMQConfigurationAssociationConfigurationId {
     <#
     .SYNOPSIS
         Adds an AWS::AmazonMQ::ConfigurationAssociation.ConfigurationId resource property to the template

@@ -1,4 +1,4 @@
-﻿function Add-VSCognitoUserPoolPolicies {
+function Add-VSCognitoUserPoolPolicies {
     <#
     .SYNOPSIS
         Adds an AWS::Cognito::UserPool.Policies resource property to the template

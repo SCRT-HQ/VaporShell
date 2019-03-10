@@ -1,4 +1,4 @@
-﻿function New-VSLambdaLayerVersionPermission {
+function New-VSLambdaLayerVersionPermission {
     <#
     .SYNOPSIS
         Adds an AWS::Lambda::LayerVersionPermission resource to the template

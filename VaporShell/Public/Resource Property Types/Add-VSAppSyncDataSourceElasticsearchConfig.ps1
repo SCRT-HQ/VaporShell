@@ -1,4 +1,4 @@
-﻿function Add-VSAppSyncDataSourceElasticsearchConfig {
+function Add-VSAppSyncDataSourceElasticsearchConfig {
     <#
     .SYNOPSIS
         Adds an AWS::AppSync::DataSource.ElasticsearchConfig resource property to the template

@@ -1,4 +1,4 @@
-﻿function New-VSIAMUser {
+function New-VSIAMUser {
     <#
     .SYNOPSIS
         Adds an AWS::IAM::User resource to the template

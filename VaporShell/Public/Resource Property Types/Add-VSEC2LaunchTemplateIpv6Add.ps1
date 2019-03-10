@@ -1,4 +1,4 @@
-﻿function Add-VSEC2LaunchTemplateIpv6Add {
+function Add-VSEC2LaunchTemplateIpv6Add {
     <#
     .SYNOPSIS
         Adds an AWS::EC2::LaunchTemplate.Ipv6Add resource property to the template

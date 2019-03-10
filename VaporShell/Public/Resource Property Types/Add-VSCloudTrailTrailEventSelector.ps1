@@ -1,4 +1,4 @@
-﻿function Add-VSCloudTrailTrailEventSelector {
+function Add-VSCloudTrailTrailEventSelector {
     <#
     .SYNOPSIS
         Adds an AWS::CloudTrail::Trail.EventSelector resource property to the template

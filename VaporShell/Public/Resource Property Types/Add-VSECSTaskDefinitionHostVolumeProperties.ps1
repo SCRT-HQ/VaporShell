@@ -1,4 +1,4 @@
-﻿function Add-VSECSTaskDefinitionHostVolumeProperties {
+function Add-VSECSTaskDefinitionHostVolumeProperties {
     <#
     .SYNOPSIS
         Adds an AWS::ECS::TaskDefinition.HostVolumeProperties resource property to the template

@@ -1,4 +1,4 @@
-﻿function New-VSEC2EC2Fleet {
+function New-VSEC2EC2Fleet {
     <#
     .SYNOPSIS
         Adds an AWS::EC2::EC2Fleet resource to the template

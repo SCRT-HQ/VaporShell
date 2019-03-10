@@ -1,4 +1,4 @@
-﻿function New-VSApiGatewayDomainName {
+function New-VSApiGatewayDomainName {
     <#
     .SYNOPSIS
         Adds an AWS::ApiGateway::DomainName resource to the template

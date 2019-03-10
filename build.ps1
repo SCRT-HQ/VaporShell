@@ -4,7 +4,7 @@ param(
     [parameter(ParameterSetName = 'task', Position = 0)]
     [ValidateSet('Init','Update','Clean','Compile','CompilePowerShell','CompileCSharp','Import','Pester','PesterOnly','Deploy')]
     [string[]]
-    $Task = @('Compile','Import'),
+    $Task = 'Compile',
     [parameter(ParameterSetName = 'task')]
     [switch]
     $UpdateModules,
@@ -17,7 +17,7 @@ $env:BuildProjectName = 'VaporShell'
 $env:_BuildStart = Get-Date -Format 'o'
 $env:BuildScriptPath = $PSScriptRoot
 
-. "$PSScriptRoot\ci\SCRT-CI.ps1"
+. "$PSScriptRoot\ci\AzureDevOpsHelpers.ps1"
 
 Add-EnvironmentSummary Build started
 

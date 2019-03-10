@@ -1,4 +1,4 @@
-﻿function New-VSKinesisAnalyticsV2Application {
+function New-VSKinesisAnalyticsV2Application {
     <#
     .SYNOPSIS
         Adds an AWS::KinesisAnalyticsV2::Application resource to the template

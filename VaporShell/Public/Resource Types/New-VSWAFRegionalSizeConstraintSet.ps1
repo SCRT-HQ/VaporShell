@@ -1,4 +1,4 @@
-﻿function New-VSWAFRegionalSizeConstraintSet {
+function New-VSWAFRegionalSizeConstraintSet {
     <#
     .SYNOPSIS
         Adds an AWS::WAFRegional::SizeConstraintSet resource to the template

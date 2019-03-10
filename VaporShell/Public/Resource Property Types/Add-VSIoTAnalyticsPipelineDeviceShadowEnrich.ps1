@@ -1,4 +1,4 @@
-﻿function Add-VSIoTAnalyticsPipelineDeviceShadowEnrich {
+function Add-VSIoTAnalyticsPipelineDeviceShadowEnrich {
     <#
     .SYNOPSIS
         Adds an AWS::IoTAnalytics::Pipeline.DeviceShadowEnrich resource property to the template

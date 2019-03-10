@@ -1,4 +1,4 @@
-﻿function New-VSEC2SecurityGroupIngress {
+function New-VSEC2SecurityGroupIngress {
     <#
     .SYNOPSIS
         Adds an AWS::EC2::SecurityGroupIngress resource to the template

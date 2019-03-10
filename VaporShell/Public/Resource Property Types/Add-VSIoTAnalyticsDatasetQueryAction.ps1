@@ -1,4 +1,4 @@
-﻿function Add-VSIoTAnalyticsDatasetQueryAction {
+function Add-VSIoTAnalyticsDatasetQueryAction {
     <#
     .SYNOPSIS
         Adds an AWS::IoTAnalytics::Dataset.QueryAction resource property to the template

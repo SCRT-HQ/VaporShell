@@ -1,4 +1,4 @@
-﻿function Add-VSCodeBuildProjectWebhookFilter {
+function Add-VSCodeBuildProjectWebhookFilter {
     <#
     .SYNOPSIS
         Adds an AWS::CodeBuild::Project.WebhookFilter resource property to the template

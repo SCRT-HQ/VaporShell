@@ -1,4 +1,4 @@
-﻿function Add-VSIoTAnalyticsPipelineLambda {
+function Add-VSIoTAnalyticsPipelineLambda {
     <#
     .SYNOPSIS
         Adds an AWS::IoTAnalytics::Pipeline.Lambda resource property to the template

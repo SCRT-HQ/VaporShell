@@ -1,4 +1,4 @@
-﻿function Add-VSApiGatewayDeploymentAccessLogSetting {
+function Add-VSApiGatewayDeploymentAccessLogSetting {
     <#
     .SYNOPSIS
         Adds an AWS::ApiGateway::Deployment.AccessLogSetting resource property to the template

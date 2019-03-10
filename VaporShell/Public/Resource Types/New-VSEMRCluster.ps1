@@ -1,4 +1,4 @@
-﻿function New-VSEMRCluster {
+function New-VSEMRCluster {
     <#
     .SYNOPSIS
         Adds an AWS::EMR::Cluster resource to the template

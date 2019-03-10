@@ -1,4 +1,4 @@
-﻿function New-VSAppSyncResolver {
+function New-VSAppSyncResolver {
     <#
     .SYNOPSIS
         Adds an AWS::AppSync::Resolver resource to the template

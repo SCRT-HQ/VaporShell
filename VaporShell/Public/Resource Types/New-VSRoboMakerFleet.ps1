@@ -1,4 +1,4 @@
-﻿function New-VSRoboMakerFleet {
+function New-VSRoboMakerFleet {
     <#
     .SYNOPSIS
         Adds an AWS::RoboMaker::Fleet resource to the template

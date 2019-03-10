@@ -1,4 +1,4 @@
-﻿function Add-VSKinesisAnalyticsV2ApplicationKinesisFirehoseInput {
+function Add-VSKinesisAnalyticsV2ApplicationKinesisFirehoseInput {
     <#
     .SYNOPSIS
         Adds an AWS::KinesisAnalyticsV2::Application.KinesisFirehoseInput resource property to the template

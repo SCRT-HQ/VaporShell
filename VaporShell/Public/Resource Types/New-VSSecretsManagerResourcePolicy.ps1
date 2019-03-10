@@ -1,4 +1,4 @@
-﻿function New-VSSecretsManagerResourcePolicy {
+function New-VSSecretsManagerResourcePolicy {
     <#
     .SYNOPSIS
         Adds an AWS::SecretsManager::ResourcePolicy resource to the template

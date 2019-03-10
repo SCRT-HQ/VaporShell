@@ -1,4 +1,4 @@
-﻿function New-VSEC2TrunkInterfaceAssociation {
+function New-VSEC2TrunkInterfaceAssociation {
     <#
     .SYNOPSIS
         Adds an AWS::EC2::TrunkInterfaceAssociation resource to the template

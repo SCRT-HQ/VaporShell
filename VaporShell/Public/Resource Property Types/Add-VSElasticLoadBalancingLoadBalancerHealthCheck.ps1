@@ -1,4 +1,4 @@
-﻿function Add-VSElasticLoadBalancingLoadBalancerHealthCheck {
+function Add-VSElasticLoadBalancingLoadBalancerHealthCheck {
     <#
     .SYNOPSIS
         Adds an AWS::ElasticLoadBalancing::LoadBalancer.HealthCheck resource property to the template

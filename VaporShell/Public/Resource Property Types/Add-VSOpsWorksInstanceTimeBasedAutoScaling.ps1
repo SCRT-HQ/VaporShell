@@ -1,4 +1,4 @@
-﻿function Add-VSOpsWorksInstanceTimeBasedAutoScaling {
+function Add-VSOpsWorksInstanceTimeBasedAutoScaling {
     <#
     .SYNOPSIS
         Adds an AWS::OpsWorks::Instance.TimeBasedAutoScaling resource property to the template

@@ -1,4 +1,4 @@
-﻿function New-VSRoboMakerRobotApplication {
+function New-VSRoboMakerRobotApplication {
     <#
     .SYNOPSIS
         Adds an AWS::RoboMaker::RobotApplication resource to the template

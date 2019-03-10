@@ -1,4 +1,4 @@
-﻿function Add-VSAppStreamImageBuilderVpcConfig {
+function Add-VSAppStreamImageBuilderVpcConfig {
     <#
     .SYNOPSIS
         Adds an AWS::AppStream::ImageBuilder.VpcConfig resource property to the template

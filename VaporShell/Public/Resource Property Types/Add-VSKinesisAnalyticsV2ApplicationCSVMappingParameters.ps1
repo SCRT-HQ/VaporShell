@@ -1,4 +1,4 @@
-﻿function Add-VSKinesisAnalyticsV2ApplicationCSVMappingParameters {
+function Add-VSKinesisAnalyticsV2ApplicationCSVMappingParameters {
     <#
     .SYNOPSIS
         Adds an AWS::KinesisAnalyticsV2::Application.CSVMappingParameters resource property to the template

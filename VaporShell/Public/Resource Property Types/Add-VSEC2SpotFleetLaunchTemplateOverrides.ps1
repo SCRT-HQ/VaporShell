@@ -1,4 +1,4 @@
-﻿function Add-VSEC2SpotFleetLaunchTemplateOverrides {
+function Add-VSEC2SpotFleetLaunchTemplateOverrides {
     <#
     .SYNOPSIS
         Adds an AWS::EC2::SpotFleet.LaunchTemplateOverrides resource property to the template

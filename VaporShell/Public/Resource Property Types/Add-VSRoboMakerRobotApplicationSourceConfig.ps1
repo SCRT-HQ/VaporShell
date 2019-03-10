@@ -1,4 +1,4 @@
-﻿function Add-VSRoboMakerRobotApplicationSourceConfig {
+function Add-VSRoboMakerRobotApplicationSourceConfig {
     <#
     .SYNOPSIS
         Adds an AWS::RoboMaker::RobotApplication.SourceConfig resource property to the template

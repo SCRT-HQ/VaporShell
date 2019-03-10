@@ -1,4 +1,4 @@
-﻿function Add-VSWAFWebACLWafAction {
+function Add-VSWAFWebACLWafAction {
     <#
     .SYNOPSIS
         Adds an AWS::WAF::WebACL.WafAction resource property to the template

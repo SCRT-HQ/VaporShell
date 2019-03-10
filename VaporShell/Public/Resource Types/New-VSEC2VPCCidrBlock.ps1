@@ -1,4 +1,4 @@
-﻿function New-VSEC2VPCCidrBlock {
+function New-VSEC2VPCCidrBlock {
     <#
     .SYNOPSIS
         Adds an AWS::EC2::VPCCidrBlock resource to the template

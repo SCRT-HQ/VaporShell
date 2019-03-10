@@ -1,4 +1,4 @@
-﻿function Add-VSCodeBuildProjectRegistryCredential {
+function Add-VSCodeBuildProjectRegistryCredential {
     <#
     .SYNOPSIS
         Adds an AWS::CodeBuild::Project.RegistryCredential resource property to the template

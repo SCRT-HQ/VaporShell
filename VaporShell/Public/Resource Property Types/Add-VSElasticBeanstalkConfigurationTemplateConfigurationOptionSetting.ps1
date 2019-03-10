@@ -1,4 +1,4 @@
-﻿function Add-VSElasticBeanstalkConfigurationTemplateConfigurationOptionSetting {
+function Add-VSElasticBeanstalkConfigurationTemplateConfigurationOptionSetting {
     <#
     .SYNOPSIS
         Adds an AWS::ElasticBeanstalk::ConfigurationTemplate.ConfigurationOptionSetting resource property to the template

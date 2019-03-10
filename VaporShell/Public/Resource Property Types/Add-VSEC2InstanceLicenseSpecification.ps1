@@ -1,4 +1,4 @@
-﻿function Add-VSEC2InstanceLicenseSpecification {
+function Add-VSEC2InstanceLicenseSpecification {
     <#
     .SYNOPSIS
         Adds an AWS::EC2::Instance.LicenseSpecification resource property to the template

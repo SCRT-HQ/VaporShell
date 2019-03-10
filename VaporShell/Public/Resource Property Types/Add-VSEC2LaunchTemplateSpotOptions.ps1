@@ -1,4 +1,4 @@
-﻿function Add-VSEC2LaunchTemplateSpotOptions {
+function Add-VSEC2LaunchTemplateSpotOptions {
     <#
     .SYNOPSIS
         Adds an AWS::EC2::LaunchTemplate.SpotOptions resource property to the template

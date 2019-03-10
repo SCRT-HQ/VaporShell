@@ -1,4 +1,4 @@
-﻿function New-VSWAFRegionalIPSet {
+function New-VSWAFRegionalIPSet {
     <#
     .SYNOPSIS
         Adds an AWS::WAFRegional::IPSet resource to the template

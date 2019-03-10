@@ -1,4 +1,4 @@
-﻿function Add-VSAmazonMQBrokerConfigurationId {
+function Add-VSAmazonMQBrokerConfigurationId {
     <#
     .SYNOPSIS
         Adds an AWS::AmazonMQ::Broker.ConfigurationId resource property to the template

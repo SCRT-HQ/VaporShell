@@ -1,4 +1,4 @@
-﻿function Add-VSAmazonMQBrokerLogList {
+function Add-VSAmazonMQBrokerLogList {
     <#
     .SYNOPSIS
         Adds an AWS::AmazonMQ::Broker.LogList resource property to the template

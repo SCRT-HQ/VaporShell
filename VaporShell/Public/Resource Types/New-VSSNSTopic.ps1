@@ -1,4 +1,4 @@
-﻿function New-VSSNSTopic {
+function New-VSSNSTopic {
     <#
     .SYNOPSIS
         Adds an AWS::SNS::Topic resource to the template

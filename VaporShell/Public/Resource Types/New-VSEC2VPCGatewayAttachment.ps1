@@ -1,4 +1,4 @@
-﻿function New-VSEC2VPCGatewayAttachment {
+function New-VSEC2VPCGatewayAttachment {
     <#
     .SYNOPSIS
         Adds an AWS::EC2::VPCGatewayAttachment resource to the template
