@@ -161,19 +161,19 @@ function Write-BuildLog {
     Begin {
         if ($Severe) {
             $fg = 'Red'
-            $lvl = '##[error]  '
+            $lvl = '##[error]   '
         }
         elseif ($Warning) {
             $fg = 'Yellow'
-            $lvl = '##[warning]'
+            $lvl = '##[warning] '
         }
         elseif ($Cmd) {
             $fg = 'Magenta'
-            $lvl = '##[command]'
+            $lvl = '##[command] '
         }
         else {
             $fg = 'White'
-            $lvl = '##[info]   '
+            $lvl = '##[info]    '
         }
     }
     Process {
