@@ -255,7 +255,9 @@ task CompileCSharp -depends CompilePowerShell {
     Invoke-CommandWithLog {Pop-Location}
 }
 
+
 task Compile -depends CompileCSharp,Import
+
 
 Task Import -Depends Init {
     Write-BuildLog 'Testing import of compiled module'
