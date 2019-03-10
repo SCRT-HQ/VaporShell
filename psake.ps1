@@ -60,7 +60,7 @@ task Clean -depends Init {
         Invoke-CommandWithLog {Get-ChildItem -Path $outputDir -Recurse -File | ForEach-Object {
             $item = $_
             try {
-                Write-BuildLog -Debug "Removing item: $($item.FullName)"
+                Write-BuildLog -Verbose "Removing item: $($item.FullName)"
                 $item | Remove-Item -Force
             }
             catch {
@@ -72,12 +72,12 @@ task Clean -depends Init {
         if ($allClean) {
             Write-BuildLog "All files successfully cleaned! Removing folder structure now"
             if (Test-Path $outputModDir) {
-                Write-BuildLog -Debug "Removing item: $($item.FullName)"
+                Write-BuildLog -Verbose "Removing item: $($item.FullName)"
                 Invoke-CommandWithLog {
                     Get-ChildItem $outputModDir -Recurse | ForEach-Object {
                         $item = $_
                         try {
-                            Write-BuildLog -Debug "Removing item: $($item.FullName)"
+                            Write-BuildLog -Verbose "Removing item: $($item.FullName)"
                             $item | Remove-Item -Recurse -Force
                         }
                         catch {}
@@ -93,12 +93,12 @@ task Clean -depends Init {
 
 task CompilePowerShell -depends Clean {
     $functionsToExport = @()
-    Write-BuildLog -Debug 'Creating BuildOutput folders...'
+    Write-BuildLog -Verbose 'Creating BuildOutput folders...'
     New-Item -Path $outputModDir -ItemType Directory -ErrorAction SilentlyContinue > $null
     New-Item -Path $outputModVerDir -ItemType Directory -ErrorAction SilentlyContinue > $null
 
     # Append items to psm1
-    Write-BuildLog -Debug 'Creating psm1...'
+    Write-BuildLog -Verbose 'Creating psm1...'
 @'
 Param(
     # This no longer does anything as of v2.6.0, leaving for backwards compatiblity
@@ -109,27 +109,27 @@ $VaporshellPath = $PSScriptRoot
 '@ | Set-Content -Path (Join-Path -Path $outputModVerDir -ChildPath "$($ENV:BHProjectName).psm1") -Encoding UTF8 -Force
     $psm1 = Get-Item (Join-Path -Path $outputModVerDir -ChildPath "$($ENV:BHProjectName).psm1")
 
-    Write-BuildLog -Debug 'Adding Private functions to psm1...'
+    Write-BuildLog -Verbose 'Adding Private functions to psm1...'
     Get-ChildItem -Path (Join-Path -Path $sut -ChildPath 'Private') -Recurse -File | Where-Object {$_.Name -ne 'PseudoParams.txt'} | ForEach-Object {
         "$(Get-Content $_.FullName -Raw)`n" | Add-Content -Path $psm1 -Encoding UTF8
     }
-    Write-BuildLog -Debug 'Adding Public functions to psm1...'
+    Write-BuildLog -Verbose 'Adding Public functions to psm1...'
     Get-ChildItem -Path (Join-Path -Path $sut -ChildPath 'Public') -Recurse -File | Where-Object {$_.FullName -notlike "*Development Tools*"} | ForEach-Object {
         "$(Get-Content $_.FullName -Raw)`nExport-ModuleMember -Function '$($_.BaseName)'`n" | Add-Content -Path $psm1 -Encoding UTF8
         $functionsToExport += $_.BaseName
     }
 
-    Write-BuildLog -Debug 'Copying bin path...'
+    Write-BuildLog -Verbose 'Copying bin path...'
     New-Item -Path "$outputModVerDir\bin" -ItemType Directory -ErrorAction SilentlyContinue > $null
     New-Item -Path "$outputModVerDir\bin\Net45" -ItemType Directory -ErrorAction SilentlyContinue > $null
     New-Item -Path "$outputModVerDir\bin\NetCore" -ItemType Directory -ErrorAction SilentlyContinue > $null
     Copy-Item -Path "$sut\bin\*" -Destination "$outputModVerDir\bin" -Recurse -ErrorAction SilentlyContinue
 
-    Write-BuildLog -Debug 'Copying DSL module...'
+    Write-BuildLog -Verbose 'Copying DSL module...'
     New-Item -Path "$outputModVerDir\DSL" -ItemType Directory -ErrorAction SilentlyContinue > $null
     Copy-Item -Path "$sut\DSL\*" -Destination "$outputModVerDir\DSL" -Recurse -ErrorAction SilentlyContinue
 
-    Write-BuildLog -Debug 'Creating Variable hash...'
+    Write-BuildLog -Verbose 'Creating Variable hash...'
     $varHash = @("@{")
     Get-Content -Path "$($env:BHPSModulePath)\Private\PseudoParams.txt" | ForEach-Object {
         $name = "_$(($_ -replace "::").Trim())"
@@ -137,7 +137,7 @@ $VaporshellPath = $PSScriptRoot
     }
     $varHash += "}"
 
-    Write-BuildLog -Debug 'Creating Alias hash...'
+    Write-BuildLog -Verbose 'Creating Alias hash...'
     $aliasHash = @("@{")
     Get-ChildItem "$($env:BHPSModulePath)\Public\Intrinsic Functions" | ForEach-Object {
         $name = ($_.BaseName).Replace('Add-','')
@@ -149,7 +149,7 @@ $VaporshellPath = $PSScriptRoot
     }
     $aliasHash += "}"
 
-    Write-BuildLog -Debug 'Setting remainder of PSM1 contents...'
+    Write-BuildLog -Verbose 'Setting remainder of PSM1 contents...'
 @"
 
 # Load the .NET assemblies
@@ -195,10 +195,10 @@ Import-Module `$DSLModulePath -DisableNameChecking -Force
 Export-ModuleMember -Function (Get-Command -Module VaporShell.DSL).Name -Variable `$vars -Alias `$aliases
 "@ | Add-Content -Path $psm1 -Encoding UTF8
 
-    Write-BuildLog -Debug 'Copying manifest...'
+    Write-BuildLog -Verbose 'Copying manifest...'
     Copy-Item -Path $env:BHPSModuleManifest -Destination $outputModVerDir
 
-    Write-BuildLog -Debug 'Updating manifest...'
+    Write-BuildLog -Verbose 'Updating manifest...'
     $dslModuleName = "VaporShell.DSL"
     Import-Module "$($env:BHPSModulePath)\DSL\$($dslModuleName).psm1" -DisableNameChecking -Force -Verbose:$false
     $dslFunctions = (Get-Command -Module $dslModuleName).Name
@@ -219,7 +219,7 @@ Export-ModuleMember -Function (Get-Command -Module VaporShell.DSL).Name -Variabl
     Update-ModuleManifest -Path (Get-ChildItem $outputModVerDir | Where-Object {$_.Name -eq "$($env:BHProjectName).psd1"}).FullName -FunctionsToExport (($functionsToExport + $dslFunctions) | Sort-Object) -AliasesToExport ($aliases | Sort-Object) -VariablesToExport $vars
 
     if ((Get-ChildItem $outputModVerDir | Where-Object {$_.Name -eq "$($env:BHProjectName).psd1"}).BaseName -cne $env:BHProjectName) {
-        Write-BuildLog -Debug 'Renaming manifest to correct casing...'
+        Write-BuildLog -Verbose 'Renaming manifest to correct casing...'
         Rename-Item (Join-Path $outputModVerDir "$($env:BHProjectName).psd1") -NewName "$($env:BHProjectName).psd1" -Force
     }
     Write-BuildLog "Created compiled module at [$outputModDir]!"

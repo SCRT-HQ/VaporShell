@@ -179,6 +179,10 @@ function Write-BuildLog {
             $fg = 'Yellow'
             $lvl = '##[debug]   '
         }
+        elseif ($PSBoundParameters.ContainsKey('Verbose') -and $PSBoundParameters['Verbose'] -eq $true) {
+            $fg = 'Gray'
+            $lvl = '##[verbose] '
+        }
         elseif ($Severe) {
             $fg = 'Red'
             $lvl = '##[error]   '
@@ -192,7 +196,12 @@ function Write-BuildLog {
             $lvl = '##[command] '
         }
         else {
-            $fg = 'White'
+            $fg = if ($Host.UI.RawUI.ForegroundColor -eq 'Gray') {
+                'White'
+            }
+            else {
+                'Gray'
+            }
             $lvl = '##[info]    '
         }
     }
@@ -249,7 +258,7 @@ function Set-EnvironmentVariable {
         $Value
     )
     $fullVal = $Value -join " "
-    Write-BuildLog -Debug "Setting env variable '$Name' to '$fullVal'"
+    Write-BuildLog "Setting env variable '$Name' to '$fullVal'"
     Set-Item -Path Env:\$Name -Value $fullVal -Force
     if ($IsCI) {
         "##vso[task.setvariable variable=$Name]$fullVal" | Write-Host
