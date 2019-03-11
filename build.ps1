@@ -17,7 +17,7 @@ $env:BuildProjectName = 'VaporShell'
 $env:_BuildStart = Get-Date -Format 'o'
 $env:BuildScriptPath = $PSScriptRoot
 
-. "$PSScriptRoot\ci\AzureDevOpsHelpers.ps1"
+. "$PSScriptRoot\ci\AzurePipelinesHelpers.ps1"
 
 Add-EnvironmentSummary "Build started"
 

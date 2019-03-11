@@ -180,7 +180,12 @@ function Write-BuildLog {
             $lvl = '##[debug]   '
         }
         elseif ($PSBoundParameters.ContainsKey('Verbose') -and $PSBoundParameters['Verbose'] -eq $true) {
-            $fg = 'Gray'
+            $fg = if ($Host.UI.RawUI.ForegroundColor -eq 'Gray') {
+                'White'
+            }
+            else {
+                'Gray'
+            }
             $lvl = '##[verbose] '
         }
         elseif ($Severe) {

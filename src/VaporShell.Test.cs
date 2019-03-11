@@ -11,11 +11,31 @@ using YamlDotNet.Serialization;
 
 using VaporShell.Validators;
 
-namespace VaporShell.Core {
+namespace VaporShell.Test {
     public enum DeletionPolicy {
         Delete,
         Retain,
         Snapshot
+    }
+    public class LogicalId {
+        readonly string _value;
+        public LogicalId(string value) {
+            if (Validate.LogicalId(value)) {
+                _value = value;
+            }
+            else {
+                throw new ArgumentException("LogicalId Value did not match the correct pattern! Value provided: '" + value + "'");
+            }
+        }
+        public static implicit operator string(LogicalId d) {
+            return d._value;
+        }
+        public static implicit operator LogicalId(string d) {
+            return new LogicalId(d);
+        }
+    }
+    public abstract class ResourceProperties {
+        public ResourceProperties() {}
     }
     public class AutoScalingCreationPolicy {
         public int MinSuccessfulInstancesPercent { get; set; }
@@ -59,6 +79,7 @@ namespace VaporShell.Core {
             this.Timeout = Timeout;
         }
     }
+
     public class CreationPolicy {
         public AutoScalingCreationPolicy AutoScalingCreationPolicy { get; set; }
         public ResourceSignal ResourceSignal { get; set; }
@@ -87,24 +108,9 @@ namespace VaporShell.Core {
         public UpdatePolicy() { }
     }
     public abstract class Resource {
-        private string _LogicalId;
-        private Dictionary<string, object> properties;
-
-        public string LogicalId {
-            get {
-                return _LogicalId;
-            }
-            set {
-                if (Validate.LogicalId(value)) {
-                    _LogicalId = value;
-                }
-                else {
-                    throw new ArgumentException("LogicalId Value did not match the correct pattern! Value provided: '" + value + "'");
-                }
-            }
-        }
+        public LogicalId LogicalId { get; set; }
         public abstract string Type { get; set; }
-        public Dictionary<string, object> Properties { get => properties; set => properties = value; }
+        public abstract ResourceProperties Properties { get; set; }
         public CreationPolicy CreationPolicy { get; set; }
         public DeletionPolicy? DeletionPolicy { get; set; }
         public UpdatePolicy UpdatePolicy { get; set; }
@@ -112,40 +118,20 @@ namespace VaporShell.Core {
         public object Condition { get; set; }
         public object Metadata { get; set; }
 
-        public override string ToString() => _LogicalId;
-        public string GetLogicalId() => _LogicalId;
+        public override string ToString() => LogicalId.ToString();
+        public LogicalId GetLogicalId() => LogicalId;
         public Dictionary<string, object> GetProps() {
             Dictionary<string, object> compiled = new Dictionary<string, object>();
-            Dictionary<string, object> properties = new Dictionary<string, object>();
-            string[] commonProps = { "LogicalId", "Type", "Properties", "CreationPolicy", "DeletionPolicy", "UpdatePolicy", "DependsOn", "Condition", "Metadata" };
-            compiled.Add("Type", Type);
             foreach (var item in GetType().GetProperties()) {
-                if (!commonProps.Contains(item.Name)) {
-                    properties.Add(item.Name, GetType().GetProperty(item.Name).GetValue(this, null));
+                var val = GetType().GetProperty(item.Name).GetValue(this, null);
+                if (item.Name != "LogicalId" && val != null) {
+                    compiled.Add(item.Name, val);
                 }
-            }
-            compiled.Add("Properties", properties);
-            if (CreationPolicy != null) {
-                compiled.Add("CreationPolicy", CreationPolicy);
-            }
-            if (DeletionPolicy != null) {
-                compiled.Add("DeletionPolicy", DeletionPolicy);
-            }
-            if (UpdatePolicy != null) {
-                compiled.Add("UpdatePolicy", UpdatePolicy);
-            }
-            if (DependsOn != null) {
-                compiled.Add("DependsOn", DependsOn);
-            }
-            if (Condition != null) {
-                compiled.Add("Condition", Condition);
-            }
-            if (Metadata != null) {
-                compiled.Add("Metadata", Metadata);
             }
             return compiled;
         }
     }
+
     public class Parameter {
         private string _LogicalId;
         public string LogicalId {
@@ -179,8 +165,9 @@ namespace VaporShell.Core {
         public Dictionary<string, object> GetProps() {
             Dictionary<string, object> compiled = new Dictionary<string, object>();
             foreach (var item in GetType().GetProperties()) {
-                if (item.Name != "LogicalId") {
-                    compiled.Add(item.Name, GetType().GetProperty(item.Name).GetValue(this, null));
+                var val = GetType().GetProperty(item.Name).GetValue(this, null);
+                if (item.Name != "LogicalId" && val != null) {
+                    compiled.Add(item.Name, val);
                 }
             }
             return compiled;
@@ -333,12 +320,12 @@ namespace VaporShell.Core {
     public class Template {
         public string AWSTemplateFormatVersion { get; set; }
         public string Description { get; set; }
-        public List<VaporShell.Core.Metadata> Metadata { get; private set; } = new List<VaporShell.Core.Metadata>();
-        public List<VaporShell.Core.Parameter> Parameters { get; private set; } = new List<VaporShell.Core.Parameter>();
-        public List<VaporShell.Core.Condition> Conditions { get; private set; } = new List<VaporShell.Core.Condition>();
-        public List<VaporShell.Core.Mapping> Mappings { get; private set; } = new List<VaporShell.Core.Mapping>();
-        public List<VaporShell.Core.Resource> Resources { get; private set; } = new List<VaporShell.Core.Resource>();
-        public List<VaporShell.Core.Output> Outputs { get; private set; } = new List<VaporShell.Core.Output>();
+        public List<VaporShell.Test.Metadata> Metadata { get; private set; } = new List<VaporShell.Test.Metadata>();
+        public List<VaporShell.Test.Parameter> Parameters { get; private set; } = new List<VaporShell.Test.Parameter>();
+        public List<VaporShell.Test.Condition> Conditions { get; private set; } = new List<VaporShell.Test.Condition>();
+        public List<VaporShell.Test.Mapping> Mappings { get; private set; } = new List<VaporShell.Test.Mapping>();
+        public List<VaporShell.Test.Resource> Resources { get; private set; } = new List<VaporShell.Test.Resource>();
+        public List<VaporShell.Test.Output> Outputs { get; private set; } = new List<VaporShell.Test.Output>();
         public SortedDictionary<string, object> _compiled { get; private set; } = new SortedDictionary<string, object>();
         public DateTime _compiledAt { get; private set; } = DateTime.Now;
         public DateTime _updatedAt { get; private set; } = DateTime.Now;
@@ -373,7 +360,7 @@ namespace VaporShell.Core {
             }
         }
 
-        public void AddParameter(VaporShell.Core.Parameter item, bool addToMain = true) {
+        public void AddParameter(VaporShell.Test.Parameter item, bool addToMain = true) {
             var logId = item.GetLogicalId();
             if (addToMain) {
                 Parameters.ForEach(x => {
@@ -395,7 +382,7 @@ namespace VaporShell.Core {
             }
         }
 
-        public void AddCondition(VaporShell.Core.Condition item, bool addToMain = true) {
+        public void AddCondition(VaporShell.Test.Condition item, bool addToMain = true) {
             var logId = item.GetLogicalId();
             if (addToMain) {
                 Conditions.ForEach(x => {
@@ -417,7 +404,7 @@ namespace VaporShell.Core {
             }
         }
 
-        public void AddMapping(VaporShell.Core.Mapping item, bool addToMain = true) {
+        public void AddMapping(VaporShell.Test.Mapping item, bool addToMain = true) {
             var logId = item.GetLogicalId();
             if (addToMain) {
                 Mappings.ForEach(x => {
@@ -439,7 +426,7 @@ namespace VaporShell.Core {
             }
         }
 
-        public void AddOutput(VaporShell.Core.Output item, bool addToMain = true) {
+        public void AddOutput(VaporShell.Test.Output item, bool addToMain = true) {
             var logId = item.GetLogicalId();
             if (addToMain) {
                 Outputs.ForEach(x => {
@@ -461,7 +448,7 @@ namespace VaporShell.Core {
             }
         }
 
-        public void AddMetadata(VaporShell.Core.Metadata item, bool addToMain = true) {
+        public void AddMetadata(VaporShell.Test.Metadata item, bool addToMain = true) {
             var logId = item.GetLogicalId();
             if (addToMain) {
                 Metadata.ForEach(x => {

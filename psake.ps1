@@ -27,7 +27,7 @@ Properties {
     }
 }
 
-. "$PSScriptRoot\ci\AzureDevOpsHelpers.ps1"
+. "$PSScriptRoot\ci\AzurePipelinesHelpers.ps1"
 
 Set-BuildVariables
 
@@ -265,7 +265,7 @@ Task Import -Depends Init {
 } -description 'Imports the newly compiled module'
 
 $pesterScriptBlock = {
-    . "$PSScriptRoot\ci\AzureDevOpsHelpers.ps1"
+    . "$PSScriptRoot\ci\AzurePipelinesHelpers.ps1"
 
     Set-BuildVariables
 
@@ -345,7 +345,7 @@ task Analyze -Depends Pester {
 } -description 'Run PSScriptAnalyzer'
 
 Task Deploy -Depends Init {
-    . "$PSScriptRoot\ci\AzureDevOpsHelpers.ps1"
+    . "$PSScriptRoot\ci\AzurePipelinesHelpers.ps1"
 
     Set-BuildVariables
     function Publish-GitHubRelease {

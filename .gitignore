@@ -1,14 +1,12 @@
-Helpers/*
+Helpers/
+BuildOutput/
 TODO.md
 launch.json
 **.DS_Store
 **insync**
 vaporshell-snippets**
 TestResults**.xml
-BuildOutput/*
 VaporShell.zip
-VaporShell/Classes/VaporShell/bin
-VaporShell/Classes/VaporShell/obj
 
 # User-specific files
 *.suo
