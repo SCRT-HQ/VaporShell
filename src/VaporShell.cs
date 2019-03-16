@@ -29,11 +29,11 @@ namespace VaporShell {
                 throw new ArgumentException("LogicalId Value did not match the correct pattern! Value provided: '" + value + "'");
             }
         }
-        public static implicit operator string(LogicalId d) {
-            return d._value;
+        public static implicit operator string(LogicalId LogicalId) {
+            return LogicalId._value;
         }
-        public static implicit operator LogicalId(string d) {
-            return new LogicalId(d);
+        public static implicit operator LogicalId(string LogicalId) {
+            return new LogicalId(LogicalId);
         }
     }
 

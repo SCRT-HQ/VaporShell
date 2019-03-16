@@ -1,6 +1,10 @@
-namespace VaporShell.Function
-{
-    public class FnRef {
+using System;
+
+using VaporShell.Core;
+using VaporShell.Primitives;
+
+namespace VaporShell.Function {
+    public class FnRef : VaporShell.Core.Function {
         private object _ref;
         public object Ref {
             get {
