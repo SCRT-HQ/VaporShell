@@ -9,7 +9,7 @@ function Convert-SpecToFunction {
         [String]
         $ResourceType
     )
-    $ModPath = $Script:VaporshellPath
+    $ModPath = [System.IO.Path]::Combine($PSScriptRoot,"..","VaporShell")
     $folder = "$($ModPath)\Public"
     $Name = $Resource.Name
     $Link = $Resource.Value.Documentation

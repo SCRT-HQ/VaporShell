@@ -221,13 +221,26 @@ function Write-BuildLog {
             if ($Cmd) {
                 $i = 0
                 $Message -split "[\r\n]" | Where-Object {$_} | ForEach-Object {
-                    $tag = if ($i -eq 0) {
-                        'PS > '
+                    if ($i -eq 0) {
+                        $startIndex = if ($_ -match "^\s+") {
+                            $new = $_ -replace "^\s+"
+                            $_.Length - $new.Length
+                        }
+                        else {
+                            0
+                        }
+                        $tag = 'PS > '
                     }
                     else {
-                        '>> '
+                        $tag = '  >> '
                     }
-                    $lvl + $date + $tag + $_
+                    $finalIndex = if ($startIndex -lt $_.Length) {
+                        $startIndex
+                    }
+                    else{
+                        0
+                    }
+                    $lvl + $date + $tag + ([String]$_).Substring($finalIndex)
                     $i++
                 }
             }

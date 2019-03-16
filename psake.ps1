@@ -27,7 +27,8 @@ Properties {
     }
 }
 
-. "$PSScriptRoot\ci\AzurePipelinesHelpers.ps1"
+# Dot-source all helper scripts/functions in the ci folder
+Get-ChildItem (Join-Path $PSScriptRoot "ci") | ForEach-Object {. $_.FullName}
 
 Set-BuildVariables
 
@@ -47,8 +48,10 @@ task Init {
 
 task Update -depends Init {
     Write-BuildLog 'Updating Resource and Property Type functions with current AWS spec sheet...'
+
     Invoke-CommandWithLog {Remove-Module $env:BHProjectName -ErrorAction SilentlyContinue -Force -Verbose:$false}
     Invoke-CommandWithLog {Import-Module $env:BHPSModuleManifest -Force -Verbose:$false}
+    Invoke-CommandWithLog {}
     Invoke-CommandWithLog {Update-VSResourceFunctions -Verbose}
     Invoke-CommandWithLog {Remove-Module $env:BHProjectName -Force -Verbose:$false}
 } -description 'Updates module functions before compilation'
@@ -57,7 +60,7 @@ task Clean -depends Init {
     Invoke-CommandWithLog {Remove-Module -Name $env:BHProjectName -Force -ErrorAction SilentlyContinue -Verbose:$false}
     if (Test-Path -Path $outputDir) {
         $allClean = $true
-        Invoke-CommandWithLog {Get-ChildItem -Path $outputDir -Recurse -File | ForEach-Object {
+        Get-ChildItem -Path $outputDir -Recurse -File | ForEach-Object {
             $item = $_
             try {
                 Write-BuildLog -Verbose "Removing item: $($item.FullName)"
@@ -68,7 +71,7 @@ task Clean -depends Init {
                 Write-BuildWarning "[Skipped]`n`t [$($item.FullName)]`n`t Error: $($err.Exception.Message)"
                 $allClean = $false
             }
-        }}
+        }
         if ($allClean) {
             Write-BuildLog "All files successfully cleaned! Removing folder structure now"
             if (Test-Path $outputModDir) {
