@@ -10,16 +10,16 @@ function Add-VSAppStreamImageBuilderDomainJoinInfo {
         http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-appstream-imagebuilder-domainjoininfo.html
 
     .PARAMETER OrganizationalUnitDistinguishedName
-		Required: False    
-		Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-appstream-imagebuilder-domainjoininfo.html#cfn-appstream-imagebuilder-domainjoininfo-organizationalunitdistinguishedname    
-		PrimitiveType: String    
-		UpdateType: Mutable    
+        Required: False    
+        Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-appstream-imagebuilder-domainjoininfo.html#cfn-appstream-imagebuilder-domainjoininfo-organizationalunitdistinguishedname    
+        PrimitiveType: String    
+        UpdateType: Mutable    
 
     .PARAMETER DirectoryName
-		Required: False    
-		Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-appstream-imagebuilder-domainjoininfo.html#cfn-appstream-imagebuilder-domainjoininfo-directoryname    
-		PrimitiveType: String    
-		UpdateType: Mutable    
+        Required: False    
+        Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-appstream-imagebuilder-domainjoininfo.html#cfn-appstream-imagebuilder-domainjoininfo-directoryname    
+        PrimitiveType: String    
+        UpdateType: Mutable    
 
     .FUNCTIONALITY
         Vaporshell

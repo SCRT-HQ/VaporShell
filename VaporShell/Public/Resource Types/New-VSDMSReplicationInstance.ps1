@@ -13,90 +13,90 @@ function New-VSDMSReplicationInstance {
         The logical ID must be alphanumeric (A-Za-z0-9) and unique within the template. Use the logical name to reference the resource in other parts of the template. For example, if you want to map an Amazon Elastic Block Store volume to an Amazon EC2 instance, you reference the logical IDs to associate the block stores with the instance.
 
     .PARAMETER ReplicationInstanceIdentifier
-		Required: False    
-		Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-dms-replicationinstance.html#cfn-dms-replicationinstance-replicationinstanceidentifier    
-		PrimitiveType: String    
-		UpdateType: Mutable    
+        Required: False    
+        Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-dms-replicationinstance.html#cfn-dms-replicationinstance-replicationinstanceidentifier    
+        PrimitiveType: String    
+        UpdateType: Mutable    
 
     .PARAMETER EngineVersion
-		Required: False    
-		Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-dms-replicationinstance.html#cfn-dms-replicationinstance-engineversion    
-		PrimitiveType: String    
-		UpdateType: Mutable    
+        Required: False    
+        Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-dms-replicationinstance.html#cfn-dms-replicationinstance-engineversion    
+        PrimitiveType: String    
+        UpdateType: Mutable    
 
     .PARAMETER KmsKeyId
-		Required: False    
-		Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-dms-replicationinstance.html#cfn-dms-replicationinstance-kmskeyid    
-		PrimitiveType: String    
-		UpdateType: Immutable    
+        Required: False    
+        Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-dms-replicationinstance.html#cfn-dms-replicationinstance-kmskeyid    
+        PrimitiveType: String    
+        UpdateType: Immutable    
 
     .PARAMETER AvailabilityZone
-		Required: False    
-		Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-dms-replicationinstance.html#cfn-dms-replicationinstance-availabilityzone    
-		PrimitiveType: String    
-		UpdateType: Immutable    
+        Required: False    
+        Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-dms-replicationinstance.html#cfn-dms-replicationinstance-availabilityzone    
+        PrimitiveType: String    
+        UpdateType: Immutable    
 
     .PARAMETER PreferredMaintenanceWindow
-		Required: False    
-		Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-dms-replicationinstance.html#cfn-dms-replicationinstance-preferredmaintenancewindow    
-		PrimitiveType: String    
-		UpdateType: Mutable    
+        Required: False    
+        Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-dms-replicationinstance.html#cfn-dms-replicationinstance-preferredmaintenancewindow    
+        PrimitiveType: String    
+        UpdateType: Mutable    
 
     .PARAMETER AutoMinorVersionUpgrade
-		Required: False    
-		Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-dms-replicationinstance.html#cfn-dms-replicationinstance-autominorversionupgrade    
-		PrimitiveType: Boolean    
-		UpdateType: Mutable    
+        Required: False    
+        Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-dms-replicationinstance.html#cfn-dms-replicationinstance-autominorversionupgrade    
+        PrimitiveType: Boolean    
+        UpdateType: Mutable    
 
     .PARAMETER ReplicationSubnetGroupIdentifier
-		Required: False    
-		Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-dms-replicationinstance.html#cfn-dms-replicationinstance-replicationsubnetgroupidentifier    
-		PrimitiveType: String    
-		UpdateType: Immutable    
+        Required: False    
+        Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-dms-replicationinstance.html#cfn-dms-replicationinstance-replicationsubnetgroupidentifier    
+        PrimitiveType: String    
+        UpdateType: Immutable    
 
     .PARAMETER AllocatedStorage
-		Required: False    
-		Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-dms-replicationinstance.html#cfn-dms-replicationinstance-allocatedstorage    
-		PrimitiveType: Integer    
-		UpdateType: Mutable    
+        Required: False    
+        Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-dms-replicationinstance.html#cfn-dms-replicationinstance-allocatedstorage    
+        PrimitiveType: Integer    
+        UpdateType: Mutable    
 
     .PARAMETER VpcSecurityGroupIds
-		PrimitiveItemType: String    
-		Type: List    
-		Required: False    
-		Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-dms-replicationinstance.html#cfn-dms-replicationinstance-vpcsecuritygroupids    
-		UpdateType: Mutable    
+        PrimitiveItemType: String    
+        Type: List    
+        Required: False    
+        Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-dms-replicationinstance.html#cfn-dms-replicationinstance-vpcsecuritygroupids    
+        UpdateType: Mutable    
 
     .PARAMETER AllowMajorVersionUpgrade
-		Required: False    
-		Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-dms-replicationinstance.html#cfn-dms-replicationinstance-allowmajorversionupgrade    
-		PrimitiveType: Boolean    
-		UpdateType: Mutable    
+        Required: False    
+        Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-dms-replicationinstance.html#cfn-dms-replicationinstance-allowmajorversionupgrade    
+        PrimitiveType: Boolean    
+        UpdateType: Mutable    
 
     .PARAMETER ReplicationInstanceClass
-		Required: True    
-		Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-dms-replicationinstance.html#cfn-dms-replicationinstance-replicationinstanceclass    
-		PrimitiveType: String    
-		UpdateType: Mutable    
+        Required: True    
+        Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-dms-replicationinstance.html#cfn-dms-replicationinstance-replicationinstanceclass    
+        PrimitiveType: String    
+        UpdateType: Mutable    
 
     .PARAMETER PubliclyAccessible
-		Required: False    
-		Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-dms-replicationinstance.html#cfn-dms-replicationinstance-publiclyaccessible    
-		PrimitiveType: Boolean    
-		UpdateType: Immutable    
+        Required: False    
+        Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-dms-replicationinstance.html#cfn-dms-replicationinstance-publiclyaccessible    
+        PrimitiveType: Boolean    
+        UpdateType: Immutable    
 
     .PARAMETER MultiAZ
-		Required: False    
-		Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-dms-replicationinstance.html#cfn-dms-replicationinstance-multiaz    
-		PrimitiveType: Boolean    
-		UpdateType: Mutable    
+        Required: False    
+        Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-dms-replicationinstance.html#cfn-dms-replicationinstance-multiaz    
+        PrimitiveType: Boolean    
+        UpdateType: Mutable    
 
     .PARAMETER Tags
-		Type: List    
-		Required: False    
-		Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-dms-replicationinstance.html#cfn-dms-replicationinstance-tags    
-		ItemType: Tag    
-		UpdateType: Immutable    
+        Type: List    
+        Required: False    
+        Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-dms-replicationinstance.html#cfn-dms-replicationinstance-tags    
+        ItemType: Tag    
+        UpdateType: Immutable    
 
     .PARAMETER DeletionPolicy
         With the DeletionPolicy attribute you can preserve or (in some cases) backup a resource when its stack is deleted. You specify a DeletionPolicy attribute for each resource that you want to control. If a resource has no DeletionPolicy attribute, AWS CloudFormation deletes the resource by default.

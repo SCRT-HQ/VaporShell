@@ -10,28 +10,28 @@ function Add-VSBudgetsBudgetNotification {
         http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-budgets-budget-notification.html
 
     .PARAMETER ComparisonOperator
-		Required: True    
-		Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-budgets-budget-notification.html#cfn-budgets-budget-notification-comparisonoperator    
-		PrimitiveType: String    
-		UpdateType: Mutable    
+        Required: True    
+        Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-budgets-budget-notification.html#cfn-budgets-budget-notification-comparisonoperator    
+        PrimitiveType: String    
+        UpdateType: Mutable    
 
     .PARAMETER NotificationType
-		Required: True    
-		Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-budgets-budget-notification.html#cfn-budgets-budget-notification-notificationtype    
-		PrimitiveType: String    
-		UpdateType: Mutable    
+        Required: True    
+        Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-budgets-budget-notification.html#cfn-budgets-budget-notification-notificationtype    
+        PrimitiveType: String    
+        UpdateType: Mutable    
 
     .PARAMETER Threshold
-		Required: True    
-		Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-budgets-budget-notification.html#cfn-budgets-budget-notification-threshold    
-		PrimitiveType: Double    
-		UpdateType: Mutable    
+        Required: True    
+        Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-budgets-budget-notification.html#cfn-budgets-budget-notification-threshold    
+        PrimitiveType: Double    
+        UpdateType: Mutable    
 
     .PARAMETER ThresholdType
-		Required: False    
-		Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-budgets-budget-notification.html#cfn-budgets-budget-notification-thresholdtype    
-		PrimitiveType: String    
-		UpdateType: Mutable    
+        Required: False    
+        Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-budgets-budget-notification.html#cfn-budgets-budget-notification-thresholdtype    
+        PrimitiveType: String    
+        UpdateType: Mutable    
 
     .FUNCTIONALITY
         Vaporshell

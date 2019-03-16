@@ -10,10 +10,10 @@ function Add-VSKinesisAnalyticsV2ApplicationApplicationSnapshotConfiguration {
         http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-kinesisanalyticsv2-application-applicationsnapshotconfiguration.html
 
     .PARAMETER SnapshotsEnabled
-		Required: True    
-		Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-kinesisanalyticsv2-application-applicationsnapshotconfiguration.html#cfn-kinesisanalyticsv2-application-applicationsnapshotconfiguration-snapshotsenabled    
-		PrimitiveType: Boolean    
-		UpdateType: Mutable    
+        Required: True    
+        Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-kinesisanalyticsv2-application-applicationsnapshotconfiguration.html#cfn-kinesisanalyticsv2-application-applicationsnapshotconfiguration-snapshotsenabled    
+        PrimitiveType: Boolean    
+        UpdateType: Mutable    
 
     .FUNCTIONALITY
         Vaporshell

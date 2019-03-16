@@ -13,230 +13,230 @@ function New-VSEC2Instance {
         The logical ID must be alphanumeric (A-Za-z0-9) and unique within the template. Use the logical name to reference the resource in other parts of the template. For example, if you want to map an Amazon Elastic Block Store volume to an Amazon EC2 instance, you reference the logical IDs to associate the block stores with the instance.
 
     .PARAMETER AdditionalInfo
-		Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-instance.html#cfn-ec2-instance-additionalinfo    
-		PrimitiveType: String    
-		Required: False    
-		UpdateType: Conditional    
+        Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-instance.html#cfn-ec2-instance-additionalinfo    
+        PrimitiveType: String    
+        Required: False    
+        UpdateType: Conditional    
 
     .PARAMETER Affinity
-		Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-instance.html#cfn-ec2-instance-affinity    
-		PrimitiveType: String    
-		Required: False    
-		UpdateType: Conditional    
+        Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-instance.html#cfn-ec2-instance-affinity    
+        PrimitiveType: String    
+        Required: False    
+        UpdateType: Conditional    
 
     .PARAMETER AvailabilityZone
-		Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-instance.html#cfn-ec2-instance-availabilityzone    
-		PrimitiveType: String    
-		Required: False    
-		UpdateType: Immutable    
+        Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-instance.html#cfn-ec2-instance-availabilityzone    
+        PrimitiveType: String    
+        Required: False    
+        UpdateType: Immutable    
 
     .PARAMETER BlockDeviceMappings
-		Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-instance.html#cfn-ec2-instance-blockdevicemappings    
-		DuplicatesAllowed: True    
-		ItemType: BlockDeviceMapping    
-		Required: False    
-		Type: List    
-		UpdateType: Conditional    
+        Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-instance.html#cfn-ec2-instance-blockdevicemappings    
+        DuplicatesAllowed: True    
+        ItemType: BlockDeviceMapping    
+        Required: False    
+        Type: List    
+        UpdateType: Conditional    
 
     .PARAMETER CreditSpecification
-		Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-instance.html#cfn-ec2-instance-creditspecification    
-		Required: False    
-		Type: CreditSpecification    
-		UpdateType: Mutable    
+        Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-instance.html#cfn-ec2-instance-creditspecification    
+        Required: False    
+        Type: CreditSpecification    
+        UpdateType: Mutable    
 
     .PARAMETER DisableApiTermination
-		Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-instance.html#cfn-ec2-instance-disableapitermination    
-		PrimitiveType: Boolean    
-		Required: False    
-		UpdateType: Mutable    
+        Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-instance.html#cfn-ec2-instance-disableapitermination    
+        PrimitiveType: Boolean    
+        Required: False    
+        UpdateType: Mutable    
 
     .PARAMETER EbsOptimized
-		Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-instance.html#cfn-ec2-instance-ebsoptimized    
-		PrimitiveType: Boolean    
-		Required: False    
-		UpdateType: Conditional    
+        Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-instance.html#cfn-ec2-instance-ebsoptimized    
+        PrimitiveType: Boolean    
+        Required: False    
+        UpdateType: Conditional    
 
     .PARAMETER ElasticGpuSpecifications
-		Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-instance.html#cfn-ec2-instance-elasticgpuspecifications    
-		DuplicatesAllowed: False    
-		ItemType: ElasticGpuSpecification    
-		Required: False    
-		Type: List    
-		UpdateType: Immutable    
+        Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-instance.html#cfn-ec2-instance-elasticgpuspecifications    
+        DuplicatesAllowed: False    
+        ItemType: ElasticGpuSpecification    
+        Required: False    
+        Type: List    
+        UpdateType: Immutable    
 
     .PARAMETER ElasticInferenceAccelerators
-		Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-instance.html#cfn-ec2-instance-elasticinferenceaccelerators    
-		DuplicatesAllowed: False    
-		ItemType: ElasticInferenceAccelerator    
-		Required: False    
-		Type: List    
-		UpdateType: Immutable    
+        Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-instance.html#cfn-ec2-instance-elasticinferenceaccelerators    
+        DuplicatesAllowed: False    
+        ItemType: ElasticInferenceAccelerator    
+        Required: False    
+        Type: List    
+        UpdateType: Immutable    
 
     .PARAMETER HostId
-		Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-instance.html#cfn-ec2-instance-hostid    
-		PrimitiveType: String    
-		Required: False    
-		UpdateType: Conditional    
+        Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-instance.html#cfn-ec2-instance-hostid    
+        PrimitiveType: String    
+        Required: False    
+        UpdateType: Conditional    
 
     .PARAMETER IamInstanceProfile
-		Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-instance.html#cfn-ec2-instance-iaminstanceprofile    
-		PrimitiveType: String    
-		Required: False    
-		UpdateType: Mutable    
+        Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-instance.html#cfn-ec2-instance-iaminstanceprofile    
+        PrimitiveType: String    
+        Required: False    
+        UpdateType: Mutable    
 
     .PARAMETER ImageId
-		Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-instance.html#cfn-ec2-instance-imageid    
-		PrimitiveType: String    
-		Required: False    
-		UpdateType: Immutable    
+        Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-instance.html#cfn-ec2-instance-imageid    
+        PrimitiveType: String    
+        Required: False    
+        UpdateType: Immutable    
 
     .PARAMETER InstanceInitiatedShutdownBehavior
-		Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-instance.html#cfn-ec2-instance-instanceinitiatedshutdownbehavior    
-		PrimitiveType: String    
-		Required: False    
-		UpdateType: Mutable    
+        Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-instance.html#cfn-ec2-instance-instanceinitiatedshutdownbehavior    
+        PrimitiveType: String    
+        Required: False    
+        UpdateType: Mutable    
 
     .PARAMETER InstanceType
-		Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-instance.html#cfn-ec2-instance-instancetype    
-		PrimitiveType: String    
-		Required: False    
-		UpdateType: Conditional    
+        Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-instance.html#cfn-ec2-instance-instancetype    
+        PrimitiveType: String    
+        Required: False    
+        UpdateType: Conditional    
 
     .PARAMETER Ipv6AddressCount
-		Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-instance.html#cfn-ec2-instance-ipv6addresscount    
-		PrimitiveType: Integer    
-		Required: False    
-		UpdateType: Immutable    
+        Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-instance.html#cfn-ec2-instance-ipv6addresscount    
+        PrimitiveType: Integer    
+        Required: False    
+        UpdateType: Immutable    
 
     .PARAMETER Ipv6Addresses
-		Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-instance.html#cfn-ec2-instance-ipv6addresses    
-		DuplicatesAllowed: True    
-		ItemType: InstanceIpv6Address    
-		Required: False    
-		Type: List    
-		UpdateType: Immutable    
+        Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-instance.html#cfn-ec2-instance-ipv6addresses    
+        DuplicatesAllowed: True    
+        ItemType: InstanceIpv6Address    
+        Required: False    
+        Type: List    
+        UpdateType: Immutable    
 
     .PARAMETER KernelId
-		Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-instance.html#cfn-ec2-instance-kernelid    
-		PrimitiveType: String    
-		Required: False    
-		UpdateType: Conditional    
+        Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-instance.html#cfn-ec2-instance-kernelid    
+        PrimitiveType: String    
+        Required: False    
+        UpdateType: Conditional    
 
     .PARAMETER KeyName
-		Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-instance.html#cfn-ec2-instance-keyname    
-		PrimitiveType: String    
-		Required: False    
-		UpdateType: Immutable    
+        Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-instance.html#cfn-ec2-instance-keyname    
+        PrimitiveType: String    
+        Required: False    
+        UpdateType: Immutable    
 
     .PARAMETER LaunchTemplate
-		Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-instance.html#cfn-ec2-instance-launchtemplate    
-		Required: False    
-		Type: LaunchTemplateSpecification    
-		UpdateType: Immutable    
+        Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-instance.html#cfn-ec2-instance-launchtemplate    
+        Required: False    
+        Type: LaunchTemplateSpecification    
+        UpdateType: Immutable    
 
     .PARAMETER LicenseSpecifications
-		Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-instance.html#cfn-ec2-instance-licensespecifications    
-		DuplicatesAllowed: False    
-		ItemType: LicenseSpecification    
-		Required: False    
-		Type: List    
-		UpdateType: Immutable    
+        Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-instance.html#cfn-ec2-instance-licensespecifications    
+        DuplicatesAllowed: False    
+        ItemType: LicenseSpecification    
+        Required: False    
+        Type: List    
+        UpdateType: Immutable    
 
     .PARAMETER Monitoring
-		Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-instance.html#cfn-ec2-instance-monitoring    
-		PrimitiveType: Boolean    
-		Required: False    
-		UpdateType: Mutable    
+        Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-instance.html#cfn-ec2-instance-monitoring    
+        PrimitiveType: Boolean    
+        Required: False    
+        UpdateType: Mutable    
 
     .PARAMETER NetworkInterfaces
-		Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-instance.html#cfn-ec2-instance-networkinterfaces    
-		DuplicatesAllowed: True    
-		ItemType: NetworkInterface    
-		Required: False    
-		Type: List    
-		UpdateType: Immutable    
+        Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-instance.html#cfn-ec2-instance-networkinterfaces    
+        DuplicatesAllowed: True    
+        ItemType: NetworkInterface    
+        Required: False    
+        Type: List    
+        UpdateType: Immutable    
 
     .PARAMETER PlacementGroupName
-		Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-instance.html#cfn-ec2-instance-placementgroupname    
-		PrimitiveType: String    
-		Required: False    
-		UpdateType: Immutable    
+        Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-instance.html#cfn-ec2-instance-placementgroupname    
+        PrimitiveType: String    
+        Required: False    
+        UpdateType: Immutable    
 
     .PARAMETER PrivateIpAddress
-		Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-instance.html#cfn-ec2-instance-privateipaddress    
-		PrimitiveType: String    
-		Required: False    
-		UpdateType: Immutable    
+        Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-instance.html#cfn-ec2-instance-privateipaddress    
+        PrimitiveType: String    
+        Required: False    
+        UpdateType: Immutable    
 
     .PARAMETER RamdiskId
-		Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-instance.html#cfn-ec2-instance-ramdiskid    
-		PrimitiveType: String    
-		Required: False    
-		UpdateType: Conditional    
+        Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-instance.html#cfn-ec2-instance-ramdiskid    
+        PrimitiveType: String    
+        Required: False    
+        UpdateType: Conditional    
 
     .PARAMETER SecurityGroupIds
-		Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-instance.html#cfn-ec2-instance-securitygroupids    
-		DuplicatesAllowed: True    
-		PrimitiveItemType: String    
-		Required: False    
-		Type: List    
-		UpdateType: Conditional    
+        Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-instance.html#cfn-ec2-instance-securitygroupids    
+        DuplicatesAllowed: True    
+        PrimitiveItemType: String    
+        Required: False    
+        Type: List    
+        UpdateType: Conditional    
 
     .PARAMETER SecurityGroups
-		Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-instance.html#cfn-ec2-instance-securitygroups    
-		DuplicatesAllowed: True    
-		PrimitiveItemType: String    
-		Required: False    
-		Type: List    
-		UpdateType: Immutable    
+        Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-instance.html#cfn-ec2-instance-securitygroups    
+        DuplicatesAllowed: True    
+        PrimitiveItemType: String    
+        Required: False    
+        Type: List    
+        UpdateType: Immutable    
 
     .PARAMETER SourceDestCheck
-		Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-instance.html#cfn-ec2-instance-sourcedestcheck    
-		PrimitiveType: Boolean    
-		Required: False    
-		UpdateType: Mutable    
+        Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-instance.html#cfn-ec2-instance-sourcedestcheck    
+        PrimitiveType: Boolean    
+        Required: False    
+        UpdateType: Mutable    
 
     .PARAMETER SsmAssociations
-		Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-instance.html#cfn-ec2-instance-ssmassociations    
-		DuplicatesAllowed: True    
-		ItemType: SsmAssociation    
-		Required: False    
-		Type: List    
-		UpdateType: Mutable    
+        Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-instance.html#cfn-ec2-instance-ssmassociations    
+        DuplicatesAllowed: True    
+        ItemType: SsmAssociation    
+        Required: False    
+        Type: List    
+        UpdateType: Mutable    
 
     .PARAMETER SubnetId
-		Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-instance.html#cfn-ec2-instance-subnetid    
-		PrimitiveType: String    
-		Required: False    
-		UpdateType: Immutable    
+        Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-instance.html#cfn-ec2-instance-subnetid    
+        PrimitiveType: String    
+        Required: False    
+        UpdateType: Immutable    
 
     .PARAMETER Tags
-		Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-instance.html#cfn-ec2-instance-tags    
-		DuplicatesAllowed: True    
-		ItemType: Tag    
-		Required: False    
-		Type: List    
-		UpdateType: Mutable    
+        Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-instance.html#cfn-ec2-instance-tags    
+        DuplicatesAllowed: True    
+        ItemType: Tag    
+        Required: False    
+        Type: List    
+        UpdateType: Mutable    
 
     .PARAMETER Tenancy
-		Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-instance.html#cfn-ec2-instance-tenancy    
-		PrimitiveType: String    
-		Required: False    
-		UpdateType: Conditional    
+        Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-instance.html#cfn-ec2-instance-tenancy    
+        PrimitiveType: String    
+        Required: False    
+        UpdateType: Conditional    
 
     .PARAMETER UserData
-		Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-instance.html#cfn-ec2-instance-userdata    
-		PrimitiveType: String    
-		Required: False    
-		UpdateType: Conditional    
+        Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-instance.html#cfn-ec2-instance-userdata    
+        PrimitiveType: String    
+        Required: False    
+        UpdateType: Conditional    
 
     .PARAMETER Volumes
-		Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-instance.html#cfn-ec2-instance-volumes    
-		DuplicatesAllowed: True    
-		ItemType: Volume    
-		Required: False    
-		Type: List    
-		UpdateType: Mutable    
+        Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-instance.html#cfn-ec2-instance-volumes    
+        DuplicatesAllowed: True    
+        ItemType: Volume    
+        Required: False    
+        Type: List    
+        UpdateType: Mutable    
 
     .PARAMETER CreationPolicy
         Use the CreationPolicy attribute when you want to wait on resource configuration actions before stack creation proceeds. For example, if you install and configure software applications on an EC2 instance, you might want those applications to be running before proceeding. In such cases, you can add a CreationPolicy attribute to the instance, and then send a success signal to the instance after the applications are installed and configured.

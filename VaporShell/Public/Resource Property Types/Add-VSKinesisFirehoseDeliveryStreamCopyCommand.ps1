@@ -10,22 +10,22 @@ function Add-VSKinesisFirehoseDeliveryStreamCopyCommand {
         http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-kinesisfirehose-deliverystream-copycommand.html
 
     .PARAMETER CopyOptions
-		Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-kinesisfirehose-deliverystream-copycommand.html#cfn-kinesisfirehose-deliverystream-copycommand-copyoptions    
-		PrimitiveType: String    
-		Required: False    
-		UpdateType: Mutable    
+        Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-kinesisfirehose-deliverystream-copycommand.html#cfn-kinesisfirehose-deliverystream-copycommand-copyoptions    
+        PrimitiveType: String    
+        Required: False    
+        UpdateType: Mutable    
 
     .PARAMETER DataTableColumns
-		Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-kinesisfirehose-deliverystream-copycommand.html#cfn-kinesisfirehose-deliverystream-copycommand-datatablecolumns    
-		PrimitiveType: String    
-		Required: False    
-		UpdateType: Mutable    
+        Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-kinesisfirehose-deliverystream-copycommand.html#cfn-kinesisfirehose-deliverystream-copycommand-datatablecolumns    
+        PrimitiveType: String    
+        Required: False    
+        UpdateType: Mutable    
 
     .PARAMETER DataTableName
-		Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-kinesisfirehose-deliverystream-copycommand.html#cfn-kinesisfirehose-deliverystream-copycommand-datatablename    
-		PrimitiveType: String    
-		Required: True    
-		UpdateType: Mutable    
+        Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-kinesisfirehose-deliverystream-copycommand.html#cfn-kinesisfirehose-deliverystream-copycommand-datatablename    
+        PrimitiveType: String    
+        Required: True    
+        UpdateType: Mutable    
 
     .FUNCTIONALITY
         Vaporshell

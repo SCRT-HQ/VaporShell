@@ -10,16 +10,16 @@ function Add-VSDynamoDBTableTimeToLiveSpecification {
         http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-dynamodb-timetolivespecification.html
 
     .PARAMETER AttributeName
-		Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-dynamodb-timetolivespecification.html#cfn-dynamodb-timetolivespecification-attributename    
-		PrimitiveType: String    
-		Required: True    
-		UpdateType: Mutable    
+        Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-dynamodb-timetolivespecification.html#cfn-dynamodb-timetolivespecification-attributename    
+        PrimitiveType: String    
+        Required: True    
+        UpdateType: Mutable    
 
     .PARAMETER Enabled
-		Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-dynamodb-timetolivespecification.html#cfn-dynamodb-timetolivespecification-enabled    
-		PrimitiveType: Boolean    
-		Required: True    
-		UpdateType: Mutable    
+        Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-dynamodb-timetolivespecification.html#cfn-dynamodb-timetolivespecification-enabled    
+        PrimitiveType: Boolean    
+        Required: True    
+        UpdateType: Mutable    
 
     .FUNCTIONALITY
         Vaporshell

@@ -10,16 +10,16 @@ function Add-VSEventsRuleEcsParameters {
         http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-events-rule-ecsparameters.html
 
     .PARAMETER TaskCount
-		Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-events-rule-ecsparameters.html#cfn-events-rule-ecsparameters-taskcount    
-		PrimitiveType: Integer    
-		Required: False    
-		UpdateType: Mutable    
+        Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-events-rule-ecsparameters.html#cfn-events-rule-ecsparameters-taskcount    
+        PrimitiveType: Integer    
+        Required: False    
+        UpdateType: Mutable    
 
     .PARAMETER TaskDefinitionArn
-		Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-events-rule-ecsparameters.html#cfn-events-rule-ecsparameters-taskdefinitionarn    
-		PrimitiveType: String    
-		Required: True    
-		UpdateType: Mutable    
+        Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-events-rule-ecsparameters.html#cfn-events-rule-ecsparameters-taskdefinitionarn    
+        PrimitiveType: String    
+        Required: True    
+        UpdateType: Mutable    
 
     .FUNCTIONALITY
         Vaporshell

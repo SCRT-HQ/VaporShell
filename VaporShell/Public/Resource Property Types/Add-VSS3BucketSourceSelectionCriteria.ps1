@@ -10,10 +10,10 @@ function Add-VSS3BucketSourceSelectionCriteria {
         http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-s3-bucket-sourceselectioncriteria.html
 
     .PARAMETER SseKmsEncryptedObjects
-		Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-s3-bucket-sourceselectioncriteria.html#cfn-s3-bucket-sourceselectioncriteria-ssekmsencryptedobjects    
-		Required: True    
-		Type: SseKmsEncryptedObjects    
-		UpdateType: Mutable    
+        Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-s3-bucket-sourceselectioncriteria.html#cfn-s3-bucket-sourceselectioncriteria-ssekmsencryptedobjects    
+        Required: True    
+        Type: SseKmsEncryptedObjects    
+        UpdateType: Mutable    
 
     .FUNCTIONALITY
         Vaporshell

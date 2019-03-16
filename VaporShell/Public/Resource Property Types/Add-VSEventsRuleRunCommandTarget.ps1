@@ -10,18 +10,18 @@ function Add-VSEventsRuleRunCommandTarget {
         http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-events-rule-runcommandtarget.html
 
     .PARAMETER Key
-		Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-events-rule-runcommandtarget.html#cfn-events-rule-runcommandtarget-key    
-		PrimitiveType: String    
-		Required: True    
-		UpdateType: Mutable    
+        Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-events-rule-runcommandtarget.html#cfn-events-rule-runcommandtarget-key    
+        PrimitiveType: String    
+        Required: True    
+        UpdateType: Mutable    
 
     .PARAMETER Values
-		Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-events-rule-runcommandtarget.html#cfn-events-rule-runcommandtarget-values    
-		DuplicatesAllowed: False    
-		PrimitiveItemType: String    
-		Required: True    
-		Type: List    
-		UpdateType: Mutable    
+        Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-events-rule-runcommandtarget.html#cfn-events-rule-runcommandtarget-values    
+        DuplicatesAllowed: False    
+        PrimitiveItemType: String    
+        Required: True    
+        Type: List    
+        UpdateType: Mutable    
 
     .FUNCTIONALITY
         Vaporshell

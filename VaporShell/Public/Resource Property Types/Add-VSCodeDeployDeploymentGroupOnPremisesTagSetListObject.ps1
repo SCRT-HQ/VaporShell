@@ -10,12 +10,12 @@ function Add-VSCodeDeployDeploymentGroupOnPremisesTagSetListObject {
         http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-codedeploy-deploymentgroup-onpremisestagsetlistobject.html
 
     .PARAMETER OnPremisesTagGroup
-		Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-codedeploy-deploymentgroup-onpremisestagsetlistobject.html#cfn-codedeploy-deploymentgroup-onpremisestagsetlistobject-onpremisestaggroup    
-		DuplicatesAllowed: False    
-		ItemType: TagFilter    
-		Required: False    
-		Type: List    
-		UpdateType: Mutable    
+        Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-codedeploy-deploymentgroup-onpremisestagsetlistobject.html#cfn-codedeploy-deploymentgroup-onpremisestagsetlistobject-onpremisestaggroup    
+        DuplicatesAllowed: False    
+        ItemType: TagFilter    
+        Required: False    
+        Type: List    
+        UpdateType: Mutable    
 
     .FUNCTIONALITY
         Vaporshell

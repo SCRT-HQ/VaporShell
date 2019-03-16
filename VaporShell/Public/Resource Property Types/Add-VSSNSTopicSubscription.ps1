@@ -10,16 +10,16 @@ function Add-VSSNSTopicSubscription {
         http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-sns-subscription.html
 
     .PARAMETER Endpoint
-		Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-sns-subscription.html#cfn-sns-topic-subscription-endpoint    
-		PrimitiveType: String    
-		Required: True    
-		UpdateType: Immutable    
+        Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-sns-subscription.html#cfn-sns-topic-subscription-endpoint    
+        PrimitiveType: String    
+        Required: True    
+        UpdateType: Immutable    
 
     .PARAMETER Protocol
-		Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-sns-subscription.html#cfn-sns-topic-subscription-protocol    
-		PrimitiveType: String    
-		Required: True    
-		UpdateType: Immutable    
+        Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-sns-subscription.html#cfn-sns-topic-subscription-protocol    
+        PrimitiveType: String    
+        Required: True    
+        UpdateType: Immutable    
 
     .FUNCTIONALITY
         Vaporshell

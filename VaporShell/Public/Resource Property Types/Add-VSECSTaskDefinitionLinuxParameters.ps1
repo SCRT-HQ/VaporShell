@@ -10,38 +10,38 @@ function Add-VSECSTaskDefinitionLinuxParameters {
         http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ecs-taskdefinition-linuxparameters.html
 
     .PARAMETER Capabilities
-		Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ecs-taskdefinition-linuxparameters.html#cfn-ecs-taskdefinition-linuxparameters-capabilities    
-		Required: False    
-		Type: KernelCapabilities    
-		UpdateType: Immutable    
+        Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ecs-taskdefinition-linuxparameters.html#cfn-ecs-taskdefinition-linuxparameters-capabilities    
+        Required: False    
+        Type: KernelCapabilities    
+        UpdateType: Immutable    
 
     .PARAMETER Devices
-		Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ecs-taskdefinition-linuxparameters.html#cfn-ecs-taskdefinition-linuxparameters-devices    
-		DuplicatesAllowed: False    
-		ItemType: Device    
-		Required: False    
-		Type: List    
-		UpdateType: Immutable    
+        Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ecs-taskdefinition-linuxparameters.html#cfn-ecs-taskdefinition-linuxparameters-devices    
+        DuplicatesAllowed: False    
+        ItemType: Device    
+        Required: False    
+        Type: List    
+        UpdateType: Immutable    
 
     .PARAMETER InitProcessEnabled
-		Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ecs-taskdefinition-linuxparameters.html#cfn-ecs-taskdefinition-linuxparameters-initprocessenabled    
-		PrimitiveType: Boolean    
-		Required: False    
-		UpdateType: Immutable    
+        Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ecs-taskdefinition-linuxparameters.html#cfn-ecs-taskdefinition-linuxparameters-initprocessenabled    
+        PrimitiveType: Boolean    
+        Required: False    
+        UpdateType: Immutable    
 
     .PARAMETER SharedMemorySize
-		Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ecs-taskdefinition-linuxparameters.html#cfn-ecs-taskdefinition-linuxparameters-sharedmemorysize    
-		PrimitiveType: Integer    
-		Required: False    
-		UpdateType: Immutable    
+        Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ecs-taskdefinition-linuxparameters.html#cfn-ecs-taskdefinition-linuxparameters-sharedmemorysize    
+        PrimitiveType: Integer    
+        Required: False    
+        UpdateType: Immutable    
 
     .PARAMETER Tmpfs
-		Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ecs-taskdefinition-linuxparameters.html#cfn-ecs-taskdefinition-linuxparameters-tmpfs    
-		DuplicatesAllowed: False    
-		ItemType: Tmpfs    
-		Required: False    
-		Type: List    
-		UpdateType: Immutable    
+        Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ecs-taskdefinition-linuxparameters.html#cfn-ecs-taskdefinition-linuxparameters-tmpfs    
+        DuplicatesAllowed: False    
+        ItemType: Tmpfs    
+        Required: False    
+        Type: List    
+        UpdateType: Immutable    
 
     .FUNCTIONALITY
         Vaporshell

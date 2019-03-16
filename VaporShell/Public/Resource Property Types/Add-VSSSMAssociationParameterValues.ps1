@@ -10,12 +10,12 @@ function Add-VSSSMAssociationParameterValues {
         http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ssm-association-parametervalues.html
 
     .PARAMETER ParameterValues
-		Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ssm-association-parametervalues.html#cfn-ssm-association-parametervalues-parametervalues    
-		DuplicatesAllowed: False    
-		PrimitiveItemType: String    
-		Required: True    
-		Type: List    
-		UpdateType: Mutable    
+        Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ssm-association-parametervalues.html#cfn-ssm-association-parametervalues-parametervalues    
+        DuplicatesAllowed: False    
+        PrimitiveItemType: String    
+        Required: True    
+        Type: List    
+        UpdateType: Mutable    
 
     .FUNCTIONALITY
         Vaporshell

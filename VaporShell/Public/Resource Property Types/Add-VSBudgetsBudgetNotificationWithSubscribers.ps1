@@ -10,17 +10,17 @@ function Add-VSBudgetsBudgetNotificationWithSubscribers {
         http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-budgets-budget-notificationwithsubscribers.html
 
     .PARAMETER Subscribers
-		Type: List    
-		Required: True    
-		Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-budgets-budget-notificationwithsubscribers.html#cfn-budgets-budget-notificationwithsubscribers-subscribers    
-		ItemType: Subscriber    
-		UpdateType: Mutable    
+        Type: List    
+        Required: True    
+        Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-budgets-budget-notificationwithsubscribers.html#cfn-budgets-budget-notificationwithsubscribers-subscribers    
+        ItemType: Subscriber    
+        UpdateType: Mutable    
 
     .PARAMETER Notification
-		Type: Notification    
-		Required: True    
-		Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-budgets-budget-notificationwithsubscribers.html#cfn-budgets-budget-notificationwithsubscribers-notification    
-		UpdateType: Mutable    
+        Type: Notification    
+        Required: True    
+        Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-budgets-budget-notificationwithsubscribers.html#cfn-budgets-budget-notificationwithsubscribers-notification    
+        UpdateType: Mutable    
 
     .FUNCTIONALITY
         Vaporshell

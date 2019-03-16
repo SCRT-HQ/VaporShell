@@ -10,16 +10,16 @@ function Add-VSAutoScalingAutoScalingGroupMixedInstancesPolicy {
         http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/cfn-as-group-mixedinstancespolicy.html
 
     .PARAMETER InstancesDistribution
-		Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/cfn-as-group-mixedinstancespolicy.html#cfn-as-mixedinstancespolicy-instancesdistribution    
-		Required: False    
-		Type: InstancesDistribution    
-		UpdateType: Mutable    
+        Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/cfn-as-group-mixedinstancespolicy.html#cfn-as-mixedinstancespolicy-instancesdistribution    
+        Required: False    
+        Type: InstancesDistribution    
+        UpdateType: Mutable    
 
     .PARAMETER LaunchTemplate
-		Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/cfn-as-group-mixedinstancespolicy.html#cfn-as-mixedinstancespolicy-launchtemplate    
-		Required: True    
-		Type: LaunchTemplate    
-		UpdateType: Mutable    
+        Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/cfn-as-group-mixedinstancespolicy.html#cfn-as-mixedinstancespolicy-launchtemplate    
+        Required: True    
+        Type: LaunchTemplate    
+        UpdateType: Mutable    
 
     .FUNCTIONALITY
         Vaporshell

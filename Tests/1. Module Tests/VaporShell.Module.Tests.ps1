@@ -1,4 +1,3 @@
-$PSVersion = $PSVersionTable.PSVersion.Major
 $projectRoot = Resolve-Path "$PSScriptRoot\..\.."
 $ModulePath = Resolve-Path "$projectRoot\BuildOutput\$($env:BHProjectName)"
 $decompiledModulePath = Resolve-Path "$projectRoot\$($env:BHProjectName)"
@@ -10,13 +9,10 @@ $Verbose = @{}
 if ($ENV:BHBranchName -eq "dev" -or $env:BHCommitMessage -match "!verbose" -or $ENV:TRAVIS_COMMIT_MESSAGE -match "!verbose" -or $ENV:TRAVIS_BRANCH -eq "dev" ) {
     $Verbose.add("Verbose",$True)
 }
-
-$moduleRoot = Split-Path (Resolve-Path "$ModulePath\*\*.psd1")
 $udFile = (Resolve-Path "$PSScriptRoot\..\Assets\UserData.sh").Path
 
 Write-Verbose "Importing $($env:BHProjectName) module at [$ModulePath]"
 Import-Module $ModulePath -Force -ArgumentList $true -Verbose:$false
-$currentFunctionCount = (Get-Command -Module Vaporshell).Count
 
 Describe "Module tests: $($env:BHProjectName)" {
     Context "Confirm files are valid Powershell syntax" {
@@ -108,7 +104,7 @@ Describe "Unit tests" {
         }
         It 'Should export import existing CloudFormation template as Vaporshell.Template' {
             $testPath = "$projectRoot\Template.json"
-            $template = Import-Vaporshell -Path $testPath
+            {Import-Vaporshell -Path $testPath} | Should -Not -Throw
         }
         It 'Should export add new properties to the imported JSON object' {
             $testPath = "$projectRoot\Template.json"

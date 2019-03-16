@@ -1,4 +1,5 @@
-﻿using System;
+using System;
+using System.IO;
 using System.Linq;
 using System.Reflection;
 using System.Runtime.InteropServices;
@@ -9,9 +10,10 @@ using System.Collections.Specialized;
 using Newtonsoft.Json;
 using YamlDotNet.Serialization;
 
+using VaporShell.Core;
 using VaporShell.Validators;
 
-namespace VaporShell.Test {
+namespace VaporShell {
     public enum DeletionPolicy {
         Delete,
         Retain,
@@ -34,9 +36,7 @@ namespace VaporShell.Test {
             return new LogicalId(d);
         }
     }
-    public abstract class ResourceProperties {
-        public ResourceProperties() {}
-    }
+
     public class AutoScalingCreationPolicy {
         public int MinSuccessfulInstancesPercent { get; set; }
 
@@ -106,30 +106,6 @@ namespace VaporShell.Test {
         public Boolean WaitOnResourceSignals { get; set; }
 
         public UpdatePolicy() { }
-    }
-    public abstract class Resource {
-        public LogicalId LogicalId { get; set; }
-        public abstract string Type { get; set; }
-        public abstract ResourceProperties Properties { get; set; }
-        public CreationPolicy CreationPolicy { get; set; }
-        public DeletionPolicy? DeletionPolicy { get; set; }
-        public UpdatePolicy UpdatePolicy { get; set; }
-        public string[] DependsOn { get; set; }
-        public object Condition { get; set; }
-        public object Metadata { get; set; }
-
-        public override string ToString() => LogicalId.ToString();
-        public LogicalId GetLogicalId() => LogicalId;
-        public Dictionary<string, object> GetProps() {
-            Dictionary<string, object> compiled = new Dictionary<string, object>();
-            foreach (var item in GetType().GetProperties()) {
-                var val = GetType().GetProperty(item.Name).GetValue(this, null);
-                if (item.Name != "LogicalId" && val != null) {
-                    compiled.Add(item.Name, val);
-                }
-            }
-            return compiled;
-        }
     }
 
     public class Parameter {
@@ -320,12 +296,12 @@ namespace VaporShell.Test {
     public class Template {
         public string AWSTemplateFormatVersion { get; set; }
         public string Description { get; set; }
-        public List<VaporShell.Test.Metadata> Metadata { get; private set; } = new List<VaporShell.Test.Metadata>();
-        public List<VaporShell.Test.Parameter> Parameters { get; private set; } = new List<VaporShell.Test.Parameter>();
-        public List<VaporShell.Test.Condition> Conditions { get; private set; } = new List<VaporShell.Test.Condition>();
-        public List<VaporShell.Test.Mapping> Mappings { get; private set; } = new List<VaporShell.Test.Mapping>();
-        public List<VaporShell.Test.Resource> Resources { get; private set; } = new List<VaporShell.Test.Resource>();
-        public List<VaporShell.Test.Output> Outputs { get; private set; } = new List<VaporShell.Test.Output>();
+        public List<Metadata> Metadata { get; private set; } = new List<Metadata>();
+        public List<Parameter> Parameters { get; private set; } = new List<Parameter>();
+        public List<Condition> Conditions { get; private set; } = new List<Condition>();
+        public List<Mapping> Mappings { get; private set; } = new List<Mapping>();
+        public List<VaporShell.Core.Resource> Resources { get; private set; } = new List<VaporShell.Core.Resource>();
+        public List<Output> Outputs { get; private set; } = new List<Output>();
         public SortedDictionary<string, object> _compiled { get; private set; } = new SortedDictionary<string, object>();
         public DateTime _compiledAt { get; private set; } = DateTime.Now;
         public DateTime _updatedAt { get; private set; } = DateTime.Now;
@@ -338,134 +314,104 @@ namespace VaporShell.Test {
             this.Description = Description;
         }
 
-        public void AddResource(Resource item, bool addToMain = true) {
+        public void AddResource(VaporShell.Core.Resource item, bool addToMain = true) {
             var logId = item.GetLogicalId();
-            if (addToMain) {
-                Resources.ForEach(x => {
-                    if (x.LogicalId == logId) {
-                        throw new ArgumentException("A Resource with LogicalId of '" + logId + "' already exists on this template. You must use a unique LogicalId for each Resource.");
-                    }
-                });
-                Resources.Add(item);
-                _updatedAt = DateTime.Now;
-            }
             if (!_compiled.ContainsKey("Resources")) {
                 _compiled.Add("Resources", new SortedDictionary<string, object>());
             }
             if (((SortedDictionary<string, object>)_compiled["Resources"]).ContainsKey(logId)) {
-                ((SortedDictionary<string, object>)_compiled["Resources"])[logId] = item.GetProps();
+                throw new ArgumentException("A Resource with LogicalId of '" + logId + "' already exists on this template. You must use a unique LogicalId for each Resource.");
             }
             else {
+                if (addToMain) {
+                    Resources.Add(item);
+                    _updatedAt = DateTime.Now;
+                }
                 ((SortedDictionary<string, object>)_compiled["Resources"]).Add(logId, item.GetProps());
             }
         }
 
-        public void AddParameter(VaporShell.Test.Parameter item, bool addToMain = true) {
+        public void AddParameter(Parameter item, bool addToMain = true) {
             var logId = item.GetLogicalId();
-            if (addToMain) {
-                Parameters.ForEach(x => {
-                    if (x.LogicalId == logId) {
-                        throw new ArgumentException("A Parameter with LogicalId of '" + logId + "' already exists on this template. You must use a unique LogicalId for each Parameter.");
-                    }
-                });
-                Parameters.Add(item);
-                _updatedAt = DateTime.Now;
-            }
             if (!_compiled.ContainsKey("Parameters")) {
                 _compiled.Add("Parameters", new SortedDictionary<string, object>());
             }
             if (((SortedDictionary<string, object>)_compiled["Parameters"]).ContainsKey(logId)) {
-                ((SortedDictionary<string, object>)_compiled["Parameters"])[logId] = item.GetProps();
+                throw new ArgumentException("A Parameter with LogicalId of '" + logId + "' already exists on this template. You must use a unique LogicalId for each Parameter.");
             }
             else {
+                if (addToMain) {
+                    Parameters.Add(item);
+                    _updatedAt = DateTime.Now;
+                }
                 ((SortedDictionary<string, object>)_compiled["Parameters"]).Add(logId, item.GetProps());
             }
         }
 
-        public void AddCondition(VaporShell.Test.Condition item, bool addToMain = true) {
+        public void AddCondition(Condition item, bool addToMain = true) {
             var logId = item.GetLogicalId();
-            if (addToMain) {
-                Conditions.ForEach(x => {
-                    if (x.LogicalId == logId) {
-                        throw new ArgumentException("A Condition with LogicalId of '" + logId + "' already exists on this template. You must use a unique LogicalId for each Condition.");
-                    }
-                });
-                Conditions.Add(item);
-                _updatedAt = DateTime.Now;
-            }
             if (!_compiled.ContainsKey("Conditions")) {
                 _compiled.Add("Conditions", new SortedDictionary<string, object>());
             }
             if (((SortedDictionary<string, object>)_compiled["Conditions"]).ContainsKey(logId)) {
-                ((SortedDictionary<string, object>)_compiled["Conditions"])[logId] = item.GetProps();
+                throw new ArgumentException("A Condition with LogicalId of '" + logId + "' already exists on this template. You must use a unique LogicalId for each Condition.");
             }
             else {
+                if (addToMain) {
+                    Conditions.Add(item);
+                    _updatedAt = DateTime.Now;
+                }
                 ((SortedDictionary<string, object>)_compiled["Conditions"]).Add(logId, item.GetProps());
             }
         }
 
-        public void AddMapping(VaporShell.Test.Mapping item, bool addToMain = true) {
+        public void AddMapping(Mapping item, bool addToMain = true) {
             var logId = item.GetLogicalId();
-            if (addToMain) {
-                Mappings.ForEach(x => {
-                    if (x.LogicalId == logId) {
-                        throw new ArgumentException("A Mapping with LogicalId of '" + logId + "' already exists on this template. You must use a unique LogicalId for each Mapping.");
-                    }
-                });
-                Mappings.Add(item);
-                _updatedAt = DateTime.Now;
-            }
             if (!_compiled.ContainsKey("Mappings")) {
                 _compiled.Add("Mappings", new SortedDictionary<string, object>());
             }
             if (((SortedDictionary<string, object>)_compiled["Mappings"]).ContainsKey(logId)) {
-                ((SortedDictionary<string, object>)_compiled["Mappings"])[logId] = item.GetProps();
+                throw new ArgumentException("A Mapping with LogicalId of '" + logId + "' already exists on this template. You must use a unique LogicalId for each Mapping.");
             }
             else {
+                if (addToMain) {
+                    Mappings.Add(item);
+                    _updatedAt = DateTime.Now;
+                }
                 ((SortedDictionary<string, object>)_compiled["Mappings"]).Add(logId, item.GetProps());
             }
         }
 
-        public void AddOutput(VaporShell.Test.Output item, bool addToMain = true) {
+        public void AddOutput(Output item, bool addToMain = true) {
             var logId = item.GetLogicalId();
-            if (addToMain) {
-                Outputs.ForEach(x => {
-                    if (x.LogicalId == logId) {
-                        throw new ArgumentException("An Output with LogicalId of '" + logId + "' already exists on this template. You must use a unique LogicalId for each Output.");
-                    }
-                });
-                Outputs.Add(item);
-                _updatedAt = DateTime.Now;
-            }
             if (!_compiled.ContainsKey("Outputs")) {
                 _compiled.Add("Outputs", new SortedDictionary<string, object>());
             }
             if (((SortedDictionary<string, object>)_compiled["Outputs"]).ContainsKey(logId)) {
-                ((SortedDictionary<string, object>)_compiled["Outputs"])[logId] = item.GetProps();
+                throw new ArgumentException("A Output with LogicalId of '" + logId + "' already exists on this template. You must use a unique LogicalId for each Output.");
             }
             else {
+                if (addToMain) {
+                    Outputs.Add(item);
+                    _updatedAt = DateTime.Now;
+                }
                 ((SortedDictionary<string, object>)_compiled["Outputs"]).Add(logId, item.GetProps());
             }
         }
 
-        public void AddMetadata(VaporShell.Test.Metadata item, bool addToMain = true) {
+        public void AddMetadata(Metadata item, bool addToMain = true) {
             var logId = item.GetLogicalId();
-            if (addToMain) {
-                Metadata.ForEach(x => {
-                    if (x.LogicalId == logId) {
-                        throw new ArgumentException("A Metadata with LogicalId of '" + logId + "' already exists on this template. You must use a unique LogicalId for each Metadata.");
-                    }
-                });
-                Metadata.Add(item);
-                _updatedAt = DateTime.Now;
-            }
             if (!_compiled.ContainsKey("Metadata")) {
                 _compiled.Add("Metadata", new SortedDictionary<string, object>());
             }
             if (((SortedDictionary<string, object>)_compiled["Metadata"]).ContainsKey(logId)) {
-                ((SortedDictionary<string, object>)_compiled["Metadata"])[logId] = item.GetProps();
+                throw new ArgumentException("A Metadata with LogicalId of '" + logId + "' already exists on this template. You must use a unique LogicalId for each Metadata.");
             }
             else {
+                if (addToMain) {
+                    Metadata.Add(item);
+                    _updatedAt = DateTime.Now;
+                }
                 ((SortedDictionary<string, object>)_compiled["Metadata"]).Add(logId, item.GetProps());
             }
         }
@@ -475,30 +421,7 @@ namespace VaporShell.Test {
         }
 
         public override string ToString() {
-            return ToJson(false);
-        }
-        public string ToJson(bool Compress = false) {
-            Compile();
-            var fmt = Newtonsoft.Json.Formatting.Indented;
-            if (Compress) {
-                fmt = Newtonsoft.Json.Formatting.None;
-            }
-            var jsonString = JsonConvert.SerializeObject(
-                _compiled,
-                fmt,
-                new JsonSerializerSettings {
-                    NullValueHandling = NullValueHandling.Ignore
-                }
-            );
-            return jsonString;
-        }
-        public string ToYaml() {
-            Compile();
-            var serializer = new SerializerBuilder()
-                .WithTagMapping("!Ref", typeof(VaporShell.Function.FnRef))
-                .Build();
-            var yaml = serializer.Serialize(_compiled);
-            return yaml;
+            return ToJson();
         }
         private void Compile() {
             if (_compiledAt <= _updatedAt) {
@@ -529,6 +452,48 @@ namespace VaporShell.Test {
                 }
                 _compiledAt = DateTime.Now;
             }
+        }
+        public string ToJson() {
+            Compile();
+            var fmt = Newtonsoft.Json.Formatting.Indented;
+            var jsonString = JsonConvert.SerializeObject(
+                _compiled,
+                fmt,
+                new JsonSerializerSettings {
+                    NullValueHandling = NullValueHandling.Ignore
+                }
+            );
+            return jsonString;
+        }
+        public void ToJson(string path) {
+            Compile();
+            var fmt = Newtonsoft.Json.Formatting.Indented;
+            var jsonString = JsonConvert.SerializeObject(
+                _compiled,
+                fmt,
+                new JsonSerializerSettings {
+                    NullValueHandling = NullValueHandling.Ignore
+                }
+            );
+            File.WriteAllText(path, jsonString);
+            Console.WriteLine("The JSON template file has been exported to " + path);
+        }
+        public string ToYaml() {
+            Compile();
+            var serializer = new SerializerBuilder()
+                .WithTagMapping("!Ref", typeof(VaporShell.Function.FnRef))
+                .Build();
+            var yaml = serializer.Serialize(_compiled);
+            return yaml;
+        }
+        public void ToYaml(string path) {
+            Compile();
+            var serializer = new SerializerBuilder()
+                .WithTagMapping("!Ref", typeof(VaporShell.Function.FnRef))
+                .Build();
+            var yaml = serializer.Serialize(_compiled);
+            File.WriteAllText(path, yaml);
+            Console.WriteLine("The YAML template file has been exported to " + path);
         }
     }
 }

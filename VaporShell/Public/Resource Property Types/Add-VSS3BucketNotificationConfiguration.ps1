@@ -10,28 +10,28 @@ function Add-VSS3BucketNotificationConfiguration {
         http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-s3-bucket-notificationconfig.html
 
     .PARAMETER LambdaConfigurations
-		Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-s3-bucket-notificationconfig.html#cfn-s3-bucket-notificationconfig-lambdaconfig    
-		DuplicatesAllowed: False    
-		ItemType: LambdaConfiguration    
-		Required: False    
-		Type: List    
-		UpdateType: Mutable    
+        Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-s3-bucket-notificationconfig.html#cfn-s3-bucket-notificationconfig-lambdaconfig    
+        DuplicatesAllowed: False    
+        ItemType: LambdaConfiguration    
+        Required: False    
+        Type: List    
+        UpdateType: Mutable    
 
     .PARAMETER QueueConfigurations
-		Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-s3-bucket-notificationconfig.html#cfn-s3-bucket-notificationconfig-queueconfig    
-		DuplicatesAllowed: False    
-		ItemType: QueueConfiguration    
-		Required: False    
-		Type: List    
-		UpdateType: Mutable    
+        Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-s3-bucket-notificationconfig.html#cfn-s3-bucket-notificationconfig-queueconfig    
+        DuplicatesAllowed: False    
+        ItemType: QueueConfiguration    
+        Required: False    
+        Type: List    
+        UpdateType: Mutable    
 
     .PARAMETER TopicConfigurations
-		Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-s3-bucket-notificationconfig.html#cfn-s3-bucket-notificationconfig-topicconfig    
-		DuplicatesAllowed: False    
-		ItemType: TopicConfiguration    
-		Required: False    
-		Type: List    
-		UpdateType: Mutable    
+        Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-s3-bucket-notificationconfig.html#cfn-s3-bucket-notificationconfig-topicconfig    
+        DuplicatesAllowed: False    
+        ItemType: TopicConfiguration    
+        Required: False    
+        Type: List    
+        UpdateType: Mutable    
 
     .FUNCTIONALITY
         Vaporshell

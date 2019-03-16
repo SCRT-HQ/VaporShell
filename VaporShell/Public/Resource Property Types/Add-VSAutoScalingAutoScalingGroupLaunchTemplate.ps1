@@ -10,18 +10,18 @@ function Add-VSAutoScalingAutoScalingGroupLaunchTemplate {
         http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/cfn-as-mixedinstancespolicy-launchtemplate.html
 
     .PARAMETER LaunchTemplateSpecification
-		Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/cfn-as-mixedinstancespolicy-launchtemplate.html#cfn-as-group-launchtemplate    
-		Required: True    
-		Type: LaunchTemplateSpecification    
-		UpdateType: Mutable    
+        Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/cfn-as-mixedinstancespolicy-launchtemplate.html#cfn-as-group-launchtemplate    
+        Required: True    
+        Type: LaunchTemplateSpecification    
+        UpdateType: Mutable    
 
     .PARAMETER Overrides
-		Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/cfn-as-mixedinstancespolicy-launchtemplate.html#cfn-as-mixedinstancespolicy-overrides    
-		DuplicatesAllowed: False    
-		ItemType: LaunchTemplateOverrides    
-		Required: False    
-		Type: List    
-		UpdateType: Mutable    
+        Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/cfn-as-mixedinstancespolicy-launchtemplate.html#cfn-as-mixedinstancespolicy-overrides    
+        DuplicatesAllowed: False    
+        ItemType: LaunchTemplateOverrides    
+        Required: False    
+        Type: List    
+        UpdateType: Mutable    
 
     .FUNCTIONALITY
         Vaporshell

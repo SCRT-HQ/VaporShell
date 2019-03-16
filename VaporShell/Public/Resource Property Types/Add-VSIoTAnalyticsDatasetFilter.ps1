@@ -10,10 +10,10 @@ function Add-VSIoTAnalyticsDatasetFilter {
         http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iotanalytics-dataset-filter.html
 
     .PARAMETER DeltaTime
-		Type: DeltaTime    
-		Required: False    
-		Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iotanalytics-dataset-filter.html#cfn-iotanalytics-dataset-filter-deltatime    
-		UpdateType: Mutable    
+        Type: DeltaTime    
+        Required: False    
+        Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iotanalytics-dataset-filter.html#cfn-iotanalytics-dataset-filter-deltatime    
+        UpdateType: Mutable    
 
     .FUNCTIONALITY
         Vaporshell

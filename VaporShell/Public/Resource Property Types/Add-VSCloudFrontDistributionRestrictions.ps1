@@ -10,10 +10,10 @@ function Add-VSCloudFrontDistributionRestrictions {
         http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-cloudfront-distribution-restrictions.html
 
     .PARAMETER GeoRestriction
-		Type: GeoRestriction    
-		Required: True    
-		Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-cloudfront-distribution-restrictions.html#cfn-cloudfront-distribution-restrictions-georestriction    
-		UpdateType: Mutable    
+        Type: GeoRestriction    
+        Required: True    
+        Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-cloudfront-distribution-restrictions.html#cfn-cloudfront-distribution-restrictions-georestriction    
+        UpdateType: Mutable    
 
     .FUNCTIONALITY
         Vaporshell

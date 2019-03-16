@@ -10,16 +10,16 @@ function Add-VSKinesisAnalyticsV2ApplicationMappingParameters {
         http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-kinesisanalyticsv2-application-mappingparameters.html
 
     .PARAMETER JSONMappingParameters
-		Type: JSONMappingParameters    
-		Required: False    
-		Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-kinesisanalyticsv2-application-mappingparameters.html#cfn-kinesisanalyticsv2-application-mappingparameters-jsonmappingparameters    
-		UpdateType: Mutable    
+        Type: JSONMappingParameters    
+        Required: False    
+        Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-kinesisanalyticsv2-application-mappingparameters.html#cfn-kinesisanalyticsv2-application-mappingparameters-jsonmappingparameters    
+        UpdateType: Mutable    
 
     .PARAMETER CSVMappingParameters
-		Type: CSVMappingParameters    
-		Required: False    
-		Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-kinesisanalyticsv2-application-mappingparameters.html#cfn-kinesisanalyticsv2-application-mappingparameters-csvmappingparameters    
-		UpdateType: Mutable    
+        Type: CSVMappingParameters    
+        Required: False    
+        Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-kinesisanalyticsv2-application-mappingparameters.html#cfn-kinesisanalyticsv2-application-mappingparameters-csvmappingparameters    
+        UpdateType: Mutable    
 
     .FUNCTIONALITY
         Vaporshell

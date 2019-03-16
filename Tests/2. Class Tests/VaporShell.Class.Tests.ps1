@@ -1,10 +1,7 @@
-using namespace VaporShell.Core;
-using namespace VaporShell.Resource.S3;
+using namespace VaporShell
+using namespace VaporShell.Resource.S3
 
-$PSVersion = $PSVersionTable.PSVersion.Major
-$projectRoot = Resolve-Path "$PSScriptRoot\..\.."
 $ModulePath = Resolve-Path "$($env:BHBuildOutput)\$($env:BHProjectName)"
-$decompiledModulePath = Resolve-Path "$projectRoot\$($env:BHProjectName)"
 
 # Verbose output for non-master builds on appveyor
 # Handy for troubleshooting.
@@ -14,12 +11,8 @@ if ($ENV:BHBranchName -eq "dev" -or $env:BHCommitMessage -match "!verbose" -or $
     $Verbose.add("Verbose",$True)
 }
 
-$moduleRoot = Split-Path (Resolve-Path "$ModulePath\*\*.psd1")
-$udFile = (Resolve-Path "$PSScriptRoot\..\Assets\UserData.sh").Path
-
 Write-Verbose "Importing $($env:BHProjectName) module at [$ModulePath]"
 Import-Module $ModulePath -Force -ArgumentList $true -Verbose:$false
-$currentFunctionCount = (Get-Command -Module Vaporshell).Count
 
 Describe "Class tests: $($env:BHProjectName)" {
     Context "Class integration tests" {
@@ -27,47 +20,69 @@ Describe "Class tests: $($env:BHProjectName)" {
             Description = "Test template"
         }
         $S3 = [Bucket]@{
-            LogicalId = "LogicalBucket";
-            BucketName = "MyNewBucket";
+            LogicalId = "LogicalBucket"
+            Properties = [BucketProperties]@{
+                BucketName = "MyNewBucket"
+                BucketEncryption = [Bucket+BucketEncryption]@{
+                    ServerSideEncryptionConfiguration = [Bucket+ServerSideEncryptionRule]@{
+                        ServerSideEncryptionByDefault = [Bucket+ServerSideEncryptionByDefault]@{
+                            SSEAlgorithm = 'AES256'
+                        }
+                    }
+                }
+            }
             CreationPolicy = [CreationPolicy]@{
                 AutoScalingCreationPolicy = [AutoScalingCreationPolicy]@{
-                    MinSuccessfulInstancesPercent = 100;
-                };
+                    MinSuccessfulInstancesPercent = 100
+                }
                 ResourceSignal = [ResourceSignal]@{
-                    Count = 3;
-                    Timeout = "PT1H";
+                    Count = 3
+                    Timeout = "PT1H"
                 }
             }
         }
         $S32 = [Bucket]@{
-            LogicalId = "LogicalBucket2";
-            BucketName = "MyNewBucket2";
+            LogicalId = "LogicalBucket2"
+            Properties = [BucketProperties]@{
+                BucketName = "MyNewBucket2"
+                BucketEncryption = [Bucket+BucketEncryption]@{
+                    ServerSideEncryptionConfiguration = @(
+                        [Bucket+ServerSideEncryptionRule]@{
+                            ServerSideEncryptionByDefault = [Bucket+ServerSideEncryptionByDefault]@{
+                                SSEAlgorithm = 'AES256'
+                            }
+                        }
+                    )
+                }
+            }
             CreationPolicy = [CreationPolicy]@{
                 AutoScalingCreationPolicy = [AutoScalingCreationPolicy]@{
-                    MinSuccessfulInstancesPercent = 100;
-                };
+                    MinSuccessfulInstancesPercent = 100
+                }
                 ResourceSignal = [ResourceSignal]@{
-                    Count = 3;
-                    Timeout = "PT1H";
+                    Count = 3
+                    Timeout = "PT1H"
                 }
             }
         }
         $S33 = [Bucket]@{
-            LogicalId = "LogicalBucket2";
-            BucketName = "MyNewBucket2";
+            LogicalId = "LogicalBucket2"
+            Properties = [BucketProperties]@{
+                BucketName = "MyNewBucket2"
+            }
             CreationPolicy = [CreationPolicy]@{
                 AutoScalingCreationPolicy = [AutoScalingCreationPolicy]@{
-                    MinSuccessfulInstancesPercent = 100;
-                };
+                    MinSuccessfulInstancesPercent = 100
+                }
                 ResourceSignal = [ResourceSignal]@{
-                    Count = 3;
-                    Timeout = "PT1H";
+                    Count = 3
+                    Timeout = "PT1H"
                 }
             }
         }
         It "Should create a Template" {
             $template | Should -Not -BeNullOrEmpty
-            $template | Should -BeOfType [VaporShell.Core.Template]
+            $template | Should -BeOfType [VaporShell.Template]
         }
         It "Should create an S3 Bucket" {
             $S3 | Should -Not -BeNullOrEmpty
@@ -88,13 +103,17 @@ Describe "Class tests: $($env:BHProjectName)" {
         }
         It "Should cast to Json" {
             {$template.ToJson()} | Should -Not -Throw
-            {$template.ToJson($true)} | Should -Not -Throw
-            {$template.ToJson($false)} | Should -Not -Throw
             $template.ToJson() | Should -BeOfType [System.String]
+            $templatePath = Join-Path $env:BHBuildOutput 'classtemplate.json'
+            $template.ToJson($templatePath)
+            {Test-Path $templatePath} | Should -BeTrue
         }
         It "Should cast to Yaml" {
             {$template.ToYaml()} | Should -Not -Throw
             $template.ToYaml() | Should -BeOfType [System.String]
+            $templatePath = Join-Path $env:BHBuildOutput 'classtemplate.yaml'
+            $template.ToYaml($templatePath)
+            {Test-Path $templatePath} | Should -BeTrue
         }
     }
 }

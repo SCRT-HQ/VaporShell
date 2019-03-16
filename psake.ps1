@@ -230,8 +230,16 @@ Export-ModuleMember -Function (Get-Command -Module VaporShell.DSL).Name -Variabl
 task CompileCSharp -depends CompilePowerShell {
     Invoke-CommandWithLog {Get-Command dotnet | Select-Object Name,Version | Out-String | Write-BuildLog}
     Invoke-CommandWithLog {Push-Location "$PSScriptRoot\src"}
-    Invoke-CommandWithLog {dotnet clean}
-    Invoke-CommandWithLog {dotnet build -c $buildConfiguration --force}
+    Write-BuildLog -c 'dotnet clean'
+    dotnet clean
+    if (!$?) {
+        throw "dotnet clean failed!"
+    }
+    Write-BuildLog -c "dotnet build -c $buildConfiguration --force"
+    dotnet build -c $buildConfiguration --force
+    if (!$?) {
+        throw "dotnet build failed!"
+    }
     Invoke-CommandWithLog {
         Get-ChildItem ".\bin\$buildConfiguration\net45" -Filter "*.dll" | ForEach-Object {
             try {

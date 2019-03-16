@@ -10,10 +10,10 @@ function Add-VSSSMAssociationInstanceAssociationOutputLocation {
         http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ssm-association-instanceassociationoutputlocation.html
 
     .PARAMETER S3Location
-		Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ssm-association-instanceassociationoutputlocation.html#cfn-ssm-association-instanceassociationoutputlocation-s3location    
-		Required: False    
-		Type: S3OutputLocation    
-		UpdateType: Mutable    
+        Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ssm-association-instanceassociationoutputlocation.html#cfn-ssm-association-instanceassociationoutputlocation-s3location    
+        Required: False    
+        Type: S3OutputLocation    
+        UpdateType: Mutable    
 
     .FUNCTIONALITY
         Vaporshell

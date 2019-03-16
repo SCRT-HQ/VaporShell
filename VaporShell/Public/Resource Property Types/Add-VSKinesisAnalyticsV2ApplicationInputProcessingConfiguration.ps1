@@ -10,10 +10,10 @@ function Add-VSKinesisAnalyticsV2ApplicationInputProcessingConfiguration {
         http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-kinesisanalyticsv2-application-inputprocessingconfiguration.html
 
     .PARAMETER InputLambdaProcessor
-		Type: InputLambdaProcessor    
-		Required: False    
-		Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-kinesisanalyticsv2-application-inputprocessingconfiguration.html#cfn-kinesisanalyticsv2-application-inputprocessingconfiguration-inputlambdaprocessor    
-		UpdateType: Mutable    
+        Type: InputLambdaProcessor    
+        Required: False    
+        Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-kinesisanalyticsv2-application-inputprocessingconfiguration.html#cfn-kinesisanalyticsv2-application-inputprocessingconfiguration-inputlambdaprocessor    
+        UpdateType: Mutable    
 
     .FUNCTIONALITY
         Vaporshell

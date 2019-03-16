@@ -10,16 +10,16 @@ function Add-VSCodeBuildProjectLogsConfig {
         http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-codebuild-project-logsconfig.html
 
     .PARAMETER CloudWatchLogs
-		Type: CloudWatchLogsConfig    
-		Required: False    
-		Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-codebuild-project-logsconfig.html#cfn-codebuild-project-logsconfig-cloudwatchlogs    
-		UpdateType: Mutable    
+        Type: CloudWatchLogsConfig    
+        Required: False    
+        Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-codebuild-project-logsconfig.html#cfn-codebuild-project-logsconfig-cloudwatchlogs    
+        UpdateType: Mutable    
 
     .PARAMETER S3Logs
-		Type: S3LogsConfig    
-		Required: False    
-		Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-codebuild-project-logsconfig.html#cfn-codebuild-project-logsconfig-s3logs    
-		UpdateType: Mutable    
+        Type: S3LogsConfig    
+        Required: False    
+        Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-codebuild-project-logsconfig.html#cfn-codebuild-project-logsconfig-s3logs    
+        UpdateType: Mutable    
 
     .FUNCTIONALITY
         Vaporshell

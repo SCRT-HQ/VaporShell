@@ -10,10 +10,10 @@ function Add-VSEMRClusterInstanceFleetProvisioningSpecifications {
         http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-elasticmapreduce-cluster-instancefleetprovisioningspecifications.html
 
     .PARAMETER SpotSpecification
-		Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-elasticmapreduce-cluster-instancefleetprovisioningspecifications.html#cfn-elasticmapreduce-cluster-instancefleetprovisioningspecifications-spotspecification    
-		Required: True    
-		Type: SpotProvisioningSpecification    
-		UpdateType: Mutable    
+        Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-elasticmapreduce-cluster-instancefleetprovisioningspecifications.html#cfn-elasticmapreduce-cluster-instancefleetprovisioningspecifications-spotspecification    
+        Required: True    
+        Type: SpotProvisioningSpecification    
+        UpdateType: Mutable    
 
     .FUNCTIONALITY
         Vaporshell

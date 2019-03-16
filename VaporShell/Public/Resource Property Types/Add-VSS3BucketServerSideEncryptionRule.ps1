@@ -10,10 +10,10 @@ function Add-VSS3BucketServerSideEncryptionRule {
         http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-s3-bucket-serversideencryptionrule.html
 
     .PARAMETER ServerSideEncryptionByDefault
-		Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-s3-bucket-serversideencryptionrule.html#cfn-s3-bucket-serversideencryptionrule-serversideencryptionbydefault    
-		Required: False    
-		Type: ServerSideEncryptionByDefault    
-		UpdateType: Mutable    
+        Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-s3-bucket-serversideencryptionrule.html#cfn-s3-bucket-serversideencryptionrule-serversideencryptionbydefault    
+        Required: False    
+        Type: ServerSideEncryptionByDefault    
+        UpdateType: Mutable    
 
     .FUNCTIONALITY
         Vaporshell

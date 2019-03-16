@@ -10,16 +10,16 @@ function Add-VSIoTAnalyticsDatasetTrigger {
         http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iotanalytics-dataset-trigger.html
 
     .PARAMETER Schedule
-		Type: Schedule    
-		Required: False    
-		Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iotanalytics-dataset-trigger.html#cfn-iotanalytics-dataset-trigger-schedule    
-		UpdateType: Mutable    
+        Type: Schedule    
+        Required: False    
+        Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iotanalytics-dataset-trigger.html#cfn-iotanalytics-dataset-trigger-schedule    
+        UpdateType: Mutable    
 
     .PARAMETER TriggeringDataset
-		Type: TriggeringDataset    
-		Required: False    
-		Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iotanalytics-dataset-trigger.html#cfn-iotanalytics-dataset-trigger-triggeringdataset    
-		UpdateType: Mutable    
+        Type: TriggeringDataset    
+        Required: False    
+        Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iotanalytics-dataset-trigger.html#cfn-iotanalytics-dataset-trigger-triggeringdataset    
+        UpdateType: Mutable    
 
     .FUNCTIONALITY
         Vaporshell
