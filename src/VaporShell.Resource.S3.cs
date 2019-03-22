@@ -20,7 +20,7 @@ namespace VaporShell.Resource.S3 {
         public Bucket() {}
 
         public class AbortIncompleteMultipartUpload {
-            public Int32 DaysAfterInitialization { get; set; }
+            public int DaysAfterInitialization { get; set; }
             public AbortIncompleteMultipartUpload() {}
         }
 
