@@ -16,6 +16,9 @@ namespace VaporShell.Core {
     public class Function {
         public Function() { }
     }
+    public class Primitive {
+        public Primitive() { }
+    }
     public class Tag {
         private string _key;
         private VaporShell.Primitives.String _value;

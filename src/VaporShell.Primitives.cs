@@ -1,24 +1,27 @@
 using System;
+using Newtonsoft.Json;
 
 using VaporShell;
 using VaporShell.Core;
 
 namespace VaporShell.Primitives {
-    public class String {
-        private object _value;
-        public object Value {
-            get {
-                return _value;
-            }
-            set {
-                _value = value;
-            }
+    public class PrimitiveJsonConverter : JsonConverter<String> {
+        public override String ReadJson(JsonReader reader, Type objectType, String existingValue, bool hasExistingValue, JsonSerializer serializer) {
+            var o = reader.Value;
+            return new String(o);
         }
+
+        public override void WriteJson(JsonWriter writer, String value, JsonSerializer serializer) {
+            writer.WriteValue(value.ToString());
+        }
+    }
+    public class String : Primitive {
+        private object _value;
+
+        public object Value { get => _value; set => _value = value; }
+
         public String(object stringOrFunction) {
-            if (stringOrFunction == null) {
-                throw new System.ArgumentNullException(nameof(stringOrFunction));
-            }
-            Value = stringOrFunction;
+            Value = stringOrFunction ?? throw new ArgumentNullException(nameof(stringOrFunction));
         }
     }
     public class Long {
