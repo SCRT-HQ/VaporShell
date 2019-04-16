@@ -45,7 +45,7 @@
 
 ## 2.7.2 - 2019-04-16
 
-* [Issue #48](https://github.com/scrthq/VaporShell/issues/48)
+* [Issue #53](https://github.com/scrthq/VaporShell/issues/53)
   * Fixed: `New-VaporMetadata` now allows colons `:` in the LogicalId.
 * Miscellaneous
   * Brought Resource Type and Property Type functions up to current spec sheet.
