@@ -176,7 +176,6 @@ Describe "Unit tests" {
         It 'Should show the correct types on each object' {
             $testPath = "$projectRoot\Template.json"
             $template = Import-Vaporshell -Path $testPath
-            $template.AWSTemplateFormatVersion | Should BeOfType 'System.String'
             $template.Conditions | Should BeOfType 'System.Management.Automation.PSCustomObject'
             $template.Description | Should BeOfType 'System.String'
             $template.Mappings | Should BeOfType 'System.Management.Automation.PSCustomObject'
