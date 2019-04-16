@@ -15,6 +15,12 @@
 		PrimitiveType: String    
 		UpdateType: Mutable    
 
+    .PARAMETER EncryptionDisabled
+		Required: False    
+		Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-codebuild-project-s3logsconfig.html#cfn-codebuild-project-s3logsconfig-encryptiondisabled    
+		PrimitiveType: Boolean    
+		UpdateType: Mutable    
+
     .PARAMETER Location
 		Required: False    
 		Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-codebuild-project-s3logsconfig.html#cfn-codebuild-project-s3logsconfig-location    
@@ -39,6 +45,9 @@
                 }
             })]
         $Status,
+        [parameter(Mandatory = $false)]
+        [System.Boolean]
+        $EncryptionDisabled,
         [parameter(Mandatory = $false)]
         [ValidateScript( {
                 $allowedTypes = "System.String","Vaporshell.Function","Vaporshell.Condition"

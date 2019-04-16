@@ -51,6 +51,13 @@
 		PrimitiveType: String    
 		UpdateType: Mutable    
 
+    .PARAMETER ResourceRequirements
+		Type: List    
+		Required: False    
+		Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-batch-jobdefinition-containerproperties.html#cfn-batch-jobdefinition-containerproperties-resourcerequirements    
+		ItemType: ResourceRequirement    
+		UpdateType: Mutable    
+
     .PARAMETER MountPoints
 		Type: List    
 		Required: False    
@@ -144,6 +151,17 @@
                 }
             })]
         $Image,
+        [parameter(Mandatory = $false)]
+        [ValidateScript( {
+                $allowedTypes = "Vaporshell.Resource.Batch.JobDefinition.ResourceRequirement"
+                if ([string]$($_.PSTypeNames) -match "($(($allowedTypes|ForEach-Object{[RegEx]::Escape($_)}) -join '|'))") {
+                    $true
+                }
+                else {
+                    $PSCmdlet.ThrowTerminatingError((New-VSError -String "This parameter only accepts the following types: $($allowedTypes -join ", "). The current types of the value are: $($_.PSTypeNames -join ", ")."))
+                }
+            })]
+        $ResourceRequirements,
         [parameter(Mandatory = $false)]
         [ValidateScript( {
                 $allowedTypes = "Vaporshell.Resource.Batch.JobDefinition.MountPoints"

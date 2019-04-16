@@ -45,6 +45,12 @@
 		PrimitiveType: Integer    
 		UpdateType: Mutable    
 
+    .PARAMETER GitSubmodulesConfig
+		Type: GitSubmodulesConfig    
+		Required: False    
+		Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-codebuild-project-source.html#cfn-codebuild-project-source-gitsubmodulesconfig    
+		UpdateType: Mutable    
+
     .PARAMETER InsecureSsl
 		Required: False    
 		Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-codebuild-project-source.html#cfn-codebuild-project-source-insecuressl    
@@ -105,6 +111,8 @@
         [parameter(Mandatory = $false)]
         [Int]
         $GitCloneDepth,
+        [parameter(Mandatory = $false)]
+        $GitSubmodulesConfig,
         [parameter(Mandatory = $false)]
         [System.Boolean]
         $InsecureSsl,

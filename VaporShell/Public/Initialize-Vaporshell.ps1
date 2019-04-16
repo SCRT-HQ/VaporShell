@@ -25,16 +25,18 @@ function Initialize-Vaporshell {
     Param
     (
         [parameter(Mandatory = $false,Position = 0)]
-        [ValidateSet("2010-09-09")]
-        [System.String]
-        $FormatVersion = "2010-09-09",
-        [parameter(Mandatory = $false,Position = 1)]
         [ValidateScript( {[System.Text.Encoding]::UTF8.GetByteCount($_) -lt 1024 -and [System.Text.Encoding]::UTF8.GetByteCount($_) -gt 0})]
         [System.String]
-        $Description
+        $Description,
+        [parameter(Mandatory = $false)]
+        [ValidateSet("2010-09-09")]
+        [Alias('AWSTemplateFormatVersion')]
+        [System.String]
+        $FormatVersion
     )
-    $tempObj = [PSCustomObject][Ordered]@{
-        "AWSTemplateFormatVersion" = "$FormatVersion"
+    $tempObj = [PSCustomObject]@{}
+    if ($FormatVersion) {
+        $tempObj | Add-Member -MemberType NoteProperty -Name "AWSTemplateFormatVersion" -Value "$FormatVersion"
     }
     if ($Description) {
         $tempObj | Add-Member -MemberType NoteProperty -Name "Description" -Value "$Description"

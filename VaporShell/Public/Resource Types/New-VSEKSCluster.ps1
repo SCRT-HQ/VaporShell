@@ -16,7 +16,7 @@
 		Required: False    
 		Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-eks-cluster.html#cfn-eks-cluster-version    
 		PrimitiveType: String    
-		UpdateType: Immutable    
+		UpdateType: Mutable    
 
     .PARAMETER RoleArn
 		Required: True    

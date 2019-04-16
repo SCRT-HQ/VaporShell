@@ -2,6 +2,7 @@
 
 <!-- TOC -->
 
+* [2.7.2 - 2019-04-16](#272---2019-04-16)
 * [2.7.1 - 2019-03-09](#271---2019-03-09)
 * [2.7.0 - 2019-03-08](#270---2019-03-08)
 * [2.6.3](#263)
@@ -41,6 +42,15 @@
 * [0.7.02](#0702)
 
 <!-- /TOC -->
+
+## 2.7.2 - 2019-04-16
+
+* [Issue #53](https://github.com/scrthq/VaporShell/issues/53)
+  * Fixed: `New-VaporMetadata` now allows colons `:` in the LogicalId.
+* Miscellaneous
+  * Brought Resource Type and Property Type functions up to current spec sheet.
+  * Removed automatic inclusion of `AWSTemplateFormatVersion` from templates created with `Initialize-VaporShell`.
+  * Set `Description` parameter as Position `0` on `Initialize-VaporShell`.
 
 ## 2.7.1 - 2019-03-09
 
