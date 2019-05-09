@@ -132,7 +132,7 @@ else {
             taskList = $Task
         }
         Invoke-psake @psakeParams @verbose
-        if ($finalTasks -contains 'Import' -and $psake.build_success) {
+        if ($Task -contains 'Import' -and $psake.build_success) {
             Add-Heading "Importing $env:BuildProjectName to local scope"
             Import-Module ([System.IO.Path]::Combine($env:BHBuildOutput,$env:BuildProjectName)) -Verbose:$false
         }
