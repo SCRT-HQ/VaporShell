@@ -1,4 +1,4 @@
-﻿function New-VSEventsEventBusPolicy {
+function New-VSEventsEventBusPolicy {
     <#
     .SYNOPSIS
         Adds an AWS::Events::EventBusPolicy resource to the template

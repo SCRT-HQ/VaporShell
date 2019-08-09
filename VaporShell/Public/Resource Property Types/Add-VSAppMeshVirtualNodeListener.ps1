@@ -1,4 +1,4 @@
-﻿function Add-VSAppMeshVirtualNodeListener {
+function Add-VSAppMeshVirtualNodeListener {
     <#
     .SYNOPSIS
         Adds an AWS::AppMesh::VirtualNode.Listener resource property to the template

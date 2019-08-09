@@ -1,4 +1,4 @@
-﻿function Add-VSSSMMaintenanceWindowTaskMaintenanceWindowStepFunctionsParameters {
+function Add-VSSSMMaintenanceWindowTaskMaintenanceWindowStepFunctionsParameters {
     <#
     .SYNOPSIS
         Adds an AWS::SSM::MaintenanceWindowTask.MaintenanceWindowStepFunctionsParameters resource property to the template

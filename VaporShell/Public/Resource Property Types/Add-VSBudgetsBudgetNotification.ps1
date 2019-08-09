@@ -1,4 +1,4 @@
-﻿function Add-VSBudgetsBudgetNotification {
+function Add-VSBudgetsBudgetNotification {
     <#
     .SYNOPSIS
         Adds an AWS::Budgets::Budget.Notification resource property to the template

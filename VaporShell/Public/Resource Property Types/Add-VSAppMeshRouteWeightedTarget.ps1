@@ -1,4 +1,4 @@
-﻿function Add-VSAppMeshRouteWeightedTarget {
+function Add-VSAppMeshRouteWeightedTarget {
     <#
     .SYNOPSIS
         Adds an AWS::AppMesh::Route.WeightedTarget resource property to the template

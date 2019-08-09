@@ -1,4 +1,4 @@
-﻿function New-VSAmazonMQBroker {
+function New-VSAmazonMQBroker {
     <#
     .SYNOPSIS
         Adds an AWS::AmazonMQ::Broker resource to the template
@@ -91,6 +91,12 @@
 		Required: True    
 		Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-amazonmq-broker.html#cfn-amazonmq-broker-publiclyaccessible    
 		PrimitiveType: Boolean    
+		UpdateType: Immutable    
+
+    .PARAMETER EncryptionOptions
+		Type: EncryptionOptions    
+		Required: False    
+		Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-amazonmq-broker.html#cfn-amazonmq-broker-encryptionoptions    
 		UpdateType: Immutable    
 
     .PARAMETER Tags
@@ -227,6 +233,8 @@
         [parameter(Mandatory = $true)]
         [System.Boolean]
         $PubliclyAccessible,
+        [parameter(Mandatory = $false)]
+        $EncryptionOptions,
         [parameter(Mandatory = $false)]
         [ValidateScript( {
                 $allowedTypes = "Vaporshell.Resource.AmazonMQ.Broker.TagsEntry"

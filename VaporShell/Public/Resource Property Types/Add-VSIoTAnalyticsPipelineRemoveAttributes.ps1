@@ -1,4 +1,4 @@
-﻿function Add-VSIoTAnalyticsPipelineRemoveAttributes {
+function Add-VSIoTAnalyticsPipelineRemoveAttributes {
     <#
     .SYNOPSIS
         Adds an AWS::IoTAnalytics::Pipeline.RemoveAttributes resource property to the template

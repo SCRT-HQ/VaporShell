@@ -1,4 +1,4 @@
-﻿function New-VSApiGatewayStage {
+function New-VSApiGatewayStage {
     <#
     .SYNOPSIS
         Adds an AWS::ApiGateway::Stage resource to the template

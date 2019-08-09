@@ -1,4 +1,4 @@
-﻿function New-VSAppSyncApiKey {
+function New-VSAppSyncApiKey {
     <#
     .SYNOPSIS
         Adds an AWS::AppSync::ApiKey resource to the template

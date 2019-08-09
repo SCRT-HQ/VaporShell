@@ -1,4 +1,4 @@
-﻿function New-VSGreengrassSubscriptionDefinitionVersion {
+function New-VSGreengrassSubscriptionDefinitionVersion {
     <#
     .SYNOPSIS
         Adds an AWS::Greengrass::SubscriptionDefinitionVersion resource to the template

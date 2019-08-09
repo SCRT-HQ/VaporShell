@@ -1,4 +1,4 @@
-﻿function Add-VSRedshiftClusterLoggingProperties {
+function Add-VSRedshiftClusterLoggingProperties {
     <#
     .SYNOPSIS
         Adds an AWS::Redshift::Cluster.LoggingProperties resource property to the template

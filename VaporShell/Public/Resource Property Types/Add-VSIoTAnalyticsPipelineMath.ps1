@@ -1,4 +1,4 @@
-﻿function Add-VSIoTAnalyticsPipelineMath {
+function Add-VSIoTAnalyticsPipelineMath {
     <#
     .SYNOPSIS
         Adds an AWS::IoTAnalytics::Pipeline.Math resource property to the template

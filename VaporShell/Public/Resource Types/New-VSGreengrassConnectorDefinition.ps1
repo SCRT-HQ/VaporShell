@@ -1,4 +1,4 @@
-﻿function New-VSGreengrassConnectorDefinition {
+function New-VSGreengrassConnectorDefinition {
     <#
     .SYNOPSIS
         Adds an AWS::Greengrass::ConnectorDefinition resource to the template

@@ -1,4 +1,4 @@
-﻿function New-VSNeptuneDBParameterGroup {
+function New-VSNeptuneDBParameterGroup {
     <#
     .SYNOPSIS
         Adds an AWS::Neptune::DBParameterGroup resource to the template

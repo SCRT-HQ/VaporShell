@@ -1,4 +1,4 @@
-﻿function Add-VSCodeCommitRepositoryRepositoryTrigger {
+function Add-VSCodeCommitRepositoryRepositoryTrigger {
     <#
     .SYNOPSIS
         Adds an AWS::CodeCommit::Repository.RepositoryTrigger resource property to the template
@@ -12,7 +12,7 @@
     .PARAMETER Events
 		PrimitiveItemType: String    
 		Type: List    
-		Required: False    
+		Required: True    
 		Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-codecommit-repository-repositorytrigger.html#cfn-codecommit-repository-repositorytrigger-events    
 		UpdateType: Mutable    
 
@@ -30,13 +30,13 @@
 		UpdateType: Mutable    
 
     .PARAMETER DestinationArn
-		Required: False    
+		Required: True    
 		Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-codecommit-repository-repositorytrigger.html#cfn-codecommit-repository-repositorytrigger-destinationarn    
 		PrimitiveType: String    
 		UpdateType: Mutable    
 
     .PARAMETER Name
-		Required: False    
+		Required: True    
 		Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-codecommit-repository-repositorytrigger.html#cfn-codecommit-repository-repositorytrigger-name    
 		PrimitiveType: String    
 		UpdateType: Mutable    
@@ -48,7 +48,7 @@
     [cmdletbinding()]
     Param
     (
-        [parameter(Mandatory = $false)]
+        [parameter(Mandatory = $true)]
         $Events,
         [parameter(Mandatory = $false)]
         $Branches,
@@ -63,7 +63,7 @@
                 }
             })]
         $CustomData,
-        [parameter(Mandatory = $false)]
+        [parameter(Mandatory = $true)]
         [ValidateScript( {
                 $allowedTypes = "System.String","Vaporshell.Function","Vaporshell.Condition"
                 if ([string]$($_.PSTypeNames) -match "($(($allowedTypes|ForEach-Object{[RegEx]::Escape($_)}) -join '|'))") {
@@ -74,7 +74,7 @@
                 }
             })]
         $DestinationArn,
-        [parameter(Mandatory = $false)]
+        [parameter(Mandatory = $true)]
         [ValidateScript( {
                 $allowedTypes = "System.String","Vaporshell.Function","Vaporshell.Condition"
                 if ([string]$($_.PSTypeNames) -match "($(($allowedTypes|ForEach-Object{[RegEx]::Escape($_)}) -join '|'))") {

@@ -1,4 +1,4 @@
-﻿function Add-VSCognitoUserPoolAdminCreateUserConfig {
+function Add-VSCognitoUserPoolAdminCreateUserConfig {
     <#
     .SYNOPSIS
         Adds an AWS::Cognito::UserPool.AdminCreateUserConfig resource property to the template

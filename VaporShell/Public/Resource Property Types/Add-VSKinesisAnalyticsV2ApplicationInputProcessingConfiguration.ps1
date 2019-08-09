@@ -1,4 +1,4 @@
-﻿function Add-VSKinesisAnalyticsV2ApplicationInputProcessingConfiguration {
+function Add-VSKinesisAnalyticsV2ApplicationInputProcessingConfiguration {
     <#
     .SYNOPSIS
         Adds an AWS::KinesisAnalyticsV2::Application.InputProcessingConfiguration resource property to the template

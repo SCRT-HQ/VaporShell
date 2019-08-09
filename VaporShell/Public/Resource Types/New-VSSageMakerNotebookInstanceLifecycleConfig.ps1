@@ -1,4 +1,4 @@
-﻿function New-VSSageMakerNotebookInstanceLifecycleConfig {
+function New-VSSageMakerNotebookInstanceLifecycleConfig {
     <#
     .SYNOPSIS
         Adds an AWS::SageMaker::NotebookInstanceLifecycleConfig resource to the template

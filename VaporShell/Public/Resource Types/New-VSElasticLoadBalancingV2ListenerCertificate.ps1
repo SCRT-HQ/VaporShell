@@ -1,4 +1,4 @@
-﻿function New-VSElasticLoadBalancingV2ListenerCertificate {
+function New-VSElasticLoadBalancingV2ListenerCertificate {
     <#
     .SYNOPSIS
         Adds an AWS::ElasticLoadBalancingV2::ListenerCertificate resource to the template

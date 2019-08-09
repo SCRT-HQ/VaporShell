@@ -1,4 +1,4 @@
-﻿function New-VSEC2VPCPeeringConnection {
+function New-VSEC2VPCPeeringConnection {
     <#
     .SYNOPSIS
         Adds an AWS::EC2::VPCPeeringConnection resource to the template

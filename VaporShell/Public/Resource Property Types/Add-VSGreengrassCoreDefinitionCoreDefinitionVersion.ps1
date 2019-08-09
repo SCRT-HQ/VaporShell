@@ -1,4 +1,4 @@
-﻿function Add-VSGreengrassCoreDefinitionCoreDefinitionVersion {
+function Add-VSGreengrassCoreDefinitionCoreDefinitionVersion {
     <#
     .SYNOPSIS
         Adds an AWS::Greengrass::CoreDefinition.CoreDefinitionVersion resource property to the template

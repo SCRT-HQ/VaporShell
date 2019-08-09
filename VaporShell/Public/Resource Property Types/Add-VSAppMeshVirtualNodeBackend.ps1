@@ -1,4 +1,4 @@
-﻿function Add-VSAppMeshVirtualNodeBackend {
+function Add-VSAppMeshVirtualNodeBackend {
     <#
     .SYNOPSIS
         Adds an AWS::AppMesh::VirtualNode.Backend resource property to the template

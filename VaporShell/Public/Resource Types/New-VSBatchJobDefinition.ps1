@@ -1,4 +1,4 @@
-﻿function New-VSBatchJobDefinition {
+function New-VSBatchJobDefinition {
     <#
     .SYNOPSIS
         Adds an AWS::Batch::JobDefinition resource to the template

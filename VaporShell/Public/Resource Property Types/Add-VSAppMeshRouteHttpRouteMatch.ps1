@@ -1,4 +1,4 @@
-﻿function Add-VSAppMeshRouteHttpRouteMatch {
+function Add-VSAppMeshRouteHttpRouteMatch {
     <#
     .SYNOPSIS
         Adds an AWS::AppMesh::Route.HttpRouteMatch resource property to the template

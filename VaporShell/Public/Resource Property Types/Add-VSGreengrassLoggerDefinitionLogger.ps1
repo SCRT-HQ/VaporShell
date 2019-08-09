@@ -1,4 +1,4 @@
-﻿function Add-VSGreengrassLoggerDefinitionLogger {
+function Add-VSGreengrassLoggerDefinitionLogger {
     <#
     .SYNOPSIS
         Adds an AWS::Greengrass::LoggerDefinition.Logger resource property to the template

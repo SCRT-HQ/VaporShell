@@ -1,4 +1,4 @@
-﻿function Add-VSKinesisFirehoseDeliveryStreamBufferingHints {
+function Add-VSKinesisFirehoseDeliveryStreamBufferingHints {
     <#
     .SYNOPSIS
         Adds an AWS::KinesisFirehose::DeliveryStream.BufferingHints resource property to the template

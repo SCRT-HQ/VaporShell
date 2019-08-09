@@ -1,4 +1,4 @@
-﻿function Add-VSGlueTriggerCondition {
+function Add-VSGlueTriggerCondition {
     <#
     .SYNOPSIS
         Adds an AWS::Glue::Trigger.Condition resource property to the template

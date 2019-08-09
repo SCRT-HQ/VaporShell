@@ -140,9 +140,21 @@ function New-VSStack {
     }
     Process {
         Write-Verbose "Checking if Stack '$StackName' exists and creating a Change Set instead if so."
-        if ($null -ne (Get-VSStack -StackName $StackName -ErrorAction SilentlyContinue)) {
+        $stackExists = try {
+            $test = Get-VSStack -StackName $StackName -ErrorAction Stop
+            if ($test | Select-Object -ExpandProperty StackName) {
+                $true
+            }
+            else {
+                $false
+            }
+        }
+        catch {
+            $false
+        }
+        if ($stackExists) {
             $changeSetParams = $PSBoundParameters
-            @('DisableRollback','OnFailure','StackPolicyBody','StackPolicyURL','TimeoutInMinutes') | ForEach-Object {
+            @('DisableRollback','OnFailure','StackPolicyBody','StackPolicyURL','TimeoutInMinutes','Confirm') | ForEach-Object {
                 if ($changeSetParams.ContainsKey($_)) {
                     $changeSetParams.Remove($_)
                 }

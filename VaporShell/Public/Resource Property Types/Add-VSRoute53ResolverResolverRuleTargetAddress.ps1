@@ -1,4 +1,4 @@
-﻿function Add-VSRoute53ResolverResolverRuleTargetAddress {
+function Add-VSRoute53ResolverResolverRuleTargetAddress {
     <#
     .SYNOPSIS
         Adds an AWS::Route53Resolver::ResolverRule.TargetAddress resource property to the template
@@ -16,7 +16,7 @@
 		UpdateType: Mutable    
 
     .PARAMETER Port
-		Required: True    
+		Required: False    
 		Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-route53resolver-resolverrule-targetaddress.html#cfn-route53resolver-resolverrule-targetaddress-port    
 		PrimitiveType: String    
 		UpdateType: Mutable    
@@ -39,7 +39,7 @@
                 }
             })]
         $Ip,
-        [parameter(Mandatory = $true)]
+        [parameter(Mandatory = $false)]
         [ValidateScript( {
                 $allowedTypes = "System.String","Vaporshell.Function","Vaporshell.Condition"
                 if ([string]$($_.PSTypeNames) -match "($(($allowedTypes|ForEach-Object{[RegEx]::Escape($_)}) -join '|'))") {

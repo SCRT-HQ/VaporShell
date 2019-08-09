@@ -1,4 +1,4 @@
-﻿function Add-VSGreengrassFunctionDefinitionFunctionDefinitionVersion {
+function Add-VSGreengrassFunctionDefinitionFunctionDefinitionVersion {
     <#
     .SYNOPSIS
         Adds an AWS::Greengrass::FunctionDefinition.FunctionDefinitionVersion resource property to the template

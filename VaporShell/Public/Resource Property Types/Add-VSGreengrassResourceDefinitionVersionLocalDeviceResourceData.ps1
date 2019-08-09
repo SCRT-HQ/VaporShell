@@ -1,4 +1,4 @@
-﻿function Add-VSGreengrassResourceDefinitionVersionLocalDeviceResourceData {
+function Add-VSGreengrassResourceDefinitionVersionLocalDeviceResourceData {
     <#
     .SYNOPSIS
         Adds an AWS::Greengrass::ResourceDefinitionVersion.LocalDeviceResourceData resource property to the template

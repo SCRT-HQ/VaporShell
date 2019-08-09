@@ -1,4 +1,4 @@
-﻿function Add-VSGreengrassResourceDefinitionVersionLocalVolumeResourceData {
+function Add-VSGreengrassResourceDefinitionVersionLocalVolumeResourceData {
     <#
     .SYNOPSIS
         Adds an AWS::Greengrass::ResourceDefinitionVersion.LocalVolumeResourceData resource property to the template

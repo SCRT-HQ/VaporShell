@@ -1,4 +1,4 @@
-﻿function Add-VSIoTAnalyticsDatasetOutputFileUriValue {
+function Add-VSIoTAnalyticsDatasetOutputFileUriValue {
     <#
     .SYNOPSIS
         Adds an AWS::IoTAnalytics::Dataset.OutputFileUriValue resource property to the template

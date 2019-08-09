@@ -1,4 +1,4 @@
-﻿function Add-VSAppMeshRouteTcpRouteAction {
+function Add-VSAppMeshRouteTcpRouteAction {
     <#
     .SYNOPSIS
         Adds an AWS::AppMesh::Route.TcpRouteAction resource property to the template

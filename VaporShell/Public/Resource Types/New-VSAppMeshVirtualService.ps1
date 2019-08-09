@@ -1,4 +1,4 @@
-﻿function New-VSAppMeshVirtualService {
+function New-VSAppMeshVirtualService {
     <#
     .SYNOPSIS
         Adds an AWS::AppMesh::VirtualService resource to the template
@@ -34,7 +34,7 @@
 		Type: List    
 		Required: False    
 		Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-appmesh-virtualservice.html#cfn-appmesh-virtualservice-tags    
-		ItemType: TagRef    
+		ItemType: Tag    
 		UpdateType: Mutable    
 
     .PARAMETER DeletionPolicy
@@ -108,7 +108,7 @@
         $Spec,
         [parameter(Mandatory = $false)]
         [ValidateScript( {
-                $allowedTypes = "Vaporshell.Resource.AppMesh.VirtualService.TagRef"
+                $allowedTypes = "Vaporshell.Resource.Tag","System.Management.Automation.PSCustomObject"
                 if ([string]$($_.PSTypeNames) -match "($(($allowedTypes|ForEach-Object{[RegEx]::Escape($_)}) -join '|'))") {
                     $true
                 }

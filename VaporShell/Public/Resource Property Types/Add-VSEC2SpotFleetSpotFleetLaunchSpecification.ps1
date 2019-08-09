@@ -1,4 +1,4 @@
-﻿function Add-VSEC2SpotFleetSpotFleetLaunchSpecification {
+function Add-VSEC2SpotFleetSpotFleetLaunchSpecification {
     <#
     .SYNOPSIS
         Adds an AWS::EC2::SpotFleet.SpotFleetLaunchSpecification resource property to the template

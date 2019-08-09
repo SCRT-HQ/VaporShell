@@ -1,4 +1,4 @@
-﻿function New-VSGlueConnection {
+function New-VSGlueConnection {
     <#
     .SYNOPSIS
         Adds an AWS::Glue::Connection resource to the template

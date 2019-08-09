@@ -1,4 +1,4 @@
-﻿function Add-VSIoTTopicRuleDynamoDBAction {
+function Add-VSIoTTopicRuleDynamoDBAction {
     <#
     .SYNOPSIS
         Adds an AWS::IoT::TopicRule.DynamoDBAction resource property to the template

@@ -1,4 +1,4 @@
-﻿function New-VSS3Bucket {
+function New-VSS3Bucket {
     <#
     .SYNOPSIS
         Adds an AWS::S3::Bucket resource to the template
@@ -83,6 +83,18 @@
 		Required: False    
 		Type: NotificationConfiguration    
 		UpdateType: Mutable    
+
+    .PARAMETER ObjectLockConfiguration
+		Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-s3-bucket.html#cfn-s3-bucket-objectlockconfiguration    
+		Required: False    
+		Type: ObjectLockConfiguration    
+		UpdateType: Mutable    
+
+    .PARAMETER ObjectLockEnabled
+		Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-s3-bucket.html#cfn-s3-bucket-objectlockenabled    
+		PrimitiveType: Boolean    
+		Required: False    
+		UpdateType: Immutable    
 
     .PARAMETER PublicAccessBlockConfiguration
 		Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-s3-bucket.html#cfn-s3-bucket-publicaccessblockconfiguration    
@@ -228,6 +240,11 @@
         $MetricsConfigurations,
         [parameter(Mandatory = $false)]
         $NotificationConfiguration,
+        [parameter(Mandatory = $false)]
+        $ObjectLockConfiguration,
+        [parameter(Mandatory = $false)]
+        [System.Boolean]
+        $ObjectLockEnabled,
         [parameter(Mandatory = $false)]
         $PublicAccessBlockConfiguration,
         [parameter(Mandatory = $false)]

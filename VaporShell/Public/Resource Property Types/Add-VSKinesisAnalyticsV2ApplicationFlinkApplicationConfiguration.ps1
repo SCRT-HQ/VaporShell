@@ -1,4 +1,4 @@
-﻿function Add-VSKinesisAnalyticsV2ApplicationFlinkApplicationConfiguration {
+function Add-VSKinesisAnalyticsV2ApplicationFlinkApplicationConfiguration {
     <#
     .SYNOPSIS
         Adds an AWS::KinesisAnalyticsV2::Application.FlinkApplicationConfiguration resource property to the template

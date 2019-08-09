@@ -1,4 +1,4 @@
-﻿function Add-VSGluePartitionStorageDescriptor {
+function Add-VSGluePartitionStorageDescriptor {
     <#
     .SYNOPSIS
         Adds an AWS::Glue::Partition.StorageDescriptor resource property to the template

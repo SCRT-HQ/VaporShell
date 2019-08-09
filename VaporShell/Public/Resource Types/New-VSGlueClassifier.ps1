@@ -1,4 +1,4 @@
-﻿function New-VSGlueClassifier {
+function New-VSGlueClassifier {
     <#
     .SYNOPSIS
         Adds an AWS::Glue::Classifier resource to the template
@@ -22,6 +22,12 @@
 		Type: JsonClassifier    
 		Required: False    
 		Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-glue-classifier.html#cfn-glue-classifier-jsonclassifier    
+		UpdateType: Mutable    
+
+    .PARAMETER CsvClassifier
+		Type: CsvClassifier    
+		Required: False    
+		Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-glue-classifier.html#cfn-glue-classifier-csvclassifier    
 		UpdateType: Mutable    
 
     .PARAMETER GrokClassifier
@@ -79,6 +85,8 @@
         $XMLClassifier,
         [parameter(Mandatory = $false)]
         $JsonClassifier,
+        [parameter(Mandatory = $false)]
+        $CsvClassifier,
         [parameter(Mandatory = $false)]
         $GrokClassifier,
         [ValidateSet("Delete","Retain","Snapshot")]

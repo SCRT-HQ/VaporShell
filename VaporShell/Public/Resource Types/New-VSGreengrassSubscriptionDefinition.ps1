@@ -1,4 +1,4 @@
-﻿function New-VSGreengrassSubscriptionDefinition {
+function New-VSGreengrassSubscriptionDefinition {
     <#
     .SYNOPSIS
         Adds an AWS::Greengrass::SubscriptionDefinition resource to the template

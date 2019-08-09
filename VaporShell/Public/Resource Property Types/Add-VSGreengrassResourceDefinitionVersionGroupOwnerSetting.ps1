@@ -1,4 +1,4 @@
-﻿function Add-VSGreengrassResourceDefinitionVersionGroupOwnerSetting {
+function Add-VSGreengrassResourceDefinitionVersionGroupOwnerSetting {
     <#
     .SYNOPSIS
         Adds an AWS::Greengrass::ResourceDefinitionVersion.GroupOwnerSetting resource property to the template

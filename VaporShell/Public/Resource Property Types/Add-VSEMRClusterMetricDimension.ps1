@@ -1,4 +1,4 @@
-﻿function Add-VSEMRClusterMetricDimension {
+function Add-VSEMRClusterMetricDimension {
     <#
     .SYNOPSIS
         Adds an AWS::EMR::Cluster.MetricDimension resource property to the template

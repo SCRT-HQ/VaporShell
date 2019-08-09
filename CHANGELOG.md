@@ -2,6 +2,7 @@
 
 <!-- TOC -->
 
+* [2.8.0 - 2019-08-08](#280---2019-08-08)
 * [2.7.3 - 2019-04-16](#273---2019-04-16)
 * [2.7.2 - 2019-04-16](#272---2019-04-16)
 * [2.7.1 - 2019-03-09](#271---2019-03-09)
@@ -43,6 +44,13 @@
 * [0.7.02](#0702)
 
 <!-- /TOC -->
+
+## 2.8.0 - 2019-08-08
+
+* [Issue #57](https://github.com/scrthq/PSGSuite/issues/57)
+  * Fixed: `ProcessRequest4` private function will now use the Async methods if detected, so usage of the AWSPowerShell.NetCore or AWS.Tools.* modules from Windows PowerShell will still work as expected when using any of the SDK wrapper functions like `Watch-Stack`
+* Miscellaneous
+  * Brought Resource Type and Property Type functions up to current spec sheet.
 
 ## 2.7.3 - 2019-04-16
 

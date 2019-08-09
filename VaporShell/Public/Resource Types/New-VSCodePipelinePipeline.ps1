@@ -1,4 +1,4 @@
-﻿function New-VSCodePipelinePipeline {
+function New-VSCodePipelinePipeline {
     <#
     .SYNOPSIS
         Adds an AWS::CodePipeline::Pipeline resource to the template

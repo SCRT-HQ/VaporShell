@@ -1,4 +1,4 @@
-﻿function Add-VSElasticLoadBalancingV2ListenerRuleAuthenticateCognitoConfig {
+function Add-VSElasticLoadBalancingV2ListenerRuleAuthenticateCognitoConfig {
     <#
     .SYNOPSIS
         Adds an AWS::ElasticLoadBalancingV2::ListenerRule.AuthenticateCognitoConfig resource property to the template

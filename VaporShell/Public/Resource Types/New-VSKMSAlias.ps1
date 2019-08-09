@@ -1,4 +1,4 @@
-﻿function New-VSKMSAlias {
+function New-VSKMSAlias {
     <#
     .SYNOPSIS
         Adds an AWS::KMS::Alias resource to the template

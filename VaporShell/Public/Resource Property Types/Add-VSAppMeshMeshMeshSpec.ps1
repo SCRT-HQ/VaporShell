@@ -1,4 +1,4 @@
-﻿function Add-VSAppMeshMeshMeshSpec {
+function Add-VSAppMeshMeshMeshSpec {
     <#
     .SYNOPSIS
         Adds an AWS::AppMesh::Mesh.MeshSpec resource property to the template

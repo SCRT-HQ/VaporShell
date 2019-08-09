@@ -1,4 +1,4 @@
-﻿function Add-VSCodeBuildProjectGitSubmodulesConfig {
+function Add-VSCodeBuildProjectGitSubmodulesConfig {
     <#
     .SYNOPSIS
         Adds an AWS::CodeBuild::Project.GitSubmodulesConfig resource property to the template

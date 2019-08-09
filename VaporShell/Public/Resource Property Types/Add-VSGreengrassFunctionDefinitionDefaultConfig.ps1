@@ -1,4 +1,4 @@
-﻿function Add-VSGreengrassFunctionDefinitionDefaultConfig {
+function Add-VSGreengrassFunctionDefinitionDefaultConfig {
     <#
     .SYNOPSIS
         Adds an AWS::Greengrass::FunctionDefinition.DefaultConfig resource property to the template

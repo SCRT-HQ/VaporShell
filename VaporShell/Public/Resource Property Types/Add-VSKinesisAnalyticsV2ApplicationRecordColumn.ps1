@@ -1,4 +1,4 @@
-﻿function Add-VSKinesisAnalyticsV2ApplicationRecordColumn {
+function Add-VSKinesisAnalyticsV2ApplicationRecordColumn {
     <#
     .SYNOPSIS
         Adds an AWS::KinesisAnalyticsV2::Application.RecordColumn resource property to the template

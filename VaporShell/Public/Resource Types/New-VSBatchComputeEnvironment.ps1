@@ -1,4 +1,4 @@
-﻿function New-VSBatchComputeEnvironment {
+function New-VSBatchComputeEnvironment {
     <#
     .SYNOPSIS
         Adds an AWS::Batch::ComputeEnvironment resource to the template

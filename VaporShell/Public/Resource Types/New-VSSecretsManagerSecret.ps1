@@ -1,4 +1,4 @@
-﻿function New-VSSecretsManagerSecret {
+function New-VSSecretsManagerSecret {
     <#
     .SYNOPSIS
         Adds an AWS::SecretsManager::Secret resource to the template

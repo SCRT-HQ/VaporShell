@@ -1,4 +1,4 @@
-﻿function New-VSServiceCatalogCloudFormationProvisionedProduct {
+function New-VSServiceCatalogCloudFormationProvisionedProduct {
     <#
     .SYNOPSIS
         Adds an AWS::ServiceCatalog::CloudFormationProvisionedProduct resource to the template
@@ -23,6 +23,12 @@
 		Required: False    
 		Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-servicecatalog-cloudformationprovisionedproduct.html#cfn-servicecatalog-cloudformationprovisionedproduct-provisioningparameters    
 		ItemType: ProvisioningParameter    
+		UpdateType: Mutable    
+
+    .PARAMETER ProvisioningPreferences
+		Type: ProvisioningPreferences    
+		Required: False    
+		Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-servicecatalog-cloudformationprovisionedproduct.html#cfn-servicecatalog-cloudformationprovisionedproduct-provisioningpreferences    
 		UpdateType: Mutable    
 
     .PARAMETER ProductName
@@ -61,7 +67,7 @@
 		Required: False    
 		Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-servicecatalog-cloudformationprovisionedproduct.html#cfn-servicecatalog-cloudformationprovisionedproduct-tags    
 		ItemType: Tag    
-		UpdateType: Immutable    
+		UpdateType: Mutable    
 
     .PARAMETER ProvisionedProductName
 		Required: False    
@@ -142,6 +148,8 @@
                 }
             })]
         $ProvisioningParameters,
+        [parameter(Mandatory = $false)]
+        $ProvisioningPreferences,
         [parameter(Mandatory = $false)]
         [ValidateScript( {
                 $allowedTypes = "System.String","Vaporshell.Function","Vaporshell.Condition"

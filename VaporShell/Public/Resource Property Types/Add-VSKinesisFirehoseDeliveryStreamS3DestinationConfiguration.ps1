@@ -1,4 +1,4 @@
-﻿function Add-VSKinesisFirehoseDeliveryStreamS3DestinationConfiguration {
+function Add-VSKinesisFirehoseDeliveryStreamS3DestinationConfiguration {
     <#
     .SYNOPSIS
         Adds an AWS::KinesisFirehose::DeliveryStream.S3DestinationConfiguration resource property to the template
@@ -37,6 +37,12 @@
 		Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-kinesisfirehose-deliverystream-s3destinationconfiguration.html#cfn-kinesisfirehose-deliverystream-s3destinationconfiguration-encryptionconfiguration    
 		Required: False    
 		Type: EncryptionConfiguration    
+		UpdateType: Mutable    
+
+    .PARAMETER ErrorOutputPrefix
+		Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-kinesisfirehose-deliverystream-s3destinationconfiguration.html#cfn-kinesisfirehose-deliverystream-s3destinationconfiguration-erroroutputprefix    
+		PrimitiveType: String    
+		Required: False    
 		UpdateType: Mutable    
 
     .PARAMETER Prefix
@@ -86,6 +92,17 @@
         $CompressionFormat,
         [parameter(Mandatory = $false)]
         $EncryptionConfiguration,
+        [parameter(Mandatory = $false)]
+        [ValidateScript( {
+                $allowedTypes = "System.String","Vaporshell.Function","Vaporshell.Condition"
+                if ([string]$($_.PSTypeNames) -match "($(($allowedTypes|ForEach-Object{[RegEx]::Escape($_)}) -join '|'))") {
+                    $true
+                }
+                else {
+                    $PSCmdlet.ThrowTerminatingError((New-VSError -String "This parameter only accepts the following types: $($allowedTypes -join ", "). The current types of the value are: $($_.PSTypeNames -join ", ")."))
+                }
+            })]
+        $ErrorOutputPrefix,
         [parameter(Mandatory = $false)]
         [ValidateScript( {
                 $allowedTypes = "System.String","Vaporshell.Function","Vaporshell.Condition"

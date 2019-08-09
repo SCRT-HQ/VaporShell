@@ -1,4 +1,4 @@
-﻿function New-VSCognitoUserPoolClient {
+function New-VSCognitoUserPoolClient {
     <#
     .SYNOPSIS
         Adds an AWS::Cognito::UserPoolClient resource to the template
@@ -12,11 +12,57 @@
     .PARAMETER LogicalId
         The logical ID must be alphanumeric (A-Za-z0-9) and unique within the template. Use the logical name to reference the resource in other parts of the template. For example, if you want to map an Amazon Elastic Block Store volume to an Amazon EC2 instance, you reference the logical IDs to associate the block stores with the instance.
 
+    .PARAMETER AnalyticsConfiguration
+		Type: AnalyticsConfiguration    
+		Required: False    
+		Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-cognito-userpoolclient.html#cfn-cognito-userpoolclient-analyticsconfiguration    
+		UpdateType: Mutable    
+
     .PARAMETER GenerateSecret
 		Required: False    
 		Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-cognito-userpoolclient.html#cfn-cognito-userpoolclient-generatesecret    
 		PrimitiveType: Boolean    
 		UpdateType: Immutable    
+
+    .PARAMETER CallbackURLs
+		PrimitiveItemType: String    
+		Type: List    
+		Required: False    
+		Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-cognito-userpoolclient.html#cfn-cognito-userpoolclient-callbackurls    
+		UpdateType: Mutable    
+
+    .PARAMETER AllowedOAuthScopes
+		PrimitiveItemType: String    
+		Type: List    
+		Required: False    
+		Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-cognito-userpoolclient.html#cfn-cognito-userpoolclient-allowedoauthscopes    
+		UpdateType: Mutable    
+
+    .PARAMETER ReadAttributes
+		PrimitiveItemType: String    
+		Type: List    
+		Required: False    
+		Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-cognito-userpoolclient.html#cfn-cognito-userpoolclient-readattributes    
+		UpdateType: Mutable    
+
+    .PARAMETER AllowedOAuthFlowsUserPoolClient
+		Required: False    
+		Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-cognito-userpoolclient.html#cfn-cognito-userpoolclient-allowedoauthflowsuserpoolclient    
+		PrimitiveType: Boolean    
+		UpdateType: Immutable    
+
+    .PARAMETER DefaultRedirectURI
+		Required: False    
+		Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-cognito-userpoolclient.html#cfn-cognito-userpoolclient-defaultredirecturi    
+		PrimitiveType: String    
+		UpdateType: Mutable    
+
+    .PARAMETER SupportedIdentityProviders
+		PrimitiveItemType: String    
+		Type: List    
+		Required: False    
+		Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-cognito-userpoolclient.html#cfn-cognito-userpoolclient-supportedidentityproviders    
+		UpdateType: Mutable    
 
     .PARAMETER ClientName
 		Required: False    
@@ -30,6 +76,13 @@
 		PrimitiveType: String    
 		UpdateType: Immutable    
 
+    .PARAMETER AllowedOAuthFlows
+		PrimitiveItemType: String    
+		Type: List    
+		Required: False    
+		Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-cognito-userpoolclient.html#cfn-cognito-userpoolclient-allowedoauthflows    
+		UpdateType: Mutable    
+
     .PARAMETER ExplicitAuthFlows
 		PrimitiveItemType: String    
 		Type: List    
@@ -37,17 +90,17 @@
 		Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-cognito-userpoolclient.html#cfn-cognito-userpoolclient-explicitauthflows    
 		UpdateType: Mutable    
 
+    .PARAMETER LogoutURLs
+		PrimitiveItemType: String    
+		Type: List    
+		Required: False    
+		Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-cognito-userpoolclient.html#cfn-cognito-userpoolclient-logouturls    
+		UpdateType: Mutable    
+
     .PARAMETER RefreshTokenValidity
 		Required: False    
 		Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-cognito-userpoolclient.html#cfn-cognito-userpoolclient-refreshtokenvalidity    
 		PrimitiveType: Double    
-		UpdateType: Mutable    
-
-    .PARAMETER ReadAttributes
-		PrimitiveItemType: String    
-		Type: List    
-		Required: False    
-		Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-cognito-userpoolclient.html#cfn-cognito-userpoolclient-readattributes    
 		UpdateType: Mutable    
 
     .PARAMETER WriteAttributes
@@ -103,8 +156,32 @@
         [System.String]
         $LogicalId,
         [parameter(Mandatory = $false)]
+        $AnalyticsConfiguration,
+        [parameter(Mandatory = $false)]
         [System.Boolean]
         $GenerateSecret,
+        [parameter(Mandatory = $false)]
+        $CallbackURLs,
+        [parameter(Mandatory = $false)]
+        $AllowedOAuthScopes,
+        [parameter(Mandatory = $false)]
+        $ReadAttributes,
+        [parameter(Mandatory = $false)]
+        [System.Boolean]
+        $AllowedOAuthFlowsUserPoolClient,
+        [parameter(Mandatory = $false)]
+        [ValidateScript( {
+                $allowedTypes = "System.String","Vaporshell.Function","Vaporshell.Condition"
+                if ([string]$($_.PSTypeNames) -match "($(($allowedTypes|ForEach-Object{[RegEx]::Escape($_)}) -join '|'))") {
+                    $true
+                }
+                else {
+                    $PSCmdlet.ThrowTerminatingError((New-VSError -String "This parameter only accepts the following types: $($allowedTypes -join ", "). The current types of the value are: $($_.PSTypeNames -join ", ")."))
+                }
+            })]
+        $DefaultRedirectURI,
+        [parameter(Mandatory = $false)]
+        $SupportedIdentityProviders,
         [parameter(Mandatory = $false)]
         [ValidateScript( {
                 $allowedTypes = "System.String","Vaporshell.Function","Vaporshell.Condition"
@@ -128,12 +205,14 @@
             })]
         $UserPoolId,
         [parameter(Mandatory = $false)]
+        $AllowedOAuthFlows,
+        [parameter(Mandatory = $false)]
         $ExplicitAuthFlows,
+        [parameter(Mandatory = $false)]
+        $LogoutURLs,
         [parameter(Mandatory = $false)]
         [System.Double]
         $RefreshTokenValidity,
-        [parameter(Mandatory = $false)]
-        $ReadAttributes,
         [parameter(Mandatory = $false)]
         $WriteAttributes,
         [ValidateSet("Delete","Retain","Snapshot")]
@@ -193,17 +272,47 @@
                 Condition {
                     $ResourceParams.Add("Condition",$Condition)
                 }
-                ExplicitAuthFlows {
+                CallbackURLs {
                     if (!($ResourceParams["Properties"])) {
                         $ResourceParams.Add("Properties",([PSCustomObject]@{}))
                     }
-                    $ResourceParams["Properties"] | Add-Member -MemberType NoteProperty -Name ExplicitAuthFlows -Value @($ExplicitAuthFlows)
+                    $ResourceParams["Properties"] | Add-Member -MemberType NoteProperty -Name CallbackURLs -Value @($CallbackURLs)
+                }
+                AllowedOAuthScopes {
+                    if (!($ResourceParams["Properties"])) {
+                        $ResourceParams.Add("Properties",([PSCustomObject]@{}))
+                    }
+                    $ResourceParams["Properties"] | Add-Member -MemberType NoteProperty -Name AllowedOAuthScopes -Value @($AllowedOAuthScopes)
                 }
                 ReadAttributes {
                     if (!($ResourceParams["Properties"])) {
                         $ResourceParams.Add("Properties",([PSCustomObject]@{}))
                     }
                     $ResourceParams["Properties"] | Add-Member -MemberType NoteProperty -Name ReadAttributes -Value @($ReadAttributes)
+                }
+                SupportedIdentityProviders {
+                    if (!($ResourceParams["Properties"])) {
+                        $ResourceParams.Add("Properties",([PSCustomObject]@{}))
+                    }
+                    $ResourceParams["Properties"] | Add-Member -MemberType NoteProperty -Name SupportedIdentityProviders -Value @($SupportedIdentityProviders)
+                }
+                AllowedOAuthFlows {
+                    if (!($ResourceParams["Properties"])) {
+                        $ResourceParams.Add("Properties",([PSCustomObject]@{}))
+                    }
+                    $ResourceParams["Properties"] | Add-Member -MemberType NoteProperty -Name AllowedOAuthFlows -Value @($AllowedOAuthFlows)
+                }
+                ExplicitAuthFlows {
+                    if (!($ResourceParams["Properties"])) {
+                        $ResourceParams.Add("Properties",([PSCustomObject]@{}))
+                    }
+                    $ResourceParams["Properties"] | Add-Member -MemberType NoteProperty -Name ExplicitAuthFlows -Value @($ExplicitAuthFlows)
+                }
+                LogoutURLs {
+                    if (!($ResourceParams["Properties"])) {
+                        $ResourceParams.Add("Properties",([PSCustomObject]@{}))
+                    }
+                    $ResourceParams["Properties"] | Add-Member -MemberType NoteProperty -Name LogoutURLs -Value @($LogoutURLs)
                 }
                 WriteAttributes {
                     if (!($ResourceParams["Properties"])) {

@@ -1,4 +1,4 @@
-﻿function Add-VSIoT1ClickProjectDeviceTemplate {
+function Add-VSIoT1ClickProjectDeviceTemplate {
     <#
     .SYNOPSIS
         Adds an AWS::IoT1Click::Project.DeviceTemplate resource property to the template

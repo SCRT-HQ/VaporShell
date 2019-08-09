@@ -1,4 +1,4 @@
-﻿function Add-VSDynamoDBTableProjection {
+function Add-VSDynamoDBTableProjection {
     <#
     .SYNOPSIS
         Adds an AWS::DynamoDB::Table.Projection resource property to the template

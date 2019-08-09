@@ -1,4 +1,4 @@
-﻿function Add-VSBatchJobDefinitionResourceRequirement {
+function Add-VSBatchJobDefinitionResourceRequirement {
     <#
     .SYNOPSIS
         Adds an AWS::Batch::JobDefinition.ResourceRequirement resource property to the template

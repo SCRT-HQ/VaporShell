@@ -1,4 +1,4 @@
-﻿function Add-VSAppStreamFleetDomainJoinInfo {
+function Add-VSAppStreamFleetDomainJoinInfo {
     <#
     .SYNOPSIS
         Adds an AWS::AppStream::Fleet.DomainJoinInfo resource property to the template

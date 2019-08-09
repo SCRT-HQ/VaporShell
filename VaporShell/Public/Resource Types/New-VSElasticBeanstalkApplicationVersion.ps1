@@ -1,4 +1,4 @@
-﻿function New-VSElasticBeanstalkApplicationVersion {
+function New-VSElasticBeanstalkApplicationVersion {
     <#
     .SYNOPSIS
         Adds an AWS::ElasticBeanstalk::ApplicationVersion resource to the template

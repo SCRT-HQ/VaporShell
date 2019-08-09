@@ -1,4 +1,4 @@
-﻿function New-VSOpsWorksInstance {
+function New-VSOpsWorksInstance {
     <#
     .SYNOPSIS
         Adds an AWS::OpsWorks::Instance resource to the template

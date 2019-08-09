@@ -1,4 +1,4 @@
-﻿function New-VSAppSyncFunctionConfiguration {
+function New-VSAppSyncFunctionConfiguration {
     <#
     .SYNOPSIS
         Adds an AWS::AppSync::FunctionConfiguration resource to the template
@@ -25,7 +25,7 @@
 		UpdateType: Mutable    
 
     .PARAMETER DataSourceName
-		Required: False    
+		Required: True    
 		Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-appsync-functionconfiguration.html#cfn-appsync-functionconfiguration-datasourcename    
 		PrimitiveType: String    
 		UpdateType: Mutable    
@@ -43,7 +43,7 @@
 		UpdateType: Mutable    
 
     .PARAMETER FunctionVersion
-		Required: False    
+		Required: True    
 		Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-appsync-functionconfiguration.html#cfn-appsync-functionconfiguration-functionversion    
 		PrimitiveType: String    
 		UpdateType: Mutable    
@@ -61,7 +61,7 @@
 		UpdateType: Immutable    
 
     .PARAMETER Name
-		Required: False    
+		Required: True    
 		Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-appsync-functionconfiguration.html#cfn-appsync-functionconfiguration-name    
 		PrimitiveType: String    
 		UpdateType: Mutable    
@@ -133,7 +133,7 @@
                 }
             })]
         $Description,
-        [parameter(Mandatory = $false)]
+        [parameter(Mandatory = $true)]
         [ValidateScript( {
                 $allowedTypes = "System.String","Vaporshell.Function","Vaporshell.Condition"
                 if ([string]$($_.PSTypeNames) -match "($(($allowedTypes|ForEach-Object{[RegEx]::Escape($_)}) -join '|'))") {
@@ -166,7 +166,7 @@
                 }
             })]
         $ResponseMappingTemplate,
-        [parameter(Mandatory = $false)]
+        [parameter(Mandatory = $true)]
         [ValidateScript( {
                 $allowedTypes = "System.String","Vaporshell.Function","Vaporshell.Condition"
                 if ([string]$($_.PSTypeNames) -match "($(($allowedTypes|ForEach-Object{[RegEx]::Escape($_)}) -join '|'))") {
@@ -199,7 +199,7 @@
                 }
             })]
         $ApiId,
-        [parameter(Mandatory = $false)]
+        [parameter(Mandatory = $true)]
         [ValidateScript( {
                 $allowedTypes = "System.String","Vaporshell.Function","Vaporshell.Condition"
                 if ([string]$($_.PSTypeNames) -match "($(($allowedTypes|ForEach-Object{[RegEx]::Escape($_)}) -join '|'))") {

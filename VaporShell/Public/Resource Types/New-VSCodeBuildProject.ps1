@@ -1,4 +1,4 @@
-﻿function New-VSCodeBuildProject {
+function New-VSCodeBuildProject {
     <#
     .SYNOPSIS
         Adds an AWS::CodeBuild::Project resource to the template
@@ -34,6 +34,12 @@
     .PARAMETER EncryptionKey
 		Required: False    
 		Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-codebuild-project.html#cfn-codebuild-project-encryptionkey    
+		PrimitiveType: String    
+		UpdateType: Mutable    
+
+    .PARAMETER SourceVersion
+		Required: False    
+		Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-codebuild-project.html#cfn-codebuild-project-sourceversion    
 		PrimitiveType: String    
 		UpdateType: Mutable    
 
@@ -96,6 +102,13 @@
 		Type: Environment    
 		Required: True    
 		Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-codebuild-project.html#cfn-codebuild-project-environment    
+		UpdateType: Mutable    
+
+    .PARAMETER SecondarySourceVersions
+		Type: List    
+		Required: False    
+		Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-codebuild-project.html#cfn-codebuild-project-secondarysourceversions    
+		ItemType: ProjectSourceVersion    
 		UpdateType: Mutable    
 
     .PARAMETER Tags
@@ -198,6 +211,17 @@
             })]
         $EncryptionKey,
         [parameter(Mandatory = $false)]
+        [ValidateScript( {
+                $allowedTypes = "System.String","Vaporshell.Function","Vaporshell.Condition"
+                if ([string]$($_.PSTypeNames) -match "($(($allowedTypes|ForEach-Object{[RegEx]::Escape($_)}) -join '|'))") {
+                    $true
+                }
+                else {
+                    $PSCmdlet.ThrowTerminatingError((New-VSError -String "This parameter only accepts the following types: $($allowedTypes -join ", "). The current types of the value are: $($_.PSTypeNames -join ", ")."))
+                }
+            })]
+        $SourceVersion,
+        [parameter(Mandatory = $false)]
         $Triggers,
         [parameter(Mandatory = $false)]
         [ValidateScript( {
@@ -246,6 +270,17 @@
         $QueuedTimeoutInMinutes,
         [parameter(Mandatory = $true)]
         $Environment,
+        [parameter(Mandatory = $false)]
+        [ValidateScript( {
+                $allowedTypes = "Vaporshell.Resource.CodeBuild.Project.ProjectSourceVersion"
+                if ([string]$($_.PSTypeNames) -match "($(($allowedTypes|ForEach-Object{[RegEx]::Escape($_)}) -join '|'))") {
+                    $true
+                }
+                else {
+                    $PSCmdlet.ThrowTerminatingError((New-VSError -String "This parameter only accepts the following types: $($allowedTypes -join ", "). The current types of the value are: $($_.PSTypeNames -join ", ")."))
+                }
+            })]
+        $SecondarySourceVersions,
         [parameter(Mandatory = $false)]
         [ValidateScript( {
                 $allowedTypes = "Vaporshell.Resource.Tag","System.Management.Automation.PSCustomObject"
@@ -330,6 +365,12 @@
                         $ResourceParams.Add("Properties",([PSCustomObject]@{}))
                     }
                     $ResourceParams["Properties"] | Add-Member -MemberType NoteProperty -Name SecondaryArtifacts -Value @($SecondaryArtifacts)
+                }
+                SecondarySourceVersions {
+                    if (!($ResourceParams["Properties"])) {
+                        $ResourceParams.Add("Properties",([PSCustomObject]@{}))
+                    }
+                    $ResourceParams["Properties"] | Add-Member -MemberType NoteProperty -Name SecondarySourceVersions -Value @($SecondarySourceVersions)
                 }
                 Tags {
                     if (!($ResourceParams["Properties"])) {

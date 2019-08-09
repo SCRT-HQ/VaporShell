@@ -1,4 +1,4 @@
-﻿function New-VSRDSEventSubscription {
+function New-VSRDSEventSubscription {
     <#
     .SYNOPSIS
         Adds an AWS::RDS::EventSubscription resource to the template

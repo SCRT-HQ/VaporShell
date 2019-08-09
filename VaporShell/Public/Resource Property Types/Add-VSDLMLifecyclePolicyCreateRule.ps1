@@ -1,4 +1,4 @@
-﻿function Add-VSDLMLifecyclePolicyCreateRule {
+function Add-VSDLMLifecyclePolicyCreateRule {
     <#
     .SYNOPSIS
         Adds an AWS::DLM::LifecyclePolicy.CreateRule resource property to the template

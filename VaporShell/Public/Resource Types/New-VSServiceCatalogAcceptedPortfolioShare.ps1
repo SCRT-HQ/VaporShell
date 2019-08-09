@@ -1,4 +1,4 @@
-﻿function New-VSServiceCatalogAcceptedPortfolioShare {
+function New-VSServiceCatalogAcceptedPortfolioShare {
     <#
     .SYNOPSIS
         Adds an AWS::ServiceCatalog::AcceptedPortfolioShare resource to the template

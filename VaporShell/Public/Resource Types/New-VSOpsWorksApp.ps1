@@ -1,4 +1,4 @@
-﻿function New-VSOpsWorksApp {
+function New-VSOpsWorksApp {
     <#
     .SYNOPSIS
         Adds an AWS::OpsWorks::App resource to the template

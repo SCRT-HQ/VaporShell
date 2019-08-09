@@ -1,4 +1,4 @@
-﻿function Add-VSGreengrassFunctionDefinitionVersionResourceAccessPolicy {
+function Add-VSGreengrassFunctionDefinitionVersionResourceAccessPolicy {
     <#
     .SYNOPSIS
         Adds an AWS::Greengrass::FunctionDefinitionVersion.ResourceAccessPolicy resource property to the template

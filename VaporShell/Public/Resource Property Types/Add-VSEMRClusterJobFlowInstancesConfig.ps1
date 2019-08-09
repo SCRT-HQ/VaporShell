@@ -1,4 +1,4 @@
-﻿function Add-VSEMRClusterJobFlowInstancesConfig {
+function Add-VSEMRClusterJobFlowInstancesConfig {
     <#
     .SYNOPSIS
         Adds an AWS::EMR::Cluster.JobFlowInstancesConfig resource property to the template
@@ -47,6 +47,14 @@
 		Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-elasticmapreduce-cluster-jobflowinstancesconfig.html#cfn-elasticmapreduce-cluster-jobflowinstancesconfig-ec2subnetid    
 		PrimitiveType: String    
 		Required: False    
+		UpdateType: Immutable    
+
+    .PARAMETER Ec2SubnetIds
+		Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-elasticmapreduce-cluster-jobflowinstancesconfig.html#cfn-elasticmapreduce-cluster-jobflowinstancesconfig-ec2subnetids    
+		DuplicatesAllowed: False    
+		PrimitiveItemType: String    
+		Required: False    
+		Type: List    
 		UpdateType: Immutable    
 
     .PARAMETER EmrManagedMasterSecurityGroup
@@ -140,6 +148,8 @@
                 }
             })]
         $Ec2SubnetId,
+        [parameter(Mandatory = $false)]
+        $Ec2SubnetIds,
         [parameter(Mandatory = $false)]
         [ValidateScript( {
                 $allowedTypes = "System.String","Vaporshell.Function","Vaporshell.Condition"

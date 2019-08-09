@@ -1,4 +1,4 @@
-﻿function New-VSWAFSizeConstraintSet {
+function New-VSWAFSizeConstraintSet {
     <#
     .SYNOPSIS
         Adds an AWS::WAF::SizeConstraintSet resource to the template

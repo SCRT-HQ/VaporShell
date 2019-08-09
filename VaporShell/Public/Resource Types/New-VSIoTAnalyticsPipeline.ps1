@@ -1,4 +1,4 @@
-﻿function New-VSIoTAnalyticsPipeline {
+function New-VSIoTAnalyticsPipeline {
     <#
     .SYNOPSIS
         Adds an AWS::IoTAnalytics::Pipeline resource to the template

@@ -1,4 +1,4 @@
-﻿function Add-VSECSTaskDefinitionPortMapping {
+function Add-VSECSTaskDefinitionPortMapping {
     <#
     .SYNOPSIS
         Adds an AWS::ECS::TaskDefinition.PortMapping resource property to the template

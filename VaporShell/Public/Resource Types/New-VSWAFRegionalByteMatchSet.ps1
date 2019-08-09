@@ -1,4 +1,4 @@
-﻿function New-VSWAFRegionalByteMatchSet {
+function New-VSWAFRegionalByteMatchSet {
     <#
     .SYNOPSIS
         Adds an AWS::WAFRegional::ByteMatchSet resource to the template

@@ -1,4 +1,4 @@
-﻿function Add-VSFSxFileSystemLustreConfiguration {
+function Add-VSFSxFileSystemLustreConfiguration {
     <#
     .SYNOPSIS
         Adds an AWS::FSx::FileSystem.LustreConfiguration resource property to the template

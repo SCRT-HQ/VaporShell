@@ -1,4 +1,4 @@
-﻿function Add-VSKinesisAnalyticsV2ApplicationInputSchema {
+function Add-VSKinesisAnalyticsV2ApplicationInputSchema {
     <#
     .SYNOPSIS
         Adds an AWS::KinesisAnalyticsV2::Application.InputSchema resource property to the template

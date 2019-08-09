@@ -1,4 +1,4 @@
-﻿function Add-VSAlexaASKSkillOverrides {
+function Add-VSAlexaASKSkillOverrides {
     <#
     .SYNOPSIS
         Adds an Alexa::ASK::Skill.Overrides resource property to the template

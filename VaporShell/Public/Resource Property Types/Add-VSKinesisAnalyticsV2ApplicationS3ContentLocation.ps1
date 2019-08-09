@@ -1,4 +1,4 @@
-﻿function Add-VSKinesisAnalyticsV2ApplicationS3ContentLocation {
+function Add-VSKinesisAnalyticsV2ApplicationS3ContentLocation {
     <#
     .SYNOPSIS
         Adds an AWS::KinesisAnalyticsV2::Application.S3ContentLocation resource property to the template

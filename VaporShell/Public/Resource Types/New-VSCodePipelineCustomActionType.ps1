@@ -1,4 +1,4 @@
-﻿function New-VSCodePipelineCustomActionType {
+function New-VSCodePipelineCustomActionType {
     <#
     .SYNOPSIS
         Adds an AWS::CodePipeline::CustomActionType resource to the template
@@ -53,7 +53,7 @@
     .PARAMETER Version
 		Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-codepipeline-customactiontype.html#cfn-codepipeline-customactiontype-version    
 		PrimitiveType: String    
-		Required: False    
+		Required: True    
 		UpdateType: Immutable    
 
     .PARAMETER DeletionPolicy
@@ -140,7 +140,7 @@
         $Provider,
         [parameter(Mandatory = $false)]
         $Settings,
-        [parameter(Mandatory = $false)]
+        [parameter(Mandatory = $true)]
         [ValidateScript( {
                 $allowedTypes = "System.String","Vaporshell.Function","Vaporshell.Condition"
                 if ([string]$($_.PSTypeNames) -match "($(($allowedTypes|ForEach-Object{[RegEx]::Escape($_)}) -join '|'))") {

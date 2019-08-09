@@ -1,4 +1,4 @@
-﻿function New-VSGameLiftFleet {
+function New-VSGameLiftFleet {
     <#
     .SYNOPSIS
         Adds an AWS::GameLift::Fleet resource to the template

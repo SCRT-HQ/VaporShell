@@ -1,4 +1,4 @@
-﻿function Add-VSElasticLoadBalancingLoadBalancerListeners {
+function Add-VSElasticLoadBalancingLoadBalancerListeners {
     <#
     .SYNOPSIS
         Adds an AWS::ElasticLoadBalancing::LoadBalancer.Listeners resource property to the template

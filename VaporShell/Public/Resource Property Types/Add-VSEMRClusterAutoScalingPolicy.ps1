@@ -1,4 +1,4 @@
-﻿function Add-VSEMRClusterAutoScalingPolicy {
+function Add-VSEMRClusterAutoScalingPolicy {
     <#
     .SYNOPSIS
         Adds an AWS::EMR::Cluster.AutoScalingPolicy resource property to the template

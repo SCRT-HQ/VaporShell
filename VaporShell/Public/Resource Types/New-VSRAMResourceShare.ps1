@@ -1,4 +1,4 @@
-﻿function New-VSRAMResourceShare {
+function New-VSRAMResourceShare {
     <#
     .SYNOPSIS
         Adds an AWS::RAM::ResourceShare resource to the template

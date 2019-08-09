@@ -1,4 +1,4 @@
-﻿function Add-VSECSTaskDefinitionLogConfiguration {
+function Add-VSECSTaskDefinitionLogConfiguration {
     <#
     .SYNOPSIS
         Adds an AWS::ECS::TaskDefinition.LogConfiguration resource property to the template

@@ -1,4 +1,4 @@
-﻿function Add-VSGreengrassCoreDefinitionCore {
+function Add-VSGreengrassCoreDefinitionCore {
     <#
     .SYNOPSIS
         Adds an AWS::Greengrass::CoreDefinition.Core resource property to the template

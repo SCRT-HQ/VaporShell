@@ -1,4 +1,4 @@
-﻿function Add-VSKinesisAnalyticsV2ApplicationApplicationCodeConfiguration {
+function Add-VSKinesisAnalyticsV2ApplicationApplicationCodeConfiguration {
     <#
     .SYNOPSIS
         Adds an AWS::KinesisAnalyticsV2::Application.ApplicationCodeConfiguration resource property to the template

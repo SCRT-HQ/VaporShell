@@ -1,4 +1,4 @@
-﻿function Add-VSCodePipelineWebhookWebhookAuthConfiguration {
+function Add-VSCodePipelineWebhookWebhookAuthConfiguration {
     <#
     .SYNOPSIS
         Adds an AWS::CodePipeline::Webhook.WebhookAuthConfiguration resource property to the template

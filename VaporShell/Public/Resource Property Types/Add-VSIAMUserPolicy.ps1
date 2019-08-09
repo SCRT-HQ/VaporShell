@@ -1,4 +1,4 @@
-﻿function Add-VSIAMUserPolicy {
+function Add-VSIAMUserPolicy {
     <#
     .SYNOPSIS
         Adds an AWS::IAM::User.Policy resource property to the template

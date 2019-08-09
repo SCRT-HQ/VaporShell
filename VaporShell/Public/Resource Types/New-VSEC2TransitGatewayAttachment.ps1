@@ -1,4 +1,4 @@
-﻿function New-VSEC2TransitGatewayAttachment {
+function New-VSEC2TransitGatewayAttachment {
     <#
     .SYNOPSIS
         Adds an AWS::EC2::TransitGatewayAttachment resource to the template

@@ -1,4 +1,4 @@
-﻿function New-VSDynamoDBTable {
+function New-VSDynamoDBTable {
     <#
     .SYNOPSIS
         Adds an AWS::DynamoDB::Table resource to the template

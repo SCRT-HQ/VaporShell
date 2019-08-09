@@ -1,4 +1,4 @@
-﻿function Add-VSApiGatewayApiKeyStageKey {
+function Add-VSApiGatewayApiKeyStageKey {
     <#
     .SYNOPSIS
         Adds an AWS::ApiGateway::ApiKey.StageKey resource property to the template

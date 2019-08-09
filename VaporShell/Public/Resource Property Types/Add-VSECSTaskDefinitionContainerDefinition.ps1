@@ -1,4 +1,4 @@
-﻿function Add-VSECSTaskDefinitionContainerDefinition {
+function Add-VSECSTaskDefinitionContainerDefinition {
     <#
     .SYNOPSIS
         Adds an AWS::ECS::TaskDefinition.ContainerDefinition resource property to the template
@@ -21,6 +21,14 @@
 		Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ecs-taskdefinition-containerdefinitions.html#cfn-ecs-taskdefinition-containerdefinition-cpu    
 		PrimitiveType: Integer    
 		Required: False    
+		UpdateType: Immutable    
+
+    .PARAMETER DependsOn
+		Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ecs-taskdefinition-containerdefinitions.html#cfn-ecs-taskdefinition-containerdefinition-dependson    
+		DuplicatesAllowed: False    
+		ItemType: ContainerDependency    
+		Required: False    
+		Type: List    
 		UpdateType: Immutable    
 
     .PARAMETER DisableNetworking
@@ -181,6 +189,34 @@
 		Type: RepositoryCredentials    
 		UpdateType: Immutable    
 
+    .PARAMETER ResourceRequirements
+		Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ecs-taskdefinition-containerdefinitions.html#cfn-ecs-taskdefinition-containerdefinition-resourcerequirements    
+		DuplicatesAllowed: False    
+		ItemType: ResourceRequirement    
+		Required: False    
+		Type: List    
+		UpdateType: Immutable    
+
+    .PARAMETER Secrets
+		Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ecs-taskdefinition-containerdefinitions.html#cfn-ecs-taskdefinition-containerdefinition-secrets    
+		DuplicatesAllowed: False    
+		ItemType: Secret    
+		Required: False    
+		Type: List    
+		UpdateType: Immutable    
+
+    .PARAMETER StartTimeout
+		Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ecs-taskdefinition-containerdefinitions.html#cfn-ecs-taskdefinition-containerdefinition-starttimeout    
+		PrimitiveType: Integer    
+		Required: False    
+		UpdateType: Immutable    
+
+    .PARAMETER StopTimeout
+		Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ecs-taskdefinition-containerdefinitions.html#cfn-ecs-taskdefinition-containerdefinition-stoptimeout    
+		PrimitiveType: Integer    
+		Required: False    
+		UpdateType: Immutable    
+
     .PARAMETER Ulimits
 		Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ecs-taskdefinition-containerdefinitions.html#cfn-ecs-taskdefinition-containerdefinition-ulimits    
 		DuplicatesAllowed: False    
@@ -223,6 +259,17 @@
         [parameter(Mandatory = $false)]
         [Int]
         $Cpu,
+        [parameter(Mandatory = $false)]
+        [ValidateScript( {
+                $allowedTypes = "Vaporshell.Resource.ECS.TaskDefinition.ContainerDependency"
+                if ([string]$($_.PSTypeNames) -match "($(($allowedTypes|ForEach-Object{[RegEx]::Escape($_)}) -join '|'))") {
+                    $true
+                }
+                else {
+                    $PSCmdlet.ThrowTerminatingError((New-VSError -String "This parameter only accepts the following types: $($allowedTypes -join ", "). The current types of the value are: $($_.PSTypeNames -join ", ")."))
+                }
+            })]
+        $DependsOn,
         [parameter(Mandatory = $false)]
         [System.Boolean]
         $DisableNetworking,
@@ -339,6 +386,34 @@
         $ReadonlyRootFilesystem,
         [parameter(Mandatory = $false)]
         $RepositoryCredentials,
+        [parameter(Mandatory = $false)]
+        [ValidateScript( {
+                $allowedTypes = "Vaporshell.Resource.ECS.TaskDefinition.ResourceRequirement"
+                if ([string]$($_.PSTypeNames) -match "($(($allowedTypes|ForEach-Object{[RegEx]::Escape($_)}) -join '|'))") {
+                    $true
+                }
+                else {
+                    $PSCmdlet.ThrowTerminatingError((New-VSError -String "This parameter only accepts the following types: $($allowedTypes -join ", "). The current types of the value are: $($_.PSTypeNames -join ", ")."))
+                }
+            })]
+        $ResourceRequirements,
+        [parameter(Mandatory = $false)]
+        [ValidateScript( {
+                $allowedTypes = "Vaporshell.Resource.ECS.TaskDefinition.Secret"
+                if ([string]$($_.PSTypeNames) -match "($(($allowedTypes|ForEach-Object{[RegEx]::Escape($_)}) -join '|'))") {
+                    $true
+                }
+                else {
+                    $PSCmdlet.ThrowTerminatingError((New-VSError -String "This parameter only accepts the following types: $($allowedTypes -join ", "). The current types of the value are: $($_.PSTypeNames -join ", ")."))
+                }
+            })]
+        $Secrets,
+        [parameter(Mandatory = $false)]
+        [Int]
+        $StartTimeout,
+        [parameter(Mandatory = $false)]
+        [Int]
+        $StopTimeout,
         [parameter(Mandatory = $false)]
         [ValidateScript( {
                 $allowedTypes = "Vaporshell.Resource.ECS.TaskDefinition.Ulimit"

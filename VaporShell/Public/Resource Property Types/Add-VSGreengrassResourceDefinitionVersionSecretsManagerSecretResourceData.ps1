@@ -1,4 +1,4 @@
-﻿function Add-VSGreengrassResourceDefinitionVersionSecretsManagerSecretResourceData {
+function Add-VSGreengrassResourceDefinitionVersionSecretsManagerSecretResourceData {
     <#
     .SYNOPSIS
         Adds an AWS::Greengrass::ResourceDefinitionVersion.SecretsManagerSecretResourceData resource property to the template

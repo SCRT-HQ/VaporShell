@@ -1,4 +1,4 @@
-﻿function New-VSFSxFileSystem {
+function New-VSFSxFileSystem {
     <#
     .SYNOPSIS
         Adds an AWS::FSx::FileSystem resource to the template
@@ -60,7 +60,7 @@
 		Type: List    
 		Required: False    
 		Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-fsx-filesystem.html#cfn-fsx-filesystem-tags    
-		ItemType: TagEntry    
+		ItemType: Tag    
 		UpdateType: Mutable    
 
     .PARAMETER WindowsConfiguration
@@ -158,7 +158,7 @@
         $SecurityGroupIds,
         [parameter(Mandatory = $false)]
         [ValidateScript( {
-                $allowedTypes = "Vaporshell.Resource.FSx.FileSystem.TagEntry"
+                $allowedTypes = "Vaporshell.Resource.Tag","System.Management.Automation.PSCustomObject"
                 if ([string]$($_.PSTypeNames) -match "($(($allowedTypes|ForEach-Object{[RegEx]::Escape($_)}) -join '|'))") {
                     $true
                 }

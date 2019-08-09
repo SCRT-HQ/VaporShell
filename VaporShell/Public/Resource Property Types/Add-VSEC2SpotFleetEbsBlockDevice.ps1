@@ -1,4 +1,4 @@
-﻿function Add-VSEC2SpotFleetEbsBlockDevice {
+function Add-VSEC2SpotFleetEbsBlockDevice {
     <#
     .SYNOPSIS
         Adds an AWS::EC2::SpotFleet.EbsBlockDevice resource property to the template

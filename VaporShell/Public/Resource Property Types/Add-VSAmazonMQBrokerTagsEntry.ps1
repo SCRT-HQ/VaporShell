@@ -1,4 +1,4 @@
-﻿function Add-VSAmazonMQBrokerTagsEntry {
+function Add-VSAmazonMQBrokerTagsEntry {
     <#
     .SYNOPSIS
         Adds an AWS::AmazonMQ::Broker.TagsEntry resource property to the template

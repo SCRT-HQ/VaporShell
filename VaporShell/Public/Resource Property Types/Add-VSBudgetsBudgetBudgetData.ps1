@@ -1,4 +1,4 @@
-﻿function Add-VSBudgetsBudgetBudgetData {
+function Add-VSBudgetsBudgetBudgetData {
     <#
     .SYNOPSIS
         Adds an AWS::Budgets::Budget.BudgetData resource property to the template

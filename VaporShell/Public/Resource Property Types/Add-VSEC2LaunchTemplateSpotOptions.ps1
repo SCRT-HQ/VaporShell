@@ -1,4 +1,4 @@
-﻿function Add-VSEC2LaunchTemplateSpotOptions {
+function Add-VSEC2LaunchTemplateSpotOptions {
     <#
     .SYNOPSIS
         Adds an AWS::EC2::LaunchTemplate.SpotOptions resource property to the template
@@ -24,6 +24,18 @@
     .PARAMETER MaxPrice
 		Required: False    
 		Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-launchtemplate-launchtemplatedata-instancemarketoptions-spotoptions.html#cfn-ec2-launchtemplate-launchtemplatedata-instancemarketoptions-spotoptions-maxprice    
+		PrimitiveType: String    
+		UpdateType: Mutable    
+
+    .PARAMETER BlockDurationMinutes
+		Required: False    
+		Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-launchtemplate-launchtemplatedata-instancemarketoptions-spotoptions.html#cfn-ec2-launchtemplate-launchtemplatedata-instancemarketoptions-spotoptions-blockdurationminutes    
+		PrimitiveType: Integer    
+		UpdateType: Mutable    
+
+    .PARAMETER ValidUntil
+		Required: False    
+		Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-launchtemplate-launchtemplatedata-instancemarketoptions-spotoptions.html#cfn-ec2-launchtemplate-launchtemplatedata-instancemarketoptions-spotoptions-validuntil    
 		PrimitiveType: String    
 		UpdateType: Mutable    
 
@@ -66,7 +78,21 @@
                     $PSCmdlet.ThrowTerminatingError((New-VSError -String "This parameter only accepts the following types: $($allowedTypes -join ", "). The current types of the value are: $($_.PSTypeNames -join ", ")."))
                 }
             })]
-        $MaxPrice
+        $MaxPrice,
+        [parameter(Mandatory = $false)]
+        [Int]
+        $BlockDurationMinutes,
+        [parameter(Mandatory = $false)]
+        [ValidateScript( {
+                $allowedTypes = "System.String","Vaporshell.Function","Vaporshell.Condition"
+                if ([string]$($_.PSTypeNames) -match "($(($allowedTypes|ForEach-Object{[RegEx]::Escape($_)}) -join '|'))") {
+                    $true
+                }
+                else {
+                    $PSCmdlet.ThrowTerminatingError((New-VSError -String "This parameter only accepts the following types: $($allowedTypes -join ", "). The current types of the value are: $($_.PSTypeNames -join ", ")."))
+                }
+            })]
+        $ValidUntil
     )
     Begin {
         $obj = [PSCustomObject]@{}

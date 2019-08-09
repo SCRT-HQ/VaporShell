@@ -1,4 +1,4 @@
-﻿function Add-VSAmazonMQConfigurationTagsEntry {
+function Add-VSAmazonMQConfigurationTagsEntry {
     <#
     .SYNOPSIS
         Adds an AWS::AmazonMQ::Configuration.TagsEntry resource property to the template

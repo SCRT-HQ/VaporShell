@@ -1,4 +1,4 @@
-﻿function Add-VSCognitoUserPoolPasswordPolicy {
+function Add-VSCognitoUserPoolPasswordPolicy {
     <#
     .SYNOPSIS
         Adds an AWS::Cognito::UserPool.PasswordPolicy resource property to the template
@@ -19,6 +19,12 @@
 		Required: False    
 		Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-cognito-userpool-passwordpolicy.html#cfn-cognito-userpool-passwordpolicy-minimumlength    
 		PrimitiveType: Integer    
+		UpdateType: Mutable    
+
+    .PARAMETER TemporaryPasswordValidityDays
+		Required: False    
+		Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-cognito-userpool-passwordpolicy.html#cfn-cognito-userpool-passwordpolicy-temporarypasswordvaliditydays    
+		PrimitiveType: Double    
 		UpdateType: Mutable    
 
     .PARAMETER RequireUppercase
@@ -44,6 +50,8 @@
     #>
     [OutputType('Vaporshell.Resource.Cognito.UserPool.PasswordPolicy')]
     [cmdletbinding()]
+    [Diagnostics.CodeAnalysis.SuppressMessageAttribute("PSAvoidUsingPlainTextForPassword","TemporaryPasswordValidityDays")]
+    [Diagnostics.CodeAnalysis.SuppressMessageAttribute("PSAvoidUsingUserNameAndPasswordParams","TemporaryPasswordValidityDays")]
     Param
     (
         [parameter(Mandatory = $false)]
@@ -52,6 +60,9 @@
         [parameter(Mandatory = $false)]
         [Int]
         $MinimumLength,
+        [parameter(Mandatory = $false)]
+        [System.Double]
+        $TemporaryPasswordValidityDays,
         [parameter(Mandatory = $false)]
         [System.Boolean]
         $RequireUppercase,

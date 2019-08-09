@@ -1,4 +1,4 @@
-﻿function Add-VSEC2NetworkInterfacePrivateIpAddressSpecification {
+function Add-VSEC2NetworkInterfacePrivateIpAddressSpecification {
     <#
     .SYNOPSIS
         Adds an AWS::EC2::NetworkInterface.PrivateIpAddressSpecification resource property to the template

@@ -1,4 +1,4 @@
-﻿function New-VSServiceCatalogPortfolioPrincipalAssociation {
+function New-VSServiceCatalogPortfolioPrincipalAssociation {
     <#
     .SYNOPSIS
         Adds an AWS::ServiceCatalog::PortfolioPrincipalAssociation resource to the template

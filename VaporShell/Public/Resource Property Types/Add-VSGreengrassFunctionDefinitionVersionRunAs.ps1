@@ -1,4 +1,4 @@
-﻿function Add-VSGreengrassFunctionDefinitionVersionRunAs {
+function Add-VSGreengrassFunctionDefinitionVersionRunAs {
     <#
     .SYNOPSIS
         Adds an AWS::Greengrass::FunctionDefinitionVersion.RunAs resource property to the template

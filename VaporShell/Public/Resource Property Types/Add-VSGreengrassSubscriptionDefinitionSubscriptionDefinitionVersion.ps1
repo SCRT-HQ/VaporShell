@@ -1,4 +1,4 @@
-﻿function Add-VSGreengrassSubscriptionDefinitionSubscriptionDefinitionVersion {
+function Add-VSGreengrassSubscriptionDefinitionSubscriptionDefinitionVersion {
     <#
     .SYNOPSIS
         Adds an AWS::Greengrass::SubscriptionDefinition.SubscriptionDefinitionVersion resource property to the template

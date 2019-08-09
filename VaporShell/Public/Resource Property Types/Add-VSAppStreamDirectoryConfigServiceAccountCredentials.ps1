@@ -1,4 +1,4 @@
-﻿function Add-VSAppStreamDirectoryConfigServiceAccountCredentials {
+function Add-VSAppStreamDirectoryConfigServiceAccountCredentials {
     <#
     .SYNOPSIS
         Adds an AWS::AppStream::DirectoryConfig.ServiceAccountCredentials resource property to the template

@@ -1,4 +1,4 @@
-﻿function Add-VSGuardDutyFilterFindingCriteria {
+function Add-VSGuardDutyFilterFindingCriteria {
     <#
     .SYNOPSIS
         Adds an AWS::GuardDuty::Filter.FindingCriteria resource property to the template

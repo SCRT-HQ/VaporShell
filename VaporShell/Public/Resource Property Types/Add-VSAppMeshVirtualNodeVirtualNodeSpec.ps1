@@ -1,4 +1,4 @@
-﻿function Add-VSAppMeshVirtualNodeVirtualNodeSpec {
+function Add-VSAppMeshVirtualNodeVirtualNodeSpec {
     <#
     .SYNOPSIS
         Adds an AWS::AppMesh::VirtualNode.VirtualNodeSpec resource property to the template

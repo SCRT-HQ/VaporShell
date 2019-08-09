@@ -1,4 +1,4 @@
-﻿function New-VSAutoScalingAutoScalingGroup {
+function New-VSAutoScalingAutoScalingGroup {
     <#
     .SYNOPSIS
         Adds an AWS::AutoScaling::AutoScalingGroup resource to the template

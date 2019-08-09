@@ -1,4 +1,4 @@
-﻿function New-VSRedshiftClusterSecurityGroup {
+function New-VSRedshiftClusterSecurityGroup {
     <#
     .SYNOPSIS
         Adds an AWS::Redshift::ClusterSecurityGroup resource to the template

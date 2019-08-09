@@ -1,4 +1,4 @@
-﻿function New-VSGreengrassLoggerDefinition {
+function New-VSGreengrassLoggerDefinition {
     <#
     .SYNOPSIS
         Adds an AWS::Greengrass::LoggerDefinition resource to the template
