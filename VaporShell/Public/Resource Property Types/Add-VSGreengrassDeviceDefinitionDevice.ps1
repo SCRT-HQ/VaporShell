@@ -1,4 +1,4 @@
-﻿function Add-VSGreengrassDeviceDefinitionDevice {
+function Add-VSGreengrassDeviceDefinitionDevice {
     <#
     .SYNOPSIS
         Adds an AWS::Greengrass::DeviceDefinition.Device resource property to the template

@@ -1,4 +1,4 @@
-﻿function New-VSApiGatewayUsagePlan {
+function New-VSApiGatewayUsagePlan {
     <#
     .SYNOPSIS
         Adds an AWS::ApiGateway::UsagePlan resource to the template

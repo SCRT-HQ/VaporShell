@@ -1,4 +1,4 @@
-﻿function Add-VSS3BucketLifecycleConfiguration {
+function Add-VSS3BucketLifecycleConfiguration {
     <#
     .SYNOPSIS
         Adds an AWS::S3::Bucket.LifecycleConfiguration resource property to the template

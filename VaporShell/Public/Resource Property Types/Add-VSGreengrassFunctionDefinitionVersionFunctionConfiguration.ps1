@@ -1,4 +1,4 @@
-﻿function Add-VSGreengrassFunctionDefinitionVersionFunctionConfiguration {
+function Add-VSGreengrassFunctionDefinitionVersionFunctionConfiguration {
     <#
     .SYNOPSIS
         Adds an AWS::Greengrass::FunctionDefinitionVersion.FunctionConfiguration resource property to the template
@@ -10,7 +10,7 @@
         http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-greengrass-functiondefinitionversion-functionconfiguration.html
 
     .PARAMETER MemorySize
-		Required: True    
+		Required: False    
 		Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-greengrass-functiondefinitionversion-functionconfiguration.html#cfn-greengrass-functiondefinitionversion-functionconfiguration-memorysize    
 		PrimitiveType: Integer    
 		UpdateType: Immutable    
@@ -28,7 +28,7 @@
 		UpdateType: Immutable    
 
     .PARAMETER Timeout
-		Required: True    
+		Required: False    
 		Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-greengrass-functiondefinitionversion-functionconfiguration.html#cfn-greengrass-functiondefinitionversion-functionconfiguration-timeout    
 		PrimitiveType: Integer    
 		UpdateType: Immutable    
@@ -58,7 +58,7 @@
     [cmdletbinding()]
     Param
     (
-        [parameter(Mandatory = $true)]
+        [parameter(Mandatory = $false)]
         [Int]
         $MemorySize,
         [parameter(Mandatory = $false)]
@@ -75,7 +75,7 @@
                 }
             })]
         $ExecArgs,
-        [parameter(Mandatory = $true)]
+        [parameter(Mandatory = $false)]
         [Int]
         $Timeout,
         [parameter(Mandatory = $false)]

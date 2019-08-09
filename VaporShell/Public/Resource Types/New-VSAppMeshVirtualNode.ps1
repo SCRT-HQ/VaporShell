@@ -1,4 +1,4 @@
-﻿function New-VSAppMeshVirtualNode {
+function New-VSAppMeshVirtualNode {
     <#
     .SYNOPSIS
         Adds an AWS::AppMesh::VirtualNode resource to the template
@@ -34,7 +34,7 @@
 		Type: List    
 		Required: False    
 		Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-appmesh-virtualnode.html#cfn-appmesh-virtualnode-tags    
-		ItemType: TagRef    
+		ItemType: Tag    
 		UpdateType: Mutable    
 
     .PARAMETER DeletionPolicy
@@ -108,7 +108,7 @@
         $VirtualNodeName,
         [parameter(Mandatory = $false)]
         [ValidateScript( {
-                $allowedTypes = "Vaporshell.Resource.AppMesh.VirtualNode.TagRef"
+                $allowedTypes = "Vaporshell.Resource.Tag","System.Management.Automation.PSCustomObject"
                 if ([string]$($_.PSTypeNames) -match "($(($allowedTypes|ForEach-Object{[RegEx]::Escape($_)}) -join '|'))") {
                     $true
                 }

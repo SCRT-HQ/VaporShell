@@ -1,4 +1,4 @@
-﻿function Add-VSDynamoDBTableStreamSpecification {
+function Add-VSDynamoDBTableStreamSpecification {
     <#
     .SYNOPSIS
         Adds an AWS::DynamoDB::Table.StreamSpecification resource property to the template

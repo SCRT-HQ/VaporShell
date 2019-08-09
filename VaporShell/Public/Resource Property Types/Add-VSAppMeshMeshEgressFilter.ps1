@@ -1,4 +1,4 @@
-﻿function Add-VSAppMeshMeshEgressFilter {
+function Add-VSAppMeshMeshEgressFilter {
     <#
     .SYNOPSIS
         Adds an AWS::AppMesh::Mesh.EgressFilter resource property to the template

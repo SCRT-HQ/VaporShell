@@ -1,4 +1,4 @@
-﻿function Add-VSApplicationAutoScalingScalableTargetScheduledAction {
+function Add-VSApplicationAutoScalingScalableTargetScheduledAction {
     <#
     .SYNOPSIS
         Adds an AWS::ApplicationAutoScaling::ScalableTarget.ScheduledAction resource property to the template

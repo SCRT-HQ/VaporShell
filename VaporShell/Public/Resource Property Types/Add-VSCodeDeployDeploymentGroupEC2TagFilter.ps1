@@ -1,4 +1,4 @@
-﻿function Add-VSCodeDeployDeploymentGroupEC2TagFilter {
+function Add-VSCodeDeployDeploymentGroupEC2TagFilter {
     <#
     .SYNOPSIS
         Adds an AWS::CodeDeploy::DeploymentGroup.EC2TagFilter resource property to the template

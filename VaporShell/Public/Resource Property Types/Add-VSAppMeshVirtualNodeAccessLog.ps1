@@ -1,4 +1,4 @@
-﻿function Add-VSAppMeshVirtualNodeAccessLog {
+function Add-VSAppMeshVirtualNodeAccessLog {
     <#
     .SYNOPSIS
         Adds an AWS::AppMesh::VirtualNode.AccessLog resource property to the template

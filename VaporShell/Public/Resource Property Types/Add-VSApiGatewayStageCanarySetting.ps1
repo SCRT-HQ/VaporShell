@@ -1,4 +1,4 @@
-﻿function Add-VSApiGatewayStageCanarySetting {
+function Add-VSApiGatewayStageCanarySetting {
     <#
     .SYNOPSIS
         Adds an AWS::ApiGateway::Stage.CanarySetting resource property to the template

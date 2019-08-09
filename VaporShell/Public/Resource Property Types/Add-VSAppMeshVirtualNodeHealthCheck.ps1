@@ -1,4 +1,4 @@
-﻿function Add-VSAppMeshVirtualNodeHealthCheck {
+function Add-VSAppMeshVirtualNodeHealthCheck {
     <#
     .SYNOPSIS
         Adds an AWS::AppMesh::VirtualNode.HealthCheck resource property to the template

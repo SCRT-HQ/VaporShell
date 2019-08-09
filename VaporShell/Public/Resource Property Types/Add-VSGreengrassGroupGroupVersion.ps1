@@ -1,4 +1,4 @@
-﻿function Add-VSGreengrassGroupGroupVersion {
+function Add-VSGreengrassGroupGroupVersion {
     <#
     .SYNOPSIS
         Adds an AWS::Greengrass::Group.GroupVersion resource property to the template

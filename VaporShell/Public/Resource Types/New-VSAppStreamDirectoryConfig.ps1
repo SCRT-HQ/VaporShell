@@ -1,4 +1,4 @@
-﻿function New-VSAppStreamDirectoryConfig {
+function New-VSAppStreamDirectoryConfig {
     <#
     .SYNOPSIS
         Adds an AWS::AppStream::DirectoryConfig resource to the template

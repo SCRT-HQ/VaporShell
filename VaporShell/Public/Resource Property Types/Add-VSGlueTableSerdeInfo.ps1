@@ -1,4 +1,4 @@
-﻿function Add-VSGlueTableSerdeInfo {
+function Add-VSGlueTableSerdeInfo {
     <#
     .SYNOPSIS
         Adds an AWS::Glue::Table.SerdeInfo resource property to the template

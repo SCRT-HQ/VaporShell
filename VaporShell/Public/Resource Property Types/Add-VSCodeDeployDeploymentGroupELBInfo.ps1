@@ -1,4 +1,4 @@
-﻿function Add-VSCodeDeployDeploymentGroupELBInfo {
+function Add-VSCodeDeployDeploymentGroupELBInfo {
     <#
     .SYNOPSIS
         Adds an AWS::CodeDeploy::DeploymentGroup.ELBInfo resource property to the template

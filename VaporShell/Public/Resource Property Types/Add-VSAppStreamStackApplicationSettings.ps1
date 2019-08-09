@@ -1,4 +1,4 @@
-﻿function Add-VSAppStreamStackApplicationSettings {
+function Add-VSAppStreamStackApplicationSettings {
     <#
     .SYNOPSIS
         Adds an AWS::AppStream::Stack.ApplicationSettings resource property to the template

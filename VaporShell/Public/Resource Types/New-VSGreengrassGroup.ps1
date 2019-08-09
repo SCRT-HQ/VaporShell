@@ -1,4 +1,4 @@
-﻿function New-VSGreengrassGroup {
+function New-VSGreengrassGroup {
     <#
     .SYNOPSIS
         Adds an AWS::Greengrass::Group resource to the template

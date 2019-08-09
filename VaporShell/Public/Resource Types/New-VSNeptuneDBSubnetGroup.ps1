@@ -1,4 +1,4 @@
-﻿function New-VSNeptuneDBSubnetGroup {
+function New-VSNeptuneDBSubnetGroup {
     <#
     .SYNOPSIS
         Adds an AWS::Neptune::DBSubnetGroup resource to the template

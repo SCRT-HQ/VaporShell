@@ -1,4 +1,4 @@
-﻿function New-VSGreengrassFunctionDefinition {
+function New-VSGreengrassFunctionDefinition {
     <#
     .SYNOPSIS
         Adds an AWS::Greengrass::FunctionDefinition resource to the template

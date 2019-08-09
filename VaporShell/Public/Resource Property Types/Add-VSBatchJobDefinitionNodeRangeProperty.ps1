@@ -1,4 +1,4 @@
-﻿function Add-VSBatchJobDefinitionNodeRangeProperty {
+function Add-VSBatchJobDefinitionNodeRangeProperty {
     <#
     .SYNOPSIS
         Adds an AWS::Batch::JobDefinition.NodeRangeProperty resource property to the template

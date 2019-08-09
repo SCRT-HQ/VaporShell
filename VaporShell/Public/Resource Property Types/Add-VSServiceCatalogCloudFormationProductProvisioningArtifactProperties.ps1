@@ -1,4 +1,4 @@
-﻿function Add-VSServiceCatalogCloudFormationProductProvisioningArtifactProperties {
+function Add-VSServiceCatalogCloudFormationProductProvisioningArtifactProperties {
     <#
     .SYNOPSIS
         Adds an AWS::ServiceCatalog::CloudFormationProduct.ProvisioningArtifactProperties resource property to the template
@@ -13,6 +13,12 @@
 		Required: False    
 		Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-servicecatalog-cloudformationproduct-provisioningartifactproperties.html#cfn-servicecatalog-cloudformationproduct-provisioningartifactproperties-description    
 		PrimitiveType: String    
+		UpdateType: Mutable    
+
+    .PARAMETER DisableTemplateValidation
+		Required: False    
+		Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-servicecatalog-cloudformationproduct-provisioningartifactproperties.html#cfn-servicecatalog-cloudformationproduct-provisioningartifactproperties-disabletemplatevalidation    
+		PrimitiveType: Boolean    
 		UpdateType: Mutable    
 
     .PARAMETER Info
@@ -45,6 +51,9 @@
                 }
             })]
         $Description,
+        [parameter(Mandatory = $false)]
+        [System.Boolean]
+        $DisableTemplateValidation,
         [parameter(Mandatory = $true)]
         [ValidateScript( {
                 $allowedTypes = "System.String","System.Collections.Hashtable","System.Management.Automation.PSCustomObject"

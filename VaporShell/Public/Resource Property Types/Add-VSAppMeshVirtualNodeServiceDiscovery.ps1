@@ -1,4 +1,4 @@
-﻿function Add-VSAppMeshVirtualNodeServiceDiscovery {
+function Add-VSAppMeshVirtualNodeServiceDiscovery {
     <#
     .SYNOPSIS
         Adds an AWS::AppMesh::VirtualNode.ServiceDiscovery resource property to the template
@@ -11,8 +11,14 @@
 
     .PARAMETER DNS
 		Type: DnsServiceDiscovery    
-		Required: True    
+		Required: False    
 		Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-appmesh-virtualnode-servicediscovery.html#cfn-appmesh-virtualnode-servicediscovery-dns    
+		UpdateType: Mutable    
+
+    .PARAMETER AWSCloudMap
+		Type: AwsCloudMapServiceDiscovery    
+		Required: False    
+		Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-appmesh-virtualnode-servicediscovery.html#cfn-appmesh-virtualnode-servicediscovery-awscloudmap    
 		UpdateType: Mutable    
 
     .FUNCTIONALITY
@@ -22,8 +28,10 @@
     [cmdletbinding()]
     Param
     (
-        [parameter(Mandatory = $true)]
-        $DNS
+        [parameter(Mandatory = $false)]
+        $DNS,
+        [parameter(Mandatory = $false)]
+        $AWSCloudMap
     )
     Begin {
         $obj = [PSCustomObject]@{}

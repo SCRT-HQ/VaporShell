@@ -1,4 +1,4 @@
-﻿function New-VSEFSFileSystem {
+function New-VSEFSFileSystem {
     <#
     .SYNOPSIS
         Adds an AWS::EFS::FileSystem resource to the template
@@ -31,6 +31,14 @@
 		PrimitiveType: String    
 		Required: False    
 		UpdateType: Immutable    
+
+    .PARAMETER LifecyclePolicies
+		Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-efs-filesystem.html#cfn-elasticfilesystem-filesystem-lifecyclepolicies    
+		DuplicatesAllowed: False    
+		ItemType: LifecyclePolicy    
+		Required: False    
+		Type: List    
+		UpdateType: Mutable    
 
     .PARAMETER PerformanceMode
 		Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-efs-filesystem.html#cfn-efs-filesystem-performancemode    
@@ -122,6 +130,17 @@
         $KmsKeyId,
         [parameter(Mandatory = $false)]
         [ValidateScript( {
+                $allowedTypes = "Vaporshell.Resource.EFS.FileSystem.LifecyclePolicy"
+                if ([string]$($_.PSTypeNames) -match "($(($allowedTypes|ForEach-Object{[RegEx]::Escape($_)}) -join '|'))") {
+                    $true
+                }
+                else {
+                    $PSCmdlet.ThrowTerminatingError((New-VSError -String "This parameter only accepts the following types: $($allowedTypes -join ", "). The current types of the value are: $($_.PSTypeNames -join ", ")."))
+                }
+            })]
+        $LifecyclePolicies,
+        [parameter(Mandatory = $false)]
+        [ValidateScript( {
                 $allowedTypes = "System.String","Vaporshell.Function","Vaporshell.Condition"
                 if ([string]$($_.PSTypeNames) -match "($(($allowedTypes|ForEach-Object{[RegEx]::Escape($_)}) -join '|'))") {
                     $true
@@ -207,6 +226,12 @@
                         $ResourceParams.Add("Properties",([PSCustomObject]@{}))
                     }
                     $ResourceParams["Properties"] | Add-Member -MemberType NoteProperty -Name FileSystemTags -Value @($FileSystemTags)
+                }
+                LifecyclePolicies {
+                    if (!($ResourceParams["Properties"])) {
+                        $ResourceParams.Add("Properties",([PSCustomObject]@{}))
+                    }
+                    $ResourceParams["Properties"] | Add-Member -MemberType NoteProperty -Name LifecyclePolicies -Value @($LifecyclePolicies)
                 }
                 Default {
                     if (!($ResourceParams["Properties"])) {

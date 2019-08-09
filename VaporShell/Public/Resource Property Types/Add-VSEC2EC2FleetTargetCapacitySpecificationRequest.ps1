@@ -1,4 +1,4 @@
-﻿function Add-VSEC2EC2FleetTargetCapacitySpecificationRequest {
+function Add-VSEC2EC2FleetTargetCapacitySpecificationRequest {
     <#
     .SYNOPSIS
         Adds an AWS::EC2::EC2Fleet.TargetCapacitySpecificationRequest resource property to the template

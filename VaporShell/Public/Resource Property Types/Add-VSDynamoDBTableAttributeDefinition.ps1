@@ -1,4 +1,4 @@
-﻿function Add-VSDynamoDBTableAttributeDefinition {
+function Add-VSDynamoDBTableAttributeDefinition {
     <#
     .SYNOPSIS
         Adds an AWS::DynamoDB::Table.AttributeDefinition resource property to the template

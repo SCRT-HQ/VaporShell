@@ -1,4 +1,4 @@
-﻿function Add-VSOpsWorksStackSource {
+function Add-VSOpsWorksStackSource {
     <#
     .SYNOPSIS
         Adds an AWS::OpsWorks::Stack.Source resource property to the template

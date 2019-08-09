@@ -1,4 +1,4 @@
-﻿function New-VSServiceCatalogLaunchTemplateConstraint {
+function New-VSServiceCatalogLaunchTemplateConstraint {
     <#
     .SYNOPSIS
         Adds an AWS::ServiceCatalog::LaunchTemplateConstraint resource to the template
@@ -40,7 +40,7 @@
 		Required: True    
 		Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-servicecatalog-launchtemplateconstraint.html#cfn-servicecatalog-launchtemplateconstraint-rules    
 		PrimitiveType: String    
-		UpdateType: Immutable    
+		UpdateType: Mutable    
 
     .PARAMETER DeletionPolicy
         With the DeletionPolicy attribute you can preserve or (in some cases) backup a resource when its stack is deleted. You specify a DeletionPolicy attribute for each resource that you want to control. If a resource has no DeletionPolicy attribute, AWS CloudFormation deletes the resource by default.

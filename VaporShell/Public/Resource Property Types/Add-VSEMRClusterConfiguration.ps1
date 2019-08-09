@@ -1,4 +1,4 @@
-﻿function Add-VSEMRClusterConfiguration {
+function Add-VSEMRClusterConfiguration {
     <#
     .SYNOPSIS
         Adds an AWS::EMR::Cluster.Configuration resource property to the template

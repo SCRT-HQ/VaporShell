@@ -1,4 +1,4 @@
-﻿function New-VSEC2NetworkInterface {
+function New-VSEC2NetworkInterface {
     <#
     .SYNOPSIS
         Adds an AWS::EC2::NetworkInterface resource to the template

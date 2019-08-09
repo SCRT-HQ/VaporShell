@@ -1,4 +1,4 @@
-﻿function Add-VSStepFunctionsActivityTagsEntry {
+function Add-VSStepFunctionsActivityTagsEntry {
     <#
     .SYNOPSIS
         Adds an AWS::StepFunctions::Activity.TagsEntry resource property to the template

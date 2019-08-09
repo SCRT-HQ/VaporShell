@@ -1,4 +1,4 @@
-﻿function New-VSServiceCatalogLaunchNotificationConstraint {
+function New-VSServiceCatalogLaunchNotificationConstraint {
     <#
     .SYNOPSIS
         Adds an AWS::ServiceCatalog::LaunchNotificationConstraint resource to the template
@@ -23,7 +23,7 @@
 		Type: List    
 		Required: True    
 		Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-servicecatalog-launchnotificationconstraint.html#cfn-servicecatalog-launchnotificationconstraint-notificationarns    
-		UpdateType: Immutable    
+		UpdateType: Mutable    
 
     .PARAMETER AcceptLanguage
 		Required: False    

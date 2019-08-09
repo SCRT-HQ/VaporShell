@@ -1,4 +1,4 @@
-﻿function New-VSAppMeshRoute {
+function New-VSAppMeshRoute {
     <#
     .SYNOPSIS
         Adds an AWS::AppMesh::Route resource to the template
@@ -40,7 +40,7 @@
 		Type: List    
 		Required: False    
 		Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-appmesh-route.html#cfn-appmesh-route-tags    
-		ItemType: TagRef    
+		ItemType: Tag    
 		UpdateType: Mutable    
 
     .PARAMETER DeletionPolicy
@@ -125,7 +125,7 @@
         $Spec,
         [parameter(Mandatory = $false)]
         [ValidateScript( {
-                $allowedTypes = "Vaporshell.Resource.AppMesh.Route.TagRef"
+                $allowedTypes = "Vaporshell.Resource.Tag","System.Management.Automation.PSCustomObject"
                 if ([string]$($_.PSTypeNames) -match "($(($allowedTypes|ForEach-Object{[RegEx]::Escape($_)}) -join '|'))") {
                     $true
                 }

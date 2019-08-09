@@ -1,4 +1,4 @@
-﻿function Add-VSKinesisFirehoseDeliveryStreamSplunkRetryOptions {
+function Add-VSKinesisFirehoseDeliveryStreamSplunkRetryOptions {
     <#
     .SYNOPSIS
         Adds an AWS::KinesisFirehose::DeliveryStream.SplunkRetryOptions resource property to the template

@@ -1,4 +1,4 @@
-﻿function Add-VSBatchComputeEnvironmentComputeResources {
+function Add-VSBatchComputeEnvironmentComputeResources {
     <#
     .SYNOPSIS
         Adds an AWS::Batch::ComputeEnvironment.ComputeResources resource property to the template
@@ -30,7 +30,7 @@
     .PARAMETER SecurityGroupIds
 		PrimitiveItemType: String    
 		Type: List    
-		Required: True    
+		Required: False    
 		Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-batch-computeenvironment-computeresources.html#cfn-batch-computeenvironment-computeresources-securitygroupids    
 		UpdateType: Immutable    
 
@@ -126,7 +126,7 @@
         [parameter(Mandatory = $false)]
         [Int]
         $BidPercentage,
-        [parameter(Mandatory = $true)]
+        [parameter(Mandatory = $false)]
         $SecurityGroupIds,
         [parameter(Mandatory = $true)]
         $Subnets,

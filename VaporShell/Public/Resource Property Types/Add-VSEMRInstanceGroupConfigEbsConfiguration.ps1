@@ -1,4 +1,4 @@
-﻿function Add-VSEMRInstanceGroupConfigEbsConfiguration {
+function Add-VSEMRInstanceGroupConfigEbsConfiguration {
     <#
     .SYNOPSIS
         Adds an AWS::EMR::InstanceGroupConfig.EbsConfiguration resource property to the template

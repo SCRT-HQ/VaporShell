@@ -1,4 +1,4 @@
-﻿function Add-VSAppMeshRouteTcpRoute {
+function Add-VSAppMeshRouteTcpRoute {
     <#
     .SYNOPSIS
         Adds an AWS::AppMesh::Route.TcpRoute resource property to the template

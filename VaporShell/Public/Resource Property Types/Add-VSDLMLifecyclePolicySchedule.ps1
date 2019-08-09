@@ -1,4 +1,4 @@
-﻿function Add-VSDLMLifecyclePolicySchedule {
+function Add-VSDLMLifecyclePolicySchedule {
     <#
     .SYNOPSIS
         Adds an AWS::DLM::LifecyclePolicy.Schedule resource property to the template
@@ -20,6 +20,13 @@
 		Type: CreateRule    
 		Required: False    
 		Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-dlm-lifecyclepolicy-schedule.html#cfn-dlm-lifecyclepolicy-schedule-createrule    
+		UpdateType: Mutable    
+
+    .PARAMETER VariableTags
+		Type: List    
+		Required: False    
+		Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-dlm-lifecyclepolicy-schedule.html#cfn-dlm-lifecyclepolicy-schedule-variabletags    
+		ItemType: Tag    
 		UpdateType: Mutable    
 
     .PARAMETER RetainRule
@@ -60,6 +67,17 @@
         $TagsToAdd,
         [parameter(Mandatory = $false)]
         $CreateRule,
+        [parameter(Mandatory = $false)]
+        [ValidateScript( {
+                $allowedTypes = "Vaporshell.Resource.Tag","System.Management.Automation.PSCustomObject"
+                if ([string]$($_.PSTypeNames) -match "($(($allowedTypes|ForEach-Object{[RegEx]::Escape($_)}) -join '|'))") {
+                    $true
+                }
+                else {
+                    $PSCmdlet.ThrowTerminatingError((New-VSError -String "This parameter only accepts the following types: $($allowedTypes -join ", "). The current types of the value are: $($_.PSTypeNames -join ", ")."))
+                }
+            })]
+        $VariableTags,
         [parameter(Mandatory = $false)]
         $RetainRule,
         [parameter(Mandatory = $false)]

@@ -1,4 +1,4 @@
-﻿function New-VSIoTAnalyticsChannel {
+function New-VSIoTAnalyticsChannel {
     <#
     .SYNOPSIS
         Adds an AWS::IoTAnalytics::Channel resource to the template
@@ -17,6 +17,12 @@
 		Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-iotanalytics-channel.html#cfn-iotanalytics-channel-channelname    
 		PrimitiveType: String    
 		UpdateType: Immutable    
+
+    .PARAMETER ChannelStorage
+		Type: ChannelStorage    
+		Required: False    
+		Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-iotanalytics-channel.html#cfn-iotanalytics-channel-channelstorage    
+		UpdateType: Mutable    
 
     .PARAMETER RetentionPeriod
 		Type: RetentionPeriod    
@@ -87,6 +93,8 @@
                 }
             })]
         $ChannelName,
+        [parameter(Mandatory = $false)]
+        $ChannelStorage,
         [parameter(Mandatory = $false)]
         $RetentionPeriod,
         [parameter(Mandatory = $false)]

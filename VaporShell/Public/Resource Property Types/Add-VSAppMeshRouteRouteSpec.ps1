@@ -1,4 +1,4 @@
-﻿function Add-VSAppMeshRouteRouteSpec {
+function Add-VSAppMeshRouteRouteSpec {
     <#
     .SYNOPSIS
         Adds an AWS::AppMesh::Route.RouteSpec resource property to the template

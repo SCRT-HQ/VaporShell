@@ -1,4 +1,4 @@
-﻿function Add-VSS3BucketDestination {
+function Add-VSS3BucketDestination {
     <#
     .SYNOPSIS
         Adds an AWS::S3::Bucket.Destination resource property to the template

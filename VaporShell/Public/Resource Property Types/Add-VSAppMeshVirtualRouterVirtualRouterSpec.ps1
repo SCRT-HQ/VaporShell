@@ -1,4 +1,4 @@
-﻿function Add-VSAppMeshVirtualRouterVirtualRouterSpec {
+function Add-VSAppMeshVirtualRouterVirtualRouterSpec {
     <#
     .SYNOPSIS
         Adds an AWS::AppMesh::VirtualRouter.VirtualRouterSpec resource property to the template

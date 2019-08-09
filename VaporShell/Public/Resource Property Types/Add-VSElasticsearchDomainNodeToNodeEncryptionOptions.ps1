@@ -1,4 +1,4 @@
-﻿function Add-VSElasticsearchDomainNodeToNodeEncryptionOptions {
+function Add-VSElasticsearchDomainNodeToNodeEncryptionOptions {
     <#
     .SYNOPSIS
         Adds an AWS::Elasticsearch::Domain.NodeToNodeEncryptionOptions resource property to the template

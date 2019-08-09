@@ -1,4 +1,4 @@
-﻿function Add-VSKinesisAnalyticsV2ApplicationCheckpointConfiguration {
+function Add-VSKinesisAnalyticsV2ApplicationCheckpointConfiguration {
     <#
     .SYNOPSIS
         Adds an AWS::KinesisAnalyticsV2::Application.CheckpointConfiguration resource property to the template

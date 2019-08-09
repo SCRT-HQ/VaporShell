@@ -1,4 +1,4 @@
-﻿function Add-VSApplicationAutoScalingScalingPolicyMetricDimension {
+function Add-VSApplicationAutoScalingScalingPolicyMetricDimension {
     <#
     .SYNOPSIS
         Adds an AWS::ApplicationAutoScaling::ScalingPolicy.MetricDimension resource property to the template

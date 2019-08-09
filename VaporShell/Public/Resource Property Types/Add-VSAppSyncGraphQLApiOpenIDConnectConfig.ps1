@@ -1,4 +1,4 @@
-﻿function Add-VSAppSyncGraphQLApiOpenIDConnectConfig {
+function Add-VSAppSyncGraphQLApiOpenIDConnectConfig {
     <#
     .SYNOPSIS
         Adds an AWS::AppSync::GraphQLApi.OpenIDConnectConfig resource property to the template

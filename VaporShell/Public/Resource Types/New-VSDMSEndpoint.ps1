@@ -1,4 +1,4 @@
-﻿function New-VSDMSEndpoint {
+function New-VSDMSEndpoint {
     <#
     .SYNOPSIS
         Adds an AWS::DMS::Endpoint resource to the template

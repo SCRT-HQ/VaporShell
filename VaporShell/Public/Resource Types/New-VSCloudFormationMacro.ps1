@@ -1,4 +1,4 @@
-﻿function New-VSCloudFormationMacro {
+function New-VSCloudFormationMacro {
     <#
     .SYNOPSIS
         Adds an AWS::CloudFormation::Macro resource to the template

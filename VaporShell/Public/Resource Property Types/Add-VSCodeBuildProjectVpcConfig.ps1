@@ -1,4 +1,4 @@
-﻿function Add-VSCodeBuildProjectVpcConfig {
+function Add-VSCodeBuildProjectVpcConfig {
     <#
     .SYNOPSIS
         Adds an AWS::CodeBuild::Project.VpcConfig resource property to the template

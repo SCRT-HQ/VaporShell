@@ -1,4 +1,4 @@
-﻿function Add-VSIoTTopicRuleTopicRulePayload {
+function Add-VSIoTTopicRuleTopicRulePayload {
     <#
     .SYNOPSIS
         Adds an AWS::IoT::TopicRule.TopicRulePayload resource property to the template

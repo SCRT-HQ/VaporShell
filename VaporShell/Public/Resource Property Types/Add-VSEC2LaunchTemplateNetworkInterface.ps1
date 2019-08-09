@@ -1,4 +1,4 @@
-﻿function Add-VSEC2LaunchTemplateNetworkInterface {
+function Add-VSEC2LaunchTemplateNetworkInterface {
     <#
     .SYNOPSIS
         Adds an AWS::EC2::LaunchTemplate.NetworkInterface resource property to the template
@@ -34,19 +34,6 @@
 		PrimitiveType: Integer    
 		UpdateType: Mutable    
 
-    .PARAMETER Ipv6AddressCount
-		Required: False    
-		Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-launchtemplate-networkinterface.html#cfn-ec2-launchtemplate-networkinterface-ipv6addresscount    
-		PrimitiveType: Integer    
-		UpdateType: Mutable    
-
-    .PARAMETER Groups
-		PrimitiveItemType: String    
-		Type: List    
-		Required: False    
-		Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-launchtemplate-networkinterface.html#cfn-ec2-launchtemplate-networkinterface-groups    
-		UpdateType: Mutable    
-
     .PARAMETER DeviceIndex
 		Required: False    
 		Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-launchtemplate-networkinterface.html#cfn-ec2-launchtemplate-networkinterface-deviceindex    
@@ -76,6 +63,25 @@
 		Required: False    
 		Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-launchtemplate-networkinterface.html#cfn-ec2-launchtemplate-networkinterface-networkinterfaceid    
 		PrimitiveType: String    
+		UpdateType: Mutable    
+
+    .PARAMETER InterfaceType
+		Required: False    
+		Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-launchtemplate-networkinterface.html#cfn-ec2-launchtemplate-networkinterface-interfacetype    
+		PrimitiveType: String    
+		UpdateType: Mutable    
+
+    .PARAMETER Ipv6AddressCount
+		Required: False    
+		Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-launchtemplate-networkinterface.html#cfn-ec2-launchtemplate-networkinterface-ipv6addresscount    
+		PrimitiveType: Integer    
+		UpdateType: Mutable    
+
+    .PARAMETER Groups
+		PrimitiveItemType: String    
+		Type: List    
+		Required: False    
+		Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-launchtemplate-networkinterface.html#cfn-ec2-launchtemplate-networkinterface-groups    
 		UpdateType: Mutable    
 
     .PARAMETER DeleteOnTermination
@@ -129,11 +135,6 @@
         $SecondaryPrivateIpAddressCount,
         [parameter(Mandatory = $false)]
         [Int]
-        $Ipv6AddressCount,
-        [parameter(Mandatory = $false)]
-        $Groups,
-        [parameter(Mandatory = $false)]
-        [Int]
         $DeviceIndex,
         [parameter(Mandatory = $false)]
         [ValidateScript( {
@@ -171,6 +172,22 @@
                 }
             })]
         $NetworkInterfaceId,
+        [parameter(Mandatory = $false)]
+        [ValidateScript( {
+                $allowedTypes = "System.String","Vaporshell.Function","Vaporshell.Condition"
+                if ([string]$($_.PSTypeNames) -match "($(($allowedTypes|ForEach-Object{[RegEx]::Escape($_)}) -join '|'))") {
+                    $true
+                }
+                else {
+                    $PSCmdlet.ThrowTerminatingError((New-VSError -String "This parameter only accepts the following types: $($allowedTypes -join ", "). The current types of the value are: $($_.PSTypeNames -join ", ")."))
+                }
+            })]
+        $InterfaceType,
+        [parameter(Mandatory = $false)]
+        [Int]
+        $Ipv6AddressCount,
+        [parameter(Mandatory = $false)]
+        $Groups,
         [parameter(Mandatory = $false)]
         [System.Boolean]
         $DeleteOnTermination

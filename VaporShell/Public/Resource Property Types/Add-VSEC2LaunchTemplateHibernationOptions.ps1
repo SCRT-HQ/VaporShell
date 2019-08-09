@@ -1,4 +1,4 @@
-﻿function Add-VSEC2LaunchTemplateHibernationOptions {
+function Add-VSEC2LaunchTemplateHibernationOptions {
     <#
     .SYNOPSIS
         Adds an AWS::EC2::LaunchTemplate.HibernationOptions resource property to the template

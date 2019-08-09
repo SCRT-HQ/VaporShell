@@ -43,11 +43,18 @@ function ProcessRequest4 {
         catch {
             return (New-VSError -String "$($Error[0].Exception.Message)")
         }
-        Write-Verbose "Processing request:`n$($PSBoundParameters | Format-Table -AutoSize | Out-String)"
+        if ($client | Get-Member -MemberType Method -Name "$Method*" | Where-Object {$_.Name -eq "$($Method)Async"}) {
+            $useAsync = $true
+            Write-Verbose "Processing async request:`n$($PSBoundParameters | Format-Table -AutoSize | Out-String)"
+        }
+        else {
+            $useAsync = $false
+            Write-Verbose "Processing request:`n$($PSBoundParameters | Format-Table -AutoSize | Out-String)"
+        }
         $i = 0
         do {
             $i++
-            if ($IsCoreCLR) {
+            if ($useAsync) {
                 $result = $client."$($Method)Async"($Request)
                 if ($Expand) {
                     $results += $result.Result.$Expand

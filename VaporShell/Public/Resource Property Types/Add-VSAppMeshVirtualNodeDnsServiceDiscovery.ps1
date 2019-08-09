@@ -1,4 +1,4 @@
-﻿function Add-VSAppMeshVirtualNodeDnsServiceDiscovery {
+function Add-VSAppMeshVirtualNodeDnsServiceDiscovery {
     <#
     .SYNOPSIS
         Adds an AWS::AppMesh::VirtualNode.DnsServiceDiscovery resource property to the template

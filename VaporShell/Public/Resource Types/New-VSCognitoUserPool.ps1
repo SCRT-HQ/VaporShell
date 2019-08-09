@@ -1,4 +1,4 @@
-﻿function New-VSCognitoUserPool {
+function New-VSCognitoUserPool {
     <#
     .SYNOPSIS
         Adds an AWS::Cognito::UserPool resource to the template
@@ -22,6 +22,12 @@
 		Type: Policies    
 		Required: False    
 		Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-cognito-userpool.html#cfn-cognito-userpool-policies    
+		UpdateType: Mutable    
+
+    .PARAMETER VerificationMessageTemplate
+		Type: VerificationMessageTemplate    
+		Required: False    
+		Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-cognito-userpool.html#cfn-cognito-userpool-verificationmessagetemplate    
 		UpdateType: Mutable    
 
     .PARAMETER MfaConfiguration
@@ -59,6 +65,12 @@
 		Required: False    
 		Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-cognito-userpool.html#cfn-cognito-userpool-smsverificationmessage    
 		PrimitiveType: String    
+		UpdateType: Mutable    
+
+    .PARAMETER UserPoolAddOns
+		Type: UserPoolAddOns    
+		Required: False    
+		Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-cognito-userpool.html#cfn-cognito-userpool-userpooladdons    
 		UpdateType: Mutable    
 
     .PARAMETER EmailConfiguration
@@ -177,6 +189,8 @@
         [parameter(Mandatory = $false)]
         $Policies,
         [parameter(Mandatory = $false)]
+        $VerificationMessageTemplate,
+        [parameter(Mandatory = $false)]
         [ValidateScript( {
                 $allowedTypes = "System.String","Vaporshell.Function","Vaporshell.Condition"
                 if ([string]$($_.PSTypeNames) -match "($(($allowedTypes|ForEach-Object{[RegEx]::Escape($_)}) -join '|'))") {
@@ -233,6 +247,8 @@
                 }
             })]
         $SmsVerificationMessage,
+        [parameter(Mandatory = $false)]
+        $UserPoolAddOns,
         [parameter(Mandatory = $false)]
         $EmailConfiguration,
         [parameter(Mandatory = $false)]

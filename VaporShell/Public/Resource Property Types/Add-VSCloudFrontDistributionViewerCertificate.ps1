@@ -1,4 +1,4 @@
-﻿function Add-VSCloudFrontDistributionViewerCertificate {
+function Add-VSCloudFrontDistributionViewerCertificate {
     <#
     .SYNOPSIS
         Adds an AWS::CloudFront::Distribution.ViewerCertificate resource property to the template

@@ -1,4 +1,4 @@
-﻿function Add-VSGreengrassResourceDefinitionVersionSageMakerMachineLearningModelResourceData {
+function Add-VSGreengrassResourceDefinitionVersionSageMakerMachineLearningModelResourceData {
     <#
     .SYNOPSIS
         Adds an AWS::Greengrass::ResourceDefinitionVersion.SageMakerMachineLearningModelResourceData resource property to the template

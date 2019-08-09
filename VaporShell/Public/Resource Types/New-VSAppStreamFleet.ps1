@@ -1,4 +1,4 @@
-﻿function New-VSAppStreamFleet {
+function New-VSAppStreamFleet {
     <#
     .SYNOPSIS
         Adds an AWS::AppStream::Fleet resource to the template
@@ -63,6 +63,12 @@
     .PARAMETER MaxUserDurationInSeconds
 		Required: False    
 		Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-appstream-fleet.html#cfn-appstream-fleet-maxuserdurationinseconds    
+		PrimitiveType: Integer    
+		UpdateType: Mutable    
+
+    .PARAMETER IdleDisconnectTimeoutInSeconds
+		Required: False    
+		Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-appstream-fleet.html#cfn-appstream-fleet-idledisconnecttimeoutinseconds    
 		PrimitiveType: Integer    
 		UpdateType: Mutable    
 
@@ -198,6 +204,9 @@
         [parameter(Mandatory = $false)]
         [Int]
         $MaxUserDurationInSeconds,
+        [parameter(Mandatory = $false)]
+        [Int]
+        $IdleDisconnectTimeoutInSeconds,
         [parameter(Mandatory = $false)]
         [Int]
         $DisconnectTimeoutInSeconds,

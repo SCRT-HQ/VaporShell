@@ -1,4 +1,4 @@
-﻿function Add-VSAppMeshVirtualRouterVirtualRouterListener {
+function Add-VSAppMeshVirtualRouterVirtualRouterListener {
     <#
     .SYNOPSIS
         Adds an AWS::AppMesh::VirtualRouter.VirtualRouterListener resource property to the template

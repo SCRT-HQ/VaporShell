@@ -1,4 +1,4 @@
-﻿function Add-VSBatchJobDefinitionContainerProperties {
+function Add-VSBatchJobDefinitionContainerProperties {
     <#
     .SYNOPSIS
         Adds an AWS::Batch::JobDefinition.ContainerProperties resource property to the template
@@ -25,6 +25,12 @@
 		Required: False    
 		Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-batch-jobdefinition-containerproperties.html#cfn-batch-jobdefinition-containerproperties-privileged    
 		PrimitiveType: Boolean    
+		UpdateType: Mutable    
+
+    .PARAMETER LinuxParameters
+		Type: LinuxParameters    
+		Required: False    
+		Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-batch-jobdefinition-containerproperties.html#cfn-batch-jobdefinition-containerproperties-linuxparameters    
 		UpdateType: Mutable    
 
     .PARAMETER JobRoleArn
@@ -123,6 +129,8 @@
         [parameter(Mandatory = $false)]
         [System.Boolean]
         $Privileged,
+        [parameter(Mandatory = $false)]
+        $LinuxParameters,
         [parameter(Mandatory = $false)]
         [ValidateScript( {
                 $allowedTypes = "System.String","Vaporshell.Function","Vaporshell.Condition"

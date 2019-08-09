@@ -1,4 +1,4 @@
-﻿function Add-VSS3BucketServerSideEncryptionRule {
+function Add-VSS3BucketServerSideEncryptionRule {
     <#
     .SYNOPSIS
         Adds an AWS::S3::Bucket.ServerSideEncryptionRule resource property to the template

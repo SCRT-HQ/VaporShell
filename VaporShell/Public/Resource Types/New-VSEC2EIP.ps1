@@ -1,4 +1,4 @@
-﻿function New-VSEC2EIP {
+function New-VSEC2EIP {
     <#
     .SYNOPSIS
         Adds an AWS::EC2::EIP resource to the template

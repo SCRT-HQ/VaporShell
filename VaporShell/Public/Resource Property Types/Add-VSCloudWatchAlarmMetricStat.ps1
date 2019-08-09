@@ -1,4 +1,4 @@
-﻿function Add-VSCloudWatchAlarmMetricStat {
+function Add-VSCloudWatchAlarmMetricStat {
     <#
     .SYNOPSIS
         Adds an AWS::CloudWatch::Alarm.MetricStat resource property to the template

@@ -1,4 +1,4 @@
-﻿function New-VSSSMMaintenanceWindowTask {
+function New-VSSSMMaintenanceWindowTask {
     <#
     .SYNOPSIS
         Adds an AWS::SSM::MaintenanceWindowTask resource to the template
@@ -25,7 +25,7 @@
 		UpdateType: Mutable    
 
     .PARAMETER ServiceRoleArn
-		Required: True    
+		Required: False    
 		Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ssm-maintenancewindowtask.html#cfn-ssm-maintenancewindowtask-servicerolearn    
 		PrimitiveType: String    
 		UpdateType: Mutable    
@@ -68,7 +68,7 @@
 		UpdateType: Mutable    
 
     .PARAMETER WindowId
-		Required: False    
+		Required: True    
 		Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ssm-maintenancewindowtask.html#cfn-ssm-maintenancewindowtask-windowid    
 		PrimitiveType: String    
 		UpdateType: Immutable    
@@ -158,7 +158,7 @@
                 }
             })]
         $Description,
-        [parameter(Mandatory = $true)]
+        [parameter(Mandatory = $false)]
         [ValidateScript( {
                 $allowedTypes = "System.String","Vaporshell.Function","Vaporshell.Condition"
                 if ([string]$($_.PSTypeNames) -match "($(($allowedTypes|ForEach-Object{[RegEx]::Escape($_)}) -join '|'))") {
@@ -218,7 +218,7 @@
         $TaskArn,
         [parameter(Mandatory = $false)]
         $TaskInvocationParameters,
-        [parameter(Mandatory = $false)]
+        [parameter(Mandatory = $true)]
         [ValidateScript( {
                 $allowedTypes = "System.String","Vaporshell.Function","Vaporshell.Condition"
                 if ([string]$($_.PSTypeNames) -match "($(($allowedTypes|ForEach-Object{[RegEx]::Escape($_)}) -join '|'))") {

@@ -1,4 +1,4 @@
-﻿function Add-VSElasticLoadBalancingV2LoadBalancerLoadBalancerAttribute {
+function Add-VSElasticLoadBalancingV2LoadBalancerLoadBalancerAttribute {
     <#
     .SYNOPSIS
         Adds an AWS::ElasticLoadBalancingV2::LoadBalancer.LoadBalancerAttribute resource property to the template

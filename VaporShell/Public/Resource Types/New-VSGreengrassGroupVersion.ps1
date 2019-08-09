@@ -1,4 +1,4 @@
-﻿function New-VSGreengrassGroupVersion {
+function New-VSGreengrassGroupVersion {
     <#
     .SYNOPSIS
         Adds an AWS::Greengrass::GroupVersion resource to the template

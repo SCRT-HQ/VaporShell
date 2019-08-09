@@ -1,4 +1,4 @@
-﻿function New-VSAppMeshMesh {
+function New-VSAppMeshMesh {
     <#
     .SYNOPSIS
         Adds an AWS::AppMesh::Mesh resource to the template
@@ -28,7 +28,7 @@
 		Type: List    
 		Required: False    
 		Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-appmesh-mesh.html#cfn-appmesh-mesh-tags    
-		ItemType: TagRef    
+		ItemType: Tag    
 		UpdateType: Mutable    
 
     .PARAMETER DeletionPolicy
@@ -91,7 +91,7 @@
         $Spec,
         [parameter(Mandatory = $false)]
         [ValidateScript( {
-                $allowedTypes = "Vaporshell.Resource.AppMesh.Mesh.TagRef"
+                $allowedTypes = "Vaporshell.Resource.Tag","System.Management.Automation.PSCustomObject"
                 if ([string]$($_.PSTypeNames) -match "($(($allowedTypes|ForEach-Object{[RegEx]::Escape($_)}) -join '|'))") {
                     $true
                 }

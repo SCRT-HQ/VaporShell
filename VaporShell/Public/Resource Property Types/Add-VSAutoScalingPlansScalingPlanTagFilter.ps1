@@ -1,4 +1,4 @@
-﻿function Add-VSAutoScalingPlansScalingPlanTagFilter {
+function Add-VSAutoScalingPlansScalingPlanTagFilter {
     <#
     .SYNOPSIS
         Adds an AWS::AutoScalingPlans::ScalingPlan.TagFilter resource property to the template

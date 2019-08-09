@@ -1,4 +1,4 @@
-﻿function Add-VSAppMeshRouteHttpRouteAction {
+function Add-VSAppMeshRouteHttpRouteAction {
     <#
     .SYNOPSIS
         Adds an AWS::AppMesh::Route.HttpRouteAction resource property to the template

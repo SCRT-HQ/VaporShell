@@ -1,4 +1,4 @@
-﻿function Add-VSIoTAnalyticsDatasetFilter {
+function Add-VSIoTAnalyticsDatasetFilter {
     <#
     .SYNOPSIS
         Adds an AWS::IoTAnalytics::Dataset.Filter resource property to the template

@@ -1,4 +1,4 @@
-﻿function Add-VSIoTTopicRuleKinesisAction {
+function Add-VSIoTTopicRuleKinesisAction {
     <#
     .SYNOPSIS
         Adds an AWS::IoT::TopicRule.KinesisAction resource property to the template

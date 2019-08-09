@@ -1,4 +1,4 @@
-﻿function Add-VSOpsWorksStackStackConfigurationManager {
+function Add-VSOpsWorksStackStackConfigurationManager {
     <#
     .SYNOPSIS
         Adds an AWS::OpsWorks::Stack.StackConfigurationManager resource property to the template

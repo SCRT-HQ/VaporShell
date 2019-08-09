@@ -1,4 +1,4 @@
-﻿function New-VSServiceDiscoveryHttpNamespace {
+function New-VSServiceDiscoveryHttpNamespace {
     <#
     .SYNOPSIS
         Adds an AWS::ServiceDiscovery::HttpNamespace resource to the template

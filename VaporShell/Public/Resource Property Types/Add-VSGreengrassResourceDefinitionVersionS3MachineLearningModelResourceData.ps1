@@ -1,4 +1,4 @@
-﻿function Add-VSGreengrassResourceDefinitionVersionS3MachineLearningModelResourceData {
+function Add-VSGreengrassResourceDefinitionVersionS3MachineLearningModelResourceData {
     <#
     .SYNOPSIS
         Adds an AWS::Greengrass::ResourceDefinitionVersion.S3MachineLearningModelResourceData resource property to the template

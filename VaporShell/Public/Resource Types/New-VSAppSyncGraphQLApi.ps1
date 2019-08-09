@@ -1,4 +1,4 @@
-﻿function New-VSAppSyncGraphQLApi {
+function New-VSAppSyncGraphQLApi {
     <#
     .SYNOPSIS
         Adds an AWS::AppSync::GraphQLApi resource to the template
@@ -24,6 +24,12 @@
 		Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-appsync-graphqlapi.html#cfn-appsync-graphqlapi-userpoolconfig    
 		UpdateType: Mutable    
 
+    .PARAMETER Tags
+		Type: Tags    
+		Required: False    
+		Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-appsync-graphqlapi.html#cfn-appsync-graphqlapi-tags    
+		UpdateType: Mutable    
+
     .PARAMETER Name
 		Required: True    
 		Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-appsync-graphqlapi.html#cfn-appsync-graphqlapi-name    
@@ -40,6 +46,12 @@
 		Type: LogConfig    
 		Required: False    
 		Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-appsync-graphqlapi.html#cfn-appsync-graphqlapi-logconfig    
+		UpdateType: Mutable    
+
+    .PARAMETER AdditionalAuthenticationProviders
+		Type: AdditionalAuthenticationProviders    
+		Required: False    
+		Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-appsync-graphqlapi.html#cfn-appsync-graphqlapi-additionalauthenticationproviders    
 		UpdateType: Mutable    
 
     .PARAMETER DeletionPolicy
@@ -91,6 +103,8 @@
         $OpenIDConnectConfig,
         [parameter(Mandatory = $false)]
         $UserPoolConfig,
+        [parameter(Mandatory = $false)]
+        $Tags,
         [parameter(Mandatory = $true)]
         [ValidateScript( {
                 $allowedTypes = "System.String","Vaporshell.Function","Vaporshell.Condition"
@@ -115,6 +129,8 @@
         $AuthenticationType,
         [parameter(Mandatory = $false)]
         $LogConfig,
+        [parameter(Mandatory = $false)]
+        $AdditionalAuthenticationProviders,
         [ValidateSet("Delete","Retain","Snapshot")]
         [System.String]
         $DeletionPolicy,

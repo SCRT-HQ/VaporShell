@@ -1,4 +1,4 @@
-﻿function Add-VSDataPipelinePipelinePipelineObject {
+function Add-VSDataPipelinePipelinePipelineObject {
     <#
     .SYNOPSIS
         Adds an AWS::DataPipeline::Pipeline.PipelineObject resource property to the template

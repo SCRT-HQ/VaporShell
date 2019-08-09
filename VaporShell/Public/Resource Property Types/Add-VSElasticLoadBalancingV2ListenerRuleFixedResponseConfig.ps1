@@ -1,4 +1,4 @@
-﻿function Add-VSElasticLoadBalancingV2ListenerRuleFixedResponseConfig {
+function Add-VSElasticLoadBalancingV2ListenerRuleFixedResponseConfig {
     <#
     .SYNOPSIS
         Adds an AWS::ElasticLoadBalancingV2::ListenerRule.FixedResponseConfig resource property to the template

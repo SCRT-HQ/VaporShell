@@ -1,4 +1,4 @@
-﻿function Add-VSElasticLoadBalancingV2ListenerRuleRuleCondition {
+function Add-VSElasticLoadBalancingV2ListenerRuleRuleCondition {
     <#
     .SYNOPSIS
         Adds an AWS::ElasticLoadBalancingV2::ListenerRule.RuleCondition resource property to the template
@@ -13,6 +13,42 @@
 		Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-elasticloadbalancingv2-listenerrule-conditions.html#cfn-elasticloadbalancingv2-listenerrule-conditions-field    
 		PrimitiveType: String    
 		Required: False    
+		UpdateType: Mutable    
+
+    .PARAMETER HostHeaderConfig
+		Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-elasticloadbalancingv2-listenerrule-conditions.html#cfn-elasticloadbalancingv2-listenerrule-rulecondition-hostheaderconfig    
+		Required: False    
+		Type: HostHeaderConfig    
+		UpdateType: Mutable    
+
+    .PARAMETER HttpHeaderConfig
+		Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-elasticloadbalancingv2-listenerrule-conditions.html#cfn-elasticloadbalancingv2-listenerrule-rulecondition-httpheaderconfig    
+		Required: False    
+		Type: HttpHeaderConfig    
+		UpdateType: Mutable    
+
+    .PARAMETER HttpRequestMethodConfig
+		Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-elasticloadbalancingv2-listenerrule-conditions.html#cfn-elasticloadbalancingv2-listenerrule-rulecondition-httprequestmethodconfig    
+		Required: False    
+		Type: HttpRequestMethodConfig    
+		UpdateType: Mutable    
+
+    .PARAMETER PathPatternConfig
+		Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-elasticloadbalancingv2-listenerrule-conditions.html#cfn-elasticloadbalancingv2-listenerrule-rulecondition-pathpatternconfig    
+		Required: False    
+		Type: PathPatternConfig    
+		UpdateType: Mutable    
+
+    .PARAMETER QueryStringConfig
+		Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-elasticloadbalancingv2-listenerrule-conditions.html#cfn-elasticloadbalancingv2-listenerrule-rulecondition-querystringconfig    
+		Required: False    
+		Type: QueryStringConfig    
+		UpdateType: Mutable    
+
+    .PARAMETER SourceIpConfig
+		Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-elasticloadbalancingv2-listenerrule-conditions.html#cfn-elasticloadbalancingv2-listenerrule-rulecondition-sourceipconfig    
+		Required: False    
+		Type: SourceIpConfig    
 		UpdateType: Mutable    
 
     .PARAMETER Values
@@ -41,6 +77,18 @@
                 }
             })]
         $Field,
+        [parameter(Mandatory = $false)]
+        $HostHeaderConfig,
+        [parameter(Mandatory = $false)]
+        $HttpHeaderConfig,
+        [parameter(Mandatory = $false)]
+        $HttpRequestMethodConfig,
+        [parameter(Mandatory = $false)]
+        $PathPatternConfig,
+        [parameter(Mandatory = $false)]
+        $QueryStringConfig,
+        [parameter(Mandatory = $false)]
+        $SourceIpConfig,
         [parameter(Mandatory = $false)]
         $Values
     )

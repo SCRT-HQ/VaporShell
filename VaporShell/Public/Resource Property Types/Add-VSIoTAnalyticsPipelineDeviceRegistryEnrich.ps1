@@ -1,4 +1,4 @@
-﻿function Add-VSIoTAnalyticsPipelineDeviceRegistryEnrich {
+function Add-VSIoTAnalyticsPipelineDeviceRegistryEnrich {
     <#
     .SYNOPSIS
         Adds an AWS::IoTAnalytics::Pipeline.DeviceRegistryEnrich resource property to the template

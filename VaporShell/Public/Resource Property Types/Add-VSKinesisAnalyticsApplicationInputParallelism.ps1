@@ -1,4 +1,4 @@
-﻿function Add-VSKinesisAnalyticsApplicationInputParallelism {
+function Add-VSKinesisAnalyticsApplicationInputParallelism {
     <#
     .SYNOPSIS
         Adds an AWS::KinesisAnalytics::Application.InputParallelism resource property to the template

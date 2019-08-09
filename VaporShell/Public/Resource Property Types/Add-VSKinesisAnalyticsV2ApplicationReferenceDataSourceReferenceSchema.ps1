@@ -1,4 +1,4 @@
-﻿function Add-VSKinesisAnalyticsV2ApplicationReferenceDataSourceReferenceSchema {
+function Add-VSKinesisAnalyticsV2ApplicationReferenceDataSourceReferenceSchema {
     <#
     .SYNOPSIS
         Adds an AWS::KinesisAnalyticsV2::ApplicationReferenceDataSource.ReferenceSchema resource property to the template

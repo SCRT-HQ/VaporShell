@@ -1,4 +1,4 @@
-﻿function Add-VSEMRInstanceGroupConfigScalingAction {
+function Add-VSEMRInstanceGroupConfigScalingAction {
     <#
     .SYNOPSIS
         Adds an AWS::EMR::InstanceGroupConfig.ScalingAction resource property to the template

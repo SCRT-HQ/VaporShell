@@ -1,4 +1,4 @@
-﻿function Add-VSElasticLoadBalancingLoadBalancerConnectionSettings {
+function Add-VSElasticLoadBalancingLoadBalancerConnectionSettings {
     <#
     .SYNOPSIS
         Adds an AWS::ElasticLoadBalancing::LoadBalancer.ConnectionSettings resource property to the template

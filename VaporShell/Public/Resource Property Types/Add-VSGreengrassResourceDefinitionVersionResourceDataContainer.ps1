@@ -1,4 +1,4 @@
-﻿function Add-VSGreengrassResourceDefinitionVersionResourceDataContainer {
+function Add-VSGreengrassResourceDefinitionVersionResourceDataContainer {
     <#
     .SYNOPSIS
         Adds an AWS::Greengrass::ResourceDefinitionVersion.ResourceDataContainer resource property to the template

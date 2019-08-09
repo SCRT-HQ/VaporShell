@@ -1,4 +1,4 @@
-﻿function New-VSAppStreamStackFleetAssociation {
+function New-VSAppStreamStackFleetAssociation {
     <#
     .SYNOPSIS
         Adds an AWS::AppStream::StackFleetAssociation resource to the template

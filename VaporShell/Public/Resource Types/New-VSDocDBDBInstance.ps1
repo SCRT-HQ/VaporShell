@@ -1,4 +1,4 @@
-﻿function New-VSDocDBDBInstance {
+function New-VSDocDBDBInstance {
     <#
     .SYNOPSIS
         Adds an AWS::DocDB::DBInstance resource to the template

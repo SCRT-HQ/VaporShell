@@ -1,4 +1,4 @@
-﻿function Add-VSAppMeshVirtualNodePortMapping {
+function Add-VSAppMeshVirtualNodePortMapping {
     <#
     .SYNOPSIS
         Adds an AWS::AppMesh::VirtualNode.PortMapping resource property to the template

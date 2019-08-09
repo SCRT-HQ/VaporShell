@@ -1,4 +1,4 @@
-﻿function New-VSGreengrassResourceDefinitionVersion {
+function New-VSGreengrassResourceDefinitionVersion {
     <#
     .SYNOPSIS
         Adds an AWS::Greengrass::ResourceDefinitionVersion resource to the template

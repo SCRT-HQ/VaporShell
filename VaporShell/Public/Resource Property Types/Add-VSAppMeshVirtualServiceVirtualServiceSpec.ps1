@@ -1,4 +1,4 @@
-﻿function Add-VSAppMeshVirtualServiceVirtualServiceSpec {
+function Add-VSAppMeshVirtualServiceVirtualServiceSpec {
     <#
     .SYNOPSIS
         Adds an AWS::AppMesh::VirtualService.VirtualServiceSpec resource property to the template

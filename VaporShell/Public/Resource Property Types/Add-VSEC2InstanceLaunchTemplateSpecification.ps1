@@ -1,4 +1,4 @@
-﻿function Add-VSEC2InstanceLaunchTemplateSpecification {
+function Add-VSEC2InstanceLaunchTemplateSpecification {
     <#
     .SYNOPSIS
         Adds an AWS::EC2::Instance.LaunchTemplateSpecification resource property to the template

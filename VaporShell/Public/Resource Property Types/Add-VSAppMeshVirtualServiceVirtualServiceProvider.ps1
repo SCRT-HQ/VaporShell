@@ -1,4 +1,4 @@
-﻿function Add-VSAppMeshVirtualServiceVirtualServiceProvider {
+function Add-VSAppMeshVirtualServiceVirtualServiceProvider {
     <#
     .SYNOPSIS
         Adds an AWS::AppMesh::VirtualService.VirtualServiceProvider resource property to the template

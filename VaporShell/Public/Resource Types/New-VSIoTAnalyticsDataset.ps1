@@ -1,4 +1,4 @@
-﻿function New-VSIoTAnalyticsDataset {
+function New-VSIoTAnalyticsDataset {
     <#
     .SYNOPSIS
         Adds an AWS::IoTAnalytics::Dataset resource to the template
@@ -25,11 +25,24 @@
 		PrimitiveType: String    
 		UpdateType: Immutable    
 
+    .PARAMETER ContentDeliveryRules
+		Type: List    
+		Required: False    
+		Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-iotanalytics-dataset.html#cfn-iotanalytics-dataset-contentdeliveryrules    
+		ItemType: DatasetContentDeliveryRule    
+		UpdateType: Mutable    
+
     .PARAMETER Triggers
 		Type: List    
 		Required: False    
 		Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-iotanalytics-dataset.html#cfn-iotanalytics-dataset-triggers    
 		ItemType: Trigger    
+		UpdateType: Mutable    
+
+    .PARAMETER VersioningConfiguration
+		Type: VersioningConfiguration    
+		Required: False    
+		Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-iotanalytics-dataset.html#cfn-iotanalytics-dataset-versioningconfiguration    
 		UpdateType: Mutable    
 
     .PARAMETER RetentionPeriod
@@ -114,6 +127,17 @@
         $DatasetName,
         [parameter(Mandatory = $false)]
         [ValidateScript( {
+                $allowedTypes = "Vaporshell.Resource.IoTAnalytics.Dataset.DatasetContentDeliveryRule"
+                if ([string]$($_.PSTypeNames) -match "($(($allowedTypes|ForEach-Object{[RegEx]::Escape($_)}) -join '|'))") {
+                    $true
+                }
+                else {
+                    $PSCmdlet.ThrowTerminatingError((New-VSError -String "This parameter only accepts the following types: $($allowedTypes -join ", "). The current types of the value are: $($_.PSTypeNames -join ", ")."))
+                }
+            })]
+        $ContentDeliveryRules,
+        [parameter(Mandatory = $false)]
+        [ValidateScript( {
                 $allowedTypes = "Vaporshell.Resource.IoTAnalytics.Dataset.Trigger"
                 if ([string]$($_.PSTypeNames) -match "($(($allowedTypes|ForEach-Object{[RegEx]::Escape($_)}) -join '|'))") {
                     $true
@@ -123,6 +147,8 @@
                 }
             })]
         $Triggers,
+        [parameter(Mandatory = $false)]
+        $VersioningConfiguration,
         [parameter(Mandatory = $false)]
         $RetentionPeriod,
         [parameter(Mandatory = $false)]
@@ -198,6 +224,12 @@
                         $ResourceParams.Add("Properties",([PSCustomObject]@{}))
                     }
                     $ResourceParams["Properties"] | Add-Member -MemberType NoteProperty -Name Actions -Value @($Actions)
+                }
+                ContentDeliveryRules {
+                    if (!($ResourceParams["Properties"])) {
+                        $ResourceParams.Add("Properties",([PSCustomObject]@{}))
+                    }
+                    $ResourceParams["Properties"] | Add-Member -MemberType NoteProperty -Name ContentDeliveryRules -Value @($ContentDeliveryRules)
                 }
                 Triggers {
                     if (!($ResourceParams["Properties"])) {

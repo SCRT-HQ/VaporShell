@@ -1,4 +1,4 @@
-﻿function New-VSGreengrassCoreDefinition {
+function New-VSGreengrassCoreDefinition {
     <#
     .SYNOPSIS
         Adds an AWS::Greengrass::CoreDefinition resource to the template

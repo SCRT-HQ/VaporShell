@@ -1,4 +1,4 @@
-﻿function Add-VSGreengrassFunctionDefinitionEnvironment {
+function Add-VSGreengrassFunctionDefinitionEnvironment {
     <#
     .SYNOPSIS
         Adds an AWS::Greengrass::FunctionDefinition.Environment resource property to the template

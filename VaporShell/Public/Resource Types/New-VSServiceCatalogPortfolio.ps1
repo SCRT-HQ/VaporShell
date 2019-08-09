@@ -1,4 +1,4 @@
-﻿function New-VSServiceCatalogPortfolio {
+function New-VSServiceCatalogPortfolio {
     <#
     .SYNOPSIS
         Adds an AWS::ServiceCatalog::Portfolio resource to the template

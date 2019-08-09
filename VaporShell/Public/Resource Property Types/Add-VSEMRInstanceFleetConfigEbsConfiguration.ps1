@@ -1,4 +1,4 @@
-﻿function Add-VSEMRInstanceFleetConfigEbsConfiguration {
+function Add-VSEMRInstanceFleetConfigEbsConfiguration {
     <#
     .SYNOPSIS
         Adds an AWS::EMR::InstanceFleetConfig.EbsConfiguration resource property to the template

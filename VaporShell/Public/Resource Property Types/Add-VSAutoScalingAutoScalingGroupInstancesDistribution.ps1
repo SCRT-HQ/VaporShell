@@ -1,4 +1,4 @@
-﻿function Add-VSAutoScalingAutoScalingGroupInstancesDistribution {
+function Add-VSAutoScalingAutoScalingGroupInstancesDistribution {
     <#
     .SYNOPSIS
         Adds an AWS::AutoScaling::AutoScalingGroup.InstancesDistribution resource property to the template

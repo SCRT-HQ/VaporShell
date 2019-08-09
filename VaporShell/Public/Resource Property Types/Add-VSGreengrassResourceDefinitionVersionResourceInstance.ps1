@@ -1,4 +1,4 @@
-﻿function Add-VSGreengrassResourceDefinitionVersionResourceInstance {
+function Add-VSGreengrassResourceDefinitionVersionResourceInstance {
     <#
     .SYNOPSIS
         Adds an AWS::Greengrass::ResourceDefinitionVersion.ResourceInstance resource property to the template
