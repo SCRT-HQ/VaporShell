@@ -105,7 +105,7 @@ Website: https://vaporshell.io/
         PSData = @{
 
             # Tags applied to this module. These help with module discovery in online galleries.
-            Tags       = 'AWS','CloudFormation','CFN','DevOps','Automation','JSON','YAML','IaC','InfrastructureAsCode','PSEdition_Core','PSEdition_Desktop'
+            Tags       = 'AWS','CloudFormation','CFN','DevOps','Automation','JSON','YAML','IaC','InfrastructureAsCode','PSEdition_Core','PSEdition_Desktop','Windows','Mac','Linux'
 
             # A URL to the license for this module.
             LicenseUri = 'https://github.com/scrthq/VaporShell/blob/master/LICENSE'
