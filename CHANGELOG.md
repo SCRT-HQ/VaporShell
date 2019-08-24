@@ -2,6 +2,7 @@
 
 <!-- TOC -->
 
+* [2.8.1 - 2019-08-24](#281---2019-08-24)
 * [2.8.0 - 2019-08-08](#280---2019-08-08)
 * [2.7.3 - 2019-04-16](#273---2019-04-16)
 * [2.7.2 - 2019-04-16](#272---2019-04-16)
@@ -44,6 +45,12 @@
 * [0.7.02](#0702)
 
 <!-- /TOC -->
+
+## 2.8.1 - 2019-08-24
+
+* Miscellaneous
+  * Updated Package name casing on the PowerShell Gallery from `Vaporshell` to `VaporShell` to fix module importing on Linux.
+  * Brought Resource Type and Property Type functions up to current spec sheet.
 
 ## 2.8.0 - 2019-08-08
 
