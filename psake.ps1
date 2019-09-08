@@ -41,10 +41,10 @@ task Init {
 
 task Update -depends Init {
     '    Updating Resource and Property Type functions with current AWS spec sheet...'
-    Remove-Module $env:BHProjectName -ErrorAction SilentlyContinue -Force -Verbose:$false
-    Import-Module $env:BHPSModuleManifest -Force -Verbose:$false
+    Get-ChildItem (Join-Path $PSScriptRoot 'ci') -Filter '*.ps1' | ForEach-Object {
+        . $_.FullName
+    }
     Update-VSResourceFunctions
-    Remove-Module $env:BHProjectName -Force -Verbose:$false
 } -description 'Updates module functions before compilation'
 
 task Clean -depends Update {
