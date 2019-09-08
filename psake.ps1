@@ -242,7 +242,7 @@ $pesterScriptBlock = {
 
 task Pester -Depends Import $pesterScriptBlock -description 'Run Pester tests'
 
-task PesterOnly -Depends Update $pesterScriptBlock -description 'Run Pester tests only (no Clean/Compile)'
+task PesterOnly -Depends Init $pesterScriptBlock -description 'Run Pester tests only (no Clean/Compile)'
 
 task Analyze -Depends Pester {
     $analysis = Invoke-ScriptAnalyzer -Path "$PSScriptRoot\$($env:BHProjectName)" -Recurse -Verbose:$false
