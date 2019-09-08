@@ -10,40 +10,46 @@ function Add-VSMediaLiveChannelCaptionSelectorSettings {
         http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-medialive-channel-captionselectorsettings.html
 
     .PARAMETER DvbSubSourceSettings
-		Type: DvbSubSourceSettings    
-		Required: False    
-		Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-medialive-channel-captionselectorsettings.html#cfn-medialive-channel-captionselectorsettings-dvbsubsourcesettings    
-		UpdateType: Mutable    
+        Information about the DVB Sub captions to extract from the input.
+
+        Type: DvbSubSourceSettings
+        Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-medialive-channel-captionselectorsettings.html#cfn-medialive-channel-captionselectorsettings-dvbsubsourcesettings
+        UpdateType: Mutable
 
     .PARAMETER Scte27SourceSettings
-		Type: Scte27SourceSettings    
-		Required: False    
-		Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-medialive-channel-captionselectorsettings.html#cfn-medialive-channel-captionselectorsettings-scte27sourcesettings    
-		UpdateType: Mutable    
+        Information about the SCTE-27 captions to extract from the input.
+
+        Type: Scte27SourceSettings
+        Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-medialive-channel-captionselectorsettings.html#cfn-medialive-channel-captionselectorsettings-scte27sourcesettings
+        UpdateType: Mutable
 
     .PARAMETER AribSourceSettings
-		Type: AribSourceSettings    
-		Required: False    
-		Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-medialive-channel-captionselectorsettings.html#cfn-medialive-channel-captionselectorsettings-aribsourcesettings    
-		UpdateType: Mutable    
+        Information about the ARIB captions to extract from the input.
+
+        Type: AribSourceSettings
+        Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-medialive-channel-captionselectorsettings.html#cfn-medialive-channel-captionselectorsettings-aribsourcesettings
+        UpdateType: Mutable
 
     .PARAMETER EmbeddedSourceSettings
-		Type: EmbeddedSourceSettings    
-		Required: False    
-		Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-medialive-channel-captionselectorsettings.html#cfn-medialive-channel-captionselectorsettings-embeddedsourcesettings    
-		UpdateType: Mutable    
+        Information about the embedded captions to extract from the input.
+
+        Type: EmbeddedSourceSettings
+        Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-medialive-channel-captionselectorsettings.html#cfn-medialive-channel-captionselectorsettings-embeddedsourcesettings
+        UpdateType: Mutable
 
     .PARAMETER Scte20SourceSettings
-		Type: Scte20SourceSettings    
-		Required: False    
-		Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-medialive-channel-captionselectorsettings.html#cfn-medialive-channel-captionselectorsettings-scte20sourcesettings    
-		UpdateType: Mutable    
+        Information about the SCTE-20 captions to extract from the input.
+
+        Type: Scte20SourceSettings
+        Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-medialive-channel-captionselectorsettings.html#cfn-medialive-channel-captionselectorsettings-scte20sourcesettings
+        UpdateType: Mutable
 
     .PARAMETER TeletextSourceSettings
-		Type: TeletextSourceSettings    
-		Required: False    
-		Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-medialive-channel-captionselectorsettings.html#cfn-medialive-channel-captionselectorsettings-teletextsourcesettings    
-		UpdateType: Mutable    
+        Information about the Teletext captions to extract from the input.
+
+        Type: TeletextSourceSettings
+        Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-medialive-channel-captionselectorsettings.html#cfn-medialive-channel-captionselectorsettings-teletextsourcesettings
+        UpdateType: Mutable
 
     .FUNCTIONALITY
         Vaporshell

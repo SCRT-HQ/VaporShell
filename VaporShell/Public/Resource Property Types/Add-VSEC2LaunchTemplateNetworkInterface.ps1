@@ -10,85 +10,100 @@ function Add-VSEC2LaunchTemplateNetworkInterface {
         http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-launchtemplate-networkinterface.html
 
     .PARAMETER Description
-		Required: False    
-		Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-launchtemplate-networkinterface.html#cfn-ec2-launchtemplate-networkinterface-description    
-		PrimitiveType: String    
-		UpdateType: Mutable    
+        A description for the network interface.
+
+        Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-launchtemplate-networkinterface.html#cfn-ec2-launchtemplate-networkinterface-description
+        PrimitiveType: String
+        UpdateType: Mutable
 
     .PARAMETER PrivateIpAddress
-		Required: False    
-		Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-launchtemplate-networkinterface.html#cfn-ec2-launchtemplate-networkinterface-privateipaddress    
-		PrimitiveType: String    
-		UpdateType: Mutable    
+        The primary private IPv4 address of the network interface.
+
+        Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-launchtemplate-networkinterface.html#cfn-ec2-launchtemplate-networkinterface-privateipaddress
+        PrimitiveType: String
+        UpdateType: Mutable
 
     .PARAMETER PrivateIpAddresses
-		Type: List    
-		Required: False    
-		Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-launchtemplate-networkinterface.html#cfn-ec2-launchtemplate-networkinterface-privateipaddresses    
-		ItemType: PrivateIpAdd    
-		UpdateType: Mutable    
+        One or more private IPv4 addresses.
+
+        Type: List
+        Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-launchtemplate-networkinterface.html#cfn-ec2-launchtemplate-networkinterface-privateipaddresses
+        ItemType: PrivateIpAdd
+        UpdateType: Mutable
 
     .PARAMETER SecondaryPrivateIpAddressCount
-		Required: False    
-		Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-launchtemplate-networkinterface.html#cfn-ec2-launchtemplate-networkinterface-secondaryprivateipaddresscount    
-		PrimitiveType: Integer    
-		UpdateType: Mutable    
+        The number of secondary private IPv4 addresses to assign to a network interface.
+
+        Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-launchtemplate-networkinterface.html#cfn-ec2-launchtemplate-networkinterface-secondaryprivateipaddresscount
+        PrimitiveType: Integer
+        UpdateType: Mutable
 
     .PARAMETER DeviceIndex
-		Required: False    
-		Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-launchtemplate-networkinterface.html#cfn-ec2-launchtemplate-networkinterface-deviceindex    
-		PrimitiveType: Integer    
-		UpdateType: Mutable    
+        The device index for the network interface attachment.
+
+        Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-launchtemplate-networkinterface.html#cfn-ec2-launchtemplate-networkinterface-deviceindex
+        PrimitiveType: Integer
+        UpdateType: Mutable
 
     .PARAMETER SubnetId
-		Required: False    
-		Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-launchtemplate-networkinterface.html#cfn-ec2-launchtemplate-networkinterface-subnetid    
-		PrimitiveType: String    
-		UpdateType: Mutable    
+        The ID of the subnet for the network interface.
+
+        Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-launchtemplate-networkinterface.html#cfn-ec2-launchtemplate-networkinterface-subnetid
+        PrimitiveType: String
+        UpdateType: Mutable
 
     .PARAMETER Ipv6Addresses
-		Type: List    
-		Required: False    
-		Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-launchtemplate-networkinterface.html#cfn-ec2-launchtemplate-networkinterface-ipv6addresses    
-		ItemType: Ipv6Add    
-		UpdateType: Mutable    
+        One or more specific IPv6 addresses from the IPv6 CIDR block range of your subnet. You can't use this option if you're specifying a number of IPv6 addresses.
+
+        Type: List
+        Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-launchtemplate-networkinterface.html#cfn-ec2-launchtemplate-networkinterface-ipv6addresses
+        ItemType: Ipv6Add
+        UpdateType: Mutable
 
     .PARAMETER AssociatePublicIpAddress
-		Required: False    
-		Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-launchtemplate-networkinterface.html#cfn-ec2-launchtemplate-networkinterface-associatepublicipaddress    
-		PrimitiveType: Boolean    
-		UpdateType: Mutable    
+        Associates a public IPv4 address with eth0 for a new network interface.
+
+        Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-launchtemplate-networkinterface.html#cfn-ec2-launchtemplate-networkinterface-associatepublicipaddress
+        PrimitiveType: Boolean
+        UpdateType: Mutable
 
     .PARAMETER NetworkInterfaceId
-		Required: False    
-		Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-launchtemplate-networkinterface.html#cfn-ec2-launchtemplate-networkinterface-networkinterfaceid    
-		PrimitiveType: String    
-		UpdateType: Mutable    
+        The ID of the network interface.
+
+        Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-launchtemplate-networkinterface.html#cfn-ec2-launchtemplate-networkinterface-networkinterfaceid
+        PrimitiveType: String
+        UpdateType: Mutable
 
     .PARAMETER InterfaceType
-		Required: False    
-		Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-launchtemplate-networkinterface.html#cfn-ec2-launchtemplate-networkinterface-interfacetype    
-		PrimitiveType: String    
-		UpdateType: Mutable    
+        The type of network interface. To create an Elastic Fabric Adapter EFA, specify efa. For more information, see Elastic Fabric Adapter: https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/efa.html in the *Amazon Elastic Compute Cloud User Guide*.
+If you are not creating an EFA, specify interface or omit this parameter.
+Valid values: interface | efa
+
+        Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-launchtemplate-networkinterface.html#cfn-ec2-launchtemplate-networkinterface-interfacetype
+        PrimitiveType: String
+        UpdateType: Mutable
 
     .PARAMETER Ipv6AddressCount
-		Required: False    
-		Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-launchtemplate-networkinterface.html#cfn-ec2-launchtemplate-networkinterface-ipv6addresscount    
-		PrimitiveType: Integer    
-		UpdateType: Mutable    
+        The number of IPv6 addresses to assign to a network interface. Amazon EC2 automatically selects the IPv6 addresses from the subnet range. You can't use this option if specifying specific IPv6 addresses.
+
+        Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-launchtemplate-networkinterface.html#cfn-ec2-launchtemplate-networkinterface-ipv6addresscount
+        PrimitiveType: Integer
+        UpdateType: Mutable
 
     .PARAMETER Groups
-		PrimitiveItemType: String    
-		Type: List    
-		Required: False    
-		Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-launchtemplate-networkinterface.html#cfn-ec2-launchtemplate-networkinterface-groups    
-		UpdateType: Mutable    
+        The IDs of one or more security groups.
+
+        PrimitiveItemType: String
+        Type: List
+        Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-launchtemplate-networkinterface.html#cfn-ec2-launchtemplate-networkinterface-groups
+        UpdateType: Mutable
 
     .PARAMETER DeleteOnTermination
-		Required: False    
-		Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-launchtemplate-networkinterface.html#cfn-ec2-launchtemplate-networkinterface-deleteontermination    
-		PrimitiveType: Boolean    
-		UpdateType: Mutable    
+        Indicates whether the network interface is deleted when the instance is terminated.
+
+        Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-launchtemplate-networkinterface.html#cfn-ec2-launchtemplate-networkinterface-deleteontermination
+        PrimitiveType: Boolean
+        UpdateType: Mutable
 
     .FUNCTIONALITY
         Vaporshell

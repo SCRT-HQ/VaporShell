@@ -13,23 +13,26 @@ function New-VSAppStreamDirectoryConfig {
         The logical ID must be alphanumeric (A-Za-z0-9) and unique within the template. Use the logical name to reference the resource in other parts of the template. For example, if you want to map an Amazon Elastic Block Store volume to an Amazon EC2 instance, you reference the logical IDs to associate the block stores with the instance.
 
     .PARAMETER OrganizationalUnitDistinguishedNames
-		PrimitiveItemType: String    
-		Type: List    
-		Required: True    
-		Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-appstream-directoryconfig.html#cfn-appstream-directoryconfig-organizationalunitdistinguishednames    
-		UpdateType: Mutable    
+        The distinguished names of the organizational units for computer accounts.
+
+        PrimitiveItemType: String
+        Type: List
+        Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-appstream-directoryconfig.html#cfn-appstream-directoryconfig-organizationalunitdistinguishednames
+        UpdateType: Mutable
 
     .PARAMETER ServiceAccountCredentials
-		Type: ServiceAccountCredentials    
-		Required: True    
-		Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-appstream-directoryconfig.html#cfn-appstream-directoryconfig-serviceaccountcredentials    
-		UpdateType: Mutable    
+        The credentials for the service account used by the streaming instance to connect to the directory. Do not use this parameter directly. Use ServiceAccountCredentials as an input parameter with noEcho as shown in the Parameters: https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/parameters-section-structure.html. For best practices information, see Do Not Embed Credentials in Your Templates: https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/best-practices.html#creds.
+
+        Type: ServiceAccountCredentials
+        Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-appstream-directoryconfig.html#cfn-appstream-directoryconfig-serviceaccountcredentials
+        UpdateType: Mutable
 
     .PARAMETER DirectoryName
-		Required: True    
-		Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-appstream-directoryconfig.html#cfn-appstream-directoryconfig-directoryname    
-		PrimitiveType: String    
-		UpdateType: Immutable    
+        The fully qualified name of the directory for example, corp.example.com.
+
+        Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-appstream-directoryconfig.html#cfn-appstream-directoryconfig-directoryname
+        PrimitiveType: String
+        UpdateType: Immutable
 
     .PARAMETER DeletionPolicy
         With the DeletionPolicy attribute you can preserve or (in some cases) backup a resource when its stack is deleted. You specify a DeletionPolicy attribute for each resource that you want to control. If a resource has no DeletionPolicy attribute, AWS CloudFormation deletes the resource by default.

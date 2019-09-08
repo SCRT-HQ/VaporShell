@@ -10,16 +10,18 @@ function Add-VSKinesisAnalyticsV2ApplicationApplicationCodeConfiguration {
         http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-kinesisanalyticsv2-application-applicationcodeconfiguration.html
 
     .PARAMETER CodeContentType
-		Required: True    
-		Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-kinesisanalyticsv2-application-applicationcodeconfiguration.html#cfn-kinesisanalyticsv2-application-applicationcodeconfiguration-codecontenttype    
-		PrimitiveType: String    
-		UpdateType: Mutable    
+        Specifies whether the code content is in text or zip format.
+
+        Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-kinesisanalyticsv2-application-applicationcodeconfiguration.html#cfn-kinesisanalyticsv2-application-applicationcodeconfiguration-codecontenttype
+        PrimitiveType: String
+        UpdateType: Mutable
 
     .PARAMETER CodeContent
-		Type: CodeContent    
-		Required: True    
-		Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-kinesisanalyticsv2-application-applicationcodeconfiguration.html#cfn-kinesisanalyticsv2-application-applicationcodeconfiguration-codecontent    
-		UpdateType: Mutable    
+        The location and type of the application code.
+
+        Type: CodeContent
+        Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-kinesisanalyticsv2-application-applicationcodeconfiguration.html#cfn-kinesisanalyticsv2-application-applicationcodeconfiguration-codecontent
+        UpdateType: Mutable
 
     .FUNCTIONALITY
         Vaporshell

@@ -10,22 +10,25 @@ function Add-VSAmplifyBranchBasicAuthConfig {
         http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-amplify-branch-basicauthconfig.html
 
     .PARAMETER Username
-		Required: True    
-		Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-amplify-branch-basicauthconfig.html#cfn-amplify-branch-basicauthconfig-username    
-		PrimitiveType: String    
-		UpdateType: Mutable    
+        The user name for basic authorization.
+
+        Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-amplify-branch-basicauthconfig.html#cfn-amplify-branch-basicauthconfig-username
+        PrimitiveType: String
+        UpdateType: Mutable
 
     .PARAMETER EnableBasicAuth
-		Required: False    
-		Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-amplify-branch-basicauthconfig.html#cfn-amplify-branch-basicauthconfig-enablebasicauth    
-		PrimitiveType: Boolean    
-		UpdateType: Mutable    
+        Enables Basic Auth for the branch.
+
+        Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-amplify-branch-basicauthconfig.html#cfn-amplify-branch-basicauthconfig-enablebasicauth
+        PrimitiveType: Boolean
+        UpdateType: Mutable
 
     .PARAMETER Password
-		Required: True    
-		Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-amplify-branch-basicauthconfig.html#cfn-amplify-branch-basicauthconfig-password    
-		PrimitiveType: String    
-		UpdateType: Mutable    
+        The password for basic authorization.
+
+        Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-amplify-branch-basicauthconfig.html#cfn-amplify-branch-basicauthconfig-password
+        PrimitiveType: String
+        UpdateType: Mutable
 
     .FUNCTIONALITY
         Vaporshell

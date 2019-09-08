@@ -10,12 +10,14 @@ function Add-VSIoTThingAttributePayload {
         http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iot-thing-attributepayload.html
 
     .PARAMETER Attributes
-		Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iot-thing-attributepayload.html#cfn-iot-thing-attributepayload-attributes    
-		DuplicatesAllowed: False    
-		PrimitiveItemType: String    
-		Required: False    
-		Type: Map    
-		UpdateType: Mutable    
+        A JSON string containing up to three key-value pair in JSON format. For example:
+{"attributes":{"string1":"string2"}}
+
+        Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iot-thing-attributepayload.html#cfn-iot-thing-attributepayload-attributes
+        DuplicatesAllowed: False
+        PrimitiveItemType: String
+        Type: Map
+        UpdateType: Mutable
 
     .FUNCTIONALITY
         Vaporshell

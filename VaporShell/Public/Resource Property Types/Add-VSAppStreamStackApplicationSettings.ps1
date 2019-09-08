@@ -10,16 +10,18 @@ function Add-VSAppStreamStackApplicationSettings {
         http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-appstream-stack-applicationsettings.html
 
     .PARAMETER SettingsGroup
-		Required: False    
-		Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-appstream-stack-applicationsettings.html#cfn-appstream-stack-applicationsettings-settingsgroup    
-		PrimitiveType: String    
-		UpdateType: Mutable    
+        The path prefix for the S3 bucket where users’ persistent application settings are stored. You can allow the same persistent application settings to be used across multiple stacks by specifying the same settings group for each stack.
+
+        Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-appstream-stack-applicationsettings.html#cfn-appstream-stack-applicationsettings-settingsgroup
+        PrimitiveType: String
+        UpdateType: Mutable
 
     .PARAMETER Enabled
-		Required: True    
-		Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-appstream-stack-applicationsettings.html#cfn-appstream-stack-applicationsettings-enabled    
-		PrimitiveType: Boolean    
-		UpdateType: Mutable    
+        Enables or disables persistent application settings for users during their streaming sessions.
+
+        Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-appstream-stack-applicationsettings.html#cfn-appstream-stack-applicationsettings-enabled
+        PrimitiveType: Boolean
+        UpdateType: Mutable
 
     .FUNCTIONALITY
         Vaporshell

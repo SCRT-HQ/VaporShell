@@ -10,22 +10,25 @@ function Add-VSGameLiftBuildS3Location {
         http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-gamelift-build-storagelocation.html
 
     .PARAMETER Bucket
-		Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-gamelift-build-storagelocation.html#cfn-gamelift-build-storage-bucket    
-		PrimitiveType: String    
-		Required: True    
-		UpdateType: Immutable    
+        Amazon S3 bucket identifier. This is the name of the S3 bucket.
+
+        Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-gamelift-build-storagelocation.html#cfn-gamelift-build-storage-bucket
+        PrimitiveType: String
+        UpdateType: Immutable
 
     .PARAMETER Key
-		Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-gamelift-build-storagelocation.html#cfn-gamelift-build-storage-key    
-		PrimitiveType: String    
-		Required: True    
-		UpdateType: Immutable    
+        Name of the zip file containing the build files or script files.
+
+        Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-gamelift-build-storagelocation.html#cfn-gamelift-build-storage-key
+        PrimitiveType: String
+        UpdateType: Immutable
 
     .PARAMETER RoleArn
-		Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-gamelift-build-storagelocation.html#cfn-gamelift-build-storage-rolearn    
-		PrimitiveType: String    
-		Required: True    
-		UpdateType: Immutable    
+        Amazon Resource Name ARN: https://docs.aws.amazon.com/AmazonS3/latest/dev/s3-arn-format.html for an IAM role that allows Amazon GameLift to access the S3 bucket.
+
+        Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-gamelift-build-storagelocation.html#cfn-gamelift-build-storage-rolearn
+        PrimitiveType: String
+        UpdateType: Immutable
 
     .FUNCTIONALITY
         Vaporshell

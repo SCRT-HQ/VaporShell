@@ -10,16 +10,18 @@ function Add-VSTransferServerIdentityProviderDetails {
         http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-transfer-server-identityproviderdetails.html
 
     .PARAMETER InvocationRole
-		Required: True    
-		Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-transfer-server-identityproviderdetails.html#cfn-transfer-server-identityproviderdetails-invocationrole    
-		PrimitiveType: String    
-		UpdateType: Mutable    
+        The InvocationRole parameter provides the type of InvocationRole used to authenticate the user account.
+
+        Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-transfer-server-identityproviderdetails.html#cfn-transfer-server-identityproviderdetails-invocationrole
+        PrimitiveType: String
+        UpdateType: Mutable
 
     .PARAMETER Url
-		Required: True    
-		Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-transfer-server-identityproviderdetails.html#cfn-transfer-server-identityproviderdetails-url    
-		PrimitiveType: String    
-		UpdateType: Mutable    
+        The Url parameter provides contains the location of the service endpoint used to authenticate users.
+
+        Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-transfer-server-identityproviderdetails.html#cfn-transfer-server-identityproviderdetails-url
+        PrimitiveType: String
+        UpdateType: Mutable
 
     .FUNCTIONALITY
         Vaporshell

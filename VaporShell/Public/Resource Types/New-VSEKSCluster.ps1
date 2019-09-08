@@ -13,28 +13,32 @@ function New-VSEKSCluster {
         The logical ID must be alphanumeric (A-Za-z0-9) and unique within the template. Use the logical name to reference the resource in other parts of the template. For example, if you want to map an Amazon Elastic Block Store volume to an Amazon EC2 instance, you reference the logical IDs to associate the block stores with the instance.
 
     .PARAMETER Version
-		Required: False    
-		Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-eks-cluster.html#cfn-eks-cluster-version    
-		PrimitiveType: String    
-		UpdateType: Mutable    
+        The desired Kubernetes version for your cluster. If you don't specify a value here, the latest version available in Amazon EKS is used.
+
+        Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-eks-cluster.html#cfn-eks-cluster-version
+        PrimitiveType: String
+        UpdateType: Mutable
 
     .PARAMETER RoleArn
-		Required: True    
-		Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-eks-cluster.html#cfn-eks-cluster-rolearn    
-		PrimitiveType: String    
-		UpdateType: Immutable    
+        The Amazon Resource Name ARN of the IAM role that provides permissions for Amazon EKS to make calls to other AWS API operations on your behalf. For more information, see Amazon EKS Service IAM Role: https://docs.aws.amazon.com/eks/latest/userguide/service_IAM_role.html in the * *Amazon EKS User Guide* *.
+
+        Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-eks-cluster.html#cfn-eks-cluster-rolearn
+        PrimitiveType: String
+        UpdateType: Immutable
 
     .PARAMETER ResourcesVpcConfig
-		Type: ResourcesVpcConfig    
-		Required: True    
-		Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-eks-cluster.html#cfn-eks-cluster-resourcesvpcconfig    
-		UpdateType: Immutable    
+        The VPC configuration used by the cluster control plane. Amazon EKS VPC resources have specific requirements to work properly with Kubernetes. For more information, see Cluster VPC Considerations: https://docs.aws.amazon.com/eks/latest/userguide/network_reqs.html and Cluster Security Group Considerations: https://docs.aws.amazon.com/eks/latest/userguide/sec-group-reqs.html in the *Amazon EKS User Guide*. You must specify at least two subnets. You can specify up to five security groups, but we recommend that you use a dedicated security group for your cluster control plane.
+
+        Type: ResourcesVpcConfig
+        Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-eks-cluster.html#cfn-eks-cluster-resourcesvpcconfig
+        UpdateType: Immutable
 
     .PARAMETER Name
-		Required: False    
-		Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-eks-cluster.html#cfn-eks-cluster-name    
-		PrimitiveType: String    
-		UpdateType: Immutable    
+        The unique name to give to your cluster.
+
+        Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-eks-cluster.html#cfn-eks-cluster-name
+        PrimitiveType: String
+        UpdateType: Immutable
 
     .PARAMETER DeletionPolicy
         With the DeletionPolicy attribute you can preserve or (in some cases) backup a resource when its stack is deleted. You specify a DeletionPolicy attribute for each resource that you want to control. If a resource has no DeletionPolicy attribute, AWS CloudFormation deletes the resource by default.

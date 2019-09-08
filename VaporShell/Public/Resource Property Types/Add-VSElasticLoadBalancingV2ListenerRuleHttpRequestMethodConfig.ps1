@@ -10,12 +10,14 @@ function Add-VSElasticLoadBalancingV2ListenerRuleHttpRequestMethodConfig {
         http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-elasticloadbalancingv2-listenerrule-httprequestmethodconfig.html
 
     .PARAMETER Values
-		Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-elasticloadbalancingv2-listenerrule-httprequestmethodconfig.html#cfn-elasticloadbalancingv2-listenerrule-httprequestmethodconfig-values    
-		DuplicatesAllowed: False    
-		PrimitiveItemType: String    
-		Required: False    
-		Type: List    
-		UpdateType: Mutable    
+        The name of the request method. The maximum size is 40 characters. The allowed characters are A-Z, hyphen -, and underscore _. The comparison is case sensitive. Wildcards are not supported; therefore, the method name must be an exact match.
+If you specify multiple strings, the condition is satisfied if one of the strings matches the HTTP request method. We recommend that you route GET and HEAD requests in the same way, because the response to a HEAD request may be cached.
+
+        Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-elasticloadbalancingv2-listenerrule-httprequestmethodconfig.html#cfn-elasticloadbalancingv2-listenerrule-httprequestmethodconfig-values
+        DuplicatesAllowed: False
+        PrimitiveItemType: String
+        Type: List
+        UpdateType: Mutable
 
     .FUNCTIONALITY
         Vaporshell

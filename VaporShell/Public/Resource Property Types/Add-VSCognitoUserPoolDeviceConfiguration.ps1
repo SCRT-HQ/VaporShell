@@ -10,16 +10,18 @@ function Add-VSCognitoUserPoolDeviceConfiguration {
         http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-cognito-userpool-deviceconfiguration.html
 
     .PARAMETER DeviceOnlyRememberedOnUserPrompt
-		Required: False    
-		Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-cognito-userpool-deviceconfiguration.html#cfn-cognito-userpool-deviceconfiguration-deviceonlyrememberedonuserprompt    
-		PrimitiveType: Boolean    
-		UpdateType: Mutable    
+        If true, a device is only remembered on user prompt.
+
+        Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-cognito-userpool-deviceconfiguration.html#cfn-cognito-userpool-deviceconfiguration-deviceonlyrememberedonuserprompt
+        PrimitiveType: Boolean
+        UpdateType: Mutable
 
     .PARAMETER ChallengeRequiredOnNewDevice
-		Required: False    
-		Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-cognito-userpool-deviceconfiguration.html#cfn-cognito-userpool-deviceconfiguration-challengerequiredonnewdevice    
-		PrimitiveType: Boolean    
-		UpdateType: Mutable    
+        Indicates whether a challenge is required on a new device. Only applicable to a new device.
+
+        Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-cognito-userpool-deviceconfiguration.html#cfn-cognito-userpool-deviceconfiguration-challengerequiredonnewdevice
+        PrimitiveType: Boolean
+        UpdateType: Mutable
 
     .FUNCTIONALITY
         Vaporshell

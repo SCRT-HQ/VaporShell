@@ -10,11 +10,12 @@ function Add-VSAppMeshVirtualRouterVirtualRouterSpec {
         http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-appmesh-virtualrouter-virtualrouterspec.html
 
     .PARAMETER Listeners
-		Type: List    
-		Required: True    
-		Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-appmesh-virtualrouter-virtualrouterspec.html#cfn-appmesh-virtualrouter-virtualrouterspec-listeners    
-		ItemType: VirtualRouterListener    
-		UpdateType: Mutable    
+        The listeners that the virtual router is expected to receive inbound traffic from. Currently only one listener is supported per virtual router.
+
+        Type: List
+        Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-appmesh-virtualrouter-virtualrouterspec.html#cfn-appmesh-virtualrouter-virtualrouterspec-listeners
+        ItemType: VirtualRouterListener
+        UpdateType: Mutable
 
     .FUNCTIONALITY
         Vaporshell

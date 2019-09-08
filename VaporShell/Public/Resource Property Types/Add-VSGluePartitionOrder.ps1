@@ -10,16 +10,18 @@ function Add-VSGluePartitionOrder {
         http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-glue-partition-order.html
 
     .PARAMETER Column
-		Required: True    
-		Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-glue-partition-order.html#cfn-glue-partition-order-column    
-		PrimitiveType: String    
-		UpdateType: Mutable    
+        The name of the column.
+
+        Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-glue-partition-order.html#cfn-glue-partition-order-column
+        PrimitiveType: String
+        UpdateType: Mutable
 
     .PARAMETER SortOrder
-		Required: False    
-		Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-glue-partition-order.html#cfn-glue-partition-order-sortorder    
-		PrimitiveType: Integer    
-		UpdateType: Mutable    
+        Indicates that the column is sorted in ascending order == 1, or in descending order ==0.
+
+        Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-glue-partition-order.html#cfn-glue-partition-order-sortorder
+        PrimitiveType: Integer
+        UpdateType: Mutable
 
     .FUNCTIONALITY
         Vaporshell

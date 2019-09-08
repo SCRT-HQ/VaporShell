@@ -10,16 +10,18 @@ function Add-VSAppSyncDataSourceHttpConfig {
         http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-appsync-datasource-httpconfig.html
 
     .PARAMETER Endpoint
-		Required: True    
-		Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-appsync-datasource-httpconfig.html#cfn-appsync-datasource-httpconfig-endpoint    
-		PrimitiveType: String    
-		UpdateType: Mutable    
+        The endpoint.
+
+        Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-appsync-datasource-httpconfig.html#cfn-appsync-datasource-httpconfig-endpoint
+        PrimitiveType: String
+        UpdateType: Mutable
 
     .PARAMETER AuthorizationConfig
-		Type: AuthorizationConfig    
-		Required: False    
-		Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-appsync-datasource-httpconfig.html#cfn-appsync-datasource-httpconfig-authorizationconfig    
-		UpdateType: Mutable    
+        The authorization configuration.
+
+        Type: AuthorizationConfig
+        Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-appsync-datasource-httpconfig.html#cfn-appsync-datasource-httpconfig-authorizationconfig
+        UpdateType: Mutable
 
     .FUNCTIONALITY
         Vaporshell

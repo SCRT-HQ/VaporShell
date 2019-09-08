@@ -10,16 +10,20 @@ function Add-VSDynamoDBTableProvisionedThroughput {
         http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-dynamodb-provisionedthroughput.html
 
     .PARAMETER ReadCapacityUnits
-		Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-dynamodb-provisionedthroughput.html#cfn-dynamodb-provisionedthroughput-readcapacityunits    
-		PrimitiveType: Long    
-		Required: True    
-		UpdateType: Mutable    
+        The maximum number of strongly consistent reads consumed per second before DynamoDB returns a ThrottlingException. For more information, see Specifying Read and Write Requirements: https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/WorkingWithTables.html#ProvisionedThroughput in the *Amazon DynamoDB Developer Guide*.
+If read/write capacity mode is PAY_PER_REQUEST the value is set to 0.
+
+        Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-dynamodb-provisionedthroughput.html#cfn-dynamodb-provisionedthroughput-readcapacityunits
+        PrimitiveType: Long
+        UpdateType: Mutable
 
     .PARAMETER WriteCapacityUnits
-		Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-dynamodb-provisionedthroughput.html#cfn-dynamodb-provisionedthroughput-writecapacityunits    
-		PrimitiveType: Long    
-		Required: True    
-		UpdateType: Mutable    
+        The maximum number of writes consumed per second before DynamoDB returns a ThrottlingException. For more information, see Specifying Read and Write Requirements: https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/WorkingWithTables.html#ProvisionedThroughput in the *Amazon DynamoDB Developer Guide*.
+If read/write capacity mode is PAY_PER_REQUEST the value is set to 0.
+
+        Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-dynamodb-provisionedthroughput.html#cfn-dynamodb-provisionedthroughput-writecapacityunits
+        PrimitiveType: Long
+        UpdateType: Mutable
 
     .FUNCTIONALITY
         Vaporshell

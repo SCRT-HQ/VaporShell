@@ -10,18 +10,20 @@ function Add-VSIoTEventsDetectorModelOnInput {
         http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iotevents-detectormodel-oninput.html
 
     .PARAMETER Events
-		Type: List    
-		Required: False    
-		Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iotevents-detectormodel-oninput.html#cfn-iotevents-detectormodel-oninput-events    
-		ItemType: Event    
-		UpdateType: Mutable    
+        Specifies the actions that are performed when an input is received and the "condition" is TRUE.
+
+        Type: List
+        Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iotevents-detectormodel-oninput.html#cfn-iotevents-detectormodel-oninput-events
+        ItemType: Event
+        UpdateType: Mutable
 
     .PARAMETER TransitionEvents
-		Type: List    
-		Required: False    
-		Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iotevents-detectormodel-oninput.html#cfn-iotevents-detectormodel-oninput-transitionevents    
-		ItemType: TransitionEvent    
-		UpdateType: Mutable    
+        Specifies the actions performed, and the next state entered, when an input is received and a "condition" evaluates to TRUE.
+
+        Type: List
+        Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iotevents-detectormodel-oninput.html#cfn-iotevents-detectormodel-oninput-transitionevents
+        ItemType: TransitionEvent
+        UpdateType: Mutable
 
     .FUNCTIONALITY
         Vaporshell

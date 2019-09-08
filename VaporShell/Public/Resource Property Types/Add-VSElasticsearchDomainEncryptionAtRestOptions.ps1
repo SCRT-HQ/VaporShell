@@ -10,16 +10,18 @@ function Add-VSElasticsearchDomainEncryptionAtRestOptions {
         http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-elasticsearch-domain-encryptionatrestoptions.html
 
     .PARAMETER Enabled
-		Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-elasticsearch-domain-encryptionatrestoptions.html#cfn-elasticsearch-domain-encryptionatrestoptions-enabled    
-		PrimitiveType: Boolean    
-		Required: False    
-		UpdateType: Immutable    
+        Specify true to enable encryption at rest.
+
+        Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-elasticsearch-domain-encryptionatrestoptions.html#cfn-elasticsearch-domain-encryptionatrestoptions-enabled
+        PrimitiveType: Boolean
+        UpdateType: Immutable
 
     .PARAMETER KmsKeyId
-		Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-elasticsearch-domain-encryptionatrestoptions.html#cfn-elasticsearch-domain-encryptionatrestoptions-kmskeyid    
-		PrimitiveType: String    
-		Required: False    
-		UpdateType: Immutable    
+        The KMS key ID. Takes the form 1a2a3a4-1a2a-3a4a-5a6a-1a2a3a4a5a6a.
+
+        Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-elasticsearch-domain-encryptionatrestoptions.html#cfn-elasticsearch-domain-encryptionatrestoptions-kmskeyid
+        PrimitiveType: String
+        UpdateType: Immutable
 
     .FUNCTIONALITY
         Vaporshell

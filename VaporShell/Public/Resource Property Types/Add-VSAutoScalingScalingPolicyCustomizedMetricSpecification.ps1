@@ -10,36 +10,42 @@ function Add-VSAutoScalingScalingPolicyCustomizedMetricSpecification {
         http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-autoscaling-scalingpolicy-customizedmetricspecification.html
 
     .PARAMETER Dimensions
-		Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-autoscaling-scalingpolicy-customizedmetricspecification.html#cfn-autoscaling-scalingpolicy-customizedmetricspecification-dimensions    
-		DuplicatesAllowed: False    
-		ItemType: MetricDimension    
-		Required: False    
-		Type: List    
-		UpdateType: Mutable    
+        The dimensions of the metric.
+Conditional: If you published your metric with dimensions, you must specify the same dimensions in your scaling policy.
+
+        Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-autoscaling-scalingpolicy-customizedmetricspecification.html#cfn-autoscaling-scalingpolicy-customizedmetricspecification-dimensions
+        DuplicatesAllowed: False
+        ItemType: MetricDimension
+        Type: List
+        UpdateType: Mutable
 
     .PARAMETER MetricName
-		Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-autoscaling-scalingpolicy-customizedmetricspecification.html#cfn-autoscaling-scalingpolicy-customizedmetricspecification-metricname    
-		PrimitiveType: String    
-		Required: True    
-		UpdateType: Mutable    
+        The name of the metric.
+
+        Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-autoscaling-scalingpolicy-customizedmetricspecification.html#cfn-autoscaling-scalingpolicy-customizedmetricspecification-metricname
+        PrimitiveType: String
+        UpdateType: Mutable
 
     .PARAMETER Namespace
-		Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-autoscaling-scalingpolicy-customizedmetricspecification.html#cfn-autoscaling-scalingpolicy-customizedmetricspecification-namespace    
-		PrimitiveType: String    
-		Required: True    
-		UpdateType: Mutable    
+        The namespace of the metric.
+
+        Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-autoscaling-scalingpolicy-customizedmetricspecification.html#cfn-autoscaling-scalingpolicy-customizedmetricspecification-namespace
+        PrimitiveType: String
+        UpdateType: Mutable
 
     .PARAMETER Statistic
-		Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-autoscaling-scalingpolicy-customizedmetricspecification.html#cfn-autoscaling-scalingpolicy-customizedmetricspecification-statistic    
-		PrimitiveType: String    
-		Required: True    
-		UpdateType: Mutable    
+        The statistic of the metric.
+
+        Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-autoscaling-scalingpolicy-customizedmetricspecification.html#cfn-autoscaling-scalingpolicy-customizedmetricspecification-statistic
+        PrimitiveType: String
+        UpdateType: Mutable
 
     .PARAMETER Unit
-		Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-autoscaling-scalingpolicy-customizedmetricspecification.html#cfn-autoscaling-scalingpolicy-customizedmetricspecification-unit    
-		PrimitiveType: String    
-		Required: False    
-		UpdateType: Mutable    
+        The unit of the metric.
+
+        Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-autoscaling-scalingpolicy-customizedmetricspecification.html#cfn-autoscaling-scalingpolicy-customizedmetricspecification-unit
+        PrimitiveType: String
+        UpdateType: Mutable
 
     .FUNCTIONALITY
         Vaporshell

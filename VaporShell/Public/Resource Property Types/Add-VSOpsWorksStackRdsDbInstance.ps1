@@ -10,22 +10,25 @@ function Add-VSOpsWorksStackRdsDbInstance {
         http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-opsworks-stack-rdsdbinstance.html
 
     .PARAMETER DbPassword
-		Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-opsworks-stack-rdsdbinstance.html#cfn-opsworks-stack-rdsdbinstance-dbpassword    
-		PrimitiveType: String    
-		Required: True    
-		UpdateType: Mutable    
+        AWS OpsWorks Stacks returns *****FILTERED***** instead of the actual value.
+
+        Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-opsworks-stack-rdsdbinstance.html#cfn-opsworks-stack-rdsdbinstance-dbpassword
+        PrimitiveType: String
+        UpdateType: Mutable
 
     .PARAMETER DbUser
-		Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-opsworks-stack-rdsdbinstance.html#cfn-opsworks-stack-rdsdbinstance-dbuser    
-		PrimitiveType: String    
-		Required: True    
-		UpdateType: Mutable    
+        The master user name.
+
+        Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-opsworks-stack-rdsdbinstance.html#cfn-opsworks-stack-rdsdbinstance-dbuser
+        PrimitiveType: String
+        UpdateType: Mutable
 
     .PARAMETER RdsDbInstanceArn
-		Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-opsworks-stack-rdsdbinstance.html#cfn-opsworks-stack-rdsdbinstance-rdsdbinstancearn    
-		PrimitiveType: String    
-		Required: True    
-		UpdateType: Mutable    
+        The instance's ARN.
+
+        Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-opsworks-stack-rdsdbinstance.html#cfn-opsworks-stack-rdsdbinstance-rdsdbinstancearn
+        PrimitiveType: String
+        UpdateType: Mutable
 
     .FUNCTIONALITY
         Vaporshell

@@ -10,17 +10,19 @@ function Add-VSEC2CapacityReservationTagSpecification {
         http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-capacityreservation-tagspecification.html
 
     .PARAMETER ResourceType
-		Required: False    
-		Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-capacityreservation-tagspecification.html#cfn-ec2-capacityreservation-tagspecification-resourcetype    
-		PrimitiveType: String    
-		UpdateType: Mutable    
+        The type of resource to tag. Specify capacity-reservation.
+
+        Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-capacityreservation-tagspecification.html#cfn-ec2-capacityreservation-tagspecification-resourcetype
+        PrimitiveType: String
+        UpdateType: Mutable
 
     .PARAMETER Tags
-		Type: List    
-		Required: False    
-		Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-capacityreservation-tagspecification.html#cfn-ec2-capacityreservation-tagspecification-tags    
-		ItemType: Tag    
-		UpdateType: Mutable    
+        The tags to apply to the resource.
+
+        Type: List
+        Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-capacityreservation-tagspecification.html#cfn-ec2-capacityreservation-tagspecification-tags
+        ItemType: Tag
+        UpdateType: Mutable
 
     .FUNCTIONALITY
         Vaporshell

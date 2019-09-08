@@ -10,28 +10,32 @@ function Add-VSRDSDBSecurityGroupIngress {
         http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-rds-security-group-rule.html
 
     .PARAMETER CIDRIP
-		Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-rds-security-group-rule.html#cfn-rds-securitygroup-cidrip    
-		PrimitiveType: String    
-		Required: False    
-		UpdateType: Mutable    
+        The IP range to authorize.
+
+        Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-rds-security-group-rule.html#cfn-rds-securitygroup-cidrip
+        PrimitiveType: String
+        UpdateType: Mutable
 
     .PARAMETER EC2SecurityGroupId
-		Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-rds-security-group-rule.html#cfn-rds-securitygroup-ec2securitygroupid    
-		PrimitiveType: String    
-		Required: False    
-		UpdateType: Immutable    
+        Id of the EC2 Security Group to authorize. For VPC DB Security Groups, EC2SecurityGroupId must be provided. Otherwise, EC2SecurityGroupOwnerId and either EC2SecurityGroupName or EC2SecurityGroupId must be provided.
+
+        Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-rds-security-group-rule.html#cfn-rds-securitygroup-ec2securitygroupid
+        PrimitiveType: String
+        UpdateType: Immutable
 
     .PARAMETER EC2SecurityGroupName
-		Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-rds-security-group-rule.html#cfn-rds-securitygroup-ec2securitygroupname    
-		PrimitiveType: String    
-		Required: False    
-		UpdateType: Immutable    
+        Name of the EC2 Security Group to authorize. For VPC DB Security Groups, EC2SecurityGroupId must be provided. Otherwise, EC2SecurityGroupOwnerId and either EC2SecurityGroupName or EC2SecurityGroupId must be provided.
+
+        Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-rds-security-group-rule.html#cfn-rds-securitygroup-ec2securitygroupname
+        PrimitiveType: String
+        UpdateType: Immutable
 
     .PARAMETER EC2SecurityGroupOwnerId
-		Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-rds-security-group-rule.html#cfn-rds-securitygroup-ec2securitygroupownerid    
-		PrimitiveType: String    
-		Required: False    
-		UpdateType: Immutable    
+        AWS Account Number of the owner of the EC2 Security Group specified in the EC2SecurityGroupName parameter. The AWS Access Key ID is not an acceptable value. For VPC DB Security Groups, EC2SecurityGroupId must be provided. Otherwise, EC2SecurityGroupOwnerId and either EC2SecurityGroupName or EC2SecurityGroupId must be provided.
+
+        Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-rds-security-group-rule.html#cfn-rds-securitygroup-ec2securitygroupownerid
+        PrimitiveType: String
+        UpdateType: Immutable
 
     .FUNCTIONALITY
         Vaporshell

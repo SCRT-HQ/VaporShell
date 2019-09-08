@@ -10,23 +10,26 @@ function Add-VSBatchJobDefinitionNodeProperties {
         http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-batch-jobdefinition-nodeproperties.html
 
     .PARAMETER MainNode
-		Required: True    
-		Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-batch-jobdefinition-nodeproperties.html#cfn-batch-jobdefinition-nodeproperties-mainnode    
-		PrimitiveType: Integer    
-		UpdateType: Mutable    
+        Specifies the node index for the main node of a multi-node parallel job. This node index value must be fewer than the number of nodes.
+
+        Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-batch-jobdefinition-nodeproperties.html#cfn-batch-jobdefinition-nodeproperties-mainnode
+        PrimitiveType: Integer
+        UpdateType: Mutable
 
     .PARAMETER NodeRangeProperties
-		Type: List    
-		Required: True    
-		Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-batch-jobdefinition-nodeproperties.html#cfn-batch-jobdefinition-nodeproperties-noderangeproperties    
-		ItemType: NodeRangeProperty    
-		UpdateType: Mutable    
+        A list of node ranges and their properties associated with a multi-node parallel job.
+
+        Type: List
+        Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-batch-jobdefinition-nodeproperties.html#cfn-batch-jobdefinition-nodeproperties-noderangeproperties
+        ItemType: NodeRangeProperty
+        UpdateType: Mutable
 
     .PARAMETER NumNodes
-		Required: True    
-		Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-batch-jobdefinition-nodeproperties.html#cfn-batch-jobdefinition-nodeproperties-numnodes    
-		PrimitiveType: Integer    
-		UpdateType: Mutable    
+        The number of nodes associated with a multi-node parallel job.
+
+        Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-batch-jobdefinition-nodeproperties.html#cfn-batch-jobdefinition-nodeproperties-numnodes
+        PrimitiveType: Integer
+        UpdateType: Mutable
 
     .FUNCTIONALITY
         Vaporshell

@@ -13,52 +13,61 @@ function New-VSDirectoryServiceSimpleAD {
         The logical ID must be alphanumeric (A-Za-z0-9) and unique within the template. Use the logical name to reference the resource in other parts of the template. For example, if you want to map an Amazon Elastic Block Store volume to an Amazon EC2 instance, you reference the logical IDs to associate the block stores with the instance.
 
     .PARAMETER CreateAlias
-		Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-directoryservice-simplead.html#cfn-directoryservice-simplead-createalias    
-		PrimitiveType: Boolean    
-		Required: False    
-		UpdateType: Immutable    
+        If set to true, specifies an alias for a directory and assigns the alias to the directory. The alias is used to construct the access URL for the directory, such as http://<alias>.awsapps.com. By default, this property is set to false.
+After an alias has been created, it cannot be deleted or reused, so this operation should only be used when absolutely necessary.
+
+        Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-directoryservice-simplead.html#cfn-directoryservice-simplead-createalias
+        PrimitiveType: Boolean
+        UpdateType: Immutable
 
     .PARAMETER Description
-		Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-directoryservice-simplead.html#cfn-directoryservice-simplead-description    
-		PrimitiveType: String    
-		Required: False    
-		UpdateType: Immutable    
+        A textual description for the directory.
+
+        Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-directoryservice-simplead.html#cfn-directoryservice-simplead-description
+        PrimitiveType: String
+        UpdateType: Immutable
 
     .PARAMETER EnableSso
-		Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-directoryservice-simplead.html#cfn-directoryservice-simplead-enablesso    
-		PrimitiveType: Boolean    
-		Required: False    
-		UpdateType: Mutable    
+        Whether to enable single sign-on for a directory. If you don't specify a value, AWS CloudFormation disables single sign-on by default.
+
+        Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-directoryservice-simplead.html#cfn-directoryservice-simplead-enablesso
+        PrimitiveType: Boolean
+        UpdateType: Mutable
 
     .PARAMETER Name
-		Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-directoryservice-simplead.html#cfn-directoryservice-simplead-name    
-		PrimitiveType: String    
-		Required: True    
-		UpdateType: Immutable    
+        The fully qualified name for the directory, such as corp.example.com.
+
+        Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-directoryservice-simplead.html#cfn-directoryservice-simplead-name
+        PrimitiveType: String
+        UpdateType: Immutable
 
     .PARAMETER Password
-		Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-directoryservice-simplead.html#cfn-directoryservice-simplead-password    
-		PrimitiveType: String    
-		Required: True    
-		UpdateType: Immutable    
+        The password for the directory administrator. The directory creation process creates a directory administrator account with the user name Administrator and this password.
+
+        Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-directoryservice-simplead.html#cfn-directoryservice-simplead-password
+        PrimitiveType: String
+        UpdateType: Immutable
 
     .PARAMETER ShortName
-		Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-directoryservice-simplead.html#cfn-directoryservice-simplead-shortname    
-		PrimitiveType: String    
-		Required: False    
-		UpdateType: Immutable    
+        The short name of the directory, such as CORP.
+
+        Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-directoryservice-simplead.html#cfn-directoryservice-simplead-shortname
+        PrimitiveType: String
+        UpdateType: Immutable
 
     .PARAMETER Size
-		Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-directoryservice-simplead.html#cfn-directoryservice-simplead-size    
-		PrimitiveType: String    
-		Required: True    
-		UpdateType: Immutable    
+        The size of the directory. For valid values, see CreateDirectory: https://docs.aws.amazon.com/directoryservice/latest/devguide/API_CreateDirectory.html in the *AWS Directory Service API Reference*.
+
+        Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-directoryservice-simplead.html#cfn-directoryservice-simplead-size
+        PrimitiveType: String
+        UpdateType: Immutable
 
     .PARAMETER VpcSettings
-		Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-directoryservice-simplead.html#cfn-directoryservice-simplead-vpcsettings    
-		Required: True    
-		Type: VpcSettings    
-		UpdateType: Immutable    
+        A DirectoryVpcSettings: https://docs.aws.amazon.com/directoryservice/latest/devguide/API_DirectoryVpcSettings.html object that contains additional information for the operation.
+
+        Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-directoryservice-simplead.html#cfn-directoryservice-simplead-vpcsettings
+        Type: VpcSettings
+        UpdateType: Immutable
 
     .PARAMETER DeletionPolicy
         With the DeletionPolicy attribute you can preserve or (in some cases) backup a resource when its stack is deleted. You specify a DeletionPolicy attribute for each resource that you want to control. If a resource has no DeletionPolicy attribute, AWS CloudFormation deletes the resource by default.

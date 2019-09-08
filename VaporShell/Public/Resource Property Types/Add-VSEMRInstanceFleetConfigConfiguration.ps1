@@ -10,26 +10,29 @@ function Add-VSEMRInstanceFleetConfigConfiguration {
         http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-elasticmapreduce-instancefleetconfig-configuration.html
 
     .PARAMETER Classification
-		Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-elasticmapreduce-instancefleetconfig-configuration.html#cfn-elasticmapreduce-instancefleetconfig-configuration-classification    
-		PrimitiveType: String    
-		Required: False    
-		UpdateType: Immutable    
+        The classification within a configuration.
+
+        Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-elasticmapreduce-instancefleetconfig-configuration.html#cfn-elasticmapreduce-instancefleetconfig-configuration-classification
+        PrimitiveType: String
+        UpdateType: Immutable
 
     .PARAMETER ConfigurationProperties
-		Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-elasticmapreduce-instancefleetconfig-configuration.html#cfn-elasticmapreduce-instancefleetconfig-configuration-configurationproperties    
-		DuplicatesAllowed: False    
-		PrimitiveItemType: String    
-		Required: False    
-		Type: Map    
-		UpdateType: Immutable    
+        Within a configuration classification, a set of properties that represent the settings that you want to change in the configuration file. Duplicates not allowed.
+
+        Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-elasticmapreduce-instancefleetconfig-configuration.html#cfn-elasticmapreduce-instancefleetconfig-configuration-configurationproperties
+        DuplicatesAllowed: False
+        PrimitiveItemType: String
+        Type: Map
+        UpdateType: Immutable
 
     .PARAMETER Configurations
-		Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-elasticmapreduce-instancefleetconfig-configuration.html#cfn-elasticmapreduce-instancefleetconfig-configuration-configurations    
-		DuplicatesAllowed: False    
-		ItemType: Configuration    
-		Required: False    
-		Type: List    
-		UpdateType: Immutable    
+        A list of additional configurations to apply within a configuration object.
+
+        Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-elasticmapreduce-instancefleetconfig-configuration.html#cfn-elasticmapreduce-instancefleetconfig-configuration-configurations
+        DuplicatesAllowed: False
+        ItemType: Configuration
+        Type: List
+        UpdateType: Immutable
 
     .FUNCTIONALITY
         Vaporshell

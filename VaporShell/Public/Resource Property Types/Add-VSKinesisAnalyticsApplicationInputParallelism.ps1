@@ -10,10 +10,11 @@ function Add-VSKinesisAnalyticsApplicationInputParallelism {
         http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-kinesisanalytics-application-inputparallelism.html
 
     .PARAMETER Count
-		Required: False    
-		Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-kinesisanalytics-application-inputparallelism.html#cfn-kinesisanalytics-application-inputparallelism-count    
-		PrimitiveType: Integer    
-		UpdateType: Mutable    
+        Number of in-application streams to create. For more information, see Limits: https://docs.aws.amazon.com/kinesisanalytics/latest/dev/limits.html.
+
+        Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-kinesisanalytics-application-inputparallelism.html#cfn-kinesisanalytics-application-inputparallelism-count
+        PrimitiveType: Integer
+        UpdateType: Mutable
 
     .FUNCTIONALITY
         Vaporshell

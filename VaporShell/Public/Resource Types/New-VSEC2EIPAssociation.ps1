@@ -13,34 +13,40 @@ function New-VSEC2EIPAssociation {
         The logical ID must be alphanumeric (A-Za-z0-9) and unique within the template. Use the logical name to reference the resource in other parts of the template. For example, if you want to map an Amazon Elastic Block Store volume to an Amazon EC2 instance, you reference the logical IDs to associate the block stores with the instance.
 
     .PARAMETER AllocationId
-		Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-eip-association.html#cfn-ec2-eipassociation-allocationid    
-		PrimitiveType: String    
-		Required: False    
-		UpdateType: Conditional    
+        EC2-VPC] The allocation ID. This is required for EC2-VPC.
+
+        Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-eip-association.html#cfn-ec2-eipassociation-allocationid
+        PrimitiveType: String
+        UpdateType: Conditional
 
     .PARAMETER EIP
-		Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-eip-association.html#cfn-ec2-eipassociation-eip    
-		PrimitiveType: String    
-		Required: False    
-		UpdateType: Conditional    
+        The Elastic IP address to associate with the instance. This is required for EC2-Classic.
+
+        Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-eip-association.html#cfn-ec2-eipassociation-eip
+        PrimitiveType: String
+        UpdateType: Conditional
 
     .PARAMETER InstanceId
-		Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-eip-association.html#cfn-ec2-eipassociation-instanceid    
-		PrimitiveType: String    
-		Required: False    
-		UpdateType: Conditional    
+        The ID of the instance. This is required for EC2-Classic. For EC2-VPC, you can specify either the instance ID or the network interface ID, but not both. The operation fails if you specify an instance ID unless exactly one network interface is attached.
+
+        Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-eip-association.html#cfn-ec2-eipassociation-instanceid
+        PrimitiveType: String
+        UpdateType: Conditional
 
     .PARAMETER NetworkInterfaceId
-		Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-eip-association.html#cfn-ec2-eipassociation-networkinterfaceid    
-		PrimitiveType: String    
-		Required: False    
-		UpdateType: Conditional    
+        EC2-VPC] The ID of the network interface. If the instance has more than one network interface, you must specify a network interface ID.
+For EC2-VPC, you can specify either the instance ID or the network interface ID, but not both.
+
+        Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-eip-association.html#cfn-ec2-eipassociation-networkinterfaceid
+        PrimitiveType: String
+        UpdateType: Conditional
 
     .PARAMETER PrivateIpAddress
-		Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-eip-association.html#cfn-ec2-eipassociation-PrivateIpAddress    
-		PrimitiveType: String    
-		Required: False    
-		UpdateType: Mutable    
+        EC2-VPC] The primary or secondary private IP address to associate with the Elastic IP address. If no private IP address is specified, the Elastic IP address is associated with the primary private IP address.
+
+        Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-eip-association.html#cfn-ec2-eipassociation-PrivateIpAddress
+        PrimitiveType: String
+        UpdateType: Mutable
 
     .PARAMETER DeletionPolicy
         With the DeletionPolicy attribute you can preserve or (in some cases) backup a resource when its stack is deleted. You specify a DeletionPolicy attribute for each resource that you want to control. If a resource has no DeletionPolicy attribute, AWS CloudFormation deletes the resource by default.

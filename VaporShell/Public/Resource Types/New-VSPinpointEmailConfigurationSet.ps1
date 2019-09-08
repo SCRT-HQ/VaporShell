@@ -13,41 +13,47 @@ function New-VSPinpointEmailConfigurationSet {
         The logical ID must be alphanumeric (A-Za-z0-9) and unique within the template. Use the logical name to reference the resource in other parts of the template. For example, if you want to map an Amazon Elastic Block Store volume to an Amazon EC2 instance, you reference the logical IDs to associate the block stores with the instance.
 
     .PARAMETER SendingOptions
-		Type: SendingOptions    
-		Required: False    
-		Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-pinpointemail-configurationset.html#cfn-pinpointemail-configurationset-sendingoptions    
-		UpdateType: Mutable    
+        An object that defines whether or not Amazon Pinpoint can send email that you send using the configuration set.
+
+        Type: SendingOptions
+        Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-pinpointemail-configurationset.html#cfn-pinpointemail-configurationset-sendingoptions
+        UpdateType: Mutable
 
     .PARAMETER TrackingOptions
-		Type: TrackingOptions    
-		Required: False    
-		Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-pinpointemail-configurationset.html#cfn-pinpointemail-configurationset-trackingoptions    
-		UpdateType: Mutable    
+        An object that defines the open and click tracking options for emails that you send using the configuration set.
+
+        Type: TrackingOptions
+        Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-pinpointemail-configurationset.html#cfn-pinpointemail-configurationset-trackingoptions
+        UpdateType: Mutable
 
     .PARAMETER ReputationOptions
-		Type: ReputationOptions    
-		Required: False    
-		Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-pinpointemail-configurationset.html#cfn-pinpointemail-configurationset-reputationoptions    
-		UpdateType: Mutable    
+        An object that defines whether or not Amazon Pinpoint collects reputation metrics for the emails that you send that use the configuration set.
+
+        Type: ReputationOptions
+        Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-pinpointemail-configurationset.html#cfn-pinpointemail-configurationset-reputationoptions
+        UpdateType: Mutable
 
     .PARAMETER DeliveryOptions
-		Type: DeliveryOptions    
-		Required: False    
-		Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-pinpointemail-configurationset.html#cfn-pinpointemail-configurationset-deliveryoptions    
-		UpdateType: Mutable    
+        An object that defines the dedicated IP pool that is used to send emails that you send using the configuration set.
+
+        Type: DeliveryOptions
+        Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-pinpointemail-configurationset.html#cfn-pinpointemail-configurationset-deliveryoptions
+        UpdateType: Mutable
 
     .PARAMETER Tags
-		Type: List    
-		Required: False    
-		Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-pinpointemail-configurationset.html#cfn-pinpointemail-configurationset-tags    
-		ItemType: Tags    
-		UpdateType: Mutable    
+        An object that defines the tags keys and values that you want to associate with the configuration set.
+
+        Type: List
+        Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-pinpointemail-configurationset.html#cfn-pinpointemail-configurationset-tags
+        ItemType: Tags
+        UpdateType: Mutable
 
     .PARAMETER Name
-		Required: True    
-		Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-pinpointemail-configurationset.html#cfn-pinpointemail-configurationset-name    
-		PrimitiveType: String    
-		UpdateType: Immutable    
+        The name of the configuration set.
+
+        Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-pinpointemail-configurationset.html#cfn-pinpointemail-configurationset-name
+        PrimitiveType: String
+        UpdateType: Immutable
 
     .PARAMETER DeletionPolicy
         With the DeletionPolicy attribute you can preserve or (in some cases) backup a resource when its stack is deleted. You specify a DeletionPolicy attribute for each resource that you want to control. If a resource has no DeletionPolicy attribute, AWS CloudFormation deletes the resource by default.

@@ -13,34 +13,58 @@ function New-VSLambdaEventSourceMapping {
         The logical ID must be alphanumeric (A-Za-z0-9) and unique within the template. Use the logical name to reference the resource in other parts of the template. For example, if you want to map an Amazon Elastic Block Store volume to an Amazon EC2 instance, you reference the logical IDs to associate the block stores with the instance.
 
     .PARAMETER BatchSize
-		Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-lambda-eventsourcemapping.html#cfn-lambda-eventsourcemapping-batchsize    
-		PrimitiveType: Integer    
-		Required: False    
-		UpdateType: Mutable    
+        The maximum number of items to retrieve in a single batch.
++  **Amazon Kinesis** - Default 100. Max 10,000.
++  **Amazon DynamoDB Streams** - Default 100. Max 1,000.
++  **Amazon Simple Queue Service** - Default 10. Max 10.
+
+        Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-lambda-eventsourcemapping.html#cfn-lambda-eventsourcemapping-batchsize
+        PrimitiveType: Integer
+        UpdateType: Mutable
 
     .PARAMETER Enabled
-		Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-lambda-eventsourcemapping.html#cfn-lambda-eventsourcemapping-enabled    
-		PrimitiveType: Boolean    
-		Required: False    
-		UpdateType: Mutable    
+        Disables the event source mapping to pause polling and invocation.
+
+        Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-lambda-eventsourcemapping.html#cfn-lambda-eventsourcemapping-enabled
+        PrimitiveType: Boolean
+        UpdateType: Mutable
 
     .PARAMETER EventSourceArn
-		Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-lambda-eventsourcemapping.html#cfn-lambda-eventsourcemapping-eventsourcearn    
-		PrimitiveType: String    
-		Required: True    
-		UpdateType: Immutable    
+        The Amazon Resource Name ARN of the event source.
++  **Amazon Kinesis** - The ARN of the data stream or a stream consumer.
++  **Amazon DynamoDB Streams** - The ARN of the stream.
++  **Amazon Simple Queue Service** - The ARN of the queue.
+
+        Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-lambda-eventsourcemapping.html#cfn-lambda-eventsourcemapping-eventsourcearn
+        PrimitiveType: String
+        UpdateType: Immutable
 
     .PARAMETER FunctionName
-		Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-lambda-eventsourcemapping.html#cfn-lambda-eventsourcemapping-functionname    
-		PrimitiveType: String    
-		Required: True    
-		UpdateType: Mutable    
+        The name of the Lambda function.
+**Name formats**
++  **Function name** - MyFunction.
++  **Function ARN** - arn:aws:lambda:us-west-2:123456789012:function:MyFunction.
++  **Version or Alias ARN** - arn:aws:lambda:us-west-2:123456789012:function:MyFunction:PROD.
++  **Partial ARN** - 123456789012:function:MyFunction.
+The length constraint applies only to the full ARN. If you specify only the function name, it's limited to 64 characters in length.
+
+        Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-lambda-eventsourcemapping.html#cfn-lambda-eventsourcemapping-functionname
+        PrimitiveType: String
+        UpdateType: Mutable
+
+    .PARAMETER MaximumBatchingWindowInSeconds
+        The maximum amount of time to gather records before invoking the function, in seconds.
+
+        Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-lambda-eventsourcemapping.html#cfn-lambda-eventsourcemapping-maximumbatchingwindowinseconds
+        PrimitiveType: Integer
+        UpdateType: Mutable
 
     .PARAMETER StartingPosition
-		Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-lambda-eventsourcemapping.html#cfn-lambda-eventsourcemapping-startingposition    
-		PrimitiveType: String    
-		Required: False    
-		UpdateType: Immutable    
+        The position in a stream from which to start reading. Required for Amazon Kinesis and Amazon DynamoDB Streams sources. AT_TIMESTAMP is only supported for Amazon Kinesis streams.
+
+        Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-lambda-eventsourcemapping.html#cfn-lambda-eventsourcemapping-startingposition
+        PrimitiveType: String
+        UpdateType: Immutable
 
     .PARAMETER DeletionPolicy
         With the DeletionPolicy attribute you can preserve or (in some cases) backup a resource when its stack is deleted. You specify a DeletionPolicy attribute for each resource that you want to control. If a resource has no DeletionPolicy attribute, AWS CloudFormation deletes the resource by default.
@@ -115,6 +139,9 @@ function New-VSLambdaEventSourceMapping {
                 }
             })]
         $FunctionName,
+        [parameter(Mandatory = $false)]
+        [Int]
+        $MaximumBatchingWindowInSeconds,
         [parameter(Mandatory = $false)]
         [ValidateScript( {
                 $allowedTypes = "System.String","Vaporshell.Function","Vaporshell.Condition"

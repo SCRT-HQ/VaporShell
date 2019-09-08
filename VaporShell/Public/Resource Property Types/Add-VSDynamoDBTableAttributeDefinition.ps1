@@ -10,16 +10,21 @@ function Add-VSDynamoDBTableAttributeDefinition {
         http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-dynamodb-attributedef.html
 
     .PARAMETER AttributeName
-		Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-dynamodb-attributedef.html#cfn-dynamodb-attributedef-attributename    
-		PrimitiveType: String    
-		Required: True    
-		UpdateType: Mutable    
+        A name for the attribute.
+
+        Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-dynamodb-attributedef.html#cfn-dynamodb-attributedef-attributename
+        PrimitiveType: String
+        UpdateType: Mutable
 
     .PARAMETER AttributeType
-		Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-dynamodb-attributedef.html#cfn-dynamodb-attributedef-attributename-attributetype    
-		PrimitiveType: String    
-		Required: True    
-		UpdateType: Mutable    
+        The data type for the attribute, where:
++  S - the attribute is of type String
++  N - the attribute is of type Number
++  B - the attribute is of type Binary
+
+        Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-dynamodb-attributedef.html#cfn-dynamodb-attributedef-attributename-attributetype
+        PrimitiveType: String
+        UpdateType: Mutable
 
     .FUNCTIONALITY
         Vaporshell

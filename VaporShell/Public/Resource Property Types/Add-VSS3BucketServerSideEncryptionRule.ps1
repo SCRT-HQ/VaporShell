@@ -10,10 +10,11 @@ function Add-VSS3BucketServerSideEncryptionRule {
         http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-s3-bucket-serversideencryptionrule.html
 
     .PARAMETER ServerSideEncryptionByDefault
-		Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-s3-bucket-serversideencryptionrule.html#cfn-s3-bucket-serversideencryptionrule-serversideencryptionbydefault    
-		Required: False    
-		Type: ServerSideEncryptionByDefault    
-		UpdateType: Mutable    
+        Specifies the default server-side encryption to apply to new objects in the bucket. If a PUT Object request doesn't specify any server-side encryption, this default encryption will be applied.
+
+        Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-s3-bucket-serversideencryptionrule.html#cfn-s3-bucket-serversideencryptionrule-serversideencryptionbydefault
+        Type: ServerSideEncryptionByDefault
+        UpdateType: Mutable
 
     .FUNCTIONALITY
         Vaporshell

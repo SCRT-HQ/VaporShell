@@ -10,42 +10,48 @@ function Add-VSIoTTopicRuleTopicRulePayload {
         http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iot-topicrule-topicrulepayload.html
 
     .PARAMETER Actions
-		Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iot-topicrule-topicrulepayload.html#cfn-iot-topicrule-topicrulepayload-actions    
-		DuplicatesAllowed: False    
-		ItemType: Action    
-		Required: True    
-		Type: List    
-		UpdateType: Mutable    
+        The actions associated with the rule.
+
+        Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iot-topicrule-topicrulepayload.html#cfn-iot-topicrule-topicrulepayload-actions
+        DuplicatesAllowed: False
+        ItemType: Action
+        Type: List
+        UpdateType: Mutable
 
     .PARAMETER AwsIotSqlVersion
-		Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iot-topicrule-topicrulepayload.html#cfn-iot-topicrule-topicrulepayload-awsiotsqlversion    
-		PrimitiveType: String    
-		Required: False    
-		UpdateType: Mutable    
+        The version of the SQL rules engine to use when evaluating the rule.
+
+        Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iot-topicrule-topicrulepayload.html#cfn-iot-topicrule-topicrulepayload-awsiotsqlversion
+        PrimitiveType: String
+        UpdateType: Mutable
 
     .PARAMETER Description
-		Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iot-topicrule-topicrulepayload.html#cfn-iot-topicrule-topicrulepayload-description    
-		PrimitiveType: String    
-		Required: False    
-		UpdateType: Mutable    
+        The description of the rule.
+
+        Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iot-topicrule-topicrulepayload.html#cfn-iot-topicrule-topicrulepayload-description
+        PrimitiveType: String
+        UpdateType: Mutable
 
     .PARAMETER ErrorAction
-		Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iot-topicrule-topicrulepayload.html#cfn-iot-topicrule-topicrulepayload-erroraction    
-		Required: False    
-		Type: Action    
-		UpdateType: Mutable    
+        The action to take when an error occurs.
+
+        Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iot-topicrule-topicrulepayload.html#cfn-iot-topicrule-topicrulepayload-erroraction
+        Type: Action
+        UpdateType: Mutable
 
     .PARAMETER RuleDisabled
-		Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iot-topicrule-topicrulepayload.html#cfn-iot-topicrule-topicrulepayload-ruledisabled    
-		PrimitiveType: Boolean    
-		Required: True    
-		UpdateType: Mutable    
+        Specifies whether the rule is disabled.
+
+        Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iot-topicrule-topicrulepayload.html#cfn-iot-topicrule-topicrulepayload-ruledisabled
+        PrimitiveType: Boolean
+        UpdateType: Mutable
 
     .PARAMETER Sql
-		Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iot-topicrule-topicrulepayload.html#cfn-iot-topicrule-topicrulepayload-sql    
-		PrimitiveType: String    
-		Required: True    
-		UpdateType: Mutable    
+        The SQL statement used to query the topic. For more information, see AWS IoT SQL Reference: https://docs.aws.amazon.com/iot/latest/developerguide/iot-rules.html#aws-iot-sql-reference in the *AWS IoT Developer Guide*.
+
+        Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iot-topicrule-topicrulepayload.html#cfn-iot-topicrule-topicrulepayload-sql
+        PrimitiveType: String
+        UpdateType: Mutable
 
     .FUNCTIONALITY
         Vaporshell

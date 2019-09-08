@@ -10,30 +10,35 @@ function Add-VSApiGatewayStageCanarySetting {
         http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-apigateway-stage-canarysetting.html
 
     .PARAMETER DeploymentId
-		Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-apigateway-stage-canarysetting.html#cfn-apigateway-stage-canarysetting-deploymentid    
-		PrimitiveType: String    
-		Required: False    
-		UpdateType: Mutable    
+        The identifier of the deployment that the stage points to.
+
+        Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-apigateway-stage-canarysetting.html#cfn-apigateway-stage-canarysetting-deploymentid
+        PrimitiveType: String
+        UpdateType: Mutable
 
     .PARAMETER PercentTraffic
-		Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-apigateway-stage-canarysetting.html#cfn-apigateway-stage-canarysetting-percenttraffic    
-		PrimitiveType: Double    
-		Required: False    
-		UpdateType: Mutable    
+        The percentage 0-100 of traffic diverted to a canary deployment.
+
+        Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-apigateway-stage-canarysetting.html#cfn-apigateway-stage-canarysetting-percenttraffic
+        PrimitiveType: Double
+        UpdateType: Mutable
 
     .PARAMETER StageVariableOverrides
-		Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-apigateway-stage-canarysetting.html#cfn-apigateway-stage-canarysetting-stagevariableoverrides    
-		DuplicatesAllowed: False    
-		PrimitiveItemType: String    
-		Required: False    
-		Type: Map    
-		UpdateType: Mutable    
+        Stage variables overridden for a canary release deployment, including new stage variables introduced in the canary. These stage variables are represented as a string-to-string map between stage variable names and their values.
+Duplicates are not allowed.
+
+        Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-apigateway-stage-canarysetting.html#cfn-apigateway-stage-canarysetting-stagevariableoverrides
+        DuplicatesAllowed: False
+        PrimitiveItemType: String
+        Type: Map
+        UpdateType: Mutable
 
     .PARAMETER UseStageCache
-		Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-apigateway-stage-canarysetting.html#cfn-apigateway-stage-canarysetting-usestagecache    
-		PrimitiveType: Boolean    
-		Required: False    
-		UpdateType: Mutable    
+        Whether the canary deployment uses the stage cache or not.
+
+        Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-apigateway-stage-canarysetting.html#cfn-apigateway-stage-canarysetting-usestagecache
+        PrimitiveType: Boolean
+        UpdateType: Mutable
 
     .FUNCTIONALITY
         Vaporshell

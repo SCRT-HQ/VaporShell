@@ -10,42 +10,51 @@ function Add-VSElasticLoadBalancingLoadBalancerListeners {
         http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-elb-listener.html
 
     .PARAMETER InstancePort
-		Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-elb-listener.html#cfn-ec2-elb-listener-instanceport    
-		PrimitiveType: String    
-		Required: True    
-		UpdateType: Mutable    
+        The port on which the instance is listening.
+
+        Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-elb-listener.html#cfn-ec2-elb-listener-instanceport
+        PrimitiveType: String
+        UpdateType: Mutable
 
     .PARAMETER InstanceProtocol
-		Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-elb-listener.html#cfn-ec2-elb-listener-instanceprotocol    
-		PrimitiveType: String    
-		Required: False    
-		UpdateType: Mutable    
+        The protocol to use for routing traffic to instances: HTTP, HTTPS, TCP, or SSL.
+If the front-end protocol is HTTP, HTTPS, TCP, or SSL, InstanceProtocol must be at the same protocol.
+If there is another listener with the same InstancePort whose InstanceProtocol is secure, HTTPS or SSL, the listener's InstanceProtocol must also be secure.
+If there is another listener with the same InstancePort whose InstanceProtocol is HTTP or TCP, the listener's InstanceProtocol must be HTTP or TCP.
+
+        Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-elb-listener.html#cfn-ec2-elb-listener-instanceprotocol
+        PrimitiveType: String
+        UpdateType: Mutable
 
     .PARAMETER LoadBalancerPort
-		Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-elb-listener.html#cfn-ec2-elb-listener-loadbalancerport    
-		PrimitiveType: String    
-		Required: True    
-		UpdateType: Mutable    
+        The port on which the load balancer is listening. On EC2-VPC, you can specify any port from the range 1-65535. On EC2-Classic, you can specify any port from the following list: 25, 80, 443, 465, 587, 1024-65535.
+
+        Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-elb-listener.html#cfn-ec2-elb-listener-loadbalancerport
+        PrimitiveType: String
+        UpdateType: Mutable
 
     .PARAMETER PolicyNames
-		Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-elb-listener.html#cfn-ec2-elb-listener-policynames    
-		DuplicatesAllowed: False    
-		PrimitiveItemType: String    
-		Required: False    
-		Type: List    
-		UpdateType: Mutable    
+        The names of the policies to associate with the listener.
+
+        Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-elb-listener.html#cfn-ec2-elb-listener-policynames
+        DuplicatesAllowed: False
+        PrimitiveItemType: String
+        Type: List
+        UpdateType: Mutable
 
     .PARAMETER Protocol
-		Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-elb-listener.html#cfn-ec2-elb-listener-protocol    
-		PrimitiveType: String    
-		Required: True    
-		UpdateType: Mutable    
+        The load balancer transport protocol to use for routing: HTTP, HTTPS, TCP, or SSL.
+
+        Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-elb-listener.html#cfn-ec2-elb-listener-protocol
+        PrimitiveType: String
+        UpdateType: Mutable
 
     .PARAMETER SSLCertificateId
-		Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-elb-listener.html#cfn-ec2-elb-listener-sslcertificateid    
-		PrimitiveType: String    
-		Required: False    
-		UpdateType: Mutable    
+        The Amazon Resource Name ARN of the server certificate.
+
+        Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-elb-listener.html#cfn-ec2-elb-listener-sslcertificateid
+        PrimitiveType: String
+        UpdateType: Mutable
 
     .FUNCTIONALITY
         Vaporshell

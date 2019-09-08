@@ -10,12 +10,13 @@ function Add-VSLambdaFunctionEnvironment {
         http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-lambda-function-environment.html
 
     .PARAMETER Variables
-		Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-lambda-function-environment.html#cfn-lambda-function-environment-variables    
-		DuplicatesAllowed: False    
-		PrimitiveItemType: String    
-		Required: False    
-		Type: Map    
-		UpdateType: Mutable    
+        Environment variable key-value pairs.
+
+        Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-lambda-function-environment.html#cfn-lambda-function-environment-variables
+        DuplicatesAllowed: False
+        PrimitiveItemType: String
+        Type: Map
+        UpdateType: Mutable
 
     .FUNCTIONALITY
         Vaporshell

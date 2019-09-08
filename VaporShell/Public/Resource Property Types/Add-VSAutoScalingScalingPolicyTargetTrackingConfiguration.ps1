@@ -10,28 +10,32 @@ function Add-VSAutoScalingScalingPolicyTargetTrackingConfiguration {
         http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-autoscaling-scalingpolicy-targettrackingconfiguration.html
 
     .PARAMETER CustomizedMetricSpecification
-		Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-autoscaling-scalingpolicy-targettrackingconfiguration.html#cfn-autoscaling-scalingpolicy-targettrackingconfiguration-customizedmetricspecification    
-		Required: False    
-		Type: CustomizedMetricSpecification    
-		UpdateType: Mutable    
+        A customized metric. You must specify either a predefined metric or a customized metric.
+
+        Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-autoscaling-scalingpolicy-targettrackingconfiguration.html#cfn-autoscaling-scalingpolicy-targettrackingconfiguration-customizedmetricspecification
+        Type: CustomizedMetricSpecification
+        UpdateType: Mutable
 
     .PARAMETER DisableScaleIn
-		Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-autoscaling-scalingpolicy-targettrackingconfiguration.html#cfn-autoscaling-scalingpolicy-targettrackingconfiguration-disablescalein    
-		PrimitiveType: Boolean    
-		Required: False    
-		UpdateType: Mutable    
+        Indicates whether scaling in by the target tracking scaling policy is disabled. If scaling in is disabled, the target tracking scaling policy doesn't remove instances from the Auto Scaling group. Otherwise, the target tracking scaling policy can remove instances from the Auto Scaling group. The default is false.
+
+        Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-autoscaling-scalingpolicy-targettrackingconfiguration.html#cfn-autoscaling-scalingpolicy-targettrackingconfiguration-disablescalein
+        PrimitiveType: Boolean
+        UpdateType: Mutable
 
     .PARAMETER PredefinedMetricSpecification
-		Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-autoscaling-scalingpolicy-targettrackingconfiguration.html#cfn-autoscaling-scalingpolicy-targettrackingconfiguration-predefinedmetricspecification    
-		Required: False    
-		Type: PredefinedMetricSpecification    
-		UpdateType: Mutable    
+        A predefined metric. You must specify either a predefined metric or a customized metric.
+
+        Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-autoscaling-scalingpolicy-targettrackingconfiguration.html#cfn-autoscaling-scalingpolicy-targettrackingconfiguration-predefinedmetricspecification
+        Type: PredefinedMetricSpecification
+        UpdateType: Mutable
 
     .PARAMETER TargetValue
-		Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-autoscaling-scalingpolicy-targettrackingconfiguration.html#cfn-autoscaling-scalingpolicy-targettrackingconfiguration-targetvalue    
-		PrimitiveType: Double    
-		Required: True    
-		UpdateType: Mutable    
+        The target value for the metric.
+
+        Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-autoscaling-scalingpolicy-targettrackingconfiguration.html#cfn-autoscaling-scalingpolicy-targettrackingconfiguration-targetvalue
+        PrimitiveType: Double
+        UpdateType: Mutable
 
     .FUNCTIONALITY
         Vaporshell

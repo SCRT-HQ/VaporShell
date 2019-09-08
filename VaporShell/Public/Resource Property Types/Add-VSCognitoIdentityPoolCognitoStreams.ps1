@@ -10,22 +10,25 @@ function Add-VSCognitoIdentityPoolCognitoStreams {
         http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-cognito-identitypool-cognitostreams.html
 
     .PARAMETER StreamingStatus
-		Required: False    
-		Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-cognito-identitypool-cognitostreams.html#cfn-cognito-identitypool-cognitostreams-streamingstatus    
-		PrimitiveType: String    
-		UpdateType: Mutable    
+        Status of the Amazon Cognito streams. Valid values are: ENABLED or DISABLED.
+
+        Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-cognito-identitypool-cognitostreams.html#cfn-cognito-identitypool-cognitostreams-streamingstatus
+        PrimitiveType: String
+        UpdateType: Mutable
 
     .PARAMETER StreamName
-		Required: False    
-		Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-cognito-identitypool-cognitostreams.html#cfn-cognito-identitypool-cognitostreams-streamname    
-		PrimitiveType: String    
-		UpdateType: Mutable    
+        The name of the Amazon Cognito stream to receive updates. This stream must be in the developer's account and in the same region as the identity pool.
+
+        Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-cognito-identitypool-cognitostreams.html#cfn-cognito-identitypool-cognitostreams-streamname
+        PrimitiveType: String
+        UpdateType: Mutable
 
     .PARAMETER RoleArn
-		Required: False    
-		Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-cognito-identitypool-cognitostreams.html#cfn-cognito-identitypool-cognitostreams-rolearn    
-		PrimitiveType: String    
-		UpdateType: Mutable    
+        The Amazon Resource Name ARN of the role Amazon Cognito can assume to publish to the stream. This role must grant access to Amazon Cognito cognito-sync to invoke PutRecord on your Amazon Cognito stream.
+
+        Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-cognito-identitypool-cognitostreams.html#cfn-cognito-identitypool-cognitostreams-rolearn
+        PrimitiveType: String
+        UpdateType: Mutable
 
     .FUNCTIONALITY
         Vaporshell

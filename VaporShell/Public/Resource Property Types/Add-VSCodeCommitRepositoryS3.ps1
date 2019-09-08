@@ -10,22 +10,25 @@ function Add-VSCodeCommitRepositoryS3 {
         http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-codecommit-repository-s3.html
 
     .PARAMETER ObjectVersion
-		Required: False    
-		Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-codecommit-repository-s3.html#cfn-codecommit-repository-s3-objectversion    
-		PrimitiveType: String    
-		UpdateType: Mutable    
+        The object version of the ZIP file, if versioning is enabled for the Amazon S3 bucket.
+
+        Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-codecommit-repository-s3.html#cfn-codecommit-repository-s3-objectversion
+        PrimitiveType: String
+        UpdateType: Mutable
 
     .PARAMETER Bucket
-		Required: True    
-		Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-codecommit-repository-s3.html#cfn-codecommit-repository-s3-bucket    
-		PrimitiveType: String    
-		UpdateType: Mutable    
+        The name of the Amazon S3 bucket that contains the ZIP file with the content that will be committed to the new repository.
+
+        Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-codecommit-repository-s3.html#cfn-codecommit-repository-s3-bucket
+        PrimitiveType: String
+        UpdateType: Mutable
 
     .PARAMETER Key
-		Required: True    
-		Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-codecommit-repository-s3.html#cfn-codecommit-repository-s3-key    
-		PrimitiveType: String    
-		UpdateType: Mutable    
+        The key to use for accessing the Amazon S3 bucket.
+
+        Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-codecommit-repository-s3.html#cfn-codecommit-repository-s3-key
+        PrimitiveType: String
+        UpdateType: Mutable
 
     .FUNCTIONALITY
         Vaporshell

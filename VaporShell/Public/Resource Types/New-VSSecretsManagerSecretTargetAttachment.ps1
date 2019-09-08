@@ -13,22 +13,25 @@ function New-VSSecretsManagerSecretTargetAttachment {
         The logical ID must be alphanumeric (A-Za-z0-9) and unique within the template. Use the logical name to reference the resource in other parts of the template. For example, if you want to map an Amazon Elastic Block Store volume to an Amazon EC2 instance, you reference the logical IDs to associate the block stores with the instance.
 
     .PARAMETER SecretId
-		Required: True    
-		Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-secretsmanager-secrettargetattachment.html#cfn-secretsmanager-secrettargetattachment-secretid    
-		PrimitiveType: String    
-		UpdateType: Mutable    
+        The Amazon Resource Name ARN or the friendly name of the secret that contains the credentials that you want to use with the specified service or database. To reference a secret that's also created in this template, use the see Ref: https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/intrinsic-function-reference-ref.html function with the secret's logical ID.
+
+        Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-secretsmanager-secrettargetattachment.html#cfn-secretsmanager-secrettargetattachment-secretid
+        PrimitiveType: String
+        UpdateType: Mutable
 
     .PARAMETER TargetType
-		Required: True    
-		Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-secretsmanager-secrettargetattachment.html#cfn-secretsmanager-secrettargetattachment-targettype    
-		PrimitiveType: String    
-		UpdateType: Mutable    
+        A string used by the Secrets Manager console to determine how to parse the structure of the secret text and place the values in the proper fields of the console user interface. If you created this secret using the Secrets Manager console then we recommend that you do not modify this value. If this is a custom secret, then this field is available for your use. As a best practice, do not store any sensitive information in this field. Instead, store sensitive information in the SecretString or SecretBinary fields to ensure that it is encrypted.
+
+        Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-secretsmanager-secrettargetattachment.html#cfn-secretsmanager-secrettargetattachment-targettype
+        PrimitiveType: String
+        UpdateType: Mutable
 
     .PARAMETER TargetId
-		Required: True    
-		Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-secretsmanager-secrettargetattachment.html#cfn-secretsmanager-secrettargetattachment-targetid    
-		PrimitiveType: String    
-		UpdateType: Mutable    
+        The ARN of the service or database whose credentials are stored in the specified secret.
+
+        Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-secretsmanager-secrettargetattachment.html#cfn-secretsmanager-secrettargetattachment-targetid
+        PrimitiveType: String
+        UpdateType: Mutable
 
     .PARAMETER DeletionPolicy
         With the DeletionPolicy attribute you can preserve or (in some cases) backup a resource when its stack is deleted. You specify a DeletionPolicy attribute for each resource that you want to control. If a resource has no DeletionPolicy attribute, AWS CloudFormation deletes the resource by default.

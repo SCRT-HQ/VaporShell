@@ -10,16 +10,18 @@ function Add-VSS3BucketObjectLockConfiguration {
         http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-s3-bucket-objectlockconfiguration.html
 
     .PARAMETER ObjectLockEnabled
-		Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-s3-bucket-objectlockconfiguration.html#cfn-s3-bucket-objectlockconfiguration-objectlockenabled    
-		PrimitiveType: String    
-		Required: False    
-		UpdateType: Mutable    
+        Indicates whether this bucket has an object lock configuration enabled.
+
+        Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-s3-bucket-objectlockconfiguration.html#cfn-s3-bucket-objectlockconfiguration-objectlockenabled
+        PrimitiveType: String
+        UpdateType: Mutable
 
     .PARAMETER Rule
-		Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-s3-bucket-objectlockconfiguration.html#cfn-s3-bucket-objectlockconfiguration-rule    
-		Required: False    
-		Type: ObjectLockRule    
-		UpdateType: Mutable    
+        The object lock rule in place for the specified object.
+
+        Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-s3-bucket-objectlockconfiguration.html#cfn-s3-bucket-objectlockconfiguration-rule
+        Type: ObjectLockRule
+        UpdateType: Mutable
 
     .FUNCTIONALITY
         Vaporshell

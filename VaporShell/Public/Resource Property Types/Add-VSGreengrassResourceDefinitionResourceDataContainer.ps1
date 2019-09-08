@@ -10,34 +10,39 @@ function Add-VSGreengrassResourceDefinitionResourceDataContainer {
         http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-greengrass-resourcedefinition-resourcedatacontainer.html
 
     .PARAMETER SecretsManagerSecretResourceData
-		Type: SecretsManagerSecretResourceData    
-		Required: False    
-		Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-greengrass-resourcedefinition-resourcedatacontainer.html#cfn-greengrass-resourcedefinition-resourcedatacontainer-secretsmanagersecretresourcedata    
-		UpdateType: Immutable    
+        Settings for a secret resource.
+
+        Type: SecretsManagerSecretResourceData
+        Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-greengrass-resourcedefinition-resourcedatacontainer.html#cfn-greengrass-resourcedefinition-resourcedatacontainer-secretsmanagersecretresourcedata
+        UpdateType: Immutable
 
     .PARAMETER SageMakerMachineLearningModelResourceData
-		Type: SageMakerMachineLearningModelResourceData    
-		Required: False    
-		Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-greengrass-resourcedefinition-resourcedatacontainer.html#cfn-greengrass-resourcedefinition-resourcedatacontainer-sagemakermachinelearningmodelresourcedata    
-		UpdateType: Immutable    
+        Settings for a machine learning resource saved as an Amazon SageMaker training job.
+
+        Type: SageMakerMachineLearningModelResourceData
+        Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-greengrass-resourcedefinition-resourcedatacontainer.html#cfn-greengrass-resourcedefinition-resourcedatacontainer-sagemakermachinelearningmodelresourcedata
+        UpdateType: Immutable
 
     .PARAMETER LocalVolumeResourceData
-		Type: LocalVolumeResourceData    
-		Required: False    
-		Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-greengrass-resourcedefinition-resourcedatacontainer.html#cfn-greengrass-resourcedefinition-resourcedatacontainer-localvolumeresourcedata    
-		UpdateType: Immutable    
+        Settings for a local volume resource.
+
+        Type: LocalVolumeResourceData
+        Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-greengrass-resourcedefinition-resourcedatacontainer.html#cfn-greengrass-resourcedefinition-resourcedatacontainer-localvolumeresourcedata
+        UpdateType: Immutable
 
     .PARAMETER LocalDeviceResourceData
-		Type: LocalDeviceResourceData    
-		Required: False    
-		Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-greengrass-resourcedefinition-resourcedatacontainer.html#cfn-greengrass-resourcedefinition-resourcedatacontainer-localdeviceresourcedata    
-		UpdateType: Immutable    
+        Settings for a local device resource.
+
+        Type: LocalDeviceResourceData
+        Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-greengrass-resourcedefinition-resourcedatacontainer.html#cfn-greengrass-resourcedefinition-resourcedatacontainer-localdeviceresourcedata
+        UpdateType: Immutable
 
     .PARAMETER S3MachineLearningModelResourceData
-		Type: S3MachineLearningModelResourceData    
-		Required: False    
-		Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-greengrass-resourcedefinition-resourcedatacontainer.html#cfn-greengrass-resourcedefinition-resourcedatacontainer-s3machinelearningmodelresourcedata    
-		UpdateType: Immutable    
+        Settings for a machine learning resource stored in Amazon S3.
+
+        Type: S3MachineLearningModelResourceData
+        Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-greengrass-resourcedefinition-resourcedatacontainer.html#cfn-greengrass-resourcedefinition-resourcedatacontainer-s3machinelearningmodelresourcedata
+        UpdateType: Immutable
 
     .FUNCTIONALITY
         Vaporshell

@@ -10,16 +10,19 @@ function Add-VSCodeDeployDeploymentGroupDeploymentStyle {
         http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-codedeploy-deploymentgroup-deploymentstyle.html
 
     .PARAMETER DeploymentOption
-		Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-codedeploy-deploymentgroup-deploymentstyle.html#cfn-codedeploy-deploymentgroup-deploymentstyle-deploymentoption    
-		PrimitiveType: String    
-		Required: False    
-		UpdateType: Mutable    
+        Indicates whether to route deployment traffic behind a load balancer.
+
+        Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-codedeploy-deploymentgroup-deploymentstyle.html#cfn-codedeploy-deploymentgroup-deploymentstyle-deploymentoption
+        PrimitiveType: String
+        UpdateType: Mutable
 
     .PARAMETER DeploymentType
-		Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-codedeploy-deploymentgroup-deploymentstyle.html#cfn-codedeploy-deploymentgroup-deploymentstyle-deploymenttype    
-		PrimitiveType: String    
-		Required: False    
-		UpdateType: Mutable    
+        Indicates whether to run an in-place or blue/green deployment.
+AWS CloudFormation supports blue/green deployments on AWS Lambda compute platforms only. For more information about deploying on an AWS Lambda compute platform, see  Deployments on an AWS Lambda Compute Platform: https://docs.aws.amazon.com/codedeploy/latest/userguide/deployment-steps.html#deployment-steps-lambda in the *AWS CodeDeploy User Guide*.
+
+        Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-codedeploy-deploymentgroup-deploymentstyle.html#cfn-codedeploy-deploymentgroup-deploymentstyle-deploymenttype
+        PrimitiveType: String
+        UpdateType: Mutable
 
     .FUNCTIONALITY
         Vaporshell

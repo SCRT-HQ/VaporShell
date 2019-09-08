@@ -13,46 +13,53 @@ function New-VSCodeStarGitHubRepository {
         The logical ID must be alphanumeric (A-Za-z0-9) and unique within the template. Use the logical name to reference the resource in other parts of the template. For example, if you want to map an Amazon Elastic Block Store volume to an Amazon EC2 instance, you reference the logical IDs to associate the block stores with the instance.
 
     .PARAMETER EnableIssues
-		Required: False    
-		Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-codestar-githubrepository.html#cfn-codestar-githubrepository-enableissues    
-		PrimitiveType: Boolean    
-		UpdateType: Mutable    
+        Indicates whether to enable issues for the GitHub repository. You can use GitHub issues to track information and bugs for your repository.
+
+        Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-codestar-githubrepository.html#cfn-codestar-githubrepository-enableissues
+        PrimitiveType: Boolean
+        UpdateType: Mutable
 
     .PARAMETER RepositoryName
-		Required: True    
-		Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-codestar-githubrepository.html#cfn-codestar-githubrepository-repositoryname    
-		PrimitiveType: String    
-		UpdateType: Mutable    
+        The name of the repository you want to create in GitHub with AWS CloudFormation stack creation.
+
+        Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-codestar-githubrepository.html#cfn-codestar-githubrepository-repositoryname
+        PrimitiveType: String
+        UpdateType: Mutable
 
     .PARAMETER RepositoryAccessToken
-		Required: True    
-		Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-codestar-githubrepository.html#cfn-codestar-githubrepository-repositoryaccesstoken    
-		PrimitiveType: String    
-		UpdateType: Mutable    
+        The GitHub user's personal access token for the GitHub repository.
+
+        Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-codestar-githubrepository.html#cfn-codestar-githubrepository-repositoryaccesstoken
+        PrimitiveType: String
+        UpdateType: Mutable
 
     .PARAMETER RepositoryOwner
-		Required: True    
-		Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-codestar-githubrepository.html#cfn-codestar-githubrepository-repositoryowner    
-		PrimitiveType: String    
-		UpdateType: Mutable    
+        The GitHub user name for the owner of the GitHub repository to be created. If this repository should be owned by a GitHub organization, provide its name.
+
+        Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-codestar-githubrepository.html#cfn-codestar-githubrepository-repositoryowner
+        PrimitiveType: String
+        UpdateType: Mutable
 
     .PARAMETER IsPrivate
-		Required: False    
-		Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-codestar-githubrepository.html#cfn-codestar-githubrepository-isprivate    
-		PrimitiveType: Boolean    
-		UpdateType: Mutable    
+        Indicates whether the GitHub repository is a private repository. If so, you choose who can see and commit to this repository.
+
+        Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-codestar-githubrepository.html#cfn-codestar-githubrepository-isprivate
+        PrimitiveType: Boolean
+        UpdateType: Mutable
 
     .PARAMETER Code
-		Type: Code    
-		Required: False    
-		Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-codestar-githubrepository.html#cfn-codestar-githubrepository-code    
-		UpdateType: Mutable    
+        Information about code to be committed to a repository after it is created in an AWS CloudFormation stack.
+
+        Type: Code
+        Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-codestar-githubrepository.html#cfn-codestar-githubrepository-code
+        UpdateType: Mutable
 
     .PARAMETER RepositoryDescription
-		Required: False    
-		Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-codestar-githubrepository.html#cfn-codestar-githubrepository-repositorydescription    
-		PrimitiveType: String    
-		UpdateType: Mutable    
+        A comment or description about the new repository. This description is displayed in GitHub after the repository is created.
+
+        Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-codestar-githubrepository.html#cfn-codestar-githubrepository-repositorydescription
+        PrimitiveType: String
+        UpdateType: Mutable
 
     .PARAMETER DeletionPolicy
         With the DeletionPolicy attribute you can preserve or (in some cases) backup a resource when its stack is deleted. You specify a DeletionPolicy attribute for each resource that you want to control. If a resource has no DeletionPolicy attribute, AWS CloudFormation deletes the resource by default.

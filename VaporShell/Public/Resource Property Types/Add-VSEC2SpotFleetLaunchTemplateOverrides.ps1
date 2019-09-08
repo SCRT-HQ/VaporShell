@@ -10,34 +10,39 @@ function Add-VSEC2SpotFleetLaunchTemplateOverrides {
         http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-spotfleet-launchtemplateoverrides.html
 
     .PARAMETER AvailabilityZone
-		Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-spotfleet-launchtemplateoverrides.html#cfn-ec2-spotfleet-launchtemplateoverrides-availabilityzone    
-		PrimitiveType: String    
-		Required: False    
-		UpdateType: Mutable    
+        The Availability Zone in which to launch the instances.
+
+        Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-spotfleet-launchtemplateoverrides.html#cfn-ec2-spotfleet-launchtemplateoverrides-availabilityzone
+        PrimitiveType: String
+        UpdateType: Mutable
 
     .PARAMETER InstanceType
-		Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-spotfleet-launchtemplateoverrides.html#cfn-ec2-spotfleet-launchtemplateoverrides-instancetype    
-		PrimitiveType: String    
-		Required: False    
-		UpdateType: Mutable    
+        The instance type.
+
+        Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-spotfleet-launchtemplateoverrides.html#cfn-ec2-spotfleet-launchtemplateoverrides-instancetype
+        PrimitiveType: String
+        UpdateType: Mutable
 
     .PARAMETER SpotPrice
-		Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-spotfleet-launchtemplateoverrides.html#cfn-ec2-spotfleet-launchtemplateoverrides-spotprice    
-		PrimitiveType: String    
-		Required: False    
-		UpdateType: Mutable    
+        The maximum price per unit hour that you are willing to pay for a Spot Instance.
+
+        Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-spotfleet-launchtemplateoverrides.html#cfn-ec2-spotfleet-launchtemplateoverrides-spotprice
+        PrimitiveType: String
+        UpdateType: Mutable
 
     .PARAMETER SubnetId
-		Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-spotfleet-launchtemplateoverrides.html#cfn-ec2-spotfleet-launchtemplateoverrides-subnetid    
-		PrimitiveType: String    
-		Required: False    
-		UpdateType: Mutable    
+        The ID of the subnet in which to launch the instances.
+
+        Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-spotfleet-launchtemplateoverrides.html#cfn-ec2-spotfleet-launchtemplateoverrides-subnetid
+        PrimitiveType: String
+        UpdateType: Mutable
 
     .PARAMETER WeightedCapacity
-		Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-spotfleet-launchtemplateoverrides.html#cfn-ec2-spotfleet-launchtemplateoverrides-weightedcapacity    
-		PrimitiveType: Double    
-		Required: False    
-		UpdateType: Mutable    
+        The number of units provided by the specified instance type.
+
+        Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-spotfleet-launchtemplateoverrides.html#cfn-ec2-spotfleet-launchtemplateoverrides-weightedcapacity
+        PrimitiveType: Double
+        UpdateType: Mutable
 
     .FUNCTIONALITY
         Vaporshell

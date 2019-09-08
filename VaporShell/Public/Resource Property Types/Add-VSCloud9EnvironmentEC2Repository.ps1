@@ -10,16 +10,18 @@ function Add-VSCloud9EnvironmentEC2Repository {
         http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-cloud9-environmentec2-repository.html
 
     .PARAMETER PathComponent
-		Required: True    
-		Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-cloud9-environmentec2-repository.html#cfn-cloud9-environmentec2-repository-pathcomponent    
-		PrimitiveType: String    
-		UpdateType: Mutable    
+        The path within the development environment's default file system location to clone the AWS CodeCommit repository into. For example, /REPOSITORY_NAME would clone the repository into the /home/USER_NAME/environment/REPOSITORY_NAME directory in the environment.
+
+        Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-cloud9-environmentec2-repository.html#cfn-cloud9-environmentec2-repository-pathcomponent
+        PrimitiveType: String
+        UpdateType: Mutable
 
     .PARAMETER RepositoryUrl
-		Required: True    
-		Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-cloud9-environmentec2-repository.html#cfn-cloud9-environmentec2-repository-repositoryurl    
-		PrimitiveType: String    
-		UpdateType: Mutable    
+        The clone URL of the AWS CodeCommit repository to be cloned. For example, for an AWS CodeCommit repository this might be https://git-codecommit.us-east-2.amazonaws.com/v1/repos/REPOSITORY_NAME.
+
+        Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-cloud9-environmentec2-repository.html#cfn-cloud9-environmentec2-repository-repositoryurl
+        PrimitiveType: String
+        UpdateType: Mutable
 
     .FUNCTIONALITY
         Vaporshell

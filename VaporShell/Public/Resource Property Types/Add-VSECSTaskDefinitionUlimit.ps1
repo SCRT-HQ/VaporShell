@@ -10,22 +10,25 @@ function Add-VSECSTaskDefinitionUlimit {
         http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ecs-taskdefinition-containerdefinitions-ulimit.html
 
     .PARAMETER HardLimit
-		Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ecs-taskdefinition-containerdefinitions-ulimit.html#cfn-ecs-taskdefinition-containerdefinition-ulimit-hardlimit    
-		PrimitiveType: Integer    
-		Required: True    
-		UpdateType: Immutable    
+        The hard limit for the ulimit type.
+
+        Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ecs-taskdefinition-containerdefinitions-ulimit.html#cfn-ecs-taskdefinition-containerdefinition-ulimit-hardlimit
+        PrimitiveType: Integer
+        UpdateType: Immutable
 
     .PARAMETER Name
-		Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ecs-taskdefinition-containerdefinitions-ulimit.html#cfn-ecs-taskdefinition-containerdefinition-ulimit-name    
-		PrimitiveType: String    
-		Required: True    
-		UpdateType: Immutable    
+        The type of the ulimit.
+
+        Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ecs-taskdefinition-containerdefinitions-ulimit.html#cfn-ecs-taskdefinition-containerdefinition-ulimit-name
+        PrimitiveType: String
+        UpdateType: Immutable
 
     .PARAMETER SoftLimit
-		Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ecs-taskdefinition-containerdefinitions-ulimit.html#cfn-ecs-taskdefinition-containerdefinition-ulimit-softlimit    
-		PrimitiveType: Integer    
-		Required: True    
-		UpdateType: Immutable    
+        The soft limit for the ulimit type.
+
+        Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ecs-taskdefinition-containerdefinitions-ulimit.html#cfn-ecs-taskdefinition-containerdefinition-ulimit-softlimit
+        PrimitiveType: Integer
+        UpdateType: Immutable
 
     .FUNCTIONALITY
         Vaporshell

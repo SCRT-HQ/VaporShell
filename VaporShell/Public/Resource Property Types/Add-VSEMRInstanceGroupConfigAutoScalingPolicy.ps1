@@ -10,18 +10,20 @@ function Add-VSEMRInstanceGroupConfigAutoScalingPolicy {
         http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-elasticmapreduce-instancegroupconfig-autoscalingpolicy.html
 
     .PARAMETER Constraints
-		Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-elasticmapreduce-instancegroupconfig-autoscalingpolicy.html#cfn-elasticmapreduce-instancegroupconfig-autoscalingpolicy-constraints    
-		Required: True    
-		Type: ScalingConstraints    
-		UpdateType: Mutable    
+        The upper and lower EC2 instance limits for an automatic scaling policy. Automatic scaling activity will not cause an instance group to grow above or below these limits.
+
+        Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-elasticmapreduce-instancegroupconfig-autoscalingpolicy.html#cfn-elasticmapreduce-instancegroupconfig-autoscalingpolicy-constraints
+        Type: ScalingConstraints
+        UpdateType: Mutable
 
     .PARAMETER Rules
-		Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-elasticmapreduce-instancegroupconfig-autoscalingpolicy.html#cfn-elasticmapreduce-instancegroupconfig-autoscalingpolicy-rules    
-		DuplicatesAllowed: False    
-		ItemType: ScalingRule    
-		Required: True    
-		Type: List    
-		UpdateType: Mutable    
+        The scale-in and scale-out rules that comprise the automatic scaling policy.
+
+        Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-elasticmapreduce-instancegroupconfig-autoscalingpolicy.html#cfn-elasticmapreduce-instancegroupconfig-autoscalingpolicy-rules
+        DuplicatesAllowed: False
+        ItemType: ScalingRule
+        Type: List
+        UpdateType: Mutable
 
     .FUNCTIONALITY
         Vaporshell

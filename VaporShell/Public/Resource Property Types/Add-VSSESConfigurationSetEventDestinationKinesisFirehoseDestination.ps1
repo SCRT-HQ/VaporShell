@@ -10,16 +10,18 @@ function Add-VSSESConfigurationSetEventDestinationKinesisFirehoseDestination {
         http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ses-configurationseteventdestination-kinesisfirehosedestination.html
 
     .PARAMETER IAMRoleARN
-		Required: True    
-		Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ses-configurationseteventdestination-kinesisfirehosedestination.html#cfn-ses-configurationseteventdestination-kinesisfirehosedestination-iamrolearn    
-		PrimitiveType: String    
-		UpdateType: Mutable    
+        The ARN of the IAM role that Amazon SES uses to publish email sending events to the Amazon Kinesis Data Firehose stream.
+
+        Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ses-configurationseteventdestination-kinesisfirehosedestination.html#cfn-ses-configurationseteventdestination-kinesisfirehosedestination-iamrolearn
+        PrimitiveType: String
+        UpdateType: Mutable
 
     .PARAMETER DeliveryStreamARN
-		Required: True    
-		Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ses-configurationseteventdestination-kinesisfirehosedestination.html#cfn-ses-configurationseteventdestination-kinesisfirehosedestination-deliverystreamarn    
-		PrimitiveType: String    
-		UpdateType: Mutable    
+        The ARN of the Amazon Kinesis Data Firehose stream that email sending events should be published to.
+
+        Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ses-configurationseteventdestination-kinesisfirehosedestination.html#cfn-ses-configurationseteventdestination-kinesisfirehosedestination-deliverystreamarn
+        PrimitiveType: String
+        UpdateType: Mutable
 
     .FUNCTIONALITY
         Vaporshell

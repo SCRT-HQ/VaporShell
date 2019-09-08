@@ -10,16 +10,18 @@ function Add-VSPinpointSegmentGPSPoint {
         http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-pinpoint-segment-segmentdimensions-location-gpspoint.html
 
     .PARAMETER RangeInKilometers
-		Required: True    
-		Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-pinpoint-segment-segmentdimensions-location-gpspoint.html#cfn-pinpoint-segment-segmentdimensions-location-gpspoint-rangeinkilometers    
-		PrimitiveType: Double    
-		UpdateType: Mutable    
+        The range, in kilometers, from the GPS coordinates.
+
+        Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-pinpoint-segment-segmentdimensions-location-gpspoint.html#cfn-pinpoint-segment-segmentdimensions-location-gpspoint-rangeinkilometers
+        PrimitiveType: Double
+        UpdateType: Mutable
 
     .PARAMETER Coordinates
-		Type: Coordinates    
-		Required: True    
-		Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-pinpoint-segment-segmentdimensions-location-gpspoint.html#cfn-pinpoint-segment-segmentdimensions-location-gpspoint-coordinates    
-		UpdateType: Mutable    
+        The GPS coordinates to measure distance from.
+
+        Type: Coordinates
+        Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-pinpoint-segment-segmentdimensions-location-gpspoint.html#cfn-pinpoint-segment-segmentdimensions-location-gpspoint-coordinates
+        UpdateType: Mutable
 
     .FUNCTIONALITY
         Vaporshell

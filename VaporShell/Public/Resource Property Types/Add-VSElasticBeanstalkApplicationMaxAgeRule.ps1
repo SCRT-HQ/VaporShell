@@ -10,22 +10,25 @@ function Add-VSElasticBeanstalkApplicationMaxAgeRule {
         http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-elasticbeanstalk-application-maxagerule.html
 
     .PARAMETER DeleteSourceFromS3
-		Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-elasticbeanstalk-application-maxagerule.html#cfn-elasticbeanstalk-application-maxagerule-deletesourcefroms3    
-		PrimitiveType: Boolean    
-		Required: False    
-		UpdateType: Mutable    
+        Set to true to delete a version's source bundle from Amazon S3 when Elastic Beanstalk deletes the application version.
+
+        Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-elasticbeanstalk-application-maxagerule.html#cfn-elasticbeanstalk-application-maxagerule-deletesourcefroms3
+        PrimitiveType: Boolean
+        UpdateType: Mutable
 
     .PARAMETER Enabled
-		Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-elasticbeanstalk-application-maxagerule.html#cfn-elasticbeanstalk-application-maxagerule-enabled    
-		PrimitiveType: Boolean    
-		Required: False    
-		UpdateType: Mutable    
+        Specify true to apply the rule, or false to disable it.
+
+        Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-elasticbeanstalk-application-maxagerule.html#cfn-elasticbeanstalk-application-maxagerule-enabled
+        PrimitiveType: Boolean
+        UpdateType: Mutable
 
     .PARAMETER MaxAgeInDays
-		Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-elasticbeanstalk-application-maxagerule.html#cfn-elasticbeanstalk-application-maxagerule-maxageindays    
-		PrimitiveType: Integer    
-		Required: False    
-		UpdateType: Mutable    
+        Specify the number of days to retain an application versions.
+
+        Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-elasticbeanstalk-application-maxagerule.html#cfn-elasticbeanstalk-application-maxagerule-maxageindays
+        PrimitiveType: Integer
+        UpdateType: Mutable
 
     .FUNCTIONALITY
         Vaporshell

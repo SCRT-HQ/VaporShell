@@ -10,28 +10,32 @@ function Add-VSIoTEventsDetectorModelState {
         http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iotevents-detectormodel-state.html
 
     .PARAMETER OnInput
-		Type: OnInput    
-		Required: False    
-		Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iotevents-detectormodel-state.html#cfn-iotevents-detectormodel-state-oninput    
-		UpdateType: Mutable    
+        When an input is received and the "condition" is TRUE, perform the specified "actions".
+
+        Type: OnInput
+        Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iotevents-detectormodel-state.html#cfn-iotevents-detectormodel-state-oninput
+        UpdateType: Mutable
 
     .PARAMETER OnExit
-		Type: OnExit    
-		Required: False    
-		Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iotevents-detectormodel-state.html#cfn-iotevents-detectormodel-state-onexit    
-		UpdateType: Mutable    
+        When exiting this state, perform these "actions" if the specified "condition" is TRUE.
+
+        Type: OnExit
+        Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iotevents-detectormodel-state.html#cfn-iotevents-detectormodel-state-onexit
+        UpdateType: Mutable
 
     .PARAMETER StateName
-		Required: False    
-		Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iotevents-detectormodel-state.html#cfn-iotevents-detectormodel-state-statename    
-		PrimitiveType: String    
-		UpdateType: Mutable    
+        The name of the state.
+
+        Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iotevents-detectormodel-state.html#cfn-iotevents-detectormodel-state-statename
+        PrimitiveType: String
+        UpdateType: Mutable
 
     .PARAMETER OnEnter
-		Type: OnEnter    
-		Required: False    
-		Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iotevents-detectormodel-state.html#cfn-iotevents-detectormodel-state-onenter    
-		UpdateType: Mutable    
+        When entering this state, perform these "actions" if the "condition" is TRUE.
+
+        Type: OnEnter
+        Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iotevents-detectormodel-state.html#cfn-iotevents-detectormodel-state-onenter
+        UpdateType: Mutable
 
     .FUNCTIONALITY
         Vaporshell

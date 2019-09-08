@@ -13,35 +13,43 @@ function New-VSLambdaLayerVersion {
         The logical ID must be alphanumeric (A-Za-z0-9) and unique within the template. Use the logical name to reference the resource in other parts of the template. For example, if you want to map an Amazon Elastic Block Store volume to an Amazon EC2 instance, you reference the logical IDs to associate the block stores with the instance.
 
     .PARAMETER CompatibleRuntimes
-		PrimitiveItemType: String    
-		Type: List    
-		Required: False    
-		Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-lambda-layerversion.html#cfn-lambda-layerversion-compatibleruntimes    
-		UpdateType: Immutable    
+        A list of compatible function runtimes: https://docs.aws.amazon.com/lambda/latest/dg/lambda-runtimes.html. Used for filtering with ListLayers: https://docs.aws.amazon.com/lambda/latest/dg/API_ListLayers.html and ListLayerVersions: https://docs.aws.amazon.com/lambda/latest/dg/API_ListLayerVersions.html.
+
+        PrimitiveItemType: String
+        Type: List
+        Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-lambda-layerversion.html#cfn-lambda-layerversion-compatibleruntimes
+        UpdateType: Immutable
 
     .PARAMETER LicenseInfo
-		Required: False    
-		Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-lambda-layerversion.html#cfn-lambda-layerversion-licenseinfo    
-		PrimitiveType: String    
-		UpdateType: Immutable    
+        The layer's software license. It can be any of the following:
++ An SPDX license identifier: https://spdx.org/licenses/. For example, MIT.
++ The URL of a license hosted on the internet. For example, https://opensource.org/licenses/MIT.
++ The full text of the license.
+
+        Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-lambda-layerversion.html#cfn-lambda-layerversion-licenseinfo
+        PrimitiveType: String
+        UpdateType: Immutable
 
     .PARAMETER Description
-		Required: False    
-		Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-lambda-layerversion.html#cfn-lambda-layerversion-description    
-		PrimitiveType: String    
-		UpdateType: Immutable    
+        The description of the version.
+
+        Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-lambda-layerversion.html#cfn-lambda-layerversion-description
+        PrimitiveType: String
+        UpdateType: Immutable
 
     .PARAMETER LayerName
-		Required: False    
-		Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-lambda-layerversion.html#cfn-lambda-layerversion-layername    
-		PrimitiveType: String    
-		UpdateType: Immutable    
+        The name or Amazon Resource Name ARN of the layer.
+
+        Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-lambda-layerversion.html#cfn-lambda-layerversion-layername
+        PrimitiveType: String
+        UpdateType: Immutable
 
     .PARAMETER Content
-		Type: Content    
-		Required: True    
-		Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-lambda-layerversion.html#cfn-lambda-layerversion-content    
-		UpdateType: Immutable    
+        The function layer archive.
+
+        Type: Content
+        Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-lambda-layerversion.html#cfn-lambda-layerversion-content
+        UpdateType: Immutable
 
     .PARAMETER DeletionPolicy
         With the DeletionPolicy attribute you can preserve or (in some cases) backup a resource when its stack is deleted. You specify a DeletionPolicy attribute for each resource that you want to control. If a resource has no DeletionPolicy attribute, AWS CloudFormation deletes the resource by default.

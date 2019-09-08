@@ -10,22 +10,25 @@ function Add-VSBatchJobDefinitionMountPoints {
         http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-batch-jobdefinition-mountpoints.html
 
     .PARAMETER ReadOnly
-		Required: False    
-		Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-batch-jobdefinition-mountpoints.html#cfn-batch-jobdefinition-mountpoints-readonly    
-		PrimitiveType: Boolean    
-		UpdateType: Mutable    
+        If this value is true, the container has read-only access to the volume; otherwise, the container can write to the volume. The default value is false.
+
+        Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-batch-jobdefinition-mountpoints.html#cfn-batch-jobdefinition-mountpoints-readonly
+        PrimitiveType: Boolean
+        UpdateType: Mutable
 
     .PARAMETER SourceVolume
-		Required: False    
-		Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-batch-jobdefinition-mountpoints.html#cfn-batch-jobdefinition-mountpoints-sourcevolume    
-		PrimitiveType: String    
-		UpdateType: Mutable    
+        The name of the volume to mount.
+
+        Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-batch-jobdefinition-mountpoints.html#cfn-batch-jobdefinition-mountpoints-sourcevolume
+        PrimitiveType: String
+        UpdateType: Mutable
 
     .PARAMETER ContainerPath
-		Required: False    
-		Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-batch-jobdefinition-mountpoints.html#cfn-batch-jobdefinition-mountpoints-containerpath    
-		PrimitiveType: String    
-		UpdateType: Mutable    
+        The path on the container at which to mount the host volume.
+
+        Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-batch-jobdefinition-mountpoints.html#cfn-batch-jobdefinition-mountpoints-containerpath
+        PrimitiveType: String
+        UpdateType: Mutable
 
     .FUNCTIONALITY
         Vaporshell

@@ -13,34 +13,39 @@ function New-VSApiGatewayDeployment {
         The logical ID must be alphanumeric (A-Za-z0-9) and unique within the template. Use the logical name to reference the resource in other parts of the template. For example, if you want to map an Amazon Elastic Block Store volume to an Amazon EC2 instance, you reference the logical IDs to associate the block stores with the instance.
 
     .PARAMETER DeploymentCanarySettings
-		Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-apigateway-deployment.html#cfn-apigateway-deployment-deploymentcanarysettings    
-		Required: False    
-		Type: DeploymentCanarySettings    
-		UpdateType: Immutable    
+        Specifies settings for the canary deployment.
+
+        Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-apigateway-deployment.html#cfn-apigateway-deployment-deploymentcanarysettings
+        Type: DeploymentCanarySettings
+        UpdateType: Immutable
 
     .PARAMETER Description
-		Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-apigateway-deployment.html#cfn-apigateway-deployment-description    
-		PrimitiveType: String    
-		Required: False    
-		UpdateType: Mutable    
+        A description of the purpose of the API Gateway deployment.
+
+        Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-apigateway-deployment.html#cfn-apigateway-deployment-description
+        PrimitiveType: String
+        UpdateType: Mutable
 
     .PARAMETER RestApiId
-		Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-apigateway-deployment.html#cfn-apigateway-deployment-restapiid    
-		PrimitiveType: String    
-		Required: True    
-		UpdateType: Immutable    
+        The ID of the RestApi resource to deploy.
+
+        Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-apigateway-deployment.html#cfn-apigateway-deployment-restapiid
+        PrimitiveType: String
+        UpdateType: Immutable
 
     .PARAMETER StageDescription
-		Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-apigateway-deployment.html#cfn-apigateway-deployment-stagedescription    
-		Required: False    
-		Type: StageDescription    
-		UpdateType: Mutable    
+        Configures the stage that API Gateway creates with this deployment.
+
+        Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-apigateway-deployment.html#cfn-apigateway-deployment-stagedescription
+        Type: StageDescription
+        UpdateType: Mutable
 
     .PARAMETER StageName
-		Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-apigateway-deployment.html#cfn-apigateway-deployment-stagename    
-		PrimitiveType: String    
-		Required: False    
-		UpdateType: Mutable    
+        A name for the stage that API Gateway creates with this deployment. Use only alphanumeric characters.
+
+        Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-apigateway-deployment.html#cfn-apigateway-deployment-stagename
+        PrimitiveType: String
+        UpdateType: Mutable
 
     .PARAMETER DeletionPolicy
         With the DeletionPolicy attribute you can preserve or (in some cases) backup a resource when its stack is deleted. You specify a DeletionPolicy attribute for each resource that you want to control. If a resource has no DeletionPolicy attribute, AWS CloudFormation deletes the resource by default.

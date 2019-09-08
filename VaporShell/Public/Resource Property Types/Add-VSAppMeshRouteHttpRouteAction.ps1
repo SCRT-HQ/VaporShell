@@ -10,11 +10,12 @@ function Add-VSAppMeshRouteHttpRouteAction {
         http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-appmesh-route-httprouteaction.html
 
     .PARAMETER WeightedTargets
-		Type: List    
-		Required: True    
-		Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-appmesh-route-httprouteaction.html#cfn-appmesh-route-httprouteaction-weightedtargets    
-		ItemType: WeightedTarget    
-		UpdateType: Mutable    
+        The targets that traffic is routed to when a request matches the route. You can specify one or more targets and their relative weights to distribute traffic with.
+
+        Type: List
+        Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-appmesh-route-httprouteaction.html#cfn-appmesh-route-httprouteaction-weightedtargets
+        ItemType: WeightedTarget
+        UpdateType: Mutable
 
     .FUNCTIONALITY
         Vaporshell

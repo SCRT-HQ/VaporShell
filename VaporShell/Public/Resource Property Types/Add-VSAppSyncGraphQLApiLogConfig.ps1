@@ -10,16 +10,33 @@ function Add-VSAppSyncGraphQLApiLogConfig {
         http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-appsync-graphqlapi-logconfig.html
 
     .PARAMETER CloudWatchLogsRoleArn
-		Required: False    
-		Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-appsync-graphqlapi-logconfig.html#cfn-appsync-graphqlapi-logconfig-cloudwatchlogsrolearn    
-		PrimitiveType: String    
-		UpdateType: Mutable    
+        The service role that AWS AppSync will assume to publish to Amazon CloudWatch Logs in your account.
+
+        Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-appsync-graphqlapi-logconfig.html#cfn-appsync-graphqlapi-logconfig-cloudwatchlogsrolearn
+        PrimitiveType: String
+        UpdateType: Mutable
+
+    .PARAMETER ExcludeVerboseContent
+        Set to TRUE to exclude sections that contain information such as headers, context, and evaluated mapping templates, regardless of logging level.
+
+        Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-appsync-graphqlapi-logconfig.html#cfn-appsync-graphqlapi-logconfig-excludeverbosecontent
+        PrimitiveType: Boolean
+        UpdateType: Mutable
 
     .PARAMETER FieldLogLevel
-		Required: False    
-		Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-appsync-graphqlapi-logconfig.html#cfn-appsync-graphqlapi-logconfig-fieldloglevel    
-		PrimitiveType: String    
-		UpdateType: Mutable    
+        The field logging level. Values can be NONE, ERROR, or ALL.
++  **NONE**: No field-level logs are captured.
++  **ERROR**: Logs the following information only for the fields that are in error:
++ The error section in the server response.
++ Field-level errors.
++ The generated request/response functions that got resolved for error fields.
++  **ALL**: The following information is logged for all fields in the query:
++ Field-level tracing information.
++ The generated request/response functions that got resolved for each field.
+
+        Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-appsync-graphqlapi-logconfig.html#cfn-appsync-graphqlapi-logconfig-fieldloglevel
+        PrimitiveType: String
+        UpdateType: Mutable
 
     .FUNCTIONALITY
         Vaporshell
@@ -39,6 +56,9 @@ function Add-VSAppSyncGraphQLApiLogConfig {
                 }
             })]
         $CloudWatchLogsRoleArn,
+        [parameter(Mandatory = $false)]
+        [System.Boolean]
+        $ExcludeVerboseContent,
         [parameter(Mandatory = $false)]
         [ValidateScript( {
                 $allowedTypes = "System.String","Vaporshell.Function","Vaporshell.Condition"

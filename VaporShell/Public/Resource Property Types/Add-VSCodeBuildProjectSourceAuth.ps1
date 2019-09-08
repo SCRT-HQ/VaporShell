@@ -10,16 +10,20 @@ function Add-VSCodeBuildProjectSourceAuth {
         http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-codebuild-project-sourceauth.html
 
     .PARAMETER Type
-		Required: True    
-		Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-codebuild-project-sourceauth.html#cfn-codebuild-project-sourceauth-type    
-		PrimitiveType: String    
-		UpdateType: Mutable    
+        The authorization type to use. The only valid value is OAUTH, which represents the OAuth authorization type.
+This data type is used by the AWS CodeBuild console only.
+
+        Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-codebuild-project-sourceauth.html#cfn-codebuild-project-sourceauth-type
+        PrimitiveType: String
+        UpdateType: Mutable
 
     .PARAMETER Resource
-		Required: False    
-		Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-codebuild-project-sourceauth.html#cfn-codebuild-project-sourceauth-resource    
-		PrimitiveType: String    
-		UpdateType: Mutable    
+        The resource value that applies to the specified authorization type.
+This data type is used by the AWS CodeBuild console only.
+
+        Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-codebuild-project-sourceauth.html#cfn-codebuild-project-sourceauth-resource
+        PrimitiveType: String
+        UpdateType: Mutable
 
     .FUNCTIONALITY
         Vaporshell

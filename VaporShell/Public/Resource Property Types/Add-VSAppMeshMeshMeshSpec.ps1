@@ -10,10 +10,11 @@ function Add-VSAppMeshMeshMeshSpec {
         http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-appmesh-mesh-meshspec.html
 
     .PARAMETER EgressFilter
-		Type: EgressFilter    
-		Required: False    
-		Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-appmesh-mesh-meshspec.html#cfn-appmesh-mesh-meshspec-egressfilter    
-		UpdateType: Mutable    
+        The egress filter rules for the service mesh.
+
+        Type: EgressFilter
+        Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-appmesh-mesh-meshspec.html#cfn-appmesh-mesh-meshspec-egressfilter
+        UpdateType: Mutable
 
     .FUNCTIONALITY
         Vaporshell

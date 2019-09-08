@@ -10,22 +10,25 @@ function Add-VSGlueSecurityConfigurationEncryptionConfiguration {
         http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-glue-securityconfiguration-encryptionconfiguration.html
 
     .PARAMETER S3Encryptions
-		Type: S3Encryptions    
-		Required: False    
-		Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-glue-securityconfiguration-encryptionconfiguration.html#cfn-glue-securityconfiguration-encryptionconfiguration-s3encryptions    
-		UpdateType: Mutable    
+        The encyption configuration for Amazon Simple Storage Service Amazon S3 data.
+
+        Type: S3Encryptions
+        Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-glue-securityconfiguration-encryptionconfiguration.html#cfn-glue-securityconfiguration-encryptionconfiguration-s3encryptions
+        UpdateType: Mutable
 
     .PARAMETER CloudWatchEncryption
-		Type: CloudWatchEncryption    
-		Required: False    
-		Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-glue-securityconfiguration-encryptionconfiguration.html#cfn-glue-securityconfiguration-encryptionconfiguration-cloudwatchencryption    
-		UpdateType: Mutable    
+        The encryption configuration for Amazon CloudWatch.
+
+        Type: CloudWatchEncryption
+        Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-glue-securityconfiguration-encryptionconfiguration.html#cfn-glue-securityconfiguration-encryptionconfiguration-cloudwatchencryption
+        UpdateType: Mutable
 
     .PARAMETER JobBookmarksEncryption
-		Type: JobBookmarksEncryption    
-		Required: False    
-		Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-glue-securityconfiguration-encryptionconfiguration.html#cfn-glue-securityconfiguration-encryptionconfiguration-jobbookmarksencryption    
-		UpdateType: Mutable    
+        The encryption configuration for job bookmarks.
+
+        Type: JobBookmarksEncryption
+        Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-glue-securityconfiguration-encryptionconfiguration.html#cfn-glue-securityconfiguration-encryptionconfiguration-jobbookmarksencryption
+        UpdateType: Mutable
 
     .FUNCTIONALITY
         Vaporshell

@@ -10,22 +10,28 @@ function Add-VSCodeDeployDeploymentGroupRevisionLocation {
         http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-codedeploy-deploymentgroup-deployment-revision.html
 
     .PARAMETER GitHubLocation
-		Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-codedeploy-deploymentgroup-deployment-revision.html#cfn-properties-codedeploy-deploymentgroup-deployment-revision-githublocation    
-		Required: False    
-		Type: GitHubLocation    
-		UpdateType: Mutable    
+        Information about the location of application artifacts stored in GitHub.
+
+        Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-codedeploy-deploymentgroup-deployment-revision.html#cfn-properties-codedeploy-deploymentgroup-deployment-revision-githublocation
+        Type: GitHubLocation
+        UpdateType: Mutable
 
     .PARAMETER RevisionType
-		Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-codedeploy-deploymentgroup-deployment-revision.html#cfn-properties-codedeploy-deploymentgroup-deployment-revision-revisiontype    
-		PrimitiveType: String    
-		Required: False    
-		UpdateType: Mutable    
+        The type of application revision:
++ S3: An application revision stored in Amazon S3.
++ GitHub: An application revision stored in GitHub EC2/On-premises deployments only.
++ String: A YAML-formatted or JSON-formatted string AWS Lambda deployments only.
+
+        Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-codedeploy-deploymentgroup-deployment-revision.html#cfn-properties-codedeploy-deploymentgroup-deployment-revision-revisiontype
+        PrimitiveType: String
+        UpdateType: Mutable
 
     .PARAMETER S3Location
-		Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-codedeploy-deploymentgroup-deployment-revision.html#cfn-properties-codedeploy-deploymentgroup-deployment-revision-s3location    
-		Required: False    
-		Type: S3Location    
-		UpdateType: Mutable    
+        Information about the location of a revision stored in Amazon S3.
+
+        Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-codedeploy-deploymentgroup-deployment-revision.html#cfn-properties-codedeploy-deploymentgroup-deployment-revision-s3location
+        Type: S3Location
+        UpdateType: Mutable
 
     .FUNCTIONALITY
         Vaporshell

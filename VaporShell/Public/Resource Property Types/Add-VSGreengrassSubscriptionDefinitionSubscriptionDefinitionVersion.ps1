@@ -10,11 +10,12 @@ function Add-VSGreengrassSubscriptionDefinitionSubscriptionDefinitionVersion {
         http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-greengrass-subscriptiondefinition-subscriptiondefinitionversion.html
 
     .PARAMETER Subscriptions
-		Type: List    
-		Required: True    
-		Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-greengrass-subscriptiondefinition-subscriptiondefinitionversion.html#cfn-greengrass-subscriptiondefinition-subscriptiondefinitionversion-subscriptions    
-		ItemType: Subscription    
-		UpdateType: Immutable    
+        The subscriptions in this version.
+
+        Type: List
+        Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-greengrass-subscriptiondefinition-subscriptiondefinitionversion.html#cfn-greengrass-subscriptiondefinition-subscriptiondefinitionversion-subscriptions
+        ItemType: Subscription
+        UpdateType: Immutable
 
     .FUNCTIONALITY
         Vaporshell

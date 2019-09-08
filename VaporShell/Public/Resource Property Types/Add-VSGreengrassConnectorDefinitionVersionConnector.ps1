@@ -10,22 +10,27 @@ function Add-VSGreengrassConnectorDefinitionVersionConnector {
         http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-greengrass-connectordefinitionversion-connector.html
 
     .PARAMETER ConnectorArn
-		Required: True    
-		Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-greengrass-connectordefinitionversion-connector.html#cfn-greengrass-connectordefinitionversion-connector-connectorarn    
-		PrimitiveType: String    
-		UpdateType: Immutable    
+        The Amazon Resource Name ARN of the connector.
+For more information about AWS-provided connectors, see AWS-Provided Greengrass Connectors: https://docs.aws.amazon.com/greengrass/latest/developerguide/connectors-list.html.
+
+        Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-greengrass-connectordefinitionversion-connector.html#cfn-greengrass-connectordefinitionversion-connector-connectorarn
+        PrimitiveType: String
+        UpdateType: Immutable
 
     .PARAMETER Parameters
-		Required: False    
-		Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-greengrass-connectordefinitionversion-connector.html#cfn-greengrass-connectordefinitionversion-connector-parameters    
-		PrimitiveType: Json    
-		UpdateType: Immutable    
+        The parameters or configuration that the connector uses.
+For more information about AWS-provided connectors, see AWS-Provided Greengrass Connectors: https://docs.aws.amazon.com/greengrass/latest/developerguide/connectors-list.html.
+
+        Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-greengrass-connectordefinitionversion-connector.html#cfn-greengrass-connectordefinitionversion-connector-parameters
+        PrimitiveType: Json
+        UpdateType: Immutable
 
     .PARAMETER Id
-		Required: True    
-		Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-greengrass-connectordefinitionversion-connector.html#cfn-greengrass-connectordefinitionversion-connector-id    
-		PrimitiveType: String    
-		UpdateType: Immutable    
+        A descriptive or arbitrary ID for the connector. This value must be unique within the connector definition version. Maximum length is 128 characters with pattern a-zA-Z0-9:_-]+.
+
+        Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-greengrass-connectordefinitionversion-connector.html#cfn-greengrass-connectordefinitionversion-connector-id
+        PrimitiveType: String
+        UpdateType: Immutable
 
     .FUNCTIONALITY
         Vaporshell

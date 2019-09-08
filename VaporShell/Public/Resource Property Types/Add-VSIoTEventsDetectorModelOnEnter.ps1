@@ -10,11 +10,12 @@ function Add-VSIoTEventsDetectorModelOnEnter {
         http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iotevents-detectormodel-onenter.html
 
     .PARAMETER Events
-		Type: List    
-		Required: False    
-		Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iotevents-detectormodel-onenter.html#cfn-iotevents-detectormodel-onenter-events    
-		ItemType: Event    
-		UpdateType: Mutable    
+        Specifies the actions that are performed when the state is entered and the "condition" is TRUE.
+
+        Type: List
+        Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iotevents-detectormodel-onenter.html#cfn-iotevents-detectormodel-onenter-events
+        ItemType: Event
+        UpdateType: Mutable
 
     .FUNCTIONALITY
         Vaporshell

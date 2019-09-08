@@ -10,12 +10,14 @@ function Add-VSEventsRuleRunCommandParameters {
         http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-events-rule-runcommandparameters.html
 
     .PARAMETER RunCommandTargets
-		Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-events-rule-runcommandparameters.html#cfn-events-rule-runcommandparameters-runcommandtargets    
-		DuplicatesAllowed: False    
-		ItemType: RunCommandTarget    
-		Required: True    
-		Type: List    
-		UpdateType: Mutable    
+        The criteria either InstanceIds or a tag that specifies which EC2 instances the command is sent to.
+Currently, you can include only one RunCommandTarget block, which specifies a list of InstanceIds or a tag.
+
+        Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-events-rule-runcommandparameters.html#cfn-events-rule-runcommandparameters-runcommandtargets
+        DuplicatesAllowed: False
+        ItemType: RunCommandTarget
+        Type: List
+        UpdateType: Mutable
 
     .FUNCTIONALITY
         Vaporshell

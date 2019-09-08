@@ -10,22 +10,25 @@ function Add-VSEC2ClientVpnEndpointClientAuthenticationRequest {
         http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-clientvpnendpoint-clientauthenticationrequest.html
 
     .PARAMETER MutualAuthentication
-		Type: CertificateAuthenticationRequest    
-		Required: False    
-		Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-clientvpnendpoint-clientauthenticationrequest.html#cfn-ec2-clientvpnendpoint-clientauthenticationrequest-mutualauthentication    
-		UpdateType: Mutable    
+        Information about the authentication certificates to be used, if applicable. You must provide this information if **Type** is certificate-authentication.
+
+        Type: CertificateAuthenticationRequest
+        Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-clientvpnendpoint-clientauthenticationrequest.html#cfn-ec2-clientvpnendpoint-clientauthenticationrequest-mutualauthentication
+        UpdateType: Mutable
 
     .PARAMETER Type
-		Required: True    
-		Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-clientvpnendpoint-clientauthenticationrequest.html#cfn-ec2-clientvpnendpoint-clientauthenticationrequest-type    
-		PrimitiveType: String    
-		UpdateType: Mutable    
+        The type of client authentication to be used. Specify certificate-authentication to use certificate-based authentication, or directory-service-authentication to use Active Directory authentication.
+
+        Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-clientvpnendpoint-clientauthenticationrequest.html#cfn-ec2-clientvpnendpoint-clientauthenticationrequest-type
+        PrimitiveType: String
+        UpdateType: Mutable
 
     .PARAMETER ActiveDirectory
-		Type: DirectoryServiceAuthenticationRequest    
-		Required: False    
-		Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-clientvpnendpoint-clientauthenticationrequest.html#cfn-ec2-clientvpnendpoint-clientauthenticationrequest-activedirectory    
-		UpdateType: Mutable    
+        Information about the Active Directory to be used, if applicable. You must provide this information if **Type** is directory-service-authentication.
+
+        Type: DirectoryServiceAuthenticationRequest
+        Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-clientvpnendpoint-clientauthenticationrequest.html#cfn-ec2-clientvpnendpoint-clientauthenticationrequest-activedirectory
+        UpdateType: Mutable
 
     .FUNCTIONALITY
         Vaporshell

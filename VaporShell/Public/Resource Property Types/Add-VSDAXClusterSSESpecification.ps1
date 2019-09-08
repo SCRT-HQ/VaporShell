@@ -10,10 +10,11 @@ function Add-VSDAXClusterSSESpecification {
         http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-dax-cluster-ssespecification.html
 
     .PARAMETER SSEEnabled
-		Required: False    
-		Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-dax-cluster-ssespecification.html#cfn-dax-cluster-ssespecification-sseenabled    
-		PrimitiveType: Boolean    
-		UpdateType: Mutable    
+        Indicates whether server-side encryption is enabled true or disabled false on the cluster.
+
+        Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-dax-cluster-ssespecification.html#cfn-dax-cluster-ssespecification-sseenabled
+        PrimitiveType: Boolean
+        UpdateType: Mutable
 
     .FUNCTIONALITY
         Vaporshell

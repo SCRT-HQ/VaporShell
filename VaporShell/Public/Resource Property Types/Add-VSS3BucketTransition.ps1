@@ -10,22 +10,25 @@ function Add-VSS3BucketTransition {
         http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-s3-bucket-lifecycleconfig-rule-transition.html
 
     .PARAMETER StorageClass
-		Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-s3-bucket-lifecycleconfig-rule-transition.html#cfn-s3-bucket-lifecycleconfig-rule-transition-storageclass    
-		PrimitiveType: String    
-		Required: True    
-		UpdateType: Mutable    
+        The storage class to which you want the object to transition.
+
+        Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-s3-bucket-lifecycleconfig-rule-transition.html#cfn-s3-bucket-lifecycleconfig-rule-transition-storageclass
+        PrimitiveType: String
+        UpdateType: Mutable
 
     .PARAMETER TransitionDate
-		Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-s3-bucket-lifecycleconfig-rule-transition.html#cfn-s3-bucket-lifecycleconfig-rule-transition-transitiondate    
-		PrimitiveType: Timestamp    
-		Required: False    
-		UpdateType: Mutable    
+        Indicates when objects are transitioned to the specified storage class. The date value must be in ISO 8601 format. The time is always midnight UTC.
+
+        Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-s3-bucket-lifecycleconfig-rule-transition.html#cfn-s3-bucket-lifecycleconfig-rule-transition-transitiondate
+        PrimitiveType: Timestamp
+        UpdateType: Mutable
 
     .PARAMETER TransitionInDays
-		Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-s3-bucket-lifecycleconfig-rule-transition.html#cfn-s3-bucket-lifecycleconfig-rule-transition-transitionindays    
-		PrimitiveType: Integer    
-		Required: False    
-		UpdateType: Mutable    
+        Indicates the number of days after creation when objects are transitioned to the specified storage class. The value must be a positive integer.
+
+        Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-s3-bucket-lifecycleconfig-rule-transition.html#cfn-s3-bucket-lifecycleconfig-rule-transition-transitionindays
+        PrimitiveType: Integer
+        UpdateType: Mutable
 
     .FUNCTIONALITY
         Vaporshell

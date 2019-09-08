@@ -13,52 +13,60 @@ function New-VSGreengrassGroupVersion {
         The logical ID must be alphanumeric (A-Za-z0-9) and unique within the template. Use the logical name to reference the resource in other parts of the template. For example, if you want to map an Amazon Elastic Block Store volume to an Amazon EC2 instance, you reference the logical IDs to associate the block stores with the instance.
 
     .PARAMETER LoggerDefinitionVersionArn
-		Required: False    
-		Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-greengrass-groupversion.html#cfn-greengrass-groupversion-loggerdefinitionversionarn    
-		PrimitiveType: String    
-		UpdateType: Immutable    
+        The ARN of the logger definition version that contains the loggers you want to deploy with the group version.
+
+        Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-greengrass-groupversion.html#cfn-greengrass-groupversion-loggerdefinitionversionarn
+        PrimitiveType: String
+        UpdateType: Immutable
 
     .PARAMETER DeviceDefinitionVersionArn
-		Required: False    
-		Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-greengrass-groupversion.html#cfn-greengrass-groupversion-devicedefinitionversionarn    
-		PrimitiveType: String    
-		UpdateType: Immutable    
+        The ARN of the device definition version that contains the devices you want to deploy with the group version.
+
+        Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-greengrass-groupversion.html#cfn-greengrass-groupversion-devicedefinitionversionarn
+        PrimitiveType: String
+        UpdateType: Immutable
 
     .PARAMETER FunctionDefinitionVersionArn
-		Required: False    
-		Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-greengrass-groupversion.html#cfn-greengrass-groupversion-functiondefinitionversionarn    
-		PrimitiveType: String    
-		UpdateType: Immutable    
+        The ARN of the function definition version that contains the functions you want to deploy with the group version.
+
+        Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-greengrass-groupversion.html#cfn-greengrass-groupversion-functiondefinitionversionarn
+        PrimitiveType: String
+        UpdateType: Immutable
 
     .PARAMETER CoreDefinitionVersionArn
-		Required: False    
-		Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-greengrass-groupversion.html#cfn-greengrass-groupversion-coredefinitionversionarn    
-		PrimitiveType: String    
-		UpdateType: Immutable    
+        The ARN of the core definition version that contains the core you want to deploy with the group version. Currently, the core definition version can contain only one core.
+
+        Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-greengrass-groupversion.html#cfn-greengrass-groupversion-coredefinitionversionarn
+        PrimitiveType: String
+        UpdateType: Immutable
 
     .PARAMETER ResourceDefinitionVersionArn
-		Required: False    
-		Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-greengrass-groupversion.html#cfn-greengrass-groupversion-resourcedefinitionversionarn    
-		PrimitiveType: String    
-		UpdateType: Immutable    
+        The ARN of the resource definition version that contains the resources you want to deploy with the group version.
+
+        Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-greengrass-groupversion.html#cfn-greengrass-groupversion-resourcedefinitionversionarn
+        PrimitiveType: String
+        UpdateType: Immutable
 
     .PARAMETER ConnectorDefinitionVersionArn
-		Required: False    
-		Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-greengrass-groupversion.html#cfn-greengrass-groupversion-connectordefinitionversionarn    
-		PrimitiveType: String    
-		UpdateType: Immutable    
+        The Amazon Resource Name ARN of the connector definition version that contains the connectors you want to deploy with the group version.
+
+        Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-greengrass-groupversion.html#cfn-greengrass-groupversion-connectordefinitionversionarn
+        PrimitiveType: String
+        UpdateType: Immutable
 
     .PARAMETER SubscriptionDefinitionVersionArn
-		Required: False    
-		Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-greengrass-groupversion.html#cfn-greengrass-groupversion-subscriptiondefinitionversionarn    
-		PrimitiveType: String    
-		UpdateType: Immutable    
+        The ARN of the subscription definition version that contains the subscriptions you want to deploy with the group version.
+
+        Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-greengrass-groupversion.html#cfn-greengrass-groupversion-subscriptiondefinitionversionarn
+        PrimitiveType: String
+        UpdateType: Immutable
 
     .PARAMETER GroupId
-		Required: True    
-		Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-greengrass-groupversion.html#cfn-greengrass-groupversion-groupid    
-		PrimitiveType: String    
-		UpdateType: Immutable    
+        The ID of the group associated with this version. This value is a GUID.
+
+        Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-greengrass-groupversion.html#cfn-greengrass-groupversion-groupid
+        PrimitiveType: String
+        UpdateType: Immutable
 
     .PARAMETER DeletionPolicy
         With the DeletionPolicy attribute you can preserve or (in some cases) backup a resource when its stack is deleted. You specify a DeletionPolicy attribute for each resource that you want to control. If a resource has no DeletionPolicy attribute, AWS CloudFormation deletes the resource by default.

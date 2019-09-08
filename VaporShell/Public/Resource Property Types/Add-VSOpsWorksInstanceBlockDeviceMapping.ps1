@@ -10,28 +10,32 @@ function Add-VSOpsWorksInstanceBlockDeviceMapping {
         http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-opsworks-instance-blockdevicemapping.html
 
     .PARAMETER DeviceName
-		Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-opsworks-instance-blockdevicemapping.html#cfn-opsworks-instance-blockdevicemapping-devicename    
-		PrimitiveType: String    
-		Required: False    
-		UpdateType: Mutable    
+        The device name that is exposed to the instance, such as /dev/sdh. For the root device, you can use the explicit device name or you can set this parameter to ROOT_DEVICE and AWS OpsWorks Stacks will provide the correct device name.
+
+        Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-opsworks-instance-blockdevicemapping.html#cfn-opsworks-instance-blockdevicemapping-devicename
+        PrimitiveType: String
+        UpdateType: Mutable
 
     .PARAMETER Ebs
-		Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-opsworks-instance-blockdevicemapping.html#cfn-opsworks-instance-blockdevicemapping-ebs    
-		Required: False    
-		Type: EbsBlockDevice    
-		UpdateType: Mutable    
+        An EBSBlockDevice that defines how to configure an Amazon EBS volume when the instance is launched. You can specify either the VirtualName or Ebs, but not both.
+
+        Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-opsworks-instance-blockdevicemapping.html#cfn-opsworks-instance-blockdevicemapping-ebs
+        Type: EbsBlockDevice
+        UpdateType: Mutable
 
     .PARAMETER NoDevice
-		Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-opsworks-instance-blockdevicemapping.html#cfn-opsworks-instance-blockdevicemapping-nodevice    
-		PrimitiveType: String    
-		Required: False    
-		UpdateType: Mutable    
+        Suppresses the specified device included in the AMI's block device mapping.
+
+        Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-opsworks-instance-blockdevicemapping.html#cfn-opsworks-instance-blockdevicemapping-nodevice
+        PrimitiveType: String
+        UpdateType: Mutable
 
     .PARAMETER VirtualName
-		Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-opsworks-instance-blockdevicemapping.html#cfn-opsworks-instance-blockdevicemapping-virtualname    
-		PrimitiveType: String    
-		Required: False    
-		UpdateType: Mutable    
+        The virtual device name. For more information, see BlockDeviceMapping: https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_BlockDeviceMapping.html. You can specify either the VirtualName or Ebs, but not both.
+
+        Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-opsworks-instance-blockdevicemapping.html#cfn-opsworks-instance-blockdevicemapping-virtualname
+        PrimitiveType: String
+        UpdateType: Mutable
 
     .FUNCTIONALITY
         Vaporshell

@@ -10,20 +10,22 @@ function Add-VSLambdaFunctionVpcConfig {
         http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-lambda-function-vpcconfig.html
 
     .PARAMETER SecurityGroupIds
-		Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-lambda-function-vpcconfig.html#cfn-lambda-function-vpcconfig-securitygroupids    
-		DuplicatesAllowed: False    
-		PrimitiveItemType: String    
-		Required: True    
-		Type: List    
-		UpdateType: Mutable    
+        A list of VPC security groups IDs.
+
+        Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-lambda-function-vpcconfig.html#cfn-lambda-function-vpcconfig-securitygroupids
+        DuplicatesAllowed: False
+        PrimitiveItemType: String
+        Type: List
+        UpdateType: Mutable
 
     .PARAMETER SubnetIds
-		Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-lambda-function-vpcconfig.html#cfn-lambda-function-vpcconfig-subnetids    
-		DuplicatesAllowed: False    
-		PrimitiveItemType: String    
-		Required: True    
-		Type: List    
-		UpdateType: Mutable    
+        A list of VPC subnet IDs.
+
+        Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-lambda-function-vpcconfig.html#cfn-lambda-function-vpcconfig-subnetids
+        DuplicatesAllowed: False
+        PrimitiveItemType: String
+        Type: List
+        UpdateType: Mutable
 
     .FUNCTIONALITY
         Vaporshell

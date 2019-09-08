@@ -10,34 +10,39 @@ function Add-VSWorkSpacesWorkspaceWorkspaceProperties {
         http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-workspaces-workspace-workspaceproperties.html
 
     .PARAMETER ComputeTypeName
-		Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-workspaces-workspace-workspaceproperties.html#cfn-workspaces-workspace-workspaceproperties-computetypename    
-		PrimitiveType: String    
-		Required: False    
-		UpdateType: Mutable    
+        The compute type. For more information, see Amazon WorkSpaces Bundles: http://aws.amazon.com/workspaces/details/#Amazon_WorkSpaces_Bundles.
+
+        Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-workspaces-workspace-workspaceproperties.html#cfn-workspaces-workspace-workspaceproperties-computetypename
+        PrimitiveType: String
+        UpdateType: Mutable
 
     .PARAMETER RootVolumeSizeGib
-		Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-workspaces-workspace-workspaceproperties.html#cfn-workspaces-workspace-workspaceproperties-rootvolumesizegib    
-		PrimitiveType: Integer    
-		Required: False    
-		UpdateType: Mutable    
+        The size of the root volume.
+
+        Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-workspaces-workspace-workspaceproperties.html#cfn-workspaces-workspace-workspaceproperties-rootvolumesizegib
+        PrimitiveType: Integer
+        UpdateType: Mutable
 
     .PARAMETER RunningMode
-		Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-workspaces-workspace-workspaceproperties.html#cfn-workspaces-workspace-workspaceproperties-runningmode    
-		PrimitiveType: String    
-		Required: False    
-		UpdateType: Mutable    
+        The running mode. For more information, see Manage the WorkSpace Running Mode: https://docs.aws.amazon.com/workspaces/latest/adminguide/running-mode.html.
+
+        Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-workspaces-workspace-workspaceproperties.html#cfn-workspaces-workspace-workspaceproperties-runningmode
+        PrimitiveType: String
+        UpdateType: Mutable
 
     .PARAMETER RunningModeAutoStopTimeoutInMinutes
-		Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-workspaces-workspace-workspaceproperties.html#cfn-workspaces-workspace-workspaceproperties-runningmodeautostoptimeoutinminutes    
-		PrimitiveType: Integer    
-		Required: False    
-		UpdateType: Mutable    
+        The time after a user logs off when WorkSpaces are automatically stopped. Configured in 60 minute intervals.
+
+        Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-workspaces-workspace-workspaceproperties.html#cfn-workspaces-workspace-workspaceproperties-runningmodeautostoptimeoutinminutes
+        PrimitiveType: Integer
+        UpdateType: Mutable
 
     .PARAMETER UserVolumeSizeGib
-		Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-workspaces-workspace-workspaceproperties.html#cfn-workspaces-workspace-workspaceproperties-uservolumesizegib    
-		PrimitiveType: Integer    
-		Required: False    
-		UpdateType: Mutable    
+        The size of the user storage.
+
+        Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-workspaces-workspace-workspaceproperties.html#cfn-workspaces-workspace-workspaceproperties-uservolumesizegib
+        PrimitiveType: Integer
+        UpdateType: Mutable
 
     .FUNCTIONALITY
         Vaporshell

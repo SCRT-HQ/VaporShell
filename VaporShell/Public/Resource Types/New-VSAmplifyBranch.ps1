@@ -13,60 +13,69 @@ function New-VSAmplifyBranch {
         The logical ID must be alphanumeric (A-Za-z0-9) and unique within the template. Use the logical name to reference the resource in other parts of the template. For example, if you want to map an Amazon Elastic Block Store volume to an Amazon EC2 instance, you reference the logical IDs to associate the block stores with the instance.
 
     .PARAMETER Description
-		Required: False    
-		Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-amplify-branch.html#cfn-amplify-branch-description    
-		PrimitiveType: String    
-		UpdateType: Mutable    
+        Description for the branch.
+
+        Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-amplify-branch.html#cfn-amplify-branch-description
+        PrimitiveType: String
+        UpdateType: Mutable
 
     .PARAMETER EnvironmentVariables
-		Type: List    
-		Required: False    
-		Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-amplify-branch.html#cfn-amplify-branch-environmentvariables    
-		ItemType: EnvironmentVariable    
-		UpdateType: Mutable    
+        Environment Variables for the branch.
+
+        Type: List
+        Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-amplify-branch.html#cfn-amplify-branch-environmentvariables
+        ItemType: EnvironmentVariable
+        UpdateType: Mutable
 
     .PARAMETER AppId
-		Required: True    
-		Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-amplify-branch.html#cfn-amplify-branch-appid    
-		PrimitiveType: String    
-		UpdateType: Immutable    
+        Unique Id for an Amplify App.
+
+        Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-amplify-branch.html#cfn-amplify-branch-appid
+        PrimitiveType: String
+        UpdateType: Immutable
 
     .PARAMETER EnableAutoBuild
-		Required: False    
-		Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-amplify-branch.html#cfn-amplify-branch-enableautobuild    
-		PrimitiveType: Boolean    
-		UpdateType: Mutable    
+        Enables auto building for the branch.
+
+        Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-amplify-branch.html#cfn-amplify-branch-enableautobuild
+        PrimitiveType: Boolean
+        UpdateType: Mutable
 
     .PARAMETER BuildSpec
-		Required: False    
-		Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-amplify-branch.html#cfn-amplify-branch-buildspec    
-		PrimitiveType: String    
-		UpdateType: Mutable    
+        BuildSpec for the branch.
+
+        Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-amplify-branch.html#cfn-amplify-branch-buildspec
+        PrimitiveType: String
+        UpdateType: Mutable
 
     .PARAMETER Stage
-		Required: False    
-		Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-amplify-branch.html#cfn-amplify-branch-stage    
-		PrimitiveType: String    
-		UpdateType: Mutable    
+        Stage for the branch.
+
+        Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-amplify-branch.html#cfn-amplify-branch-stage
+        PrimitiveType: String
+        UpdateType: Mutable
 
     .PARAMETER BranchName
-		Required: True    
-		Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-amplify-branch.html#cfn-amplify-branch-branchname    
-		PrimitiveType: String    
-		UpdateType: Immutable    
+        Name for the branch.
+
+        Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-amplify-branch.html#cfn-amplify-branch-branchname
+        PrimitiveType: String
+        UpdateType: Immutable
 
     .PARAMETER BasicAuthConfig
-		Type: BasicAuthConfig    
-		Required: False    
-		Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-amplify-branch.html#cfn-amplify-branch-basicauthconfig    
-		UpdateType: Mutable    
+        Basic Authorization credentials for a branch, part of an Amplify App.
+
+        Type: BasicAuthConfig
+        Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-amplify-branch.html#cfn-amplify-branch-basicauthconfig
+        UpdateType: Mutable
 
     .PARAMETER Tags
-		Type: List    
-		Required: False    
-		Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-amplify-branch.html#cfn-amplify-branch-tags    
-		ItemType: Tag    
-		UpdateType: Mutable    
+        Tag for the branch.
+
+        Type: List
+        Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-amplify-branch.html#cfn-amplify-branch-tags
+        ItemType: Tag
+        UpdateType: Mutable
 
     .PARAMETER DeletionPolicy
         With the DeletionPolicy attribute you can preserve or (in some cases) backup a resource when its stack is deleted. You specify a DeletionPolicy attribute for each resource that you want to control. If a resource has no DeletionPolicy attribute, AWS CloudFormation deletes the resource by default.

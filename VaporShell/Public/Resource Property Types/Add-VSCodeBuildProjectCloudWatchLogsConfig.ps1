@@ -10,22 +10,27 @@ function Add-VSCodeBuildProjectCloudWatchLogsConfig {
         http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-codebuild-project-cloudwatchlogsconfig.html
 
     .PARAMETER Status
-		Required: True    
-		Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-codebuild-project-cloudwatchlogsconfig.html#cfn-codebuild-project-cloudwatchlogsconfig-status    
-		PrimitiveType: String    
-		UpdateType: Mutable    
+        The current status of the logs in Amazon CloudWatch Logs for a build project. Valid values are:
++  ENABLED: Amazon CloudWatch Logs are enabled for this build project.
++  DISABLED: Amazon CloudWatch Logs are not enabled for this build project.
+
+        Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-codebuild-project-cloudwatchlogsconfig.html#cfn-codebuild-project-cloudwatchlogsconfig-status
+        PrimitiveType: String
+        UpdateType: Mutable
 
     .PARAMETER GroupName
-		Required: False    
-		Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-codebuild-project-cloudwatchlogsconfig.html#cfn-codebuild-project-cloudwatchlogsconfig-groupname    
-		PrimitiveType: String    
-		UpdateType: Mutable    
+        The group name of the logs in Amazon CloudWatch Logs. For more information, see Working with Log Groups and Log Streams: https://docs.aws.amazon.com/AmazonCloudWatch/latest/logs/Working-with-log-groups-and-streams.html.
+
+        Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-codebuild-project-cloudwatchlogsconfig.html#cfn-codebuild-project-cloudwatchlogsconfig-groupname
+        PrimitiveType: String
+        UpdateType: Mutable
 
     .PARAMETER StreamName
-		Required: False    
-		Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-codebuild-project-cloudwatchlogsconfig.html#cfn-codebuild-project-cloudwatchlogsconfig-streamname    
-		PrimitiveType: String    
-		UpdateType: Mutable    
+        The prefix of the stream name of the Amazon CloudWatch Logs. For more information, see Working with Log Groups and Log Streams: https://docs.aws.amazon.com/AmazonCloudWatch/latest/logs/Working-with-log-groups-and-streams.html.
+
+        Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-codebuild-project-cloudwatchlogsconfig.html#cfn-codebuild-project-cloudwatchlogsconfig-streamname
+        PrimitiveType: String
+        UpdateType: Mutable
 
     .FUNCTIONALITY
         Vaporshell

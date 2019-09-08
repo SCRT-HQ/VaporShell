@@ -79,14 +79,14 @@ function Update-VSResourceFunctions {
             Write-Warning "Failed to get specs from region: $($_.Key)"
         }
     }
-    <# foreach ($resource in $final['ResourceTypes'].Values | Sort-Object Name) {
+    foreach ($resource in $final['ResourceTypes'].Values | Sort-Object Name) {
         Write-Verbose "Updating Resource Type [$($resource.Name)]"
         Convert-SpecToFunction -Resource $resource -ResourceType Resource
     }
     foreach ($resource in $final['PropertyTypes'].Values | Sort-Object Name) {
         Write-Verbose "Updating Resource Property [$($resource.Name)]"
         Convert-SpecToFunction -Resource $resource -ResourceType Property
-    } #>
+    }
     $AfterTypeCount = (Get-ChildItem -Path (Resolve-Path "$vsPath\Public\Resource Types").Path).Count
     $AfterPropCount = (Get-ChildItem -Path (Resolve-Path "$vsPath\Public\Resource Property Types").Path).Count
     $newType = $AfterTypeCount - $BeforeTypeCount

@@ -10,16 +10,18 @@ function Add-VSGreengrassFunctionDefinitionRunAs {
         http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-greengrass-functiondefinition-runas.html
 
     .PARAMETER Uid
-		Required: False    
-		Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-greengrass-functiondefinition-runas.html#cfn-greengrass-functiondefinition-runas-uid    
-		PrimitiveType: Integer    
-		UpdateType: Immutable    
+        The user ID whose permissions are used to run the Lambda function. You can use the getent passwd command on your core device to look up the user ID.
+
+        Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-greengrass-functiondefinition-runas.html#cfn-greengrass-functiondefinition-runas-uid
+        PrimitiveType: Integer
+        UpdateType: Immutable
 
     .PARAMETER Gid
-		Required: False    
-		Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-greengrass-functiondefinition-runas.html#cfn-greengrass-functiondefinition-runas-gid    
-		PrimitiveType: Integer    
-		UpdateType: Immutable    
+        The group ID whose permissions are used to run the Lambda function. You can use the getent group command on your core device to look up the group ID.
+
+        Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-greengrass-functiondefinition-runas.html#cfn-greengrass-functiondefinition-runas-gid
+        PrimitiveType: Integer
+        UpdateType: Immutable
 
     .FUNCTIONALITY
         Vaporshell

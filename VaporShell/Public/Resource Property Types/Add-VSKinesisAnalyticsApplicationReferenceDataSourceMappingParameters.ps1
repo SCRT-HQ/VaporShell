@@ -10,16 +10,18 @@ function Add-VSKinesisAnalyticsApplicationReferenceDataSourceMappingParameters {
         http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-kinesisanalytics-applicationreferencedatasource-mappingparameters.html
 
     .PARAMETER JSONMappingParameters
-		Type: JSONMappingParameters    
-		Required: False    
-		Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-kinesisanalytics-applicationreferencedatasource-mappingparameters.html#cfn-kinesisanalytics-applicationreferencedatasource-mappingparameters-jsonmappingparameters    
-		UpdateType: Mutable    
+        Provides additional mapping information when JSON is the record format on the streaming source.
+
+        Type: JSONMappingParameters
+        Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-kinesisanalytics-applicationreferencedatasource-mappingparameters.html#cfn-kinesisanalytics-applicationreferencedatasource-mappingparameters-jsonmappingparameters
+        UpdateType: Mutable
 
     .PARAMETER CSVMappingParameters
-		Type: CSVMappingParameters    
-		Required: False    
-		Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-kinesisanalytics-applicationreferencedatasource-mappingparameters.html#cfn-kinesisanalytics-applicationreferencedatasource-mappingparameters-csvmappingparameters    
-		UpdateType: Mutable    
+        Provides additional mapping information when the record format uses delimiters for example, CSV.
+
+        Type: CSVMappingParameters
+        Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-kinesisanalytics-applicationreferencedatasource-mappingparameters.html#cfn-kinesisanalytics-applicationreferencedatasource-mappingparameters-csvmappingparameters
+        UpdateType: Mutable
 
     .FUNCTIONALITY
         Vaporshell

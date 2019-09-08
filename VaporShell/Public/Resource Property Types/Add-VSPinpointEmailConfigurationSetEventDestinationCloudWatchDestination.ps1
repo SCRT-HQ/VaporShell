@@ -10,11 +10,12 @@ function Add-VSPinpointEmailConfigurationSetEventDestinationCloudWatchDestinatio
         http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-pinpointemail-configurationseteventdestination-cloudwatchdestination.html
 
     .PARAMETER DimensionConfigurations
-		Type: List    
-		Required: False    
-		Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-pinpointemail-configurationseteventdestination-cloudwatchdestination.html#cfn-pinpointemail-configurationseteventdestination-cloudwatchdestination-dimensionconfigurations    
-		ItemType: DimensionConfiguration    
-		UpdateType: Mutable    
+        An array of objects that define the dimensions to use when you send email events to Amazon CloudWatch.
+
+        Type: List
+        Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-pinpointemail-configurationseteventdestination-cloudwatchdestination.html#cfn-pinpointemail-configurationseteventdestination-cloudwatchdestination-dimensionconfigurations
+        ItemType: DimensionConfiguration
+        UpdateType: Mutable
 
     .FUNCTIONALITY
         Vaporshell

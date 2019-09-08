@@ -10,18 +10,20 @@ function Add-VSEC2InstanceSsmAssociation {
         http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-instance-ssmassociations.html
 
     .PARAMETER AssociationParameters
-		Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-instance-ssmassociations.html#cfn-ec2-instance-ssmassociations-associationparameters    
-		DuplicatesAllowed: True    
-		ItemType: AssociationParameter    
-		Required: False    
-		Type: List    
-		UpdateType: Mutable    
+        The input parameter values to use with the associated SSM document.
+
+        Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-instance-ssmassociations.html#cfn-ec2-instance-ssmassociations-associationparameters
+        DuplicatesAllowed: True
+        ItemType: AssociationParameter
+        Type: List
+        UpdateType: Mutable
 
     .PARAMETER DocumentName
-		Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-instance-ssmassociations.html#cfn-ec2-instance-ssmassociations-documentname    
-		PrimitiveType: String    
-		Required: True    
-		UpdateType: Mutable    
+        The name of an SSM document to associate with the instance.
+
+        Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-instance-ssmassociations.html#cfn-ec2-instance-ssmassociations-documentname
+        PrimitiveType: String
+        UpdateType: Mutable
 
     .FUNCTIONALITY
         Vaporshell

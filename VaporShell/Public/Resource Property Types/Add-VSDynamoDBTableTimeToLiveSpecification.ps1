@@ -10,16 +10,18 @@ function Add-VSDynamoDBTableTimeToLiveSpecification {
         http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-dynamodb-timetolivespecification.html
 
     .PARAMETER AttributeName
-		Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-dynamodb-timetolivespecification.html#cfn-dynamodb-timetolivespecification-attributename    
-		PrimitiveType: String    
-		Required: True    
-		UpdateType: Mutable    
+        The name of the Time to Live attribute used to store the expiration time for items in the table.
+
+        Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-dynamodb-timetolivespecification.html#cfn-dynamodb-timetolivespecification-attributename
+        PrimitiveType: String
+        UpdateType: Mutable
 
     .PARAMETER Enabled
-		Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-dynamodb-timetolivespecification.html#cfn-dynamodb-timetolivespecification-enabled    
-		PrimitiveType: Boolean    
-		Required: True    
-		UpdateType: Mutable    
+        Indicates whether Time To Live is to be enabled true or disabled false on the table.
+
+        Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-dynamodb-timetolivespecification.html#cfn-dynamodb-timetolivespecification-enabled
+        PrimitiveType: Boolean
+        UpdateType: Mutable
 
     .FUNCTIONALITY
         Vaporshell

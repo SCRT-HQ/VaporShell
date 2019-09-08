@@ -10,18 +10,20 @@ function Add-VSEMRInstanceGroupConfigEbsConfiguration {
         http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-emr-ebsconfiguration.html
 
     .PARAMETER EbsBlockDeviceConfigs
-		Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-emr-ebsconfiguration.html#cfn-emr-ebsconfiguration-ebsblockdeviceconfigs    
-		DuplicatesAllowed: False    
-		ItemType: EbsBlockDeviceConfig    
-		Required: False    
-		Type: List    
-		UpdateType: Mutable    
+        An array of Amazon EBS volume specifications attached to a cluster instance.
+
+        Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-emr-ebsconfiguration.html#cfn-emr-ebsconfiguration-ebsblockdeviceconfigs
+        DuplicatesAllowed: False
+        ItemType: EbsBlockDeviceConfig
+        Type: List
+        UpdateType: Mutable
 
     .PARAMETER EbsOptimized
-		Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-emr-ebsconfiguration.html#cfn-emr-ebsconfiguration-ebsoptimized    
-		PrimitiveType: Boolean    
-		Required: False    
-		UpdateType: Mutable    
+        Indicates whether an Amazon EBS volume is EBS-optimized.
+
+        Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-emr-ebsconfiguration.html#cfn-emr-ebsconfiguration-ebsoptimized
+        PrimitiveType: Boolean
+        UpdateType: Mutable
 
     .FUNCTIONALITY
         Vaporshell

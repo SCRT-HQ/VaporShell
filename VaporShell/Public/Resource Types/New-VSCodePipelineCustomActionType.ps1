@@ -13,48 +13,57 @@ function New-VSCodePipelineCustomActionType {
         The logical ID must be alphanumeric (A-Za-z0-9) and unique within the template. Use the logical name to reference the resource in other parts of the template. For example, if you want to map an Amazon Elastic Block Store volume to an Amazon EC2 instance, you reference the logical IDs to associate the block stores with the instance.
 
     .PARAMETER Category
-		Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-codepipeline-customactiontype.html#cfn-codepipeline-customactiontype-category    
-		PrimitiveType: String    
-		Required: True    
-		UpdateType: Immutable    
+        The category of the custom action, such as a build action or a test action.
+Although Source and Approval are listed as valid values, they are not currently functional. These values are reserved for future use.
+
+        Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-codepipeline-customactiontype.html#cfn-codepipeline-customactiontype-category
+        PrimitiveType: String
+        UpdateType: Immutable
 
     .PARAMETER ConfigurationProperties
-		Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-codepipeline-customactiontype.html#cfn-codepipeline-customactiontype-configurationproperties    
-		DuplicatesAllowed: False    
-		ItemType: ConfigurationProperties    
-		Required: False    
-		Type: List    
-		UpdateType: Immutable    
+        The configuration properties for the custom action.
+You can refer to a name in the configuration properties of the custom action within the URL templates by following the format of {Config:name}, as long as the configuration property is both required and not secret. For more information, see Create a Custom Action for a Pipeline: https://docs.aws.amazon.com/codepipeline/latest/userguide/how-to-create-custom-action.html.
+
+        Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-codepipeline-customactiontype.html#cfn-codepipeline-customactiontype-configurationproperties
+        DuplicatesAllowed: False
+        ItemType: ConfigurationProperties
+        Type: List
+        UpdateType: Immutable
 
     .PARAMETER InputArtifactDetails
-		Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-codepipeline-customactiontype.html#cfn-codepipeline-customactiontype-inputartifactdetails    
-		Required: True    
-		Type: ArtifactDetails    
-		UpdateType: Immutable    
+        The details of the input artifact for the action, such as its commit ID.
+
+        Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-codepipeline-customactiontype.html#cfn-codepipeline-customactiontype-inputartifactdetails
+        Type: ArtifactDetails
+        UpdateType: Immutable
 
     .PARAMETER OutputArtifactDetails
-		Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-codepipeline-customactiontype.html#cfn-codepipeline-customactiontype-outputartifactdetails    
-		Required: True    
-		Type: ArtifactDetails    
-		UpdateType: Immutable    
+        The details of the output artifact of the action, such as its commit ID.
+
+        Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-codepipeline-customactiontype.html#cfn-codepipeline-customactiontype-outputartifactdetails
+        Type: ArtifactDetails
+        UpdateType: Immutable
 
     .PARAMETER Provider
-		Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-codepipeline-customactiontype.html#cfn-codepipeline-customactiontype-provider    
-		PrimitiveType: String    
-		Required: True    
-		UpdateType: Immutable    
+        The provider of the service used in the custom action, such as AWS CodeDeploy.
+
+        Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-codepipeline-customactiontype.html#cfn-codepipeline-customactiontype-provider
+        PrimitiveType: String
+        UpdateType: Immutable
 
     .PARAMETER Settings
-		Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-codepipeline-customactiontype.html#cfn-codepipeline-customactiontype-settings    
-		Required: False    
-		Type: Settings    
-		UpdateType: Immutable    
+        URLs that provide users information about this custom action.
+
+        Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-codepipeline-customactiontype.html#cfn-codepipeline-customactiontype-settings
+        Type: Settings
+        UpdateType: Immutable
 
     .PARAMETER Version
-		Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-codepipeline-customactiontype.html#cfn-codepipeline-customactiontype-version    
-		PrimitiveType: String    
-		Required: True    
-		UpdateType: Immutable    
+        The version identifier of the custom action.
+
+        Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-codepipeline-customactiontype.html#cfn-codepipeline-customactiontype-version
+        PrimitiveType: String
+        UpdateType: Immutable
 
     .PARAMETER DeletionPolicy
         With the DeletionPolicy attribute you can preserve or (in some cases) backup a resource when its stack is deleted. You specify a DeletionPolicy attribute for each resource that you want to control. If a resource has no DeletionPolicy attribute, AWS CloudFormation deletes the resource by default.

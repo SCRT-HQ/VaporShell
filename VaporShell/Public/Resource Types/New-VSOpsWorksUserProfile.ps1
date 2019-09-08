@@ -13,28 +13,32 @@ function New-VSOpsWorksUserProfile {
         The logical ID must be alphanumeric (A-Za-z0-9) and unique within the template. Use the logical name to reference the resource in other parts of the template. For example, if you want to map an Amazon Elastic Block Store volume to an Amazon EC2 instance, you reference the logical IDs to associate the block stores with the instance.
 
     .PARAMETER AllowSelfManagement
-		Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-opsworks-userprofile.html#cfn-opsworks-userprofile-allowselfmanagement    
-		PrimitiveType: Boolean    
-		Required: False    
-		UpdateType: Mutable    
+        Whether users can specify their own SSH public key through the My Settings page. For more information, see Managing User Permissions: https://docs.aws.amazon.com/opsworks/latest/userguide/security-settingsshkey.html.
+
+        Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-opsworks-userprofile.html#cfn-opsworks-userprofile-allowselfmanagement
+        PrimitiveType: Boolean
+        UpdateType: Mutable
 
     .PARAMETER IamUserArn
-		Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-opsworks-userprofile.html#cfn-opsworks-userprofile-iamuserarn    
-		PrimitiveType: String    
-		Required: True    
-		UpdateType: Immutable    
+        The user's IAM ARN.
+
+        Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-opsworks-userprofile.html#cfn-opsworks-userprofile-iamuserarn
+        PrimitiveType: String
+        UpdateType: Immutable
 
     .PARAMETER SshPublicKey
-		Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-opsworks-userprofile.html#cfn-opsworks-userprofile-sshpublickey    
-		PrimitiveType: String    
-		Required: False    
-		UpdateType: Mutable    
+        The user's SSH public key.
+
+        Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-opsworks-userprofile.html#cfn-opsworks-userprofile-sshpublickey
+        PrimitiveType: String
+        UpdateType: Mutable
 
     .PARAMETER SshUsername
-		Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-opsworks-userprofile.html#cfn-opsworks-userprofile-sshusername    
-		PrimitiveType: String    
-		Required: False    
-		UpdateType: Mutable    
+        The user's SSH user name.
+
+        Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-opsworks-userprofile.html#cfn-opsworks-userprofile-sshusername
+        PrimitiveType: String
+        UpdateType: Mutable
 
     .PARAMETER DeletionPolicy
         With the DeletionPolicy attribute you can preserve or (in some cases) backup a resource when its stack is deleted. You specify a DeletionPolicy attribute for each resource that you want to control. If a resource has no DeletionPolicy attribute, AWS CloudFormation deletes the resource by default.

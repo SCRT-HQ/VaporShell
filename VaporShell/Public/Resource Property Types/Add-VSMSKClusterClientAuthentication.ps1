@@ -10,10 +10,11 @@ function Add-VSMSKClusterClientAuthentication {
         http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-msk-cluster-clientauthentication.html
 
     .PARAMETER Tls
-		Type: Tls    
-		Required: False    
-		Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-msk-cluster-clientauthentication.html#cfn-msk-cluster-clientauthentication-tls    
-		UpdateType: Immutable    
+        Details for client authentication using TLS.
+
+        Type: Tls
+        Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-msk-cluster-clientauthentication.html#cfn-msk-cluster-clientauthentication-tls
+        UpdateType: Immutable
 
     .FUNCTIONALITY
         Vaporshell

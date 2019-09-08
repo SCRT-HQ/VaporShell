@@ -10,10 +10,11 @@ function Add-VSMSKClusterEBSStorageInfo {
         http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-msk-cluster-ebsstorageinfo.html
 
     .PARAMETER VolumeSize
-		Required: False    
-		Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-msk-cluster-ebsstorageinfo.html#cfn-msk-cluster-ebsstorageinfo-volumesize    
-		PrimitiveType: Integer    
-		UpdateType: Immutable    
+        The size in GiB of the EBS volume for the data drive on each broker node.
+
+        Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-msk-cluster-ebsstorageinfo.html#cfn-msk-cluster-ebsstorageinfo-volumesize
+        PrimitiveType: Integer
+        UpdateType: Immutable
 
     .FUNCTIONALITY
         Vaporshell

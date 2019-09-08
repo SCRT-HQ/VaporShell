@@ -13,104 +13,121 @@ function New-VSLambdaFunction {
         The logical ID must be alphanumeric (A-Za-z0-9) and unique within the template. Use the logical name to reference the resource in other parts of the template. For example, if you want to map an Amazon Elastic Block Store volume to an Amazon EC2 instance, you reference the logical IDs to associate the block stores with the instance.
 
     .PARAMETER Code
-		Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-lambda-function.html#cfn-lambda-function-code    
-		Required: True    
-		Type: Code    
-		UpdateType: Mutable    
+        The code for the function.
+
+        Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-lambda-function.html#cfn-lambda-function-code
+        Type: Code
+        UpdateType: Mutable
 
     .PARAMETER DeadLetterConfig
-		Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-lambda-function.html#cfn-lambda-function-deadletterconfig    
-		Required: False    
-		Type: DeadLetterConfig    
-		UpdateType: Mutable    
+        A dead letter queue configuration that specifies the queue or topic where Lambda sends asynchronous events when they fail processing. For more information, see Dead Letter Queues: https://docs.aws.amazon.com/lambda/latest/dg/dlq.html.
+
+        Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-lambda-function.html#cfn-lambda-function-deadletterconfig
+        Type: DeadLetterConfig
+        UpdateType: Mutable
 
     .PARAMETER Description
-		Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-lambda-function.html#cfn-lambda-function-description    
-		PrimitiveType: String    
-		Required: False    
-		UpdateType: Mutable    
+        A description of the function.
+
+        Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-lambda-function.html#cfn-lambda-function-description
+        PrimitiveType: String
+        UpdateType: Mutable
 
     .PARAMETER Environment
-		Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-lambda-function.html#cfn-lambda-function-environment    
-		Required: False    
-		Type: Environment    
-		UpdateType: Mutable    
+        Environment variables that are accessible from function code during execution.
+
+        Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-lambda-function.html#cfn-lambda-function-environment
+        Type: Environment
+        UpdateType: Mutable
 
     .PARAMETER FunctionName
-		Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-lambda-function.html#cfn-lambda-function-functionname    
-		PrimitiveType: String    
-		Required: False    
-		UpdateType: Immutable    
+        The name of the Lambda function, up to 64 characters in length. If you don't specify a name, AWS CloudFormation generates one.
+If you specify a name, you cannot perform updates that require replacement of this resource. You can perform updates that require no or some interruption. If you must replace the resource, specify a new name.
+
+        Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-lambda-function.html#cfn-lambda-function-functionname
+        PrimitiveType: String
+        UpdateType: Immutable
 
     .PARAMETER Handler
-		Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-lambda-function.html#cfn-lambda-function-handler    
-		PrimitiveType: String    
-		Required: True    
-		UpdateType: Mutable    
+        The name of the method within your code that Lambda calls to execute your function. The format includes the file name. It can also include namespaces and other qualifiers, depending on the runtime. For more information, see Programming Model: https://docs.aws.amazon.com/lambda/latest/dg/programming-model-v2.html.
+
+        Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-lambda-function.html#cfn-lambda-function-handler
+        PrimitiveType: String
+        UpdateType: Mutable
 
     .PARAMETER KmsKeyArn
-		Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-lambda-function.html#cfn-lambda-function-kmskeyarn    
-		PrimitiveType: String    
-		Required: False    
-		UpdateType: Mutable    
+        The ARN of the AWS Key Management Service AWS KMS key that's used to encrypt your function's environment variables. If it's not provided, AWS Lambda uses a default service key.
+
+        Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-lambda-function.html#cfn-lambda-function-kmskeyarn
+        PrimitiveType: String
+        UpdateType: Mutable
 
     .PARAMETER Layers
-		Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-lambda-function.html#cfn-lambda-function-layers    
-		DuplicatesAllowed: False    
-		PrimitiveItemType: String    
-		Required: False    
-		Type: List    
-		UpdateType: Mutable    
+        A list of function layers: https://docs.aws.amazon.com/lambda/latest/dg/configuration-layers.html to add to the function's execution environment. Specify each layer by its ARN, including the version.
+
+        Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-lambda-function.html#cfn-lambda-function-layers
+        DuplicatesAllowed: False
+        PrimitiveItemType: String
+        Type: List
+        UpdateType: Mutable
 
     .PARAMETER MemorySize
-		Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-lambda-function.html#cfn-lambda-function-memorysize    
-		PrimitiveType: Integer    
-		Required: False    
-		UpdateType: Mutable    
+        The amount of memory that your function has access to. Increasing the function's memory also increases its CPU allocation. The default value is 128 MB. The value must be a multiple of 64 MB.
+
+        Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-lambda-function.html#cfn-lambda-function-memorysize
+        PrimitiveType: Integer
+        UpdateType: Mutable
 
     .PARAMETER ReservedConcurrentExecutions
-		Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-lambda-function.html#cfn-lambda-function-reservedconcurrentexecutions    
-		PrimitiveType: Integer    
-		Required: False    
-		UpdateType: Mutable    
+        The number of simultaneous executions to reserve for the function.
+
+        Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-lambda-function.html#cfn-lambda-function-reservedconcurrentexecutions
+        PrimitiveType: Integer
+        UpdateType: Mutable
 
     .PARAMETER Role
-		Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-lambda-function.html#cfn-lambda-function-role    
-		PrimitiveType: String    
-		Required: True    
-		UpdateType: Mutable    
+        The Amazon Resource Name ARN of the function's execution role.
+
+        Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-lambda-function.html#cfn-lambda-function-role
+        PrimitiveType: String
+        UpdateType: Mutable
 
     .PARAMETER Runtime
-		Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-lambda-function.html#cfn-lambda-function-runtime    
-		PrimitiveType: String    
-		Required: True    
-		UpdateType: Mutable    
+        The identifier of the function's runtime: https://docs.aws.amazon.com/lambda/latest/dg/lambda-runtimes.html.
+
+        Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-lambda-function.html#cfn-lambda-function-runtime
+        PrimitiveType: String
+        UpdateType: Mutable
 
     .PARAMETER Tags
-		Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-lambda-function.html#cfn-lambda-function-tags    
-		DuplicatesAllowed: True    
-		ItemType: Tag    
-		Required: False    
-		Type: List    
-		UpdateType: Mutable    
+        A list of tags: https://docs.aws.amazon.com/lambda/latest/dg/tagging.html to apply to the function.
+
+        Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-lambda-function.html#cfn-lambda-function-tags
+        DuplicatesAllowed: True
+        ItemType: Tag
+        Type: List
+        UpdateType: Mutable
 
     .PARAMETER Timeout
-		Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-lambda-function.html#cfn-lambda-function-timeout    
-		PrimitiveType: Integer    
-		Required: False    
-		UpdateType: Mutable    
+        The amount of time that Lambda allows a function to run before stopping it. The default is 3 seconds. The maximum allowed value is 900 seconds.
+
+        Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-lambda-function.html#cfn-lambda-function-timeout
+        PrimitiveType: Integer
+        UpdateType: Mutable
 
     .PARAMETER TracingConfig
-		Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-lambda-function.html#cfn-lambda-function-tracingconfig    
-		Required: False    
-		Type: TracingConfig    
-		UpdateType: Mutable    
+        Set Mode to Active to sample and trace a subset of incoming requests with AWS X-Ray.
+
+        Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-lambda-function.html#cfn-lambda-function-tracingconfig
+        Type: TracingConfig
+        UpdateType: Mutable
 
     .PARAMETER VpcConfig
-		Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-lambda-function.html#cfn-lambda-function-vpcconfig    
-		Required: False    
-		Type: VpcConfig    
-		UpdateType: Mutable    
+        For network connectivity to AWS resources in a VPC, specify a list of security groups and subnets in the VPC. When you connect a function to a VPC, it can only access resources and the internet through that VPC. For more information, see VPC Settings: https://docs.aws.amazon.com/lambda/latest/dg/vpc.html.
+
+        Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-lambda-function.html#cfn-lambda-function-vpcconfig
+        Type: VpcConfig
+        UpdateType: Mutable
 
     .PARAMETER DeletionPolicy
         With the DeletionPolicy attribute you can preserve or (in some cases) backup a resource when its stack is deleted. You specify a DeletionPolicy attribute for each resource that you want to control. If a resource has no DeletionPolicy attribute, AWS CloudFormation deletes the resource by default.

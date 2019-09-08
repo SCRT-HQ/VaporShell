@@ -10,38 +10,47 @@ function Add-VSECSTaskDefinitionLinuxParameters {
         http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ecs-taskdefinition-linuxparameters.html
 
     .PARAMETER Capabilities
-		Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ecs-taskdefinition-linuxparameters.html#cfn-ecs-taskdefinition-linuxparameters-capabilities    
-		Required: False    
-		Type: KernelCapabilities    
-		UpdateType: Immutable    
+        The Linux capabilities for the container that are added to or dropped from the default configuration provided by Docker.
+If you are using tasks that use the Fargate launch type, capabilities is supported but the add parameter is not supported.
+
+        Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ecs-taskdefinition-linuxparameters.html#cfn-ecs-taskdefinition-linuxparameters-capabilities
+        Type: KernelCapabilities
+        UpdateType: Immutable
 
     .PARAMETER Devices
-		Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ecs-taskdefinition-linuxparameters.html#cfn-ecs-taskdefinition-linuxparameters-devices    
-		DuplicatesAllowed: False    
-		ItemType: Device    
-		Required: False    
-		Type: List    
-		UpdateType: Immutable    
+        Any host devices to expose to the container. This parameter maps to Devices in the Create a container: https://docs.docker.com/engine/api/v1.35/#operation/ContainerCreate section of the Docker Remote API: https://docs.docker.com/engine/api/v1.35/ and the --device option to docker run: https://docs.docker.com/engine/reference/run/.
+If you are using tasks that use the Fargate launch type, the devices parameter is not supported.
+
+        Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ecs-taskdefinition-linuxparameters.html#cfn-ecs-taskdefinition-linuxparameters-devices
+        DuplicatesAllowed: False
+        ItemType: Device
+        Type: List
+        UpdateType: Immutable
 
     .PARAMETER InitProcessEnabled
-		Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ecs-taskdefinition-linuxparameters.html#cfn-ecs-taskdefinition-linuxparameters-initprocessenabled    
-		PrimitiveType: Boolean    
-		Required: False    
-		UpdateType: Immutable    
+        Run an init process inside the container that forwards signals and reaps processes. This parameter maps to the --init option to docker run: https://docs.docker.com/engine/reference/run/. This parameter requires version 1.25 of the Docker Remote API or greater on your container instance. To check the Docker Remote API version on your container instance, log in to your container instance and run the following command: sudo docker version --format '{{.Server.APIVersion}}'
+
+        Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ecs-taskdefinition-linuxparameters.html#cfn-ecs-taskdefinition-linuxparameters-initprocessenabled
+        PrimitiveType: Boolean
+        UpdateType: Immutable
 
     .PARAMETER SharedMemorySize
-		Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ecs-taskdefinition-linuxparameters.html#cfn-ecs-taskdefinition-linuxparameters-sharedmemorysize    
-		PrimitiveType: Integer    
-		Required: False    
-		UpdateType: Immutable    
+        The value for the size in MiB of the /dev/shm volume. This parameter maps to the --shm-size option to docker run: https://docs.docker.com/engine/reference/run/.
+If you are using tasks that use the Fargate launch type, the sharedMemorySize parameter is not supported.
+
+        Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ecs-taskdefinition-linuxparameters.html#cfn-ecs-taskdefinition-linuxparameters-sharedmemorysize
+        PrimitiveType: Integer
+        UpdateType: Immutable
 
     .PARAMETER Tmpfs
-		Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ecs-taskdefinition-linuxparameters.html#cfn-ecs-taskdefinition-linuxparameters-tmpfs    
-		DuplicatesAllowed: False    
-		ItemType: Tmpfs    
-		Required: False    
-		Type: List    
-		UpdateType: Immutable    
+        The container path, mount options, and size in MiB of the tmpfs mount. This parameter maps to the --tmpfs option to docker run: https://docs.docker.com/engine/reference/run/.
+If you are using tasks that use the Fargate launch type, the tmpfs parameter is not supported.
+
+        Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ecs-taskdefinition-linuxparameters.html#cfn-ecs-taskdefinition-linuxparameters-tmpfs
+        DuplicatesAllowed: False
+        ItemType: Tmpfs
+        Type: List
+        UpdateType: Immutable
 
     .FUNCTIONALITY
         Vaporshell

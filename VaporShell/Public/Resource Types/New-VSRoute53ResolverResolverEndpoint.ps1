@@ -13,37 +13,44 @@ function New-VSRoute53ResolverResolverEndpoint {
         The logical ID must be alphanumeric (A-Za-z0-9) and unique within the template. Use the logical name to reference the resource in other parts of the template. For example, if you want to map an Amazon Elastic Block Store volume to an Amazon EC2 instance, you reference the logical IDs to associate the block stores with the instance.
 
     .PARAMETER IpAddresses
-		Type: List    
-		Required: True    
-		Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-route53resolver-resolverendpoint.html#cfn-route53resolver-resolverendpoint-ipaddresses    
-		ItemType: IpAddressRequest    
-		UpdateType: Mutable    
+        The subnets and IP addresses in your VPC that DNS queries originate from for outbound endpoints or that you forward DNS queries to for inbound endpoints. The subnet ID uniquely identifies a VPC.
+
+        Type: List
+        Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-route53resolver-resolverendpoint.html#cfn-route53resolver-resolverendpoint-ipaddresses
+        ItemType: IpAddressRequest
+        UpdateType: Mutable
 
     .PARAMETER Direction
-		Required: True    
-		Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-route53resolver-resolverendpoint.html#cfn-route53resolver-resolverendpoint-direction    
-		PrimitiveType: String    
-		UpdateType: Immutable    
+        Indicates whether the resolver endpoint allows inbound or outbound DNS queries:
++  INBOUND: allows DNS queries to your VPC from your network or another VPC
++  OUTBOUND: allows DNS queries from your VPC to your network or another VPC
+
+        Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-route53resolver-resolverendpoint.html#cfn-route53resolver-resolverendpoint-direction
+        PrimitiveType: String
+        UpdateType: Immutable
 
     .PARAMETER SecurityGroupIds
-		PrimitiveItemType: String    
-		Type: List    
-		Required: True    
-		Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-route53resolver-resolverendpoint.html#cfn-route53resolver-resolverendpoint-securitygroupids    
-		UpdateType: Immutable    
+        The ID of one or more security groups that control access to this VPC. The security group must include one or more inbound rules for inbound endpoints or outbound rules for outbound endpoints. Inbound and outbound rules must allow TCP and UDP access. For inbound access, open port 53. For outbound access, open the port that you're using for DNS queries on your network.
+
+        PrimitiveItemType: String
+        Type: List
+        Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-route53resolver-resolverendpoint.html#cfn-route53resolver-resolverendpoint-securitygroupids
+        UpdateType: Immutable
 
     .PARAMETER Tags
-		Type: List    
-		Required: False    
-		Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-route53resolver-resolverendpoint.html#cfn-route53resolver-resolverendpoint-tags    
-		ItemType: Tag    
-		UpdateType: Mutable    
+        A list of the tag keys and values that you want to associate with the endpoint.
+
+        Type: List
+        Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-route53resolver-resolverendpoint.html#cfn-route53resolver-resolverendpoint-tags
+        ItemType: Tag
+        UpdateType: Mutable
 
     .PARAMETER Name
-		Required: False    
-		Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-route53resolver-resolverendpoint.html#cfn-route53resolver-resolverendpoint-name    
-		PrimitiveType: String    
-		UpdateType: Mutable    
+        A friendly name that lets you easily find a configuration in the Resolver dashboard in the Route 53 console.
+
+        Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-route53resolver-resolverendpoint.html#cfn-route53resolver-resolverendpoint-name
+        PrimitiveType: String
+        UpdateType: Mutable
 
     .PARAMETER DeletionPolicy
         With the DeletionPolicy attribute you can preserve or (in some cases) backup a resource when its stack is deleted. You specify a DeletionPolicy attribute for each resource that you want to control. If a resource has no DeletionPolicy attribute, AWS CloudFormation deletes the resource by default.

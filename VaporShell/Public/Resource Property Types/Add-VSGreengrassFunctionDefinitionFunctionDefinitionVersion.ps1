@@ -10,17 +10,19 @@ function Add-VSGreengrassFunctionDefinitionFunctionDefinitionVersion {
         http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-greengrass-functiondefinition-functiondefinitionversion.html
 
     .PARAMETER DefaultConfig
-		Type: DefaultConfig    
-		Required: False    
-		Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-greengrass-functiondefinition-functiondefinitionversion.html#cfn-greengrass-functiondefinition-functiondefinitionversion-defaultconfig    
-		UpdateType: Immutable    
+        The default configuration that applies to all Lambda functions in the group. Individual Lambda functions can override these settings.
+
+        Type: DefaultConfig
+        Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-greengrass-functiondefinition-functiondefinitionversion.html#cfn-greengrass-functiondefinition-functiondefinitionversion-defaultconfig
+        UpdateType: Immutable
 
     .PARAMETER Functions
-		Type: List    
-		Required: True    
-		Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-greengrass-functiondefinition-functiondefinitionversion.html#cfn-greengrass-functiondefinition-functiondefinitionversion-functions    
-		ItemType: Function    
-		UpdateType: Immutable    
+        The functions in this version.
+
+        Type: List
+        Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-greengrass-functiondefinition-functiondefinitionversion.html#cfn-greengrass-functiondefinition-functiondefinitionversion-functions
+        ItemType: Function
+        UpdateType: Immutable
 
     .FUNCTIONALITY
         Vaporshell

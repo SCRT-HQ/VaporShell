@@ -13,65 +13,77 @@ function New-VSGlueDevEndpoint {
         The logical ID must be alphanumeric (A-Za-z0-9) and unique within the template. Use the logical name to reference the resource in other parts of the template. For example, if you want to map an Amazon Elastic Block Store volume to an Amazon EC2 instance, you reference the logical IDs to associate the block stores with the instance.
 
     .PARAMETER ExtraJarsS3Path
-		Required: False    
-		Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-glue-devendpoint.html#cfn-glue-devendpoint-extrajarss3path    
-		PrimitiveType: String    
-		UpdateType: Mutable    
+        The path to one or more Java .jar files in an S3 bucket that should be loaded in your DevEndpoint.
+You can only use pure Java/Scala libraries with a DevEndpoint.
+
+        Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-glue-devendpoint.html#cfn-glue-devendpoint-extrajarss3path
+        PrimitiveType: String
+        UpdateType: Mutable
 
     .PARAMETER EndpointName
-		Required: False    
-		Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-glue-devendpoint.html#cfn-glue-devendpoint-endpointname    
-		PrimitiveType: String    
-		UpdateType: Immutable    
+        The name of the DevEndpoint.
+
+        Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-glue-devendpoint.html#cfn-glue-devendpoint-endpointname
+        PrimitiveType: String
+        UpdateType: Immutable
 
     .PARAMETER PublicKey
-		Required: False    
-		Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-glue-devendpoint.html#cfn-glue-devendpoint-publickey    
-		PrimitiveType: String    
-		UpdateType: Mutable    
+        The public key to be used by this DevEndpoint for authentication. This attribute is provided for backward compatibility because the recommended attribute to use is public keys.
+
+        Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-glue-devendpoint.html#cfn-glue-devendpoint-publickey
+        PrimitiveType: String
+        UpdateType: Mutable
 
     .PARAMETER NumberOfNodes
-		Required: False    
-		Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-glue-devendpoint.html#cfn-glue-devendpoint-numberofnodes    
-		PrimitiveType: Integer    
-		UpdateType: Mutable    
+        The number of AWS Glue Data Processing Units DPUs allocated to this DevEndpoint.
+
+        Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-glue-devendpoint.html#cfn-glue-devendpoint-numberofnodes
+        PrimitiveType: Integer
+        UpdateType: Mutable
 
     .PARAMETER SubnetId
-		Required: False    
-		Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-glue-devendpoint.html#cfn-glue-devendpoint-subnetid    
-		PrimitiveType: String    
-		UpdateType: Mutable    
+        The subnet ID for this DevEndpoint.
+
+        Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-glue-devendpoint.html#cfn-glue-devendpoint-subnetid
+        PrimitiveType: String
+        UpdateType: Mutable
 
     .PARAMETER ExtraPythonLibsS3Path
-		Required: False    
-		Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-glue-devendpoint.html#cfn-glue-devendpoint-extrapythonlibss3path    
-		PrimitiveType: String    
-		UpdateType: Mutable    
+        The paths to one or more Python libraries in an Amazon S3 bucket that should be loaded in your DevEndpoint. Multiple values must be complete paths separated by a comma.
+You can only use pure Python libraries with a DevEndpoint. Libraries that rely on C extensions, such as the pandas: http://pandas.pydata.org/ Python data analysis library, are not currently supported.
+
+        Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-glue-devendpoint.html#cfn-glue-devendpoint-extrapythonlibss3path
+        PrimitiveType: String
+        UpdateType: Mutable
 
     .PARAMETER SecurityConfiguration
-		Required: False    
-		Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-glue-devendpoint.html#cfn-glue-devendpoint-securityconfiguration    
-		PrimitiveType: String    
-		UpdateType: Mutable    
+        The name of the SecurityConfiguration structure to be used with this DevEndpoint.
+
+        Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-glue-devendpoint.html#cfn-glue-devendpoint-securityconfiguration
+        PrimitiveType: String
+        UpdateType: Mutable
 
     .PARAMETER SecurityGroupIds
-		PrimitiveItemType: String    
-		Type: List    
-		Required: False    
-		Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-glue-devendpoint.html#cfn-glue-devendpoint-securitygroupids    
-		UpdateType: Mutable    
+        A list of security group identifiers used in this DevEndpoint.
+
+        PrimitiveItemType: String
+        Type: List
+        Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-glue-devendpoint.html#cfn-glue-devendpoint-securitygroupids
+        UpdateType: Mutable
 
     .PARAMETER RoleArn
-		Required: True    
-		Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-glue-devendpoint.html#cfn-glue-devendpoint-rolearn    
-		PrimitiveType: String    
-		UpdateType: Mutable    
+        The Amazon Resource Name ARN of the IAM role used in this DevEndpoint.
+
+        Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-glue-devendpoint.html#cfn-glue-devendpoint-rolearn
+        PrimitiveType: String
+        UpdateType: Mutable
 
     .PARAMETER Tags
-		Required: False    
-		Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-glue-devendpoint.html#cfn-glue-devendpoint-tags    
-		PrimitiveType: Json    
-		UpdateType: Mutable    
+        The tags to use with this DevEndpoint. You can use tags to limit access to the DevEndpoint. For more information about tags in AWS Glue, see AWS Tags in AWS Glue: https://docs.aws.amazon.com/glue/latest/dg/monitor-tags.html in the developer guide.
+
+        Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-glue-devendpoint.html#cfn-glue-devendpoint-tags
+        PrimitiveType: Json
+        UpdateType: Mutable
 
     .PARAMETER DeletionPolicy
         With the DeletionPolicy attribute you can preserve or (in some cases) backup a resource when its stack is deleted. You specify a DeletionPolicy attribute for each resource that you want to control. If a resource has no DeletionPolicy attribute, AWS CloudFormation deletes the resource by default.

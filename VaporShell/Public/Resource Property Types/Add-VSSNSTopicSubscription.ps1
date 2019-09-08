@@ -10,16 +10,18 @@ function Add-VSSNSTopicSubscription {
         http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-sns-subscription.html
 
     .PARAMETER Endpoint
-		Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-sns-subscription.html#cfn-sns-topic-subscription-endpoint    
-		PrimitiveType: String    
-		Required: True    
-		UpdateType: Immutable    
+        The endpoint that receives notifications from the Amazon SNS topic. The endpoint value depends on the protocol that you specify. For more information, see the Endpoint parameter of the  Subscribe: https://docs.aws.amazon.com/sns/latest/api/API_Subscribe.html  action in the *Amazon Simple Notification Service API Reference*.
+
+        Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-sns-subscription.html#cfn-sns-topic-subscription-endpoint
+        PrimitiveType: String
+        UpdateType: Immutable
 
     .PARAMETER Protocol
-		Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-sns-subscription.html#cfn-sns-topic-subscription-protocol    
-		PrimitiveType: String    
-		Required: True    
-		UpdateType: Immutable    
+        The subscription's protocol. For more information, see the Protocol parameter of the  Subscribe: https://docs.aws.amazon.com/sns/latest/api/API_Subscribe.html  action in the *Amazon Simple Notification Service API Reference*.
+
+        Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-sns-subscription.html#cfn-sns-topic-subscription-protocol
+        PrimitiveType: String
+        UpdateType: Immutable
 
     .FUNCTIONALITY
         Vaporshell

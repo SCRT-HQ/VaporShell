@@ -10,28 +10,32 @@ function Add-VSS3BucketDestination {
         http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-s3-bucket-destination.html
 
     .PARAMETER BucketAccountId
-		Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-s3-bucket-destination.html#cfn-s3-bucket-destination-bucketaccountid    
-		PrimitiveType: String    
-		Required: False    
-		UpdateType: Mutable    
+        The account ID that owns the destination bucket. If no account ID is provided, the owner will not be validated prior to exporting data.
+
+        Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-s3-bucket-destination.html#cfn-s3-bucket-destination-bucketaccountid
+        PrimitiveType: String
+        UpdateType: Mutable
 
     .PARAMETER BucketArn
-		Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-s3-bucket-destination.html#cfn-s3-bucket-destination-bucketarn    
-		PrimitiveType: String    
-		Required: True    
-		UpdateType: Mutable    
+        The Amazon Resource Name ARN of the bucket to which data is exported.
+
+        Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-s3-bucket-destination.html#cfn-s3-bucket-destination-bucketarn
+        PrimitiveType: String
+        UpdateType: Mutable
 
     .PARAMETER Format
-		Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-s3-bucket-destination.html#cfn-s3-bucket-destination-format    
-		PrimitiveType: String    
-		Required: True    
-		UpdateType: Mutable    
+        Specifies the file format used when exporting data to Amazon S3.
+
+        Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-s3-bucket-destination.html#cfn-s3-bucket-destination-format
+        PrimitiveType: String
+        UpdateType: Mutable
 
     .PARAMETER Prefix
-		Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-s3-bucket-destination.html#cfn-s3-bucket-destination-prefix    
-		PrimitiveType: String    
-		Required: False    
-		UpdateType: Mutable    
+        The prefix to use when exporting data. The prefix is prepended to all results.
+
+        Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-s3-bucket-destination.html#cfn-s3-bucket-destination-prefix
+        PrimitiveType: String
+        UpdateType: Mutable
 
     .FUNCTIONALITY
         Vaporshell

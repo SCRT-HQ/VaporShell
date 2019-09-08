@@ -10,11 +10,12 @@ function Add-VSGreengrassDeviceDefinitionDeviceDefinitionVersion {
         http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-greengrass-devicedefinition-devicedefinitionversion.html
 
     .PARAMETER Devices
-		Type: List    
-		Required: True    
-		Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-greengrass-devicedefinition-devicedefinitionversion.html#cfn-greengrass-devicedefinition-devicedefinitionversion-devices    
-		ItemType: Device    
-		UpdateType: Immutable    
+        The devices in this version.
+
+        Type: List
+        Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-greengrass-devicedefinition-devicedefinitionversion.html#cfn-greengrass-devicedefinition-devicedefinitionversion-devices
+        ItemType: Device
+        UpdateType: Immutable
 
     .FUNCTIONALITY
         Vaporshell

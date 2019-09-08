@@ -13,54 +13,62 @@ function New-VSWorkSpacesWorkspace {
         The logical ID must be alphanumeric (A-Za-z0-9) and unique within the template. Use the logical name to reference the resource in other parts of the template. For example, if you want to map an Amazon Elastic Block Store volume to an Amazon EC2 instance, you reference the logical IDs to associate the block stores with the instance.
 
     .PARAMETER BundleId
-		Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-workspaces-workspace.html#cfn-workspaces-workspace-bundleid    
-		PrimitiveType: String    
-		Required: True    
-		UpdateType: Conditional    
+        The identifier of the bundle for the WorkSpace.
+
+        Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-workspaces-workspace.html#cfn-workspaces-workspace-bundleid
+        PrimitiveType: String
+        UpdateType: Conditional
 
     .PARAMETER DirectoryId
-		Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-workspaces-workspace.html#cfn-workspaces-workspace-directoryid    
-		PrimitiveType: String    
-		Required: True    
-		UpdateType: Conditional    
+        The identifier of the AWS Directory Service directory for the WorkSpace.
+
+        Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-workspaces-workspace.html#cfn-workspaces-workspace-directoryid
+        PrimitiveType: String
+        UpdateType: Conditional
 
     .PARAMETER RootVolumeEncryptionEnabled
-		Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-workspaces-workspace.html#cfn-workspaces-workspace-rootvolumeencryptionenabled    
-		PrimitiveType: Boolean    
-		Required: False    
-		UpdateType: Conditional    
+        Indicates whether the data stored on the root volume is encrypted.
+
+        Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-workspaces-workspace.html#cfn-workspaces-workspace-rootvolumeencryptionenabled
+        PrimitiveType: Boolean
+        UpdateType: Conditional
 
     .PARAMETER Tags
-		Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-workspaces-workspace.html#cfn-workspaces-workspace-tags    
-		DuplicatesAllowed: True    
-		ItemType: Tag    
-		Required: False    
-		Type: List    
-		UpdateType: Mutable    
+        The tags for the WorkSpace.
+
+        Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-workspaces-workspace.html#cfn-workspaces-workspace-tags
+        DuplicatesAllowed: True
+        ItemType: Tag
+        Type: List
+        UpdateType: Mutable
 
     .PARAMETER UserName
-		Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-workspaces-workspace.html#cfn-workspaces-workspace-username    
-		PrimitiveType: String    
-		Required: True    
-		UpdateType: Immutable    
+        The username of the user for the WorkSpace. This username must exist in the AWS Directory Service directory for the WorkSpace.
+
+        Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-workspaces-workspace.html#cfn-workspaces-workspace-username
+        PrimitiveType: String
+        UpdateType: Immutable
 
     .PARAMETER UserVolumeEncryptionEnabled
-		Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-workspaces-workspace.html#cfn-workspaces-workspace-uservolumeencryptionenabled    
-		PrimitiveType: Boolean    
-		Required: False    
-		UpdateType: Conditional    
+        Indicates whether the data stored on the user volume is encrypted.
+
+        Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-workspaces-workspace.html#cfn-workspaces-workspace-uservolumeencryptionenabled
+        PrimitiveType: Boolean
+        UpdateType: Conditional
 
     .PARAMETER VolumeEncryptionKey
-		Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-workspaces-workspace.html#cfn-workspaces-workspace-volumeencryptionkey    
-		PrimitiveType: String    
-		Required: False    
-		UpdateType: Conditional    
+        The KMS key used to encrypt data stored on your WorkSpace.
+
+        Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-workspaces-workspace.html#cfn-workspaces-workspace-volumeencryptionkey
+        PrimitiveType: String
+        UpdateType: Conditional
 
     .PARAMETER WorkspaceProperties
-		Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-workspaces-workspace.html#cfn-workspaces-workspace-workspaceproperties    
-		Required: False    
-		Type: WorkspaceProperties    
-		UpdateType: Mutable    
+        The WorkSpace properties.
+
+        Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-workspaces-workspace.html#cfn-workspaces-workspace-workspaceproperties
+        Type: WorkspaceProperties
+        UpdateType: Mutable
 
     .PARAMETER DeletionPolicy
         With the DeletionPolicy attribute you can preserve or (in some cases) backup a resource when its stack is deleted. You specify a DeletionPolicy attribute for each resource that you want to control. If a resource has no DeletionPolicy attribute, AWS CloudFormation deletes the resource by default.

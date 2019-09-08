@@ -10,16 +10,18 @@ function Add-VSMSKClusterEncryptionInfo {
         http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-msk-cluster-encryptioninfo.html
 
     .PARAMETER EncryptionAtRest
-		Type: EncryptionAtRest    
-		Required: False    
-		Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-msk-cluster-encryptioninfo.html#cfn-msk-cluster-encryptioninfo-encryptionatrest    
-		UpdateType: Immutable    
+        The data-volume encryption details.
+
+        Type: EncryptionAtRest
+        Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-msk-cluster-encryptioninfo.html#cfn-msk-cluster-encryptioninfo-encryptionatrest
+        UpdateType: Immutable
 
     .PARAMETER EncryptionInTransit
-		Type: EncryptionInTransit    
-		Required: False    
-		Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-msk-cluster-encryptioninfo.html#cfn-msk-cluster-encryptioninfo-encryptionintransit    
-		UpdateType: Immutable    
+        The details for encryption in transit.
+
+        Type: EncryptionInTransit
+        Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-msk-cluster-encryptioninfo.html#cfn-msk-cluster-encryptioninfo-encryptionintransit
+        UpdateType: Immutable
 
     .FUNCTIONALITY
         Vaporshell

@@ -10,16 +10,18 @@ function Add-VSConfigRemediationConfigurationRemediationParameterValue {
         http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-config-remediationconfiguration-remediationparametervalue.html
 
     .PARAMETER ResourceValue
-		Type: ResourceValue    
-		Required: False    
-		Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-config-remediationconfiguration-remediationparametervalue.html#cfn-config-remediationconfiguration-remediationparametervalue-resourcevalue    
-		UpdateType: Mutable    
+        The value is dynamic and changes at run-time.
+
+        Type: ResourceValue
+        Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-config-remediationconfiguration-remediationparametervalue.html#cfn-config-remediationconfiguration-remediationparametervalue-resourcevalue
+        UpdateType: Mutable
 
     .PARAMETER StaticValue
-		Type: StaticValue    
-		Required: False    
-		Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-config-remediationconfiguration-remediationparametervalue.html#cfn-config-remediationconfiguration-remediationparametervalue-staticvalue    
-		UpdateType: Mutable    
+        The value is static and does not change at run-time.
+
+        Type: StaticValue
+        Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-config-remediationconfiguration-remediationparametervalue.html#cfn-config-remediationconfiguration-remediationparametervalue-staticvalue
+        UpdateType: Mutable
 
     .FUNCTIONALITY
         Vaporshell

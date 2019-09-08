@@ -10,10 +10,11 @@ function Add-VSS3BucketEncryptionConfiguration {
         http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-s3-bucket-encryptionconfiguration.html
 
     .PARAMETER ReplicaKmsKeyID
-		Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-s3-bucket-encryptionconfiguration.html#cfn-s3-bucket-encryptionconfiguration-replicakmskeyid    
-		PrimitiveType: String    
-		Required: True    
-		UpdateType: Mutable    
+        Specifies the AWS KMS Key ID Key ARN or Alias ARN for the destination bucket. Amazon S3 uses this key to encrypt replica objects.
+
+        Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-s3-bucket-encryptionconfiguration.html#cfn-s3-bucket-encryptionconfiguration-replicakmskeyid
+        PrimitiveType: String
+        UpdateType: Mutable
 
     .FUNCTIONALITY
         Vaporshell

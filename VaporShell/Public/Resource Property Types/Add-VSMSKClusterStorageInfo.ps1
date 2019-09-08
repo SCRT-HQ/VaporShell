@@ -10,10 +10,11 @@ function Add-VSMSKClusterStorageInfo {
         http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-msk-cluster-storageinfo.html
 
     .PARAMETER EBSStorageInfo
-		Type: EBSStorageInfo    
-		Required: False    
-		Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-msk-cluster-storageinfo.html#cfn-msk-cluster-storageinfo-ebsstorageinfo    
-		UpdateType: Immutable    
+        EBS volume information.
+
+        Type: EBSStorageInfo
+        Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-msk-cluster-storageinfo.html#cfn-msk-cluster-storageinfo-ebsstorageinfo
+        UpdateType: Immutable
 
     .FUNCTIONALITY
         Vaporshell

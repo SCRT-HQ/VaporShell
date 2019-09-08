@@ -10,22 +10,25 @@ function Add-VSElasticBeanstalkApplicationMaxCountRule {
         http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-elasticbeanstalk-application-maxcountrule.html
 
     .PARAMETER DeleteSourceFromS3
-		Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-elasticbeanstalk-application-maxcountrule.html#cfn-elasticbeanstalk-application-maxcountrule-deletesourcefroms3    
-		PrimitiveType: Boolean    
-		Required: False    
-		UpdateType: Mutable    
+        Set to true to delete a version's source bundle from Amazon S3 when Elastic Beanstalk deletes the application version.
+
+        Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-elasticbeanstalk-application-maxcountrule.html#cfn-elasticbeanstalk-application-maxcountrule-deletesourcefroms3
+        PrimitiveType: Boolean
+        UpdateType: Mutable
 
     .PARAMETER Enabled
-		Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-elasticbeanstalk-application-maxcountrule.html#cfn-elasticbeanstalk-application-maxcountrule-enabled    
-		PrimitiveType: Boolean    
-		Required: False    
-		UpdateType: Mutable    
+        Specify true to apply the rule, or false to disable it.
+
+        Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-elasticbeanstalk-application-maxcountrule.html#cfn-elasticbeanstalk-application-maxcountrule-enabled
+        PrimitiveType: Boolean
+        UpdateType: Mutable
 
     .PARAMETER MaxCount
-		Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-elasticbeanstalk-application-maxcountrule.html#cfn-elasticbeanstalk-application-maxcountrule-maxcount    
-		PrimitiveType: Integer    
-		Required: False    
-		UpdateType: Mutable    
+        Specify the maximum number of application versions to retain.
+
+        Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-elasticbeanstalk-application-maxcountrule.html#cfn-elasticbeanstalk-application-maxcountrule-maxcount
+        PrimitiveType: Integer
+        UpdateType: Mutable
 
     .FUNCTIONALITY
         Vaporshell

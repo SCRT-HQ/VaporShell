@@ -10,10 +10,11 @@ function Add-VSCodeStarGitHubRepositoryCode {
         http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-codestar-githubrepository-code.html
 
     .PARAMETER S3
-		Type: S3    
-		Required: True    
-		Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-codestar-githubrepository-code.html#cfn-codestar-githubrepository-code-s3    
-		UpdateType: Mutable    
+        Information about the Amazon S3 bucket that contains a ZIP file of code to be committed to the repository.
+
+        Type: S3
+        Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-codestar-githubrepository-code.html#cfn-codestar-githubrepository-code-s3
+        UpdateType: Mutable
 
     .FUNCTIONALITY
         Vaporshell

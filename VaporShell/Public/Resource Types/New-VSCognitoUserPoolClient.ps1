@@ -13,102 +13,133 @@ function New-VSCognitoUserPoolClient {
         The logical ID must be alphanumeric (A-Za-z0-9) and unique within the template. Use the logical name to reference the resource in other parts of the template. For example, if you want to map an Amazon Elastic Block Store volume to an Amazon EC2 instance, you reference the logical IDs to associate the block stores with the instance.
 
     .PARAMETER AnalyticsConfiguration
-		Type: AnalyticsConfiguration    
-		Required: False    
-		Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-cognito-userpoolclient.html#cfn-cognito-userpoolclient-analyticsconfiguration    
-		UpdateType: Mutable    
+        The Amazon Pinpoint analytics configuration for collecting metrics for this user pool.
+
+        Type: AnalyticsConfiguration
+        Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-cognito-userpoolclient.html#cfn-cognito-userpoolclient-analyticsconfiguration
+        UpdateType: Mutable
 
     .PARAMETER GenerateSecret
-		Required: False    
-		Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-cognito-userpoolclient.html#cfn-cognito-userpoolclient-generatesecret    
-		PrimitiveType: Boolean    
-		UpdateType: Immutable    
+        Boolean to specify whether you want to generate a secret for the user pool client being created.
+
+        Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-cognito-userpoolclient.html#cfn-cognito-userpoolclient-generatesecret
+        PrimitiveType: Boolean
+        UpdateType: Immutable
 
     .PARAMETER CallbackURLs
-		PrimitiveItemType: String    
-		Type: List    
-		Required: False    
-		Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-cognito-userpoolclient.html#cfn-cognito-userpoolclient-callbackurls    
-		UpdateType: Mutable    
+        A list of allowed redirect callback URLs for the identity providers.
+A redirect URI must:
++ Be an absolute URI.
++ Be registered with the authorization server.
++ Not include a fragment component.
+See OAuth 2.0 - Redirection Endpoint: https://tools.ietf.org/html/rfc6749#section-3.1.2.
+Amazon Cognito requires HTTPS over HTTP except for http://localhost for testing purposes only.
+App callback URLs such as myapp://example are also supported.
+
+        PrimitiveItemType: String
+        Type: List
+        Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-cognito-userpoolclient.html#cfn-cognito-userpoolclient-callbackurls
+        UpdateType: Mutable
 
     .PARAMETER AllowedOAuthScopes
-		PrimitiveItemType: String    
-		Type: List    
-		Required: False    
-		Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-cognito-userpoolclient.html#cfn-cognito-userpoolclient-allowedoauthscopes    
-		UpdateType: Mutable    
+        A list of allowed OAuth scopes. Currently supported values are "phone", "email", "openid", and "Cognito".
+
+        PrimitiveItemType: String
+        Type: List
+        Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-cognito-userpoolclient.html#cfn-cognito-userpoolclient-allowedoauthscopes
+        UpdateType: Mutable
 
     .PARAMETER ReadAttributes
-		PrimitiveItemType: String    
-		Type: List    
-		Required: False    
-		Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-cognito-userpoolclient.html#cfn-cognito-userpoolclient-readattributes    
-		UpdateType: Mutable    
+        The read attributes.
+
+        PrimitiveItemType: String
+        Type: List
+        Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-cognito-userpoolclient.html#cfn-cognito-userpoolclient-readattributes
+        UpdateType: Mutable
 
     .PARAMETER AllowedOAuthFlowsUserPoolClient
-		Required: False    
-		Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-cognito-userpoolclient.html#cfn-cognito-userpoolclient-allowedoauthflowsuserpoolclient    
-		PrimitiveType: Boolean    
-		UpdateType: Immutable    
+        Set to True if the client is allowed to follow the OAuth protocol when interacting with Cognito user pools.
+
+        Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-cognito-userpoolclient.html#cfn-cognito-userpoolclient-allowedoauthflowsuserpoolclient
+        PrimitiveType: Boolean
+        UpdateType: Immutable
 
     .PARAMETER DefaultRedirectURI
-		Required: False    
-		Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-cognito-userpoolclient.html#cfn-cognito-userpoolclient-defaultredirecturi    
-		PrimitiveType: String    
-		UpdateType: Mutable    
+        The default redirect URI. Must be in the CallbackURLs list.
+A redirect URI must:
++ Be an absolute URI.
++ Be registered with the authorization server.
++ Not include a fragment component.
+See OAuth 2.0 - Redirection Endpoint: https://tools.ietf.org/html/rfc6749#section-3.1.2.
+Amazon Cognito requires HTTPS over HTTP except for http://localhost for testing purposes only.
+App callback URLs such as myapp://example are also supported.
+
+        Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-cognito-userpoolclient.html#cfn-cognito-userpoolclient-defaultredirecturi
+        PrimitiveType: String
+        UpdateType: Mutable
 
     .PARAMETER SupportedIdentityProviders
-		PrimitiveItemType: String    
-		Type: List    
-		Required: False    
-		Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-cognito-userpoolclient.html#cfn-cognito-userpoolclient-supportedidentityproviders    
-		UpdateType: Mutable    
+        A list of provider names for the identity providers that are supported on this client. The following are supported: COGNITO, Facebook, Google and LoginWithAmazon.
+
+        PrimitiveItemType: String
+        Type: List
+        Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-cognito-userpoolclient.html#cfn-cognito-userpoolclient-supportedidentityproviders
+        UpdateType: Mutable
 
     .PARAMETER ClientName
-		Required: False    
-		Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-cognito-userpoolclient.html#cfn-cognito-userpoolclient-clientname    
-		PrimitiveType: String    
-		UpdateType: Mutable    
+        The client name for the user pool client you would like to create.
+
+        Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-cognito-userpoolclient.html#cfn-cognito-userpoolclient-clientname
+        PrimitiveType: String
+        UpdateType: Mutable
 
     .PARAMETER UserPoolId
-		Required: True    
-		Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-cognito-userpoolclient.html#cfn-cognito-userpoolclient-userpoolid    
-		PrimitiveType: String    
-		UpdateType: Immutable    
+        The user pool ID for the user pool where you want to create a user pool client.
+
+        Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-cognito-userpoolclient.html#cfn-cognito-userpoolclient-userpoolid
+        PrimitiveType: String
+        UpdateType: Immutable
 
     .PARAMETER AllowedOAuthFlows
-		PrimitiveItemType: String    
-		Type: List    
-		Required: False    
-		Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-cognito-userpoolclient.html#cfn-cognito-userpoolclient-allowedoauthflows    
-		UpdateType: Mutable    
+        Set to code to initiate a code grant flow, which provides an authorization code as the response. This code can be exchanged for access tokens with the token endpoint.
+Set to token to specify that the client should get the access token and, optionally, ID token, based on scopes directly.
+
+        PrimitiveItemType: String
+        Type: List
+        Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-cognito-userpoolclient.html#cfn-cognito-userpoolclient-allowedoauthflows
+        UpdateType: Mutable
 
     .PARAMETER ExplicitAuthFlows
-		PrimitiveItemType: String    
-		Type: List    
-		Required: False    
-		Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-cognito-userpoolclient.html#cfn-cognito-userpoolclient-explicitauthflows    
-		UpdateType: Mutable    
+        The explicit authentication flows, which can be one of the following: ADMIN_NO_SRP_AUTH, CUSTOM_AUTH_FLOW_ONLY, or USER_PASSWORD_AUTH.
+
+        PrimitiveItemType: String
+        Type: List
+        Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-cognito-userpoolclient.html#cfn-cognito-userpoolclient-explicitauthflows
+        UpdateType: Mutable
 
     .PARAMETER LogoutURLs
-		PrimitiveItemType: String    
-		Type: List    
-		Required: False    
-		Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-cognito-userpoolclient.html#cfn-cognito-userpoolclient-logouturls    
-		UpdateType: Mutable    
+        A list of allowed logout URLs for the identity providers.
+
+        PrimitiveItemType: String
+        Type: List
+        Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-cognito-userpoolclient.html#cfn-cognito-userpoolclient-logouturls
+        UpdateType: Mutable
 
     .PARAMETER RefreshTokenValidity
-		Required: False    
-		Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-cognito-userpoolclient.html#cfn-cognito-userpoolclient-refreshtokenvalidity    
-		PrimitiveType: Double    
-		UpdateType: Mutable    
+        The time limit, in days, after which the refresh token is no longer valid and cannot be used.
+
+        Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-cognito-userpoolclient.html#cfn-cognito-userpoolclient-refreshtokenvalidity
+        PrimitiveType: Integer
+        UpdateType: Mutable
 
     .PARAMETER WriteAttributes
-		PrimitiveItemType: String    
-		Type: List    
-		Required: False    
-		Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-cognito-userpoolclient.html#cfn-cognito-userpoolclient-writeattributes    
-		UpdateType: Mutable    
+        The user pool attributes that the app client can write to.
+If your app client allows users to sign in through an identity provider, this array must include all attributes that are mapped to identity provider attributes. Amazon Cognito updates mapped attributes when users sign in to your application through an identity provider. If your app client lacks write access to a mapped attribute, Amazon Cognito throws an error when it attempts to update the attribute. For more information, see Specifying Identity Provider Attribute Mappings for Your User Pool: https://docs.aws.amazon.com/cognito/latest/developerguide/cognito-user-pools-specifying-attribute-mapping.html.
+
+        PrimitiveItemType: String
+        Type: List
+        Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-cognito-userpoolclient.html#cfn-cognito-userpoolclient-writeattributes
+        UpdateType: Mutable
 
     .PARAMETER DeletionPolicy
         With the DeletionPolicy attribute you can preserve or (in some cases) backup a resource when its stack is deleted. You specify a DeletionPolicy attribute for each resource that you want to control. If a resource has no DeletionPolicy attribute, AWS CloudFormation deletes the resource by default.
@@ -211,7 +242,7 @@ function New-VSCognitoUserPoolClient {
         [parameter(Mandatory = $false)]
         $LogoutURLs,
         [parameter(Mandatory = $false)]
-        [System.Double]
+        [Int]
         $RefreshTokenValidity,
         [parameter(Mandatory = $false)]
         $WriteAttributes,

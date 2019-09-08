@@ -13,89 +13,103 @@ function New-VSPinpointCampaign {
         The logical ID must be alphanumeric (A-Za-z0-9) and unique within the template. Use the logical name to reference the resource in other parts of the template. For example, if you want to map an Amazon Elastic Block Store volume to an Amazon EC2 instance, you reference the logical IDs to associate the block stores with the instance.
 
     .PARAMETER Description
-		Required: False    
-		Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-pinpoint-campaign.html#cfn-pinpoint-campaign-description    
-		PrimitiveType: String    
-		UpdateType: Mutable    
+        The custom description of the campaign.
+
+        Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-pinpoint-campaign.html#cfn-pinpoint-campaign-description
+        PrimitiveType: String
+        UpdateType: Mutable
 
     .PARAMETER SegmentId
-		Required: True    
-		Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-pinpoint-campaign.html#cfn-pinpoint-campaign-segmentid    
-		PrimitiveType: String    
-		UpdateType: Mutable    
+        The unique identifier for the segment to associate with the campaign.
+
+        Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-pinpoint-campaign.html#cfn-pinpoint-campaign-segmentid
+        PrimitiveType: String
+        UpdateType: Mutable
 
     .PARAMETER IsPaused
-		Required: False    
-		Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-pinpoint-campaign.html#cfn-pinpoint-campaign-ispaused    
-		PrimitiveType: Boolean    
-		UpdateType: Mutable    
+        Specifies whether to pause the campaign. A paused campaign doesn't run unless you resume it by setting this value to false.
+
+        Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-pinpoint-campaign.html#cfn-pinpoint-campaign-ispaused
+        PrimitiveType: Boolean
+        UpdateType: Mutable
 
     .PARAMETER AdditionalTreatments
-		Type: List    
-		Required: False    
-		Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-pinpoint-campaign.html#cfn-pinpoint-campaign-additionaltreatments    
-		ItemType: WriteTreatmentResource    
-		UpdateType: Mutable    
+        An array of requests that defines additional treatments for the campaign, in addition to the default treatment for the campaign.
+
+        Type: List
+        Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-pinpoint-campaign.html#cfn-pinpoint-campaign-additionaltreatments
+        ItemType: WriteTreatmentResource
+        UpdateType: Mutable
 
     .PARAMETER Name
-		Required: True    
-		Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-pinpoint-campaign.html#cfn-pinpoint-campaign-name    
-		PrimitiveType: String    
-		UpdateType: Mutable    
+        The custom name of the campaign.
+
+        Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-pinpoint-campaign.html#cfn-pinpoint-campaign-name
+        PrimitiveType: String
+        UpdateType: Mutable
 
     .PARAMETER SegmentVersion
-		Required: False    
-		Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-pinpoint-campaign.html#cfn-pinpoint-campaign-segmentversion    
-		PrimitiveType: Integer    
-		UpdateType: Mutable    
+        The version of the segment to associate with the campaign.
+
+        Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-pinpoint-campaign.html#cfn-pinpoint-campaign-segmentversion
+        PrimitiveType: Integer
+        UpdateType: Mutable
 
     .PARAMETER TreatmentDescription
-		Required: False    
-		Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-pinpoint-campaign.html#cfn-pinpoint-campaign-treatmentdescription    
-		PrimitiveType: String    
-		UpdateType: Mutable    
+        The custom description of a variation of the campaign to use for A/B testing.
+
+        Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-pinpoint-campaign.html#cfn-pinpoint-campaign-treatmentdescription
+        PrimitiveType: String
+        UpdateType: Mutable
 
     .PARAMETER MessageConfiguration
-		Type: MessageConfiguration    
-		Required: True    
-		Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-pinpoint-campaign.html#cfn-pinpoint-campaign-messageconfiguration    
-		UpdateType: Mutable    
+        The message configuration settings for the campaign.
+
+        Type: MessageConfiguration
+        Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-pinpoint-campaign.html#cfn-pinpoint-campaign-messageconfiguration
+        UpdateType: Mutable
 
     .PARAMETER Limits
-		Type: Limits    
-		Required: False    
-		Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-pinpoint-campaign.html#cfn-pinpoint-campaign-limits    
-		UpdateType: Mutable    
+        The messaging limits for the campaign.
+
+        Type: Limits
+        Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-pinpoint-campaign.html#cfn-pinpoint-campaign-limits
+        UpdateType: Mutable
 
     .PARAMETER HoldoutPercent
-		Required: False    
-		Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-pinpoint-campaign.html#cfn-pinpoint-campaign-holdoutpercent    
-		PrimitiveType: Integer    
-		UpdateType: Mutable    
+        The allocated percentage of users segment members who shouldn't receive messages from the campaign.
+
+        Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-pinpoint-campaign.html#cfn-pinpoint-campaign-holdoutpercent
+        PrimitiveType: Integer
+        UpdateType: Mutable
 
     .PARAMETER Schedule
-		Type: Schedule    
-		Required: True    
-		Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-pinpoint-campaign.html#cfn-pinpoint-campaign-schedule    
-		UpdateType: Mutable    
+        The schedule settings for the campaign.
+
+        Type: Schedule
+        Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-pinpoint-campaign.html#cfn-pinpoint-campaign-schedule
+        UpdateType: Mutable
 
     .PARAMETER ApplicationId
-		Required: True    
-		Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-pinpoint-campaign.html#cfn-pinpoint-campaign-applicationid    
-		PrimitiveType: String    
-		UpdateType: Immutable    
+        The unique ID of the Amazon Pinpoint app that the campaign is associated with.
+
+        Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-pinpoint-campaign.html#cfn-pinpoint-campaign-applicationid
+        PrimitiveType: String
+        UpdateType: Immutable
 
     .PARAMETER CampaignHook
-		Type: CampaignHook    
-		Required: False    
-		Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-pinpoint-campaign.html#cfn-pinpoint-campaign-campaignhook    
-		UpdateType: Mutable    
+        Specifies the AWS Lambda function to use as a code hook for a campaign.
+
+        Type: CampaignHook
+        Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-pinpoint-campaign.html#cfn-pinpoint-campaign-campaignhook
+        UpdateType: Mutable
 
     .PARAMETER TreatmentName
-		Required: False    
-		Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-pinpoint-campaign.html#cfn-pinpoint-campaign-treatmentname    
-		PrimitiveType: String    
-		UpdateType: Mutable    
+        The custom name of a variation of the campaign to use for A/B testing.
+
+        Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-pinpoint-campaign.html#cfn-pinpoint-campaign-treatmentname
+        PrimitiveType: String
+        UpdateType: Mutable
 
     .PARAMETER DeletionPolicy
         With the DeletionPolicy attribute you can preserve or (in some cases) backup a resource when its stack is deleted. You specify a DeletionPolicy attribute for each resource that you want to control. If a resource has no DeletionPolicy attribute, AWS CloudFormation deletes the resource by default.

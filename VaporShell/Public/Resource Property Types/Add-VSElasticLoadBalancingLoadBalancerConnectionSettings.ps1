@@ -10,10 +10,11 @@ function Add-VSElasticLoadBalancingLoadBalancerConnectionSettings {
         http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-elb-connectionsettings.html
 
     .PARAMETER IdleTimeout
-		Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-elb-connectionsettings.html#cfn-elb-connectionsettings-idletimeout    
-		PrimitiveType: Integer    
-		Required: True    
-		UpdateType: Mutable    
+        The time, in seconds, that the connection is allowed to be idle no data has been sent over the connection before it is closed by the load balancer.
+
+        Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-elb-connectionsettings.html#cfn-elb-connectionsettings-idletimeout
+        PrimitiveType: Integer
+        UpdateType: Mutable
 
     .FUNCTIONALITY
         Vaporshell

@@ -10,16 +10,18 @@ function Add-VSMediaLiveChannelNetworkInputSettings {
         http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-medialive-channel-networkinputsettings.html
 
     .PARAMETER ServerValidation
-		Required: False    
-		Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-medialive-channel-networkinputsettings.html#cfn-medialive-channel-networkinputsettings-servervalidation    
-		PrimitiveType: String    
-		UpdateType: Mutable    
+        Checks HTTPS server certificates. When set to checkCryptographyOnly, cryptography in the certificate is checked, but not the server's name. Certain subdomains notably S3 buckets that use dots in the bucket name don't strictly match the corresponding certificate's wildcard pattern and would otherwise cause the channel to error. This setting is ignored for protocols that do not use HTTPS.
+
+        Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-medialive-channel-networkinputsettings.html#cfn-medialive-channel-networkinputsettings-servervalidation
+        PrimitiveType: String
+        UpdateType: Mutable
 
     .PARAMETER HlsInputSettings
-		Type: HlsInputSettings    
-		Required: False    
-		Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-medialive-channel-networkinputsettings.html#cfn-medialive-channel-networkinputsettings-hlsinputsettings    
-		UpdateType: Mutable    
+        Information about how to connect to the upstream system.
+
+        Type: HlsInputSettings
+        Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-medialive-channel-networkinputsettings.html#cfn-medialive-channel-networkinputsettings-hlsinputsettings
+        UpdateType: Mutable
 
     .FUNCTIONALITY
         Vaporshell

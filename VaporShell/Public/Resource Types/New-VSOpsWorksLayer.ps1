@@ -13,128 +13,150 @@ function New-VSOpsWorksLayer {
         The logical ID must be alphanumeric (A-Za-z0-9) and unique within the template. Use the logical name to reference the resource in other parts of the template. For example, if you want to map an Amazon Elastic Block Store volume to an Amazon EC2 instance, you reference the logical IDs to associate the block stores with the instance.
 
     .PARAMETER Attributes
-		Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-opsworks-layer.html#cfn-opsworks-layer-attributes    
-		DuplicatesAllowed: False    
-		PrimitiveItemType: String    
-		Required: False    
-		Type: Map    
-		UpdateType: Mutable    
+        One or more user-defined key-value pairs to be added to the stack attributes.
+To create a cluster layer, set the EcsClusterArn attribute to the cluster's ARN.
+
+        Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-opsworks-layer.html#cfn-opsworks-layer-attributes
+        DuplicatesAllowed: False
+        PrimitiveItemType: String
+        Type: Map
+        UpdateType: Mutable
 
     .PARAMETER AutoAssignElasticIps
-		Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-opsworks-layer.html#cfn-opsworks-layer-autoassignelasticips    
-		PrimitiveType: Boolean    
-		Required: True    
-		UpdateType: Mutable    
+        Whether to automatically assign an Elastic IP address: https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/elastic-ip-addresses-eip.html to the layer's instances. For more information, see How to Edit a Layer: https://docs.aws.amazon.com/opsworks/latest/userguide/workinglayers-basics-edit.html.
+
+        Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-opsworks-layer.html#cfn-opsworks-layer-autoassignelasticips
+        PrimitiveType: Boolean
+        UpdateType: Mutable
 
     .PARAMETER AutoAssignPublicIps
-		Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-opsworks-layer.html#cfn-opsworks-layer-autoassignpublicips    
-		PrimitiveType: Boolean    
-		Required: True    
-		UpdateType: Mutable    
+        For stacks that are running in a VPC, whether to automatically assign a public IP address to the layer's instances. For more information, see How to Edit a Layer: https://docs.aws.amazon.com/opsworks/latest/userguide/workinglayers-basics-edit.html.
+
+        Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-opsworks-layer.html#cfn-opsworks-layer-autoassignpublicips
+        PrimitiveType: Boolean
+        UpdateType: Mutable
 
     .PARAMETER CustomInstanceProfileArn
-		Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-opsworks-layer.html#cfn-opsworks-layer-custominstanceprofilearn    
-		PrimitiveType: String    
-		Required: False    
-		UpdateType: Mutable    
+        The ARN of an IAM profile to be used for the layer's EC2 instances. For more information about IAM ARNs, see Using Identifiers: https://docs.aws.amazon.com/IAM/latest/UserGuide/Using_Identifiers.html.
+
+        Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-opsworks-layer.html#cfn-opsworks-layer-custominstanceprofilearn
+        PrimitiveType: String
+        UpdateType: Mutable
 
     .PARAMETER CustomJson
-		Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-opsworks-layer.html#cfn-opsworks-layer-customjson    
-		PrimitiveType: Json    
-		Required: False    
-		UpdateType: Mutable    
+        A JSON-formatted string containing custom stack configuration and deployment attributes to be installed on the layer's instances. For more information, see  Using Custom JSON: https://docs.aws.amazon.com/opsworks/latest/userguide/workingcookbook-json-override.html. This feature is supported as of version 1.7.42 of the AWS CLI.
+
+        Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-opsworks-layer.html#cfn-opsworks-layer-customjson
+        PrimitiveType: Json
+        UpdateType: Mutable
 
     .PARAMETER CustomRecipes
-		Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-opsworks-layer.html#cfn-opsworks-layer-customrecipes    
-		Required: False    
-		Type: Recipes    
-		UpdateType: Mutable    
+        A LayerCustomRecipes object that specifies the layer custom recipes.
+
+        Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-opsworks-layer.html#cfn-opsworks-layer-customrecipes
+        Type: Recipes
+        UpdateType: Mutable
 
     .PARAMETER CustomSecurityGroupIds
-		Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-opsworks-layer.html#cfn-opsworks-layer-customsecuritygroupids    
-		DuplicatesAllowed: True    
-		PrimitiveItemType: String    
-		Required: False    
-		Type: List    
-		UpdateType: Mutable    
+        An array containing the layer custom security group IDs.
+
+        Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-opsworks-layer.html#cfn-opsworks-layer-customsecuritygroupids
+        DuplicatesAllowed: True
+        PrimitiveItemType: String
+        Type: List
+        UpdateType: Mutable
 
     .PARAMETER EnableAutoHealing
-		Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-opsworks-layer.html#cfn-opsworks-layer-enableautohealing    
-		PrimitiveType: Boolean    
-		Required: True    
-		UpdateType: Mutable    
+        Whether to disable auto healing for the layer.
+
+        Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-opsworks-layer.html#cfn-opsworks-layer-enableautohealing
+        PrimitiveType: Boolean
+        UpdateType: Mutable
 
     .PARAMETER InstallUpdatesOnBoot
-		Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-opsworks-layer.html#cfn-opsworks-layer-installupdatesonboot    
-		PrimitiveType: Boolean    
-		Required: False    
-		UpdateType: Mutable    
+        Whether to install operating system and package updates when the instance boots. The default value is true. To control when updates are installed, set this value to false. You must then update your instances manually by using CreateDeployment: https://docs.aws.amazon.com/goto/WebAPI/opsworks-2013-02-18/CreateDeployment to run the update_dependencies stack command or by manually running yum Amazon Linux or apt-get Ubuntu on the instances.
+To ensure that your instances have the latest security updates, we strongly recommend using the default value of true.
+
+        Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-opsworks-layer.html#cfn-opsworks-layer-installupdatesonboot
+        PrimitiveType: Boolean
+        UpdateType: Mutable
 
     .PARAMETER LifecycleEventConfiguration
-		Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-opsworks-layer.html#cfn-opsworks-layer-lifecycleeventconfiguration    
-		Required: False    
-		Type: LifecycleEventConfiguration    
-		UpdateType: Mutable    
+        A LifeCycleEventConfiguration object that you can use to configure the Shutdown event to specify an execution timeout and enable or disable Elastic Load Balancer connection draining.
+
+        Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-opsworks-layer.html#cfn-opsworks-layer-lifecycleeventconfiguration
+        Type: LifecycleEventConfiguration
+        UpdateType: Mutable
 
     .PARAMETER LoadBasedAutoScaling
-		Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-opsworks-layer.html#cfn-opsworks-layer-loadbasedautoscaling    
-		Required: False    
-		Type: LoadBasedAutoScaling    
-		UpdateType: Mutable    
+        The load-based scaling configuration for the AWS OpsWorks layer.
+
+        Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-opsworks-layer.html#cfn-opsworks-layer-loadbasedautoscaling
+        Type: LoadBasedAutoScaling
+        UpdateType: Mutable
 
     .PARAMETER Name
-		Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-opsworks-layer.html#cfn-opsworks-layer-name    
-		PrimitiveType: String    
-		Required: True    
-		UpdateType: Mutable    
+        The layer name, which is used by the console.
+
+        Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-opsworks-layer.html#cfn-opsworks-layer-name
+        PrimitiveType: String
+        UpdateType: Mutable
 
     .PARAMETER Packages
-		Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-opsworks-layer.html#cfn-opsworks-layer-packages    
-		DuplicatesAllowed: True    
-		PrimitiveItemType: String    
-		Required: False    
-		Type: List    
-		UpdateType: Mutable    
+        An array of Package objects that describes the layer packages.
+
+        Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-opsworks-layer.html#cfn-opsworks-layer-packages
+        DuplicatesAllowed: True
+        PrimitiveItemType: String
+        Type: List
+        UpdateType: Mutable
 
     .PARAMETER Shortname
-		Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-opsworks-layer.html#cfn-opsworks-layer-shortname    
-		PrimitiveType: String    
-		Required: True    
-		UpdateType: Mutable    
+        For custom layers only, use this parameter to specify the layer's short name, which is used internally by AWS OpsWorks Stacks and by Chef recipes. The short name is also used as the name for the directory where your app files are installed. It can have a maximum of 200 characters, which are limited to the alphanumeric characters, '-', '_', and '.'.
+The built-in layers' short names are defined by AWS OpsWorks Stacks. For more information, see the Layer Reference: https://docs.aws.amazon.com/opsworks/latest/userguide/layers.html.
+
+        Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-opsworks-layer.html#cfn-opsworks-layer-shortname
+        PrimitiveType: String
+        UpdateType: Mutable
 
     .PARAMETER StackId
-		Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-opsworks-layer.html#cfn-opsworks-layer-stackid    
-		PrimitiveType: String    
-		Required: True    
-		UpdateType: Immutable    
+        The layer stack ID.
+
+        Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-opsworks-layer.html#cfn-opsworks-layer-stackid
+        PrimitiveType: String
+        UpdateType: Immutable
 
     .PARAMETER Tags
-		Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-opsworks-layer.html#cfn-opsworks-layer-tags    
-		DuplicatesAllowed: True    
-		ItemType: Tag    
-		Required: False    
-		Type: List    
-		UpdateType: Mutable    
+        Specifies one or more sets of tags key–value pairs to associate with this AWS OpsWorks layer. Use tags to manage your resources.
+
+        Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-opsworks-layer.html#cfn-opsworks-layer-tags
+        DuplicatesAllowed: True
+        ItemType: Tag
+        Type: List
+        UpdateType: Mutable
 
     .PARAMETER Type
-		Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-opsworks-layer.html#cfn-opsworks-layer-type    
-		PrimitiveType: String    
-		Required: True    
-		UpdateType: Immutable    
+        The layer type. A stack cannot have more than one built-in layer of the same type. It can have any number of custom layers. Built-in layers are not available in Chef 12 stacks.
+
+        Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-opsworks-layer.html#cfn-opsworks-layer-type
+        PrimitiveType: String
+        UpdateType: Immutable
 
     .PARAMETER UseEbsOptimizedInstances
-		Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-opsworks-layer.html#cfn-opsworks-layer-useebsoptimizedinstances    
-		PrimitiveType: Boolean    
-		Required: False    
-		UpdateType: Mutable    
+        Whether to use Amazon EBS-optimized instances.
+
+        Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-opsworks-layer.html#cfn-opsworks-layer-useebsoptimizedinstances
+        PrimitiveType: Boolean
+        UpdateType: Mutable
 
     .PARAMETER VolumeConfigurations
-		Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-opsworks-layer.html#cfn-opsworks-layer-volumeconfigurations    
-		DuplicatesAllowed: True    
-		ItemType: VolumeConfiguration    
-		Required: False    
-		Type: List    
-		UpdateType: Mutable    
+        A VolumeConfigurations object that describes the layer's Amazon EBS volumes.
+
+        Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-opsworks-layer.html#cfn-opsworks-layer-volumeconfigurations
+        DuplicatesAllowed: True
+        ItemType: VolumeConfiguration
+        Type: List
+        UpdateType: Mutable
 
     .PARAMETER DeletionPolicy
         With the DeletionPolicy attribute you can preserve or (in some cases) backup a resource when its stack is deleted. You specify a DeletionPolicy attribute for each resource that you want to control. If a resource has no DeletionPolicy attribute, AWS CloudFormation deletes the resource by default.

@@ -10,22 +10,25 @@ function Add-VSMediaLiveChannelInputAttachment {
         http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-medialive-channel-inputattachment.html
 
     .PARAMETER InputAttachmentName
-		Required: False    
-		Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-medialive-channel-inputattachment.html#cfn-medialive-channel-inputattachment-inputattachmentname    
-		PrimitiveType: String    
-		UpdateType: Mutable    
+        A name for the attachment. This is required if you want to use this input in an input switch action.
+
+        Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-medialive-channel-inputattachment.html#cfn-medialive-channel-inputattachment-inputattachmentname
+        PrimitiveType: String
+        UpdateType: Mutable
 
     .PARAMETER InputId
-		Required: False    
-		Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-medialive-channel-inputattachment.html#cfn-medialive-channel-inputattachment-inputid    
-		PrimitiveType: String    
-		UpdateType: Immutable    
+        The ID of the input to attach.
+
+        Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-medialive-channel-inputattachment.html#cfn-medialive-channel-inputattachment-inputid
+        PrimitiveType: String
+        UpdateType: Immutable
 
     .PARAMETER InputSettings
-		Type: InputSettings    
-		Required: False    
-		Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-medialive-channel-inputattachment.html#cfn-medialive-channel-inputattachment-inputsettings    
-		UpdateType: Mutable    
+        Information about the content to extract from the input and about the general handling of the content.
+
+        Type: InputSettings
+        Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-medialive-channel-inputattachment.html#cfn-medialive-channel-inputattachment-inputsettings
+        UpdateType: Mutable
 
     .FUNCTIONALITY
         Vaporshell

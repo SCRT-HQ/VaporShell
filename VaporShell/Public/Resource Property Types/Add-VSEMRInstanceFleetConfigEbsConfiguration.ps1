@@ -10,18 +10,20 @@ function Add-VSEMRInstanceFleetConfigEbsConfiguration {
         http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-elasticmapreduce-instancefleetconfig-ebsconfiguration.html
 
     .PARAMETER EbsBlockDeviceConfigs
-		Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-elasticmapreduce-instancefleetconfig-ebsconfiguration.html#cfn-elasticmapreduce-instancefleetconfig-ebsconfiguration-ebsblockdeviceconfigs    
-		DuplicatesAllowed: False    
-		ItemType: EbsBlockDeviceConfig    
-		Required: False    
-		Type: List    
-		UpdateType: Immutable    
+        An array of Amazon EBS volume specifications attached to a cluster instance.
+
+        Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-elasticmapreduce-instancefleetconfig-ebsconfiguration.html#cfn-elasticmapreduce-instancefleetconfig-ebsconfiguration-ebsblockdeviceconfigs
+        DuplicatesAllowed: False
+        ItemType: EbsBlockDeviceConfig
+        Type: List
+        UpdateType: Immutable
 
     .PARAMETER EbsOptimized
-		Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-elasticmapreduce-instancefleetconfig-ebsconfiguration.html#cfn-elasticmapreduce-instancefleetconfig-ebsconfiguration-ebsoptimized    
-		PrimitiveType: Boolean    
-		Required: False    
-		UpdateType: Immutable    
+        Indicates whether an Amazon EBS volume is EBS-optimized.
+
+        Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-elasticmapreduce-instancefleetconfig-ebsconfiguration.html#cfn-elasticmapreduce-instancefleetconfig-ebsconfiguration-ebsoptimized
+        PrimitiveType: Boolean
+        UpdateType: Immutable
 
     .FUNCTIONALITY
         Vaporshell

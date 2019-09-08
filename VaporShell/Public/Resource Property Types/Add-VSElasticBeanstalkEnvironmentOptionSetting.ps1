@@ -10,28 +10,32 @@ function Add-VSElasticBeanstalkEnvironmentOptionSetting {
         http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-beanstalk-option-settings.html
 
     .PARAMETER Namespace
-		Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-beanstalk-option-settings.html#cfn-beanstalk-optionsettings-namespace    
-		PrimitiveType: String    
-		Required: True    
-		UpdateType: Mutable    
+        A unique namespace that identifies the option's associated AWS resource.
+
+        Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-beanstalk-option-settings.html#cfn-beanstalk-optionsettings-namespace
+        PrimitiveType: String
+        UpdateType: Mutable
 
     .PARAMETER OptionName
-		Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-beanstalk-option-settings.html#cfn-beanstalk-optionsettings-optionname    
-		PrimitiveType: String    
-		Required: True    
-		UpdateType: Mutable    
+        The name of the configuration option.
+
+        Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-beanstalk-option-settings.html#cfn-beanstalk-optionsettings-optionname
+        PrimitiveType: String
+        UpdateType: Mutable
 
     .PARAMETER ResourceName
-		Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-beanstalk-option-settings.html#cfn-elasticbeanstalk-environment-optionsetting-resourcename    
-		PrimitiveType: String    
-		Required: False    
-		UpdateType: Mutable    
+        A unique resource name for the option setting. Use it for a time–based scaling configuration option.
+
+        Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-beanstalk-option-settings.html#cfn-elasticbeanstalk-environment-optionsetting-resourcename
+        PrimitiveType: String
+        UpdateType: Mutable
 
     .PARAMETER Value
-		Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-beanstalk-option-settings.html#cfn-beanstalk-optionsettings-value    
-		PrimitiveType: String    
-		Required: False    
-		UpdateType: Mutable    
+        The current value for the configuration option.
+
+        Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-beanstalk-option-settings.html#cfn-beanstalk-optionsettings-value
+        PrimitiveType: String
+        UpdateType: Mutable
 
     .FUNCTIONALITY
         Vaporshell

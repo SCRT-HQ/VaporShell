@@ -13,48 +13,61 @@ function New-VSElasticBeanstalkConfigurationTemplate {
         The logical ID must be alphanumeric (A-Za-z0-9) and unique within the template. Use the logical name to reference the resource in other parts of the template. For example, if you want to map an Amazon Elastic Block Store volume to an Amazon EC2 instance, you reference the logical IDs to associate the block stores with the instance.
 
     .PARAMETER ApplicationName
-		Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-elasticbeanstalk-configurationtemplate.html#cfn-elasticbeanstalk-configurationtemplate-applicationname    
-		PrimitiveType: String    
-		Required: True    
-		UpdateType: Immutable    
+        The name of the Elastic Beanstalk application to associate with this configuration template.
+
+        Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-elasticbeanstalk-configurationtemplate.html#cfn-elasticbeanstalk-configurationtemplate-applicationname
+        PrimitiveType: String
+        UpdateType: Immutable
 
     .PARAMETER Description
-		Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-elasticbeanstalk-configurationtemplate.html#cfn-elasticbeanstalk-configurationtemplate-description    
-		PrimitiveType: String    
-		Required: False    
-		UpdateType: Mutable    
+        An optional description for this configuration.
+
+        Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-elasticbeanstalk-configurationtemplate.html#cfn-elasticbeanstalk-configurationtemplate-description
+        PrimitiveType: String
+        UpdateType: Mutable
 
     .PARAMETER EnvironmentId
-		Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-elasticbeanstalk-configurationtemplate.html#cfn-elasticbeanstalk-configurationtemplate-environmentid    
-		PrimitiveType: String    
-		Required: False    
-		UpdateType: Immutable    
+        The ID of an environment whose settings you want to use to create the configuration template. You must specify EnvironmentId if you don't specify PlatformArn, SolutionStackName, or SourceConfiguration.
+
+        Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-elasticbeanstalk-configurationtemplate.html#cfn-elasticbeanstalk-configurationtemplate-environmentid
+        PrimitiveType: String
+        UpdateType: Immutable
 
     .PARAMETER OptionSettings
-		Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-elasticbeanstalk-configurationtemplate.html#cfn-elasticbeanstalk-configurationtemplate-optionsettings    
-		DuplicatesAllowed: True    
-		ItemType: ConfigurationOptionSetting    
-		Required: False    
-		Type: List    
-		UpdateType: Mutable    
+        Option values for the Elastic Beanstalk configuration, such as the instance type. If specified, these values override the values obtained from the solution stack or the source configuration template. For a complete list of Elastic Beanstalk configuration options, see Option Values: https://docs.aws.amazon.com/elasticbeanstalk/latest/dg/command-options.html in the *AWS Elastic Beanstalk Developer Guide*.
+
+        Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-elasticbeanstalk-configurationtemplate.html#cfn-elasticbeanstalk-configurationtemplate-optionsettings
+        DuplicatesAllowed: True
+        ItemType: ConfigurationOptionSetting
+        Type: List
+        UpdateType: Mutable
 
     .PARAMETER PlatformArn
-		Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-elasticbeanstalk-configurationtemplate.html#cfn-elasticbeanstalk-configurationtemplate-platformarn    
-		PrimitiveType: String    
-		Required: False    
-		UpdateType: Immutable    
+        The Amazon Resource Name ARN of the custom platform. For more information, see  Custom Platforms: https://docs.aws.amazon.com/elasticbeanstalk/latest/dg/custom-platforms.html in the *AWS Elastic Beanstalk Developer Guide*.
+If you specify PlatformArn, then don't specify SolutionStackName.
+
+        Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-elasticbeanstalk-configurationtemplate.html#cfn-elasticbeanstalk-configurationtemplate-platformarn
+        PrimitiveType: String
+        UpdateType: Immutable
 
     .PARAMETER SolutionStackName
-		Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-elasticbeanstalk-configurationtemplate.html#cfn-elasticbeanstalk-configurationtemplate-solutionstackname    
-		PrimitiveType: String    
-		Required: False    
-		UpdateType: Immutable    
+        The name of an Elastic Beanstalk solution stack platform version that this configuration uses. For example, 64bit Amazon Linux 2013.09 running Tomcat 7 Java 7. A solution stack specifies the operating system, runtime, and application server for a configuration template. It also determines the set of configuration options as well as the possible and default values. For more information, see Supported Platforms: https://docs.aws.amazon.com/elasticbeanstalk/latest/dg/concepts.platforms.html in the *AWS Elastic Beanstalk Developer Guide*.
+You must specify SolutionStackName if you don't specify PlatformArn, EnvironmentId, or SourceConfiguration.
+Use the  ListAvailableSolutionStacks : https://docs.aws.amazon.com/elasticbeanstalk/latest/api/API_ListAvailableSolutionStacks.html API to obtain a list of available solution stacks.
+
+        Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-elasticbeanstalk-configurationtemplate.html#cfn-elasticbeanstalk-configurationtemplate-solutionstackname
+        PrimitiveType: String
+        UpdateType: Immutable
 
     .PARAMETER SourceConfiguration
-		Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-elasticbeanstalk-configurationtemplate.html#cfn-elasticbeanstalk-configurationtemplate-sourceconfiguration    
-		Required: False    
-		Type: SourceConfiguration    
-		UpdateType: Immutable    
+        An Elastic Beanstalk configuration template to base this one on. If specified, Elastic Beanstalk uses the configuration values from the specified configuration template to create a new configuration.
+Values specified in OptionSettings override any values obtained from the SourceConfiguration.
+You must specify SourceConfiguration if you don't specify PlatformArn, EnvironmentId, or SolutionStackName.
+Constraint: If both solution stack name and source configuration are specified, the solution stack of the source configuration template must match the specified solution stack name.
+
+        Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-elasticbeanstalk-configurationtemplate.html#cfn-elasticbeanstalk-configurationtemplate-sourceconfiguration
+        Type: SourceConfiguration
+        UpdateType: Immutable
 
     .PARAMETER DeletionPolicy
         With the DeletionPolicy attribute you can preserve or (in some cases) backup a resource when its stack is deleted. You specify a DeletionPolicy attribute for each resource that you want to control. If a resource has no DeletionPolicy attribute, AWS CloudFormation deletes the resource by default.

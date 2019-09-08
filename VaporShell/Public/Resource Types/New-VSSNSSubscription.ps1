@@ -13,46 +13,57 @@ function New-VSSNSSubscription {
         The logical ID must be alphanumeric (A-Za-z0-9) and unique within the template. Use the logical name to reference the resource in other parts of the template. For example, if you want to map an Amazon Elastic Block Store volume to an Amazon EC2 instance, you reference the logical IDs to associate the block stores with the instance.
 
     .PARAMETER DeliveryPolicy
-		Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-sns-subscription.html#cfn-sns-subscription-deliverypolicy    
-		PrimitiveType: Json    
-		Required: False    
-		UpdateType: Mutable    
+        The JSON serialization of the subscription's delivery policy. For more information, see  GetSubscriptionAttributes: https://docs.aws.amazon.com/sns/latest/api/API_GetSubscriptionAttributes.html  in the *Amazon Simple Notification Service API Reference*.
+
+        Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-sns-subscription.html#cfn-sns-subscription-deliverypolicy
+        PrimitiveType: Json
+        UpdateType: Mutable
 
     .PARAMETER Endpoint
-		Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-sns-subscription.html#cfn-sns-endpoint    
-		PrimitiveType: String    
-		Required: False    
-		UpdateType: Immutable    
+        The subscription's endpoint. The endpoint value depends on the protocol that you specify. For more information, see the Endpoint parameter of the  Subscribe: https://docs.aws.amazon.com/sns/latest/api/API_Subscribe.html  action in the *Amazon Simple Notification Service API Reference*.
+
+        Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-sns-subscription.html#cfn-sns-endpoint
+        PrimitiveType: String
+        UpdateType: Immutable
 
     .PARAMETER FilterPolicy
-		Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-sns-subscription.html#cfn-sns-subscription-filterpolicy    
-		PrimitiveType: Json    
-		Required: False    
-		UpdateType: Mutable    
+        The filter policy JSON assigned to the subscription. For more information, see  GetSubscriptionAttributes: https://docs.aws.amazon.com/sns/latest/api/API_GetSubscriptionAttributes.html  in the *Amazon Simple Notification Service API Reference*.
+
+        Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-sns-subscription.html#cfn-sns-subscription-filterpolicy
+        PrimitiveType: Json
+        UpdateType: Mutable
 
     .PARAMETER Protocol
-		Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-sns-subscription.html#cfn-sns-protocol    
-		PrimitiveType: String    
-		Required: True    
-		UpdateType: Immutable    
+        The subscription's protocol. For more information, see the Protocol parameter of the  Subscribe: https://docs.aws.amazon.com/sns/latest/api/API_Subscribe.html  action in the *Amazon Simple Notification Service API Reference*.
+
+        Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-sns-subscription.html#cfn-sns-protocol
+        PrimitiveType: String
+        UpdateType: Immutable
 
     .PARAMETER RawMessageDelivery
-		Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-sns-subscription.html#cfn-sns-subscription-rawmessagedelivery    
-		PrimitiveType: Boolean    
-		Required: False    
-		UpdateType: Mutable    
+        When set to true, enables raw message delivery. Raw messages don't contain any JSON formatting and can be sent to Amazon SQS and HTTP/S endpoints. For more information, see  GetSubscriptionAttributes: https://docs.aws.amazon.com/sns/latest/api/API_GetSubscriptionAttributes.html  in the *Amazon Simple Notification Service API Reference*.
+
+        Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-sns-subscription.html#cfn-sns-subscription-rawmessagedelivery
+        PrimitiveType: Boolean
+        UpdateType: Mutable
 
     .PARAMETER Region
-		Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-sns-subscription.html#cfn-sns-subscription-region    
-		PrimitiveType: String    
-		Required: False    
-		UpdateType: Immutable    
+        For cross-region subscriptions, the region in which the topic resides.
+If no region is specified, CloudFormation uses the region of the caller as the default.
+If you perform an update operation that only updates the Region property of a AWS::SNS::Subscription resource, that operation will fail unless you are either:
++ Updating the Region from NULL to the caller region.
++ Updating the Region from the caller region to NULL.
+
+        Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-sns-subscription.html#cfn-sns-subscription-region
+        PrimitiveType: String
+        UpdateType: Mutable
 
     .PARAMETER TopicArn
-		Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-sns-subscription.html#topicarn    
-		PrimitiveType: String    
-		Required: True    
-		UpdateType: Immutable    
+        The ARN of the topic to subscribe to.
+
+        Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-sns-subscription.html#topicarn
+        PrimitiveType: String
+        UpdateType: Immutable
 
     .PARAMETER DeletionPolicy
         With the DeletionPolicy attribute you can preserve or (in some cases) backup a resource when its stack is deleted. You specify a DeletionPolicy attribute for each resource that you want to control. If a resource has no DeletionPolicy attribute, AWS CloudFormation deletes the resource by default.

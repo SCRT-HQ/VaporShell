@@ -10,16 +10,18 @@ function Add-VSCodeBuildProjectLogsConfig {
         http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-codebuild-project-logsconfig.html
 
     .PARAMETER CloudWatchLogs
-		Type: CloudWatchLogsConfig    
-		Required: False    
-		Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-codebuild-project-logsconfig.html#cfn-codebuild-project-logsconfig-cloudwatchlogs    
-		UpdateType: Mutable    
+        Information about Amazon CloudWatch Logs for a build project. Amazon CloudWatch Logs are enabled by default.
+
+        Type: CloudWatchLogsConfig
+        Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-codebuild-project-logsconfig.html#cfn-codebuild-project-logsconfig-cloudwatchlogs
+        UpdateType: Mutable
 
     .PARAMETER S3Logs
-		Type: S3LogsConfig    
-		Required: False    
-		Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-codebuild-project-logsconfig.html#cfn-codebuild-project-logsconfig-s3logs    
-		UpdateType: Mutable    
+        Information about logs built to an S3 bucket for a build project. S3 logs are not enabled by default.
+
+        Type: S3LogsConfig
+        Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-codebuild-project-logsconfig.html#cfn-codebuild-project-logsconfig-s3logs
+        UpdateType: Mutable
 
     .FUNCTIONALITY
         Vaporshell

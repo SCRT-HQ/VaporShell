@@ -10,16 +10,21 @@ function Add-VSSESReceiptFilterFilter {
         http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ses-receiptfilter-filter.html
 
     .PARAMETER IpFilter
-		Type: IpFilter    
-		Required: True    
-		Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ses-receiptfilter-filter.html#cfn-ses-receiptfilter-filter-ipfilter    
-		UpdateType: Mutable    
+        A structure that provides the IP addresses to block or allow, and whether to block or allow incoming mail from them.
+
+        Type: IpFilter
+        Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ses-receiptfilter-filter.html#cfn-ses-receiptfilter-filter-ipfilter
+        UpdateType: Mutable
 
     .PARAMETER Name
-		Required: False    
-		Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ses-receiptfilter-filter.html#cfn-ses-receiptfilter-filter-name    
-		PrimitiveType: String    
-		UpdateType: Mutable    
+        The name of the IP address filter. The name must:
++ Only contain ASCII letters a–z, A–Z, numbers 0–9, underscores _, or dashes -.
++ Start and end with a letter or number.
++ Contain 64 characters or fewer.
+
+        Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ses-receiptfilter-filter.html#cfn-ses-receiptfilter-filter-name
+        PrimitiveType: String
+        UpdateType: Mutable
 
     .FUNCTIONALITY
         Vaporshell

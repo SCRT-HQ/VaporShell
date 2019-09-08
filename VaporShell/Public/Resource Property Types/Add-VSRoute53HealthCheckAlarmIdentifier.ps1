@@ -10,16 +10,22 @@ function Add-VSRoute53HealthCheckAlarmIdentifier {
         http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-route53-healthcheck-alarmidentifier.html
 
     .PARAMETER Name
-		Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-route53-healthcheck-alarmidentifier.html#cfn-route53-healthcheck-alarmidentifier-name    
-		PrimitiveType: String    
-		Required: True    
-		UpdateType: Mutable    
+        The name of the CloudWatch alarm that you want Amazon Route 53 health checkers to use to determine whether this health check is healthy.
+Route 53 supports CloudWatch alarms with the following features:
++ Standard-resolution metrics. High-resolution metrics aren't supported. For more information, see High-Resolution Metrics: http://docs.aws.amazon.com/AmazonCloudWatch/latest/DeveloperGuide/publishingMetrics.html#high-resolution-metrics in the *Amazon CloudWatch User Guide*.
++ Statistics: Average, Minimum, Maximum, Sum, and SampleCount. Extended statistics aren't supported.
+
+        Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-route53-healthcheck-alarmidentifier.html#cfn-route53-healthcheck-alarmidentifier-name
+        PrimitiveType: String
+        UpdateType: Mutable
 
     .PARAMETER Region
-		Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-route53-healthcheck-alarmidentifier.html#cfn-route53-healthcheck-alarmidentifier-region    
-		PrimitiveType: String    
-		Required: True    
-		UpdateType: Mutable    
+        For the CloudWatch alarm that you want Route 53 health checkers to use to determine whether this health check is healthy, the region that the alarm was created in.
+For the current list of CloudWatch regions, see Amazon CloudWatch: http://docs.aws.amazon.com/general/latest/gr/rande.html#cw_region in the *AWS Regions and Endpoints* chapter of the *Amazon Web Services General Reference*.
+
+        Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-route53-healthcheck-alarmidentifier.html#cfn-route53-healthcheck-alarmidentifier-region
+        PrimitiveType: String
+        UpdateType: Mutable
 
     .FUNCTIONALITY
         Vaporshell

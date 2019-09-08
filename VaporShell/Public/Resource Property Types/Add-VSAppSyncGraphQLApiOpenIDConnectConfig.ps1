@@ -10,28 +10,32 @@ function Add-VSAppSyncGraphQLApiOpenIDConnectConfig {
         http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-appsync-graphqlapi-openidconnectconfig.html
 
     .PARAMETER Issuer
-		Required: False    
-		Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-appsync-graphqlapi-openidconnectconfig.html#cfn-appsync-graphqlapi-openidconnectconfig-issuer    
-		PrimitiveType: String    
-		UpdateType: Mutable    
+        The issuer for the OpenID Connect configuration. The issuer returned by discovery must exactly match the value of iss in the ID token.
+
+        Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-appsync-graphqlapi-openidconnectconfig.html#cfn-appsync-graphqlapi-openidconnectconfig-issuer
+        PrimitiveType: String
+        UpdateType: Mutable
 
     .PARAMETER ClientId
-		Required: False    
-		Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-appsync-graphqlapi-openidconnectconfig.html#cfn-appsync-graphqlapi-openidconnectconfig-clientid    
-		PrimitiveType: String    
-		UpdateType: Mutable    
+        The client identifier of the Relying party at the OpenID identity provider. This identifier is typically obtained when the Relying party is registered with the OpenID identity provider. You can specify a regular expression so the AWS AppSync can validate against multiple client identifiers at a time.
+
+        Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-appsync-graphqlapi-openidconnectconfig.html#cfn-appsync-graphqlapi-openidconnectconfig-clientid
+        PrimitiveType: String
+        UpdateType: Mutable
 
     .PARAMETER AuthTTL
-		Required: False    
-		Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-appsync-graphqlapi-openidconnectconfig.html#cfn-appsync-graphqlapi-openidconnectconfig-authttl    
-		PrimitiveType: Double    
-		UpdateType: Mutable    
+        The number of milliseconds a token is valid after being authenticated.
+
+        Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-appsync-graphqlapi-openidconnectconfig.html#cfn-appsync-graphqlapi-openidconnectconfig-authttl
+        PrimitiveType: Double
+        UpdateType: Mutable
 
     .PARAMETER IatTTL
-		Required: False    
-		Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-appsync-graphqlapi-openidconnectconfig.html#cfn-appsync-graphqlapi-openidconnectconfig-iatttl    
-		PrimitiveType: Double    
-		UpdateType: Mutable    
+        The number of milliseconds a token is valid after being issued to a user.
+
+        Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-appsync-graphqlapi-openidconnectconfig.html#cfn-appsync-graphqlapi-openidconnectconfig-iatttl
+        PrimitiveType: Double
+        UpdateType: Mutable
 
     .FUNCTIONALITY
         Vaporshell

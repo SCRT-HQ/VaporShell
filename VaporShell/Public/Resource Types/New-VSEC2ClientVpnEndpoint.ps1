@@ -13,55 +13,76 @@ function New-VSEC2ClientVpnEndpoint {
         The logical ID must be alphanumeric (A-Za-z0-9) and unique within the template. Use the logical name to reference the resource in other parts of the template. For example, if you want to map an Amazon Elastic Block Store volume to an Amazon EC2 instance, you reference the logical IDs to associate the block stores with the instance.
 
     .PARAMETER ClientCidrBlock
-		Required: True    
-		Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ec2-clientvpnendpoint.html#cfn-ec2-clientvpnendpoint-clientcidrblock    
-		PrimitiveType: String    
-		UpdateType: Immutable    
+        The IPv4 address range, in CIDR notation, from which to assign client IP addresses. The address range cannot overlap with the local CIDR of the VPC in which the associated subnet is located, or the routes that you add manually. The address range cannot be changed after the Client VPN endpoint has been created. The CIDR block should be /22 or greater.
+
+        Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ec2-clientvpnendpoint.html#cfn-ec2-clientvpnendpoint-clientcidrblock
+        PrimitiveType: String
+        UpdateType: Immutable
 
     .PARAMETER ConnectionLogOptions
-		Type: ConnectionLogOptions    
-		Required: True    
-		Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ec2-clientvpnendpoint.html#cfn-ec2-clientvpnendpoint-connectionlogoptions    
-		UpdateType: Mutable    
+        Information about the client connection logging options.
+If you enable client connection logging, data about client connections is sent to a Cloudwatch Logs log stream. The following information is logged:
++ Client connection requests
++ Client connection results successful and unsuccessful
++ Reasons for unsuccessful client connection requests
++ Client connection termination time
+
+        Type: ConnectionLogOptions
+        Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ec2-clientvpnendpoint.html#cfn-ec2-clientvpnendpoint-connectionlogoptions
+        UpdateType: Mutable
+
+    .PARAMETER SplitTunnel
+        + Client VPN Endpoints: https://docs.aws.amazon.com/vpn/latest/clientvpn-admin/cvpn-working-endpoints.html in the *AWS Client VPN Administrator Guide*
+
+        Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ec2-clientvpnendpoint.html#cfn-ec2-clientvpnendpoint-splittunnel
+        PrimitiveType: Boolean
+        UpdateType: Mutable
 
     .PARAMETER Description
-		Required: False    
-		Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ec2-clientvpnendpoint.html#cfn-ec2-clientvpnendpoint-description    
-		PrimitiveType: String    
-		UpdateType: Mutable    
+        A brief description of the Client VPN endpoint.
+
+        Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ec2-clientvpnendpoint.html#cfn-ec2-clientvpnendpoint-description
+        PrimitiveType: String
+        UpdateType: Mutable
 
     .PARAMETER TagSpecifications
-		Type: List    
-		Required: False    
-		Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ec2-clientvpnendpoint.html#cfn-ec2-clientvpnendpoint-tagspecifications    
-		ItemType: TagSpecification    
-		UpdateType: Immutable    
+        The tags to apply to the Client VPN endpoint during creation.
+
+        Type: List
+        Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ec2-clientvpnendpoint.html#cfn-ec2-clientvpnendpoint-tagspecifications
+        ItemType: TagSpecification
+        UpdateType: Immutable
 
     .PARAMETER AuthenticationOptions
-		Type: List    
-		Required: True    
-		Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ec2-clientvpnendpoint.html#cfn-ec2-clientvpnendpoint-authenticationoptions    
-		ItemType: ClientAuthenticationRequest    
-		UpdateType: Immutable    
+        Information about the authentication method to be used to authenticate clients.
+
+        Type: List
+        Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ec2-clientvpnendpoint.html#cfn-ec2-clientvpnendpoint-authenticationoptions
+        ItemType: ClientAuthenticationRequest
+        UpdateType: Immutable
 
     .PARAMETER ServerCertificateArn
-		Required: True    
-		Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ec2-clientvpnendpoint.html#cfn-ec2-clientvpnendpoint-servercertificatearn    
-		PrimitiveType: String    
-		UpdateType: Mutable    
+        The ARN of the server certificate. For more information, see the AWS Certificate Manager User Guide: https://docs.aws.amazon.com/acm/latest/userguide/.
+
+        Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ec2-clientvpnendpoint.html#cfn-ec2-clientvpnendpoint-servercertificatearn
+        PrimitiveType: String
+        UpdateType: Mutable
 
     .PARAMETER DnsServers
-		PrimitiveItemType: String    
-		Type: List    
-		Required: False    
-		Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ec2-clientvpnendpoint.html#cfn-ec2-clientvpnendpoint-dnsservers    
-		UpdateType: Mutable    
+        Information about the DNS servers to be used for DNS resolution. A Client VPN endpoint can have up to two DNS servers. If no DNS server is specified, the DNS address of the VPC that is to be associated with Client VPN endpoint is used as the DNS server.
+
+        PrimitiveItemType: String
+        Type: List
+        Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ec2-clientvpnendpoint.html#cfn-ec2-clientvpnendpoint-dnsservers
+        UpdateType: Mutable
 
     .PARAMETER TransportProtocol
-		Required: False    
-		Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ec2-clientvpnendpoint.html#cfn-ec2-clientvpnendpoint-transportprotocol    
-		PrimitiveType: String    
-		UpdateType: Immutable    
+        The transport protocol to be used by the VPN session.
+Default value: udp
+
+        Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ec2-clientvpnendpoint.html#cfn-ec2-clientvpnendpoint-transportprotocol
+        PrimitiveType: String
+        UpdateType: Immutable
 
     .PARAMETER DeletionPolicy
         With the DeletionPolicy attribute you can preserve or (in some cases) backup a resource when its stack is deleted. You specify a DeletionPolicy attribute for each resource that you want to control. If a resource has no DeletionPolicy attribute, AWS CloudFormation deletes the resource by default.
@@ -121,6 +142,9 @@ function New-VSEC2ClientVpnEndpoint {
         $ClientCidrBlock,
         [parameter(Mandatory = $true)]
         $ConnectionLogOptions,
+        [parameter(Mandatory = $false)]
+        [System.Boolean]
+        $SplitTunnel,
         [parameter(Mandatory = $false)]
         [ValidateScript( {
                 $allowedTypes = "System.String","Vaporshell.Function","Vaporshell.Condition"

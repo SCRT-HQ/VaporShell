@@ -10,22 +10,25 @@ function Add-VSMediaLiveInputInputSourceRequest {
         http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-medialive-input-inputsourcerequest.html
 
     .PARAMETER Username
-		Required: False    
-		Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-medialive-input-inputsourcerequest.html#cfn-medialive-input-inputsourcerequest-username    
-		PrimitiveType: String    
-		UpdateType: Mutable    
+        The user name for accessing the upstream system. The user name applies only if the upstream system requires credentials.
+
+        Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-medialive-input-inputsourcerequest.html#cfn-medialive-input-inputsourcerequest-username
+        PrimitiveType: String
+        UpdateType: Mutable
 
     .PARAMETER PasswordParam
-		Required: False    
-		Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-medialive-input-inputsourcerequest.html#cfn-medialive-input-inputsourcerequest-passwordparam    
-		PrimitiveType: String    
-		UpdateType: Mutable    
+        The password parameter that holds the password for accessing the upstream system. The password parameter applies only if the upstream system requires credentials.
+
+        Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-medialive-input-inputsourcerequest.html#cfn-medialive-input-inputsourcerequest-passwordparam
+        PrimitiveType: String
+        UpdateType: Mutable
 
     .PARAMETER Url
-		Required: False    
-		Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-medialive-input-inputsourcerequest.html#cfn-medialive-input-inputsourcerequest-url    
-		PrimitiveType: String    
-		UpdateType: Mutable    
+        For a pull input, the URL where MediaLive pulls the source content from.
+
+        Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-medialive-input-inputsourcerequest.html#cfn-medialive-input-inputsourcerequest-url
+        PrimitiveType: String
+        UpdateType: Mutable
 
     .FUNCTIONALITY
         Vaporshell

@@ -10,56 +10,64 @@ function Add-VSCodePipelinePipelineActionDeclaration {
         http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-codepipeline-pipeline-stages-actions.html
 
     .PARAMETER ActionTypeId
-		Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-codepipeline-pipeline-stages-actions.html#cfn-codepipeline-pipeline-stages-actions-actiontypeid    
-		Required: True    
-		Type: ActionTypeId    
-		UpdateType: Mutable    
+        The configuration information for the action type.
+
+        Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-codepipeline-pipeline-stages-actions.html#cfn-codepipeline-pipeline-stages-actions-actiontypeid
+        Type: ActionTypeId
+        UpdateType: Mutable
 
     .PARAMETER Configuration
-		Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-codepipeline-pipeline-stages-actions.html#cfn-codepipeline-pipeline-stages-actions-configuration    
-		PrimitiveType: Json    
-		Required: False    
-		UpdateType: Mutable    
+        The action declaration's configuration.
+
+        Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-codepipeline-pipeline-stages-actions.html#cfn-codepipeline-pipeline-stages-actions-configuration
+        PrimitiveType: Json
+        UpdateType: Mutable
 
     .PARAMETER InputArtifacts
-		Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-codepipeline-pipeline-stages-actions.html#cfn-codepipeline-pipeline-stages-actions-inputartifacts    
-		DuplicatesAllowed: False    
-		ItemType: InputArtifact    
-		Required: False    
-		Type: List    
-		UpdateType: Mutable    
+        The name or ID of the artifact consumed by the action, such as a test or build artifact.
+
+        Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-codepipeline-pipeline-stages-actions.html#cfn-codepipeline-pipeline-stages-actions-inputartifacts
+        DuplicatesAllowed: False
+        ItemType: InputArtifact
+        Type: List
+        UpdateType: Mutable
 
     .PARAMETER Name
-		Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-codepipeline-pipeline-stages-actions.html#cfn-codepipeline-pipeline-stages-actions-name    
-		PrimitiveType: String    
-		Required: True    
-		UpdateType: Mutable    
+        The action declaration's name.
+
+        Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-codepipeline-pipeline-stages-actions.html#cfn-codepipeline-pipeline-stages-actions-name
+        PrimitiveType: String
+        UpdateType: Mutable
 
     .PARAMETER OutputArtifacts
-		Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-codepipeline-pipeline-stages-actions.html#cfn-codepipeline-pipeline-stages-actions-outputartifacts    
-		DuplicatesAllowed: False    
-		ItemType: OutputArtifact    
-		Required: False    
-		Type: List    
-		UpdateType: Mutable    
+        The name or ID of the result of the action declaration, such as a test or build artifact.
+
+        Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-codepipeline-pipeline-stages-actions.html#cfn-codepipeline-pipeline-stages-actions-outputartifacts
+        DuplicatesAllowed: False
+        ItemType: OutputArtifact
+        Type: List
+        UpdateType: Mutable
 
     .PARAMETER Region
-		Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-codepipeline-pipeline-stages-actions.html#cfn-codepipeline-pipeline-stages-actions-region    
-		PrimitiveType: String    
-		Required: False    
-		UpdateType: Mutable    
+        The action declaration's AWS Region, such as us-east-1.
+
+        Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-codepipeline-pipeline-stages-actions.html#cfn-codepipeline-pipeline-stages-actions-region
+        PrimitiveType: String
+        UpdateType: Mutable
 
     .PARAMETER RoleArn
-		Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-codepipeline-pipeline-stages-actions.html#cfn-codepipeline-pipeline-stages-actions-rolearn    
-		PrimitiveType: String    
-		Required: False    
-		UpdateType: Mutable    
+        The ARN of the IAM service role that will perform the declared action. This is assumed through the roleArn for the pipeline.
+
+        Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-codepipeline-pipeline-stages-actions.html#cfn-codepipeline-pipeline-stages-actions-rolearn
+        PrimitiveType: String
+        UpdateType: Mutable
 
     .PARAMETER RunOrder
-		Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-codepipeline-pipeline-stages-actions.html#cfn-codepipeline-pipeline-stages-actions-runorder    
-		PrimitiveType: Integer    
-		Required: False    
-		UpdateType: Mutable    
+        The order in which actions are run.
+
+        Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-codepipeline-pipeline-stages-actions.html#cfn-codepipeline-pipeline-stages-actions-runorder
+        PrimitiveType: Integer
+        UpdateType: Mutable
 
     .FUNCTIONALITY
         Vaporshell

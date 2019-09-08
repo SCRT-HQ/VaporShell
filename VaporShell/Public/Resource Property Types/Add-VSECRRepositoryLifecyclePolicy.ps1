@@ -10,16 +10,18 @@ function Add-VSECRRepositoryLifecyclePolicy {
         http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ecr-repository-lifecyclepolicy.html
 
     .PARAMETER LifecyclePolicyText
-		Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ecr-repository-lifecyclepolicy.html#cfn-ecr-repository-lifecyclepolicy-lifecyclepolicytext    
-		PrimitiveType: String    
-		Required: False    
-		UpdateType: Mutable    
+        The JSON repository policy text to apply to the repository.
+
+        Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ecr-repository-lifecyclepolicy.html#cfn-ecr-repository-lifecyclepolicy-lifecyclepolicytext
+        PrimitiveType: String
+        UpdateType: Mutable
 
     .PARAMETER RegistryId
-		Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ecr-repository-lifecyclepolicy.html#cfn-ecr-repository-lifecyclepolicy-registryid    
-		PrimitiveType: String    
-		Required: False    
-		UpdateType: Mutable    
+        The AWS account ID associated with the registry that contains the repository. If you do  not specify a registry, the default registry is assumed.
+
+        Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ecr-repository-lifecyclepolicy.html#cfn-ecr-repository-lifecyclepolicy-registryid
+        PrimitiveType: String
+        UpdateType: Mutable
 
     .FUNCTIONALITY
         Vaporshell

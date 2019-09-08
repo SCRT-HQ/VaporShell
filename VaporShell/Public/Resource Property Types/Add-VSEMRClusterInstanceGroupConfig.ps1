@@ -10,54 +10,64 @@ function Add-VSEMRClusterInstanceGroupConfig {
         http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-elasticmapreduce-cluster-instancegroupconfig.html
 
     .PARAMETER AutoScalingPolicy
-		Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-elasticmapreduce-cluster-instancegroupconfig.html#cfn-elasticmapreduce-cluster-instancegroupconfig-autoscalingpolicy    
-		Required: False    
-		Type: AutoScalingPolicy    
-		UpdateType: Mutable    
+        AutoScalingPolicy is a subproperty of the InstanceGroupConfig: https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-emr-cluster-jobflowinstancesconfig-instancegroupconfig.html property type that specifies the constraints and rules of an automatic scaling policy in Amazon EMR. The automatic scaling policy defines how an instance group dynamically adds and terminates EC2 instances in response to the value of a CloudWatch metric. Only core and task instance groups can use automatic scaling policies. For more information, see Using Automatic Scaling in Amazon EMR: https://docs.aws.amazon.com/emr/latest/ManagementGuide/emr-automatic-scaling.html.
+
+        Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-elasticmapreduce-cluster-instancegroupconfig.html#cfn-elasticmapreduce-cluster-instancegroupconfig-autoscalingpolicy
+        Type: AutoScalingPolicy
+        UpdateType: Mutable
 
     .PARAMETER BidPrice
-		Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-elasticmapreduce-cluster-instancegroupconfig.html#cfn-elasticmapreduce-cluster-instancegroupconfig-bidprice    
-		PrimitiveType: String    
-		Required: False    
-		UpdateType: Immutable    
+        The maximum Spot price your are willing to pay for EC2 instances.
+If BidPrice is specified, Amazon EMR uses Spot Instances for the instance group. Specified in USD. Alternatively, a value of OnDemandPrice indicates that the maximum Spot price is set equal to the On-Demand price.
+
+        Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-elasticmapreduce-cluster-instancegroupconfig.html#cfn-elasticmapreduce-cluster-instancegroupconfig-bidprice
+        PrimitiveType: String
+        UpdateType: Immutable
 
     .PARAMETER Configurations
-		Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-elasticmapreduce-cluster-instancegroupconfig.html#cfn-elasticmapreduce-cluster-instancegroupconfig-configurations    
-		DuplicatesAllowed: False    
-		ItemType: Configuration    
-		Required: False    
-		Type: List    
-		UpdateType: Immutable    
+        Amazon EMR releases 4.x or later.
+The list of configurations supplied for an EMR cluster instance group. You can specify a separate configuration for each instance group master, core, and task.
+
+        Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-elasticmapreduce-cluster-instancegroupconfig.html#cfn-elasticmapreduce-cluster-instancegroupconfig-configurations
+        DuplicatesAllowed: False
+        ItemType: Configuration
+        Type: List
+        UpdateType: Immutable
 
     .PARAMETER EbsConfiguration
-		Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-elasticmapreduce-cluster-instancegroupconfig.html#cfn-elasticmapreduce-cluster-instancegroupconfig-ebsconfiguration    
-		Required: False    
-		Type: EbsConfiguration    
-		UpdateType: Immutable    
+        EBS configurations that will be attached to each EC2 instance in the instance group.
+
+        Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-elasticmapreduce-cluster-instancegroupconfig.html#cfn-elasticmapreduce-cluster-instancegroupconfig-ebsconfiguration
+        Type: EbsConfiguration
+        UpdateType: Immutable
 
     .PARAMETER InstanceCount
-		Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-elasticmapreduce-cluster-instancegroupconfig.html#cfn-elasticmapreduce-cluster-instancegroupconfig-instancecount    
-		PrimitiveType: Integer    
-		Required: True    
-		UpdateType: Mutable    
+        Target number of instances for the instance group.
+
+        Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-elasticmapreduce-cluster-instancegroupconfig.html#cfn-elasticmapreduce-cluster-instancegroupconfig-instancecount
+        PrimitiveType: Integer
+        UpdateType: Mutable
 
     .PARAMETER InstanceType
-		Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-elasticmapreduce-cluster-instancegroupconfig.html#cfn-elasticmapreduce-cluster-instancegroupconfig-instancetype    
-		PrimitiveType: String    
-		Required: True    
-		UpdateType: Immutable    
+        The EC2 instance type for all instances in the instance group.
+
+        Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-elasticmapreduce-cluster-instancegroupconfig.html#cfn-elasticmapreduce-cluster-instancegroupconfig-instancetype
+        PrimitiveType: String
+        UpdateType: Immutable
 
     .PARAMETER Market
-		Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-elasticmapreduce-cluster-instancegroupconfig.html#cfn-elasticmapreduce-cluster-instancegroupconfig-market    
-		PrimitiveType: String    
-		Required: False    
-		UpdateType: Immutable    
+        Market type of the EC2 instances used to create a cluster node.
+
+        Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-elasticmapreduce-cluster-instancegroupconfig.html#cfn-elasticmapreduce-cluster-instancegroupconfig-market
+        PrimitiveType: String
+        UpdateType: Immutable
 
     .PARAMETER Name
-		Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-elasticmapreduce-cluster-instancegroupconfig.html#cfn-elasticmapreduce-cluster-instancegroupconfig-name    
-		PrimitiveType: String    
-		Required: False    
-		UpdateType: Immutable    
+        Friendly name given to the instance group.
+
+        Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-elasticmapreduce-cluster-instancegroupconfig.html#cfn-elasticmapreduce-cluster-instancegroupconfig-name
+        PrimitiveType: String
+        UpdateType: Immutable
 
     .FUNCTIONALITY
         Vaporshell

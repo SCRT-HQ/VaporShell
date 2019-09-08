@@ -13,40 +13,51 @@ function New-VSLambdaPermission {
         The logical ID must be alphanumeric (A-Za-z0-9) and unique within the template. Use the logical name to reference the resource in other parts of the template. For example, if you want to map an Amazon Elastic Block Store volume to an Amazon EC2 instance, you reference the logical IDs to associate the block stores with the instance.
 
     .PARAMETER Action
-		Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-lambda-permission.html#cfn-lambda-permission-action    
-		PrimitiveType: String    
-		Required: True    
-		UpdateType: Immutable    
+        The action that the principal can use on the function. For example, lambda:InvokeFunction or lambda:GetFunction.
+
+        Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-lambda-permission.html#cfn-lambda-permission-action
+        PrimitiveType: String
+        UpdateType: Immutable
 
     .PARAMETER EventSourceToken
-		Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-lambda-permission.html#cfn-lambda-permission-eventsourcetoken    
-		PrimitiveType: String    
-		Required: False    
-		UpdateType: Immutable    
+        For Alexa Smart Home functions, a token that must be supplied by the invoker.
+
+        Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-lambda-permission.html#cfn-lambda-permission-eventsourcetoken
+        PrimitiveType: String
+        UpdateType: Immutable
 
     .PARAMETER FunctionName
-		Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-lambda-permission.html#cfn-lambda-permission-functionname    
-		PrimitiveType: String    
-		Required: True    
-		UpdateType: Immutable    
+        The name of the Lambda function, version, or alias.
+**Name formats**
++  **Function name** - my-function name-only, my-function:v1 with alias.
++  **Function ARN** - arn:aws:lambda:us-west-2:123456789012:function:my-function.
++  **Partial ARN** - 123456789012:function:my-function.
+You can append a version number or alias to any of the formats. The length constraint applies only to the full ARN. If you specify only the function name, it is limited to 64 characters in length.
+
+        Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-lambda-permission.html#cfn-lambda-permission-functionname
+        PrimitiveType: String
+        UpdateType: Immutable
 
     .PARAMETER Principal
-		Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-lambda-permission.html#cfn-lambda-permission-principal    
-		PrimitiveType: String    
-		Required: True    
-		UpdateType: Immutable    
+        The AWS service or account that invokes the function. If you specify a service, use SourceArn or SourceAccount to limit who can invoke the function through that service.
+
+        Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-lambda-permission.html#cfn-lambda-permission-principal
+        PrimitiveType: String
+        UpdateType: Immutable
 
     .PARAMETER SourceAccount
-		Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-lambda-permission.html#cfn-lambda-permission-sourceaccount    
-		PrimitiveType: String    
-		Required: False    
-		UpdateType: Immutable    
+        For AWS services, the ID of the account that owns the resource. Use this instead of SourceArn to grant permission to resources that are owned by another account for example, all of an account's Amazon S3 buckets. Or use it together with SourceArn to ensure that the resource is owned by the specified account. For example, an Amazon S3 bucket could be deleted by its owner and recreated by another account.
+
+        Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-lambda-permission.html#cfn-lambda-permission-sourceaccount
+        PrimitiveType: String
+        UpdateType: Immutable
 
     .PARAMETER SourceArn
-		Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-lambda-permission.html#cfn-lambda-permission-sourcearn    
-		PrimitiveType: String    
-		Required: False    
-		UpdateType: Immutable    
+        For AWS services, the ARN of the AWS resource that invokes the function. For example, an Amazon S3 bucket or Amazon SNS topic.
+
+        Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-lambda-permission.html#cfn-lambda-permission-sourcearn
+        PrimitiveType: String
+        UpdateType: Immutable
 
     .PARAMETER DeletionPolicy
         With the DeletionPolicy attribute you can preserve or (in some cases) backup a resource when its stack is deleted. You specify a DeletionPolicy attribute for each resource that you want to control. If a resource has no DeletionPolicy attribute, AWS CloudFormation deletes the resource by default.

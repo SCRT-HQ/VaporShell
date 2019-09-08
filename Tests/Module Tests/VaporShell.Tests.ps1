@@ -41,13 +41,6 @@ Describe "Module tests: $($env:BHProjectName)" {
             {Get-Command -Name $item -Module $env:BHProjectName -ErrorAction Stop} | Should -Throw "The term '$item' is not recognized as the name of a cmdlet, function, script file, or operable program."
         }
     }
-    Context "Confirm Development Tool functions are not exported with compiled module" {
-        $testCase = Get-ChildItem "$decompiledModulePath\Public\Development Tools" -Recurse -Include *.ps1 | Foreach-Object {@{item = $_.BaseName}}
-        It "Should throw when checking for <item> in the module commands" -TestCases $testCase {
-            param($item)
-            {Get-Command -Name $item -Module $env:BHProjectName -ErrorAction Stop} | Should -Throw "The term '$item' is not recognized as the name of a cmdlet, function, script file, or operable program."
-        }
-    }
     Context "Confirm there are no duplicate function names in private and public folders" {
         It 'Should have no duplicate functions' {
             $functions = Get-ChildItem "$decompiledModulePath\Public" -Recurse -Include *.ps1 | Select-Object -ExpandProperty BaseName

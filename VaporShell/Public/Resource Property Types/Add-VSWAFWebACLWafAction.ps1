@@ -10,10 +10,14 @@ function Add-VSWAFWebACLWafAction {
         http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-waf-webacl-action.html
 
     .PARAMETER Type
-		Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-waf-webacl-action.html#cfn-waf-webacl-action-type    
-		PrimitiveType: String    
-		Required: True    
-		UpdateType: Mutable    
+        Specifies how you want AWS WAF to respond to requests that match the settings in a Rule. Valid settings include the following:
++  ALLOW: AWS WAF allows requests
++  BLOCK: AWS WAF blocks requests
++  COUNT: AWS WAF increments a counter of the requests that match all of the conditions in the rule. AWS WAF then continues to inspect the web request based on the remaining rules in the web ACL. You can't specify COUNT for the default action for a WebACL.
+
+        Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-waf-webacl-action.html#cfn-waf-webacl-action-type
+        PrimitiveType: String
+        UpdateType: Mutable
 
     .FUNCTIONALITY
         Vaporshell

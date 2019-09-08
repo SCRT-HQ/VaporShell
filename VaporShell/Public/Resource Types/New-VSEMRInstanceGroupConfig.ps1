@@ -13,66 +13,78 @@ function New-VSEMRInstanceGroupConfig {
         The logical ID must be alphanumeric (A-Za-z0-9) and unique within the template. Use the logical name to reference the resource in other parts of the template. For example, if you want to map an Amazon Elastic Block Store volume to an Amazon EC2 instance, you reference the logical IDs to associate the block stores with the instance.
 
     .PARAMETER AutoScalingPolicy
-		Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-emr-instancegroupconfig.html#cfn-elasticmapreduce-instancegroupconfig-autoscalingpolicy    
-		Required: False    
-		Type: AutoScalingPolicy    
-		UpdateType: Mutable    
+        AutoScalingPolicy is a subproperty of InstanceGroupConfig. AutoScalingPolicy defines how an instance group dynamically adds and terminates EC2 instances in response to the value of a CloudWatch metric. For more information, see Using Automatic Scaling in Amazon EMR: https://docs.aws.amazon.com/emr/latest/ManagementGuide/emr-automatic-scaling.html in the *Amazon EMR Management Guide*.
+
+        Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-emr-instancegroupconfig.html#cfn-elasticmapreduce-instancegroupconfig-autoscalingpolicy
+        Type: AutoScalingPolicy
+        UpdateType: Mutable
 
     .PARAMETER BidPrice
-		Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-emr-instancegroupconfig.html#cfn-emr-instancegroupconfig-bidprice    
-		PrimitiveType: String    
-		Required: False    
-		UpdateType: Immutable    
+        The maximum Spot price your are willing to pay for EC2 instances.
+If BidPrice is specified, Amazon EMR uses Spot Instances for the instance group. Specified in USD. Alternatively, a value of OnDemandPrice indicates that the maximum Spot price is set equal to the On-Demand price.
+
+        Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-emr-instancegroupconfig.html#cfn-emr-instancegroupconfig-bidprice
+        PrimitiveType: String
+        UpdateType: Immutable
 
     .PARAMETER Configurations
-		Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-emr-instancegroupconfig.html#cfn-emr-instancegroupconfig-configurations    
-		DuplicatesAllowed: False    
-		ItemType: Configuration    
-		Required: False    
-		Type: List    
-		UpdateType: Immutable    
+        Amazon EMR releases 4.x or later.
+The list of configurations supplied for an EMR cluster instance group. You can specify a separate configuration for each instance group master, core, and task.
+
+        Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-emr-instancegroupconfig.html#cfn-emr-instancegroupconfig-configurations
+        DuplicatesAllowed: False
+        ItemType: Configuration
+        Type: List
+        UpdateType: Immutable
 
     .PARAMETER EbsConfiguration
-		Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-emr-instancegroupconfig.html#cfn-emr-instancegroupconfig-ebsconfiguration    
-		Required: False    
-		Type: EbsConfiguration    
-		UpdateType: Immutable    
+        EbsConfiguration determines the EBS volumes to attach to EMR cluster instances.
+
+        Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-emr-instancegroupconfig.html#cfn-emr-instancegroupconfig-ebsconfiguration
+        Type: EbsConfiguration
+        UpdateType: Immutable
 
     .PARAMETER InstanceCount
-		Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-emr-instancegroupconfig.html#cfn-emr-instancegroupconfiginstancecount-    
-		PrimitiveType: Integer    
-		Required: True    
-		UpdateType: Mutable    
+        Target number of instances for the instance group.
+
+        Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-emr-instancegroupconfig.html#cfn-emr-instancegroupconfiginstancecount-
+        PrimitiveType: Integer
+        UpdateType: Mutable
 
     .PARAMETER InstanceRole
-		Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-emr-instancegroupconfig.html#cfn-emr-instancegroupconfig-instancerole    
-		PrimitiveType: String    
-		Required: True    
-		UpdateType: Immutable    
+        The role of the instance group in the cluster.
+
+        Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-emr-instancegroupconfig.html#cfn-emr-instancegroupconfig-instancerole
+        PrimitiveType: String
+        UpdateType: Immutable
 
     .PARAMETER InstanceType
-		Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-emr-instancegroupconfig.html#cfn-emr-instancegroupconfig-instancetype    
-		PrimitiveType: String    
-		Required: True    
-		UpdateType: Immutable    
+        The EC2 instance type for all instances in the instance group.
+
+        Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-emr-instancegroupconfig.html#cfn-emr-instancegroupconfig-instancetype
+        PrimitiveType: String
+        UpdateType: Immutable
 
     .PARAMETER JobFlowId
-		Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-emr-instancegroupconfig.html#cfn-emr-instancegroupconfig-jobflowid    
-		PrimitiveType: String    
-		Required: True    
-		UpdateType: Immutable    
+        The ID of an Amazon EMR cluster that you want to associate this instance group with.
+
+        Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-emr-instancegroupconfig.html#cfn-emr-instancegroupconfig-jobflowid
+        PrimitiveType: String
+        UpdateType: Immutable
 
     .PARAMETER Market
-		Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-emr-instancegroupconfig.html#cfn-emr-instancegroupconfig-market    
-		PrimitiveType: String    
-		Required: False    
-		UpdateType: Immutable    
+        Market type of the EC2 instances used to create a cluster node.
+
+        Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-emr-instancegroupconfig.html#cfn-emr-instancegroupconfig-market
+        PrimitiveType: String
+        UpdateType: Immutable
 
     .PARAMETER Name
-		Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-emr-instancegroupconfig.html#cfn-emr-instancegroupconfig-name    
-		PrimitiveType: String    
-		Required: False    
-		UpdateType: Immutable    
+        Friendly name given to the instance group.
+
+        Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-emr-instancegroupconfig.html#cfn-emr-instancegroupconfig-name
+        PrimitiveType: String
+        UpdateType: Immutable
 
     .PARAMETER DeletionPolicy
         With the DeletionPolicy attribute you can preserve or (in some cases) backup a resource when its stack is deleted. You specify a DeletionPolicy attribute for each resource that you want to control. If a resource has no DeletionPolicy attribute, AWS CloudFormation deletes the resource by default.

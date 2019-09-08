@@ -10,16 +10,18 @@ function Add-VSElasticBeanstalkApplicationVersionSourceBundle {
         http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-beanstalk-sourcebundle.html
 
     .PARAMETER S3Bucket
-		Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-beanstalk-sourcebundle.html#cfn-beanstalk-sourcebundle-s3bucket    
-		PrimitiveType: String    
-		Required: True    
-		UpdateType: Mutable    
+        The Amazon S3 bucket where the data is located.
+
+        Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-beanstalk-sourcebundle.html#cfn-beanstalk-sourcebundle-s3bucket
+        PrimitiveType: String
+        UpdateType: Mutable
 
     .PARAMETER S3Key
-		Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-beanstalk-sourcebundle.html#cfn-beanstalk-sourcebundle-s3key    
-		PrimitiveType: String    
-		Required: True    
-		UpdateType: Mutable    
+        The Amazon S3 key where the data is located.
+
+        Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-beanstalk-sourcebundle.html#cfn-beanstalk-sourcebundle-s3key
+        PrimitiveType: String
+        UpdateType: Mutable
 
     .FUNCTIONALITY
         Vaporshell

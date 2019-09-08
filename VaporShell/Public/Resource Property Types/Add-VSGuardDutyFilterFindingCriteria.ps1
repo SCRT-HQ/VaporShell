@@ -10,16 +10,18 @@ function Add-VSGuardDutyFilterFindingCriteria {
         http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-guardduty-filter-findingcriteria.html
 
     .PARAMETER Criterion
-		Required: False    
-		Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-guardduty-filter-findingcriteria.html#cfn-guardduty-filter-findingcriteria-criterion    
-		PrimitiveType: Json    
-		UpdateType: Mutable    
+        Represents a map of finding properties that match specified conditions and values when querying findings.
+
+        Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-guardduty-filter-findingcriteria.html#cfn-guardduty-filter-findingcriteria-criterion
+        PrimitiveType: Json
+        UpdateType: Mutable
 
     .PARAMETER ItemType
-		Type: Condition    
-		Required: False    
-		Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-guardduty-filter-findingcriteria.html#cfn-guardduty-filter-findingcriteria-itemtype    
-		UpdateType: Mutable    
+        Specifies the condition to be applied to a single field when filtering through findings.
+
+        Type: Condition
+        Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-guardduty-filter-findingcriteria.html#cfn-guardduty-filter-findingcriteria-itemtype
+        UpdateType: Mutable
 
     .FUNCTIONALITY
         Vaporshell

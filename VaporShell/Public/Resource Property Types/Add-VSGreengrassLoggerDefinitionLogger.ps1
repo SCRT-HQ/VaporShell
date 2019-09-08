@@ -10,34 +10,39 @@ function Add-VSGreengrassLoggerDefinitionLogger {
         http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-greengrass-loggerdefinition-logger.html
 
     .PARAMETER Space
-		Required: False    
-		Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-greengrass-loggerdefinition-logger.html#cfn-greengrass-loggerdefinition-logger-space    
-		PrimitiveType: Integer    
-		UpdateType: Immutable    
+        The amount of file space in KB to use when writing logs to the local file system. This property does not apply for CloudWatch Logs.
+
+        Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-greengrass-loggerdefinition-logger.html#cfn-greengrass-loggerdefinition-logger-space
+        PrimitiveType: Integer
+        UpdateType: Immutable
 
     .PARAMETER Type
-		Required: True    
-		Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-greengrass-loggerdefinition-logger.html#cfn-greengrass-loggerdefinition-logger-type    
-		PrimitiveType: String    
-		UpdateType: Immutable    
+        The storage mechanism for log events. Valid values are FileSystem or AWSCloudWatch. When AWSCloudWatch is used, log events are sent to CloudWatch Logs. When FileSystem is used, log events are stored on the local file system.
+
+        Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-greengrass-loggerdefinition-logger.html#cfn-greengrass-loggerdefinition-logger-type
+        PrimitiveType: String
+        UpdateType: Immutable
 
     .PARAMETER Level
-		Required: True    
-		Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-greengrass-loggerdefinition-logger.html#cfn-greengrass-loggerdefinition-logger-level    
-		PrimitiveType: String    
-		UpdateType: Immutable    
+        The log-level threshold. Log events below this threshold are filtered out and aren't stored. Valid values are DEBUG, INFO recommended, WARN, ERROR, or FATAL.
+
+        Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-greengrass-loggerdefinition-logger.html#cfn-greengrass-loggerdefinition-logger-level
+        PrimitiveType: String
+        UpdateType: Immutable
 
     .PARAMETER Id
-		Required: True    
-		Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-greengrass-loggerdefinition-logger.html#cfn-greengrass-loggerdefinition-logger-id    
-		PrimitiveType: String    
-		UpdateType: Immutable    
+        A descriptive or arbitrary ID for the logger. This value must be unique within the logger definition version. Maximum length is 128 characters with pattern a-zA-Z0-9:_-]+.
+
+        Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-greengrass-loggerdefinition-logger.html#cfn-greengrass-loggerdefinition-logger-id
+        PrimitiveType: String
+        UpdateType: Immutable
 
     .PARAMETER Component
-		Required: True    
-		Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-greengrass-loggerdefinition-logger.html#cfn-greengrass-loggerdefinition-logger-component    
-		PrimitiveType: String    
-		UpdateType: Immutable    
+        The source of the log event. Valid values are GreengrassSystem or Lambda. When GreengrassSystem is used, events from Greengrass system components are logged. When Lambda is used, events from user-defined Lambda functions are logged.
+
+        Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-greengrass-loggerdefinition-logger.html#cfn-greengrass-loggerdefinition-logger-component
+        PrimitiveType: String
+        UpdateType: Immutable
 
     .FUNCTIONALITY
         Vaporshell

@@ -10,10 +10,11 @@ function Add-VSEC2InstanceCreditSpecification {
         http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-instance-creditspecification.html
 
     .PARAMETER CPUCredits
-		Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-instance-creditspecification.html#cfn-ec2-instance-creditspecification-cpucredits    
-		PrimitiveType: String    
-		Required: False    
-		UpdateType: Mutable    
+        The credit option for CPU usage of the instance. Valid values are standard and unlimited. T3 instances launch as unlimited by default. T2 instances launch as standard by default.
+
+        Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-instance-creditspecification.html#cfn-ec2-instance-creditspecification-cpucredits
+        PrimitiveType: String
+        UpdateType: Mutable
 
     .FUNCTIONALITY
         Vaporshell

@@ -10,10 +10,11 @@ function Add-VSOpsWorksLayerLifecycleEventConfiguration {
         http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-opsworks-layer-lifecycleeventconfiguration.html
 
     .PARAMETER ShutdownEventConfiguration
-		Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-opsworks-layer-lifecycleeventconfiguration.html#cfn-opsworks-layer-lifecycleconfiguration-shutdowneventconfiguration    
-		Required: False    
-		Type: ShutdownEventConfiguration    
-		UpdateType: Mutable    
+        The Shutdown event configuration.
+
+        Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-opsworks-layer-lifecycleeventconfiguration.html#cfn-opsworks-layer-lifecycleconfiguration-shutdowneventconfiguration
+        Type: ShutdownEventConfiguration
+        UpdateType: Mutable
 
     .FUNCTIONALITY
         Vaporshell

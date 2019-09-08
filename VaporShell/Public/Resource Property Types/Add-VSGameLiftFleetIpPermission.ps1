@@ -10,28 +10,32 @@ function Add-VSGameLiftFleetIpPermission {
         http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-gamelift-fleet-ec2inboundpermission.html
 
     .PARAMETER FromPort
-		Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-gamelift-fleet-ec2inboundpermission.html#cfn-gamelift-fleet-ec2inboundpermissions-fromport    
-		PrimitiveType: Integer    
-		Required: True    
-		UpdateType: Mutable    
+        Starting value for a range of allowed port numbers.
+
+        Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-gamelift-fleet-ec2inboundpermission.html#cfn-gamelift-fleet-ec2inboundpermissions-fromport
+        PrimitiveType: Integer
+        UpdateType: Mutable
 
     .PARAMETER IpRange
-		Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-gamelift-fleet-ec2inboundpermission.html#cfn-gamelift-fleet-ec2inboundpermissions-iprange    
-		PrimitiveType: String    
-		Required: True    
-		UpdateType: Mutable    
+        Range of allowed IP addresses. This value must be expressed in CIDR notation. Example: "000.000.000.000/subnet mask]" or optionally the shortened version "0.0.0.0/subnet mask]".
+
+        Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-gamelift-fleet-ec2inboundpermission.html#cfn-gamelift-fleet-ec2inboundpermissions-iprange
+        PrimitiveType: String
+        UpdateType: Mutable
 
     .PARAMETER Protocol
-		Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-gamelift-fleet-ec2inboundpermission.html#cfn-gamelift-fleet-ec2inboundpermissions-protocol    
-		PrimitiveType: String    
-		Required: True    
-		UpdateType: Mutable    
+        Network communication protocol used by the fleet.
+
+        Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-gamelift-fleet-ec2inboundpermission.html#cfn-gamelift-fleet-ec2inboundpermissions-protocol
+        PrimitiveType: String
+        UpdateType: Mutable
 
     .PARAMETER ToPort
-		Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-gamelift-fleet-ec2inboundpermission.html#cfn-gamelift-fleet-ec2inboundpermissions-toport    
-		PrimitiveType: Integer    
-		Required: True    
-		UpdateType: Mutable    
+        Ending value for a range of allowed port numbers. Port numbers are end-inclusive. This value must be higher than FromPort.
+
+        Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-gamelift-fleet-ec2inboundpermission.html#cfn-gamelift-fleet-ec2inboundpermissions-toport
+        PrimitiveType: Integer
+        UpdateType: Mutable
 
     .FUNCTIONALITY
         Vaporshell

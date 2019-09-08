@@ -10,16 +10,18 @@ function Add-VSAppMeshVirtualNodeServiceDiscovery {
         http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-appmesh-virtualnode-servicediscovery.html
 
     .PARAMETER DNS
-		Type: DnsServiceDiscovery    
-		Required: False    
-		Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-appmesh-virtualnode-servicediscovery.html#cfn-appmesh-virtualnode-servicediscovery-dns    
-		UpdateType: Mutable    
+        Specifies the DNS information for the virtual node.
+
+        Type: DnsServiceDiscovery
+        Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-appmesh-virtualnode-servicediscovery.html#cfn-appmesh-virtualnode-servicediscovery-dns
+        UpdateType: Mutable
 
     .PARAMETER AWSCloudMap
-		Type: AwsCloudMapServiceDiscovery    
-		Required: False    
-		Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-appmesh-virtualnode-servicediscovery.html#cfn-appmesh-virtualnode-servicediscovery-awscloudmap    
-		UpdateType: Mutable    
+        Specifies any AWS Cloud Map information for the virtual node.
+
+        Type: AwsCloudMapServiceDiscovery
+        Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-appmesh-virtualnode-servicediscovery.html#cfn-appmesh-virtualnode-servicediscovery-awscloudmap
+        UpdateType: Mutable
 
     .FUNCTIONALITY
         Vaporshell

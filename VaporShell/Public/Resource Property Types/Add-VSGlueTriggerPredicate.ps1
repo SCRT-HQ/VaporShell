@@ -10,17 +10,19 @@ function Add-VSGlueTriggerPredicate {
         http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-glue-trigger-predicate.html
 
     .PARAMETER Logical
-		Required: False    
-		Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-glue-trigger-predicate.html#cfn-glue-trigger-predicate-logical    
-		PrimitiveType: String    
-		UpdateType: Mutable    
+        An optional field if only one condition is listed. If multiple conditions are listed, then this field is required.
+
+        Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-glue-trigger-predicate.html#cfn-glue-trigger-predicate-logical
+        PrimitiveType: String
+        UpdateType: Mutable
 
     .PARAMETER Conditions
-		Type: List    
-		Required: False    
-		Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-glue-trigger-predicate.html#cfn-glue-trigger-predicate-conditions    
-		ItemType: Condition    
-		UpdateType: Mutable    
+        A list of the conditions that determine when the trigger will fire.
+
+        Type: List
+        Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-glue-trigger-predicate.html#cfn-glue-trigger-predicate-conditions
+        ItemType: Condition
+        UpdateType: Mutable
 
     .FUNCTIONALITY
         Vaporshell

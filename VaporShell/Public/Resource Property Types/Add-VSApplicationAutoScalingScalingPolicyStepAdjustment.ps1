@@ -10,22 +10,27 @@ function Add-VSApplicationAutoScalingScalingPolicyStepAdjustment {
         http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-applicationautoscaling-scalingpolicy-stepscalingpolicyconfiguration-stepadjustment.html
 
     .PARAMETER MetricIntervalLowerBound
-		Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-applicationautoscaling-scalingpolicy-stepscalingpolicyconfiguration-stepadjustment.html#cfn-applicationautoscaling-scalingpolicy-stepscalingpolicyconfiguration-stepadjustment-metricintervallowerbound    
-		PrimitiveType: Double    
-		Required: False    
-		UpdateType: Mutable    
+        The lower bound for the difference between the alarm threshold and the CloudWatch metric. If the metric value is above the breach threshold, the lower bound is inclusive the metric must be greater than or equal to the threshold plus the lower bound. Otherwise, it is exclusive the metric must be greater than the threshold plus the lower bound. A null value indicates negative infinity.
+You must specify at least one upper or lower bound.
+
+        Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-applicationautoscaling-scalingpolicy-stepscalingpolicyconfiguration-stepadjustment.html#cfn-applicationautoscaling-scalingpolicy-stepscalingpolicyconfiguration-stepadjustment-metricintervallowerbound
+        PrimitiveType: Double
+        UpdateType: Mutable
 
     .PARAMETER MetricIntervalUpperBound
-		Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-applicationautoscaling-scalingpolicy-stepscalingpolicyconfiguration-stepadjustment.html#cfn-applicationautoscaling-scalingpolicy-stepscalingpolicyconfiguration-stepadjustment-metricintervalupperbound    
-		PrimitiveType: Double    
-		Required: False    
-		UpdateType: Mutable    
+        The upper bound for the difference between the alarm threshold and the CloudWatch metric. If the metric value is above the breach threshold, the upper bound is exclusive the metric must be less than the threshold plus the upper bound. Otherwise, it is inclusive the metric must be less than or equal to the threshold plus the upper bound. A null value indicates positive infinity.
+You must specify at least one upper or lower bound.
+
+        Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-applicationautoscaling-scalingpolicy-stepscalingpolicyconfiguration-stepadjustment.html#cfn-applicationautoscaling-scalingpolicy-stepscalingpolicyconfiguration-stepadjustment-metricintervalupperbound
+        PrimitiveType: Double
+        UpdateType: Mutable
 
     .PARAMETER ScalingAdjustment
-		Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-applicationautoscaling-scalingpolicy-stepscalingpolicyconfiguration-stepadjustment.html#cfn-applicationautoscaling-scalingpolicy-stepscalingpolicyconfiguration-stepadjustment-scalingadjustment    
-		PrimitiveType: Integer    
-		Required: True    
-		UpdateType: Mutable    
+        The amount by which to scale. The adjustment is based on the value that you specified in the AdjustmentType property either an absolute number or a percentage. A positive value adds to the current capacity and a negative number subtracts from the current capacity.
+
+        Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-applicationautoscaling-scalingpolicy-stepscalingpolicyconfiguration-stepadjustment.html#cfn-applicationautoscaling-scalingpolicy-stepscalingpolicyconfiguration-stepadjustment-scalingadjustment
+        PrimitiveType: Integer
+        UpdateType: Mutable
 
     .FUNCTIONALITY
         Vaporshell

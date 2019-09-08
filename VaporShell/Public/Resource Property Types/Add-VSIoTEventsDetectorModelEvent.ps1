@@ -10,23 +10,26 @@ function Add-VSIoTEventsDetectorModelEvent {
         http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iotevents-detectormodel-event.html
 
     .PARAMETER Condition
-		Required: False    
-		Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iotevents-detectormodel-event.html#cfn-iotevents-detectormodel-event-condition    
-		PrimitiveType: String    
-		UpdateType: Mutable    
+        Optional] The Boolean expression that when TRUE causes the "actions" to be performed. If not present, the actions are performed =TRUE; if the expression result is not a Boolean value, the actions are NOT performed =FALSE.
+
+        Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iotevents-detectormodel-event.html#cfn-iotevents-detectormodel-event-condition
+        PrimitiveType: String
+        UpdateType: Mutable
 
     .PARAMETER Actions
-		Type: List    
-		Required: False    
-		Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iotevents-detectormodel-event.html#cfn-iotevents-detectormodel-event-actions    
-		ItemType: Action    
-		UpdateType: Mutable    
+        The actions to be performed.
+
+        Type: List
+        Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iotevents-detectormodel-event.html#cfn-iotevents-detectormodel-event-actions
+        ItemType: Action
+        UpdateType: Mutable
 
     .PARAMETER EventName
-		Required: False    
-		Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iotevents-detectormodel-event.html#cfn-iotevents-detectormodel-event-eventname    
-		PrimitiveType: String    
-		UpdateType: Mutable    
+        The name of the event.
+
+        Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iotevents-detectormodel-event.html#cfn-iotevents-detectormodel-event-eventname
+        PrimitiveType: String
+        UpdateType: Mutable
 
     .FUNCTIONALITY
         Vaporshell

@@ -10,10 +10,11 @@ function Add-VSGreengrassFunctionDefinitionVersionDefaultConfig {
         http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-greengrass-functiondefinitionversion-defaultconfig.html
 
     .PARAMETER Execution
-		Type: Execution    
-		Required: True    
-		Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-greengrass-functiondefinitionversion-defaultconfig.html#cfn-greengrass-functiondefinitionversion-defaultconfig-execution    
-		UpdateType: Mutable    
+        Configuration settings for the Lambda execution environment on the AWS IoT Greengrass core.
+
+        Type: Execution
+        Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-greengrass-functiondefinitionversion-defaultconfig.html#cfn-greengrass-functiondefinitionversion-defaultconfig-execution
+        UpdateType: Mutable
 
     .FUNCTIONALITY
         Vaporshell

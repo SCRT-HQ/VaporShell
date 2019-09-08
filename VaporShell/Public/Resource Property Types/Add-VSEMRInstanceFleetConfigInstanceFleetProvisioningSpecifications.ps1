@@ -10,10 +10,11 @@ function Add-VSEMRInstanceFleetConfigInstanceFleetProvisioningSpecifications {
         http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-elasticmapreduce-instancefleetconfig-instancefleetprovisioningspecifications.html
 
     .PARAMETER SpotSpecification
-		Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-elasticmapreduce-instancefleetconfig-instancefleetprovisioningspecifications.html#cfn-elasticmapreduce-instancefleetconfig-instancefleetprovisioningspecifications-spotspecification    
-		Required: True    
-		Type: SpotProvisioningSpecification    
-		UpdateType: Mutable    
+        The launch specification for Spot instances in the fleet, which determines the defined duration and provisioning timeout behavior.
+
+        Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-elasticmapreduce-instancefleetconfig-instancefleetprovisioningspecifications.html#cfn-elasticmapreduce-instancefleetconfig-instancefleetprovisioningspecifications-spotspecification
+        Type: SpotProvisioningSpecification
+        UpdateType: Mutable
 
     .FUNCTIONALITY
         Vaporshell

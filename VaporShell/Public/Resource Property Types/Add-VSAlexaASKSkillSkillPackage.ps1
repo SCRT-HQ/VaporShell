@@ -10,34 +10,39 @@ function Add-VSAlexaASKSkillSkillPackage {
         http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ask-skill-skillpackage.html
 
     .PARAMETER S3BucketRole
-		Required: False    
-		Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ask-skill-skillpackage.html#cfn-ask-skill-skillpackage-s3bucketrole    
-		PrimitiveType: String    
-		UpdateType: Mutable    
+        ARN of the role that grants the Alexa service permission to access the bucket and retrieve the skill package. This role is optional. If you do not provide it, the bucket must be publicly accessible or configured with a policy that allows this access. Otherwise, AWS CloudFormation cannot create the skill.
+
+        Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ask-skill-skillpackage.html#cfn-ask-skill-skillpackage-s3bucketrole
+        PrimitiveType: String
+        UpdateType: Mutable
 
     .PARAMETER S3ObjectVersion
-		Required: False    
-		Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ask-skill-skillpackage.html#cfn-ask-skill-skillpackage-s3objectversion    
-		PrimitiveType: String    
-		UpdateType: Mutable    
+        If you have S3 versioning enabled, the version ID of the skill package.zip file.
+
+        Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ask-skill-skillpackage.html#cfn-ask-skill-skillpackage-s3objectversion
+        PrimitiveType: String
+        UpdateType: Mutable
 
     .PARAMETER S3Bucket
-		Required: True    
-		Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ask-skill-skillpackage.html#cfn-ask-skill-skillpackage-s3bucket    
-		PrimitiveType: String    
-		UpdateType: Mutable    
+        The name of the Amazon S3 bucket where the .zip file that contains the skill package is stored.
+
+        Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ask-skill-skillpackage.html#cfn-ask-skill-skillpackage-s3bucket
+        PrimitiveType: String
+        UpdateType: Mutable
 
     .PARAMETER S3Key
-		Required: True    
-		Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ask-skill-skillpackage.html#cfn-ask-skill-skillpackage-s3key    
-		PrimitiveType: String    
-		UpdateType: Mutable    
+        The location and name of the skill package .zip file.
+
+        Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ask-skill-skillpackage.html#cfn-ask-skill-skillpackage-s3key
+        PrimitiveType: String
+        UpdateType: Mutable
 
     .PARAMETER Overrides
-		Type: Overrides    
-		Required: False    
-		Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ask-skill-skillpackage.html#cfn-ask-skill-skillpackage-overrides    
-		UpdateType: Mutable    
+        Overrides to the skill package to apply when creating or updating the skill. Values provided here do not modify the contents of the original skill package. Currently, only overriding values inside of the skill manifest component of the package is supported.
+
+        Type: Overrides
+        Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ask-skill-skillpackage.html#cfn-ask-skill-skillpackage-overrides
+        UpdateType: Mutable
 
     .FUNCTIONALITY
         Vaporshell

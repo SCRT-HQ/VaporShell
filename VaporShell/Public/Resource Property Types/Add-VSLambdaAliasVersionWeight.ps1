@@ -10,16 +10,18 @@ function Add-VSLambdaAliasVersionWeight {
         http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-lambda-alias-versionweight.html
 
     .PARAMETER FunctionVersion
-		Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-lambda-alias-versionweight.html#cfn-lambda-alias-versionweight-functionversion    
-		PrimitiveType: String    
-		Required: True    
-		UpdateType: Mutable    
+        The name of the second alias.
+
+        Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-lambda-alias-versionweight.html#cfn-lambda-alias-versionweight-functionversion
+        PrimitiveType: String
+        UpdateType: Mutable
 
     .PARAMETER FunctionWeight
-		Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-lambda-alias-versionweight.html#cfn-lambda-alias-versionweight-functionweight    
-		PrimitiveType: Double    
-		Required: True    
-		UpdateType: Mutable    
+        The percentage of traffic that's routed to the second alias.
+
+        Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-lambda-alias-versionweight.html#cfn-lambda-alias-versionweight-functionweight
+        PrimitiveType: Double
+        UpdateType: Mutable
 
     .FUNCTIONALITY
         Vaporshell

@@ -10,17 +10,19 @@ function Add-VSCodeBuildProjectProjectTriggers {
         http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-codebuild-project-projecttriggers.html
 
     .PARAMETER FilterGroups
-		Type: List    
-		Required: False    
-		Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-codebuild-project-projecttriggers.html#cfn-codebuild-project-projecttriggers-filtergroups    
-		ItemType: FilterGroup    
-		UpdateType: Mutable    
+        A list of lists of WebhookFilter objects used to determine which webhook events are triggered. At least one WebhookFilter in the array must specify EVENT as its type.
+
+        Type: List
+        Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-codebuild-project-projecttriggers.html#cfn-codebuild-project-projecttriggers-filtergroups
+        ItemType: FilterGroup
+        UpdateType: Mutable
 
     .PARAMETER Webhook
-		Required: False    
-		Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-codebuild-project-projecttriggers.html#cfn-codebuild-project-projecttriggers-webhook    
-		PrimitiveType: Boolean    
-		UpdateType: Mutable    
+        Specifies whether or not to begin automatically rebuilding the source code every time a code change is pushed to the repository.
+
+        Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-codebuild-project-projecttriggers.html#cfn-codebuild-project-projecttriggers-webhook
+        PrimitiveType: Boolean
+        UpdateType: Mutable
 
     .FUNCTIONALITY
         Vaporshell

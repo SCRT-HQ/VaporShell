@@ -13,102 +13,124 @@ function New-VSCodeDeployDeploymentGroup {
         The logical ID must be alphanumeric (A-Za-z0-9) and unique within the template. Use the logical name to reference the resource in other parts of the template. For example, if you want to map an Amazon Elastic Block Store volume to an Amazon EC2 instance, you reference the logical IDs to associate the block stores with the instance.
 
     .PARAMETER AlarmConfiguration
-		Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-codedeploy-deploymentgroup.html#cfn-codedeploy-deploymentgroup-alarmconfiguration    
-		Required: False    
-		Type: AlarmConfiguration    
-		UpdateType: Mutable    
+        Information about the Amazon CloudWatch alarms that are associated with the deployment group.
+
+        Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-codedeploy-deploymentgroup.html#cfn-codedeploy-deploymentgroup-alarmconfiguration
+        Type: AlarmConfiguration
+        UpdateType: Mutable
 
     .PARAMETER ApplicationName
-		Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-codedeploy-deploymentgroup.html#cfn-codedeploy-deploymentgroup-applicationname    
-		PrimitiveType: String    
-		Required: True    
-		UpdateType: Immutable    
+        The name of an existing CodeDeploy application to associate this deployment group with.
+
+        Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-codedeploy-deploymentgroup.html#cfn-codedeploy-deploymentgroup-applicationname
+        PrimitiveType: String
+        UpdateType: Immutable
 
     .PARAMETER AutoRollbackConfiguration
-		Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-codedeploy-deploymentgroup.html#cfn-codedeploy-deploymentgroup-autorollbackconfiguration    
-		Required: False    
-		Type: AutoRollbackConfiguration    
-		UpdateType: Mutable    
+        Information about the automatic rollback configuration that is associated with the deployment group. If you specify this property, don't specify the Deployment property.
+
+        Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-codedeploy-deploymentgroup.html#cfn-codedeploy-deploymentgroup-autorollbackconfiguration
+        Type: AutoRollbackConfiguration
+        UpdateType: Mutable
 
     .PARAMETER AutoScalingGroups
-		Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-codedeploy-deploymentgroup.html#cfn-codedeploy-deploymentgroup-autoscalinggroups    
-		DuplicatesAllowed: False    
-		PrimitiveItemType: String    
-		Required: False    
-		Type: List    
-		UpdateType: Mutable    
+        A list of associated Auto Scaling groups that CodeDeploy automatically deploys revisions to when new instances are created. Duplicates are not allowed.
+
+        Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-codedeploy-deploymentgroup.html#cfn-codedeploy-deploymentgroup-autoscalinggroups
+        DuplicatesAllowed: False
+        PrimitiveItemType: String
+        Type: List
+        UpdateType: Mutable
 
     .PARAMETER Deployment
-		Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-codedeploy-deploymentgroup.html#cfn-codedeploy-deploymentgroup-deployment    
-		Required: False    
-		Type: Deployment    
-		UpdateType: Mutable    
+        The application revision to deploy to this deployment group. If you specify this property, your target application revision is deployed as soon as the provisioning process is complete. If you specify this property, don't specify the AutoRollbackConfiguration property.
+
+        Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-codedeploy-deploymentgroup.html#cfn-codedeploy-deploymentgroup-deployment
+        Type: Deployment
+        UpdateType: Mutable
 
     .PARAMETER DeploymentConfigName
-		Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-codedeploy-deploymentgroup.html#cfn-codedeploy-deploymentgroup-deploymentconfigname    
-		PrimitiveType: String    
-		Required: False    
-		UpdateType: Mutable    
+        A deployment configuration name or a predefined configuration name. With predefined configurations, you can deploy application revisions to one instance at a time, half of the instances at a time, or all the instances at once. For more information and valid values, see Working with Deployment Configurations: https://docs.aws.amazon.com/codedeploy/latest/userguide/deployment-configurations.html in the *AWS CodeDeploy User Guide*.
+
+        Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-codedeploy-deploymentgroup.html#cfn-codedeploy-deploymentgroup-deploymentconfigname
+        PrimitiveType: String
+        UpdateType: Mutable
 
     .PARAMETER DeploymentGroupName
-		Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-codedeploy-deploymentgroup.html#cfn-codedeploy-deploymentgroup-deploymentgroupname    
-		PrimitiveType: String    
-		Required: False    
-		UpdateType: Immutable    
+        A name for the deployment group. If you don't specify a name, AWS CloudFormation generates a unique physical ID and uses that ID for the deployment group name. For more information, see Name Type: https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-name.html.
+If you specify a name, you cannot perform updates that require replacement of this resource. You can perform updates that require no or some interruption. If you must replace the resource, specify a new name.
+
+        Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-codedeploy-deploymentgroup.html#cfn-codedeploy-deploymentgroup-deploymentgroupname
+        PrimitiveType: String
+        UpdateType: Immutable
 
     .PARAMETER DeploymentStyle
-		Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-codedeploy-deploymentgroup.html#cfn-codedeploy-deploymentgroup-deploymentstyle    
-		Required: False    
-		Type: DeploymentStyle    
-		UpdateType: Mutable    
+        Attributes that determine the type of deployment to run and whether to route deployment traffic behind a load balancer.
+If you specify this property with a blue/green deployment type, don't specify the AutoScalingGroups, LoadBalancerInfo, or Deployment properties.
+For blue/green deployments, AWS CloudFormation supports deployments on Lambda compute platforms only.
+
+        Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-codedeploy-deploymentgroup.html#cfn-codedeploy-deploymentgroup-deploymentstyle
+        Type: DeploymentStyle
+        UpdateType: Mutable
 
     .PARAMETER Ec2TagFilters
-		Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-codedeploy-deploymentgroup.html#cfn-codedeploy-deploymentgroup-ec2tagfilters    
-		DuplicatesAllowed: False    
-		ItemType: EC2TagFilter    
-		Required: False    
-		Type: List    
-		UpdateType: Mutable    
+        The EC2 tags that are already applied to EC2 instances that you want to include in the deployment group. CodeDeploy includes all EC2 instances identified by any of the tags you specify in this deployment group. Duplicates are not allowed.
+You can specify EC2TagFilters or Ec2TagSet, but not both.
+
+        Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-codedeploy-deploymentgroup.html#cfn-codedeploy-deploymentgroup-ec2tagfilters
+        DuplicatesAllowed: False
+        ItemType: EC2TagFilter
+        Type: List
+        UpdateType: Mutable
 
     .PARAMETER Ec2TagSet
-		Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-codedeploy-deploymentgroup.html#cfn-codedeploy-deploymentgroup-ec2tagset    
-		Required: False    
-		Type: EC2TagSet    
-		UpdateType: Mutable    
+        Information about groups of tags applied to EC2 instances. The deployment group includes only EC2 instances identified by all the tag groups. Cannot be used in the same call as ec2TagFilter.
+
+        Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-codedeploy-deploymentgroup.html#cfn-codedeploy-deploymentgroup-ec2tagset
+        Type: EC2TagSet
+        UpdateType: Mutable
 
     .PARAMETER LoadBalancerInfo
-		Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-codedeploy-deploymentgroup.html#cfn-codedeploy-deploymentgroup-loadbalancerinfo    
-		Required: False    
-		Type: LoadBalancerInfo    
-		UpdateType: Mutable    
+        Information about the load balancer to use in a deployment. For more information, see  Integrating CodeDeploy with Elastic Load Balancing : https://docs.aws.amazon.com/codedeploy/latest/userguide/integrations-aws-elastic-load-balancing.html in the *AWS CodeDeploy User Guide*.
+
+        Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-codedeploy-deploymentgroup.html#cfn-codedeploy-deploymentgroup-loadbalancerinfo
+        Type: LoadBalancerInfo
+        UpdateType: Mutable
 
     .PARAMETER OnPremisesInstanceTagFilters
-		Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-codedeploy-deploymentgroup.html#cfn-codedeploy-deploymentgroup-onpremisesinstancetagfilters    
-		DuplicatesAllowed: False    
-		ItemType: TagFilter    
-		Required: False    
-		Type: List    
-		UpdateType: Mutable    
+        The on-premises instance tags already applied to on-premises instances that you want to include in the deployment group. CodeDeploy includes all on-premises instances identified by any of the tags you specify in this deployment group. To register on-premises instances with CodeDeploy, see Working with On-Premises Instances for CodeDeploy: https://docs.aws.amazon.com/codedeploy/latest/userguide/instances-on-premises.html in the *AWS CodeDeploy User Guide*. Duplicates are not allowed.
+You can specify OnPremisesInstanceTagFilters or OnPremisesInstanceTagSet, but not both.
+
+        Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-codedeploy-deploymentgroup.html#cfn-codedeploy-deploymentgroup-onpremisesinstancetagfilters
+        DuplicatesAllowed: False
+        ItemType: TagFilter
+        Type: List
+        UpdateType: Mutable
 
     .PARAMETER OnPremisesTagSet
-		Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-codedeploy-deploymentgroup.html#cfn-codedeploy-deploymentgroup-onpremisestagset    
-		Required: False    
-		Type: OnPremisesTagSet    
-		UpdateType: Mutable    
+        Information about groups of tags applied to on-premises instances. The deployment group includes only on-premises instances identified by all the tag groups.
+You can specify OnPremisesInstanceTagFilters or OnPremisesInstanceTagSet, but not both.
+
+        Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-codedeploy-deploymentgroup.html#cfn-codedeploy-deploymentgroup-onpremisestagset
+        Type: OnPremisesTagSet
+        UpdateType: Mutable
 
     .PARAMETER ServiceRoleArn
-		Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-codedeploy-deploymentgroup.html#cfn-codedeploy-deploymentgroup-servicerolearn    
-		PrimitiveType: String    
-		Required: True    
-		UpdateType: Mutable    
+        A service role Amazon Resource Name ARN that grants CodeDeploy permission to make calls to AWS services on your behalf. For more information, see Create a Service Role for AWS CodeDeploy: https://docs.aws.amazon.com/codedeploy/latest/userguide/getting-started-create-service-role.html in the *AWS CodeDeploy User Guide*.
+In some cases, you might need to add a dependency on the service role's policy. For more information, see IAM role policy in DependsOn Attribute: https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-attribute-dependson.html.
+
+        Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-codedeploy-deploymentgroup.html#cfn-codedeploy-deploymentgroup-servicerolearn
+        PrimitiveType: String
+        UpdateType: Mutable
 
     .PARAMETER TriggerConfigurations
-		Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-codedeploy-deploymentgroup.html#cfn-codedeploy-deploymentgroup-triggerconfigurations    
-		DuplicatesAllowed: False    
-		ItemType: TriggerConfig    
-		Required: False    
-		Type: List    
-		UpdateType: Mutable    
+        Information about triggers associated with the deployment group. Duplicates are not allowed
+
+        Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-codedeploy-deploymentgroup.html#cfn-codedeploy-deploymentgroup-triggerconfigurations
+        DuplicatesAllowed: False
+        ItemType: TriggerConfig
+        Type: List
+        UpdateType: Mutable
 
     .PARAMETER DeletionPolicy
         With the DeletionPolicy attribute you can preserve or (in some cases) backup a resource when its stack is deleted. You specify a DeletionPolicy attribute for each resource that you want to control. If a resource has no DeletionPolicy attribute, AWS CloudFormation deletes the resource by default.

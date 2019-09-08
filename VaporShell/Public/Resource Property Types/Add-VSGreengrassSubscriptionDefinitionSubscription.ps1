@@ -10,28 +10,32 @@ function Add-VSGreengrassSubscriptionDefinitionSubscription {
         http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-greengrass-subscriptiondefinition-subscription.html
 
     .PARAMETER Target
-		Required: True    
-		Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-greengrass-subscriptiondefinition-subscription.html#cfn-greengrass-subscriptiondefinition-subscription-target    
-		PrimitiveType: String    
-		UpdateType: Immutable    
+        The destination of the message. The value can be a thing ARN, a Lambda function ARN, a connector ARN, cloud which represents the AWS IoT cloud, or GGShadowService.
+
+        Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-greengrass-subscriptiondefinition-subscription.html#cfn-greengrass-subscriptiondefinition-subscription-target
+        PrimitiveType: String
+        UpdateType: Immutable
 
     .PARAMETER Id
-		Required: True    
-		Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-greengrass-subscriptiondefinition-subscription.html#cfn-greengrass-subscriptiondefinition-subscription-id    
-		PrimitiveType: String    
-		UpdateType: Immutable    
+        A descriptive or arbitrary ID for the subscription. This value must be unique within the subscription definition version. Maximum length is 128 characters with pattern a-zA-Z0-9:_-]+.
+
+        Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-greengrass-subscriptiondefinition-subscription.html#cfn-greengrass-subscriptiondefinition-subscription-id
+        PrimitiveType: String
+        UpdateType: Immutable
 
     .PARAMETER Source
-		Required: True    
-		Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-greengrass-subscriptiondefinition-subscription.html#cfn-greengrass-subscriptiondefinition-subscription-source    
-		PrimitiveType: String    
-		UpdateType: Immutable    
+        The originator of the message. The value can be a thing ARN, a Lambda function ARN, a connector ARN, cloud which represents the AWS IoT cloud, or GGShadowService.
+
+        Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-greengrass-subscriptiondefinition-subscription.html#cfn-greengrass-subscriptiondefinition-subscription-source
+        PrimitiveType: String
+        UpdateType: Immutable
 
     .PARAMETER Subject
-		Required: True    
-		Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-greengrass-subscriptiondefinition-subscription.html#cfn-greengrass-subscriptiondefinition-subscription-subject    
-		PrimitiveType: String    
-		UpdateType: Immutable    
+        The MQTT topic used to route the message.
+
+        Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-greengrass-subscriptiondefinition-subscription.html#cfn-greengrass-subscriptiondefinition-subscription-subject
+        PrimitiveType: String
+        UpdateType: Immutable
 
     .FUNCTIONALITY
         Vaporshell

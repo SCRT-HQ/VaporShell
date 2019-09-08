@@ -10,29 +10,35 @@ function Add-VSGreengrassFunctionDefinitionVersionEnvironment {
         http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-greengrass-functiondefinitionversion-environment.html
 
     .PARAMETER Variables
-		Required: False    
-		Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-greengrass-functiondefinitionversion-environment.html#cfn-greengrass-functiondefinitionversion-environment-variables    
-		PrimitiveType: Json    
-		UpdateType: Immutable    
+        Environment variables for the Lambda function.
+
+        Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-greengrass-functiondefinitionversion-environment.html#cfn-greengrass-functiondefinitionversion-environment-variables
+        PrimitiveType: Json
+        UpdateType: Immutable
 
     .PARAMETER Execution
-		Type: Execution    
-		Required: False    
-		Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-greengrass-functiondefinitionversion-environment.html#cfn-greengrass-functiondefinitionversion-environment-execution    
-		UpdateType: Immutable    
+        Settings for the Lambda execution environment in AWS IoT Greengrass.
+
+        Type: Execution
+        Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-greengrass-functiondefinitionversion-environment.html#cfn-greengrass-functiondefinitionversion-environment-execution
+        UpdateType: Immutable
 
     .PARAMETER ResourceAccessPolicies
-		Type: List    
-		Required: False    
-		Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-greengrass-functiondefinitionversion-environment.html#cfn-greengrass-functiondefinitionversion-environment-resourceaccesspolicies    
-		ItemType: ResourceAccessPolicy    
-		UpdateType: Immutable    
+        A list of the resources: https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-greengrass-resourcedefinitionversion-resourceinstance.html in the group that the function can access, with the corresponding read-only or read-write permissions. The maximum is 10 resources.
+This property applies only to Lambda functions that run in a Greengrass container.
+
+        Type: List
+        Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-greengrass-functiondefinitionversion-environment.html#cfn-greengrass-functiondefinitionversion-environment-resourceaccesspolicies
+        ItemType: ResourceAccessPolicy
+        UpdateType: Immutable
 
     .PARAMETER AccessSysfs
-		Required: False    
-		Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-greengrass-functiondefinitionversion-environment.html#cfn-greengrass-functiondefinitionversion-environment-accesssysfs    
-		PrimitiveType: Boolean    
-		UpdateType: Immutable    
+        Indicates whether the function is allowed to access the /sys directory on the core device, which allows the read device information from /sys.
+This property applies only to Lambda functions that run in a Greengrass container.
+
+        Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-greengrass-functiondefinitionversion-environment.html#cfn-greengrass-functiondefinitionversion-environment-accesssysfs
+        PrimitiveType: Boolean
+        UpdateType: Immutable
 
     .FUNCTIONALITY
         Vaporshell

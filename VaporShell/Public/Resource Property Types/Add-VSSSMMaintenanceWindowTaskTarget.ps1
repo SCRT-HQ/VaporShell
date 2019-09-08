@@ -10,17 +10,19 @@ function Add-VSSSMMaintenanceWindowTaskTarget {
         http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ssm-maintenancewindowtask-target.html
 
     .PARAMETER Values
-		PrimitiveItemType: String    
-		Type: List    
-		Required: False    
-		Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ssm-maintenancewindowtask-target.html#cfn-ssm-maintenancewindowtask-target-values    
-		UpdateType: Mutable    
+        User-defined criteria that maps to Key. For example, if you specify InstanceIds, you can specify i-1234567890abcdef0,i-9876543210abcdef0 to run a command on two EC2 instances. For more information about how to target instances within a maintenance window task, see About 'register-task-with-maintenance-window' Options and Values: https://docs.aws.amazon.com/systems-manager/latest/userguide/register-tasks-options.html in the *AWS Systems Manager User Guide*.
+
+        PrimitiveItemType: String
+        Type: List
+        Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ssm-maintenancewindowtask-target.html#cfn-ssm-maintenancewindowtask-target-values
+        UpdateType: Mutable
 
     .PARAMETER Key
-		Required: True    
-		Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ssm-maintenancewindowtask-target.html#cfn-ssm-maintenancewindowtask-target-key    
-		PrimitiveType: String    
-		UpdateType: Mutable    
+        User-defined criteria for sending commands that target instances that meet the criteria. Key can be InstanceIds or WindowTargetIds. For more information about how to target instances within a maintenance window task, see About 'register-task-with-maintenance-window' Options and Values: https://docs.aws.amazon.com/systems-manager/latest/userguide/register-tasks-options.html in the *AWS Systems Manager User Guide*.
+
+        Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ssm-maintenancewindowtask-target.html#cfn-ssm-maintenancewindowtask-target-key
+        PrimitiveType: String
+        UpdateType: Mutable
 
     .FUNCTIONALITY
         Vaporshell

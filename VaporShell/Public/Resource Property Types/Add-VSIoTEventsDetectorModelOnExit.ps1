@@ -10,11 +10,12 @@ function Add-VSIoTEventsDetectorModelOnExit {
         http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iotevents-detectormodel-onexit.html
 
     .PARAMETER Events
-		Type: List    
-		Required: False    
-		Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iotevents-detectormodel-onexit.html#cfn-iotevents-detectormodel-onexit-events    
-		ItemType: Event    
-		UpdateType: Mutable    
+        Specifies the actions that are performed when the state is exited and the "condition" is TRUE.
+
+        Type: List
+        Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iotevents-detectormodel-onexit.html#cfn-iotevents-detectormodel-onexit-events
+        ItemType: Event
+        UpdateType: Mutable
 
     .FUNCTIONALITY
         Vaporshell

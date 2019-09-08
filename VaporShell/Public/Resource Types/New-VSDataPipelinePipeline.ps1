@@ -13,54 +13,61 @@ function New-VSDataPipelinePipeline {
         The logical ID must be alphanumeric (A-Za-z0-9) and unique within the template. Use the logical name to reference the resource in other parts of the template. For example, if you want to map an Amazon Elastic Block Store volume to an Amazon EC2 instance, you reference the logical IDs to associate the block stores with the instance.
 
     .PARAMETER Activate
-		Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-datapipeline-pipeline.html#cfn-datapipeline-pipeline-activate    
-		PrimitiveType: Boolean    
-		Required: False    
-		UpdateType: Mutable    
+        Indicates whether to validate and start the pipeline or stop an active pipeline. By default, the value is set to true.
+
+        Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-datapipeline-pipeline.html#cfn-datapipeline-pipeline-activate
+        PrimitiveType: Boolean
+        UpdateType: Mutable
 
     .PARAMETER Description
-		Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-datapipeline-pipeline.html#cfn-datapipeline-pipeline-description    
-		PrimitiveType: String    
-		Required: False    
-		UpdateType: Immutable    
+        A description of the pipeline.
+
+        Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-datapipeline-pipeline.html#cfn-datapipeline-pipeline-description
+        PrimitiveType: String
+        UpdateType: Immutable
 
     .PARAMETER Name
-		Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-datapipeline-pipeline.html#cfn-datapipeline-pipeline-name    
-		PrimitiveType: String    
-		Required: True    
-		UpdateType: Immutable    
+        The name of the pipeline.
+
+        Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-datapipeline-pipeline.html#cfn-datapipeline-pipeline-name
+        PrimitiveType: String
+        UpdateType: Immutable
 
     .PARAMETER ParameterObjects
-		Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-datapipeline-pipeline.html#cfn-datapipeline-pipeline-parameterobjects    
-		DuplicatesAllowed: True    
-		ItemType: ParameterObject    
-		Required: True    
-		Type: List    
-		UpdateType: Mutable    
+        The parameter objects used with the pipeline.
+
+        Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-datapipeline-pipeline.html#cfn-datapipeline-pipeline-parameterobjects
+        DuplicatesAllowed: True
+        ItemType: ParameterObject
+        Type: List
+        UpdateType: Mutable
 
     .PARAMETER ParameterValues
-		Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-datapipeline-pipeline.html#cfn-datapipeline-pipeline-parametervalues    
-		DuplicatesAllowed: True    
-		ItemType: ParameterValue    
-		Required: False    
-		Type: List    
-		UpdateType: Mutable    
+        The parameter values used with the pipeline.
+
+        Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-datapipeline-pipeline.html#cfn-datapipeline-pipeline-parametervalues
+        DuplicatesAllowed: True
+        ItemType: ParameterValue
+        Type: List
+        UpdateType: Mutable
 
     .PARAMETER PipelineObjects
-		Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-datapipeline-pipeline.html#cfn-datapipeline-pipeline-pipelineobjects    
-		DuplicatesAllowed: True    
-		ItemType: PipelineObject    
-		Required: False    
-		Type: List    
-		UpdateType: Mutable    
+        The objects that define the pipeline. These objects overwrite the existing pipeline definition. Not all objects, fields, and values can be updated. For information about restrictions, see Editing Your Pipeline: https://docs.aws.amazon.com/datapipeline/latest/DeveloperGuide/dp-manage-pipeline-modify-console.html in the *AWS Data Pipeline Developer Guide*.
+
+        Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-datapipeline-pipeline.html#cfn-datapipeline-pipeline-pipelineobjects
+        DuplicatesAllowed: True
+        ItemType: PipelineObject
+        Type: List
+        UpdateType: Mutable
 
     .PARAMETER PipelineTags
-		Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-datapipeline-pipeline.html#cfn-datapipeline-pipeline-pipelinetags    
-		DuplicatesAllowed: True    
-		ItemType: PipelineTag    
-		Required: False    
-		Type: List    
-		UpdateType: Mutable    
+        A list of arbitrary tags key-value pairs to associate with the pipeline, which you can use to control permissions. For more information, see Controlling Access to Pipelines and Resources: https://docs.aws.amazon.com/datapipeline/latest/DeveloperGuide/dp-control-access.html in the *AWS Data Pipeline Developer Guide*.
+
+        Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-datapipeline-pipeline.html#cfn-datapipeline-pipeline-pipelinetags
+        DuplicatesAllowed: True
+        ItemType: PipelineTag
+        Type: List
+        UpdateType: Mutable
 
     .PARAMETER DeletionPolicy
         With the DeletionPolicy attribute you can preserve or (in some cases) backup a resource when its stack is deleted. You specify a DeletionPolicy attribute for each resource that you want to control. If a resource has no DeletionPolicy attribute, AWS CloudFormation deletes the resource by default.

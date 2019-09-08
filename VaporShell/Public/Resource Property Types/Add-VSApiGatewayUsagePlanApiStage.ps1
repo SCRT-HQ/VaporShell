@@ -10,24 +10,28 @@ function Add-VSApiGatewayUsagePlanApiStage {
         http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-apigateway-usageplan-apistage.html
 
     .PARAMETER ApiId
-		Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-apigateway-usageplan-apistage.html#cfn-apigateway-usageplan-apistage-apiid    
-		PrimitiveType: String    
-		Required: False    
-		UpdateType: Mutable    
+        The ID of an API that is in the specified Stage property that you want to associate with the usage plan.
+
+        Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-apigateway-usageplan-apistage.html#cfn-apigateway-usageplan-apistage-apiid
+        PrimitiveType: String
+        UpdateType: Mutable
 
     .PARAMETER Stage
-		Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-apigateway-usageplan-apistage.html#cfn-apigateway-usageplan-apistage-stage    
-		PrimitiveType: String    
-		Required: False    
-		UpdateType: Mutable    
+        The name of the stage to associate with the usage plan.
+
+        Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-apigateway-usageplan-apistage.html#cfn-apigateway-usageplan-apistage-stage
+        PrimitiveType: String
+        UpdateType: Mutable
 
     .PARAMETER Throttle
-		Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-apigateway-usageplan-apistage.html#cfn-apigateway-usageplan-apistage-throttle    
-		DuplicatesAllowed: False    
-		ItemType: ThrottleSettings    
-		Required: False    
-		Type: Map    
-		UpdateType: Mutable    
+        Map containing method-level throttling information for API stage in a usage plan.
+Duplicates are not allowed.
+
+        Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-apigateway-usageplan-apistage.html#cfn-apigateway-usageplan-apistage-throttle
+        DuplicatesAllowed: False
+        ItemType: ThrottleSettings
+        Type: Map
+        UpdateType: Mutable
 
     .FUNCTIONALITY
         Vaporshell

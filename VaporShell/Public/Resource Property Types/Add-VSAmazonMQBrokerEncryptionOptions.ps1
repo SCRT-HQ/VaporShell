@@ -10,16 +10,18 @@ function Add-VSAmazonMQBrokerEncryptionOptions {
         http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-amazonmq-broker-encryptionoptions.html
 
     .PARAMETER KmsKeyId
-		Required: False    
-		Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-amazonmq-broker-encryptionoptions.html#cfn-amazonmq-broker-encryptionoptions-kmskeyid    
-		PrimitiveType: String    
-		UpdateType: Mutable    
+        The customer master key CMK to use for the AWS Key Management Service KMS. This key is used to encrypt your data at rest. If not provided, Amazon MQ will use a default CMK to encrypt your data.
+
+        Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-amazonmq-broker-encryptionoptions.html#cfn-amazonmq-broker-encryptionoptions-kmskeyid
+        PrimitiveType: String
+        UpdateType: Mutable
 
     .PARAMETER UseAwsOwnedKey
-		Required: True    
-		Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-amazonmq-broker-encryptionoptions.html#cfn-amazonmq-broker-encryptionoptions-useawsownedkey    
-		PrimitiveType: Boolean    
-		UpdateType: Mutable    
+        Enables the use of an AWS owned CMK using AWS Key Management Service KMS.
+
+        Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-amazonmq-broker-encryptionoptions.html#cfn-amazonmq-broker-encryptionoptions-useawsownedkey
+        PrimitiveType: Boolean
+        UpdateType: Mutable
 
     .FUNCTIONALITY
         Vaporshell

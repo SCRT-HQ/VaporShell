@@ -13,46 +13,60 @@ function New-VSEC2FlowLog {
         The logical ID must be alphanumeric (A-Za-z0-9) and unique within the template. Use the logical name to reference the resource in other parts of the template. For example, if you want to map an Amazon Elastic Block Store volume to an Amazon EC2 instance, you reference the logical IDs to associate the block stores with the instance.
 
     .PARAMETER DeliverLogsPermissionArn
-		Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ec2-flowlog.html#cfn-ec2-flowlog-deliverlogspermissionarn    
-		PrimitiveType: String    
-		Required: False    
-		UpdateType: Immutable    
+        The ARN for the IAM role that permits Amazon EC2 to publish flow logs to a CloudWatch Logs log group in your account.
+If you specify LogDestinationType as s3, do not specify DeliverLogsPermissionArn or LogGroupName.
+
+        Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ec2-flowlog.html#cfn-ec2-flowlog-deliverlogspermissionarn
+        PrimitiveType: String
+        UpdateType: Immutable
 
     .PARAMETER LogDestination
-		Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ec2-flowlog.html#cfn-ec2-flowlog-logdestination    
-		PrimitiveType: String    
-		Required: False    
-		UpdateType: Immutable    
+        Specifies the destination to which the flow log data is to be published. Flow log data can be published to a CloudWatch Logs log group or an Amazon S3 bucket. The value specified for this parameter depends on the value specified for LogDestinationType.
+If LogDestinationType is not specified or cloud-watch-logs, specify the Amazon Resource Name ARN of the CloudWatch Logs log group.
+If LogDestinationType is s3, specify the ARN of the Amazon S3 bucket. You can also specify a subfolder in the bucket. To specify a subfolder in the bucket, use the following ARN format: bucket_ARN/subfolder_name/. For example, to specify a subfolder named my-logs in a bucket named my-bucket, use the following ARN: arn:aws:s3:::my-bucket/my-logs/. You cannot use AWSLogs as a subfolder name. This is a reserved term.
+
+        Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ec2-flowlog.html#cfn-ec2-flowlog-logdestination
+        PrimitiveType: String
+        UpdateType: Immutable
 
     .PARAMETER LogDestinationType
-		Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ec2-flowlog.html#cfn-ec2-flowlog-logdestinationtype    
-		PrimitiveType: String    
-		Required: False    
-		UpdateType: Immutable    
+        Specifies the type of destination to which the flow log data is to be published. Flow log data can be published to CloudWatch Logs or Amazon S3. To publish flow log data to CloudWatch Logs, specify cloud-watch-logs. To publish flow log data to Amazon S3, specify s3.
+If you specify LogDestinationType as s3, do not specify DeliverLogsPermissionArn or LogGroupName.
+Default: cloud-watch-logs
+
+        Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ec2-flowlog.html#cfn-ec2-flowlog-logdestinationtype
+        PrimitiveType: String
+        UpdateType: Immutable
 
     .PARAMETER LogGroupName
-		Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ec2-flowlog.html#cfn-ec2-flowlog-loggroupname    
-		PrimitiveType: String    
-		Required: False    
-		UpdateType: Immutable    
+        The name of a new or existing CloudWatch Logs log group where Amazon EC2 publishes your flow logs.
+If you specify LogDestinationType as s3, do not specify DeliverLogsPermissionArn or LogGroupName.
+
+        Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ec2-flowlog.html#cfn-ec2-flowlog-loggroupname
+        PrimitiveType: String
+        UpdateType: Immutable
 
     .PARAMETER ResourceId
-		Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ec2-flowlog.html#cfn-ec2-flowlog-resourceid    
-		PrimitiveType: String    
-		Required: True    
-		UpdateType: Immutable    
+        The ID of the subnet, network interface, or VPC for which you want to create a flow log.
+Constraints: Maximum of 1000 resources
+
+        Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ec2-flowlog.html#cfn-ec2-flowlog-resourceid
+        PrimitiveType: String
+        UpdateType: Immutable
 
     .PARAMETER ResourceType
-		Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ec2-flowlog.html#cfn-ec2-flowlog-resourcetype    
-		PrimitiveType: String    
-		Required: True    
-		UpdateType: Immutable    
+        The type of resource for which to create the flow log. For example, if you specified a VPC ID for the ResourceId property, specify VPC for this property.
+
+        Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ec2-flowlog.html#cfn-ec2-flowlog-resourcetype
+        PrimitiveType: String
+        UpdateType: Immutable
 
     .PARAMETER TrafficType
-		Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ec2-flowlog.html#cfn-ec2-flowlog-traffictype    
-		PrimitiveType: String    
-		Required: True    
-		UpdateType: Immutable    
+        The type of traffic to log. You can log traffic that the resource accepts or rejects, or all traffic.
+
+        Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ec2-flowlog.html#cfn-ec2-flowlog-traffictype
+        PrimitiveType: String
+        UpdateType: Immutable
 
     .PARAMETER DeletionPolicy
         With the DeletionPolicy attribute you can preserve or (in some cases) backup a resource when its stack is deleted. You specify a DeletionPolicy attribute for each resource that you want to control. If a resource has no DeletionPolicy attribute, AWS CloudFormation deletes the resource by default.

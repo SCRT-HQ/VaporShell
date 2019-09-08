@@ -10,30 +10,35 @@ function Add-VSS3BucketWebsiteConfiguration {
         http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-s3-websiteconfiguration.html
 
     .PARAMETER ErrorDocument
-		Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-s3-websiteconfiguration.html#cfn-s3-websiteconfiguration-errordocument    
-		PrimitiveType: String    
-		Required: False    
-		UpdateType: Mutable    
+        The name of the error document for the website.
+
+        Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-s3-websiteconfiguration.html#cfn-s3-websiteconfiguration-errordocument
+        PrimitiveType: String
+        UpdateType: Mutable
 
     .PARAMETER IndexDocument
-		Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-s3-websiteconfiguration.html#cfn-s3-websiteconfiguration-indexdocument    
-		PrimitiveType: String    
-		Required: False    
-		UpdateType: Mutable    
+        The name of the index document for the website.
+
+        Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-s3-websiteconfiguration.html#cfn-s3-websiteconfiguration-indexdocument
+        PrimitiveType: String
+        UpdateType: Mutable
 
     .PARAMETER RedirectAllRequestsTo
-		Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-s3-websiteconfiguration.html#cfn-s3-websiteconfiguration-redirectallrequeststo    
-		Required: False    
-		Type: RedirectAllRequestsTo    
-		UpdateType: Mutable    
+        The redirect behavior for every request to this bucket's website endpoint.
+If you specify this property, you can't specify any other property.
+
+        Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-s3-websiteconfiguration.html#cfn-s3-websiteconfiguration-redirectallrequeststo
+        Type: RedirectAllRequestsTo
+        UpdateType: Mutable
 
     .PARAMETER RoutingRules
-		Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-s3-websiteconfiguration.html#cfn-s3-websiteconfiguration-routingrules    
-		DuplicatesAllowed: False    
-		ItemType: RoutingRule    
-		Required: False    
-		Type: List    
-		UpdateType: Mutable    
+        Rules that define when a redirect is applied and the redirect behavior.
+
+        Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-s3-websiteconfiguration.html#cfn-s3-websiteconfiguration-routingrules
+        DuplicatesAllowed: False
+        ItemType: RoutingRule
+        Type: List
+        UpdateType: Mutable
 
     .FUNCTIONALITY
         Vaporshell

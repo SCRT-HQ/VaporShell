@@ -10,16 +10,18 @@ function Add-VSMediaLiveChannelVideoSelectorSettings {
         http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-medialive-channel-videoselectorsettings.html
 
     .PARAMETER VideoSelectorProgramId
-		Type: VideoSelectorProgramId    
-		Required: False    
-		Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-medialive-channel-videoselectorsettings.html#cfn-medialive-channel-videoselectorsettings-videoselectorprogramid    
-		UpdateType: Mutable    
+        Used to extract video by program ID.
+
+        Type: VideoSelectorProgramId
+        Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-medialive-channel-videoselectorsettings.html#cfn-medialive-channel-videoselectorsettings-videoselectorprogramid
+        UpdateType: Mutable
 
     .PARAMETER VideoSelectorPid
-		Type: VideoSelectorPid    
-		Required: False    
-		Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-medialive-channel-videoselectorsettings.html#cfn-medialive-channel-videoselectorsettings-videoselectorpid    
-		UpdateType: Mutable    
+        Used to extract video by PID.
+
+        Type: VideoSelectorPid
+        Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-medialive-channel-videoselectorsettings.html#cfn-medialive-channel-videoselectorsettings-videoselectorpid
+        UpdateType: Mutable
 
     .FUNCTIONALITY
         Vaporshell

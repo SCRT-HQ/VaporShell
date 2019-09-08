@@ -10,16 +10,18 @@ function Add-VSAppMeshVirtualServiceVirtualServiceProvider {
         http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-appmesh-virtualservice-virtualserviceprovider.html
 
     .PARAMETER VirtualNode
-		Type: VirtualNodeServiceProvider    
-		Required: False    
-		Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-appmesh-virtualservice-virtualserviceprovider.html#cfn-appmesh-virtualservice-virtualserviceprovider-virtualnode    
-		UpdateType: Mutable    
+        The virtual node associated with a virtual service.
+
+        Type: VirtualNodeServiceProvider
+        Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-appmesh-virtualservice-virtualserviceprovider.html#cfn-appmesh-virtualservice-virtualserviceprovider-virtualnode
+        UpdateType: Mutable
 
     .PARAMETER VirtualRouter
-		Type: VirtualRouterServiceProvider    
-		Required: False    
-		Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-appmesh-virtualservice-virtualserviceprovider.html#cfn-appmesh-virtualservice-virtualserviceprovider-virtualrouter    
-		UpdateType: Mutable    
+        The virtual router associated with a virtual service.
+
+        Type: VirtualRouterServiceProvider
+        Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-appmesh-virtualservice-virtualserviceprovider.html#cfn-appmesh-virtualservice-virtualserviceprovider-virtualrouter
+        UpdateType: Mutable
 
     .FUNCTIONALITY
         Vaporshell

@@ -10,10 +10,11 @@ function Add-VSEventsRuleKinesisParameters {
         http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-events-rule-kinesisparameters.html
 
     .PARAMETER PartitionKeyPath
-		Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-events-rule-kinesisparameters.html#cfn-events-rule-kinesisparameters-partitionkeypath    
-		PrimitiveType: String    
-		Required: True    
-		UpdateType: Mutable    
+        The JSON path to be extracted from the event and used as the partition key. For more information, see Partition Key: https://docs.aws.amazon.com/streams/latest/dev/key-concepts.html#partition-key in the *Amazon Kinesis Data Streams Developer Guide*.
+
+        Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-events-rule-kinesisparameters.html#cfn-events-rule-kinesisparameters-partitionkeypath
+        PrimitiveType: String
+        UpdateType: Mutable
 
     .FUNCTIONALITY
         Vaporshell

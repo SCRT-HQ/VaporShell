@@ -10,22 +10,25 @@ function Add-VSLambdaLayerVersionContent {
         http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-lambda-layerversion-content.html
 
     .PARAMETER S3ObjectVersion
-		Required: False    
-		Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-lambda-layerversion-content.html#cfn-lambda-layerversion-content-s3objectversion    
-		PrimitiveType: String    
-		UpdateType: Immutable    
+        For versioned objects, the version of the layer archive object to use.
+
+        Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-lambda-layerversion-content.html#cfn-lambda-layerversion-content-s3objectversion
+        PrimitiveType: String
+        UpdateType: Immutable
 
     .PARAMETER S3Bucket
-		Required: True    
-		Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-lambda-layerversion-content.html#cfn-lambda-layerversion-content-s3bucket    
-		PrimitiveType: String    
-		UpdateType: Immutable    
+        The Amazon S3 bucket of the layer archive.
+
+        Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-lambda-layerversion-content.html#cfn-lambda-layerversion-content-s3bucket
+        PrimitiveType: String
+        UpdateType: Immutable
 
     .PARAMETER S3Key
-		Required: True    
-		Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-lambda-layerversion-content.html#cfn-lambda-layerversion-content-s3key    
-		PrimitiveType: String    
-		UpdateType: Immutable    
+        The Amazon S3 key of the layer archive.
+
+        Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-lambda-layerversion-content.html#cfn-lambda-layerversion-content-s3key
+        PrimitiveType: String
+        UpdateType: Immutable
 
     .FUNCTIONALITY
         Vaporshell

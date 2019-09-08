@@ -10,10 +10,11 @@ function Add-VSAppMeshRouteTcpRoute {
         http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-appmesh-route-tcproute.html
 
     .PARAMETER Action
-		Type: TcpRouteAction    
-		Required: True    
-		Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-appmesh-route-tcproute.html#cfn-appmesh-route-tcproute-action    
-		UpdateType: Mutable    
+        The action to take if a match is determined.
+
+        Type: TcpRouteAction
+        Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-appmesh-route-tcproute.html#cfn-appmesh-route-tcproute-action
+        UpdateType: Mutable
 
     .FUNCTIONALITY
         Vaporshell

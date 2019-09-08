@@ -10,11 +10,12 @@ function Add-VSGreengrassConnectorDefinitionConnectorDefinitionVersion {
         http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-greengrass-connectordefinition-connectordefinitionversion.html
 
     .PARAMETER Connectors
-		Type: List    
-		Required: True    
-		Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-greengrass-connectordefinition-connectordefinitionversion.html#cfn-greengrass-connectordefinition-connectordefinitionversion-connectors    
-		ItemType: Connector    
-		UpdateType: Immutable    
+        The connectors in this version. Only one instance of a given connector can be added to a connector definition version at a time.
+
+        Type: List
+        Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-greengrass-connectordefinition-connectordefinitionversion.html#cfn-greengrass-connectordefinition-connectordefinitionversion-connectors
+        ItemType: Connector
+        UpdateType: Immutable
 
     .FUNCTIONALITY
         Vaporshell

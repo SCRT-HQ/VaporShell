@@ -10,18 +10,20 @@ function Add-VSGlueCrawlerTargets {
         http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-glue-crawler-targets.html
 
     .PARAMETER S3Targets
-		Type: List    
-		Required: False    
-		Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-glue-crawler-targets.html#cfn-glue-crawler-targets-s3targets    
-		ItemType: S3Target    
-		UpdateType: Mutable    
+        Specifies Amazon Simple Storage Service Amazon S3 targets.
+
+        Type: List
+        Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-glue-crawler-targets.html#cfn-glue-crawler-targets-s3targets
+        ItemType: S3Target
+        UpdateType: Mutable
 
     .PARAMETER JdbcTargets
-		Type: List    
-		Required: False    
-		Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-glue-crawler-targets.html#cfn-glue-crawler-targets-jdbctargets    
-		ItemType: JdbcTarget    
-		UpdateType: Mutable    
+        Specifies JDBC targets.
+
+        Type: List
+        Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-glue-crawler-targets.html#cfn-glue-crawler-targets-jdbctargets
+        ItemType: JdbcTarget
+        UpdateType: Mutable
 
     .FUNCTIONALITY
         Vaporshell

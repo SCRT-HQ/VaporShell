@@ -10,24 +10,27 @@ function Add-VSECSTaskDefinitionDevice {
         http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ecs-taskdefinition-device.html
 
     .PARAMETER ContainerPath
-		Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ecs-taskdefinition-device.html#cfn-ecs-taskdefinition-device-containerpath    
-		PrimitiveType: String    
-		Required: False    
-		UpdateType: Immutable    
+        The path inside the container at which to expose the host device.
+
+        Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ecs-taskdefinition-device.html#cfn-ecs-taskdefinition-device-containerpath
+        PrimitiveType: String
+        UpdateType: Immutable
 
     .PARAMETER HostPath
-		Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ecs-taskdefinition-device.html#cfn-ecs-taskdefinition-device-hostpath    
-		PrimitiveType: String    
-		Required: True    
-		UpdateType: Immutable    
+        The path for the device on the host container instance.
+
+        Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ecs-taskdefinition-device.html#cfn-ecs-taskdefinition-device-hostpath
+        PrimitiveType: String
+        UpdateType: Immutable
 
     .PARAMETER Permissions
-		Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ecs-taskdefinition-device.html#cfn-ecs-taskdefinition-device-permissions    
-		DuplicatesAllowed: False    
-		PrimitiveItemType: String    
-		Required: False    
-		Type: List    
-		UpdateType: Immutable    
+        The explicit permissions to provide to the container for the device. By default, the container has permissions for read, write, and mknod for the device.
+
+        Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ecs-taskdefinition-device.html#cfn-ecs-taskdefinition-device-permissions
+        DuplicatesAllowed: False
+        PrimitiveItemType: String
+        Type: List
+        UpdateType: Immutable
 
     .FUNCTIONALITY
         Vaporshell

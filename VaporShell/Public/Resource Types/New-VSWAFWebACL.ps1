@@ -13,30 +13,34 @@ function New-VSWAFWebACL {
         The logical ID must be alphanumeric (A-Za-z0-9) and unique within the template. Use the logical name to reference the resource in other parts of the template. For example, if you want to map an Amazon Elastic Block Store volume to an Amazon EC2 instance, you reference the logical IDs to associate the block stores with the instance.
 
     .PARAMETER DefaultAction
-		Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-waf-webacl.html#cfn-waf-webacl-defaultaction    
-		Required: True    
-		Type: WafAction    
-		UpdateType: Mutable    
+        The action to perform if none of the Rules contained in the WebACL match. The action is specified by the WafAction object.
+
+        Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-waf-webacl.html#cfn-waf-webacl-defaultaction
+        Type: WafAction
+        UpdateType: Mutable
 
     .PARAMETER MetricName
-		Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-waf-webacl.html#cfn-waf-webacl-metricname    
-		PrimitiveType: String    
-		Required: True    
-		UpdateType: Immutable    
+        A friendly name or description for the metrics for this WebACL. The name can contain only alphanumeric characters A-Z, a-z, 0-9, with maximum length 128 and minimum length one. It can't contain whitespace or metric names reserved for AWS WAF, including "All" and "Default_Action." You can't change MetricName after you create the WebACL.
+
+        Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-waf-webacl.html#cfn-waf-webacl-metricname
+        PrimitiveType: String
+        UpdateType: Immutable
 
     .PARAMETER Name
-		Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-waf-webacl.html#cfn-waf-webacl-name    
-		PrimitiveType: String    
-		Required: True    
-		UpdateType: Immutable    
+        A friendly name or description of the WebACL. You can't change the name of a WebACL after you create it.
+
+        Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-waf-webacl.html#cfn-waf-webacl-name
+        PrimitiveType: String
+        UpdateType: Immutable
 
     .PARAMETER Rules
-		Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-waf-webacl.html#cfn-waf-webacl-rules    
-		DuplicatesAllowed: False    
-		ItemType: ActivatedRule    
-		Required: False    
-		Type: List    
-		UpdateType: Mutable    
+        An array that contains the action for each Rule in a WebACL, the priority of the Rule, and the ID of the Rule.
+
+        Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-waf-webacl.html#cfn-waf-webacl-rules
+        DuplicatesAllowed: False
+        ItemType: ActivatedRule
+        Type: List
+        UpdateType: Mutable
 
     .PARAMETER DeletionPolicy
         With the DeletionPolicy attribute you can preserve or (in some cases) backup a resource when its stack is deleted. You specify a DeletionPolicy attribute for each resource that you want to control. If a resource has no DeletionPolicy attribute, AWS CloudFormation deletes the resource by default.
