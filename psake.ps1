@@ -26,8 +26,7 @@ Properties {
     }
 }
 
-#Task Default -Depends Init,Test,Build,Deploy
-task default -depends Pester
+task default -depends Import
 
 task Init {
     Set-Location $ProjectRoot
@@ -58,7 +57,7 @@ task Clean -depends Update {
     "    Cleaned previous output directory [$outputDir]"
 } -description 'Cleans module output directory'
 
-task Compile -depends Clean {
+task Build -depends Clean {
     $functionsToExport = @()
     New-Item -Path $outputModDir -ItemType Directory -ErrorAction SilentlyContinue > $null
     New-Item -Path $outputModVerDir -ItemType Directory -ErrorAction SilentlyContinue > $null
@@ -183,7 +182,7 @@ Export-ModuleMember -Function (Get-Command -Module VaporShell.DSL).Name -Variabl
     Get-ChildItem $outputModVerDir | Format-Table -Autosize
 } -description 'Compiles module from source'
 
-Task Import -Depends Compile {
+Task Import -Depends Build {
     '    Testing import of compiled module'
     Import-Module (Join-Path $outputModVerDir "$($env:BHProjectName).psd1")
 } -description 'Imports the newly compiled module'
@@ -240,11 +239,11 @@ $pesterScriptBlock = {
     $env:PSModulePath = $origModulePath
 }
 
-task Pester -Depends Import $pesterScriptBlock -description 'Run Pester tests'
+task Full -Depends Import $pesterScriptBlock -description 'Build module and run Pester tests'
 
-task PesterOnly -Depends Init $pesterScriptBlock -description 'Run Pester tests only (no Clean/Compile)'
+task Test -Depends Init $pesterScriptBlock -description 'Run Pester tests only (expects Build to be done previously)'
 
-task Analyze -Depends Pester {
+task Analyze -Depends Test {
     $analysis = Invoke-ScriptAnalyzer -Path "$PSScriptRoot\$($env:BHProjectName)" -Recurse -Verbose:$false
     $errors = $analysis | Where-Object {$_.Severity -eq 'Error'}
     $warnings = $analysis | Where-Object {$_.Severity -eq 'Warning'}

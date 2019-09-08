@@ -46,7 +46,7 @@ jobs:
       artifactName: BuildOutput
       downloadPath: '$(Build.SourcesDirectory)'
 
-  - powershell: . ./build.ps1 -Task PesterOnly
+  - powershell: . ./build.ps1 -Task Test
     displayName: Test Module
 
   - task: PublishTestResults@2
@@ -72,7 +72,7 @@ jobs:
       artifactName: BuildOutput
       downloadPath: '$(Build.SourcesDirectory)'
 
-  - powershell: . ./build.ps1 -Task PesterOnly
+  - powershell: . ./build.ps1 -Task Test
     displayName: Test Module
 
   - task: PublishTestResults@2
@@ -98,7 +98,7 @@ jobs:
       artifactName: BuildOutput
       downloadPath: '$(Build.SourcesDirectory)'
 
-  - powershell: . ./build.ps1 -Task PesterOnly
+  - powershell: . ./build.ps1 -Task Test
     displayName: Test Module
 
   - task: PublishTestResults@2
@@ -126,7 +126,7 @@ jobs:
 
   - powershell: |
       $Env:Path = [Environment]::GetEnvironmentVariable('Path',[EnvironmentVariableTarget]::Machine)
-      pwsh -command ". ./build.ps1 -Task PesterOnly"
+      pwsh -command ". ./build.ps1 -Task Test"
     displayName: Test Module
 
   - task: PublishTestResults@2
