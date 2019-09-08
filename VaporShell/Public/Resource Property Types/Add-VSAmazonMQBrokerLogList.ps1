@@ -10,16 +10,18 @@ function Add-VSAmazonMQBrokerLogList {
         http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-amazonmq-broker-loglist.html
 
     .PARAMETER Audit
-		Required: False    
-		Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-amazonmq-broker-loglist.html#cfn-amazonmq-broker-loglist-audit    
-		PrimitiveType: Boolean    
-		UpdateType: Mutable    
+        Enables audit logging. Every user management action made using JMX or the ActiveMQ Web Console is logged.
+
+        Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-amazonmq-broker-loglist.html#cfn-amazonmq-broker-loglist-audit
+        PrimitiveType: Boolean
+        UpdateType: Mutable
 
     .PARAMETER General
-		Required: False    
-		Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-amazonmq-broker-loglist.html#cfn-amazonmq-broker-loglist-general    
-		PrimitiveType: Boolean    
-		UpdateType: Mutable    
+        Enables general logging.
+
+        Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-amazonmq-broker-loglist.html#cfn-amazonmq-broker-loglist-general
+        PrimitiveType: Boolean
+        UpdateType: Mutable
 
     .FUNCTIONALITY
         Vaporshell

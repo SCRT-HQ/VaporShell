@@ -10,18 +10,20 @@ function Add-VSEC2SpotFleetLaunchTemplateConfig {
         http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-spotfleet-launchtemplateconfig.html
 
     .PARAMETER LaunchTemplateSpecification
-		Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-spotfleet-launchtemplateconfig.html#cfn-ec2-spotfleet-launchtemplateconfig-launchtemplatespecification    
-		Required: False    
-		Type: FleetLaunchTemplateSpecification    
-		UpdateType: Mutable    
+        The launch template.
+
+        Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-spotfleet-launchtemplateconfig.html#cfn-ec2-spotfleet-launchtemplateconfig-launchtemplatespecification
+        Type: FleetLaunchTemplateSpecification
+        UpdateType: Mutable
 
     .PARAMETER Overrides
-		Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-spotfleet-launchtemplateconfig.html#cfn-ec2-spotfleet-launchtemplateconfig-overrides    
-		DuplicatesAllowed: False    
-		ItemType: LaunchTemplateOverrides    
-		Required: False    
-		Type: List    
-		UpdateType: Mutable    
+        Any parameters that you specify override the same parameters in the launch template.
+
+        Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-spotfleet-launchtemplateconfig.html#cfn-ec2-spotfleet-launchtemplateconfig-overrides
+        DuplicatesAllowed: False
+        ItemType: LaunchTemplateOverrides
+        Type: List
+        UpdateType: Mutable
 
     .FUNCTIONALITY
         Vaporshell

@@ -10,46 +10,53 @@ function Add-VSElasticLoadBalancingV2ListenerAction {
         http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-elasticloadbalancingv2-listener-defaultactions.html
 
     .PARAMETER AuthenticateCognitoConfig
-		Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-elasticloadbalancingv2-listener-defaultactions.html#cfn-elasticloadbalancingv2-listener-action-authenticatecognitoconfig    
-		Required: False    
-		Type: AuthenticateCognitoConfig    
-		UpdateType: Mutable    
+        HTTPS listeners] Information for using Amazon Cognito to authenticate users. Specify only when Type is authenticate-cognito.
+
+        Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-elasticloadbalancingv2-listener-defaultactions.html#cfn-elasticloadbalancingv2-listener-action-authenticatecognitoconfig
+        Type: AuthenticateCognitoConfig
+        UpdateType: Mutable
 
     .PARAMETER AuthenticateOidcConfig
-		Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-elasticloadbalancingv2-listener-defaultactions.html#cfn-elasticloadbalancingv2-listener-action-authenticateoidcconfig    
-		Required: False    
-		Type: AuthenticateOidcConfig    
-		UpdateType: Mutable    
+        HTTPS listeners] Information about an identity provider that is compliant with OpenID Connect OIDC. Specify only when Type is authenticate-oidc.
+
+        Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-elasticloadbalancingv2-listener-defaultactions.html#cfn-elasticloadbalancingv2-listener-action-authenticateoidcconfig
+        Type: AuthenticateOidcConfig
+        UpdateType: Mutable
 
     .PARAMETER FixedResponseConfig
-		Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-elasticloadbalancingv2-listener-defaultactions.html#cfn-elasticloadbalancingv2-listener-action-fixedresponseconfig    
-		Required: False    
-		Type: FixedResponseConfig    
-		UpdateType: Mutable    
+        Application Load Balancer] Information for creating an action that returns a custom HTTP response. Specify only when Type is fixed-response.
+
+        Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-elasticloadbalancingv2-listener-defaultactions.html#cfn-elasticloadbalancingv2-listener-action-fixedresponseconfig
+        Type: FixedResponseConfig
+        UpdateType: Mutable
 
     .PARAMETER Order
-		Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-elasticloadbalancingv2-listener-defaultactions.html#cfn-elasticloadbalancingv2-listener-action-order    
-		PrimitiveType: Integer    
-		Required: False    
-		UpdateType: Mutable    
+        The order for the action. This value is required for rules with multiple actions. The action with the lowest value for order is performed first. The final action to be performed must be a forward or a fixed-response action.
+
+        Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-elasticloadbalancingv2-listener-defaultactions.html#cfn-elasticloadbalancingv2-listener-action-order
+        PrimitiveType: Integer
+        UpdateType: Mutable
 
     .PARAMETER RedirectConfig
-		Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-elasticloadbalancingv2-listener-defaultactions.html#cfn-elasticloadbalancingv2-listener-action-redirectconfig    
-		Required: False    
-		Type: RedirectConfig    
-		UpdateType: Mutable    
+        Application Load Balancer] Information for creating a redirect action. Specify only when Type is redirect.
+
+        Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-elasticloadbalancingv2-listener-defaultactions.html#cfn-elasticloadbalancingv2-listener-action-redirectconfig
+        Type: RedirectConfig
+        UpdateType: Mutable
 
     .PARAMETER TargetGroupArn
-		Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-elasticloadbalancingv2-listener-defaultactions.html#cfn-elasticloadbalancingv2-listener-defaultactions-targetgrouparn    
-		PrimitiveType: String    
-		Required: False    
-		UpdateType: Mutable    
+        The Amazon Resource Name ARN of the target group. Specify only when Type is forward.
+
+        Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-elasticloadbalancingv2-listener-defaultactions.html#cfn-elasticloadbalancingv2-listener-defaultactions-targetgrouparn
+        PrimitiveType: String
+        UpdateType: Mutable
 
     .PARAMETER Type
-		Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-elasticloadbalancingv2-listener-defaultactions.html#cfn-elasticloadbalancingv2-listener-defaultactions-type    
-		PrimitiveType: String    
-		Required: True    
-		UpdateType: Mutable    
+        The type of action. Each rule must include exactly one of the following types of actions: forward, fixed-response, or redirect.
+
+        Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-elasticloadbalancingv2-listener-defaultactions.html#cfn-elasticloadbalancingv2-listener-defaultactions-type
+        PrimitiveType: String
+        UpdateType: Mutable
 
     .FUNCTIONALITY
         Vaporshell

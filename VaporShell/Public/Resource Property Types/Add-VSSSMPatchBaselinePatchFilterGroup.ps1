@@ -10,11 +10,12 @@ function Add-VSSSMPatchBaselinePatchFilterGroup {
         http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ssm-patchbaseline-patchfiltergroup.html
 
     .PARAMETER PatchFilters
-		Type: List    
-		Required: False    
-		Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ssm-patchbaseline-patchfiltergroup.html#cfn-ssm-patchbaseline-patchfiltergroup-patchfilters    
-		ItemType: PatchFilter    
-		UpdateType: Mutable    
+        The set of patch filters that make up the group.
+
+        Type: List
+        Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ssm-patchbaseline-patchfiltergroup.html#cfn-ssm-patchbaseline-patchfiltergroup-patchfilters
+        ItemType: PatchFilter
+        UpdateType: Mutable
 
     .FUNCTIONALITY
         Vaporshell

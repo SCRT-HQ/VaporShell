@@ -10,16 +10,25 @@ function Add-VSAppMeshRouteRouteSpec {
         http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-appmesh-route-routespec.html
 
     .PARAMETER HttpRoute
-		Type: HttpRoute    
-		Required: False    
-		Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-appmesh-route-routespec.html#cfn-appmesh-route-routespec-httproute    
-		UpdateType: Mutable    
+        The HTTP routing information for the route.
+
+        Type: HttpRoute
+        Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-appmesh-route-routespec.html#cfn-appmesh-route-routespec-httproute
+        UpdateType: Mutable
+
+    .PARAMETER Priority
+        *Update requires*: No interruption: https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt
+
+        Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-appmesh-route-routespec.html#cfn-appmesh-route-routespec-priority
+        PrimitiveType: Integer
+        UpdateType: Mutable
 
     .PARAMETER TcpRoute
-		Type: TcpRoute    
-		Required: False    
-		Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-appmesh-route-routespec.html#cfn-appmesh-route-routespec-tcproute    
-		UpdateType: Mutable    
+        The TCP routing information for the route.
+
+        Type: TcpRoute
+        Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-appmesh-route-routespec.html#cfn-appmesh-route-routespec-tcproute
+        UpdateType: Mutable
 
     .FUNCTIONALITY
         Vaporshell
@@ -30,6 +39,9 @@ function Add-VSAppMeshRouteRouteSpec {
     (
         [parameter(Mandatory = $false)]
         $HttpRoute,
+        [parameter(Mandatory = $false)]
+        [Int]
+        $Priority,
         [parameter(Mandatory = $false)]
         $TcpRoute
     )

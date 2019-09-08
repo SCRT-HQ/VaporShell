@@ -10,16 +10,18 @@ function Add-VSBudgetsBudgetSpend {
         http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-budgets-budget-spend.html
 
     .PARAMETER Amount
-		Required: True    
-		Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-budgets-budget-spend.html#cfn-budgets-budget-spend-amount    
-		PrimitiveType: Double    
-		UpdateType: Mutable    
+        The cost or usage amount that is associated with a budget forecast, actual spend, or budget threshold.
+
+        Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-budgets-budget-spend.html#cfn-budgets-budget-spend-amount
+        PrimitiveType: Double
+        UpdateType: Mutable
 
     .PARAMETER Unit
-		Required: True    
-		Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-budgets-budget-spend.html#cfn-budgets-budget-spend-unit    
-		PrimitiveType: String    
-		UpdateType: Mutable    
+        The unit of measurement that is used for the budget forecast, actual spend, or budget threshold, such as dollars or GB.
+
+        Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-budgets-budget-spend.html#cfn-budgets-budget-spend-unit
+        PrimitiveType: String
+        UpdateType: Mutable
 
     .FUNCTIONALITY
         Vaporshell

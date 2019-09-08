@@ -10,11 +10,12 @@ function Add-VSCognitoIdentityPoolRoleAttachmentRulesConfigurationType {
         http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-cognito-identitypoolroleattachment-rulesconfigurationtype.html
 
     .PARAMETER Rules
-		Type: List    
-		Required: True    
-		Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-cognito-identitypoolroleattachment-rulesconfigurationtype.html#cfn-cognito-identitypoolroleattachment-rulesconfigurationtype-rules    
-		ItemType: MappingRule    
-		UpdateType: Mutable    
+        A list of rules. You can specify up to 25 rules per identity provider.
+
+        Type: List
+        Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-cognito-identitypoolroleattachment-rulesconfigurationtype.html#cfn-cognito-identitypoolroleattachment-rulesconfigurationtype-rules
+        ItemType: MappingRule
+        UpdateType: Mutable
 
     .FUNCTIONALITY
         Vaporshell

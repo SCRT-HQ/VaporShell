@@ -10,10 +10,12 @@ function Add-VSSecretsManagerRotationScheduleRotationRules {
         http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-secretsmanager-rotationschedule-rotationrules.html
 
     .PARAMETER AutomaticallyAfterDays
-		Required: False    
-		Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-secretsmanager-rotationschedule-rotationrules.html#cfn-secretsmanager-rotationschedule-rotationrules-automaticallyafterdays    
-		PrimitiveType: Integer    
-		UpdateType: Mutable    
+        Specifies the number of days after the previous rotation before Secrets Manager triggers the next automatic rotation.
+You can specify a minimum value of 1 and a maximum value of 1000.
+
+        Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-secretsmanager-rotationschedule-rotationrules.html#cfn-secretsmanager-rotationschedule-rotationrules-automaticallyafterdays
+        PrimitiveType: Integer
+        UpdateType: Mutable
 
     .FUNCTIONALITY
         Vaporshell

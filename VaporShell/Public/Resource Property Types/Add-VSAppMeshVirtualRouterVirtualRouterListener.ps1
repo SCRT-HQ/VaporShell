@@ -10,10 +10,11 @@ function Add-VSAppMeshVirtualRouterVirtualRouterListener {
         http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-appmesh-virtualrouter-virtualrouterlistener.html
 
     .PARAMETER PortMapping
-		Type: PortMapping    
-		Required: True    
-		Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-appmesh-virtualrouter-virtualrouterlistener.html#cfn-appmesh-virtualrouter-virtualrouterlistener-portmapping    
-		UpdateType: Mutable    
+        The port mapping information for the listener.
+
+        Type: PortMapping
+        Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-appmesh-virtualrouter-virtualrouterlistener.html#cfn-appmesh-virtualrouter-virtualrouterlistener-portmapping
+        UpdateType: Mutable
 
     .FUNCTIONALITY
         Vaporshell

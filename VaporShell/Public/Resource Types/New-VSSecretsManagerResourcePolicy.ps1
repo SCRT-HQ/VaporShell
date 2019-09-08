@@ -13,16 +13,19 @@ function New-VSSecretsManagerResourcePolicy {
         The logical ID must be alphanumeric (A-Za-z0-9) and unique within the template. Use the logical name to reference the resource in other parts of the template. For example, if you want to map an Amazon Elastic Block Store volume to an Amazon EC2 instance, you reference the logical IDs to associate the block stores with the instance.
 
     .PARAMETER SecretId
-		Required: True    
-		Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-secretsmanager-resourcepolicy.html#cfn-secretsmanager-resourcepolicy-secretid    
-		PrimitiveType: String    
-		UpdateType: Immutable    
+        Specifies the Amazon Resource Name ARN or the friendly name of the secret that you want to attach a resource-based permissions policy to.
+If you use this property to change the SecretId for an existing resource-based policy, it removes the policy from the original secret, and then attaches the policy to the secret with the specified SecretId. This results in changing the permissions for two secrets.
+
+        Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-secretsmanager-resourcepolicy.html#cfn-secretsmanager-resourcepolicy-secretid
+        PrimitiveType: String
+        UpdateType: Immutable
 
     .PARAMETER ResourcePolicy
-		Required: True    
-		Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-secretsmanager-resourcepolicy.html#cfn-secretsmanager-resourcepolicy-resourcepolicy    
-		PrimitiveType: Json    
-		UpdateType: Mutable    
+        Specifies a JSON object that's constructed according to the grammar and syntax for a resource-based policy. The policy identifies who can access or manage this secret and its versions. For information on how to format a JSON object as a parameter for this resource type, see Using Resource-based Policies for Secrets Manager: https://docs.aws.amazon.com/secretsmanager/latest/UserGuide/auth-and-access-resource-based-policies.htmlin the AWS Secrets Manager User Guide. Those same rules apply here.
+
+        Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-secretsmanager-resourcepolicy.html#cfn-secretsmanager-resourcepolicy-resourcepolicy
+        PrimitiveType: Json
+        UpdateType: Mutable
 
     .PARAMETER DeletionPolicy
         With the DeletionPolicy attribute you can preserve or (in some cases) backup a resource when its stack is deleted. You specify a DeletionPolicy attribute for each resource that you want to control. If a resource has no DeletionPolicy attribute, AWS CloudFormation deletes the resource by default.

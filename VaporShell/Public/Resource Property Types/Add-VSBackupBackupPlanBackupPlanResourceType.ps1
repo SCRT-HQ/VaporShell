@@ -10,17 +10,19 @@ function Add-VSBackupBackupPlanBackupPlanResourceType {
         http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-backup-backupplan-backupplanresourcetype.html
 
     .PARAMETER BackupPlanName
-		Required: True    
-		Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-backup-backupplan-backupplanresourcetype.html#cfn-backup-backupplan-backupplanresourcetype-backupplanname    
-		PrimitiveType: String    
-		UpdateType: Mutable    
+        The display name of a backup plan.
+
+        Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-backup-backupplan-backupplanresourcetype.html#cfn-backup-backupplan-backupplanresourcetype-backupplanname
+        PrimitiveType: String
+        UpdateType: Mutable
 
     .PARAMETER BackupPlanRule
-		Type: List    
-		Required: True    
-		Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-backup-backupplan-backupplanresourcetype.html#cfn-backup-backupplan-backupplanresourcetype-backupplanrule    
-		ItemType: BackupRuleResourceType    
-		UpdateType: Mutable    
+        An array of BackupRule objects, each of which specifies a scheduled task that is used to back up a selection of resources.
+
+        Type: List
+        Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-backup-backupplan-backupplanresourcetype.html#cfn-backup-backupplan-backupplanresourcetype-backupplanrule
+        ItemType: BackupRuleResourceType
+        UpdateType: Mutable
 
     .FUNCTIONALITY
         Vaporshell

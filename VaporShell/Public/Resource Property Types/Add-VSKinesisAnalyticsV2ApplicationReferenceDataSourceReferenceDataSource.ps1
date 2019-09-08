@@ -10,22 +10,25 @@ function Add-VSKinesisAnalyticsV2ApplicationReferenceDataSourceReferenceDataSour
         http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-kinesisanalyticsv2-applicationreferencedatasource-referencedatasource.html
 
     .PARAMETER ReferenceSchema
-		Type: ReferenceSchema    
-		Required: True    
-		Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-kinesisanalyticsv2-applicationreferencedatasource-referencedatasource.html#cfn-kinesisanalyticsv2-applicationreferencedatasource-referencedatasource-referenceschema    
-		UpdateType: Mutable    
+        Describes the format of the data in the streaming source, and how each data element maps to corresponding columns created in the in-application stream.
+
+        Type: ReferenceSchema
+        Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-kinesisanalyticsv2-applicationreferencedatasource-referencedatasource.html#cfn-kinesisanalyticsv2-applicationreferencedatasource-referencedatasource-referenceschema
+        UpdateType: Mutable
 
     .PARAMETER TableName
-		Required: False    
-		Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-kinesisanalyticsv2-applicationreferencedatasource-referencedatasource.html#cfn-kinesisanalyticsv2-applicationreferencedatasource-referencedatasource-tablename    
-		PrimitiveType: String    
-		UpdateType: Immutable    
+        The name of the in-application table to create.
+
+        Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-kinesisanalyticsv2-applicationreferencedatasource-referencedatasource.html#cfn-kinesisanalyticsv2-applicationreferencedatasource-referencedatasource-tablename
+        PrimitiveType: String
+        UpdateType: Immutable
 
     .PARAMETER S3ReferenceDataSource
-		Type: S3ReferenceDataSource    
-		Required: False    
-		Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-kinesisanalyticsv2-applicationreferencedatasource-referencedatasource.html#cfn-kinesisanalyticsv2-applicationreferencedatasource-referencedatasource-s3referencedatasource    
-		UpdateType: Mutable    
+        Identifies the S3 bucket and object that contains the reference data. A Kinesis Data Analytics application loads reference data only once. If the data changes, you call the UpdateApplication: https://docs.aws.amazon.com/kinesisanalytics/latest/apiv2/API_UpdateApplication.html operation to trigger reloading of data into your application.
+
+        Type: S3ReferenceDataSource
+        Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-kinesisanalyticsv2-applicationreferencedatasource-referencedatasource.html#cfn-kinesisanalyticsv2-applicationreferencedatasource-referencedatasource-s3referencedatasource
+        UpdateType: Mutable
 
     .FUNCTIONALITY
         Vaporshell

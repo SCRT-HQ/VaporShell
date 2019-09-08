@@ -10,24 +10,28 @@ function Add-VSConfigConfigRuleSource {
         http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-config-configrule-source.html
 
     .PARAMETER Owner
-		Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-config-configrule-source.html#cfn-config-configrule-source-owner    
-		PrimitiveType: String    
-		Required: True    
-		UpdateType: Mutable    
+        Indicates whether AWS or the customer owns and manages the AWS Config rule.
+
+        Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-config-configrule-source.html#cfn-config-configrule-source-owner
+        PrimitiveType: String
+        UpdateType: Mutable
 
     .PARAMETER SourceDetails
-		Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-config-configrule-source.html#cfn-config-configrule-source-sourcedetails    
-		DuplicatesAllowed: False    
-		ItemType: SourceDetail    
-		Required: False    
-		Type: List    
-		UpdateType: Mutable    
+        Provides the source and type of the event that causes AWS Config to evaluate your AWS resources.
+
+        Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-config-configrule-source.html#cfn-config-configrule-source-sourcedetails
+        DuplicatesAllowed: False
+        ItemType: SourceDetail
+        Type: List
+        UpdateType: Mutable
 
     .PARAMETER SourceIdentifier
-		Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-config-configrule-source.html#cfn-config-configrule-source-sourceidentifier    
-		PrimitiveType: String    
-		Required: True    
-		UpdateType: Mutable    
+        For AWS Config managed rules, a predefined identifier from a list. For example, IAM_PASSWORD_POLICY is a managed rule. To reference a managed rule, see Using AWS Managed Config Rules: https://docs.aws.amazon.com/config/latest/developerguide/evaluate-config_use-managed-rules.html.
+For custom rules, the identifier is the Amazon Resource Name ARN of the rule's AWS Lambda function, such as arn:aws:lambda:us-east-2:123456789012:function:custom_rule_name.
+
+        Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-config-configrule-source.html#cfn-config-configrule-source-sourceidentifier
+        PrimitiveType: String
+        UpdateType: Mutable
 
     .FUNCTIONALITY
         Vaporshell

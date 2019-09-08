@@ -10,16 +10,18 @@ function Add-VSEC2SpotFleetLoadBalancersConfig {
         http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-spotfleet-loadbalancersconfig.html
 
     .PARAMETER ClassicLoadBalancersConfig
-		Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-spotfleet-loadbalancersconfig.html#cfn-ec2-spotfleet-loadbalancersconfig-classicloadbalancersconfig    
-		Required: False    
-		Type: ClassicLoadBalancersConfig    
-		UpdateType: Mutable    
+        The Classic Load Balancers.
+
+        Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-spotfleet-loadbalancersconfig.html#cfn-ec2-spotfleet-loadbalancersconfig-classicloadbalancersconfig
+        Type: ClassicLoadBalancersConfig
+        UpdateType: Mutable
 
     .PARAMETER TargetGroupsConfig
-		Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-spotfleet-loadbalancersconfig.html#cfn-ec2-spotfleet-loadbalancersconfig-targetgroupsconfig    
-		Required: False    
-		Type: TargetGroupsConfig    
-		UpdateType: Mutable    
+        The target groups.
+
+        Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-spotfleet-loadbalancersconfig.html#cfn-ec2-spotfleet-loadbalancersconfig-targetgroupsconfig
+        Type: TargetGroupsConfig
+        UpdateType: Mutable
 
     .FUNCTIONALITY
         Vaporshell

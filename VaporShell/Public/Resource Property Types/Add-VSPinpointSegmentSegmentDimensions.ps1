@@ -10,40 +10,46 @@ function Add-VSPinpointSegmentSegmentDimensions {
         http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-pinpoint-segment-segmentdimensions.html
 
     .PARAMETER Demographic
-		Type: Demographic    
-		Required: False    
-		Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-pinpoint-segment-segmentdimensions.html#cfn-pinpoint-segment-segmentdimensions-demographic    
-		UpdateType: Mutable    
+        The demographic-based criteria, such as device platform, for the segment.
+
+        Type: Demographic
+        Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-pinpoint-segment-segmentdimensions.html#cfn-pinpoint-segment-segmentdimensions-demographic
+        UpdateType: Mutable
 
     .PARAMETER Metrics
-		Required: False    
-		Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-pinpoint-segment-segmentdimensions.html#cfn-pinpoint-segment-segmentdimensions-metrics    
-		PrimitiveType: Json    
-		UpdateType: Mutable    
+        One or more custom metrics to use as criteria for the segment.
+
+        Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-pinpoint-segment-segmentdimensions.html#cfn-pinpoint-segment-segmentdimensions-metrics
+        PrimitiveType: Json
+        UpdateType: Mutable
 
     .PARAMETER Attributes
-		Required: False    
-		Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-pinpoint-segment-segmentdimensions.html#cfn-pinpoint-segment-segmentdimensions-attributes    
-		PrimitiveType: Json    
-		UpdateType: Mutable    
+        One or more custom attributes to use as criteria for the segment.
+
+        Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-pinpoint-segment-segmentdimensions.html#cfn-pinpoint-segment-segmentdimensions-attributes
+        PrimitiveType: Json
+        UpdateType: Mutable
 
     .PARAMETER Behavior
-		Type: Behavior    
-		Required: False    
-		Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-pinpoint-segment-segmentdimensions.html#cfn-pinpoint-segment-segmentdimensions-behavior    
-		UpdateType: Mutable    
+        The behavior-based criteria, such as how recently users have used your app, for the segment.
+
+        Type: Behavior
+        Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-pinpoint-segment-segmentdimensions.html#cfn-pinpoint-segment-segmentdimensions-behavior
+        UpdateType: Mutable
 
     .PARAMETER UserAttributes
-		Required: False    
-		Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-pinpoint-segment-segmentdimensions.html#cfn-pinpoint-segment-segmentdimensions-userattributes    
-		PrimitiveType: Json    
-		UpdateType: Mutable    
+        One or more custom user attributes to use as criteria for the segment.
+
+        Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-pinpoint-segment-segmentdimensions.html#cfn-pinpoint-segment-segmentdimensions-userattributes
+        PrimitiveType: Json
+        UpdateType: Mutable
 
     .PARAMETER Location
-		Type: Location    
-		Required: False    
-		Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-pinpoint-segment-segmentdimensions.html#cfn-pinpoint-segment-segmentdimensions-location    
-		UpdateType: Mutable    
+        The location-based criteria, such as region or GPS coordinates, for the segment.
+
+        Type: Location
+        Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-pinpoint-segment-segmentdimensions.html#cfn-pinpoint-segment-segmentdimensions-location
+        UpdateType: Mutable
 
     .FUNCTIONALITY
         Vaporshell

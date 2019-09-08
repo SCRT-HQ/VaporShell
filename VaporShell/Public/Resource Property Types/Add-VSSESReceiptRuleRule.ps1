@@ -10,42 +10,51 @@ function Add-VSSESReceiptRuleRule {
         http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ses-receiptrule-rule.html
 
     .PARAMETER ScanEnabled
-		Required: False    
-		Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ses-receiptrule-rule.html#cfn-ses-receiptrule-rule-scanenabled    
-		PrimitiveType: Boolean    
-		UpdateType: Mutable    
+        If true, then messages that this receipt rule applies to are scanned for spam and viruses. The default value is false.
+
+        Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ses-receiptrule-rule.html#cfn-ses-receiptrule-rule-scanenabled
+        PrimitiveType: Boolean
+        UpdateType: Mutable
 
     .PARAMETER Recipients
-		PrimitiveItemType: String    
-		Type: List    
-		Required: False    
-		Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ses-receiptrule-rule.html#cfn-ses-receiptrule-rule-recipients    
-		UpdateType: Mutable    
+        Containts the recipient domains and email addresses that the receipt rule applies to. If this field isn't specified, this rule matches all recipients on all verified domains.
+
+        PrimitiveItemType: String
+        Type: List
+        Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ses-receiptrule-rule.html#cfn-ses-receiptrule-rule-recipients
+        UpdateType: Mutable
 
     .PARAMETER Actions
-		Type: List    
-		Required: False    
-		Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ses-receiptrule-rule.html#cfn-ses-receiptrule-rule-actions    
-		ItemType: Action    
-		UpdateType: Mutable    
+        An ordered list of actions to perform on messages that match at least one of the recipient email addresses or domains specified in the receipt rule.
+
+        Type: List
+        Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ses-receiptrule-rule.html#cfn-ses-receiptrule-rule-actions
+        ItemType: Action
+        UpdateType: Mutable
 
     .PARAMETER Enabled
-		Required: False    
-		Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ses-receiptrule-rule.html#cfn-ses-receiptrule-rule-enabled    
-		PrimitiveType: Boolean    
-		UpdateType: Mutable    
+        If true, the receipt rule is active. The default value is false.
+
+        Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ses-receiptrule-rule.html#cfn-ses-receiptrule-rule-enabled
+        PrimitiveType: Boolean
+        UpdateType: Mutable
 
     .PARAMETER Name
-		Required: False    
-		Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ses-receiptrule-rule.html#cfn-ses-receiptrule-rule-name    
-		PrimitiveType: String    
-		UpdateType: Immutable    
+        The name of the receipt rule. The name must:
++ This value can only contain ASCII letters a–z, A–Z, numbers 0–9, underscores _, or dashes -.
++ Start and end with a letter or number.
++ Contain fewer than 64 characters.
+
+        Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ses-receiptrule-rule.html#cfn-ses-receiptrule-rule-name
+        PrimitiveType: String
+        UpdateType: Immutable
 
     .PARAMETER TlsPolicy
-		Required: False    
-		Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ses-receiptrule-rule.html#cfn-ses-receiptrule-rule-tlspolicy    
-		PrimitiveType: String    
-		UpdateType: Mutable    
+        Specifies whether Amazon SES should require that incoming email is delivered over a connection encrypted with Transport Layer Security TLS. If this parameter is set to Require, Amazon SES bounces emails that are not received over TLS. The default is Optional.
+
+        Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ses-receiptrule-rule.html#cfn-ses-receiptrule-rule-tlspolicy
+        PrimitiveType: String
+        UpdateType: Mutable
 
     .FUNCTIONALITY
         Vaporshell

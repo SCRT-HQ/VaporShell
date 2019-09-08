@@ -10,16 +10,18 @@ function Add-VSAppMeshVirtualNodeListener {
         http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-appmesh-virtualnode-listener.html
 
     .PARAMETER HealthCheck
-		Type: HealthCheck    
-		Required: False    
-		Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-appmesh-virtualnode-listener.html#cfn-appmesh-virtualnode-listener-healthcheck    
-		UpdateType: Mutable    
+        The health check information for the listener.
+
+        Type: HealthCheck
+        Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-appmesh-virtualnode-listener.html#cfn-appmesh-virtualnode-listener-healthcheck
+        UpdateType: Mutable
 
     .PARAMETER PortMapping
-		Type: PortMapping    
-		Required: True    
-		Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-appmesh-virtualnode-listener.html#cfn-appmesh-virtualnode-listener-portmapping    
-		UpdateType: Mutable    
+        The port mapping information for the listener.
+
+        Type: PortMapping
+        Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-appmesh-virtualnode-listener.html#cfn-appmesh-virtualnode-listener-portmapping
+        UpdateType: Mutable
 
     .FUNCTIONALITY
         Vaporshell

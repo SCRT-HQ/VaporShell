@@ -13,28 +13,33 @@ function New-VSGluePartition {
         The logical ID must be alphanumeric (A-Za-z0-9) and unique within the template. Use the logical name to reference the resource in other parts of the template. For example, if you want to map an Amazon Elastic Block Store volume to an Amazon EC2 instance, you reference the logical IDs to associate the block stores with the instance.
 
     .PARAMETER TableName
-		Required: True    
-		Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-glue-partition.html#cfn-glue-partition-tablename    
-		PrimitiveType: String    
-		UpdateType: Immutable    
+        The name of the metadata table in which the partition is to be created.
+
+        Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-glue-partition.html#cfn-glue-partition-tablename
+        PrimitiveType: String
+        UpdateType: Immutable
 
     .PARAMETER DatabaseName
-		Required: True    
-		Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-glue-partition.html#cfn-glue-partition-databasename    
-		PrimitiveType: String    
-		UpdateType: Immutable    
+        The name of the catalog database in which to create the partition.
+
+        Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-glue-partition.html#cfn-glue-partition-databasename
+        PrimitiveType: String
+        UpdateType: Immutable
 
     .PARAMETER CatalogId
-		Required: True    
-		Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-glue-partition.html#cfn-glue-partition-catalogid    
-		PrimitiveType: String    
-		UpdateType: Immutable    
+        The AWS account ID of the catalog in which the partion is to be created.
+To specify the account ID, you can use the Ref intrinsic function with the AWS::AccountId pseudo parameter. For example: !Ref AWS::AccountId
+
+        Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-glue-partition.html#cfn-glue-partition-catalogid
+        PrimitiveType: String
+        UpdateType: Immutable
 
     .PARAMETER PartitionInput
-		Type: PartitionInput    
-		Required: True    
-		Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-glue-partition.html#cfn-glue-partition-partitioninput    
-		UpdateType: Mutable    
+        The structure used to create and update a partition.
+
+        Type: PartitionInput
+        Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-glue-partition.html#cfn-glue-partition-partitioninput
+        UpdateType: Mutable
 
     .PARAMETER DeletionPolicy
         With the DeletionPolicy attribute you can preserve or (in some cases) backup a resource when its stack is deleted. You specify a DeletionPolicy attribute for each resource that you want to control. If a resource has no DeletionPolicy attribute, AWS CloudFormation deletes the resource by default.

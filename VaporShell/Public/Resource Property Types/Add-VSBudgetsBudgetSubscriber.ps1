@@ -10,16 +10,19 @@ function Add-VSBudgetsBudgetSubscriber {
         http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-budgets-budget-subscriber.html
 
     .PARAMETER SubscriptionType
-		Required: True    
-		Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-budgets-budget-subscriber.html#cfn-budgets-budget-subscriber-subscriptiontype    
-		PrimitiveType: String    
-		UpdateType: Mutable    
+        The type of notification that AWS sends to a subscriber.
+
+        Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-budgets-budget-subscriber.html#cfn-budgets-budget-subscriber-subscriptiontype
+        PrimitiveType: String
+        UpdateType: Mutable
 
     .PARAMETER Address
-		Required: True    
-		Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-budgets-budget-subscriber.html#cfn-budgets-budget-subscriber-address    
-		PrimitiveType: String    
-		UpdateType: Mutable    
+        The address that AWS sends budget notifications to, either an SNS topic or an email.
+When you create a subscriber, the value of Address can't contain line breaks.
+
+        Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-budgets-budget-subscriber.html#cfn-budgets-budget-subscriber-address
+        PrimitiveType: String
+        UpdateType: Mutable
 
     .FUNCTIONALITY
         Vaporshell

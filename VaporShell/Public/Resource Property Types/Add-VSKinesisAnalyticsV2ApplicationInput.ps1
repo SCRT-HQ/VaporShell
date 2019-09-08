@@ -10,40 +10,47 @@ function Add-VSKinesisAnalyticsV2ApplicationInput {
         http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-kinesisanalyticsv2-application-input.html
 
     .PARAMETER NamePrefix
-		Required: True    
-		Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-kinesisanalyticsv2-application-input.html#cfn-kinesisanalyticsv2-application-input-nameprefix    
-		PrimitiveType: String    
-		UpdateType: Mutable    
+        The name prefix to use when creating an in-application stream. Suppose that you specify a prefix "MyInApplicationStream." Kinesis Data Analytics then creates one or more as per the InputParallelism count you specified in-application streams with the names "MyInApplicationStream_001," "MyInApplicationStream_002," and so on.
+
+        Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-kinesisanalyticsv2-application-input.html#cfn-kinesisanalyticsv2-application-input-nameprefix
+        PrimitiveType: String
+        UpdateType: Mutable
 
     .PARAMETER InputSchema
-		Type: InputSchema    
-		Required: True    
-		Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-kinesisanalyticsv2-application-input.html#cfn-kinesisanalyticsv2-application-input-inputschema    
-		UpdateType: Mutable    
+        Describes the format of the data in the streaming source, and how each data element maps to corresponding columns in the in-application stream that is being created.
+Also used to describe the format of the reference data source.
+
+        Type: InputSchema
+        Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-kinesisanalyticsv2-application-input.html#cfn-kinesisanalyticsv2-application-input-inputschema
+        UpdateType: Mutable
 
     .PARAMETER KinesisStreamsInput
-		Type: KinesisStreamsInput    
-		Required: False    
-		Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-kinesisanalyticsv2-application-input.html#cfn-kinesisanalyticsv2-application-input-kinesisstreamsinput    
-		UpdateType: Mutable    
+        If the streaming source is an Amazon Kinesis data stream, identifies the stream's Amazon Resource Name ARN.
+
+        Type: KinesisStreamsInput
+        Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-kinesisanalyticsv2-application-input.html#cfn-kinesisanalyticsv2-application-input-kinesisstreamsinput
+        UpdateType: Mutable
 
     .PARAMETER KinesisFirehoseInput
-		Type: KinesisFirehoseInput    
-		Required: False    
-		Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-kinesisanalyticsv2-application-input.html#cfn-kinesisanalyticsv2-application-input-kinesisfirehoseinput    
-		UpdateType: Mutable    
+        If the streaming source is an Amazon Kinesis Data Firehose delivery stream, identifies the delivery stream's ARN.
+
+        Type: KinesisFirehoseInput
+        Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-kinesisanalyticsv2-application-input.html#cfn-kinesisanalyticsv2-application-input-kinesisfirehoseinput
+        UpdateType: Mutable
 
     .PARAMETER InputProcessingConfiguration
-		Type: InputProcessingConfiguration    
-		Required: False    
-		Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-kinesisanalyticsv2-application-input.html#cfn-kinesisanalyticsv2-application-input-inputprocessingconfiguration    
-		UpdateType: Mutable    
+        The InputProcessingConfiguration: https://docs.aws.amazon.com/kinesisanalytics/latest/apiv2/API_InputProcessingConfiguration.html for the input. An input processor transforms records as they are received from the stream, before the application's SQL code executes. Currently, the only input processing configuration available is InputLambdaProcessor: https://docs.aws.amazon.com/kinesisanalytics/latest/apiv2/API_InputLambdaProcessor.html.
+
+        Type: InputProcessingConfiguration
+        Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-kinesisanalyticsv2-application-input.html#cfn-kinesisanalyticsv2-application-input-inputprocessingconfiguration
+        UpdateType: Mutable
 
     .PARAMETER InputParallelism
-		Type: InputParallelism    
-		Required: False    
-		Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-kinesisanalyticsv2-application-input.html#cfn-kinesisanalyticsv2-application-input-inputparallelism    
-		UpdateType: Mutable    
+        Describes the number of in-application streams to create.
+
+        Type: InputParallelism
+        Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-kinesisanalyticsv2-application-input.html#cfn-kinesisanalyticsv2-application-input-inputparallelism
+        UpdateType: Mutable
 
     .FUNCTIONALITY
         Vaporshell

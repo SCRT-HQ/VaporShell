@@ -10,12 +10,14 @@ function Add-VSCodeDeployDeploymentGroupOnPremisesTagSet {
         http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-codedeploy-deploymentgroup-onpremisestagset.html
 
     .PARAMETER OnPremisesTagSetList
-		Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-codedeploy-deploymentgroup-onpremisestagset.html#cfn-codedeploy-deploymentgroup-onpremisestagset-onpremisestagsetlist    
-		DuplicatesAllowed: False    
-		ItemType: OnPremisesTagSetListObject    
-		Required: False    
-		Type: List    
-		UpdateType: Mutable    
+        A list that contains other lists of on-premises instance tag groups. For an instance to be included in the deployment group, it must be identified by all of the tag groups in the list.
+Duplicates are not allowed.
+
+        Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-codedeploy-deploymentgroup-onpremisestagset.html#cfn-codedeploy-deploymentgroup-onpremisestagset-onpremisestagsetlist
+        DuplicatesAllowed: False
+        ItemType: OnPremisesTagSetListObject
+        Type: List
+        UpdateType: Mutable
 
     .FUNCTIONALITY
         Vaporshell

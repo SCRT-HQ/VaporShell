@@ -10,64 +10,75 @@ function Add-VSEventsRuleTarget {
         http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-events-rule-target.html
 
     .PARAMETER Arn
-		Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-events-rule-target.html#cfn-events-rule-target-arn    
-		PrimitiveType: String    
-		Required: True    
-		UpdateType: Mutable    
+        The Amazon Resource Name ARN of the target.
+
+        Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-events-rule-target.html#cfn-events-rule-target-arn
+        PrimitiveType: String
+        UpdateType: Mutable
 
     .PARAMETER EcsParameters
-		Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-events-rule-target.html#cfn-events-rule-target-ecsparameters    
-		Required: False    
-		Type: EcsParameters    
-		UpdateType: Mutable    
+        Contains the Amazon ECS task definition and task count to be used, if the event target is an Amazon ECS task. For more information about Amazon ECS tasks, see Task Definitions : https://docs.aws.amazon.com/AmazonECS/latest/developerguide/task_defintions.html in the *Amazon EC2 Container Service Developer Guide*.
+
+        Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-events-rule-target.html#cfn-events-rule-target-ecsparameters
+        Type: EcsParameters
+        UpdateType: Mutable
 
     .PARAMETER Id
-		Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-events-rule-target.html#cfn-events-rule-target-id    
-		PrimitiveType: String    
-		Required: True    
-		UpdateType: Mutable    
+        The ID of the target. It can include alphanumeric characters, periods ., hyphens -, and underscores _.
+
+        Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-events-rule-target.html#cfn-events-rule-target-id
+        PrimitiveType: String
+        UpdateType: Mutable
 
     .PARAMETER Input
-		Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-events-rule-target.html#cfn-events-rule-target-input    
-		PrimitiveType: String    
-		Required: False    
-		UpdateType: Mutable    
+        Valid JSON text passed to the target. If you use this property, nothing from the event text itself is passed to the target.
+
+        Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-events-rule-target.html#cfn-events-rule-target-input
+        PrimitiveType: String
+        UpdateType: Mutable
 
     .PARAMETER InputPath
-		Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-events-rule-target.html#cfn-events-rule-target-inputpath    
-		PrimitiveType: String    
-		Required: False    
-		UpdateType: Mutable    
+        When you don't want to pass the entire matched event, InputPath  describes which part of the event to pass to the target.
+
+        Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-events-rule-target.html#cfn-events-rule-target-inputpath
+        PrimitiveType: String
+        UpdateType: Mutable
 
     .PARAMETER InputTransformer
-		Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-events-rule-target.html#cfn-events-rule-target-inputtransformer    
-		Required: False    
-		Type: InputTransformer    
-		UpdateType: Mutable    
+        Settings to enable you to provide custom input to a target based on certain event data. You can extract one or more key-value pairs from the event and then use that data to send customized input to the target.
+
+        Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-events-rule-target.html#cfn-events-rule-target-inputtransformer
+        Type: InputTransformer
+        UpdateType: Mutable
 
     .PARAMETER KinesisParameters
-		Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-events-rule-target.html#cfn-events-rule-target-kinesisparameters    
-		Required: False    
-		Type: KinesisParameters    
-		UpdateType: Mutable    
+        The custom parameter you can use to control the shard assignment, when the target is a Kinesis data stream. If you do not include this parameter, the default is to use the eventId as the partition key.
+
+        Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-events-rule-target.html#cfn-events-rule-target-kinesisparameters
+        Type: KinesisParameters
+        UpdateType: Mutable
 
     .PARAMETER RoleArn
-		Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-events-rule-target.html#cfn-events-rule-target-rolearn    
-		PrimitiveType: String    
-		Required: False    
-		UpdateType: Mutable    
+        The Amazon Resource Name ARN of the IAM role to be used for this target when the rule is triggered. If one rule triggers multiple targets, you can use a different IAM role for each target.
+
+        Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-events-rule-target.html#cfn-events-rule-target-rolearn
+        PrimitiveType: String
+        UpdateType: Mutable
 
     .PARAMETER RunCommandParameters
-		Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-events-rule-target.html#cfn-events-rule-target-runcommandparameters    
-		Required: False    
-		Type: RunCommandParameters    
-		UpdateType: Mutable    
+        Parameters used when you are using the rule to invoke Amazon EC2 Run Command.
+
+        Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-events-rule-target.html#cfn-events-rule-target-runcommandparameters
+        Type: RunCommandParameters
+        UpdateType: Mutable
 
     .PARAMETER SqsParameters
-		Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-events-rule-target.html#cfn-events-rule-target-sqsparameters    
-		Required: False    
-		Type: SqsParameters    
-		UpdateType: Mutable    
+        Contains the message group ID to use when the target is a FIFO queue.
+If you specify an SQS FIFO queue as a target, the queue must have content-based deduplication enabled.
+
+        Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-events-rule-target.html#cfn-events-rule-target-sqsparameters
+        Type: SqsParameters
+        UpdateType: Mutable
 
     .FUNCTIONALITY
         Vaporshell

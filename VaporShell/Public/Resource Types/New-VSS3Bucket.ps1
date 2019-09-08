@@ -13,120 +13,142 @@ function New-VSS3Bucket {
         The logical ID must be alphanumeric (A-Za-z0-9) and unique within the template. Use the logical name to reference the resource in other parts of the template. For example, if you want to map an Amazon Elastic Block Store volume to an Amazon EC2 instance, you reference the logical IDs to associate the block stores with the instance.
 
     .PARAMETER AccelerateConfiguration
-		Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-s3-bucket.html#cfn-s3-bucket-accelerateconfiguration    
-		Required: False    
-		Type: AccelerateConfiguration    
-		UpdateType: Mutable    
+        Configures the transfer acceleration state for an Amazon S3 bucket. For more information, see Amazon S3 Transfer Acceleration: https://docs.aws.amazon.com/AmazonS3/latest/dev/transfer-acceleration.html in the *Amazon Simple Storage Service Developer Guide*.
+
+        Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-s3-bucket.html#cfn-s3-bucket-accelerateconfiguration
+        Type: AccelerateConfiguration
+        UpdateType: Mutable
 
     .PARAMETER AccessControl
-		Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-s3-bucket.html#cfn-s3-bucket-accesscontrol    
-		PrimitiveType: String    
-		Required: False    
-		UpdateType: Mutable    
+        A canned access control list ACL that grants predefined permissions to the bucket. For more information about canned ACLs, see Canned ACL: https://docs.aws.amazon.com/AmazonS3/latest/dev/acl-overview.html#canned-acl in the *Amazon Simple Storage Service Developer Guide*.
+
+        Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-s3-bucket.html#cfn-s3-bucket-accesscontrol
+        PrimitiveType: String
+        UpdateType: Mutable
 
     .PARAMETER AnalyticsConfigurations
-		Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-s3-bucket.html#cfn-s3-bucket-analyticsconfigurations    
-		DuplicatesAllowed: False    
-		ItemType: AnalyticsConfiguration    
-		Required: False    
-		Type: List    
-		UpdateType: Mutable    
+        Specifies the configuration and any analyses for the analytics filter of an Amazon S3 bucket.
+For more information, see GET Bucket analytics: https://docs.aws.amazon.com/AmazonS3/latest/API/RESTBucketGETAnalyticsConfig.html in the *Amazon Simple Storage Service API Reference*.
+
+        Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-s3-bucket.html#cfn-s3-bucket-analyticsconfigurations
+        DuplicatesAllowed: False
+        ItemType: AnalyticsConfiguration
+        Type: List
+        UpdateType: Mutable
 
     .PARAMETER BucketEncryption
-		Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-s3-bucket.html#cfn-s3-bucket-bucketencryption    
-		Required: False    
-		Type: BucketEncryption    
-		UpdateType: Mutable    
+        Specifies default encryption for a bucket using server-side encryption with Amazon S3-managed keys SSE-S3 or AWS KMS-managed keys SSE-KMS bucket. For information about the Amazon S3 default encryption feature, see  Amazon S3 Default Encryption for S3 Buckets: https://docs.aws.amazon.com/AmazonS3/latest/dev/bucket-encryption.html in the *Amazon Simple Storage Service Developer Guide*.
+
+        Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-s3-bucket.html#cfn-s3-bucket-bucketencryption
+        Type: BucketEncryption
+        UpdateType: Mutable
 
     .PARAMETER BucketName
-		Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-s3-bucket.html#cfn-s3-bucket-name    
-		PrimitiveType: String    
-		Required: False    
-		UpdateType: Immutable    
+        A name for the bucket. If you don't specify a name, AWS CloudFormation generates a unique ID and uses that ID for the bucket name. For more information, see Name Type: https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-name.html. The bucket name must contain only lowercase letters, numbers, periods ., and dashes -.
+If you specify a name, you can't perform updates that require replacement of this resource. You can perform updates that require no or some interruption. If you need to replace the resource, specify a new name.
+
+        Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-s3-bucket.html#cfn-s3-bucket-name
+        PrimitiveType: String
+        UpdateType: Immutable
 
     .PARAMETER CorsConfiguration
-		Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-s3-bucket.html#cfn-s3-bucket-crossoriginconfig    
-		Required: False    
-		Type: CorsConfiguration    
-		UpdateType: Mutable    
+        Describes the cross-origin access configuration for objects in an Amazon S3 bucket. For more information, see Enabling Cross-Origin Resource Sharing: https://docs.aws.amazon.com/AmazonS3/latest/dev/cors.html in the *Amazon Simple Storage Service Developer Guide*.
+
+        Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-s3-bucket.html#cfn-s3-bucket-crossoriginconfig
+        Type: CorsConfiguration
+        UpdateType: Mutable
 
     .PARAMETER InventoryConfigurations
-		Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-s3-bucket.html#cfn-s3-bucket-inventoryconfigurations    
-		DuplicatesAllowed: False    
-		ItemType: InventoryConfiguration    
-		Required: False    
-		Type: List    
-		UpdateType: Mutable    
+        Specifies the inventory configuration for an Amazon S3 bucket. For more information, see GET Bucket inventory: https://docs.aws.amazon.com/AmazonS3/latest/API/RESTBucketGETInventoryConfig.html in the *Amazon Simple Storage Service API Reference*.
+
+        Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-s3-bucket.html#cfn-s3-bucket-inventoryconfigurations
+        DuplicatesAllowed: False
+        ItemType: InventoryConfiguration
+        Type: List
+        UpdateType: Mutable
 
     .PARAMETER LifecycleConfiguration
-		Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-s3-bucket.html#cfn-s3-bucket-lifecycleconfig    
-		Required: False    
-		Type: LifecycleConfiguration    
-		UpdateType: Mutable    
+        Specifies the lifecycle configuration for objects in an Amazon S3 bucket. For more information, see Object Lifecycle Management: https://docs.aws.amazon.com/AmazonS3/latest/dev/object-lifecycle-mgmt.html in the *Amazon Simple Storage Service Developer Guide*.
+
+        Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-s3-bucket.html#cfn-s3-bucket-lifecycleconfig
+        Type: LifecycleConfiguration
+        UpdateType: Mutable
 
     .PARAMETER LoggingConfiguration
-		Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-s3-bucket.html#cfn-s3-bucket-loggingconfig    
-		Required: False    
-		Type: LoggingConfiguration    
-		UpdateType: Mutable    
+        Settings that define where logs are stored.
+
+        Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-s3-bucket.html#cfn-s3-bucket-loggingconfig
+        Type: LoggingConfiguration
+        UpdateType: Mutable
 
     .PARAMETER MetricsConfigurations
-		Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-s3-bucket.html#cfn-s3-bucket-metricsconfigurations    
-		DuplicatesAllowed: False    
-		ItemType: MetricsConfiguration    
-		Required: False    
-		Type: List    
-		UpdateType: Mutable    
+        Specifies a metrics configuration for the CloudWatch request metrics specified by the metrics configuration ID from an Amazon S3 bucket. If you're updating an existing metrics configuration, note that this is a full replacement of the existing metrics configuration. If you don't include the elements you want to keep, they are erased. For more information, see  PUT Bucket metrics: https://docs.aws.amazon.com/AmazonS3/latest/API/RESTBucketPUTMetricConfiguration.html in the *Amazon Simple Storage Service API Reference*.
+
+        Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-s3-bucket.html#cfn-s3-bucket-metricsconfigurations
+        DuplicatesAllowed: False
+        ItemType: MetricsConfiguration
+        Type: List
+        UpdateType: Mutable
 
     .PARAMETER NotificationConfiguration
-		Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-s3-bucket.html#cfn-s3-bucket-notification    
-		Required: False    
-		Type: NotificationConfiguration    
-		UpdateType: Mutable    
+        Configuration that defines how Amazon S3 handles bucket notifications.
+
+        Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-s3-bucket.html#cfn-s3-bucket-notification
+        Type: NotificationConfiguration
+        UpdateType: Mutable
 
     .PARAMETER ObjectLockConfiguration
-		Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-s3-bucket.html#cfn-s3-bucket-objectlockconfiguration    
-		Required: False    
-		Type: ObjectLockConfiguration    
-		UpdateType: Mutable    
+        Places an object lock configuration on the specified bucket. The rule specified in the object lock configuration will be applied by default to every new object placed in the specified bucket.
+
+        Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-s3-bucket.html#cfn-s3-bucket-objectlockconfiguration
+        Type: ObjectLockConfiguration
+        UpdateType: Mutable
 
     .PARAMETER ObjectLockEnabled
-		Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-s3-bucket.html#cfn-s3-bucket-objectlockenabled    
-		PrimitiveType: Boolean    
-		Required: False    
-		UpdateType: Immutable    
+        Indicates whether this bucket has an object lock configuration enabled.
+
+        Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-s3-bucket.html#cfn-s3-bucket-objectlockenabled
+        PrimitiveType: Boolean
+        UpdateType: Immutable
 
     .PARAMETER PublicAccessBlockConfiguration
-		Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-s3-bucket.html#cfn-s3-bucket-publicaccessblockconfiguration    
-		Required: False    
-		Type: PublicAccessBlockConfiguration    
-		UpdateType: Mutable    
+        Configuration that defines how Amazon S3 handles public access.
+
+        Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-s3-bucket.html#cfn-s3-bucket-publicaccessblockconfiguration
+        Type: PublicAccessBlockConfiguration
+        UpdateType: Mutable
 
     .PARAMETER ReplicationConfiguration
-		Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-s3-bucket.html#cfn-s3-bucket-replicationconfiguration    
-		Required: False    
-		Type: ReplicationConfiguration    
-		UpdateType: Mutable    
+        Configuration for replicating objects in an S3 bucket. To enable replication, you must also enable versioning by using the VersioningConfiguration property.
+Amazon S3 can store replicated objects in only one destination bucket. The destination bucket must already exist and be in a different AWS Region than your source bucket.
+
+        Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-s3-bucket.html#cfn-s3-bucket-replicationconfiguration
+        Type: ReplicationConfiguration
+        UpdateType: Mutable
 
     .PARAMETER Tags
-		Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-s3-bucket.html#cfn-s3-bucket-tags    
-		DuplicatesAllowed: True    
-		ItemType: Tag    
-		Required: False    
-		Type: List    
-		UpdateType: Mutable    
+        An arbitrary set of tags key-value pairs for this S3 bucket.
+We recommend limiting the number of tags to seven. Applying more than seven tags prevents the AWS CLI and the AWS CloudFormation console and API actions from listing the tags for the bucket.
+
+        Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-s3-bucket.html#cfn-s3-bucket-tags
+        DuplicatesAllowed: True
+        ItemType: Tag
+        Type: List
+        UpdateType: Mutable
 
     .PARAMETER VersioningConfiguration
-		Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-s3-bucket.html#cfn-s3-bucket-versioning    
-		Required: False    
-		Type: VersioningConfiguration    
-		UpdateType: Mutable    
+        Enables multiple versions of all objects in this bucket. You might enable versioning to prevent objects from being deleted or overwritten by mistake or to archive objects so that you can retrieve previous versions of them.
+
+        Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-s3-bucket.html#cfn-s3-bucket-versioning
+        Type: VersioningConfiguration
+        UpdateType: Mutable
 
     .PARAMETER WebsiteConfiguration
-		Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-s3-bucket.html#cfn-s3-bucket-websiteconfiguration    
-		Required: False    
-		Type: WebsiteConfiguration    
-		UpdateType: Mutable    
+        Information used to configure the bucket as a static website. For more information, see Hosting Websites on Amazon S3: https://docs.aws.amazon.com/AmazonS3/latest/dev/WebsiteHosting.html.
+
+        Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-s3-bucket.html#cfn-s3-bucket-websiteconfiguration
+        Type: WebsiteConfiguration
+        UpdateType: Mutable
 
     .PARAMETER DeletionPolicy
         With the DeletionPolicy attribute you can preserve or (in some cases) backup a resource when its stack is deleted. You specify a DeletionPolicy attribute for each resource that you want to control. If a resource has no DeletionPolicy attribute, AWS CloudFormation deletes the resource by default.

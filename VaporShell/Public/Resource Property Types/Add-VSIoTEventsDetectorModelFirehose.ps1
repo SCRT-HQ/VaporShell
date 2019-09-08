@@ -10,16 +10,18 @@ function Add-VSIoTEventsDetectorModelFirehose {
         http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iotevents-detectormodel-firehose.html
 
     .PARAMETER DeliveryStreamName
-		Required: False    
-		Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iotevents-detectormodel-firehose.html#cfn-iotevents-detectormodel-firehose-deliverystreamname    
-		PrimitiveType: String    
-		UpdateType: Mutable    
+        The name of the Kinesis Data Firehose delivery stream where the data is written.
+
+        Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iotevents-detectormodel-firehose.html#cfn-iotevents-detectormodel-firehose-deliverystreamname
+        PrimitiveType: String
+        UpdateType: Mutable
 
     .PARAMETER Separator
-		Required: False    
-		Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iotevents-detectormodel-firehose.html#cfn-iotevents-detectormodel-firehose-separator    
-		PrimitiveType: String    
-		UpdateType: Mutable    
+        A character separator that is used to separate records written to the Kinesis Data Firehose delivery stream. Valid values are: 'n' newline, 't' tab, 'rn' Windows newline, ',' comma.
+
+        Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iotevents-detectormodel-firehose.html#cfn-iotevents-detectormodel-firehose-separator
+        PrimitiveType: String
+        UpdateType: Mutable
 
     .FUNCTIONALITY
         Vaporshell

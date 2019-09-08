@@ -13,103 +13,153 @@ function New-VSDocDBDBCluster {
         The logical ID must be alphanumeric (A-Za-z0-9) and unique within the template. Use the logical name to reference the resource in other parts of the template. For example, if you want to map an Amazon Elastic Block Store volume to an Amazon EC2 instance, you reference the logical IDs to associate the block stores with the instance.
 
     .PARAMETER StorageEncrypted
-		Required: False    
-		Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-docdb-dbcluster.html#cfn-docdb-dbcluster-storageencrypted    
-		PrimitiveType: Boolean    
-		UpdateType: Immutable    
+        Specifies whether the DB cluster is encrypted.
+
+        Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-docdb-dbcluster.html#cfn-docdb-dbcluster-storageencrypted
+        PrimitiveType: Boolean
+        UpdateType: Immutable
 
     .PARAMETER EngineVersion
-		Required: False    
-		Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-docdb-dbcluster.html#cfn-docdb-dbcluster-engineversion    
-		PrimitiveType: String    
-		UpdateType: Immutable    
+        The version number of the database engine to use.
+
+        Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-docdb-dbcluster.html#cfn-docdb-dbcluster-engineversion
+        PrimitiveType: String
+        UpdateType: Immutable
 
     .PARAMETER KmsKeyId
-		Required: False    
-		Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-docdb-dbcluster.html#cfn-docdb-dbcluster-kmskeyid    
-		PrimitiveType: String    
-		UpdateType: Immutable    
+        The AWS KMS key identifier for an encrypted DB cluster.
+The AWS KMS key identifier is the Amazon Resource Name ARN for the AWS KMS encryption key. If you are creating a DB cluster using the same AWS account that owns the AWS KMS encryption key that is used to encrypt the new DB cluster, you can use the AWS KMS key alias instead of the ARN for the AWS KMS encryption key.
+If an encryption key is not specified in KmsKeyId:
++ If ReplicationSourceIdentifier identifies an encrypted source, then Amazon DocumentDB uses the encryption key that is used to encrypt the source. Otherwise, Amazon DocumentDB uses your default encryption key.
++ If the StorageEncrypted parameter is true and ReplicationSourceIdentifier is not specified, Amazon DocumentDB uses your default encryption key.
+AWS KMS creates the default encryption key for your AWS account. Your AWS account has a different default encryption key for each AWS Region.
+If you create a replica of an encrypted DB cluster in another AWS Region, you must set KmsKeyId to a KMS key ID that is valid in the destination AWS Region. This key is used to encrypt the replica in that AWS Region.
+
+        Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-docdb-dbcluster.html#cfn-docdb-dbcluster-kmskeyid
+        PrimitiveType: String
+        UpdateType: Immutable
 
     .PARAMETER AvailabilityZones
-		PrimitiveItemType: String    
-		Type: List    
-		Required: False    
-		Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-docdb-dbcluster.html#cfn-docdb-dbcluster-availabilityzones    
-		UpdateType: Immutable    
+        A list of Amazon EC2 Availability Zones that instances in the DB cluster can be created in.
+
+        PrimitiveItemType: String
+        Type: List
+        Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-docdb-dbcluster.html#cfn-docdb-dbcluster-availabilityzones
+        UpdateType: Immutable
 
     .PARAMETER SnapshotIdentifier
-		Required: False    
-		Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-docdb-dbcluster.html#cfn-docdb-dbcluster-snapshotidentifier    
-		PrimitiveType: String    
-		UpdateType: Immutable    
+        The identifier for the DB snapshot or DB cluster snapshot to restore from.
+You can use either the name or the Amazon Resource Name ARN to specify a DB cluster snapshot. However, you can use only the ARN to specify a DB snapshot.
+Constraints:
++ Must match the identifier of an existing snapshot.
+
+        Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-docdb-dbcluster.html#cfn-docdb-dbcluster-snapshotidentifier
+        PrimitiveType: String
+        UpdateType: Immutable
 
     .PARAMETER Port
-		Required: False    
-		Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-docdb-dbcluster.html#cfn-docdb-dbcluster-port    
-		PrimitiveType: Integer    
-		UpdateType: Mutable    
+        Specifies the port that the database engine is listening on.
+
+        Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-docdb-dbcluster.html#cfn-docdb-dbcluster-port
+        PrimitiveType: Integer
+        UpdateType: Mutable
 
     .PARAMETER DBClusterIdentifier
-		Required: False    
-		Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-docdb-dbcluster.html#cfn-docdb-dbcluster-dbclusteridentifier    
-		PrimitiveType: String    
-		UpdateType: Immutable    
+        The DB cluster identifier. This parameter is stored as a lowercase string.
+Constraints:
++ Must contain from 1 to 63 letters, numbers, or hyphens.
++ The first character must be a letter.
++ Cannot end with a hyphen or contain two consecutive hyphens.
+Example: my-cluster
+
+        Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-docdb-dbcluster.html#cfn-docdb-dbcluster-dbclusteridentifier
+        PrimitiveType: String
+        UpdateType: Immutable
 
     .PARAMETER PreferredMaintenanceWindow
-		Required: False    
-		Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-docdb-dbcluster.html#cfn-docdb-dbcluster-preferredmaintenancewindow    
-		PrimitiveType: String    
-		UpdateType: Mutable    
+        The weekly time range during which system maintenance can occur, in Universal Coordinated Time UTC.
+Format: ddd:hh24:mi-ddd:hh24:mi
+The default is a 30-minute window selected at random from an 8-hour block of time for each AWS Region, occurring on a random day of the week.
+Valid days: Mon, Tue, Wed, Thu, Fri, Sat, Sun
+Constraints: Minimum 30-minute window.
+
+        Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-docdb-dbcluster.html#cfn-docdb-dbcluster-preferredmaintenancewindow
+        PrimitiveType: String
+        UpdateType: Mutable
 
     .PARAMETER DBSubnetGroupName
-		Required: False    
-		Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-docdb-dbcluster.html#cfn-docdb-dbcluster-dbsubnetgroupname    
-		PrimitiveType: String    
-		UpdateType: Immutable    
+        A DB subnet group to associate with this DB cluster.
+Constraints: Must match the name of an existing DBSubnetGroup. Must not be default.
+Example: mySubnetgroup
+
+        Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-docdb-dbcluster.html#cfn-docdb-dbcluster-dbsubnetgroupname
+        PrimitiveType: String
+        UpdateType: Immutable
 
     .PARAMETER PreferredBackupWindow
-		Required: False    
-		Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-docdb-dbcluster.html#cfn-docdb-dbcluster-preferredbackupwindow    
-		PrimitiveType: String    
-		UpdateType: Mutable    
+        The daily time range during which automated backups are created if automated backups are enabled using the BackupRetentionPeriod parameter.
+The default is a 30-minute window selected at random from an 8-hour block of time for each AWS Region.
+Constraints:
++ Must be in the format hh24:mi-hh24:mi.
++ Must be in Universal Coordinated Time UTC.
++ Must not conflict with the preferred maintenance window.
++ Must be at least 30 minutes.
+
+        Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-docdb-dbcluster.html#cfn-docdb-dbcluster-preferredbackupwindow
+        PrimitiveType: String
+        UpdateType: Mutable
 
     .PARAMETER MasterUserPassword
-		Required: False    
-		Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-docdb-dbcluster.html#cfn-docdb-dbcluster-masteruserpassword    
-		PrimitiveType: String    
-		UpdateType: Mutable    
+        The password for the master database user. This password can contain any printable ASCII character except forward slash /, double quote ", or the "at" symbol @.
+Constraints: Must contain from 8 to 41 characters.
+
+        Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-docdb-dbcluster.html#cfn-docdb-dbcluster-masteruserpassword
+        PrimitiveType: String
+        UpdateType: Mutable
 
     .PARAMETER VpcSecurityGroupIds
-		PrimitiveItemType: String    
-		Type: List    
-		Required: False    
-		Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-docdb-dbcluster.html#cfn-docdb-dbcluster-vpcsecuritygroupids    
-		UpdateType: Mutable    
+        A list of EC2 VPC security groups to associate with this DB cluster.
+
+        PrimitiveItemType: String
+        Type: List
+        Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-docdb-dbcluster.html#cfn-docdb-dbcluster-vpcsecuritygroupids
+        UpdateType: Mutable
 
     .PARAMETER MasterUsername
-		Required: False    
-		Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-docdb-dbcluster.html#cfn-docdb-dbcluster-masterusername    
-		PrimitiveType: String    
-		UpdateType: Immutable    
+        The name of the master user for the DB cluster.
+Constraints:
++ Must be from 1 to 16 letters or numbers.
++ The first character must be a letter.
++ Cannot be a reserved word for the chosen database engine.
+
+        Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-docdb-dbcluster.html#cfn-docdb-dbcluster-masterusername
+        PrimitiveType: String
+        UpdateType: Immutable
 
     .PARAMETER DBClusterParameterGroupName
-		Required: False    
-		Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-docdb-dbcluster.html#cfn-docdb-dbcluster-dbclusterparametergroupname    
-		PrimitiveType: String    
-		UpdateType: Mutable    
+        The name of the DB cluster parameter group to associate with this DB cluster.
+
+        Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-docdb-dbcluster.html#cfn-docdb-dbcluster-dbclusterparametergroupname
+        PrimitiveType: String
+        UpdateType: Mutable
 
     .PARAMETER BackupRetentionPeriod
-		Required: False    
-		Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-docdb-dbcluster.html#cfn-docdb-dbcluster-backupretentionperiod    
-		PrimitiveType: Integer    
-		UpdateType: Mutable    
+        The number of days for which automated backups are retained. You must specify a minimum value of 1.
+Default: 1
+Constraints:
++ Must be a value from 1 to 35.
+
+        Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-docdb-dbcluster.html#cfn-docdb-dbcluster-backupretentionperiod
+        PrimitiveType: Integer
+        UpdateType: Mutable
 
     .PARAMETER Tags
-		Type: List    
-		Required: False    
-		Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-docdb-dbcluster.html#cfn-docdb-dbcluster-tags    
-		ItemType: Tag    
-		UpdateType: Mutable    
+        The tags to be assigned to the DB cluster.
+
+        Type: List
+        Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-docdb-dbcluster.html#cfn-docdb-dbcluster-tags
+        ItemType: Tag
+        UpdateType: Mutable
 
     .PARAMETER DeletionPolicy
         With the DeletionPolicy attribute you can preserve or (in some cases) backup a resource when its stack is deleted. You specify a DeletionPolicy attribute for each resource that you want to control. If a resource has no DeletionPolicy attribute, AWS CloudFormation deletes the resource by default.

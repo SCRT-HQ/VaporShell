@@ -10,34 +10,45 @@ function Add-VSApplicationAutoScalingScalableTargetScheduledAction {
         http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-applicationautoscaling-scalabletarget-scheduledaction.html
 
     .PARAMETER EndTime
-		Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-applicationautoscaling-scalabletarget-scheduledaction.html#cfn-applicationautoscaling-scalabletarget-scheduledaction-endtime    
-		PrimitiveType: Timestamp    
-		Required: False    
-		UpdateType: Mutable    
+        The date and time that the action is scheduled to end.
+
+        Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-applicationautoscaling-scalabletarget-scheduledaction.html#cfn-applicationautoscaling-scalabletarget-scheduledaction-endtime
+        PrimitiveType: Timestamp
+        UpdateType: Mutable
 
     .PARAMETER ScalableTargetAction
-		Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-applicationautoscaling-scalabletarget-scheduledaction.html#cfn-applicationautoscaling-scalabletarget-scheduledaction-scalabletargetaction    
-		Required: False    
-		Type: ScalableTargetAction    
-		UpdateType: Mutable    
+        The new minimum and maximum capacity. You can set both values or just one. During the scheduled time, if the current capacity is below the minimum capacity, Application Auto Scaling scales out to the minimum capacity. If the current capacity is above the maximum capacity, Application Auto Scaling scales in to the maximum capacity.
+
+        Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-applicationautoscaling-scalabletarget-scheduledaction.html#cfn-applicationautoscaling-scalabletarget-scheduledaction-scalabletargetaction
+        Type: ScalableTargetAction
+        UpdateType: Mutable
 
     .PARAMETER Schedule
-		Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-applicationautoscaling-scalabletarget-scheduledaction.html#cfn-applicationautoscaling-scalabletarget-scheduledaction-schedule    
-		PrimitiveType: String    
-		Required: True    
-		UpdateType: Mutable    
+        The schedule for this action. The following formats are supported:
++ At expressions - "atyyyy-mm-ddThh:mm:ss"
++ Rate expressions - "ratevalue unit"
++ Cron expressions - "cronfields"
+At expressions are useful for one-time schedules. Specify the time, in UTC.
+For rate expressions, *value* is a positive integer and *unit* is minute | minutes | hour | hours | day | days.
+For more information about cron expressions, see Cron Expressions: https://docs.aws.amazon.com/AmazonCloudWatch/latest/events/ScheduledEvents.html#CronExpressions in the *Amazon CloudWatch Events User Guide*.
+
+        Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-applicationautoscaling-scalabletarget-scheduledaction.html#cfn-applicationautoscaling-scalabletarget-scheduledaction-schedule
+        PrimitiveType: String
+        UpdateType: Mutable
 
     .PARAMETER ScheduledActionName
-		Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-applicationautoscaling-scalabletarget-scheduledaction.html#cfn-applicationautoscaling-scalabletarget-scheduledaction-scheduledactionname    
-		PrimitiveType: String    
-		Required: True    
-		UpdateType: Mutable    
+        The name of the scheduled action.
+
+        Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-applicationautoscaling-scalabletarget-scheduledaction.html#cfn-applicationautoscaling-scalabletarget-scheduledaction-scheduledactionname
+        PrimitiveType: String
+        UpdateType: Mutable
 
     .PARAMETER StartTime
-		Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-applicationautoscaling-scalabletarget-scheduledaction.html#cfn-applicationautoscaling-scalabletarget-scheduledaction-starttime    
-		PrimitiveType: Timestamp    
-		Required: False    
-		UpdateType: Mutable    
+        The date and time that the action is scheduled to begin.
+
+        Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-applicationautoscaling-scalabletarget-scheduledaction.html#cfn-applicationautoscaling-scalabletarget-scheduledaction-starttime
+        PrimitiveType: Timestamp
+        UpdateType: Mutable
 
     .FUNCTIONALITY
         Vaporshell

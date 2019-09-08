@@ -1,6 +1,6 @@
 function Convert-SpecToFunction {
-    Param
-    (
+    [cmdletbinding()]
+    Param (
         [parameter(Mandatory = $true,Position = 0)]
         [Object]
         $Resource,
@@ -9,10 +9,11 @@ function Convert-SpecToFunction {
         [String]
         $ResourceType
     )
-    $ModPath = $Script:VaporshellPath
+    $ModPath = (Resolve-Path "$PSScriptRoot\..\VaporShell").Path
     $folder = "$($ModPath)\Public"
     $Name = $Resource.Name
     $Link = $Resource.Value.Documentation
+    $HelpDoc = New-CFNHelpDoc @PSBoundParameters
     $Properties = $Resource.Value.Properties.PSObject.Properties
     $ShortName = $Name.Replace("AWS::","")
     $BaseTypeName = "Vaporshell.Resource." + ($ShortName -replace "\..*").Replace("::",".")
@@ -55,9 +56,12 @@ function $FunctionName {
         $scriptContents += @"
     .PARAMETER $($Prop.Name)
 "@
-        $pList = $Prop.value.psobject.properties
+        if ($parameterDescription = $HelpDoc.Parameters | Where-Object {$_.Name -eq $Prop.Name} | Select-Object -ExpandProperty Description) {
+            $scriptContents += "        $parameterDescription`n"
+        }
+        $pList = $Prop.Value.PSObject.Properties | Where-Object {$_.Name -ne 'Required'}
         foreach ($p in $pList) {
-            $scriptContents += "`t`t$($p.Name): $($p.Value)    "
+            $scriptContents += "        $($p.Name): $($p.Value)"
         }
         $scriptContents += ""
     }
@@ -113,7 +117,7 @@ function $FunctionName {
     [OutputType('$TypeName')]
     [cmdletbinding()]
 "@
-    if ($passProps = $Properties.Name | Where-Object {$_ -like "*Password*" -or $_ -like "*Credential*"}) {
+    if ($passProps = $Properties.Name | Where-Object { $_ -like "*Password*" -or $_ -like "*Credential*" }) {
         foreach ($pProp in $passProps) {
             $scriptContents += @"
     [Diagnostics.CodeAnalysis.SuppressMessageAttribute("PSAvoidUsingPlainTextForPassword","$pProp")]
@@ -141,7 +145,7 @@ function $FunctionName {
 "@
     }
     $PCount = 0
-    $Properties | ForEach-Object {$PCount++}
+    $Properties | ForEach-Object { $PCount++ }
     $i = 0
     foreach ($Prop in $Properties) {
         $i++
@@ -395,7 +399,7 @@ function $FunctionName {
                     `$ResourceParams.Add("Condition",`$Condition)
                 }
 "@
-        foreach ($Prop in $Properties | Where-Object {$_.Value.Type -eq "List"}) {
+        foreach ($Prop in $Properties | Where-Object { $_.Value.Type -eq "List" }) {
             $scriptContents += @"
                 $($Prop.Name) {
                     if (!(`$ResourceParams["Properties"])) {
@@ -405,7 +409,7 @@ function $FunctionName {
                 }
 "@
         }
-        foreach ($Prop in $Properties | Where-Object {$_.Value.PrimitiveType -eq "Json"}) {
+        foreach ($Prop in $Properties | Where-Object { $_.Value.PrimitiveType -eq "Json" }) {
             $scriptContents += @"
                 $($Prop.Name) {
                     if ((`$PSBoundParameters[`$key]).PSObject.TypeNames -contains "System.String"){
@@ -455,7 +459,7 @@ function $FunctionName {
         foreach (`$key in `$PSBoundParameters.Keys | Where-Object {`$commonParams -notcontains `$_}) {
             switch (`$key) {
 "@
-        foreach ($Prop in $Properties | Where-Object {$_.Value.PrimitiveType -eq "Json"}) {
+        foreach ($Prop in $Properties | Where-Object { $_.Value.PrimitiveType -eq "Json" }) {
             $scriptContents += @"
                 $($Prop.Name) {
                     if ((`$PSBoundParameters[`$key]).PSObject.TypeNames -contains "System.String"){

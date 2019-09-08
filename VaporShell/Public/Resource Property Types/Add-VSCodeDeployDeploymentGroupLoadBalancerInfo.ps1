@@ -10,20 +10,24 @@ function Add-VSCodeDeployDeploymentGroupLoadBalancerInfo {
         http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-codedeploy-deploymentgroup-loadbalancerinfo.html
 
     .PARAMETER ElbInfoList
-		Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-codedeploy-deploymentgroup-loadbalancerinfo.html#cfn-codedeploy-deploymentgroup-loadbalancerinfo-elbinfolist    
-		DuplicatesAllowed: False    
-		ItemType: ELBInfo    
-		Required: False    
-		Type: List    
-		UpdateType: Mutable    
+        An array that contains information about the load balancer to use for load balancing in a deployment. In Elastic Load Balancing, load balancers are used with Classic Load Balancers.
+Adding more than one load balancer to the array is not supported.
+
+        Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-codedeploy-deploymentgroup-loadbalancerinfo.html#cfn-codedeploy-deploymentgroup-loadbalancerinfo-elbinfolist
+        DuplicatesAllowed: False
+        ItemType: ELBInfo
+        Type: List
+        UpdateType: Mutable
 
     .PARAMETER TargetGroupInfoList
-		Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-codedeploy-deploymentgroup-loadbalancerinfo.html#cfn-codedeploy-deploymentgroup-loadbalancerinfo-targetgroupinfolist    
-		DuplicatesAllowed: False    
-		ItemType: TargetGroupInfo    
-		Required: False    
-		Type: List    
-		UpdateType: Mutable    
+        An array that contains information about the target group to use for load balancing in a deployment. In Elastic Load Balancing, target groups are used with Application Load Balancers.
+Adding more than one target group to the array is not supported.
+
+        Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-codedeploy-deploymentgroup-loadbalancerinfo.html#cfn-codedeploy-deploymentgroup-loadbalancerinfo-targetgroupinfolist
+        DuplicatesAllowed: False
+        ItemType: TargetGroupInfo
+        Type: List
+        UpdateType: Mutable
 
     .FUNCTIONALITY
         Vaporshell

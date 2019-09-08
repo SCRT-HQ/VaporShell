@@ -10,12 +10,13 @@ function Add-VSCodeDeployDeploymentGroupEC2TagSetListObject {
         http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-codedeploy-deploymentgroup-ec2tagsetlistobject.html
 
     .PARAMETER Ec2TagGroup
-		Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-codedeploy-deploymentgroup-ec2tagsetlistobject.html#cfn-codedeploy-deploymentgroup-ec2tagsetlistobject-ec2taggroup    
-		DuplicatesAllowed: False    
-		ItemType: EC2TagFilter    
-		Required: False    
-		Type: List    
-		UpdateType: Mutable    
+        A list that contains other lists of EC2 instance tag groups. For an instance to be included in the deployment group, it must be identified by all of the tag groups in the list.
+
+        Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-codedeploy-deploymentgroup-ec2tagsetlistobject.html#cfn-codedeploy-deploymentgroup-ec2tagsetlistobject-ec2taggroup
+        DuplicatesAllowed: False
+        ItemType: EC2TagFilter
+        Type: List
+        UpdateType: Mutable
 
     .FUNCTIONALITY
         Vaporshell

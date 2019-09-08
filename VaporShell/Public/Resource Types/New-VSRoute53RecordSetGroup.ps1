@@ -13,30 +13,34 @@ function New-VSRoute53RecordSetGroup {
         The logical ID must be alphanumeric (A-Za-z0-9) and unique within the template. Use the logical name to reference the resource in other parts of the template. For example, if you want to map an Amazon Elastic Block Store volume to an Amazon EC2 instance, you reference the logical IDs to associate the block stores with the instance.
 
     .PARAMETER Comment
-		Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-route53-recordsetgroup.html#cfn-route53-recordsetgroup-comment    
-		PrimitiveType: String    
-		Required: False    
-		UpdateType: Mutable    
+        *Optional:* Any comments you want to include about a change batch request.
+
+        Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-route53-recordsetgroup.html#cfn-route53-recordsetgroup-comment
+        PrimitiveType: String
+        UpdateType: Mutable
 
     .PARAMETER HostedZoneId
-		Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-route53-recordsetgroup.html#cfn-route53-recordsetgroup-hostedzoneid    
-		PrimitiveType: String    
-		Required: False    
-		UpdateType: Immutable    
+        The ID of the hosted zone that contains the resource record sets that you want to change.
+
+        Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-route53-recordsetgroup.html#cfn-route53-recordsetgroup-hostedzoneid
+        PrimitiveType: String
+        UpdateType: Immutable
 
     .PARAMETER HostedZoneName
-		Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-route53-recordsetgroup.html#cfn-route53-recordsetgroup-hostedzonename    
-		PrimitiveType: String    
-		Required: False    
-		UpdateType: Immutable    
+        The name of the hosted zone that you want to create, update, or delete resource record sets in.
+
+        Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-route53-recordsetgroup.html#cfn-route53-recordsetgroup-hostedzonename
+        PrimitiveType: String
+        UpdateType: Immutable
 
     .PARAMETER RecordSets
-		Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-route53-recordsetgroup.html#cfn-route53-recordsetgroup-recordsets    
-		DuplicatesAllowed: False    
-		ItemType: RecordSet    
-		Required: False    
-		Type: List    
-		UpdateType: Mutable    
+        A complex type that contains one RecordSet element for each resource record set that you want to add, update, or delete.
+
+        Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-route53-recordsetgroup.html#cfn-route53-recordsetgroup-recordsets
+        DuplicatesAllowed: False
+        ItemType: RecordSet
+        Type: List
+        UpdateType: Mutable
 
     .PARAMETER DeletionPolicy
         With the DeletionPolicy attribute you can preserve or (in some cases) backup a resource when its stack is deleted. You specify a DeletionPolicy attribute for each resource that you want to control. If a resource has no DeletionPolicy attribute, AWS CloudFormation deletes the resource by default.

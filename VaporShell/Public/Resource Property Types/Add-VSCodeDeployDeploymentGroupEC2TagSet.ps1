@@ -10,12 +10,14 @@ function Add-VSCodeDeployDeploymentGroupEC2TagSet {
         http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-codedeploy-deploymentgroup-ec2tagset.html
 
     .PARAMETER Ec2TagSetList
-		Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-codedeploy-deploymentgroup-ec2tagset.html#cfn-codedeploy-deploymentgroup-ec2tagset-ec2tagsetlist    
-		DuplicatesAllowed: False    
-		ItemType: EC2TagSetListObject    
-		Required: False    
-		Type: List    
-		UpdateType: Mutable    
+        The EC2 tags that are already applied to EC2 instances that you want to include in the deployment group. CodeDeploy includes all EC2 instances identified by any of the tags you specify in this deployment group.
+Duplicates are not allowed.
+
+        Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-codedeploy-deploymentgroup-ec2tagset.html#cfn-codedeploy-deploymentgroup-ec2tagset-ec2tagsetlist
+        DuplicatesAllowed: False
+        ItemType: EC2TagSetListObject
+        Type: List
+        UpdateType: Mutable
 
     .FUNCTIONALITY
         Vaporshell

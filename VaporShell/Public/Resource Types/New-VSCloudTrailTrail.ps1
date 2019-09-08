@@ -13,86 +13,113 @@ function New-VSCloudTrailTrail {
         The logical ID must be alphanumeric (A-Za-z0-9) and unique within the template. Use the logical name to reference the resource in other parts of the template. For example, if you want to map an Amazon Elastic Block Store volume to an Amazon EC2 instance, you reference the logical IDs to associate the block stores with the instance.
 
     .PARAMETER CloudWatchLogsLogGroupArn
-		Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-cloudtrail-trail.html#cfn-cloudtrail-trail-cloudwatchlogsloggrouparn    
-		PrimitiveType: String    
-		Required: False    
-		UpdateType: Mutable    
+        Specifies a log group name using an Amazon Resource Name ARN, a unique identifier that represents the log group to which CloudTrail logs will be delivered. Not required unless you specify CloudWatchLogsRoleArn.
+
+        Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-cloudtrail-trail.html#cfn-cloudtrail-trail-cloudwatchlogsloggrouparn
+        PrimitiveType: String
+        UpdateType: Mutable
 
     .PARAMETER CloudWatchLogsRoleArn
-		Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-cloudtrail-trail.html#cfn-cloudtrail-trail-cloudwatchlogsrolearn    
-		PrimitiveType: String    
-		Required: False    
-		UpdateType: Mutable    
+        Specifies the role for the CloudWatch Logs endpoint to assume to write to a user's log group.
+
+        Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-cloudtrail-trail.html#cfn-cloudtrail-trail-cloudwatchlogsrolearn
+        PrimitiveType: String
+        UpdateType: Mutable
 
     .PARAMETER EnableLogFileValidation
-		Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-cloudtrail-trail.html#cfn-cloudtrail-trail-enablelogfilevalidation    
-		PrimitiveType: Boolean    
-		Required: False    
-		UpdateType: Mutable    
+        Specifies whether log file validation is enabled. The default is false.
+When you disable log file integrity validation, the chain of digest files is broken after one hour. CloudTrail will not create digest files for log files that were delivered during a period in which log file integrity validation was disabled. For example, if you enable log file integrity validation at noon on January 1, disable it at noon on January 2, and re-enable it at noon on January 10, digest files will not be created for the log files delivered from noon on January 2 to noon on January 10. The same applies whenever you stop CloudTrail logging or delete a trail.
+
+        Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-cloudtrail-trail.html#cfn-cloudtrail-trail-enablelogfilevalidation
+        PrimitiveType: Boolean
+        UpdateType: Mutable
 
     .PARAMETER EventSelectors
-		Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-cloudtrail-trail.html#cfn-cloudtrail-trail-eventselectors    
-		DuplicatesAllowed: False    
-		ItemType: EventSelector    
-		Required: False    
-		Type: List    
-		UpdateType: Mutable    
+        Use event selectors to further specify the management and data event settings for your trail. By default, trails created without specific event selectors will be configured to log all read and write management events, and no data events. When an event occurs in your account, CloudTrail evaluates the event selector for all trails. For each trail, if the event matches any event selector, the trail processes and logs the event. If the event doesn't match any event selector, the trail doesn't log the event.
+You can configure up to five event selectors for a trail.
+
+        Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-cloudtrail-trail.html#cfn-cloudtrail-trail-eventselectors
+        DuplicatesAllowed: False
+        ItemType: EventSelector
+        Type: List
+        UpdateType: Mutable
 
     .PARAMETER IncludeGlobalServiceEvents
-		Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-cloudtrail-trail.html#cfn-cloudtrail-trail-includeglobalserviceevents    
-		PrimitiveType: Boolean    
-		Required: False    
-		UpdateType: Mutable    
+        Specifies whether the trail is publishing events from global services such as IAM to the log files.
+
+        Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-cloudtrail-trail.html#cfn-cloudtrail-trail-includeglobalserviceevents
+        PrimitiveType: Boolean
+        UpdateType: Mutable
 
     .PARAMETER IsLogging
-		Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-cloudtrail-trail.html#cfn-cloudtrail-trail-islogging    
-		PrimitiveType: Boolean    
-		Required: True    
-		UpdateType: Mutable    
+        Whether the CloudTrail is currently logging AWS API calls.
+
+        Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-cloudtrail-trail.html#cfn-cloudtrail-trail-islogging
+        PrimitiveType: Boolean
+        UpdateType: Mutable
 
     .PARAMETER IsMultiRegionTrail
-		Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-cloudtrail-trail.html#cfn-cloudtrail-trail-ismultiregiontrail    
-		PrimitiveType: Boolean    
-		Required: False    
-		UpdateType: Mutable    
+        Specifies whether the trail applies only to the current region or to all regions. The default is false. If the trail exists only in the current region and this value is set to true, shadow trails replications of the trail will be created in the other regions. If the trail exists in all regions and this value is set to false, the trail will remain in the region where it was created, and its shadow trails in other regions will be deleted. As a best practice, consider using trails that log events in all regions.
+
+        Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-cloudtrail-trail.html#cfn-cloudtrail-trail-ismultiregiontrail
+        PrimitiveType: Boolean
+        UpdateType: Mutable
 
     .PARAMETER KMSKeyId
-		Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-cloudtrail-trail.html#cfn-cloudtrail-trail-kmskeyid    
-		PrimitiveType: String    
-		Required: False    
-		UpdateType: Mutable    
+        Specifies the KMS key ID to use to encrypt the logs delivered by CloudTrail. The value can be an alias name prefixed by "alias/", a fully specified ARN to an alias, a fully specified ARN to a key, or a globally unique identifier.
+Examples:
++ alias/MyAliasName
++ arn:aws:kms:us-east-2:123456789012:alias/MyAliasName
++ arn:aws:kms:us-east-2:123456789012:key/12345678-1234-1234-1234-123456789012
++ 12345678-1234-1234-1234-123456789012
+
+        Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-cloudtrail-trail.html#cfn-cloudtrail-trail-kmskeyid
+        PrimitiveType: String
+        UpdateType: Mutable
 
     .PARAMETER S3BucketName
-		Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-cloudtrail-trail.html#cfn-cloudtrail-trail-s3bucketname    
-		PrimitiveType: String    
-		Required: True    
-		UpdateType: Mutable    
+        Specifies the name of the Amazon S3 bucket designated for publishing log files. See Amazon S3 Bucket Naming Requirements: https://docs.aws.amazon.com/awscloudtrail/latest/userguide/create_trail_naming_policy.html.
+
+        Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-cloudtrail-trail.html#cfn-cloudtrail-trail-s3bucketname
+        PrimitiveType: String
+        UpdateType: Mutable
 
     .PARAMETER S3KeyPrefix
-		Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-cloudtrail-trail.html#cfn-cloudtrail-trail-s3keyprefix    
-		PrimitiveType: String    
-		Required: False    
-		UpdateType: Mutable    
+        Specifies the Amazon S3 key prefix that comes after the name of the bucket you have designated for log file delivery. For more information, see Finding Your CloudTrail Log Files: https://docs.aws.amazon.com/awscloudtrail/latest/userguide/cloudtrail-find-log-files.html. The maximum length is 200 characters.
+
+        Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-cloudtrail-trail.html#cfn-cloudtrail-trail-s3keyprefix
+        PrimitiveType: String
+        UpdateType: Mutable
 
     .PARAMETER SnsTopicName
-		Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-cloudtrail-trail.html#cfn-cloudtrail-trail-snstopicname    
-		PrimitiveType: String    
-		Required: False    
-		UpdateType: Mutable    
+        Specifies the name of the Amazon SNS topic defined for notification of log file delivery. The maximum length is 256 characters.
+
+        Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-cloudtrail-trail.html#cfn-cloudtrail-trail-snstopicname
+        PrimitiveType: String
+        UpdateType: Mutable
 
     .PARAMETER Tags
-		Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-cloudtrail-trail.html#cfn-cloudtrail-trail-tags    
-		DuplicatesAllowed: True    
-		ItemType: Tag    
-		Required: False    
-		Type: List    
-		UpdateType: Mutable    
+        An arbitrary set of tags key–value pairs for this trail.
+
+        Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-cloudtrail-trail.html#cfn-cloudtrail-trail-tags
+        DuplicatesAllowed: True
+        ItemType: Tag
+        Type: List
+        UpdateType: Mutable
 
     .PARAMETER TrailName
-		Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-cloudtrail-trail.html#cfn-cloudtrail-trail-trailname    
-		PrimitiveType: String    
-		Required: False    
-		UpdateType: Immutable    
+        Specifies the name of the trail or trail ARN. If Name is a trail name, the string must meet the following requirements:
++ Contain only ASCII letters a-z, A-Z, numbers 0-9, periods ., underscores _, or dashes -
++ Start with a letter or number, and end with a letter or number
++ Be between 3 and 128 characters
++ Have no adjacent periods, underscores or dashes. Names like my-_namespace and my--namespace are invalid.
++ Not be in IP address format for example, 192.168.5.4
+If Name is a trail ARN, it must be in the format:
+arn:aws:cloudtrail:us-east-2:123456789012:trail/MyTrail
+
+        Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-cloudtrail-trail.html#cfn-cloudtrail-trail-trailname
+        PrimitiveType: String
+        UpdateType: Immutable
 
     .PARAMETER DeletionPolicy
         With the DeletionPolicy attribute you can preserve or (in some cases) backup a resource when its stack is deleted. You specify a DeletionPolicy attribute for each resource that you want to control. If a resource has no DeletionPolicy attribute, AWS CloudFormation deletes the resource by default.

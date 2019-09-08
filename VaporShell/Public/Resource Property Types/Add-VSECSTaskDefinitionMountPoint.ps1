@@ -10,22 +10,25 @@ function Add-VSECSTaskDefinitionMountPoint {
         http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ecs-taskdefinition-containerdefinitions-mountpoints.html
 
     .PARAMETER ContainerPath
-		Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ecs-taskdefinition-containerdefinitions-mountpoints.html#cfn-ecs-taskdefinition-containerdefinition-mountpoints-containerpath    
-		PrimitiveType: String    
-		Required: False    
-		UpdateType: Immutable    
+        The path on the container to mount the host volume at.
+
+        Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ecs-taskdefinition-containerdefinitions-mountpoints.html#cfn-ecs-taskdefinition-containerdefinition-mountpoints-containerpath
+        PrimitiveType: String
+        UpdateType: Immutable
 
     .PARAMETER ReadOnly
-		Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ecs-taskdefinition-containerdefinitions-mountpoints.html#cfn-ecs-taskdefinition-containerdefinition-mountpoints-readonly    
-		PrimitiveType: Boolean    
-		Required: False    
-		UpdateType: Immutable    
+        If this value is true, the container has read-only access to the volume. If this value is false, then the container can write to the volume. The default value is false.
+
+        Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ecs-taskdefinition-containerdefinitions-mountpoints.html#cfn-ecs-taskdefinition-containerdefinition-mountpoints-readonly
+        PrimitiveType: Boolean
+        UpdateType: Immutable
 
     .PARAMETER SourceVolume
-		Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ecs-taskdefinition-containerdefinitions-mountpoints.html#cfn-ecs-taskdefinition-containerdefinition-mountpoints-sourcevolume    
-		PrimitiveType: String    
-		Required: False    
-		UpdateType: Immutable    
+        The name of the volume to mount. Must be a volume name referenced in the name parameter of task definition volume.
+
+        Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ecs-taskdefinition-containerdefinitions-mountpoints.html#cfn-ecs-taskdefinition-containerdefinition-mountpoints-sourcevolume
+        PrimitiveType: String
+        UpdateType: Immutable
 
     .FUNCTIONALITY
         Vaporshell

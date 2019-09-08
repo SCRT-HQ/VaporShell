@@ -10,11 +10,12 @@ function Add-VSGreengrassLoggerDefinitionLoggerDefinitionVersion {
         http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-greengrass-loggerdefinition-loggerdefinitionversion.html
 
     .PARAMETER Loggers
-		Type: List    
-		Required: True    
-		Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-greengrass-loggerdefinition-loggerdefinitionversion.html#cfn-greengrass-loggerdefinition-loggerdefinitionversion-loggers    
-		ItemType: Logger    
-		UpdateType: Immutable    
+        The loggers in this version.
+
+        Type: List
+        Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-greengrass-loggerdefinition-loggerdefinitionversion.html#cfn-greengrass-loggerdefinition-loggerdefinitionversion-loggers
+        ItemType: Logger
+        UpdateType: Immutable
 
     .FUNCTIONALITY
         Vaporshell

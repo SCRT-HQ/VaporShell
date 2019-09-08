@@ -10,16 +10,18 @@ function Add-VSGreengrassResourceDefinitionLocalDeviceResourceData {
         http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-greengrass-resourcedefinition-localdeviceresourcedata.html
 
     .PARAMETER SourcePath
-		Required: True    
-		Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-greengrass-resourcedefinition-localdeviceresourcedata.html#cfn-greengrass-resourcedefinition-localdeviceresourcedata-sourcepath    
-		PrimitiveType: String    
-		UpdateType: Immutable    
+        The local absolute path of the device resource. The source path for a device resource can refer only to a character device or block device under /dev.
+
+        Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-greengrass-resourcedefinition-localdeviceresourcedata.html#cfn-greengrass-resourcedefinition-localdeviceresourcedata-sourcepath
+        PrimitiveType: String
+        UpdateType: Immutable
 
     .PARAMETER GroupOwnerSetting
-		Type: GroupOwnerSetting    
-		Required: False    
-		Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-greengrass-resourcedefinition-localdeviceresourcedata.html#cfn-greengrass-resourcedefinition-localdeviceresourcedata-groupownersetting    
-		UpdateType: Immutable    
+        Settings that define additional Linux OS group permissions to give to the Lambda function process.
+
+        Type: GroupOwnerSetting
+        Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-greengrass-resourcedefinition-localdeviceresourcedata.html#cfn-greengrass-resourcedefinition-localdeviceresourcedata-groupownersetting
+        UpdateType: Immutable
 
     .FUNCTIONALITY
         Vaporshell

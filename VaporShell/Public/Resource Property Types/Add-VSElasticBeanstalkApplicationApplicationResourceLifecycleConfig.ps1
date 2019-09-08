@@ -10,16 +10,18 @@ function Add-VSElasticBeanstalkApplicationApplicationResourceLifecycleConfig {
         http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-elasticbeanstalk-application-applicationresourcelifecycleconfig.html
 
     .PARAMETER ServiceRole
-		Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-elasticbeanstalk-application-applicationresourcelifecycleconfig.html#cfn-elasticbeanstalk-application-applicationresourcelifecycleconfig-servicerole    
-		PrimitiveType: String    
-		Required: False    
-		UpdateType: Mutable    
+        The ARN of an IAM service role that Elastic Beanstalk has permission to assume.
+
+        Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-elasticbeanstalk-application-applicationresourcelifecycleconfig.html#cfn-elasticbeanstalk-application-applicationresourcelifecycleconfig-servicerole
+        PrimitiveType: String
+        UpdateType: Mutable
 
     .PARAMETER VersionLifecycleConfig
-		Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-elasticbeanstalk-application-applicationresourcelifecycleconfig.html#cfn-elasticbeanstalk-application-applicationresourcelifecycleconfig-versionlifecycleconfig    
-		Required: False    
-		Type: ApplicationVersionLifecycleConfig    
-		UpdateType: Mutable    
+        Defines lifecycle settings for application versions.
+
+        Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-elasticbeanstalk-application-applicationresourcelifecycleconfig.html#cfn-elasticbeanstalk-application-applicationresourcelifecycleconfig-versionlifecycleconfig
+        Type: ApplicationVersionLifecycleConfig
+        UpdateType: Mutable
 
     .FUNCTIONALITY
         Vaporshell

@@ -10,88 +10,102 @@ function Add-VSIoTTopicRuleAction {
         http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iot-topicrule-action.html
 
     .PARAMETER CloudwatchAlarm
-		Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iot-topicrule-action.html#cfn-iot-topicrule-action-cloudwatchalarm    
-		Required: False    
-		Type: CloudwatchAlarmAction    
-		UpdateType: Mutable    
+        Change the state of a CloudWatch alarm.
+
+        Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iot-topicrule-action.html#cfn-iot-topicrule-action-cloudwatchalarm
+        Type: CloudwatchAlarmAction
+        UpdateType: Mutable
 
     .PARAMETER CloudwatchMetric
-		Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iot-topicrule-action.html#cfn-iot-topicrule-action-cloudwatchmetric    
-		Required: False    
-		Type: CloudwatchMetricAction    
-		UpdateType: Mutable    
+        Capture a CloudWatch metric.
+
+        Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iot-topicrule-action.html#cfn-iot-topicrule-action-cloudwatchmetric
+        Type: CloudwatchMetricAction
+        UpdateType: Mutable
 
     .PARAMETER DynamoDB
-		Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iot-topicrule-action.html#cfn-iot-topicrule-action-dynamodb    
-		Required: False    
-		Type: DynamoDBAction    
-		UpdateType: Mutable    
+        Write to a DynamoDB table.
+
+        Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iot-topicrule-action.html#cfn-iot-topicrule-action-dynamodb
+        Type: DynamoDBAction
+        UpdateType: Mutable
 
     .PARAMETER DynamoDBv2
-		Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iot-topicrule-action.html#cfn-iot-topicrule-action-dynamodbv2    
-		Required: False    
-		Type: DynamoDBv2Action    
-		UpdateType: Mutable    
+        Write to a DynamoDB table. This is a new version of the DynamoDB action. It allows you to write each attribute in an MQTT message payload into a separate DynamoDB column.
+
+        Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iot-topicrule-action.html#cfn-iot-topicrule-action-dynamodbv2
+        Type: DynamoDBv2Action
+        UpdateType: Mutable
 
     .PARAMETER Elasticsearch
-		Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iot-topicrule-action.html#cfn-iot-topicrule-action-elasticsearch    
-		Required: False    
-		Type: ElasticsearchAction    
-		UpdateType: Mutable    
+        Write data to an Amazon Elasticsearch Service domain.
+
+        Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iot-topicrule-action.html#cfn-iot-topicrule-action-elasticsearch
+        Type: ElasticsearchAction
+        UpdateType: Mutable
 
     .PARAMETER Firehose
-		Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iot-topicrule-action.html#cfn-iot-topicrule-action-firehose    
-		Required: False    
-		Type: FirehoseAction    
-		UpdateType: Mutable    
+        Write to an Amazon Kinesis Firehose stream.
+
+        Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iot-topicrule-action.html#cfn-iot-topicrule-action-firehose
+        Type: FirehoseAction
+        UpdateType: Mutable
 
     .PARAMETER IotAnalytics
-		Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iot-topicrule-action.html#cfn-iot-topicrule-action-iotanalytics    
-		Required: False    
-		Type: IotAnalyticsAction    
-		UpdateType: Mutable    
+        Sends message data to an AWS IoT Analytics channel.
+
+        Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iot-topicrule-action.html#cfn-iot-topicrule-action-iotanalytics
+        Type: IotAnalyticsAction
+        UpdateType: Mutable
 
     .PARAMETER Kinesis
-		Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iot-topicrule-action.html#cfn-iot-topicrule-action-kinesis    
-		Required: False    
-		Type: KinesisAction    
-		UpdateType: Mutable    
+        Write data to an Amazon Kinesis stream.
+
+        Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iot-topicrule-action.html#cfn-iot-topicrule-action-kinesis
+        Type: KinesisAction
+        UpdateType: Mutable
 
     .PARAMETER Lambda
-		Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iot-topicrule-action.html#cfn-iot-topicrule-action-lambda    
-		Required: False    
-		Type: LambdaAction    
-		UpdateType: Mutable    
+        Invoke a Lambda function.
+
+        Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iot-topicrule-action.html#cfn-iot-topicrule-action-lambda
+        Type: LambdaAction
+        UpdateType: Mutable
 
     .PARAMETER Republish
-		Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iot-topicrule-action.html#cfn-iot-topicrule-action-republish    
-		Required: False    
-		Type: RepublishAction    
-		UpdateType: Mutable    
+        Publish to another MQTT topic.
+
+        Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iot-topicrule-action.html#cfn-iot-topicrule-action-republish
+        Type: RepublishAction
+        UpdateType: Mutable
 
     .PARAMETER S3
-		Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iot-topicrule-action.html#cfn-iot-topicrule-action-s3    
-		Required: False    
-		Type: S3Action    
-		UpdateType: Mutable    
+        Write to an Amazon S3 bucket.
+
+        Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iot-topicrule-action.html#cfn-iot-topicrule-action-s3
+        Type: S3Action
+        UpdateType: Mutable
 
     .PARAMETER Sns
-		Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iot-topicrule-action.html#cfn-iot-topicrule-action-sns    
-		Required: False    
-		Type: SnsAction    
-		UpdateType: Mutable    
+        Publish to an Amazon SNS topic.
+
+        Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iot-topicrule-action.html#cfn-iot-topicrule-action-sns
+        Type: SnsAction
+        UpdateType: Mutable
 
     .PARAMETER Sqs
-		Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iot-topicrule-action.html#cfn-iot-topicrule-action-sqs    
-		Required: False    
-		Type: SqsAction    
-		UpdateType: Mutable    
+        Publish to an Amazon SQS queue.
+
+        Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iot-topicrule-action.html#cfn-iot-topicrule-action-sqs
+        Type: SqsAction
+        UpdateType: Mutable
 
     .PARAMETER StepFunctions
-		Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iot-topicrule-action.html#cfn-iot-topicrule-action-stepfunctions    
-		Required: False    
-		Type: StepFunctionsAction    
-		UpdateType: Mutable    
+        Starts execution of a Step Functions state machine.
+
+        Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iot-topicrule-action.html#cfn-iot-topicrule-action-stepfunctions
+        Type: StepFunctionsAction
+        UpdateType: Mutable
 
     .FUNCTIONALITY
         Vaporshell

@@ -10,40 +10,47 @@ function Add-VSCognitoUserPoolPasswordPolicy {
         http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-cognito-userpool-passwordpolicy.html
 
     .PARAMETER RequireNumbers
-		Required: False    
-		Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-cognito-userpool-passwordpolicy.html#cfn-cognito-userpool-passwordpolicy-requirenumbers    
-		PrimitiveType: Boolean    
-		UpdateType: Mutable    
+        In the password policy that you have set, refers to whether you have required users to use at least one number in their password.
+
+        Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-cognito-userpool-passwordpolicy.html#cfn-cognito-userpool-passwordpolicy-requirenumbers
+        PrimitiveType: Boolean
+        UpdateType: Mutable
 
     .PARAMETER MinimumLength
-		Required: False    
-		Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-cognito-userpool-passwordpolicy.html#cfn-cognito-userpool-passwordpolicy-minimumlength    
-		PrimitiveType: Integer    
-		UpdateType: Mutable    
+        The minimum length of the password policy that you have set. Cannot be less than 6.
+
+        Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-cognito-userpool-passwordpolicy.html#cfn-cognito-userpool-passwordpolicy-minimumlength
+        PrimitiveType: Integer
+        UpdateType: Mutable
 
     .PARAMETER TemporaryPasswordValidityDays
-		Required: False    
-		Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-cognito-userpool-passwordpolicy.html#cfn-cognito-userpool-passwordpolicy-temporarypasswordvaliditydays    
-		PrimitiveType: Double    
-		UpdateType: Mutable    
+        In the password policy you have set, refers to the number of days a temporary password is valid. If the user does not sign-in during this time, their password will need to be reset by an administrator.
+When you set TemporaryPasswordValidityDays for a user pool, you will no longer be able to set the deprecated UnusedAccountValidityDays value for that user pool.
+
+        Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-cognito-userpool-passwordpolicy.html#cfn-cognito-userpool-passwordpolicy-temporarypasswordvaliditydays
+        PrimitiveType: Integer
+        UpdateType: Mutable
 
     .PARAMETER RequireUppercase
-		Required: False    
-		Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-cognito-userpool-passwordpolicy.html#cfn-cognito-userpool-passwordpolicy-requireuppercase    
-		PrimitiveType: Boolean    
-		UpdateType: Mutable    
+        In the password policy that you have set, refers to whether you have required users to use at least one uppercase letter in their password.
+
+        Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-cognito-userpool-passwordpolicy.html#cfn-cognito-userpool-passwordpolicy-requireuppercase
+        PrimitiveType: Boolean
+        UpdateType: Mutable
 
     .PARAMETER RequireLowercase
-		Required: False    
-		Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-cognito-userpool-passwordpolicy.html#cfn-cognito-userpool-passwordpolicy-requirelowercase    
-		PrimitiveType: Boolean    
-		UpdateType: Mutable    
+        In the password policy that you have set, refers to whether you have required users to use at least one lowercase letter in their password.
+
+        Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-cognito-userpool-passwordpolicy.html#cfn-cognito-userpool-passwordpolicy-requirelowercase
+        PrimitiveType: Boolean
+        UpdateType: Mutable
 
     .PARAMETER RequireSymbols
-		Required: False    
-		Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-cognito-userpool-passwordpolicy.html#cfn-cognito-userpool-passwordpolicy-requiresymbols    
-		PrimitiveType: Boolean    
-		UpdateType: Mutable    
+        In the password policy that you have set, refers to whether you have required users to use at least one symbol in their password.
+
+        Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-cognito-userpool-passwordpolicy.html#cfn-cognito-userpool-passwordpolicy-requiresymbols
+        PrimitiveType: Boolean
+        UpdateType: Mutable
 
     .FUNCTIONALITY
         Vaporshell
@@ -61,7 +68,7 @@ function Add-VSCognitoUserPoolPasswordPolicy {
         [Int]
         $MinimumLength,
         [parameter(Mandatory = $false)]
-        [System.Double]
+        [Int]
         $TemporaryPasswordValidityDays,
         [parameter(Mandatory = $false)]
         [System.Boolean]

@@ -13,122 +13,147 @@ function New-VSCognitoUserPool {
         The logical ID must be alphanumeric (A-Za-z0-9) and unique within the template. Use the logical name to reference the resource in other parts of the template. For example, if you want to map an Amazon Elastic Block Store volume to an Amazon EC2 instance, you reference the logical IDs to associate the block stores with the instance.
 
     .PARAMETER UserPoolTags
-		Required: False    
-		Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-cognito-userpool.html#cfn-cognito-userpool-userpooltags    
-		PrimitiveType: Json    
-		UpdateType: Mutable    
+        The tag keys and values to assign to the user pool. A tag is a label that you can use to categorize and manage user pools in different ways, such as by purpose, owner, environment, or other criteria.
+
+        Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-cognito-userpool.html#cfn-cognito-userpool-userpooltags
+        PrimitiveType: Json
+        UpdateType: Mutable
 
     .PARAMETER Policies
-		Type: Policies    
-		Required: False    
-		Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-cognito-userpool.html#cfn-cognito-userpool-policies    
-		UpdateType: Mutable    
+        The policy associated with a user pool.
+
+        Type: Policies
+        Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-cognito-userpool.html#cfn-cognito-userpool-policies
+        UpdateType: Mutable
 
     .PARAMETER VerificationMessageTemplate
-		Type: VerificationMessageTemplate    
-		Required: False    
-		Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-cognito-userpool.html#cfn-cognito-userpool-verificationmessagetemplate    
-		UpdateType: Mutable    
+        The template for the verification message that the user sees when the app requests permission to access the user's information.
+
+        Type: VerificationMessageTemplate
+        Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-cognito-userpool.html#cfn-cognito-userpool-verificationmessagetemplate
+        UpdateType: Mutable
 
     .PARAMETER MfaConfiguration
-		Required: False    
-		Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-cognito-userpool.html#cfn-cognito-userpool-mfaconfiguration    
-		PrimitiveType: String    
-		UpdateType: Mutable    
+        Specifies multi-factor authentication MFA configuration details. Can be one of the following values:
+OFF - MFA tokens are not required and cannot be specified during user registration.
+ON - MFA tokens are required for all user registrations. You can only specify required when you are initially creating a user pool.
+OPTIONAL - Users have the option when registering to create an MFA token.
+
+        Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-cognito-userpool.html#cfn-cognito-userpool-mfaconfiguration
+        PrimitiveType: String
+        UpdateType: Mutable
 
     .PARAMETER Schema
-		Type: List    
-		Required: False    
-		Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-cognito-userpool.html#cfn-cognito-userpool-schema    
-		ItemType: SchemaAttribute    
-		UpdateType: Immutable    
+        An array of schema attributes for the new user pool. These attributes can be standard or custom attributes.
+
+        Type: List
+        Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-cognito-userpool.html#cfn-cognito-userpool-schema
+        ItemType: SchemaAttribute
+        UpdateType: Immutable
 
     .PARAMETER AdminCreateUserConfig
-		Type: AdminCreateUserConfig    
-		Required: False    
-		Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-cognito-userpool.html#cfn-cognito-userpool-admincreateuserconfig    
-		UpdateType: Mutable    
+        The type of configuration for creating a new user profile.
+
+        Type: AdminCreateUserConfig
+        Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-cognito-userpool.html#cfn-cognito-userpool-admincreateuserconfig
+        UpdateType: Mutable
 
     .PARAMETER SmsAuthenticationMessage
-		Required: False    
-		Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-cognito-userpool.html#cfn-cognito-userpool-smsauthenticationmessage    
-		PrimitiveType: String    
-		UpdateType: Mutable    
+        A string representing the SMS authentication message.
+
+        Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-cognito-userpool.html#cfn-cognito-userpool-smsauthenticationmessage
+        PrimitiveType: String
+        UpdateType: Mutable
 
     .PARAMETER UserPoolName
-		Required: False    
-		Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-cognito-userpool.html#cfn-cognito-userpool-userpoolname    
-		PrimitiveType: String    
-		UpdateType: Immutable    
+        A string used to name the user pool.
+
+        Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-cognito-userpool.html#cfn-cognito-userpool-userpoolname
+        PrimitiveType: String
+        UpdateType: Immutable
 
     .PARAMETER SmsVerificationMessage
-		Required: False    
-		Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-cognito-userpool.html#cfn-cognito-userpool-smsverificationmessage    
-		PrimitiveType: String    
-		UpdateType: Mutable    
+        A string representing the SMS verification message.
+
+        Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-cognito-userpool.html#cfn-cognito-userpool-smsverificationmessage
+        PrimitiveType: String
+        UpdateType: Mutable
 
     .PARAMETER UserPoolAddOns
-		Type: UserPoolAddOns    
-		Required: False    
-		Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-cognito-userpool.html#cfn-cognito-userpool-userpooladdons    
-		UpdateType: Mutable    
+        Used to enable advanced security risk detection. Set the key AdvancedSecurityMode to the value "AUDIT".
+
+        Type: UserPoolAddOns
+        Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-cognito-userpool.html#cfn-cognito-userpool-userpooladdons
+        UpdateType: Mutable
 
     .PARAMETER EmailConfiguration
-		Type: EmailConfiguration    
-		Required: False    
-		Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-cognito-userpool.html#cfn-cognito-userpool-emailconfiguration    
-		UpdateType: Mutable    
+        The email configuration.
+
+        Type: EmailConfiguration
+        Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-cognito-userpool.html#cfn-cognito-userpool-emailconfiguration
+        UpdateType: Mutable
 
     .PARAMETER SmsConfiguration
-		Type: SmsConfiguration    
-		Required: False    
-		Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-cognito-userpool.html#cfn-cognito-userpool-smsconfiguration    
-		UpdateType: Mutable    
+        The SMS configuration.
+
+        Type: SmsConfiguration
+        Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-cognito-userpool.html#cfn-cognito-userpool-smsconfiguration
+        UpdateType: Mutable
 
     .PARAMETER AliasAttributes
-		PrimitiveItemType: String    
-		Type: List    
-		Required: False    
-		Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-cognito-userpool.html#cfn-cognito-userpool-aliasattributes    
-		UpdateType: Immutable    
+        Attributes supported as an alias for this user pool. Possible values: **phone_number**, **email**, or **preferred_username**.
+
+        PrimitiveItemType: String
+        Type: List
+        Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-cognito-userpool.html#cfn-cognito-userpool-aliasattributes
+        UpdateType: Immutable
 
     .PARAMETER EmailVerificationSubject
-		Required: False    
-		Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-cognito-userpool.html#cfn-cognito-userpool-emailverificationsubject    
-		PrimitiveType: String    
-		UpdateType: Mutable    
+        A string representing the email verification subject.
+
+        Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-cognito-userpool.html#cfn-cognito-userpool-emailverificationsubject
+        PrimitiveType: String
+        UpdateType: Mutable
 
     .PARAMETER LambdaConfig
-		Type: LambdaConfig    
-		Required: False    
-		Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-cognito-userpool.html#cfn-cognito-userpool-lambdaconfig    
-		UpdateType: Mutable    
+        The Lambda trigger configuration information for the new user pool.
+In a push model, event sources such as Amazon S3 and custom applications need permission to invoke a function. So you will need to make an extra call to add permission for these event sources to invoke your Lambda function.
+For more information on using the Lambda API to add permission, see  AddPermission : https://docs.aws.amazon.com/lambda/latest/dg/API_AddPermission.html.
+For adding permission using the AWS CLI, see  add-permission : https://docs.aws.amazon.com/cli/latest/reference/lambda/add-permission.html.
+
+        Type: LambdaConfig
+        Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-cognito-userpool.html#cfn-cognito-userpool-lambdaconfig
+        UpdateType: Mutable
 
     .PARAMETER UsernameAttributes
-		PrimitiveItemType: String    
-		Type: List    
-		Required: False    
-		Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-cognito-userpool.html#cfn-cognito-userpool-usernameattributes    
-		UpdateType: Immutable    
+        Specifies whether email addresses or phone numbers can be specified as user names when a user signs up. Possible values: phone_number or email.
+
+        PrimitiveItemType: String
+        Type: List
+        Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-cognito-userpool.html#cfn-cognito-userpool-usernameattributes
+        UpdateType: Immutable
 
     .PARAMETER AutoVerifiedAttributes
-		PrimitiveItemType: String    
-		Type: List    
-		Required: False    
-		Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-cognito-userpool.html#cfn-cognito-userpool-autoverifiedattributes    
-		UpdateType: Mutable    
+        The attributes to be auto-verified. Possible values: **email**, **phone_number**.
+
+        PrimitiveItemType: String
+        Type: List
+        Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-cognito-userpool.html#cfn-cognito-userpool-autoverifiedattributes
+        UpdateType: Mutable
 
     .PARAMETER DeviceConfiguration
-		Type: DeviceConfiguration    
-		Required: False    
-		Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-cognito-userpool.html#cfn-cognito-userpool-deviceconfiguration    
-		UpdateType: Mutable    
+        The type of configuration for the user pool's device tracking.
+
+        Type: DeviceConfiguration
+        Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-cognito-userpool.html#cfn-cognito-userpool-deviceconfiguration
+        UpdateType: Mutable
 
     .PARAMETER EmailVerificationMessage
-		Required: False    
-		Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-cognito-userpool.html#cfn-cognito-userpool-emailverificationmessage    
-		PrimitiveType: String    
-		UpdateType: Mutable    
+        A string representing the email verification message.
+
+        Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-cognito-userpool.html#cfn-cognito-userpool-emailverificationmessage
+        PrimitiveType: String
+        UpdateType: Mutable
 
     .PARAMETER DeletionPolicy
         With the DeletionPolicy attribute you can preserve or (in some cases) backup a resource when its stack is deleted. You specify a DeletionPolicy attribute for each resource that you want to control. If a resource has no DeletionPolicy attribute, AWS CloudFormation deletes the resource by default.

@@ -10,16 +10,18 @@ function Add-VSKinesisFirehoseDeliveryStreamSerializer {
         http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-kinesisfirehose-deliverystream-serializer.html
 
     .PARAMETER OrcSerDe
-		Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-kinesisfirehose-deliverystream-serializer.html#cfn-kinesisfirehose-deliverystream-serializer-orcserde    
-		Required: False    
-		Type: OrcSerDe    
-		UpdateType: Mutable    
+        A serializer to use for converting data to the ORC format before storing it in Amazon S3. For more information, see Apache ORC: https://orc.apache.org/docs/.
+
+        Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-kinesisfirehose-deliverystream-serializer.html#cfn-kinesisfirehose-deliverystream-serializer-orcserde
+        Type: OrcSerDe
+        UpdateType: Mutable
 
     .PARAMETER ParquetSerDe
-		Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-kinesisfirehose-deliverystream-serializer.html#cfn-kinesisfirehose-deliverystream-serializer-parquetserde    
-		Required: False    
-		Type: ParquetSerDe    
-		UpdateType: Mutable    
+        A serializer to use for converting data to the Parquet format before storing it in Amazon S3. For more information, see Apache Parquet: https://parquet.apache.org/documentation/latest/.
+
+        Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-kinesisfirehose-deliverystream-serializer.html#cfn-kinesisfirehose-deliverystream-serializer-parquetserde
+        Type: ParquetSerDe
+        UpdateType: Mutable
 
     .FUNCTIONALITY
         Vaporshell

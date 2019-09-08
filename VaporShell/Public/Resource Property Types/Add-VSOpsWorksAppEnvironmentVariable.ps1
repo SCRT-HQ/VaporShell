@@ -10,22 +10,25 @@ function Add-VSOpsWorksAppEnvironmentVariable {
         http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-opsworks-app-environment.html
 
     .PARAMETER Key
-		Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-opsworks-app-environment.html#cfn-opsworks-app-environment-key    
-		PrimitiveType: String    
-		Required: True    
-		UpdateType: Mutable    
+        Required The environment variable's name, which can consist of up to 64 characters and must be specified. The name can contain upper- and lowercase letters, numbers, and underscores _, but it must start with a letter or underscore.
+
+        Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-opsworks-app-environment.html#cfn-opsworks-app-environment-key
+        PrimitiveType: String
+        UpdateType: Mutable
 
     .PARAMETER Secure
-		Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-opsworks-app-environment.html#cfn-opsworks-app-environment-secure    
-		PrimitiveType: Boolean    
-		Required: False    
-		UpdateType: Mutable    
+        Optional Whether the variable's value will be returned by the DescribeApps: https://docs.aws.amazon.com/goto/WebAPI/opsworks-2013-02-18/DescribeApps action. To conceal an environment variable's value, set Secure to true. DescribeApps then returns *****FILTERED***** instead of the actual value. The default value for Secure is false.
+
+        Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-opsworks-app-environment.html#cfn-opsworks-app-environment-secure
+        PrimitiveType: Boolean
+        UpdateType: Mutable
 
     .PARAMETER Value
-		Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-opsworks-app-environment.html#value    
-		PrimitiveType: String    
-		Required: True    
-		UpdateType: Mutable    
+        Optional The environment variable's value, which can be left empty. If you specify a value, it can contain up to 256 characters, which must all be printable.
+
+        Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-opsworks-app-environment.html#value
+        PrimitiveType: String
+        UpdateType: Mutable
 
     .FUNCTIONALITY
         Vaporshell

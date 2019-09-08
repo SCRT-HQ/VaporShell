@@ -10,16 +10,18 @@ function Add-VSEC2NetworkAclEntryIcmp {
         http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-networkaclentry-icmp.html
 
     .PARAMETER Code
-		Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-networkaclentry-icmp.html#cfn-ec2-networkaclentry-icmp-code    
-		PrimitiveType: Integer    
-		Required: False    
-		UpdateType: Mutable    
+        The Internet Control Message Protocol ICMP code. You can use -1 to specify all ICMP codes for the given ICMP type. Requirement is conditional: Required if you specify 1 ICMP for the protocol parameter.
+
+        Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-networkaclentry-icmp.html#cfn-ec2-networkaclentry-icmp-code
+        PrimitiveType: Integer
+        UpdateType: Mutable
 
     .PARAMETER Type
-		Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-networkaclentry-icmp.html#cfn-ec2-networkaclentry-icmp-type    
-		PrimitiveType: Integer    
-		Required: False    
-		UpdateType: Mutable    
+        The Internet Control Message Protocol ICMP type. You can use -1 to specify all ICMP types. Conditional requirement: Required if you specify 1 ICMP for the CreateNetworkAclEntry protocol parameter.
+
+        Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-networkaclentry-icmp.html#cfn-ec2-networkaclentry-icmp-type
+        PrimitiveType: Integer
+        UpdateType: Mutable
 
     .FUNCTIONALITY
         Vaporshell

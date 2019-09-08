@@ -10,22 +10,25 @@ function Add-VSPinpointCampaignCampaignHook {
         http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-pinpoint-campaign-campaignhook.html
 
     .PARAMETER Mode
-		Required: False    
-		Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-pinpoint-campaign-campaignhook.html#cfn-pinpoint-campaign-campaignhook-mode    
-		PrimitiveType: String    
-		UpdateType: Mutable    
+        Specifies which Lambda mode to use when invoking the AWS Lambda function.
+
+        Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-pinpoint-campaign-campaignhook.html#cfn-pinpoint-campaign-campaignhook-mode
+        PrimitiveType: String
+        UpdateType: Mutable
 
     .PARAMETER WebUrl
-		Required: False    
-		Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-pinpoint-campaign-campaignhook.html#cfn-pinpoint-campaign-campaignhook-weburl    
-		PrimitiveType: String    
-		UpdateType: Mutable    
+        The web URL that Amazon Pinpoint calls to invoke the AWS Lambda function over HTTPS.
+
+        Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-pinpoint-campaign-campaignhook.html#cfn-pinpoint-campaign-campaignhook-weburl
+        PrimitiveType: String
+        UpdateType: Mutable
 
     .PARAMETER LambdaFunctionName
-		Required: False    
-		Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-pinpoint-campaign-campaignhook.html#cfn-pinpoint-campaign-campaignhook-lambdafunctionname    
-		PrimitiveType: String    
-		UpdateType: Mutable    
+        The name or Amazon Resource Name ARN of the AWS Lambda function that Amazon Pinpoint invokes to send messages for a campaign.
+
+        Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-pinpoint-campaign-campaignhook.html#cfn-pinpoint-campaign-campaignhook-lambdafunctionname
+        PrimitiveType: String
+        UpdateType: Mutable
 
     .FUNCTIONALITY
         Vaporshell

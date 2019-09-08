@@ -10,10 +10,11 @@ function Add-VSAppMeshVirtualNodeBackend {
         http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-appmesh-virtualnode-backend.html
 
     .PARAMETER VirtualService
-		Type: VirtualServiceBackend    
-		Required: False    
-		Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-appmesh-virtualnode-backend.html#cfn-appmesh-virtualnode-backend-virtualservice    
-		UpdateType: Mutable    
+        Specifies a virtual service to use as a backend for a virtual node.
+
+        Type: VirtualServiceBackend
+        Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-appmesh-virtualnode-backend.html#cfn-appmesh-virtualnode-backend-virtualservice
+        UpdateType: Mutable
 
     .FUNCTIONALITY
         Vaporshell

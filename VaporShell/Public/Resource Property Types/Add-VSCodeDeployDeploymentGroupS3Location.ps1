@@ -10,34 +10,46 @@ function Add-VSCodeDeployDeploymentGroupS3Location {
         http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-codedeploy-deploymentgroup-deployment-revision-s3location.html
 
     .PARAMETER Bucket
-		Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-codedeploy-deploymentgroup-deployment-revision-s3location.html#cfn-properties-codedeploy-deploymentgroup-deployment-revision-s3location-bucket    
-		PrimitiveType: String    
-		Required: True    
-		UpdateType: Mutable    
+        The name of the Amazon S3 bucket where the application revision is stored.
+
+        Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-codedeploy-deploymentgroup-deployment-revision-s3location.html#cfn-properties-codedeploy-deploymentgroup-deployment-revision-s3location-bucket
+        PrimitiveType: String
+        UpdateType: Mutable
 
     .PARAMETER BundleType
-		Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-codedeploy-deploymentgroup-deployment-revision-s3location.html#cfn-properties-codedeploy-deploymentgroup-deployment-revision-s3location-bundletype    
-		PrimitiveType: String    
-		Required: False    
-		UpdateType: Mutable    
+        The file type of the application revision. Must be one of the following:
++ JSON
++ tar: A tar archive file.
++ tgz: A compressed tar archive file.
++ YAML
++ zip: A zip archive file.
+
+        Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-codedeploy-deploymentgroup-deployment-revision-s3location.html#cfn-properties-codedeploy-deploymentgroup-deployment-revision-s3location-bundletype
+        PrimitiveType: String
+        UpdateType: Mutable
 
     .PARAMETER ETag
-		Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-codedeploy-deploymentgroup-deployment-revision-s3location.html#cfn-properties-codedeploy-deploymentgroup-deployment-revision-s3location-etag    
-		PrimitiveType: String    
-		Required: False    
-		UpdateType: Mutable    
+        The ETag of the Amazon S3 object that represents the bundled artifacts for the application revision.
+If the ETag is not specified as an input parameter, ETag validation of the object is skipped.
+
+        Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-codedeploy-deploymentgroup-deployment-revision-s3location.html#cfn-properties-codedeploy-deploymentgroup-deployment-revision-s3location-etag
+        PrimitiveType: String
+        UpdateType: Mutable
 
     .PARAMETER Key
-		Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-codedeploy-deploymentgroup-deployment-revision-s3location.html#cfn-properties-codedeploy-deploymentgroup-deployment-revision-s3location-key    
-		PrimitiveType: String    
-		Required: True    
-		UpdateType: Mutable    
+        The name of the Amazon S3 object that represents the bundled artifacts for the application revision.
+
+        Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-codedeploy-deploymentgroup-deployment-revision-s3location.html#cfn-properties-codedeploy-deploymentgroup-deployment-revision-s3location-key
+        PrimitiveType: String
+        UpdateType: Mutable
 
     .PARAMETER Version
-		Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-codedeploy-deploymentgroup-deployment-revision-s3location.html#cfn-properties-codedeploy-deploymentgroup-deployment-revision-s3location-value    
-		PrimitiveType: String    
-		Required: False    
-		UpdateType: Mutable    
+        A specific version of the Amazon S3 object that represents the bundled artifacts for the application revision.
+If the version is not specified, the system uses the most recent version by default.
+
+        Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-codedeploy-deploymentgroup-deployment-revision-s3location.html#cfn-properties-codedeploy-deploymentgroup-deployment-revision-s3location-value
+        PrimitiveType: String
+        UpdateType: Mutable
 
     .FUNCTIONALITY
         Vaporshell

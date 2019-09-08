@@ -10,16 +10,18 @@ function Add-VSEC2NetworkAclEntryPortRange {
         http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-networkaclentry-portrange.html
 
     .PARAMETER From
-		Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-networkaclentry-portrange.html#cfn-ec2-networkaclentry-portrange-from    
-		PrimitiveType: Integer    
-		Required: False    
-		UpdateType: Mutable    
+        The first port in the range. Required if you specify 6 TCP or 17 UDP for the protocol parameter.
+
+        Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-networkaclentry-portrange.html#cfn-ec2-networkaclentry-portrange-from
+        PrimitiveType: Integer
+        UpdateType: Mutable
 
     .PARAMETER To
-		Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-networkaclentry-portrange.html#cfn-ec2-networkaclentry-portrange-to    
-		PrimitiveType: Integer    
-		Required: False    
-		UpdateType: Mutable    
+        The last port in the range. Required if you specify 6 TCP or 17 UDP for the protocol parameter.
+
+        Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-networkaclentry-portrange.html#cfn-ec2-networkaclentry-portrange-to
+        PrimitiveType: Integer
+        UpdateType: Mutable
 
     .FUNCTIONALITY
         Vaporshell

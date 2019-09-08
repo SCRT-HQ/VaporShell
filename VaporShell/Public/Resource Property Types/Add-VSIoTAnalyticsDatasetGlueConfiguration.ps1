@@ -10,16 +10,18 @@ function Add-VSIoTAnalyticsDatasetGlueConfiguration {
         http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iotanalytics-dataset-glueconfiguration.html
 
     .PARAMETER TableName
-		Required: True    
-		Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iotanalytics-dataset-glueconfiguration.html#cfn-iotanalytics-dataset-glueconfiguration-tablename    
-		PrimitiveType: String    
-		UpdateType: Mutable    
+        The name of the table in your AWS Glue Data Catalog which is used to perform the ETL extract, transform and load operations. An AWS Glue Data Catalog table contains partitioned data and descriptions of data sources and targets.
+
+        Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iotanalytics-dataset-glueconfiguration.html#cfn-iotanalytics-dataset-glueconfiguration-tablename
+        PrimitiveType: String
+        UpdateType: Mutable
 
     .PARAMETER DatabaseName
-		Required: True    
-		Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iotanalytics-dataset-glueconfiguration.html#cfn-iotanalytics-dataset-glueconfiguration-databasename    
-		PrimitiveType: String    
-		UpdateType: Mutable    
+        The name of the database in your AWS Glue Data Catalog in which the table is located. An AWS Glue Data Catalog database contains Glue Data tables.
+
+        Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iotanalytics-dataset-glueconfiguration.html#cfn-iotanalytics-dataset-glueconfiguration-databasename
+        PrimitiveType: String
+        UpdateType: Mutable
 
     .FUNCTIONALITY
         Vaporshell

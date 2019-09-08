@@ -10,10 +10,11 @@ function Add-VSS3BucketObjectLockRule {
         http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-s3-bucket-objectlockrule.html
 
     .PARAMETER DefaultRetention
-		Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-s3-bucket-objectlockrule.html#cfn-s3-bucket-objectlockrule-defaultretention    
-		Required: False    
-		Type: DefaultRetention    
-		UpdateType: Mutable    
+        The default retention period that you want to apply to new objects placed in the specified bucket.
+
+        Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-s3-bucket-objectlockrule.html#cfn-s3-bucket-objectlockrule-defaultretention
+        Type: DefaultRetention
+        UpdateType: Mutable
 
     .FUNCTIONALITY
         Vaporshell

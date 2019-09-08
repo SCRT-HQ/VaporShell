@@ -13,56 +13,66 @@ function New-VSSSMAssociation {
         The logical ID must be alphanumeric (A-Za-z0-9) and unique within the template. Use the logical name to reference the resource in other parts of the template. For example, if you want to map an Amazon Elastic Block Store volume to an Amazon EC2 instance, you reference the logical IDs to associate the block stores with the instance.
 
     .PARAMETER AssociationName
-		Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ssm-association.html#cfn-ssm-association-associationname    
-		PrimitiveType: String    
-		Required: False    
-		UpdateType: Mutable    
+        The name of the association.
+
+        Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ssm-association.html#cfn-ssm-association-associationname
+        PrimitiveType: String
+        UpdateType: Mutable
 
     .PARAMETER DocumentVersion
-		Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ssm-association.html#cfn-ssm-association-documentversion    
-		PrimitiveType: String    
-		Required: False    
-		UpdateType: Mutable    
+        The version of the SSM document to associate with the target.
+
+        Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ssm-association.html#cfn-ssm-association-documentversion
+        PrimitiveType: String
+        UpdateType: Mutable
 
     .PARAMETER InstanceId
-		Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ssm-association.html#cfn-ssm-association-instanceid    
-		PrimitiveType: String    
-		Required: False    
-		UpdateType: Immutable    
+        The ID of the instance that the SSM document is associated with.
+You must specify the InstanceId or Targets property.
+
+        Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ssm-association.html#cfn-ssm-association-instanceid
+        PrimitiveType: String
+        UpdateType: Immutable
 
     .PARAMETER Name
-		Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ssm-association.html#cfn-ssm-association-name    
-		PrimitiveType: String    
-		Required: True    
-		UpdateType: Immutable    
+        The name of the Systems Manager document.
+
+        Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ssm-association.html#cfn-ssm-association-name
+        PrimitiveType: String
+        UpdateType: Immutable
 
     .PARAMETER OutputLocation
-		Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ssm-association.html#cfn-ssm-association-outputlocation    
-		Required: False    
-		Type: InstanceAssociationOutputLocation    
-		UpdateType: Mutable    
+        An Amazon S3 bucket where you want to store the output details of the request.
+
+        Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ssm-association.html#cfn-ssm-association-outputlocation
+        Type: InstanceAssociationOutputLocation
+        UpdateType: Mutable
 
     .PARAMETER Parameters
-		Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ssm-association.html#cfn-ssm-association-parameters    
-		DuplicatesAllowed: False    
-		ItemType: ParameterValues    
-		Required: False    
-		Type: Map    
-		UpdateType: Mutable    
+        The parameters for the runtime configuration of the document.
+
+        Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ssm-association.html#cfn-ssm-association-parameters
+        DuplicatesAllowed: False
+        ItemType: ParameterValues
+        Type: Map
+        UpdateType: Mutable
 
     .PARAMETER ScheduleExpression
-		Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ssm-association.html#cfn-ssm-association-scheduleexpression    
-		PrimitiveType: String    
-		Required: False    
-		UpdateType: Mutable    
+        A cron expression that specifies a schedule when the association runs.
+
+        Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ssm-association.html#cfn-ssm-association-scheduleexpression
+        PrimitiveType: String
+        UpdateType: Mutable
 
     .PARAMETER Targets
-		Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ssm-association.html#cfn-ssm-association-targets    
-		DuplicatesAllowed: False    
-		ItemType: Target    
-		Required: False    
-		Type: List    
-		UpdateType: Immutable    
+        The targets that the SSM document sends commands to.
+You must specify the InstanceId or Targets property.
+
+        Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ssm-association.html#cfn-ssm-association-targets
+        DuplicatesAllowed: False
+        ItemType: Target
+        Type: List
+        UpdateType: Immutable
 
     .PARAMETER DeletionPolicy
         With the DeletionPolicy attribute you can preserve or (in some cases) backup a resource when its stack is deleted. You specify a DeletionPolicy attribute for each resource that you want to control. If a resource has no DeletionPolicy attribute, AWS CloudFormation deletes the resource by default.

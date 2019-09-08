@@ -10,23 +10,26 @@ function Add-VSKinesisAnalyticsV2ApplicationInputSchema {
         http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-kinesisanalyticsv2-application-inputschema.html
 
     .PARAMETER RecordEncoding
-		Required: False    
-		Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-kinesisanalyticsv2-application-inputschema.html#cfn-kinesisanalyticsv2-application-inputschema-recordencoding    
-		PrimitiveType: String    
-		UpdateType: Mutable    
+        Specifies the encoding of the records in the streaming source. For example, UTF-8.
+
+        Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-kinesisanalyticsv2-application-inputschema.html#cfn-kinesisanalyticsv2-application-inputschema-recordencoding
+        PrimitiveType: String
+        UpdateType: Mutable
 
     .PARAMETER RecordColumns
-		Type: List    
-		Required: True    
-		Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-kinesisanalyticsv2-application-inputschema.html#cfn-kinesisanalyticsv2-application-inputschema-recordcolumns    
-		ItemType: RecordColumn    
-		UpdateType: Mutable    
+        A list of RecordColumn objects.
+
+        Type: List
+        Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-kinesisanalyticsv2-application-inputschema.html#cfn-kinesisanalyticsv2-application-inputschema-recordcolumns
+        ItemType: RecordColumn
+        UpdateType: Mutable
 
     .PARAMETER RecordFormat
-		Type: RecordFormat    
-		Required: True    
-		Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-kinesisanalyticsv2-application-inputschema.html#cfn-kinesisanalyticsv2-application-inputschema-recordformat    
-		UpdateType: Mutable    
+        Specifies the format of the records on the streaming source.
+
+        Type: RecordFormat
+        Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-kinesisanalyticsv2-application-inputschema.html#cfn-kinesisanalyticsv2-application-inputschema-recordformat
+        UpdateType: Mutable
 
     .FUNCTIONALITY
         Vaporshell

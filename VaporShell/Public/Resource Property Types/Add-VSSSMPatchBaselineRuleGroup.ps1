@@ -10,11 +10,12 @@ function Add-VSSSMPatchBaselineRuleGroup {
         http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ssm-patchbaseline-rulegroup.html
 
     .PARAMETER PatchRules
-		Type: List    
-		Required: False    
-		Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ssm-patchbaseline-rulegroup.html#cfn-ssm-patchbaseline-rulegroup-patchrules    
-		ItemType: Rule    
-		UpdateType: Mutable    
+        The rules that make up the rule group.
+
+        Type: List
+        Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ssm-patchbaseline-rulegroup.html#cfn-ssm-patchbaseline-rulegroup-patchrules
+        ItemType: Rule
+        UpdateType: Mutable
 
     .FUNCTIONALITY
         Vaporshell

@@ -10,16 +10,18 @@ function Add-VSBackupBackupPlanLifecycleResourceType {
         http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-backup-backupplan-lifecycleresourcetype.html
 
     .PARAMETER DeleteAfterDays
-		Required: False    
-		Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-backup-backupplan-lifecycleresourcetype.html#cfn-backup-backupplan-lifecycleresourcetype-deleteafterdays    
-		PrimitiveType: Double    
-		UpdateType: Mutable    
+        Specifies the number of days after creation that a recovery point is deleted. Must be greater than MoveToColdStorageAfterDays.
+
+        Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-backup-backupplan-lifecycleresourcetype.html#cfn-backup-backupplan-lifecycleresourcetype-deleteafterdays
+        PrimitiveType: Double
+        UpdateType: Mutable
 
     .PARAMETER MoveToColdStorageAfterDays
-		Required: False    
-		Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-backup-backupplan-lifecycleresourcetype.html#cfn-backup-backupplan-lifecycleresourcetype-movetocoldstorageafterdays    
-		PrimitiveType: Double    
-		UpdateType: Mutable    
+        Specifies the number of days after creation that a recovery point is moved to cold storage.
+
+        Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-backup-backupplan-lifecycleresourcetype.html#cfn-backup-backupplan-lifecycleresourcetype-movetocoldstorageafterdays
+        PrimitiveType: Double
+        UpdateType: Mutable
 
     .FUNCTIONALITY
         Vaporshell

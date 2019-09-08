@@ -13,122 +13,151 @@ function New-VSCodeBuildProject {
         The logical ID must be alphanumeric (A-Za-z0-9) and unique within the template. Use the logical name to reference the resource in other parts of the template. For example, if you want to map an Amazon Elastic Block Store volume to an Amazon EC2 instance, you reference the logical IDs to associate the block stores with the instance.
 
     .PARAMETER Description
-		Required: False    
-		Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-codebuild-project.html#cfn-codebuild-project-description    
-		PrimitiveType: String    
-		UpdateType: Mutable    
+        A description that makes the build project easy to identify.
+
+        Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-codebuild-project.html#cfn-codebuild-project-description
+        PrimitiveType: String
+        UpdateType: Mutable
 
     .PARAMETER VpcConfig
-		Type: VpcConfig    
-		Required: False    
-		Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-codebuild-project.html#cfn-codebuild-project-vpcconfig    
-		UpdateType: Mutable    
+        VpcConfig specifies settings that enable AWS CodeBuild to access resources in an Amazon VPC. For more information, see Use AWS CodeBuild with Amazon Virtual Private Cloud: https://docs.aws.amazon.com/codebuild/latest/userguide/vpc-support.html in the *AWS CodeBuild User Guide*.
+
+        Type: VpcConfig
+        Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-codebuild-project.html#cfn-codebuild-project-vpcconfig
+        UpdateType: Mutable
 
     .PARAMETER SecondarySources
-		Type: List    
-		Required: False    
-		Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-codebuild-project.html#cfn-codebuild-project-secondarysources    
-		ItemType: Source    
-		UpdateType: Mutable    
+        An array of ProjectSource objects.
+
+        Type: List
+        Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-codebuild-project.html#cfn-codebuild-project-secondarysources
+        ItemType: Source
+        UpdateType: Mutable
 
     .PARAMETER EncryptionKey
-		Required: False    
-		Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-codebuild-project.html#cfn-codebuild-project-encryptionkey    
-		PrimitiveType: String    
-		UpdateType: Mutable    
+        The alias or Amazon Resource Name ARN of the AWS Key Management Service AWS KMS customer master key CMK that CodeBuild uses to encrypt the build output. If you don't specify a value, CodeBuild uses the AWS-managed CMK for Amazon Simple Storage Service Amazon S3.
+You can use a cross-account KMS key to encrypt the build output artifacts if your service role has permission to that key.
+You can specify either the Amazon Resource Name ARN of the CMK or, if available, the CMK's alias using the format alias/alias-name .
+
+        Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-codebuild-project.html#cfn-codebuild-project-encryptionkey
+        PrimitiveType: String
+        UpdateType: Mutable
 
     .PARAMETER SourceVersion
-		Required: False    
-		Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-codebuild-project.html#cfn-codebuild-project-sourceversion    
-		PrimitiveType: String    
-		UpdateType: Mutable    
+        A version of the build input to be built for this project. If not specified, the latest version is used. If specified, it must be one of:
++ For AWS CodeCommit: the commit ID to use.
++ For GitHub: the commit ID, pull request ID, branch name, or tag name that corresponds to the version of the source code you want to build. If a pull request ID is specified, it must use the format pr/pull-request-ID for example pr/25. If a branch name is specified, the branch's HEAD commit ID is used. If not specified, the default branch's HEAD commit ID is used.
++ For Bitbucket: the commit ID, branch name, or tag name that corresponds to the version of the source code you want to build. If a branch name is specified, the branch's HEAD commit ID is used. If not specified, the default branch's HEAD commit ID is used.
++ For Amazon Simple Storage Service Amazon S3: the version ID of the object that represents the build input ZIP file to use.
+If sourceVersion is specified at the build level, then that version takes precedence over this sourceVersion at the project level.
+For more information, see Source Version Sample with CodeBuild: https://docs.aws.amazon.com/codebuild/latest/userguide/sample-source-version.html in the *AWS CodeBuild User Guide*.
+
+        Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-codebuild-project.html#cfn-codebuild-project-sourceversion
+        PrimitiveType: String
+        UpdateType: Mutable
 
     .PARAMETER Triggers
-		Type: ProjectTriggers    
-		Required: False    
-		Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-codebuild-project.html#cfn-codebuild-project-triggers    
-		UpdateType: Mutable    
+        For an existing AWS CodeBuild build project that has its source code stored in a GitHub repository, enables AWS CodeBuild to begin automatically rebuilding the source code every time a code change is pushed to the repository.
+
+        Type: ProjectTriggers
+        Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-codebuild-project.html#cfn-codebuild-project-triggers
+        UpdateType: Mutable
 
     .PARAMETER SecondaryArtifacts
-		Type: List    
-		Required: False    
-		Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-codebuild-project.html#cfn-codebuild-project-secondaryartifacts    
-		ItemType: Artifacts    
-		UpdateType: Mutable    
+        A list of Artifacts objects. Each artifacts object specifies output settings that the project generates during a build.
+
+        Type: List
+        Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-codebuild-project.html#cfn-codebuild-project-secondaryartifacts
+        ItemType: Artifacts
+        UpdateType: Mutable
 
     .PARAMETER Source
-		Type: Source    
-		Required: True    
-		Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-codebuild-project.html#cfn-codebuild-project-source    
-		UpdateType: Mutable    
+        The source code settings for the project, such as the source code's repository type and location.
+
+        Type: Source
+        Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-codebuild-project.html#cfn-codebuild-project-source
+        UpdateType: Mutable
 
     .PARAMETER Name
-		Required: False    
-		Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-codebuild-project.html#cfn-codebuild-project-name    
-		PrimitiveType: String    
-		UpdateType: Immutable    
+        The name of the build project. The name must be unique across all of the projects in your AWS account.
+
+        Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-codebuild-project.html#cfn-codebuild-project-name
+        PrimitiveType: String
+        UpdateType: Immutable
 
     .PARAMETER Artifacts
-		Type: Artifacts    
-		Required: True    
-		Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-codebuild-project.html#cfn-codebuild-project-artifacts    
-		UpdateType: Mutable    
+        Artifacts is a property of the  AWS::CodeBuild::Project: https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-codebuild-project.html resource that specifies output settings for artifacts generated by an AWS CodeBuild build.
+
+        Type: Artifacts
+        Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-codebuild-project.html#cfn-codebuild-project-artifacts
+        UpdateType: Mutable
 
     .PARAMETER BadgeEnabled
-		Required: False    
-		Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-codebuild-project.html#cfn-codebuild-project-badgeenabled    
-		PrimitiveType: Boolean    
-		UpdateType: Mutable    
+        Indicates whether AWS CodeBuild generates a publicly accessible URL for your project's build badge. For more information, see Build Badges Sample: https://docs.aws.amazon.com/codebuild/latest/userguide/sample-build-badges.html in the *AWS CodeBuild User Guide*.
+Including build badges with your project is currently not supported if the source type is CodePipeline. If you specify CODEPIPELINE for the Source property, do not specify the BadgeEnabled property.
+
+        Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-codebuild-project.html#cfn-codebuild-project-badgeenabled
+        PrimitiveType: Boolean
+        UpdateType: Mutable
 
     .PARAMETER LogsConfig
-		Type: LogsConfig    
-		Required: False    
-		Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-codebuild-project.html#cfn-codebuild-project-logsconfig    
-		UpdateType: Mutable    
+        Information about logs for the build project. A project can create logs in Amazon CloudWatch Logs, an S3 bucket, or both.
+
+        Type: LogsConfig
+        Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-codebuild-project.html#cfn-codebuild-project-logsconfig
+        UpdateType: Mutable
 
     .PARAMETER ServiceRole
-		Required: True    
-		Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-codebuild-project.html#cfn-codebuild-project-servicerole    
-		PrimitiveType: String    
-		UpdateType: Mutable    
+        The ARN of the AWS Identity and Access Management IAM role that enables AWS CodeBuild to interact with dependent AWS services on behalf of the AWS account.
+
+        Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-codebuild-project.html#cfn-codebuild-project-servicerole
+        PrimitiveType: String
+        UpdateType: Mutable
 
     .PARAMETER QueuedTimeoutInMinutes
-		Required: False    
-		Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-codebuild-project.html#cfn-codebuild-project-queuedtimeoutinminutes    
-		PrimitiveType: Integer    
-		UpdateType: Mutable    
+        The number of minutes a build is allowed to be queued before it times out.
+
+        Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-codebuild-project.html#cfn-codebuild-project-queuedtimeoutinminutes
+        PrimitiveType: Integer
+        UpdateType: Mutable
 
     .PARAMETER Environment
-		Type: Environment    
-		Required: True    
-		Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-codebuild-project.html#cfn-codebuild-project-environment    
-		UpdateType: Mutable    
+        The build environment settings for the project, such as the environment type or the environment variables to use for the build environment.
+
+        Type: Environment
+        Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-codebuild-project.html#cfn-codebuild-project-environment
+        UpdateType: Mutable
 
     .PARAMETER SecondarySourceVersions
-		Type: List    
-		Required: False    
-		Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-codebuild-project.html#cfn-codebuild-project-secondarysourceversions    
-		ItemType: ProjectSourceVersion    
-		UpdateType: Mutable    
+        An array of ProjectSourceVersion objects. If secondarySourceVersions is specified at the build level, then they take over these secondarySourceVersions at the project level.
+
+        Type: List
+        Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-codebuild-project.html#cfn-codebuild-project-secondarysourceversions
+        ItemType: ProjectSourceVersion
+        UpdateType: Mutable
 
     .PARAMETER Tags
-		Type: List    
-		Required: False    
-		Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-codebuild-project.html#cfn-codebuild-project-tags    
-		ItemType: Tag    
-		UpdateType: Mutable    
+        An arbitrary set of tags key-value pairs for the AWS CodeBuild project.
+These tags are available for use by AWS services that support AWS CodeBuild build project tags.
+
+        Type: List
+        Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-codebuild-project.html#cfn-codebuild-project-tags
+        ItemType: Tag
+        UpdateType: Mutable
 
     .PARAMETER TimeoutInMinutes
-		Required: False    
-		Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-codebuild-project.html#cfn-codebuild-project-timeoutinminutes    
-		PrimitiveType: Integer    
-		UpdateType: Mutable    
+        How long, in minutes, from 5 to 480 8 hours, for AWS CodeBuild to wait before timing out any related build that did not get marked as completed. The default is 60 minutes.
+
+        Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-codebuild-project.html#cfn-codebuild-project-timeoutinminutes
+        PrimitiveType: Integer
+        UpdateType: Mutable
 
     .PARAMETER Cache
-		Type: ProjectCache    
-		Required: False    
-		Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-codebuild-project.html#cfn-codebuild-project-cache    
-		UpdateType: Mutable    
+        Settings that AWS CodeBuild uses to store and reuse build dependencies.
+
+        Type: ProjectCache
+        Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-codebuild-project.html#cfn-codebuild-project-cache
+        UpdateType: Mutable
 
     .PARAMETER DeletionPolicy
         With the DeletionPolicy attribute you can preserve or (in some cases) backup a resource when its stack is deleted. You specify a DeletionPolicy attribute for each resource that you want to control. If a resource has no DeletionPolicy attribute, AWS CloudFormation deletes the resource by default.

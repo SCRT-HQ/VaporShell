@@ -10,46 +10,53 @@ function Add-VSSESReceiptRuleAction {
         http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ses-receiptrule-action.html
 
     .PARAMETER BounceAction
-		Type: BounceAction    
-		Required: False    
-		Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ses-receiptrule-action.html#cfn-ses-receiptrule-action-bounceaction    
-		UpdateType: Mutable    
+        Rejects the received email by returning a bounce response to the sender and, optionally, publishes a notification to Amazon Simple Notification Service Amazon SNS.
+
+        Type: BounceAction
+        Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ses-receiptrule-action.html#cfn-ses-receiptrule-action-bounceaction
+        UpdateType: Mutable
 
     .PARAMETER S3Action
-		Type: S3Action    
-		Required: False    
-		Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ses-receiptrule-action.html#cfn-ses-receiptrule-action-s3action    
-		UpdateType: Mutable    
+        Saves the received message to an Amazon Simple Storage Service Amazon S3 bucket and, optionally, publishes a notification to Amazon SNS.
+
+        Type: S3Action
+        Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ses-receiptrule-action.html#cfn-ses-receiptrule-action-s3action
+        UpdateType: Mutable
 
     .PARAMETER StopAction
-		Type: StopAction    
-		Required: False    
-		Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ses-receiptrule-action.html#cfn-ses-receiptrule-action-stopaction    
-		UpdateType: Mutable    
+        Terminates the evaluation of the receipt rule set and optionally publishes a notification to Amazon SNS.
+
+        Type: StopAction
+        Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ses-receiptrule-action.html#cfn-ses-receiptrule-action-stopaction
+        UpdateType: Mutable
 
     .PARAMETER SNSAction
-		Type: SNSAction    
-		Required: False    
-		Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ses-receiptrule-action.html#cfn-ses-receiptrule-action-snsaction    
-		UpdateType: Mutable    
+        Publishes the email content within a notification to Amazon SNS.
+
+        Type: SNSAction
+        Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ses-receiptrule-action.html#cfn-ses-receiptrule-action-snsaction
+        UpdateType: Mutable
 
     .PARAMETER WorkmailAction
-		Type: WorkmailAction    
-		Required: False    
-		Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ses-receiptrule-action.html#cfn-ses-receiptrule-action-workmailaction    
-		UpdateType: Mutable    
+        Calls Amazon WorkMail and, optionally, publishes a notification to Amazon SNS.
+
+        Type: WorkmailAction
+        Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ses-receiptrule-action.html#cfn-ses-receiptrule-action-workmailaction
+        UpdateType: Mutable
 
     .PARAMETER AddHeaderAction
-		Type: AddHeaderAction    
-		Required: False    
-		Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ses-receiptrule-action.html#cfn-ses-receiptrule-action-addheaderaction    
-		UpdateType: Mutable    
+        Adds a header to the received email.
+
+        Type: AddHeaderAction
+        Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ses-receiptrule-action.html#cfn-ses-receiptrule-action-addheaderaction
+        UpdateType: Mutable
 
     .PARAMETER LambdaAction
-		Type: LambdaAction    
-		Required: False    
-		Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ses-receiptrule-action.html#cfn-ses-receiptrule-action-lambdaaction    
-		UpdateType: Mutable    
+        Calls an AWS Lambda function, and optionally, publishes a notification to Amazon SNS.
+
+        Type: LambdaAction
+        Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ses-receiptrule-action.html#cfn-ses-receiptrule-action-lambdaaction
+        UpdateType: Mutable
 
     .FUNCTIONALITY
         Vaporshell

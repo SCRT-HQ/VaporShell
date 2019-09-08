@@ -10,11 +10,12 @@ function Add-VSGreengrassCoreDefinitionCoreDefinitionVersion {
         http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-greengrass-coredefinition-coredefinitionversion.html
 
     .PARAMETER Cores
-		Type: List    
-		Required: True    
-		Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-greengrass-coredefinition-coredefinitionversion.html#cfn-greengrass-coredefinition-coredefinitionversion-cores    
-		ItemType: Core    
-		UpdateType: Immutable    
+        The Greengrass core in this version. Currently, the Cores property for a core definition version can contain only one core.
+
+        Type: List
+        Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-greengrass-coredefinition-coredefinitionversion.html#cfn-greengrass-coredefinition-coredefinitionversion-cores
+        ItemType: Core
+        UpdateType: Immutable
 
     .FUNCTIONALITY
         Vaporshell

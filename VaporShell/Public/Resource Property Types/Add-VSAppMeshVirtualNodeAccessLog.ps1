@@ -10,10 +10,11 @@ function Add-VSAppMeshVirtualNodeAccessLog {
         http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-appmesh-virtualnode-accesslog.html
 
     .PARAMETER File
-		Type: FileAccessLog    
-		Required: False    
-		Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-appmesh-virtualnode-accesslog.html#cfn-appmesh-virtualnode-accesslog-file    
-		UpdateType: Mutable    
+        The file object to send virtual node access logs to.
+
+        Type: FileAccessLog
+        Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-appmesh-virtualnode-accesslog.html#cfn-appmesh-virtualnode-accesslog-file
+        UpdateType: Mutable
 
     .FUNCTIONALITY
         Vaporshell

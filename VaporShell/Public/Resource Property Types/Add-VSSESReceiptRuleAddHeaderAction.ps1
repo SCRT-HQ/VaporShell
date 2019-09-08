@@ -10,16 +10,18 @@ function Add-VSSESReceiptRuleAddHeaderAction {
         http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ses-receiptrule-addheaderaction.html
 
     .PARAMETER HeaderValue
-		Required: True    
-		Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ses-receiptrule-addheaderaction.html#cfn-ses-receiptrule-addheaderaction-headervalue    
-		PrimitiveType: String    
-		UpdateType: Mutable    
+        The content that you want to include in the header. This value can contain up to 2048 characters. It can't contain newline n or carraige return r characters.
+
+        Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ses-receiptrule-addheaderaction.html#cfn-ses-receiptrule-addheaderaction-headervalue
+        PrimitiveType: String
+        UpdateType: Mutable
 
     .PARAMETER HeaderName
-		Required: True    
-		Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ses-receiptrule-addheaderaction.html#cfn-ses-receiptrule-addheaderaction-headername    
-		PrimitiveType: String    
-		UpdateType: Mutable    
+        The name of the header that you want to add to the incoming message. The name has to contain at least one character, and can contain up to 50 characters. It can only consist of alphanumeric a–z, A–Z, 0–9 characters and dashes.
+
+        Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ses-receiptrule-addheaderaction.html#cfn-ses-receiptrule-addheaderaction-headername
+        PrimitiveType: String
+        UpdateType: Mutable
 
     .FUNCTIONALITY
         Vaporshell

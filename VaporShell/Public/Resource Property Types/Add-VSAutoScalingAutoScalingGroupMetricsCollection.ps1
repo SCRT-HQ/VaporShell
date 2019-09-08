@@ -10,18 +10,28 @@ function Add-VSAutoScalingAutoScalingGroupMetricsCollection {
         http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-as-metricscollection.html
 
     .PARAMETER Granularity
-		Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-as-metricscollection.html#cfn-as-metricscollection-granularity    
-		PrimitiveType: String    
-		Required: True    
-		UpdateType: Mutable    
+        The frequency at which Amazon EC2 Auto Scaling sends aggregated data to CloudWatch. The only valid value is 1Minute.
+
+        Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-as-metricscollection.html#cfn-as-metricscollection-granularity
+        PrimitiveType: String
+        UpdateType: Mutable
 
     .PARAMETER Metrics
-		Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-as-metricscollection.html#cfn-as-metricscollection-metrics    
-		DuplicatesAllowed: True    
-		PrimitiveItemType: String    
-		Required: False    
-		Type: List    
-		UpdateType: Mutable    
+        The list of Auto Scaling group metrics to collect. If you specify Granularity and don't specify any metrics, all metrics are enabled.
++ GroupMinSize
++ GroupMaxSize
++ GroupDesiredCapacity
++ GroupInServiceInstances
++ GroupPendingInstances
++ GroupStandbyInstances
++ GroupTerminatingInstances
++ GroupTotalInstances
+
+        Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-as-metricscollection.html#cfn-as-metricscollection-metrics
+        DuplicatesAllowed: True
+        PrimitiveItemType: String
+        Type: List
+        UpdateType: Mutable
 
     .FUNCTIONALITY
         Vaporshell

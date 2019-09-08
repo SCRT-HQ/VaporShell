@@ -10,16 +10,18 @@ function Add-VSIoTAnalyticsChannelChannelStorage {
         http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iotanalytics-channel-channelstorage.html
 
     .PARAMETER CustomerManagedS3
-		Type: CustomerManagedS3    
-		Required: False    
-		Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iotanalytics-channel-channelstorage.html#cfn-iotanalytics-channel-channelstorage-customermanageds3    
-		UpdateType: Mutable    
+        Use this to store channel data in an S3 bucket that you manage. The choice of service-managed or customer-managed S3 storage cannot be changed after creation of the channel.
+
+        Type: CustomerManagedS3
+        Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iotanalytics-channel-channelstorage.html#cfn-iotanalytics-channel-channelstorage-customermanageds3
+        UpdateType: Mutable
 
     .PARAMETER ServiceManagedS3
-		Type: ServiceManagedS3    
-		Required: False    
-		Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iotanalytics-channel-channelstorage.html#cfn-iotanalytics-channel-channelstorage-servicemanageds3    
-		UpdateType: Mutable    
+        Use this to store channel data in an S3 bucket managed by the AWS IoT Analytics service. The choice of service-managed or customer-managed S3 storage cannot be changed after creation of the channel.
+
+        Type: ServiceManagedS3
+        Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iotanalytics-channel-channelstorage.html#cfn-iotanalytics-channel-channelstorage-servicemanageds3
+        UpdateType: Mutable
 
     .FUNCTIONALITY
         Vaporshell

@@ -10,22 +10,27 @@ function Add-VSCognitoIdentityPoolRoleAttachmentRoleMapping {
         http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-cognito-identitypoolroleattachment-rolemapping.html
 
     .PARAMETER Type
-		Required: True    
-		Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-cognito-identitypoolroleattachment-rolemapping.html#cfn-cognito-identitypoolroleattachment-rolemapping-type    
-		PrimitiveType: String    
-		UpdateType: Mutable    
+        The role mapping type. Token will use cognito:roles and cognito:preferred_role claims from the Amazon Cognito identity provider token to map groups to roles. Rules will attempt to match claims from the token to map to a role.
+Valid values are Token or Rules.
+
+        Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-cognito-identitypoolroleattachment-rolemapping.html#cfn-cognito-identitypoolroleattachment-rolemapping-type
+        PrimitiveType: String
+        UpdateType: Mutable
 
     .PARAMETER AmbiguousRoleResolution
-		Required: False    
-		Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-cognito-identitypoolroleattachment-rolemapping.html#cfn-cognito-identitypoolroleattachment-rolemapping-ambiguousroleresolution    
-		PrimitiveType: String    
-		UpdateType: Mutable    
+        Specifies the action to be taken if either no rules match the claim value for the Rules type, or there is no cognito:preferred_role claim and there are multiple cognito:roles matches for the Token type. If you specify Token or Rules as the Type, AmbiguousRoleResolution is required.
+Valid values are AuthenticatedRole or Deny.
+
+        Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-cognito-identitypoolroleattachment-rolemapping.html#cfn-cognito-identitypoolroleattachment-rolemapping-ambiguousroleresolution
+        PrimitiveType: String
+        UpdateType: Mutable
 
     .PARAMETER RulesConfiguration
-		Type: RulesConfigurationType    
-		Required: False    
-		Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-cognito-identitypoolroleattachment-rolemapping.html#cfn-cognito-identitypoolroleattachment-rolemapping-rulesconfiguration    
-		UpdateType: Mutable    
+        The rules to be used for mapping users to roles. If you specify Rules as the role mapping type, RulesConfiguration is required.
+
+        Type: RulesConfigurationType
+        Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-cognito-identitypoolroleattachment-rolemapping.html#cfn-cognito-identitypoolroleattachment-rolemapping-rulesconfiguration
+        UpdateType: Mutable
 
     .FUNCTIONALITY
         Vaporshell

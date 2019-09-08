@@ -13,52 +13,70 @@ function New-VSKinesisFirehoseDeliveryStream {
         The logical ID must be alphanumeric (A-Za-z0-9) and unique within the template. Use the logical name to reference the resource in other parts of the template. For example, if you want to map an Amazon Elastic Block Store volume to an Amazon EC2 instance, you reference the logical IDs to associate the block stores with the instance.
 
     .PARAMETER DeliveryStreamName
-		Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-kinesisfirehose-deliverystream.html#cfn-kinesisfirehose-deliverystream-deliverystreamname    
-		PrimitiveType: String    
-		Required: False    
-		UpdateType: Immutable    
+        The name of the delivery stream.
+
+        Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-kinesisfirehose-deliverystream.html#cfn-kinesisfirehose-deliverystream-deliverystreamname
+        PrimitiveType: String
+        UpdateType: Immutable
 
     .PARAMETER DeliveryStreamType
-		Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-kinesisfirehose-deliverystream.html#cfn-kinesisfirehose-deliverystream-deliverystreamtype    
-		PrimitiveType: String    
-		Required: False    
-		UpdateType: Immutable    
+        The delivery stream type. This can be one of the following values:
++  DirectPut: Provider applications access the delivery stream directly.
++  KinesisStreamAsSource: The delivery stream uses a Kinesis data stream as a source.
+
+        Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-kinesisfirehose-deliverystream.html#cfn-kinesisfirehose-deliverystream-deliverystreamtype
+        PrimitiveType: String
+        UpdateType: Immutable
 
     .PARAMETER ElasticsearchDestinationConfiguration
-		Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-kinesisfirehose-deliverystream.html#cfn-kinesisfirehose-deliverystream-elasticsearchdestinationconfiguration    
-		Required: False    
-		Type: ElasticsearchDestinationConfiguration    
-		UpdateType: Mutable    
+        An Amazon ES destination for the delivery stream.
+Conditional. You must specify only one destination configuration.
+If you change the delivery stream destination from an Amazon ES destination to an Amazon S3 or Amazon Redshift destination, update requires some interruptions: https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-some-interrupt.
+
+        Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-kinesisfirehose-deliverystream.html#cfn-kinesisfirehose-deliverystream-elasticsearchdestinationconfiguration
+        Type: ElasticsearchDestinationConfiguration
+        UpdateType: Mutable
 
     .PARAMETER ExtendedS3DestinationConfiguration
-		Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-kinesisfirehose-deliverystream.html#cfn-kinesisfirehose-deliverystream-extendeds3destinationconfiguration    
-		Required: False    
-		Type: ExtendedS3DestinationConfiguration    
-		UpdateType: Mutable    
+        An Amazon S3 destination for the delivery stream.
+Conditional. You must specify only one destination configuration.
+If you change the delivery stream destination from an Amazon Extended S3 destination to an Amazon ES destination, update requires some interruptions: https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-some-interrupt.
+
+        Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-kinesisfirehose-deliverystream.html#cfn-kinesisfirehose-deliverystream-extendeds3destinationconfiguration
+        Type: ExtendedS3DestinationConfiguration
+        UpdateType: Mutable
 
     .PARAMETER KinesisStreamSourceConfiguration
-		Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-kinesisfirehose-deliverystream.html#cfn-kinesisfirehose-deliverystream-kinesisstreamsourceconfiguration    
-		Required: False    
-		Type: KinesisStreamSourceConfiguration    
-		UpdateType: Mutable    
+        When a Kinesis stream is used as the source for the delivery stream, a KinesisStreamSourceConfiguration: https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-kinesisfirehose-deliverystream-kinesisstreamsourceconfiguration.html containing the Kinesis stream ARN and the role ARN for the source stream.
+
+        Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-kinesisfirehose-deliverystream.html#cfn-kinesisfirehose-deliverystream-kinesisstreamsourceconfiguration
+        Type: KinesisStreamSourceConfiguration
+        UpdateType: Mutable
 
     .PARAMETER RedshiftDestinationConfiguration
-		Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-kinesisfirehose-deliverystream.html#cfn-kinesisfirehose-deliverystream-redshiftdestinationconfiguration    
-		Required: False    
-		Type: RedshiftDestinationConfiguration    
-		UpdateType: Mutable    
+        An Amazon Redshift destination for the delivery stream.
+Conditional. You must specify only one destination configuration.
+If you change the delivery stream destination from an Amazon Redshift destination to an Amazon ES destination, update requires some interruptions: https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-some-interrupt.
+
+        Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-kinesisfirehose-deliverystream.html#cfn-kinesisfirehose-deliverystream-redshiftdestinationconfiguration
+        Type: RedshiftDestinationConfiguration
+        UpdateType: Mutable
 
     .PARAMETER S3DestinationConfiguration
-		Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-kinesisfirehose-deliverystream.html#cfn-kinesisfirehose-deliverystream-s3destinationconfiguration    
-		Required: False    
-		Type: S3DestinationConfiguration    
-		UpdateType: Mutable    
+        The S3DestinationConfiguration property type specifies an Amazon Simple Storage Service Amazon S3 destination to which Amazon Kinesis Data Firehose Kinesis Data Firehose delivers data.
+Conditional. You must specify only one destination configuration.
+If you change the delivery stream destination from an Amazon S3 destination to an Amazon ES destination, update requires some interruptions: https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-some-interrupt.
+
+        Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-kinesisfirehose-deliverystream.html#cfn-kinesisfirehose-deliverystream-s3destinationconfiguration
+        Type: S3DestinationConfiguration
+        UpdateType: Mutable
 
     .PARAMETER SplunkDestinationConfiguration
-		Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-kinesisfirehose-deliverystream.html#cfn-kinesisfirehose-deliverystream-splunkdestinationconfiguration    
-		Required: False    
-		Type: SplunkDestinationConfiguration    
-		UpdateType: Mutable    
+        The configuration of a destination in Splunk for the delivery stream.
+
+        Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-kinesisfirehose-deliverystream.html#cfn-kinesisfirehose-deliverystream-splunkdestinationconfiguration
+        Type: SplunkDestinationConfiguration
+        UpdateType: Mutable
 
     .PARAMETER DeletionPolicy
         With the DeletionPolicy attribute you can preserve or (in some cases) backup a resource when its stack is deleted. You specify a DeletionPolicy attribute for each resource that you want to control. If a resource has no DeletionPolicy attribute, AWS CloudFormation deletes the resource by default.

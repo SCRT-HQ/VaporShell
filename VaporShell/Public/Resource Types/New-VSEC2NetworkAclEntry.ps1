@@ -13,58 +13,68 @@ function New-VSEC2NetworkAclEntry {
         The logical ID must be alphanumeric (A-Za-z0-9) and unique within the template. Use the logical name to reference the resource in other parts of the template. For example, if you want to map an Amazon Elastic Block Store volume to an Amazon EC2 instance, you reference the logical IDs to associate the block stores with the instance.
 
     .PARAMETER CidrBlock
-		Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ec2-network-acl-entry.html#cfn-ec2-networkaclentry-cidrblock    
-		PrimitiveType: String    
-		Required: True    
-		UpdateType: Mutable    
+        The IPv4 CIDR range to allow or deny, in CIDR notation for example, 172.16.0.0/24. Requirement is conditional: You must specify the CidrBlock or Ipv6CidrBlock property.
+
+        Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ec2-network-acl-entry.html#cfn-ec2-networkaclentry-cidrblock
+        PrimitiveType: String
+        UpdateType: Mutable
 
     .PARAMETER Egress
-		Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ec2-network-acl-entry.html#cfn-ec2-networkaclentry-egress    
-		PrimitiveType: Boolean    
-		Required: False    
-		UpdateType: Immutable    
+        Whether this rule applies to egress traffic from the subnet true or ingress traffic to the subnet false. By default, AWS CloudFormation specifies false.
+
+        Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ec2-network-acl-entry.html#cfn-ec2-networkaclentry-egress
+        PrimitiveType: Boolean
+        UpdateType: Immutable
 
     .PARAMETER Icmp
-		Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ec2-network-acl-entry.html#cfn-ec2-networkaclentry-icmp    
-		Required: False    
-		Type: Icmp    
-		UpdateType: Mutable    
+        The Internet Control Message Protocol ICMP code and type. Requirement is conditional: Required if specifying 1 ICMP for the protocol parameter.
+
+        Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ec2-network-acl-entry.html#cfn-ec2-networkaclentry-icmp
+        Type: Icmp
+        UpdateType: Mutable
 
     .PARAMETER Ipv6CidrBlock
-		Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ec2-network-acl-entry.html#cfn-ec2-networkaclentry-ipv6cidrblock    
-		PrimitiveType: String    
-		Required: False    
-		UpdateType: Mutable    
+        The IPv6 network range to allow or deny, in CIDR notation. Requirement is conditional: You must specify the CidrBlock or Ipv6CidrBlock property.
+
+        Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ec2-network-acl-entry.html#cfn-ec2-networkaclentry-ipv6cidrblock
+        PrimitiveType: String
+        UpdateType: Mutable
 
     .PARAMETER NetworkAclId
-		Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ec2-network-acl-entry.html#cfn-ec2-networkaclentry-networkaclid    
-		PrimitiveType: String    
-		Required: True    
-		UpdateType: Immutable    
+        The ID of the ACL for the entry.
+
+        Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ec2-network-acl-entry.html#cfn-ec2-networkaclentry-networkaclid
+        PrimitiveType: String
+        UpdateType: Immutable
 
     .PARAMETER PortRange
-		Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ec2-network-acl-entry.html#cfn-ec2-networkaclentry-portrange    
-		Required: False    
-		Type: PortRange    
-		UpdateType: Mutable    
+        The range of port numbers for the UDP/TCP protocol. Conditional required if specifying 6 TCP or 17 UDP for the protocol parameter.
+
+        Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ec2-network-acl-entry.html#cfn-ec2-networkaclentry-portrange
+        Type: PortRange
+        UpdateType: Mutable
 
     .PARAMETER Protocol
-		Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ec2-network-acl-entry.html#cfn-ec2-networkaclentry-protocol    
-		PrimitiveType: Integer    
-		Required: True    
-		UpdateType: Mutable    
+        The IP protocol that the rule applies to. You must specify -1 or a protocol number. You can specify -1 for all protocols.
+If you specify -1, all ports are opened and the PortRange property is ignored.
+
+        Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ec2-network-acl-entry.html#cfn-ec2-networkaclentry-protocol
+        PrimitiveType: Integer
+        UpdateType: Mutable
 
     .PARAMETER RuleAction
-		Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ec2-network-acl-entry.html#cfn-ec2-networkaclentry-ruleaction    
-		PrimitiveType: String    
-		Required: True    
-		UpdateType: Mutable    
+        Whether to allow or deny traffic that matches the rule; valid values are "allow" or "deny".
+
+        Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ec2-network-acl-entry.html#cfn-ec2-networkaclentry-ruleaction
+        PrimitiveType: String
+        UpdateType: Mutable
 
     .PARAMETER RuleNumber
-		Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ec2-network-acl-entry.html#cfn-ec2-networkaclentry-rulenumber    
-		PrimitiveType: Integer    
-		Required: True    
-		UpdateType: Immutable    
+        Rule number to assign to the entry, such as 100. ACL entries are processed in ascending order by rule number. Entries can't use the same rule number unless one is an egress rule and the other is an ingress rule.
+
+        Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ec2-network-acl-entry.html#cfn-ec2-networkaclentry-rulenumber
+        PrimitiveType: Integer
+        UpdateType: Immutable
 
     .PARAMETER DeletionPolicy
         With the DeletionPolicy attribute you can preserve or (in some cases) backup a resource when its stack is deleted. You specify a DeletionPolicy attribute for each resource that you want to control. If a resource has no DeletionPolicy attribute, AWS CloudFormation deletes the resource by default.

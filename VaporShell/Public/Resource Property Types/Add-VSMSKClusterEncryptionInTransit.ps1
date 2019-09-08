@@ -10,16 +10,22 @@ function Add-VSMSKClusterEncryptionInTransit {
         http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-msk-cluster-encryptionintransit.html
 
     .PARAMETER ClientBroker
-		Required: False    
-		Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-msk-cluster-encryptionintransit.html#cfn-msk-cluster-encryptionintransit-clientbroker    
-		PrimitiveType: String    
-		UpdateType: Immutable    
+        Indicates the encryption setting for data in transit between clients and brokers. The following are the possible values.
++ TLS means that client-broker communication is enabled with TLS only.
++ TLS_PLAINTEXT means that client-broker communication is enabled for both TLS-encrypted, as well as plaintext data.
++ PLAINTEXT means that client-broker communication is enabled in plaintext only.
+The default value is TLS_PLAINTEXT.
+
+        Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-msk-cluster-encryptionintransit.html#cfn-msk-cluster-encryptionintransit-clientbroker
+        PrimitiveType: String
+        UpdateType: Immutable
 
     .PARAMETER InCluster
-		Required: False    
-		Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-msk-cluster-encryptionintransit.html#cfn-msk-cluster-encryptionintransit-incluster    
-		PrimitiveType: Boolean    
-		UpdateType: Immutable    
+        When set to true, it indicates that data communication among the broker nodes of the cluster is encrypted. When set to false, the communication happens in plaintext. The default value is true.
+
+        Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-msk-cluster-encryptionintransit.html#cfn-msk-cluster-encryptionintransit-incluster
+        PrimitiveType: Boolean
+        UpdateType: Immutable
 
     .FUNCTIONALITY
         Vaporshell

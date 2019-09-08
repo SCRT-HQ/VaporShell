@@ -10,11 +10,12 @@ function Add-VSMSKClusterTls {
         http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-msk-cluster-tls.html
 
     .PARAMETER CertificateAuthorityArnList
-		PrimitiveItemType: String    
-		Type: List    
-		Required: False    
-		Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-msk-cluster-tls.html#cfn-msk-cluster-tls-certificateauthorityarnlist    
-		UpdateType: Immutable    
+        List of ACM Certificate Authority ARNs.
+
+        PrimitiveItemType: String
+        Type: List
+        Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-msk-cluster-tls.html#cfn-msk-cluster-tls-certificateauthorityarnlist
+        UpdateType: Immutable
 
     .FUNCTIONALITY
         Vaporshell

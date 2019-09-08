@@ -10,11 +10,12 @@ function Add-VSGreengrassResourceDefinitionResourceDefinitionVersion {
         http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-greengrass-resourcedefinition-resourcedefinitionversion.html
 
     .PARAMETER Resources
-		Type: List    
-		Required: True    
-		Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-greengrass-resourcedefinition-resourcedefinitionversion.html#cfn-greengrass-resourcedefinition-resourcedefinitionversion-resources    
-		ItemType: ResourceInstance    
-		UpdateType: Immutable    
+        The resources in this version.
+
+        Type: List
+        Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-greengrass-resourcedefinition-resourcedefinitionversion.html#cfn-greengrass-resourcedefinition-resourcedefinitionversion-resources
+        ItemType: ResourceInstance
+        UpdateType: Immutable
 
     .FUNCTIONALITY
         Vaporshell

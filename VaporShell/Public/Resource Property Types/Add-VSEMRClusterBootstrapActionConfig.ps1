@@ -10,16 +10,18 @@ function Add-VSEMRClusterBootstrapActionConfig {
         http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-elasticmapreduce-cluster-bootstrapactionconfig.html
 
     .PARAMETER Name
-		Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-elasticmapreduce-cluster-bootstrapactionconfig.html#cfn-elasticmapreduce-cluster-bootstrapactionconfig-name    
-		PrimitiveType: String    
-		Required: True    
-		UpdateType: Mutable    
+        The name of the bootstrap action.
+
+        Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-elasticmapreduce-cluster-bootstrapactionconfig.html#cfn-elasticmapreduce-cluster-bootstrapactionconfig-name
+        PrimitiveType: String
+        UpdateType: Mutable
 
     .PARAMETER ScriptBootstrapAction
-		Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-elasticmapreduce-cluster-bootstrapactionconfig.html#cfn-elasticmapreduce-cluster-bootstrapactionconfig-scriptbootstrapaction    
-		Required: True    
-		Type: ScriptBootstrapActionConfig    
-		UpdateType: Mutable    
+        The script run by the bootstrap action.
+
+        Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-elasticmapreduce-cluster-bootstrapactionconfig.html#cfn-elasticmapreduce-cluster-bootstrapactionconfig-scriptbootstrapaction
+        Type: ScriptBootstrapActionConfig
+        UpdateType: Mutable
 
     .FUNCTIONALITY
         Vaporshell

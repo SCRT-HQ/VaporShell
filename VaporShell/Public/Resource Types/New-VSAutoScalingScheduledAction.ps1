@@ -13,46 +13,57 @@ function New-VSAutoScalingScheduledAction {
         The logical ID must be alphanumeric (A-Za-z0-9) and unique within the template. Use the logical name to reference the resource in other parts of the template. For example, if you want to map an Amazon Elastic Block Store volume to an Amazon EC2 instance, you reference the logical IDs to associate the block stores with the instance.
 
     .PARAMETER AutoScalingGroupName
-		Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-as-scheduledaction.html#cfn-as-scheduledaction-asgname    
-		PrimitiveType: String    
-		Required: True    
-		UpdateType: Immutable    
+        The name or Amazon Resource Name ARN of the Auto Scaling group.
+
+        Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-as-scheduledaction.html#cfn-as-scheduledaction-asgname
+        PrimitiveType: String
+        UpdateType: Immutable
 
     .PARAMETER DesiredCapacity
-		Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-as-scheduledaction.html#cfn-as-scheduledaction-desiredcapacity    
-		PrimitiveType: Integer    
-		Required: False    
-		UpdateType: Mutable    
+        The number of Amazon EC2 instances that should be running in the Auto Scaling group.
+You must specify at least one of the following properties: MaxSize, MinSize, or DesiredCapacity.
+
+        Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-as-scheduledaction.html#cfn-as-scheduledaction-desiredcapacity
+        PrimitiveType: Integer
+        UpdateType: Mutable
 
     .PARAMETER EndTime
-		Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-as-scheduledaction.html#cfn-as-scheduledaction-endtime    
-		PrimitiveType: String    
-		Required: False    
-		UpdateType: Mutable    
+        The date and time in UTC for the recurring schedule to end. For example, "2019-06-01T00:00:00Z".
+
+        Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-as-scheduledaction.html#cfn-as-scheduledaction-endtime
+        PrimitiveType: String
+        UpdateType: Mutable
 
     .PARAMETER MaxSize
-		Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-as-scheduledaction.html#cfn-as-scheduledaction-maxsize    
-		PrimitiveType: Integer    
-		Required: False    
-		UpdateType: Mutable    
+        The maximum number of Amazon EC2 instances in the Auto Scaling group.
+You must specify at least one of the following properties: MaxSize, MinSize, or DesiredCapacity.
+
+        Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-as-scheduledaction.html#cfn-as-scheduledaction-maxsize
+        PrimitiveType: Integer
+        UpdateType: Mutable
 
     .PARAMETER MinSize
-		Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-as-scheduledaction.html#cfn-as-scheduledaction-minsize    
-		PrimitiveType: Integer    
-		Required: False    
-		UpdateType: Mutable    
+        The minimum number of Amazon EC2 instances in the Auto Scaling group.
+You must specify at least one of the following properties: MaxSize, MinSize, or DesiredCapacity.
+
+        Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-as-scheduledaction.html#cfn-as-scheduledaction-minsize
+        PrimitiveType: Integer
+        UpdateType: Mutable
 
     .PARAMETER Recurrence
-		Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-as-scheduledaction.html#cfn-as-scheduledaction-recurrence    
-		PrimitiveType: String    
-		Required: False    
-		UpdateType: Mutable    
+        The recurring schedule for this action, in Unix cron syntax format. For more information about cron syntax, see Crontab: http://crontab.org/.
+Specifying the StartTime and EndTime properties with Recurrence property forms the start and stop boundaries of the recurring action.
+
+        Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-as-scheduledaction.html#cfn-as-scheduledaction-recurrence
+        PrimitiveType: String
+        UpdateType: Mutable
 
     .PARAMETER StartTime
-		Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-as-scheduledaction.html#cfn-as-scheduledaction-starttime    
-		PrimitiveType: String    
-		Required: False    
-		UpdateType: Mutable    
+        The date and time in UTC for this action to start. For example, "2019-06-01T00:00:00Z".
+
+        Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-as-scheduledaction.html#cfn-as-scheduledaction-starttime
+        PrimitiveType: String
+        UpdateType: Mutable
 
     .PARAMETER DeletionPolicy
         With the DeletionPolicy attribute you can preserve or (in some cases) backup a resource when its stack is deleted. You specify a DeletionPolicy attribute for each resource that you want to control. If a resource has no DeletionPolicy attribute, AWS CloudFormation deletes the resource by default.

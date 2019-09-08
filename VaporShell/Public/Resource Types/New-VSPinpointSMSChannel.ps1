@@ -13,28 +13,34 @@ function New-VSPinpointSMSChannel {
         The logical ID must be alphanumeric (A-Za-z0-9) and unique within the template. Use the logical name to reference the resource in other parts of the template. For example, if you want to map an Amazon Elastic Block Store volume to an Amazon EC2 instance, you reference the logical IDs to associate the block stores with the instance.
 
     .PARAMETER ShortCode
-		Required: False    
-		Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-pinpoint-smschannel.html#cfn-pinpoint-smschannel-shortcode    
-		PrimitiveType: String    
-		UpdateType: Mutable    
+        The registered short code that you want to use when you send messages through the SMS channel.
+For information about obtaining a dedicated short code for sending SMS messages, see Requesting Dedicated Short Codes for SMS Messaging with Amazon Pinpoint: https://docs.aws.amazon.com/pinpoint/latest/userguide/channels-sms-awssupport-short-code.html in the *Amazon Pinpoint User Guide*.
+
+        Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-pinpoint-smschannel.html#cfn-pinpoint-smschannel-shortcode
+        PrimitiveType: String
+        UpdateType: Mutable
 
     .PARAMETER Enabled
-		Required: False    
-		Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-pinpoint-smschannel.html#cfn-pinpoint-smschannel-enabled    
-		PrimitiveType: Boolean    
-		UpdateType: Mutable    
+        Specifies whether to enable the SMS channel for the app.
+
+        Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-pinpoint-smschannel.html#cfn-pinpoint-smschannel-enabled
+        PrimitiveType: Boolean
+        UpdateType: Mutable
 
     .PARAMETER ApplicationId
-		Required: True    
-		Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-pinpoint-smschannel.html#cfn-pinpoint-smschannel-applicationid    
-		PrimitiveType: String    
-		UpdateType: Immutable    
+        The unique identifier for the Amazon Pinpoint app that the SMS channel applies to.
+
+        Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-pinpoint-smschannel.html#cfn-pinpoint-smschannel-applicationid
+        PrimitiveType: String
+        UpdateType: Immutable
 
     .PARAMETER SenderId
-		Required: False    
-		Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-pinpoint-smschannel.html#cfn-pinpoint-smschannel-senderid    
-		PrimitiveType: String    
-		UpdateType: Mutable    
+        The identity that you want to display on recipients' devices when they receive messages from the SMS channel.
+SenderIDs are only supported in certain countries and regions. For more information, see Supported Countries and Regions: https://docs.aws.amazon.com/pinpoint/latest/userguide/channels-sms-countries.html in the *Amazon Pinpoint User Guide*.
+
+        Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-pinpoint-smschannel.html#cfn-pinpoint-smschannel-senderid
+        PrimitiveType: String
+        UpdateType: Mutable
 
     .PARAMETER DeletionPolicy
         With the DeletionPolicy attribute you can preserve or (in some cases) backup a resource when its stack is deleted. You specify a DeletionPolicy attribute for each resource that you want to control. If a resource has no DeletionPolicy attribute, AWS CloudFormation deletes the resource by default.

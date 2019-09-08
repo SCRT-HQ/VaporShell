@@ -2,6 +2,7 @@
 
 <!-- TOC -->
 
+* [2.9.0 - 2019-09-08](#290---2019-09-08)
 * [2.8.1 - 2019-08-24](#281---2019-08-24)
 * [2.8.0 - 2019-08-08](#280---2019-08-08)
 * [2.7.3 - 2019-04-16](#273---2019-04-16)
@@ -45,6 +46,15 @@
 * [0.7.02](#0702)
 
 <!-- /TOC -->
+
+## 2.9.0 - 2019-09-08
+
+* [Issue #61](https://github.com/scrthq/VaporShell/issues/61) -- _Thanks, [@ScriptAutomate](https://github.com/ScriptAutomate)!_
+  * Updated Parameter help for all Resource Type and Property Type functions to include the Parameter descriptions.
+* [Issue #62](https://github.com/scrthq/VaporShell/issues/62) -- _Thanks, [@ScriptAutomate](https://github.com/ScriptAutomate)!_
+  * Updated the CI build process to check all spec sheets for any Resource Types and Property Types that may be missing from `us-east-1`.
+* Miscellaneous
+  * Brought Resource Type and Property Type functions up to current spec sheet.
 
 ## 2.8.1 - 2019-08-24
 

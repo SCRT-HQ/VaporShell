@@ -10,64 +10,74 @@ function Add-VSIoTAnalyticsPipelineActivity {
         http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iotanalytics-pipeline-activity.html
 
     .PARAMETER SelectAttributes
-		Type: SelectAttributes    
-		Required: False    
-		Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iotanalytics-pipeline-activity.html#cfn-iotanalytics-pipeline-activity-selectattributes    
-		UpdateType: Mutable    
+        Creates a new message using only the specified attributes from the original message.
+
+        Type: SelectAttributes
+        Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iotanalytics-pipeline-activity.html#cfn-iotanalytics-pipeline-activity-selectattributes
+        UpdateType: Mutable
 
     .PARAMETER Datastore
-		Type: Datastore    
-		Required: False    
-		Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iotanalytics-pipeline-activity.html#cfn-iotanalytics-pipeline-activity-datastore    
-		UpdateType: Mutable    
+        Specifies where to store the processed message data.
+
+        Type: Datastore
+        Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iotanalytics-pipeline-activity.html#cfn-iotanalytics-pipeline-activity-datastore
+        UpdateType: Mutable
 
     .PARAMETER Filter
-		Type: Filter    
-		Required: False    
-		Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iotanalytics-pipeline-activity.html#cfn-iotanalytics-pipeline-activity-filter    
-		UpdateType: Mutable    
+        Filters a message based on its attributes.
+
+        Type: Filter
+        Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iotanalytics-pipeline-activity.html#cfn-iotanalytics-pipeline-activity-filter
+        UpdateType: Mutable
 
     .PARAMETER AddAttributes
-		Type: AddAttributes    
-		Required: False    
-		Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iotanalytics-pipeline-activity.html#cfn-iotanalytics-pipeline-activity-addattributes    
-		UpdateType: Mutable    
+        Adds other attributes based on existing attributes in the message.
+
+        Type: AddAttributes
+        Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iotanalytics-pipeline-activity.html#cfn-iotanalytics-pipeline-activity-addattributes
+        UpdateType: Mutable
 
     .PARAMETER Channel
-		Type: Channel    
-		Required: False    
-		Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iotanalytics-pipeline-activity.html#cfn-iotanalytics-pipeline-activity-channel    
-		UpdateType: Mutable    
+        Determines the source of the messages to be processed.
+
+        Type: Channel
+        Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iotanalytics-pipeline-activity.html#cfn-iotanalytics-pipeline-activity-channel
+        UpdateType: Mutable
 
     .PARAMETER DeviceShadowEnrich
-		Type: DeviceShadowEnrich    
-		Required: False    
-		Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iotanalytics-pipeline-activity.html#cfn-iotanalytics-pipeline-activity-deviceshadowenrich    
-		UpdateType: Mutable    
+        Adds information from the AWS IoT Device Shadows service to a message.
+
+        Type: DeviceShadowEnrich
+        Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iotanalytics-pipeline-activity.html#cfn-iotanalytics-pipeline-activity-deviceshadowenrich
+        UpdateType: Mutable
 
     .PARAMETER Math
-		Type: Math    
-		Required: False    
-		Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iotanalytics-pipeline-activity.html#cfn-iotanalytics-pipeline-activity-math    
-		UpdateType: Mutable    
+        Computes an arithmetic expression using the message's attributes and adds it to the message.
+
+        Type: Math
+        Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iotanalytics-pipeline-activity.html#cfn-iotanalytics-pipeline-activity-math
+        UpdateType: Mutable
 
     .PARAMETER Lambda
-		Type: Lambda    
-		Required: False    
-		Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iotanalytics-pipeline-activity.html#cfn-iotanalytics-pipeline-activity-lambda    
-		UpdateType: Mutable    
+        Runs a Lambda function to modify the message.
+
+        Type: Lambda
+        Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iotanalytics-pipeline-activity.html#cfn-iotanalytics-pipeline-activity-lambda
+        UpdateType: Mutable
 
     .PARAMETER DeviceRegistryEnrich
-		Type: DeviceRegistryEnrich    
-		Required: False    
-		Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iotanalytics-pipeline-activity.html#cfn-iotanalytics-pipeline-activity-deviceregistryenrich    
-		UpdateType: Mutable    
+        Adds data from the AWS IoT device registry to your message.
+
+        Type: DeviceRegistryEnrich
+        Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iotanalytics-pipeline-activity.html#cfn-iotanalytics-pipeline-activity-deviceregistryenrich
+        UpdateType: Mutable
 
     .PARAMETER RemoveAttributes
-		Type: RemoveAttributes    
-		Required: False    
-		Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iotanalytics-pipeline-activity.html#cfn-iotanalytics-pipeline-activity-removeattributes    
-		UpdateType: Mutable    
+        Removes attributes from a message.
+
+        Type: RemoveAttributes
+        Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iotanalytics-pipeline-activity.html#cfn-iotanalytics-pipeline-activity-removeattributes
+        UpdateType: Mutable
 
     .FUNCTIONALITY
         Vaporshell

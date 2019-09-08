@@ -13,18 +13,20 @@ function New-VSRoute53HealthCheck {
         The logical ID must be alphanumeric (A-Za-z0-9) and unique within the template. Use the logical name to reference the resource in other parts of the template. For example, if you want to map an Amazon Elastic Block Store volume to an Amazon EC2 instance, you reference the logical IDs to associate the block stores with the instance.
 
     .PARAMETER HealthCheckConfig
-		Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-route53-healthcheck.html#cfn-route53-healthcheck-healthcheckconfig    
-		Required: True    
-		Type: HealthCheckConfig    
-		UpdateType: Mutable    
+        A complex type that contains detailed information about one health check.
+
+        Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-route53-healthcheck.html#cfn-route53-healthcheck-healthcheckconfig
+        Type: HealthCheckConfig
+        UpdateType: Mutable
 
     .PARAMETER HealthCheckTags
-		Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-route53-healthcheck.html#cfn-route53-healthcheck-healthchecktags    
-		DuplicatesAllowed: True    
-		ItemType: HealthCheckTag    
-		Required: False    
-		Type: List    
-		UpdateType: Mutable    
+        The HealthCheckTags property describes key-value pairs that are associated with an AWS::Route53::HealthCheck resource.
+
+        Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-route53-healthcheck.html#cfn-route53-healthcheck-healthchecktags
+        DuplicatesAllowed: True
+        ItemType: HealthCheckTag
+        Type: List
+        UpdateType: Mutable
 
     .PARAMETER DeletionPolicy
         With the DeletionPolicy attribute you can preserve or (in some cases) backup a resource when its stack is deleted. You specify a DeletionPolicy attribute for each resource that you want to control. If a resource has no DeletionPolicy attribute, AWS CloudFormation deletes the resource by default.

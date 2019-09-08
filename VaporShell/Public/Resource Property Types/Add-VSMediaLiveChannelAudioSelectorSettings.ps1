@@ -10,16 +10,18 @@ function Add-VSMediaLiveChannelAudioSelectorSettings {
         http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-medialive-channel-audioselectorsettings.html
 
     .PARAMETER AudioPidSelection
-		Type: AudioPidSelection    
-		Required: False    
-		Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-medialive-channel-audioselectorsettings.html#cfn-medialive-channel-audioselectorsettings-audiopidselection    
-		UpdateType: Mutable    
+        The PID of the audio to select.
+
+        Type: AudioPidSelection
+        Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-medialive-channel-audioselectorsettings.html#cfn-medialive-channel-audioselectorsettings-audiopidselection
+        UpdateType: Mutable
 
     .PARAMETER AudioLanguageSelection
-		Type: AudioLanguageSelection    
-		Required: False    
-		Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-medialive-channel-audioselectorsettings.html#cfn-medialive-channel-audioselectorsettings-audiolanguageselection    
-		UpdateType: Mutable    
+        The language code of the audio to select.
+
+        Type: AudioLanguageSelection
+        Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-medialive-channel-audioselectorsettings.html#cfn-medialive-channel-audioselectorsettings-audiolanguageselection
+        UpdateType: Mutable
 
     .FUNCTIONALITY
         Vaporshell

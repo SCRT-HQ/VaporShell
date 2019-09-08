@@ -10,16 +10,18 @@ function Add-VSPinpointSegmentLocation {
         http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-pinpoint-segment-segmentdimensions-location.html
 
     .PARAMETER GPSPoint
-		Type: GPSPoint    
-		Required: False    
-		Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-pinpoint-segment-segmentdimensions-location.html#cfn-pinpoint-segment-segmentdimensions-location-gpspoint    
-		UpdateType: Mutable    
+        The GPS point dimension for the segment.
+
+        Type: GPSPoint
+        Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-pinpoint-segment-segmentdimensions-location.html#cfn-pinpoint-segment-segmentdimensions-location-gpspoint
+        UpdateType: Mutable
 
     .PARAMETER Country
-		Type: SetDimension    
-		Required: False    
-		Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-pinpoint-segment-segmentdimensions-location.html#cfn-pinpoint-segment-segmentdimensions-location-country    
-		UpdateType: Mutable    
+        The country or region code, in ISO 3166-1 alpha-2 format, for the segment.
+
+        Type: SetDimension
+        Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-pinpoint-segment-segmentdimensions-location.html#cfn-pinpoint-segment-segmentdimensions-location-country
+        UpdateType: Mutable
 
     .FUNCTIONALITY
         Vaporshell

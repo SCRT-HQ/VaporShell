@@ -10,18 +10,20 @@ function Add-VSS3BucketReplicationConfiguration {
         http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-s3-bucket-replicationconfiguration.html
 
     .PARAMETER Role
-		Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-s3-bucket-replicationconfiguration.html#cfn-s3-bucket-replicationconfiguration-role    
-		PrimitiveType: String    
-		Required: True    
-		UpdateType: Mutable    
+        The Amazon Resource Name ARN of the AWS Identity and Access Management IAM role that Amazon S3 assumes when replicating objects. For more information, see How to Set Up Cross-Region Replication: https://docs.aws.amazon.com/AmazonS3/latest/dev/crr-how-setup.html in the *Amazon Simple Storage Service Developer Guide*.
+
+        Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-s3-bucket-replicationconfiguration.html#cfn-s3-bucket-replicationconfiguration-role
+        PrimitiveType: String
+        UpdateType: Mutable
 
     .PARAMETER Rules
-		Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-s3-bucket-replicationconfiguration.html#cfn-s3-bucket-replicationconfiguration-rules    
-		DuplicatesAllowed: False    
-		ItemType: ReplicationRule    
-		Required: True    
-		Type: List    
-		UpdateType: Mutable    
+        A container for one or more replication rules. A replication configuration must have at least one rule and can contain a maximum of 1,000 rules.
+
+        Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-s3-bucket-replicationconfiguration.html#cfn-s3-bucket-replicationconfiguration-rules
+        DuplicatesAllowed: False
+        ItemType: ReplicationRule
+        Type: List
+        UpdateType: Mutable
 
     .FUNCTIONALITY
         Vaporshell

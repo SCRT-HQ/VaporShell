@@ -10,16 +10,18 @@ function Add-VSIoT1ClickProjectDeviceTemplate {
         http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iot1click-project-devicetemplate.html
 
     .PARAMETER DeviceType
-		Required: False    
-		Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iot1click-project-devicetemplate.html#cfn-iot1click-project-devicetemplate-devicetype    
-		PrimitiveType: String    
-		UpdateType: Mutable    
+        The device type, which currently must be "button".
+
+        Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iot1click-project-devicetemplate.html#cfn-iot1click-project-devicetemplate-devicetype
+        PrimitiveType: String
+        UpdateType: Mutable
 
     .PARAMETER CallbackOverrides
-		Required: False    
-		Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iot1click-project-devicetemplate.html#cfn-iot1click-project-devicetemplate-callbackoverrides    
-		PrimitiveType: Json    
-		UpdateType: Mutable    
+        An optional AWS Lambda function to invoke instead of the default AWS Lambda function provided by the placement template.
+
+        Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iot1click-project-devicetemplate.html#cfn-iot1click-project-devicetemplate-callbackoverrides
+        PrimitiveType: Json
+        UpdateType: Mutable
 
     .FUNCTIONALITY
         Vaporshell

@@ -10,16 +10,18 @@ function Add-VSElasticBeanstalkApplicationApplicationVersionLifecycleConfig {
         http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-elasticbeanstalk-application-applicationversionlifecycleconfig.html
 
     .PARAMETER MaxAgeRule
-		Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-elasticbeanstalk-application-applicationversionlifecycleconfig.html#cfn-elasticbeanstalk-application-applicationversionlifecycleconfig-maxagerule    
-		Required: False    
-		Type: MaxAgeRule    
-		UpdateType: Mutable    
+        Specify a max age rule to restrict the length of time that application versions are retained for an application.
+
+        Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-elasticbeanstalk-application-applicationversionlifecycleconfig.html#cfn-elasticbeanstalk-application-applicationversionlifecycleconfig-maxagerule
+        Type: MaxAgeRule
+        UpdateType: Mutable
 
     .PARAMETER MaxCountRule
-		Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-elasticbeanstalk-application-applicationversionlifecycleconfig.html#cfn-elasticbeanstalk-application-applicationversionlifecycleconfig-maxcountrule    
-		Required: False    
-		Type: MaxCountRule    
-		UpdateType: Mutable    
+        Specify a max count rule to restrict the number of application versions that are retained for an application.
+
+        Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-elasticbeanstalk-application-applicationversionlifecycleconfig.html#cfn-elasticbeanstalk-application-applicationversionlifecycleconfig-maxcountrule
+        Type: MaxCountRule
+        UpdateType: Mutable
 
     .FUNCTIONALITY
         Vaporshell

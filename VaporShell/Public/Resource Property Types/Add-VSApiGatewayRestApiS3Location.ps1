@@ -10,28 +10,32 @@ function Add-VSApiGatewayRestApiS3Location {
         http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-apigateway-restapi-s3location.html
 
     .PARAMETER Bucket
-		Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-apigateway-restapi-s3location.html#cfn-apigateway-restapi-s3location-bucket    
-		PrimitiveType: String    
-		Required: False    
-		UpdateType: Mutable    
+        The name of the S3 bucket where the OpenAPI file is stored.
+
+        Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-apigateway-restapi-s3location.html#cfn-apigateway-restapi-s3location-bucket
+        PrimitiveType: String
+        UpdateType: Mutable
 
     .PARAMETER ETag
-		Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-apigateway-restapi-s3location.html#cfn-apigateway-restapi-s3location-etag    
-		PrimitiveType: String    
-		Required: False    
-		UpdateType: Mutable    
+        The Amazon S3 ETag a file checksum of the OpenAPI file. If you don't specify a value, API Gateway skips ETag validation of your OpenAPI file.
+
+        Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-apigateway-restapi-s3location.html#cfn-apigateway-restapi-s3location-etag
+        PrimitiveType: String
+        UpdateType: Mutable
 
     .PARAMETER Key
-		Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-apigateway-restapi-s3location.html#cfn-apigateway-restapi-s3location-key    
-		PrimitiveType: String    
-		Required: False    
-		UpdateType: Mutable    
+        The file name of the OpenAPI file Amazon S3 object name.
+
+        Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-apigateway-restapi-s3location.html#cfn-apigateway-restapi-s3location-key
+        PrimitiveType: String
+        UpdateType: Mutable
 
     .PARAMETER Version
-		Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-apigateway-restapi-s3location.html#cfn-apigateway-restapi-s3location-version    
-		PrimitiveType: String    
-		Required: False    
-		UpdateType: Mutable    
+        For versioning-enabled buckets, a specific version of the OpenAPI file.
+
+        Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-apigateway-restapi-s3location.html#cfn-apigateway-restapi-s3location-version
+        PrimitiveType: String
+        UpdateType: Mutable
 
     .FUNCTIONALITY
         Vaporshell

@@ -10,12 +10,13 @@ function Add-VSLambdaAliasAliasRoutingConfiguration {
         http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-lambda-alias-aliasroutingconfiguration.html
 
     .PARAMETER AdditionalVersionWeights
-		Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-lambda-alias-aliasroutingconfiguration.html#cfn-lambda-alias-aliasroutingconfiguration-additionalversionweights    
-		DuplicatesAllowed: False    
-		ItemType: VersionWeight    
-		Required: True    
-		Type: List    
-		UpdateType: Mutable    
+        The name of the second alias, and the percentage of traffic that's routed to it.
+
+        Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-lambda-alias-aliasroutingconfiguration.html#cfn-lambda-alias-aliasroutingconfiguration-additionalversionweights
+        DuplicatesAllowed: False
+        ItemType: VersionWeight
+        Type: List
+        UpdateType: Mutable
 
     .FUNCTIONALITY
         Vaporshell

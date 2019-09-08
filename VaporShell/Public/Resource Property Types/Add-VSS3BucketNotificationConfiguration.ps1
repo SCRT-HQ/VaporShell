@@ -10,28 +10,31 @@ function Add-VSS3BucketNotificationConfiguration {
         http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-s3-bucket-notificationconfig.html
 
     .PARAMETER LambdaConfigurations
-		Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-s3-bucket-notificationconfig.html#cfn-s3-bucket-notificationconfig-lambdaconfig    
-		DuplicatesAllowed: False    
-		ItemType: LambdaConfiguration    
-		Required: False    
-		Type: List    
-		UpdateType: Mutable    
+        Describes the AWS Lambda functions to invoke and the events for which to invoke them.
+
+        Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-s3-bucket-notificationconfig.html#cfn-s3-bucket-notificationconfig-lambdaconfig
+        DuplicatesAllowed: False
+        ItemType: LambdaConfiguration
+        Type: List
+        UpdateType: Mutable
 
     .PARAMETER QueueConfigurations
-		Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-s3-bucket-notificationconfig.html#cfn-s3-bucket-notificationconfig-queueconfig    
-		DuplicatesAllowed: False    
-		ItemType: QueueConfiguration    
-		Required: False    
-		Type: List    
-		UpdateType: Mutable    
+        The Amazon Simple Queue Service queues to publish messages to and the events for which to publish messages.
+
+        Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-s3-bucket-notificationconfig.html#cfn-s3-bucket-notificationconfig-queueconfig
+        DuplicatesAllowed: False
+        ItemType: QueueConfiguration
+        Type: List
+        UpdateType: Mutable
 
     .PARAMETER TopicConfigurations
-		Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-s3-bucket-notificationconfig.html#cfn-s3-bucket-notificationconfig-topicconfig    
-		DuplicatesAllowed: False    
-		ItemType: TopicConfiguration    
-		Required: False    
-		Type: List    
-		UpdateType: Mutable    
+        The topic to which notifications are sent and the events for which notifications are generated.
+
+        Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-s3-bucket-notificationconfig.html#cfn-s3-bucket-notificationconfig-topicconfig
+        DuplicatesAllowed: False
+        ItemType: TopicConfiguration
+        Type: List
+        UpdateType: Mutable
 
     .FUNCTIONALITY
         Vaporshell

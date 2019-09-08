@@ -10,16 +10,19 @@ function Add-VSCodeDeployDeploymentGroupGitHubLocation {
         http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-codedeploy-deploymentgroup-deployment-revision-githublocation.html
 
     .PARAMETER CommitId
-		Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-codedeploy-deploymentgroup-deployment-revision-githublocation.html#cfn-properties-codedeploy-deploymentgroup-deployment-revision-githublocation-commitid    
-		PrimitiveType: String    
-		Required: True    
-		UpdateType: Mutable    
+        The SHA1 commit ID of the GitHub commit that represents the bundled artifacts for the application revision.
+
+        Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-codedeploy-deploymentgroup-deployment-revision-githublocation.html#cfn-properties-codedeploy-deploymentgroup-deployment-revision-githublocation-commitid
+        PrimitiveType: String
+        UpdateType: Mutable
 
     .PARAMETER Repository
-		Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-codedeploy-deploymentgroup-deployment-revision-githublocation.html#cfn-properties-codedeploy-deploymentgroup-deployment-revision-githublocation-repository    
-		PrimitiveType: String    
-		Required: True    
-		UpdateType: Mutable    
+        The GitHub account and repository pair that stores a reference to the commit that represents the bundled artifacts for the application revision.
+Specify the value as account/repository.
+
+        Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-codedeploy-deploymentgroup-deployment-revision-githublocation.html#cfn-properties-codedeploy-deploymentgroup-deployment-revision-githublocation-repository
+        PrimitiveType: String
+        UpdateType: Mutable
 
     .FUNCTIONALITY
         Vaporshell

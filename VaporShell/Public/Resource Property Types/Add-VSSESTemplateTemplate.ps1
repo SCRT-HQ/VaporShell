@@ -10,28 +10,32 @@ function Add-VSSESTemplateTemplate {
         http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ses-template-template.html
 
     .PARAMETER HtmlPart
-		Required: False    
-		Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ses-template-template.html#cfn-ses-template-template-htmlpart    
-		PrimitiveType: String    
-		UpdateType: Mutable    
+        The HTML body of the email.
+
+        Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ses-template-template.html#cfn-ses-template-template-htmlpart
+        PrimitiveType: String
+        UpdateType: Mutable
 
     .PARAMETER TextPart
-		Required: False    
-		Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ses-template-template.html#cfn-ses-template-template-textpart    
-		PrimitiveType: String    
-		UpdateType: Mutable    
+        The email body that is visible to recipients whose email clients don't display HTML content.
+
+        Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ses-template-template.html#cfn-ses-template-template-textpart
+        PrimitiveType: String
+        UpdateType: Mutable
 
     .PARAMETER TemplateName
-		Required: False    
-		Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ses-template-template.html#cfn-ses-template-template-templatename    
-		PrimitiveType: String    
-		UpdateType: Immutable    
+        The name of the template. You specify this name when you send email using the SendTemplatedEmail or SendBulkTemplatedEmail operations.
+
+        Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ses-template-template.html#cfn-ses-template-template-templatename
+        PrimitiveType: String
+        UpdateType: Immutable
 
     .PARAMETER SubjectPart
-		Required: False    
-		Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ses-template-template.html#cfn-ses-template-template-subjectpart    
-		PrimitiveType: String    
-		UpdateType: Mutable    
+        The subject line of the email.
+
+        Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ses-template-template.html#cfn-ses-template-template-subjectpart
+        PrimitiveType: String
+        UpdateType: Mutable
 
     .FUNCTIONALITY
         Vaporshell

@@ -10,16 +10,18 @@ function Add-VSEMRInstanceGroupConfigScalingAction {
         http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-elasticmapreduce-instancegroupconfig-scalingaction.html
 
     .PARAMETER Market
-		Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-elasticmapreduce-instancegroupconfig-scalingaction.html#cfn-elasticmapreduce-instancegroupconfig-scalingaction-market    
-		PrimitiveType: String    
-		Required: False    
-		UpdateType: Mutable    
+        Not available for instance groups. Instance groups use the market type specified for the group.
+
+        Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-elasticmapreduce-instancegroupconfig-scalingaction.html#cfn-elasticmapreduce-instancegroupconfig-scalingaction-market
+        PrimitiveType: String
+        UpdateType: Mutable
 
     .PARAMETER SimpleScalingPolicyConfiguration
-		Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-elasticmapreduce-instancegroupconfig-scalingaction.html#cfn-elasticmapreduce-instancegroupconfig-scalingaction-simplescalingpolicyconfiguration    
-		Required: True    
-		Type: SimpleScalingPolicyConfiguration    
-		UpdateType: Mutable    
+        The type of adjustment the automatic scaling activity makes when triggered, and the periodicity of the adjustment.
+
+        Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-elasticmapreduce-instancegroupconfig-scalingaction.html#cfn-elasticmapreduce-instancegroupconfig-scalingaction-simplescalingpolicyconfiguration
+        Type: SimpleScalingPolicyConfiguration
+        UpdateType: Mutable
 
     .FUNCTIONALITY
         Vaporshell

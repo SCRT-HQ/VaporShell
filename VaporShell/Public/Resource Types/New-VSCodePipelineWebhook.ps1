@@ -13,53 +13,64 @@ function New-VSCodePipelineWebhook {
         The logical ID must be alphanumeric (A-Za-z0-9) and unique within the template. Use the logical name to reference the resource in other parts of the template. For example, if you want to map an Amazon Elastic Block Store volume to an Amazon EC2 instance, you reference the logical IDs to associate the block stores with the instance.
 
     .PARAMETER AuthenticationConfiguration
-		Type: WebhookAuthConfiguration    
-		Required: True    
-		Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-codepipeline-webhook.html#cfn-codepipeline-webhook-authenticationconfiguration    
-		UpdateType: Mutable    
+        Properties that configure the authentication applied to incoming webhook trigger requests. The required properties depend on the authentication type. For GITHUB_HMAC, only the SecretToken property must be set. For IP, only the AllowedIPRange property must be set to a valid CIDR range. For UNAUTHENTICATED, no properties can be set.
+
+        Type: WebhookAuthConfiguration
+        Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-codepipeline-webhook.html#cfn-codepipeline-webhook-authenticationconfiguration
+        UpdateType: Mutable
 
     .PARAMETER Filters
-		Type: List    
-		Required: True    
-		Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-codepipeline-webhook.html#cfn-codepipeline-webhook-filters    
-		ItemType: WebhookFilterRule    
-		UpdateType: Mutable    
+        A list of rules applied to the body/payload sent in the POST request to a webhook URL. All defined rules must pass for the request to be accepted and the pipeline started.
+
+        Type: List
+        Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-codepipeline-webhook.html#cfn-codepipeline-webhook-filters
+        ItemType: WebhookFilterRule
+        UpdateType: Mutable
 
     .PARAMETER Authentication
-		Required: True    
-		Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-codepipeline-webhook.html#cfn-codepipeline-webhook-authentication    
-		PrimitiveType: String    
-		UpdateType: Mutable    
+        Supported options are GITHUB_HMAC, IP and UNAUTHENTICATED.
++ For information about the authentication scheme implemented by GITHUB_HMAC, see Securing your webhooks: https://developer.github.com/webhooks/securing/ on the GitHub Developer website.
++  IP will reject webhooks trigger requests unless they originate from an IP within the IP range whitelisted in the authentication configuration.
++  UNAUTHENTICATED will accept all webhook trigger requests regardless of origin.
+
+        Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-codepipeline-webhook.html#cfn-codepipeline-webhook-authentication
+        PrimitiveType: String
+        UpdateType: Mutable
 
     .PARAMETER TargetPipeline
-		Required: True    
-		Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-codepipeline-webhook.html#cfn-codepipeline-webhook-targetpipeline    
-		PrimitiveType: String    
-		UpdateType: Mutable    
+        The name of the pipeline you want to connect to the webhook.
+
+        Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-codepipeline-webhook.html#cfn-codepipeline-webhook-targetpipeline
+        PrimitiveType: String
+        UpdateType: Mutable
 
     .PARAMETER TargetAction
-		Required: True    
-		Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-codepipeline-webhook.html#cfn-codepipeline-webhook-targetaction    
-		PrimitiveType: String    
-		UpdateType: Mutable    
+        The name of the action in a pipeline you want to connect to the webhook. The action must be from the source first stage of the pipeline.
+
+        Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-codepipeline-webhook.html#cfn-codepipeline-webhook-targetaction
+        PrimitiveType: String
+        UpdateType: Mutable
 
     .PARAMETER Name
-		Required: False    
-		Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-codepipeline-webhook.html#cfn-codepipeline-webhook-name    
-		PrimitiveType: String    
-		UpdateType: Immutable    
+        The name of the webhook.
+
+        Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-codepipeline-webhook.html#cfn-codepipeline-webhook-name
+        PrimitiveType: String
+        UpdateType: Immutable
 
     .PARAMETER TargetPipelineVersion
-		Required: True    
-		Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-codepipeline-webhook.html#cfn-codepipeline-webhook-targetpipelineversion    
-		PrimitiveType: Integer    
-		UpdateType: Mutable    
+        The version number of the pipeline to be connected to the trigger request.
+
+        Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-codepipeline-webhook.html#cfn-codepipeline-webhook-targetpipelineversion
+        PrimitiveType: Integer
+        UpdateType: Mutable
 
     .PARAMETER RegisterWithThirdParty
-		Required: False    
-		Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-codepipeline-webhook.html#cfn-codepipeline-webhook-registerwiththirdparty    
-		PrimitiveType: Boolean    
-		UpdateType: Mutable    
+        Configures a connection between the webhook that was created and the external tool with events to be detected.
+
+        Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-codepipeline-webhook.html#cfn-codepipeline-webhook-registerwiththirdparty
+        PrimitiveType: Boolean
+        UpdateType: Mutable
 
     .PARAMETER DeletionPolicy
         With the DeletionPolicy attribute you can preserve or (in some cases) backup a resource when its stack is deleted. You specify a DeletionPolicy attribute for each resource that you want to control. If a resource has no DeletionPolicy attribute, AWS CloudFormation deletes the resource by default.

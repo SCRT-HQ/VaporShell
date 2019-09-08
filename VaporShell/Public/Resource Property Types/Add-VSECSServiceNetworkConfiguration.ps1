@@ -10,10 +10,12 @@ function Add-VSECSServiceNetworkConfiguration {
         http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ecs-service-networkconfiguration.html
 
     .PARAMETER AwsvpcConfiguration
-		Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ecs-service-networkconfiguration.html#cfn-ecs-service-networkconfiguration-awsvpcconfiguration    
-		Required: False    
-		Type: AwsVpcConfiguration    
-		UpdateType: Mutable    
+        The VPC subnets and security groups associated with a task.
+All specified subnets and security groups must be from the same VPC.
+
+        Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ecs-service-networkconfiguration.html#cfn-ecs-service-networkconfiguration-awsvpcconfiguration
+        Type: AwsVpcConfiguration
+        UpdateType: Mutable
 
     .FUNCTIONALITY
         Vaporshell

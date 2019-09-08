@@ -10,10 +10,11 @@ function Add-VSS3BucketSourceSelectionCriteria {
         http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-s3-bucket-sourceselectioncriteria.html
 
     .PARAMETER SseKmsEncryptedObjects
-		Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-s3-bucket-sourceselectioncriteria.html#cfn-s3-bucket-sourceselectioncriteria-ssekmsencryptedobjects    
-		Required: True    
-		Type: SseKmsEncryptedObjects    
-		UpdateType: Mutable    
+        A container for filter information for the selection of Amazon S3 objects encrypted with AWS KMS. If you include SourceSelectionCriteria in the replication configuration, this element is required.
+
+        Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-s3-bucket-sourceselectioncriteria.html#cfn-s3-bucket-sourceselectioncriteria-ssekmsencryptedobjects
+        Type: SseKmsEncryptedObjects
+        UpdateType: Mutable
 
     .FUNCTIONALITY
         Vaporshell

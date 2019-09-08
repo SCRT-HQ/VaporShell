@@ -10,16 +10,20 @@ function Add-VSEC2LaunchTemplateCapacityReservationSpecification {
         http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-launchtemplate-launchtemplatedata-capacityreservationspecification.html
 
     .PARAMETER CapacityReservationPreference
-		Type: CapacityReservationPreference    
-		Required: False    
-		Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-launchtemplate-launchtemplatedata-capacityreservationspecification.html#cfn-ec2-launchtemplate-launchtemplatedata-capacityreservationspecification-capacityreservationpreference    
-		UpdateType: Mutable    
+        Indicates the instance's Capacity Reservation preferences. Possible preferences include:
++  open - The instance can run in any open Capacity Reservation that has matching attributes instance type, platform, Availability Zone.
++  none - The instance avoids running in a Capacity Reservation even if one is available. The instance runs in On-Demand capacity.
+
+        Type: CapacityReservationPreference
+        Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-launchtemplate-launchtemplatedata-capacityreservationspecification.html#cfn-ec2-launchtemplate-launchtemplatedata-capacityreservationspecification-capacityreservationpreference
+        UpdateType: Mutable
 
     .PARAMETER CapacityReservationTarget
-		Type: CapacityReservationTarget    
-		Required: False    
-		Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-launchtemplate-launchtemplatedata-capacityreservationspecification.html#cfn-ec2-launchtemplate-launchtemplatedata-capacityreservationspecification-capacityreservationtarget    
-		UpdateType: Mutable    
+        Information about the target Capacity Reservation.
+
+        Type: CapacityReservationTarget
+        Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-launchtemplate-launchtemplatedata-capacityreservationspecification.html#cfn-ec2-launchtemplate-launchtemplatedata-capacityreservationspecification-capacityreservationtarget
+        UpdateType: Mutable
 
     .FUNCTIONALITY
         Vaporshell

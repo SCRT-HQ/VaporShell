@@ -10,22 +10,25 @@ function Add-VSS3BucketDefaultRetention {
         http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-s3-bucket-defaultretention.html
 
     .PARAMETER Days
-		Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-s3-bucket-defaultretention.html#cfn-s3-bucket-defaultretention-days    
-		PrimitiveType: Integer    
-		Required: False    
-		UpdateType: Mutable    
+        The number of days that you want to specify for the default retention period.
+
+        Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-s3-bucket-defaultretention.html#cfn-s3-bucket-defaultretention-days
+        PrimitiveType: Integer
+        UpdateType: Mutable
 
     .PARAMETER Mode
-		Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-s3-bucket-defaultretention.html#cfn-s3-bucket-defaultretention-mode    
-		PrimitiveType: String    
-		Required: False    
-		UpdateType: Mutable    
+        The default object lock retention mode you want to apply to new objects placed in the specified bucket.
+
+        Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-s3-bucket-defaultretention.html#cfn-s3-bucket-defaultretention-mode
+        PrimitiveType: String
+        UpdateType: Mutable
 
     .PARAMETER Years
-		Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-s3-bucket-defaultretention.html#cfn-s3-bucket-defaultretention-years    
-		PrimitiveType: Integer    
-		Required: False    
-		UpdateType: Mutable    
+        The number of years that you want to specify for the default retention period.
+
+        Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-s3-bucket-defaultretention.html#cfn-s3-bucket-defaultretention-years
+        PrimitiveType: Integer
+        UpdateType: Mutable
 
     .FUNCTIONALITY
         Vaporshell

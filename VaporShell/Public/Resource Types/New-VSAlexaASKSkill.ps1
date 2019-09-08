@@ -13,22 +13,25 @@ function New-VSAlexaASKSkill {
         The logical ID must be alphanumeric (A-Za-z0-9) and unique within the template. Use the logical name to reference the resource in other parts of the template. For example, if you want to map an Amazon Elastic Block Store volume to an Amazon EC2 instance, you reference the logical IDs to associate the block stores with the instance.
 
     .PARAMETER AuthenticationConfiguration
-		Type: AuthenticationConfiguration    
-		Required: True    
-		Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ask-skill.html#cfn-ask-skill-authenticationconfiguration    
-		UpdateType: Mutable    
+        Login with Amazon LWA configuration used to authenticate with the Alexa service. Only Login with Amazon clients created through the Amazon Developer Console: https://developer.amazon.com/lwa/sp/overview.html are supported. The client ID, client secret, and refresh token are required.
+
+        Type: AuthenticationConfiguration
+        Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ask-skill.html#cfn-ask-skill-authenticationconfiguration
+        UpdateType: Mutable
 
     .PARAMETER VendorId
-		Required: True    
-		Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ask-skill.html#cfn-ask-skill-vendorid    
-		PrimitiveType: String    
-		UpdateType: Immutable    
+        The vendor ID associated with the Amazon developer account that will host the skill. Details for retrieving the vendor ID are in How to get your vendor ID: https://github.com/alexa/alexa-smarthome/wiki/How-to-get-your-vendor-ID. The provided LWA credentials must be linked to the developer account associated with this vendor ID.
+
+        Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ask-skill.html#cfn-ask-skill-vendorid
+        PrimitiveType: String
+        UpdateType: Immutable
 
     .PARAMETER SkillPackage
-		Type: SkillPackage    
-		Required: True    
-		Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ask-skill.html#cfn-ask-skill-skillpackage    
-		UpdateType: Mutable    
+        Configuration for the skill package that contains the components of the Alexa skill. Skill packages are retrieved from an Amazon S3 bucket and key and used to create and update the skill. For more information about the skill package format, see the Skill Package API Reference: https://developer.amazon.com/docs/smapi/skill-package-api-reference.html#skill-package-format.
+
+        Type: SkillPackage
+        Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ask-skill.html#cfn-ask-skill-skillpackage
+        UpdateType: Mutable
 
     .PARAMETER DeletionPolicy
         With the DeletionPolicy attribute you can preserve or (in some cases) backup a resource when its stack is deleted. You specify a DeletionPolicy attribute for each resource that you want to control. If a resource has no DeletionPolicy attribute, AWS CloudFormation deletes the resource by default.

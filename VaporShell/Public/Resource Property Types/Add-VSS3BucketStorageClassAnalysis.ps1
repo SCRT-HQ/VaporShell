@@ -10,10 +10,11 @@ function Add-VSS3BucketStorageClassAnalysis {
         http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-s3-bucket-storageclassanalysis.html
 
     .PARAMETER DataExport
-		Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-s3-bucket-storageclassanalysis.html#cfn-s3-bucket-storageclassanalysis-dataexport    
-		Required: False    
-		Type: DataExport    
-		UpdateType: Mutable    
+        Specifies how data related to the storage class analysis for an Amazon S3 bucket should be exported.
+
+        Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-s3-bucket-storageclassanalysis.html#cfn-s3-bucket-storageclassanalysis-dataexport
+        Type: DataExport
+        UpdateType: Mutable
 
     .FUNCTIONALITY
         Vaporshell

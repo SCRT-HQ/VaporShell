@@ -10,16 +10,18 @@ function Add-VSIoTAnalyticsDatasetDatasetContentDeliveryRuleDestination {
         http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iotanalytics-dataset-datasetcontentdeliveryruledestination.html
 
     .PARAMETER IotEventsDestinationConfiguration
-		Type: IotEventsDestinationConfiguration    
-		Required: False    
-		Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iotanalytics-dataset-datasetcontentdeliveryruledestination.html#cfn-iotanalytics-dataset-datasetcontentdeliveryruledestination-ioteventsdestinationconfiguration    
-		UpdateType: Mutable    
+        Configuration information for delivery of data set contents to AWS IoT Events.
+
+        Type: IotEventsDestinationConfiguration
+        Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iotanalytics-dataset-datasetcontentdeliveryruledestination.html#cfn-iotanalytics-dataset-datasetcontentdeliveryruledestination-ioteventsdestinationconfiguration
+        UpdateType: Mutable
 
     .PARAMETER S3DestinationConfiguration
-		Type: S3DestinationConfiguration    
-		Required: False    
-		Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iotanalytics-dataset-datasetcontentdeliveryruledestination.html#cfn-iotanalytics-dataset-datasetcontentdeliveryruledestination-s3destinationconfiguration    
-		UpdateType: Mutable    
+        Configuration information for delivery of data set contents to Amazon S3.
+
+        Type: S3DestinationConfiguration
+        Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iotanalytics-dataset-datasetcontentdeliveryruledestination.html#cfn-iotanalytics-dataset-datasetcontentdeliveryruledestination-s3destinationconfiguration
+        UpdateType: Mutable
 
     .FUNCTIONALITY
         Vaporshell

@@ -10,70 +10,92 @@ function Add-VSBudgetsBudgetCostTypes {
         http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-budgets-budget-costtypes.html
 
     .PARAMETER IncludeSupport
-		Required: False    
-		Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-budgets-budget-costtypes.html#cfn-budgets-budget-costtypes-includesupport    
-		PrimitiveType: Boolean    
-		UpdateType: Mutable    
+        Specifies whether a budget includes support subscription fees.
+The default value is true.
+
+        Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-budgets-budget-costtypes.html#cfn-budgets-budget-costtypes-includesupport
+        PrimitiveType: Boolean
+        UpdateType: Mutable
 
     .PARAMETER IncludeOtherSubscription
-		Required: False    
-		Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-budgets-budget-costtypes.html#cfn-budgets-budget-costtypes-includeothersubscription    
-		PrimitiveType: Boolean    
-		UpdateType: Mutable    
+        Specifies whether a budget includes non-RI subscription costs.
+The default value is true.
+
+        Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-budgets-budget-costtypes.html#cfn-budgets-budget-costtypes-includeothersubscription
+        PrimitiveType: Boolean
+        UpdateType: Mutable
 
     .PARAMETER IncludeTax
-		Required: False    
-		Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-budgets-budget-costtypes.html#cfn-budgets-budget-costtypes-includetax    
-		PrimitiveType: Boolean    
-		UpdateType: Mutable    
+        Specifies whether a budget includes taxes.
+The default value is true.
+
+        Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-budgets-budget-costtypes.html#cfn-budgets-budget-costtypes-includetax
+        PrimitiveType: Boolean
+        UpdateType: Mutable
 
     .PARAMETER IncludeSubscription
-		Required: False    
-		Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-budgets-budget-costtypes.html#cfn-budgets-budget-costtypes-includesubscription    
-		PrimitiveType: Boolean    
-		UpdateType: Mutable    
+        Specifies whether a budget includes subscriptions.
+The default value is true.
+
+        Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-budgets-budget-costtypes.html#cfn-budgets-budget-costtypes-includesubscription
+        PrimitiveType: Boolean
+        UpdateType: Mutable
 
     .PARAMETER UseBlended
-		Required: False    
-		Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-budgets-budget-costtypes.html#cfn-budgets-budget-costtypes-useblended    
-		PrimitiveType: Boolean    
-		UpdateType: Mutable    
+        Specifies whether a budget uses a blended rate.
+The default value is false.
+
+        Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-budgets-budget-costtypes.html#cfn-budgets-budget-costtypes-useblended
+        PrimitiveType: Boolean
+        UpdateType: Mutable
 
     .PARAMETER IncludeUpfront
-		Required: False    
-		Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-budgets-budget-costtypes.html#cfn-budgets-budget-costtypes-includeupfront    
-		PrimitiveType: Boolean    
-		UpdateType: Mutable    
+        Specifies whether a budget includes upfront RI costs.
+The default value is true.
+
+        Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-budgets-budget-costtypes.html#cfn-budgets-budget-costtypes-includeupfront
+        PrimitiveType: Boolean
+        UpdateType: Mutable
 
     .PARAMETER IncludeDiscount
-		Required: False    
-		Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-budgets-budget-costtypes.html#cfn-budgets-budget-costtypes-includediscount    
-		PrimitiveType: Boolean    
-		UpdateType: Mutable    
+        Specifies whether a budget includes discounts.
+The default value is true.
+
+        Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-budgets-budget-costtypes.html#cfn-budgets-budget-costtypes-includediscount
+        PrimitiveType: Boolean
+        UpdateType: Mutable
 
     .PARAMETER IncludeCredit
-		Required: False    
-		Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-budgets-budget-costtypes.html#cfn-budgets-budget-costtypes-includecredit    
-		PrimitiveType: Boolean    
-		UpdateType: Mutable    
+        Specifies whether a budget includes credits.
+The default value is true.
+
+        Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-budgets-budget-costtypes.html#cfn-budgets-budget-costtypes-includecredit
+        PrimitiveType: Boolean
+        UpdateType: Mutable
 
     .PARAMETER IncludeRecurring
-		Required: False    
-		Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-budgets-budget-costtypes.html#cfn-budgets-budget-costtypes-includerecurring    
-		PrimitiveType: Boolean    
-		UpdateType: Mutable    
+        Specifies whether a budget includes recurring fees such as monthly RI fees.
+The default value is true.
+
+        Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-budgets-budget-costtypes.html#cfn-budgets-budget-costtypes-includerecurring
+        PrimitiveType: Boolean
+        UpdateType: Mutable
 
     .PARAMETER UseAmortized
-		Required: False    
-		Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-budgets-budget-costtypes.html#cfn-budgets-budget-costtypes-useamortized    
-		PrimitiveType: Boolean    
-		UpdateType: Mutable    
+        Specifies whether a budget uses the amortized rate.
+The default value is false.
+
+        Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-budgets-budget-costtypes.html#cfn-budgets-budget-costtypes-useamortized
+        PrimitiveType: Boolean
+        UpdateType: Mutable
 
     .PARAMETER IncludeRefund
-		Required: False    
-		Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-budgets-budget-costtypes.html#cfn-budgets-budget-costtypes-includerefund    
-		PrimitiveType: Boolean    
-		UpdateType: Mutable    
+        Specifies whether a budget includes refunds.
+The default value is true.
+
+        Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-budgets-budget-costtypes.html#cfn-budgets-budget-costtypes-includerefund
+        PrimitiveType: Boolean
+        UpdateType: Mutable
 
     .FUNCTIONALITY
         Vaporshell

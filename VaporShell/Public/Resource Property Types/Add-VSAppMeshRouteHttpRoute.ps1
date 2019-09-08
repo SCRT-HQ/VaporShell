@@ -10,16 +10,18 @@ function Add-VSAppMeshRouteHttpRoute {
         http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-appmesh-route-httproute.html
 
     .PARAMETER Action
-		Type: HttpRouteAction    
-		Required: True    
-		Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-appmesh-route-httproute.html#cfn-appmesh-route-httproute-action    
-		UpdateType: Mutable    
+        The action to take if a match is determined.
+
+        Type: HttpRouteAction
+        Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-appmesh-route-httproute.html#cfn-appmesh-route-httproute-action
+        UpdateType: Mutable
 
     .PARAMETER Match
-		Type: HttpRouteMatch    
-		Required: True    
-		Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-appmesh-route-httproute.html#cfn-appmesh-route-httproute-match    
-		UpdateType: Mutable    
+        The criteria for determining an HTTP request match.
+
+        Type: HttpRouteMatch
+        Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-appmesh-route-httproute.html#cfn-appmesh-route-httproute-match
+        UpdateType: Mutable
 
     .FUNCTIONALITY
         Vaporshell

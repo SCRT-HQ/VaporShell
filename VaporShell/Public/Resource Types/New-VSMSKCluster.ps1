@@ -13,58 +13,68 @@ function New-VSMSKCluster {
         The logical ID must be alphanumeric (A-Za-z0-9) and unique within the template. Use the logical name to reference the resource in other parts of the template. For example, if you want to map an Amazon Elastic Block Store volume to an Amazon EC2 instance, you reference the logical IDs to associate the block stores with the instance.
 
     .PARAMETER BrokerNodeGroupInfo
-		Type: BrokerNodeGroupInfo    
-		Required: True    
-		Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-msk-cluster.html#cfn-msk-cluster-brokernodegroupinfo    
-		UpdateType: Immutable    
+        The setup to be used for brokers in the cluster.
+
+        Type: BrokerNodeGroupInfo
+        Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-msk-cluster.html#cfn-msk-cluster-brokernodegroupinfo
+        UpdateType: Immutable
 
     .PARAMETER EnhancedMonitoring
-		Required: False    
-		Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-msk-cluster.html#cfn-msk-cluster-enhancedmonitoring    
-		PrimitiveType: String    
-		UpdateType: Immutable    
+        Specifies the level of monitoring for the MSK cluster. The possible values are DEFAULT, PER_BROKER, and PER_TOPIC_PER_BROKER.
+
+        Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-msk-cluster.html#cfn-msk-cluster-enhancedmonitoring
+        PrimitiveType: String
+        UpdateType: Immutable
 
     .PARAMETER KafkaVersion
-		Required: True    
-		Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-msk-cluster.html#cfn-msk-cluster-kafkaversion    
-		PrimitiveType: String    
-		UpdateType: Immutable    
+        The version of Apache Kafka.
+
+        Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-msk-cluster.html#cfn-msk-cluster-kafkaversion
+        PrimitiveType: String
+        UpdateType: Immutable
 
     .PARAMETER NumberOfBrokerNodes
-		Required: True    
-		Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-msk-cluster.html#cfn-msk-cluster-numberofbrokernodes    
-		PrimitiveType: Integer    
-		UpdateType: Immutable    
+        The number of broker nodes you want in the Amazon MSK cluster.
+
+        Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-msk-cluster.html#cfn-msk-cluster-numberofbrokernodes
+        PrimitiveType: Integer
+        UpdateType: Immutable
 
     .PARAMETER EncryptionInfo
-		Type: EncryptionInfo    
-		Required: False    
-		Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-msk-cluster.html#cfn-msk-cluster-encryptioninfo    
-		UpdateType: Immutable    
+        Includes all encryption-related information.
+
+        Type: EncryptionInfo
+        Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-msk-cluster.html#cfn-msk-cluster-encryptioninfo
+        UpdateType: Immutable
 
     .PARAMETER ClusterName
-		Required: True    
-		Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-msk-cluster.html#cfn-msk-cluster-clustername    
-		PrimitiveType: String    
-		UpdateType: Immutable    
+        The name of the cluster.
+
+        Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-msk-cluster.html#cfn-msk-cluster-clustername
+        PrimitiveType: String
+        UpdateType: Immutable
 
     .PARAMETER ClientAuthentication
-		Type: ClientAuthentication    
-		Required: False    
-		Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-msk-cluster.html#cfn-msk-cluster-clientauthentication    
-		UpdateType: Immutable    
+        Includes information related to client authentication.
+
+        Type: ClientAuthentication
+        Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-msk-cluster.html#cfn-msk-cluster-clientauthentication
+        UpdateType: Immutable
 
     .PARAMETER Tags
-		Required: False    
-		Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-msk-cluster.html#cfn-msk-cluster-tags    
-		PrimitiveType: Json    
-		UpdateType: Immutable    
+        An array of key-value pairs to apply to this resource. You can specify tags in JSON or in YAML, depending on which format you use for your template.
+For more information, see Tag: https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-resource-tags.html.
+
+        Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-msk-cluster.html#cfn-msk-cluster-tags
+        PrimitiveType: Json
+        UpdateType: Immutable
 
     .PARAMETER ConfigurationInfo
-		Type: ConfigurationInfo    
-		Required: False    
-		Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-msk-cluster.html#cfn-msk-cluster-configurationinfo    
-		UpdateType: Immutable    
+        The Amazon MSK configuration to use for the cluster.
+
+        Type: ConfigurationInfo
+        Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-msk-cluster.html#cfn-msk-cluster-configurationinfo
+        UpdateType: Immutable
 
     .PARAMETER DeletionPolicy
         With the DeletionPolicy attribute you can preserve or (in some cases) backup a resource when its stack is deleted. You specify a DeletionPolicy attribute for each resource that you want to control. If a resource has no DeletionPolicy attribute, AWS CloudFormation deletes the resource by default.

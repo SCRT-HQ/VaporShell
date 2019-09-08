@@ -10,16 +10,18 @@ function Add-VSEC2InstanceVolume {
         http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-mount-point.html
 
     .PARAMETER Device
-		Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-mount-point.html#cfn-ec2-mountpoint-device    
-		PrimitiveType: String    
-		Required: True    
-		UpdateType: Mutable    
+        The device name for example, /dev/sdh or xvdh.
+
+        Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-mount-point.html#cfn-ec2-mountpoint-device
+        PrimitiveType: String
+        UpdateType: Mutable
 
     .PARAMETER VolumeId
-		Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-mount-point.html#cfn-ec2-mountpoint-volumeid    
-		PrimitiveType: String    
-		Required: True    
-		UpdateType: Mutable    
+        The ID of the EBS volume. The volume and instance must be within the same Availability Zone.
+
+        Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-mount-point.html#cfn-ec2-mountpoint-volumeid
+        PrimitiveType: String
+        UpdateType: Mutable
 
     .FUNCTIONALITY
         Vaporshell

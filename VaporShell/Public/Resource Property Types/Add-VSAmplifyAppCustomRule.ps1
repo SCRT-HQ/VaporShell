@@ -10,28 +10,32 @@ function Add-VSAmplifyAppCustomRule {
         http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-amplify-app-customrule.html
 
     .PARAMETER Condition
-		Required: False    
-		Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-amplify-app-customrule.html#cfn-amplify-app-customrule-condition    
-		PrimitiveType: String    
-		UpdateType: Mutable    
+        The condition for a URL rewrite or redirect rule, e.g. country code.
+
+        Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-amplify-app-customrule.html#cfn-amplify-app-customrule-condition
+        PrimitiveType: String
+        UpdateType: Mutable
 
     .PARAMETER Status
-		Required: False    
-		Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-amplify-app-customrule.html#cfn-amplify-app-customrule-status    
-		PrimitiveType: String    
-		UpdateType: Mutable    
+        The status code for a URL rewrite or redirect rule.
+
+        Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-amplify-app-customrule.html#cfn-amplify-app-customrule-status
+        PrimitiveType: String
+        UpdateType: Mutable
 
     .PARAMETER Target
-		Required: True    
-		Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-amplify-app-customrule.html#cfn-amplify-app-customrule-target    
-		PrimitiveType: String    
-		UpdateType: Mutable    
+        The target pattern for a URL rewrite or redirect rule.
+
+        Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-amplify-app-customrule.html#cfn-amplify-app-customrule-target
+        PrimitiveType: String
+        UpdateType: Mutable
 
     .PARAMETER Source
-		Required: True    
-		Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-amplify-app-customrule.html#cfn-amplify-app-customrule-source    
-		PrimitiveType: String    
-		UpdateType: Mutable    
+        The source pattern for a URL rewrite or redirect rule.
+
+        Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-amplify-app-customrule.html#cfn-amplify-app-customrule-source
+        PrimitiveType: String
+        UpdateType: Mutable
 
     .FUNCTIONALITY
         Vaporshell

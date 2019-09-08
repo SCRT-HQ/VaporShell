@@ -10,11 +10,12 @@ function Add-VSSESConfigurationSetEventDestinationCloudWatchDestination {
         http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ses-configurationseteventdestination-cloudwatchdestination.html
 
     .PARAMETER DimensionConfigurations
-		Type: List    
-		Required: False    
-		Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ses-configurationseteventdestination-cloudwatchdestination.html#cfn-ses-configurationseteventdestination-cloudwatchdestination-dimensionconfigurations    
-		ItemType: DimensionConfiguration    
-		UpdateType: Mutable    
+        A list of dimensions upon which to categorize your emails when you publish email sending events to Amazon CloudWatch.
+
+        Type: List
+        Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ses-configurationseteventdestination-cloudwatchdestination.html#cfn-ses-configurationseteventdestination-cloudwatchdestination-dimensionconfigurations
+        ItemType: DimensionConfiguration
+        UpdateType: Mutable
 
     .FUNCTIONALITY
         Vaporshell

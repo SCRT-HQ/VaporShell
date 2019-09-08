@@ -10,24 +10,27 @@ function Add-VSMediaLiveChannelOutputDestination {
         http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-medialive-channel-outputdestination.html
 
     .PARAMETER Id
-		Required: False    
-		Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-medialive-channel-outputdestination.html#cfn-medialive-channel-outputdestination-id    
-		PrimitiveType: String    
-		UpdateType: Mutable    
+        The ID for this destination.
+
+        Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-medialive-channel-outputdestination.html#cfn-medialive-channel-outputdestination-id
+        PrimitiveType: String
+        UpdateType: Mutable
 
     .PARAMETER Settings
-		Type: List    
-		Required: False    
-		Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-medialive-channel-outputdestination.html#cfn-medialive-channel-outputdestination-settings    
-		ItemType: OutputDestinationSettings    
-		UpdateType: Mutable    
+        The destination settings for an output.
+
+        Type: List
+        Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-medialive-channel-outputdestination.html#cfn-medialive-channel-outputdestination-settings
+        ItemType: OutputDestinationSettings
+        UpdateType: Mutable
 
     .PARAMETER MediaPackageSettings
-		Type: List    
-		Required: False    
-		Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-medialive-channel-outputdestination.html#cfn-medialive-channel-outputdestination-mediapackagesettings    
-		ItemType: MediaPackageOutputDestinationSettings    
-		UpdateType: Mutable    
+        The destination settings for a MediaPackage output.
+
+        Type: List
+        Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-medialive-channel-outputdestination.html#cfn-medialive-channel-outputdestination-mediapackagesettings
+        ItemType: MediaPackageOutputDestinationSettings
+        UpdateType: Mutable
 
     .FUNCTIONALITY
         Vaporshell

@@ -10,34 +10,39 @@ function Add-VSKinesisAnalyticsV2ApplicationApplicationConfiguration {
         http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-kinesisanalyticsv2-application-applicationconfiguration.html
 
     .PARAMETER ApplicationCodeConfiguration
-		Type: ApplicationCodeConfiguration    
-		Required: False    
-		Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-kinesisanalyticsv2-application-applicationconfiguration.html#cfn-kinesisanalyticsv2-application-applicationconfiguration-applicationcodeconfiguration    
-		UpdateType: Mutable    
+        The code location and type parameters for a Java-based Kinesis Data Analytics application.
+
+        Type: ApplicationCodeConfiguration
+        Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-kinesisanalyticsv2-application-applicationconfiguration.html#cfn-kinesisanalyticsv2-application-applicationconfiguration-applicationcodeconfiguration
+        UpdateType: Mutable
 
     .PARAMETER EnvironmentProperties
-		Type: EnvironmentProperties    
-		Required: False    
-		Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-kinesisanalyticsv2-application-applicationconfiguration.html#cfn-kinesisanalyticsv2-application-applicationconfiguration-environmentproperties    
-		UpdateType: Mutable    
+        Describes execution properties for a Java-based Kinesis Data Analytics application.
+
+        Type: EnvironmentProperties
+        Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-kinesisanalyticsv2-application-applicationconfiguration.html#cfn-kinesisanalyticsv2-application-applicationconfiguration-environmentproperties
+        UpdateType: Mutable
 
     .PARAMETER FlinkApplicationConfiguration
-		Type: FlinkApplicationConfiguration    
-		Required: False    
-		Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-kinesisanalyticsv2-application-applicationconfiguration.html#cfn-kinesisanalyticsv2-application-applicationconfiguration-flinkapplicationconfiguration    
-		UpdateType: Mutable    
+        The creation and update parameters for a Java-based Kinesis Data Analytics application.
+
+        Type: FlinkApplicationConfiguration
+        Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-kinesisanalyticsv2-application-applicationconfiguration.html#cfn-kinesisanalyticsv2-application-applicationconfiguration-flinkapplicationconfiguration
+        UpdateType: Mutable
 
     .PARAMETER SqlApplicationConfiguration
-		Type: SqlApplicationConfiguration    
-		Required: False    
-		Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-kinesisanalyticsv2-application-applicationconfiguration.html#cfn-kinesisanalyticsv2-application-applicationconfiguration-sqlapplicationconfiguration    
-		UpdateType: Mutable    
+        The creation and update parameters for an SQL-based Kinesis Data Analytics application.
+
+        Type: SqlApplicationConfiguration
+        Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-kinesisanalyticsv2-application-applicationconfiguration.html#cfn-kinesisanalyticsv2-application-applicationconfiguration-sqlapplicationconfiguration
+        UpdateType: Mutable
 
     .PARAMETER ApplicationSnapshotConfiguration
-		Type: ApplicationSnapshotConfiguration    
-		Required: False    
-		Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-kinesisanalyticsv2-application-applicationconfiguration.html#cfn-kinesisanalyticsv2-application-applicationconfiguration-applicationsnapshotconfiguration    
-		UpdateType: Mutable    
+        Describes whether snapshots are enabled for a Java-based Kinesis Data Analytics application.
+
+        Type: ApplicationSnapshotConfiguration
+        Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-kinesisanalyticsv2-application-applicationconfiguration.html#cfn-kinesisanalyticsv2-application-applicationconfiguration-applicationsnapshotconfiguration
+        UpdateType: Mutable
 
     .FUNCTIONALITY
         Vaporshell

@@ -10,22 +10,25 @@ function Add-VSGreengrassResourceDefinitionLocalVolumeResourceData {
         http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-greengrass-resourcedefinition-localvolumeresourcedata.html
 
     .PARAMETER SourcePath
-		Required: True    
-		Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-greengrass-resourcedefinition-localvolumeresourcedata.html#cfn-greengrass-resourcedefinition-localvolumeresourcedata-sourcepath    
-		PrimitiveType: String    
-		UpdateType: Immutable    
+        The local absolute path of the volume resource on the host. The source path for a volume resource type cannot start with /sys.
+
+        Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-greengrass-resourcedefinition-localvolumeresourcedata.html#cfn-greengrass-resourcedefinition-localvolumeresourcedata-sourcepath
+        PrimitiveType: String
+        UpdateType: Immutable
 
     .PARAMETER DestinationPath
-		Required: True    
-		Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-greengrass-resourcedefinition-localvolumeresourcedata.html#cfn-greengrass-resourcedefinition-localvolumeresourcedata-destinationpath    
-		PrimitiveType: String    
-		UpdateType: Immutable    
+        The absolute local path of the resource in the Lambda environment.
+
+        Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-greengrass-resourcedefinition-localvolumeresourcedata.html#cfn-greengrass-resourcedefinition-localvolumeresourcedata-destinationpath
+        PrimitiveType: String
+        UpdateType: Immutable
 
     .PARAMETER GroupOwnerSetting
-		Type: GroupOwnerSetting    
-		Required: False    
-		Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-greengrass-resourcedefinition-localvolumeresourcedata.html#cfn-greengrass-resourcedefinition-localvolumeresourcedata-groupownersetting    
-		UpdateType: Immutable    
+        Settings that define additional Linux OS group permissions to give to the Lambda function process.
+
+        Type: GroupOwnerSetting
+        Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-greengrass-resourcedefinition-localvolumeresourcedata.html#cfn-greengrass-resourcedefinition-localvolumeresourcedata-groupownersetting
+        UpdateType: Immutable
 
     .FUNCTIONALITY
         Vaporshell

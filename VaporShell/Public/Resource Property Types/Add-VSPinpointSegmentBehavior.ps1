@@ -10,10 +10,11 @@ function Add-VSPinpointSegmentBehavior {
         http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-pinpoint-segment-segmentdimensions-behavior.html
 
     .PARAMETER Recency
-		Type: Recency    
-		Required: False    
-		Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-pinpoint-segment-segmentdimensions-behavior.html#cfn-pinpoint-segment-segmentdimensions-behavior-recency    
-		UpdateType: Mutable    
+        Specifies how recently segment members were active.
+
+        Type: Recency
+        Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-pinpoint-segment-segmentdimensions-behavior.html#cfn-pinpoint-segment-segmentdimensions-behavior-recency
+        UpdateType: Mutable
 
     .FUNCTIONALITY
         Vaporshell

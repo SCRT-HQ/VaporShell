@@ -10,17 +10,21 @@ function Add-VSCloudFrontStreamingDistributionTrustedSigners {
         http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-cloudfront-streamingdistribution-trustedsigners.html
 
     .PARAMETER Enabled
-		Required: True    
-		Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-cloudfront-streamingdistribution-trustedsigners.html#cfn-cloudfront-streamingdistribution-trustedsigners-enabled    
-		PrimitiveType: Boolean    
-		UpdateType: Mutable    
+        Specifies whether you want to require viewers to use signed URLs to access the files specified by PathPattern and TargetOriginId.
+
+        Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-cloudfront-streamingdistribution-trustedsigners.html#cfn-cloudfront-streamingdistribution-trustedsigners-enabled
+        PrimitiveType: Boolean
+        UpdateType: Mutable
 
     .PARAMETER AwsAccountNumbers
-		PrimitiveItemType: String    
-		Type: List    
-		Required: False    
-		Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-cloudfront-streamingdistribution-trustedsigners.html#cfn-cloudfront-streamingdistribution-trustedsigners-awsaccountnumbers    
-		UpdateType: Mutable    
+        An AWS account that is included in the TrustedSigners complex type for this distribution. Valid values include:
++  self, which is the AWS account used to create the distribution.
++ An AWS account number.
+
+        PrimitiveItemType: String
+        Type: List
+        Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-cloudfront-streamingdistribution-trustedsigners.html#cfn-cloudfront-streamingdistribution-trustedsigners-awsaccountnumbers
+        UpdateType: Mutable
 
     .FUNCTIONALITY
         Vaporshell

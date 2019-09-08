@@ -10,23 +10,26 @@ function Add-VSGluePartitionPartitionInput {
         http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-glue-partition-partitioninput.html
 
     .PARAMETER Parameters
-		Required: False    
-		Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-glue-partition-partitioninput.html#cfn-glue-partition-partitioninput-parameters    
-		PrimitiveType: Json    
-		UpdateType: Mutable    
+        These key-value pairs define partition parameters.
+
+        Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-glue-partition-partitioninput.html#cfn-glue-partition-partitioninput-parameters
+        PrimitiveType: Json
+        UpdateType: Mutable
 
     .PARAMETER StorageDescriptor
-		Type: StorageDescriptor    
-		Required: False    
-		Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-glue-partition-partitioninput.html#cfn-glue-partition-partitioninput-storagedescriptor    
-		UpdateType: Mutable    
+        Provides information about the physical location where the partition is stored.
+
+        Type: StorageDescriptor
+        Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-glue-partition-partitioninput.html#cfn-glue-partition-partitioninput-storagedescriptor
+        UpdateType: Mutable
 
     .PARAMETER Values
-		PrimitiveItemType: String    
-		Type: List    
-		Required: True    
-		Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-glue-partition-partitioninput.html#cfn-glue-partition-partitioninput-values    
-		UpdateType: Immutable    
+        The values of the partition. Although this parameter is not required by the SDK, you must specify this parameter for a valid input.
+
+        PrimitiveItemType: String
+        Type: List
+        Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-glue-partition-partitioninput.html#cfn-glue-partition-partitioninput-values
+        UpdateType: Immutable
 
     .FUNCTIONALITY
         Vaporshell

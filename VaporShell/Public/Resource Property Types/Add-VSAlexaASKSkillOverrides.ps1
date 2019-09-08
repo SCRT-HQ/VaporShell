@@ -10,10 +10,11 @@ function Add-VSAlexaASKSkillOverrides {
         http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ask-skill-overrides.html
 
     .PARAMETER Manifest
-		Required: False    
-		Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ask-skill-overrides.html#cfn-ask-skill-overrides-manifest    
-		PrimitiveType: Json    
-		UpdateType: Mutable    
+        Overrides to apply to the skill manifest inside of the skill package. The skill manifest contains metadata about the skill. For more information, see Skill Manifest Schemas: https://developer.amazon.com/docs/smapi/skill-manifest.html.
+
+        Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ask-skill-overrides.html#cfn-ask-skill-overrides-manifest
+        PrimitiveType: Json
+        UpdateType: Mutable
 
     .FUNCTIONALITY
         Vaporshell
