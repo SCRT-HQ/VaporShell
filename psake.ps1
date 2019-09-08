@@ -469,7 +469,6 @@ Task Deploy -Depends Init {
             Write-Host -ForegroundColor Yellow "No module version matched! Negating deployment to prevent errors"
             $env:BHCommitMessage = $env:BHCommitMessage.Replace('!deploy','')
         }
-
     }
     else {
         Write-Host -ForegroundColor Magenta "Build system is not VSTS, commit message does not contain '!deploy' and/or branch is not 'master' -- skipping module update!"
