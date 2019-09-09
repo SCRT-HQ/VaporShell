@@ -14,7 +14,7 @@ Properties {
     $tests = "$projectRoot\Tests"
     $Timestamp = Get-Date -Uformat "%Y%m%d-%H%M%S"
     $PSVersion = $PSVersionTable.PSVersion.ToString()
-    $TestFile = "TestResults_PS$PSVersion`_$TimeStamp.xml"
+    $TestFile = "TestResults.xml"
     $outputDir = $env:BHBuildOutput
     $outputModDir = Join-Path -Path $outputDir -ChildPath $env:BHProjectName
     $manifest = Import-PowerShellDataFile -Path $env:BHPSModuleManifest
