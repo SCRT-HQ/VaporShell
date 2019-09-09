@@ -27,7 +27,7 @@ Properties {
 }
 
 #Task Default -Depends Init,Test,Build,Deploy
-task default -depends Pester
+task default -depends Import
 
 task Init {
     Set-Location $ProjectRoot
@@ -39,15 +39,7 @@ task Init {
     }
 } -description 'Initialize build environment'
 
-task Update -depends Init {
-    '    Updating Resource and Property Type functions with current AWS spec sheet...'
-    Get-ChildItem (Join-Path $PSScriptRoot 'ci') -Filter '*.ps1' | ForEach-Object {
-        . $_.FullName
-    }
-    Update-VSResourceFunctions
-} -description 'Updates module functions before compilation'
-
-task Clean -depends Update {
+task Clean -depends Init {
     Remove-Module -Name $env:BHProjectName -Force -ErrorAction SilentlyContinue -Verbose:$false
 
     if (Test-Path -Path $outputDir) {
@@ -58,7 +50,15 @@ task Clean -depends Update {
     "    Cleaned previous output directory [$outputDir]"
 } -description 'Cleans module output directory'
 
-task Compile -depends Clean {
+task Update -depends Clean {
+    '    Updating Resource and Property Type functions with current AWS spec sheet...'
+    Get-ChildItem (Join-Path $PSScriptRoot 'ci') -Filter '*.ps1' | ForEach-Object {
+        . $_.FullName
+    }
+    Update-VSResourceFunctions
+} -description 'Updates module functions before compilation'
+
+task Build -depends Update {
     $functionsToExport = @()
     New-Item -Path $outputModDir -ItemType Directory -ErrorAction SilentlyContinue > $null
     New-Item -Path $outputModVerDir -ItemType Directory -ErrorAction SilentlyContinue > $null
@@ -183,7 +183,7 @@ Export-ModuleMember -Function (Get-Command -Module VaporShell.DSL).Name -Variabl
     Get-ChildItem $outputModVerDir | Format-Table -Autosize
 } -description 'Compiles module from source'
 
-Task Import -Depends Compile {
+Task Import -Depends Build {
     '    Testing import of compiled module'
     Import-Module (Join-Path $outputModVerDir "$($env:BHProjectName).psd1")
 } -description 'Imports the newly compiled module'
@@ -240,9 +240,9 @@ $pesterScriptBlock = {
     $env:PSModulePath = $origModulePath
 }
 
-task Pester -Depends Import $pesterScriptBlock -description 'Run Pester tests'
+task Full -Depends Import $pesterScriptBlock -description 'Run Pester tests'
 
-task PesterOnly -Depends Init $pesterScriptBlock -description 'Run Pester tests only (no Clean/Compile)'
+task Test -Depends Init $pesterScriptBlock -description 'Run Pester tests only (no Clean/Compile)'
 
 task Analyze -Depends Pester {
     $analysis = Invoke-ScriptAnalyzer -Path "$PSScriptRoot\$($env:BHProjectName)" -Recurse -Verbose:$false

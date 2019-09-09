@@ -81,6 +81,6 @@ function Get-CFNPoshHelp {
         [PSCustomObject]$DocHash
     }
     else {
-        Write-Warning "[$ResourceName] No documentation found in user-guide repository matching parsed link: $($Link)`n`tExpected: $($DocPath.Replace("$PSScriptRoot\",''))"
+        Write-Warning "[$ResourceName] No documentation found in user-guide repository matching parsed link!`n     Parsed link: $($Link)`n     Expected: $($DocPath.Replace("$PSScriptRoot\",''))"
     }
 }

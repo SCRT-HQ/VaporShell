@@ -2,9 +2,9 @@
 [cmdletbinding(DefaultParameterSetName = 'task')]
 param(
     [parameter(ParameterSetName = 'task', Position = 0)]
-    [ValidateSet('Init','Update','Clean','Compile','Import','Pester','PesterOnly','Deploy')]
+    [ValidateSet('Init','Clean','Update','Build','Import','Full','Test','Deploy')]
     [string[]]
-    $Task = @('Init','Update','Clean','Compile','Import'),
+    $Task,
 
     [parameter(ParameterSetName = 'help')]
     [switch]$Help,
@@ -134,17 +134,13 @@ else {
         'psake' | Resolve-Module @update -Verbose
         Set-BuildEnvironment -Force
         Write-Host -ForegroundColor Green "Modules successfully resolved..."
-        Write-Host -ForegroundColor Green "Invoking psake with task list: [ $($Task -join ', ') ]`n"
         $psakeParams = @{
             nologo = $true
             buildFile = "$PSScriptRoot\psake.ps1"
-            taskList = $Task
         }
-        if ($Task -eq 'TestOnly') {
-            $global:ExcludeTag = @('Module')
-        }
-        else {
-            $global:ExcludeTag = $null
+        if ($PSBoundParameters.ContainsKey('Task')) {
+            Write-Host -ForegroundColor Green "Invoking psake with task list: [ $($Task -join ', ') ]`n"
+            $psakeParams['taskList'] = $Task
         }
         if ($Force) {
             $global:ForceDeploy = $true
