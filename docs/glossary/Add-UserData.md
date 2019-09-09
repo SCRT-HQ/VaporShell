@@ -1,14 +1,3 @@
----
-layout: glossary
-title: Add-UserData
-categories: glossary
-label1: Category
-data1: Documentation
-label2: Depth
-data2: Deep
-schema: 2.0.0
----
-
 # Add-UserData
 
 ## SYNOPSIS
@@ -20,16 +9,25 @@ in AutoScaling Launch Configurations), it adds the single For multiple values, i
 
 ### String (Default)
 ```
-Add-UserData [-String] <Object> [<CommonParameters>]
+Add-UserData [-String] <Object> [-Replace <Hashtable>] [-Persist] [-UseJoin] [<CommonParameters>]
 ```
 
 ### File
 ```
-Add-UserData [-File] <String> [<CommonParameters>]
+Add-UserData [-File] <String> [-Replace <Hashtable>] [-Persist] [-UseJoin] [<CommonParameters>]
 ```
 
 ## DESCRIPTION
-{{Fill in the Description}}
+{{ Fill in the Description }}
+
+## EXAMPLES
+
+### Example 1
+```powershell
+PS C:\> {{ Add example code here }}
+```
+
+{{ Add example description here }}
 
 ## PARAMETERS
 
@@ -68,16 +66,60 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
+### -Replace
+A hashtable of keys to replace in your UserData file with the corresponding values.
+
+```yaml
+Type: Hashtable
+Parameter Sets: (All)
+Aliases:
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### -Persist
+If true and the UserData file does not already include it, adds the \<persist\>true\</persist\> tag to the end of the UserData file.
+
+```yaml
+Type: SwitchParameter
+Parameter Sets: (All)
+Aliases:
+
+Required: False
+Position: Named
+Default value: False
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### -UseJoin
+If true, uses Fn::Join to add the UserData contents as an array of strings.
+If false or excluded, content is
+
+```yaml
+Type: SwitchParameter
+Parameter Sets: (All)
+Aliases:
+
+Required: False
+Position: Named
+Default value: False
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
 ### CommonParameters
-This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction, and -WarningVariable.
-For more information, see about_CommonParameters (http://go.microsoft.com/fwlink/?LinkID=113216).
+This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction, and -WarningVariable. For more information, see [about_CommonParameters](http://go.microsoft.com/fwlink/?LinkID=113216).
 
 ## INPUTS
 
 ## OUTPUTS
 
 ### Vaporshell.Resource.UserData
-
 ## NOTES
 
 ## RELATED LINKS

@@ -1,18 +1,9 @@
----
-layout: glossary
-title: New-VSWAFSizeConstraintSet
-categories: glossary
-label1: Category
-data1: Documentation
-label2: Depth
-data2: Deep
-schema: 2.0.0
----
-
 # New-VSWAFSizeConstraintSet
 
 ## SYNOPSIS
-Adds an AWS::WAF::SizeConstraintSet resource to the template
+Adds an AWS::WAF::SizeConstraintSet resource to the template.
+A complex type that contains SizeConstraint objects, which specify the parts of web requests that you want AWS WAF to inspect the size of.
+If a SizeConstraintSet contains more than one SizeConstraint object, a request only needs to match one constraint to be considered a match.
 
 ## SYNTAX
 
@@ -23,7 +14,18 @@ New-VSWAFSizeConstraintSet [-LogicalId] <String> -Name <Object> -SizeConstraints
 ```
 
 ## DESCRIPTION
-Adds an AWS::WAF::SizeConstraintSet resource to the template
+Adds an AWS::WAF::SizeConstraintSet resource to the template.
+A complex type that contains SizeConstraint objects, which specify the parts of web requests that you want AWS WAF to inspect the size of.
+If a SizeConstraintSet contains more than one SizeConstraint object, a request only needs to match one constraint to be considered a match.
+
+## EXAMPLES
+
+### Example 1
+```powershell
+PS C:\> {{ Add example code here }}
+```
+
+{{ Add example description here }}
 
 ## PARAMETERS
 
@@ -45,9 +47,10 @@ Accept wildcard characters: False
 ```
 
 ### -Name
-Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-waf-sizeconstraintset.html#cfn-waf-sizeconstraintset-name    
-PrimitiveType: String    
-Required: True    
+The name, if any, of the SizeConstraintSet.
+
+Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-waf-sizeconstraintset.html#cfn-waf-sizeconstraintset-name
+PrimitiveType: String
 UpdateType: Immutable
 
 ```yaml
@@ -63,11 +66,12 @@ Accept wildcard characters: False
 ```
 
 ### -SizeConstraints
-Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-waf-sizeconstraintset.html#cfn-waf-sizeconstraintset-sizeconstraints    
-DuplicatesAllowed: False    
-ItemType: SizeConstraint    
-Required: True    
-Type: List    
+The size constraint and the part of the web request to check.
+
+Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-waf-sizeconstraintset.html#cfn-waf-sizeconstraintset-sizeconstraints
+DuplicatesAllowed: False
+ItemType: SizeConstraint
+Type: List
 UpdateType: Mutable
 
 ```yaml
@@ -177,15 +181,13 @@ Accept wildcard characters: False
 ```
 
 ### CommonParameters
-This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction, and -WarningVariable.
-For more information, see about_CommonParameters (http://go.microsoft.com/fwlink/?LinkID=113216).
+This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction, and -WarningVariable. For more information, see [about_CommonParameters](http://go.microsoft.com/fwlink/?LinkID=113216).
 
 ## INPUTS
 
 ## OUTPUTS
 
 ### Vaporshell.Resource.WAF.SizeConstraintSet
-
 ## NOTES
 
 ## RELATED LINKS

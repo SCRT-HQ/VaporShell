@@ -1,14 +1,3 @@
----
-layout: glossary
-title: Add-FnFindInMap
-categories: glossary
-label1: Category
-data1: Documentation
-label2: Depth
-data2: Deep
-schema: 2.0.0
----
-
 # Add-FnFindInMap
 
 ## SYNOPSIS
@@ -22,6 +11,15 @@ Add-FnFindInMap [-MapName] <Object> [-TopLevelKey] <Object> [-SecondLevelKey] <O
 
 ## DESCRIPTION
 The intrinsic function Fn::FindInMap returns the value corresponding to keys in a two-level map that is declared in the Mappings section.
+
+## EXAMPLES
+
+### EXAMPLE 1
+```
+Add-FnFindInMap -MapName "RegionMap" -TopLevelKey (Add-FnRef -Ref "$_AWSRegion") -SecondLevelKey "32"
+```
+
+When the template is exported, this will convert to: {"Fn::FindInMap":\["RegionMap",{"Ref":"AWS::Region"},"32"\]}
 
 ## PARAMETERS
 
@@ -75,15 +73,13 @@ Accept wildcard characters: False
 ```
 
 ### CommonParameters
-This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction, and -WarningVariable.
-For more information, see about_CommonParameters (http://go.microsoft.com/fwlink/?LinkID=113216).
+This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction, and -WarningVariable. For more information, see [about_CommonParameters](http://go.microsoft.com/fwlink/?LinkID=113216).
 
 ## INPUTS
 
 ## OUTPUTS
 
 ### Vaporshell.Function.FindInMap
-
 ## NOTES
 You can use the following functions in a Fn::FindInMap function:
     Fn::FindInMap

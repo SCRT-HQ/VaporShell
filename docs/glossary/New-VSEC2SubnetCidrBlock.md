@@ -1,18 +1,8 @@
----
-layout: glossary
-title: New-VSEC2SubnetCidrBlock
-categories: glossary
-label1: Category
-data1: Documentation
-label2: Depth
-data2: Deep
-schema: 2.0.0
----
-
 # New-VSEC2SubnetCidrBlock
 
 ## SYNOPSIS
-Adds an AWS::EC2::SubnetCidrBlock resource to the template
+Adds an AWS::EC2::SubnetCidrBlock resource to the template.
+Associates a single IPv6 CIDR block with a VPC subnet.
 
 ## SYNTAX
 
@@ -23,7 +13,17 @@ New-VSEC2SubnetCidrBlock [-LogicalId] <String> -Ipv6CidrBlock <Object> -SubnetId
 ```
 
 ## DESCRIPTION
-Adds an AWS::EC2::SubnetCidrBlock resource to the template
+Adds an AWS::EC2::SubnetCidrBlock resource to the template.
+Associates a single IPv6 CIDR block with a VPC subnet.
+
+## EXAMPLES
+
+### Example 1
+```powershell
+PS C:\> {{ Add example code here }}
+```
+
+{{ Add example description here }}
 
 ## PARAMETERS
 
@@ -45,9 +45,11 @@ Accept wildcard characters: False
 ```
 
 ### -Ipv6CidrBlock
-Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ec2-subnetcidrblock.html#cfn-ec2-subnetcidrblock-ipv6cidrblock    
-PrimitiveType: String    
-Required: True    
+The IPv6 network range for the subnet, in CIDR notation.
+The subnet size must use a /64 prefix length.
+
+Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ec2-subnetcidrblock.html#cfn-ec2-subnetcidrblock-ipv6cidrblock
+PrimitiveType: String
 UpdateType: Immutable
 
 ```yaml
@@ -63,9 +65,10 @@ Accept wildcard characters: False
 ```
 
 ### -SubnetId
-Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ec2-subnetcidrblock.html#cfn-ec2-subnetcidrblock-subnetid    
-PrimitiveType: String    
-Required: True    
+The ID of the subnet.
+
+Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ec2-subnetcidrblock.html#cfn-ec2-subnetcidrblock-subnetid
+PrimitiveType: String
 UpdateType: Immutable
 
 ```yaml
@@ -175,15 +178,13 @@ Accept wildcard characters: False
 ```
 
 ### CommonParameters
-This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction, and -WarningVariable.
-For more information, see about_CommonParameters (http://go.microsoft.com/fwlink/?LinkID=113216).
+This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction, and -WarningVariable. For more information, see [about_CommonParameters](http://go.microsoft.com/fwlink/?LinkID=113216).
 
 ## INPUTS
 
 ## OUTPUTS
 
 ### Vaporshell.Resource.EC2.SubnetCidrBlock
-
 ## NOTES
 
 ## RELATED LINKS

@@ -1,18 +1,9 @@
----
-layout: glossary
-title: Add-VSElasticBeanstalkEnvironmentTier
-categories: glossary
-label1: Category
-data1: Documentation
-label2: Depth
-data2: Deep
-schema: 2.0.0
----
-
 # Add-VSElasticBeanstalkEnvironmentTier
 
 ## SYNOPSIS
-Adds an AWS::ElasticBeanstalk::Environment.Tier resource property to the template
+Adds an AWS::ElasticBeanstalk::Environment.Tier resource property to the template.
+Describes the environment tier for an AWS::ElasticBeanstalk::Environment: https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-beanstalk-environment.html resource.
+For more information, see Environment Tiers: https://docs.aws.amazon.com/elasticbeanstalk/latest/dg/using-features-managing-env-tiers.html in the *AWS Elastic Beanstalk Developer Guide*.
 
 ## SYNTAX
 
@@ -22,14 +13,29 @@ Add-VSElasticBeanstalkEnvironmentTier [[-Name] <Object>] [[-Type] <Object>] [[-V
 ```
 
 ## DESCRIPTION
-Adds an AWS::ElasticBeanstalk::Environment.Tier resource property to the template
+Adds an AWS::ElasticBeanstalk::Environment.Tier resource property to the template.
+Describes the environment tier for an AWS::ElasticBeanstalk::Environment: https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-beanstalk-environment.html resource.
+For more information, see Environment Tiers: https://docs.aws.amazon.com/elasticbeanstalk/latest/dg/using-features-managing-env-tiers.html in the *AWS Elastic Beanstalk Developer Guide*.
+
+## EXAMPLES
+
+### Example 1
+```powershell
+PS C:\> {{ Add example code here }}
+```
+
+{{ Add example description here }}
 
 ## PARAMETERS
 
 ### -Name
-Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-beanstalk-environment-tier.html#cfn-beanstalk-env-tier-name    
-PrimitiveType: String    
-Required: False    
+The name of this environment tier.
+Valid values:
++ For *Web server tier* - WebServer
++ For *Worker tier* - Worker
+
+Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-beanstalk-environment-tier.html#cfn-beanstalk-env-tier-name
+PrimitiveType: String
 UpdateType: Immutable
 
 ```yaml
@@ -45,9 +51,13 @@ Accept wildcard characters: False
 ```
 
 ### -Type
-Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-beanstalk-environment-tier.html#cfn-beanstalk-env-tier-type    
-PrimitiveType: String    
-Required: False    
+The type of this environment tier.
+Valid values:
++ For *Web server tier* - Standard
++ For *Worker tier* - SQS/HTTP
+
+Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-beanstalk-environment-tier.html#cfn-beanstalk-env-tier-type
+PrimitiveType: String
 UpdateType: Immutable
 
 ```yaml
@@ -63,9 +73,14 @@ Accept wildcard characters: False
 ```
 
 ### -Version
-Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-beanstalk-environment-tier.html#cfn-beanstalk-env-tier-version    
-PrimitiveType: String    
-Required: False    
+The version of this environment tier.
+When you don't set a value to it, Elastic Beanstalk uses the latest compatible worker tier version.
+This member is deprecated.
+Any specific version that you set may become out of date.
+We recommend leaving it unspecified.
+
+Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-beanstalk-environment-tier.html#cfn-beanstalk-env-tier-version
+PrimitiveType: String
 UpdateType: Mutable
 
 ```yaml
@@ -81,15 +96,13 @@ Accept wildcard characters: False
 ```
 
 ### CommonParameters
-This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction, and -WarningVariable.
-For more information, see about_CommonParameters (http://go.microsoft.com/fwlink/?LinkID=113216).
+This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction, and -WarningVariable. For more information, see [about_CommonParameters](http://go.microsoft.com/fwlink/?LinkID=113216).
 
 ## INPUTS
 
 ## OUTPUTS
 
 ### Vaporshell.Resource.ElasticBeanstalk.Environment.Tier
-
 ## NOTES
 
 ## RELATED LINKS

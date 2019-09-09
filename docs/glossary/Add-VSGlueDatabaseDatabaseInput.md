@@ -1,18 +1,8 @@
----
-layout: glossary
-title: Add-VSGlueDatabaseDatabaseInput
-categories: glossary
-label1: Category
-data1: Documentation
-label2: Depth
-data2: Deep
-schema: 2.0.0
----
-
 # Add-VSGlueDatabaseDatabaseInput
 
 ## SYNOPSIS
-Adds an AWS::Glue::Database.DatabaseInput resource property to the template
+Adds an AWS::Glue::Database.DatabaseInput resource property to the template.
+The structure used to create or update a database.
 
 ## SYNTAX
 
@@ -22,14 +12,25 @@ Add-VSGlueDatabaseDatabaseInput [[-LocationUri] <Object>] [[-Description] <Objec
 ```
 
 ## DESCRIPTION
-Adds an AWS::Glue::Database.DatabaseInput resource property to the template
+Adds an AWS::Glue::Database.DatabaseInput resource property to the template.
+The structure used to create or update a database.
+
+## EXAMPLES
+
+### Example 1
+```powershell
+PS C:\> {{ Add example code here }}
+```
+
+{{ Add example description here }}
 
 ## PARAMETERS
 
 ### -LocationUri
-Required: False    
-Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-glue-database-databaseinput.html#cfn-glue-database-databaseinput-locationuri    
-PrimitiveType: String    
+The location of the database for example, an HDFS path.
+
+Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-glue-database-databaseinput.html#cfn-glue-database-databaseinput-locationuri
+PrimitiveType: String
 UpdateType: Mutable
 
 ```yaml
@@ -45,9 +46,10 @@ Accept wildcard characters: False
 ```
 
 ### -Description
-Required: False    
-Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-glue-database-databaseinput.html#cfn-glue-database-databaseinput-description    
-PrimitiveType: String    
+A description of the database.
+
+Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-glue-database-databaseinput.html#cfn-glue-database-databaseinput-description
+PrimitiveType: String
 UpdateType: Mutable
 
 ```yaml
@@ -63,9 +65,11 @@ Accept wildcard characters: False
 ```
 
 ### -Parameters
-Required: False    
-Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-glue-database-databaseinput.html#cfn-glue-database-databaseinput-parameters    
-PrimitiveType: Json    
+These key-value pairs define parameters and properties of the database.
+These key-value pairs define parameters and properties of the database.
+
+Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-glue-database-databaseinput.html#cfn-glue-database-databaseinput-parameters
+PrimitiveType: Json
 UpdateType: Mutable
 
 ```yaml
@@ -81,9 +85,11 @@ Accept wildcard characters: False
 ```
 
 ### -Name
-Required: False    
-Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-glue-database-databaseinput.html#cfn-glue-database-databaseinput-name    
-PrimitiveType: String    
+The name of the database.
+For Hive compatibility, this is folded to lowercase when it is stored.
+
+Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-glue-database-databaseinput.html#cfn-glue-database-databaseinput-name
+PrimitiveType: String
 UpdateType: Immutable
 
 ```yaml
@@ -99,15 +105,13 @@ Accept wildcard characters: False
 ```
 
 ### CommonParameters
-This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction, and -WarningVariable.
-For more information, see about_CommonParameters (http://go.microsoft.com/fwlink/?LinkID=113216).
+This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction, and -WarningVariable. For more information, see [about_CommonParameters](http://go.microsoft.com/fwlink/?LinkID=113216).
 
 ## INPUTS
 
 ## OUTPUTS
 
 ### Vaporshell.Resource.Glue.Database.DatabaseInput
-
 ## NOTES
 
 ## RELATED LINKS

@@ -1,18 +1,8 @@
----
-layout: glossary
-title: Add-VSElasticLoadBalancingLoadBalancerAccessLoggingPolicy
-categories: glossary
-label1: Category
-data1: Documentation
-label2: Depth
-data2: Deep
-schema: 2.0.0
----
-
 # Add-VSElasticLoadBalancingLoadBalancerAccessLoggingPolicy
 
 ## SYNOPSIS
-Adds an AWS::ElasticLoadBalancing::LoadBalancer.AccessLoggingPolicy resource property to the template
+Adds an AWS::ElasticLoadBalancing::LoadBalancer.AccessLoggingPolicy resource property to the template.
+Specifies where and how access logs are stored for your Classic Load Balancer.
 
 ## SYNTAX
 
@@ -22,14 +12,27 @@ Add-VSElasticLoadBalancingLoadBalancerAccessLoggingPolicy [[-EmitInterval] <Int3
 ```
 
 ## DESCRIPTION
-Adds an AWS::ElasticLoadBalancing::LoadBalancer.AccessLoggingPolicy resource property to the template
+Adds an AWS::ElasticLoadBalancing::LoadBalancer.AccessLoggingPolicy resource property to the template.
+Specifies where and how access logs are stored for your Classic Load Balancer.
+
+## EXAMPLES
+
+### Example 1
+```powershell
+PS C:\> {{ Add example code here }}
+```
+
+{{ Add example description here }}
 
 ## PARAMETERS
 
 ### -EmitInterval
-Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-elb-accessloggingpolicy.html#cfn-elb-accessloggingpolicy-emitinterval    
-PrimitiveType: Integer    
-Required: False    
+The interval for publishing the access logs.
+You can specify an interval of either 5 minutes or 60 minutes.
+Default: 60 minutes
+
+Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-elb-accessloggingpolicy.html#cfn-elb-accessloggingpolicy-emitinterval
+PrimitiveType: Integer
 UpdateType: Mutable
 
 ```yaml
@@ -45,9 +48,10 @@ Accept wildcard characters: False
 ```
 
 ### -Enabled
-Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-elb-accessloggingpolicy.html#cfn-elb-accessloggingpolicy-enabled    
-PrimitiveType: Boolean    
-Required: True    
+Specifies whether access logs are enabled for the load balancer.
+
+Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-elb-accessloggingpolicy.html#cfn-elb-accessloggingpolicy-enabled
+PrimitiveType: Boolean
 UpdateType: Mutable
 
 ```yaml
@@ -63,9 +67,10 @@ Accept wildcard characters: False
 ```
 
 ### -S3BucketName
-Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-elb-accessloggingpolicy.html#cfn-elb-accessloggingpolicy-s3bucketname    
-PrimitiveType: String    
-Required: True    
+The name of the Amazon S3 bucket where the access logs are stored.
+
+Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-elb-accessloggingpolicy.html#cfn-elb-accessloggingpolicy-s3bucketname
+PrimitiveType: String
 UpdateType: Mutable
 
 ```yaml
@@ -81,9 +86,11 @@ Accept wildcard characters: False
 ```
 
 ### -S3BucketPrefix
-Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-elb-accessloggingpolicy.html#cfn-elb-accessloggingpolicy-s3bucketprefix    
-PrimitiveType: String    
-Required: False    
+The logical hierarchy you created for your Amazon S3 bucket, for example my-bucket-prefix/prod.
+If the prefix is not provided, the log is placed at the root level of the bucket.
+
+Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-elb-accessloggingpolicy.html#cfn-elb-accessloggingpolicy-s3bucketprefix
+PrimitiveType: String
 UpdateType: Mutable
 
 ```yaml
@@ -99,15 +106,13 @@ Accept wildcard characters: False
 ```
 
 ### CommonParameters
-This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction, and -WarningVariable.
-For more information, see about_CommonParameters (http://go.microsoft.com/fwlink/?LinkID=113216).
+This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction, and -WarningVariable. For more information, see [about_CommonParameters](http://go.microsoft.com/fwlink/?LinkID=113216).
 
 ## INPUTS
 
 ## OUTPUTS
 
 ### Vaporshell.Resource.ElasticLoadBalancing.LoadBalancer.AccessLoggingPolicy
-
 ## NOTES
 
 ## RELATED LINKS

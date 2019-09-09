@@ -1,18 +1,8 @@
----
-layout: glossary
-title: New-VSGameLiftBuild
-categories: glossary
-label1: Category
-data1: Documentation
-label2: Depth
-data2: Deep
-schema: 2.0.0
----
-
 # New-VSGameLiftBuild
 
 ## SYNOPSIS
-Adds an AWS::GameLift::Build resource to the template
+Adds an AWS::GameLift::Build resource to the template.
+The AWS::GameLift::Build resource creates a build that includes all of the components to run your game server in an Amazon GameLift (GameLift fleet.
 
 ## SYNTAX
 
@@ -23,7 +13,17 @@ New-VSGameLiftBuild [-LogicalId] <String> [-Name <Object>] [-StorageLocation <Ob
 ```
 
 ## DESCRIPTION
-Adds an AWS::GameLift::Build resource to the template
+Adds an AWS::GameLift::Build resource to the template.
+The AWS::GameLift::Build resource creates a build that includes all of the components to run your game server in an Amazon GameLift (GameLift fleet.
+
+## EXAMPLES
+
+### Example 1
+```powershell
+PS C:\> {{ Add example code here }}
+```
+
+{{ Add example description here }}
 
 ## PARAMETERS
 
@@ -45,9 +45,11 @@ Accept wildcard characters: False
 ```
 
 ### -Name
-Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-gamelift-build.html#cfn-gamelift-build-name    
-PrimitiveType: String    
-Required: False    
+Descriptive label that is associated with a build.
+Build names do not need to be unique.
+
+Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-gamelift-build.html#cfn-gamelift-build-name
+PrimitiveType: String
 UpdateType: Mutable
 
 ```yaml
@@ -63,9 +65,13 @@ Accept wildcard characters: False
 ```
 
 ### -StorageLocation
-Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-gamelift-build.html#cfn-gamelift-build-storagelocation    
-Required: False    
-Type: S3Location    
+Information indicating where your game build files are stored.
+Use this parameter only when creating a build with files stored in an Amazon S3 bucket that you own.
+The storage location must specify an Amazon S3 bucket name and key, as well as a the ARN for a role that you set up to allow Amazon GameLift to access your Amazon S3 bucket.
+The S3 bucket must be in the same region that you want to create a new build in.
+
+Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-gamelift-build.html#cfn-gamelift-build-storagelocation
+Type: S3Location
 UpdateType: Immutable
 
 ```yaml
@@ -81,9 +87,11 @@ Accept wildcard characters: False
 ```
 
 ### -Version
-Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-gamelift-build.html#cfn-gamelift-build-version    
-PrimitiveType: String    
-Required: False    
+Version that is associated with this build.
+Version strings do not need to be unique.
+
+Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-gamelift-build.html#cfn-gamelift-build-version
+PrimitiveType: String
 UpdateType: Mutable
 
 ```yaml
@@ -193,15 +201,13 @@ Accept wildcard characters: False
 ```
 
 ### CommonParameters
-This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction, and -WarningVariable.
-For more information, see about_CommonParameters (http://go.microsoft.com/fwlink/?LinkID=113216).
+This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction, and -WarningVariable. For more information, see [about_CommonParameters](http://go.microsoft.com/fwlink/?LinkID=113216).
 
 ## INPUTS
 
 ## OUTPUTS
 
 ### Vaporshell.Resource.GameLift.Build
-
 ## NOTES
 
 ## RELATED LINKS

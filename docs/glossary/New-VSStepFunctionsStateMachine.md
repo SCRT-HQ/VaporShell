@@ -1,29 +1,33 @@
----
-layout: glossary
-title: New-VSStepFunctionsStateMachine
-categories: glossary
-label1: Category
-data1: Documentation
-label2: Depth
-data2: Deep
-schema: 2.0.0
----
-
 # New-VSStepFunctionsStateMachine
 
 ## SYNOPSIS
-Adds an AWS::StepFunctions::StateMachine resource to the template
+Adds an AWS::StepFunctions::StateMachine resource to the template.
+Provisions a state machine.
+A state machine consists of a collection of states that can do work (Task states, determine to which states to transition next (Choice states, stop an execution with an error (Fail states, and so on.
+State machines are specified using a JSON-based, structured language.
 
 ## SYNTAX
 
 ```
 New-VSStepFunctionsStateMachine [-LogicalId] <String> -DefinitionString <Object> [-StateMachineName <Object>]
- -RoleArn <Object> [-DeletionPolicy <String>] [-DependsOn <String[]>] [-Metadata <Object>]
+ -RoleArn <Object> [-Tags <Object>] [-DeletionPolicy <String>] [-DependsOn <String[]>] [-Metadata <Object>]
  [-UpdatePolicy <Object>] [-Condition <Object>] [<CommonParameters>]
 ```
 
 ## DESCRIPTION
-Adds an AWS::StepFunctions::StateMachine resource to the template
+Adds an AWS::StepFunctions::StateMachine resource to the template.
+Provisions a state machine.
+A state machine consists of a collection of states that can do work (Task states, determine to which states to transition next (Choice states, stop an execution with an error (Fail states, and so on.
+State machines are specified using a JSON-based, structured language.
+
+## EXAMPLES
+
+### Example 1
+```powershell
+PS C:\> {{ Add example code here }}
+```
+
+{{ Add example description here }}
 
 ## PARAMETERS
 
@@ -45,9 +49,11 @@ Accept wildcard characters: False
 ```
 
 ### -DefinitionString
-Required: True    
-Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-stepfunctions-statemachine.html#cfn-stepfunctions-statemachine-definitionstring    
-PrimitiveType: String    
+The Amazon States Language definition of the state machine.
+See Amazon States Language: https://docs.aws.amazon.com/step-functions/latest/dg/concepts-amazon-states-language.html.
+
+Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-stepfunctions-statemachine.html#cfn-stepfunctions-statemachine-definitionstring
+PrimitiveType: String
 UpdateType: Mutable
 
 ```yaml
@@ -63,9 +69,17 @@ Accept wildcard characters: False
 ```
 
 ### -StateMachineName
-Required: False    
-Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-stepfunctions-statemachine.html#cfn-stepfunctions-statemachine-statemachinename    
-PrimitiveType: String    
+The name of the state machine.
+A name must *not* contain:
++ white space
++ brackets \< \> { }  \]
++ wildcard characters ?
+*
++ special characters " # %  ^ | ~  $ & , ; : /
++ control characters U+0000-001F, U+007F-009F
+
+Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-stepfunctions-statemachine.html#cfn-stepfunctions-statemachine-statemachinename
+PrimitiveType: String
 UpdateType: Immutable
 
 ```yaml
@@ -81,9 +95,10 @@ Accept wildcard characters: False
 ```
 
 ### -RoleArn
-Required: True    
-Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-stepfunctions-statemachine.html#cfn-stepfunctions-statemachine-rolearn    
-PrimitiveType: String    
+The Amazon Resource Name ARN of the IAM role to use for this state machine.
+
+Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-stepfunctions-statemachine.html#cfn-stepfunctions-statemachine-rolearn
+PrimitiveType: String
 UpdateType: Mutable
 
 ```yaml
@@ -92,6 +107,28 @@ Parameter Sets: (All)
 Aliases:
 
 Required: True
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### -Tags
+The list of tags to add to a resource.
+Tags may only contain Unicode letters, digits, white space, or these symbols: _ .
+: / = + - @.
+
+Type: List
+Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-stepfunctions-statemachine.html#cfn-stepfunctions-statemachine-tags
+ItemType: TagsEntry
+UpdateType: Mutable
+
+```yaml
+Type: Object
+Parameter Sets: (All)
+Aliases:
+
+Required: False
 Position: Named
 Default value: None
 Accept pipeline input: False
@@ -193,15 +230,13 @@ Accept wildcard characters: False
 ```
 
 ### CommonParameters
-This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction, and -WarningVariable.
-For more information, see about_CommonParameters (http://go.microsoft.com/fwlink/?LinkID=113216).
+This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction, and -WarningVariable. For more information, see [about_CommonParameters](http://go.microsoft.com/fwlink/?LinkID=113216).
 
 ## INPUTS
 
 ## OUTPUTS
 
 ### Vaporshell.Resource.StepFunctions.StateMachine
-
 ## NOTES
 
 ## RELATED LINKS

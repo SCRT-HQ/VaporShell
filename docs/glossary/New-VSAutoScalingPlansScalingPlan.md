@@ -1,18 +1,8 @@
----
-layout: glossary
-title: New-VSAutoScalingPlansScalingPlan
-categories: glossary
-label1: Category
-data1: Documentation
-label2: Depth
-data2: Deep
-schema: 2.0.0
----
-
 # New-VSAutoScalingPlansScalingPlan
 
 ## SYNOPSIS
-Adds an AWS::AutoScalingPlans::ScalingPlan resource to the template
+Adds an AWS::AutoScalingPlans::ScalingPlan resource to the template.
+The AWS::AutoScalingPlans::ScalingPlan resource defines a scaling plan that AWS Auto Scaling uses to scale the following application resources:
 
 ## SYNTAX
 
@@ -23,7 +13,29 @@ New-VSAutoScalingPlansScalingPlan [-LogicalId] <String> -ApplicationSource <Obje
 ```
 
 ## DESCRIPTION
-Adds an AWS::AutoScalingPlans::ScalingPlan resource to the template
+Adds an AWS::AutoScalingPlans::ScalingPlan resource to the template.
+The AWS::AutoScalingPlans::ScalingPlan resource defines a scaling plan that AWS Auto Scaling uses to scale the following application resources:
+
++ Amazon EC2 Auto Scaling groups
+
++ Amazon EC2 Spot Fleet requests
+
++ Amazon ECS services
+
++ Amazon DynamoDB tables and global secondary indexes
+
++ Amazon Aurora Replicas
+
+For more information, see the AWS Auto Scaling User Guide: https://docs.aws.amazon.com/autoscaling/plans/userguide/what-is-aws-auto-scaling.html.
+
+## EXAMPLES
+
+### Example 1
+```powershell
+PS C:\> {{ Add example code here }}
+```
+
+{{ Add example description here }}
 
 ## PARAMETERS
 
@@ -45,9 +57,11 @@ Accept wildcard characters: False
 ```
 
 ### -ApplicationSource
-Type: ApplicationSource    
-Required: True    
-Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-autoscalingplans-scalingplan.html#cfn-autoscalingplans-scalingplan-applicationsource    
+A CloudFormation stack or a set of tags.
+You can create one scaling plan per application source.
+
+Type: ApplicationSource
+Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-autoscalingplans-scalingplan.html#cfn-autoscalingplans-scalingplan-applicationsource
 UpdateType: Mutable
 
 ```yaml
@@ -63,10 +77,11 @@ Accept wildcard characters: False
 ```
 
 ### -ScalingInstructions
-Type: List    
-Required: True    
-Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-autoscalingplans-scalingplan.html#cfn-autoscalingplans-scalingplan-scalinginstructions    
-ItemType: ScalingInstruction    
+The scaling instructions.
+
+Type: List
+Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-autoscalingplans-scalingplan.html#cfn-autoscalingplans-scalingplan-scalinginstructions
+ItemType: ScalingInstruction
 UpdateType: Mutable
 
 ```yaml
@@ -176,15 +191,13 @@ Accept wildcard characters: False
 ```
 
 ### CommonParameters
-This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction, and -WarningVariable.
-For more information, see about_CommonParameters (http://go.microsoft.com/fwlink/?LinkID=113216).
+This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction, and -WarningVariable. For more information, see [about_CommonParameters](http://go.microsoft.com/fwlink/?LinkID=113216).
 
 ## INPUTS
 
 ## OUTPUTS
 
 ### Vaporshell.Resource.AutoScalingPlans.ScalingPlan
-
 ## NOTES
 
 ## RELATED LINKS

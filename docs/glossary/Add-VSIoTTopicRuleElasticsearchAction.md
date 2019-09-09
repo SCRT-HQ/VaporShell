@@ -1,18 +1,8 @@
----
-layout: glossary
-title: Add-VSIoTTopicRuleElasticsearchAction
-categories: glossary
-label1: Category
-data1: Documentation
-label2: Depth
-data2: Deep
-schema: 2.0.0
----
-
 # Add-VSIoTTopicRuleElasticsearchAction
 
 ## SYNOPSIS
-Adds an AWS::IoT::TopicRule.ElasticsearchAction resource property to the template
+Adds an AWS::IoT::TopicRule.ElasticsearchAction resource property to the template.
+Describes an action that writes data to an Amazon Elasticsearch Service domain.
 
 ## SYNTAX
 
@@ -22,14 +12,25 @@ Add-VSIoTTopicRuleElasticsearchAction [-Endpoint] <Object> [-Id] <Object> [-Inde
 ```
 
 ## DESCRIPTION
-Adds an AWS::IoT::TopicRule.ElasticsearchAction resource property to the template
+Adds an AWS::IoT::TopicRule.ElasticsearchAction resource property to the template.
+Describes an action that writes data to an Amazon Elasticsearch Service domain.
+
+## EXAMPLES
+
+### Example 1
+```powershell
+PS C:\> {{ Add example code here }}
+```
+
+{{ Add example description here }}
 
 ## PARAMETERS
 
 ### -Endpoint
-Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iot-topicrule-elasticsearchaction.html#cfn-iot-topicrule-elasticsearchaction-endpoint    
-PrimitiveType: String    
-Required: True    
+The endpoint of your Elasticsearch domain.
+
+Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iot-topicrule-elasticsearchaction.html#cfn-iot-topicrule-elasticsearchaction-endpoint
+PrimitiveType: String
 UpdateType: Mutable
 
 ```yaml
@@ -45,9 +46,10 @@ Accept wildcard characters: False
 ```
 
 ### -Id
-Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iot-topicrule-elasticsearchaction.html#cfn-iot-topicrule-elasticsearchaction-id    
-PrimitiveType: String    
-Required: True    
+The unique identifier for the document you are storing.
+
+Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iot-topicrule-elasticsearchaction.html#cfn-iot-topicrule-elasticsearchaction-id
+PrimitiveType: String
 UpdateType: Mutable
 
 ```yaml
@@ -63,9 +65,10 @@ Accept wildcard characters: False
 ```
 
 ### -Index
-Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iot-topicrule-elasticsearchaction.html#cfn-iot-topicrule-elasticsearchaction-index    
-PrimitiveType: String    
-Required: True    
+The Elasticsearch index where you want to store your data.
+
+Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iot-topicrule-elasticsearchaction.html#cfn-iot-topicrule-elasticsearchaction-index
+PrimitiveType: String
 UpdateType: Mutable
 
 ```yaml
@@ -81,9 +84,10 @@ Accept wildcard characters: False
 ```
 
 ### -RoleArn
-Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iot-topicrule-elasticsearchaction.html#cfn-iot-topicrule-elasticsearchaction-rolearn    
-PrimitiveType: String    
-Required: True    
+The IAM role ARN that has access to Elasticsearch.
+
+Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iot-topicrule-elasticsearchaction.html#cfn-iot-topicrule-elasticsearchaction-rolearn
+PrimitiveType: String
 UpdateType: Mutable
 
 ```yaml
@@ -99,9 +103,10 @@ Accept wildcard characters: False
 ```
 
 ### -Type
-Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iot-topicrule-elasticsearchaction.html#cfn-iot-topicrule-elasticsearchaction-type    
-PrimitiveType: String    
-Required: True    
+The type of document you are storing.
+
+Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iot-topicrule-elasticsearchaction.html#cfn-iot-topicrule-elasticsearchaction-type
+PrimitiveType: String
 UpdateType: Mutable
 
 ```yaml
@@ -117,15 +122,13 @@ Accept wildcard characters: False
 ```
 
 ### CommonParameters
-This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction, and -WarningVariable.
-For more information, see about_CommonParameters (http://go.microsoft.com/fwlink/?LinkID=113216).
+This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction, and -WarningVariable. For more information, see [about_CommonParameters](http://go.microsoft.com/fwlink/?LinkID=113216).
 
 ## INPUTS
 
 ## OUTPUTS
 
 ### Vaporshell.Resource.IoT.TopicRule.ElasticsearchAction
-
 ## NOTES
 
 ## RELATED LINKS

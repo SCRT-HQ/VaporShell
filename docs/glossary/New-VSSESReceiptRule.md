@@ -1,18 +1,8 @@
----
-layout: glossary
-title: New-VSSESReceiptRule
-categories: glossary
-label1: Category
-data1: Documentation
-label2: Depth
-data2: Deep
-schema: 2.0.0
----
-
 # New-VSSESReceiptRule
 
 ## SYNOPSIS
-Adds an AWS::SES::ReceiptRule resource to the template
+Adds an AWS::SES::ReceiptRule resource to the template.
+Specifies a receipt rule.
 
 ## SYNTAX
 
@@ -23,7 +13,21 @@ New-VSSESReceiptRule [-LogicalId] <String> [-After <Object>] -Rule <Object> -Rul
 ```
 
 ## DESCRIPTION
-Adds an AWS::SES::ReceiptRule resource to the template
+Adds an AWS::SES::ReceiptRule resource to the template.
+Specifies a receipt rule.
+
+For information about setting up receipt rules, see the Amazon SES Developer Guide: https://docs.aws.amazon.com/ses/latest/DeveloperGuide/receiving-email-receipt-rules.html.
+
+You can execute this operation no more than once per second.
+
+## EXAMPLES
+
+### Example 1
+```powershell
+PS C:\> {{ Add example code here }}
+```
+
+{{ Add example description here }}
 
 ## PARAMETERS
 
@@ -45,9 +49,11 @@ Accept wildcard characters: False
 ```
 
 ### -After
-Required: False    
-Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ses-receiptrule.html#cfn-ses-receiptrule-after    
-PrimitiveType: String    
+The name of the existing rule that you want to place the current rule after.
+If this parameter is null, the new rule is added as the first entry in the receipt rule set.
+
+Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ses-receiptrule.html#cfn-ses-receiptrule-after
+PrimitiveType: String
 UpdateType: Mutable
 
 ```yaml
@@ -63,9 +69,10 @@ Accept wildcard characters: False
 ```
 
 ### -Rule
-Type: Rule    
-Required: True    
-Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ses-receiptrule.html#cfn-ses-receiptrule-rule    
+A data structure that contains the specified rule's name, actions, recipients, domains, enabled status, scan status, and TLS policy.
+
+Type: Rule
+Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ses-receiptrule.html#cfn-ses-receiptrule-rule
 UpdateType: Mutable
 
 ```yaml
@@ -81,9 +88,10 @@ Accept wildcard characters: False
 ```
 
 ### -RuleSetName
-Required: True    
-Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ses-receiptrule.html#cfn-ses-receiptrule-rulesetname    
-PrimitiveType: String    
+The name of the rule set that you want to add the receipt rule to.
+
+Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ses-receiptrule.html#cfn-ses-receiptrule-rulesetname
+PrimitiveType: String
 UpdateType: Immutable
 
 ```yaml
@@ -193,15 +201,13 @@ Accept wildcard characters: False
 ```
 
 ### CommonParameters
-This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction, and -WarningVariable.
-For more information, see about_CommonParameters (http://go.microsoft.com/fwlink/?LinkID=113216).
+This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction, and -WarningVariable. For more information, see [about_CommonParameters](http://go.microsoft.com/fwlink/?LinkID=113216).
 
 ## INPUTS
 
 ## OUTPUTS
 
 ### Vaporshell.Resource.SES.ReceiptRule
-
 ## NOTES
 
 ## RELATED LINKS

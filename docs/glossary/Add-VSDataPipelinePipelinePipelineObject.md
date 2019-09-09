@@ -1,18 +1,10 @@
----
-layout: glossary
-title: Add-VSDataPipelinePipelinePipelineObject
-categories: glossary
-label1: Category
-data1: Documentation
-label2: Depth
-data2: Deep
-schema: 2.0.0
----
-
 # Add-VSDataPipelinePipelinePipelineObject
 
 ## SYNOPSIS
-Adds an AWS::DataPipeline::Pipeline.PipelineObject resource property to the template
+Adds an AWS::DataPipeline::Pipeline.PipelineObject resource property to the template.
+PipelineObject is property of the AWS::DataPipeline::Pipeline resource that contains information about a pipeline object.
+This can be a logical, physical, or physical attempt pipeline object.
+The complete set of components of a pipeline defines the pipeline.
 
 ## SYNTAX
 
@@ -22,16 +14,29 @@ Add-VSDataPipelinePipelinePipelineObject [-Fields] <Object> [-Id] <Object> [-Nam
 ```
 
 ## DESCRIPTION
-Adds an AWS::DataPipeline::Pipeline.PipelineObject resource property to the template
+Adds an AWS::DataPipeline::Pipeline.PipelineObject resource property to the template.
+PipelineObject is property of the AWS::DataPipeline::Pipeline resource that contains information about a pipeline object.
+This can be a logical, physical, or physical attempt pipeline object.
+The complete set of components of a pipeline defines the pipeline.
+
+## EXAMPLES
+
+### Example 1
+```powershell
+PS C:\> {{ Add example code here }}
+```
+
+{{ Add example description here }}
 
 ## PARAMETERS
 
 ### -Fields
-Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-datapipeline-pipeline-pipelineobjects.html#cfn-datapipeline-pipeline-pipelineobjects-fields    
-DuplicatesAllowed: True    
-ItemType: Field    
-Required: True    
-Type: List    
+Key-value pairs that define the properties of the object.
+
+Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-datapipeline-pipeline-pipelineobjects.html#cfn-datapipeline-pipeline-pipelineobjects-fields
+DuplicatesAllowed: True
+ItemType: Field
+Type: List
 UpdateType: Mutable
 
 ```yaml
@@ -47,9 +52,10 @@ Accept wildcard characters: False
 ```
 
 ### -Id
-Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-datapipeline-pipeline-pipelineobjects.html#cfn-datapipeline-pipeline-pipelineobjects-id    
-PrimitiveType: String    
-Required: True    
+The ID of the object.
+
+Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-datapipeline-pipeline-pipelineobjects.html#cfn-datapipeline-pipeline-pipelineobjects-id
+PrimitiveType: String
 UpdateType: Mutable
 
 ```yaml
@@ -65,9 +71,10 @@ Accept wildcard characters: False
 ```
 
 ### -Name
-Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-datapipeline-pipeline-pipelineobjects.html#cfn-datapipeline-pipeline-pipelineobjects-name    
-PrimitiveType: String    
-Required: True    
+The name of the object.
+
+Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-datapipeline-pipeline-pipelineobjects.html#cfn-datapipeline-pipeline-pipelineobjects-name
+PrimitiveType: String
 UpdateType: Mutable
 
 ```yaml
@@ -83,15 +90,13 @@ Accept wildcard characters: False
 ```
 
 ### CommonParameters
-This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction, and -WarningVariable.
-For more information, see about_CommonParameters (http://go.microsoft.com/fwlink/?LinkID=113216).
+This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction, and -WarningVariable. For more information, see [about_CommonParameters](http://go.microsoft.com/fwlink/?LinkID=113216).
 
 ## INPUTS
 
 ## OUTPUTS
 
 ### Vaporshell.Resource.DataPipeline.Pipeline.PipelineObject
-
 ## NOTES
 
 ## RELATED LINKS

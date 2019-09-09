@@ -1,18 +1,11 @@
----
-layout: glossary
-title: New-VSGuardDutyMember
-categories: glossary
-label1: Category
-data1: Documentation
-label2: Depth
-data2: Deep
-schema: 2.0.0
----
-
 # New-VSGuardDutyMember
 
 ## SYNOPSIS
-Adds an AWS::GuardDuty::Member resource to the template
+Adds an AWS::GuardDuty::Member resource to the template.
+You can use the AWS::GuardDuty::Member resource to add an AWS account as a GuardDuty member account to the current GuardDuty master account.
+If the value of the Status property is not provided or is set to Created, a member account is created but not invited.
+If the value of the Status property is set to Invited, a member account is created and invited.
+A AWS::GuardDuty::Member resource must be created with the Status property set to Invited before the AWS::GuardDuty::Master resource can be created in a GuardDuty member account.
 
 ## SYNTAX
 
@@ -24,7 +17,20 @@ New-VSGuardDutyMember [-LogicalId] <String> [-Status <Object>] -MemberId <Object
 ```
 
 ## DESCRIPTION
-Adds an AWS::GuardDuty::Member resource to the template
+Adds an AWS::GuardDuty::Member resource to the template.
+You can use the AWS::GuardDuty::Member resource to add an AWS account as a GuardDuty member account to the current GuardDuty master account.
+If the value of the Status property is not provided or is set to Created, a member account is created but not invited.
+If the value of the Status property is set to Invited, a member account is created and invited.
+A AWS::GuardDuty::Member resource must be created with the Status property set to Invited before the AWS::GuardDuty::Master resource can be created in a GuardDuty member account.
+
+## EXAMPLES
+
+### Example 1
+```powershell
+PS C:\> {{ Add example code here }}
+```
+
+{{ Add example description here }}
 
 ## PARAMETERS
 
@@ -46,9 +52,13 @@ Accept wildcard characters: False
 ```
 
 ### -Status
-Required: False    
-Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-guardduty-member.html#cfn-guardduty-member-status    
-PrimitiveType: String    
+You can use the Status property to update the status of the relationship between the member account and its master account.
+Valid values are Created and Invited when using a AWS::GuardDuty::Member resource.
+If the value for this property is not provided or set to Created, a member account is created but not invited.
+If the value of this property is set to Invited, a member account is created and invited.
+
+Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-guardduty-member.html#cfn-guardduty-member-status
+PrimitiveType: String
 UpdateType: Mutable
 
 ```yaml
@@ -64,9 +74,10 @@ Accept wildcard characters: False
 ```
 
 ### -MemberId
-Required: True    
-Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-guardduty-member.html#cfn-guardduty-member-memberid    
-PrimitiveType: String    
+The AWS account ID of the account to designate as a member.
+
+Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-guardduty-member.html#cfn-guardduty-member-memberid
+PrimitiveType: String
 UpdateType: Immutable
 
 ```yaml
@@ -82,9 +93,10 @@ Accept wildcard characters: False
 ```
 
 ### -Email
-Required: True    
-Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-guardduty-member.html#cfn-guardduty-member-email    
-PrimitiveType: String    
+The email address associated with the member account.
+
+Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-guardduty-member.html#cfn-guardduty-member-email
+PrimitiveType: String
 UpdateType: Immutable
 
 ```yaml
@@ -100,9 +112,10 @@ Accept wildcard characters: False
 ```
 
 ### -Message
-Required: False    
-Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-guardduty-member.html#cfn-guardduty-member-message    
-PrimitiveType: String    
+The message to include with the invitation sent to the member accounts.
+
+Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-guardduty-member.html#cfn-guardduty-member-message
+PrimitiveType: String
 UpdateType: Mutable
 
 ```yaml
@@ -118,9 +131,10 @@ Accept wildcard characters: False
 ```
 
 ### -DisableEmailNotification
-Required: False    
-Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-guardduty-member.html#cfn-guardduty-member-disableemailnotification    
-PrimitiveType: Boolean    
+Specifies whether or not to disable email notification for the member account that you invite.
+
+Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-guardduty-member.html#cfn-guardduty-member-disableemailnotification
+PrimitiveType: Boolean
 UpdateType: Mutable
 
 ```yaml
@@ -136,9 +150,10 @@ Accept wildcard characters: False
 ```
 
 ### -DetectorId
-Required: True    
-Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-guardduty-member.html#cfn-guardduty-member-detectorid    
-PrimitiveType: String    
+The ID of the detector associated with the GuardDuty service to add the member to.
+
+Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-guardduty-member.html#cfn-guardduty-member-detectorid
+PrimitiveType: String
 UpdateType: Immutable
 
 ```yaml
@@ -248,15 +263,13 @@ Accept wildcard characters: False
 ```
 
 ### CommonParameters
-This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction, and -WarningVariable.
-For more information, see about_CommonParameters (http://go.microsoft.com/fwlink/?LinkID=113216).
+This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction, and -WarningVariable. For more information, see [about_CommonParameters](http://go.microsoft.com/fwlink/?LinkID=113216).
 
 ## INPUTS
 
 ## OUTPUTS
 
 ### Vaporshell.Resource.GuardDuty.Member
-
 ## NOTES
 
 ## RELATED LINKS

@@ -1,31 +1,36 @@
----
-layout: glossary
-title: New-VSSageMakerNotebookInstance
-categories: glossary
-label1: Category
-data1: Documentation
-label2: Depth
-data2: Deep
-schema: 2.0.0
----
-
 # New-VSSageMakerNotebookInstance
 
 ## SYNOPSIS
-Adds an AWS::SageMaker::NotebookInstance resource to the template
+Adds an AWS::SageMaker::NotebookInstance resource to the template.
+The AWS::SageMaker::NotebookInstance resource creates an Amazon SageMaker notebook instance.
+A notebook instance is a machine learning (ML compute instance running on a Jupyter notebook.
+For more information, see Use Notebook Instances: https://docs.aws.amazon.com/sagemaker/latest/dg/nbi.html.
 
 ## SYNTAX
 
 ```
-New-VSSageMakerNotebookInstance [-LogicalId] <String> [-KmsKeyId <Object>] [-DirectInternetAccess <Object>]
- [-SubnetId <Object>] [-NotebookInstanceName <Object>] -InstanceType <Object> [-LifecycleConfigName <Object>]
- [-SecurityGroupIds <Object>] -RoleArn <Object> [-Tags <Object>] [-DeletionPolicy <String>]
- [-DependsOn <String[]>] [-Metadata <Object>] [-UpdatePolicy <Object>] [-Condition <Object>]
- [<CommonParameters>]
+New-VSSageMakerNotebookInstance [-LogicalId] <String> [-KmsKeyId <Object>] [-VolumeSizeInGB <Int32>]
+ [-AdditionalCodeRepositories <Object>] [-DefaultCodeRepository <Object>] [-DirectInternetAccess <Object>]
+ [-AcceleratorTypes <Object>] [-SubnetId <Object>] [-SecurityGroupIds <Object>] -RoleArn <Object>
+ [-RootAccess <Object>] [-NotebookInstanceName <Object>] -InstanceType <Object> [-LifecycleConfigName <Object>]
+ [-Tags <Object>] [-DeletionPolicy <String>] [-DependsOn <String[]>] [-Metadata <Object>]
+ [-UpdatePolicy <Object>] [-Condition <Object>] [<CommonParameters>]
 ```
 
 ## DESCRIPTION
-Adds an AWS::SageMaker::NotebookInstance resource to the template
+Adds an AWS::SageMaker::NotebookInstance resource to the template.
+The AWS::SageMaker::NotebookInstance resource creates an Amazon SageMaker notebook instance.
+A notebook instance is a machine learning (ML compute instance running on a Jupyter notebook.
+For more information, see Use Notebook Instances: https://docs.aws.amazon.com/sagemaker/latest/dg/nbi.html.
+
+## EXAMPLES
+
+### Example 1
+```powershell
+PS C:\> {{ Add example code here }}
+```
+
+{{ Add example description here }}
 
 ## PARAMETERS
 
@@ -47,10 +52,78 @@ Accept wildcard characters: False
 ```
 
 ### -KmsKeyId
-Required: False    
-Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-sagemaker-notebookinstance.html#cfn-sagemaker-notebookinstance-kmskeyid    
-PrimitiveType: String    
+The Amazon Resource Name ARN of a AWS Key Management Service key that Amazon SageMaker uses to encrypt data on the storage volume attached to your notebook instance.
+The KMS key you provide must be enabled.
+For information, see Enabling and Disabling Keys: https://docs.aws.amazon.com/kms/latest/developerguide/enabling-keys.html in the *AWS Key Management Service Developer Guide*.
+
+Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-sagemaker-notebookinstance.html#cfn-sagemaker-notebookinstance-kmskeyid
+PrimitiveType: String
 UpdateType: Immutable
+
+```yaml
+Type: Object
+Parameter Sets: (All)
+Aliases:
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### -VolumeSizeInGB
+The size, in GB, of the ML storage volume to attach to the notebook instance.
+The default value is 5 GB.
+
+Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-sagemaker-notebookinstance.html#cfn-sagemaker-notebookinstance-volumesizeingb
+PrimitiveType: Integer
+UpdateType: Mutable
+
+```yaml
+Type: Int32
+Parameter Sets: (All)
+Aliases:
+
+Required: False
+Position: Named
+Default value: 0
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### -AdditionalCodeRepositories
+An array of up to three Git repositories associated with the notebook instance.
+These can be either the names of Git repositories stored as resources in your account, or the URL of Git repositories in AWS CodeCommit: https://docs.aws.amazon.com/codecommit/latest/userguide/welcome.html or in any other Git repository.
+These repositories are cloned at the same level as the default repository of your notebook instance.
+For more information, see Associating Git Repositories with Amazon SageMaker Notebook Instances: https://docs.aws.amazon.com/sagemaker/latest/dg/nbi-git-repo.html.
+
+PrimitiveItemType: String
+Type: List
+Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-sagemaker-notebookinstance.html#cfn-sagemaker-notebookinstance-additionalcoderepositories
+UpdateType: Mutable
+
+```yaml
+Type: Object
+Parameter Sets: (All)
+Aliases:
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### -DefaultCodeRepository
+The Git repository associated with the notebook instance as its default code repository.
+This can be either the name of a Git repository stored as a resource in your account, or the URL of a Git repository in AWS CodeCommit: https://docs.aws.amazon.com/codecommit/latest/userguide/welcome.html or in any other Git repository.
+When you open a notebook instance, it opens in the directory that contains this repository.
+For more information, see Associating Git Repositories with Amazon SageMaker Notebook Instances: https://docs.aws.amazon.com/sagemaker/latest/dg/nbi-git-repo.html.
+
+Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-sagemaker-notebookinstance.html#cfn-sagemaker-notebookinstance-defaultcoderepository
+PrimitiveType: String
+UpdateType: Mutable
 
 ```yaml
 Type: Object
@@ -65,10 +138,36 @@ Accept wildcard characters: False
 ```
 
 ### -DirectInternetAccess
-Required: False    
-Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-sagemaker-notebookinstance.html#cfn-sagemaker-notebookinstance-directinternetaccess    
-PrimitiveType: String    
+Sets whether Amazon SageMaker provides internet access to the notebook instance.
+If you set this to Disabled this notebook instance will be able to access resources only in your VPC, and will not be able to connect to Amazon SageMaker training and endpoint services unless your configure a NAT Gateway in your VPC.
+For more information, see Notebook Instances Are Internet-Enabled by Default: https://docs.aws.amazon.com/sagemaker/latest/dg/appendix-additional-considerations.html#appendix-notebook-and-internet-access.
+You can set the value of this parameter to Disabled only if you set a value for the SubnetId parameter.
+
+Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-sagemaker-notebookinstance.html#cfn-sagemaker-notebookinstance-directinternetaccess
+PrimitiveType: String
 UpdateType: Immutable
+
+```yaml
+Type: Object
+Parameter Sets: (All)
+Aliases:
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### -AcceleratorTypes
+A list of Elastic Inference EI instance types to associate with this notebook instance.
+Currently, only one instance type can be associated with a notebook instance.
+For more information, see Using Elastic Inference in Amazon SageMaker.
+
+PrimitiveItemType: String
+Type: List
+Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-sagemaker-notebookinstance.html#cfn-sagemaker-notebookinstance-acceleratortypes
+UpdateType: Mutable
 
 ```yaml
 Type: Object
@@ -83,63 +182,10 @@ Accept wildcard characters: False
 ```
 
 ### -SubnetId
-Required: False    
-Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-sagemaker-notebookinstance.html#cfn-sagemaker-notebookinstance-subnetid    
-PrimitiveType: String    
-UpdateType: Immutable
+The ID of the subnet in a VPC to which you would like to have a connectivity from your ML compute instance.
 
-```yaml
-Type: Object
-Parameter Sets: (All)
-Aliases:
-
-Required: False
-Position: Named
-Default value: None
-Accept pipeline input: False
-Accept wildcard characters: False
-```
-
-### -NotebookInstanceName
-Required: False    
-Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-sagemaker-notebookinstance.html#cfn-sagemaker-notebookinstance-notebookinstancename    
-PrimitiveType: String    
-UpdateType: Immutable
-
-```yaml
-Type: Object
-Parameter Sets: (All)
-Aliases:
-
-Required: False
-Position: Named
-Default value: None
-Accept pipeline input: False
-Accept wildcard characters: False
-```
-
-### -InstanceType
-Required: True    
-Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-sagemaker-notebookinstance.html#cfn-sagemaker-notebookinstance-instancetype    
-PrimitiveType: String    
-UpdateType: Mutable
-
-```yaml
-Type: Object
-Parameter Sets: (All)
-Aliases:
-
-Required: True
-Position: Named
-Default value: None
-Accept pipeline input: False
-Accept wildcard characters: False
-```
-
-### -LifecycleConfigName
-Required: False    
-Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-sagemaker-notebookinstance.html#cfn-sagemaker-notebookinstance-lifecycleconfigname    
-PrimitiveType: String    
+Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-sagemaker-notebookinstance.html#cfn-sagemaker-notebookinstance-subnetid
+PrimitiveType: String
 UpdateType: Immutable
 
 ```yaml
@@ -155,10 +201,12 @@ Accept wildcard characters: False
 ```
 
 ### -SecurityGroupIds
-PrimitiveItemType: String    
-Type: List    
-Required: False    
-Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-sagemaker-notebookinstance.html#cfn-sagemaker-notebookinstance-securitygroupids    
+The VPC security group IDs, in the form sg-xxxxxxxx.
+The security groups must be for the same VPC as specified in the subnet.
+
+PrimitiveItemType: String
+Type: List
+Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-sagemaker-notebookinstance.html#cfn-sagemaker-notebookinstance-securitygroupids
 UpdateType: Immutable
 
 ```yaml
@@ -174,9 +222,14 @@ Accept wildcard characters: False
 ```
 
 ### -RoleArn
-Required: True    
-Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-sagemaker-notebookinstance.html#cfn-sagemaker-notebookinstance-rolearn    
-PrimitiveType: String    
+When you send any requests to AWS resources from the notebook instance, Amazon SageMaker assumes this role to perform tasks on your behalf.
+You must grant this role necessary permissions so Amazon SageMaker can perform these tasks.
+The policy must allow the Amazon SageMaker service principal sagemaker.amazonaws.com permissions to assume this role.
+For more information, see Amazon SageMaker Roles: https://docs.aws.amazon.com/sagemaker/latest/dg/sagemaker-roles.html.
+To be able to pass this role to Amazon SageMaker, the caller of this API must have the iam:PassRole permission.
+
+Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-sagemaker-notebookinstance.html#cfn-sagemaker-notebookinstance-rolearn
+PrimitiveType: String
 UpdateType: Mutable
 
 ```yaml
@@ -191,11 +244,94 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
+### -RootAccess
+Whether root access is enabled or disabled for users of the notebook instance.
+The default value is Enabled.
+Lifecycle configurations need root access to be able to set up a notebook instance.
+Because of this, lifecycle configurations associated with a notebook instance always run with root access even if you disable root access for users.
+
+Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-sagemaker-notebookinstance.html#cfn-sagemaker-notebookinstance-rootaccess
+PrimitiveType: String
+UpdateType: Mutable
+
+```yaml
+Type: Object
+Parameter Sets: (All)
+Aliases:
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### -NotebookInstanceName
+The name of the new notebook instance.
+
+Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-sagemaker-notebookinstance.html#cfn-sagemaker-notebookinstance-notebookinstancename
+PrimitiveType: String
+UpdateType: Immutable
+
+```yaml
+Type: Object
+Parameter Sets: (All)
+Aliases:
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### -InstanceType
+The type of ML compute instance to launch for the notebook instance.
+
+Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-sagemaker-notebookinstance.html#cfn-sagemaker-notebookinstance-instancetype
+PrimitiveType: String
+UpdateType: Mutable
+
+```yaml
+Type: Object
+Parameter Sets: (All)
+Aliases:
+
+Required: True
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### -LifecycleConfigName
+The name of a lifecycle configuration to associate with the notebook instance.
+For information about lifestyle configurations, see Customize a Notebook Instance: https://docs.aws.amazon.com/sagemaker/latest/dg/notebook-lifecycle-config.html in the *Amazon SageMaker Developer Guide*.
+
+Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-sagemaker-notebookinstance.html#cfn-sagemaker-notebookinstance-lifecycleconfigname
+PrimitiveType: String
+UpdateType: Mutable
+
+```yaml
+Type: Object
+Parameter Sets: (All)
+Aliases:
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
 ### -Tags
-Type: List    
-Required: False    
-Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-sagemaker-notebookinstance.html#cfn-sagemaker-notebookinstance-tags    
-ItemType: Tag    
+A list of key-value pairs to apply to this resource.
+For more information, see Resource Tag: https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-resource-tags.html and Using Cost Allocation Tags: https://docs.aws.amazon.com/awsaccountbilling/latest/aboutv2/cost-alloc-tags.html#allocation-what.
+You can add tags later by using the CreateTags API.
+
+Type: List
+Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-sagemaker-notebookinstance.html#cfn-sagemaker-notebookinstance-tags
+ItemType: Tag
 UpdateType: Mutable
 
 ```yaml
@@ -305,15 +441,13 @@ Accept wildcard characters: False
 ```
 
 ### CommonParameters
-This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction, and -WarningVariable.
-For more information, see about_CommonParameters (http://go.microsoft.com/fwlink/?LinkID=113216).
+This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction, and -WarningVariable. For more information, see [about_CommonParameters](http://go.microsoft.com/fwlink/?LinkID=113216).
 
 ## INPUTS
 
 ## OUTPUTS
 
 ### Vaporshell.Resource.SageMaker.NotebookInstance
-
 ## NOTES
 
 ## RELATED LINKS

@@ -1,18 +1,8 @@
----
-layout: glossary
-title: Add-VSIoTTopicRuleLambdaAction
-categories: glossary
-label1: Category
-data1: Documentation
-label2: Depth
-data2: Deep
-schema: 2.0.0
----
-
 # Add-VSIoTTopicRuleLambdaAction
 
 ## SYNOPSIS
-Adds an AWS::IoT::TopicRule.LambdaAction resource property to the template
+Adds an AWS::IoT::TopicRule.LambdaAction resource property to the template.
+Describes an action to invoke a Lambda function.
 
 ## SYNTAX
 
@@ -21,14 +11,25 @@ Add-VSIoTTopicRuleLambdaAction [[-FunctionArn] <Object>] [<CommonParameters>]
 ```
 
 ## DESCRIPTION
-Adds an AWS::IoT::TopicRule.LambdaAction resource property to the template
+Adds an AWS::IoT::TopicRule.LambdaAction resource property to the template.
+Describes an action to invoke a Lambda function.
+
+## EXAMPLES
+
+### Example 1
+```powershell
+PS C:\> {{ Add example code here }}
+```
+
+{{ Add example description here }}
 
 ## PARAMETERS
 
 ### -FunctionArn
-Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iot-topicrule-lambdaaction.html#cfn-iot-topicrule-lambdaaction-functionarn    
-PrimitiveType: String    
-Required: False    
+The ARN of the Lambda function.
+
+Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iot-topicrule-lambdaaction.html#cfn-iot-topicrule-lambdaaction-functionarn
+PrimitiveType: String
 UpdateType: Mutable
 
 ```yaml
@@ -44,15 +45,13 @@ Accept wildcard characters: False
 ```
 
 ### CommonParameters
-This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction, and -WarningVariable.
-For more information, see about_CommonParameters (http://go.microsoft.com/fwlink/?LinkID=113216).
+This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction, and -WarningVariable. For more information, see [about_CommonParameters](http://go.microsoft.com/fwlink/?LinkID=113216).
 
 ## INPUTS
 
 ## OUTPUTS
 
 ### Vaporshell.Resource.IoT.TopicRule.LambdaAction
-
 ## NOTES
 
 ## RELATED LINKS

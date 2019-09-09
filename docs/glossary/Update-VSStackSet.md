@@ -1,14 +1,3 @@
----
-layout: glossary
-title: Update-VSStackSet
-categories: glossary
-label1: Category
-data1: Documentation
-label2: Depth
-data2: Deep
-schema: 2.0.0
----
-
 # Update-VSStackSet
 
 ## SYNOPSIS
@@ -22,32 +11,41 @@ Subsequent CreateStackInstances calls on the specified stack set use the updated
 ```
 Update-VSStackSet [-Path] <String> [-Capabilities <String[]>] [-Description <String>] [-OperationId <String>]
  [-OperationPreferences <StackSetOperationPreferences>] [-Parameters <Parameter[]>] [-StackSetName <String>]
- [-Tags <String>] [-ProfileName <String>] [-WhatIf] [-Confirm] [<CommonParameters>]
+ [-Tags <Hashtable>] [-ProfileName <String>] [-WhatIf] [-Confirm] [<CommonParameters>]
 ```
 
 ### TemplateBody
 ```
 Update-VSStackSet [-TemplateBody] <String> [-Capabilities <String[]>] [-Description <String>]
  [-OperationId <String>] [-OperationPreferences <StackSetOperationPreferences>] [-Parameters <Parameter[]>]
- [-StackSetName <String>] [-Tags <String>] [-ProfileName <String>] [-WhatIf] [-Confirm] [<CommonParameters>]
+ [-StackSetName <String>] [-Tags <Hashtable>] [-ProfileName <String>] [-WhatIf] [-Confirm] [<CommonParameters>]
 ```
 
 ### TemplateUrl
 ```
 Update-VSStackSet [-TemplateUrl] <String> [-Capabilities <String[]>] [-Description <String>]
  [-OperationId <String>] [-OperationPreferences <StackSetOperationPreferences>] [-Parameters <Parameter[]>]
- [-StackSetName <String>] [-Tags <String>] [-ProfileName <String>] [-WhatIf] [-Confirm] [<CommonParameters>]
+ [-StackSetName <String>] [-Tags <Hashtable>] [-ProfileName <String>] [-WhatIf] [-Confirm] [<CommonParameters>]
 ```
 
 ### UsePreviousTemplate
 ```
 Update-VSStackSet [-UsePreviousTemplate] [-Capabilities <String[]>] [-Description <String>]
  [-OperationId <String>] [-OperationPreferences <StackSetOperationPreferences>] [-Parameters <Parameter[]>]
- [-StackSetName <String>] [-Tags <String>] [-ProfileName <String>] [-WhatIf] [-Confirm] [<CommonParameters>]
+ [-StackSetName <String>] [-Tags <Hashtable>] [-ProfileName <String>] [-WhatIf] [-Confirm] [<CommonParameters>]
 ```
 
 ## DESCRIPTION
-{{Fill in the Description}}
+{{ Fill in the Description }}
+
+## EXAMPLES
+
+### Example 1
+```powershell
+PS C:\> {{ Add example code here }}
+```
+
+{{ Add example description here }}
 
 ## PARAMETERS
 
@@ -224,7 +222,7 @@ If you omit tags that are currently associated with the stack set from the list 
 If you don't have the necessary permission(s), the entire UpdateStackSet action fails with an access denied error, and the stack set is not updated.
 
 ```yaml
-Type: String
+Type: Hashtable
 Parameter Sets: (All)
 Aliases:
 
@@ -283,8 +281,7 @@ Accept wildcard characters: False
 ```
 
 ### CommonParameters
-This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction, and -WarningVariable.
-For more information, see about_CommonParameters (http://go.microsoft.com/fwlink/?LinkID=113216).
+This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction, and -WarningVariable. For more information, see [about_CommonParameters](http://go.microsoft.com/fwlink/?LinkID=113216).
 
 ## INPUTS
 

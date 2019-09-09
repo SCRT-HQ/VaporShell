@@ -1,18 +1,11 @@
----
-layout: glossary
-title: New-VSServiceDiscoveryPublicDnsNamespace
-categories: glossary
-label1: Category
-data1: Documentation
-label2: Depth
-data2: Deep
-schema: 2.0.0
----
-
 # New-VSServiceDiscoveryPublicDnsNamespace
 
 ## SYNOPSIS
-Adds an AWS::ServiceDiscovery::PublicDnsNamespace resource to the template
+Adds an AWS::ServiceDiscovery::PublicDnsNamespace resource to the template.
+Creates a public namespace based on DNS, which will be visible on the internet.
+The namespace defines your service naming scheme.
+For example, if you name your namespace example.com and name your service backend, the resulting DNS name for the service will be backend.example.com.
+For the current limit on the number of namespaces that you can create using the same AWS account, see AWS Cloud Map Limits: https://docs.aws.amazon.com/cloud-map/latest/dg/cloud-map-limits.html in the *AWS Cloud Map Developer Guide*.
 
 ## SYNTAX
 
@@ -23,7 +16,20 @@ New-VSServiceDiscoveryPublicDnsNamespace [-LogicalId] <String> [-Description <Ob
 ```
 
 ## DESCRIPTION
-Adds an AWS::ServiceDiscovery::PublicDnsNamespace resource to the template
+Adds an AWS::ServiceDiscovery::PublicDnsNamespace resource to the template.
+Creates a public namespace based on DNS, which will be visible on the internet.
+The namespace defines your service naming scheme.
+For example, if you name your namespace example.com and name your service backend, the resulting DNS name for the service will be backend.example.com.
+For the current limit on the number of namespaces that you can create using the same AWS account, see AWS Cloud Map Limits: https://docs.aws.amazon.com/cloud-map/latest/dg/cloud-map-limits.html in the *AWS Cloud Map Developer Guide*.
+
+## EXAMPLES
+
+### Example 1
+```powershell
+PS C:\> {{ Add example code here }}
+```
+
+{{ Add example description here }}
 
 ## PARAMETERS
 
@@ -45,9 +51,10 @@ Accept wildcard characters: False
 ```
 
 ### -Description
-Required: False    
-Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-servicediscovery-publicdnsnamespace.html#cfn-servicediscovery-publicdnsnamespace-description    
-PrimitiveType: String    
+A description for the namespace.
+
+Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-servicediscovery-publicdnsnamespace.html#cfn-servicediscovery-publicdnsnamespace-description
+PrimitiveType: String
 UpdateType: Immutable
 
 ```yaml
@@ -63,9 +70,10 @@ Accept wildcard characters: False
 ```
 
 ### -Name
-Required: True    
-Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-servicediscovery-publicdnsnamespace.html#cfn-servicediscovery-publicdnsnamespace-name    
-PrimitiveType: String    
+The name that you want to assign to this namespace.
+
+Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-servicediscovery-publicdnsnamespace.html#cfn-servicediscovery-publicdnsnamespace-name
+PrimitiveType: String
 UpdateType: Immutable
 
 ```yaml
@@ -175,15 +183,13 @@ Accept wildcard characters: False
 ```
 
 ### CommonParameters
-This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction, and -WarningVariable.
-For more information, see about_CommonParameters (http://go.microsoft.com/fwlink/?LinkID=113216).
+This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction, and -WarningVariable. For more information, see [about_CommonParameters](http://go.microsoft.com/fwlink/?LinkID=113216).
 
 ## INPUTS
 
 ## OUTPUTS
 
 ### Vaporshell.Resource.ServiceDiscovery.PublicDnsNamespace
-
 ## NOTES
 
 ## RELATED LINKS

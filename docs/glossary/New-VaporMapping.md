@@ -1,14 +1,3 @@
----
-layout: glossary
-title: New-VaporMapping
-categories: glossary
-label1: Category
-data1: Documentation
-label2: Depth
-data2: Deep
-schema: 2.0.0
----
-
 # New-VaporMapping
 
 ## SYNOPSIS
@@ -26,6 +15,68 @@ For example, if you want to set values based on a region, you can create a mappi
 You use the Fn::FindInMap intrinsic function to retrieve values in a map.
 
 You cannot include parameters, pseudo parameters, or intrinsic functions in the Mappings section.
+
+## EXAMPLES
+
+### EXAMPLE 1
+```
+$template = Initialize-Vaporshell -Description "Testing Mapping addition"
+```
+
+$template.AddMapping((
+    New-VaporMapping -LogicalId "RegionMap" -Map (\[PSCustomObject\]\[Ordered\]@{
+        "us-east-1" = \[PSCustomObject\]\[Ordered\]@{
+            "32" = "ami-6411e20d"
+            "64" = "ami-7a11e213"
+        }
+        "us-west-1" = \[PSCustomObject\]\[Ordered\]@{
+            "32" = "ami-c9c7978c"
+            "64" = "ami-cfc7978a"
+        }
+        "eu-west-1" = \[PSCustomObject\]\[Ordered\]@{
+            "32" = "ami-37c2f643"
+            "64" = "ami-31c2f645"
+        }
+        "ap-southeast-1" = \[PSCustomObject\]\[Ordered\]@{
+            "32" = "ami-66f28c34"
+            "64" = "ami-60f28c32"
+        }
+        "ap-northeast-1" = \[PSCustomObject\]\[Ordered\]@{
+            "32" = "ami-9c03a89d"
+            "64" = "ami-a003a8a1"
+        }
+    })
+))
+
+When the template is exported, this will convert to: 
+    {
+        "AWSTemplateFormatVersion":  "2010-09-09",
+        "Description":  "Testing Mapping addition",
+        "Mappings":  {
+            "RegionMap":  {
+                "us-east-1":  {
+                    "32":  "ami-6411e20d",
+                    "64":  "ami-7a11e213"
+                },
+                "us-west-1":  {
+                    "32":  "ami-c9c7978c",
+                    "64":  "ami-cfc7978a"
+                },
+                "eu-west-1":  {
+                    "32":  "ami-37c2f643",
+                    "64":  "ami-31c2f645"
+                },
+                "ap-southeast-1":  {
+                    "32":  "ami-66f28c34",
+                    "64":  "ami-60f28c32"
+                },
+                "ap-northeast-1":  {
+                    "32":  "ami-9c03a89d",
+                    "64":  "ami-a003a8a1"
+                }
+            }
+        }
+    }
 
 ## PARAMETERS
 
@@ -64,15 +115,13 @@ Accept wildcard characters: False
 ```
 
 ### CommonParameters
-This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction, and -WarningVariable.
-For more information, see about_CommonParameters (http://go.microsoft.com/fwlink/?LinkID=113216).
+This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction, and -WarningVariable. For more information, see [about_CommonParameters](http://go.microsoft.com/fwlink/?LinkID=113216).
 
 ## INPUTS
 
 ## OUTPUTS
 
 ### Vaporshell.Mapping
-
 ## NOTES
 
 ## RELATED LINKS

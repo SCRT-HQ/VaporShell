@@ -1,18 +1,10 @@
----
-layout: glossary
-title: New-VSEC2VPNGateway
-categories: glossary
-label1: Category
-data1: Documentation
-label2: Depth
-data2: Deep
-schema: 2.0.0
----
-
 # New-VSEC2VPNGateway
 
 ## SYNOPSIS
-Adds an AWS::EC2::VPNGateway resource to the template
+Adds an AWS::EC2::VPNGateway resource to the template.
+Specifies a virtual private gateway.
+A virtual private gateway is the endpoint on the VPC side of your VPN connection.
+You can create a virtual private gateway before creating the VPC itself.
 
 ## SYNTAX
 
@@ -23,7 +15,21 @@ New-VSEC2VPNGateway [-LogicalId] <String> [-AmazonSideAsn <Object>] [-Tags <Obje
 ```
 
 ## DESCRIPTION
-Adds an AWS::EC2::VPNGateway resource to the template
+Adds an AWS::EC2::VPNGateway resource to the template.
+Specifies a virtual private gateway.
+A virtual private gateway is the endpoint on the VPC side of your VPN connection.
+You can create a virtual private gateway before creating the VPC itself.
+
+For more information, see AWS Site-to-Site VPN: https://docs.aws.amazon.com/vpn/latest/s2svpn/VPC_VPN.html in the *AWS Site-to-Site VPN User Guide*.
+
+## EXAMPLES
+
+### Example 1
+```powershell
+PS C:\> {{ Add example code here }}
+```
+
+{{ Add example description here }}
 
 ## PARAMETERS
 
@@ -45,9 +51,10 @@ Accept wildcard characters: False
 ```
 
 ### -AmazonSideAsn
-Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ec2-vpn-gateway.html#cfn-ec2-vpngateway-amazonsideasn    
-PrimitiveType: Long    
-Required: False    
+The private Autonomous System Number ASN for the Amazon side of a BGP session.
+
+Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ec2-vpn-gateway.html#cfn-ec2-vpngateway-amazonsideasn
+PrimitiveType: Long
 UpdateType: Immutable
 
 ```yaml
@@ -63,11 +70,12 @@ Accept wildcard characters: False
 ```
 
 ### -Tags
-Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ec2-vpn-gateway.html#cfn-ec2-vpngateway-tags    
-DuplicatesAllowed: True    
-ItemType: Tag    
-Required: False    
-Type: List    
+Any tags assigned to the virtual private gateway.
+
+Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ec2-vpn-gateway.html#cfn-ec2-vpngateway-tags
+DuplicatesAllowed: True
+ItemType: Tag
+Type: List
 UpdateType: Mutable
 
 ```yaml
@@ -83,9 +91,10 @@ Accept wildcard characters: False
 ```
 
 ### -Type
-Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ec2-vpn-gateway.html#cfn-ec2-vpngateway-type    
-PrimitiveType: String    
-Required: True    
+The type of VPN connection the virtual private gateway supports.
+
+Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ec2-vpn-gateway.html#cfn-ec2-vpngateway-type
+PrimitiveType: String
 UpdateType: Immutable
 
 ```yaml
@@ -195,15 +204,13 @@ Accept wildcard characters: False
 ```
 
 ### CommonParameters
-This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction, and -WarningVariable.
-For more information, see about_CommonParameters (http://go.microsoft.com/fwlink/?LinkID=113216).
+This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction, and -WarningVariable. For more information, see [about_CommonParameters](http://go.microsoft.com/fwlink/?LinkID=113216).
 
 ## INPUTS
 
 ## OUTPUTS
 
 ### Vaporshell.Resource.EC2.VPNGateway
-
 ## NOTES
 
 ## RELATED LINKS

@@ -1,34 +1,56 @@
----
-layout: glossary
-title: Add-VSCodeBuildProjectProjectTriggers
-categories: glossary
-label1: Category
-data1: Documentation
-label2: Depth
-data2: Deep
-schema: 2.0.0
----
-
 # Add-VSCodeBuildProjectProjectTriggers
 
 ## SYNOPSIS
-Adds an AWS::CodeBuild::Project.ProjectTriggers resource property to the template
+Adds an AWS::CodeBuild::Project.ProjectTriggers resource property to the template.
+ProjectTriggers is a property of the AWS CodeBuild Project: https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-codebuild-project.html resource that specifies webhooks that trigger an AWS CodeBuild build.
 
 ## SYNTAX
 
 ```
-Add-VSCodeBuildProjectProjectTriggers [[-Webhook] <Boolean>] [<CommonParameters>]
+Add-VSCodeBuildProjectProjectTriggers [[-FilterGroups] <Object>] [[-Webhook] <Boolean>] [<CommonParameters>]
 ```
 
 ## DESCRIPTION
-Adds an AWS::CodeBuild::Project.ProjectTriggers resource property to the template
+Adds an AWS::CodeBuild::Project.ProjectTriggers resource property to the template.
+ProjectTriggers is a property of the AWS CodeBuild Project: https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-codebuild-project.html resource that specifies webhooks that trigger an AWS CodeBuild build.
+
+## EXAMPLES
+
+### Example 1
+```powershell
+PS C:\> {{ Add example code here }}
+```
+
+{{ Add example description here }}
 
 ## PARAMETERS
 
+### -FilterGroups
+A list of lists of WebhookFilter objects used to determine which webhook events are triggered.
+At least one WebhookFilter in the array must specify EVENT as its type.
+
+Type: List
+Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-codebuild-project-projecttriggers.html#cfn-codebuild-project-projecttriggers-filtergroups
+ItemType: FilterGroup
+UpdateType: Mutable
+
+```yaml
+Type: Object
+Parameter Sets: (All)
+Aliases:
+
+Required: False
+Position: 1
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
 ### -Webhook
-Required: False    
-Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-codebuild-project-projecttriggers.html#cfn-codebuild-project-projecttriggers-webhook    
-PrimitiveType: Boolean    
+Specifies whether or not to begin automatically rebuilding the source code every time a code change is pushed to the repository.
+
+Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-codebuild-project-projecttriggers.html#cfn-codebuild-project-projecttriggers-webhook
+PrimitiveType: Boolean
 UpdateType: Mutable
 
 ```yaml
@@ -37,22 +59,20 @@ Parameter Sets: (All)
 Aliases:
 
 Required: False
-Position: 1
+Position: 2
 Default value: False
 Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
 ### CommonParameters
-This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction, and -WarningVariable.
-For more information, see about_CommonParameters (http://go.microsoft.com/fwlink/?LinkID=113216).
+This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction, and -WarningVariable. For more information, see [about_CommonParameters](http://go.microsoft.com/fwlink/?LinkID=113216).
 
 ## INPUTS
 
 ## OUTPUTS
 
 ### Vaporshell.Resource.CodeBuild.Project.ProjectTriggers
-
 ## NOTES
 
 ## RELATED LINKS

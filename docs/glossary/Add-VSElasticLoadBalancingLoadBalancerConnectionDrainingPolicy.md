@@ -1,18 +1,8 @@
----
-layout: glossary
-title: Add-VSElasticLoadBalancingLoadBalancerConnectionDrainingPolicy
-categories: glossary
-label1: Category
-data1: Documentation
-label2: Depth
-data2: Deep
-schema: 2.0.0
----
-
 # Add-VSElasticLoadBalancingLoadBalancerConnectionDrainingPolicy
 
 ## SYNOPSIS
-Adds an AWS::ElasticLoadBalancing::LoadBalancer.ConnectionDrainingPolicy resource property to the template
+Adds an AWS::ElasticLoadBalancing::LoadBalancer.ConnectionDrainingPolicy resource property to the template.
+Specifies the connection draining settings for your Classic Load Balancer.
 
 ## SYNTAX
 
@@ -22,14 +12,25 @@ Add-VSElasticLoadBalancingLoadBalancerConnectionDrainingPolicy [-Enabled] <Boole
 ```
 
 ## DESCRIPTION
-Adds an AWS::ElasticLoadBalancing::LoadBalancer.ConnectionDrainingPolicy resource property to the template
+Adds an AWS::ElasticLoadBalancing::LoadBalancer.ConnectionDrainingPolicy resource property to the template.
+Specifies the connection draining settings for your Classic Load Balancer.
+
+## EXAMPLES
+
+### Example 1
+```powershell
+PS C:\> {{ Add example code here }}
+```
+
+{{ Add example description here }}
 
 ## PARAMETERS
 
 ### -Enabled
-Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-elb-connectiondrainingpolicy.html#cfn-elb-connectiondrainingpolicy-enabled    
-PrimitiveType: Boolean    
-Required: True    
+Specifies whether connection draining is enabled for the load balancer.
+
+Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-elb-connectiondrainingpolicy.html#cfn-elb-connectiondrainingpolicy-enabled
+PrimitiveType: Boolean
 UpdateType: Mutable
 
 ```yaml
@@ -45,9 +46,10 @@ Accept wildcard characters: False
 ```
 
 ### -Timeout
-Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-elb-connectiondrainingpolicy.html#cfn-elb-connectiondrainingpolicy-timeout    
-PrimitiveType: Integer    
-Required: False    
+The maximum time, in seconds, to keep the existing connections open before deregistering the instances.
+
+Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-elb-connectiondrainingpolicy.html#cfn-elb-connectiondrainingpolicy-timeout
+PrimitiveType: Integer
 UpdateType: Mutable
 
 ```yaml
@@ -63,15 +65,13 @@ Accept wildcard characters: False
 ```
 
 ### CommonParameters
-This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction, and -WarningVariable.
-For more information, see about_CommonParameters (http://go.microsoft.com/fwlink/?LinkID=113216).
+This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction, and -WarningVariable. For more information, see [about_CommonParameters](http://go.microsoft.com/fwlink/?LinkID=113216).
 
 ## INPUTS
 
 ## OUTPUTS
 
 ### Vaporshell.Resource.ElasticLoadBalancing.LoadBalancer.ConnectionDrainingPolicy
-
 ## NOTES
 
 ## RELATED LINKS

@@ -1,14 +1,3 @@
----
-layout: glossary
-title: Import-Vaporshell
-categories: glossary
-label1: Category
-data1: Documentation
-label2: Depth
-data2: Deep
-schema: 2.0.0
----
-
 # Import-Vaporshell
 
 ## SYNOPSIS
@@ -34,6 +23,13 @@ Import-Vaporshell [-RawUrl] <String> [<CommonParameters>]
 ## DESCRIPTION
 Allows you to import an existing CloudFormation template as a starting point.
 
+## EXAMPLES
+
+### EXAMPLE 1
+```
+$Template = Import-Vaporshell -Path "C:\CloudFormation\Templates\S3Bucket.json"
+```
+
 ## PARAMETERS
 
 ### -Path
@@ -52,7 +48,7 @@ Accept wildcard characters: False
 ```
 
 ### -TemplateBody
-{{Fill TemplateBody Description}}
+{{ Fill TemplateBody Description }}
 
 ```yaml
 Type: String
@@ -67,7 +63,7 @@ Accept wildcard characters: False
 ```
 
 ### -RawUrl
-{{Fill RawUrl Description}}
+{{ Fill RawUrl Description }}
 
 ```yaml
 Type: String
@@ -82,15 +78,13 @@ Accept wildcard characters: False
 ```
 
 ### CommonParameters
-This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction, and -WarningVariable.
-For more information, see about_CommonParameters (http://go.microsoft.com/fwlink/?LinkID=113216).
+This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction, and -WarningVariable. For more information, see [about_CommonParameters](http://go.microsoft.com/fwlink/?LinkID=113216).
 
 ## INPUTS
 
 ## OUTPUTS
 
 ### Vaporshell.Template
-
 ## NOTES
 
 ## RELATED LINKS

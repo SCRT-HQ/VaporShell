@@ -1,18 +1,9 @@
----
-layout: glossary
-title: New-VSGluePartition
-categories: glossary
-label1: Category
-data1: Documentation
-label2: Depth
-data2: Deep
-schema: 2.0.0
----
-
 # New-VSGluePartition
 
 ## SYNOPSIS
-Adds an AWS::Glue::Partition resource to the template
+Adds an AWS::Glue::Partition resource to the template.
+The AWS::Glue::Partition resource creates an AWS Glue partition, which represents a slice of table data.
+For more information, see CreatePartition Action: https://docs.aws.amazon.com/glue/latest/dg/aws-glue-api-catalog-partitions.html#aws-glue-api-catalog-partitions-CreatePartition and Partition Structure: https://docs.aws.amazon.com/glue/latest/dg/aws-glue-api-catalog-partitions.html#aws-glue-api-catalog-partitions-Partition in the *AWS Glue Developer Guide*.
 
 ## SYNTAX
 
@@ -23,7 +14,18 @@ New-VSGluePartition [-LogicalId] <String> -TableName <Object> -DatabaseName <Obj
 ```
 
 ## DESCRIPTION
-Adds an AWS::Glue::Partition resource to the template
+Adds an AWS::Glue::Partition resource to the template.
+The AWS::Glue::Partition resource creates an AWS Glue partition, which represents a slice of table data.
+For more information, see CreatePartition Action: https://docs.aws.amazon.com/glue/latest/dg/aws-glue-api-catalog-partitions.html#aws-glue-api-catalog-partitions-CreatePartition and Partition Structure: https://docs.aws.amazon.com/glue/latest/dg/aws-glue-api-catalog-partitions.html#aws-glue-api-catalog-partitions-Partition in the *AWS Glue Developer Guide*.
+
+## EXAMPLES
+
+### Example 1
+```powershell
+PS C:\> {{ Add example code here }}
+```
+
+{{ Add example description here }}
 
 ## PARAMETERS
 
@@ -45,9 +47,10 @@ Accept wildcard characters: False
 ```
 
 ### -TableName
-Required: True    
-Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-glue-partition.html#cfn-glue-partition-tablename    
-PrimitiveType: String    
+The name of the metadata table in which the partition is to be created.
+
+Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-glue-partition.html#cfn-glue-partition-tablename
+PrimitiveType: String
 UpdateType: Immutable
 
 ```yaml
@@ -63,9 +66,10 @@ Accept wildcard characters: False
 ```
 
 ### -DatabaseName
-Required: True    
-Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-glue-partition.html#cfn-glue-partition-databasename    
-PrimitiveType: String    
+The name of the catalog database in which to create the partition.
+
+Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-glue-partition.html#cfn-glue-partition-databasename
+PrimitiveType: String
 UpdateType: Immutable
 
 ```yaml
@@ -81,9 +85,12 @@ Accept wildcard characters: False
 ```
 
 ### -CatalogId
-Required: True    
-Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-glue-partition.html#cfn-glue-partition-catalogid    
-PrimitiveType: String    
+The AWS account ID of the catalog in which the partion is to be created.
+To specify the account ID, you can use the Ref intrinsic function with the AWS::AccountId pseudo parameter.
+For example: !Ref AWS::AccountId
+
+Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-glue-partition.html#cfn-glue-partition-catalogid
+PrimitiveType: String
 UpdateType: Immutable
 
 ```yaml
@@ -99,9 +106,10 @@ Accept wildcard characters: False
 ```
 
 ### -PartitionInput
-Type: PartitionInput    
-Required: True    
-Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-glue-partition.html#cfn-glue-partition-partitioninput    
+The structure used to create and update a partition.
+
+Type: PartitionInput
+Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-glue-partition.html#cfn-glue-partition-partitioninput
 UpdateType: Mutable
 
 ```yaml
@@ -211,15 +219,13 @@ Accept wildcard characters: False
 ```
 
 ### CommonParameters
-This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction, and -WarningVariable.
-For more information, see about_CommonParameters (http://go.microsoft.com/fwlink/?LinkID=113216).
+This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction, and -WarningVariable. For more information, see [about_CommonParameters](http://go.microsoft.com/fwlink/?LinkID=113216).
 
 ## INPUTS
 
 ## OUTPUTS
 
 ### Vaporshell.Resource.Glue.Partition
-
 ## NOTES
 
 ## RELATED LINKS

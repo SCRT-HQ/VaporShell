@@ -1,18 +1,7 @@
----
-layout: glossary
-title: VSStackSetOperationPreferences
-categories: glossary
-label1: Category
-data1: Documentation
-label2: Depth
-data2: Deep
-schema: 2.0.0
----
-
 # VSStackSetOperationPreferences
 
 ## SYNOPSIS
-{{Fill in the Synopsis}}
+{{ Fill in the Synopsis }}
 
 ## SYNTAX
 
@@ -41,12 +30,21 @@ VSStackSetOperationPreferences [-FailureTolerancePercentage] <Int32> [-MaxConcur
 ```
 
 ## DESCRIPTION
-{{Fill in the Description}}
+{{ Fill in the Description }}
+
+## EXAMPLES
+
+### Example 1
+```powershell
+PS C:\> {{ Add example code here }}
+```
+
+{{ Add example description here }}
 
 ## PARAMETERS
 
 ### -FailureToleranceCount
-{{Fill FailureToleranceCount Description}}
+{{ Fill FailureToleranceCount Description }}
 
 ```yaml
 Type: Int32
@@ -61,7 +59,7 @@ Accept wildcard characters: False
 ```
 
 ### -FailureTolerancePercentage
-{{Fill FailureTolerancePercentage Description}}
+{{ Fill FailureTolerancePercentage Description }}
 
 ```yaml
 Type: Int32
@@ -76,7 +74,7 @@ Accept wildcard characters: False
 ```
 
 ### -MaxConcurrentCount
-{{Fill MaxConcurrentCount Description}}
+{{ Fill MaxConcurrentCount Description }}
 
 ```yaml
 Type: Int32
@@ -91,7 +89,7 @@ Accept wildcard characters: False
 ```
 
 ### -MaxConcurrentPercentage
-{{Fill MaxConcurrentPercentage Description}}
+{{ Fill MaxConcurrentPercentage Description }}
 
 ```yaml
 Type: Int32
@@ -106,7 +104,7 @@ Accept wildcard characters: False
 ```
 
 ### -RegionOrder
-{{Fill RegionOrder Description}}
+{{ Fill RegionOrder Description }}
 
 ```yaml
 Type: String[]
@@ -121,18 +119,15 @@ Accept wildcard characters: False
 ```
 
 ### CommonParameters
-This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction, and -WarningVariable.
-For more information, see about_CommonParameters (http://go.microsoft.com/fwlink/?LinkID=113216).
+This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction, and -WarningVariable. For more information, see [about_CommonParameters](http://go.microsoft.com/fwlink/?LinkID=113216).
 
 ## INPUTS
 
 ### None
 
-
 ## OUTPUTS
 
 ### System.Object
-
 ## NOTES
 
 ## RELATED LINKS

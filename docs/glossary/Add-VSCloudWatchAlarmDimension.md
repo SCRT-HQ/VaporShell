@@ -1,18 +1,10 @@
----
-layout: glossary
-title: Add-VSCloudWatchAlarmDimension
-categories: glossary
-label1: Category
-data1: Documentation
-label2: Depth
-data2: Deep
-schema: 2.0.0
----
-
 # Add-VSCloudWatchAlarmDimension
 
 ## SYNOPSIS
-Adds an AWS::CloudWatch::Alarm.Dimension resource property to the template
+Adds an AWS::CloudWatch::Alarm.Dimension resource property to the template.
+Dimension is an embedded property of the AWS::CloudWatch::Alarm type.
+Dimensions are arbitrary name/value pairs that can be associated with a CloudWatch metric.
+You can specify a maximum of 10 dimensions for a given metric.
 
 ## SYNTAX
 
@@ -21,14 +13,27 @@ Add-VSCloudWatchAlarmDimension [-Name] <Object> [-Value] <Object> [<CommonParame
 ```
 
 ## DESCRIPTION
-Adds an AWS::CloudWatch::Alarm.Dimension resource property to the template
+Adds an AWS::CloudWatch::Alarm.Dimension resource property to the template.
+Dimension is an embedded property of the AWS::CloudWatch::Alarm type.
+Dimensions are arbitrary name/value pairs that can be associated with a CloudWatch metric.
+You can specify a maximum of 10 dimensions for a given metric.
+
+## EXAMPLES
+
+### Example 1
+```powershell
+PS C:\> {{ Add example code here }}
+```
+
+{{ Add example description here }}
 
 ## PARAMETERS
 
 ### -Name
-Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-cw-dimension.html#cfn-cloudwatch-alarm-dimension-name    
-PrimitiveType: String    
-Required: True    
+The name of the dimension, from 1-255 characters in length.
+
+Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-cw-dimension.html#cfn-cloudwatch-alarm-dimension-name
+PrimitiveType: String
 UpdateType: Mutable
 
 ```yaml
@@ -44,9 +49,10 @@ Accept wildcard characters: False
 ```
 
 ### -Value
-Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-cw-dimension.html#cfn-cloudwatch-alarm-dimension-value    
-PrimitiveType: String    
-Required: True    
+The value for the dimension, from 1-255 characters in length.
+
+Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-cw-dimension.html#cfn-cloudwatch-alarm-dimension-value
+PrimitiveType: String
 UpdateType: Mutable
 
 ```yaml
@@ -62,15 +68,13 @@ Accept wildcard characters: False
 ```
 
 ### CommonParameters
-This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction, and -WarningVariable.
-For more information, see about_CommonParameters (http://go.microsoft.com/fwlink/?LinkID=113216).
+This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction, and -WarningVariable. For more information, see [about_CommonParameters](http://go.microsoft.com/fwlink/?LinkID=113216).
 
 ## INPUTS
 
 ## OUTPUTS
 
 ### Vaporshell.Resource.CloudWatch.Alarm.Dimension
-
 ## NOTES
 
 ## RELATED LINKS

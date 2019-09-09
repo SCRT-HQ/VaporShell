@@ -1,18 +1,8 @@
----
-layout: glossary
-title: Add-VSRDSOptionGroupOptionConfiguration
-categories: glossary
-label1: Category
-data1: Documentation
-label2: Depth
-data2: Deep
-schema: 2.0.0
----
-
 # Add-VSRDSOptionGroupOptionConfiguration
 
 ## SYNOPSIS
-Adds an AWS::RDS::OptionGroup.OptionConfiguration resource property to the template
+Adds an AWS::RDS::OptionGroup.OptionConfiguration resource property to the template.
+The OptionConfiguration property type specifies an individual option, and its settings, within an AWS::RDS::OptionGroup resource.
 
 ## SYNTAX
 
@@ -23,16 +13,27 @@ Add-VSRDSOptionGroupOptionConfiguration [[-DBSecurityGroupMemberships] <Object>]
 ```
 
 ## DESCRIPTION
-Adds an AWS::RDS::OptionGroup.OptionConfiguration resource property to the template
+Adds an AWS::RDS::OptionGroup.OptionConfiguration resource property to the template.
+The OptionConfiguration property type specifies an individual option, and its settings, within an AWS::RDS::OptionGroup resource.
+
+## EXAMPLES
+
+### Example 1
+```powershell
+PS C:\> {{ Add example code here }}
+```
+
+{{ Add example description here }}
 
 ## PARAMETERS
 
 ### -DBSecurityGroupMemberships
-Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-rds-optiongroup-optionconfigurations.html#cfn-rds-optiongroup-optionconfigurations-dbsecuritygroupmemberships    
-DuplicatesAllowed: True    
-PrimitiveItemType: String    
-Required: False    
-Type: List    
+A list of DBSecurityGroupMemebrship name strings used for this option.
+
+Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-rds-optiongroup-optionconfigurations.html#cfn-rds-optiongroup-optionconfigurations-dbsecuritygroupmemberships
+DuplicatesAllowed: True
+PrimitiveItemType: String
+Type: List
 UpdateType: Mutable
 
 ```yaml
@@ -48,9 +49,10 @@ Accept wildcard characters: False
 ```
 
 ### -OptionName
-Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-rds-optiongroup-optionconfigurations.html#cfn-rds-optiongroup-optionconfigurations-optionname    
-PrimitiveType: String    
-Required: True    
+The configuration of options to include in a group.
+
+Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-rds-optiongroup-optionconfigurations.html#cfn-rds-optiongroup-optionconfigurations-optionname
+PrimitiveType: String
 UpdateType: Mutable
 
 ```yaml
@@ -66,9 +68,12 @@ Accept wildcard characters: False
 ```
 
 ### -OptionSettings
-Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-rds-optiongroup-optionconfigurations.html#cfn-rds-optiongroup-optionconfigurations-optionsettings    
-Required: False    
-Type: OptionSetting    
+The option settings to include in an option group.
+
+Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-rds-optiongroup-optionconfigurations.html#cfn-rds-optiongroup-optionconfigurations-optionsettings
+DuplicatesAllowed: False
+ItemType: OptionSetting
+Type: List
 UpdateType: Mutable
 
 ```yaml
@@ -84,9 +89,10 @@ Accept wildcard characters: False
 ```
 
 ### -OptionVersion
-Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-rds-optiongroup-optionconfigurations.html#cfn-rds-optiongroup-optionconfiguration-optionversion    
-PrimitiveType: String    
-Required: False    
+The version for the option.
+
+Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-rds-optiongroup-optionconfigurations.html#cfn-rds-optiongroup-optionconfiguration-optionversion
+PrimitiveType: String
 UpdateType: Mutable
 
 ```yaml
@@ -102,9 +108,10 @@ Accept wildcard characters: False
 ```
 
 ### -Port
-Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-rds-optiongroup-optionconfigurations.html#cfn-rds-optiongroup-optionconfigurations-port    
-PrimitiveType: Integer    
-Required: False    
+The optional port for the option.
+
+Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-rds-optiongroup-optionconfigurations.html#cfn-rds-optiongroup-optionconfigurations-port
+PrimitiveType: Integer
 UpdateType: Mutable
 
 ```yaml
@@ -120,11 +127,12 @@ Accept wildcard characters: False
 ```
 
 ### -VpcSecurityGroupMemberships
-Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-rds-optiongroup-optionconfigurations.html#cfn-rds-optiongroup-optionconfigurations-vpcsecuritygroupmemberships    
-DuplicatesAllowed: True    
-PrimitiveItemType: String    
-Required: False    
-Type: List    
+A list of VpcSecurityGroupMembership name strings used for this option.
+
+Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-rds-optiongroup-optionconfigurations.html#cfn-rds-optiongroup-optionconfigurations-vpcsecuritygroupmemberships
+DuplicatesAllowed: True
+PrimitiveItemType: String
+Type: List
 UpdateType: Mutable
 
 ```yaml
@@ -140,15 +148,13 @@ Accept wildcard characters: False
 ```
 
 ### CommonParameters
-This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction, and -WarningVariable.
-For more information, see about_CommonParameters (http://go.microsoft.com/fwlink/?LinkID=113216).
+This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction, and -WarningVariable. For more information, see [about_CommonParameters](http://go.microsoft.com/fwlink/?LinkID=113216).
 
 ## INPUTS
 
 ## OUTPUTS
 
 ### Vaporshell.Resource.RDS.OptionGroup.OptionConfiguration
-
 ## NOTES
 
 ## RELATED LINKS

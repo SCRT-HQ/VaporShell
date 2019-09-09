@@ -1,18 +1,8 @@
----
-layout: glossary
-title: New-VSIoTThingPrincipalAttachment
-categories: glossary
-label1: Category
-data1: Documentation
-label2: Depth
-data2: Deep
-schema: 2.0.0
----
-
 # New-VSIoTThingPrincipalAttachment
 
 ## SYNOPSIS
-Adds an AWS::IoT::ThingPrincipalAttachment resource to the template
+Adds an AWS::IoT::ThingPrincipalAttachment resource to the template.
+Use the AWS::IoT::ThingPrincipalAttachment resource to attach a principal (an X.509 certificate or another credential to a thing.
 
 ## SYNTAX
 
@@ -23,7 +13,19 @@ New-VSIoTThingPrincipalAttachment [-LogicalId] <String> -Principal <Object> -Thi
 ```
 
 ## DESCRIPTION
-Adds an AWS::IoT::ThingPrincipalAttachment resource to the template
+Adds an AWS::IoT::ThingPrincipalAttachment resource to the template.
+Use the AWS::IoT::ThingPrincipalAttachment resource to attach a principal (an X.509 certificate or another credential to a thing.
+
+For more information about working with AWS IoT things and principals, see Authorization: https://docs.aws.amazon.com/iot/latest/developerguide/authorization.html in the *AWS IoT Developer Guide*.
+
+## EXAMPLES
+
+### Example 1
+```powershell
+PS C:\> {{ Add example code here }}
+```
+
+{{ Add example description here }}
 
 ## PARAMETERS
 
@@ -45,9 +47,10 @@ Accept wildcard characters: False
 ```
 
 ### -Principal
-Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-iot-thingprincipalattachment.html#cfn-iot-thingprincipalattachment-principal    
-PrimitiveType: String    
-Required: True    
+The principal, which can be a certificate ARN as returned from the CreateCertificate operation or an Amazon Cognito ID.
+
+Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-iot-thingprincipalattachment.html#cfn-iot-thingprincipalattachment-principal
+PrimitiveType: String
 UpdateType: Immutable
 
 ```yaml
@@ -63,9 +66,10 @@ Accept wildcard characters: False
 ```
 
 ### -ThingName
-Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-iot-thingprincipalattachment.html#cfn-iot-thingprincipalattachment-thingname    
-PrimitiveType: String    
-Required: True    
+The name of the AWS IoT thing.
+
+Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-iot-thingprincipalattachment.html#cfn-iot-thingprincipalattachment-thingname
+PrimitiveType: String
 UpdateType: Immutable
 
 ```yaml
@@ -175,15 +179,13 @@ Accept wildcard characters: False
 ```
 
 ### CommonParameters
-This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction, and -WarningVariable.
-For more information, see about_CommonParameters (http://go.microsoft.com/fwlink/?LinkID=113216).
+This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction, and -WarningVariable. For more information, see [about_CommonParameters](http://go.microsoft.com/fwlink/?LinkID=113216).
 
 ## INPUTS
 
 ## OUTPUTS
 
 ### Vaporshell.Resource.IoT.ThingPrincipalAttachment
-
 ## NOTES
 
 ## RELATED LINKS

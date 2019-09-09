@@ -1,18 +1,10 @@
----
-layout: glossary
-title: New-VSGameLiftFleet
-categories: glossary
-label1: Category
-data1: Documentation
-label2: Depth
-data2: Deep
-schema: 2.0.0
----
-
 # New-VSGameLiftFleet
 
 ## SYNOPSIS
-Adds an AWS::GameLift::Fleet resource to the template
+Adds an AWS::GameLift::Fleet resource to the template.
+The AWS::GameLift::Fleet resource creates an Amazon GameLift (GameLift fleet to host game servers.
+A fleet is a set of EC2 instances, each of which is a host in the fleet.
+For more information, see the CreateFleet: https://docs.aws.amazon.com/gamelift/latest/apireference/API_CreateFleet.html action in the *Amazon GameLift API Reference*.
 
 ## SYNTAX
 
@@ -25,7 +17,19 @@ New-VSGameLiftFleet [-LogicalId] <String> -BuildId <Object> [-Description <Objec
 ```
 
 ## DESCRIPTION
-Adds an AWS::GameLift::Fleet resource to the template
+Adds an AWS::GameLift::Fleet resource to the template.
+The AWS::GameLift::Fleet resource creates an Amazon GameLift (GameLift fleet to host game servers.
+A fleet is a set of EC2 instances, each of which is a host in the fleet.
+For more information, see the CreateFleet: https://docs.aws.amazon.com/gamelift/latest/apireference/API_CreateFleet.html action in the *Amazon GameLift API Reference*.
+
+## EXAMPLES
+
+### Example 1
+```powershell
+PS C:\> {{ Add example code here }}
+```
+
+{{ Add example description here }}
 
 ## PARAMETERS
 
@@ -47,9 +51,12 @@ Accept wildcard characters: False
 ```
 
 ### -BuildId
-Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-gamelift-fleet.html#cfn-gamelift-fleet-buildid    
-PrimitiveType: String    
-Required: True    
+Unique identifier for a build to be deployed on the new fleet.
+The custom game server build must have been successfully uploaded to Amazon GameLift and be in a READY status.
+This fleet setting cannot be changed once the fleet is created.
+
+Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-gamelift-fleet.html#cfn-gamelift-fleet-buildid
+PrimitiveType: String
 UpdateType: Immutable
 
 ```yaml
@@ -65,9 +72,10 @@ Accept wildcard characters: False
 ```
 
 ### -Description
-Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-gamelift-fleet.html#cfn-gamelift-fleet-description    
-PrimitiveType: String    
-Required: False    
+Human-readable description of a fleet.
+
+Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-gamelift-fleet.html#cfn-gamelift-fleet-description
+PrimitiveType: String
 UpdateType: Mutable
 
 ```yaml
@@ -83,9 +91,10 @@ Accept wildcard characters: False
 ```
 
 ### -DesiredEC2Instances
-Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-gamelift-fleet.html#cfn-gamelift-fleet-desiredec2instances    
-PrimitiveType: Integer    
-Required: True    
+Number of EC2 instances you want this fleet to host.
+
+Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-gamelift-fleet.html#cfn-gamelift-fleet-desiredec2instances
+PrimitiveType: Integer
 UpdateType: Mutable
 
 ```yaml
@@ -101,11 +110,15 @@ Accept wildcard characters: False
 ```
 
 ### -EC2InboundPermissions
-Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-gamelift-fleet.html#cfn-gamelift-fleet-ec2inboundpermissions    
-DuplicatesAllowed: False    
-ItemType: IpPermission    
-Required: False    
-Type: List    
+Range of IP addresses and port settings that permit inbound traffic to access game sessions that running on the fleet.
+For fleets using a custom game build, this parameter is required before game sessions running on the fleet can accept connections.
+For Realtime Servers fleets, Amazon GameLift automatically sets TCP and UDP ranges for use by the Realtime servers.
+You can specify multiple permission settings or add more by updating the fleet.
+
+Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-gamelift-fleet.html#cfn-gamelift-fleet-ec2inboundpermissions
+DuplicatesAllowed: False
+ItemType: IpPermission
+Type: List
 UpdateType: Mutable
 
 ```yaml
@@ -121,9 +134,12 @@ Accept wildcard characters: False
 ```
 
 ### -EC2InstanceType
-Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-gamelift-fleet.html#cfn-gamelift-fleet-ec2instancetype    
-PrimitiveType: String    
-Required: True    
+Name of an EC2 instance type that is supported in Amazon GameLift.
+A fleet instance type determines the computing resources of each instance in the fleet, including CPU, memory, storage, and networking capacity.
+For more information about the instance types that are supported by GameLift, see the EC2InstanceType: https://docs.aws.amazon.com/gamelift/latest/apireference/API_CreateFleet.html#gamelift-CreateFleet-request-EC2InstanceType parameter in the *Amazon GameLift API Reference*.
+
+Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-gamelift-fleet.html#cfn-gamelift-fleet-ec2instancetype
+PrimitiveType: String
 UpdateType: Immutable
 
 ```yaml
@@ -139,11 +155,14 @@ Accept wildcard characters: False
 ```
 
 ### -LogPaths
-Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-gamelift-fleet.html#cfn-gamelift-fleet-logpaths    
-DuplicatesAllowed: False    
-PrimitiveItemType: String    
-Required: False    
-Type: List    
+This parameter is no longer used.
+Instead, to specify where Amazon GameLift should store log files once a server process shuts down, use the Amazon GameLift server API ProcessReady and specify one or more directory paths in logParameters.
+See more information in the Server API Reference: https://docs.aws.amazon.com/gamelift/latest/developerguide/gamelift-sdk-server-api-ref.html#gamelift-sdk-server-api-ref-dataypes-process.
+
+Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-gamelift-fleet.html#cfn-gamelift-fleet-logpaths
+DuplicatesAllowed: False
+PrimitiveItemType: String
+Type: List
 UpdateType: Immutable
 
 ```yaml
@@ -159,9 +178,11 @@ Accept wildcard characters: False
 ```
 
 ### -MaxSize
-Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-gamelift-fleet.html#cfn-gamelift-fleet-maxsize    
-PrimitiveType: Integer    
-Required: False    
+Maximum value allowed for the fleet's instance count.
+Default if not set is 1.
+
+Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-gamelift-fleet.html#cfn-gamelift-fleet-maxsize
+PrimitiveType: Integer
 UpdateType: Mutable
 
 ```yaml
@@ -177,9 +198,11 @@ Accept wildcard characters: False
 ```
 
 ### -MinSize
-Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-gamelift-fleet.html#cfn-gamelift-fleet-minsize    
-PrimitiveType: Integer    
-Required: False    
+Minimum value allowed for the fleet's instance count.
+Default if not set is 0.
+
+Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-gamelift-fleet.html#cfn-gamelift-fleet-minsize
+PrimitiveType: Integer
 UpdateType: Mutable
 
 ```yaml
@@ -195,9 +218,11 @@ Accept wildcard characters: False
 ```
 
 ### -Name
-Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-gamelift-fleet.html#cfn-gamelift-fleet-name    
-PrimitiveType: String    
-Required: True    
+Descriptive label that is associated with a fleet.
+Fleet names do not need to be unique.
+
+Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-gamelift-fleet.html#cfn-gamelift-fleet-name
+PrimitiveType: String
 UpdateType: Mutable
 
 ```yaml
@@ -213,9 +238,11 @@ Accept wildcard characters: False
 ```
 
 ### -ServerLaunchParameters
-Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-gamelift-fleet.html#cfn-gamelift-fleet-serverlaunchparameters    
-PrimitiveType: String    
-Required: False    
+The parameters that are required to launch your game server.
+Specify these parameters as a string of command-line parameters, such as +sv_port 33435 +start_lobby.
+
+Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-gamelift-fleet.html#cfn-gamelift-fleet-serverlaunchparameters
+PrimitiveType: String
 UpdateType: Immutable
 
 ```yaml
@@ -231,9 +258,12 @@ Accept wildcard characters: False
 ```
 
 ### -ServerLaunchPath
-Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-gamelift-fleet.html#cfn-gamelift-fleet-serverlaunchpath    
-PrimitiveType: String    
-Required: True    
+The location of your game server that GameLift launches.
+You must escape the slashes  and use the following pattern: C:gamelaunchpath.
+For example, if your game server files are in the MyGame folder, the path should be C:gameMyGameserver.exe.
+
+Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-gamelift-fleet.html#cfn-gamelift-fleet-serverlaunchpath
+PrimitiveType: String
 UpdateType: Immutable
 
 ```yaml
@@ -343,15 +373,13 @@ Accept wildcard characters: False
 ```
 
 ### CommonParameters
-This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction, and -WarningVariable.
-For more information, see about_CommonParameters (http://go.microsoft.com/fwlink/?LinkID=113216).
+This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction, and -WarningVariable. For more information, see [about_CommonParameters](http://go.microsoft.com/fwlink/?LinkID=113216).
 
 ## INPUTS
 
 ## OUTPUTS
 
 ### Vaporshell.Resource.GameLift.Fleet
-
 ## NOTES
 
 ## RELATED LINKS

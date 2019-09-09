@@ -1,18 +1,9 @@
----
-layout: glossary
-title: New-VSElastiCacheParameterGroup
-categories: glossary
-label1: Category
-data1: Documentation
-label2: Depth
-data2: Deep
-schema: 2.0.0
----
-
 # New-VSElastiCacheParameterGroup
 
 ## SYNOPSIS
-Adds an AWS::ElastiCache::ParameterGroup resource to the template
+Adds an AWS::ElastiCache::ParameterGroup resource to the template.
+The AWS::ElastiCache::ParameterGroup type creates a new cache parameter group.
+Cache parameter groups control the parameters for a cache cluster.
 
 ## SYNTAX
 
@@ -23,7 +14,22 @@ New-VSElastiCacheParameterGroup [-LogicalId] <String> -CacheParameterGroupFamily
 ```
 
 ## DESCRIPTION
-Adds an AWS::ElastiCache::ParameterGroup resource to the template
+Adds an AWS::ElastiCache::ParameterGroup resource to the template.
+The AWS::ElastiCache::ParameterGroup type creates a new cache parameter group.
+Cache parameter groups control the parameters for a cache cluster.
+
+**Note**
+
+Updates are not supported.
+
+## EXAMPLES
+
+### Example 1
+```powershell
+PS C:\> {{ Add example code here }}
+```
+
+{{ Add example description here }}
 
 ## PARAMETERS
 
@@ -45,9 +51,11 @@ Accept wildcard characters: False
 ```
 
 ### -CacheParameterGroupFamily
-Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-elasticache-parameter-group.html#cfn-elasticache-parametergroup-cacheparametergroupfamily    
-PrimitiveType: String    
-Required: True    
+The name of the cache parameter group family that this cache parameter group is compatible with.
+Valid values are: memcached1.4 | memcached1.5 | redis2.6 | redis2.8 | redis3.2 | redis4.0 | redis5.0 |
+
+Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-elasticache-parameter-group.html#cfn-elasticache-parametergroup-cacheparametergroupfamily
+PrimitiveType: String
 UpdateType: Mutable
 
 ```yaml
@@ -63,9 +71,10 @@ Accept wildcard characters: False
 ```
 
 ### -Description
-Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-elasticache-parameter-group.html#cfn-elasticache-parametergroup-description    
-PrimitiveType: String    
-Required: True    
+The description for this cache parameter group.
+
+Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-elasticache-parameter-group.html#cfn-elasticache-parametergroup-description
+PrimitiveType: String
 UpdateType: Mutable
 
 ```yaml
@@ -81,11 +90,20 @@ Accept wildcard characters: False
 ```
 
 ### -Properties
-Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-elasticache-parameter-group.html#cfn-elasticache-parametergroup-properties    
-DuplicatesAllowed: False    
-PrimitiveItemType: String    
-Required: False    
-Type: Map    
+A comma-delimited list of parameter name/value pairs.
+For more information, see ModifyCacheParameterGroup: https://docs.aws.amazon.com/AmazonElastiCache/latest/APIReference/API_ModifyCacheParameterGroup.html in the *Amazon ElastiCache API Reference Guide*.
+For example:
+
+"Properties" : {
+"cas_disabled" : "1",
+"chunk_size_growth_factor" : "1.02"
+}
+
+
+Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-elasticache-parameter-group.html#cfn-elasticache-parametergroup-properties
+DuplicatesAllowed: False
+PrimitiveItemType: String
+Type: Map
 UpdateType: Mutable
 
 ```yaml
@@ -195,15 +213,13 @@ Accept wildcard characters: False
 ```
 
 ### CommonParameters
-This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction, and -WarningVariable.
-For more information, see about_CommonParameters (http://go.microsoft.com/fwlink/?LinkID=113216).
+This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction, and -WarningVariable. For more information, see [about_CommonParameters](http://go.microsoft.com/fwlink/?LinkID=113216).
 
 ## INPUTS
 
 ## OUTPUTS
 
 ### Vaporshell.Resource.ElastiCache.ParameterGroup
-
 ## NOTES
 
 ## RELATED LINKS

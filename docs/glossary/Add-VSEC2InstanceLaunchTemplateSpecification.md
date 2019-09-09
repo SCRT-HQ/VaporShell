@@ -1,18 +1,9 @@
----
-layout: glossary
-title: Add-VSEC2InstanceLaunchTemplateSpecification
-categories: glossary
-label1: Category
-data1: Documentation
-label2: Depth
-data2: Deep
-schema: 2.0.0
----
-
 # Add-VSEC2InstanceLaunchTemplateSpecification
 
 ## SYNOPSIS
-Adds an AWS::EC2::Instance.LaunchTemplateSpecification resource property to the template
+Adds an AWS::EC2::Instance.LaunchTemplateSpecification resource property to the template.
+Specifies a launch template.
+You must specify either the launch template ID or launch template name.
 
 ## SYNTAX
 
@@ -22,14 +13,28 @@ Add-VSEC2InstanceLaunchTemplateSpecification [[-LaunchTemplateId] <Object>] [[-L
 ```
 
 ## DESCRIPTION
-Adds an AWS::EC2::Instance.LaunchTemplateSpecification resource property to the template
+Adds an AWS::EC2::Instance.LaunchTemplateSpecification resource property to the template.
+Specifies a launch template.
+You must specify either the launch template ID or launch template name.
+
+LaunchTemplateSpecification is a property of the AWS::EC2::Instance: https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-instance.html resource.
+
+## EXAMPLES
+
+### Example 1
+```powershell
+PS C:\> {{ Add example code here }}
+```
+
+{{ Add example description here }}
 
 ## PARAMETERS
 
 ### -LaunchTemplateId
-Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-instance-launchtemplatespecification.html#cfn-ec2-instance-launchtemplatespecification-launchtemplateid    
-PrimitiveType: String    
-Required: False    
+The ID of the launch template.
+
+Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-instance-launchtemplatespecification.html#cfn-ec2-instance-launchtemplatespecification-launchtemplateid
+PrimitiveType: String
 UpdateType: Mutable
 
 ```yaml
@@ -45,9 +50,10 @@ Accept wildcard characters: False
 ```
 
 ### -LaunchTemplateName
-Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-instance-launchtemplatespecification.html#cfn-ec2-instance-launchtemplatespecification-launchtemplatename    
-PrimitiveType: String    
-Required: False    
+The name of the launch template.
+
+Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-instance-launchtemplatespecification.html#cfn-ec2-instance-launchtemplatespecification-launchtemplatename
+PrimitiveType: String
 UpdateType: Mutable
 
 ```yaml
@@ -63,9 +69,10 @@ Accept wildcard characters: False
 ```
 
 ### -Version
-Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-instance-launchtemplatespecification.html#cfn-ec2-instance-launchtemplatespecification-version    
-PrimitiveType: String    
-Required: True    
+The version number of the launch template.AWS CloudFormation does not support specifying $Latest, or $Default for the template version number.
+
+Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-instance-launchtemplatespecification.html#cfn-ec2-instance-launchtemplatespecification-version
+PrimitiveType: String
 UpdateType: Mutable
 
 ```yaml
@@ -81,15 +88,13 @@ Accept wildcard characters: False
 ```
 
 ### CommonParameters
-This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction, and -WarningVariable.
-For more information, see about_CommonParameters (http://go.microsoft.com/fwlink/?LinkID=113216).
+This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction, and -WarningVariable. For more information, see [about_CommonParameters](http://go.microsoft.com/fwlink/?LinkID=113216).
 
 ## INPUTS
 
 ## OUTPUTS
 
 ### Vaporshell.Resource.EC2.Instance.LaunchTemplateSpecification
-
 ## NOTES
 
 ## RELATED LINKS

@@ -1,30 +1,32 @@
----
-layout: glossary
-title: New-VSApiGatewayApiKey
-categories: glossary
-label1: Category
-data1: Documentation
-label2: Depth
-data2: Deep
-schema: 2.0.0
----
-
 # New-VSApiGatewayApiKey
 
 ## SYNOPSIS
-Adds an AWS::ApiGateway::ApiKey resource to the template
+Adds an AWS::ApiGateway::ApiKey resource to the template.
+The AWS::ApiGateway::ApiKey resource creates a unique key that you can distribute to clients who are executing API Gateway Method resources that require an API key.
+To specify which API key clients must use, map the API key with the RestApi and Stage resources that include the methods that require a key.
 
 ## SYNTAX
 
 ```
 New-VSApiGatewayApiKey [-LogicalId] <String> [-CustomerId <Object>] [-Description <Object>]
- [-Enabled <Boolean>] [-GenerateDistinctId <Boolean>] [-Name <Object>] [-StageKeys <Object>]
+ [-Enabled <Boolean>] [-GenerateDistinctId <Boolean>] [-Name <Object>] [-StageKeys <Object>] [-Value <Object>]
  [-DeletionPolicy <String>] [-DependsOn <String[]>] [-Metadata <Object>] [-UpdatePolicy <Object>]
  [-Condition <Object>] [<CommonParameters>]
 ```
 
 ## DESCRIPTION
-Adds an AWS::ApiGateway::ApiKey resource to the template
+Adds an AWS::ApiGateway::ApiKey resource to the template.
+The AWS::ApiGateway::ApiKey resource creates a unique key that you can distribute to clients who are executing API Gateway Method resources that require an API key.
+To specify which API key clients must use, map the API key with the RestApi and Stage resources that include the methods that require a key.
+
+## EXAMPLES
+
+### Example 1
+```powershell
+PS C:\> {{ Add example code here }}
+```
+
+{{ Add example description here }}
 
 ## PARAMETERS
 
@@ -46,9 +48,10 @@ Accept wildcard characters: False
 ```
 
 ### -CustomerId
-Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-apigateway-apikey.html#cfn-apigateway-apikey-customerid    
-PrimitiveType: String    
-Required: False    
+An AWS Marketplace customer identifier to use when integrating with the AWS SaaS Marketplace.
+
+Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-apigateway-apikey.html#cfn-apigateway-apikey-customerid
+PrimitiveType: String
 UpdateType: Mutable
 
 ```yaml
@@ -64,9 +67,10 @@ Accept wildcard characters: False
 ```
 
 ### -Description
-Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-apigateway-apikey.html#cfn-apigateway-apikey-description    
-PrimitiveType: String    
-Required: False    
+A description of the purpose of the API key.
+
+Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-apigateway-apikey.html#cfn-apigateway-apikey-description
+PrimitiveType: String
 UpdateType: Mutable
 
 ```yaml
@@ -82,9 +86,10 @@ Accept wildcard characters: False
 ```
 
 ### -Enabled
-Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-apigateway-apikey.html#cfn-apigateway-apikey-enabled    
-PrimitiveType: Boolean    
-Required: False    
+Indicates whether the API key can be used by clients.
+
+Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-apigateway-apikey.html#cfn-apigateway-apikey-enabled
+PrimitiveType: Boolean
 UpdateType: Mutable
 
 ```yaml
@@ -100,9 +105,10 @@ Accept wildcard characters: False
 ```
 
 ### -GenerateDistinctId
-Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-apigateway-apikey.html#cfn-apigateway-apikey-generatedistinctid    
-PrimitiveType: Boolean    
-Required: False    
+Specifies whether the key identifier is distinct from the created API key value.
+
+Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-apigateway-apikey.html#cfn-apigateway-apikey-generatedistinctid
+PrimitiveType: Boolean
 UpdateType: Immutable
 
 ```yaml
@@ -118,9 +124,15 @@ Accept wildcard characters: False
 ```
 
 ### -Name
-Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-apigateway-apikey.html#cfn-apigateway-apikey-name    
-PrimitiveType: String    
-Required: False    
+A name for the API key.
+If you don't specify a name, AWS CloudFormation generates a unique physical ID and uses that ID for the API key name.
+For more information, see Name Type: https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-name.html.
+If you specify a name, you cannot perform updates that require replacement of this resource.
+You can perform updates that require no or some interruption.
+If you must replace the resource, specify a new name.
+
+Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-apigateway-apikey.html#cfn-apigateway-apikey-name
+PrimitiveType: String
 UpdateType: Immutable
 
 ```yaml
@@ -136,12 +148,32 @@ Accept wildcard characters: False
 ```
 
 ### -StageKeys
-Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-apigateway-apikey.html#cfn-apigateway-apikey-stagekeys    
-DuplicatesAllowed: False    
-ItemType: StageKey    
-Required: False    
-Type: List    
+A list of stages to associate with this API key.
+
+Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-apigateway-apikey.html#cfn-apigateway-apikey-stagekeys
+DuplicatesAllowed: False
+ItemType: StageKey
+Type: List
 UpdateType: Mutable
+
+```yaml
+Type: Object
+Parameter Sets: (All)
+Aliases:
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### -Value
+The value of the API key.
+
+Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-apigateway-apikey.html#cfn-apigateway-apikey-value
+PrimitiveType: String
+UpdateType: Immutable
 
 ```yaml
 Type: Object
@@ -250,15 +282,13 @@ Accept wildcard characters: False
 ```
 
 ### CommonParameters
-This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction, and -WarningVariable.
-For more information, see about_CommonParameters (http://go.microsoft.com/fwlink/?LinkID=113216).
+This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction, and -WarningVariable. For more information, see [about_CommonParameters](http://go.microsoft.com/fwlink/?LinkID=113216).
 
 ## INPUTS
 
 ## OUTPUTS
 
 ### Vaporshell.Resource.ApiGateway.ApiKey
-
 ## NOTES
 
 ## RELATED LINKS

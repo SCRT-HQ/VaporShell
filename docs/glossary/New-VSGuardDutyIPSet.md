@@ -1,18 +1,9 @@
----
-layout: glossary
-title: New-VSGuardDutyIPSet
-categories: glossary
-label1: Category
-data1: Documentation
-label2: Depth
-data2: Deep
-schema: 2.0.0
----
-
 # New-VSGuardDutyIPSet
 
 ## SYNOPSIS
-Adds an AWS::GuardDuty::IPSet resource to the template
+Adds an AWS::GuardDuty::IPSet resource to the template.
+The AWS::GuardDuty::IPSet resource specifies a new IPSet.
+An IPSet is a list of trusted IP addresses from which secure communication is allowed with AWS infrastructure and applications.
 
 ## SYNTAX
 
@@ -23,7 +14,18 @@ New-VSGuardDutyIPSet [-LogicalId] <String> -Format <Object> -Activate <Boolean> 
 ```
 
 ## DESCRIPTION
-Adds an AWS::GuardDuty::IPSet resource to the template
+Adds an AWS::GuardDuty::IPSet resource to the template.
+The AWS::GuardDuty::IPSet resource specifies a new IPSet.
+An IPSet is a list of trusted IP addresses from which secure communication is allowed with AWS infrastructure and applications.
+
+## EXAMPLES
+
+### Example 1
+```powershell
+PS C:\> {{ Add example code here }}
+```
+
+{{ Add example description here }}
 
 ## PARAMETERS
 
@@ -45,9 +47,10 @@ Accept wildcard characters: False
 ```
 
 ### -Format
-Required: True    
-Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-guardduty-ipset.html#cfn-guardduty-ipset-format    
-PrimitiveType: String    
+The format of the file that contains the IPSet.
+
+Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-guardduty-ipset.html#cfn-guardduty-ipset-format
+PrimitiveType: String
 UpdateType: Immutable
 
 ```yaml
@@ -63,9 +66,10 @@ Accept wildcard characters: False
 ```
 
 ### -Activate
-Required: True    
-Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-guardduty-ipset.html#cfn-guardduty-ipset-activate    
-PrimitiveType: Boolean    
+Indicated whether or not GuardDuty uses the IPSet.
+
+Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-guardduty-ipset.html#cfn-guardduty-ipset-activate
+PrimitiveType: Boolean
 UpdateType: Mutable
 
 ```yaml
@@ -81,9 +85,10 @@ Accept wildcard characters: False
 ```
 
 ### -DetectorId
-Required: True    
-Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-guardduty-ipset.html#cfn-guardduty-ipset-detectorid    
-PrimitiveType: String    
+The unique ID of the detector for the GuardDuty service to associate the IPSet with.
+
+Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-guardduty-ipset.html#cfn-guardduty-ipset-detectorid
+PrimitiveType: String
 UpdateType: Immutable
 
 ```yaml
@@ -99,9 +104,11 @@ Accept wildcard characters: False
 ```
 
 ### -Name
-Required: False    
-Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-guardduty-ipset.html#cfn-guardduty-ipset-name    
-PrimitiveType: String    
+The name for the IPSet.
+This name is displayed in all findings that are triggered by activity associated with the IP addresses included in this IPSet.
+
+Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-guardduty-ipset.html#cfn-guardduty-ipset-name
+PrimitiveType: String
 UpdateType: Mutable
 
 ```yaml
@@ -117,9 +124,10 @@ Accept wildcard characters: False
 ```
 
 ### -Location
-Required: True    
-Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-guardduty-ipset.html#cfn-guardduty-ipset-location    
-PrimitiveType: String    
+The URI of the file that contains the IPSet.
+
+Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-guardduty-ipset.html#cfn-guardduty-ipset-location
+PrimitiveType: String
 UpdateType: Mutable
 
 ```yaml
@@ -229,15 +237,13 @@ Accept wildcard characters: False
 ```
 
 ### CommonParameters
-This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction, and -WarningVariable.
-For more information, see about_CommonParameters (http://go.microsoft.com/fwlink/?LinkID=113216).
+This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction, and -WarningVariable. For more information, see [about_CommonParameters](http://go.microsoft.com/fwlink/?LinkID=113216).
 
 ## INPUTS
 
 ## OUTPUTS
 
 ### Vaporshell.Resource.GuardDuty.IPSet
-
 ## NOTES
 
 ## RELATED LINKS

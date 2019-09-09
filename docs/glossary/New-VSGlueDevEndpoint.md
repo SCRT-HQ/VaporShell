@@ -1,30 +1,33 @@
----
-layout: glossary
-title: New-VSGlueDevEndpoint
-categories: glossary
-label1: Category
-data1: Documentation
-label2: Depth
-data2: Deep
-schema: 2.0.0
----
-
 # New-VSGlueDevEndpoint
 
 ## SYNOPSIS
-Adds an AWS::Glue::DevEndpoint resource to the template
+Adds an AWS::Glue::DevEndpoint resource to the template.
+The AWS::Glue::DevEndpoint resource specifies a development endpoint where a developer can remotely debug ETL scripts for AWS Glue.
+For more information, see DevEndpoint Structure: https://docs.aws.amazon.com/glue/latest/dg/aws-glue-api-jobs-dev-endpoint.html#aws-glue-api-jobs-dev-endpoint-DevEndpoint in the AWS Glue Developer Guide.
 
 ## SYNTAX
 
 ```
 New-VSGlueDevEndpoint [-LogicalId] <String> [-ExtraJarsS3Path <Object>] [-EndpointName <Object>]
- -PublicKey <Object> [-NumberOfNodes <Int32>] [-SubnetId <Object>] [-ExtraPythonLibsS3Path <Object>]
- [-SecurityGroupIds <Object>] -RoleArn <Object> [-DeletionPolicy <String>] [-DependsOn <String[]>]
- [-Metadata <Object>] [-UpdatePolicy <Object>] [-Condition <Object>] [<CommonParameters>]
+ [-PublicKey <Object>] [-NumberOfNodes <Int32>] [-SubnetId <Object>] [-ExtraPythonLibsS3Path <Object>]
+ [-SecurityConfiguration <Object>] [-SecurityGroupIds <Object>] -RoleArn <Object> [-Tags <Object>]
+ [-DeletionPolicy <String>] [-DependsOn <String[]>] [-Metadata <Object>] [-UpdatePolicy <Object>]
+ [-Condition <Object>] [<CommonParameters>]
 ```
 
 ## DESCRIPTION
-Adds an AWS::Glue::DevEndpoint resource to the template
+Adds an AWS::Glue::DevEndpoint resource to the template.
+The AWS::Glue::DevEndpoint resource specifies a development endpoint where a developer can remotely debug ETL scripts for AWS Glue.
+For more information, see DevEndpoint Structure: https://docs.aws.amazon.com/glue/latest/dg/aws-glue-api-jobs-dev-endpoint.html#aws-glue-api-jobs-dev-endpoint-DevEndpoint in the AWS Glue Developer Guide.
+
+## EXAMPLES
+
+### Example 1
+```powershell
+PS C:\> {{ Add example code here }}
+```
+
+{{ Add example description here }}
 
 ## PARAMETERS
 
@@ -46,9 +49,11 @@ Accept wildcard characters: False
 ```
 
 ### -ExtraJarsS3Path
-Required: False    
-Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-glue-devendpoint.html#cfn-glue-devendpoint-extrajarss3path    
-PrimitiveType: String    
+The path to one or more Java .jar files in an S3 bucket that should be loaded in your DevEndpoint.
+You can only use pure Java/Scala libraries with a DevEndpoint.
+
+Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-glue-devendpoint.html#cfn-glue-devendpoint-extrajarss3path
+PrimitiveType: String
 UpdateType: Mutable
 
 ```yaml
@@ -64,9 +69,10 @@ Accept wildcard characters: False
 ```
 
 ### -EndpointName
-Required: False    
-Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-glue-devendpoint.html#cfn-glue-devendpoint-endpointname    
-PrimitiveType: String    
+The name of the DevEndpoint.
+
+Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-glue-devendpoint.html#cfn-glue-devendpoint-endpointname
+PrimitiveType: String
 UpdateType: Immutable
 
 ```yaml
@@ -82,9 +88,11 @@ Accept wildcard characters: False
 ```
 
 ### -PublicKey
-Required: True    
-Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-glue-devendpoint.html#cfn-glue-devendpoint-publickey    
-PrimitiveType: String    
+The public key to be used by this DevEndpoint for authentication.
+This attribute is provided for backward compatibility because the recommended attribute to use is public keys.
+
+Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-glue-devendpoint.html#cfn-glue-devendpoint-publickey
+PrimitiveType: String
 UpdateType: Mutable
 
 ```yaml
@@ -92,7 +100,7 @@ Type: Object
 Parameter Sets: (All)
 Aliases:
 
-Required: True
+Required: False
 Position: Named
 Default value: None
 Accept pipeline input: False
@@ -100,9 +108,10 @@ Accept wildcard characters: False
 ```
 
 ### -NumberOfNodes
-Required: False    
-Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-glue-devendpoint.html#cfn-glue-devendpoint-numberofnodes    
-PrimitiveType: Integer    
+The number of AWS Glue Data Processing Units DPUs allocated to this DevEndpoint.
+
+Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-glue-devendpoint.html#cfn-glue-devendpoint-numberofnodes
+PrimitiveType: Integer
 UpdateType: Mutable
 
 ```yaml
@@ -118,9 +127,10 @@ Accept wildcard characters: False
 ```
 
 ### -SubnetId
-Required: False    
-Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-glue-devendpoint.html#cfn-glue-devendpoint-subnetid    
-PrimitiveType: String    
+The subnet ID for this DevEndpoint.
+
+Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-glue-devendpoint.html#cfn-glue-devendpoint-subnetid
+PrimitiveType: String
 UpdateType: Mutable
 
 ```yaml
@@ -136,9 +146,32 @@ Accept wildcard characters: False
 ```
 
 ### -ExtraPythonLibsS3Path
-Required: False    
-Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-glue-devendpoint.html#cfn-glue-devendpoint-extrapythonlibss3path    
-PrimitiveType: String    
+The paths to one or more Python libraries in an Amazon S3 bucket that should be loaded in your DevEndpoint.
+Multiple values must be complete paths separated by a comma.
+You can only use pure Python libraries with a DevEndpoint.
+Libraries that rely on C extensions, such as the pandas: http://pandas.pydata.org/ Python data analysis library, are not currently supported.
+
+Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-glue-devendpoint.html#cfn-glue-devendpoint-extrapythonlibss3path
+PrimitiveType: String
+UpdateType: Mutable
+
+```yaml
+Type: Object
+Parameter Sets: (All)
+Aliases:
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### -SecurityConfiguration
+The name of the SecurityConfiguration structure to be used with this DevEndpoint.
+
+Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-glue-devendpoint.html#cfn-glue-devendpoint-securityconfiguration
+PrimitiveType: String
 UpdateType: Mutable
 
 ```yaml
@@ -154,10 +187,11 @@ Accept wildcard characters: False
 ```
 
 ### -SecurityGroupIds
-PrimitiveItemType: String    
-Type: List    
-Required: False    
-Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-glue-devendpoint.html#cfn-glue-devendpoint-securitygroupids    
+A list of security group identifiers used in this DevEndpoint.
+
+PrimitiveItemType: String
+Type: List
+Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-glue-devendpoint.html#cfn-glue-devendpoint-securitygroupids
 UpdateType: Mutable
 
 ```yaml
@@ -173,9 +207,10 @@ Accept wildcard characters: False
 ```
 
 ### -RoleArn
-Required: True    
-Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-glue-devendpoint.html#cfn-glue-devendpoint-rolearn    
-PrimitiveType: String    
+The Amazon Resource Name ARN of the IAM role used in this DevEndpoint.
+
+Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-glue-devendpoint.html#cfn-glue-devendpoint-rolearn
+PrimitiveType: String
 UpdateType: Mutable
 
 ```yaml
@@ -184,6 +219,27 @@ Parameter Sets: (All)
 Aliases:
 
 Required: True
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### -Tags
+The tags to use with this DevEndpoint.
+You can use tags to limit access to the DevEndpoint.
+For more information about tags in AWS Glue, see AWS Tags in AWS Glue: https://docs.aws.amazon.com/glue/latest/dg/monitor-tags.html in the developer guide.
+
+Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-glue-devendpoint.html#cfn-glue-devendpoint-tags
+PrimitiveType: Json
+UpdateType: Mutable
+
+```yaml
+Type: Object
+Parameter Sets: (All)
+Aliases:
+
+Required: False
 Position: Named
 Default value: None
 Accept pipeline input: False
@@ -285,15 +341,13 @@ Accept wildcard characters: False
 ```
 
 ### CommonParameters
-This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction, and -WarningVariable.
-For more information, see about_CommonParameters (http://go.microsoft.com/fwlink/?LinkID=113216).
+This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction, and -WarningVariable. For more information, see [about_CommonParameters](http://go.microsoft.com/fwlink/?LinkID=113216).
 
 ## INPUTS
 
 ## OUTPUTS
 
 ### Vaporshell.Resource.Glue.DevEndpoint
-
 ## NOTES
 
 ## RELATED LINKS

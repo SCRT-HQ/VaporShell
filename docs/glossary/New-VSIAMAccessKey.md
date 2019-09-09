@@ -1,18 +1,9 @@
----
-layout: glossary
-title: New-VSIAMAccessKey
-categories: glossary
-label1: Category
-data1: Documentation
-label2: Depth
-data2: Deep
-schema: 2.0.0
----
-
 # New-VSIAMAccessKey
 
 ## SYNOPSIS
-Adds an AWS::IAM::AccessKey resource to the template
+Adds an AWS::IAM::AccessKey resource to the template.
+Creates a new AWS secret access key and corresponding AWS access key ID for the specified user.
+The default status for new keys is Active.
 
 ## SYNTAX
 
@@ -23,7 +14,31 @@ New-VSIAMAccessKey [-LogicalId] <String> [-Serial <Int32>] [-Status <Object>] -U
 ```
 
 ## DESCRIPTION
-Adds an AWS::IAM::AccessKey resource to the template
+Adds an AWS::IAM::AccessKey resource to the template.
+Creates a new AWS secret access key and corresponding AWS access key ID for the specified user.
+The default status for new keys is Active.
+
+If you do not specify a user name, IAM determines the user name implicitly based on the AWS access key ID signing the request.
+This operation works for access keys under the AWS account.
+Consequently, you can use this operation to manage AWS account root user credentials.
+This is true even if the AWS account has no associated users.
+
+For information about limits on the number of keys you can create, see Limitations on IAM Entities: https://docs.aws.amazon.com/IAM/latest/UserGuide/LimitationsOnEntities.html in the *IAM User Guide*.
+
+**Important**
+
+To ensure the security of your AWS account, the secret access key is accessible only during key and user creation.
+You must save the key (for example, in a text file if you want to be able to access it again.
+If a secret key is lost, you can delete the access keys for the associated user and then create new keys.
+
+## EXAMPLES
+
+### Example 1
+```powershell
+PS C:\> {{ Add example code here }}
+```
+
+{{ Add example description here }}
 
 ## PARAMETERS
 
@@ -45,9 +60,12 @@ Accept wildcard characters: False
 ```
 
 ### -Serial
-Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iam-accesskey.html#cfn-iam-accesskey-serial    
-PrimitiveType: Integer    
-Required: False    
+This value is specific to CloudFormation and can only be *incremented*.
+Incrementing this value notifies CloudFormation that you want to rotate your access key.
+When you update your stack, CloudFormation will replace the existing access key with a new key.
+
+Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iam-accesskey.html#cfn-iam-accesskey-serial
+PrimitiveType: Integer
 UpdateType: Immutable
 
 ```yaml
@@ -63,9 +81,11 @@ Accept wildcard characters: False
 ```
 
 ### -Status
-Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iam-accesskey.html#cfn-iam-accesskey-status    
-PrimitiveType: String    
-Required: False    
+The status of the access key.
+Active means that the key is valid for API calls, while Inactive means it is not.
+
+Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iam-accesskey.html#cfn-iam-accesskey-status
+PrimitiveType: String
 UpdateType: Mutable
 
 ```yaml
@@ -81,9 +101,12 @@ Accept wildcard characters: False
 ```
 
 ### -UserName
-Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iam-accesskey.html#cfn-iam-accesskey-username    
-PrimitiveType: String    
-Required: True    
+The name of the IAM user that the new key will belong to.
+This parameter allows through its regex pattern: http://wikipedia.org/wiki/regex a string of characters consisting of upper and lowercase alphanumeric characters with no spaces.
+You can also include any of the following characters: _+=,.@-
+
+Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iam-accesskey.html#cfn-iam-accesskey-username
+PrimitiveType: String
 UpdateType: Immutable
 
 ```yaml
@@ -193,15 +216,13 @@ Accept wildcard characters: False
 ```
 
 ### CommonParameters
-This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction, and -WarningVariable.
-For more information, see about_CommonParameters (http://go.microsoft.com/fwlink/?LinkID=113216).
+This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction, and -WarningVariable. For more information, see [about_CommonParameters](http://go.microsoft.com/fwlink/?LinkID=113216).
 
 ## INPUTS
 
 ## OUTPUTS
 
 ### Vaporshell.Resource.IAM.AccessKey
-
 ## NOTES
 
 ## RELATED LINKS

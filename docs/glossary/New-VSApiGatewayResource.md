@@ -1,18 +1,8 @@
----
-layout: glossary
-title: New-VSApiGatewayResource
-categories: glossary
-label1: Category
-data1: Documentation
-label2: Depth
-data2: Deep
-schema: 2.0.0
----
-
 # New-VSApiGatewayResource
 
 ## SYNOPSIS
-Adds an AWS::ApiGateway::Resource resource to the template
+Adds an AWS::ApiGateway::Resource resource to the template.
+The AWS::ApiGateway::Resource resource creates a resource in an API.
 
 ## SYNTAX
 
@@ -23,7 +13,17 @@ New-VSApiGatewayResource [-LogicalId] <String> -ParentId <Object> -PathPart <Obj
 ```
 
 ## DESCRIPTION
-Adds an AWS::ApiGateway::Resource resource to the template
+Adds an AWS::ApiGateway::Resource resource to the template.
+The AWS::ApiGateway::Resource resource creates a resource in an API.
+
+## EXAMPLES
+
+### Example 1
+```powershell
+PS C:\> {{ Add example code here }}
+```
+
+{{ Add example description here }}
 
 ## PARAMETERS
 
@@ -45,9 +45,11 @@ Accept wildcard characters: False
 ```
 
 ### -ParentId
-Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-apigateway-resource.html#cfn-apigateway-resource-parentid    
-PrimitiveType: String    
-Required: True    
+If you want to create a child resource, the ID of the parent resource.
+For resources without a parent, specify the RestApi root resource ID, such as { "Fn::GetAtt": "MyRestApi", "RootResourceId"\] }.
+
+Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-apigateway-resource.html#cfn-apigateway-resource-parentid
+PrimitiveType: String
 UpdateType: Immutable
 
 ```yaml
@@ -63,9 +65,10 @@ Accept wildcard characters: False
 ```
 
 ### -PathPart
-Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-apigateway-resource.html#cfn-apigateway-resource-pathpart    
-PrimitiveType: String    
-Required: True    
+A path name for the resource.
+
+Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-apigateway-resource.html#cfn-apigateway-resource-pathpart
+PrimitiveType: String
 UpdateType: Immutable
 
 ```yaml
@@ -81,9 +84,10 @@ Accept wildcard characters: False
 ```
 
 ### -RestApiId
-Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-apigateway-resource.html#cfn-apigateway-resource-restapiid    
-PrimitiveType: String    
-Required: True    
+The ID of the RestApi: https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-apigateway-restapi.html resource in which you want to create this resource.
+
+Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-apigateway-resource.html#cfn-apigateway-resource-restapiid
+PrimitiveType: String
 UpdateType: Immutable
 
 ```yaml
@@ -193,15 +197,13 @@ Accept wildcard characters: False
 ```
 
 ### CommonParameters
-This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction, and -WarningVariable.
-For more information, see about_CommonParameters (http://go.microsoft.com/fwlink/?LinkID=113216).
+This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction, and -WarningVariable. For more information, see [about_CommonParameters](http://go.microsoft.com/fwlink/?LinkID=113216).
 
 ## INPUTS
 
 ## OUTPUTS
 
 ### Vaporshell.Resource.ApiGateway.Resource
-
 ## NOTES
 
 ## RELATED LINKS

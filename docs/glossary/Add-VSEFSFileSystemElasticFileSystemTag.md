@@ -1,18 +1,10 @@
----
-layout: glossary
-title: Add-VSEFSFileSystemElasticFileSystemTag
-categories: glossary
-label1: Category
-data1: Documentation
-label2: Depth
-data2: Deep
-schema: 2.0.0
----
-
 # Add-VSEFSFileSystemElasticFileSystemTag
 
 ## SYNOPSIS
-Adds an AWS::EFS::FileSystem.ElasticFileSystemTag resource property to the template
+Adds an AWS::EFS::FileSystem.ElasticFileSystemTag resource property to the template.
+A tag is a key-value pair attached to a file system.
+Allowed characters in the Key and Value properties are letters, white space, and numbers that can be represented in UTF-8, and the following characters: + - = .
+_ : /
 
 ## SYNTAX
 
@@ -21,14 +13,28 @@ Add-VSEFSFileSystemElasticFileSystemTag [-Key] <Object> [-Value] <Object> [<Comm
 ```
 
 ## DESCRIPTION
-Adds an AWS::EFS::FileSystem.ElasticFileSystemTag resource property to the template
+Adds an AWS::EFS::FileSystem.ElasticFileSystemTag resource property to the template.
+A tag is a key-value pair attached to a file system.
+Allowed characters in the Key and Value properties are letters, white space, and numbers that can be represented in UTF-8, and the following characters: + - = .
+_ : /
+
+## EXAMPLES
+
+### Example 1
+```powershell
+PS C:\> {{ Add example code here }}
+```
+
+{{ Add example description here }}
 
 ## PARAMETERS
 
 ### -Key
-Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-efs-filesystem-filesystemtags.html#cfn-efs-filesystem-filesystemtags-key    
-PrimitiveType: String    
-Required: True    
+The tag key String.
+The key can't start with aws:.
+
+Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-efs-filesystem-filesystemtags.html#cfn-efs-filesystem-filesystemtags-key
+PrimitiveType: String
 UpdateType: Mutable
 
 ```yaml
@@ -44,9 +50,10 @@ Accept wildcard characters: False
 ```
 
 ### -Value
-Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-efs-filesystem-filesystemtags.html#cfn-efs-filesystem-filesystemtags-value    
-PrimitiveType: String    
-Required: True    
+The value of the tag key.
+
+Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-efs-filesystem-filesystemtags.html#cfn-efs-filesystem-filesystemtags-value
+PrimitiveType: String
 UpdateType: Mutable
 
 ```yaml
@@ -62,15 +69,13 @@ Accept wildcard characters: False
 ```
 
 ### CommonParameters
-This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction, and -WarningVariable.
-For more information, see about_CommonParameters (http://go.microsoft.com/fwlink/?LinkID=113216).
+This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction, and -WarningVariable. For more information, see [about_CommonParameters](http://go.microsoft.com/fwlink/?LinkID=113216).
 
 ## INPUTS
 
 ## OUTPUTS
 
 ### Vaporshell.Resource.EFS.FileSystem.ElasticFileSystemTag
-
 ## NOTES
 
 ## RELATED LINKS

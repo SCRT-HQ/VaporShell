@@ -1,18 +1,10 @@
----
-layout: glossary
-title: Add-VSAutoScalingPlansScalingPlanMetricDimension
-categories: glossary
-label1: Category
-data1: Documentation
-label2: Depth
-data2: Deep
-schema: 2.0.0
----
-
 # Add-VSAutoScalingPlansScalingPlanMetricDimension
 
 ## SYNOPSIS
-Adds an AWS::AutoScalingPlans::ScalingPlan.MetricDimension resource property to the template
+Adds an AWS::AutoScalingPlans::ScalingPlan.MetricDimension resource property to the template.
+MetricDimension is a subproperty of CustomizedScalingMetricSpecification: https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-autoscalingplans-scalingplan-customizedscalingmetricspecification.html that specifies a dimension for a customized metric to use with AWS Auto Scaling.
+Dimensions are arbitrary name/value pairs that can be associated with a CloudWatch metric.
+Duplicate dimensions are not allowed.
 
 ## SYNTAX
 
@@ -21,14 +13,27 @@ Add-VSAutoScalingPlansScalingPlanMetricDimension [-Value] <Object> [-Name] <Obje
 ```
 
 ## DESCRIPTION
-Adds an AWS::AutoScalingPlans::ScalingPlan.MetricDimension resource property to the template
+Adds an AWS::AutoScalingPlans::ScalingPlan.MetricDimension resource property to the template.
+MetricDimension is a subproperty of CustomizedScalingMetricSpecification: https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-autoscalingplans-scalingplan-customizedscalingmetricspecification.html that specifies a dimension for a customized metric to use with AWS Auto Scaling.
+Dimensions are arbitrary name/value pairs that can be associated with a CloudWatch metric.
+Duplicate dimensions are not allowed.
+
+## EXAMPLES
+
+### Example 1
+```powershell
+PS C:\> {{ Add example code here }}
+```
+
+{{ Add example description here }}
 
 ## PARAMETERS
 
 ### -Value
-Required: True    
-Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-autoscalingplans-scalingplan-metricdimension.html#cfn-autoscalingplans-scalingplan-metricdimension-value    
-PrimitiveType: String    
+The value of the dimension.
+
+Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-autoscalingplans-scalingplan-metricdimension.html#cfn-autoscalingplans-scalingplan-metricdimension-value
+PrimitiveType: String
 UpdateType: Mutable
 
 ```yaml
@@ -44,9 +49,10 @@ Accept wildcard characters: False
 ```
 
 ### -Name
-Required: True    
-Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-autoscalingplans-scalingplan-metricdimension.html#cfn-autoscalingplans-scalingplan-metricdimension-name    
-PrimitiveType: String    
+The name of the dimension.
+
+Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-autoscalingplans-scalingplan-metricdimension.html#cfn-autoscalingplans-scalingplan-metricdimension-name
+PrimitiveType: String
 UpdateType: Mutable
 
 ```yaml
@@ -62,15 +68,13 @@ Accept wildcard characters: False
 ```
 
 ### CommonParameters
-This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction, and -WarningVariable.
-For more information, see about_CommonParameters (http://go.microsoft.com/fwlink/?LinkID=113216).
+This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction, and -WarningVariable. For more information, see [about_CommonParameters](http://go.microsoft.com/fwlink/?LinkID=113216).
 
 ## INPUTS
 
 ## OUTPUTS
 
 ### Vaporshell.Resource.AutoScalingPlans.ScalingPlan.MetricDimension
-
 ## NOTES
 
 ## RELATED LINKS

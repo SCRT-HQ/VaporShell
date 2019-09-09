@@ -1,18 +1,8 @@
----
-layout: glossary
-title: New-VSElasticLoadBalancingV2ListenerCertificate
-categories: glossary
-label1: Category
-data1: Documentation
-label2: Depth
-data2: Deep
-schema: 2.0.0
----
-
 # New-VSElasticLoadBalancingV2ListenerCertificate
 
 ## SYNOPSIS
-Adds an AWS::ElasticLoadBalancingV2::ListenerCertificate resource to the template
+Adds an AWS::ElasticLoadBalancingV2::ListenerCertificate resource to the template.
+Specifies a certificate list for an HTTPS listener.
 
 ## SYNTAX
 
@@ -23,7 +13,17 @@ New-VSElasticLoadBalancingV2ListenerCertificate [-LogicalId] <String> -Certifica
 ```
 
 ## DESCRIPTION
-Adds an AWS::ElasticLoadBalancingV2::ListenerCertificate resource to the template
+Adds an AWS::ElasticLoadBalancingV2::ListenerCertificate resource to the template.
+Specifies a certificate list for an HTTPS listener.
+
+## EXAMPLES
+
+### Example 1
+```powershell
+PS C:\> {{ Add example code here }}
+```
+
+{{ Add example description here }}
 
 ## PARAMETERS
 
@@ -45,11 +45,13 @@ Accept wildcard characters: False
 ```
 
 ### -Certificates
-Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-elasticloadbalancingv2-listenercertificate.html#cfn-elasticloadbalancingv2-listenercertificate-certificates    
-DuplicatesAllowed: False    
-ItemType: Certificate    
-Required: True    
-Type: List    
+The certificates to add.
+Duplicates are not allowed.
+
+Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-elasticloadbalancingv2-listenercertificate.html#cfn-elasticloadbalancingv2-listenercertificate-certificates
+DuplicatesAllowed: False
+ItemType: Certificate
+Type: List
 UpdateType: Immutable
 
 ```yaml
@@ -65,9 +67,10 @@ Accept wildcard characters: False
 ```
 
 ### -ListenerArn
-Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-elasticloadbalancingv2-listenercertificate.html#cfn-elasticloadbalancingv2-listenercertificate-listenerarn    
-PrimitiveType: String    
-Required: True    
+The Amazon Resource Name ARN of the listener.
+
+Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-elasticloadbalancingv2-listenercertificate.html#cfn-elasticloadbalancingv2-listenercertificate-listenerarn
+PrimitiveType: String
 UpdateType: Immutable
 
 ```yaml
@@ -177,15 +180,13 @@ Accept wildcard characters: False
 ```
 
 ### CommonParameters
-This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction, and -WarningVariable.
-For more information, see about_CommonParameters (http://go.microsoft.com/fwlink/?LinkID=113216).
+This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction, and -WarningVariable. For more information, see [about_CommonParameters](http://go.microsoft.com/fwlink/?LinkID=113216).
 
 ## INPUTS
 
 ## OUTPUTS
 
 ### Vaporshell.Resource.ElasticLoadBalancingV2.ListenerCertificate
-
 ## NOTES
 
 ## RELATED LINKS

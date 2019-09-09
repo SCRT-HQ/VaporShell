@@ -1,18 +1,8 @@
----
-layout: glossary
-title: New-VSApiGatewayModel
-categories: glossary
-label1: Category
-data1: Documentation
-label2: Depth
-data2: Deep
-schema: 2.0.0
----
-
 # New-VSApiGatewayModel
 
 ## SYNOPSIS
-Adds an AWS::ApiGateway::Model resource to the template
+Adds an AWS::ApiGateway::Model resource to the template.
+The AWS::ApiGateway::Model resource defines the structure of a request or response payload for an API method.
 
 ## SYNTAX
 
@@ -23,7 +13,17 @@ New-VSApiGatewayModel [-LogicalId] <String> [-ContentType <Object>] [-Descriptio
 ```
 
 ## DESCRIPTION
-Adds an AWS::ApiGateway::Model resource to the template
+Adds an AWS::ApiGateway::Model resource to the template.
+The AWS::ApiGateway::Model resource defines the structure of a request or response payload for an API method.
+
+## EXAMPLES
+
+### Example 1
+```powershell
+PS C:\> {{ Add example code here }}
+```
+
+{{ Add example description here }}
 
 ## PARAMETERS
 
@@ -45,9 +45,10 @@ Accept wildcard characters: False
 ```
 
 ### -ContentType
-Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-apigateway-model.html#cfn-apigateway-model-contenttype    
-PrimitiveType: String    
-Required: False    
+The content type for the model.
+
+Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-apigateway-model.html#cfn-apigateway-model-contenttype
+PrimitiveType: String
 UpdateType: Immutable
 
 ```yaml
@@ -63,9 +64,10 @@ Accept wildcard characters: False
 ```
 
 ### -Description
-Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-apigateway-model.html#cfn-apigateway-model-description    
-PrimitiveType: String    
-Required: False    
+A description that identifies this model.
+
+Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-apigateway-model.html#cfn-apigateway-model-description
+PrimitiveType: String
 UpdateType: Mutable
 
 ```yaml
@@ -81,9 +83,15 @@ Accept wildcard characters: False
 ```
 
 ### -Name
-Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-apigateway-model.html#cfn-apigateway-model-name    
-PrimitiveType: String    
-Required: False    
+A name for the model.
+If you don't specify a name, AWS CloudFormation generates a unique physical ID and uses that ID for the model name.
+For more information, see Name Type: https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-name.html.
+If you specify a name, you cannot perform updates that require replacement of this resource.
+You can perform updates that require no or some interruption.
+If you must replace the resource, specify a new name.
+
+Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-apigateway-model.html#cfn-apigateway-model-name
+PrimitiveType: String
 UpdateType: Immutable
 
 ```yaml
@@ -99,9 +107,10 @@ Accept wildcard characters: False
 ```
 
 ### -RestApiId
-Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-apigateway-model.html#cfn-apigateway-model-restapiid    
-PrimitiveType: String    
-Required: True    
+The ID of a REST API with which to associate this model.
+
+Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-apigateway-model.html#cfn-apigateway-model-restapiid
+PrimitiveType: String
 UpdateType: Immutable
 
 ```yaml
@@ -117,9 +126,11 @@ Accept wildcard characters: False
 ```
 
 ### -Schema
-Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-apigateway-model.html#cfn-apigateway-model-schema    
-PrimitiveType: Json    
-Required: False    
+The schema to use to transform data to one or more output formats.
+Specify null {} if you don't want to specify a schema.
+
+Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-apigateway-model.html#cfn-apigateway-model-schema
+PrimitiveType: Json
 UpdateType: Mutable
 
 ```yaml
@@ -229,15 +240,13 @@ Accept wildcard characters: False
 ```
 
 ### CommonParameters
-This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction, and -WarningVariable.
-For more information, see about_CommonParameters (http://go.microsoft.com/fwlink/?LinkID=113216).
+This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction, and -WarningVariable. For more information, see [about_CommonParameters](http://go.microsoft.com/fwlink/?LinkID=113216).
 
 ## INPUTS
 
 ## OUTPUTS
 
 ### Vaporshell.Resource.ApiGateway.Model
-
 ## NOTES
 
 ## RELATED LINKS

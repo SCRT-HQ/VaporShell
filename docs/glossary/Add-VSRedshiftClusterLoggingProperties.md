@@ -1,18 +1,8 @@
----
-layout: glossary
-title: Add-VSRedshiftClusterLoggingProperties
-categories: glossary
-label1: Category
-data1: Documentation
-label2: Depth
-data2: Deep
-schema: 2.0.0
----
-
 # Add-VSRedshiftClusterLoggingProperties
 
 ## SYNOPSIS
-Adds an AWS::Redshift::Cluster.LoggingProperties resource property to the template
+Adds an AWS::Redshift::Cluster.LoggingProperties resource property to the template.
+Specifies logging information, such as queries and connection attempts, for the specified Amazon Redshift cluster.
 
 ## SYNTAX
 
@@ -21,14 +11,28 @@ Add-VSRedshiftClusterLoggingProperties [-BucketName] <Object> [[-S3KeyPrefix] <O
 ```
 
 ## DESCRIPTION
-Adds an AWS::Redshift::Cluster.LoggingProperties resource property to the template
+Adds an AWS::Redshift::Cluster.LoggingProperties resource property to the template.
+Specifies logging information, such as queries and connection attempts, for the specified Amazon Redshift cluster.
+
+## EXAMPLES
+
+### Example 1
+```powershell
+PS C:\> {{ Add example code here }}
+```
+
+{{ Add example description here }}
 
 ## PARAMETERS
 
 ### -BucketName
-Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-redshift-cluster-loggingproperties.html#cfn-redshift-cluster-loggingproperties-bucketname    
-PrimitiveType: String    
-Required: True    
+The name of an existing S3 bucket where the log files are to be stored.
+Constraints:
++ Must be in the same region as the cluster
++ The cluster must have read bucket and put object permissions
+
+Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-redshift-cluster-loggingproperties.html#cfn-redshift-cluster-loggingproperties-bucketname
+PrimitiveType: String
 UpdateType: Mutable
 
 ```yaml
@@ -44,9 +48,19 @@ Accept wildcard characters: False
 ```
 
 ### -S3KeyPrefix
-Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-redshift-cluster-loggingproperties.html#cfn-redshift-cluster-loggingproperties-s3keyprefix    
-PrimitiveType: String    
-Required: False    
+The prefix applied to the log file names.
+Constraints:
++ Cannot exceed 512 characters
++ Cannot contain spaces , double quotes ", single quotes ', a backslash , or control characters.
+The hexadecimal codes for invalid characters are:
++ x00 to x20
++ x22
++ x27
++ x5c
++ x7f or larger
+
+Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-redshift-cluster-loggingproperties.html#cfn-redshift-cluster-loggingproperties-s3keyprefix
+PrimitiveType: String
 UpdateType: Mutable
 
 ```yaml
@@ -62,15 +76,13 @@ Accept wildcard characters: False
 ```
 
 ### CommonParameters
-This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction, and -WarningVariable.
-For more information, see about_CommonParameters (http://go.microsoft.com/fwlink/?LinkID=113216).
+This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction, and -WarningVariable. For more information, see [about_CommonParameters](http://go.microsoft.com/fwlink/?LinkID=113216).
 
 ## INPUTS
 
 ## OUTPUTS
 
 ### Vaporshell.Resource.Redshift.Cluster.LoggingProperties
-
 ## NOTES
 
 ## RELATED LINKS

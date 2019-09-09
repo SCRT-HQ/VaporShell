@@ -1,18 +1,11 @@
----
-layout: glossary
-title: New-VSCodeDeployApplication
-categories: glossary
-label1: Category
-data1: Documentation
-label2: Depth
-data2: Deep
-schema: 2.0.0
----
-
 # New-VSCodeDeployApplication
 
 ## SYNOPSIS
-Adds an AWS::CodeDeploy::Application resource to the template
+Adds an AWS::CodeDeploy::Application resource to the template.
+The AWS::CodeDeploy::Application resource creates an AWS CodeDeploy application.
+In CodeDeploy, an application is a name that functions as a container to ensure that the correct combination of revision, deployment configuration, and deployment group are referenced during a deployment.
+You can use the AWS::CodeDeploy::DeploymentGroup resource to associate the application with a CodeDeploy deployment group.
+For more information, see CodeDeploy Deployments: https://docs.aws.amazon.com/codedeploy/latest/userguide/deployment-steps.html in the *AWS CodeDeploy User Guide*.
 
 ## SYNTAX
 
@@ -23,7 +16,20 @@ New-VSCodeDeployApplication [-LogicalId] <String> [-ApplicationName <Object>] [-
 ```
 
 ## DESCRIPTION
-Adds an AWS::CodeDeploy::Application resource to the template
+Adds an AWS::CodeDeploy::Application resource to the template.
+The AWS::CodeDeploy::Application resource creates an AWS CodeDeploy application.
+In CodeDeploy, an application is a name that functions as a container to ensure that the correct combination of revision, deployment configuration, and deployment group are referenced during a deployment.
+You can use the AWS::CodeDeploy::DeploymentGroup resource to associate the application with a CodeDeploy deployment group.
+For more information, see CodeDeploy Deployments: https://docs.aws.amazon.com/codedeploy/latest/userguide/deployment-steps.html in the *AWS CodeDeploy User Guide*.
+
+## EXAMPLES
+
+### Example 1
+```powershell
+PS C:\> {{ Add example code here }}
+```
+
+{{ Add example description here }}
 
 ## PARAMETERS
 
@@ -45,9 +51,13 @@ Accept wildcard characters: False
 ```
 
 ### -ApplicationName
-Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-codedeploy-application.html#cfn-codedeploy-application-applicationname    
-PrimitiveType: String    
-Required: False    
+A name for the application.
+If you don't specify a name, AWS CloudFormation generates a unique physical ID and uses that ID for the application name.
+For more information, see Name Type: https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-name.html.
+Updates to ApplicationName are not supported.
+
+Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-codedeploy-application.html#cfn-codedeploy-application-applicationname
+PrimitiveType: String
 UpdateType: Immutable
 
 ```yaml
@@ -63,9 +73,10 @@ Accept wildcard characters: False
 ```
 
 ### -ComputePlatform
-Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-codedeploy-application.html#cfn-codedeploy-application-computeplatform    
-PrimitiveType: String    
-Required: False    
+The compute platform that CodeDeploy deploys the application to.
+
+Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-codedeploy-application.html#cfn-codedeploy-application-computeplatform
+PrimitiveType: String
 UpdateType: Immutable
 
 ```yaml
@@ -175,15 +186,13 @@ Accept wildcard characters: False
 ```
 
 ### CommonParameters
-This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction, and -WarningVariable.
-For more information, see about_CommonParameters (http://go.microsoft.com/fwlink/?LinkID=113216).
+This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction, and -WarningVariable. For more information, see [about_CommonParameters](http://go.microsoft.com/fwlink/?LinkID=113216).
 
 ## INPUTS
 
 ## OUTPUTS
 
 ### Vaporshell.Resource.CodeDeploy.Application
-
 ## NOTES
 
 ## RELATED LINKS

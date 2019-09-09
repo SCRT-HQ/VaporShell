@@ -1,18 +1,8 @@
----
-layout: glossary
-title: Add-VSIoTTopicRuleKinesisAction
-categories: glossary
-label1: Category
-data1: Documentation
-label2: Depth
-data2: Deep
-schema: 2.0.0
----
-
 # Add-VSIoTTopicRuleKinesisAction
 
 ## SYNOPSIS
-Adds an AWS::IoT::TopicRule.KinesisAction resource property to the template
+Adds an AWS::IoT::TopicRule.KinesisAction resource property to the template.
+Describes an action to write data to an Amazon Kinesis stream.
 
 ## SYNTAX
 
@@ -22,14 +12,25 @@ Add-VSIoTTopicRuleKinesisAction [[-PartitionKey] <Object>] [-RoleArn] <Object> [
 ```
 
 ## DESCRIPTION
-Adds an AWS::IoT::TopicRule.KinesisAction resource property to the template
+Adds an AWS::IoT::TopicRule.KinesisAction resource property to the template.
+Describes an action to write data to an Amazon Kinesis stream.
+
+## EXAMPLES
+
+### Example 1
+```powershell
+PS C:\> {{ Add example code here }}
+```
+
+{{ Add example description here }}
 
 ## PARAMETERS
 
 ### -PartitionKey
-Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iot-topicrule-kinesisaction.html#cfn-iot-topicrule-kinesisaction-partitionkey    
-PrimitiveType: String    
-Required: False    
+The partition key.
+
+Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iot-topicrule-kinesisaction.html#cfn-iot-topicrule-kinesisaction-partitionkey
+PrimitiveType: String
 UpdateType: Mutable
 
 ```yaml
@@ -45,9 +46,10 @@ Accept wildcard characters: False
 ```
 
 ### -RoleArn
-Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iot-topicrule-kinesisaction.html#cfn-iot-topicrule-kinesisaction-rolearn    
-PrimitiveType: String    
-Required: True    
+The ARN of the IAM role that grants access to the Amazon Kinesis stream.
+
+Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iot-topicrule-kinesisaction.html#cfn-iot-topicrule-kinesisaction-rolearn
+PrimitiveType: String
 UpdateType: Mutable
 
 ```yaml
@@ -63,9 +65,10 @@ Accept wildcard characters: False
 ```
 
 ### -StreamName
-Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iot-topicrule-kinesisaction.html#cfn-iot-topicrule-kinesisaction-streamname    
-PrimitiveType: String    
-Required: True    
+The name of the Amazon Kinesis stream.
+
+Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iot-topicrule-kinesisaction.html#cfn-iot-topicrule-kinesisaction-streamname
+PrimitiveType: String
 UpdateType: Mutable
 
 ```yaml
@@ -81,15 +84,13 @@ Accept wildcard characters: False
 ```
 
 ### CommonParameters
-This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction, and -WarningVariable.
-For more information, see about_CommonParameters (http://go.microsoft.com/fwlink/?LinkID=113216).
+This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction, and -WarningVariable. For more information, see [about_CommonParameters](http://go.microsoft.com/fwlink/?LinkID=113216).
 
 ## INPUTS
 
 ## OUTPUTS
 
 ### Vaporshell.Resource.IoT.TopicRule.KinesisAction
-
 ## NOTES
 
 ## RELATED LINKS

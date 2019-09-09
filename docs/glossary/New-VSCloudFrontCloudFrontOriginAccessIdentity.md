@@ -1,18 +1,8 @@
----
-layout: glossary
-title: New-VSCloudFrontCloudFrontOriginAccessIdentity
-categories: glossary
-label1: Category
-data1: Documentation
-label2: Depth
-data2: Deep
-schema: 2.0.0
----
-
 # New-VSCloudFrontCloudFrontOriginAccessIdentity
 
 ## SYNOPSIS
-Adds an AWS::CloudFront::CloudFrontOriginAccessIdentity resource to the template
+Adds an AWS::CloudFront::CloudFrontOriginAccessIdentity resource to the template.
+The request to create a new origin access identity.
 
 ## SYNTAX
 
@@ -23,7 +13,17 @@ New-VSCloudFrontCloudFrontOriginAccessIdentity [-LogicalId] <String>
 ```
 
 ## DESCRIPTION
-Adds an AWS::CloudFront::CloudFrontOriginAccessIdentity resource to the template
+Adds an AWS::CloudFront::CloudFrontOriginAccessIdentity resource to the template.
+The request to create a new origin access identity.
+
+## EXAMPLES
+
+### Example 1
+```powershell
+PS C:\> {{ Add example code here }}
+```
+
+{{ Add example description here }}
 
 ## PARAMETERS
 
@@ -45,9 +45,10 @@ Accept wildcard characters: False
 ```
 
 ### -CloudFrontOriginAccessIdentityConfig
-Type: CloudFrontOriginAccessIdentityConfig    
-Required: True    
-Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-cloudfront-cloudfrontoriginaccessidentity.html#cfn-cloudfront-cloudfrontoriginaccessidentity-cloudfrontoriginaccessidentityconfig    
+The current configuration information for the identity.
+
+Type: CloudFrontOriginAccessIdentityConfig
+Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-cloudfront-cloudfrontoriginaccessidentity.html#cfn-cloudfront-cloudfrontoriginaccessidentity-cloudfrontoriginaccessidentityconfig
 UpdateType: Mutable
 
 ```yaml
@@ -157,15 +158,13 @@ Accept wildcard characters: False
 ```
 
 ### CommonParameters
-This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction, and -WarningVariable.
-For more information, see about_CommonParameters (http://go.microsoft.com/fwlink/?LinkID=113216).
+This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction, and -WarningVariable. For more information, see [about_CommonParameters](http://go.microsoft.com/fwlink/?LinkID=113216).
 
 ## INPUTS
 
 ## OUTPUTS
 
 ### Vaporshell.Resource.CloudFront.CloudFrontOriginAccessIdentity
-
 ## NOTES
 
 ## RELATED LINKS

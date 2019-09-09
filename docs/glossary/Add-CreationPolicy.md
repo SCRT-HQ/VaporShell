@@ -1,14 +1,3 @@
----
-layout: glossary
-title: Add-CreationPolicy
-categories: glossary
-label1: Category
-data1: Documentation
-label2: Depth
-data2: Deep
-schema: 2.0.0
----
-
 # Add-CreationPolicy
 
 ## SYNOPSIS
@@ -51,6 +40,66 @@ Currently, the only AWS CloudFormation resources that support creation policies 
 Use the CreationPolicy attribute when you want to wait on resource configuration actions before stack creation proceeds.
 For example, if you install and configure software applications on an EC2 instance, you might want those applications to be running before proceeding.
 In such cases, you can add a CreationPolicy attribute to the instance, and then send a success signal to the instance after the applications are installed and configured.
+
+## EXAMPLES
+
+### EXAMPLE 1
+```
+$templateInit = Initialize-Vaporshell -Description "Testing"
+```
+
+$templateInit.AddResource(
+    (
+        New-VaporResource -LogicalId "AutoScalingGroup" -Type "AWS::AutoScaling::AutoScalingGroup" -Properties (\[PSCustomObject\]\[Ordered\]@{
+                "AvailabilityZones"       = (Add-FnGetAZs -Region "$_AWSRegion")
+                "LaunchConfigurationName" = (Add-FnRef -Ref "LaunchConfig")
+                "DesiredCapacity"         = "3"
+                "MinSize"                 = "1"
+                "MaxSize"                 = "4"
+            }) -CreationPolicy (Add-CreationPolicy -Count 3 -Timeout "PT15M") -UpdatePolicy (Add-UpdatePolicy -IgnoreUnmodifiedGroupSizeProperties True -MinInstancesInService 1 -MaxBatchSize 2 -WaitOnResourceSignals True -PauseTime "PT10M")
+    )
+)
+
+When the template is exported, this will convert to: 
+\`\`\`json
+{
+"AWSTemplateFormatVersion": "2010-09-09",
+"Description": "Testing",
+"Resources": {
+"AutoScalingGroup": {
+    "Type": "AWS::AutoScaling::AutoScalingGroup",
+    "Properties": {
+        "AvailabilityZones": {
+            "Fn::GetAZs": "AWS::Region"
+        },
+        "LaunchConfigurationName": {
+            "Ref": "LaunchConfig"
+        },
+        "DesiredCapacity": "3",
+        "MinSize": "1",
+        "MaxSize": "4"
+    },
+    "CreationPolicy": {
+        "ResourceSignal": {
+            "Count": "3",
+            "Timeout": "PT15M"
+        }
+    },
+    "UpdatePolicy": {
+        "AutoScalingScheduledAction": {
+            "IgnoreUnmodifiedGroupSizeProperties": "true"
+        },
+        "AutoScalingRollingUpdate": {
+            "MinInstancesInService": "1",
+            "MaxBatchSize": "2",
+            "WaitOnResourceSignals": "true",
+            "PauseTime": "PT10M"
+        }
+    }
+}
+}
+}
+\`\`\`
 
 ## PARAMETERS
 
@@ -147,15 +196,13 @@ Accept wildcard characters: False
 ```
 
 ### CommonParameters
-This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction, and -WarningVariable.
-For more information, see about_CommonParameters (http://go.microsoft.com/fwlink/?LinkID=113216).
+This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction, and -WarningVariable. For more information, see [about_CommonParameters](http://go.microsoft.com/fwlink/?LinkID=113216).
 
 ## INPUTS
 
 ## OUTPUTS
 
 ### Vaporshell.Resource.CreationPolicy
-
 ## NOTES
 
 ## RELATED LINKS

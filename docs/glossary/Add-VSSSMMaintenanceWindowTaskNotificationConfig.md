@@ -1,18 +1,8 @@
----
-layout: glossary
-title: Add-VSSSMMaintenanceWindowTaskNotificationConfig
-categories: glossary
-label1: Category
-data1: Documentation
-label2: Depth
-data2: Deep
-schema: 2.0.0
----
-
 # Add-VSSSMMaintenanceWindowTaskNotificationConfig
 
 ## SYNOPSIS
-Adds an AWS::SSM::MaintenanceWindowTask.NotificationConfig resource property to the template
+Adds an AWS::SSM::MaintenanceWindowTask.NotificationConfig resource property to the template.
+The NotificationConfig property type specifies configurations for sending notifications for a maintenance window task in AWS Systems Manager.
 
 ## SYNTAX
 
@@ -22,14 +12,28 @@ Add-VSSSMMaintenanceWindowTaskNotificationConfig [-NotificationArn] <Object> [[-
 ```
 
 ## DESCRIPTION
-Adds an AWS::SSM::MaintenanceWindowTask.NotificationConfig resource property to the template
+Adds an AWS::SSM::MaintenanceWindowTask.NotificationConfig resource property to the template.
+The NotificationConfig property type specifies configurations for sending notifications for a maintenance window task in AWS Systems Manager.
+
+NotificationConfig is a property of the MaintenanceWindowRunCommandParameters: https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ssm-maintenancewindowtask-maintenancewindowruncommandparameters.html property type.
+
+## EXAMPLES
+
+### Example 1
+```powershell
+PS C:\> {{ Add example code here }}
+```
+
+{{ Add example description here }}
 
 ## PARAMETERS
 
 ### -NotificationArn
-Required: True    
-Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ssm-maintenancewindowtask-notificationconfig.html#cfn-ssm-maintenancewindowtask-notificationconfig-notificationarn    
-PrimitiveType: String    
+An Amazon Resource Name ARN for an Amazon Simple Notification Service Amazon SNS topic.
+Run Command pushes notifications about command status changes to this topic.
+
+Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ssm-maintenancewindowtask-notificationconfig.html#cfn-ssm-maintenancewindowtask-notificationconfig-notificationarn
+PrimitiveType: String
 UpdateType: Mutable
 
 ```yaml
@@ -45,9 +49,12 @@ Accept wildcard characters: False
 ```
 
 ### -NotificationType
-Required: False    
-Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ssm-maintenancewindowtask-notificationconfig.html#cfn-ssm-maintenancewindowtask-notificationconfig-notificationtype    
-PrimitiveType: String    
+The notification type.
++  Command: Receive notification when the status of a command changes.
++  Invocation: For commands sent to multiple instances, receive notification on a per-instance basis when the status of a command changes.
+
+Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ssm-maintenancewindowtask-notificationconfig.html#cfn-ssm-maintenancewindowtask-notificationconfig-notificationtype
+PrimitiveType: String
 UpdateType: Mutable
 
 ```yaml
@@ -63,10 +70,13 @@ Accept wildcard characters: False
 ```
 
 ### -NotificationEvents
-PrimitiveItemType: String    
-Type: List    
-Required: False    
-Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ssm-maintenancewindowtask-notificationconfig.html#cfn-ssm-maintenancewindowtask-notificationconfig-notificationevents    
+The different events that you can receive notifications for.
+These events include the following: All events, InProgress, Success, TimedOut, Cancelled, Failed.
+To learn more about these events, see Configuring Amazon SNS Notifications for AWS Systems Manager: https://docs.aws.amazon.com/systems-manager/latest/userguide/monitoring-sns-notifications.html in the *AWS Systems Manager User Guide*.
+
+PrimitiveItemType: String
+Type: List
+Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ssm-maintenancewindowtask-notificationconfig.html#cfn-ssm-maintenancewindowtask-notificationconfig-notificationevents
 UpdateType: Mutable
 
 ```yaml
@@ -82,15 +92,13 @@ Accept wildcard characters: False
 ```
 
 ### CommonParameters
-This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction, and -WarningVariable.
-For more information, see about_CommonParameters (http://go.microsoft.com/fwlink/?LinkID=113216).
+This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction, and -WarningVariable. For more information, see [about_CommonParameters](http://go.microsoft.com/fwlink/?LinkID=113216).
 
 ## INPUTS
 
 ## OUTPUTS
 
 ### Vaporshell.Resource.SSM.MaintenanceWindowTask.NotificationConfig
-
 ## NOTES
 
 ## RELATED LINKS

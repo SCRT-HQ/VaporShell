@@ -1,29 +1,29 @@
----
-layout: glossary
-title: New-VSECSCluster
-categories: glossary
-label1: Category
-data1: Documentation
-label2: Depth
-data2: Deep
-schema: 2.0.0
----
-
 # New-VSECSCluster
 
 ## SYNOPSIS
-Adds an AWS::ECS::Cluster resource to the template
+Adds an AWS::ECS::Cluster resource to the template.
+The AWS::ECS::Cluster resource creates an Amazon Elastic Container Service (Amazon ECS cluster.
 
 ## SYNTAX
 
 ```
-New-VSECSCluster [-LogicalId] <String> [-ClusterName <Object>] [-DeletionPolicy <String>]
+New-VSECSCluster [-LogicalId] <String> [-ClusterName <Object>] [-Tags <Object>] [-DeletionPolicy <String>]
  [-DependsOn <String[]>] [-Metadata <Object>] [-UpdatePolicy <Object>] [-Condition <Object>]
  [<CommonParameters>]
 ```
 
 ## DESCRIPTION
-Adds an AWS::ECS::Cluster resource to the template
+Adds an AWS::ECS::Cluster resource to the template.
+The AWS::ECS::Cluster resource creates an Amazon Elastic Container Service (Amazon ECS cluster.
+
+## EXAMPLES
+
+### Example 1
+```powershell
+PS C:\> {{ Add example code here }}
+```
+
+{{ Add example description here }}
 
 ## PARAMETERS
 
@@ -45,10 +45,31 @@ Accept wildcard characters: False
 ```
 
 ### -ClusterName
-Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ecs-cluster.html#cfn-ecs-cluster-clustername    
-PrimitiveType: String    
-Required: False    
+A user-generated string that you use to identify your cluster.
+If you don't specify a name, AWS CloudFormation generates a unique physical ID for the name.
+
+Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ecs-cluster.html#cfn-ecs-cluster-clustername
+PrimitiveType: String
 UpdateType: Immutable
+
+```yaml
+Type: Object
+Parameter Sets: (All)
+Aliases:
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### -Tags
+Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ecs-cluster.html#cfn-ecs-cluster-tags
+DuplicatesAllowed: True
+ItemType: Tag
+Type: List
+UpdateType: Mutable
 
 ```yaml
 Type: Object
@@ -157,15 +178,13 @@ Accept wildcard characters: False
 ```
 
 ### CommonParameters
-This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction, and -WarningVariable.
-For more information, see about_CommonParameters (http://go.microsoft.com/fwlink/?LinkID=113216).
+This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction, and -WarningVariable. For more information, see [about_CommonParameters](http://go.microsoft.com/fwlink/?LinkID=113216).
 
 ## INPUTS
 
 ## OUTPUTS
 
 ### Vaporshell.Resource.ECS.Cluster
-
 ## NOTES
 
 ## RELATED LINKS

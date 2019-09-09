@@ -1,18 +1,9 @@
----
-layout: glossary
-title: New-VSCloud9EnvironmentEC2
-categories: glossary
-label1: Category
-data1: Documentation
-label2: Depth
-data2: Deep
-schema: 2.0.0
----
-
 # New-VSCloud9EnvironmentEC2
 
 ## SYNOPSIS
-Adds an AWS::Cloud9::EnvironmentEC2 resource to the template
+Adds an AWS::Cloud9::EnvironmentEC2 resource to the template.
+The AWS::Cloud9::EnvironmentEC2 resource creates an Amazon EC2 development environment in AWS Cloud9.
+For more information, see Creating an Environment: https://docs.aws.amazon.com/cloud9/latest/user-guide/create-environment.html in the *AWS Cloud9 User Guide*.
 
 ## SYNTAX
 
@@ -24,7 +15,18 @@ New-VSCloud9EnvironmentEC2 [-LogicalId] <String> [-Repositories <Object>] [-Owne
 ```
 
 ## DESCRIPTION
-Adds an AWS::Cloud9::EnvironmentEC2 resource to the template
+Adds an AWS::Cloud9::EnvironmentEC2 resource to the template.
+The AWS::Cloud9::EnvironmentEC2 resource creates an Amazon EC2 development environment in AWS Cloud9.
+For more information, see Creating an Environment: https://docs.aws.amazon.com/cloud9/latest/user-guide/create-environment.html in the *AWS Cloud9 User Guide*.
+
+## EXAMPLES
+
+### Example 1
+```powershell
+PS C:\> {{ Add example code here }}
+```
+
+{{ Add example description here }}
 
 ## PARAMETERS
 
@@ -46,10 +48,11 @@ Accept wildcard characters: False
 ```
 
 ### -Repositories
-Type: List    
-Required: False    
-Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-cloud9-environmentec2.html#cfn-cloud9-environmentec2-repositories    
-ItemType: Repository    
+Any AWS CodeCommit source code repositories to be cloned into the development environment.
+
+Type: List
+Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-cloud9-environmentec2.html#cfn-cloud9-environmentec2-repositories
+ItemType: Repository
 UpdateType: Immutable
 
 ```yaml
@@ -65,9 +68,12 @@ Accept wildcard characters: False
 ```
 
 ### -OwnerArn
-Required: False    
-Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-cloud9-environmentec2.html#cfn-cloud9-environmentec2-ownerarn    
-PrimitiveType: String    
+The Amazon Resource Name ARN of the environment owner.
+This ARN can be the ARN of any AWS Identity and Access Management IAM principal.
+If this value is not specified, the ARN defaults to this environment's creator.
+
+Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-cloud9-environmentec2.html#cfn-cloud9-environmentec2-ownerarn
+PrimitiveType: String
 UpdateType: Immutable
 
 ```yaml
@@ -83,9 +89,10 @@ Accept wildcard characters: False
 ```
 
 ### -Description
-Required: False    
-Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-cloud9-environmentec2.html#cfn-cloud9-environmentec2-description    
-PrimitiveType: String    
+The description of the environment to create.
+
+Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-cloud9-environmentec2.html#cfn-cloud9-environmentec2-description
+PrimitiveType: String
 UpdateType: Immutable
 
 ```yaml
@@ -101,9 +108,10 @@ Accept wildcard characters: False
 ```
 
 ### -AutomaticStopTimeMinutes
-Required: False    
-Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-cloud9-environmentec2.html#cfn-cloud9-environmentec2-automaticstoptimeminutes    
-PrimitiveType: Integer    
+The number of minutes until the running instance is shut down after the environment was last used.
+
+Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-cloud9-environmentec2.html#cfn-cloud9-environmentec2-automaticstoptimeminutes
+PrimitiveType: Integer
 UpdateType: Immutable
 
 ```yaml
@@ -119,9 +127,10 @@ Accept wildcard characters: False
 ```
 
 ### -SubnetId
-Required: False    
-Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-cloud9-environmentec2.html#cfn-cloud9-environmentec2-subnetid    
-PrimitiveType: String    
+The ID of the subnet in Amazon Virtual Private Cloud Amazon VPC that AWS Cloud9 will use to communicate with the Amazon Elastic Compute Cloud Amazon EC2 instance.
+
+Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-cloud9-environmentec2.html#cfn-cloud9-environmentec2-subnetid
+PrimitiveType: String
 UpdateType: Immutable
 
 ```yaml
@@ -137,9 +146,10 @@ Accept wildcard characters: False
 ```
 
 ### -InstanceType
-Required: True    
-Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-cloud9-environmentec2.html#cfn-cloud9-environmentec2-instancetype    
-PrimitiveType: String    
+The type of instance to connect to the environment for example, t2.micro.
+
+Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-cloud9-environmentec2.html#cfn-cloud9-environmentec2-instancetype
+PrimitiveType: String
 UpdateType: Immutable
 
 ```yaml
@@ -155,9 +165,10 @@ Accept wildcard characters: False
 ```
 
 ### -Name
-Required: False    
-Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-cloud9-environmentec2.html#cfn-cloud9-environmentec2-name    
-PrimitiveType: String    
+The name of the environment.
+
+Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-cloud9-environmentec2.html#cfn-cloud9-environmentec2-name
+PrimitiveType: String
 UpdateType: Immutable
 
 ```yaml
@@ -267,15 +278,13 @@ Accept wildcard characters: False
 ```
 
 ### CommonParameters
-This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction, and -WarningVariable.
-For more information, see about_CommonParameters (http://go.microsoft.com/fwlink/?LinkID=113216).
+This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction, and -WarningVariable. For more information, see [about_CommonParameters](http://go.microsoft.com/fwlink/?LinkID=113216).
 
 ## INPUTS
 
 ## OUTPUTS
 
 ### Vaporshell.Resource.Cloud9.EnvironmentEC2
-
 ## NOTES
 
 ## RELATED LINKS

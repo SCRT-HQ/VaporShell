@@ -1,18 +1,8 @@
----
-layout: glossary
-title: Add-VSSSMPatchBaselineRuleGroup
-categories: glossary
-label1: Category
-data1: Documentation
-label2: Depth
-data2: Deep
-schema: 2.0.0
----
-
 # Add-VSSSMPatchBaselineRuleGroup
 
 ## SYNOPSIS
-Adds an AWS::SSM::PatchBaseline.RuleGroup resource property to the template
+Adds an AWS::SSM::PatchBaseline.RuleGroup resource property to the template.
+The RuleGroup property type specifies a set of rules that define the approval rules for an AWS Systems Manager patch baseline.
 
 ## SYNTAX
 
@@ -21,15 +11,28 @@ Add-VSSSMPatchBaselineRuleGroup [[-PatchRules] <Object>] [<CommonParameters>]
 ```
 
 ## DESCRIPTION
-Adds an AWS::SSM::PatchBaseline.RuleGroup resource property to the template
+Adds an AWS::SSM::PatchBaseline.RuleGroup resource property to the template.
+The RuleGroup property type specifies a set of rules that define the approval rules for an AWS Systems Manager patch baseline.
+
+RuleGroup is the property type for the ApprovalRules property of the AWS::SSM::PatchBaseline: https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ssm-patchbaseline.html resource.
+
+## EXAMPLES
+
+### Example 1
+```powershell
+PS C:\> {{ Add example code here }}
+```
+
+{{ Add example description here }}
 
 ## PARAMETERS
 
 ### -PatchRules
-Type: List    
-Required: False    
-Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ssm-patchbaseline-rulegroup.html#cfn-ssm-patchbaseline-rulegroup-patchrules    
-ItemType: Rule    
+The rules that make up the rule group.
+
+Type: List
+Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ssm-patchbaseline-rulegroup.html#cfn-ssm-patchbaseline-rulegroup-patchrules
+ItemType: Rule
 UpdateType: Mutable
 
 ```yaml
@@ -45,15 +48,13 @@ Accept wildcard characters: False
 ```
 
 ### CommonParameters
-This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction, and -WarningVariable.
-For more information, see about_CommonParameters (http://go.microsoft.com/fwlink/?LinkID=113216).
+This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction, and -WarningVariable. For more information, see [about_CommonParameters](http://go.microsoft.com/fwlink/?LinkID=113216).
 
 ## INPUTS
 
 ## OUTPUTS
 
 ### Vaporshell.Resource.SSM.PatchBaseline.RuleGroup
-
 ## NOTES
 
 ## RELATED LINKS

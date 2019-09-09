@@ -1,18 +1,8 @@
----
-layout: glossary
-title: Add-VSSESTemplateTemplate
-categories: glossary
-label1: Category
-data1: Documentation
-label2: Depth
-data2: Deep
-schema: 2.0.0
----
-
 # Add-VSSESTemplateTemplate
 
 ## SYNOPSIS
-Adds an AWS::SES::Template.Template resource property to the template
+Adds an AWS::SES::Template.Template resource property to the template.
+The content of the email, composed of a subject line, an HTML part, and a text-only part.
 
 ## SYNTAX
 
@@ -22,14 +12,25 @@ Add-VSSESTemplateTemplate [[-HtmlPart] <Object>] [[-TextPart] <Object>] [[-Templ
 ```
 
 ## DESCRIPTION
-Adds an AWS::SES::Template.Template resource property to the template
+Adds an AWS::SES::Template.Template resource property to the template.
+The content of the email, composed of a subject line, an HTML part, and a text-only part.
+
+## EXAMPLES
+
+### Example 1
+```powershell
+PS C:\> {{ Add example code here }}
+```
+
+{{ Add example description here }}
 
 ## PARAMETERS
 
 ### -HtmlPart
-Required: False    
-Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ses-template-template.html#cfn-ses-template-template-htmlpart    
-PrimitiveType: String    
+The HTML body of the email.
+
+Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ses-template-template.html#cfn-ses-template-template-htmlpart
+PrimitiveType: String
 UpdateType: Mutable
 
 ```yaml
@@ -45,9 +46,10 @@ Accept wildcard characters: False
 ```
 
 ### -TextPart
-Required: False    
-Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ses-template-template.html#cfn-ses-template-template-textpart    
-PrimitiveType: String    
+The email body that is visible to recipients whose email clients don't display HTML content.
+
+Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ses-template-template.html#cfn-ses-template-template-textpart
+PrimitiveType: String
 UpdateType: Mutable
 
 ```yaml
@@ -63,9 +65,11 @@ Accept wildcard characters: False
 ```
 
 ### -TemplateName
-Required: False    
-Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ses-template-template.html#cfn-ses-template-template-templatename    
-PrimitiveType: String    
+The name of the template.
+You specify this name when you send email using the SendTemplatedEmail or SendBulkTemplatedEmail operations.
+
+Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ses-template-template.html#cfn-ses-template-template-templatename
+PrimitiveType: String
 UpdateType: Immutable
 
 ```yaml
@@ -81,9 +85,10 @@ Accept wildcard characters: False
 ```
 
 ### -SubjectPart
-Required: False    
-Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ses-template-template.html#cfn-ses-template-template-subjectpart    
-PrimitiveType: String    
+The subject line of the email.
+
+Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ses-template-template.html#cfn-ses-template-template-subjectpart
+PrimitiveType: String
 UpdateType: Mutable
 
 ```yaml
@@ -99,15 +104,13 @@ Accept wildcard characters: False
 ```
 
 ### CommonParameters
-This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction, and -WarningVariable.
-For more information, see about_CommonParameters (http://go.microsoft.com/fwlink/?LinkID=113216).
+This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction, and -WarningVariable. For more information, see [about_CommonParameters](http://go.microsoft.com/fwlink/?LinkID=113216).
 
 ## INPUTS
 
 ## OUTPUTS
 
 ### Vaporshell.Resource.SES.Template.Template
-
 ## NOTES
 
 ## RELATED LINKS

@@ -1,18 +1,9 @@
----
-layout: glossary
-title: Add-VSCognitoUserPoolStringAttributeConstraints
-categories: glossary
-label1: Category
-data1: Documentation
-label2: Depth
-data2: Deep
-schema: 2.0.0
----
-
 # Add-VSCognitoUserPoolStringAttributeConstraints
 
 ## SYNOPSIS
-Adds an AWS::Cognito::UserPool.StringAttributeConstraints resource property to the template
+Adds an AWS::Cognito::UserPool.StringAttributeConstraints resource property to the template.
+The StringAttributeConstraints property type defines the string attribute constraints of an Amazon Cognito User Pool.
+StringAttributeConstraints is a subproperty of the SchemaAttribute: https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-cognito-userpool-schemaattribute.html property type.
 
 ## SYNTAX
 
@@ -22,14 +13,26 @@ Add-VSCognitoUserPoolStringAttributeConstraints [[-MinLength] <Object>] [[-MaxLe
 ```
 
 ## DESCRIPTION
-Adds an AWS::Cognito::UserPool.StringAttributeConstraints resource property to the template
+Adds an AWS::Cognito::UserPool.StringAttributeConstraints resource property to the template.
+The StringAttributeConstraints property type defines the string attribute constraints of an Amazon Cognito User Pool.
+StringAttributeConstraints is a subproperty of the SchemaAttribute: https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-cognito-userpool-schemaattribute.html property type.
+
+## EXAMPLES
+
+### Example 1
+```powershell
+PS C:\> {{ Add example code here }}
+```
+
+{{ Add example description here }}
 
 ## PARAMETERS
 
 ### -MinLength
-Required: False    
-Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-cognito-userpool-stringattributeconstraints.html#cfn-cognito-userpool-stringattributeconstraints-minlength    
-PrimitiveType: String    
+The minimum length.
+
+Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-cognito-userpool-stringattributeconstraints.html#cfn-cognito-userpool-stringattributeconstraints-minlength
+PrimitiveType: String
 UpdateType: Mutable
 
 ```yaml
@@ -45,9 +48,10 @@ Accept wildcard characters: False
 ```
 
 ### -MaxLength
-Required: False    
-Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-cognito-userpool-stringattributeconstraints.html#cfn-cognito-userpool-stringattributeconstraints-maxlength    
-PrimitiveType: String    
+The maximum length.
+
+Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-cognito-userpool-stringattributeconstraints.html#cfn-cognito-userpool-stringattributeconstraints-maxlength
+PrimitiveType: String
 UpdateType: Mutable
 
 ```yaml
@@ -63,15 +67,13 @@ Accept wildcard characters: False
 ```
 
 ### CommonParameters
-This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction, and -WarningVariable.
-For more information, see about_CommonParameters (http://go.microsoft.com/fwlink/?LinkID=113216).
+This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction, and -WarningVariable. For more information, see [about_CommonParameters](http://go.microsoft.com/fwlink/?LinkID=113216).
 
 ## INPUTS
 
 ## OUTPUTS
 
 ### Vaporshell.Resource.Cognito.UserPool.StringAttributeConstraints
-
 ## NOTES
 
 ## RELATED LINKS

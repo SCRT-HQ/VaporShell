@@ -1,18 +1,11 @@
----
-layout: glossary
-title: Add-VSAmazonMQBrokerUser
-categories: glossary
-label1: Category
-data1: Documentation
-label2: Depth
-data2: Deep
-schema: 2.0.0
----
-
 # Add-VSAmazonMQBrokerUser
 
 ## SYNOPSIS
-Adds an AWS::AmazonMQ::Broker.User resource property to the template
+Adds an AWS::AmazonMQ::Broker.User resource property to the template.
+The list of ActiveMQ users (persons or applications who can access queues and topics.
+This value can contain only alphanumeric characters, dashes, periods, underscores, and tildes (- .
+_ ~.
+This value must be 2-100 characters long.
 
 ## SYNTAX
 
@@ -22,14 +15,31 @@ Add-VSAmazonMQBrokerUser [-Username] <Object> [[-Groups] <Object>] [[-ConsoleAcc
 ```
 
 ## DESCRIPTION
-Adds an AWS::AmazonMQ::Broker.User resource property to the template
+Adds an AWS::AmazonMQ::Broker.User resource property to the template.
+The list of ActiveMQ users (persons or applications who can access queues and topics.
+This value can contain only alphanumeric characters, dashes, periods, underscores, and tildes (- .
+_ ~.
+This value must be 2-100 characters long.
+
+## EXAMPLES
+
+### Example 1
+```powershell
+PS C:\> {{ Add example code here }}
+```
+
+{{ Add example description here }}
 
 ## PARAMETERS
 
 ### -Username
-Required: True    
-Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-amazonmq-broker-user.html#cfn-amazonmq-broker-user-username    
-PrimitiveType: String    
+The username of the ActiveMQ user.
+This value can contain only alphanumeric characters, dashes, periods, underscores, and tildes - .
+_ ~.
+This value must be 2-100 characters long.
+
+Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-amazonmq-broker-user.html#cfn-amazonmq-broker-user-username
+PrimitiveType: String
 UpdateType: Mutable
 
 ```yaml
@@ -45,10 +55,14 @@ Accept wildcard characters: False
 ```
 
 ### -Groups
-PrimitiveItemType: String    
-Type: List    
-Required: False    
-Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-amazonmq-broker-user.html#cfn-amazonmq-broker-user-groups    
+The list of groups 20 maximum to which the ActiveMQ user belongs.
+This value can contain only alphanumeric characters, dashes, periods, underscores, and tildes - .
+_ ~.
+This value must be 2-100 characters long.
+
+PrimitiveItemType: String
+Type: List
+Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-amazonmq-broker-user.html#cfn-amazonmq-broker-user-groups
 UpdateType: Mutable
 
 ```yaml
@@ -64,9 +78,10 @@ Accept wildcard characters: False
 ```
 
 ### -ConsoleAccess
-Required: False    
-Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-amazonmq-broker-user.html#cfn-amazonmq-broker-user-consoleaccess    
-PrimitiveType: Boolean    
+Enables access to the the ActiveMQ Web Console for the ActiveMQ user.
+
+Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-amazonmq-broker-user.html#cfn-amazonmq-broker-user-consoleaccess
+PrimitiveType: Boolean
 UpdateType: Mutable
 
 ```yaml
@@ -82,9 +97,11 @@ Accept wildcard characters: False
 ```
 
 ### -Password
-Required: True    
-Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-amazonmq-broker-user.html#cfn-amazonmq-broker-user-password    
-PrimitiveType: String    
+The password of the ActiveMQ user.
+This value must be at least 12 characters long, must contain at least 4 unique characters, and must not contain commas.
+
+Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-amazonmq-broker-user.html#cfn-amazonmq-broker-user-password
+PrimitiveType: String
 UpdateType: Mutable
 
 ```yaml
@@ -100,15 +117,13 @@ Accept wildcard characters: False
 ```
 
 ### CommonParameters
-This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction, and -WarningVariable.
-For more information, see about_CommonParameters (http://go.microsoft.com/fwlink/?LinkID=113216).
+This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction, and -WarningVariable. For more information, see [about_CommonParameters](http://go.microsoft.com/fwlink/?LinkID=113216).
 
 ## INPUTS
 
 ## OUTPUTS
 
 ### Vaporshell.Resource.AmazonMQ.Broker.User
-
 ## NOTES
 
 ## RELATED LINKS

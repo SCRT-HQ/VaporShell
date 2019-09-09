@@ -1,18 +1,9 @@
----
-layout: glossary
-title: New-VSApiGatewayAuthorizer
-categories: glossary
-label1: Category
-data1: Documentation
-label2: Depth
-data2: Deep
-schema: 2.0.0
----
-
 # New-VSApiGatewayAuthorizer
 
 ## SYNOPSIS
-Adds an AWS::ApiGateway::Authorizer resource to the template
+Adds an AWS::ApiGateway::Authorizer resource to the template.
+The AWS::ApiGateway::Authorizer resource creates an authorization layer that API Gateway activates for methods that have authorization enabled.
+API Gateway activates the authorizer when a client calls those methods.
 
 ## SYNTAX
 
@@ -20,12 +11,23 @@ Adds an AWS::ApiGateway::Authorizer resource to the template
 New-VSApiGatewayAuthorizer [-LogicalId] <String> [-AuthType <Object>] [-AuthorizerCredentials <Object>]
  [-AuthorizerResultTtlInSeconds <Int32>] [-AuthorizerUri <Object>] [-IdentitySource <Object>]
  [-IdentityValidationExpression <Object>] [-Name <Object>] [-ProviderARNs <Object>] -RestApiId <Object>
- [-Type <Object>] [-DeletionPolicy <String>] [-DependsOn <String[]>] [-Metadata <Object>]
+ -Type <Object> [-DeletionPolicy <String>] [-DependsOn <String[]>] [-Metadata <Object>]
  [-UpdatePolicy <Object>] [-Condition <Object>] [<CommonParameters>]
 ```
 
 ## DESCRIPTION
-Adds an AWS::ApiGateway::Authorizer resource to the template
+Adds an AWS::ApiGateway::Authorizer resource to the template.
+The AWS::ApiGateway::Authorizer resource creates an authorization layer that API Gateway activates for methods that have authorization enabled.
+API Gateway activates the authorizer when a client calls those methods.
+
+## EXAMPLES
+
+### Example 1
+```powershell
+PS C:\> {{ Add example code here }}
+```
+
+{{ Add example description here }}
 
 ## PARAMETERS
 
@@ -47,9 +49,10 @@ Accept wildcard characters: False
 ```
 
 ### -AuthType
-Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-apigateway-authorizer.html#cfn-apigateway-authorizer-authtype    
-PrimitiveType: String    
-Required: False    
+An optional customer-defined field that's used in OpenApi imports and exports without functional impact.
+
+Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-apigateway-authorizer.html#cfn-apigateway-authorizer-authtype
+PrimitiveType: String
 UpdateType: Mutable
 
 ```yaml
@@ -65,9 +68,12 @@ Accept wildcard characters: False
 ```
 
 ### -AuthorizerCredentials
-Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-apigateway-authorizer.html#cfn-apigateway-authorizer-authorizercredentials    
-PrimitiveType: String    
-Required: False    
+The credentials that are required for the authorizer.
+To specify an IAM role that API Gateway assumes, specify the role's Amazon Resource Name ARN.
+To use resource-based permissions on the Lambda function, specify null.
+
+Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-apigateway-authorizer.html#cfn-apigateway-authorizer-authorizercredentials
+PrimitiveType: String
 UpdateType: Mutable
 
 ```yaml
@@ -83,9 +89,13 @@ Accept wildcard characters: False
 ```
 
 ### -AuthorizerResultTtlInSeconds
-Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-apigateway-authorizer.html#cfn-apigateway-authorizer-authorizerresultttlinseconds    
-PrimitiveType: Integer    
-Required: False    
+The time-to-live TTL period, in seconds, that specifies how long API Gateway caches authorizer results.
+If you specify a value greater than 0, API Gateway caches the authorizer responses.
+By default, API Gateway sets this property to 300.
+The maximum value is 3600, or 1 hour.
+
+Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-apigateway-authorizer.html#cfn-apigateway-authorizer-authorizerresultttlinseconds
+PrimitiveType: Integer
 UpdateType: Mutable
 
 ```yaml
@@ -101,9 +111,12 @@ Accept wildcard characters: False
 ```
 
 ### -AuthorizerUri
-Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-apigateway-authorizer.html#cfn-apigateway-authorizer-authorizeruri    
-PrimitiveType: String    
-Required: False    
+The authorizer's Uniform Resource Identifier URI.
+If you specify TOKEN for the authorizer's Type property, specify a Lambda function URI that has the form arn:aws:apigateway:region:lambda:path/path.
+The path usually has the form /2015-03-31/functions/*LambdaFunctionARN*/invocations.
+
+Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-apigateway-authorizer.html#cfn-apigateway-authorizer-authorizeruri
+PrimitiveType: String
 UpdateType: Mutable
 
 ```yaml
@@ -119,9 +132,13 @@ Accept wildcard characters: False
 ```
 
 ### -IdentitySource
-Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-apigateway-authorizer.html#cfn-apigateway-authorizer-identitysource    
-PrimitiveType: String    
-Required: False    
+The source of the identity in an incoming request.
+If you specify TOKEN or COGNITO_USER_POOLS for the Type property, specify a header mapping expression using the form method.request.header.name, where *name* is the name of a custom authorization header that clients submit as part of their requests.
+If you specify REQUEST for the Type property, specify a comma-separated string of one or more mapping expressions of the specified request parameter using the form method.request.parameter.name.
+For supported parameter types, see Configure Lambda Authorizer Using the API Gateway Console: https://docs.aws.amazon.com/apigateway/latest/developerguide/configure-api-gateway-lambda-authorization-with-console.html in the *API Gateway Developer Guide*.
+
+Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-apigateway-authorizer.html#cfn-apigateway-authorizer-identitysource
+PrimitiveType: String
 UpdateType: Mutable
 
 ```yaml
@@ -137,9 +154,13 @@ Accept wildcard characters: False
 ```
 
 ### -IdentityValidationExpression
-Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-apigateway-authorizer.html#cfn-apigateway-authorizer-identityvalidationexpression    
-PrimitiveType: String    
-Required: False    
+A validation expression for the incoming identity.
+If you specify TOKEN for the authorizer's Type property, specify a regular expression.
+API Gateway uses the expression to attempt to match the incoming client token, and proceeds if the token matches.
+If the token doesn't match, API Gateway responds with a 401 unauthorized request error code.
+
+Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-apigateway-authorizer.html#cfn-apigateway-authorizer-identityvalidationexpression
+PrimitiveType: String
 UpdateType: Mutable
 
 ```yaml
@@ -155,9 +176,10 @@ Accept wildcard characters: False
 ```
 
 ### -Name
-Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-apigateway-authorizer.html#cfn-apigateway-authorizer-name    
-PrimitiveType: String    
-Required: False    
+The name of the authorizer.
+
+Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-apigateway-authorizer.html#cfn-apigateway-authorizer-name
+PrimitiveType: String
 UpdateType: Mutable
 
 ```yaml
@@ -173,11 +195,13 @@ Accept wildcard characters: False
 ```
 
 ### -ProviderARNs
-Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-apigateway-authorizer.html#cfn-apigateway-authorizer-providerarns    
-DuplicatesAllowed: False    
-PrimitiveItemType: String    
-Required: False    
-Type: List    
+A list of the Amazon Cognito user pool Amazon Resource Names ARNs to associate with this authorizer.
+For more information, see Use Amazon Cognito User Pools: https://docs.aws.amazon.com/apigateway/latest/developerguide/apigateway-integrate-with-cognito.html#apigateway-enable-cognito-user-pool in the *API Gateway Developer Guide*.
+
+Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-apigateway-authorizer.html#cfn-apigateway-authorizer-providerarns
+DuplicatesAllowed: False
+PrimitiveItemType: String
+Type: List
 UpdateType: Mutable
 
 ```yaml
@@ -193,9 +217,10 @@ Accept wildcard characters: False
 ```
 
 ### -RestApiId
-Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-apigateway-authorizer.html#cfn-apigateway-authorizer-restapiid    
-PrimitiveType: String    
-Required: True    
+The ID of the RestApi resource that API Gateway creates the authorizer in.
+
+Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-apigateway-authorizer.html#cfn-apigateway-authorizer-restapiid
+PrimitiveType: String
 UpdateType: Immutable
 
 ```yaml
@@ -211,9 +236,14 @@ Accept wildcard characters: False
 ```
 
 ### -Type
-Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-apigateway-authorizer.html#cfn-apigateway-authorizer-type    
-PrimitiveType: String    
-Required: False    
+The type of authorizer.
+Valid values include:
++ TOKEN: A custom authorizer that uses a Lambda function.
++ COGNITO_USER_POOLS: An authorizer that uses Amazon Cognito user pools.
++ REQUEST: An authorizer that uses a Lambda function using incoming request parameters.
+
+Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-apigateway-authorizer.html#cfn-apigateway-authorizer-type
+PrimitiveType: String
 UpdateType: Mutable
 
 ```yaml
@@ -221,7 +251,7 @@ Type: Object
 Parameter Sets: (All)
 Aliases:
 
-Required: False
+Required: True
 Position: Named
 Default value: None
 Accept pipeline input: False
@@ -323,15 +353,13 @@ Accept wildcard characters: False
 ```
 
 ### CommonParameters
-This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction, and -WarningVariable.
-For more information, see about_CommonParameters (http://go.microsoft.com/fwlink/?LinkID=113216).
+This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction, and -WarningVariable. For more information, see [about_CommonParameters](http://go.microsoft.com/fwlink/?LinkID=113216).
 
 ## INPUTS
 
 ## OUTPUTS
 
 ### Vaporshell.Resource.ApiGateway.Authorizer
-
 ## NOTES
 
 ## RELATED LINKS

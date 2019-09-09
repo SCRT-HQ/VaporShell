@@ -1,18 +1,8 @@
----
-layout: glossary
-title: Add-VSS3BucketDataExport
-categories: glossary
-label1: Category
-data1: Documentation
-label2: Depth
-data2: Deep
-schema: 2.0.0
----
-
 # Add-VSS3BucketDataExport
 
 ## SYNOPSIS
-Adds an AWS::S3::Bucket.DataExport resource property to the template
+Adds an AWS::S3::Bucket.DataExport resource property to the template.
+Specifies how data related to the storage class analysis for an Amazon S3 bucket should be exported.
 
 ## SYNTAX
 
@@ -21,14 +11,25 @@ Add-VSS3BucketDataExport [-Destination] <Object> [-OutputSchemaVersion] <Object>
 ```
 
 ## DESCRIPTION
-Adds an AWS::S3::Bucket.DataExport resource property to the template
+Adds an AWS::S3::Bucket.DataExport resource property to the template.
+Specifies how data related to the storage class analysis for an Amazon S3 bucket should be exported.
+
+## EXAMPLES
+
+### Example 1
+```powershell
+PS C:\> {{ Add example code here }}
+```
+
+{{ Add example description here }}
 
 ## PARAMETERS
 
 ### -Destination
-Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-s3-bucket-dataexport.html#cfn-s3-bucket-dataexport-destination    
-Required: True    
-Type: Destination    
+The place to store the data for an analysis.
+
+Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-s3-bucket-dataexport.html#cfn-s3-bucket-dataexport-destination
+Type: Destination
 UpdateType: Mutable
 
 ```yaml
@@ -44,9 +45,11 @@ Accept wildcard characters: False
 ```
 
 ### -OutputSchemaVersion
-Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-s3-bucket-dataexport.html#cfn-s3-bucket-dataexport-outputschemaversion    
-PrimitiveType: String    
-Required: True    
+The version of the output schema to use when exporting data.
+Must be V_1.
+
+Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-s3-bucket-dataexport.html#cfn-s3-bucket-dataexport-outputschemaversion
+PrimitiveType: String
 UpdateType: Mutable
 
 ```yaml
@@ -62,15 +65,13 @@ Accept wildcard characters: False
 ```
 
 ### CommonParameters
-This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction, and -WarningVariable.
-For more information, see about_CommonParameters (http://go.microsoft.com/fwlink/?LinkID=113216).
+This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction, and -WarningVariable. For more information, see [about_CommonParameters](http://go.microsoft.com/fwlink/?LinkID=113216).
 
 ## INPUTS
 
 ## OUTPUTS
 
 ### Vaporshell.Resource.S3.Bucket.DataExport
-
 ## NOTES
 
 ## RELATED LINKS

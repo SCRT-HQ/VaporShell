@@ -1,18 +1,8 @@
----
-layout: glossary
-title: Add-VSIoTTopicRuleSnsAction
-categories: glossary
-label1: Category
-data1: Documentation
-label2: Depth
-data2: Deep
-schema: 2.0.0
----
-
 # Add-VSIoTTopicRuleSnsAction
 
 ## SYNOPSIS
-Adds an AWS::IoT::TopicRule.SnsAction resource property to the template
+Adds an AWS::IoT::TopicRule.SnsAction resource property to the template.
+Describes an action to publish to an Amazon SNS topic.
 
 ## SYNTAX
 
@@ -22,14 +12,29 @@ Add-VSIoTTopicRuleSnsAction [[-MessageFormat] <Object>] [-RoleArn] <Object> [-Ta
 ```
 
 ## DESCRIPTION
-Adds an AWS::IoT::TopicRule.SnsAction resource property to the template
+Adds an AWS::IoT::TopicRule.SnsAction resource property to the template.
+Describes an action to publish to an Amazon SNS topic.
+
+## EXAMPLES
+
+### Example 1
+```powershell
+PS C:\> {{ Add example code here }}
+```
+
+{{ Add example description here }}
 
 ## PARAMETERS
 
 ### -MessageFormat
-Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iot-topicrule-snsaction.html#cfn-iot-topicrule-snsaction-messageformat    
-PrimitiveType: String    
-Required: False    
+Optional The message format of the message to publish.
+Accepted values are "JSON" and "RAW".
+The default value of the attribute is "RAW".
+SNS uses this setting to determine if the payload should be parsed and relevant platform-specific bits of the payload should be extracted.
+For more information, see Amazon SNS Message and JSON Formats: https://docs.aws.amazon.com/sns/latest/dg/json-formats.html in the *Amazon Simple Notification Service Developer Guide*.
+
+Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iot-topicrule-snsaction.html#cfn-iot-topicrule-snsaction-messageformat
+PrimitiveType: String
 UpdateType: Mutable
 
 ```yaml
@@ -45,9 +50,10 @@ Accept wildcard characters: False
 ```
 
 ### -RoleArn
-Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iot-topicrule-snsaction.html#cfn-iot-topicrule-snsaction-rolearn    
-PrimitiveType: String    
-Required: True    
+The ARN of the IAM role that grants access.
+
+Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iot-topicrule-snsaction.html#cfn-iot-topicrule-snsaction-rolearn
+PrimitiveType: String
 UpdateType: Mutable
 
 ```yaml
@@ -63,9 +69,10 @@ Accept wildcard characters: False
 ```
 
 ### -TargetArn
-Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iot-topicrule-snsaction.html#cfn-iot-topicrule-snsaction-targetarn    
-PrimitiveType: String    
-Required: True    
+The ARN of the SNS topic.
+
+Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iot-topicrule-snsaction.html#cfn-iot-topicrule-snsaction-targetarn
+PrimitiveType: String
 UpdateType: Mutable
 
 ```yaml
@@ -81,15 +88,13 @@ Accept wildcard characters: False
 ```
 
 ### CommonParameters
-This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction, and -WarningVariable.
-For more information, see about_CommonParameters (http://go.microsoft.com/fwlink/?LinkID=113216).
+This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction, and -WarningVariable. For more information, see [about_CommonParameters](http://go.microsoft.com/fwlink/?LinkID=113216).
 
 ## INPUTS
 
 ## OUTPUTS
 
 ### Vaporshell.Resource.IoT.TopicRule.SnsAction
-
 ## NOTES
 
 ## RELATED LINKS

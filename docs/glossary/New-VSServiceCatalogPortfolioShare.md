@@ -1,18 +1,10 @@
----
-layout: glossary
-title: New-VSServiceCatalogPortfolioShare
-categories: glossary
-label1: Category
-data1: Documentation
-label2: Depth
-data2: Deep
-schema: 2.0.0
----
-
 # New-VSServiceCatalogPortfolioShare
 
 ## SYNOPSIS
-Adds an AWS::ServiceCatalog::PortfolioShare resource to the template
+Adds an AWS::ServiceCatalog::PortfolioShare resource to the template.
+Shares the specified portfolio with the specified account or organization node.
+Shares to an organization node can only be created by the master account of an Organization.
+AWSOrganizationsAccess must be enabled in order to create a portfolio share to an organization node.
 
 ## SYNTAX
 
@@ -23,7 +15,19 @@ New-VSServiceCatalogPortfolioShare [-LogicalId] <String> -AccountId <Object> [-A
 ```
 
 ## DESCRIPTION
-Adds an AWS::ServiceCatalog::PortfolioShare resource to the template
+Adds an AWS::ServiceCatalog::PortfolioShare resource to the template.
+Shares the specified portfolio with the specified account or organization node.
+Shares to an organization node can only be created by the master account of an Organization.
+AWSOrganizationsAccess must be enabled in order to create a portfolio share to an organization node.
+
+## EXAMPLES
+
+### Example 1
+```powershell
+PS C:\> {{ Add example code here }}
+```
+
+{{ Add example description here }}
 
 ## PARAMETERS
 
@@ -45,9 +49,11 @@ Accept wildcard characters: False
 ```
 
 ### -AccountId
-Required: True    
-Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-servicecatalog-portfolioshare.html#cfn-servicecatalog-portfolioshare-accountid    
-PrimitiveType: String    
+The AWS account ID.
+For example, 123456789012.
+
+Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-servicecatalog-portfolioshare.html#cfn-servicecatalog-portfolioshare-accountid
+PrimitiveType: String
 UpdateType: Immutable
 
 ```yaml
@@ -63,9 +69,13 @@ Accept wildcard characters: False
 ```
 
 ### -AcceptLanguage
-Required: False    
-Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-servicecatalog-portfolioshare.html#cfn-servicecatalog-portfolioshare-acceptlanguage    
-PrimitiveType: String    
+The language code.
++  en - English default
++  jp - Japanese
++  zh - Chinese
+
+Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-servicecatalog-portfolioshare.html#cfn-servicecatalog-portfolioshare-acceptlanguage
+PrimitiveType: String
 UpdateType: Immutable
 
 ```yaml
@@ -81,9 +91,10 @@ Accept wildcard characters: False
 ```
 
 ### -PortfolioId
-Required: True    
-Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-servicecatalog-portfolioshare.html#cfn-servicecatalog-portfolioshare-portfolioid    
-PrimitiveType: String    
+The portfolio identifier.
+
+Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-servicecatalog-portfolioshare.html#cfn-servicecatalog-portfolioshare-portfolioid
+PrimitiveType: String
 UpdateType: Immutable
 
 ```yaml
@@ -193,15 +204,13 @@ Accept wildcard characters: False
 ```
 
 ### CommonParameters
-This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction, and -WarningVariable.
-For more information, see about_CommonParameters (http://go.microsoft.com/fwlink/?LinkID=113216).
+This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction, and -WarningVariable. For more information, see [about_CommonParameters](http://go.microsoft.com/fwlink/?LinkID=113216).
 
 ## INPUTS
 
 ## OUTPUTS
 
 ### Vaporshell.Resource.ServiceCatalog.PortfolioShare
-
 ## NOTES
 
 ## RELATED LINKS

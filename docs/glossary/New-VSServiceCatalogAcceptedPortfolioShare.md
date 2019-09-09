@@ -1,18 +1,8 @@
----
-layout: glossary
-title: New-VSServiceCatalogAcceptedPortfolioShare
-categories: glossary
-label1: Category
-data1: Documentation
-label2: Depth
-data2: Deep
-schema: 2.0.0
----
-
 # New-VSServiceCatalogAcceptedPortfolioShare
 
 ## SYNOPSIS
-Adds an AWS::ServiceCatalog::AcceptedPortfolioShare resource to the template
+Adds an AWS::ServiceCatalog::AcceptedPortfolioShare resource to the template.
+Accepts an offer to share the specified portfolio.
 
 ## SYNTAX
 
@@ -23,7 +13,17 @@ New-VSServiceCatalogAcceptedPortfolioShare [-LogicalId] <String> [-AcceptLanguag
 ```
 
 ## DESCRIPTION
-Adds an AWS::ServiceCatalog::AcceptedPortfolioShare resource to the template
+Adds an AWS::ServiceCatalog::AcceptedPortfolioShare resource to the template.
+Accepts an offer to share the specified portfolio.
+
+## EXAMPLES
+
+### Example 1
+```powershell
+PS C:\> {{ Add example code here }}
+```
+
+{{ Add example description here }}
 
 ## PARAMETERS
 
@@ -45,9 +45,13 @@ Accept wildcard characters: False
 ```
 
 ### -AcceptLanguage
-Required: False    
-Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-servicecatalog-acceptedportfolioshare.html#cfn-servicecatalog-acceptedportfolioshare-acceptlanguage    
-PrimitiveType: String    
+The language code.
++  en - English default
++  jp - Japanese
++  zh - Chinese
+
+Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-servicecatalog-acceptedportfolioshare.html#cfn-servicecatalog-acceptedportfolioshare-acceptlanguage
+PrimitiveType: String
 UpdateType: Immutable
 
 ```yaml
@@ -63,9 +67,10 @@ Accept wildcard characters: False
 ```
 
 ### -PortfolioId
-Required: True    
-Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-servicecatalog-acceptedportfolioshare.html#cfn-servicecatalog-acceptedportfolioshare-portfolioid    
-PrimitiveType: String    
+The portfolio identifier.
+
+Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-servicecatalog-acceptedportfolioshare.html#cfn-servicecatalog-acceptedportfolioshare-portfolioid
+PrimitiveType: String
 UpdateType: Immutable
 
 ```yaml
@@ -175,15 +180,13 @@ Accept wildcard characters: False
 ```
 
 ### CommonParameters
-This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction, and -WarningVariable.
-For more information, see about_CommonParameters (http://go.microsoft.com/fwlink/?LinkID=113216).
+This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction, and -WarningVariable. For more information, see [about_CommonParameters](http://go.microsoft.com/fwlink/?LinkID=113216).
 
 ## INPUTS
 
 ## OUTPUTS
 
 ### Vaporshell.Resource.ServiceCatalog.AcceptedPortfolioShare
-
 ## NOTES
 
 ## RELATED LINKS

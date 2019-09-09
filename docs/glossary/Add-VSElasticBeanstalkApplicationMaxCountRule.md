@@ -1,18 +1,8 @@
----
-layout: glossary
-title: Add-VSElasticBeanstalkApplicationMaxCountRule
-categories: glossary
-label1: Category
-data1: Documentation
-label2: Depth
-data2: Deep
-schema: 2.0.0
----
-
 # Add-VSElasticBeanstalkApplicationMaxCountRule
 
 ## SYNOPSIS
-Adds an AWS::ElasticBeanstalk::Application.MaxCountRule resource property to the template
+Adds an AWS::ElasticBeanstalk::Application.MaxCountRule resource property to the template.
+A lifecycle rule that deletes the oldest application version when the maximum count is exceeded.
 
 ## SYNTAX
 
@@ -22,14 +12,27 @@ Add-VSElasticBeanstalkApplicationMaxCountRule [[-DeleteSourceFromS3] <Boolean>] 
 ```
 
 ## DESCRIPTION
-Adds an AWS::ElasticBeanstalk::Application.MaxCountRule resource property to the template
+Adds an AWS::ElasticBeanstalk::Application.MaxCountRule resource property to the template.
+A lifecycle rule that deletes the oldest application version when the maximum count is exceeded.
+
+MaxCountRule is a property of the ApplicationVersionLifecycleConfig: https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-elasticbeanstalk-application-applicationversionlifecycleconfig.html property type.
+
+## EXAMPLES
+
+### Example 1
+```powershell
+PS C:\> {{ Add example code here }}
+```
+
+{{ Add example description here }}
 
 ## PARAMETERS
 
 ### -DeleteSourceFromS3
-Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-elasticbeanstalk-application-maxcountrule.html#cfn-elasticbeanstalk-application-maxcountrule-deletesourcefroms3    
-PrimitiveType: Boolean    
-Required: False    
+Set to true to delete a version's source bundle from Amazon S3 when Elastic Beanstalk deletes the application version.
+
+Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-elasticbeanstalk-application-maxcountrule.html#cfn-elasticbeanstalk-application-maxcountrule-deletesourcefroms3
+PrimitiveType: Boolean
 UpdateType: Mutable
 
 ```yaml
@@ -45,9 +48,10 @@ Accept wildcard characters: False
 ```
 
 ### -Enabled
-Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-elasticbeanstalk-application-maxcountrule.html#cfn-elasticbeanstalk-application-maxcountrule-enabled    
-PrimitiveType: Boolean    
-Required: False    
+Specify true to apply the rule, or false to disable it.
+
+Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-elasticbeanstalk-application-maxcountrule.html#cfn-elasticbeanstalk-application-maxcountrule-enabled
+PrimitiveType: Boolean
 UpdateType: Mutable
 
 ```yaml
@@ -63,9 +67,10 @@ Accept wildcard characters: False
 ```
 
 ### -MaxCount
-Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-elasticbeanstalk-application-maxcountrule.html#cfn-elasticbeanstalk-application-maxcountrule-maxcount    
-PrimitiveType: Integer    
-Required: False    
+Specify the maximum number of application versions to retain.
+
+Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-elasticbeanstalk-application-maxcountrule.html#cfn-elasticbeanstalk-application-maxcountrule-maxcount
+PrimitiveType: Integer
 UpdateType: Mutable
 
 ```yaml
@@ -81,15 +86,13 @@ Accept wildcard characters: False
 ```
 
 ### CommonParameters
-This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction, and -WarningVariable.
-For more information, see about_CommonParameters (http://go.microsoft.com/fwlink/?LinkID=113216).
+This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction, and -WarningVariable. For more information, see [about_CommonParameters](http://go.microsoft.com/fwlink/?LinkID=113216).
 
 ## INPUTS
 
 ## OUTPUTS
 
 ### Vaporshell.Resource.ElasticBeanstalk.Application.MaxCountRule
-
 ## NOTES
 
 ## RELATED LINKS

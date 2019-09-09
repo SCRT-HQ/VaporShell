@@ -1,18 +1,9 @@
----
-layout: glossary
-title: New-VSGlueConnection
-categories: glossary
-label1: Category
-data1: Documentation
-label2: Depth
-data2: Deep
-schema: 2.0.0
----
-
 # New-VSGlueConnection
 
 ## SYNOPSIS
-Adds an AWS::Glue::Connection resource to the template
+Adds an AWS::Glue::Connection resource to the template.
+The AWS::Glue::Connection resource specifies an AWS Glue connection to a data source.
+For more information, see Adding a Connection to Your Data Store: https://docs.aws.amazon.com/dg/populate-add-connection.html and Connection Structure: https://docs.aws.amazon.com/dg/aws-glue-api-catalog-connections.html#aws-glue-api-catalog-connections-Connection in the *AWS Glue Developer Guide*.
 
 ## SYNTAX
 
@@ -23,7 +14,18 @@ New-VSGlueConnection [-LogicalId] <String> -ConnectionInput <Object> -CatalogId 
 ```
 
 ## DESCRIPTION
-Adds an AWS::Glue::Connection resource to the template
+Adds an AWS::Glue::Connection resource to the template.
+The AWS::Glue::Connection resource specifies an AWS Glue connection to a data source.
+For more information, see Adding a Connection to Your Data Store: https://docs.aws.amazon.com/dg/populate-add-connection.html and Connection Structure: https://docs.aws.amazon.com/dg/aws-glue-api-catalog-connections.html#aws-glue-api-catalog-connections-Connection in the *AWS Glue Developer Guide*.
+
+## EXAMPLES
+
+### Example 1
+```powershell
+PS C:\> {{ Add example code here }}
+```
+
+{{ Add example description here }}
 
 ## PARAMETERS
 
@@ -45,9 +47,10 @@ Accept wildcard characters: False
 ```
 
 ### -ConnectionInput
-Type: ConnectionInput    
-Required: True    
-Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-glue-connection.html#cfn-glue-connection-connectioninput    
+The connection that you want to create.
+
+Type: ConnectionInput
+Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-glue-connection.html#cfn-glue-connection-connectioninput
 UpdateType: Mutable
 
 ```yaml
@@ -63,9 +66,13 @@ Accept wildcard characters: False
 ```
 
 ### -CatalogId
-Required: True    
-Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-glue-connection.html#cfn-glue-connection-catalogid    
-PrimitiveType: String    
+The ID of the data catalog to create the catalog object in.
+Currently, this should be the AWS account ID.
+To specify the account ID, you can use the Ref intrinsic function with the AWS::AccountId pseudo parameter.
+For example: !Ref AWS::AccountId.
+
+Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-glue-connection.html#cfn-glue-connection-catalogid
+PrimitiveType: String
 UpdateType: Immutable
 
 ```yaml
@@ -175,15 +182,13 @@ Accept wildcard characters: False
 ```
 
 ### CommonParameters
-This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction, and -WarningVariable.
-For more information, see about_CommonParameters (http://go.microsoft.com/fwlink/?LinkID=113216).
+This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction, and -WarningVariable. For more information, see [about_CommonParameters](http://go.microsoft.com/fwlink/?LinkID=113216).
 
 ## INPUTS
 
 ## OUTPUTS
 
 ### Vaporshell.Resource.Glue.Connection
-
 ## NOTES
 
 ## RELATED LINKS

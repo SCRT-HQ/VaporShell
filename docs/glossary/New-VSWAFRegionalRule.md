@@ -1,18 +1,9 @@
----
-layout: glossary
-title: New-VSWAFRegionalRule
-categories: glossary
-label1: Category
-data1: Documentation
-label2: Depth
-data2: Deep
-schema: 2.0.0
----
-
 # New-VSWAFRegionalRule
 
 ## SYNOPSIS
-Adds an AWS::WAFRegional::Rule resource to the template
+Adds an AWS::WAFRegional::Rule resource to the template.
+A combination of ByteMatchSet, IPSet, and/or SqlInjectionMatchSet objects that identify the web requests that you want to allow, block, or count.
+For example, you might create a Rule that includes the following predicates:
 
 ## SYNTAX
 
@@ -23,7 +14,24 @@ New-VSWAFRegionalRule [-LogicalId] <String> -MetricName <Object> [-Predicates <O
 ```
 
 ## DESCRIPTION
-Adds an AWS::WAFRegional::Rule resource to the template
+Adds an AWS::WAFRegional::Rule resource to the template.
+A combination of ByteMatchSet, IPSet, and/or SqlInjectionMatchSet objects that identify the web requests that you want to allow, block, or count.
+For example, you might create a Rule that includes the following predicates:
+
++ An IPSet that causes AWS WAF to search for web requests that originate from the IP address 192.0.2.44
+
++ A ByteMatchSet that causes AWS WAF to search for web requests for which the value of the User-Agent header is BadBot.
+
+To match the settings in this Rule, a request must originate from 192.0.2.44 AND include a User-Agent header for which the value is BadBot.
+
+## EXAMPLES
+
+### Example 1
+```powershell
+PS C:\> {{ Add example code here }}
+```
+
+{{ Add example description here }}
 
 ## PARAMETERS
 
@@ -45,9 +53,12 @@ Accept wildcard characters: False
 ```
 
 ### -MetricName
-Required: True    
-Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-wafregional-rule.html#cfn-wafregional-rule-metricname    
-PrimitiveType: String    
+A friendly name or description for the metrics for this Rule.
+The name can contain only alphanumeric characters A-Z, a-z, 0-9, with maximum length 128 and minimum length one.
+It can't contain whitespace or metric names reserved for AWS WAF, including "All" and "Default_Action." You can't change MetricName after you create the Rule.
+
+Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-wafregional-rule.html#cfn-wafregional-rule-metricname
+PrimitiveType: String
 UpdateType: Immutable
 
 ```yaml
@@ -63,10 +74,11 @@ Accept wildcard characters: False
 ```
 
 ### -Predicates
-Type: List    
-Required: False    
-Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-wafregional-rule.html#cfn-wafregional-rule-predicates    
-ItemType: Predicate    
+The Predicates object contains one Predicate element for each ByteMatchSet, IPSet, or SqlInjectionMatchSet object that you want to include in a Rule.
+
+Type: List
+Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-wafregional-rule.html#cfn-wafregional-rule-predicates
+ItemType: Predicate
 UpdateType: Mutable
 
 ```yaml
@@ -82,9 +94,11 @@ Accept wildcard characters: False
 ```
 
 ### -Name
-Required: True    
-Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-wafregional-rule.html#cfn-wafregional-rule-name    
-PrimitiveType: String    
+The friendly name or description for the Rule.
+You can't change the name of a Rule after you create it.
+
+Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-wafregional-rule.html#cfn-wafregional-rule-name
+PrimitiveType: String
 UpdateType: Immutable
 
 ```yaml
@@ -194,15 +208,13 @@ Accept wildcard characters: False
 ```
 
 ### CommonParameters
-This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction, and -WarningVariable.
-For more information, see about_CommonParameters (http://go.microsoft.com/fwlink/?LinkID=113216).
+This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction, and -WarningVariable. For more information, see [about_CommonParameters](http://go.microsoft.com/fwlink/?LinkID=113216).
 
 ## INPUTS
 
 ## OUTPUTS
 
 ### Vaporshell.Resource.WAFRegional.Rule
-
 ## NOTES
 
 ## RELATED LINKS

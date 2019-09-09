@@ -1,18 +1,9 @@
----
-layout: glossary
-title: New-VSDMSReplicationSubnetGroup
-categories: glossary
-label1: Category
-data1: Documentation
-label2: Depth
-data2: Deep
-schema: 2.0.0
----
-
 # New-VSDMSReplicationSubnetGroup
 
 ## SYNOPSIS
-Adds an AWS::DMS::ReplicationSubnetGroup resource to the template
+Adds an AWS::DMS::ReplicationSubnetGroup resource to the template.
+The AWS::DMS::ReplicationSubnetGroup resource creates an AWS DMS replication subnet group.
+Subnet groups must contain at least two subnets in two different Availability Zones in the same region.
 
 ## SYNTAX
 
@@ -24,7 +15,23 @@ New-VSDMSReplicationSubnetGroup [-LogicalId] <String> -ReplicationSubnetGroupDes
 ```
 
 ## DESCRIPTION
-Adds an AWS::DMS::ReplicationSubnetGroup resource to the template
+Adds an AWS::DMS::ReplicationSubnetGroup resource to the template.
+The AWS::DMS::ReplicationSubnetGroup resource creates an AWS DMS replication subnet group.
+Subnet groups must contain at least two subnets in two different Availability Zones in the same region.
+
+**Note**
+
+Resource creation will fail if the dms-vpc-role IAM role doesn't already exist.
+For more information, see Creating the IAM Roles to Use With the AWS CLI and AWS DMS API: https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Security.APIRole.html in the *AWS Database Migration Service User Guide.*
+
+## EXAMPLES
+
+### Example 1
+```powershell
+PS C:\> {{ Add example code here }}
+```
+
+{{ Add example description here }}
 
 ## PARAMETERS
 
@@ -46,9 +53,10 @@ Accept wildcard characters: False
 ```
 
 ### -ReplicationSubnetGroupDescription
-Required: True    
-Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-dms-replicationsubnetgroup.html#cfn-dms-replicationsubnetgroup-replicationsubnetgroupdescription    
-PrimitiveType: String    
+The description for the subnet group.
+
+Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-dms-replicationsubnetgroup.html#cfn-dms-replicationsubnetgroup-replicationsubnetgroupdescription
+PrimitiveType: String
 UpdateType: Mutable
 
 ```yaml
@@ -64,9 +72,11 @@ Accept wildcard characters: False
 ```
 
 ### -ReplicationSubnetGroupIdentifier
-Required: False    
-Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-dms-replicationsubnetgroup.html#cfn-dms-replicationsubnetgroup-replicationsubnetgroupidentifier    
-PrimitiveType: String    
+The identifier for the replication subnet group.
+If you don't specify a name, AWS CloudFormation generates a unique ID and uses that ID for the identifier.
+
+Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-dms-replicationsubnetgroup.html#cfn-dms-replicationsubnetgroup-replicationsubnetgroupidentifier
+PrimitiveType: String
 UpdateType: Immutable
 
 ```yaml
@@ -82,10 +92,11 @@ Accept wildcard characters: False
 ```
 
 ### -SubnetIds
-PrimitiveItemType: String    
-Type: List    
-Required: True    
-Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-dms-replicationsubnetgroup.html#cfn-dms-replicationsubnetgroup-subnetids    
+The EC2 subnet IDs for the subnet group.
+
+PrimitiveItemType: String
+Type: List
+Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-dms-replicationsubnetgroup.html#cfn-dms-replicationsubnetgroup-subnetids
 UpdateType: Mutable
 
 ```yaml
@@ -101,10 +112,11 @@ Accept wildcard characters: False
 ```
 
 ### -Tags
-Type: List    
-Required: False    
-Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-dms-replicationsubnetgroup.html#cfn-dms-replicationsubnetgroup-tags    
-ItemType: Tag    
+The tag to be assigned to the subnet group.
+
+Type: List
+Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-dms-replicationsubnetgroup.html#cfn-dms-replicationsubnetgroup-tags
+ItemType: Tag
 UpdateType: Immutable
 
 ```yaml
@@ -214,15 +226,13 @@ Accept wildcard characters: False
 ```
 
 ### CommonParameters
-This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction, and -WarningVariable.
-For more information, see about_CommonParameters (http://go.microsoft.com/fwlink/?LinkID=113216).
+This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction, and -WarningVariable. For more information, see [about_CommonParameters](http://go.microsoft.com/fwlink/?LinkID=113216).
 
 ## INPUTS
 
 ## OUTPUTS
 
 ### Vaporshell.Resource.DMS.ReplicationSubnetGroup
-
 ## NOTES
 
 ## RELATED LINKS

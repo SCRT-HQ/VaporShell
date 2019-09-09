@@ -1,18 +1,9 @@
----
-layout: glossary
-title: Add-VSS3BucketNotificationFilter
-categories: glossary
-label1: Category
-data1: Documentation
-label2: Depth
-data2: Deep
-schema: 2.0.0
----
-
 # Add-VSS3BucketNotificationFilter
 
 ## SYNOPSIS
-Adds an AWS::S3::Bucket.NotificationFilter resource property to the template
+Adds an AWS::S3::Bucket.NotificationFilter resource property to the template.
+Specifies object key name filtering rules.
+For information about key name filtering, see Configuring Event Notifications: https://docs.aws.amazon.com/AmazonS3/latest/dev/NotificationHowTo.html in the *Amazon Simple Storage Service Developer Guide*.
 
 ## SYNTAX
 
@@ -21,14 +12,26 @@ Add-VSS3BucketNotificationFilter [-S3Key] <Object> [<CommonParameters>]
 ```
 
 ## DESCRIPTION
-Adds an AWS::S3::Bucket.NotificationFilter resource property to the template
+Adds an AWS::S3::Bucket.NotificationFilter resource property to the template.
+Specifies object key name filtering rules.
+For information about key name filtering, see Configuring Event Notifications: https://docs.aws.amazon.com/AmazonS3/latest/dev/NotificationHowTo.html in the *Amazon Simple Storage Service Developer Guide*.
+
+## EXAMPLES
+
+### Example 1
+```powershell
+PS C:\> {{ Add example code here }}
+```
+
+{{ Add example description here }}
 
 ## PARAMETERS
 
 ### -S3Key
-Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-s3-bucket-notificationconfiguration-config-filter.html#cfn-s3-bucket-notificationconfiguraiton-config-filter-s3key    
-Required: True    
-Type: S3KeyFilter    
+A container for object key name prefix and suffix filtering rules.
+
+Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-s3-bucket-notificationconfiguration-config-filter.html#cfn-s3-bucket-notificationconfiguraiton-config-filter-s3key
+Type: S3KeyFilter
 UpdateType: Mutable
 
 ```yaml
@@ -44,15 +47,13 @@ Accept wildcard characters: False
 ```
 
 ### CommonParameters
-This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction, and -WarningVariable.
-For more information, see about_CommonParameters (http://go.microsoft.com/fwlink/?LinkID=113216).
+This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction, and -WarningVariable. For more information, see [about_CommonParameters](http://go.microsoft.com/fwlink/?LinkID=113216).
 
 ## INPUTS
 
 ## OUTPUTS
 
 ### Vaporshell.Resource.S3.Bucket.NotificationFilter
-
 ## NOTES
 
 ## RELATED LINKS

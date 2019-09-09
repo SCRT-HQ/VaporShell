@@ -1,37 +1,40 @@
----
-layout: glossary
-title: Add-VSKinesisFirehoseDeliveryStreamExtendedS3DestinationConfiguration
-categories: glossary
-label1: Category
-data1: Documentation
-label2: Depth
-data2: Deep
-schema: 2.0.0
----
-
 # Add-VSKinesisFirehoseDeliveryStreamExtendedS3DestinationConfiguration
 
 ## SYNOPSIS
-Adds an AWS::KinesisFirehose::DeliveryStream.ExtendedS3DestinationConfiguration resource property to the template
+Adds an AWS::KinesisFirehose::DeliveryStream.ExtendedS3DestinationConfiguration resource property to the template.
+The ExtendedS3DestinationConfiguration property type configures an Amazon S3 destination for an Amazon Kinesis Data Firehose delivery stream.
 
 ## SYNTAX
 
 ```
 Add-VSKinesisFirehoseDeliveryStreamExtendedS3DestinationConfiguration [-BucketARN] <Object>
  [-BufferingHints] <Object> [[-CloudWatchLoggingOptions] <Object>] [-CompressionFormat] <Object>
- [[-EncryptionConfiguration] <Object>] [-Prefix] <Object> [[-ProcessingConfiguration] <Object>]
- [-RoleARN] <Object> [[-S3BackupConfiguration] <Object>] [[-S3BackupMode] <Object>] [<CommonParameters>]
+ [[-DataFormatConversionConfiguration] <Object>] [[-EncryptionConfiguration] <Object>]
+ [[-ErrorOutputPrefix] <Object>] [[-Prefix] <Object>] [[-ProcessingConfiguration] <Object>] [-RoleARN] <Object>
+ [[-S3BackupConfiguration] <Object>] [[-S3BackupMode] <Object>] [<CommonParameters>]
 ```
 
 ## DESCRIPTION
-Adds an AWS::KinesisFirehose::DeliveryStream.ExtendedS3DestinationConfiguration resource property to the template
+Adds an AWS::KinesisFirehose::DeliveryStream.ExtendedS3DestinationConfiguration resource property to the template.
+The ExtendedS3DestinationConfiguration property type configures an Amazon S3 destination for an Amazon Kinesis Data Firehose delivery stream.
+
+## EXAMPLES
+
+### Example 1
+```powershell
+PS C:\> {{ Add example code here }}
+```
+
+{{ Add example description here }}
 
 ## PARAMETERS
 
 ### -BucketARN
-Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-kinesisfirehose-deliverystream-extendeds3destinationconfiguration.html#cfn-kinesisfirehose-deliverystream-extendeds3destinationconfiguration-bucketarn    
-PrimitiveType: String    
-Required: True    
+The Amazon Resource Name ARN of the Amazon S3 bucket.
+For constraints, see ExtendedS3DestinationConfiguration: https://docs.aws.amazon.com/firehose/latest/APIReference/API_ExtendedS3DestinationConfiguration.html in the *Amazon Kinesis Data Firehose API Reference*.
+
+Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-kinesisfirehose-deliverystream-extendeds3destinationconfiguration.html#cfn-kinesisfirehose-deliverystream-extendeds3destinationconfiguration-bucketarn
+PrimitiveType: String
 UpdateType: Mutable
 
 ```yaml
@@ -47,9 +50,10 @@ Accept wildcard characters: False
 ```
 
 ### -BufferingHints
-Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-kinesisfirehose-deliverystream-extendeds3destinationconfiguration.html#cfn-kinesisfirehose-deliverystream-extendeds3destinationconfiguration-bufferinghints    
-Required: True    
-Type: BufferingHints    
+The buffering option.
+
+Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-kinesisfirehose-deliverystream-extendeds3destinationconfiguration.html#cfn-kinesisfirehose-deliverystream-extendeds3destinationconfiguration-bufferinghints
+Type: BufferingHints
 UpdateType: Mutable
 
 ```yaml
@@ -65,9 +69,10 @@ Accept wildcard characters: False
 ```
 
 ### -CloudWatchLoggingOptions
-Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-kinesisfirehose-deliverystream-extendeds3destinationconfiguration.html#cfn-kinesisfirehose-deliverystream-extendeds3destinationconfiguration-cloudwatchloggingoptions    
-Required: False    
-Type: CloudWatchLoggingOptions    
+The Amazon CloudWatch logging options for your delivery stream.
+
+Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-kinesisfirehose-deliverystream-extendeds3destinationconfiguration.html#cfn-kinesisfirehose-deliverystream-extendeds3destinationconfiguration-cloudwatchloggingoptions
+Type: CloudWatchLoggingOptions
 UpdateType: Mutable
 
 ```yaml
@@ -83,9 +88,11 @@ Accept wildcard characters: False
 ```
 
 ### -CompressionFormat
-Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-kinesisfirehose-deliverystream-extendeds3destinationconfiguration.html#cfn-kinesisfirehose-deliverystream-extendeds3destinationconfiguration-compressionformat    
-PrimitiveType: String    
-Required: True    
+The compression format.
+If no value is specified, the default is UNCOMPRESSED.
+
+Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-kinesisfirehose-deliverystream-extendeds3destinationconfiguration.html#cfn-kinesisfirehose-deliverystream-extendeds3destinationconfiguration-compressionformat
+PrimitiveType: String
 UpdateType: Mutable
 
 ```yaml
@@ -100,10 +107,11 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
-### -EncryptionConfiguration
-Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-kinesisfirehose-deliverystream-extendeds3destinationconfiguration.html#cfn-kinesisfirehose-deliverystream-extendeds3destinationconfiguration-encryptionconfiguration    
-Required: False    
-Type: EncryptionConfiguration    
+### -DataFormatConversionConfiguration
+The serializer, deserializer, and schema for converting data from the JSON format to the Parquet or ORC format before writing it to Amazon S3.
+
+Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-kinesisfirehose-deliverystream-extendeds3destinationconfiguration.html#cfn-kinesisfirehose-deliverystream-extendeds3destinationconfiguration-dataformatconversionconfiguration
+Type: DataFormatConversionConfiguration
 UpdateType: Mutable
 
 ```yaml
@@ -118,10 +126,12 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
-### -Prefix
-Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-kinesisfirehose-deliverystream-extendeds3destinationconfiguration.html#cfn-kinesisfirehose-deliverystream-extendeds3destinationconfiguration-prefix    
-PrimitiveType: String    
-Required: True    
+### -EncryptionConfiguration
+The encryption configuration for the Kinesis Data Firehose delivery stream.
+The default value is NoEncryption.
+
+Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-kinesisfirehose-deliverystream-extendeds3destinationconfiguration.html#cfn-kinesisfirehose-deliverystream-extendeds3destinationconfiguration-encryptionconfiguration
+Type: EncryptionConfiguration
 UpdateType: Mutable
 
 ```yaml
@@ -129,17 +139,20 @@ Type: Object
 Parameter Sets: (All)
 Aliases:
 
-Required: True
+Required: False
 Position: 6
 Default value: None
 Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
-### -ProcessingConfiguration
-Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-kinesisfirehose-deliverystream-extendeds3destinationconfiguration.html#cfn-kinesisfirehose-deliverystream-extendeds3destinationconfiguration-processingconfiguration    
-Required: False    
-Type: ProcessingConfiguration    
+### -ErrorOutputPrefix
+A prefix that Kinesis Data Firehose evaluates and adds to failed records before writing them to S3.
+This prefix appears immediately following the bucket name.
+For information about how to specify this prefix, see Custom Prefixes for Amazon S3 Objects: https://docs.aws.amazon.com/firehose/latest/dev/s3-prefixes.html.
+
+Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-kinesisfirehose-deliverystream-extendeds3destinationconfiguration.html#cfn-kinesisfirehose-deliverystream-extendeds3destinationconfiguration-erroroutputprefix
+PrimitiveType: String
 UpdateType: Mutable
 
 ```yaml
@@ -154,10 +167,12 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
-### -RoleARN
-Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-kinesisfirehose-deliverystream-extendeds3destinationconfiguration.html#cfn-kinesisfirehose-deliverystream-extendeds3destinationconfiguration-rolearn    
-PrimitiveType: String    
-Required: True    
+### -Prefix
+The YYYY/MM/DD/HH time format prefix is automatically used for delivered Amazon S3 files.
+For more information, see ExtendedS3DestinationConfiguration: https://docs.aws.amazon.com/firehose/latest/APIReference/API_ExtendedS3DestinationConfiguration.html in the *Amazon Kinesis Data Firehose API Reference*.
+
+Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-kinesisfirehose-deliverystream-extendeds3destinationconfiguration.html#cfn-kinesisfirehose-deliverystream-extendeds3destinationconfiguration-prefix
+PrimitiveType: String
 UpdateType: Mutable
 
 ```yaml
@@ -165,17 +180,18 @@ Type: Object
 Parameter Sets: (All)
 Aliases:
 
-Required: True
+Required: False
 Position: 8
 Default value: None
 Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
-### -S3BackupConfiguration
-Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-kinesisfirehose-deliverystream-extendeds3destinationconfiguration.html#cfn-kinesisfirehose-deliverystream-extendeds3destinationconfiguration-s3backupconfiguration    
-Required: False    
-Type: S3DestinationConfiguration    
+### -ProcessingConfiguration
+The data processing configuration for the Kinesis Data Firehose delivery stream.
+
+Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-kinesisfirehose-deliverystream-extendeds3destinationconfiguration.html#cfn-kinesisfirehose-deliverystream-extendeds3destinationconfiguration-processingconfiguration
+Type: ProcessingConfiguration
 UpdateType: Mutable
 
 ```yaml
@@ -190,10 +206,31 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
-### -S3BackupMode
-Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-kinesisfirehose-deliverystream-extendeds3destinationconfiguration.html#cfn-kinesisfirehose-deliverystream-extendeds3destinationconfiguration-s3backupmode    
-PrimitiveType: String    
-Required: False    
+### -RoleARN
+The Amazon Resource Name ARN of the AWS credentials.
+For constraints, see ExtendedS3DestinationConfiguration: https://docs.aws.amazon.com/firehose/latest/APIReference/API_ExtendedS3DestinationConfiguration.html in the *Amazon Kinesis Data Firehose API Reference*.
+
+Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-kinesisfirehose-deliverystream-extendeds3destinationconfiguration.html#cfn-kinesisfirehose-deliverystream-extendeds3destinationconfiguration-rolearn
+PrimitiveType: String
+UpdateType: Mutable
+
+```yaml
+Type: Object
+Parameter Sets: (All)
+Aliases:
+
+Required: True
+Position: 10
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### -S3BackupConfiguration
+The configuration for backup in Amazon S3.
+
+Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-kinesisfirehose-deliverystream-extendeds3destinationconfiguration.html#cfn-kinesisfirehose-deliverystream-extendeds3destinationconfiguration-s3backupconfiguration
+Type: S3DestinationConfiguration
 UpdateType: Mutable
 
 ```yaml
@@ -202,22 +239,39 @@ Parameter Sets: (All)
 Aliases:
 
 Required: False
-Position: 10
+Position: 11
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### -S3BackupMode
+The Amazon S3 backup mode.
+
+Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-kinesisfirehose-deliverystream-extendeds3destinationconfiguration.html#cfn-kinesisfirehose-deliverystream-extendeds3destinationconfiguration-s3backupmode
+PrimitiveType: String
+UpdateType: Mutable
+
+```yaml
+Type: Object
+Parameter Sets: (All)
+Aliases:
+
+Required: False
+Position: 12
 Default value: None
 Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
 ### CommonParameters
-This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction, and -WarningVariable.
-For more information, see about_CommonParameters (http://go.microsoft.com/fwlink/?LinkID=113216).
+This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction, and -WarningVariable. For more information, see [about_CommonParameters](http://go.microsoft.com/fwlink/?LinkID=113216).
 
 ## INPUTS
 
 ## OUTPUTS
 
 ### Vaporshell.Resource.KinesisFirehose.DeliveryStream.ExtendedS3DestinationConfiguration
-
 ## NOTES
 
 ## RELATED LINKS

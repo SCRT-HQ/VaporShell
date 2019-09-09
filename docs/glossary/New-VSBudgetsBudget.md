@@ -1,18 +1,9 @@
----
-layout: glossary
-title: New-VSBudgetsBudget
-categories: glossary
-label1: Category
-data1: Documentation
-label2: Depth
-data2: Deep
-schema: 2.0.0
----
-
 # New-VSBudgetsBudget
 
 ## SYNOPSIS
-Adds an AWS::Budgets::Budget resource to the template
+Adds an AWS::Budgets::Budget resource to the template.
+The AWS::Budgets::Budget resource creates, replaces, or deletes budgets for Billing and Cost Management.
+For more information, see Managing Your Costs with Budgets: https://docs.aws.amazon.com/awsaccountbilling/latest/aboutv2/budgets-managing-costs.html in the *AWS Billing and Cost Management User Guide*.
 
 ## SYNTAX
 
@@ -23,7 +14,18 @@ New-VSBudgetsBudget [-LogicalId] <String> [-NotificationsWithSubscribers <Object
 ```
 
 ## DESCRIPTION
-Adds an AWS::Budgets::Budget resource to the template
+Adds an AWS::Budgets::Budget resource to the template.
+The AWS::Budgets::Budget resource creates, replaces, or deletes budgets for Billing and Cost Management.
+For more information, see Managing Your Costs with Budgets: https://docs.aws.amazon.com/awsaccountbilling/latest/aboutv2/budgets-managing-costs.html in the *AWS Billing and Cost Management User Guide*.
+
+## EXAMPLES
+
+### Example 1
+```powershell
+PS C:\> {{ Add example code here }}
+```
+
+{{ Add example description here }}
 
 ## PARAMETERS
 
@@ -45,10 +47,13 @@ Accept wildcard characters: False
 ```
 
 ### -NotificationsWithSubscribers
-Type: List    
-Required: False    
-Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-budgets-budget.html#cfn-budgets-budget-notificationswithsubscribers    
-ItemType: NotificationWithSubscribers    
+A notification that you want to associate with a budget.
+A budget can have up to five notifications, and each notification can have one SNS subscriber and up to 10 email subscribers.
+If you include notifications and subscribers in your CreateBudget call, AWS creates the notifications and subscribers for you.
+
+Type: List
+Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-budgets-budget.html#cfn-budgets-budget-notificationswithsubscribers
+ItemType: NotificationWithSubscribers
 UpdateType: Immutable
 
 ```yaml
@@ -64,9 +69,10 @@ Accept wildcard characters: False
 ```
 
 ### -Budget
-Type: BudgetData    
-Required: True    
-Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-budgets-budget.html#cfn-budgets-budget-budget    
+The budget object that you want to create.
+
+Type: BudgetData
+Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-budgets-budget.html#cfn-budgets-budget-budget
 UpdateType: Mutable
 
 ```yaml
@@ -176,15 +182,13 @@ Accept wildcard characters: False
 ```
 
 ### CommonParameters
-This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction, and -WarningVariable.
-For more information, see about_CommonParameters (http://go.microsoft.com/fwlink/?LinkID=113216).
+This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction, and -WarningVariable. For more information, see [about_CommonParameters](http://go.microsoft.com/fwlink/?LinkID=113216).
 
 ## INPUTS
 
 ## OUTPUTS
 
 ### Vaporshell.Resource.Budgets.Budget
-
 ## NOTES
 
 ## RELATED LINKS

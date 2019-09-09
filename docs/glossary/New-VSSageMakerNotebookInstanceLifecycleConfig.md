@@ -1,18 +1,9 @@
----
-layout: glossary
-title: New-VSSageMakerNotebookInstanceLifecycleConfig
-categories: glossary
-label1: Category
-data1: Documentation
-label2: Depth
-data2: Deep
-schema: 2.0.0
----
-
 # New-VSSageMakerNotebookInstanceLifecycleConfig
 
 ## SYNOPSIS
-Adds an AWS::SageMaker::NotebookInstanceLifecycleConfig resource to the template
+Adds an AWS::SageMaker::NotebookInstanceLifecycleConfig resource to the template.
+The AWS::SageMaker::NotebookInstanceLifecycleConfig resource creates shell scripts that run when you create and/or start a notebook instance.
+For information about notebook instance lifestyle configurations, see Customize a Notebook Instance: https://docs.aws.amazon.com/sagemaker/latest/dg/notebook-lifecycle-config.html in the *Amazon SageMaker Developer Guide*.
 
 ## SYNTAX
 
@@ -24,7 +15,18 @@ New-VSSageMakerNotebookInstanceLifecycleConfig [-LogicalId] <String> [-OnStart <
 ```
 
 ## DESCRIPTION
-Adds an AWS::SageMaker::NotebookInstanceLifecycleConfig resource to the template
+Adds an AWS::SageMaker::NotebookInstanceLifecycleConfig resource to the template.
+The AWS::SageMaker::NotebookInstanceLifecycleConfig resource creates shell scripts that run when you create and/or start a notebook instance.
+For information about notebook instance lifestyle configurations, see Customize a Notebook Instance: https://docs.aws.amazon.com/sagemaker/latest/dg/notebook-lifecycle-config.html in the *Amazon SageMaker Developer Guide*.
+
+## EXAMPLES
+
+### Example 1
+```powershell
+PS C:\> {{ Add example code here }}
+```
+
+{{ Add example description here }}
 
 ## PARAMETERS
 
@@ -46,10 +48,12 @@ Accept wildcard characters: False
 ```
 
 ### -OnStart
-Type: List    
-Required: False    
-Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-sagemaker-notebookinstancelifecycleconfig.html#cfn-sagemaker-notebookinstancelifecycleconfig-onstart    
-ItemType: NotebookInstanceLifecycleHook    
+A shell script that runs every time you start a notebook instance, including when you create the notebook instance.
+The shell script must be a base64-encoded string.
+
+Type: List
+Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-sagemaker-notebookinstancelifecycleconfig.html#cfn-sagemaker-notebookinstancelifecycleconfig-onstart
+ItemType: NotebookInstanceLifecycleHook
 UpdateType: Mutable
 
 ```yaml
@@ -65,9 +69,10 @@ Accept wildcard characters: False
 ```
 
 ### -NotebookInstanceLifecycleConfigName
-Required: False    
-Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-sagemaker-notebookinstancelifecycleconfig.html#cfn-sagemaker-notebookinstancelifecycleconfig-notebookinstancelifecycleconfigname    
-PrimitiveType: String    
+The name of the lifecycle configuration.
+
+Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-sagemaker-notebookinstancelifecycleconfig.html#cfn-sagemaker-notebookinstancelifecycleconfig-notebookinstancelifecycleconfigname
+PrimitiveType: String
 UpdateType: Immutable
 
 ```yaml
@@ -83,10 +88,12 @@ Accept wildcard characters: False
 ```
 
 ### -OnCreate
-Type: List    
-Required: False    
-Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-sagemaker-notebookinstancelifecycleconfig.html#cfn-sagemaker-notebookinstancelifecycleconfig-oncreate    
-ItemType: NotebookInstanceLifecycleHook    
+A shell script that runs only once, when you create a notebook instance.
+The shell script must be a base64-encoded string.
+
+Type: List
+Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-sagemaker-notebookinstancelifecycleconfig.html#cfn-sagemaker-notebookinstancelifecycleconfig-oncreate
+ItemType: NotebookInstanceLifecycleHook
 UpdateType: Mutable
 
 ```yaml
@@ -196,15 +203,13 @@ Accept wildcard characters: False
 ```
 
 ### CommonParameters
-This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction, and -WarningVariable.
-For more information, see about_CommonParameters (http://go.microsoft.com/fwlink/?LinkID=113216).
+This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction, and -WarningVariable. For more information, see [about_CommonParameters](http://go.microsoft.com/fwlink/?LinkID=113216).
 
 ## INPUTS
 
 ## OUTPUTS
 
 ### Vaporshell.Resource.SageMaker.NotebookInstanceLifecycleConfig
-
 ## NOTES
 
 ## RELATED LINKS

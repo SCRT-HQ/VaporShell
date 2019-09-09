@@ -1,18 +1,8 @@
----
-layout: glossary
-title: New-VSServiceCatalogPortfolio
-categories: glossary
-label1: Category
-data1: Documentation
-label2: Depth
-data2: Deep
-schema: 2.0.0
----
-
 # New-VSServiceCatalogPortfolio
 
 ## SYNOPSIS
-Adds an AWS::ServiceCatalog::Portfolio resource to the template
+Adds an AWS::ServiceCatalog::Portfolio resource to the template.
+Specifies a portfolio.
 
 ## SYNTAX
 
@@ -24,7 +14,17 @@ New-VSServiceCatalogPortfolio [-LogicalId] <String> -ProviderName <Object> [-Des
 ```
 
 ## DESCRIPTION
-Adds an AWS::ServiceCatalog::Portfolio resource to the template
+Adds an AWS::ServiceCatalog::Portfolio resource to the template.
+Specifies a portfolio.
+
+## EXAMPLES
+
+### Example 1
+```powershell
+PS C:\> {{ Add example code here }}
+```
+
+{{ Add example description here }}
 
 ## PARAMETERS
 
@@ -46,9 +46,10 @@ Accept wildcard characters: False
 ```
 
 ### -ProviderName
-Required: True    
-Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-servicecatalog-portfolio.html#cfn-servicecatalog-portfolio-providername    
-PrimitiveType: String    
+The name of the portfolio provider.
+
+Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-servicecatalog-portfolio.html#cfn-servicecatalog-portfolio-providername
+PrimitiveType: String
 UpdateType: Mutable
 
 ```yaml
@@ -64,9 +65,10 @@ Accept wildcard characters: False
 ```
 
 ### -Description
-Required: False    
-Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-servicecatalog-portfolio.html#cfn-servicecatalog-portfolio-description    
-PrimitiveType: String    
+The description of the portfolio.
+
+Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-servicecatalog-portfolio.html#cfn-servicecatalog-portfolio-description
+PrimitiveType: String
 UpdateType: Mutable
 
 ```yaml
@@ -82,9 +84,10 @@ Accept wildcard characters: False
 ```
 
 ### -DisplayName
-Required: True    
-Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-servicecatalog-portfolio.html#cfn-servicecatalog-portfolio-displayname    
-PrimitiveType: String    
+The name to use for display purposes.
+
+Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-servicecatalog-portfolio.html#cfn-servicecatalog-portfolio-displayname
+PrimitiveType: String
 UpdateType: Mutable
 
 ```yaml
@@ -100,9 +103,13 @@ Accept wildcard characters: False
 ```
 
 ### -AcceptLanguage
-Required: False    
-Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-servicecatalog-portfolio.html#cfn-servicecatalog-portfolio-acceptlanguage    
-PrimitiveType: String    
+The language code.
++  en - English default
++  jp - Japanese
++  zh - Chinese
+
+Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-servicecatalog-portfolio.html#cfn-servicecatalog-portfolio-acceptlanguage
+PrimitiveType: String
 UpdateType: Mutable
 
 ```yaml
@@ -118,10 +125,11 @@ Accept wildcard characters: False
 ```
 
 ### -Tags
-Type: List    
-Required: False    
-Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-servicecatalog-portfolio.html#cfn-servicecatalog-portfolio-tags    
-ItemType: Tag    
+One or more tags.
+
+Type: List
+Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-servicecatalog-portfolio.html#cfn-servicecatalog-portfolio-tags
+ItemType: Tag
 UpdateType: Mutable
 
 ```yaml
@@ -231,15 +239,13 @@ Accept wildcard characters: False
 ```
 
 ### CommonParameters
-This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction, and -WarningVariable.
-For more information, see about_CommonParameters (http://go.microsoft.com/fwlink/?LinkID=113216).
+This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction, and -WarningVariable. For more information, see [about_CommonParameters](http://go.microsoft.com/fwlink/?LinkID=113216).
 
 ## INPUTS
 
 ## OUTPUTS
 
 ### Vaporshell.Resource.ServiceCatalog.Portfolio
-
 ## NOTES
 
 ## RELATED LINKS

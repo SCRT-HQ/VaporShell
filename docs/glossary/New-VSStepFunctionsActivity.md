@@ -1,29 +1,35 @@
----
-layout: glossary
-title: New-VSStepFunctionsActivity
-categories: glossary
-label1: Category
-data1: Documentation
-label2: Depth
-data2: Deep
-schema: 2.0.0
----
-
 # New-VSStepFunctionsActivity
 
 ## SYNOPSIS
-Adds an AWS::StepFunctions::Activity resource to the template
+Adds an AWS::StepFunctions::Activity resource to the template.
+An activity is a task that you write in any programming language and host on any machine that has access to AWS Step Functions.
+Activities must poll Step Functions using the GetActivityTask API action and respond using SendTask* API actions.
+This function lets Step Functions know the existence of your activity and returns an identifier for use in a state machine and when polling from the activity.
 
 ## SYNTAX
 
 ```
-New-VSStepFunctionsActivity [-LogicalId] <String> -Name <Object> [-DeletionPolicy <String>]
+New-VSStepFunctionsActivity [-LogicalId] <String> [-Tags <Object>] -Name <Object> [-DeletionPolicy <String>]
  [-DependsOn <String[]>] [-Metadata <Object>] [-UpdatePolicy <Object>] [-Condition <Object>]
  [<CommonParameters>]
 ```
 
 ## DESCRIPTION
-Adds an AWS::StepFunctions::Activity resource to the template
+Adds an AWS::StepFunctions::Activity resource to the template.
+An activity is a task that you write in any programming language and host on any machine that has access to AWS Step Functions.
+Activities must poll Step Functions using the GetActivityTask API action and respond using SendTask* API actions.
+This function lets Step Functions know the existence of your activity and returns an identifier for use in a state machine and when polling from the activity.
+
+For information about creating an activity, see Creating an Activity State Machine: https://docs.aws.amazon.com/step-functions/latest/dg/tutorial-creating-activity-state-machine.html in the *AWS Step Functions Developer Guide* and CreateActivity: https://docs.aws.amazon.com/step-functions/latest/apireference/API_CreateActivity.html in the *AWS Step Functions API Reference*.
+
+## EXAMPLES
+
+### Example 1
+```powershell
+PS C:\> {{ Add example code here }}
+```
+
+{{ Add example description here }}
 
 ## PARAMETERS
 
@@ -44,10 +50,40 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
+### -Tags
+The list of tags to add to a resource.
+Tags may only contain Unicode letters, digits, white space, or these symbols: _ .
+: / = + - @.
+
+Type: List
+Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-stepfunctions-activity.html#cfn-stepfunctions-activity-tags
+ItemType: TagsEntry
+UpdateType: Mutable
+
+```yaml
+Type: Object
+Parameter Sets: (All)
+Aliases:
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
 ### -Name
-Required: True    
-Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-stepfunctions-activity.html#cfn-stepfunctions-activity-name    
-PrimitiveType: String    
+The name of the activity.
+A name must *not* contain:
++ white space
++ brackets \< \> { }  \]
++ wildcard characters ?
+*
++ special characters " # %  ^ | ~  $ & , ; : /
++ control characters U+0000-001F, U+007F-009F
+
+Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-stepfunctions-activity.html#cfn-stepfunctions-activity-name
+PrimitiveType: String
 UpdateType: Immutable
 
 ```yaml
@@ -157,15 +193,13 @@ Accept wildcard characters: False
 ```
 
 ### CommonParameters
-This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction, and -WarningVariable.
-For more information, see about_CommonParameters (http://go.microsoft.com/fwlink/?LinkID=113216).
+This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction, and -WarningVariable. For more information, see [about_CommonParameters](http://go.microsoft.com/fwlink/?LinkID=113216).
 
 ## INPUTS
 
 ## OUTPUTS
 
 ### Vaporshell.Resource.StepFunctions.Activity
-
 ## NOTES
 
 ## RELATED LINKS

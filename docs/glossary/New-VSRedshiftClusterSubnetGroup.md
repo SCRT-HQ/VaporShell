@@ -1,18 +1,9 @@
----
-layout: glossary
-title: New-VSRedshiftClusterSubnetGroup
-categories: glossary
-label1: Category
-data1: Documentation
-label2: Depth
-data2: Deep
-schema: 2.0.0
----
-
 # New-VSRedshiftClusterSubnetGroup
 
 ## SYNOPSIS
-Adds an AWS::Redshift::ClusterSubnetGroup resource to the template
+Adds an AWS::Redshift::ClusterSubnetGroup resource to the template.
+Specifies an Amazon Redshift subnet group.
+You must provide a list of one or more subnets in your existing Amazon Virtual Private Cloud (Amazon VPC when creating Amazon Redshift subnet group.
 
 ## SYNTAX
 
@@ -23,7 +14,20 @@ New-VSRedshiftClusterSubnetGroup [-LogicalId] <String> -Description <Object> -Su
 ```
 
 ## DESCRIPTION
-Adds an AWS::Redshift::ClusterSubnetGroup resource to the template
+Adds an AWS::Redshift::ClusterSubnetGroup resource to the template.
+Specifies an Amazon Redshift subnet group.
+You must provide a list of one or more subnets in your existing Amazon Virtual Private Cloud (Amazon VPC when creating Amazon Redshift subnet group.
+
+For information about subnet groups, go to Amazon Redshift Cluster Subnet Groups: https://docs.aws.amazon.com/redshift/latest/mgmt/working-with-cluster-subnet-groups.html in the *Amazon Redshift Cluster Management Guide*.
+
+## EXAMPLES
+
+### Example 1
+```powershell
+PS C:\> {{ Add example code here }}
+```
+
+{{ Add example description here }}
 
 ## PARAMETERS
 
@@ -45,9 +49,10 @@ Accept wildcard characters: False
 ```
 
 ### -Description
-Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-redshift-clustersubnetgroup.html#cfn-redshift-clustersubnetgroup-description    
-PrimitiveType: String    
-Required: True    
+A description for the subnet group.
+
+Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-redshift-clustersubnetgroup.html#cfn-redshift-clustersubnetgroup-description
+PrimitiveType: String
 UpdateType: Mutable
 
 ```yaml
@@ -63,11 +68,13 @@ Accept wildcard characters: False
 ```
 
 ### -SubnetIds
-Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-redshift-clustersubnetgroup.html#cfn-redshift-clustersubnetgroup-subnetids    
-DuplicatesAllowed: True    
-PrimitiveItemType: String    
-Required: True    
-Type: List    
+An array of VPC subnet IDs.
+A maximum of 20 subnets can be modified in a single request.
+
+Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-redshift-clustersubnetgroup.html#cfn-redshift-clustersubnetgroup-subnetids
+DuplicatesAllowed: True
+PrimitiveItemType: String
+Type: List
 UpdateType: Mutable
 
 ```yaml
@@ -83,11 +90,13 @@ Accept wildcard characters: False
 ```
 
 ### -Tags
-Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-redshift-clustersubnetgroup.html#cfn-redshift-clustersubnetgroup-tags    
-DuplicatesAllowed: True    
-ItemType: Tag    
-Required: False    
-Type: List    
+Specifies an arbitrary set of tags key-value pairs to associate with this subnet group.
+Use tags to manage your resources.
+
+Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-redshift-clustersubnetgroup.html#cfn-redshift-clustersubnetgroup-tags
+DuplicatesAllowed: True
+ItemType: Tag
+Type: List
 UpdateType: Mutable
 
 ```yaml
@@ -197,15 +206,13 @@ Accept wildcard characters: False
 ```
 
 ### CommonParameters
-This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction, and -WarningVariable.
-For more information, see about_CommonParameters (http://go.microsoft.com/fwlink/?LinkID=113216).
+This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction, and -WarningVariable. For more information, see [about_CommonParameters](http://go.microsoft.com/fwlink/?LinkID=113216).
 
 ## INPUTS
 
 ## OUTPUTS
 
 ### Vaporshell.Resource.Redshift.ClusterSubnetGroup
-
 ## NOTES
 
 ## RELATED LINKS

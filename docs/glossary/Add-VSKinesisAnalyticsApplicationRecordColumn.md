@@ -1,18 +1,8 @@
----
-layout: glossary
-title: Add-VSKinesisAnalyticsApplicationRecordColumn
-categories: glossary
-label1: Category
-data1: Documentation
-label2: Depth
-data2: Deep
-schema: 2.0.0
----
-
 # Add-VSKinesisAnalyticsApplicationRecordColumn
 
 ## SYNOPSIS
-Adds an AWS::KinesisAnalytics::Application.RecordColumn resource property to the template
+Adds an AWS::KinesisAnalytics::Application.RecordColumn resource property to the template.
+Describes the mapping of each data element in the streaming source to the corresponding column in the in-application stream.
 
 ## SYNTAX
 
@@ -22,14 +12,28 @@ Add-VSKinesisAnalyticsApplicationRecordColumn [[-Mapping] <Object>] [-SqlType] <
 ```
 
 ## DESCRIPTION
-Adds an AWS::KinesisAnalytics::Application.RecordColumn resource property to the template
+Adds an AWS::KinesisAnalytics::Application.RecordColumn resource property to the template.
+Describes the mapping of each data element in the streaming source to the corresponding column in the in-application stream.
+
+Also used to describe the format of the reference data source.
+
+## EXAMPLES
+
+### Example 1
+```powershell
+PS C:\> {{ Add example code here }}
+```
+
+{{ Add example description here }}
 
 ## PARAMETERS
 
 ### -Mapping
-Required: False    
-Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-kinesisanalytics-application-recordcolumn.html#cfn-kinesisanalytics-application-recordcolumn-mapping    
-PrimitiveType: String    
+Reference to the data element in the streaming input or the reference data source.
+This element is required if the RecordFormatType: https://docs.aws.amazon.com/kinesisanalytics/latest/dev/API_RecordFormat.html#analytics-Type-RecordFormat-RecordFormatTypel is JSON.
+
+Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-kinesisanalytics-application-recordcolumn.html#cfn-kinesisanalytics-application-recordcolumn-mapping
+PrimitiveType: String
 UpdateType: Mutable
 
 ```yaml
@@ -45,9 +49,10 @@ Accept wildcard characters: False
 ```
 
 ### -SqlType
-Required: True    
-Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-kinesisanalytics-application-recordcolumn.html#cfn-kinesisanalytics-application-recordcolumn-sqltype    
-PrimitiveType: String    
+Type of column created in the in-application input stream or reference table.
+
+Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-kinesisanalytics-application-recordcolumn.html#cfn-kinesisanalytics-application-recordcolumn-sqltype
+PrimitiveType: String
 UpdateType: Mutable
 
 ```yaml
@@ -63,9 +68,10 @@ Accept wildcard characters: False
 ```
 
 ### -Name
-Required: True    
-Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-kinesisanalytics-application-recordcolumn.html#cfn-kinesisanalytics-application-recordcolumn-name    
-PrimitiveType: String    
+Name of the column created in the in-application input stream or reference table.
+
+Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-kinesisanalytics-application-recordcolumn.html#cfn-kinesisanalytics-application-recordcolumn-name
+PrimitiveType: String
 UpdateType: Mutable
 
 ```yaml
@@ -81,15 +87,13 @@ Accept wildcard characters: False
 ```
 
 ### CommonParameters
-This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction, and -WarningVariable.
-For more information, see about_CommonParameters (http://go.microsoft.com/fwlink/?LinkID=113216).
+This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction, and -WarningVariable. For more information, see [about_CommonParameters](http://go.microsoft.com/fwlink/?LinkID=113216).
 
 ## INPUTS
 
 ## OUTPUTS
 
 ### Vaporshell.Resource.KinesisAnalytics.Application.RecordColumn
-
 ## NOTES
 
 ## RELATED LINKS

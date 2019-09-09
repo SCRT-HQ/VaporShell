@@ -1,18 +1,10 @@
----
-layout: glossary
-title: New-VSSESConfigurationSet
-categories: glossary
-label1: Category
-data1: Documentation
-label2: Depth
-data2: Deep
-schema: 2.0.0
----
-
 # New-VSSESConfigurationSet
 
 ## SYNOPSIS
-Adds an AWS::SES::ConfigurationSet resource to the template
+Adds an AWS::SES::ConfigurationSet resource to the template.
+Specifies a configuration set.
+Configuration sets let you create groups of rules that you can apply to the emails you send using Amazon SES.
+For more information about using configuration sets, see Using Amazon SES Configuration Sets: https://docs.aws.amazon.com/ses/latest/DeveloperGuide/using-configuration-sets.html in the Amazon SES Developer Guide: https://docs.aws.amazon.com/ses/latest/DeveloperGuide/.
 
 ## SYNTAX
 
@@ -23,7 +15,19 @@ New-VSSESConfigurationSet [-LogicalId] <String> [-Name <Object>] [-DeletionPolic
 ```
 
 ## DESCRIPTION
-Adds an AWS::SES::ConfigurationSet resource to the template
+Adds an AWS::SES::ConfigurationSet resource to the template.
+Specifies a configuration set.
+Configuration sets let you create groups of rules that you can apply to the emails you send using Amazon SES.
+For more information about using configuration sets, see Using Amazon SES Configuration Sets: https://docs.aws.amazon.com/ses/latest/DeveloperGuide/using-configuration-sets.html in the Amazon SES Developer Guide: https://docs.aws.amazon.com/ses/latest/DeveloperGuide/.
+
+## EXAMPLES
+
+### Example 1
+```powershell
+PS C:\> {{ Add example code here }}
+```
+
+{{ Add example description here }}
 
 ## PARAMETERS
 
@@ -45,9 +49,13 @@ Accept wildcard characters: False
 ```
 
 ### -Name
-Required: False    
-Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ses-configurationset.html#cfn-ses-configurationset-name    
-PrimitiveType: String    
+The name of the configuration set.
+The name must:
++ Only contain ASCII letters a-z, A-Z, numbers 0-9, underscores _, or dashes -.
++ Contain 64 characters or fewer.
+
+Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ses-configurationset.html#cfn-ses-configurationset-name
+PrimitiveType: String
 UpdateType: Immutable
 
 ```yaml
@@ -157,15 +165,13 @@ Accept wildcard characters: False
 ```
 
 ### CommonParameters
-This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction, and -WarningVariable.
-For more information, see about_CommonParameters (http://go.microsoft.com/fwlink/?LinkID=113216).
+This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction, and -WarningVariable. For more information, see [about_CommonParameters](http://go.microsoft.com/fwlink/?LinkID=113216).
 
 ## INPUTS
 
 ## OUTPUTS
 
 ### Vaporshell.Resource.SES.ConfigurationSet
-
 ## NOTES
 
 ## RELATED LINKS

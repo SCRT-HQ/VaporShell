@@ -1,30 +1,33 @@
----
-layout: glossary
-title: New-VSAppSyncDataSource
-categories: glossary
-label1: Category
-data1: Documentation
-label2: Depth
-data2: Deep
-schema: 2.0.0
----
-
 # New-VSAppSyncDataSource
 
 ## SYNOPSIS
-Adds an AWS::AppSync::DataSource resource to the template
+Adds an AWS::AppSync::DataSource resource to the template.
+The AWS::AppSync::DataSource resource creates data sources for resolvers in AWS AppSync to connect to, such as Amazon DynamoDB, AWS Lambda, and Amazon Elasticsearch Service.
+Resolvers use these data sources to fetch data when clients make GraphQL calls.
 
 ## SYNTAX
 
 ```
 New-VSAppSyncDataSource [-LogicalId] <String> -Type <Object> [-Description <Object>] [-ServiceRoleArn <Object>]
- [-HttpConfig <Object>] [-LambdaConfig <Object>] -ApiId <Object> -Name <Object> [-DynamoDBConfig <Object>]
- [-ElasticsearchConfig <Object>] [-DeletionPolicy <String>] [-DependsOn <String[]>] [-Metadata <Object>]
- [-UpdatePolicy <Object>] [-Condition <Object>] [<CommonParameters>]
+ [-HttpConfig <Object>] [-RelationalDatabaseConfig <Object>] [-LambdaConfig <Object>] -ApiId <Object>
+ -Name <Object> [-DynamoDBConfig <Object>] [-ElasticsearchConfig <Object>] [-DeletionPolicy <String>]
+ [-DependsOn <String[]>] [-Metadata <Object>] [-UpdatePolicy <Object>] [-Condition <Object>]
+ [<CommonParameters>]
 ```
 
 ## DESCRIPTION
-Adds an AWS::AppSync::DataSource resource to the template
+Adds an AWS::AppSync::DataSource resource to the template.
+The AWS::AppSync::DataSource resource creates data sources for resolvers in AWS AppSync to connect to, such as Amazon DynamoDB, AWS Lambda, and Amazon Elasticsearch Service.
+Resolvers use these data sources to fetch data when clients make GraphQL calls.
+
+## EXAMPLES
+
+### Example 1
+```powershell
+PS C:\> {{ Add example code here }}
+```
+
+{{ Add example description here }}
 
 ## PARAMETERS
 
@@ -46,9 +49,17 @@ Accept wildcard characters: False
 ```
 
 ### -Type
-Required: True    
-Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-appsync-datasource.html#cfn-appsync-datasource-type    
-PrimitiveType: String    
+The type of the data source.
++  **AMAZON_DYNAMODB**: The data source is an Amazon DynamoDB table.
++  **AMAZON_ELASTICSEARCH**: The data source is an Amazon Elasticsearch Service domain.
++  **AWS_LAMBDA**: The data source is an AWS Lambda function.
++  **NONE**: There is no data source.
+This type is used when you wish to invoke a GraphQL operation without connecting to a data source, such as performing data transformation with resolvers or triggering a subscription to be invoked from a mutation.
++  **HTTP**: The data source is an HTTP endpoint.
++  **RELATIONAL_DATABASE**: The data source is a relational database.
+
+Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-appsync-datasource.html#cfn-appsync-datasource-type
+PrimitiveType: String
 UpdateType: Mutable
 
 ```yaml
@@ -64,9 +75,10 @@ Accept wildcard characters: False
 ```
 
 ### -Description
-Required: False    
-Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-appsync-datasource.html#cfn-appsync-datasource-description    
-PrimitiveType: String    
+The description of the data source.
+
+Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-appsync-datasource.html#cfn-appsync-datasource-description
+PrimitiveType: String
 UpdateType: Mutable
 
 ```yaml
@@ -82,9 +94,12 @@ Accept wildcard characters: False
 ```
 
 ### -ServiceRoleArn
-Required: False    
-Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-appsync-datasource.html#cfn-appsync-datasource-servicerolearn    
-PrimitiveType: String    
+The AWS IAM service role ARN for the data source.
+The system assumes this role when accessing the data source.
+Required if Type is specified as AWS_LAMBDA, AMAZON_DYNAMODB, or AMAZON_ELASTICSEARCH.
+
+Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-appsync-datasource.html#cfn-appsync-datasource-servicerolearn
+PrimitiveType: String
 UpdateType: Mutable
 
 ```yaml
@@ -100,9 +115,29 @@ Accept wildcard characters: False
 ```
 
 ### -HttpConfig
-Type: HttpConfig    
-Required: False    
-Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-appsync-datasource.html#cfn-appsync-datasource-httpconfig    
+Endpoints for an HTTP data source.
+
+Type: HttpConfig
+Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-appsync-datasource.html#cfn-appsync-datasource-httpconfig
+UpdateType: Mutable
+
+```yaml
+Type: Object
+Parameter Sets: (All)
+Aliases:
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### -RelationalDatabaseConfig
+Relational Database configuration of the relational database data source.
+
+Type: RelationalDatabaseConfig
+Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-appsync-datasource.html#cfn-appsync-datasource-relationaldatabaseconfig
 UpdateType: Mutable
 
 ```yaml
@@ -118,9 +153,10 @@ Accept wildcard characters: False
 ```
 
 ### -LambdaConfig
-Type: LambdaConfig    
-Required: False    
-Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-appsync-datasource.html#cfn-appsync-datasource-lambdaconfig    
+A valid ARN of a Lambda function in your account.
+
+Type: LambdaConfig
+Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-appsync-datasource.html#cfn-appsync-datasource-lambdaconfig
 UpdateType: Mutable
 
 ```yaml
@@ -136,9 +172,10 @@ Accept wildcard characters: False
 ```
 
 ### -ApiId
-Required: True    
-Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-appsync-datasource.html#cfn-appsync-datasource-apiid    
-PrimitiveType: String    
+Unique AWS AppSync GraphQL API identifier where this data source will be created.
+
+Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-appsync-datasource.html#cfn-appsync-datasource-apiid
+PrimitiveType: String
 UpdateType: Immutable
 
 ```yaml
@@ -154,9 +191,10 @@ Accept wildcard characters: False
 ```
 
 ### -Name
-Required: True    
-Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-appsync-datasource.html#cfn-appsync-datasource-name    
-PrimitiveType: String    
+Friendly name for you to identify your AppSync data source after creation.
+
+Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-appsync-datasource.html#cfn-appsync-datasource-name
+PrimitiveType: String
 UpdateType: Immutable
 
 ```yaml
@@ -172,9 +210,10 @@ Accept wildcard characters: False
 ```
 
 ### -DynamoDBConfig
-Type: DynamoDBConfig    
-Required: False    
-Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-appsync-datasource.html#cfn-appsync-datasource-dynamodbconfig    
+AwsRegion and TableName for an Amazon DynamoDB table in your account.
+
+Type: DynamoDBConfig
+Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-appsync-datasource.html#cfn-appsync-datasource-dynamodbconfig
 UpdateType: Mutable
 
 ```yaml
@@ -190,9 +229,10 @@ Accept wildcard characters: False
 ```
 
 ### -ElasticsearchConfig
-Type: ElasticsearchConfig    
-Required: False    
-Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-appsync-datasource.html#cfn-appsync-datasource-elasticsearchconfig    
+AwsRegion and Endpoints for an Amazon Elasticsearch Service domain in your account.
+
+Type: ElasticsearchConfig
+Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-appsync-datasource.html#cfn-appsync-datasource-elasticsearchconfig
 UpdateType: Mutable
 
 ```yaml
@@ -302,15 +342,13 @@ Accept wildcard characters: False
 ```
 
 ### CommonParameters
-This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction, and -WarningVariable.
-For more information, see about_CommonParameters (http://go.microsoft.com/fwlink/?LinkID=113216).
+This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction, and -WarningVariable. For more information, see [about_CommonParameters](http://go.microsoft.com/fwlink/?LinkID=113216).
 
 ## INPUTS
 
 ## OUTPUTS
 
 ### Vaporshell.Resource.AppSync.DataSource
-
 ## NOTES
 
 ## RELATED LINKS

@@ -1,18 +1,8 @@
----
-layout: glossary
-title: Add-VSElasticLoadBalancingLoadBalancerListeners
-categories: glossary
-label1: Category
-data1: Documentation
-label2: Depth
-data2: Deep
-schema: 2.0.0
----
-
 # Add-VSElasticLoadBalancingLoadBalancerListeners
 
 ## SYNOPSIS
-Adds an AWS::ElasticLoadBalancing::LoadBalancer.Listeners resource property to the template
+Adds an AWS::ElasticLoadBalancing::LoadBalancer.Listeners resource property to the template.
+Specifies a listener for your Classic Load Balancer.
 
 ## SYNTAX
 
@@ -23,14 +13,25 @@ Add-VSElasticLoadBalancingLoadBalancerListeners [-InstancePort] <Object> [[-Inst
 ```
 
 ## DESCRIPTION
-Adds an AWS::ElasticLoadBalancing::LoadBalancer.Listeners resource property to the template
+Adds an AWS::ElasticLoadBalancing::LoadBalancer.Listeners resource property to the template.
+Specifies a listener for your Classic Load Balancer.
+
+## EXAMPLES
+
+### Example 1
+```powershell
+PS C:\> {{ Add example code here }}
+```
+
+{{ Add example description here }}
 
 ## PARAMETERS
 
 ### -InstancePort
-Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-elb-listener.html#cfn-ec2-elb-listener-instanceport    
-PrimitiveType: String    
-Required: True    
+The port on which the instance is listening.
+
+Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-elb-listener.html#cfn-ec2-elb-listener-instanceport
+PrimitiveType: String
 UpdateType: Mutable
 
 ```yaml
@@ -46,9 +47,13 @@ Accept wildcard characters: False
 ```
 
 ### -InstanceProtocol
-Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-elb-listener.html#cfn-ec2-elb-listener-instanceprotocol    
-PrimitiveType: String    
-Required: False    
+The protocol to use for routing traffic to instances: HTTP, HTTPS, TCP, or SSL.
+If the front-end protocol is HTTP, HTTPS, TCP, or SSL, InstanceProtocol must be at the same protocol.
+If there is another listener with the same InstancePort whose InstanceProtocol is secure, HTTPS or SSL, the listener's InstanceProtocol must also be secure.
+If there is another listener with the same InstancePort whose InstanceProtocol is HTTP or TCP, the listener's InstanceProtocol must be HTTP or TCP.
+
+Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-elb-listener.html#cfn-ec2-elb-listener-instanceprotocol
+PrimitiveType: String
 UpdateType: Mutable
 
 ```yaml
@@ -64,9 +69,12 @@ Accept wildcard characters: False
 ```
 
 ### -LoadBalancerPort
-Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-elb-listener.html#cfn-ec2-elb-listener-loadbalancerport    
-PrimitiveType: String    
-Required: True    
+The port on which the load balancer is listening.
+On EC2-VPC, you can specify any port from the range 1-65535.
+On EC2-Classic, you can specify any port from the following list: 25, 80, 443, 465, 587, 1024-65535.
+
+Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-elb-listener.html#cfn-ec2-elb-listener-loadbalancerport
+PrimitiveType: String
 UpdateType: Mutable
 
 ```yaml
@@ -82,11 +90,12 @@ Accept wildcard characters: False
 ```
 
 ### -PolicyNames
-Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-elb-listener.html#cfn-ec2-elb-listener-policynames    
-DuplicatesAllowed: False    
-PrimitiveItemType: String    
-Required: False    
-Type: List    
+The names of the policies to associate with the listener.
+
+Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-elb-listener.html#cfn-ec2-elb-listener-policynames
+DuplicatesAllowed: False
+PrimitiveItemType: String
+Type: List
 UpdateType: Mutable
 
 ```yaml
@@ -102,9 +111,10 @@ Accept wildcard characters: False
 ```
 
 ### -Protocol
-Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-elb-listener.html#cfn-ec2-elb-listener-protocol    
-PrimitiveType: String    
-Required: True    
+The load balancer transport protocol to use for routing: HTTP, HTTPS, TCP, or SSL.
+
+Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-elb-listener.html#cfn-ec2-elb-listener-protocol
+PrimitiveType: String
 UpdateType: Mutable
 
 ```yaml
@@ -120,9 +130,10 @@ Accept wildcard characters: False
 ```
 
 ### -SSLCertificateId
-Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-elb-listener.html#cfn-ec2-elb-listener-sslcertificateid    
-PrimitiveType: String    
-Required: False    
+The Amazon Resource Name ARN of the server certificate.
+
+Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-elb-listener.html#cfn-ec2-elb-listener-sslcertificateid
+PrimitiveType: String
 UpdateType: Mutable
 
 ```yaml
@@ -138,15 +149,13 @@ Accept wildcard characters: False
 ```
 
 ### CommonParameters
-This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction, and -WarningVariable.
-For more information, see about_CommonParameters (http://go.microsoft.com/fwlink/?LinkID=113216).
+This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction, and -WarningVariable. For more information, see [about_CommonParameters](http://go.microsoft.com/fwlink/?LinkID=113216).
 
 ## INPUTS
 
 ## OUTPUTS
 
 ### Vaporshell.Resource.ElasticLoadBalancing.LoadBalancer.Listeners
-
 ## NOTES
 
 ## RELATED LINKS

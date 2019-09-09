@@ -1,14 +1,3 @@
----
-layout: glossary
-title: Set-VSCredential
-categories: glossary
-label1: Category
-data1: Documentation
-label2: Depth
-data2: Deep
-schema: 2.0.0
----
-
 # Set-VSCredential
 
 ## SYNOPSIS
@@ -23,7 +12,14 @@ Set-VSCredential [[-AccessKey] <String>] [[-SecretKey] <String>] [[-Region] <Str
 ```
 
 ## DESCRIPTION
-{{Fill in the Description}}
+{{ Fill in the Description }}
+
+## EXAMPLES
+
+### EXAMPLE 1
+```
+Set-VSCredential -AccessKey lkjsdfkjio323823kl -SecretKey l38234sdfsdflk+23kjlkfs/skljf_k -Region USWest1
+```
 
 ## PARAMETERS
 
@@ -165,8 +161,7 @@ Accept wildcard characters: False
 ```
 
 ### CommonParameters
-This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction, and -WarningVariable.
-For more information, see about_CommonParameters (http://go.microsoft.com/fwlink/?LinkID=113216).
+This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction, and -WarningVariable. For more information, see [about_CommonParameters](http://go.microsoft.com/fwlink/?LinkID=113216).
 
 ## INPUTS
 

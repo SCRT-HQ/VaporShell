@@ -1,18 +1,8 @@
----
-layout: glossary
-title: Add-VSApplicationAutoScalingScalableTargetScheduledAction
-categories: glossary
-label1: Category
-data1: Documentation
-label2: Depth
-data2: Deep
-schema: 2.0.0
----
-
 # Add-VSApplicationAutoScalingScalableTargetScheduledAction
 
 ## SYNOPSIS
-Adds an AWS::ApplicationAutoScaling::ScalableTarget.ScheduledAction resource property to the template
+Adds an AWS::ApplicationAutoScaling::ScalableTarget.ScheduledAction resource property to the template.
+ScheduledAction is a property of ScalableTarget: https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-applicationautoscaling-scalabletarget.html that specifies a scheduled action for a scalable target.
 
 ## SYNTAX
 
@@ -23,14 +13,27 @@ Add-VSApplicationAutoScalingScalableTargetScheduledAction [[-EndTime] <Object>]
 ```
 
 ## DESCRIPTION
-Adds an AWS::ApplicationAutoScaling::ScalableTarget.ScheduledAction resource property to the template
+Adds an AWS::ApplicationAutoScaling::ScalableTarget.ScheduledAction resource property to the template.
+ScheduledAction is a property of ScalableTarget: https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-applicationautoscaling-scalabletarget.html that specifies a scheduled action for a scalable target.
+
+For more information, see PutScheduledAction: https://docs.aws.amazon.com/autoscaling/application/APIReference/API_PutScheduledAction.html in the *Application Auto Scaling API Reference*.
+
+## EXAMPLES
+
+### Example 1
+```powershell
+PS C:\> {{ Add example code here }}
+```
+
+{{ Add example description here }}
 
 ## PARAMETERS
 
 ### -EndTime
-Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-applicationautoscaling-scalabletarget-scheduledaction.html#cfn-applicationautoscaling-scalabletarget-scheduledaction-endtime    
-PrimitiveType: Timestamp    
-Required: False    
+The date and time that the action is scheduled to end.
+
+Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-applicationautoscaling-scalabletarget-scheduledaction.html#cfn-applicationautoscaling-scalabletarget-scheduledaction-endtime
+PrimitiveType: Timestamp
 UpdateType: Mutable
 
 ```yaml
@@ -46,9 +49,13 @@ Accept wildcard characters: False
 ```
 
 ### -ScalableTargetAction
-Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-applicationautoscaling-scalabletarget-scheduledaction.html#cfn-applicationautoscaling-scalabletarget-scheduledaction-scalabletargetaction    
-Required: False    
-Type: ScalableTargetAction    
+The new minimum and maximum capacity.
+You can set both values or just one.
+During the scheduled time, if the current capacity is below the minimum capacity, Application Auto Scaling scales out to the minimum capacity.
+If the current capacity is above the maximum capacity, Application Auto Scaling scales in to the maximum capacity.
+
+Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-applicationautoscaling-scalabletarget-scheduledaction.html#cfn-applicationautoscaling-scalabletarget-scheduledaction-scalabletargetaction
+Type: ScalableTargetAction
 UpdateType: Mutable
 
 ```yaml
@@ -64,9 +71,18 @@ Accept wildcard characters: False
 ```
 
 ### -Schedule
-Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-applicationautoscaling-scalabletarget-scheduledaction.html#cfn-applicationautoscaling-scalabletarget-scheduledaction-schedule    
-PrimitiveType: String    
-Required: True    
+The schedule for this action.
+The following formats are supported:
++ At expressions - "atyyyy-mm-ddThh:mm:ss"
++ Rate expressions - "ratevalue unit"
++ Cron expressions - "cronfields"
+At expressions are useful for one-time schedules.
+Specify the time, in UTC.
+For rate expressions, *value* is a positive integer and *unit* is minute | minutes | hour | hours | day | days.
+For more information about cron expressions, see Cron Expressions: https://docs.aws.amazon.com/AmazonCloudWatch/latest/events/ScheduledEvents.html#CronExpressions in the *Amazon CloudWatch Events User Guide*.
+
+Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-applicationautoscaling-scalabletarget-scheduledaction.html#cfn-applicationautoscaling-scalabletarget-scheduledaction-schedule
+PrimitiveType: String
 UpdateType: Mutable
 
 ```yaml
@@ -82,9 +98,10 @@ Accept wildcard characters: False
 ```
 
 ### -ScheduledActionName
-Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-applicationautoscaling-scalabletarget-scheduledaction.html#cfn-applicationautoscaling-scalabletarget-scheduledaction-scheduledactionname    
-PrimitiveType: String    
-Required: True    
+The name of the scheduled action.
+
+Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-applicationautoscaling-scalabletarget-scheduledaction.html#cfn-applicationautoscaling-scalabletarget-scheduledaction-scheduledactionname
+PrimitiveType: String
 UpdateType: Mutable
 
 ```yaml
@@ -100,9 +117,10 @@ Accept wildcard characters: False
 ```
 
 ### -StartTime
-Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-applicationautoscaling-scalabletarget-scheduledaction.html#cfn-applicationautoscaling-scalabletarget-scheduledaction-starttime    
-PrimitiveType: Timestamp    
-Required: False    
+The date and time that the action is scheduled to begin.
+
+Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-applicationautoscaling-scalabletarget-scheduledaction.html#cfn-applicationautoscaling-scalabletarget-scheduledaction-starttime
+PrimitiveType: Timestamp
 UpdateType: Mutable
 
 ```yaml
@@ -118,15 +136,13 @@ Accept wildcard characters: False
 ```
 
 ### CommonParameters
-This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction, and -WarningVariable.
-For more information, see about_CommonParameters (http://go.microsoft.com/fwlink/?LinkID=113216).
+This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction, and -WarningVariable. For more information, see [about_CommonParameters](http://go.microsoft.com/fwlink/?LinkID=113216).
 
 ## INPUTS
 
 ## OUTPUTS
 
 ### Vaporshell.Resource.ApplicationAutoScaling.ScalableTarget.ScheduledAction
-
 ## NOTES
 
 ## RELATED LINKS

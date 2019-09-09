@@ -1,29 +1,32 @@
----
-layout: glossary
-title: New-VSSNSSubscription
-categories: glossary
-label1: Category
-data1: Documentation
-label2: Depth
-data2: Deep
-schema: 2.0.0
----
-
 # New-VSSNSSubscription
 
 ## SYNOPSIS
-Adds an AWS::SNS::Subscription resource to the template
+Adds an AWS::SNS::Subscription resource to the template.
+The AWS::SNS::Subscription resource subscribes an endpoint to an Amazon Simple Notification Service (Amazon SNS topic.
+For a subscription to be created, the owner of the endpoint must confirm the subscription.
 
 ## SYNTAX
 
 ```
-New-VSSNSSubscription [-LogicalId] <String> [-Endpoint <Object>] [-Protocol <Object>] [-TopicArn <Object>]
- [-DeletionPolicy <String>] [-DependsOn <String[]>] [-Metadata <Object>] [-UpdatePolicy <Object>]
- [-Condition <Object>] [<CommonParameters>]
+New-VSSNSSubscription [-LogicalId] <String> [-DeliveryPolicy <Object>] [-Endpoint <Object>]
+ [-FilterPolicy <Object>] -Protocol <Object> [-RawMessageDelivery <Boolean>] [-Region <Object>]
+ -TopicArn <Object> [-DeletionPolicy <String>] [-DependsOn <String[]>] [-Metadata <Object>]
+ [-UpdatePolicy <Object>] [-Condition <Object>] [<CommonParameters>]
 ```
 
 ## DESCRIPTION
-Adds an AWS::SNS::Subscription resource to the template
+Adds an AWS::SNS::Subscription resource to the template.
+The AWS::SNS::Subscription resource subscribes an endpoint to an Amazon Simple Notification Service (Amazon SNS topic.
+For a subscription to be created, the owner of the endpoint must confirm the subscription.
+
+## EXAMPLES
+
+### Example 1
+```powershell
+PS C:\> {{ Add example code here }}
+```
+
+{{ Add example description here }}
 
 ## PARAMETERS
 
@@ -44,11 +47,54 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
+### -DeliveryPolicy
+The JSON serialization of the subscription's delivery policy.
+For more information, see  GetSubscriptionAttributes: https://docs.aws.amazon.com/sns/latest/api/API_GetSubscriptionAttributes.html  in the *Amazon Simple Notification Service API Reference*.
+
+Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-sns-subscription.html#cfn-sns-subscription-deliverypolicy
+PrimitiveType: Json
+UpdateType: Mutable
+
+```yaml
+Type: Object
+Parameter Sets: (All)
+Aliases:
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
 ### -Endpoint
-Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-sns-subscription.html#cfn-sns-endpoint    
-PrimitiveType: String    
-Required: False    
+The subscription's endpoint.
+The endpoint value depends on the protocol that you specify.
+For more information, see the Endpoint parameter of the  Subscribe: https://docs.aws.amazon.com/sns/latest/api/API_Subscribe.html  action in the *Amazon Simple Notification Service API Reference*.
+
+Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-sns-subscription.html#cfn-sns-endpoint
+PrimitiveType: String
 UpdateType: Immutable
+
+```yaml
+Type: Object
+Parameter Sets: (All)
+Aliases:
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### -FilterPolicy
+The filter policy JSON assigned to the subscription.
+For more information, see  GetSubscriptionAttributes: https://docs.aws.amazon.com/sns/latest/api/API_GetSubscriptionAttributes.html  in the *Amazon Simple Notification Service API Reference*.
+
+Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-sns-subscription.html#cfn-sns-subscription-filterpolicy
+PrimitiveType: Json
+UpdateType: Mutable
 
 ```yaml
 Type: Object
@@ -63,10 +109,56 @@ Accept wildcard characters: False
 ```
 
 ### -Protocol
-Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-sns-subscription.html#cfn-sns-protocol    
-PrimitiveType: String    
-Required: False    
+The subscription's protocol.
+For more information, see the Protocol parameter of the  Subscribe: https://docs.aws.amazon.com/sns/latest/api/API_Subscribe.html  action in the *Amazon Simple Notification Service API Reference*.
+
+Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-sns-subscription.html#cfn-sns-protocol
+PrimitiveType: String
 UpdateType: Immutable
+
+```yaml
+Type: Object
+Parameter Sets: (All)
+Aliases:
+
+Required: True
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### -RawMessageDelivery
+When set to true, enables raw message delivery.
+Raw messages don't contain any JSON formatting and can be sent to Amazon SQS and HTTP/S endpoints.
+For more information, see  GetSubscriptionAttributes: https://docs.aws.amazon.com/sns/latest/api/API_GetSubscriptionAttributes.html  in the *Amazon Simple Notification Service API Reference*.
+
+Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-sns-subscription.html#cfn-sns-subscription-rawmessagedelivery
+PrimitiveType: Boolean
+UpdateType: Mutable
+
+```yaml
+Type: Boolean
+Parameter Sets: (All)
+Aliases:
+
+Required: False
+Position: Named
+Default value: False
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### -Region
+For cross-region subscriptions, the region in which the topic resides.
+If no region is specified, CloudFormation uses the region of the caller as the default.
+If you perform an update operation that only updates the Region property of a AWS::SNS::Subscription resource, that operation will fail unless you are either:
++ Updating the Region from NULL to the caller region.
++ Updating the Region from the caller region to NULL.
+
+Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-sns-subscription.html#cfn-sns-subscription-region
+PrimitiveType: String
+UpdateType: Mutable
 
 ```yaml
 Type: Object
@@ -81,9 +173,10 @@ Accept wildcard characters: False
 ```
 
 ### -TopicArn
-Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-sns-subscription.html#topicarn    
-PrimitiveType: String    
-Required: False    
+The ARN of the topic to subscribe to.
+
+Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-sns-subscription.html#topicarn
+PrimitiveType: String
 UpdateType: Immutable
 
 ```yaml
@@ -91,7 +184,7 @@ Type: Object
 Parameter Sets: (All)
 Aliases:
 
-Required: False
+Required: True
 Position: Named
 Default value: None
 Accept pipeline input: False
@@ -193,15 +286,13 @@ Accept wildcard characters: False
 ```
 
 ### CommonParameters
-This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction, and -WarningVariable.
-For more information, see about_CommonParameters (http://go.microsoft.com/fwlink/?LinkID=113216).
+This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction, and -WarningVariable. For more information, see [about_CommonParameters](http://go.microsoft.com/fwlink/?LinkID=113216).
 
 ## INPUTS
 
 ## OUTPUTS
 
 ### Vaporshell.Resource.SNS.Subscription
-
 ## NOTES
 
 ## RELATED LINKS

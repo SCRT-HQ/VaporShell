@@ -1,18 +1,8 @@
----
-layout: glossary
-title: Add-VSAppSyncDataSourceDynamoDBConfig
-categories: glossary
-label1: Category
-data1: Documentation
-label2: Depth
-data2: Deep
-schema: 2.0.0
----
-
 # Add-VSAppSyncDataSourceDynamoDBConfig
 
 ## SYNOPSIS
-Adds an AWS::AppSync::DataSource.DynamoDBConfig resource property to the template
+Adds an AWS::AppSync::DataSource.DynamoDBConfig resource property to the template.
+The DynamoDBConfig property type specifies the AwsRegion and TableName for an Amazon DynamoDB table in your account for an AWS AppSync data source.
 
 ## SYNTAX
 
@@ -22,14 +12,27 @@ Add-VSAppSyncDataSourceDynamoDBConfig [-TableName] <Object> [-AwsRegion] <Object
 ```
 
 ## DESCRIPTION
-Adds an AWS::AppSync::DataSource.DynamoDBConfig resource property to the template
+Adds an AWS::AppSync::DataSource.DynamoDBConfig resource property to the template.
+The DynamoDBConfig property type specifies the AwsRegion and TableName for an Amazon DynamoDB table in your account for an AWS AppSync data source.
+
+DynamoDBConfig is a property of the AWS::AppSync::DataSource: https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-appsync-datasource.html property type.
+
+## EXAMPLES
+
+### Example 1
+```powershell
+PS C:\> {{ Add example code here }}
+```
+
+{{ Add example description here }}
 
 ## PARAMETERS
 
 ### -TableName
-Required: True    
-Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-appsync-datasource-dynamodbconfig.html#cfn-appsync-datasource-dynamodbconfig-tablename    
-PrimitiveType: String    
+The table name.
+
+Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-appsync-datasource-dynamodbconfig.html#cfn-appsync-datasource-dynamodbconfig-tablename
+PrimitiveType: String
 UpdateType: Mutable
 
 ```yaml
@@ -45,9 +48,10 @@ Accept wildcard characters: False
 ```
 
 ### -AwsRegion
-Required: True    
-Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-appsync-datasource-dynamodbconfig.html#cfn-appsync-datasource-dynamodbconfig-awsregion    
-PrimitiveType: String    
+The AWS Region.
+
+Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-appsync-datasource-dynamodbconfig.html#cfn-appsync-datasource-dynamodbconfig-awsregion
+PrimitiveType: String
 UpdateType: Mutable
 
 ```yaml
@@ -63,9 +67,10 @@ Accept wildcard characters: False
 ```
 
 ### -UseCallerCredentials
-Required: False    
-Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-appsync-datasource-dynamodbconfig.html#cfn-appsync-datasource-dynamodbconfig-usecallercredentials    
-PrimitiveType: Boolean    
+Set to TRUE to use AWS IAM with this data source.
+
+Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-appsync-datasource-dynamodbconfig.html#cfn-appsync-datasource-dynamodbconfig-usecallercredentials
+PrimitiveType: Boolean
 UpdateType: Mutable
 
 ```yaml
@@ -81,15 +86,13 @@ Accept wildcard characters: False
 ```
 
 ### CommonParameters
-This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction, and -WarningVariable.
-For more information, see about_CommonParameters (http://go.microsoft.com/fwlink/?LinkID=113216).
+This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction, and -WarningVariable. For more information, see [about_CommonParameters](http://go.microsoft.com/fwlink/?LinkID=113216).
 
 ## INPUTS
 
 ## OUTPUTS
 
 ### Vaporshell.Resource.AppSync.DataSource.DynamoDBConfig
-
 ## NOTES
 
 ## RELATED LINKS

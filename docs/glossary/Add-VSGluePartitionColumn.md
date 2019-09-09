@@ -1,18 +1,8 @@
----
-layout: glossary
-title: Add-VSGluePartitionColumn
-categories: glossary
-label1: Category
-data1: Documentation
-label2: Depth
-data2: Deep
-schema: 2.0.0
----
-
 # Add-VSGluePartitionColumn
 
 ## SYNOPSIS
-Adds an AWS::Glue::Partition.Column resource property to the template
+Adds an AWS::Glue::Partition.Column resource property to the template.
+A column in a Table.
 
 ## SYNTAX
 
@@ -21,14 +11,25 @@ Add-VSGluePartitionColumn [[-Comment] <Object>] [[-Type] <Object>] [-Name] <Obje
 ```
 
 ## DESCRIPTION
-Adds an AWS::Glue::Partition.Column resource property to the template
+Adds an AWS::Glue::Partition.Column resource property to the template.
+A column in a Table.
+
+## EXAMPLES
+
+### Example 1
+```powershell
+PS C:\> {{ Add example code here }}
+```
+
+{{ Add example description here }}
 
 ## PARAMETERS
 
 ### -Comment
-Required: False    
-Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-glue-partition-column.html#cfn-glue-partition-column-comment    
-PrimitiveType: String    
+A free-form text comment.
+
+Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-glue-partition-column.html#cfn-glue-partition-column-comment
+PrimitiveType: String
 UpdateType: Mutable
 
 ```yaml
@@ -44,9 +45,10 @@ Accept wildcard characters: False
 ```
 
 ### -Type
-Required: False    
-Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-glue-partition-column.html#cfn-glue-partition-column-type    
-PrimitiveType: String    
+The data type of the Column.
+
+Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-glue-partition-column.html#cfn-glue-partition-column-type
+PrimitiveType: String
 UpdateType: Mutable
 
 ```yaml
@@ -62,9 +64,10 @@ Accept wildcard characters: False
 ```
 
 ### -Name
-Required: True    
-Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-glue-partition-column.html#cfn-glue-partition-column-name    
-PrimitiveType: String    
+The name of the Column.
+
+Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-glue-partition-column.html#cfn-glue-partition-column-name
+PrimitiveType: String
 UpdateType: Mutable
 
 ```yaml
@@ -80,15 +83,13 @@ Accept wildcard characters: False
 ```
 
 ### CommonParameters
-This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction, and -WarningVariable.
-For more information, see about_CommonParameters (http://go.microsoft.com/fwlink/?LinkID=113216).
+This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction, and -WarningVariable. For more information, see [about_CommonParameters](http://go.microsoft.com/fwlink/?LinkID=113216).
 
 ## INPUTS
 
 ## OUTPUTS
 
 ### Vaporshell.Resource.Glue.Partition.Column
-
 ## NOTES
 
 ## RELATED LINKS

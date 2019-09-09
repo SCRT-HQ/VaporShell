@@ -1,18 +1,8 @@
----
-layout: glossary
-title: New-VSCognitoUserPoolUserToGroupAttachment
-categories: glossary
-label1: Category
-data1: Documentation
-label2: Depth
-data2: Deep
-schema: 2.0.0
----
-
 # New-VSCognitoUserPoolUserToGroupAttachment
 
 ## SYNOPSIS
-Adds an AWS::Cognito::UserPoolUserToGroupAttachment resource to the template
+Adds an AWS::Cognito::UserPoolUserToGroupAttachment resource to the template.
+The AWS::Cognito::UserPoolUserToGroupAttachment resource attaches a user to an Amazon Cognito user pool user group.
 
 ## SYNTAX
 
@@ -23,7 +13,17 @@ New-VSCognitoUserPoolUserToGroupAttachment [-LogicalId] <String> -GroupName <Obj
 ```
 
 ## DESCRIPTION
-Adds an AWS::Cognito::UserPoolUserToGroupAttachment resource to the template
+Adds an AWS::Cognito::UserPoolUserToGroupAttachment resource to the template.
+The AWS::Cognito::UserPoolUserToGroupAttachment resource attaches a user to an Amazon Cognito user pool user group.
+
+## EXAMPLES
+
+### Example 1
+```powershell
+PS C:\> {{ Add example code here }}
+```
+
+{{ Add example description here }}
 
 ## PARAMETERS
 
@@ -45,9 +45,10 @@ Accept wildcard characters: False
 ```
 
 ### -GroupName
-Required: True    
-Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-cognito-userpoolusertogroupattachment.html#cfn-cognito-userpoolusertogroupattachment-groupname    
-PrimitiveType: String    
+The group name.
+
+Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-cognito-userpoolusertogroupattachment.html#cfn-cognito-userpoolusertogroupattachment-groupname
+PrimitiveType: String
 UpdateType: Immutable
 
 ```yaml
@@ -63,9 +64,10 @@ Accept wildcard characters: False
 ```
 
 ### -UserPoolId
-Required: True    
-Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-cognito-userpoolusertogroupattachment.html#cfn-cognito-userpoolusertogroupattachment-userpoolid    
-PrimitiveType: String    
+The user pool ID for the user pool.
+
+Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-cognito-userpoolusertogroupattachment.html#cfn-cognito-userpoolusertogroupattachment-userpoolid
+PrimitiveType: String
 UpdateType: Immutable
 
 ```yaml
@@ -81,9 +83,10 @@ Accept wildcard characters: False
 ```
 
 ### -Username
-Required: True    
-Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-cognito-userpoolusertogroupattachment.html#cfn-cognito-userpoolusertogroupattachment-username    
-PrimitiveType: String    
+The username for the user.
+
+Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-cognito-userpoolusertogroupattachment.html#cfn-cognito-userpoolusertogroupattachment-username
+PrimitiveType: String
 UpdateType: Immutable
 
 ```yaml
@@ -193,15 +196,13 @@ Accept wildcard characters: False
 ```
 
 ### CommonParameters
-This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction, and -WarningVariable.
-For more information, see about_CommonParameters (http://go.microsoft.com/fwlink/?LinkID=113216).
+This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction, and -WarningVariable. For more information, see [about_CommonParameters](http://go.microsoft.com/fwlink/?LinkID=113216).
 
 ## INPUTS
 
 ## OUTPUTS
 
 ### Vaporshell.Resource.Cognito.UserPoolUserToGroupAttachment
-
 ## NOTES
 
 ## RELATED LINKS

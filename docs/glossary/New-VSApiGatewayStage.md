@@ -1,31 +1,32 @@
----
-layout: glossary
-title: New-VSApiGatewayStage
-categories: glossary
-label1: Category
-data1: Documentation
-label2: Depth
-data2: Deep
-schema: 2.0.0
----
-
 # New-VSApiGatewayStage
 
 ## SYNOPSIS
-Adds an AWS::ApiGateway::Stage resource to the template
+Adds an AWS::ApiGateway::Stage resource to the template.
+The AWS::ApiGateway::Stage resource creates a stage for a deployment.
 
 ## SYNTAX
 
 ```
-New-VSApiGatewayStage [-LogicalId] <String> [-CacheClusterEnabled <Boolean>] [-CacheClusterSize <Object>]
- [-ClientCertificateId <Object>] [-DeploymentId <Object>] [-Description <Object>]
- [-DocumentationVersion <Object>] [-MethodSettings <Object>] -RestApiId <Object> [-StageName <Object>]
+New-VSApiGatewayStage [-LogicalId] <String> [-AccessLogSetting <Object>] [-CacheClusterEnabled <Boolean>]
+ [-CacheClusterSize <Object>] [-CanarySetting <Object>] [-ClientCertificateId <Object>]
+ [-DeploymentId <Object>] [-Description <Object>] [-DocumentationVersion <Object>] [-MethodSettings <Object>]
+ -RestApiId <Object> [-StageName <Object>] [-Tags <Object>] [-TracingEnabled <Boolean>]
  [-Variables <Hashtable>] [-DeletionPolicy <String>] [-DependsOn <String[]>] [-Metadata <Object>]
  [-UpdatePolicy <Object>] [-Condition <Object>] [<CommonParameters>]
 ```
 
 ## DESCRIPTION
-Adds an AWS::ApiGateway::Stage resource to the template
+Adds an AWS::ApiGateway::Stage resource to the template.
+The AWS::ApiGateway::Stage resource creates a stage for a deployment.
+
+## EXAMPLES
+
+### Example 1
+```powershell
+PS C:\> {{ Add example code here }}
+```
+
+{{ Add example description here }}
 
 ## PARAMETERS
 
@@ -46,10 +47,30 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
+### -AccessLogSetting
+Specifies settings for logging access in this stage.
+
+Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-apigateway-stage.html#cfn-apigateway-stage-accesslogsetting
+Type: AccessLogSetting
+UpdateType: Mutable
+
+```yaml
+Type: Object
+Parameter Sets: (All)
+Aliases:
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
 ### -CacheClusterEnabled
-Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-apigateway-stage.html#cfn-apigateway-stage-cacheclusterenabled    
-PrimitiveType: Boolean    
-Required: False    
+Indicates whether cache clustering is enabled for the stage.
+
+Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-apigateway-stage.html#cfn-apigateway-stage-cacheclusterenabled
+PrimitiveType: Boolean
 UpdateType: Mutable
 
 ```yaml
@@ -65,9 +86,29 @@ Accept wildcard characters: False
 ```
 
 ### -CacheClusterSize
-Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-apigateway-stage.html#cfn-apigateway-stage-cacheclustersize    
-PrimitiveType: String    
-Required: False    
+The stage's cache cluster size.
+
+Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-apigateway-stage.html#cfn-apigateway-stage-cacheclustersize
+PrimitiveType: String
+UpdateType: Mutable
+
+```yaml
+Type: Object
+Parameter Sets: (All)
+Aliases:
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### -CanarySetting
+Specifies settings for the canary deployment in this stage.
+
+Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-apigateway-stage.html#cfn-apigateway-stage-canarysetting
+Type: CanarySetting
 UpdateType: Mutable
 
 ```yaml
@@ -83,9 +124,10 @@ Accept wildcard characters: False
 ```
 
 ### -ClientCertificateId
-Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-apigateway-stage.html#cfn-apigateway-stage-clientcertificateid    
-PrimitiveType: String    
-Required: False    
+The ID of the client certificate that API Gateway uses to call your integration endpoints in the stage.
+
+Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-apigateway-stage.html#cfn-apigateway-stage-clientcertificateid
+PrimitiveType: String
 UpdateType: Mutable
 
 ```yaml
@@ -101,9 +143,10 @@ Accept wildcard characters: False
 ```
 
 ### -DeploymentId
-Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-apigateway-stage.html#cfn-apigateway-stage-deploymentid    
-PrimitiveType: String    
-Required: False    
+The ID of the deployment that the stage is associated with.
+
+Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-apigateway-stage.html#cfn-apigateway-stage-deploymentid
+PrimitiveType: String
 UpdateType: Mutable
 
 ```yaml
@@ -119,9 +162,10 @@ Accept wildcard characters: False
 ```
 
 ### -Description
-Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-apigateway-stage.html#cfn-apigateway-stage-description    
-PrimitiveType: String    
-Required: False    
+A description of the stage.
+
+Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-apigateway-stage.html#cfn-apigateway-stage-description
+PrimitiveType: String
 UpdateType: Mutable
 
 ```yaml
@@ -137,9 +181,10 @@ Accept wildcard characters: False
 ```
 
 ### -DocumentationVersion
-Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-apigateway-stage.html#cfn-apigateway-stage-documentationversion    
-PrimitiveType: String    
-Required: False    
+The version ID of the API documentation snapshot.
+
+Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-apigateway-stage.html#cfn-apigateway-stage-documentationversion
+PrimitiveType: String
 UpdateType: Mutable
 
 ```yaml
@@ -155,11 +200,12 @@ Accept wildcard characters: False
 ```
 
 ### -MethodSettings
-Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-apigateway-stage.html#cfn-apigateway-stage-methodsettings    
-DuplicatesAllowed: False    
-ItemType: MethodSetting    
-Required: False    
-Type: List    
+Settings for all methods in the stage.
+
+Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-apigateway-stage.html#cfn-apigateway-stage-methodsettings
+DuplicatesAllowed: False
+ItemType: MethodSetting
+Type: List
 UpdateType: Mutable
 
 ```yaml
@@ -175,9 +221,10 @@ Accept wildcard characters: False
 ```
 
 ### -RestApiId
-Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-apigateway-stage.html#cfn-apigateway-stage-restapiid    
-PrimitiveType: String    
-Required: True    
+The ID of the RestApi resource that you're deploying with this stage.
+
+Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-apigateway-stage.html#cfn-apigateway-stage-restapiid
+PrimitiveType: String
 UpdateType: Immutable
 
 ```yaml
@@ -193,9 +240,10 @@ Accept wildcard characters: False
 ```
 
 ### -StageName
-Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-apigateway-stage.html#cfn-apigateway-stage-stagename    
-PrimitiveType: String    
-Required: False    
+The name of the stage, which API Gateway uses as the first path segment in the invoked Uniform Resource Identifier URI.
+
+Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-apigateway-stage.html#cfn-apigateway-stage-stagename
+PrimitiveType: String
 UpdateType: Immutable
 
 ```yaml
@@ -210,12 +258,56 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
+### -Tags
+An array of arbitrary tags key-value pairs to associate with the stage.
+
+Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-apigateway-stage.html#cfn-apigateway-stage-tags
+DuplicatesAllowed: True
+ItemType: Tag
+Type: List
+UpdateType: Mutable
+
+```yaml
+Type: Object
+Parameter Sets: (All)
+Aliases:
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### -TracingEnabled
+Specifies whether active X-Ray tracing is enabled for this stage.
+For more information, see Trace API Gateway API Execution with AWS X-Ray: https://docs.aws.amazon.com/apigateway/latest/developerguide/apigateway-xray.html in the *API Gateway Developer Guide*.
+
+Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-apigateway-stage.html#cfn-apigateway-stage-tracingenabled
+PrimitiveType: Boolean
+UpdateType: Mutable
+
+```yaml
+Type: Boolean
+Parameter Sets: (All)
+Aliases:
+
+Required: False
+Position: Named
+Default value: False
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
 ### -Variables
-Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-apigateway-stage.html#cfn-apigateway-stage-variables    
-DuplicatesAllowed: False    
-PrimitiveItemType: String    
-Required: False    
-Type: Map    
+A map string-to-string map that defines the stage variables, where the variable name is the key and the variable value is the value.
+Variable names are limited to alphanumeric characters.
+Values must match the following regular expression: A-Za-z0-9-._~:/?#&=,\]+.
+
+Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-apigateway-stage.html#cfn-apigateway-stage-variables
+DuplicatesAllowed: False
+PrimitiveItemType: String
+Type: Map
 UpdateType: Mutable
 
 ```yaml
@@ -325,15 +417,13 @@ Accept wildcard characters: False
 ```
 
 ### CommonParameters
-This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction, and -WarningVariable.
-For more information, see about_CommonParameters (http://go.microsoft.com/fwlink/?LinkID=113216).
+This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction, and -WarningVariable. For more information, see [about_CommonParameters](http://go.microsoft.com/fwlink/?LinkID=113216).
 
 ## INPUTS
 
 ## OUTPUTS
 
 ### Vaporshell.Resource.ApiGateway.Stage
-
 ## NOTES
 
 ## RELATED LINKS

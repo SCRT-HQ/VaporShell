@@ -1,18 +1,8 @@
----
-layout: glossary
-title: Add-VSApiGatewayRestApiS3Location
-categories: glossary
-label1: Category
-data1: Documentation
-label2: Depth
-data2: Deep
-schema: 2.0.0
----
-
 # Add-VSApiGatewayRestApiS3Location
 
 ## SYNOPSIS
-Adds an AWS::ApiGateway::RestApi.S3Location resource property to the template
+Adds an AWS::ApiGateway::RestApi.S3Location resource property to the template.
+S3Location is a property of the AWS::ApiGateway::RestApi: https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-apigateway-restapi.html resource that specifies the Amazon S3 location of a OpenAPI (formerly Swagger file that defines a set of RESTful APIs in JSON or YAML.
 
 ## SYNTAX
 
@@ -22,14 +12,29 @@ Add-VSApiGatewayRestApiS3Location [[-Bucket] <Object>] [[-ETag] <Object>] [[-Key
 ```
 
 ## DESCRIPTION
-Adds an AWS::ApiGateway::RestApi.S3Location resource property to the template
+Adds an AWS::ApiGateway::RestApi.S3Location resource property to the template.
+S3Location is a property of the AWS::ApiGateway::RestApi: https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-apigateway-restapi.html resource that specifies the Amazon S3 location of a OpenAPI (formerly Swagger file that defines a set of RESTful APIs in JSON or YAML.
+
+**Note**
+
+On January 1, 2016, the Swagger Specification was donated to the OpenAPI initiative: https://www.openapis.org/, becoming the foundation of the OpenAPI Specification.
+
+## EXAMPLES
+
+### Example 1
+```powershell
+PS C:\> {{ Add example code here }}
+```
+
+{{ Add example description here }}
 
 ## PARAMETERS
 
 ### -Bucket
-Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-apigateway-restapi-s3location.html#cfn-apigateway-restapi-s3location-bucket    
-PrimitiveType: String    
-Required: False    
+The name of the S3 bucket where the OpenAPI file is stored.
+
+Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-apigateway-restapi-s3location.html#cfn-apigateway-restapi-s3location-bucket
+PrimitiveType: String
 UpdateType: Mutable
 
 ```yaml
@@ -45,9 +50,11 @@ Accept wildcard characters: False
 ```
 
 ### -ETag
-Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-apigateway-restapi-s3location.html#cfn-apigateway-restapi-s3location-etag    
-PrimitiveType: String    
-Required: False    
+The Amazon S3 ETag a file checksum of the OpenAPI file.
+If you don't specify a value, API Gateway skips ETag validation of your OpenAPI file.
+
+Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-apigateway-restapi-s3location.html#cfn-apigateway-restapi-s3location-etag
+PrimitiveType: String
 UpdateType: Mutable
 
 ```yaml
@@ -63,9 +70,10 @@ Accept wildcard characters: False
 ```
 
 ### -Key
-Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-apigateway-restapi-s3location.html#cfn-apigateway-restapi-s3location-key    
-PrimitiveType: String    
-Required: False    
+The file name of the OpenAPI file Amazon S3 object name.
+
+Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-apigateway-restapi-s3location.html#cfn-apigateway-restapi-s3location-key
+PrimitiveType: String
 UpdateType: Mutable
 
 ```yaml
@@ -81,9 +89,10 @@ Accept wildcard characters: False
 ```
 
 ### -Version
-Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-apigateway-restapi-s3location.html#cfn-apigateway-restapi-s3location-version    
-PrimitiveType: String    
-Required: False    
+For versioning-enabled buckets, a specific version of the OpenAPI file.
+
+Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-apigateway-restapi-s3location.html#cfn-apigateway-restapi-s3location-version
+PrimitiveType: String
 UpdateType: Mutable
 
 ```yaml
@@ -99,15 +108,13 @@ Accept wildcard characters: False
 ```
 
 ### CommonParameters
-This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction, and -WarningVariable.
-For more information, see about_CommonParameters (http://go.microsoft.com/fwlink/?LinkID=113216).
+This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction, and -WarningVariable. For more information, see [about_CommonParameters](http://go.microsoft.com/fwlink/?LinkID=113216).
 
 ## INPUTS
 
 ## OUTPUTS
 
 ### Vaporshell.Resource.ApiGateway.RestApi.S3Location
-
 ## NOTES
 
 ## RELATED LINKS

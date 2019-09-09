@@ -1,14 +1,3 @@
----
-layout: glossary
-title: Add-ConIf
-categories: glossary
-label1: Category
-data1: Documentation
-label2: Depth
-data2: Deep
-schema: 2.0.0
----
-
 # Add-ConIf
 
 ## SYNOPSIS
@@ -24,6 +13,15 @@ Add-ConIf [-ConditionName] <String> [-ValueIfTrue] <Object> [-ValueIfFalse] <Obj
 Returns one value if the specified condition evaluates to true and another value if the specified condition evaluates to false.
 Currently, AWS CloudFormation supports the Fn::If intrinsic function in the metadata attribute, update policy attribute, and property values in the Resources section and Outputs sections of a template.
 You can use the AWS::NoValue pseudo parameter as a return value to remove the corresponding property.
+
+## EXAMPLES
+
+### EXAMPLE 1
+```
+Add-ConIf -ConditionName "CreateNewSecurityGroup" -ValueIfTrue (Add-FnRef -Ref "NewSecurityGroup") -ValueIfFalse (Add-FnRef -Ref "ExistingSecurityGroup")
+```
+
+When the template is exported, this will convert to: {"Fn::If":\["CreateNewSecurityGroup",{"Ref":"NewSecurityGroup"},{"Ref":"ExistingSecurityGroup"}\]}
 
 ## PARAMETERS
 
@@ -74,15 +72,13 @@ Accept wildcard characters: False
 ```
 
 ### CommonParameters
-This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction, and -WarningVariable.
-For more information, see about_CommonParameters (http://go.microsoft.com/fwlink/?LinkID=113216).
+This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction, and -WarningVariable. For more information, see [about_CommonParameters](http://go.microsoft.com/fwlink/?LinkID=113216).
 
 ## INPUTS
 
 ## OUTPUTS
 
 ### Vaporshell.Condition.If
-
 ## NOTES
 You can use the following functions in the Fn::If condition:
     Fn::Base64

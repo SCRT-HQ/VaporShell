@@ -1,18 +1,8 @@
----
-layout: glossary
-title: Add-VSRDSOptionGroupOptionSetting
-categories: glossary
-label1: Category
-data1: Documentation
-label2: Depth
-data2: Deep
-schema: 2.0.0
----
-
 # Add-VSRDSOptionGroupOptionSetting
 
 ## SYNOPSIS
-Adds an AWS::RDS::OptionGroup.OptionSetting resource property to the template
+Adds an AWS::RDS::OptionGroup.OptionSetting resource property to the template.
+The OptionSetting property type specifies the value for an option within an OptionSetting property.
 
 ## SYNTAX
 
@@ -21,14 +11,25 @@ Add-VSRDSOptionGroupOptionSetting [[-Name] <Object>] [[-Value] <Object>] [<Commo
 ```
 
 ## DESCRIPTION
-Adds an AWS::RDS::OptionGroup.OptionSetting resource property to the template
+Adds an AWS::RDS::OptionGroup.OptionSetting resource property to the template.
+The OptionSetting property type specifies the value for an option within an OptionSetting property.
+
+## EXAMPLES
+
+### Example 1
+```powershell
+PS C:\> {{ Add example code here }}
+```
+
+{{ Add example description here }}
 
 ## PARAMETERS
 
 ### -Name
-Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-rds-optiongroup-optionconfigurations-optionsettings.html#cfn-rds-optiongroup-optionconfigurations-optionsettings-name    
-PrimitiveType: String    
-Required: False    
+The name of the option that has settings that you can set.
+
+Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-rds-optiongroup-optionconfigurations-optionsettings.html#cfn-rds-optiongroup-optionconfigurations-optionsettings-name
+PrimitiveType: String
 UpdateType: Mutable
 
 ```yaml
@@ -44,9 +45,10 @@ Accept wildcard characters: False
 ```
 
 ### -Value
-Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-rds-optiongroup-optionconfigurations-optionsettings.html#cfn-rds-optiongroup-optionconfigurations-optionsettings-value    
-PrimitiveType: String    
-Required: False    
+The current value of the option setting.
+
+Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-rds-optiongroup-optionconfigurations-optionsettings.html#cfn-rds-optiongroup-optionconfigurations-optionsettings-value
+PrimitiveType: String
 UpdateType: Mutable
 
 ```yaml
@@ -62,15 +64,13 @@ Accept wildcard characters: False
 ```
 
 ### CommonParameters
-This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction, and -WarningVariable.
-For more information, see about_CommonParameters (http://go.microsoft.com/fwlink/?LinkID=113216).
+This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction, and -WarningVariable. For more information, see [about_CommonParameters](http://go.microsoft.com/fwlink/?LinkID=113216).
 
 ## INPUTS
 
 ## OUTPUTS
 
 ### Vaporshell.Resource.RDS.OptionGroup.OptionSetting
-
 ## NOTES
 
 ## RELATED LINKS

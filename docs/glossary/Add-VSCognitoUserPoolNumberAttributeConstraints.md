@@ -1,18 +1,9 @@
----
-layout: glossary
-title: Add-VSCognitoUserPoolNumberAttributeConstraints
-categories: glossary
-label1: Category
-data1: Documentation
-label2: Depth
-data2: Deep
-schema: 2.0.0
----
-
 # Add-VSCognitoUserPoolNumberAttributeConstraints
 
 ## SYNOPSIS
-Adds an AWS::Cognito::UserPool.NumberAttributeConstraints resource property to the template
+Adds an AWS::Cognito::UserPool.NumberAttributeConstraints resource property to the template.
+The NumberAttributeConstraints property type defines the number attribute constraints of an Amazon Cognito User Pool.
+NumberAttributeConstraints is a subproperty of the SchemaAttribute: https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-cognito-userpool-schemaattribute.html property type.
 
 ## SYNTAX
 
@@ -22,14 +13,26 @@ Add-VSCognitoUserPoolNumberAttributeConstraints [[-MinValue] <Object>] [[-MaxVal
 ```
 
 ## DESCRIPTION
-Adds an AWS::Cognito::UserPool.NumberAttributeConstraints resource property to the template
+Adds an AWS::Cognito::UserPool.NumberAttributeConstraints resource property to the template.
+The NumberAttributeConstraints property type defines the number attribute constraints of an Amazon Cognito User Pool.
+NumberAttributeConstraints is a subproperty of the SchemaAttribute: https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-cognito-userpool-schemaattribute.html property type.
+
+## EXAMPLES
+
+### Example 1
+```powershell
+PS C:\> {{ Add example code here }}
+```
+
+{{ Add example description here }}
 
 ## PARAMETERS
 
 ### -MinValue
-Required: False    
-Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-cognito-userpool-numberattributeconstraints.html#cfn-cognito-userpool-numberattributeconstraints-minvalue    
-PrimitiveType: String    
+The minimum value of an attribute that is of the number data type.
+
+Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-cognito-userpool-numberattributeconstraints.html#cfn-cognito-userpool-numberattributeconstraints-minvalue
+PrimitiveType: String
 UpdateType: Mutable
 
 ```yaml
@@ -45,9 +48,10 @@ Accept wildcard characters: False
 ```
 
 ### -MaxValue
-Required: False    
-Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-cognito-userpool-numberattributeconstraints.html#cfn-cognito-userpool-numberattributeconstraints-maxvalue    
-PrimitiveType: String    
+The maximum value of an attribute that is of the number data type.
+
+Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-cognito-userpool-numberattributeconstraints.html#cfn-cognito-userpool-numberattributeconstraints-maxvalue
+PrimitiveType: String
 UpdateType: Mutable
 
 ```yaml
@@ -63,15 +67,13 @@ Accept wildcard characters: False
 ```
 
 ### CommonParameters
-This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction, and -WarningVariable.
-For more information, see about_CommonParameters (http://go.microsoft.com/fwlink/?LinkID=113216).
+This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction, and -WarningVariable. For more information, see [about_CommonParameters](http://go.microsoft.com/fwlink/?LinkID=113216).
 
 ## INPUTS
 
 ## OUTPUTS
 
 ### Vaporshell.Resource.Cognito.UserPool.NumberAttributeConstraints
-
 ## NOTES
 
 ## RELATED LINKS

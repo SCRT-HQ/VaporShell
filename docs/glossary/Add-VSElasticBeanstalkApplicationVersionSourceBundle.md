@@ -1,18 +1,9 @@
----
-layout: glossary
-title: Add-VSElasticBeanstalkApplicationVersionSourceBundle
-categories: glossary
-label1: Category
-data1: Documentation
-label2: Depth
-data2: Deep
-schema: 2.0.0
----
-
 # Add-VSElasticBeanstalkApplicationVersionSourceBundle
 
 ## SYNOPSIS
-Adds an AWS::ElasticBeanstalk::ApplicationVersion.SourceBundle resource property to the template
+Adds an AWS::ElasticBeanstalk::ApplicationVersion.SourceBundle resource property to the template.
+The SourceBundle property is an embedded property of the AWS::ElasticBeanstalk::ApplicationVersion: https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-beanstalk-sourcebundle.html resource.
+It specifies the Amazon S3 location of the source bundle for an AWS Elastic Beanstalk application version.
 
 ## SYNTAX
 
@@ -22,14 +13,26 @@ Add-VSElasticBeanstalkApplicationVersionSourceBundle [-S3Bucket] <Object> [-S3Ke
 ```
 
 ## DESCRIPTION
-Adds an AWS::ElasticBeanstalk::ApplicationVersion.SourceBundle resource property to the template
+Adds an AWS::ElasticBeanstalk::ApplicationVersion.SourceBundle resource property to the template.
+The SourceBundle property is an embedded property of the AWS::ElasticBeanstalk::ApplicationVersion: https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-beanstalk-sourcebundle.html resource.
+It specifies the Amazon S3 location of the source bundle for an AWS Elastic Beanstalk application version.
+
+## EXAMPLES
+
+### Example 1
+```powershell
+PS C:\> {{ Add example code here }}
+```
+
+{{ Add example description here }}
 
 ## PARAMETERS
 
 ### -S3Bucket
-Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-beanstalk-sourcebundle.html#cfn-beanstalk-sourcebundle-s3bucket    
-PrimitiveType: String    
-Required: True    
+The Amazon S3 bucket where the data is located.
+
+Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-beanstalk-sourcebundle.html#cfn-beanstalk-sourcebundle-s3bucket
+PrimitiveType: String
 UpdateType: Mutable
 
 ```yaml
@@ -45,9 +48,10 @@ Accept wildcard characters: False
 ```
 
 ### -S3Key
-Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-beanstalk-sourcebundle.html#cfn-beanstalk-sourcebundle-s3key    
-PrimitiveType: String    
-Required: True    
+The Amazon S3 key where the data is located.
+
+Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-beanstalk-sourcebundle.html#cfn-beanstalk-sourcebundle-s3key
+PrimitiveType: String
 UpdateType: Mutable
 
 ```yaml
@@ -63,15 +67,13 @@ Accept wildcard characters: False
 ```
 
 ### CommonParameters
-This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction, and -WarningVariable.
-For more information, see about_CommonParameters (http://go.microsoft.com/fwlink/?LinkID=113216).
+This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction, and -WarningVariable. For more information, see [about_CommonParameters](http://go.microsoft.com/fwlink/?LinkID=113216).
 
 ## INPUTS
 
 ## OUTPUTS
 
 ### Vaporshell.Resource.ElasticBeanstalk.ApplicationVersion.SourceBundle
-
 ## NOTES
 
 ## RELATED LINKS

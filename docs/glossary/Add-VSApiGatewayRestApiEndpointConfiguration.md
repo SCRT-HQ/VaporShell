@@ -1,18 +1,8 @@
----
-layout: glossary
-title: Add-VSApiGatewayRestApiEndpointConfiguration
-categories: glossary
-label1: Category
-data1: Documentation
-label2: Depth
-data2: Deep
-schema: 2.0.0
----
-
 # Add-VSApiGatewayRestApiEndpointConfiguration
 
 ## SYNOPSIS
-Adds an AWS::ApiGateway::RestApi.EndpointConfiguration resource property to the template
+Adds an AWS::ApiGateway::RestApi.EndpointConfiguration resource property to the template.
+The EndpointConfiguration property type specifies the endpoint types of a REST API.
 
 ## SYNTAX
 
@@ -21,16 +11,33 @@ Add-VSApiGatewayRestApiEndpointConfiguration [[-Types] <Object>] [<CommonParamet
 ```
 
 ## DESCRIPTION
-Adds an AWS::ApiGateway::RestApi.EndpointConfiguration resource property to the template
+Adds an AWS::ApiGateway::RestApi.EndpointConfiguration resource property to the template.
+The EndpointConfiguration property type specifies the endpoint types of a REST API.
+
+EndpointConfiguration is a property of the AWS::ApiGateway::RestApi: https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-apigateway-restapi.html resource.
+
+## EXAMPLES
+
+### Example 1
+```powershell
+PS C:\> {{ Add example code here }}
+```
+
+{{ Add example description here }}
 
 ## PARAMETERS
 
 ### -Types
-Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-apigateway-restapi-endpointconfiguration.html#cfn-apigateway-restapi-endpointconfiguration-types    
-DuplicatesAllowed: False    
-PrimitiveItemType: String    
-Required: False    
-Type: List    
+A list of endpoint types of an API or its custom domain name.
+Valid values include:
++ EDGE: For an edge-optimized API and its custom domain name.
++ REGIONAL: For a regional API and its custom domain name.
++ PRIVATE: For a private API.
+
+Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-apigateway-restapi-endpointconfiguration.html#cfn-apigateway-restapi-endpointconfiguration-types
+DuplicatesAllowed: False
+PrimitiveItemType: String
+Type: List
 UpdateType: Mutable
 
 ```yaml
@@ -46,15 +53,13 @@ Accept wildcard characters: False
 ```
 
 ### CommonParameters
-This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction, and -WarningVariable.
-For more information, see about_CommonParameters (http://go.microsoft.com/fwlink/?LinkID=113216).
+This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction, and -WarningVariable. For more information, see [about_CommonParameters](http://go.microsoft.com/fwlink/?LinkID=113216).
 
 ## INPUTS
 
 ## OUTPUTS
 
 ### Vaporshell.Resource.ApiGateway.RestApi.EndpointConfiguration
-
 ## NOTES
 
 ## RELATED LINKS

@@ -1,18 +1,11 @@
----
-layout: glossary
-title: New-VSWAFRegionalWebACL
-categories: glossary
-label1: Category
-data1: Documentation
-label2: Depth
-data2: Deep
-schema: 2.0.0
----
-
 # New-VSWAFRegionalWebACL
 
 ## SYNOPSIS
-Adds an AWS::WAFRegional::WebACL resource to the template
+Adds an AWS::WAFRegional::WebACL resource to the template.
+Contains the Rules that identify the requests that you want to allow, block, or count.
+In a WebACL, you also specify a default action (ALLOW or BLOCK, and the action for each Rule that you add to a WebACL, for example, block requests from specified IP addresses or block requests from specified referrers.
+You also associate the WebACL with a CloudFront distribution to identify the requests that you want AWS WAF to filter.
+If you add more than one Rule to a WebACL, a request needs to match only one of the specifications to be allowed, blocked, or counted.
 
 ## SYNTAX
 
@@ -23,7 +16,20 @@ New-VSWAFRegionalWebACL [-LogicalId] <String> -MetricName <Object> -DefaultActio
 ```
 
 ## DESCRIPTION
-Adds an AWS::WAFRegional::WebACL resource to the template
+Adds an AWS::WAFRegional::WebACL resource to the template.
+Contains the Rules that identify the requests that you want to allow, block, or count.
+In a WebACL, you also specify a default action (ALLOW or BLOCK, and the action for each Rule that you add to a WebACL, for example, block requests from specified IP addresses or block requests from specified referrers.
+You also associate the WebACL with a CloudFront distribution to identify the requests that you want AWS WAF to filter.
+If you add more than one Rule to a WebACL, a request needs to match only one of the specifications to be allowed, blocked, or counted.
+
+## EXAMPLES
+
+### Example 1
+```powershell
+PS C:\> {{ Add example code here }}
+```
+
+{{ Add example description here }}
 
 ## PARAMETERS
 
@@ -45,9 +51,12 @@ Accept wildcard characters: False
 ```
 
 ### -MetricName
-Required: True    
-Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-wafregional-webacl.html#cfn-wafregional-webacl-metricname    
-PrimitiveType: String    
+A friendly name or description for the metrics for this WebACL.
+The name can contain only alphanumeric characters A-Z, a-z, 0-9, with maximum length 128 and minimum length one.
+It can't contain whitespace or metric names reserved for AWS WAF, including "All" and "Default_Action." You can't change MetricName after you create the WebACL.
+
+Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-wafregional-webacl.html#cfn-wafregional-webacl-metricname
+PrimitiveType: String
 UpdateType: Immutable
 
 ```yaml
@@ -63,9 +72,11 @@ Accept wildcard characters: False
 ```
 
 ### -DefaultAction
-Type: Action    
-Required: True    
-Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-wafregional-webacl.html#cfn-wafregional-webacl-defaultaction    
+The action to perform if none of the Rules contained in the WebACL match.
+The action is specified by the WafAction object.
+
+Type: Action
+Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-wafregional-webacl.html#cfn-wafregional-webacl-defaultaction
 UpdateType: Mutable
 
 ```yaml
@@ -81,10 +92,11 @@ Accept wildcard characters: False
 ```
 
 ### -Rules
-Type: List    
-Required: False    
-Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-wafregional-webacl.html#cfn-wafregional-webacl-rules    
-ItemType: Rule    
+An array that contains the action for each Rule in a WebACL, the priority of the Rule, and the ID of the Rule.
+
+Type: List
+Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-wafregional-webacl.html#cfn-wafregional-webacl-rules
+ItemType: Rule
 UpdateType: Mutable
 
 ```yaml
@@ -100,9 +112,11 @@ Accept wildcard characters: False
 ```
 
 ### -Name
-Required: True    
-Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-wafregional-webacl.html#cfn-wafregional-webacl-name    
-PrimitiveType: String    
+A friendly name or description of the WebACL.
+You can't change the name of a WebACL after you create it.
+
+Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-wafregional-webacl.html#cfn-wafregional-webacl-name
+PrimitiveType: String
 UpdateType: Immutable
 
 ```yaml
@@ -212,15 +226,13 @@ Accept wildcard characters: False
 ```
 
 ### CommonParameters
-This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction, and -WarningVariable.
-For more information, see about_CommonParameters (http://go.microsoft.com/fwlink/?LinkID=113216).
+This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction, and -WarningVariable. For more information, see [about_CommonParameters](http://go.microsoft.com/fwlink/?LinkID=113216).
 
 ## INPUTS
 
 ## OUTPUTS
 
 ### Vaporshell.Resource.WAFRegional.WebACL
-
 ## NOTES
 
 ## RELATED LINKS

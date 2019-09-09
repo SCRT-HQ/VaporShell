@@ -1,14 +1,3 @@
----
-layout: glossary
-title: Watch-Stack
-categories: glossary
-label1: Category
-data1: Documentation
-label2: Depth
-data2: Deep
-schema: 2.0.0
----
-
 # Watch-Stack
 
 ## SYNOPSIS
@@ -18,27 +7,36 @@ Colorizes events based on event type.
 ## SYNTAX
 
 ```
-Watch-Stack [-StackName] <String> [-InNewWindow] [[-RefreshRate] <Int32>] [[-ProfileName] <String>]
- [<CommonParameters>]
+Watch-Stack [-StackName] <String[]> [-InNewWindow] [-IncludeBlankResourceStatusReasons] [-RefreshRate <Int32>]
+ [-ProfileName <String>] [<CommonParameters>]
 ```
 
 ## DESCRIPTION
-{{Fill in the Description}}
+{{ Fill in the Description }}
+
+## EXAMPLES
+
+### Example 1
+```powershell
+PS C:\> {{ Add example code here }}
+```
+
+{{ Add example description here }}
 
 ## PARAMETERS
 
 ### -StackName
-{{Fill StackName Description}}
+{{ Fill StackName Description }}
 
 ```yaml
-Type: String
+Type: String[]
 Parameter Sets: (All)
 Aliases: StackId
 
 Required: True
 Position: 1
 Default value: None
-Accept pipeline input: True (ByPropertyName)
+Accept pipeline input: True (ByPropertyName, ByValue)
 Accept wildcard characters: False
 ```
 
@@ -46,6 +44,22 @@ Accept wildcard characters: False
 WINDOWS ONLY (For now).
 Watch events in a new PowerShell window.
 So you can continue working in your current console.
+
+```yaml
+Type: SwitchParameter
+Parameter Sets: (All)
+Aliases:
+
+Required: False
+Position: Named
+Default value: False
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### -IncludeBlankResourceStatusReasons
+If passed/set to $true, this will also output CREATE_IN_PROGRESS events that do not include a ResourceStatusReason.
+All other ResourceStatuses
 
 ```yaml
 Type: SwitchParameter
@@ -69,7 +83,7 @@ Parameter Sets: (All)
 Aliases:
 
 Required: False
-Position: 2
+Position: Named
 Default value: 2
 Accept pipeline input: False
 Accept wildcard characters: False
@@ -85,15 +99,14 @@ Parameter Sets: (All)
 Aliases:
 
 Required: False
-Position: 3
+Position: Named
 Default value: $env:AWS_PROFILE
 Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
 ### CommonParameters
-This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction, and -WarningVariable.
-For more information, see about_CommonParameters (http://go.microsoft.com/fwlink/?LinkID=113216).
+This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction, and -WarningVariable. For more information, see [about_CommonParameters](http://go.microsoft.com/fwlink/?LinkID=113216).
 
 ## INPUTS
 

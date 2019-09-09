@@ -1,18 +1,8 @@
----
-layout: glossary
-title: Add-VSGlueTableTableInput
-categories: glossary
-label1: Category
-data1: Documentation
-label2: Depth
-data2: Deep
-schema: 2.0.0
----
-
 # Add-VSGlueTableTableInput
 
 ## SYNOPSIS
-Adds an AWS::Glue::Table.TableInput resource property to the template
+Adds an AWS::Glue::Table.TableInput resource property to the template.
+A structure used to define a table.
 
 ## SYNTAX
 
@@ -24,14 +14,25 @@ Add-VSGlueTableTableInput [[-Owner] <Object>] [[-ViewOriginalText] <Object>] [[-
 ```
 
 ## DESCRIPTION
-Adds an AWS::Glue::Table.TableInput resource property to the template
+Adds an AWS::Glue::Table.TableInput resource property to the template.
+A structure used to define a table.
+
+## EXAMPLES
+
+### Example 1
+```powershell
+PS C:\> {{ Add example code here }}
+```
+
+{{ Add example description here }}
 
 ## PARAMETERS
 
 ### -Owner
-Required: False    
-Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-glue-table-tableinput.html#cfn-glue-table-tableinput-owner    
-PrimitiveType: String    
+The table owner.
+
+Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-glue-table-tableinput.html#cfn-glue-table-tableinput-owner
+PrimitiveType: String
 UpdateType: Mutable
 
 ```yaml
@@ -47,9 +48,10 @@ Accept wildcard characters: False
 ```
 
 ### -ViewOriginalText
-Required: False    
-Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-glue-table-tableinput.html#cfn-glue-table-tableinput-vieworiginaltext    
-PrimitiveType: String    
+If the table is a view, the original text of the view; otherwise null.
+
+Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-glue-table-tableinput.html#cfn-glue-table-tableinput-vieworiginaltext
+PrimitiveType: String
 UpdateType: Mutable
 
 ```yaml
@@ -65,9 +67,10 @@ Accept wildcard characters: False
 ```
 
 ### -Description
-Required: False    
-Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-glue-table-tableinput.html#cfn-glue-table-tableinput-description    
-PrimitiveType: String    
+A description of the table.
+
+Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-glue-table-tableinput.html#cfn-glue-table-tableinput-description
+PrimitiveType: String
 UpdateType: Mutable
 
 ```yaml
@@ -83,9 +86,10 @@ Accept wildcard characters: False
 ```
 
 ### -TableType
-Required: False    
-Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-glue-table-tableinput.html#cfn-glue-table-tableinput-tabletype    
-PrimitiveType: String    
+The type of this table EXTERNAL_TABLE, VIRTUAL_VIEW, etc..
+
+Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-glue-table-tableinput.html#cfn-glue-table-tableinput-tabletype
+PrimitiveType: String
 UpdateType: Mutable
 
 ```yaml
@@ -101,9 +105,10 @@ Accept wildcard characters: False
 ```
 
 ### -Parameters
-Required: False    
-Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-glue-table-tableinput.html#cfn-glue-table-tableinput-parameters    
-PrimitiveType: Json    
+These key-value pairs define properties associated with the table.
+
+Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-glue-table-tableinput.html#cfn-glue-table-tableinput-parameters
+PrimitiveType: Json
 UpdateType: Mutable
 
 ```yaml
@@ -119,9 +124,10 @@ Accept wildcard characters: False
 ```
 
 ### -ViewExpandedText
-Required: False    
-Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-glue-table-tableinput.html#cfn-glue-table-tableinput-viewexpandedtext    
-PrimitiveType: String    
+If the table is a view, the expanded text of the view; otherwise null.
+
+Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-glue-table-tableinput.html#cfn-glue-table-tableinput-viewexpandedtext
+PrimitiveType: String
 UpdateType: Mutable
 
 ```yaml
@@ -137,9 +143,10 @@ Accept wildcard characters: False
 ```
 
 ### -StorageDescriptor
-Type: StorageDescriptor    
-Required: False    
-Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-glue-table-tableinput.html#cfn-glue-table-tableinput-storagedescriptor    
+A storage descriptor containing information about the physical storage of this table.
+
+Type: StorageDescriptor
+Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-glue-table-tableinput.html#cfn-glue-table-tableinput-storagedescriptor
 UpdateType: Mutable
 
 ```yaml
@@ -155,10 +162,15 @@ Accept wildcard characters: False
 ```
 
 ### -PartitionKeys
-Type: List    
-Required: False    
-Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-glue-table-tableinput.html#cfn-glue-table-tableinput-partitionkeys    
-ItemType: Column    
+A list of columns by which the table is partitioned.
+Only primitive types are supported as partition keys.
+When you create a table used by Amazon Athena, and you do not specify any partitionKeys, you must at least set the value of partitionKeys to an empty list.
+For example:
+"PartitionKeys": \]
+
+Type: List
+Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-glue-table-tableinput.html#cfn-glue-table-tableinput-partitionkeys
+ItemType: Column
 UpdateType: Mutable
 
 ```yaml
@@ -174,9 +186,10 @@ Accept wildcard characters: False
 ```
 
 ### -Retention
-Required: False    
-Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-glue-table-tableinput.html#cfn-glue-table-tableinput-retention    
-PrimitiveType: Integer    
+The retention time for this table.
+
+Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-glue-table-tableinput.html#cfn-glue-table-tableinput-retention
+PrimitiveType: Integer
 UpdateType: Mutable
 
 ```yaml
@@ -192,9 +205,11 @@ Accept wildcard characters: False
 ```
 
 ### -Name
-Required: False    
-Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-glue-table-tableinput.html#cfn-glue-table-tableinput-name    
-PrimitiveType: String    
+The table name.
+For Hive compatibility, this is folded to lowercase when it is stored.
+
+Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-glue-table-tableinput.html#cfn-glue-table-tableinput-name
+PrimitiveType: String
 UpdateType: Immutable
 
 ```yaml
@@ -210,15 +225,13 @@ Accept wildcard characters: False
 ```
 
 ### CommonParameters
-This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction, and -WarningVariable.
-For more information, see about_CommonParameters (http://go.microsoft.com/fwlink/?LinkID=113216).
+This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction, and -WarningVariable. For more information, see [about_CommonParameters](http://go.microsoft.com/fwlink/?LinkID=113216).
 
 ## INPUTS
 
 ## OUTPUTS
 
 ### Vaporshell.Resource.Glue.Table.TableInput
-
 ## NOTES
 
 ## RELATED LINKS

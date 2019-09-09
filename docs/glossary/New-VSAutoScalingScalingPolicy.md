@@ -1,18 +1,8 @@
----
-layout: glossary
-title: New-VSAutoScalingScalingPolicy
-categories: glossary
-label1: Category
-data1: Documentation
-label2: Depth
-data2: Deep
-schema: 2.0.0
----
-
 # New-VSAutoScalingScalingPolicy
 
 ## SYNOPSIS
-Adds an AWS::AutoScaling::ScalingPolicy resource to the template
+Adds an AWS::AutoScaling::ScalingPolicy resource to the template.
+Specifies a scaling policy for an Amazon EC2 Auto Scaling group.
 
 ## SYNTAX
 
@@ -26,7 +16,25 @@ New-VSAutoScalingScalingPolicy [-LogicalId] <String> [-AdjustmentType <Object>] 
 ```
 
 ## DESCRIPTION
-Adds an AWS::AutoScaling::ScalingPolicy resource to the template
+Adds an AWS::AutoScaling::ScalingPolicy resource to the template.
+Specifies a scaling policy for an Amazon EC2 Auto Scaling group.
+
+To update an existing scaling policy, use the existing policy name and set the property to change.
+If you leave a property unspecified when updating a scaling policy, the corresponding value remains unchanged.
+
+If you create either a step scaling policy or a simple scaling policy, you must also create a CloudWatch alarm that monitors a CloudWatch metric for your Auto Scaling group.
+Note that you can associate a CloudWatch alarm with only one scaling policy.
+
+For more information about using scaling policies to scale your Auto Scaling group automatically, see Dynamic Scaling: https://docs.aws.amazon.com/autoscaling/ec2/userguide/as-scale-based-on-demand.html in the *Amazon EC2 Auto Scaling User Guide*.
+
+## EXAMPLES
+
+### Example 1
+```powershell
+PS C:\> {{ Add example code here }}
+```
+
+{{ Add example description here }}
 
 ## PARAMETERS
 
@@ -48,9 +56,13 @@ Accept wildcard characters: False
 ```
 
 ### -AdjustmentType
-Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-as-policy.html#cfn-as-scalingpolicy-adjustmenttype    
-PrimitiveType: String    
-Required: False    
+Specifies whether the ScalingAdjustment property is an absolute number or a percentage of the current capacity.
+The valid values are ChangeInCapacity, ExactCapacity, and PercentChangeInCapacity.
+Valid only if the policy type is StepScaling or SimpleScaling.
+For more information, see Scaling Adjustment Types: https://docs.aws.amazon.com/autoscaling/ec2/userguide/as-scaling-simple-step.html#as-scaling-adjustment in the *Amazon EC2 Auto Scaling User Guide*.
+
+Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-as-policy.html#cfn-as-scalingpolicy-adjustmenttype
+PrimitiveType: String
 UpdateType: Mutable
 
 ```yaml
@@ -66,9 +78,10 @@ Accept wildcard characters: False
 ```
 
 ### -AutoScalingGroupName
-Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-as-policy.html#cfn-as-scalingpolicy-autoscalinggroupname    
-PrimitiveType: String    
-Required: True    
+The name or Amazon Resource Name ARN of the Auto Scaling group that you want to attach the policy to.
+
+Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-as-policy.html#cfn-as-scalingpolicy-autoscalinggroupname
+PrimitiveType: String
 UpdateType: Mutable
 
 ```yaml
@@ -84,9 +97,13 @@ Accept wildcard characters: False
 ```
 
 ### -Cooldown
-Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-as-policy.html#cfn-as-scalingpolicy-cooldown    
-PrimitiveType: String    
-Required: False    
+The amount of time, in seconds, after a scaling activity completes before any further dynamic scaling activities can start.
+If this property is not specified, the default cooldown period for the group applies.
+Valid only if the policy type is SimpleScaling.
+For more information, see Scaling Cooldowns: https://docs.aws.amazon.com/autoscaling/ec2/userguide/Cooldown.html in the *Amazon EC2 Auto Scaling User Guide*.
+
+Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-as-policy.html#cfn-as-scalingpolicy-cooldown
+PrimitiveType: String
 UpdateType: Mutable
 
 ```yaml
@@ -102,9 +119,12 @@ Accept wildcard characters: False
 ```
 
 ### -EstimatedInstanceWarmup
-Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-as-policy.html#cfn-as-scalingpolicy-estimatedinstancewarmup    
-PrimitiveType: Integer    
-Required: False    
+The estimated time, in seconds, until a newly launched instance can contribute to the CloudWatch metrics.
+The default is to use the value specified for the default cooldown period for the group.
+Valid only if the policy type is StepScaling or TargetTrackingScaling.
+
+Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-as-policy.html#cfn-as-scalingpolicy-estimatedinstancewarmup
+PrimitiveType: Integer
 UpdateType: Mutable
 
 ```yaml
@@ -120,9 +140,13 @@ Accept wildcard characters: False
 ```
 
 ### -MetricAggregationType
-Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-as-policy.html#cfn-as-scalingpolicy-metricaggregationtype    
-PrimitiveType: String    
-Required: False    
+The aggregation type for the CloudWatch metrics.
+The valid values are Minimum, Maximum, and Average.
+By default, AWS CloudFormation specifies Average.
+Valid only if the policy type is StepScaling.
+
+Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-as-policy.html#cfn-as-scalingpolicy-metricaggregationtype
+PrimitiveType: String
 UpdateType: Mutable
 
 ```yaml
@@ -138,9 +162,16 @@ Accept wildcard characters: False
 ```
 
 ### -MinAdjustmentMagnitude
-Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-as-policy.html#cfn-as-scalingpolicy-minadjustmentmagnitude    
-PrimitiveType: Integer    
-Required: False    
+The minimum number of instances to scale.
+If the value of AdjustmentType is PercentChangeInCapacity, the scaling policy changes the DesiredCapacity of the Auto Scaling group by at least this many instances.
+This property replaces the MinAdjustmentStep property.
+For example, suppose that you create a step scaling policy to scale out an Auto Scaling group by 25 percent and you specify a MinAdjustmentMagnitude of 2.
+If the group has 4 instances and the scaling policy is performed, 25 percent of 4 is 1.
+However, because you specified a MinAdjustmentMagnitude of 2, Amazon EC2 Auto Scaling scales out the group by 2 instances.
+Valid only if the policy type is StepScaling or SimpleScaling.
+
+Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-as-policy.html#cfn-as-scalingpolicy-minadjustmentmagnitude
+PrimitiveType: Integer
 UpdateType: Mutable
 
 ```yaml
@@ -156,9 +187,12 @@ Accept wildcard characters: False
 ```
 
 ### -PolicyType
-Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-as-policy.html#cfn-as-scalingpolicy-policytype    
-PrimitiveType: String    
-Required: False    
+The policy type.
+The valid values are SimpleScaling, StepScaling, and TargetTrackingScaling.
+By default, AWS CloudFormation specifies SimpleScaling.
+
+Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-as-policy.html#cfn-as-scalingpolicy-policytype
+PrimitiveType: String
 UpdateType: Mutable
 
 ```yaml
@@ -174,9 +208,15 @@ Accept wildcard characters: False
 ```
 
 ### -ScalingAdjustment
-Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-as-policy.html#cfn-as-scalingpolicy-scalingadjustment    
-PrimitiveType: Integer    
-Required: False    
+The amount by which a simple scaling policy scales the Auto Scaling group in response to an alarm breach.
+The adjustment is based on the value that you specified in the AdjustmentType property either an absolute number or a percentage.
+A positive value adds to the current capacity and a negative value subtracts from the current capacity.
+For exact capacity, you must specify a positive value.
+If you specify SimpleScaling for the policy type, you must specify this property.
+Not used with any other policy type.
+
+Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-as-policy.html#cfn-as-scalingpolicy-scalingadjustment
+PrimitiveType: Integer
 UpdateType: Mutable
 
 ```yaml
@@ -192,11 +232,14 @@ Accept wildcard characters: False
 ```
 
 ### -StepAdjustments
-Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-as-policy.html#cfn-as-scalingpolicy-stepadjustments    
-DuplicatesAllowed: False    
-ItemType: StepAdjustment    
-Required: False    
-Type: List    
+A set of adjustments that enable you to scale based on the size of the alarm breach.
+If you specify StepScaling for the policy type, you must specify this property.
+Not used with any other policy type.
+
+Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-as-policy.html#cfn-as-scalingpolicy-stepadjustments
+DuplicatesAllowed: False
+ItemType: StepAdjustment
+Type: List
 UpdateType: Mutable
 
 ```yaml
@@ -212,9 +255,12 @@ Accept wildcard characters: False
 ```
 
 ### -TargetTrackingConfiguration
-Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-as-policy.html#cfn-autoscaling-scalingpolicy-targettrackingconfiguration    
-Required: False    
-Type: TargetTrackingConfiguration    
+Configures a target tracking scaling policy.
+If you specify TargetTrackingScaling for the policy type, you must specify this property.
+Not used with any other policy type.
+
+Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-as-policy.html#cfn-autoscaling-scalingpolicy-targettrackingconfiguration
+Type: TargetTrackingConfiguration
 UpdateType: Mutable
 
 ```yaml
@@ -324,15 +370,13 @@ Accept wildcard characters: False
 ```
 
 ### CommonParameters
-This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction, and -WarningVariable.
-For more information, see about_CommonParameters (http://go.microsoft.com/fwlink/?LinkID=113216).
+This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction, and -WarningVariable. For more information, see [about_CommonParameters](http://go.microsoft.com/fwlink/?LinkID=113216).
 
 ## INPUTS
 
 ## OUTPUTS
 
 ### Vaporshell.Resource.AutoScaling.ScalingPolicy
-
 ## NOTES
 
 ## RELATED LINKS

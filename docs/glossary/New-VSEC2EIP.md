@@ -1,29 +1,42 @@
----
-layout: glossary
-title: New-VSEC2EIP
-categories: glossary
-label1: Category
-data1: Documentation
-label2: Depth
-data2: Deep
-schema: 2.0.0
----
-
 # New-VSEC2EIP
 
 ## SYNOPSIS
-Adds an AWS::EC2::EIP resource to the template
+Adds an AWS::EC2::EIP resource to the template.
+Specifies an Elastic IP (EIP address and can, optionally, associate it with an Amazon EC2 instance.
 
 ## SYNTAX
 
 ```
-New-VSEC2EIP [-LogicalId] <String> [-Domain <Object>] [-InstanceId <Object>] [-DeletionPolicy <String>]
- [-DependsOn <String[]>] [-Metadata <Object>] [-UpdatePolicy <Object>] [-Condition <Object>]
- [<CommonParameters>]
+New-VSEC2EIP [-LogicalId] <String> [-Domain <Object>] [-InstanceId <Object>] [-PublicIpv4Pool <Object>]
+ [-DeletionPolicy <String>] [-DependsOn <String[]>] [-Metadata <Object>] [-UpdatePolicy <Object>]
+ [-Condition <Object>] [<CommonParameters>]
 ```
 
 ## DESCRIPTION
-Adds an AWS::EC2::EIP resource to the template
+Adds an AWS::EC2::EIP resource to the template.
+Specifies an Elastic IP (EIP address and can, optionally, associate it with an Amazon EC2 instance.
+
+You can allocate an Elastic IP address from an address pool owned by AWS or from an address pool created from a public IPv4 address range that you have brought to AWS for use with your AWS resources using bring your own IP addresses (BYOIP.
+For more information, see Bring Your Own IP Addresses (BYOIP: https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-byoip.html in the *Amazon Elastic Compute Cloud User Guide*.
+
+EC2-VPC\] If you release an Elastic IP address, you might be able to recover it.
+You cannot recover an Elastic IP address that you released after it is allocated to another AWS account.
+You cannot recover an Elastic IP address for EC2-Classic.
+To attempt to recover an Elastic IP address that you released, specify it in this operation.
+
+An Elastic IP address is for use either in the EC2-Classic platform or in a VPC.
+By default, you can allocate 5 Elastic IP addresses for EC2-Classic per Region and 5 Elastic IP addresses for EC2-VPC per Region.
+
+For more information, see Elastic IP Addresses: https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/elastic-ip-addresses-eip.html in the *Amazon Elastic Compute Cloud User Guide*.
+
+## EXAMPLES
+
+### Example 1
+```powershell
+PS C:\> {{ Add example code here }}
+```
+
+{{ Add example description here }}
 
 ## PARAMETERS
 
@@ -45,9 +58,13 @@ Accept wildcard characters: False
 ```
 
 ### -Domain
-Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-eip.html#cfn-ec2-eip-domain    
-PrimitiveType: String    
-Required: False    
+Set to vpc to allocate the address for use with instances in a VPC.
+Default: The address is for use with instances in EC2-Classic.
+If you define an Elastic IP address and associate it with a VPC that is defined in the same template, you must declare a dependency on the VPC-gateway attachment by using the  DependsOn Attribute: https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-attribute-dependson.html on this resource.
+Required when allocating an address to a VPC
+
+Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-eip.html#cfn-ec2-eip-domain
+PrimitiveType: String
 UpdateType: Immutable
 
 ```yaml
@@ -63,9 +80,30 @@ Accept wildcard characters: False
 ```
 
 ### -InstanceId
-Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-eip.html#cfn-ec2-eip-instanceid    
-PrimitiveType: String    
-Required: False    
+The ID of the instance.
+
+Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-eip.html#cfn-ec2-eip-instanceid
+PrimitiveType: String
+UpdateType: Mutable
+
+```yaml
+Type: Object
+Parameter Sets: (All)
+Aliases:
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### -PublicIpv4Pool
+The ID of an address pool that you own.
+Use this parameter to let Amazon EC2 select an address from the address pool.
+
+Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-eip.html#cfn-ec2-eip-publicipv4pool
+PrimitiveType: String
 UpdateType: Mutable
 
 ```yaml
@@ -175,15 +213,13 @@ Accept wildcard characters: False
 ```
 
 ### CommonParameters
-This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction, and -WarningVariable.
-For more information, see about_CommonParameters (http://go.microsoft.com/fwlink/?LinkID=113216).
+This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction, and -WarningVariable. For more information, see [about_CommonParameters](http://go.microsoft.com/fwlink/?LinkID=113216).
 
 ## INPUTS
 
 ## OUTPUTS
 
 ### Vaporshell.Resource.EC2.EIP
-
 ## NOTES
 
 ## RELATED LINKS

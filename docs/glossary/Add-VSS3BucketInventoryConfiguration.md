@@ -1,18 +1,9 @@
----
-layout: glossary
-title: Add-VSS3BucketInventoryConfiguration
-categories: glossary
-label1: Category
-data1: Documentation
-label2: Depth
-data2: Deep
-schema: 2.0.0
----
-
 # Add-VSS3BucketInventoryConfiguration
 
 ## SYNOPSIS
-Adds an AWS::S3::Bucket.InventoryConfiguration resource property to the template
+Adds an AWS::S3::Bucket.InventoryConfiguration resource property to the template.
+Specifies the inventory configuration for an Amazon S3 bucket.
+For more information, see GET Bucket inventory: https://docs.aws.amazon.com/AmazonS3/latest/API/RESTBucketGETInventoryConfig.html in the *Amazon Simple Storage Service API Reference*.
 
 ## SYNTAX
 
@@ -23,14 +14,26 @@ Add-VSS3BucketInventoryConfiguration [-Destination] <Object> [-Enabled] <Boolean
 ```
 
 ## DESCRIPTION
-Adds an AWS::S3::Bucket.InventoryConfiguration resource property to the template
+Adds an AWS::S3::Bucket.InventoryConfiguration resource property to the template.
+Specifies the inventory configuration for an Amazon S3 bucket.
+For more information, see GET Bucket inventory: https://docs.aws.amazon.com/AmazonS3/latest/API/RESTBucketGETInventoryConfig.html in the *Amazon Simple Storage Service API Reference*.
+
+## EXAMPLES
+
+### Example 1
+```powershell
+PS C:\> {{ Add example code here }}
+```
+
+{{ Add example description here }}
 
 ## PARAMETERS
 
 ### -Destination
-Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-s3-bucket-inventoryconfiguration.html#cfn-s3-bucket-inventoryconfiguration-destination    
-Required: True    
-Type: Destination    
+Contains information about where to publish the inventory results.
+
+Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-s3-bucket-inventoryconfiguration.html#cfn-s3-bucket-inventoryconfiguration-destination
+Type: Destination
 UpdateType: Mutable
 
 ```yaml
@@ -46,9 +49,12 @@ Accept wildcard characters: False
 ```
 
 ### -Enabled
-Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-s3-bucket-inventoryconfiguration.html#cfn-s3-bucket-inventoryconfiguration-enabled    
-PrimitiveType: Boolean    
-Required: True    
+Specifies whether the inventory is enabled or disabled.
+If set to True, an inventory list is generated.
+If set to False, no inventory list is generated.
+
+Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-s3-bucket-inventoryconfiguration.html#cfn-s3-bucket-inventoryconfiguration-enabled
+PrimitiveType: Boolean
 UpdateType: Mutable
 
 ```yaml
@@ -64,9 +70,10 @@ Accept wildcard characters: False
 ```
 
 ### -Id
-Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-s3-bucket-inventoryconfiguration.html#cfn-s3-bucket-inventoryconfiguration-id    
-PrimitiveType: String    
-Required: True    
+The ID used to identify the inventory configuration.
+
+Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-s3-bucket-inventoryconfiguration.html#cfn-s3-bucket-inventoryconfiguration-id
+PrimitiveType: String
 UpdateType: Mutable
 
 ```yaml
@@ -82,9 +89,12 @@ Accept wildcard characters: False
 ```
 
 ### -IncludedObjectVersions
-Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-s3-bucket-inventoryconfiguration.html#cfn-s3-bucket-inventoryconfiguration-includedobjectversions    
-PrimitiveType: String    
-Required: True    
+Object versions to include in the inventory list.
+If set to All, the list includes all the object versions, which adds the version-related fields VersionId, IsLatest, and DeleteMarker to the list.
+If set to Current, the list does not contain these version-related fields.
+
+Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-s3-bucket-inventoryconfiguration.html#cfn-s3-bucket-inventoryconfiguration-includedobjectversions
+PrimitiveType: String
 UpdateType: Mutable
 
 ```yaml
@@ -100,11 +110,12 @@ Accept wildcard characters: False
 ```
 
 ### -OptionalFields
-Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-s3-bucket-inventoryconfiguration.html#cfn-s3-bucket-inventoryconfiguration-optionalfields    
-DuplicatesAllowed: False    
-PrimitiveItemType: String    
-Required: False    
-Type: List    
+Contains the optional fields that are included in the inventory results.
+
+Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-s3-bucket-inventoryconfiguration.html#cfn-s3-bucket-inventoryconfiguration-optionalfields
+DuplicatesAllowed: False
+PrimitiveItemType: String
+Type: List
 UpdateType: Mutable
 
 ```yaml
@@ -120,9 +131,10 @@ Accept wildcard characters: False
 ```
 
 ### -Prefix
-Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-s3-bucket-inventoryconfiguration.html#cfn-s3-bucket-inventoryconfiguration-prefix    
-PrimitiveType: String    
-Required: False    
+The prefix that is prepended to all inventory results.
+
+Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-s3-bucket-inventoryconfiguration.html#cfn-s3-bucket-inventoryconfiguration-prefix
+PrimitiveType: String
 UpdateType: Mutable
 
 ```yaml
@@ -138,9 +150,10 @@ Accept wildcard characters: False
 ```
 
 ### -ScheduleFrequency
-Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-s3-bucket-inventoryconfiguration.html#cfn-s3-bucket-inventoryconfiguration-schedulefrequency    
-PrimitiveType: String    
-Required: True    
+Specifies the schedule for generating inventory results.
+
+Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-s3-bucket-inventoryconfiguration.html#cfn-s3-bucket-inventoryconfiguration-schedulefrequency
+PrimitiveType: String
 UpdateType: Mutable
 
 ```yaml
@@ -156,15 +169,13 @@ Accept wildcard characters: False
 ```
 
 ### CommonParameters
-This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction, and -WarningVariable.
-For more information, see about_CommonParameters (http://go.microsoft.com/fwlink/?LinkID=113216).
+This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction, and -WarningVariable. For more information, see [about_CommonParameters](http://go.microsoft.com/fwlink/?LinkID=113216).
 
 ## INPUTS
 
 ## OUTPUTS
 
 ### Vaporshell.Resource.S3.Bucket.InventoryConfiguration
-
 ## NOTES
 
 ## RELATED LINKS

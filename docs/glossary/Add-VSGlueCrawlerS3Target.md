@@ -1,18 +1,8 @@
----
-layout: glossary
-title: Add-VSGlueCrawlerS3Target
-categories: glossary
-label1: Category
-data1: Documentation
-label2: Depth
-data2: Deep
-schema: 2.0.0
----
-
 # Add-VSGlueCrawlerS3Target
 
 ## SYNOPSIS
-Adds an AWS::Glue::Crawler.S3Target resource property to the template
+Adds an AWS::Glue::Crawler.S3Target resource property to the template.
+Specifies a data store in Amazon Simple Storage Service (Amazon S3.
 
 ## SYNTAX
 
@@ -21,14 +11,25 @@ Add-VSGlueCrawlerS3Target [[-Path] <Object>] [[-Exclusions] <Object>] [<CommonPa
 ```
 
 ## DESCRIPTION
-Adds an AWS::Glue::Crawler.S3Target resource property to the template
+Adds an AWS::Glue::Crawler.S3Target resource property to the template.
+Specifies a data store in Amazon Simple Storage Service (Amazon S3.
+
+## EXAMPLES
+
+### Example 1
+```powershell
+PS C:\> {{ Add example code here }}
+```
+
+{{ Add example description here }}
 
 ## PARAMETERS
 
 ### -Path
-Required: False    
-Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-glue-crawler-s3target.html#cfn-glue-crawler-s3target-path    
-PrimitiveType: String    
+The path to the Amazon S3 target.
+
+Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-glue-crawler-s3target.html#cfn-glue-crawler-s3target-path
+PrimitiveType: String
 UpdateType: Mutable
 
 ```yaml
@@ -44,10 +45,12 @@ Accept wildcard characters: False
 ```
 
 ### -Exclusions
-PrimitiveItemType: String    
-Type: List    
-Required: False    
-Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-glue-crawler-s3target.html#cfn-glue-crawler-s3target-exclusions    
+A list of glob patterns used to exclude from the crawl.
+For more information, see Catalog Tables with a Crawler: https://docs.aws.amazon.com/glue/latest/dg/add-crawler.html.
+
+PrimitiveItemType: String
+Type: List
+Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-glue-crawler-s3target.html#cfn-glue-crawler-s3target-exclusions
 UpdateType: Mutable
 
 ```yaml
@@ -63,15 +66,13 @@ Accept wildcard characters: False
 ```
 
 ### CommonParameters
-This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction, and -WarningVariable.
-For more information, see about_CommonParameters (http://go.microsoft.com/fwlink/?LinkID=113216).
+This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction, and -WarningVariable. For more information, see [about_CommonParameters](http://go.microsoft.com/fwlink/?LinkID=113216).
 
 ## INPUTS
 
 ## OUTPUTS
 
 ### Vaporshell.Resource.Glue.Crawler.S3Target
-
 ## NOTES
 
 ## RELATED LINKS

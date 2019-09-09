@@ -1,18 +1,9 @@
----
-layout: glossary
-title: New-VSEC2PlacementGroup
-categories: glossary
-label1: Category
-data1: Documentation
-label2: Depth
-data2: Deep
-schema: 2.0.0
----
-
 # New-VSEC2PlacementGroup
 
 ## SYNOPSIS
-Adds an AWS::EC2::PlacementGroup resource to the template
+Adds an AWS::EC2::PlacementGroup resource to the template.
+Specifies a placement group in which to launch instances.
+The strategy of the placement group determines how the instances are organized within the group.
 
 ## SYNTAX
 
@@ -23,7 +14,24 @@ New-VSEC2PlacementGroup [-LogicalId] <String> [-Strategy <Object>] [-DeletionPol
 ```
 
 ## DESCRIPTION
-Adds an AWS::EC2::PlacementGroup resource to the template
+Adds an AWS::EC2::PlacementGroup resource to the template.
+Specifies a placement group in which to launch instances.
+The strategy of the placement group determines how the instances are organized within the group.
+
+A cluster placement group is a logical grouping of instances within a single Availability Zone that benefit from low network latency, high network throughput.
+A spread placement group places instances on distinct hardware.
+A partition placement group places groups of instances in different partitions, where instances in one partition do not share the same hardware with instances in another partition.
+
+For more information, see Placement Groups: https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/placement-groups.html in the *Amazon Elastic Compute Cloud User Guide*.
+
+## EXAMPLES
+
+### Example 1
+```powershell
+PS C:\> {{ Add example code here }}
+```
+
+{{ Add example description here }}
 
 ## PARAMETERS
 
@@ -45,9 +53,10 @@ Accept wildcard characters: False
 ```
 
 ### -Strategy
-Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ec2-placementgroup.html#cfn-ec2-placementgroup-strategy    
-PrimitiveType: String    
-Required: False    
+The placement strategy.
+
+Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ec2-placementgroup.html#cfn-ec2-placementgroup-strategy
+PrimitiveType: String
 UpdateType: Immutable
 
 ```yaml
@@ -157,15 +166,13 @@ Accept wildcard characters: False
 ```
 
 ### CommonParameters
-This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction, and -WarningVariable.
-For more information, see about_CommonParameters (http://go.microsoft.com/fwlink/?LinkID=113216).
+This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction, and -WarningVariable. For more information, see [about_CommonParameters](http://go.microsoft.com/fwlink/?LinkID=113216).
 
 ## INPUTS
 
 ## OUTPUTS
 
 ### Vaporshell.Resource.EC2.PlacementGroup
-
 ## NOTES
 
 ## RELATED LINKS

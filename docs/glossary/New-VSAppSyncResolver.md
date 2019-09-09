@@ -1,31 +1,35 @@
----
-layout: glossary
-title: New-VSAppSyncResolver
-categories: glossary
-label1: Category
-data1: Documentation
-label2: Depth
-data2: Deep
-schema: 2.0.0
----
-
 # New-VSAppSyncResolver
 
 ## SYNOPSIS
-Adds an AWS::AppSync::Resolver resource to the template
+Adds an AWS::AppSync::Resolver resource to the template.
+The AWS::AppSync::Resolver resource defines the logical GraphQL resolver that you attach to fields in a schema.
+Request and response templates for resolvers are written in Apache Velocity Template Language (VTL format.
+For more information about resolvers, see Resolver Mapping Template Reference: https://docs.aws.amazon.com/appsync/latest/devguide/resolver-mapping-template-reference.html.
 
 ## SYNTAX
 
 ```
 New-VSAppSyncResolver [-LogicalId] <String> [-ResponseMappingTemplateS3Location <Object>] -TypeName <Object>
- -DataSourceName <Object> [-RequestMappingTemplate <Object>] [-ResponseMappingTemplate <Object>]
- [-RequestMappingTemplateS3Location <Object>] -ApiId <Object> -FieldName <Object> [-DeletionPolicy <String>]
- [-DependsOn <String[]>] [-Metadata <Object>] [-UpdatePolicy <Object>] [-Condition <Object>]
- [<CommonParameters>]
+ [-PipelineConfig <Object>] [-DataSourceName <Object>] [-RequestMappingTemplate <Object>]
+ [-ResponseMappingTemplate <Object>] [-Kind <Object>] [-RequestMappingTemplateS3Location <Object>]
+ -ApiId <Object> -FieldName <Object> [-DeletionPolicy <String>] [-DependsOn <String[]>] [-Metadata <Object>]
+ [-UpdatePolicy <Object>] [-Condition <Object>] [<CommonParameters>]
 ```
 
 ## DESCRIPTION
-Adds an AWS::AppSync::Resolver resource to the template
+Adds an AWS::AppSync::Resolver resource to the template.
+The AWS::AppSync::Resolver resource defines the logical GraphQL resolver that you attach to fields in a schema.
+Request and response templates for resolvers are written in Apache Velocity Template Language (VTL format.
+For more information about resolvers, see Resolver Mapping Template Reference: https://docs.aws.amazon.com/appsync/latest/devguide/resolver-mapping-template-reference.html.
+
+## EXAMPLES
+
+### Example 1
+```powershell
+PS C:\> {{ Add example code here }}
+```
+
+{{ Add example description here }}
 
 ## PARAMETERS
 
@@ -47,9 +51,11 @@ Accept wildcard characters: False
 ```
 
 ### -ResponseMappingTemplateS3Location
-Required: False    
-Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-appsync-resolver.html#cfn-appsync-resolver-responsemappingtemplates3location    
-PrimitiveType: String    
+The location of a response mapping template in an Amazon S3 bucket.
+Use this if you want to provision with a template file in Amazon S3 rather than embedding it in your CloudFormation template.
+
+Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-appsync-resolver.html#cfn-appsync-resolver-responsemappingtemplates3location
+PrimitiveType: String
 UpdateType: Mutable
 
 ```yaml
@@ -65,9 +71,10 @@ Accept wildcard characters: False
 ```
 
 ### -TypeName
-Required: True    
-Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-appsync-resolver.html#cfn-appsync-resolver-typename    
-PrimitiveType: String    
+The GraphQL type that invokes this resolver.
+
+Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-appsync-resolver.html#cfn-appsync-resolver-typename
+PrimitiveType: String
 UpdateType: Immutable
 
 ```yaml
@@ -82,10 +89,11 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
-### -DataSourceName
-Required: True    
-Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-appsync-resolver.html#cfn-appsync-resolver-datasourcename    
-PrimitiveType: String    
+### -PipelineConfig
+Functions linked with the pipeline resolver.
+
+Type: PipelineConfig
+Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-appsync-resolver.html#cfn-appsync-resolver-pipelineconfig
 UpdateType: Mutable
 
 ```yaml
@@ -93,7 +101,26 @@ Type: Object
 Parameter Sets: (All)
 Aliases:
 
-Required: True
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### -DataSourceName
+The resolver data source name.
+
+Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-appsync-resolver.html#cfn-appsync-resolver-datasourcename
+PrimitiveType: String
+UpdateType: Mutable
+
+```yaml
+Type: Object
+Parameter Sets: (All)
+Aliases:
+
+Required: False
 Position: Named
 Default value: None
 Accept pipeline input: False
@@ -101,9 +128,10 @@ Accept wildcard characters: False
 ```
 
 ### -RequestMappingTemplate
-Required: False    
-Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-appsync-resolver.html#cfn-appsync-resolver-requestmappingtemplate    
-PrimitiveType: String    
+The request mapping template.
+
+Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-appsync-resolver.html#cfn-appsync-resolver-requestmappingtemplate
+PrimitiveType: String
 UpdateType: Mutable
 
 ```yaml
@@ -119,9 +147,35 @@ Accept wildcard characters: False
 ```
 
 ### -ResponseMappingTemplate
-Required: False    
-Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-appsync-resolver.html#cfn-appsync-resolver-responsemappingtemplate    
-PrimitiveType: String    
+The response mapping template.
+
+Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-appsync-resolver.html#cfn-appsync-resolver-responsemappingtemplate
+PrimitiveType: String
+UpdateType: Mutable
+
+```yaml
+Type: Object
+Parameter Sets: (All)
+Aliases:
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### -Kind
+The resolver type.
++  **UNIT**: A UNIT resolver type.
+A UNIT resolver is the default resolver type.
+A UNIT resolver enables you to execute a GraphQL query against a single data source.
++  **PIPELINE**: A PIPELINE resolver type.
+A PIPELINE resolver enables you to execute a series of Function in a serial manner.
+You can use a pipeline resolver to execute a GraphQL query against multiple data sources.
+
+Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-appsync-resolver.html#cfn-appsync-resolver-kind
+PrimitiveType: String
 UpdateType: Mutable
 
 ```yaml
@@ -137,9 +191,11 @@ Accept wildcard characters: False
 ```
 
 ### -RequestMappingTemplateS3Location
-Required: False    
-Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-appsync-resolver.html#cfn-appsync-resolver-requestmappingtemplates3location    
-PrimitiveType: String    
+The location of a request mapping template in an Amazon S3 bucket.
+Use this if you want to provision with a template file in Amazon S3 rather than embedding it in your CloudFormation template.
+
+Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-appsync-resolver.html#cfn-appsync-resolver-requestmappingtemplates3location
+PrimitiveType: String
 UpdateType: Mutable
 
 ```yaml
@@ -155,9 +211,10 @@ Accept wildcard characters: False
 ```
 
 ### -ApiId
-Required: True    
-Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-appsync-resolver.html#cfn-appsync-resolver-apiid    
-PrimitiveType: String    
+The AWS AppSync GraphQL API to which you want to attach this resolver.
+
+Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-appsync-resolver.html#cfn-appsync-resolver-apiid
+PrimitiveType: String
 UpdateType: Immutable
 
 ```yaml
@@ -173,9 +230,10 @@ Accept wildcard characters: False
 ```
 
 ### -FieldName
-Required: True    
-Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-appsync-resolver.html#cfn-appsync-resolver-fieldname    
-PrimitiveType: String    
+The GraphQL field on a type that invokes the resolver.
+
+Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-appsync-resolver.html#cfn-appsync-resolver-fieldname
+PrimitiveType: String
 UpdateType: Immutable
 
 ```yaml
@@ -285,15 +343,13 @@ Accept wildcard characters: False
 ```
 
 ### CommonParameters
-This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction, and -WarningVariable.
-For more information, see about_CommonParameters (http://go.microsoft.com/fwlink/?LinkID=113216).
+This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction, and -WarningVariable. For more information, see [about_CommonParameters](http://go.microsoft.com/fwlink/?LinkID=113216).
 
 ## INPUTS
 
 ## OUTPUTS
 
 ### Vaporshell.Resource.AppSync.Resolver
-
 ## NOTES
 
 ## RELATED LINKS

@@ -1,18 +1,8 @@
----
-layout: glossary
-title: Add-VSOpsWorksLayerLoadBasedAutoScaling
-categories: glossary
-label1: Category
-data1: Documentation
-label2: Depth
-data2: Deep
-schema: 2.0.0
----
-
 # Add-VSOpsWorksLayerLoadBasedAutoScaling
 
 ## SYNOPSIS
-Adds an AWS::OpsWorks::Layer.LoadBasedAutoScaling resource property to the template
+Adds an AWS::OpsWorks::Layer.LoadBasedAutoScaling resource property to the template.
+Describes a layer's load-based auto scaling configuration.
 
 ## SYNTAX
 
@@ -22,14 +12,25 @@ Add-VSOpsWorksLayerLoadBasedAutoScaling [[-DownScaling] <Object>] [[-Enable] <Bo
 ```
 
 ## DESCRIPTION
-Adds an AWS::OpsWorks::Layer.LoadBasedAutoScaling resource property to the template
+Adds an AWS::OpsWorks::Layer.LoadBasedAutoScaling resource property to the template.
+Describes a layer's load-based auto scaling configuration.
+
+## EXAMPLES
+
+### Example 1
+```powershell
+PS C:\> {{ Add example code here }}
+```
+
+{{ Add example description here }}
 
 ## PARAMETERS
 
 ### -DownScaling
-Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-opsworks-layer-loadbasedautoscaling.html#cfn-opsworks-layer-loadbasedautoscaling-downscaling    
-Required: False    
-Type: AutoScalingThresholds    
+An AutoScalingThresholds object that describes the downscaling configuration, which defines how and when AWS OpsWorks Stacks reduces the number of instances.
+
+Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-opsworks-layer-loadbasedautoscaling.html#cfn-opsworks-layer-loadbasedautoscaling-downscaling
+Type: AutoScalingThresholds
 UpdateType: Mutable
 
 ```yaml
@@ -45,9 +46,10 @@ Accept wildcard characters: False
 ```
 
 ### -Enable
-Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-opsworks-layer-loadbasedautoscaling.html#cfn-opsworks-layer-loadbasedautoscaling-enable    
-PrimitiveType: Boolean    
-Required: False    
+Whether load-based auto scaling is enabled for the layer.
+
+Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-opsworks-layer-loadbasedautoscaling.html#cfn-opsworks-layer-loadbasedautoscaling-enable
+PrimitiveType: Boolean
 UpdateType: Mutable
 
 ```yaml
@@ -63,9 +65,10 @@ Accept wildcard characters: False
 ```
 
 ### -UpScaling
-Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-opsworks-layer-loadbasedautoscaling.html#cfn-opsworks-layer-loadbasedautoscaling-upscaling    
-Required: False    
-Type: AutoScalingThresholds    
+An AutoScalingThresholds object that describes the upscaling configuration, which defines how and when AWS OpsWorks Stacks increases the number of instances.
+
+Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-opsworks-layer-loadbasedautoscaling.html#cfn-opsworks-layer-loadbasedautoscaling-upscaling
+Type: AutoScalingThresholds
 UpdateType: Mutable
 
 ```yaml
@@ -81,15 +84,13 @@ Accept wildcard characters: False
 ```
 
 ### CommonParameters
-This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction, and -WarningVariable.
-For more information, see about_CommonParameters (http://go.microsoft.com/fwlink/?LinkID=113216).
+This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction, and -WarningVariable. For more information, see [about_CommonParameters](http://go.microsoft.com/fwlink/?LinkID=113216).
 
 ## INPUTS
 
 ## OUTPUTS
 
 ### Vaporshell.Resource.OpsWorks.Layer.LoadBasedAutoScaling
-
 ## NOTES
 
 ## RELATED LINKS

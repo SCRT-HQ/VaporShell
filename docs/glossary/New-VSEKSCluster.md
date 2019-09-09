@@ -1,18 +1,8 @@
----
-layout: glossary
-title: New-VSEKSCluster
-categories: glossary
-label1: Category
-data1: Documentation
-label2: Depth
-data2: Deep
-schema: 2.0.0
----
-
 # New-VSEKSCluster
 
 ## SYNOPSIS
-Adds an AWS::EKS::Cluster resource to the template
+Adds an AWS::EKS::Cluster resource to the template.
+Creates an Amazon EKS control plane.
 
 ## SYNTAX
 
@@ -23,7 +13,30 @@ New-VSEKSCluster [-LogicalId] <String> [-Version <Object>] -RoleArn <Object> -Re
 ```
 
 ## DESCRIPTION
-Adds an AWS::EKS::Cluster resource to the template
+Adds an AWS::EKS::Cluster resource to the template.
+Creates an Amazon EKS control plane.
+
+The Amazon EKS control plane consists of control plane instances that run the Kubernetes software, such as etcd and the API server.
+The control plane runs in an account managed by AWS, and the Kubernetes API is exposed via the Amazon EKS API server endpoint.
+Each Amazon EKS cluster control plane is single-tenant and unique and runs on its own set of Amazon EC2 instances.
+
+The cluster control plane is provisioned across multiple Availability Zones and fronted by an Elastic Load Balancing Network Load Balancer.
+Amazon EKS also provisions elastic network interfaces in your VPC subnets to provide connectivity from the control plane instances to the worker nodes (for example, to support kubectl exec, logs, and proxy data flows.
+
+Amazon EKS worker nodes run in your AWS account and connect to your cluster's control plane via the Kubernetes API server endpoint and a certificate file that is created for your cluster.
+
+Cluster creation typically takes between 10 and 15 minutes.
+After you create an Amazon EKS cluster, you must configure your Kubernetes tooling to communicate with the API server and launch worker nodes into your cluster.
+For more information, see Managing Cluster Authentication: https://docs.aws.amazon.com/eks/latest/userguide/managing-auth.html and Launching Amazon EKS Worker Nodes: https://docs.aws.amazon.com/eks/latest/userguide/launch-workers.html in the *Amazon EKS User Guide*.
+
+## EXAMPLES
+
+### Example 1
+```powershell
+PS C:\> {{ Add example code here }}
+```
+
+{{ Add example description here }}
 
 ## PARAMETERS
 
@@ -45,10 +58,12 @@ Accept wildcard characters: False
 ```
 
 ### -Version
-Required: False    
-Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-eks-cluster.html#cfn-eks-cluster-version    
-PrimitiveType: String    
-UpdateType: Immutable
+The desired Kubernetes version for your cluster.
+If you don't specify a value here, the latest version available in Amazon EKS is used.
+
+Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-eks-cluster.html#cfn-eks-cluster-version
+PrimitiveType: String
+UpdateType: Mutable
 
 ```yaml
 Type: Object
@@ -63,9 +78,11 @@ Accept wildcard characters: False
 ```
 
 ### -RoleArn
-Required: True    
-Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-eks-cluster.html#cfn-eks-cluster-rolearn    
-PrimitiveType: String    
+The Amazon Resource Name ARN of the IAM role that provides permissions for Amazon EKS to make calls to other AWS API operations on your behalf.
+For more information, see Amazon EKS Service IAM Role: https://docs.aws.amazon.com/eks/latest/userguide/service_IAM_role.html in the * *Amazon EKS User Guide* *.
+
+Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-eks-cluster.html#cfn-eks-cluster-rolearn
+PrimitiveType: String
 UpdateType: Immutable
 
 ```yaml
@@ -81,9 +98,14 @@ Accept wildcard characters: False
 ```
 
 ### -ResourcesVpcConfig
-Type: ResourcesVpcConfig    
-Required: True    
-Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-eks-cluster.html#cfn-eks-cluster-resourcesvpcconfig    
+The VPC configuration used by the cluster control plane.
+Amazon EKS VPC resources have specific requirements to work properly with Kubernetes.
+For more information, see Cluster VPC Considerations: https://docs.aws.amazon.com/eks/latest/userguide/network_reqs.html and Cluster Security Group Considerations: https://docs.aws.amazon.com/eks/latest/userguide/sec-group-reqs.html in the *Amazon EKS User Guide*.
+You must specify at least two subnets.
+You can specify up to five security groups, but we recommend that you use a dedicated security group for your cluster control plane.
+
+Type: ResourcesVpcConfig
+Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-eks-cluster.html#cfn-eks-cluster-resourcesvpcconfig
 UpdateType: Immutable
 
 ```yaml
@@ -99,9 +121,10 @@ Accept wildcard characters: False
 ```
 
 ### -Name
-Required: False    
-Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-eks-cluster.html#cfn-eks-cluster-name    
-PrimitiveType: String    
+The unique name to give to your cluster.
+
+Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-eks-cluster.html#cfn-eks-cluster-name
+PrimitiveType: String
 UpdateType: Immutable
 
 ```yaml
@@ -211,15 +234,13 @@ Accept wildcard characters: False
 ```
 
 ### CommonParameters
-This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction, and -WarningVariable.
-For more information, see about_CommonParameters (http://go.microsoft.com/fwlink/?LinkID=113216).
+This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction, and -WarningVariable. For more information, see [about_CommonParameters](http://go.microsoft.com/fwlink/?LinkID=113216).
 
 ## INPUTS
 
 ## OUTPUTS
 
 ### Vaporshell.Resource.EKS.Cluster
-
 ## NOTES
 
 ## RELATED LINKS

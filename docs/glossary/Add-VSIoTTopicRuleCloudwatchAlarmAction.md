@@ -1,18 +1,8 @@
----
-layout: glossary
-title: Add-VSIoTTopicRuleCloudwatchAlarmAction
-categories: glossary
-label1: Category
-data1: Documentation
-label2: Depth
-data2: Deep
-schema: 2.0.0
----
-
 # Add-VSIoTTopicRuleCloudwatchAlarmAction
 
 ## SYNOPSIS
-Adds an AWS::IoT::TopicRule.CloudwatchAlarmAction resource property to the template
+Adds an AWS::IoT::TopicRule.CloudwatchAlarmAction resource property to the template.
+Describes an action that updates a CloudWatch alarm.
 
 ## SYNTAX
 
@@ -22,14 +12,25 @@ Add-VSIoTTopicRuleCloudwatchAlarmAction [-AlarmName] <Object> [-RoleArn] <Object
 ```
 
 ## DESCRIPTION
-Adds an AWS::IoT::TopicRule.CloudwatchAlarmAction resource property to the template
+Adds an AWS::IoT::TopicRule.CloudwatchAlarmAction resource property to the template.
+Describes an action that updates a CloudWatch alarm.
+
+## EXAMPLES
+
+### Example 1
+```powershell
+PS C:\> {{ Add example code here }}
+```
+
+{{ Add example description here }}
 
 ## PARAMETERS
 
 ### -AlarmName
-Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iot-topicrule-cloudwatchalarmaction.html#cfn-iot-topicrule-cloudwatchalarmaction-alarmname    
-PrimitiveType: String    
-Required: True    
+The CloudWatch alarm name.
+
+Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iot-topicrule-cloudwatchalarmaction.html#cfn-iot-topicrule-cloudwatchalarmaction-alarmname
+PrimitiveType: String
 UpdateType: Mutable
 
 ```yaml
@@ -45,9 +46,10 @@ Accept wildcard characters: False
 ```
 
 ### -RoleArn
-Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iot-topicrule-cloudwatchalarmaction.html#cfn-iot-topicrule-cloudwatchalarmaction-rolearn    
-PrimitiveType: String    
-Required: True    
+The IAM role that allows access to the CloudWatch alarm.
+
+Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iot-topicrule-cloudwatchalarmaction.html#cfn-iot-topicrule-cloudwatchalarmaction-rolearn
+PrimitiveType: String
 UpdateType: Mutable
 
 ```yaml
@@ -63,9 +65,10 @@ Accept wildcard characters: False
 ```
 
 ### -StateReason
-Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iot-topicrule-cloudwatchalarmaction.html#cfn-iot-topicrule-cloudwatchalarmaction-statereason    
-PrimitiveType: String    
-Required: True    
+The reason for the alarm change.
+
+Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iot-topicrule-cloudwatchalarmaction.html#cfn-iot-topicrule-cloudwatchalarmaction-statereason
+PrimitiveType: String
 UpdateType: Mutable
 
 ```yaml
@@ -81,9 +84,11 @@ Accept wildcard characters: False
 ```
 
 ### -StateValue
-Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iot-topicrule-cloudwatchalarmaction.html#cfn-iot-topicrule-cloudwatchalarmaction-statevalue    
-PrimitiveType: String    
-Required: True    
+The value of the alarm state.
+Acceptable values are: OK, ALARM, INSUFFICIENT_DATA.
+
+Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iot-topicrule-cloudwatchalarmaction.html#cfn-iot-topicrule-cloudwatchalarmaction-statevalue
+PrimitiveType: String
 UpdateType: Mutable
 
 ```yaml
@@ -99,15 +104,13 @@ Accept wildcard characters: False
 ```
 
 ### CommonParameters
-This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction, and -WarningVariable.
-For more information, see about_CommonParameters (http://go.microsoft.com/fwlink/?LinkID=113216).
+This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction, and -WarningVariable. For more information, see [about_CommonParameters](http://go.microsoft.com/fwlink/?LinkID=113216).
 
 ## INPUTS
 
 ## OUTPUTS
 
 ### Vaporshell.Resource.IoT.TopicRule.CloudwatchAlarmAction
-
 ## NOTES
 
 ## RELATED LINKS

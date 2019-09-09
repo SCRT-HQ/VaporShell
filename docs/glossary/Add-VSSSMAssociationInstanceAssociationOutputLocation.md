@@ -1,18 +1,8 @@
----
-layout: glossary
-title: Add-VSSSMAssociationInstanceAssociationOutputLocation
-categories: glossary
-label1: Category
-data1: Documentation
-label2: Depth
-data2: Deep
-schema: 2.0.0
----
-
 # Add-VSSSMAssociationInstanceAssociationOutputLocation
 
 ## SYNOPSIS
-Adds an AWS::SSM::Association.InstanceAssociationOutputLocation resource property to the template
+Adds an AWS::SSM::Association.InstanceAssociationOutputLocation resource property to the template.
+InstanceAssociationOutputLocation is a property of the AWS::SSM::Association: https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ssm-association.html resource that specifies an Amazon S3 bucket where you want to store the results of this association request.
 
 ## SYNTAX
 
@@ -21,14 +11,25 @@ Add-VSSSMAssociationInstanceAssociationOutputLocation [[-S3Location] <Object>] [
 ```
 
 ## DESCRIPTION
-Adds an AWS::SSM::Association.InstanceAssociationOutputLocation resource property to the template
+Adds an AWS::SSM::Association.InstanceAssociationOutputLocation resource property to the template.
+InstanceAssociationOutputLocation is a property of the AWS::SSM::Association: https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ssm-association.html resource that specifies an Amazon S3 bucket where you want to store the results of this association request.
+
+## EXAMPLES
+
+### Example 1
+```powershell
+PS C:\> {{ Add example code here }}
+```
+
+{{ Add example description here }}
 
 ## PARAMETERS
 
 ### -S3Location
-Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ssm-association-instanceassociationoutputlocation.html#cfn-ssm-association-instanceassociationoutputlocation-s3location    
-Required: False    
-Type: S3OutputLocation    
+S3OutputLocation is a property of the InstanceAssociationOutputLocation: https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ssm-association-instanceassociationoutputlocation.html property that specifies an Amazon S3 bucket where you want to store the results of this request.
+
+Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ssm-association-instanceassociationoutputlocation.html#cfn-ssm-association-instanceassociationoutputlocation-s3location
+Type: S3OutputLocation
 UpdateType: Mutable
 
 ```yaml
@@ -44,15 +45,13 @@ Accept wildcard characters: False
 ```
 
 ### CommonParameters
-This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction, and -WarningVariable.
-For more information, see about_CommonParameters (http://go.microsoft.com/fwlink/?LinkID=113216).
+This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction, and -WarningVariable. For more information, see [about_CommonParameters](http://go.microsoft.com/fwlink/?LinkID=113216).
 
 ## INPUTS
 
 ## OUTPUTS
 
 ### Vaporshell.Resource.SSM.Association.InstanceAssociationOutputLocation
-
 ## NOTES
 
 ## RELATED LINKS

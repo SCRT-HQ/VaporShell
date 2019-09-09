@@ -1,18 +1,8 @@
----
-layout: glossary
-title: Add-VSRoute53HostedZoneQueryLoggingConfig
-categories: glossary
-label1: Category
-data1: Documentation
-label2: Depth
-data2: Deep
-schema: 2.0.0
----
-
 # Add-VSRoute53HostedZoneQueryLoggingConfig
 
 ## SYNOPSIS
-Adds an AWS::Route53::HostedZone.QueryLoggingConfig resource property to the template
+Adds an AWS::Route53::HostedZone.QueryLoggingConfig resource property to the template.
+A complex type that contains information about a configuration for DNS query logging.
 
 ## SYNTAX
 
@@ -21,14 +11,25 @@ Add-VSRoute53HostedZoneQueryLoggingConfig [-CloudWatchLogsLogGroupArn] <Object> 
 ```
 
 ## DESCRIPTION
-Adds an AWS::Route53::HostedZone.QueryLoggingConfig resource property to the template
+Adds an AWS::Route53::HostedZone.QueryLoggingConfig resource property to the template.
+A complex type that contains information about a configuration for DNS query logging.
+
+## EXAMPLES
+
+### Example 1
+```powershell
+PS C:\> {{ Add example code here }}
+```
+
+{{ Add example description here }}
 
 ## PARAMETERS
 
 ### -CloudWatchLogsLogGroupArn
-Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-route53-hostedzone-queryloggingconfig.html#cfn-route53-hostedzone-queryloggingconfig-cloudwatchlogsloggrouparn    
-PrimitiveType: String    
-Required: True    
+The Amazon Resource Name ARN of the CloudWatch Logs log group that Amazon Route 53 is publishing logs to.
+
+Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-route53-hostedzone-queryloggingconfig.html#cfn-route53-hostedzone-queryloggingconfig-cloudwatchlogsloggrouparn
+PrimitiveType: String
 UpdateType: Mutable
 
 ```yaml
@@ -44,15 +45,13 @@ Accept wildcard characters: False
 ```
 
 ### CommonParameters
-This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction, and -WarningVariable.
-For more information, see about_CommonParameters (http://go.microsoft.com/fwlink/?LinkID=113216).
+This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction, and -WarningVariable. For more information, see [about_CommonParameters](http://go.microsoft.com/fwlink/?LinkID=113216).
 
 ## INPUTS
 
 ## OUTPUTS
 
 ### Vaporshell.Resource.Route53.HostedZone.QueryLoggingConfig
-
 ## NOTES
 
 ## RELATED LINKS

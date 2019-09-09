@@ -1,29 +1,29 @@
----
-layout: glossary
-title: New-VSInspectorAssessmentTarget
-categories: glossary
-label1: Category
-data1: Documentation
-label2: Depth
-data2: Deep
-schema: 2.0.0
----
-
 # New-VSInspectorAssessmentTarget
 
 ## SYNOPSIS
-Adds an AWS::Inspector::AssessmentTarget resource to the template
+Adds an AWS::Inspector::AssessmentTarget resource to the template.
+The AWS::Inspector::AssessmentTarget resource is used to create Amazon Inspector assessment targets, which specify the Amazon EC2 instances that will be analyzed during an assessment run.
 
 ## SYNTAX
 
 ```
 New-VSInspectorAssessmentTarget [-LogicalId] <String> [-AssessmentTargetName <Object>]
- -ResourceGroupArn <Object> [-DeletionPolicy <String>] [-DependsOn <String[]>] [-Metadata <Object>]
+ [-ResourceGroupArn <Object>] [-DeletionPolicy <String>] [-DependsOn <String[]>] [-Metadata <Object>]
  [-UpdatePolicy <Object>] [-Condition <Object>] [<CommonParameters>]
 ```
 
 ## DESCRIPTION
-Adds an AWS::Inspector::AssessmentTarget resource to the template
+Adds an AWS::Inspector::AssessmentTarget resource to the template.
+The AWS::Inspector::AssessmentTarget resource is used to create Amazon Inspector assessment targets, which specify the Amazon EC2 instances that will be analyzed during an assessment run.
+
+## EXAMPLES
+
+### Example 1
+```powershell
+PS C:\> {{ Add example code here }}
+```
+
+{{ Add example description here }}
 
 ## PARAMETERS
 
@@ -45,9 +45,11 @@ Accept wildcard characters: False
 ```
 
 ### -AssessmentTargetName
-Required: False    
-Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-inspector-assessmenttarget.html#cfn-inspector-assessmenttarget-assessmenttargetname    
-PrimitiveType: String    
+The name of the Amazon Inspector assessment target.
+The name must be unique within the AWS account.
+
+Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-inspector-assessmenttarget.html#cfn-inspector-assessmenttarget-assessmenttargetname
+PrimitiveType: String
 UpdateType: Immutable
 
 ```yaml
@@ -63,9 +65,11 @@ Accept wildcard characters: False
 ```
 
 ### -ResourceGroupArn
-Required: True    
-Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-inspector-assessmenttarget.html#cfn-inspector-assessmenttarget-resourcegrouparn    
-PrimitiveType: String    
+The ARN that specifies the resource group that is used to create the assessment target.
+If resourceGroupArn is not specified, all EC2 instances in the current AWS account and Region are included in the assessment target.
+
+Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-inspector-assessmenttarget.html#cfn-inspector-assessmenttarget-resourcegrouparn
+PrimitiveType: String
 UpdateType: Mutable
 
 ```yaml
@@ -73,7 +77,7 @@ Type: Object
 Parameter Sets: (All)
 Aliases:
 
-Required: True
+Required: False
 Position: Named
 Default value: None
 Accept pipeline input: False
@@ -175,15 +179,13 @@ Accept wildcard characters: False
 ```
 
 ### CommonParameters
-This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction, and -WarningVariable.
-For more information, see about_CommonParameters (http://go.microsoft.com/fwlink/?LinkID=113216).
+This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction, and -WarningVariable. For more information, see [about_CommonParameters](http://go.microsoft.com/fwlink/?LinkID=113216).
 
 ## INPUTS
 
 ## OUTPUTS
 
 ### Vaporshell.Resource.Inspector.AssessmentTarget
-
 ## NOTES
 
 ## RELATED LINKS

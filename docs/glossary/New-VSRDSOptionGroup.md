@@ -1,18 +1,8 @@
----
-layout: glossary
-title: New-VSRDSOptionGroup
-categories: glossary
-label1: Category
-data1: Documentation
-label2: Depth
-data2: Deep
-schema: 2.0.0
----
-
 # New-VSRDSOptionGroup
 
 ## SYNOPSIS
-Adds an AWS::RDS::OptionGroup resource to the template
+Adds an AWS::RDS::OptionGroup resource to the template.
+The AWS::RDS::OptionGroup resource creates an option group, to enable and configure features that are specific to a particular DB engine.
 
 ## SYNTAX
 
@@ -24,7 +14,17 @@ New-VSRDSOptionGroup [-LogicalId] <String> -EngineName <Object> -MajorEngineVers
 ```
 
 ## DESCRIPTION
-Adds an AWS::RDS::OptionGroup resource to the template
+Adds an AWS::RDS::OptionGroup resource to the template.
+The AWS::RDS::OptionGroup resource creates an option group, to enable and configure features that are specific to a particular DB engine.
+
+## EXAMPLES
+
+### Example 1
+```powershell
+PS C:\> {{ Add example code here }}
+```
+
+{{ Add example description here }}
 
 ## PARAMETERS
 
@@ -46,9 +46,10 @@ Accept wildcard characters: False
 ```
 
 ### -EngineName
-Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-rds-optiongroup.html#cfn-rds-optiongroup-enginename    
-PrimitiveType: String    
-Required: True    
+Specifies the name of the engine that this option group should be associated with.
+
+Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-rds-optiongroup.html#cfn-rds-optiongroup-enginename
+PrimitiveType: String
 UpdateType: Immutable
 
 ```yaml
@@ -64,9 +65,10 @@ Accept wildcard characters: False
 ```
 
 ### -MajorEngineVersion
-Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-rds-optiongroup.html#cfn-rds-optiongroup-majorengineversion    
-PrimitiveType: String    
-Required: True    
+Specifies the major version of the engine that this option group should be associated with.
+
+Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-rds-optiongroup.html#cfn-rds-optiongroup-majorengineversion
+PrimitiveType: String
 UpdateType: Immutable
 
 ```yaml
@@ -82,11 +84,12 @@ Accept wildcard characters: False
 ```
 
 ### -OptionConfigurations
-Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-rds-optiongroup.html#cfn-rds-optiongroup-optionconfigurations    
-DuplicatesAllowed: True    
-ItemType: OptionConfiguration    
-Required: True    
-Type: List    
+A list of all available options
+
+Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-rds-optiongroup.html#cfn-rds-optiongroup-optionconfigurations
+DuplicatesAllowed: True
+ItemType: OptionConfiguration
+Type: List
 UpdateType: Immutable
 
 ```yaml
@@ -102,9 +105,10 @@ Accept wildcard characters: False
 ```
 
 ### -OptionGroupDescription
-Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-rds-optiongroup.html#cfn-rds-optiongroup-optiongroupdescription    
-PrimitiveType: String    
-Required: True    
+The description of the option group.
+
+Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-rds-optiongroup.html#cfn-rds-optiongroup-optiongroupdescription
+PrimitiveType: String
 UpdateType: Immutable
 
 ```yaml
@@ -120,11 +124,12 @@ Accept wildcard characters: False
 ```
 
 ### -Tags
-Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-rds-optiongroup.html#cfn-rds-optiongroup-tags    
-DuplicatesAllowed: True    
-ItemType: Tag    
-Required: False    
-Type: List    
+Tags to assign to the option group.
+
+Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-rds-optiongroup.html#cfn-rds-optiongroup-tags
+DuplicatesAllowed: True
+ItemType: Tag
+Type: List
 UpdateType: Mutable
 
 ```yaml
@@ -234,15 +239,13 @@ Accept wildcard characters: False
 ```
 
 ### CommonParameters
-This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction, and -WarningVariable.
-For more information, see about_CommonParameters (http://go.microsoft.com/fwlink/?LinkID=113216).
+This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction, and -WarningVariable. For more information, see [about_CommonParameters](http://go.microsoft.com/fwlink/?LinkID=113216).
 
 ## INPUTS
 
 ## OUTPUTS
 
 ### Vaporshell.Resource.RDS.OptionGroup
-
 ## NOTES
 
 ## RELATED LINKS

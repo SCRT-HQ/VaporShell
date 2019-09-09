@@ -1,18 +1,8 @@
----
-layout: glossary
-title: Add-VSEC2InstanceAssociationParameter
-categories: glossary
-label1: Category
-data1: Documentation
-label2: Depth
-data2: Deep
-schema: 2.0.0
----
-
 # Add-VSEC2InstanceAssociationParameter
 
 ## SYNOPSIS
-Adds an AWS::EC2::Instance.AssociationParameter resource property to the template
+Adds an AWS::EC2::Instance.AssociationParameter resource property to the template.
+Specifies input parameter values for an SSM document in AWS Systems Manager.
 
 ## SYNTAX
 
@@ -21,14 +11,27 @@ Add-VSEC2InstanceAssociationParameter [-Key] <Object> [-Value] <Object> [<Common
 ```
 
 ## DESCRIPTION
-Adds an AWS::EC2::Instance.AssociationParameter resource property to the template
+Adds an AWS::EC2::Instance.AssociationParameter resource property to the template.
+Specifies input parameter values for an SSM document in AWS Systems Manager.
+
+AssociationParameter is a property of the  Amazon EC2 Instance SsmAssociation: https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-instance-ssmassociations.html property.
+
+## EXAMPLES
+
+### Example 1
+```powershell
+PS C:\> {{ Add example code here }}
+```
+
+{{ Add example description here }}
 
 ## PARAMETERS
 
 ### -Key
-Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-instance-ssmassociations-associationparameters.html#cfn-ec2-instance-ssmassociations-associationparameters-key    
-PrimitiveType: String    
-Required: True    
+The name of an input parameter that is in the associated SSM document.
+
+Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-instance-ssmassociations-associationparameters.html#cfn-ec2-instance-ssmassociations-associationparameters-key
+PrimitiveType: String
 UpdateType: Mutable
 
 ```yaml
@@ -44,11 +47,12 @@ Accept wildcard characters: False
 ```
 
 ### -Value
-Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-instance-ssmassociations-associationparameters.html#cfn-ec2-instance-ssmassociations-associationparameters-value    
-DuplicatesAllowed: True    
-PrimitiveItemType: String    
-Required: True    
-Type: List    
+The value of an input parameter.
+
+Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-instance-ssmassociations-associationparameters.html#cfn-ec2-instance-ssmassociations-associationparameters-value
+DuplicatesAllowed: True
+PrimitiveItemType: String
+Type: List
 UpdateType: Mutable
 
 ```yaml
@@ -64,15 +68,13 @@ Accept wildcard characters: False
 ```
 
 ### CommonParameters
-This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction, and -WarningVariable.
-For more information, see about_CommonParameters (http://go.microsoft.com/fwlink/?LinkID=113216).
+This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction, and -WarningVariable. For more information, see [about_CommonParameters](http://go.microsoft.com/fwlink/?LinkID=113216).
 
 ## INPUTS
 
 ## OUTPUTS
 
 ### Vaporshell.Resource.EC2.Instance.AssociationParameter
-
 ## NOTES
 
 ## RELATED LINKS

@@ -1,18 +1,9 @@
----
-layout: glossary
-title: New-VSNeptuneDBCluster
-categories: glossary
-label1: Category
-data1: Documentation
-label2: Depth
-data2: Deep
-schema: 2.0.0
----
-
 # New-VSNeptuneDBCluster
 
 ## SYNOPSIS
-Adds an AWS::Neptune::DBCluster resource to the template
+Adds an AWS::Neptune::DBCluster resource to the template.
+The AWS::Neptune::DBCluster resource creates an Amazon Neptune DB cluster.
+Neptune is a fully managed graph database.
 
 ## SYNTAX
 
@@ -21,12 +12,32 @@ New-VSNeptuneDBCluster [-LogicalId] <String> [-StorageEncrypted <Boolean>] [-Kms
  [-AvailabilityZones <Object>] [-SnapshotIdentifier <Object>] [-Port <Int32>] [-DBClusterIdentifier <Object>]
  [-PreferredMaintenanceWindow <Object>] [-IamAuthEnabled <Boolean>] [-DBSubnetGroupName <Object>]
  [-PreferredBackupWindow <Object>] [-VpcSecurityGroupIds <Object>] [-DBClusterParameterGroupName <Object>]
- [-BackupRetentionPeriod <Int32>] [-Tags <Object>] [-DeletionPolicy <String>] [-DependsOn <String[]>]
- [-Metadata <Object>] [-UpdatePolicy <Object>] [-Condition <Object>] [<CommonParameters>]
+ [-BackupRetentionPeriod <Int32>] [-Tags <Object>] [-EnableCloudwatchLogsExports <Object>]
+ [-DeletionPolicy <String>] [-DependsOn <String[]>] [-Metadata <Object>] [-UpdatePolicy <Object>]
+ [-Condition <Object>] [<CommonParameters>]
 ```
 
 ## DESCRIPTION
-Adds an AWS::Neptune::DBCluster resource to the template
+Adds an AWS::Neptune::DBCluster resource to the template.
+The AWS::Neptune::DBCluster resource creates an Amazon Neptune DB cluster.
+Neptune is a fully managed graph database.
+
+**Note**
+
+Currently, you can create this resource only in AWS Regions in which Amazon Neptune is supported.
+
+If no DeletionPolicy is set for AWS::Neptune::DBCluster resources, the default deletion behavior is that the entire volume will be deleted without a snapshot.
+To retain a backup of the volume, the DeletionPolicy should be set to Snapshot.
+For more information about how AWS CloudFormation deletes resources, see DeletionPolicy Attribute: https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-attribute-deletionpolicy.html.
+
+## EXAMPLES
+
+### Example 1
+```powershell
+PS C:\> {{ Add example code here }}
+```
+
+{{ Add example description here }}
 
 ## PARAMETERS
 
@@ -48,9 +59,14 @@ Accept wildcard characters: False
 ```
 
 ### -StorageEncrypted
-Required: False    
-Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-neptune-dbcluster.html#cfn-neptune-dbcluster-storageencrypted    
-PrimitiveType: Boolean    
+Indicates whether the DB cluster is encrypted.
+If you specify the DBClusterIdentifier, DBSnapshotIdentifier, or SourceDBInstanceIdentifier property, don't specify this property.
+The value is inherited from the cluster, snapshot, or source DB instance.
+If you specify the KmsKeyId property, you must enable encryption.
+If you specify the KmsKeyId, you must enable encryption by setting StorageEncrypted to true.
+
+Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-neptune-dbcluster.html#cfn-neptune-dbcluster-storageencrypted
+PrimitiveType: Boolean
 UpdateType: Immutable
 
 ```yaml
@@ -66,9 +82,10 @@ Accept wildcard characters: False
 ```
 
 ### -KmsKeyId
-Required: False    
-Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-neptune-dbcluster.html#cfn-neptune-dbcluster-kmskeyid    
-PrimitiveType: String    
+If StorageEncrypted is true, the AWS KMS key identifier for the encrypted DB cluster.
+
+Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-neptune-dbcluster.html#cfn-neptune-dbcluster-kmskeyid
+PrimitiveType: String
 UpdateType: Immutable
 
 ```yaml
@@ -84,10 +101,11 @@ Accept wildcard characters: False
 ```
 
 ### -AvailabilityZones
-PrimitiveItemType: String    
-Type: List    
-Required: False    
-Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-neptune-dbcluster.html#cfn-neptune-dbcluster-availabilityzones    
+Provides the list of EC2 Availability Zones that instances in the DB cluster can be created in.
+
+PrimitiveItemType: String
+Type: List
+Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-neptune-dbcluster.html#cfn-neptune-dbcluster-availabilityzones
 UpdateType: Immutable
 
 ```yaml
@@ -103,9 +121,10 @@ Accept wildcard characters: False
 ```
 
 ### -SnapshotIdentifier
-Required: False    
-Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-neptune-dbcluster.html#cfn-neptune-dbcluster-snapshotidentifier    
-PrimitiveType: String    
+Not supported by Neptune.
+
+Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-neptune-dbcluster.html#cfn-neptune-dbcluster-snapshotidentifier
+PrimitiveType: String
 UpdateType: Immutable
 
 ```yaml
@@ -121,9 +140,10 @@ Accept wildcard characters: False
 ```
 
 ### -Port
-Required: False    
-Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-neptune-dbcluster.html#cfn-neptune-dbcluster-port    
-PrimitiveType: Integer    
+Specifies the port that the database engine is listening on.
+
+Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-neptune-dbcluster.html#cfn-neptune-dbcluster-port
+PrimitiveType: Integer
 UpdateType: Mutable
 
 ```yaml
@@ -139,9 +159,11 @@ Accept wildcard characters: False
 ```
 
 ### -DBClusterIdentifier
-Required: False    
-Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-neptune-dbcluster.html#cfn-neptune-dbcluster-dbclusteridentifier    
-PrimitiveType: String    
+Contains a user-supplied DB cluster identifier.
+This identifier is the unique key that identifies a DB cluster.
+
+Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-neptune-dbcluster.html#cfn-neptune-dbcluster-dbclusteridentifier
+PrimitiveType: String
 UpdateType: Immutable
 
 ```yaml
@@ -157,9 +179,10 @@ Accept wildcard characters: False
 ```
 
 ### -PreferredMaintenanceWindow
-Required: False    
-Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-neptune-dbcluster.html#cfn-neptune-dbcluster-preferredmaintenancewindow    
-PrimitiveType: String    
+Specifies the weekly time range during which system maintenance can occur, in Universal Coordinated Time UTC.
+
+Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-neptune-dbcluster.html#cfn-neptune-dbcluster-preferredmaintenancewindow
+PrimitiveType: String
 UpdateType: Mutable
 
 ```yaml
@@ -175,9 +198,10 @@ Accept wildcard characters: False
 ```
 
 ### -IamAuthEnabled
-Required: False    
-Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-neptune-dbcluster.html#cfn-neptune-dbcluster-iamauthenabled    
-PrimitiveType: Boolean    
+True if mapping of AWS Identity and Access Management IAM accounts to database accounts is enabled, and otherwise false.
+
+Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-neptune-dbcluster.html#cfn-neptune-dbcluster-iamauthenabled
+PrimitiveType: Boolean
 UpdateType: Mutable
 
 ```yaml
@@ -193,9 +217,10 @@ Accept wildcard characters: False
 ```
 
 ### -DBSubnetGroupName
-Required: False    
-Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-neptune-dbcluster.html#cfn-neptune-dbcluster-dbsubnetgroupname    
-PrimitiveType: String    
+Specifies information on the subnet group associated with the DB cluster, including the name, description, and subnets in the subnet group.
+
+Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-neptune-dbcluster.html#cfn-neptune-dbcluster-dbsubnetgroupname
+PrimitiveType: String
 UpdateType: Immutable
 
 ```yaml
@@ -211,9 +236,11 @@ Accept wildcard characters: False
 ```
 
 ### -PreferredBackupWindow
-Required: False    
-Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-neptune-dbcluster.html#cfn-neptune-dbcluster-preferredbackupwindow    
-PrimitiveType: String    
+Specifies the daily time range during which automated backups are created if automated backups are enabled, as determined by the BackupRetentionPeriod.
+An update may require some interruption.
+
+Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-neptune-dbcluster.html#cfn-neptune-dbcluster-preferredbackupwindow
+PrimitiveType: String
 UpdateType: Mutable
 
 ```yaml
@@ -229,10 +256,11 @@ Accept wildcard characters: False
 ```
 
 ### -VpcSecurityGroupIds
-PrimitiveItemType: String    
-Type: List    
-Required: False    
-Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-neptune-dbcluster.html#cfn-neptune-dbcluster-vpcsecuritygroupids    
+Provides a list of VPC security groups that the DB cluster belongs to.
+
+PrimitiveItemType: String
+Type: List
+Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-neptune-dbcluster.html#cfn-neptune-dbcluster-vpcsecuritygroupids
 UpdateType: Mutable
 
 ```yaml
@@ -248,9 +276,12 @@ Accept wildcard characters: False
 ```
 
 ### -DBClusterParameterGroupName
-Required: False    
-Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-neptune-dbcluster.html#cfn-neptune-dbcluster-dbclusterparametergroupname    
-PrimitiveType: String    
+Provides the name of the DB cluster parameter group.
+An update may require some interruption.
+See ModifyDBInstance: https://docs.aws.amazon.com/neptune/latest/userguide/api-instances.html#ModifyDBInstance in the Amazon Neptune User Guide for more information.
+
+Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-neptune-dbcluster.html#cfn-neptune-dbcluster-dbclusterparametergroupname
+PrimitiveType: String
 UpdateType: Mutable
 
 ```yaml
@@ -266,9 +297,12 @@ Accept wildcard characters: False
 ```
 
 ### -BackupRetentionPeriod
-Required: False    
-Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-neptune-dbcluster.html#cfn-neptune-dbcluster-backupretentionperiod    
-PrimitiveType: Integer    
+Specifies the number of days for which automatic DB snapshots are retained.
+An update may require some interruption.
+See ModifyDBInstance: https://docs.aws.amazon.com/neptune/latest/userguide/api-instances.html#ModifyDBInstance in the Amazon Neptune User Guide for more information.
+
+Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-neptune-dbcluster.html#cfn-neptune-dbcluster-backupretentionperiod
+PrimitiveType: Integer
 UpdateType: Mutable
 
 ```yaml
@@ -284,10 +318,31 @@ Accept wildcard characters: False
 ```
 
 ### -Tags
-Type: List    
-Required: False    
-Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-neptune-dbcluster.html#cfn-neptune-dbcluster-tags    
-ItemType: Tag    
+The tags assigned to this cluster.
+
+Type: List
+Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-neptune-dbcluster.html#cfn-neptune-dbcluster-tags
+ItemType: Tag
+UpdateType: Mutable
+
+```yaml
+Type: Object
+Parameter Sets: (All)
+Aliases:
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### -EnableCloudwatchLogsExports
+Specifies a list of log types that are enabled for export to CloudWatch Logs.
+
+PrimitiveItemType: String
+Type: List
+Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-neptune-dbcluster.html#cfn-neptune-dbcluster-enablecloudwatchlogsexports
 UpdateType: Mutable
 
 ```yaml
@@ -397,15 +452,13 @@ Accept wildcard characters: False
 ```
 
 ### CommonParameters
-This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction, and -WarningVariable.
-For more information, see about_CommonParameters (http://go.microsoft.com/fwlink/?LinkID=113216).
+This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction, and -WarningVariable. For more information, see [about_CommonParameters](http://go.microsoft.com/fwlink/?LinkID=113216).
 
 ## INPUTS
 
 ## OUTPUTS
 
 ### Vaporshell.Resource.Neptune.DBCluster
-
 ## NOTES
 
 ## RELATED LINKS

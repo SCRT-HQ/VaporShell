@@ -1,18 +1,9 @@
----
-layout: glossary
-title: Add-VSKinesisAnalyticsApplicationOutputOutput
-categories: glossary
-label1: Category
-data1: Documentation
-label2: Depth
-data2: Deep
-schema: 2.0.0
----
-
 # Add-VSKinesisAnalyticsApplicationOutputOutput
 
 ## SYNOPSIS
-Adds an AWS::KinesisAnalytics::ApplicationOutput.Output resource property to the template
+Adds an AWS::KinesisAnalytics::ApplicationOutput.Output resource property to the template.
+Describes application output configuration in which you identify an in-application stream and a destination where you want the in-application stream data to be written.
+The destination can be an Amazon Kinesis stream or an Amazon Kinesis Firehose delivery stream.
 
 ## SYNTAX
 
@@ -22,14 +13,29 @@ Add-VSKinesisAnalyticsApplicationOutputOutput [-DestinationSchema] <Object> [[-L
 ```
 
 ## DESCRIPTION
-Adds an AWS::KinesisAnalytics::ApplicationOutput.Output resource property to the template
+Adds an AWS::KinesisAnalytics::ApplicationOutput.Output resource property to the template.
+Describes application output configuration in which you identify an in-application stream and a destination where you want the in-application stream data to be written.
+The destination can be an Amazon Kinesis stream or an Amazon Kinesis Firehose delivery stream.
+
+For limits on how many destinations an application can write and other limitations, see Limits: https://docs.aws.amazon.com/kinesisanalytics/latest/dev/limits.html.
+
+## EXAMPLES
+
+### Example 1
+```powershell
+PS C:\> {{ Add example code here }}
+```
+
+{{ Add example description here }}
 
 ## PARAMETERS
 
 ### -DestinationSchema
-Type: DestinationSchema    
-Required: True    
-Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-kinesisanalytics-applicationoutput-output.html#cfn-kinesisanalytics-applicationoutput-output-destinationschema    
+Describes the data format when records are written to the destination.
+For more information, see Configuring Application Output: https://docs.aws.amazon.com/kinesisanalytics/latest/dev/how-it-works-output.html.
+
+Type: DestinationSchema
+Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-kinesisanalytics-applicationoutput-output.html#cfn-kinesisanalytics-applicationoutput-output-destinationschema
 UpdateType: Mutable
 
 ```yaml
@@ -45,9 +51,10 @@ Accept wildcard characters: False
 ```
 
 ### -LambdaOutput
-Type: LambdaOutput    
-Required: False    
-Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-kinesisanalytics-applicationoutput-output.html#cfn-kinesisanalytics-applicationoutput-output-lambdaoutput    
+Identifies an AWS Lambda function as the destination.
+
+Type: LambdaOutput
+Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-kinesisanalytics-applicationoutput-output.html#cfn-kinesisanalytics-applicationoutput-output-lambdaoutput
 UpdateType: Mutable
 
 ```yaml
@@ -63,9 +70,10 @@ Accept wildcard characters: False
 ```
 
 ### -KinesisFirehoseOutput
-Type: KinesisFirehoseOutput    
-Required: False    
-Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-kinesisanalytics-applicationoutput-output.html#cfn-kinesisanalytics-applicationoutput-output-kinesisfirehoseoutput    
+Identifies an Amazon Kinesis Firehose delivery stream as the destination.
+
+Type: KinesisFirehoseOutput
+Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-kinesisanalytics-applicationoutput-output.html#cfn-kinesisanalytics-applicationoutput-output-kinesisfirehoseoutput
 UpdateType: Mutable
 
 ```yaml
@@ -81,9 +89,10 @@ Accept wildcard characters: False
 ```
 
 ### -KinesisStreamsOutput
-Type: KinesisStreamsOutput    
-Required: False    
-Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-kinesisanalytics-applicationoutput-output.html#cfn-kinesisanalytics-applicationoutput-output-kinesisstreamsoutput    
+Identifies an Amazon Kinesis stream as the destination.
+
+Type: KinesisStreamsOutput
+Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-kinesisanalytics-applicationoutput-output.html#cfn-kinesisanalytics-applicationoutput-output-kinesisstreamsoutput
 UpdateType: Mutable
 
 ```yaml
@@ -99,9 +108,10 @@ Accept wildcard characters: False
 ```
 
 ### -Name
-Required: False    
-Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-kinesisanalytics-applicationoutput-output.html#cfn-kinesisanalytics-applicationoutput-output-name    
-PrimitiveType: String    
+Name of the in-application stream.
+
+Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-kinesisanalytics-applicationoutput-output.html#cfn-kinesisanalytics-applicationoutput-output-name
+PrimitiveType: String
 UpdateType: Immutable
 
 ```yaml
@@ -117,15 +127,13 @@ Accept wildcard characters: False
 ```
 
 ### CommonParameters
-This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction, and -WarningVariable.
-For more information, see about_CommonParameters (http://go.microsoft.com/fwlink/?LinkID=113216).
+This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction, and -WarningVariable. For more information, see [about_CommonParameters](http://go.microsoft.com/fwlink/?LinkID=113216).
 
 ## INPUTS
 
 ## OUTPUTS
 
 ### Vaporshell.Resource.KinesisAnalytics.ApplicationOutput.Output
-
 ## NOTES
 
 ## RELATED LINKS

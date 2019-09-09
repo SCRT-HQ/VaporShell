@@ -1,18 +1,9 @@
----
-layout: glossary
-title: Add-VSAutoScalingAutoScalingGroupTagProperty
-categories: glossary
-label1: Category
-data1: Documentation
-label2: Depth
-data2: Deep
-schema: 2.0.0
----
-
 # Add-VSAutoScalingAutoScalingGroupTagProperty
 
 ## SYNOPSIS
-Adds an AWS::AutoScaling::AutoScalingGroup.TagProperty resource property to the template
+Adds an AWS::AutoScaling::AutoScalingGroup.TagProperty resource property to the template.
+TagProperty specifies a list of tags for the Tag property of AutoScalingGroup: https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-as-group.html.
+TagProperty adds tags to all associated instances in an Amazon EC2 Auto Scaling group.
 
 ## SYNTAX
 
@@ -22,14 +13,37 @@ Add-VSAutoScalingAutoScalingGroupTagProperty [-Key] <Object> [-PropagateAtLaunch
 ```
 
 ## DESCRIPTION
-Adds an AWS::AutoScaling::AutoScalingGroup.TagProperty resource property to the template
+Adds an AWS::AutoScaling::AutoScalingGroup.TagProperty resource property to the template.
+TagProperty specifies a list of tags for the Tag property of AutoScalingGroup: https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-as-group.html.
+TagProperty adds tags to all associated instances in an Amazon EC2 Auto Scaling group.
+
+For more information, see Tagging Auto Scaling Groups and Instances: https://docs.aws.amazon.com/autoscaling/ec2/userguide/autoscaling-tagging.html in the *Amazon EC2 Auto Scaling User Guide*.
+You can find a sample template snippet in the Examples: https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-as-group.html#aws-properties-as-group--examples section of the AWS::AutoScaling::AutoScalingGroup documentation.
+
+AWS CloudFormation adds the following tags to all Auto Scaling groups and associated instances:
+
++ aws:cloudformation:stack-name
+
++ aws:cloudformation:stack-id
+
++ aws:cloudformation:logical-id
+
+## EXAMPLES
+
+### Example 1
+```powershell
+PS C:\> {{ Add example code here }}
+```
+
+{{ Add example description here }}
 
 ## PARAMETERS
 
 ### -Key
-Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-as-tags.html#cfn-as-tags-Key    
-PrimitiveType: String    
-Required: True    
+The tag key.
+
+Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-as-tags.html#cfn-as-tags-Key
+PrimitiveType: String
 UpdateType: Mutable
 
 ```yaml
@@ -45,9 +59,11 @@ Accept wildcard characters: False
 ```
 
 ### -PropagateAtLaunch
-Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-as-tags.html#cfn-as-tags-PropagateAtLaunch    
-PrimitiveType: Boolean    
-Required: True    
+Set to true if you want AWS CloudFormation to copy the tag to EC2 instances that are launched as part of the Auto Scaling group.
+Set to false if you want the tag attached only to the Auto Scaling group and not copied to any instances launched as part of the Auto Scaling group.
+
+Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-as-tags.html#cfn-as-tags-PropagateAtLaunch
+PrimitiveType: Boolean
 UpdateType: Mutable
 
 ```yaml
@@ -63,9 +79,10 @@ Accept wildcard characters: False
 ```
 
 ### -Value
-Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-as-tags.html#cfn-as-tags-Value    
-PrimitiveType: String    
-Required: True    
+The tag value.
+
+Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-as-tags.html#cfn-as-tags-Value
+PrimitiveType: String
 UpdateType: Mutable
 
 ```yaml
@@ -81,15 +98,13 @@ Accept wildcard characters: False
 ```
 
 ### CommonParameters
-This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction, and -WarningVariable.
-For more information, see about_CommonParameters (http://go.microsoft.com/fwlink/?LinkID=113216).
+This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction, and -WarningVariable. For more information, see [about_CommonParameters](http://go.microsoft.com/fwlink/?LinkID=113216).
 
 ## INPUTS
 
 ## OUTPUTS
 
 ### Vaporshell.Resource.AutoScaling.AutoScalingGroup.TagProperty
-
 ## NOTES
 
 ## RELATED LINKS

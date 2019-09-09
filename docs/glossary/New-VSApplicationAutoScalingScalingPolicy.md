@@ -1,18 +1,8 @@
----
-layout: glossary
-title: New-VSApplicationAutoScalingScalingPolicy
-categories: glossary
-label1: Category
-data1: Documentation
-label2: Depth
-data2: Deep
-schema: 2.0.0
----
-
 # New-VSApplicationAutoScalingScalingPolicy
 
 ## SYNOPSIS
-Adds an AWS::ApplicationAutoScaling::ScalingPolicy resource to the template
+Adds an AWS::ApplicationAutoScaling::ScalingPolicy resource to the template.
+The AWS::ApplicationAutoScaling::ScalingPolicy resource defines a scaling policy that Application Auto Scaling uses to adjust your application resources.
 
 ## SYNTAX
 
@@ -25,7 +15,20 @@ New-VSApplicationAutoScalingScalingPolicy [-LogicalId] <String> -PolicyName <Obj
 ```
 
 ## DESCRIPTION
-Adds an AWS::ApplicationAutoScaling::ScalingPolicy resource to the template
+Adds an AWS::ApplicationAutoScaling::ScalingPolicy resource to the template.
+The AWS::ApplicationAutoScaling::ScalingPolicy resource defines a scaling policy that Application Auto Scaling uses to adjust your application resources.
+
+For more information, see PutScalingPolicy: https://docs.aws.amazon.com/autoscaling/application/APIReference/API_PutScalingPolicy.html in the *Application Auto Scaling API Reference*.
+For more information about scaling policies, see the Application Auto Scaling User Guide: https://docs.aws.amazon.com/autoscaling/application/userguide/what-is-application-auto-scaling.html.
+
+## EXAMPLES
+
+### Example 1
+```powershell
+PS C:\> {{ Add example code here }}
+```
+
+{{ Add example description here }}
 
 ## PARAMETERS
 
@@ -47,9 +50,10 @@ Accept wildcard characters: False
 ```
 
 ### -PolicyName
-Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-applicationautoscaling-scalingpolicy.html#cfn-applicationautoscaling-scalingpolicy-policyname    
-PrimitiveType: String    
-Required: True    
+The name of the scaling policy.
+
+Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-applicationautoscaling-scalingpolicy.html#cfn-applicationautoscaling-scalingpolicy-policyname
+PrimitiveType: String
 UpdateType: Immutable
 
 ```yaml
@@ -65,9 +69,14 @@ Accept wildcard characters: False
 ```
 
 ### -PolicyType
-Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-applicationautoscaling-scalingpolicy.html#cfn-applicationautoscaling-scalingpolicy-policytype    
-PrimitiveType: String    
-Required: True    
+The Application Auto Scaling policy type.
+Valid values are StepScaling and TargetTrackingScaling.
+For DynamoDB, only TargetTrackingScaling is supported.
+For Amazon ECS, Spot Fleet, and Amazon RDS, both StepScaling and TargetTrackingScaling are supported.
+For any other service, only StepScaling is supported.
+
+Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-applicationautoscaling-scalingpolicy.html#cfn-applicationautoscaling-scalingpolicy-policytype
+PrimitiveType: String
 UpdateType: Mutable
 
 ```yaml
@@ -83,9 +92,12 @@ Accept wildcard characters: False
 ```
 
 ### -ResourceId
-Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-applicationautoscaling-scalingpolicy.html#cfn-applicationautoscaling-scalingpolicy-resourceid    
-PrimitiveType: String    
-Required: False    
+The unique resource identifier for the scalable target that this scaling policy applies to.
+For valid values, see the ResourceId parameter for PutScalingPolicy: https://docs.aws.amazon.com/autoscaling/application/APIReference/API_PutScalingPolicy.html in the *Application Auto Scaling API Reference*.
+You must specify either the ResourceId, ScalableDimension, and ServiceNamespace properties, or the ScalingTargetId property, but not both.
+
+Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-applicationautoscaling-scalingpolicy.html#cfn-applicationautoscaling-scalingpolicy-resourceid
+PrimitiveType: String
 UpdateType: Immutable
 
 ```yaml
@@ -101,9 +113,13 @@ Accept wildcard characters: False
 ```
 
 ### -ScalableDimension
-Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-applicationautoscaling-scalingpolicy.html#cfn-applicationautoscaling-scalingpolicy-scalabledimension    
-PrimitiveType: String    
-Required: False    
+The scalable dimension of the scalable target that this scaling policy applies to.
+The scalable dimension contains the service namespace, resource type, and scaling property, such as ecs:service:DesiredCount for the desired task count of an Amazon ECS service.
+For valid values, see the ScalableDimension parameter for PutScalingPolicy: https://docs.aws.amazon.com/autoscaling/application/APIReference/API_PutScalingPolicy.html in the *Application Auto Scaling API Reference*.
+You must specify either the ResourceId, ScalableDimension, and ServiceNamespace properties, or the ScalingTargetId property, but not both.
+
+Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-applicationautoscaling-scalingpolicy.html#cfn-applicationautoscaling-scalingpolicy-scalabledimension
+PrimitiveType: String
 UpdateType: Immutable
 
 ```yaml
@@ -119,9 +135,12 @@ Accept wildcard characters: False
 ```
 
 ### -ScalingTargetId
-Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-applicationautoscaling-scalingpolicy.html#cfn-applicationautoscaling-scalingpolicy-scalingtargetid    
-PrimitiveType: String    
-Required: False    
+The AWS CloudFormation-generated ID of an Application Auto Scaling scalable target.
+For more information about the ID, see the Return Value section of the AWS::ApplicationAutoScaling::ScalableTarget resource.
+You must specify either the ScalingTargetId property, or the ResourceId, ScalableDimension, and ServiceNamespace properties, but not both.
+
+Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-applicationautoscaling-scalingpolicy.html#cfn-applicationautoscaling-scalingpolicy-scalingtargetid
+PrimitiveType: String
 UpdateType: Immutable
 
 ```yaml
@@ -137,9 +156,12 @@ Accept wildcard characters: False
 ```
 
 ### -ServiceNamespace
-Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-applicationautoscaling-scalingpolicy.html#cfn-applicationautoscaling-scalingpolicy-servicenamespace    
-PrimitiveType: String    
-Required: False    
+The namespace of the AWS service that provides the resource or custom-resource for a resource provided by your own application or service.
+For valid values, see the ServiceNamespace parameter for PutScalingPolicy: https://docs.aws.amazon.com/autoscaling/application/APIReference/API_PutScalingPolicy.html in the *Application Auto Scaling API Reference*.
+You must specify either the ResourceId, ScalableDimension, and ServiceNamespace properties, or the ScalingTargetId property, but not both.
+
+Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-applicationautoscaling-scalingpolicy.html#cfn-applicationautoscaling-scalingpolicy-servicenamespace
+PrimitiveType: String
 UpdateType: Immutable
 
 ```yaml
@@ -155,9 +177,10 @@ Accept wildcard characters: False
 ```
 
 ### -StepScalingPolicyConfiguration
-Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-applicationautoscaling-scalingpolicy.html#cfn-applicationautoscaling-scalingpolicy-stepscalingpolicyconfiguration    
-Required: False    
-Type: StepScalingPolicyConfiguration    
+A step scaling policy.
+
+Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-applicationautoscaling-scalingpolicy.html#cfn-applicationautoscaling-scalingpolicy-stepscalingpolicyconfiguration
+Type: StepScalingPolicyConfiguration
 UpdateType: Mutable
 
 ```yaml
@@ -173,9 +196,10 @@ Accept wildcard characters: False
 ```
 
 ### -TargetTrackingScalingPolicyConfiguration
-Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-applicationautoscaling-scalingpolicy.html#cfn-applicationautoscaling-scalingpolicy-targettrackingscalingpolicyconfiguration    
-Required: False    
-Type: TargetTrackingScalingPolicyConfiguration    
+A target tracking scaling policy.
+
+Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-applicationautoscaling-scalingpolicy.html#cfn-applicationautoscaling-scalingpolicy-targettrackingscalingpolicyconfiguration
+Type: TargetTrackingScalingPolicyConfiguration
 UpdateType: Mutable
 
 ```yaml
@@ -285,15 +309,13 @@ Accept wildcard characters: False
 ```
 
 ### CommonParameters
-This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction, and -WarningVariable.
-For more information, see about_CommonParameters (http://go.microsoft.com/fwlink/?LinkID=113216).
+This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction, and -WarningVariable. For more information, see [about_CommonParameters](http://go.microsoft.com/fwlink/?LinkID=113216).
 
 ## INPUTS
 
 ## OUTPUTS
 
 ### Vaporshell.Resource.ApplicationAutoScaling.ScalingPolicy
-
 ## NOTES
 
 ## RELATED LINKS

@@ -1,18 +1,9 @@
----
-layout: glossary
-title: New-VSCloudWatchDashboard
-categories: glossary
-label1: Category
-data1: Documentation
-label2: Depth
-data2: Deep
-schema: 2.0.0
----
-
 # New-VSCloudWatchDashboard
 
 ## SYNOPSIS
-Adds an AWS::CloudWatch::Dashboard resource to the template
+Adds an AWS::CloudWatch::Dashboard resource to the template.
+The AWS::CloudWatch::Dashboard resource specifies an Amazon CloudWatch dashboard.
+A dashboard is a customizable home page in the CloudWatch console that you can use to monitor your AWS resources in a single view.
 
 ## SYNTAX
 
@@ -23,7 +14,21 @@ New-VSCloudWatchDashboard [-LogicalId] <String> [-DashboardName <Object>] -Dashb
 ```
 
 ## DESCRIPTION
-Adds an AWS::CloudWatch::Dashboard resource to the template
+Adds an AWS::CloudWatch::Dashboard resource to the template.
+The AWS::CloudWatch::Dashboard resource specifies an Amazon CloudWatch dashboard.
+A dashboard is a customizable home page in the CloudWatch console that you can use to monitor your AWS resources in a single view.
+
+There is no limit to the number of dashboards in your account.
+All dashboards in your account are global, not region-specific.
+
+## EXAMPLES
+
+### Example 1
+```powershell
+PS C:\> {{ Add example code here }}
+```
+
+{{ Add example description here }}
 
 ## PARAMETERS
 
@@ -45,9 +50,12 @@ Accept wildcard characters: False
 ```
 
 ### -DashboardName
-Required: False    
-Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-cloudwatch-dashboard.html#cfn-cloudwatch-dashboard-dashboardname    
-PrimitiveType: String    
+The name of the dashboard.
+The name must be between 1 and 255 characters.
+If you do not specify a name, one will be generated automatically.
+
+Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-cloudwatch-dashboard.html#cfn-cloudwatch-dashboard-dashboardname
+PrimitiveType: String
 UpdateType: Immutable
 
 ```yaml
@@ -63,9 +71,12 @@ Accept wildcard characters: False
 ```
 
 ### -DashboardBody
-Required: True    
-Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-cloudwatch-dashboard.html#cfn-cloudwatch-dashboard-dashboardbody    
-PrimitiveType: String    
+The detailed information about the dashboard in JSON format, including the widgets to include and their location on the dashboard.
+This parameter is required.
+For more information about the syntax, see Dashboard Body Structure and Syntax: https://docs.aws.amazon.com/AmazonCloudWatch/latest/APIReference/CloudWatch-Dashboard-Body-Structure.html.
+
+Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-cloudwatch-dashboard.html#cfn-cloudwatch-dashboard-dashboardbody
+PrimitiveType: String
 UpdateType: Mutable
 
 ```yaml
@@ -175,15 +186,13 @@ Accept wildcard characters: False
 ```
 
 ### CommonParameters
-This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction, and -WarningVariable.
-For more information, see about_CommonParameters (http://go.microsoft.com/fwlink/?LinkID=113216).
+This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction, and -WarningVariable. For more information, see [about_CommonParameters](http://go.microsoft.com/fwlink/?LinkID=113216).
 
 ## INPUTS
 
 ## OUTPUTS
 
 ### Vaporshell.Resource.CloudWatch.Dashboard
-
 ## NOTES
 
 ## RELATED LINKS

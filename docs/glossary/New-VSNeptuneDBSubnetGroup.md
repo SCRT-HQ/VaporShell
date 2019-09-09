@@ -1,18 +1,9 @@
----
-layout: glossary
-title: New-VSNeptuneDBSubnetGroup
-categories: glossary
-label1: Category
-data1: Documentation
-label2: Depth
-data2: Deep
-schema: 2.0.0
----
-
 # New-VSNeptuneDBSubnetGroup
 
 ## SYNOPSIS
-Adds an AWS::Neptune::DBSubnetGroup resource to the template
+Adds an AWS::Neptune::DBSubnetGroup resource to the template.
+The AWS::Neptune::DBSubnetGroup type creates an Amazon Neptune DB subnet group.
+Subnet groups must contain at least two subnets in two different Availability Zones in the same AWS Region.
 
 ## SYNTAX
 
@@ -24,7 +15,18 @@ New-VSNeptuneDBSubnetGroup [-LogicalId] <String> [-DBSubnetGroupName <Object>]
 ```
 
 ## DESCRIPTION
-Adds an AWS::Neptune::DBSubnetGroup resource to the template
+Adds an AWS::Neptune::DBSubnetGroup resource to the template.
+The AWS::Neptune::DBSubnetGroup type creates an Amazon Neptune DB subnet group.
+Subnet groups must contain at least two subnets in two different Availability Zones in the same AWS Region.
+
+## EXAMPLES
+
+### Example 1
+```powershell
+PS C:\> {{ Add example code here }}
+```
+
+{{ Add example description here }}
 
 ## PARAMETERS
 
@@ -46,9 +48,10 @@ Accept wildcard characters: False
 ```
 
 ### -DBSubnetGroupName
-Required: False    
-Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-neptune-dbsubnetgroup.html#cfn-neptune-dbsubnetgroup-dbsubnetgroupname    
-PrimitiveType: String    
+The name of the DB subnet group.
+
+Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-neptune-dbsubnetgroup.html#cfn-neptune-dbsubnetgroup-dbsubnetgroupname
+PrimitiveType: String
 UpdateType: Immutable
 
 ```yaml
@@ -64,9 +67,10 @@ Accept wildcard characters: False
 ```
 
 ### -DBSubnetGroupDescription
-Required: True    
-Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-neptune-dbsubnetgroup.html#cfn-neptune-dbsubnetgroup-dbsubnetgroupdescription    
-PrimitiveType: String    
+Provides the description of the DB subnet group.
+
+Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-neptune-dbsubnetgroup.html#cfn-neptune-dbsubnetgroup-dbsubnetgroupdescription
+PrimitiveType: String
 UpdateType: Mutable
 
 ```yaml
@@ -82,10 +86,11 @@ Accept wildcard characters: False
 ```
 
 ### -SubnetIds
-PrimitiveItemType: String    
-Type: List    
-Required: True    
-Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-neptune-dbsubnetgroup.html#cfn-neptune-dbsubnetgroup-subnetids    
+The Amazon EC2 subnet IDs for the DB subnet group.
+
+PrimitiveItemType: String
+Type: List
+Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-neptune-dbsubnetgroup.html#cfn-neptune-dbsubnetgroup-subnetids
 UpdateType: Mutable
 
 ```yaml
@@ -101,10 +106,11 @@ Accept wildcard characters: False
 ```
 
 ### -Tags
-Type: List    
-Required: False    
-Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-neptune-dbsubnetgroup.html#cfn-neptune-dbsubnetgroup-tags    
-ItemType: Tag    
+The tags that you want to attach to the DB subnet group.
+
+Type: List
+Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-neptune-dbsubnetgroup.html#cfn-neptune-dbsubnetgroup-tags
+ItemType: Tag
 UpdateType: Mutable
 
 ```yaml
@@ -214,15 +220,13 @@ Accept wildcard characters: False
 ```
 
 ### CommonParameters
-This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction, and -WarningVariable.
-For more information, see about_CommonParameters (http://go.microsoft.com/fwlink/?LinkID=113216).
+This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction, and -WarningVariable. For more information, see [about_CommonParameters](http://go.microsoft.com/fwlink/?LinkID=113216).
 
 ## INPUTS
 
 ## OUTPUTS
 
 ### Vaporshell.Resource.Neptune.DBSubnetGroup
-
 ## NOTES
 
 ## RELATED LINKS

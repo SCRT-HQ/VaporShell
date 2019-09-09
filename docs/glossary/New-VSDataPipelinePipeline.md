@@ -1,18 +1,10 @@
----
-layout: glossary
-title: New-VSDataPipelinePipeline
-categories: glossary
-label1: Category
-data1: Documentation
-label2: Depth
-data2: Deep
-schema: 2.0.0
----
-
 # New-VSDataPipelinePipeline
 
 ## SYNOPSIS
-Adds an AWS::DataPipeline::Pipeline resource to the template
+Adds an AWS::DataPipeline::Pipeline resource to the template.
+The AWS::DataPipeline::Pipeline resource specifies a data pipeline that you can use to automate the movement and transformation of data.
+In each pipeline, you define pipeline objects, such as activities, schedules, data nodes, and resources.
+For information about pipeline objects and components that you can use, see Pipeline Object Reference: https://docs.aws.amazon.com/datapipeline/latest/DeveloperGuide/dp-pipeline-objects.html in the *AWS Data Pipeline Developer Guide*.
 
 ## SYNTAX
 
@@ -24,7 +16,35 @@ New-VSDataPipelinePipeline [-LogicalId] <String> [-Activate <Boolean>] [-Descrip
 ```
 
 ## DESCRIPTION
-Adds an AWS::DataPipeline::Pipeline resource to the template
+Adds an AWS::DataPipeline::Pipeline resource to the template.
+The AWS::DataPipeline::Pipeline resource specifies a data pipeline that you can use to automate the movement and transformation of data.
+In each pipeline, you define pipeline objects, such as activities, schedules, data nodes, and resources.
+For information about pipeline objects and components that you can use, see Pipeline Object Reference: https://docs.aws.amazon.com/datapipeline/latest/DeveloperGuide/dp-pipeline-objects.html in the *AWS Data Pipeline Developer Guide*.
+
+The AWS::DataPipeline::Pipeline resource adds tasks, schedules, and preconditions to the specified pipeline.
+You can use PutPipelineDefinition to populate a new pipeline.
+
+PutPipelineDefinition also validates the configuration as it adds it to the pipeline.
+Changes to the pipeline are saved unless one of the following validation errors exist in the pipeline.
+
++ An object is missing a name or identifier field.
+
++ A string or reference field is empty.
+
++ The number of objects in the pipeline exceeds the allowed maximum number of objects.
+
++ The pipeline is in a FINISHED state.
+
+Pipeline object definitions are passed to the PutPipelineDefinition: https://docs.aws.amazon.com/datapipeline/latest/APIReference/API_PutPipelineDefinition.html action and returned by the GetPipelineDefinition: https://docs.aws.amazon.com/datapipeline/latest/APIReference/API_GetPipelineDefinition.html action.
+
+## EXAMPLES
+
+### Example 1
+```powershell
+PS C:\> {{ Add example code here }}
+```
+
+{{ Add example description here }}
 
 ## PARAMETERS
 
@@ -46,9 +66,11 @@ Accept wildcard characters: False
 ```
 
 ### -Activate
-Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-datapipeline-pipeline.html#cfn-datapipeline-pipeline-activate    
-PrimitiveType: Boolean    
-Required: False    
+Indicates whether to validate and start the pipeline or stop an active pipeline.
+By default, the value is set to true.
+
+Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-datapipeline-pipeline.html#cfn-datapipeline-pipeline-activate
+PrimitiveType: Boolean
 UpdateType: Mutable
 
 ```yaml
@@ -64,9 +86,10 @@ Accept wildcard characters: False
 ```
 
 ### -Description
-Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-datapipeline-pipeline.html#cfn-datapipeline-pipeline-description    
-PrimitiveType: String    
-Required: False    
+A description of the pipeline.
+
+Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-datapipeline-pipeline.html#cfn-datapipeline-pipeline-description
+PrimitiveType: String
 UpdateType: Immutable
 
 ```yaml
@@ -82,9 +105,10 @@ Accept wildcard characters: False
 ```
 
 ### -Name
-Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-datapipeline-pipeline.html#cfn-datapipeline-pipeline-name    
-PrimitiveType: String    
-Required: True    
+The name of the pipeline.
+
+Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-datapipeline-pipeline.html#cfn-datapipeline-pipeline-name
+PrimitiveType: String
 UpdateType: Immutable
 
 ```yaml
@@ -100,11 +124,12 @@ Accept wildcard characters: False
 ```
 
 ### -ParameterObjects
-Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-datapipeline-pipeline.html#cfn-datapipeline-pipeline-parameterobjects    
-DuplicatesAllowed: True    
-ItemType: ParameterObject    
-Required: True    
-Type: List    
+The parameter objects used with the pipeline.
+
+Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-datapipeline-pipeline.html#cfn-datapipeline-pipeline-parameterobjects
+DuplicatesAllowed: True
+ItemType: ParameterObject
+Type: List
 UpdateType: Mutable
 
 ```yaml
@@ -120,11 +145,12 @@ Accept wildcard characters: False
 ```
 
 ### -ParameterValues
-Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-datapipeline-pipeline.html#cfn-datapipeline-pipeline-parametervalues    
-DuplicatesAllowed: True    
-ItemType: ParameterValue    
-Required: False    
-Type: List    
+The parameter values used with the pipeline.
+
+Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-datapipeline-pipeline.html#cfn-datapipeline-pipeline-parametervalues
+DuplicatesAllowed: True
+ItemType: ParameterValue
+Type: List
 UpdateType: Mutable
 
 ```yaml
@@ -140,11 +166,15 @@ Accept wildcard characters: False
 ```
 
 ### -PipelineObjects
-Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-datapipeline-pipeline.html#cfn-datapipeline-pipeline-pipelineobjects    
-DuplicatesAllowed: True    
-ItemType: PipelineObject    
-Required: False    
-Type: List    
+The objects that define the pipeline.
+These objects overwrite the existing pipeline definition.
+Not all objects, fields, and values can be updated.
+For information about restrictions, see Editing Your Pipeline: https://docs.aws.amazon.com/datapipeline/latest/DeveloperGuide/dp-manage-pipeline-modify-console.html in the *AWS Data Pipeline Developer Guide*.
+
+Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-datapipeline-pipeline.html#cfn-datapipeline-pipeline-pipelineobjects
+DuplicatesAllowed: True
+ItemType: PipelineObject
+Type: List
 UpdateType: Mutable
 
 ```yaml
@@ -160,11 +190,13 @@ Accept wildcard characters: False
 ```
 
 ### -PipelineTags
-Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-datapipeline-pipeline.html#cfn-datapipeline-pipeline-pipelinetags    
-DuplicatesAllowed: True    
-ItemType: PipelineTag    
-Required: False    
-Type: List    
+A list of arbitrary tags key-value pairs to associate with the pipeline, which you can use to control permissions.
+For more information, see Controlling Access to Pipelines and Resources: https://docs.aws.amazon.com/datapipeline/latest/DeveloperGuide/dp-control-access.html in the *AWS Data Pipeline Developer Guide*.
+
+Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-datapipeline-pipeline.html#cfn-datapipeline-pipeline-pipelinetags
+DuplicatesAllowed: True
+ItemType: PipelineTag
+Type: List
 UpdateType: Mutable
 
 ```yaml
@@ -274,15 +306,13 @@ Accept wildcard characters: False
 ```
 
 ### CommonParameters
-This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction, and -WarningVariable.
-For more information, see about_CommonParameters (http://go.microsoft.com/fwlink/?LinkID=113216).
+This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction, and -WarningVariable. For more information, see [about_CommonParameters](http://go.microsoft.com/fwlink/?LinkID=113216).
 
 ## INPUTS
 
 ## OUTPUTS
 
 ### Vaporshell.Resource.DataPipeline.Pipeline
-
 ## NOTES
 
 ## RELATED LINKS

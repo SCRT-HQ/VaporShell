@@ -1,14 +1,3 @@
----
-layout: glossary
-title: Update-VSStack
-categories: glossary
-label1: Category
-data1: Documentation
-label2: Depth
-data2: Deep
-schema: 2.0.0
----
-
 # Update-VSStack
 
 ## SYNOPSIS
@@ -21,7 +10,7 @@ Updates a Stack.
 Update-VSStack [-Path] <String> [-Capabilities <String[]>] [-ClientRequestToken <String>]
  [-NotificationARNs <String[]>] [-Parameters <Parameter[]>] [-ResourceTypes <String[]>] [-RoleARN <String>]
  [-StackName <String>] [-StackPolicyBody <String>] [-StackPolicyURL <String>]
- [-StackPolicyDuringUpdateBody <String>] [-StackPolicyDuringUpdateURL <String>] [-Tags <String>]
+ [-StackPolicyDuringUpdateBody <String>] [-StackPolicyDuringUpdateURL <String>] [-Tags <Hashtable>]
  [-ProfileName <String>] [-WhatIf] [-Confirm] [<CommonParameters>]
 ```
 
@@ -30,7 +19,7 @@ Update-VSStack [-Path] <String> [-Capabilities <String[]>] [-ClientRequestToken 
 Update-VSStack [-TemplateBody] <String> [-Capabilities <String[]>] [-ClientRequestToken <String>]
  [-NotificationARNs <String[]>] [-Parameters <Parameter[]>] [-ResourceTypes <String[]>] [-RoleARN <String>]
  [-StackName <String>] [-StackPolicyBody <String>] [-StackPolicyURL <String>]
- [-StackPolicyDuringUpdateBody <String>] [-StackPolicyDuringUpdateURL <String>] [-Tags <String>]
+ [-StackPolicyDuringUpdateBody <String>] [-StackPolicyDuringUpdateURL <String>] [-Tags <Hashtable>]
  [-ProfileName <String>] [-WhatIf] [-Confirm] [<CommonParameters>]
 ```
 
@@ -39,7 +28,7 @@ Update-VSStack [-TemplateBody] <String> [-Capabilities <String[]>] [-ClientReque
 Update-VSStack [-TemplateUrl] <String> [-Capabilities <String[]>] [-ClientRequestToken <String>]
  [-NotificationARNs <String[]>] [-Parameters <Parameter[]>] [-ResourceTypes <String[]>] [-RoleARN <String>]
  [-StackName <String>] [-StackPolicyBody <String>] [-StackPolicyURL <String>]
- [-StackPolicyDuringUpdateBody <String>] [-StackPolicyDuringUpdateURL <String>] [-Tags <String>]
+ [-StackPolicyDuringUpdateBody <String>] [-StackPolicyDuringUpdateURL <String>] [-Tags <Hashtable>]
  [-ProfileName <String>] [-WhatIf] [-Confirm] [<CommonParameters>]
 ```
 
@@ -48,12 +37,21 @@ Update-VSStack [-TemplateUrl] <String> [-Capabilities <String[]>] [-ClientReques
 Update-VSStack [-UsePreviousTemplate] [-Capabilities <String[]>] [-ClientRequestToken <String>]
  [-NotificationARNs <String[]>] [-Parameters <Parameter[]>] [-ResourceTypes <String[]>] [-RoleARN <String>]
  [-StackName <String>] [-StackPolicyBody <String>] [-StackPolicyURL <String>]
- [-StackPolicyDuringUpdateBody <String>] [-StackPolicyDuringUpdateURL <String>] [-Tags <String>]
+ [-StackPolicyDuringUpdateBody <String>] [-StackPolicyDuringUpdateURL <String>] [-Tags <Hashtable>]
  [-ProfileName <String>] [-WhatIf] [-Confirm] [<CommonParameters>]
 ```
 
 ## DESCRIPTION
-{{Fill in the Description}}
+{{ Fill in the Description }}
+
+## EXAMPLES
+
+### Example 1
+```powershell
+PS C:\> {{ Add example code here }}
+```
+
+{{ Add example description here }}
 
 ## PARAMETERS
 
@@ -307,14 +305,14 @@ Accept wildcard characters: False
 ```
 
 ### -Tags
-Key-value pairs to associate with this stack.
+A hashtable containing key-value pairs to associate with this stack.
 AWS CloudFormation also propagates these tags to supported resources in the stack.
 You can specify a maximum number of 50 tags.
 If you don't specify this parameter, AWS CloudFormation doesn't modify the stack's tags.
 If you specify an empty value, AWS CloudFormation removes all associated tags.
 
 ```yaml
-Type: String
+Type: Hashtable
 Parameter Sets: (All)
 Aliases:
 
@@ -373,8 +371,7 @@ Accept wildcard characters: False
 ```
 
 ### CommonParameters
-This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction, and -WarningVariable.
-For more information, see about_CommonParameters (http://go.microsoft.com/fwlink/?LinkID=113216).
+This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction, and -WarningVariable. For more information, see [about_CommonParameters](http://go.microsoft.com/fwlink/?LinkID=113216).
 
 ## INPUTS
 

@@ -1,18 +1,8 @@
----
-layout: glossary
-title: New-VSSESReceiptRuleSet
-categories: glossary
-label1: Category
-data1: Documentation
-label2: Depth
-data2: Deep
-schema: 2.0.0
----
-
 # New-VSSESReceiptRuleSet
 
 ## SYNOPSIS
-Adds an AWS::SES::ReceiptRuleSet resource to the template
+Adds an AWS::SES::ReceiptRuleSet resource to the template.
+Specifies an empty receipt rule set.
 
 ## SYNTAX
 
@@ -23,7 +13,21 @@ New-VSSESReceiptRuleSet [-LogicalId] <String> [-RuleSetName <Object>] [-Deletion
 ```
 
 ## DESCRIPTION
-Adds an AWS::SES::ReceiptRuleSet resource to the template
+Adds an AWS::SES::ReceiptRuleSet resource to the template.
+Specifies an empty receipt rule set.
+
+For information about setting up receipt rule sets, see the Amazon SES Developer Guide: https://docs.aws.amazon.com/ses/latest/DeveloperGuide/receiving-email-receipt-rule-set.html.
+
+You can execute this operation no more than once per second.
+
+## EXAMPLES
+
+### Example 1
+```powershell
+PS C:\> {{ Add example code here }}
+```
+
+{{ Add example description here }}
 
 ## PARAMETERS
 
@@ -45,9 +49,10 @@ Accept wildcard characters: False
 ```
 
 ### -RuleSetName
-Required: False    
-Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ses-receiptruleset.html#cfn-ses-receiptruleset-rulesetname    
-PrimitiveType: String    
+The name of the receipt rule set that you want to reorder.
+
+Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ses-receiptruleset.html#cfn-ses-receiptruleset-rulesetname
+PrimitiveType: String
 UpdateType: Immutable
 
 ```yaml
@@ -157,15 +162,13 @@ Accept wildcard characters: False
 ```
 
 ### CommonParameters
-This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction, and -WarningVariable.
-For more information, see about_CommonParameters (http://go.microsoft.com/fwlink/?LinkID=113216).
+This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction, and -WarningVariable. For more information, see [about_CommonParameters](http://go.microsoft.com/fwlink/?LinkID=113216).
 
 ## INPUTS
 
 ## OUTPUTS
 
 ### Vaporshell.Resource.SES.ReceiptRuleSet
-
 ## NOTES
 
 ## RELATED LINKS

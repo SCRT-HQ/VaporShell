@@ -1,18 +1,9 @@
----
-layout: glossary
-title: New-VSEC2NetworkAclEntry
-categories: glossary
-label1: Category
-data1: Documentation
-label2: Depth
-data2: Deep
-schema: 2.0.0
----
-
 # New-VSEC2NetworkAclEntry
 
 ## SYNOPSIS
-Adds an AWS::EC2::NetworkAclEntry resource to the template
+Adds an AWS::EC2::NetworkAclEntry resource to the template.
+Specifies an entry, known as a rule, in a network ACL with a rule number you specify.
+Each network ACL has a set of numbered ingress rules and a separate set of numbered egress rules.
 
 ## SYNTAX
 
@@ -24,7 +15,18 @@ New-VSEC2NetworkAclEntry [-LogicalId] <String> -CidrBlock <Object> [-Egress <Boo
 ```
 
 ## DESCRIPTION
-Adds an AWS::EC2::NetworkAclEntry resource to the template
+Adds an AWS::EC2::NetworkAclEntry resource to the template.
+Specifies an entry, known as a rule, in a network ACL with a rule number you specify.
+Each network ACL has a set of numbered ingress rules and a separate set of numbered egress rules.
+
+## EXAMPLES
+
+### Example 1
+```powershell
+PS C:\> {{ Add example code here }}
+```
+
+{{ Add example description here }}
 
 ## PARAMETERS
 
@@ -46,9 +48,11 @@ Accept wildcard characters: False
 ```
 
 ### -CidrBlock
-Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ec2-network-acl-entry.html#cfn-ec2-networkaclentry-cidrblock    
-PrimitiveType: String    
-Required: True    
+The IPv4 CIDR range to allow or deny, in CIDR notation for example, 172.16.0.0/24.
+Requirement is conditional: You must specify the CidrBlock or Ipv6CidrBlock property.
+
+Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ec2-network-acl-entry.html#cfn-ec2-networkaclentry-cidrblock
+PrimitiveType: String
 UpdateType: Mutable
 
 ```yaml
@@ -64,9 +68,11 @@ Accept wildcard characters: False
 ```
 
 ### -Egress
-Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ec2-network-acl-entry.html#cfn-ec2-networkaclentry-egress    
-PrimitiveType: Boolean    
-Required: False    
+Whether this rule applies to egress traffic from the subnet true or ingress traffic to the subnet false.
+By default, AWS CloudFormation specifies false.
+
+Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ec2-network-acl-entry.html#cfn-ec2-networkaclentry-egress
+PrimitiveType: Boolean
 UpdateType: Immutable
 
 ```yaml
@@ -82,9 +88,11 @@ Accept wildcard characters: False
 ```
 
 ### -Icmp
-Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ec2-network-acl-entry.html#cfn-ec2-networkaclentry-icmp    
-Required: False    
-Type: Icmp    
+The Internet Control Message Protocol ICMP code and type.
+Requirement is conditional: Required if specifying 1 ICMP for the protocol parameter.
+
+Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ec2-network-acl-entry.html#cfn-ec2-networkaclentry-icmp
+Type: Icmp
 UpdateType: Mutable
 
 ```yaml
@@ -100,9 +108,11 @@ Accept wildcard characters: False
 ```
 
 ### -Ipv6CidrBlock
-Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ec2-network-acl-entry.html#cfn-ec2-networkaclentry-ipv6cidrblock    
-PrimitiveType: String    
-Required: False    
+The IPv6 network range to allow or deny, in CIDR notation.
+Requirement is conditional: You must specify the CidrBlock or Ipv6CidrBlock property.
+
+Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ec2-network-acl-entry.html#cfn-ec2-networkaclentry-ipv6cidrblock
+PrimitiveType: String
 UpdateType: Mutable
 
 ```yaml
@@ -118,9 +128,10 @@ Accept wildcard characters: False
 ```
 
 ### -NetworkAclId
-Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ec2-network-acl-entry.html#cfn-ec2-networkaclentry-networkaclid    
-PrimitiveType: String    
-Required: True    
+The ID of the ACL for the entry.
+
+Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ec2-network-acl-entry.html#cfn-ec2-networkaclentry-networkaclid
+PrimitiveType: String
 UpdateType: Immutable
 
 ```yaml
@@ -136,9 +147,11 @@ Accept wildcard characters: False
 ```
 
 ### -PortRange
-Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ec2-network-acl-entry.html#cfn-ec2-networkaclentry-portrange    
-Required: False    
-Type: PortRange    
+The range of port numbers for the UDP/TCP protocol.
+Conditional required if specifying 6 TCP or 17 UDP for the protocol parameter.
+
+Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ec2-network-acl-entry.html#cfn-ec2-networkaclentry-portrange
+Type: PortRange
 UpdateType: Mutable
 
 ```yaml
@@ -154,9 +167,13 @@ Accept wildcard characters: False
 ```
 
 ### -Protocol
-Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ec2-network-acl-entry.html#cfn-ec2-networkaclentry-protocol    
-PrimitiveType: Integer    
-Required: True    
+The IP protocol that the rule applies to.
+You must specify -1 or a protocol number.
+You can specify -1 for all protocols.
+If you specify -1, all ports are opened and the PortRange property is ignored.
+
+Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ec2-network-acl-entry.html#cfn-ec2-networkaclentry-protocol
+PrimitiveType: Integer
 UpdateType: Mutable
 
 ```yaml
@@ -172,9 +189,10 @@ Accept wildcard characters: False
 ```
 
 ### -RuleAction
-Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ec2-network-acl-entry.html#cfn-ec2-networkaclentry-ruleaction    
-PrimitiveType: String    
-Required: True    
+Whether to allow or deny traffic that matches the rule; valid values are "allow" or "deny".
+
+Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ec2-network-acl-entry.html#cfn-ec2-networkaclentry-ruleaction
+PrimitiveType: String
 UpdateType: Mutable
 
 ```yaml
@@ -190,9 +208,12 @@ Accept wildcard characters: False
 ```
 
 ### -RuleNumber
-Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ec2-network-acl-entry.html#cfn-ec2-networkaclentry-rulenumber    
-PrimitiveType: Integer    
-Required: True    
+Rule number to assign to the entry, such as 100.
+ACL entries are processed in ascending order by rule number.
+Entries can't use the same rule number unless one is an egress rule and the other is an ingress rule.
+
+Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ec2-network-acl-entry.html#cfn-ec2-networkaclentry-rulenumber
+PrimitiveType: Integer
 UpdateType: Immutable
 
 ```yaml
@@ -302,15 +323,13 @@ Accept wildcard characters: False
 ```
 
 ### CommonParameters
-This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction, and -WarningVariable.
-For more information, see about_CommonParameters (http://go.microsoft.com/fwlink/?LinkID=113216).
+This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction, and -WarningVariable. For more information, see [about_CommonParameters](http://go.microsoft.com/fwlink/?LinkID=113216).
 
 ## INPUTS
 
 ## OUTPUTS
 
 ### Vaporshell.Resource.EC2.NetworkAclEntry
-
 ## NOTES
 
 ## RELATED LINKS

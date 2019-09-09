@@ -1,14 +1,3 @@
----
-layout: glossary
-title: Add-UpdatePolicy
-categories: glossary
-label1: Category
-data1: Documentation
-label2: Depth
-data2: Deep
-schema: 2.0.0
----
-
 # Add-UpdatePolicy
 
 ## SYNOPSIS
@@ -80,6 +69,66 @@ AWS CloudFormation invokes one of three update policies depending on the type of
     * Update an Auto Scaling group that contains instances that don't match the current LaunchConfiguration.
 * If both the AutoScalingReplacingUpdate and AutoScalingRollingUpdate policies are specified, setting the WillReplace property to true gives AutoScalingReplacingUpdate precedence.
 * The AutoScalingScheduledAction policy applies when you update a stack that includes an Auto Scaling group with an associated scheduled action.
+
+## EXAMPLES
+
+### EXAMPLE 1
+```
+$templateInit = Initialize-Vaporshell -Description "Testing"
+```
+
+$templateInit.AddResource(
+    (
+        New-VaporResource -LogicalId "AutoScalingGroup" -Type "AWS::AutoScaling::AutoScalingGroup" -Properties (\[PSCustomObject\]\[Ordered\]@{
+                "AvailabilityZones"       = (Add-FnGetAZs -Region "$_AWSRegion")
+                "LaunchConfigurationName" = (Add-FnRef -Ref "LaunchConfig")
+                "DesiredCapacity"         = "3"
+                "MinSize"                 = "1"
+                "MaxSize"                 = "4"
+            }) -CreationPolicy (Add-CreationPolicy -Count 3 -Timeout "PT15M") -UpdatePolicy (Add-UpdatePolicy -IgnoreUnmodifiedGroupSizeProperties True -MinInstancesInService 1 -MaxBatchSize 2 -WaitOnResourceSignals True -PauseTime "PT10M")
+    )
+)
+
+When the template is exported, this will convert to: 
+\`\`\`json
+{
+"AWSTemplateFormatVersion": "2010-09-09",
+"Description": "Testing",
+"Resources": {
+"AutoScalingGroup": {
+    "Type": "AWS::AutoScaling::AutoScalingGroup",
+    "Properties": {
+        "AvailabilityZones": {
+            "Fn::GetAZs": "AWS::Region"
+        },
+        "LaunchConfigurationName": {
+            "Ref": "LaunchConfig"
+        },
+        "DesiredCapacity": "3",
+        "MinSize": "1",
+        "MaxSize": "4"
+    },
+    "CreationPolicy": {
+        "ResourceSignal": {
+            "Count": "3",
+            "Timeout": "PT15M"
+        }
+    },
+    "UpdatePolicy": {
+        "AutoScalingScheduledAction": {
+            "IgnoreUnmodifiedGroupSizeProperties": "true"
+        },
+        "AutoScalingRollingUpdate": {
+            "MinInstancesInService": "1",
+            "MaxBatchSize": "2",
+            "WaitOnResourceSignals": "true",
+            "PauseTime": "PT10M"
+        }
+    }
+}
+}
+}
+\`\`\`
 
 ## PARAMETERS
 
@@ -183,7 +232,7 @@ Accept wildcard characters: False
 ```
 
 ### -MinSuccessfulInstancesPercent
-{{Fill MinSuccessfulInstancesPercent Description}}
+{{ Fill MinSuccessfulInstancesPercent Description }}
 
 ```yaml
 Type: Int32
@@ -243,7 +292,7 @@ Accept wildcard characters: False
 ```
 
 ### -WaitOnResourceSignals
-{{Fill WaitOnResourceSignals Description}}
+{{ Fill WaitOnResourceSignals Description }}
 
 ```yaml
 Type: Boolean
@@ -297,15 +346,13 @@ Accept wildcard characters: False
 ```
 
 ### CommonParameters
-This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction, and -WarningVariable.
-For more information, see about_CommonParameters (http://go.microsoft.com/fwlink/?LinkID=113216).
+This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction, and -WarningVariable. For more information, see [about_CommonParameters](http://go.microsoft.com/fwlink/?LinkID=113216).
 
 ## INPUTS
 
 ## OUTPUTS
 
 ### Vaporshell.Resource.UpdatePolicy
-
 ## NOTES
 
 ## RELATED LINKS

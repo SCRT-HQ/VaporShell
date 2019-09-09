@@ -1,29 +1,33 @@
----
-layout: glossary
-title: New-VSEC2Host
-categories: glossary
-label1: Category
-data1: Documentation
-label2: Depth
-data2: Deep
-schema: 2.0.0
----
-
 # New-VSEC2Host
 
 ## SYNOPSIS
-Adds an AWS::EC2::Host resource to the template
+Adds an AWS::EC2::Host resource to the template.
+Allocates a fully dedicated physical server for launching EC2 instances.
+Because the host is fully dedicated for your use, it can help you address compliance requirements and reduce costs by allowing you to use your existing server-bound software licenses.
+For more information, see  Dedicated Hosts: https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/dedicated-hosts-overview.html in the *Amazon EC2 User Guide for Linux Instances*.
 
 ## SYNTAX
 
 ```
-New-VSEC2Host [-LogicalId] <String> [-AutoPlacement <Object>] -AvailabilityZone <Object> -InstanceType <Object>
- [-DeletionPolicy <String>] [-DependsOn <String[]>] [-Metadata <Object>] [-UpdatePolicy <Object>]
- [-Condition <Object>] [<CommonParameters>]
+New-VSEC2Host [-LogicalId] <String> [-AutoPlacement <Object>] -AvailabilityZone <Object>
+ [-HostRecovery <Object>] -InstanceType <Object> [-DeletionPolicy <String>] [-DependsOn <String[]>]
+ [-Metadata <Object>] [-UpdatePolicy <Object>] [-Condition <Object>] [<CommonParameters>]
 ```
 
 ## DESCRIPTION
-Adds an AWS::EC2::Host resource to the template
+Adds an AWS::EC2::Host resource to the template.
+Allocates a fully dedicated physical server for launching EC2 instances.
+Because the host is fully dedicated for your use, it can help you address compliance requirements and reduce costs by allowing you to use your existing server-bound software licenses.
+For more information, see  Dedicated Hosts: https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/dedicated-hosts-overview.html in the *Amazon EC2 User Guide for Linux Instances*.
+
+## EXAMPLES
+
+### Example 1
+```powershell
+PS C:\> {{ Add example code here }}
+```
+
+{{ Add example description here }}
 
 ## PARAMETERS
 
@@ -45,9 +49,12 @@ Accept wildcard characters: False
 ```
 
 ### -AutoPlacement
-Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ec2-host.html#cfn-ec2-host-autoplacement    
-PrimitiveType: String    
-Required: False    
+Indicates whether the host accepts any untargeted instance launches that match its instance type configuration, or if it only accepts Host tenancy instance launches that specify its unique host ID.
+For more information, see  Understanding Instance Placement and Host Affinity: https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/how-dedicated-hosts-work.html#dedicated-hosts-understanding in the *Amazon EC2 User Guide for Linux Instances*.
+Default: on
+
+Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ec2-host.html#cfn-ec2-host-autoplacement
+PrimitiveType: String
 UpdateType: Mutable
 
 ```yaml
@@ -63,9 +70,10 @@ Accept wildcard characters: False
 ```
 
 ### -AvailabilityZone
-Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ec2-host.html#cfn-ec2-host-availabilityzone    
-PrimitiveType: String    
-Required: True    
+The Availability Zone in which to allocate the Dedicated Host.
+
+Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ec2-host.html#cfn-ec2-host-availabilityzone
+PrimitiveType: String
 UpdateType: Immutable
 
 ```yaml
@@ -80,10 +88,34 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
+### -HostRecovery
+Indicates whether to enable or disable host recovery for the Dedicated Host.
+Host recovery is disabled by default.
+For more information, see  Host Recovery: https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/dedicated-hosts-recovery.html in the *Amazon Elastic Compute Cloud User Guide*.
+Default: off
+
+Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ec2-host.html#cfn-ec2-host-hostrecovery
+PrimitiveType: String
+UpdateType: Mutable
+
+```yaml
+Type: Object
+Parameter Sets: (All)
+Aliases:
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
 ### -InstanceType
-Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ec2-host.html#cfn-ec2-host-instancetype    
-PrimitiveType: String    
-Required: True    
+Specifies the instance type for which to configure your Dedicated Hosts.
+When you specify the instance type, that is the only instance type that you can launch onto that host.
+
+Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ec2-host.html#cfn-ec2-host-instancetype
+PrimitiveType: String
 UpdateType: Immutable
 
 ```yaml
@@ -193,15 +225,13 @@ Accept wildcard characters: False
 ```
 
 ### CommonParameters
-This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction, and -WarningVariable.
-For more information, see about_CommonParameters (http://go.microsoft.com/fwlink/?LinkID=113216).
+This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction, and -WarningVariable. For more information, see [about_CommonParameters](http://go.microsoft.com/fwlink/?LinkID=113216).
 
 ## INPUTS
 
 ## OUTPUTS
 
 ### Vaporshell.Resource.EC2.Host
-
 ## NOTES
 
 ## RELATED LINKS

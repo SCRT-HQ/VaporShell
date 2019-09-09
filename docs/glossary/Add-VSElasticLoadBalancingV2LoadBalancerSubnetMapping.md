@@ -1,18 +1,8 @@
----
-layout: glossary
-title: Add-VSElasticLoadBalancingV2LoadBalancerSubnetMapping
-categories: glossary
-label1: Category
-data1: Documentation
-label2: Depth
-data2: Deep
-schema: 2.0.0
----
-
 # Add-VSElasticLoadBalancingV2LoadBalancerSubnetMapping
 
 ## SYNOPSIS
-Adds an AWS::ElasticLoadBalancingV2::LoadBalancer.SubnetMapping resource property to the template
+Adds an AWS::ElasticLoadBalancingV2::LoadBalancer.SubnetMapping resource property to the template.
+Specifies a subnet to attach to an Application Load Balancer or a Network Load Balancer.
 
 ## SYNTAX
 
@@ -22,14 +12,25 @@ Add-VSElasticLoadBalancingV2LoadBalancerSubnetMapping [-AllocationId] <Object> [
 ```
 
 ## DESCRIPTION
-Adds an AWS::ElasticLoadBalancingV2::LoadBalancer.SubnetMapping resource property to the template
+Adds an AWS::ElasticLoadBalancingV2::LoadBalancer.SubnetMapping resource property to the template.
+Specifies a subnet to attach to an Application Load Balancer or a Network Load Balancer.
+
+## EXAMPLES
+
+### Example 1
+```powershell
+PS C:\> {{ Add example code here }}
+```
+
+{{ Add example description here }}
 
 ## PARAMETERS
 
 ### -AllocationId
-Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-elasticloadbalancingv2-loadbalancer-subnetmapping.html#cfn-elasticloadbalancingv2-loadbalancer-subnetmapping-allocationid    
-PrimitiveType: String    
-Required: True    
+Network Load Balancers\] The allocation ID of the Elastic IP address.
+
+Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-elasticloadbalancingv2-loadbalancer-subnetmapping.html#cfn-elasticloadbalancingv2-loadbalancer-subnetmapping-allocationid
+PrimitiveType: String
 UpdateType: Mutable
 
 ```yaml
@@ -45,9 +46,10 @@ Accept wildcard characters: False
 ```
 
 ### -SubnetId
-Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-elasticloadbalancingv2-loadbalancer-subnetmapping.html#cfn-elasticloadbalancingv2-loadbalancer-subnetmapping-subnetid    
-PrimitiveType: String    
-Required: True    
+The ID of the subnet.
+
+Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-elasticloadbalancingv2-loadbalancer-subnetmapping.html#cfn-elasticloadbalancingv2-loadbalancer-subnetmapping-subnetid
+PrimitiveType: String
 UpdateType: Mutable
 
 ```yaml
@@ -63,15 +65,13 @@ Accept wildcard characters: False
 ```
 
 ### CommonParameters
-This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction, and -WarningVariable.
-For more information, see about_CommonParameters (http://go.microsoft.com/fwlink/?LinkID=113216).
+This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction, and -WarningVariable. For more information, see [about_CommonParameters](http://go.microsoft.com/fwlink/?LinkID=113216).
 
 ## INPUTS
 
 ## OUTPUTS
 
 ### Vaporshell.Resource.ElasticLoadBalancingV2.LoadBalancer.SubnetMapping
-
 ## NOTES
 
 ## RELATED LINKS

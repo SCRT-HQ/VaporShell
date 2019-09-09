@@ -1,18 +1,10 @@
----
-layout: glossary
-title: Add-VSBatchJobQueueComputeEnvironmentOrder
-categories: glossary
-label1: Category
-data1: Documentation
-label2: Depth
-data2: Deep
-schema: 2.0.0
----
-
 # Add-VSBatchJobQueueComputeEnvironmentOrder
 
 ## SYNOPSIS
-Adds an AWS::Batch::JobQueue.ComputeEnvironmentOrder resource property to the template
+Adds an AWS::Batch::JobQueue.ComputeEnvironmentOrder resource property to the template.
+The order in which compute environments are tried for job placement within a queue.
+Compute environments are tried in ascending order.
+For example, if two compute environments are associated with a job queue, the compute environment with a lower order integer value is tried for job placement first.
 
 ## SYNTAX
 
@@ -21,14 +13,27 @@ Add-VSBatchJobQueueComputeEnvironmentOrder [-ComputeEnvironment] <Object> [-Orde
 ```
 
 ## DESCRIPTION
-Adds an AWS::Batch::JobQueue.ComputeEnvironmentOrder resource property to the template
+Adds an AWS::Batch::JobQueue.ComputeEnvironmentOrder resource property to the template.
+The order in which compute environments are tried for job placement within a queue.
+Compute environments are tried in ascending order.
+For example, if two compute environments are associated with a job queue, the compute environment with a lower order integer value is tried for job placement first.
+
+## EXAMPLES
+
+### Example 1
+```powershell
+PS C:\> {{ Add example code here }}
+```
+
+{{ Add example description here }}
 
 ## PARAMETERS
 
 ### -ComputeEnvironment
-Required: True    
-Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-batch-jobqueue-computeenvironmentorder.html#cfn-batch-jobqueue-computeenvironmentorder-computeenvironment    
-PrimitiveType: String    
+The Amazon Resource Name ARN of the compute environment.
+
+Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-batch-jobqueue-computeenvironmentorder.html#cfn-batch-jobqueue-computeenvironmentorder-computeenvironment
+PrimitiveType: String
 UpdateType: Mutable
 
 ```yaml
@@ -44,9 +49,10 @@ Accept wildcard characters: False
 ```
 
 ### -Order
-Required: True    
-Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-batch-jobqueue-computeenvironmentorder.html#cfn-batch-jobqueue-computeenvironmentorder-order    
-PrimitiveType: Integer    
+The order of the compute environment.
+
+Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-batch-jobqueue-computeenvironmentorder.html#cfn-batch-jobqueue-computeenvironmentorder-order
+PrimitiveType: Integer
 UpdateType: Mutable
 
 ```yaml
@@ -62,15 +68,13 @@ Accept wildcard characters: False
 ```
 
 ### CommonParameters
-This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction, and -WarningVariable.
-For more information, see about_CommonParameters (http://go.microsoft.com/fwlink/?LinkID=113216).
+This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction, and -WarningVariable. For more information, see [about_CommonParameters](http://go.microsoft.com/fwlink/?LinkID=113216).
 
 ## INPUTS
 
 ## OUTPUTS
 
 ### Vaporshell.Resource.Batch.JobQueue.ComputeEnvironmentOrder
-
 ## NOTES
 
 ## RELATED LINKS

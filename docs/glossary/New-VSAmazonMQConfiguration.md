@@ -1,29 +1,32 @@
----
-layout: glossary
-title: New-VSAmazonMQConfiguration
-categories: glossary
-label1: Category
-data1: Documentation
-label2: Depth
-data2: Deep
-schema: 2.0.0
----
-
 # New-VSAmazonMQConfiguration
 
 ## SYNOPSIS
-Adds an AWS::AmazonMQ::Configuration resource to the template
+Adds an AWS::AmazonMQ::Configuration resource to the template.
+Creates a new configuration for the specified configuration name.
+Amazon MQ uses the default configuration (the engine type and version.
 
 ## SYNTAX
 
 ```
 New-VSAmazonMQConfiguration [-LogicalId] <String> -EngineVersion <Object> [-Description <Object>]
- -EngineType <Object> -Data <Object> -Name <Object> [-DeletionPolicy <String>] [-DependsOn <String[]>]
- [-Metadata <Object>] [-UpdatePolicy <Object>] [-Condition <Object>] [<CommonParameters>]
+ -EngineType <Object> -Data <Object> [-Tags <Object>] -Name <Object> [-DeletionPolicy <String>]
+ [-DependsOn <String[]>] [-Metadata <Object>] [-UpdatePolicy <Object>] [-Condition <Object>]
+ [<CommonParameters>]
 ```
 
 ## DESCRIPTION
-Adds an AWS::AmazonMQ::Configuration resource to the template
+Adds an AWS::AmazonMQ::Configuration resource to the template.
+Creates a new configuration for the specified configuration name.
+Amazon MQ uses the default configuration (the engine type and version.
+
+## EXAMPLES
+
+### Example 1
+```powershell
+PS C:\> {{ Add example code here }}
+```
+
+{{ Add example description here }}
 
 ## PARAMETERS
 
@@ -45,9 +48,11 @@ Accept wildcard characters: False
 ```
 
 ### -EngineVersion
-Required: True    
-Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-amazonmq-configuration.html#cfn-amazonmq-configuration-engineversion    
-PrimitiveType: String    
+The version of the broker engine.
+For a list of supported engine versions, see https://docs.aws.amazon.com/amazon-mq/latest/developer-guide/broker-engine.html
+
+Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-amazonmq-configuration.html#cfn-amazonmq-configuration-engineversion
+PrimitiveType: String
 UpdateType: Immutable
 
 ```yaml
@@ -63,9 +68,10 @@ Accept wildcard characters: False
 ```
 
 ### -Description
-Required: False    
-Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-amazonmq-configuration.html#cfn-amazonmq-configuration-description    
-PrimitiveType: String    
+The description of the configuration.
+
+Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-amazonmq-configuration.html#cfn-amazonmq-configuration-description
+PrimitiveType: String
 UpdateType: Mutable
 
 ```yaml
@@ -81,9 +87,11 @@ Accept wildcard characters: False
 ```
 
 ### -EngineType
-Required: True    
-Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-amazonmq-configuration.html#cfn-amazonmq-configuration-enginetype    
-PrimitiveType: String    
+The type of broker engine.
+Note: Currently, Amazon MQ supports only ACTIVEMQ.
+
+Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-amazonmq-configuration.html#cfn-amazonmq-configuration-enginetype
+PrimitiveType: String
 UpdateType: Immutable
 
 ```yaml
@@ -99,9 +107,10 @@ Accept wildcard characters: False
 ```
 
 ### -Data
-Required: True    
-Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-amazonmq-configuration.html#cfn-amazonmq-configuration-data    
-PrimitiveType: String    
+The base64-encoded XML configuration.
+
+Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-amazonmq-configuration.html#cfn-amazonmq-configuration-data
+PrimitiveType: String
 UpdateType: Mutable
 
 ```yaml
@@ -116,10 +125,34 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
+### -Tags
+Create tags when creating the configuration.
+
+Type: List
+Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-amazonmq-configuration.html#cfn-amazonmq-configuration-tags
+ItemType: TagsEntry
+UpdateType: Mutable
+
+```yaml
+Type: Object
+Parameter Sets: (All)
+Aliases:
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
 ### -Name
-Required: True    
-Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-amazonmq-configuration.html#cfn-amazonmq-configuration-name    
-PrimitiveType: String    
+The name of the configuration.
+This value can contain only alphanumeric characters, dashes, periods, underscores, and tildes - .
+_ ~.
+This value must be 1-150 characters long.
+
+Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-amazonmq-configuration.html#cfn-amazonmq-configuration-name
+PrimitiveType: String
 UpdateType: Immutable
 
 ```yaml
@@ -229,15 +262,13 @@ Accept wildcard characters: False
 ```
 
 ### CommonParameters
-This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction, and -WarningVariable.
-For more information, see about_CommonParameters (http://go.microsoft.com/fwlink/?LinkID=113216).
+This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction, and -WarningVariable. For more information, see [about_CommonParameters](http://go.microsoft.com/fwlink/?LinkID=113216).
 
 ## INPUTS
 
 ## OUTPUTS
 
 ### Vaporshell.Resource.AmazonMQ.Configuration
-
 ## NOTES
 
 ## RELATED LINKS

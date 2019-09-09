@@ -1,18 +1,8 @@
----
-layout: glossary
-title: Add-VSCognitoUserPoolSchemaAttribute
-categories: glossary
-label1: Category
-data1: Documentation
-label2: Depth
-data2: Deep
-schema: 2.0.0
----
-
 # Add-VSCognitoUserPoolSchemaAttribute
 
 ## SYNOPSIS
-Adds an AWS::Cognito::UserPool.SchemaAttribute resource property to the template
+Adds an AWS::Cognito::UserPool.SchemaAttribute resource property to the template.
+SchemaAttribute is a property of the AWS::Cognito::UserPool: https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-cognito-userpool.html resource that defines the schema attributes of an Amazon Cognito User Pool.
 
 ## SYNTAX
 
@@ -23,14 +13,25 @@ Add-VSCognitoUserPoolSchemaAttribute [[-DeveloperOnlyAttribute] <Boolean>] [[-Mu
 ```
 
 ## DESCRIPTION
-Adds an AWS::Cognito::UserPool.SchemaAttribute resource property to the template
+Adds an AWS::Cognito::UserPool.SchemaAttribute resource property to the template.
+SchemaAttribute is a property of the AWS::Cognito::UserPool: https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-cognito-userpool.html resource that defines the schema attributes of an Amazon Cognito User Pool.
+
+## EXAMPLES
+
+### Example 1
+```powershell
+PS C:\> {{ Add example code here }}
+```
+
+{{ Add example description here }}
 
 ## PARAMETERS
 
 ### -DeveloperOnlyAttribute
-Required: False    
-Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-cognito-userpool-schemaattribute.html#cfn-cognito-userpool-schemaattribute-developeronlyattribute    
-PrimitiveType: Boolean    
+Specifies whether the attribute type is developer only.
+
+Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-cognito-userpool-schemaattribute.html#cfn-cognito-userpool-schemaattribute-developeronlyattribute
+PrimitiveType: Boolean
 UpdateType: Mutable
 
 ```yaml
@@ -46,9 +47,14 @@ Accept wildcard characters: False
 ```
 
 ### -Mutable
-Required: False    
-Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-cognito-userpool-schemaattribute.html#cfn-cognito-userpool-schemaattribute-mutable    
-PrimitiveType: Boolean    
+Specifies whether the value of the attribute can be changed.
+For any user pool attribute that's mapped to an identity provider attribute, you must set this parameter to true.
+Amazon Cognito updates mapped attributes when users sign in to your application through an identity provider.
+If an attribute is immutable, Amazon Cognito throws an error when it attempts to update the attribute.
+For more information, see Specifying Identity Provider Attribute Mappings for Your User Pool: https://docs.aws.amazon.com/cognito/latest/developerguide/cognito-user-pools-specifying-attribute-mapping.html.
+
+Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-cognito-userpool-schemaattribute.html#cfn-cognito-userpool-schemaattribute-mutable
+PrimitiveType: Boolean
 UpdateType: Mutable
 
 ```yaml
@@ -64,9 +70,10 @@ Accept wildcard characters: False
 ```
 
 ### -AttributeDataType
-Required: False    
-Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-cognito-userpool-schemaattribute.html#cfn-cognito-userpool-schemaattribute-attributedatatype    
-PrimitiveType: String    
+The attribute data type.
+
+Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-cognito-userpool-schemaattribute.html#cfn-cognito-userpool-schemaattribute-attributedatatype
+PrimitiveType: String
 UpdateType: Mutable
 
 ```yaml
@@ -82,9 +89,10 @@ Accept wildcard characters: False
 ```
 
 ### -StringAttributeConstraints
-Type: StringAttributeConstraints    
-Required: False    
-Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-cognito-userpool-schemaattribute.html#cfn-cognito-userpool-schemaattribute-stringattributeconstraints    
+Specifies the constraints for an attribute of the string type.
+
+Type: StringAttributeConstraints
+Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-cognito-userpool-schemaattribute.html#cfn-cognito-userpool-schemaattribute-stringattributeconstraints
 UpdateType: Mutable
 
 ```yaml
@@ -100,9 +108,11 @@ Accept wildcard characters: False
 ```
 
 ### -Required
-Required: False    
-Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-cognito-userpool-schemaattribute.html#cfn-cognito-userpool-schemaattribute-required    
-PrimitiveType: Boolean    
+Specifies whether a user pool attribute is required.
+If the attribute is required and the user does not provide a value, registration or sign-in will fail.
+
+Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-cognito-userpool-schemaattribute.html#cfn-cognito-userpool-schemaattribute-required
+PrimitiveType: Boolean
 UpdateType: Mutable
 
 ```yaml
@@ -118,9 +128,10 @@ Accept wildcard characters: False
 ```
 
 ### -NumberAttributeConstraints
-Type: NumberAttributeConstraints    
-Required: False    
-Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-cognito-userpool-schemaattribute.html#cfn-cognito-userpool-schemaattribute-numberattributeconstraints    
+Specifies the constraints for an attribute of the number type.
+
+Type: NumberAttributeConstraints
+Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-cognito-userpool-schemaattribute.html#cfn-cognito-userpool-schemaattribute-numberattributeconstraints
 UpdateType: Mutable
 
 ```yaml
@@ -136,9 +147,10 @@ Accept wildcard characters: False
 ```
 
 ### -Name
-Required: False    
-Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-cognito-userpool-schemaattribute.html#cfn-cognito-userpool-schemaattribute-name    
-PrimitiveType: String    
+A schema attribute of the name type.
+
+Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-cognito-userpool-schemaattribute.html#cfn-cognito-userpool-schemaattribute-name
+PrimitiveType: String
 UpdateType: Mutable
 
 ```yaml
@@ -154,15 +166,13 @@ Accept wildcard characters: False
 ```
 
 ### CommonParameters
-This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction, and -WarningVariable.
-For more information, see about_CommonParameters (http://go.microsoft.com/fwlink/?LinkID=113216).
+This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction, and -WarningVariable. For more information, see [about_CommonParameters](http://go.microsoft.com/fwlink/?LinkID=113216).
 
 ## INPUTS
 
 ## OUTPUTS
 
 ### Vaporshell.Resource.Cognito.UserPool.SchemaAttribute
-
 ## NOTES
 
 ## RELATED LINKS

@@ -1,18 +1,8 @@
----
-layout: glossary
-title: Add-VSOpsWorksLayerShutdownEventConfiguration
-categories: glossary
-label1: Category
-data1: Documentation
-label2: Depth
-data2: Deep
-schema: 2.0.0
----
-
 # Add-VSOpsWorksLayerShutdownEventConfiguration
 
 ## SYNOPSIS
-Adds an AWS::OpsWorks::Layer.ShutdownEventConfiguration resource property to the template
+Adds an AWS::OpsWorks::Layer.ShutdownEventConfiguration resource property to the template.
+The Shutdown event configuration.
 
 ## SYNTAX
 
@@ -22,14 +12,26 @@ Add-VSOpsWorksLayerShutdownEventConfiguration [[-DelayUntilElbConnectionsDrained
 ```
 
 ## DESCRIPTION
-Adds an AWS::OpsWorks::Layer.ShutdownEventConfiguration resource property to the template
+Adds an AWS::OpsWorks::Layer.ShutdownEventConfiguration resource property to the template.
+The Shutdown event configuration.
+
+## EXAMPLES
+
+### Example 1
+```powershell
+PS C:\> {{ Add example code here }}
+```
+
+{{ Add example description here }}
 
 ## PARAMETERS
 
 ### -DelayUntilElbConnectionsDrained
-Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-opsworks-layer-lifecycleeventconfiguration-shutdowneventconfiguration.html#cfn-opsworks-layer-lifecycleconfiguration-shutdowneventconfiguration-delayuntilelbconnectionsdrained    
-PrimitiveType: Boolean    
-Required: False    
+Whether to enable Elastic Load Balancing connection draining.
+For more information, see Connection Draining: https://docs.aws.amazon.com/ElasticLoadBalancing/latest/DeveloperGuide/TerminologyandKeyConcepts.html#conn-drain
+
+Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-opsworks-layer-lifecycleeventconfiguration-shutdowneventconfiguration.html#cfn-opsworks-layer-lifecycleconfiguration-shutdowneventconfiguration-delayuntilelbconnectionsdrained
+PrimitiveType: Boolean
 UpdateType: Mutable
 
 ```yaml
@@ -45,9 +47,10 @@ Accept wildcard characters: False
 ```
 
 ### -ExecutionTimeout
-Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-opsworks-layer-lifecycleeventconfiguration-shutdowneventconfiguration.html#cfn-opsworks-layer-lifecycleconfiguration-shutdowneventconfiguration-executiontimeout    
-PrimitiveType: Integer    
-Required: False    
+The time, in seconds, that AWS OpsWorks Stacks will wait after triggering a Shutdown event before shutting down an instance.
+
+Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-opsworks-layer-lifecycleeventconfiguration-shutdowneventconfiguration.html#cfn-opsworks-layer-lifecycleconfiguration-shutdowneventconfiguration-executiontimeout
+PrimitiveType: Integer
 UpdateType: Mutable
 
 ```yaml
@@ -63,15 +66,13 @@ Accept wildcard characters: False
 ```
 
 ### CommonParameters
-This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction, and -WarningVariable.
-For more information, see about_CommonParameters (http://go.microsoft.com/fwlink/?LinkID=113216).
+This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction, and -WarningVariable. For more information, see [about_CommonParameters](http://go.microsoft.com/fwlink/?LinkID=113216).
 
 ## INPUTS
 
 ## OUTPUTS
 
 ### Vaporshell.Resource.OpsWorks.Layer.ShutdownEventConfiguration
-
 ## NOTES
 
 ## RELATED LINKS

@@ -1,18 +1,10 @@
----
-layout: glossary
-title: New-VSSESReceiptFilter
-categories: glossary
-label1: Category
-data1: Documentation
-label2: Depth
-data2: Deep
-schema: 2.0.0
----
-
 # New-VSSESReceiptFilter
 
 ## SYNOPSIS
-Adds an AWS::SES::ReceiptFilter resource to the template
+Adds an AWS::SES::ReceiptFilter resource to the template.
+Specify a new IP address filter.
+You use IP address filters when you receive email with Amazon SES.
+For more information, see the Amazon SES Developer Guide: https://docs.aws.amazon.com/ses/latest/DeveloperGuide/receiving-email-concepts.html.
 
 ## SYNTAX
 
@@ -23,7 +15,19 @@ New-VSSESReceiptFilter [-LogicalId] <String> -Filter <Object> [-DeletionPolicy <
 ```
 
 ## DESCRIPTION
-Adds an AWS::SES::ReceiptFilter resource to the template
+Adds an AWS::SES::ReceiptFilter resource to the template.
+Specify a new IP address filter.
+You use IP address filters when you receive email with Amazon SES.
+For more information, see the Amazon SES Developer Guide: https://docs.aws.amazon.com/ses/latest/DeveloperGuide/receiving-email-concepts.html.
+
+## EXAMPLES
+
+### Example 1
+```powershell
+PS C:\> {{ Add example code here }}
+```
+
+{{ Add example description here }}
 
 ## PARAMETERS
 
@@ -45,9 +49,11 @@ Accept wildcard characters: False
 ```
 
 ### -Filter
-Type: Filter    
-Required: True    
-Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ses-receiptfilter.html#cfn-ses-receiptfilter-filter    
+A data structure that describes the IP address filter that you want to specify.
+This object consists of a name, an IP address range, and a boolean that indicates whether to allow or block mail from the IP range.
+
+Type: Filter
+Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ses-receiptfilter.html#cfn-ses-receiptfilter-filter
 UpdateType: Immutable
 
 ```yaml
@@ -157,15 +163,13 @@ Accept wildcard characters: False
 ```
 
 ### CommonParameters
-This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction, and -WarningVariable.
-For more information, see about_CommonParameters (http://go.microsoft.com/fwlink/?LinkID=113216).
+This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction, and -WarningVariable. For more information, see [about_CommonParameters](http://go.microsoft.com/fwlink/?LinkID=113216).
 
 ## INPUTS
 
 ## OUTPUTS
 
 ### Vaporshell.Resource.SES.ReceiptFilter
-
 ## NOTES
 
 ## RELATED LINKS

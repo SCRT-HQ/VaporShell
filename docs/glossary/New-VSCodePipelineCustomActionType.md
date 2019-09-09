@@ -1,30 +1,34 @@
----
-layout: glossary
-title: New-VSCodePipelineCustomActionType
-categories: glossary
-label1: Category
-data1: Documentation
-label2: Depth
-data2: Deep
-schema: 2.0.0
----
-
 # New-VSCodePipelineCustomActionType
 
 ## SYNOPSIS
-Adds an AWS::CodePipeline::CustomActionType resource to the template
+Adds an AWS::CodePipeline::CustomActionType resource to the template.
+The AWS::CodePipeline::CustomActionType resource creates a custom action for activities that aren't included in the CodePipeline default actions, such as running an internally developed build process or a test suite.
+You can use these custom actions in the stage of a pipeline.
+For more information, see Create and Add a Custom Action in AWS CodePipeline: https://docs.aws.amazon.com/codepipeline/latest/userguide/how-to-create-custom-action.html in the *AWS CodePipeline User Guide*.
 
 ## SYNTAX
 
 ```
 New-VSCodePipelineCustomActionType [-LogicalId] <String> -Category <Object> [-ConfigurationProperties <Object>]
  -InputArtifactDetails <Object> -OutputArtifactDetails <Object> -Provider <Object> [-Settings <Object>]
- [-Version <Object>] [-DeletionPolicy <String>] [-DependsOn <String[]>] [-Metadata <Object>]
+ -Version <Object> [-DeletionPolicy <String>] [-DependsOn <String[]>] [-Metadata <Object>]
  [-UpdatePolicy <Object>] [-Condition <Object>] [<CommonParameters>]
 ```
 
 ## DESCRIPTION
-Adds an AWS::CodePipeline::CustomActionType resource to the template
+Adds an AWS::CodePipeline::CustomActionType resource to the template.
+The AWS::CodePipeline::CustomActionType resource creates a custom action for activities that aren't included in the CodePipeline default actions, such as running an internally developed build process or a test suite.
+You can use these custom actions in the stage of a pipeline.
+For more information, see Create and Add a Custom Action in AWS CodePipeline: https://docs.aws.amazon.com/codepipeline/latest/userguide/how-to-create-custom-action.html in the *AWS CodePipeline User Guide*.
+
+## EXAMPLES
+
+### Example 1
+```powershell
+PS C:\> {{ Add example code here }}
+```
+
+{{ Add example description here }}
 
 ## PARAMETERS
 
@@ -46,9 +50,12 @@ Accept wildcard characters: False
 ```
 
 ### -Category
-Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-codepipeline-customactiontype.html#cfn-codepipeline-customactiontype-category    
-PrimitiveType: String    
-Required: True    
+The category of the custom action, such as a build action or a test action.
+Although Source and Approval are listed as valid values, they are not currently functional.
+These values are reserved for future use.
+
+Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-codepipeline-customactiontype.html#cfn-codepipeline-customactiontype-category
+PrimitiveType: String
 UpdateType: Immutable
 
 ```yaml
@@ -64,11 +71,14 @@ Accept wildcard characters: False
 ```
 
 ### -ConfigurationProperties
-Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-codepipeline-customactiontype.html#cfn-codepipeline-customactiontype-configurationproperties    
-DuplicatesAllowed: False    
-ItemType: ConfigurationProperties    
-Required: False    
-Type: List    
+The configuration properties for the custom action.
+You can refer to a name in the configuration properties of the custom action within the URL templates by following the format of {Config:name}, as long as the configuration property is both required and not secret.
+For more information, see Create a Custom Action for a Pipeline: https://docs.aws.amazon.com/codepipeline/latest/userguide/how-to-create-custom-action.html.
+
+Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-codepipeline-customactiontype.html#cfn-codepipeline-customactiontype-configurationproperties
+DuplicatesAllowed: False
+ItemType: ConfigurationProperties
+Type: List
 UpdateType: Immutable
 
 ```yaml
@@ -84,9 +94,10 @@ Accept wildcard characters: False
 ```
 
 ### -InputArtifactDetails
-Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-codepipeline-customactiontype.html#cfn-codepipeline-customactiontype-inputartifactdetails    
-Required: True    
-Type: ArtifactDetails    
+The details of the input artifact for the action, such as its commit ID.
+
+Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-codepipeline-customactiontype.html#cfn-codepipeline-customactiontype-inputartifactdetails
+Type: ArtifactDetails
 UpdateType: Immutable
 
 ```yaml
@@ -102,9 +113,10 @@ Accept wildcard characters: False
 ```
 
 ### -OutputArtifactDetails
-Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-codepipeline-customactiontype.html#cfn-codepipeline-customactiontype-outputartifactdetails    
-Required: True    
-Type: ArtifactDetails    
+The details of the output artifact of the action, such as its commit ID.
+
+Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-codepipeline-customactiontype.html#cfn-codepipeline-customactiontype-outputartifactdetails
+Type: ArtifactDetails
 UpdateType: Immutable
 
 ```yaml
@@ -120,9 +132,10 @@ Accept wildcard characters: False
 ```
 
 ### -Provider
-Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-codepipeline-customactiontype.html#cfn-codepipeline-customactiontype-provider    
-PrimitiveType: String    
-Required: True    
+The provider of the service used in the custom action, such as AWS CodeDeploy.
+
+Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-codepipeline-customactiontype.html#cfn-codepipeline-customactiontype-provider
+PrimitiveType: String
 UpdateType: Immutable
 
 ```yaml
@@ -138,9 +151,10 @@ Accept wildcard characters: False
 ```
 
 ### -Settings
-Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-codepipeline-customactiontype.html#cfn-codepipeline-customactiontype-settings    
-Required: False    
-Type: Settings    
+URLs that provide users information about this custom action.
+
+Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-codepipeline-customactiontype.html#cfn-codepipeline-customactiontype-settings
+Type: Settings
 UpdateType: Immutable
 
 ```yaml
@@ -156,9 +170,10 @@ Accept wildcard characters: False
 ```
 
 ### -Version
-Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-codepipeline-customactiontype.html#cfn-codepipeline-customactiontype-version    
-PrimitiveType: String    
-Required: False    
+The version identifier of the custom action.
+
+Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-codepipeline-customactiontype.html#cfn-codepipeline-customactiontype-version
+PrimitiveType: String
 UpdateType: Immutable
 
 ```yaml
@@ -166,7 +181,7 @@ Type: Object
 Parameter Sets: (All)
 Aliases:
 
-Required: False
+Required: True
 Position: Named
 Default value: None
 Accept pipeline input: False
@@ -268,15 +283,13 @@ Accept wildcard characters: False
 ```
 
 ### CommonParameters
-This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction, and -WarningVariable.
-For more information, see about_CommonParameters (http://go.microsoft.com/fwlink/?LinkID=113216).
+This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction, and -WarningVariable. For more information, see [about_CommonParameters](http://go.microsoft.com/fwlink/?LinkID=113216).
 
 ## INPUTS
 
 ## OUTPUTS
 
 ### Vaporshell.Resource.CodePipeline.CustomActionType
-
 ## NOTES
 
 ## RELATED LINKS

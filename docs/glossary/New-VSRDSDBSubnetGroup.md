@@ -1,18 +1,9 @@
----
-layout: glossary
-title: New-VSRDSDBSubnetGroup
-categories: glossary
-label1: Category
-data1: Documentation
-label2: Depth
-data2: Deep
-schema: 2.0.0
----
-
 # New-VSRDSDBSubnetGroup
 
 ## SYNOPSIS
-Adds an AWS::RDS::DBSubnetGroup resource to the template
+Adds an AWS::RDS::DBSubnetGroup resource to the template.
+The AWS::RDS::DBSubnetGroup resource creates a database subnet group.
+Subnet groups must contain at least two subnets in two different Availability Zones in the same region.
 
 ## SYNTAX
 
@@ -23,7 +14,18 @@ New-VSRDSDBSubnetGroup [-LogicalId] <String> -DBSubnetGroupDescription <Object> 
 ```
 
 ## DESCRIPTION
-Adds an AWS::RDS::DBSubnetGroup resource to the template
+Adds an AWS::RDS::DBSubnetGroup resource to the template.
+The AWS::RDS::DBSubnetGroup resource creates a database subnet group.
+Subnet groups must contain at least two subnets in two different Availability Zones in the same region.
+
+## EXAMPLES
+
+### Example 1
+```powershell
+PS C:\> {{ Add example code here }}
+```
+
+{{ Add example description here }}
 
 ## PARAMETERS
 
@@ -45,9 +47,10 @@ Accept wildcard characters: False
 ```
 
 ### -DBSubnetGroupDescription
-Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-rds-dbsubnet-group.html#cfn-rds-dbsubnetgroup-dbsubnetgroupdescription    
-PrimitiveType: String    
-Required: True    
+The description for the DB Subnet Group.
+
+Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-rds-dbsubnet-group.html#cfn-rds-dbsubnetgroup-dbsubnetgroupdescription
+PrimitiveType: String
 UpdateType: Mutable
 
 ```yaml
@@ -63,9 +66,14 @@ Accept wildcard characters: False
 ```
 
 ### -DBSubnetGroupName
-Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-rds-dbsubnet-group.html#cfn-rds-dbsubnetgroup-dbsubnetgroupname    
-PrimitiveType: String    
-Required: False    
+The name for the DB Subnet Group.
+This value is stored as a lowercase string.
+Constraints: Must contain no more than 255 alphanumeric characters or hyphens.
+Must not be "Default".
+Example: mySubnetgroup
+
+Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-rds-dbsubnet-group.html#cfn-rds-dbsubnetgroup-dbsubnetgroupname
+PrimitiveType: String
 UpdateType: Immutable
 
 ```yaml
@@ -81,11 +89,12 @@ Accept wildcard characters: False
 ```
 
 ### -SubnetIds
-Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-rds-dbsubnet-group.html#cfn-rds-dbsubnetgroup-subnetids    
-DuplicatesAllowed: False    
-PrimitiveItemType: String    
-Required: True    
-Type: List    
+The EC2 Subnet IDs for the DB Subnet Group.
+
+Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-rds-dbsubnet-group.html#cfn-rds-dbsubnetgroup-subnetids
+DuplicatesAllowed: False
+PrimitiveItemType: String
+Type: List
 UpdateType: Mutable
 
 ```yaml
@@ -101,11 +110,12 @@ Accept wildcard characters: False
 ```
 
 ### -Tags
-Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-rds-dbsubnet-group.html#cfn-rds-dbsubnetgroup-tags    
-DuplicatesAllowed: True    
-ItemType: Tag    
-Required: False    
-Type: List    
+Tags to assign to the DB subnet group.
+
+Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-rds-dbsubnet-group.html#cfn-rds-dbsubnetgroup-tags
+DuplicatesAllowed: True
+ItemType: Tag
+Type: List
 UpdateType: Mutable
 
 ```yaml
@@ -215,15 +225,13 @@ Accept wildcard characters: False
 ```
 
 ### CommonParameters
-This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction, and -WarningVariable.
-For more information, see about_CommonParameters (http://go.microsoft.com/fwlink/?LinkID=113216).
+This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction, and -WarningVariable. For more information, see [about_CommonParameters](http://go.microsoft.com/fwlink/?LinkID=113216).
 
 ## INPUTS
 
 ## OUTPUTS
 
 ### Vaporshell.Resource.RDS.DBSubnetGroup
-
 ## NOTES
 
 ## RELATED LINKS

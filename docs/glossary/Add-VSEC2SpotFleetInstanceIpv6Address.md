@@ -1,18 +1,8 @@
----
-layout: glossary
-title: Add-VSEC2SpotFleetInstanceIpv6Address
-categories: glossary
-label1: Category
-data1: Documentation
-label2: Depth
-data2: Deep
-schema: 2.0.0
----
-
 # Add-VSEC2SpotFleetInstanceIpv6Address
 
 ## SYNOPSIS
-Adds an AWS::EC2::SpotFleet.InstanceIpv6Address resource property to the template
+Adds an AWS::EC2::SpotFleet.InstanceIpv6Address resource property to the template.
+Describes an IPv6 address.
 
 ## SYNTAX
 
@@ -21,14 +11,25 @@ Add-VSEC2SpotFleetInstanceIpv6Address [-Ipv6Address] <Object> [<CommonParameters
 ```
 
 ## DESCRIPTION
-Adds an AWS::EC2::SpotFleet.InstanceIpv6Address resource property to the template
+Adds an AWS::EC2::SpotFleet.InstanceIpv6Address resource property to the template.
+Describes an IPv6 address.
+
+## EXAMPLES
+
+### Example 1
+```powershell
+PS C:\> {{ Add example code here }}
+```
+
+{{ Add example description here }}
 
 ## PARAMETERS
 
 ### -Ipv6Address
-Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-spotfleet-instanceipv6address.html#cfn-ec2-spotfleet-instanceipv6address-ipv6address    
-PrimitiveType: String    
-Required: True    
+The IPv6 address.
+
+Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-spotfleet-instanceipv6address.html#cfn-ec2-spotfleet-instanceipv6address-ipv6address
+PrimitiveType: String
 UpdateType: Mutable
 
 ```yaml
@@ -44,15 +45,13 @@ Accept wildcard characters: False
 ```
 
 ### CommonParameters
-This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction, and -WarningVariable.
-For more information, see about_CommonParameters (http://go.microsoft.com/fwlink/?LinkID=113216).
+This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction, and -WarningVariable. For more information, see [about_CommonParameters](http://go.microsoft.com/fwlink/?LinkID=113216).
 
 ## INPUTS
 
 ## OUTPUTS
 
 ### Vaporshell.Resource.EC2.SpotFleet.InstanceIpv6Address
-
 ## NOTES
 
 ## RELATED LINKS

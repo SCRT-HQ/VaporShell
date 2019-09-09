@@ -1,18 +1,8 @@
----
-layout: glossary
-title: New-VSOpsWorksVolume
-categories: glossary
-label1: Category
-data1: Documentation
-label2: Depth
-data2: Deep
-schema: 2.0.0
----
-
 # New-VSOpsWorksVolume
 
 ## SYNOPSIS
-Adds an AWS::OpsWorks::Volume resource to the template
+Adds an AWS::OpsWorks::Volume resource to the template.
+Describes an instance's Amazon EBS volume.
 
 ## SYNTAX
 
@@ -23,7 +13,17 @@ New-VSOpsWorksVolume [-LogicalId] <String> -Ec2VolumeId <Object> [-MountPoint <O
 ```
 
 ## DESCRIPTION
-Adds an AWS::OpsWorks::Volume resource to the template
+Adds an AWS::OpsWorks::Volume resource to the template.
+Describes an instance's Amazon EBS volume.
+
+## EXAMPLES
+
+### Example 1
+```powershell
+PS C:\> {{ Add example code here }}
+```
+
+{{ Add example description here }}
 
 ## PARAMETERS
 
@@ -45,9 +45,10 @@ Accept wildcard characters: False
 ```
 
 ### -Ec2VolumeId
-Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-opsworks-volume.html#cfn-opsworks-volume-ec2volumeid    
-PrimitiveType: String    
-Required: True    
+The Amazon EC2 volume ID.
+
+Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-opsworks-volume.html#cfn-opsworks-volume-ec2volumeid
+PrimitiveType: String
 UpdateType: Immutable
 
 ```yaml
@@ -63,9 +64,11 @@ Accept wildcard characters: False
 ```
 
 ### -MountPoint
-Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-opsworks-volume.html#cfn-opsworks-volume-mountpoint    
-PrimitiveType: String    
-Required: False    
+The volume mount point.
+For example, "/mnt/disk1".
+
+Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-opsworks-volume.html#cfn-opsworks-volume-mountpoint
+PrimitiveType: String
 UpdateType: Mutable
 
 ```yaml
@@ -81,9 +84,10 @@ Accept wildcard characters: False
 ```
 
 ### -Name
-Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-opsworks-volume.html#cfn-opsworks-volume-name    
-PrimitiveType: String    
-Required: False    
+The volume name.
+
+Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-opsworks-volume.html#cfn-opsworks-volume-name
+PrimitiveType: String
 UpdateType: Mutable
 
 ```yaml
@@ -99,9 +103,10 @@ Accept wildcard characters: False
 ```
 
 ### -StackId
-Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-opsworks-volume.html#cfn-opsworks-volume-stackid    
-PrimitiveType: String    
-Required: True    
+The stack ID.
+
+Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-opsworks-volume.html#cfn-opsworks-volume-stackid
+PrimitiveType: String
 UpdateType: Immutable
 
 ```yaml
@@ -211,15 +216,13 @@ Accept wildcard characters: False
 ```
 
 ### CommonParameters
-This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction, and -WarningVariable.
-For more information, see about_CommonParameters (http://go.microsoft.com/fwlink/?LinkID=113216).
+This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction, and -WarningVariable. For more information, see [about_CommonParameters](http://go.microsoft.com/fwlink/?LinkID=113216).
 
 ## INPUTS
 
 ## OUTPUTS
 
 ### Vaporshell.Resource.OpsWorks.Volume
-
 ## NOTES
 
 ## RELATED LINKS

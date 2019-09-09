@@ -1,18 +1,8 @@
----
-layout: glossary
-title: Add-VSAutoScalingPlansScalingPlanTargetTrackingConfiguration
-categories: glossary
-label1: Category
-data1: Documentation
-label2: Depth
-data2: Deep
-schema: 2.0.0
----
-
 # Add-VSAutoScalingPlansScalingPlanTargetTrackingConfiguration
 
 ## SYNOPSIS
-Adds an AWS::AutoScalingPlans::ScalingPlan.TargetTrackingConfiguration resource property to the template
+Adds an AWS::AutoScalingPlans::ScalingPlan.TargetTrackingConfiguration resource property to the template.
+TargetTrackingConfiguration is a subproperty of ScalingInstruction: https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-autoscalingplans-scalingplan-scalinginstruction.html that specifies a target tracking configuration to use with AWS Auto Scaling.
 
 ## SYNTAX
 
@@ -24,14 +14,26 @@ Add-VSAutoScalingPlansScalingPlanTargetTrackingConfiguration [[-ScaleOutCooldown
 ```
 
 ## DESCRIPTION
-Adds an AWS::AutoScalingPlans::ScalingPlan.TargetTrackingConfiguration resource property to the template
+Adds an AWS::AutoScalingPlans::ScalingPlan.TargetTrackingConfiguration resource property to the template.
+TargetTrackingConfiguration is a subproperty of ScalingInstruction: https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-autoscalingplans-scalingplan-scalinginstruction.html that specifies a target tracking configuration to use with AWS Auto Scaling.
+
+## EXAMPLES
+
+### Example 1
+```powershell
+PS C:\> {{ Add example code here }}
+```
+
+{{ Add example description here }}
 
 ## PARAMETERS
 
 ### -ScaleOutCooldown
-Required: False    
-Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-autoscalingplans-scalingplan-targettrackingconfiguration.html#cfn-autoscalingplans-scalingplan-targettrackingconfiguration-scaleoutcooldown    
-PrimitiveType: Integer    
+The amount of time, in seconds, after a scale-out activity completes before another scale-out activity can start.
+This value is not used if the scalable resource is an Auto Scaling group.
+
+Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-autoscalingplans-scalingplan-targettrackingconfiguration.html#cfn-autoscalingplans-scalingplan-targettrackingconfiguration-scaleoutcooldown
+PrimitiveType: Integer
 UpdateType: Mutable
 
 ```yaml
@@ -47,9 +49,11 @@ Accept wildcard characters: False
 ```
 
 ### -TargetValue
-Required: True    
-Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-autoscalingplans-scalingplan-targettrackingconfiguration.html#cfn-autoscalingplans-scalingplan-targettrackingconfiguration-targetvalue    
-PrimitiveType: Double    
+The target value for the metric.
+The range is 8.515920e-109 to 1.174271e+108 Base 10 or 2e-360 to 2e360 Base 2.
+
+Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-autoscalingplans-scalingplan-targettrackingconfiguration.html#cfn-autoscalingplans-scalingplan-targettrackingconfiguration-targetvalue
+PrimitiveType: Double
 UpdateType: Mutable
 
 ```yaml
@@ -65,9 +69,11 @@ Accept wildcard characters: False
 ```
 
 ### -PredefinedScalingMetricSpecification
-Type: PredefinedScalingMetricSpecification    
-Required: False    
-Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-autoscalingplans-scalingplan-targettrackingconfiguration.html#cfn-autoscalingplans-scalingplan-targettrackingconfiguration-predefinedscalingmetricspecification    
+A predefined metric.
+You can specify either a predefined metric or a customized metric.
+
+Type: PredefinedScalingMetricSpecification
+Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-autoscalingplans-scalingplan-targettrackingconfiguration.html#cfn-autoscalingplans-scalingplan-targettrackingconfiguration-predefinedscalingmetricspecification
 UpdateType: Mutable
 
 ```yaml
@@ -83,9 +89,13 @@ Accept wildcard characters: False
 ```
 
 ### -DisableScaleIn
-Required: False    
-Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-autoscalingplans-scalingplan-targettrackingconfiguration.html#cfn-autoscalingplans-scalingplan-targettrackingconfiguration-disablescalein    
-PrimitiveType: Boolean    
+Indicates whether scale in by the target tracking scaling policy is disabled.
+If the value is true, scale in is disabled and the target tracking scaling policy doesn't remove capacity from the scalable resource.
+Otherwise, scale in is enabled and the target tracking scaling policy can remove capacity from the scalable resource.
+The default value is false.
+
+Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-autoscalingplans-scalingplan-targettrackingconfiguration.html#cfn-autoscalingplans-scalingplan-targettrackingconfiguration-disablescalein
+PrimitiveType: Boolean
 UpdateType: Mutable
 
 ```yaml
@@ -101,9 +111,11 @@ Accept wildcard characters: False
 ```
 
 ### -ScaleInCooldown
-Required: False    
-Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-autoscalingplans-scalingplan-targettrackingconfiguration.html#cfn-autoscalingplans-scalingplan-targettrackingconfiguration-scaleincooldown    
-PrimitiveType: Integer    
+The amount of time, in seconds, after a scale-in activity completes before another scale in activity can start.
+This value is not used if the scalable resource is an Auto Scaling group.
+
+Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-autoscalingplans-scalingplan-targettrackingconfiguration.html#cfn-autoscalingplans-scalingplan-targettrackingconfiguration-scaleincooldown
+PrimitiveType: Integer
 UpdateType: Mutable
 
 ```yaml
@@ -119,9 +131,11 @@ Accept wildcard characters: False
 ```
 
 ### -EstimatedInstanceWarmup
-Required: False    
-Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-autoscalingplans-scalingplan-targettrackingconfiguration.html#cfn-autoscalingplans-scalingplan-targettrackingconfiguration-estimatedinstancewarmup    
-PrimitiveType: Integer    
+The estimated time, in seconds, until a newly launched instance can contribute to the CloudWatch metrics.
+This value is used only if the resource is an Auto Scaling group.
+
+Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-autoscalingplans-scalingplan-targettrackingconfiguration.html#cfn-autoscalingplans-scalingplan-targettrackingconfiguration-estimatedinstancewarmup
+PrimitiveType: Integer
 UpdateType: Mutable
 
 ```yaml
@@ -137,9 +151,11 @@ Accept wildcard characters: False
 ```
 
 ### -CustomizedScalingMetricSpecification
-Type: CustomizedScalingMetricSpecification    
-Required: False    
-Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-autoscalingplans-scalingplan-targettrackingconfiguration.html#cfn-autoscalingplans-scalingplan-targettrackingconfiguration-customizedscalingmetricspecification    
+A customized metric.
+You can specify either a predefined metric or a customized metric.
+
+Type: CustomizedScalingMetricSpecification
+Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-autoscalingplans-scalingplan-targettrackingconfiguration.html#cfn-autoscalingplans-scalingplan-targettrackingconfiguration-customizedscalingmetricspecification
 UpdateType: Mutable
 
 ```yaml
@@ -155,15 +171,13 @@ Accept wildcard characters: False
 ```
 
 ### CommonParameters
-This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction, and -WarningVariable.
-For more information, see about_CommonParameters (http://go.microsoft.com/fwlink/?LinkID=113216).
+This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction, and -WarningVariable. For more information, see [about_CommonParameters](http://go.microsoft.com/fwlink/?LinkID=113216).
 
 ## INPUTS
 
 ## OUTPUTS
 
 ### Vaporshell.Resource.AutoScalingPlans.ScalingPlan.TargetTrackingConfiguration
-
 ## NOTES
 
 ## RELATED LINKS

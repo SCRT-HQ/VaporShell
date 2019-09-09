@@ -1,18 +1,8 @@
----
-layout: glossary
-title: Add-VSDynamoDBTableStreamSpecification
-categories: glossary
-label1: Category
-data1: Documentation
-label2: Depth
-data2: Deep
-schema: 2.0.0
----
-
 # Add-VSDynamoDBTableStreamSpecification
 
 ## SYNOPSIS
-Adds an AWS::DynamoDB::Table.StreamSpecification resource property to the template
+Adds an AWS::DynamoDB::Table.StreamSpecification resource property to the template.
+Represents the DynamoDB Streams configuration for a table in DynamoDB.
 
 ## SYNTAX
 
@@ -21,14 +11,30 @@ Add-VSDynamoDBTableStreamSpecification [-StreamViewType] <Object> [<CommonParame
 ```
 
 ## DESCRIPTION
-Adds an AWS::DynamoDB::Table.StreamSpecification resource property to the template
+Adds an AWS::DynamoDB::Table.StreamSpecification resource property to the template.
+Represents the DynamoDB Streams configuration for a table in DynamoDB.
+
+## EXAMPLES
+
+### Example 1
+```powershell
+PS C:\> {{ Add example code here }}
+```
+
+{{ Add example description here }}
 
 ## PARAMETERS
 
 ### -StreamViewType
-Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-dynamodb-streamspecification.html#cfn-dynamodb-streamspecification-streamviewtype    
-PrimitiveType: String    
-Required: True    
+When an item in the table is modified, StreamViewType determines what information is written to the stream for this table.
+Valid values for StreamViewType are:
++  KEYS_ONLY - Only the key attributes of the modified item are written to the stream.
++  NEW_IMAGE - The entire item, as it appears after it was modified, is written to the stream.
++  OLD_IMAGE - The entire item, as it appeared before it was modified, is written to the stream.
++  NEW_AND_OLD_IMAGES - Both the new and the old item images of the item are written to the stream.
+
+Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-dynamodb-streamspecification.html#cfn-dynamodb-streamspecification-streamviewtype
+PrimitiveType: String
 UpdateType: Mutable
 
 ```yaml
@@ -44,15 +50,13 @@ Accept wildcard characters: False
 ```
 
 ### CommonParameters
-This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction, and -WarningVariable.
-For more information, see about_CommonParameters (http://go.microsoft.com/fwlink/?LinkID=113216).
+This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction, and -WarningVariable. For more information, see [about_CommonParameters](http://go.microsoft.com/fwlink/?LinkID=113216).
 
 ## INPUTS
 
 ## OUTPUTS
 
 ### Vaporshell.Resource.DynamoDB.Table.StreamSpecification
-
 ## NOTES
 
 ## RELATED LINKS

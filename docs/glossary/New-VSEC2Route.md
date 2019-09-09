@@ -1,31 +1,33 @@
----
-layout: glossary
-title: New-VSEC2Route
-categories: glossary
-label1: Category
-data1: Documentation
-label2: Depth
-data2: Deep
-schema: 2.0.0
----
-
 # New-VSEC2Route
 
 ## SYNOPSIS
-Adds an AWS::EC2::Route resource to the template
+Adds an AWS::EC2::Route resource to the template.
+Specifies a route in a route table within a VPC.
 
 ## SYNTAX
 
 ```
 New-VSEC2Route [-LogicalId] <String> [-DestinationCidrBlock <Object>] [-DestinationIpv6CidrBlock <Object>]
  [-EgressOnlyInternetGatewayId <Object>] [-GatewayId <Object>] [-InstanceId <Object>] [-NatGatewayId <Object>]
- [-NetworkInterfaceId <Object>] -RouteTableId <Object> [-VpcPeeringConnectionId <Object>]
- [-DeletionPolicy <String>] [-DependsOn <String[]>] [-Metadata <Object>] [-UpdatePolicy <Object>]
- [-Condition <Object>] [<CommonParameters>]
+ [-NetworkInterfaceId <Object>] -RouteTableId <Object> [-TransitGatewayId <Object>]
+ [-VpcPeeringConnectionId <Object>] [-DeletionPolicy <String>] [-DependsOn <String[]>] [-Metadata <Object>]
+ [-UpdatePolicy <Object>] [-Condition <Object>] [<CommonParameters>]
 ```
 
 ## DESCRIPTION
-Adds an AWS::EC2::Route resource to the template
+Adds an AWS::EC2::Route resource to the template.
+Specifies a route in a route table within a VPC.
+
+You must specify one of the following targets: internet gateway or virtual private gateway, NAT instance, NAT gateway, VPC peering connection, network interface, or egress-only internet gateway.
+
+## EXAMPLES
+
+### Example 1
+```powershell
+PS C:\> {{ Add example code here }}
+```
+
+{{ Add example description here }}
 
 ## PARAMETERS
 
@@ -47,9 +49,11 @@ Accept wildcard characters: False
 ```
 
 ### -DestinationCidrBlock
-Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ec2-route.html#cfn-ec2-route-destinationcidrblock    
-PrimitiveType: String    
-Required: False    
+The IPv4 CIDR block used for the destination match.
+You must specify the DestinationCidrBlock or DestinationIpv6CidrBlock property.
+
+Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ec2-route.html#cfn-ec2-route-destinationcidrblock
+PrimitiveType: String
 UpdateType: Immutable
 
 ```yaml
@@ -65,9 +69,11 @@ Accept wildcard characters: False
 ```
 
 ### -DestinationIpv6CidrBlock
-Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ec2-route.html#cfn-ec2-route-destinationipv6cidrblock    
-PrimitiveType: String    
-Required: False    
+The IPv6 CIDR block used for the destination match.
+You must specify the DestinationCidrBlock or DestinationIpv6CidrBlock property.
+
+Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ec2-route.html#cfn-ec2-route-destinationipv6cidrblock
+PrimitiveType: String
 UpdateType: Mutable
 
 ```yaml
@@ -83,9 +89,10 @@ Accept wildcard characters: False
 ```
 
 ### -EgressOnlyInternetGatewayId
-Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ec2-route.html#cfn-ec2-route-egressonlyinternetgatewayid    
-PrimitiveType: String    
-Required: False    
+The ID of the egress-only internet gateway.
+
+Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ec2-route.html#cfn-ec2-route-egressonlyinternetgatewayid
+PrimitiveType: String
 UpdateType: Mutable
 
 ```yaml
@@ -101,9 +108,11 @@ Accept wildcard characters: False
 ```
 
 ### -GatewayId
-Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ec2-route.html#cfn-ec2-route-gatewayid    
-PrimitiveType: String    
-Required: False    
+The ID of a gateway attached to your VPC.
+You must specify only one of the following properties: EgressOnlyInternetGatewayId, GatewayId, InstanceId, NatGatewayId, NetworkInterfaceId, or VpcPeeringConnectionId.
+
+Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ec2-route.html#cfn-ec2-route-gatewayid
+PrimitiveType: String
 UpdateType: Mutable
 
 ```yaml
@@ -119,9 +128,11 @@ Accept wildcard characters: False
 ```
 
 ### -InstanceId
-Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ec2-route.html#cfn-ec2-route-instanceid    
-PrimitiveType: String    
-Required: False    
+The ID of a NAT instance in your VPC.
+You must specify only one of the following properties: EgressOnlyInternetGatewayId, GatewayId, InstanceId, NatGatewayId, NetworkInterfaceId, or VpcPeeringConnectionId.
+
+Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ec2-route.html#cfn-ec2-route-instanceid
+PrimitiveType: String
 UpdateType: Mutable
 
 ```yaml
@@ -137,9 +148,11 @@ Accept wildcard characters: False
 ```
 
 ### -NatGatewayId
-Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ec2-route.html#cfn-ec2-route-natgatewayid    
-PrimitiveType: String    
-Required: False    
+The ID of a NAT gateway.
+You must specify only one of the following properties: EgressOnlyInternetGatewayId, GatewayId, InstanceId, NatGatewayId, NetworkInterfaceId, or VpcPeeringConnectionId.
+
+Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ec2-route.html#cfn-ec2-route-natgatewayid
+PrimitiveType: String
 UpdateType: Mutable
 
 ```yaml
@@ -155,9 +168,11 @@ Accept wildcard characters: False
 ```
 
 ### -NetworkInterfaceId
-Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ec2-route.html#cfn-ec2-route-networkinterfaceid    
-PrimitiveType: String    
-Required: False    
+The ID of the network interface.
+You must specify only one of the following properties: EgressOnlyInternetGatewayId, GatewayId, InstanceId, NatGatewayId, NetworkInterfaceId, or VpcPeeringConnectionId.
+
+Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ec2-route.html#cfn-ec2-route-networkinterfaceid
+PrimitiveType: String
 UpdateType: Mutable
 
 ```yaml
@@ -173,9 +188,11 @@ Accept wildcard characters: False
 ```
 
 ### -RouteTableId
-Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ec2-route.html#cfn-ec2-route-routetableid    
-PrimitiveType: String    
-Required: True    
+The ID of the route table.
+The routing table must be associated with the same VPC that the virtual private gateway is attached to.
+
+Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ec2-route.html#cfn-ec2-route-routetableid
+PrimitiveType: String
 UpdateType: Immutable
 
 ```yaml
@@ -190,10 +207,30 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
+### -TransitGatewayId
+The ID of a transit gateway.
+
+Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ec2-route.html#cfn-ec2-route-transitgatewayid
+PrimitiveType: String
+UpdateType: Mutable
+
+```yaml
+Type: Object
+Parameter Sets: (All)
+Aliases:
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
 ### -VpcPeeringConnectionId
-Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ec2-route.html#cfn-ec2-route-vpcpeeringconnectionid    
-PrimitiveType: String    
-Required: False    
+The ID of a VPC peering connection.
+
+Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ec2-route.html#cfn-ec2-route-vpcpeeringconnectionid
+PrimitiveType: String
 UpdateType: Mutable
 
 ```yaml
@@ -303,15 +340,13 @@ Accept wildcard characters: False
 ```
 
 ### CommonParameters
-This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction, and -WarningVariable.
-For more information, see about_CommonParameters (http://go.microsoft.com/fwlink/?LinkID=113216).
+This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction, and -WarningVariable. For more information, see [about_CommonParameters](http://go.microsoft.com/fwlink/?LinkID=113216).
 
 ## INPUTS
 
 ## OUTPUTS
 
 ### Vaporshell.Resource.EC2.Route
-
 ## NOTES
 
 ## RELATED LINKS

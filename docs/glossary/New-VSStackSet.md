@@ -1,14 +1,3 @@
----
-layout: glossary
-title: New-VSStackSet
-categories: glossary
-label1: Category
-data1: Documentation
-label2: Depth
-data2: Deep
-schema: 2.0.0
----
-
 # New-VSStackSet
 
 ## SYNOPSIS
@@ -19,26 +8,35 @@ Creates a new Stack Set
 ### Path (Default)
 ```
 New-VSStackSet [-Path] <String> -StackSetName <String> [-Capabilities <String[]>]
- [-ClientRequestToken <String>] [-Description <String>] [-Parameters <Object>] [-Tags <String>]
+ [-ClientRequestToken <String>] [-Description <String>] [-Parameters <Object>] [-Tags <Hashtable>]
  [-ProfileName <String>] [-WhatIf] [-Confirm] [<CommonParameters>]
 ```
 
 ### TemplateBody
 ```
 New-VSStackSet [-TemplateBody] <String> -StackSetName <String> [-Capabilities <String[]>]
- [-ClientRequestToken <String>] [-Description <String>] [-Parameters <Object>] [-Tags <String>]
+ [-ClientRequestToken <String>] [-Description <String>] [-Parameters <Object>] [-Tags <Hashtable>]
  [-ProfileName <String>] [-WhatIf] [-Confirm] [<CommonParameters>]
 ```
 
 ### TemplateUrl
 ```
 New-VSStackSet [-TemplateUrl] <String> -StackSetName <String> [-Capabilities <String[]>]
- [-ClientRequestToken <String>] [-Description <String>] [-Parameters <Object>] [-Tags <String>]
+ [-ClientRequestToken <String>] [-Description <String>] [-Parameters <Object>] [-Tags <Hashtable>]
  [-ProfileName <String>] [-WhatIf] [-Confirm] [<CommonParameters>]
 ```
 
 ## DESCRIPTION
-{{Fill in the Description}}
+{{ Fill in the Description }}
+
+## EXAMPLES
+
+### Example 1
+```powershell
+PS C:\> {{ Add example code here }}
+```
+
+{{ Add example description here }}
 
 ## PARAMETERS
 
@@ -184,7 +182,7 @@ AWS CloudFormation also propagates these tags to resources in the stack.
 You can specify a maximum of 50 tags.
 
 ```yaml
-Type: String
+Type: Hashtable
 Parameter Sets: (All)
 Aliases:
 
@@ -243,8 +241,7 @@ Accept wildcard characters: False
 ```
 
 ### CommonParameters
-This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction, and -WarningVariable.
-For more information, see about_CommonParameters (http://go.microsoft.com/fwlink/?LinkID=113216).
+This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction, and -WarningVariable. For more information, see [about_CommonParameters](http://go.microsoft.com/fwlink/?LinkID=113216).
 
 ## INPUTS
 

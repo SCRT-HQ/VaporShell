@@ -1,32 +1,37 @@
----
-layout: glossary
-title: New-VSEMRCluster
-categories: glossary
-label1: Category
-data1: Documentation
-label2: Depth
-data2: Deep
-schema: 2.0.0
----
-
 # New-VSEMRCluster
 
 ## SYNOPSIS
-Adds an AWS::EMR::Cluster resource to the template
+Adds an AWS::EMR::Cluster resource to the template.
+The AWS::EMR::Cluster resource specifies an Amazon EMR cluster.
+This cluster is a collection of Amazon EC2 instances that run open source big data frameworks and applications to process and analyze vast amounts of data.
+For more information, see the Amazon EMR Management Guide: https://docs.aws.amazon.com/emr/latest/ManagementGuide/.
 
 ## SYNTAX
 
 ```
 New-VSEMRCluster [-LogicalId] <String> [-AdditionalInfo <Object>] [-Applications <Object>]
  [-AutoScalingRole <Object>] [-BootstrapActions <Object>] [-Configurations <Object>] [-CustomAmiId <Object>]
- [-EbsRootVolumeSize <Int32>] -Instances <Object> -JobFlowRole <Object> [-LogUri <Object>] -Name <Object>
- [-ReleaseLabel <Object>] [-ScaleDownBehavior <Object>] [-SecurityConfiguration <Object>] -ServiceRole <Object>
- [-Tags <Object>] [-VisibleToAllUsers <Boolean>] [-DeletionPolicy <String>] [-DependsOn <String[]>]
- [-Metadata <Object>] [-UpdatePolicy <Object>] [-Condition <Object>] [<CommonParameters>]
+ [-EbsRootVolumeSize <Int32>] -Instances <Object> -JobFlowRole <Object> [-KerberosAttributes <Object>]
+ [-LogUri <Object>] -Name <Object> [-ReleaseLabel <Object>] [-ScaleDownBehavior <Object>]
+ [-SecurityConfiguration <Object>] -ServiceRole <Object> [-Steps <Object>] [-Tags <Object>]
+ [-VisibleToAllUsers <Boolean>] [-DeletionPolicy <String>] [-DependsOn <String[]>] [-Metadata <Object>]
+ [-UpdatePolicy <Object>] [-Condition <Object>] [<CommonParameters>]
 ```
 
 ## DESCRIPTION
-Adds an AWS::EMR::Cluster resource to the template
+Adds an AWS::EMR::Cluster resource to the template.
+The AWS::EMR::Cluster resource specifies an Amazon EMR cluster.
+This cluster is a collection of Amazon EC2 instances that run open source big data frameworks and applications to process and analyze vast amounts of data.
+For more information, see the Amazon EMR Management Guide: https://docs.aws.amazon.com/emr/latest/ManagementGuide/.
+
+## EXAMPLES
+
+### Example 1
+```powershell
+PS C:\> {{ Add example code here }}
+```
+
+{{ Add example description here }}
 
 ## PARAMETERS
 
@@ -48,9 +53,10 @@ Accept wildcard characters: False
 ```
 
 ### -AdditionalInfo
-Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-elasticmapreduce-cluster.html#cfn-elasticmapreduce-cluster-additionalinfo    
-PrimitiveType: Json    
-Required: False    
+A JSON string for selecting additional features.
+
+Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-elasticmapreduce-cluster.html#cfn-elasticmapreduce-cluster-additionalinfo
+PrimitiveType: Json
 UpdateType: Immutable
 
 ```yaml
@@ -66,11 +72,12 @@ Accept wildcard characters: False
 ```
 
 ### -Applications
-Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-elasticmapreduce-cluster.html#cfn-elasticmapreduce-cluster-applications    
-DuplicatesAllowed: False    
-ItemType: Application    
-Required: False    
-Type: List    
+The applications to install on this cluster, for example, Spark, Flink, Oozie, Zeppelin, and so on.
+
+Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-elasticmapreduce-cluster.html#cfn-elasticmapreduce-cluster-applications
+DuplicatesAllowed: False
+ItemType: Application
+Type: List
 UpdateType: Immutable
 
 ```yaml
@@ -86,9 +93,12 @@ Accept wildcard characters: False
 ```
 
 ### -AutoScalingRole
-Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-elasticmapreduce-cluster.html#cfn-elasticmapreduce-cluster-autoscalingrole    
-PrimitiveType: String    
-Required: False    
+An IAM role for automatic scaling policies.
+The default role is EMR_AutoScaling_DefaultRole.
+The IAM role provides permissions that the automatic scaling feature requires to launch and terminate EC2 instances in an instance group.
+
+Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-elasticmapreduce-cluster.html#cfn-elasticmapreduce-cluster-autoscalingrole
+PrimitiveType: String
 UpdateType: Immutable
 
 ```yaml
@@ -104,11 +114,12 @@ Accept wildcard characters: False
 ```
 
 ### -BootstrapActions
-Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-elasticmapreduce-cluster.html#cfn-elasticmapreduce-cluster-bootstrapactions    
-DuplicatesAllowed: False    
-ItemType: BootstrapActionConfig    
-Required: False    
-Type: List    
+A list of bootstrap actions to run before Hadoop starts on the cluster nodes.
+
+Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-elasticmapreduce-cluster.html#cfn-elasticmapreduce-cluster-bootstrapactions
+DuplicatesAllowed: False
+ItemType: BootstrapActionConfig
+Type: List
 UpdateType: Immutable
 
 ```yaml
@@ -124,11 +135,13 @@ Accept wildcard characters: False
 ```
 
 ### -Configurations
-Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-elasticmapreduce-cluster.html#cfn-elasticmapreduce-cluster-configurations    
-DuplicatesAllowed: False    
-ItemType: Configuration    
-Required: False    
-Type: List    
+Applies only to Amazon EMR releases 4.x and later.
+The list of Configurations supplied to the EMR cluster.
+
+Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-elasticmapreduce-cluster.html#cfn-elasticmapreduce-cluster-configurations
+DuplicatesAllowed: False
+ItemType: Configuration
+Type: List
 UpdateType: Immutable
 
 ```yaml
@@ -144,9 +157,11 @@ Accept wildcard characters: False
 ```
 
 ### -CustomAmiId
-Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-elasticmapreduce-cluster.html#cfn-elasticmapreduce-cluster-customamiid    
-PrimitiveType: String    
-Required: False    
+Available only in Amazon EMR version 5.7.0 and later.
+The ID of a custom Amazon EBS-backed Linux AMI if the cluster uses a custom AMI.
+
+Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-elasticmapreduce-cluster.html#cfn-elasticmapreduce-cluster-customamiid
+PrimitiveType: String
 UpdateType: Immutable
 
 ```yaml
@@ -162,9 +177,11 @@ Accept wildcard characters: False
 ```
 
 ### -EbsRootVolumeSize
-Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-elasticmapreduce-cluster.html#cfn-elasticmapreduce-cluster-ebsrootvolumesize    
-PrimitiveType: Integer    
-Required: False    
+The size, in GiB, of the EBS root device volume of the Linux AMI that is used for each EC2 instance.
+Available in Amazon EMR version 4.x and later.
+
+Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-elasticmapreduce-cluster.html#cfn-elasticmapreduce-cluster-ebsrootvolumesize
+PrimitiveType: Integer
 UpdateType: Immutable
 
 ```yaml
@@ -180,9 +197,10 @@ Accept wildcard characters: False
 ```
 
 ### -Instances
-Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-elasticmapreduce-cluster.html#cfn-elasticmapreduce-cluster-instances    
-Required: True    
-Type: JobFlowInstancesConfig    
+A specification of the number and type of Amazon EC2 instances.
+
+Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-elasticmapreduce-cluster.html#cfn-elasticmapreduce-cluster-instances
+Type: JobFlowInstancesConfig
 UpdateType: Conditional
 
 ```yaml
@@ -198,9 +216,14 @@ Accept wildcard characters: False
 ```
 
 ### -JobFlowRole
-Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-elasticmapreduce-cluster.html#cfn-elasticmapreduce-cluster-jobflowrole    
-PrimitiveType: String    
-Required: True    
+Also called instance profile and EC2 role.
+An IAM role for an EMR cluster.
+The EC2 instances of the cluster assume this role.
+The default role is EMR_EC2_DefaultRole.
+In order to use the default role, you must have already created it using the CLI or console.
+
+Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-elasticmapreduce-cluster.html#cfn-elasticmapreduce-cluster-jobflowrole
+PrimitiveType: String
 UpdateType: Immutable
 
 ```yaml
@@ -215,10 +238,31 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
+### -KerberosAttributes
+Attributes for Kerberos configuration when Kerberos authentication is enabled using a security configuration.
+For more information see Use Kerberos Authentication: https://docs.aws.amazon.com/emr/latest/ManagementGuide/emr-kerberos.html in the *EMR Management Guide*.
+
+Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-elasticmapreduce-cluster.html#cfn-elasticmapreduce-cluster-kerberosattributes
+Type: KerberosAttributes
+UpdateType: Immutable
+
+```yaml
+Type: Object
+Parameter Sets: (All)
+Aliases:
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
 ### -LogUri
-Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-elasticmapreduce-cluster.html#cfn-elasticmapreduce-cluster-loguri    
-PrimitiveType: String    
-Required: False    
+The path to the Amazon S3 location where logs for this cluster are stored.
+
+Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-elasticmapreduce-cluster.html#cfn-elasticmapreduce-cluster-loguri
+PrimitiveType: String
 UpdateType: Immutable
 
 ```yaml
@@ -234,9 +278,10 @@ Accept wildcard characters: False
 ```
 
 ### -Name
-Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-elasticmapreduce-cluster.html#cfn-elasticmapreduce-cluster-name    
-PrimitiveType: String    
-Required: True    
+The name of the cluster.
+
+Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-elasticmapreduce-cluster.html#cfn-elasticmapreduce-cluster-name
+PrimitiveType: String
 UpdateType: Immutable
 
 ```yaml
@@ -252,9 +297,14 @@ Accept wildcard characters: False
 ```
 
 ### -ReleaseLabel
-Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-elasticmapreduce-cluster.html#cfn-elasticmapreduce-cluster-releaselabel    
-PrimitiveType: String    
-Required: False    
+The Amazon EMR release label, which determines the version of open-source application packages installed on the cluster.
+Release labels are in the form emr-x.x.x, where x.x.x is an Amazon EMR release version, for example, emr-5.14.0.
+For more information about Amazon EMR release versions and included application versions and features, see https://docs.aws.amazon.com/emr/latest/ReleaseGuide/: https://docs.aws.amazon.com/emr/latest/ReleaseGuide/.
+The release label applies only to Amazon EMR releases versions 4.x and later.
+Earlier versions use AmiVersion.
+
+Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-elasticmapreduce-cluster.html#cfn-elasticmapreduce-cluster-releaselabel
+PrimitiveType: String
 UpdateType: Immutable
 
 ```yaml
@@ -270,9 +320,15 @@ Accept wildcard characters: False
 ```
 
 ### -ScaleDownBehavior
-Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-elasticmapreduce-cluster.html#cfn-elasticmapreduce-cluster-scaledownbehavior    
-PrimitiveType: String    
-Required: False    
+The way that individual Amazon EC2 instances terminate when an automatic scale-in activity occurs or an instance group is resized.
+TERMINATE_AT_INSTANCE_HOUR indicates that Amazon EMR terminates nodes at the instance-hour boundary, regardless of when the request to terminate the instance was submitted.
+This option is only available with Amazon EMR 5.1.0 and later and is the default for clusters created using that version.
+TERMINATE_AT_TASK_COMPLETION indicates that Amazon EMR blacklists and drains tasks from nodes before terminating the Amazon EC2 instances, regardless of the instance-hour boundary.
+With either behavior, Amazon EMR removes the least active nodes first and blocks instance termination if it could lead to HDFS corruption.
+TERMINATE_AT_TASK_COMPLETION is available only in Amazon EMR version 4.1.0 and later, and is the default for versions of Amazon EMR earlier than 5.1.0.
+
+Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-elasticmapreduce-cluster.html#cfn-elasticmapreduce-cluster-scaledownbehavior
+PrimitiveType: String
 UpdateType: Immutable
 
 ```yaml
@@ -288,9 +344,10 @@ Accept wildcard characters: False
 ```
 
 ### -SecurityConfiguration
-Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-elasticmapreduce-cluster.html#cfn-elasticmapreduce-cluster-securityconfiguration    
-PrimitiveType: String    
-Required: False    
+The name of the security configuration applied to the cluster.
+
+Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-elasticmapreduce-cluster.html#cfn-elasticmapreduce-cluster-securityconfiguration
+PrimitiveType: String
 UpdateType: Immutable
 
 ```yaml
@@ -306,9 +363,10 @@ Accept wildcard characters: False
 ```
 
 ### -ServiceRole
-Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-elasticmapreduce-cluster.html#cfn-elasticmapreduce-cluster-servicerole    
-PrimitiveType: String    
-Required: True    
+The IAM role that will be assumed by the Amazon EMR service to access AWS resources on your behalf.
+
+Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-elasticmapreduce-cluster.html#cfn-elasticmapreduce-cluster-servicerole
+PrimitiveType: String
 UpdateType: Immutable
 
 ```yaml
@@ -323,12 +381,34 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
+### -Steps
+A list of steps to run.
+
+Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-elasticmapreduce-cluster.html#cfn-elasticmapreduce-cluster-steps
+DuplicatesAllowed: False
+ItemType: StepConfig
+Type: List
+UpdateType: Immutable
+
+```yaml
+Type: Object
+Parameter Sets: (All)
+Aliases:
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
 ### -Tags
-Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-elasticmapreduce-cluster.html#cfn-elasticmapreduce-cluster-tags    
-DuplicatesAllowed: True    
-ItemType: Tag    
-Required: False    
-Type: List    
+A list of tags associated with a cluster.
+
+Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-elasticmapreduce-cluster.html#cfn-elasticmapreduce-cluster-tags
+DuplicatesAllowed: True
+ItemType: Tag
+Type: List
 UpdateType: Mutable
 
 ```yaml
@@ -344,9 +424,14 @@ Accept wildcard characters: False
 ```
 
 ### -VisibleToAllUsers
-Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-elasticmapreduce-cluster.html#cfn-elasticmapreduce-cluster-visibletoallusers    
-PrimitiveType: Boolean    
-Required: False    
+Indicates whether the cluster is visible to all IAM users of the AWS account associated with the cluster.
+The default value, true, indicates that all IAM users in the AWS account can perform cluster actions if they have the proper IAM policy permissions.
+If this value is false, only the IAM user that created the cluster can perform actions.
+This value can be changed on a running cluster by using the SetVisibleToAllUsers action.
+You can override the default value of true when you create a cluster by using the VisibleToAllUsers parameter of the RunJobFlow action.
+
+Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-elasticmapreduce-cluster.html#cfn-elasticmapreduce-cluster-visibletoallusers
+PrimitiveType: Boolean
 UpdateType: Mutable
 
 ```yaml
@@ -456,15 +541,13 @@ Accept wildcard characters: False
 ```
 
 ### CommonParameters
-This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction, and -WarningVariable.
-For more information, see about_CommonParameters (http://go.microsoft.com/fwlink/?LinkID=113216).
+This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction, and -WarningVariable. For more information, see [about_CommonParameters](http://go.microsoft.com/fwlink/?LinkID=113216).
 
 ## INPUTS
 
 ## OUTPUTS
 
 ### Vaporshell.Resource.EMR.Cluster
-
 ## NOTES
 
 ## RELATED LINKS

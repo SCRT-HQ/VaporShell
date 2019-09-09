@@ -1,18 +1,9 @@
----
-layout: glossary
-title: New-VSEC2NetworkInterfaceAttachment
-categories: glossary
-label1: Category
-data1: Documentation
-label2: Depth
-data2: Deep
-schema: 2.0.0
----
-
 # New-VSEC2NetworkInterfaceAttachment
 
 ## SYNOPSIS
-Adds an AWS::EC2::NetworkInterfaceAttachment resource to the template
+Adds an AWS::EC2::NetworkInterfaceAttachment resource to the template.
+Attaches an elastic network interface (ENI to an Amazon EC2 instance.
+You can use this resource type to attach additional network interfaces to an instance without interruption.
 
 ## SYNTAX
 
@@ -24,7 +15,18 @@ New-VSEC2NetworkInterfaceAttachment [-LogicalId] <String> [-DeleteOnTermination 
 ```
 
 ## DESCRIPTION
-Adds an AWS::EC2::NetworkInterfaceAttachment resource to the template
+Adds an AWS::EC2::NetworkInterfaceAttachment resource to the template.
+Attaches an elastic network interface (ENI to an Amazon EC2 instance.
+You can use this resource type to attach additional network interfaces to an instance without interruption.
+
+## EXAMPLES
+
+### Example 1
+```powershell
+PS C:\> {{ Add example code here }}
+```
+
+{{ Add example description here }}
 
 ## PARAMETERS
 
@@ -46,9 +48,11 @@ Accept wildcard characters: False
 ```
 
 ### -DeleteOnTermination
-Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ec2-network-interface-attachment.html#cfn-ec2-network-interface-attachment-deleteonterm    
-PrimitiveType: Boolean    
-Required: False    
+Whether to delete the network interface when the instance terminates.
+By default, this value is set to true.
+
+Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ec2-network-interface-attachment.html#cfn-ec2-network-interface-attachment-deleteonterm
+PrimitiveType: Boolean
 UpdateType: Mutable
 
 ```yaml
@@ -64,9 +68,11 @@ Accept wildcard characters: False
 ```
 
 ### -DeviceIndex
-Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ec2-network-interface-attachment.html#cfn-ec2-network-interface-attachment-deviceindex    
-PrimitiveType: String    
-Required: True    
+The network interface's position in the attachment order.
+For example, the first attached network interface has a DeviceIndex of 0.
+
+Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ec2-network-interface-attachment.html#cfn-ec2-network-interface-attachment-deviceindex
+PrimitiveType: String
 UpdateType: Mutable
 
 ```yaml
@@ -82,9 +88,10 @@ Accept wildcard characters: False
 ```
 
 ### -InstanceId
-Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ec2-network-interface-attachment.html#cfn-ec2-network-interface-attachment-instanceid    
-PrimitiveType: String    
-Required: True    
+The ID of the instance to which you will attach the ENI.
+
+Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ec2-network-interface-attachment.html#cfn-ec2-network-interface-attachment-instanceid
+PrimitiveType: String
 UpdateType: Mutable
 
 ```yaml
@@ -100,9 +107,10 @@ Accept wildcard characters: False
 ```
 
 ### -NetworkInterfaceId
-Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ec2-network-interface-attachment.html#cfn-ec2-network-interface-attachment-networkinterfaceid    
-PrimitiveType: String    
-Required: True    
+The ID of the ENI that you want to attach.
+
+Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ec2-network-interface-attachment.html#cfn-ec2-network-interface-attachment-networkinterfaceid
+PrimitiveType: String
 UpdateType: Mutable
 
 ```yaml
@@ -212,15 +220,13 @@ Accept wildcard characters: False
 ```
 
 ### CommonParameters
-This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction, and -WarningVariable.
-For more information, see about_CommonParameters (http://go.microsoft.com/fwlink/?LinkID=113216).
+This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction, and -WarningVariable. For more information, see [about_CommonParameters](http://go.microsoft.com/fwlink/?LinkID=113216).
 
 ## INPUTS
 
 ## OUTPUTS
 
 ### Vaporshell.Resource.EC2.NetworkInterfaceAttachment
-
 ## NOTES
 
 ## RELATED LINKS

@@ -1,18 +1,8 @@
----
-layout: glossary
-title: New-VSRedshiftClusterParameterGroup
-categories: glossary
-label1: Category
-data1: Documentation
-label2: Depth
-data2: Deep
-schema: 2.0.0
----
-
 # New-VSRedshiftClusterParameterGroup
 
 ## SYNOPSIS
-Adds an AWS::Redshift::ClusterParameterGroup resource to the template
+Adds an AWS::Redshift::ClusterParameterGroup resource to the template.
+Describes a parameter group.
 
 ## SYNTAX
 
@@ -23,7 +13,17 @@ New-VSRedshiftClusterParameterGroup [-LogicalId] <String> -Description <Object> 
 ```
 
 ## DESCRIPTION
-Adds an AWS::Redshift::ClusterParameterGroup resource to the template
+Adds an AWS::Redshift::ClusterParameterGroup resource to the template.
+Describes a parameter group.
+
+## EXAMPLES
+
+### Example 1
+```powershell
+PS C:\> {{ Add example code here }}
+```
+
+{{ Add example description here }}
 
 ## PARAMETERS
 
@@ -45,9 +45,10 @@ Accept wildcard characters: False
 ```
 
 ### -Description
-Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-redshift-clusterparametergroup.html#cfn-redshift-clusterparametergroup-description    
-PrimitiveType: String    
-Required: True    
+The description of the parameter group.
+
+Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-redshift-clusterparametergroup.html#cfn-redshift-clusterparametergroup-description
+PrimitiveType: String
 UpdateType: Immutable
 
 ```yaml
@@ -63,9 +64,10 @@ Accept wildcard characters: False
 ```
 
 ### -ParameterGroupFamily
-Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-redshift-clusterparametergroup.html#cfn-redshift-clusterparametergroup-parametergroupfamily    
-PrimitiveType: String    
-Required: True    
+The name of the cluster parameter group family that this cluster parameter group is compatible with.
+
+Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-redshift-clusterparametergroup.html#cfn-redshift-clusterparametergroup-parametergroupfamily
+PrimitiveType: String
 UpdateType: Immutable
 
 ```yaml
@@ -81,11 +83,15 @@ Accept wildcard characters: False
 ```
 
 ### -Parameters
-Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-redshift-clusterparametergroup.html#cfn-redshift-clusterparametergroup-parameters    
-DuplicatesAllowed: True    
-ItemType: Parameter    
-Required: False    
-Type: List    
+An array of parameters to be modified.
+A maximum of 20 parameters can be modified in a single request.
+For each parameter to be modified, you must supply at least the parameter name and parameter value; other name-value pairs of the parameter are optional.
+For the workload management WLM configuration, you must supply all the name-value pairs in the wlm_json_configuration parameter.
+
+Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-redshift-clusterparametergroup.html#cfn-redshift-clusterparametergroup-parameters
+DuplicatesAllowed: True
+ItemType: Parameter
+Type: List
 UpdateType: Mutable
 
 ```yaml
@@ -101,11 +107,12 @@ Accept wildcard characters: False
 ```
 
 ### -Tags
-Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-redshift-clusterparametergroup.html#cfn-redshift-clusterparametergroup-tags    
-DuplicatesAllowed: True    
-ItemType: Tag    
-Required: False    
-Type: List    
+The list of tags for the cluster parameter group.
+
+Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-redshift-clusterparametergroup.html#cfn-redshift-clusterparametergroup-tags
+DuplicatesAllowed: True
+ItemType: Tag
+Type: List
 UpdateType: Mutable
 
 ```yaml
@@ -215,15 +222,13 @@ Accept wildcard characters: False
 ```
 
 ### CommonParameters
-This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction, and -WarningVariable.
-For more information, see about_CommonParameters (http://go.microsoft.com/fwlink/?LinkID=113216).
+This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction, and -WarningVariable. For more information, see [about_CommonParameters](http://go.microsoft.com/fwlink/?LinkID=113216).
 
 ## INPUTS
 
 ## OUTPUTS
 
 ### Vaporshell.Resource.Redshift.ClusterParameterGroup
-
 ## NOTES
 
 ## RELATED LINKS

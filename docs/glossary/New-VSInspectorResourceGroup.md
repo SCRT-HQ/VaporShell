@@ -1,18 +1,9 @@
----
-layout: glossary
-title: New-VSInspectorResourceGroup
-categories: glossary
-label1: Category
-data1: Documentation
-label2: Depth
-data2: Deep
-schema: 2.0.0
----
-
 # New-VSInspectorResourceGroup
 
 ## SYNOPSIS
-Adds an AWS::Inspector::ResourceGroup resource to the template
+Adds an AWS::Inspector::ResourceGroup resource to the template.
+The AWS::Inspector::ResourceGroup resource is used to create Amazon Inspector resource groups.
+A resource group defines a set of tags that, when queried, identify the AWS resources that make up the assessment target.
 
 ## SYNTAX
 
@@ -23,7 +14,18 @@ New-VSInspectorResourceGroup [-LogicalId] <String> -ResourceGroupTags <Object> [
 ```
 
 ## DESCRIPTION
-Adds an AWS::Inspector::ResourceGroup resource to the template
+Adds an AWS::Inspector::ResourceGroup resource to the template.
+The AWS::Inspector::ResourceGroup resource is used to create Amazon Inspector resource groups.
+A resource group defines a set of tags that, when queried, identify the AWS resources that make up the assessment target.
+
+## EXAMPLES
+
+### Example 1
+```powershell
+PS C:\> {{ Add example code here }}
+```
+
+{{ Add example description here }}
 
 ## PARAMETERS
 
@@ -45,10 +47,12 @@ Accept wildcard characters: False
 ```
 
 ### -ResourceGroupTags
-Type: List    
-Required: True    
-Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-inspector-resourcegroup.html#cfn-inspector-resourcegroup-resourcegrouptags    
-ItemType: Tag    
+The tags key and value pairs that will be associated with the resource group.
+For more information, see Tag: https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-resource-tags.html.
+
+Type: List
+Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-inspector-resourcegroup.html#cfn-inspector-resourcegroup-resourcegrouptags
+ItemType: Tag
 UpdateType: Immutable
 
 ```yaml
@@ -158,15 +162,13 @@ Accept wildcard characters: False
 ```
 
 ### CommonParameters
-This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction, and -WarningVariable.
-For more information, see about_CommonParameters (http://go.microsoft.com/fwlink/?LinkID=113216).
+This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction, and -WarningVariable. For more information, see [about_CommonParameters](http://go.microsoft.com/fwlink/?LinkID=113216).
 
 ## INPUTS
 
 ## OUTPUTS
 
 ### Vaporshell.Resource.Inspector.ResourceGroup
-
 ## NOTES
 
 ## RELATED LINKS

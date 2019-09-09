@@ -1,18 +1,8 @@
----
-layout: glossary
-title: Add-VSIoTTopicRuleS3Action
-categories: glossary
-label1: Category
-data1: Documentation
-label2: Depth
-data2: Deep
-schema: 2.0.0
----
-
 # Add-VSIoTTopicRuleS3Action
 
 ## SYNOPSIS
-Adds an AWS::IoT::TopicRule.S3Action resource property to the template
+Adds an AWS::IoT::TopicRule.S3Action resource property to the template.
+Describes an action to write data to an Amazon S3 bucket.
 
 ## SYNTAX
 
@@ -21,14 +11,25 @@ Add-VSIoTTopicRuleS3Action [-BucketName] <Object> [-Key] <Object> [-RoleArn] <Ob
 ```
 
 ## DESCRIPTION
-Adds an AWS::IoT::TopicRule.S3Action resource property to the template
+Adds an AWS::IoT::TopicRule.S3Action resource property to the template.
+Describes an action to write data to an Amazon S3 bucket.
+
+## EXAMPLES
+
+### Example 1
+```powershell
+PS C:\> {{ Add example code here }}
+```
+
+{{ Add example description here }}
 
 ## PARAMETERS
 
 ### -BucketName
-Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iot-topicrule-s3action.html#cfn-iot-topicrule-s3action-bucketname    
-PrimitiveType: String    
-Required: True    
+The Amazon S3 bucket.
+
+Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iot-topicrule-s3action.html#cfn-iot-topicrule-s3action-bucketname
+PrimitiveType: String
 UpdateType: Mutable
 
 ```yaml
@@ -44,9 +45,10 @@ Accept wildcard characters: False
 ```
 
 ### -Key
-Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iot-topicrule-s3action.html#cfn-iot-topicrule-s3action-key    
-PrimitiveType: String    
-Required: True    
+The object key.
+
+Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iot-topicrule-s3action.html#cfn-iot-topicrule-s3action-key
+PrimitiveType: String
 UpdateType: Mutable
 
 ```yaml
@@ -62,9 +64,10 @@ Accept wildcard characters: False
 ```
 
 ### -RoleArn
-Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iot-topicrule-s3action.html#cfn-iot-topicrule-s3action-rolearn    
-PrimitiveType: String    
-Required: True    
+The ARN of the IAM role that grants access.
+
+Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iot-topicrule-s3action.html#cfn-iot-topicrule-s3action-rolearn
+PrimitiveType: String
 UpdateType: Mutable
 
 ```yaml
@@ -80,15 +83,13 @@ Accept wildcard characters: False
 ```
 
 ### CommonParameters
-This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction, and -WarningVariable.
-For more information, see about_CommonParameters (http://go.microsoft.com/fwlink/?LinkID=113216).
+This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction, and -WarningVariable. For more information, see [about_CommonParameters](http://go.microsoft.com/fwlink/?LinkID=113216).
 
 ## INPUTS
 
 ## OUTPUTS
 
 ### Vaporshell.Resource.IoT.TopicRule.S3Action
-
 ## NOTES
 
 ## RELATED LINKS

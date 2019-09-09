@@ -1,18 +1,8 @@
----
-layout: glossary
-title: Add-VSOpsWorksStackElasticIp
-categories: glossary
-label1: Category
-data1: Documentation
-label2: Depth
-data2: Deep
-schema: 2.0.0
----
-
 # Add-VSOpsWorksStackElasticIp
 
 ## SYNOPSIS
-Adds an AWS::OpsWorks::Stack.ElasticIp resource property to the template
+Adds an AWS::OpsWorks::Stack.ElasticIp resource property to the template.
+Describes an Elastic IP address.
 
 ## SYNTAX
 
@@ -21,14 +11,25 @@ Add-VSOpsWorksStackElasticIp [-Ip] <Object> [[-Name] <Object>] [<CommonParameter
 ```
 
 ## DESCRIPTION
-Adds an AWS::OpsWorks::Stack.ElasticIp resource property to the template
+Adds an AWS::OpsWorks::Stack.ElasticIp resource property to the template.
+Describes an Elastic IP address.
+
+## EXAMPLES
+
+### Example 1
+```powershell
+PS C:\> {{ Add example code here }}
+```
+
+{{ Add example description here }}
 
 ## PARAMETERS
 
 ### -Ip
-Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-opsworks-stack-elasticip.html#cfn-opsworks-stack-elasticip-ip    
-PrimitiveType: String    
-Required: True    
+The IP address.
+
+Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-opsworks-stack-elasticip.html#cfn-opsworks-stack-elasticip-ip
+PrimitiveType: String
 UpdateType: Mutable
 
 ```yaml
@@ -44,9 +45,10 @@ Accept wildcard characters: False
 ```
 
 ### -Name
-Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-opsworks-stack-elasticip.html#cfn-opsworks-stack-elasticip-name    
-PrimitiveType: String    
-Required: False    
+The name.
+
+Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-opsworks-stack-elasticip.html#cfn-opsworks-stack-elasticip-name
+PrimitiveType: String
 UpdateType: Mutable
 
 ```yaml
@@ -62,15 +64,13 @@ Accept wildcard characters: False
 ```
 
 ### CommonParameters
-This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction, and -WarningVariable.
-For more information, see about_CommonParameters (http://go.microsoft.com/fwlink/?LinkID=113216).
+This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction, and -WarningVariable. For more information, see [about_CommonParameters](http://go.microsoft.com/fwlink/?LinkID=113216).
 
 ## INPUTS
 
 ## OUTPUTS
 
 ### Vaporshell.Resource.OpsWorks.Stack.ElasticIp
-
 ## NOTES
 
 ## RELATED LINKS

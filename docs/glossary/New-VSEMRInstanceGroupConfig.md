@@ -1,18 +1,10 @@
----
-layout: glossary
-title: New-VSEMRInstanceGroupConfig
-categories: glossary
-label1: Category
-data1: Documentation
-label2: Depth
-data2: Deep
-schema: 2.0.0
----
-
 # New-VSEMRInstanceGroupConfig
 
 ## SYNOPSIS
-Adds an AWS::EMR::InstanceGroupConfig resource to the template
+Adds an AWS::EMR::InstanceGroupConfig resource to the template.
+Use InstanceGroupConfig to define instance groups for an EMR cluster.
+A cluster can not use both instance groups and instance fleets.
+For more information, see Create a Cluster with Instance Fleets or Uniform Instance Groups: https://docs.aws.amazon.com/emr/latest/ManagementGuide/emr-instance-group-configuration.html in the *Amazon EMR Management Guide*.
 
 ## SYNTAX
 
@@ -25,7 +17,19 @@ New-VSEMRInstanceGroupConfig [-LogicalId] <String> [-AutoScalingPolicy <Object>]
 ```
 
 ## DESCRIPTION
-Adds an AWS::EMR::InstanceGroupConfig resource to the template
+Adds an AWS::EMR::InstanceGroupConfig resource to the template.
+Use InstanceGroupConfig to define instance groups for an EMR cluster.
+A cluster can not use both instance groups and instance fleets.
+For more information, see Create a Cluster with Instance Fleets or Uniform Instance Groups: https://docs.aws.amazon.com/emr/latest/ManagementGuide/emr-instance-group-configuration.html in the *Amazon EMR Management Guide*.
+
+## EXAMPLES
+
+### Example 1
+```powershell
+PS C:\> {{ Add example code here }}
+```
+
+{{ Add example description here }}
 
 ## PARAMETERS
 
@@ -47,9 +51,12 @@ Accept wildcard characters: False
 ```
 
 ### -AutoScalingPolicy
-Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-emr-instancegroupconfig.html#cfn-elasticmapreduce-instancegroupconfig-autoscalingpolicy    
-Required: False    
-Type: AutoScalingPolicy    
+AutoScalingPolicy is a subproperty of InstanceGroupConfig.
+AutoScalingPolicy defines how an instance group dynamically adds and terminates EC2 instances in response to the value of a CloudWatch metric.
+For more information, see Using Automatic Scaling in Amazon EMR: https://docs.aws.amazon.com/emr/latest/ManagementGuide/emr-automatic-scaling.html in the *Amazon EMR Management Guide*.
+
+Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-emr-instancegroupconfig.html#cfn-elasticmapreduce-instancegroupconfig-autoscalingpolicy
+Type: AutoScalingPolicy
 UpdateType: Mutable
 
 ```yaml
@@ -65,9 +72,13 @@ Accept wildcard characters: False
 ```
 
 ### -BidPrice
-Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-emr-instancegroupconfig.html#cfn-emr-instancegroupconfig-bidprice    
-PrimitiveType: String    
-Required: False    
+The maximum Spot price your are willing to pay for EC2 instances.
+If BidPrice is specified, Amazon EMR uses Spot Instances for the instance group.
+Specified in USD.
+Alternatively, a value of OnDemandPrice indicates that the maximum Spot price is set equal to the On-Demand price.
+
+Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-emr-instancegroupconfig.html#cfn-emr-instancegroupconfig-bidprice
+PrimitiveType: String
 UpdateType: Immutable
 
 ```yaml
@@ -83,11 +94,14 @@ Accept wildcard characters: False
 ```
 
 ### -Configurations
-Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-emr-instancegroupconfig.html#cfn-emr-instancegroupconfig-configurations    
-DuplicatesAllowed: False    
-ItemType: Configuration    
-Required: False    
-Type: List    
+Amazon EMR releases 4.x or later.
+The list of configurations supplied for an EMR cluster instance group.
+You can specify a separate configuration for each instance group master, core, and task.
+
+Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-emr-instancegroupconfig.html#cfn-emr-instancegroupconfig-configurations
+DuplicatesAllowed: False
+ItemType: Configuration
+Type: List
 UpdateType: Immutable
 
 ```yaml
@@ -103,9 +117,10 @@ Accept wildcard characters: False
 ```
 
 ### -EbsConfiguration
-Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-emr-instancegroupconfig.html#cfn-emr-instancegroupconfig-ebsconfiguration    
-Required: False    
-Type: EbsConfiguration    
+EbsConfiguration determines the EBS volumes to attach to EMR cluster instances.
+
+Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-emr-instancegroupconfig.html#cfn-emr-instancegroupconfig-ebsconfiguration
+Type: EbsConfiguration
 UpdateType: Immutable
 
 ```yaml
@@ -121,9 +136,10 @@ Accept wildcard characters: False
 ```
 
 ### -InstanceCount
-Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-emr-instancegroupconfig.html#cfn-emr-instancegroupconfiginstancecount-    
-PrimitiveType: Integer    
-Required: True    
+Target number of instances for the instance group.
+
+Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-emr-instancegroupconfig.html#cfn-emr-instancegroupconfiginstancecount-
+PrimitiveType: Integer
 UpdateType: Mutable
 
 ```yaml
@@ -139,9 +155,10 @@ Accept wildcard characters: False
 ```
 
 ### -InstanceRole
-Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-emr-instancegroupconfig.html#cfn-emr-instancegroupconfig-instancerole    
-PrimitiveType: String    
-Required: True    
+The role of the instance group in the cluster.
+
+Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-emr-instancegroupconfig.html#cfn-emr-instancegroupconfig-instancerole
+PrimitiveType: String
 UpdateType: Immutable
 
 ```yaml
@@ -157,9 +174,10 @@ Accept wildcard characters: False
 ```
 
 ### -InstanceType
-Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-emr-instancegroupconfig.html#cfn-emr-instancegroupconfig-instancetype    
-PrimitiveType: String    
-Required: True    
+The EC2 instance type for all instances in the instance group.
+
+Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-emr-instancegroupconfig.html#cfn-emr-instancegroupconfig-instancetype
+PrimitiveType: String
 UpdateType: Immutable
 
 ```yaml
@@ -175,9 +193,10 @@ Accept wildcard characters: False
 ```
 
 ### -JobFlowId
-Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-emr-instancegroupconfig.html#cfn-emr-instancegroupconfig-jobflowid    
-PrimitiveType: String    
-Required: True    
+The ID of an Amazon EMR cluster that you want to associate this instance group with.
+
+Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-emr-instancegroupconfig.html#cfn-emr-instancegroupconfig-jobflowid
+PrimitiveType: String
 UpdateType: Immutable
 
 ```yaml
@@ -193,9 +212,10 @@ Accept wildcard characters: False
 ```
 
 ### -Market
-Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-emr-instancegroupconfig.html#cfn-emr-instancegroupconfig-market    
-PrimitiveType: String    
-Required: False    
+Market type of the EC2 instances used to create a cluster node.
+
+Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-emr-instancegroupconfig.html#cfn-emr-instancegroupconfig-market
+PrimitiveType: String
 UpdateType: Immutable
 
 ```yaml
@@ -211,9 +231,10 @@ Accept wildcard characters: False
 ```
 
 ### -Name
-Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-emr-instancegroupconfig.html#cfn-emr-instancegroupconfig-name    
-PrimitiveType: String    
-Required: False    
+Friendly name given to the instance group.
+
+Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-emr-instancegroupconfig.html#cfn-emr-instancegroupconfig-name
+PrimitiveType: String
 UpdateType: Immutable
 
 ```yaml
@@ -323,15 +344,13 @@ Accept wildcard characters: False
 ```
 
 ### CommonParameters
-This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction, and -WarningVariable.
-For more information, see about_CommonParameters (http://go.microsoft.com/fwlink/?LinkID=113216).
+This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction, and -WarningVariable. For more information, see [about_CommonParameters](http://go.microsoft.com/fwlink/?LinkID=113216).
 
 ## INPUTS
 
 ## OUTPUTS
 
 ### Vaporshell.Resource.EMR.InstanceGroupConfig
-
 ## NOTES
 
 ## RELATED LINKS

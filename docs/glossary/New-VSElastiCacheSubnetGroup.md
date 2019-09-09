@@ -1,18 +1,9 @@
----
-layout: glossary
-title: New-VSElastiCacheSubnetGroup
-categories: glossary
-label1: Category
-data1: Documentation
-label2: Depth
-data2: Deep
-schema: 2.0.0
----
-
 # New-VSElastiCacheSubnetGroup
 
 ## SYNOPSIS
-Adds an AWS::ElastiCache::SubnetGroup resource to the template
+Adds an AWS::ElastiCache::SubnetGroup resource to the template.
+Creates a cache subnet group.
+For more information about cache subnet groups, go to Cache Subnet Groups in the *Amazon ElastiCache User Guide* or go to CreateCacheSubnetGroup: https://docs.aws.amazon.com/AmazonElastiCache/latest/APIReference/API_CreateCacheSubnetGroup.html in the *Amazon ElastiCache API Reference Guide*.
 
 ## SYNTAX
 
@@ -23,7 +14,18 @@ New-VSElastiCacheSubnetGroup [-LogicalId] <String> [-CacheSubnetGroupName <Objec
 ```
 
 ## DESCRIPTION
-Adds an AWS::ElastiCache::SubnetGroup resource to the template
+Adds an AWS::ElastiCache::SubnetGroup resource to the template.
+Creates a cache subnet group.
+For more information about cache subnet groups, go to Cache Subnet Groups in the *Amazon ElastiCache User Guide* or go to CreateCacheSubnetGroup: https://docs.aws.amazon.com/AmazonElastiCache/latest/APIReference/API_CreateCacheSubnetGroup.html in the *Amazon ElastiCache API Reference Guide*.
+
+## EXAMPLES
+
+### Example 1
+```powershell
+PS C:\> {{ Add example code here }}
+```
+
+{{ Add example description here }}
 
 ## PARAMETERS
 
@@ -45,9 +47,13 @@ Accept wildcard characters: False
 ```
 
 ### -CacheSubnetGroupName
-Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-elasticache-subnetgroup.html#cfn-elasticache-subnetgroup-cachesubnetgroupname    
-PrimitiveType: String    
-Required: False    
+The name for the cache subnet group.
+This value is stored as a lowercase string.
+Constraints: Must contain no more than 255 alphanumeric characters or hyphens.
+Example: mysubnetgroup
+
+Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-elasticache-subnetgroup.html#cfn-elasticache-subnetgroup-cachesubnetgroupname
+PrimitiveType: String
 UpdateType: Immutable
 
 ```yaml
@@ -63,9 +69,10 @@ Accept wildcard characters: False
 ```
 
 ### -Description
-Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-elasticache-subnetgroup.html#cfn-elasticache-subnetgroup-description    
-PrimitiveType: String    
-Required: True    
+The description for the cache subnet group.
+
+Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-elasticache-subnetgroup.html#cfn-elasticache-subnetgroup-description
+PrimitiveType: String
 UpdateType: Mutable
 
 ```yaml
@@ -81,11 +88,12 @@ Accept wildcard characters: False
 ```
 
 ### -SubnetIds
-Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-elasticache-subnetgroup.html#cfn-elasticache-subnetgroup-subnetids    
-DuplicatesAllowed: True    
-PrimitiveItemType: String    
-Required: True    
-Type: List    
+The EC2 subnet IDs for the cache subnet group.
+
+Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-elasticache-subnetgroup.html#cfn-elasticache-subnetgroup-subnetids
+DuplicatesAllowed: True
+PrimitiveItemType: String
+Type: List
 UpdateType: Mutable
 
 ```yaml
@@ -195,15 +203,13 @@ Accept wildcard characters: False
 ```
 
 ### CommonParameters
-This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction, and -WarningVariable.
-For more information, see about_CommonParameters (http://go.microsoft.com/fwlink/?LinkID=113216).
+This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction, and -WarningVariable. For more information, see [about_CommonParameters](http://go.microsoft.com/fwlink/?LinkID=113216).
 
 ## INPUTS
 
 ## OUTPUTS
 
 ### Vaporshell.Resource.ElastiCache.SubnetGroup
-
 ## NOTES
 
 ## RELATED LINKS

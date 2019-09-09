@@ -1,18 +1,8 @@
----
-layout: glossary
-title: New-VSSESConfigurationSetEventDestination
-categories: glossary
-label1: Category
-data1: Documentation
-label2: Depth
-data2: Deep
-schema: 2.0.0
----
-
 # New-VSSESConfigurationSetEventDestination
 
 ## SYNOPSIS
-Adds an AWS::SES::ConfigurationSetEventDestination resource to the template
+Adds an AWS::SES::ConfigurationSetEventDestination resource to the template.
+Specifies a configuration set event destination.
 
 ## SYNTAX
 
@@ -23,7 +13,27 @@ New-VSSESConfigurationSetEventDestination [-LogicalId] <String> -ConfigurationSe
 ```
 
 ## DESCRIPTION
-Adds an AWS::SES::ConfigurationSetEventDestination resource to the template
+Adds an AWS::SES::ConfigurationSetEventDestination resource to the template.
+Specifies a configuration set event destination.
+
+**Note**
+
+When you specify an event destination, you must provide one, and only one, destination.
+The destination can be CloudWatch, Amazon Kinesis Data Firehose, or Amazon Simple Notification Service (Amazon SNS.
+
+An event destination is the AWS service to which Amazon SES publishes the email sending events associated with a configuration set.
+For information about using configuration sets, see the Amazon SES Developer Guide: https://docs.aws.amazon.com/ses/latest/DeveloperGuide/monitor-sending-activity.html.
+
+You can execute this operation no more than once per second.
+
+## EXAMPLES
+
+### Example 1
+```powershell
+PS C:\> {{ Add example code here }}
+```
+
+{{ Add example description here }}
 
 ## PARAMETERS
 
@@ -45,9 +55,10 @@ Accept wildcard characters: False
 ```
 
 ### -ConfigurationSetName
-Required: True    
-Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ses-configurationseteventdestination.html#cfn-ses-configurationseteventdestination-configurationsetname    
-PrimitiveType: String    
+The name of the configuration set that contains the event destination that you want to update.
+
+Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ses-configurationseteventdestination.html#cfn-ses-configurationseteventdestination-configurationsetname
+PrimitiveType: String
 UpdateType: Immutable
 
 ```yaml
@@ -63,9 +74,10 @@ Accept wildcard characters: False
 ```
 
 ### -EventDestination
-Type: EventDestination    
-Required: True    
-Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ses-configurationseteventdestination.html#cfn-ses-configurationseteventdestination-eventdestination    
+The event destination object that you want to apply to the specified configuration set.
+
+Type: EventDestination
+Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ses-configurationseteventdestination.html#cfn-ses-configurationseteventdestination-eventdestination
 UpdateType: Mutable
 
 ```yaml
@@ -175,15 +187,13 @@ Accept wildcard characters: False
 ```
 
 ### CommonParameters
-This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction, and -WarningVariable.
-For more information, see about_CommonParameters (http://go.microsoft.com/fwlink/?LinkID=113216).
+This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction, and -WarningVariable. For more information, see [about_CommonParameters](http://go.microsoft.com/fwlink/?LinkID=113216).
 
 ## INPUTS
 
 ## OUTPUTS
 
 ### Vaporshell.Resource.SES.ConfigurationSetEventDestination
-
 ## NOTES
 
 ## RELATED LINKS

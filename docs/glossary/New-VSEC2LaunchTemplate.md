@@ -1,18 +1,9 @@
----
-layout: glossary
-title: New-VSEC2LaunchTemplate
-categories: glossary
-label1: Category
-data1: Documentation
-label2: Depth
-data2: Deep
-schema: 2.0.0
----
-
 # New-VSEC2LaunchTemplate
 
 ## SYNOPSIS
-Adds an AWS::EC2::LaunchTemplate resource to the template
+Adds an AWS::EC2::LaunchTemplate resource to the template.
+Specifies a launch template for an Amazon EC2 instance.
+A launch template contains the parameters to launch an instance.
 
 ## SYNTAX
 
@@ -23,7 +14,18 @@ New-VSEC2LaunchTemplate [-LogicalId] <String> [-LaunchTemplateName <Object>] [-L
 ```
 
 ## DESCRIPTION
-Adds an AWS::EC2::LaunchTemplate resource to the template
+Adds an AWS::EC2::LaunchTemplate resource to the template.
+Specifies a launch template for an Amazon EC2 instance.
+A launch template contains the parameters to launch an instance.
+
+## EXAMPLES
+
+### Example 1
+```powershell
+PS C:\> {{ Add example code here }}
+```
+
+{{ Add example description here }}
 
 ## PARAMETERS
 
@@ -45,9 +47,10 @@ Accept wildcard characters: False
 ```
 
 ### -LaunchTemplateName
-Required: False    
-Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ec2-launchtemplate.html#cfn-ec2-launchtemplate-launchtemplatename    
-PrimitiveType: String    
+A name for the launch template.
+
+Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ec2-launchtemplate.html#cfn-ec2-launchtemplate-launchtemplatename
+PrimitiveType: String
 UpdateType: Immutable
 
 ```yaml
@@ -63,9 +66,10 @@ Accept wildcard characters: False
 ```
 
 ### -LaunchTemplateData
-Type: LaunchTemplateData    
-Required: False    
-Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ec2-launchtemplate.html#cfn-ec2-launchtemplate-launchtemplatedata    
+The information for the launch template.
+
+Type: LaunchTemplateData
+Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ec2-launchtemplate.html#cfn-ec2-launchtemplate-launchtemplatedata
 UpdateType: Mutable
 
 ```yaml
@@ -175,15 +179,13 @@ Accept wildcard characters: False
 ```
 
 ### CommonParameters
-This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction, and -WarningVariable.
-For more information, see about_CommonParameters (http://go.microsoft.com/fwlink/?LinkID=113216).
+This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction, and -WarningVariable. For more information, see [about_CommonParameters](http://go.microsoft.com/fwlink/?LinkID=113216).
 
 ## INPUTS
 
 ## OUTPUTS
 
 ### Vaporshell.Resource.EC2.LaunchTemplate
-
 ## NOTES
 
 ## RELATED LINKS

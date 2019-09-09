@@ -1,29 +1,49 @@
----
-layout: glossary
-title: New-VSCloudFormationWaitCondition
-categories: glossary
-label1: Category
-data1: Documentation
-label2: Depth
-data2: Deep
-schema: 2.0.0
----
-
 # New-VSCloudFormationWaitCondition
 
 ## SYNOPSIS
-Adds an AWS::CloudFormation::WaitCondition resource to the template
+Adds an AWS::CloudFormation::WaitCondition resource to the template.
+**Important**
 
 ## SYNTAX
 
 ```
-New-VSCloudFormationWaitCondition [-LogicalId] <String> [-Count <Int32>] -Handle <Object> -Timeout <Object>
+New-VSCloudFormationWaitCondition [-LogicalId] <String> [-Count <Int32>] [-Handle <Object>] [-Timeout <Object>]
  [-CreationPolicy <Object>] [-DeletionPolicy <String>] [-DependsOn <String[]>] [-Metadata <Object>]
  [-UpdatePolicy <Object>] [-Condition <Object>] [<CommonParameters>]
 ```
 
 ## DESCRIPTION
-Adds an AWS::CloudFormation::WaitCondition resource to the template
+Adds an AWS::CloudFormation::WaitCondition resource to the template.
+**Important**
+
+For Amazon EC2 and Auto Scaling resources, we recommend that you use a CreationPolicy attribute instead of wait conditions.
+Add a CreationPolicy attribute to those resources, and use the cfn-signal helper script to signal when an instance creation process has completed successfully.
+
+You can use a wait condition for situations like the following:
+
++ To coordinate stack resource creation with configuration actions that are external to the stack creation
+
++ To track the status of a configuration process
+
+For these situations, we recommend that you associate a CreationPolicy: https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-attribute-creationpolicy.html attribute with the wait condition so that you don't have to use a wait condition handle.
+For more information and an example, see Creating Wait Conditions in a Template: https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-waitcondition.html.
+If you use a CreationPolicy with a wait condition, do not specify any of the wait condition's properties.
+
+**Note**
+
+If you use the VPC Endpoints: https://docs.aws.amazon.com/vpc/latest/userguide/vpc-endpoints.html feature, resources in the VPC that respond to wait conditions must have access to CloudFormation-specific Amazon Simple Storage Service (Amazon S3 buckets.
+Resources must send wait condition responses to a pre-signed Amazon S3 URL.
+If they can't send responses to Amazon S3, CloudFormation won't receive a response and the stack operation fails.
+For more information, see Setting Up VPC Endpoints for AWS CloudFormation: https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/cfn-vpce-bucketnames.html.
+
+## EXAMPLES
+
+### Example 1
+```powershell
+PS C:\> {{ Add example code here }}
+```
+
+{{ Add example description here }}
 
 ## PARAMETERS
 
@@ -45,9 +65,13 @@ Accept wildcard characters: False
 ```
 
 ### -Count
-Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-waitcondition.html#cfn-waitcondition-count    
-PrimitiveType: Integer    
-Required: False    
+The number of success signals that CloudFormation must receive before it continues the stack creation process.
+When the wait condition receives the requisite number of success signals, CloudFormation resumes the creation of the stack.
+If the wait condition does not receive the specified number of success signals before the Timeout period expires, CloudFormation assumes that the wait condition has failed and rolls the stack back.
+Updates are not supported.
+
+Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-waitcondition.html#cfn-waitcondition-count
+PrimitiveType: Integer
 UpdateType: Mutable
 
 ```yaml
@@ -63,9 +87,15 @@ Accept wildcard characters: False
 ```
 
 ### -Handle
-Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-waitcondition.html#cfn-waitcondition-handle    
-PrimitiveType: String    
-Required: True    
+A reference to the wait condition handle used to signal this wait condition.
+Use the Ref intrinsic function to specify an AWS::CloudFormation::WaitConditionHandle: https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-waitconditionhandle.html resource.
+Anytime you add a WaitCondition resource during a stack update, you must associate the wait condition with a new WaitConditionHandle resource.
+Do not reuse an old wait condition handle that has already been defined in the template.
+If you reuse a wait condition handle, the wait condition might evaluate old signals from a previous create or update stack command.
+Updates are not supported.
+
+Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-waitcondition.html#cfn-waitcondition-handle
+PrimitiveType: String
 UpdateType: Mutable
 
 ```yaml
@@ -73,7 +103,7 @@ Type: Object
 Parameter Sets: (All)
 Aliases:
 
-Required: True
+Required: False
 Position: Named
 Default value: None
 Accept pipeline input: False
@@ -81,9 +111,13 @@ Accept wildcard characters: False
 ```
 
 ### -Timeout
-Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-waitcondition.html#cfn-waitcondition-timeout    
-PrimitiveType: String    
-Required: True    
+The length of time in seconds to wait for the number of signals that the Count property specifies.
+Timeout is a minimum-bound property, meaning the timeout occurs no sooner than the time you specify, but can occur shortly thereafter.
+The maximum time that can be specified for this property is 12 hours 43200 seconds.
+Updates are not supported.
+
+Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-waitcondition.html#cfn-waitcondition-timeout
+PrimitiveType: String
 UpdateType: Mutable
 
 ```yaml
@@ -91,7 +125,7 @@ Type: Object
 Parameter Sets: (All)
 Aliases:
 
-Required: True
+Required: False
 Position: Named
 Default value: None
 Accept pipeline input: False
@@ -212,15 +246,13 @@ Accept wildcard characters: False
 ```
 
 ### CommonParameters
-This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction, and -WarningVariable.
-For more information, see about_CommonParameters (http://go.microsoft.com/fwlink/?LinkID=113216).
+This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction, and -WarningVariable. For more information, see [about_CommonParameters](http://go.microsoft.com/fwlink/?LinkID=113216).
 
 ## INPUTS
 
 ## OUTPUTS
 
 ### Vaporshell.Resource.CloudFormation.WaitCondition
-
 ## NOTES
 
 ## RELATED LINKS

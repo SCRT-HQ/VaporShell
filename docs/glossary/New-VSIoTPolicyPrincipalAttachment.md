@@ -1,18 +1,8 @@
----
-layout: glossary
-title: New-VSIoTPolicyPrincipalAttachment
-categories: glossary
-label1: Category
-data1: Documentation
-label2: Depth
-data2: Deep
-schema: 2.0.0
----
-
 # New-VSIoTPolicyPrincipalAttachment
 
 ## SYNOPSIS
-Adds an AWS::IoT::PolicyPrincipalAttachment resource to the template
+Adds an AWS::IoT::PolicyPrincipalAttachment resource to the template.
+Use the AWS::IoT::PolicyPrincipalAttachment resource to attach an AWS IoT policy to a principal (an X.509 certificate or other credential.
 
 ## SYNTAX
 
@@ -23,7 +13,19 @@ New-VSIoTPolicyPrincipalAttachment [-LogicalId] <String> -PolicyName <Object> -P
 ```
 
 ## DESCRIPTION
-Adds an AWS::IoT::PolicyPrincipalAttachment resource to the template
+Adds an AWS::IoT::PolicyPrincipalAttachment resource to the template.
+Use the AWS::IoT::PolicyPrincipalAttachment resource to attach an AWS IoT policy to a principal (an X.509 certificate or other credential.
+
+For information about working with AWS IoT policies and principals, see Authorization: https://docs.aws.amazon.com/iot/latest/developerguide/authorization.html in the *AWS IoT Developer Guide*.
+
+## EXAMPLES
+
+### Example 1
+```powershell
+PS C:\> {{ Add example code here }}
+```
+
+{{ Add example description here }}
 
 ## PARAMETERS
 
@@ -45,9 +47,10 @@ Accept wildcard characters: False
 ```
 
 ### -PolicyName
-Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-iot-policyprincipalattachment.html#cfn-iot-policyprincipalattachment-policyname    
-PrimitiveType: String    
-Required: True    
+The name of the AWS IoT policy.
+
+Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-iot-policyprincipalattachment.html#cfn-iot-policyprincipalattachment-policyname
+PrimitiveType: String
 UpdateType: Immutable
 
 ```yaml
@@ -63,9 +66,10 @@ Accept wildcard characters: False
 ```
 
 ### -Principal
-Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-iot-policyprincipalattachment.html#cfn-iot-policyprincipalattachment-principal    
-PrimitiveType: String    
-Required: True    
+The principal, which can be a certificate ARN as returned from the CreateCertificate operation or an Amazon Cognito ID.
+
+Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-iot-policyprincipalattachment.html#cfn-iot-policyprincipalattachment-principal
+PrimitiveType: String
 UpdateType: Immutable
 
 ```yaml
@@ -175,15 +179,13 @@ Accept wildcard characters: False
 ```
 
 ### CommonParameters
-This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction, and -WarningVariable.
-For more information, see about_CommonParameters (http://go.microsoft.com/fwlink/?LinkID=113216).
+This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction, and -WarningVariable. For more information, see [about_CommonParameters](http://go.microsoft.com/fwlink/?LinkID=113216).
 
 ## INPUTS
 
 ## OUTPUTS
 
 ### Vaporshell.Resource.IoT.PolicyPrincipalAttachment
-
 ## NOTES
 
 ## RELATED LINKS

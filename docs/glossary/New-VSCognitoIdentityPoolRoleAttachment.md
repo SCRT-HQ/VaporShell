@@ -1,18 +1,8 @@
----
-layout: glossary
-title: New-VSCognitoIdentityPoolRoleAttachment
-categories: glossary
-label1: Category
-data1: Documentation
-label2: Depth
-data2: Deep
-schema: 2.0.0
----
-
 # New-VSCognitoIdentityPoolRoleAttachment
 
 ## SYNOPSIS
-Adds an AWS::Cognito::IdentityPoolRoleAttachment resource to the template
+Adds an AWS::Cognito::IdentityPoolRoleAttachment resource to the template.
+The AWS::Cognito::IdentityPoolRoleAttachment resource manages the role configuration for an Amazon Cognito identity pool.
 
 ## SYNTAX
 
@@ -23,7 +13,17 @@ New-VSCognitoIdentityPoolRoleAttachment [-LogicalId] <String> [-RoleMappings <Ob
 ```
 
 ## DESCRIPTION
-Adds an AWS::Cognito::IdentityPoolRoleAttachment resource to the template
+Adds an AWS::Cognito::IdentityPoolRoleAttachment resource to the template.
+The AWS::Cognito::IdentityPoolRoleAttachment resource manages the role configuration for an Amazon Cognito identity pool.
+
+## EXAMPLES
+
+### Example 1
+```powershell
+PS C:\> {{ Add example code here }}
+```
+
+{{ Add example description here }}
 
 ## PARAMETERS
 
@@ -45,9 +45,12 @@ Accept wildcard characters: False
 ```
 
 ### -RoleMappings
-Required: False    
-Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-cognito-identitypoolroleattachment.html#cfn-cognito-identitypoolroleattachment-rolemappings    
-PrimitiveType: Json    
+How users for a specific identity provider are mapped to roles.
+This is a string to RoleMapping object map.
+The string identifies the identity provider, for example, "graph.facebook.com" or "cognito-idp-east-1.amazonaws.com/us-east-1_abcdefghi:app_client_id"
+
+Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-cognito-identitypoolroleattachment.html#cfn-cognito-identitypoolroleattachment-rolemappings
+PrimitiveType: Json
 UpdateType: Mutable
 
 ```yaml
@@ -63,9 +66,10 @@ Accept wildcard characters: False
 ```
 
 ### -IdentityPoolId
-Required: True    
-Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-cognito-identitypoolroleattachment.html#cfn-cognito-identitypoolroleattachment-identitypoolid    
-PrimitiveType: String    
+An identity pool ID in the format REGION:GUID.
+
+Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-cognito-identitypoolroleattachment.html#cfn-cognito-identitypoolroleattachment-identitypoolid
+PrimitiveType: String
 UpdateType: Immutable
 
 ```yaml
@@ -81,9 +85,11 @@ Accept wildcard characters: False
 ```
 
 ### -Roles
-Required: False    
-Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-cognito-identitypoolroleattachment.html#cfn-cognito-identitypoolroleattachment-roles    
-PrimitiveType: Json    
+The map of roles associated with this pool.
+For a given role, the key will be either "authenticated" or "unauthenticated" and the value will be the Role ARN.
+
+Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-cognito-identitypoolroleattachment.html#cfn-cognito-identitypoolroleattachment-roles
+PrimitiveType: Json
 UpdateType: Mutable
 
 ```yaml
@@ -193,15 +199,13 @@ Accept wildcard characters: False
 ```
 
 ### CommonParameters
-This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction, and -WarningVariable.
-For more information, see about_CommonParameters (http://go.microsoft.com/fwlink/?LinkID=113216).
+This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction, and -WarningVariable. For more information, see [about_CommonParameters](http://go.microsoft.com/fwlink/?LinkID=113216).
 
 ## INPUTS
 
 ## OUTPUTS
 
 ### Vaporshell.Resource.Cognito.IdentityPoolRoleAttachment
-
 ## NOTES
 
 ## RELATED LINKS

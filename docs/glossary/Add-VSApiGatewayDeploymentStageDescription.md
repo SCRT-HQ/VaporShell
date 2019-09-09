@@ -1,57 +1,41 @@
----
-layout: glossary
-title: Add-VSApiGatewayDeploymentStageDescription
-categories: glossary
-label1: Category
-data1: Documentation
-label2: Depth
-data2: Deep
-schema: 2.0.0
----
-
 # Add-VSApiGatewayDeploymentStageDescription
 
 ## SYNOPSIS
-Adds an AWS::ApiGateway::Deployment.StageDescription resource property to the template
+Adds an AWS::ApiGateway::Deployment.StageDescription resource property to the template.
+StageDescription is a property of the AWS::ApiGateway::Deployment: https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-apigateway-deployment.html resource that configures a deployment stage.
 
 ## SYNTAX
 
 ```
-Add-VSApiGatewayDeploymentStageDescription [[-CacheClusterEnabled] <Boolean>] [[-CacheClusterSize] <Object>]
- [[-CacheDataEncrypted] <Boolean>] [[-CacheTtlInSeconds] <Int32>] [[-CachingEnabled] <Boolean>]
- [[-ClientCertificateId] <Object>] [[-DataTraceEnabled] <Boolean>] [[-Description] <Object>]
- [[-DocumentationVersion] <Object>] [[-LoggingLevel] <Object>] [[-MethodSettings] <Object>]
- [[-MetricsEnabled] <Boolean>] [[-ThrottlingBurstLimit] <Int32>] [[-ThrottlingRateLimit] <Double>]
+Add-VSApiGatewayDeploymentStageDescription [[-AccessLogSetting] <Object>] [[-CacheClusterEnabled] <Boolean>]
+ [[-CacheClusterSize] <Object>] [[-CacheDataEncrypted] <Boolean>] [[-CacheTtlInSeconds] <Int32>]
+ [[-CachingEnabled] <Boolean>] [[-CanarySetting] <Object>] [[-ClientCertificateId] <Object>]
+ [[-DataTraceEnabled] <Boolean>] [[-Description] <Object>] [[-DocumentationVersion] <Object>]
+ [[-LoggingLevel] <Object>] [[-MethodSettings] <Object>] [[-MetricsEnabled] <Boolean>] [[-Tags] <Object>]
+ [[-ThrottlingBurstLimit] <Int32>] [[-ThrottlingRateLimit] <Double>] [[-TracingEnabled] <Boolean>]
  [[-Variables] <Hashtable>] [<CommonParameters>]
 ```
 
 ## DESCRIPTION
-Adds an AWS::ApiGateway::Deployment.StageDescription resource property to the template
+Adds an AWS::ApiGateway::Deployment.StageDescription resource property to the template.
+StageDescription is a property of the AWS::ApiGateway::Deployment: https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-apigateway-deployment.html resource that configures a deployment stage.
+
+## EXAMPLES
+
+### Example 1
+```powershell
+PS C:\> {{ Add example code here }}
+```
+
+{{ Add example description here }}
 
 ## PARAMETERS
 
-### -CacheClusterEnabled
-Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-apigateway-deployment-stagedescription.html#cfn-apigateway-deployment-stagedescription-cacheclusterenabled    
-PrimitiveType: Boolean    
-Required: False    
-UpdateType: Mutable
+### -AccessLogSetting
+Specifies settings for logging access in this stage.
 
-```yaml
-Type: Boolean
-Parameter Sets: (All)
-Aliases:
-
-Required: False
-Position: 1
-Default value: False
-Accept pipeline input: False
-Accept wildcard characters: False
-```
-
-### -CacheClusterSize
-Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-apigateway-deployment-stagedescription.html#cfn-apigateway-deployment-stagedescription-cacheclustersize    
-PrimitiveType: String    
-Required: False    
+Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-apigateway-deployment-stagedescription.html#cfn-apigateway-deployment-stagedescription-accesslogsetting
+Type: AccessLogSetting
 UpdateType: Mutable
 
 ```yaml
@@ -60,16 +44,17 @@ Parameter Sets: (All)
 Aliases:
 
 Required: False
-Position: 2
+Position: 1
 Default value: None
 Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
-### -CacheDataEncrypted
-Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-apigateway-deployment-stagedescription.html#cfn-apigateway-deployment-stagedescription-cachedataencrypted    
-PrimitiveType: Boolean    
-Required: False    
+### -CacheClusterEnabled
+Indicates whether cache clustering is enabled for the stage.
+
+Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-apigateway-deployment-stagedescription.html#cfn-apigateway-deployment-stagedescription-cacheclusterenabled
+PrimitiveType: Boolean
 UpdateType: Mutable
 
 ```yaml
@@ -78,16 +63,55 @@ Parameter Sets: (All)
 Aliases:
 
 Required: False
+Position: 2
+Default value: False
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### -CacheClusterSize
+The size of the stage's cache cluster.
+
+Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-apigateway-deployment-stagedescription.html#cfn-apigateway-deployment-stagedescription-cacheclustersize
+PrimitiveType: String
+UpdateType: Mutable
+
+```yaml
+Type: Object
+Parameter Sets: (All)
+Aliases:
+
+Required: False
 Position: 3
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### -CacheDataEncrypted
+Indicates whether the cached responses are encrypted.
+
+Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-apigateway-deployment-stagedescription.html#cfn-apigateway-deployment-stagedescription-cachedataencrypted
+PrimitiveType: Boolean
+UpdateType: Mutable
+
+```yaml
+Type: Boolean
+Parameter Sets: (All)
+Aliases:
+
+Required: False
+Position: 4
 Default value: False
 Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
 ### -CacheTtlInSeconds
-Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-apigateway-deployment-stagedescription.html#cfn-apigateway-deployment-stagedescription-cachettlinseconds    
-PrimitiveType: Integer    
-Required: False    
+The time-to-live TTL period, in seconds, that specifies how long API Gateway caches responses.
+
+Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-apigateway-deployment-stagedescription.html#cfn-apigateway-deployment-stagedescription-cachettlinseconds
+PrimitiveType: Integer
 UpdateType: Mutable
 
 ```yaml
@@ -96,16 +120,19 @@ Parameter Sets: (All)
 Aliases:
 
 Required: False
-Position: 4
+Position: 5
 Default value: 0
 Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
 ### -CachingEnabled
-Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-apigateway-deployment-stagedescription.html#cfn-apigateway-deployment-stagedescription-cachingenabled    
-PrimitiveType: Boolean    
-Required: False    
+Indicates whether responses are cached and returned for requests.
+You must enable a cache cluster on the stage to cache responses.
+For more information, see Enable API Gateway Caching in a Stage to Enhance API Performance: https://docs.aws.amazon.com/apigateway/latest/developerguide/api-gateway-caching.html in the *API Gateway Developer Guide*.
+
+Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-apigateway-deployment-stagedescription.html#cfn-apigateway-deployment-stagedescription-cachingenabled
+PrimitiveType: Boolean
 UpdateType: Mutable
 
 ```yaml
@@ -114,16 +141,17 @@ Parameter Sets: (All)
 Aliases:
 
 Required: False
-Position: 5
+Position: 6
 Default value: False
 Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
-### -ClientCertificateId
-Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-apigateway-deployment-stagedescription.html#cfn-apigateway-deployment-stagedescription-clientcertificateid    
-PrimitiveType: String    
-Required: False    
+### -CanarySetting
+Specifies settings for the canary deployment in this stage.
+
+Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-apigateway-deployment-stagedescription.html#cfn-apigateway-deployment-stagedescription-canarysetting
+Type: CanarySetting
 UpdateType: Mutable
 
 ```yaml
@@ -132,34 +160,17 @@ Parameter Sets: (All)
 Aliases:
 
 Required: False
-Position: 6
+Position: 7
 Default value: None
 Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
-### -DataTraceEnabled
-Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-apigateway-deployment-stagedescription.html#cfn-apigateway-deployment-stagedescription-datatraceenabled    
-PrimitiveType: Boolean    
-Required: False    
-UpdateType: Mutable
+### -ClientCertificateId
+The identifier of the client certificate that API Gateway uses to call your integration endpoints in the stage.
 
-```yaml
-Type: Boolean
-Parameter Sets: (All)
-Aliases:
-
-Required: False
-Position: 7
-Default value: False
-Accept pipeline input: False
-Accept wildcard characters: False
-```
-
-### -Description
-Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-apigateway-deployment-stagedescription.html#cfn-apigateway-deployment-stagedescription-description    
-PrimitiveType: String    
-Required: False    
+Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-apigateway-deployment-stagedescription.html#cfn-apigateway-deployment-stagedescription-clientcertificateid
+PrimitiveType: String
 UpdateType: Mutable
 
 ```yaml
@@ -174,28 +185,31 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
-### -DocumentationVersion
-Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-apigateway-deployment-stagedescription.html#cfn-apigateway-deployment-stagedescription-documentationversion    
-PrimitiveType: String    
-Required: False    
+### -DataTraceEnabled
+Indicates whether data trace logging is enabled for methods in the stage.
+API Gateway pushes these logs to Amazon CloudWatch Logs.
+
+Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-apigateway-deployment-stagedescription.html#cfn-apigateway-deployment-stagedescription-datatraceenabled
+PrimitiveType: Boolean
 UpdateType: Mutable
 
 ```yaml
-Type: Object
+Type: Boolean
 Parameter Sets: (All)
 Aliases:
 
 Required: False
 Position: 9
-Default value: None
+Default value: False
 Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
-### -LoggingLevel
-Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-apigateway-deployment-stagedescription.html#cfn-apigateway-deployment-stagedescription-logginglevel    
-PrimitiveType: String    
-Required: False    
+### -Description
+A description of the purpose of the stage.
+
+Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-apigateway-deployment-stagedescription.html#cfn-apigateway-deployment-stagedescription-description
+PrimitiveType: String
 UpdateType: Mutable
 
 ```yaml
@@ -210,12 +224,11 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
-### -MethodSettings
-Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-apigateway-deployment-stagedescription.html#cfn-apigateway-deployment-stagedescription-methodsettings    
-DuplicatesAllowed: False    
-ItemType: MethodSetting    
-Required: False    
-Type: List    
+### -DocumentationVersion
+The version identifier of the API documentation snapshot.
+
+Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-apigateway-deployment-stagedescription.html#cfn-apigateway-deployment-stagedescription-documentationversion
+PrimitiveType: String
 UpdateType: Mutable
 
 ```yaml
@@ -230,10 +243,52 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
+### -LoggingLevel
+The logging level for this method.
+For valid values, see the loggingLevel property of the Stage: https://docs.aws.amazon.com/apigateway/api-reference/resource/stage/#loggingLevel resource in the *Amazon API Gateway API Reference*.
+
+Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-apigateway-deployment-stagedescription.html#cfn-apigateway-deployment-stagedescription-logginglevel
+PrimitiveType: String
+UpdateType: Mutable
+
+```yaml
+Type: Object
+Parameter Sets: (All)
+Aliases:
+
+Required: False
+Position: 12
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### -MethodSettings
+Configures settings for all of the stage's methods.
+
+Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-apigateway-deployment-stagedescription.html#cfn-apigateway-deployment-stagedescription-methodsettings
+DuplicatesAllowed: False
+ItemType: MethodSetting
+Type: List
+UpdateType: Mutable
+
+```yaml
+Type: Object
+Parameter Sets: (All)
+Aliases:
+
+Required: False
+Position: 13
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
 ### -MetricsEnabled
-Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-apigateway-deployment-stagedescription.html#cfn-apigateway-deployment-stagedescription-metricsenabled    
-PrimitiveType: Boolean    
-Required: False    
+Indicates whether Amazon CloudWatch metrics are enabled for methods in the stage.
+
+Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-apigateway-deployment-stagedescription.html#cfn-apigateway-deployment-stagedescription-metricsenabled
+PrimitiveType: Boolean
 UpdateType: Mutable
 
 ```yaml
@@ -242,58 +297,23 @@ Parameter Sets: (All)
 Aliases:
 
 Required: False
-Position: 12
+Position: 14
 Default value: False
 Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
-### -ThrottlingBurstLimit
-Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-apigateway-deployment-stagedescription.html#cfn-apigateway-deployment-stagedescription-throttlingburstlimit    
-PrimitiveType: Integer    
-Required: False    
+### -Tags
+An array of arbitrary tags key-value pairs to associate with the stage.
+
+Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-apigateway-deployment-stagedescription.html#cfn-apigateway-deployment-tags
+DuplicatesAllowed: True
+ItemType: Tag
+Type: List
 UpdateType: Mutable
 
 ```yaml
-Type: Int32
-Parameter Sets: (All)
-Aliases:
-
-Required: False
-Position: 13
-Default value: 0
-Accept pipeline input: False
-Accept wildcard characters: False
-```
-
-### -ThrottlingRateLimit
-Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-apigateway-deployment-stagedescription.html#cfn-apigateway-deployment-stagedescription-throttlingratelimit    
-PrimitiveType: Double    
-Required: False    
-UpdateType: Mutable
-
-```yaml
-Type: Double
-Parameter Sets: (All)
-Aliases:
-
-Required: False
-Position: 14
-Default value: 0
-Accept pipeline input: False
-Accept wildcard characters: False
-```
-
-### -Variables
-Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-apigateway-deployment-stagedescription.html#cfn-apigateway-deployment-stagedescription-variables    
-DuplicatesAllowed: False    
-PrimitiveItemType: String    
-Required: False    
-Type: Map    
-UpdateType: Mutable
-
-```yaml
-Type: Hashtable
+Type: Object
 Parameter Sets: (All)
 Aliases:
 
@@ -304,16 +324,96 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
+### -ThrottlingBurstLimit
+The number of burst requests per second that API Gateway permits across all APIs, stages, and methods in your AWS account.
+For more information, see Manage API Request Throttling: https://docs.aws.amazon.com/apigateway/latest/developerguide/api-gateway-request-throttling.html in the *API Gateway Developer Guide*.
+
+Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-apigateway-deployment-stagedescription.html#cfn-apigateway-deployment-stagedescription-throttlingburstlimit
+PrimitiveType: Integer
+UpdateType: Mutable
+
+```yaml
+Type: Int32
+Parameter Sets: (All)
+Aliases:
+
+Required: False
+Position: 16
+Default value: 0
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### -ThrottlingRateLimit
+The number of steady-state requests per second that API Gateway permits across all APIs, stages, and methods in your AWS account.
+For more information, see Manage API Request Throttling: https://docs.aws.amazon.com/apigateway/latest/developerguide/api-gateway-request-throttling.html in the *API Gateway Developer Guide*.
+
+Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-apigateway-deployment-stagedescription.html#cfn-apigateway-deployment-stagedescription-throttlingratelimit
+PrimitiveType: Double
+UpdateType: Mutable
+
+```yaml
+Type: Double
+Parameter Sets: (All)
+Aliases:
+
+Required: False
+Position: 17
+Default value: 0
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### -TracingEnabled
+Specifies whether active tracing with X-ray is enabled for this stage.
+For more information, see Trace API Gateway API Execution with AWS X-Ray: https://docs.aws.amazon.com/apigateway/latest/developerguide/apigateway-xray.html in the *API Gateway Developer Guide*.
+
+Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-apigateway-deployment-stagedescription.html#cfn-apigateway-deployment-stagedescription-tracingenabled
+PrimitiveType: Boolean
+UpdateType: Mutable
+
+```yaml
+Type: Boolean
+Parameter Sets: (All)
+Aliases:
+
+Required: False
+Position: 18
+Default value: False
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### -Variables
+A map that defines the stage variables.
+Variable names must consist of alphanumeric characters, and the values must match the following regular expression: A-Za-z0-9-._~:/?#&=,\]+.
+
+Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-apigateway-deployment-stagedescription.html#cfn-apigateway-deployment-stagedescription-variables
+DuplicatesAllowed: False
+PrimitiveItemType: String
+Type: Map
+UpdateType: Mutable
+
+```yaml
+Type: Hashtable
+Parameter Sets: (All)
+Aliases:
+
+Required: False
+Position: 19
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
 ### CommonParameters
-This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction, and -WarningVariable.
-For more information, see about_CommonParameters (http://go.microsoft.com/fwlink/?LinkID=113216).
+This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction, and -WarningVariable. For more information, see [about_CommonParameters](http://go.microsoft.com/fwlink/?LinkID=113216).
 
 ## INPUTS
 
 ## OUTPUTS
 
 ### Vaporshell.Resource.ApiGateway.Deployment.StageDescription
-
 ## NOTES
 
 ## RELATED LINKS

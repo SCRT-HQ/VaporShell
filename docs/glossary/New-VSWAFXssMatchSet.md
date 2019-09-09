@@ -1,18 +1,9 @@
----
-layout: glossary
-title: New-VSWAFXssMatchSet
-categories: glossary
-label1: Category
-data1: Documentation
-label2: Depth
-data2: Deep
-schema: 2.0.0
----
-
 # New-VSWAFXssMatchSet
 
 ## SYNOPSIS
-Adds an AWS::WAF::XssMatchSet resource to the template
+Adds an AWS::WAF::XssMatchSet resource to the template.
+A complex type that contains XssMatchTuple objects, which specify the parts of web requests that you want AWS WAF to inspect for cross-site scripting attacks and, if you want AWS WAF to inspect a header, the name of the header.
+If a XssMatchSet contains more than one XssMatchTuple object, a request needs to include cross-site scripting attacks in only one of the specified parts of the request to be considered a match.
 
 ## SYNTAX
 
@@ -23,7 +14,18 @@ New-VSWAFXssMatchSet [-LogicalId] <String> -Name <Object> -XssMatchTuples <Objec
 ```
 
 ## DESCRIPTION
-Adds an AWS::WAF::XssMatchSet resource to the template
+Adds an AWS::WAF::XssMatchSet resource to the template.
+A complex type that contains XssMatchTuple objects, which specify the parts of web requests that you want AWS WAF to inspect for cross-site scripting attacks and, if you want AWS WAF to inspect a header, the name of the header.
+If a XssMatchSet contains more than one XssMatchTuple object, a request needs to include cross-site scripting attacks in only one of the specified parts of the request to be considered a match.
+
+## EXAMPLES
+
+### Example 1
+```powershell
+PS C:\> {{ Add example code here }}
+```
+
+{{ Add example description here }}
 
 ## PARAMETERS
 
@@ -45,9 +47,10 @@ Accept wildcard characters: False
 ```
 
 ### -Name
-Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-waf-xssmatchset.html#cfn-waf-xssmatchset-name    
-PrimitiveType: String    
-Required: True    
+The name, if any, of the XssMatchSet.
+
+Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-waf-xssmatchset.html#cfn-waf-xssmatchset-name
+PrimitiveType: String
 UpdateType: Immutable
 
 ```yaml
@@ -63,11 +66,12 @@ Accept wildcard characters: False
 ```
 
 ### -XssMatchTuples
-Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-waf-xssmatchset.html#cfn-waf-xssmatchset-xssmatchtuples    
-DuplicatesAllowed: False    
-ItemType: XssMatchTuple    
-Required: True    
-Type: List    
+Specifies the parts of web requests that you want to inspect for cross-site scripting attacks.
+
+Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-waf-xssmatchset.html#cfn-waf-xssmatchset-xssmatchtuples
+DuplicatesAllowed: False
+ItemType: XssMatchTuple
+Type: List
 UpdateType: Mutable
 
 ```yaml
@@ -177,15 +181,13 @@ Accept wildcard characters: False
 ```
 
 ### CommonParameters
-This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction, and -WarningVariable.
-For more information, see about_CommonParameters (http://go.microsoft.com/fwlink/?LinkID=113216).
+This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction, and -WarningVariable. For more information, see [about_CommonParameters](http://go.microsoft.com/fwlink/?LinkID=113216).
 
 ## INPUTS
 
 ## OUTPUTS
 
 ### Vaporshell.Resource.WAF.XssMatchSet
-
 ## NOTES
 
 ## RELATED LINKS

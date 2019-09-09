@@ -1,18 +1,8 @@
----
-layout: glossary
-title: New-VSS3BucketPolicy
-categories: glossary
-label1: Category
-data1: Documentation
-label2: Depth
-data2: Deep
-schema: 2.0.0
----
-
 # New-VSS3BucketPolicy
 
 ## SYNOPSIS
-Adds an AWS::S3::BucketPolicy resource to the template
+Adds an AWS::S3::BucketPolicy resource to the template.
+Applies an Amazon S3 bucket policy to an Amazon S3 bucket.
 
 ## SYNTAX
 
@@ -23,7 +13,17 @@ New-VSS3BucketPolicy [-LogicalId] <String> -Bucket <Object> -PolicyDocument <Obj
 ```
 
 ## DESCRIPTION
-Adds an AWS::S3::BucketPolicy resource to the template
+Adds an AWS::S3::BucketPolicy resource to the template.
+Applies an Amazon S3 bucket policy to an Amazon S3 bucket.
+
+## EXAMPLES
+
+### Example 1
+```powershell
+PS C:\> {{ Add example code here }}
+```
+
+{{ Add example description here }}
 
 ## PARAMETERS
 
@@ -45,9 +45,10 @@ Accept wildcard characters: False
 ```
 
 ### -Bucket
-Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-s3-policy.html#aws-properties-s3-policy-bucket    
-PrimitiveType: String    
-Required: True    
+The name of the Amazon S3 bucket to which the policy applies.
+
+Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-s3-policy.html#aws-properties-s3-policy-bucket
+PrimitiveType: String
 UpdateType: Immutable
 
 ```yaml
@@ -63,9 +64,11 @@ Accept wildcard characters: False
 ```
 
 ### -PolicyDocument
-Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-s3-policy.html#aws-properties-s3-policy-policydocument    
-PrimitiveType: Json    
-Required: True    
+A policy document containing permissions to add to the specified bucket.
+For more information, see Access Policy Language Overview: https://docs.aws.amazon.com/AmazonS3/latest/dev/access-policy-language-overview.html in the *Amazon Simple Storage Service Developer Guide*.
+
+Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-s3-policy.html#aws-properties-s3-policy-policydocument
+PrimitiveType: Json
 UpdateType: Mutable
 
 ```yaml
@@ -175,15 +178,13 @@ Accept wildcard characters: False
 ```
 
 ### CommonParameters
-This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction, and -WarningVariable.
-For more information, see about_CommonParameters (http://go.microsoft.com/fwlink/?LinkID=113216).
+This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction, and -WarningVariable. For more information, see [about_CommonParameters](http://go.microsoft.com/fwlink/?LinkID=113216).
 
 ## INPUTS
 
 ## OUTPUTS
 
 ### Vaporshell.Resource.S3.BucketPolicy
-
 ## NOTES
 
 ## RELATED LINKS

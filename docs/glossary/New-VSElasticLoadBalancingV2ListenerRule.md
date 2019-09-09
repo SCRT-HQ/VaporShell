@@ -1,18 +1,8 @@
----
-layout: glossary
-title: New-VSElasticLoadBalancingV2ListenerRule
-categories: glossary
-label1: Category
-data1: Documentation
-label2: Depth
-data2: Deep
-schema: 2.0.0
----
-
 # New-VSElasticLoadBalancingV2ListenerRule
 
 ## SYNOPSIS
-Adds an AWS::ElasticLoadBalancingV2::ListenerRule resource to the template
+Adds an AWS::ElasticLoadBalancingV2::ListenerRule resource to the template.
+Specifies a listener rule.
 
 ## SYNTAX
 
@@ -23,7 +13,17 @@ New-VSElasticLoadBalancingV2ListenerRule [-LogicalId] <String> -Actions <Object>
 ```
 
 ## DESCRIPTION
-Adds an AWS::ElasticLoadBalancingV2::ListenerRule resource to the template
+Adds an AWS::ElasticLoadBalancingV2::ListenerRule resource to the template.
+Specifies a listener rule.
+
+## EXAMPLES
+
+### Example 1
+```powershell
+PS C:\> {{ Add example code here }}
+```
+
+{{ Add example description here }}
 
 ## PARAMETERS
 
@@ -45,11 +45,12 @@ Accept wildcard characters: False
 ```
 
 ### -Actions
-Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-elasticloadbalancingv2-listenerrule.html#cfn-elasticloadbalancingv2-listenerrule-actions    
-DuplicatesAllowed: False    
-ItemType: Action    
-Required: True    
-Type: List    
+The actions.
+
+Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-elasticloadbalancingv2-listenerrule.html#cfn-elasticloadbalancingv2-listenerrule-actions
+DuplicatesAllowed: False
+ItemType: Action
+Type: List
 UpdateType: Mutable
 
 ```yaml
@@ -65,11 +66,12 @@ Accept wildcard characters: False
 ```
 
 ### -Conditions
-Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-elasticloadbalancingv2-listenerrule.html#cfn-elasticloadbalancingv2-listenerrule-conditions    
-DuplicatesAllowed: False    
-ItemType: RuleCondition    
-Required: True    
-Type: List    
+The conditions.
+
+Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-elasticloadbalancingv2-listenerrule.html#cfn-elasticloadbalancingv2-listenerrule-conditions
+DuplicatesAllowed: False
+ItemType: RuleCondition
+Type: List
 UpdateType: Mutable
 
 ```yaml
@@ -85,9 +87,10 @@ Accept wildcard characters: False
 ```
 
 ### -ListenerArn
-Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-elasticloadbalancingv2-listenerrule.html#cfn-elasticloadbalancingv2-listenerrule-listenerarn    
-PrimitiveType: String    
-Required: True    
+The Amazon Resource Name ARN of the listener.
+
+Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-elasticloadbalancingv2-listenerrule.html#cfn-elasticloadbalancingv2-listenerrule-listenerarn
+PrimitiveType: String
 UpdateType: Immutable
 
 ```yaml
@@ -103,9 +106,11 @@ Accept wildcard characters: False
 ```
 
 ### -Priority
-Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-elasticloadbalancingv2-listenerrule.html#cfn-elasticloadbalancingv2-listenerrule-priority    
-PrimitiveType: Integer    
-Required: True    
+The rule priority.
+A listener can't have multiple rules with the same priority.
+
+Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-elasticloadbalancingv2-listenerrule.html#cfn-elasticloadbalancingv2-listenerrule-priority
+PrimitiveType: Integer
 UpdateType: Mutable
 
 ```yaml
@@ -215,15 +220,13 @@ Accept wildcard characters: False
 ```
 
 ### CommonParameters
-This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction, and -WarningVariable.
-For more information, see about_CommonParameters (http://go.microsoft.com/fwlink/?LinkID=113216).
+This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction, and -WarningVariable. For more information, see [about_CommonParameters](http://go.microsoft.com/fwlink/?LinkID=113216).
 
 ## INPUTS
 
 ## OUTPUTS
 
 ### Vaporshell.Resource.ElasticLoadBalancingV2.ListenerRule
-
 ## NOTES
 
 ## RELATED LINKS

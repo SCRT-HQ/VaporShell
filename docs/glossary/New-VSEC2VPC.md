@@ -1,18 +1,10 @@
----
-layout: glossary
-title: New-VSEC2VPC
-categories: glossary
-label1: Category
-data1: Documentation
-label2: Depth
-data2: Deep
-schema: 2.0.0
----
-
 # New-VSEC2VPC
 
 ## SYNOPSIS
-Adds an AWS::EC2::VPC resource to the template
+Adds an AWS::EC2::VPC resource to the template.
+Specifies a VPC with the specified IPv4 CIDR block.
+The smallest VPC you can create uses a /28 netmask (16 IPv4 addresses, and the largest uses a /16 netmask (65,536 IPv4 addresses.
+For more information about how large to make your VPC, see Your VPC and Subnets: https://docs.aws.amazon.com/AmazonVPC/latest/UserGuide/VPC_Subnets.html in the *Amazon Virtual Private Cloud User Guide*.
 
 ## SYNTAX
 
@@ -24,7 +16,19 @@ New-VSEC2VPC [-LogicalId] <String> -CidrBlock <Object> [-EnableDnsHostnames <Boo
 ```
 
 ## DESCRIPTION
-Adds an AWS::EC2::VPC resource to the template
+Adds an AWS::EC2::VPC resource to the template.
+Specifies a VPC with the specified IPv4 CIDR block.
+The smallest VPC you can create uses a /28 netmask (16 IPv4 addresses, and the largest uses a /16 netmask (65,536 IPv4 addresses.
+For more information about how large to make your VPC, see Your VPC and Subnets: https://docs.aws.amazon.com/AmazonVPC/latest/UserGuide/VPC_Subnets.html in the *Amazon Virtual Private Cloud User Guide*.
+
+## EXAMPLES
+
+### Example 1
+```powershell
+PS C:\> {{ Add example code here }}
+```
+
+{{ Add example description here }}
 
 ## PARAMETERS
 
@@ -46,9 +50,10 @@ Accept wildcard characters: False
 ```
 
 ### -CidrBlock
-Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ec2-vpc.html#cfn-aws-ec2-vpc-cidrblock    
-PrimitiveType: String    
-Required: True    
+The primary IPv4 CIDR block for the VPC.
+
+Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ec2-vpc.html#cfn-aws-ec2-vpc-cidrblock
+PrimitiveType: String
 UpdateType: Immutable
 
 ```yaml
@@ -64,9 +69,12 @@ Accept wildcard characters: False
 ```
 
 ### -EnableDnsHostnames
-Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ec2-vpc.html#cfn-aws-ec2-vpc-EnableDnsHostnames    
-PrimitiveType: Boolean    
-Required: False    
+Indicates whether the instances launched in the VPC get DNS hostnames.
+If enabled, instances in the VPC get DNS hostnames; otherwise, they do not.
+You can only enable DNS hostnames if you've enabled DNS support.
+
+Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ec2-vpc.html#cfn-aws-ec2-vpc-EnableDnsHostnames
+PrimitiveType: Boolean
 UpdateType: Mutable
 
 ```yaml
@@ -82,9 +90,12 @@ Accept wildcard characters: False
 ```
 
 ### -EnableDnsSupport
-Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ec2-vpc.html#cfn-aws-ec2-vpc-EnableDnsSupport    
-PrimitiveType: Boolean    
-Required: False    
+Indicates whether the DNS resolution is supported for the VPC.
+If enabled, queries to the Amazon provided DNS server at the 169.254.169.253 IP address, or the reserved IP address at the base of the VPC network range "plus two" succeed.
+If disabled, the Amazon provided DNS service in the VPC that resolves public DNS hostnames to IP addresses is not enabled.
+
+Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ec2-vpc.html#cfn-aws-ec2-vpc-EnableDnsSupport
+PrimitiveType: Boolean
 UpdateType: Mutable
 
 ```yaml
@@ -100,9 +111,14 @@ Accept wildcard characters: False
 ```
 
 ### -InstanceTenancy
-Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ec2-vpc.html#cfn-aws-ec2-vpc-instancetenancy    
-PrimitiveType: String    
-Required: False    
+The allowed tenancy of instances launched into the VPC.
++ "default": Instances can be launched with any tenancy.
++ "dedicated": Any instance launched into the VPC automatically has dedicated tenancy, unless you launch it with the default tenancy.
+Updating InstanceTenancy requires no replacement only if you are updating its value from "dedicated" to "default".
+Updating InstanceTenancy from "default" to "dedicated" requires replacement.
+
+Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ec2-vpc.html#cfn-aws-ec2-vpc-instancetenancy
+PrimitiveType: String
 UpdateType: Mutable
 
 ```yaml
@@ -118,11 +134,12 @@ Accept wildcard characters: False
 ```
 
 ### -Tags
-Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ec2-vpc.html#cfn-aws-ec2-vpc-tags    
-DuplicatesAllowed: True    
-ItemType: Tag    
-Required: False    
-Type: List    
+The tags for the VPC.
+
+Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ec2-vpc.html#cfn-aws-ec2-vpc-tags
+DuplicatesAllowed: True
+ItemType: Tag
+Type: List
 UpdateType: Mutable
 
 ```yaml
@@ -232,15 +249,13 @@ Accept wildcard characters: False
 ```
 
 ### CommonParameters
-This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction, and -WarningVariable.
-For more information, see about_CommonParameters (http://go.microsoft.com/fwlink/?LinkID=113216).
+This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction, and -WarningVariable. For more information, see [about_CommonParameters](http://go.microsoft.com/fwlink/?LinkID=113216).
 
 ## INPUTS
 
 ## OUTPUTS
 
 ### Vaporshell.Resource.EC2.VPC
-
 ## NOTES
 
 ## RELATED LINKS

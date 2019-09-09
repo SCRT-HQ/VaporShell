@@ -1,18 +1,8 @@
----
-layout: glossary
-title: Add-VSS3BucketNotificationConfiguration
-categories: glossary
-label1: Category
-data1: Documentation
-label2: Depth
-data2: Deep
-schema: 2.0.0
----
-
 # Add-VSS3BucketNotificationConfiguration
 
 ## SYNOPSIS
-Adds an AWS::S3::Bucket.NotificationConfiguration resource property to the template
+Adds an AWS::S3::Bucket.NotificationConfiguration resource property to the template.
+Describes the notification configuration for an Amazon S3 bucket.
 
 ## SYNTAX
 
@@ -22,16 +12,38 @@ Add-VSS3BucketNotificationConfiguration [[-LambdaConfigurations] <Object>] [[-Qu
 ```
 
 ## DESCRIPTION
-Adds an AWS::S3::Bucket.NotificationConfiguration resource property to the template
+Adds an AWS::S3::Bucket.NotificationConfiguration resource property to the template.
+Describes the notification configuration for an Amazon S3 bucket.
+
+**Note**
+
+If you create the target resource and related permissions in the same template, you might have a circular dependency.
+
+For example, you might use the AWS::Lambda::Permission resource to grant the bucket permission to invoke an AWS Lambda function.
+However, AWS CloudFormation can't create the bucket until the bucket has permission to invoke the function (AWS CloudFormation checks whether the bucket can invoke the function.
+If you're using Refs to pass the bucket name, this leads to a circular dependency.
+
+To avoid this dependency, you can create all resources without specifying the notification configuration.
+Then, update the stack with a notification configuration.
+
+## EXAMPLES
+
+### Example 1
+```powershell
+PS C:\> {{ Add example code here }}
+```
+
+{{ Add example description here }}
 
 ## PARAMETERS
 
 ### -LambdaConfigurations
-Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-s3-bucket-notificationconfig.html#cfn-s3-bucket-notificationconfig-lambdaconfig    
-DuplicatesAllowed: False    
-ItemType: LambdaConfiguration    
-Required: False    
-Type: List    
+Describes the AWS Lambda functions to invoke and the events for which to invoke them.
+
+Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-s3-bucket-notificationconfig.html#cfn-s3-bucket-notificationconfig-lambdaconfig
+DuplicatesAllowed: False
+ItemType: LambdaConfiguration
+Type: List
 UpdateType: Mutable
 
 ```yaml
@@ -47,11 +59,12 @@ Accept wildcard characters: False
 ```
 
 ### -QueueConfigurations
-Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-s3-bucket-notificationconfig.html#cfn-s3-bucket-notificationconfig-queueconfig    
-DuplicatesAllowed: False    
-ItemType: QueueConfiguration    
-Required: False    
-Type: List    
+The Amazon Simple Queue Service queues to publish messages to and the events for which to publish messages.
+
+Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-s3-bucket-notificationconfig.html#cfn-s3-bucket-notificationconfig-queueconfig
+DuplicatesAllowed: False
+ItemType: QueueConfiguration
+Type: List
 UpdateType: Mutable
 
 ```yaml
@@ -67,11 +80,12 @@ Accept wildcard characters: False
 ```
 
 ### -TopicConfigurations
-Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-s3-bucket-notificationconfig.html#cfn-s3-bucket-notificationconfig-topicconfig    
-DuplicatesAllowed: False    
-ItemType: TopicConfiguration    
-Required: False    
-Type: List    
+The topic to which notifications are sent and the events for which notifications are generated.
+
+Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-s3-bucket-notificationconfig.html#cfn-s3-bucket-notificationconfig-topicconfig
+DuplicatesAllowed: False
+ItemType: TopicConfiguration
+Type: List
 UpdateType: Mutable
 
 ```yaml
@@ -87,15 +101,13 @@ Accept wildcard characters: False
 ```
 
 ### CommonParameters
-This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction, and -WarningVariable.
-For more information, see about_CommonParameters (http://go.microsoft.com/fwlink/?LinkID=113216).
+This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction, and -WarningVariable. For more information, see [about_CommonParameters](http://go.microsoft.com/fwlink/?LinkID=113216).
 
 ## INPUTS
 
 ## OUTPUTS
 
 ### Vaporshell.Resource.S3.Bucket.NotificationConfiguration
-
 ## NOTES
 
 ## RELATED LINKS

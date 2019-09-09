@@ -1,18 +1,9 @@
----
-layout: glossary
-title: New-VSEC2SpotFleet
-categories: glossary
-label1: Category
-data1: Documentation
-label2: Depth
-data2: Deep
-schema: 2.0.0
----
-
 # New-VSEC2SpotFleet
 
 ## SYNOPSIS
-Adds an AWS::EC2::SpotFleet resource to the template
+Adds an AWS::EC2::SpotFleet resource to the template.
+Specifies a Spot Fleet request.
+A Spot Fleet request contains the configuration information to launch a fleet, or group, of instances.
 
 ## SYNTAX
 
@@ -23,7 +14,34 @@ New-VSEC2SpotFleet [-LogicalId] <String> -SpotFleetRequestConfigData <Object> [-
 ```
 
 ## DESCRIPTION
-Adds an AWS::EC2::SpotFleet resource to the template
+Adds an AWS::EC2::SpotFleet resource to the template.
+Specifies a Spot Fleet request.
+A Spot Fleet request contains the configuration information to launch a fleet, or group, of instances.
+
+The Spot Fleet request specifies the total target capacity and the On-Demand target capacity for the fleet.
+Amazon EC2 calculates the difference between the total capacity and On-Demand capacity, and launches the difference as Spot capacity.
+
+The Spot Fleet request can include multiple launch specifications that vary by instance type, AMI, Availability Zone, or subnet.
+
+By default, the Spot Fleet requests Spot Instances in the Spot pool where the price per unit is the lowest.
+Each launch specification can include its own instance weighting that reflects the value of the instance type to your application workload.
+
+Alternatively, you can specify that the Spot Fleet distribute the target capacity across the Spot pools included in its launch specifications.
+By ensuring that the Spot Instances in your Spot Fleet are in different Spot pools, you can improve the availability of your fleet.
+
+You can specify tags for the Spot Instances.
+You cannot tag other resource types in a Spot Fleet request because only the instance resource type is supported.
+
+For more information, see Spot Fleet Requests: https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/spot-fleet-requests.html in the *Amazon EC2 User Guide for Linux Instances*.
+
+## EXAMPLES
+
+### Example 1
+```powershell
+PS C:\> {{ Add example code here }}
+```
+
+{{ Add example description here }}
 
 ## PARAMETERS
 
@@ -45,9 +63,10 @@ Accept wildcard characters: False
 ```
 
 ### -SpotFleetRequestConfigData
-Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ec2-spotfleet.html#cfn-ec2-spotfleet-spotfleetrequestconfigdata    
-Required: True    
-Type: SpotFleetRequestConfigData    
+Describes the configuration of a Spot Fleet request.
+
+Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ec2-spotfleet.html#cfn-ec2-spotfleet-spotfleetrequestconfigdata
+Type: SpotFleetRequestConfigData
 UpdateType: Conditional
 
 ```yaml
@@ -157,15 +176,13 @@ Accept wildcard characters: False
 ```
 
 ### CommonParameters
-This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction, and -WarningVariable.
-For more information, see about_CommonParameters (http://go.microsoft.com/fwlink/?LinkID=113216).
+This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction, and -WarningVariable. For more information, see [about_CommonParameters](http://go.microsoft.com/fwlink/?LinkID=113216).
 
 ## INPUTS
 
 ## OUTPUTS
 
 ### Vaporshell.Resource.EC2.SpotFleet
-
 ## NOTES
 
 ## RELATED LINKS

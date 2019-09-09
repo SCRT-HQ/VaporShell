@@ -1,18 +1,9 @@
----
-layout: glossary
-title: Add-VSEMRClusterInstanceFleetProvisioningSpecifications
-categories: glossary
-label1: Category
-data1: Documentation
-label2: Depth
-data2: Deep
-schema: 2.0.0
----
-
 # Add-VSEMRClusterInstanceFleetProvisioningSpecifications
 
 ## SYNOPSIS
-Adds an AWS::EMR::Cluster.InstanceFleetProvisioningSpecifications resource property to the template
+Adds an AWS::EMR::Cluster.InstanceFleetProvisioningSpecifications resource property to the template.
+InstanceFleetProvisioningSpecification is a subproperty of InstanceFleetConfig.
+InstanceFleetProvisioningSpecification defines the launch specification for Spot instances in an instance fleet, which determines the defined duration and provisioning timeout behavior for Spot instances.
 
 ## SYNTAX
 
@@ -21,14 +12,30 @@ Add-VSEMRClusterInstanceFleetProvisioningSpecifications [-SpotSpecification] <Ob
 ```
 
 ## DESCRIPTION
-Adds an AWS::EMR::Cluster.InstanceFleetProvisioningSpecifications resource property to the template
+Adds an AWS::EMR::Cluster.InstanceFleetProvisioningSpecifications resource property to the template.
+InstanceFleetProvisioningSpecification is a subproperty of InstanceFleetConfig.
+InstanceFleetProvisioningSpecification defines the launch specification for Spot instances in an instance fleet, which determines the defined duration and provisioning timeout behavior for Spot instances.
+
+**Note**
+
+The instance fleet configuration is available only in Amazon EMR versions 4.8.0 and later, excluding 5.0.x versions.
+
+## EXAMPLES
+
+### Example 1
+```powershell
+PS C:\> {{ Add example code here }}
+```
+
+{{ Add example description here }}
 
 ## PARAMETERS
 
 ### -SpotSpecification
-Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-elasticmapreduce-cluster-instancefleetprovisioningspecifications.html#cfn-elasticmapreduce-cluster-instancefleetprovisioningspecifications-spotspecification    
-Required: True    
-Type: SpotProvisioningSpecification    
+The launch specification for Spot instances in the fleet, which determines the defined duration and provisioning timeout behavior.
+
+Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-elasticmapreduce-cluster-instancefleetprovisioningspecifications.html#cfn-elasticmapreduce-cluster-instancefleetprovisioningspecifications-spotspecification
+Type: SpotProvisioningSpecification
 UpdateType: Mutable
 
 ```yaml
@@ -44,15 +51,13 @@ Accept wildcard characters: False
 ```
 
 ### CommonParameters
-This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction, and -WarningVariable.
-For more information, see about_CommonParameters (http://go.microsoft.com/fwlink/?LinkID=113216).
+This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction, and -WarningVariable. For more information, see [about_CommonParameters](http://go.microsoft.com/fwlink/?LinkID=113216).
 
 ## INPUTS
 
 ## OUTPUTS
 
 ### Vaporshell.Resource.EMR.Cluster.InstanceFleetProvisioningSpecifications
-
 ## NOTES
 
 ## RELATED LINKS

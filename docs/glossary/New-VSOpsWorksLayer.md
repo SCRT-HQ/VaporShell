@@ -1,18 +1,9 @@
----
-layout: glossary
-title: New-VSOpsWorksLayer
-categories: glossary
-label1: Category
-data1: Documentation
-label2: Depth
-data2: Deep
-schema: 2.0.0
----
-
 # New-VSOpsWorksLayer
 
 ## SYNOPSIS
-Adds an AWS::OpsWorks::Layer resource to the template
+Adds an AWS::OpsWorks::Layer resource to the template.
+Creates a layer.
+For more information, see How to Create a Layer: https://docs.aws.amazon.com/opsworks/latest/userguide/workinglayers-basics-create.html.
 
 ## SYNTAX
 
@@ -28,7 +19,27 @@ New-VSOpsWorksLayer [-LogicalId] <String> [-Attributes <Hashtable>] -AutoAssignE
 ```
 
 ## DESCRIPTION
-Adds an AWS::OpsWorks::Layer resource to the template
+Adds an AWS::OpsWorks::Layer resource to the template.
+Creates a layer.
+For more information, see How to Create a Layer: https://docs.aws.amazon.com/opsworks/latest/userguide/workinglayers-basics-create.html.
+
+**Note**
+
+You should use **CreateLayer** for noncustom layer types such as PHP App Server only if the stack does not have an existing layer of that type.
+A stack can have at most one instance of each noncustom layer; if you attempt to create a second instance, **CreateLayer** fails.
+A stack can have an arbitrary number of custom layers, so you can call **CreateLayer** as many times as you like for that layer type.
+
+**Required Permissions**: To use this action, an IAM user must have a Manage permissions level for the stack, or an attached policy that explicitly grants permissions.
+For more information on user permissions, see Managing User Permissions: https://docs.aws.amazon.com/opsworks/latest/userguide/opsworks-security-users.html.
+
+## EXAMPLES
+
+### Example 1
+```powershell
+PS C:\> {{ Add example code here }}
+```
+
+{{ Add example description here }}
 
 ## PARAMETERS
 
@@ -50,11 +61,13 @@ Accept wildcard characters: False
 ```
 
 ### -Attributes
-Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-opsworks-layer.html#cfn-opsworks-layer-attributes    
-DuplicatesAllowed: False    
-PrimitiveItemType: String    
-Required: False    
-Type: Map    
+One or more user-defined key-value pairs to be added to the stack attributes.
+To create a cluster layer, set the EcsClusterArn attribute to the cluster's ARN.
+
+Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-opsworks-layer.html#cfn-opsworks-layer-attributes
+DuplicatesAllowed: False
+PrimitiveItemType: String
+Type: Map
 UpdateType: Mutable
 
 ```yaml
@@ -70,9 +83,11 @@ Accept wildcard characters: False
 ```
 
 ### -AutoAssignElasticIps
-Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-opsworks-layer.html#cfn-opsworks-layer-autoassignelasticips    
-PrimitiveType: Boolean    
-Required: True    
+Whether to automatically assign an Elastic IP address: https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/elastic-ip-addresses-eip.html to the layer's instances.
+For more information, see How to Edit a Layer: https://docs.aws.amazon.com/opsworks/latest/userguide/workinglayers-basics-edit.html.
+
+Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-opsworks-layer.html#cfn-opsworks-layer-autoassignelasticips
+PrimitiveType: Boolean
 UpdateType: Mutable
 
 ```yaml
@@ -88,9 +103,11 @@ Accept wildcard characters: False
 ```
 
 ### -AutoAssignPublicIps
-Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-opsworks-layer.html#cfn-opsworks-layer-autoassignpublicips    
-PrimitiveType: Boolean    
-Required: True    
+For stacks that are running in a VPC, whether to automatically assign a public IP address to the layer's instances.
+For more information, see How to Edit a Layer: https://docs.aws.amazon.com/opsworks/latest/userguide/workinglayers-basics-edit.html.
+
+Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-opsworks-layer.html#cfn-opsworks-layer-autoassignpublicips
+PrimitiveType: Boolean
 UpdateType: Mutable
 
 ```yaml
@@ -106,9 +123,11 @@ Accept wildcard characters: False
 ```
 
 ### -CustomInstanceProfileArn
-Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-opsworks-layer.html#cfn-opsworks-layer-custominstanceprofilearn    
-PrimitiveType: String    
-Required: False    
+The ARN of an IAM profile to be used for the layer's EC2 instances.
+For more information about IAM ARNs, see Using Identifiers: https://docs.aws.amazon.com/IAM/latest/UserGuide/Using_Identifiers.html.
+
+Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-opsworks-layer.html#cfn-opsworks-layer-custominstanceprofilearn
+PrimitiveType: String
 UpdateType: Mutable
 
 ```yaml
@@ -124,9 +143,12 @@ Accept wildcard characters: False
 ```
 
 ### -CustomJson
-Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-opsworks-layer.html#cfn-opsworks-layer-customjson    
-PrimitiveType: Json    
-Required: False    
+A JSON-formatted string containing custom stack configuration and deployment attributes to be installed on the layer's instances.
+For more information, see  Using Custom JSON: https://docs.aws.amazon.com/opsworks/latest/userguide/workingcookbook-json-override.html.
+This feature is supported as of version 1.7.42 of the AWS CLI.
+
+Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-opsworks-layer.html#cfn-opsworks-layer-customjson
+PrimitiveType: Json
 UpdateType: Mutable
 
 ```yaml
@@ -142,9 +164,10 @@ Accept wildcard characters: False
 ```
 
 ### -CustomRecipes
-Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-opsworks-layer.html#cfn-opsworks-layer-customrecipes    
-Required: False    
-Type: Recipes    
+A LayerCustomRecipes object that specifies the layer custom recipes.
+
+Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-opsworks-layer.html#cfn-opsworks-layer-customrecipes
+Type: Recipes
 UpdateType: Mutable
 
 ```yaml
@@ -160,11 +183,12 @@ Accept wildcard characters: False
 ```
 
 ### -CustomSecurityGroupIds
-Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-opsworks-layer.html#cfn-opsworks-layer-customsecuritygroupids    
-DuplicatesAllowed: True    
-PrimitiveItemType: String    
-Required: False    
-Type: List    
+An array containing the layer custom security group IDs.
+
+Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-opsworks-layer.html#cfn-opsworks-layer-customsecuritygroupids
+DuplicatesAllowed: True
+PrimitiveItemType: String
+Type: List
 UpdateType: Mutable
 
 ```yaml
@@ -180,9 +204,10 @@ Accept wildcard characters: False
 ```
 
 ### -EnableAutoHealing
-Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-opsworks-layer.html#cfn-opsworks-layer-enableautohealing    
-PrimitiveType: Boolean    
-Required: True    
+Whether to disable auto healing for the layer.
+
+Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-opsworks-layer.html#cfn-opsworks-layer-enableautohealing
+PrimitiveType: Boolean
 UpdateType: Mutable
 
 ```yaml
@@ -198,9 +223,14 @@ Accept wildcard characters: False
 ```
 
 ### -InstallUpdatesOnBoot
-Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-opsworks-layer.html#cfn-opsworks-layer-installupdatesonboot    
-PrimitiveType: Boolean    
-Required: False    
+Whether to install operating system and package updates when the instance boots.
+The default value is true.
+To control when updates are installed, set this value to false.
+You must then update your instances manually by using CreateDeployment: https://docs.aws.amazon.com/goto/WebAPI/opsworks-2013-02-18/CreateDeployment to run the update_dependencies stack command or by manually running yum Amazon Linux or apt-get Ubuntu on the instances.
+To ensure that your instances have the latest security updates, we strongly recommend using the default value of true.
+
+Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-opsworks-layer.html#cfn-opsworks-layer-installupdatesonboot
+PrimitiveType: Boolean
 UpdateType: Mutable
 
 ```yaml
@@ -216,9 +246,10 @@ Accept wildcard characters: False
 ```
 
 ### -LifecycleEventConfiguration
-Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-opsworks-layer.html#cfn-opsworks-layer-lifecycleeventconfiguration    
-Required: False    
-Type: LifecycleEventConfiguration    
+A LifeCycleEventConfiguration object that you can use to configure the Shutdown event to specify an execution timeout and enable or disable Elastic Load Balancer connection draining.
+
+Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-opsworks-layer.html#cfn-opsworks-layer-lifecycleeventconfiguration
+Type: LifecycleEventConfiguration
 UpdateType: Mutable
 
 ```yaml
@@ -234,9 +265,10 @@ Accept wildcard characters: False
 ```
 
 ### -LoadBasedAutoScaling
-Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-opsworks-layer.html#cfn-opsworks-layer-loadbasedautoscaling    
-Required: False    
-Type: LoadBasedAutoScaling    
+The load-based scaling configuration for the AWS OpsWorks layer.
+
+Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-opsworks-layer.html#cfn-opsworks-layer-loadbasedautoscaling
+Type: LoadBasedAutoScaling
 UpdateType: Mutable
 
 ```yaml
@@ -252,9 +284,10 @@ Accept wildcard characters: False
 ```
 
 ### -Name
-Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-opsworks-layer.html#cfn-opsworks-layer-name    
-PrimitiveType: String    
-Required: True    
+The layer name, which is used by the console.
+
+Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-opsworks-layer.html#cfn-opsworks-layer-name
+PrimitiveType: String
 UpdateType: Mutable
 
 ```yaml
@@ -270,11 +303,12 @@ Accept wildcard characters: False
 ```
 
 ### -Packages
-Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-opsworks-layer.html#cfn-opsworks-layer-packages    
-DuplicatesAllowed: True    
-PrimitiveItemType: String    
-Required: False    
-Type: List    
+An array of Package objects that describes the layer packages.
+
+Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-opsworks-layer.html#cfn-opsworks-layer-packages
+DuplicatesAllowed: True
+PrimitiveItemType: String
+Type: List
 UpdateType: Mutable
 
 ```yaml
@@ -290,9 +324,14 @@ Accept wildcard characters: False
 ```
 
 ### -Shortname
-Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-opsworks-layer.html#cfn-opsworks-layer-shortname    
-PrimitiveType: String    
-Required: True    
+For custom layers only, use this parameter to specify the layer's short name, which is used internally by AWS OpsWorks Stacks and by Chef recipes.
+The short name is also used as the name for the directory where your app files are installed.
+It can have a maximum of 200 characters, which are limited to the alphanumeric characters, '-', '_', and '.'.
+The built-in layers' short names are defined by AWS OpsWorks Stacks.
+For more information, see the Layer Reference: https://docs.aws.amazon.com/opsworks/latest/userguide/layers.html.
+
+Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-opsworks-layer.html#cfn-opsworks-layer-shortname
+PrimitiveType: String
 UpdateType: Mutable
 
 ```yaml
@@ -308,9 +347,10 @@ Accept wildcard characters: False
 ```
 
 ### -StackId
-Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-opsworks-layer.html#cfn-opsworks-layer-stackid    
-PrimitiveType: String    
-Required: True    
+The layer stack ID.
+
+Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-opsworks-layer.html#cfn-opsworks-layer-stackid
+PrimitiveType: String
 UpdateType: Immutable
 
 ```yaml
@@ -326,11 +366,13 @@ Accept wildcard characters: False
 ```
 
 ### -Tags
-Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-opsworks-layer.html#cfn-opsworks-layer-tags    
-DuplicatesAllowed: True    
-ItemType: Tag    
-Required: False    
-Type: List    
+Specifies one or more sets of tags key-value pairs to associate with this AWS OpsWorks layer.
+Use tags to manage your resources.
+
+Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-opsworks-layer.html#cfn-opsworks-layer-tags
+DuplicatesAllowed: True
+ItemType: Tag
+Type: List
 UpdateType: Mutable
 
 ```yaml
@@ -346,9 +388,13 @@ Accept wildcard characters: False
 ```
 
 ### -Type
-Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-opsworks-layer.html#cfn-opsworks-layer-type    
-PrimitiveType: String    
-Required: True    
+The layer type.
+A stack cannot have more than one built-in layer of the same type.
+It can have any number of custom layers.
+Built-in layers are not available in Chef 12 stacks.
+
+Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-opsworks-layer.html#cfn-opsworks-layer-type
+PrimitiveType: String
 UpdateType: Immutable
 
 ```yaml
@@ -364,9 +410,10 @@ Accept wildcard characters: False
 ```
 
 ### -UseEbsOptimizedInstances
-Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-opsworks-layer.html#cfn-opsworks-layer-useebsoptimizedinstances    
-PrimitiveType: Boolean    
-Required: False    
+Whether to use Amazon EBS-optimized instances.
+
+Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-opsworks-layer.html#cfn-opsworks-layer-useebsoptimizedinstances
+PrimitiveType: Boolean
 UpdateType: Mutable
 
 ```yaml
@@ -382,11 +429,12 @@ Accept wildcard characters: False
 ```
 
 ### -VolumeConfigurations
-Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-opsworks-layer.html#cfn-opsworks-layer-volumeconfigurations    
-DuplicatesAllowed: True    
-ItemType: VolumeConfiguration    
-Required: False    
-Type: List    
+A VolumeConfigurations object that describes the layer's Amazon EBS volumes.
+
+Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-opsworks-layer.html#cfn-opsworks-layer-volumeconfigurations
+DuplicatesAllowed: True
+ItemType: VolumeConfiguration
+Type: List
 UpdateType: Mutable
 
 ```yaml
@@ -496,15 +544,13 @@ Accept wildcard characters: False
 ```
 
 ### CommonParameters
-This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction, and -WarningVariable.
-For more information, see about_CommonParameters (http://go.microsoft.com/fwlink/?LinkID=113216).
+This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction, and -WarningVariable. For more information, see [about_CommonParameters](http://go.microsoft.com/fwlink/?LinkID=113216).
 
 ## INPUTS
 
 ## OUTPUTS
 
 ### Vaporshell.Resource.OpsWorks.Layer
-
 ## NOTES
 
 ## RELATED LINKS

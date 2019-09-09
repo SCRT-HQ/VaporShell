@@ -1,18 +1,10 @@
----
-layout: glossary
-title: Add-VSEMRClusterScalingRule
-categories: glossary
-label1: Category
-data1: Documentation
-label2: Depth
-data2: Deep
-schema: 2.0.0
----
-
 # Add-VSEMRClusterScalingRule
 
 ## SYNOPSIS
-Adds an AWS::EMR::Cluster.ScalingRule resource property to the template
+Adds an AWS::EMR::Cluster.ScalingRule resource property to the template.
+ScalingRule is a subproperty of the AutoScalingPolicy property type.
+ScalingRule defines the scale-in or scale-out rules for scaling activity, including the CloudWatch metric alarm that triggers activity, how EC2 instances are added or removed, and the periodicity of adjustments.
+The automatic scaling policy for an instance group can comprise one or more automatic scaling rules.
 
 ## SYNTAX
 
@@ -22,14 +14,27 @@ Add-VSEMRClusterScalingRule [-Action] <Object> [[-Description] <Object>] [-Name]
 ```
 
 ## DESCRIPTION
-Adds an AWS::EMR::Cluster.ScalingRule resource property to the template
+Adds an AWS::EMR::Cluster.ScalingRule resource property to the template.
+ScalingRule is a subproperty of the AutoScalingPolicy property type.
+ScalingRule defines the scale-in or scale-out rules for scaling activity, including the CloudWatch metric alarm that triggers activity, how EC2 instances are added or removed, and the periodicity of adjustments.
+The automatic scaling policy for an instance group can comprise one or more automatic scaling rules.
+
+## EXAMPLES
+
+### Example 1
+```powershell
+PS C:\> {{ Add example code here }}
+```
+
+{{ Add example description here }}
 
 ## PARAMETERS
 
 ### -Action
-Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-elasticmapreduce-cluster-scalingrule.html#cfn-elasticmapreduce-cluster-scalingrule-action    
-Required: True    
-Type: ScalingAction    
+The conditions that trigger an automatic scaling activity.
+
+Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-elasticmapreduce-cluster-scalingrule.html#cfn-elasticmapreduce-cluster-scalingrule-action
+Type: ScalingAction
 UpdateType: Mutable
 
 ```yaml
@@ -45,9 +50,10 @@ Accept wildcard characters: False
 ```
 
 ### -Description
-Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-elasticmapreduce-cluster-scalingrule.html#cfn-elasticmapreduce-cluster-scalingrule-description    
-PrimitiveType: String    
-Required: False    
+A friendly, more verbose description of the automatic scaling rule.
+
+Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-elasticmapreduce-cluster-scalingrule.html#cfn-elasticmapreduce-cluster-scalingrule-description
+PrimitiveType: String
 UpdateType: Mutable
 
 ```yaml
@@ -63,9 +69,11 @@ Accept wildcard characters: False
 ```
 
 ### -Name
-Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-elasticmapreduce-cluster-scalingrule.html#cfn-elasticmapreduce-cluster-scalingrule-name    
-PrimitiveType: String    
-Required: True    
+The name used to identify an automatic scaling rule.
+Rule names must be unique within a scaling policy.
+
+Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-elasticmapreduce-cluster-scalingrule.html#cfn-elasticmapreduce-cluster-scalingrule-name
+PrimitiveType: String
 UpdateType: Mutable
 
 ```yaml
@@ -81,9 +89,10 @@ Accept wildcard characters: False
 ```
 
 ### -Trigger
-Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-elasticmapreduce-cluster-scalingrule.html#cfn-elasticmapreduce-cluster-scalingrule-trigger    
-Required: True    
-Type: ScalingTrigger    
+The CloudWatch alarm definition that determines when automatic scaling activity is triggered.
+
+Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-elasticmapreduce-cluster-scalingrule.html#cfn-elasticmapreduce-cluster-scalingrule-trigger
+Type: ScalingTrigger
 UpdateType: Mutable
 
 ```yaml
@@ -99,15 +108,13 @@ Accept wildcard characters: False
 ```
 
 ### CommonParameters
-This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction, and -WarningVariable.
-For more information, see about_CommonParameters (http://go.microsoft.com/fwlink/?LinkID=113216).
+This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction, and -WarningVariable. For more information, see [about_CommonParameters](http://go.microsoft.com/fwlink/?LinkID=113216).
 
 ## INPUTS
 
 ## OUTPUTS
 
 ### Vaporshell.Resource.EMR.Cluster.ScalingRule
-
 ## NOTES
 
 ## RELATED LINKS

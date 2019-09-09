@@ -1,18 +1,8 @@
----
-layout: glossary
-title: Add-VSGlueTriggerCondition
-categories: glossary
-label1: Category
-data1: Documentation
-label2: Depth
-data2: Deep
-schema: 2.0.0
----
-
 # Add-VSGlueTriggerCondition
 
 ## SYNOPSIS
-Adds an AWS::Glue::Trigger.Condition resource property to the template
+Adds an AWS::Glue::Trigger.Condition resource property to the template.
+Defines a condition under which a trigger fires.
 
 ## SYNTAX
 
@@ -22,14 +12,26 @@ Add-VSGlueTriggerCondition [[-State] <Object>] [[-LogicalOperator] <Object>] [[-
 ```
 
 ## DESCRIPTION
-Adds an AWS::Glue::Trigger.Condition resource property to the template
+Adds an AWS::Glue::Trigger.Condition resource property to the template.
+Defines a condition under which a trigger fires.
+
+## EXAMPLES
+
+### Example 1
+```powershell
+PS C:\> {{ Add example code here }}
+```
+
+{{ Add example description here }}
 
 ## PARAMETERS
 
 ### -State
-Required: False    
-Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-glue-trigger-condition.html#cfn-glue-trigger-condition-state    
-PrimitiveType: String    
+The condition state.
+Currently, the values supported are SUCCEEDED, STOPPED, TIMEOUT, and FAILED.
+
+Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-glue-trigger-condition.html#cfn-glue-trigger-condition-state
+PrimitiveType: String
 UpdateType: Mutable
 
 ```yaml
@@ -45,9 +47,10 @@ Accept wildcard characters: False
 ```
 
 ### -LogicalOperator
-Required: False    
-Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-glue-trigger-condition.html#cfn-glue-trigger-condition-logicaloperator    
-PrimitiveType: String    
+A logical operator.
+
+Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-glue-trigger-condition.html#cfn-glue-trigger-condition-logicaloperator
+PrimitiveType: String
 UpdateType: Mutable
 
 ```yaml
@@ -63,9 +66,10 @@ Accept wildcard characters: False
 ```
 
 ### -JobName
-Required: False    
-Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-glue-trigger-condition.html#cfn-glue-trigger-condition-jobname    
-PrimitiveType: String    
+The name of the job whose JobRuns this condition applies to, and on which this trigger waits.
+
+Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-glue-trigger-condition.html#cfn-glue-trigger-condition-jobname
+PrimitiveType: String
 UpdateType: Mutable
 
 ```yaml
@@ -81,15 +85,13 @@ Accept wildcard characters: False
 ```
 
 ### CommonParameters
-This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction, and -WarningVariable.
-For more information, see about_CommonParameters (http://go.microsoft.com/fwlink/?LinkID=113216).
+This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction, and -WarningVariable. For more information, see [about_CommonParameters](http://go.microsoft.com/fwlink/?LinkID=113216).
 
 ## INPUTS
 
 ## OUTPUTS
 
 ### Vaporshell.Resource.Glue.Trigger.Condition
-
 ## NOTES
 
 ## RELATED LINKS

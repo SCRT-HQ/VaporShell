@@ -1,14 +1,3 @@
----
-layout: glossary
-title: Add-ConOr
-categories: glossary
-label1: Category
-data1: Documentation
-label2: Depth
-data2: Deep
-schema: 2.0.0
----
-
 # Add-ConOr
 
 ## SYNOPSIS
@@ -25,10 +14,19 @@ Returns true if any one of the specified conditions evaluate to true, or returns
 Fn::Or acts as an OR operator.
 The minimum number of conditions that you can include is 2, and the maximum is 10.
 
+## EXAMPLES
+
+### EXAMPLE 1
+```
+Add-ConOr -Conditions (Add-ConEquals -FirstValue "sg-mysggroup" -SecondValue (Add-FnRef -Ref "ASecurityGroup")),(Add-ConEquals -FirstValue "Production" -SecondValue (Add-FnRef -Ref "Environment"))
+```
+
+When the template is exported, this will convert to: {"Fn::Or":\[{"Fn::Equals":\["sg-mysggroup",{"Ref":"ASecurityGroup"}\]},{"Fn::Equals":\["Production",{"Ref":"Environment"}\]}\]}
+
 ## PARAMETERS
 
 ### -Conditions
-{{Fill Conditions Description}}
+{{ Fill Conditions Description }}
 
 ```yaml
 Type: Object[]
@@ -43,15 +41,13 @@ Accept wildcard characters: False
 ```
 
 ### CommonParameters
-This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction, and -WarningVariable.
-For more information, see about_CommonParameters (http://go.microsoft.com/fwlink/?LinkID=113216).
+This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction, and -WarningVariable. For more information, see [about_CommonParameters](http://go.microsoft.com/fwlink/?LinkID=113216).
 
 ## INPUTS
 
 ## OUTPUTS
 
 ### Vaporshell.Condition.Or
-
 ## NOTES
 You can use the following functions in this condition statement:
     Fn::FindInMap

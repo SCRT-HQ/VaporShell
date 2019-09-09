@@ -1,18 +1,8 @@
----
-layout: glossary
-title: New-VSCognitoIdentityPool
-categories: glossary
-label1: Category
-data1: Documentation
-label2: Depth
-data2: Deep
-schema: 2.0.0
----
-
 # New-VSCognitoIdentityPool
 
 ## SYNOPSIS
-Adds an AWS::Cognito::IdentityPool resource to the template
+Adds an AWS::Cognito::IdentityPool resource to the template.
+The AWS::Cognito::IdentityPool resource creates an Amazon Cognito identity pool.
 
 ## SYNTAX
 
@@ -26,7 +16,17 @@ New-VSCognitoIdentityPool [-LogicalId] <String> [-PushSync <Object>] [-CognitoId
 ```
 
 ## DESCRIPTION
-Adds an AWS::Cognito::IdentityPool resource to the template
+Adds an AWS::Cognito::IdentityPool resource to the template.
+The AWS::Cognito::IdentityPool resource creates an Amazon Cognito identity pool.
+
+## EXAMPLES
+
+### Example 1
+```powershell
+PS C:\> {{ Add example code here }}
+```
+
+{{ Add example description here }}
 
 ## PARAMETERS
 
@@ -48,9 +48,10 @@ Accept wildcard characters: False
 ```
 
 ### -PushSync
-Type: PushSync    
-Required: False    
-Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-cognito-identitypool.html#cfn-cognito-identitypool-pushsync    
+Configuration options to be applied to the identity pool.
+
+Type: PushSync
+Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-cognito-identitypool.html#cfn-cognito-identitypool-pushsync
 UpdateType: Mutable
 
 ```yaml
@@ -66,10 +67,11 @@ Accept wildcard characters: False
 ```
 
 ### -CognitoIdentityProviders
-Type: List    
-Required: False    
-Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-cognito-identitypool.html#cfn-cognito-identitypool-cognitoidentityproviders    
-ItemType: CognitoIdentityProvider    
+An array of Amazon Cognito user pools and their client IDs.
+
+Type: List
+Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-cognito-identitypool.html#cfn-cognito-identitypool-cognitoidentityproviders
+ItemType: CognitoIdentityProvider
 UpdateType: Mutable
 
 ```yaml
@@ -85,9 +87,10 @@ Accept wildcard characters: False
 ```
 
 ### -CognitoEvents
-Required: False    
-Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-cognito-identitypool.html#cfn-cognito-identitypool-cognitoevents    
-PrimitiveType: Json    
+The events to configure.
+
+Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-cognito-identitypool.html#cfn-cognito-identitypool-cognitoevents
+PrimitiveType: Json
 UpdateType: Mutable
 
 ```yaml
@@ -103,9 +106,14 @@ Accept wildcard characters: False
 ```
 
 ### -DeveloperProviderName
-Required: False    
-Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-cognito-identitypool.html#cfn-cognito-identitypool-developerprovidername    
-PrimitiveType: String    
+The "domain" by which Amazon Cognito will refer to your users.
+This name acts as a placeholder that allows your backend and the Amazon Cognito service to communicate about the developer provider.
+For the DeveloperProviderName, you can use letters and periods ., underscores _, and dashes -.
+*Minimum length*: 1
+*Maximum length*: 100
+
+Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-cognito-identitypool.html#cfn-cognito-identitypool-developerprovidername
+PrimitiveType: String
 UpdateType: Mutable
 
 ```yaml
@@ -121,9 +129,10 @@ Accept wildcard characters: False
 ```
 
 ### -CognitoStreams
-Type: CognitoStreams    
-Required: False    
-Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-cognito-identitypool.html#cfn-cognito-identitypool-cognitostreams    
+Configuration options for configuring Amazon Cognito streams.
+
+Type: CognitoStreams
+Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-cognito-identitypool.html#cfn-cognito-identitypool-cognitostreams
 UpdateType: Mutable
 
 ```yaml
@@ -139,9 +148,13 @@ Accept wildcard characters: False
 ```
 
 ### -IdentityPoolName
-Required: False    
-Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-cognito-identitypool.html#cfn-cognito-identitypool-identitypoolname    
-PrimitiveType: String    
+The name of your Amazon Cognito identity pool.
+*Minimum length*: 1
+*Maximum length*: 128
+*Pattern*: w \]+
+
+Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-cognito-identitypool.html#cfn-cognito-identitypool-identitypoolname
+PrimitiveType: String
 UpdateType: Mutable
 
 ```yaml
@@ -157,9 +170,10 @@ Accept wildcard characters: False
 ```
 
 ### -AllowUnauthenticatedIdentities
-Required: True    
-Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-cognito-identitypool.html#cfn-cognito-identitypool-allowunauthenticatedidentities    
-PrimitiveType: Boolean    
+Specifies whether the identity pool supports unauthenticated logins.
+
+Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-cognito-identitypool.html#cfn-cognito-identitypool-allowunauthenticatedidentities
+PrimitiveType: Boolean
 UpdateType: Mutable
 
 ```yaml
@@ -175,9 +189,10 @@ Accept wildcard characters: False
 ```
 
 ### -SupportedLoginProviders
-Required: False    
-Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-cognito-identitypool.html#cfn-cognito-identitypool-supportedloginproviders    
-PrimitiveType: Json    
+Key-value pairs that map provider names to provider app IDs.
+
+Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-cognito-identitypool.html#cfn-cognito-identitypool-supportedloginproviders
+PrimitiveType: Json
 UpdateType: Mutable
 
 ```yaml
@@ -193,10 +208,11 @@ Accept wildcard characters: False
 ```
 
 ### -SamlProviderARNs
-PrimitiveItemType: String    
-Type: List    
-Required: False    
-Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-cognito-identitypool.html#cfn-cognito-identitypool-samlproviderarns    
+A list of Amazon Resource Names ARNs of Security Assertion Markup Language SAML providers.
+
+PrimitiveItemType: String
+Type: List
+Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-cognito-identitypool.html#cfn-cognito-identitypool-samlproviderarns
 UpdateType: Mutable
 
 ```yaml
@@ -212,10 +228,11 @@ Accept wildcard characters: False
 ```
 
 ### -OpenIdConnectProviderARNs
-PrimitiveItemType: String    
-Type: List    
-Required: False    
-Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-cognito-identitypool.html#cfn-cognito-identitypool-openidconnectproviderarns    
+A list of ARNs for the OpendID Connect provider.
+
+PrimitiveItemType: String
+Type: List
+Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-cognito-identitypool.html#cfn-cognito-identitypool-openidconnectproviderarns
 UpdateType: Mutable
 
 ```yaml
@@ -325,15 +342,13 @@ Accept wildcard characters: False
 ```
 
 ### CommonParameters
-This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction, and -WarningVariable.
-For more information, see about_CommonParameters (http://go.microsoft.com/fwlink/?LinkID=113216).
+This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction, and -WarningVariable. For more information, see [about_CommonParameters](http://go.microsoft.com/fwlink/?LinkID=113216).
 
 ## INPUTS
 
 ## OUTPUTS
 
 ### Vaporshell.Resource.Cognito.IdentityPool
-
 ## NOTES
 
 ## RELATED LINKS

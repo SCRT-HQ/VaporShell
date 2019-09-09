@@ -1,30 +1,33 @@
----
-layout: glossary
-title: New-VSGlueCrawler
-categories: glossary
-label1: Category
-data1: Documentation
-label2: Depth
-data2: Deep
-schema: 2.0.0
----
-
 # New-VSGlueCrawler
 
 ## SYNOPSIS
-Adds an AWS::Glue::Crawler resource to the template
+Adds an AWS::Glue::Crawler resource to the template.
+The AWS::Glue::Crawler resource specifies an AWS Glue crawler.
+For more information, see Cataloging Tables with a Crawler: https://docs.aws.amazon.com/glue/latest/dg/add-crawler.html and Crawler Structure: https://docs.aws.amazon.com/glue/latest/dg/aws-glue-api-crawler-crawling.html#aws-glue-api-crawler-crawling-Crawler in the *AWS Glue Developer Guide*.
 
 ## SYNTAX
 
 ```
 New-VSGlueCrawler [-LogicalId] <String> -Role <Object> [-Classifiers <Object>] [-Description <Object>]
- [-SchemaChangePolicy <Object>] [-Schedule <Object>] -DatabaseName <Object> -Targets <Object>
- [-TablePrefix <Object>] [-Name <Object>] [-DeletionPolicy <String>] [-DependsOn <String[]>]
- [-Metadata <Object>] [-UpdatePolicy <Object>] [-Condition <Object>] [<CommonParameters>]
+ [-SchemaChangePolicy <Object>] [-Configuration <Object>] [-Schedule <Object>] -DatabaseName <Object>
+ -Targets <Object> [-CrawlerSecurityConfiguration <Object>] [-TablePrefix <Object>] [-Tags <Object>]
+ [-Name <Object>] [-DeletionPolicy <String>] [-DependsOn <String[]>] [-Metadata <Object>]
+ [-UpdatePolicy <Object>] [-Condition <Object>] [<CommonParameters>]
 ```
 
 ## DESCRIPTION
-Adds an AWS::Glue::Crawler resource to the template
+Adds an AWS::Glue::Crawler resource to the template.
+The AWS::Glue::Crawler resource specifies an AWS Glue crawler.
+For more information, see Cataloging Tables with a Crawler: https://docs.aws.amazon.com/glue/latest/dg/add-crawler.html and Crawler Structure: https://docs.aws.amazon.com/glue/latest/dg/aws-glue-api-crawler-crawling.html#aws-glue-api-crawler-crawling-Crawler in the *AWS Glue Developer Guide*.
+
+## EXAMPLES
+
+### Example 1
+```powershell
+PS C:\> {{ Add example code here }}
+```
+
+{{ Add example description here }}
 
 ## PARAMETERS
 
@@ -46,9 +49,10 @@ Accept wildcard characters: False
 ```
 
 ### -Role
-Required: True    
-Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-glue-crawler.html#cfn-glue-crawler-role    
-PrimitiveType: String    
+The Amazon Resource Name ARN of an IAM role that's used to access customer resources, such as Amazon Simple Storage Service Amazon S3 data.
+
+Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-glue-crawler.html#cfn-glue-crawler-role
+PrimitiveType: String
 UpdateType: Mutable
 
 ```yaml
@@ -64,10 +68,11 @@ Accept wildcard characters: False
 ```
 
 ### -Classifiers
-PrimitiveItemType: String    
-Type: List    
-Required: False    
-Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-glue-crawler.html#cfn-glue-crawler-classifiers    
+A list of UTF-8 strings that specify the custom classifiers that are associated with the crawler.
+
+PrimitiveItemType: String
+Type: List
+Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-glue-crawler.html#cfn-glue-crawler-classifiers
 UpdateType: Mutable
 
 ```yaml
@@ -83,9 +88,10 @@ Accept wildcard characters: False
 ```
 
 ### -Description
-Required: False    
-Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-glue-crawler.html#cfn-glue-crawler-description    
-PrimitiveType: String    
+A description of the crawler.
+
+Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-glue-crawler.html#cfn-glue-crawler-description
+PrimitiveType: String
 UpdateType: Mutable
 
 ```yaml
@@ -101,9 +107,31 @@ Accept wildcard characters: False
 ```
 
 ### -SchemaChangePolicy
-Type: SchemaChangePolicy    
-Required: False    
-Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-glue-crawler.html#cfn-glue-crawler-schemachangepolicy    
+The policy that specifies update and delete behaviors for the crawler.
+
+Type: SchemaChangePolicy
+Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-glue-crawler.html#cfn-glue-crawler-schemachangepolicy
+UpdateType: Mutable
+
+```yaml
+Type: Object
+Parameter Sets: (All)
+Aliases:
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### -Configuration
+Crawler configuration information.
+This versioned JSON string allows users to specify aspects of a crawler's behavior.
+For more information, see Configuring a Crawler: https://docs.aws.amazon.com/glue/latest/dg/crawler-configuration.html.
+
+Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-glue-crawler.html#cfn-glue-crawler-configuration
+PrimitiveType: String
 UpdateType: Mutable
 
 ```yaml
@@ -119,9 +147,10 @@ Accept wildcard characters: False
 ```
 
 ### -Schedule
-Type: Schedule    
-Required: False    
-Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-glue-crawler.html#cfn-glue-crawler-schedule    
+For scheduled crawlers, the schedule when the crawler runs.
+
+Type: Schedule
+Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-glue-crawler.html#cfn-glue-crawler-schedule
 UpdateType: Mutable
 
 ```yaml
@@ -137,9 +166,10 @@ Accept wildcard characters: False
 ```
 
 ### -DatabaseName
-Required: True    
-Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-glue-crawler.html#cfn-glue-crawler-databasename    
-PrimitiveType: String    
+The name of the database in which the crawler's output is stored.
+
+Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-glue-crawler.html#cfn-glue-crawler-databasename
+PrimitiveType: String
 UpdateType: Mutable
 
 ```yaml
@@ -155,9 +185,10 @@ Accept wildcard characters: False
 ```
 
 ### -Targets
-Type: Targets    
-Required: True    
-Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-glue-crawler.html#cfn-glue-crawler-targets    
+A collection of targets to crawl.
+
+Type: Targets
+Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-glue-crawler.html#cfn-glue-crawler-targets
 UpdateType: Mutable
 
 ```yaml
@@ -172,10 +203,51 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
+### -CrawlerSecurityConfiguration
+The name of the SecurityConfiguration structure to be used by this crawler.
+
+Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-glue-crawler.html#cfn-glue-crawler-crawlersecurityconfiguration
+PrimitiveType: String
+UpdateType: Mutable
+
+```yaml
+Type: Object
+Parameter Sets: (All)
+Aliases:
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
 ### -TablePrefix
-Required: False    
-Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-glue-crawler.html#cfn-glue-crawler-tableprefix    
-PrimitiveType: String    
+The prefix added to the names of tables that are created.
+
+Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-glue-crawler.html#cfn-glue-crawler-tableprefix
+PrimitiveType: String
+UpdateType: Mutable
+
+```yaml
+Type: Object
+Parameter Sets: (All)
+Aliases:
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### -Tags
+The tags to use with this crawler request.
+You can use tags to limit access to the crawler.
+For more information about tags in AWS Glue, see AWS Tags in AWS Glue: https://docs.aws.amazon.com/glue/latest/dg/monitor-tags.html in the developer guide.
+
+Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-glue-crawler.html#cfn-glue-crawler-tags
+PrimitiveType: Json
 UpdateType: Mutable
 
 ```yaml
@@ -191,9 +263,10 @@ Accept wildcard characters: False
 ```
 
 ### -Name
-Required: False    
-Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-glue-crawler.html#cfn-glue-crawler-name    
-PrimitiveType: String    
+The name of the crawler.
+
+Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-glue-crawler.html#cfn-glue-crawler-name
+PrimitiveType: String
 UpdateType: Immutable
 
 ```yaml
@@ -303,15 +376,13 @@ Accept wildcard characters: False
 ```
 
 ### CommonParameters
-This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction, and -WarningVariable.
-For more information, see about_CommonParameters (http://go.microsoft.com/fwlink/?LinkID=113216).
+This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction, and -WarningVariable. For more information, see [about_CommonParameters](http://go.microsoft.com/fwlink/?LinkID=113216).
 
 ## INPUTS
 
 ## OUTPUTS
 
 ### Vaporshell.Resource.Glue.Crawler
-
 ## NOTES
 
 ## RELATED LINKS

@@ -1,18 +1,8 @@
----
-layout: glossary
-title: Add-VSElasticLoadBalancingLoadBalancerLBCookieStickinessPolicy
-categories: glossary
-label1: Category
-data1: Documentation
-label2: Depth
-data2: Deep
-schema: 2.0.0
----
-
 # Add-VSElasticLoadBalancingLoadBalancerLBCookieStickinessPolicy
 
 ## SYNOPSIS
-Adds an AWS::ElasticLoadBalancing::LoadBalancer.LBCookieStickinessPolicy resource property to the template
+Adds an AWS::ElasticLoadBalancing::LoadBalancer.LBCookieStickinessPolicy resource property to the template.
+Specifies a policy for duration-based session stickiness for your Classic Load Balancer.
 
 ## SYNTAX
 
@@ -22,14 +12,28 @@ Add-VSElasticLoadBalancingLoadBalancerLBCookieStickinessPolicy [[-CookieExpirati
 ```
 
 ## DESCRIPTION
-Adds an AWS::ElasticLoadBalancing::LoadBalancer.LBCookieStickinessPolicy resource property to the template
+Adds an AWS::ElasticLoadBalancing::LoadBalancer.LBCookieStickinessPolicy resource property to the template.
+Specifies a policy for duration-based session stickiness for your Classic Load Balancer.
+
+To associate a policy with a listener, use the PolicyNames: https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-elb-listener.html#cfn-ec2-elb-listener-policynames property for the listener.
+
+## EXAMPLES
+
+### Example 1
+```powershell
+PS C:\> {{ Add example code here }}
+```
+
+{{ Add example description here }}
 
 ## PARAMETERS
 
 ### -CookieExpirationPeriod
-Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-elb-LBCookieStickinessPolicy.html#cfn-elb-lbcookiestickinesspolicy-cookieexpirationperiod    
-PrimitiveType: String    
-Required: False    
+The time period, in seconds, after which the cookie should be considered stale.
+If this parameter is not specified, the stickiness session lasts for the duration of the browser session.
+
+Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-elb-LBCookieStickinessPolicy.html#cfn-elb-lbcookiestickinesspolicy-cookieexpirationperiod
+PrimitiveType: String
 UpdateType: Mutable
 
 ```yaml
@@ -45,9 +49,11 @@ Accept wildcard characters: False
 ```
 
 ### -PolicyName
-Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-elb-LBCookieStickinessPolicy.html#cfn-elb-lbcookiestickinesspolicy-policyname    
-PrimitiveType: String    
-Required: False    
+The name of the policy.
+This name must be unique within the set of policies for this load balancer.
+
+Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-elb-LBCookieStickinessPolicy.html#cfn-elb-lbcookiestickinesspolicy-policyname
+PrimitiveType: String
 UpdateType: Mutable
 
 ```yaml
@@ -63,15 +69,13 @@ Accept wildcard characters: False
 ```
 
 ### CommonParameters
-This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction, and -WarningVariable.
-For more information, see about_CommonParameters (http://go.microsoft.com/fwlink/?LinkID=113216).
+This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction, and -WarningVariable. For more information, see [about_CommonParameters](http://go.microsoft.com/fwlink/?LinkID=113216).
 
 ## INPUTS
 
 ## OUTPUTS
 
 ### Vaporshell.Resource.ElasticLoadBalancing.LoadBalancer.LBCookieStickinessPolicy
-
 ## NOTES
 
 ## RELATED LINKS

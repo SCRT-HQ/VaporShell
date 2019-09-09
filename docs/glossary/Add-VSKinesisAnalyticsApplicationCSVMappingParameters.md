@@ -1,18 +1,9 @@
----
-layout: glossary
-title: Add-VSKinesisAnalyticsApplicationCSVMappingParameters
-categories: glossary
-label1: Category
-data1: Documentation
-label2: Depth
-data2: Deep
-schema: 2.0.0
----
-
 # Add-VSKinesisAnalyticsApplicationCSVMappingParameters
 
 ## SYNOPSIS
-Adds an AWS::KinesisAnalytics::Application.CSVMappingParameters resource property to the template
+Adds an AWS::KinesisAnalytics::Application.CSVMappingParameters resource property to the template.
+Provides additional mapping information when the record format uses delimiters, such as CSV.
+For example, the following sample records use CSV format, where the records use the *'n'* as the row delimiter and a comma ("," as the column delimiter:
 
 ## SYNTAX
 
@@ -22,14 +13,31 @@ Add-VSKinesisAnalyticsApplicationCSVMappingParameters [-RecordRowDelimiter] <Obj
 ```
 
 ## DESCRIPTION
-Adds an AWS::KinesisAnalytics::Application.CSVMappingParameters resource property to the template
+Adds an AWS::KinesisAnalytics::Application.CSVMappingParameters resource property to the template.
+Provides additional mapping information when the record format uses delimiters, such as CSV.
+For example, the following sample records use CSV format, where the records use the *'n'* as the row delimiter and a comma ("," as the column delimiter:
+
+"name1", "address1"
+
+"name2", "address2"
+
+## EXAMPLES
+
+### Example 1
+```powershell
+PS C:\> {{ Add example code here }}
+```
+
+{{ Add example description here }}
 
 ## PARAMETERS
 
 ### -RecordRowDelimiter
-Required: True    
-Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-kinesisanalytics-application-csvmappingparameters.html#cfn-kinesisanalytics-application-csvmappingparameters-recordrowdelimiter    
-PrimitiveType: String    
+Row delimiter.
+For example, in a CSV format, *'n'* is the typical row delimiter.
+
+Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-kinesisanalytics-application-csvmappingparameters.html#cfn-kinesisanalytics-application-csvmappingparameters-recordrowdelimiter
+PrimitiveType: String
 UpdateType: Mutable
 
 ```yaml
@@ -45,9 +53,11 @@ Accept wildcard characters: False
 ```
 
 ### -RecordColumnDelimiter
-Required: True    
-Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-kinesisanalytics-application-csvmappingparameters.html#cfn-kinesisanalytics-application-csvmappingparameters-recordcolumndelimiter    
-PrimitiveType: String    
+Column delimiter.
+For example, in a CSV format, a comma "," is the typical column delimiter.
+
+Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-kinesisanalytics-application-csvmappingparameters.html#cfn-kinesisanalytics-application-csvmappingparameters-recordcolumndelimiter
+PrimitiveType: String
 UpdateType: Mutable
 
 ```yaml
@@ -63,15 +73,13 @@ Accept wildcard characters: False
 ```
 
 ### CommonParameters
-This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction, and -WarningVariable.
-For more information, see about_CommonParameters (http://go.microsoft.com/fwlink/?LinkID=113216).
+This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction, and -WarningVariable. For more information, see [about_CommonParameters](http://go.microsoft.com/fwlink/?LinkID=113216).
 
 ## INPUTS
 
 ## OUTPUTS
 
 ### Vaporshell.Resource.KinesisAnalytics.Application.CSVMappingParameters
-
 ## NOTES
 
 ## RELATED LINKS

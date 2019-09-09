@@ -1,18 +1,10 @@
----
-layout: glossary
-title: New-VSEC2NatGateway
-categories: glossary
-label1: Category
-data1: Documentation
-label2: Depth
-data2: Deep
-schema: 2.0.0
----
-
 # New-VSEC2NatGateway
 
 ## SYNOPSIS
-Adds an AWS::EC2::NatGateway resource to the template
+Adds an AWS::EC2::NatGateway resource to the template.
+Specifies a network address translation (NAT gateway in the specified public subnet.
+Use a NAT gateway to allow instances in a private subnet to connect to the Internet or to other AWS services, but prevent the Internet from initiating a connection with those instances.
+For more information and a sample architectural diagram, see NAT Gateways: https://docs.aws.amazon.com/vpc/latest/userguide/vpc-nat-gateway.html in the *Amazon VPC User Guide*.
 
 ## SYNTAX
 
@@ -23,7 +15,21 @@ New-VSEC2NatGateway [-LogicalId] <String> -AllocationId <Object> -SubnetId <Obje
 ```
 
 ## DESCRIPTION
-Adds an AWS::EC2::NatGateway resource to the template
+Adds an AWS::EC2::NatGateway resource to the template.
+Specifies a network address translation (NAT gateway in the specified public subnet.
+Use a NAT gateway to allow instances in a private subnet to connect to the Internet or to other AWS services, but prevent the Internet from initiating a connection with those instances.
+For more information and a sample architectural diagram, see NAT Gateways: https://docs.aws.amazon.com/vpc/latest/userguide/vpc-nat-gateway.html in the *Amazon VPC User Guide*.
+
+If you add a default route (AWS::EC2::Route resource that points to a NAT gateway, specify the NAT gateway ID for the route's NatGatewayId property.
+
+## EXAMPLES
+
+### Example 1
+```powershell
+PS C:\> {{ Add example code here }}
+```
+
+{{ Add example description here }}
 
 ## PARAMETERS
 
@@ -45,9 +51,11 @@ Accept wildcard characters: False
 ```
 
 ### -AllocationId
-Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ec2-natgateway.html#cfn-ec2-natgateway-allocationid    
-PrimitiveType: String    
-Required: True    
+The allocation ID of an Elastic IP address to associate with the NAT gateway.
+If the Elastic IP address is associated with another resource, you must first disassociate it.
+
+Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ec2-natgateway.html#cfn-ec2-natgateway-allocationid
+PrimitiveType: String
 UpdateType: Immutable
 
 ```yaml
@@ -63,9 +71,10 @@ Accept wildcard characters: False
 ```
 
 ### -SubnetId
-Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ec2-natgateway.html#cfn-ec2-natgateway-subnetid    
-PrimitiveType: String    
-Required: True    
+The public subnet in which to create the NAT gateway.
+
+Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ec2-natgateway.html#cfn-ec2-natgateway-subnetid
+PrimitiveType: String
 UpdateType: Immutable
 
 ```yaml
@@ -81,11 +90,12 @@ Accept wildcard characters: False
 ```
 
 ### -Tags
-Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ec2-natgateway.html#cfn-ec2-natgateway-tags    
-DuplicatesAllowed: True    
-ItemType: Tag    
-Required: False    
-Type: List    
+The tags key-value pairs to associate with this resource.
+
+Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ec2-natgateway.html#cfn-ec2-natgateway-tags
+DuplicatesAllowed: True
+ItemType: Tag
+Type: List
 UpdateType: Mutable
 
 ```yaml
@@ -195,15 +205,13 @@ Accept wildcard characters: False
 ```
 
 ### CommonParameters
-This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction, and -WarningVariable.
-For more information, see about_CommonParameters (http://go.microsoft.com/fwlink/?LinkID=113216).
+This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction, and -WarningVariable. For more information, see [about_CommonParameters](http://go.microsoft.com/fwlink/?LinkID=113216).
 
 ## INPUTS
 
 ## OUTPUTS
 
 ### Vaporshell.Resource.EC2.NatGateway
-
 ## NOTES
 
 ## RELATED LINKS

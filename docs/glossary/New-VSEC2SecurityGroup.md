@@ -1,18 +1,9 @@
----
-layout: glossary
-title: New-VSEC2SecurityGroup
-categories: glossary
-label1: Category
-data1: Documentation
-label2: Depth
-data2: Deep
-schema: 2.0.0
----
-
 # New-VSEC2SecurityGroup
 
 ## SYNOPSIS
-Adds an AWS::EC2::SecurityGroup resource to the template
+Adds an AWS::EC2::SecurityGroup resource to the template.
+Specifies a security group.
+To create a VPC security group, use the VpcId: https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-security-group.html#cfn-ec2-securitygroup-vpcid property.
 
 ## SYNTAX
 
@@ -24,7 +15,27 @@ New-VSEC2SecurityGroup [-LogicalId] <String> -GroupDescription <Object> [-GroupN
 ```
 
 ## DESCRIPTION
-Adds an AWS::EC2::SecurityGroup resource to the template
+Adds an AWS::EC2::SecurityGroup resource to the template.
+Specifies a security group.
+To create a VPC security group, use the VpcId: https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-security-group.html#cfn-ec2-securitygroup-vpcid property.
+
+This type supports updates.
+For more information about updating stacks, see AWS CloudFormation Stacks Updates: https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks.html.
+
+**Important**
+
+If you want to cross-reference two security groups in the ingress and egress rules of those security groups, use the AWS::EC2::SecurityGroupEgress: https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ec2-security-group-egress.html and AWS::EC2::SecurityGroupIngress: https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ec2-security-group-ingress.html resources to define your rules.
+Do not use the embedded ingress and egress rules in the AWS::EC2::SecurityGroup.
+Doing so creates a circular dependency, which CloudFormation doesn't allow.
+
+## EXAMPLES
+
+### Example 1
+```powershell
+PS C:\> {{ Add example code here }}
+```
+
+{{ Add example description here }}
 
 ## PARAMETERS
 
@@ -46,9 +57,14 @@ Accept wildcard characters: False
 ```
 
 ### -GroupDescription
-Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-security-group.html#cfn-ec2-securitygroup-groupdescription    
-PrimitiveType: String    
-Required: True    
+A description for the security group.
+This is informational only.
+Constraints: Up to 255 characters in length
+Constraints for EC2-Classic: ASCII characters
+Constraints for EC2-VPC: a-z, A-Z, 0-9, spaces, and ._-:/#,@\]+=&;{}!$*
+
+Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-security-group.html#cfn-ec2-securitygroup-groupdescription
+PrimitiveType: String
 UpdateType: Immutable
 
 ```yaml
@@ -64,9 +80,14 @@ Accept wildcard characters: False
 ```
 
 ### -GroupName
-Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-security-group.html#cfn-ec2-securitygroup-groupname    
-PrimitiveType: String    
-Required: False    
+The name of the security group.
+Constraints: Up to 255 characters in length.
+Cannot start with sg-.
+Constraints for EC2-Classic: ASCII characters
+Constraints for EC2-VPC: a-z, A-Z, 0-9, spaces, and ._-:/#,@\]+=&;{}!$*
+
+Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-security-group.html#cfn-ec2-securitygroup-groupname
+PrimitiveType: String
 UpdateType: Immutable
 
 ```yaml
@@ -82,11 +103,12 @@ Accept wildcard characters: False
 ```
 
 ### -SecurityGroupEgress
-Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-security-group.html#cfn-ec2-securitygroup-securitygroupegress    
-DuplicatesAllowed: True    
-ItemType: Egress    
-Required: False    
-Type: List    
+VPC only\] The outbound rules associated with the security group.
+
+Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-security-group.html#cfn-ec2-securitygroup-securitygroupegress
+DuplicatesAllowed: True
+ItemType: Egress
+Type: List
 UpdateType: Mutable
 
 ```yaml
@@ -102,11 +124,12 @@ Accept wildcard characters: False
 ```
 
 ### -SecurityGroupIngress
-Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-security-group.html#cfn-ec2-securitygroup-securitygroupingress    
-DuplicatesAllowed: True    
-ItemType: Ingress    
-Required: False    
-Type: List    
+The inbound rules associated with the security group.
+
+Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-security-group.html#cfn-ec2-securitygroup-securitygroupingress
+DuplicatesAllowed: True
+ItemType: Ingress
+Type: List
 UpdateType: Mutable
 
 ```yaml
@@ -122,11 +145,12 @@ Accept wildcard characters: False
 ```
 
 ### -Tags
-Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-security-group.html#cfn-ec2-securitygroup-tags    
-DuplicatesAllowed: True    
-ItemType: Tag    
-Required: False    
-Type: List    
+Any tags assigned to the security group.
+
+Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-security-group.html#cfn-ec2-securitygroup-tags
+DuplicatesAllowed: True
+ItemType: Tag
+Type: List
 UpdateType: Mutable
 
 ```yaml
@@ -142,9 +166,10 @@ Accept wildcard characters: False
 ```
 
 ### -VpcId
-Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-security-group.html#cfn-ec2-securitygroup-vpcid    
-PrimitiveType: String    
-Required: False    
+VPC only\] The ID of the VPC for the security group.
+
+Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-security-group.html#cfn-ec2-securitygroup-vpcid
+PrimitiveType: String
 UpdateType: Immutable
 
 ```yaml
@@ -254,15 +279,13 @@ Accept wildcard characters: False
 ```
 
 ### CommonParameters
-This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction, and -WarningVariable.
-For more information, see about_CommonParameters (http://go.microsoft.com/fwlink/?LinkID=113216).
+This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction, and -WarningVariable. For more information, see [about_CommonParameters](http://go.microsoft.com/fwlink/?LinkID=113216).
 
 ## INPUTS
 
 ## OUTPUTS
 
 ### Vaporshell.Resource.EC2.SecurityGroup
-
 ## NOTES
 
 ## RELATED LINKS

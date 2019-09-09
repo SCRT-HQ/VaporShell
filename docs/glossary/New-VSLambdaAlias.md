@@ -1,18 +1,9 @@
----
-layout: glossary
-title: New-VSLambdaAlias
-categories: glossary
-label1: Category
-data1: Documentation
-label2: Depth
-data2: Deep
-schema: 2.0.0
----
-
 # New-VSLambdaAlias
 
 ## SYNOPSIS
-Adds an AWS::Lambda::Alias resource to the template
+Adds an AWS::Lambda::Alias resource to the template.
+The AWS::Lambda::Alias resource creates an alias: https://docs.aws.amazon.com/lambda/latest/dg/versioning-aliases.html for a Lambda function version.
+Use aliases to provide clients with a function identifier that you can update to invoke a different version.
 
 ## SYNTAX
 
@@ -24,7 +15,21 @@ New-VSLambdaAlias [-LogicalId] <String> [-Description <Object>] -FunctionName <O
 ```
 
 ## DESCRIPTION
-Adds an AWS::Lambda::Alias resource to the template
+Adds an AWS::Lambda::Alias resource to the template.
+The AWS::Lambda::Alias resource creates an alias: https://docs.aws.amazon.com/lambda/latest/dg/versioning-aliases.html for a Lambda function version.
+Use aliases to provide clients with a function identifier that you can update to invoke a different version.
+
+You can also map an alias to split invocation requests between two versions.
+Use the RoutingConfig parameter to specify a second version and the percentage of invocation requests that it receives.
+
+## EXAMPLES
+
+### Example 1
+```powershell
+PS C:\> {{ Add example code here }}
+```
+
+{{ Add example description here }}
 
 ## PARAMETERS
 
@@ -46,9 +51,10 @@ Accept wildcard characters: False
 ```
 
 ### -Description
-Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-lambda-alias.html#cfn-lambda-alias-description    
-PrimitiveType: String    
-Required: False    
+A description of the alias.
+
+Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-lambda-alias.html#cfn-lambda-alias-description
+PrimitiveType: String
 UpdateType: Mutable
 
 ```yaml
@@ -64,9 +70,16 @@ Accept wildcard characters: False
 ```
 
 ### -FunctionName
-Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-lambda-alias.html#cfn-lambda-alias-functionname    
-PrimitiveType: String    
-Required: True    
+The name of the Lambda function.
+**Name formats**
++  **Function name** - MyFunction.
++  **Function ARN** - arn:aws:lambda:us-west-2:123456789012:function:MyFunction.
++  **Partial ARN** - 123456789012:function:MyFunction.
+The length constraint applies only to the full ARN.
+If you specify only the function name, it is limited to 64 characters in length.
+
+Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-lambda-alias.html#cfn-lambda-alias-functionname
+PrimitiveType: String
 UpdateType: Immutable
 
 ```yaml
@@ -82,9 +95,10 @@ Accept wildcard characters: False
 ```
 
 ### -FunctionVersion
-Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-lambda-alias.html#cfn-lambda-alias-functionversion    
-PrimitiveType: String    
-Required: True    
+The function version that the alias invokes.
+
+Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-lambda-alias.html#cfn-lambda-alias-functionversion
+PrimitiveType: String
 UpdateType: Mutable
 
 ```yaml
@@ -100,9 +114,10 @@ Accept wildcard characters: False
 ```
 
 ### -Name
-Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-lambda-alias.html#cfn-lambda-alias-name    
-PrimitiveType: String    
-Required: True    
+The name of the alias.
+
+Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-lambda-alias.html#cfn-lambda-alias-name
+PrimitiveType: String
 UpdateType: Immutable
 
 ```yaml
@@ -118,9 +133,10 @@ Accept wildcard characters: False
 ```
 
 ### -RoutingConfig
-Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-lambda-alias.html#cfn-lambda-alias-routingconfig    
-Required: False    
-Type: AliasRoutingConfiguration    
+The routing configuration: https://docs.aws.amazon.com/lambda/latest/dg/lambda-traffic-shifting-using-aliases.html of the alias.
+
+Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-lambda-alias.html#cfn-lambda-alias-routingconfig
+Type: AliasRoutingConfiguration
 UpdateType: Mutable
 
 ```yaml
@@ -230,15 +246,13 @@ Accept wildcard characters: False
 ```
 
 ### CommonParameters
-This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction, and -WarningVariable.
-For more information, see about_CommonParameters (http://go.microsoft.com/fwlink/?LinkID=113216).
+This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction, and -WarningVariable. For more information, see [about_CommonParameters](http://go.microsoft.com/fwlink/?LinkID=113216).
 
 ## INPUTS
 
 ## OUTPUTS
 
 ### Vaporshell.Resource.Lambda.Alias
-
 ## NOTES
 
 ## RELATED LINKS

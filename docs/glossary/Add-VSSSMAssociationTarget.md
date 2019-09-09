@@ -1,18 +1,8 @@
----
-layout: glossary
-title: Add-VSSSMAssociationTarget
-categories: glossary
-label1: Category
-data1: Documentation
-label2: Depth
-data2: Deep
-schema: 2.0.0
----
-
 # Add-VSSSMAssociationTarget
 
 ## SYNOPSIS
-Adds an AWS::SSM::Association.Target resource property to the template
+Adds an AWS::SSM::Association.Target resource property to the template.
+Target is a property of the AWS::SSM::Association: https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ssm-association.html resource that specifies the targets for an SSM document in Systems Manager.
 
 ## SYNTAX
 
@@ -21,14 +11,27 @@ Add-VSSSMAssociationTarget [-Key] <Object> [-Values] <Object> [<CommonParameters
 ```
 
 ## DESCRIPTION
-Adds an AWS::SSM::Association.Target resource property to the template
+Adds an AWS::SSM::Association.Target resource property to the template.
+Target is a property of the AWS::SSM::Association: https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ssm-association.html resource that specifies the targets for an SSM document in Systems Manager.
+
+## EXAMPLES
+
+### Example 1
+```powershell
+PS C:\> {{ Add example code here }}
+```
+
+{{ Add example description here }}
 
 ## PARAMETERS
 
 ### -Key
-Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ssm-association-target.html#cfn-ssm-association-target-key    
-PrimitiveType: String    
-Required: True    
+User-defined criteria for sending commands that target instances that meet the criteria.
+Key can be tag:\<Amazon EC2 tag\> or InstanceIds.
+For more information about how to send commands that target instances using Key,Value parameters, see Using Targets and Rate Controls to Send Commands to a Fleet: https://docs.aws.amazon.com/systems-manager/latest/userguide/send-commands-multiple.html#send-commands-targeting in the *AWS Systems Manager User Guide*.
+
+Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ssm-association-target.html#cfn-ssm-association-target-key
+PrimitiveType: String
 UpdateType: Immutable
 
 ```yaml
@@ -44,11 +47,14 @@ Accept wildcard characters: False
 ```
 
 ### -Values
-Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ssm-association-target.html#cfn-ssm-association-target-values    
-DuplicatesAllowed: False    
-PrimitiveItemType: String    
-Required: True    
-Type: List    
+User-defined criteria that maps to Key.
+For example, if you specified tag:ServerRole, you could specify value:WebServer to run a command on instances that include Amazon EC2 tags of ServerRole,WebServer.
+For more information about how to send commands that target instances using Key,Value parameters, see Using Targets and Rate Controls to Send Commands to a Fleet: https://docs.aws.amazon.com/systems-manager/latest/userguide/send-commands-multiple.html in the *AWS Systems Manager User Guide*.
+
+Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ssm-association-target.html#cfn-ssm-association-target-values
+DuplicatesAllowed: False
+PrimitiveItemType: String
+Type: List
 UpdateType: Immutable
 
 ```yaml
@@ -64,15 +70,13 @@ Accept wildcard characters: False
 ```
 
 ### CommonParameters
-This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction, and -WarningVariable.
-For more information, see about_CommonParameters (http://go.microsoft.com/fwlink/?LinkID=113216).
+This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction, and -WarningVariable. For more information, see [about_CommonParameters](http://go.microsoft.com/fwlink/?LinkID=113216).
 
 ## INPUTS
 
 ## OUTPUTS
 
 ### Vaporshell.Resource.SSM.Association.Target
-
 ## NOTES
 
 ## RELATED LINKS

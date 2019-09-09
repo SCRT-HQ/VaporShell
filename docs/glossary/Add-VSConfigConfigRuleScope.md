@@ -1,18 +1,11 @@
----
-layout: glossary
-title: Add-VSConfigConfigRuleScope
-categories: glossary
-label1: Category
-data1: Documentation
-label2: Depth
-data2: Deep
-schema: 2.0.0
----
-
 # Add-VSConfigConfigRuleScope
 
 ## SYNOPSIS
-Adds an AWS::Config::ConfigRule.Scope resource property to the template
+Adds an AWS::Config::ConfigRule.Scope resource property to the template.
+Defines which resources trigger an evaluation for an AWS Config rule.
+The scope can include one or more resource types, a combination of a tag key and value, or a combination of one resource type and one resource ID.
+Specify a scope to constrain which resources trigger an evaluation for a rule.
+Otherwise, evaluations for the rule are triggered when any resource in your recording group changes in configuration.
 
 ## SYNTAX
 
@@ -22,14 +15,29 @@ Add-VSConfigConfigRuleScope [[-ComplianceResourceId] <Object>] [[-ComplianceReso
 ```
 
 ## DESCRIPTION
-Adds an AWS::Config::ConfigRule.Scope resource property to the template
+Adds an AWS::Config::ConfigRule.Scope resource property to the template.
+Defines which resources trigger an evaluation for an AWS Config rule.
+The scope can include one or more resource types, a combination of a tag key and value, or a combination of one resource type and one resource ID.
+Specify a scope to constrain which resources trigger an evaluation for a rule.
+Otherwise, evaluations for the rule are triggered when any resource in your recording group changes in configuration.
+
+## EXAMPLES
+
+### Example 1
+```powershell
+PS C:\> {{ Add example code here }}
+```
+
+{{ Add example description here }}
 
 ## PARAMETERS
 
 ### -ComplianceResourceId
-Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-config-configrule-scope.html#cfn-config-configrule-scope-complianceresourceid    
-PrimitiveType: String    
-Required: False    
+The ID of the only AWS resource that you want to trigger an evaluation for the rule.
+If you specify a resource ID, you must specify one resource type for ComplianceResourceTypes.
+
+Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-config-configrule-scope.html#cfn-config-configrule-scope-complianceresourceid
+PrimitiveType: String
 UpdateType: Mutable
 
 ```yaml
@@ -45,11 +53,13 @@ Accept wildcard characters: False
 ```
 
 ### -ComplianceResourceTypes
-Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-config-configrule-scope.html#cfn-config-configrule-scope-complianceresourcetypes    
-DuplicatesAllowed: False    
-PrimitiveItemType: String    
-Required: False    
-Type: List    
+The resource types of only those AWS resources that you want to trigger an evaluation for the rule.
+You can only specify one type if you also specify a resource ID for ComplianceResourceId.
+
+Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-config-configrule-scope.html#cfn-config-configrule-scope-complianceresourcetypes
+DuplicatesAllowed: False
+PrimitiveItemType: String
+Type: List
 UpdateType: Mutable
 
 ```yaml
@@ -65,9 +75,10 @@ Accept wildcard characters: False
 ```
 
 ### -TagKey
-Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-config-configrule-scope.html#cfn-config-configrule-scope-tagkey    
-PrimitiveType: String    
-Required: False    
+The tag key that is applied to only those AWS resources that you want to trigger an evaluation for the rule.
+
+Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-config-configrule-scope.html#cfn-config-configrule-scope-tagkey
+PrimitiveType: String
 UpdateType: Mutable
 
 ```yaml
@@ -83,9 +94,11 @@ Accept wildcard characters: False
 ```
 
 ### -TagValue
-Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-config-configrule-scope.html#cfn-config-configrule-scope-tagvalue    
-PrimitiveType: String    
-Required: False    
+The tag value applied to only those AWS resources that you want to trigger an evaluation for the rule.
+If you specify a value for TagValue, you must also specify a value for TagKey.
+
+Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-config-configrule-scope.html#cfn-config-configrule-scope-tagvalue
+PrimitiveType: String
 UpdateType: Mutable
 
 ```yaml
@@ -101,15 +114,13 @@ Accept wildcard characters: False
 ```
 
 ### CommonParameters
-This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction, and -WarningVariable.
-For more information, see about_CommonParameters (http://go.microsoft.com/fwlink/?LinkID=113216).
+This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction, and -WarningVariable. For more information, see [about_CommonParameters](http://go.microsoft.com/fwlink/?LinkID=113216).
 
 ## INPUTS
 
 ## OUTPUTS
 
 ### Vaporshell.Resource.Config.ConfigRule.Scope
-
 ## NOTES
 
 ## RELATED LINKS

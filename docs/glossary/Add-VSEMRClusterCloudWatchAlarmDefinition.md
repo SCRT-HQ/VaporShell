@@ -1,18 +1,9 @@
----
-layout: glossary
-title: Add-VSEMRClusterCloudWatchAlarmDefinition
-categories: glossary
-label1: Category
-data1: Documentation
-label2: Depth
-data2: Deep
-schema: 2.0.0
----
-
 # Add-VSEMRClusterCloudWatchAlarmDefinition
 
 ## SYNOPSIS
-Adds an AWS::EMR::Cluster.CloudWatchAlarmDefinition resource property to the template
+Adds an AWS::EMR::Cluster.CloudWatchAlarmDefinition resource property to the template.
+CloudWatchAlarmDefinition is a subproperty of the ScalingTrigger property, which determines when to trigger an automatic scaling activity.
+Scaling activity begins when you satisfy the defined alarm conditions.
 
 ## SYNTAX
 
@@ -23,14 +14,26 @@ Add-VSEMRClusterCloudWatchAlarmDefinition [-ComparisonOperator] <Object> [[-Dime
 ```
 
 ## DESCRIPTION
-Adds an AWS::EMR::Cluster.CloudWatchAlarmDefinition resource property to the template
+Adds an AWS::EMR::Cluster.CloudWatchAlarmDefinition resource property to the template.
+CloudWatchAlarmDefinition is a subproperty of the ScalingTrigger property, which determines when to trigger an automatic scaling activity.
+Scaling activity begins when you satisfy the defined alarm conditions.
+
+## EXAMPLES
+
+### Example 1
+```powershell
+PS C:\> {{ Add example code here }}
+```
+
+{{ Add example description here }}
 
 ## PARAMETERS
 
 ### -ComparisonOperator
-Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-elasticmapreduce-cluster-cloudwatchalarmdefinition.html#cfn-elasticmapreduce-cluster-cloudwatchalarmdefinition-comparisonoperator    
-PrimitiveType: String    
-Required: True    
+Determines how the metric specified by MetricName is compared to the value specified by Threshold.
+
+Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-elasticmapreduce-cluster-cloudwatchalarmdefinition.html#cfn-elasticmapreduce-cluster-cloudwatchalarmdefinition-comparisonoperator
+PrimitiveType: String
 UpdateType: Mutable
 
 ```yaml
@@ -46,11 +49,12 @@ Accept wildcard characters: False
 ```
 
 ### -Dimensions
-Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-elasticmapreduce-cluster-cloudwatchalarmdefinition.html#cfn-elasticmapreduce-cluster-cloudwatchalarmdefinition-dimensions    
-DuplicatesAllowed: False    
-ItemType: MetricDimension    
-Required: False    
-Type: List    
+A CloudWatch metric dimension.
+
+Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-elasticmapreduce-cluster-cloudwatchalarmdefinition.html#cfn-elasticmapreduce-cluster-cloudwatchalarmdefinition-dimensions
+DuplicatesAllowed: False
+ItemType: MetricDimension
+Type: List
 UpdateType: Mutable
 
 ```yaml
@@ -66,9 +70,11 @@ Accept wildcard characters: False
 ```
 
 ### -EvaluationPeriods
-Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-elasticmapreduce-cluster-cloudwatchalarmdefinition.html#cfn-elasticmapreduce-cluster-cloudwatchalarmdefinition-evaluationperiods    
-PrimitiveType: Integer    
-Required: False    
+The number of periods, expressed in seconds using Period, during which the alarm condition must exist before the alarm triggers automatic scaling activity.
+The default value is 1.
+
+Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-elasticmapreduce-cluster-cloudwatchalarmdefinition.html#cfn-elasticmapreduce-cluster-cloudwatchalarmdefinition-evaluationperiods
+PrimitiveType: Integer
 UpdateType: Mutable
 
 ```yaml
@@ -84,9 +90,10 @@ Accept wildcard characters: False
 ```
 
 ### -MetricName
-Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-elasticmapreduce-cluster-cloudwatchalarmdefinition.html#cfn-elasticmapreduce-cluster-cloudwatchalarmdefinition-metricname    
-PrimitiveType: String    
-Required: True    
+The name of the CloudWatch metric that is watched to determine an alarm condition.
+
+Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-elasticmapreduce-cluster-cloudwatchalarmdefinition.html#cfn-elasticmapreduce-cluster-cloudwatchalarmdefinition-metricname
+PrimitiveType: String
 UpdateType: Mutable
 
 ```yaml
@@ -102,9 +109,11 @@ Accept wildcard characters: False
 ```
 
 ### -Namespace
-Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-elasticmapreduce-cluster-cloudwatchalarmdefinition.html#cfn-elasticmapreduce-cluster-cloudwatchalarmdefinition-namespace    
-PrimitiveType: String    
-Required: False    
+The namespace for the CloudWatch metric.
+The default is AWS/ElasticMapReduce.
+
+Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-elasticmapreduce-cluster-cloudwatchalarmdefinition.html#cfn-elasticmapreduce-cluster-cloudwatchalarmdefinition-namespace
+PrimitiveType: String
 UpdateType: Mutable
 
 ```yaml
@@ -120,9 +129,11 @@ Accept wildcard characters: False
 ```
 
 ### -Period
-Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-elasticmapreduce-cluster-cloudwatchalarmdefinition.html#cfn-elasticmapreduce-cluster-cloudwatchalarmdefinition-period    
-PrimitiveType: Integer    
-Required: True    
+The period, in seconds, over which the statistic is applied.
+EMR CloudWatch metrics are emitted every five minutes 300 seconds, so if an EMR CloudWatch metric is specified, specify 300.
+
+Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-elasticmapreduce-cluster-cloudwatchalarmdefinition.html#cfn-elasticmapreduce-cluster-cloudwatchalarmdefinition-period
+PrimitiveType: Integer
 UpdateType: Mutable
 
 ```yaml
@@ -138,9 +149,11 @@ Accept wildcard characters: False
 ```
 
 ### -Statistic
-Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-elasticmapreduce-cluster-cloudwatchalarmdefinition.html#cfn-elasticmapreduce-cluster-cloudwatchalarmdefinition-statistic    
-PrimitiveType: String    
-Required: False    
+The statistic to apply to the metric associated with the alarm.
+The default is AVERAGE.
+
+Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-elasticmapreduce-cluster-cloudwatchalarmdefinition.html#cfn-elasticmapreduce-cluster-cloudwatchalarmdefinition-statistic
+PrimitiveType: String
 UpdateType: Mutable
 
 ```yaml
@@ -156,9 +169,10 @@ Accept wildcard characters: False
 ```
 
 ### -Threshold
-Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-elasticmapreduce-cluster-cloudwatchalarmdefinition.html#cfn-elasticmapreduce-cluster-cloudwatchalarmdefinition-threshold    
-PrimitiveType: Double    
-Required: True    
+The value against which the specified statistic is compared.
+
+Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-elasticmapreduce-cluster-cloudwatchalarmdefinition.html#cfn-elasticmapreduce-cluster-cloudwatchalarmdefinition-threshold
+PrimitiveType: Double
 UpdateType: Mutable
 
 ```yaml
@@ -174,9 +188,11 @@ Accept wildcard characters: False
 ```
 
 ### -Unit
-Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-elasticmapreduce-cluster-cloudwatchalarmdefinition.html#cfn-elasticmapreduce-cluster-cloudwatchalarmdefinition-unit    
-PrimitiveType: String    
-Required: False    
+The unit of measure associated with the CloudWatch metric being watched.
+The value specified for Unit must correspond to the units specified in the CloudWatch metric.
+
+Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-elasticmapreduce-cluster-cloudwatchalarmdefinition.html#cfn-elasticmapreduce-cluster-cloudwatchalarmdefinition-unit
+PrimitiveType: String
 UpdateType: Mutable
 
 ```yaml
@@ -192,15 +208,13 @@ Accept wildcard characters: False
 ```
 
 ### CommonParameters
-This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction, and -WarningVariable.
-For more information, see about_CommonParameters (http://go.microsoft.com/fwlink/?LinkID=113216).
+This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction, and -WarningVariable. For more information, see [about_CommonParameters](http://go.microsoft.com/fwlink/?LinkID=113216).
 
 ## INPUTS
 
 ## OUTPUTS
 
 ### Vaporshell.Resource.EMR.Cluster.CloudWatchAlarmDefinition
-
 ## NOTES
 
 ## RELATED LINKS

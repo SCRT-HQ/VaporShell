@@ -1,18 +1,8 @@
----
-layout: glossary
-title: Add-VSOpsWorksStackRdsDbInstance
-categories: glossary
-label1: Category
-data1: Documentation
-label2: Depth
-data2: Deep
-schema: 2.0.0
----
-
 # Add-VSOpsWorksStackRdsDbInstance
 
 ## SYNOPSIS
-Adds an AWS::OpsWorks::Stack.RdsDbInstance resource property to the template
+Adds an AWS::OpsWorks::Stack.RdsDbInstance resource property to the template.
+Describes an Amazon RDS instance.
 
 ## SYNTAX
 
@@ -22,14 +12,25 @@ Add-VSOpsWorksStackRdsDbInstance [-DbPassword] <Object> [-DbUser] <Object> [-Rds
 ```
 
 ## DESCRIPTION
-Adds an AWS::OpsWorks::Stack.RdsDbInstance resource property to the template
+Adds an AWS::OpsWorks::Stack.RdsDbInstance resource property to the template.
+Describes an Amazon RDS instance.
+
+## EXAMPLES
+
+### Example 1
+```powershell
+PS C:\> {{ Add example code here }}
+```
+
+{{ Add example description here }}
 
 ## PARAMETERS
 
 ### -DbPassword
-Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-opsworks-stack-rdsdbinstance.html#cfn-opsworks-stack-rdsdbinstance-dbpassword    
-PrimitiveType: String    
-Required: True    
+AWS OpsWorks Stacks returns *****FILTERED***** instead of the actual value.
+
+Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-opsworks-stack-rdsdbinstance.html#cfn-opsworks-stack-rdsdbinstance-dbpassword
+PrimitiveType: String
 UpdateType: Mutable
 
 ```yaml
@@ -45,9 +46,10 @@ Accept wildcard characters: False
 ```
 
 ### -DbUser
-Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-opsworks-stack-rdsdbinstance.html#cfn-opsworks-stack-rdsdbinstance-dbuser    
-PrimitiveType: String    
-Required: True    
+The master user name.
+
+Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-opsworks-stack-rdsdbinstance.html#cfn-opsworks-stack-rdsdbinstance-dbuser
+PrimitiveType: String
 UpdateType: Mutable
 
 ```yaml
@@ -63,9 +65,10 @@ Accept wildcard characters: False
 ```
 
 ### -RdsDbInstanceArn
-Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-opsworks-stack-rdsdbinstance.html#cfn-opsworks-stack-rdsdbinstance-rdsdbinstancearn    
-PrimitiveType: String    
-Required: True    
+The instance's ARN.
+
+Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-opsworks-stack-rdsdbinstance.html#cfn-opsworks-stack-rdsdbinstance-rdsdbinstancearn
+PrimitiveType: String
 UpdateType: Mutable
 
 ```yaml
@@ -81,15 +84,13 @@ Accept wildcard characters: False
 ```
 
 ### CommonParameters
-This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction, and -WarningVariable.
-For more information, see about_CommonParameters (http://go.microsoft.com/fwlink/?LinkID=113216).
+This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction, and -WarningVariable. For more information, see [about_CommonParameters](http://go.microsoft.com/fwlink/?LinkID=113216).
 
 ## INPUTS
 
 ## OUTPUTS
 
 ### Vaporshell.Resource.OpsWorks.Stack.RdsDbInstance
-
 ## NOTES
 
 ## RELATED LINKS

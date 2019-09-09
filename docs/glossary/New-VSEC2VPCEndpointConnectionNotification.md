@@ -1,18 +1,11 @@
----
-layout: glossary
-title: New-VSEC2VPCEndpointConnectionNotification
-categories: glossary
-label1: Category
-data1: Documentation
-label2: Depth
-data2: Deep
-schema: 2.0.0
----
-
 # New-VSEC2VPCEndpointConnectionNotification
 
 ## SYNOPSIS
-Adds an AWS::EC2::VPCEndpointConnectionNotification resource to the template
+Adds an AWS::EC2::VPCEndpointConnectionNotification resource to the template.
+Specifies a connection notification for a VPC endpoint or VPC endpoint service.
+A connection notification notifies you of specific endpoint events.
+You must create an SNS topic to receive notifications.
+For more information, see Create a Topic: https://docs.aws.amazon.com/sns/latest/dg/CreateTopic.html in the *Amazon Simple Notification Service Developer Guide*.
 
 ## SYNTAX
 
@@ -24,7 +17,22 @@ New-VSEC2VPCEndpointConnectionNotification [-LogicalId] <String> -ConnectionEven
 ```
 
 ## DESCRIPTION
-Adds an AWS::EC2::VPCEndpointConnectionNotification resource to the template
+Adds an AWS::EC2::VPCEndpointConnectionNotification resource to the template.
+Specifies a connection notification for a VPC endpoint or VPC endpoint service.
+A connection notification notifies you of specific endpoint events.
+You must create an SNS topic to receive notifications.
+For more information, see Create a Topic: https://docs.aws.amazon.com/sns/latest/dg/CreateTopic.html in the *Amazon Simple Notification Service Developer Guide*.
+
+You can create a connection notification for interface endpoints only.
+
+## EXAMPLES
+
+### Example 1
+```powershell
+PS C:\> {{ Add example code here }}
+```
+
+{{ Add example description here }}
 
 ## PARAMETERS
 
@@ -46,10 +54,12 @@ Accept wildcard characters: False
 ```
 
 ### -ConnectionEvents
-PrimitiveItemType: String    
-Type: List    
-Required: True    
-Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ec2-vpcendpointconnectionnotification.html#cfn-ec2-vpcendpointconnectionnotification-connectionevents    
+One or more endpoint events for which to receive notifications.
+Valid values are Accept, Connect, Delete, and Reject.
+
+PrimitiveItemType: String
+Type: List
+Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ec2-vpcendpointconnectionnotification.html#cfn-ec2-vpcendpointconnectionnotification-connectionevents
 UpdateType: Mutable
 
 ```yaml
@@ -65,9 +75,10 @@ Accept wildcard characters: False
 ```
 
 ### -VPCEndpointId
-Required: False    
-Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ec2-vpcendpointconnectionnotification.html#cfn-ec2-vpcendpointconnectionnotification-vpcendpointid    
-PrimitiveType: String    
+The ID of the endpoint.
+
+Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ec2-vpcendpointconnectionnotification.html#cfn-ec2-vpcendpointconnectionnotification-vpcendpointid
+PrimitiveType: String
 UpdateType: Immutable
 
 ```yaml
@@ -83,9 +94,10 @@ Accept wildcard characters: False
 ```
 
 ### -ServiceId
-Required: False    
-Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ec2-vpcendpointconnectionnotification.html#cfn-ec2-vpcendpointconnectionnotification-serviceid    
-PrimitiveType: String    
+The ID of the endpoint service.
+
+Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ec2-vpcendpointconnectionnotification.html#cfn-ec2-vpcendpointconnectionnotification-serviceid
+PrimitiveType: String
 UpdateType: Immutable
 
 ```yaml
@@ -101,9 +113,10 @@ Accept wildcard characters: False
 ```
 
 ### -ConnectionNotificationArn
-Required: True    
-Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ec2-vpcendpointconnectionnotification.html#cfn-ec2-vpcendpointconnectionnotification-connectionnotificationarn    
-PrimitiveType: String    
+The ARN of the SNS topic for the notifications.
+
+Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ec2-vpcendpointconnectionnotification.html#cfn-ec2-vpcendpointconnectionnotification-connectionnotificationarn
+PrimitiveType: String
 UpdateType: Mutable
 
 ```yaml
@@ -213,15 +226,13 @@ Accept wildcard characters: False
 ```
 
 ### CommonParameters
-This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction, and -WarningVariable.
-For more information, see about_CommonParameters (http://go.microsoft.com/fwlink/?LinkID=113216).
+This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction, and -WarningVariable. For more information, see [about_CommonParameters](http://go.microsoft.com/fwlink/?LinkID=113216).
 
 ## INPUTS
 
 ## OUTPUTS
 
 ### Vaporshell.Resource.EC2.VPCEndpointConnectionNotification
-
 ## NOTES
 
 ## RELATED LINKS

@@ -1,18 +1,8 @@
----
-layout: glossary
-title: Add-VSGluePartitionSerdeInfo
-categories: glossary
-label1: Category
-data1: Documentation
-label2: Depth
-data2: Deep
-schema: 2.0.0
----
-
 # Add-VSGluePartitionSerdeInfo
 
 ## SYNOPSIS
-Adds an AWS::Glue::Partition.SerdeInfo resource property to the template
+Adds an AWS::Glue::Partition.SerdeInfo resource property to the template.
+Information about a serialization/deserialization program (SerDe that serves as an extractor and loader.
 
 ## SYNTAX
 
@@ -22,14 +12,25 @@ Add-VSGluePartitionSerdeInfo [[-Parameters] <Object>] [[-SerializationLibrary] <
 ```
 
 ## DESCRIPTION
-Adds an AWS::Glue::Partition.SerdeInfo resource property to the template
+Adds an AWS::Glue::Partition.SerdeInfo resource property to the template.
+Information about a serialization/deserialization program (SerDe that serves as an extractor and loader.
+
+## EXAMPLES
+
+### Example 1
+```powershell
+PS C:\> {{ Add example code here }}
+```
+
+{{ Add example description here }}
 
 ## PARAMETERS
 
 ### -Parameters
-Required: False    
-Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-glue-partition-serdeinfo.html#cfn-glue-partition-serdeinfo-parameters    
-PrimitiveType: Json    
+These key-value pairs define initialization parameters for the SerDe.
+
+Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-glue-partition-serdeinfo.html#cfn-glue-partition-serdeinfo-parameters
+PrimitiveType: Json
 UpdateType: Mutable
 
 ```yaml
@@ -45,9 +46,11 @@ Accept wildcard characters: False
 ```
 
 ### -SerializationLibrary
-Required: False    
-Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-glue-partition-serdeinfo.html#cfn-glue-partition-serdeinfo-serializationlibrary    
-PrimitiveType: String    
+Usually the class that implements the SerDe.
+An example is org.apache.hadoop.hive.serde2.columnar.ColumnarSerDe.
+
+Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-glue-partition-serdeinfo.html#cfn-glue-partition-serdeinfo-serializationlibrary
+PrimitiveType: String
 UpdateType: Mutable
 
 ```yaml
@@ -63,9 +66,10 @@ Accept wildcard characters: False
 ```
 
 ### -Name
-Required: False    
-Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-glue-partition-serdeinfo.html#cfn-glue-partition-serdeinfo-name    
-PrimitiveType: String    
+Name of the SerDe.
+
+Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-glue-partition-serdeinfo.html#cfn-glue-partition-serdeinfo-name
+PrimitiveType: String
 UpdateType: Mutable
 
 ```yaml
@@ -81,15 +85,13 @@ Accept wildcard characters: False
 ```
 
 ### CommonParameters
-This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction, and -WarningVariable.
-For more information, see about_CommonParameters (http://go.microsoft.com/fwlink/?LinkID=113216).
+This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction, and -WarningVariable. For more information, see [about_CommonParameters](http://go.microsoft.com/fwlink/?LinkID=113216).
 
 ## INPUTS
 
 ## OUTPUTS
 
 ### Vaporshell.Resource.Glue.Partition.SerdeInfo
-
 ## NOTES
 
 ## RELATED LINKS

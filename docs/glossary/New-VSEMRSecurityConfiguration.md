@@ -1,18 +1,10 @@
----
-layout: glossary
-title: New-VSEMRSecurityConfiguration
-categories: glossary
-label1: Category
-data1: Documentation
-label2: Depth
-data2: Deep
-schema: 2.0.0
----
-
 # New-VSEMRSecurityConfiguration
 
 ## SYNOPSIS
-Adds an AWS::EMR::SecurityConfiguration resource to the template
+Adds an AWS::EMR::SecurityConfiguration resource to the template.
+Use a SecurityConfiguration resource to configure data encryption, Kerberos authentication (available in Amazon EMR release version 5.10.0 and later, and Amazon S3 authorization for EMRFS (available in EMR 5.10.0 and later.
+You can re-use a security configuration for any number of clusters in your account.
+For more information and example security configuration JSON objects, see Create a Security Configuration: https://docs.aws.amazon.com/emr/latest/ManagementGuide/emr-create-security-configuration.html in the *Amazon EMR Management Guide*.
 
 ## SYNTAX
 
@@ -23,7 +15,19 @@ New-VSEMRSecurityConfiguration [-LogicalId] <String> [-Name <Object>] -SecurityC
 ```
 
 ## DESCRIPTION
-Adds an AWS::EMR::SecurityConfiguration resource to the template
+Adds an AWS::EMR::SecurityConfiguration resource to the template.
+Use a SecurityConfiguration resource to configure data encryption, Kerberos authentication (available in Amazon EMR release version 5.10.0 and later, and Amazon S3 authorization for EMRFS (available in EMR 5.10.0 and later.
+You can re-use a security configuration for any number of clusters in your account.
+For more information and example security configuration JSON objects, see Create a Security Configuration: https://docs.aws.amazon.com/emr/latest/ManagementGuide/emr-create-security-configuration.html in the *Amazon EMR Management Guide*.
+
+## EXAMPLES
+
+### Example 1
+```powershell
+PS C:\> {{ Add example code here }}
+```
+
+{{ Add example description here }}
 
 ## PARAMETERS
 
@@ -45,9 +49,10 @@ Accept wildcard characters: False
 ```
 
 ### -Name
-Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-emr-securityconfiguration.html#cfn-emr-securityconfiguration-name    
-PrimitiveType: String    
-Required: False    
+The name of the security configuration.
+
+Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-emr-securityconfiguration.html#cfn-emr-securityconfiguration-name
+PrimitiveType: String
 UpdateType: Immutable
 
 ```yaml
@@ -63,9 +68,10 @@ Accept wildcard characters: False
 ```
 
 ### -SecurityConfiguration
-Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-emr-securityconfiguration.html#cfn-emr-securityconfiguration-securityconfiguration    
-PrimitiveType: Json    
-Required: True    
+The security configuration details in JSON format.
+
+Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-emr-securityconfiguration.html#cfn-emr-securityconfiguration-securityconfiguration
+PrimitiveType: Json
 UpdateType: Immutable
 
 ```yaml
@@ -175,15 +181,13 @@ Accept wildcard characters: False
 ```
 
 ### CommonParameters
-This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction, and -WarningVariable.
-For more information, see about_CommonParameters (http://go.microsoft.com/fwlink/?LinkID=113216).
+This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction, and -WarningVariable. For more information, see [about_CommonParameters](http://go.microsoft.com/fwlink/?LinkID=113216).
 
 ## INPUTS
 
 ## OUTPUTS
 
 ### Vaporshell.Resource.EMR.SecurityConfiguration
-
 ## NOTES
 
 ## RELATED LINKS

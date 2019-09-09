@@ -1,29 +1,32 @@
----
-layout: glossary
-title: New-VSGlueTrigger
-categories: glossary
-label1: Category
-data1: Documentation
-label2: Depth
-data2: Deep
-schema: 2.0.0
----
-
 # New-VSGlueTrigger
 
 ## SYNOPSIS
-Adds an AWS::Glue::Trigger resource to the template
+Adds an AWS::Glue::Trigger resource to the template.
+The AWS::Glue::Trigger resource specifies triggers that run AWS Glue jobs.
+For more information, see Triggering Jobs in AWS Glue: https://docs.aws.amazon.com/glue/latest/dg/trigger-job.html and Trigger Structure: https://docs.aws.amazon.com/glue/latest/dg/aws-glue-api-jobs-trigger.html#aws-glue-api-jobs-trigger-Trigger in the *AWS Glue Developer Guide*.
 
 ## SYNTAX
 
 ```
 New-VSGlueTrigger [-LogicalId] <String> -Type <Object> [-Description <Object>] -Actions <Object>
- [-Schedule <Object>] [-Name <Object>] [-Predicate <Object>] [-DeletionPolicy <String>] [-DependsOn <String[]>]
- [-Metadata <Object>] [-UpdatePolicy <Object>] [-Condition <Object>] [<CommonParameters>]
+ [-Schedule <Object>] [-Tags <Object>] [-Name <Object>] [-Predicate <Object>] [-DeletionPolicy <String>]
+ [-DependsOn <String[]>] [-Metadata <Object>] [-UpdatePolicy <Object>] [-Condition <Object>]
+ [<CommonParameters>]
 ```
 
 ## DESCRIPTION
-Adds an AWS::Glue::Trigger resource to the template
+Adds an AWS::Glue::Trigger resource to the template.
+The AWS::Glue::Trigger resource specifies triggers that run AWS Glue jobs.
+For more information, see Triggering Jobs in AWS Glue: https://docs.aws.amazon.com/glue/latest/dg/trigger-job.html and Trigger Structure: https://docs.aws.amazon.com/glue/latest/dg/aws-glue-api-jobs-trigger.html#aws-glue-api-jobs-trigger-Trigger in the *AWS Glue Developer Guide*.
+
+## EXAMPLES
+
+### Example 1
+```powershell
+PS C:\> {{ Add example code here }}
+```
+
+{{ Add example description here }}
 
 ## PARAMETERS
 
@@ -45,9 +48,10 @@ Accept wildcard characters: False
 ```
 
 ### -Type
-Required: True    
-Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-glue-trigger.html#cfn-glue-trigger-type    
-PrimitiveType: String    
+The type of trigger that this is.
+
+Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-glue-trigger.html#cfn-glue-trigger-type
+PrimitiveType: String
 UpdateType: Mutable
 
 ```yaml
@@ -63,9 +67,10 @@ Accept wildcard characters: False
 ```
 
 ### -Description
-Required: False    
-Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-glue-trigger.html#cfn-glue-trigger-description    
-PrimitiveType: String    
+A description of this trigger.
+
+Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-glue-trigger.html#cfn-glue-trigger-description
+PrimitiveType: String
 UpdateType: Mutable
 
 ```yaml
@@ -81,10 +86,11 @@ Accept wildcard characters: False
 ```
 
 ### -Actions
-Type: List    
-Required: True    
-Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-glue-trigger.html#cfn-glue-trigger-actions    
-ItemType: Action    
+The actions initiated by this trigger.
+
+Type: List
+Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-glue-trigger.html#cfn-glue-trigger-actions
+ItemType: Action
 UpdateType: Mutable
 
 ```yaml
@@ -100,9 +106,34 @@ Accept wildcard characters: False
 ```
 
 ### -Schedule
-Required: False    
-Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-glue-trigger.html#cfn-glue-trigger-schedule    
-PrimitiveType: String    
+A cron expression used to specify the schedule.
+For more information, see Time-Based Schedules for Jobs and Crawlers: https://docs.aws.amazon.com/glue/latest/dg/monitor-data-warehouse-schedule.html in the *AWS Glue Developer Guide*.
+For example, to run something every day at 12:15 UTC, specify cron15 12 * * ?
+*.
+
+Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-glue-trigger.html#cfn-glue-trigger-schedule
+PrimitiveType: String
+UpdateType: Mutable
+
+```yaml
+Type: Object
+Parameter Sets: (All)
+Aliases:
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### -Tags
+The tags to use with this trigger.
+You can use tags to limit access to the trigger.
+For more information about tags in AWS Glue, see AWS Tags in AWS Glue: https://docs.aws.amazon.com/glue/latest/dg/monitor-tags.html in the developer guide..
+
+Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-glue-trigger.html#cfn-glue-trigger-tags
+PrimitiveType: Json
 UpdateType: Mutable
 
 ```yaml
@@ -118,9 +149,10 @@ Accept wildcard characters: False
 ```
 
 ### -Name
-Required: False    
-Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-glue-trigger.html#cfn-glue-trigger-name    
-PrimitiveType: String    
+The name of the trigger.
+
+Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-glue-trigger.html#cfn-glue-trigger-name
+PrimitiveType: String
 UpdateType: Immutable
 
 ```yaml
@@ -136,9 +168,10 @@ Accept wildcard characters: False
 ```
 
 ### -Predicate
-Type: Predicate    
-Required: False    
-Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-glue-trigger.html#cfn-glue-trigger-predicate    
+The predicate of this trigger, which defines when it will fire.
+
+Type: Predicate
+Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-glue-trigger.html#cfn-glue-trigger-predicate
 UpdateType: Mutable
 
 ```yaml
@@ -248,15 +281,13 @@ Accept wildcard characters: False
 ```
 
 ### CommonParameters
-This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction, and -WarningVariable.
-For more information, see about_CommonParameters (http://go.microsoft.com/fwlink/?LinkID=113216).
+This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction, and -WarningVariable. For more information, see [about_CommonParameters](http://go.microsoft.com/fwlink/?LinkID=113216).
 
 ## INPUTS
 
 ## OUTPUTS
 
 ### Vaporshell.Resource.Glue.Trigger
-
 ## NOTES
 
 ## RELATED LINKS

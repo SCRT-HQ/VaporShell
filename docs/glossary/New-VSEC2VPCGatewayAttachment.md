@@ -1,18 +1,8 @@
----
-layout: glossary
-title: New-VSEC2VPCGatewayAttachment
-categories: glossary
-label1: Category
-data1: Documentation
-label2: Depth
-data2: Deep
-schema: 2.0.0
----
-
 # New-VSEC2VPCGatewayAttachment
 
 ## SYNOPSIS
-Adds an AWS::EC2::VPCGatewayAttachment resource to the template
+Adds an AWS::EC2::VPCGatewayAttachment resource to the template.
+Attaches an internet gateway to a VPC, enabling connectivity between the internet and the VPC.
 
 ## SYNTAX
 
@@ -23,7 +13,17 @@ New-VSEC2VPCGatewayAttachment [-LogicalId] <String> [-InternetGatewayId <Object>
 ```
 
 ## DESCRIPTION
-Adds an AWS::EC2::VPCGatewayAttachment resource to the template
+Adds an AWS::EC2::VPCGatewayAttachment resource to the template.
+Attaches an internet gateway to a VPC, enabling connectivity between the internet and the VPC.
+
+## EXAMPLES
+
+### Example 1
+```powershell
+PS C:\> {{ Add example code here }}
+```
+
+{{ Add example description here }}
 
 ## PARAMETERS
 
@@ -45,9 +45,11 @@ Accept wildcard characters: False
 ```
 
 ### -InternetGatewayId
-Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ec2-vpc-gateway-attachment.html#cfn-ec2-vpcgatewayattachment-internetgatewayid    
-PrimitiveType: String    
-Required: False    
+The ID of the internet gateway.
+You must specify either InternetGatewayId or VpnGatewayId, but not both.
+
+Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ec2-vpc-gateway-attachment.html#cfn-ec2-vpcgatewayattachment-internetgatewayid
+PrimitiveType: String
 UpdateType: Mutable
 
 ```yaml
@@ -63,9 +65,10 @@ Accept wildcard characters: False
 ```
 
 ### -VpcId
-Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ec2-vpc-gateway-attachment.html#cfn-ec2-vpcgatewayattachment-vpcid    
-PrimitiveType: String    
-Required: True    
+The ID of the VPC.
+
+Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ec2-vpc-gateway-attachment.html#cfn-ec2-vpcgatewayattachment-vpcid
+PrimitiveType: String
 UpdateType: Mutable
 
 ```yaml
@@ -81,9 +84,11 @@ Accept wildcard characters: False
 ```
 
 ### -VpnGatewayId
-Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ec2-vpc-gateway-attachment.html#cfn-ec2-vpcgatewayattachment-vpngatewayid    
-PrimitiveType: String    
-Required: False    
+The ID of the virtual private gateway.
+You must specify either InternetGatewayId or VpnGatewayId, but not both.
+
+Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ec2-vpc-gateway-attachment.html#cfn-ec2-vpcgatewayattachment-vpngatewayid
+PrimitiveType: String
 UpdateType: Mutable
 
 ```yaml
@@ -193,15 +198,13 @@ Accept wildcard characters: False
 ```
 
 ### CommonParameters
-This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction, and -WarningVariable.
-For more information, see about_CommonParameters (http://go.microsoft.com/fwlink/?LinkID=113216).
+This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction, and -WarningVariable. For more information, see [about_CommonParameters](http://go.microsoft.com/fwlink/?LinkID=113216).
 
 ## INPUTS
 
 ## OUTPUTS
 
 ### Vaporshell.Resource.EC2.VPCGatewayAttachment
-
 ## NOTES
 
 ## RELATED LINKS

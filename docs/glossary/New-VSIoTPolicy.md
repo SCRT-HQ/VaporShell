@@ -1,18 +1,9 @@
----
-layout: glossary
-title: New-VSIoTPolicy
-categories: glossary
-label1: Category
-data1: Documentation
-label2: Depth
-data2: Deep
-schema: 2.0.0
----
-
 # New-VSIoTPolicy
 
 ## SYNOPSIS
-Adds an AWS::IoT::Policy resource to the template
+Adds an AWS::IoT::Policy resource to the template.
+Use the AWS::IoT::Policy resource to declare an AWS IoT policy.
+For more information about working with AWS IoT policies, see Authorization: https://docs.aws.amazon.com/iot/latest/developerguide/authorization.html in the *AWS IoT Developer Guide*.
 
 ## SYNTAX
 
@@ -23,7 +14,18 @@ New-VSIoTPolicy [-LogicalId] <String> -PolicyDocument <Object> [-PolicyName <Obj
 ```
 
 ## DESCRIPTION
-Adds an AWS::IoT::Policy resource to the template
+Adds an AWS::IoT::Policy resource to the template.
+Use the AWS::IoT::Policy resource to declare an AWS IoT policy.
+For more information about working with AWS IoT policies, see Authorization: https://docs.aws.amazon.com/iot/latest/developerguide/authorization.html in the *AWS IoT Developer Guide*.
+
+## EXAMPLES
+
+### Example 1
+```powershell
+PS C:\> {{ Add example code here }}
+```
+
+{{ Add example description here }}
 
 ## PARAMETERS
 
@@ -45,9 +47,10 @@ Accept wildcard characters: False
 ```
 
 ### -PolicyDocument
-Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-iot-policy.html#cfn-iot-policy-policydocument    
-PrimitiveType: Json    
-Required: True    
+The JSON document that describes the policy.
+
+Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-iot-policy.html#cfn-iot-policy-policydocument
+PrimitiveType: Json
 UpdateType: Immutable
 
 ```yaml
@@ -63,9 +66,10 @@ Accept wildcard characters: False
 ```
 
 ### -PolicyName
-Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-iot-policy.html#cfn-iot-policy-policyname    
-PrimitiveType: String    
-Required: False    
+The policy name.
+
+Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-iot-policy.html#cfn-iot-policy-policyname
+PrimitiveType: String
 UpdateType: Immutable
 
 ```yaml
@@ -175,15 +179,13 @@ Accept wildcard characters: False
 ```
 
 ### CommonParameters
-This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction, and -WarningVariable.
-For more information, see about_CommonParameters (http://go.microsoft.com/fwlink/?LinkID=113216).
+This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction, and -WarningVariable. For more information, see [about_CommonParameters](http://go.microsoft.com/fwlink/?LinkID=113216).
 
 ## INPUTS
 
 ## OUTPUTS
 
 ### Vaporshell.Resource.IoT.Policy
-
 ## NOTES
 
 ## RELATED LINKS

@@ -1,14 +1,3 @@
----
-layout: glossary
-title: New-SAMSimpleTable
-categories: glossary
-label1: Category
-data1: Documentation
-label2: Depth
-data2: Deep
-schema: 2.0.0
----
-
 # New-SAMSimpleTable
 
 ## SYNOPSIS
@@ -25,6 +14,15 @@ New-SAMSimpleTable [-LogicalId] <String> [-PrimaryKey <Hashtable>] [-Provisioned
 The AWS::Serverless::SimpleTable resource creates a DynamoDB table with a single attribute primary key.
 It is useful when data only needs to be accessed via a primary key.
 To use the more advanced functionality of DynamoDB, use an AWS::DynamoDB::Table resource instead.
+
+## EXAMPLES
+
+### Example 1
+```powershell
+PS C:\> {{ Add example code here }}
+```
+
+{{ Add example description here }}
 
 ## PARAMETERS
 
@@ -81,15 +79,13 @@ Accept wildcard characters: False
 ```
 
 ### CommonParameters
-This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction, and -WarningVariable.
-For more information, see about_CommonParameters (http://go.microsoft.com/fwlink/?LinkID=113216).
+This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction, and -WarningVariable. For more information, see [about_CommonParameters](http://go.microsoft.com/fwlink/?LinkID=113216).
 
 ## INPUTS
 
 ## OUTPUTS
 
 ### Vaporshell.Serverless.SimpleTable
-
 ## NOTES
 Return values
 

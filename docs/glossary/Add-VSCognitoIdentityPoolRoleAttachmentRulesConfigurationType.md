@@ -1,18 +1,8 @@
----
-layout: glossary
-title: Add-VSCognitoIdentityPoolRoleAttachmentRulesConfigurationType
-categories: glossary
-label1: Category
-data1: Documentation
-label2: Depth
-data2: Deep
-schema: 2.0.0
----
-
 # Add-VSCognitoIdentityPoolRoleAttachmentRulesConfigurationType
 
 ## SYNOPSIS
-Adds an AWS::Cognito::IdentityPoolRoleAttachment.RulesConfigurationType resource property to the template
+Adds an AWS::Cognito::IdentityPoolRoleAttachment.RulesConfigurationType resource property to the template.
+RulesConfigurationType is a subproperty of the RoleMapping: https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-cognito-identitypoolroleattachment-rolemapping.html property that defines the rules to be used for mapping users to roles.
 
 ## SYNTAX
 
@@ -21,15 +11,27 @@ Add-VSCognitoIdentityPoolRoleAttachmentRulesConfigurationType [-Rules] <Object> 
 ```
 
 ## DESCRIPTION
-Adds an AWS::Cognito::IdentityPoolRoleAttachment.RulesConfigurationType resource property to the template
+Adds an AWS::Cognito::IdentityPoolRoleAttachment.RulesConfigurationType resource property to the template.
+RulesConfigurationType is a subproperty of the RoleMapping: https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-cognito-identitypoolroleattachment-rolemapping.html property that defines the rules to be used for mapping users to roles.
+
+## EXAMPLES
+
+### Example 1
+```powershell
+PS C:\> {{ Add example code here }}
+```
+
+{{ Add example description here }}
 
 ## PARAMETERS
 
 ### -Rules
-Type: List    
-Required: True    
-Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-cognito-identitypoolroleattachment-rulesconfigurationtype.html#cfn-cognito-identitypoolroleattachment-rulesconfigurationtype-rules    
-ItemType: MappingRule    
+A list of rules.
+You can specify up to 25 rules per identity provider.
+
+Type: List
+Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-cognito-identitypoolroleattachment-rulesconfigurationtype.html#cfn-cognito-identitypoolroleattachment-rulesconfigurationtype-rules
+ItemType: MappingRule
 UpdateType: Mutable
 
 ```yaml
@@ -45,15 +47,13 @@ Accept wildcard characters: False
 ```
 
 ### CommonParameters
-This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction, and -WarningVariable.
-For more information, see about_CommonParameters (http://go.microsoft.com/fwlink/?LinkID=113216).
+This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction, and -WarningVariable. For more information, see [about_CommonParameters](http://go.microsoft.com/fwlink/?LinkID=113216).
 
 ## INPUTS
 
 ## OUTPUTS
 
 ### Vaporshell.Resource.Cognito.IdentityPoolRoleAttachment.RulesConfigurationType
-
 ## NOTES
 
 ## RELATED LINKS

@@ -1,14 +1,3 @@
----
-layout: glossary
-title: Add-FnSelect
-categories: glossary
-label1: Category
-data1: Documentation
-label2: Depth
-data2: Deep
-schema: 2.0.0
----
-
 # Add-FnSelect
 
 ## SYNOPSIS
@@ -29,6 +18,15 @@ You might use a CommaDelimitedList parameter to combine the values of related pa
     ** Important **
         Fn::Select does not check for null values or if the index is out of bounds of the array.
 Both conditions will result in a stack error, so you should be certain that the index you choose is valid, and that the list contains non-null values.
+
+## EXAMPLES
+
+### EXAMPLE 1
+```
+Add-FnSelect -Index 2 -ListOfObjects (Add-FnSplit -Delimiter "," -SourceString (Add-FnImportValue -ValueToImport "AccountSubnetIds"))
+```
+
+When the template is exported, this will convert to: {"Fn::Select":\["2",{"Fn::Split":\[",",{"Fn::ImportValue":"AccountSubnetIds"}\]}\]}
 
 ## PARAMETERS
 
@@ -65,15 +63,13 @@ Accept wildcard characters: False
 ```
 
 ### CommonParameters
-This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction, and -WarningVariable.
-For more information, see about_CommonParameters (http://go.microsoft.com/fwlink/?LinkID=113216).
+This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction, and -WarningVariable. For more information, see [about_CommonParameters](http://go.microsoft.com/fwlink/?LinkID=113216).
 
 ## INPUTS
 
 ## OUTPUTS
 
 ### Vaporshell.Function.Select
-
 ## NOTES
 For the Fn::Select index value, you can use the Ref and Fn::FindInMap functions.
 

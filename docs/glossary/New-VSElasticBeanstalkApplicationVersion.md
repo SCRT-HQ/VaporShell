@@ -1,18 +1,8 @@
----
-layout: glossary
-title: New-VSElasticBeanstalkApplicationVersion
-categories: glossary
-label1: Category
-data1: Documentation
-label2: Depth
-data2: Deep
-schema: 2.0.0
----
-
 # New-VSElasticBeanstalkApplicationVersion
 
 ## SYNOPSIS
-Adds an AWS::ElasticBeanstalk::ApplicationVersion resource to the template
+Adds an AWS::ElasticBeanstalk::ApplicationVersion resource to the template.
+The AWS::ElasticBeanstalk::ApplicationVersion resource is an AWS Elastic Beanstalk resource type that specifies an application version, an iteration of deployable code, for an Elastic Beanstalk application.
 
 ## SYNTAX
 
@@ -23,7 +13,22 @@ New-VSElasticBeanstalkApplicationVersion [-LogicalId] <String> -ApplicationName 
 ```
 
 ## DESCRIPTION
-Adds an AWS::ElasticBeanstalk::ApplicationVersion resource to the template
+Adds an AWS::ElasticBeanstalk::ApplicationVersion resource to the template.
+The AWS::ElasticBeanstalk::ApplicationVersion resource is an AWS Elastic Beanstalk resource type that specifies an application version, an iteration of deployable code, for an Elastic Beanstalk application.
+
+**Note**
+
+After you create an application version with a specified Amazon S3 bucket and key location, you can't change that Amazon S3 location.
+If you change the Amazon S3 location, an attempt to launch an environment from the application version will fail.
+
+## EXAMPLES
+
+### Example 1
+```powershell
+PS C:\> {{ Add example code here }}
+```
+
+{{ Add example description here }}
 
 ## PARAMETERS
 
@@ -45,9 +50,10 @@ Accept wildcard characters: False
 ```
 
 ### -ApplicationName
-Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-beanstalk-version.html#cfn-elasticbeanstalk-applicationversion-applicationname    
-PrimitiveType: String    
-Required: True    
+The name of the Elastic Beanstalk application that is associated with this application version.
+
+Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-beanstalk-version.html#cfn-elasticbeanstalk-applicationversion-applicationname
+PrimitiveType: String
 UpdateType: Immutable
 
 ```yaml
@@ -63,9 +69,10 @@ Accept wildcard characters: False
 ```
 
 ### -Description
-Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-beanstalk-version.html#cfn-elasticbeanstalk-applicationversion-description    
-PrimitiveType: String    
-Required: False    
+A description of this application version.
+
+Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-beanstalk-version.html#cfn-elasticbeanstalk-applicationversion-description
+PrimitiveType: String
 UpdateType: Mutable
 
 ```yaml
@@ -81,9 +88,11 @@ Accept wildcard characters: False
 ```
 
 ### -SourceBundle
-Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-beanstalk-version.html#cfn-elasticbeanstalk-applicationversion-sourcebundle    
-Required: True    
-Type: SourceBundle    
+The Amazon S3 bucket and key that identify the location of the source bundle for this version.
+The Amazon S3 bucket must be in the same region as the environment.
+
+Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-beanstalk-version.html#cfn-elasticbeanstalk-applicationversion-sourcebundle
+Type: SourceBundle
 UpdateType: Immutable
 
 ```yaml
@@ -193,15 +202,13 @@ Accept wildcard characters: False
 ```
 
 ### CommonParameters
-This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction, and -WarningVariable.
-For more information, see about_CommonParameters (http://go.microsoft.com/fwlink/?LinkID=113216).
+This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction, and -WarningVariable. For more information, see [about_CommonParameters](http://go.microsoft.com/fwlink/?LinkID=113216).
 
 ## INPUTS
 
 ## OUTPUTS
 
 ### Vaporshell.Resource.ElasticBeanstalk.ApplicationVersion
-
 ## NOTES
 
 ## RELATED LINKS

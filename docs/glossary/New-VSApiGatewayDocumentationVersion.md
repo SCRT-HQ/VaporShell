@@ -1,18 +1,9 @@
----
-layout: glossary
-title: New-VSApiGatewayDocumentationVersion
-categories: glossary
-label1: Category
-data1: Documentation
-label2: Depth
-data2: Deep
-schema: 2.0.0
----
-
 # New-VSApiGatewayDocumentationVersion
 
 ## SYNOPSIS
-Adds an AWS::ApiGateway::DocumentationVersion resource to the template
+Adds an AWS::ApiGateway::DocumentationVersion resource to the template.
+The AWS::ApiGateway::DocumentationVersion resource creates a snapshot of the documentation for an API.
+For more information, see Representation of API Documentation in API Gateway: https://docs.aws.amazon.com/apigateway/latest/developerguide/api-gateway-documenting-api-content-representation.html in the *API Gateway Developer Guide*.
 
 ## SYNTAX
 
@@ -23,7 +14,18 @@ New-VSApiGatewayDocumentationVersion [-LogicalId] <String> [-Description <Object
 ```
 
 ## DESCRIPTION
-Adds an AWS::ApiGateway::DocumentationVersion resource to the template
+Adds an AWS::ApiGateway::DocumentationVersion resource to the template.
+The AWS::ApiGateway::DocumentationVersion resource creates a snapshot of the documentation for an API.
+For more information, see Representation of API Documentation in API Gateway: https://docs.aws.amazon.com/apigateway/latest/developerguide/api-gateway-documenting-api-content-representation.html in the *API Gateway Developer Guide*.
+
+## EXAMPLES
+
+### Example 1
+```powershell
+PS C:\> {{ Add example code here }}
+```
+
+{{ Add example description here }}
 
 ## PARAMETERS
 
@@ -45,9 +47,10 @@ Accept wildcard characters: False
 ```
 
 ### -Description
-Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-apigateway-documentationversion.html#cfn-apigateway-documentationversion-description    
-PrimitiveType: String    
-Required: False    
+The description of the API documentation snapshot.
+
+Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-apigateway-documentationversion.html#cfn-apigateway-documentationversion-description
+PrimitiveType: String
 UpdateType: Mutable
 
 ```yaml
@@ -63,9 +66,10 @@ Accept wildcard characters: False
 ```
 
 ### -DocumentationVersion
-Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-apigateway-documentationversion.html#cfn-apigateway-documentationversion-documentationversion    
-PrimitiveType: String    
-Required: True    
+The version identifier of the API documentation snapshot.
+
+Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-apigateway-documentationversion.html#cfn-apigateway-documentationversion-documentationversion
+PrimitiveType: String
 UpdateType: Immutable
 
 ```yaml
@@ -81,9 +85,10 @@ Accept wildcard characters: False
 ```
 
 ### -RestApiId
-Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-apigateway-documentationversion.html#cfn-apigateway-documentationversion-restapiid    
-PrimitiveType: String    
-Required: True    
+The identifier of the API.
+
+Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-apigateway-documentationversion.html#cfn-apigateway-documentationversion-restapiid
+PrimitiveType: String
 UpdateType: Immutable
 
 ```yaml
@@ -193,15 +198,13 @@ Accept wildcard characters: False
 ```
 
 ### CommonParameters
-This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction, and -WarningVariable.
-For more information, see about_CommonParameters (http://go.microsoft.com/fwlink/?LinkID=113216).
+This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction, and -WarningVariable. For more information, see [about_CommonParameters](http://go.microsoft.com/fwlink/?LinkID=113216).
 
 ## INPUTS
 
 ## OUTPUTS
 
 ### Vaporshell.Resource.ApiGateway.DocumentationVersion
-
 ## NOTES
 
 ## RELATED LINKS

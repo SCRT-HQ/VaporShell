@@ -1,18 +1,8 @@
----
-layout: glossary
-title: Add-VSElasticLoadBalancingLoadBalancerAppCookieStickinessPolicy
-categories: glossary
-label1: Category
-data1: Documentation
-label2: Depth
-data2: Deep
-schema: 2.0.0
----
-
 # Add-VSElasticLoadBalancingLoadBalancerAppCookieStickinessPolicy
 
 ## SYNOPSIS
-Adds an AWS::ElasticLoadBalancing::LoadBalancer.AppCookieStickinessPolicy resource property to the template
+Adds an AWS::ElasticLoadBalancing::LoadBalancer.AppCookieStickinessPolicy resource property to the template.
+Specifies a policy for application-controlled session stickiness for your Classic Load Balancer.
 
 ## SYNTAX
 
@@ -22,14 +12,27 @@ Add-VSElasticLoadBalancingLoadBalancerAppCookieStickinessPolicy [-CookieName] <O
 ```
 
 ## DESCRIPTION
-Adds an AWS::ElasticLoadBalancing::LoadBalancer.AppCookieStickinessPolicy resource property to the template
+Adds an AWS::ElasticLoadBalancing::LoadBalancer.AppCookieStickinessPolicy resource property to the template.
+Specifies a policy for application-controlled session stickiness for your Classic Load Balancer.
+
+To associate a policy with a listener, use the PolicyNames: https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-elb-listener.html#cfn-ec2-elb-listener-policynames property for the listener.
+
+## EXAMPLES
+
+### Example 1
+```powershell
+PS C:\> {{ Add example code here }}
+```
+
+{{ Add example description here }}
 
 ## PARAMETERS
 
 ### -CookieName
-Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-elb-AppCookieStickinessPolicy.html#cfn-elb-appcookiestickinesspolicy-cookiename    
-PrimitiveType: String    
-Required: True    
+The name of the application cookie used for stickiness.
+
+Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-elb-AppCookieStickinessPolicy.html#cfn-elb-appcookiestickinesspolicy-cookiename
+PrimitiveType: String
 UpdateType: Mutable
 
 ```yaml
@@ -45,9 +48,11 @@ Accept wildcard characters: False
 ```
 
 ### -PolicyName
-Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-elb-AppCookieStickinessPolicy.html#cfn-elb-appcookiestickinesspolicy-policyname    
-PrimitiveType: String    
-Required: True    
+The mnemonic name for the policy being created.
+The name must be unique within a set of policies for this load balancer.
+
+Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-elb-AppCookieStickinessPolicy.html#cfn-elb-appcookiestickinesspolicy-policyname
+PrimitiveType: String
 UpdateType: Mutable
 
 ```yaml
@@ -63,15 +68,13 @@ Accept wildcard characters: False
 ```
 
 ### CommonParameters
-This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction, and -WarningVariable.
-For more information, see about_CommonParameters (http://go.microsoft.com/fwlink/?LinkID=113216).
+This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction, and -WarningVariable. For more information, see [about_CommonParameters](http://go.microsoft.com/fwlink/?LinkID=113216).
 
 ## INPUTS
 
 ## OUTPUTS
 
 ### Vaporshell.Resource.ElasticLoadBalancing.LoadBalancer.AppCookieStickinessPolicy
-
 ## NOTES
 
 ## RELATED LINKS

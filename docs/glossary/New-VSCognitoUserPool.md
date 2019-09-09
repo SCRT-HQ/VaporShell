@@ -1,34 +1,37 @@
----
-layout: glossary
-title: New-VSCognitoUserPool
-categories: glossary
-label1: Category
-data1: Documentation
-label2: Depth
-data2: Deep
-schema: 2.0.0
----
-
 # New-VSCognitoUserPool
 
 ## SYNOPSIS
-Adds an AWS::Cognito::UserPool resource to the template
+Adds an AWS::Cognito::UserPool resource to the template.
+The AWS::Cognito::UserPool resource creates an Amazon Cognito user pool.
+For more information on working with Amazon Cognito user pools, see Amazon Cognito User Pools: https://docs.aws.amazon.com/cognito/latest/developerguide/cognito-user-identity-pools.html and CreateUserPool: https://docs.aws.amazon.com/cognito-user-identity-pools/latest/APIReference/API_CreateUserPool.html.
 
 ## SYNTAX
 
 ```
 New-VSCognitoUserPool [-LogicalId] <String> [-UserPoolTags <Object>] [-Policies <Object>]
- [-MfaConfiguration <Object>] [-Schema <Object>] [-AdminCreateUserConfig <Object>]
- [-SmsAuthenticationMessage <Object>] [-UserPoolName <Object>] [-SmsVerificationMessage <Object>]
- [-EmailConfiguration <Object>] [-SmsConfiguration <Object>] [-AliasAttributes <Object>]
- [-EmailVerificationSubject <Object>] [-LambdaConfig <Object>] [-UsernameAttributes <Object>]
- [-AutoVerifiedAttributes <Object>] [-DeviceConfiguration <Object>] [-EmailVerificationMessage <Object>]
- [-DeletionPolicy <String>] [-DependsOn <String[]>] [-Metadata <Object>] [-UpdatePolicy <Object>]
- [-Condition <Object>] [<CommonParameters>]
+ [-VerificationMessageTemplate <Object>] [-MfaConfiguration <Object>] [-Schema <Object>]
+ [-AdminCreateUserConfig <Object>] [-SmsAuthenticationMessage <Object>] [-UserPoolName <Object>]
+ [-SmsVerificationMessage <Object>] [-UserPoolAddOns <Object>] [-EmailConfiguration <Object>]
+ [-SmsConfiguration <Object>] [-AliasAttributes <Object>] [-EmailVerificationSubject <Object>]
+ [-LambdaConfig <Object>] [-UsernameAttributes <Object>] [-AutoVerifiedAttributes <Object>]
+ [-DeviceConfiguration <Object>] [-EmailVerificationMessage <Object>] [-DeletionPolicy <String>]
+ [-DependsOn <String[]>] [-Metadata <Object>] [-UpdatePolicy <Object>] [-Condition <Object>]
+ [<CommonParameters>]
 ```
 
 ## DESCRIPTION
-Adds an AWS::Cognito::UserPool resource to the template
+Adds an AWS::Cognito::UserPool resource to the template.
+The AWS::Cognito::UserPool resource creates an Amazon Cognito user pool.
+For more information on working with Amazon Cognito user pools, see Amazon Cognito User Pools: https://docs.aws.amazon.com/cognito/latest/developerguide/cognito-user-identity-pools.html and CreateUserPool: https://docs.aws.amazon.com/cognito-user-identity-pools/latest/APIReference/API_CreateUserPool.html.
+
+## EXAMPLES
+
+### Example 1
+```powershell
+PS C:\> {{ Add example code here }}
+```
+
+{{ Add example description here }}
 
 ## PARAMETERS
 
@@ -50,9 +53,11 @@ Accept wildcard characters: False
 ```
 
 ### -UserPoolTags
-Required: False    
-Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-cognito-userpool.html#cfn-cognito-userpool-userpooltags    
-PrimitiveType: Json    
+The tag keys and values to assign to the user pool.
+A tag is a label that you can use to categorize and manage user pools in different ways, such as by purpose, owner, environment, or other criteria.
+
+Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-cognito-userpool.html#cfn-cognito-userpool-userpooltags
+PrimitiveType: Json
 UpdateType: Mutable
 
 ```yaml
@@ -68,9 +73,29 @@ Accept wildcard characters: False
 ```
 
 ### -Policies
-Type: Policies    
-Required: False    
-Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-cognito-userpool.html#cfn-cognito-userpool-policies    
+The policy associated with a user pool.
+
+Type: Policies
+Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-cognito-userpool.html#cfn-cognito-userpool-policies
+UpdateType: Mutable
+
+```yaml
+Type: Object
+Parameter Sets: (All)
+Aliases:
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### -VerificationMessageTemplate
+The template for the verification message that the user sees when the app requests permission to access the user's information.
+
+Type: VerificationMessageTemplate
+Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-cognito-userpool.html#cfn-cognito-userpool-verificationmessagetemplate
 UpdateType: Mutable
 
 ```yaml
@@ -86,9 +111,15 @@ Accept wildcard characters: False
 ```
 
 ### -MfaConfiguration
-Required: False    
-Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-cognito-userpool.html#cfn-cognito-userpool-mfaconfiguration    
-PrimitiveType: String    
+Specifies multi-factor authentication MFA configuration details.
+Can be one of the following values:
+OFF - MFA tokens are not required and cannot be specified during user registration.
+ON - MFA tokens are required for all user registrations.
+You can only specify required when you are initially creating a user pool.
+OPTIONAL - Users have the option when registering to create an MFA token.
+
+Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-cognito-userpool.html#cfn-cognito-userpool-mfaconfiguration
+PrimitiveType: String
 UpdateType: Mutable
 
 ```yaml
@@ -104,10 +135,12 @@ Accept wildcard characters: False
 ```
 
 ### -Schema
-Type: List    
-Required: False    
-Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-cognito-userpool.html#cfn-cognito-userpool-schema    
-ItemType: SchemaAttribute    
+An array of schema attributes for the new user pool.
+These attributes can be standard or custom attributes.
+
+Type: List
+Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-cognito-userpool.html#cfn-cognito-userpool-schema
+ItemType: SchemaAttribute
 UpdateType: Immutable
 
 ```yaml
@@ -123,9 +156,10 @@ Accept wildcard characters: False
 ```
 
 ### -AdminCreateUserConfig
-Type: AdminCreateUserConfig    
-Required: False    
-Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-cognito-userpool.html#cfn-cognito-userpool-admincreateuserconfig    
+The type of configuration for creating a new user profile.
+
+Type: AdminCreateUserConfig
+Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-cognito-userpool.html#cfn-cognito-userpool-admincreateuserconfig
 UpdateType: Mutable
 
 ```yaml
@@ -141,9 +175,10 @@ Accept wildcard characters: False
 ```
 
 ### -SmsAuthenticationMessage
-Required: False    
-Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-cognito-userpool.html#cfn-cognito-userpool-smsauthenticationmessage    
-PrimitiveType: String    
+A string representing the SMS authentication message.
+
+Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-cognito-userpool.html#cfn-cognito-userpool-smsauthenticationmessage
+PrimitiveType: String
 UpdateType: Mutable
 
 ```yaml
@@ -159,9 +194,10 @@ Accept wildcard characters: False
 ```
 
 ### -UserPoolName
-Required: False    
-Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-cognito-userpool.html#cfn-cognito-userpool-userpoolname    
-PrimitiveType: String    
+A string used to name the user pool.
+
+Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-cognito-userpool.html#cfn-cognito-userpool-userpoolname
+PrimitiveType: String
 UpdateType: Immutable
 
 ```yaml
@@ -177,9 +213,30 @@ Accept wildcard characters: False
 ```
 
 ### -SmsVerificationMessage
-Required: False    
-Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-cognito-userpool.html#cfn-cognito-userpool-smsverificationmessage    
-PrimitiveType: String    
+A string representing the SMS verification message.
+
+Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-cognito-userpool.html#cfn-cognito-userpool-smsverificationmessage
+PrimitiveType: String
+UpdateType: Mutable
+
+```yaml
+Type: Object
+Parameter Sets: (All)
+Aliases:
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### -UserPoolAddOns
+Used to enable advanced security risk detection.
+Set the key AdvancedSecurityMode to the value "AUDIT".
+
+Type: UserPoolAddOns
+Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-cognito-userpool.html#cfn-cognito-userpool-userpooladdons
 UpdateType: Mutable
 
 ```yaml
@@ -195,9 +252,10 @@ Accept wildcard characters: False
 ```
 
 ### -EmailConfiguration
-Type: EmailConfiguration    
-Required: False    
-Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-cognito-userpool.html#cfn-cognito-userpool-emailconfiguration    
+The email configuration.
+
+Type: EmailConfiguration
+Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-cognito-userpool.html#cfn-cognito-userpool-emailconfiguration
 UpdateType: Mutable
 
 ```yaml
@@ -213,9 +271,10 @@ Accept wildcard characters: False
 ```
 
 ### -SmsConfiguration
-Type: SmsConfiguration    
-Required: False    
-Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-cognito-userpool.html#cfn-cognito-userpool-smsconfiguration    
+The SMS configuration.
+
+Type: SmsConfiguration
+Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-cognito-userpool.html#cfn-cognito-userpool-smsconfiguration
 UpdateType: Mutable
 
 ```yaml
@@ -231,10 +290,12 @@ Accept wildcard characters: False
 ```
 
 ### -AliasAttributes
-PrimitiveItemType: String    
-Type: List    
-Required: False    
-Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-cognito-userpool.html#cfn-cognito-userpool-aliasattributes    
+Attributes supported as an alias for this user pool.
+Possible values: **phone_number**, **email**, or **preferred_username**.
+
+PrimitiveItemType: String
+Type: List
+Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-cognito-userpool.html#cfn-cognito-userpool-aliasattributes
 UpdateType: Immutable
 
 ```yaml
@@ -250,9 +311,10 @@ Accept wildcard characters: False
 ```
 
 ### -EmailVerificationSubject
-Required: False    
-Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-cognito-userpool.html#cfn-cognito-userpool-emailverificationsubject    
-PrimitiveType: String    
+A string representing the email verification subject.
+
+Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-cognito-userpool.html#cfn-cognito-userpool-emailverificationsubject
+PrimitiveType: String
 UpdateType: Mutable
 
 ```yaml
@@ -268,9 +330,14 @@ Accept wildcard characters: False
 ```
 
 ### -LambdaConfig
-Type: LambdaConfig    
-Required: False    
-Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-cognito-userpool.html#cfn-cognito-userpool-lambdaconfig    
+The Lambda trigger configuration information for the new user pool.
+In a push model, event sources such as Amazon S3 and custom applications need permission to invoke a function.
+So you will need to make an extra call to add permission for these event sources to invoke your Lambda function.
+For more information on using the Lambda API to add permission, see  AddPermission : https://docs.aws.amazon.com/lambda/latest/dg/API_AddPermission.html.
+For adding permission using the AWS CLI, see  add-permission : https://docs.aws.amazon.com/cli/latest/reference/lambda/add-permission.html.
+
+Type: LambdaConfig
+Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-cognito-userpool.html#cfn-cognito-userpool-lambdaconfig
 UpdateType: Mutable
 
 ```yaml
@@ -286,10 +353,12 @@ Accept wildcard characters: False
 ```
 
 ### -UsernameAttributes
-PrimitiveItemType: String    
-Type: List    
-Required: False    
-Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-cognito-userpool.html#cfn-cognito-userpool-usernameattributes    
+Specifies whether email addresses or phone numbers can be specified as user names when a user signs up.
+Possible values: phone_number or email.
+
+PrimitiveItemType: String
+Type: List
+Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-cognito-userpool.html#cfn-cognito-userpool-usernameattributes
 UpdateType: Immutable
 
 ```yaml
@@ -305,10 +374,12 @@ Accept wildcard characters: False
 ```
 
 ### -AutoVerifiedAttributes
-PrimitiveItemType: String    
-Type: List    
-Required: False    
-Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-cognito-userpool.html#cfn-cognito-userpool-autoverifiedattributes    
+The attributes to be auto-verified.
+Possible values: **email**, **phone_number**.
+
+PrimitiveItemType: String
+Type: List
+Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-cognito-userpool.html#cfn-cognito-userpool-autoverifiedattributes
 UpdateType: Mutable
 
 ```yaml
@@ -324,9 +395,10 @@ Accept wildcard characters: False
 ```
 
 ### -DeviceConfiguration
-Type: DeviceConfiguration    
-Required: False    
-Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-cognito-userpool.html#cfn-cognito-userpool-deviceconfiguration    
+The type of configuration for the user pool's device tracking.
+
+Type: DeviceConfiguration
+Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-cognito-userpool.html#cfn-cognito-userpool-deviceconfiguration
 UpdateType: Mutable
 
 ```yaml
@@ -342,9 +414,10 @@ Accept wildcard characters: False
 ```
 
 ### -EmailVerificationMessage
-Required: False    
-Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-cognito-userpool.html#cfn-cognito-userpool-emailverificationmessage    
-PrimitiveType: String    
+A string representing the email verification message.
+
+Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-cognito-userpool.html#cfn-cognito-userpool-emailverificationmessage
+PrimitiveType: String
 UpdateType: Mutable
 
 ```yaml
@@ -454,15 +527,13 @@ Accept wildcard characters: False
 ```
 
 ### CommonParameters
-This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction, and -WarningVariable.
-For more information, see about_CommonParameters (http://go.microsoft.com/fwlink/?LinkID=113216).
+This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction, and -WarningVariable. For more information, see [about_CommonParameters](http://go.microsoft.com/fwlink/?LinkID=113216).
 
 ## INPUTS
 
 ## OUTPUTS
 
 ### Vaporshell.Resource.Cognito.UserPool
-
 ## NOTES
 
 ## RELATED LINKS

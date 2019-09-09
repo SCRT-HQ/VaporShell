@@ -1,18 +1,8 @@
----
-layout: glossary
-title: Add-VSGlueJobExecutionProperty
-categories: glossary
-label1: Category
-data1: Documentation
-label2: Depth
-data2: Deep
-schema: 2.0.0
----
-
 # Add-VSGlueJobExecutionProperty
 
 ## SYNOPSIS
-Adds an AWS::Glue::Job.ExecutionProperty resource property to the template
+Adds an AWS::Glue::Job.ExecutionProperty resource property to the template.
+An execution property of a job.
 
 ## SYNTAX
 
@@ -21,14 +11,28 @@ Add-VSGlueJobExecutionProperty [[-MaxConcurrentRuns] <Double>] [<CommonParameter
 ```
 
 ## DESCRIPTION
-Adds an AWS::Glue::Job.ExecutionProperty resource property to the template
+Adds an AWS::Glue::Job.ExecutionProperty resource property to the template.
+An execution property of a job.
+
+## EXAMPLES
+
+### Example 1
+```powershell
+PS C:\> {{ Add example code here }}
+```
+
+{{ Add example description here }}
 
 ## PARAMETERS
 
 ### -MaxConcurrentRuns
-Required: False    
-Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-glue-job-executionproperty.html#cfn-glue-job-executionproperty-maxconcurrentruns    
-PrimitiveType: Double    
+The maximum number of concurrent runs allowed for the job.
+The default is 1.
+An error is returned when this threshold is reached.
+The maximum value you can specify is controlled by a service limit.
+
+Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-glue-job-executionproperty.html#cfn-glue-job-executionproperty-maxconcurrentruns
+PrimitiveType: Double
 UpdateType: Mutable
 
 ```yaml
@@ -44,15 +48,13 @@ Accept wildcard characters: False
 ```
 
 ### CommonParameters
-This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction, and -WarningVariable.
-For more information, see about_CommonParameters (http://go.microsoft.com/fwlink/?LinkID=113216).
+This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction, and -WarningVariable. For more information, see [about_CommonParameters](http://go.microsoft.com/fwlink/?LinkID=113216).
 
 ## INPUTS
 
 ## OUTPUTS
 
 ### Vaporshell.Resource.Glue.Job.ExecutionProperty
-
 ## NOTES
 
 ## RELATED LINKS

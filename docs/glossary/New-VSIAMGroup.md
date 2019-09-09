@@ -1,18 +1,8 @@
----
-layout: glossary
-title: New-VSIAMGroup
-categories: glossary
-label1: Category
-data1: Documentation
-label2: Depth
-data2: Deep
-schema: 2.0.0
----
-
 # New-VSIAMGroup
 
 ## SYNOPSIS
-Adds an AWS::IAM::Group resource to the template
+Adds an AWS::IAM::Group resource to the template.
+Creates a new group.
 
 ## SYNTAX
 
@@ -23,7 +13,19 @@ New-VSIAMGroup [-LogicalId] <String> [-GroupName <Object>] [-ManagedPolicyArns <
 ```
 
 ## DESCRIPTION
-Adds an AWS::IAM::Group resource to the template
+Adds an AWS::IAM::Group resource to the template.
+Creates a new group.
+
+For information about the number of groups you can create, see Limitations on IAM Entities: https://docs.aws.amazon.com/IAM/latest/UserGuide/LimitationsOnEntities.html in the *IAM User Guide*.
+
+## EXAMPLES
+
+### Example 1
+```powershell
+PS C:\> {{ Add example code here }}
+```
+
+{{ Add example description here }}
 
 ## PARAMETERS
 
@@ -45,9 +47,22 @@ Accept wildcard characters: False
 ```
 
 ### -GroupName
-Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iam-group.html#cfn-iam-group-groupname    
-PrimitiveType: String    
-Required: False    
+The name of the group to create.
+Do not include the path in this value.
+The group name must be unique within the account.
+Group names are not distinguished by case.
+For example, you cannot create groups named both "ADMINS" and "admins".
+If you don't specify a name, AWS CloudFormation generates a unique physical ID and uses that ID for the group name.
+If you specify a name, you cannot perform updates that require replacement of this resource.
+You can perform updates that require no or some interruption.
+If you must replace the resource, specify a new name.
+If you specify a name, you must specify the CAPABILITY_NAMED_IAM value to acknowledge your template's capabilities.
+For more information, see Acknowledging IAM Resources in AWS CloudFormation Templates: https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-iam-template.html#using-iam-capabilities.
+Naming an IAM resource can cause an unrecoverable error if you reuse the same template in multiple Regions.
+To prevent this, we recommend using Fn::Join and AWS::Region to create a Region-specific name, as in the following example: {"Fn::Join": "", {"Ref": "AWS::Region"}, {"Ref": "MyResourceName"}\]\]}.
+
+Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iam-group.html#cfn-iam-group-groupname
+PrimitiveType: String
 UpdateType: Immutable
 
 ```yaml
@@ -63,11 +78,13 @@ Accept wildcard characters: False
 ```
 
 ### -ManagedPolicyArns
-Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iam-group.html#cfn-iam-group-managepolicyarns    
-DuplicatesAllowed: False    
-PrimitiveItemType: String    
-Required: False    
-Type: List    
+The Amazon Resource Name ARN of the IAM policy you want to attach.
+For more information about ARNs, see Amazon Resource Names ARNs and AWS Service Namespaces: https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html in the *AWS General Reference*.
+
+Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iam-group.html#cfn-iam-group-managepolicyarns
+DuplicatesAllowed: False
+PrimitiveItemType: String
+Type: List
 UpdateType: Mutable
 
 ```yaml
@@ -83,9 +100,16 @@ Accept wildcard characters: False
 ```
 
 ### -Path
-Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iam-group.html#cfn-iam-group-path    
-PrimitiveType: String    
-Required: False    
+The path to the group.
+For more information about paths, see IAM Identifiers: https://docs.aws.amazon.com/IAM/latest/UserGuide/Using_Identifiers.html in the *IAM User Guide*.
+This parameter is optional.
+If it is not included, it defaults to a slash /.
+This parameter allows through its regex pattern: http://wikipedia.org/wiki/regex a string of characters consisting of either a forward slash / by itself or a string that must begin and end with forward slashes.
+In addition, it can contain any ASCII character from the !
+u0021 through the DEL character u007F, including most punctuation characters, digits, and upper and lowercased letters.
+
+Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iam-group.html#cfn-iam-group-path
+PrimitiveType: String
 UpdateType: Mutable
 
 ```yaml
@@ -101,11 +125,16 @@ Accept wildcard characters: False
 ```
 
 ### -Policies
-Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iam-group.html#cfn-iam-group-policies    
-DuplicatesAllowed: False    
-ItemType: Policy    
-Required: False    
-Type: List    
+Adds or updates an inline policy document that is embedded in the specified IAM group.
+To view AWS::IAM::Group snippets, see Declaring an IAM Group Resource: https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/quickref-iam.html#scenario-iam-group.
+The name of each inline policy for a role, user, or group must be unique.
+If you don't choose unique names, updates to the IAM identity will fail.
+For information about limits on the number of inline policies that you can embed in a group, see Limitations on IAM Entities: https://docs.aws.amazon.com/IAM/latest/UserGuide/LimitationsOnEntities.html in the *IAM User Guide*.
+
+Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iam-group.html#cfn-iam-group-policies
+DuplicatesAllowed: False
+ItemType: Policy
+Type: List
 UpdateType: Mutable
 
 ```yaml
@@ -215,15 +244,13 @@ Accept wildcard characters: False
 ```
 
 ### CommonParameters
-This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction, and -WarningVariable.
-For more information, see about_CommonParameters (http://go.microsoft.com/fwlink/?LinkID=113216).
+This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction, and -WarningVariable. For more information, see [about_CommonParameters](http://go.microsoft.com/fwlink/?LinkID=113216).
 
 ## INPUTS
 
 ## OUTPUTS
 
 ### Vaporshell.Resource.IAM.Group
-
 ## NOTES
 
 ## RELATED LINKS

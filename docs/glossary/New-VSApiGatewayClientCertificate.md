@@ -1,18 +1,8 @@
----
-layout: glossary
-title: New-VSApiGatewayClientCertificate
-categories: glossary
-label1: Category
-data1: Documentation
-label2: Depth
-data2: Deep
-schema: 2.0.0
----
-
 # New-VSApiGatewayClientCertificate
 
 ## SYNOPSIS
-Adds an AWS::ApiGateway::ClientCertificate resource to the template
+Adds an AWS::ApiGateway::ClientCertificate resource to the template.
+The AWS::ApiGateway::ClientCertificate resource creates a client certificate that API Gateway uses to configure client-side SSL authentication for sending requests to the integration endpoint.
 
 ## SYNTAX
 
@@ -23,7 +13,17 @@ New-VSApiGatewayClientCertificate [-LogicalId] <String> [-Description <Object>] 
 ```
 
 ## DESCRIPTION
-Adds an AWS::ApiGateway::ClientCertificate resource to the template
+Adds an AWS::ApiGateway::ClientCertificate resource to the template.
+The AWS::ApiGateway::ClientCertificate resource creates a client certificate that API Gateway uses to configure client-side SSL authentication for sending requests to the integration endpoint.
+
+## EXAMPLES
+
+### Example 1
+```powershell
+PS C:\> {{ Add example code here }}
+```
+
+{{ Add example description here }}
 
 ## PARAMETERS
 
@@ -45,9 +45,10 @@ Accept wildcard characters: False
 ```
 
 ### -Description
-Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-apigateway-clientcertificate.html#cfn-apigateway-clientcertificate-description    
-PrimitiveType: String    
-Required: False    
+A description of the client certificate.
+
+Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-apigateway-clientcertificate.html#cfn-apigateway-clientcertificate-description
+PrimitiveType: String
 UpdateType: Mutable
 
 ```yaml
@@ -157,15 +158,13 @@ Accept wildcard characters: False
 ```
 
 ### CommonParameters
-This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction, and -WarningVariable.
-For more information, see about_CommonParameters (http://go.microsoft.com/fwlink/?LinkID=113216).
+This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction, and -WarningVariable. For more information, see [about_CommonParameters](http://go.microsoft.com/fwlink/?LinkID=113216).
 
 ## INPUTS
 
 ## OUTPUTS
 
 ### Vaporshell.Resource.ApiGateway.ClientCertificate
-
 ## NOTES
 
 ## RELATED LINKS

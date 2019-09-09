@@ -1,18 +1,11 @@
----
-layout: glossary
-title: New-VSWAFWebACL
-categories: glossary
-label1: Category
-data1: Documentation
-label2: Depth
-data2: Deep
-schema: 2.0.0
----
-
 # New-VSWAFWebACL
 
 ## SYNOPSIS
-Adds an AWS::WAF::WebACL resource to the template
+Adds an AWS::WAF::WebACL resource to the template.
+Contains the Rules that identify the requests that you want to allow, block, or count.
+In a WebACL, you also specify a default action (ALLOW or BLOCK, and the action for each Rule that you add to a WebACL, for example, block requests from specified IP addresses or block requests from specified referrers.
+You also associate the WebACL with a CloudFront distribution to identify the requests that you want AWS WAF to filter.
+If you add more than one Rule to a WebACL, a request needs to match only one of the specifications to be allowed, blocked, or counted.
 
 ## SYNTAX
 
@@ -23,7 +16,20 @@ New-VSWAFWebACL [-LogicalId] <String> -DefaultAction <Object> -MetricName <Objec
 ```
 
 ## DESCRIPTION
-Adds an AWS::WAF::WebACL resource to the template
+Adds an AWS::WAF::WebACL resource to the template.
+Contains the Rules that identify the requests that you want to allow, block, or count.
+In a WebACL, you also specify a default action (ALLOW or BLOCK, and the action for each Rule that you add to a WebACL, for example, block requests from specified IP addresses or block requests from specified referrers.
+You also associate the WebACL with a CloudFront distribution to identify the requests that you want AWS WAF to filter.
+If you add more than one Rule to a WebACL, a request needs to match only one of the specifications to be allowed, blocked, or counted.
+
+## EXAMPLES
+
+### Example 1
+```powershell
+PS C:\> {{ Add example code here }}
+```
+
+{{ Add example description here }}
 
 ## PARAMETERS
 
@@ -45,9 +51,11 @@ Accept wildcard characters: False
 ```
 
 ### -DefaultAction
-Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-waf-webacl.html#cfn-waf-webacl-defaultaction    
-Required: True    
-Type: WafAction    
+The action to perform if none of the Rules contained in the WebACL match.
+The action is specified by the WafAction object.
+
+Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-waf-webacl.html#cfn-waf-webacl-defaultaction
+Type: WafAction
 UpdateType: Mutable
 
 ```yaml
@@ -63,9 +71,12 @@ Accept wildcard characters: False
 ```
 
 ### -MetricName
-Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-waf-webacl.html#cfn-waf-webacl-metricname    
-PrimitiveType: String    
-Required: True    
+A friendly name or description for the metrics for this WebACL.
+The name can contain only alphanumeric characters A-Z, a-z, 0-9, with maximum length 128 and minimum length one.
+It can't contain whitespace or metric names reserved for AWS WAF, including "All" and "Default_Action." You can't change MetricName after you create the WebACL.
+
+Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-waf-webacl.html#cfn-waf-webacl-metricname
+PrimitiveType: String
 UpdateType: Immutable
 
 ```yaml
@@ -81,9 +92,11 @@ Accept wildcard characters: False
 ```
 
 ### -Name
-Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-waf-webacl.html#cfn-waf-webacl-name    
-PrimitiveType: String    
-Required: True    
+A friendly name or description of the WebACL.
+You can't change the name of a WebACL after you create it.
+
+Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-waf-webacl.html#cfn-waf-webacl-name
+PrimitiveType: String
 UpdateType: Immutable
 
 ```yaml
@@ -99,11 +112,12 @@ Accept wildcard characters: False
 ```
 
 ### -Rules
-Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-waf-webacl.html#cfn-waf-webacl-rules    
-DuplicatesAllowed: False    
-ItemType: ActivatedRule    
-Required: False    
-Type: List    
+An array that contains the action for each Rule in a WebACL, the priority of the Rule, and the ID of the Rule.
+
+Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-waf-webacl.html#cfn-waf-webacl-rules
+DuplicatesAllowed: False
+ItemType: ActivatedRule
+Type: List
 UpdateType: Mutable
 
 ```yaml
@@ -213,15 +227,13 @@ Accept wildcard characters: False
 ```
 
 ### CommonParameters
-This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction, and -WarningVariable.
-For more information, see about_CommonParameters (http://go.microsoft.com/fwlink/?LinkID=113216).
+This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction, and -WarningVariable. For more information, see [about_CommonParameters](http://go.microsoft.com/fwlink/?LinkID=113216).
 
 ## INPUTS
 
 ## OUTPUTS
 
 ### Vaporshell.Resource.WAF.WebACL
-
 ## NOTES
 
 ## RELATED LINKS

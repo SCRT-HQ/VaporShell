@@ -1,18 +1,10 @@
----
-layout: glossary
-title: New-VSGuardDutyMaster
-categories: glossary
-label1: Category
-data1: Documentation
-label2: Depth
-data2: Deep
-schema: 2.0.0
----
-
 # New-VSGuardDutyMaster
 
 ## SYNOPSIS
-Adds an AWS::GuardDuty::Master resource to the template
+Adds an AWS::GuardDuty::Master resource to the template.
+You can use the AWS::GuardDuty::Master resource in a GuardDuty member account to accept an invitation from a GuardDuty master account.
+The invitation to the member account must be sent prior to using the AWS::GuardDuty::Master resource to accept the master account's invitation.
+You can invite a member account by using the InviteMembers operation of the Amazon GuardDuty API, or by creating an AWS::GuardDuty::Member resource.
 
 ## SYNTAX
 
@@ -23,7 +15,19 @@ New-VSGuardDutyMaster [-LogicalId] <String> -DetectorId <Object> -MasterId <Obje
 ```
 
 ## DESCRIPTION
-Adds an AWS::GuardDuty::Master resource to the template
+Adds an AWS::GuardDuty::Master resource to the template.
+You can use the AWS::GuardDuty::Master resource in a GuardDuty member account to accept an invitation from a GuardDuty master account.
+The invitation to the member account must be sent prior to using the AWS::GuardDuty::Master resource to accept the master account's invitation.
+You can invite a member account by using the InviteMembers operation of the Amazon GuardDuty API, or by creating an AWS::GuardDuty::Member resource.
+
+## EXAMPLES
+
+### Example 1
+```powershell
+PS C:\> {{ Add example code here }}
+```
+
+{{ Add example description here }}
 
 ## PARAMETERS
 
@@ -45,9 +49,10 @@ Accept wildcard characters: False
 ```
 
 ### -DetectorId
-Required: True    
-Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-guardduty-master.html#cfn-guardduty-master-detectorid    
-PrimitiveType: String    
+The unique ID of the detector associated with the GuardDuty master account.
+
+Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-guardduty-master.html#cfn-guardduty-master-detectorid
+PrimitiveType: String
 UpdateType: Immutable
 
 ```yaml
@@ -63,9 +68,10 @@ Accept wildcard characters: False
 ```
 
 ### -MasterId
-Required: True    
-Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-guardduty-master.html#cfn-guardduty-master-masterid    
-PrimitiveType: String    
+The AWS account ID of the account designated as the GuardDuty master account.
+
+Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-guardduty-master.html#cfn-guardduty-master-masterid
+PrimitiveType: String
 UpdateType: Immutable
 
 ```yaml
@@ -81,9 +87,11 @@ Accept wildcard characters: False
 ```
 
 ### -InvitationId
-Required: False    
-Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-guardduty-master.html#cfn-guardduty-master-invitationid    
-PrimitiveType: String    
+The ID of the invitation that is sent to the account designated as a member account.
+You can find the invitation ID by using the ListInvitation action of the GuardDuty API.
+
+Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-guardduty-master.html#cfn-guardduty-master-invitationid
+PrimitiveType: String
 UpdateType: Immutable
 
 ```yaml
@@ -193,15 +201,13 @@ Accept wildcard characters: False
 ```
 
 ### CommonParameters
-This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction, and -WarningVariable.
-For more information, see about_CommonParameters (http://go.microsoft.com/fwlink/?LinkID=113216).
+This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction, and -WarningVariable. For more information, see [about_CommonParameters](http://go.microsoft.com/fwlink/?LinkID=113216).
 
 ## INPUTS
 
 ## OUTPUTS
 
 ### Vaporshell.Resource.GuardDuty.Master
-
 ## NOTES
 
 ## RELATED LINKS

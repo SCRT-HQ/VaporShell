@@ -1,18 +1,8 @@
----
-layout: glossary
-title: Add-VSS3BucketAnalyticsConfiguration
-categories: glossary
-label1: Category
-data1: Documentation
-label2: Depth
-data2: Deep
-schema: 2.0.0
----
-
 # Add-VSS3BucketAnalyticsConfiguration
 
 ## SYNOPSIS
-Adds an AWS::S3::Bucket.AnalyticsConfiguration resource property to the template
+Adds an AWS::S3::Bucket.AnalyticsConfiguration resource property to the template.
+Specifies the configuration and any analyses for the analytics filter of an Amazon S3 bucket.
 
 ## SYNTAX
 
@@ -22,14 +12,27 @@ Add-VSS3BucketAnalyticsConfiguration [-Id] <Object> [[-Prefix] <Object>] [-Stora
 ```
 
 ## DESCRIPTION
-Adds an AWS::S3::Bucket.AnalyticsConfiguration resource property to the template
+Adds an AWS::S3::Bucket.AnalyticsConfiguration resource property to the template.
+Specifies the configuration and any analyses for the analytics filter of an Amazon S3 bucket.
+
+For more information, see GET Bucket analytics: https://docs.aws.amazon.com/AmazonS3/latest/API/RESTBucketGETAnalyticsConfig.html in the *Amazon Simple Storage Service API Reference*.
+
+## EXAMPLES
+
+### Example 1
+```powershell
+PS C:\> {{ Add example code here }}
+```
+
+{{ Add example description here }}
 
 ## PARAMETERS
 
 ### -Id
-Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-s3-bucket-analyticsconfiguration.html#cfn-s3-bucket-analyticsconfiguration-id    
-PrimitiveType: String    
-Required: True    
+The ID that identifies the analytics configuration.
+
+Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-s3-bucket-analyticsconfiguration.html#cfn-s3-bucket-analyticsconfiguration-id
+PrimitiveType: String
 UpdateType: Mutable
 
 ```yaml
@@ -45,9 +48,10 @@ Accept wildcard characters: False
 ```
 
 ### -Prefix
-Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-s3-bucket-analyticsconfiguration.html#cfn-s3-bucket-analyticsconfiguration-prefix    
-PrimitiveType: String    
-Required: False    
+The prefix that an object must have to be included in the analytics results.
+
+Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-s3-bucket-analyticsconfiguration.html#cfn-s3-bucket-analyticsconfiguration-prefix
+PrimitiveType: String
 UpdateType: Mutable
 
 ```yaml
@@ -63,9 +67,10 @@ Accept wildcard characters: False
 ```
 
 ### -StorageClassAnalysis
-Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-s3-bucket-analyticsconfiguration.html#cfn-s3-bucket-analyticsconfiguration-storageclassanalysis    
-Required: True    
-Type: StorageClassAnalysis    
+Contains data related to access patterns to be collected and made available to analyze the tradeoffs between different storage classes.
+
+Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-s3-bucket-analyticsconfiguration.html#cfn-s3-bucket-analyticsconfiguration-storageclassanalysis
+Type: StorageClassAnalysis
 UpdateType: Mutable
 
 ```yaml
@@ -81,11 +86,14 @@ Accept wildcard characters: False
 ```
 
 ### -TagFilters
-Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-s3-bucket-analyticsconfiguration.html#cfn-s3-bucket-analyticsconfiguration-tagfilters    
-DuplicatesAllowed: False    
-ItemType: TagFilter    
-Required: False    
-Type: List    
+The tags to use when evaluating an analytics filter.
+The analytics only includes objects that meet the filter's criteria.
+If no filter is specified, all of the contents of the bucket are included in the analysis.
+
+Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-s3-bucket-analyticsconfiguration.html#cfn-s3-bucket-analyticsconfiguration-tagfilters
+DuplicatesAllowed: False
+ItemType: TagFilter
+Type: List
 UpdateType: Mutable
 
 ```yaml
@@ -101,15 +109,13 @@ Accept wildcard characters: False
 ```
 
 ### CommonParameters
-This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction, and -WarningVariable.
-For more information, see about_CommonParameters (http://go.microsoft.com/fwlink/?LinkID=113216).
+This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction, and -WarningVariable. For more information, see [about_CommonParameters](http://go.microsoft.com/fwlink/?LinkID=113216).
 
 ## INPUTS
 
 ## OUTPUTS
 
 ### Vaporshell.Resource.S3.Bucket.AnalyticsConfiguration
-
 ## NOTES
 
 ## RELATED LINKS

@@ -1,18 +1,8 @@
----
-layout: glossary
-title: Add-VSOpsWorksInstanceTimeBasedAutoScaling
-categories: glossary
-label1: Category
-data1: Documentation
-label2: Depth
-data2: Deep
-schema: 2.0.0
----
-
 # Add-VSOpsWorksInstanceTimeBasedAutoScaling
 
 ## SYNOPSIS
-Adds an AWS::OpsWorks::Instance.TimeBasedAutoScaling resource property to the template
+Adds an AWS::OpsWorks::Instance.TimeBasedAutoScaling resource property to the template.
+Describes an instance's time-based auto scaling configuration.
 
 ## SYNTAX
 
@@ -23,16 +13,27 @@ Add-VSOpsWorksInstanceTimeBasedAutoScaling [[-Friday] <Hashtable>] [[-Monday] <H
 ```
 
 ## DESCRIPTION
-Adds an AWS::OpsWorks::Instance.TimeBasedAutoScaling resource property to the template
+Adds an AWS::OpsWorks::Instance.TimeBasedAutoScaling resource property to the template.
+Describes an instance's time-based auto scaling configuration.
+
+## EXAMPLES
+
+### Example 1
+```powershell
+PS C:\> {{ Add example code here }}
+```
+
+{{ Add example description here }}
 
 ## PARAMETERS
 
 ### -Friday
-Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-opsworks-instance-timebasedautoscaling.html#cfn-opsworks-instance-timebasedautoscaling-friday    
-DuplicatesAllowed: False    
-PrimitiveItemType: String    
-Required: False    
-Type: Map    
+The schedule for Friday.
+
+Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-opsworks-instance-timebasedautoscaling.html#cfn-opsworks-instance-timebasedautoscaling-friday
+DuplicatesAllowed: False
+PrimitiveItemType: String
+Type: Map
 UpdateType: Mutable
 
 ```yaml
@@ -48,11 +49,12 @@ Accept wildcard characters: False
 ```
 
 ### -Monday
-Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-opsworks-instance-timebasedautoscaling.html#cfn-opsworks-instance-timebasedautoscaling-monday    
-DuplicatesAllowed: False    
-PrimitiveItemType: String    
-Required: False    
-Type: Map    
+The schedule for Monday.
+
+Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-opsworks-instance-timebasedautoscaling.html#cfn-opsworks-instance-timebasedautoscaling-monday
+DuplicatesAllowed: False
+PrimitiveItemType: String
+Type: Map
 UpdateType: Mutable
 
 ```yaml
@@ -68,11 +70,12 @@ Accept wildcard characters: False
 ```
 
 ### -Saturday
-Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-opsworks-instance-timebasedautoscaling.html#cfn-opsworks-instance-timebasedautoscaling-saturday    
-DuplicatesAllowed: False    
-PrimitiveItemType: String    
-Required: False    
-Type: Map    
+The schedule for Saturday.
+
+Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-opsworks-instance-timebasedautoscaling.html#cfn-opsworks-instance-timebasedautoscaling-saturday
+DuplicatesAllowed: False
+PrimitiveItemType: String
+Type: Map
 UpdateType: Mutable
 
 ```yaml
@@ -88,11 +91,12 @@ Accept wildcard characters: False
 ```
 
 ### -Sunday
-Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-opsworks-instance-timebasedautoscaling.html#cfn-opsworks-instance-timebasedautoscaling-sunday    
-DuplicatesAllowed: False    
-PrimitiveItemType: String    
-Required: False    
-Type: Map    
+The schedule for Sunday.
+
+Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-opsworks-instance-timebasedautoscaling.html#cfn-opsworks-instance-timebasedautoscaling-sunday
+DuplicatesAllowed: False
+PrimitiveItemType: String
+Type: Map
 UpdateType: Mutable
 
 ```yaml
@@ -108,11 +112,12 @@ Accept wildcard characters: False
 ```
 
 ### -Thursday
-Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-opsworks-instance-timebasedautoscaling.html#cfn-opsworks-instance-timebasedautoscaling-thursday    
-DuplicatesAllowed: False    
-PrimitiveItemType: String    
-Required: False    
-Type: Map    
+The schedule for Thursday.
+
+Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-opsworks-instance-timebasedautoscaling.html#cfn-opsworks-instance-timebasedautoscaling-thursday
+DuplicatesAllowed: False
+PrimitiveItemType: String
+Type: Map
 UpdateType: Mutable
 
 ```yaml
@@ -128,11 +133,12 @@ Accept wildcard characters: False
 ```
 
 ### -Tuesday
-Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-opsworks-instance-timebasedautoscaling.html#cfn-opsworks-instance-timebasedautoscaling-tuesday    
-DuplicatesAllowed: False    
-PrimitiveItemType: String    
-Required: False    
-Type: Map    
+The schedule for Tuesday.
+
+Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-opsworks-instance-timebasedautoscaling.html#cfn-opsworks-instance-timebasedautoscaling-tuesday
+DuplicatesAllowed: False
+PrimitiveItemType: String
+Type: Map
 UpdateType: Mutable
 
 ```yaml
@@ -148,11 +154,12 @@ Accept wildcard characters: False
 ```
 
 ### -Wednesday
-Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-opsworks-instance-timebasedautoscaling.html#cfn-opsworks-instance-timebasedautoscaling-wednesday    
-DuplicatesAllowed: False    
-PrimitiveItemType: String    
-Required: False    
-Type: Map    
+The schedule for Wednesday.
+
+Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-opsworks-instance-timebasedautoscaling.html#cfn-opsworks-instance-timebasedautoscaling-wednesday
+DuplicatesAllowed: False
+PrimitiveItemType: String
+Type: Map
 UpdateType: Mutable
 
 ```yaml
@@ -168,15 +175,13 @@ Accept wildcard characters: False
 ```
 
 ### CommonParameters
-This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction, and -WarningVariable.
-For more information, see about_CommonParameters (http://go.microsoft.com/fwlink/?LinkID=113216).
+This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction, and -WarningVariable. For more information, see [about_CommonParameters](http://go.microsoft.com/fwlink/?LinkID=113216).
 
 ## INPUTS
 
 ## OUTPUTS
 
 ### Vaporshell.Resource.OpsWorks.Instance.TimeBasedAutoScaling
-
 ## NOTES
 
 ## RELATED LINKS

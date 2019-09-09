@@ -1,30 +1,33 @@
----
-layout: glossary
-title: New-VSCognitoUserPoolClient
-categories: glossary
-label1: Category
-data1: Documentation
-label2: Depth
-data2: Deep
-schema: 2.0.0
----
-
 # New-VSCognitoUserPoolClient
 
 ## SYNOPSIS
-Adds an AWS::Cognito::UserPoolClient resource to the template
+Adds an AWS::Cognito::UserPoolClient resource to the template.
+The AWS::Cognito::UserPoolClient resource creates an Amazon Cognito user pool client.
 
 ## SYNTAX
 
 ```
-New-VSCognitoUserPoolClient [-LogicalId] <String> [-GenerateSecret <Boolean>] [-ClientName <Object>]
- -UserPoolId <Object> [-ExplicitAuthFlows <Object>] [-RefreshTokenValidity <Double>] [-ReadAttributes <Object>]
- [-WriteAttributes <Object>] [-DeletionPolicy <String>] [-DependsOn <String[]>] [-Metadata <Object>]
- [-UpdatePolicy <Object>] [-Condition <Object>] [<CommonParameters>]
+New-VSCognitoUserPoolClient [-LogicalId] <String> [-AnalyticsConfiguration <Object>]
+ [-GenerateSecret <Boolean>] [-CallbackURLs <Object>] [-AllowedOAuthScopes <Object>] [-ReadAttributes <Object>]
+ [-AllowedOAuthFlowsUserPoolClient <Boolean>] [-DefaultRedirectURI <Object>]
+ [-SupportedIdentityProviders <Object>] [-ClientName <Object>] -UserPoolId <Object>
+ [-AllowedOAuthFlows <Object>] [-ExplicitAuthFlows <Object>] [-LogoutURLs <Object>]
+ [-RefreshTokenValidity <Int32>] [-WriteAttributes <Object>] [-DeletionPolicy <String>] [-DependsOn <String[]>]
+ [-Metadata <Object>] [-UpdatePolicy <Object>] [-Condition <Object>] [<CommonParameters>]
 ```
 
 ## DESCRIPTION
-Adds an AWS::Cognito::UserPoolClient resource to the template
+Adds an AWS::Cognito::UserPoolClient resource to the template.
+The AWS::Cognito::UserPoolClient resource creates an Amazon Cognito user pool client.
+
+## EXAMPLES
+
+### Example 1
+```powershell
+PS C:\> {{ Add example code here }}
+```
+
+{{ Add example description here }}
 
 ## PARAMETERS
 
@@ -45,10 +48,30 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
+### -AnalyticsConfiguration
+The Amazon Pinpoint analytics configuration for collecting metrics for this user pool.
+
+Type: AnalyticsConfiguration
+Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-cognito-userpoolclient.html#cfn-cognito-userpoolclient-analyticsconfiguration
+UpdateType: Mutable
+
+```yaml
+Type: Object
+Parameter Sets: (All)
+Aliases:
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
 ### -GenerateSecret
-Required: False    
-Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-cognito-userpoolclient.html#cfn-cognito-userpoolclient-generatesecret    
-PrimitiveType: Boolean    
+Boolean to specify whether you want to generate a secret for the user pool client being created.
+
+Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-cognito-userpoolclient.html#cfn-cognito-userpoolclient-generatesecret
+PrimitiveType: Boolean
 UpdateType: Immutable
 
 ```yaml
@@ -63,10 +86,146 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
+### -CallbackURLs
+A list of allowed redirect callback URLs for the identity providers.
+A redirect URI must:
++ Be an absolute URI.
++ Be registered with the authorization server.
++ Not include a fragment component.
+See OAuth 2.0 - Redirection Endpoint: https://tools.ietf.org/html/rfc6749#section-3.1.2.
+Amazon Cognito requires HTTPS over HTTP except for http://localhost for testing purposes only.
+App callback URLs such as myapp://example are also supported.
+
+PrimitiveItemType: String
+Type: List
+Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-cognito-userpoolclient.html#cfn-cognito-userpoolclient-callbackurls
+UpdateType: Mutable
+
+```yaml
+Type: Object
+Parameter Sets: (All)
+Aliases:
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### -AllowedOAuthScopes
+A list of allowed OAuth scopes.
+Currently supported values are "phone", "email", "openid", and "Cognito".
+
+PrimitiveItemType: String
+Type: List
+Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-cognito-userpoolclient.html#cfn-cognito-userpoolclient-allowedoauthscopes
+UpdateType: Mutable
+
+```yaml
+Type: Object
+Parameter Sets: (All)
+Aliases:
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### -ReadAttributes
+The read attributes.
+
+PrimitiveItemType: String
+Type: List
+Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-cognito-userpoolclient.html#cfn-cognito-userpoolclient-readattributes
+UpdateType: Mutable
+
+```yaml
+Type: Object
+Parameter Sets: (All)
+Aliases:
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### -AllowedOAuthFlowsUserPoolClient
+Set to True if the client is allowed to follow the OAuth protocol when interacting with Cognito user pools.
+
+Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-cognito-userpoolclient.html#cfn-cognito-userpoolclient-allowedoauthflowsuserpoolclient
+PrimitiveType: Boolean
+UpdateType: Immutable
+
+```yaml
+Type: Boolean
+Parameter Sets: (All)
+Aliases:
+
+Required: False
+Position: Named
+Default value: False
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### -DefaultRedirectURI
+The default redirect URI.
+Must be in the CallbackURLs list.
+A redirect URI must:
++ Be an absolute URI.
++ Be registered with the authorization server.
++ Not include a fragment component.
+See OAuth 2.0 - Redirection Endpoint: https://tools.ietf.org/html/rfc6749#section-3.1.2.
+Amazon Cognito requires HTTPS over HTTP except for http://localhost for testing purposes only.
+App callback URLs such as myapp://example are also supported.
+
+Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-cognito-userpoolclient.html#cfn-cognito-userpoolclient-defaultredirecturi
+PrimitiveType: String
+UpdateType: Mutable
+
+```yaml
+Type: Object
+Parameter Sets: (All)
+Aliases:
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### -SupportedIdentityProviders
+A list of provider names for the identity providers that are supported on this client.
+The following are supported: COGNITO, Facebook, Google and LoginWithAmazon.
+
+PrimitiveItemType: String
+Type: List
+Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-cognito-userpoolclient.html#cfn-cognito-userpoolclient-supportedidentityproviders
+UpdateType: Mutable
+
+```yaml
+Type: Object
+Parameter Sets: (All)
+Aliases:
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
 ### -ClientName
-Required: False    
-Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-cognito-userpoolclient.html#cfn-cognito-userpoolclient-clientname    
-PrimitiveType: String    
+The client name for the user pool client you would like to create.
+
+Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-cognito-userpoolclient.html#cfn-cognito-userpoolclient-clientname
+PrimitiveType: String
 UpdateType: Mutable
 
 ```yaml
@@ -82,9 +241,10 @@ Accept wildcard characters: False
 ```
 
 ### -UserPoolId
-Required: True    
-Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-cognito-userpoolclient.html#cfn-cognito-userpoolclient-userpoolid    
-PrimitiveType: String    
+The user pool ID for the user pool where you want to create a user pool client.
+
+Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-cognito-userpoolclient.html#cfn-cognito-userpoolclient-userpoolid
+PrimitiveType: String
 UpdateType: Immutable
 
 ```yaml
@@ -99,11 +259,54 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
+### -AllowedOAuthFlows
+Set to code to initiate a code grant flow, which provides an authorization code as the response.
+This code can be exchanged for access tokens with the token endpoint.
+Set to token to specify that the client should get the access token and, optionally, ID token, based on scopes directly.
+
+PrimitiveItemType: String
+Type: List
+Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-cognito-userpoolclient.html#cfn-cognito-userpoolclient-allowedoauthflows
+UpdateType: Mutable
+
+```yaml
+Type: Object
+Parameter Sets: (All)
+Aliases:
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
 ### -ExplicitAuthFlows
-PrimitiveItemType: String    
-Type: List    
-Required: False    
-Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-cognito-userpoolclient.html#cfn-cognito-userpoolclient-explicitauthflows    
+The explicit authentication flows, which can be one of the following: ADMIN_NO_SRP_AUTH, CUSTOM_AUTH_FLOW_ONLY, or USER_PASSWORD_AUTH.
+
+PrimitiveItemType: String
+Type: List
+Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-cognito-userpoolclient.html#cfn-cognito-userpoolclient-explicitauthflows
+UpdateType: Mutable
+
+```yaml
+Type: Object
+Parameter Sets: (All)
+Aliases:
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### -LogoutURLs
+A list of allowed logout URLs for the identity providers.
+
+PrimitiveItemType: String
+Type: List
+Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-cognito-userpoolclient.html#cfn-cognito-userpoolclient-logouturls
 UpdateType: Mutable
 
 ```yaml
@@ -119,13 +322,14 @@ Accept wildcard characters: False
 ```
 
 ### -RefreshTokenValidity
-Required: False    
-Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-cognito-userpoolclient.html#cfn-cognito-userpoolclient-refreshtokenvalidity    
-PrimitiveType: Double    
+The time limit, in days, after which the refresh token is no longer valid and cannot be used.
+
+Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-cognito-userpoolclient.html#cfn-cognito-userpoolclient-refreshtokenvalidity
+PrimitiveType: Integer
 UpdateType: Mutable
 
 ```yaml
-Type: Double
+Type: Int32
 Parameter Sets: (All)
 Aliases:
 
@@ -136,30 +340,16 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
-### -ReadAttributes
-PrimitiveItemType: String    
-Type: List    
-Required: False    
-Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-cognito-userpoolclient.html#cfn-cognito-userpoolclient-readattributes    
-UpdateType: Mutable
-
-```yaml
-Type: Object
-Parameter Sets: (All)
-Aliases:
-
-Required: False
-Position: Named
-Default value: None
-Accept pipeline input: False
-Accept wildcard characters: False
-```
-
 ### -WriteAttributes
-PrimitiveItemType: String    
-Type: List    
-Required: False    
-Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-cognito-userpoolclient.html#cfn-cognito-userpoolclient-writeattributes    
+The user pool attributes that the app client can write to.
+If your app client allows users to sign in through an identity provider, this array must include all attributes that are mapped to identity provider attributes.
+Amazon Cognito updates mapped attributes when users sign in to your application through an identity provider.
+If your app client lacks write access to a mapped attribute, Amazon Cognito throws an error when it attempts to update the attribute.
+For more information, see Specifying Identity Provider Attribute Mappings for Your User Pool: https://docs.aws.amazon.com/cognito/latest/developerguide/cognito-user-pools-specifying-attribute-mapping.html.
+
+PrimitiveItemType: String
+Type: List
+Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-cognito-userpoolclient.html#cfn-cognito-userpoolclient-writeattributes
 UpdateType: Mutable
 
 ```yaml
@@ -269,15 +459,13 @@ Accept wildcard characters: False
 ```
 
 ### CommonParameters
-This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction, and -WarningVariable.
-For more information, see about_CommonParameters (http://go.microsoft.com/fwlink/?LinkID=113216).
+This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction, and -WarningVariable. For more information, see [about_CommonParameters](http://go.microsoft.com/fwlink/?LinkID=113216).
 
 ## INPUTS
 
 ## OUTPUTS
 
 ### Vaporshell.Resource.Cognito.UserPoolClient
-
 ## NOTES
 
 ## RELATED LINKS

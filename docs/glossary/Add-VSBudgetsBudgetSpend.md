@@ -1,18 +1,8 @@
----
-layout: glossary
-title: Add-VSBudgetsBudgetSpend
-categories: glossary
-label1: Category
-data1: Documentation
-label2: Depth
-data2: Deep
-schema: 2.0.0
----
-
 # Add-VSBudgetsBudgetSpend
 
 ## SYNOPSIS
-Adds an AWS::Budgets::Budget.Spend resource property to the template
+Adds an AWS::Budgets::Budget.Spend resource property to the template.
+The amount of cost or usage that is measured for a budget.
 
 ## SYNTAX
 
@@ -21,14 +11,31 @@ Add-VSBudgetsBudgetSpend [-Amount] <Double> [-Unit] <Object> [<CommonParameters>
 ```
 
 ## DESCRIPTION
-Adds an AWS::Budgets::Budget.Spend resource property to the template
+Adds an AWS::Budgets::Budget.Spend resource property to the template.
+The amount of cost or usage that is measured for a budget.
+
+For example, a Spend for 3 GB of S3 usage would have the following parameters:
+
++ An Amount of 3
+
++ A unit of GB
+
+## EXAMPLES
+
+### Example 1
+```powershell
+PS C:\> {{ Add example code here }}
+```
+
+{{ Add example description here }}
 
 ## PARAMETERS
 
 ### -Amount
-Required: True    
-Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-budgets-budget-spend.html#cfn-budgets-budget-spend-amount    
-PrimitiveType: Double    
+The cost or usage amount that is associated with a budget forecast, actual spend, or budget threshold.
+
+Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-budgets-budget-spend.html#cfn-budgets-budget-spend-amount
+PrimitiveType: Double
 UpdateType: Mutable
 
 ```yaml
@@ -44,9 +51,10 @@ Accept wildcard characters: False
 ```
 
 ### -Unit
-Required: True    
-Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-budgets-budget-spend.html#cfn-budgets-budget-spend-unit    
-PrimitiveType: String    
+The unit of measurement that is used for the budget forecast, actual spend, or budget threshold, such as dollars or GB.
+
+Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-budgets-budget-spend.html#cfn-budgets-budget-spend-unit
+PrimitiveType: String
 UpdateType: Mutable
 
 ```yaml
@@ -62,15 +70,13 @@ Accept wildcard characters: False
 ```
 
 ### CommonParameters
-This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction, and -WarningVariable.
-For more information, see about_CommonParameters (http://go.microsoft.com/fwlink/?LinkID=113216).
+This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction, and -WarningVariable. For more information, see [about_CommonParameters](http://go.microsoft.com/fwlink/?LinkID=113216).
 
 ## INPUTS
 
 ## OUTPUTS
 
 ### Vaporshell.Resource.Budgets.Budget.Spend
-
 ## NOTES
 
 ## RELATED LINKS

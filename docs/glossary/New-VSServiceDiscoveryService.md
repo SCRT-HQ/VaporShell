@@ -1,30 +1,44 @@
----
-layout: glossary
-title: New-VSServiceDiscoveryService
-categories: glossary
-label1: Category
-data1: Documentation
-label2: Depth
-data2: Deep
-schema: 2.0.0
----
-
 # New-VSServiceDiscoveryService
 
 ## SYNOPSIS
-Adds an AWS::ServiceDiscovery::Service resource to the template
+Adds an AWS::ServiceDiscovery::Service resource to the template.
+A complex type that contains information about a service, which defines the configuration of the following entities:
 
 ## SYNTAX
 
 ```
 New-VSServiceDiscoveryService [-LogicalId] <String> [-Description <Object>] [-HealthCheckCustomConfig <Object>]
- -DnsConfig <Object> [-HealthCheckConfig <Object>] [-Name <Object>] [-DeletionPolicy <String>]
- [-DependsOn <String[]>] [-Metadata <Object>] [-UpdatePolicy <Object>] [-Condition <Object>]
- [<CommonParameters>]
+ [-DnsConfig <Object>] [-NamespaceId <Object>] [-HealthCheckConfig <Object>] [-Name <Object>]
+ [-DeletionPolicy <String>] [-DependsOn <String[]>] [-Metadata <Object>] [-UpdatePolicy <Object>]
+ [-Condition <Object>] [<CommonParameters>]
 ```
 
 ## DESCRIPTION
-Adds an AWS::ServiceDiscovery::Service resource to the template
+Adds an AWS::ServiceDiscovery::Service resource to the template.
+A complex type that contains information about a service, which defines the configuration of the following entities:
+
++ For public and private DNS namespaces, one of the following combinations of DNS records in Amazon Route 53:
+
++ A
+
++ AAAA
+
++ A and AAAA
+
++ SRV
+
++ CNAME
+
++ Optionally, a health check
+
+## EXAMPLES
+
+### Example 1
+```powershell
+PS C:\> {{ Add example code here }}
+```
+
+{{ Add example description here }}
 
 ## PARAMETERS
 
@@ -46,9 +60,10 @@ Accept wildcard characters: False
 ```
 
 ### -Description
-Required: False    
-Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-servicediscovery-service.html#cfn-servicediscovery-service-description    
-PrimitiveType: String    
+The description of the service.
+
+Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-servicediscovery-service.html#cfn-servicediscovery-service-description
+PrimitiveType: String
 UpdateType: Mutable
 
 ```yaml
@@ -64,10 +79,12 @@ Accept wildcard characters: False
 ```
 
 ### -HealthCheckCustomConfig
-Type: HealthCheckCustomConfig    
-Required: False    
-Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-servicediscovery-service.html#cfn-servicediscovery-service-healthcheckcustomconfig    
-UpdateType: Mutable
+A complex type that contains information about an optional custom health check.
+If you specify a health check configuration, you can specify either HealthCheckCustomConfig or HealthCheckConfig but not both.
+
+Type: HealthCheckCustomConfig
+Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-servicediscovery-service.html#cfn-servicediscovery-service-healthcheckcustomconfig
+UpdateType: Immutable
 
 ```yaml
 Type: Object
@@ -82,9 +99,10 @@ Accept wildcard characters: False
 ```
 
 ### -DnsConfig
-Type: DnsConfig    
-Required: True    
-Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-servicediscovery-service.html#cfn-servicediscovery-service-dnsconfig    
+A complex type that contains information about the Route 53 DNS records that you want AWS Cloud Map to create when you register an instance.
+
+Type: DnsConfig
+Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-servicediscovery-service.html#cfn-servicediscovery-service-dnsconfig
 UpdateType: Mutable
 
 ```yaml
@@ -92,7 +110,26 @@ Type: Object
 Parameter Sets: (All)
 Aliases:
 
-Required: True
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### -NamespaceId
+The ID of the namespace that was used to create the service.
+
+Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-servicediscovery-service.html#cfn-servicediscovery-service-namespaceid
+PrimitiveType: String
+UpdateType: Immutable
+
+```yaml
+Type: Object
+Parameter Sets: (All)
+Aliases:
+
+Required: False
 Position: Named
 Default value: None
 Accept pipeline input: False
@@ -100,9 +137,12 @@ Accept wildcard characters: False
 ```
 
 ### -HealthCheckConfig
-Type: HealthCheckConfig    
-Required: False    
-Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-servicediscovery-service.html#cfn-servicediscovery-service-healthcheckconfig    
+*Public DNS namespaces only.* A complex type that contains settings for an optional health check.
+If you specify settings for a health check, AWS Cloud Map associates the health check with the records that you specify in DnsConfig.
+For information about the charges for health checks, see Amazon Route 53 Pricing: http://aws.amazon.com/route53/pricing/.
+
+Type: HealthCheckConfig
+Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-servicediscovery-service.html#cfn-servicediscovery-service-healthcheckconfig
 UpdateType: Mutable
 
 ```yaml
@@ -118,9 +158,10 @@ Accept wildcard characters: False
 ```
 
 ### -Name
-Required: False    
-Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-servicediscovery-service.html#cfn-servicediscovery-service-name    
-PrimitiveType: String    
+The name of the service.
+
+Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-servicediscovery-service.html#cfn-servicediscovery-service-name
+PrimitiveType: String
 UpdateType: Immutable
 
 ```yaml
@@ -230,15 +271,13 @@ Accept wildcard characters: False
 ```
 
 ### CommonParameters
-This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction, and -WarningVariable.
-For more information, see about_CommonParameters (http://go.microsoft.com/fwlink/?LinkID=113216).
+This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction, and -WarningVariable. For more information, see [about_CommonParameters](http://go.microsoft.com/fwlink/?LinkID=113216).
 
 ## INPUTS
 
 ## OUTPUTS
 
 ### Vaporshell.Resource.ServiceDiscovery.Service
-
 ## NOTES
 
 ## RELATED LINKS

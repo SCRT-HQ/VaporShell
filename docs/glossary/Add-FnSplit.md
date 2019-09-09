@@ -1,14 +1,3 @@
----
-layout: glossary
-title: Add-FnSplit
-categories: glossary
-label1: Category
-data1: Documentation
-label2: Depth
-data2: Deep
-schema: 2.0.0
----
-
 # Add-FnSplit
 
 ## SYNOPSIS
@@ -27,6 +16,15 @@ After you split a string, use the Fn::Select function to pick a specific element
 
 For example, if a comma-delimited string of subnet IDs is imported to your stack template, you can split the string at each comma.
 From the list of subnet IDs, use the Fn::Select intrinsic function to specify a subnet ID for a resource.
+
+## EXAMPLES
+
+### EXAMPLE 1
+```
+Add-FnSplit -Delimiter "," -SourceString (Add-FnImportValue -ValueToImport "AccountSubnetIds")
+```
+
+When the template is exported, this will convert to: {"Fn::Split":\[",",{"Fn::ImportValue":"AccountSubnetIds"}\]}
 
 ## PARAMETERS
 
@@ -62,15 +60,13 @@ Accept wildcard characters: False
 ```
 
 ### CommonParameters
-This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction, and -WarningVariable.
-For more information, see about_CommonParameters (http://go.microsoft.com/fwlink/?LinkID=113216).
+This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction, and -WarningVariable. For more information, see [about_CommonParameters](http://go.microsoft.com/fwlink/?LinkID=113216).
 
 ## INPUTS
 
 ## OUTPUTS
 
 ### Vaporshell.Function.Split
-
 ## NOTES
 For the Fn::Split delimiter, you cannot use any functions.
 You must specify a string value.

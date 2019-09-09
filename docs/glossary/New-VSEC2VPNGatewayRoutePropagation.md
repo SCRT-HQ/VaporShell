@@ -1,18 +1,8 @@
----
-layout: glossary
-title: New-VSEC2VPNGatewayRoutePropagation
-categories: glossary
-label1: Category
-data1: Documentation
-label2: Depth
-data2: Deep
-schema: 2.0.0
----
-
 # New-VSEC2VPNGatewayRoutePropagation
 
 ## SYNOPSIS
-Adds an AWS::EC2::VPNGatewayRoutePropagation resource to the template
+Adds an AWS::EC2::VPNGatewayRoutePropagation resource to the template.
+Enables a virtual private gateway (VGW to propagate routes to the specified route table of a VPC.
 
 ## SYNTAX
 
@@ -23,7 +13,21 @@ New-VSEC2VPNGatewayRoutePropagation [-LogicalId] <String> -RouteTableIds <Object
 ```
 
 ## DESCRIPTION
-Adds an AWS::EC2::VPNGatewayRoutePropagation resource to the template
+Adds an AWS::EC2::VPNGatewayRoutePropagation resource to the template.
+Enables a virtual private gateway (VGW to propagate routes to the specified route table of a VPC.
+
+If you reference a VPN gateway that is in the same template as your VPN gateway route propagation, you must explicitly declare a dependency on the VPN gateway attachment.
+The AWS::EC2::VPNGatewayRoutePropagation resource cannot use the VPN gateway until it has successfully attached to the VPC.
+Add a  DependsOn Attribute: https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-attribute-dependson.html in the AWS::EC2::VPNGatewayRoutePropagation resource to explicitly declare a dependency on the VPN gateway attachment.
+
+## EXAMPLES
+
+### Example 1
+```powershell
+PS C:\> {{ Add example code here }}
+```
+
+{{ Add example description here }}
 
 ## PARAMETERS
 
@@ -45,11 +49,13 @@ Accept wildcard characters: False
 ```
 
 ### -RouteTableIds
-Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ec2-vpn-gatewayrouteprop.html#cfn-ec2-vpngatewayrouteprop-routetableids    
-DuplicatesAllowed: True    
-PrimitiveItemType: String    
-Required: True    
-Type: List    
+The ID of the route table.
+The routing table must be associated with the same VPC that the virtual private gateway is attached to.
+
+Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ec2-vpn-gatewayrouteprop.html#cfn-ec2-vpngatewayrouteprop-routetableids
+DuplicatesAllowed: True
+PrimitiveItemType: String
+Type: List
 UpdateType: Mutable
 
 ```yaml
@@ -65,9 +71,11 @@ Accept wildcard characters: False
 ```
 
 ### -VpnGatewayId
-Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ec2-vpn-gatewayrouteprop.html#cfn-ec2-vpngatewayrouteprop-vpngatewayid    
-PrimitiveType: String    
-Required: True    
+The ID of the virtual private gateway that is attached to a VPC.
+The virtual private gateway must be attached to the same VPC that the routing tables are associated with.
+
+Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ec2-vpn-gatewayrouteprop.html#cfn-ec2-vpngatewayrouteprop-vpngatewayid
+PrimitiveType: String
 UpdateType: Mutable
 
 ```yaml
@@ -177,15 +185,13 @@ Accept wildcard characters: False
 ```
 
 ### CommonParameters
-This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction, and -WarningVariable.
-For more information, see about_CommonParameters (http://go.microsoft.com/fwlink/?LinkID=113216).
+This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction, and -WarningVariable. For more information, see [about_CommonParameters](http://go.microsoft.com/fwlink/?LinkID=113216).
 
 ## INPUTS
 
 ## OUTPUTS
 
 ### Vaporshell.Resource.EC2.VPNGatewayRoutePropagation
-
 ## NOTES
 
 ## RELATED LINKS

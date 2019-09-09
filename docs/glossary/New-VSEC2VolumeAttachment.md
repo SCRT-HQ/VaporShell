@@ -1,18 +1,8 @@
----
-layout: glossary
-title: New-VSEC2VolumeAttachment
-categories: glossary
-label1: Category
-data1: Documentation
-label2: Depth
-data2: Deep
-schema: 2.0.0
----
-
 # New-VSEC2VolumeAttachment
 
 ## SYNOPSIS
-Adds an AWS::EC2::VolumeAttachment resource to the template
+Adds an AWS::EC2::VolumeAttachment resource to the template.
+Attaches an Amazon EBS volume to a running instance and exposes it to the instance with the specified device name.
 
 ## SYNTAX
 
@@ -23,7 +13,25 @@ New-VSEC2VolumeAttachment [-LogicalId] <String> -Device <Object> -InstanceId <Ob
 ```
 
 ## DESCRIPTION
-Adds an AWS::EC2::VolumeAttachment resource to the template
+Adds an AWS::EC2::VolumeAttachment resource to the template.
+Attaches an Amazon EBS volume to a running instance and exposes it to the instance with the specified device name.
+
+Before this resource can be deleted (and therefore the volume detached, you must first unmount the volume in the instance.
+Failure to do so results in the volume being stuck in the busy state while it is trying to detach, which could possibly damage the file system or the data it contains.
+
+If an Amazon EBS volume is the root device of an instance, it cannot be detached while the instance is in the "running" state.
+To detach the root volume, stop the instance first.
+
+If the root volume is detached from an instance with an AWS Marketplace product code, then the AWS Marketplace product codes from that volume are no longer associated with the instance.
+
+## EXAMPLES
+
+### Example 1
+```powershell
+PS C:\> {{ Add example code here }}
+```
+
+{{ Add example description here }}
 
 ## PARAMETERS
 
@@ -45,9 +53,10 @@ Accept wildcard characters: False
 ```
 
 ### -Device
-Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-ebs-volumeattachment.html#cfn-ec2-ebs-volumeattachment-device    
-PrimitiveType: String    
-Required: True    
+The device name for example, /dev/sdh or xvdh.
+
+Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-ebs-volumeattachment.html#cfn-ec2-ebs-volumeattachment-device
+PrimitiveType: String
 UpdateType: Immutable
 
 ```yaml
@@ -63,9 +72,11 @@ Accept wildcard characters: False
 ```
 
 ### -InstanceId
-Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-ebs-volumeattachment.html#cfn-ec2-ebs-volumeattachment-instanceid    
-PrimitiveType: String    
-Required: True    
+The ID of the instance to which the volume attaches.
+This value can be a reference to an AWS::EC2::Instance resource, or it can be the physical ID of an existing EC2 instance.
+
+Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-ebs-volumeattachment.html#cfn-ec2-ebs-volumeattachment-instanceid
+PrimitiveType: String
 UpdateType: Immutable
 
 ```yaml
@@ -81,9 +92,12 @@ Accept wildcard characters: False
 ```
 
 ### -VolumeId
-Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-ebs-volumeattachment.html#cfn-ec2-ebs-volumeattachment-volumeid    
-PrimitiveType: String    
-Required: True    
+The ID of the Amazon EBS volume.
+The volume and instance must be within the same Availability Zone.
+This value can be a reference to an AWS::EC2::Volume resource, or it can be the volume ID of an existing Amazon EBS volume.
+
+Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-ebs-volumeattachment.html#cfn-ec2-ebs-volumeattachment-volumeid
+PrimitiveType: String
 UpdateType: Immutable
 
 ```yaml
@@ -193,15 +207,13 @@ Accept wildcard characters: False
 ```
 
 ### CommonParameters
-This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction, and -WarningVariable.
-For more information, see about_CommonParameters (http://go.microsoft.com/fwlink/?LinkID=113216).
+This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction, and -WarningVariable. For more information, see [about_CommonParameters](http://go.microsoft.com/fwlink/?LinkID=113216).
 
 ## INPUTS
 
 ## OUTPUTS
 
 ### Vaporshell.Resource.EC2.VolumeAttachment
-
 ## NOTES
 
 ## RELATED LINKS

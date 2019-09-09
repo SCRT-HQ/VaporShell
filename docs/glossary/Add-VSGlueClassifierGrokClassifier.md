@@ -1,18 +1,8 @@
----
-layout: glossary
-title: Add-VSGlueClassifierGrokClassifier
-categories: glossary
-label1: Category
-data1: Documentation
-label2: Depth
-data2: Deep
-schema: 2.0.0
----
-
 # Add-VSGlueClassifierGrokClassifier
 
 ## SYNOPSIS
-Adds an AWS::Glue::Classifier.GrokClassifier resource property to the template
+Adds an AWS::Glue::Classifier.GrokClassifier resource property to the template.
+A classifier that uses grok patterns.
 
 ## SYNTAX
 
@@ -22,14 +12,26 @@ Add-VSGlueClassifierGrokClassifier [[-CustomPatterns] <Object>] [-GrokPattern] <
 ```
 
 ## DESCRIPTION
-Adds an AWS::Glue::Classifier.GrokClassifier resource property to the template
+Adds an AWS::Glue::Classifier.GrokClassifier resource property to the template.
+A classifier that uses grok patterns.
+
+## EXAMPLES
+
+### Example 1
+```powershell
+PS C:\> {{ Add example code here }}
+```
+
+{{ Add example description here }}
 
 ## PARAMETERS
 
 ### -CustomPatterns
-Required: False    
-Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-glue-classifier-grokclassifier.html#cfn-glue-classifier-grokclassifier-custompatterns    
-PrimitiveType: String    
+Optional custom grok patterns defined by this classifier.
+For more information, see custom patterns in Writing Custom Classifiers: https://docs.aws.amazon.com/glue/latest/dg/custom-classifier.html.
+
+Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-glue-classifier-grokclassifier.html#cfn-glue-classifier-grokclassifier-custompatterns
+PrimitiveType: String
 UpdateType: Mutable
 
 ```yaml
@@ -45,9 +47,11 @@ Accept wildcard characters: False
 ```
 
 ### -GrokPattern
-Required: True    
-Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-glue-classifier-grokclassifier.html#cfn-glue-classifier-grokclassifier-grokpattern    
-PrimitiveType: String    
+The grok pattern applied to a data store by this classifier.
+For more information, see built-in patterns in Writing Custom Classifiers: https://docs.aws.amazon.com/glue/latest/dg/custom-classifier.html.
+
+Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-glue-classifier-grokclassifier.html#cfn-glue-classifier-grokclassifier-grokpattern
+PrimitiveType: String
 UpdateType: Mutable
 
 ```yaml
@@ -63,9 +67,10 @@ Accept wildcard characters: False
 ```
 
 ### -Classification
-Required: True    
-Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-glue-classifier-grokclassifier.html#cfn-glue-classifier-grokclassifier-classification    
-PrimitiveType: String    
+An identifier of the data format that the classifier matches, such as Twitter, JSON, Omniture logs, and so on.
+
+Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-glue-classifier-grokclassifier.html#cfn-glue-classifier-grokclassifier-classification
+PrimitiveType: String
 UpdateType: Mutable
 
 ```yaml
@@ -81,9 +86,10 @@ Accept wildcard characters: False
 ```
 
 ### -Name
-Required: False    
-Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-glue-classifier-grokclassifier.html#cfn-glue-classifier-grokclassifier-name    
-PrimitiveType: String    
+The name of the classifier.
+
+Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-glue-classifier-grokclassifier.html#cfn-glue-classifier-grokclassifier-name
+PrimitiveType: String
 UpdateType: Immutable
 
 ```yaml
@@ -99,15 +105,13 @@ Accept wildcard characters: False
 ```
 
 ### CommonParameters
-This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction, and -WarningVariable.
-For more information, see about_CommonParameters (http://go.microsoft.com/fwlink/?LinkID=113216).
+This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction, and -WarningVariable. For more information, see [about_CommonParameters](http://go.microsoft.com/fwlink/?LinkID=113216).
 
 ## INPUTS
 
 ## OUTPUTS
 
 ### Vaporshell.Resource.Glue.Classifier.GrokClassifier
-
 ## NOTES
 
 ## RELATED LINKS

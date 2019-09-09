@@ -1,18 +1,8 @@
----
-layout: glossary
-title: Add-VSCognitoIdentityPoolRoleAttachmentMappingRule
-categories: glossary
-label1: Category
-data1: Documentation
-label2: Depth
-data2: Deep
-schema: 2.0.0
----
-
 # Add-VSCognitoIdentityPoolRoleAttachmentMappingRule
 
 ## SYNOPSIS
-Adds an AWS::Cognito::IdentityPoolRoleAttachment.MappingRule resource property to the template
+Adds an AWS::Cognito::IdentityPoolRoleAttachment.MappingRule resource property to the template.
+Defines how to map a claim to a role ARN.
 
 ## SYNTAX
 
@@ -22,14 +12,26 @@ Add-VSCognitoIdentityPoolRoleAttachmentMappingRule [-MatchType] <Object> [-Value
 ```
 
 ## DESCRIPTION
-Adds an AWS::Cognito::IdentityPoolRoleAttachment.MappingRule resource property to the template
+Adds an AWS::Cognito::IdentityPoolRoleAttachment.MappingRule resource property to the template.
+Defines how to map a claim to a role ARN.
+
+## EXAMPLES
+
+### Example 1
+```powershell
+PS C:\> {{ Add example code here }}
+```
+
+{{ Add example description here }}
 
 ## PARAMETERS
 
 ### -MatchType
-Required: True    
-Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-cognito-identitypoolroleattachment-mappingrule.html#cfn-cognito-identitypoolroleattachment-mappingrule-matchtype    
-PrimitiveType: String    
+The match condition that specifies how closely the claim value in the IdP token must match Value.
+Valid values are: Equals, Contains, StartsWith, and NotEqual.
+
+Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-cognito-identitypoolroleattachment-mappingrule.html#cfn-cognito-identitypoolroleattachment-mappingrule-matchtype
+PrimitiveType: String
 UpdateType: Mutable
 
 ```yaml
@@ -45,9 +47,10 @@ Accept wildcard characters: False
 ```
 
 ### -Value
-Required: True    
-Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-cognito-identitypoolroleattachment-mappingrule.html#cfn-cognito-identitypoolroleattachment-mappingrule-value    
-PrimitiveType: String    
+A brief string that the claim must match, for example, "paid" or "yes."
+
+Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-cognito-identitypoolroleattachment-mappingrule.html#cfn-cognito-identitypoolroleattachment-mappingrule-value
+PrimitiveType: String
 UpdateType: Mutable
 
 ```yaml
@@ -63,9 +66,10 @@ Accept wildcard characters: False
 ```
 
 ### -Claim
-Required: True    
-Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-cognito-identitypoolroleattachment-mappingrule.html#cfn-cognito-identitypoolroleattachment-mappingrule-claim    
-PrimitiveType: String    
+The claim name that must be present in the token, for example, "isAdmin" or "paid."
+
+Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-cognito-identitypoolroleattachment-mappingrule.html#cfn-cognito-identitypoolroleattachment-mappingrule-claim
+PrimitiveType: String
 UpdateType: Mutable
 
 ```yaml
@@ -81,9 +85,10 @@ Accept wildcard characters: False
 ```
 
 ### -RoleARN
-Required: True    
-Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-cognito-identitypoolroleattachment-mappingrule.html#cfn-cognito-identitypoolroleattachment-mappingrule-rolearn    
-PrimitiveType: String    
+The Amazon Resource Name ARN of the role.
+
+Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-cognito-identitypoolroleattachment-mappingrule.html#cfn-cognito-identitypoolroleattachment-mappingrule-rolearn
+PrimitiveType: String
 UpdateType: Mutable
 
 ```yaml
@@ -99,15 +104,13 @@ Accept wildcard characters: False
 ```
 
 ### CommonParameters
-This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction, and -WarningVariable.
-For more information, see about_CommonParameters (http://go.microsoft.com/fwlink/?LinkID=113216).
+This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction, and -WarningVariable. For more information, see [about_CommonParameters](http://go.microsoft.com/fwlink/?LinkID=113216).
 
 ## INPUTS
 
 ## OUTPUTS
 
 ### Vaporshell.Resource.Cognito.IdentityPoolRoleAttachment.MappingRule
-
 ## NOTES
 
 ## RELATED LINKS

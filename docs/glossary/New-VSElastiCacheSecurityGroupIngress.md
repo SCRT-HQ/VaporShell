@@ -1,18 +1,9 @@
----
-layout: glossary
-title: New-VSElastiCacheSecurityGroupIngress
-categories: glossary
-label1: Category
-data1: Documentation
-label2: Depth
-data2: Deep
-schema: 2.0.0
----
-
 # New-VSElastiCacheSecurityGroupIngress
 
 ## SYNOPSIS
-Adds an AWS::ElastiCache::SecurityGroupIngress resource to the template
+Adds an AWS::ElastiCache::SecurityGroupIngress resource to the template.
+The AWS::ElastiCache::SecurityGroupIngress type authorizes ingress to a cache security group from hosts in specified Amazon EC2 security groups.
+For more information about ElastiCache security group ingress, go to AuthorizeCacheSecurityGroupIngress: https://docs.aws.amazon.com/AmazonElastiCache/latest/APIReference/API_AuthorizeCacheSecurityGroupIngress.html in the *Amazon ElastiCache API Reference Guide*.
 
 ## SYNTAX
 
@@ -24,7 +15,22 @@ New-VSElastiCacheSecurityGroupIngress [-LogicalId] <String> -CacheSecurityGroupN
 ```
 
 ## DESCRIPTION
-Adds an AWS::ElastiCache::SecurityGroupIngress resource to the template
+Adds an AWS::ElastiCache::SecurityGroupIngress resource to the template.
+The AWS::ElastiCache::SecurityGroupIngress type authorizes ingress to a cache security group from hosts in specified Amazon EC2 security groups.
+For more information about ElastiCache security group ingress, go to AuthorizeCacheSecurityGroupIngress: https://docs.aws.amazon.com/AmazonElastiCache/latest/APIReference/API_AuthorizeCacheSecurityGroupIngress.html in the *Amazon ElastiCache API Reference Guide*.
+
+**Note**
+
+Updates are not supported.
+
+## EXAMPLES
+
+### Example 1
+```powershell
+PS C:\> {{ Add example code here }}
+```
+
+{{ Add example description here }}
 
 ## PARAMETERS
 
@@ -46,9 +52,10 @@ Accept wildcard characters: False
 ```
 
 ### -CacheSecurityGroupName
-Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-elasticache-security-group-ingress.html#cfn-elasticache-securitygroupingress-cachesecuritygroupname    
-PrimitiveType: String    
-Required: True    
+The name of the Cache Security Group to authorize.
+
+Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-elasticache-security-group-ingress.html#cfn-elasticache-securitygroupingress-cachesecuritygroupname
+PrimitiveType: String
 UpdateType: Mutable
 
 ```yaml
@@ -64,9 +71,10 @@ Accept wildcard characters: False
 ```
 
 ### -EC2SecurityGroupName
-Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-elasticache-security-group-ingress.html#cfn-elasticache-securitygroupingress-ec2securitygroupname    
-PrimitiveType: String    
-Required: True    
+Name of the EC2 Security Group to include in the authorization.
+
+Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-elasticache-security-group-ingress.html#cfn-elasticache-securitygroupingress-ec2securitygroupname
+PrimitiveType: String
 UpdateType: Mutable
 
 ```yaml
@@ -82,9 +90,11 @@ Accept wildcard characters: False
 ```
 
 ### -EC2SecurityGroupOwnerId
-Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-elasticache-security-group-ingress.html#cfn-elasticache-securitygroupingress-ec2securitygroupownerid    
-PrimitiveType: String    
-Required: False    
+Specifies the AWS Account ID of the owner of the EC2 security group specified in the EC2SecurityGroupName property.
+The AWS access key ID is not an acceptable value.
+
+Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-elasticache-security-group-ingress.html#cfn-elasticache-securitygroupingress-ec2securitygroupownerid
+PrimitiveType: String
 UpdateType: Mutable
 
 ```yaml
@@ -194,15 +204,13 @@ Accept wildcard characters: False
 ```
 
 ### CommonParameters
-This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction, and -WarningVariable.
-For more information, see about_CommonParameters (http://go.microsoft.com/fwlink/?LinkID=113216).
+This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction, and -WarningVariable. For more information, see [about_CommonParameters](http://go.microsoft.com/fwlink/?LinkID=113216).
 
 ## INPUTS
 
 ## OUTPUTS
 
 ### Vaporshell.Resource.ElastiCache.SecurityGroupIngress
-
 ## NOTES
 
 ## RELATED LINKS

@@ -1,18 +1,8 @@
----
-layout: glossary
-title: Add-VSDynamoDBTableTimeToLiveSpecification
-categories: glossary
-label1: Category
-data1: Documentation
-label2: Depth
-data2: Deep
-schema: 2.0.0
----
-
 # Add-VSDynamoDBTableTimeToLiveSpecification
 
 ## SYNOPSIS
-Adds an AWS::DynamoDB::Table.TimeToLiveSpecification resource property to the template
+Adds an AWS::DynamoDB::Table.TimeToLiveSpecification resource property to the template.
+Represents the settings used to enable or disable Time to Live for the specified table.
 
 ## SYNTAX
 
@@ -21,14 +11,25 @@ Add-VSDynamoDBTableTimeToLiveSpecification [-AttributeName] <Object> [-Enabled] 
 ```
 
 ## DESCRIPTION
-Adds an AWS::DynamoDB::Table.TimeToLiveSpecification resource property to the template
+Adds an AWS::DynamoDB::Table.TimeToLiveSpecification resource property to the template.
+Represents the settings used to enable or disable Time to Live for the specified table.
+
+## EXAMPLES
+
+### Example 1
+```powershell
+PS C:\> {{ Add example code here }}
+```
+
+{{ Add example description here }}
 
 ## PARAMETERS
 
 ### -AttributeName
-Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-dynamodb-timetolivespecification.html#cfn-dynamodb-timetolivespecification-attributename    
-PrimitiveType: String    
-Required: True    
+The name of the Time to Live attribute used to store the expiration time for items in the table.
+
+Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-dynamodb-timetolivespecification.html#cfn-dynamodb-timetolivespecification-attributename
+PrimitiveType: String
 UpdateType: Mutable
 
 ```yaml
@@ -44,9 +45,10 @@ Accept wildcard characters: False
 ```
 
 ### -Enabled
-Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-dynamodb-timetolivespecification.html#cfn-dynamodb-timetolivespecification-enabled    
-PrimitiveType: Boolean    
-Required: True    
+Indicates whether Time To Live is to be enabled true or disabled false on the table.
+
+Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-dynamodb-timetolivespecification.html#cfn-dynamodb-timetolivespecification-enabled
+PrimitiveType: Boolean
 UpdateType: Mutable
 
 ```yaml
@@ -62,15 +64,13 @@ Accept wildcard characters: False
 ```
 
 ### CommonParameters
-This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction, and -WarningVariable.
-For more information, see about_CommonParameters (http://go.microsoft.com/fwlink/?LinkID=113216).
+This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction, and -WarningVariable. For more information, see [about_CommonParameters](http://go.microsoft.com/fwlink/?LinkID=113216).
 
 ## INPUTS
 
 ## OUTPUTS
 
 ### Vaporshell.Resource.DynamoDB.Table.TimeToLiveSpecification
-
 ## NOTES
 
 ## RELATED LINKS

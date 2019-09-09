@@ -1,18 +1,10 @@
----
-layout: glossary
-title: New-VSSSMResourceDataSync
-categories: glossary
-label1: Category
-data1: Documentation
-label2: Depth
-data2: Deep
-schema: 2.0.0
----
-
 # New-VSSSMResourceDataSync
 
 ## SYNOPSIS
-Adds an AWS::SSM::ResourceDataSync resource to the template
+Adds an AWS::SSM::ResourceDataSync resource to the template.
+The AWS::SSM::ResourceDataSync resource creates or deletes a Resource Data Sync for AWS Systems Manager Inventory.
+You can use Resource Data Sync to send Inventory data collected from all of your Systems Manager managed instances to a single Amazon S3 bucket that you have already created in your account.
+Resource Data Sync then automatically updates the centralized data when new Inventory data is collected.
 
 ## SYNTAX
 
@@ -24,7 +16,21 @@ New-VSSSMResourceDataSync [-LogicalId] <String> [-KMSKeyArn <Object>] -BucketNam
 ```
 
 ## DESCRIPTION
-Adds an AWS::SSM::ResourceDataSync resource to the template
+Adds an AWS::SSM::ResourceDataSync resource to the template.
+The AWS::SSM::ResourceDataSync resource creates or deletes a Resource Data Sync for AWS Systems Manager Inventory.
+You can use Resource Data Sync to send Inventory data collected from all of your Systems Manager managed instances to a single Amazon S3 bucket that you have already created in your account.
+Resource Data Sync then automatically updates the centralized data when new Inventory data is collected.
+
+For more information, see Configuring Inventory Collection: https://docs.aws.amazon.com/systems-manager/latest/userguide/sysman-inventory-configuring.html#sysman-inventory-datasync in the *AWS Systems Manager User Guide*.
+
+## EXAMPLES
+
+### Example 1
+```powershell
+PS C:\> {{ Add example code here }}
+```
+
+{{ Add example description here }}
 
 ## PARAMETERS
 
@@ -46,9 +52,12 @@ Accept wildcard characters: False
 ```
 
 ### -KMSKeyArn
-Required: False    
-Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ssm-resourcedatasync.html#cfn-ssm-resourcedatasync-kmskeyarn    
-PrimitiveType: String    
+The ARN of an encryption key for a destination in Amazon S3.
+You can use a KMS key to encrypt inventory data in Amazon S3.
+You must specify a key that exist in the same region as the destination Amazon S3 bucket.
+
+Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ssm-resourcedatasync.html#cfn-ssm-resourcedatasync-kmskeyarn
+PrimitiveType: String
 UpdateType: Immutable
 
 ```yaml
@@ -64,9 +73,10 @@ Accept wildcard characters: False
 ```
 
 ### -BucketName
-Required: True    
-Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ssm-resourcedatasync.html#cfn-ssm-resourcedatasync-bucketname    
-PrimitiveType: String    
+The name of the Amazon S3 bucket where the aggregated data is stored.
+
+Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ssm-resourcedatasync.html#cfn-ssm-resourcedatasync-bucketname
+PrimitiveType: String
 UpdateType: Immutable
 
 ```yaml
@@ -82,9 +92,10 @@ Accept wildcard characters: False
 ```
 
 ### -BucketRegion
-Required: True    
-Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ssm-resourcedatasync.html#cfn-ssm-resourcedatasync-bucketregion    
-PrimitiveType: String    
+The AWS Region with the Amazon S3 bucket targeted by the Resource Data Sync.
+
+Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ssm-resourcedatasync.html#cfn-ssm-resourcedatasync-bucketregion
+PrimitiveType: String
 UpdateType: Immutable
 
 ```yaml
@@ -100,9 +111,11 @@ Accept wildcard characters: False
 ```
 
 ### -SyncFormat
-Required: True    
-Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ssm-resourcedatasync.html#cfn-ssm-resourcedatasync-syncformat    
-PrimitiveType: String    
+A supported sync format.
+The following format is currently supported: JsonSerDe
+
+Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ssm-resourcedatasync.html#cfn-ssm-resourcedatasync-syncformat
+PrimitiveType: String
 UpdateType: Immutable
 
 ```yaml
@@ -118,9 +131,10 @@ Accept wildcard characters: False
 ```
 
 ### -SyncName
-Required: True    
-Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ssm-resourcedatasync.html#cfn-ssm-resourcedatasync-syncname    
-PrimitiveType: String    
+A name for the Resource Data Sync.
+
+Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ssm-resourcedatasync.html#cfn-ssm-resourcedatasync-syncname
+PrimitiveType: String
 UpdateType: Immutable
 
 ```yaml
@@ -136,9 +150,10 @@ Accept wildcard characters: False
 ```
 
 ### -BucketPrefix
-Required: False    
-Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ssm-resourcedatasync.html#cfn-ssm-resourcedatasync-bucketprefix    
-PrimitiveType: String    
+An Amazon S3 prefix for the bucket.
+
+Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ssm-resourcedatasync.html#cfn-ssm-resourcedatasync-bucketprefix
+PrimitiveType: String
 UpdateType: Immutable
 
 ```yaml
@@ -248,15 +263,13 @@ Accept wildcard characters: False
 ```
 
 ### CommonParameters
-This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction, and -WarningVariable.
-For more information, see about_CommonParameters (http://go.microsoft.com/fwlink/?LinkID=113216).
+This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction, and -WarningVariable. For more information, see [about_CommonParameters](http://go.microsoft.com/fwlink/?LinkID=113216).
 
 ## INPUTS
 
 ## OUTPUTS
 
 ### Vaporshell.Resource.SSM.ResourceDataSync
-
 ## NOTES
 
 ## RELATED LINKS

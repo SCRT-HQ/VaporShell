@@ -1,18 +1,9 @@
----
-layout: glossary
-title: New-VSEFSMountTarget
-categories: glossary
-label1: Category
-data1: Documentation
-label2: Depth
-data2: Deep
-schema: 2.0.0
----
-
 # New-VSEFSMountTarget
 
 ## SYNOPSIS
-Adds an AWS::EFS::MountTarget resource to the template
+Adds an AWS::EFS::MountTarget resource to the template.
+The AWS::EFS::MountTarget resource is an Amazon EFS resource that creates a mount target for an EFS file system.
+You can then mount the file system on Amazon EC2 instances or other resources by using the mount target.
 
 ## SYNTAX
 
@@ -23,7 +14,18 @@ New-VSEFSMountTarget [-LogicalId] <String> -FileSystemId <Object> [-IpAddress <O
 ```
 
 ## DESCRIPTION
-Adds an AWS::EFS::MountTarget resource to the template
+Adds an AWS::EFS::MountTarget resource to the template.
+The AWS::EFS::MountTarget resource is an Amazon EFS resource that creates a mount target for an EFS file system.
+You can then mount the file system on Amazon EC2 instances or other resources by using the mount target.
+
+## EXAMPLES
+
+### Example 1
+```powershell
+PS C:\> {{ Add example code here }}
+```
+
+{{ Add example description here }}
 
 ## PARAMETERS
 
@@ -45,9 +47,10 @@ Accept wildcard characters: False
 ```
 
 ### -FileSystemId
-Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-efs-mounttarget.html#cfn-efs-mounttarget-filesystemid    
-PrimitiveType: String    
-Required: True    
+The ID of the file system for which to create the mount target.
+
+Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-efs-mounttarget.html#cfn-efs-mounttarget-filesystemid
+PrimitiveType: String
 UpdateType: Immutable
 
 ```yaml
@@ -63,9 +66,10 @@ Accept wildcard characters: False
 ```
 
 ### -IpAddress
-Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-efs-mounttarget.html#cfn-efs-mounttarget-ipaddress    
-PrimitiveType: String    
-Required: False    
+Valid IPv4 address within the address range of the specified subnet.
+
+Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-efs-mounttarget.html#cfn-efs-mounttarget-ipaddress
+PrimitiveType: String
 UpdateType: Immutable
 
 ```yaml
@@ -81,11 +85,13 @@ Accept wildcard characters: False
 ```
 
 ### -SecurityGroups
-Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-efs-mounttarget.html#cfn-efs-mounttarget-securitygroups    
-DuplicatesAllowed: False    
-PrimitiveItemType: String    
-Required: True    
-Type: List    
+Up to five VPC security group IDs, of the form sg-xxxxxxxx.
+These must be for the same VPC as subnet specified.
+
+Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-efs-mounttarget.html#cfn-efs-mounttarget-securitygroups
+DuplicatesAllowed: False
+PrimitiveItemType: String
+Type: List
 UpdateType: Mutable
 
 ```yaml
@@ -101,9 +107,10 @@ Accept wildcard characters: False
 ```
 
 ### -SubnetId
-Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-efs-mounttarget.html#cfn-efs-mounttarget-subnetid    
-PrimitiveType: String    
-Required: True    
+The ID of the subnet to add the mount target in.
+
+Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-efs-mounttarget.html#cfn-efs-mounttarget-subnetid
+PrimitiveType: String
 UpdateType: Immutable
 
 ```yaml
@@ -213,15 +220,13 @@ Accept wildcard characters: False
 ```
 
 ### CommonParameters
-This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction, and -WarningVariable.
-For more information, see about_CommonParameters (http://go.microsoft.com/fwlink/?LinkID=113216).
+This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction, and -WarningVariable. For more information, see [about_CommonParameters](http://go.microsoft.com/fwlink/?LinkID=113216).
 
 ## INPUTS
 
 ## OUTPUTS
 
 ### Vaporshell.Resource.EFS.MountTarget
-
 ## NOTES
 
 ## RELATED LINKS

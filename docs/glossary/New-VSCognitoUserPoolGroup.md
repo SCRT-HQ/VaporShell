@@ -1,18 +1,8 @@
----
-layout: glossary
-title: New-VSCognitoUserPoolGroup
-categories: glossary
-label1: Category
-data1: Documentation
-label2: Depth
-data2: Deep
-schema: 2.0.0
----
-
 # New-VSCognitoUserPoolGroup
 
 ## SYNOPSIS
-Adds an AWS::Cognito::UserPoolGroup resource to the template
+Adds an AWS::Cognito::UserPoolGroup resource to the template.
+The AWS::Cognito::UserPoolGroup resource creates a user group in an Amazon Cognito user pool.
 
 ## SYNTAX
 
@@ -24,7 +14,17 @@ New-VSCognitoUserPoolGroup [-LogicalId] <String> [-GroupName <Object>] [-Descrip
 ```
 
 ## DESCRIPTION
-Adds an AWS::Cognito::UserPoolGroup resource to the template
+Adds an AWS::Cognito::UserPoolGroup resource to the template.
+The AWS::Cognito::UserPoolGroup resource creates a user group in an Amazon Cognito user pool.
+
+## EXAMPLES
+
+### Example 1
+```powershell
+PS C:\> {{ Add example code here }}
+```
+
+{{ Add example description here }}
 
 ## PARAMETERS
 
@@ -46,9 +46,11 @@ Accept wildcard characters: False
 ```
 
 ### -GroupName
-Required: False    
-Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-cognito-userpoolgroup.html#cfn-cognito-userpoolgroup-groupname    
-PrimitiveType: String    
+The name of the group.
+Must be unique.
+
+Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-cognito-userpoolgroup.html#cfn-cognito-userpoolgroup-groupname
+PrimitiveType: String
 UpdateType: Immutable
 
 ```yaml
@@ -64,9 +66,10 @@ Accept wildcard characters: False
 ```
 
 ### -Description
-Required: False    
-Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-cognito-userpoolgroup.html#cfn-cognito-userpoolgroup-description    
-PrimitiveType: String    
+A string containing the description of the group.
+
+Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-cognito-userpoolgroup.html#cfn-cognito-userpoolgroup-description
+PrimitiveType: String
 UpdateType: Mutable
 
 ```yaml
@@ -82,9 +85,10 @@ Accept wildcard characters: False
 ```
 
 ### -UserPoolId
-Required: True    
-Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-cognito-userpoolgroup.html#cfn-cognito-userpoolgroup-userpoolid    
-PrimitiveType: String    
+The user pool ID for the user pool.
+
+Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-cognito-userpoolgroup.html#cfn-cognito-userpoolgroup-userpoolid
+PrimitiveType: String
 UpdateType: Immutable
 
 ```yaml
@@ -100,9 +104,18 @@ Accept wildcard characters: False
 ```
 
 ### -Precedence
-Required: False    
-Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-cognito-userpoolgroup.html#cfn-cognito-userpoolgroup-precedence    
-PrimitiveType: Double    
+A nonnegative integer value that specifies the precedence of this group relative to the other groups that a user can belong to in the user pool.
+Zero is the highest precedence value.
+Groups with lower Precedence values take precedence over groups with higher or null Precedence values.
+If a user belongs to two or more groups, it is the group with the lowest precedence value whose role ARN will be used in the cognito:roles and cognito:preferred_role claims in the user's tokens.
+Two groups can have the same Precedence value.
+If this happens, neither group takes precedence over the other.
+If two groups with the same Precedence have the same role ARN, that role is used in the cognito:preferred_role claim in tokens for users in each group.
+If the two groups have different role ARNs, the cognito:preferred_role claim is not set in users' tokens.
+The default Precedence value is null.
+
+Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-cognito-userpoolgroup.html#cfn-cognito-userpoolgroup-precedence
+PrimitiveType: Double
 UpdateType: Mutable
 
 ```yaml
@@ -118,9 +131,10 @@ Accept wildcard characters: False
 ```
 
 ### -RoleArn
-Required: False    
-Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-cognito-userpoolgroup.html#cfn-cognito-userpoolgroup-rolearn    
-PrimitiveType: String    
+The role ARN for the group.
+
+Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-cognito-userpoolgroup.html#cfn-cognito-userpoolgroup-rolearn
+PrimitiveType: String
 UpdateType: Mutable
 
 ```yaml
@@ -230,15 +244,13 @@ Accept wildcard characters: False
 ```
 
 ### CommonParameters
-This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction, and -WarningVariable.
-For more information, see about_CommonParameters (http://go.microsoft.com/fwlink/?LinkID=113216).
+This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction, and -WarningVariable. For more information, see [about_CommonParameters](http://go.microsoft.com/fwlink/?LinkID=113216).
 
 ## INPUTS
 
 ## OUTPUTS
 
 ### Vaporshell.Resource.Cognito.UserPoolGroup
-
 ## NOTES
 
 ## RELATED LINKS

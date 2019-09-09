@@ -1,18 +1,8 @@
----
-layout: glossary
-title: New-VSApiGatewayDomainName
-categories: glossary
-label1: Category
-data1: Documentation
-label2: Depth
-data2: Deep
-schema: 2.0.0
----
-
 # New-VSApiGatewayDomainName
 
 ## SYNOPSIS
-Adds an AWS::ApiGateway::DomainName resource to the template
+Adds an AWS::ApiGateway::DomainName resource to the template.
+The AWS::ApiGateway::DomainName resource specifies a custom domain name for your API in API Gateway.
 
 ## SYNTAX
 
@@ -24,7 +14,20 @@ New-VSApiGatewayDomainName [-LogicalId] <String> [-CertificateArn <Object>] -Dom
 ```
 
 ## DESCRIPTION
-Adds an AWS::ApiGateway::DomainName resource to the template
+Adds an AWS::ApiGateway::DomainName resource to the template.
+The AWS::ApiGateway::DomainName resource specifies a custom domain name for your API in API Gateway.
+
+You can use a custom domain name to provide a URL that's more intuitive and easier to recall.
+For more information about using custom domain names, see Set up Custom Domain Name for an API in API Gateway: https://docs.aws.amazon.com/apigateway/latest/developerguide/how-to-custom-domains.html in the *API Gateway Developer Guide*.
+
+## EXAMPLES
+
+### Example 1
+```powershell
+PS C:\> {{ Add example code here }}
+```
+
+{{ Add example description here }}
 
 ## PARAMETERS
 
@@ -46,9 +49,12 @@ Accept wildcard characters: False
 ```
 
 ### -CertificateArn
-Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-apigateway-domainname.html#cfn-apigateway-domainname-certificatearn    
-PrimitiveType: String    
-Required: False    
+The reference to an AWS-managed certificate for use by the edge-optimized endpoint for this domain name.
+AWS Certificate Manager is the only supported source.
+For requirements and additional information about setting up certificates, see Get Certificates Ready in AWS Certificate Manager: https://docs.aws.amazon.com/apigateway/latest/developerguide/how-to-custom-domains.html#how-to-custom-domains-prerequisites in the *API Gateway Developer Guide*.
+
+Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-apigateway-domainname.html#cfn-apigateway-domainname-certificatearn
+PrimitiveType: String
 UpdateType: Mutable
 
 ```yaml
@@ -64,9 +70,11 @@ Accept wildcard characters: False
 ```
 
 ### -DomainName
-Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-apigateway-domainname.html#cfn-apigateway-domainname-domainname    
-PrimitiveType: String    
-Required: True    
+The custom domain name for your API.
+Uppercase letters are not supported.
+
+Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-apigateway-domainname.html#cfn-apigateway-domainname-domainname
+PrimitiveType: String
 UpdateType: Immutable
 
 ```yaml
@@ -82,9 +90,10 @@ Accept wildcard characters: False
 ```
 
 ### -EndpointConfiguration
-Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-apigateway-domainname.html#cfn-apigateway-domainname-endpointconfiguration    
-Required: False    
-Type: EndpointConfiguration    
+A list of the endpoint types of the domain name.
+
+Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-apigateway-domainname.html#cfn-apigateway-domainname-endpointconfiguration
+Type: EndpointConfiguration
 UpdateType: Mutable
 
 ```yaml
@@ -100,9 +109,11 @@ Accept wildcard characters: False
 ```
 
 ### -RegionalCertificateArn
-Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-apigateway-domainname.html#cfn-apigateway-domainname-regionalcertificatearn    
-PrimitiveType: String    
-Required: False    
+The reference to an AWS-managed certificate for use by the regional endpoint for the domain name.
+AWS Certificate Manager is the only supported source.
+
+Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-apigateway-domainname.html#cfn-apigateway-domainname-regionalcertificatearn
+PrimitiveType: String
 UpdateType: Mutable
 
 ```yaml
@@ -212,15 +223,13 @@ Accept wildcard characters: False
 ```
 
 ### CommonParameters
-This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction, and -WarningVariable.
-For more information, see about_CommonParameters (http://go.microsoft.com/fwlink/?LinkID=113216).
+This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction, and -WarningVariable. For more information, see [about_CommonParameters](http://go.microsoft.com/fwlink/?LinkID=113216).
 
 ## INPUTS
 
 ## OUTPUTS
 
 ### Vaporshell.Resource.ApiGateway.DomainName
-
 ## NOTES
 
 ## RELATED LINKS

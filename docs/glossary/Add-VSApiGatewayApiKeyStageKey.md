@@ -1,18 +1,9 @@
----
-layout: glossary
-title: Add-VSApiGatewayApiKeyStageKey
-categories: glossary
-label1: Category
-data1: Documentation
-label2: Depth
-data2: Deep
-schema: 2.0.0
----
-
 # Add-VSApiGatewayApiKeyStageKey
 
 ## SYNOPSIS
-Adds an AWS::ApiGateway::ApiKey.StageKey resource property to the template
+Adds an AWS::ApiGateway::ApiKey.StageKey resource property to the template.
+StageKey is a property of the AWS::ApiGateway::ApiKey: https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-apigateway-apikey.html resource that specifies the stage to associate with the API key.
+This association allows only clients with the key to make requests to methods in that stage.
 
 ## SYNTAX
 
@@ -21,14 +12,26 @@ Add-VSApiGatewayApiKeyStageKey [[-RestApiId] <Object>] [[-StageName] <Object>] [
 ```
 
 ## DESCRIPTION
-Adds an AWS::ApiGateway::ApiKey.StageKey resource property to the template
+Adds an AWS::ApiGateway::ApiKey.StageKey resource property to the template.
+StageKey is a property of the AWS::ApiGateway::ApiKey: https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-apigateway-apikey.html resource that specifies the stage to associate with the API key.
+This association allows only clients with the key to make requests to methods in that stage.
+
+## EXAMPLES
+
+### Example 1
+```powershell
+PS C:\> {{ Add example code here }}
+```
+
+{{ Add example description here }}
 
 ## PARAMETERS
 
 ### -RestApiId
-Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-apigateway-apikey-stagekey.html#cfn-apigateway-apikey-stagekey-restapiid    
-PrimitiveType: String    
-Required: False    
+The ID of a RestApi resource that includes the stage with which you want to associate the API key.
+
+Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-apigateway-apikey-stagekey.html#cfn-apigateway-apikey-stagekey-restapiid
+PrimitiveType: String
 UpdateType: Mutable
 
 ```yaml
@@ -44,9 +47,11 @@ Accept wildcard characters: False
 ```
 
 ### -StageName
-Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-apigateway-apikey-stagekey.html#cfn-apigateway-apikey-stagekey-stagename    
-PrimitiveType: String    
-Required: False    
+The name of the stage with which to associate the API key.
+The stage must be included in the RestApi resource that you specified in the RestApiId property.
+
+Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-apigateway-apikey-stagekey.html#cfn-apigateway-apikey-stagekey-stagename
+PrimitiveType: String
 UpdateType: Mutable
 
 ```yaml
@@ -62,15 +67,13 @@ Accept wildcard characters: False
 ```
 
 ### CommonParameters
-This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction, and -WarningVariable.
-For more information, see about_CommonParameters (http://go.microsoft.com/fwlink/?LinkID=113216).
+This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction, and -WarningVariable. For more information, see [about_CommonParameters](http://go.microsoft.com/fwlink/?LinkID=113216).
 
 ## INPUTS
 
 ## OUTPUTS
 
 ### Vaporshell.Resource.ApiGateway.ApiKey.StageKey
-
 ## NOTES
 
 ## RELATED LINKS

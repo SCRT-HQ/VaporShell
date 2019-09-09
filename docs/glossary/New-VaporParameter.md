@@ -1,14 +1,3 @@
----
-layout: glossary
-title: New-VaporParameter
-categories: glossary
-label1: Category
-data1: Documentation
-label2: Depth
-data2: Deep
-schema: 2.0.0
----
-
 # New-VaporParameter
 
 ## SYNOPSIS
@@ -46,6 +35,43 @@ AWS-specific parameter types are helpful in catching invalid values at the start
 ** Important **
     For sensitive parameter values (such as passwords), set the NoEcho property to true.
 That way, whenever anyone describes your stack, the parameter value is shown as asterisks (*****).
+
+## EXAMPLES
+
+### EXAMPLE 1
+```
+$template = Initialize-Vaporshell -Description "Testing Mapping addition"
+```
+
+$template.AddParameter(
+    (New-VaporParameter -LogicalId "DBPort" -Default 3306 -Description "TCP/IP port for the Propertiesbase" -Type "Number" -MinValue 1150 -MaxValue 65535),
+    (New-VaporParameter -LogicalId "DBPwd" -NoEcho -Description "The Propertiesbase admin account password" -Type "String" -MinLength 1 -MaxLength 41 -AllowedPattern "^\[a-zA-Z0-9\]*$")
+)
+
+When the template is exported, this will convert to: 
+    {
+        "AWSTemplateFormatVersion":  "2010-09-09",
+        "Description":  "Testing Mapping addition",
+        "Parameters":  {
+            "DBPwd":  {
+                "Type":  "String",
+                "NoEcho":  {
+                    "IsPresent":  true
+                },
+                "Description":  "The Propertiesbase admin account password",
+                "MinLength":  1,
+                "MaxLength":  41,
+                "AllowedPattern":  "^\[a-zA-Z0-9\]*$"
+            },
+            "DBPort":  {
+                "Type":  "Number",
+                "Default":  "3306",
+                "Description":  "TCP/IP port for the Propertiesbase",
+                "MinValue":  1150,
+                "MaxValue":  65535
+            }
+        }
+    }
 
 ## PARAMETERS
 
@@ -339,15 +365,13 @@ Accept wildcard characters: False
 ```
 
 ### CommonParameters
-This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction, and -WarningVariable.
-For more information, see about_CommonParameters (http://go.microsoft.com/fwlink/?LinkID=113216).
+This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction, and -WarningVariable. For more information, see [about_CommonParameters](http://go.microsoft.com/fwlink/?LinkID=113216).
 
 ## INPUTS
 
 ## OUTPUTS
 
 ### Vaporshell.Parameter
-
 ## NOTES
 
 ## RELATED LINKS

@@ -1,18 +1,8 @@
----
-layout: glossary
-title: Add-VSAppSyncDataSourceElasticsearchConfig
-categories: glossary
-label1: Category
-data1: Documentation
-label2: Depth
-data2: Deep
-schema: 2.0.0
----
-
 # Add-VSAppSyncDataSourceElasticsearchConfig
 
 ## SYNOPSIS
-Adds an AWS::AppSync::DataSource.ElasticsearchConfig resource property to the template
+Adds an AWS::AppSync::DataSource.ElasticsearchConfig resource property to the template.
+The ElasticsearchConfig property type specifies the AwsRegion and Endpoints for an Amazon Elasticsearch Service domain in your account for an AWS AppSync data source.
 
 ## SYNTAX
 
@@ -21,14 +11,27 @@ Add-VSAppSyncDataSourceElasticsearchConfig [-AwsRegion] <Object> [-Endpoint] <Ob
 ```
 
 ## DESCRIPTION
-Adds an AWS::AppSync::DataSource.ElasticsearchConfig resource property to the template
+Adds an AWS::AppSync::DataSource.ElasticsearchConfig resource property to the template.
+The ElasticsearchConfig property type specifies the AwsRegion and Endpoints for an Amazon Elasticsearch Service domain in your account for an AWS AppSync data source.
+
+ElasticsearchConfig is a property of the AWS::AppSync::DataSource: https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-appsync-datasource.html property type.
+
+## EXAMPLES
+
+### Example 1
+```powershell
+PS C:\> {{ Add example code here }}
+```
+
+{{ Add example description here }}
 
 ## PARAMETERS
 
 ### -AwsRegion
-Required: True    
-Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-appsync-datasource-elasticsearchconfig.html#cfn-appsync-datasource-elasticsearchconfig-awsregion    
-PrimitiveType: String    
+The AWS Region.
+
+Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-appsync-datasource-elasticsearchconfig.html#cfn-appsync-datasource-elasticsearchconfig-awsregion
+PrimitiveType: String
 UpdateType: Mutable
 
 ```yaml
@@ -44,9 +47,10 @@ Accept wildcard characters: False
 ```
 
 ### -Endpoint
-Required: True    
-Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-appsync-datasource-elasticsearchconfig.html#cfn-appsync-datasource-elasticsearchconfig-endpoint    
-PrimitiveType: String    
+The endpoint.
+
+Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-appsync-datasource-elasticsearchconfig.html#cfn-appsync-datasource-elasticsearchconfig-endpoint
+PrimitiveType: String
 UpdateType: Mutable
 
 ```yaml
@@ -62,15 +66,13 @@ Accept wildcard characters: False
 ```
 
 ### CommonParameters
-This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction, and -WarningVariable.
-For more information, see about_CommonParameters (http://go.microsoft.com/fwlink/?LinkID=113216).
+This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction, and -WarningVariable. For more information, see [about_CommonParameters](http://go.microsoft.com/fwlink/?LinkID=113216).
 
 ## INPUTS
 
 ## OUTPUTS
 
 ### Vaporshell.Resource.AppSync.DataSource.ElasticsearchConfig
-
 ## NOTES
 
 ## RELATED LINKS

@@ -1,18 +1,8 @@
----
-layout: glossary
-title: New-VSGuardDutyFilter
-categories: glossary
-label1: Category
-data1: Documentation
-label2: Depth
-data2: Deep
-schema: 2.0.0
----
-
 # New-VSGuardDutyFilter
 
 ## SYNOPSIS
-Adds an AWS::GuardDuty::Filter resource to the template
+Adds an AWS::GuardDuty::Filter resource to the template.
+The AWS::GuardDuty::Filter resource specifies a new filter defined by the provided findingCriteria.
 
 ## SYNTAX
 
@@ -23,7 +13,17 @@ New-VSGuardDutyFilter [-LogicalId] <String> -Action <Object> -Description <Objec
 ```
 
 ## DESCRIPTION
-Adds an AWS::GuardDuty::Filter resource to the template
+Adds an AWS::GuardDuty::Filter resource to the template.
+The AWS::GuardDuty::Filter resource specifies a new filter defined by the provided findingCriteria.
+
+## EXAMPLES
+
+### Example 1
+```powershell
+PS C:\> {{ Add example code here }}
+```
+
+{{ Add example description here }}
 
 ## PARAMETERS
 
@@ -45,9 +45,10 @@ Accept wildcard characters: False
 ```
 
 ### -Action
-Required: True    
-Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-guardduty-filter.html#cfn-guardduty-filter-action    
-PrimitiveType: String    
+Specifies the action that is to be applied to the findings that match the filter.
+
+Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-guardduty-filter.html#cfn-guardduty-filter-action
+PrimitiveType: String
 UpdateType: Mutable
 
 ```yaml
@@ -63,9 +64,10 @@ Accept wildcard characters: False
 ```
 
 ### -Description
-Required: True    
-Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-guardduty-filter.html#cfn-guardduty-filter-description    
-PrimitiveType: String    
+The description of the filter.
+
+Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-guardduty-filter.html#cfn-guardduty-filter-description
+PrimitiveType: String
 UpdateType: Mutable
 
 ```yaml
@@ -81,9 +83,10 @@ Accept wildcard characters: False
 ```
 
 ### -DetectorId
-Required: True    
-Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-guardduty-filter.html#cfn-guardduty-filter-detectorid    
-PrimitiveType: String    
+The ID of the detector to associate the Filter with.
+
+Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-guardduty-filter.html#cfn-guardduty-filter-detectorid
+PrimitiveType: String
 UpdateType: Immutable
 
 ```yaml
@@ -99,9 +102,10 @@ Accept wildcard characters: False
 ```
 
 ### -FindingCriteria
-Type: FindingCriteria    
-Required: True    
-Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-guardduty-filter.html#cfn-guardduty-filter-findingcriteria    
+Represents the criteria to be used in the filter for querying findings.
+
+Type: FindingCriteria
+Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-guardduty-filter.html#cfn-guardduty-filter-findingcriteria
 UpdateType: Mutable
 
 ```yaml
@@ -117,9 +121,11 @@ Accept wildcard characters: False
 ```
 
 ### -Rank
-Required: True    
-Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-guardduty-filter.html#cfn-guardduty-filter-rank    
-PrimitiveType: Integer    
+Specifies the position of the filter in the list of current filters.
+Also specifies the order in which this filter is applied to the findings.
+
+Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-guardduty-filter.html#cfn-guardduty-filter-rank
+PrimitiveType: Integer
 UpdateType: Mutable
 
 ```yaml
@@ -135,9 +141,10 @@ Accept wildcard characters: False
 ```
 
 ### -Name
-Required: False    
-Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-guardduty-filter.html#cfn-guardduty-filter-name    
-PrimitiveType: String    
+The name of the filter.
+
+Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-guardduty-filter.html#cfn-guardduty-filter-name
+PrimitiveType: String
 UpdateType: Immutable
 
 ```yaml
@@ -247,15 +254,13 @@ Accept wildcard characters: False
 ```
 
 ### CommonParameters
-This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction, and -WarningVariable.
-For more information, see about_CommonParameters (http://go.microsoft.com/fwlink/?LinkID=113216).
+This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction, and -WarningVariable. For more information, see [about_CommonParameters](http://go.microsoft.com/fwlink/?LinkID=113216).
 
 ## INPUTS
 
 ## OUTPUTS
 
 ### Vaporshell.Resource.GuardDuty.Filter
-
 ## NOTES
 
 ## RELATED LINKS

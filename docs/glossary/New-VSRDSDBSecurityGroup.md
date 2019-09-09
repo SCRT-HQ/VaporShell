@@ -1,18 +1,8 @@
----
-layout: glossary
-title: New-VSRDSDBSecurityGroup
-categories: glossary
-label1: Category
-data1: Documentation
-label2: Depth
-data2: Deep
-schema: 2.0.0
----
-
 # New-VSRDSDBSecurityGroup
 
 ## SYNOPSIS
-Adds an AWS::RDS::DBSecurityGroup resource to the template
+Adds an AWS::RDS::DBSecurityGroup resource to the template.
+The AWS::RDS::DBSecurityGroup resource creates or updates an Amazon RDS DB security group.
 
 ## SYNTAX
 
@@ -23,7 +13,24 @@ New-VSRDSDBSecurityGroup [-LogicalId] <String> -DBSecurityGroupIngress <Object> 
 ```
 
 ## DESCRIPTION
-Adds an AWS::RDS::DBSecurityGroup resource to the template
+Adds an AWS::RDS::DBSecurityGroup resource to the template.
+The AWS::RDS::DBSecurityGroup resource creates or updates an Amazon RDS DB security group.
+
+**Note**
+
+If you use DB security groups, the settings that you can specify for your DB instances are limited.
+For more information, see the DBSecurityGroups: https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-rds-database-instance.html#cfn-rds-dbinstance-dbsecuritygroups property of the AWS::RDS::DBInstance resource.
+
+When you specify an AWS::RDS::DBSecurityGroup as an argument to the Ref function, AWS CloudFormation returns the value of the DBSecurityGroupName.
+
+## EXAMPLES
+
+### Example 1
+```powershell
+PS C:\> {{ Add example code here }}
+```
+
+{{ Add example description here }}
 
 ## PARAMETERS
 
@@ -45,11 +52,12 @@ Accept wildcard characters: False
 ```
 
 ### -DBSecurityGroupIngress
-Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-rds-security-group.html#cfn-rds-dbsecuritygroup-dbsecuritygroupingress    
-DuplicatesAllowed: False    
-ItemType: Ingress    
-Required: True    
-Type: List    
+Ingress rules to be applied to the DB security group.
+
+Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-rds-security-group.html#cfn-rds-dbsecuritygroup-dbsecuritygroupingress
+DuplicatesAllowed: False
+ItemType: Ingress
+Type: List
 UpdateType: Mutable
 
 ```yaml
@@ -65,9 +73,12 @@ Accept wildcard characters: False
 ```
 
 ### -EC2VpcId
-Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-rds-security-group.html#cfn-rds-dbsecuritygroup-ec2vpcid    
-PrimitiveType: String    
-Required: False    
+The identifier of an Amazon VPC.
+This property indicates the VPC that this DB security group belongs to.
+The EC2VpcId property is for backward compatibility with older regions, and is no longer recommended for providing security information to an RDS DB instance.
+
+Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-rds-security-group.html#cfn-rds-dbsecuritygroup-ec2vpcid
+PrimitiveType: String
 UpdateType: Immutable
 
 ```yaml
@@ -83,9 +94,10 @@ Accept wildcard characters: False
 ```
 
 ### -GroupDescription
-Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-rds-security-group.html#cfn-rds-dbsecuritygroup-groupdescription    
-PrimitiveType: String    
-Required: True    
+Provides the description of the DB Security Group.
+
+Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-rds-security-group.html#cfn-rds-dbsecuritygroup-groupdescription
+PrimitiveType: String
 UpdateType: Immutable
 
 ```yaml
@@ -101,11 +113,12 @@ Accept wildcard characters: False
 ```
 
 ### -Tags
-Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-rds-security-group.html#cfn-rds-dbsecuritygroup-tags    
-DuplicatesAllowed: True    
-ItemType: Tag    
-Required: False    
-Type: List    
+Tags to assign to the DB security group.
+
+Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-rds-security-group.html#cfn-rds-dbsecuritygroup-tags
+DuplicatesAllowed: True
+ItemType: Tag
+Type: List
 UpdateType: Mutable
 
 ```yaml
@@ -215,15 +228,13 @@ Accept wildcard characters: False
 ```
 
 ### CommonParameters
-This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction, and -WarningVariable.
-For more information, see about_CommonParameters (http://go.microsoft.com/fwlink/?LinkID=113216).
+This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction, and -WarningVariable. For more information, see [about_CommonParameters](http://go.microsoft.com/fwlink/?LinkID=113216).
 
 ## INPUTS
 
 ## OUTPUTS
 
 ### Vaporshell.Resource.RDS.DBSecurityGroup
-
 ## NOTES
 
 ## RELATED LINKS

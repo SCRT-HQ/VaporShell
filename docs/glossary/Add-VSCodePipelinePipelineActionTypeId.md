@@ -1,18 +1,8 @@
----
-layout: glossary
-title: Add-VSCodePipelinePipelineActionTypeId
-categories: glossary
-label1: Category
-data1: Documentation
-label2: Depth
-data2: Deep
-schema: 2.0.0
----
-
 # Add-VSCodePipelinePipelineActionTypeId
 
 ## SYNOPSIS
-Adds an AWS::CodePipeline::Pipeline.ActionTypeId resource property to the template
+Adds an AWS::CodePipeline::Pipeline.ActionTypeId resource property to the template.
+Represents information about an action type.
 
 ## SYNTAX
 
@@ -22,14 +12,26 @@ Add-VSCodePipelinePipelineActionTypeId [-Category] <Object> [-Owner] <Object> [-
 ```
 
 ## DESCRIPTION
-Adds an AWS::CodePipeline::Pipeline.ActionTypeId resource property to the template
+Adds an AWS::CodePipeline::Pipeline.ActionTypeId resource property to the template.
+Represents information about an action type.
+
+## EXAMPLES
+
+### Example 1
+```powershell
+PS C:\> {{ Add example code here }}
+```
+
+{{ Add example description here }}
 
 ## PARAMETERS
 
 ### -Category
-Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-codepipeline-pipeline-stages-actions-actiontypeid.html#cfn-codepipeline-pipeline-stages-actions-actiontypeid-category    
-PrimitiveType: String    
-Required: True    
+A category defines what kind of action can be taken in the stage, and constrains the provider type for the action.
+Valid categories are limited to one of the values below.
+
+Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-codepipeline-pipeline-stages-actions-actiontypeid.html#cfn-codepipeline-pipeline-stages-actions-actiontypeid-category
+PrimitiveType: String
 UpdateType: Mutable
 
 ```yaml
@@ -45,9 +47,10 @@ Accept wildcard characters: False
 ```
 
 ### -Owner
-Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-codepipeline-pipeline-stages-actions-actiontypeid.html#cfn-codepipeline-pipeline-stages-actions-actiontypeid-owner    
-PrimitiveType: String    
-Required: True    
+The creator of the action being called.
+
+Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-codepipeline-pipeline-stages-actions-actiontypeid.html#cfn-codepipeline-pipeline-stages-actions-actiontypeid-owner
+PrimitiveType: String
 UpdateType: Mutable
 
 ```yaml
@@ -63,9 +66,13 @@ Accept wildcard characters: False
 ```
 
 ### -Provider
-Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-codepipeline-pipeline-stages-actions-actiontypeid.html#cfn-codepipeline-pipeline-stages-actions-actiontypeid-provider    
-PrimitiveType: String    
-Required: True    
+The provider of the service being called by the action.
+Valid providers are determined by the action category.
+For example, an action in the Deploy category type might have a provider of AWS CodeDeploy, which would be specified as CodeDeploy.
+To reference a list of action providers by action type, see Valid Action Types and Providers in CodePipeline: https://docs.aws.amazon.com/codepipeline/latest/userguide/reference-pipeline-structure.html#actions-valid-providers.
+
+Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-codepipeline-pipeline-stages-actions-actiontypeid.html#cfn-codepipeline-pipeline-stages-actions-actiontypeid-provider
+PrimitiveType: String
 UpdateType: Mutable
 
 ```yaml
@@ -81,9 +88,10 @@ Accept wildcard characters: False
 ```
 
 ### -Version
-Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-codepipeline-pipeline-stages-actions-actiontypeid.html#cfn-codepipeline-pipeline-stages-actions-actiontypeid-version    
-PrimitiveType: String    
-Required: True    
+A string that describes the action version.
+
+Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-codepipeline-pipeline-stages-actions-actiontypeid.html#cfn-codepipeline-pipeline-stages-actions-actiontypeid-version
+PrimitiveType: String
 UpdateType: Mutable
 
 ```yaml
@@ -99,15 +107,13 @@ Accept wildcard characters: False
 ```
 
 ### CommonParameters
-This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction, and -WarningVariable.
-For more information, see about_CommonParameters (http://go.microsoft.com/fwlink/?LinkID=113216).
+This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction, and -WarningVariable. For more information, see [about_CommonParameters](http://go.microsoft.com/fwlink/?LinkID=113216).
 
 ## INPUTS
 
 ## OUTPUTS
 
 ### Vaporshell.Resource.CodePipeline.Pipeline.ActionTypeId
-
 ## NOTES
 
 ## RELATED LINKS

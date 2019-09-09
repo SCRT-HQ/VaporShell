@@ -1,14 +1,3 @@
----
-layout: glossary
-title: New-VSStack
-categories: glossary
-label1: Category
-data1: Documentation
-label2: Depth
-data2: Deep
-schema: 2.0.0
----
-
 # New-VSStack
 
 ## SYNOPSIS
@@ -19,31 +8,41 @@ Creates a new stack
 ### Path (Default)
 ```
 New-VSStack [-Path] <String> [-StackName <String>] [-Capabilities <String[]>] [-ClientRequestToken <String>]
- [-DisableRollback <Boolean>] [-NotificationARNs <String[]>] [-OnFailure <String>] [-Parameters <Object>]
+ [-DisableRollback <Boolean>] [-NotificationARNs <String[]>] [-OnFailure <OnFailure>] [-Parameters <Object>]
  [-ResourceTypes <String[]>] [-RoleARN <String>] [-StackPolicyBody <String>] [-StackPolicyURL <String>]
- [-Tags <String>] [-TimeoutInMinutes <Int32>] [-ProfileName <String>] [-WhatIf] [-Confirm] [<CommonParameters>]
+ [-Tags <Hashtable>] [-TimeoutInMinutes <Int32>] [-Watch] [-ProfileName <String>] [-Force] [-WhatIf] [-Confirm]
+ [<CommonParameters>]
 ```
 
 ### TemplateBody
 ```
 New-VSStack [-TemplateBody] <String> [-StackName <String>] [-Capabilities <String[]>]
  [-ClientRequestToken <String>] [-DisableRollback <Boolean>] [-NotificationARNs <String[]>]
- [-OnFailure <String>] [-Parameters <Object>] [-ResourceTypes <String[]>] [-RoleARN <String>]
- [-StackPolicyBody <String>] [-StackPolicyURL <String>] [-Tags <String>] [-TimeoutInMinutes <Int32>]
- [-ProfileName <String>] [-WhatIf] [-Confirm] [<CommonParameters>]
+ [-OnFailure <OnFailure>] [-Parameters <Object>] [-ResourceTypes <String[]>] [-RoleARN <String>]
+ [-StackPolicyBody <String>] [-StackPolicyURL <String>] [-Tags <Hashtable>] [-TimeoutInMinutes <Int32>]
+ [-Watch] [-ProfileName <String>] [-Force] [-WhatIf] [-Confirm] [<CommonParameters>]
 ```
 
 ### TemplateUrl
 ```
 New-VSStack [-TemplateUrl] <String> [-StackName <String>] [-Capabilities <String[]>]
  [-ClientRequestToken <String>] [-DisableRollback <Boolean>] [-NotificationARNs <String[]>]
- [-OnFailure <String>] [-Parameters <Object>] [-ResourceTypes <String[]>] [-RoleARN <String>]
- [-StackPolicyBody <String>] [-StackPolicyURL <String>] [-Tags <String>] [-TimeoutInMinutes <Int32>]
- [-ProfileName <String>] [-WhatIf] [-Confirm] [<CommonParameters>]
+ [-OnFailure <OnFailure>] [-Parameters <Object>] [-ResourceTypes <String[]>] [-RoleARN <String>]
+ [-StackPolicyBody <String>] [-StackPolicyURL <String>] [-Tags <Hashtable>] [-TimeoutInMinutes <Int32>]
+ [-Watch] [-ProfileName <String>] [-Force] [-WhatIf] [-Confirm] [<CommonParameters>]
 ```
 
 ## DESCRIPTION
-{{Fill in the Description}}
+{{ Fill in the Description }}
+
+## EXAMPLES
+
+### Example 1
+```powershell
+PS C:\> {{ Add example code here }}
+```
+
+{{ Add example description here }}
 
 ## PARAMETERS
 
@@ -196,7 +195,7 @@ You can specify either OnFailure or DisableRollback, but not both.
 Default: ROLLBACK
 
 ```yaml
-Type: String
+Type: OnFailure
 Parameter Sets: (All)
 Aliases:
 
@@ -294,12 +293,12 @@ Accept wildcard characters: False
 ```
 
 ### -Tags
-Key-value pairs to associate with this stack.
+A hashtable containing key-value pairs to associate with this stack.
 AWS CloudFormation also propagates these tags to resources in the stack.
 You can specify a maximum of 50 tags.
 
 ```yaml
-Type: String
+Type: Hashtable
 Parameter Sets: (All)
 Aliases:
 
@@ -325,6 +324,21 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
+### -Watch
+If $true, runs Watch-Stack to show the colorized output of the stack events.
+
+```yaml
+Type: SwitchParameter
+Parameter Sets: (All)
+Aliases:
+
+Required: False
+Position: Named
+Default value: False
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
 ### -ProfileName
 The name of the configuration profile to deploy the stack with.
 Defaults to $env:AWS_PROFILE, if set.
@@ -337,6 +351,22 @@ Aliases:
 Required: False
 Position: Named
 Default value: $env:AWS_PROFILE
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### -Force
+If $true, bypasses ShouldProcess and creates the stack.
+If the stack already exists and a change set is created instead, the change set will also be executed as soon as it's ready.
+
+```yaml
+Type: SwitchParameter
+Parameter Sets: (All)
+Aliases:
+
+Required: False
+Position: Named
+Default value: False
 Accept pipeline input: False
 Accept wildcard characters: False
 ```
@@ -373,8 +403,7 @@ Accept wildcard characters: False
 ```
 
 ### CommonParameters
-This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction, and -WarningVariable.
-For more information, see about_CommonParameters (http://go.microsoft.com/fwlink/?LinkID=113216).
+This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction, and -WarningVariable. For more information, see [about_CommonParameters](http://go.microsoft.com/fwlink/?LinkID=113216).
 
 ## INPUTS
 

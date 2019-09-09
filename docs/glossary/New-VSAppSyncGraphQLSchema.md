@@ -1,18 +1,10 @@
----
-layout: glossary
-title: New-VSAppSyncGraphQLSchema
-categories: glossary
-label1: Category
-data1: Documentation
-label2: Depth
-data2: Deep
-schema: 2.0.0
----
-
 # New-VSAppSyncGraphQLSchema
 
 ## SYNOPSIS
-Adds an AWS::AppSync::GraphQLSchema resource to the template
+Adds an AWS::AppSync::GraphQLSchema resource to the template.
+The AWS::AppSync::GraphQLSchema resource is used for your AWS AppSync GraphQL schema that controls the data model for your API.
+Schema files are text written in Schema Definition Language (SDL format.
+For more information about schema authoring, see Designing a GraphQL API: https://docs.aws.amazon.com/appsync/latest/devguide/designing-a-graphql-api.html in the *AWS AppSync Developer Guide*.
 
 ## SYNTAX
 
@@ -23,7 +15,19 @@ New-VSAppSyncGraphQLSchema [-LogicalId] <String> [-Definition <Object>] [-Defini
 ```
 
 ## DESCRIPTION
-Adds an AWS::AppSync::GraphQLSchema resource to the template
+Adds an AWS::AppSync::GraphQLSchema resource to the template.
+The AWS::AppSync::GraphQLSchema resource is used for your AWS AppSync GraphQL schema that controls the data model for your API.
+Schema files are text written in Schema Definition Language (SDL format.
+For more information about schema authoring, see Designing a GraphQL API: https://docs.aws.amazon.com/appsync/latest/devguide/designing-a-graphql-api.html in the *AWS AppSync Developer Guide*.
+
+## EXAMPLES
+
+### Example 1
+```powershell
+PS C:\> {{ Add example code here }}
+```
+
+{{ Add example description here }}
 
 ## PARAMETERS
 
@@ -45,9 +49,11 @@ Accept wildcard characters: False
 ```
 
 ### -Definition
-Required: False    
-Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-appsync-graphqlschema.html#cfn-appsync-graphqlschema-definition    
-PrimitiveType: String    
+The text representation of a GraphQL schema in SDL format.
+For more information about using the Ref function, see Ref: https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/intrinsic-function-reference-ref.
+
+Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-appsync-graphqlschema.html#cfn-appsync-graphqlschema-definition
+PrimitiveType: String
 UpdateType: Mutable
 
 ```yaml
@@ -63,9 +69,11 @@ Accept wildcard characters: False
 ```
 
 ### -DefinitionS3Location
-Required: False    
-Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-appsync-graphqlschema.html#cfn-appsync-graphqlschema-definitions3location    
-PrimitiveType: String    
+The location of a GraphQL schema file in an Amazon S3 bucket.
+Use this if you want to provision with the schema living in Amazon S3 rather than embedding it in your CloudFormation template.
+
+Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-appsync-graphqlschema.html#cfn-appsync-graphqlschema-definitions3location
+PrimitiveType: String
 UpdateType: Mutable
 
 ```yaml
@@ -81,9 +89,10 @@ Accept wildcard characters: False
 ```
 
 ### -ApiId
-Required: True    
-Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-appsync-graphqlschema.html#cfn-appsync-graphqlschema-apiid    
-PrimitiveType: String    
+The AWS AppSync GraphQL API identifier to which you want to apply this schema.
+
+Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-appsync-graphqlschema.html#cfn-appsync-graphqlschema-apiid
+PrimitiveType: String
 UpdateType: Immutable
 
 ```yaml
@@ -193,15 +202,13 @@ Accept wildcard characters: False
 ```
 
 ### CommonParameters
-This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction, and -WarningVariable.
-For more information, see about_CommonParameters (http://go.microsoft.com/fwlink/?LinkID=113216).
+This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction, and -WarningVariable. For more information, see [about_CommonParameters](http://go.microsoft.com/fwlink/?LinkID=113216).
 
 ## INPUTS
 
 ## OUTPUTS
 
 ### Vaporshell.Resource.AppSync.GraphQLSchema
-
 ## NOTES
 
 ## RELATED LINKS

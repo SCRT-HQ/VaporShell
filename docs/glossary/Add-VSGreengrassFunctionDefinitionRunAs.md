@@ -1,0 +1,95 @@
+# Add-VSGreengrassFunctionDefinitionRunAs
+
+## SYNOPSIS
+Adds an AWS::Greengrass::FunctionDefinition.RunAs resource property to the template.
+\<a name="aws-properties-greengrass-functiondefinition-runas-description"\>\</a\>The access identity whose permissions are used to run the Lambda function.
+This setting overrides the default access identity that's specified for the group (by default, ggc_user and ggc_group.
+You can override the user, group, or both.
+For more information, see Run as: https://docs.aws.amazon.com/greengrass/latest/developerguide/lambda-group-config.html#lambda-access-identity.html in the *AWS IoT Greengrass Developer Guide*.
+
+## SYNTAX
+
+```
+Add-VSGreengrassFunctionDefinitionRunAs [[-Uid] <Int32>] [[-Gid] <Int32>] [<CommonParameters>]
+```
+
+## DESCRIPTION
+Adds an AWS::Greengrass::FunctionDefinition.RunAs resource property to the template.
+\<a name="aws-properties-greengrass-functiondefinition-runas-description"\>\</a\>The access identity whose permissions are used to run the Lambda function.
+This setting overrides the default access identity that's specified for the group (by default, ggc_user and ggc_group.
+You can override the user, group, or both.
+For more information, see Run as: https://docs.aws.amazon.com/greengrass/latest/developerguide/lambda-group-config.html#lambda-access-identity.html in the *AWS IoT Greengrass Developer Guide*.
+
+**Important**
+
+Running as the root user increases risks to your data and device.
+Do not run as root (UID/GID=0 unless your business case requires it.
+For more information and requirements, see Running a Lambda Function as Root: https://docs.aws.amazon.com/greengrass/latest/developerguide/lambda-group-config.html#lambda-running-as-root.
+
+\<a name="aws-properties-greengrass-functiondefinition-runas-inheritance"\>\</a\> In an AWS CloudFormation template, RunAs is a property of the  Execution : https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-greengrass-functiondefinition-execution.html property type.
+
+## EXAMPLES
+
+### Example 1
+```powershell
+PS C:\> {{ Add example code here }}
+```
+
+{{ Add example description here }}
+
+## PARAMETERS
+
+### -Uid
+The user ID whose permissions are used to run the Lambda function.
+You can use the getent passwd command on your core device to look up the user ID.
+
+Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-greengrass-functiondefinition-runas.html#cfn-greengrass-functiondefinition-runas-uid
+PrimitiveType: Integer
+UpdateType: Immutable
+
+```yaml
+Type: Int32
+Parameter Sets: (All)
+Aliases:
+
+Required: False
+Position: 1
+Default value: 0
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### -Gid
+The group ID whose permissions are used to run the Lambda function.
+You can use the getent group command on your core device to look up the group ID.
+
+Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-greengrass-functiondefinition-runas.html#cfn-greengrass-functiondefinition-runas-gid
+PrimitiveType: Integer
+UpdateType: Immutable
+
+```yaml
+Type: Int32
+Parameter Sets: (All)
+Aliases:
+
+Required: False
+Position: 2
+Default value: 0
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### CommonParameters
+This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction, and -WarningVariable. For more information, see [about_CommonParameters](http://go.microsoft.com/fwlink/?LinkID=113216).
+
+## INPUTS
+
+## OUTPUTS
+
+### Vaporshell.Resource.Greengrass.FunctionDefinition.RunAs
+## NOTES
+
+## RELATED LINKS
+
+[http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-greengrass-functiondefinition-runas.html](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-greengrass-functiondefinition-runas.html)
+

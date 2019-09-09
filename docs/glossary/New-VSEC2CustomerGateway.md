@@ -1,18 +1,8 @@
----
-layout: glossary
-title: New-VSEC2CustomerGateway
-categories: glossary
-label1: Category
-data1: Documentation
-label2: Depth
-data2: Deep
-schema: 2.0.0
----
-
 # New-VSEC2CustomerGateway
 
 ## SYNOPSIS
-Adds an AWS::EC2::CustomerGateway resource to the template
+Adds an AWS::EC2::CustomerGateway resource to the template.
+Specifies a customer gateway.
 
 ## SYNTAX
 
@@ -23,7 +13,17 @@ New-VSEC2CustomerGateway [-LogicalId] <String> -BgpAsn <Int32> -IpAddress <Objec
 ```
 
 ## DESCRIPTION
-Adds an AWS::EC2::CustomerGateway resource to the template
+Adds an AWS::EC2::CustomerGateway resource to the template.
+Specifies a customer gateway.
+
+## EXAMPLES
+
+### Example 1
+```powershell
+PS C:\> {{ Add example code here }}
+```
+
+{{ Add example description here }}
 
 ## PARAMETERS
 
@@ -45,9 +45,11 @@ Accept wildcard characters: False
 ```
 
 ### -BgpAsn
-Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ec2-customer-gateway.html#cfn-ec2-customergateway-bgpasn    
-PrimitiveType: Integer    
-Required: True    
+For devices that support BGP, the customer gateway's BGP ASN.
+Default: 65000
+
+Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ec2-customer-gateway.html#cfn-ec2-customergateway-bgpasn
+PrimitiveType: Integer
 UpdateType: Immutable
 
 ```yaml
@@ -63,9 +65,11 @@ Accept wildcard characters: False
 ```
 
 ### -IpAddress
-Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ec2-customer-gateway.html#cfn-ec2-customergateway-ipaddress    
-PrimitiveType: String    
-Required: True    
+The Internet-routable IP address for the customer gateway's outside interface.
+The address must be static.
+
+Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ec2-customer-gateway.html#cfn-ec2-customergateway-ipaddress
+PrimitiveType: String
 UpdateType: Immutable
 
 ```yaml
@@ -81,11 +85,12 @@ Accept wildcard characters: False
 ```
 
 ### -Tags
-Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ec2-customer-gateway.html#cfn-ec2-customergateway-tags    
-DuplicatesAllowed: True    
-ItemType: Tag    
-Required: False    
-Type: List    
+One or more tags for the customer gateway.
+
+Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ec2-customer-gateway.html#cfn-ec2-customergateway-tags
+DuplicatesAllowed: True
+ItemType: Tag
+Type: List
 UpdateType: Mutable
 
 ```yaml
@@ -101,9 +106,10 @@ Accept wildcard characters: False
 ```
 
 ### -Type
-Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ec2-customer-gateway.html#cfn-ec2-customergateway-type    
-PrimitiveType: String    
-Required: True    
+The type of VPN connection that this customer gateway supports ipsec.1.
+
+Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ec2-customer-gateway.html#cfn-ec2-customergateway-type
+PrimitiveType: String
 UpdateType: Immutable
 
 ```yaml
@@ -213,15 +219,13 @@ Accept wildcard characters: False
 ```
 
 ### CommonParameters
-This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction, and -WarningVariable.
-For more information, see about_CommonParameters (http://go.microsoft.com/fwlink/?LinkID=113216).
+This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction, and -WarningVariable. For more information, see [about_CommonParameters](http://go.microsoft.com/fwlink/?LinkID=113216).
 
 ## INPUTS
 
 ## OUTPUTS
 
 ### Vaporshell.Resource.EC2.CustomerGateway
-
 ## NOTES
 
 ## RELATED LINKS

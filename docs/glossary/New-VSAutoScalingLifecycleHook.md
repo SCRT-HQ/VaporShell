@@ -1,18 +1,10 @@
----
-layout: glossary
-title: New-VSAutoScalingLifecycleHook
-categories: glossary
-label1: Category
-data1: Documentation
-label2: Depth
-data2: Deep
-schema: 2.0.0
----
-
 # New-VSAutoScalingLifecycleHook
 
 ## SYNOPSIS
-Adds an AWS::AutoScaling::LifecycleHook resource to the template
+Adds an AWS::AutoScaling::LifecycleHook resource to the template.
+Defines lifecycle hooks for an Amazon EC2 Auto Scaling group.
+Lifecycle hooks specify actions to perform when Amazon EC2 Auto Scaling launches or terminates instances.
+When you use a lifecycle hook, the Auto Scaling group pauses the instance either after it is launched (before it is put into service or as it is terminated (before it is fully terminated.
 
 ## SYNTAX
 
@@ -25,7 +17,21 @@ New-VSAutoScalingLifecycleHook [-LogicalId] <String> -AutoScalingGroupName <Obje
 ```
 
 ## DESCRIPTION
-Adds an AWS::AutoScaling::LifecycleHook resource to the template
+Adds an AWS::AutoScaling::LifecycleHook resource to the template.
+Defines lifecycle hooks for an Amazon EC2 Auto Scaling group.
+Lifecycle hooks specify actions to perform when Amazon EC2 Auto Scaling launches or terminates instances.
+When you use a lifecycle hook, the Auto Scaling group pauses the instance either after it is launched (before it is put into service or as it is terminated (before it is fully terminated.
+
+For more information, see PutLifecycleHook: https://docs.aws.amazon.com/autoscaling/ec2/APIReference/API_PutLifecycleHook.html in the *Amazon EC2 Auto Scaling API Reference* and Amazon EC2 Auto Scaling Lifecycle Hooks: https://docs.aws.amazon.com/autoscaling/ec2/userguide/lifecycle-hooks.html in the *Amazon EC2 Auto Scaling User Guide*.
+
+## EXAMPLES
+
+### Example 1
+```powershell
+PS C:\> {{ Add example code here }}
+```
+
+{{ Add example description here }}
 
 ## PARAMETERS
 
@@ -47,9 +53,10 @@ Accept wildcard characters: False
 ```
 
 ### -AutoScalingGroupName
-Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-as-lifecyclehook.html#cfn-as-lifecyclehook-autoscalinggroupname    
-PrimitiveType: String    
-Required: True    
+The name of the Auto Scaling group for the lifecycle hook.
+
+Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-as-lifecyclehook.html#cfn-as-lifecyclehook-autoscalinggroupname
+PrimitiveType: String
 UpdateType: Immutable
 
 ```yaml
@@ -65,9 +72,11 @@ Accept wildcard characters: False
 ```
 
 ### -DefaultResult
-Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-as-lifecyclehook.html#cfn-as-lifecyclehook-defaultresult    
-PrimitiveType: String    
-Required: False    
+The action the Auto Scaling group takes when the lifecycle hook timeout elapses or if an unexpected failure occurs.
+The valid values are CONTINUE and ABANDON default.
+
+Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-as-lifecyclehook.html#cfn-as-lifecyclehook-defaultresult
+PrimitiveType: String
 UpdateType: Mutable
 
 ```yaml
@@ -83,9 +92,11 @@ Accept wildcard characters: False
 ```
 
 ### -HeartbeatTimeout
-Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-as-lifecyclehook.html#cfn-as-lifecyclehook-heartbeattimeout    
-PrimitiveType: Integer    
-Required: False    
+The amount of time, in seconds, that can elapse before the lifecycle hook times out.
+If the lifecycle hook times out, Amazon EC2 Auto Scaling performs the action that you specified in the DefaultResult property.
+
+Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-as-lifecyclehook.html#cfn-as-lifecyclehook-heartbeattimeout
+PrimitiveType: Integer
 UpdateType: Mutable
 
 ```yaml
@@ -101,9 +112,10 @@ Accept wildcard characters: False
 ```
 
 ### -LifecycleHookName
-Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-as-lifecyclehook.html#cfn-autoscaling-lifecyclehook-lifecyclehookname    
-PrimitiveType: String    
-Required: False    
+The name of the lifecycle hook.
+
+Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-as-lifecyclehook.html#cfn-autoscaling-lifecyclehook-lifecyclehookname
+PrimitiveType: String
 UpdateType: Immutable
 
 ```yaml
@@ -119,9 +131,13 @@ Accept wildcard characters: False
 ```
 
 ### -LifecycleTransition
-Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-as-lifecyclehook.html#cfn-as-lifecyclehook-lifecycletransition    
-PrimitiveType: String    
-Required: True    
+The instance state to which you want to attach the lifecycle hook.
+The valid values are:
++ autoscaling:EC2_INSTANCE_LAUNCHING
++ autoscaling:EC2_INSTANCE_TERMINATING
+
+Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-as-lifecyclehook.html#cfn-as-lifecyclehook-lifecycletransition
+PrimitiveType: String
 UpdateType: Mutable
 
 ```yaml
@@ -137,9 +153,10 @@ Accept wildcard characters: False
 ```
 
 ### -NotificationMetadata
-Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-as-lifecyclehook.html#cfn-as-lifecyclehook-notificationmetadata    
-PrimitiveType: String    
-Required: False    
+Additional information that is included any time Amazon EC2 Auto Scaling sends a message to the notification target.
+
+Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-as-lifecyclehook.html#cfn-as-lifecyclehook-notificationmetadata
+PrimitiveType: String
 UpdateType: Mutable
 
 ```yaml
@@ -155,9 +172,12 @@ Accept wildcard characters: False
 ```
 
 ### -NotificationTargetARN
-Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-as-lifecyclehook.html#cfn-as-lifecyclehook-notificationtargetarn    
-PrimitiveType: String    
-Required: False    
+The Amazon Resource Name ARN of the notification target that Amazon EC2 Auto Scaling uses to notify you when an instance is in the transition state for the lifecycle hook.
+You can specify an Amazon SQS queue or an Amazon SNS topic.
+The notification message includes the following information: lifecycle action token, user account ID, Auto Scaling group name, lifecycle hook name, instance ID, lifecycle transition, and notification metadata.
+
+Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-as-lifecyclehook.html#cfn-as-lifecyclehook-notificationtargetarn
+PrimitiveType: String
 UpdateType: Mutable
 
 ```yaml
@@ -173,9 +193,11 @@ Accept wildcard characters: False
 ```
 
 ### -RoleARN
-Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-as-lifecyclehook.html#cfn-as-lifecyclehook-rolearn    
-PrimitiveType: String    
-Required: False    
+The ARN of the IAM role that allows the Auto Scaling group to publish to the specified notification target, for example, an Amazon SNS topic or an Amazon SQS queue.
+For information about creating this role, see Preparing for Notifications: https://docs.aws.amazon.com/autoscaling/ec2/userguide/lifecycle-hooks.html#preparing-for-notification in the *Amazon EC2 Auto Scaling User Guide*.
+
+Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-as-lifecyclehook.html#cfn-as-lifecyclehook-rolearn
+PrimitiveType: String
 UpdateType: Mutable
 
 ```yaml
@@ -285,15 +307,13 @@ Accept wildcard characters: False
 ```
 
 ### CommonParameters
-This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction, and -WarningVariable.
-For more information, see about_CommonParameters (http://go.microsoft.com/fwlink/?LinkID=113216).
+This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction, and -WarningVariable. For more information, see [about_CommonParameters](http://go.microsoft.com/fwlink/?LinkID=113216).
 
 ## INPUTS
 
 ## OUTPUTS
 
 ### Vaporshell.Resource.AutoScaling.LifecycleHook
-
 ## NOTES
 
 ## RELATED LINKS

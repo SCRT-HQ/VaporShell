@@ -1,36 +1,38 @@
----
-layout: glossary
-title: Add-VSCodeCommitRepositoryRepositoryTrigger
-categories: glossary
-label1: Category
-data1: Documentation
-label2: Depth
-data2: Deep
-schema: 2.0.0
----
-
 # Add-VSCodeCommitRepositoryRepositoryTrigger
 
 ## SYNOPSIS
-Adds an AWS::CodeCommit::Repository.RepositoryTrigger resource property to the template
+Adds an AWS::CodeCommit::Repository.RepositoryTrigger resource property to the template.
+Information about a trigger for a repository.
 
 ## SYNTAX
 
 ```
-Add-VSCodeCommitRepositoryRepositoryTrigger [[-Events] <Object>] [[-Branches] <Object>]
- [[-CustomData] <Object>] [[-DestinationArn] <Object>] [[-Name] <Object>] [<CommonParameters>]
+Add-VSCodeCommitRepositoryRepositoryTrigger [-Events] <Object> [[-Branches] <Object>] [[-CustomData] <Object>]
+ [-DestinationArn] <Object> [-Name] <Object> [<CommonParameters>]
 ```
 
 ## DESCRIPTION
-Adds an AWS::CodeCommit::Repository.RepositoryTrigger resource property to the template
+Adds an AWS::CodeCommit::Repository.RepositoryTrigger resource property to the template.
+Information about a trigger for a repository.
+
+## EXAMPLES
+
+### Example 1
+```powershell
+PS C:\> {{ Add example code here }}
+```
+
+{{ Add example description here }}
 
 ## PARAMETERS
 
 ### -Events
-PrimitiveItemType: String    
-Type: List    
-Required: False    
-Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-codecommit-repository-repositorytrigger.html#cfn-codecommit-repository-repositorytrigger-events    
+The repository events that will cause the trigger to run actions in another service, such as sending a notification through Amazon SNS.
+The valid value "all" cannot be used with any other values.
+
+PrimitiveItemType: String
+Type: List
+Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-codecommit-repository-repositorytrigger.html#cfn-codecommit-repository-repositorytrigger-events
 UpdateType: Mutable
 
 ```yaml
@@ -38,7 +40,7 @@ Type: Object
 Parameter Sets: (All)
 Aliases:
 
-Required: False
+Required: True
 Position: 1
 Default value: None
 Accept pipeline input: False
@@ -46,10 +48,13 @@ Accept wildcard characters: False
 ```
 
 ### -Branches
-PrimitiveItemType: String    
-Type: List    
-Required: False    
-Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-codecommit-repository-repositorytrigger.html#cfn-codecommit-repository-repositorytrigger-branches    
+The branches that will be included in the trigger configuration.
+If you specify an empty array, the trigger will apply to all branches.
+Although no content is required in the array, you must include the array itself.
+
+PrimitiveItemType: String
+Type: List
+Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-codecommit-repository-repositorytrigger.html#cfn-codecommit-repository-repositorytrigger-branches
 UpdateType: Mutable
 
 ```yaml
@@ -65,9 +70,10 @@ Accept wildcard characters: False
 ```
 
 ### -CustomData
-Required: False    
-Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-codecommit-repository-repositorytrigger.html#cfn-codecommit-repository-repositorytrigger-customdata    
-PrimitiveType: String    
+Any custom data associated with the trigger that will be included in the information sent to the target of the trigger.
+
+Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-codecommit-repository-repositorytrigger.html#cfn-codecommit-repository-repositorytrigger-customdata
+PrimitiveType: String
 UpdateType: Mutable
 
 ```yaml
@@ -83,9 +89,11 @@ Accept wildcard characters: False
 ```
 
 ### -DestinationArn
-Required: False    
-Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-codecommit-repository-repositorytrigger.html#cfn-codecommit-repository-repositorytrigger-destinationarn    
-PrimitiveType: String    
+The ARN of the resource that is the target for a trigger.
+For example, the ARN of a topic in Amazon SNS.
+
+Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-codecommit-repository-repositorytrigger.html#cfn-codecommit-repository-repositorytrigger-destinationarn
+PrimitiveType: String
 UpdateType: Mutable
 
 ```yaml
@@ -93,7 +101,7 @@ Type: Object
 Parameter Sets: (All)
 Aliases:
 
-Required: False
+Required: True
 Position: 4
 Default value: None
 Accept pipeline input: False
@@ -101,9 +109,10 @@ Accept wildcard characters: False
 ```
 
 ### -Name
-Required: False    
-Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-codecommit-repository-repositorytrigger.html#cfn-codecommit-repository-repositorytrigger-name    
-PrimitiveType: String    
+The name of the trigger.
+
+Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-codecommit-repository-repositorytrigger.html#cfn-codecommit-repository-repositorytrigger-name
+PrimitiveType: String
 UpdateType: Mutable
 
 ```yaml
@@ -111,7 +120,7 @@ Type: Object
 Parameter Sets: (All)
 Aliases:
 
-Required: False
+Required: True
 Position: 5
 Default value: None
 Accept pipeline input: False
@@ -119,15 +128,13 @@ Accept wildcard characters: False
 ```
 
 ### CommonParameters
-This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction, and -WarningVariable.
-For more information, see about_CommonParameters (http://go.microsoft.com/fwlink/?LinkID=113216).
+This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction, and -WarningVariable. For more information, see [about_CommonParameters](http://go.microsoft.com/fwlink/?LinkID=113216).
 
 ## INPUTS
 
 ## OUTPUTS
 
 ### Vaporshell.Resource.CodeCommit.Repository.RepositoryTrigger
-
 ## NOTES
 
 ## RELATED LINKS

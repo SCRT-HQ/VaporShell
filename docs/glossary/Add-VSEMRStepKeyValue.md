@@ -1,18 +1,9 @@
----
-layout: glossary
-title: Add-VSEMRStepKeyValue
-categories: glossary
-label1: Category
-data1: Documentation
-label2: Depth
-data2: Deep
-schema: 2.0.0
----
-
 # Add-VSEMRStepKeyValue
 
 ## SYNOPSIS
-Adds an AWS::EMR::Step.KeyValue resource property to the template
+Adds an AWS::EMR::Step.KeyValue resource property to the template.
+KeyValue is a subproperty of the HadoopJarStepConfig property type.
+KeyValue is used to pass parameters to a step.
 
 ## SYNTAX
 
@@ -21,14 +12,26 @@ Add-VSEMRStepKeyValue [[-Key] <Object>] [[-Value] <Object>] [<CommonParameters>]
 ```
 
 ## DESCRIPTION
-Adds an AWS::EMR::Step.KeyValue resource property to the template
+Adds an AWS::EMR::Step.KeyValue resource property to the template.
+KeyValue is a subproperty of the HadoopJarStepConfig property type.
+KeyValue is used to pass parameters to a step.
+
+## EXAMPLES
+
+### Example 1
+```powershell
+PS C:\> {{ Add example code here }}
+```
+
+{{ Add example description here }}
 
 ## PARAMETERS
 
 ### -Key
-Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-elasticmapreduce-step-keyvalue.html#cfn-elasticmapreduce-step-keyvalue-key    
-PrimitiveType: String    
-Required: False    
+The unique identifier of a key value pair.
+
+Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-elasticmapreduce-step-keyvalue.html#cfn-elasticmapreduce-step-keyvalue-key
+PrimitiveType: String
 UpdateType: Immutable
 
 ```yaml
@@ -44,9 +47,10 @@ Accept wildcard characters: False
 ```
 
 ### -Value
-Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-elasticmapreduce-step-keyvalue.html#cfn-elasticmapreduce-step-keyvalue-value    
-PrimitiveType: String    
-Required: False    
+The value part of the identified key.
+
+Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-elasticmapreduce-step-keyvalue.html#cfn-elasticmapreduce-step-keyvalue-value
+PrimitiveType: String
 UpdateType: Immutable
 
 ```yaml
@@ -62,15 +66,13 @@ Accept wildcard characters: False
 ```
 
 ### CommonParameters
-This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction, and -WarningVariable.
-For more information, see about_CommonParameters (http://go.microsoft.com/fwlink/?LinkID=113216).
+This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction, and -WarningVariable. For more information, see [about_CommonParameters](http://go.microsoft.com/fwlink/?LinkID=113216).
 
 ## INPUTS
 
 ## OUTPUTS
 
 ### Vaporshell.Resource.EMR.Step.KeyValue
-
 ## NOTES
 
 ## RELATED LINKS

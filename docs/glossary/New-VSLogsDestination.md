@@ -1,18 +1,9 @@
----
-layout: glossary
-title: New-VSLogsDestination
-categories: glossary
-label1: Category
-data1: Documentation
-label2: Depth
-data2: Deep
-schema: 2.0.0
----
-
 # New-VSLogsDestination
 
 ## SYNOPSIS
-Adds an AWS::Logs::Destination resource to the template
+Adds an AWS::Logs::Destination resource to the template.
+The AWS::Logs::Destination resource specifies a CloudWatch Logs destination.
+A destination encapsulates a physical resource (such as an Amazon Kinesis data stream and enables you to subscribe that resource to a stream of log events.
 
 ## SYNTAX
 
@@ -23,7 +14,18 @@ New-VSLogsDestination [-LogicalId] <String> -DestinationName <Object> -Destinati
 ```
 
 ## DESCRIPTION
-Adds an AWS::Logs::Destination resource to the template
+Adds an AWS::Logs::Destination resource to the template.
+The AWS::Logs::Destination resource specifies a CloudWatch Logs destination.
+A destination encapsulates a physical resource (such as an Amazon Kinesis data stream and enables you to subscribe that resource to a stream of log events.
+
+## EXAMPLES
+
+### Example 1
+```powershell
+PS C:\> {{ Add example code here }}
+```
+
+{{ Add example description here }}
 
 ## PARAMETERS
 
@@ -45,9 +47,10 @@ Accept wildcard characters: False
 ```
 
 ### -DestinationName
-Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-logs-destination.html#cfn-logs-destination-destinationname    
-PrimitiveType: String    
-Required: True    
+The name of the destination.
+
+Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-logs-destination.html#cfn-logs-destination-destinationname
+PrimitiveType: String
 UpdateType: Immutable
 
 ```yaml
@@ -63,9 +66,10 @@ Accept wildcard characters: False
 ```
 
 ### -DestinationPolicy
-Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-logs-destination.html#cfn-logs-destination-destinationpolicy    
-PrimitiveType: String    
-Required: True    
+An IAM policy document that governs which AWS accounts can create subscription filters against this destination.
+
+Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-logs-destination.html#cfn-logs-destination-destinationpolicy
+PrimitiveType: String
 UpdateType: Mutable
 
 ```yaml
@@ -81,9 +85,10 @@ Accept wildcard characters: False
 ```
 
 ### -RoleArn
-Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-logs-destination.html#cfn-logs-destination-rolearn    
-PrimitiveType: String    
-Required: True    
+The ARN of an IAM role that permits CloudWatch Logs to send data to the specified AWS resource.
+
+Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-logs-destination.html#cfn-logs-destination-rolearn
+PrimitiveType: String
 UpdateType: Mutable
 
 ```yaml
@@ -99,9 +104,10 @@ Accept wildcard characters: False
 ```
 
 ### -TargetArn
-Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-logs-destination.html#cfn-logs-destination-targetarn    
-PrimitiveType: String    
-Required: True    
+The Amazon Resource Name ARN of the physical target to where the log events are delivered for example, a Kinesis stream.
+
+Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-logs-destination.html#cfn-logs-destination-targetarn
+PrimitiveType: String
 UpdateType: Mutable
 
 ```yaml
@@ -211,15 +217,13 @@ Accept wildcard characters: False
 ```
 
 ### CommonParameters
-This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction, and -WarningVariable.
-For more information, see about_CommonParameters (http://go.microsoft.com/fwlink/?LinkID=113216).
+This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction, and -WarningVariable. For more information, see [about_CommonParameters](http://go.microsoft.com/fwlink/?LinkID=113216).
 
 ## INPUTS
 
 ## OUTPUTS
 
 ### Vaporshell.Resource.Logs.Destination
-
 ## NOTES
 
 ## RELATED LINKS

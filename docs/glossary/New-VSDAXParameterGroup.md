@@ -1,18 +1,8 @@
----
-layout: glossary
-title: New-VSDAXParameterGroup
-categories: glossary
-label1: Category
-data1: Documentation
-label2: Depth
-data2: Deep
-schema: 2.0.0
----
-
 # New-VSDAXParameterGroup
 
 ## SYNOPSIS
-Adds an AWS::DAX::ParameterGroup resource to the template
+Adds an AWS::DAX::ParameterGroup resource to the template.
+A named set of parameters that are applied to all of the nodes in a DAX cluster.
 
 ## SYNTAX
 
@@ -23,7 +13,17 @@ New-VSDAXParameterGroup [-LogicalId] <String> [-ParameterNameValues <Object>] [-
 ```
 
 ## DESCRIPTION
-Adds an AWS::DAX::ParameterGroup resource to the template
+Adds an AWS::DAX::ParameterGroup resource to the template.
+A named set of parameters that are applied to all of the nodes in a DAX cluster.
+
+## EXAMPLES
+
+### Example 1
+```powershell
+PS C:\> {{ Add example code here }}
+```
+
+{{ Add example description here }}
 
 ## PARAMETERS
 
@@ -45,9 +45,11 @@ Accept wildcard characters: False
 ```
 
 ### -ParameterNameValues
-Required: False    
-Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-dax-parametergroup.html#cfn-dax-parametergroup-parameternamevalues    
-PrimitiveType: Json    
+An array of name-value pairs for the parameters in the group.
+Each element in the array represents a single parameter.
+
+Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-dax-parametergroup.html#cfn-dax-parametergroup-parameternamevalues
+PrimitiveType: Json
 UpdateType: Mutable
 
 ```yaml
@@ -63,9 +65,10 @@ Accept wildcard characters: False
 ```
 
 ### -Description
-Required: False    
-Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-dax-parametergroup.html#cfn-dax-parametergroup-description    
-PrimitiveType: String    
+A description of the parameter group.
+
+Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-dax-parametergroup.html#cfn-dax-parametergroup-description
+PrimitiveType: String
 UpdateType: Mutable
 
 ```yaml
@@ -81,9 +84,10 @@ Accept wildcard characters: False
 ```
 
 ### -ParameterGroupName
-Required: False    
-Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-dax-parametergroup.html#cfn-dax-parametergroup-parametergroupname    
-PrimitiveType: String    
+The name of the parameter group.
+
+Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-dax-parametergroup.html#cfn-dax-parametergroup-parametergroupname
+PrimitiveType: String
 UpdateType: Immutable
 
 ```yaml
@@ -193,15 +197,13 @@ Accept wildcard characters: False
 ```
 
 ### CommonParameters
-This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction, and -WarningVariable.
-For more information, see about_CommonParameters (http://go.microsoft.com/fwlink/?LinkID=113216).
+This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction, and -WarningVariable. For more information, see [about_CommonParameters](http://go.microsoft.com/fwlink/?LinkID=113216).
 
 ## INPUTS
 
 ## OUTPUTS
 
 ### Vaporshell.Resource.DAX.ParameterGroup
-
 ## NOTES
 
 ## RELATED LINKS

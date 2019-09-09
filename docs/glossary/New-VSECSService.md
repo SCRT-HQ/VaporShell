@@ -1,32 +1,34 @@
----
-layout: glossary
-title: New-VSECSService
-categories: glossary
-label1: Category
-data1: Documentation
-label2: Depth
-data2: Deep
-schema: 2.0.0
----
-
 # New-VSECSService
 
 ## SYNOPSIS
-Adds an AWS::ECS::Service resource to the template
+Adds an AWS::ECS::Service resource to the template.
+The AWS::ECS::Service resource creates an Amazon Elastic Container Service (Amazon ECS service that runs and maintains the requested number of tasks and associated load balancers.
 
 ## SYNTAX
 
 ```
 New-VSECSService [-LogicalId] <String> [-Cluster <Object>] [-DeploymentConfiguration <Object>]
- [-DesiredCount <Int32>] [-HealthCheckGracePeriodSeconds <Int32>] [-LaunchType <Object>]
- [-LoadBalancers <Object>] [-NetworkConfiguration <Object>] [-PlacementConstraints <Object>]
- [-PlacementStrategies <Object>] [-PlatformVersion <Object>] [-Role <Object>] [-ServiceName <Object>]
- [-ServiceRegistries <Object>] -TaskDefinition <Object> [-DeletionPolicy <String>] [-DependsOn <String[]>]
- [-Metadata <Object>] [-UpdatePolicy <Object>] [-Condition <Object>] [<CommonParameters>]
+ [-DesiredCount <Int32>] [-EnableECSManagedTags <Boolean>] [-HealthCheckGracePeriodSeconds <Int32>]
+ [-LaunchType <Object>] [-LoadBalancers <Object>] [-NetworkConfiguration <Object>]
+ [-PlacementConstraints <Object>] [-PlacementStrategies <Object>] [-PlatformVersion <Object>]
+ [-PropagateTags <Object>] [-Role <Object>] [-SchedulingStrategy <Object>] [-ServiceName <Object>]
+ [-ServiceRegistries <Object>] [-Tags <Object>] -TaskDefinition <Object> [-DeletionPolicy <String>]
+ [-DependsOn <String[]>] [-Metadata <Object>] [-UpdatePolicy <Object>] [-Condition <Object>]
+ [<CommonParameters>]
 ```
 
 ## DESCRIPTION
-Adds an AWS::ECS::Service resource to the template
+Adds an AWS::ECS::Service resource to the template.
+The AWS::ECS::Service resource creates an Amazon Elastic Container Service (Amazon ECS service that runs and maintains the requested number of tasks and associated load balancers.
+
+## EXAMPLES
+
+### Example 1
+```powershell
+PS C:\> {{ Add example code here }}
+```
+
+{{ Add example description here }}
 
 ## PARAMETERS
 
@@ -48,9 +50,11 @@ Accept wildcard characters: False
 ```
 
 ### -Cluster
-Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ecs-service.html#cfn-ecs-service-cluster    
-PrimitiveType: String    
-Required: False    
+The short name or full Amazon Resource Name ARN of the cluster on which to run your service.
+If you do not specify a cluster, the default cluster is assumed.
+
+Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ecs-service.html#cfn-ecs-service-cluster
+PrimitiveType: String
 UpdateType: Immutable
 
 ```yaml
@@ -66,9 +70,10 @@ Accept wildcard characters: False
 ```
 
 ### -DeploymentConfiguration
-Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ecs-service.html#cfn-ecs-service-deploymentconfiguration    
-Required: False    
-Type: DeploymentConfiguration    
+Optional deployment parameters that control how many tasks run during the deployment and the ordering of stopping and starting tasks.
+
+Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ecs-service.html#cfn-ecs-service-deploymentconfiguration
+Type: DeploymentConfiguration
 UpdateType: Mutable
 
 ```yaml
@@ -84,9 +89,10 @@ Accept wildcard characters: False
 ```
 
 ### -DesiredCount
-Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ecs-service.html#cfn-ecs-service-desiredcount    
-PrimitiveType: Integer    
-Required: False    
+The number of instantiations of the specified task definition to place and keep running on your cluster.
+
+Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ecs-service.html#cfn-ecs-service-desiredcount
+PrimitiveType: Integer
 UpdateType: Mutable
 
 ```yaml
@@ -101,10 +107,32 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
+### -EnableECSManagedTags
+Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ecs-service.html#cfn-ecs-service-enableecsmanagedtags
+PrimitiveType: Boolean
+UpdateType: Immutable
+
+```yaml
+Type: Boolean
+Parameter Sets: (All)
+Aliases:
+
+Required: False
+Position: Named
+Default value: False
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
 ### -HealthCheckGracePeriodSeconds
-Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ecs-service.html#cfn-ecs-service-healthcheckgraceperiodseconds    
-PrimitiveType: Integer    
-Required: False    
+The period of time, in seconds, that the Amazon ECS service scheduler should ignore unhealthy Elastic Load Balancing target health checks after a task has first started.
+This is only valid if your service is configured to use a load balancer.
+If your service's tasks take a while to start and respond to Elastic Load Balancing health checks, you can specify a health check grace period of up to 2,147,483,647 seconds.
+During that time, the ECS service scheduler ignores health check status.
+This grace period can prevent the ECS service scheduler from marking tasks as unhealthy and stopping them before they have time to come up.
+
+Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ecs-service.html#cfn-ecs-service-healthcheckgraceperiodseconds
+PrimitiveType: Integer
 UpdateType: Mutable
 
 ```yaml
@@ -120,9 +148,11 @@ Accept wildcard characters: False
 ```
 
 ### -LaunchType
-Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ecs-service.html#cfn-ecs-service-launchtype    
-PrimitiveType: String    
-Required: False    
+The launch type on which to run your service.
+For more information, see Amazon ECS Launch Types: https://docs.aws.amazon.com/AmazonECS/latest/developerguide/launch_types.html in the *Amazon Elastic Container Service Developer Guide*.
+
+Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ecs-service.html#cfn-ecs-service-launchtype
+PrimitiveType: String
 UpdateType: Immutable
 
 ```yaml
@@ -138,11 +168,14 @@ Accept wildcard characters: False
 ```
 
 ### -LoadBalancers
-Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ecs-service.html#cfn-ecs-service-loadbalancers    
-DuplicatesAllowed: False    
-ItemType: LoadBalancer    
-Required: False    
-Type: List    
+A list of load balancer objects to associate with the cluster.
+If you specify the Role property, LoadBalancers must be specified as well.
+For information about the number of load balancers that you can specify per service, see Service Load Balancing: https://docs.aws.amazon.com/AmazonECS/latest/developerguide/service-load-balancing.html in the *Amazon Elastic Container Service Developer Guide*.
+
+Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ecs-service.html#cfn-ecs-service-loadbalancers
+DuplicatesAllowed: False
+ItemType: LoadBalancer
+Type: List
 UpdateType: Immutable
 
 ```yaml
@@ -158,9 +191,12 @@ Accept wildcard characters: False
 ```
 
 ### -NetworkConfiguration
-Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ecs-service.html#cfn-ecs-service-networkconfiguration    
-Required: False    
-Type: NetworkConfiguration    
+The network configuration for the service.
+This parameter is required for task definitions that use the awsvpc network mode to receive their own elastic network interface, and it is not supported for other network modes.
+For more information, see Task Networking: https://docs.aws.amazon.com/AmazonECS/latest/developerguide/task-networking.html in the *Amazon Elastic Container Service Developer Guide*.
+
+Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ecs-service.html#cfn-ecs-service-networkconfiguration
+Type: NetworkConfiguration
 UpdateType: Mutable
 
 ```yaml
@@ -176,11 +212,13 @@ Accept wildcard characters: False
 ```
 
 ### -PlacementConstraints
-Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ecs-service.html#cfn-ecs-service-placementconstraints    
-DuplicatesAllowed: False    
-ItemType: PlacementConstraint    
-Required: False    
-Type: List    
+An array of placement constraint objects to use for tasks in your service.
+You can specify a maximum of 10 constraints per task this limit includes constraints in the task definition and those specified at runtime.
+
+Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ecs-service.html#cfn-ecs-service-placementconstraints
+DuplicatesAllowed: False
+ItemType: PlacementConstraint
+Type: List
 UpdateType: Immutable
 
 ```yaml
@@ -196,11 +234,14 @@ Accept wildcard characters: False
 ```
 
 ### -PlacementStrategies
-Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ecs-service.html#cfn-ecs-service-placementstrategies    
-DuplicatesAllowed: False    
-ItemType: PlacementStrategy    
-Required: False    
-Type: List    
+The placement strategy objects to use for tasks in your service.
+You can specify a maximum of five strategy rules per service.
+For more information, see Task Placement Strategies: https://docs.aws.amazon.com/AmazonECS/latest/developerguide/task-placement-strategies.html in the *Amazon Elastic Container Service Developer Guide*.
+
+Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ecs-service.html#cfn-ecs-service-placementstrategies
+DuplicatesAllowed: False
+ItemType: PlacementStrategy
+Type: List
 UpdateType: Immutable
 
 ```yaml
@@ -216,9 +257,30 @@ Accept wildcard characters: False
 ```
 
 ### -PlatformVersion
-Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ecs-service.html#cfn-ecs-service-platformversion    
-PrimitiveType: String    
-Required: False    
+The platform version that your tasks in the service are running on.
+A platform version is specified only for tasks using the Fargate launch type.
+If one isn't specified, the LATEST platform version is used by default.
+For more information, see AWS Fargate Platform Versions: https://docs.aws.amazon.com/AmazonECS/latest/developerguide/platform_versions.html in the *Amazon Elastic Container Service Developer Guide*.
+
+Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ecs-service.html#cfn-ecs-service-platformversion
+PrimitiveType: String
+UpdateType: Immutable
+
+```yaml
+Type: Object
+Parameter Sets: (All)
+Aliases:
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### -PropagateTags
+Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ecs-service.html#cfn-ecs-service-propagatetags
+PrimitiveType: String
 UpdateType: Immutable
 
 ```yaml
@@ -234,9 +296,47 @@ Accept wildcard characters: False
 ```
 
 ### -Role
-Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ecs-service.html#cfn-ecs-service-role    
-PrimitiveType: String    
-Required: False    
+The name or full Amazon Resource Name ARN of the IAM role that allows Amazon ECS to make calls to your load balancer on your behalf.
+This parameter is only permitted if you are using a load balancer with your service and your task definition does not use the awsvpc network mode.
+If you specify the role parameter, you must also specify a load balancer object with the loadBalancers parameter.
+If your account has already created the Amazon ECS service-linked role, that role is used by default for your service unless you specify a role here.
+The service-linked role is required if your task definition uses the awsvpc network mode, in which case you should not specify a role here.
+For more information, see Using Service-Linked Roles for Amazon ECS: https://docs.aws.amazon.com/AmazonECS/latest/developerguide/using-service-linked-roles.html in the *Amazon Elastic Container Service Developer Guide*.
+If your specified role has a path other than /, then you must either specify the full role ARN this is recommended or prefix the role name with the path.
+For example, if a role with the name bar has a path of /foo/ then you would specify /foo/bar as the role name.
+For more information, see Friendly Names and Paths: https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_identifiers.html#identifiers-friendly-names in the *IAM User Guide*.
+
+Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ecs-service.html#cfn-ecs-service-role
+PrimitiveType: String
+UpdateType: Immutable
+
+```yaml
+Type: Object
+Parameter Sets: (All)
+Aliases:
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### -SchedulingStrategy
+The scheduling strategy to use for the service.
+For more information, see Services: https://docs.aws.amazon.com/AmazonECS/latest/developerguide/ecs_services.html.
+There are two service scheduler strategies available:
++  REPLICA-The replica scheduling strategy places and maintains the desired number of tasks across your cluster.
+By default, the service scheduler spreads tasks across Availability Zones.
+You can use task placement strategies and constraints to customize task placement decisions.
+This scheduler strategy is required if the service is using the CODE_DEPLOY or EXTERNAL deployment controller types.
++  DAEMON-The daemon scheduling strategy deploys exactly one task on each active container instance that meets all of the task placement constraints that you specify in your cluster.
+When you're using this strategy, you don't need to specify a desired number of tasks, a task placement strategy, or use Service Auto Scaling policies.
+**Note**
+Tasks using the Fargate launch type or the CODE_DEPLOY or EXTERNAL deployment controller types don't support the DAEMON scheduling strategy.
+
+Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ecs-service.html#cfn-ecs-service-schedulingstrategy
+PrimitiveType: String
 UpdateType: Immutable
 
 ```yaml
@@ -252,9 +352,12 @@ Accept wildcard characters: False
 ```
 
 ### -ServiceName
-Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ecs-service.html#cfn-ecs-service-servicename    
-PrimitiveType: String    
-Required: False    
+The name of your service.
+Up to 255 letters uppercase and lowercase, numbers, and hyphens are allowed.
+Service names must be unique within a cluster, but you can have similarly named services in multiple clusters within a Region or across multiple Regions.
+
+Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ecs-service.html#cfn-ecs-service-servicename
+PrimitiveType: String
 UpdateType: Immutable
 
 ```yaml
@@ -270,11 +373,34 @@ Accept wildcard characters: False
 ```
 
 ### -ServiceRegistries
-Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ecs-service.html#cfn-ecs-service-serviceregistries    
-DuplicatesAllowed: False    
-ItemType: ServiceRegistry    
-Required: False    
-Type: List    
+The details of the service discovery registries to assign to this service.
+For more information, see Service Discovery: https://docs.aws.amazon.com/AmazonECS/latest/developerguide/service-discovery.html.
+Service discovery is supported for Fargate tasks if you are using platform version v1.1.0 or later.
+For more information, see AWS Fargate Platform Versions: https://docs.aws.amazon.com/AmazonECS/latest/developerguide/platform_versions.html.
+
+Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ecs-service.html#cfn-ecs-service-serviceregistries
+DuplicatesAllowed: False
+ItemType: ServiceRegistry
+Type: List
+UpdateType: Immutable
+
+```yaml
+Type: Object
+Parameter Sets: (All)
+Aliases:
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### -Tags
+Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ecs-service.html#cfn-ecs-service-tags
+DuplicatesAllowed: True
+ItemType: Tag
+Type: List
 UpdateType: Mutable
 
 ```yaml
@@ -290,9 +416,12 @@ Accept wildcard characters: False
 ```
 
 ### -TaskDefinition
-Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ecs-service.html#cfn-ecs-service-taskdefinition    
-PrimitiveType: String    
-Required: True    
+The family and revision family:revision or full ARN of the task definition to run in your service.
+If a revision is not specified, the latest ACTIVE revision is used.
+A task definition must be specified if the service is using the ECS deployment controller.
+
+Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ecs-service.html#cfn-ecs-service-taskdefinition
+PrimitiveType: String
 UpdateType: Mutable
 
 ```yaml
@@ -402,15 +531,13 @@ Accept wildcard characters: False
 ```
 
 ### CommonParameters
-This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction, and -WarningVariable.
-For more information, see about_CommonParameters (http://go.microsoft.com/fwlink/?LinkID=113216).
+This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction, and -WarningVariable. For more information, see [about_CommonParameters](http://go.microsoft.com/fwlink/?LinkID=113216).
 
 ## INPUTS
 
 ## OUTPUTS
 
 ### Vaporshell.Resource.ECS.Service
-
 ## NOTES
 
 ## RELATED LINKS

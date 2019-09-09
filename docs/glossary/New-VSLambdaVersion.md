@@ -1,18 +1,9 @@
----
-layout: glossary
-title: New-VSLambdaVersion
-categories: glossary
-label1: Category
-data1: Documentation
-label2: Depth
-data2: Deep
-schema: 2.0.0
----
-
 # New-VSLambdaVersion
 
 ## SYNOPSIS
-Adds an AWS::Lambda::Version resource to the template
+Adds an AWS::Lambda::Version resource to the template.
+The AWS::Lambda::Version resource creates a version: https://docs.aws.amazon.com/lambda/latest/dg/versioning-aliases.html from the current code and configuration of a function.
+Use versions to create a snapshot of your function code and configuration that doesn't change.
 
 ## SYNTAX
 
@@ -23,7 +14,18 @@ New-VSLambdaVersion [-LogicalId] <String> [-CodeSha256 <Object>] [-Description <
 ```
 
 ## DESCRIPTION
-Adds an AWS::Lambda::Version resource to the template
+Adds an AWS::Lambda::Version resource to the template.
+The AWS::Lambda::Version resource creates a version: https://docs.aws.amazon.com/lambda/latest/dg/versioning-aliases.html from the current code and configuration of a function.
+Use versions to create a snapshot of your function code and configuration that doesn't change.
+
+## EXAMPLES
+
+### Example 1
+```powershell
+PS C:\> {{ Add example code here }}
+```
+
+{{ Add example description here }}
 
 ## PARAMETERS
 
@@ -45,9 +47,11 @@ Accept wildcard characters: False
 ```
 
 ### -CodeSha256
-Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-lambda-version.html#cfn-lambda-version-codesha256    
-PrimitiveType: String    
-Required: False    
+Only publish a version if the hash value matches the value that's specified.
+Use this option to avoid publishing a version if the function code has changed since you last updated it.
+
+Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-lambda-version.html#cfn-lambda-version-codesha256
+PrimitiveType: String
 UpdateType: Mutable
 
 ```yaml
@@ -63,9 +67,10 @@ Accept wildcard characters: False
 ```
 
 ### -Description
-Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-lambda-version.html#cfn-lambda-version-description    
-PrimitiveType: String    
-Required: False    
+A description for the version to override the description in the function configuration.
+
+Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-lambda-version.html#cfn-lambda-version-description
+PrimitiveType: String
 UpdateType: Mutable
 
 ```yaml
@@ -81,9 +86,16 @@ Accept wildcard characters: False
 ```
 
 ### -FunctionName
-Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-lambda-version.html#cfn-lambda-version-functionname    
-PrimitiveType: String    
-Required: True    
+The name of the Lambda function.
+**Name formats**
++  **Function name** - MyFunction.
++  **Function ARN** - arn:aws:lambda:us-west-2:123456789012:function:MyFunction.
++  **Partial ARN** - 123456789012:function:MyFunction.
+The length constraint applies only to the full ARN.
+If you specify only the function name, it is limited to 64 characters in length.
+
+Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-lambda-version.html#cfn-lambda-version-functionname
+PrimitiveType: String
 UpdateType: Immutable
 
 ```yaml
@@ -193,15 +205,13 @@ Accept wildcard characters: False
 ```
 
 ### CommonParameters
-This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction, and -WarningVariable.
-For more information, see about_CommonParameters (http://go.microsoft.com/fwlink/?LinkID=113216).
+This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction, and -WarningVariable. For more information, see [about_CommonParameters](http://go.microsoft.com/fwlink/?LinkID=113216).
 
 ## INPUTS
 
 ## OUTPUTS
 
 ### Vaporshell.Resource.Lambda.Version
-
 ## NOTES
 
 ## RELATED LINKS

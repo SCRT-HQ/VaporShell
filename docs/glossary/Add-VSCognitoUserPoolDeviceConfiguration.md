@@ -1,18 +1,8 @@
----
-layout: glossary
-title: Add-VSCognitoUserPoolDeviceConfiguration
-categories: glossary
-label1: Category
-data1: Documentation
-label2: Depth
-data2: Deep
-schema: 2.0.0
----
-
 # Add-VSCognitoUserPoolDeviceConfiguration
 
 ## SYNOPSIS
-Adds an AWS::Cognito::UserPool.DeviceConfiguration resource property to the template
+Adds an AWS::Cognito::UserPool.DeviceConfiguration resource property to the template.
+DeviceConfiguration is a property of the AWS::Cognito::UserPool: https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-cognito-userpool.html resource that defines the device configuration of an Amazon Cognito User Pool.
 
 ## SYNTAX
 
@@ -22,14 +12,25 @@ Add-VSCognitoUserPoolDeviceConfiguration [[-DeviceOnlyRememberedOnUserPrompt] <B
 ```
 
 ## DESCRIPTION
-Adds an AWS::Cognito::UserPool.DeviceConfiguration resource property to the template
+Adds an AWS::Cognito::UserPool.DeviceConfiguration resource property to the template.
+DeviceConfiguration is a property of the AWS::Cognito::UserPool: https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-cognito-userpool.html resource that defines the device configuration of an Amazon Cognito User Pool.
+
+## EXAMPLES
+
+### Example 1
+```powershell
+PS C:\> {{ Add example code here }}
+```
+
+{{ Add example description here }}
 
 ## PARAMETERS
 
 ### -DeviceOnlyRememberedOnUserPrompt
-Required: False    
-Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-cognito-userpool-deviceconfiguration.html#cfn-cognito-userpool-deviceconfiguration-deviceonlyrememberedonuserprompt    
-PrimitiveType: Boolean    
+If true, a device is only remembered on user prompt.
+
+Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-cognito-userpool-deviceconfiguration.html#cfn-cognito-userpool-deviceconfiguration-deviceonlyrememberedonuserprompt
+PrimitiveType: Boolean
 UpdateType: Mutable
 
 ```yaml
@@ -45,9 +46,11 @@ Accept wildcard characters: False
 ```
 
 ### -ChallengeRequiredOnNewDevice
-Required: False    
-Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-cognito-userpool-deviceconfiguration.html#cfn-cognito-userpool-deviceconfiguration-challengerequiredonnewdevice    
-PrimitiveType: Boolean    
+Indicates whether a challenge is required on a new device.
+Only applicable to a new device.
+
+Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-cognito-userpool-deviceconfiguration.html#cfn-cognito-userpool-deviceconfiguration-challengerequiredonnewdevice
+PrimitiveType: Boolean
 UpdateType: Mutable
 
 ```yaml
@@ -63,15 +66,13 @@ Accept wildcard characters: False
 ```
 
 ### CommonParameters
-This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction, and -WarningVariable.
-For more information, see about_CommonParameters (http://go.microsoft.com/fwlink/?LinkID=113216).
+This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction, and -WarningVariable. For more information, see [about_CommonParameters](http://go.microsoft.com/fwlink/?LinkID=113216).
 
 ## INPUTS
 
 ## OUTPUTS
 
 ### Vaporshell.Resource.Cognito.UserPool.DeviceConfiguration
-
 ## NOTES
 
 ## RELATED LINKS

@@ -1,18 +1,10 @@
----
-layout: glossary
-title: New-VSEC2VPCCidrBlock
-categories: glossary
-label1: Category
-data1: Documentation
-label2: Depth
-data2: Deep
-schema: 2.0.0
----
-
 # New-VSEC2VPCCidrBlock
 
 ## SYNOPSIS
-Adds an AWS::EC2::VPCCidrBlock resource to the template
+Adds an AWS::EC2::VPCCidrBlock resource to the template.
+Associates a CIDR block with your VPC.
+You can only associate a single IPv6 CIDR block with your VPC.
+An IPv6 CIDR block must have a prefix length of /64.
 
 ## SYNTAX
 
@@ -23,7 +15,21 @@ New-VSEC2VPCCidrBlock [-LogicalId] <String> [-AmazonProvidedIpv6CidrBlock <Boole
 ```
 
 ## DESCRIPTION
-Adds an AWS::EC2::VPCCidrBlock resource to the template
+Adds an AWS::EC2::VPCCidrBlock resource to the template.
+Associates a CIDR block with your VPC.
+You can only associate a single IPv6 CIDR block with your VPC.
+An IPv6 CIDR block must have a prefix length of /64.
+
+For more information about associating CIDR blocks with your VPC and applicable restrictions, see VPC and Subnet Sizing: https://docs.aws.amazon.com/vpc/latest/userguide/VPC_Subnets.html#VPC_Sizing in the *Amazon Virtual Private Cloud User Guide*.
+
+## EXAMPLES
+
+### Example 1
+```powershell
+PS C:\> {{ Add example code here }}
+```
+
+{{ Add example description here }}
 
 ## PARAMETERS
 
@@ -45,9 +51,11 @@ Accept wildcard characters: False
 ```
 
 ### -AmazonProvidedIpv6CidrBlock
-Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ec2-vpccidrblock.html#cfn-ec2-vpccidrblock-amazonprovidedipv6cidrblock    
-PrimitiveType: Boolean    
-Required: False    
+Requests an Amazon-provided IPv6 CIDR block with a /56 prefix length for the VPC.
+You cannot specify the range of IPv6 addresses, or the size of the CIDR block.
+
+Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ec2-vpccidrblock.html#cfn-ec2-vpccidrblock-amazonprovidedipv6cidrblock
+PrimitiveType: Boolean
 UpdateType: Immutable
 
 ```yaml
@@ -63,9 +71,10 @@ Accept wildcard characters: False
 ```
 
 ### -CidrBlock
-Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ec2-vpccidrblock.html#cfn-ec2-vpccidrblock-cidrblock    
-PrimitiveType: String    
-Required: False    
+An IPv4 CIDR block to associate with the VPC.
+
+Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ec2-vpccidrblock.html#cfn-ec2-vpccidrblock-cidrblock
+PrimitiveType: String
 UpdateType: Immutable
 
 ```yaml
@@ -81,9 +90,10 @@ Accept wildcard characters: False
 ```
 
 ### -VpcId
-Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ec2-vpccidrblock.html#cfn-ec2-vpccidrblock-vpcid    
-PrimitiveType: String    
-Required: True    
+The ID of the VPC.
+
+Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ec2-vpccidrblock.html#cfn-ec2-vpccidrblock-vpcid
+PrimitiveType: String
 UpdateType: Immutable
 
 ```yaml
@@ -193,15 +203,13 @@ Accept wildcard characters: False
 ```
 
 ### CommonParameters
-This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction, and -WarningVariable.
-For more information, see about_CommonParameters (http://go.microsoft.com/fwlink/?LinkID=113216).
+This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction, and -WarningVariable. For more information, see [about_CommonParameters](http://go.microsoft.com/fwlink/?LinkID=113216).
 
 ## INPUTS
 
 ## OUTPUTS
 
 ### Vaporshell.Resource.EC2.VPCCidrBlock
-
 ## NOTES
 
 ## RELATED LINKS

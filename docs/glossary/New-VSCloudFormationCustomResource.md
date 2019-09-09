@@ -1,18 +1,8 @@
----
-layout: glossary
-title: New-VSCloudFormationCustomResource
-categories: glossary
-label1: Category
-data1: Documentation
-label2: Depth
-data2: Deep
-schema: 2.0.0
----
-
 # New-VSCloudFormationCustomResource
 
 ## SYNOPSIS
-Adds an AWS::CloudFormation::CustomResource resource to the template
+Adds an AWS::CloudFormation::CustomResource resource to the template.
+In a CloudFormation template, you use the AWS::CloudFormation::CustomResource or Custom::String  resource type to specify custom resources.
 
 ## SYNTAX
 
@@ -23,7 +13,27 @@ New-VSCloudFormationCustomResource [-LogicalId] <String> -ServiceToken <Object> 
 ```
 
 ## DESCRIPTION
-Adds an AWS::CloudFormation::CustomResource resource to the template
+Adds an AWS::CloudFormation::CustomResource resource to the template.
+In a CloudFormation template, you use the AWS::CloudFormation::CustomResource or Custom::String  resource type to specify custom resources.
+
+Custom resources provide a way for you to write custom provisioning logic in CloudFormation template and have CloudFormation run it during a stack operation, such as when you create, update or delete a stack.
+For more information, see Custom Resources: https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/template-custom-resources.html.
+
+**Note**
+
+If you use the VPC Endpoints: https://docs.aws.amazon.com/vpc/latest/userguide/vpc-endpoints.html feature, custom resources in the VPC must have access to CloudFormation-specific Amazon Simple Storage Service (Amazon S3 buckets.
+Custom resources must send responses to a pre-signed Amazon S3 URL.
+If they can't send responses to Amazon S3, CloudFormation won't receive a response and the stack operation fails.
+For more information, see Setting Up VPC Endpoints for AWS CloudFormation: https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/cfn-vpce-bucketnames.html.
+
+## EXAMPLES
+
+### Example 1
+```powershell
+PS C:\> {{ Add example code here }}
+```
+
+{{ Add example description here }}
 
 ## PARAMETERS
 
@@ -45,9 +55,14 @@ Accept wildcard characters: False
 ```
 
 ### -ServiceToken
-Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-cfn-customresource.html#cfn-customresource-servicetoken    
-PrimitiveType: String    
-Required: True    
+Only one property is defined by AWS for a custom resource: ServiceToken.
+All other properties are defined by the service provider.
+The service token that was given to the template developer by the service provider to access the service, such as an Amazon SNS topic ARN or Lambda function ARN.
+The service token must be from the same region in which you are creating the stack.
+Updates are not supported.
+
+Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-cfn-customresource.html#cfn-customresource-servicetoken
+PrimitiveType: String
 UpdateType: Immutable
 
 ```yaml
@@ -157,15 +172,13 @@ Accept wildcard characters: False
 ```
 
 ### CommonParameters
-This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction, and -WarningVariable.
-For more information, see about_CommonParameters (http://go.microsoft.com/fwlink/?LinkID=113216).
+This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction, and -WarningVariable. For more information, see [about_CommonParameters](http://go.microsoft.com/fwlink/?LinkID=113216).
 
 ## INPUTS
 
 ## OUTPUTS
 
 ### Vaporshell.Resource.CloudFormation.CustomResource
-
 ## NOTES
 
 ## RELATED LINKS

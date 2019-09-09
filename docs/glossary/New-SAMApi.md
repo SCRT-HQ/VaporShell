@@ -1,14 +1,3 @@
----
-layout: glossary
-title: New-SAMApi
-categories: glossary
-label1: Category
-data1: Documentation
-label2: Depth
-data2: Deep
-schema: 2.0.0
----
-
 # New-SAMApi
 
 ## SYNOPSIS
@@ -36,6 +25,15 @@ Creates a collection of Amazon API Gateway resources and methods that can be inv
 An AWS::Serverless::Api resource need not be explicitly added to a AWS Serverless Application Definition template.
 A resource of this type is implicitly created from the union of Api events defined on AWS::Serverless::Function resources defined in the template that do not refer to an AWS::Serverless::Api resource.
 An AWS::Serverless::Api resource should be used to define and document the API using Swagger, which provides more ability to configure the underlying Amazon API Gateway resources.
+
+## EXAMPLES
+
+### Example 1
+```powershell
+PS C:\> {{ Add example code here }}
+```
+
+{{ Add example description here }}
 
 ## PARAMETERS
 
@@ -107,7 +105,7 @@ Accept wildcard characters: False
 ```
 
 ### -DescripCacheClusterEnabledtion
-{{Fill DescripCacheClusterEnabledtion Description}}
+{{ Fill DescripCacheClusterEnabledtion Description }}
 
 ```yaml
 Type: Boolean
@@ -154,15 +152,13 @@ Accept wildcard characters: False
 ```
 
 ### CommonParameters
-This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction, and -WarningVariable.
-For more information, see about_CommonParameters (http://go.microsoft.com/fwlink/?LinkID=113216).
+This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction, and -WarningVariable. For more information, see [about_CommonParameters](http://go.microsoft.com/fwlink/?LinkID=113216).
 
 ## INPUTS
 
 ## OUTPUTS
 
 ### Vaporshell.Serverless.Api
-
 ## NOTES
 Return values  
 

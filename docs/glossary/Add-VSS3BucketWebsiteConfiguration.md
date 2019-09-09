@@ -1,18 +1,8 @@
----
-layout: glossary
-title: Add-VSS3BucketWebsiteConfiguration
-categories: glossary
-label1: Category
-data1: Documentation
-label2: Depth
-data2: Deep
-schema: 2.0.0
----
-
 # Add-VSS3BucketWebsiteConfiguration
 
 ## SYNOPSIS
-Adds an AWS::S3::Bucket.WebsiteConfiguration resource property to the template
+Adds an AWS::S3::Bucket.WebsiteConfiguration resource property to the template.
+Specifies website configuration parameters for an Amazon S3 bucket.
 
 ## SYNTAX
 
@@ -22,14 +12,25 @@ Add-VSS3BucketWebsiteConfiguration [[-ErrorDocument] <Object>] [[-IndexDocument]
 ```
 
 ## DESCRIPTION
-Adds an AWS::S3::Bucket.WebsiteConfiguration resource property to the template
+Adds an AWS::S3::Bucket.WebsiteConfiguration resource property to the template.
+Specifies website configuration parameters for an Amazon S3 bucket.
+
+## EXAMPLES
+
+### Example 1
+```powershell
+PS C:\> {{ Add example code here }}
+```
+
+{{ Add example description here }}
 
 ## PARAMETERS
 
 ### -ErrorDocument
-Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-s3-websiteconfiguration.html#cfn-s3-websiteconfiguration-errordocument    
-PrimitiveType: String    
-Required: False    
+The name of the error document for the website.
+
+Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-s3-websiteconfiguration.html#cfn-s3-websiteconfiguration-errordocument
+PrimitiveType: String
 UpdateType: Mutable
 
 ```yaml
@@ -45,9 +46,10 @@ Accept wildcard characters: False
 ```
 
 ### -IndexDocument
-Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-s3-websiteconfiguration.html#cfn-s3-websiteconfiguration-indexdocument    
-PrimitiveType: String    
-Required: False    
+The name of the index document for the website.
+
+Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-s3-websiteconfiguration.html#cfn-s3-websiteconfiguration-indexdocument
+PrimitiveType: String
 UpdateType: Mutable
 
 ```yaml
@@ -63,9 +65,11 @@ Accept wildcard characters: False
 ```
 
 ### -RedirectAllRequestsTo
-Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-s3-websiteconfiguration.html#cfn-s3-websiteconfiguration-redirectallrequeststo    
-Required: False    
-Type: RedirectAllRequestsTo    
+The redirect behavior for every request to this bucket's website endpoint.
+If you specify this property, you can't specify any other property.
+
+Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-s3-websiteconfiguration.html#cfn-s3-websiteconfiguration-redirectallrequeststo
+Type: RedirectAllRequestsTo
 UpdateType: Mutable
 
 ```yaml
@@ -81,11 +85,12 @@ Accept wildcard characters: False
 ```
 
 ### -RoutingRules
-Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-s3-websiteconfiguration.html#cfn-s3-websiteconfiguration-routingrules    
-DuplicatesAllowed: False    
-ItemType: RoutingRule    
-Required: False    
-Type: List    
+Rules that define when a redirect is applied and the redirect behavior.
+
+Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-s3-websiteconfiguration.html#cfn-s3-websiteconfiguration-routingrules
+DuplicatesAllowed: False
+ItemType: RoutingRule
+Type: List
 UpdateType: Mutable
 
 ```yaml
@@ -101,15 +106,13 @@ Accept wildcard characters: False
 ```
 
 ### CommonParameters
-This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction, and -WarningVariable.
-For more information, see about_CommonParameters (http://go.microsoft.com/fwlink/?LinkID=113216).
+This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction, and -WarningVariable. For more information, see [about_CommonParameters](http://go.microsoft.com/fwlink/?LinkID=113216).
 
 ## INPUTS
 
 ## OUTPUTS
 
 ### Vaporshell.Resource.S3.Bucket.WebsiteConfiguration
-
 ## NOTES
 
 ## RELATED LINKS

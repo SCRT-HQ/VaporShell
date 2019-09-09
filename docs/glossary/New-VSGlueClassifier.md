@@ -1,29 +1,31 @@
----
-layout: glossary
-title: New-VSGlueClassifier
-categories: glossary
-label1: Category
-data1: Documentation
-label2: Depth
-data2: Deep
-schema: 2.0.0
----
-
 # New-VSGlueClassifier
 
 ## SYNOPSIS
-Adds an AWS::Glue::Classifier resource to the template
+Adds an AWS::Glue::Classifier resource to the template.
+The AWS::Glue::Classifier resource creates an AWS Glue classifier that categorizes data sources and specifies schemas.
+For more information, see Adding Classifiers to a Crawler: https://docs.aws.amazon.com/glue/latest/dg/add-classifier.html and Classifier Structure: https://docs.aws.amazon.com/glue/latest/aws-glue-api-crawler-classifiers.html#aws-glue-api-crawler-classifiers-Classifier in the *AWS Glue Developer Guide*.
 
 ## SYNTAX
 
 ```
-New-VSGlueClassifier [-LogicalId] <String> [-GrokClassifier <Object>] [-DeletionPolicy <String>]
- [-DependsOn <String[]>] [-Metadata <Object>] [-UpdatePolicy <Object>] [-Condition <Object>]
- [<CommonParameters>]
+New-VSGlueClassifier [-LogicalId] <String> [-XMLClassifier <Object>] [-JsonClassifier <Object>]
+ [-CsvClassifier <Object>] [-GrokClassifier <Object>] [-DeletionPolicy <String>] [-DependsOn <String[]>]
+ [-Metadata <Object>] [-UpdatePolicy <Object>] [-Condition <Object>] [<CommonParameters>]
 ```
 
 ## DESCRIPTION
-Adds an AWS::Glue::Classifier resource to the template
+Adds an AWS::Glue::Classifier resource to the template.
+The AWS::Glue::Classifier resource creates an AWS Glue classifier that categorizes data sources and specifies schemas.
+For more information, see Adding Classifiers to a Crawler: https://docs.aws.amazon.com/glue/latest/dg/add-classifier.html and Classifier Structure: https://docs.aws.amazon.com/glue/latest/aws-glue-api-crawler-classifiers.html#aws-glue-api-crawler-classifiers-Classifier in the *AWS Glue Developer Guide*.
+
+## EXAMPLES
+
+### Example 1
+```powershell
+PS C:\> {{ Add example code here }}
+```
+
+{{ Add example description here }}
 
 ## PARAMETERS
 
@@ -44,10 +46,68 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
+### -XMLClassifier
+A classifier for XML content.
+
+Type: XMLClassifier
+Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-glue-classifier.html#cfn-glue-classifier-xmlclassifier
+UpdateType: Mutable
+
+```yaml
+Type: Object
+Parameter Sets: (All)
+Aliases:
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### -JsonClassifier
+A classifier for JSON content.
+
+Type: JsonClassifier
+Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-glue-classifier.html#cfn-glue-classifier-jsonclassifier
+UpdateType: Mutable
+
+```yaml
+Type: Object
+Parameter Sets: (All)
+Aliases:
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### -CsvClassifier
+A classifier for comma-separated values CSV.
+
+Type: CsvClassifier
+Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-glue-classifier.html#cfn-glue-classifier-csvclassifier
+UpdateType: Mutable
+
+```yaml
+Type: Object
+Parameter Sets: (All)
+Aliases:
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
 ### -GrokClassifier
-Type: GrokClassifier    
-Required: False    
-Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-glue-classifier.html#cfn-glue-classifier-grokclassifier    
+A classifier that uses grok.
+
+Type: GrokClassifier
+Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-glue-classifier.html#cfn-glue-classifier-grokclassifier
 UpdateType: Mutable
 
 ```yaml
@@ -157,15 +217,13 @@ Accept wildcard characters: False
 ```
 
 ### CommonParameters
-This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction, and -WarningVariable.
-For more information, see about_CommonParameters (http://go.microsoft.com/fwlink/?LinkID=113216).
+This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction, and -WarningVariable. For more information, see [about_CommonParameters](http://go.microsoft.com/fwlink/?LinkID=113216).
 
 ## INPUTS
 
 ## OUTPUTS
 
 ### Vaporshell.Resource.Glue.Classifier
-
 ## NOTES
 
 ## RELATED LINKS

@@ -1,18 +1,8 @@
----
-layout: glossary
-title: New-VSSSMAssociation
-categories: glossary
-label1: Category
-data1: Documentation
-label2: Depth
-data2: Deep
-schema: 2.0.0
----
-
 # New-VSSSMAssociation
 
 ## SYNOPSIS
-Adds an AWS::SSM::Association resource to the template
+Adds an AWS::SSM::Association resource to the template.
+The AWS::SSM::Association resource associates an SSM document in AWS Systems Manager with managed instances that contain a configuration agent to process the document.
 
 ## SYNTAX
 
@@ -24,7 +14,17 @@ New-VSSSMAssociation [-LogicalId] <String> [-AssociationName <Object>] [-Documen
 ```
 
 ## DESCRIPTION
-Adds an AWS::SSM::Association resource to the template
+Adds an AWS::SSM::Association resource to the template.
+The AWS::SSM::Association resource associates an SSM document in AWS Systems Manager with managed instances that contain a configuration agent to process the document.
+
+## EXAMPLES
+
+### Example 1
+```powershell
+PS C:\> {{ Add example code here }}
+```
+
+{{ Add example description here }}
 
 ## PARAMETERS
 
@@ -46,9 +46,10 @@ Accept wildcard characters: False
 ```
 
 ### -AssociationName
-Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ssm-association.html#cfn-ssm-association-associationname    
-PrimitiveType: String    
-Required: False    
+The name of the association.
+
+Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ssm-association.html#cfn-ssm-association-associationname
+PrimitiveType: String
 UpdateType: Mutable
 
 ```yaml
@@ -64,9 +65,10 @@ Accept wildcard characters: False
 ```
 
 ### -DocumentVersion
-Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ssm-association.html#cfn-ssm-association-documentversion    
-PrimitiveType: String    
-Required: False    
+The version of the SSM document to associate with the target.
+
+Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ssm-association.html#cfn-ssm-association-documentversion
+PrimitiveType: String
 UpdateType: Mutable
 
 ```yaml
@@ -82,9 +84,11 @@ Accept wildcard characters: False
 ```
 
 ### -InstanceId
-Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ssm-association.html#cfn-ssm-association-instanceid    
-PrimitiveType: String    
-Required: False    
+The ID of the instance that the SSM document is associated with.
+You must specify the InstanceId or Targets property.
+
+Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ssm-association.html#cfn-ssm-association-instanceid
+PrimitiveType: String
 UpdateType: Immutable
 
 ```yaml
@@ -100,9 +104,10 @@ Accept wildcard characters: False
 ```
 
 ### -Name
-Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ssm-association.html#cfn-ssm-association-name    
-PrimitiveType: String    
-Required: True    
+The name of the Systems Manager document.
+
+Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ssm-association.html#cfn-ssm-association-name
+PrimitiveType: String
 UpdateType: Immutable
 
 ```yaml
@@ -118,9 +123,10 @@ Accept wildcard characters: False
 ```
 
 ### -OutputLocation
-Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ssm-association.html#cfn-ssm-association-outputlocation    
-Required: False    
-Type: InstanceAssociationOutputLocation    
+An Amazon S3 bucket where you want to store the output details of the request.
+
+Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ssm-association.html#cfn-ssm-association-outputlocation
+Type: InstanceAssociationOutputLocation
 UpdateType: Mutable
 
 ```yaml
@@ -136,11 +142,12 @@ Accept wildcard characters: False
 ```
 
 ### -Parameters
-Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ssm-association.html#cfn-ssm-association-parameters    
-DuplicatesAllowed: False    
-ItemType: ParameterValues    
-Required: False    
-Type: Map    
+The parameters for the runtime configuration of the document.
+
+Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ssm-association.html#cfn-ssm-association-parameters
+DuplicatesAllowed: False
+ItemType: ParameterValues
+Type: Map
 UpdateType: Mutable
 
 ```yaml
@@ -156,9 +163,10 @@ Accept wildcard characters: False
 ```
 
 ### -ScheduleExpression
-Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ssm-association.html#cfn-ssm-association-scheduleexpression    
-PrimitiveType: String    
-Required: False    
+A cron expression that specifies a schedule when the association runs.
+
+Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ssm-association.html#cfn-ssm-association-scheduleexpression
+PrimitiveType: String
 UpdateType: Mutable
 
 ```yaml
@@ -174,11 +182,13 @@ Accept wildcard characters: False
 ```
 
 ### -Targets
-Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ssm-association.html#cfn-ssm-association-targets    
-DuplicatesAllowed: False    
-ItemType: Target    
-Required: False    
-Type: List    
+The targets that the SSM document sends commands to.
+You must specify the InstanceId or Targets property.
+
+Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ssm-association.html#cfn-ssm-association-targets
+DuplicatesAllowed: False
+ItemType: Target
+Type: List
 UpdateType: Immutable
 
 ```yaml
@@ -288,15 +298,13 @@ Accept wildcard characters: False
 ```
 
 ### CommonParameters
-This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction, and -WarningVariable.
-For more information, see about_CommonParameters (http://go.microsoft.com/fwlink/?LinkID=113216).
+This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction, and -WarningVariable. For more information, see [about_CommonParameters](http://go.microsoft.com/fwlink/?LinkID=113216).
 
 ## INPUTS
 
 ## OUTPUTS
 
 ### Vaporshell.Resource.SSM.Association
-
 ## NOTES
 
 ## RELATED LINKS

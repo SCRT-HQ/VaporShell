@@ -1,18 +1,10 @@
----
-layout: glossary
-title: New-VSLogsLogGroup
-categories: glossary
-label1: Category
-data1: Documentation
-label2: Depth
-data2: Deep
-schema: 2.0.0
----
-
 # New-VSLogsLogGroup
 
 ## SYNOPSIS
-Adds an AWS::Logs::LogGroup resource to the template
+Adds an AWS::Logs::LogGroup resource to the template.
+The AWS::Logs::LogGroup resource specifies a log group.
+A log group defines common properties for log streams, such as their retention and access control rules.
+Each log stream must belong to one log group.
 
 ## SYNTAX
 
@@ -23,7 +15,34 @@ New-VSLogsLogGroup [-LogicalId] <String> [-LogGroupName <Object>] [-RetentionInD
 ```
 
 ## DESCRIPTION
-Adds an AWS::Logs::LogGroup resource to the template
+Adds an AWS::Logs::LogGroup resource to the template.
+The AWS::Logs::LogGroup resource specifies a log group.
+A log group defines common properties for log streams, such as their retention and access control rules.
+Each log stream must belong to one log group.
+
+You can create up to 5000 log groups per account.
+You must use the following guidelines when naming a log group:
+
++ Log group names must be unique within a Region for an AWS account.
+
++ Log group names can be between 1 and 512 characters long.
+
++ Log group names consist of the following characters: a-z, A-Z, 0-9, '_' (underscore, '-' (hyphen, '/' (forward slash, and '.' (period.
+
+If you associate a AWS Key Management Service (AWS KMS customer master key (CMK with the log group, ingested data is encrypted using the CMK.
+This association is stored as long as the data encrypted with the CMK is still within Amazon CloudWatch Logs.
+This enables Amazon CloudWatch Logs to decrypt this data whenever it is requested.
+
+If you attempt to associate a CMK with the log group but the CMK doesn't exist or the CMK is disabled, you will receive an InvalidParameterException error.
+
+## EXAMPLES
+
+### Example 1
+```powershell
+PS C:\> {{ Add example code here }}
+```
+
+{{ Add example description here }}
 
 ## PARAMETERS
 
@@ -45,9 +64,11 @@ Accept wildcard characters: False
 ```
 
 ### -LogGroupName
-Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-logs-loggroup.html#cfn-cwl-loggroup-loggroupname    
-PrimitiveType: String    
-Required: False    
+The name of the log group.
+If you don't specify a name, AWS CloudFormation generates a unique ID for the log group.
+
+Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-logs-loggroup.html#cfn-cwl-loggroup-loggroupname
+PrimitiveType: String
 UpdateType: Immutable
 
 ```yaml
@@ -63,9 +84,11 @@ Accept wildcard characters: False
 ```
 
 ### -RetentionInDays
-Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-logs-loggroup.html#cfn-cwl-loggroup-retentionindays    
-PrimitiveType: Integer    
-Required: False    
+The number of days to retain the log events in the specified log group.
+Possible values are: 1, 3, 5, 7, 14, 30, 60, 90, 120, 150, 180, 365, 400, 545, 731, 1827, and 3653.
+
+Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-logs-loggroup.html#cfn-cwl-loggroup-retentionindays
+PrimitiveType: Integer
 UpdateType: Mutable
 
 ```yaml
@@ -175,15 +198,13 @@ Accept wildcard characters: False
 ```
 
 ### CommonParameters
-This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction, and -WarningVariable.
-For more information, see about_CommonParameters (http://go.microsoft.com/fwlink/?LinkID=113216).
+This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction, and -WarningVariable. For more information, see [about_CommonParameters](http://go.microsoft.com/fwlink/?LinkID=113216).
 
 ## INPUTS
 
 ## OUTPUTS
 
 ### Vaporshell.Resource.Logs.LogGroup
-
 ## NOTES
 
 ## RELATED LINKS

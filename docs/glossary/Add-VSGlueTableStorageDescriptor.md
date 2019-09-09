@@ -1,18 +1,8 @@
----
-layout: glossary
-title: Add-VSGlueTableStorageDescriptor
-categories: glossary
-label1: Category
-data1: Documentation
-label2: Depth
-data2: Deep
-schema: 2.0.0
----
-
 # Add-VSGlueTableStorageDescriptor
 
 ## SYNOPSIS
-Adds an AWS::Glue::Table.StorageDescriptor resource property to the template
+Adds an AWS::Glue::Table.StorageDescriptor resource property to the template.
+Describes the physical storage of table data.
 
 ## SYNTAX
 
@@ -24,14 +14,25 @@ Add-VSGlueTableStorageDescriptor [[-StoredAsSubDirectories] <Boolean>] [[-Parame
 ```
 
 ## DESCRIPTION
-Adds an AWS::Glue::Table.StorageDescriptor resource property to the template
+Adds an AWS::Glue::Table.StorageDescriptor resource property to the template.
+Describes the physical storage of table data.
+
+## EXAMPLES
+
+### Example 1
+```powershell
+PS C:\> {{ Add example code here }}
+```
+
+{{ Add example description here }}
 
 ## PARAMETERS
 
 ### -StoredAsSubDirectories
-Required: False    
-Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-glue-table-storagedescriptor.html#cfn-glue-table-storagedescriptor-storedassubdirectories    
-PrimitiveType: Boolean    
+True if the table data is stored in subdirectories, or False if not.
+
+Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-glue-table-storagedescriptor.html#cfn-glue-table-storagedescriptor-storedassubdirectories
+PrimitiveType: Boolean
 UpdateType: Mutable
 
 ```yaml
@@ -47,9 +48,10 @@ Accept wildcard characters: False
 ```
 
 ### -Parameters
-Required: False    
-Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-glue-table-storagedescriptor.html#cfn-glue-table-storagedescriptor-parameters    
-PrimitiveType: Json    
+The user-supplied properties in key-value form.
+
+Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-glue-table-storagedescriptor.html#cfn-glue-table-storagedescriptor-parameters
+PrimitiveType: Json
 UpdateType: Mutable
 
 ```yaml
@@ -65,10 +67,11 @@ Accept wildcard characters: False
 ```
 
 ### -BucketColumns
-PrimitiveItemType: String    
-Type: List    
-Required: False    
-Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-glue-table-storagedescriptor.html#cfn-glue-table-storagedescriptor-bucketcolumns    
+A list of reducer grouping columns, clustering columns, and bucketing columns in the table.
+
+PrimitiveItemType: String
+Type: List
+Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-glue-table-storagedescriptor.html#cfn-glue-table-storagedescriptor-bucketcolumns
 UpdateType: Mutable
 
 ```yaml
@@ -84,9 +87,10 @@ Accept wildcard characters: False
 ```
 
 ### -SkewedInfo
-Type: SkewedInfo    
-Required: False    
-Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-glue-table-storagedescriptor.html#cfn-glue-table-storagedescriptor-skewedinfo    
+The information about values that appear frequently in a column skewed values.
+
+Type: SkewedInfo
+Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-glue-table-storagedescriptor.html#cfn-glue-table-storagedescriptor-skewedinfo
 UpdateType: Mutable
 
 ```yaml
@@ -102,9 +106,10 @@ Accept wildcard characters: False
 ```
 
 ### -InputFormat
-Required: False    
-Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-glue-table-storagedescriptor.html#cfn-glue-table-storagedescriptor-inputformat    
-PrimitiveType: String    
+The input format: SequenceFileInputFormat binary, or TextInputFormat, or a custom format.
+
+Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-glue-table-storagedescriptor.html#cfn-glue-table-storagedescriptor-inputformat
+PrimitiveType: String
 UpdateType: Mutable
 
 ```yaml
@@ -120,9 +125,10 @@ Accept wildcard characters: False
 ```
 
 ### -NumberOfBuckets
-Required: False    
-Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-glue-table-storagedescriptor.html#cfn-glue-table-storagedescriptor-numberofbuckets    
-PrimitiveType: Integer    
+Must be specified if the table contains any dimension columns.
+
+Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-glue-table-storagedescriptor.html#cfn-glue-table-storagedescriptor-numberofbuckets
+PrimitiveType: Integer
 UpdateType: Mutable
 
 ```yaml
@@ -138,9 +144,10 @@ Accept wildcard characters: False
 ```
 
 ### -OutputFormat
-Required: False    
-Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-glue-table-storagedescriptor.html#cfn-glue-table-storagedescriptor-outputformat    
-PrimitiveType: String    
+The output format: SequenceFileOutputFormat binary, or IgnoreKeyTextOutputFormat, or a custom format.
+
+Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-glue-table-storagedescriptor.html#cfn-glue-table-storagedescriptor-outputformat
+PrimitiveType: String
 UpdateType: Mutable
 
 ```yaml
@@ -156,10 +163,11 @@ Accept wildcard characters: False
 ```
 
 ### -Columns
-Type: List    
-Required: False    
-Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-glue-table-storagedescriptor.html#cfn-glue-table-storagedescriptor-columns    
-ItemType: Column    
+A list of the Columns in the table.
+
+Type: List
+Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-glue-table-storagedescriptor.html#cfn-glue-table-storagedescriptor-columns
+ItemType: Column
 UpdateType: Mutable
 
 ```yaml
@@ -175,9 +183,10 @@ Accept wildcard characters: False
 ```
 
 ### -SerdeInfo
-Type: SerdeInfo    
-Required: False    
-Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-glue-table-storagedescriptor.html#cfn-glue-table-storagedescriptor-serdeinfo    
+The serialization/deserialization SerDe information.
+
+Type: SerdeInfo
+Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-glue-table-storagedescriptor.html#cfn-glue-table-storagedescriptor-serdeinfo
 UpdateType: Mutable
 
 ```yaml
@@ -193,10 +202,11 @@ Accept wildcard characters: False
 ```
 
 ### -SortColumns
-Type: List    
-Required: False    
-Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-glue-table-storagedescriptor.html#cfn-glue-table-storagedescriptor-sortcolumns    
-ItemType: Order    
+A list specifying the sort order of each bucket in the table.
+
+Type: List
+Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-glue-table-storagedescriptor.html#cfn-glue-table-storagedescriptor-sortcolumns
+ItemType: Order
 UpdateType: Mutable
 
 ```yaml
@@ -212,9 +222,10 @@ Accept wildcard characters: False
 ```
 
 ### -Compressed
-Required: False    
-Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-glue-table-storagedescriptor.html#cfn-glue-table-storagedescriptor-compressed    
-PrimitiveType: Boolean    
+True if the data in the table is compressed, or False if not.
+
+Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-glue-table-storagedescriptor.html#cfn-glue-table-storagedescriptor-compressed
+PrimitiveType: Boolean
 UpdateType: Mutable
 
 ```yaml
@@ -230,9 +241,11 @@ Accept wildcard characters: False
 ```
 
 ### -Location
-Required: False    
-Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-glue-table-storagedescriptor.html#cfn-glue-table-storagedescriptor-location    
-PrimitiveType: String    
+The physical location of the table.
+By default, this takes the form of the warehouse location, followed by the database location in the warehouse, followed by the table name.
+
+Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-glue-table-storagedescriptor.html#cfn-glue-table-storagedescriptor-location
+PrimitiveType: String
 UpdateType: Mutable
 
 ```yaml
@@ -248,15 +261,13 @@ Accept wildcard characters: False
 ```
 
 ### CommonParameters
-This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction, and -WarningVariable.
-For more information, see about_CommonParameters (http://go.microsoft.com/fwlink/?LinkID=113216).
+This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction, and -WarningVariable. For more information, see [about_CommonParameters](http://go.microsoft.com/fwlink/?LinkID=113216).
 
 ## INPUTS
 
 ## OUTPUTS
 
 ### Vaporshell.Resource.Glue.Table.StorageDescriptor
-
 ## NOTES
 
 ## RELATED LINKS

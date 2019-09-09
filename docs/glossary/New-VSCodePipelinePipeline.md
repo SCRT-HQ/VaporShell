@@ -1,30 +1,32 @@
----
-layout: glossary
-title: New-VSCodePipelinePipeline
-categories: glossary
-label1: Category
-data1: Documentation
-label2: Depth
-data2: Deep
-schema: 2.0.0
----
-
 # New-VSCodePipelinePipeline
 
 ## SYNOPSIS
-Adds an AWS::CodePipeline::Pipeline resource to the template
+Adds an AWS::CodePipeline::Pipeline resource to the template.
+The AWS::CodePipeline::Pipeline resource creates a CodePipeline pipeline that describes how software changes go through a release process.
+For more information, see What Is CodePipeline?: https://docs.aws.amazon.com/codepipeline/latest/userguide/welcome.html in the *AWS CodePipeline User Guide*.
 
 ## SYNTAX
 
 ```
-New-VSCodePipelinePipeline [-LogicalId] <String> -ArtifactStore <Object>
+New-VSCodePipelinePipeline [-LogicalId] <String> [-ArtifactStore <Object>] [-ArtifactStores <Object>]
  [-DisableInboundStageTransitions <Object>] [-Name <Object>] [-RestartExecutionOnUpdate <Boolean>]
  -RoleArn <Object> -Stages <Object> [-DeletionPolicy <String>] [-DependsOn <String[]>] [-Metadata <Object>]
  [-UpdatePolicy <Object>] [-Condition <Object>] [<CommonParameters>]
 ```
 
 ## DESCRIPTION
-Adds an AWS::CodePipeline::Pipeline resource to the template
+Adds an AWS::CodePipeline::Pipeline resource to the template.
+The AWS::CodePipeline::Pipeline resource creates a CodePipeline pipeline that describes how software changes go through a release process.
+For more information, see What Is CodePipeline?: https://docs.aws.amazon.com/codepipeline/latest/userguide/welcome.html in the *AWS CodePipeline User Guide*.
+
+## EXAMPLES
+
+### Example 1
+```powershell
+PS C:\> {{ Add example code here }}
+```
+
+{{ Add example description here }}
 
 ## PARAMETERS
 
@@ -46,9 +48,10 @@ Accept wildcard characters: False
 ```
 
 ### -ArtifactStore
-Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-codepipeline-pipeline.html#cfn-codepipeline-pipeline-artifactstore    
-Required: True    
-Type: ArtifactStore    
+The Amazon S3 bucket where artifacts are stored for the pipeline.
+
+Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-codepipeline-pipeline.html#cfn-codepipeline-pipeline-artifactstore
+Type: ArtifactStore
 UpdateType: Mutable
 
 ```yaml
@@ -56,7 +59,31 @@ Type: Object
 Parameter Sets: (All)
 Aliases:
 
-Required: True
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### -ArtifactStores
+A mapping of artifactStore objects and their corresponding regions.
+There must be an artifact store for the pipeline region and for each cross-region action within the pipeline.
+You can only use either artifactStore or artifactStores, not both.
+If you create a cross-region action in your pipeline, you must use artifactStores.
+
+Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-codepipeline-pipeline.html#cfn-codepipeline-pipeline-artifactstores
+DuplicatesAllowed: False
+ItemType: ArtifactStoreMap
+Type: List
+UpdateType: Mutable
+
+```yaml
+Type: Object
+Parameter Sets: (All)
+Aliases:
+
+Required: False
 Position: Named
 Default value: None
 Accept pipeline input: False
@@ -64,11 +91,12 @@ Accept wildcard characters: False
 ```
 
 ### -DisableInboundStageTransitions
-Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-codepipeline-pipeline.html#cfn-codepipeline-pipeline-disableinboundstagetransitions    
-DuplicatesAllowed: False    
-ItemType: StageTransition    
-Required: False    
-Type: List    
+Represents the input of a DisableStageTransition action.
+
+Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-codepipeline-pipeline.html#cfn-codepipeline-pipeline-disableinboundstagetransitions
+DuplicatesAllowed: False
+ItemType: StageTransition
+Type: List
 UpdateType: Mutable
 
 ```yaml
@@ -84,9 +112,10 @@ Accept wildcard characters: False
 ```
 
 ### -Name
-Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-codepipeline-pipeline.html#cfn-codepipeline-pipeline-name    
-PrimitiveType: String    
-Required: False    
+The name of the pipeline.
+
+Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-codepipeline-pipeline.html#cfn-codepipeline-pipeline-name
+PrimitiveType: String
 UpdateType: Immutable
 
 ```yaml
@@ -102,9 +131,10 @@ Accept wildcard characters: False
 ```
 
 ### -RestartExecutionOnUpdate
-Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-codepipeline-pipeline.html#cfn-codepipeline-pipeline-restartexecutiononupdate    
-PrimitiveType: Boolean    
-Required: False    
+Indicates whether to rerun the CodePipeline pipeline after you update it.
+
+Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-codepipeline-pipeline.html#cfn-codepipeline-pipeline-restartexecutiononupdate
+PrimitiveType: Boolean
 UpdateType: Mutable
 
 ```yaml
@@ -120,9 +150,10 @@ Accept wildcard characters: False
 ```
 
 ### -RoleArn
-Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-codepipeline-pipeline.html#cfn-codepipeline-pipeline-rolearn    
-PrimitiveType: String    
-Required: True    
+The Amazon Resource Name ARN for AWS CodePipeline to use to either perform actions with no actionRoleArn, or to use to assume roles for actions with an actionRoleArn.
+
+Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-codepipeline-pipeline.html#cfn-codepipeline-pipeline-rolearn
+PrimitiveType: String
 UpdateType: Mutable
 
 ```yaml
@@ -138,11 +169,12 @@ Accept wildcard characters: False
 ```
 
 ### -Stages
-Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-codepipeline-pipeline.html#cfn-codepipeline-pipeline-stages    
-DuplicatesAllowed: False    
-ItemType: StageDeclaration    
-Required: True    
-Type: List    
+Represents information about a stage and its definition.
+
+Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-codepipeline-pipeline.html#cfn-codepipeline-pipeline-stages
+DuplicatesAllowed: False
+ItemType: StageDeclaration
+Type: List
 UpdateType: Mutable
 
 ```yaml
@@ -252,15 +284,13 @@ Accept wildcard characters: False
 ```
 
 ### CommonParameters
-This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction, and -WarningVariable.
-For more information, see about_CommonParameters (http://go.microsoft.com/fwlink/?LinkID=113216).
+This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction, and -WarningVariable. For more information, see [about_CommonParameters](http://go.microsoft.com/fwlink/?LinkID=113216).
 
 ## INPUTS
 
 ## OUTPUTS
 
 ### Vaporshell.Resource.CodePipeline.Pipeline
-
 ## NOTES
 
 ## RELATED LINKS

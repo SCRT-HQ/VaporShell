@@ -1,18 +1,9 @@
----
-layout: glossary
-title: Add-VSCloudFrontCloudFrontOriginAccessIdentityCloudFrontOriginAccessIdentityConfig
-categories: glossary
-label1: Category
-data1: Documentation
-label2: Depth
-data2: Deep
-schema: 2.0.0
----
-
 # Add-VSCloudFrontCloudFrontOriginAccessIdentityCloudFrontOriginAccessIdentityConfig
 
 ## SYNOPSIS
-Adds an AWS::CloudFront::CloudFrontOriginAccessIdentity.CloudFrontOriginAccessIdentityConfig resource property to the template
+Adds an AWS::CloudFront::CloudFrontOriginAccessIdentity.CloudFrontOriginAccessIdentityConfig resource property to the template.
+Origin access identity configuration.
+Send a GET request to the /CloudFront API version/CloudFront/identity ID/config resource.
 
 ## SYNTAX
 
@@ -22,14 +13,26 @@ Add-VSCloudFrontCloudFrontOriginAccessIdentityCloudFrontOriginAccessIdentityConf
 ```
 
 ## DESCRIPTION
-Adds an AWS::CloudFront::CloudFrontOriginAccessIdentity.CloudFrontOriginAccessIdentityConfig resource property to the template
+Adds an AWS::CloudFront::CloudFrontOriginAccessIdentity.CloudFrontOriginAccessIdentityConfig resource property to the template.
+Origin access identity configuration.
+Send a GET request to the /CloudFront API version/CloudFront/identity ID/config resource.
+
+## EXAMPLES
+
+### Example 1
+```powershell
+PS C:\> {{ Add example code here }}
+```
+
+{{ Add example description here }}
 
 ## PARAMETERS
 
 ### -Comment
-Required: True    
-Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-cloudfront-cloudfrontoriginaccessidentity-cloudfrontoriginaccessidentityconfig.html#cfn-cloudfront-cloudfrontoriginaccessidentity-cloudfrontoriginaccessidentityconfig-comment    
-PrimitiveType: String    
+Any comments you want to include about the origin access identity.
+
+Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-cloudfront-cloudfrontoriginaccessidentity-cloudfrontoriginaccessidentityconfig.html#cfn-cloudfront-cloudfrontoriginaccessidentity-cloudfrontoriginaccessidentityconfig-comment
+PrimitiveType: String
 UpdateType: Mutable
 
 ```yaml
@@ -45,15 +48,13 @@ Accept wildcard characters: False
 ```
 
 ### CommonParameters
-This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction, and -WarningVariable.
-For more information, see about_CommonParameters (http://go.microsoft.com/fwlink/?LinkID=113216).
+This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction, and -WarningVariable. For more information, see [about_CommonParameters](http://go.microsoft.com/fwlink/?LinkID=113216).
 
 ## INPUTS
 
 ## OUTPUTS
 
 ### Vaporshell.Resource.CloudFront.CloudFrontOriginAccessIdentity.CloudFrontOriginAccessIdentityConfig
-
 ## NOTES
 
 ## RELATED LINKS

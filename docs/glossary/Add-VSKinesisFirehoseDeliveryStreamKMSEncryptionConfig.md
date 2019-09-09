@@ -1,18 +1,8 @@
----
-layout: glossary
-title: Add-VSKinesisFirehoseDeliveryStreamKMSEncryptionConfig
-categories: glossary
-label1: Category
-data1: Documentation
-label2: Depth
-data2: Deep
-schema: 2.0.0
----
-
 # Add-VSKinesisFirehoseDeliveryStreamKMSEncryptionConfig
 
 ## SYNOPSIS
-Adds an AWS::KinesisFirehose::DeliveryStream.KMSEncryptionConfig resource property to the template
+Adds an AWS::KinesisFirehose::DeliveryStream.KMSEncryptionConfig resource property to the template.
+The KMSEncryptionConfig property type specifies the AWS Key Management Service (AWS KMS encryption key that Amazon Simple Storage Service (Amazon S3 uses to encrypt data delivered by the Amazon Kinesis Data Firehose (Kinesis Data Firehose stream.
 
 ## SYNTAX
 
@@ -21,14 +11,26 @@ Add-VSKinesisFirehoseDeliveryStreamKMSEncryptionConfig [-AWSKMSKeyARN] <Object> 
 ```
 
 ## DESCRIPTION
-Adds an AWS::KinesisFirehose::DeliveryStream.KMSEncryptionConfig resource property to the template
+Adds an AWS::KinesisFirehose::DeliveryStream.KMSEncryptionConfig resource property to the template.
+The KMSEncryptionConfig property type specifies the AWS Key Management Service (AWS KMS encryption key that Amazon Simple Storage Service (Amazon S3 uses to encrypt data delivered by the Amazon Kinesis Data Firehose (Kinesis Data Firehose stream.
+
+## EXAMPLES
+
+### Example 1
+```powershell
+PS C:\> {{ Add example code here }}
+```
+
+{{ Add example description here }}
 
 ## PARAMETERS
 
 ### -AWSKMSKeyARN
-Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-kinesisfirehose-deliverystream-kmsencryptionconfig.html#cfn-kinesisfirehose-deliverystream-kmsencryptionconfig-awskmskeyarn    
-PrimitiveType: String    
-Required: True    
+The Amazon Resource Name ARN of the AWS KMS encryption key that Amazon S3 uses to encrypt data delivered by the Kinesis Data Firehose stream.
+The key must belong to the same region as the destination S3 bucket.
+
+Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-kinesisfirehose-deliverystream-kmsencryptionconfig.html#cfn-kinesisfirehose-deliverystream-kmsencryptionconfig-awskmskeyarn
+PrimitiveType: String
 UpdateType: Mutable
 
 ```yaml
@@ -44,15 +46,13 @@ Accept wildcard characters: False
 ```
 
 ### CommonParameters
-This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction, and -WarningVariable.
-For more information, see about_CommonParameters (http://go.microsoft.com/fwlink/?LinkID=113216).
+This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction, and -WarningVariable. For more information, see [about_CommonParameters](http://go.microsoft.com/fwlink/?LinkID=113216).
 
 ## INPUTS
 
 ## OUTPUTS
 
 ### Vaporshell.Resource.KinesisFirehose.DeliveryStream.KMSEncryptionConfig
-
 ## NOTES
 
 ## RELATED LINKS

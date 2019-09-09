@@ -1,29 +1,40 @@
----
-layout: glossary
-title: New-VSSSMParameter
-categories: glossary
-label1: Category
-data1: Documentation
-label2: Depth
-data2: Deep
-schema: 2.0.0
----
-
 # New-VSSSMParameter
 
 ## SYNOPSIS
-Adds an AWS::SSM::Parameter resource to the template
+Adds an AWS::SSM::Parameter resource to the template.
+The AWS::SSM::Parameter resource creates an SSM parameter in AWS Systems Manager Parameter Store.
 
 ## SYNTAX
 
 ```
-New-VSSSMParameter [-LogicalId] <String> -Type <Object> [-Description <Object>] [-AllowedPattern <Object>]
- -Value <Object> [-Name <Object>] [-DeletionPolicy <String>] [-DependsOn <String[]>] [-Metadata <Object>]
- [-UpdatePolicy <Object>] [-Condition <Object>] [<CommonParameters>]
+New-VSSSMParameter [-LogicalId] <String> -Type <Object> [-Description <Object>] [-Policies <Object>]
+ [-AllowedPattern <Object>] [-Tier <Object>] -Value <Object> [-Tags <Object>] [-Name <Object>]
+ [-DeletionPolicy <String>] [-DependsOn <String[]>] [-Metadata <Object>] [-UpdatePolicy <Object>]
+ [-Condition <Object>] [<CommonParameters>]
 ```
 
 ## DESCRIPTION
-Adds an AWS::SSM::Parameter resource to the template
+Adds an AWS::SSM::Parameter resource to the template.
+The AWS::SSM::Parameter resource creates an SSM parameter in AWS Systems Manager Parameter Store.
+
+**Important**
+
+To create an SSM parameter, you must have the AWS Identity and Access Management (IAM permissions ssm:PutParameter and ssm:AddTagsToResource.
+On stack creation, AWS CloudFormation adds the following three tags to the parameter: aws:cloudformation:stack-name, aws:cloudformation:logical-id, and aws:cloudformation:stack-id, in addition to any custom tags you specify.
+
+To add, update, or remove tags during stack update, you must have IAM permissions for both ssm:AddTagsToResource and ssm:RemoveTagsFromResource.
+For more information, see AWS Systems Manager Permissions Reference: https://docs.aws.amazon.com/systems-manager/latest/userguide/auth-and-access-control-permissions-reference.html in the *AWS Systems Manager User Guide*.
+
+For information about valid values for parameters, see Requirements and Constraints for Parameter Names: https://docs.aws.amazon.com/systems-manager/latest/userguide/sysman-parameter-name-constraints.html in the *AWS Systems Manager User Guide* and PutParameter: https://docs.aws.amazon.com/systems-manager/latest/APIReference/API_PutParameter.html in the *AWS Systems Manager API Reference*.
+
+## EXAMPLES
+
+### Example 1
+```powershell
+PS C:\> {{ Add example code here }}
+```
+
+{{ Add example description here }}
 
 ## PARAMETERS
 
@@ -45,9 +56,12 @@ Accept wildcard characters: False
 ```
 
 ### -Type
-Required: True    
-Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ssm-parameter.html#cfn-ssm-parameter-type    
-PrimitiveType: String    
+The type of parameter.
+Valid values include the following: String or StringList.
+AWS CloudFormation doesn't support the SecureString parameter type.
+
+Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ssm-parameter.html#cfn-ssm-parameter-type
+PrimitiveType: String
 UpdateType: Mutable
 
 ```yaml
@@ -63,9 +77,30 @@ Accept wildcard characters: False
 ```
 
 ### -Description
-Required: False    
-Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ssm-parameter.html#cfn-ssm-parameter-description    
-PrimitiveType: String    
+Information about the parameter.
+
+Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ssm-parameter.html#cfn-ssm-parameter-description
+PrimitiveType: String
+UpdateType: Mutable
+
+```yaml
+Type: Object
+Parameter Sets: (All)
+Aliases:
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### -Policies
+Information about the policies assigned to a parameter.
+Working with Parameter Policies: https://docs.aws.amazon.com/systems-manager/latest/userguide/parameter-store-policies.html in the *AWS Systems Manager User Guide*.
+
+Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ssm-parameter.html#cfn-ssm-parameter-policies
+PrimitiveType: String
 UpdateType: Mutable
 
 ```yaml
@@ -81,9 +116,30 @@ Accept wildcard characters: False
 ```
 
 ### -AllowedPattern
-Required: False    
-Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ssm-parameter.html#cfn-ssm-parameter-allowedpattern    
-PrimitiveType: String    
+A regular expression used to validate the parameter value.
+For example, for String types with values restricted to numbers, you can specify the following: AllowedPattern=^d+$
+
+Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ssm-parameter.html#cfn-ssm-parameter-allowedpattern
+PrimitiveType: String
+UpdateType: Mutable
+
+```yaml
+Type: Object
+Parameter Sets: (All)
+Aliases:
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### -Tier
+The parameter tier.
+
+Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ssm-parameter.html#cfn-ssm-parameter-tier
+PrimitiveType: String
 UpdateType: Mutable
 
 ```yaml
@@ -99,9 +155,10 @@ Accept wildcard characters: False
 ```
 
 ### -Value
-Required: True    
-Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ssm-parameter.html#cfn-ssm-parameter-value    
-PrimitiveType: String    
+The parameter value.
+
+Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ssm-parameter.html#cfn-ssm-parameter-value
+PrimitiveType: String
 UpdateType: Mutable
 
 ```yaml
@@ -116,10 +173,31 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
+### -Tags
+An array of key-value pairs to apply to this resource.
+For more information, see Tag: https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-resource-tags.html.
+
+Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ssm-parameter.html#cfn-ssm-parameter-tags
+PrimitiveType: Json
+UpdateType: Mutable
+
+```yaml
+Type: Object
+Parameter Sets: (All)
+Aliases:
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
 ### -Name
-Required: False    
-Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ssm-parameter.html#cfn-ssm-parameter-name    
-PrimitiveType: String    
+The name of the parameter.
+
+Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ssm-parameter.html#cfn-ssm-parameter-name
+PrimitiveType: String
 UpdateType: Immutable
 
 ```yaml
@@ -229,15 +307,13 @@ Accept wildcard characters: False
 ```
 
 ### CommonParameters
-This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction, and -WarningVariable.
-For more information, see about_CommonParameters (http://go.microsoft.com/fwlink/?LinkID=113216).
+This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction, and -WarningVariable. For more information, see [about_CommonParameters](http://go.microsoft.com/fwlink/?LinkID=113216).
 
 ## INPUTS
 
 ## OUTPUTS
 
 ### Vaporshell.Resource.SSM.Parameter
-
 ## NOTES
 
 ## RELATED LINKS

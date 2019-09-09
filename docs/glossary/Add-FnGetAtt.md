@@ -1,14 +1,3 @@
----
-layout: glossary
-title: Add-FnGetAtt
-categories: glossary
-label1: Category
-data1: Documentation
-label2: Depth
-data2: Deep
-schema: 2.0.0
----
-
 # Add-FnGetAtt
 
 ## SYNOPSIS
@@ -22,6 +11,15 @@ Add-FnGetAtt [-LogicalNameOfResource] <String> [-AttributeName] <Object> [<Commo
 
 ## DESCRIPTION
 The Fn::GetAtt intrinsic function returns the value of an attribute from a resource in the template.
+
+## EXAMPLES
+
+### EXAMPLE 1
+```
+Add-FnGetAtt -LogicalNameOfResource "MyLB" -AttributeName "DNSName"
+```
+
+When the template is exported, this will convert to: {"Fn::GetAtt":\["MyLB","DNSName"\]}
 
 ## PARAMETERS
 
@@ -57,15 +55,13 @@ Accept wildcard characters: False
 ```
 
 ### CommonParameters
-This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction, and -WarningVariable.
-For more information, see about_CommonParameters (http://go.microsoft.com/fwlink/?LinkID=113216).
+This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction, and -WarningVariable. For more information, see [about_CommonParameters](http://go.microsoft.com/fwlink/?LinkID=113216).
 
 ## INPUTS
 
 ## OUTPUTS
 
 ### Vaporshell.Function.GetAtt
-
 ## NOTES
 For the Fn::GetAtt logical resource name, you cannot use functions.
 You must specify a string that is a resource's logical ID.

@@ -1,14 +1,3 @@
----
-layout: glossary
-title: Add-FnRef
-categories: glossary
-label1: Category
-data1: Documentation
-label2: Depth
-data2: Deep
-schema: 2.0.0
----
-
 # Add-FnRef
 
 ## SYNOPSIS
@@ -36,6 +25,17 @@ An AWS::EC2::EIP resource, for instance, returns the IP address, and an AWS::EC2
     Tip
         You can also use Ref to add values to Output messages.
 
+## EXAMPLES
+
+### EXAMPLE 1
+```
+# This uses the module's included variable that maps to the AWS Pseudo Parameter, "AWS::Region"
+```
+
+Add-FnRef -Ref "$_AWSRegion"
+
+When the template is exported, this will convert to: {"Ref":"AWS::Region"}
+
 ## PARAMETERS
 
 ### -Ref
@@ -54,15 +54,13 @@ Accept wildcard characters: False
 ```
 
 ### CommonParameters
-This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction, and -WarningVariable.
-For more information, see about_CommonParameters (http://go.microsoft.com/fwlink/?LinkID=113216).
+This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction, and -WarningVariable. For more information, see [about_CommonParameters](http://go.microsoft.com/fwlink/?LinkID=113216).
 
 ## INPUTS
 
 ## OUTPUTS
 
 ### Vaporshell.Function.Ref
-
 ## NOTES
 You cannot use any functions in the Ref function.
 You must specify a string that is a resource logical ID.

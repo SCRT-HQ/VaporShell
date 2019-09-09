@@ -1,18 +1,8 @@
----
-layout: glossary
-title: Add-VSSSMPatchBaselinePatchFilterGroup
-categories: glossary
-label1: Category
-data1: Documentation
-label2: Depth
-data2: Deep
-schema: 2.0.0
----
-
 # Add-VSSSMPatchBaselinePatchFilterGroup
 
 ## SYNOPSIS
-Adds an AWS::SSM::PatchBaseline.PatchFilterGroup resource property to the template
+Adds an AWS::SSM::PatchBaseline.PatchFilterGroup resource property to the template.
+The PatchFilterGroup property type specifies a set of patch filters for an AWS Systems Manager patch baseline, typically used for approval rules for a Systems Manager patch baseline.
 
 ## SYNTAX
 
@@ -21,15 +11,28 @@ Add-VSSSMPatchBaselinePatchFilterGroup [[-PatchFilters] <Object>] [<CommonParame
 ```
 
 ## DESCRIPTION
-Adds an AWS::SSM::PatchBaseline.PatchFilterGroup resource property to the template
+Adds an AWS::SSM::PatchBaseline.PatchFilterGroup resource property to the template.
+The PatchFilterGroup property type specifies a set of patch filters for an AWS Systems Manager patch baseline, typically used for approval rules for a Systems Manager patch baseline.
+
+PatchFilterGroup is the property type for the GlobalFilters property of the AWS::SSM::PatchBaseline: https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ssm-patchbaseline.html resource and the PatchFilterGroup property of the Rule: https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ssm-patchbaseline-rule.html property type.
+
+## EXAMPLES
+
+### Example 1
+```powershell
+PS C:\> {{ Add example code here }}
+```
+
+{{ Add example description here }}
 
 ## PARAMETERS
 
 ### -PatchFilters
-Type: List    
-Required: False    
-Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ssm-patchbaseline-patchfiltergroup.html#cfn-ssm-patchbaseline-patchfiltergroup-patchfilters    
-ItemType: PatchFilter    
+The set of patch filters that make up the group.
+
+Type: List
+Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ssm-patchbaseline-patchfiltergroup.html#cfn-ssm-patchbaseline-patchfiltergroup-patchfilters
+ItemType: PatchFilter
 UpdateType: Mutable
 
 ```yaml
@@ -45,15 +48,13 @@ Accept wildcard characters: False
 ```
 
 ### CommonParameters
-This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction, and -WarningVariable.
-For more information, see about_CommonParameters (http://go.microsoft.com/fwlink/?LinkID=113216).
+This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction, and -WarningVariable. For more information, see [about_CommonParameters](http://go.microsoft.com/fwlink/?LinkID=113216).
 
 ## INPUTS
 
 ## OUTPUTS
 
 ### Vaporshell.Resource.SSM.PatchBaseline.PatchFilterGroup
-
 ## NOTES
 
 ## RELATED LINKS

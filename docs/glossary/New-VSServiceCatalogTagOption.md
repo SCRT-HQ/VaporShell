@@ -1,18 +1,9 @@
----
-layout: glossary
-title: New-VSServiceCatalogTagOption
-categories: glossary
-label1: Category
-data1: Documentation
-label2: Depth
-data2: Deep
-schema: 2.0.0
----
-
 # New-VSServiceCatalogTagOption
 
 ## SYNOPSIS
-Adds an AWS::ServiceCatalog::TagOption resource to the template
+Adds an AWS::ServiceCatalog::TagOption resource to the template.
+Specifies a TagOption.
+A TagOption is a key-value pair managed by AWS Service Catalog that serves as a template for creating an AWS tag.
 
 ## SYNTAX
 
@@ -23,7 +14,18 @@ New-VSServiceCatalogTagOption [-LogicalId] <String> [-Active <Boolean>] -Value <
 ```
 
 ## DESCRIPTION
-Adds an AWS::ServiceCatalog::TagOption resource to the template
+Adds an AWS::ServiceCatalog::TagOption resource to the template.
+Specifies a TagOption.
+A TagOption is a key-value pair managed by AWS Service Catalog that serves as a template for creating an AWS tag.
+
+## EXAMPLES
+
+### Example 1
+```powershell
+PS C:\> {{ Add example code here }}
+```
+
+{{ Add example description here }}
 
 ## PARAMETERS
 
@@ -45,9 +47,10 @@ Accept wildcard characters: False
 ```
 
 ### -Active
-Required: False    
-Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-servicecatalog-tagoption.html#cfn-servicecatalog-tagoption-active    
-PrimitiveType: Boolean    
+The TagOption active state.
+
+Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-servicecatalog-tagoption.html#cfn-servicecatalog-tagoption-active
+PrimitiveType: Boolean
 UpdateType: Mutable
 
 ```yaml
@@ -63,9 +66,10 @@ Accept wildcard characters: False
 ```
 
 ### -Value
-Required: True    
-Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-servicecatalog-tagoption.html#cfn-servicecatalog-tagoption-value    
-PrimitiveType: String    
+The TagOption value.
+
+Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-servicecatalog-tagoption.html#cfn-servicecatalog-tagoption-value
+PrimitiveType: String
 UpdateType: Immutable
 
 ```yaml
@@ -81,9 +85,10 @@ Accept wildcard characters: False
 ```
 
 ### -Key
-Required: True    
-Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-servicecatalog-tagoption.html#cfn-servicecatalog-tagoption-key    
-PrimitiveType: String    
+The TagOption key.
+
+Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-servicecatalog-tagoption.html#cfn-servicecatalog-tagoption-key
+PrimitiveType: String
 UpdateType: Immutable
 
 ```yaml
@@ -193,15 +198,13 @@ Accept wildcard characters: False
 ```
 
 ### CommonParameters
-This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction, and -WarningVariable.
-For more information, see about_CommonParameters (http://go.microsoft.com/fwlink/?LinkID=113216).
+This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction, and -WarningVariable. For more information, see [about_CommonParameters](http://go.microsoft.com/fwlink/?LinkID=113216).
 
 ## INPUTS
 
 ## OUTPUTS
 
 ### Vaporshell.Resource.ServiceCatalog.TagOption
-
 ## NOTES
 
 ## RELATED LINKS

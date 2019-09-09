@@ -1,18 +1,9 @@
----
-layout: glossary
-title: New-VSSDBDomain
-categories: glossary
-label1: Category
-data1: Documentation
-label2: Depth
-data2: Deep
-schema: 2.0.0
----
-
 # New-VSSDBDomain
 
 ## SYNOPSIS
-Adds an AWS::SDB::Domain resource to the template
+Adds an AWS::SDB::Domain resource to the template.
+Use the AWS::SDB::Domain resource to declare a SimpleDB domain.
+When you specify AWS::SDB::Domain as an argument in a Ref function, AWS CloudFormation returns the value of the DomainName.
 
 ## SYNTAX
 
@@ -23,7 +14,22 @@ New-VSSDBDomain [-LogicalId] <String> [-Description <Object>] [-DeletionPolicy <
 ```
 
 ## DESCRIPTION
-Adds an AWS::SDB::Domain resource to the template
+Adds an AWS::SDB::Domain resource to the template.
+Use the AWS::SDB::Domain resource to declare a SimpleDB domain.
+When you specify AWS::SDB::Domain as an argument in a Ref function, AWS CloudFormation returns the value of the DomainName.
+
+**Important**
+
+The AWS::SDB::Domain resource does not allow any updates, including metadata updates.
+
+## EXAMPLES
+
+### Example 1
+```powershell
+PS C:\> {{ Add example code here }}
+```
+
+{{ Add example description here }}
 
 ## PARAMETERS
 
@@ -45,9 +51,10 @@ Accept wildcard characters: False
 ```
 
 ### -Description
-Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-simpledb.html#cfn-sdb-domain-description    
-PrimitiveType: String    
-Required: False    
+Information about the SimpleDB domain.
+
+Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-simpledb.html#cfn-sdb-domain-description
+PrimitiveType: String
 UpdateType: Mutable
 
 ```yaml
@@ -157,15 +164,13 @@ Accept wildcard characters: False
 ```
 
 ### CommonParameters
-This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction, and -WarningVariable.
-For more information, see about_CommonParameters (http://go.microsoft.com/fwlink/?LinkID=113216).
+This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction, and -WarningVariable. For more information, see [about_CommonParameters](http://go.microsoft.com/fwlink/?LinkID=113216).
 
 ## INPUTS
 
 ## OUTPUTS
 
 ### Vaporshell.Resource.SDB.Domain
-
 ## NOTES
 
 ## RELATED LINKS

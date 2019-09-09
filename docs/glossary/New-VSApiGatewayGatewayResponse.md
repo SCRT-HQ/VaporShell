@@ -1,18 +1,9 @@
----
-layout: glossary
-title: New-VSApiGatewayGatewayResponse
-categories: glossary
-label1: Category
-data1: Documentation
-label2: Depth
-data2: Deep
-schema: 2.0.0
----
-
 # New-VSApiGatewayGatewayResponse
 
 ## SYNOPSIS
-Adds an AWS::ApiGateway::GatewayResponse resource to the template
+Adds an AWS::ApiGateway::GatewayResponse resource to the template.
+The AWS::ApiGateway::GatewayResponse resource creates a gateway response for your API.
+For more information, see API Gateway Responses: https://docs.aws.amazon.com/apigateway/latest/developerguide/customize-gateway-responses.html#api-gateway-gatewayResponse-definition in the *API Gateway Developer Guide*.
 
 ## SYNTAX
 
@@ -24,7 +15,18 @@ New-VSApiGatewayGatewayResponse [-LogicalId] <String> [-ResponseParameters <Hash
 ```
 
 ## DESCRIPTION
-Adds an AWS::ApiGateway::GatewayResponse resource to the template
+Adds an AWS::ApiGateway::GatewayResponse resource to the template.
+The AWS::ApiGateway::GatewayResponse resource creates a gateway response for your API.
+For more information, see API Gateway Responses: https://docs.aws.amazon.com/apigateway/latest/developerguide/customize-gateway-responses.html#api-gateway-gatewayResponse-definition in the *API Gateway Developer Guide*.
+
+## EXAMPLES
+
+### Example 1
+```powershell
+PS C:\> {{ Add example code here }}
+```
+
+{{ Add example description here }}
 
 ## PARAMETERS
 
@@ -46,11 +48,13 @@ Accept wildcard characters: False
 ```
 
 ### -ResponseParameters
-Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-apigateway-gatewayresponse.html#cfn-apigateway-gatewayresponse-responseparameters    
-DuplicatesAllowed: False    
-PrimitiveItemType: String    
-Required: False    
-Type: Map    
+The response parameters paths, query strings, and headers for the response.
+Duplicates not allowed.
+
+Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-apigateway-gatewayresponse.html#cfn-apigateway-gatewayresponse-responseparameters
+DuplicatesAllowed: False
+PrimitiveItemType: String
+Type: Map
 UpdateType: Mutable
 
 ```yaml
@@ -66,11 +70,13 @@ Accept wildcard characters: False
 ```
 
 ### -ResponseTemplates
-Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-apigateway-gatewayresponse.html#cfn-apigateway-gatewayresponse-responsetemplates    
-DuplicatesAllowed: False    
-PrimitiveItemType: String    
-Required: False    
-Type: Map    
+The response templates for the response.
+Duplicates not allowed.
+
+Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-apigateway-gatewayresponse.html#cfn-apigateway-gatewayresponse-responsetemplates
+DuplicatesAllowed: False
+PrimitiveItemType: String
+Type: Map
 UpdateType: Mutable
 
 ```yaml
@@ -86,9 +92,11 @@ Accept wildcard characters: False
 ```
 
 ### -ResponseType
-Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-apigateway-gatewayresponse.html#cfn-apigateway-gatewayresponse-responsetype    
-PrimitiveType: String    
-Required: True    
+The response type.
+For valid values, see GatewayResponse: https://docs.aws.amazon.com/apigateway/api-reference/resource/gateway-response/ in the *API Gateway API Reference*.
+
+Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-apigateway-gatewayresponse.html#cfn-apigateway-gatewayresponse-responsetype
+PrimitiveType: String
 UpdateType: Immutable
 
 ```yaml
@@ -104,9 +112,10 @@ Accept wildcard characters: False
 ```
 
 ### -RestApiId
-Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-apigateway-gatewayresponse.html#cfn-apigateway-gatewayresponse-restapiid    
-PrimitiveType: String    
-Required: True    
+The identifier of the API.
+
+Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-apigateway-gatewayresponse.html#cfn-apigateway-gatewayresponse-restapiid
+PrimitiveType: String
 UpdateType: Immutable
 
 ```yaml
@@ -122,9 +131,10 @@ Accept wildcard characters: False
 ```
 
 ### -StatusCode
-Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-apigateway-gatewayresponse.html#cfn-apigateway-gatewayresponse-statuscode    
-PrimitiveType: String    
-Required: False    
+The HTTP status code for the response.
+
+Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-apigateway-gatewayresponse.html#cfn-apigateway-gatewayresponse-statuscode
+PrimitiveType: String
 UpdateType: Mutable
 
 ```yaml
@@ -234,15 +244,13 @@ Accept wildcard characters: False
 ```
 
 ### CommonParameters
-This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction, and -WarningVariable.
-For more information, see about_CommonParameters (http://go.microsoft.com/fwlink/?LinkID=113216).
+This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction, and -WarningVariable. For more information, see [about_CommonParameters](http://go.microsoft.com/fwlink/?LinkID=113216).
 
 ## INPUTS
 
 ## OUTPUTS
 
 ### Vaporshell.Resource.ApiGateway.GatewayResponse
-
 ## NOTES
 
 ## RELATED LINKS

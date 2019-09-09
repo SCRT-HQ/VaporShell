@@ -1,18 +1,10 @@
----
-layout: glossary
-title: New-VSApiGatewayUsagePlan
-categories: glossary
-label1: Category
-data1: Documentation
-label2: Depth
-data2: Deep
-schema: 2.0.0
----
-
 # New-VSApiGatewayUsagePlan
 
 ## SYNOPSIS
-Adds an AWS::ApiGateway::UsagePlan resource to the template
+Adds an AWS::ApiGateway::UsagePlan resource to the template.
+The AWS::ApiGateway::UsagePlan resource creates a usage plan for deployed APIs.
+A usage plan enforces throttling and quota limits on individual client API keys.
+For more information, see Creating and Using API Usage Plans in Amazon API Gateway: https://docs.aws.amazon.com/apigateway/latest/developerguide/api-gateway-api-usage-plans.html in the *API Gateway Developer Guide*.
 
 ## SYNTAX
 
@@ -23,7 +15,19 @@ New-VSApiGatewayUsagePlan [-LogicalId] <String> [-ApiStages <Object>] [-Descript
 ```
 
 ## DESCRIPTION
-Adds an AWS::ApiGateway::UsagePlan resource to the template
+Adds an AWS::ApiGateway::UsagePlan resource to the template.
+The AWS::ApiGateway::UsagePlan resource creates a usage plan for deployed APIs.
+A usage plan enforces throttling and quota limits on individual client API keys.
+For more information, see Creating and Using API Usage Plans in Amazon API Gateway: https://docs.aws.amazon.com/apigateway/latest/developerguide/api-gateway-api-usage-plans.html in the *API Gateway Developer Guide*.
+
+## EXAMPLES
+
+### Example 1
+```powershell
+PS C:\> {{ Add example code here }}
+```
+
+{{ Add example description here }}
 
 ## PARAMETERS
 
@@ -45,11 +49,12 @@ Accept wildcard characters: False
 ```
 
 ### -ApiStages
-Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-apigateway-usageplan.html#cfn-apigateway-usageplan-apistages    
-DuplicatesAllowed: False    
-ItemType: ApiStage    
-Required: False    
-Type: List    
+The API stages to associate with this usage plan.
+
+Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-apigateway-usageplan.html#cfn-apigateway-usageplan-apistages
+DuplicatesAllowed: False
+ItemType: ApiStage
+Type: List
 UpdateType: Mutable
 
 ```yaml
@@ -65,9 +70,10 @@ Accept wildcard characters: False
 ```
 
 ### -Description
-Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-apigateway-usageplan.html#cfn-apigateway-usageplan-description    
-PrimitiveType: String    
-Required: False    
+A description of the usage plan.
+
+Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-apigateway-usageplan.html#cfn-apigateway-usageplan-description
+PrimitiveType: String
 UpdateType: Mutable
 
 ```yaml
@@ -83,9 +89,10 @@ Accept wildcard characters: False
 ```
 
 ### -Quota
-Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-apigateway-usageplan.html#cfn-apigateway-usageplan-quota    
-Required: False    
-Type: QuotaSettings    
+Configures the number of requests that users can make within a given interval.
+
+Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-apigateway-usageplan.html#cfn-apigateway-usageplan-quota
+Type: QuotaSettings
 UpdateType: Mutable
 
 ```yaml
@@ -101,9 +108,10 @@ Accept wildcard characters: False
 ```
 
 ### -Throttle
-Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-apigateway-usageplan.html#cfn-apigateway-usageplan-throttle    
-Required: False    
-Type: ThrottleSettings    
+Configures the overall request rate average requests per second and burst capacity.
+
+Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-apigateway-usageplan.html#cfn-apigateway-usageplan-throttle
+Type: ThrottleSettings
 UpdateType: Mutable
 
 ```yaml
@@ -119,9 +127,10 @@ Accept wildcard characters: False
 ```
 
 ### -UsagePlanName
-Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-apigateway-usageplan.html#cfn-apigateway-usageplan-usageplanname    
-PrimitiveType: String    
-Required: False    
+A name for the usage plan.
+
+Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-apigateway-usageplan.html#cfn-apigateway-usageplan-usageplanname
+PrimitiveType: String
 UpdateType: Mutable
 
 ```yaml
@@ -231,15 +240,13 @@ Accept wildcard characters: False
 ```
 
 ### CommonParameters
-This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction, and -WarningVariable.
-For more information, see about_CommonParameters (http://go.microsoft.com/fwlink/?LinkID=113216).
+This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction, and -WarningVariable. For more information, see [about_CommonParameters](http://go.microsoft.com/fwlink/?LinkID=113216).
 
 ## INPUTS
 
 ## OUTPUTS
 
 ### Vaporshell.Resource.ApiGateway.UsagePlan
-
 ## NOTES
 
 ## RELATED LINKS

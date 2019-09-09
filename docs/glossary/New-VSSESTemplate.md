@@ -1,18 +1,10 @@
----
-layout: glossary
-title: New-VSSESTemplate
-categories: glossary
-label1: Category
-data1: Documentation
-label2: Depth
-data2: Deep
-schema: 2.0.0
----
-
 # New-VSSESTemplate
 
 ## SYNOPSIS
-Adds an AWS::SES::Template resource to the template
+Adds an AWS::SES::Template resource to the template.
+Specifies an email template.
+Email templates enable you to send personalized email to one or more destinations in a single API operation.
+For more information, see the Amazon SES Developer Guide: https://docs.aws.amazon.com/ses/latest/DeveloperGuide/send-personalized-email-api.html.
 
 ## SYNTAX
 
@@ -22,7 +14,21 @@ New-VSSESTemplate [-LogicalId] <String> [-Template <Object>] [-DeletionPolicy <S
 ```
 
 ## DESCRIPTION
-Adds an AWS::SES::Template resource to the template
+Adds an AWS::SES::Template resource to the template.
+Specifies an email template.
+Email templates enable you to send personalized email to one or more destinations in a single API operation.
+For more information, see the Amazon SES Developer Guide: https://docs.aws.amazon.com/ses/latest/DeveloperGuide/send-personalized-email-api.html.
+
+You can execute this operation no more than once per second.
+
+## EXAMPLES
+
+### Example 1
+```powershell
+PS C:\> {{ Add example code here }}
+```
+
+{{ Add example description here }}
 
 ## PARAMETERS
 
@@ -44,9 +50,10 @@ Accept wildcard characters: False
 ```
 
 ### -Template
-Type: Template    
-Required: False    
-Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ses-template.html#cfn-ses-template-template    
+The content of the email, composed of a subject line, an HTML part, and a text-only part.
+
+Type: Template
+Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ses-template.html#cfn-ses-template-template
 UpdateType: Mutable
 
 ```yaml
@@ -156,15 +163,13 @@ Accept wildcard characters: False
 ```
 
 ### CommonParameters
-This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction, and -WarningVariable.
-For more information, see about_CommonParameters (http://go.microsoft.com/fwlink/?LinkID=113216).
+This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction, and -WarningVariable. For more information, see [about_CommonParameters](http://go.microsoft.com/fwlink/?LinkID=113216).
 
 ## INPUTS
 
 ## OUTPUTS
 
 ### Vaporshell.Resource.SES.Template
-
 ## NOTES
 
 ## RELATED LINKS

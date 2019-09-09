@@ -1,18 +1,9 @@
----
-layout: glossary
-title: New-VSIoTTopicRule
-categories: glossary
-label1: Category
-data1: Documentation
-label2: Depth
-data2: Deep
-schema: 2.0.0
----
-
 # New-VSIoTTopicRule
 
 ## SYNOPSIS
-Adds an AWS::IoT::TopicRule resource to the template
+Adds an AWS::IoT::TopicRule resource to the template.
+Use the AWS::IoT::TopicRule resource to declare an AWS IoT rule.
+For information about working with AWS IoT rules, see Rules for AWS IoT: https://docs.aws.amazon.com/iot/latest/developerguide/iot-rules.html in the *AWS IoT Developer Guide*.
 
 ## SYNTAX
 
@@ -23,7 +14,18 @@ New-VSIoTTopicRule [-LogicalId] <String> [-RuleName <Object>] -TopicRulePayload 
 ```
 
 ## DESCRIPTION
-Adds an AWS::IoT::TopicRule resource to the template
+Adds an AWS::IoT::TopicRule resource to the template.
+Use the AWS::IoT::TopicRule resource to declare an AWS IoT rule.
+For information about working with AWS IoT rules, see Rules for AWS IoT: https://docs.aws.amazon.com/iot/latest/developerguide/iot-rules.html in the *AWS IoT Developer Guide*.
+
+## EXAMPLES
+
+### Example 1
+```powershell
+PS C:\> {{ Add example code here }}
+```
+
+{{ Add example description here }}
 
 ## PARAMETERS
 
@@ -45,9 +47,10 @@ Accept wildcard characters: False
 ```
 
 ### -RuleName
-Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-iot-topicrule.html#cfn-iot-topicrule-rulename    
-PrimitiveType: String    
-Required: False    
+The name of the rule.
+
+Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-iot-topicrule.html#cfn-iot-topicrule-rulename
+PrimitiveType: String
 UpdateType: Immutable
 
 ```yaml
@@ -63,9 +66,10 @@ Accept wildcard characters: False
 ```
 
 ### -TopicRulePayload
-Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-iot-topicrule.html#cfn-iot-topicrule-topicrulepayload    
-Required: True    
-Type: TopicRulePayload    
+The rule payload.
+
+Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-iot-topicrule.html#cfn-iot-topicrule-topicrulepayload
+Type: TopicRulePayload
 UpdateType: Mutable
 
 ```yaml
@@ -175,15 +179,13 @@ Accept wildcard characters: False
 ```
 
 ### CommonParameters
-This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction, and -WarningVariable.
-For more information, see about_CommonParameters (http://go.microsoft.com/fwlink/?LinkID=113216).
+This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction, and -WarningVariable. For more information, see [about_CommonParameters](http://go.microsoft.com/fwlink/?LinkID=113216).
 
 ## INPUTS
 
 ## OUTPUTS
 
 ### Vaporshell.Resource.IoT.TopicRule
-
 ## NOTES
 
 ## RELATED LINKS

@@ -1,18 +1,9 @@
----
-layout: glossary
-title: New-VSApiGatewayRequestValidator
-categories: glossary
-label1: Category
-data1: Documentation
-label2: Depth
-data2: Deep
-schema: 2.0.0
----
-
 # New-VSApiGatewayRequestValidator
 
 ## SYNOPSIS
-Adds an AWS::ApiGateway::RequestValidator resource to the template
+Adds an AWS::ApiGateway::RequestValidator resource to the template.
+The AWS::ApiGateway::RequestValidator resource sets up basic validation rules for incoming requests to your API.
+For more information, see Enable Basic Request Validation for an API in API Gateway: https://docs.aws.amazon.com/apigateway/latest/developerguide/api-gateway-method-request-validation.html in the *API Gateway Developer Guide*.
 
 ## SYNTAX
 
@@ -24,7 +15,18 @@ New-VSApiGatewayRequestValidator [-LogicalId] <String> [-Name <Object>] -RestApi
 ```
 
 ## DESCRIPTION
-Adds an AWS::ApiGateway::RequestValidator resource to the template
+Adds an AWS::ApiGateway::RequestValidator resource to the template.
+The AWS::ApiGateway::RequestValidator resource sets up basic validation rules for incoming requests to your API.
+For more information, see Enable Basic Request Validation for an API in API Gateway: https://docs.aws.amazon.com/apigateway/latest/developerguide/api-gateway-method-request-validation.html in the *API Gateway Developer Guide*.
+
+## EXAMPLES
+
+### Example 1
+```powershell
+PS C:\> {{ Add example code here }}
+```
+
+{{ Add example description here }}
 
 ## PARAMETERS
 
@@ -46,9 +48,10 @@ Accept wildcard characters: False
 ```
 
 ### -Name
-Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-apigateway-requestvalidator.html#cfn-apigateway-requestvalidator-name    
-PrimitiveType: String    
-Required: False    
+The name of this request validator.
+
+Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-apigateway-requestvalidator.html#cfn-apigateway-requestvalidator-name
+PrimitiveType: String
 UpdateType: Immutable
 
 ```yaml
@@ -64,9 +67,10 @@ Accept wildcard characters: False
 ```
 
 ### -RestApiId
-Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-apigateway-requestvalidator.html#cfn-apigateway-requestvalidator-restapiid    
-PrimitiveType: String    
-Required: True    
+The identifier of the targeted API entity.
+
+Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-apigateway-requestvalidator.html#cfn-apigateway-requestvalidator-restapiid
+PrimitiveType: String
 UpdateType: Immutable
 
 ```yaml
@@ -82,9 +86,10 @@ Accept wildcard characters: False
 ```
 
 ### -ValidateRequestBody
-Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-apigateway-requestvalidator.html#cfn-apigateway-requestvalidator-validaterequestbody    
-PrimitiveType: Boolean    
-Required: False    
+Indicates whether to validate the request body according to the configured schema for the targeted API and method.
+
+Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-apigateway-requestvalidator.html#cfn-apigateway-requestvalidator-validaterequestbody
+PrimitiveType: Boolean
 UpdateType: Mutable
 
 ```yaml
@@ -100,9 +105,10 @@ Accept wildcard characters: False
 ```
 
 ### -ValidateRequestParameters
-Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-apigateway-requestvalidator.html#cfn-apigateway-requestvalidator-validaterequestparameters    
-PrimitiveType: Boolean    
-Required: False    
+Indicates whether to validate request parameters.
+
+Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-apigateway-requestvalidator.html#cfn-apigateway-requestvalidator-validaterequestparameters
+PrimitiveType: Boolean
 UpdateType: Mutable
 
 ```yaml
@@ -212,15 +218,13 @@ Accept wildcard characters: False
 ```
 
 ### CommonParameters
-This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction, and -WarningVariable.
-For more information, see about_CommonParameters (http://go.microsoft.com/fwlink/?LinkID=113216).
+This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction, and -WarningVariable. For more information, see [about_CommonParameters](http://go.microsoft.com/fwlink/?LinkID=113216).
 
 ## INPUTS
 
 ## OUTPUTS
 
 ### Vaporshell.Resource.ApiGateway.RequestValidator
-
 ## NOTES
 
 ## RELATED LINKS

@@ -1,18 +1,8 @@
----
-layout: glossary
-title: New-VSEC2VPCDHCPOptionsAssociation
-categories: glossary
-label1: Category
-data1: Documentation
-label2: Depth
-data2: Deep
-schema: 2.0.0
----
-
 # New-VSEC2VPCDHCPOptionsAssociation
 
 ## SYNOPSIS
-Adds an AWS::EC2::VPCDHCPOptionsAssociation resource to the template
+Adds an AWS::EC2::VPCDHCPOptionsAssociation resource to the template.
+Associates a set of DHCP options with a VPC, or associates no DHCP options with the VPC.
 
 ## SYNTAX
 
@@ -23,7 +13,22 @@ New-VSEC2VPCDHCPOptionsAssociation [-LogicalId] <String> -DhcpOptionsId <Object>
 ```
 
 ## DESCRIPTION
-Adds an AWS::EC2::VPCDHCPOptionsAssociation resource to the template
+Adds an AWS::EC2::VPCDHCPOptionsAssociation resource to the template.
+Associates a set of DHCP options with a VPC, or associates no DHCP options with the VPC.
+
+After you associate the options with the VPC, any existing instances and all new instances that you launch in that VPC use the options.
+You don't need to restart or relaunch the instances.
+They automatically pick up the changes within a few hours, depending on how frequently the instance renews its DHCP lease.
+You can explicitly renew the lease using the operating system on the instance.
+
+## EXAMPLES
+
+### Example 1
+```powershell
+PS C:\> {{ Add example code here }}
+```
+
+{{ Add example description here }}
 
 ## PARAMETERS
 
@@ -45,9 +50,10 @@ Accept wildcard characters: False
 ```
 
 ### -DhcpOptionsId
-Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ec2-vpc-dhcp-options-assoc.html#cfn-ec2-vpcdhcpoptionsassociation-dhcpoptionsid    
-PrimitiveType: String    
-Required: True    
+The ID of the DHCP options set, or default to associate no DHCP options with the VPC.
+
+Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ec2-vpc-dhcp-options-assoc.html#cfn-ec2-vpcdhcpoptionsassociation-dhcpoptionsid
+PrimitiveType: String
 UpdateType: Mutable
 
 ```yaml
@@ -63,9 +69,10 @@ Accept wildcard characters: False
 ```
 
 ### -VpcId
-Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ec2-vpc-dhcp-options-assoc.html#cfn-ec2-vpcdhcpoptionsassociation-vpcid    
-PrimitiveType: String    
-Required: True    
+The ID of the VPC.
+
+Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ec2-vpc-dhcp-options-assoc.html#cfn-ec2-vpcdhcpoptionsassociation-vpcid
+PrimitiveType: String
 UpdateType: Immutable
 
 ```yaml
@@ -175,15 +182,13 @@ Accept wildcard characters: False
 ```
 
 ### CommonParameters
-This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction, and -WarningVariable.
-For more information, see about_CommonParameters (http://go.microsoft.com/fwlink/?LinkID=113216).
+This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction, and -WarningVariable. For more information, see [about_CommonParameters](http://go.microsoft.com/fwlink/?LinkID=113216).
 
 ## INPUTS
 
 ## OUTPUTS
 
 ### Vaporshell.Resource.EC2.VPCDHCPOptionsAssociation
-
 ## NOTES
 
 ## RELATED LINKS

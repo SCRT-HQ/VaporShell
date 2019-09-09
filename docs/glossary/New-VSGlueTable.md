@@ -1,18 +1,9 @@
----
-layout: glossary
-title: New-VSGlueTable
-categories: glossary
-label1: Category
-data1: Documentation
-label2: Depth
-data2: Deep
-schema: 2.0.0
----
-
 # New-VSGlueTable
 
 ## SYNOPSIS
-Adds an AWS::Glue::Table resource to the template
+Adds an AWS::Glue::Table resource to the template.
+The AWS::Glue::Table resource specifies tabular data in the AWS Glue data catalog.
+For more information, see Defining Tables in the AWS Glue Data Catalog: https://docs.aws.amazon.com/glue/latest/dg/tables-described.html and Table Structure : https://docs.aws.amazon.com/glue/latest/dg/aws-glue-api-catalog-tables.html#aws-glue-api-catalog-tables-Table in the *AWS Glue Developer Guide*.
 
 ## SYNTAX
 
@@ -23,7 +14,18 @@ New-VSGlueTable [-LogicalId] <String> -TableInput <Object> -DatabaseName <Object
 ```
 
 ## DESCRIPTION
-Adds an AWS::Glue::Table resource to the template
+Adds an AWS::Glue::Table resource to the template.
+The AWS::Glue::Table resource specifies tabular data in the AWS Glue data catalog.
+For more information, see Defining Tables in the AWS Glue Data Catalog: https://docs.aws.amazon.com/glue/latest/dg/tables-described.html and Table Structure : https://docs.aws.amazon.com/glue/latest/dg/aws-glue-api-catalog-tables.html#aws-glue-api-catalog-tables-Table in the *AWS Glue Developer Guide*.
+
+## EXAMPLES
+
+### Example 1
+```powershell
+PS C:\> {{ Add example code here }}
+```
+
+{{ Add example description here }}
 
 ## PARAMETERS
 
@@ -45,9 +47,10 @@ Accept wildcard characters: False
 ```
 
 ### -TableInput
-Type: TableInput    
-Required: True    
-Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-glue-table.html#cfn-glue-table-tableinput    
+A structure used to define a table.
+
+Type: TableInput
+Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-glue-table.html#cfn-glue-table-tableinput
 UpdateType: Mutable
 
 ```yaml
@@ -63,9 +66,11 @@ Accept wildcard characters: False
 ```
 
 ### -DatabaseName
-Required: True    
-Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-glue-table.html#cfn-glue-table-databasename    
-PrimitiveType: String    
+The name of the database where the table metadata resides.
+For Hive compatibility, this must be all lowercase.
+
+Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-glue-table.html#cfn-glue-table-databasename
+PrimitiveType: String
 UpdateType: Immutable
 
 ```yaml
@@ -81,9 +86,11 @@ Accept wildcard characters: False
 ```
 
 ### -CatalogId
-Required: True    
-Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-glue-table.html#cfn-glue-table-catalogid    
-PrimitiveType: String    
+The ID of the Data Catalog in which to create the Table.
+If none is supplied, the AWS account ID is used by default.
+
+Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-glue-table.html#cfn-glue-table-catalogid
+PrimitiveType: String
 UpdateType: Immutable
 
 ```yaml
@@ -193,15 +200,13 @@ Accept wildcard characters: False
 ```
 
 ### CommonParameters
-This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction, and -WarningVariable.
-For more information, see about_CommonParameters (http://go.microsoft.com/fwlink/?LinkID=113216).
+This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction, and -WarningVariable. For more information, see [about_CommonParameters](http://go.microsoft.com/fwlink/?LinkID=113216).
 
 ## INPUTS
 
 ## OUTPUTS
 
 ### Vaporshell.Resource.Glue.Table
-
 ## NOTES
 
 ## RELATED LINKS

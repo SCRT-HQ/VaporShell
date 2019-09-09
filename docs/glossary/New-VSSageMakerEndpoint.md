@@ -1,18 +1,11 @@
----
-layout: glossary
-title: New-VSSageMakerEndpoint
-categories: glossary
-label1: Category
-data1: Documentation
-label2: Depth
-data2: Deep
-schema: 2.0.0
----
-
 # New-VSSageMakerEndpoint
 
 ## SYNOPSIS
-Adds an AWS::SageMaker::Endpoint resource to the template
+Adds an AWS::SageMaker::Endpoint resource to the template.
+Use the AWS::SageMaker::Endpoint resource to create an endpoint using the specified configuration in the request.
+Amazon SageMaker uses the endpoint to provision resources and deploy models.
+You create the endpoint configuration with the AWS::SageMaker::EndpointConfig: https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-sagemaker-endpointconfig.html resource.
+For more information, see Deploy a Model on Amazon SageMaker Hosting Services: https://docs.aws.amazon.com/sagemaker/latest/dg/how-it-works-hosting.html in the *Amazon SageMaker Developer Guide*.
 
 ## SYNTAX
 
@@ -23,7 +16,20 @@ New-VSSageMakerEndpoint [-LogicalId] <String> [-EndpointName <Object>] -Endpoint
 ```
 
 ## DESCRIPTION
-Adds an AWS::SageMaker::Endpoint resource to the template
+Adds an AWS::SageMaker::Endpoint resource to the template.
+Use the AWS::SageMaker::Endpoint resource to create an endpoint using the specified configuration in the request.
+Amazon SageMaker uses the endpoint to provision resources and deploy models.
+You create the endpoint configuration with the AWS::SageMaker::EndpointConfig: https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-sagemaker-endpointconfig.html resource.
+For more information, see Deploy a Model on Amazon SageMaker Hosting Services: https://docs.aws.amazon.com/sagemaker/latest/dg/how-it-works-hosting.html in the *Amazon SageMaker Developer Guide*.
+
+## EXAMPLES
+
+### Example 1
+```powershell
+PS C:\> {{ Add example code here }}
+```
+
+{{ Add example description here }}
 
 ## PARAMETERS
 
@@ -45,9 +51,11 @@ Accept wildcard characters: False
 ```
 
 ### -EndpointName
-Required: False    
-Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-sagemaker-endpoint.html#cfn-sagemaker-endpoint-endpointname    
-PrimitiveType: String    
+The name of the endpoint.
+The name must be unique within an AWS Region in your AWS account.
+
+Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-sagemaker-endpoint.html#cfn-sagemaker-endpoint-endpointname
+PrimitiveType: String
 UpdateType: Immutable
 
 ```yaml
@@ -63,9 +71,11 @@ Accept wildcard characters: False
 ```
 
 ### -EndpointConfigName
-Required: True    
-Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-sagemaker-endpoint.html#cfn-sagemaker-endpoint-endpointconfigname    
-PrimitiveType: String    
+The name of the AWS::SageMaker::EndpointConfig: https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-sagemaker-endpointconfig.html resource that specifies the configuration for the endpoint.
+For more information, see CreateEndpointConfig: https://docs.aws.amazon.com/sagemaker/latest/dg/API_CreateEndpointConfig.html.
+
+Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-sagemaker-endpoint.html#cfn-sagemaker-endpoint-endpointconfigname
+PrimitiveType: String
 UpdateType: Mutable
 
 ```yaml
@@ -81,10 +91,12 @@ Accept wildcard characters: False
 ```
 
 ### -Tags
-Type: List    
-Required: False    
-Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-sagemaker-endpoint.html#cfn-sagemaker-endpoint-tags    
-ItemType: Tag    
+A list of key-value pairs to apply to this resource.
+For more information, see Resource Tag: https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-resource-tags.html and Using Cost Allocation Tags: https://docs.aws.amazon.com/awsaccountbilling/latest/aboutv2/cost-alloc-tags.html#allocation-what in the * AWS Billing and Cost Management User Guide*.
+
+Type: List
+Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-sagemaker-endpoint.html#cfn-sagemaker-endpoint-tags
+ItemType: Tag
 UpdateType: Mutable
 
 ```yaml
@@ -194,15 +206,13 @@ Accept wildcard characters: False
 ```
 
 ### CommonParameters
-This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction, and -WarningVariable.
-For more information, see about_CommonParameters (http://go.microsoft.com/fwlink/?LinkID=113216).
+This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction, and -WarningVariable. For more information, see [about_CommonParameters](http://go.microsoft.com/fwlink/?LinkID=113216).
 
 ## INPUTS
 
 ## OUTPUTS
 
 ### Vaporshell.Resource.SageMaker.Endpoint
-
 ## NOTES
 
 ## RELATED LINKS

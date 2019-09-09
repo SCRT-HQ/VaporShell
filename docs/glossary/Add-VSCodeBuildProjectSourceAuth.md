@@ -1,18 +1,8 @@
----
-layout: glossary
-title: Add-VSCodeBuildProjectSourceAuth
-categories: glossary
-label1: Category
-data1: Documentation
-label2: Depth
-data2: Deep
-schema: 2.0.0
----
-
 # Add-VSCodeBuildProjectSourceAuth
 
 ## SYNOPSIS
-Adds an AWS::CodeBuild::Project.SourceAuth resource property to the template
+Adds an AWS::CodeBuild::Project.SourceAuth resource property to the template.
+SourceAuth is a property of the AWS CodeBuild Project Source : https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-codebuild-project-source.html property type that specifies authorization settings for AWS CodeBuild to access the source code to be built.
 
 ## SYNTAX
 
@@ -21,14 +11,30 @@ Add-VSCodeBuildProjectSourceAuth [-Type] <Object> [[-Resource] <Object>] [<Commo
 ```
 
 ## DESCRIPTION
-Adds an AWS::CodeBuild::Project.SourceAuth resource property to the template
+Adds an AWS::CodeBuild::Project.SourceAuth resource property to the template.
+SourceAuth is a property of the AWS CodeBuild Project Source : https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-codebuild-project-source.html property type that specifies authorization settings for AWS CodeBuild to access the source code to be built.
+
+SourceAuth is for use by the CodeBuild console only.
+Do not get or set it directly.
+
+## EXAMPLES
+
+### Example 1
+```powershell
+PS C:\> {{ Add example code here }}
+```
+
+{{ Add example description here }}
 
 ## PARAMETERS
 
 ### -Type
-Required: True    
-Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-codebuild-project-sourceauth.html#cfn-codebuild-project-sourceauth-type    
-PrimitiveType: String    
+The authorization type to use.
+The only valid value is OAUTH, which represents the OAuth authorization type.
+This data type is used by the AWS CodeBuild console only.
+
+Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-codebuild-project-sourceauth.html#cfn-codebuild-project-sourceauth-type
+PrimitiveType: String
 UpdateType: Mutable
 
 ```yaml
@@ -44,9 +50,11 @@ Accept wildcard characters: False
 ```
 
 ### -Resource
-Required: False    
-Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-codebuild-project-sourceauth.html#cfn-codebuild-project-sourceauth-resource    
-PrimitiveType: String    
+The resource value that applies to the specified authorization type.
+This data type is used by the AWS CodeBuild console only.
+
+Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-codebuild-project-sourceauth.html#cfn-codebuild-project-sourceauth-resource
+PrimitiveType: String
 UpdateType: Mutable
 
 ```yaml
@@ -62,15 +70,13 @@ Accept wildcard characters: False
 ```
 
 ### CommonParameters
-This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction, and -WarningVariable.
-For more information, see about_CommonParameters (http://go.microsoft.com/fwlink/?LinkID=113216).
+This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction, and -WarningVariable. For more information, see [about_CommonParameters](http://go.microsoft.com/fwlink/?LinkID=113216).
 
 ## INPUTS
 
 ## OUTPUTS
 
 ### Vaporshell.Resource.CodeBuild.Project.SourceAuth
-
 ## NOTES
 
 ## RELATED LINKS

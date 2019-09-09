@@ -1,18 +1,8 @@
----
-layout: glossary
-title: New-VSDMSCertificate
-categories: glossary
-label1: Category
-data1: Documentation
-label2: Depth
-data2: Deep
-schema: 2.0.0
----
-
 # New-VSDMSCertificate
 
 ## SYNOPSIS
-Adds an AWS::DMS::Certificate resource to the template
+Adds an AWS::DMS::Certificate resource to the template.
+The AWS::DMS::Certificate resource creates an SSL certificate that encrypts connections between AWS DMS endpoints and the replication instance.
 
 ## SYNTAX
 
@@ -23,7 +13,17 @@ New-VSDMSCertificate [-LogicalId] <String> [-CertificateIdentifier <Object>] [-C
 ```
 
 ## DESCRIPTION
-Adds an AWS::DMS::Certificate resource to the template
+Adds an AWS::DMS::Certificate resource to the template.
+The AWS::DMS::Certificate resource creates an SSL certificate that encrypts connections between AWS DMS endpoints and the replication instance.
+
+## EXAMPLES
+
+### Example 1
+```powershell
+PS C:\> {{ Add example code here }}
+```
+
+{{ Add example description here }}
 
 ## PARAMETERS
 
@@ -45,9 +45,11 @@ Accept wildcard characters: False
 ```
 
 ### -CertificateIdentifier
-Required: False    
-Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-dms-certificate.html#cfn-dms-certificate-certificateidentifier    
-PrimitiveType: String    
+The customer-assigned name of the certificate.
+Valid characters are A-z and 0-9.
+
+Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-dms-certificate.html#cfn-dms-certificate-certificateidentifier
+PrimitiveType: String
 UpdateType: Immutable
 
 ```yaml
@@ -63,9 +65,10 @@ Accept wildcard characters: False
 ```
 
 ### -CertificatePem
-Required: False    
-Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-dms-certificate.html#cfn-dms-certificate-certificatepem    
-PrimitiveType: String    
+The contents of the .pem X.509 certificate file for the certificate.
+
+Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-dms-certificate.html#cfn-dms-certificate-certificatepem
+PrimitiveType: String
 UpdateType: Immutable
 
 ```yaml
@@ -81,9 +84,10 @@ Accept wildcard characters: False
 ```
 
 ### -CertificateWallet
-Required: False    
-Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-dms-certificate.html#cfn-dms-certificate-certificatewallet    
-PrimitiveType: String    
+The location of the imported Oracle Wallet certificate for use with SSL.
+
+Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-dms-certificate.html#cfn-dms-certificate-certificatewallet
+PrimitiveType: String
 UpdateType: Immutable
 
 ```yaml
@@ -193,15 +197,13 @@ Accept wildcard characters: False
 ```
 
 ### CommonParameters
-This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction, and -WarningVariable.
-For more information, see about_CommonParameters (http://go.microsoft.com/fwlink/?LinkID=113216).
+This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction, and -WarningVariable. For more information, see [about_CommonParameters](http://go.microsoft.com/fwlink/?LinkID=113216).
 
 ## INPUTS
 
 ## OUTPUTS
 
 ### Vaporshell.Resource.DMS.Certificate
-
 ## NOTES
 
 ## RELATED LINKS

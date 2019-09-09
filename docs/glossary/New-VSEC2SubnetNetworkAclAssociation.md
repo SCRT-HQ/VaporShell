@@ -1,18 +1,9 @@
----
-layout: glossary
-title: New-VSEC2SubnetNetworkAclAssociation
-categories: glossary
-label1: Category
-data1: Documentation
-label2: Depth
-data2: Deep
-schema: 2.0.0
----
-
 # New-VSEC2SubnetNetworkAclAssociation
 
 ## SYNOPSIS
-Adds an AWS::EC2::SubnetNetworkAclAssociation resource to the template
+Adds an AWS::EC2::SubnetNetworkAclAssociation resource to the template.
+Associates a subnet with a network ACL.
+For more information, see ReplaceNetworkAclAssociation: https://docs.aws.amazon.com/AWSEC2/latest/APIReference/ApiReference-query-ReplaceNetworkAclAssociation.html in the *Amazon Elastic Compute Cloud API Reference*.
 
 ## SYNTAX
 
@@ -23,7 +14,23 @@ New-VSEC2SubnetNetworkAclAssociation [-LogicalId] <String> -NetworkAclId <Object
 ```
 
 ## DESCRIPTION
-Adds an AWS::EC2::SubnetNetworkAclAssociation resource to the template
+Adds an AWS::EC2::SubnetNetworkAclAssociation resource to the template.
+Associates a subnet with a network ACL.
+For more information, see ReplaceNetworkAclAssociation: https://docs.aws.amazon.com/AWSEC2/latest/APIReference/ApiReference-query-ReplaceNetworkAclAssociation.html in the *Amazon Elastic Compute Cloud API Reference*.
+
+When AWS::EC2::SubnetNetworkAclAssociation resources are created during create or update operations, AWS CloudFormation adopts existing resources that share the same key properties (the properties that contribute to uniquely identify the resource.
+However, if the operation fails and rolls back, AWS CloudFormation deletes the previously out-of-band resources.
+You can protect against this behavior by using Retain deletion policies.
+For more information, see DeletionPolicy Attribute: https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-attribute-deletionpolicy.html.
+
+## EXAMPLES
+
+### Example 1
+```powershell
+PS C:\> {{ Add example code here }}
+```
+
+{{ Add example description here }}
 
 ## PARAMETERS
 
@@ -45,9 +52,10 @@ Accept wildcard characters: False
 ```
 
 ### -NetworkAclId
-Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ec2-subnet-network-acl-assoc.html#cfn-ec2-subnetnetworkaclassociation-networkaclid    
-PrimitiveType: String    
-Required: True    
+The ID of the network ACL.
+
+Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ec2-subnet-network-acl-assoc.html#cfn-ec2-subnetnetworkaclassociation-networkaclid
+PrimitiveType: String
 UpdateType: Immutable
 
 ```yaml
@@ -63,9 +71,10 @@ Accept wildcard characters: False
 ```
 
 ### -SubnetId
-Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ec2-subnet-network-acl-assoc.html#cfn-ec2-subnetnetworkaclassociation-associationid    
-PrimitiveType: String    
-Required: True    
+The ID of the subnet.
+
+Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ec2-subnet-network-acl-assoc.html#cfn-ec2-subnetnetworkaclassociation-associationid
+PrimitiveType: String
 UpdateType: Immutable
 
 ```yaml
@@ -175,15 +184,13 @@ Accept wildcard characters: False
 ```
 
 ### CommonParameters
-This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction, and -WarningVariable.
-For more information, see about_CommonParameters (http://go.microsoft.com/fwlink/?LinkID=113216).
+This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction, and -WarningVariable. For more information, see [about_CommonParameters](http://go.microsoft.com/fwlink/?LinkID=113216).
 
 ## INPUTS
 
 ## OUTPUTS
 
 ### Vaporshell.Resource.EC2.SubnetNetworkAclAssociation
-
 ## NOTES
 
 ## RELATED LINKS

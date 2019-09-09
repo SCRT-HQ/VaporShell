@@ -1,18 +1,8 @@
----
-layout: glossary
-title: Add-VSSSMMaintenanceWindowTaskMaintenanceWindowRunCommandParameters
-categories: glossary
-label1: Category
-data1: Documentation
-label2: Depth
-data2: Deep
-schema: 2.0.0
----
-
 # Add-VSSSMMaintenanceWindowTaskMaintenanceWindowRunCommandParameters
 
 ## SYNOPSIS
-Adds an AWS::SSM::MaintenanceWindowTask.MaintenanceWindowRunCommandParameters resource property to the template
+Adds an AWS::SSM::MaintenanceWindowTask.MaintenanceWindowRunCommandParameters resource property to the template.
+The MaintenanceWindowRunCommandParameters property type specifies the parameters for a RUN_COMMAND task type for a maintenance window task in AWS Systems Manager.
 
 ## SYNTAX
 
@@ -24,14 +14,27 @@ Add-VSSSMMaintenanceWindowTaskMaintenanceWindowRunCommandParameters [[-TimeoutSe
 ```
 
 ## DESCRIPTION
-Adds an AWS::SSM::MaintenanceWindowTask.MaintenanceWindowRunCommandParameters resource property to the template
+Adds an AWS::SSM::MaintenanceWindowTask.MaintenanceWindowRunCommandParameters resource property to the template.
+The MaintenanceWindowRunCommandParameters property type specifies the parameters for a RUN_COMMAND task type for a maintenance window task in AWS Systems Manager.
+
+MaintenanceWindowRunCommandParameters is a property of the TaskInvocationParameters: https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ssm-maintenancewindowtask-taskinvocationparameters.html property type.
+
+## EXAMPLES
+
+### Example 1
+```powershell
+PS C:\> {{ Add example code here }}
+```
+
+{{ Add example description here }}
 
 ## PARAMETERS
 
 ### -TimeoutSeconds
-Required: False    
-Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ssm-maintenancewindowtask-maintenancewindowruncommandparameters.html#cfn-ssm-maintenancewindowtask-maintenancewindowruncommandparameters-timeoutseconds    
-PrimitiveType: Integer    
+If this time is reached and the command has not already started running, it doesn't run.
+
+Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ssm-maintenancewindowtask-maintenancewindowruncommandparameters.html#cfn-ssm-maintenancewindowtask-maintenancewindowruncommandparameters-timeoutseconds
+PrimitiveType: Integer
 UpdateType: Mutable
 
 ```yaml
@@ -47,9 +50,10 @@ Accept wildcard characters: False
 ```
 
 ### -Comment
-Required: False    
-Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ssm-maintenancewindowtask-maintenancewindowruncommandparameters.html#cfn-ssm-maintenancewindowtask-maintenancewindowruncommandparameters-comment    
-PrimitiveType: String    
+Information about the command or commands to run.
+
+Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ssm-maintenancewindowtask-maintenancewindowruncommandparameters.html#cfn-ssm-maintenancewindowtask-maintenancewindowruncommandparameters-comment
+PrimitiveType: String
 UpdateType: Mutable
 
 ```yaml
@@ -65,9 +69,10 @@ Accept wildcard characters: False
 ```
 
 ### -OutputS3KeyPrefix
-Required: False    
-Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ssm-maintenancewindowtask-maintenancewindowruncommandparameters.html#cfn-ssm-maintenancewindowtask-maintenancewindowruncommandparameters-outputs3keyprefix    
-PrimitiveType: String    
+The Amazon S3 bucket subfolder.
+
+Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ssm-maintenancewindowtask-maintenancewindowruncommandparameters.html#cfn-ssm-maintenancewindowtask-maintenancewindowruncommandparameters-outputs3keyprefix
+PrimitiveType: String
 UpdateType: Mutable
 
 ```yaml
@@ -83,9 +88,10 @@ Accept wildcard characters: False
 ```
 
 ### -Parameters
-Required: False    
-Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ssm-maintenancewindowtask-maintenancewindowruncommandparameters.html#cfn-ssm-maintenancewindowtask-maintenancewindowruncommandparameters-parameters    
-PrimitiveType: Json    
+The parameters for the RUN_COMMAND task execution.
+
+Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ssm-maintenancewindowtask-maintenancewindowruncommandparameters.html#cfn-ssm-maintenancewindowtask-maintenancewindowruncommandparameters-parameters
+PrimitiveType: Json
 UpdateType: Mutable
 
 ```yaml
@@ -101,9 +107,11 @@ Accept wildcard characters: False
 ```
 
 ### -DocumentHashType
-Required: False    
-Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ssm-maintenancewindowtask-maintenancewindowruncommandparameters.html#cfn-ssm-maintenancewindowtask-maintenancewindowruncommandparameters-documenthashtype    
-PrimitiveType: String    
+The SHA-256 or SHA-1 hash type.
+SHA-1 hashes are deprecated.
+
+Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ssm-maintenancewindowtask-maintenancewindowruncommandparameters.html#cfn-ssm-maintenancewindowtask-maintenancewindowruncommandparameters-documenthashtype
+PrimitiveType: String
 UpdateType: Mutable
 
 ```yaml
@@ -119,9 +127,10 @@ Accept wildcard characters: False
 ```
 
 ### -ServiceRoleArn
-Required: False    
-Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ssm-maintenancewindowtask-maintenancewindowruncommandparameters.html#cfn-ssm-maintenancewindowtask-maintenancewindowruncommandparameters-servicerolearn    
-PrimitiveType: String    
+The ARN of the IAM service role to use to publish Amazon Simple Notification Service Amazon SNS notifications for maintenance window Run Command tasks.
+
+Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ssm-maintenancewindowtask-maintenancewindowruncommandparameters.html#cfn-ssm-maintenancewindowtask-maintenancewindowruncommandparameters-servicerolearn
+PrimitiveType: String
 UpdateType: Mutable
 
 ```yaml
@@ -137,9 +146,10 @@ Accept wildcard characters: False
 ```
 
 ### -NotificationConfig
-Type: NotificationConfig    
-Required: False    
-Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ssm-maintenancewindowtask-maintenancewindowruncommandparameters.html#cfn-ssm-maintenancewindowtask-maintenancewindowruncommandparameters-notificationconfig    
+Configurations for sending notifications about command status changes on a per-instance basis.
+
+Type: NotificationConfig
+Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ssm-maintenancewindowtask-maintenancewindowruncommandparameters.html#cfn-ssm-maintenancewindowtask-maintenancewindowruncommandparameters-notificationconfig
 UpdateType: Mutable
 
 ```yaml
@@ -155,9 +165,10 @@ Accept wildcard characters: False
 ```
 
 ### -OutputS3BucketName
-Required: False    
-Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ssm-maintenancewindowtask-maintenancewindowruncommandparameters.html#cfn-ssm-maintenancewindowtask-maintenancewindowruncommandparameters-outputs3bucketname    
-PrimitiveType: String    
+The name of the Amazon S3 bucket.
+
+Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ssm-maintenancewindowtask-maintenancewindowruncommandparameters.html#cfn-ssm-maintenancewindowtask-maintenancewindowruncommandparameters-outputs3bucketname
+PrimitiveType: String
 UpdateType: Mutable
 
 ```yaml
@@ -173,9 +184,11 @@ Accept wildcard characters: False
 ```
 
 ### -DocumentHash
-Required: False    
-Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ssm-maintenancewindowtask-maintenancewindowruncommandparameters.html#cfn-ssm-maintenancewindowtask-maintenancewindowruncommandparameters-documenthash    
-PrimitiveType: String    
+The SHA-256 or SHA-1 hash created by the system when the document was created.
+SHA-1 hashes have been deprecated.
+
+Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ssm-maintenancewindowtask-maintenancewindowruncommandparameters.html#cfn-ssm-maintenancewindowtask-maintenancewindowruncommandparameters-documenthash
+PrimitiveType: String
 UpdateType: Mutable
 
 ```yaml
@@ -191,15 +204,13 @@ Accept wildcard characters: False
 ```
 
 ### CommonParameters
-This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction, and -WarningVariable.
-For more information, see about_CommonParameters (http://go.microsoft.com/fwlink/?LinkID=113216).
+This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction, and -WarningVariable. For more information, see [about_CommonParameters](http://go.microsoft.com/fwlink/?LinkID=113216).
 
 ## INPUTS
 
 ## OUTPUTS
 
 ### Vaporshell.Resource.SSM.MaintenanceWindowTask.MaintenanceWindowRunCommandParameters
-
 ## NOTES
 
 ## RELATED LINKS

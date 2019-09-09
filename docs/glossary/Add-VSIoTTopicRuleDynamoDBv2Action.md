@@ -1,18 +1,8 @@
----
-layout: glossary
-title: Add-VSIoTTopicRuleDynamoDBv2Action
-categories: glossary
-label1: Category
-data1: Documentation
-label2: Depth
-data2: Deep
-schema: 2.0.0
----
-
 # Add-VSIoTTopicRuleDynamoDBv2Action
 
 ## SYNOPSIS
-Adds an AWS::IoT::TopicRule.DynamoDBv2Action resource property to the template
+Adds an AWS::IoT::TopicRule.DynamoDBv2Action resource property to the template.
+Describes an action to write to a DynamoDB table.
 
 ## SYNTAX
 
@@ -21,14 +11,30 @@ Add-VSIoTTopicRuleDynamoDBv2Action [[-PutItem] <Object>] [[-RoleArn] <Object>] [
 ```
 
 ## DESCRIPTION
-Adds an AWS::IoT::TopicRule.DynamoDBv2Action resource property to the template
+Adds an AWS::IoT::TopicRule.DynamoDBv2Action resource property to the template.
+Describes an action to write to a DynamoDB table.
+
+This DynamoDB action writes each attribute in the message payload into it's own column in the DynamoDB table.
+
+## EXAMPLES
+
+### Example 1
+```powershell
+PS C:\> {{ Add example code here }}
+```
+
+{{ Add example description here }}
 
 ## PARAMETERS
 
 ### -PutItem
-Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iot-topicrule-dynamodbv2action.html#cfn-iot-topicrule-dynamodbv2action-putitem    
-Required: False    
-Type: PutItemInput    
+Specifies the DynamoDB table to which the message data will be written.
+For example:
+{ "dynamoDBv2": { "roleArn": "aws:iam:12341251:my-role" "putItem": { "tableName": "my-table" } } }
+Each attribute in the message payload will be written to a separate column in the DynamoDB database.
+
+Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iot-topicrule-dynamodbv2action.html#cfn-iot-topicrule-dynamodbv2action-putitem
+Type: PutItemInput
 UpdateType: Mutable
 
 ```yaml
@@ -44,9 +50,10 @@ Accept wildcard characters: False
 ```
 
 ### -RoleArn
-Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iot-topicrule-dynamodbv2action.html#cfn-iot-topicrule-dynamodbv2action-rolearn    
-PrimitiveType: String    
-Required: False    
+The ARN of the IAM role that grants access to the DynamoDB table.
+
+Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iot-topicrule-dynamodbv2action.html#cfn-iot-topicrule-dynamodbv2action-rolearn
+PrimitiveType: String
 UpdateType: Mutable
 
 ```yaml
@@ -62,15 +69,13 @@ Accept wildcard characters: False
 ```
 
 ### CommonParameters
-This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction, and -WarningVariable.
-For more information, see about_CommonParameters (http://go.microsoft.com/fwlink/?LinkID=113216).
+This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction, and -WarningVariable. For more information, see [about_CommonParameters](http://go.microsoft.com/fwlink/?LinkID=113216).
 
 ## INPUTS
 
 ## OUTPUTS
 
 ### Vaporshell.Resource.IoT.TopicRule.DynamoDBv2Action
-
 ## NOTES
 
 ## RELATED LINKS

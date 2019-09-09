@@ -1,18 +1,9 @@
----
-layout: glossary
-title: Add-VSGlueTableSkewedInfo
-categories: glossary
-label1: Category
-data1: Documentation
-label2: Depth
-data2: Deep
-schema: 2.0.0
----
-
 # Add-VSGlueTableSkewedInfo
 
 ## SYNOPSIS
-Adds an AWS::Glue::Table.SkewedInfo resource property to the template
+Adds an AWS::Glue::Table.SkewedInfo resource property to the template.
+Specifies skewed values in a table.
+Skewed values are those that occur with very high frequency.
 
 ## SYNTAX
 
@@ -22,15 +13,27 @@ Add-VSGlueTableSkewedInfo [[-SkewedColumnNames] <Object>] [[-SkewedColumnValues]
 ```
 
 ## DESCRIPTION
-Adds an AWS::Glue::Table.SkewedInfo resource property to the template
+Adds an AWS::Glue::Table.SkewedInfo resource property to the template.
+Specifies skewed values in a table.
+Skewed values are those that occur with very high frequency.
+
+## EXAMPLES
+
+### Example 1
+```powershell
+PS C:\> {{ Add example code here }}
+```
+
+{{ Add example description here }}
 
 ## PARAMETERS
 
 ### -SkewedColumnNames
-PrimitiveItemType: String    
-Type: List    
-Required: False    
-Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-glue-table-skewedinfo.html#cfn-glue-table-skewedinfo-skewedcolumnnames    
+A list of names of columns that contain skewed values.
+
+PrimitiveItemType: String
+Type: List
+Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-glue-table-skewedinfo.html#cfn-glue-table-skewedinfo-skewedcolumnnames
 UpdateType: Mutable
 
 ```yaml
@@ -46,10 +49,11 @@ Accept wildcard characters: False
 ```
 
 ### -SkewedColumnValues
-PrimitiveItemType: String    
-Type: List    
-Required: False    
-Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-glue-table-skewedinfo.html#cfn-glue-table-skewedinfo-skewedcolumnvalues    
+A list of values that appear so frequently as to be considered skewed.
+
+PrimitiveItemType: String
+Type: List
+Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-glue-table-skewedinfo.html#cfn-glue-table-skewedinfo-skewedcolumnvalues
 UpdateType: Mutable
 
 ```yaml
@@ -65,9 +69,10 @@ Accept wildcard characters: False
 ```
 
 ### -SkewedColumnValueLocationMaps
-Required: False    
-Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-glue-table-skewedinfo.html#cfn-glue-table-skewedinfo-skewedcolumnvaluelocationmaps    
-PrimitiveType: Json    
+A mapping of skewed values to the columns that contain them.
+
+Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-glue-table-skewedinfo.html#cfn-glue-table-skewedinfo-skewedcolumnvaluelocationmaps
+PrimitiveType: Json
 UpdateType: Mutable
 
 ```yaml
@@ -83,15 +88,13 @@ Accept wildcard characters: False
 ```
 
 ### CommonParameters
-This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction, and -WarningVariable.
-For more information, see about_CommonParameters (http://go.microsoft.com/fwlink/?LinkID=113216).
+This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction, and -WarningVariable. For more information, see [about_CommonParameters](http://go.microsoft.com/fwlink/?LinkID=113216).
 
 ## INPUTS
 
 ## OUTPUTS
 
 ### Vaporshell.Resource.Glue.Table.SkewedInfo
-
 ## NOTES
 
 ## RELATED LINKS

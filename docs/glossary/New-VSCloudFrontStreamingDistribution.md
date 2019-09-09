@@ -1,18 +1,8 @@
----
-layout: glossary
-title: New-VSCloudFrontStreamingDistribution
-categories: glossary
-label1: Category
-data1: Documentation
-label2: Depth
-data2: Deep
-schema: 2.0.0
----
-
 # New-VSCloudFrontStreamingDistribution
 
 ## SYNOPSIS
-Adds an AWS::CloudFront::StreamingDistribution resource to the template
+Adds an AWS::CloudFront::StreamingDistribution resource to the template.
+A streaming distribution.
 
 ## SYNTAX
 
@@ -23,7 +13,17 @@ New-VSCloudFrontStreamingDistribution [-LogicalId] <String> -StreamingDistributi
 ```
 
 ## DESCRIPTION
-Adds an AWS::CloudFront::StreamingDistribution resource to the template
+Adds an AWS::CloudFront::StreamingDistribution resource to the template.
+A streaming distribution.
+
+## EXAMPLES
+
+### Example 1
+```powershell
+PS C:\> {{ Add example code here }}
+```
+
+{{ Add example description here }}
 
 ## PARAMETERS
 
@@ -45,9 +45,10 @@ Accept wildcard characters: False
 ```
 
 ### -StreamingDistributionConfig
-Type: StreamingDistributionConfig    
-Required: True    
-Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-cloudfront-streamingdistribution.html#cfn-cloudfront-streamingdistribution-streamingdistributionconfig    
+The current configuration information for the RTMP distribution.
+
+Type: StreamingDistributionConfig
+Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-cloudfront-streamingdistribution.html#cfn-cloudfront-streamingdistribution-streamingdistributionconfig
 UpdateType: Mutable
 
 ```yaml
@@ -63,10 +64,11 @@ Accept wildcard characters: False
 ```
 
 ### -Tags
-Type: List    
-Required: True    
-Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-cloudfront-streamingdistribution.html#cfn-cloudfront-streamingdistribution-tags    
-ItemType: Tag    
+A complex type that contains zero or more Tag elements.
+
+Type: List
+Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-cloudfront-streamingdistribution.html#cfn-cloudfront-streamingdistribution-tags
+ItemType: Tag
 UpdateType: Mutable
 
 ```yaml
@@ -176,15 +178,13 @@ Accept wildcard characters: False
 ```
 
 ### CommonParameters
-This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction, and -WarningVariable.
-For more information, see about_CommonParameters (http://go.microsoft.com/fwlink/?LinkID=113216).
+This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction, and -WarningVariable. For more information, see [about_CommonParameters](http://go.microsoft.com/fwlink/?LinkID=113216).
 
 ## INPUTS
 
 ## OUTPUTS
 
 ### Vaporshell.Resource.CloudFront.StreamingDistribution
-
 ## NOTES
 
 ## RELATED LINKS

@@ -1,18 +1,8 @@
----
-layout: glossary
-title: Add-VSKinesisFirehoseDeliveryStreamProcessingConfiguration
-categories: glossary
-label1: Category
-data1: Documentation
-label2: Depth
-data2: Deep
-schema: 2.0.0
----
-
 # Add-VSKinesisFirehoseDeliveryStreamProcessingConfiguration
 
 ## SYNOPSIS
-Adds an AWS::KinesisFirehose::DeliveryStream.ProcessingConfiguration resource property to the template
+Adds an AWS::KinesisFirehose::DeliveryStream.ProcessingConfiguration resource property to the template.
+The ProcessingConfiguration property configures data processing for an Amazon Kinesis Data Firehose delivery stream.
 
 ## SYNTAX
 
@@ -22,14 +12,25 @@ Add-VSKinesisFirehoseDeliveryStreamProcessingConfiguration [[-Enabled] <Boolean>
 ```
 
 ## DESCRIPTION
-Adds an AWS::KinesisFirehose::DeliveryStream.ProcessingConfiguration resource property to the template
+Adds an AWS::KinesisFirehose::DeliveryStream.ProcessingConfiguration resource property to the template.
+The ProcessingConfiguration property configures data processing for an Amazon Kinesis Data Firehose delivery stream.
+
+## EXAMPLES
+
+### Example 1
+```powershell
+PS C:\> {{ Add example code here }}
+```
+
+{{ Add example description here }}
 
 ## PARAMETERS
 
 ### -Enabled
-Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-kinesisfirehose-deliverystream-processingconfiguration.html#cfn-kinesisfirehose-deliverystream-processingconfiguration-enabled    
-PrimitiveType: Boolean    
-Required: False    
+Indicates whether data processing is enabled true or disabled false.
+
+Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-kinesisfirehose-deliverystream-processingconfiguration.html#cfn-kinesisfirehose-deliverystream-processingconfiguration-enabled
+PrimitiveType: Boolean
 UpdateType: Mutable
 
 ```yaml
@@ -45,11 +46,12 @@ Accept wildcard characters: False
 ```
 
 ### -Processors
-Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-kinesisfirehose-deliverystream-processingconfiguration.html#cfn-kinesisfirehose-deliverystream-processingconfiguration-processors    
-DuplicatesAllowed: False    
-ItemType: Processor    
-Required: False    
-Type: List    
+The data processors.
+
+Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-kinesisfirehose-deliverystream-processingconfiguration.html#cfn-kinesisfirehose-deliverystream-processingconfiguration-processors
+DuplicatesAllowed: False
+ItemType: Processor
+Type: List
 UpdateType: Mutable
 
 ```yaml
@@ -65,15 +67,13 @@ Accept wildcard characters: False
 ```
 
 ### CommonParameters
-This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction, and -WarningVariable.
-For more information, see about_CommonParameters (http://go.microsoft.com/fwlink/?LinkID=113216).
+This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction, and -WarningVariable. For more information, see [about_CommonParameters](http://go.microsoft.com/fwlink/?LinkID=113216).
 
 ## INPUTS
 
 ## OUTPUTS
 
 ### Vaporshell.Resource.KinesisFirehose.DeliveryStream.ProcessingConfiguration
-
 ## NOTES
 
 ## RELATED LINKS

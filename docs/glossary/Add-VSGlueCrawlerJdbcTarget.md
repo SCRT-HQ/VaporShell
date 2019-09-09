@@ -1,18 +1,8 @@
----
-layout: glossary
-title: Add-VSGlueCrawlerJdbcTarget
-categories: glossary
-label1: Category
-data1: Documentation
-label2: Depth
-data2: Deep
-schema: 2.0.0
----
-
 # Add-VSGlueCrawlerJdbcTarget
 
 ## SYNOPSIS
-Adds an AWS::Glue::Crawler.JdbcTarget resource property to the template
+Adds an AWS::Glue::Crawler.JdbcTarget resource property to the template.
+Specifies a JDBC data store to crawl.
 
 ## SYNTAX
 
@@ -22,14 +12,25 @@ Add-VSGlueCrawlerJdbcTarget [[-ConnectionName] <Object>] [[-Path] <Object>] [[-E
 ```
 
 ## DESCRIPTION
-Adds an AWS::Glue::Crawler.JdbcTarget resource property to the template
+Adds an AWS::Glue::Crawler.JdbcTarget resource property to the template.
+Specifies a JDBC data store to crawl.
+
+## EXAMPLES
+
+### Example 1
+```powershell
+PS C:\> {{ Add example code here }}
+```
+
+{{ Add example description here }}
 
 ## PARAMETERS
 
 ### -ConnectionName
-Required: False    
-Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-glue-crawler-jdbctarget.html#cfn-glue-crawler-jdbctarget-connectionname    
-PrimitiveType: String    
+The name of the connection to use to connect to the JDBC target.
+
+Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-glue-crawler-jdbctarget.html#cfn-glue-crawler-jdbctarget-connectionname
+PrimitiveType: String
 UpdateType: Mutable
 
 ```yaml
@@ -45,9 +46,10 @@ Accept wildcard characters: False
 ```
 
 ### -Path
-Required: False    
-Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-glue-crawler-jdbctarget.html#cfn-glue-crawler-jdbctarget-path    
-PrimitiveType: String    
+The path of the JDBC target.
+
+Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-glue-crawler-jdbctarget.html#cfn-glue-crawler-jdbctarget-path
+PrimitiveType: String
 UpdateType: Mutable
 
 ```yaml
@@ -63,10 +65,12 @@ Accept wildcard characters: False
 ```
 
 ### -Exclusions
-PrimitiveItemType: String    
-Type: List    
-Required: False    
-Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-glue-crawler-jdbctarget.html#cfn-glue-crawler-jdbctarget-exclusions    
+A list of glob patterns used to exclude from the crawl.
+For more information, see Catalog Tables with a Crawler: https://docs.aws.amazon.com/glue/latest/dg/add-crawler.html.
+
+PrimitiveItemType: String
+Type: List
+Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-glue-crawler-jdbctarget.html#cfn-glue-crawler-jdbctarget-exclusions
 UpdateType: Mutable
 
 ```yaml
@@ -82,15 +86,13 @@ Accept wildcard characters: False
 ```
 
 ### CommonParameters
-This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction, and -WarningVariable.
-For more information, see about_CommonParameters (http://go.microsoft.com/fwlink/?LinkID=113216).
+This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction, and -WarningVariable. For more information, see [about_CommonParameters](http://go.microsoft.com/fwlink/?LinkID=113216).
 
 ## INPUTS
 
 ## OUTPUTS
 
 ### Vaporshell.Resource.Glue.Crawler.JdbcTarget
-
 ## NOTES
 
 ## RELATED LINKS

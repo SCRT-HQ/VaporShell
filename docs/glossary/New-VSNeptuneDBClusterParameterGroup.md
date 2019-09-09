@@ -1,18 +1,8 @@
----
-layout: glossary
-title: New-VSNeptuneDBClusterParameterGroup
-categories: glossary
-label1: Category
-data1: Documentation
-label2: Depth
-data2: Deep
-schema: 2.0.0
----
-
 # New-VSNeptuneDBClusterParameterGroup
 
 ## SYNOPSIS
-Adds an AWS::Neptune::DBClusterParameterGroup resource to the template
+Adds an AWS::Neptune::DBClusterParameterGroup resource to the template.
+The AWS::Neptune::DBClusterParameterGroup resource creates a new Amazon Neptune DB cluster parameter group.
 
 ## SYNTAX
 
@@ -23,7 +13,21 @@ New-VSNeptuneDBClusterParameterGroup [-LogicalId] <String> -Description <Object>
 ```
 
 ## DESCRIPTION
-Adds an AWS::Neptune::DBClusterParameterGroup resource to the template
+Adds an AWS::Neptune::DBClusterParameterGroup resource to the template.
+The AWS::Neptune::DBClusterParameterGroup resource creates a new Amazon Neptune DB cluster parameter group.
+
+**Note**
+
+Applying a parameter group to a DB cluster might require instances to reboot, resulting in a database outage while the instances reboot.
+
+## EXAMPLES
+
+### Example 1
+```powershell
+PS C:\> {{ Add example code here }}
+```
+
+{{ Add example description here }}
 
 ## PARAMETERS
 
@@ -45,9 +49,10 @@ Accept wildcard characters: False
 ```
 
 ### -Description
-Required: True    
-Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-neptune-dbclusterparametergroup.html#cfn-neptune-dbclusterparametergroup-description    
-PrimitiveType: String    
+Provides the customer-specified description for this DB cluster parameter group.
+
+Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-neptune-dbclusterparametergroup.html#cfn-neptune-dbclusterparametergroup-description
+PrimitiveType: String
 UpdateType: Immutable
 
 ```yaml
@@ -63,9 +68,12 @@ Accept wildcard characters: False
 ```
 
 ### -Parameters
-Required: True    
-Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-neptune-dbclusterparametergroup.html#cfn-neptune-dbclusterparametergroup-parameters    
-PrimitiveType: Json    
+The parameters to set for this DB cluster parameter group.
+The parameters are expressed as a JSON object consisting of key-value pairs.
+If you update the parameters, some interruption may occur depending on which parameters you update.
+
+Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-neptune-dbclusterparametergroup.html#cfn-neptune-dbclusterparametergroup-parameters
+PrimitiveType: Json
 UpdateType: Mutable
 
 ```yaml
@@ -81,9 +89,10 @@ Accept wildcard characters: False
 ```
 
 ### -Family
-Required: True    
-Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-neptune-dbclusterparametergroup.html#cfn-neptune-dbclusterparametergroup-family    
-PrimitiveType: String    
+Must be neptune1.
+
+Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-neptune-dbclusterparametergroup.html#cfn-neptune-dbclusterparametergroup-family
+PrimitiveType: String
 UpdateType: Immutable
 
 ```yaml
@@ -99,10 +108,11 @@ Accept wildcard characters: False
 ```
 
 ### -Tags
-Type: List    
-Required: False    
-Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-neptune-dbclusterparametergroup.html#cfn-neptune-dbclusterparametergroup-tags    
-ItemType: Tag    
+The tags that you want to attach to this parameter group.
+
+Type: List
+Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-neptune-dbclusterparametergroup.html#cfn-neptune-dbclusterparametergroup-tags
+ItemType: Tag
 UpdateType: Mutable
 
 ```yaml
@@ -118,9 +128,10 @@ Accept wildcard characters: False
 ```
 
 ### -Name
-Required: False    
-Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-neptune-dbclusterparametergroup.html#cfn-neptune-dbclusterparametergroup-name    
-PrimitiveType: String    
+Provides the name of the DB cluster parameter group.
+
+Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-neptune-dbclusterparametergroup.html#cfn-neptune-dbclusterparametergroup-name
+PrimitiveType: String
 UpdateType: Immutable
 
 ```yaml
@@ -230,15 +241,13 @@ Accept wildcard characters: False
 ```
 
 ### CommonParameters
-This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction, and -WarningVariable.
-For more information, see about_CommonParameters (http://go.microsoft.com/fwlink/?LinkID=113216).
+This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction, and -WarningVariable. For more information, see [about_CommonParameters](http://go.microsoft.com/fwlink/?LinkID=113216).
 
 ## INPUTS
 
 ## OUTPUTS
 
 ### Vaporshell.Resource.Neptune.DBClusterParameterGroup
-
 ## NOTES
 
 ## RELATED LINKS

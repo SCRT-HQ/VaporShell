@@ -1,18 +1,9 @@
----
-layout: glossary
-title: New-VSIoTCertificate
-categories: glossary
-label1: Category
-data1: Documentation
-label2: Depth
-data2: Deep
-schema: 2.0.0
----
-
 # New-VSIoTCertificate
 
 ## SYNOPSIS
-Adds an AWS::IoT::Certificate resource to the template
+Adds an AWS::IoT::Certificate resource to the template.
+Use the AWS::IoT::Certificate resource to declare an AWS IoT X.509 certificate.
+For information about working with X.509 certificates, see Authentication in AWS IoT: https://docs.aws.amazon.com/iot/latest/developerguide/x509-certs.html in the *AWS IoT Developer Guide*.
 
 ## SYNTAX
 
@@ -23,7 +14,18 @@ New-VSIoTCertificate [-LogicalId] <String> -CertificateSigningRequest <Object> -
 ```
 
 ## DESCRIPTION
-Adds an AWS::IoT::Certificate resource to the template
+Adds an AWS::IoT::Certificate resource to the template.
+Use the AWS::IoT::Certificate resource to declare an AWS IoT X.509 certificate.
+For information about working with X.509 certificates, see Authentication in AWS IoT: https://docs.aws.amazon.com/iot/latest/developerguide/x509-certs.html in the *AWS IoT Developer Guide*.
+
+## EXAMPLES
+
+### Example 1
+```powershell
+PS C:\> {{ Add example code here }}
+```
+
+{{ Add example description here }}
 
 ## PARAMETERS
 
@@ -45,9 +47,10 @@ Accept wildcard characters: False
 ```
 
 ### -CertificateSigningRequest
-Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-iot-certificate.html#cfn-iot-certificate-certificatesigningrequest    
-PrimitiveType: String    
-Required: True    
+The certificate signing request CSR.
+
+Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-iot-certificate.html#cfn-iot-certificate-certificatesigningrequest
+PrimitiveType: String
 UpdateType: Immutable
 
 ```yaml
@@ -63,9 +66,11 @@ Accept wildcard characters: False
 ```
 
 ### -Status
-Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-iot-certificate.html#cfn-iot-certificate-status    
-PrimitiveType: String    
-Required: True    
+The status of the certificate.
+The status value REGISTER_INACTIVE is deprecated and should not be used.
+
+Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-iot-certificate.html#cfn-iot-certificate-status
+PrimitiveType: String
 UpdateType: Mutable
 
 ```yaml
@@ -175,15 +180,13 @@ Accept wildcard characters: False
 ```
 
 ### CommonParameters
-This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction, and -WarningVariable.
-For more information, see about_CommonParameters (http://go.microsoft.com/fwlink/?LinkID=113216).
+This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction, and -WarningVariable. For more information, see [about_CommonParameters](http://go.microsoft.com/fwlink/?LinkID=113216).
 
 ## INPUTS
 
 ## OUTPUTS
 
 ### Vaporshell.Resource.IoT.Certificate
-
 ## NOTES
 
 ## RELATED LINKS

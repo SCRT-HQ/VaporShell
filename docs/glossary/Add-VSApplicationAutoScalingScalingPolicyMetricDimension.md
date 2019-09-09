@@ -1,18 +1,10 @@
----
-layout: glossary
-title: Add-VSApplicationAutoScalingScalingPolicyMetricDimension
-categories: glossary
-label1: Category
-data1: Documentation
-label2: Depth
-data2: Deep
-schema: 2.0.0
----
-
 # Add-VSApplicationAutoScalingScalingPolicyMetricDimension
 
 ## SYNOPSIS
-Adds an AWS::ApplicationAutoScaling::ScalingPolicy.MetricDimension resource property to the template
+Adds an AWS::ApplicationAutoScaling::ScalingPolicy.MetricDimension resource property to the template.
+MetricDimension is a subproperty of CustomizedMetricSpecification: https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-applicationautoscaling-scalingpolicy-customizedmetricspecification.html that specifies the dimensions of a metric for a target tracking scaling policy.
+Dimensions are arbitrary name/value pairs that can be associated with a CloudWatch metric.
+Duplicate dimensions are not allowed.
 
 ## SYNTAX
 
@@ -22,14 +14,27 @@ Add-VSApplicationAutoScalingScalingPolicyMetricDimension [-Name] <Object> [-Valu
 ```
 
 ## DESCRIPTION
-Adds an AWS::ApplicationAutoScaling::ScalingPolicy.MetricDimension resource property to the template
+Adds an AWS::ApplicationAutoScaling::ScalingPolicy.MetricDimension resource property to the template.
+MetricDimension is a subproperty of CustomizedMetricSpecification: https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-applicationautoscaling-scalingpolicy-customizedmetricspecification.html that specifies the dimensions of a metric for a target tracking scaling policy.
+Dimensions are arbitrary name/value pairs that can be associated with a CloudWatch metric.
+Duplicate dimensions are not allowed.
+
+## EXAMPLES
+
+### Example 1
+```powershell
+PS C:\> {{ Add example code here }}
+```
+
+{{ Add example description here }}
 
 ## PARAMETERS
 
 ### -Name
-Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-applicationautoscaling-scalingpolicy-metricdimension.html#cfn-applicationautoscaling-scalingpolicy-metricdimension-name    
-PrimitiveType: String    
-Required: True    
+The name of the dimension.
+
+Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-applicationautoscaling-scalingpolicy-metricdimension.html#cfn-applicationautoscaling-scalingpolicy-metricdimension-name
+PrimitiveType: String
 UpdateType: Mutable
 
 ```yaml
@@ -45,9 +50,10 @@ Accept wildcard characters: False
 ```
 
 ### -Value
-Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-applicationautoscaling-scalingpolicy-metricdimension.html#cfn-applicationautoscaling-scalingpolicy-metricdimension-value    
-PrimitiveType: String    
-Required: True    
+The value of the dimension.
+
+Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-applicationautoscaling-scalingpolicy-metricdimension.html#cfn-applicationautoscaling-scalingpolicy-metricdimension-value
+PrimitiveType: String
 UpdateType: Mutable
 
 ```yaml
@@ -63,15 +69,13 @@ Accept wildcard characters: False
 ```
 
 ### CommonParameters
-This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction, and -WarningVariable.
-For more information, see about_CommonParameters (http://go.microsoft.com/fwlink/?LinkID=113216).
+This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction, and -WarningVariable. For more information, see [about_CommonParameters](http://go.microsoft.com/fwlink/?LinkID=113216).
 
 ## INPUTS
 
 ## OUTPUTS
 
 ### Vaporshell.Resource.ApplicationAutoScaling.ScalingPolicy.MetricDimension
-
 ## NOTES
 
 ## RELATED LINKS

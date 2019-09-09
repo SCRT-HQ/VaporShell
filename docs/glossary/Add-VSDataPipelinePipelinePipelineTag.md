@@ -1,18 +1,9 @@
----
-layout: glossary
-title: Add-VSDataPipelinePipelinePipelineTag
-categories: glossary
-label1: Category
-data1: Documentation
-label2: Depth
-data2: Deep
-schema: 2.0.0
----
-
 # Add-VSDataPipelinePipelinePipelineTag
 
 ## SYNOPSIS
-Adds an AWS::DataPipeline::Pipeline.PipelineTag resource property to the template
+Adds an AWS::DataPipeline::Pipeline.PipelineTag resource property to the template.
+A list of arbitrary tags (key-value pairs to associate with the pipeline, which you can use to control permissions.
+For more information, see Controlling Access to Pipelines and Resources: https://docs.aws.amazon.com/datapipeline/latest/DeveloperGuide/dp-control-access.html in the *AWS Data Pipeline Developer Guide*.
 
 ## SYNTAX
 
@@ -21,14 +12,26 @@ Add-VSDataPipelinePipelinePipelineTag [-Key] <Object> [-Value] <Object> [<Common
 ```
 
 ## DESCRIPTION
-Adds an AWS::DataPipeline::Pipeline.PipelineTag resource property to the template
+Adds an AWS::DataPipeline::Pipeline.PipelineTag resource property to the template.
+A list of arbitrary tags (key-value pairs to associate with the pipeline, which you can use to control permissions.
+For more information, see Controlling Access to Pipelines and Resources: https://docs.aws.amazon.com/datapipeline/latest/DeveloperGuide/dp-control-access.html in the *AWS Data Pipeline Developer Guide*.
+
+## EXAMPLES
+
+### Example 1
+```powershell
+PS C:\> {{ Add example code here }}
+```
+
+{{ Add example description here }}
 
 ## PARAMETERS
 
 ### -Key
-Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-datapipeline-pipeline-pipelinetags.html#cfn-datapipeline-pipeline-pipelinetags-key    
-PrimitiveType: String    
-Required: True    
+The key name of a tag.
+
+Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-datapipeline-pipeline-pipelinetags.html#cfn-datapipeline-pipeline-pipelinetags-key
+PrimitiveType: String
 UpdateType: Mutable
 
 ```yaml
@@ -44,9 +47,10 @@ Accept wildcard characters: False
 ```
 
 ### -Value
-Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-datapipeline-pipeline-pipelinetags.html#cfn-datapipeline-pipeline-pipelinetags-value    
-PrimitiveType: String    
-Required: True    
+The value to associate with the key name.
+
+Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-datapipeline-pipeline-pipelinetags.html#cfn-datapipeline-pipeline-pipelinetags-value
+PrimitiveType: String
 UpdateType: Mutable
 
 ```yaml
@@ -62,15 +66,13 @@ Accept wildcard characters: False
 ```
 
 ### CommonParameters
-This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction, and -WarningVariable.
-For more information, see about_CommonParameters (http://go.microsoft.com/fwlink/?LinkID=113216).
+This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction, and -WarningVariable. For more information, see [about_CommonParameters](http://go.microsoft.com/fwlink/?LinkID=113216).
 
 ## INPUTS
 
 ## OUTPUTS
 
 ### Vaporshell.Resource.DataPipeline.Pipeline.PipelineTag
-
 ## NOTES
 
 ## RELATED LINKS

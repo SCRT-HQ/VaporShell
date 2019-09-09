@@ -1,14 +1,3 @@
----
-layout: glossary
-title: New-VaporOutput
-categories: glossary
-label1: Category
-data1: Documentation
-label2: Depth
-data2: Deep
-schema: 2.0.0
----
-
 # New-VaporOutput
 
 ## SYNOPSIS
@@ -24,6 +13,37 @@ New-VaporOutput [-LogicalId] <String> [[-Description] <String>] [-Value] <Object
 ## DESCRIPTION
 The optional Outputs section declares output values that you can import into other stacks (to create cross-stack references), return in response (to describe stack calls), or view on the AWS CloudFormation console.
 For example, you can output the S3 bucket name for a stack to make the bucket easier to find.
+
+## EXAMPLES
+
+### EXAMPLE 1
+```
+$template = Initialize-Vaporshell -Description "Testing Output"
+```
+
+$template.AddOutput(
+    (
+        New-VaporOutput -LogicalId "BackupLoadBalancerDNSName" -Description "The DNSName of the backup load balancer" -Value (Add-FnGetAtt -LogicalNameOfResource "BackupLoadBalancer" -AttributeName "DNSName") -Condition "CreateProdResources"
+    )
+)
+
+When the template is exported, this will convert to: 
+    {
+        "AWSTemplateFormatVersion": "2010-09-09",
+        "Description": "Testing Output",
+        "Outputs": {
+            "BackupLoadBalancerDNSName": {
+            "Description": "The DNSName of the backup load balancer",
+            "Value": {
+                "Fn::GetAtt": \[
+                "BackupLoadBalancer",
+                "DNSName"
+                \]
+            },
+            "Condition": "CreateProdResources"
+            }
+        }
+    }
 
 ## PARAMETERS
 
@@ -117,15 +137,13 @@ Accept wildcard characters: False
 ```
 
 ### CommonParameters
-This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction, and -WarningVariable.
-For more information, see about_CommonParameters (http://go.microsoft.com/fwlink/?LinkID=113216).
+This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction, and -WarningVariable. For more information, see [about_CommonParameters](http://go.microsoft.com/fwlink/?LinkID=113216).
 
 ## INPUTS
 
 ## OUTPUTS
 
 ### Vaporshell.Output
-
 ## NOTES
 
 ## RELATED LINKS

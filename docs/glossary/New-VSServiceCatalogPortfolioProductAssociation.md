@@ -1,18 +1,8 @@
----
-layout: glossary
-title: New-VSServiceCatalogPortfolioProductAssociation
-categories: glossary
-label1: Category
-data1: Documentation
-label2: Depth
-data2: Deep
-schema: 2.0.0
----
-
 # New-VSServiceCatalogPortfolioProductAssociation
 
 ## SYNOPSIS
-Adds an AWS::ServiceCatalog::PortfolioProductAssociation resource to the template
+Adds an AWS::ServiceCatalog::PortfolioProductAssociation resource to the template.
+Associates the specified product with the specified portfolio.
 
 ## SYNTAX
 
@@ -24,7 +14,17 @@ New-VSServiceCatalogPortfolioProductAssociation [-LogicalId] <String> [-SourcePo
 ```
 
 ## DESCRIPTION
-Adds an AWS::ServiceCatalog::PortfolioProductAssociation resource to the template
+Adds an AWS::ServiceCatalog::PortfolioProductAssociation resource to the template.
+Associates the specified product with the specified portfolio.
+
+## EXAMPLES
+
+### Example 1
+```powershell
+PS C:\> {{ Add example code here }}
+```
+
+{{ Add example description here }}
 
 ## PARAMETERS
 
@@ -46,9 +46,10 @@ Accept wildcard characters: False
 ```
 
 ### -SourcePortfolioId
-Required: False    
-Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-servicecatalog-portfolioproductassociation.html#cfn-servicecatalog-portfolioproductassociation-sourceportfolioid    
-PrimitiveType: String    
+The identifier of the source portfolio.
+
+Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-servicecatalog-portfolioproductassociation.html#cfn-servicecatalog-portfolioproductassociation-sourceportfolioid
+PrimitiveType: String
 UpdateType: Immutable
 
 ```yaml
@@ -64,9 +65,13 @@ Accept wildcard characters: False
 ```
 
 ### -AcceptLanguage
-Required: False    
-Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-servicecatalog-portfolioproductassociation.html#cfn-servicecatalog-portfolioproductassociation-acceptlanguage    
-PrimitiveType: String    
+The language code.
++  en - English default
++  jp - Japanese
++  zh - Chinese
+
+Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-servicecatalog-portfolioproductassociation.html#cfn-servicecatalog-portfolioproductassociation-acceptlanguage
+PrimitiveType: String
 UpdateType: Immutable
 
 ```yaml
@@ -82,9 +87,10 @@ Accept wildcard characters: False
 ```
 
 ### -PortfolioId
-Required: True    
-Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-servicecatalog-portfolioproductassociation.html#cfn-servicecatalog-portfolioproductassociation-portfolioid    
-PrimitiveType: String    
+The portfolio identifier.
+
+Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-servicecatalog-portfolioproductassociation.html#cfn-servicecatalog-portfolioproductassociation-portfolioid
+PrimitiveType: String
 UpdateType: Immutable
 
 ```yaml
@@ -100,9 +106,10 @@ Accept wildcard characters: False
 ```
 
 ### -ProductId
-Required: True    
-Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-servicecatalog-portfolioproductassociation.html#cfn-servicecatalog-portfolioproductassociation-productid    
-PrimitiveType: String    
+The product identifier.
+
+Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-servicecatalog-portfolioproductassociation.html#cfn-servicecatalog-portfolioproductassociation-productid
+PrimitiveType: String
 UpdateType: Immutable
 
 ```yaml
@@ -212,15 +219,13 @@ Accept wildcard characters: False
 ```
 
 ### CommonParameters
-This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction, and -WarningVariable.
-For more information, see about_CommonParameters (http://go.microsoft.com/fwlink/?LinkID=113216).
+This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction, and -WarningVariable. For more information, see [about_CommonParameters](http://go.microsoft.com/fwlink/?LinkID=113216).
 
 ## INPUTS
 
 ## OUTPUTS
 
 ### Vaporshell.Resource.ServiceCatalog.PortfolioProductAssociation
-
 ## NOTES
 
 ## RELATED LINKS

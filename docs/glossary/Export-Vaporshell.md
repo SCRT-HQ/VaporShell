@@ -1,14 +1,3 @@
----
-layout: glossary
-title: Export-Vaporshell
-categories: glossary
-label1: Category
-data1: Documentation
-label2: Depth
-data2: Deep
-schema: 2.0.0
----
-
 # Export-Vaporshell
 
 ## SYNOPSIS
@@ -25,6 +14,24 @@ Export-Vaporshell [-VaporshellTemplate] <Object> [[-As] <String>] [[-Path] <Stri
 Exports the template object to JSON file.
 
 Requires the Vaporshell input object to be type 'Vaporshell.Template'
+
+## EXAMPLES
+
+### EXAMPLE 1
+```
+$Template = Initialize-Vaporshell -Description "This is a sample template that builds an S3 bucket"
+```
+
+# Add items to the $Template object here
+$Template | Export-Vaporshell -Path "C:\CloudFormation\Templates\S3Bucket.json" -Force
+
+### EXAMPLE 2
+```
+$Template = Initialize-Vaporshell -Description "This is a sample template that builds an S3 bucket"
+```
+
+# Add items to the $Template object here
+Export-Vaporshell -VaporshellTemplate $Template -Path "C:\CloudFormation\Templates\S3Bucket.json" -Force
 
 ## PARAMETERS
 
@@ -107,8 +114,7 @@ Accept wildcard characters: False
 ```
 
 ### CommonParameters
-This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction, and -WarningVariable.
-For more information, see about_CommonParameters (http://go.microsoft.com/fwlink/?LinkID=113216).
+This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction, and -WarningVariable. For more information, see [about_CommonParameters](http://go.microsoft.com/fwlink/?LinkID=113216).
 
 ## INPUTS
 

@@ -1,18 +1,9 @@
----
-layout: glossary
-title: New-VSIAMInstanceProfile
-categories: glossary
-label1: Category
-data1: Documentation
-label2: Depth
-data2: Deep
-schema: 2.0.0
----
-
 # New-VSIAMInstanceProfile
 
 ## SYNOPSIS
-Adds an AWS::IAM::InstanceProfile resource to the template
+Adds an AWS::IAM::InstanceProfile resource to the template.
+Creates a new instance profile.
+For information about instance profiles, go to About Instance Profiles: https://docs.aws.amazon.com/IAM/latest/UserGuide/AboutInstanceProfiles.html.
 
 ## SYNTAX
 
@@ -23,7 +14,20 @@ New-VSIAMInstanceProfile [-LogicalId] <String> [-InstanceProfileName <Object>] [
 ```
 
 ## DESCRIPTION
-Adds an AWS::IAM::InstanceProfile resource to the template
+Adds an AWS::IAM::InstanceProfile resource to the template.
+Creates a new instance profile.
+For information about instance profiles, go to About Instance Profiles: https://docs.aws.amazon.com/IAM/latest/UserGuide/AboutInstanceProfiles.html.
+
+For information about the number of instance profiles you can create, see Limitations on IAM Entities: https://docs.aws.amazon.com/IAM/latest/UserGuide/LimitationsOnEntities.html in the *IAM User Guide*.
+
+## EXAMPLES
+
+### Example 1
+```powershell
+PS C:\> {{ Add example code here }}
+```
+
+{{ Add example description here }}
 
 ## PARAMETERS
 
@@ -45,9 +49,12 @@ Accept wildcard characters: False
 ```
 
 ### -InstanceProfileName
-Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-iam-instanceprofile.html#cfn-iam-instanceprofile-instanceprofilename    
-PrimitiveType: String    
-Required: False    
+The name of the instance profile to create.
+This parameter allows through its regex pattern: http://wikipedia.org/wiki/regex a string of characters consisting of upper and lowercase alphanumeric characters with no spaces.
+You can also include any of the following characters: _+=,.@-
+
+Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-iam-instanceprofile.html#cfn-iam-instanceprofile-instanceprofilename
+PrimitiveType: String
 UpdateType: Immutable
 
 ```yaml
@@ -63,9 +70,16 @@ Accept wildcard characters: False
 ```
 
 ### -Path
-Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-iam-instanceprofile.html#cfn-iam-instanceprofile-path    
-PrimitiveType: String    
-Required: False    
+The path to the instance profile.
+For more information about paths, see IAM Identifiers: https://docs.aws.amazon.com/IAM/latest/UserGuide/Using_Identifiers.html in the *IAM User Guide*.
+This parameter is optional.
+If it is not included, it defaults to a slash /.
+This parameter allows through its regex pattern: http://wikipedia.org/wiki/regex a string of characters consisting of either a forward slash / by itself or a string that must begin and end with forward slashes.
+In addition, it can contain any ASCII character from the !
+u0021 through the DEL character u007F, including most punctuation characters, digits, and upper and lowercased letters.
+
+Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-iam-instanceprofile.html#cfn-iam-instanceprofile-path
+PrimitiveType: String
 UpdateType: Immutable
 
 ```yaml
@@ -81,11 +95,12 @@ Accept wildcard characters: False
 ```
 
 ### -Roles
-Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-iam-instanceprofile.html#cfn-iam-instanceprofile-roles    
-DuplicatesAllowed: True    
-PrimitiveItemType: String    
-Required: True    
-Type: List    
+The role associated with the instance profile.
+
+Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-iam-instanceprofile.html#cfn-iam-instanceprofile-roles
+DuplicatesAllowed: True
+PrimitiveItemType: String
+Type: List
 UpdateType: Mutable
 
 ```yaml
@@ -195,15 +210,13 @@ Accept wildcard characters: False
 ```
 
 ### CommonParameters
-This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction, and -WarningVariable.
-For more information, see about_CommonParameters (http://go.microsoft.com/fwlink/?LinkID=113216).
+This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction, and -WarningVariable. For more information, see [about_CommonParameters](http://go.microsoft.com/fwlink/?LinkID=113216).
 
 ## INPUTS
 
 ## OUTPUTS
 
 ### Vaporshell.Resource.IAM.InstanceProfile
-
 ## NOTES
 
 ## RELATED LINKS

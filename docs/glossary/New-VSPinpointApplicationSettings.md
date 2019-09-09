@@ -1,0 +1,260 @@
+# New-VSPinpointApplicationSettings
+
+## SYNOPSIS
+Adds an AWS::Pinpoint::ApplicationSettings resource to the template.
+Specifies the settings for an Amazon Pinpoint app.
+
+## SYNTAX
+
+```
+New-VSPinpointApplicationSettings [-LogicalId] <String> [-QuietTime <Object>] [-Limits <Object>]
+ -ApplicationId <Object> [-CampaignHook <Object>] [-CloudWatchMetricsEnabled <Boolean>]
+ [-DeletionPolicy <String>] [-DependsOn <String[]>] [-Metadata <Object>] [-UpdatePolicy <Object>]
+ [-Condition <Object>] [<CommonParameters>]
+```
+
+## DESCRIPTION
+Adds an AWS::Pinpoint::ApplicationSettings resource to the template.
+Specifies the settings for an Amazon Pinpoint app.
+
+In Amazon Pinpoint, an *app* (also referred to as a *project* is a collection of settings, customer information, segments, and campaigns.
+
+## EXAMPLES
+
+### Example 1
+```powershell
+PS C:\> {{ Add example code here }}
+```
+
+{{ Add example description here }}
+
+## PARAMETERS
+
+### -LogicalId
+The logical ID must be alphanumeric (A-Za-z0-9) and unique within the template.
+Use the logical name to reference the resource in other parts of the template.
+For example, if you want to map an Amazon Elastic Block Store volume to an Amazon EC2 instance, you reference the logical IDs to associate the block stores with the instance.
+
+```yaml
+Type: String
+Parameter Sets: (All)
+Aliases:
+
+Required: True
+Position: 1
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### -QuietTime
+The default quiet time for campaigns in the application.
+Quiet time is a specific time range when campaigns don't send messages to endpoints, if all the following conditions are met:
+- The EndpointDemographic.Timezone property of the endpoint is set to a valid value.
+- The current time in the endpoint's time zone is later than or equal to the time specified by the QuietTime.Start property for the application or a campaign that has custom quiet time settings.
+- The current time in the endpoint's time zone is earlier than or equal to the time specified by the QuietTime.End property for the application or a campaign that has custom quiet time settings.
+If any of the preceding conditions isn't met, the endpoint will receive messages from a campaign, even if quiet time is enabled.
+To override the default quiet time settings for a specific campaign, use the Campaign resource to define a custom quiet time for the campaign.
+
+Type: QuietTime
+Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-pinpoint-applicationsettings.html#cfn-pinpoint-applicationsettings-quiettime
+UpdateType: Mutable
+
+```yaml
+Type: Object
+Parameter Sets: (All)
+Aliases:
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### -Limits
+The default sending limits for campaigns in the application.
+To override these limits for a specific campaign, use the Campaign resource to define custom limits for the campaign.
+
+Type: Limits
+Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-pinpoint-applicationsettings.html#cfn-pinpoint-applicationsettings-limits
+UpdateType: Mutable
+
+```yaml
+Type: Object
+Parameter Sets: (All)
+Aliases:
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### -ApplicationId
+The unique ID of the Amazon Pinpoint app.
+
+Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-pinpoint-applicationsettings.html#cfn-pinpoint-applicationsettings-applicationid
+PrimitiveType: String
+UpdateType: Immutable
+
+```yaml
+Type: Object
+Parameter Sets: (All)
+Aliases:
+
+Required: True
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### -CampaignHook
+The settings for the AWS Lambda function to use by default as a code hook for campaigns in the application.
+To override these settings for a specific campaign, use the Campaign resource to define custom Lambda function settings for the campaign.
+
+Type: CampaignHook
+Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-pinpoint-applicationsettings.html#cfn-pinpoint-applicationsettings-campaignhook
+UpdateType: Mutable
+
+```yaml
+Type: Object
+Parameter Sets: (All)
+Aliases:
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### -CloudWatchMetricsEnabled
+Specifies whether to enable application-related alarms in Amazon CloudWatch.
+
+Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-pinpoint-applicationsettings.html#cfn-pinpoint-applicationsettings-cloudwatchmetricsenabled
+PrimitiveType: Boolean
+UpdateType: Mutable
+
+```yaml
+Type: Boolean
+Parameter Sets: (All)
+Aliases:
+
+Required: False
+Position: Named
+Default value: False
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### -DeletionPolicy
+With the DeletionPolicy attribute you can preserve or (in some cases) backup a resource when its stack is deleted.
+You specify a DeletionPolicy attribute for each resource that you want to control.
+If a resource has no DeletionPolicy attribute, AWS CloudFormation deletes the resource by default.
+
+To keep a resource when its stack is deleted, specify Retain for that resource.
+You can use retain for any resource.
+For example, you can retain a nested stack, S3 bucket, or EC2 instance so that you can continue to use or modify those resources after you delete their stacks.
+
+You must use one of the following options: "Delete","Retain","Snapshot"
+
+```yaml
+Type: String
+Parameter Sets: (All)
+Aliases:
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### -DependsOn
+With the DependsOn attribute you can specify that the creation of a specific resource follows another.
+When you add a DependsOn attribute to a resource, that resource is created only after the creation of the resource specified in the DependsOn attribute.
+
+This parameter takes a string or list of strings representing Logical IDs of resources that must be created prior to this resource being created.
+
+```yaml
+Type: String[]
+Parameter Sets: (All)
+Aliases:
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### -Metadata
+The Metadata attribute enables you to associate structured data with a resource.
+By adding a Metadata attribute to a resource, you can add data in JSON or YAML to the resource declaration.
+In addition, you can use intrinsic functions (such as GetAtt and Ref), parameters, and pseudo parameters within the Metadata attribute to add those interpreted values.
+
+You must use a PSCustomObject containing key/value pairs here.
+This will be returned when describing the resource using AWS CLI.
+
+```yaml
+Type: Object
+Parameter Sets: (All)
+Aliases:
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### -UpdatePolicy
+Use the UpdatePolicy attribute to specify how AWS CloudFormation handles updates to the AWS::AutoScaling::AutoScalingGroup resource.
+AWS CloudFormation invokes one of three update policies depending on the type of change you make or whether a scheduled action is associated with the Auto Scaling group.
+
+You must use the "Add-UpdatePolicy" function here.
+
+```yaml
+Type: Object
+Parameter Sets: (All)
+Aliases:
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### -Condition
+Logical ID of the condition that this resource needs to be true in order for this resource to be provisioned.
+
+```yaml
+Type: Object
+Parameter Sets: (All)
+Aliases:
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### CommonParameters
+This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction, and -WarningVariable. For more information, see [about_CommonParameters](http://go.microsoft.com/fwlink/?LinkID=113216).
+
+## INPUTS
+
+## OUTPUTS
+
+### Vaporshell.Resource.Pinpoint.ApplicationSettings
+## NOTES
+
+## RELATED LINKS
+
+[http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-pinpoint-applicationsettings.html](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-pinpoint-applicationsettings.html)
+

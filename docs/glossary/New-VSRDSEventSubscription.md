@@ -1,18 +1,9 @@
----
-layout: glossary
-title: New-VSRDSEventSubscription
-categories: glossary
-label1: Category
-data1: Documentation
-label2: Depth
-data2: Deep
-schema: 2.0.0
----
-
 # New-VSRDSEventSubscription
 
 ## SYNOPSIS
-Adds an AWS::RDS::EventSubscription resource to the template
+Adds an AWS::RDS::EventSubscription resource to the template.
+The AWS::RDS::EventSubscription resource allows you to receive notifications for Amazon Relational Database Service events through the Amazon Simple Notification Service (Amazon SNS.
+For more information, see Using Amazon RDS Event Notification: https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_Events.html in the *Amazon RDS User Guide*.
 
 ## SYNTAX
 
@@ -24,7 +15,18 @@ New-VSRDSEventSubscription [-LogicalId] <String> [-Enabled <Boolean>] [-EventCat
 ```
 
 ## DESCRIPTION
-Adds an AWS::RDS::EventSubscription resource to the template
+Adds an AWS::RDS::EventSubscription resource to the template.
+The AWS::RDS::EventSubscription resource allows you to receive notifications for Amazon Relational Database Service events through the Amazon Simple Notification Service (Amazon SNS.
+For more information, see Using Amazon RDS Event Notification: https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_Events.html in the *Amazon RDS User Guide*.
+
+## EXAMPLES
+
+### Example 1
+```powershell
+PS C:\> {{ Add example code here }}
+```
+
+{{ Add example description here }}
 
 ## PARAMETERS
 
@@ -46,9 +48,10 @@ Accept wildcard characters: False
 ```
 
 ### -Enabled
-Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-rds-eventsubscription.html#cfn-rds-eventsubscription-enabled    
-PrimitiveType: Boolean    
-Required: False    
+A Boolean value; set to **true** to activate the subscription, set to **false** to create the subscription but not active it.
+
+Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-rds-eventsubscription.html#cfn-rds-eventsubscription-enabled
+PrimitiveType: Boolean
 UpdateType: Mutable
 
 ```yaml
@@ -64,11 +67,13 @@ Accept wildcard characters: False
 ```
 
 ### -EventCategories
-Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-rds-eventsubscription.html#cfn-rds-eventsubscription-eventcategories    
-DuplicatesAllowed: False    
-PrimitiveItemType: String    
-Required: False    
-Type: List    
+A list of event categories for a SourceType that you want to subscribe to.
+You can see a list of the categories for a given SourceType in the Events: https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_Events.html topic in the Amazon RDS User Guide or by using the **DescribeEventCategories** action.
+
+Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-rds-eventsubscription.html#cfn-rds-eventsubscription-eventcategories
+DuplicatesAllowed: False
+PrimitiveItemType: String
+Type: List
 UpdateType: Mutable
 
 ```yaml
@@ -84,9 +89,11 @@ Accept wildcard characters: False
 ```
 
 ### -SnsTopicArn
-Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-rds-eventsubscription.html#cfn-rds-eventsubscription-snstopicarn    
-PrimitiveType: String    
-Required: True    
+The Amazon Resource Name ARN of the SNS topic created for event notification.
+The ARN is created by Amazon SNS when you create a topic and subscribe to it.
+
+Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-rds-eventsubscription.html#cfn-rds-eventsubscription-snstopicarn
+PrimitiveType: String
 UpdateType: Immutable
 
 ```yaml
@@ -102,11 +109,20 @@ Accept wildcard characters: False
 ```
 
 ### -SourceIds
-Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-rds-eventsubscription.html#cfn-rds-eventsubscription-sourceids    
-DuplicatesAllowed: True    
-PrimitiveItemType: String    
-Required: False    
-Type: List    
+The list of identifiers of the event sources for which events will be returned.
+If not specified, then all sources are included in the response.
+An identifier must begin with a letter and must contain only ASCII letters, digits, and hyphens; it cannot end with a hyphen or contain two consecutive hyphens.
+Constraints:
++ If SourceIds are supplied, SourceType must also be provided.
++ If the source type is a DB instance, then a DBInstanceIdentifier must be supplied.
++ If the source type is a DB security group, a DBSecurityGroupName must be supplied.
++ If the source type is a DB parameter group, a DBParameterGroupName must be supplied.
++ If the source type is a DB Snapshot, a DBSnapshotIdentifier must be supplied.
+
+Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-rds-eventsubscription.html#cfn-rds-eventsubscription-sourceids
+DuplicatesAllowed: True
+PrimitiveItemType: String
+Type: List
 UpdateType: Mutable
 
 ```yaml
@@ -122,9 +138,13 @@ Accept wildcard characters: False
 ```
 
 ### -SourceType
-Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-rds-eventsubscription.html#cfn-rds-eventsubscription-sourcetype    
-PrimitiveType: String    
-Required: False    
+The type of source that will be generating the events.
+For example, if you want to be notified of events generated by a DB instance, you would set this parameter to db-instance.
+if this value is not specified, all events are returned.
+Valid values: db-instance | db-parameter-group | db-security-group | db-snapshot
+
+Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-rds-eventsubscription.html#cfn-rds-eventsubscription-sourcetype
+PrimitiveType: String
 UpdateType: Conditional
 
 ```yaml
@@ -234,15 +254,13 @@ Accept wildcard characters: False
 ```
 
 ### CommonParameters
-This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction, and -WarningVariable.
-For more information, see about_CommonParameters (http://go.microsoft.com/fwlink/?LinkID=113216).
+This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction, and -WarningVariable. For more information, see [about_CommonParameters](http://go.microsoft.com/fwlink/?LinkID=113216).
 
 ## INPUTS
 
 ## OUTPUTS
 
 ### Vaporshell.Resource.RDS.EventSubscription
-
 ## NOTES
 
 ## RELATED LINKS

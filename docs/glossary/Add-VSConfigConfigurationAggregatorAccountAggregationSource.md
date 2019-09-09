@@ -1,18 +1,8 @@
----
-layout: glossary
-title: Add-VSConfigConfigurationAggregatorAccountAggregationSource
-categories: glossary
-label1: Category
-data1: Documentation
-label2: Depth
-data2: Deep
-schema: 2.0.0
----
-
 # Add-VSConfigConfigurationAggregatorAccountAggregationSource
 
 ## SYNOPSIS
-Adds an AWS::Config::ConfigurationAggregator.AccountAggregationSource resource property to the template
+Adds an AWS::Config::ConfigurationAggregator.AccountAggregationSource resource property to the template.
+A collection of accounts and regions.
 
 ## SYNTAX
 
@@ -22,14 +12,25 @@ Add-VSConfigConfigurationAggregatorAccountAggregationSource [[-AllAwsRegions] <B
 ```
 
 ## DESCRIPTION
-Adds an AWS::Config::ConfigurationAggregator.AccountAggregationSource resource property to the template
+Adds an AWS::Config::ConfigurationAggregator.AccountAggregationSource resource property to the template.
+A collection of accounts and regions.
+
+## EXAMPLES
+
+### Example 1
+```powershell
+PS C:\> {{ Add example code here }}
+```
+
+{{ Add example description here }}
 
 ## PARAMETERS
 
 ### -AllAwsRegions
-Required: False    
-Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-config-configurationaggregator-accountaggregationsource.html#cfn-config-configurationaggregator-accountaggregationsource-allawsregions    
-PrimitiveType: Boolean    
+If true, aggregate existing AWS Config regions and future regions.
+
+Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-config-configurationaggregator-accountaggregationsource.html#cfn-config-configurationaggregator-accountaggregationsource-allawsregions
+PrimitiveType: Boolean
 UpdateType: Mutable
 
 ```yaml
@@ -45,10 +46,11 @@ Accept wildcard characters: False
 ```
 
 ### -AwsRegions
-PrimitiveItemType: String    
-Type: List    
-Required: False    
-Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-config-configurationaggregator-accountaggregationsource.html#cfn-config-configurationaggregator-accountaggregationsource-awsregions    
+The source regions being aggregated.
+
+PrimitiveItemType: String
+Type: List
+Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-config-configurationaggregator-accountaggregationsource.html#cfn-config-configurationaggregator-accountaggregationsource-awsregions
 UpdateType: Mutable
 
 ```yaml
@@ -64,10 +66,11 @@ Accept wildcard characters: False
 ```
 
 ### -AccountIds
-PrimitiveItemType: String    
-Type: List    
-Required: True    
-Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-config-configurationaggregator-accountaggregationsource.html#cfn-config-configurationaggregator-accountaggregationsource-accountids    
+The 12-digit account ID of the account being aggregated.
+
+PrimitiveItemType: String
+Type: List
+Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-config-configurationaggregator-accountaggregationsource.html#cfn-config-configurationaggregator-accountaggregationsource-accountids
 UpdateType: Mutable
 
 ```yaml
@@ -83,15 +86,13 @@ Accept wildcard characters: False
 ```
 
 ### CommonParameters
-This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction, and -WarningVariable.
-For more information, see about_CommonParameters (http://go.microsoft.com/fwlink/?LinkID=113216).
+This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction, and -WarningVariable. For more information, see [about_CommonParameters](http://go.microsoft.com/fwlink/?LinkID=113216).
 
 ## INPUTS
 
 ## OUTPUTS
 
 ### Vaporshell.Resource.Config.ConfigurationAggregator.AccountAggregationSource
-
 ## NOTES
 
 ## RELATED LINKS

@@ -1,18 +1,9 @@
----
-layout: glossary
-title: New-VSElastiCacheSecurityGroup
-categories: glossary
-label1: Category
-data1: Documentation
-label2: Depth
-data2: Deep
-schema: 2.0.0
----
-
 # New-VSElastiCacheSecurityGroup
 
 ## SYNOPSIS
-Adds an AWS::ElastiCache::SecurityGroup resource to the template
+Adds an AWS::ElastiCache::SecurityGroup resource to the template.
+The AWS::ElastiCache::SecurityGroup resource creates a cache security group.
+For more information about cache security groups, go to CacheSecurityGroups: https://docs.aws.amazon.com/AmazonElastiCache/latest/mem-ug/VPCs.html in the *Amazon ElastiCache User Guide* or go to CreateCacheSecurityGroup: https://docs.aws.amazon.com/AmazonElastiCache/latest/APIReference/API_CreateCacheSecurityGroup.html in the *Amazon ElastiCache API Reference Guide*.
 
 ## SYNTAX
 
@@ -23,7 +14,24 @@ New-VSElastiCacheSecurityGroup [-LogicalId] <String> -Description <Object> [-Del
 ```
 
 ## DESCRIPTION
-Adds an AWS::ElastiCache::SecurityGroup resource to the template
+Adds an AWS::ElastiCache::SecurityGroup resource to the template.
+The AWS::ElastiCache::SecurityGroup resource creates a cache security group.
+For more information about cache security groups, go to CacheSecurityGroups: https://docs.aws.amazon.com/AmazonElastiCache/latest/mem-ug/VPCs.html in the *Amazon ElastiCache User Guide* or go to CreateCacheSecurityGroup: https://docs.aws.amazon.com/AmazonElastiCache/latest/APIReference/API_CreateCacheSecurityGroup.html in the *Amazon ElastiCache API Reference Guide*.
+
+For more information, see CreateCacheSubnetGroup: https://docs.aws.amazon.com/AmazonElastiCache/latest/APIReference/API_CreateCacheSubnetGroup.html.
+
+**Note**
+
+Updates are not supported.
+
+## EXAMPLES
+
+### Example 1
+```powershell
+PS C:\> {{ Add example code here }}
+```
+
+{{ Add example description here }}
 
 ## PARAMETERS
 
@@ -45,9 +53,10 @@ Accept wildcard characters: False
 ```
 
 ### -Description
-Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-elasticache-security-group.html#cfn-elasticache-securitygroup-description    
-PrimitiveType: String    
-Required: True    
+A description for the cache security group.
+
+Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-elasticache-security-group.html#cfn-elasticache-securitygroup-description
+PrimitiveType: String
 UpdateType: Mutable
 
 ```yaml
@@ -157,15 +166,13 @@ Accept wildcard characters: False
 ```
 
 ### CommonParameters
-This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction, and -WarningVariable.
-For more information, see about_CommonParameters (http://go.microsoft.com/fwlink/?LinkID=113216).
+This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction, and -WarningVariable. For more information, see [about_CommonParameters](http://go.microsoft.com/fwlink/?LinkID=113216).
 
 ## INPUTS
 
 ## OUTPUTS
 
 ### Vaporshell.Resource.ElastiCache.SecurityGroup
-
 ## NOTES
 
 ## RELATED LINKS

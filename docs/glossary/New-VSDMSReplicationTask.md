@@ -1,31 +1,32 @@
----
-layout: glossary
-title: New-VSDMSReplicationTask
-categories: glossary
-label1: Category
-data1: Documentation
-label2: Depth
-data2: Deep
-schema: 2.0.0
----
-
 # New-VSDMSReplicationTask
 
 ## SYNOPSIS
-Adds an AWS::DMS::ReplicationTask resource to the template
+Adds an AWS::DMS::ReplicationTask resource to the template.
+The AWS::DMS::ReplicationTask resource creates an AWS DMS replication task.
 
 ## SYNTAX
 
 ```
 New-VSDMSReplicationTask [-LogicalId] <String> [-ReplicationTaskSettings <Object>] -TableMappings <Object>
- [-ReplicationTaskIdentifier <Object>] -SourceEndpointArn <Object> -MigrationType <Object>
- -TargetEndpointArn <Object> -ReplicationInstanceArn <Object> [-Tags <Object>] [-CdcStartTime <Double>]
- [-DeletionPolicy <String>] [-DependsOn <String[]>] [-Metadata <Object>] [-UpdatePolicy <Object>]
- [-Condition <Object>] [<CommonParameters>]
+ [-CdcStartPosition <Object>] [-ReplicationTaskIdentifier <Object>] [-CdcStopPosition <Object>]
+ -SourceEndpointArn <Object> -MigrationType <Object> -TargetEndpointArn <Object>
+ -ReplicationInstanceArn <Object> [-Tags <Object>] [-CdcStartTime <Double>] [-DeletionPolicy <String>]
+ [-DependsOn <String[]>] [-Metadata <Object>] [-UpdatePolicy <Object>] [-Condition <Object>]
+ [<CommonParameters>]
 ```
 
 ## DESCRIPTION
-Adds an AWS::DMS::ReplicationTask resource to the template
+Adds an AWS::DMS::ReplicationTask resource to the template.
+The AWS::DMS::ReplicationTask resource creates an AWS DMS replication task.
+
+## EXAMPLES
+
+### Example 1
+```powershell
+PS C:\> {{ Add example code here }}
+```
+
+{{ Add example description here }}
 
 ## PARAMETERS
 
@@ -47,9 +48,11 @@ Accept wildcard characters: False
 ```
 
 ### -ReplicationTaskSettings
-Required: False    
-Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-dms-replicationtask.html#cfn-dms-replicationtask-replicationtasksettings    
-PrimitiveType: String    
+Overall settings for the task, in JSON format.
+For more information, see Task Settings: https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Tasks.CustomizingTasks.TaskSettings.html in the *AWS Database Migration User Guide.*
+
+Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-dms-replicationtask.html#cfn-dms-replicationtask-replicationtasksettings
+PrimitiveType: String
 UpdateType: Mutable
 
 ```yaml
@@ -65,9 +68,11 @@ Accept wildcard characters: False
 ```
 
 ### -TableMappings
-Required: True    
-Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-dms-replicationtask.html#cfn-dms-replicationtask-tablemappings    
-PrimitiveType: String    
+The table mappings for the task, in JSON format.
+For more information, see Table Mapping: https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Tasks.CustomizingTasks.TableMapping.html in the *AWS Database Migration User Guide.*
+
+Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-dms-replicationtask.html#cfn-dms-replicationtask-tablemappings
+PrimitiveType: String
 UpdateType: Mutable
 
 ```yaml
@@ -82,10 +87,62 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
+### -CdcStartPosition
+Indicates when you want a change data capture CDC operation to start.
+Use either CdcStartPosition or CdcStartTime to specify when you want a CDC operation to start.
+Specifying both values results in an error.
+The value can be in date, checkpoint, or LSN/SCN format.
+Date Example: --cdc-start-position "2018-03-08T12:12:12"
+Checkpoint Example: --cdc-start-position "checkpoint:V1#27#mysql-bin-changelog.157832:1975:-1:2002:677883278264080:mysql-bin-changelog.157832:1876#0#0#*#0#93"
+LSN Example: --cdc-start-position "mysql-bin-changelog.000024:373"
+
+Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-dms-replicationtask.html#cfn-dms-replicationtask-cdcstartposition
+PrimitiveType: String
+UpdateType: Mutable
+
+```yaml
+Type: Object
+Parameter Sets: (All)
+Aliases:
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
 ### -ReplicationTaskIdentifier
-Required: False    
-Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-dms-replicationtask.html#cfn-dms-replicationtask-replicationtaskidentifier    
-PrimitiveType: String    
+An identifier for the replication task.
+Constraints:
++ Must contain from 1 to 255 alphanumeric characters or hyphens.
++ First character must be a letter.
++ Cannot end with a hyphen or contain two consecutive hyphens.
+
+Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-dms-replicationtask.html#cfn-dms-replicationtask-replicationtaskidentifier
+PrimitiveType: String
+UpdateType: Mutable
+
+```yaml
+Type: Object
+Parameter Sets: (All)
+Aliases:
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### -CdcStopPosition
+Indicates when you want a change data capture CDC operation to stop.
+The value can be either server time or commit time.
+Server time example: --cdc-stop-position "server_time:3018-02-09T12:12:12"
+Commit time example: --cdc-stop-position "commit_time: 3018-02-09T12:12:12 "
+
+Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-dms-replicationtask.html#cfn-dms-replicationtask-cdcstopposition
+PrimitiveType: String
 UpdateType: Mutable
 
 ```yaml
@@ -101,9 +158,10 @@ Accept wildcard characters: False
 ```
 
 ### -SourceEndpointArn
-Required: True    
-Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-dms-replicationtask.html#cfn-dms-replicationtask-sourceendpointarn    
-PrimitiveType: String    
+An Amazon Resource Name ARN that uniquely identifies the source endpoint.
+
+Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-dms-replicationtask.html#cfn-dms-replicationtask-sourceendpointarn
+PrimitiveType: String
 UpdateType: Immutable
 
 ```yaml
@@ -119,9 +177,11 @@ Accept wildcard characters: False
 ```
 
 ### -MigrationType
-Required: True    
-Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-dms-replicationtask.html#cfn-dms-replicationtask-migrationtype    
-PrimitiveType: String    
+The migration type.
+Valid values: full-load | cdc | full-load-and-cdc
+
+Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-dms-replicationtask.html#cfn-dms-replicationtask-migrationtype
+PrimitiveType: String
 UpdateType: Mutable
 
 ```yaml
@@ -137,9 +197,10 @@ Accept wildcard characters: False
 ```
 
 ### -TargetEndpointArn
-Required: True    
-Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-dms-replicationtask.html#cfn-dms-replicationtask-targetendpointarn    
-PrimitiveType: String    
+An Amazon Resource Name ARN that uniquely identifies the target endpoint.
+
+Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-dms-replicationtask.html#cfn-dms-replicationtask-targetendpointarn
+PrimitiveType: String
 UpdateType: Immutable
 
 ```yaml
@@ -155,9 +216,10 @@ Accept wildcard characters: False
 ```
 
 ### -ReplicationInstanceArn
-Required: True    
-Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-dms-replicationtask.html#cfn-dms-replicationtask-replicationinstancearn    
-PrimitiveType: String    
+The Amazon Resource Name ARN of a replication instance.
+
+Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-dms-replicationtask.html#cfn-dms-replicationtask-replicationinstancearn
+PrimitiveType: String
 UpdateType: Immutable
 
 ```yaml
@@ -173,10 +235,11 @@ Accept wildcard characters: False
 ```
 
 ### -Tags
-Type: List    
-Required: False    
-Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-dms-replicationtask.html#cfn-dms-replicationtask-tags    
-ItemType: Tag    
+One or more tags to be assigned to the replication task.
+
+Type: List
+Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-dms-replicationtask.html#cfn-dms-replicationtask-tags
+ItemType: Tag
 UpdateType: Immutable
 
 ```yaml
@@ -192,9 +255,10 @@ Accept wildcard characters: False
 ```
 
 ### -CdcStartTime
-Required: False    
-Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-dms-replicationtask.html#cfn-dms-replicationtask-cdcstarttime    
-PrimitiveType: Double    
+Indicates the start time for a change data capture CDC operation.
+
+Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-dms-replicationtask.html#cfn-dms-replicationtask-cdcstarttime
+PrimitiveType: Double
 UpdateType: Mutable
 
 ```yaml
@@ -304,15 +368,13 @@ Accept wildcard characters: False
 ```
 
 ### CommonParameters
-This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction, and -WarningVariable.
-For more information, see about_CommonParameters (http://go.microsoft.com/fwlink/?LinkID=113216).
+This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction, and -WarningVariable. For more information, see [about_CommonParameters](http://go.microsoft.com/fwlink/?LinkID=113216).
 
 ## INPUTS
 
 ## OUTPUTS
 
 ### Vaporshell.Resource.DMS.ReplicationTask
-
 ## NOTES
 
 ## RELATED LINKS

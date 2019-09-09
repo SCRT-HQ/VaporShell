@@ -1,18 +1,8 @@
----
-layout: glossary
-title: Add-VSCloudFrontStreamingDistributionStreamingDistributionConfig
-categories: glossary
-label1: Category
-data1: Documentation
-label2: Depth
-data2: Deep
-schema: 2.0.0
----
-
 # Add-VSCloudFrontStreamingDistributionStreamingDistributionConfig
 
 ## SYNOPSIS
-Adds an AWS::CloudFront::StreamingDistribution.StreamingDistributionConfig resource property to the template
+Adds an AWS::CloudFront::StreamingDistribution.StreamingDistributionConfig resource property to the template.
+The RTMP distribution's configuration information.
 
 ## SYNTAX
 
@@ -23,14 +13,25 @@ Add-VSCloudFrontStreamingDistributionStreamingDistributionConfig [[-Logging] <Ob
 ```
 
 ## DESCRIPTION
-Adds an AWS::CloudFront::StreamingDistribution.StreamingDistributionConfig resource property to the template
+Adds an AWS::CloudFront::StreamingDistribution.StreamingDistributionConfig resource property to the template.
+The RTMP distribution's configuration information.
+
+## EXAMPLES
+
+### Example 1
+```powershell
+PS C:\> {{ Add example code here }}
+```
+
+{{ Add example description here }}
 
 ## PARAMETERS
 
 ### -Logging
-Type: Logging    
-Required: False    
-Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-cloudfront-streamingdistribution-streamingdistributionconfig.html#cfn-cloudfront-streamingdistribution-streamingdistributionconfig-logging    
+A complex type that controls whether access logs are written for the streaming distribution.
+
+Type: Logging
+Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-cloudfront-streamingdistribution-streamingdistributionconfig.html#cfn-cloudfront-streamingdistribution-streamingdistributionconfig-logging
 UpdateType: Mutable
 
 ```yaml
@@ -46,9 +47,10 @@ Accept wildcard characters: False
 ```
 
 ### -Comment
-Required: True    
-Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-cloudfront-streamingdistribution-streamingdistributionconfig.html#cfn-cloudfront-streamingdistribution-streamingdistributionconfig-comment    
-PrimitiveType: String    
+Any comments you want to include about the streaming distribution.
+
+Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-cloudfront-streamingdistribution-streamingdistributionconfig.html#cfn-cloudfront-streamingdistribution-streamingdistributionconfig-comment
+PrimitiveType: String
 UpdateType: Mutable
 
 ```yaml
@@ -64,9 +66,10 @@ Accept wildcard characters: False
 ```
 
 ### -PriceClass
-Required: False    
-Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-cloudfront-streamingdistribution-streamingdistributionconfig.html#cfn-cloudfront-streamingdistribution-streamingdistributionconfig-priceclass    
-PrimitiveType: String    
+A complex type that contains information about price class for this streaming distribution.
+
+Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-cloudfront-streamingdistribution-streamingdistributionconfig.html#cfn-cloudfront-streamingdistribution-streamingdistributionconfig-priceclass
+PrimitiveType: String
 UpdateType: Mutable
 
 ```yaml
@@ -82,9 +85,10 @@ Accept wildcard characters: False
 ```
 
 ### -S3Origin
-Type: S3Origin    
-Required: True    
-Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-cloudfront-streamingdistribution-streamingdistributionconfig.html#cfn-cloudfront-streamingdistribution-streamingdistributionconfig-s3origin    
+A complex type that contains information about the Amazon S3 bucket from which you want CloudFront to get your media files for distribution.
+
+Type: S3Origin
+Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-cloudfront-streamingdistribution-streamingdistributionconfig.html#cfn-cloudfront-streamingdistribution-streamingdistributionconfig-s3origin
 UpdateType: Mutable
 
 ```yaml
@@ -100,9 +104,10 @@ Accept wildcard characters: False
 ```
 
 ### -Enabled
-Required: True    
-Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-cloudfront-streamingdistribution-streamingdistributionconfig.html#cfn-cloudfront-streamingdistribution-streamingdistributionconfig-enabled    
-PrimitiveType: Boolean    
+Whether the streaming distribution is enabled to accept user requests for content.
+
+Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-cloudfront-streamingdistribution-streamingdistributionconfig.html#cfn-cloudfront-streamingdistribution-streamingdistributionconfig-enabled
+PrimitiveType: Boolean
 UpdateType: Mutable
 
 ```yaml
@@ -118,10 +123,11 @@ Accept wildcard characters: False
 ```
 
 ### -Aliases
-PrimitiveItemType: String    
-Type: List    
-Required: False    
-Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-cloudfront-streamingdistribution-streamingdistributionconfig.html#cfn-cloudfront-streamingdistribution-streamingdistributionconfig-aliases    
+A complex type that contains information about CNAMEs alternate domain names, if any, for this streaming distribution.
+
+PrimitiveItemType: String
+Type: List
+Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-cloudfront-streamingdistribution-streamingdistributionconfig.html#cfn-cloudfront-streamingdistribution-streamingdistributionconfig-aliases
 UpdateType: Mutable
 
 ```yaml
@@ -137,9 +143,12 @@ Accept wildcard characters: False
 ```
 
 ### -TrustedSigners
-Type: TrustedSigners    
-Required: True    
-Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-cloudfront-streamingdistribution-streamingdistributionconfig.html#cfn-cloudfront-streamingdistribution-streamingdistributionconfig-trustedsigners    
+A complex type that specifies any AWS accounts that you want to permit to create signed URLs for private content.
+If you want the distribution to use signed URLs, include this element; if you want the distribution to use public URLs, remove this element.
+For more information, see Serving Private Content through CloudFront: https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/PrivateContent.html in the *Amazon CloudFront Developer Guide*.
+
+Type: TrustedSigners
+Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-cloudfront-streamingdistribution-streamingdistributionconfig.html#cfn-cloudfront-streamingdistribution-streamingdistributionconfig-trustedsigners
 UpdateType: Mutable
 
 ```yaml
@@ -155,15 +164,13 @@ Accept wildcard characters: False
 ```
 
 ### CommonParameters
-This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction, and -WarningVariable.
-For more information, see about_CommonParameters (http://go.microsoft.com/fwlink/?LinkID=113216).
+This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction, and -WarningVariable. For more information, see [about_CommonParameters](http://go.microsoft.com/fwlink/?LinkID=113216).
 
 ## INPUTS
 
 ## OUTPUTS
 
 ### Vaporshell.Resource.CloudFront.StreamingDistribution.StreamingDistributionConfig
-
 ## NOTES
 
 ## RELATED LINKS

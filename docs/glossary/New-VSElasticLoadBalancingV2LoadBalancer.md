@@ -1,18 +1,8 @@
----
-layout: glossary
-title: New-VSElasticLoadBalancingV2LoadBalancer
-categories: glossary
-label1: Category
-data1: Documentation
-label2: Depth
-data2: Deep
-schema: 2.0.0
----
-
 # New-VSElasticLoadBalancingV2LoadBalancer
 
 ## SYNOPSIS
-Adds an AWS::ElasticLoadBalancingV2::LoadBalancer resource to the template
+Adds an AWS::ElasticLoadBalancingV2::LoadBalancer resource to the template.
+Specifies an Application Load Balancer or a Network Load Balancer.
 
 ## SYNTAX
 
@@ -25,7 +15,17 @@ New-VSElasticLoadBalancingV2LoadBalancer [-LogicalId] <String> [-IpAddressType <
 ```
 
 ## DESCRIPTION
-Adds an AWS::ElasticLoadBalancingV2::LoadBalancer resource to the template
+Adds an AWS::ElasticLoadBalancingV2::LoadBalancer resource to the template.
+Specifies an Application Load Balancer or a Network Load Balancer.
+
+## EXAMPLES
+
+### Example 1
+```powershell
+PS C:\> {{ Add example code here }}
+```
+
+{{ Add example description here }}
 
 ## PARAMETERS
 
@@ -47,9 +47,13 @@ Accept wildcard characters: False
 ```
 
 ### -IpAddressType
-Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-elasticloadbalancingv2-loadbalancer.html#cfn-elasticloadbalancingv2-loadbalancer-ipaddresstype    
-PrimitiveType: String    
-Required: False    
+The IP address type.
+The possible values are ipv4 for IPv4 addresses and dualstack for IPv4 and IPv6 addresses.
+Internal load balancers must use ipv4.
+Network Load Balancers must use ipv4.
+
+Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-elasticloadbalancingv2-loadbalancer.html#cfn-elasticloadbalancingv2-loadbalancer-ipaddresstype
+PrimitiveType: String
 UpdateType: Mutable
 
 ```yaml
@@ -65,11 +69,12 @@ Accept wildcard characters: False
 ```
 
 ### -LoadBalancerAttributes
-Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-elasticloadbalancingv2-loadbalancer.html#cfn-elasticloadbalancingv2-loadbalancer-loadbalancerattributes    
-DuplicatesAllowed: False    
-ItemType: LoadBalancerAttribute    
-Required: False    
-Type: List    
+The load balancer attributes.
+
+Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-elasticloadbalancingv2-loadbalancer.html#cfn-elasticloadbalancingv2-loadbalancer-loadbalancerattributes
+DuplicatesAllowed: False
+ItemType: LoadBalancerAttribute
+Type: List
 UpdateType: Mutable
 
 ```yaml
@@ -85,9 +90,14 @@ Accept wildcard characters: False
 ```
 
 ### -Name
-Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-elasticloadbalancingv2-loadbalancer.html#cfn-elasticloadbalancingv2-loadbalancer-name    
-PrimitiveType: String    
-Required: False    
+The name of the load balancer.
+This name must be unique per region per account, can have a maximum of 32 characters, must contain only alphanumeric characters or hyphens, must not begin or end with a hyphen, and must not begin with "internal-".
+If you don't specify a name, AWS CloudFormation generates a unique physical ID for the load balancer.
+If you specify a name, you cannot perform updates that require replacement of this resource, but you can perform other updates.
+To replace the resource, specify a new name.
+
+Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-elasticloadbalancingv2-loadbalancer.html#cfn-elasticloadbalancingv2-loadbalancer-name
+PrimitiveType: String
 UpdateType: Immutable
 
 ```yaml
@@ -103,9 +113,16 @@ Accept wildcard characters: False
 ```
 
 ### -Scheme
-Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-elasticloadbalancingv2-loadbalancer.html#cfn-elasticloadbalancingv2-loadbalancer-scheme    
-PrimitiveType: String    
-Required: False    
+The nodes of an Internet-facing load balancer have public IP addresses.
+The DNS name of an Internet-facing load balancer is publicly resolvable to the public IP addresses of the nodes.
+Therefore, Internet-facing load balancers can route requests from clients over the internet.
+The nodes of an internal load balancer have only private IP addresses.
+The DNS name of an internal load balancer is publicly resolvable to the private IP addresses of the nodes.
+Therefore, internal load balancers can only route requests from clients with access to the VPC for the load balancer.
+The default is an Internet-facing load balancer.
+
+Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-elasticloadbalancingv2-loadbalancer.html#cfn-elasticloadbalancingv2-loadbalancer-scheme
+PrimitiveType: String
 UpdateType: Immutable
 
 ```yaml
@@ -121,11 +138,12 @@ Accept wildcard characters: False
 ```
 
 ### -SecurityGroups
-Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-elasticloadbalancingv2-loadbalancer.html#cfn-elasticloadbalancingv2-loadbalancer-securitygroups    
-DuplicatesAllowed: False    
-PrimitiveItemType: String    
-Required: False    
-Type: List    
+Application Load Balancers\] The IDs of the security groups for the load balancer.
+
+Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-elasticloadbalancingv2-loadbalancer.html#cfn-elasticloadbalancingv2-loadbalancer-securitygroups
+DuplicatesAllowed: False
+PrimitiveItemType: String
+Type: List
 UpdateType: Mutable
 
 ```yaml
@@ -141,11 +159,18 @@ Accept wildcard characters: False
 ```
 
 ### -SubnetMappings
-Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-elasticloadbalancingv2-loadbalancer.html#cfn-elasticloadbalancingv2-loadbalancer-subnetmappings    
-DuplicatesAllowed: False    
-ItemType: SubnetMapping    
-Required: False    
-Type: List    
+The IDs of the public subnets.
+You can specify only one subnet per Availability Zone.
+You must specify either subnets or subnet mappings.
+Application Load Balancers\] You must specify subnets from at least two Availability Zones.
+You cannot specify Elastic IP addresses for your subnets.
+Network Load Balancers\] You can specify subnets from one or more Availability Zones.
+You can specify one Elastic IP address per subnet.
+
+Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-elasticloadbalancingv2-loadbalancer.html#cfn-elasticloadbalancingv2-loadbalancer-subnetmappings
+DuplicatesAllowed: False
+ItemType: SubnetMapping
+Type: List
 UpdateType: Immutable
 
 ```yaml
@@ -161,11 +186,18 @@ Accept wildcard characters: False
 ```
 
 ### -Subnets
-Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-elasticloadbalancingv2-loadbalancer.html#cfn-elasticloadbalancingv2-loadbalancer-subnets    
-DuplicatesAllowed: False    
-PrimitiveItemType: String    
-Required: False    
-Type: List    
+The IDs of the public subnets.
+You can specify only one subnet per Availability Zone.
+You must specify either subnets or subnet mappings.
+Application Load Balancers\] You must specify subnets from at least two Availability Zones.
+When you specify subnets for an existing Application Load Balancer, they replace the previously enabled subnets.
+Network Load Balancers\] You can specify subnets from one or more Availability Zones when you create the load balancer.
+You can't change the subnets for an existing Network Load Balancer.
+
+Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-elasticloadbalancingv2-loadbalancer.html#cfn-elasticloadbalancingv2-loadbalancer-subnets
+DuplicatesAllowed: False
+PrimitiveItemType: String
+Type: List
 UpdateType: Mutable
 
 ```yaml
@@ -181,11 +213,13 @@ Accept wildcard characters: False
 ```
 
 ### -Tags
-Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-elasticloadbalancingv2-loadbalancer.html#cfn-elasticloadbalancingv2-loadbalancer-tags    
-DuplicatesAllowed: True    
-ItemType: Tag    
-Required: False    
-Type: List    
+The tags.
+Each resource can have a maximum of 10 tags.
+
+Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-elasticloadbalancingv2-loadbalancer.html#cfn-elasticloadbalancingv2-loadbalancer-tags
+DuplicatesAllowed: True
+ItemType: Tag
+Type: List
 UpdateType: Mutable
 
 ```yaml
@@ -201,9 +235,11 @@ Accept wildcard characters: False
 ```
 
 ### -Type
-Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-elasticloadbalancingv2-loadbalancer.html#cfn-elasticloadbalancingv2-loadbalancer-type    
-PrimitiveType: String    
-Required: False    
+The type of load balancer.
+The default is application.
+
+Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-elasticloadbalancingv2-loadbalancer.html#cfn-elasticloadbalancingv2-loadbalancer-type
+PrimitiveType: String
 UpdateType: Immutable
 
 ```yaml
@@ -313,15 +349,13 @@ Accept wildcard characters: False
 ```
 
 ### CommonParameters
-This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction, and -WarningVariable.
-For more information, see about_CommonParameters (http://go.microsoft.com/fwlink/?LinkID=113216).
+This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction, and -WarningVariable. For more information, see [about_CommonParameters](http://go.microsoft.com/fwlink/?LinkID=113216).
 
 ## INPUTS
 
 ## OUTPUTS
 
 ### Vaporshell.Resource.ElasticLoadBalancingV2.LoadBalancer
-
 ## NOTES
 
 ## RELATED LINKS

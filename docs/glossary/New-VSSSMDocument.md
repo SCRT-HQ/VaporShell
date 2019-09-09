@@ -1,18 +1,8 @@
----
-layout: glossary
-title: New-VSSSMDocument
-categories: glossary
-label1: Category
-data1: Documentation
-label2: Depth
-data2: Deep
-schema: 2.0.0
----
-
 # New-VSSSMDocument
 
 ## SYNOPSIS
-Adds an AWS::SSM::Document resource to the template
+Adds an AWS::SSM::Document resource to the template.
+The AWS::SSM::Document resource creates an SSM document in AWS Systems Manager that defines the actions that Systems Manager performs, which you can use to set up and run commands on your instances.
 
 ## SYNTAX
 
@@ -23,7 +13,17 @@ New-VSSSMDocument [-LogicalId] <String> -Content <Object> [-DocumentType <Object
 ```
 
 ## DESCRIPTION
-Adds an AWS::SSM::Document resource to the template
+Adds an AWS::SSM::Document resource to the template.
+The AWS::SSM::Document resource creates an SSM document in AWS Systems Manager that defines the actions that Systems Manager performs, which you can use to set up and run commands on your instances.
+
+## EXAMPLES
+
+### Example 1
+```powershell
+PS C:\> {{ Add example code here }}
+```
+
+{{ Add example description here }}
 
 ## PARAMETERS
 
@@ -45,9 +45,10 @@ Accept wildcard characters: False
 ```
 
 ### -Content
-Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ssm-document.html#cfn-ssm-document-content    
-PrimitiveType: Json    
-Required: True    
+A valid JSON or YAML string.
+
+Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ssm-document.html#cfn-ssm-document-content
+PrimitiveType: Json
 UpdateType: Immutable
 
 ```yaml
@@ -63,9 +64,11 @@ Accept wildcard characters: False
 ```
 
 ### -DocumentType
-Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ssm-document.html#cfn-ssm-document-documenttype    
-PrimitiveType: String    
-Required: False    
+The type of document to create.
+Valid document types include: Command, Policy, Automation, Session, and Package.
+
+Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ssm-document.html#cfn-ssm-document-documenttype
+PrimitiveType: String
 UpdateType: Immutable
 
 ```yaml
@@ -81,11 +84,13 @@ Accept wildcard characters: False
 ```
 
 ### -Tags
-Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ssm-document.html#cfn-ssm-document-tags    
-DuplicatesAllowed: True    
-ItemType: Tag    
-Required: False    
-Type: List    
+AWS CloudFormation resource tags to apply to the document.
+Use tags to help you identify and categorize resources.
+
+Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ssm-document.html#cfn-ssm-document-tags
+DuplicatesAllowed: True
+ItemType: Tag
+Type: List
 UpdateType: Mutable
 
 ```yaml
@@ -195,15 +200,13 @@ Accept wildcard characters: False
 ```
 
 ### CommonParameters
-This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction, and -WarningVariable.
-For more information, see about_CommonParameters (http://go.microsoft.com/fwlink/?LinkID=113216).
+This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction, and -WarningVariable. For more information, see [about_CommonParameters](http://go.microsoft.com/fwlink/?LinkID=113216).
 
 ## INPUTS
 
 ## OUTPUTS
 
 ### Vaporshell.Resource.SSM.Document
-
 ## NOTES
 
 ## RELATED LINKS

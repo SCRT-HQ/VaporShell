@@ -1,37 +1,38 @@
----
-layout: glossary
-title: Add-VSIoTTopicRuleAction
-categories: glossary
-label1: Category
-data1: Documentation
-label2: Depth
-data2: Deep
-schema: 2.0.0
----
-
 # Add-VSIoTTopicRuleAction
 
 ## SYNOPSIS
-Adds an AWS::IoT::TopicRule.Action resource property to the template
+Adds an AWS::IoT::TopicRule.Action resource property to the template.
+Describes the actions associated with a rule.
 
 ## SYNTAX
 
 ```
 Add-VSIoTTopicRuleAction [[-CloudwatchAlarm] <Object>] [[-CloudwatchMetric] <Object>] [[-DynamoDB] <Object>]
- [[-DynamoDBv2] <Object>] [[-Elasticsearch] <Object>] [[-Firehose] <Object>] [[-Kinesis] <Object>]
- [[-Lambda] <Object>] [[-Republish] <Object>] [[-S3] <Object>] [[-Sns] <Object>] [[-Sqs] <Object>]
- [<CommonParameters>]
+ [[-DynamoDBv2] <Object>] [[-Elasticsearch] <Object>] [[-Firehose] <Object>] [[-IotAnalytics] <Object>]
+ [[-Kinesis] <Object>] [[-Lambda] <Object>] [[-Republish] <Object>] [[-S3] <Object>] [[-Sns] <Object>]
+ [[-Sqs] <Object>] [[-StepFunctions] <Object>] [<CommonParameters>]
 ```
 
 ## DESCRIPTION
-Adds an AWS::IoT::TopicRule.Action resource property to the template
+Adds an AWS::IoT::TopicRule.Action resource property to the template.
+Describes the actions associated with a rule.
+
+## EXAMPLES
+
+### Example 1
+```powershell
+PS C:\> {{ Add example code here }}
+```
+
+{{ Add example description here }}
 
 ## PARAMETERS
 
 ### -CloudwatchAlarm
-Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iot-topicrule-action.html#cfn-iot-topicrule-action-cloudwatchalarm    
-Required: False    
-Type: CloudwatchAlarmAction    
+Change the state of a CloudWatch alarm.
+
+Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iot-topicrule-action.html#cfn-iot-topicrule-action-cloudwatchalarm
+Type: CloudwatchAlarmAction
 UpdateType: Mutable
 
 ```yaml
@@ -47,9 +48,10 @@ Accept wildcard characters: False
 ```
 
 ### -CloudwatchMetric
-Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iot-topicrule-action.html#cfn-iot-topicrule-action-cloudwatchmetric    
-Required: False    
-Type: CloudwatchMetricAction    
+Capture a CloudWatch metric.
+
+Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iot-topicrule-action.html#cfn-iot-topicrule-action-cloudwatchmetric
+Type: CloudwatchMetricAction
 UpdateType: Mutable
 
 ```yaml
@@ -65,9 +67,10 @@ Accept wildcard characters: False
 ```
 
 ### -DynamoDB
-Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iot-topicrule-action.html#cfn-iot-topicrule-action-dynamodb    
-Required: False    
-Type: DynamoDBAction    
+Write to a DynamoDB table.
+
+Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iot-topicrule-action.html#cfn-iot-topicrule-action-dynamodb
+Type: DynamoDBAction
 UpdateType: Mutable
 
 ```yaml
@@ -83,9 +86,12 @@ Accept wildcard characters: False
 ```
 
 ### -DynamoDBv2
-Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iot-topicrule-action.html#cfn-iot-topicrule-action-dynamodbv2    
-Required: False    
-Type: DynamoDBv2Action    
+Write to a DynamoDB table.
+This is a new version of the DynamoDB action.
+It allows you to write each attribute in an MQTT message payload into a separate DynamoDB column.
+
+Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iot-topicrule-action.html#cfn-iot-topicrule-action-dynamodbv2
+Type: DynamoDBv2Action
 UpdateType: Mutable
 
 ```yaml
@@ -101,9 +107,10 @@ Accept wildcard characters: False
 ```
 
 ### -Elasticsearch
-Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iot-topicrule-action.html#cfn-iot-topicrule-action-elasticsearch    
-Required: False    
-Type: ElasticsearchAction    
+Write data to an Amazon Elasticsearch Service domain.
+
+Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iot-topicrule-action.html#cfn-iot-topicrule-action-elasticsearch
+Type: ElasticsearchAction
 UpdateType: Mutable
 
 ```yaml
@@ -119,9 +126,10 @@ Accept wildcard characters: False
 ```
 
 ### -Firehose
-Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iot-topicrule-action.html#cfn-iot-topicrule-action-firehose    
-Required: False    
-Type: FirehoseAction    
+Write to an Amazon Kinesis Firehose stream.
+
+Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iot-topicrule-action.html#cfn-iot-topicrule-action-firehose
+Type: FirehoseAction
 UpdateType: Mutable
 
 ```yaml
@@ -136,10 +144,11 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
-### -Kinesis
-Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iot-topicrule-action.html#cfn-iot-topicrule-action-kinesis    
-Required: False    
-Type: KinesisAction    
+### -IotAnalytics
+Sends message data to an AWS IoT Analytics channel.
+
+Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iot-topicrule-action.html#cfn-iot-topicrule-action-iotanalytics
+Type: IotAnalyticsAction
 UpdateType: Mutable
 
 ```yaml
@@ -154,10 +163,11 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
-### -Lambda
-Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iot-topicrule-action.html#cfn-iot-topicrule-action-lambda    
-Required: False    
-Type: LambdaAction    
+### -Kinesis
+Write data to an Amazon Kinesis stream.
+
+Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iot-topicrule-action.html#cfn-iot-topicrule-action-kinesis
+Type: KinesisAction
 UpdateType: Mutable
 
 ```yaml
@@ -172,10 +182,11 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
-### -Republish
-Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iot-topicrule-action.html#cfn-iot-topicrule-action-republish    
-Required: False    
-Type: RepublishAction    
+### -Lambda
+Invoke a Lambda function.
+
+Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iot-topicrule-action.html#cfn-iot-topicrule-action-lambda
+Type: LambdaAction
 UpdateType: Mutable
 
 ```yaml
@@ -190,10 +201,11 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
-### -S3
-Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iot-topicrule-action.html#cfn-iot-topicrule-action-s3    
-Required: False    
-Type: S3Action    
+### -Republish
+Publish to another MQTT topic.
+
+Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iot-topicrule-action.html#cfn-iot-topicrule-action-republish
+Type: RepublishAction
 UpdateType: Mutable
 
 ```yaml
@@ -208,10 +220,11 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
-### -Sns
-Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iot-topicrule-action.html#cfn-iot-topicrule-action-sns    
-Required: False    
-Type: SnsAction    
+### -S3
+Write to an Amazon S3 bucket.
+
+Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iot-topicrule-action.html#cfn-iot-topicrule-action-s3
+Type: S3Action
 UpdateType: Mutable
 
 ```yaml
@@ -226,10 +239,11 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
-### -Sqs
-Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iot-topicrule-action.html#cfn-iot-topicrule-action-sqs    
-Required: False    
-Type: SqsAction    
+### -Sns
+Publish to an Amazon SNS topic.
+
+Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iot-topicrule-action.html#cfn-iot-topicrule-action-sns
+Type: SnsAction
 UpdateType: Mutable
 
 ```yaml
@@ -244,16 +258,52 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
+### -Sqs
+Publish to an Amazon SQS queue.
+
+Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iot-topicrule-action.html#cfn-iot-topicrule-action-sqs
+Type: SqsAction
+UpdateType: Mutable
+
+```yaml
+Type: Object
+Parameter Sets: (All)
+Aliases:
+
+Required: False
+Position: 13
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### -StepFunctions
+Starts execution of a Step Functions state machine.
+
+Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iot-topicrule-action.html#cfn-iot-topicrule-action-stepfunctions
+Type: StepFunctionsAction
+UpdateType: Mutable
+
+```yaml
+Type: Object
+Parameter Sets: (All)
+Aliases:
+
+Required: False
+Position: 14
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
 ### CommonParameters
-This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction, and -WarningVariable.
-For more information, see about_CommonParameters (http://go.microsoft.com/fwlink/?LinkID=113216).
+This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction, and -WarningVariable. For more information, see [about_CommonParameters](http://go.microsoft.com/fwlink/?LinkID=113216).
 
 ## INPUTS
 
 ## OUTPUTS
 
 ### Vaporshell.Resource.IoT.TopicRule.Action
-
 ## NOTES
 
 ## RELATED LINKS

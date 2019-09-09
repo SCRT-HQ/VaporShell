@@ -1,18 +1,8 @@
----
-layout: glossary
-title: Add-VSCodePipelinePipelineEncryptionKey
-categories: glossary
-label1: Category
-data1: Documentation
-label2: Depth
-data2: Deep
-schema: 2.0.0
----
-
 # Add-VSCodePipelinePipelineEncryptionKey
 
 ## SYNOPSIS
-Adds an AWS::CodePipeline::Pipeline.EncryptionKey resource property to the template
+Adds an AWS::CodePipeline::Pipeline.EncryptionKey resource property to the template.
+Represents information about the key used to encrypt data in the artifact store, such as an AWS Key Management Service (AWS KMS key.
 
 ## SYNTAX
 
@@ -21,14 +11,26 @@ Add-VSCodePipelinePipelineEncryptionKey [-Id] <Object> [-Type] <Object> [<Common
 ```
 
 ## DESCRIPTION
-Adds an AWS::CodePipeline::Pipeline.EncryptionKey resource property to the template
+Adds an AWS::CodePipeline::Pipeline.EncryptionKey resource property to the template.
+Represents information about the key used to encrypt data in the artifact store, such as an AWS Key Management Service (AWS KMS key.
+
+## EXAMPLES
+
+### Example 1
+```powershell
+PS C:\> {{ Add example code here }}
+```
+
+{{ Add example description here }}
 
 ## PARAMETERS
 
 ### -Id
-Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-codepipeline-pipeline-artifactstore-encryptionkey.html#cfn-codepipeline-pipeline-artifactstore-encryptionkey-id    
-PrimitiveType: String    
-Required: True    
+The ID used to identify the key.
+For an AWS KMS key, this is the key ID or key ARN.
+
+Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-codepipeline-pipeline-artifactstore-encryptionkey.html#cfn-codepipeline-pipeline-artifactstore-encryptionkey-id
+PrimitiveType: String
 UpdateType: Mutable
 
 ```yaml
@@ -44,9 +46,11 @@ Accept wildcard characters: False
 ```
 
 ### -Type
-Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-codepipeline-pipeline-artifactstore-encryptionkey.html#cfn-codepipeline-pipeline-artifactstore-encryptionkey-type    
-PrimitiveType: String    
-Required: True    
+The type of encryption key, such as an AWS Key Management Service AWS KMS key.
+When creating or updating a pipeline, the value must be set to 'KMS'.
+
+Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-codepipeline-pipeline-artifactstore-encryptionkey.html#cfn-codepipeline-pipeline-artifactstore-encryptionkey-type
+PrimitiveType: String
 UpdateType: Mutable
 
 ```yaml
@@ -62,15 +66,13 @@ Accept wildcard characters: False
 ```
 
 ### CommonParameters
-This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction, and -WarningVariable.
-For more information, see about_CommonParameters (http://go.microsoft.com/fwlink/?LinkID=113216).
+This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction, and -WarningVariable. For more information, see [about_CommonParameters](http://go.microsoft.com/fwlink/?LinkID=113216).
 
 ## INPUTS
 
 ## OUTPUTS
 
 ### Vaporshell.Resource.CodePipeline.Pipeline.EncryptionKey
-
 ## NOTES
 
 ## RELATED LINKS

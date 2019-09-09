@@ -1,14 +1,3 @@
----
-layout: glossary
-title: Get-VSStack
-categories: glossary
-label1: Category
-data1: Documentation
-label2: Depth
-data2: Deep
-schema: 2.0.0
----
-
 # Get-VSStack
 
 ## SYNOPSIS
@@ -114,6 +103,29 @@ Get-VSStack [-EstimatedCost] [-TemplateBody <String>] [-Parameters <Parameter[]>
 ## DESCRIPTION
 Gets the description, policy, template, event list, resource info, resource list, exports info, imports info, summary or even estimated cost of a particular stack.
 This can also be used to list your stacks.
+
+## EXAMPLES
+
+### EXAMPLE 1
+```
+# This gets the list of stacks.
+```
+
+Get-VSStack -List
+
+### EXAMPLE 2
+```
+# This gets the list of stacks and shows the events for each in color.
+```
+
+Get-VSStack -List | Get-VSStack -Events -ColorizeEvents
+
+### EXAMPLE 3
+```
+# This gets the description for a stack named 'testSAMdeployment'
+```
+
+Get-VSStack -StackId testSAMdeployment
 
 ## PARAMETERS
 
@@ -548,8 +560,7 @@ Accept wildcard characters: False
 ```
 
 ### CommonParameters
-This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction, and -WarningVariable.
-For more information, see about_CommonParameters (http://go.microsoft.com/fwlink/?LinkID=113216).
+This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction, and -WarningVariable. For more information, see [about_CommonParameters](http://go.microsoft.com/fwlink/?LinkID=113216).
 
 ## INPUTS
 

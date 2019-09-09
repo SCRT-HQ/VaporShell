@@ -1,18 +1,8 @@
----
-layout: glossary
-title: New-VSServiceCatalogCloudFormationProduct
-categories: glossary
-label1: Category
-data1: Documentation
-label2: Depth
-data2: Deep
-schema: 2.0.0
----
-
 # New-VSServiceCatalogCloudFormationProduct
 
 ## SYNOPSIS
-Adds an AWS::ServiceCatalog::CloudFormationProduct resource to the template
+Adds an AWS::ServiceCatalog::CloudFormationProduct resource to the template.
+Specifies a product.
 
 ## SYNTAX
 
@@ -25,7 +15,17 @@ New-VSServiceCatalogCloudFormationProduct [-LogicalId] <String> -Owner <Object> 
 ```
 
 ## DESCRIPTION
-Adds an AWS::ServiceCatalog::CloudFormationProduct resource to the template
+Adds an AWS::ServiceCatalog::CloudFormationProduct resource to the template.
+Specifies a product.
+
+## EXAMPLES
+
+### Example 1
+```powershell
+PS C:\> {{ Add example code here }}
+```
+
+{{ Add example description here }}
 
 ## PARAMETERS
 
@@ -47,9 +47,10 @@ Accept wildcard characters: False
 ```
 
 ### -Owner
-Required: True    
-Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-servicecatalog-cloudformationproduct.html#cfn-servicecatalog-cloudformationproduct-owner    
-PrimitiveType: String    
+The owner of the product.
+
+Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-servicecatalog-cloudformationproduct.html#cfn-servicecatalog-cloudformationproduct-owner
+PrimitiveType: String
 UpdateType: Mutable
 
 ```yaml
@@ -65,9 +66,10 @@ Accept wildcard characters: False
 ```
 
 ### -SupportDescription
-Required: False    
-Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-servicecatalog-cloudformationproduct.html#cfn-servicecatalog-cloudformationproduct-supportdescription    
-PrimitiveType: String    
+The support information about the product.
+
+Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-servicecatalog-cloudformationproduct.html#cfn-servicecatalog-cloudformationproduct-supportdescription
+PrimitiveType: String
 UpdateType: Mutable
 
 ```yaml
@@ -83,9 +85,10 @@ Accept wildcard characters: False
 ```
 
 ### -Description
-Required: False    
-Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-servicecatalog-cloudformationproduct.html#cfn-servicecatalog-cloudformationproduct-description    
-PrimitiveType: String    
+The description of the product.
+
+Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-servicecatalog-cloudformationproduct.html#cfn-servicecatalog-cloudformationproduct-description
+PrimitiveType: String
 UpdateType: Mutable
 
 ```yaml
@@ -101,9 +104,10 @@ Accept wildcard characters: False
 ```
 
 ### -Distributor
-Required: False    
-Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-servicecatalog-cloudformationproduct.html#cfn-servicecatalog-cloudformationproduct-distributor    
-PrimitiveType: String    
+The distributor of the product.
+
+Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-servicecatalog-cloudformationproduct.html#cfn-servicecatalog-cloudformationproduct-distributor
+PrimitiveType: String
 UpdateType: Mutable
 
 ```yaml
@@ -119,9 +123,10 @@ Accept wildcard characters: False
 ```
 
 ### -SupportEmail
-Required: False    
-Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-servicecatalog-cloudformationproduct.html#cfn-servicecatalog-cloudformationproduct-supportemail    
-PrimitiveType: String    
+The contact email for product support.
+
+Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-servicecatalog-cloudformationproduct.html#cfn-servicecatalog-cloudformationproduct-supportemail
+PrimitiveType: String
 UpdateType: Mutable
 
 ```yaml
@@ -137,9 +142,13 @@ Accept wildcard characters: False
 ```
 
 ### -AcceptLanguage
-Required: False    
-Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-servicecatalog-cloudformationproduct.html#cfn-servicecatalog-cloudformationproduct-acceptlanguage    
-PrimitiveType: String    
+The language code.
++  en - English default
++  jp - Japanese
++  zh - Chinese
+
+Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-servicecatalog-cloudformationproduct.html#cfn-servicecatalog-cloudformationproduct-acceptlanguage
+PrimitiveType: String
 UpdateType: Mutable
 
 ```yaml
@@ -155,9 +164,10 @@ Accept wildcard characters: False
 ```
 
 ### -SupportUrl
-Required: False    
-Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-servicecatalog-cloudformationproduct.html#cfn-servicecatalog-cloudformationproduct-supporturl    
-PrimitiveType: String    
+The contact URL for product support.
+
+Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-servicecatalog-cloudformationproduct.html#cfn-servicecatalog-cloudformationproduct-supporturl
+PrimitiveType: String
 UpdateType: Mutable
 
 ```yaml
@@ -173,10 +183,11 @@ Accept wildcard characters: False
 ```
 
 ### -Tags
-Type: List    
-Required: False    
-Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-servicecatalog-cloudformationproduct.html#cfn-servicecatalog-cloudformationproduct-tags    
-ItemType: Tag    
+One or more tags.
+
+Type: List
+Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-servicecatalog-cloudformationproduct.html#cfn-servicecatalog-cloudformationproduct-tags
+ItemType: Tag
 UpdateType: Mutable
 
 ```yaml
@@ -192,9 +203,10 @@ Accept wildcard characters: False
 ```
 
 ### -Name
-Required: True    
-Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-servicecatalog-cloudformationproduct.html#cfn-servicecatalog-cloudformationproduct-name    
-PrimitiveType: String    
+The name of the product.
+
+Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-servicecatalog-cloudformationproduct.html#cfn-servicecatalog-cloudformationproduct-name
+PrimitiveType: String
 UpdateType: Mutable
 
 ```yaml
@@ -210,10 +222,11 @@ Accept wildcard characters: False
 ```
 
 ### -ProvisioningArtifactParameters
-Type: List    
-Required: True    
-Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-servicecatalog-cloudformationproduct.html#cfn-servicecatalog-cloudformationproduct-provisioningartifactparameters    
-ItemType: ProvisioningArtifactProperties    
+The configuration of the provisioning artifact also known as a version.
+
+Type: List
+Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-servicecatalog-cloudformationproduct.html#cfn-servicecatalog-cloudformationproduct-provisioningartifactparameters
+ItemType: ProvisioningArtifactProperties
 UpdateType: Mutable
 
 ```yaml
@@ -323,15 +336,13 @@ Accept wildcard characters: False
 ```
 
 ### CommonParameters
-This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction, and -WarningVariable.
-For more information, see about_CommonParameters (http://go.microsoft.com/fwlink/?LinkID=113216).
+This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction, and -WarningVariable. For more information, see [about_CommonParameters](http://go.microsoft.com/fwlink/?LinkID=113216).
 
 ## INPUTS
 
 ## OUTPUTS
 
 ### Vaporshell.Resource.ServiceCatalog.CloudFormationProduct
-
 ## NOTES
 
 ## RELATED LINKS

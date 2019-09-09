@@ -1,18 +1,8 @@
----
-layout: glossary
-title: Add-VSGuardDutyFilterCondition
-categories: glossary
-label1: Category
-data1: Documentation
-label2: Depth
-data2: Deep
-schema: 2.0.0
----
-
 # Add-VSGuardDutyFilterCondition
 
 ## SYNOPSIS
-Adds an AWS::GuardDuty::Filter.Condition resource property to the template
+Adds an AWS::GuardDuty::Filter.Condition resource property to the template.
+Specifies the condition to apply to a single field when filtering through GuardDuty findings.
 
 ## SYNTAX
 
@@ -22,14 +12,25 @@ Add-VSGuardDutyFilterCondition [[-Lt] <Int32>] [[-Gte] <Int32>] [[-Neq] <Object>
 ```
 
 ## DESCRIPTION
-Adds an AWS::GuardDuty::Filter.Condition resource property to the template
+Adds an AWS::GuardDuty::Filter.Condition resource property to the template.
+Specifies the condition to apply to a single field when filtering through GuardDuty findings.
+
+## EXAMPLES
+
+### Example 1
+```powershell
+PS C:\> {{ Add example code here }}
+```
+
+{{ Add example description here }}
 
 ## PARAMETERS
 
 ### -Lt
-Required: False    
-Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-guardduty-filter-condition.html#cfn-guardduty-filter-condition-lt    
-PrimitiveType: Integer    
+Represents the less than condition to apply to a single field when querying for findings.
+
+Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-guardduty-filter-condition.html#cfn-guardduty-filter-condition-lt
+PrimitiveType: Integer
 UpdateType: Mutable
 
 ```yaml
@@ -45,9 +46,10 @@ Accept wildcard characters: False
 ```
 
 ### -Gte
-Required: False    
-Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-guardduty-filter-condition.html#cfn-guardduty-filter-condition-gte    
-PrimitiveType: Integer    
+Represents the greater than or equal condition to apply to a single field when querying for findings.
+
+Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-guardduty-filter-condition.html#cfn-guardduty-filter-condition-gte
+PrimitiveType: Integer
 UpdateType: Mutable
 
 ```yaml
@@ -63,10 +65,11 @@ Accept wildcard characters: False
 ```
 
 ### -Neq
-PrimitiveItemType: String    
-Type: List    
-Required: False    
-Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-guardduty-filter-condition.html#cfn-guardduty-filter-condition-neq    
+Represents the not equal condition to apply to a single field when querying for findings.
+
+PrimitiveItemType: String
+Type: List
+Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-guardduty-filter-condition.html#cfn-guardduty-filter-condition-neq
 UpdateType: Mutable
 
 ```yaml
@@ -82,10 +85,11 @@ Accept wildcard characters: False
 ```
 
 ### -Eq
-PrimitiveItemType: String    
-Type: List    
-Required: False    
-Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-guardduty-filter-condition.html#cfn-guardduty-filter-condition-eq    
+Represents the equal condition to apply to a single field when querying for findings.
+
+PrimitiveItemType: String
+Type: List
+Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-guardduty-filter-condition.html#cfn-guardduty-filter-condition-eq
 UpdateType: Mutable
 
 ```yaml
@@ -101,9 +105,10 @@ Accept wildcard characters: False
 ```
 
 ### -Lte
-Required: False    
-Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-guardduty-filter-condition.html#cfn-guardduty-filter-condition-lte    
-PrimitiveType: Integer    
+Represents the less than or equal condition to apply to a single field when querying for findings.
+
+Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-guardduty-filter-condition.html#cfn-guardduty-filter-condition-lte
+PrimitiveType: Integer
 UpdateType: Mutable
 
 ```yaml
@@ -119,15 +124,13 @@ Accept wildcard characters: False
 ```
 
 ### CommonParameters
-This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction, and -WarningVariable.
-For more information, see about_CommonParameters (http://go.microsoft.com/fwlink/?LinkID=113216).
+This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction, and -WarningVariable. For more information, see [about_CommonParameters](http://go.microsoft.com/fwlink/?LinkID=113216).
 
 ## INPUTS
 
 ## OUTPUTS
 
 ### Vaporshell.Resource.GuardDuty.Filter.Condition
-
 ## NOTES
 
 ## RELATED LINKS

@@ -1,18 +1,10 @@
----
-layout: glossary
-title: New-VSLogsSubscriptionFilter
-categories: glossary
-label1: Category
-data1: Documentation
-label2: Depth
-data2: Deep
-schema: 2.0.0
----
-
 # New-VSLogsSubscriptionFilter
 
 ## SYNOPSIS
-Adds an AWS::Logs::SubscriptionFilter resource to the template
+Adds an AWS::Logs::SubscriptionFilter resource to the template.
+The AWS::Logs::SubscriptionFilter resource specifies a subscription filter and associates it with the specified log group.
+Subscription filters allow you to subscribe to a real-time stream of log events and have them delivered to a specific destination.
+Currently, the supported destinations are:
 
 ## SYNTAX
 
@@ -23,7 +15,29 @@ New-VSLogsSubscriptionFilter [-LogicalId] <String> -DestinationArn <Object> -Fil
 ```
 
 ## DESCRIPTION
-Adds an AWS::Logs::SubscriptionFilter resource to the template
+Adds an AWS::Logs::SubscriptionFilter resource to the template.
+The AWS::Logs::SubscriptionFilter resource specifies a subscription filter and associates it with the specified log group.
+Subscription filters allow you to subscribe to a real-time stream of log events and have them delivered to a specific destination.
+Currently, the supported destinations are:
+
++ An Amazon Kinesis data stream belonging to the same account as the subscription filter, for same-account delivery.
+
++ A logical destination that belongs to a different account, for cross-account delivery.
+
++ An Amazon Kinesis Firehose delivery stream that belongs to the same account as the subscription filter, for same-account delivery.
+
++ An AWS Lambda function that belongs to the same account as the subscription filter, for same-account delivery.
+
+There can only be one subscription filter associated with a log group.
+
+## EXAMPLES
+
+### Example 1
+```powershell
+PS C:\> {{ Add example code here }}
+```
+
+{{ Add example description here }}
 
 ## PARAMETERS
 
@@ -45,9 +59,10 @@ Accept wildcard characters: False
 ```
 
 ### -DestinationArn
-Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-logs-subscriptionfilter.html#cfn-cwl-subscriptionfilter-destinationarn    
-PrimitiveType: String    
-Required: True    
+The Amazon Resource Name ARN of the destination.
+
+Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-logs-subscriptionfilter.html#cfn-cwl-subscriptionfilter-destinationarn
+PrimitiveType: String
 UpdateType: Immutable
 
 ```yaml
@@ -63,9 +78,11 @@ Accept wildcard characters: False
 ```
 
 ### -FilterPattern
-Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-logs-subscriptionfilter.html#cfn-cwl-subscriptionfilter-filterpattern    
-PrimitiveType: String    
-Required: True    
+The filtering expressions that restrict what gets delivered to the destination AWS resource.
+For more information about the filter pattern syntax, see Filter and Pattern Syntax: https://docs.aws.amazon.com/AmazonCloudWatch/latest/logs/FilterAndPatternSyntax.html.
+
+Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-logs-subscriptionfilter.html#cfn-cwl-subscriptionfilter-filterpattern
+PrimitiveType: String
 UpdateType: Immutable
 
 ```yaml
@@ -81,9 +98,11 @@ Accept wildcard characters: False
 ```
 
 ### -LogGroupName
-Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-logs-subscriptionfilter.html#cfn-cwl-subscriptionfilter-loggroupname    
-PrimitiveType: String    
-Required: True    
+The log group to associate with the subscription filter.
+All log events that are uploaded to this log group are filtered and delivered to the specified AWS resource if the filter pattern matches the log events.
+
+Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-logs-subscriptionfilter.html#cfn-cwl-subscriptionfilter-loggroupname
+PrimitiveType: String
 UpdateType: Immutable
 
 ```yaml
@@ -99,9 +118,10 @@ Accept wildcard characters: False
 ```
 
 ### -RoleArn
-Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-logs-subscriptionfilter.html#cfn-cwl-subscriptionfilter-rolearn    
-PrimitiveType: String    
-Required: False    
+The ARN of an IAM role that grants CloudWatch Logs permissions to deliver ingested log events to the destination stream.
+
+Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-logs-subscriptionfilter.html#cfn-cwl-subscriptionfilter-rolearn
+PrimitiveType: String
 UpdateType: Immutable
 
 ```yaml
@@ -211,15 +231,13 @@ Accept wildcard characters: False
 ```
 
 ### CommonParameters
-This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction, and -WarningVariable.
-For more information, see about_CommonParameters (http://go.microsoft.com/fwlink/?LinkID=113216).
+This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction, and -WarningVariable. For more information, see [about_CommonParameters](http://go.microsoft.com/fwlink/?LinkID=113216).
 
 ## INPUTS
 
 ## OUTPUTS
 
 ### Vaporshell.Resource.Logs.SubscriptionFilter
-
 ## NOTES
 
 ## RELATED LINKS

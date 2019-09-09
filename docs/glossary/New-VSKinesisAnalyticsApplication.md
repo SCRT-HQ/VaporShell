@@ -1,18 +1,9 @@
----
-layout: glossary
-title: New-VSKinesisAnalyticsApplication
-categories: glossary
-label1: Category
-data1: Documentation
-label2: Depth
-data2: Deep
-schema: 2.0.0
----
-
 # New-VSKinesisAnalyticsApplication
 
 ## SYNOPSIS
-Adds an AWS::KinesisAnalytics::Application resource to the template
+Adds an AWS::KinesisAnalytics::Application resource to the template.
+The AWS::KinesisAnalytics::Application resource creates an Amazon Kinesis Data Analytics application.
+For more information, see the Amazon Kinesis Data Analytics Developer Guide: /kinesisanalytics/latest/dev/what-is.html.
 
 ## SYNTAX
 
@@ -24,7 +15,18 @@ New-VSKinesisAnalyticsApplication [-LogicalId] <String> [-ApplicationName <Objec
 ```
 
 ## DESCRIPTION
-Adds an AWS::KinesisAnalytics::Application resource to the template
+Adds an AWS::KinesisAnalytics::Application resource to the template.
+The AWS::KinesisAnalytics::Application resource creates an Amazon Kinesis Data Analytics application.
+For more information, see the Amazon Kinesis Data Analytics Developer Guide: /kinesisanalytics/latest/dev/what-is.html.
+
+## EXAMPLES
+
+### Example 1
+```powershell
+PS C:\> {{ Add example code here }}
+```
+
+{{ Add example description here }}
 
 ## PARAMETERS
 
@@ -46,9 +48,10 @@ Accept wildcard characters: False
 ```
 
 ### -ApplicationName
-Required: False    
-Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-kinesisanalytics-application.html#cfn-kinesisanalytics-application-applicationname    
-PrimitiveType: String    
+Name of your Amazon Kinesis Analytics application for example, sample-app.
+
+Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-kinesisanalytics-application.html#cfn-kinesisanalytics-application-applicationname
+PrimitiveType: String
 UpdateType: Immutable
 
 ```yaml
@@ -64,10 +67,18 @@ Accept wildcard characters: False
 ```
 
 ### -Inputs
-Type: List    
-Required: True    
-Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-kinesisanalytics-application.html#cfn-kinesisanalytics-application-inputs    
-ItemType: Input    
+Use this parameter to configure the application input.
+You can configure your application to receive input from a single streaming source.
+In this configuration, you map this streaming source to an in-application stream that is created.
+Your application code can then query the in-application stream like a table you can think of it as a constantly updating table.
+For the streaming source, you provide its Amazon Resource Name ARN and format of data on the stream for example, JSON, CSV, etc..
+You also must provide an IAM role that Amazon Kinesis Analytics can assume to read this stream on your behalf.
+To create the in-application stream, you need to specify a schema to transform your data into a schematized version used in SQL.
+In the schema, you provide the necessary mapping of the data elements in the streaming source to record columns in the in-app stream.
+
+Type: List
+Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-kinesisanalytics-application.html#cfn-kinesisanalytics-application-inputs
+ItemType: Input
 UpdateType: Mutable
 
 ```yaml
@@ -83,9 +94,10 @@ Accept wildcard characters: False
 ```
 
 ### -ApplicationDescription
-Required: False    
-Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-kinesisanalytics-application.html#cfn-kinesisanalytics-application-applicationdescription    
-PrimitiveType: String    
+Summary description of the application.
+
+Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-kinesisanalytics-application.html#cfn-kinesisanalytics-application-applicationdescription
+PrimitiveType: String
 UpdateType: Mutable
 
 ```yaml
@@ -101,9 +113,16 @@ Accept wildcard characters: False
 ```
 
 ### -ApplicationCode
-Required: False    
-Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-kinesisanalytics-application.html#cfn-kinesisanalytics-application-applicationcode    
-PrimitiveType: String    
+One or more SQL statements that read input data, transform it, and generate output.
+For example, you can write a SQL statement that reads data from one in-application stream, generates a running average of the number of advertisement clicks by vendor, and insert resulting rows in another in-application stream using pumps.
+For more information about the typical pattern, see Application Code: https://docs.aws.amazon.com/kinesisanalytics/latest/dev/how-it-works-app-code.html.
+You can provide such series of SQL statements, where output of one statement can be used as the input for the next statement.
+You store intermediate results by creating in-application streams and pumps.
+Note that the application code must create the streams with names specified in the Outputs.
+For example, if your Outputs defines output streams named ExampleOutputStream1 and ExampleOutputStream2, then your application code must create these streams.
+
+Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-kinesisanalytics-application.html#cfn-kinesisanalytics-application-applicationcode
+PrimitiveType: String
 UpdateType: Mutable
 
 ```yaml
@@ -213,15 +232,13 @@ Accept wildcard characters: False
 ```
 
 ### CommonParameters
-This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction, and -WarningVariable.
-For more information, see about_CommonParameters (http://go.microsoft.com/fwlink/?LinkID=113216).
+This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction, and -WarningVariable. For more information, see [about_CommonParameters](http://go.microsoft.com/fwlink/?LinkID=113216).
 
 ## INPUTS
 
 ## OUTPUTS
 
 ### Vaporshell.Resource.KinesisAnalytics.Application
-
 ## NOTES
 
 ## RELATED LINKS

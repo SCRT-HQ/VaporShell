@@ -1,18 +1,9 @@
----
-layout: glossary
-title: New-VSEC2VPNConnectionRoute
-categories: glossary
-label1: Category
-data1: Documentation
-label2: Depth
-data2: Deep
-schema: 2.0.0
----
-
 # New-VSEC2VPNConnectionRoute
 
 ## SYNOPSIS
-Adds an AWS::EC2::VPNConnectionRoute resource to the template
+Adds an AWS::EC2::VPNConnectionRoute resource to the template.
+Specifies a static route for a VPN connection between an existing virtual private gateway and a VPN customer gateway.
+The static route allows traffic to be routed from the virtual private gateway to the VPN customer gateway.
 
 ## SYNTAX
 
@@ -23,7 +14,20 @@ New-VSEC2VPNConnectionRoute [-LogicalId] <String> -DestinationCidrBlock <Object>
 ```
 
 ## DESCRIPTION
-Adds an AWS::EC2::VPNConnectionRoute resource to the template
+Adds an AWS::EC2::VPNConnectionRoute resource to the template.
+Specifies a static route for a VPN connection between an existing virtual private gateway and a VPN customer gateway.
+The static route allows traffic to be routed from the virtual private gateway to the VPN customer gateway.
+
+For more information, see AWS Site-to-Site VPN: https://docs.aws.amazon.com/vpn/latest/s2svpn/VPC_VPN.html in the *AWS Site-to-Site VPN User Guide*.
+
+## EXAMPLES
+
+### Example 1
+```powershell
+PS C:\> {{ Add example code here }}
+```
+
+{{ Add example description here }}
 
 ## PARAMETERS
 
@@ -45,9 +49,10 @@ Accept wildcard characters: False
 ```
 
 ### -DestinationCidrBlock
-Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ec2-vpn-connection-route.html#cfn-ec2-vpnconnectionroute-cidrblock    
-PrimitiveType: String    
-Required: True    
+The CIDR block associated with the local subnet of the customer network.
+
+Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ec2-vpn-connection-route.html#cfn-ec2-vpnconnectionroute-cidrblock
+PrimitiveType: String
 UpdateType: Immutable
 
 ```yaml
@@ -63,9 +68,10 @@ Accept wildcard characters: False
 ```
 
 ### -VpnConnectionId
-Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ec2-vpn-connection-route.html#cfn-ec2-vpnconnectionroute-connectionid    
-PrimitiveType: String    
-Required: True    
+The ID of the VPN connection.
+
+Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ec2-vpn-connection-route.html#cfn-ec2-vpnconnectionroute-connectionid
+PrimitiveType: String
 UpdateType: Immutable
 
 ```yaml
@@ -175,15 +181,13 @@ Accept wildcard characters: False
 ```
 
 ### CommonParameters
-This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction, and -WarningVariable.
-For more information, see about_CommonParameters (http://go.microsoft.com/fwlink/?LinkID=113216).
+This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction, and -WarningVariable. For more information, see [about_CommonParameters](http://go.microsoft.com/fwlink/?LinkID=113216).
 
 ## INPUTS
 
 ## OUTPUTS
 
 ### Vaporshell.Resource.EC2.VPNConnectionRoute
-
 ## NOTES
 
 ## RELATED LINKS

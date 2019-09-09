@@ -1,18 +1,8 @@
----
-layout: glossary
-title: Add-VSECSTaskDefinitionKeyValuePair
-categories: glossary
-label1: Category
-data1: Documentation
-label2: Depth
-data2: Deep
-schema: 2.0.0
----
-
 # Add-VSECSTaskDefinitionKeyValuePair
 
 ## SYNOPSIS
-Adds an AWS::ECS::TaskDefinition.KeyValuePair resource property to the template
+Adds an AWS::ECS::TaskDefinition.KeyValuePair resource property to the template.
+The KeyValuePair property specifies a key-value pair object.
 
 ## SYNTAX
 
@@ -21,14 +11,26 @@ Add-VSECSTaskDefinitionKeyValuePair [[-Name] <Object>] [[-Value] <Object>] [<Com
 ```
 
 ## DESCRIPTION
-Adds an AWS::ECS::TaskDefinition.KeyValuePair resource property to the template
+Adds an AWS::ECS::TaskDefinition.KeyValuePair resource property to the template.
+The KeyValuePair property specifies a key-value pair object.
+
+## EXAMPLES
+
+### Example 1
+```powershell
+PS C:\> {{ Add example code here }}
+```
+
+{{ Add example description here }}
 
 ## PARAMETERS
 
 ### -Name
-Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ecs-taskdefinition-containerdefinitions-environment.html#cfn-ecs-taskdefinition-containerdefinition-environment-name    
-PrimitiveType: String    
-Required: False    
+The name of the key-value pair.
+For environment variables, this is the name of the environment variable.
+
+Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ecs-taskdefinition-containerdefinitions-environment.html#cfn-ecs-taskdefinition-containerdefinition-environment-name
+PrimitiveType: String
 UpdateType: Immutable
 
 ```yaml
@@ -44,9 +46,11 @@ Accept wildcard characters: False
 ```
 
 ### -Value
-Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ecs-taskdefinition-containerdefinitions-environment.html#cfn-ecs-taskdefinition-containerdefinition-environment-value    
-PrimitiveType: String    
-Required: False    
+The value of the key-value pair.
+For environment variables, this is the value of the environment variable.
+
+Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ecs-taskdefinition-containerdefinitions-environment.html#cfn-ecs-taskdefinition-containerdefinition-environment-value
+PrimitiveType: String
 UpdateType: Immutable
 
 ```yaml
@@ -62,15 +66,13 @@ Accept wildcard characters: False
 ```
 
 ### CommonParameters
-This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction, and -WarningVariable.
-For more information, see about_CommonParameters (http://go.microsoft.com/fwlink/?LinkID=113216).
+This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction, and -WarningVariable. For more information, see [about_CommonParameters](http://go.microsoft.com/fwlink/?LinkID=113216).
 
 ## INPUTS
 
 ## OUTPUTS
 
 ### Vaporshell.Resource.ECS.TaskDefinition.KeyValuePair
-
 ## NOTES
 
 ## RELATED LINKS

@@ -1,18 +1,10 @@
----
-layout: glossary
-title: New-VSElasticBeanstalkConfigurationTemplate
-categories: glossary
-label1: Category
-data1: Documentation
-label2: Depth
-data2: Deep
-schema: 2.0.0
----
-
 # New-VSElasticBeanstalkConfigurationTemplate
 
 ## SYNOPSIS
-Adds an AWS::ElasticBeanstalk::ConfigurationTemplate resource to the template
+Adds an AWS::ElasticBeanstalk::ConfigurationTemplate resource to the template.
+The AWS::ElasticBeanstalk::ConfigurationTemplate resource is an AWS Elastic Beanstalk resource type that specifies an Elastic Beanstalk configuration template, associated with a specific Elastic Beanstalk application.
+You define application configuration settings in a configuration template.
+You can then use the configuration template to deploy different versions of the application with the same configuration settings.
 
 ## SYNTAX
 
@@ -25,7 +17,19 @@ New-VSElasticBeanstalkConfigurationTemplate [-LogicalId] <String> -ApplicationNa
 ```
 
 ## DESCRIPTION
-Adds an AWS::ElasticBeanstalk::ConfigurationTemplate resource to the template
+Adds an AWS::ElasticBeanstalk::ConfigurationTemplate resource to the template.
+The AWS::ElasticBeanstalk::ConfigurationTemplate resource is an AWS Elastic Beanstalk resource type that specifies an Elastic Beanstalk configuration template, associated with a specific Elastic Beanstalk application.
+You define application configuration settings in a configuration template.
+You can then use the configuration template to deploy different versions of the application with the same configuration settings.
+
+## EXAMPLES
+
+### Example 1
+```powershell
+PS C:\> {{ Add example code here }}
+```
+
+{{ Add example description here }}
 
 ## PARAMETERS
 
@@ -47,9 +51,10 @@ Accept wildcard characters: False
 ```
 
 ### -ApplicationName
-Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-elasticbeanstalk-configurationtemplate.html#cfn-elasticbeanstalk-configurationtemplate-applicationname    
-PrimitiveType: String    
-Required: True    
+The name of the Elastic Beanstalk application to associate with this configuration template.
+
+Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-elasticbeanstalk-configurationtemplate.html#cfn-elasticbeanstalk-configurationtemplate-applicationname
+PrimitiveType: String
 UpdateType: Immutable
 
 ```yaml
@@ -65,9 +70,10 @@ Accept wildcard characters: False
 ```
 
 ### -Description
-Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-elasticbeanstalk-configurationtemplate.html#cfn-elasticbeanstalk-configurationtemplate-description    
-PrimitiveType: String    
-Required: False    
+An optional description for this configuration.
+
+Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-elasticbeanstalk-configurationtemplate.html#cfn-elasticbeanstalk-configurationtemplate-description
+PrimitiveType: String
 UpdateType: Mutable
 
 ```yaml
@@ -83,9 +89,11 @@ Accept wildcard characters: False
 ```
 
 ### -EnvironmentId
-Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-elasticbeanstalk-configurationtemplate.html#cfn-elasticbeanstalk-configurationtemplate-environmentid    
-PrimitiveType: String    
-Required: False    
+The ID of an environment whose settings you want to use to create the configuration template.
+You must specify EnvironmentId if you don't specify PlatformArn, SolutionStackName, or SourceConfiguration.
+
+Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-elasticbeanstalk-configurationtemplate.html#cfn-elasticbeanstalk-configurationtemplate-environmentid
+PrimitiveType: String
 UpdateType: Immutable
 
 ```yaml
@@ -101,11 +109,14 @@ Accept wildcard characters: False
 ```
 
 ### -OptionSettings
-Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-elasticbeanstalk-configurationtemplate.html#cfn-elasticbeanstalk-configurationtemplate-optionsettings    
-DuplicatesAllowed: True    
-ItemType: ConfigurationOptionSetting    
-Required: False    
-Type: List    
+Option values for the Elastic Beanstalk configuration, such as the instance type.
+If specified, these values override the values obtained from the solution stack or the source configuration template.
+For a complete list of Elastic Beanstalk configuration options, see Option Values: https://docs.aws.amazon.com/elasticbeanstalk/latest/dg/command-options.html in the *AWS Elastic Beanstalk Developer Guide*.
+
+Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-elasticbeanstalk-configurationtemplate.html#cfn-elasticbeanstalk-configurationtemplate-optionsettings
+DuplicatesAllowed: True
+ItemType: ConfigurationOptionSetting
+Type: List
 UpdateType: Mutable
 
 ```yaml
@@ -121,9 +132,12 @@ Accept wildcard characters: False
 ```
 
 ### -PlatformArn
-Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-elasticbeanstalk-configurationtemplate.html#cfn-elasticbeanstalk-configurationtemplate-platformarn    
-PrimitiveType: String    
-Required: False    
+The Amazon Resource Name ARN of the custom platform.
+For more information, see  Custom Platforms: https://docs.aws.amazon.com/elasticbeanstalk/latest/dg/custom-platforms.html in the *AWS Elastic Beanstalk Developer Guide*.
+If you specify PlatformArn, then don't specify SolutionStackName.
+
+Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-elasticbeanstalk-configurationtemplate.html#cfn-elasticbeanstalk-configurationtemplate-platformarn
+PrimitiveType: String
 UpdateType: Immutable
 
 ```yaml
@@ -139,9 +153,16 @@ Accept wildcard characters: False
 ```
 
 ### -SolutionStackName
-Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-elasticbeanstalk-configurationtemplate.html#cfn-elasticbeanstalk-configurationtemplate-solutionstackname    
-PrimitiveType: String    
-Required: False    
+The name of an Elastic Beanstalk solution stack platform version that this configuration uses.
+For example, 64bit Amazon Linux 2013.09 running Tomcat 7 Java 7.
+A solution stack specifies the operating system, runtime, and application server for a configuration template.
+It also determines the set of configuration options as well as the possible and default values.
+For more information, see Supported Platforms: https://docs.aws.amazon.com/elasticbeanstalk/latest/dg/concepts.platforms.html in the *AWS Elastic Beanstalk Developer Guide*.
+You must specify SolutionStackName if you don't specify PlatformArn, EnvironmentId, or SourceConfiguration.
+Use the  ListAvailableSolutionStacks : https://docs.aws.amazon.com/elasticbeanstalk/latest/api/API_ListAvailableSolutionStacks.html API to obtain a list of available solution stacks.
+
+Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-elasticbeanstalk-configurationtemplate.html#cfn-elasticbeanstalk-configurationtemplate-solutionstackname
+PrimitiveType: String
 UpdateType: Immutable
 
 ```yaml
@@ -157,9 +178,14 @@ Accept wildcard characters: False
 ```
 
 ### -SourceConfiguration
-Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-elasticbeanstalk-configurationtemplate.html#cfn-elasticbeanstalk-configurationtemplate-sourceconfiguration    
-Required: False    
-Type: SourceConfiguration    
+An Elastic Beanstalk configuration template to base this one on.
+If specified, Elastic Beanstalk uses the configuration values from the specified configuration template to create a new configuration.
+Values specified in OptionSettings override any values obtained from the SourceConfiguration.
+You must specify SourceConfiguration if you don't specify PlatformArn, EnvironmentId, or SolutionStackName.
+Constraint: If both solution stack name and source configuration are specified, the solution stack of the source configuration template must match the specified solution stack name.
+
+Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-elasticbeanstalk-configurationtemplate.html#cfn-elasticbeanstalk-configurationtemplate-sourceconfiguration
+Type: SourceConfiguration
 UpdateType: Immutable
 
 ```yaml
@@ -269,15 +295,13 @@ Accept wildcard characters: False
 ```
 
 ### CommonParameters
-This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction, and -WarningVariable.
-For more information, see about_CommonParameters (http://go.microsoft.com/fwlink/?LinkID=113216).
+This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction, and -WarningVariable. For more information, see [about_CommonParameters](http://go.microsoft.com/fwlink/?LinkID=113216).
 
 ## INPUTS
 
 ## OUTPUTS
 
 ### Vaporshell.Resource.ElasticBeanstalk.ConfigurationTemplate
-
 ## NOTES
 
 ## RELATED LINKS

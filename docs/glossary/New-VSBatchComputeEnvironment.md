@@ -1,18 +1,9 @@
----
-layout: glossary
-title: New-VSBatchComputeEnvironment
-categories: glossary
-label1: Category
-data1: Documentation
-label2: Depth
-data2: Deep
-schema: 2.0.0
----
-
 # New-VSBatchComputeEnvironment
 
 ## SYNOPSIS
-Adds an AWS::Batch::ComputeEnvironment resource to the template
+Adds an AWS::Batch::ComputeEnvironment resource to the template.
+The AWS::Batch::ComputeEnvironment resource defines your AWS Batch compute environment.
+For more information, see Compute Environments: https://docs.aws.amazon.com/batch/latest/userguide/compute_environments.html in the *AWS Batch User Guide*.
 
 ## SYNTAX
 
@@ -24,7 +15,18 @@ New-VSBatchComputeEnvironment [-LogicalId] <String> -Type <Object> -ServiceRole 
 ```
 
 ## DESCRIPTION
-Adds an AWS::Batch::ComputeEnvironment resource to the template
+Adds an AWS::Batch::ComputeEnvironment resource to the template.
+The AWS::Batch::ComputeEnvironment resource defines your AWS Batch compute environment.
+For more information, see Compute Environments: https://docs.aws.amazon.com/batch/latest/userguide/compute_environments.html in the *AWS Batch User Guide*.
+
+## EXAMPLES
+
+### Example 1
+```powershell
+PS C:\> {{ Add example code here }}
+```
+
+{{ Add example description here }}
 
 ## PARAMETERS
 
@@ -46,9 +48,11 @@ Accept wildcard characters: False
 ```
 
 ### -Type
-Required: True    
-Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-batch-computeenvironment.html#cfn-batch-computeenvironment-type    
-PrimitiveType: String    
+The type of the compute environment.
+For more information, see Compute Environments: https://docs.aws.amazon.com/batch/latest/userguide/compute_environments.html in the *AWS Batch User Guide*.
+
+Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-batch-computeenvironment.html#cfn-batch-computeenvironment-type
+PrimitiveType: String
 UpdateType: Immutable
 
 ```yaml
@@ -64,9 +68,14 @@ Accept wildcard characters: False
 ```
 
 ### -ServiceRole
-Required: True    
-Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-batch-computeenvironment.html#cfn-batch-computeenvironment-servicerole    
-PrimitiveType: String    
+The full Amazon Resource Name ARN of the IAM role that allows AWS Batch to make calls to other AWS services on your behalf.
+If your specified role has a path other than /, then you must either specify the full role ARN this is recommended or prefix the role name with the path.
+Depending on how you created your AWS Batch service role, its ARN may contain the service-role path prefix.
+When you only specify the name of the service role, AWS Batch assumes that your ARN does not use the service-role path prefix.
+Because of this, we recommend that you specify the full ARN of your service role when you create compute environments.
+
+Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-batch-computeenvironment.html#cfn-batch-computeenvironment-servicerole
+PrimitiveType: String
 UpdateType: Mutable
 
 ```yaml
@@ -82,9 +91,11 @@ Accept wildcard characters: False
 ```
 
 ### -ComputeEnvironmentName
-Required: False    
-Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-batch-computeenvironment.html#cfn-batch-computeenvironment-computeenvironmentname    
-PrimitiveType: String    
+The name for your compute environment.
+Up to 128 letters uppercase and lowercase, numbers, hyphens, and underscores are allowed.
+
+Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-batch-computeenvironment.html#cfn-batch-computeenvironment-computeenvironmentname
+PrimitiveType: String
 UpdateType: Immutable
 
 ```yaml
@@ -100,9 +111,12 @@ Accept wildcard characters: False
 ```
 
 ### -ComputeResources
-Type: ComputeResources    
-Required: False    
-Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-batch-computeenvironment.html#cfn-batch-computeenvironment-computeresources    
+The ComputeResources property type specifies details of the compute resources managed by the compute environment.
+This parameter is required for managed compute environments.
+For more information, see Compute Environments: https://docs.aws.amazon.com/batch/latest/userguide/compute_environments.html in the *AWS Batch User Guide*.
+
+Type: ComputeResources
+Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-batch-computeenvironment.html#cfn-batch-computeenvironment-computeresources
 UpdateType: Mutable
 
 ```yaml
@@ -118,9 +132,11 @@ Accept wildcard characters: False
 ```
 
 ### -State
-Required: False    
-Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-batch-computeenvironment.html#cfn-batch-computeenvironment-state    
-PrimitiveType: String    
+The state of the compute environment.
+If the state is ENABLED, then the compute environment accepts jobs from a queue and can scale out automatically based on queues.
+
+Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-batch-computeenvironment.html#cfn-batch-computeenvironment-state
+PrimitiveType: String
 UpdateType: Mutable
 
 ```yaml
@@ -230,15 +246,13 @@ Accept wildcard characters: False
 ```
 
 ### CommonParameters
-This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction, and -WarningVariable.
-For more information, see about_CommonParameters (http://go.microsoft.com/fwlink/?LinkID=113216).
+This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction, and -WarningVariable. For more information, see [about_CommonParameters](http://go.microsoft.com/fwlink/?LinkID=113216).
 
 ## INPUTS
 
 ## OUTPUTS
 
 ### Vaporshell.Resource.Batch.ComputeEnvironment
-
 ## NOTES
 
 ## RELATED LINKS

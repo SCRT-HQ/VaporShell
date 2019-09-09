@@ -1,18 +1,10 @@
----
-layout: glossary
-title: Add-VSEMRClusterAutoScalingPolicy
-categories: glossary
-label1: Category
-data1: Documentation
-label2: Depth
-data2: Deep
-schema: 2.0.0
----
-
 # Add-VSEMRClusterAutoScalingPolicy
 
 ## SYNOPSIS
-Adds an AWS::EMR::Cluster.AutoScalingPolicy resource property to the template
+Adds an AWS::EMR::Cluster.AutoScalingPolicy resource property to the template.
+AutoScalingPolicy is a subproperty of InstanceGroupConfig.
+AutoScalingPolicy defines how an instance group dynamically adds and terminates EC2 instances in response to the value of a CloudWatch metric.
+For more information, see Using Automatic Scaling in Amazon EMR: https://docs.aws.amazon.com/emr/latest/ManagementGuide/emr-automatic-scaling.html in the *Amazon EMR Management Guide*.
 
 ## SYNTAX
 
@@ -21,14 +13,28 @@ Add-VSEMRClusterAutoScalingPolicy [-Constraints] <Object> [-Rules] <Object> [<Co
 ```
 
 ## DESCRIPTION
-Adds an AWS::EMR::Cluster.AutoScalingPolicy resource property to the template
+Adds an AWS::EMR::Cluster.AutoScalingPolicy resource property to the template.
+AutoScalingPolicy is a subproperty of InstanceGroupConfig.
+AutoScalingPolicy defines how an instance group dynamically adds and terminates EC2 instances in response to the value of a CloudWatch metric.
+For more information, see Using Automatic Scaling in Amazon EMR: https://docs.aws.amazon.com/emr/latest/ManagementGuide/emr-automatic-scaling.html in the *Amazon EMR Management Guide*.
+
+## EXAMPLES
+
+### Example 1
+```powershell
+PS C:\> {{ Add example code here }}
+```
+
+{{ Add example description here }}
 
 ## PARAMETERS
 
 ### -Constraints
-Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-elasticmapreduce-cluster-autoscalingpolicy.html#cfn-elasticmapreduce-cluster-autoscalingpolicy-constraints    
-Required: True    
-Type: ScalingConstraints    
+The upper and lower EC2 instance limits for an automatic scaling policy.
+Automatic scaling activity will not cause an instance group to grow above or below these limits.
+
+Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-elasticmapreduce-cluster-autoscalingpolicy.html#cfn-elasticmapreduce-cluster-autoscalingpolicy-constraints
+Type: ScalingConstraints
 UpdateType: Mutable
 
 ```yaml
@@ -44,11 +50,12 @@ Accept wildcard characters: False
 ```
 
 ### -Rules
-Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-elasticmapreduce-cluster-autoscalingpolicy.html#cfn-elasticmapreduce-cluster-autoscalingpolicy-rules    
-DuplicatesAllowed: False    
-ItemType: ScalingRule    
-Required: True    
-Type: List    
+The scale-in and scale-out rules that comprise the automatic scaling policy.
+
+Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-elasticmapreduce-cluster-autoscalingpolicy.html#cfn-elasticmapreduce-cluster-autoscalingpolicy-rules
+DuplicatesAllowed: False
+ItemType: ScalingRule
+Type: List
 UpdateType: Mutable
 
 ```yaml
@@ -64,15 +71,13 @@ Accept wildcard characters: False
 ```
 
 ### CommonParameters
-This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction, and -WarningVariable.
-For more information, see about_CommonParameters (http://go.microsoft.com/fwlink/?LinkID=113216).
+This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction, and -WarningVariable. For more information, see [about_CommonParameters](http://go.microsoft.com/fwlink/?LinkID=113216).
 
 ## INPUTS
 
 ## OUTPUTS
 
 ### Vaporshell.Resource.EMR.Cluster.AutoScalingPolicy
-
 ## NOTES
 
 ## RELATED LINKS

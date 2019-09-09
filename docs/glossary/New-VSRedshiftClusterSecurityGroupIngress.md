@@ -1,18 +1,10 @@
----
-layout: glossary
-title: New-VSRedshiftClusterSecurityGroupIngress
-categories: glossary
-label1: Category
-data1: Documentation
-label2: Depth
-data2: Deep
-schema: 2.0.0
----
-
 # New-VSRedshiftClusterSecurityGroupIngress
 
 ## SYNOPSIS
-Adds an AWS::Redshift::ClusterSecurityGroupIngress resource to the template
+Adds an AWS::Redshift::ClusterSecurityGroupIngress resource to the template.
+Adds an inbound (ingress rule to an Amazon Redshift security group.
+Depending on whether the application accessing your cluster is running on the Internet or an Amazon EC2 instance, you can authorize inbound access to either a Classless Interdomain Routing (CIDR/Internet Protocol (IP range or to an Amazon EC2 security group.
+You can add as many as 20 ingress rules to an Amazon Redshift security group.
 
 ## SYNTAX
 
@@ -24,7 +16,28 @@ New-VSRedshiftClusterSecurityGroupIngress [-LogicalId] <String> [-CIDRIP <Object
 ```
 
 ## DESCRIPTION
-Adds an AWS::Redshift::ClusterSecurityGroupIngress resource to the template
+Adds an AWS::Redshift::ClusterSecurityGroupIngress resource to the template.
+Adds an inbound (ingress rule to an Amazon Redshift security group.
+Depending on whether the application accessing your cluster is running on the Internet or an Amazon EC2 instance, you can authorize inbound access to either a Classless Interdomain Routing (CIDR/Internet Protocol (IP range or to an Amazon EC2 security group.
+You can add as many as 20 ingress rules to an Amazon Redshift security group.
+
+If you authorize access to an Amazon EC2 security group, specify *EC2SecurityGroupName* and *EC2SecurityGroupOwnerId*.
+The Amazon EC2 security group and Amazon Redshift cluster must be in the same AWS Region.
+
+If you authorize access to a CIDR/IP address range, specify *CIDRIP*.
+For an overview of CIDR blocks, see the Wikipedia article on Classless Inter-Domain Routing: http://en.wikipedia.org/wiki/Classless_Inter-Domain_Routing.
+
+You must also associate the security group with a cluster so that clients running on these IP addresses or the EC2 instance are authorized to connect to the cluster.
+For information about managing security groups, go to Working with Security Groups: https://docs.aws.amazon.com/redshift/latest/mgmt/working-with-security-groups.html in the *Amazon Redshift Cluster Management Guide*.
+
+## EXAMPLES
+
+### Example 1
+```powershell
+PS C:\> {{ Add example code here }}
+```
+
+{{ Add example description here }}
 
 ## PARAMETERS
 
@@ -46,9 +59,10 @@ Accept wildcard characters: False
 ```
 
 ### -CIDRIP
-Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-redshift-clustersecuritygroupingress.html#cfn-redshift-clustersecuritygroupingress-cidrip    
-PrimitiveType: String    
-Required: False    
+The IP range to be added the Amazon Redshift security group.
+
+Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-redshift-clustersecuritygroupingress.html#cfn-redshift-clustersecuritygroupingress-cidrip
+PrimitiveType: String
 UpdateType: Immutable
 
 ```yaml
@@ -64,9 +78,10 @@ Accept wildcard characters: False
 ```
 
 ### -ClusterSecurityGroupName
-Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-redshift-clustersecuritygroupingress.html#cfn-redshift-clustersecuritygroupingress-clustersecuritygroupname    
-PrimitiveType: String    
-Required: True    
+The name of the security group to which the ingress rule is added.
+
+Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-redshift-clustersecuritygroupingress.html#cfn-redshift-clustersecuritygroupingress-clustersecuritygroupname
+PrimitiveType: String
 UpdateType: Immutable
 
 ```yaml
@@ -82,9 +97,10 @@ Accept wildcard characters: False
 ```
 
 ### -EC2SecurityGroupName
-Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-redshift-clustersecuritygroupingress.html#cfn-redshift-clustersecuritygroupingress-ec2securitygroupname    
-PrimitiveType: String    
-Required: False    
+The EC2 security group to be added the Amazon Redshift security group.
+
+Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-redshift-clustersecuritygroupingress.html#cfn-redshift-clustersecuritygroupingress-ec2securitygroupname
+PrimitiveType: String
 UpdateType: Immutable
 
 ```yaml
@@ -100,9 +116,14 @@ Accept wildcard characters: False
 ```
 
 ### -EC2SecurityGroupOwnerId
-Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-redshift-clustersecuritygroupingress.html#cfn-redshift-clustersecuritygroupingress-ec2securitygroupownerid    
-PrimitiveType: String    
-Required: False    
+The AWS account number of the owner of the security group specified by the *EC2SecurityGroupName* parameter.
+The AWS Access Key ID is not an acceptable value.
+Example: 111122223333
+Conditional.
+If you specify the EC2SecurityGroupName property, you must specify this property.
+
+Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-redshift-clustersecuritygroupingress.html#cfn-redshift-clustersecuritygroupingress-ec2securitygroupownerid
+PrimitiveType: String
 UpdateType: Immutable
 
 ```yaml
@@ -212,15 +233,13 @@ Accept wildcard characters: False
 ```
 
 ### CommonParameters
-This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction, and -WarningVariable.
-For more information, see about_CommonParameters (http://go.microsoft.com/fwlink/?LinkID=113216).
+This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction, and -WarningVariable. For more information, see [about_CommonParameters](http://go.microsoft.com/fwlink/?LinkID=113216).
 
 ## INPUTS
 
 ## OUTPUTS
 
 ### Vaporshell.Resource.Redshift.ClusterSecurityGroupIngress
-
 ## NOTES
 
 ## RELATED LINKS

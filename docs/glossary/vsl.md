@@ -1,14 +1,3 @@
----
-layout: glossary
-title: vsl
-categories: glossary
-label1: Category
-data1: Documentation
-label2: Depth
-data2: Deep
-schema: 2.0.0
----
-
 # vsl
 
 ## SYNOPSIS
@@ -27,6 +16,24 @@ vsl [-action] <Object> [-help] [[-parameters] <Object>] [<CommonParameters>]
 ## DESCRIPTION
 CLI style superset of VaporShell focused on packaging and deployment of CloudFormation stacks.
 Allows you to build stacks with detailed transforms like SAM templates containing local resources with one easy command.
+
+## EXAMPLES
+
+### EXAMPLE 1
+```
+# Packages and deploys a SAM template. This includes zipping up the CodeURI folder, uploading to S3, adjusting the template with the S3 object location for CodeURI, creating the Change Set, then executing once the Change Set becomes available.
+```
+
+vsl vaporize --tf ".\Helpers\SAM\schedule\template.yaml" --sn testSAMdeployment --s3 scrthq-package --pn scrthq --capabilities iam --v --f
+
+### EXAMPLE 2
+```
+# Gets detailed help for the vaporize action
+```
+
+vsl vaporize --help
+# OR
+vsl vaporize -help
 
 ## PARAMETERS
 
@@ -78,8 +85,7 @@ Accept wildcard characters: False
 ```
 
 ### CommonParameters
-This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction, and -WarningVariable.
-For more information, see about_CommonParameters (http://go.microsoft.com/fwlink/?LinkID=113216).
+This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction, and -WarningVariable. For more information, see [about_CommonParameters](http://go.microsoft.com/fwlink/?LinkID=113216).
 
 ## INPUTS
 

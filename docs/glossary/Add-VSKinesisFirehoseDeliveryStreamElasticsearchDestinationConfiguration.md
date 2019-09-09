@@ -1,18 +1,8 @@
----
-layout: glossary
-title: Add-VSKinesisFirehoseDeliveryStreamElasticsearchDestinationConfiguration
-categories: glossary
-label1: Category
-data1: Documentation
-label2: Depth
-data2: Deep
-schema: 2.0.0
----
-
 # Add-VSKinesisFirehoseDeliveryStreamElasticsearchDestinationConfiguration
 
 ## SYNOPSIS
-Adds an AWS::KinesisFirehose::DeliveryStream.ElasticsearchDestinationConfiguration resource property to the template
+Adds an AWS::KinesisFirehose::DeliveryStream.ElasticsearchDestinationConfiguration resource property to the template.
+The ElasticsearchDestinationConfiguration property type specifies an Amazon Elasticsearch Service (Amazon ES domain that Amazon Kinesis Data Firehose (Kinesis Data Firehose delivers data to.
 
 ## SYNTAX
 
@@ -25,14 +15,25 @@ Add-VSKinesisFirehoseDeliveryStreamElasticsearchDestinationConfiguration [-Buffe
 ```
 
 ## DESCRIPTION
-Adds an AWS::KinesisFirehose::DeliveryStream.ElasticsearchDestinationConfiguration resource property to the template
+Adds an AWS::KinesisFirehose::DeliveryStream.ElasticsearchDestinationConfiguration resource property to the template.
+The ElasticsearchDestinationConfiguration property type specifies an Amazon Elasticsearch Service (Amazon ES domain that Amazon Kinesis Data Firehose (Kinesis Data Firehose delivers data to.
+
+## EXAMPLES
+
+### Example 1
+```powershell
+PS C:\> {{ Add example code here }}
+```
+
+{{ Add example description here }}
 
 ## PARAMETERS
 
 ### -BufferingHints
-Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-kinesisfirehose-deliverystream-elasticsearchdestinationconfiguration.html#cfn-kinesisfirehose-deliverystream-elasticsearchdestinationconfiguration-bufferinghints    
-Required: True    
-Type: ElasticsearchBufferingHints    
+Configures how Kinesis Data Firehose buffers incoming data while delivering it to the Amazon ES domain.
+
+Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-kinesisfirehose-deliverystream-elasticsearchdestinationconfiguration.html#cfn-kinesisfirehose-deliverystream-elasticsearchdestinationconfiguration-bufferinghints
+Type: ElasticsearchBufferingHints
 UpdateType: Mutable
 
 ```yaml
@@ -48,9 +49,10 @@ Accept wildcard characters: False
 ```
 
 ### -CloudWatchLoggingOptions
-Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-kinesisfirehose-deliverystream-elasticsearchdestinationconfiguration.html#cfn-kinesisfirehose-deliverystream-elasticsearchdestinationconfiguration-cloudwatchloggingoptions    
-Required: False    
-Type: CloudWatchLoggingOptions    
+The Amazon CloudWatch Logs logging options for the delivery stream.
+
+Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-kinesisfirehose-deliverystream-elasticsearchdestinationconfiguration.html#cfn-kinesisfirehose-deliverystream-elasticsearchdestinationconfiguration-cloudwatchloggingoptions
+Type: CloudWatchLoggingOptions
 UpdateType: Mutable
 
 ```yaml
@@ -66,9 +68,10 @@ Accept wildcard characters: False
 ```
 
 ### -DomainARN
-Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-kinesisfirehose-deliverystream-elasticsearchdestinationconfiguration.html#cfn-kinesisfirehose-deliverystream-elasticsearchdestinationconfiguration-domainarn    
-PrimitiveType: String    
-Required: True    
+The Amazon Resource Name ARN of the Amazon ES domain that Kinesis Data Firehose delivers data to.
+
+Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-kinesisfirehose-deliverystream-elasticsearchdestinationconfiguration.html#cfn-kinesisfirehose-deliverystream-elasticsearchdestinationconfiguration-domainarn
+PrimitiveType: String
 UpdateType: Mutable
 
 ```yaml
@@ -84,9 +87,10 @@ Accept wildcard characters: False
 ```
 
 ### -IndexName
-Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-kinesisfirehose-deliverystream-elasticsearchdestinationconfiguration.html#cfn-kinesisfirehose-deliverystream-elasticsearchdestinationconfiguration-indexname    
-PrimitiveType: String    
-Required: True    
+The name of the Elasticsearch index to which Kinesis Data Firehose adds data for indexing.
+
+Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-kinesisfirehose-deliverystream-elasticsearchdestinationconfiguration.html#cfn-kinesisfirehose-deliverystream-elasticsearchdestinationconfiguration-indexname
+PrimitiveType: String
 UpdateType: Mutable
 
 ```yaml
@@ -102,9 +106,12 @@ Accept wildcard characters: False
 ```
 
 ### -IndexRotationPeriod
-Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-kinesisfirehose-deliverystream-elasticsearchdestinationconfiguration.html#cfn-kinesisfirehose-deliverystream-elasticsearchdestinationconfiguration-indexrotationperiod    
-PrimitiveType: String    
-Required: True    
+The frequency of Elasticsearch index rotation.
+If you enable index rotation, Kinesis Data Firehose appends a portion of the UTC arrival timestamp to the specified index name, and rotates the appended timestamp accordingly.
+For more information, see Index Rotation for the Amazon ES Destination: https://docs.aws.amazon.com/firehose/latest/dev/basic-deliver.html#es-index-rotation in the *Amazon Kinesis Data Firehose Developer Guide*.
+
+Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-kinesisfirehose-deliverystream-elasticsearchdestinationconfiguration.html#cfn-kinesisfirehose-deliverystream-elasticsearchdestinationconfiguration-indexrotationperiod
+PrimitiveType: String
 UpdateType: Mutable
 
 ```yaml
@@ -120,9 +127,10 @@ Accept wildcard characters: False
 ```
 
 ### -ProcessingConfiguration
-Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-kinesisfirehose-deliverystream-elasticsearchdestinationconfiguration.html#cfn-kinesisfirehose-deliverystream-elasticsearchdestinationconfiguration-processingconfiguration    
-Required: False    
-Type: ProcessingConfiguration    
+The data processing configuration for the Kinesis Data Firehose delivery stream.
+
+Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-kinesisfirehose-deliverystream-elasticsearchdestinationconfiguration.html#cfn-kinesisfirehose-deliverystream-elasticsearchdestinationconfiguration-processingconfiguration
+Type: ProcessingConfiguration
 UpdateType: Mutable
 
 ```yaml
@@ -138,9 +146,10 @@ Accept wildcard characters: False
 ```
 
 ### -RetryOptions
-Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-kinesisfirehose-deliverystream-elasticsearchdestinationconfiguration.html#cfn-kinesisfirehose-deliverystream-elasticsearchdestinationconfiguration-retryoptions    
-Required: True    
-Type: ElasticsearchRetryOptions    
+The retry behavior when Kinesis Data Firehose is unable to deliver data to Amazon ES.
+
+Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-kinesisfirehose-deliverystream-elasticsearchdestinationconfiguration.html#cfn-kinesisfirehose-deliverystream-elasticsearchdestinationconfiguration-retryoptions
+Type: ElasticsearchRetryOptions
 UpdateType: Mutable
 
 ```yaml
@@ -156,9 +165,11 @@ Accept wildcard characters: False
 ```
 
 ### -RoleARN
-Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-kinesisfirehose-deliverystream-elasticsearchdestinationconfiguration.html#cfn-kinesisfirehose-deliverystream-elasticsearchdestinationconfiguration-rolearn    
-PrimitiveType: String    
-Required: True    
+The Amazon Resource Name ARN of the IAM role to be assumed by Kinesis Data Firehose for calling the Amazon ES Configuration API and for indexing documents.
+For more information, see Grant Kinesis Data Firehose Access to an Amazon S3 Destination: https://docs.aws.amazon.com/firehose/latest/dev/controlling-access.html#using-iam-s3.
+
+Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-kinesisfirehose-deliverystream-elasticsearchdestinationconfiguration.html#cfn-kinesisfirehose-deliverystream-elasticsearchdestinationconfiguration-rolearn
+PrimitiveType: String
 UpdateType: Mutable
 
 ```yaml
@@ -174,9 +185,12 @@ Accept wildcard characters: False
 ```
 
 ### -S3BackupMode
-Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-kinesisfirehose-deliverystream-elasticsearchdestinationconfiguration.html#cfn-kinesisfirehose-deliverystream-elasticsearchdestinationconfiguration-s3backupmode    
-PrimitiveType: String    
-Required: True    
+The condition under which Kinesis Data Firehose delivers data to Amazon Simple Storage Service Amazon S3.
+You can send Amazon S3 all documents all data or only the documents that Kinesis Data Firehose could not deliver to the Amazon ES destination.
+For more information and valid values, see the S3BackupMode content for the ElasticsearchDestinationConfiguration: https://docs.aws.amazon.com/firehose/latest/APIReference/API_ElasticsearchDestinationConfiguration.html data type in the *Amazon Kinesis Data Firehose API Reference*.
+
+Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-kinesisfirehose-deliverystream-elasticsearchdestinationconfiguration.html#cfn-kinesisfirehose-deliverystream-elasticsearchdestinationconfiguration-s3backupmode
+PrimitiveType: String
 UpdateType: Mutable
 
 ```yaml
@@ -192,9 +206,10 @@ Accept wildcard characters: False
 ```
 
 ### -S3Configuration
-Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-kinesisfirehose-deliverystream-elasticsearchdestinationconfiguration.html#cfn-kinesisfirehose-deliverystream-elasticsearchdestinationconfiguration-s3configuration    
-Required: True    
-Type: S3DestinationConfiguration    
+The S3 bucket where Kinesis Data Firehose backs up incoming data.
+
+Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-kinesisfirehose-deliverystream-elasticsearchdestinationconfiguration.html#cfn-kinesisfirehose-deliverystream-elasticsearchdestinationconfiguration-s3configuration
+Type: S3DestinationConfiguration
 UpdateType: Mutable
 
 ```yaml
@@ -210,9 +225,10 @@ Accept wildcard characters: False
 ```
 
 ### -TypeName
-Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-kinesisfirehose-deliverystream-elasticsearchdestinationconfiguration.html#cfn-kinesisfirehose-deliverystream-elasticsearchdestinationconfiguration-typename    
-PrimitiveType: String    
-Required: True    
+The Elasticsearch type name that Amazon ES adds to documents when indexing data.
+
+Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-kinesisfirehose-deliverystream-elasticsearchdestinationconfiguration.html#cfn-kinesisfirehose-deliverystream-elasticsearchdestinationconfiguration-typename
+PrimitiveType: String
 UpdateType: Mutable
 
 ```yaml
@@ -228,15 +244,13 @@ Accept wildcard characters: False
 ```
 
 ### CommonParameters
-This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction, and -WarningVariable.
-For more information, see about_CommonParameters (http://go.microsoft.com/fwlink/?LinkID=113216).
+This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction, and -WarningVariable. For more information, see [about_CommonParameters](http://go.microsoft.com/fwlink/?LinkID=113216).
 
 ## INPUTS
 
 ## OUTPUTS
 
 ### Vaporshell.Resource.KinesisFirehose.DeliveryStream.ElasticsearchDestinationConfiguration
-
 ## NOTES
 
 ## RELATED LINKS

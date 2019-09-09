@@ -1,18 +1,8 @@
----
-layout: glossary
-title: New-VSWAFRegionalWebACLAssociation
-categories: glossary
-label1: Category
-data1: Documentation
-label2: Depth
-data2: Deep
-schema: 2.0.0
----
-
 # New-VSWAFRegionalWebACLAssociation
 
 ## SYNOPSIS
-Adds an AWS::WAFRegional::WebACLAssociation resource to the template
+Adds an AWS::WAFRegional::WebACLAssociation resource to the template.
+The AWS::WAFRegional::WebACLAssociation resource associates an AWS WAF Regional web access control group (ACL with a resource.
 
 ## SYNTAX
 
@@ -23,7 +13,17 @@ New-VSWAFRegionalWebACLAssociation [-LogicalId] <String> -ResourceArn <Object> -
 ```
 
 ## DESCRIPTION
-Adds an AWS::WAFRegional::WebACLAssociation resource to the template
+Adds an AWS::WAFRegional::WebACLAssociation resource to the template.
+The AWS::WAFRegional::WebACLAssociation resource associates an AWS WAF Regional web access control group (ACL with a resource.
+
+## EXAMPLES
+
+### Example 1
+```powershell
+PS C:\> {{ Add example code here }}
+```
+
+{{ Add example description here }}
 
 ## PARAMETERS
 
@@ -45,9 +45,10 @@ Accept wildcard characters: False
 ```
 
 ### -ResourceArn
-Required: True    
-Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-wafregional-webaclassociation.html#cfn-wafregional-webaclassociation-resourcearn    
-PrimitiveType: String    
+The Amazon Resource Name ARN of the resource to protect with the web ACL.
+
+Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-wafregional-webaclassociation.html#cfn-wafregional-webaclassociation-resourcearn
+PrimitiveType: String
 UpdateType: Immutable
 
 ```yaml
@@ -63,9 +64,10 @@ Accept wildcard characters: False
 ```
 
 ### -WebACLId
-Required: True    
-Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-wafregional-webaclassociation.html#cfn-wafregional-webaclassociation-webaclid    
-PrimitiveType: String    
+A unique identifier ID for the web ACL.
+
+Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-wafregional-webaclassociation.html#cfn-wafregional-webaclassociation-webaclid
+PrimitiveType: String
 UpdateType: Immutable
 
 ```yaml
@@ -175,15 +177,13 @@ Accept wildcard characters: False
 ```
 
 ### CommonParameters
-This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction, and -WarningVariable.
-For more information, see about_CommonParameters (http://go.microsoft.com/fwlink/?LinkID=113216).
+This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction, and -WarningVariable. For more information, see [about_CommonParameters](http://go.microsoft.com/fwlink/?LinkID=113216).
 
 ## INPUTS
 
 ## OUTPUTS
 
 ### Vaporshell.Resource.WAFRegional.WebACLAssociation
-
 ## NOTES
 
 ## RELATED LINKS

@@ -1,0 +1,296 @@
+# New-VSIoTEventsDetectorModel
+
+## SYNOPSIS
+Adds an AWS::IoTEvents::DetectorModel resource to the template.
+The AWS::IoTEvents::DetectorModel resource creates a detector model.
+You create a *detector model* (a model of your equipment or process using *states*.
+For each state, you define conditional (Boolean logic that evaluates the incoming inputs to detect significant events.
+When an event is detected, it can change the state or trigger custom-built or predefined actions using other AWS services.
+You can define additional events that trigger actions when entering or exiting a state and, optionally, when a condition is met.
+For more information, see  How to Use AWS IoT Events: https://docs.aws.amazon.com/iotevents/latest/developerguide/how-to-use-iotevents.html in the *AWS IoT Events Developer Guide*.
+
+## SYNTAX
+
+```
+New-VSIoTEventsDetectorModel [-LogicalId] <String> [-DetectorModelDefinition <Object>]
+ [-DetectorModelName <Object>] [-DetectorModelDescription <Object>] [-Key <Object>] [-RoleArn <Object>]
+ [-Tags <Object>] [-DeletionPolicy <String>] [-DependsOn <String[]>] [-Metadata <Object>]
+ [-UpdatePolicy <Object>] [-Condition <Object>] [<CommonParameters>]
+```
+
+## DESCRIPTION
+Adds an AWS::IoTEvents::DetectorModel resource to the template.
+The AWS::IoTEvents::DetectorModel resource creates a detector model.
+You create a *detector model* (a model of your equipment or process using *states*.
+For each state, you define conditional (Boolean logic that evaluates the incoming inputs to detect significant events.
+When an event is detected, it can change the state or trigger custom-built or predefined actions using other AWS services.
+You can define additional events that trigger actions when entering or exiting a state and, optionally, when a condition is met.
+For more information, see  How to Use AWS IoT Events: https://docs.aws.amazon.com/iotevents/latest/developerguide/how-to-use-iotevents.html in the *AWS IoT Events Developer Guide*.
+
+**Note**
+
+When you successfully update a detector model (using the AWS IoT Events console, AWS IoT Events API or CLI commands, or AWS CloudFormation all detector instances created by the model are reset to their initial states.
+(The detector's state, and the values of any variables and timers are reset.
+
+When you successfully update a detector model (using the AWS IoT Events console, AWS IoT Events API or CLI commands, or AWS CloudFormation the version number of the detector model is incremented.
+(A detector model with version number 1 before the update has version number 2 after the update succeeds.
+
+If you attempt to update a detector model using AWS CloudFormation and the update does not succeed, the system may, in some cases, restore the original detector model.
+When this occurs, the detector model's version is incremented twice (for example, from version 1 to version 3 and the detector instances are reset.
+
+Also, be aware that if you attempt to update several detector models at once using AWS CloudFormation, some updates may succeed and others fail.
+In this case, the effects on each detector model's detector instances and version number depend on whether the update succeeded or failed, with the results as stated.
+
+## EXAMPLES
+
+### Example 1
+```powershell
+PS C:\> {{ Add example code here }}
+```
+
+{{ Add example description here }}
+
+## PARAMETERS
+
+### -LogicalId
+The logical ID must be alphanumeric (A-Za-z0-9) and unique within the template.
+Use the logical name to reference the resource in other parts of the template.
+For example, if you want to map an Amazon Elastic Block Store volume to an Amazon EC2 instance, you reference the logical IDs to associate the block stores with the instance.
+
+```yaml
+Type: String
+Parameter Sets: (All)
+Aliases:
+
+Required: True
+Position: 1
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### -DetectorModelDefinition
+Information that defines how a detector operates.
+
+Type: DetectorModelDefinition
+Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-iotevents-detectormodel.html#cfn-iotevents-detectormodel-detectormodeldefinition
+UpdateType: Mutable
+
+```yaml
+Type: Object
+Parameter Sets: (All)
+Aliases:
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### -DetectorModelName
+The name of the detector model.
+
+Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-iotevents-detectormodel.html#cfn-iotevents-detectormodel-detectormodelname
+PrimitiveType: String
+UpdateType: Immutable
+
+```yaml
+Type: Object
+Parameter Sets: (All)
+Aliases:
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### -DetectorModelDescription
+A brief description of the detector model.
+
+Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-iotevents-detectormodel.html#cfn-iotevents-detectormodel-detectormodeldescription
+PrimitiveType: String
+UpdateType: Mutable
+
+```yaml
+Type: Object
+Parameter Sets: (All)
+Aliases:
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### -Key
+The input attribute key used to identify a device or system to create a detector an instance of the detector model and then to route each input received to the appropriate detector instance.
+This parameter uses a JSON-path expression to specify the attribute-value pair in the message payload of each input that is used to identify the device associated with the input.
+
+Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-iotevents-detectormodel.html#cfn-iotevents-detectormodel-key
+PrimitiveType: String
+UpdateType: Immutable
+
+```yaml
+Type: Object
+Parameter Sets: (All)
+Aliases:
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### -RoleArn
+The ARN of the role that grants permission to AWS IoT Events to perform its operations.
+
+Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-iotevents-detectormodel.html#cfn-iotevents-detectormodel-rolearn
+PrimitiveType: String
+UpdateType: Mutable
+
+```yaml
+Type: Object
+Parameter Sets: (All)
+Aliases:
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### -Tags
+An array of key-value pairs to apply to this resource.
+For more information, see Tag: https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-resource-tags.html.
+
+Type: List
+Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-iotevents-detectormodel.html#cfn-iotevents-detectormodel-tags
+ItemType: Tag
+UpdateType: Mutable
+
+```yaml
+Type: Object
+Parameter Sets: (All)
+Aliases:
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### -DeletionPolicy
+With the DeletionPolicy attribute you can preserve or (in some cases) backup a resource when its stack is deleted.
+You specify a DeletionPolicy attribute for each resource that you want to control.
+If a resource has no DeletionPolicy attribute, AWS CloudFormation deletes the resource by default.
+
+To keep a resource when its stack is deleted, specify Retain for that resource.
+You can use retain for any resource.
+For example, you can retain a nested stack, S3 bucket, or EC2 instance so that you can continue to use or modify those resources after you delete their stacks.
+
+You must use one of the following options: "Delete","Retain","Snapshot"
+
+```yaml
+Type: String
+Parameter Sets: (All)
+Aliases:
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### -DependsOn
+With the DependsOn attribute you can specify that the creation of a specific resource follows another.
+When you add a DependsOn attribute to a resource, that resource is created only after the creation of the resource specified in the DependsOn attribute.
+
+This parameter takes a string or list of strings representing Logical IDs of resources that must be created prior to this resource being created.
+
+```yaml
+Type: String[]
+Parameter Sets: (All)
+Aliases:
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### -Metadata
+The Metadata attribute enables you to associate structured data with a resource.
+By adding a Metadata attribute to a resource, you can add data in JSON or YAML to the resource declaration.
+In addition, you can use intrinsic functions (such as GetAtt and Ref), parameters, and pseudo parameters within the Metadata attribute to add those interpreted values.
+
+You must use a PSCustomObject containing key/value pairs here.
+This will be returned when describing the resource using AWS CLI.
+
+```yaml
+Type: Object
+Parameter Sets: (All)
+Aliases:
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### -UpdatePolicy
+Use the UpdatePolicy attribute to specify how AWS CloudFormation handles updates to the AWS::AutoScaling::AutoScalingGroup resource.
+AWS CloudFormation invokes one of three update policies depending on the type of change you make or whether a scheduled action is associated with the Auto Scaling group.
+
+You must use the "Add-UpdatePolicy" function here.
+
+```yaml
+Type: Object
+Parameter Sets: (All)
+Aliases:
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### -Condition
+Logical ID of the condition that this resource needs to be true in order for this resource to be provisioned.
+
+```yaml
+Type: Object
+Parameter Sets: (All)
+Aliases:
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### CommonParameters
+This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction, and -WarningVariable. For more information, see [about_CommonParameters](http://go.microsoft.com/fwlink/?LinkID=113216).
+
+## INPUTS
+
+## OUTPUTS
+
+### Vaporshell.Resource.IoTEvents.DetectorModel
+## NOTES
+
+## RELATED LINKS
+
+[http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-iotevents-detectormodel.html](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-iotevents-detectormodel.html)
+

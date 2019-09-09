@@ -1,31 +1,32 @@
----
-layout: glossary
-title: New-VSElasticsearchDomain
-categories: glossary
-label1: Category
-data1: Documentation
-label2: Depth
-data2: Deep
-schema: 2.0.0
----
-
 # New-VSElasticsearchDomain
 
 ## SYNOPSIS
-Adds an AWS::Elasticsearch::Domain resource to the template
+Adds an AWS::Elasticsearch::Domain resource to the template.
+The AWS::Elasticsearch::Domain resource creates an Amazon Elasticsearch Service (Amazon ES domain that encapsulates the Amazon ES engine instances.
 
 ## SYNTAX
 
 ```
 New-VSElasticsearchDomain [-LogicalId] <String> [-AccessPolicies <Object>] [-AdvancedOptions <Hashtable>]
  [-DomainName <Object>] [-EBSOptions <Object>] [-ElasticsearchClusterConfig <Object>]
- [-ElasticsearchVersion <Object>] [-EncryptionAtRestOptions <Object>] [-SnapshotOptions <Object>]
- [-Tags <Object>] [-VPCOptions <Object>] [-DeletionPolicy <String>] [-DependsOn <String[]>]
- [-Metadata <Object>] [-UpdatePolicy <Object>] [-Condition <Object>] [<CommonParameters>]
+ [-ElasticsearchVersion <Object>] [-EncryptionAtRestOptions <Object>] [-NodeToNodeEncryptionOptions <Object>]
+ [-SnapshotOptions <Object>] [-Tags <Object>] [-VPCOptions <Object>] [-DeletionPolicy <String>]
+ [-DependsOn <String[]>] [-Metadata <Object>] [-UpdatePolicy <Object>] [-Condition <Object>]
+ [<CommonParameters>]
 ```
 
 ## DESCRIPTION
-Adds an AWS::Elasticsearch::Domain resource to the template
+Adds an AWS::Elasticsearch::Domain resource to the template.
+The AWS::Elasticsearch::Domain resource creates an Amazon Elasticsearch Service (Amazon ES domain that encapsulates the Amazon ES engine instances.
+
+## EXAMPLES
+
+### Example 1
+```powershell
+PS C:\> {{ Add example code here }}
+```
+
+{{ Add example description here }}
 
 ## PARAMETERS
 
@@ -47,9 +48,11 @@ Accept wildcard characters: False
 ```
 
 ### -AccessPolicies
-Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-elasticsearch-domain.html#cfn-elasticsearch-domain-accesspolicies    
-PrimitiveType: Json    
-Required: False    
+An AWS Identity and Access Management IAM policy document that specifies who can access the Amazon ES domain and their permissions.
+For more information, see Configuring Access Policies : https://docs.aws.amazon.com/elasticsearch-service/latest/developerguide/es-createupdatedomains.html#es-createdomain-configure-access-policiesin the *Amazon Elasticsearch Service Developer Guid*e.
+
+Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-elasticsearch-domain.html#cfn-elasticsearch-domain-accesspolicies
+PrimitiveType: Json
 UpdateType: Mutable
 
 ```yaml
@@ -65,11 +68,13 @@ Accept wildcard characters: False
 ```
 
 ### -AdvancedOptions
-Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-elasticsearch-domain.html#cfn-elasticsearch-domain-advancedoptions    
-DuplicatesAllowed: False    
-PrimitiveItemType: String    
-Required: False    
-Type: Map    
+Additional options to specify for the Amazon ES domain.
+For more information, see Configuring Advanced Options: https://docs.aws.amazon.com/elasticsearch-service/latest/developerguide/es-createupdatedomains.html#es-createdomain-configure-advanced-options in the *Amazon Elasticsearch Service Developer Guide*.
+
+Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-elasticsearch-domain.html#cfn-elasticsearch-domain-advancedoptions
+DuplicatesAllowed: False
+PrimitiveItemType: String
+Type: Map
 UpdateType: Mutable
 
 ```yaml
@@ -85,9 +90,16 @@ Accept wildcard characters: False
 ```
 
 ### -DomainName
-Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-elasticsearch-domain.html#cfn-elasticsearch-domain-domainname    
-PrimitiveType: String    
-Required: False    
+A name for the Amazon ES domain.
+For valid values, see the DomainName: https://docs.aws.amazon.com/elasticsearch-service/latest/developerguide/es-configuration-api.html#es-configuration-api-datatypes-domainname data type in the *Amazon Elasticsearch Service Developer Guide*.
+If you don't specify a name, AWS CloudFormation generates a unique physical ID and uses that ID for the domain name.
+For more information, see Name Type: https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-name.html.
+If you specify a name, you cannot perform updates that require replacement of this resource.
+You can perform updates that require no or some interruption.
+If you must replace the resource, specify a new name.
+
+Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-elasticsearch-domain.html#cfn-elasticsearch-domain-domainname
+PrimitiveType: String
 UpdateType: Immutable
 
 ```yaml
@@ -103,9 +115,11 @@ Accept wildcard characters: False
 ```
 
 ### -EBSOptions
-Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-elasticsearch-domain.html#cfn-elasticsearch-domain-ebsoptions    
-Required: False    
-Type: EBSOptions    
+The configurations of Amazon Elastic Block Store Amazon EBS volumes that are attached to data nodes in the Amazon ES domain.
+For more information, see Configuring EBS-based Storage: https://docs.aws.amazon.com/elasticsearch-service/latest/developerguide/es-createupdatedomains.html#es-createdomain-configure-ebs in the *Amazon Elasticsearch Service Developer Guide*.
+
+Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-elasticsearch-domain.html#cfn-elasticsearch-domain-ebsoptions
+Type: EBSOptions
 UpdateType: Mutable
 
 ```yaml
@@ -121,9 +135,10 @@ Accept wildcard characters: False
 ```
 
 ### -ElasticsearchClusterConfig
-Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-elasticsearch-domain.html#cfn-elasticsearch-domain-elasticsearchclusterconfig    
-Required: False    
-Type: ElasticsearchClusterConfig    
+ElasticsearchClusterConfig is a property of the AWS::Elasticsearch::Domain resource that configures the cluster of an Amazon Elasticsearch Service Amazon ES domain.
+
+Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-elasticsearch-domain.html#cfn-elasticsearch-domain-elasticsearchclusterconfig
+Type: ElasticsearchClusterConfig
 UpdateType: Mutable
 
 ```yaml
@@ -139,9 +154,12 @@ Accept wildcard characters: False
 ```
 
 ### -ElasticsearchVersion
-Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-elasticsearch-domain.html#cfn-elasticsearch-domain-elasticsearchversion    
-PrimitiveType: String    
-Required: False    
+The version of Elasticsearch to use, such as 2.3.
+If not specified, 1.5 is used as the default.
+For information about the versions that Amazon ES supports, see the Elasticsearch-Version parameter for the CreateElasticsearchDomain: https://docs.aws.amazon.com/elasticsearch-service/latest/developerguide/es-configuration-api.html#es-configuration-api-actions-createelasticsearchdomain action in the *Amazon Elasticsearch Service Developer Guide*.
+
+Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-elasticsearch-domain.html#cfn-elasticsearch-domain-elasticsearchversion
+PrimitiveType: String
 UpdateType: Immutable
 
 ```yaml
@@ -157,9 +175,30 @@ Accept wildcard characters: False
 ```
 
 ### -EncryptionAtRestOptions
-Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-elasticsearch-domain.html#cfn-elasticsearch-domain-encryptionatrestoptions    
-Required: False    
-Type: EncryptionAtRestOptions    
+Whether the domain should encrypt data at rest, and if so, the AWS Key Management Service KMS key to use.
+Can only be used to create a new domain, not update an existing one.
+
+Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-elasticsearch-domain.html#cfn-elasticsearch-domain-encryptionatrestoptions
+Type: EncryptionAtRestOptions
+UpdateType: Immutable
+
+```yaml
+Type: Object
+Parameter Sets: (All)
+Aliases:
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### -NodeToNodeEncryptionOptions
+Specifies whether node-to-node encryption is enabled.
+
+Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-elasticsearch-domain.html#cfn-elasticsearch-domain-nodetonodeencryptionoptions
+Type: NodeToNodeEncryptionOptions
 UpdateType: Immutable
 
 ```yaml
@@ -175,9 +214,10 @@ Accept wildcard characters: False
 ```
 
 ### -SnapshotOptions
-Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-elasticsearch-domain.html#cfn-elasticsearch-domain-snapshotoptions    
-Required: False    
-Type: SnapshotOptions    
+The automated snapshot configuration for the Amazon ES domain indices.
+
+Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-elasticsearch-domain.html#cfn-elasticsearch-domain-snapshotoptions
+Type: SnapshotOptions
 UpdateType: Mutable
 
 ```yaml
@@ -193,11 +233,12 @@ Accept wildcard characters: False
 ```
 
 ### -Tags
-Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-elasticsearch-domain.html#cfn-elasticsearch-domain-tags    
-DuplicatesAllowed: True    
-ItemType: Tag    
-Required: False    
-Type: List    
+An arbitrary set of tags key-value pairs to associate with the Amazon ES domain.
+
+Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-elasticsearch-domain.html#cfn-elasticsearch-domain-tags
+DuplicatesAllowed: True
+ItemType: Tag
+Type: List
 UpdateType: Mutable
 
 ```yaml
@@ -213,9 +254,11 @@ Accept wildcard characters: False
 ```
 
 ### -VPCOptions
-Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-elasticsearch-domain.html#cfn-elasticsearch-domain-vpcoptions    
-Required: False    
-Type: VPCOptions    
+The virtual private cloud VPC configuration for the Amazon ES domain.
+For more information, see VPC Support for Amazon Elasticsearch Service Domains: https://docs.aws.amazon.com/elasticsearch-service/latest/developerguide/es-vpc.html in the *Amazon Elasticsearch Service Developer Guide*.
+
+Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-elasticsearch-domain.html#cfn-elasticsearch-domain-vpcoptions
+Type: VPCOptions
 UpdateType: Mutable
 
 ```yaml
@@ -325,15 +368,13 @@ Accept wildcard characters: False
 ```
 
 ### CommonParameters
-This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction, and -WarningVariable.
-For more information, see about_CommonParameters (http://go.microsoft.com/fwlink/?LinkID=113216).
+This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction, and -WarningVariable. For more information, see [about_CommonParameters](http://go.microsoft.com/fwlink/?LinkID=113216).
 
 ## INPUTS
 
 ## OUTPUTS
 
 ### Vaporshell.Resource.Elasticsearch.Domain
-
 ## NOTES
 
 ## RELATED LINKS

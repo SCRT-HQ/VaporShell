@@ -1,14 +1,3 @@
----
-layout: glossary
-title: Add-ConNot
-categories: glossary
-label1: Category
-data1: Documentation
-label2: Depth
-data2: Deep
-schema: 2.0.0
----
-
 # Add-ConNot
 
 ## SYNOPSIS
@@ -23,6 +12,15 @@ Add-ConNot [-Condition] <Object> [<CommonParameters>]
 ## DESCRIPTION
 Returns true for a condition that evaluates to false or returns false for a condition that evaluates to true.
 Fn::Not acts as a NOT operator.
+
+## EXAMPLES
+
+### EXAMPLE 1
+```
+Add-ConNot -Condition (Add-ConEquals -FirstValue (Add-FnRef -Ref "EnvironmentType") -SecondValue "prod")
+```
+
+When the template is exported, this will convert to: {"Fn::Equals":\["sg-mysggroup",{"Ref":"ASecurityGroup"}\]}
 
 ## PARAMETERS
 
@@ -42,15 +40,13 @@ Accept wildcard characters: False
 ```
 
 ### CommonParameters
-This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction, and -WarningVariable.
-For more information, see about_CommonParameters (http://go.microsoft.com/fwlink/?LinkID=113216).
+This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction, and -WarningVariable. For more information, see [about_CommonParameters](http://go.microsoft.com/fwlink/?LinkID=113216).
 
 ## INPUTS
 
 ## OUTPUTS
 
 ### Vaporshell.Condition.Not
-
 ## NOTES
 You can use the following functions in this condition statement:
     Fn::FindInMap

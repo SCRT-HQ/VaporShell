@@ -1,18 +1,8 @@
----
-layout: glossary
-title: Add-VSAutoScalingScalingPolicyCustomizedMetricSpecification
-categories: glossary
-label1: Category
-data1: Documentation
-label2: Depth
-data2: Deep
-schema: 2.0.0
----
-
 # Add-VSAutoScalingScalingPolicyCustomizedMetricSpecification
 
 ## SYNOPSIS
-Adds an AWS::AutoScaling::ScalingPolicy.CustomizedMetricSpecification resource property to the template
+Adds an AWS::AutoScaling::ScalingPolicy.CustomizedMetricSpecification resource property to the template.
+CustomizedMetricSpecification is a subproperty of TargetTrackingConfiguration: https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-autoscaling-scalingpolicy-targettrackingconfiguration.html that configures a customized metric for a target tracking policy to use with Amazon EC2 Auto Scaling.
 
 ## SYNTAX
 
@@ -22,16 +12,30 @@ Add-VSAutoScalingScalingPolicyCustomizedMetricSpecification [[-Dimensions] <Obje
 ```
 
 ## DESCRIPTION
-Adds an AWS::AutoScaling::ScalingPolicy.CustomizedMetricSpecification resource property to the template
+Adds an AWS::AutoScaling::ScalingPolicy.CustomizedMetricSpecification resource property to the template.
+CustomizedMetricSpecification is a subproperty of TargetTrackingConfiguration: https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-autoscaling-scalingpolicy-targettrackingconfiguration.html that configures a customized metric for a target tracking policy to use with Amazon EC2 Auto Scaling.
+
+For more information, see CustomizedMetricSpecification: https://docs.aws.amazon.com/autoscaling/ec2/APIReference/API_CustomizedMetricSpecification.html in the *Amazon EC2 Auto Scaling API Reference*.
+
+## EXAMPLES
+
+### Example 1
+```powershell
+PS C:\> {{ Add example code here }}
+```
+
+{{ Add example description here }}
 
 ## PARAMETERS
 
 ### -Dimensions
-Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-autoscaling-scalingpolicy-customizedmetricspecification.html#cfn-autoscaling-scalingpolicy-customizedmetricspecification-dimensions    
-DuplicatesAllowed: False    
-ItemType: MetricDimension    
-Required: False    
-Type: List    
+The dimensions of the metric.
+Conditional: If you published your metric with dimensions, you must specify the same dimensions in your scaling policy.
+
+Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-autoscaling-scalingpolicy-customizedmetricspecification.html#cfn-autoscaling-scalingpolicy-customizedmetricspecification-dimensions
+DuplicatesAllowed: False
+ItemType: MetricDimension
+Type: List
 UpdateType: Mutable
 
 ```yaml
@@ -47,9 +51,10 @@ Accept wildcard characters: False
 ```
 
 ### -MetricName
-Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-autoscaling-scalingpolicy-customizedmetricspecification.html#cfn-autoscaling-scalingpolicy-customizedmetricspecification-metricname    
-PrimitiveType: String    
-Required: True    
+The name of the metric.
+
+Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-autoscaling-scalingpolicy-customizedmetricspecification.html#cfn-autoscaling-scalingpolicy-customizedmetricspecification-metricname
+PrimitiveType: String
 UpdateType: Mutable
 
 ```yaml
@@ -65,9 +70,10 @@ Accept wildcard characters: False
 ```
 
 ### -Namespace
-Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-autoscaling-scalingpolicy-customizedmetricspecification.html#cfn-autoscaling-scalingpolicy-customizedmetricspecification-namespace    
-PrimitiveType: String    
-Required: True    
+The namespace of the metric.
+
+Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-autoscaling-scalingpolicy-customizedmetricspecification.html#cfn-autoscaling-scalingpolicy-customizedmetricspecification-namespace
+PrimitiveType: String
 UpdateType: Mutable
 
 ```yaml
@@ -83,9 +89,10 @@ Accept wildcard characters: False
 ```
 
 ### -Statistic
-Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-autoscaling-scalingpolicy-customizedmetricspecification.html#cfn-autoscaling-scalingpolicy-customizedmetricspecification-statistic    
-PrimitiveType: String    
-Required: True    
+The statistic of the metric.
+
+Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-autoscaling-scalingpolicy-customizedmetricspecification.html#cfn-autoscaling-scalingpolicy-customizedmetricspecification-statistic
+PrimitiveType: String
 UpdateType: Mutable
 
 ```yaml
@@ -101,9 +108,10 @@ Accept wildcard characters: False
 ```
 
 ### -Unit
-Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-autoscaling-scalingpolicy-customizedmetricspecification.html#cfn-autoscaling-scalingpolicy-customizedmetricspecification-unit    
-PrimitiveType: String    
-Required: False    
+The unit of the metric.
+
+Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-autoscaling-scalingpolicy-customizedmetricspecification.html#cfn-autoscaling-scalingpolicy-customizedmetricspecification-unit
+PrimitiveType: String
 UpdateType: Mutable
 
 ```yaml
@@ -119,15 +127,13 @@ Accept wildcard characters: False
 ```
 
 ### CommonParameters
-This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction, and -WarningVariable.
-For more information, see about_CommonParameters (http://go.microsoft.com/fwlink/?LinkID=113216).
+This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction, and -WarningVariable. For more information, see [about_CommonParameters](http://go.microsoft.com/fwlink/?LinkID=113216).
 
 ## INPUTS
 
 ## OUTPUTS
 
 ### Vaporshell.Resource.AutoScaling.ScalingPolicy.CustomizedMetricSpecification
-
 ## NOTES
 
 ## RELATED LINKS

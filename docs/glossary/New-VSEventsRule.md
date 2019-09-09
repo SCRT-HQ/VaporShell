@@ -1,18 +1,9 @@
----
-layout: glossary
-title: New-VSEventsRule
-categories: glossary
-label1: Category
-data1: Documentation
-label2: Depth
-data2: Deep
-schema: 2.0.0
----
-
 # New-VSEventsRule
 
 ## SYNOPSIS
-Adds an AWS::Events::Rule resource to the template
+Adds an AWS::Events::Rule resource to the template.
+The AWS::Events::Rule resource creates a rule that matches incoming events and routes them to one or more targets for processing.
+For more information, see What Is Amazon CloudWatch Events?: https://docs.aws.amazon.com/AmazonCloudWatch/latest/events/WhatIsCloudWatchEvents.html.
 
 ## SYNTAX
 
@@ -24,7 +15,27 @@ New-VSEventsRule [-LogicalId] <String> [-Description <Object>] [-EventPattern <O
 ```
 
 ## DESCRIPTION
-Adds an AWS::Events::Rule resource to the template
+Adds an AWS::Events::Rule resource to the template.
+The AWS::Events::Rule resource creates a rule that matches incoming events and routes them to one or more targets for processing.
+For more information, see What Is Amazon CloudWatch Events?: https://docs.aws.amazon.com/AmazonCloudWatch/latest/events/WhatIsCloudWatchEvents.html.
+
+A rule must contain at least an EventPattern or ScheduleExpression.
+Rules with EventPattern are triggered when a matching event is observed.
+Rules with ScheduleExpression self-trigger based on the given schedule.
+A rule can have both an EventPattern and a ScheduleExpression, in which case the rule triggers on matching events as well as on a schedule.
+
+Most services in AWS treat : or / as the same character in Amazon Resource Names (ARNs.
+However, CloudWatch Events uses an exact match in event patterns and rules.
+Be sure to use the correct ARN characters when creating event patterns so that they match the ARN syntax in the event that you want to match.
+
+## EXAMPLES
+
+### Example 1
+```powershell
+PS C:\> {{ Add example code here }}
+```
+
+{{ Add example description here }}
 
 ## PARAMETERS
 
@@ -46,9 +57,10 @@ Accept wildcard characters: False
 ```
 
 ### -Description
-Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-events-rule.html#cfn-events-rule-description    
-PrimitiveType: String    
-Required: False    
+The description of the rule.
+
+Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-events-rule.html#cfn-events-rule-description
+PrimitiveType: String
 UpdateType: Mutable
 
 ```yaml
@@ -64,9 +76,11 @@ Accept wildcard characters: False
 ```
 
 ### -EventPattern
-Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-events-rule.html#cfn-events-rule-eventpattern    
-PrimitiveType: Json    
-Required: False    
+Describes which events CloudWatch Events routes to the specified target.
+For more information, see Event Patterns in CloudWatch Events: https://docs.aws.amazon.com/AmazonCloudWatch/latest/events/CloudWatchEventsandEventPatterns.html in the *Amazon CloudWatch Events User Guide*.
+
+Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-events-rule.html#cfn-events-rule-eventpattern
+PrimitiveType: Json
 UpdateType: Mutable
 
 ```yaml
@@ -82,9 +96,14 @@ Accept wildcard characters: False
 ```
 
 ### -Name
-Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-events-rule.html#cfn-events-rule-name    
-PrimitiveType: String    
-Required: False    
+The name of the rule.
+If you don't specify a name, AWS CloudFormation generates a unique physical ID and uses that ID for the rule name.
+If you specify a name, you can't perform updates that require replacement of this resource.
+You can perform updates that require no or some interruption.
+If you must replace the resource, specify a new name.
+
+Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-events-rule.html#cfn-events-rule-name
+PrimitiveType: String
 UpdateType: Immutable
 
 ```yaml
@@ -100,9 +119,10 @@ Accept wildcard characters: False
 ```
 
 ### -RoleArn
-Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-events-rule.html#cfn-events-rule-rolearn    
-PrimitiveType: String    
-Required: False    
+The Amazon Resource Name ARN of the role that is used for target invocation.
+
+Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-events-rule.html#cfn-events-rule-rolearn
+PrimitiveType: String
 UpdateType: Mutable
 
 ```yaml
@@ -118,9 +138,11 @@ Accept wildcard characters: False
 ```
 
 ### -ScheduleExpression
-Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-events-rule.html#cfn-events-rule-scheduleexpression    
-PrimitiveType: String    
-Required: False    
+The scheduling expression that determines when and how often the rule runs.
+For more information, see Schedule Expressions for Rules: https://docs.aws.amazon.com/AmazonCloudWatch/latest/events/ScheduledEvents.html.
+
+Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-events-rule.html#cfn-events-rule-scheduleexpression
+PrimitiveType: String
 UpdateType: Mutable
 
 ```yaml
@@ -136,9 +158,10 @@ Accept wildcard characters: False
 ```
 
 ### -State
-Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-events-rule.html#cfn-events-rule-state    
-PrimitiveType: String    
-Required: False    
+Indicates whether the rule is enabled.
+
+Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-events-rule.html#cfn-events-rule-state
+PrimitiveType: String
 UpdateType: Mutable
 
 ```yaml
@@ -154,11 +177,15 @@ Accept wildcard characters: False
 ```
 
 ### -Targets
-Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-events-rule.html#cfn-events-rule-targets    
-DuplicatesAllowed: False    
-ItemType: Target    
-Required: False    
-Type: List    
+The resources that CloudWatch Events routes events to and invokes when the rule is triggered.
+For information about valid targets, see PutTargets: https://docs.aws.amazon.com/AmazonCloudWatchEvents/latest/APIReference/API_PutTargets.html.
+If you're setting the event bus of another account as the target and that account granted permission to your account through an organization instead of directly by the account ID, you must specify a RoleArn with proper permissions in the Target structure.
+For more information, see Sending and Receiving Events Between AWS Accounts: https://docs.aws.amazon.com/AmazonCloudWatch/latest/events/CloudWatchEvents-CrossAccountEventDelivery.html in the *Amazon CloudWatch Events User Guide*.
+
+Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-events-rule.html#cfn-events-rule-targets
+DuplicatesAllowed: False
+ItemType: Target
+Type: List
 UpdateType: Mutable
 
 ```yaml
@@ -268,15 +295,13 @@ Accept wildcard characters: False
 ```
 
 ### CommonParameters
-This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction, and -WarningVariable.
-For more information, see about_CommonParameters (http://go.microsoft.com/fwlink/?LinkID=113216).
+This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction, and -WarningVariable. For more information, see [about_CommonParameters](http://go.microsoft.com/fwlink/?LinkID=113216).
 
 ## INPUTS
 
 ## OUTPUTS
 
 ### Vaporshell.Resource.Events.Rule
-
 ## NOTES
 
 ## RELATED LINKS

@@ -1,18 +1,8 @@
----
-layout: glossary
-title: New-VSOpsWorksElasticLoadBalancerAttachment
-categories: glossary
-label1: Category
-data1: Documentation
-label2: Depth
-data2: Deep
-schema: 2.0.0
----
-
 # New-VSOpsWorksElasticLoadBalancerAttachment
 
 ## SYNOPSIS
-Adds an AWS::OpsWorks::ElasticLoadBalancerAttachment resource to the template
+Adds an AWS::OpsWorks::ElasticLoadBalancerAttachment resource to the template.
+Attaches an Elastic Load Balancing load balancer to an AWS OpsWorks layer that you specify.
 
 ## SYNTAX
 
@@ -23,7 +13,17 @@ New-VSOpsWorksElasticLoadBalancerAttachment [-LogicalId] <String> -ElasticLoadBa
 ```
 
 ## DESCRIPTION
-Adds an AWS::OpsWorks::ElasticLoadBalancerAttachment resource to the template
+Adds an AWS::OpsWorks::ElasticLoadBalancerAttachment resource to the template.
+Attaches an Elastic Load Balancing load balancer to an AWS OpsWorks layer that you specify.
+
+## EXAMPLES
+
+### Example 1
+```powershell
+PS C:\> {{ Add example code here }}
+```
+
+{{ Add example description here }}
 
 ## PARAMETERS
 
@@ -45,9 +45,10 @@ Accept wildcard characters: False
 ```
 
 ### -ElasticLoadBalancerName
-Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-opsworks-elbattachment.html#cfn-opsworks-elbattachment-elbname    
-PrimitiveType: String    
-Required: True    
+The Elastic Load Balancing instance's name.
+
+Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-opsworks-elbattachment.html#cfn-opsworks-elbattachment-elbname
+PrimitiveType: String
 UpdateType: Mutable
 
 ```yaml
@@ -63,9 +64,10 @@ Accept wildcard characters: False
 ```
 
 ### -LayerId
-Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-opsworks-elbattachment.html#cfn-opsworks-elbattachment-layerid    
-PrimitiveType: String    
-Required: True    
+The AWS OpsWorks layer ID that the Elastic Load Balancing load balancer will be attached to.
+
+Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-opsworks-elbattachment.html#cfn-opsworks-elbattachment-layerid
+PrimitiveType: String
 UpdateType: Mutable
 
 ```yaml
@@ -175,15 +177,13 @@ Accept wildcard characters: False
 ```
 
 ### CommonParameters
-This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction, and -WarningVariable.
-For more information, see about_CommonParameters (http://go.microsoft.com/fwlink/?LinkID=113216).
+This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction, and -WarningVariable. For more information, see [about_CommonParameters](http://go.microsoft.com/fwlink/?LinkID=113216).
 
 ## INPUTS
 
 ## OUTPUTS
 
 ### Vaporshell.Resource.OpsWorks.ElasticLoadBalancerAttachment
-
 ## NOTES
 
 ## RELATED LINKS

@@ -1,32 +1,34 @@
----
-layout: glossary
-title: New-VSDAXCluster
-categories: glossary
-label1: Category
-data1: Documentation
-label2: Depth
-data2: Deep
-schema: 2.0.0
----
-
 # New-VSDAXCluster
 
 ## SYNOPSIS
-Adds an AWS::DAX::Cluster resource to the template
+Adds an AWS::DAX::Cluster resource to the template.
+Creates a DAX cluster.
+All nodes in the cluster run the same DAX caching software.
 
 ## SYNTAX
 
 ```
-New-VSDAXCluster [-LogicalId] <String> [-Description <Object>] -ReplicationFactor <Int32>
- [-ParameterGroupName <Object>] [-AvailabilityZones <Object>] -NodeType <Object> -IAMRoleARN <Object>
- [-SubnetGroupName <Object>] [-ClusterName <Object>] [-PreferredMaintenanceWindow <Object>]
- [-NotificationTopicARN <Object>] [-SecurityGroupIds <Object>] [-Tags <Object>] [-DeletionPolicy <String>]
- [-DependsOn <String[]>] [-Metadata <Object>] [-UpdatePolicy <Object>] [-Condition <Object>]
- [<CommonParameters>]
+New-VSDAXCluster [-LogicalId] <String> [-SSESpecification <Object>] [-Description <Object>]
+ -ReplicationFactor <Int32> [-ParameterGroupName <Object>] [-AvailabilityZones <Object>] -IAMRoleARN <Object>
+ [-SubnetGroupName <Object>] [-PreferredMaintenanceWindow <Object>] [-NotificationTopicARN <Object>]
+ [-SecurityGroupIds <Object>] -NodeType <Object> [-ClusterName <Object>] [-Tags <Object>]
+ [-DeletionPolicy <String>] [-DependsOn <String[]>] [-Metadata <Object>] [-UpdatePolicy <Object>]
+ [-Condition <Object>] [<CommonParameters>]
 ```
 
 ## DESCRIPTION
-Adds an AWS::DAX::Cluster resource to the template
+Adds an AWS::DAX::Cluster resource to the template.
+Creates a DAX cluster.
+All nodes in the cluster run the same DAX caching software.
+
+## EXAMPLES
+
+### Example 1
+```powershell
+PS C:\> {{ Add example code here }}
+```
+
+{{ Add example description here }}
 
 ## PARAMETERS
 
@@ -47,10 +49,30 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
+### -SSESpecification
+Represents the settings used to enable server-side encryption on the cluster.
+
+Type: SSESpecification
+Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-dax-cluster.html#cfn-dax-cluster-ssespecification
+UpdateType: Immutable
+
+```yaml
+Type: Object
+Parameter Sets: (All)
+Aliases:
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
 ### -Description
-Required: False    
-Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-dax-cluster.html#cfn-dax-cluster-description    
-PrimitiveType: String    
+The description of the cluster.
+
+Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-dax-cluster.html#cfn-dax-cluster-description
+PrimitiveType: String
 UpdateType: Mutable
 
 ```yaml
@@ -66,9 +88,14 @@ Accept wildcard characters: False
 ```
 
 ### -ReplicationFactor
-Required: True    
-Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-dax-cluster.html#cfn-dax-cluster-replicationfactor    
-PrimitiveType: Integer    
+The number of nodes in the DAX cluster.
+A replication factor of 1 will create a single-node cluster, without any read replicas.
+For additional fault tolerance, you can create a multiple node cluster with one or more read replicas.
+To do this, set *ReplicationFactor* to 2 or more.
+AWS recommends that you have at least two read replicas per cluster.
+
+Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-dax-cluster.html#cfn-dax-cluster-replicationfactor
+PrimitiveType: Integer
 UpdateType: Mutable
 
 ```yaml
@@ -84,9 +111,10 @@ Accept wildcard characters: False
 ```
 
 ### -ParameterGroupName
-Required: False    
-Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-dax-cluster.html#cfn-dax-cluster-parametergroupname    
-PrimitiveType: String    
+The parameter group to be associated with the DAX cluster.
+
+Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-dax-cluster.html#cfn-dax-cluster-parametergroupname
+PrimitiveType: String
 UpdateType: Mutable
 
 ```yaml
@@ -102,10 +130,13 @@ Accept wildcard characters: False
 ```
 
 ### -AvailabilityZones
-PrimitiveItemType: String    
-Type: List    
-Required: False    
-Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-dax-cluster.html#cfn-dax-cluster-availabilityzones    
+The Availability Zones AZs in which the cluster nodes will be created.
+All nodes belonging to the cluster are placed in these Availability Zones.
+Use this parameter if you want to distribute the nodes across multiple AZs.
+
+PrimitiveItemType: String
+Type: List
+Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-dax-cluster.html#cfn-dax-cluster-availabilityzones
 UpdateType: Mutable
 
 ```yaml
@@ -120,28 +151,13 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
-### -NodeType
-Required: True    
-Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-dax-cluster.html#cfn-dax-cluster-nodetype    
-PrimitiveType: String    
-UpdateType: Immutable
-
-```yaml
-Type: Object
-Parameter Sets: (All)
-Aliases:
-
-Required: True
-Position: Named
-Default value: None
-Accept pipeline input: False
-Accept wildcard characters: False
-```
-
 ### -IAMRoleARN
-Required: True    
-Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-dax-cluster.html#cfn-dax-cluster-iamrolearn    
-PrimitiveType: String    
+A valid Amazon Resource Name ARN that identifies an IAM role.
+At runtime, DAX will assume this role and use the role's permissions to access DynamoDB on your behalf.
+Updates are not supported for this property.
+
+Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-dax-cluster.html#cfn-dax-cluster-iamrolearn
+PrimitiveType: String
 UpdateType: Immutable
 
 ```yaml
@@ -157,27 +173,13 @@ Accept wildcard characters: False
 ```
 
 ### -SubnetGroupName
-Required: False    
-Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-dax-cluster.html#cfn-dax-cluster-subnetgroupname    
-PrimitiveType: String    
-UpdateType: Immutable
+The name of the subnet group to be used for the replication group.
+DAX clusters can only run in an Amazon VPC environment.
+All of the subnets that you specify in a subnet group must exist in the same VPC.
+Updates are not supported for this property.
 
-```yaml
-Type: Object
-Parameter Sets: (All)
-Aliases:
-
-Required: False
-Position: Named
-Default value: None
-Accept pipeline input: False
-Accept wildcard characters: False
-```
-
-### -ClusterName
-Required: False    
-Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-dax-cluster.html#cfn-dax-cluster-clustername    
-PrimitiveType: String    
+Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-dax-cluster.html#cfn-dax-cluster-subnetgroupname
+PrimitiveType: String
 UpdateType: Immutable
 
 ```yaml
@@ -193,9 +195,12 @@ Accept wildcard characters: False
 ```
 
 ### -PreferredMaintenanceWindow
-Required: False    
-Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-dax-cluster.html#cfn-dax-cluster-preferredmaintenancewindow    
-PrimitiveType: String    
+A range of time when maintenance of DAX cluster software will be performed.
+For example: sun:01:00-sun:09:00.
+Cluster maintenance normally takes less than 30 minutes, and is performed automatically within the maintenance window.
+
+Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-dax-cluster.html#cfn-dax-cluster-preferredmaintenancewindow
+PrimitiveType: String
 UpdateType: Mutable
 
 ```yaml
@@ -211,9 +216,11 @@ Accept wildcard characters: False
 ```
 
 ### -NotificationTopicARN
-Required: False    
-Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-dax-cluster.html#cfn-dax-cluster-notificationtopicarn    
-PrimitiveType: String    
+The Amazon Resource Name ARN of the Amazon SNS topic to which notifications will be sent.
+The Amazon SNS topic owner must be same as the DAX cluster owner.
+
+Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-dax-cluster.html#cfn-dax-cluster-notificationtopicarn
+PrimitiveType: String
 UpdateType: Mutable
 
 ```yaml
@@ -229,10 +236,13 @@ Accept wildcard characters: False
 ```
 
 ### -SecurityGroupIds
-PrimitiveItemType: String    
-Type: List    
-Required: False    
-Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-dax-cluster.html#cfn-dax-cluster-securitygroupids    
+A list of security group IDs to be assigned to each node in the DAX cluster.
+Each of the security group ID is system-generated.
+If this parameter is not specified, DAX assigns the default VPC security group to each node.
+
+PrimitiveItemType: String
+Type: List
+Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-dax-cluster.html#cfn-dax-cluster-securitygroupids
 UpdateType: Mutable
 
 ```yaml
@@ -247,10 +257,52 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
+### -NodeType
+The node type for the nodes in the cluster.
+All nodes in a DAX cluster are of the same type.
+Updates are not supported for this property.
+
+Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-dax-cluster.html#cfn-dax-cluster-nodetype
+PrimitiveType: String
+UpdateType: Immutable
+
+```yaml
+Type: Object
+Parameter Sets: (All)
+Aliases:
+
+Required: True
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### -ClusterName
+The name of the DAX cluster.
+Updates are not supported for this property.
+
+Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-dax-cluster.html#cfn-dax-cluster-clustername
+PrimitiveType: String
+UpdateType: Immutable
+
+```yaml
+Type: Object
+Parameter Sets: (All)
+Aliases:
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
 ### -Tags
-Required: False    
-Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-dax-cluster.html#cfn-dax-cluster-tags    
-PrimitiveType: Json    
+A set of tags to associate with the DAX cluster.
+
+Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-dax-cluster.html#cfn-dax-cluster-tags
+PrimitiveType: Json
 UpdateType: Mutable
 
 ```yaml
@@ -360,15 +412,13 @@ Accept wildcard characters: False
 ```
 
 ### CommonParameters
-This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction, and -WarningVariable.
-For more information, see about_CommonParameters (http://go.microsoft.com/fwlink/?LinkID=113216).
+This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction, and -WarningVariable. For more information, see [about_CommonParameters](http://go.microsoft.com/fwlink/?LinkID=113216).
 
 ## INPUTS
 
 ## OUTPUTS
 
 ### Vaporshell.Resource.DAX.Cluster
-
 ## NOTES
 
 ## RELATED LINKS

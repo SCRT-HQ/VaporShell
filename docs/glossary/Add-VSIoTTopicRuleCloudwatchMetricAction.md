@@ -1,18 +1,8 @@
----
-layout: glossary
-title: Add-VSIoTTopicRuleCloudwatchMetricAction
-categories: glossary
-label1: Category
-data1: Documentation
-label2: Depth
-data2: Deep
-schema: 2.0.0
----
-
 # Add-VSIoTTopicRuleCloudwatchMetricAction
 
 ## SYNOPSIS
-Adds an AWS::IoT::TopicRule.CloudwatchMetricAction resource property to the template
+Adds an AWS::IoT::TopicRule.CloudwatchMetricAction resource property to the template.
+Describes an action that captures a CloudWatch metric.
 
 ## SYNTAX
 
@@ -23,14 +13,25 @@ Add-VSIoTTopicRuleCloudwatchMetricAction [-MetricName] <Object> [-MetricNamespac
 ```
 
 ## DESCRIPTION
-Adds an AWS::IoT::TopicRule.CloudwatchMetricAction resource property to the template
+Adds an AWS::IoT::TopicRule.CloudwatchMetricAction resource property to the template.
+Describes an action that captures a CloudWatch metric.
+
+## EXAMPLES
+
+### Example 1
+```powershell
+PS C:\> {{ Add example code here }}
+```
+
+{{ Add example description here }}
 
 ## PARAMETERS
 
 ### -MetricName
-Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iot-topicrule-cloudwatchmetricaction.html#cfn-iot-topicrule-cloudwatchmetricaction-metricname    
-PrimitiveType: String    
-Required: True    
+The CloudWatch metric name.
+
+Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iot-topicrule-cloudwatchmetricaction.html#cfn-iot-topicrule-cloudwatchmetricaction-metricname
+PrimitiveType: String
 UpdateType: Mutable
 
 ```yaml
@@ -46,9 +47,10 @@ Accept wildcard characters: False
 ```
 
 ### -MetricNamespace
-Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iot-topicrule-cloudwatchmetricaction.html#cfn-iot-topicrule-cloudwatchmetricaction-metricnamespace    
-PrimitiveType: String    
-Required: True    
+The CloudWatch metric namespace name.
+
+Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iot-topicrule-cloudwatchmetricaction.html#cfn-iot-topicrule-cloudwatchmetricaction-metricnamespace
+PrimitiveType: String
 UpdateType: Mutable
 
 ```yaml
@@ -64,9 +66,10 @@ Accept wildcard characters: False
 ```
 
 ### -MetricTimestamp
-Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iot-topicrule-cloudwatchmetricaction.html#cfn-iot-topicrule-cloudwatchmetricaction-metrictimestamp    
-PrimitiveType: String    
-Required: False    
+An optional Unix timestamp: https://docs.aws.amazon.com/AmazonCloudWatch/latest/DeveloperGuide/cloudwatch_concepts.html#about_timestamp.
+
+Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iot-topicrule-cloudwatchmetricaction.html#cfn-iot-topicrule-cloudwatchmetricaction-metrictimestamp
+PrimitiveType: String
 UpdateType: Mutable
 
 ```yaml
@@ -82,9 +85,10 @@ Accept wildcard characters: False
 ```
 
 ### -MetricUnit
-Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iot-topicrule-cloudwatchmetricaction.html#cfn-iot-topicrule-cloudwatchmetricaction-metricunit    
-PrimitiveType: String    
-Required: True    
+The metric unit: https://docs.aws.amazon.com/AmazonCloudWatch/latest/DeveloperGuide/cloudwatch_concepts.html#Unit supported by CloudWatch.
+
+Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iot-topicrule-cloudwatchmetricaction.html#cfn-iot-topicrule-cloudwatchmetricaction-metricunit
+PrimitiveType: String
 UpdateType: Mutable
 
 ```yaml
@@ -100,9 +104,10 @@ Accept wildcard characters: False
 ```
 
 ### -MetricValue
-Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iot-topicrule-cloudwatchmetricaction.html#cfn-iot-topicrule-cloudwatchmetricaction-metricvalue    
-PrimitiveType: String    
-Required: True    
+The CloudWatch metric value.
+
+Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iot-topicrule-cloudwatchmetricaction.html#cfn-iot-topicrule-cloudwatchmetricaction-metricvalue
+PrimitiveType: String
 UpdateType: Mutable
 
 ```yaml
@@ -118,9 +123,10 @@ Accept wildcard characters: False
 ```
 
 ### -RoleArn
-Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iot-topicrule-cloudwatchmetricaction.html#cfn-iot-topicrule-cloudwatchmetricaction-rolearn    
-PrimitiveType: String    
-Required: True    
+The IAM role that allows access to the CloudWatch metric.
+
+Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iot-topicrule-cloudwatchmetricaction.html#cfn-iot-topicrule-cloudwatchmetricaction-rolearn
+PrimitiveType: String
 UpdateType: Mutable
 
 ```yaml
@@ -136,15 +142,13 @@ Accept wildcard characters: False
 ```
 
 ### CommonParameters
-This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction, and -WarningVariable.
-For more information, see about_CommonParameters (http://go.microsoft.com/fwlink/?LinkID=113216).
+This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction, and -WarningVariable. For more information, see [about_CommonParameters](http://go.microsoft.com/fwlink/?LinkID=113216).
 
 ## INPUTS
 
 ## OUTPUTS
 
 ### Vaporshell.Resource.IoT.TopicRule.CloudwatchMetricAction
-
 ## NOTES
 
 ## RELATED LINKS

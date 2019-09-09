@@ -1,14 +1,3 @@
----
-layout: glossary
-title: New-VSChangeSet
-categories: glossary
-label1: Category
-data1: Documentation
-label2: Depth
-data2: Deep
-schema: 2.0.0
----
-
 # New-VSChangeSet
 
 ## SYNOPSIS
@@ -18,38 +7,47 @@ Creates a new Change Set.
 
 ### Path (Default)
 ```
-New-VSChangeSet [-Path] <String> -ChangeSetName <String> -StackName <String> [-Capabilities <String[]>]
- [-ChangeSetType <String>] [-ClientToken <String>] [-Description <String>] [-NotificationARNs <String[]>]
- [-Parameters <Object>] [-ResourceTypes <String[]>] [-RoleARN <String>] [-Tags <String>]
- [-ProfileName <String>] [<CommonParameters>]
+New-VSChangeSet [-Path] <String> -StackName <String> [-ChangeSetName <String>] [-Capabilities <String[]>]
+ [-ChangeSetType <ChangeSetType>] [-ClientRequestToken <String>] [-Description <String>]
+ [-NotificationARNs <String[]>] [-Parameters <Object>] [-ResourceTypes <String[]>] [-RoleARN <String>]
+ [-Tags <Hashtable>] [-Watch] [-ProfileName <String>] [-Force] [<CommonParameters>]
 ```
 
 ### TemplateBody
 ```
-New-VSChangeSet [-TemplateBody] <String> -ChangeSetName <String> -StackName <String> [-Capabilities <String[]>]
- [-ChangeSetType <String>] [-ClientToken <String>] [-Description <String>] [-NotificationARNs <String[]>]
- [-Parameters <Object>] [-ResourceTypes <String[]>] [-RoleARN <String>] [-Tags <String>]
- [-ProfileName <String>] [<CommonParameters>]
+New-VSChangeSet [-TemplateBody] <String> -StackName <String> [-ChangeSetName <String>]
+ [-Capabilities <String[]>] [-ChangeSetType <ChangeSetType>] [-ClientRequestToken <String>]
+ [-Description <String>] [-NotificationARNs <String[]>] [-Parameters <Object>] [-ResourceTypes <String[]>]
+ [-RoleARN <String>] [-Tags <Hashtable>] [-Watch] [-ProfileName <String>] [-Force] [<CommonParameters>]
 ```
 
 ### TemplateUrl
 ```
-New-VSChangeSet [-TemplateUrl] <String> -ChangeSetName <String> -StackName <String> [-Capabilities <String[]>]
- [-ChangeSetType <String>] [-ClientToken <String>] [-Description <String>] [-NotificationARNs <String[]>]
- [-Parameters <Object>] [-ResourceTypes <String[]>] [-RoleARN <String>] [-Tags <String>]
- [-ProfileName <String>] [<CommonParameters>]
+New-VSChangeSet [-TemplateUrl] <String> -StackName <String> [-ChangeSetName <String>]
+ [-Capabilities <String[]>] [-ChangeSetType <ChangeSetType>] [-ClientRequestToken <String>]
+ [-Description <String>] [-NotificationARNs <String[]>] [-Parameters <Object>] [-ResourceTypes <String[]>]
+ [-RoleARN <String>] [-Tags <Hashtable>] [-Watch] [-ProfileName <String>] [-Force] [<CommonParameters>]
 ```
 
 ### UsePreviousTemplate
 ```
-New-VSChangeSet [-UsePreviousTemplate] -ChangeSetName <String> -StackName <String> [-Capabilities <String[]>]
- [-ChangeSetType <String>] [-ClientToken <String>] [-Description <String>] [-NotificationARNs <String[]>]
- [-Parameters <Object>] [-ResourceTypes <String[]>] [-RoleARN <String>] [-Tags <String>]
- [-ProfileName <String>] [<CommonParameters>]
+New-VSChangeSet [-UsePreviousTemplate] -StackName <String> [-ChangeSetName <String>] [-Capabilities <String[]>]
+ [-ChangeSetType <ChangeSetType>] [-ClientRequestToken <String>] [-Description <String>]
+ [-NotificationARNs <String[]>] [-Parameters <Object>] [-ResourceTypes <String[]>] [-RoleARN <String>]
+ [-Tags <Hashtable>] [-Watch] [-ProfileName <String>] [-Force] [<CommonParameters>]
 ```
 
 ## DESCRIPTION
 Creates a new Change Set for the specified StackName.
+
+## EXAMPLES
+
+### Example 1
+```powershell
+PS C:\> {{ Add example code here }}
+```
+
+{{ Add example description here }}
 
 ## PARAMETERS
 
@@ -113,6 +111,22 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
+### -StackName
+The name or the unique ID of the stack for which you are creating a change set.
+AWS CloudFormation generates the change set by comparing this stack's information with the information that you submit, such as a modified template or different parameter input values.
+
+```yaml
+Type: String
+Parameter Sets: (All)
+Aliases: StackId
+
+Required: True
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
 ### -ChangeSetName
 The name of the change set.
 The name must be unique among all change sets that are associated with the specified stack.
@@ -124,23 +138,7 @@ Type: String
 Parameter Sets: (All)
 Aliases:
 
-Required: True
-Position: Named
-Default value: None
-Accept pipeline input: False
-Accept wildcard characters: False
-```
-
-### -StackName
-The name or the unique ID of the stack for which you are creating a change set.
-AWS CloudFormation generates the change set by comparing this stack's information with the information that you submit, such as a modified template or different parameter input values.
-
-```yaml
-Type: String
-Parameter Sets: (All)
-Aliases:
-
-Required: True
+Required: False
 Position: Named
 Default value: None
 Accept pipeline input: False
@@ -176,7 +174,7 @@ To create a change set for a new stack, specify CREATE.
 To create a change set for an existing stack, specify UPDATE.
 
 ```yaml
-Type: String
+Type: ChangeSetType
 Parameter Sets: (All)
 Aliases:
 
@@ -187,15 +185,13 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
-### -ClientToken
-A unique identifier for this CreateChangeSet request.
-Specify this token if you plan to retry requests so that AWS CloudFormation knows that you're not attempting to create another change set with the same name.
-You might retry CreateChangeSet requests to ensure that AWS CloudFormation successfully received them.
+### -ClientRequestToken
+{{ Fill ClientRequestToken Description }}
 
 ```yaml
 Type: String
 Parameter Sets: (All)
-Aliases:
+Aliases: ClientToken
 
 Required: False
 Position: Named
@@ -295,13 +291,28 @@ AWS CloudFormation also propagates these tags to resources in the stack.
 You can specify a maximum of 50 tags.
 
 ```yaml
-Type: String
+Type: Hashtable
 Parameter Sets: (All)
 Aliases:
 
 Required: False
 Position: Named
 Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### -Watch
+If $true, runs Watch-Stack to show the colorized output of the stack events.
+
+```yaml
+Type: SwitchParameter
+Parameter Sets: (All)
+Aliases:
+
+Required: False
+Position: Named
+Default value: False
 Accept pipeline input: False
 Accept wildcard characters: False
 ```
@@ -322,9 +333,23 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
+### -Force
+If $true, executes the change set as soon as it's ready.
+
+```yaml
+Type: SwitchParameter
+Parameter Sets: (All)
+Aliases:
+
+Required: False
+Position: Named
+Default value: False
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
 ### CommonParameters
-This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction, and -WarningVariable.
-For more information, see about_CommonParameters (http://go.microsoft.com/fwlink/?LinkID=113216).
+This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction, and -WarningVariable. For more information, see [about_CommonParameters](http://go.microsoft.com/fwlink/?LinkID=113216).
 
 ## INPUTS
 

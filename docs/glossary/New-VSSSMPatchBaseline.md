@@ -1,32 +1,36 @@
----
-layout: glossary
-title: New-VSSSMPatchBaseline
-categories: glossary
-label1: Category
-data1: Documentation
-label2: Depth
-data2: Deep
-schema: 2.0.0
----
-
 # New-VSSSMPatchBaseline
 
 ## SYNOPSIS
-Adds an AWS::SSM::PatchBaseline resource to the template
+Adds an AWS::SSM::PatchBaseline resource to the template.
+The AWS::SSM::PatchBaseline resource defines the basic information for an AWS Systems Manager patch baseline.
+A patch baseline defines which patches are approved for installation on your instances.
 
 ## SYNTAX
 
 ```
-New-VSSSMPatchBaseline [-LogicalId] <String> [-OperatingSystem <Object>] [-ApprovedPatches <Object>]
- [-PatchGroups <Object>] [-Description <Object>] [-ApprovedPatchesComplianceLevel <Object>]
- [-ApprovedPatchesEnableNonSecurity <Boolean>] [-ApprovalRules <Object>] [-GlobalFilters <Object>]
- [-Sources <Object>] -Name <Object> [-RejectedPatches <Object>] [-DeletionPolicy <String>]
- [-DependsOn <String[]>] [-Metadata <Object>] [-UpdatePolicy <Object>] [-Condition <Object>]
- [<CommonParameters>]
+New-VSSSMPatchBaseline [-LogicalId] <String> [-OperatingSystem <Object>] [-Description <Object>]
+ [-ApprovalRules <Object>] [-Sources <Object>] -Name <Object> [-RejectedPatches <Object>]
+ [-ApprovedPatches <Object>] [-RejectedPatchesAction <Object>] [-PatchGroups <Object>]
+ [-ApprovedPatchesComplianceLevel <Object>] [-ApprovedPatchesEnableNonSecurity <Boolean>]
+ [-GlobalFilters <Object>] [-Tags <Object>] [-DeletionPolicy <String>] [-DependsOn <String[]>]
+ [-Metadata <Object>] [-UpdatePolicy <Object>] [-Condition <Object>] [<CommonParameters>]
 ```
 
 ## DESCRIPTION
-Adds an AWS::SSM::PatchBaseline resource to the template
+Adds an AWS::SSM::PatchBaseline resource to the template.
+The AWS::SSM::PatchBaseline resource defines the basic information for an AWS Systems Manager patch baseline.
+A patch baseline defines which patches are approved for installation on your instances.
+
+For more information, see CreatePatchBaseline: https://docs.aws.amazon.com/systems-manager/latest/APIReference/API_CreatePatchBaseline.html in the *AWS Systems Manager API Reference*.
+
+## EXAMPLES
+
+### Example 1
+```powershell
+PS C:\> {{ Add example code here }}
+```
+
+{{ Add example description here }}
 
 ## PARAMETERS
 
@@ -48,9 +52,11 @@ Accept wildcard characters: False
 ```
 
 ### -OperatingSystem
-Required: False    
-Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ssm-patchbaseline.html#cfn-ssm-patchbaseline-operatingsystem    
-PrimitiveType: String    
+Defines the operating system the patch baseline applies to.
+The Default value is WINDOWS.
+
+Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ssm-patchbaseline.html#cfn-ssm-patchbaseline-operatingsystem
+PrimitiveType: String
 UpdateType: Immutable
 
 ```yaml
@@ -65,48 +71,11 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
-### -ApprovedPatches
-PrimitiveItemType: String    
-Type: List    
-Required: False    
-Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ssm-patchbaseline.html#cfn-ssm-patchbaseline-approvedpatches    
-UpdateType: Mutable
-
-```yaml
-Type: Object
-Parameter Sets: (All)
-Aliases:
-
-Required: False
-Position: Named
-Default value: None
-Accept pipeline input: False
-Accept wildcard characters: False
-```
-
-### -PatchGroups
-PrimitiveItemType: String    
-Type: List    
-Required: False    
-Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ssm-patchbaseline.html#cfn-ssm-patchbaseline-patchgroups    
-UpdateType: Mutable
-
-```yaml
-Type: Object
-Parameter Sets: (All)
-Aliases:
-
-Required: False
-Position: Named
-Default value: None
-Accept pipeline input: False
-Accept wildcard characters: False
-```
-
 ### -Description
-Required: False    
-Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ssm-patchbaseline.html#cfn-ssm-patchbaseline-description    
-PrimitiveType: String    
+A description of the patch baseline.
+
+Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ssm-patchbaseline.html#cfn-ssm-patchbaseline-description
+PrimitiveType: String
 UpdateType: Mutable
 
 ```yaml
@@ -117,68 +86,15 @@ Aliases:
 Required: False
 Position: Named
 Default value: None
-Accept pipeline input: False
-Accept wildcard characters: False
-```
-
-### -ApprovedPatchesComplianceLevel
-Required: False    
-Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ssm-patchbaseline.html#cfn-ssm-patchbaseline-approvedpatchescompliancelevel    
-PrimitiveType: String    
-UpdateType: Mutable
-
-```yaml
-Type: Object
-Parameter Sets: (All)
-Aliases:
-
-Required: False
-Position: Named
-Default value: None
-Accept pipeline input: False
-Accept wildcard characters: False
-```
-
-### -ApprovedPatchesEnableNonSecurity
-Required: False    
-Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ssm-patchbaseline.html#cfn-ssm-patchbaseline-approvedpatchesenablenonsecurity    
-PrimitiveType: Boolean    
-UpdateType: Mutable
-
-```yaml
-Type: Boolean
-Parameter Sets: (All)
-Aliases:
-
-Required: False
-Position: Named
-Default value: False
 Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
 ### -ApprovalRules
-Type: RuleGroup    
-Required: False    
-Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ssm-patchbaseline.html#cfn-ssm-patchbaseline-approvalrules    
-UpdateType: Mutable
+A set of rules used to include patches in the baseline.
 
-```yaml
-Type: Object
-Parameter Sets: (All)
-Aliases:
-
-Required: False
-Position: Named
-Default value: None
-Accept pipeline input: False
-Accept wildcard characters: False
-```
-
-### -GlobalFilters
-Type: PatchFilterGroup    
-Required: False    
-Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ssm-patchbaseline.html#cfn-ssm-patchbaseline-globalfilters    
+Type: RuleGroup
+Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ssm-patchbaseline.html#cfn-ssm-patchbaseline-approvalrules
 UpdateType: Mutable
 
 ```yaml
@@ -194,10 +110,12 @@ Accept wildcard characters: False
 ```
 
 ### -Sources
-Type: List    
-Required: False    
-Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ssm-patchbaseline.html#cfn-ssm-patchbaseline-sources    
-ItemType: PatchSource    
+Information about the patches to use to update the instances, including target operating systems and source repositories.
+Applies to Linux instances only.
+
+Type: List
+Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ssm-patchbaseline.html#cfn-ssm-patchbaseline-sources
+ItemType: PatchSource
 UpdateType: Mutable
 
 ```yaml
@@ -213,9 +131,10 @@ Accept wildcard characters: False
 ```
 
 ### -Name
-Required: True    
-Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ssm-patchbaseline.html#cfn-ssm-patchbaseline-name    
-PrimitiveType: String    
+The name of the patch baseline.
+
+Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ssm-patchbaseline.html#cfn-ssm-patchbaseline-name
+PrimitiveType: String
 UpdateType: Mutable
 
 ```yaml
@@ -231,10 +150,160 @@ Accept wildcard characters: False
 ```
 
 ### -RejectedPatches
-PrimitiveItemType: String    
-Type: List    
-Required: False    
-Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ssm-patchbaseline.html#cfn-ssm-patchbaseline-rejectedpatches    
+A list of explicitly rejected patches for the baseline.
+For information about accepted formats for lists of approved patches and rejected patches, see Package Name Formats for Approved and Rejected Patch Lists: https://docs.aws.amazon.com/systems-manager/latest/userguide/patch-manager-approved-rejected-package-name-formats.html in the *AWS Systems Manager User Guide*.
+
+PrimitiveItemType: String
+Type: List
+Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ssm-patchbaseline.html#cfn-ssm-patchbaseline-rejectedpatches
+UpdateType: Mutable
+
+```yaml
+Type: Object
+Parameter Sets: (All)
+Aliases:
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### -ApprovedPatches
+A list of explicitly approved patches for the baseline.
+For information about accepted formats for lists of approved patches and rejected patches, see Package Name Formats for Approved and Rejected Patch Lists: https://docs.aws.amazon.com/systems-manager/latest/userguide/patch-manager-approved-rejected-package-name-formats.html in the *AWS Systems Manager User Guide*.
+
+PrimitiveItemType: String
+Type: List
+Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ssm-patchbaseline.html#cfn-ssm-patchbaseline-approvedpatches
+UpdateType: Mutable
+
+```yaml
+Type: Object
+Parameter Sets: (All)
+Aliases:
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### -RejectedPatchesAction
+The action for Patch Manager to take on patches included in the RejectedPackages list.
++  **ALLOW_AS_DEPENDENCY**: A package in the Rejected patches list is installed only if it is a dependency of another package.
+It is considered compliant with the patch baseline, and its status is reported as *InstalledOther*.
+This is the default action if no option is specified.
++  **BLOCK**: Packages in the RejectedPatches list, and packages that include them as dependencies, are not installed under any circumstances.
+If a package was installed before it was added to the Rejected patches list, it is considered non-compliant with the patch baseline, and its status is reported as *InstalledRejected*.
+
+Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ssm-patchbaseline.html#cfn-ssm-patchbaseline-rejectedpatchesaction
+PrimitiveType: String
+UpdateType: Mutable
+
+```yaml
+Type: Object
+Parameter Sets: (All)
+Aliases:
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### -PatchGroups
+The name of the patch group that should be registered with the patch baseline.
+
+PrimitiveItemType: String
+Type: List
+Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ssm-patchbaseline.html#cfn-ssm-patchbaseline-patchgroups
+UpdateType: Mutable
+
+```yaml
+Type: Object
+Parameter Sets: (All)
+Aliases:
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### -ApprovedPatchesComplianceLevel
+Defines the compliance level for approved patches.
+This means that if an approved patch is reported as missing, this is the severity of the compliance violation.
+The default value is UNSPECIFIED.
+
+Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ssm-patchbaseline.html#cfn-ssm-patchbaseline-approvedpatchescompliancelevel
+PrimitiveType: String
+UpdateType: Mutable
+
+```yaml
+Type: Object
+Parameter Sets: (All)
+Aliases:
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### -ApprovedPatchesEnableNonSecurity
+Indicates whether the list of approved patches includes non-security updates that should be applied to the instances.
+The default value is 'false'.
+Applies to Linux instances only.
+
+Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ssm-patchbaseline.html#cfn-ssm-patchbaseline-approvedpatchesenablenonsecurity
+PrimitiveType: Boolean
+UpdateType: Mutable
+
+```yaml
+Type: Boolean
+Parameter Sets: (All)
+Aliases:
+
+Required: False
+Position: Named
+Default value: False
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### -GlobalFilters
+A set of global filters used to include patches in the baseline.
+
+Type: PatchFilterGroup
+Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ssm-patchbaseline.html#cfn-ssm-patchbaseline-globalfilters
+UpdateType: Mutable
+
+```yaml
+Type: Object
+Parameter Sets: (All)
+Aliases:
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### -Tags
+Optional metadata that you assign to a resource.
+Tags enable you to categorize a resource in different ways, such as by purpose, owner, or environment.
+For example, you might want to tag a patch baseline to identify the severity level of patches it specifies and the operating system family it applies to.
+
+Type: List
+Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ssm-patchbaseline.html#cfn-ssm-patchbaseline-tags
+ItemType: Tag
 UpdateType: Mutable
 
 ```yaml
@@ -344,15 +413,13 @@ Accept wildcard characters: False
 ```
 
 ### CommonParameters
-This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction, and -WarningVariable.
-For more information, see about_CommonParameters (http://go.microsoft.com/fwlink/?LinkID=113216).
+This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction, and -WarningVariable. For more information, see [about_CommonParameters](http://go.microsoft.com/fwlink/?LinkID=113216).
 
 ## INPUTS
 
 ## OUTPUTS
 
 ### Vaporshell.Resource.SSM.PatchBaseline
-
 ## NOTES
 
 ## RELATED LINKS

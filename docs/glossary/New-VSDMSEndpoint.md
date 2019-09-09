@@ -1,32 +1,33 @@
----
-layout: glossary
-title: New-VSDMSEndpoint
-categories: glossary
-label1: Category
-data1: Documentation
-label2: Depth
-data2: Deep
-schema: 2.0.0
----
-
 # New-VSDMSEndpoint
 
 ## SYNOPSIS
-Adds an AWS::DMS::Endpoint resource to the template
+Adds an AWS::DMS::Endpoint resource to the template.
+The AWS::DMS::Endpoint resource creates an AWS DMS endpoint.
 
 ## SYNTAX
 
 ```
 New-VSDMSEndpoint [-LogicalId] <String> [-KmsKeyId <Object>] [-Port <Int32>] [-DatabaseName <Object>]
- [-S3Settings <Object>] -EngineName <Object> [-DynamoDbSettings <Object>] [-Username <Object>]
- [-SslMode <Object>] [-ServerName <Object>] [-ExtraConnectionAttributes <Object>] -EndpointType <Object>
- [-Tags <Object>] [-EndpointIdentifier <Object>] [-Password <Object>] [-CertificateArn <Object>]
- [-MongoDbSettings <Object>] [-DeletionPolicy <String>] [-DependsOn <String[]>] [-Metadata <Object>]
- [-UpdatePolicy <Object>] [-Condition <Object>] [<CommonParameters>]
+ [-ElasticsearchSettings <Object>] [-S3Settings <Object>] -EngineName <Object> [-DynamoDbSettings <Object>]
+ [-KinesisSettings <Object>] [-Username <Object>] [-SslMode <Object>] [-ServerName <Object>]
+ [-ExtraConnectionAttributes <Object>] -EndpointType <Object> [-Tags <Object>] [-EndpointIdentifier <Object>]
+ [-Password <Object>] [-CertificateArn <Object>] [-MongoDbSettings <Object>] [-DeletionPolicy <String>]
+ [-DependsOn <String[]>] [-Metadata <Object>] [-UpdatePolicy <Object>] [-Condition <Object>]
+ [<CommonParameters>]
 ```
 
 ## DESCRIPTION
-Adds an AWS::DMS::Endpoint resource to the template
+Adds an AWS::DMS::Endpoint resource to the template.
+The AWS::DMS::Endpoint resource creates an AWS DMS endpoint.
+
+## EXAMPLES
+
+### Example 1
+```powershell
+PS C:\> {{ Add example code here }}
+```
+
+{{ Add example description here }}
 
 ## PARAMETERS
 
@@ -48,9 +49,13 @@ Accept wildcard characters: False
 ```
 
 ### -KmsKeyId
-Required: False    
-Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-dms-endpoint.html#cfn-dms-endpoint-kmskeyid    
-PrimitiveType: String    
+The AWS KMS key identifier to use to encrypt the connection parameters.
+If you don't specify a value for the KmsKeyId parameter, then AWS DMS uses your default encryption key.
+AWS KMS creates the default encryption key for your AWS account.
+Your AWS account has a different default encryption key for each AWS Region.
+
+Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-dms-endpoint.html#cfn-dms-endpoint-kmskeyid
+PrimitiveType: String
 UpdateType: Immutable
 
 ```yaml
@@ -66,9 +71,10 @@ Accept wildcard characters: False
 ```
 
 ### -Port
-Required: False    
-Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-dms-endpoint.html#cfn-dms-endpoint-port    
-PrimitiveType: Integer    
+The port used by the endpoint database.
+
+Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-dms-endpoint.html#cfn-dms-endpoint-port
+PrimitiveType: Integer
 UpdateType: Mutable
 
 ```yaml
@@ -84,9 +90,30 @@ Accept wildcard characters: False
 ```
 
 ### -DatabaseName
-Required: False    
-Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-dms-endpoint.html#cfn-dms-endpoint-databasename    
-PrimitiveType: String    
+The name of the endpoint database.
+
+Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-dms-endpoint.html#cfn-dms-endpoint-databasename
+PrimitiveType: String
+UpdateType: Mutable
+
+```yaml
+Type: Object
+Parameter Sets: (All)
+Aliases:
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### -ElasticsearchSettings
+Settings in JSON format for the target Elasticsearch endpoint.
+For more information about the available settings, see Extra Connection Attributes When Using Elasticsearch as a Target for AWS DMS: https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Target.Elasticsearch.html#CHAP_Target.Elasticsearch.Configuration in the *AWS Database Migration User Guide.*
+
+Type: ElasticsearchSettings
+Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-dms-endpoint.html#cfn-dms-endpoint-elasticsearchsettings
 UpdateType: Mutable
 
 ```yaml
@@ -102,9 +129,11 @@ Accept wildcard characters: False
 ```
 
 ### -S3Settings
-Type: S3Settings    
-Required: False    
-Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-dms-endpoint.html#cfn-dms-endpoint-s3settings    
+Settings in JSON format for the target Amazon S3 endpoint.
+For more information about the available settings, see Extra Connection Attributes When Using Amazon S3 as a Target for AWS DMS: https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Target.S3.html#CHAP_Target.S3.Configuring in the *AWS Database Migration Service User Guide.*
+
+Type: S3Settings
+Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-dms-endpoint.html#cfn-dms-endpoint-s3settings
 UpdateType: Mutable
 
 ```yaml
@@ -120,9 +149,11 @@ Accept wildcard characters: False
 ```
 
 ### -EngineName
-Required: True    
-Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-dms-endpoint.html#cfn-dms-endpoint-enginename    
-PrimitiveType: String    
+The type of engine for the endpoint.
+Valid values, depending on the EndPointType value, include mysql, oracle, postgres, mariadb, aurora, aurora-postgresql, redshift, s3, db2, azuredb, sybase, dynamodb, mongodb, and sqlserver.
+
+Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-dms-endpoint.html#cfn-dms-endpoint-enginename
+PrimitiveType: String
 UpdateType: Mutable
 
 ```yaml
@@ -138,9 +169,31 @@ Accept wildcard characters: False
 ```
 
 ### -DynamoDbSettings
-Type: DynamoDbSettings    
-Required: False    
-Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-dms-endpoint.html#cfn-dms-endpoint-dynamodbsettings    
+Settings in JSON format for the target Amazon DynamoDB endpoint.
+For more information about the available settings, see Using Object Mapping to Migrate Data to DynamoDB: https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Target.DynamoDB.html in the *AWS Database Migration Service User Guide.*
+
+Type: DynamoDbSettings
+Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-dms-endpoint.html#cfn-dms-endpoint-dynamodbsettings
+UpdateType: Mutable
+
+```yaml
+Type: Object
+Parameter Sets: (All)
+Aliases:
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### -KinesisSettings
+Settings in JSON format for the target Amazon Kinesis Data Streams endpoint.
+For more information about the available settings, see Using Object Mapping to Migrate Data to a Kinesis Data Stream: https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Target.Kinesis.html#CHAP_Target.Kinesis.ObjectMapping              in the *AWS Database Migration User Guide.*
+
+Type: KinesisSettings
+Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-dms-endpoint.html#cfn-dms-endpoint-kinesissettings
 UpdateType: Mutable
 
 ```yaml
@@ -156,9 +209,10 @@ Accept wildcard characters: False
 ```
 
 ### -Username
-Required: False    
-Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-dms-endpoint.html#cfn-dms-endpoint-username    
-PrimitiveType: String    
+The user name to be used to log in to the endpoint database.
+
+Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-dms-endpoint.html#cfn-dms-endpoint-username
+PrimitiveType: String
 UpdateType: Mutable
 
 ```yaml
@@ -174,9 +228,12 @@ Accept wildcard characters: False
 ```
 
 ### -SslMode
-Required: False    
-Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-dms-endpoint.html#cfn-dms-endpoint-sslmode    
-PrimitiveType: String    
+The Secure Sockets Layer SSL mode to use for the SSL connection.
+The SSL mode can be one of four values: none, require, verify-ca, verify-full.
+The default value is none.
+
+Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-dms-endpoint.html#cfn-dms-endpoint-sslmode
+PrimitiveType: String
 UpdateType: Mutable
 
 ```yaml
@@ -192,9 +249,10 @@ Accept wildcard characters: False
 ```
 
 ### -ServerName
-Required: False    
-Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-dms-endpoint.html#cfn-dms-endpoint-servername    
-PrimitiveType: String    
+The name of the server where the endpoint database resides.
+
+Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-dms-endpoint.html#cfn-dms-endpoint-servername
+PrimitiveType: String
 UpdateType: Mutable
 
 ```yaml
@@ -210,9 +268,10 @@ Accept wildcard characters: False
 ```
 
 ### -ExtraConnectionAttributes
-Required: False    
-Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-dms-endpoint.html#cfn-dms-endpoint-extraconnectionattributes    
-PrimitiveType: String    
+Additional attributes associated with the connection.
+
+Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-dms-endpoint.html#cfn-dms-endpoint-extraconnectionattributes
+PrimitiveType: String
 UpdateType: Mutable
 
 ```yaml
@@ -228,9 +287,10 @@ Accept wildcard characters: False
 ```
 
 ### -EndpointType
-Required: True    
-Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-dms-endpoint.html#cfn-dms-endpoint-endpointtype    
-PrimitiveType: String    
+The type of endpoint.
+
+Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-dms-endpoint.html#cfn-dms-endpoint-endpointtype
+PrimitiveType: String
 UpdateType: Mutable
 
 ```yaml
@@ -246,10 +306,11 @@ Accept wildcard characters: False
 ```
 
 ### -Tags
-Type: List    
-Required: False    
-Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-dms-endpoint.html#cfn-dms-endpoint-tags    
-ItemType: Tag    
+Tags to be added to the endpoint.
+
+Type: List
+Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-dms-endpoint.html#cfn-dms-endpoint-tags
+ItemType: Tag
 UpdateType: Immutable
 
 ```yaml
@@ -265,9 +326,11 @@ Accept wildcard characters: False
 ```
 
 ### -EndpointIdentifier
-Required: False    
-Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-dms-endpoint.html#cfn-dms-endpoint-endpointidentifier    
-PrimitiveType: String    
+The database endpoint identifier.
+Identifiers must begin with a letter; must contain only ASCII letters, digits, and hyphens; and must not end with a hyphen or contain two consecutive hyphens.
+
+Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-dms-endpoint.html#cfn-dms-endpoint-endpointidentifier
+PrimitiveType: String
 UpdateType: Mutable
 
 ```yaml
@@ -283,9 +346,10 @@ Accept wildcard characters: False
 ```
 
 ### -Password
-Required: False    
-Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-dms-endpoint.html#cfn-dms-endpoint-password    
-PrimitiveType: String    
+The password to be used to log in to the endpoint database.
+
+Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-dms-endpoint.html#cfn-dms-endpoint-password
+PrimitiveType: String
 UpdateType: Mutable
 
 ```yaml
@@ -301,9 +365,10 @@ Accept wildcard characters: False
 ```
 
 ### -CertificateArn
-Required: False    
-Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-dms-endpoint.html#cfn-dms-endpoint-certificatearn    
-PrimitiveType: String    
+The Amazon Resource Name ARN for the certificate.
+
+Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-dms-endpoint.html#cfn-dms-endpoint-certificatearn
+PrimitiveType: String
 UpdateType: Mutable
 
 ```yaml
@@ -319,9 +384,11 @@ Accept wildcard characters: False
 ```
 
 ### -MongoDbSettings
-Type: MongoDbSettings    
-Required: False    
-Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-dms-endpoint.html#cfn-dms-endpoint-mongodbsettings    
+Settings in JSON format for the source MongoDB endpoint.
+For more information about the available settings, see the configuration properties section in  Using MongoDB as a Target for AWS Database Migration Service: https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Source.MongoDB.html in the *AWS Database Migration Service User Guide.*
+
+Type: MongoDbSettings
+Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-dms-endpoint.html#cfn-dms-endpoint-mongodbsettings
 UpdateType: Mutable
 
 ```yaml
@@ -431,15 +498,13 @@ Accept wildcard characters: False
 ```
 
 ### CommonParameters
-This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction, and -WarningVariable.
-For more information, see about_CommonParameters (http://go.microsoft.com/fwlink/?LinkID=113216).
+This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction, and -WarningVariable. For more information, see [about_CommonParameters](http://go.microsoft.com/fwlink/?LinkID=113216).
 
 ## INPUTS
 
 ## OUTPUTS
 
 ### Vaporshell.Resource.DMS.Endpoint
-
 ## NOTES
 
 ## RELATED LINKS

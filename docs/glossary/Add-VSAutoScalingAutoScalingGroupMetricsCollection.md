@@ -1,18 +1,9 @@
----
-layout: glossary
-title: Add-VSAutoScalingAutoScalingGroupMetricsCollection
-categories: glossary
-label1: Category
-data1: Documentation
-label2: Depth
-data2: Deep
-schema: 2.0.0
----
-
 # Add-VSAutoScalingAutoScalingGroupMetricsCollection
 
 ## SYNOPSIS
-Adds an AWS::AutoScaling::AutoScalingGroup.MetricsCollection resource property to the template
+Adds an AWS::AutoScaling::AutoScalingGroup.MetricsCollection resource property to the template.
+MetricsCollection is a property of AutoScalingGroup: https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-as-group.html that describes the group metrics that an Amazon EC2 Auto Scaling group sends to Amazon CloudWatch.
+These metrics describe the group rather than any of its instances.
 
 ## SYNTAX
 
@@ -22,14 +13,30 @@ Add-VSAutoScalingAutoScalingGroupMetricsCollection [-Granularity] <Object> [[-Me
 ```
 
 ## DESCRIPTION
-Adds an AWS::AutoScaling::AutoScalingGroup.MetricsCollection resource property to the template
+Adds an AWS::AutoScaling::AutoScalingGroup.MetricsCollection resource property to the template.
+MetricsCollection is a property of AutoScalingGroup: https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-as-group.html that describes the group metrics that an Amazon EC2 Auto Scaling group sends to Amazon CloudWatch.
+These metrics describe the group rather than any of its instances.
+
+For more information, see Monitoring Your Auto Scaling Groups and Instances Using Amazon CloudWatch: https://docs.aws.amazon.com/autoscaling/ec2/userguide/as-instance-monitoring.html in the *Amazon EC2 Auto Scaling User Guide*.
+You can find a sample template snippet in the Examples: https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-as-group.html#aws-properties-as-group--examples section of the AWS::AutoScaling::AutoScalingGroup documentation.
+
+## EXAMPLES
+
+### Example 1
+```powershell
+PS C:\> {{ Add example code here }}
+```
+
+{{ Add example description here }}
 
 ## PARAMETERS
 
 ### -Granularity
-Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-as-metricscollection.html#cfn-as-metricscollection-granularity    
-PrimitiveType: String    
-Required: True    
+The frequency at which Amazon EC2 Auto Scaling sends aggregated data to CloudWatch.
+The only valid value is 1Minute.
+
+Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-as-metricscollection.html#cfn-as-metricscollection-granularity
+PrimitiveType: String
 UpdateType: Mutable
 
 ```yaml
@@ -45,11 +52,21 @@ Accept wildcard characters: False
 ```
 
 ### -Metrics
-Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-as-metricscollection.html#cfn-as-metricscollection-metrics    
-DuplicatesAllowed: True    
-PrimitiveItemType: String    
-Required: False    
-Type: List    
+The list of Auto Scaling group metrics to collect.
+If you specify Granularity and don't specify any metrics, all metrics are enabled.
++ GroupMinSize
++ GroupMaxSize
++ GroupDesiredCapacity
++ GroupInServiceInstances
++ GroupPendingInstances
++ GroupStandbyInstances
++ GroupTerminatingInstances
++ GroupTotalInstances
+
+Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-as-metricscollection.html#cfn-as-metricscollection-metrics
+DuplicatesAllowed: True
+PrimitiveItemType: String
+Type: List
 UpdateType: Mutable
 
 ```yaml
@@ -65,15 +82,13 @@ Accept wildcard characters: False
 ```
 
 ### CommonParameters
-This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction, and -WarningVariable.
-For more information, see about_CommonParameters (http://go.microsoft.com/fwlink/?LinkID=113216).
+This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction, and -WarningVariable. For more information, see [about_CommonParameters](http://go.microsoft.com/fwlink/?LinkID=113216).
 
 ## INPUTS
 
 ## OUTPUTS
 
 ### Vaporshell.Resource.AutoScaling.AutoScalingGroup.MetricsCollection
-
 ## NOTES
 
 ## RELATED LINKS

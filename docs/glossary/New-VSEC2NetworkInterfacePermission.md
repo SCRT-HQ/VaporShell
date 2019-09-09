@@ -1,18 +1,9 @@
----
-layout: glossary
-title: New-VSEC2NetworkInterfacePermission
-categories: glossary
-label1: Category
-data1: Documentation
-label2: Depth
-data2: Deep
-schema: 2.0.0
----
-
 # New-VSEC2NetworkInterfacePermission
 
 ## SYNOPSIS
-Adds an AWS::EC2::NetworkInterfacePermission resource to the template
+Adds an AWS::EC2::NetworkInterfacePermission resource to the template.
+Specifies a permission for an Amazon EC2 network interface.
+For example, you can grant an AWS authorized partner account permission to attach the specified network interface to an instance in their account.
 
 ## SYNTAX
 
@@ -23,7 +14,18 @@ New-VSEC2NetworkInterfacePermission [-LogicalId] <String> -AwsAccountId <Object>
 ```
 
 ## DESCRIPTION
-Adds an AWS::EC2::NetworkInterfacePermission resource to the template
+Adds an AWS::EC2::NetworkInterfacePermission resource to the template.
+Specifies a permission for an Amazon EC2 network interface.
+For example, you can grant an AWS authorized partner account permission to attach the specified network interface to an instance in their account.
+
+## EXAMPLES
+
+### Example 1
+```powershell
+PS C:\> {{ Add example code here }}
+```
+
+{{ Add example description here }}
 
 ## PARAMETERS
 
@@ -45,9 +47,10 @@ Accept wildcard characters: False
 ```
 
 ### -AwsAccountId
-Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ec2-networkinterfacepermission.html#cfn-ec2-networkinterfacepermission-awsaccountid    
-PrimitiveType: String    
-Required: True    
+The AWS account ID.
+
+Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ec2-networkinterfacepermission.html#cfn-ec2-networkinterfacepermission-awsaccountid
+PrimitiveType: String
 UpdateType: Immutable
 
 ```yaml
@@ -63,9 +66,10 @@ Accept wildcard characters: False
 ```
 
 ### -NetworkInterfaceId
-Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ec2-networkinterfacepermission.html#cfn-ec2-networkinterfacepermission-networkinterfaceid    
-PrimitiveType: String    
-Required: True    
+The ID of the network interface.
+
+Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ec2-networkinterfacepermission.html#cfn-ec2-networkinterfacepermission-networkinterfaceid
+PrimitiveType: String
 UpdateType: Immutable
 
 ```yaml
@@ -81,9 +85,10 @@ Accept wildcard characters: False
 ```
 
 ### -Permission
-Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ec2-networkinterfacepermission.html#cfn-ec2-networkinterfacepermission-permission    
-PrimitiveType: String    
-Required: True    
+The type of permission to grant: INSTANCE-ATTACH or EIP-ASSOCIATE.
+
+Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ec2-networkinterfacepermission.html#cfn-ec2-networkinterfacepermission-permission
+PrimitiveType: String
 UpdateType: Immutable
 
 ```yaml
@@ -193,15 +198,13 @@ Accept wildcard characters: False
 ```
 
 ### CommonParameters
-This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction, and -WarningVariable.
-For more information, see about_CommonParameters (http://go.microsoft.com/fwlink/?LinkID=113216).
+This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction, and -WarningVariable. For more information, see [about_CommonParameters](http://go.microsoft.com/fwlink/?LinkID=113216).
 
 ## INPUTS
 
 ## OUTPUTS
 
 ### Vaporshell.Resource.EC2.NetworkInterfacePermission
-
 ## NOTES
 
 ## RELATED LINKS

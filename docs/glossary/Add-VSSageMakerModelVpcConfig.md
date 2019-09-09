@@ -1,18 +1,10 @@
----
-layout: glossary
-title: Add-VSSageMakerModelVpcConfig
-categories: glossary
-label1: Category
-data1: Documentation
-label2: Depth
-data2: Deep
-schema: 2.0.0
----
-
 # Add-VSSageMakerModelVpcConfig
 
 ## SYNOPSIS
-Adds an AWS::SageMaker::Model.VpcConfig resource property to the template
+Adds an AWS::SageMaker::Model.VpcConfig resource property to the template.
+Specifies a VPC that your training jobs and hosted models have access to.
+Control access to and from your training and model containers by configuring the VPC.
+For more information, see Protect Endpoints by Using an Amazon Virtual Private Cloud: https://docs.aws.amazon.com/sagemaker/latest/dg/host-vpc.html and Protect Training Jobs by Using an Amazon Virtual Private Cloud: https://docs.aws.amazon.com/sagemaker/latest/dg/train-vpc.html.
 
 ## SYNTAX
 
@@ -21,15 +13,30 @@ Add-VSSageMakerModelVpcConfig [-Subnets] <Object> [-SecurityGroupIds] <Object> [
 ```
 
 ## DESCRIPTION
-Adds an AWS::SageMaker::Model.VpcConfig resource property to the template
+Adds an AWS::SageMaker::Model.VpcConfig resource property to the template.
+Specifies a VPC that your training jobs and hosted models have access to.
+Control access to and from your training and model containers by configuring the VPC.
+For more information, see Protect Endpoints by Using an Amazon Virtual Private Cloud: https://docs.aws.amazon.com/sagemaker/latest/dg/host-vpc.html and Protect Training Jobs by Using an Amazon Virtual Private Cloud: https://docs.aws.amazon.com/sagemaker/latest/dg/train-vpc.html.
+
+## EXAMPLES
+
+### Example 1
+```powershell
+PS C:\> {{ Add example code here }}
+```
+
+{{ Add example description here }}
 
 ## PARAMETERS
 
 ### -Subnets
-PrimitiveItemType: String    
-Type: List    
-Required: True    
-Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-sagemaker-model-vpcconfig.html#cfn-sagemaker-model-vpcconfig-subnets    
+The ID of the subnets in the VPC to which you want to connect your training job or model.
+Amazon EC2 P3 accelerated computing instances are not available in the c/d/e availability zones of region us-east-1.
+If you want to create endpoints with P3 instances in VPC mode in region us-east-1, create subnets in a/b/f availability zones instead.
+
+PrimitiveItemType: String
+Type: List
+Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-sagemaker-model-vpcconfig.html#cfn-sagemaker-model-vpcconfig-subnets
 UpdateType: Immutable
 
 ```yaml
@@ -45,10 +52,12 @@ Accept wildcard characters: False
 ```
 
 ### -SecurityGroupIds
-PrimitiveItemType: String    
-Type: List    
-Required: True    
-Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-sagemaker-model-vpcconfig.html#cfn-sagemaker-model-vpcconfig-securitygroupids    
+The VPC security group IDs, in the form sg-xxxxxxxx.
+Specify the security groups for the VPC that is specified in the Subnets field.
+
+PrimitiveItemType: String
+Type: List
+Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-sagemaker-model-vpcconfig.html#cfn-sagemaker-model-vpcconfig-securitygroupids
 UpdateType: Immutable
 
 ```yaml
@@ -64,15 +73,13 @@ Accept wildcard characters: False
 ```
 
 ### CommonParameters
-This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction, and -WarningVariable.
-For more information, see about_CommonParameters (http://go.microsoft.com/fwlink/?LinkID=113216).
+This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction, and -WarningVariable. For more information, see [about_CommonParameters](http://go.microsoft.com/fwlink/?LinkID=113216).
 
 ## INPUTS
 
 ## OUTPUTS
 
 ### Vaporshell.Resource.SageMaker.Model.VpcConfig
-
 ## NOTES
 
 ## RELATED LINKS

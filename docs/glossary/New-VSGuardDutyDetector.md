@@ -1,29 +1,33 @@
----
-layout: glossary
-title: New-VSGuardDutyDetector
-categories: glossary
-label1: Category
-data1: Documentation
-label2: Depth
-data2: Deep
-schema: 2.0.0
----
-
 # New-VSGuardDutyDetector
 
 ## SYNOPSIS
-Adds an AWS::GuardDuty::Detector resource to the template
+Adds an AWS::GuardDuty::Detector resource to the template.
+The AWS::GuardDuty::Detector resource specifies a new Amazon GuardDuty detector.
+A detector is an object that represents the Amazon GuardDuty service.
+A detector is required for Amazon GuardDuty to become operational.
 
 ## SYNTAX
 
 ```
-New-VSGuardDutyDetector [-LogicalId] <String> -Enable <Boolean> [-DeletionPolicy <String>]
- [-DependsOn <String[]>] [-Metadata <Object>] [-UpdatePolicy <Object>] [-Condition <Object>]
- [<CommonParameters>]
+New-VSGuardDutyDetector [-LogicalId] <String> [-FindingPublishingFrequency <Object>] -Enable <Boolean>
+ [-DeletionPolicy <String>] [-DependsOn <String[]>] [-Metadata <Object>] [-UpdatePolicy <Object>]
+ [-Condition <Object>] [<CommonParameters>]
 ```
 
 ## DESCRIPTION
-Adds an AWS::GuardDuty::Detector resource to the template
+Adds an AWS::GuardDuty::Detector resource to the template.
+The AWS::GuardDuty::Detector resource specifies a new Amazon GuardDuty detector.
+A detector is an object that represents the Amazon GuardDuty service.
+A detector is required for Amazon GuardDuty to become operational.
+
+## EXAMPLES
+
+### Example 1
+```powershell
+PS C:\> {{ Add example code here }}
+```
+
+{{ Add example description here }}
 
 ## PARAMETERS
 
@@ -44,10 +48,30 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
+### -FindingPublishingFrequency
+A enumeration value that specifies how frequently finding updates are published.
+
+Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-guardduty-detector.html#cfn-guardduty-detector-findingpublishingfrequency
+PrimitiveType: String
+UpdateType: Mutable
+
+```yaml
+Type: Object
+Parameter Sets: (All)
+Aliases:
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
 ### -Enable
-Required: True    
-Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-guardduty-detector.html#cfn-guardduty-detector-enable    
-PrimitiveType: Boolean    
+Specifies whether or not to enable the detector.
+
+Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-guardduty-detector.html#cfn-guardduty-detector-enable
+PrimitiveType: Boolean
 UpdateType: Mutable
 
 ```yaml
@@ -157,15 +181,13 @@ Accept wildcard characters: False
 ```
 
 ### CommonParameters
-This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction, and -WarningVariable.
-For more information, see about_CommonParameters (http://go.microsoft.com/fwlink/?LinkID=113216).
+This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction, and -WarningVariable. For more information, see [about_CommonParameters](http://go.microsoft.com/fwlink/?LinkID=113216).
 
 ## INPUTS
 
 ## OUTPUTS
 
 ### Vaporshell.Resource.GuardDuty.Detector
-
 ## NOTES
 
 ## RELATED LINKS

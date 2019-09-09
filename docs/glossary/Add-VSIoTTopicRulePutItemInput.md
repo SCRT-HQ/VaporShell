@@ -1,18 +1,8 @@
----
-layout: glossary
-title: Add-VSIoTTopicRulePutItemInput
-categories: glossary
-label1: Category
-data1: Documentation
-label2: Depth
-data2: Deep
-schema: 2.0.0
----
-
 # Add-VSIoTTopicRulePutItemInput
 
 ## SYNOPSIS
-Adds an AWS::IoT::TopicRule.PutItemInput resource property to the template
+Adds an AWS::IoT::TopicRule.PutItemInput resource property to the template.
+The input for the DynamoActionVS action that specifies the DynamoDB table to which the message data will be written.
 
 ## SYNTAX
 
@@ -21,14 +11,25 @@ Add-VSIoTTopicRulePutItemInput [-TableName] <Object> [<CommonParameters>]
 ```
 
 ## DESCRIPTION
-Adds an AWS::IoT::TopicRule.PutItemInput resource property to the template
+Adds an AWS::IoT::TopicRule.PutItemInput resource property to the template.
+The input for the DynamoActionVS action that specifies the DynamoDB table to which the message data will be written.
+
+## EXAMPLES
+
+### Example 1
+```powershell
+PS C:\> {{ Add example code here }}
+```
+
+{{ Add example description here }}
 
 ## PARAMETERS
 
 ### -TableName
-Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iot-topicrule-putiteminput.html#cfn-iot-topicrule-putiteminput-tablename    
-PrimitiveType: String    
-Required: True    
+The table where the message data will be written.
+
+Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iot-topicrule-putiteminput.html#cfn-iot-topicrule-putiteminput-tablename
+PrimitiveType: String
 UpdateType: Mutable
 
 ```yaml
@@ -44,15 +45,13 @@ Accept wildcard characters: False
 ```
 
 ### CommonParameters
-This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction, and -WarningVariable.
-For more information, see about_CommonParameters (http://go.microsoft.com/fwlink/?LinkID=113216).
+This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction, and -WarningVariable. For more information, see [about_CommonParameters](http://go.microsoft.com/fwlink/?LinkID=113216).
 
 ## INPUTS
 
 ## OUTPUTS
 
 ### Vaporshell.Resource.IoT.TopicRule.PutItemInput
-
 ## NOTES
 
 ## RELATED LINKS

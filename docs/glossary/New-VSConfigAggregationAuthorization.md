@@ -1,18 +1,8 @@
----
-layout: glossary
-title: New-VSConfigAggregationAuthorization
-categories: glossary
-label1: Category
-data1: Documentation
-label2: Depth
-data2: Deep
-schema: 2.0.0
----
-
 # New-VSConfigAggregationAuthorization
 
 ## SYNOPSIS
-Adds an AWS::Config::AggregationAuthorization resource to the template
+Adds an AWS::Config::AggregationAuthorization resource to the template.
+An object that represents the authorizations granted to aggregator accounts and regions.
 
 ## SYNTAX
 
@@ -23,7 +13,17 @@ New-VSConfigAggregationAuthorization [-LogicalId] <String> -AuthorizedAccountId 
 ```
 
 ## DESCRIPTION
-Adds an AWS::Config::AggregationAuthorization resource to the template
+Adds an AWS::Config::AggregationAuthorization resource to the template.
+An object that represents the authorizations granted to aggregator accounts and regions.
+
+## EXAMPLES
+
+### Example 1
+```powershell
+PS C:\> {{ Add example code here }}
+```
+
+{{ Add example description here }}
 
 ## PARAMETERS
 
@@ -45,9 +45,10 @@ Accept wildcard characters: False
 ```
 
 ### -AuthorizedAccountId
-Required: True    
-Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-config-aggregationauthorization.html#cfn-config-aggregationauthorization-authorizedaccountid    
-PrimitiveType: String    
+The 12-digit account ID of the account authorized to aggregate data.
+
+Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-config-aggregationauthorization.html#cfn-config-aggregationauthorization-authorizedaccountid
+PrimitiveType: String
 UpdateType: Immutable
 
 ```yaml
@@ -63,9 +64,10 @@ Accept wildcard characters: False
 ```
 
 ### -AuthorizedAwsRegion
-Required: True    
-Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-config-aggregationauthorization.html#cfn-config-aggregationauthorization-authorizedawsregion    
-PrimitiveType: String    
+The region authorized to collect aggregated data.
+
+Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-config-aggregationauthorization.html#cfn-config-aggregationauthorization-authorizedawsregion
+PrimitiveType: String
 UpdateType: Immutable
 
 ```yaml
@@ -175,15 +177,13 @@ Accept wildcard characters: False
 ```
 
 ### CommonParameters
-This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction, and -WarningVariable.
-For more information, see about_CommonParameters (http://go.microsoft.com/fwlink/?LinkID=113216).
+This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction, and -WarningVariable. For more information, see [about_CommonParameters](http://go.microsoft.com/fwlink/?LinkID=113216).
 
 ## INPUTS
 
 ## OUTPUTS
 
 ### Vaporshell.Resource.Config.AggregationAuthorization
-
 ## NOTES
 
 ## RELATED LINKS

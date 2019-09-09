@@ -1,18 +1,8 @@
----
-layout: glossary
-title: Add-VSElasticsearchDomainSnapshotOptions
-categories: glossary
-label1: Category
-data1: Documentation
-label2: Depth
-data2: Deep
-schema: 2.0.0
----
-
 # Add-VSElasticsearchDomainSnapshotOptions
 
 ## SYNOPSIS
-Adds an AWS::Elasticsearch::Domain.SnapshotOptions resource property to the template
+Adds an AWS::Elasticsearch::Domain.SnapshotOptions resource property to the template.
+The automated snapshot configuration for the Amazon ES domain indices.
 
 ## SYNTAX
 
@@ -21,14 +11,27 @@ Add-VSElasticsearchDomainSnapshotOptions [[-AutomatedSnapshotStartHour] <Int32>]
 ```
 
 ## DESCRIPTION
-Adds an AWS::Elasticsearch::Domain.SnapshotOptions resource property to the template
+Adds an AWS::Elasticsearch::Domain.SnapshotOptions resource property to the template.
+The automated snapshot configuration for the Amazon ES domain indices.
+
+## EXAMPLES
+
+### Example 1
+```powershell
+PS C:\> {{ Add example code here }}
+```
+
+{{ Add example description here }}
 
 ## PARAMETERS
 
 ### -AutomatedSnapshotStartHour
-Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-elasticsearch-domain-snapshotoptions.html#cfn-elasticsearch-domain-snapshotoptions-automatedsnapshotstarthour    
-PrimitiveType: Integer    
-Required: False    
+The hour in UTC during which the service takes an automated daily snapshot of the indices in the Amazon ES domain.
+For example, if you specify 0, Amazon ES takes an automated snapshot everyday between midnight and 1 am.
+You can specify a value between 0 and 23.
+
+Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-elasticsearch-domain-snapshotoptions.html#cfn-elasticsearch-domain-snapshotoptions-automatedsnapshotstarthour
+PrimitiveType: Integer
 UpdateType: Mutable
 
 ```yaml
@@ -44,15 +47,13 @@ Accept wildcard characters: False
 ```
 
 ### CommonParameters
-This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction, and -WarningVariable.
-For more information, see about_CommonParameters (http://go.microsoft.com/fwlink/?LinkID=113216).
+This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction, and -WarningVariable. For more information, see [about_CommonParameters](http://go.microsoft.com/fwlink/?LinkID=113216).
 
 ## INPUTS
 
 ## OUTPUTS
 
 ### Vaporshell.Resource.Elasticsearch.Domain.SnapshotOptions
-
 ## NOTES
 
 ## RELATED LINKS

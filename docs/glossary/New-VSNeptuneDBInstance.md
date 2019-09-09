@@ -1,18 +1,8 @@
----
-layout: glossary
-title: New-VSNeptuneDBInstance
-categories: glossary
-label1: Category
-data1: Documentation
-label2: Depth
-data2: Deep
-schema: 2.0.0
----
-
 # New-VSNeptuneDBInstance
 
 ## SYNOPSIS
-Adds an AWS::Neptune::DBInstance resource to the template
+Adds an AWS::Neptune::DBInstance resource to the template.
+The AWS::Neptune::DBInstance type creates an Amazon Neptune DB instance.
 
 ## SYNTAX
 
@@ -26,7 +16,51 @@ New-VSNeptuneDBInstance [-LogicalId] <String> [-DBParameterGroupName <Object>] -
 ```
 
 ## DESCRIPTION
-Adds an AWS::Neptune::DBInstance resource to the template
+Adds an AWS::Neptune::DBInstance resource to the template.
+The AWS::Neptune::DBInstance type creates an Amazon Neptune DB instance.
+
+**Updating DB Instances**
+
+You can set a deletion policy for your DB instance to control how AWS CloudFormation handles the instance when the stack is deleted.
+For Neptune DB instances, you can choose to *retain* the instance, to *delete* the instance, or to *create a snapshot* of the instance.
+The default AWS CloudFormation behavior depends on the DBClusterIdentifier property:
+
++ For AWS::Neptune::DBInstance resources that don't specify the DBClusterIdentifier property, AWS CloudFormation saves a snapshot of the DB instance.
+
++ For AWS::Neptune::DBInstance resources that do specify the DBClusterIdentifier property, AWS CloudFormation deletes the DB instance.
+
+**Deleting DB Instances**
+
+**Important**
+
+If a DB instance is deleted or replaced during an update, AWS CloudFormation deletes all automated snapshots.
+However, it retains manual DB snapshots.
+During an update that requires replacement, you can apply a stack policy to prevent DB instances from being replaced.
+
+When properties labeled *Update requires: Replacement* are updated, AWS CloudFormation first creates a replacement DB instance, changes references from other dependent resources to point to the replacement DB instance, and finally deletes the old DB instance.
+
+**Important**
+
+We highly recommend that you take a snapshot of the database before updating the stack.
+If you don't, you lose the data when AWS CloudFormation replaces your DB instance.
+To preserve your data, perform the following procedure:
+
+Deactivate any applications that are using the DB instance so that there's no activity on the DB instance.
+
+Create a snapshot of the DB instance.
+
+If you want to restore your instance using a DB snapshot, modify the updated template with your DB instance changes and add the DBSnapshotIdentifier property with the ID of the DB snapshot that you want to use.
+
+Update the stack.
+
+## EXAMPLES
+
+### Example 1
+```powershell
+PS C:\> {{ Add example code here }}
+```
+
+{{ Add example description here }}
 
 ## PARAMETERS
 
@@ -48,9 +82,12 @@ Accept wildcard characters: False
 ```
 
 ### -DBParameterGroupName
-Required: False    
-Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-neptune-dbinstance.html#cfn-neptune-dbinstance-dbparametergroupname    
-PrimitiveType: String    
+The name of an existing DB parameter group or a reference to an AWS::Neptune::DBParameterGroup resource created in the template.
+If any of the data members of the referenced parameter group are changed during an update, the DB instance might need to be restarted, which causes some interruption.
+If the parameter group contains static parameters, whether they were changed or not, an update triggers a reboot.
+
+Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-neptune-dbinstance.html#cfn-neptune-dbinstance-dbparametergroupname
+PrimitiveType: String
 UpdateType: Mutable
 
 ```yaml
@@ -66,9 +103,11 @@ Accept wildcard characters: False
 ```
 
 ### -DBInstanceClass
-Required: True    
-Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-neptune-dbinstance.html#cfn-neptune-dbinstance-dbinstanceclass    
-PrimitiveType: String    
+Contains the name of the compute and memory capacity class of the DB instance.
+If you update this property, some interruptions may occur.
+
+Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-neptune-dbinstance.html#cfn-neptune-dbinstance-dbinstanceclass
+PrimitiveType: String
 UpdateType: Mutable
 
 ```yaml
@@ -84,9 +123,12 @@ Accept wildcard characters: False
 ```
 
 ### -AllowMajorVersionUpgrade
-Required: False    
-Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-neptune-dbinstance.html#cfn-neptune-dbinstance-allowmajorversionupgrade    
-PrimitiveType: Boolean    
+Indicates that major version upgrades are allowed.
+Changing this parameter doesn't result in an outage and the change is asynchronously applied as soon as possible.
+This parameter must be set to true when specifying a value for the EngineVersion parameter that is a different major version than the DB instance's current version.
+
+Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-neptune-dbinstance.html#cfn-neptune-dbinstance-allowmajorversionupgrade
+PrimitiveType: Boolean
 UpdateType: Mutable
 
 ```yaml
@@ -102,9 +144,10 @@ Accept wildcard characters: False
 ```
 
 ### -DBClusterIdentifier
-Required: False    
-Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-neptune-dbinstance.html#cfn-neptune-dbinstance-dbclusteridentifier    
-PrimitiveType: String    
+If the DB instance is a member of a DB cluster, contains the name of the DB cluster that the DB instance is a member of.
+
+Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-neptune-dbinstance.html#cfn-neptune-dbinstance-dbclusteridentifier
+PrimitiveType: String
 UpdateType: Immutable
 
 ```yaml
@@ -120,9 +163,10 @@ Accept wildcard characters: False
 ```
 
 ### -AvailabilityZone
-Required: False    
-Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-neptune-dbinstance.html#cfn-neptune-dbinstance-availabilityzone    
-PrimitiveType: String    
+Specifies the name of the Availability Zone the DB instance is located in.
+
+Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-neptune-dbinstance.html#cfn-neptune-dbinstance-availabilityzone
+PrimitiveType: String
 UpdateType: Immutable
 
 ```yaml
@@ -138,9 +182,10 @@ Accept wildcard characters: False
 ```
 
 ### -PreferredMaintenanceWindow
-Required: False    
-Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-neptune-dbinstance.html#cfn-neptune-dbinstance-preferredmaintenancewindow    
-PrimitiveType: String    
+Specifies the weekly time range during which system maintenance can occur, in Universal Coordinated Time UTC.
+
+Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-neptune-dbinstance.html#cfn-neptune-dbinstance-preferredmaintenancewindow
+PrimitiveType: String
 UpdateType: Mutable
 
 ```yaml
@@ -156,9 +201,11 @@ Accept wildcard characters: False
 ```
 
 ### -AutoMinorVersionUpgrade
-Required: False    
-Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-neptune-dbinstance.html#cfn-neptune-dbinstance-autominorversionupgrade    
-PrimitiveType: Boolean    
+Indicates that minor version patches are applied automatically.
+When updating this property, some interruptions may occur.
+
+Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-neptune-dbinstance.html#cfn-neptune-dbinstance-autominorversionupgrade
+PrimitiveType: Boolean
 UpdateType: Mutable
 
 ```yaml
@@ -174,9 +221,11 @@ Accept wildcard characters: False
 ```
 
 ### -DBSubnetGroupName
-Required: False    
-Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-neptune-dbinstance.html#cfn-neptune-dbinstance-dbsubnetgroupname    
-PrimitiveType: String    
+A DB subnet group to associate with the DB instance.
+If you update this value, the new subnet group must be a subnet group in a new virtual private cloud VPC.
+
+Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-neptune-dbinstance.html#cfn-neptune-dbinstance-dbsubnetgroupname
+PrimitiveType: String
 UpdateType: Immutable
 
 ```yaml
@@ -192,9 +241,11 @@ Accept wildcard characters: False
 ```
 
 ### -DBInstanceIdentifier
-Required: False    
-Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-neptune-dbinstance.html#cfn-neptune-dbinstance-dbinstanceidentifier    
-PrimitiveType: String    
+Contains a user-supplied database identifier.
+This identifier is the unique key that identifies a DB instance.
+
+Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-neptune-dbinstance.html#cfn-neptune-dbinstance-dbinstanceidentifier
+PrimitiveType: String
 UpdateType: Immutable
 
 ```yaml
@@ -210,9 +261,12 @@ Accept wildcard characters: False
 ```
 
 ### -DBSnapshotIdentifier
-Required: False    
-Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-neptune-dbinstance.html#cfn-neptune-dbinstance-dbsnapshotidentifier    
-PrimitiveType: String    
+This parameter is not supported.
+AWS::Neptune::DBInstance does not support restoring from snapshots.
+AWS::Neptune::DBCluster does support restoring from snapshots.
+
+Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-neptune-dbinstance.html#cfn-neptune-dbinstance-dbsnapshotidentifier
+PrimitiveType: String
 UpdateType: Immutable
 
 ```yaml
@@ -228,10 +282,11 @@ Accept wildcard characters: False
 ```
 
 ### -Tags
-Type: List    
-Required: False    
-Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-neptune-dbinstance.html#cfn-neptune-dbinstance-tags    
-ItemType: Tag    
+An arbitrary set of tags key-value pairs for this DB instance.
+
+Type: List
+Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-neptune-dbinstance.html#cfn-neptune-dbinstance-tags
+ItemType: Tag
 UpdateType: Mutable
 
 ```yaml
@@ -341,15 +396,13 @@ Accept wildcard characters: False
 ```
 
 ### CommonParameters
-This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction, and -WarningVariable.
-For more information, see about_CommonParameters (http://go.microsoft.com/fwlink/?LinkID=113216).
+This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction, and -WarningVariable. For more information, see [about_CommonParameters](http://go.microsoft.com/fwlink/?LinkID=113216).
 
 ## INPUTS
 
 ## OUTPUTS
 
 ### Vaporshell.Resource.Neptune.DBInstance
-
 ## NOTES
 
 ## RELATED LINKS

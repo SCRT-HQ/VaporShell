@@ -1,14 +1,3 @@
----
-layout: glossary
-title: Add-FnJoin
-categories: glossary
-label1: Category
-data1: Documentation
-label2: Depth
-data2: Deep
-schema: 2.0.0
----
-
 # Add-FnJoin
 
 ## SYNOPSIS
@@ -23,6 +12,15 @@ Add-FnJoin [[-Delimiter] <String>] [-ListOfValues] <Object[]> [<CommonParameters
 ## DESCRIPTION
 The intrinsic function Fn::Join appends a set of values into a single value, separated by the specified delimiter.
 If a delimiter is the empty string, the set of values are concatenated with no delimiter.
+
+## EXAMPLES
+
+### EXAMPLE 1
+```
+Add-FnSelect -Index 2 -ListOfObjects (Add-FnSplit -Delimiter "," -SourceString (Add-FnImportValue -ValueToImport "AccountSubnetIds"))
+```
+
+When the template is exported, this will convert to: {"Fn::Select":\["2",{"Fn::Split":\[",",{"Fn::ImportValue":"AccountSubnetIds"}\]}\]}
 
 ## PARAMETERS
 
@@ -62,15 +60,13 @@ Accept wildcard characters: False
 ```
 
 ### CommonParameters
-This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction, and -WarningVariable.
-For more information, see about_CommonParameters (http://go.microsoft.com/fwlink/?LinkID=113216).
+This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction, and -WarningVariable. For more information, see [about_CommonParameters](http://go.microsoft.com/fwlink/?LinkID=113216).
 
 ## INPUTS
 
 ## OUTPUTS
 
 ### Vaporshell.Function.Join
-
 ## NOTES
 For the Fn::Join delimiter, you cannot use any functions.
 You must specify a string value.

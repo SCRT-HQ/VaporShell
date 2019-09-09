@@ -1,18 +1,8 @@
----
-layout: glossary
-title: New-VSServiceCatalogLaunchRoleConstraint
-categories: glossary
-label1: Category
-data1: Documentation
-label2: Depth
-data2: Deep
-schema: 2.0.0
----
-
 # New-VSServiceCatalogLaunchRoleConstraint
 
 ## SYNOPSIS
-Adds an AWS::ServiceCatalog::LaunchRoleConstraint resource to the template
+Adds an AWS::ServiceCatalog::LaunchRoleConstraint resource to the template.
+Specifies a launch constraint.
 
 ## SYNTAX
 
@@ -24,7 +14,17 @@ New-VSServiceCatalogLaunchRoleConstraint [-LogicalId] <String> [-Description <Ob
 ```
 
 ## DESCRIPTION
-Adds an AWS::ServiceCatalog::LaunchRoleConstraint resource to the template
+Adds an AWS::ServiceCatalog::LaunchRoleConstraint resource to the template.
+Specifies a launch constraint.
+
+## EXAMPLES
+
+### Example 1
+```powershell
+PS C:\> {{ Add example code here }}
+```
+
+{{ Add example description here }}
 
 ## PARAMETERS
 
@@ -46,9 +46,10 @@ Accept wildcard characters: False
 ```
 
 ### -Description
-Required: False    
-Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-servicecatalog-launchroleconstraint.html#cfn-servicecatalog-launchroleconstraint-description    
-PrimitiveType: String    
+The description of the constraint.
+
+Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-servicecatalog-launchroleconstraint.html#cfn-servicecatalog-launchroleconstraint-description
+PrimitiveType: String
 UpdateType: Mutable
 
 ```yaml
@@ -64,9 +65,13 @@ Accept wildcard characters: False
 ```
 
 ### -AcceptLanguage
-Required: False    
-Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-servicecatalog-launchroleconstraint.html#cfn-servicecatalog-launchroleconstraint-acceptlanguage    
-PrimitiveType: String    
+The language code.
++  en - English default
++  jp - Japanese
++  zh - Chinese
+
+Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-servicecatalog-launchroleconstraint.html#cfn-servicecatalog-launchroleconstraint-acceptlanguage
+PrimitiveType: String
 UpdateType: Mutable
 
 ```yaml
@@ -82,9 +87,10 @@ Accept wildcard characters: False
 ```
 
 ### -PortfolioId
-Required: True    
-Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-servicecatalog-launchroleconstraint.html#cfn-servicecatalog-launchroleconstraint-portfolioid    
-PrimitiveType: String    
+The portfolio identifier.
+
+Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-servicecatalog-launchroleconstraint.html#cfn-servicecatalog-launchroleconstraint-portfolioid
+PrimitiveType: String
 UpdateType: Immutable
 
 ```yaml
@@ -100,9 +106,10 @@ Accept wildcard characters: False
 ```
 
 ### -ProductId
-Required: True    
-Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-servicecatalog-launchroleconstraint.html#cfn-servicecatalog-launchroleconstraint-productid    
-PrimitiveType: String    
+The product identifier.
+
+Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-servicecatalog-launchroleconstraint.html#cfn-servicecatalog-launchroleconstraint-productid
+PrimitiveType: String
 UpdateType: Immutable
 
 ```yaml
@@ -118,10 +125,11 @@ Accept wildcard characters: False
 ```
 
 ### -RoleArn
-Required: True    
-Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-servicecatalog-launchroleconstraint.html#cfn-servicecatalog-launchroleconstraint-rolearn    
-PrimitiveType: String    
-UpdateType: Immutable
+The ARN of the launch role.
+
+Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-servicecatalog-launchroleconstraint.html#cfn-servicecatalog-launchroleconstraint-rolearn
+PrimitiveType: String
+UpdateType: Mutable
 
 ```yaml
 Type: Object
@@ -230,15 +238,13 @@ Accept wildcard characters: False
 ```
 
 ### CommonParameters
-This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction, and -WarningVariable.
-For more information, see about_CommonParameters (http://go.microsoft.com/fwlink/?LinkID=113216).
+This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction, and -WarningVariable. For more information, see [about_CommonParameters](http://go.microsoft.com/fwlink/?LinkID=113216).
 
 ## INPUTS
 
 ## OUTPUTS
 
 ### Vaporshell.Resource.ServiceCatalog.LaunchRoleConstraint
-
 ## NOTES
 
 ## RELATED LINKS

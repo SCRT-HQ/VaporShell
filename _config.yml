@@ -4,9 +4,9 @@
 # Site settings
 title: VaporShell
 description: |
-  Define your Cloud   
-  with PowerShell   
-  on any system   
+  Define your Cloud
+  with PowerShell
+  on any system
 owner: "SCRT HQ"
 first_published: 2017
 email: nate@scrthq.com
@@ -21,7 +21,7 @@ author:
   twitter: scrthq
 
 google_site_verification: 643aMdQ5fl2YkpOa4sL_M3ROwM_notMk5MrfDkrgmww
-  
+
 social:
   github: https://github.com/scrthq/VaporShell
   linkedin-square: https://linkedin.com/in/scrthq

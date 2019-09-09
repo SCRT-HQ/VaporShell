@@ -1,18 +1,9 @@
----
-layout: glossary
-title: New-VSRedshiftClusterSecurityGroup
-categories: glossary
-label1: Category
-data1: Documentation
-label2: Depth
-data2: Deep
-schema: 2.0.0
----
-
 # New-VSRedshiftClusterSecurityGroup
 
 ## SYNOPSIS
-Adds an AWS::Redshift::ClusterSecurityGroup resource to the template
+Adds an AWS::Redshift::ClusterSecurityGroup resource to the template.
+Specifies a new Amazon Redshift security group.
+You use security groups to control access to non-VPC clusters.
 
 ## SYNTAX
 
@@ -23,7 +14,20 @@ New-VSRedshiftClusterSecurityGroup [-LogicalId] <String> -Description <Object> [
 ```
 
 ## DESCRIPTION
-Adds an AWS::Redshift::ClusterSecurityGroup resource to the template
+Adds an AWS::Redshift::ClusterSecurityGroup resource to the template.
+Specifies a new Amazon Redshift security group.
+You use security groups to control access to non-VPC clusters.
+
+For information about managing security groups, go to Amazon Redshift Cluster Security Groups: https://docs.aws.amazon.com/redshift/latest/mgmt/working-with-security-groups.html in the *Amazon Redshift Cluster Management Guide*.
+
+## EXAMPLES
+
+### Example 1
+```powershell
+PS C:\> {{ Add example code here }}
+```
+
+{{ Add example description here }}
 
 ## PARAMETERS
 
@@ -45,9 +49,10 @@ Accept wildcard characters: False
 ```
 
 ### -Description
-Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-redshift-clustersecuritygroup.html#cfn-redshift-clustersecuritygroup-description    
-PrimitiveType: String    
-Required: True    
+A description for the security group.
+
+Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-redshift-clustersecuritygroup.html#cfn-redshift-clustersecuritygroup-description
+PrimitiveType: String
 UpdateType: Immutable
 
 ```yaml
@@ -63,11 +68,13 @@ Accept wildcard characters: False
 ```
 
 ### -Tags
-Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-redshift-clustersecuritygroup.html#cfn-redshift-clustersecuritygroup-tags    
-DuplicatesAllowed: True    
-ItemType: Tag    
-Required: False    
-Type: List    
+Specifies an arbitrary set of tags key-value pairs to associate with this security group.
+Use tags to manage your resources.
+
+Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-redshift-clustersecuritygroup.html#cfn-redshift-clustersecuritygroup-tags
+DuplicatesAllowed: True
+ItemType: Tag
+Type: List
 UpdateType: Mutable
 
 ```yaml
@@ -177,15 +184,13 @@ Accept wildcard characters: False
 ```
 
 ### CommonParameters
-This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction, and -WarningVariable.
-For more information, see about_CommonParameters (http://go.microsoft.com/fwlink/?LinkID=113216).
+This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction, and -WarningVariable. For more information, see [about_CommonParameters](http://go.microsoft.com/fwlink/?LinkID=113216).
 
 ## INPUTS
 
 ## OUTPUTS
 
 ### Vaporshell.Resource.Redshift.ClusterSecurityGroup
-
 ## NOTES
 
 ## RELATED LINKS

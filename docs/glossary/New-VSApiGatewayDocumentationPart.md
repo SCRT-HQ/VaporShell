@@ -1,18 +1,9 @@
----
-layout: glossary
-title: New-VSApiGatewayDocumentationPart
-categories: glossary
-label1: Category
-data1: Documentation
-label2: Depth
-data2: Deep
-schema: 2.0.0
----
-
 # New-VSApiGatewayDocumentationPart
 
 ## SYNOPSIS
-Adds an AWS::ApiGateway::DocumentationPart resource to the template
+Adds an AWS::ApiGateway::DocumentationPart resource to the template.
+The AWS::ApiGateway::DocumentationPart resource creates a documentation part for an API.
+For more information, see Representation of API Documentation in API Gateway: https://docs.aws.amazon.com/apigateway/latest/developerguide/api-gateway-documenting-api-content-representation.html in the *API Gateway Developer Guide*.
 
 ## SYNTAX
 
@@ -23,7 +14,18 @@ New-VSApiGatewayDocumentationPart [-LogicalId] <String> -Location <Object> -Prop
 ```
 
 ## DESCRIPTION
-Adds an AWS::ApiGateway::DocumentationPart resource to the template
+Adds an AWS::ApiGateway::DocumentationPart resource to the template.
+The AWS::ApiGateway::DocumentationPart resource creates a documentation part for an API.
+For more information, see Representation of API Documentation in API Gateway: https://docs.aws.amazon.com/apigateway/latest/developerguide/api-gateway-documenting-api-content-representation.html in the *API Gateway Developer Guide*.
+
+## EXAMPLES
+
+### Example 1
+```powershell
+PS C:\> {{ Add example code here }}
+```
+
+{{ Add example description here }}
 
 ## PARAMETERS
 
@@ -45,9 +47,10 @@ Accept wildcard characters: False
 ```
 
 ### -Location
-Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-apigateway-documentationpart.html#cfn-apigateway-documentationpart-location    
-Required: True    
-Type: Location    
+The location of the API entity that the documentation applies to.
+
+Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-apigateway-documentationpart.html#cfn-apigateway-documentationpart-location
+Type: Location
 UpdateType: Immutable
 
 ```yaml
@@ -63,9 +66,10 @@ Accept wildcard characters: False
 ```
 
 ### -Properties
-Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-apigateway-documentationpart.html#cfn-apigateway-documentationpart-properties    
-PrimitiveType: String    
-Required: True    
+The documentation content map of the targeted API entity.
+
+Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-apigateway-documentationpart.html#cfn-apigateway-documentationpart-properties
+PrimitiveType: String
 UpdateType: Mutable
 
 ```yaml
@@ -81,9 +85,10 @@ Accept wildcard characters: False
 ```
 
 ### -RestApiId
-Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-apigateway-documentationpart.html#cfn-apigateway-documentationpart-restapiid    
-PrimitiveType: String    
-Required: True    
+The identifier of the targeted API entity.
+
+Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-apigateway-documentationpart.html#cfn-apigateway-documentationpart-restapiid
+PrimitiveType: String
 UpdateType: Immutable
 
 ```yaml
@@ -193,15 +198,13 @@ Accept wildcard characters: False
 ```
 
 ### CommonParameters
-This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction, and -WarningVariable.
-For more information, see about_CommonParameters (http://go.microsoft.com/fwlink/?LinkID=113216).
+This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction, and -WarningVariable. For more information, see [about_CommonParameters](http://go.microsoft.com/fwlink/?LinkID=113216).
 
 ## INPUTS
 
 ## OUTPUTS
 
 ### Vaporshell.Resource.ApiGateway.DocumentationPart
-
 ## NOTES
 
 ## RELATED LINKS

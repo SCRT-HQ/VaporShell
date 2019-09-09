@@ -1,18 +1,8 @@
----
-layout: glossary
-title: Add-VSOpsWorksStackChefConfiguration
-categories: glossary
-label1: Category
-data1: Documentation
-label2: Depth
-data2: Deep
-schema: 2.0.0
----
-
 # Add-VSOpsWorksStackChefConfiguration
 
 ## SYNOPSIS
-Adds an AWS::OpsWorks::Stack.ChefConfiguration resource property to the template
+Adds an AWS::OpsWorks::Stack.ChefConfiguration resource property to the template.
+Describes the Chef configuration.
 
 ## SYNTAX
 
@@ -22,14 +12,25 @@ Add-VSOpsWorksStackChefConfiguration [[-BerkshelfVersion] <Object>] [[-ManageBer
 ```
 
 ## DESCRIPTION
-Adds an AWS::OpsWorks::Stack.ChefConfiguration resource property to the template
+Adds an AWS::OpsWorks::Stack.ChefConfiguration resource property to the template.
+Describes the Chef configuration.
+
+## EXAMPLES
+
+### Example 1
+```powershell
+PS C:\> {{ Add example code here }}
+```
+
+{{ Add example description here }}
 
 ## PARAMETERS
 
 ### -BerkshelfVersion
-Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-opsworks-stack-chefconfiguration.html#cfn-opsworks-chefconfiguration-berkshelfversion    
-PrimitiveType: String    
-Required: False    
+The Berkshelf version.
+
+Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-opsworks-stack-chefconfiguration.html#cfn-opsworks-chefconfiguration-berkshelfversion
+PrimitiveType: String
 UpdateType: Mutable
 
 ```yaml
@@ -45,9 +46,10 @@ Accept wildcard characters: False
 ```
 
 ### -ManageBerkshelf
-Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-opsworks-stack-chefconfiguration.html#cfn-opsworks-chefconfiguration-berkshelfversion    
-PrimitiveType: Boolean    
-Required: False    
+Whether to enable Berkshelf.
+
+Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-opsworks-stack-chefconfiguration.html#cfn-opsworks-chefconfiguration-berkshelfversion
+PrimitiveType: Boolean
 UpdateType: Mutable
 
 ```yaml
@@ -63,15 +65,13 @@ Accept wildcard characters: False
 ```
 
 ### CommonParameters
-This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction, and -WarningVariable.
-For more information, see about_CommonParameters (http://go.microsoft.com/fwlink/?LinkID=113216).
+This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction, and -WarningVariable. For more information, see [about_CommonParameters](http://go.microsoft.com/fwlink/?LinkID=113216).
 
 ## INPUTS
 
 ## OUTPUTS
 
 ### Vaporshell.Resource.OpsWorks.Stack.ChefConfiguration
-
 ## NOTES
 
 ## RELATED LINKS

@@ -1,18 +1,10 @@
----
-layout: glossary
-title: New-VSGameLiftAlias
-categories: glossary
-label1: Category
-data1: Documentation
-label2: Depth
-data2: Deep
-schema: 2.0.0
----
-
 # New-VSGameLiftAlias
 
 ## SYNOPSIS
-Adds an AWS::GameLift::Alias resource to the template
+Adds an AWS::GameLift::Alias resource to the template.
+The AWS::GameLift::Alias resource creates an alias for an Amazon GameLift (GameLift fleet, which you can use to anonymize your fleet.
+You can reference the alias instead of a specific fleet when you create game sessions.
+For more information, see the CreateAlias: https://docs.aws.amazon.com/gamelift/latest/apireference/API_CreateAlias.html action in the *Amazon GameLift API Reference*.
 
 ## SYNTAX
 
@@ -23,7 +15,19 @@ New-VSGameLiftAlias [-LogicalId] <String> [-Description <Object>] -Name <Object>
 ```
 
 ## DESCRIPTION
-Adds an AWS::GameLift::Alias resource to the template
+Adds an AWS::GameLift::Alias resource to the template.
+The AWS::GameLift::Alias resource creates an alias for an Amazon GameLift (GameLift fleet, which you can use to anonymize your fleet.
+You can reference the alias instead of a specific fleet when you create game sessions.
+For more information, see the CreateAlias: https://docs.aws.amazon.com/gamelift/latest/apireference/API_CreateAlias.html action in the *Amazon GameLift API Reference*.
+
+## EXAMPLES
+
+### Example 1
+```powershell
+PS C:\> {{ Add example code here }}
+```
+
+{{ Add example description here }}
 
 ## PARAMETERS
 
@@ -45,9 +49,10 @@ Accept wildcard characters: False
 ```
 
 ### -Description
-Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-gamelift-alias.html#cfn-gamelift-alias-description    
-PrimitiveType: String    
-Required: False    
+Human-readable description of an alias.
+
+Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-gamelift-alias.html#cfn-gamelift-alias-description
+PrimitiveType: String
 UpdateType: Mutable
 
 ```yaml
@@ -63,9 +68,11 @@ Accept wildcard characters: False
 ```
 
 ### -Name
-Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-gamelift-alias.html#cfn-gamelift-alias-name    
-PrimitiveType: String    
-Required: True    
+Descriptive label that is associated with an alias.
+Alias names do not need to be unique.
+
+Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-gamelift-alias.html#cfn-gamelift-alias-name
+PrimitiveType: String
 UpdateType: Mutable
 
 ```yaml
@@ -81,9 +88,10 @@ Accept wildcard characters: False
 ```
 
 ### -RoutingStrategy
-Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-gamelift-alias.html#cfn-gamelift-alias-routingstrategy    
-Required: True    
-Type: RoutingStrategy    
+A routing configuration that specifies where traffic is directed for this alias, such as to a fleet or to a message.
+
+Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-gamelift-alias.html#cfn-gamelift-alias-routingstrategy
+Type: RoutingStrategy
 UpdateType: Mutable
 
 ```yaml
@@ -193,15 +201,13 @@ Accept wildcard characters: False
 ```
 
 ### CommonParameters
-This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction, and -WarningVariable.
-For more information, see about_CommonParameters (http://go.microsoft.com/fwlink/?LinkID=113216).
+This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction, and -WarningVariable. For more information, see [about_CommonParameters](http://go.microsoft.com/fwlink/?LinkID=113216).
 
 ## INPUTS
 
 ## OUTPUTS
 
 ### Vaporshell.Resource.GameLift.Alias
-
 ## NOTES
 
 ## RELATED LINKS

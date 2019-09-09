@@ -1,18 +1,12 @@
----
-layout: glossary
-title: Add-VSOpsWorksLayerRecipes
-categories: glossary
-label1: Category
-data1: Documentation
-label2: Depth
-data2: Deep
-schema: 2.0.0
----
-
 # Add-VSOpsWorksLayerRecipes
 
 ## SYNOPSIS
-Adds an AWS::OpsWorks::Layer.Recipes resource property to the template
+Adds an AWS::OpsWorks::Layer.Recipes resource property to the template.
+AWS OpsWorks Stacks supports five lifecycle events: **setup**, **configuration**, **deploy**, **undeploy**, and **shutdown**.
+For each layer, AWS OpsWorks Stacks runs a set of standard recipes for each event.
+In addition, you can provide custom recipes for any or all layers and events.
+AWS OpsWorks Stacks runs custom event recipes after the standard recipes.
+LayerCustomRecipes specifies the custom recipes for a particular layer to be run in response to each of the five events.
 
 ## SYNTAX
 
@@ -22,16 +16,34 @@ Add-VSOpsWorksLayerRecipes [[-Configure] <Object>] [[-Deploy] <Object>] [[-Setup
 ```
 
 ## DESCRIPTION
-Adds an AWS::OpsWorks::Layer.Recipes resource property to the template
+Adds an AWS::OpsWorks::Layer.Recipes resource property to the template.
+AWS OpsWorks Stacks supports five lifecycle events: **setup**, **configuration**, **deploy**, **undeploy**, and **shutdown**.
+For each layer, AWS OpsWorks Stacks runs a set of standard recipes for each event.
+In addition, you can provide custom recipes for any or all layers and events.
+AWS OpsWorks Stacks runs custom event recipes after the standard recipes.
+LayerCustomRecipes specifies the custom recipes for a particular layer to be run in response to each of the five events.
+
+To specify a recipe, use the cookbook's directory name in the repository followed by two colons and the recipe name, which is the recipe's file name without the .rb extension.
+For example: phpapp2::dbsetup specifies the dbsetup.rb recipe in the repository's phpapp2 folder.
+
+## EXAMPLES
+
+### Example 1
+```powershell
+PS C:\> {{ Add example code here }}
+```
+
+{{ Add example description here }}
 
 ## PARAMETERS
 
 ### -Configure
-Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-opsworks-layer-recipes.html#cfn-opsworks-layer-customrecipes-configure    
-DuplicatesAllowed: False    
-PrimitiveItemType: String    
-Required: False    
-Type: List    
+An array of custom recipe names to be run following a configure event.
+
+Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-opsworks-layer-recipes.html#cfn-opsworks-layer-customrecipes-configure
+DuplicatesAllowed: False
+PrimitiveItemType: String
+Type: List
 UpdateType: Mutable
 
 ```yaml
@@ -47,11 +59,12 @@ Accept wildcard characters: False
 ```
 
 ### -Deploy
-Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-opsworks-layer-recipes.html#cfn-opsworks-layer-customrecipes-deploy    
-DuplicatesAllowed: False    
-PrimitiveItemType: String    
-Required: False    
-Type: List    
+An array of custom recipe names to be run following a deploy event.
+
+Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-opsworks-layer-recipes.html#cfn-opsworks-layer-customrecipes-deploy
+DuplicatesAllowed: False
+PrimitiveItemType: String
+Type: List
 UpdateType: Mutable
 
 ```yaml
@@ -67,11 +80,12 @@ Accept wildcard characters: False
 ```
 
 ### -Setup
-Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-opsworks-layer-recipes.html#cfn-opsworks-layer-customrecipes-setup    
-DuplicatesAllowed: False    
-PrimitiveItemType: String    
-Required: False    
-Type: List    
+An array of custom recipe names to be run following a setup event.
+
+Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-opsworks-layer-recipes.html#cfn-opsworks-layer-customrecipes-setup
+DuplicatesAllowed: False
+PrimitiveItemType: String
+Type: List
 UpdateType: Mutable
 
 ```yaml
@@ -87,11 +101,12 @@ Accept wildcard characters: False
 ```
 
 ### -Shutdown
-Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-opsworks-layer-recipes.html#cfn-opsworks-layer-customrecipes-shutdown    
-DuplicatesAllowed: False    
-PrimitiveItemType: String    
-Required: False    
-Type: List    
+An array of custom recipe names to be run following a shutdown event.
+
+Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-opsworks-layer-recipes.html#cfn-opsworks-layer-customrecipes-shutdown
+DuplicatesAllowed: False
+PrimitiveItemType: String
+Type: List
 UpdateType: Mutable
 
 ```yaml
@@ -107,11 +122,12 @@ Accept wildcard characters: False
 ```
 
 ### -Undeploy
-Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-opsworks-layer-recipes.html#cfn-opsworks-layer-customrecipes-undeploy    
-DuplicatesAllowed: False    
-PrimitiveItemType: String    
-Required: False    
-Type: List    
+An array of custom recipe names to be run following a undeploy event.
+
+Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-opsworks-layer-recipes.html#cfn-opsworks-layer-customrecipes-undeploy
+DuplicatesAllowed: False
+PrimitiveItemType: String
+Type: List
 UpdateType: Mutable
 
 ```yaml
@@ -127,15 +143,13 @@ Accept wildcard characters: False
 ```
 
 ### CommonParameters
-This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction, and -WarningVariable.
-For more information, see about_CommonParameters (http://go.microsoft.com/fwlink/?LinkID=113216).
+This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction, and -WarningVariable. For more information, see [about_CommonParameters](http://go.microsoft.com/fwlink/?LinkID=113216).
 
 ## INPUTS
 
 ## OUTPUTS
 
 ### Vaporshell.Resource.OpsWorks.Layer.Recipes
-
 ## NOTES
 
 ## RELATED LINKS

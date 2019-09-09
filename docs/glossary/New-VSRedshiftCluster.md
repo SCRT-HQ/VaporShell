@@ -1,18 +1,9 @@
----
-layout: glossary
-title: New-VSRedshiftCluster
-categories: glossary
-label1: Category
-data1: Documentation
-label2: Depth
-data2: Deep
-schema: 2.0.0
----
-
 # New-VSRedshiftCluster
 
 ## SYNOPSIS
-Adds an AWS::Redshift::Cluster resource to the template
+Adds an AWS::Redshift::Cluster resource to the template.
+Specifies a cluster.
+A *cluster* is a fully managed data warehouse that consists of a set of compute nodes.
 
 ## SYNTAX
 
@@ -31,7 +22,22 @@ New-VSRedshiftCluster [-LogicalId] <String> [-AllowVersionUpgrade <Boolean>]
 ```
 
 ## DESCRIPTION
-Adds an AWS::Redshift::Cluster resource to the template
+Adds an AWS::Redshift::Cluster resource to the template.
+Specifies a cluster.
+A *cluster* is a fully managed data warehouse that consists of a set of compute nodes.
+
+To create a cluster in Virtual Private Cloud (VPC, you must provide a cluster subnet group name.
+The cluster subnet group identifies the subnets of your VPC that Amazon Redshift uses when creating the cluster.
+For more information about managing clusters, go to Amazon Redshift Clusters: https://docs.aws.amazon.com/redshift/latest/mgmt/working-with-clusters.html in the *Amazon Redshift Cluster Management Guide*.
+
+## EXAMPLES
+
+### Example 1
+```powershell
+PS C:\> {{ Add example code here }}
+```
+
+{{ Add example description here }}
 
 ## PARAMETERS
 
@@ -53,9 +59,12 @@ Accept wildcard characters: False
 ```
 
 ### -AllowVersionUpgrade
-Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-redshift-cluster.html#cfn-redshift-cluster-allowversionupgrade    
-PrimitiveType: Boolean    
-Required: False    
+If true, major version upgrades can be applied during the maintenance window to the Amazon Redshift engine that is running on the cluster.
+When a new major version of the Amazon Redshift engine is released, you can request that the service automatically apply upgrades during the maintenance window to the Amazon Redshift engine that is running on your cluster.
+Default: true
+
+Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-redshift-cluster.html#cfn-redshift-cluster-allowversionupgrade
+PrimitiveType: Boolean
 UpdateType: Mutable
 
 ```yaml
@@ -71,9 +80,14 @@ Accept wildcard characters: False
 ```
 
 ### -AutomatedSnapshotRetentionPeriod
-Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-redshift-cluster.html#cfn-redshift-cluster-automatedsnapshotretentionperiod    
-PrimitiveType: Integer    
-Required: False    
+The number of days that automated snapshots are retained.
+If the value is 0, automated snapshots are disabled.
+Even if automated snapshots are disabled, you can still create manual snapshots when you want with CreateClusterSnapshot.
+Default: 1
+Constraints: Must be a value from 0 to 35.
+
+Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-redshift-cluster.html#cfn-redshift-cluster-automatedsnapshotretentionperiod
+PrimitiveType: Integer
 UpdateType: Mutable
 
 ```yaml
@@ -89,9 +103,14 @@ Accept wildcard characters: False
 ```
 
 ### -AvailabilityZone
-Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-redshift-cluster.html#cfn-redshift-cluster-availabilityzone    
-PrimitiveType: String    
-Required: False    
+The EC2 Availability Zone AZ in which you want Amazon Redshift to provision the cluster.
+For example, if you have several EC2 instances running in a specific Availability Zone, then you might want the cluster to be provisioned in the same zone in order to decrease network latency.
+Default: A random, system-chosen Availability Zone in the region that is specified by the endpoint.
+Example: us-east-1d
+Constraint: The specified Availability Zone must be in the same region as the current endpoint.
+
+Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-redshift-cluster.html#cfn-redshift-cluster-availabilityzone
+PrimitiveType: String
 UpdateType: Immutable
 
 ```yaml
@@ -107,9 +126,19 @@ Accept wildcard characters: False
 ```
 
 ### -ClusterIdentifier
-Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-redshift-cluster.html#cfn-redshift-cluster-clusteridentifier    
-PrimitiveType: String    
-Required: False    
+A unique identifier for the cluster.
+You use this identifier to refer to the cluster for any subsequent cluster operations such as deleting or modifying.
+The identifier also appears in the Amazon Redshift console.
+Constraints:
++ Must contain from 1 to 63 alphanumeric characters or hyphens.
++ Alphabetic characters must be lowercase.
++ First character must be a letter.
++ Cannot end with a hyphen or contain two consecutive hyphens.
++ Must be unique for all clusters within an AWS account.
+Example: myexamplecluster
+
+Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-redshift-cluster.html#cfn-redshift-cluster-clusteridentifier
+PrimitiveType: String
 UpdateType: Immutable
 
 ```yaml
@@ -125,9 +154,16 @@ Accept wildcard characters: False
 ```
 
 ### -ClusterParameterGroupName
-Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-redshift-cluster.html#cfn-redshift-cluster-clusterparametergroupname    
-PrimitiveType: String    
-Required: False    
+The name of the parameter group to be associated with this cluster.
+Default: The default Amazon Redshift cluster parameter group.
+For information about the default parameter group, go to Working with Amazon Redshift Parameter Groups: https://docs.aws.amazon.com/redshift/latest/mgmt/working-with-parameter-groups.html
+Constraints:
++ Must be 1 to 255 alphanumeric characters or hyphens.
++ First character must be a letter.
++ Cannot end with a hyphen or contain two consecutive hyphens.
+
+Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-redshift-cluster.html#cfn-redshift-cluster-clusterparametergroupname
+PrimitiveType: String
 UpdateType: Mutable
 
 ```yaml
@@ -143,11 +179,13 @@ Accept wildcard characters: False
 ```
 
 ### -ClusterSecurityGroups
-Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-redshift-cluster.html#cfn-redshift-cluster-clustersecuritygroups    
-DuplicatesAllowed: True    
-PrimitiveItemType: String    
-Required: False    
-Type: List    
+A list of security groups to be associated with this cluster.
+Default: The default cluster security group for Amazon Redshift.
+
+Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-redshift-cluster.html#cfn-redshift-cluster-clustersecuritygroups
+DuplicatesAllowed: True
+PrimitiveItemType: String
+Type: List
 UpdateType: Mutable
 
 ```yaml
@@ -163,9 +201,11 @@ Accept wildcard characters: False
 ```
 
 ### -ClusterSubnetGroupName
-Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-redshift-cluster.html#cfn-redshift-cluster-clustersubnetgroupname    
-PrimitiveType: String    
-Required: False    
+The name of a cluster subnet group to be associated with this cluster.
+If this parameter is not provided the resulting cluster will be deployed outside virtual private cloud VPC.
+
+Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-redshift-cluster.html#cfn-redshift-cluster-clustersubnetgroupname
+PrimitiveType: String
 UpdateType: Immutable
 
 ```yaml
@@ -181,9 +221,15 @@ Accept wildcard characters: False
 ```
 
 ### -ClusterType
-Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-redshift-cluster.html#cfn-redshift-cluster-clustertype    
-PrimitiveType: String    
-Required: True    
+The type of the cluster.
+When cluster type is specified as
++  single-node, the **NumberOfNodes** parameter is not required.
++  multi-node, the **NumberOfNodes** parameter is required.
+Valid Values: multi-node | single-node
+Default: multi-node
+
+Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-redshift-cluster.html#cfn-redshift-cluster-clustertype
+PrimitiveType: String
 UpdateType: Mutable
 
 ```yaml
@@ -199,9 +245,13 @@ Accept wildcard characters: False
 ```
 
 ### -ClusterVersion
-Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-redshift-cluster.html#cfn-redshift-cluster-clusterversion    
-PrimitiveType: String    
-Required: False    
+The version of the Amazon Redshift engine software that you want to deploy on the cluster.
+The version selected runs on all the nodes in the cluster.
+Constraints: Only version 1.0 is currently available.
+Example: 1.0
+
+Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-redshift-cluster.html#cfn-redshift-cluster-clusterversion
+PrimitiveType: String
 UpdateType: Mutable
 
 ```yaml
@@ -217,9 +267,18 @@ Accept wildcard characters: False
 ```
 
 ### -DBName
-Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-redshift-cluster.html#cfn-redshift-cluster-dbname    
-PrimitiveType: String    
-Required: True    
+The name of the first database to be created when the cluster is created.
+To create additional databases after the cluster is created, connect to the cluster with a SQL client and use SQL commands to create a database.
+For more information, go to Create a Database: https://docs.aws.amazon.com/redshift/latest/dg/t_creating_database.html in the Amazon Redshift Database Developer Guide.
+Default: dev
+Constraints:
++ Must contain 1 to 64 alphanumeric characters.
++ Must contain only lowercase letters.
++ Cannot be a word that is reserved by the service.
+A list of reserved words can be found in Reserved Words: https://docs.aws.amazon.com/redshift/latest/dg/r_pg_keywords.html in the Amazon Redshift Database Developer Guide.
+
+Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-redshift-cluster.html#cfn-redshift-cluster-dbname
+PrimitiveType: String
 UpdateType: Immutable
 
 ```yaml
@@ -235,9 +294,12 @@ Accept wildcard characters: False
 ```
 
 ### -ElasticIp
-Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-redshift-cluster.html#cfn-redshift-cluster-elasticip    
-PrimitiveType: String    
-Required: False    
+The Elastic IP EIP address for the cluster.
+Constraints: The cluster must be provisioned in EC2-VPC and publicly-accessible through an Internet gateway.
+For more information about provisioning clusters in EC2-VPC, go to Supported Platforms to Launch Your Cluster: https://docs.aws.amazon.com/redshift/latest/mgmt/working-with-clusters.html#cluster-platforms in the Amazon Redshift Cluster Management Guide.
+
+Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-redshift-cluster.html#cfn-redshift-cluster-elasticip
+PrimitiveType: String
 UpdateType: Immutable
 
 ```yaml
@@ -253,9 +315,11 @@ Accept wildcard characters: False
 ```
 
 ### -Encrypted
-Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-redshift-cluster.html#cfn-redshift-cluster-encrypted    
-PrimitiveType: Boolean    
-Required: False    
+If true, the data in the cluster is encrypted at rest.
+Default: false
+
+Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-redshift-cluster.html#cfn-redshift-cluster-encrypted
+PrimitiveType: Boolean
 UpdateType: Immutable
 
 ```yaml
@@ -271,9 +335,10 @@ Accept wildcard characters: False
 ```
 
 ### -HsmClientCertificateIdentifier
-Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-redshift-cluster.html#cfn-redshift-cluster-hsmclientcertidentifier    
-PrimitiveType: String    
-Required: False    
+Specifies the name of the HSM client certificate the Amazon Redshift cluster uses to retrieve the data encryption keys stored in an HSM.
+
+Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-redshift-cluster.html#cfn-redshift-cluster-hsmclientcertidentifier
+PrimitiveType: String
 UpdateType: Mutable
 
 ```yaml
@@ -289,9 +354,10 @@ Accept wildcard characters: False
 ```
 
 ### -HsmConfigurationIdentifier
-Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-redshift-cluster.html#cfn-redshift-cluster-HsmConfigurationIdentifier    
-PrimitiveType: String    
-Required: False    
+Specifies the name of the HSM configuration that contains the information the Amazon Redshift cluster can use to retrieve and store keys in an HSM.
+
+Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-redshift-cluster.html#cfn-redshift-cluster-HsmConfigurationIdentifier
+PrimitiveType: String
 UpdateType: Mutable
 
 ```yaml
@@ -307,11 +373,15 @@ Accept wildcard characters: False
 ```
 
 ### -IamRoles
-Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-redshift-cluster.html#cfn-redshift-cluster-iamroles    
-DuplicatesAllowed: False    
-PrimitiveItemType: String    
-Required: False    
-Type: List    
+A list of AWS Identity and Access Management IAM roles that can be used by the cluster to access other AWS services.
+You must supply the IAM roles in their Amazon Resource Name ARN format.
+You can supply up to 10 IAM roles in a single request.
+A cluster can have up to 10 IAM roles associated with it at any time.
+
+Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-redshift-cluster.html#cfn-redshift-cluster-iamroles
+DuplicatesAllowed: False
+PrimitiveItemType: String
+Type: List
 UpdateType: Mutable
 
 ```yaml
@@ -327,9 +397,10 @@ Accept wildcard characters: False
 ```
 
 ### -KmsKeyId
-Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-redshift-cluster.html#cfn-redshift-cluster-kmskeyid    
-PrimitiveType: String    
-Required: False    
+The AWS Key Management Service KMS key ID of the encryption key that you want to use to encrypt data in the cluster.
+
+Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-redshift-cluster.html#cfn-redshift-cluster-kmskeyid
+PrimitiveType: String
 UpdateType: Immutable
 
 ```yaml
@@ -345,9 +416,10 @@ Accept wildcard characters: False
 ```
 
 ### -LoggingProperties
-Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-redshift-cluster.html#cfn-redshift-cluster-loggingproperties    
-Required: False    
-Type: LoggingProperties    
+Specifies logging information, such as queries and connection attempts, for the specified Amazon Redshift cluster.
+
+Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-redshift-cluster.html#cfn-redshift-cluster-loggingproperties
+Type: LoggingProperties
 UpdateType: Mutable
 
 ```yaml
@@ -363,9 +435,16 @@ Accept wildcard characters: False
 ```
 
 ### -MasterUserPassword
-Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-redshift-cluster.html#cfn-redshift-cluster-masteruserpassword    
-PrimitiveType: String    
-Required: True    
+The password associated with the master user account for the cluster that is being created.
+Constraints:
++ Must be between 8 and 64 characters in length.
++ Must contain at least one uppercase letter.
++ Must contain at least one lowercase letter.
++ Must contain one number.
++ Can be any printable ASCII character ASCII code 33 to 126 except ' single quote, " double quote, , /, @, or space.
+
+Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-redshift-cluster.html#cfn-redshift-cluster-masteruserpassword
+PrimitiveType: String
 UpdateType: Mutable
 
 ```yaml
@@ -381,9 +460,16 @@ Accept wildcard characters: False
 ```
 
 ### -MasterUsername
-Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-redshift-cluster.html#cfn-redshift-cluster-masterusername    
-PrimitiveType: String    
-Required: True    
+The user name associated with the master user account for the cluster that is being created.
+Constraints:
++ Must be 1 - 128 alphanumeric characters.
+The user name can't be PUBLIC.
++ First character must be a letter.
++ Cannot be a reserved word.
+A list of reserved words can be found in Reserved Words: https://docs.aws.amazon.com/redshift/latest/dg/r_pg_keywords.html in the Amazon Redshift Database Developer Guide.
+
+Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-redshift-cluster.html#cfn-redshift-cluster-masterusername
+PrimitiveType: String
 UpdateType: Immutable
 
 ```yaml
@@ -399,9 +485,12 @@ Accept wildcard characters: False
 ```
 
 ### -NodeType
-Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-redshift-cluster.html#cfn-redshift-cluster-nodetype    
-PrimitiveType: String    
-Required: True    
+The node type to be provisioned for the cluster.
+For information about node types, go to  Working with Clusters: https://docs.aws.amazon.com/redshift/latest/mgmt/working-with-clusters.html#how-many-nodes in the *Amazon Redshift Cluster Management Guide*.
+Valid Values: ds2.xlarge | ds2.8xlarge | ds2.xlarge | ds2.8xlarge | dc1.large | dc1.8xlarge | dc2.large | dc2.8xlarge
+
+Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-redshift-cluster.html#cfn-redshift-cluster-nodetype
+PrimitiveType: String
 UpdateType: Mutable
 
 ```yaml
@@ -417,9 +506,16 @@ Accept wildcard characters: False
 ```
 
 ### -NumberOfNodes
-Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-redshift-cluster.html#cfn-redshift-cluster-nodetype    
-PrimitiveType: Integer    
-Required: False    
+The number of compute nodes in the cluster.
+This parameter is required when the **ClusterType** parameter is specified as multi-node.
+For information about determining how many nodes you need, go to  Working with Clusters: https://docs.aws.amazon.com/redshift/latest/mgmt/working-with-clusters.html#how-many-nodes in the *Amazon Redshift Cluster Management Guide*.
+If you don't specify this parameter, you get a single-node cluster.
+When requesting a multi-node cluster, you must specify the number of nodes that you want in the cluster.
+Default: 1
+Constraints: Value must be at least 1 and no more than 100.
+
+Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-redshift-cluster.html#cfn-redshift-cluster-nodetype
+PrimitiveType: Integer
 UpdateType: Mutable
 
 ```yaml
@@ -435,9 +531,11 @@ Accept wildcard characters: False
 ```
 
 ### -OwnerAccount
-Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-redshift-cluster.html#cfn-redshift-cluster-owneraccount    
-PrimitiveType: String    
-Required: False    
+The AWS customer account used to create or copy the snapshot.
+Required if you are restoring a snapshot you do not own, optional if you own the snapshot.
+
+Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-redshift-cluster.html#cfn-redshift-cluster-owneraccount
+PrimitiveType: String
 UpdateType: Immutable
 
 ```yaml
@@ -453,9 +551,14 @@ Accept wildcard characters: False
 ```
 
 ### -Port
-Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-redshift-cluster.html#cfn-redshift-cluster-port    
-PrimitiveType: Integer    
-Required: False    
+The port number on which the cluster accepts incoming connections.
+The cluster is accessible only via the JDBC and ODBC connection strings.
+Part of the connection string requires the port on which the cluster will listen for incoming connections.
+Default: 5439
+Valid Values: 1150-65535
+
+Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-redshift-cluster.html#cfn-redshift-cluster-port
+PrimitiveType: Integer
 UpdateType: Immutable
 
 ```yaml
@@ -471,9 +574,15 @@ Accept wildcard characters: False
 ```
 
 ### -PreferredMaintenanceWindow
-Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-redshift-cluster.html#cfn-redshift-cluster-preferredmaintenancewindow    
-PrimitiveType: String    
-Required: False    
+The weekly time range in UTC during which automated cluster maintenance can occur.
+Format: ddd:hh24:mi-ddd:hh24:mi
+Default: A 30-minute window selected at random from an 8-hour block of time per region, occurring on a random day of the week.
+For more information about the time blocks for each region, see Maintenance Windows: https://docs.aws.amazon.com/redshift/latest/mgmt/working-with-clusters.html#rs-maintenance-windows in Amazon Redshift Cluster Management Guide.
+Valid Days: Mon | Tue | Wed | Thu | Fri | Sat | Sun
+Constraints: Minimum 30-minute window.
+
+Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-redshift-cluster.html#cfn-redshift-cluster-preferredmaintenancewindow
+PrimitiveType: String
 UpdateType: Mutable
 
 ```yaml
@@ -489,9 +598,10 @@ Accept wildcard characters: False
 ```
 
 ### -PubliclyAccessible
-Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-redshift-cluster.html#cfn-redshift-cluster-publiclyaccessible    
-PrimitiveType: Boolean    
-Required: False    
+If true, the cluster can be accessed from a public network.
+
+Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-redshift-cluster.html#cfn-redshift-cluster-publiclyaccessible
+PrimitiveType: Boolean
 UpdateType: Mutable
 
 ```yaml
@@ -507,9 +617,11 @@ Accept wildcard characters: False
 ```
 
 ### -SnapshotClusterIdentifier
-Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-redshift-cluster.html#cfn-redshift-cluster-snapshotclusteridentifier    
-PrimitiveType: String    
-Required: False    
+The name of the cluster the source snapshot was created from.
+This parameter is required if your IAM user has a policy containing a snapshot resource element that specifies anything other than * for the cluster name.
+
+Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-redshift-cluster.html#cfn-redshift-cluster-snapshotclusteridentifier
+PrimitiveType: String
 UpdateType: Immutable
 
 ```yaml
@@ -525,9 +637,12 @@ Accept wildcard characters: False
 ```
 
 ### -SnapshotIdentifier
-Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-redshift-cluster.html#cfn-redshift-cluster-snapshotidentifier    
-PrimitiveType: String    
-Required: False    
+The name of the snapshot from which to create the new cluster.
+This parameter isn't case sensitive.
+Example: my-snapshot-id
+
+Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-redshift-cluster.html#cfn-redshift-cluster-snapshotidentifier
+PrimitiveType: String
 UpdateType: Immutable
 
 ```yaml
@@ -543,11 +658,12 @@ Accept wildcard characters: False
 ```
 
 ### -Tags
-Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-redshift-cluster.html#cfn-redshift-cluster-tags    
-DuplicatesAllowed: True    
-ItemType: Tag    
-Required: False    
-Type: List    
+A list of tag instances.
+
+Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-redshift-cluster.html#cfn-redshift-cluster-tags
+DuplicatesAllowed: True
+ItemType: Tag
+Type: List
 UpdateType: Mutable
 
 ```yaml
@@ -563,11 +679,13 @@ Accept wildcard characters: False
 ```
 
 ### -VpcSecurityGroupIds
-Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-redshift-cluster.html#cfn-redshift-cluster-vpcsecuritygroupids    
-DuplicatesAllowed: True    
-PrimitiveItemType: String    
-Required: False    
-Type: List    
+A list of Virtual Private Cloud VPC security groups to be associated with the cluster.
+Default: The default VPC security group is associated with the cluster.
+
+Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-redshift-cluster.html#cfn-redshift-cluster-vpcsecuritygroupids
+DuplicatesAllowed: True
+PrimitiveItemType: String
+Type: List
 UpdateType: Mutable
 
 ```yaml
@@ -677,15 +795,13 @@ Accept wildcard characters: False
 ```
 
 ### CommonParameters
-This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction, and -WarningVariable.
-For more information, see about_CommonParameters (http://go.microsoft.com/fwlink/?LinkID=113216).
+This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction, and -WarningVariable. For more information, see [about_CommonParameters](http://go.microsoft.com/fwlink/?LinkID=113216).
 
 ## INPUTS
 
 ## OUTPUTS
 
 ### Vaporshell.Resource.Redshift.Cluster
-
 ## NOTES
 
 ## RELATED LINKS

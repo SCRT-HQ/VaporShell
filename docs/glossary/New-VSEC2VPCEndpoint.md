@@ -1,30 +1,43 @@
----
-layout: glossary
-title: New-VSEC2VPCEndpoint
-categories: glossary
-label1: Category
-data1: Documentation
-label2: Depth
-data2: Deep
-schema: 2.0.0
----
-
 # New-VSEC2VPCEndpoint
 
 ## SYNOPSIS
-Adds an AWS::EC2::VPCEndpoint resource to the template
+Adds an AWS::EC2::VPCEndpoint resource to the template.
+Specifies a VPC endpoint for a service.
+An endpoint enables you to create a private connection between your VPC and the service.
+The service may be provided by AWS, an AWS Marketplace partner, or another AWS account.
+For more information, see VPC Endpoints: https://docs.aws.amazon.com/AmazonVPC/latest/UserGuide/vpc-endpoints.html in the *Amazon Virtual Private Cloud User Guide*.
 
 ## SYNTAX
 
 ```
-New-VSEC2VPCEndpoint [-LogicalId] <String> -VpcId <Object> [-RouteTableIds <Object>] -ServiceName <Object>
- [-PolicyDocument <Object>] [-IsPrivateDnsEnabled <Boolean>] [-SubnetIds <Object>] [-SecurityGroupIds <Object>]
- [-VPCEndpointType <Object>] [-DeletionPolicy <String>] [-DependsOn <String[]>] [-Metadata <Object>]
- [-UpdatePolicy <Object>] [-Condition <Object>] [<CommonParameters>]
+New-VSEC2VPCEndpoint [-LogicalId] <String> [-PolicyDocument <Object>] [-PrivateDnsEnabled <Boolean>]
+ [-RouteTableIds <Object>] [-SecurityGroupIds <Object>] -ServiceName <Object> [-SubnetIds <Object>]
+ [-VpcEndpointType <Object>] -VpcId <Object> [-DeletionPolicy <String>] [-DependsOn <String[]>]
+ [-Metadata <Object>] [-UpdatePolicy <Object>] [-Condition <Object>] [<CommonParameters>]
 ```
 
 ## DESCRIPTION
-Adds an AWS::EC2::VPCEndpoint resource to the template
+Adds an AWS::EC2::VPCEndpoint resource to the template.
+Specifies a VPC endpoint for a service.
+An endpoint enables you to create a private connection between your VPC and the service.
+The service may be provided by AWS, an AWS Marketplace partner, or another AWS account.
+For more information, see VPC Endpoints: https://docs.aws.amazon.com/AmazonVPC/latest/UserGuide/vpc-endpoints.html in the *Amazon Virtual Private Cloud User Guide*.
+
+A gateway endpoint serves as a target for a route in your route table for traffic destined for the AWS service.
+You can specify an endpoint policy to attach to the endpoint that will control access to the service from your VPC.
+You can also specify the VPC route tables that use the endpoint.
+
+An interface endpoint is a network interface in your subnet that serves as an endpoint for communicating with the specified service.
+You can specify the subnets in which to create an endpoint, and the security groups to associate with the endpoint network interface.
+
+## EXAMPLES
+
+### Example 1
+```powershell
+PS C:\> {{ Add example code here }}
+```
+
+{{ Add example description here }}
 
 ## PARAMETERS
 
@@ -45,65 +58,13 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
-### -VpcId
-Required: True    
-Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ec2-vpcendpoint.html#cfn-ec2-vpcendpoint-vpcid    
-PrimitiveType: String    
-UpdateType: Immutable
-
-```yaml
-Type: Object
-Parameter Sets: (All)
-Aliases:
-
-Required: True
-Position: Named
-Default value: None
-Accept pipeline input: False
-Accept wildcard characters: False
-```
-
-### -RouteTableIds
-PrimitiveItemType: String    
-Type: List    
-Required: False    
-Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ec2-vpcendpoint.html#cfn-ec2-vpcendpoint-routetableids    
-UpdateType: Mutable
-
-```yaml
-Type: Object
-Parameter Sets: (All)
-Aliases:
-
-Required: False
-Position: Named
-Default value: None
-Accept pipeline input: False
-Accept wildcard characters: False
-```
-
-### -ServiceName
-Required: True    
-Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ec2-vpcendpoint.html#cfn-ec2-vpcendpoint-servicename    
-PrimitiveType: String    
-UpdateType: Immutable
-
-```yaml
-Type: Object
-Parameter Sets: (All)
-Aliases:
-
-Required: True
-Position: Named
-Default value: None
-Accept pipeline input: False
-Accept wildcard characters: False
-```
-
 ### -PolicyDocument
-Required: False    
-Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ec2-vpcendpoint.html#cfn-ec2-vpcendpoint-policydocument    
-PrimitiveType: Json    
+A policy to attach to the endpoint that controls access to the service.
+The policy must be in valid JSON format.
+If this parameter is not specified, we attach a default policy that allows full access to the service.
+
+Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ec2-vpcendpoint.html#cfn-ec2-vpcendpoint-policydocument
+PrimitiveType: Json
 UpdateType: Mutable
 
 ```yaml
@@ -118,10 +79,15 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
-### -IsPrivateDnsEnabled
-Required: False    
-Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ec2-vpcendpoint.html#cfn-ec2-vpcendpoint-isprivatednsenabled    
-PrimitiveType: Boolean    
+### -PrivateDnsEnabled
+Interface endpoint Indicate whether to associate a private hosted zone with the specified VPC.
+The private hosted zone contains a record set for the default public DNS name for the service for the Region for example, kinesis.us-east-1.amazonaws.com which resolves to the private IP addresses of the endpoint network interfaces in the VPC.
+This enables you to make requests to the default public DNS name for the service instead of the public DNS names that are automatically generated by the VPC endpoint service.
+To use a private hosted zone, you must set the following VPC attributes to true: enableDnsHostnames and enableDnsSupport.
+Default: true
+
+Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ec2-vpcendpoint.html#cfn-ec2-vpcendpoint-privatednsenabled
+PrimitiveType: Boolean
 UpdateType: Mutable
 
 ```yaml
@@ -136,11 +102,13 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
-### -SubnetIds
-PrimitiveItemType: String    
-Type: List    
-Required: False    
-Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ec2-vpcendpoint.html#cfn-ec2-vpcendpoint-subnetids    
+### -RouteTableIds
+Gateway endpoint One or more route table IDs.
+
+Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ec2-vpcendpoint.html#cfn-ec2-vpcendpoint-routetableids
+DuplicatesAllowed: False
+PrimitiveItemType: String
+Type: List
 UpdateType: Mutable
 
 ```yaml
@@ -156,10 +124,12 @@ Accept wildcard characters: False
 ```
 
 ### -SecurityGroupIds
-PrimitiveItemType: String    
-Type: List    
-Required: False    
-Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ec2-vpcendpoint.html#cfn-ec2-vpcendpoint-securitygroupids    
+Interface endpoint The ID of one or more security groups to associate with the endpoint network interface.
+
+Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ec2-vpcendpoint.html#cfn-ec2-vpcendpoint-securitygroupids
+DuplicatesAllowed: False
+PrimitiveItemType: String
+Type: List
 UpdateType: Mutable
 
 ```yaml
@@ -174,10 +144,33 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
-### -VPCEndpointType
-Required: False    
-Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ec2-vpcendpoint.html#cfn-ec2-vpcendpoint-vpcendpointtype    
-PrimitiveType: String    
+### -ServiceName
+The service name.
+To get a list of available services, use the DescribeVpcEndpointServices: https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_DescribeVpcEndpointServices.html request, or get the name from the service provider.
+
+Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ec2-vpcendpoint.html#cfn-ec2-vpcendpoint-servicename
+PrimitiveType: String
+UpdateType: Immutable
+
+```yaml
+Type: Object
+Parameter Sets: (All)
+Aliases:
+
+Required: True
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### -SubnetIds
+Interface endpoint The ID of one or more subnets in which to create an endpoint network interface.
+
+Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ec2-vpcendpoint.html#cfn-ec2-vpcendpoint-subnetids
+DuplicatesAllowed: False
+PrimitiveItemType: String
+Type: List
 UpdateType: Mutable
 
 ```yaml
@@ -186,6 +179,45 @@ Parameter Sets: (All)
 Aliases:
 
 Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### -VpcEndpointType
+The type of endpoint.
+Default: Gateway
+
+Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ec2-vpcendpoint.html#cfn-ec2-vpcendpoint-vpcendpointtype
+PrimitiveType: String
+UpdateType: Immutable
+
+```yaml
+Type: Object
+Parameter Sets: (All)
+Aliases:
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### -VpcId
+The ID of the VPC in which the endpoint will be used.
+
+Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ec2-vpcendpoint.html#cfn-ec2-vpcendpoint-vpcid
+PrimitiveType: String
+UpdateType: Immutable
+
+```yaml
+Type: Object
+Parameter Sets: (All)
+Aliases:
+
+Required: True
 Position: Named
 Default value: None
 Accept pipeline input: False
@@ -287,15 +319,13 @@ Accept wildcard characters: False
 ```
 
 ### CommonParameters
-This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction, and -WarningVariable.
-For more information, see about_CommonParameters (http://go.microsoft.com/fwlink/?LinkID=113216).
+This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction, and -WarningVariable. For more information, see [about_CommonParameters](http://go.microsoft.com/fwlink/?LinkID=113216).
 
 ## INPUTS
 
 ## OUTPUTS
 
 ### Vaporshell.Resource.EC2.VPCEndpoint
-
 ## NOTES
 
 ## RELATED LINKS

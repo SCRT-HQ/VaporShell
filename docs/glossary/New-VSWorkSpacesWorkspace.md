@@ -1,30 +1,34 @@
----
-layout: glossary
-title: New-VSWorkSpacesWorkspace
-categories: glossary
-label1: Category
-data1: Documentation
-label2: Depth
-data2: Deep
-schema: 2.0.0
----
-
 # New-VSWorkSpacesWorkspace
 
 ## SYNOPSIS
-Adds an AWS::WorkSpaces::Workspace resource to the template
+Adds an AWS::WorkSpaces::Workspace resource to the template.
+Specifies a WorkSpace.
 
 ## SYNTAX
 
 ```
 New-VSWorkSpacesWorkspace [-LogicalId] <String> -BundleId <Object> -DirectoryId <Object>
- [-RootVolumeEncryptionEnabled <Boolean>] -UserName <Object> [-UserVolumeEncryptionEnabled <Boolean>]
- [-VolumeEncryptionKey <Object>] [-DeletionPolicy <String>] [-DependsOn <String[]>] [-Metadata <Object>]
- [-UpdatePolicy <Object>] [-Condition <Object>] [<CommonParameters>]
+ [-RootVolumeEncryptionEnabled <Boolean>] [-Tags <Object>] -UserName <Object>
+ [-UserVolumeEncryptionEnabled <Boolean>] [-VolumeEncryptionKey <Object>] [-WorkspaceProperties <Object>]
+ [-DeletionPolicy <String>] [-DependsOn <String[]>] [-Metadata <Object>] [-UpdatePolicy <Object>]
+ [-Condition <Object>] [<CommonParameters>]
 ```
 
 ## DESCRIPTION
-Adds an AWS::WorkSpaces::Workspace resource to the template
+Adds an AWS::WorkSpaces::Workspace resource to the template.
+Specifies a WorkSpace.
+
+Updates are not supported for the BundleId, RootVolumeEncryptionEnabled, UserVolumeEncryptionEnabled, or VolumeEncryptionKey properties.
+To update these properties, you must also update a property that triggers a replacement, such as the UserName property.
+
+## EXAMPLES
+
+### Example 1
+```powershell
+PS C:\> {{ Add example code here }}
+```
+
+{{ Add example description here }}
 
 ## PARAMETERS
 
@@ -46,9 +50,10 @@ Accept wildcard characters: False
 ```
 
 ### -BundleId
-Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-workspaces-workspace.html#cfn-workspaces-workspace-bundleid    
-PrimitiveType: String    
-Required: True    
+The identifier of the bundle for the WorkSpace.
+
+Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-workspaces-workspace.html#cfn-workspaces-workspace-bundleid
+PrimitiveType: String
 UpdateType: Conditional
 
 ```yaml
@@ -64,9 +69,10 @@ Accept wildcard characters: False
 ```
 
 ### -DirectoryId
-Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-workspaces-workspace.html#cfn-workspaces-workspace-directoryid    
-PrimitiveType: String    
-Required: True    
+The identifier of the AWS Directory Service directory for the WorkSpace.
+
+Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-workspaces-workspace.html#cfn-workspaces-workspace-directoryid
+PrimitiveType: String
 UpdateType: Conditional
 
 ```yaml
@@ -82,9 +88,10 @@ Accept wildcard characters: False
 ```
 
 ### -RootVolumeEncryptionEnabled
-Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-workspaces-workspace.html#cfn-workspaces-workspace-rootvolumeencryptionenabled    
-PrimitiveType: Boolean    
-Required: False    
+Indicates whether the data stored on the root volume is encrypted.
+
+Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-workspaces-workspace.html#cfn-workspaces-workspace-rootvolumeencryptionenabled
+PrimitiveType: Boolean
 UpdateType: Conditional
 
 ```yaml
@@ -99,10 +106,33 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
+### -Tags
+The tags for the WorkSpace.
+
+Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-workspaces-workspace.html#cfn-workspaces-workspace-tags
+DuplicatesAllowed: True
+ItemType: Tag
+Type: List
+UpdateType: Mutable
+
+```yaml
+Type: Object
+Parameter Sets: (All)
+Aliases:
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
 ### -UserName
-Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-workspaces-workspace.html#cfn-workspaces-workspace-username    
-PrimitiveType: String    
-Required: True    
+The username of the user for the WorkSpace.
+This username must exist in the AWS Directory Service directory for the WorkSpace.
+
+Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-workspaces-workspace.html#cfn-workspaces-workspace-username
+PrimitiveType: String
 UpdateType: Immutable
 
 ```yaml
@@ -118,9 +148,10 @@ Accept wildcard characters: False
 ```
 
 ### -UserVolumeEncryptionEnabled
-Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-workspaces-workspace.html#cfn-workspaces-workspace-uservolumeencryptionenabled    
-PrimitiveType: Boolean    
-Required: False    
+Indicates whether the data stored on the user volume is encrypted.
+
+Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-workspaces-workspace.html#cfn-workspaces-workspace-uservolumeencryptionenabled
+PrimitiveType: Boolean
 UpdateType: Conditional
 
 ```yaml
@@ -136,10 +167,30 @@ Accept wildcard characters: False
 ```
 
 ### -VolumeEncryptionKey
-Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-workspaces-workspace.html#cfn-workspaces-workspace-volumeencryptionkey    
-PrimitiveType: String    
-Required: False    
+The KMS key used to encrypt data stored on your WorkSpace.
+
+Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-workspaces-workspace.html#cfn-workspaces-workspace-volumeencryptionkey
+PrimitiveType: String
 UpdateType: Conditional
+
+```yaml
+Type: Object
+Parameter Sets: (All)
+Aliases:
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### -WorkspaceProperties
+The WorkSpace properties.
+
+Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-workspaces-workspace.html#cfn-workspaces-workspace-workspaceproperties
+Type: WorkspaceProperties
+UpdateType: Mutable
 
 ```yaml
 Type: Object
@@ -248,15 +299,13 @@ Accept wildcard characters: False
 ```
 
 ### CommonParameters
-This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction, and -WarningVariable.
-For more information, see about_CommonParameters (http://go.microsoft.com/fwlink/?LinkID=113216).
+This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction, and -WarningVariable. For more information, see [about_CommonParameters](http://go.microsoft.com/fwlink/?LinkID=113216).
 
 ## INPUTS
 
 ## OUTPUTS
 
 ### Vaporshell.Resource.WorkSpaces.Workspace
-
 ## NOTES
 
 ## RELATED LINKS

@@ -1,14 +1,3 @@
----
-layout: glossary
-title: Add-Include
-categories: glossary
-label1: Category
-data1: Documentation
-label2: Depth
-data2: Deep
-schema: 2.0.0
----
-
 # Add-Include
 
 ## SYNOPSIS
@@ -30,6 +19,16 @@ The AWS::Include transform lets you create a reference to a transform snippet in
 You can add AWS::Include to the Transform function in your AWS CloudFormation template.
 The AWS::Include function behaves similarly to an include, copy, or import directive in programming languages.
 
+## EXAMPLES
+
+### EXAMPLE 1
+```
+Add-Include -Location "s3://MyAmazonS3BucketName/single_wait_condition.yaml"
+```
+
+When the template is exported, this will convert to: {"Fn::Transform":{"Name":"AWS::Include","Parameters":{"Location":"s3://MyAmazonS3BucketName/single_wait_condition.yaml"}}}
+# If used at the top level, the Logical ID will be 'Transform' instead of 'Fn::Transform'.
+
 ## PARAMETERS
 
 ### -Location
@@ -49,15 +48,13 @@ Accept wildcard characters: False
 ```
 
 ### CommonParameters
-This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction, and -WarningVariable.
-For more information, see about_CommonParameters (http://go.microsoft.com/fwlink/?LinkID=113216).
+This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction, and -WarningVariable. For more information, see [about_CommonParameters](http://go.microsoft.com/fwlink/?LinkID=113216).
 
 ## INPUTS
 
 ## OUTPUTS
 
 ### Vaporshell.Transform.Include
-
 ## NOTES
 When using AWS::Include, keep the following in mind:
 

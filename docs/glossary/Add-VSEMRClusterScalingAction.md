@@ -1,18 +1,9 @@
----
-layout: glossary
-title: Add-VSEMRClusterScalingAction
-categories: glossary
-label1: Category
-data1: Documentation
-label2: Depth
-data2: Deep
-schema: 2.0.0
----
-
 # Add-VSEMRClusterScalingAction
 
 ## SYNOPSIS
-Adds an AWS::EMR::Cluster.ScalingAction resource property to the template
+Adds an AWS::EMR::Cluster.ScalingAction resource property to the template.
+ScalingAction is a subproperty of the ScalingRule property type.
+ScalingAction determines the type of adjustment the automatic scaling activity makes when triggered, and the periodicity of the adjustment.
 
 ## SYNTAX
 
@@ -22,14 +13,27 @@ Add-VSEMRClusterScalingAction [[-Market] <Object>] [-SimpleScalingPolicyConfigur
 ```
 
 ## DESCRIPTION
-Adds an AWS::EMR::Cluster.ScalingAction resource property to the template
+Adds an AWS::EMR::Cluster.ScalingAction resource property to the template.
+ScalingAction is a subproperty of the ScalingRule property type.
+ScalingAction determines the type of adjustment the automatic scaling activity makes when triggered, and the periodicity of the adjustment.
+
+## EXAMPLES
+
+### Example 1
+```powershell
+PS C:\> {{ Add example code here }}
+```
+
+{{ Add example description here }}
 
 ## PARAMETERS
 
 ### -Market
-Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-elasticmapreduce-cluster-scalingaction.html#cfn-elasticmapreduce-cluster-scalingaction-market    
-PrimitiveType: String    
-Required: False    
+Not available for instance groups.
+Instance groups use the market type specified for the group.
+
+Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-elasticmapreduce-cluster-scalingaction.html#cfn-elasticmapreduce-cluster-scalingaction-market
+PrimitiveType: String
 UpdateType: Mutable
 
 ```yaml
@@ -45,9 +49,10 @@ Accept wildcard characters: False
 ```
 
 ### -SimpleScalingPolicyConfiguration
-Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-elasticmapreduce-cluster-scalingaction.html#cfn-elasticmapreduce-cluster-scalingaction-simplescalingpolicyconfiguration    
-Required: True    
-Type: SimpleScalingPolicyConfiguration    
+The type of adjustment the automatic scaling activity makes when triggered, and the periodicity of the adjustment.
+
+Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-elasticmapreduce-cluster-scalingaction.html#cfn-elasticmapreduce-cluster-scalingaction-simplescalingpolicyconfiguration
+Type: SimpleScalingPolicyConfiguration
 UpdateType: Mutable
 
 ```yaml
@@ -63,15 +68,13 @@ Accept wildcard characters: False
 ```
 
 ### CommonParameters
-This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction, and -WarningVariable.
-For more information, see about_CommonParameters (http://go.microsoft.com/fwlink/?LinkID=113216).
+This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction, and -WarningVariable. For more information, see [about_CommonParameters](http://go.microsoft.com/fwlink/?LinkID=113216).
 
 ## INPUTS
 
 ## OUTPUTS
 
 ### Vaporshell.Resource.EMR.Cluster.ScalingAction
-
 ## NOTES
 
 ## RELATED LINKS

@@ -1,18 +1,8 @@
----
-layout: glossary
-title: Add-VSCodeDeployDeploymentGroupTriggerConfig
-categories: glossary
-label1: Category
-data1: Documentation
-label2: Depth
-data2: Deep
-schema: 2.0.0
----
-
 # Add-VSCodeDeployDeploymentGroupTriggerConfig
 
 ## SYNOPSIS
-Adds an AWS::CodeDeploy::DeploymentGroup.TriggerConfig resource property to the template
+Adds an AWS::CodeDeploy::DeploymentGroup.TriggerConfig resource property to the template.
+Information about notification triggers for the deployment group.
 
 ## SYNTAX
 
@@ -22,16 +12,27 @@ Add-VSCodeDeployDeploymentGroupTriggerConfig [[-TriggerEvents] <Object>] [[-Trig
 ```
 
 ## DESCRIPTION
-Adds an AWS::CodeDeploy::DeploymentGroup.TriggerConfig resource property to the template
+Adds an AWS::CodeDeploy::DeploymentGroup.TriggerConfig resource property to the template.
+Information about notification triggers for the deployment group.
+
+## EXAMPLES
+
+### Example 1
+```powershell
+PS C:\> {{ Add example code here }}
+```
+
+{{ Add example description here }}
 
 ## PARAMETERS
 
 ### -TriggerEvents
-Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-codedeploy-deploymentgroup-triggerconfig.html#cfn-codedeploy-deploymentgroup-triggerconfig-triggerevents    
-DuplicatesAllowed: False    
-PrimitiveItemType: String    
-Required: False    
-Type: List    
+The event type or types that trigger notifications.
+
+Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-codedeploy-deploymentgroup-triggerconfig.html#cfn-codedeploy-deploymentgroup-triggerconfig-triggerevents
+DuplicatesAllowed: False
+PrimitiveItemType: String
+Type: List
 UpdateType: Mutable
 
 ```yaml
@@ -47,9 +48,10 @@ Accept wildcard characters: False
 ```
 
 ### -TriggerName
-Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-codedeploy-deploymentgroup-triggerconfig.html#cfn-codedeploy-deploymentgroup-triggerconfig-triggername    
-PrimitiveType: String    
-Required: False    
+The name of the notification trigger.
+
+Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-codedeploy-deploymentgroup-triggerconfig.html#cfn-codedeploy-deploymentgroup-triggerconfig-triggername
+PrimitiveType: String
 UpdateType: Mutable
 
 ```yaml
@@ -65,9 +67,10 @@ Accept wildcard characters: False
 ```
 
 ### -TriggerTargetArn
-Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-codedeploy-deploymentgroup-triggerconfig.html#cfn-codedeploy-deploymentgroup-triggerconfig-triggertargetarn    
-PrimitiveType: String    
-Required: False    
+The ARN of the Amazon Simple Notification Service topic through which notifications about deployment or instance events are sent.
+
+Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-codedeploy-deploymentgroup-triggerconfig.html#cfn-codedeploy-deploymentgroup-triggerconfig-triggertargetarn
+PrimitiveType: String
 UpdateType: Mutable
 
 ```yaml
@@ -83,15 +86,13 @@ Accept wildcard characters: False
 ```
 
 ### CommonParameters
-This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction, and -WarningVariable.
-For more information, see about_CommonParameters (http://go.microsoft.com/fwlink/?LinkID=113216).
+This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction, and -WarningVariable. For more information, see [about_CommonParameters](http://go.microsoft.com/fwlink/?LinkID=113216).
 
 ## INPUTS
 
 ## OUTPUTS
 
 ### Vaporshell.Resource.CodeDeploy.DeploymentGroup.TriggerConfig
-
 ## NOTES
 
 ## RELATED LINKS

@@ -1,18 +1,9 @@
----
-layout: glossary
-title: New-VSLogsMetricFilter
-categories: glossary
-label1: Category
-data1: Documentation
-label2: Depth
-data2: Deep
-schema: 2.0.0
----
-
 # New-VSLogsMetricFilter
 
 ## SYNOPSIS
-Adds an AWS::Logs::MetricFilter resource to the template
+Adds an AWS::Logs::MetricFilter resource to the template.
+The AWS::Logs::MetricFilter resource specifies a metric filter that describes how CloudWatch Logs extracts information from logs and transforms it into Amazon CloudWatch metrics.
+If you have multiple metric filters that are associated with a log group, all the filters are applied to the log streams in that group.
 
 ## SYNTAX
 
@@ -23,7 +14,20 @@ New-VSLogsMetricFilter [-LogicalId] <String> -FilterPattern <Object> -LogGroupNa
 ```
 
 ## DESCRIPTION
-Adds an AWS::Logs::MetricFilter resource to the template
+Adds an AWS::Logs::MetricFilter resource to the template.
+The AWS::Logs::MetricFilter resource specifies a metric filter that describes how CloudWatch Logs extracts information from logs and transforms it into Amazon CloudWatch metrics.
+If you have multiple metric filters that are associated with a log group, all the filters are applied to the log streams in that group.
+
+The maximum number of metric filters that can be associated with a log group is 100.
+
+## EXAMPLES
+
+### Example 1
+```powershell
+PS C:\> {{ Add example code here }}
+```
+
+{{ Add example description here }}
 
 ## PARAMETERS
 
@@ -45,9 +49,10 @@ Accept wildcard characters: False
 ```
 
 ### -FilterPattern
-Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-logs-metricfilter.html#cfn-cwl-metricfilter-filterpattern    
-PrimitiveType: String    
-Required: True    
+A filter pattern for extracting metric data out of ingested log events.
+
+Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-logs-metricfilter.html#cfn-cwl-metricfilter-filterpattern
+PrimitiveType: String
 UpdateType: Mutable
 
 ```yaml
@@ -63,9 +68,10 @@ Accept wildcard characters: False
 ```
 
 ### -LogGroupName
-Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-logs-metricfilter.html#cfn-cwl-metricfilter-loggroupname    
-PrimitiveType: String    
-Required: True    
+The name of an existing log group that you want to associate with this metric filter.
+
+Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-logs-metricfilter.html#cfn-cwl-metricfilter-loggroupname
+PrimitiveType: String
 UpdateType: Immutable
 
 ```yaml
@@ -81,11 +87,12 @@ Accept wildcard characters: False
 ```
 
 ### -MetricTransformations
-Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-logs-metricfilter.html#cfn-cwl-metricfilter-metrictransformations    
-DuplicatesAllowed: False    
-ItemType: MetricTransformation    
-Required: True    
-Type: List    
+The metric transformations.
+
+Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-logs-metricfilter.html#cfn-cwl-metricfilter-metrictransformations
+DuplicatesAllowed: False
+ItemType: MetricTransformation
+Type: List
 UpdateType: Mutable
 
 ```yaml
@@ -195,15 +202,13 @@ Accept wildcard characters: False
 ```
 
 ### CommonParameters
-This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction, and -WarningVariable.
-For more information, see about_CommonParameters (http://go.microsoft.com/fwlink/?LinkID=113216).
+This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction, and -WarningVariable. For more information, see [about_CommonParameters](http://go.microsoft.com/fwlink/?LinkID=113216).
 
 ## INPUTS
 
 ## OUTPUTS
 
 ### Vaporshell.Resource.Logs.MetricFilter
-
 ## NOTES
 
 ## RELATED LINKS

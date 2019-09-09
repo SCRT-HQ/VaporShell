@@ -1,18 +1,8 @@
----
-layout: glossary
-title: Add-VSRDSDBSecurityGroupIngress
-categories: glossary
-label1: Category
-data1: Documentation
-label2: Depth
-data2: Deep
-schema: 2.0.0
----
-
 # Add-VSRDSDBSecurityGroupIngress
 
 ## SYNOPSIS
-Adds an AWS::RDS::DBSecurityGroup.Ingress resource property to the template
+Adds an AWS::RDS::DBSecurityGroup.Ingress resource property to the template.
+The Ingress property type specifies an individual ingress rule within an AWS::RDS::DBSecurityGroup resource.
 
 ## SYNTAX
 
@@ -22,14 +12,25 @@ Add-VSRDSDBSecurityGroupIngress [[-CIDRIP] <Object>] [[-EC2SecurityGroupId] <Obj
 ```
 
 ## DESCRIPTION
-Adds an AWS::RDS::DBSecurityGroup.Ingress resource property to the template
+Adds an AWS::RDS::DBSecurityGroup.Ingress resource property to the template.
+The Ingress property type specifies an individual ingress rule within an AWS::RDS::DBSecurityGroup resource.
+
+## EXAMPLES
+
+### Example 1
+```powershell
+PS C:\> {{ Add example code here }}
+```
+
+{{ Add example description here }}
 
 ## PARAMETERS
 
 ### -CIDRIP
-Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-rds-security-group-rule.html#cfn-rds-securitygroup-cidrip    
-PrimitiveType: String    
-Required: False    
+The IP range to authorize.
+
+Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-rds-security-group-rule.html#cfn-rds-securitygroup-cidrip
+PrimitiveType: String
 UpdateType: Mutable
 
 ```yaml
@@ -45,9 +46,12 @@ Accept wildcard characters: False
 ```
 
 ### -EC2SecurityGroupId
-Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-rds-security-group-rule.html#cfn-rds-securitygroup-ec2securitygroupid    
-PrimitiveType: String    
-Required: False    
+Id of the EC2 Security Group to authorize.
+For VPC DB Security Groups, EC2SecurityGroupId must be provided.
+Otherwise, EC2SecurityGroupOwnerId and either EC2SecurityGroupName or EC2SecurityGroupId must be provided.
+
+Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-rds-security-group-rule.html#cfn-rds-securitygroup-ec2securitygroupid
+PrimitiveType: String
 UpdateType: Immutable
 
 ```yaml
@@ -63,9 +67,12 @@ Accept wildcard characters: False
 ```
 
 ### -EC2SecurityGroupName
-Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-rds-security-group-rule.html#cfn-rds-securitygroup-ec2securitygroupname    
-PrimitiveType: String    
-Required: False    
+Name of the EC2 Security Group to authorize.
+For VPC DB Security Groups, EC2SecurityGroupId must be provided.
+Otherwise, EC2SecurityGroupOwnerId and either EC2SecurityGroupName or EC2SecurityGroupId must be provided.
+
+Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-rds-security-group-rule.html#cfn-rds-securitygroup-ec2securitygroupname
+PrimitiveType: String
 UpdateType: Immutable
 
 ```yaml
@@ -81,9 +88,13 @@ Accept wildcard characters: False
 ```
 
 ### -EC2SecurityGroupOwnerId
-Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-rds-security-group-rule.html#cfn-rds-securitygroup-ec2securitygroupownerid    
-PrimitiveType: String    
-Required: False    
+AWS Account Number of the owner of the EC2 Security Group specified in the EC2SecurityGroupName parameter.
+The AWS Access Key ID is not an acceptable value.
+For VPC DB Security Groups, EC2SecurityGroupId must be provided.
+Otherwise, EC2SecurityGroupOwnerId and either EC2SecurityGroupName or EC2SecurityGroupId must be provided.
+
+Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-rds-security-group-rule.html#cfn-rds-securitygroup-ec2securitygroupownerid
+PrimitiveType: String
 UpdateType: Immutable
 
 ```yaml
@@ -99,15 +110,13 @@ Accept wildcard characters: False
 ```
 
 ### CommonParameters
-This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction, and -WarningVariable.
-For more information, see about_CommonParameters (http://go.microsoft.com/fwlink/?LinkID=113216).
+This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction, and -WarningVariable. For more information, see [about_CommonParameters](http://go.microsoft.com/fwlink/?LinkID=113216).
 
 ## INPUTS
 
 ## OUTPUTS
 
 ### Vaporshell.Resource.RDS.DBSecurityGroup.Ingress
-
 ## NOTES
 
 ## RELATED LINKS

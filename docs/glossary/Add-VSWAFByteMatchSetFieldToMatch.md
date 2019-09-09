@@ -1,18 +1,8 @@
----
-layout: glossary
-title: Add-VSWAFByteMatchSetFieldToMatch
-categories: glossary
-label1: Category
-data1: Documentation
-label2: Depth
-data2: Deep
-schema: 2.0.0
----
-
 # Add-VSWAFByteMatchSetFieldToMatch
 
 ## SYNOPSIS
-Adds an AWS::WAF::ByteMatchSet.FieldToMatch resource property to the template
+Adds an AWS::WAF::ByteMatchSet.FieldToMatch resource property to the template.
+Specifies where in a web request to look for TargetString.
 
 ## SYNTAX
 
@@ -21,14 +11,29 @@ Add-VSWAFByteMatchSetFieldToMatch [[-Data] <Object>] [-Type] <Object> [<CommonPa
 ```
 
 ## DESCRIPTION
-Adds an AWS::WAF::ByteMatchSet.FieldToMatch resource property to the template
+Adds an AWS::WAF::ByteMatchSet.FieldToMatch resource property to the template.
+Specifies where in a web request to look for TargetString.
+
+## EXAMPLES
+
+### Example 1
+```powershell
+PS C:\> {{ Add example code here }}
+```
+
+{{ Add example description here }}
 
 ## PARAMETERS
 
 ### -Data
-Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-waf-bytematchset-bytematchtuples-fieldtomatch.html#cfn-waf-bytematchset-bytematchtuples-fieldtomatch-data    
-PrimitiveType: String    
-Required: False    
+When the value of Type is HEADER, enter the name of the header that you want AWS WAF to search, for example, User-Agent or Referer.
+The name of the header is not case sensitive.
+When the value of Type is SINGLE_QUERY_ARG, enter the name of the parameter that you want AWS WAF to search, for example, UserName or SalesRegion.
+The parameter name is not case sensitive.
+If the value of Type is any other value, omit Data.
+
+Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-waf-bytematchset-bytematchtuples-fieldtomatch.html#cfn-waf-bytematchset-bytematchtuples-fieldtomatch-data
+PrimitiveType: String
 UpdateType: Mutable
 
 ```yaml
@@ -44,9 +49,25 @@ Accept wildcard characters: False
 ```
 
 ### -Type
-Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-waf-bytematchset-bytematchtuples-fieldtomatch.html#cfn-waf-bytematchset-bytematchtuples-fieldtomatch-type    
-PrimitiveType: String    
-Required: True    
+The part of the web request that you want AWS WAF to search for a specified string.
+Parts of a request that you can search include the following:
++  HEADER: A specified request header, for example, the value of the User-Agent or Referer header.
+If you choose HEADER for the type, specify the name of the header in Data.
++  METHOD: The HTTP method, which indicated the type of operation that the request is asking the origin to perform.
+Amazon CloudFront supports the following methods: DELETE, GET, HEAD, OPTIONS, PATCH, POST, and PUT.
++  QUERY_STRING: A query string, which is the part of a URL that appears after a ?
+character, if any.
++  URI: The part of a web request that identifies a resource, for example, /images/daily-ad.jpg.
++  BODY: The part of a request that contains any additional data that you want to send to your web server as the HTTP request body, such as data from a form.
+The request body immediately follows the request headers.
+Note that only the first 8192 bytes of the request body are forwarded to AWS WAF for inspection.
+To allow or block requests based on the length of the body, you can create a size constraint set.
++  SINGLE_QUERY_ARG: The parameter in the query string that you will inspect, such as *UserName* or *SalesRegion*.
+The maximum length for SINGLE_QUERY_ARG is 30 characters.
++  ALL_QUERY_ARGS: Similar to SINGLE_QUERY_ARG, but rather than inspecting a single parameter, AWS WAF will inspect all parameters within the query for the value or regex pattern that you specify in TargetString.
+
+Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-waf-bytematchset-bytematchtuples-fieldtomatch.html#cfn-waf-bytematchset-bytematchtuples-fieldtomatch-type
+PrimitiveType: String
 UpdateType: Mutable
 
 ```yaml
@@ -62,15 +83,13 @@ Accept wildcard characters: False
 ```
 
 ### CommonParameters
-This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction, and -WarningVariable.
-For more information, see about_CommonParameters (http://go.microsoft.com/fwlink/?LinkID=113216).
+This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction, and -WarningVariable. For more information, see [about_CommonParameters](http://go.microsoft.com/fwlink/?LinkID=113216).
 
 ## INPUTS
 
 ## OUTPUTS
 
 ### Vaporshell.Resource.WAF.ByteMatchSet.FieldToMatch
-
 ## NOTES
 
 ## RELATED LINKS

@@ -1,30 +1,32 @@
----
-layout: glossary
-title: New-VSSageMakerModel
-categories: glossary
-label1: Category
-data1: Documentation
-label2: Depth
-data2: Deep
-schema: 2.0.0
----
-
 # New-VSSageMakerModel
 
 ## SYNOPSIS
-Adds an AWS::SageMaker::Model resource to the template
+Adds an AWS::SageMaker::Model resource to the template.
+The AWS::SageMaker::Model resource to create a model to host at an Amazon SageMaker endpoint.
+For more information, see Deploying a Model on Amazon SageMaker Hosting Services: https://docs.aws.amazon.com/sagemaker/latest/dg/how-it-works-hosting.html in the *Amazon SageMaker Developer Guide*.
 
 ## SYNTAX
 
 ```
-New-VSSageMakerModel [-LogicalId] <String> -ExecutionRoleArn <Object> -PrimaryContainer <Object>
- [-ModelName <Object>] [-VpcConfig <Object>] [-Tags <Object>] [-DeletionPolicy <String>]
+New-VSSageMakerModel [-LogicalId] <String> -ExecutionRoleArn <Object> [-PrimaryContainer <Object>]
+ [-ModelName <Object>] [-VpcConfig <Object>] [-Containers <Object>] [-Tags <Object>] [-DeletionPolicy <String>]
  [-DependsOn <String[]>] [-Metadata <Object>] [-UpdatePolicy <Object>] [-Condition <Object>]
  [<CommonParameters>]
 ```
 
 ## DESCRIPTION
-Adds an AWS::SageMaker::Model resource to the template
+Adds an AWS::SageMaker::Model resource to the template.
+The AWS::SageMaker::Model resource to create a model to host at an Amazon SageMaker endpoint.
+For more information, see Deploying a Model on Amazon SageMaker Hosting Services: https://docs.aws.amazon.com/sagemaker/latest/dg/how-it-works-hosting.html in the *Amazon SageMaker Developer Guide*.
+
+## EXAMPLES
+
+### Example 1
+```powershell
+PS C:\> {{ Add example code here }}
+```
+
+{{ Add example description here }}
 
 ## PARAMETERS
 
@@ -46,9 +48,13 @@ Accept wildcard characters: False
 ```
 
 ### -ExecutionRoleArn
-Required: True    
-Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-sagemaker-model.html#cfn-sagemaker-model-executionrolearn    
-PrimitiveType: String    
+The Amazon Resource Name ARN of the IAM role that Amazon SageMaker can assume to access model artifacts and docker image for deployment on ML compute instances or for batch transform jobs.
+Deploying on ML compute instances is part of model hosting.
+For more information, see Amazon SageMaker Roles: https://docs.aws.amazon.com/sagemaker/latest/dg/sagemaker-roles.html.
+To be able to pass this role to Amazon SageMaker, the caller of this API must have the iam:PassRole permission.
+
+Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-sagemaker-model.html#cfn-sagemaker-model-executionrolearn
+PrimitiveType: String
 UpdateType: Immutable
 
 ```yaml
@@ -64,9 +70,10 @@ Accept wildcard characters: False
 ```
 
 ### -PrimaryContainer
-Type: ContainerDefinition    
-Required: True    
-Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-sagemaker-model.html#cfn-sagemaker-model-primarycontainer    
+The location of the primary docker image containing inference code, associated artifacts, and custom environment map that the inference code uses when the model is deployed for predictions.
+
+Type: ContainerDefinition
+Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-sagemaker-model.html#cfn-sagemaker-model-primarycontainer
 UpdateType: Immutable
 
 ```yaml
@@ -74,7 +81,7 @@ Type: Object
 Parameter Sets: (All)
 Aliases:
 
-Required: True
+Required: False
 Position: Named
 Default value: None
 Accept pipeline input: False
@@ -82,9 +89,10 @@ Accept wildcard characters: False
 ```
 
 ### -ModelName
-Required: False    
-Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-sagemaker-model.html#cfn-sagemaker-model-modelname    
-PrimitiveType: String    
+The name of the new model.
+
+Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-sagemaker-model.html#cfn-sagemaker-model-modelname
+PrimitiveType: String
 UpdateType: Immutable
 
 ```yaml
@@ -100,9 +108,33 @@ Accept wildcard characters: False
 ```
 
 ### -VpcConfig
-Type: VpcConfig    
-Required: False    
-Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-sagemaker-model.html#cfn-sagemaker-model-vpcconfig    
+A VpcConfig: https://docs.aws.amazon.com/sagemaker/latest/dg/API_VpcConfig.html object that specifies the VPC that you want your model to connect to.
+Control access to and from your model container by configuring the VPC.
+VpcConfig is used in hosting services and in batch transform.
+For more information, see Protect Endpoints by Using an Amazon Virtual Private Cloud: https://docs.aws.amazon.com/sagemaker/latest/dg/host-vpc.html and Protect Data in Batch Transform Jobs by Using an Amazon Virtual Private Cloud: https://docs.aws.amazon.com/sagemaker/latest/dg/batch-vpc.html.
+
+Type: VpcConfig
+Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-sagemaker-model.html#cfn-sagemaker-model-vpcconfig
+UpdateType: Immutable
+
+```yaml
+Type: Object
+Parameter Sets: (All)
+Aliases:
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### -Containers
+Specifies the containers in the inference pipeline.
+
+Type: List
+Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-sagemaker-model.html#cfn-sagemaker-model-containers
+ItemType: ContainerDefinition
 UpdateType: Immutable
 
 ```yaml
@@ -118,10 +150,12 @@ Accept wildcard characters: False
 ```
 
 ### -Tags
-Type: List    
-Required: False    
-Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-sagemaker-model.html#cfn-sagemaker-model-tags    
-ItemType: Tag    
+A list of key-value pairs to apply to this resource.
+For more information, see Resource Tag: https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-resource-tags.html and Using Cost Allocation Tags: https://docs.aws.amazon.com/awsaccountbilling/latest/aboutv2/cost-alloc-tags.html#allocation-what in the *AWS Billing and Cost Management User Guide*.
+
+Type: List
+Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-sagemaker-model.html#cfn-sagemaker-model-tags
+ItemType: Tag
 UpdateType: Mutable
 
 ```yaml
@@ -231,15 +265,13 @@ Accept wildcard characters: False
 ```
 
 ### CommonParameters
-This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction, and -WarningVariable.
-For more information, see about_CommonParameters (http://go.microsoft.com/fwlink/?LinkID=113216).
+This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction, and -WarningVariable. For more information, see [about_CommonParameters](http://go.microsoft.com/fwlink/?LinkID=113216).
 
 ## INPUTS
 
 ## OUTPUTS
 
 ### Vaporshell.Resource.SageMaker.Model
-
 ## NOTES
 
 ## RELATED LINKS

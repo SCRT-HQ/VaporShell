@@ -1,18 +1,8 @@
----
-layout: glossary
-title: New-VSCloudFrontDistribution
-categories: glossary
-label1: Category
-data1: Documentation
-label2: Depth
-data2: Deep
-schema: 2.0.0
----
-
 # New-VSCloudFrontDistribution
 
 ## SYNOPSIS
-Adds an AWS::CloudFront::Distribution resource to the template
+Adds an AWS::CloudFront::Distribution resource to the template.
+The distribution's information.
 
 ## SYNTAX
 
@@ -23,7 +13,17 @@ New-VSCloudFrontDistribution [-LogicalId] <String> -DistributionConfig <Object> 
 ```
 
 ## DESCRIPTION
-Adds an AWS::CloudFront::Distribution resource to the template
+Adds an AWS::CloudFront::Distribution resource to the template.
+The distribution's information.
+
+## EXAMPLES
+
+### Example 1
+```powershell
+PS C:\> {{ Add example code here }}
+```
+
+{{ Add example description here }}
 
 ## PARAMETERS
 
@@ -45,9 +45,11 @@ Accept wildcard characters: False
 ```
 
 ### -DistributionConfig
-Type: DistributionConfig    
-Required: True    
-Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-cloudfront-distribution.html#cfn-cloudfront-distribution-distributionconfig    
+The current configuration information for the distribution.
+Send a GET request to the /CloudFront API version/distribution ID/config resource.
+
+Type: DistributionConfig
+Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-cloudfront-distribution.html#cfn-cloudfront-distribution-distributionconfig
 UpdateType: Mutable
 
 ```yaml
@@ -63,10 +65,11 @@ Accept wildcard characters: False
 ```
 
 ### -Tags
-Type: List    
-Required: False    
-Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-cloudfront-distribution.html#cfn-cloudfront-distribution-tags    
-ItemType: Tag    
+A complex type that contains zero or more Tag elements.
+
+Type: List
+Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-cloudfront-distribution.html#cfn-cloudfront-distribution-tags
+ItemType: Tag
 UpdateType: Mutable
 
 ```yaml
@@ -176,15 +179,13 @@ Accept wildcard characters: False
 ```
 
 ### CommonParameters
-This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction, and -WarningVariable.
-For more information, see about_CommonParameters (http://go.microsoft.com/fwlink/?LinkID=113216).
+This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction, and -WarningVariable. For more information, see [about_CommonParameters](http://go.microsoft.com/fwlink/?LinkID=113216).
 
 ## INPUTS
 
 ## OUTPUTS
 
 ### Vaporshell.Resource.CloudFront.Distribution
-
 ## NOTES
 
 ## RELATED LINKS

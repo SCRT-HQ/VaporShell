@@ -1,14 +1,3 @@
----
-layout: glossary
-title: New-VaporCondition
-categories: glossary
-label1: Category
-data1: Documentation
-label2: Depth
-data2: Deep
-schema: 2.0.0
----
-
 # New-VaporCondition
 
 ## SYNOPSIS
@@ -60,6 +49,33 @@ Use the Condition key and a condition's logical ID to associate it with a resour
 To conditionally specify a property, use the Fn::If function.
 For more information, see Condition Functions.
 
+## EXAMPLES
+
+### EXAMPLE 1
+```
+$template = Initialize-Vaporshell -Description "Testing Condition addition"
+```
+
+$template.AddResource((
+    New-VaporCondition -LogicalId "CreateProdResources" -Condition (Add-ConEquals -FirstValue (Add-FnRef -Ref "EnvType") -SecondValue "prod")
+))
+
+When the template is exported, this will convert to: 
+    {
+        "AWSTemplateFormatVersion":  "2010-09-09",
+        "Description":  "Testing Condition addition",
+        "Conditions":  {
+            "CreateProdResources":  {
+                "Fn::Equals":  \[
+                    {
+                        "Ref":  "EnvType"
+                    },
+                    "prod"
+                \]
+            }
+        }
+    }
+
 ## PARAMETERS
 
 ### -LogicalId
@@ -94,15 +110,13 @@ Accept wildcard characters: False
 ```
 
 ### CommonParameters
-This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction, and -WarningVariable.
-For more information, see about_CommonParameters (http://go.microsoft.com/fwlink/?LinkID=113216).
+This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction, and -WarningVariable. For more information, see [about_CommonParameters](http://go.microsoft.com/fwlink/?LinkID=113216).
 
 ## INPUTS
 
 ## OUTPUTS
 
 ### Vaporshell.Condition
-
 ## NOTES
 You can use the following intrinsic functions to define conditions:
     Fn::And

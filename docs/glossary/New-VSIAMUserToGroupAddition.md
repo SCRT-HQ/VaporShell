@@ -1,18 +1,8 @@
----
-layout: glossary
-title: New-VSIAMUserToGroupAddition
-categories: glossary
-label1: Category
-data1: Documentation
-label2: Depth
-data2: Deep
-schema: 2.0.0
----
-
 # New-VSIAMUserToGroupAddition
 
 ## SYNOPSIS
-Adds an AWS::IAM::UserToGroupAddition resource to the template
+Adds an AWS::IAM::UserToGroupAddition resource to the template.
+Adds the specified user to the specified group.
 
 ## SYNTAX
 
@@ -23,7 +13,17 @@ New-VSIAMUserToGroupAddition [-LogicalId] <String> -GroupName <Object> -Users <O
 ```
 
 ## DESCRIPTION
-Adds an AWS::IAM::UserToGroupAddition resource to the template
+Adds an AWS::IAM::UserToGroupAddition resource to the template.
+Adds the specified user to the specified group.
+
+## EXAMPLES
+
+### Example 1
+```powershell
+PS C:\> {{ Add example code here }}
+```
+
+{{ Add example description here }}
 
 ## PARAMETERS
 
@@ -45,9 +45,12 @@ Accept wildcard characters: False
 ```
 
 ### -GroupName
-Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iam-addusertogroup.html#cfn-iam-addusertogroup-groupname    
-PrimitiveType: String    
-Required: True    
+The name of the group to update.
+This parameter allows through its regex pattern: http://wikipedia.org/wiki/regex a string of characters consisting of upper and lowercase alphanumeric characters with no spaces.
+You can also include any of the following characters: _+=,.@-
+
+Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iam-addusertogroup.html#cfn-iam-addusertogroup-groupname
+PrimitiveType: String
 UpdateType: Mutable
 
 ```yaml
@@ -63,11 +66,12 @@ Accept wildcard characters: False
 ```
 
 ### -Users
-Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iam-addusertogroup.html#cfn-iam-addusertogroup-users    
-DuplicatesAllowed: True    
-PrimitiveItemType: String    
-Required: True    
-Type: List    
+A list of the names of the users that you want to add to the group.
+
+Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iam-addusertogroup.html#cfn-iam-addusertogroup-users
+DuplicatesAllowed: True
+PrimitiveItemType: String
+Type: List
 UpdateType: Mutable
 
 ```yaml
@@ -177,15 +181,13 @@ Accept wildcard characters: False
 ```
 
 ### CommonParameters
-This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction, and -WarningVariable.
-For more information, see about_CommonParameters (http://go.microsoft.com/fwlink/?LinkID=113216).
+This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction, and -WarningVariable. For more information, see [about_CommonParameters](http://go.microsoft.com/fwlink/?LinkID=113216).
 
 ## INPUTS
 
 ## OUTPUTS
 
 ### Vaporshell.Resource.IAM.UserToGroupAddition
-
 ## NOTES
 
 ## RELATED LINKS

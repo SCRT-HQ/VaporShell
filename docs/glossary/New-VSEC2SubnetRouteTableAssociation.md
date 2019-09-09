@@ -1,18 +1,11 @@
----
-layout: glossary
-title: New-VSEC2SubnetRouteTableAssociation
-categories: glossary
-label1: Category
-data1: Documentation
-label2: Depth
-data2: Deep
-schema: 2.0.0
----
-
 # New-VSEC2SubnetRouteTableAssociation
 
 ## SYNOPSIS
-Adds an AWS::EC2::SubnetRouteTableAssociation resource to the template
+Adds an AWS::EC2::SubnetRouteTableAssociation resource to the template.
+Associates a subnet with a route table.
+The subnet and route table must be in the same VPC.
+This association causes traffic originating from the subnet to be routed according to the routes in the route table.
+A route table can be associated with multiple subnets.
 
 ## SYNTAX
 
@@ -23,7 +16,20 @@ New-VSEC2SubnetRouteTableAssociation [-LogicalId] <String> -RouteTableId <Object
 ```
 
 ## DESCRIPTION
-Adds an AWS::EC2::SubnetRouteTableAssociation resource to the template
+Adds an AWS::EC2::SubnetRouteTableAssociation resource to the template.
+Associates a subnet with a route table.
+The subnet and route table must be in the same VPC.
+This association causes traffic originating from the subnet to be routed according to the routes in the route table.
+A route table can be associated with multiple subnets.
+
+## EXAMPLES
+
+### Example 1
+```powershell
+PS C:\> {{ Add example code here }}
+```
+
+{{ Add example description here }}
 
 ## PARAMETERS
 
@@ -45,9 +51,11 @@ Accept wildcard characters: False
 ```
 
 ### -RouteTableId
-Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ec2-subnet-route-table-assoc.html#cfn-ec2-subnetroutetableassociation-routetableid    
-PrimitiveType: String    
-Required: True    
+The ID of the route table.
+The physical ID changes when the route table ID is changed.
+
+Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ec2-subnet-route-table-assoc.html#cfn-ec2-subnetroutetableassociation-routetableid
+PrimitiveType: String
 UpdateType: Mutable
 
 ```yaml
@@ -63,9 +71,10 @@ Accept wildcard characters: False
 ```
 
 ### -SubnetId
-Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ec2-subnet-route-table-assoc.html#cfn-ec2-subnetroutetableassociation-subnetid    
-PrimitiveType: String    
-Required: True    
+The ID of the subnet.
+
+Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ec2-subnet-route-table-assoc.html#cfn-ec2-subnetroutetableassociation-subnetid
+PrimitiveType: String
 UpdateType: Immutable
 
 ```yaml
@@ -175,15 +184,13 @@ Accept wildcard characters: False
 ```
 
 ### CommonParameters
-This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction, and -WarningVariable.
-For more information, see about_CommonParameters (http://go.microsoft.com/fwlink/?LinkID=113216).
+This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction, and -WarningVariable. For more information, see [about_CommonParameters](http://go.microsoft.com/fwlink/?LinkID=113216).
 
 ## INPUTS
 
 ## OUTPUTS
 
 ### Vaporshell.Resource.EC2.SubnetRouteTableAssociation
-
 ## NOTES
 
 ## RELATED LINKS

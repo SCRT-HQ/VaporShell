@@ -1,18 +1,7 @@
----
-layout: glossary
-title: VSStackParameter
-categories: glossary
-label1: Category
-data1: Documentation
-label2: Depth
-data2: Deep
-schema: 2.0.0
----
-
 # VSStackParameter
 
 ## SYNOPSIS
-{{Fill in the Synopsis}}
+{{ Fill in the Synopsis }}
 
 ## SYNTAX
 
@@ -22,12 +11,21 @@ VSStackParameter [[-ParameterKey] <String>] [[-ParameterValue] <String>] [[-UseP
 ```
 
 ## DESCRIPTION
-{{Fill in the Description}}
+{{ Fill in the Description }}
+
+## EXAMPLES
+
+### Example 1
+```powershell
+PS C:\> {{ Add example code here }}
+```
+
+{{ Add example description here }}
 
 ## PARAMETERS
 
 ### -ParameterKey
-{{Fill ParameterKey Description}}
+{{ Fill ParameterKey Description }}
 
 ```yaml
 Type: String
@@ -42,7 +40,7 @@ Accept wildcard characters: False
 ```
 
 ### -ParameterValue
-{{Fill ParameterValue Description}}
+{{ Fill ParameterValue Description }}
 
 ```yaml
 Type: String
@@ -57,7 +55,7 @@ Accept wildcard characters: False
 ```
 
 ### -UsePreviousValue
-{{Fill UsePreviousValue Description}}
+{{ Fill UsePreviousValue Description }}
 
 ```yaml
 Type: Boolean
@@ -72,18 +70,15 @@ Accept wildcard characters: False
 ```
 
 ### CommonParameters
-This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction, and -WarningVariable.
-For more information, see about_CommonParameters (http://go.microsoft.com/fwlink/?LinkID=113216).
+This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction, and -WarningVariable. For more information, see [about_CommonParameters](http://go.microsoft.com/fwlink/?LinkID=113216).
 
 ## INPUTS
 
 ### None
 
-
 ## OUTPUTS
 
 ### System.Object
-
 ## NOTES
 
 ## RELATED LINKS

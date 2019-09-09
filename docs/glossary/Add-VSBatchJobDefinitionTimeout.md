@@ -1,18 +1,8 @@
----
-layout: glossary
-title: Add-VSBatchJobDefinitionTimeout
-categories: glossary
-label1: Category
-data1: Documentation
-label2: Depth
-data2: Deep
-schema: 2.0.0
----
-
 # Add-VSBatchJobDefinitionTimeout
 
 ## SYNOPSIS
-Adds an AWS::Batch::JobDefinition.Timeout resource property to the template
+Adds an AWS::Batch::JobDefinition.Timeout resource property to the template.
+An object representing a job timeout configuration.
 
 ## SYNTAX
 
@@ -21,14 +11,25 @@ Add-VSBatchJobDefinitionTimeout [[-AttemptDurationSeconds] <Int32>] [<CommonPara
 ```
 
 ## DESCRIPTION
-Adds an AWS::Batch::JobDefinition.Timeout resource property to the template
+Adds an AWS::Batch::JobDefinition.Timeout resource property to the template.
+An object representing a job timeout configuration.
+
+## EXAMPLES
+
+### Example 1
+```powershell
+PS C:\> {{ Add example code here }}
+```
+
+{{ Add example description here }}
 
 ## PARAMETERS
 
 ### -AttemptDurationSeconds
-Required: False    
-Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-batch-jobdefinition-timeout.html#cfn-batch-jobdefinition-timeout-attemptdurationseconds    
-PrimitiveType: Integer    
+The time duration in seconds measured from the job attempt's startedAt timestamp after which AWS Batch terminates your jobs if they have not finished.
+
+Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-batch-jobdefinition-timeout.html#cfn-batch-jobdefinition-timeout-attemptdurationseconds
+PrimitiveType: Integer
 UpdateType: Mutable
 
 ```yaml
@@ -44,15 +45,13 @@ Accept wildcard characters: False
 ```
 
 ### CommonParameters
-This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction, and -WarningVariable.
-For more information, see about_CommonParameters (http://go.microsoft.com/fwlink/?LinkID=113216).
+This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction, and -WarningVariable. For more information, see [about_CommonParameters](http://go.microsoft.com/fwlink/?LinkID=113216).
 
 ## INPUTS
 
 ## OUTPUTS
 
 ### Vaporshell.Resource.Batch.JobDefinition.Timeout
-
 ## NOTES
 
 ## RELATED LINKS

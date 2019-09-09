@@ -1,18 +1,12 @@
----
-layout: glossary
-title: New-VSIAMServiceLinkedRole
-categories: glossary
-label1: Category
-data1: Documentation
-label2: Depth
-data2: Deep
-schema: 2.0.0
----
-
 # New-VSIAMServiceLinkedRole
 
 ## SYNOPSIS
-Adds an AWS::IAM::ServiceLinkedRole resource to the template
+Adds an AWS::IAM::ServiceLinkedRole resource to the template.
+Creates an IAM role that is linked to a specific AWS service.
+The service controls the attached policies and when the role can be deleted.
+This helps ensure that the service is not broken by an unexpectedly changed or deleted role, which could put your AWS resources into an unknown state.
+Allowing the service to control the role helps improve service stability and proper cleanup when a service and its role are no longer needed.
+For more information, see Using Service-Linked Roles: https://docs.aws.amazon.com/IAM/latest/UserGuide/using-service-linked-roles.html in the *IAM User Guide*.
 
 ## SYNTAX
 
@@ -23,7 +17,23 @@ New-VSIAMServiceLinkedRole [-LogicalId] <String> [-CustomSuffix <Object>] [-Desc
 ```
 
 ## DESCRIPTION
-Adds an AWS::IAM::ServiceLinkedRole resource to the template
+Adds an AWS::IAM::ServiceLinkedRole resource to the template.
+Creates an IAM role that is linked to a specific AWS service.
+The service controls the attached policies and when the role can be deleted.
+This helps ensure that the service is not broken by an unexpectedly changed or deleted role, which could put your AWS resources into an unknown state.
+Allowing the service to control the role helps improve service stability and proper cleanup when a service and its role are no longer needed.
+For more information, see Using Service-Linked Roles: https://docs.aws.amazon.com/IAM/latest/UserGuide/using-service-linked-roles.html in the *IAM User Guide*.
+
+To attach a policy to this service-linked role, you must make the request using the AWS service that depends on this role.
+
+## EXAMPLES
+
+### Example 1
+```powershell
+PS C:\> {{ Add example code here }}
+```
+
+{{ Add example description here }}
 
 ## PARAMETERS
 
@@ -45,9 +55,15 @@ Accept wildcard characters: False
 ```
 
 ### -CustomSuffix
-Required: False    
-Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-iam-servicelinkedrole.html#cfn-iam-servicelinkedrole-customsuffix    
-PrimitiveType: String    
+A string that you provide, which is combined with the service-provided prefix to form the complete role name.
+If you make multiple requests for the same service, then you must supply a different CustomSuffix for each request.
+Otherwise the request fails with a duplicate role name error.
+For example, you could add -1 or -debug to the suffix.
+Some services do not support the CustomSuffix parameter.
+If you provide an optional suffix and the operation fails, try the operation again without the suffix.
+
+Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-iam-servicelinkedrole.html#cfn-iam-servicelinkedrole-customsuffix
+PrimitiveType: String
 UpdateType: Immutable
 
 ```yaml
@@ -63,9 +79,10 @@ Accept wildcard characters: False
 ```
 
 ### -Description
-Required: False    
-Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-iam-servicelinkedrole.html#cfn-iam-servicelinkedrole-description    
-PrimitiveType: String    
+The description of the role.
+
+Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-iam-servicelinkedrole.html#cfn-iam-servicelinkedrole-description
+PrimitiveType: String
 UpdateType: Mutable
 
 ```yaml
@@ -81,9 +98,16 @@ Accept wildcard characters: False
 ```
 
 ### -AWSServiceName
-Required: True    
-Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-iam-servicelinkedrole.html#cfn-iam-servicelinkedrole-awsservicename    
-PrimitiveType: String    
+The service principal for the AWS service to which this role is attached.
+You use a string similar to a URL but without the http:// in front.
+For example: elasticbeanstalk.amazonaws.com.
+Service principals are unique and case-sensitive.
+To find the exact service principal for your service-linked role, see AWS Services That Work with IAM: https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_aws-services-that-work-with-iam.html in the *IAM User Guide*.
+Look for the services that have **Yes **in the **Service-Linked Role** column.
+Choose the **Yes** link to view the service-linked role documentation for that service.
+
+Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-iam-servicelinkedrole.html#cfn-iam-servicelinkedrole-awsservicename
+PrimitiveType: String
 UpdateType: Immutable
 
 ```yaml
@@ -193,15 +217,13 @@ Accept wildcard characters: False
 ```
 
 ### CommonParameters
-This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction, and -WarningVariable.
-For more information, see about_CommonParameters (http://go.microsoft.com/fwlink/?LinkID=113216).
+This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction, and -WarningVariable. For more information, see [about_CommonParameters](http://go.microsoft.com/fwlink/?LinkID=113216).
 
 ## INPUTS
 
 ## OUTPUTS
 
 ### Vaporshell.Resource.IAM.ServiceLinkedRole
-
 ## NOTES
 
 ## RELATED LINKS

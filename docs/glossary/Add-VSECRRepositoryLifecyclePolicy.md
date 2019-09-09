@@ -1,18 +1,9 @@
----
-layout: glossary
-title: Add-VSECRRepositoryLifecyclePolicy
-categories: glossary
-label1: Category
-data1: Documentation
-label2: Depth
-data2: Deep
-schema: 2.0.0
----
-
 # Add-VSECRRepositoryLifecyclePolicy
 
 ## SYNOPSIS
-Adds an AWS::ECR::Repository.LifecyclePolicy resource property to the template
+Adds an AWS::ECR::Repository.LifecyclePolicy resource property to the template.
+The LifecyclePolicy property type specifies a lifecycle policy.
+For information about lifecycle policy syntax, see Lifecycle Policy Template: https://docs.aws.amazon.com/AmazonECR/latest/userguide/LifecyclePolicies.html.
 
 ## SYNTAX
 
@@ -22,14 +13,26 @@ Add-VSECRRepositoryLifecyclePolicy [[-LifecyclePolicyText] <Object>] [[-Registry
 ```
 
 ## DESCRIPTION
-Adds an AWS::ECR::Repository.LifecyclePolicy resource property to the template
+Adds an AWS::ECR::Repository.LifecyclePolicy resource property to the template.
+The LifecyclePolicy property type specifies a lifecycle policy.
+For information about lifecycle policy syntax, see Lifecycle Policy Template: https://docs.aws.amazon.com/AmazonECR/latest/userguide/LifecyclePolicies.html.
+
+## EXAMPLES
+
+### Example 1
+```powershell
+PS C:\> {{ Add example code here }}
+```
+
+{{ Add example description here }}
 
 ## PARAMETERS
 
 ### -LifecyclePolicyText
-Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ecr-repository-lifecyclepolicy.html#cfn-ecr-repository-lifecyclepolicy-lifecyclepolicytext    
-PrimitiveType: String    
-Required: False    
+The JSON repository policy text to apply to the repository.
+
+Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ecr-repository-lifecyclepolicy.html#cfn-ecr-repository-lifecyclepolicy-lifecyclepolicytext
+PrimitiveType: String
 UpdateType: Mutable
 
 ```yaml
@@ -45,9 +48,11 @@ Accept wildcard characters: False
 ```
 
 ### -RegistryId
-Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ecr-repository-lifecyclepolicy.html#cfn-ecr-repository-lifecyclepolicy-registryid    
-PrimitiveType: String    
-Required: False    
+The AWS account ID associated with the registry that contains the repository.
+If you do  not specify a registry, the default registry is assumed.
+
+Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ecr-repository-lifecyclepolicy.html#cfn-ecr-repository-lifecyclepolicy-registryid
+PrimitiveType: String
 UpdateType: Mutable
 
 ```yaml
@@ -63,15 +68,13 @@ Accept wildcard characters: False
 ```
 
 ### CommonParameters
-This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction, and -WarningVariable.
-For more information, see about_CommonParameters (http://go.microsoft.com/fwlink/?LinkID=113216).
+This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction, and -WarningVariable. For more information, see [about_CommonParameters](http://go.microsoft.com/fwlink/?LinkID=113216).
 
 ## INPUTS
 
 ## OUTPUTS
 
 ### Vaporshell.Resource.ECR.Repository.LifecyclePolicy
-
 ## NOTES
 
 ## RELATED LINKS

@@ -1,18 +1,8 @@
----
-layout: glossary
-title: New-VSEC2NetworkInterface
-categories: glossary
-label1: Category
-data1: Documentation
-label2: Depth
-data2: Deep
-schema: 2.0.0
----
-
 # New-VSEC2NetworkInterface
 
 ## SYNOPSIS
-Adds an AWS::EC2::NetworkInterface resource to the template
+Adds an AWS::EC2::NetworkInterface resource to the template.
+Describes a network interface in an Elastic Compute Cloud (EC2 instance for AWS CloudFormation.
 
 ## SYNTAX
 
@@ -25,7 +15,17 @@ New-VSEC2NetworkInterface [-LogicalId] <String> [-Description <Object>] [-GroupS
 ```
 
 ## DESCRIPTION
-Adds an AWS::EC2::NetworkInterface resource to the template
+Adds an AWS::EC2::NetworkInterface resource to the template.
+Describes a network interface in an Elastic Compute Cloud (EC2 instance for AWS CloudFormation.
+
+## EXAMPLES
+
+### Example 1
+```powershell
+PS C:\> {{ Add example code here }}
+```
+
+{{ Add example description here }}
 
 ## PARAMETERS
 
@@ -47,9 +47,10 @@ Accept wildcard characters: False
 ```
 
 ### -Description
-Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ec2-network-interface.html#cfn-awsec2networkinterface-description    
-PrimitiveType: String    
-Required: False    
+A description for the network interface.
+
+Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ec2-network-interface.html#cfn-awsec2networkinterface-description
+PrimitiveType: String
 UpdateType: Mutable
 
 ```yaml
@@ -65,11 +66,12 @@ Accept wildcard characters: False
 ```
 
 ### -GroupSet
-Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ec2-network-interface.html#cfn-awsec2networkinterface-groupset    
-DuplicatesAllowed: False    
-PrimitiveItemType: String    
-Required: False    
-Type: List    
+A list of security group IDs associated with this network interface.
+
+Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ec2-network-interface.html#cfn-awsec2networkinterface-groupset
+DuplicatesAllowed: False
+PrimitiveItemType: String
+Type: List
 UpdateType: Mutable
 
 ```yaml
@@ -85,9 +87,10 @@ Accept wildcard characters: False
 ```
 
 ### -InterfaceType
-Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ec2-network-interface.html#cfn-ec2-networkinterface-interfacetype    
-PrimitiveType: String    
-Required: False    
+The type of network interface.
+
+Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ec2-network-interface.html#cfn-ec2-networkinterface-interfacetype
+PrimitiveType: String
 UpdateType: Immutable
 
 ```yaml
@@ -103,9 +106,12 @@ Accept wildcard characters: False
 ```
 
 ### -Ipv6AddressCount
-Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ec2-network-interface.html#cfn-ec2-networkinterface-ipv6addresscount    
-PrimitiveType: Integer    
-Required: False    
+The number of IPv6 addresses to assign to a network interface.
+Amazon EC2 automatically selects the IPv6 addresses from the subnet range.
+To specify specific IPv6 addresses, use the Ipv6Addresses property and don't specify this property.
+
+Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ec2-network-interface.html#cfn-ec2-networkinterface-ipv6addresscount
+PrimitiveType: Integer
 UpdateType: Mutable
 
 ```yaml
@@ -121,9 +127,11 @@ Accept wildcard characters: False
 ```
 
 ### -Ipv6Addresses
-Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ec2-network-interface.html#cfn-ec2-networkinterface-ipv6addresses    
-Required: False    
-Type: InstanceIpv6Address    
+One or more specific IPv6 addresses from the IPv6 CIDR block range of your subnet to associate with the network interface.
+If you're specifying a number of IPv6 addresses, use the Ipv6AddressCount property and don't specify this property.
+
+Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ec2-network-interface.html#cfn-ec2-networkinterface-ipv6addresses
+Type: InstanceIpv6Address
 UpdateType: Mutable
 
 ```yaml
@@ -139,9 +147,11 @@ Accept wildcard characters: False
 ```
 
 ### -PrivateIpAddress
-Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ec2-network-interface.html#cfn-awsec2networkinterface-privateipaddress    
-PrimitiveType: String    
-Required: False    
+Assigns a single private IP address to the network interface, which is used as the primary private IP address.
+If you want to specify multiple private IP address, use the PrivateIpAddresses property.
+
+Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ec2-network-interface.html#cfn-awsec2networkinterface-privateipaddress
+PrimitiveType: String
 UpdateType: Immutable
 
 ```yaml
@@ -157,11 +167,14 @@ Accept wildcard characters: False
 ```
 
 ### -PrivateIpAddresses
-Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ec2-network-interface.html#cfn-awsec2networkinterface-privateipaddresses    
-DuplicatesAllowed: False    
-ItemType: PrivateIpAddressSpecification    
-Required: False    
-Type: List    
+Assigns a list of private IP addresses to the network interface.
+You can specify a primary private IP address by setting the value of the Primary property to true in the PrivateIpAddressSpecification property.
+If you want EC2 to automatically assign private IP addresses, use the SecondaryPrivateIpAddressCount property and do not specify this property.
+
+Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ec2-network-interface.html#cfn-awsec2networkinterface-privateipaddresses
+DuplicatesAllowed: False
+ItemType: PrivateIpAddressSpecification
+Type: List
 UpdateType: Conditional
 
 ```yaml
@@ -177,9 +190,14 @@ Accept wildcard characters: False
 ```
 
 ### -SecondaryPrivateIpAddressCount
-Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ec2-network-interface.html#cfn-awsec2networkinterface-secondaryprivateipcount    
-PrimitiveType: Integer    
-Required: False    
+The number of secondary private IPv4 addresses to assign to a network interface.
+When you specify a number of secondary IPv4 addresses, Amazon EC2 selects these IP addresses within the subnet's IPv4 CIDR range.
+You can't specify this option and specify more than one private IP address using privateIpAddresses.
+The number of IP addresses you can assign to a network interface varies by instance type.
+For more information, see IP Addresses Per ENI Per Instance Type: https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/using-eni.html#AvailableIpPerENI in the *Amazon Virtual Private Cloud User Guide*.
+
+Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ec2-network-interface.html#cfn-awsec2networkinterface-secondaryprivateipcount
+PrimitiveType: Integer
 UpdateType: Mutable
 
 ```yaml
@@ -195,9 +213,10 @@ Accept wildcard characters: False
 ```
 
 ### -SourceDestCheck
-Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ec2-network-interface.html#cfn-awsec2networkinterface-sourcedestcheck    
-PrimitiveType: Boolean    
-Required: False    
+Indicates whether traffic to or from the instance is validated.
+
+Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ec2-network-interface.html#cfn-awsec2networkinterface-sourcedestcheck
+PrimitiveType: Boolean
 UpdateType: Mutable
 
 ```yaml
@@ -213,9 +232,10 @@ Accept wildcard characters: False
 ```
 
 ### -SubnetId
-Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ec2-network-interface.html#cfn-awsec2networkinterface-subnetid    
-PrimitiveType: String    
-Required: True    
+The ID of the subnet to associate with the network interface.
+
+Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ec2-network-interface.html#cfn-awsec2networkinterface-subnetid
+PrimitiveType: String
 UpdateType: Immutable
 
 ```yaml
@@ -231,11 +251,12 @@ Accept wildcard characters: False
 ```
 
 ### -Tags
-Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ec2-network-interface.html#cfn-awsec2networkinterface-tags    
-DuplicatesAllowed: True    
-ItemType: Tag    
-Required: False    
-Type: List    
+An arbitrary set of tags key-value pairs for this network interface.
+
+Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ec2-network-interface.html#cfn-awsec2networkinterface-tags
+DuplicatesAllowed: True
+ItemType: Tag
+Type: List
 UpdateType: Mutable
 
 ```yaml
@@ -345,15 +366,13 @@ Accept wildcard characters: False
 ```
 
 ### CommonParameters
-This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction, and -WarningVariable.
-For more information, see about_CommonParameters (http://go.microsoft.com/fwlink/?LinkID=113216).
+This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction, and -WarningVariable. For more information, see [about_CommonParameters](http://go.microsoft.com/fwlink/?LinkID=113216).
 
 ## INPUTS
 
 ## OUTPUTS
 
 ### Vaporshell.Resource.EC2.NetworkInterface
-
 ## NOTES
 
 ## RELATED LINKS

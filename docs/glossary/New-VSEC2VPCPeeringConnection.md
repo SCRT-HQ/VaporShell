@@ -1,29 +1,44 @@
----
-layout: glossary
-title: New-VSEC2VPCPeeringConnection
-categories: glossary
-label1: Category
-data1: Documentation
-label2: Depth
-data2: Deep
-schema: 2.0.0
----
-
 # New-VSEC2VPCPeeringConnection
 
 ## SYNOPSIS
-Adds an AWS::EC2::VPCPeeringConnection resource to the template
+Adds an AWS::EC2::VPCPeeringConnection resource to the template.
+Requests a VPC peering connection between two VPCs: a requester VPC that you own and an accepter VPC with which to create the connection.
+The accepter VPC can belong to another AWS account and can be in a different Region to the requester VPC.
+The requester VPC and accepter VPC cannot have overlapping CIDR blocks.
 
 ## SYNTAX
 
 ```
-New-VSEC2VPCPeeringConnection [-LogicalId] <String> [-PeerOwnerId <Object>] [-PeerRoleArn <Object>]
- -PeerVpcId <Object> [-Tags <Object>] -VpcId <Object> [-DeletionPolicy <String>] [-DependsOn <String[]>]
- [-Metadata <Object>] [-UpdatePolicy <Object>] [-Condition <Object>] [<CommonParameters>]
+New-VSEC2VPCPeeringConnection [-LogicalId] <String> [-PeerOwnerId <Object>] [-PeerRegion <Object>]
+ [-PeerRoleArn <Object>] -PeerVpcId <Object> [-Tags <Object>] -VpcId <Object> [-DeletionPolicy <String>]
+ [-DependsOn <String[]>] [-Metadata <Object>] [-UpdatePolicy <Object>] [-Condition <Object>]
+ [<CommonParameters>]
 ```
 
 ## DESCRIPTION
-Adds an AWS::EC2::VPCPeeringConnection resource to the template
+Adds an AWS::EC2::VPCPeeringConnection resource to the template.
+Requests a VPC peering connection between two VPCs: a requester VPC that you own and an accepter VPC with which to create the connection.
+The accepter VPC can belong to another AWS account and can be in a different Region to the requester VPC.
+The requester VPC and accepter VPC cannot have overlapping CIDR blocks.
+
+**Note**
+
+Limitations and rules apply to a VPC peering connection.
+For more information, see the limitations: https://docs.aws.amazon.com/vpc/latest/peering/vpc-peering-basics.html#vpc-peering-limitations section in the *VPC Peering Guide*.
+
+The owner of the accepter VPC must accept the peering request to activate the peering connection.
+The VPC peering connection request expires after 7 days, after which it cannot be accepted or rejected.
+
+If you create a VPC peering connection request between VPCs with overlapping CIDR blocks, the VPC peering connection has a status of failed.
+
+## EXAMPLES
+
+### Example 1
+```powershell
+PS C:\> {{ Add example code here }}
+```
+
+{{ Add example description here }}
 
 ## PARAMETERS
 
@@ -45,9 +60,31 @@ Accept wildcard characters: False
 ```
 
 ### -PeerOwnerId
-Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ec2-vpcpeeringconnection.html#cfn-ec2-vpcpeeringconnection-peerownerid    
-PrimitiveType: String    
-Required: False    
+The AWS account ID of the owner of the accepter VPC.
+Default: Your AWS account ID
+
+Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ec2-vpcpeeringconnection.html#cfn-ec2-vpcpeeringconnection-peerownerid
+PrimitiveType: String
+UpdateType: Immutable
+
+```yaml
+Type: Object
+Parameter Sets: (All)
+Aliases:
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### -PeerRegion
+The Region code for the accepter VPC, if the accepter VPC is located in a Region other than the Region in which you make the request.
+Default: The Region in which you make the request.
+
+Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ec2-vpcpeeringconnection.html#cfn-ec2-vpcpeeringconnection-peerregion
+PrimitiveType: String
 UpdateType: Immutable
 
 ```yaml
@@ -63,9 +100,10 @@ Accept wildcard characters: False
 ```
 
 ### -PeerRoleArn
-Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ec2-vpcpeeringconnection.html#cfn-ec2-vpcpeeringconnection-peerrolearn    
-PrimitiveType: String    
-Required: False    
+The Amazon Resource Name ARN of the VPC peer role for the peering connection in another AWS account.
+
+Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ec2-vpcpeeringconnection.html#cfn-ec2-vpcpeeringconnection-peerrolearn
+PrimitiveType: String
 UpdateType: Immutable
 
 ```yaml
@@ -81,9 +119,11 @@ Accept wildcard characters: False
 ```
 
 ### -PeerVpcId
-Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ec2-vpcpeeringconnection.html#cfn-ec2-vpcpeeringconnection-peervpcid    
-PrimitiveType: String    
-Required: True    
+The ID of the VPC with which you are creating the VPC peering connection.
+You must specify this parameter in the request.
+
+Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ec2-vpcpeeringconnection.html#cfn-ec2-vpcpeeringconnection-peervpcid
+PrimitiveType: String
 UpdateType: Immutable
 
 ```yaml
@@ -99,11 +139,12 @@ Accept wildcard characters: False
 ```
 
 ### -Tags
-Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ec2-vpcpeeringconnection.html#cfn-ec2-vpcpeeringconnection-tags    
-DuplicatesAllowed: True    
-ItemType: Tag    
-Required: False    
-Type: List    
+Any tags assigned to the resource.
+
+Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ec2-vpcpeeringconnection.html#cfn-ec2-vpcpeeringconnection-tags
+DuplicatesAllowed: True
+ItemType: Tag
+Type: List
 UpdateType: Mutable
 
 ```yaml
@@ -119,9 +160,10 @@ Accept wildcard characters: False
 ```
 
 ### -VpcId
-Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ec2-vpcpeeringconnection.html#cfn-ec2-vpcpeeringconnection-vpcid    
-PrimitiveType: String    
-Required: True    
+The ID of the VPC.
+
+Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ec2-vpcpeeringconnection.html#cfn-ec2-vpcpeeringconnection-vpcid
+PrimitiveType: String
 UpdateType: Immutable
 
 ```yaml
@@ -231,15 +273,13 @@ Accept wildcard characters: False
 ```
 
 ### CommonParameters
-This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction, and -WarningVariable.
-For more information, see about_CommonParameters (http://go.microsoft.com/fwlink/?LinkID=113216).
+This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction, and -WarningVariable. For more information, see [about_CommonParameters](http://go.microsoft.com/fwlink/?LinkID=113216).
 
 ## INPUTS
 
 ## OUTPUTS
 
 ### Vaporshell.Resource.EC2.VPCPeeringConnection
-
 ## NOTES
 
 ## RELATED LINKS

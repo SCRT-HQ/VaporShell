@@ -1,14 +1,3 @@
----
-layout: glossary
-title: Add-FnImportValue
-categories: glossary
-label1: Category
-data1: Documentation
-label2: Depth
-data2: Deep
-schema: 2.0.0
----
-
 # Add-FnImportValue
 
 ## SYNOPSIS
@@ -34,6 +23,15 @@ You can use the intrinsic function Fn::ImportValue to import only values that ha
         * You can't delete a stack if another stack references one of its outputs.
         * You can't modify or remove an output value that is referenced by another stack.
 
+## EXAMPLES
+
+### EXAMPLE 1
+```
+Add-FnImportValue -ValueToImport (Add-FnSub -String "`${NetworkStackNameParameter}-SubnetID")
+```
+
+When the template is exported, this will convert to: {"Fn::ImportValue":{"Fn::Sub":"${NetworkStackNameParameter}-SubnetID"}}
+
 ## PARAMETERS
 
 ### -ValueToImport
@@ -52,15 +50,13 @@ Accept wildcard characters: False
 ```
 
 ### CommonParameters
-This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction, and -WarningVariable.
-For more information, see about_CommonParameters (http://go.microsoft.com/fwlink/?LinkID=113216).
+This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction, and -WarningVariable. For more information, see [about_CommonParameters](http://go.microsoft.com/fwlink/?LinkID=113216).
 
 ## INPUTS
 
 ## OUTPUTS
 
 ### Vaporshell.Function.ImportValue
-
 ## NOTES
 You can use the following functions in the Fn::ImportValue function.
 The value of these functions can't depend on a resource.

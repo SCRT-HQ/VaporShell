@@ -1,29 +1,31 @@
----
-layout: glossary
-title: New-VSECRRepository
-categories: glossary
-label1: Category
-data1: Documentation
-label2: Depth
-data2: Deep
-schema: 2.0.0
----
-
 # New-VSECRRepository
 
 ## SYNOPSIS
-Adds an AWS::ECR::Repository resource to the template
+Adds an AWS::ECR::Repository resource to the template.
+The AWS::ECR::Repository resource specifies an Amazon Elastic Container Registry (Amazon ECR repository, where users can push and pull Docker images.
+For more information, see Amazon ECR Repositories: https://docs.aws.amazon.com/AmazonECR/latest/userguide/Repositories.html in the *Amazon Elastic Container Registry User Guide*.
 
 ## SYNTAX
 
 ```
 New-VSECRRepository [-LogicalId] <String> [-LifecyclePolicy <Object>] [-RepositoryName <Object>]
- [-RepositoryPolicyText <Object>] [-DeletionPolicy <String>] [-DependsOn <String[]>] [-Metadata <Object>]
- [-UpdatePolicy <Object>] [-Condition <Object>] [<CommonParameters>]
+ [-RepositoryPolicyText <Object>] [-Tags <Object>] [-DeletionPolicy <String>] [-DependsOn <String[]>]
+ [-Metadata <Object>] [-UpdatePolicy <Object>] [-Condition <Object>] [<CommonParameters>]
 ```
 
 ## DESCRIPTION
-Adds an AWS::ECR::Repository resource to the template
+Adds an AWS::ECR::Repository resource to the template.
+The AWS::ECR::Repository resource specifies an Amazon Elastic Container Registry (Amazon ECR repository, where users can push and pull Docker images.
+For more information, see Amazon ECR Repositories: https://docs.aws.amazon.com/AmazonECR/latest/userguide/Repositories.html in the *Amazon Elastic Container Registry User Guide*.
+
+## EXAMPLES
+
+### Example 1
+```powershell
+PS C:\> {{ Add example code here }}
+```
+
+{{ Add example description here }}
 
 ## PARAMETERS
 
@@ -45,9 +47,11 @@ Accept wildcard characters: False
 ```
 
 ### -LifecyclePolicy
-Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ecr-repository.html#cfn-ecr-repository-lifecyclepolicy    
-Required: False    
-Type: LifecyclePolicy    
+Creates or updates a lifecycle policy.
+For information about lifecycle policy syntax, see Lifecycle Policy Template: https://docs.aws.amazon.com/AmazonECR/latest/userguide/LifecyclePolicies.html.
+
+Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ecr-repository.html#cfn-ecr-repository-lifecyclepolicy
+Type: LifecyclePolicy
 UpdateType: Mutable
 
 ```yaml
@@ -63,9 +67,16 @@ Accept wildcard characters: False
 ```
 
 ### -RepositoryName
-Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ecr-repository.html#cfn-ecr-repository-repositoryname    
-PrimitiveType: String    
-Required: False    
+The name to use for the repository.
+The repository name may be specified on its own such as nginx-web-app or it can be prepended with a namespace to group the repository into a category such as project-a/nginx-web-app.
+If you don't specify a name, AWS CloudFormation generates a unique physical ID and uses that ID for the repository name.
+For more information, see Name Type: https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-name.html.
+If you specify a name, you cannot perform updates that require replacement of this resource.
+You can perform updates that require no or some interruption.
+If you must replace the resource, specify a new name.
+
+Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ecr-repository.html#cfn-ecr-repository-repositoryname
+PrimitiveType: String
 UpdateType: Immutable
 
 ```yaml
@@ -81,9 +92,32 @@ Accept wildcard characters: False
 ```
 
 ### -RepositoryPolicyText
-Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ecr-repository.html#cfn-ecr-repository-repositorypolicytext    
-PrimitiveType: Json    
-Required: False    
+The JSON repository policy text to apply to the repository.
+For more information, see Amazon ECR Repository Policy Examples: https://docs.aws.amazon.com/AmazonECR/latest/userguide/RepositoryPolicyExamples.html in the *Amazon Elastic Container Registry User Guide*.
+
+Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ecr-repository.html#cfn-ecr-repository-repositorypolicytext
+PrimitiveType: Json
+UpdateType: Mutable
+
+```yaml
+Type: Object
+Parameter Sets: (All)
+Aliases:
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### -Tags
+An array of key-value pairs to apply to this resource.
+
+Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ecr-repository.html#cfn-ecr-repository-tags
+DuplicatesAllowed: True
+ItemType: Tag
+Type: List
 UpdateType: Mutable
 
 ```yaml
@@ -193,15 +227,13 @@ Accept wildcard characters: False
 ```
 
 ### CommonParameters
-This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction, and -WarningVariable.
-For more information, see about_CommonParameters (http://go.microsoft.com/fwlink/?LinkID=113216).
+This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction, and -WarningVariable. For more information, see [about_CommonParameters](http://go.microsoft.com/fwlink/?LinkID=113216).
 
 ## INPUTS
 
 ## OUTPUTS
 
 ### Vaporshell.Resource.ECR.Repository
-
 ## NOTES
 
 ## RELATED LINKS

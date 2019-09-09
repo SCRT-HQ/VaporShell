@@ -1,18 +1,8 @@
----
-layout: glossary
-title: Add-VSKinesisFirehoseDeliveryStreamCopyCommand
-categories: glossary
-label1: Category
-data1: Documentation
-label2: Depth
-data2: Deep
-schema: 2.0.0
----
-
 # Add-VSKinesisFirehoseDeliveryStreamCopyCommand
 
 ## SYNOPSIS
-Adds an AWS::KinesisFirehose::DeliveryStream.CopyCommand resource property to the template
+Adds an AWS::KinesisFirehose::DeliveryStream.CopyCommand resource property to the template.
+The CopyCommand property type configures the Amazon Redshift COPY command that Amazon Kinesis Data Firehose (Kinesis Data Firehose uses to load data into an Amazon Redshift cluster from an Amazon S3 bucket.
 
 ## SYNTAX
 
@@ -22,14 +12,26 @@ Add-VSKinesisFirehoseDeliveryStreamCopyCommand [[-CopyOptions] <Object>] [[-Data
 ```
 
 ## DESCRIPTION
-Adds an AWS::KinesisFirehose::DeliveryStream.CopyCommand resource property to the template
+Adds an AWS::KinesisFirehose::DeliveryStream.CopyCommand resource property to the template.
+The CopyCommand property type configures the Amazon Redshift COPY command that Amazon Kinesis Data Firehose (Kinesis Data Firehose uses to load data into an Amazon Redshift cluster from an Amazon S3 bucket.
+
+## EXAMPLES
+
+### Example 1
+```powershell
+PS C:\> {{ Add example code here }}
+```
+
+{{ Add example description here }}
 
 ## PARAMETERS
 
 ### -CopyOptions
-Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-kinesisfirehose-deliverystream-copycommand.html#cfn-kinesisfirehose-deliverystream-copycommand-copyoptions    
-PrimitiveType: String    
-Required: False    
+Parameters to use with the Amazon Redshift COPY command.
+For examples, see the CopyOptions content for the CopyCommand: https://docs.aws.amazon.com/firehose/latest/APIReference/API_CopyCommand.html data type in the *Amazon Kinesis Data Firehose API Reference*.
+
+Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-kinesisfirehose-deliverystream-copycommand.html#cfn-kinesisfirehose-deliverystream-copycommand-copyoptions
+PrimitiveType: String
 UpdateType: Mutable
 
 ```yaml
@@ -45,9 +47,10 @@ Accept wildcard characters: False
 ```
 
 ### -DataTableColumns
-Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-kinesisfirehose-deliverystream-copycommand.html#cfn-kinesisfirehose-deliverystream-copycommand-datatablecolumns    
-PrimitiveType: String    
-Required: False    
+A comma-separated list of column names.
+
+Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-kinesisfirehose-deliverystream-copycommand.html#cfn-kinesisfirehose-deliverystream-copycommand-datatablecolumns
+PrimitiveType: String
 UpdateType: Mutable
 
 ```yaml
@@ -63,9 +66,11 @@ Accept wildcard characters: False
 ```
 
 ### -DataTableName
-Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-kinesisfirehose-deliverystream-copycommand.html#cfn-kinesisfirehose-deliverystream-copycommand-datatablename    
-PrimitiveType: String    
-Required: True    
+The name of the target table.
+The table must already exist in the database.
+
+Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-kinesisfirehose-deliverystream-copycommand.html#cfn-kinesisfirehose-deliverystream-copycommand-datatablename
+PrimitiveType: String
 UpdateType: Mutable
 
 ```yaml
@@ -81,15 +86,13 @@ Accept wildcard characters: False
 ```
 
 ### CommonParameters
-This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction, and -WarningVariable.
-For more information, see about_CommonParameters (http://go.microsoft.com/fwlink/?LinkID=113216).
+This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction, and -WarningVariable. For more information, see [about_CommonParameters](http://go.microsoft.com/fwlink/?LinkID=113216).
 
 ## INPUTS
 
 ## OUTPUTS
 
 ### Vaporshell.Resource.KinesisFirehose.DeliveryStream.CopyCommand
-
 ## NOTES
 
 ## RELATED LINKS

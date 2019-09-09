@@ -1,31 +1,33 @@
----
-layout: glossary
-title: New-VSSSMMaintenanceWindowTask
-categories: glossary
-label1: Category
-data1: Documentation
-label2: Depth
-data2: Deep
-schema: 2.0.0
----
-
 # New-VSSSMMaintenanceWindowTask
 
 ## SYNOPSIS
-Adds an AWS::SSM::MaintenanceWindowTask resource to the template
+Adds an AWS::SSM::MaintenanceWindowTask resource to the template.
+The AWS::SSM::MaintenanceWindowTask resource defines information about a task for an AWS Systems Manager maintenance window.
+For more information, see RegisterTaskWithMaintenanceWindow: https://docs.aws.amazon.com/systems-manager/latest/APIReference/API_RegisterTaskWithMaintenanceWindow.html in the *AWS Systems Manager API Reference*.
 
 ## SYNTAX
 
 ```
 New-VSSSMMaintenanceWindowTask [-LogicalId] <String> -MaxErrors <Object> [-Description <Object>]
- -ServiceRoleArn <Object> -Priority <Int32> -MaxConcurrency <Object> -Targets <Object> [-Name <Object>]
- -TaskArn <Object> [-TaskInvocationParameters <Object>] [-WindowId <Object>] [-TaskParameters <Object>]
+ [-ServiceRoleArn <Object>] -Priority <Int32> -MaxConcurrency <Object> -Targets <Object> [-Name <Object>]
+ -TaskArn <Object> [-TaskInvocationParameters <Object>] -WindowId <Object> [-TaskParameters <Object>]
  -TaskType <Object> [-LoggingInfo <Object>] [-DeletionPolicy <String>] [-DependsOn <String[]>]
  [-Metadata <Object>] [-UpdatePolicy <Object>] [-Condition <Object>] [<CommonParameters>]
 ```
 
 ## DESCRIPTION
-Adds an AWS::SSM::MaintenanceWindowTask resource to the template
+Adds an AWS::SSM::MaintenanceWindowTask resource to the template.
+The AWS::SSM::MaintenanceWindowTask resource defines information about a task for an AWS Systems Manager maintenance window.
+For more information, see RegisterTaskWithMaintenanceWindow: https://docs.aws.amazon.com/systems-manager/latest/APIReference/API_RegisterTaskWithMaintenanceWindow.html in the *AWS Systems Manager API Reference*.
+
+## EXAMPLES
+
+### Example 1
+```powershell
+PS C:\> {{ Add example code here }}
+```
+
+{{ Add example description here }}
 
 ## PARAMETERS
 
@@ -47,9 +49,10 @@ Accept wildcard characters: False
 ```
 
 ### -MaxErrors
-Required: True    
-Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ssm-maintenancewindowtask.html#cfn-ssm-maintenancewindowtask-maxerrors    
-PrimitiveType: String    
+The maximum number of errors allowed before this task stops being scheduled.
+
+Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ssm-maintenancewindowtask.html#cfn-ssm-maintenancewindowtask-maxerrors
+PrimitiveType: String
 UpdateType: Mutable
 
 ```yaml
@@ -65,9 +68,10 @@ Accept wildcard characters: False
 ```
 
 ### -Description
-Required: False    
-Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ssm-maintenancewindowtask.html#cfn-ssm-maintenancewindowtask-description    
-PrimitiveType: String    
+A description of the task.
+
+Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ssm-maintenancewindowtask.html#cfn-ssm-maintenancewindowtask-description
+PrimitiveType: String
 UpdateType: Mutable
 
 ```yaml
@@ -83,9 +87,10 @@ Accept wildcard characters: False
 ```
 
 ### -ServiceRoleArn
-Required: True    
-Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ssm-maintenancewindowtask.html#cfn-ssm-maintenancewindowtask-servicerolearn    
-PrimitiveType: String    
+The ARN of the IAM service role to use to publish Amazon Simple Notification Service Amazon SNS notifications for maintenance window Run Command tasks.
+
+Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ssm-maintenancewindowtask.html#cfn-ssm-maintenancewindowtask-servicerolearn
+PrimitiveType: String
 UpdateType: Mutable
 
 ```yaml
@@ -93,7 +98,7 @@ Type: Object
 Parameter Sets: (All)
 Aliases:
 
-Required: True
+Required: False
 Position: Named
 Default value: None
 Accept pipeline input: False
@@ -101,9 +106,12 @@ Accept wildcard characters: False
 ```
 
 ### -Priority
-Required: True    
-Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ssm-maintenancewindowtask.html#cfn-ssm-maintenancewindowtask-priority    
-PrimitiveType: Integer    
+The priority of the task in the maintenance window.
+The lower the number, the higher the priority.
+Tasks that have the same priority are scheduled in parallel.
+
+Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ssm-maintenancewindowtask.html#cfn-ssm-maintenancewindowtask-priority
+PrimitiveType: Integer
 UpdateType: Mutable
 
 ```yaml
@@ -119,9 +127,10 @@ Accept wildcard characters: False
 ```
 
 ### -MaxConcurrency
-Required: True    
-Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ssm-maintenancewindowtask.html#cfn-ssm-maintenancewindowtask-maxconcurrency    
-PrimitiveType: String    
+The maximum number of targets this task can be run for, in parallel.
+
+Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ssm-maintenancewindowtask.html#cfn-ssm-maintenancewindowtask-maxconcurrency
+PrimitiveType: String
 UpdateType: Mutable
 
 ```yaml
@@ -137,10 +146,13 @@ Accept wildcard characters: False
 ```
 
 ### -Targets
-Type: List    
-Required: True    
-Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ssm-maintenancewindowtask.html#cfn-ssm-maintenancewindowtask-targets    
-ItemType: Target    
+The targets, either instances or window target IDs.
++ Specify instances using Key=InstanceIds,Values=instanceid1,instanceid2 .
++ Specify window target IDs using Key=WindowTargetIds,Values=window-target-id-1,window-target-id-2.
+
+Type: List
+Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ssm-maintenancewindowtask.html#cfn-ssm-maintenancewindowtask-targets
+ItemType: Target
 UpdateType: Mutable
 
 ```yaml
@@ -156,9 +168,10 @@ Accept wildcard characters: False
 ```
 
 ### -Name
-Required: False    
-Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ssm-maintenancewindowtask.html#cfn-ssm-maintenancewindowtask-name    
-PrimitiveType: String    
+The task name.
+
+Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ssm-maintenancewindowtask.html#cfn-ssm-maintenancewindowtask-name
+PrimitiveType: String
 UpdateType: Mutable
 
 ```yaml
@@ -174,9 +187,13 @@ Accept wildcard characters: False
 ```
 
 ### -TaskArn
-Required: True    
-Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ssm-maintenancewindowtask.html#cfn-ssm-maintenancewindowtask-taskarn    
-PrimitiveType: String    
+The resource that the task uses during execution.
+For RUN_COMMAND and AUTOMATION task types, TaskArn is the SSM document name or Amazon Resource Name ARN.
+For LAMBDA tasks, TaskArn is the function name or ARN.
+For STEP_FUNCTION tasks, TaskArn is the state machine ARN.
+
+Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ssm-maintenancewindowtask.html#cfn-ssm-maintenancewindowtask-taskarn
+PrimitiveType: String
 UpdateType: Mutable
 
 ```yaml
@@ -192,9 +209,12 @@ Accept wildcard characters: False
 ```
 
 ### -TaskInvocationParameters
-Type: TaskInvocationParameters    
-Required: False    
-Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ssm-maintenancewindowtask.html#cfn-ssm-maintenancewindowtask-taskinvocationparameters    
+The parameters to pass to the task when it runs.
+Populate only the fields that match the task type.
+All other fields should be empty.
+
+Type: TaskInvocationParameters
+Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ssm-maintenancewindowtask.html#cfn-ssm-maintenancewindowtask-taskinvocationparameters
 UpdateType: Mutable
 
 ```yaml
@@ -210,9 +230,10 @@ Accept wildcard characters: False
 ```
 
 ### -WindowId
-Required: False    
-Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ssm-maintenancewindowtask.html#cfn-ssm-maintenancewindowtask-windowid    
-PrimitiveType: String    
+The ID of the maintenance window where the task is registered.
+
+Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ssm-maintenancewindowtask.html#cfn-ssm-maintenancewindowtask-windowid
+PrimitiveType: String
 UpdateType: Immutable
 
 ```yaml
@@ -220,7 +241,7 @@ Type: Object
 Parameter Sets: (All)
 Aliases:
 
-Required: False
+Required: True
 Position: Named
 Default value: None
 Accept pipeline input: False
@@ -228,9 +249,13 @@ Accept wildcard characters: False
 ```
 
 ### -TaskParameters
-Required: False    
-Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ssm-maintenancewindowtask.html#cfn-ssm-maintenancewindowtask-taskparameters    
-PrimitiveType: Json    
+The parameters to pass to the task when it runs.
+TaskParameters has been deprecated.
+To specify parameters to pass to a task when it runs, instead use the Parameters option in the TaskInvocationParameters structure.
+For information about how Systems Manager handles these options for the supported maintenance window task types, see MaintenanceWindowTaskInvocationParameters: https://docs.aws.amazon.com/systems-manager/latest/APIReference/API_MaintenanceWindowTaskInvocationParameters.html.
+
+Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ssm-maintenancewindowtask.html#cfn-ssm-maintenancewindowtask-taskparameters
+PrimitiveType: Json
 UpdateType: Mutable
 
 ```yaml
@@ -246,9 +271,11 @@ Accept wildcard characters: False
 ```
 
 ### -TaskType
-Required: True    
-Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ssm-maintenancewindowtask.html#cfn-ssm-maintenancewindowtask-tasktype    
-PrimitiveType: String    
+The type of task.
+Valid values: RUN_COMMAND, AUTOMATION, LAMBDA, STEP_FUNCTION.
+
+Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ssm-maintenancewindowtask.html#cfn-ssm-maintenancewindowtask-tasktype
+PrimitiveType: String
 UpdateType: Mutable
 
 ```yaml
@@ -264,9 +291,13 @@ Accept wildcard characters: False
 ```
 
 ### -LoggingInfo
-Type: LoggingInfo    
-Required: False    
-Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ssm-maintenancewindowtask.html#cfn-ssm-maintenancewindowtask-logginginfo    
+Information about an Amazon S3 bucket to write task-level logs to.
+LoggingInfo has been deprecated.
+To specify an S3 bucket to contain logs, instead use the OutputS3BucketName and OutputS3KeyPrefix options in the TaskInvocationParameters structure.
+For information about how Systems Manager handles these options for the supported maintenance window task types, see AWS Systems Manager MaintenanceWindowTask TaskInvocationParameters: https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ssm-maintenancewindowtask-taskinvocationparameters.html.
+
+Type: LoggingInfo
+Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ssm-maintenancewindowtask.html#cfn-ssm-maintenancewindowtask-logginginfo
 UpdateType: Mutable
 
 ```yaml
@@ -376,15 +407,13 @@ Accept wildcard characters: False
 ```
 
 ### CommonParameters
-This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction, and -WarningVariable.
-For more information, see about_CommonParameters (http://go.microsoft.com/fwlink/?LinkID=113216).
+This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction, and -WarningVariable. For more information, see [about_CommonParameters](http://go.microsoft.com/fwlink/?LinkID=113216).
 
 ## INPUTS
 
 ## OUTPUTS
 
 ### Vaporshell.Resource.SSM.MaintenanceWindowTask
-
 ## NOTES
 
 ## RELATED LINKS

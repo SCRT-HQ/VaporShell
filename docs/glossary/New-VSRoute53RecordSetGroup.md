@@ -1,18 +1,8 @@
----
-layout: glossary
-title: New-VSRoute53RecordSetGroup
-categories: glossary
-label1: Category
-data1: Documentation
-label2: Depth
-data2: Deep
-schema: 2.0.0
----
-
 # New-VSRoute53RecordSetGroup
 
 ## SYNOPSIS
-Adds an AWS::Route53::RecordSetGroup resource to the template
+Adds an AWS::Route53::RecordSetGroup resource to the template.
+A complex type that contains an optional comment, the name and ID of the hosted zone that you want to make changes in, and values for the resource record sets that you want to add, update, or delete.
 
 ## SYNTAX
 
@@ -23,7 +13,17 @@ New-VSRoute53RecordSetGroup [-LogicalId] <String> [-Comment <Object>] [-HostedZo
 ```
 
 ## DESCRIPTION
-Adds an AWS::Route53::RecordSetGroup resource to the template
+Adds an AWS::Route53::RecordSetGroup resource to the template.
+A complex type that contains an optional comment, the name and ID of the hosted zone that you want to make changes in, and values for the resource record sets that you want to add, update, or delete.
+
+## EXAMPLES
+
+### Example 1
+```powershell
+PS C:\> {{ Add example code here }}
+```
+
+{{ Add example description here }}
 
 ## PARAMETERS
 
@@ -45,9 +45,10 @@ Accept wildcard characters: False
 ```
 
 ### -Comment
-Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-route53-recordsetgroup.html#cfn-route53-recordsetgroup-comment    
-PrimitiveType: String    
-Required: False    
+*Optional:* Any comments you want to include about a change batch request.
+
+Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-route53-recordsetgroup.html#cfn-route53-recordsetgroup-comment
+PrimitiveType: String
 UpdateType: Mutable
 
 ```yaml
@@ -63,9 +64,10 @@ Accept wildcard characters: False
 ```
 
 ### -HostedZoneId
-Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-route53-recordsetgroup.html#cfn-route53-recordsetgroup-hostedzoneid    
-PrimitiveType: String    
-Required: False    
+The ID of the hosted zone that contains the resource record sets that you want to change.
+
+Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-route53-recordsetgroup.html#cfn-route53-recordsetgroup-hostedzoneid
+PrimitiveType: String
 UpdateType: Immutable
 
 ```yaml
@@ -81,9 +83,10 @@ Accept wildcard characters: False
 ```
 
 ### -HostedZoneName
-Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-route53-recordsetgroup.html#cfn-route53-recordsetgroup-hostedzonename    
-PrimitiveType: String    
-Required: False    
+The name of the hosted zone that you want to create, update, or delete resource record sets in.
+
+Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-route53-recordsetgroup.html#cfn-route53-recordsetgroup-hostedzonename
+PrimitiveType: String
 UpdateType: Immutable
 
 ```yaml
@@ -99,11 +102,12 @@ Accept wildcard characters: False
 ```
 
 ### -RecordSets
-Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-route53-recordsetgroup.html#cfn-route53-recordsetgroup-recordsets    
-DuplicatesAllowed: False    
-ItemType: RecordSet    
-Required: False    
-Type: List    
+A complex type that contains one RecordSet element for each resource record set that you want to add, update, or delete.
+
+Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-route53-recordsetgroup.html#cfn-route53-recordsetgroup-recordsets
+DuplicatesAllowed: False
+ItemType: RecordSet
+Type: List
 UpdateType: Mutable
 
 ```yaml
@@ -213,15 +217,13 @@ Accept wildcard characters: False
 ```
 
 ### CommonParameters
-This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction, and -WarningVariable.
-For more information, see about_CommonParameters (http://go.microsoft.com/fwlink/?LinkID=113216).
+This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction, and -WarningVariable. For more information, see [about_CommonParameters](http://go.microsoft.com/fwlink/?LinkID=113216).
 
 ## INPUTS
 
 ## OUTPUTS
 
 ### Vaporshell.Resource.Route53.RecordSetGroup
-
 ## NOTES
 
 ## RELATED LINKS

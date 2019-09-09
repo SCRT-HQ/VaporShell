@@ -1,18 +1,9 @@
----
-layout: glossary
-title: New-VSEMRStep
-categories: glossary
-label1: Category
-data1: Documentation
-label2: Depth
-data2: Deep
-schema: 2.0.0
----
-
 # New-VSEMRStep
 
 ## SYNOPSIS
-Adds an AWS::EMR::Step resource to the template
+Adds an AWS::EMR::Step resource to the template.
+Use Step to specify a cluster (job flow step, which runs only on the master node.
+Steps are used to submit data processing jobs to a cluster.
 
 ## SYNTAX
 
@@ -23,7 +14,18 @@ New-VSEMRStep [-LogicalId] <String> -ActionOnFailure <Object> -HadoopJarStep <Ob
 ```
 
 ## DESCRIPTION
-Adds an AWS::EMR::Step resource to the template
+Adds an AWS::EMR::Step resource to the template.
+Use Step to specify a cluster (job flow step, which runs only on the master node.
+Steps are used to submit data processing jobs to a cluster.
+
+## EXAMPLES
+
+### Example 1
+```powershell
+PS C:\> {{ Add example code here }}
+```
+
+{{ Add example description here }}
 
 ## PARAMETERS
 
@@ -45,9 +47,13 @@ Accept wildcard characters: False
 ```
 
 ### -ActionOnFailure
-Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-emr-step.html#cfn-elasticmapreduce-step-actiononfailure    
-PrimitiveType: String    
-Required: True    
+The action to take when the cluster step fails.
+Possible values are TERMINATE_CLUSTER, CANCEL_AND_WAIT, and CONTINUE.
+TERMINATE_JOB_FLOW is provided for backward compatibility.
+We recommend using TERMINATE_CLUSTER instead.
+
+Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-emr-step.html#cfn-elasticmapreduce-step-actiononfailure
+PrimitiveType: String
 UpdateType: Immutable
 
 ```yaml
@@ -63,9 +69,11 @@ Accept wildcard characters: False
 ```
 
 ### -HadoopJarStep
-Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-emr-step.html#cfn-elasticmapreduce-step-hadoopjarstep    
-Required: True    
-Type: HadoopJarStepConfig    
+The HadoopJarStepConfig property type specifies a job flow step consisting of a JAR file whose main function will be executed.
+The main function submits a job for the cluster to execute as a step on the master node, and then waits for the job to finish or fail before executing subsequent steps.
+
+Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-emr-step.html#cfn-elasticmapreduce-step-hadoopjarstep
+Type: HadoopJarStepConfig
 UpdateType: Immutable
 
 ```yaml
@@ -81,9 +89,10 @@ Accept wildcard characters: False
 ```
 
 ### -JobFlowId
-Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-emr-step.html#cfn-elasticmapreduce-step-jobflowid    
-PrimitiveType: String    
-Required: True    
+A string that uniquely identifies the cluster job flow.
+
+Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-emr-step.html#cfn-elasticmapreduce-step-jobflowid
+PrimitiveType: String
 UpdateType: Immutable
 
 ```yaml
@@ -99,9 +108,10 @@ Accept wildcard characters: False
 ```
 
 ### -Name
-Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-emr-step.html#cfn-elasticmapreduce-step-name    
-PrimitiveType: String    
-Required: True    
+The name of the cluster step.
+
+Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-emr-step.html#cfn-elasticmapreduce-step-name
+PrimitiveType: String
 UpdateType: Immutable
 
 ```yaml
@@ -211,15 +221,13 @@ Accept wildcard characters: False
 ```
 
 ### CommonParameters
-This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction, and -WarningVariable.
-For more information, see about_CommonParameters (http://go.microsoft.com/fwlink/?LinkID=113216).
+This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction, and -WarningVariable. For more information, see [about_CommonParameters](http://go.microsoft.com/fwlink/?LinkID=113216).
 
 ## INPUTS
 
 ## OUTPUTS
 
 ### Vaporshell.Resource.EMR.Step
-
 ## NOTES
 
 ## RELATED LINKS

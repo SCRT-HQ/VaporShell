@@ -1,18 +1,9 @@
----
-layout: glossary
-title: New-VSGlueDatabase
-categories: glossary
-label1: Category
-data1: Documentation
-label2: Depth
-data2: Deep
-schema: 2.0.0
----
-
 # New-VSGlueDatabase
 
 ## SYNOPSIS
-Adds an AWS::Glue::Database resource to the template
+Adds an AWS::Glue::Database resource to the template.
+The AWS::Glue::Database resource specifies a logical grouping of tables in AWS Glue.
+For more information, see Defining a Database in Your Data Catalog: https://docs.aws.amazon.com/glue/latest/dg/define-database.html and Database Structure: https://docs.aws.amazon.com/glue/latest/dg/aws-glue-api-catalog-databases.html#aws-glue-api-catalog-databases-Database in the *AWS Glue Developer Guide*.
 
 ## SYNTAX
 
@@ -23,7 +14,18 @@ New-VSGlueDatabase [-LogicalId] <String> -DatabaseInput <Object> -CatalogId <Obj
 ```
 
 ## DESCRIPTION
-Adds an AWS::Glue::Database resource to the template
+Adds an AWS::Glue::Database resource to the template.
+The AWS::Glue::Database resource specifies a logical grouping of tables in AWS Glue.
+For more information, see Defining a Database in Your Data Catalog: https://docs.aws.amazon.com/glue/latest/dg/define-database.html and Database Structure: https://docs.aws.amazon.com/glue/latest/dg/aws-glue-api-catalog-databases.html#aws-glue-api-catalog-databases-Database in the *AWS Glue Developer Guide*.
+
+## EXAMPLES
+
+### Example 1
+```powershell
+PS C:\> {{ Add example code here }}
+```
+
+{{ Add example description here }}
 
 ## PARAMETERS
 
@@ -45,9 +47,10 @@ Accept wildcard characters: False
 ```
 
 ### -DatabaseInput
-Type: DatabaseInput    
-Required: True    
-Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-glue-database.html#cfn-glue-database-databaseinput    
+The metadata for the database.
+
+Type: DatabaseInput
+Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-glue-database.html#cfn-glue-database-databaseinput
 UpdateType: Mutable
 
 ```yaml
@@ -63,9 +66,12 @@ Accept wildcard characters: False
 ```
 
 ### -CatalogId
-Required: True    
-Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-glue-database.html#cfn-glue-database-catalogid    
-PrimitiveType: String    
+The AWS account ID for the account in which to create the catalog object.
+To specify the account ID, you can use the Ref intrinsic function with the AWS::AccountId pseudo parameter.
+For example: !Ref AWS::AccountId
+
+Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-glue-database.html#cfn-glue-database-catalogid
+PrimitiveType: String
 UpdateType: Immutable
 
 ```yaml
@@ -175,15 +181,13 @@ Accept wildcard characters: False
 ```
 
 ### CommonParameters
-This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction, and -WarningVariable.
-For more information, see about_CommonParameters (http://go.microsoft.com/fwlink/?LinkID=113216).
+This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction, and -WarningVariable. For more information, see [about_CommonParameters](http://go.microsoft.com/fwlink/?LinkID=113216).
 
 ## INPUTS
 
 ## OUTPUTS
 
 ### Vaporshell.Resource.Glue.Database
-
 ## NOTES
 
 ## RELATED LINKS

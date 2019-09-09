@@ -1,14 +1,3 @@
----
-layout: glossary
-title: Remove-VSStack
-categories: glossary
-label1: Category
-data1: Documentation
-label2: Depth
-data2: Deep
-schema: 2.0.0
----
-
 # Remove-VSStack
 
 ## SYNOPSIS
@@ -18,11 +7,20 @@ Removes a Stack.
 
 ```
 Remove-VSStack [-StackName] <String> [[-ClientRequestToken] <String>] [[-RetainResources] <String[]>]
- [[-RoleARN] <String>] [[-ProfileName] <String>] [-WhatIf] [-Confirm] [<CommonParameters>]
+ [[-RoleARN] <String>] [-Watch] [[-ProfileName] <String>] [-WhatIf] [-Confirm] [<CommonParameters>]
 ```
 
 ## DESCRIPTION
-{{Fill in the Description}}
+{{ Fill in the Description }}
+
+## EXAMPLES
+
+### Example 1
+```powershell
+PS C:\> {{ Add example code here }}
+```
+
+{{ Add example description here }}
 
 ## PARAMETERS
 
@@ -93,6 +91,21 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
+### -Watch
+If $true, runs Watch-Stack to show the colorized output of the stack events.
+
+```yaml
+Type: SwitchParameter
+Parameter Sets: (All)
+Aliases:
+
+Required: False
+Position: Named
+Default value: False
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
 ### -ProfileName
 The name of the configuration profile to deploy the stack with.
 Defaults to $env:AWS_PROFILE, if set.
@@ -141,8 +154,7 @@ Accept wildcard characters: False
 ```
 
 ### CommonParameters
-This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction, and -WarningVariable.
-For more information, see about_CommonParameters (http://go.microsoft.com/fwlink/?LinkID=113216).
+This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction, and -WarningVariable. For more information, see [about_CommonParameters](http://go.microsoft.com/fwlink/?LinkID=113216).
 
 ## INPUTS
 

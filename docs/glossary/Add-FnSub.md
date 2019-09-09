@@ -1,14 +1,3 @@
----
-layout: glossary
-title: Add-FnSub
-categories: glossary
-label1: Category
-data1: Documentation
-label2: Depth
-data2: Deep
-schema: 2.0.0
----
-
 # Add-FnSub
 
 ## SYNOPSIS
@@ -28,6 +17,15 @@ In your templates, you can use this function to construct commands or outputs th
     As Fn::Sub uses ${Var} syntax, it's important to remember to escape the $ at the head of the subbed variable when calling the function, otherwise Powershell will attempt to convert the variable into a value when adding it to the object and break the CloudFormation function's intended use.
 
     Please see the example below for reference.
+
+## EXAMPLES
+
+### EXAMPLE 1
+```
+Add-FnSub -String "www.`${Domain}" -Mapping @{Domain = (Add-FnRef -Ref "RootDomainName")}
+```
+
+When the template is exported, this will convert to: {"Fn::Sub":\["www.${Domain}",{"Domain":{"Ref":"RootDomainName"}}\]}
 
 ## PARAMETERS
 
@@ -66,15 +64,13 @@ Accept wildcard characters: False
 ```
 
 ### CommonParameters
-This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction, and -WarningVariable.
-For more information, see about_CommonParameters (http://go.microsoft.com/fwlink/?LinkID=113216).
+This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction, and -WarningVariable. For more information, see [about_CommonParameters](http://go.microsoft.com/fwlink/?LinkID=113216).
 
 ## INPUTS
 
 ## OUTPUTS
 
 ### Vaporshell.Function.Sub
-
 ## NOTES
 You can use the following functions in the Fn::Sub function:
     Fn::Base64

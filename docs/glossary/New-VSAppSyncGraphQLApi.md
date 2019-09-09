@@ -1,30 +1,34 @@
----
-layout: glossary
-title: New-VSAppSyncGraphQLApi
-categories: glossary
-label1: Category
-data1: Documentation
-label2: Depth
-data2: Deep
-schema: 2.0.0
----
-
 # New-VSAppSyncGraphQLApi
 
 ## SYNOPSIS
-Adds an AWS::AppSync::GraphQLApi resource to the template
+Adds an AWS::AppSync::GraphQLApi resource to the template.
+The AWS::AppSync::GraphQLApi resource creates a new AppSync GraphQL API.
+This is the top-level construct for your application.
+For more information, see Quick Start: https://docs.aws.amazon.com/appsync/latest/devguide/quickstart.html in the *AWS AppSync Developer Guide*.
 
 ## SYNTAX
 
 ```
 New-VSAppSyncGraphQLApi [-LogicalId] <String> [-OpenIDConnectConfig <Object>] [-UserPoolConfig <Object>]
- -Name <Object> -AuthenticationType <Object> [-LogConfig <Object>] [-DeletionPolicy <String>]
- [-DependsOn <String[]>] [-Metadata <Object>] [-UpdatePolicy <Object>] [-Condition <Object>]
- [<CommonParameters>]
+ [-Tags <Object>] -Name <Object> -AuthenticationType <Object> [-LogConfig <Object>]
+ [-AdditionalAuthenticationProviders <Object>] [-DeletionPolicy <String>] [-DependsOn <String[]>]
+ [-Metadata <Object>] [-UpdatePolicy <Object>] [-Condition <Object>] [<CommonParameters>]
 ```
 
 ## DESCRIPTION
-Adds an AWS::AppSync::GraphQLApi resource to the template
+Adds an AWS::AppSync::GraphQLApi resource to the template.
+The AWS::AppSync::GraphQLApi resource creates a new AppSync GraphQL API.
+This is the top-level construct for your application.
+For more information, see Quick Start: https://docs.aws.amazon.com/appsync/latest/devguide/quickstart.html in the *AWS AppSync Developer Guide*.
+
+## EXAMPLES
+
+### Example 1
+```powershell
+PS C:\> {{ Add example code here }}
+```
+
+{{ Add example description here }}
 
 ## PARAMETERS
 
@@ -46,9 +50,10 @@ Accept wildcard characters: False
 ```
 
 ### -OpenIDConnectConfig
-Type: OpenIDConnectConfig    
-Required: False    
-Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-appsync-graphqlapi.html#cfn-appsync-graphqlapi-openidconnectconfig    
+The OpenID Connect configuration.
+
+Type: OpenIDConnectConfig
+Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-appsync-graphqlapi.html#cfn-appsync-graphqlapi-openidconnectconfig
 UpdateType: Mutable
 
 ```yaml
@@ -64,9 +69,29 @@ Accept wildcard characters: False
 ```
 
 ### -UserPoolConfig
-Type: UserPoolConfig    
-Required: False    
-Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-appsync-graphqlapi.html#cfn-appsync-graphqlapi-userpoolconfig    
+Optional authorization configuration for using Amazon Cognito user pools with your GraphQL endpoint.
+
+Type: UserPoolConfig
+Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-appsync-graphqlapi.html#cfn-appsync-graphqlapi-userpoolconfig
+UpdateType: Mutable
+
+```yaml
+Type: Object
+Parameter Sets: (All)
+Aliases:
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### -Tags
+An arbitrary set of tags key-value pairs for this GraphQL API.
+
+Type: Tags
+Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-appsync-graphqlapi.html#cfn-appsync-graphqlapi-tags
 UpdateType: Mutable
 
 ```yaml
@@ -82,9 +107,10 @@ Accept wildcard characters: False
 ```
 
 ### -Name
-Required: True    
-Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-appsync-graphqlapi.html#cfn-appsync-graphqlapi-name    
-PrimitiveType: String    
+The API name.
+
+Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-appsync-graphqlapi.html#cfn-appsync-graphqlapi-name
+PrimitiveType: String
 UpdateType: Mutable
 
 ```yaml
@@ -100,9 +126,11 @@ Accept wildcard characters: False
 ```
 
 ### -AuthenticationType
-Required: True    
-Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-appsync-graphqlapi.html#cfn-appsync-graphqlapi-authenticationtype    
-PrimitiveType: String    
+Security configuration for your GraphQL API.
+For allowed values such as API_KEY, AWS_IAM, or AMAZON_COGNITO_USER_POOLS, OPENID_CONNECT, see Security: https://docs.aws.amazon.com/appsync/latest/devguide/security.html in the *AWS AppSync Developer Guide*.
+
+Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-appsync-graphqlapi.html#cfn-appsync-graphqlapi-authenticationtype
+PrimitiveType: String
 UpdateType: Mutable
 
 ```yaml
@@ -118,9 +146,29 @@ Accept wildcard characters: False
 ```
 
 ### -LogConfig
-Type: LogConfig    
-Required: False    
-Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-appsync-graphqlapi.html#cfn-appsync-graphqlapi-logconfig    
+The Amazon CloudWatch Logs configuration.
+
+Type: LogConfig
+Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-appsync-graphqlapi.html#cfn-appsync-graphqlapi-logconfig
+UpdateType: Mutable
+
+```yaml
+Type: Object
+Parameter Sets: (All)
+Aliases:
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### -AdditionalAuthenticationProviders
+A list of additional authentication providers for the GraphqlApi API.
+
+Type: AdditionalAuthenticationProviders
+Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-appsync-graphqlapi.html#cfn-appsync-graphqlapi-additionalauthenticationproviders
 UpdateType: Mutable
 
 ```yaml
@@ -230,15 +278,13 @@ Accept wildcard characters: False
 ```
 
 ### CommonParameters
-This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction, and -WarningVariable.
-For more information, see about_CommonParameters (http://go.microsoft.com/fwlink/?LinkID=113216).
+This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction, and -WarningVariable. For more information, see [about_CommonParameters](http://go.microsoft.com/fwlink/?LinkID=113216).
 
 ## INPUTS
 
 ## OUTPUTS
 
 ### Vaporshell.Resource.AppSync.GraphQLApi
-
 ## NOTES
 
 ## RELATED LINKS

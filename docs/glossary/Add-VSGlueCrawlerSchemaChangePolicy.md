@@ -1,18 +1,8 @@
----
-layout: glossary
-title: Add-VSGlueCrawlerSchemaChangePolicy
-categories: glossary
-label1: Category
-data1: Documentation
-label2: Depth
-data2: Deep
-schema: 2.0.0
----
-
 # Add-VSGlueCrawlerSchemaChangePolicy
 
 ## SYNOPSIS
-Adds an AWS::Glue::Crawler.SchemaChangePolicy resource property to the template
+Adds an AWS::Glue::Crawler.SchemaChangePolicy resource property to the template.
+A policy that specifies update and deletion behaviors for the crawler.
 
 ## SYNTAX
 
@@ -22,14 +12,25 @@ Add-VSGlueCrawlerSchemaChangePolicy [[-UpdateBehavior] <Object>] [[-DeleteBehavi
 ```
 
 ## DESCRIPTION
-Adds an AWS::Glue::Crawler.SchemaChangePolicy resource property to the template
+Adds an AWS::Glue::Crawler.SchemaChangePolicy resource property to the template.
+A policy that specifies update and deletion behaviors for the crawler.
+
+## EXAMPLES
+
+### Example 1
+```powershell
+PS C:\> {{ Add example code here }}
+```
+
+{{ Add example description here }}
 
 ## PARAMETERS
 
 ### -UpdateBehavior
-Required: False    
-Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-glue-crawler-schemachangepolicy.html#cfn-glue-crawler-schemachangepolicy-updatebehavior    
-PrimitiveType: String    
+The update behavior when the crawler finds a changed schema.
+
+Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-glue-crawler-schemachangepolicy.html#cfn-glue-crawler-schemachangepolicy-updatebehavior
+PrimitiveType: String
 UpdateType: Mutable
 
 ```yaml
@@ -45,9 +46,10 @@ Accept wildcard characters: False
 ```
 
 ### -DeleteBehavior
-Required: False    
-Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-glue-crawler-schemachangepolicy.html#cfn-glue-crawler-schemachangepolicy-deletebehavior    
-PrimitiveType: String    
+The deletion behavior when the crawler finds a deleted object.
+
+Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-glue-crawler-schemachangepolicy.html#cfn-glue-crawler-schemachangepolicy-deletebehavior
+PrimitiveType: String
 UpdateType: Mutable
 
 ```yaml
@@ -63,15 +65,13 @@ Accept wildcard characters: False
 ```
 
 ### CommonParameters
-This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction, and -WarningVariable.
-For more information, see about_CommonParameters (http://go.microsoft.com/fwlink/?LinkID=113216).
+This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction, and -WarningVariable. For more information, see [about_CommonParameters](http://go.microsoft.com/fwlink/?LinkID=113216).
 
 ## INPUTS
 
 ## OUTPUTS
 
 ### Vaporshell.Resource.Glue.Crawler.SchemaChangePolicy
-
 ## NOTES
 
 ## RELATED LINKS

@@ -1,18 +1,10 @@
----
-layout: glossary
-title: New-VSRDSDBSecurityGroupIngress
-categories: glossary
-label1: Category
-data1: Documentation
-label2: Depth
-data2: Deep
-schema: 2.0.0
----
-
 # New-VSRDSDBSecurityGroupIngress
 
 ## SYNOPSIS
-Adds an AWS::RDS::DBSecurityGroupIngress resource to the template
+Adds an AWS::RDS::DBSecurityGroupIngress resource to the template.
+The AWS::RDS::DBSecurityGroupIngress resource enables ingress to a DB security group using one of two forms of authorization.
+First, you can add EC2 or VPC security groups to the DB security group if the application using the database is running on EC2 or VPC instances.
+Second, IP ranges are available if the application accessing your database is running on the Internet.
 
 ## SYNTAX
 
@@ -24,7 +16,24 @@ New-VSRDSDBSecurityGroupIngress [-LogicalId] <String> [-CIDRIP <Object>] -DBSecu
 ```
 
 ## DESCRIPTION
-Adds an AWS::RDS::DBSecurityGroupIngress resource to the template
+Adds an AWS::RDS::DBSecurityGroupIngress resource to the template.
+The AWS::RDS::DBSecurityGroupIngress resource enables ingress to a DB security group using one of two forms of authorization.
+First, you can add EC2 or VPC security groups to the DB security group if the application using the database is running on EC2 or VPC instances.
+Second, IP ranges are available if the application accessing your database is running on the Internet.
+
+This type supports updates.
+For more information about updating stacks, see AWS CloudFormation Stacks Updates: https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks.html.
+
+For details about the settings for DB security group ingress, see AuthorizeDBSecurityGroupIngress: https://docs.aws.amazon.com/AmazonRDS/latest/APIReference/API_AuthorizeDBSecurityGroupIngress.html.
+
+## EXAMPLES
+
+### Example 1
+```powershell
+PS C:\> {{ Add example code here }}
+```
+
+{{ Add example description here }}
 
 ## PARAMETERS
 
@@ -46,9 +55,10 @@ Accept wildcard characters: False
 ```
 
 ### -CIDRIP
-Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-rds-security-group-ingress.html#cfn-rds-securitygroup-ingress-cidrip    
-PrimitiveType: String    
-Required: False    
+The IP range to authorize.
+
+Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-rds-security-group-ingress.html#cfn-rds-securitygroup-ingress-cidrip
+PrimitiveType: String
 UpdateType: Mutable
 
 ```yaml
@@ -64,9 +74,10 @@ Accept wildcard characters: False
 ```
 
 ### -DBSecurityGroupName
-Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-rds-security-group-ingress.html#cfn-rds-securitygroup-ingress-dbsecuritygroupname    
-PrimitiveType: String    
-Required: True    
+The name of the DB Security Group to add authorization to.
+
+Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-rds-security-group-ingress.html#cfn-rds-securitygroup-ingress-dbsecuritygroupname
+PrimitiveType: String
 UpdateType: Mutable
 
 ```yaml
@@ -82,9 +93,12 @@ Accept wildcard characters: False
 ```
 
 ### -EC2SecurityGroupId
-Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-rds-security-group-ingress.html#cfn-rds-securitygroup-ingress-ec2securitygroupid    
-PrimitiveType: String    
-Required: False    
+Id of the EC2 Security Group to authorize.
+For VPC DB Security Groups, EC2SecurityGroupId must be provided.
+Otherwise, EC2SecurityGroupOwnerId and either EC2SecurityGroupName or EC2SecurityGroupId must be provided.
+
+Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-rds-security-group-ingress.html#cfn-rds-securitygroup-ingress-ec2securitygroupid
+PrimitiveType: String
 UpdateType: Mutable
 
 ```yaml
@@ -100,9 +114,12 @@ Accept wildcard characters: False
 ```
 
 ### -EC2SecurityGroupName
-Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-rds-security-group-ingress.html#cfn-rds-securitygroup-ingress-ec2securitygroupname    
-PrimitiveType: String    
-Required: False    
+Name of the EC2 Security Group to authorize.
+For VPC DB Security Groups, EC2SecurityGroupId must be provided.
+Otherwise, EC2SecurityGroupOwnerId and either EC2SecurityGroupName or EC2SecurityGroupId must be provided.
+
+Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-rds-security-group-ingress.html#cfn-rds-securitygroup-ingress-ec2securitygroupname
+PrimitiveType: String
 UpdateType: Mutable
 
 ```yaml
@@ -118,9 +135,13 @@ Accept wildcard characters: False
 ```
 
 ### -EC2SecurityGroupOwnerId
-Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-rds-security-group-ingress.html#cfn-rds-securitygroup-ingress-ec2securitygroupownerid    
-PrimitiveType: String    
-Required: False    
+AWS Account Number of the owner of the EC2 Security Group specified in the EC2SecurityGroupName parameter.
+The AWS Access Key ID is not an acceptable value.
+For VPC DB Security Groups, EC2SecurityGroupId must be provided.
+Otherwise, EC2SecurityGroupOwnerId and either EC2SecurityGroupName or EC2SecurityGroupId must be provided.
+
+Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-rds-security-group-ingress.html#cfn-rds-securitygroup-ingress-ec2securitygroupownerid
+PrimitiveType: String
 UpdateType: Mutable
 
 ```yaml
@@ -230,15 +251,13 @@ Accept wildcard characters: False
 ```
 
 ### CommonParameters
-This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction, and -WarningVariable.
-For more information, see about_CommonParameters (http://go.microsoft.com/fwlink/?LinkID=113216).
+This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction, and -WarningVariable. For more information, see [about_CommonParameters](http://go.microsoft.com/fwlink/?LinkID=113216).
 
 ## INPUTS
 
 ## OUTPUTS
 
 ### Vaporshell.Resource.RDS.DBSecurityGroupIngress
-
 ## NOTES
 
 ## RELATED LINKS

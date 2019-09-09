@@ -1,30 +1,32 @@
----
-layout: glossary
-title: New-VSApplicationAutoScalingScalableTarget
-categories: glossary
-label1: Category
-data1: Documentation
-label2: Depth
-data2: Deep
-schema: 2.0.0
----
-
 # New-VSApplicationAutoScalingScalableTarget
 
 ## SYNOPSIS
-Adds an AWS::ApplicationAutoScaling::ScalableTarget resource to the template
+Adds an AWS::ApplicationAutoScaling::ScalableTarget resource to the template.
+The AWS::ApplicationAutoScaling::ScalableTarget resource specifies a resource that Application Auto Scaling can scale.
 
 ## SYNTAX
 
 ```
 New-VSApplicationAutoScalingScalableTarget [-LogicalId] <String> -MaxCapacity <Int32> -MinCapacity <Int32>
  -ResourceId <Object> -RoleARN <Object> -ScalableDimension <Object> [-ScheduledActions <Object>]
- -ServiceNamespace <Object> [-DeletionPolicy <String>] [-DependsOn <String[]>] [-Metadata <Object>]
- [-UpdatePolicy <Object>] [-Condition <Object>] [<CommonParameters>]
+ -ServiceNamespace <Object> [-SuspendedState <Object>] [-DeletionPolicy <String>] [-DependsOn <String[]>]
+ [-Metadata <Object>] [-UpdatePolicy <Object>] [-Condition <Object>] [<CommonParameters>]
 ```
 
 ## DESCRIPTION
-Adds an AWS::ApplicationAutoScaling::ScalableTarget resource to the template
+Adds an AWS::ApplicationAutoScaling::ScalableTarget resource to the template.
+The AWS::ApplicationAutoScaling::ScalableTarget resource specifies a resource that Application Auto Scaling can scale.
+
+For more information, see RegisterScalableTarget: https://docs.aws.amazon.com/autoscaling/application/APIReference/API_RegisterScalableTarget.html in the *Application Auto Scaling API Reference*.
+
+## EXAMPLES
+
+### Example 1
+```powershell
+PS C:\> {{ Add example code here }}
+```
+
+{{ Add example description here }}
 
 ## PARAMETERS
 
@@ -46,9 +48,10 @@ Accept wildcard characters: False
 ```
 
 ### -MaxCapacity
-Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-applicationautoscaling-scalabletarget.html#cfn-applicationautoscaling-scalabletarget-maxcapacity    
-PrimitiveType: Integer    
-Required: True    
+The maximum value to scale to in response to a scale-out event.
+
+Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-applicationautoscaling-scalabletarget.html#cfn-applicationautoscaling-scalabletarget-maxcapacity
+PrimitiveType: Integer
 UpdateType: Mutable
 
 ```yaml
@@ -64,9 +67,10 @@ Accept wildcard characters: False
 ```
 
 ### -MinCapacity
-Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-applicationautoscaling-scalabletarget.html#cfn-applicationautoscaling-scalabletarget-mincapacity    
-PrimitiveType: Integer    
-Required: True    
+The minimum value to scale to in response to a scale-in event.
+
+Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-applicationautoscaling-scalabletarget.html#cfn-applicationautoscaling-scalabletarget-mincapacity
+PrimitiveType: Integer
 UpdateType: Mutable
 
 ```yaml
@@ -82,9 +86,12 @@ Accept wildcard characters: False
 ```
 
 ### -ResourceId
-Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-applicationautoscaling-scalabletarget.html#cfn-applicationautoscaling-scalabletarget-resourceid    
-PrimitiveType: String    
-Required: True    
+The resource identifier to associate with this scalable target.
+This string consists of the resource type and unique identifier.
+For valid values, see the ResourceId parameter for RegisterScalableTarget: https://docs.aws.amazon.com/autoscaling/application/APIReference/API_RegisterScalableTarget.html in the *Application Auto Scaling API Reference*.
+
+Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-applicationautoscaling-scalabletarget.html#cfn-applicationautoscaling-scalabletarget-resourceid
+PrimitiveType: String
 UpdateType: Immutable
 
 ```yaml
@@ -100,9 +107,10 @@ Accept wildcard characters: False
 ```
 
 ### -RoleARN
-Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-applicationautoscaling-scalabletarget.html#cfn-applicationautoscaling-scalabletarget-rolearn    
-PrimitiveType: String    
-Required: True    
+The Amazon Resource Name ARN of an AWS Identity and Access Management IAM role that allows Application Auto Scaling to modify the scalable target on your behalf.
+
+Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-applicationautoscaling-scalabletarget.html#cfn-applicationautoscaling-scalabletarget-rolearn
+PrimitiveType: String
 UpdateType: Mutable
 
 ```yaml
@@ -118,9 +126,12 @@ Accept wildcard characters: False
 ```
 
 ### -ScalableDimension
-Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-applicationautoscaling-scalabletarget.html#cfn-applicationautoscaling-scalabletarget-scalabledimension    
-PrimitiveType: String    
-Required: True    
+The scalable dimension that is associated with the scalable target.
+Specify the service namespace, resource type, and scaling property, for example, ecs:service:DesiredCount for the desired task count of an Amazon ECS service.
+For valid values, see the ScalableDimension parameter for RegisterScalableTarget: https://docs.aws.amazon.com/autoscaling/application/APIReference/API_RegisterScalableTarget.html in the *Application Auto Scaling API Reference*.
+
+Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-applicationautoscaling-scalabletarget.html#cfn-applicationautoscaling-scalabletarget-scalabledimension
+PrimitiveType: String
 UpdateType: Immutable
 
 ```yaml
@@ -136,11 +147,13 @@ Accept wildcard characters: False
 ```
 
 ### -ScheduledActions
-Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-applicationautoscaling-scalabletarget.html#cfn-applicationautoscaling-scalabletarget-scheduledactions    
-DuplicatesAllowed: False    
-ItemType: ScheduledAction    
-Required: False    
-Type: List    
+The scheduled actions for the scalable target.
+Duplicates aren't allowed.
+
+Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-applicationautoscaling-scalabletarget.html#cfn-applicationautoscaling-scalabletarget-scheduledactions
+DuplicatesAllowed: False
+ItemType: ScheduledAction
+Type: List
 UpdateType: Mutable
 
 ```yaml
@@ -156,9 +169,11 @@ Accept wildcard characters: False
 ```
 
 ### -ServiceNamespace
-Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-applicationautoscaling-scalabletarget.html#cfn-applicationautoscaling-scalabletarget-servicenamespace    
-PrimitiveType: String    
-Required: True    
+The namespace of the AWS service that provides the resource or custom-resource for a resource provided by your own application or service.
+For valid values, see the ServiceNamespace parameter for RegisterScalableTarget: https://docs.aws.amazon.com/autoscaling/application/APIReference/API_RegisterScalableTarget.html in the *Application Auto Scaling API Reference*.
+
+Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-applicationautoscaling-scalabletarget.html#cfn-applicationautoscaling-scalabletarget-servicenamespace
+PrimitiveType: String
 UpdateType: Immutable
 
 ```yaml
@@ -167,6 +182,32 @@ Parameter Sets: (All)
 Aliases:
 
 Required: True
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### -SuspendedState
+An embedded object that contains attributes and attribute values that are used to suspend and resume automatic scaling.
+Setting the value of an attribute to true suspends the specified scaling activities.
+Setting it to false default resumes the specified scaling activities.
+**Suspension Outcomes**
++ For DynamicScalingInSuspended, while a suspension is in effect, all scale-in activities that are triggered by a scaling policy are suspended.
++ For DynamicScalingOutSuspended, while a suspension is in effect, all scale-out activities that are triggered by a scaling policy are suspended.
++ For ScheduledScalingSuspended, while a suspension is in effect, all scaling activities that involve scheduled actions are suspended.
+For more information, see Suspend and Resume Application Auto Scaling: https://docs.aws.amazon.com/autoscaling/application/userguide/application-auto-scaling-suspend-resume-scaling.html in the *Application Auto Scaling User Guide*.
+
+Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-applicationautoscaling-scalabletarget.html#cfn-applicationautoscaling-scalabletarget-suspendedstate
+Type: SuspendedState
+UpdateType: Mutable
+
+```yaml
+Type: Object
+Parameter Sets: (All)
+Aliases:
+
+Required: False
 Position: Named
 Default value: None
 Accept pipeline input: False
@@ -268,15 +309,13 @@ Accept wildcard characters: False
 ```
 
 ### CommonParameters
-This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction, and -WarningVariable.
-For more information, see about_CommonParameters (http://go.microsoft.com/fwlink/?LinkID=113216).
+This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction, and -WarningVariable. For more information, see [about_CommonParameters](http://go.microsoft.com/fwlink/?LinkID=113216).
 
 ## INPUTS
 
 ## OUTPUTS
 
 ### Vaporshell.Resource.ApplicationAutoScaling.ScalableTarget
-
 ## NOTES
 
 ## RELATED LINKS

@@ -1,18 +1,9 @@
----
-layout: glossary
-title: New-VSRDSDBClusterParameterGroup
-categories: glossary
-label1: Category
-data1: Documentation
-label2: Depth
-data2: Deep
-schema: 2.0.0
----
-
 # New-VSRDSDBClusterParameterGroup
 
 ## SYNOPSIS
-Adds an AWS::RDS::DBClusterParameterGroup resource to the template
+Adds an AWS::RDS::DBClusterParameterGroup resource to the template.
+The AWS::RDS::DBClusterParameterGroup resource creates a new Amazon RDS DB cluster parameter group.
+For more information, see Managing an Amazon Aurora DB Cluster: https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/CHAP_Aurora.html in the *Amazon Aurora User Guide*.
 
 ## SYNTAX
 
@@ -23,7 +14,23 @@ New-VSRDSDBClusterParameterGroup [-LogicalId] <String> -Description <Object> -Fa
 ```
 
 ## DESCRIPTION
-Adds an AWS::RDS::DBClusterParameterGroup resource to the template
+Adds an AWS::RDS::DBClusterParameterGroup resource to the template.
+The AWS::RDS::DBClusterParameterGroup resource creates a new Amazon RDS DB cluster parameter group.
+For more information, see Managing an Amazon Aurora DB Cluster: https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/CHAP_Aurora.html in the *Amazon Aurora User Guide*.
+
+**Note**
+
+If you apply a parameter group to a DB cluster, then its DB instances might need to reboot.
+This can result in an outage while the instances are rebooting.
+
+## EXAMPLES
+
+### Example 1
+```powershell
+PS C:\> {{ Add example code here }}
+```
+
+{{ Add example description here }}
 
 ## PARAMETERS
 
@@ -45,9 +52,10 @@ Accept wildcard characters: False
 ```
 
 ### -Description
-Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-rds-dbclusterparametergroup.html#cfn-rds-dbclusterparametergroup-description    
-PrimitiveType: String    
-Required: True    
+A friendly description for this DB cluster parameter group.
+
+Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-rds-dbclusterparametergroup.html#cfn-rds-dbclusterparametergroup-description
+PrimitiveType: String
 UpdateType: Immutable
 
 ```yaml
@@ -63,9 +71,10 @@ Accept wildcard characters: False
 ```
 
 ### -Family
-Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-rds-dbclusterparametergroup.html#cfn-rds-dbclusterparametergroup-family    
-PrimitiveType: String    
-Required: True    
+Provides the name of the DB parameter group family that this DB cluster parameter group is compatible with.
+
+Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-rds-dbclusterparametergroup.html#cfn-rds-dbclusterparametergroup-family
+PrimitiveType: String
 UpdateType: Immutable
 
 ```yaml
@@ -81,9 +90,10 @@ Accept wildcard characters: False
 ```
 
 ### -Parameters
-Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-rds-dbclusterparametergroup.html#cfn-rds-dbclusterparametergroup-parameters    
-PrimitiveType: Json    
-Required: True    
+Provides a list of parameters for the DB cluster parameter group.
+
+Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-rds-dbclusterparametergroup.html#cfn-rds-dbclusterparametergroup-parameters
+PrimitiveType: Json
 UpdateType: Mutable
 
 ```yaml
@@ -99,11 +109,12 @@ Accept wildcard characters: False
 ```
 
 ### -Tags
-Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-rds-dbclusterparametergroup.html#cfn-rds-dbclusterparametergroup-tags    
-DuplicatesAllowed: True    
-ItemType: Tag    
-Required: False    
-Type: List    
+Tags to assign to the DB cluster parameter group.
+
+Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-rds-dbclusterparametergroup.html#cfn-rds-dbclusterparametergroup-tags
+DuplicatesAllowed: True
+ItemType: Tag
+Type: List
 UpdateType: Mutable
 
 ```yaml
@@ -213,15 +224,13 @@ Accept wildcard characters: False
 ```
 
 ### CommonParameters
-This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction, and -WarningVariable.
-For more information, see about_CommonParameters (http://go.microsoft.com/fwlink/?LinkID=113216).
+This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction, and -WarningVariable. For more information, see [about_CommonParameters](http://go.microsoft.com/fwlink/?LinkID=113216).
 
 ## INPUTS
 
 ## OUTPUTS
 
 ### Vaporshell.Resource.RDS.DBClusterParameterGroup
-
 ## NOTES
 
 ## RELATED LINKS

@@ -1,18 +1,8 @@
----
-layout: glossary
-title: Add-VSIoTTopicRuleSqsAction
-categories: glossary
-label1: Category
-data1: Documentation
-label2: Depth
-data2: Deep
-schema: 2.0.0
----
-
 # Add-VSIoTTopicRuleSqsAction
 
 ## SYNOPSIS
-Adds an AWS::IoT::TopicRule.SqsAction resource property to the template
+Adds an AWS::IoT::TopicRule.SqsAction resource property to the template.
+Describes an action to publish data to an Amazon SQS queue.
 
 ## SYNTAX
 
@@ -22,14 +12,25 @@ Add-VSIoTTopicRuleSqsAction [-QueueUrl] <Object> [-RoleArn] <Object> [[-UseBase6
 ```
 
 ## DESCRIPTION
-Adds an AWS::IoT::TopicRule.SqsAction resource property to the template
+Adds an AWS::IoT::TopicRule.SqsAction resource property to the template.
+Describes an action to publish data to an Amazon SQS queue.
+
+## EXAMPLES
+
+### Example 1
+```powershell
+PS C:\> {{ Add example code here }}
+```
+
+{{ Add example description here }}
 
 ## PARAMETERS
 
 ### -QueueUrl
-Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iot-topicrule-sqsaction.html#cfn-iot-topicrule-sqsaction-queueurl    
-PrimitiveType: String    
-Required: True    
+The URL of the Amazon SQS queue.
+
+Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iot-topicrule-sqsaction.html#cfn-iot-topicrule-sqsaction-queueurl
+PrimitiveType: String
 UpdateType: Mutable
 
 ```yaml
@@ -45,9 +46,10 @@ Accept wildcard characters: False
 ```
 
 ### -RoleArn
-Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iot-topicrule-sqsaction.html#cfn-iot-topicrule-sqsaction-rolearn    
-PrimitiveType: String    
-Required: True    
+The ARN of the IAM role that grants access.
+
+Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iot-topicrule-sqsaction.html#cfn-iot-topicrule-sqsaction-rolearn
+PrimitiveType: String
 UpdateType: Mutable
 
 ```yaml
@@ -63,9 +65,10 @@ Accept wildcard characters: False
 ```
 
 ### -UseBase64
-Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iot-topicrule-sqsaction.html#cfn-iot-topicrule-sqsaction-usebase64    
-PrimitiveType: Boolean    
-Required: False    
+Specifies whether to use Base64 encoding.
+
+Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iot-topicrule-sqsaction.html#cfn-iot-topicrule-sqsaction-usebase64
+PrimitiveType: Boolean
 UpdateType: Mutable
 
 ```yaml
@@ -81,15 +84,13 @@ Accept wildcard characters: False
 ```
 
 ### CommonParameters
-This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction, and -WarningVariable.
-For more information, see about_CommonParameters (http://go.microsoft.com/fwlink/?LinkID=113216).
+This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction, and -WarningVariable. For more information, see [about_CommonParameters](http://go.microsoft.com/fwlink/?LinkID=113216).
 
 ## INPUTS
 
 ## OUTPUTS
 
 ### Vaporshell.Resource.IoT.TopicRule.SqsAction
-
 ## NOTES
 
 ## RELATED LINKS

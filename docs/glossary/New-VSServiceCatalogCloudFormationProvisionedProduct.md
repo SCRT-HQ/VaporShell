@@ -1,32 +1,39 @@
----
-layout: glossary
-title: New-VSServiceCatalogCloudFormationProvisionedProduct
-categories: glossary
-label1: Category
-data1: Documentation
-label2: Depth
-data2: Deep
-schema: 2.0.0
----
-
 # New-VSServiceCatalogCloudFormationProvisionedProduct
 
 ## SYNOPSIS
-Adds an AWS::ServiceCatalog::CloudFormationProvisionedProduct resource to the template
+Adds an AWS::ServiceCatalog::CloudFormationProvisionedProduct resource to the template.
+Provisions the specified product.
 
 ## SYNTAX
 
 ```
 New-VSServiceCatalogCloudFormationProvisionedProduct [-LogicalId] <String> [-PathId <Object>]
- [-ProvisioningParameters <Object>] [-ProductName <Object>] [-ProvisioningArtifactName <Object>]
- [-NotificationArns <Object>] [-AcceptLanguage <Object>] [-ProductId <Object>] [-Tags <Object>]
- [-ProvisionedProductName <Object>] [-ProvisioningArtifactId <Object>] [-DeletionPolicy <String>]
- [-DependsOn <String[]>] [-Metadata <Object>] [-UpdatePolicy <Object>] [-Condition <Object>]
- [<CommonParameters>]
+ [-ProvisioningParameters <Object>] [-ProvisioningPreferences <Object>] [-ProductName <Object>]
+ [-ProvisioningArtifactName <Object>] [-NotificationArns <Object>] [-AcceptLanguage <Object>]
+ [-ProductId <Object>] [-Tags <Object>] [-ProvisionedProductName <Object>] [-ProvisioningArtifactId <Object>]
+ [-DeletionPolicy <String>] [-DependsOn <String[]>] [-Metadata <Object>] [-UpdatePolicy <Object>]
+ [-Condition <Object>] [<CommonParameters>]
 ```
 
 ## DESCRIPTION
-Adds an AWS::ServiceCatalog::CloudFormationProvisionedProduct resource to the template
+Adds an AWS::ServiceCatalog::CloudFormationProvisionedProduct resource to the template.
+Provisions the specified product.
+
+A provisioned product is a resourced instance of a product.
+For example, provisioning a product based on a CloudFormation template launches a CloudFormation stack and its underlying resources.
+You can check the status of this request using DescribeRecord: https://docs.aws.amazon.com/servicecatalog/latest/dg/API_DescribeRecord.html.
+
+If the request contains a tag key with an empty list of values, there is a tag conflict for that key.
+Do not include conflicted keys as tags, or this causes the error "Parameter validation failed: Missing required parameter in Tags*N*\]:*Value*".
+
+## EXAMPLES
+
+### Example 1
+```powershell
+PS C:\> {{ Add example code here }}
+```
+
+{{ Add example description here }}
 
 ## PARAMETERS
 
@@ -48,9 +55,12 @@ Accept wildcard characters: False
 ```
 
 ### -PathId
-Required: False    
-Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-servicecatalog-cloudformationprovisionedproduct.html#cfn-servicecatalog-cloudformationprovisionedproduct-pathid    
-PrimitiveType: String    
+The path identifier of the product.
+This value is optional if the product has a default path, and required if the product has more than one path.
+To list the paths for a product, use ListLaunchPaths: https://docs.aws.amazon.com/servicecatalog/latest/dg/API_ListLaunchPaths.html.
+
+Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-servicecatalog-cloudformationprovisionedproduct.html#cfn-servicecatalog-cloudformationprovisionedproduct-pathid
+PrimitiveType: String
 UpdateType: Mutable
 
 ```yaml
@@ -66,10 +76,30 @@ Accept wildcard characters: False
 ```
 
 ### -ProvisioningParameters
-Type: List    
-Required: False    
-Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-servicecatalog-cloudformationprovisionedproduct.html#cfn-servicecatalog-cloudformationprovisionedproduct-provisioningparameters    
-ItemType: ProvisioningParameter    
+Parameters specified by the administrator that are required for provisioning the product.
+
+Type: List
+Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-servicecatalog-cloudformationprovisionedproduct.html#cfn-servicecatalog-cloudformationprovisionedproduct-provisioningparameters
+ItemType: ProvisioningParameter
+UpdateType: Mutable
+
+```yaml
+Type: Object
+Parameter Sets: (All)
+Aliases:
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### -ProvisioningPreferences
+StackSet preferences that are required for provisioning the product or updating a provisioned product.
+
+Type: ProvisioningPreferences
+Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-servicecatalog-cloudformationprovisionedproduct.html#cfn-servicecatalog-cloudformationprovisionedproduct-provisioningpreferences
 UpdateType: Mutable
 
 ```yaml
@@ -85,10 +115,14 @@ Accept wildcard characters: False
 ```
 
 ### -ProductName
-Required: False    
-Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-servicecatalog-cloudformationprovisionedproduct.html#cfn-servicecatalog-cloudformationprovisionedproduct-productname    
-PrimitiveType: String    
-UpdateType: Immutable
+A user-friendly name for the provisioned product.
+This value must be unique for the AWS account and cannot be updated after the product is provisioned.
+Each time a stack is created or updated, if ProductName is provided it will successfully resolve to ProductId as long as only one product exists in the account/region with that ProductName.
+You must specify either the name or the ID of the product, but not both.
+
+Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-servicecatalog-cloudformationprovisionedproduct.html#cfn-servicecatalog-cloudformationprovisionedproduct-productname
+PrimitiveType: String
+UpdateType: Mutable
 
 ```yaml
 Type: Object
@@ -103,9 +137,12 @@ Accept wildcard characters: False
 ```
 
 ### -ProvisioningArtifactName
-Required: False    
-Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-servicecatalog-cloudformationprovisionedproduct.html#cfn-servicecatalog-cloudformationprovisionedproduct-provisioningartifactname    
-PrimitiveType: String    
+The name of the provisioning artifact also known as a version for the product.
+This name must be unique for the product.
+You must specify either the name or the ID of the provisioning artifact, but not both.
+
+Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-servicecatalog-cloudformationprovisionedproduct.html#cfn-servicecatalog-cloudformationprovisionedproduct-provisioningartifactname
+PrimitiveType: String
 UpdateType: Mutable
 
 ```yaml
@@ -121,10 +158,12 @@ Accept wildcard characters: False
 ```
 
 ### -NotificationArns
-PrimitiveItemType: String    
-Type: List    
-Required: False    
-Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-servicecatalog-cloudformationprovisionedproduct.html#cfn-servicecatalog-cloudformationprovisionedproduct-notificationarns    
+Passed to CloudFormation.
+The SNS topic ARNs to which to publish stack-related events.
+
+PrimitiveItemType: String
+Type: List
+Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-servicecatalog-cloudformationprovisionedproduct.html#cfn-servicecatalog-cloudformationprovisionedproduct-notificationarns
 UpdateType: Immutable
 
 ```yaml
@@ -140,9 +179,13 @@ Accept wildcard characters: False
 ```
 
 ### -AcceptLanguage
-Required: False    
-Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-servicecatalog-cloudformationprovisionedproduct.html#cfn-servicecatalog-cloudformationprovisionedproduct-acceptlanguage    
-PrimitiveType: String    
+The language code.
++  en - English default
++  jp - Japanese
++  zh - Chinese
+
+Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-servicecatalog-cloudformationprovisionedproduct.html#cfn-servicecatalog-cloudformationprovisionedproduct-acceptlanguage
+PrimitiveType: String
 UpdateType: Mutable
 
 ```yaml
@@ -158,10 +201,12 @@ Accept wildcard characters: False
 ```
 
 ### -ProductId
-Required: False    
-Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-servicecatalog-cloudformationprovisionedproduct.html#cfn-servicecatalog-cloudformationprovisionedproduct-productid    
-PrimitiveType: String    
-UpdateType: Immutable
+The product identifier.
+You must specify either the ID or the name of the product, but not both.
+
+Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-servicecatalog-cloudformationprovisionedproduct.html#cfn-servicecatalog-cloudformationprovisionedproduct-productid
+PrimitiveType: String
+UpdateType: Mutable
 
 ```yaml
 Type: Object
@@ -176,11 +221,14 @@ Accept wildcard characters: False
 ```
 
 ### -Tags
-Type: List    
-Required: False    
-Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-servicecatalog-cloudformationprovisionedproduct.html#cfn-servicecatalog-cloudformationprovisionedproduct-tags    
-ItemType: Tag    
-UpdateType: Immutable
+One or more tags.
+Requires the provisioned product to have an ResourceUpdateConstraint: https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-servicecatalog-resourceupdateconstraint.html resource with TagUpdatesOnProvisionedProduct set to ALLOWED to allow tag updates.
+If RESOURCE_UPDATE constraint is not present, tags updates are ignored.
+
+Type: List
+Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-servicecatalog-cloudformationprovisionedproduct.html#cfn-servicecatalog-cloudformationprovisionedproduct-tags
+ItemType: Tag
+UpdateType: Mutable
 
 ```yaml
 Type: Object
@@ -195,9 +243,11 @@ Accept wildcard characters: False
 ```
 
 ### -ProvisionedProductName
-Required: False    
-Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-servicecatalog-cloudformationprovisionedproduct.html#cfn-servicecatalog-cloudformationprovisionedproduct-provisionedproductname    
-PrimitiveType: String    
+A user-friendly name for the provisioned product.
+This value must be unique for the AWS account and cannot be updated after the product is provisioned.
+
+Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-servicecatalog-cloudformationprovisionedproduct.html#cfn-servicecatalog-cloudformationprovisionedproduct-provisionedproductname
+PrimitiveType: String
 UpdateType: Immutable
 
 ```yaml
@@ -213,9 +263,11 @@ Accept wildcard characters: False
 ```
 
 ### -ProvisioningArtifactId
-Required: False    
-Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-servicecatalog-cloudformationprovisionedproduct.html#cfn-servicecatalog-cloudformationprovisionedproduct-provisioningartifactid    
-PrimitiveType: String    
+The identifier of the provisioning artifact also known as a version.
+You must specify either the ID or the name of the provisioning artifact, but not both.
+
+Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-servicecatalog-cloudformationprovisionedproduct.html#cfn-servicecatalog-cloudformationprovisionedproduct-provisioningartifactid
+PrimitiveType: String
 UpdateType: Mutable
 
 ```yaml
@@ -325,15 +377,13 @@ Accept wildcard characters: False
 ```
 
 ### CommonParameters
-This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction, and -WarningVariable.
-For more information, see about_CommonParameters (http://go.microsoft.com/fwlink/?LinkID=113216).
+This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction, and -WarningVariable. For more information, see [about_CommonParameters](http://go.microsoft.com/fwlink/?LinkID=113216).
 
 ## INPUTS
 
 ## OUTPUTS
 
 ### Vaporshell.Resource.ServiceCatalog.CloudFormationProvisionedProduct
-
 ## NOTES
 
 ## RELATED LINKS

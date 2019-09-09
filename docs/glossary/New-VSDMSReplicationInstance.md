@@ -1,18 +1,8 @@
----
-layout: glossary
-title: New-VSDMSReplicationInstance
-categories: glossary
-label1: Category
-data1: Documentation
-label2: Depth
-data2: Deep
-schema: 2.0.0
----
-
 # New-VSDMSReplicationInstance
 
 ## SYNOPSIS
-Adds an AWS::DMS::ReplicationInstance resource to the template
+Adds an AWS::DMS::ReplicationInstance resource to the template.
+The AWS::DMS::ReplicationInstance resource creates an AWS DMS replication instance.
 
 ## SYNTAX
 
@@ -27,7 +17,17 @@ New-VSDMSReplicationInstance [-LogicalId] <String> [-ReplicationInstanceIdentifi
 ```
 
 ## DESCRIPTION
-Adds an AWS::DMS::ReplicationInstance resource to the template
+Adds an AWS::DMS::ReplicationInstance resource to the template.
+The AWS::DMS::ReplicationInstance resource creates an AWS DMS replication instance.
+
+## EXAMPLES
+
+### Example 1
+```powershell
+PS C:\> {{ Add example code here }}
+```
+
+{{ Add example description here }}
 
 ## PARAMETERS
 
@@ -49,9 +49,16 @@ Accept wildcard characters: False
 ```
 
 ### -ReplicationInstanceIdentifier
-Required: False    
-Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-dms-replicationinstance.html#cfn-dms-replicationinstance-replicationinstanceidentifier    
-PrimitiveType: String    
+The replication instance identifier.
+This parameter is stored as a lowercase string.
+Constraints:
++ Must contain from 1 to 63 alphanumeric characters or hyphens.
++ First character must be a letter.
++ Cannot end with a hyphen or contain two consecutive hyphens.
+Example: myrepinstance
+
+Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-dms-replicationinstance.html#cfn-dms-replicationinstance-replicationinstanceidentifier
+PrimitiveType: String
 UpdateType: Mutable
 
 ```yaml
@@ -67,9 +74,10 @@ Accept wildcard characters: False
 ```
 
 ### -EngineVersion
-Required: False    
-Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-dms-replicationinstance.html#cfn-dms-replicationinstance-engineversion    
-PrimitiveType: String    
+The engine version number of the replication instance.
+
+Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-dms-replicationinstance.html#cfn-dms-replicationinstance-engineversion
+PrimitiveType: String
 UpdateType: Mutable
 
 ```yaml
@@ -85,9 +93,13 @@ Accept wildcard characters: False
 ```
 
 ### -KmsKeyId
-Required: False    
-Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-dms-replicationinstance.html#cfn-dms-replicationinstance-kmskeyid    
-PrimitiveType: String    
+The AWS KMS key identifier that is used to encrypt the content on the replication instance.
+If you don't specify a value for the KmsKeyId parameter, then AWS DMS uses your default encryption key.
+AWS KMS creates the default encryption key for your AWS account.
+Your AWS account has a different default encryption key for each AWS Region.
+
+Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-dms-replicationinstance.html#cfn-dms-replicationinstance-kmskeyid
+PrimitiveType: String
 UpdateType: Immutable
 
 ```yaml
@@ -103,9 +115,11 @@ Accept wildcard characters: False
 ```
 
 ### -AvailabilityZone
-Required: False    
-Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-dms-replicationinstance.html#cfn-dms-replicationinstance-availabilityzone    
-PrimitiveType: String    
+The Availability Zone that the replication instance will be created in.
+The default value is a random, system-chosen Availability Zone in the endpoint's AWS Region, for example: us-east-1d
+
+Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-dms-replicationinstance.html#cfn-dms-replicationinstance-availabilityzone
+PrimitiveType: String
 UpdateType: Immutable
 
 ```yaml
@@ -121,9 +135,14 @@ Accept wildcard characters: False
 ```
 
 ### -PreferredMaintenanceWindow
-Required: False    
-Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-dms-replicationinstance.html#cfn-dms-replicationinstance-preferredmaintenancewindow    
-PrimitiveType: String    
+The weekly time range during which system maintenance can occur, in Universal Coordinated Time UTC.
+Format: ddd:hh24:mi-ddd:hh24:mi
+Default: A 30-minute window selected at random from an 8-hour block of time per region, occurring on a random day of the week.
+Valid Days: Mon, Tue, Wed, Thu, Fri, Sat, Sun
+Constraints: Minimum 30-minute window.
+
+Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-dms-replicationinstance.html#cfn-dms-replicationinstance-preferredmaintenancewindow
+PrimitiveType: String
 UpdateType: Mutable
 
 ```yaml
@@ -139,9 +158,11 @@ Accept wildcard characters: False
 ```
 
 ### -AutoMinorVersionUpgrade
-Required: False    
-Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-dms-replicationinstance.html#cfn-dms-replicationinstance-autominorversionupgrade    
-PrimitiveType: Boolean    
+Indicates that minor engine upgrades will be applied automatically to the replication instance during the maintenance window.
+Default: true
+
+Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-dms-replicationinstance.html#cfn-dms-replicationinstance-autominorversionupgrade
+PrimitiveType: Boolean
 UpdateType: Mutable
 
 ```yaml
@@ -157,9 +178,10 @@ Accept wildcard characters: False
 ```
 
 ### -ReplicationSubnetGroupIdentifier
-Required: False    
-Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-dms-replicationinstance.html#cfn-dms-replicationinstance-replicationsubnetgroupidentifier    
-PrimitiveType: String    
+A subnet group to associate with the replication instance.
+
+Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-dms-replicationinstance.html#cfn-dms-replicationinstance-replicationsubnetgroupidentifier
+PrimitiveType: String
 UpdateType: Immutable
 
 ```yaml
@@ -175,9 +197,10 @@ Accept wildcard characters: False
 ```
 
 ### -AllocatedStorage
-Required: False    
-Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-dms-replicationinstance.html#cfn-dms-replicationinstance-allocatedstorage    
-PrimitiveType: Integer    
+The amount of storage in gigabytes to be initially allocated for the replication instance.
+
+Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-dms-replicationinstance.html#cfn-dms-replicationinstance-allocatedstorage
+PrimitiveType: Integer
 UpdateType: Mutable
 
 ```yaml
@@ -193,10 +216,12 @@ Accept wildcard characters: False
 ```
 
 ### -VpcSecurityGroupIds
-PrimitiveItemType: String    
-Type: List    
-Required: False    
-Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-dms-replicationinstance.html#cfn-dms-replicationinstance-vpcsecuritygroupids    
+Specifies the VPC security group to be used with the replication instance.
+The VPC security group must work with the VPC containing the replication instance.
+
+PrimitiveItemType: String
+Type: List
+Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-dms-replicationinstance.html#cfn-dms-replicationinstance-vpcsecuritygroupids
 UpdateType: Mutable
 
 ```yaml
@@ -212,9 +237,12 @@ Accept wildcard characters: False
 ```
 
 ### -AllowMajorVersionUpgrade
-Required: False    
-Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-dms-replicationinstance.html#cfn-dms-replicationinstance-allowmajorversionupgrade    
-PrimitiveType: Boolean    
+Indicates that major version upgrades are allowed.
+Changing this parameter does not result in an outage and the change is asynchronously applied as soon as possible.
+Constraints: This parameter must be set to true when specifying a value for the EngineVersion parameter that is a different major version than the replication instance's current version.
+
+Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-dms-replicationinstance.html#cfn-dms-replicationinstance-allowmajorversionupgrade
+PrimitiveType: Boolean
 UpdateType: Mutable
 
 ```yaml
@@ -230,9 +258,11 @@ Accept wildcard characters: False
 ```
 
 ### -ReplicationInstanceClass
-Required: True    
-Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-dms-replicationinstance.html#cfn-dms-replicationinstance-replicationinstanceclass    
-PrimitiveType: String    
+The compute and memory capacity of the replication instance as specified by the replication instance class.
+Valid Values: dms.t2.micro | dms.t2.small | dms.t2.medium | dms.t2.large | dms.c4.large | dms.c4.xlarge | dms.c4.2xlarge | dms.c4.4xlarge 
+
+Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-dms-replicationinstance.html#cfn-dms-replicationinstance-replicationinstanceclass
+PrimitiveType: String
 UpdateType: Mutable
 
 ```yaml
@@ -248,9 +278,13 @@ Accept wildcard characters: False
 ```
 
 ### -PubliclyAccessible
-Required: False    
-Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-dms-replicationinstance.html#cfn-dms-replicationinstance-publiclyaccessible    
-PrimitiveType: Boolean    
+Specifies the accessibility options for the replication instance.
+A value of true represents an instance with a public IP address.
+A value of false represents an instance with a private IP address.
+The default value is true.
+
+Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-dms-replicationinstance.html#cfn-dms-replicationinstance-publiclyaccessible
+PrimitiveType: Boolean
 UpdateType: Immutable
 
 ```yaml
@@ -266,9 +300,11 @@ Accept wildcard characters: False
 ```
 
 ### -MultiAZ
-Required: False    
-Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-dms-replicationinstance.html#cfn-dms-replicationinstance-multiaz    
-PrimitiveType: Boolean    
+Specifies if the replication instance is a Multi-AZ deployment.
+You cannot set the AvailabilityZone parameter if the Multi-AZ parameter is set to true.
+
+Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-dms-replicationinstance.html#cfn-dms-replicationinstance-multiaz
+PrimitiveType: Boolean
 UpdateType: Mutable
 
 ```yaml
@@ -284,10 +320,11 @@ Accept wildcard characters: False
 ```
 
 ### -Tags
-Type: List    
-Required: False    
-Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-dms-replicationinstance.html#cfn-dms-replicationinstance-tags    
-ItemType: Tag    
+Tags to be associated with the replication instance.
+
+Type: List
+Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-dms-replicationinstance.html#cfn-dms-replicationinstance-tags
+ItemType: Tag
 UpdateType: Immutable
 
 ```yaml
@@ -397,15 +434,13 @@ Accept wildcard characters: False
 ```
 
 ### CommonParameters
-This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction, and -WarningVariable.
-For more information, see about_CommonParameters (http://go.microsoft.com/fwlink/?LinkID=113216).
+This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction, and -WarningVariable. For more information, see [about_CommonParameters](http://go.microsoft.com/fwlink/?LinkID=113216).
 
 ## INPUTS
 
 ## OUTPUTS
 
 ### Vaporshell.Resource.DMS.ReplicationInstance
-
 ## NOTES
 
 ## RELATED LINKS

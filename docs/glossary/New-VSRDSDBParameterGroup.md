@@ -1,18 +1,8 @@
----
-layout: glossary
-title: New-VSRDSDBParameterGroup
-categories: glossary
-label1: Category
-data1: Documentation
-label2: Depth
-data2: Deep
-schema: 2.0.0
----
-
 # New-VSRDSDBParameterGroup
 
 ## SYNOPSIS
-Adds an AWS::RDS::DBParameterGroup resource to the template
+Adds an AWS::RDS::DBParameterGroup resource to the template.
+The AWS::RDS::DBParameterGroup resource creates a custom parameter group for an RDS database family.
 
 ## SYNTAX
 
@@ -23,7 +13,23 @@ New-VSRDSDBParameterGroup [-LogicalId] <String> -Description <Object> -Family <O
 ```
 
 ## DESCRIPTION
-Adds an AWS::RDS::DBParameterGroup resource to the template
+Adds an AWS::RDS::DBParameterGroup resource to the template.
+The AWS::RDS::DBParameterGroup resource creates a custom parameter group for an RDS database family.
+
+This type can be declared in a template and referenced in the DBParameterGroupName property of an  AWS::RDS::DBInstance: https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-rds-database-instance.html resource.
+
+**Note**
+
+Applying a parameter group to a DB instance may require the instance to reboot, resulting in a database outage for the duration of the reboot.
+
+## EXAMPLES
+
+### Example 1
+```powershell
+PS C:\> {{ Add example code here }}
+```
+
+{{ Add example description here }}
 
 ## PARAMETERS
 
@@ -45,9 +51,10 @@ Accept wildcard characters: False
 ```
 
 ### -Description
-Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-rds-dbparametergroup.html#cfn-rds-dbparametergroup-description    
-PrimitiveType: String    
-Required: True    
+Provides the customer-specified description for this DB Parameter Group.
+
+Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-rds-dbparametergroup.html#cfn-rds-dbparametergroup-description
+PrimitiveType: String
 UpdateType: Mutable
 
 ```yaml
@@ -63,9 +70,10 @@ Accept wildcard characters: False
 ```
 
 ### -Family
-Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-rds-dbparametergroup.html#cfn-rds-dbparametergroup-family    
-PrimitiveType: String    
-Required: True    
+Provides the name of the DB Parameter Group Family that this DB Parameter Group is compatible with.
+
+Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-rds-dbparametergroup.html#cfn-rds-dbparametergroup-family
+PrimitiveType: String
 UpdateType: Mutable
 
 ```yaml
@@ -81,11 +89,20 @@ Accept wildcard characters: False
 ```
 
 ### -Parameters
-Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-rds-dbparametergroup.html#cfn-rds-dbparametergroup-parameters    
-DuplicatesAllowed: False    
-PrimitiveItemType: String    
-Required: False    
-Type: Map    
+An array of parameter names, values, and the apply method for the parameter update.
+At least one parameter name, value, and apply method must be supplied; subsequent arguments are optional.
+A maximum of 20 parameters may be modified in a single request.
+**MySQL**
+Valid Values for Apply method: immediate | pending-reboot
+You can use the immediate value with dynamic parameters only.
+You can use the pending-reboot value for both dynamic and static parameters, and changes are applied when DB Instance reboots.
+**Oracle**
+Valid Values for Apply method: pending-reboot
+
+Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-rds-dbparametergroup.html#cfn-rds-dbparametergroup-parameters
+DuplicatesAllowed: False
+PrimitiveItemType: String
+Type: Map
 UpdateType: Mutable
 
 ```yaml
@@ -101,11 +118,12 @@ Accept wildcard characters: False
 ```
 
 ### -Tags
-Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-rds-dbparametergroup.html#cfn-rds-dbparametergroup-tags    
-DuplicatesAllowed: True    
-ItemType: Tag    
-Required: False    
-Type: List    
+Tags to assign to the DB parameter group.
+
+Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-rds-dbparametergroup.html#cfn-rds-dbparametergroup-tags
+DuplicatesAllowed: True
+ItemType: Tag
+Type: List
 UpdateType: Mutable
 
 ```yaml
@@ -215,15 +233,13 @@ Accept wildcard characters: False
 ```
 
 ### CommonParameters
-This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction, and -WarningVariable.
-For more information, see about_CommonParameters (http://go.microsoft.com/fwlink/?LinkID=113216).
+This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction, and -WarningVariable. For more information, see [about_CommonParameters](http://go.microsoft.com/fwlink/?LinkID=113216).
 
 ## INPUTS
 
 ## OUTPUTS
 
 ### Vaporshell.Resource.RDS.DBParameterGroup
-
 ## NOTES
 
 ## RELATED LINKS

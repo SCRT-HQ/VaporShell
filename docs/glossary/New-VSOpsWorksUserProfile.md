@@ -1,18 +1,8 @@
----
-layout: glossary
-title: New-VSOpsWorksUserProfile
-categories: glossary
-label1: Category
-data1: Documentation
-label2: Depth
-data2: Deep
-schema: 2.0.0
----
-
 # New-VSOpsWorksUserProfile
 
 ## SYNOPSIS
-Adds an AWS::OpsWorks::UserProfile resource to the template
+Adds an AWS::OpsWorks::UserProfile resource to the template.
+Describes a user's SSH information.
 
 ## SYNTAX
 
@@ -23,7 +13,17 @@ New-VSOpsWorksUserProfile [-LogicalId] <String> [-AllowSelfManagement <Boolean>]
 ```
 
 ## DESCRIPTION
-Adds an AWS::OpsWorks::UserProfile resource to the template
+Adds an AWS::OpsWorks::UserProfile resource to the template.
+Describes a user's SSH information.
+
+## EXAMPLES
+
+### Example 1
+```powershell
+PS C:\> {{ Add example code here }}
+```
+
+{{ Add example description here }}
 
 ## PARAMETERS
 
@@ -45,9 +45,11 @@ Accept wildcard characters: False
 ```
 
 ### -AllowSelfManagement
-Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-opsworks-userprofile.html#cfn-opsworks-userprofile-allowselfmanagement    
-PrimitiveType: Boolean    
-Required: False    
+Whether users can specify their own SSH public key through the My Settings page.
+For more information, see Managing User Permissions: https://docs.aws.amazon.com/opsworks/latest/userguide/security-settingsshkey.html.
+
+Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-opsworks-userprofile.html#cfn-opsworks-userprofile-allowselfmanagement
+PrimitiveType: Boolean
 UpdateType: Mutable
 
 ```yaml
@@ -63,9 +65,10 @@ Accept wildcard characters: False
 ```
 
 ### -IamUserArn
-Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-opsworks-userprofile.html#cfn-opsworks-userprofile-iamuserarn    
-PrimitiveType: String    
-Required: True    
+The user's IAM ARN.
+
+Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-opsworks-userprofile.html#cfn-opsworks-userprofile-iamuserarn
+PrimitiveType: String
 UpdateType: Immutable
 
 ```yaml
@@ -81,9 +84,10 @@ Accept wildcard characters: False
 ```
 
 ### -SshPublicKey
-Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-opsworks-userprofile.html#cfn-opsworks-userprofile-sshpublickey    
-PrimitiveType: String    
-Required: False    
+The user's SSH public key.
+
+Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-opsworks-userprofile.html#cfn-opsworks-userprofile-sshpublickey
+PrimitiveType: String
 UpdateType: Mutable
 
 ```yaml
@@ -99,9 +103,10 @@ Accept wildcard characters: False
 ```
 
 ### -SshUsername
-Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-opsworks-userprofile.html#cfn-opsworks-userprofile-sshusername    
-PrimitiveType: String    
-Required: False    
+The user's SSH user name.
+
+Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-opsworks-userprofile.html#cfn-opsworks-userprofile-sshusername
+PrimitiveType: String
 UpdateType: Mutable
 
 ```yaml
@@ -211,15 +216,13 @@ Accept wildcard characters: False
 ```
 
 ### CommonParameters
-This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction, and -WarningVariable.
-For more information, see about_CommonParameters (http://go.microsoft.com/fwlink/?LinkID=113216).
+This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction, and -WarningVariable. For more information, see [about_CommonParameters](http://go.microsoft.com/fwlink/?LinkID=113216).
 
 ## INPUTS
 
 ## OUTPUTS
 
 ### Vaporshell.Resource.OpsWorks.UserProfile
-
 ## NOTES
 
 ## RELATED LINKS

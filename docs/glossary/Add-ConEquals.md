@@ -1,14 +1,3 @@
----
-layout: glossary
-title: Add-ConEquals
-categories: glossary
-label1: Category
-data1: Documentation
-label2: Depth
-data2: Deep
-schema: 2.0.0
----
-
 # Add-ConEquals
 
 ## SYNOPSIS
@@ -23,6 +12,22 @@ Add-ConEquals [-FirstValue] <Object> [-SecondValue] <Object> [<CommonParameters>
 ## DESCRIPTION
 Compares if two values are equal.
 Returns true if the two values are equal or false if they aren't.
+
+## EXAMPLES
+
+### EXAMPLE 1
+```
+Add-ConEquals -FirstValue "sg-mysggroup" -SecondValue (Add-FnRef -Ref "ASecurityGroup")
+```
+
+When the template is exported, this will convert to: {"Fn::Equals":\["sg-mysggroup",{"Ref":"ASecurityGroup"}\]}
+
+### EXAMPLE 2
+```
+Add-ConEquals -FirstValue (Add-FnRef -Ref "EnvironmentType") -SecondValue "prod"
+```
+
+When the template is exported, this will convert to: {"Fn::Equals":\[{"Ref":"EnvironmentType"},"prod"\]}
 
 ## PARAMETERS
 
@@ -57,15 +62,13 @@ Accept wildcard characters: False
 ```
 
 ### CommonParameters
-This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction, and -WarningVariable.
-For more information, see about_CommonParameters (http://go.microsoft.com/fwlink/?LinkID=113216).
+This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction, and -WarningVariable. For more information, see [about_CommonParameters](http://go.microsoft.com/fwlink/?LinkID=113216).
 
 ## INPUTS
 
 ## OUTPUTS
 
 ### Vaporshell.Condition.Equals
-
 ## NOTES
 You can use the following functions in this condition statement:
     Fn::FindInMap

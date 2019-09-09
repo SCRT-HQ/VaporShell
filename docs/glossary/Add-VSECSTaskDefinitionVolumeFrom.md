@@ -1,18 +1,8 @@
----
-layout: glossary
-title: Add-VSECSTaskDefinitionVolumeFrom
-categories: glossary
-label1: Category
-data1: Documentation
-label2: Depth
-data2: Deep
-schema: 2.0.0
----
-
 # Add-VSECSTaskDefinitionVolumeFrom
 
 ## SYNOPSIS
-Adds an AWS::ECS::TaskDefinition.VolumeFrom resource property to the template
+Adds an AWS::ECS::TaskDefinition.VolumeFrom resource property to the template.
+The VolumeFrom property specifies details on a data volume from another container in the same task definition.
 
 ## SYNTAX
 
@@ -21,14 +11,27 @@ Add-VSECSTaskDefinitionVolumeFrom [[-ReadOnly] <Boolean>] [[-SourceContainer] <O
 ```
 
 ## DESCRIPTION
-Adds an AWS::ECS::TaskDefinition.VolumeFrom resource property to the template
+Adds an AWS::ECS::TaskDefinition.VolumeFrom resource property to the template.
+The VolumeFrom property specifies details on a data volume from another container in the same task definition.
+
+## EXAMPLES
+
+### Example 1
+```powershell
+PS C:\> {{ Add example code here }}
+```
+
+{{ Add example description here }}
 
 ## PARAMETERS
 
 ### -ReadOnly
-Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ecs-taskdefinition-containerdefinitions-volumesfrom.html#cfn-ecs-taskdefinition-containerdefinition-volumesfrom-readonly    
-PrimitiveType: Boolean    
-Required: False    
+If this value is true, the container has read-only access to the volume.
+If this value is false, then the container can write to the volume.
+The default value is false.
+
+Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ecs-taskdefinition-containerdefinitions-volumesfrom.html#cfn-ecs-taskdefinition-containerdefinition-volumesfrom-readonly
+PrimitiveType: Boolean
 UpdateType: Immutable
 
 ```yaml
@@ -44,9 +47,10 @@ Accept wildcard characters: False
 ```
 
 ### -SourceContainer
-Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ecs-taskdefinition-containerdefinitions-volumesfrom.html#cfn-ecs-taskdefinition-containerdefinition-volumesfrom-sourcecontainer    
-PrimitiveType: String    
-Required: False    
+The name of another container within the same task definition from which to mount volumes.
+
+Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ecs-taskdefinition-containerdefinitions-volumesfrom.html#cfn-ecs-taskdefinition-containerdefinition-volumesfrom-sourcecontainer
+PrimitiveType: String
 UpdateType: Immutable
 
 ```yaml
@@ -62,15 +66,13 @@ Accept wildcard characters: False
 ```
 
 ### CommonParameters
-This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction, and -WarningVariable.
-For more information, see about_CommonParameters (http://go.microsoft.com/fwlink/?LinkID=113216).
+This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction, and -WarningVariable. For more information, see [about_CommonParameters](http://go.microsoft.com/fwlink/?LinkID=113216).
 
 ## INPUTS
 
 ## OUTPUTS
 
 ### Vaporshell.Resource.ECS.TaskDefinition.VolumeFrom
-
 ## NOTES
 
 ## RELATED LINKS

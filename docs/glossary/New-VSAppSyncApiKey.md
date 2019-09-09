@@ -1,18 +1,8 @@
----
-layout: glossary
-title: New-VSAppSyncApiKey
-categories: glossary
-label1: Category
-data1: Documentation
-label2: Depth
-data2: Deep
-schema: 2.0.0
----
-
 # New-VSAppSyncApiKey
 
 ## SYNOPSIS
-Adds an AWS::AppSync::ApiKey resource to the template
+Adds an AWS::AppSync::ApiKey resource to the template.
+The AWS::AppSync::ApiKey resource creates a unique key that you can distribute to clients who are executing GraphQL operations with AWS AppSync that require an API key.
 
 ## SYNTAX
 
@@ -23,7 +13,17 @@ New-VSAppSyncApiKey [-LogicalId] <String> [-Description <Object>] [-Expires <Dou
 ```
 
 ## DESCRIPTION
-Adds an AWS::AppSync::ApiKey resource to the template
+Adds an AWS::AppSync::ApiKey resource to the template.
+The AWS::AppSync::ApiKey resource creates a unique key that you can distribute to clients who are executing GraphQL operations with AWS AppSync that require an API key.
+
+## EXAMPLES
+
+### Example 1
+```powershell
+PS C:\> {{ Add example code here }}
+```
+
+{{ Add example description here }}
 
 ## PARAMETERS
 
@@ -45,9 +45,10 @@ Accept wildcard characters: False
 ```
 
 ### -Description
-Required: False    
-Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-appsync-apikey.html#cfn-appsync-apikey-description    
-PrimitiveType: String    
+Unique description of your API key.
+
+Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-appsync-apikey.html#cfn-appsync-apikey-description
+PrimitiveType: String
 UpdateType: Mutable
 
 ```yaml
@@ -63,9 +64,11 @@ Accept wildcard characters: False
 ```
 
 ### -Expires
-Required: False    
-Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-appsync-apikey.html#cfn-appsync-apikey-expires    
-PrimitiveType: Double    
+Expiration time of the API key in seconds using Unix Epoch time, with a minimum of 1 day and a maximum of 365 days.
+The default value is 7 days.
+
+Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-appsync-apikey.html#cfn-appsync-apikey-expires
+PrimitiveType: Double
 UpdateType: Mutable
 
 ```yaml
@@ -81,9 +84,10 @@ Accept wildcard characters: False
 ```
 
 ### -ApiId
-Required: True    
-Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-appsync-apikey.html#cfn-appsync-apikey-apiid    
-PrimitiveType: String    
+Unique AWS AppSync GraphQL API ID for this API key.
+
+Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-appsync-apikey.html#cfn-appsync-apikey-apiid
+PrimitiveType: String
 UpdateType: Immutable
 
 ```yaml
@@ -193,15 +197,13 @@ Accept wildcard characters: False
 ```
 
 ### CommonParameters
-This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction, and -WarningVariable.
-For more information, see about_CommonParameters (http://go.microsoft.com/fwlink/?LinkID=113216).
+This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction, and -WarningVariable. For more information, see [about_CommonParameters](http://go.microsoft.com/fwlink/?LinkID=113216).
 
 ## INPUTS
 
 ## OUTPUTS
 
 ### Vaporshell.Resource.AppSync.ApiKey
-
 ## NOTES
 
 ## RELATED LINKS

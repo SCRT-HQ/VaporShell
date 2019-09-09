@@ -1,18 +1,10 @@
----
-layout: glossary
-title: Add-VSEMRInstanceGroupConfigScalingRule
-categories: glossary
-label1: Category
-data1: Documentation
-label2: Depth
-data2: Deep
-schema: 2.0.0
----
-
 # Add-VSEMRInstanceGroupConfigScalingRule
 
 ## SYNOPSIS
-Adds an AWS::EMR::InstanceGroupConfig.ScalingRule resource property to the template
+Adds an AWS::EMR::InstanceGroupConfig.ScalingRule resource property to the template.
+ScalingRule is a subproperty of the AutoScalingPolicy property type.
+ScalingRule defines the scale-in or scale-out rules for scaling activity, including the CloudWatch metric alarm that triggers activity, how EC2 instances are added or removed, and the periodicity of adjustments.
+The automatic scaling policy for an instance group can comprise one or more automatic scaling rules.
 
 ## SYNTAX
 
@@ -22,14 +14,27 @@ Add-VSEMRInstanceGroupConfigScalingRule [-Action] <Object> [[-Description] <Obje
 ```
 
 ## DESCRIPTION
-Adds an AWS::EMR::InstanceGroupConfig.ScalingRule resource property to the template
+Adds an AWS::EMR::InstanceGroupConfig.ScalingRule resource property to the template.
+ScalingRule is a subproperty of the AutoScalingPolicy property type.
+ScalingRule defines the scale-in or scale-out rules for scaling activity, including the CloudWatch metric alarm that triggers activity, how EC2 instances are added or removed, and the periodicity of adjustments.
+The automatic scaling policy for an instance group can comprise one or more automatic scaling rules.
+
+## EXAMPLES
+
+### Example 1
+```powershell
+PS C:\> {{ Add example code here }}
+```
+
+{{ Add example description here }}
 
 ## PARAMETERS
 
 ### -Action
-Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-elasticmapreduce-instancegroupconfig-scalingrule.html#cfn-elasticmapreduce-instancegroupconfig-scalingrule-action    
-Required: True    
-Type: ScalingAction    
+The conditions that trigger an automatic scaling activity.
+
+Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-elasticmapreduce-instancegroupconfig-scalingrule.html#cfn-elasticmapreduce-instancegroupconfig-scalingrule-action
+Type: ScalingAction
 UpdateType: Mutable
 
 ```yaml
@@ -45,9 +50,10 @@ Accept wildcard characters: False
 ```
 
 ### -Description
-Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-elasticmapreduce-instancegroupconfig-scalingrule.html#cfn-elasticmapreduce-instancegroupconfig-scalingrule-description    
-PrimitiveType: String    
-Required: False    
+A friendly, more verbose description of the automatic scaling rule.
+
+Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-elasticmapreduce-instancegroupconfig-scalingrule.html#cfn-elasticmapreduce-instancegroupconfig-scalingrule-description
+PrimitiveType: String
 UpdateType: Mutable
 
 ```yaml
@@ -63,9 +69,11 @@ Accept wildcard characters: False
 ```
 
 ### -Name
-Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-elasticmapreduce-instancegroupconfig-scalingrule.html#cfn-elasticmapreduce-instancegroupconfig-scalingrule-name    
-PrimitiveType: String    
-Required: True    
+The name used to identify an automatic scaling rule.
+Rule names must be unique within a scaling policy.
+
+Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-elasticmapreduce-instancegroupconfig-scalingrule.html#cfn-elasticmapreduce-instancegroupconfig-scalingrule-name
+PrimitiveType: String
 UpdateType: Mutable
 
 ```yaml
@@ -81,9 +89,10 @@ Accept wildcard characters: False
 ```
 
 ### -Trigger
-Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-elasticmapreduce-instancegroupconfig-scalingrule.html#cfn-elasticmapreduce-instancegroupconfig-scalingrule-trigger    
-Required: True    
-Type: ScalingTrigger    
+The CloudWatch alarm definition that determines when automatic scaling activity is triggered.
+
+Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-elasticmapreduce-instancegroupconfig-scalingrule.html#cfn-elasticmapreduce-instancegroupconfig-scalingrule-trigger
+Type: ScalingTrigger
 UpdateType: Mutable
 
 ```yaml
@@ -99,15 +108,13 @@ Accept wildcard characters: False
 ```
 
 ### CommonParameters
-This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction, and -WarningVariable.
-For more information, see about_CommonParameters (http://go.microsoft.com/fwlink/?LinkID=113216).
+This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction, and -WarningVariable. For more information, see [about_CommonParameters](http://go.microsoft.com/fwlink/?LinkID=113216).
 
 ## INPUTS
 
 ## OUTPUTS
 
 ### Vaporshell.Resource.EMR.InstanceGroupConfig.ScalingRule
-
 ## NOTES
 
 ## RELATED LINKS

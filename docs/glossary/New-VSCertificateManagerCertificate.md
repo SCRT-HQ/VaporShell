@@ -1,18 +1,10 @@
----
-layout: glossary
-title: New-VSCertificateManagerCertificate
-categories: glossary
-label1: Category
-data1: Documentation
-label2: Depth
-data2: Deep
-schema: 2.0.0
----
-
 # New-VSCertificateManagerCertificate
 
 ## SYNOPSIS
-Adds an AWS::CertificateManager::Certificate resource to the template
+Adds an AWS::CertificateManager::Certificate resource to the template.
+The AWS::CertificateManager::Certificate resource requests an AWS Certificate Manager (ACM certificate that you can use to enable secure connections.
+For example, you can deploy an ACM certificate to an Elastic Load Balancer to enable HTTPS support.
+For more information, see RequestCertificate: https://docs.aws.amazon.com/acm/latest/APIReference/API_RequestCertificate.html in the AWS Certificate Manager API Reference.
 
 ## SYNTAX
 
@@ -24,7 +16,25 @@ New-VSCertificateManagerCertificate [-LogicalId] <String> -DomainName <Object>
 ```
 
 ## DESCRIPTION
-Adds an AWS::CertificateManager::Certificate resource to the template
+Adds an AWS::CertificateManager::Certificate resource to the template.
+The AWS::CertificateManager::Certificate resource requests an AWS Certificate Manager (ACM certificate that you can use to enable secure connections.
+For example, you can deploy an ACM certificate to an Elastic Load Balancer to enable HTTPS support.
+For more information, see RequestCertificate: https://docs.aws.amazon.com/acm/latest/APIReference/API_RequestCertificate.html in the AWS Certificate Manager API Reference.
+
+**Important**
+
+When you use the AWS::CertificateManager::Certificate resource in an AWS CloudFormation stack, the stack will remain in the CREATE_IN_PROGRESS state.
+Further stack operations will be delayed until you validate the certificate request, either by acting upon the instructions in the validation email, or by adding a CNAME record to your DNS configuration.
+For more information, see Use Email to Validate Domain Ownership: https://docs.aws.amazon.com/acm/latest/userguide/gs-acm-validate-email.html and Use DNS to Validate Domain Ownership: https://docs.aws.amazon.com/acm/latest/userguide/gs-acm-validate-dns.html.
+
+## EXAMPLES
+
+### Example 1
+```powershell
+PS C:\> {{ Add example code here }}
+```
+
+{{ Add example description here }}
 
 ## PARAMETERS
 
@@ -46,9 +56,12 @@ Accept wildcard characters: False
 ```
 
 ### -DomainName
-Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-certificatemanager-certificate.html#cfn-certificatemanager-certificate-domainname    
-PrimitiveType: String    
-Required: True    
+The fully qualified domain name FQDN, such as www.example.com, with which you want to secure an ACM certificate.
+Use an asterisk * to create a wildcard certificate that protects several sites in the same domain.
+For example, *.example.com protects www.example.com, site.example.com, and images.example.com.
+
+Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-certificatemanager-certificate.html#cfn-certificatemanager-certificate-domainname
+PrimitiveType: String
 UpdateType: Immutable
 
 ```yaml
@@ -64,11 +77,12 @@ Accept wildcard characters: False
 ```
 
 ### -DomainValidationOptions
-Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-certificatemanager-certificate.html#cfn-certificatemanager-certificate-domainvalidationoptions    
-DuplicatesAllowed: False    
-ItemType: DomainValidationOption    
-Required: False    
-Type: List    
+Domain information that domain name registrars use to verify your identity.
+
+Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-certificatemanager-certificate.html#cfn-certificatemanager-certificate-domainvalidationoptions
+DuplicatesAllowed: False
+ItemType: DomainValidationOption
+Type: List
 UpdateType: Immutable
 
 ```yaml
@@ -84,11 +98,13 @@ Accept wildcard characters: False
 ```
 
 ### -SubjectAlternativeNames
-Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-certificatemanager-certificate.html#cfn-certificatemanager-certificate-subjectalternativenames    
-DuplicatesAllowed: False    
-PrimitiveItemType: String    
-Required: False    
-Type: List    
+Additional FQDNs to be included in the Subject Alternative Name extension of the ACM certificate.
+For example, you can add www.example.net to a certificate for which the DomainName field is www.example.com if users can reach your site by using either name.
+
+Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-certificatemanager-certificate.html#cfn-certificatemanager-certificate-subjectalternativenames
+DuplicatesAllowed: False
+PrimitiveItemType: String
+Type: List
 UpdateType: Immutable
 
 ```yaml
@@ -104,11 +120,12 @@ Accept wildcard characters: False
 ```
 
 ### -Tags
-Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-certificatemanager-certificate.html#cfn-certificatemanager-certificate-tags    
-DuplicatesAllowed: True    
-ItemType: Tag    
-Required: False    
-Type: List    
+Key-value pairs that can identity the certificate.
+
+Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-certificatemanager-certificate.html#cfn-certificatemanager-certificate-tags
+DuplicatesAllowed: True
+ItemType: Tag
+Type: List
 UpdateType: Mutable
 
 ```yaml
@@ -124,9 +141,12 @@ Accept wildcard characters: False
 ```
 
 ### -ValidationMethod
-Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-certificatemanager-certificate.html#cfn-certificatemanager-certificate-validationmethod    
-PrimitiveType: String    
-Required: False    
+The method you want to use to validate that you own or control the domain associated with a public certificate.
+You can validate with DNS: https://docs.aws.amazon.com/acm/latest/userguide/gs-acm-validate-dns.html or validate with email: https://docs.aws.amazon.com/acm/latest/userguide/gs-acm-validate-email.html.
+We recommend that you use DNS validation.
+
+Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-certificatemanager-certificate.html#cfn-certificatemanager-certificate-validationmethod
+PrimitiveType: String
 UpdateType: Immutable
 
 ```yaml
@@ -236,15 +256,13 @@ Accept wildcard characters: False
 ```
 
 ### CommonParameters
-This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction, and -WarningVariable.
-For more information, see about_CommonParameters (http://go.microsoft.com/fwlink/?LinkID=113216).
+This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction, and -WarningVariable. For more information, see [about_CommonParameters](http://go.microsoft.com/fwlink/?LinkID=113216).
 
 ## INPUTS
 
 ## OUTPUTS
 
 ### Vaporshell.Resource.CertificateManager.Certificate
-
 ## NOTES
 
 ## RELATED LINKS

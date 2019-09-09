@@ -1,18 +1,9 @@
----
-layout: glossary
-title: New-VSSNSTopicPolicy
-categories: glossary
-label1: Category
-data1: Documentation
-label2: Depth
-data2: Deep
-schema: 2.0.0
----
-
 # New-VSSNSTopicPolicy
 
 ## SYNOPSIS
-Adds an AWS::SNS::TopicPolicy resource to the template
+Adds an AWS::SNS::TopicPolicy resource to the template.
+The AWS::SNS::TopicPolicy resource associates Amazon SNS topics with a policy.
+For an example snippet, see Declaring an Amazon SNS Policy: https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/quickref-iam.html#scenario-sns-policy in the *AWS CloudFormation User Guide*.
 
 ## SYNTAX
 
@@ -23,7 +14,18 @@ New-VSSNSTopicPolicy [-LogicalId] <String> -PolicyDocument <Object> -Topics <Obj
 ```
 
 ## DESCRIPTION
-Adds an AWS::SNS::TopicPolicy resource to the template
+Adds an AWS::SNS::TopicPolicy resource to the template.
+The AWS::SNS::TopicPolicy resource associates Amazon SNS topics with a policy.
+For an example snippet, see Declaring an Amazon SNS Policy: https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/quickref-iam.html#scenario-sns-policy in the *AWS CloudFormation User Guide*.
+
+## EXAMPLES
+
+### Example 1
+```powershell
+PS C:\> {{ Add example code here }}
+```
+
+{{ Add example description here }}
 
 ## PARAMETERS
 
@@ -45,9 +47,10 @@ Accept wildcard characters: False
 ```
 
 ### -PolicyDocument
-Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-sns-policy.html#cfn-sns-topicpolicy-policydocument    
-PrimitiveType: Json    
-Required: True    
+A policy document that contains permissions to add to the specified SNS topics.
+
+Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-sns-policy.html#cfn-sns-topicpolicy-policydocument
+PrimitiveType: Json
 UpdateType: Mutable
 
 ```yaml
@@ -63,11 +66,13 @@ Accept wildcard characters: False
 ```
 
 ### -Topics
-Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-sns-policy.html#cfn-sns-topicpolicy-topics    
-DuplicatesAllowed: True    
-PrimitiveItemType: String    
-Required: True    
-Type: List    
+The Amazon Resource Names ARN of the topics to which you want to add the policy.
+You can use the  Ref: https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/intrinsic-function-reference-ref.html  function to specify an  AWS::SNS::Topic: https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-sns-topic.html  resource.
+
+Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-sns-policy.html#cfn-sns-topicpolicy-topics
+DuplicatesAllowed: True
+PrimitiveItemType: String
+Type: List
 UpdateType: Mutable
 
 ```yaml
@@ -177,15 +182,13 @@ Accept wildcard characters: False
 ```
 
 ### CommonParameters
-This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction, and -WarningVariable.
-For more information, see about_CommonParameters (http://go.microsoft.com/fwlink/?LinkID=113216).
+This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction, and -WarningVariable. For more information, see [about_CommonParameters](http://go.microsoft.com/fwlink/?LinkID=113216).
 
 ## INPUTS
 
 ## OUTPUTS
 
 ### Vaporshell.Resource.SNS.TopicPolicy
-
 ## NOTES
 
 ## RELATED LINKS

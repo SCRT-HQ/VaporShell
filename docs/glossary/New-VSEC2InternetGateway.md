@@ -1,18 +1,9 @@
----
-layout: glossary
-title: New-VSEC2InternetGateway
-categories: glossary
-label1: Category
-data1: Documentation
-label2: Depth
-data2: Deep
-schema: 2.0.0
----
-
 # New-VSEC2InternetGateway
 
 ## SYNOPSIS
-Adds an AWS::EC2::InternetGateway resource to the template
+Adds an AWS::EC2::InternetGateway resource to the template.
+Allocates an internet gateway for use with a VPC.
+After creating the Internet gateway, you then attach it to a VPC.
 
 ## SYNTAX
 
@@ -23,7 +14,18 @@ New-VSEC2InternetGateway [-LogicalId] <String> [-Tags <Object>] [-DeletionPolicy
 ```
 
 ## DESCRIPTION
-Adds an AWS::EC2::InternetGateway resource to the template
+Adds an AWS::EC2::InternetGateway resource to the template.
+Allocates an internet gateway for use with a VPC.
+After creating the Internet gateway, you then attach it to a VPC.
+
+## EXAMPLES
+
+### Example 1
+```powershell
+PS C:\> {{ Add example code here }}
+```
+
+{{ Add example description here }}
 
 ## PARAMETERS
 
@@ -45,11 +47,12 @@ Accept wildcard characters: False
 ```
 
 ### -Tags
-Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ec2-internetgateway.html#cfn-ec2-internetgateway-tags    
-DuplicatesAllowed: True    
-ItemType: Tag    
-Required: False    
-Type: List    
+Any tags to assign to the internet gateway.
+
+Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ec2-internetgateway.html#cfn-ec2-internetgateway-tags
+DuplicatesAllowed: True
+ItemType: Tag
+Type: List
 UpdateType: Mutable
 
 ```yaml
@@ -159,15 +162,13 @@ Accept wildcard characters: False
 ```
 
 ### CommonParameters
-This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction, and -WarningVariable.
-For more information, see about_CommonParameters (http://go.microsoft.com/fwlink/?LinkID=113216).
+This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction, and -WarningVariable. For more information, see [about_CommonParameters](http://go.microsoft.com/fwlink/?LinkID=113216).
 
 ## INPUTS
 
 ## OUTPUTS
 
 ### Vaporshell.Resource.EC2.InternetGateway
-
 ## NOTES
 
 ## RELATED LINKS

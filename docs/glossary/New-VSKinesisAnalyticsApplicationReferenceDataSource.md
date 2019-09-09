@@ -1,18 +1,8 @@
----
-layout: glossary
-title: New-VSKinesisAnalyticsApplicationReferenceDataSource
-categories: glossary
-label1: Category
-data1: Documentation
-label2: Depth
-data2: Deep
-schema: 2.0.0
----
-
 # New-VSKinesisAnalyticsApplicationReferenceDataSource
 
 ## SYNOPSIS
-Adds an AWS::KinesisAnalytics::ApplicationReferenceDataSource resource to the template
+Adds an AWS::KinesisAnalytics::ApplicationReferenceDataSource resource to the template.
+Adds a reference data source to an existing application.
 
 ## SYNTAX
 
@@ -23,7 +13,25 @@ New-VSKinesisAnalyticsApplicationReferenceDataSource [-LogicalId] <String> -Appl
 ```
 
 ## DESCRIPTION
-Adds an AWS::KinesisAnalytics::ApplicationReferenceDataSource resource to the template
+Adds an AWS::KinesisAnalytics::ApplicationReferenceDataSource resource to the template.
+Adds a reference data source to an existing application.
+
+Amazon Kinesis Analytics reads reference data (that is, an Amazon S3 object and creates an in-application table within your application.
+In the request, you provide the source (S3 bucket name and object key name, name of the in-application table to create, and the necessary mapping information that describes how data in Amazon S3 object maps to columns in the resulting in-application table.
+
+For conceptual information, see Configuring Application Input: https://docs.aws.amazon.com/kinesisanalytics/latest/dev/how-it-works-input.html.
+For the limits on data sources you can add to your application, see Limits: https://docs.aws.amazon.com/kinesisanalytics/latest/dev/limits.html.
+
+This operation requires permissions to perform the kinesisanalytics:AddApplicationOutput action.
+
+## EXAMPLES
+
+### Example 1
+```powershell
+PS C:\> {{ Add example code here }}
+```
+
+{{ Add example description here }}
 
 ## PARAMETERS
 
@@ -45,9 +53,10 @@ Accept wildcard characters: False
 ```
 
 ### -ApplicationName
-Required: True    
-Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-kinesisanalytics-applicationreferencedatasource.html#cfn-kinesisanalytics-applicationreferencedatasource-applicationname    
-PrimitiveType: String    
+Name of an existing application.
+
+Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-kinesisanalytics-applicationreferencedatasource.html#cfn-kinesisanalytics-applicationreferencedatasource-applicationname
+PrimitiveType: String
 UpdateType: Immutable
 
 ```yaml
@@ -63,9 +72,13 @@ Accept wildcard characters: False
 ```
 
 ### -ReferenceDataSource
-Type: ReferenceDataSource    
-Required: True    
-Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-kinesisanalytics-applicationreferencedatasource.html#cfn-kinesisanalytics-applicationreferencedatasource-referencedatasource    
+The reference data source can be an object in your Amazon S3 bucket.
+Amazon Kinesis Analytics reads the object and copies the data into the in-application table that is created.
+You provide an S3 bucket, object key name, and the resulting in-application table that is created.
+You must also provide an IAM role with the necessary permissions that Amazon Kinesis Analytics can assume to read the object from your S3 bucket on your behalf.
+
+Type: ReferenceDataSource
+Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-kinesisanalytics-applicationreferencedatasource.html#cfn-kinesisanalytics-applicationreferencedatasource-referencedatasource
 UpdateType: Mutable
 
 ```yaml
@@ -175,15 +188,13 @@ Accept wildcard characters: False
 ```
 
 ### CommonParameters
-This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction, and -WarningVariable.
-For more information, see about_CommonParameters (http://go.microsoft.com/fwlink/?LinkID=113216).
+This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction, and -WarningVariable. For more information, see [about_CommonParameters](http://go.microsoft.com/fwlink/?LinkID=113216).
 
 ## INPUTS
 
 ## OUTPUTS
 
 ### Vaporshell.Resource.KinesisAnalytics.ApplicationReferenceDataSource
-
 ## NOTES
 
 ## RELATED LINKS

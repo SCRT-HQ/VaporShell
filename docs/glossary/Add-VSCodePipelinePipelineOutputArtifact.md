@@ -1,18 +1,8 @@
----
-layout: glossary
-title: Add-VSCodePipelinePipelineOutputArtifact
-categories: glossary
-label1: Category
-data1: Documentation
-label2: Depth
-data2: Deep
-schema: 2.0.0
----
-
 # Add-VSCodePipelinePipelineOutputArtifact
 
 ## SYNOPSIS
-Adds an AWS::CodePipeline::Pipeline.OutputArtifact resource property to the template
+Adds an AWS::CodePipeline::Pipeline.OutputArtifact resource property to the template.
+Represents information about the output of an action.
 
 ## SYNTAX
 
@@ -21,14 +11,28 @@ Add-VSCodePipelinePipelineOutputArtifact [-Name] <Object> [<CommonParameters>]
 ```
 
 ## DESCRIPTION
-Adds an AWS::CodePipeline::Pipeline.OutputArtifact resource property to the template
+Adds an AWS::CodePipeline::Pipeline.OutputArtifact resource property to the template.
+Represents information about the output of an action.
+
+## EXAMPLES
+
+### Example 1
+```powershell
+PS C:\> {{ Add example code here }}
+```
+
+{{ Add example description here }}
 
 ## PARAMETERS
 
 ### -Name
-Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-codepipeline-pipeline-stages-actions-outputartifacts.html#cfn-codepipeline-pipeline-stages-actions-outputartifacts-name    
-PrimitiveType: String    
-Required: True    
+The name of the output of an artifact, such as "My App".
+The input artifact of an action must exactly match the output artifact declared in a preceding action, but the input artifact does not have to be the next action in strict sequence from the action that provided the output artifact.
+Actions in parallel can declare different output artifacts, which are in turn consumed by different following actions.
+Output artifact names must be unique within a pipeline.
+
+Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-codepipeline-pipeline-stages-actions-outputartifacts.html#cfn-codepipeline-pipeline-stages-actions-outputartifacts-name
+PrimitiveType: String
 UpdateType: Mutable
 
 ```yaml
@@ -44,15 +48,13 @@ Accept wildcard characters: False
 ```
 
 ### CommonParameters
-This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction, and -WarningVariable.
-For more information, see about_CommonParameters (http://go.microsoft.com/fwlink/?LinkID=113216).
+This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction, and -WarningVariable. For more information, see [about_CommonParameters](http://go.microsoft.com/fwlink/?LinkID=113216).
 
 ## INPUTS
 
 ## OUTPUTS
 
 ### Vaporshell.Resource.CodePipeline.Pipeline.OutputArtifact
-
 ## NOTES
 
 ## RELATED LINKS

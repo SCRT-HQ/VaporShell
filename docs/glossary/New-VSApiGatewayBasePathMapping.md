@@ -1,18 +1,8 @@
----
-layout: glossary
-title: New-VSApiGatewayBasePathMapping
-categories: glossary
-label1: Category
-data1: Documentation
-label2: Depth
-data2: Deep
-schema: 2.0.0
----
-
 # New-VSApiGatewayBasePathMapping
 
 ## SYNOPSIS
-Adds an AWS::ApiGateway::BasePathMapping resource to the template
+Adds an AWS::ApiGateway::BasePathMapping resource to the template.
+The AWS::ApiGateway::BasePathMapping resource creates a base path that clients who call your API must use in the invocation URL.
 
 ## SYNTAX
 
@@ -23,7 +13,17 @@ New-VSApiGatewayBasePathMapping [-LogicalId] <String> [-BasePath <Object>] -Doma
 ```
 
 ## DESCRIPTION
-Adds an AWS::ApiGateway::BasePathMapping resource to the template
+Adds an AWS::ApiGateway::BasePathMapping resource to the template.
+The AWS::ApiGateway::BasePathMapping resource creates a base path that clients who call your API must use in the invocation URL.
+
+## EXAMPLES
+
+### Example 1
+```powershell
+PS C:\> {{ Add example code here }}
+```
+
+{{ Add example description here }}
 
 ## PARAMETERS
 
@@ -45,9 +45,11 @@ Accept wildcard characters: False
 ```
 
 ### -BasePath
-Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-apigateway-basepathmapping.html#cfn-apigateway-basepathmapping-basepath    
-PrimitiveType: String    
-Required: False    
+The base path name that callers of the API must provide in the URL after the domain name.
+If you specify this property, it can't be an empty string.
+
+Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-apigateway-basepathmapping.html#cfn-apigateway-basepathmapping-basepath
+PrimitiveType: String
 UpdateType: Immutable
 
 ```yaml
@@ -63,9 +65,10 @@ Accept wildcard characters: False
 ```
 
 ### -DomainName
-Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-apigateway-basepathmapping.html#cfn-apigateway-basepathmapping-domainname    
-PrimitiveType: String    
-Required: True    
+The DomainName of an AWS::ApiGateway::DomainName: https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-apigateway-domainname.html resource.
+
+Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-apigateway-basepathmapping.html#cfn-apigateway-basepathmapping-domainname
+PrimitiveType: String
 UpdateType: Immutable
 
 ```yaml
@@ -81,9 +84,10 @@ Accept wildcard characters: False
 ```
 
 ### -RestApiId
-Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-apigateway-basepathmapping.html#cfn-apigateway-basepathmapping-restapiid    
-PrimitiveType: String    
-Required: False    
+The name of the API.
+
+Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-apigateway-basepathmapping.html#cfn-apigateway-basepathmapping-restapiid
+PrimitiveType: String
 UpdateType: Mutable
 
 ```yaml
@@ -99,9 +103,10 @@ Accept wildcard characters: False
 ```
 
 ### -Stage
-Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-apigateway-basepathmapping.html#cfn-apigateway-basepathmapping-stage    
-PrimitiveType: String    
-Required: False    
+The name of the API's stage.
+
+Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-apigateway-basepathmapping.html#cfn-apigateway-basepathmapping-stage
+PrimitiveType: String
 UpdateType: Mutable
 
 ```yaml
@@ -211,15 +216,13 @@ Accept wildcard characters: False
 ```
 
 ### CommonParameters
-This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction, and -WarningVariable.
-For more information, see about_CommonParameters (http://go.microsoft.com/fwlink/?LinkID=113216).
+This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction, and -WarningVariable. For more information, see [about_CommonParameters](http://go.microsoft.com/fwlink/?LinkID=113216).
 
 ## INPUTS
 
 ## OUTPUTS
 
 ### Vaporshell.Resource.ApiGateway.BasePathMapping
-
 ## NOTES
 
 ## RELATED LINKS

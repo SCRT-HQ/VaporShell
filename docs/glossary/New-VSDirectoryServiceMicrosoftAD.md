@@ -1,18 +1,9 @@
----
-layout: glossary
-title: New-VSDirectoryServiceMicrosoftAD
-categories: glossary
-label1: Category
-data1: Documentation
-label2: Depth
-data2: Deep
-schema: 2.0.0
----
-
 # New-VSDirectoryServiceMicrosoftAD
 
 ## SYNOPSIS
-Adds an AWS::DirectoryService::MicrosoftAD resource to the template
+Adds an AWS::DirectoryService::MicrosoftAD resource to the template.
+The AWS::DirectoryService::MicrosoftAD resource specifies a Microsoft Active Directory in AWS so that your directory users and groups can access the AWS Management Console and AWS applications using their existing credentials.
+For more information, see AWS Managed Microsoft AD: https://docs.aws.amazon.com/directoryservice/latest/admin-guide/directory_microsoft_ad.html in the *AWS Directory Service Admin Guide*.
 
 ## SYNTAX
 
@@ -24,7 +15,18 @@ New-VSDirectoryServiceMicrosoftAD [-LogicalId] <String> [-CreateAlias <Boolean>]
 ```
 
 ## DESCRIPTION
-Adds an AWS::DirectoryService::MicrosoftAD resource to the template
+Adds an AWS::DirectoryService::MicrosoftAD resource to the template.
+The AWS::DirectoryService::MicrosoftAD resource specifies a Microsoft Active Directory in AWS so that your directory users and groups can access the AWS Management Console and AWS applications using their existing credentials.
+For more information, see AWS Managed Microsoft AD: https://docs.aws.amazon.com/directoryservice/latest/admin-guide/directory_microsoft_ad.html in the *AWS Directory Service Admin Guide*.
+
+## EXAMPLES
+
+### Example 1
+```powershell
+PS C:\> {{ Add example code here }}
+```
+
+{{ Add example description here }}
 
 ## PARAMETERS
 
@@ -46,9 +48,13 @@ Accept wildcard characters: False
 ```
 
 ### -CreateAlias
-Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-directoryservice-microsoftad.html#cfn-directoryservice-microsoftad-createalias    
-PrimitiveType: Boolean    
-Required: False    
+Specifies an alias for a directory and assigns the alias to the directory.
+The alias is used to construct the access URL for the directory, such as http://\<alias\>.awsapps.com.
+By default, AWS CloudFormation does not create an alias.
+After an alias has been created, it cannot be deleted or reused, so this operation should only be used when absolutely necessary.
+
+Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-directoryservice-microsoftad.html#cfn-directoryservice-microsoftad-createalias
+PrimitiveType: Boolean
 UpdateType: Immutable
 
 ```yaml
@@ -64,9 +70,11 @@ Accept wildcard characters: False
 ```
 
 ### -Edition
-Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-directoryservice-microsoftad.html#cfn-directoryservice-microsoftad-edition    
-PrimitiveType: String    
-Required: False    
+AWS Managed Microsoft AD is available in two editions: Standard and Enterprise.
+Enterprise is the default.
+
+Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-directoryservice-microsoftad.html#cfn-directoryservice-microsoftad-edition
+PrimitiveType: String
 UpdateType: Immutable
 
 ```yaml
@@ -82,9 +90,12 @@ Accept wildcard characters: False
 ```
 
 ### -EnableSso
-Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-directoryservice-microsoftad.html#cfn-directoryservice-microsoftad-enablesso    
-PrimitiveType: Boolean    
-Required: False    
+Whether to enable single sign-on for a Microsoft Active Directory in AWS.
+Single sign-on allows users in your directory to access certain AWS services from a computer joined to the directory without having to enter their credentials separately.
+If you don't specify a value, AWS CloudFormation disables single sign-on by default.
+
+Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-directoryservice-microsoftad.html#cfn-directoryservice-microsoftad-enablesso
+PrimitiveType: Boolean
 UpdateType: Mutable
 
 ```yaml
@@ -100,9 +111,12 @@ Accept wildcard characters: False
 ```
 
 ### -Name
-Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-directoryservice-microsoftad.html#cfn-directoryservice-microsoftad-name    
-PrimitiveType: String    
-Required: True    
+The fully qualified domain name for the directory, such as corp.example.com.
+This name will resolve inside your VPC only.
+It does not need to be publicly resolvable.
+
+Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-directoryservice-microsoftad.html#cfn-directoryservice-microsoftad-name
+PrimitiveType: String
 UpdateType: Immutable
 
 ```yaml
@@ -118,9 +132,10 @@ Accept wildcard characters: False
 ```
 
 ### -Password
-Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-directoryservice-microsoftad.html#cfn-directoryservice-microsoftad-password    
-PrimitiveType: String    
-Required: True    
+The password for the default administrative user named Admin.
+
+Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-directoryservice-microsoftad.html#cfn-directoryservice-microsoftad-password
+PrimitiveType: String
 UpdateType: Immutable
 
 ```yaml
@@ -136,9 +151,13 @@ Accept wildcard characters: False
 ```
 
 ### -ShortName
-Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-directoryservice-microsoftad.html#cfn-directoryservice-microsoftad-shortname    
-PrimitiveType: String    
-Required: False    
+The NetBIOS name for your domain.
+A short identifier for your domain, such as CORP.
+If you don't specify a NetBIOS name, it will default to the first part of your directory DNS.
+For example, CORP for the directory DNS corp.example.com.
+
+Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-directoryservice-microsoftad.html#cfn-directoryservice-microsoftad-shortname
+PrimitiveType: String
 UpdateType: Immutable
 
 ```yaml
@@ -154,9 +173,10 @@ Accept wildcard characters: False
 ```
 
 ### -VpcSettings
-Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-directoryservice-microsoftad.html#cfn-directoryservice-microsoftad-vpcsettings    
-Required: True    
-Type: VpcSettings    
+Specifies the VPC settings of the Microsoft AD directory server in AWS.
+
+Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-directoryservice-microsoftad.html#cfn-directoryservice-microsoftad-vpcsettings
+Type: VpcSettings
 UpdateType: Immutable
 
 ```yaml
@@ -266,15 +286,13 @@ Accept wildcard characters: False
 ```
 
 ### CommonParameters
-This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction, and -WarningVariable.
-For more information, see about_CommonParameters (http://go.microsoft.com/fwlink/?LinkID=113216).
+This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction, and -WarningVariable. For more information, see [about_CommonParameters](http://go.microsoft.com/fwlink/?LinkID=113216).
 
 ## INPUTS
 
 ## OUTPUTS
 
 ### Vaporshell.Resource.DirectoryService.MicrosoftAD
-
 ## NOTES
 
 ## RELATED LINKS

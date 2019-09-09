@@ -1,18 +1,9 @@
----
-layout: glossary
-title: New-VSApiGatewayVpcLink
-categories: glossary
-label1: Category
-data1: Documentation
-label2: Depth
-data2: Deep
-schema: 2.0.0
----
-
 # New-VSApiGatewayVpcLink
 
 ## SYNOPSIS
-Adds an AWS::ApiGateway::VpcLink resource to the template
+Adds an AWS::ApiGateway::VpcLink resource to the template.
+The AWS::ApiGateway::VpcLink resource creates an API Gateway VPC link for a REST API to access resources in an Amazon Virtual Private Cloud (VPC.
+For more information, see vpclink:create: https://docs.aws.amazon.com/apigateway/api-reference/link-relation/vpclink-create/ in the Amazon API Gateway REST API Reference.
 
 ## SYNTAX
 
@@ -23,7 +14,18 @@ New-VSApiGatewayVpcLink [-LogicalId] <String> [-Description <Object>] -TargetArn
 ```
 
 ## DESCRIPTION
-Adds an AWS::ApiGateway::VpcLink resource to the template
+Adds an AWS::ApiGateway::VpcLink resource to the template.
+The AWS::ApiGateway::VpcLink resource creates an API Gateway VPC link for a REST API to access resources in an Amazon Virtual Private Cloud (VPC.
+For more information, see vpclink:create: https://docs.aws.amazon.com/apigateway/api-reference/link-relation/vpclink-create/ in the Amazon API Gateway REST API Reference.
+
+## EXAMPLES
+
+### Example 1
+```powershell
+PS C:\> {{ Add example code here }}
+```
+
+{{ Add example description here }}
 
 ## PARAMETERS
 
@@ -45,9 +47,10 @@ Accept wildcard characters: False
 ```
 
 ### -Description
-Required: False    
-Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-apigateway-vpclink.html#cfn-apigateway-vpclink-description    
-PrimitiveType: String    
+A description of the VPC link.
+
+Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-apigateway-vpclink.html#cfn-apigateway-vpclink-description
+PrimitiveType: String
 UpdateType: Mutable
 
 ```yaml
@@ -63,10 +66,12 @@ Accept wildcard characters: False
 ```
 
 ### -TargetArns
-PrimitiveItemType: String    
-Type: List    
-Required: True    
-Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-apigateway-vpclink.html#cfn-apigateway-vpclink-targetarns    
+The ARNs of network load balancers of the VPC targeted by the VPC link.
+The network load balancers must be owned by the same AWS account of the API owner.
+
+PrimitiveItemType: String
+Type: List
+Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-apigateway-vpclink.html#cfn-apigateway-vpclink-targetarns
 UpdateType: Immutable
 
 ```yaml
@@ -82,9 +87,10 @@ Accept wildcard characters: False
 ```
 
 ### -Name
-Required: True    
-Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-apigateway-vpclink.html#cfn-apigateway-vpclink-name    
-PrimitiveType: String    
+A name for the VPC link.
+
+Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-apigateway-vpclink.html#cfn-apigateway-vpclink-name
+PrimitiveType: String
 UpdateType: Mutable
 
 ```yaml
@@ -194,15 +200,13 @@ Accept wildcard characters: False
 ```
 
 ### CommonParameters
-This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction, and -WarningVariable.
-For more information, see about_CommonParameters (http://go.microsoft.com/fwlink/?LinkID=113216).
+This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction, and -WarningVariable. For more information, see [about_CommonParameters](http://go.microsoft.com/fwlink/?LinkID=113216).
 
 ## INPUTS
 
 ## OUTPUTS
 
 ### Vaporshell.Resource.ApiGateway.VpcLink
-
 ## NOTES
 
 ## RELATED LINKS

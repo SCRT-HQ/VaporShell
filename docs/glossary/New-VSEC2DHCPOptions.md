@@ -1,18 +1,8 @@
----
-layout: glossary
-title: New-VSEC2DHCPOptions
-categories: glossary
-label1: Category
-data1: Documentation
-label2: Depth
-data2: Deep
-schema: 2.0.0
----
-
 # New-VSEC2DHCPOptions
 
 ## SYNOPSIS
-Adds an AWS::EC2::DHCPOptions resource to the template
+Adds an AWS::EC2::DHCPOptions resource to the template.
+Specifies a set of DHCP options for your VPC.
 
 ## SYNTAX
 
@@ -24,7 +14,20 @@ New-VSEC2DHCPOptions [-LogicalId] <String> [-DomainName <Object>] [-DomainNameSe
 ```
 
 ## DESCRIPTION
-Adds an AWS::EC2::DHCPOptions resource to the template
+Adds an AWS::EC2::DHCPOptions resource to the template.
+Specifies a set of DHCP options for your VPC.
+
+You must specify at least one of the following properties: DomainNameServers, NetbiosNameServers, NtpServers.
+If you specify NetbiosNameServers, you must specify NetbiosNodeType.
+
+## EXAMPLES
+
+### Example 1
+```powershell
+PS C:\> {{ Add example code here }}
+```
+
+{{ Add example description here }}
 
 ## PARAMETERS
 
@@ -46,9 +49,13 @@ Accept wildcard characters: False
 ```
 
 ### -DomainName
-Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ec2-dhcp-options.html#cfn-ec2-dhcpoptions-domainname    
-PrimitiveType: String    
-Required: False    
+This value is used to complete unqualified DNS hostnames.
+If you're using AmazonProvidedDNS in us-east-1, specify ec2.internal.
+If you're using AmazonProvidedDNS in another Region, specify *region*.compute.internal for example, ap-northeast-1.compute.internal.
+Otherwise, specify a domain name for example, *MyCompany.com*.
+
+Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ec2-dhcp-options.html#cfn-ec2-dhcpoptions-domainname
+PrimitiveType: String
 UpdateType: Immutable
 
 ```yaml
@@ -64,11 +71,15 @@ Accept wildcard characters: False
 ```
 
 ### -DomainNameServers
-Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ec2-dhcp-options.html#cfn-ec2-dhcpoptions-domainnameservers    
-DuplicatesAllowed: False    
-PrimitiveItemType: String    
-Required: False    
-Type: List    
+The IPv4 addresses of up to four domain name servers, or AmazonProvidedDNS.
+The default DHCP option set specifies AmazonProvidedDNS.
+If specifying more than one domain name server, specify the IP addresses in a single parameter, separated by commas.
+To have your instance to receive a custom DNS hostname as specified in DomainName, you must set this to a custom DNS server.
+
+Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ec2-dhcp-options.html#cfn-ec2-dhcpoptions-domainnameservers
+DuplicatesAllowed: False
+PrimitiveItemType: String
+Type: List
 UpdateType: Immutable
 
 ```yaml
@@ -84,11 +95,12 @@ Accept wildcard characters: False
 ```
 
 ### -NetbiosNameServers
-Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ec2-dhcp-options.html#cfn-ec2-dhcpoptions-netbiosnameservers    
-DuplicatesAllowed: False    
-PrimitiveItemType: String    
-Required: False    
-Type: List    
+The IPv4 addresses of up to four NetBIOS name servers.
+
+Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ec2-dhcp-options.html#cfn-ec2-dhcpoptions-netbiosnameservers
+DuplicatesAllowed: False
+PrimitiveItemType: String
+Type: List
 UpdateType: Immutable
 
 ```yaml
@@ -104,9 +116,11 @@ Accept wildcard characters: False
 ```
 
 ### -NetbiosNodeType
-Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ec2-dhcp-options.html#cfn-ec2-dhcpoptions-netbiosnodetype    
-PrimitiveType: Integer    
-Required: False    
+The NetBIOS node type 1, 2, 4, or 8.
+We recommend that you specify 2 broadcast and multicast are not currently supported.
+
+Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ec2-dhcp-options.html#cfn-ec2-dhcpoptions-netbiosnodetype
+PrimitiveType: Integer
 UpdateType: Immutable
 
 ```yaml
@@ -122,11 +136,12 @@ Accept wildcard characters: False
 ```
 
 ### -NtpServers
-Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ec2-dhcp-options.html#cfn-ec2-dhcpoptions-ntpservers    
-DuplicatesAllowed: True    
-PrimitiveItemType: String    
-Required: False    
-Type: List    
+The IPv4 addresses of up to four Network Time Protocol NTP servers.
+
+Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ec2-dhcp-options.html#cfn-ec2-dhcpoptions-ntpservers
+DuplicatesAllowed: True
+PrimitiveItemType: String
+Type: List
 UpdateType: Immutable
 
 ```yaml
@@ -142,11 +157,12 @@ Accept wildcard characters: False
 ```
 
 ### -Tags
-Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ec2-dhcp-options.html#cfn-ec2-dhcpoptions-tags    
-DuplicatesAllowed: True    
-ItemType: Tag    
-Required: False    
-Type: List    
+Any tags assigned to the DHCP options set.
+
+Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ec2-dhcp-options.html#cfn-ec2-dhcpoptions-tags
+DuplicatesAllowed: True
+ItemType: Tag
+Type: List
 UpdateType: Mutable
 
 ```yaml
@@ -256,15 +272,13 @@ Accept wildcard characters: False
 ```
 
 ### CommonParameters
-This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction, and -WarningVariable.
-For more information, see about_CommonParameters (http://go.microsoft.com/fwlink/?LinkID=113216).
+This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction, and -WarningVariable. For more information, see [about_CommonParameters](http://go.microsoft.com/fwlink/?LinkID=113216).
 
 ## INPUTS
 
 ## OUTPUTS
 
 ### Vaporshell.Resource.EC2.DHCPOptions
-
 ## NOTES
 
 ## RELATED LINKS

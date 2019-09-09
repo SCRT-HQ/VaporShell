@@ -1,18 +1,9 @@
----
-layout: glossary
-title: New-VSNeptuneDBParameterGroup
-categories: glossary
-label1: Category
-data1: Documentation
-label2: Depth
-data2: Deep
-schema: 2.0.0
----
-
 # New-VSNeptuneDBParameterGroup
 
 ## SYNOPSIS
-Adds an AWS::Neptune::DBParameterGroup resource to the template
+Adds an AWS::Neptune::DBParameterGroup resource to the template.
+AWS::Neptune::DBParameterGroup creates a new DB parameter group.
+This type can be declared in a template and referenced in the DBParameterGroupName parameter of AWS::Neptune::DBInstance.
 
 ## SYNTAX
 
@@ -23,7 +14,34 @@ New-VSNeptuneDBParameterGroup [-LogicalId] <String> -Description <Object> -Param
 ```
 
 ## DESCRIPTION
-Adds an AWS::Neptune::DBParameterGroup resource to the template
+Adds an AWS::Neptune::DBParameterGroup resource to the template.
+AWS::Neptune::DBParameterGroup creates a new DB parameter group.
+This type can be declared in a template and referenced in the DBParameterGroupName parameter of AWS::Neptune::DBInstance.
+
+**Note**
+
+Applying a parameter group to a DB instance might require the instance to reboot, resulting in a database outage for the duration of the reboot.
+
+A DB parameter group is initially created with the default parameters for the database engine used by the DB instance.
+To provide custom values for any of the parameters, you must modify the group after creating it using *ModifyDBParameterGroup*.
+Once you've created a DB parameter group, you need to associate it with your DB instance using *ModifyDBInstance*.
+When you associate a new DB parameter group with a running DB instance, you need to reboot the DB instance without failover for the new DB parameter group and associated settings to take effect.
+
+**Important**
+
+After you create a DB parameter group, you should wait at least 5 minutes before creating your first DB instance that uses that DB parameter group as the default parameter group.
+This allows Amazon Neptune to fully complete the create action before the parameter group is used as the default for a new DB instance.
+This is especially important for parameters that are critical when creating the default database for a DB instance, such as the character set for the default database defined by the character_set_database parameter.
+You can use the *Parameter Groups* option of the Amazon Neptune console or the *DescribeDBParameters* command to verify that your DB parameter group has been created or modified.
+
+## EXAMPLES
+
+### Example 1
+```powershell
+PS C:\> {{ Add example code here }}
+```
+
+{{ Add example description here }}
 
 ## PARAMETERS
 
@@ -45,9 +63,10 @@ Accept wildcard characters: False
 ```
 
 ### -Description
-Required: True    
-Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-neptune-dbparametergroup.html#cfn-neptune-dbparametergroup-description    
-PrimitiveType: String    
+Provides the customer-specified description for this DB parameter group.
+
+Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-neptune-dbparametergroup.html#cfn-neptune-dbparametergroup-description
+PrimitiveType: String
 UpdateType: Immutable
 
 ```yaml
@@ -63,9 +82,13 @@ Accept wildcard characters: False
 ```
 
 ### -Parameters
-Required: True    
-Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-neptune-dbparametergroup.html#cfn-neptune-dbparametergroup-parameters    
-PrimitiveType: Json    
+The parameters to set for this DB parameter group.
+The parameters are expressed as a JSON object consisting of key-value pairs.
+Changes to dynamic parameters are applied immediately.
+During an update, if you have static parameters whether they were changed or not, it triggers AWS CloudFormation to reboot the associated DB instance without failover.
+
+Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-neptune-dbparametergroup.html#cfn-neptune-dbparametergroup-parameters
+PrimitiveType: Json
 UpdateType: Mutable
 
 ```yaml
@@ -81,9 +104,10 @@ Accept wildcard characters: False
 ```
 
 ### -Family
-Required: True    
-Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-neptune-dbparametergroup.html#cfn-neptune-dbparametergroup-family    
-PrimitiveType: String    
+Must be neptune1.
+
+Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-neptune-dbparametergroup.html#cfn-neptune-dbparametergroup-family
+PrimitiveType: String
 UpdateType: Immutable
 
 ```yaml
@@ -99,10 +123,11 @@ Accept wildcard characters: False
 ```
 
 ### -Tags
-Type: List    
-Required: False    
-Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-neptune-dbparametergroup.html#cfn-neptune-dbparametergroup-tags    
-ItemType: Tag    
+The tags that you want to attach to this parameter group.
+
+Type: List
+Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-neptune-dbparametergroup.html#cfn-neptune-dbparametergroup-tags
+ItemType: Tag
 UpdateType: Mutable
 
 ```yaml
@@ -118,9 +143,10 @@ Accept wildcard characters: False
 ```
 
 ### -Name
-Required: False    
-Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-neptune-dbparametergroup.html#cfn-neptune-dbparametergroup-name    
-PrimitiveType: String    
+Provides the name of the DB parameter group.
+
+Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-neptune-dbparametergroup.html#cfn-neptune-dbparametergroup-name
+PrimitiveType: String
 UpdateType: Immutable
 
 ```yaml
@@ -230,15 +256,13 @@ Accept wildcard characters: False
 ```
 
 ### CommonParameters
-This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction, and -WarningVariable.
-For more information, see about_CommonParameters (http://go.microsoft.com/fwlink/?LinkID=113216).
+This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction, and -WarningVariable. For more information, see [about_CommonParameters](http://go.microsoft.com/fwlink/?LinkID=113216).
 
 ## INPUTS
 
 ## OUTPUTS
 
 ### Vaporshell.Resource.Neptune.DBParameterGroup
-
 ## NOTES
 
 ## RELATED LINKS

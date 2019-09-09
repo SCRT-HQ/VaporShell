@@ -1,18 +1,10 @@
----
-layout: glossary
-title: New-VSWAFRegionalIPSet
-categories: glossary
-label1: Category
-data1: Documentation
-label2: Depth
-data2: Deep
-schema: 2.0.0
----
-
 # New-VSWAFRegionalIPSet
 
 ## SYNOPSIS
-Adds an AWS::WAFRegional::IPSet resource to the template
+Adds an AWS::WAFRegional::IPSet resource to the template.
+Contains one or more IP addresses or blocks of IP addresses specified in Classless Inter-Domain Routing (CIDR notation.
+AWS WAF supports IPv4 address ranges: /8 and any range between /16 through /32.
+AWS WAF supports IPv6 address ranges: /24, /32, /48, /56, /64, and /128.
 
 ## SYNTAX
 
@@ -23,7 +15,23 @@ New-VSWAFRegionalIPSet [-LogicalId] <String> [-IPSetDescriptors <Object>] -Name 
 ```
 
 ## DESCRIPTION
-Adds an AWS::WAFRegional::IPSet resource to the template
+Adds an AWS::WAFRegional::IPSet resource to the template.
+Contains one or more IP addresses or blocks of IP addresses specified in Classless Inter-Domain Routing (CIDR notation.
+AWS WAF supports IPv4 address ranges: /8 and any range between /16 through /32.
+AWS WAF supports IPv6 address ranges: /24, /32, /48, /56, /64, and /128.
+
+To specify an individual IP address, you specify the four-part IP address followed by a /32, for example, 192.0.2.0/31.
+To block a range of IP addresses, you can specify /8 or any range between /16 through /32 (for IPv4 or /24, /32, /48, /56, /64, or /128 (for IPv6.
+For more information about CIDR notation, see the Wikipedia entry Classless Inter-Domain Routing: https://en.wikipedia.org/wiki/Classless_Inter-Domain_Routing.
+
+## EXAMPLES
+
+### Example 1
+```powershell
+PS C:\> {{ Add example code here }}
+```
+
+{{ Add example description here }}
 
 ## PARAMETERS
 
@@ -45,10 +53,12 @@ Accept wildcard characters: False
 ```
 
 ### -IPSetDescriptors
-Type: List    
-Required: False    
-Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-wafregional-ipset.html#cfn-wafregional-ipset-ipsetdescriptors    
-ItemType: IPSetDescriptor    
+The IP address type IPV4 or IPV6 and the IP address range in CIDR notation that web requests originate from.
+If the WebACL is associated with a CloudFront distribution and the viewer did not use an HTTP proxy or a load balancer to send the request, this is the value of the c-ip field in the CloudFront access logs.
+
+Type: List
+Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-wafregional-ipset.html#cfn-wafregional-ipset-ipsetdescriptors
+ItemType: IPSetDescriptor
 UpdateType: Mutable
 
 ```yaml
@@ -64,9 +74,11 @@ Accept wildcard characters: False
 ```
 
 ### -Name
-Required: True    
-Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-wafregional-ipset.html#cfn-wafregional-ipset-name    
-PrimitiveType: String    
+A friendly name or description of the IPSet.
+You can't change the name of an IPSet after you create it.
+
+Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-wafregional-ipset.html#cfn-wafregional-ipset-name
+PrimitiveType: String
 UpdateType: Immutable
 
 ```yaml
@@ -176,15 +188,13 @@ Accept wildcard characters: False
 ```
 
 ### CommonParameters
-This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction, and -WarningVariable.
-For more information, see about_CommonParameters (http://go.microsoft.com/fwlink/?LinkID=113216).
+This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction, and -WarningVariable. For more information, see [about_CommonParameters](http://go.microsoft.com/fwlink/?LinkID=113216).
 
 ## INPUTS
 
 ## OUTPUTS
 
 ### Vaporshell.Resource.WAFRegional.IPSet
-
 ## NOTES
 
 ## RELATED LINKS

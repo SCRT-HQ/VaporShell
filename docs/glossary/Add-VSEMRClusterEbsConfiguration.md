@@ -1,18 +1,9 @@
----
-layout: glossary
-title: Add-VSEMRClusterEbsConfiguration
-categories: glossary
-label1: Category
-data1: Documentation
-label2: Depth
-data2: Deep
-schema: 2.0.0
----
-
 # Add-VSEMRClusterEbsConfiguration
 
 ## SYNOPSIS
-Adds an AWS::EMR::Cluster.EbsConfiguration resource property to the template
+Adds an AWS::EMR::Cluster.EbsConfiguration resource property to the template.
+EbsConfiguration is a subproperty of InstanceFleetConfig or InstanceGroupConfig.
+EbsConfiguration determines the EBS volumes to attach to EMR cluster instances.
 
 ## SYNTAX
 
@@ -22,16 +13,28 @@ Add-VSEMRClusterEbsConfiguration [[-EbsBlockDeviceConfigs] <Object>] [[-EbsOptim
 ```
 
 ## DESCRIPTION
-Adds an AWS::EMR::Cluster.EbsConfiguration resource property to the template
+Adds an AWS::EMR::Cluster.EbsConfiguration resource property to the template.
+EbsConfiguration is a subproperty of InstanceFleetConfig or InstanceGroupConfig.
+EbsConfiguration determines the EBS volumes to attach to EMR cluster instances.
+
+## EXAMPLES
+
+### Example 1
+```powershell
+PS C:\> {{ Add example code here }}
+```
+
+{{ Add example description here }}
 
 ## PARAMETERS
 
 ### -EbsBlockDeviceConfigs
-Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-elasticmapreduce-cluster-ebsconfiguration.html#cfn-elasticmapreduce-cluster-ebsconfiguration-ebsblockdeviceconfigs    
-DuplicatesAllowed: False    
-ItemType: EbsBlockDeviceConfig    
-Required: False    
-Type: List    
+An array of Amazon EBS volume specifications attached to a cluster instance.
+
+Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-elasticmapreduce-cluster-ebsconfiguration.html#cfn-elasticmapreduce-cluster-ebsconfiguration-ebsblockdeviceconfigs
+DuplicatesAllowed: False
+ItemType: EbsBlockDeviceConfig
+Type: List
 UpdateType: Mutable
 
 ```yaml
@@ -47,9 +50,10 @@ Accept wildcard characters: False
 ```
 
 ### -EbsOptimized
-Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-elasticmapreduce-cluster-ebsconfiguration.html#cfn-elasticmapreduce-cluster-ebsconfiguration-ebsoptimized    
-PrimitiveType: Boolean    
-Required: False    
+Indicates whether an Amazon EBS volume is EBS-optimized.
+
+Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-elasticmapreduce-cluster-ebsconfiguration.html#cfn-elasticmapreduce-cluster-ebsconfiguration-ebsoptimized
+PrimitiveType: Boolean
 UpdateType: Mutable
 
 ```yaml
@@ -65,15 +69,13 @@ Accept wildcard characters: False
 ```
 
 ### CommonParameters
-This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction, and -WarningVariable.
-For more information, see about_CommonParameters (http://go.microsoft.com/fwlink/?LinkID=113216).
+This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction, and -WarningVariable. For more information, see [about_CommonParameters](http://go.microsoft.com/fwlink/?LinkID=113216).
 
 ## INPUTS
 
 ## OUTPUTS
 
 ### Vaporshell.Resource.EMR.Cluster.EbsConfiguration
-
 ## NOTES
 
 ## RELATED LINKS

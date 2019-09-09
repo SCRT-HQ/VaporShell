@@ -1,18 +1,9 @@
----
-layout: glossary
-title: New-VSEC2EgressOnlyInternetGateway
-categories: glossary
-label1: Category
-data1: Documentation
-label2: Depth
-data2: Deep
-schema: 2.0.0
----
-
 # New-VSEC2EgressOnlyInternetGateway
 
 ## SYNOPSIS
-Adds an AWS::EC2::EgressOnlyInternetGateway resource to the template
+Adds an AWS::EC2::EgressOnlyInternetGateway resource to the template.
+IPv6 only\] Specifies an egress-only internet gateway for your VPC.
+An egress-only internet gateway is used to enable outbound communication over IPv6 from instances in your VPC to the internet, and prevents hosts outside of your VPC from initiating an IPv6 connection with your instance.
 
 ## SYNTAX
 
@@ -23,7 +14,18 @@ New-VSEC2EgressOnlyInternetGateway [-LogicalId] <String> -VpcId <Object> [-Delet
 ```
 
 ## DESCRIPTION
-Adds an AWS::EC2::EgressOnlyInternetGateway resource to the template
+Adds an AWS::EC2::EgressOnlyInternetGateway resource to the template.
+IPv6 only\] Specifies an egress-only internet gateway for your VPC.
+An egress-only internet gateway is used to enable outbound communication over IPv6 from instances in your VPC to the internet, and prevents hosts outside of your VPC from initiating an IPv6 connection with your instance.
+
+## EXAMPLES
+
+### Example 1
+```powershell
+PS C:\> {{ Add example code here }}
+```
+
+{{ Add example description here }}
 
 ## PARAMETERS
 
@@ -45,9 +47,10 @@ Accept wildcard characters: False
 ```
 
 ### -VpcId
-Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ec2-egressonlyinternetgateway.html#cfn-ec2-egressonlyinternetgateway-vpcid    
-PrimitiveType: String    
-Required: True    
+The ID of the VPC for which to create the egress-only internet gateway.
+
+Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ec2-egressonlyinternetgateway.html#cfn-ec2-egressonlyinternetgateway-vpcid
+PrimitiveType: String
 UpdateType: Immutable
 
 ```yaml
@@ -157,15 +160,13 @@ Accept wildcard characters: False
 ```
 
 ### CommonParameters
-This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction, and -WarningVariable.
-For more information, see about_CommonParameters (http://go.microsoft.com/fwlink/?LinkID=113216).
+This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction, and -WarningVariable. For more information, see [about_CommonParameters](http://go.microsoft.com/fwlink/?LinkID=113216).
 
 ## INPUTS
 
 ## OUTPUTS
 
 ### Vaporshell.Resource.EC2.EgressOnlyInternetGateway
-
 ## NOTES
 
 ## RELATED LINKS

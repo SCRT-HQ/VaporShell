@@ -1,18 +1,8 @@
----
-layout: glossary
-title: Add-VSKinesisAnalyticsApplicationMappingParameters
-categories: glossary
-label1: Category
-data1: Documentation
-label2: Depth
-data2: Deep
-schema: 2.0.0
----
-
 # Add-VSKinesisAnalyticsApplicationMappingParameters
 
 ## SYNOPSIS
-Adds an AWS::KinesisAnalytics::Application.MappingParameters resource property to the template
+Adds an AWS::KinesisAnalytics::Application.MappingParameters resource property to the template.
+When configuring application input at the time of creating or updating an application, provides additional mapping information specific to the record format (such as JSON, CSV, or record fields delimited by some delimiter on the streaming source.
 
 ## SYNTAX
 
@@ -22,14 +12,25 @@ Add-VSKinesisAnalyticsApplicationMappingParameters [[-JSONMappingParameters] <Ob
 ```
 
 ## DESCRIPTION
-Adds an AWS::KinesisAnalytics::Application.MappingParameters resource property to the template
+Adds an AWS::KinesisAnalytics::Application.MappingParameters resource property to the template.
+When configuring application input at the time of creating or updating an application, provides additional mapping information specific to the record format (such as JSON, CSV, or record fields delimited by some delimiter on the streaming source.
+
+## EXAMPLES
+
+### Example 1
+```powershell
+PS C:\> {{ Add example code here }}
+```
+
+{{ Add example description here }}
 
 ## PARAMETERS
 
 ### -JSONMappingParameters
-Type: JSONMappingParameters    
-Required: False    
-Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-kinesisanalytics-application-mappingparameters.html#cfn-kinesisanalytics-application-mappingparameters-jsonmappingparameters    
+Provides additional mapping information when JSON is the record format on the streaming source.
+
+Type: JSONMappingParameters
+Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-kinesisanalytics-application-mappingparameters.html#cfn-kinesisanalytics-application-mappingparameters-jsonmappingparameters
 UpdateType: Mutable
 
 ```yaml
@@ -45,9 +46,10 @@ Accept wildcard characters: False
 ```
 
 ### -CSVMappingParameters
-Type: CSVMappingParameters    
-Required: False    
-Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-kinesisanalytics-application-mappingparameters.html#cfn-kinesisanalytics-application-mappingparameters-csvmappingparameters    
+Provides additional mapping information when the record format uses delimiters for example, CSV.
+
+Type: CSVMappingParameters
+Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-kinesisanalytics-application-mappingparameters.html#cfn-kinesisanalytics-application-mappingparameters-csvmappingparameters
 UpdateType: Mutable
 
 ```yaml
@@ -63,15 +65,13 @@ Accept wildcard characters: False
 ```
 
 ### CommonParameters
-This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction, and -WarningVariable.
-For more information, see about_CommonParameters (http://go.microsoft.com/fwlink/?LinkID=113216).
+This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction, and -WarningVariable. For more information, see [about_CommonParameters](http://go.microsoft.com/fwlink/?LinkID=113216).
 
 ## INPUTS
 
 ## OUTPUTS
 
 ### Vaporshell.Resource.KinesisAnalytics.Application.MappingParameters
-
 ## NOTES
 
 ## RELATED LINKS

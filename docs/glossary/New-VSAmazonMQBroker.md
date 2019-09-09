@@ -1,32 +1,65 @@
----
-layout: glossary
-title: New-VSAmazonMQBroker
-categories: glossary
-label1: Category
-data1: Documentation
-label2: Depth
-data2: Deep
-schema: 2.0.0
----
-
 # New-VSAmazonMQBroker
 
 ## SYNOPSIS
-Adds an AWS::AmazonMQ::Broker resource to the template
+Adds an AWS::AmazonMQ::Broker resource to the template.
+A *broker* is a message broker environment running on Amazon MQ.
+It is the basic building block of Amazon MQ.
 
 ## SYNTAX
 
 ```
 New-VSAmazonMQBroker [-LogicalId] <String> [-SecurityGroups <Object>] -EngineVersion <Object>
- [-Configuration <Object>] [-MaintenanceWindowStartTime <Object>] -DeploymentMode <Object>
- -HostInstanceType <Object> -EngineType <Object> -AutoMinorVersionUpgrade <Boolean> -Users <Object>
- -PubliclyAccessible <Boolean> [-SubnetIds <Object>] -BrokerName <Object> [-DeletionPolicy <String>]
- [-DependsOn <String[]>] [-Metadata <Object>] [-UpdatePolicy <Object>] [-Condition <Object>]
- [<CommonParameters>]
+ [-Configuration <Object>] [-MaintenanceWindowStartTime <Object>] -HostInstanceType <Object>
+ -AutoMinorVersionUpgrade <Boolean> -Users <Object> [-Logs <Object>] [-SubnetIds <Object>] -BrokerName <Object>
+ -DeploymentMode <Object> -EngineType <Object> -PubliclyAccessible <Boolean> [-EncryptionOptions <Object>]
+ [-Tags <Object>] [-DeletionPolicy <String>] [-DependsOn <String[]>] [-Metadata <Object>]
+ [-UpdatePolicy <Object>] [-Condition <Object>] [<CommonParameters>]
 ```
 
 ## DESCRIPTION
-Adds an AWS::AmazonMQ::Broker resource to the template
+Adds an AWS::AmazonMQ::Broker resource to the template.
+A *broker* is a message broker environment running on Amazon MQ.
+It is the basic building block of Amazon MQ.
+
+The AWS::AmazonMQ::Broker resource lets you create Amazon MQ brokers, add configuration changes or modify users for the specified broker, return information about the specified broker, and delete the specified broker.
+For more information, see Amazon MQ Basic Elements: https://docs.aws.amazon.com/amazon-mq/latest/developer-guide/amazon-mq-basic-elements.html in the *Amazon MQ Developer Guide*.
+
++ ec2:CreateNetworkInterface
+
+This permission is required to allow Amazon MQ to create an elastic network interface (ENI on behalf of your account.
+
++ ec2:CreateNetworkInterfacePermission
+
+This permission is required to attach the ENI to the broker instance.
+
++ ec2:DeleteNetworkInterface
+
++ ec2:DeleteNetworkInterfacePermission
+
++ ec2:DetachNetworkInterface
+
++ ec2:DescribeInternetGateways
+
++ ec2:DescribeNetworkInterfaces
+
++ ec2:DescribeNetworkInterfacePermissions
+
++ ec2:DescribeRouteTables
+
++ ec2:DescribeSecurityGroups
+
++ ec2:DescribeSubnets
+
++ ec2:DescribeVpcs
+
+## EXAMPLES
+
+### Example 1
+```powershell
+PS C:\> {{ Add example code here }}
+```
+
+{{ Add example description here }}
 
 ## PARAMETERS
 
@@ -48,11 +81,12 @@ Accept wildcard characters: False
 ```
 
 ### -SecurityGroups
-PrimitiveItemType: String    
-Type: List    
-Required: False    
-Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-amazonmq-broker.html#cfn-amazonmq-broker-securitygroups    
-UpdateType: Immutable
+The list of rules 1 minimum, 125 maximum that authorize connections to brokers.
+
+PrimitiveItemType: String
+Type: List
+Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-amazonmq-broker.html#cfn-amazonmq-broker-securitygroups
+UpdateType: Mutable
 
 ```yaml
 Type: Object
@@ -67,10 +101,12 @@ Accept wildcard characters: False
 ```
 
 ### -EngineVersion
-Required: True    
-Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-amazonmq-broker.html#cfn-amazonmq-broker-engineversion    
-PrimitiveType: String    
-UpdateType: Immutable
+The version of the broker engine.
+For a list of supported engine versions, see https://docs.aws.amazon.com/amazon-mq/latest/developer-guide/broker-engine.html.
+
+Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-amazonmq-broker.html#cfn-amazonmq-broker-engineversion
+PrimitiveType: String
+UpdateType: Mutable
 
 ```yaml
 Type: Object
@@ -85,9 +121,10 @@ Accept wildcard characters: False
 ```
 
 ### -Configuration
-Type: ConfigurationId    
-Required: False    
-Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-amazonmq-broker.html#cfn-amazonmq-broker-configuration    
+A list of information about the configuration.
+
+Type: ConfigurationId
+Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-amazonmq-broker.html#cfn-amazonmq-broker-configuration
 UpdateType: Mutable
 
 ```yaml
@@ -103,9 +140,10 @@ Accept wildcard characters: False
 ```
 
 ### -MaintenanceWindowStartTime
-Type: MaintenanceWindow    
-Required: False    
-Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-amazonmq-broker.html#cfn-amazonmq-broker-maintenancewindowstarttime    
+The scheduled time period relative to UTC during which Amazon MQ begins to apply pending updates or patches to the broker..
+
+Type: MaintenanceWindow
+Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-amazonmq-broker.html#cfn-amazonmq-broker-maintenancewindowstarttime
 UpdateType: Immutable
 
 ```yaml
@@ -120,46 +158,11 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
-### -DeploymentMode
-Required: True    
-Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-amazonmq-broker.html#cfn-amazonmq-broker-deploymentmode    
-PrimitiveType: String    
-UpdateType: Immutable
-
-```yaml
-Type: Object
-Parameter Sets: (All)
-Aliases:
-
-Required: True
-Position: Named
-Default value: None
-Accept pipeline input: False
-Accept wildcard characters: False
-```
-
 ### -HostInstanceType
-Required: True    
-Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-amazonmq-broker.html#cfn-amazonmq-broker-hostinstancetype    
-PrimitiveType: String    
-UpdateType: Immutable
+The broker's instance type.
 
-```yaml
-Type: Object
-Parameter Sets: (All)
-Aliases:
-
-Required: True
-Position: Named
-Default value: None
-Accept pipeline input: False
-Accept wildcard characters: False
-```
-
-### -EngineType
-Required: True    
-Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-amazonmq-broker.html#cfn-amazonmq-broker-enginetype    
-PrimitiveType: String    
+Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-amazonmq-broker.html#cfn-amazonmq-broker-hostinstancetype
+PrimitiveType: String
 UpdateType: Immutable
 
 ```yaml
@@ -175,10 +178,12 @@ Accept wildcard characters: False
 ```
 
 ### -AutoMinorVersionUpgrade
-Required: True    
-Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-amazonmq-broker.html#cfn-amazonmq-broker-autominorversionupgrade    
-PrimitiveType: Boolean    
-UpdateType: Immutable
+Enables automatic upgrades to new minor versions for brokers, as Apache releases the versions.
+The automatic upgrades occur during the maintenance window of the broker or after a manual broker reboot.
+
+Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-amazonmq-broker.html#cfn-amazonmq-broker-autominorversionupgrade
+PrimitiveType: Boolean
+UpdateType: Mutable
 
 ```yaml
 Type: Boolean
@@ -193,10 +198,14 @@ Accept wildcard characters: False
 ```
 
 ### -Users
-Type: List    
-Required: True    
-Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-amazonmq-broker.html#cfn-amazonmq-broker-users    
-ItemType: User    
+The list of ActiveMQ users persons or applications who can access queues and topics.
+This value can contain only alphanumeric characters, dashes, periods, underscores, and tildes - .
+_ ~.
+This value must be 2-100 characters long.
+
+Type: List
+Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-amazonmq-broker.html#cfn-amazonmq-broker-users
+ItemType: User
 UpdateType: Mutable
 
 ```yaml
@@ -211,29 +220,33 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
-### -PubliclyAccessible
-Required: True    
-Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-amazonmq-broker.html#cfn-amazonmq-broker-publiclyaccessible    
-PrimitiveType: Boolean    
-UpdateType: Immutable
+### -Logs
+Enables Amazon CloudWatch logging for brokers.
+
+Type: LogList
+Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-amazonmq-broker.html#cfn-amazonmq-broker-logs
+UpdateType: Mutable
 
 ```yaml
-Type: Boolean
+Type: Object
 Parameter Sets: (All)
 Aliases:
 
-Required: True
+Required: False
 Position: Named
-Default value: False
+Default value: None
 Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
 ### -SubnetIds
-PrimitiveItemType: String    
-Type: List    
-Required: False    
-Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-amazonmq-broker.html#cfn-amazonmq-broker-subnetids    
+The list of groups 2 maximum that define which subnets and IP ranges the broker can use from different Availability Zones.
+A SINGLE_INSTANCE deployment requires one subnet for example, the default subnet.
+An ACTIVE_STANDBY_MULTI_AZ deployment requires two subnets.
+
+PrimitiveItemType: String
+Type: List
+Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-amazonmq-broker.html#cfn-amazonmq-broker-subnetids
 UpdateType: Immutable
 
 ```yaml
@@ -249,9 +262,11 @@ Accept wildcard characters: False
 ```
 
 ### -BrokerName
-Required: True    
-Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-amazonmq-broker.html#cfn-amazonmq-broker-brokername    
-PrimitiveType: String    
+The name of the broker.
+This value must be unique in your AWS account, 1-50 characters long, must contain only letters, numbers, dashes, and underscores, and must not contain white spaces, brackets, wildcard characters, or special characters.
+
+Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-amazonmq-broker.html#cfn-amazonmq-broker-brokername
+PrimitiveType: String
 UpdateType: Immutable
 
 ```yaml
@@ -260,6 +275,107 @@ Parameter Sets: (All)
 Aliases:
 
 Required: True
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### -DeploymentMode
+The deployment mode of the broker.
+Available values:
++ SINGLE_INSTANCE
++ ACTIVE_STANDBY_MULTI_AZ
+
+Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-amazonmq-broker.html#cfn-amazonmq-broker-deploymentmode
+PrimitiveType: String
+UpdateType: Immutable
+
+```yaml
+Type: Object
+Parameter Sets: (All)
+Aliases:
+
+Required: True
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### -EngineType
+The type of broker engine.
+Note: Currently, Amazon MQ supports only ACTIVEMQ.
+
+Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-amazonmq-broker.html#cfn-amazonmq-broker-enginetype
+PrimitiveType: String
+UpdateType: Immutable
+
+```yaml
+Type: Object
+Parameter Sets: (All)
+Aliases:
+
+Required: True
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### -PubliclyAccessible
+Enables connections from applications outside of the VPC that hosts the broker's subnets.
+
+Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-amazonmq-broker.html#cfn-amazonmq-broker-publiclyaccessible
+PrimitiveType: Boolean
+UpdateType: Immutable
+
+```yaml
+Type: Boolean
+Parameter Sets: (All)
+Aliases:
+
+Required: True
+Position: Named
+Default value: False
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### -EncryptionOptions
+Encryption options for the broker.
+
+Type: EncryptionOptions
+Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-amazonmq-broker.html#cfn-amazonmq-broker-encryptionoptions
+UpdateType: Immutable
+
+```yaml
+Type: Object
+Parameter Sets: (All)
+Aliases:
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### -Tags
+An array of key-value pairs.
+For more information, see Using Cost Allocation Tags: https://docs.aws.amazon.com/awsaccountbilling/latest/aboutv2/cost-alloc-tags.html in the *AWS Billing and Cost Management User Guide*.
+
+Type: List
+Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-amazonmq-broker.html#cfn-amazonmq-broker-tags
+ItemType: TagsEntry
+UpdateType: Mutable
+
+```yaml
+Type: Object
+Parameter Sets: (All)
+Aliases:
+
+Required: False
 Position: Named
 Default value: None
 Accept pipeline input: False
@@ -361,15 +477,13 @@ Accept wildcard characters: False
 ```
 
 ### CommonParameters
-This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction, and -WarningVariable.
-For more information, see about_CommonParameters (http://go.microsoft.com/fwlink/?LinkID=113216).
+This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction, and -WarningVariable. For more information, see [about_CommonParameters](http://go.microsoft.com/fwlink/?LinkID=113216).
 
 ## INPUTS
 
 ## OUTPUTS
 
 ### Vaporshell.Resource.AmazonMQ.Broker
-
 ## NOTES
 
 ## RELATED LINKS

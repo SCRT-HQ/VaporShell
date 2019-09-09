@@ -1,18 +1,8 @@
----
-layout: glossary
-title: New-VSDAXSubnetGroup
-categories: glossary
-label1: Category
-data1: Documentation
-label2: Depth
-data2: Deep
-schema: 2.0.0
----
-
 # New-VSDAXSubnetGroup
 
 ## SYNOPSIS
-Adds an AWS::DAX::SubnetGroup resource to the template
+Adds an AWS::DAX::SubnetGroup resource to the template.
+Creates a new subnet group.
 
 ## SYNTAX
 
@@ -23,7 +13,17 @@ New-VSDAXSubnetGroup [-LogicalId] <String> [-Description <Object>] [-SubnetGroup
 ```
 
 ## DESCRIPTION
-Adds an AWS::DAX::SubnetGroup resource to the template
+Adds an AWS::DAX::SubnetGroup resource to the template.
+Creates a new subnet group.
+
+## EXAMPLES
+
+### Example 1
+```powershell
+PS C:\> {{ Add example code here }}
+```
+
+{{ Add example description here }}
 
 ## PARAMETERS
 
@@ -45,9 +45,10 @@ Accept wildcard characters: False
 ```
 
 ### -Description
-Required: False    
-Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-dax-subnetgroup.html#cfn-dax-subnetgroup-description    
-PrimitiveType: String    
+The description of the subnet group.
+
+Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-dax-subnetgroup.html#cfn-dax-subnetgroup-description
+PrimitiveType: String
 UpdateType: Mutable
 
 ```yaml
@@ -63,9 +64,10 @@ Accept wildcard characters: False
 ```
 
 ### -SubnetGroupName
-Required: False    
-Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-dax-subnetgroup.html#cfn-dax-subnetgroup-subnetgroupname    
-PrimitiveType: String    
+The name of the subnet group.
+
+Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-dax-subnetgroup.html#cfn-dax-subnetgroup-subnetgroupname
+PrimitiveType: String
 UpdateType: Immutable
 
 ```yaml
@@ -81,10 +83,11 @@ Accept wildcard characters: False
 ```
 
 ### -SubnetIds
-PrimitiveItemType: String    
-Type: List    
-Required: True    
-Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-dax-subnetgroup.html#cfn-dax-subnetgroup-subnetids    
+A list of VPC subnet IDs for the subnet group.
+
+PrimitiveItemType: String
+Type: List
+Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-dax-subnetgroup.html#cfn-dax-subnetgroup-subnetids
 UpdateType: Mutable
 
 ```yaml
@@ -194,15 +197,13 @@ Accept wildcard characters: False
 ```
 
 ### CommonParameters
-This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction, and -WarningVariable.
-For more information, see about_CommonParameters (http://go.microsoft.com/fwlink/?LinkID=113216).
+This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction, and -WarningVariable. For more information, see [about_CommonParameters](http://go.microsoft.com/fwlink/?LinkID=113216).
 
 ## INPUTS
 
 ## OUTPUTS
 
 ### Vaporshell.Resource.DAX.SubnetGroup
-
 ## NOTES
 
 ## RELATED LINKS

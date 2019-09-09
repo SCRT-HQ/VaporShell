@@ -1,18 +1,8 @@
----
-layout: glossary
-title: Add-VSSSMAssociationParameterValues
-categories: glossary
-label1: Category
-data1: Documentation
-label2: Depth
-data2: Deep
-schema: 2.0.0
----
-
 # Add-VSSSMAssociationParameterValues
 
 ## SYNOPSIS
-Adds an AWS::SSM::Association.ParameterValues resource property to the template
+Adds an AWS::SSM::Association.ParameterValues resource property to the template.
+ParameterValues is a property of the AWS::SSM::Association: https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ssm-association.html resource that specifies the parameters for the runtime configuration of the document.
 
 ## SYNTAX
 
@@ -21,16 +11,27 @@ Add-VSSSMAssociationParameterValues [-ParameterValues] <Object> [<CommonParamete
 ```
 
 ## DESCRIPTION
-Adds an AWS::SSM::Association.ParameterValues resource property to the template
+Adds an AWS::SSM::Association.ParameterValues resource property to the template.
+ParameterValues is a property of the AWS::SSM::Association: https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ssm-association.html resource that specifies the parameters for the runtime configuration of the document.
+
+## EXAMPLES
+
+### Example 1
+```powershell
+PS C:\> {{ Add example code here }}
+```
+
+{{ Add example description here }}
 
 ## PARAMETERS
 
 ### -ParameterValues
-Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ssm-association-parametervalues.html#cfn-ssm-association-parametervalues-parametervalues    
-DuplicatesAllowed: False    
-PrimitiveItemType: String    
-Required: True    
-Type: List    
+The parameters for the runtime configuration of the document.
+
+Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ssm-association-parametervalues.html#cfn-ssm-association-parametervalues-parametervalues
+DuplicatesAllowed: False
+PrimitiveItemType: String
+Type: List
 UpdateType: Mutable
 
 ```yaml
@@ -46,15 +47,13 @@ Accept wildcard characters: False
 ```
 
 ### CommonParameters
-This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction, and -WarningVariable.
-For more information, see about_CommonParameters (http://go.microsoft.com/fwlink/?LinkID=113216).
+This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction, and -WarningVariable. For more information, see [about_CommonParameters](http://go.microsoft.com/fwlink/?LinkID=113216).
 
 ## INPUTS
 
 ## OUTPUTS
 
 ### Vaporshell.Resource.SSM.Association.ParameterValues
-
 ## NOTES
 
 ## RELATED LINKS

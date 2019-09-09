@@ -1,18 +1,8 @@
----
-layout: glossary
-title: Add-VSDirectoryServiceMicrosoftADVpcSettings
-categories: glossary
-label1: Category
-data1: Documentation
-label2: Depth
-data2: Deep
-schema: 2.0.0
----
-
 # Add-VSDirectoryServiceMicrosoftADVpcSettings
 
 ## SYNOPSIS
-Adds an AWS::DirectoryService::MicrosoftAD.VpcSettings resource property to the template
+Adds an AWS::DirectoryService::MicrosoftAD.VpcSettings resource property to the template.
+Contains VPC information for the CreateDirectory: https://docs.aws.amazon.com/directoryservice/latest/devguide/API_CreateDirectory.html or CreateMicrosoftAD: https://docs.aws.amazon.com/directoryservice/latest/devguide/API_CreateMicrosoftAD.html operation.
 
 ## SYNTAX
 
@@ -21,16 +11,29 @@ Add-VSDirectoryServiceMicrosoftADVpcSettings [-SubnetIds] <Object> [-VpcId] <Obj
 ```
 
 ## DESCRIPTION
-Adds an AWS::DirectoryService::MicrosoftAD.VpcSettings resource property to the template
+Adds an AWS::DirectoryService::MicrosoftAD.VpcSettings resource property to the template.
+Contains VPC information for the CreateDirectory: https://docs.aws.amazon.com/directoryservice/latest/devguide/API_CreateDirectory.html or CreateMicrosoftAD: https://docs.aws.amazon.com/directoryservice/latest/devguide/API_CreateMicrosoftAD.html operation.
+
+## EXAMPLES
+
+### Example 1
+```powershell
+PS C:\> {{ Add example code here }}
+```
+
+{{ Add example description here }}
 
 ## PARAMETERS
 
 ### -SubnetIds
-Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-directoryservice-microsoftad-vpcsettings.html#cfn-directoryservice-microsoftad-vpcsettings-subnetids    
-DuplicatesAllowed: False    
-PrimitiveItemType: String    
-Required: True    
-Type: List    
+The identifiers of the subnets for the directory servers.
+The two subnets must be in different Availability Zones.
+AWS Directory Service specifies a directory server and a DNS server in each of these subnets.
+
+Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-directoryservice-microsoftad-vpcsettings.html#cfn-directoryservice-microsoftad-vpcsettings-subnetids
+DuplicatesAllowed: False
+PrimitiveItemType: String
+Type: List
 UpdateType: Mutable
 
 ```yaml
@@ -46,9 +49,10 @@ Accept wildcard characters: False
 ```
 
 ### -VpcId
-Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-directoryservice-microsoftad-vpcsettings.html#cfn-directoryservice-microsoftad-vpcsettings-vpcid    
-PrimitiveType: String    
-Required: True    
+The identifier of the VPC in which to create the directory.
+
+Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-directoryservice-microsoftad-vpcsettings.html#cfn-directoryservice-microsoftad-vpcsettings-vpcid
+PrimitiveType: String
 UpdateType: Mutable
 
 ```yaml
@@ -64,15 +68,13 @@ Accept wildcard characters: False
 ```
 
 ### CommonParameters
-This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction, and -WarningVariable.
-For more information, see about_CommonParameters (http://go.microsoft.com/fwlink/?LinkID=113216).
+This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction, and -WarningVariable. For more information, see [about_CommonParameters](http://go.microsoft.com/fwlink/?LinkID=113216).
 
 ## INPUTS
 
 ## OUTPUTS
 
 ### Vaporshell.Resource.DirectoryService.MicrosoftAD.VpcSettings
-
 ## NOTES
 
 ## RELATED LINKS

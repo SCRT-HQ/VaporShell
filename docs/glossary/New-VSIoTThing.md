@@ -1,18 +1,8 @@
----
-layout: glossary
-title: New-VSIoTThing
-categories: glossary
-label1: Category
-data1: Documentation
-label2: Depth
-data2: Deep
-schema: 2.0.0
----
-
 # New-VSIoTThing
 
 ## SYNOPSIS
-Adds an AWS::IoT::Thing resource to the template
+Adds an AWS::IoT::Thing resource to the template.
+Use the AWS::IoT::Thing resource to declare an AWS IoT thing.
 
 ## SYNTAX
 
@@ -23,7 +13,19 @@ New-VSIoTThing [-LogicalId] <String> [-AttributePayload <Object>] [-ThingName <O
 ```
 
 ## DESCRIPTION
-Adds an AWS::IoT::Thing resource to the template
+Adds an AWS::IoT::Thing resource to the template.
+Use the AWS::IoT::Thing resource to declare an AWS IoT thing.
+
+For information about working with things, see How AWS IoT Works: https://docs.aws.amazon.com/iot/latest/developerguide/aws-iot-how-it-works.html and Device Registry for AWS IoT: https://docs.aws.amazon.com/iot/latest/developerguide/thing-registry.html in the *AWS IoT Developer Guide*.
+
+## EXAMPLES
+
+### Example 1
+```powershell
+PS C:\> {{ Add example code here }}
+```
+
+{{ Add example description here }}
 
 ## PARAMETERS
 
@@ -45,9 +47,12 @@ Accept wildcard characters: False
 ```
 
 ### -AttributePayload
-Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-iot-thing.html#cfn-iot-thing-attributepayload    
-Required: False    
-Type: AttributePayload    
+A string that contains up to three key-value pairs.
+Maximum length of 800.
+Duplicates not allowed.
+
+Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-iot-thing.html#cfn-iot-thing-attributepayload
+Type: AttributePayload
 UpdateType: Mutable
 
 ```yaml
@@ -63,9 +68,10 @@ Accept wildcard characters: False
 ```
 
 ### -ThingName
-Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-iot-thing.html#cfn-iot-thing-thingname    
-PrimitiveType: String    
-Required: False    
+The name of the thing to update.
+
+Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-iot-thing.html#cfn-iot-thing-thingname
+PrimitiveType: String
 UpdateType: Immutable
 
 ```yaml
@@ -175,15 +181,13 @@ Accept wildcard characters: False
 ```
 
 ### CommonParameters
-This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction, and -WarningVariable.
-For more information, see about_CommonParameters (http://go.microsoft.com/fwlink/?LinkID=113216).
+This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction, and -WarningVariable. For more information, see [about_CommonParameters](http://go.microsoft.com/fwlink/?LinkID=113216).
 
 ## INPUTS
 
 ## OUTPUTS
 
 ### Vaporshell.Resource.IoT.Thing
-
 ## NOTES
 
 ## RELATED LINKS

@@ -1,18 +1,8 @@
----
-layout: glossary
-title: New-VSAutoScalingScheduledAction
-categories: glossary
-label1: Category
-data1: Documentation
-label2: Depth
-data2: Deep
-schema: 2.0.0
----
-
 # New-VSAutoScalingScheduledAction
 
 ## SYNOPSIS
-Adds an AWS::AutoScaling::ScheduledAction resource to the template
+Adds an AWS::AutoScaling::ScheduledAction resource to the template.
+Specifies a scheduled scaling action for an Amazon EC2 Auto Scaling group, changing the number of servers available for your application in response to predictable load changes.
 
 ## SYNTAX
 
@@ -24,7 +14,28 @@ New-VSAutoScalingScheduledAction [-LogicalId] <String> -AutoScalingGroupName <Ob
 ```
 
 ## DESCRIPTION
-Adds an AWS::AutoScaling::ScheduledAction resource to the template
+Adds an AWS::AutoScaling::ScheduledAction resource to the template.
+Specifies a scheduled scaling action for an Amazon EC2 Auto Scaling group, changing the number of servers available for your application in response to predictable load changes.
+
+**Important**
+
+When you update a stack with an Auto Scaling group and scheduled action, AWS CloudFormation always sets the min size, max size, and desired capacity properties of your group to the values that are defined in the AWS::AutoScaling::AutoScalingGroup section of your template.
+However, you might not want CloudFormation to do that when you have a scheduled action in effect.
+You can use an UpdatePolicy attribute: https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-attribute-updatepolicy.html to prevent CloudFormation from changing the min size, max size, or desired capacity property values during a stack update unless you modified the individual values in your template.
+
+If you have rolling updates enabled, before you can update the Auto Scaling group, you must suspend scheduled actions by specifying an UpdatePolicy attribute: https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-attribute-updatepolicy.html for the Auto Scaling group.
+You can find sample update policies for rolling updates in the Examples: https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-as-group.html#aws-properties-as-group--examples section of the AWS::AutoScaling::AutoScalingGroup documentation.
+
+For more information, see Scheduled Scaling: https://docs.aws.amazon.com/autoscaling/ec2/userguide/schedule_time.html and Suspending and Resuming Scaling Processes: https://docs.aws.amazon.com/autoscaling/ec2/userguide/as-suspend-resume-processes.html in the *Amazon EC2 Auto Scaling User Guide*.
+
+## EXAMPLES
+
+### Example 1
+```powershell
+PS C:\> {{ Add example code here }}
+```
+
+{{ Add example description here }}
 
 ## PARAMETERS
 
@@ -46,9 +57,10 @@ Accept wildcard characters: False
 ```
 
 ### -AutoScalingGroupName
-Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-as-scheduledaction.html#cfn-as-scheduledaction-asgname    
-PrimitiveType: String    
-Required: True    
+The name or Amazon Resource Name ARN of the Auto Scaling group.
+
+Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-as-scheduledaction.html#cfn-as-scheduledaction-asgname
+PrimitiveType: String
 UpdateType: Immutable
 
 ```yaml
@@ -64,9 +76,11 @@ Accept wildcard characters: False
 ```
 
 ### -DesiredCapacity
-Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-as-scheduledaction.html#cfn-as-scheduledaction-desiredcapacity    
-PrimitiveType: Integer    
-Required: False    
+The number of Amazon EC2 instances that should be running in the Auto Scaling group.
+You must specify at least one of the following properties: MaxSize, MinSize, or DesiredCapacity.
+
+Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-as-scheduledaction.html#cfn-as-scheduledaction-desiredcapacity
+PrimitiveType: Integer
 UpdateType: Mutable
 
 ```yaml
@@ -82,9 +96,11 @@ Accept wildcard characters: False
 ```
 
 ### -EndTime
-Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-as-scheduledaction.html#cfn-as-scheduledaction-endtime    
-PrimitiveType: String    
-Required: False    
+The date and time in UTC for the recurring schedule to end.
+For example, "2019-06-01T00:00:00Z".
+
+Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-as-scheduledaction.html#cfn-as-scheduledaction-endtime
+PrimitiveType: String
 UpdateType: Mutable
 
 ```yaml
@@ -100,9 +116,11 @@ Accept wildcard characters: False
 ```
 
 ### -MaxSize
-Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-as-scheduledaction.html#cfn-as-scheduledaction-maxsize    
-PrimitiveType: Integer    
-Required: False    
+The maximum number of Amazon EC2 instances in the Auto Scaling group.
+You must specify at least one of the following properties: MaxSize, MinSize, or DesiredCapacity.
+
+Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-as-scheduledaction.html#cfn-as-scheduledaction-maxsize
+PrimitiveType: Integer
 UpdateType: Mutable
 
 ```yaml
@@ -118,9 +136,11 @@ Accept wildcard characters: False
 ```
 
 ### -MinSize
-Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-as-scheduledaction.html#cfn-as-scheduledaction-minsize    
-PrimitiveType: Integer    
-Required: False    
+The minimum number of Amazon EC2 instances in the Auto Scaling group.
+You must specify at least one of the following properties: MaxSize, MinSize, or DesiredCapacity.
+
+Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-as-scheduledaction.html#cfn-as-scheduledaction-minsize
+PrimitiveType: Integer
 UpdateType: Mutable
 
 ```yaml
@@ -136,9 +156,12 @@ Accept wildcard characters: False
 ```
 
 ### -Recurrence
-Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-as-scheduledaction.html#cfn-as-scheduledaction-recurrence    
-PrimitiveType: String    
-Required: False    
+The recurring schedule for this action, in Unix cron syntax format.
+For more information about cron syntax, see Crontab: http://crontab.org/.
+Specifying the StartTime and EndTime properties with Recurrence property forms the start and stop boundaries of the recurring action.
+
+Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-as-scheduledaction.html#cfn-as-scheduledaction-recurrence
+PrimitiveType: String
 UpdateType: Mutable
 
 ```yaml
@@ -154,9 +177,11 @@ Accept wildcard characters: False
 ```
 
 ### -StartTime
-Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-as-scheduledaction.html#cfn-as-scheduledaction-starttime    
-PrimitiveType: String    
-Required: False    
+The date and time in UTC for this action to start.
+For example, "2019-06-01T00:00:00Z".
+
+Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-as-scheduledaction.html#cfn-as-scheduledaction-starttime
+PrimitiveType: String
 UpdateType: Mutable
 
 ```yaml
@@ -266,15 +291,13 @@ Accept wildcard characters: False
 ```
 
 ### CommonParameters
-This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction, and -WarningVariable.
-For more information, see about_CommonParameters (http://go.microsoft.com/fwlink/?LinkID=113216).
+This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction, and -WarningVariable. For more information, see [about_CommonParameters](http://go.microsoft.com/fwlink/?LinkID=113216).
 
 ## INPUTS
 
 ## OUTPUTS
 
 ### Vaporshell.Resource.AutoScaling.ScheduledAction
-
 ## NOTES
 
 ## RELATED LINKS

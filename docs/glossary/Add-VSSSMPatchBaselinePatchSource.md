@@ -1,18 +1,8 @@
----
-layout: glossary
-title: Add-VSSSMPatchBaselinePatchSource
-categories: glossary
-label1: Category
-data1: Documentation
-label2: Depth
-data2: Deep
-schema: 2.0.0
----
-
 # Add-VSSSMPatchBaselinePatchSource
 
 ## SYNOPSIS
-Adds an AWS::SSM::PatchBaseline.PatchSource resource property to the template
+Adds an AWS::SSM::PatchBaseline.PatchSource resource property to the template.
+PatchSource is the property type for the Sources resource of the AWS::SSM::PatchBaseline: https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ssm-patchbaseline.html resource.
 
 ## SYNTAX
 
@@ -22,15 +12,30 @@ Add-VSSSMPatchBaselinePatchSource [[-Products] <Object>] [[-Configuration] <Obje
 ```
 
 ## DESCRIPTION
-Adds an AWS::SSM::PatchBaseline.PatchSource resource property to the template
+Adds an AWS::SSM::PatchBaseline.PatchSource resource property to the template.
+PatchSource is the property type for the Sources resource of the AWS::SSM::PatchBaseline: https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ssm-patchbaseline.html resource.
+
+The AWS CloudFormation AWS::SSM::PatchSource resource is used to provide information about the patches to use to update target instances, including target operating systems and source repository.
+Applies to Linux instances only.
+
+## EXAMPLES
+
+### Example 1
+```powershell
+PS C:\> {{ Add example code here }}
+```
+
+{{ Add example description here }}
 
 ## PARAMETERS
 
 ### -Products
-PrimitiveItemType: String    
-Type: List    
-Required: False    
-Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ssm-patchbaseline-patchsource.html#cfn-ssm-patchbaseline-patchsource-products    
+The specific operating system versions a patch repository applies to, such as "Ubuntu16.04", "AmazonLinux2016.09", "RedhatEnterpriseLinux7.2" or "Suse12.7".
+For lists of supported product values, see PatchFilter: https://docs.aws.amazon.com/systems-manager/latest/APIReference/API_PatchFilter.html in the *AWS Systems Manager API Reference*.
+
+PrimitiveItemType: String
+Type: List
+Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ssm-patchbaseline-patchsource.html#cfn-ssm-patchbaseline-patchsource-products
 UpdateType: Mutable
 
 ```yaml
@@ -46,9 +51,15 @@ Accept wildcard characters: False
 ```
 
 ### -Configuration
-Required: False    
-Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ssm-patchbaseline-patchsource.html#cfn-ssm-patchbaseline-patchsource-configuration    
-PrimitiveType: String    
+The value of the yum repo configuration.
+For example:
+main\]
+cachedir=/var/cache/yum/$basesearch$releasever
+keepcache=0
+debuglevel=2
+
+Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ssm-patchbaseline-patchsource.html#cfn-ssm-patchbaseline-patchsource-configuration
+PrimitiveType: String
 UpdateType: Mutable
 
 ```yaml
@@ -64,9 +75,10 @@ Accept wildcard characters: False
 ```
 
 ### -Name
-Required: False    
-Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ssm-patchbaseline-patchsource.html#cfn-ssm-patchbaseline-patchsource-name    
-PrimitiveType: String    
+The name specified to identify the patch source.
+
+Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ssm-patchbaseline-patchsource.html#cfn-ssm-patchbaseline-patchsource-name
+PrimitiveType: String
 UpdateType: Mutable
 
 ```yaml
@@ -82,15 +94,13 @@ Accept wildcard characters: False
 ```
 
 ### CommonParameters
-This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction, and -WarningVariable.
-For more information, see about_CommonParameters (http://go.microsoft.com/fwlink/?LinkID=113216).
+This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction, and -WarningVariable. For more information, see [about_CommonParameters](http://go.microsoft.com/fwlink/?LinkID=113216).
 
 ## INPUTS
 
 ## OUTPUTS
 
 ### Vaporshell.Resource.SSM.PatchBaseline.PatchSource
-
 ## NOTES
 
 ## RELATED LINKS

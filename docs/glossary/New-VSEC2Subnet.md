@@ -1,18 +1,8 @@
----
-layout: glossary
-title: New-VSEC2Subnet
-categories: glossary
-label1: Category
-data1: Documentation
-label2: Depth
-data2: Deep
-schema: 2.0.0
----
-
 # New-VSEC2Subnet
 
 ## SYNOPSIS
-Adds an AWS::EC2::Subnet resource to the template
+Adds an AWS::EC2::Subnet resource to the template.
+Specifies a subnet for a VPC.
 
 ## SYNTAX
 
@@ -24,7 +14,25 @@ New-VSEC2Subnet [-LogicalId] <String> [-AssignIpv6AddressOnCreation <Boolean>] [
 ```
 
 ## DESCRIPTION
-Adds an AWS::EC2::Subnet resource to the template
+Adds an AWS::EC2::Subnet resource to the template.
+Specifies a subnet for a VPC.
+
+When you create each subnet, you provide the VPC ID and IPv4 CIDR block for the subnet.
+After you create a subnet, you can't change its CIDR block.
+The size of the subnet's IPv4 CIDR block can be the same as a VPC's IPv4 CIDR block, or a subset of a VPC's IPv4 CIDR block.
+If you create more than one subnet in a VPC, the subnets' CIDR blocks must not overlap.
+The smallest IPv4 subnet (and VPC you can create uses a /28 netmask (16 IPv4 addresses, and the largest uses a /16 netmask (65,536 IPv4 addresses.
+
+If you've associated an IPv6 CIDR block with your VPC, you can create a subnet with an IPv6 CIDR block that uses a /64 prefix length.
+
+## EXAMPLES
+
+### Example 1
+```powershell
+PS C:\> {{ Add example code here }}
+```
+
+{{ Add example description here }}
 
 ## PARAMETERS
 
@@ -46,9 +54,13 @@ Accept wildcard characters: False
 ```
 
 ### -AssignIpv6AddressOnCreation
-Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ec2-subnet.html#cfn-ec2-subnet-assignipv6addressoncreation    
-PrimitiveType: Boolean    
-Required: False    
+Indicates whether a network interface created in this subnet receives an IPv6 address.
+The default value is false.
+If you specify a true or false value for AssignIpv6AddressOnCreation, Ipv6CidrBlock must also be specified.
+If AssignIpv6AddressOnCreation is specified, MapPublicIpOnLaunch cannot be specified.
+
+Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ec2-subnet.html#cfn-ec2-subnet-assignipv6addressoncreation
+PrimitiveType: Boolean
 UpdateType: Mutable
 
 ```yaml
@@ -64,9 +76,11 @@ Accept wildcard characters: False
 ```
 
 ### -AvailabilityZone
-Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ec2-subnet.html#cfn-ec2-subnet-availabilityzone    
-PrimitiveType: String    
-Required: False    
+The Availability Zone of the subnet.
+If you update this property, you must also update the CidrBlock property.
+
+Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ec2-subnet.html#cfn-ec2-subnet-availabilityzone
+PrimitiveType: String
 UpdateType: Immutable
 
 ```yaml
@@ -82,9 +96,11 @@ Accept wildcard characters: False
 ```
 
 ### -CidrBlock
-Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ec2-subnet.html#cfn-ec2-subnet-cidrblock    
-PrimitiveType: String    
-Required: True    
+The IPv4 CIDR block assigned to the subnet.
+If you update this property, you must also update the AvailabilityZone property.
+
+Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ec2-subnet.html#cfn-ec2-subnet-cidrblock
+PrimitiveType: String
 UpdateType: Immutable
 
 ```yaml
@@ -100,9 +116,11 @@ Accept wildcard characters: False
 ```
 
 ### -Ipv6CidrBlock
-Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ec2-subnet.html#cfn-ec2-subnet-ipv6cidrblock    
-PrimitiveType: String    
-Required: False    
+The IPv6 CIDR block.
+If you specify a true or false value for AssignIpv6AddressOnCreation, Ipv6CidrBlock must be specified.
+
+Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ec2-subnet.html#cfn-ec2-subnet-ipv6cidrblock
+PrimitiveType: String
 UpdateType: Mutable
 
 ```yaml
@@ -118,9 +136,12 @@ Accept wildcard characters: False
 ```
 
 ### -MapPublicIpOnLaunch
-Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ec2-subnet.html#cfn-ec2-subnet-mappubliciponlaunch    
-PrimitiveType: Boolean    
-Required: False    
+Indicates whether instances launched in this subnet receive a public IPv4 address.
+If MapPublicIpOnLaunch is specified.
+AssignIpv6AddressOnCreation cannot be specified.
+
+Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ec2-subnet.html#cfn-ec2-subnet-mappubliciponlaunch
+PrimitiveType: Boolean
 UpdateType: Mutable
 
 ```yaml
@@ -136,11 +157,12 @@ Accept wildcard characters: False
 ```
 
 ### -Tags
-Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ec2-subnet.html#cfn-ec2-subnet-tags    
-DuplicatesAllowed: True    
-ItemType: Tag    
-Required: False    
-Type: List    
+Any tags assigned to the subnet.
+
+Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ec2-subnet.html#cfn-ec2-subnet-tags
+DuplicatesAllowed: True
+ItemType: Tag
+Type: List
 UpdateType: Mutable
 
 ```yaml
@@ -156,9 +178,11 @@ Accept wildcard characters: False
 ```
 
 ### -VpcId
-Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ec2-subnet.html#cfn-awsec2subnet-prop-vpcid    
-PrimitiveType: String    
-Required: True    
+The ID of the VPC the subnet is in.
+If you update this property, you must also update the CidrBlock property.
+
+Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ec2-subnet.html#cfn-awsec2subnet-prop-vpcid
+PrimitiveType: String
 UpdateType: Immutable
 
 ```yaml
@@ -268,15 +292,13 @@ Accept wildcard characters: False
 ```
 
 ### CommonParameters
-This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction, and -WarningVariable.
-For more information, see about_CommonParameters (http://go.microsoft.com/fwlink/?LinkID=113216).
+This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction, and -WarningVariable. For more information, see [about_CommonParameters](http://go.microsoft.com/fwlink/?LinkID=113216).
 
 ## INPUTS
 
 ## OUTPUTS
 
 ### Vaporshell.Resource.EC2.Subnet
-
 ## NOTES
 
 ## RELATED LINKS

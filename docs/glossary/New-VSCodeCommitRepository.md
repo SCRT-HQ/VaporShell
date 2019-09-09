@@ -1,29 +1,29 @@
----
-layout: glossary
-title: New-VSCodeCommitRepository
-categories: glossary
-label1: Category
-data1: Documentation
-label2: Depth
-data2: Deep
-schema: 2.0.0
----
-
 # New-VSCodeCommitRepository
 
 ## SYNOPSIS
-Adds an AWS::CodeCommit::Repository resource to the template
+Adds an AWS::CodeCommit::Repository resource to the template.
+Creates a new, empty repository.
 
 ## SYNTAX
 
 ```
-New-VSCodeCommitRepository [-LogicalId] <String> -RepositoryName <Object> [-Triggers <Object>]
- [-RepositoryDescription <Object>] [-DeletionPolicy <String>] [-DependsOn <String[]>] [-Metadata <Object>]
- [-UpdatePolicy <Object>] [-Condition <Object>] [<CommonParameters>]
+New-VSCodeCommitRepository [-LogicalId] <String> -RepositoryName <Object> [-Triggers <Object>] [-Code <Object>]
+ [-RepositoryDescription <Object>] [-Tags <Object>] [-DeletionPolicy <String>] [-DependsOn <String[]>]
+ [-Metadata <Object>] [-UpdatePolicy <Object>] [-Condition <Object>] [<CommonParameters>]
 ```
 
 ## DESCRIPTION
-Adds an AWS::CodeCommit::Repository resource to the template
+Adds an AWS::CodeCommit::Repository resource to the template.
+Creates a new, empty repository.
+
+## EXAMPLES
+
+### Example 1
+```powershell
+PS C:\> {{ Add example code here }}
+```
+
+{{ Add example description here }}
 
 ## PARAMETERS
 
@@ -45,9 +45,14 @@ Accept wildcard characters: False
 ```
 
 ### -RepositoryName
-Required: True    
-Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-codecommit-repository.html#cfn-codecommit-repository-repositoryname    
-PrimitiveType: String    
+The name of the new repository to be created.
+The repository name must be unique across the calling AWS account.
+In addition, repository names are limited to 100 alphanumeric, dash, and underscore characters, and cannot include certain characters.
+For a full description of the limits on repository names, see Limits: https://docs.aws.amazon.com/codecommit/latest/userguide/limits.html in the AWS CodeCommit User Guide.
+The suffix ".git" is prohibited.
+
+Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-codecommit-repository.html#cfn-codecommit-repository-repositoryname
+PrimitiveType: String
 UpdateType: Mutable
 
 ```yaml
@@ -63,10 +68,11 @@ Accept wildcard characters: False
 ```
 
 ### -Triggers
-Type: List    
-Required: False    
-Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-codecommit-repository.html#cfn-codecommit-repository-triggers    
-ItemType: RepositoryTrigger    
+The JSON block of configuration information for each trigger.
+
+Type: List
+Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-codecommit-repository.html#cfn-codecommit-repository-triggers
+ItemType: RepositoryTrigger
 UpdateType: Conditional
 
 ```yaml
@@ -81,10 +87,53 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
+### -Code
+Information about code to be committed to a repository after it is created in an AWS CloudFormation stack.
+
+Type: Code
+Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-codecommit-repository.html#cfn-codecommit-repository-code
+UpdateType: Mutable
+
+```yaml
+Type: Object
+Parameter Sets: (All)
+Aliases:
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
 ### -RepositoryDescription
-Required: False    
-Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-codecommit-repository.html#cfn-codecommit-repository-repositorydescription    
-PrimitiveType: String    
+A comment or description about the new repository.
+The description field for a repository accepts all HTML characters and all valid Unicode characters.
+Applications that do not HTML-encode the description and display it in a web page could expose users to potentially malicious code.
+Make sure that you HTML-encode the description field in any application that uses this API to display the repository description on a web page.
+
+Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-codecommit-repository.html#cfn-codecommit-repository-repositorydescription
+PrimitiveType: String
+UpdateType: Mutable
+
+```yaml
+Type: Object
+Parameter Sets: (All)
+Aliases:
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### -Tags
+One or more tag key-value pairs to use when tagging this repository.
+
+Type: List
+Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-codecommit-repository.html#cfn-codecommit-repository-tags
+ItemType: Tag
 UpdateType: Mutable
 
 ```yaml
@@ -194,15 +243,13 @@ Accept wildcard characters: False
 ```
 
 ### CommonParameters
-This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction, and -WarningVariable.
-For more information, see about_CommonParameters (http://go.microsoft.com/fwlink/?LinkID=113216).
+This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction, and -WarningVariable. For more information, see [about_CommonParameters](http://go.microsoft.com/fwlink/?LinkID=113216).
 
 ## INPUTS
 
 ## OUTPUTS
 
 ### Vaporshell.Resource.CodeCommit.Repository
-
 ## NOTES
 
 ## RELATED LINKS

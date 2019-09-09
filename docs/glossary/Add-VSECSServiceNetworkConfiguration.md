@@ -1,18 +1,8 @@
----
-layout: glossary
-title: Add-VSECSServiceNetworkConfiguration
-categories: glossary
-label1: Category
-data1: Documentation
-label2: Depth
-data2: Deep
-schema: 2.0.0
----
-
 # Add-VSECSServiceNetworkConfiguration
 
 ## SYNOPSIS
-Adds an AWS::ECS::Service.NetworkConfiguration resource property to the template
+Adds an AWS::ECS::Service.NetworkConfiguration resource property to the template.
+The NetworkConfiguration property specifies an object representing the network configuration for a task or service.
 
 ## SYNTAX
 
@@ -21,14 +11,26 @@ Add-VSECSServiceNetworkConfiguration [[-AwsvpcConfiguration] <Object>] [<CommonP
 ```
 
 ## DESCRIPTION
-Adds an AWS::ECS::Service.NetworkConfiguration resource property to the template
+Adds an AWS::ECS::Service.NetworkConfiguration resource property to the template.
+The NetworkConfiguration property specifies an object representing the network configuration for a task or service.
+
+## EXAMPLES
+
+### Example 1
+```powershell
+PS C:\> {{ Add example code here }}
+```
+
+{{ Add example description here }}
 
 ## PARAMETERS
 
 ### -AwsvpcConfiguration
-Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ecs-service-networkconfiguration.html#cfn-ecs-service-networkconfiguration-awsvpcconfiguration    
-Required: False    
-Type: AwsVpcConfiguration    
+The VPC subnets and security groups associated with a task.
+All specified subnets and security groups must be from the same VPC.
+
+Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ecs-service-networkconfiguration.html#cfn-ecs-service-networkconfiguration-awsvpcconfiguration
+Type: AwsVpcConfiguration
 UpdateType: Mutable
 
 ```yaml
@@ -44,15 +46,13 @@ Accept wildcard characters: False
 ```
 
 ### CommonParameters
-This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction, and -WarningVariable.
-For more information, see about_CommonParameters (http://go.microsoft.com/fwlink/?LinkID=113216).
+This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction, and -WarningVariable. For more information, see [about_CommonParameters](http://go.microsoft.com/fwlink/?LinkID=113216).
 
 ## INPUTS
 
 ## OUTPUTS
 
 ### Vaporshell.Resource.ECS.Service.NetworkConfiguration
-
 ## NOTES
 
 ## RELATED LINKS

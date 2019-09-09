@@ -1,18 +1,9 @@
----
-layout: glossary
-title: New-VSSQSQueuePolicy
-categories: glossary
-label1: Category
-data1: Documentation
-label2: Depth
-data2: Deep
-schema: 2.0.0
----
-
 # New-VSSQSQueuePolicy
 
 ## SYNOPSIS
-Adds an AWS::SQS::QueuePolicy resource to the template
+Adds an AWS::SQS::QueuePolicy resource to the template.
+The AWS::SQS::QueuePolicy type applies a policy to Amazon SQS queues.
+For an example snippet, see Declaring an Amazon SQS Policy: https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/quickref-iam.html#scenario-sqs-policy in the *AWS CloudFormation User Guide*.
 
 ## SYNTAX
 
@@ -23,7 +14,18 @@ New-VSSQSQueuePolicy [-LogicalId] <String> -PolicyDocument <Object> -Queues <Obj
 ```
 
 ## DESCRIPTION
-Adds an AWS::SQS::QueuePolicy resource to the template
+Adds an AWS::SQS::QueuePolicy resource to the template.
+The AWS::SQS::QueuePolicy type applies a policy to Amazon SQS queues.
+For an example snippet, see Declaring an Amazon SQS Policy: https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/quickref-iam.html#scenario-sqs-policy in the *AWS CloudFormation User Guide*.
+
+## EXAMPLES
+
+### Example 1
+```powershell
+PS C:\> {{ Add example code here }}
+```
+
+{{ Add example description here }}
 
 ## PARAMETERS
 
@@ -45,9 +47,11 @@ Accept wildcard characters: False
 ```
 
 ### -PolicyDocument
-Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-sqs-policy.html#cfn-sqs-queuepolicy-policydoc    
-PrimitiveType: Json    
-Required: True    
+A policy document that contains the permissions for the specified Amazon SQS queues.
+For more information about Amazon SQS policies, see Creating Custom Policies Using the Access Policy Language: https://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/sqs-creating-custom-policies.html in the *Amazon Simple Queue Service Developer Guide*.
+
+Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-sqs-policy.html#cfn-sqs-queuepolicy-policydoc
+PrimitiveType: Json
 UpdateType: Mutable
 
 ```yaml
@@ -63,11 +67,13 @@ Accept wildcard characters: False
 ```
 
 ### -Queues
-Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-sqs-policy.html#cfn-sqs-queuepolicy-queues    
-DuplicatesAllowed: True    
-PrimitiveItemType: String    
-Required: True    
-Type: List    
+The URLs of the queues to which you want to add the policy.
+You can use the Ref: https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/intrinsic-function-reference-ref.html function to specify an AWS::SQS::Queue: https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-sqs-queues.html resource.
+
+Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-sqs-policy.html#cfn-sqs-queuepolicy-queues
+DuplicatesAllowed: True
+PrimitiveItemType: String
+Type: List
 UpdateType: Mutable
 
 ```yaml
@@ -177,15 +183,13 @@ Accept wildcard characters: False
 ```
 
 ### CommonParameters
-This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction, and -WarningVariable.
-For more information, see about_CommonParameters (http://go.microsoft.com/fwlink/?LinkID=113216).
+This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction, and -WarningVariable. For more information, see [about_CommonParameters](http://go.microsoft.com/fwlink/?LinkID=113216).
 
 ## INPUTS
 
 ## OUTPUTS
 
 ### Vaporshell.Resource.SQS.QueuePolicy
-
 ## NOTES
 
 ## RELATED LINKS

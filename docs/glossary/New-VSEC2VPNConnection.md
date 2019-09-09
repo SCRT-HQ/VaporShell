@@ -1,30 +1,32 @@
----
-layout: glossary
-title: New-VSEC2VPNConnection
-categories: glossary
-label1: Category
-data1: Documentation
-label2: Depth
-data2: Deep
-schema: 2.0.0
----
-
 # New-VSEC2VPNConnection
 
 ## SYNOPSIS
-Adds an AWS::EC2::VPNConnection resource to the template
+Adds an AWS::EC2::VPNConnection resource to the template.
+Specifies a VPN connection between a virtual private gateway and a VPN customer gateway.
 
 ## SYNTAX
 
 ```
 New-VSEC2VPNConnection [-LogicalId] <String> -CustomerGatewayId <Object> [-StaticRoutesOnly <Boolean>]
- [-Tags <Object>] -Type <Object> -VpnGatewayId <Object> [-VpnTunnelOptionsSpecifications <Object>]
- [-DeletionPolicy <String>] [-DependsOn <String[]>] [-Metadata <Object>] [-UpdatePolicy <Object>]
- [-Condition <Object>] [<CommonParameters>]
+ [-Tags <Object>] [-TransitGatewayId <Object>] -Type <Object> [-VpnGatewayId <Object>]
+ [-VpnTunnelOptionsSpecifications <Object>] [-DeletionPolicy <String>] [-DependsOn <String[]>]
+ [-Metadata <Object>] [-UpdatePolicy <Object>] [-Condition <Object>] [<CommonParameters>]
 ```
 
 ## DESCRIPTION
-Adds an AWS::EC2::VPNConnection resource to the template
+Adds an AWS::EC2::VPNConnection resource to the template.
+Specifies a VPN connection between a virtual private gateway and a VPN customer gateway.
+
+For more information, see AWS Site-to-Site VPN: https://docs.aws.amazon.com/vpn/latest/s2svpn/VPC_VPN.html in the *AWS Site-to-Site VPN User Guide*.
+
+## EXAMPLES
+
+### Example 1
+```powershell
+PS C:\> {{ Add example code here }}
+```
+
+{{ Add example description here }}
 
 ## PARAMETERS
 
@@ -46,9 +48,10 @@ Accept wildcard characters: False
 ```
 
 ### -CustomerGatewayId
-Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ec2-vpn-connection.html#cfn-ec2-vpnconnection-customergatewayid    
-PrimitiveType: String    
-Required: True    
+The ID of the customer gateway at your end of the VPN connection.
+
+Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ec2-vpn-connection.html#cfn-ec2-vpnconnection-customergatewayid
+PrimitiveType: String
 UpdateType: Immutable
 
 ```yaml
@@ -64,9 +67,12 @@ Accept wildcard characters: False
 ```
 
 ### -StaticRoutesOnly
-Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ec2-vpn-connection.html#cfn-ec2-vpnconnection-StaticRoutesOnly    
-PrimitiveType: Boolean    
-Required: False    
+Indicates whether the VPN connection uses static routes only.
+Static routes must be used for devices that don't support BGP.
+If you are creating a VPN connection for a device that does not support Border Gateway Protocol BGP, you must specify true.
+
+Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ec2-vpn-connection.html#cfn-ec2-vpnconnection-StaticRoutesOnly
+PrimitiveType: Boolean
 UpdateType: Immutable
 
 ```yaml
@@ -82,11 +88,12 @@ Accept wildcard characters: False
 ```
 
 ### -Tags
-Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ec2-vpn-connection.html#cfn-ec2-vpnconnection-tags    
-DuplicatesAllowed: True    
-ItemType: Tag    
-Required: False    
-Type: List    
+Any tags assigned to the VPN connection.
+
+Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ec2-vpn-connection.html#cfn-ec2-vpnconnection-tags
+DuplicatesAllowed: True
+ItemType: Tag
+Type: List
 UpdateType: Mutable
 
 ```yaml
@@ -101,10 +108,31 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
+### -TransitGatewayId
+The ID of the transit gateway associated with the VPN connection.
+You must specify either TransitGatewayId or VpnGatewayId, but not both.
+
+Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ec2-vpn-connection.html#cfn-ec2-vpnconnection-transitgatewayid
+PrimitiveType: String
+UpdateType: Immutable
+
+```yaml
+Type: Object
+Parameter Sets: (All)
+Aliases:
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
 ### -Type
-Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ec2-vpn-connection.html#cfn-ec2-vpnconnection-type    
-PrimitiveType: String    
-Required: True    
+The type of VPN connection.
+
+Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ec2-vpn-connection.html#cfn-ec2-vpnconnection-type
+PrimitiveType: String
 UpdateType: Immutable
 
 ```yaml
@@ -120,9 +148,11 @@ Accept wildcard characters: False
 ```
 
 ### -VpnGatewayId
-Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ec2-vpn-connection.html#cfn-ec2-vpnconnection-vpngatewayid    
-PrimitiveType: String    
-Required: True    
+The ID of the virtual private gateway at the AWS side of the VPN connection.
+You must specify either TransitGatewayId or VpnGatewayId, but not both.
+
+Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ec2-vpn-connection.html#cfn-ec2-vpnconnection-vpngatewayid
+PrimitiveType: String
 UpdateType: Immutable
 
 ```yaml
@@ -130,7 +160,7 @@ Type: Object
 Parameter Sets: (All)
 Aliases:
 
-Required: True
+Required: False
 Position: Named
 Default value: None
 Accept pipeline input: False
@@ -138,11 +168,12 @@ Accept wildcard characters: False
 ```
 
 ### -VpnTunnelOptionsSpecifications
-Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ec2-vpn-connection.html#cfn-ec2-vpnconnection-vpntunneloptionsspecifications    
-DuplicatesAllowed: False    
-ItemType: VpnTunnelOptionsSpecification    
-Required: False    
-Type: List    
+The tunnel options for a VPN connection.
+
+Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ec2-vpn-connection.html#cfn-ec2-vpnconnection-vpntunneloptionsspecifications
+DuplicatesAllowed: False
+ItemType: VpnTunnelOptionsSpecification
+Type: List
 UpdateType: Immutable
 
 ```yaml
@@ -252,15 +283,13 @@ Accept wildcard characters: False
 ```
 
 ### CommonParameters
-This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction, and -WarningVariable.
-For more information, see about_CommonParameters (http://go.microsoft.com/fwlink/?LinkID=113216).
+This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction, and -WarningVariable. For more information, see [about_CommonParameters](http://go.microsoft.com/fwlink/?LinkID=113216).
 
 ## INPUTS
 
 ## OUTPUTS
 
 ### Vaporshell.Resource.EC2.VPNConnection
-
 ## NOTES
 
 ## RELATED LINKS

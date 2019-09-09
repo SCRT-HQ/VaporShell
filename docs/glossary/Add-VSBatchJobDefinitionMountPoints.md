@@ -1,18 +1,9 @@
----
-layout: glossary
-title: Add-VSBatchJobDefinitionMountPoints
-categories: glossary
-label1: Category
-data1: Documentation
-label2: Depth
-data2: Deep
-schema: 2.0.0
----
-
 # Add-VSBatchJobDefinitionMountPoints
 
 ## SYNOPSIS
-Adds an AWS::Batch::JobDefinition.MountPoints resource property to the template
+Adds an AWS::Batch::JobDefinition.MountPoints resource property to the template.
+Details on a Docker volume mount point that is used in a job's container properties.
+This parameter maps to Volumes in the Create a container: https://docs.docker.com/engine/reference/api/docker_remote_api_v1.19/#create-a-container section of the Docker Remote API and the --volume option to docker run.
 
 ## SYNTAX
 
@@ -22,14 +13,27 @@ Add-VSBatchJobDefinitionMountPoints [[-ReadOnly] <Boolean>] [[-SourceVolume] <Ob
 ```
 
 ## DESCRIPTION
-Adds an AWS::Batch::JobDefinition.MountPoints resource property to the template
+Adds an AWS::Batch::JobDefinition.MountPoints resource property to the template.
+Details on a Docker volume mount point that is used in a job's container properties.
+This parameter maps to Volumes in the Create a container: https://docs.docker.com/engine/reference/api/docker_remote_api_v1.19/#create-a-container section of the Docker Remote API and the --volume option to docker run.
+
+## EXAMPLES
+
+### Example 1
+```powershell
+PS C:\> {{ Add example code here }}
+```
+
+{{ Add example description here }}
 
 ## PARAMETERS
 
 ### -ReadOnly
-Required: False    
-Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-batch-jobdefinition-mountpoints.html#cfn-batch-jobdefinition-mountpoints-readonly    
-PrimitiveType: Boolean    
+If this value is true, the container has read-only access to the volume; otherwise, the container can write to the volume.
+The default value is false.
+
+Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-batch-jobdefinition-mountpoints.html#cfn-batch-jobdefinition-mountpoints-readonly
+PrimitiveType: Boolean
 UpdateType: Mutable
 
 ```yaml
@@ -45,9 +49,10 @@ Accept wildcard characters: False
 ```
 
 ### -SourceVolume
-Required: False    
-Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-batch-jobdefinition-mountpoints.html#cfn-batch-jobdefinition-mountpoints-sourcevolume    
-PrimitiveType: String    
+The name of the volume to mount.
+
+Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-batch-jobdefinition-mountpoints.html#cfn-batch-jobdefinition-mountpoints-sourcevolume
+PrimitiveType: String
 UpdateType: Mutable
 
 ```yaml
@@ -63,9 +68,10 @@ Accept wildcard characters: False
 ```
 
 ### -ContainerPath
-Required: False    
-Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-batch-jobdefinition-mountpoints.html#cfn-batch-jobdefinition-mountpoints-containerpath    
-PrimitiveType: String    
+The path on the container at which to mount the host volume.
+
+Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-batch-jobdefinition-mountpoints.html#cfn-batch-jobdefinition-mountpoints-containerpath
+PrimitiveType: String
 UpdateType: Mutable
 
 ```yaml
@@ -81,15 +87,13 @@ Accept wildcard characters: False
 ```
 
 ### CommonParameters
-This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction, and -WarningVariable.
-For more information, see about_CommonParameters (http://go.microsoft.com/fwlink/?LinkID=113216).
+This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction, and -WarningVariable. For more information, see [about_CommonParameters](http://go.microsoft.com/fwlink/?LinkID=113216).
 
 ## INPUTS
 
 ## OUTPUTS
 
 ### Vaporshell.Resource.Batch.JobDefinition.MountPoints
-
 ## NOTES
 
 ## RELATED LINKS

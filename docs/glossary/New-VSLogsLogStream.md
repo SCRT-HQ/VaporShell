@@ -1,18 +1,9 @@
----
-layout: glossary
-title: New-VSLogsLogStream
-categories: glossary
-label1: Category
-data1: Documentation
-label2: Depth
-data2: Deep
-schema: 2.0.0
----
-
 # New-VSLogsLogStream
 
 ## SYNOPSIS
-Adds an AWS::Logs::LogStream resource to the template
+Adds an AWS::Logs::LogStream resource to the template.
+The AWS::Logs::LogStream resource specifies an Amazon CloudWatch Logs log stream in a specific log group.
+A log stream represents the sequence of events coming from an application instance or resource that you are monitoring.
 
 ## SYNTAX
 
@@ -23,7 +14,28 @@ New-VSLogsLogStream [-LogicalId] <String> -LogGroupName <Object> [-LogStreamName
 ```
 
 ## DESCRIPTION
-Adds an AWS::Logs::LogStream resource to the template
+Adds an AWS::Logs::LogStream resource to the template.
+The AWS::Logs::LogStream resource specifies an Amazon CloudWatch Logs log stream in a specific log group.
+A log stream represents the sequence of events coming from an application instance or resource that you are monitoring.
+
+There is no limit on the number of log streams that you can create for a log group.
+
+You must use the following guidelines when naming a log stream:
+
++ Log stream names must be unique within the log group.
+
++ Log stream names can be between 1 and 512 characters long.
+
++ The ':' (colon and '*' (asterisk characters are not allowed.
+
+## EXAMPLES
+
+### Example 1
+```powershell
+PS C:\> {{ Add example code here }}
+```
+
+{{ Add example description here }}
 
 ## PARAMETERS
 
@@ -45,9 +57,10 @@ Accept wildcard characters: False
 ```
 
 ### -LogGroupName
-Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-logs-logstream.html#cfn-logs-logstream-loggroupname    
-PrimitiveType: String    
-Required: True    
+The name of the log group where the log stream is created.
+
+Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-logs-logstream.html#cfn-logs-logstream-loggroupname
+PrimitiveType: String
 UpdateType: Immutable
 
 ```yaml
@@ -63,9 +76,11 @@ Accept wildcard characters: False
 ```
 
 ### -LogStreamName
-Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-logs-logstream.html#cfn-logs-logstream-logstreamname    
-PrimitiveType: String    
-Required: False    
+The name of the log stream.
+The name must be unique within the log group.
+
+Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-logs-logstream.html#cfn-logs-logstream-logstreamname
+PrimitiveType: String
 UpdateType: Immutable
 
 ```yaml
@@ -175,15 +190,13 @@ Accept wildcard characters: False
 ```
 
 ### CommonParameters
-This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction, and -WarningVariable.
-For more information, see about_CommonParameters (http://go.microsoft.com/fwlink/?LinkID=113216).
+This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction, and -WarningVariable. For more information, see [about_CommonParameters](http://go.microsoft.com/fwlink/?LinkID=113216).
 
 ## INPUTS
 
 ## OUTPUTS
 
 ### Vaporshell.Resource.Logs.LogStream
-
 ## NOTES
 
 ## RELATED LINKS

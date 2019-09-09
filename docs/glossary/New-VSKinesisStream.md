@@ -1,18 +1,9 @@
----
-layout: glossary
-title: New-VSKinesisStream
-categories: glossary
-label1: Category
-data1: Documentation
-label2: Depth
-data2: Deep
-schema: 2.0.0
----
-
 # New-VSKinesisStream
 
 ## SYNOPSIS
-Adds an AWS::Kinesis::Stream resource to the template
+Adds an AWS::Kinesis::Stream resource to the template.
+Creates a Kinesis stream that captures and transports data records that are emitted from data sources.
+For information about creating streams, see CreateStream: https://docs.aws.amazon.com/kinesis/latest/APIReference/API_CreateStream.html in the Amazon Kinesis API Reference.
 
 ## SYNTAX
 
@@ -23,7 +14,18 @@ New-VSKinesisStream [-LogicalId] <String> [-Name <Object>] [-RetentionPeriodHour
 ```
 
 ## DESCRIPTION
-Adds an AWS::Kinesis::Stream resource to the template
+Adds an AWS::Kinesis::Stream resource to the template.
+Creates a Kinesis stream that captures and transports data records that are emitted from data sources.
+For information about creating streams, see CreateStream: https://docs.aws.amazon.com/kinesis/latest/APIReference/API_CreateStream.html in the Amazon Kinesis API Reference.
+
+## EXAMPLES
+
+### Example 1
+```powershell
+PS C:\> {{ Add example code here }}
+```
+
+{{ Add example description here }}
 
 ## PARAMETERS
 
@@ -45,9 +47,15 @@ Accept wildcard characters: False
 ```
 
 ### -Name
-Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-kinesis-stream.html#cfn-kinesis-stream-name    
-PrimitiveType: String    
-Required: False    
+The name of the Kinesis stream.
+If you don't specify a name, AWS CloudFormation generates a unique physical ID and uses that ID for the stream name.
+For more information, see Name Type: https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-name.html.
+If you specify a name, you cannot perform updates that require replacement of this resource.
+You can perform updates that require no or some interruption.
+If you must replace the resource, specify a new name.
+
+Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-kinesis-stream.html#cfn-kinesis-stream-name
+PrimitiveType: String
 UpdateType: Immutable
 
 ```yaml
@@ -63,9 +71,12 @@ Accept wildcard characters: False
 ```
 
 ### -RetentionPeriodHours
-Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-kinesis-stream.html#cfn-kinesis-stream-retentionperiodhours    
-PrimitiveType: Integer    
-Required: False    
+The number of hours for the data records that are stored in shards to remain accessible.
+The default value is 24.
+For more information about the stream retention period, see Changing the Data Retention Period: https://docs.aws.amazon.com/streams/latest/dev/kinesis-extended-retention.html in the Amazon Kinesis Developer Guide.
+
+Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-kinesis-stream.html#cfn-kinesis-stream-retentionperiodhours
+PrimitiveType: Integer
 UpdateType: Mutable
 
 ```yaml
@@ -81,9 +92,11 @@ Accept wildcard characters: False
 ```
 
 ### -ShardCount
-Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-kinesis-stream.html#cfn-kinesis-stream-shardcount    
-PrimitiveType: Integer    
-Required: True    
+The number of shards that the stream uses.
+For greater provisioned throughput, increase the number of shards.
+
+Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-kinesis-stream.html#cfn-kinesis-stream-shardcount
+PrimitiveType: Integer
 UpdateType: Mutable
 
 ```yaml
@@ -99,9 +112,10 @@ Accept wildcard characters: False
 ```
 
 ### -StreamEncryption
-Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-kinesis-stream.html#cfn-kinesis-stream-streamencryption    
-Required: False    
-Type: StreamEncryption    
+Enables or updates server-side encryption using an AWS KMS key for a specified stream.
+
+Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-kinesis-stream.html#cfn-kinesis-stream-streamencryption
+Type: StreamEncryption
 UpdateType: Mutable
 
 ```yaml
@@ -117,11 +131,13 @@ Accept wildcard characters: False
 ```
 
 ### -Tags
-Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-kinesis-stream.html#cfn-kinesis-stream-tags    
-DuplicatesAllowed: True    
-ItemType: Tag    
-Required: False    
-Type: List    
+An arbitrary set of tags key-value pairs to associate with the Kinesis stream.
+For information about constraints for this property, see Tag Restrictions: https://docs.aws.amazon.com/streams/latest/dev/tagging.html#tagging-restrictions in the *Amazon Kinesis Developer Guide*.
+
+Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-kinesis-stream.html#cfn-kinesis-stream-tags
+DuplicatesAllowed: True
+ItemType: Tag
+Type: List
 UpdateType: Mutable
 
 ```yaml
@@ -231,15 +247,13 @@ Accept wildcard characters: False
 ```
 
 ### CommonParameters
-This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction, and -WarningVariable.
-For more information, see about_CommonParameters (http://go.microsoft.com/fwlink/?LinkID=113216).
+This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction, and -WarningVariable. For more information, see [about_CommonParameters](http://go.microsoft.com/fwlink/?LinkID=113216).
 
 ## INPUTS
 
 ## OUTPUTS
 
 ### Vaporshell.Resource.Kinesis.Stream
-
 ## NOTES
 
 ## RELATED LINKS

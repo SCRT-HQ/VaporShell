@@ -1,18 +1,8 @@
----
-layout: glossary
-title: New-VSElasticBeanstalkApplication
-categories: glossary
-label1: Category
-data1: Documentation
-label2: Depth
-data2: Deep
-schema: 2.0.0
----
-
 # New-VSElasticBeanstalkApplication
 
 ## SYNOPSIS
-Adds an AWS::ElasticBeanstalk::Application resource to the template
+Adds an AWS::ElasticBeanstalk::Application resource to the template.
+The AWS::ElasticBeanstalk::Application resource is an AWS Elastic Beanstalk resource type that specifies an Elastic Beanstalk application.
 
 ## SYNTAX
 
@@ -23,7 +13,17 @@ New-VSElasticBeanstalkApplication [-LogicalId] <String> [-ApplicationName <Objec
 ```
 
 ## DESCRIPTION
-Adds an AWS::ElasticBeanstalk::Application resource to the template
+Adds an AWS::ElasticBeanstalk::Application resource to the template.
+The AWS::ElasticBeanstalk::Application resource is an AWS Elastic Beanstalk resource type that specifies an Elastic Beanstalk application.
+
+## EXAMPLES
+
+### Example 1
+```powershell
+PS C:\> {{ Add example code here }}
+```
+
+{{ Add example description here }}
 
 ## PARAMETERS
 
@@ -45,9 +45,15 @@ Accept wildcard characters: False
 ```
 
 ### -ApplicationName
-Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-beanstalk.html#cfn-elasticbeanstalk-application-name    
-PrimitiveType: String    
-Required: False    
+A name for the Elastic Beanstalk application.
+If you don't specify a name, AWS CloudFormation generates a unique physical ID and uses that ID for the application name.
+For more information, see Name Type: https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-name.html.
+If you specify a name, you cannot perform updates that require replacement of this resource.
+You can perform updates that require no or some interruption.
+If you must replace the resource, specify a new name.
+
+Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-beanstalk.html#cfn-elasticbeanstalk-application-name
+PrimitiveType: String
 UpdateType: Immutable
 
 ```yaml
@@ -63,9 +69,10 @@ Accept wildcard characters: False
 ```
 
 ### -Description
-Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-beanstalk.html#cfn-elasticbeanstalk-application-description    
-PrimitiveType: String    
-Required: False    
+Your description of the application.
+
+Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-beanstalk.html#cfn-elasticbeanstalk-application-description
+PrimitiveType: String
 UpdateType: Mutable
 
 ```yaml
@@ -81,9 +88,10 @@ Accept wildcard characters: False
 ```
 
 ### -ResourceLifecycleConfig
-Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-beanstalk.html#cfn-elasticbeanstalk-application-resourcelifecycleconfig    
-Required: False    
-Type: ApplicationResourceLifecycleConfig    
+Specifies an application resource lifecycle configuration to prevent your application from accumulating too many versions.
+
+Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-beanstalk.html#cfn-elasticbeanstalk-application-resourcelifecycleconfig
+Type: ApplicationResourceLifecycleConfig
 UpdateType: Mutable
 
 ```yaml
@@ -193,15 +201,13 @@ Accept wildcard characters: False
 ```
 
 ### CommonParameters
-This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction, and -WarningVariable.
-For more information, see about_CommonParameters (http://go.microsoft.com/fwlink/?LinkID=113216).
+This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction, and -WarningVariable. For more information, see [about_CommonParameters](http://go.microsoft.com/fwlink/?LinkID=113216).
 
 ## INPUTS
 
 ## OUTPUTS
 
 ### Vaporshell.Resource.ElasticBeanstalk.Application
-
 ## NOTES
 
 ## RELATED LINKS

@@ -1,18 +1,8 @@
----
-layout: glossary
-title: Add-VSS3BucketReplicationRule
-categories: glossary
-label1: Category
-data1: Documentation
-label2: Depth
-data2: Deep
-schema: 2.0.0
----
-
 # Add-VSS3BucketReplicationRule
 
 ## SYNOPSIS
-Adds an AWS::S3::Bucket.ReplicationRule resource property to the template
+Adds an AWS::S3::Bucket.ReplicationRule resource property to the template.
+Specifies which Amazon S3 objects to replicate and where to store the replicas.
 
 ## SYNTAX
 
@@ -22,14 +12,25 @@ Add-VSS3BucketReplicationRule [-Destination] <Object> [[-Id] <Object>] [-Prefix]
 ```
 
 ## DESCRIPTION
-Adds an AWS::S3::Bucket.ReplicationRule resource property to the template
+Adds an AWS::S3::Bucket.ReplicationRule resource property to the template.
+Specifies which Amazon S3 objects to replicate and where to store the replicas.
+
+## EXAMPLES
+
+### Example 1
+```powershell
+PS C:\> {{ Add example code here }}
+```
+
+{{ Add example description here }}
 
 ## PARAMETERS
 
 ### -Destination
-Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-s3-bucket-replicationconfiguration-rules.html#cfn-s3-bucket-replicationconfiguration-rules-destination    
-Required: True    
-Type: ReplicationDestination    
+A container for information about the replication destination.
+
+Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-s3-bucket-replicationconfiguration-rules.html#cfn-s3-bucket-replicationconfiguration-rules-destination
+Type: ReplicationDestination
 UpdateType: Mutable
 
 ```yaml
@@ -45,9 +46,12 @@ Accept wildcard characters: False
 ```
 
 ### -Id
-Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-s3-bucket-replicationconfiguration-rules.html#cfn-s3-bucket-replicationconfiguration-rules-id    
-PrimitiveType: String    
-Required: False    
+A unique identifier for the rule.
+The maximum value is 255 characters.
+If you don't specify a value, AWS CloudFormation generates a random ID.
+
+Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-s3-bucket-replicationconfiguration-rules.html#cfn-s3-bucket-replicationconfiguration-rules-id
+PrimitiveType: String
 UpdateType: Mutable
 
 ```yaml
@@ -63,9 +67,12 @@ Accept wildcard characters: False
 ```
 
 ### -Prefix
-Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-s3-bucket-replicationconfiguration-rules.html#cfn-s3-bucket-replicationconfiguration-rules-prefix    
-PrimitiveType: String    
-Required: True    
+An object keyname prefix that identifies the object or objects to which the rule applies.
+The maximum prefix length is 1,024 characters.
+To include all objects in a bucket, specify an empty string.
+
+Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-s3-bucket-replicationconfiguration-rules.html#cfn-s3-bucket-replicationconfiguration-rules-prefix
+PrimitiveType: String
 UpdateType: Mutable
 
 ```yaml
@@ -81,9 +88,12 @@ Accept wildcard characters: False
 ```
 
 ### -SourceSelectionCriteria
-Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-s3-bucket-replicationconfiguration-rules.html#cfn-s3-bucket-replicationrule-sourceselectioncriteria    
-Required: False    
-Type: SourceSelectionCriteria    
+A container that describes additional filters for identifying the source objects that you want to replicate.
+You can choose to enable or disable the replication of these objects.
+Currently, Amazon S3 supports only the filter that you can specify for objects created with server-side encryption using an AWS KMS-Managed Key SSE-KMS.
+
+Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-s3-bucket-replicationconfiguration-rules.html#cfn-s3-bucket-replicationrule-sourceselectioncriteria
+Type: SourceSelectionCriteria
 UpdateType: Mutable
 
 ```yaml
@@ -99,9 +109,10 @@ Accept wildcard characters: False
 ```
 
 ### -Status
-Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-s3-bucket-replicationconfiguration-rules.html#cfn-s3-bucket-replicationconfiguration-rules-status    
-PrimitiveType: String    
-Required: True    
+Specifies whether the rule is enabled.
+
+Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-s3-bucket-replicationconfiguration-rules.html#cfn-s3-bucket-replicationconfiguration-rules-status
+PrimitiveType: String
 UpdateType: Mutable
 
 ```yaml
@@ -117,15 +128,13 @@ Accept wildcard characters: False
 ```
 
 ### CommonParameters
-This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction, and -WarningVariable.
-For more information, see about_CommonParameters (http://go.microsoft.com/fwlink/?LinkID=113216).
+This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction, and -WarningVariable. For more information, see [about_CommonParameters](http://go.microsoft.com/fwlink/?LinkID=113216).
 
 ## INPUTS
 
 ## OUTPUTS
 
 ### Vaporshell.Resource.S3.Bucket.ReplicationRule
-
 ## NOTES
 
 ## RELATED LINKS

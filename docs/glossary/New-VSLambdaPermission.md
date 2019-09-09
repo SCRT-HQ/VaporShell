@@ -1,18 +1,10 @@
----
-layout: glossary
-title: New-VSLambdaPermission
-categories: glossary
-label1: Category
-data1: Documentation
-label2: Depth
-data2: Deep
-schema: 2.0.0
----
-
 # New-VSLambdaPermission
 
 ## SYNOPSIS
-Adds an AWS::Lambda::Permission resource to the template
+Adds an AWS::Lambda::Permission resource to the template.
+The AWS::Lambda::Permission resource grants an AWS service or another account permission to use a function.
+You can apply the policy at the function level, or specify a qualifier to restrict access to a single version or alias.
+If you use a qualifier, the invoker must use the full Amazon Resource Name (ARN of that version or alias to invoke the function.
 
 ## SYNTAX
 
@@ -24,7 +16,27 @@ New-VSLambdaPermission [-LogicalId] <String> -Action <Object> [-EventSourceToken
 ```
 
 ## DESCRIPTION
-Adds an AWS::Lambda::Permission resource to the template
+Adds an AWS::Lambda::Permission resource to the template.
+The AWS::Lambda::Permission resource grants an AWS service or another account permission to use a function.
+You can apply the policy at the function level, or specify a qualifier to restrict access to a single version or alias.
+If you use a qualifier, the invoker must use the full Amazon Resource Name (ARN of that version or alias to invoke the function.
+
+To grant permission to another account, specify the account ID as the Principal.
+For AWS services, the principal is a domain-style identifier defined by the service, like s3.amazonaws.com or sns.amazonaws.com.
+For AWS services, you can also specify the ARN or owning account of the associated resource as the SourceArn or SourceAccount.
+If you grant permission to a service principal without specifying the source, other accounts could potentially configure resources in their account to invoke your Lambda function.
+
+This resource adds a statement to a resource-based permission policy for the function.
+For more information about function policies, see Lambda Function Policies: https://docs.aws.amazon.com/lambda/latest/dg/access-control-resource-based.html.
+
+## EXAMPLES
+
+### Example 1
+```powershell
+PS C:\> {{ Add example code here }}
+```
+
+{{ Add example description here }}
 
 ## PARAMETERS
 
@@ -46,9 +58,11 @@ Accept wildcard characters: False
 ```
 
 ### -Action
-Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-lambda-permission.html#cfn-lambda-permission-action    
-PrimitiveType: String    
-Required: True    
+The action that the principal can use on the function.
+For example, lambda:InvokeFunction or lambda:GetFunction.
+
+Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-lambda-permission.html#cfn-lambda-permission-action
+PrimitiveType: String
 UpdateType: Immutable
 
 ```yaml
@@ -64,9 +78,10 @@ Accept wildcard characters: False
 ```
 
 ### -EventSourceToken
-Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-lambda-permission.html#cfn-lambda-permission-eventsourcetoken    
-PrimitiveType: String    
-Required: False    
+For Alexa Smart Home functions, a token that must be supplied by the invoker.
+
+Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-lambda-permission.html#cfn-lambda-permission-eventsourcetoken
+PrimitiveType: String
 UpdateType: Immutable
 
 ```yaml
@@ -82,9 +97,17 @@ Accept wildcard characters: False
 ```
 
 ### -FunctionName
-Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-lambda-permission.html#cfn-lambda-permission-functionname    
-PrimitiveType: String    
-Required: True    
+The name of the Lambda function, version, or alias.
+**Name formats**
++  **Function name** - my-function name-only, my-function:v1 with alias.
++  **Function ARN** - arn:aws:lambda:us-west-2:123456789012:function:my-function.
++  **Partial ARN** - 123456789012:function:my-function.
+You can append a version number or alias to any of the formats.
+The length constraint applies only to the full ARN.
+If you specify only the function name, it is limited to 64 characters in length.
+
+Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-lambda-permission.html#cfn-lambda-permission-functionname
+PrimitiveType: String
 UpdateType: Immutable
 
 ```yaml
@@ -100,9 +123,11 @@ Accept wildcard characters: False
 ```
 
 ### -Principal
-Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-lambda-permission.html#cfn-lambda-permission-principal    
-PrimitiveType: String    
-Required: True    
+The AWS service or account that invokes the function.
+If you specify a service, use SourceArn or SourceAccount to limit who can invoke the function through that service.
+
+Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-lambda-permission.html#cfn-lambda-permission-principal
+PrimitiveType: String
 UpdateType: Immutable
 
 ```yaml
@@ -118,9 +143,13 @@ Accept wildcard characters: False
 ```
 
 ### -SourceAccount
-Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-lambda-permission.html#cfn-lambda-permission-sourceaccount    
-PrimitiveType: String    
-Required: False    
+For AWS services, the ID of the account that owns the resource.
+Use this instead of SourceArn to grant permission to resources that are owned by another account for example, all of an account's Amazon S3 buckets.
+Or use it together with SourceArn to ensure that the resource is owned by the specified account.
+For example, an Amazon S3 bucket could be deleted by its owner and recreated by another account.
+
+Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-lambda-permission.html#cfn-lambda-permission-sourceaccount
+PrimitiveType: String
 UpdateType: Immutable
 
 ```yaml
@@ -136,9 +165,11 @@ Accept wildcard characters: False
 ```
 
 ### -SourceArn
-Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-lambda-permission.html#cfn-lambda-permission-sourcearn    
-PrimitiveType: String    
-Required: False    
+For AWS services, the ARN of the AWS resource that invokes the function.
+For example, an Amazon S3 bucket or Amazon SNS topic.
+
+Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-lambda-permission.html#cfn-lambda-permission-sourcearn
+PrimitiveType: String
 UpdateType: Immutable
 
 ```yaml
@@ -248,15 +279,13 @@ Accept wildcard characters: False
 ```
 
 ### CommonParameters
-This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction, and -WarningVariable.
-For more information, see about_CommonParameters (http://go.microsoft.com/fwlink/?LinkID=113216).
+This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction, and -WarningVariable. For more information, see [about_CommonParameters](http://go.microsoft.com/fwlink/?LinkID=113216).
 
 ## INPUTS
 
 ## OUTPUTS
 
 ### Vaporshell.Resource.Lambda.Permission
-
 ## NOTES
 
 ## RELATED LINKS

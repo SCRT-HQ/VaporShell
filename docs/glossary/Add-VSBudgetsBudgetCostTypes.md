@@ -1,18 +1,8 @@
----
-layout: glossary
-title: Add-VSBudgetsBudgetCostTypes
-categories: glossary
-label1: Category
-data1: Documentation
-label2: Depth
-data2: Deep
-schema: 2.0.0
----
-
 # Add-VSBudgetsBudgetCostTypes
 
 ## SYNOPSIS
-Adds an AWS::Budgets::Budget.CostTypes resource property to the template
+Adds an AWS::Budgets::Budget.CostTypes resource property to the template.
+The types of cost that are included in a COST budget, such as tax and subscriptions.
 
 ## SYNTAX
 
@@ -24,14 +14,28 @@ Add-VSBudgetsBudgetCostTypes [[-IncludeSupport] <Boolean>] [[-IncludeOtherSubscr
 ```
 
 ## DESCRIPTION
-Adds an AWS::Budgets::Budget.CostTypes resource property to the template
+Adds an AWS::Budgets::Budget.CostTypes resource property to the template.
+The types of cost that are included in a COST budget, such as tax and subscriptions.
+
+USAGE, RI_UTILIZATION, and RI_COVERAGE budgets do not have CostTypes.
+
+## EXAMPLES
+
+### Example 1
+```powershell
+PS C:\> {{ Add example code here }}
+```
+
+{{ Add example description here }}
 
 ## PARAMETERS
 
 ### -IncludeSupport
-Required: False    
-Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-budgets-budget-costtypes.html#cfn-budgets-budget-costtypes-includesupport    
-PrimitiveType: Boolean    
+Specifies whether a budget includes support subscription fees.
+The default value is true.
+
+Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-budgets-budget-costtypes.html#cfn-budgets-budget-costtypes-includesupport
+PrimitiveType: Boolean
 UpdateType: Mutable
 
 ```yaml
@@ -47,9 +51,11 @@ Accept wildcard characters: False
 ```
 
 ### -IncludeOtherSubscription
-Required: False    
-Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-budgets-budget-costtypes.html#cfn-budgets-budget-costtypes-includeothersubscription    
-PrimitiveType: Boolean    
+Specifies whether a budget includes non-RI subscription costs.
+The default value is true.
+
+Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-budgets-budget-costtypes.html#cfn-budgets-budget-costtypes-includeothersubscription
+PrimitiveType: Boolean
 UpdateType: Mutable
 
 ```yaml
@@ -65,9 +71,11 @@ Accept wildcard characters: False
 ```
 
 ### -IncludeTax
-Required: False    
-Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-budgets-budget-costtypes.html#cfn-budgets-budget-costtypes-includetax    
-PrimitiveType: Boolean    
+Specifies whether a budget includes taxes.
+The default value is true.
+
+Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-budgets-budget-costtypes.html#cfn-budgets-budget-costtypes-includetax
+PrimitiveType: Boolean
 UpdateType: Mutable
 
 ```yaml
@@ -83,9 +91,11 @@ Accept wildcard characters: False
 ```
 
 ### -IncludeSubscription
-Required: False    
-Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-budgets-budget-costtypes.html#cfn-budgets-budget-costtypes-includesubscription    
-PrimitiveType: Boolean    
+Specifies whether a budget includes subscriptions.
+The default value is true.
+
+Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-budgets-budget-costtypes.html#cfn-budgets-budget-costtypes-includesubscription
+PrimitiveType: Boolean
 UpdateType: Mutable
 
 ```yaml
@@ -101,9 +111,11 @@ Accept wildcard characters: False
 ```
 
 ### -UseBlended
-Required: False    
-Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-budgets-budget-costtypes.html#cfn-budgets-budget-costtypes-useblended    
-PrimitiveType: Boolean    
+Specifies whether a budget uses a blended rate.
+The default value is false.
+
+Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-budgets-budget-costtypes.html#cfn-budgets-budget-costtypes-useblended
+PrimitiveType: Boolean
 UpdateType: Mutable
 
 ```yaml
@@ -119,9 +131,11 @@ Accept wildcard characters: False
 ```
 
 ### -IncludeUpfront
-Required: False    
-Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-budgets-budget-costtypes.html#cfn-budgets-budget-costtypes-includeupfront    
-PrimitiveType: Boolean    
+Specifies whether a budget includes upfront RI costs.
+The default value is true.
+
+Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-budgets-budget-costtypes.html#cfn-budgets-budget-costtypes-includeupfront
+PrimitiveType: Boolean
 UpdateType: Mutable
 
 ```yaml
@@ -137,9 +151,11 @@ Accept wildcard characters: False
 ```
 
 ### -IncludeDiscount
-Required: False    
-Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-budgets-budget-costtypes.html#cfn-budgets-budget-costtypes-includediscount    
-PrimitiveType: Boolean    
+Specifies whether a budget includes discounts.
+The default value is true.
+
+Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-budgets-budget-costtypes.html#cfn-budgets-budget-costtypes-includediscount
+PrimitiveType: Boolean
 UpdateType: Mutable
 
 ```yaml
@@ -155,9 +171,11 @@ Accept wildcard characters: False
 ```
 
 ### -IncludeCredit
-Required: False    
-Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-budgets-budget-costtypes.html#cfn-budgets-budget-costtypes-includecredit    
-PrimitiveType: Boolean    
+Specifies whether a budget includes credits.
+The default value is true.
+
+Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-budgets-budget-costtypes.html#cfn-budgets-budget-costtypes-includecredit
+PrimitiveType: Boolean
 UpdateType: Mutable
 
 ```yaml
@@ -173,9 +191,11 @@ Accept wildcard characters: False
 ```
 
 ### -IncludeRecurring
-Required: False    
-Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-budgets-budget-costtypes.html#cfn-budgets-budget-costtypes-includerecurring    
-PrimitiveType: Boolean    
+Specifies whether a budget includes recurring fees such as monthly RI fees.
+The default value is true.
+
+Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-budgets-budget-costtypes.html#cfn-budgets-budget-costtypes-includerecurring
+PrimitiveType: Boolean
 UpdateType: Mutable
 
 ```yaml
@@ -191,9 +211,11 @@ Accept wildcard characters: False
 ```
 
 ### -UseAmortized
-Required: False    
-Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-budgets-budget-costtypes.html#cfn-budgets-budget-costtypes-useamortized    
-PrimitiveType: Boolean    
+Specifies whether a budget uses the amortized rate.
+The default value is false.
+
+Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-budgets-budget-costtypes.html#cfn-budgets-budget-costtypes-useamortized
+PrimitiveType: Boolean
 UpdateType: Mutable
 
 ```yaml
@@ -209,9 +231,11 @@ Accept wildcard characters: False
 ```
 
 ### -IncludeRefund
-Required: False    
-Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-budgets-budget-costtypes.html#cfn-budgets-budget-costtypes-includerefund    
-PrimitiveType: Boolean    
+Specifies whether a budget includes refunds.
+The default value is true.
+
+Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-budgets-budget-costtypes.html#cfn-budgets-budget-costtypes-includerefund
+PrimitiveType: Boolean
 UpdateType: Mutable
 
 ```yaml
@@ -227,15 +251,13 @@ Accept wildcard characters: False
 ```
 
 ### CommonParameters
-This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction, and -WarningVariable.
-For more information, see about_CommonParameters (http://go.microsoft.com/fwlink/?LinkID=113216).
+This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction, and -WarningVariable. For more information, see [about_CommonParameters](http://go.microsoft.com/fwlink/?LinkID=113216).
 
 ## INPUTS
 
 ## OUTPUTS
 
 ### Vaporshell.Resource.Budgets.Budget.CostTypes
-
 ## NOTES
 
 ## RELATED LINKS

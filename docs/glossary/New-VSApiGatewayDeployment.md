@@ -1,29 +1,32 @@
----
-layout: glossary
-title: New-VSApiGatewayDeployment
-categories: glossary
-label1: Category
-data1: Documentation
-label2: Depth
-data2: Deep
-schema: 2.0.0
----
-
 # New-VSApiGatewayDeployment
 
 ## SYNOPSIS
-Adds an AWS::ApiGateway::Deployment resource to the template
+Adds an AWS::ApiGateway::Deployment resource to the template.
+The AWS::ApiGateway::Deployment resource deploys an API Gateway RestApi resource to a stage so that clients can call the API over the internet.
+The stage acts as an environment.
 
 ## SYNTAX
 
 ```
-New-VSApiGatewayDeployment [-LogicalId] <String> [-Description <Object>] -RestApiId <Object>
- [-StageDescription <Object>] [-StageName <Object>] [-DeletionPolicy <String>] [-DependsOn <String[]>]
- [-Metadata <Object>] [-UpdatePolicy <Object>] [-Condition <Object>] [<CommonParameters>]
+New-VSApiGatewayDeployment [-LogicalId] <String> [-DeploymentCanarySettings <Object>] [-Description <Object>]
+ -RestApiId <Object> [-StageDescription <Object>] [-StageName <Object>] [-DeletionPolicy <String>]
+ [-DependsOn <String[]>] [-Metadata <Object>] [-UpdatePolicy <Object>] [-Condition <Object>]
+ [<CommonParameters>]
 ```
 
 ## DESCRIPTION
-Adds an AWS::ApiGateway::Deployment resource to the template
+Adds an AWS::ApiGateway::Deployment resource to the template.
+The AWS::ApiGateway::Deployment resource deploys an API Gateway RestApi resource to a stage so that clients can call the API over the internet.
+The stage acts as an environment.
+
+## EXAMPLES
+
+### Example 1
+```powershell
+PS C:\> {{ Add example code here }}
+```
+
+{{ Add example description here }}
 
 ## PARAMETERS
 
@@ -44,10 +47,30 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
+### -DeploymentCanarySettings
+Specifies settings for the canary deployment.
+
+Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-apigateway-deployment.html#cfn-apigateway-deployment-deploymentcanarysettings
+Type: DeploymentCanarySettings
+UpdateType: Immutable
+
+```yaml
+Type: Object
+Parameter Sets: (All)
+Aliases:
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
 ### -Description
-Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-apigateway-deployment.html#cfn-apigateway-deployment-description    
-PrimitiveType: String    
-Required: False    
+A description of the purpose of the API Gateway deployment.
+
+Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-apigateway-deployment.html#cfn-apigateway-deployment-description
+PrimitiveType: String
 UpdateType: Mutable
 
 ```yaml
@@ -63,9 +86,10 @@ Accept wildcard characters: False
 ```
 
 ### -RestApiId
-Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-apigateway-deployment.html#cfn-apigateway-deployment-restapiid    
-PrimitiveType: String    
-Required: True    
+The ID of the RestApi resource to deploy.
+
+Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-apigateway-deployment.html#cfn-apigateway-deployment-restapiid
+PrimitiveType: String
 UpdateType: Immutable
 
 ```yaml
@@ -81,9 +105,10 @@ Accept wildcard characters: False
 ```
 
 ### -StageDescription
-Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-apigateway-deployment.html#cfn-apigateway-deployment-stagedescription    
-Required: False    
-Type: StageDescription    
+Configures the stage that API Gateway creates with this deployment.
+
+Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-apigateway-deployment.html#cfn-apigateway-deployment-stagedescription
+Type: StageDescription
 UpdateType: Mutable
 
 ```yaml
@@ -99,9 +124,11 @@ Accept wildcard characters: False
 ```
 
 ### -StageName
-Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-apigateway-deployment.html#cfn-apigateway-deployment-stagename    
-PrimitiveType: String    
-Required: False    
+A name for the stage that API Gateway creates with this deployment.
+Use only alphanumeric characters.
+
+Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-apigateway-deployment.html#cfn-apigateway-deployment-stagename
+PrimitiveType: String
 UpdateType: Mutable
 
 ```yaml
@@ -211,15 +238,13 @@ Accept wildcard characters: False
 ```
 
 ### CommonParameters
-This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction, and -WarningVariable.
-For more information, see about_CommonParameters (http://go.microsoft.com/fwlink/?LinkID=113216).
+This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction, and -WarningVariable. For more information, see [about_CommonParameters](http://go.microsoft.com/fwlink/?LinkID=113216).
 
 ## INPUTS
 
 ## OUTPUTS
 
 ### Vaporshell.Resource.ApiGateway.Deployment
-
 ## NOTES
 
 ## RELATED LINKS

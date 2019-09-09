@@ -1,18 +1,8 @@
----
-layout: glossary
-title: Add-VSDynamoDBTableLocalSecondaryIndex
-categories: glossary
-label1: Category
-data1: Documentation
-label2: Depth
-data2: Deep
-schema: 2.0.0
----
-
 # Add-VSDynamoDBTableLocalSecondaryIndex
 
 ## SYNOPSIS
-Adds an AWS::DynamoDB::Table.LocalSecondaryIndex resource property to the template
+Adds an AWS::DynamoDB::Table.LocalSecondaryIndex resource property to the template.
+Represents the properties of a local secondary index.
 
 ## SYNTAX
 
@@ -22,14 +12,26 @@ Add-VSDynamoDBTableLocalSecondaryIndex [-IndexName] <Object> [-KeySchema] <Objec
 ```
 
 ## DESCRIPTION
-Adds an AWS::DynamoDB::Table.LocalSecondaryIndex resource property to the template
+Adds an AWS::DynamoDB::Table.LocalSecondaryIndex resource property to the template.
+Represents the properties of a local secondary index.
+
+## EXAMPLES
+
+### Example 1
+```powershell
+PS C:\> {{ Add example code here }}
+```
+
+{{ Add example description here }}
 
 ## PARAMETERS
 
 ### -IndexName
-Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-dynamodb-lsi.html#cfn-dynamodb-lsi-indexname    
-PrimitiveType: String    
-Required: True    
+The name of the local secondary index.
+The name must be unique among all other indexes on this table.
+
+Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-dynamodb-lsi.html#cfn-dynamodb-lsi-indexname
+PrimitiveType: String
 UpdateType: Mutable
 
 ```yaml
@@ -45,11 +47,18 @@ Accept wildcard characters: False
 ```
 
 ### -KeySchema
-Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-dynamodb-lsi.html#cfn-dynamodb-lsi-keyschema    
-DuplicatesAllowed: False    
-ItemType: KeySchema    
-Required: True    
-Type: List    
+The complete key schema for the local secondary index, consisting of one or more pairs of attribute names and key types:
++  HASH - partition key
++  RANGE - sort key
+The partition key of an item is also known as its *hash attribute*.
+The term "hash attribute" derives from DynamoDB' usage of an internal hash function to evenly distribute data items across partitions, based on their partition key values.
+The sort key of an item is also known as its *range attribute*.
+The term "range attribute" derives from the way DynamoDB stores items with the same partition key physically close together, in sorted order by the sort key value.
+
+Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-dynamodb-lsi.html#cfn-dynamodb-lsi-keyschema
+DuplicatesAllowed: False
+ItemType: KeySchema
+Type: List
 UpdateType: Mutable
 
 ```yaml
@@ -65,9 +74,11 @@ Accept wildcard characters: False
 ```
 
 ### -Projection
-Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-dynamodb-lsi.html#cfn-dynamodb-lsi-projection    
-Required: True    
-Type: Projection    
+Represents attributes that are copied projected from the table into the local secondary index.
+These are in addition to the primary key attributes and index key attributes, which are automatically projected.
+
+Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-dynamodb-lsi.html#cfn-dynamodb-lsi-projection
+Type: Projection
 UpdateType: Mutable
 
 ```yaml
@@ -83,15 +94,13 @@ Accept wildcard characters: False
 ```
 
 ### CommonParameters
-This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction, and -WarningVariable.
-For more information, see about_CommonParameters (http://go.microsoft.com/fwlink/?LinkID=113216).
+This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction, and -WarningVariable. For more information, see [about_CommonParameters](http://go.microsoft.com/fwlink/?LinkID=113216).
 
 ## INPUTS
 
 ## OUTPUTS
 
 ### Vaporshell.Resource.DynamoDB.Table.LocalSecondaryIndex
-
 ## NOTES
 
 ## RELATED LINKS

@@ -1,18 +1,9 @@
----
-layout: glossary
-title: New-VSBatchJobQueue
-categories: glossary
-label1: Category
-data1: Documentation
-label2: Depth
-data2: Deep
-schema: 2.0.0
----
-
 # New-VSBatchJobQueue
 
 ## SYNOPSIS
-Adds an AWS::Batch::JobQueue resource to the template
+Adds an AWS::Batch::JobQueue resource to the template.
+The AWS::Batch::JobQueue resource specifies the parameters for an AWS Batch job queue definition.
+For more information, see Job Queues: https://docs.aws.amazon.com/batch/latest/userguide/job_queues.html in the *AWS Batch User Guide*.
 
 ## SYNTAX
 
@@ -23,7 +14,18 @@ New-VSBatchJobQueue [-LogicalId] <String> -ComputeEnvironmentOrder <Object> -Pri
 ```
 
 ## DESCRIPTION
-Adds an AWS::Batch::JobQueue resource to the template
+Adds an AWS::Batch::JobQueue resource to the template.
+The AWS::Batch::JobQueue resource specifies the parameters for an AWS Batch job queue definition.
+For more information, see Job Queues: https://docs.aws.amazon.com/batch/latest/userguide/job_queues.html in the *AWS Batch User Guide*.
+
+## EXAMPLES
+
+### Example 1
+```powershell
+PS C:\> {{ Add example code here }}
+```
+
+{{ Add example description here }}
 
 ## PARAMETERS
 
@@ -45,10 +47,14 @@ Accept wildcard characters: False
 ```
 
 ### -ComputeEnvironmentOrder
-Type: List    
-Required: True    
-Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-batch-jobqueue.html#cfn-batch-jobqueue-computeenvironmentorder    
-ItemType: ComputeEnvironmentOrder    
+The set of compute environments mapped to a job queue and their order relative to each other.
+The job scheduler uses this parameter to determine which compute environment should execute a given job.
+Compute environments must be in the VALID state before you can associate them with a job queue.
+You can associate up to three compute environments with a job queue.
+
+Type: List
+Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-batch-jobqueue.html#cfn-batch-jobqueue-computeenvironmentorder
+ItemType: ComputeEnvironmentOrder
 UpdateType: Mutable
 
 ```yaml
@@ -64,9 +70,12 @@ Accept wildcard characters: False
 ```
 
 ### -Priority
-Required: True    
-Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-batch-jobqueue.html#cfn-batch-jobqueue-priority    
-PrimitiveType: Integer    
+The priority of the job queue.
+Job queues with a higher priority or a higher integer value for the priority parameter are evaluated first when associated with the same compute environment.
+Priority is determined in descending order, for example, a job queue with a priority value of 10 is given scheduling preference over a job queue with a priority value of 1.
+
+Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-batch-jobqueue.html#cfn-batch-jobqueue-priority
+PrimitiveType: Integer
 UpdateType: Mutable
 
 ```yaml
@@ -82,9 +91,11 @@ Accept wildcard characters: False
 ```
 
 ### -State
-Required: False    
-Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-batch-jobqueue.html#cfn-batch-jobqueue-state    
-PrimitiveType: String    
+The state of the job queue.
+If the job queue state is ENABLED, it is able to accept jobs.
+
+Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-batch-jobqueue.html#cfn-batch-jobqueue-state
+PrimitiveType: String
 UpdateType: Mutable
 
 ```yaml
@@ -100,9 +111,10 @@ Accept wildcard characters: False
 ```
 
 ### -JobQueueName
-Required: False    
-Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-batch-jobqueue.html#cfn-batch-jobqueue-jobqueuename    
-PrimitiveType: String    
+The name of the job queue.
+
+Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-batch-jobqueue.html#cfn-batch-jobqueue-jobqueuename
+PrimitiveType: String
 UpdateType: Immutable
 
 ```yaml
@@ -212,15 +224,13 @@ Accept wildcard characters: False
 ```
 
 ### CommonParameters
-This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction, and -WarningVariable.
-For more information, see about_CommonParameters (http://go.microsoft.com/fwlink/?LinkID=113216).
+This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction, and -WarningVariable. For more information, see [about_CommonParameters](http://go.microsoft.com/fwlink/?LinkID=113216).
 
 ## INPUTS
 
 ## OUTPUTS
 
 ### Vaporshell.Resource.Batch.JobQueue
-
 ## NOTES
 
 ## RELATED LINKS

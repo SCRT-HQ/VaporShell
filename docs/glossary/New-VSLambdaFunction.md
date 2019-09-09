@@ -1,31 +1,38 @@
----
-layout: glossary
-title: New-VSLambdaFunction
-categories: glossary
-label1: Category
-data1: Documentation
-label2: Depth
-data2: Deep
-schema: 2.0.0
----
-
 # New-VSLambdaFunction
 
 ## SYNOPSIS
-Adds an AWS::Lambda::Function resource to the template
+Adds an AWS::Lambda::Function resource to the template.
+The AWS::Lambda::Function resource creates a Lambda function.
+To create a function, you need a deployment package: https://docs.aws.amazon.com/lambda/latest/dg/deployment-package-v2.html and an execution role: https://docs.aws.amazon.com/lambda/latest/dg/intro-permission-model.html#lambda-intro-execution-role.
+The deployment package contains your function code.
+The execution role grants the function permission to use AWS services, such as Amazon CloudWatch Logs for log streaming and AWS X-Ray for request tracing.
 
 ## SYNTAX
 
 ```
 New-VSLambdaFunction [-LogicalId] <String> -Code <Object> [-DeadLetterConfig <Object>] [-Description <Object>]
- [-Environment <Object>] [-FunctionName <Object>] -Handler <Object> [-KmsKeyArn <Object>] [-MemorySize <Int32>]
- [-ReservedConcurrentExecutions <Int32>] -Role <Object> -Runtime <Object> [-Tags <Object>] [-Timeout <Int32>]
- [-TracingConfig <Object>] [-VpcConfig <Object>] [-DeletionPolicy <String>] [-DependsOn <String[]>]
- [-Metadata <Object>] [-UpdatePolicy <Object>] [-Condition <Object>] [<CommonParameters>]
+ [-Environment <Object>] [-FunctionName <Object>] -Handler <Object> [-KmsKeyArn <Object>] [-Layers <Object>]
+ [-MemorySize <Int32>] [-ReservedConcurrentExecutions <Int32>] -Role <Object> -Runtime <Object>
+ [-Tags <Object>] [-Timeout <Int32>] [-TracingConfig <Object>] [-VpcConfig <Object>] [-DeletionPolicy <String>]
+ [-DependsOn <String[]>] [-Metadata <Object>] [-UpdatePolicy <Object>] [-Condition <Object>]
+ [<CommonParameters>]
 ```
 
 ## DESCRIPTION
-Adds an AWS::Lambda::Function resource to the template
+Adds an AWS::Lambda::Function resource to the template.
+The AWS::Lambda::Function resource creates a Lambda function.
+To create a function, you need a deployment package: https://docs.aws.amazon.com/lambda/latest/dg/deployment-package-v2.html and an execution role: https://docs.aws.amazon.com/lambda/latest/dg/intro-permission-model.html#lambda-intro-execution-role.
+The deployment package contains your function code.
+The execution role grants the function permission to use AWS services, such as Amazon CloudWatch Logs for log streaming and AWS X-Ray for request tracing.
+
+## EXAMPLES
+
+### Example 1
+```powershell
+PS C:\> {{ Add example code here }}
+```
+
+{{ Add example description here }}
 
 ## PARAMETERS
 
@@ -47,9 +54,10 @@ Accept wildcard characters: False
 ```
 
 ### -Code
-Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-lambda-function.html#cfn-lambda-function-code    
-Required: True    
-Type: Code    
+The code for the function.
+
+Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-lambda-function.html#cfn-lambda-function-code
+Type: Code
 UpdateType: Mutable
 
 ```yaml
@@ -65,9 +73,11 @@ Accept wildcard characters: False
 ```
 
 ### -DeadLetterConfig
-Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-lambda-function.html#cfn-lambda-function-deadletterconfig    
-Required: False    
-Type: DeadLetterConfig    
+A dead letter queue configuration that specifies the queue or topic where Lambda sends asynchronous events when they fail processing.
+For more information, see Dead Letter Queues: https://docs.aws.amazon.com/lambda/latest/dg/dlq.html.
+
+Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-lambda-function.html#cfn-lambda-function-deadletterconfig
+Type: DeadLetterConfig
 UpdateType: Mutable
 
 ```yaml
@@ -83,9 +93,10 @@ Accept wildcard characters: False
 ```
 
 ### -Description
-Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-lambda-function.html#cfn-lambda-function-description    
-PrimitiveType: String    
-Required: False    
+A description of the function.
+
+Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-lambda-function.html#cfn-lambda-function-description
+PrimitiveType: String
 UpdateType: Mutable
 
 ```yaml
@@ -101,9 +112,10 @@ Accept wildcard characters: False
 ```
 
 ### -Environment
-Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-lambda-function.html#cfn-lambda-function-environment    
-Required: False    
-Type: Environment    
+Environment variables that are accessible from function code during execution.
+
+Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-lambda-function.html#cfn-lambda-function-environment
+Type: Environment
 UpdateType: Mutable
 
 ```yaml
@@ -119,9 +131,14 @@ Accept wildcard characters: False
 ```
 
 ### -FunctionName
-Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-lambda-function.html#cfn-lambda-function-functionname    
-PrimitiveType: String    
-Required: False    
+The name of the Lambda function, up to 64 characters in length.
+If you don't specify a name, AWS CloudFormation generates one.
+If you specify a name, you cannot perform updates that require replacement of this resource.
+You can perform updates that require no or some interruption.
+If you must replace the resource, specify a new name.
+
+Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-lambda-function.html#cfn-lambda-function-functionname
+PrimitiveType: String
 UpdateType: Immutable
 
 ```yaml
@@ -137,9 +154,13 @@ Accept wildcard characters: False
 ```
 
 ### -Handler
-Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-lambda-function.html#cfn-lambda-function-handler    
-PrimitiveType: String    
-Required: True    
+The name of the method within your code that Lambda calls to execute your function.
+The format includes the file name.
+It can also include namespaces and other qualifiers, depending on the runtime.
+For more information, see Programming Model: https://docs.aws.amazon.com/lambda/latest/dg/programming-model-v2.html.
+
+Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-lambda-function.html#cfn-lambda-function-handler
+PrimitiveType: String
 UpdateType: Mutable
 
 ```yaml
@@ -155,9 +176,33 @@ Accept wildcard characters: False
 ```
 
 ### -KmsKeyArn
-Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-lambda-function.html#cfn-lambda-function-kmskeyarn    
-PrimitiveType: String    
-Required: False    
+The ARN of the AWS Key Management Service AWS KMS key that's used to encrypt your function's environment variables.
+If it's not provided, AWS Lambda uses a default service key.
+
+Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-lambda-function.html#cfn-lambda-function-kmskeyarn
+PrimitiveType: String
+UpdateType: Mutable
+
+```yaml
+Type: Object
+Parameter Sets: (All)
+Aliases:
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### -Layers
+A list of function layers: https://docs.aws.amazon.com/lambda/latest/dg/configuration-layers.html to add to the function's execution environment.
+Specify each layer by its ARN, including the version.
+
+Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-lambda-function.html#cfn-lambda-function-layers
+DuplicatesAllowed: False
+PrimitiveItemType: String
+Type: List
 UpdateType: Mutable
 
 ```yaml
@@ -173,9 +218,13 @@ Accept wildcard characters: False
 ```
 
 ### -MemorySize
-Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-lambda-function.html#cfn-lambda-function-memorysize    
-PrimitiveType: Integer    
-Required: False    
+The amount of memory that your function has access to.
+Increasing the function's memory also increases its CPU allocation.
+The default value is 128 MB.
+The value must be a multiple of 64 MB.
+
+Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-lambda-function.html#cfn-lambda-function-memorysize
+PrimitiveType: Integer
 UpdateType: Mutable
 
 ```yaml
@@ -191,9 +240,10 @@ Accept wildcard characters: False
 ```
 
 ### -ReservedConcurrentExecutions
-Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-lambda-function.html#cfn-lambda-function-reservedconcurrentexecutions    
-PrimitiveType: Integer    
-Required: False    
+The number of simultaneous executions to reserve for the function.
+
+Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-lambda-function.html#cfn-lambda-function-reservedconcurrentexecutions
+PrimitiveType: Integer
 UpdateType: Mutable
 
 ```yaml
@@ -209,9 +259,10 @@ Accept wildcard characters: False
 ```
 
 ### -Role
-Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-lambda-function.html#cfn-lambda-function-role    
-PrimitiveType: String    
-Required: True    
+The Amazon Resource Name ARN of the function's execution role.
+
+Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-lambda-function.html#cfn-lambda-function-role
+PrimitiveType: String
 UpdateType: Mutable
 
 ```yaml
@@ -227,9 +278,10 @@ Accept wildcard characters: False
 ```
 
 ### -Runtime
-Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-lambda-function.html#cfn-lambda-function-runtime    
-PrimitiveType: String    
-Required: True    
+The identifier of the function's runtime: https://docs.aws.amazon.com/lambda/latest/dg/lambda-runtimes.html.
+
+Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-lambda-function.html#cfn-lambda-function-runtime
+PrimitiveType: String
 UpdateType: Mutable
 
 ```yaml
@@ -245,11 +297,12 @@ Accept wildcard characters: False
 ```
 
 ### -Tags
-Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-lambda-function.html#cfn-lambda-function-tags    
-DuplicatesAllowed: True    
-ItemType: Tag    
-Required: False    
-Type: List    
+A list of tags: https://docs.aws.amazon.com/lambda/latest/dg/tagging.html to apply to the function.
+
+Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-lambda-function.html#cfn-lambda-function-tags
+DuplicatesAllowed: True
+ItemType: Tag
+Type: List
 UpdateType: Mutable
 
 ```yaml
@@ -265,9 +318,12 @@ Accept wildcard characters: False
 ```
 
 ### -Timeout
-Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-lambda-function.html#cfn-lambda-function-timeout    
-PrimitiveType: Integer    
-Required: False    
+The amount of time that Lambda allows a function to run before stopping it.
+The default is 3 seconds.
+The maximum allowed value is 900 seconds.
+
+Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-lambda-function.html#cfn-lambda-function-timeout
+PrimitiveType: Integer
 UpdateType: Mutable
 
 ```yaml
@@ -283,9 +339,10 @@ Accept wildcard characters: False
 ```
 
 ### -TracingConfig
-Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-lambda-function.html#cfn-lambda-function-tracingconfig    
-Required: False    
-Type: TracingConfig    
+Set Mode to Active to sample and trace a subset of incoming requests with AWS X-Ray.
+
+Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-lambda-function.html#cfn-lambda-function-tracingconfig
+Type: TracingConfig
 UpdateType: Mutable
 
 ```yaml
@@ -301,9 +358,12 @@ Accept wildcard characters: False
 ```
 
 ### -VpcConfig
-Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-lambda-function.html#cfn-lambda-function-vpcconfig    
-Required: False    
-Type: VpcConfig    
+For network connectivity to AWS resources in a VPC, specify a list of security groups and subnets in the VPC.
+When you connect a function to a VPC, it can only access resources and the internet through that VPC.
+For more information, see VPC Settings: https://docs.aws.amazon.com/lambda/latest/dg/vpc.html.
+
+Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-lambda-function.html#cfn-lambda-function-vpcconfig
+Type: VpcConfig
 UpdateType: Mutable
 
 ```yaml
@@ -413,15 +473,13 @@ Accept wildcard characters: False
 ```
 
 ### CommonParameters
-This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction, and -WarningVariable.
-For more information, see about_CommonParameters (http://go.microsoft.com/fwlink/?LinkID=113216).
+This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction, and -WarningVariable. For more information, see [about_CommonParameters](http://go.microsoft.com/fwlink/?LinkID=113216).
 
 ## INPUTS
 
 ## OUTPUTS
 
 ### Vaporshell.Resource.Lambda.Function
-
 ## NOTES
 
 ## RELATED LINKS

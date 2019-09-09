@@ -1,18 +1,8 @@
----
-layout: glossary
-title: New-VSKinesisAnalyticsApplicationOutput
-categories: glossary
-label1: Category
-data1: Documentation
-label2: Depth
-data2: Deep
-schema: 2.0.0
----
-
 # New-VSKinesisAnalyticsApplicationOutput
 
 ## SYNOPSIS
-Adds an AWS::KinesisAnalytics::ApplicationOutput resource to the template
+Adds an AWS::KinesisAnalytics::ApplicationOutput resource to the template.
+Adds an external destination to your Amazon Kinesis Analytics application.
 
 ## SYNTAX
 
@@ -23,7 +13,31 @@ New-VSKinesisAnalyticsApplicationOutput [-LogicalId] <String> -ApplicationName <
 ```
 
 ## DESCRIPTION
-Adds an AWS::KinesisAnalytics::ApplicationOutput resource to the template
+Adds an AWS::KinesisAnalytics::ApplicationOutput resource to the template.
+Adds an external destination to your Amazon Kinesis Analytics application.
+
+If you want Amazon Kinesis Analytics to deliver data from an in-application stream within your application to an external destination (such as an Amazon Kinesis stream, an Amazon Kinesis Firehose delivery stream, or an AWS Lambda function, you add the relevant configuration to your application using this operation.
+You can configure one or more outputs for your application.
+Each output configuration maps an in-application stream and an external destination.
+
+You can use one of the output configurations to deliver data from your in-application error stream to an external destination so that you can analyze the errors.
+For more information, see Understanding Application Output (Destination: https://docs.aws.amazon.com/kinesisanalytics/latest/dev/how-it-works-output.html.
+
+Any configuration update, including adding a streaming source using this operation, results in a new version of the application.
+You can use the DescribeApplication operation to find the current application version.
+
+For the limits on the number of application inputs and outputs you can configure, see Limits: https://docs.aws.amazon.com/kinesisanalytics/latest/dev/limits.html.
+
+This operation requires permissions to perform the kinesisanalytics:AddApplicationOutput action.
+
+## EXAMPLES
+
+### Example 1
+```powershell
+PS C:\> {{ Add example code here }}
+```
+
+{{ Add example description here }}
 
 ## PARAMETERS
 
@@ -45,9 +59,10 @@ Accept wildcard characters: False
 ```
 
 ### -ApplicationName
-Required: True    
-Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-kinesisanalytics-applicationoutput.html#cfn-kinesisanalytics-applicationoutput-applicationname    
-PrimitiveType: String    
+Name of the application to which you want to add the output configuration.
+
+Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-kinesisanalytics-applicationoutput.html#cfn-kinesisanalytics-applicationoutput-applicationname
+PrimitiveType: String
 UpdateType: Immutable
 
 ```yaml
@@ -63,9 +78,11 @@ Accept wildcard characters: False
 ```
 
 ### -Output
-Type: Output    
-Required: True    
-Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-kinesisanalytics-applicationoutput.html#cfn-kinesisanalytics-applicationoutput-output    
+An array of objects, each describing one output configuration.
+In the output configuration, you specify the name of an in-application stream, a destination that is, an Amazon Kinesis stream, an Amazon Kinesis Firehose delivery stream, or an AWS Lambda function, and record the formation to use when writing to the destination.
+
+Type: Output
+Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-kinesisanalytics-applicationoutput.html#cfn-kinesisanalytics-applicationoutput-output
 UpdateType: Mutable
 
 ```yaml
@@ -175,15 +192,13 @@ Accept wildcard characters: False
 ```
 
 ### CommonParameters
-This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction, and -WarningVariable.
-For more information, see about_CommonParameters (http://go.microsoft.com/fwlink/?LinkID=113216).
+This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction, and -WarningVariable. For more information, see [about_CommonParameters](http://go.microsoft.com/fwlink/?LinkID=113216).
 
 ## INPUTS
 
 ## OUTPUTS
 
 ### Vaporshell.Resource.KinesisAnalytics.ApplicationOutput
-
 ## NOTES
 
 ## RELATED LINKS

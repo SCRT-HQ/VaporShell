@@ -1,18 +1,8 @@
----
-layout: glossary
-title: New-VSElasticLoadBalancingV2Listener
-categories: glossary
-label1: Category
-data1: Documentation
-label2: Depth
-data2: Deep
-schema: 2.0.0
----
-
 # New-VSElasticLoadBalancingV2Listener
 
 ## SYNOPSIS
-Adds an AWS::ElasticLoadBalancingV2::Listener resource to the template
+Adds an AWS::ElasticLoadBalancingV2::Listener resource to the template.
+Specifies a listener for an Application Load Balancer or Network Load Balancer.
 
 ## SYNTAX
 
@@ -24,7 +14,17 @@ New-VSElasticLoadBalancingV2Listener [-LogicalId] <String> [-Certificates <Objec
 ```
 
 ## DESCRIPTION
-Adds an AWS::ElasticLoadBalancingV2::Listener resource to the template
+Adds an AWS::ElasticLoadBalancingV2::Listener resource to the template.
+Specifies a listener for an Application Load Balancer or Network Load Balancer.
+
+## EXAMPLES
+
+### Example 1
+```powershell
+PS C:\> {{ Add example code here }}
+```
+
+{{ Add example description here }}
 
 ## PARAMETERS
 
@@ -46,11 +46,13 @@ Accept wildcard characters: False
 ```
 
 ### -Certificates
-Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-elasticloadbalancingv2-listener.html#cfn-elasticloadbalancingv2-listener-certificates    
-DuplicatesAllowed: False    
-ItemType: Certificate    
-Required: False    
-Type: List    
+The default SSL server certificate.
+You must provide exactly one certificate if the listener protocol is HTTPS or TLS.
+
+Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-elasticloadbalancingv2-listener.html#cfn-elasticloadbalancingv2-listener-certificates
+DuplicatesAllowed: False
+ItemType: Certificate
+Type: List
 UpdateType: Mutable
 
 ```yaml
@@ -66,11 +68,12 @@ Accept wildcard characters: False
 ```
 
 ### -DefaultActions
-Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-elasticloadbalancingv2-listener.html#cfn-elasticloadbalancingv2-listener-defaultactions    
-DuplicatesAllowed: False    
-ItemType: Action    
-Required: True    
-Type: List    
+The actions for the default rule.
+
+Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-elasticloadbalancingv2-listener.html#cfn-elasticloadbalancingv2-listener-defaultactions
+DuplicatesAllowed: False
+ItemType: Action
+Type: List
 UpdateType: Mutable
 
 ```yaml
@@ -86,9 +89,10 @@ Accept wildcard characters: False
 ```
 
 ### -LoadBalancerArn
-Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-elasticloadbalancingv2-listener.html#cfn-elasticloadbalancingv2-listener-loadbalancerarn    
-PrimitiveType: String    
-Required: True    
+The Amazon Resource Name ARN of the load balancer.
+
+Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-elasticloadbalancingv2-listener.html#cfn-elasticloadbalancingv2-listener-loadbalancerarn
+PrimitiveType: String
 UpdateType: Immutable
 
 ```yaml
@@ -104,9 +108,10 @@ Accept wildcard characters: False
 ```
 
 ### -Port
-Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-elasticloadbalancingv2-listener.html#cfn-elasticloadbalancingv2-listener-port    
-PrimitiveType: Integer    
-Required: True    
+The port on which the load balancer is listening.
+
+Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-elasticloadbalancingv2-listener.html#cfn-elasticloadbalancingv2-listener-port
+PrimitiveType: Integer
 UpdateType: Mutable
 
 ```yaml
@@ -122,9 +127,12 @@ Accept wildcard characters: False
 ```
 
 ### -Protocol
-Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-elasticloadbalancingv2-listener.html#cfn-elasticloadbalancingv2-listener-protocol    
-PrimitiveType: String    
-Required: True    
+The protocol for connections from clients to the load balancer.
+For Application Load Balancers, the supported protocols are HTTP and HTTPS.
+For Network Load Balancers, the supported protocols are TCP and TLS.
+
+Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-elasticloadbalancingv2-listener.html#cfn-elasticloadbalancingv2-listener-protocol
+PrimitiveType: String
 UpdateType: Mutable
 
 ```yaml
@@ -140,9 +148,11 @@ Accept wildcard characters: False
 ```
 
 ### -SslPolicy
-Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-elasticloadbalancingv2-listener.html#cfn-elasticloadbalancingv2-listener-sslpolicy    
-PrimitiveType: String    
-Required: False    
+HTTPS and TLS listeners\] The security policy that defines which ciphers and protocols are supported.
+The default is the current predefined security policy.
+
+Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-elasticloadbalancingv2-listener.html#cfn-elasticloadbalancingv2-listener-sslpolicy
+PrimitiveType: String
 UpdateType: Mutable
 
 ```yaml
@@ -252,15 +262,13 @@ Accept wildcard characters: False
 ```
 
 ### CommonParameters
-This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction, and -WarningVariable.
-For more information, see about_CommonParameters (http://go.microsoft.com/fwlink/?LinkID=113216).
+This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction, and -WarningVariable. For more information, see [about_CommonParameters](http://go.microsoft.com/fwlink/?LinkID=113216).
 
 ## INPUTS
 
 ## OUTPUTS
 
 ### Vaporshell.Resource.ElasticLoadBalancingV2.Listener
-
 ## NOTES
 
 ## RELATED LINKS

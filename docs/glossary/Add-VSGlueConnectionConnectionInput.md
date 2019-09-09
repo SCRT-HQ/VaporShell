@@ -1,18 +1,8 @@
----
-layout: glossary
-title: Add-VSGlueConnectionConnectionInput
-categories: glossary
-label1: Category
-data1: Documentation
-label2: Depth
-data2: Deep
-schema: 2.0.0
----
-
 # Add-VSGlueConnectionConnectionInput
 
 ## SYNOPSIS
-Adds an AWS::Glue::Connection.ConnectionInput resource property to the template
+Adds an AWS::Glue::Connection.ConnectionInput resource property to the template.
+A structure that is used to specify a connection to create or update.
 
 ## SYNTAX
 
@@ -23,14 +13,25 @@ Add-VSGlueConnectionConnectionInput [[-Description] <Object>] [-ConnectionType] 
 ```
 
 ## DESCRIPTION
-Adds an AWS::Glue::Connection.ConnectionInput resource property to the template
+Adds an AWS::Glue::Connection.ConnectionInput resource property to the template.
+A structure that is used to specify a connection to create or update.
+
+## EXAMPLES
+
+### Example 1
+```powershell
+PS C:\> {{ Add example code here }}
+```
+
+{{ Add example description here }}
 
 ## PARAMETERS
 
 ### -Description
-Required: False    
-Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-glue-connection-connectioninput.html#cfn-glue-connection-connectioninput-description    
-PrimitiveType: String    
+The description of the connection.
+
+Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-glue-connection-connectioninput.html#cfn-glue-connection-connectioninput-description
+PrimitiveType: String
 UpdateType: Mutable
 
 ```yaml
@@ -46,9 +47,11 @@ Accept wildcard characters: False
 ```
 
 ### -ConnectionType
-Required: True    
-Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-glue-connection-connectioninput.html#cfn-glue-connection-connectioninput-connectiontype    
-PrimitiveType: String    
+The type of the connection.
+Currently, only JDBC is supported; SFTP is not supported.
+
+Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-glue-connection-connectioninput.html#cfn-glue-connection-connectioninput-connectiontype
+PrimitiveType: String
 UpdateType: Mutable
 
 ```yaml
@@ -64,10 +67,11 @@ Accept wildcard characters: False
 ```
 
 ### -MatchCriteria
-PrimitiveItemType: String    
-Type: List    
-Required: False    
-Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-glue-connection-connectioninput.html#cfn-glue-connection-connectioninput-matchcriteria    
+A list of criteria that can be used in selecting this connection.
+
+PrimitiveItemType: String
+Type: List
+Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-glue-connection-connectioninput.html#cfn-glue-connection-connectioninput-matchcriteria
 UpdateType: Mutable
 
 ```yaml
@@ -83,9 +87,10 @@ Accept wildcard characters: False
 ```
 
 ### -PhysicalConnectionRequirements
-Type: PhysicalConnectionRequirements    
-Required: False    
-Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-glue-connection-connectioninput.html#cfn-glue-connection-connectioninput-physicalconnectionrequirements    
+A map of physical connection requirements, such as virtual private cloud VPC and SecurityGroup, that are needed to successfully make this connection.
+
+Type: PhysicalConnectionRequirements
+Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-glue-connection-connectioninput.html#cfn-glue-connection-connectioninput-physicalconnectionrequirements
 UpdateType: Mutable
 
 ```yaml
@@ -101,9 +106,10 @@ Accept wildcard characters: False
 ```
 
 ### -ConnectionProperties
-Required: True    
-Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-glue-connection-connectioninput.html#cfn-glue-connection-connectioninput-connectionproperties    
-PrimitiveType: Json    
+These key-value pairs define parameters for the connection.
+
+Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-glue-connection-connectioninput.html#cfn-glue-connection-connectioninput-connectionproperties
+PrimitiveType: Json
 UpdateType: Mutable
 
 ```yaml
@@ -119,9 +125,10 @@ Accept wildcard characters: False
 ```
 
 ### -Name
-Required: False    
-Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-glue-connection-connectioninput.html#cfn-glue-connection-connectioninput-name    
-PrimitiveType: String    
+The name of the connection.
+
+Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-glue-connection-connectioninput.html#cfn-glue-connection-connectioninput-name
+PrimitiveType: String
 UpdateType: Immutable
 
 ```yaml
@@ -137,15 +144,13 @@ Accept wildcard characters: False
 ```
 
 ### CommonParameters
-This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction, and -WarningVariable.
-For more information, see about_CommonParameters (http://go.microsoft.com/fwlink/?LinkID=113216).
+This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction, and -WarningVariable. For more information, see [about_CommonParameters](http://go.microsoft.com/fwlink/?LinkID=113216).
 
 ## INPUTS
 
 ## OUTPUTS
 
 ### Vaporshell.Resource.Glue.Connection.ConnectionInput
-
 ## NOTES
 
 ## RELATED LINKS

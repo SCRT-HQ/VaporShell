@@ -1,18 +1,8 @@
----
-layout: glossary
-title: Add-VSCognitoIdentityPoolCognitoStreams
-categories: glossary
-label1: Category
-data1: Documentation
-label2: Depth
-data2: Deep
-schema: 2.0.0
----
-
 # Add-VSCognitoIdentityPoolCognitoStreams
 
 ## SYNOPSIS
-Adds an AWS::Cognito::IdentityPool.CognitoStreams resource property to the template
+Adds an AWS::Cognito::IdentityPool.CognitoStreams resource property to the template.
+CognitoStreams is a property of the AWS::Cognito::IdentityPool: https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-cognito-identitypool.html resource that defines configuration options for Amazon Cognito streams.
 
 ## SYNTAX
 
@@ -22,14 +12,26 @@ Add-VSCognitoIdentityPoolCognitoStreams [[-StreamingStatus] <Object>] [[-StreamN
 ```
 
 ## DESCRIPTION
-Adds an AWS::Cognito::IdentityPool.CognitoStreams resource property to the template
+Adds an AWS::Cognito::IdentityPool.CognitoStreams resource property to the template.
+CognitoStreams is a property of the AWS::Cognito::IdentityPool: https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-cognito-identitypool.html resource that defines configuration options for Amazon Cognito streams.
+
+## EXAMPLES
+
+### Example 1
+```powershell
+PS C:\> {{ Add example code here }}
+```
+
+{{ Add example description here }}
 
 ## PARAMETERS
 
 ### -StreamingStatus
-Required: False    
-Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-cognito-identitypool-cognitostreams.html#cfn-cognito-identitypool-cognitostreams-streamingstatus    
-PrimitiveType: String    
+Status of the Amazon Cognito streams.
+Valid values are: ENABLED or DISABLED.
+
+Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-cognito-identitypool-cognitostreams.html#cfn-cognito-identitypool-cognitostreams-streamingstatus
+PrimitiveType: String
 UpdateType: Mutable
 
 ```yaml
@@ -45,9 +47,11 @@ Accept wildcard characters: False
 ```
 
 ### -StreamName
-Required: False    
-Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-cognito-identitypool-cognitostreams.html#cfn-cognito-identitypool-cognitostreams-streamname    
-PrimitiveType: String    
+The name of the Amazon Cognito stream to receive updates.
+This stream must be in the developer's account and in the same region as the identity pool.
+
+Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-cognito-identitypool-cognitostreams.html#cfn-cognito-identitypool-cognitostreams-streamname
+PrimitiveType: String
 UpdateType: Mutable
 
 ```yaml
@@ -63,9 +67,11 @@ Accept wildcard characters: False
 ```
 
 ### -RoleArn
-Required: False    
-Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-cognito-identitypool-cognitostreams.html#cfn-cognito-identitypool-cognitostreams-rolearn    
-PrimitiveType: String    
+The Amazon Resource Name ARN of the role Amazon Cognito can assume to publish to the stream.
+This role must grant access to Amazon Cognito cognito-sync to invoke PutRecord on your Amazon Cognito stream.
+
+Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-cognito-identitypool-cognitostreams.html#cfn-cognito-identitypool-cognitostreams-rolearn
+PrimitiveType: String
 UpdateType: Mutable
 
 ```yaml
@@ -81,15 +87,13 @@ Accept wildcard characters: False
 ```
 
 ### CommonParameters
-This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction, and -WarningVariable.
-For more information, see about_CommonParameters (http://go.microsoft.com/fwlink/?LinkID=113216).
+This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction, and -WarningVariable. For more information, see [about_CommonParameters](http://go.microsoft.com/fwlink/?LinkID=113216).
 
 ## INPUTS
 
 ## OUTPUTS
 
 ### Vaporshell.Resource.Cognito.IdentityPool.CognitoStreams
-
 ## NOTES
 
 ## RELATED LINKS

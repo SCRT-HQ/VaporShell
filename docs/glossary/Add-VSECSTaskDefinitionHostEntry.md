@@ -1,18 +1,8 @@
----
-layout: glossary
-title: Add-VSECSTaskDefinitionHostEntry
-categories: glossary
-label1: Category
-data1: Documentation
-label2: Depth
-data2: Deep
-schema: 2.0.0
----
-
 # Add-VSECSTaskDefinitionHostEntry
 
 ## SYNOPSIS
-Adds an AWS::ECS::TaskDefinition.HostEntry resource property to the template
+Adds an AWS::ECS::TaskDefinition.HostEntry resource property to the template.
+The HostEntry property specifies a hostname and an IP address that are added to the /etc/hosts file of a container through the extraHosts parameter of its ContainerDefinition resource.
 
 ## SYNTAX
 
@@ -21,14 +11,25 @@ Add-VSECSTaskDefinitionHostEntry [-Hostname] <Object> [-IpAddress] <Object> [<Co
 ```
 
 ## DESCRIPTION
-Adds an AWS::ECS::TaskDefinition.HostEntry resource property to the template
+Adds an AWS::ECS::TaskDefinition.HostEntry resource property to the template.
+The HostEntry property specifies a hostname and an IP address that are added to the /etc/hosts file of a container through the extraHosts parameter of its ContainerDefinition resource.
+
+## EXAMPLES
+
+### Example 1
+```powershell
+PS C:\> {{ Add example code here }}
+```
+
+{{ Add example description here }}
 
 ## PARAMETERS
 
 ### -Hostname
-Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ecs-taskdefinition-containerdefinitions-hostentry.html#cfn-ecs-taskdefinition-containerdefinition-hostentry-hostname    
-PrimitiveType: String    
-Required: True    
+The hostname to use in the /etc/hosts entry.
+
+Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ecs-taskdefinition-containerdefinitions-hostentry.html#cfn-ecs-taskdefinition-containerdefinition-hostentry-hostname
+PrimitiveType: String
 UpdateType: Immutable
 
 ```yaml
@@ -44,9 +45,10 @@ Accept wildcard characters: False
 ```
 
 ### -IpAddress
-Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ecs-taskdefinition-containerdefinitions-hostentry.html#cfn-ecs-taskdefinition-containerdefinition-hostentry-ipaddress    
-PrimitiveType: String    
-Required: True    
+The IP address to use in the /etc/hosts entry.
+
+Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ecs-taskdefinition-containerdefinitions-hostentry.html#cfn-ecs-taskdefinition-containerdefinition-hostentry-ipaddress
+PrimitiveType: String
 UpdateType: Immutable
 
 ```yaml
@@ -62,15 +64,13 @@ Accept wildcard characters: False
 ```
 
 ### CommonParameters
-This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction, and -WarningVariable.
-For more information, see about_CommonParameters (http://go.microsoft.com/fwlink/?LinkID=113216).
+This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction, and -WarningVariable. For more information, see [about_CommonParameters](http://go.microsoft.com/fwlink/?LinkID=113216).
 
 ## INPUTS
 
 ## OUTPUTS
 
 ### Vaporshell.Resource.ECS.TaskDefinition.HostEntry
-
 ## NOTES
 
 ## RELATED LINKS

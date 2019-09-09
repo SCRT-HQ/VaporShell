@@ -1,32 +1,42 @@
----
-layout: glossary
-title: New-VSDynamoDBTable
-categories: glossary
-label1: Category
-data1: Documentation
-label2: Depth
-data2: Deep
-schema: 2.0.0
----
-
 # New-VSDynamoDBTable
 
 ## SYNOPSIS
-Adds an AWS::DynamoDB::Table resource to the template
+Adds an AWS::DynamoDB::Table resource to the template.
+The AWS::DynamoDB::Table resource creates a DynamoDB table.
+For more information, see CreateTable: https://docs.aws.amazon.com/amazondynamodb/latest/APIReference/API_CreateTable.html in the *Amazon DynamoDB API Reference*.
 
 ## SYNTAX
 
 ```
-New-VSDynamoDBTable [-LogicalId] <String> [-AttributeDefinitions <Object>] [-GlobalSecondaryIndexes <Object>]
- -KeySchema <Object> [-LocalSecondaryIndexes <Object>] [-PointInTimeRecoverySpecification <Object>]
- -ProvisionedThroughput <Object> [-SSESpecification <Object>] [-StreamSpecification <Object>]
- [-TableName <Object>] [-Tags <Object>] [-TimeToLiveSpecification <Object>] [-DeletionPolicy <String>]
- [-DependsOn <String[]>] [-Metadata <Object>] [-UpdatePolicy <Object>] [-Condition <Object>]
- [<CommonParameters>]
+New-VSDynamoDBTable [-LogicalId] <String> [-AttributeDefinitions <Object>] [-BillingMode <Object>]
+ [-GlobalSecondaryIndexes <Object>] -KeySchema <Object> [-LocalSecondaryIndexes <Object>]
+ [-PointInTimeRecoverySpecification <Object>] [-ProvisionedThroughput <Object>] [-SSESpecification <Object>]
+ [-StreamSpecification <Object>] [-TableName <Object>] [-Tags <Object>] [-TimeToLiveSpecification <Object>]
+ [-DeletionPolicy <String>] [-DependsOn <String[]>] [-Metadata <Object>] [-UpdatePolicy <Object>]
+ [-Condition <Object>] [<CommonParameters>]
 ```
 
 ## DESCRIPTION
-Adds an AWS::DynamoDB::Table resource to the template
+Adds an AWS::DynamoDB::Table resource to the template.
+The AWS::DynamoDB::Table resource creates a DynamoDB table.
+For more information, see CreateTable: https://docs.aws.amazon.com/amazondynamodb/latest/APIReference/API_CreateTable.html in the *Amazon DynamoDB API Reference*.
+
+You should be aware of the following behaviors when working with DynamoDB tables:
+
++ AWS CloudFormation typically creates DynamoDB tables in parallel.
+However, if your template includes multiple DynamoDB tables with indexes, you must declare dependencies so that the tables are created sequentially.
+Amazon DynamoDB limits the number of tables with secondary indexes that are in the creating state.
+If you create multiple tables with indexes at the same time, DynamoDB returns an error and the stack operation fails.
+For an example, see DynamoDB Table with a DependsOn Attribute: https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-dynamodb-table.html#cfn-dynamodb-table-examples-dependson.
+
+## EXAMPLES
+
+### Example 1
+```powershell
+PS C:\> {{ Add example code here }}
+```
+
+{{ Add example description here }}
 
 ## PARAMETERS
 
@@ -48,11 +58,15 @@ Accept wildcard characters: False
 ```
 
 ### -AttributeDefinitions
-Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-dynamodb-table.html#cfn-dynamodb-table-attributedef    
-DuplicatesAllowed: True    
-ItemType: AttributeDefinition    
-Required: False    
-Type: List    
+A list of attributes that describe the key schema for the table and indexes.
+Duplicates are allowed.
+Update requires: Some interruptions: https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-some-interrupt.
+Replacement if you edit an existing AttributeDefinition.
+
+Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-dynamodb-table.html#cfn-dynamodb-table-attributedef
+DuplicatesAllowed: True
+ItemType: AttributeDefinition
+Type: List
 UpdateType: Conditional
 
 ```yaml
@@ -67,12 +81,50 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
+### -BillingMode
+Specify how you are charged for read and write throughput and how you manage capacity.
+Valid values include:
++  PROVISIONED - Sets the billing mode to PROVISIONED.
+We recommend using PROVISIONED for predictable workloads.
++  PAY_PER_REQUEST - Sets the billing mode to PAY_PER_REQUEST.
+We recommend using PAY_PER_REQUEST for unpredictable workloads.
+If not specified, the default is PROVISIONED.
+
+Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-dynamodb-table.html#cfn-dynamodb-table-billingmode
+PrimitiveType: String
+UpdateType: Mutable
+
+```yaml
+Type: Object
+Parameter Sets: (All)
+Aliases:
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
 ### -GlobalSecondaryIndexes
-Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-dynamodb-table.html#cfn-dynamodb-table-gsi    
-DuplicatesAllowed: True    
-ItemType: GlobalSecondaryIndex    
-Required: False    
-Type: List    
+Global secondary indexes to be created on the table.
+You can create up to 20 global secondary indexes.
+If you update a table to include a new global secondary index, AWS CloudFormation initiates the index creation and then proceeds with the stack update.
+AWS CloudFormation doesn't wait for the index to complete creation because the backfilling phase can take a long time, depending on the size of the table.
+You can't use the index or update the table until the index's status is ACTIVE.
+You can track its status by using the DynamoDB DescribeTable: https://docs.aws.amazon.com/cli/latest/reference/dynamodb/describe-table.html command.
+If you add or delete an index during an update, we recommend that you don't update any other resources.
+If your stack fails to update and is rolled back while adding a new index, you must manually delete the index.
+Updates are not supported.
+The following are exceptions:
++ If you update only the provisioned throughput values of global secondary indexes, you can update the table without interruption.
++ You can delete or add one global secondary index without interruption.
+If you do both in the same update for example, by changing the index's logical ID, the update fails.
+
+Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-dynamodb-table.html#cfn-dynamodb-table-gsi
+DuplicatesAllowed: True
+ItemType: GlobalSecondaryIndex
+Type: List
 UpdateType: Mutable
 
 ```yaml
@@ -88,11 +140,13 @@ Accept wildcard characters: False
 ```
 
 ### -KeySchema
-Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-dynamodb-table.html#cfn-dynamodb-table-keyschema    
-DuplicatesAllowed: False    
-ItemType: KeySchema    
-Required: True    
-Type: List    
+Specifies the attributes that make up the primary key for the table.
+The attributes in the KeySchema property must also be defined in the AttributeDefinitions property.
+
+Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-dynamodb-table.html#cfn-dynamodb-table-keyschema
+DuplicatesAllowed: False
+ItemType: KeySchema
+Type: List
 UpdateType: Immutable
 
 ```yaml
@@ -108,11 +162,15 @@ Accept wildcard characters: False
 ```
 
 ### -LocalSecondaryIndexes
-Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-dynamodb-table.html#cfn-dynamodb-table-lsi    
-DuplicatesAllowed: True    
-ItemType: LocalSecondaryIndex    
-Required: False    
-Type: List    
+Local secondary indexes to be created on the table.
+You can create up to 5 local secondary indexes.
+Each index is scoped to a given hash key value.
+The size of each hash key can be up to 10 gigabytes.
+
+Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-dynamodb-table.html#cfn-dynamodb-table-lsi
+DuplicatesAllowed: True
+ItemType: LocalSecondaryIndex
+Type: List
 UpdateType: Immutable
 
 ```yaml
@@ -128,9 +186,10 @@ Accept wildcard characters: False
 ```
 
 ### -PointInTimeRecoverySpecification
-Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-dynamodb-table.html#cfn-dynamodb-table-pointintimerecoveryspecification    
-Required: False    
-Type: PointInTimeRecoverySpecification    
+The settings used to enable point in time recover.
+
+Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-dynamodb-table.html#cfn-dynamodb-table-pointintimerecoveryspecification
+Type: PointInTimeRecoverySpecification
 UpdateType: Mutable
 
 ```yaml
@@ -146,9 +205,13 @@ Accept wildcard characters: False
 ```
 
 ### -ProvisionedThroughput
-Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-dynamodb-table.html#cfn-dynamodb-table-provisionedthroughput    
-Required: True    
-Type: ProvisionedThroughput    
+Throughput for the specified table, which consists of values for ReadCapacityUnits and WriteCapacityUnits.
+For more information about the contents of a provisioned throughput structure, see Amazon DynamoDB Table ProvisionedThroughput: https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-dynamodb-provisionedthroughput.html.
+If you set BillingMode as PROVISIONED, you must specify this property.
+If you set BillingMode as PAY_PER_REQUEST, you cannot specify this property.
+
+Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-dynamodb-table.html#cfn-dynamodb-table-provisionedthroughput
+Type: ProvisionedThroughput
 UpdateType: Mutable
 
 ```yaml
@@ -156,7 +219,7 @@ Type: Object
 Parameter Sets: (All)
 Aliases:
 
-Required: True
+Required: False
 Position: Named
 Default value: None
 Accept pipeline input: False
@@ -164,9 +227,11 @@ Accept wildcard characters: False
 ```
 
 ### -SSESpecification
-Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-dynamodb-table.html#cfn-dynamodb-table-ssespecification    
-Required: False    
-Type: SSESpecification    
+Specifies the settings to enable server-side encryption.
+Update requires: Some interruptions: https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-some-interrupt.
+
+Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-dynamodb-table.html#cfn-dynamodb-table-ssespecification
+Type: SSESpecification
 UpdateType: Conditional
 
 ```yaml
@@ -182,9 +247,10 @@ Accept wildcard characters: False
 ```
 
 ### -StreamSpecification
-Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-dynamodb-table.html#cfn-dynamodb-table-streamspecification    
-Required: False    
-Type: StreamSpecification    
+The settings for the DynamoDB table stream, which capture changes to items stored in the table.
+
+Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-dynamodb-table.html#cfn-dynamodb-table-streamspecification
+Type: StreamSpecification
 UpdateType: Mutable
 
 ```yaml
@@ -200,9 +266,15 @@ Accept wildcard characters: False
 ```
 
 ### -TableName
-Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-dynamodb-table.html#cfn-dynamodb-table-tablename    
-PrimitiveType: String    
-Required: False    
+A name for the table.
+If you don't specify a name, AWS CloudFormation generates a unique physical ID and uses that ID for the table name.
+For more information, see Name Type: https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-name.html.
+If you specify a name, you cannot perform updates that require replacement of this resource.
+You can perform updates that require no or some interruption.
+If you must replace the resource, specify a new name.
+
+Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-dynamodb-table.html#cfn-dynamodb-table-tablename
+PrimitiveType: String
 UpdateType: Immutable
 
 ```yaml
@@ -218,11 +290,13 @@ Accept wildcard characters: False
 ```
 
 ### -Tags
-Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-dynamodb-table.html#cfn-dynamodb-table-tags    
-DuplicatesAllowed: True    
-ItemType: Tag    
-Required: False    
-Type: List    
+An array of key-value pairs to apply to this resource.
+For more information, see Tag: https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-resource-tags.html.
+
+Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-dynamodb-table.html#cfn-dynamodb-table-tags
+DuplicatesAllowed: True
+ItemType: Tag
+Type: List
 UpdateType: Mutable
 
 ```yaml
@@ -238,9 +312,11 @@ Accept wildcard characters: False
 ```
 
 ### -TimeToLiveSpecification
-Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-dynamodb-table.html#cfn-dynamodb-table-timetolivespecification    
-Required: False    
-Type: TimeToLiveSpecification    
+Specifies the Time to Live TTL settings for the table.
+For detailed information about the limits in DynamoDB, see Limits in Amazon DynamoDB: https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/Limits.html in the Amazon DynamoDB Developer Guide.
+
+Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-dynamodb-table.html#cfn-dynamodb-table-timetolivespecification
+Type: TimeToLiveSpecification
 UpdateType: Mutable
 
 ```yaml
@@ -350,15 +426,13 @@ Accept wildcard characters: False
 ```
 
 ### CommonParameters
-This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction, and -WarningVariable.
-For more information, see about_CommonParameters (http://go.microsoft.com/fwlink/?LinkID=113216).
+This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction, and -WarningVariable. For more information, see [about_CommonParameters](http://go.microsoft.com/fwlink/?LinkID=113216).
 
 ## INPUTS
 
 ## OUTPUTS
 
 ### Vaporshell.Resource.DynamoDB.Table
-
 ## NOTES
 
 ## RELATED LINKS
