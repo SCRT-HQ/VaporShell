@@ -1,10 +1,11 @@
 function Add-VSCodePipelinePipelineEncryptionKey {
     <#
     .SYNOPSIS
-        Adds an AWS::CodePipeline::Pipeline.EncryptionKey resource property to the template
+        Adds an AWS::CodePipeline::Pipeline.EncryptionKey resource property to the template. Represents information about the key used to encrypt data in the artifact store, such as an AWS Key Management Service (AWS KMS key.
 
     .DESCRIPTION
-        Adds an AWS::CodePipeline::Pipeline.EncryptionKey resource property to the template
+        Adds an AWS::CodePipeline::Pipeline.EncryptionKey resource property to the template.
+Represents information about the key used to encrypt data in the artifact store, such as an AWS Key Management Service (AWS KMS key.
 
     .LINK
         http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-codepipeline-pipeline-artifactstore-encryptionkey.html

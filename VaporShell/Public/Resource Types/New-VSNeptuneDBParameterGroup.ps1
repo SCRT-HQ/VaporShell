@@ -1,10 +1,20 @@
 function New-VSNeptuneDBParameterGroup {
     <#
     .SYNOPSIS
-        Adds an AWS::Neptune::DBParameterGroup resource to the template
+        Adds an AWS::Neptune::DBParameterGroup resource to the template. AWS::Neptune::DBParameterGroup creates a new DB parameter group. This type can be declared in a template and referenced in the DBParameterGroupName parameter of AWS::Neptune::DBInstance.
 
     .DESCRIPTION
-        Adds an AWS::Neptune::DBParameterGroup resource to the template
+        Adds an AWS::Neptune::DBParameterGroup resource to the template. AWS::Neptune::DBParameterGroup creates a new DB parameter group. This type can be declared in a template and referenced in the DBParameterGroupName parameter of AWS::Neptune::DBInstance.
+
+**Note**
+
+Applying a parameter group to a DB instance might require the instance to reboot, resulting in a database outage for the duration of the reboot.
+
+A DB parameter group is initially created with the default parameters for the database engine used by the DB instance. To provide custom values for any of the parameters, you must modify the group after creating it using *ModifyDBParameterGroup*. Once you've created a DB parameter group, you need to associate it with your DB instance using *ModifyDBInstance*. When you associate a new DB parameter group with a running DB instance, you need to reboot the DB instance without failover for the new DB parameter group and associated settings to take effect.
+
+**Important**
+
+After you create a DB parameter group, you should wait at least 5 minutes before creating your first DB instance that uses that DB parameter group as the default parameter group. This allows Amazon Neptune to fully complete the create action before the parameter group is used as the default for a new DB instance. This is especially important for parameters that are critical when creating the default database for a DB instance, such as the character set for the default database defined by the character_set_database parameter. You can use the *Parameter Groups* option of the Amazon Neptune console or the *DescribeDBParameters* command to verify that your DB parameter group has been created or modified.
 
     .LINK
         http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-neptune-dbparametergroup.html

@@ -1,10 +1,11 @@
 function Add-VSEMRClusterJobFlowInstancesConfig {
     <#
     .SYNOPSIS
-        Adds an AWS::EMR::Cluster.JobFlowInstancesConfig resource property to the template
+        Adds an AWS::EMR::Cluster.JobFlowInstancesConfig resource property to the template. JobFlowInstancesConfig is a property of the AWS::EMR::Cluster resource. JobFlowInstancesConfig defines the instance groups or instance fleets that comprise the cluster. JobFlowInstancesConfig must contain either InstanceFleetConfig or InstanceGroupConfig. They cannot be used together.
 
     .DESCRIPTION
-        Adds an AWS::EMR::Cluster.JobFlowInstancesConfig resource property to the template
+        Adds an AWS::EMR::Cluster.JobFlowInstancesConfig resource property to the template.
+JobFlowInstancesConfig is a property of the AWS::EMR::Cluster resource. JobFlowInstancesConfig defines the instance groups or instance fleets that comprise the cluster. JobFlowInstancesConfig must contain either InstanceFleetConfig or InstanceGroupConfig. They cannot be used together.
 
     .LINK
         http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-elasticmapreduce-cluster-jobflowinstancesconfig.html

@@ -1,10 +1,10 @@
 function New-VSDocDBDBInstance {
     <#
     .SYNOPSIS
-        Adds an AWS::DocDB::DBInstance resource to the template
+        Adds an AWS::DocDB::DBInstance resource to the template. The AWS::DocDB::DBInstance Amazon DocumentDB (with MongoDB compatibility resource describes a DBInstance. For more information, see DBInstance: https://docs.aws.amazon.com/documentdb/latest/developerguide/API_DBInstance.html in the *Amazon DocumentDB Developer Guide*.
 
     .DESCRIPTION
-        Adds an AWS::DocDB::DBInstance resource to the template
+        Adds an AWS::DocDB::DBInstance resource to the template. The AWS::DocDB::DBInstance Amazon DocumentDB (with MongoDB compatibility resource describes a DBInstance. For more information, see DBInstance: https://docs.aws.amazon.com/documentdb/latest/developerguide/API_DBInstance.html in the *Amazon DocumentDB Developer Guide*.
 
     .LINK
         http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-docdb-dbinstance.html

@@ -1,10 +1,10 @@
 function New-VSECRRepository {
     <#
     .SYNOPSIS
-        Adds an AWS::ECR::Repository resource to the template
+        Adds an AWS::ECR::Repository resource to the template. The AWS::ECR::Repository resource specifies an Amazon Elastic Container Registry (Amazon ECR repository, where users can push and pull Docker images. For more information, see Amazon ECR Repositories: https://docs.aws.amazon.com/AmazonECR/latest/userguide/Repositories.html in the *Amazon Elastic Container Registry User Guide*.
 
     .DESCRIPTION
-        Adds an AWS::ECR::Repository resource to the template
+        Adds an AWS::ECR::Repository resource to the template. The AWS::ECR::Repository resource specifies an Amazon Elastic Container Registry (Amazon ECR repository, where users can push and pull Docker images. For more information, see Amazon ECR Repositories: https://docs.aws.amazon.com/AmazonECR/latest/userguide/Repositories.html in the *Amazon Elastic Container Registry User Guide*.
 
     .LINK
         http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ecr-repository.html

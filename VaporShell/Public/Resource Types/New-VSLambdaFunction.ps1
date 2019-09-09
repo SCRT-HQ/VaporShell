@@ -1,10 +1,10 @@
 function New-VSLambdaFunction {
     <#
     .SYNOPSIS
-        Adds an AWS::Lambda::Function resource to the template
+        Adds an AWS::Lambda::Function resource to the template. The AWS::Lambda::Function resource creates a Lambda function. To create a function, you need a deployment package: https://docs.aws.amazon.com/lambda/latest/dg/deployment-package-v2.html and an execution role: https://docs.aws.amazon.com/lambda/latest/dg/intro-permission-model.html#lambda-intro-execution-role. The deployment package contains your function code. The execution role grants the function permission to use AWS services, such as Amazon CloudWatch Logs for log streaming and AWS X-Ray for request tracing.
 
     .DESCRIPTION
-        Adds an AWS::Lambda::Function resource to the template
+        Adds an AWS::Lambda::Function resource to the template. The AWS::Lambda::Function resource creates a Lambda function. To create a function, you need a deployment package: https://docs.aws.amazon.com/lambda/latest/dg/deployment-package-v2.html and an execution role: https://docs.aws.amazon.com/lambda/latest/dg/intro-permission-model.html#lambda-intro-execution-role. The deployment package contains your function code. The execution role grants the function permission to use AWS services, such as Amazon CloudWatch Logs for log streaming and AWS X-Ray for request tracing.
 
     .LINK
         http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-lambda-function.html

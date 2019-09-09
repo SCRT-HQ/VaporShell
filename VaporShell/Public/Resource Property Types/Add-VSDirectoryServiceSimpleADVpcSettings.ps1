@@ -1,10 +1,11 @@
 function Add-VSDirectoryServiceSimpleADVpcSettings {
     <#
     .SYNOPSIS
-        Adds an AWS::DirectoryService::SimpleAD.VpcSettings resource property to the template
+        Adds an AWS::DirectoryService::SimpleAD.VpcSettings resource property to the template. Contains VPC information for the CreateDirectory: https://docs.aws.amazon.com/directoryservice/latest/devguide/API_CreateDirectory.html or CreateMicrosoftAD: https://docs.aws.amazon.com/directoryservice/latest/devguide/API_CreateMicrosoftAD.html operation.
 
     .DESCRIPTION
-        Adds an AWS::DirectoryService::SimpleAD.VpcSettings resource property to the template
+        Adds an AWS::DirectoryService::SimpleAD.VpcSettings resource property to the template.
+Contains VPC information for the CreateDirectory: https://docs.aws.amazon.com/directoryservice/latest/devguide/API_CreateDirectory.html or CreateMicrosoftAD: https://docs.aws.amazon.com/directoryservice/latest/devguide/API_CreateMicrosoftAD.html operation.
 
     .LINK
         http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-directoryservice-simplead-vpcsettings.html

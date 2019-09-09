@@ -1,10 +1,11 @@
 function Add-VSKinesisAnalyticsApplicationReferenceDataSourceRecordFormat {
     <#
     .SYNOPSIS
-        Adds an AWS::KinesisAnalytics::ApplicationReferenceDataSource.RecordFormat resource property to the template
+        Adds an AWS::KinesisAnalytics::ApplicationReferenceDataSource.RecordFormat resource property to the template. Describes the record format and relevant mapping information that should be applied to schematize the records on the stream.
 
     .DESCRIPTION
-        Adds an AWS::KinesisAnalytics::ApplicationReferenceDataSource.RecordFormat resource property to the template
+        Adds an AWS::KinesisAnalytics::ApplicationReferenceDataSource.RecordFormat resource property to the template.
+Describes the record format and relevant mapping information that should be applied to schematize the records on the stream.
 
     .LINK
         http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-kinesisanalytics-applicationreferencedatasource-recordformat.html

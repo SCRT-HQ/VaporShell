@@ -1,10 +1,13 @@
 function Add-VSSESConfigurationSetEventDestinationDimensionConfiguration {
     <#
     .SYNOPSIS
-        Adds an AWS::SES::ConfigurationSetEventDestination.DimensionConfiguration resource property to the template
+        Adds an AWS::SES::ConfigurationSetEventDestination.DimensionConfiguration resource property to the template. Contains the dimension configuration to use when you publish email sending events to Amazon CloudWatch.
 
     .DESCRIPTION
-        Adds an AWS::SES::ConfigurationSetEventDestination.DimensionConfiguration resource property to the template
+        Adds an AWS::SES::ConfigurationSetEventDestination.DimensionConfiguration resource property to the template.
+Contains the dimension configuration to use when you publish email sending events to Amazon CloudWatch.
+
+For information about publishing email sending events to Amazon CloudWatch, see the Amazon SES Developer Guide: https://docs.aws.amazon.com/ses/latest/DeveloperGuide/event-publishing-add-event-destination-cloudwatch.html.
 
     .LINK
         http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ses-configurationseteventdestination-dimensionconfiguration.html

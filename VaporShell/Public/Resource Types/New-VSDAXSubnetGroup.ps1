@@ -1,10 +1,10 @@
 function New-VSDAXSubnetGroup {
     <#
     .SYNOPSIS
-        Adds an AWS::DAX::SubnetGroup resource to the template
+        Adds an AWS::DAX::SubnetGroup resource to the template. Creates a new subnet group.
 
     .DESCRIPTION
-        Adds an AWS::DAX::SubnetGroup resource to the template
+        Adds an AWS::DAX::SubnetGroup resource to the template. Creates a new subnet group.
 
     .LINK
         http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-dax-subnetgroup.html

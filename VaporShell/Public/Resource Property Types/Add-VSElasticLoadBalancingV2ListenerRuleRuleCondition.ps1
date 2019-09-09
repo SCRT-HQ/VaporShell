@@ -1,10 +1,11 @@
 function Add-VSElasticLoadBalancingV2ListenerRuleRuleCondition {
     <#
     .SYNOPSIS
-        Adds an AWS::ElasticLoadBalancingV2::ListenerRule.RuleCondition resource property to the template
+        Adds an AWS::ElasticLoadBalancingV2::ListenerRule.RuleCondition resource property to the template. Specifies a condition for a listener rule.
 
     .DESCRIPTION
-        Adds an AWS::ElasticLoadBalancingV2::ListenerRule.RuleCondition resource property to the template
+        Adds an AWS::ElasticLoadBalancingV2::ListenerRule.RuleCondition resource property to the template.
+Specifies a condition for a listener rule.
 
     .LINK
         http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-elasticloadbalancingv2-listenerrule-conditions.html

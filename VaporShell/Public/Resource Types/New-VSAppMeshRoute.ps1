@@ -1,10 +1,14 @@
 function New-VSAppMeshRoute {
     <#
     .SYNOPSIS
-        Adds an AWS::AppMesh::Route resource to the template
+        Adds an AWS::AppMesh::Route resource to the template. Creates a route that is associated with a virtual router.
 
     .DESCRIPTION
-        Adds an AWS::AppMesh::Route resource to the template
+        Adds an AWS::AppMesh::Route resource to the template. Creates a route that is associated with a virtual router.
+
+You can use the prefix parameter in your route specification for path-based routing of requests. For example, if your virtual service name is my-service.local and you want the route to match requests to my-service.local/metrics, your prefix should be /metrics.
+
+If your route matches a request, you can distribute traffic to one or more target virtual nodes with relative weighting.
 
     .LINK
         http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-appmesh-route.html

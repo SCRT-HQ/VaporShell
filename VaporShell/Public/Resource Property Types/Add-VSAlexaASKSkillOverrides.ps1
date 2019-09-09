@@ -1,10 +1,13 @@
 function Add-VSAlexaASKSkillOverrides {
     <#
     .SYNOPSIS
-        Adds an Alexa::ASK::Skill.Overrides resource property to the template
+        Adds an Alexa::ASK::Skill.Overrides resource property to the template. The Overrides property type provides overrides to the skill package to apply when creating or updating the skill. Values provided here do not modify the contents of the original skill package. Currently, only overriding values inside of the skill manifest component of the package is supported.
 
     .DESCRIPTION
-        Adds an Alexa::ASK::Skill.Overrides resource property to the template
+        Adds an Alexa::ASK::Skill.Overrides resource property to the template.
+The Overrides property type provides overrides to the skill package to apply when creating or updating the skill. Values provided here do not modify the contents of the original skill package. Currently, only overriding values inside of the skill manifest component of the package is supported.
+
+Overrides is a property of the Alexa::ASK::Skill SkillPackage property type.
 
     .LINK
         http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ask-skill-overrides.html

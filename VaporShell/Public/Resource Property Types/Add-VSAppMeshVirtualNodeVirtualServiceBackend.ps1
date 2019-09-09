@@ -1,10 +1,11 @@
 function Add-VSAppMeshVirtualNodeVirtualServiceBackend {
     <#
     .SYNOPSIS
-        Adds an AWS::AppMesh::VirtualNode.VirtualServiceBackend resource property to the template
+        Adds an AWS::AppMesh::VirtualNode.VirtualServiceBackend resource property to the template. An object representing a virtual service backend for a virtual node.
 
     .DESCRIPTION
-        Adds an AWS::AppMesh::VirtualNode.VirtualServiceBackend resource property to the template
+        Adds an AWS::AppMesh::VirtualNode.VirtualServiceBackend resource property to the template.
+An object representing a virtual service backend for a virtual node.
 
     .LINK
         http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-appmesh-virtualnode-virtualservicebackend.html

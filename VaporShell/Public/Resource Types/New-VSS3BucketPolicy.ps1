@@ -1,10 +1,10 @@
 function New-VSS3BucketPolicy {
     <#
     .SYNOPSIS
-        Adds an AWS::S3::BucketPolicy resource to the template
+        Adds an AWS::S3::BucketPolicy resource to the template. Applies an Amazon S3 bucket policy to an Amazon S3 bucket.
 
     .DESCRIPTION
-        Adds an AWS::S3::BucketPolicy resource to the template
+        Adds an AWS::S3::BucketPolicy resource to the template. Applies an Amazon S3 bucket policy to an Amazon S3 bucket.
 
     .LINK
         http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-s3-policy.html

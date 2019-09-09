@@ -1,10 +1,10 @@
 function New-VSAppStreamStackFleetAssociation {
     <#
     .SYNOPSIS
-        Adds an AWS::AppStream::StackFleetAssociation resource to the template
+        Adds an AWS::AppStream::StackFleetAssociation resource to the template. The AWS::AppStream::StackFleetAssociation resource associates the specified fleet with the specified stack for Amazon AppStream 2.0.
 
     .DESCRIPTION
-        Adds an AWS::AppStream::StackFleetAssociation resource to the template
+        Adds an AWS::AppStream::StackFleetAssociation resource to the template. The AWS::AppStream::StackFleetAssociation resource associates the specified fleet with the specified stack for Amazon AppStream 2.0.
 
     .LINK
         http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-appstream-stackfleetassociation.html

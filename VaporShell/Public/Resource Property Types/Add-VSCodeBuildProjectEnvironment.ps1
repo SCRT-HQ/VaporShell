@@ -1,10 +1,11 @@
 function Add-VSCodeBuildProjectEnvironment {
     <#
     .SYNOPSIS
-        Adds an AWS::CodeBuild::Project.Environment resource property to the template
+        Adds an AWS::CodeBuild::Project.Environment resource property to the template. Environment is a property of the AWS::CodeBuild::Project: https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-codebuild-project.html resource that specifies the environment for an AWS CodeBuild project.
 
     .DESCRIPTION
-        Adds an AWS::CodeBuild::Project.Environment resource property to the template
+        Adds an AWS::CodeBuild::Project.Environment resource property to the template.
+Environment is a property of the AWS::CodeBuild::Project: https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-codebuild-project.html resource that specifies the environment for an AWS CodeBuild project.
 
     .LINK
         http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-codebuild-project-environment.html

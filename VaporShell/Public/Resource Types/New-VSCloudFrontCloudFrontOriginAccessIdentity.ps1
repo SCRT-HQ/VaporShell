@@ -1,10 +1,10 @@
 function New-VSCloudFrontCloudFrontOriginAccessIdentity {
     <#
     .SYNOPSIS
-        Adds an AWS::CloudFront::CloudFrontOriginAccessIdentity resource to the template
+        Adds an AWS::CloudFront::CloudFrontOriginAccessIdentity resource to the template. The request to create a new origin access identity.
 
     .DESCRIPTION
-        Adds an AWS::CloudFront::CloudFrontOriginAccessIdentity resource to the template
+        Adds an AWS::CloudFront::CloudFrontOriginAccessIdentity resource to the template. The request to create a new origin access identity.
 
     .LINK
         http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-cloudfront-cloudfrontoriginaccessidentity.html

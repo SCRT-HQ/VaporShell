@@ -1,10 +1,12 @@
 function New-VSEC2VPCEndpointConnectionNotification {
     <#
     .SYNOPSIS
-        Adds an AWS::EC2::VPCEndpointConnectionNotification resource to the template
+        Adds an AWS::EC2::VPCEndpointConnectionNotification resource to the template. Specifies a connection notification for a VPC endpoint or VPC endpoint service. A connection notification notifies you of specific endpoint events. You must create an SNS topic to receive notifications. For more information, see Create a Topic: https://docs.aws.amazon.com/sns/latest/dg/CreateTopic.html in the *Amazon Simple Notification Service Developer Guide*.
 
     .DESCRIPTION
-        Adds an AWS::EC2::VPCEndpointConnectionNotification resource to the template
+        Adds an AWS::EC2::VPCEndpointConnectionNotification resource to the template. Specifies a connection notification for a VPC endpoint or VPC endpoint service. A connection notification notifies you of specific endpoint events. You must create an SNS topic to receive notifications. For more information, see Create a Topic: https://docs.aws.amazon.com/sns/latest/dg/CreateTopic.html in the *Amazon Simple Notification Service Developer Guide*.
+
+You can create a connection notification for interface endpoints only.
 
     .LINK
         http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ec2-vpcendpointconnectionnotification.html

@@ -1,10 +1,10 @@
 function New-VSDMSEventSubscription {
     <#
     .SYNOPSIS
-        Adds an AWS::DMS::EventSubscription resource to the template
+        Adds an AWS::DMS::EventSubscription resource to the template. Use the AWS::DMS::EventSubscription resource to get notifications for AWS Database Migration Service events through the Amazon Simple Notification Service. For more information, see Using AWS DMS Event Notification: https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Events.html in the *AWS Database Migration Service User Guide.*
 
     .DESCRIPTION
-        Adds an AWS::DMS::EventSubscription resource to the template
+        Adds an AWS::DMS::EventSubscription resource to the template. Use the AWS::DMS::EventSubscription resource to get notifications for AWS Database Migration Service events through the Amazon Simple Notification Service. For more information, see Using AWS DMS Event Notification: https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Events.html in the *AWS Database Migration Service User Guide.*
 
     .LINK
         http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-dms-eventsubscription.html

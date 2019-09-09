@@ -1,10 +1,12 @@
 function New-VSIAMUser {
     <#
     .SYNOPSIS
-        Adds an AWS::IAM::User resource to the template
+        Adds an AWS::IAM::User resource to the template. Creates a new IAM user for your AWS account.
 
     .DESCRIPTION
-        Adds an AWS::IAM::User resource to the template
+        Adds an AWS::IAM::User resource to the template. Creates a new IAM user for your AWS account.
+
+For information about limitations on the number of IAM users you can create, see Limitations on IAM Entities: https://docs.aws.amazon.com/IAM/latest/UserGuide/LimitationsOnEntities.html in the *IAM User Guide*.
 
     .LINK
         http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iam-user.html

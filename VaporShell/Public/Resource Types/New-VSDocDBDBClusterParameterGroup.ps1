@@ -1,10 +1,18 @@
 function New-VSDocDBDBClusterParameterGroup {
     <#
     .SYNOPSIS
-        Adds an AWS::DocDB::DBClusterParameterGroup resource to the template
+        Adds an AWS::DocDB::DBClusterParameterGroup resource to the template. The AWS::DocDB::DBClusterParameterGroup Amazon DocumentDB (with MongoDB compatibility resource describes a DBClusterParameterGroup. For more information, see DBClusterParameterGroup: https://docs.aws.amazon.com/documentdb/latest/developerguide/API_DBClusterParameterGroup.html in the *Amazon DocumentDB Developer Guide*.
 
     .DESCRIPTION
-        Adds an AWS::DocDB::DBClusterParameterGroup resource to the template
+        Adds an AWS::DocDB::DBClusterParameterGroup resource to the template. The AWS::DocDB::DBClusterParameterGroup Amazon DocumentDB (with MongoDB compatibility resource describes a DBClusterParameterGroup. For more information, see DBClusterParameterGroup: https://docs.aws.amazon.com/documentdb/latest/developerguide/API_DBClusterParameterGroup.html in the *Amazon DocumentDB Developer Guide*.
+
+Parameters in a DB cluster parameter group apply to all of the instances in a DB cluster.
+
+A DB cluster parameter group is initially created with the default parameters for the database engine used by instances in the DB cluster. To provide custom values for any of the parameters, you must modify the group after you create it. After you create a DB cluster parameter group, you must associate it with your DB cluster. For the new DB cluster parameter group and associated settings to take effect, you must then reboot the DB instances in the DB cluster without failover.
+
+**Important**
+
+After you create a DB cluster parameter group, you should wait at least 5 minutes before creating your first DB cluster that uses that DB cluster parameter group as the default parameter group. This allows Amazon DocumentDB to fully complete the create action before the DB cluster parameter group is used as the default for a new DB cluster. This step is especially important for parameters that are critical when creating the default database for a DB cluster, such as the character set for the default database defined by the character_set_database parameter.
 
     .LINK
         http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-docdb-dbclusterparametergroup.html

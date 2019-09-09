@@ -1,10 +1,11 @@
 function Add-VSAppMeshVirtualServiceVirtualNodeServiceProvider {
     <#
     .SYNOPSIS
-        Adds an AWS::AppMesh::VirtualService.VirtualNodeServiceProvider resource property to the template
+        Adds an AWS::AppMesh::VirtualService.VirtualNodeServiceProvider resource property to the template. An object representing a virtual node service provider.
 
     .DESCRIPTION
-        Adds an AWS::AppMesh::VirtualService.VirtualNodeServiceProvider resource property to the template
+        Adds an AWS::AppMesh::VirtualService.VirtualNodeServiceProvider resource property to the template.
+An object representing a virtual node service provider.
 
     .LINK
         http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-appmesh-virtualservice-virtualnodeserviceprovider.html

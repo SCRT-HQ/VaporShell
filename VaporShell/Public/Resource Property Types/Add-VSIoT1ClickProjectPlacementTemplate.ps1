@@ -1,10 +1,13 @@
 function Add-VSIoT1ClickProjectPlacementTemplate {
     <#
     .SYNOPSIS
-        Adds an AWS::IoT1Click::Project.PlacementTemplate resource property to the template
+        Adds an AWS::IoT1Click::Project.PlacementTemplate resource property to the template. In AWS CloudFormation, use the PlacementTemplate property type to define the template for an AWS IoT 1-Click project.
 
     .DESCRIPTION
-        Adds an AWS::IoT1Click::Project.PlacementTemplate resource property to the template
+        Adds an AWS::IoT1Click::Project.PlacementTemplate resource property to the template.
+In AWS CloudFormation, use the PlacementTemplate property type to define the template for an AWS IoT 1-Click project.
+
+PlacementTemplate is a property of the AWS::IoT1Click::Project resource.
 
     .LINK
         http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iot1click-project-placementtemplate.html

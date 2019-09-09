@@ -1,10 +1,11 @@
 function Add-VSWAFRegionalSizeConstraintSetSizeConstraint {
     <#
     .SYNOPSIS
-        Adds an AWS::WAFRegional::SizeConstraintSet.SizeConstraint resource property to the template
+        Adds an AWS::WAFRegional::SizeConstraintSet.SizeConstraint resource property to the template. Specifies a constraint on the size of a part of the web request. AWS WAF uses the Size, ComparisonOperator, and FieldToMatch to build an expression in the form of "Size ComparisonOperator size in bytes of FieldToMatch". If that expression is true, the SizeConstraint is considered to match.
 
     .DESCRIPTION
-        Adds an AWS::WAFRegional::SizeConstraintSet.SizeConstraint resource property to the template
+        Adds an AWS::WAFRegional::SizeConstraintSet.SizeConstraint resource property to the template.
+Specifies a constraint on the size of a part of the web request. AWS WAF uses the Size, ComparisonOperator, and FieldToMatch to build an expression in the form of "Size ComparisonOperator size in bytes of FieldToMatch". If that expression is true, the SizeConstraint is considered to match.
 
     .LINK
         http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-wafregional-sizeconstraintset-sizeconstraint.html

@@ -1,10 +1,11 @@
 function Add-VSDataPipelinePipelineParameterObject {
     <#
     .SYNOPSIS
-        Adds an AWS::DataPipeline::Pipeline.ParameterObject resource property to the template
+        Adds an AWS::DataPipeline::Pipeline.ParameterObject resource property to the template. Contains information about a parameter object.
 
     .DESCRIPTION
-        Adds an AWS::DataPipeline::Pipeline.ParameterObject resource property to the template
+        Adds an AWS::DataPipeline::Pipeline.ParameterObject resource property to the template.
+Contains information about a parameter object.
 
     .LINK
         http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-datapipeline-pipeline-parameterobjects.html

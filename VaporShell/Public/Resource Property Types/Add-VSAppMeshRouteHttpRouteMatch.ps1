@@ -1,10 +1,11 @@
 function Add-VSAppMeshRouteHttpRouteMatch {
     <#
     .SYNOPSIS
-        Adds an AWS::AppMesh::Route.HttpRouteMatch resource property to the template
+        Adds an AWS::AppMesh::Route.HttpRouteMatch resource property to the template. An object representing the requirements for a route to match HTTP requests for a virtual router.
 
     .DESCRIPTION
-        Adds an AWS::AppMesh::Route.HttpRouteMatch resource property to the template
+        Adds an AWS::AppMesh::Route.HttpRouteMatch resource property to the template.
+An object representing the requirements for a route to match HTTP requests for a virtual router.
 
     .LINK
         http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-appmesh-route-httproutematch.html

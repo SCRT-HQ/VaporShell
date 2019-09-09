@@ -1,10 +1,10 @@
 function New-VSPinpointSegment {
     <#
     .SYNOPSIS
-        Adds an AWS::Pinpoint::Segment resource to the template
+        Adds an AWS::Pinpoint::Segment resource to the template. Creates a new segment for an application or updates the configuration, dimension, and other settings for an existing segment that's associated with an application.
 
     .DESCRIPTION
-        Adds an AWS::Pinpoint::Segment resource to the template
+        Adds an AWS::Pinpoint::Segment resource to the template. Creates a new segment for an application or updates the configuration, dimension, and other settings for an existing segment that's associated with an application.
 
     .LINK
         http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-pinpoint-segment.html

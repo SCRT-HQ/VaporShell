@@ -1,10 +1,10 @@
 function New-VSServiceCatalogAcceptedPortfolioShare {
     <#
     .SYNOPSIS
-        Adds an AWS::ServiceCatalog::AcceptedPortfolioShare resource to the template
+        Adds an AWS::ServiceCatalog::AcceptedPortfolioShare resource to the template. Accepts an offer to share the specified portfolio.
 
     .DESCRIPTION
-        Adds an AWS::ServiceCatalog::AcceptedPortfolioShare resource to the template
+        Adds an AWS::ServiceCatalog::AcceptedPortfolioShare resource to the template. Accepts an offer to share the specified portfolio.
 
     .LINK
         http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-servicecatalog-acceptedportfolioshare.html

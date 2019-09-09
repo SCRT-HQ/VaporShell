@@ -1,10 +1,11 @@
 function Add-VSPinpointApplicationSettingsCampaignHook {
     <#
     .SYNOPSIS
-        Adds an AWS::Pinpoint::ApplicationSettings.CampaignHook resource property to the template
+        Adds an AWS::Pinpoint::ApplicationSettings.CampaignHook resource property to the template. Specifies the AWS Lambda function to use as a code hook for a campaign.
 
     .DESCRIPTION
-        Adds an AWS::Pinpoint::ApplicationSettings.CampaignHook resource property to the template
+        Adds an AWS::Pinpoint::ApplicationSettings.CampaignHook resource property to the template.
+Specifies the AWS Lambda function to use as a code hook for a campaign.
 
     .LINK
         http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-pinpoint-applicationsettings-campaignhook.html

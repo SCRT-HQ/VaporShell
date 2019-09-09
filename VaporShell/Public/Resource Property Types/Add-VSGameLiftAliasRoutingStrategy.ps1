@@ -1,10 +1,11 @@
 function Add-VSGameLiftAliasRoutingStrategy {
     <#
     .SYNOPSIS
-        Adds an AWS::GameLift::Alias.RoutingStrategy resource property to the template
+        Adds an AWS::GameLift::Alias.RoutingStrategy resource property to the template. Routing configuration for a fleet alias.
 
     .DESCRIPTION
-        Adds an AWS::GameLift::Alias.RoutingStrategy resource property to the template
+        Adds an AWS::GameLift::Alias.RoutingStrategy resource property to the template.
+Routing configuration for a fleet alias.
 
     .LINK
         http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-gamelift-alias-routingstrategy.html

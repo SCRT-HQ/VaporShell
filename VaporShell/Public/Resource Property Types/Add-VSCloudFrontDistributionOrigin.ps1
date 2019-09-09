@@ -1,10 +1,13 @@
 function Add-VSCloudFrontDistributionOrigin {
     <#
     .SYNOPSIS
-        Adds an AWS::CloudFront::Distribution.Origin resource property to the template
+        Adds an AWS::CloudFront::Distribution.Origin resource property to the template. A complex type that describes the Amazon S3 bucket, HTTP server (for example, a web server, Amazon MediaStore, or other server from which CloudFront gets your files. This can also be an origin group, if you've created an origin group. You must specify at least one origin or origin group.
 
     .DESCRIPTION
-        Adds an AWS::CloudFront::Distribution.Origin resource property to the template
+        Adds an AWS::CloudFront::Distribution.Origin resource property to the template.
+A complex type that describes the Amazon S3 bucket, HTTP server (for example, a web server, Amazon MediaStore, or other server from which CloudFront gets your files. This can also be an origin group, if you've created an origin group. You must specify at least one origin or origin group.
+
+For the current limit on the number of origins or origin groups that you can specify for a distribution, see Amazon CloudFront Limits: https://docs.aws.amazon.com/general/latest/gr/aws_service_limits.html#limits_cloudfront in the *AWS General Reference*.
 
     .LINK
         http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-cloudfront-distribution-origin.html

@@ -1,10 +1,11 @@
 function Add-VSECSServiceNetworkConfiguration {
     <#
     .SYNOPSIS
-        Adds an AWS::ECS::Service.NetworkConfiguration resource property to the template
+        Adds an AWS::ECS::Service.NetworkConfiguration resource property to the template. The NetworkConfiguration property specifies an object representing the network configuration for a task or service.
 
     .DESCRIPTION
-        Adds an AWS::ECS::Service.NetworkConfiguration resource property to the template
+        Adds an AWS::ECS::Service.NetworkConfiguration resource property to the template.
+The NetworkConfiguration property specifies an object representing the network configuration for a task or service.
 
     .LINK
         http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ecs-service-networkconfiguration.html

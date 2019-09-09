@@ -1,10 +1,11 @@
 function Add-VSMediaLiveInputInputDestinationRequest {
     <#
     .SYNOPSIS
-        Adds an AWS::MediaLive::Input.InputDestinationRequest resource property to the template
+        Adds an AWS::MediaLive::Input.InputDestinationRequest resource property to the template. The settings for a push input, to set up the destination addresses on MediaLive.
 
     .DESCRIPTION
-        Adds an AWS::MediaLive::Input.InputDestinationRequest resource property to the template
+        Adds an AWS::MediaLive::Input.InputDestinationRequest resource property to the template.
+The settings for a push input, to set up the destination addresses on MediaLive.
 
     .LINK
         http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-medialive-input-inputdestinationrequest.html

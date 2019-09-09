@@ -1,10 +1,11 @@
 function Add-VSEMRClusterInstanceGroupConfig {
     <#
     .SYNOPSIS
-        Adds an AWS::EMR::Cluster.InstanceGroupConfig resource property to the template
+        Adds an AWS::EMR::Cluster.InstanceGroupConfig resource property to the template. Use InstanceGroupConfig to define instance groups for an EMR cluster. A cluster can not use both instance groups and instance fleets. For more information, see Create a Cluster with Instance Fleets or Uniform Instance Groups: https://docs.aws.amazon.com/emr/latest/ManagementGuide/emr-instance-group-configuration.html in the *Amazon EMR Management Guide*.
 
     .DESCRIPTION
-        Adds an AWS::EMR::Cluster.InstanceGroupConfig resource property to the template
+        Adds an AWS::EMR::Cluster.InstanceGroupConfig resource property to the template.
+Use InstanceGroupConfig to define instance groups for an EMR cluster. A cluster can not use both instance groups and instance fleets. For more information, see Create a Cluster with Instance Fleets or Uniform Instance Groups: https://docs.aws.amazon.com/emr/latest/ManagementGuide/emr-instance-group-configuration.html in the *Amazon EMR Management Guide*.
 
     .LINK
         http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-elasticmapreduce-cluster-instancegroupconfig.html

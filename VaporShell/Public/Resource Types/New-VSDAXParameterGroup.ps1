@@ -1,10 +1,10 @@
 function New-VSDAXParameterGroup {
     <#
     .SYNOPSIS
-        Adds an AWS::DAX::ParameterGroup resource to the template
+        Adds an AWS::DAX::ParameterGroup resource to the template. A named set of parameters that are applied to all of the nodes in a DAX cluster.
 
     .DESCRIPTION
-        Adds an AWS::DAX::ParameterGroup resource to the template
+        Adds an AWS::DAX::ParameterGroup resource to the template. A named set of parameters that are applied to all of the nodes in a DAX cluster.
 
     .LINK
         http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-dax-parametergroup.html

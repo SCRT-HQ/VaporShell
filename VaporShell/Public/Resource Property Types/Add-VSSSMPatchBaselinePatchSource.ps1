@@ -1,10 +1,13 @@
 function Add-VSSSMPatchBaselinePatchSource {
     <#
     .SYNOPSIS
-        Adds an AWS::SSM::PatchBaseline.PatchSource resource property to the template
+        Adds an AWS::SSM::PatchBaseline.PatchSource resource property to the template. PatchSource is the property type for the Sources resource of the AWS::SSM::PatchBaseline: https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ssm-patchbaseline.html resource.
 
     .DESCRIPTION
-        Adds an AWS::SSM::PatchBaseline.PatchSource resource property to the template
+        Adds an AWS::SSM::PatchBaseline.PatchSource resource property to the template.
+PatchSource is the property type for the Sources resource of the AWS::SSM::PatchBaseline: https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ssm-patchbaseline.html resource.
+
+The AWS CloudFormation AWS::SSM::PatchSource resource is used to provide information about the patches to use to update target instances, including target operating systems and source repository. Applies to Linux instances only.
 
     .LINK
         http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ssm-patchbaseline-patchsource.html

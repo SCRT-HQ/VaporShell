@@ -1,10 +1,10 @@
 function New-VSEC2NetworkInterfaceAttachment {
     <#
     .SYNOPSIS
-        Adds an AWS::EC2::NetworkInterfaceAttachment resource to the template
+        Adds an AWS::EC2::NetworkInterfaceAttachment resource to the template. Attaches an elastic network interface (ENI to an Amazon EC2 instance. You can use this resource type to attach additional network interfaces to an instance without interruption.
 
     .DESCRIPTION
-        Adds an AWS::EC2::NetworkInterfaceAttachment resource to the template
+        Adds an AWS::EC2::NetworkInterfaceAttachment resource to the template. Attaches an elastic network interface (ENI to an Amazon EC2 instance. You can use this resource type to attach additional network interfaces to an instance without interruption.
 
     .LINK
         http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ec2-network-interface-attachment.html

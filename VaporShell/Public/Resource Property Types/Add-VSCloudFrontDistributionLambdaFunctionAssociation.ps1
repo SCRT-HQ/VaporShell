@@ -1,10 +1,11 @@
 function Add-VSCloudFrontDistributionLambdaFunctionAssociation {
     <#
     .SYNOPSIS
-        Adds an AWS::CloudFront::Distribution.LambdaFunctionAssociation resource property to the template
+        Adds an AWS::CloudFront::Distribution.LambdaFunctionAssociation resource property to the template. A complex type that contains a Lambda function association.
 
     .DESCRIPTION
-        Adds an AWS::CloudFront::Distribution.LambdaFunctionAssociation resource property to the template
+        Adds an AWS::CloudFront::Distribution.LambdaFunctionAssociation resource property to the template.
+A complex type that contains a Lambda function association.
 
     .LINK
         http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-cloudfront-distribution-lambdafunctionassociation.html

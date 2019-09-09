@@ -1,10 +1,11 @@
 function Add-VSKinesisFirehoseDeliveryStreamSchemaConfiguration {
     <#
     .SYNOPSIS
-        Adds an AWS::KinesisFirehose::DeliveryStream.SchemaConfiguration resource property to the template
+        Adds an AWS::KinesisFirehose::DeliveryStream.SchemaConfiguration resource property to the template. Specifies the schema to which you want Kinesis Data Firehose to configure your data before it writes it to Amazon S3.
 
     .DESCRIPTION
-        Adds an AWS::KinesisFirehose::DeliveryStream.SchemaConfiguration resource property to the template
+        Adds an AWS::KinesisFirehose::DeliveryStream.SchemaConfiguration resource property to the template.
+Specifies the schema to which you want Kinesis Data Firehose to configure your data before it writes it to Amazon S3.
 
     .LINK
         http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-kinesisfirehose-deliverystream-schemaconfiguration.html

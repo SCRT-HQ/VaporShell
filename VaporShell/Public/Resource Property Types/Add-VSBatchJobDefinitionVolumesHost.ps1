@@ -1,10 +1,11 @@
 function Add-VSBatchJobDefinitionVolumesHost {
     <#
     .SYNOPSIS
-        Adds an AWS::Batch::JobDefinition.VolumesHost resource property to the template
+        Adds an AWS::Batch::JobDefinition.VolumesHost resource property to the template. Determine whether your data volume persists on the host container instance and where it is stored. If this parameter is empty, then the Docker daemon assigns a host path for your data volume, but the data is not guaranteed to persist after the containers associated with it stop running.
 
     .DESCRIPTION
-        Adds an AWS::Batch::JobDefinition.VolumesHost resource property to the template
+        Adds an AWS::Batch::JobDefinition.VolumesHost resource property to the template.
+Determine whether your data volume persists on the host container instance and where it is stored. If this parameter is empty, then the Docker daemon assigns a host path for your data volume, but the data is not guaranteed to persist after the containers associated with it stop running.
 
     .LINK
         http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-batch-jobdefinition-volumeshost.html

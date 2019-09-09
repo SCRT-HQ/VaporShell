@@ -1,10 +1,11 @@
 function Add-VSIoTEventsDetectorModelDetectorModelDefinition {
     <#
     .SYNOPSIS
-        Adds an AWS::IoTEvents::DetectorModel.DetectorModelDefinition resource property to the template
+        Adds an AWS::IoTEvents::DetectorModel.DetectorModelDefinition resource property to the template. Information that defines how a detector operates.
 
     .DESCRIPTION
-        Adds an AWS::IoTEvents::DetectorModel.DetectorModelDefinition resource property to the template
+        Adds an AWS::IoTEvents::DetectorModel.DetectorModelDefinition resource property to the template.
+Information that defines how a detector operates.
 
     .LINK
         http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iotevents-detectormodel-detectormodeldefinition.html

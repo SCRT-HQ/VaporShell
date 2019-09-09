@@ -1,10 +1,12 @@
 function New-VSPinpointApplicationSettings {
     <#
     .SYNOPSIS
-        Adds an AWS::Pinpoint::ApplicationSettings resource to the template
+        Adds an AWS::Pinpoint::ApplicationSettings resource to the template. Specifies the settings for an Amazon Pinpoint app.
 
     .DESCRIPTION
-        Adds an AWS::Pinpoint::ApplicationSettings resource to the template
+        Adds an AWS::Pinpoint::ApplicationSettings resource to the template. Specifies the settings for an Amazon Pinpoint app.
+
+In Amazon Pinpoint, an *app* (also referred to as a *project* is a collection of settings, customer information, segments, and campaigns.
 
     .LINK
         http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-pinpoint-applicationsettings.html

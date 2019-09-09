@@ -1,10 +1,10 @@
 function New-VSTransferUser {
     <#
     .SYNOPSIS
-        Adds an AWS::Transfer::User resource to the template
+        Adds an AWS::Transfer::User resource to the template. Creates a user and associates them with an existing Secure File Transfer Protocol (SFTP server. You can only create and associate users with SFTP servers that have the IdentityProviderType set to SERVICE_MANAGED. Using parameters for CreateUser, you can specify the user name, set the home directory, store the user's public key, and assign the user's AWS Identity and Access Management (IAM role. You can also optionally add a scope-down policy, and assign metadata with tags that can be used to group and search for users.
 
     .DESCRIPTION
-        Adds an AWS::Transfer::User resource to the template
+        Adds an AWS::Transfer::User resource to the template. Creates a user and associates them with an existing Secure File Transfer Protocol (SFTP server. You can only create and associate users with SFTP servers that have the IdentityProviderType set to SERVICE_MANAGED. Using parameters for CreateUser, you can specify the user name, set the home directory, store the user's public key, and assign the user's AWS Identity and Access Management (IAM role. You can also optionally add a scope-down policy, and assign metadata with tags that can be used to group and search for users.
 
     .LINK
         http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-transfer-user.html

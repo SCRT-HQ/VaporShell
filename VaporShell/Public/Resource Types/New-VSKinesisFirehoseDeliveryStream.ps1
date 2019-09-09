@@ -1,10 +1,10 @@
 function New-VSKinesisFirehoseDeliveryStream {
     <#
     .SYNOPSIS
-        Adds an AWS::KinesisFirehose::DeliveryStream resource to the template
+        Adds an AWS::KinesisFirehose::DeliveryStream resource to the template. The AWS::KinesisFirehose::DeliveryStream resource creates an Amazon Kinesis Data Firehose (Kinesis Data Firehose delivery stream that delivers real-time streaming data to an Amazon Simple Storage Service (Amazon S3, Amazon Redshift, or Amazon Elasticsearch Service (Amazon ES destination. For more information, see Creating an Amazon Kinesis Data Firehose Delivery Stream: https://docs.aws.amazon.com/firehose/latest/dev/basic-create.html in the *Amazon Kinesis Data Firehose Developer Guide*.
 
     .DESCRIPTION
-        Adds an AWS::KinesisFirehose::DeliveryStream resource to the template
+        Adds an AWS::KinesisFirehose::DeliveryStream resource to the template. The AWS::KinesisFirehose::DeliveryStream resource creates an Amazon Kinesis Data Firehose (Kinesis Data Firehose delivery stream that delivers real-time streaming data to an Amazon Simple Storage Service (Amazon S3, Amazon Redshift, or Amazon Elasticsearch Service (Amazon ES destination. For more information, see Creating an Amazon Kinesis Data Firehose Delivery Stream: https://docs.aws.amazon.com/firehose/latest/dev/basic-create.html in the *Amazon Kinesis Data Firehose Developer Guide*.
 
     .LINK
         http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-kinesisfirehose-deliverystream.html

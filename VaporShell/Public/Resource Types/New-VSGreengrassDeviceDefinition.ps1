@@ -1,10 +1,18 @@
 function New-VSGreengrassDeviceDefinition {
     <#
     .SYNOPSIS
-        Adds an AWS::Greengrass::DeviceDefinition resource to the template
+        Adds an AWS::Greengrass::DeviceDefinition resource to the template. The AWS::Greengrass::DeviceDefinition resource represents a device definition for AWS IoT Greengrass. Device definitions are used to organize your device definition versions.
 
     .DESCRIPTION
-        Adds an AWS::Greengrass::DeviceDefinition resource to the template
+        Adds an AWS::Greengrass::DeviceDefinition resource to the template. The AWS::Greengrass::DeviceDefinition resource represents a device definition for AWS IoT Greengrass. Device definitions are used to organize your device definition versions.
+
+Device definitions can reference multiple device definition versions. All device definition versions must be associated with a device definition. Each device definition version can contain one or more devices.
+
+**Note**
+
+When you create a device definition, you can optionally include an initial device definition version. To associate a device definition version later, create an https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-greengrass-devicedefinitionversion.html: https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-greengrass-devicedefinitionversion.html resource and specify the ID of this device definition.
+
+After you create the device definition version that contains the devices you want to deploy, you must add it to your group version. For more information, see https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-greengrass-group.html: https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-greengrass-group.html.
 
     .LINK
         http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-greengrass-devicedefinition.html

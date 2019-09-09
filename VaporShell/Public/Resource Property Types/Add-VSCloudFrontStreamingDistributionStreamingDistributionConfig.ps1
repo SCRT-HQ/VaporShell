@@ -1,10 +1,11 @@
 function Add-VSCloudFrontStreamingDistributionStreamingDistributionConfig {
     <#
     .SYNOPSIS
-        Adds an AWS::CloudFront::StreamingDistribution.StreamingDistributionConfig resource property to the template
+        Adds an AWS::CloudFront::StreamingDistribution.StreamingDistributionConfig resource property to the template. The RTMP distribution's configuration information.
 
     .DESCRIPTION
-        Adds an AWS::CloudFront::StreamingDistribution.StreamingDistributionConfig resource property to the template
+        Adds an AWS::CloudFront::StreamingDistribution.StreamingDistributionConfig resource property to the template.
+The RTMP distribution's configuration information.
 
     .LINK
         http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-cloudfront-streamingdistribution-streamingdistributionconfig.html

@@ -1,10 +1,11 @@
 function Add-VSCodeCommitRepositoryCode {
     <#
     .SYNOPSIS
-        Adds an AWS::CodeCommit::Repository.Code resource property to the template
+        Adds an AWS::CodeCommit::Repository.Code resource property to the template. Information about code to be committed.
 
     .DESCRIPTION
-        Adds an AWS::CodeCommit::Repository.Code resource property to the template
+        Adds an AWS::CodeCommit::Repository.Code resource property to the template.
+Information about code to be committed.
 
     .LINK
         http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-codecommit-repository-code.html

@@ -1,10 +1,12 @@
 function New-VSIAMInstanceProfile {
     <#
     .SYNOPSIS
-        Adds an AWS::IAM::InstanceProfile resource to the template
+        Adds an AWS::IAM::InstanceProfile resource to the template. Creates a new instance profile. For information about instance profiles, go to About Instance Profiles: https://docs.aws.amazon.com/IAM/latest/UserGuide/AboutInstanceProfiles.html.
 
     .DESCRIPTION
-        Adds an AWS::IAM::InstanceProfile resource to the template
+        Adds an AWS::IAM::InstanceProfile resource to the template. Creates a new instance profile. For information about instance profiles, go to About Instance Profiles: https://docs.aws.amazon.com/IAM/latest/UserGuide/AboutInstanceProfiles.html.
+
+For information about the number of instance profiles you can create, see Limitations on IAM Entities: https://docs.aws.amazon.com/IAM/latest/UserGuide/LimitationsOnEntities.html in the *IAM User Guide*.
 
     .LINK
         http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-iam-instanceprofile.html

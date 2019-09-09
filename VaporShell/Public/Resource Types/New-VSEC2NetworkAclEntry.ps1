@@ -1,10 +1,10 @@
 function New-VSEC2NetworkAclEntry {
     <#
     .SYNOPSIS
-        Adds an AWS::EC2::NetworkAclEntry resource to the template
+        Adds an AWS::EC2::NetworkAclEntry resource to the template. Specifies an entry, known as a rule, in a network ACL with a rule number you specify. Each network ACL has a set of numbered ingress rules and a separate set of numbered egress rules.
 
     .DESCRIPTION
-        Adds an AWS::EC2::NetworkAclEntry resource to the template
+        Adds an AWS::EC2::NetworkAclEntry resource to the template. Specifies an entry, known as a rule, in a network ACL with a rule number you specify. Each network ACL has a set of numbered ingress rules and a separate set of numbered egress rules.
 
     .LINK
         http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ec2-network-acl-entry.html

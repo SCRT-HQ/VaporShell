@@ -1,10 +1,14 @@
 function New-VSNeptuneDBClusterParameterGroup {
     <#
     .SYNOPSIS
-        Adds an AWS::Neptune::DBClusterParameterGroup resource to the template
+        Adds an AWS::Neptune::DBClusterParameterGroup resource to the template. The AWS::Neptune::DBClusterParameterGroup resource creates a new Amazon Neptune DB cluster parameter group.
 
     .DESCRIPTION
-        Adds an AWS::Neptune::DBClusterParameterGroup resource to the template
+        Adds an AWS::Neptune::DBClusterParameterGroup resource to the template. The AWS::Neptune::DBClusterParameterGroup resource creates a new Amazon Neptune DB cluster parameter group.
+
+**Note**
+
+Applying a parameter group to a DB cluster might require instances to reboot, resulting in a database outage while the instances reboot.
 
     .LINK
         http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-neptune-dbclusterparametergroup.html

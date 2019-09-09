@@ -1,10 +1,10 @@
 function New-VSGluePartition {
     <#
     .SYNOPSIS
-        Adds an AWS::Glue::Partition resource to the template
+        Adds an AWS::Glue::Partition resource to the template. The AWS::Glue::Partition resource creates an AWS Glue partition, which represents a slice of table data. For more information, see CreatePartition Action: https://docs.aws.amazon.com/glue/latest/dg/aws-glue-api-catalog-partitions.html#aws-glue-api-catalog-partitions-CreatePartition and Partition Structure: https://docs.aws.amazon.com/glue/latest/dg/aws-glue-api-catalog-partitions.html#aws-glue-api-catalog-partitions-Partition in the *AWS Glue Developer Guide*.
 
     .DESCRIPTION
-        Adds an AWS::Glue::Partition resource to the template
+        Adds an AWS::Glue::Partition resource to the template. The AWS::Glue::Partition resource creates an AWS Glue partition, which represents a slice of table data. For more information, see CreatePartition Action: https://docs.aws.amazon.com/glue/latest/dg/aws-glue-api-catalog-partitions.html#aws-glue-api-catalog-partitions-CreatePartition and Partition Structure: https://docs.aws.amazon.com/glue/latest/dg/aws-glue-api-catalog-partitions.html#aws-glue-api-catalog-partitions-Partition in the *AWS Glue Developer Guide*.
 
     .LINK
         http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-glue-partition.html

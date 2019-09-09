@@ -1,10 +1,11 @@
 function Add-VSPinpointCampaignWriteTreatmentResource {
     <#
     .SYNOPSIS
-        Adds an AWS::Pinpoint::Campaign.WriteTreatmentResource resource property to the template
+        Adds an AWS::Pinpoint::Campaign.WriteTreatmentResource resource property to the template. Specifies the settings for a campaign treatment. A treatment is a variation of a campaign that's used for A/B testing of a campaign.
 
     .DESCRIPTION
-        Adds an AWS::Pinpoint::Campaign.WriteTreatmentResource resource property to the template
+        Adds an AWS::Pinpoint::Campaign.WriteTreatmentResource resource property to the template.
+Specifies the settings for a campaign treatment. A treatment is a variation of a campaign that's used for A/B testing of a campaign.
 
     .LINK
         http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-pinpoint-campaign-writetreatmentresource.html

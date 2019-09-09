@@ -1,10 +1,14 @@
 function New-VSCloudWatchAlarm {
     <#
     .SYNOPSIS
-        Adds an AWS::CloudWatch::Alarm resource to the template
+        Adds an AWS::CloudWatch::Alarm resource to the template. The AWS::CloudWatch::Alarm type specifies an alarm and associates it with the specified metric or metric math expression.
 
     .DESCRIPTION
-        Adds an AWS::CloudWatch::Alarm resource to the template
+        Adds an AWS::CloudWatch::Alarm resource to the template. The AWS::CloudWatch::Alarm type specifies an alarm and associates it with the specified metric or metric math expression.
+
+When this operation creates an alarm, the alarm state is immediately set to INSUFFICIENT_DATA. The alarm is then evaluated and its state is set appropriately. Any actions associated with the new state are then executed.
+
+When you update an existing alarm, its state is left unchanged, but the update completely overwrites the previous configuration of the alarm.
 
     .LINK
         http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-cw-alarm.html

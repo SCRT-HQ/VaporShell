@@ -1,10 +1,11 @@
 function Add-VSAppStreamFleetVpcConfig {
     <#
     .SYNOPSIS
-        Adds an AWS::AppStream::Fleet.VpcConfig resource property to the template
+        Adds an AWS::AppStream::Fleet.VpcConfig resource property to the template. The VPC configuration information for the fleet.
 
     .DESCRIPTION
-        Adds an AWS::AppStream::Fleet.VpcConfig resource property to the template
+        Adds an AWS::AppStream::Fleet.VpcConfig resource property to the template.
+The VPC configuration information for the fleet.
 
     .LINK
         http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-appstream-fleet-vpcconfig.html

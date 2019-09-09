@@ -1,10 +1,10 @@
 function New-VSKinesisAnalyticsV2ApplicationCloudWatchLoggingOption {
     <#
     .SYNOPSIS
-        Adds an AWS::KinesisAnalyticsV2::ApplicationCloudWatchLoggingOption resource to the template
+        Adds an AWS::KinesisAnalyticsV2::ApplicationCloudWatchLoggingOption resource to the template. Adds an Amazon CloudWatch log stream to monitor application configuration errors.
 
     .DESCRIPTION
-        Adds an AWS::KinesisAnalyticsV2::ApplicationCloudWatchLoggingOption resource to the template
+        Adds an AWS::KinesisAnalyticsV2::ApplicationCloudWatchLoggingOption resource to the template. Adds an Amazon CloudWatch log stream to monitor application configuration errors.
 
     .LINK
         http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-kinesisanalyticsv2-applicationcloudwatchloggingoption.html

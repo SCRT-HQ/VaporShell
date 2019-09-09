@@ -1,10 +1,11 @@
 function Add-VSCodeBuildProjectSource {
     <#
     .SYNOPSIS
-        Adds an AWS::CodeBuild::Project.Source resource property to the template
+        Adds an AWS::CodeBuild::Project.Source resource property to the template. Source is a property of the AWS::CodeBuild::Project: https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-codebuild-project.html resource that specifies the source code settings for the project, such as the source code's repository type and location.
 
     .DESCRIPTION
-        Adds an AWS::CodeBuild::Project.Source resource property to the template
+        Adds an AWS::CodeBuild::Project.Source resource property to the template.
+Source is a property of the AWS::CodeBuild::Project: https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-codebuild-project.html resource that specifies the source code settings for the project, such as the source code's repository type and location.
 
     .LINK
         http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-codebuild-project-source.html

@@ -1,10 +1,14 @@
 function New-VSElastiCacheParameterGroup {
     <#
     .SYNOPSIS
-        Adds an AWS::ElastiCache::ParameterGroup resource to the template
+        Adds an AWS::ElastiCache::ParameterGroup resource to the template. The AWS::ElastiCache::ParameterGroup type creates a new cache parameter group. Cache parameter groups control the parameters for a cache cluster.
 
     .DESCRIPTION
-        Adds an AWS::ElastiCache::ParameterGroup resource to the template
+        Adds an AWS::ElastiCache::ParameterGroup resource to the template. The AWS::ElastiCache::ParameterGroup type creates a new cache parameter group. Cache parameter groups control the parameters for a cache cluster.
+
+**Note**
+
+Updates are not supported.
 
     .LINK
         http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-elasticache-parameter-group.html

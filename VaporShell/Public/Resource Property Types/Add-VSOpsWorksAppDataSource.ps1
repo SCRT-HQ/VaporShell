@@ -1,10 +1,11 @@
 function Add-VSOpsWorksAppDataSource {
     <#
     .SYNOPSIS
-        Adds an AWS::OpsWorks::App.DataSource resource property to the template
+        Adds an AWS::OpsWorks::App.DataSource resource property to the template. Describes an app's data source.
 
     .DESCRIPTION
-        Adds an AWS::OpsWorks::App.DataSource resource property to the template
+        Adds an AWS::OpsWorks::App.DataSource resource property to the template.
+Describes an app's data source.
 
     .LINK
         http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-opsworks-app-datasource.html

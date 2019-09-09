@@ -1,10 +1,11 @@
 function Add-VSGlueCrawlerSchedule {
     <#
     .SYNOPSIS
-        Adds an AWS::Glue::Crawler.Schedule resource property to the template
+        Adds an AWS::Glue::Crawler.Schedule resource property to the template. A scheduling object using a cron statement to schedule an event.
 
     .DESCRIPTION
-        Adds an AWS::Glue::Crawler.Schedule resource property to the template
+        Adds an AWS::Glue::Crawler.Schedule resource property to the template.
+A scheduling object using a cron statement to schedule an event.
 
     .LINK
         http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-glue-crawler-schedule.html

@@ -1,10 +1,11 @@
 function Add-VSEC2SpotFleetLoadBalancersConfig {
     <#
     .SYNOPSIS
-        Adds an AWS::EC2::SpotFleet.LoadBalancersConfig resource property to the template
+        Adds an AWS::EC2::SpotFleet.LoadBalancersConfig resource property to the template. Specifies the Classic Load Balancers and target groups to attach to a Spot Fleet request.
 
     .DESCRIPTION
-        Adds an AWS::EC2::SpotFleet.LoadBalancersConfig resource property to the template
+        Adds an AWS::EC2::SpotFleet.LoadBalancersConfig resource property to the template.
+Specifies the Classic Load Balancers and target groups to attach to a Spot Fleet request.
 
     .LINK
         http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-spotfleet-loadbalancersconfig.html

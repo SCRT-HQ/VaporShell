@@ -1,10 +1,10 @@
 function New-VSEC2SubnetCidrBlock {
     <#
     .SYNOPSIS
-        Adds an AWS::EC2::SubnetCidrBlock resource to the template
+        Adds an AWS::EC2::SubnetCidrBlock resource to the template. Associates a single IPv6 CIDR block with a VPC subnet.
 
     .DESCRIPTION
-        Adds an AWS::EC2::SubnetCidrBlock resource to the template
+        Adds an AWS::EC2::SubnetCidrBlock resource to the template. Associates a single IPv6 CIDR block with a VPC subnet.
 
     .LINK
         http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ec2-subnetcidrblock.html

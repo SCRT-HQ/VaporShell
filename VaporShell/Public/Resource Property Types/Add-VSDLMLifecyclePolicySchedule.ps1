@@ -1,10 +1,11 @@
 function Add-VSDLMLifecyclePolicySchedule {
     <#
     .SYNOPSIS
-        Adds an AWS::DLM::LifecyclePolicy.Schedule resource property to the template
+        Adds an AWS::DLM::LifecyclePolicy.Schedule resource property to the template. Specifies a backup schedule.
 
     .DESCRIPTION
-        Adds an AWS::DLM::LifecyclePolicy.Schedule resource property to the template
+        Adds an AWS::DLM::LifecyclePolicy.Schedule resource property to the template.
+Specifies a backup schedule.
 
     .LINK
         http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-dlm-lifecyclepolicy-schedule.html

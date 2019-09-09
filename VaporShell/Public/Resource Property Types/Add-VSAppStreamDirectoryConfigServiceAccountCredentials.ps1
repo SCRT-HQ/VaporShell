@@ -1,10 +1,11 @@
 function Add-VSAppStreamDirectoryConfigServiceAccountCredentials {
     <#
     .SYNOPSIS
-        Adds an AWS::AppStream::DirectoryConfig.ServiceAccountCredentials resource property to the template
+        Adds an AWS::AppStream::DirectoryConfig.ServiceAccountCredentials resource property to the template. The credentials for the service account used by the streaming instance to connect to the directory.
 
     .DESCRIPTION
-        Adds an AWS::AppStream::DirectoryConfig.ServiceAccountCredentials resource property to the template
+        Adds an AWS::AppStream::DirectoryConfig.ServiceAccountCredentials resource property to the template.
+The credentials for the service account used by the streaming instance to connect to the directory.
 
     .LINK
         http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-appstream-directoryconfig-serviceaccountcredentials.html

@@ -1,10 +1,11 @@
 function Add-VSS3BucketAccessControlTranslation {
     <#
     .SYNOPSIS
-        Adds an AWS::S3::Bucket.AccessControlTranslation resource property to the template
+        Adds an AWS::S3::Bucket.AccessControlTranslation resource property to the template. Specify this only in a cross-account scenario (where source and destination bucket owners are not the same, and you want to change replica ownership to the AWS account that owns the destination bucket. If this is not specified in the replication configuration, the replicas are owned by same AWS account that owns the source object.
 
     .DESCRIPTION
-        Adds an AWS::S3::Bucket.AccessControlTranslation resource property to the template
+        Adds an AWS::S3::Bucket.AccessControlTranslation resource property to the template.
+Specify this only in a cross-account scenario (where source and destination bucket owners are not the same, and you want to change replica ownership to the AWS account that owns the destination bucket. If this is not specified in the replication configuration, the replicas are owned by same AWS account that owns the source object.
 
     .LINK
         http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-s3-bucket-accesscontroltranslation.html

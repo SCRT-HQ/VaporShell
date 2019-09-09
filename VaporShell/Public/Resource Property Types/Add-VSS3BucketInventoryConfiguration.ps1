@@ -1,10 +1,11 @@
 function Add-VSS3BucketInventoryConfiguration {
     <#
     .SYNOPSIS
-        Adds an AWS::S3::Bucket.InventoryConfiguration resource property to the template
+        Adds an AWS::S3::Bucket.InventoryConfiguration resource property to the template. Specifies the inventory configuration for an Amazon S3 bucket. For more information, see GET Bucket inventory: https://docs.aws.amazon.com/AmazonS3/latest/API/RESTBucketGETInventoryConfig.html in the *Amazon Simple Storage Service API Reference*.
 
     .DESCRIPTION
-        Adds an AWS::S3::Bucket.InventoryConfiguration resource property to the template
+        Adds an AWS::S3::Bucket.InventoryConfiguration resource property to the template.
+Specifies the inventory configuration for an Amazon S3 bucket. For more information, see GET Bucket inventory: https://docs.aws.amazon.com/AmazonS3/latest/API/RESTBucketGETInventoryConfig.html in the *Amazon Simple Storage Service API Reference*.
 
     .LINK
         http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-s3-bucket-inventoryconfiguration.html

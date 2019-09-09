@@ -1,10 +1,13 @@
 function Add-VSEC2SpotFleetBlockDeviceMapping {
     <#
     .SYNOPSIS
-        Adds an AWS::EC2::SpotFleet.BlockDeviceMapping resource property to the template
+        Adds an AWS::EC2::SpotFleet.BlockDeviceMapping resource property to the template. Specifies a block device mapping.
 
     .DESCRIPTION
-        Adds an AWS::EC2::SpotFleet.BlockDeviceMapping resource property to the template
+        Adds an AWS::EC2::SpotFleet.BlockDeviceMapping resource property to the template.
+Specifies a block device mapping.
+
+You can specify Ebs or VirtualName, but not both.
 
     .LINK
         http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-spotfleet-spotfleetrequestconfigdata-launchspecifications-blockdevicemappings.html

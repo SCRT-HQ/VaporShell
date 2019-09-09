@@ -1,10 +1,11 @@
 function Add-VSConfigRemediationConfigurationStaticValue {
     <#
     .SYNOPSIS
-        Adds an AWS::Config::RemediationConfiguration.StaticValue resource property to the template
+        Adds an AWS::Config::RemediationConfiguration.StaticValue resource property to the template. The static value of the resource.
 
     .DESCRIPTION
-        Adds an AWS::Config::RemediationConfiguration.StaticValue resource property to the template
+        Adds an AWS::Config::RemediationConfiguration.StaticValue resource property to the template.
+The static value of the resource.
 
     .LINK
         http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-config-remediationconfiguration-staticvalue.html

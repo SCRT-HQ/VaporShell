@@ -1,10 +1,10 @@
 function New-VSServiceDiscoveryInstance {
     <#
     .SYNOPSIS
-        Adds an AWS::ServiceDiscovery::Instance resource to the template
+        Adds an AWS::ServiceDiscovery::Instance resource to the template. A complex type that contains information about an instance that AWS Cloud Map creates when you submit a RegisterInstance request.
 
     .DESCRIPTION
-        Adds an AWS::ServiceDiscovery::Instance resource to the template
+        Adds an AWS::ServiceDiscovery::Instance resource to the template. A complex type that contains information about an instance that AWS Cloud Map creates when you submit a RegisterInstance request.
 
     .LINK
         http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-servicediscovery-instance.html

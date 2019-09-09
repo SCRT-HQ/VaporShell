@@ -1,10 +1,11 @@
 function Add-VSEC2SpotFleetIamInstanceProfileSpecification {
     <#
     .SYNOPSIS
-        Adds an AWS::EC2::SpotFleet.IamInstanceProfileSpecification resource property to the template
+        Adds an AWS::EC2::SpotFleet.IamInstanceProfileSpecification resource property to the template. Describes an IAM instance profile.
 
     .DESCRIPTION
-        Adds an AWS::EC2::SpotFleet.IamInstanceProfileSpecification resource property to the template
+        Adds an AWS::EC2::SpotFleet.IamInstanceProfileSpecification resource property to the template.
+Describes an IAM instance profile.
 
     .LINK
         http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-spotfleet-spotfleetrequestconfigdata-launchspecifications-iaminstanceprofile.html

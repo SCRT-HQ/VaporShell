@@ -1,10 +1,13 @@
 function Add-VSSESReceiptRuleAddHeaderAction {
     <#
     .SYNOPSIS
-        Adds an AWS::SES::ReceiptRule.AddHeaderAction resource property to the template
+        Adds an AWS::SES::ReceiptRule.AddHeaderAction resource property to the template. When included in a receipt rule, this action adds a header to the received email.
 
     .DESCRIPTION
-        Adds an AWS::SES::ReceiptRule.AddHeaderAction resource property to the template
+        Adds an AWS::SES::ReceiptRule.AddHeaderAction resource property to the template.
+When included in a receipt rule, this action adds a header to the received email.
+
+For information about adding a header using a receipt rule, see the Amazon SES Developer Guide: https://docs.aws.amazon.com/ses/latest/DeveloperGuide/receiving-email-action-add-header.html.
 
     .LINK
         http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ses-receiptrule-addheaderaction.html

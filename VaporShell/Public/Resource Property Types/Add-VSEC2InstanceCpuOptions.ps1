@@ -1,10 +1,11 @@
 function Add-VSEC2InstanceCpuOptions {
     <#
     .SYNOPSIS
-        Adds an AWS::EC2::Instance.CpuOptions resource property to the template
+        Adds an AWS::EC2::Instance.CpuOptions resource property to the template. The CPU options for the instance.
 
     .DESCRIPTION
-        Adds an AWS::EC2::Instance.CpuOptions resource property to the template
+        Adds an AWS::EC2::Instance.CpuOptions resource property to the template.
+The CPU options for the instance.
 
     .LINK
         http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-instance-cpuoptions.html

@@ -1,10 +1,11 @@
 function Add-VSApiGatewayUsagePlanThrottleSettings {
     <#
     .SYNOPSIS
-        Adds an AWS::ApiGateway::UsagePlan.ThrottleSettings resource property to the template
+        Adds an AWS::ApiGateway::UsagePlan.ThrottleSettings resource property to the template. ThrottleSettings is a property of the AWS::ApiGateway::UsagePlan: https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-apigateway-usageplan.html resource that specifies the overall request rate (average requests per second and burst capacity when users call your REST APIs.
 
     .DESCRIPTION
-        Adds an AWS::ApiGateway::UsagePlan.ThrottleSettings resource property to the template
+        Adds an AWS::ApiGateway::UsagePlan.ThrottleSettings resource property to the template.
+ThrottleSettings is a property of the AWS::ApiGateway::UsagePlan: https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-apigateway-usageplan.html resource that specifies the overall request rate (average requests per second and burst capacity when users call your REST APIs.
 
     .LINK
         http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-apigateway-usageplan-throttlesettings.html

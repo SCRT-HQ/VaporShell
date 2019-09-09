@@ -1,10 +1,13 @@
 function Add-VSEC2EC2FleetFleetLaunchTemplateConfigRequest {
     <#
     .SYNOPSIS
-        Adds an AWS::EC2::EC2Fleet.FleetLaunchTemplateConfigRequest resource property to the template
+        Adds an AWS::EC2::EC2Fleet.FleetLaunchTemplateConfigRequest resource property to the template. Specifies a launch template and overrides for an EC2 Fleet.
 
     .DESCRIPTION
-        Adds an AWS::EC2::EC2Fleet.FleetLaunchTemplateConfigRequest resource property to the template
+        Adds an AWS::EC2::EC2Fleet.FleetLaunchTemplateConfigRequest resource property to the template.
+Specifies a launch template and overrides for an EC2 Fleet.
+
+FleetLaunchTemplateConfigRequest is a property of the AWS::EC2::EC2Fleet: https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ec2-ec2fleet.html resource.
 
     .LINK
         http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-ec2fleet-fleetlaunchtemplateconfigrequest.html

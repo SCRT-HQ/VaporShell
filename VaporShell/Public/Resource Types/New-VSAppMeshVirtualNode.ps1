@@ -1,10 +1,20 @@
 function New-VSAppMeshVirtualNode {
     <#
     .SYNOPSIS
-        Adds an AWS::AppMesh::VirtualNode resource to the template
+        Adds an AWS::AppMesh::VirtualNode resource to the template. Creates a virtual node within a service mesh.
 
     .DESCRIPTION
-        Adds an AWS::AppMesh::VirtualNode resource to the template
+        Adds an AWS::AppMesh::VirtualNode resource to the template. Creates a virtual node within a service mesh.
+
+A virtual node acts as a logical pointer to a particular task group, such as an Amazon ECS service or a Kubernetes deployment. When you create a virtual node, you must specify the DNS service discovery hostname for your task group.
+
+Any inbound traffic that your virtual node expects should be specified as a listener. Any outbound traffic that your virtual node expects to reach should be specified as a backend.
+
+The response metadata for your new virtual node contains the arn that is associated with the virtual node. Set this value (either the full ARN or the truncated resource name: for example, mesh/default/virtualNode/simpleapp as the APPMESH_VIRTUAL_NODE_NAME environment variable for your task group's Envoy proxy container in your task definition or pod spec. This is then mapped to the node.id and node.cluster Envoy parameters.
+
+**Note**
+
+If you require your Envoy stats or tracing to use a different name, you can override the node.cluster value that is set by APPMESH_VIRTUAL_NODE_NAME with the APPMESH_VIRTUAL_NODE_CLUSTER environment variable.
 
     .LINK
         http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-appmesh-virtualnode.html

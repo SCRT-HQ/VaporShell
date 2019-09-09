@@ -1,10 +1,11 @@
 function Add-VSAutoScalingPlansScalingPlanTagFilter {
     <#
     .SYNOPSIS
-        Adds an AWS::AutoScalingPlans::ScalingPlan.TagFilter resource property to the template
+        Adds an AWS::AutoScalingPlans::ScalingPlan.TagFilter resource property to the template. TagFilter is a subproperty of ApplicationSource: https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-autoscalingplans-scalingplan-applicationsource.html that specifies a tag for an application source to use with AWS Auto Scaling.
 
     .DESCRIPTION
-        Adds an AWS::AutoScalingPlans::ScalingPlan.TagFilter resource property to the template
+        Adds an AWS::AutoScalingPlans::ScalingPlan.TagFilter resource property to the template.
+TagFilter is a subproperty of ApplicationSource: https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-autoscalingplans-scalingplan-applicationsource.html that specifies a tag for an application source to use with AWS Auto Scaling.
 
     .LINK
         http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-autoscalingplans-scalingplan-tagfilter.html

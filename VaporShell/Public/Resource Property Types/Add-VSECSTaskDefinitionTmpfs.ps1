@@ -1,10 +1,11 @@
 function Add-VSECSTaskDefinitionTmpfs {
     <#
     .SYNOPSIS
-        Adds an AWS::ECS::TaskDefinition.Tmpfs resource property to the template
+        Adds an AWS::ECS::TaskDefinition.Tmpfs resource property to the template. The Tmpfs property specifies the container path, mount options, and size of the tmpfs mount.
 
     .DESCRIPTION
-        Adds an AWS::ECS::TaskDefinition.Tmpfs resource property to the template
+        Adds an AWS::ECS::TaskDefinition.Tmpfs resource property to the template.
+The Tmpfs property specifies the container path, mount options, and size of the tmpfs mount.
 
     .LINK
         http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ecs-taskdefinition-tmpfs.html

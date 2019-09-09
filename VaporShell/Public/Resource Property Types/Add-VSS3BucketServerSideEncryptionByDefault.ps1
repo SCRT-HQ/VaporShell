@@ -1,10 +1,11 @@
 function Add-VSS3BucketServerSideEncryptionByDefault {
     <#
     .SYNOPSIS
-        Adds an AWS::S3::Bucket.ServerSideEncryptionByDefault resource property to the template
+        Adds an AWS::S3::Bucket.ServerSideEncryptionByDefault resource property to the template. Describes the default server-side encryption to apply to new objects in the bucket. If a PUT Object request doesn't specify any server-side encryption, this default encryption will be applied. For more information, see PUT Bucket encryption: https://docs.aws.amazon.com/AmazonS3/latest/API/RESTBucketPUTencryption.html in the *Amazon Simple Storage Service API Reference*.
 
     .DESCRIPTION
-        Adds an AWS::S3::Bucket.ServerSideEncryptionByDefault resource property to the template
+        Adds an AWS::S3::Bucket.ServerSideEncryptionByDefault resource property to the template.
+Describes the default server-side encryption to apply to new objects in the bucket. If a PUT Object request doesn't specify any server-side encryption, this default encryption will be applied. For more information, see PUT Bucket encryption: https://docs.aws.amazon.com/AmazonS3/latest/API/RESTBucketPUTencryption.html in the *Amazon Simple Storage Service API Reference*.
 
     .LINK
         http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-s3-bucket-serversideencryptionbydefault.html

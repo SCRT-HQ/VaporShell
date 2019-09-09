@@ -1,10 +1,10 @@
 function New-VSSESReceiptFilter {
     <#
     .SYNOPSIS
-        Adds an AWS::SES::ReceiptFilter resource to the template
+        Adds an AWS::SES::ReceiptFilter resource to the template. Specify a new IP address filter. You use IP address filters when you receive email with Amazon SES. For more information, see the Amazon SES Developer Guide: https://docs.aws.amazon.com/ses/latest/DeveloperGuide/receiving-email-concepts.html.
 
     .DESCRIPTION
-        Adds an AWS::SES::ReceiptFilter resource to the template
+        Adds an AWS::SES::ReceiptFilter resource to the template. Specify a new IP address filter. You use IP address filters when you receive email with Amazon SES. For more information, see the Amazon SES Developer Guide: https://docs.aws.amazon.com/ses/latest/DeveloperGuide/receiving-email-concepts.html.
 
     .LINK
         http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ses-receiptfilter.html

@@ -1,10 +1,18 @@
 function New-VSGreengrassLoggerDefinition {
     <#
     .SYNOPSIS
-        Adds an AWS::Greengrass::LoggerDefinition resource to the template
+        Adds an AWS::Greengrass::LoggerDefinition resource to the template. The AWS::Greengrass::LoggerDefinition resource represents a logger definition for AWS IoT Greengrass. Logger definitions are used to organize your logger definition versions.
 
     .DESCRIPTION
-        Adds an AWS::Greengrass::LoggerDefinition resource to the template
+        Adds an AWS::Greengrass::LoggerDefinition resource to the template. The AWS::Greengrass::LoggerDefinition resource represents a logger definition for AWS IoT Greengrass. Logger definitions are used to organize your logger definition versions.
+
+Logger definitions can reference multiple logger definition versions. All logger definition versions must be associated with a logger definition. Each logger definition version can contain one or more loggers.
+
+**Note**
+
+When you create a logger definition, you can optionally include an initial logger definition version. To associate a logger definition version later, create an https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-greengrass-loggerdefinitionversion.html: https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-greengrass-loggerdefinitionversion.html resource and specify the ID of this logger definition.
+
+After you create the logger definition version that contains the loggers you want to deploy, you must add it to your group version. For more information, see https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-greengrass-group.html: https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-greengrass-group.html.
 
     .LINK
         http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-greengrass-loggerdefinition.html

@@ -1,10 +1,12 @@
 function New-VSIoTPolicyPrincipalAttachment {
     <#
     .SYNOPSIS
-        Adds an AWS::IoT::PolicyPrincipalAttachment resource to the template
+        Adds an AWS::IoT::PolicyPrincipalAttachment resource to the template. Use the AWS::IoT::PolicyPrincipalAttachment resource to attach an AWS IoT policy to a principal (an X.509 certificate or other credential.
 
     .DESCRIPTION
-        Adds an AWS::IoT::PolicyPrincipalAttachment resource to the template
+        Adds an AWS::IoT::PolicyPrincipalAttachment resource to the template. Use the AWS::IoT::PolicyPrincipalAttachment resource to attach an AWS IoT policy to a principal (an X.509 certificate or other credential.
+
+For information about working with AWS IoT policies and principals, see Authorization: https://docs.aws.amazon.com/iot/latest/developerguide/authorization.html in the *AWS IoT Developer Guide*.
 
     .LINK
         http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-iot-policyprincipalattachment.html

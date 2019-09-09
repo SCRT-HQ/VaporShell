@@ -1,10 +1,11 @@
 function Add-VSAppStreamImageBuilderVpcConfig {
     <#
     .SYNOPSIS
-        Adds an AWS::AppStream::ImageBuilder.VpcConfig resource property to the template
+        Adds an AWS::AppStream::ImageBuilder.VpcConfig resource property to the template. The VPC configuration for the image builder.
 
     .DESCRIPTION
-        Adds an AWS::AppStream::ImageBuilder.VpcConfig resource property to the template
+        Adds an AWS::AppStream::ImageBuilder.VpcConfig resource property to the template.
+The VPC configuration for the image builder.
 
     .LINK
         http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-appstream-imagebuilder-vpcconfig.html

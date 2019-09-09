@@ -1,10 +1,11 @@
 function Add-VSGlueJobJobCommand {
     <#
     .SYNOPSIS
-        Adds an AWS::Glue::Job.JobCommand resource property to the template
+        Adds an AWS::Glue::Job.JobCommand resource property to the template. Specifies code executed when a job is run.
 
     .DESCRIPTION
-        Adds an AWS::Glue::Job.JobCommand resource property to the template
+        Adds an AWS::Glue::Job.JobCommand resource property to the template.
+Specifies code executed when a job is run.
 
     .LINK
         http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-glue-job-jobcommand.html

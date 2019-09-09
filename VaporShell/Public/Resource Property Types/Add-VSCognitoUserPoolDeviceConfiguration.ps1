@@ -1,10 +1,11 @@
 function Add-VSCognitoUserPoolDeviceConfiguration {
     <#
     .SYNOPSIS
-        Adds an AWS::Cognito::UserPool.DeviceConfiguration resource property to the template
+        Adds an AWS::Cognito::UserPool.DeviceConfiguration resource property to the template. DeviceConfiguration is a property of the AWS::Cognito::UserPool: https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-cognito-userpool.html resource that defines the device configuration of an Amazon Cognito User Pool.
 
     .DESCRIPTION
-        Adds an AWS::Cognito::UserPool.DeviceConfiguration resource property to the template
+        Adds an AWS::Cognito::UserPool.DeviceConfiguration resource property to the template.
+DeviceConfiguration is a property of the AWS::Cognito::UserPool: https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-cognito-userpool.html resource that defines the device configuration of an Amazon Cognito User Pool.
 
     .LINK
         http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-cognito-userpool-deviceconfiguration.html

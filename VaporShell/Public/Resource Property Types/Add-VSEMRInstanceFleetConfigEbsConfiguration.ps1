@@ -1,10 +1,11 @@
 function Add-VSEMRInstanceFleetConfigEbsConfiguration {
     <#
     .SYNOPSIS
-        Adds an AWS::EMR::InstanceFleetConfig.EbsConfiguration resource property to the template
+        Adds an AWS::EMR::InstanceFleetConfig.EbsConfiguration resource property to the template. EbsConfiguration determines the EBS volumes to attach to EMR cluster instances.
 
     .DESCRIPTION
-        Adds an AWS::EMR::InstanceFleetConfig.EbsConfiguration resource property to the template
+        Adds an AWS::EMR::InstanceFleetConfig.EbsConfiguration resource property to the template.
+EbsConfiguration determines the EBS volumes to attach to EMR cluster instances.
 
     .LINK
         http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-elasticmapreduce-instancefleetconfig-ebsconfiguration.html

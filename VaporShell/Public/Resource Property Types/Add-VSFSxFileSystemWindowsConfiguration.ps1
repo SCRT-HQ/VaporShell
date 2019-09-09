@@ -1,10 +1,11 @@
 function Add-VSFSxFileSystemWindowsConfiguration {
     <#
     .SYNOPSIS
-        Adds an AWS::FSx::FileSystem.WindowsConfiguration resource property to the template
+        Adds an AWS::FSx::FileSystem.WindowsConfiguration resource property to the template. The configuration for this Microsoft Windows file system.
 
     .DESCRIPTION
-        Adds an AWS::FSx::FileSystem.WindowsConfiguration resource property to the template
+        Adds an AWS::FSx::FileSystem.WindowsConfiguration resource property to the template.
+The configuration for this Microsoft Windows file system.
 
     .LINK
         http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-fsx-filesystem-windowsconfiguration.html

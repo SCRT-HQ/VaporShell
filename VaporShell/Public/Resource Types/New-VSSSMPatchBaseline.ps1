@@ -1,10 +1,12 @@
 function New-VSSSMPatchBaseline {
     <#
     .SYNOPSIS
-        Adds an AWS::SSM::PatchBaseline resource to the template
+        Adds an AWS::SSM::PatchBaseline resource to the template. The AWS::SSM::PatchBaseline resource defines the basic information for an AWS Systems Manager patch baseline. A patch baseline defines which patches are approved for installation on your instances.
 
     .DESCRIPTION
-        Adds an AWS::SSM::PatchBaseline resource to the template
+        Adds an AWS::SSM::PatchBaseline resource to the template. The AWS::SSM::PatchBaseline resource defines the basic information for an AWS Systems Manager patch baseline. A patch baseline defines which patches are approved for installation on your instances.
+
+For more information, see CreatePatchBaseline: https://docs.aws.amazon.com/systems-manager/latest/APIReference/API_CreatePatchBaseline.html in the *AWS Systems Manager API Reference*.
 
     .LINK
         http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ssm-patchbaseline.html

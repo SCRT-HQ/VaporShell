@@ -1,10 +1,10 @@
 function New-VSEC2Host {
     <#
     .SYNOPSIS
-        Adds an AWS::EC2::Host resource to the template
+        Adds an AWS::EC2::Host resource to the template. Allocates a fully dedicated physical server for launching EC2 instances. Because the host is fully dedicated for your use, it can help you address compliance requirements and reduce costs by allowing you to use your existing server-bound software licenses. For more information, see  Dedicated Hosts: https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/dedicated-hosts-overview.html in the *Amazon EC2 User Guide for Linux Instances*.
 
     .DESCRIPTION
-        Adds an AWS::EC2::Host resource to the template
+        Adds an AWS::EC2::Host resource to the template. Allocates a fully dedicated physical server for launching EC2 instances. Because the host is fully dedicated for your use, it can help you address compliance requirements and reduce costs by allowing you to use your existing server-bound software licenses. For more information, see  Dedicated Hosts: https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/dedicated-hosts-overview.html in the *Amazon EC2 User Guide for Linux Instances*.
 
     .LINK
         http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ec2-host.html

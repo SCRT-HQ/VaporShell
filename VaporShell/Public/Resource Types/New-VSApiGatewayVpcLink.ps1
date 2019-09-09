@@ -1,10 +1,10 @@
 function New-VSApiGatewayVpcLink {
     <#
     .SYNOPSIS
-        Adds an AWS::ApiGateway::VpcLink resource to the template
+        Adds an AWS::ApiGateway::VpcLink resource to the template. The AWS::ApiGateway::VpcLink resource creates an API Gateway VPC link for a REST API to access resources in an Amazon Virtual Private Cloud (VPC. For more information, see vpclink:create: https://docs.aws.amazon.com/apigateway/api-reference/link-relation/vpclink-create/ in the Amazon API Gateway REST API Reference.
 
     .DESCRIPTION
-        Adds an AWS::ApiGateway::VpcLink resource to the template
+        Adds an AWS::ApiGateway::VpcLink resource to the template. The AWS::ApiGateway::VpcLink resource creates an API Gateway VPC link for a REST API to access resources in an Amazon Virtual Private Cloud (VPC. For more information, see vpclink:create: https://docs.aws.amazon.com/apigateway/api-reference/link-relation/vpclink-create/ in the Amazon API Gateway REST API Reference.
 
     .LINK
         http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-apigateway-vpclink.html

@@ -1,10 +1,11 @@
 function Add-VSCognitoUserPoolClientAnalyticsConfiguration {
     <#
     .SYNOPSIS
-        Adds an AWS::Cognito::UserPoolClient.AnalyticsConfiguration resource property to the template
+        Adds an AWS::Cognito::UserPoolClient.AnalyticsConfiguration resource property to the template. AnalyticsConfiguration is a property of the AWS::Cognito::UserPoolClient: https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-cognito-userpoolclient.html resource that defines the Amazon Pinpoint analytics configuration for collecting metrics for this user pool.
 
     .DESCRIPTION
-        Adds an AWS::Cognito::UserPoolClient.AnalyticsConfiguration resource property to the template
+        Adds an AWS::Cognito::UserPoolClient.AnalyticsConfiguration resource property to the template.
+AnalyticsConfiguration is a property of the AWS::Cognito::UserPoolClient: https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-cognito-userpoolclient.html resource that defines the Amazon Pinpoint analytics configuration for collecting metrics for this user pool.
 
     .LINK
         http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-cognito-userpoolclient-analyticsconfiguration.html

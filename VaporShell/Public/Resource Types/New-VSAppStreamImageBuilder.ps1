@@ -1,10 +1,12 @@
 function New-VSAppStreamImageBuilder {
     <#
     .SYNOPSIS
-        Adds an AWS::AppStream::ImageBuilder resource to the template
+        Adds an AWS::AppStream::ImageBuilder resource to the template. The AWS::AppStream::ImageBuilder resource creates an image builder for Amazon AppStream 2.0. An image builder is a virtual machine that is used to create an image.
 
     .DESCRIPTION
-        Adds an AWS::AppStream::ImageBuilder resource to the template
+        Adds an AWS::AppStream::ImageBuilder resource to the template. The AWS::AppStream::ImageBuilder resource creates an image builder for Amazon AppStream 2.0. An image builder is a virtual machine that is used to create an image.
+
+The initial state of the image builder is PENDING. When it is ready, the state is RUNNING.
 
     .LINK
         http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-appstream-imagebuilder.html

@@ -1,10 +1,11 @@
 function Add-VSKinesisAnalyticsV2ApplicationReferenceDataSourceMappingParameters {
     <#
     .SYNOPSIS
-        Adds an AWS::KinesisAnalyticsV2::ApplicationReferenceDataSource.MappingParameters resource property to the template
+        Adds an AWS::KinesisAnalyticsV2::ApplicationReferenceDataSource.MappingParameters resource property to the template. When you configure an SQL-based Amazon Kinesis Data Analytics application's input at the time of creating or updating an application, provides additional mapping information specific to the record format (such as JSON, CSV, or record fields delimited by some delimiter on the streaming source.
 
     .DESCRIPTION
-        Adds an AWS::KinesisAnalyticsV2::ApplicationReferenceDataSource.MappingParameters resource property to the template
+        Adds an AWS::KinesisAnalyticsV2::ApplicationReferenceDataSource.MappingParameters resource property to the template.
+When you configure an SQL-based Amazon Kinesis Data Analytics application's input at the time of creating or updating an application, provides additional mapping information specific to the record format (such as JSON, CSV, or record fields delimited by some delimiter on the streaming source.
 
     .LINK
         http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-kinesisanalyticsv2-applicationreferencedatasource-mappingparameters.html

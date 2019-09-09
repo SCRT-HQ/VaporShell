@@ -1,10 +1,12 @@
 function New-VSDLMLifecyclePolicy {
     <#
     .SYNOPSIS
-        Adds an AWS::DLM::LifecyclePolicy resource to the template
+        Adds an AWS::DLM::LifecyclePolicy resource to the template. Specifies a lifecycle policy, which is used to automate operations on Amazon EBS resources.
 
     .DESCRIPTION
-        Adds an AWS::DLM::LifecyclePolicy resource to the template
+        Adds an AWS::DLM::LifecyclePolicy resource to the template. Specifies a lifecycle policy, which is used to automate operations on Amazon EBS resources.
+
+The properties are required when you add a lifecycle policy and optional when you update a lifecycle policy.
 
     .LINK
         http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-dlm-lifecyclepolicy.html

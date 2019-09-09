@@ -1,10 +1,13 @@
 function Add-VSEC2EC2FleetOnDemandOptionsRequest {
     <#
     .SYNOPSIS
-        Adds an AWS::EC2::EC2Fleet.OnDemandOptionsRequest resource property to the template
+        Adds an AWS::EC2::EC2Fleet.OnDemandOptionsRequest resource property to the template. Specifies the allocation strategy of On-Demand Instances in an EC2 Fleet.
 
     .DESCRIPTION
-        Adds an AWS::EC2::EC2Fleet.OnDemandOptionsRequest resource property to the template
+        Adds an AWS::EC2::EC2Fleet.OnDemandOptionsRequest resource property to the template.
+Specifies the allocation strategy of On-Demand Instances in an EC2 Fleet.
+
+OnDemandOptionsRequest is a property of the AWS::EC2::EC2Fleet: https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ec2-ec2fleet.html resource.
 
     .LINK
         http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-ec2fleet-ondemandoptionsrequest.html

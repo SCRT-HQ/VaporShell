@@ -1,10 +1,11 @@
 function Add-VSS3BucketDefaultRetention {
     <#
     .SYNOPSIS
-        Adds an AWS::S3::Bucket.DefaultRetention resource property to the template
+        Adds an AWS::S3::Bucket.DefaultRetention resource property to the template. The default retention period that you want to apply to new objects placed in the specified bucket.
 
     .DESCRIPTION
-        Adds an AWS::S3::Bucket.DefaultRetention resource property to the template
+        Adds an AWS::S3::Bucket.DefaultRetention resource property to the template.
+The default retention period that you want to apply to new objects placed in the specified bucket.
 
     .LINK
         http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-s3-bucket-defaultretention.html

@@ -1,10 +1,10 @@
 function New-VSWAFRegionalByteMatchSet {
     <#
     .SYNOPSIS
-        Adds an AWS::WAFRegional::ByteMatchSet resource to the template
+        Adds an AWS::WAFRegional::ByteMatchSet resource to the template. The AWS::WAFRegional::ByteMatchSet resource creates an AWS WAF ByteMatchSet that identifies a part of a web request that you want to inspect.
 
     .DESCRIPTION
-        Adds an AWS::WAFRegional::ByteMatchSet resource to the template
+        Adds an AWS::WAFRegional::ByteMatchSet resource to the template. The AWS::WAFRegional::ByteMatchSet resource creates an AWS WAF ByteMatchSet that identifies a part of a web request that you want to inspect.
 
     .LINK
         http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-wafregional-bytematchset.html

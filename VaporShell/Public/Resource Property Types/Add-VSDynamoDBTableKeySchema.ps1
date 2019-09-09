@@ -1,10 +1,15 @@
 function Add-VSDynamoDBTableKeySchema {
     <#
     .SYNOPSIS
-        Adds an AWS::DynamoDB::Table.KeySchema resource property to the template
+        Adds an AWS::DynamoDB::Table.KeySchema resource property to the template. Represents *a single element* of a key schema. A key schema specifies the attributes that make up the primary key of a table, or the key attributes of an index.
 
     .DESCRIPTION
-        Adds an AWS::DynamoDB::Table.KeySchema resource property to the template
+        Adds an AWS::DynamoDB::Table.KeySchema resource property to the template.
+Represents *a single element* of a key schema. A key schema specifies the attributes that make up the primary key of a table, or the key attributes of an index.
+
+A KeySchemaElement represents exactly one attribute of the primary key. For example, a simple primary key would be represented by one KeySchemaElement (for the partition key. A composite primary key would require one KeySchemaElement for the partition key, and another KeySchemaElement for the sort key.
+
+A KeySchemaElement must be a scalar, top-level attribute (not a nested attribute. The data type must be one of String, Number, or Binary. The attribute cannot be nested within a List or a Map.
 
     .LINK
         http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-dynamodb-keyschema.html

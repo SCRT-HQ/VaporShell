@@ -1,10 +1,11 @@
 function Add-VSApiGatewayMethodIntegrationResponse {
     <#
     .SYNOPSIS
-        Adds an AWS::ApiGateway::Method.IntegrationResponse resource property to the template
+        Adds an AWS::ApiGateway::Method.IntegrationResponse resource property to the template. IntegrationResponse is a property of the Amazon API Gateway Method Integration: https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-apitgateway-method-integration.html property type that specifies the response that API Gateway sends after a method's backend finishes processing a request.
 
     .DESCRIPTION
-        Adds an AWS::ApiGateway::Method.IntegrationResponse resource property to the template
+        Adds an AWS::ApiGateway::Method.IntegrationResponse resource property to the template.
+IntegrationResponse is a property of the Amazon API Gateway Method Integration: https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-apitgateway-method-integration.html property type that specifies the response that API Gateway sends after a method's backend finishes processing a request.
 
     .LINK
         http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-apitgateway-method-integration-integrationresponse.html

@@ -1,10 +1,27 @@
 function Add-VSElasticLoadBalancingV2ListenerRedirectConfig {
     <#
     .SYNOPSIS
-        Adds an AWS::ElasticLoadBalancingV2::Listener.RedirectConfig resource property to the template
+        Adds an AWS::ElasticLoadBalancingV2::Listener.RedirectConfig resource property to the template. Information about a redirect action.
 
     .DESCRIPTION
-        Adds an AWS::ElasticLoadBalancingV2::Listener.RedirectConfig resource property to the template
+        Adds an AWS::ElasticLoadBalancingV2::Listener.RedirectConfig resource property to the template.
+Information about a redirect action.
+
+A URI consists of the following components: protocol://hostname:port/path?query. You must modify at least one of the following components to avoid a redirect loop: protocol, hostname, port, or path. Any components that you do not modify retain their original values.
+
+You can reuse URI components using the following reserved keywords:
+
++ #{protocol}
+
++ #{host}
+
++ #{port}
+
++ #{path} (the leading "/" is removed
+
++ #{query}
+
+For example, you can change the path to "/new/#{path}", the hostname to "example.#{host}", or the query to "#{query}&value=xyz".
 
     .LINK
         http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-elasticloadbalancingv2-listener-redirectconfig.html

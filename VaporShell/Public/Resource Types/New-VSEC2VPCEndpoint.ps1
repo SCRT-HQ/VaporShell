@@ -1,10 +1,14 @@
 function New-VSEC2VPCEndpoint {
     <#
     .SYNOPSIS
-        Adds an AWS::EC2::VPCEndpoint resource to the template
+        Adds an AWS::EC2::VPCEndpoint resource to the template. Specifies a VPC endpoint for a service. An endpoint enables you to create a private connection between your VPC and the service. The service may be provided by AWS, an AWS Marketplace partner, or another AWS account. For more information, see VPC Endpoints: https://docs.aws.amazon.com/AmazonVPC/latest/UserGuide/vpc-endpoints.html in the *Amazon Virtual Private Cloud User Guide*.
 
     .DESCRIPTION
-        Adds an AWS::EC2::VPCEndpoint resource to the template
+        Adds an AWS::EC2::VPCEndpoint resource to the template. Specifies a VPC endpoint for a service. An endpoint enables you to create a private connection between your VPC and the service. The service may be provided by AWS, an AWS Marketplace partner, or another AWS account. For more information, see VPC Endpoints: https://docs.aws.amazon.com/AmazonVPC/latest/UserGuide/vpc-endpoints.html in the *Amazon Virtual Private Cloud User Guide*.
+
+A gateway endpoint serves as a target for a route in your route table for traffic destined for the AWS service. You can specify an endpoint policy to attach to the endpoint that will control access to the service from your VPC. You can also specify the VPC route tables that use the endpoint.
+
+An interface endpoint is a network interface in your subnet that serves as an endpoint for communicating with the specified service. You can specify the subnets in which to create an endpoint, and the security groups to associate with the endpoint network interface.
 
     .LINK
         http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ec2-vpcendpoint.html

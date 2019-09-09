@@ -1,10 +1,11 @@
 function Add-VSIoTTopicRuleFirehoseAction {
     <#
     .SYNOPSIS
-        Adds an AWS::IoT::TopicRule.FirehoseAction resource property to the template
+        Adds an AWS::IoT::TopicRule.FirehoseAction resource property to the template. Describes an action that writes data to an Amazon Kinesis Firehose stream.
 
     .DESCRIPTION
-        Adds an AWS::IoT::TopicRule.FirehoseAction resource property to the template
+        Adds an AWS::IoT::TopicRule.FirehoseAction resource property to the template.
+Describes an action that writes data to an Amazon Kinesis Firehose stream.
 
     .LINK
         http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iot-topicrule-firehoseaction.html

@@ -1,10 +1,10 @@
 function New-VSServiceCatalogTagOption {
     <#
     .SYNOPSIS
-        Adds an AWS::ServiceCatalog::TagOption resource to the template
+        Adds an AWS::ServiceCatalog::TagOption resource to the template. Specifies a TagOption. A TagOption is a key-value pair managed by AWS Service Catalog that serves as a template for creating an AWS tag.
 
     .DESCRIPTION
-        Adds an AWS::ServiceCatalog::TagOption resource to the template
+        Adds an AWS::ServiceCatalog::TagOption resource to the template. Specifies a TagOption. A TagOption is a key-value pair managed by AWS Service Catalog that serves as a template for creating an AWS tag.
 
     .LINK
         http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-servicecatalog-tagoption.html

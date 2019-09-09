@@ -1,10 +1,11 @@
 function Add-VSIoTAnalyticsPipelineFilter {
     <#
     .SYNOPSIS
-        Adds an AWS::IoTAnalytics::Pipeline.Filter resource property to the template
+        Adds an AWS::IoTAnalytics::Pipeline.Filter resource property to the template. An activity that filters a message based on its attributes.
 
     .DESCRIPTION
-        Adds an AWS::IoTAnalytics::Pipeline.Filter resource property to the template
+        Adds an AWS::IoTAnalytics::Pipeline.Filter resource property to the template.
+An activity that filters a message based on its attributes.
 
     .LINK
         http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iotanalytics-pipeline-filter.html

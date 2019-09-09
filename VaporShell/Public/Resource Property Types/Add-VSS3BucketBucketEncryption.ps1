@@ -1,10 +1,11 @@
 function Add-VSS3BucketBucketEncryption {
     <#
     .SYNOPSIS
-        Adds an AWS::S3::Bucket.BucketEncryption resource property to the template
+        Adds an AWS::S3::Bucket.BucketEncryption resource property to the template. Specifies default encryption for a bucket using server-side encryption with Amazon S3-managed keys (SSE-S3 or AWS KMS-managed keys (SSE-KMS bucket. For information about the Amazon S3 default encryption feature, see  Amazon S3 Default Encryption for S3 Buckets: https://docs.aws.amazon.com/AmazonS3/latest/dev/bucket-encryption.html in the *Amazon Simple Storage Service Developer Guide*.
 
     .DESCRIPTION
-        Adds an AWS::S3::Bucket.BucketEncryption resource property to the template
+        Adds an AWS::S3::Bucket.BucketEncryption resource property to the template.
+Specifies default encryption for a bucket using server-side encryption with Amazon S3-managed keys (SSE-S3 or AWS KMS-managed keys (SSE-KMS bucket. For information about the Amazon S3 default encryption feature, see  Amazon S3 Default Encryption for S3 Buckets: https://docs.aws.amazon.com/AmazonS3/latest/dev/bucket-encryption.html in the *Amazon Simple Storage Service Developer Guide*.
 
     .LINK
         http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-s3-bucket-bucketencryption.html

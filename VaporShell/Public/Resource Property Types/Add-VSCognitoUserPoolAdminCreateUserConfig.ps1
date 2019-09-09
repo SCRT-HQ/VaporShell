@@ -1,10 +1,11 @@
 function Add-VSCognitoUserPoolAdminCreateUserConfig {
     <#
     .SYNOPSIS
-        Adds an AWS::Cognito::UserPool.AdminCreateUserConfig resource property to the template
+        Adds an AWS::Cognito::UserPool.AdminCreateUserConfig resource property to the template. AdminCreateUserConfig is a property of the AWS::Cognito::UserPool: https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-cognito-userpool.html resource. The AdminCreateUserConfig property configures the AdminCreateUser requests for an Amazon Cognito User Pool.
 
     .DESCRIPTION
-        Adds an AWS::Cognito::UserPool.AdminCreateUserConfig resource property to the template
+        Adds an AWS::Cognito::UserPool.AdminCreateUserConfig resource property to the template.
+AdminCreateUserConfig is a property of the AWS::Cognito::UserPool: https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-cognito-userpool.html resource. The AdminCreateUserConfig property configures the AdminCreateUser requests for an Amazon Cognito User Pool.
 
     .LINK
         http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-cognito-userpool-admincreateuserconfig.html

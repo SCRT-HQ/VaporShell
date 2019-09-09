@@ -1,10 +1,10 @@
 function New-VSEC2TransitGatewayRouteTable {
     <#
     .SYNOPSIS
-        Adds an AWS::EC2::TransitGatewayRouteTable resource to the template
+        Adds an AWS::EC2::TransitGatewayRouteTable resource to the template. Specifies a route table for a transit gateway.
 
     .DESCRIPTION
-        Adds an AWS::EC2::TransitGatewayRouteTable resource to the template
+        Adds an AWS::EC2::TransitGatewayRouteTable resource to the template. Specifies a route table for a transit gateway.
 
     .LINK
         http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ec2-transitgatewayroutetable.html

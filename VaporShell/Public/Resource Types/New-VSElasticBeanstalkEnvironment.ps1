@@ -1,10 +1,10 @@
 function New-VSElasticBeanstalkEnvironment {
     <#
     .SYNOPSIS
-        Adds an AWS::ElasticBeanstalk::Environment resource to the template
+        Adds an AWS::ElasticBeanstalk::Environment resource to the template. The AWS::ElasticBeanstalk::Environment resource is an AWS Elastic Beanstalk resource type that specifies an Elastic Beanstalk environment.
 
     .DESCRIPTION
-        Adds an AWS::ElasticBeanstalk::Environment resource to the template
+        Adds an AWS::ElasticBeanstalk::Environment resource to the template. The AWS::ElasticBeanstalk::Environment resource is an AWS Elastic Beanstalk resource type that specifies an Elastic Beanstalk environment.
 
     .LINK
         http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-beanstalk-environment.html

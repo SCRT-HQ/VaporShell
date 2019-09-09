@@ -1,10 +1,11 @@
 function Add-VSWAFRegionalRulePredicate {
     <#
     .SYNOPSIS
-        Adds an AWS::WAFRegional::Rule.Predicate resource property to the template
+        Adds an AWS::WAFRegional::Rule.Predicate resource property to the template. Specifies the ByteMatchSet, IPSet, SqlInjectionMatchSet, XssMatchSet, RegexMatchSet, GeoMatchSet, and SizeConstraintSet objects that you want to add to a Rule and, for each object, indicates whether you want to negate the settings, for example, requests that do NOT originate from the IP address 192.0.2.44.
 
     .DESCRIPTION
-        Adds an AWS::WAFRegional::Rule.Predicate resource property to the template
+        Adds an AWS::WAFRegional::Rule.Predicate resource property to the template.
+Specifies the ByteMatchSet, IPSet, SqlInjectionMatchSet, XssMatchSet, RegexMatchSet, GeoMatchSet, and SizeConstraintSet objects that you want to add to a Rule and, for each object, indicates whether you want to negate the settings, for example, requests that do NOT originate from the IP address 192.0.2.44.
 
     .LINK
         http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-wafregional-rule-predicate.html

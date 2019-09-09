@@ -1,10 +1,10 @@
 function New-VSServiceCatalogLaunchNotificationConstraint {
     <#
     .SYNOPSIS
-        Adds an AWS::ServiceCatalog::LaunchNotificationConstraint resource to the template
+        Adds an AWS::ServiceCatalog::LaunchNotificationConstraint resource to the template. Specifies a notification constraint.
 
     .DESCRIPTION
-        Adds an AWS::ServiceCatalog::LaunchNotificationConstraint resource to the template
+        Adds an AWS::ServiceCatalog::LaunchNotificationConstraint resource to the template. Specifies a notification constraint.
 
     .LINK
         http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-servicecatalog-launchnotificationconstraint.html

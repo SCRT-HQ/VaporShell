@@ -1,10 +1,15 @@
 function Add-VSEMRInstanceFleetConfigSpotProvisioningSpecification {
     <#
     .SYNOPSIS
-        Adds an AWS::EMR::InstanceFleetConfig.SpotProvisioningSpecification resource property to the template
+        Adds an AWS::EMR::InstanceFleetConfig.SpotProvisioningSpecification resource property to the template. SpotProvisioningSpecification is a subproperty of the InstanceFleetProvisioningSpecifications property type. SpotProvisioningSpecification determines the launch specification for Spot instances in the instance fleet, which includes the defined duration and provisioning timeout behavior.
 
     .DESCRIPTION
-        Adds an AWS::EMR::InstanceFleetConfig.SpotProvisioningSpecification resource property to the template
+        Adds an AWS::EMR::InstanceFleetConfig.SpotProvisioningSpecification resource property to the template.
+SpotProvisioningSpecification is a subproperty of the InstanceFleetProvisioningSpecifications property type. SpotProvisioningSpecification determines the launch specification for Spot instances in the instance fleet, which includes the defined duration and provisioning timeout behavior.
+
+**Note**
+
+The instance fleet configuration is available only in Amazon EMR versions 4.8.0 and later, excluding 5.0.x versions.
 
     .LINK
         http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-elasticmapreduce-instancefleetconfig-spotprovisioningspecification.html

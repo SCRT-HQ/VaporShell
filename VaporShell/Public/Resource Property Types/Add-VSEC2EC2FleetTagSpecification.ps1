@@ -1,10 +1,13 @@
 function Add-VSEC2EC2FleetTagSpecification {
     <#
     .SYNOPSIS
-        Adds an AWS::EC2::EC2Fleet.TagSpecification resource property to the template
+        Adds an AWS::EC2::EC2Fleet.TagSpecification resource property to the template. Specifies the tags to apply to a resource when the resource is being created for an EC2 Fleet.
 
     .DESCRIPTION
-        Adds an AWS::EC2::EC2Fleet.TagSpecification resource property to the template
+        Adds an AWS::EC2::EC2Fleet.TagSpecification resource property to the template.
+Specifies the tags to apply to a resource when the resource is being created for an EC2 Fleet.
+
+TagSpecification is a property of the  AWS::EC2::EC2Fleet: https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ec2-ec2fleet.html resource.
 
     .LINK
         http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-ec2fleet-tagspecification.html

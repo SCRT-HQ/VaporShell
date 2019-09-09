@@ -1,10 +1,10 @@
 function New-VSCognitoUserPoolClient {
     <#
     .SYNOPSIS
-        Adds an AWS::Cognito::UserPoolClient resource to the template
+        Adds an AWS::Cognito::UserPoolClient resource to the template. The AWS::Cognito::UserPoolClient resource creates an Amazon Cognito user pool client.
 
     .DESCRIPTION
-        Adds an AWS::Cognito::UserPoolClient resource to the template
+        Adds an AWS::Cognito::UserPoolClient resource to the template. The AWS::Cognito::UserPoolClient resource creates an Amazon Cognito user pool client.
 
     .LINK
         http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-cognito-userpoolclient.html

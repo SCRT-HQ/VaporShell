@@ -1,10 +1,13 @@
 function Add-VSElasticLoadBalancingLoadBalancerPolicies {
     <#
     .SYNOPSIS
-        Adds an AWS::ElasticLoadBalancing::LoadBalancer.Policies resource property to the template
+        Adds an AWS::ElasticLoadBalancing::LoadBalancer.Policies resource property to the template. Specifies policies for your Classic Load Balancer.
 
     .DESCRIPTION
-        Adds an AWS::ElasticLoadBalancing::LoadBalancer.Policies resource property to the template
+        Adds an AWS::ElasticLoadBalancing::LoadBalancer.Policies resource property to the template.
+Specifies policies for your Classic Load Balancer.
+
+To associate policies with a listener, use the PolicyNames: https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-elb-listener.html#cfn-ec2-elb-listener-policynames property for the listener.
 
     .LINK
         http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-elb-policy.html

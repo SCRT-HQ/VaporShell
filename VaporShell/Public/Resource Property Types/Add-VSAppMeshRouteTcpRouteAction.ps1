@@ -1,10 +1,11 @@
 function Add-VSAppMeshRouteTcpRouteAction {
     <#
     .SYNOPSIS
-        Adds an AWS::AppMesh::Route.TcpRouteAction resource property to the template
+        Adds an AWS::AppMesh::Route.TcpRouteAction resource property to the template. An object representing the traffic distribution requirements for matched TCP requests.
 
     .DESCRIPTION
-        Adds an AWS::AppMesh::Route.TcpRouteAction resource property to the template
+        Adds an AWS::AppMesh::Route.TcpRouteAction resource property to the template.
+An object representing the traffic distribution requirements for matched TCP requests.
 
     .LINK
         http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-appmesh-route-tcprouteaction.html

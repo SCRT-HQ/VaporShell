@@ -1,10 +1,12 @@
 function New-VSEC2Instance {
     <#
     .SYNOPSIS
-        Adds an AWS::EC2::Instance resource to the template
+        Adds an AWS::EC2::Instance resource to the template. Specifies an EC2 instance.
 
     .DESCRIPTION
-        Adds an AWS::EC2::Instance resource to the template
+        Adds an AWS::EC2::Instance resource to the template. Specifies an EC2 instance.
+
+If an Elastic IP address is attached to your instance, AWS CloudFormation reattaches the Elastic IP address after it updates the instance. For more information about updating stacks, see  AWS CloudFormation Stacks Updates: https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks.html.
 
     .LINK
         http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-instance.html

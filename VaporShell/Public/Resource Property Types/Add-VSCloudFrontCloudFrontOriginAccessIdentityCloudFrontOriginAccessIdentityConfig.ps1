@@ -1,10 +1,11 @@
 function Add-VSCloudFrontCloudFrontOriginAccessIdentityCloudFrontOriginAccessIdentityConfig {
     <#
     .SYNOPSIS
-        Adds an AWS::CloudFront::CloudFrontOriginAccessIdentity.CloudFrontOriginAccessIdentityConfig resource property to the template
+        Adds an AWS::CloudFront::CloudFrontOriginAccessIdentity.CloudFrontOriginAccessIdentityConfig resource property to the template. Origin access identity configuration. Send a GET request to the /CloudFront API version/CloudFront/identity ID/config resource.
 
     .DESCRIPTION
-        Adds an AWS::CloudFront::CloudFrontOriginAccessIdentity.CloudFrontOriginAccessIdentityConfig resource property to the template
+        Adds an AWS::CloudFront::CloudFrontOriginAccessIdentity.CloudFrontOriginAccessIdentityConfig resource property to the template.
+Origin access identity configuration. Send a GET request to the /CloudFront API version/CloudFront/identity ID/config resource.
 
     .LINK
         http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-cloudfront-cloudfrontoriginaccessidentity-cloudfrontoriginaccessidentityconfig.html

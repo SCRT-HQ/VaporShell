@@ -1,10 +1,16 @@
 function New-VSWAFRule {
     <#
     .SYNOPSIS
-        Adds an AWS::WAF::Rule resource to the template
+        Adds an AWS::WAF::Rule resource to the template. A combination of ByteMatchSet, IPSet, and/or SqlInjectionMatchSet objects that identify the web requests that you want to allow, block, or count. For example, you might create a Rule that includes the following predicates:
 
     .DESCRIPTION
-        Adds an AWS::WAF::Rule resource to the template
+        Adds an AWS::WAF::Rule resource to the template. A combination of ByteMatchSet, IPSet, and/or SqlInjectionMatchSet objects that identify the web requests that you want to allow, block, or count. For example, you might create a Rule that includes the following predicates:
+
++ An IPSet that causes AWS WAF to search for web requests that originate from the IP address 192.0.2.44
+
++ A ByteMatchSet that causes AWS WAF to search for web requests for which the value of the User-Agent header is BadBot.
+
+To match the settings in this Rule, a request must originate from 192.0.2.44 AND include a User-Agent header for which the value is BadBot.
 
     .LINK
         http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-waf-rule.html

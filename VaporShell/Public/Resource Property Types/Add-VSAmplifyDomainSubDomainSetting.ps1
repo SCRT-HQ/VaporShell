@@ -1,10 +1,11 @@
 function Add-VSAmplifyDomainSubDomainSetting {
     <#
     .SYNOPSIS
-        Adds an AWS::Amplify::Domain.SubDomainSetting resource property to the template
+        Adds an AWS::Amplify::Domain.SubDomainSetting resource property to the template. The SubDomainSetting property type allows you to connect a subdomain (e.g. foo.yourdomain.com to a specific branch.
 
     .DESCRIPTION
-        Adds an AWS::Amplify::Domain.SubDomainSetting resource property to the template
+        Adds an AWS::Amplify::Domain.SubDomainSetting resource property to the template.
+The SubDomainSetting property type allows you to connect a subdomain (e.g. foo.yourdomain.com to a specific branch.
 
     .LINK
         http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-amplify-domain-subdomainsetting.html

@@ -1,10 +1,11 @@
 function Add-VSCloud9EnvironmentEC2Repository {
     <#
     .SYNOPSIS
-        Adds an AWS::Cloud9::EnvironmentEC2.Repository resource property to the template
+        Adds an AWS::Cloud9::EnvironmentEC2.Repository resource property to the template. The Repository property type specifies an AWS CodeCommit source code repository to be cloned into an AWS Cloud9 development environment.
 
     .DESCRIPTION
-        Adds an AWS::Cloud9::EnvironmentEC2.Repository resource property to the template
+        Adds an AWS::Cloud9::EnvironmentEC2.Repository resource property to the template.
+The Repository property type specifies an AWS CodeCommit source code repository to be cloned into an AWS Cloud9 development environment.
 
     .LINK
         http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-cloud9-environmentec2-repository.html

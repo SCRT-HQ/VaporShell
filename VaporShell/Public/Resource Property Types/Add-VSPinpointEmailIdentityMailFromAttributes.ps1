@@ -1,10 +1,11 @@
 function Add-VSPinpointEmailIdentityMailFromAttributes {
     <#
     .SYNOPSIS
-        Adds an AWS::PinpointEmail::Identity.MailFromAttributes resource property to the template
+        Adds an AWS::PinpointEmail::Identity.MailFromAttributes resource property to the template. A list of attributes that are associated with a MAIL FROM domain.
 
     .DESCRIPTION
-        Adds an AWS::PinpointEmail::Identity.MailFromAttributes resource property to the template
+        Adds an AWS::PinpointEmail::Identity.MailFromAttributes resource property to the template.
+A list of attributes that are associated with a MAIL FROM domain.
 
     .LINK
         http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-pinpointemail-identity-mailfromattributes.html

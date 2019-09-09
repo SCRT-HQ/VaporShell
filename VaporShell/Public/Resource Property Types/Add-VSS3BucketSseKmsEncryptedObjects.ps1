@@ -1,10 +1,11 @@
 function Add-VSS3BucketSseKmsEncryptedObjects {
     <#
     .SYNOPSIS
-        Adds an AWS::S3::Bucket.SseKmsEncryptedObjects resource property to the template
+        Adds an AWS::S3::Bucket.SseKmsEncryptedObjects resource property to the template. A container for filter information for the selection of S3 objects encrypted with AWS KMS.
 
     .DESCRIPTION
-        Adds an AWS::S3::Bucket.SseKmsEncryptedObjects resource property to the template
+        Adds an AWS::S3::Bucket.SseKmsEncryptedObjects resource property to the template.
+A container for filter information for the selection of S3 objects encrypted with AWS KMS.
 
     .LINK
         http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-s3-bucket-ssekmsencryptedobjects.html

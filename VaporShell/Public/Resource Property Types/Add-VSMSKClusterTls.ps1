@@ -1,10 +1,11 @@
 function Add-VSMSKClusterTls {
     <#
     .SYNOPSIS
-        Adds an AWS::MSK::Cluster.Tls resource property to the template
+        Adds an AWS::MSK::Cluster.Tls resource property to the template. Details for client authentication using TLS.
 
     .DESCRIPTION
-        Adds an AWS::MSK::Cluster.Tls resource property to the template
+        Adds an AWS::MSK::Cluster.Tls resource property to the template.
+Details for client authentication using TLS.
 
     .LINK
         http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-msk-cluster-tls.html

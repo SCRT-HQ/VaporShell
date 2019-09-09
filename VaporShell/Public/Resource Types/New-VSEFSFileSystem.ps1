@@ -1,10 +1,10 @@
 function New-VSEFSFileSystem {
     <#
     .SYNOPSIS
-        Adds an AWS::EFS::FileSystem resource to the template
+        Adds an AWS::EFS::FileSystem resource to the template. The AWS::EFS::FileSystem resource creates a new, empty file system in Amazon Elastic File System (Amazon EFS. You must create a mount target (AWS::EFS::MountTarget: https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-efs-mounttarget.html to mount your EFS file system on an Amazon Elastic Compute Cloud (Amazon EC2 instance or another resource.
 
     .DESCRIPTION
-        Adds an AWS::EFS::FileSystem resource to the template
+        Adds an AWS::EFS::FileSystem resource to the template. The AWS::EFS::FileSystem resource creates a new, empty file system in Amazon Elastic File System (Amazon EFS. You must create a mount target (AWS::EFS::MountTarget: https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-efs-mounttarget.html to mount your EFS file system on an Amazon Elastic Compute Cloud (Amazon EC2 instance or another resource.
 
     .LINK
         http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-efs-filesystem.html

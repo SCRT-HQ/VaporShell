@@ -1,10 +1,11 @@
 function Add-VSCodeBuildProjectProjectTriggers {
     <#
     .SYNOPSIS
-        Adds an AWS::CodeBuild::Project.ProjectTriggers resource property to the template
+        Adds an AWS::CodeBuild::Project.ProjectTriggers resource property to the template. ProjectTriggers is a property of the AWS CodeBuild Project: https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-codebuild-project.html resource that specifies webhooks that trigger an AWS CodeBuild build.
 
     .DESCRIPTION
-        Adds an AWS::CodeBuild::Project.ProjectTriggers resource property to the template
+        Adds an AWS::CodeBuild::Project.ProjectTriggers resource property to the template.
+ProjectTriggers is a property of the AWS CodeBuild Project: https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-codebuild-project.html resource that specifies webhooks that trigger an AWS CodeBuild build.
 
     .LINK
         http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-codebuild-project-projecttriggers.html

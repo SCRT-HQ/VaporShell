@@ -1,10 +1,10 @@
 function New-VSAppStreamStack {
     <#
     .SYNOPSIS
-        Adds an AWS::AppStream::Stack resource to the template
+        Adds an AWS::AppStream::Stack resource to the template. The AWS::AppStream::Stack resource creates a stack to start streaming applications to Amazon AppStream 2.0 users. A stack consists of an associated fleet, user access policies, and storage configurations.
 
     .DESCRIPTION
-        Adds an AWS::AppStream::Stack resource to the template
+        Adds an AWS::AppStream::Stack resource to the template. The AWS::AppStream::Stack resource creates a stack to start streaming applications to Amazon AppStream 2.0 users. A stack consists of an associated fleet, user access policies, and storage configurations.
 
     .LINK
         http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-appstream-stack.html

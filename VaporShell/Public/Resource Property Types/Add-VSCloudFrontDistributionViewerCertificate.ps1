@@ -1,10 +1,27 @@
 function Add-VSCloudFrontDistributionViewerCertificate {
     <#
     .SYNOPSIS
-        Adds an AWS::CloudFront::Distribution.ViewerCertificate resource property to the template
+        Adds an AWS::CloudFront::Distribution.ViewerCertificate resource property to the template. A complex type that specifies the following:
 
     .DESCRIPTION
-        Adds an AWS::CloudFront::Distribution.ViewerCertificate resource property to the template
+        Adds an AWS::CloudFront::Distribution.ViewerCertificate resource property to the template.
+A complex type that specifies the following:
+
++ Whether you want viewers to use HTTP or HTTPS to request your objects.
+
++ If you want viewers to use HTTPS, whether you're using an alternate domain name such as example.com or the CloudFront domain name for your distribution, such as d111111abcdef8.cloudfront.net.
+
++ If you're using an alternate domain name, whether AWS Certificate Manager (ACM provided the certificate, or you purchased a certificate from a third-party certificate authority and imported it into ACM or uploaded it to the IAM certificate store.
+
+Specify only one of the following values:
+
++  ACMCertificateArn: https://docs.aws.amazon.com/cloudfront/latest/APIReference/API_ViewerCertificate.html#cloudfront-Type-ViewerCertificate-ACMCertificateArn
+
++  IAMCertificateId: https://docs.aws.amazon.com/cloudfront/latest/APIReference/API_ViewerCertificate.html#cloudfront-Type-ViewerCertificate-IAMCertificateId
+
++  CloudFrontDefaultCertificate: https://docs.aws.amazon.com/cloudfront/latest/APIReference/API_ViewerCertificate.html#cloudfront-Type-ViewerCertificate-CloudFrontDefaultCertificate
+
+For more information, see  Using Alternate Domain Names and HTTPS: https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/SecureConnections.html#CNAMEsAndHTTPS in the *Amazon CloudFront Developer Guide*.
 
     .LINK
         http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-cloudfront-distribution-viewercertificate.html

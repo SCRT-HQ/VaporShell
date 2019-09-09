@@ -1,10 +1,10 @@
 function New-VSApiGatewayModel {
     <#
     .SYNOPSIS
-        Adds an AWS::ApiGateway::Model resource to the template
+        Adds an AWS::ApiGateway::Model resource to the template. The AWS::ApiGateway::Model resource defines the structure of a request or response payload for an API method.
 
     .DESCRIPTION
-        Adds an AWS::ApiGateway::Model resource to the template
+        Adds an AWS::ApiGateway::Model resource to the template. The AWS::ApiGateway::Model resource defines the structure of a request or response payload for an API method.
 
     .LINK
         http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-apigateway-model.html

@@ -1,10 +1,14 @@
 function New-VSElastiCacheSecurityGroupIngress {
     <#
     .SYNOPSIS
-        Adds an AWS::ElastiCache::SecurityGroupIngress resource to the template
+        Adds an AWS::ElastiCache::SecurityGroupIngress resource to the template. The AWS::ElastiCache::SecurityGroupIngress type authorizes ingress to a cache security group from hosts in specified Amazon EC2 security groups. For more information about ElastiCache security group ingress, go to AuthorizeCacheSecurityGroupIngress: https://docs.aws.amazon.com/AmazonElastiCache/latest/APIReference/API_AuthorizeCacheSecurityGroupIngress.html in the *Amazon ElastiCache API Reference Guide*.
 
     .DESCRIPTION
-        Adds an AWS::ElastiCache::SecurityGroupIngress resource to the template
+        Adds an AWS::ElastiCache::SecurityGroupIngress resource to the template. The AWS::ElastiCache::SecurityGroupIngress type authorizes ingress to a cache security group from hosts in specified Amazon EC2 security groups. For more information about ElastiCache security group ingress, go to AuthorizeCacheSecurityGroupIngress: https://docs.aws.amazon.com/AmazonElastiCache/latest/APIReference/API_AuthorizeCacheSecurityGroupIngress.html in the *Amazon ElastiCache API Reference Guide*.
+
+**Note**
+
+Updates are not supported.
 
     .LINK
         http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-elasticache-security-group-ingress.html

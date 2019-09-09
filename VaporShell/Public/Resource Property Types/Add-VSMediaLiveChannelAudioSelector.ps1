@@ -1,10 +1,11 @@
 function Add-VSMediaLiveChannelAudioSelector {
     <#
     .SYNOPSIS
-        Adds an AWS::MediaLive::Channel.AudioSelector resource property to the template
+        Adds an AWS::MediaLive::Channel.AudioSelector resource property to the template. Information about one audio to extract from the input.
 
     .DESCRIPTION
-        Adds an AWS::MediaLive::Channel.AudioSelector resource property to the template
+        Adds an AWS::MediaLive::Channel.AudioSelector resource property to the template.
+Information about one audio to extract from the input.
 
     .LINK
         http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-medialive-channel-audioselector.html

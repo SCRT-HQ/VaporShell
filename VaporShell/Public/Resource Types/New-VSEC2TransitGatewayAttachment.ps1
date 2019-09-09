@@ -1,10 +1,14 @@
 function New-VSEC2TransitGatewayAttachment {
     <#
     .SYNOPSIS
-        Adds an AWS::EC2::TransitGatewayAttachment resource to the template
+        Adds an AWS::EC2::TransitGatewayAttachment resource to the template. Attaches a VPC to a transit gateway.
 
     .DESCRIPTION
-        Adds an AWS::EC2::TransitGatewayAttachment resource to the template
+        Adds an AWS::EC2::TransitGatewayAttachment resource to the template. Attaches a VPC to a transit gateway.
+
+If you attach a VPC with a CIDR range that overlaps the CIDR range of a VPC that is already attached, the new VPC CIDR range is not propagated to the default propagation route table.
+
+To send VPC traffic to an attached transit gateway, add a route to the VPC route table using AWS::EC2::TransitGatewayRoute: https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ec2-transitgatewayroute.html.
 
     .LINK
         http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ec2-transitgatewayattachment.html

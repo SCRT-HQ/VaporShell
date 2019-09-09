@@ -1,10 +1,11 @@
 function Add-VSAppMeshRouteHttpRouteHeader {
     <#
     .SYNOPSIS
-        Adds an AWS::AppMesh::Route.HttpRouteHeader resource property to the template
+        Adds an AWS::AppMesh::Route.HttpRouteHeader resource property to the template. An object representing the HTTP header in the request.
 
     .DESCRIPTION
-        Adds an AWS::AppMesh::Route.HttpRouteHeader resource property to the template
+        Adds an AWS::AppMesh::Route.HttpRouteHeader resource property to the template.
+An object representing the HTTP header in the request.
 
     .LINK
         http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-appmesh-route-httprouteheader.html

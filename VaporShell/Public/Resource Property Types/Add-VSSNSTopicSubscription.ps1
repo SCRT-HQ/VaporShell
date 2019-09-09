@@ -1,10 +1,15 @@
 function Add-VSSNSTopicSubscription {
     <#
     .SYNOPSIS
-        Adds an AWS::SNS::Topic.Subscription resource property to the template
+        Adds an AWS::SNS::Topic.Subscription resource property to the template. Subscription is an embedded property that describes the subscription endpoints of an Amazon SNS topic.
 
     .DESCRIPTION
-        Adds an AWS::SNS::Topic.Subscription resource property to the template
+        Adds an AWS::SNS::Topic.Subscription resource property to the template.
+Subscription is an embedded property that describes the subscription endpoints of an Amazon SNS topic.
+
+**Note**
+
+For full control over subscription behavior such as delivery policy, filtering, raw message delivery, cross-region subscriptions, etc. use  AWS::SNS::Subscription: https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-sns-subscription.html  resource instead of this embedded property .
 
     .LINK
         http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-sns-subscription.html

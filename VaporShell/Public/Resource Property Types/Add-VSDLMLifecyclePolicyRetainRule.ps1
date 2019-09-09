@@ -1,10 +1,11 @@
 function Add-VSDLMLifecyclePolicyRetainRule {
     <#
     .SYNOPSIS
-        Adds an AWS::DLM::LifecyclePolicy.RetainRule resource property to the template
+        Adds an AWS::DLM::LifecyclePolicy.RetainRule resource property to the template. Specifies the number of snapshots to keep for each EBS volume.
 
     .DESCRIPTION
-        Adds an AWS::DLM::LifecyclePolicy.RetainRule resource property to the template
+        Adds an AWS::DLM::LifecyclePolicy.RetainRule resource property to the template.
+Specifies the number of snapshots to keep for each EBS volume.
 
     .LINK
         http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-dlm-lifecyclepolicy-retainrule.html

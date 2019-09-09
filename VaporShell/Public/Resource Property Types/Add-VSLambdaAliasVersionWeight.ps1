@@ -1,10 +1,11 @@
 function Add-VSLambdaAliasVersionWeight {
     <#
     .SYNOPSIS
-        Adds an AWS::Lambda::Alias.VersionWeight resource property to the template
+        Adds an AWS::Lambda::Alias.VersionWeight resource property to the template. The traffic-shifting: https://docs.aws.amazon.com/lambda/latest/dg/lambda-traffic-shifting-using-aliases.html configuration of a Lambda function alias.
 
     .DESCRIPTION
-        Adds an AWS::Lambda::Alias.VersionWeight resource property to the template
+        Adds an AWS::Lambda::Alias.VersionWeight resource property to the template.
+The traffic-shifting: https://docs.aws.amazon.com/lambda/latest/dg/lambda-traffic-shifting-using-aliases.html configuration of a Lambda function alias.
 
     .LINK
         http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-lambda-alias-versionweight.html

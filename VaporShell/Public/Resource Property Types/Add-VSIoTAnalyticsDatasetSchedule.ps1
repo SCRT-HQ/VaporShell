@@ -1,10 +1,11 @@
 function Add-VSIoTAnalyticsDatasetSchedule {
     <#
     .SYNOPSIS
-        Adds an AWS::IoTAnalytics::Dataset.Schedule resource property to the template
+        Adds an AWS::IoTAnalytics::Dataset.Schedule resource property to the template. The schedule for when to trigger an update.
 
     .DESCRIPTION
-        Adds an AWS::IoTAnalytics::Dataset.Schedule resource property to the template
+        Adds an AWS::IoTAnalytics::Dataset.Schedule resource property to the template.
+The schedule for when to trigger an update.
 
     .LINK
         http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iotanalytics-dataset-trigger-schedule.html

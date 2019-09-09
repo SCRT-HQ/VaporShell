@@ -1,10 +1,11 @@
 function Add-VSCognitoUserPoolEmailConfiguration {
     <#
     .SYNOPSIS
-        Adds an AWS::Cognito::UserPool.EmailConfiguration resource property to the template
+        Adds an AWS::Cognito::UserPool.EmailConfiguration resource property to the template. EmailConfiguration is a property of the AWS::Cognito::UserPool: https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-cognito-userpool.html resource that defines the email configuration of an Amazon Cognito User Pool.
 
     .DESCRIPTION
-        Adds an AWS::Cognito::UserPool.EmailConfiguration resource property to the template
+        Adds an AWS::Cognito::UserPool.EmailConfiguration resource property to the template.
+EmailConfiguration is a property of the AWS::Cognito::UserPool: https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-cognito-userpool.html resource that defines the email configuration of an Amazon Cognito User Pool.
 
     .LINK
         http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-cognito-userpool-emailconfiguration.html

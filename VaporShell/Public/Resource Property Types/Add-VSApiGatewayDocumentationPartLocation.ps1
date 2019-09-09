@@ -1,10 +1,15 @@
 function Add-VSApiGatewayDocumentationPartLocation {
     <#
     .SYNOPSIS
-        Adds an AWS::ApiGateway::DocumentationPart.Location resource property to the template
+        Adds an AWS::ApiGateway::DocumentationPart.Location resource property to the template. The Location property specifies the location of the Amazon API Gateway API entity that the documentation applies to. Location is a property of the AWS::ApiGateway::DocumentationPart: https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-apigateway-documentationpart.html resource.
 
     .DESCRIPTION
-        Adds an AWS::ApiGateway::DocumentationPart.Location resource property to the template
+        Adds an AWS::ApiGateway::DocumentationPart.Location resource property to the template.
+The Location property specifies the location of the Amazon API Gateway API entity that the documentation applies to. Location is a property of the AWS::ApiGateway::DocumentationPart: https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-apigateway-documentationpart.html resource.
+
+**Note**
+
+For more information about each property, including constraints and valid values, see DocumentationPart: https://docs.aws.amazon.com/apigateway/api-reference/resource/documentation-part/#location in the *Amazon API Gateway REST API Reference*.
 
     .LINK
         http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-apigateway-documentationpart-location.html

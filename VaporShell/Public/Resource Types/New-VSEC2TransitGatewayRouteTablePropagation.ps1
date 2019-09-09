@@ -1,10 +1,12 @@
 function New-VSEC2TransitGatewayRouteTablePropagation {
     <#
     .SYNOPSIS
-        Adds an AWS::EC2::TransitGatewayRouteTablePropagation resource to the template
+        Adds an AWS::EC2::TransitGatewayRouteTablePropagation resource to the template. Enables the specified attachment to propagate routes to the specified propagation route table.
 
     .DESCRIPTION
-        Adds an AWS::EC2::TransitGatewayRouteTablePropagation resource to the template
+        Adds an AWS::EC2::TransitGatewayRouteTablePropagation resource to the template. Enables the specified attachment to propagate routes to the specified propagation route table.
+
+For more information about enabling transit gateway route propagation, see EnableVgwRoutePropagation: https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_EnableTransitGatewayRouteTablePropagation.html in the *Amazon Elastic Compute Cloud API Reference*.
 
     .LINK
         http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ec2-transitgatewayroutetablepropagation.html

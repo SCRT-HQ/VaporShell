@@ -1,10 +1,11 @@
 function Add-VSECSTaskDefinitionHostEntry {
     <#
     .SYNOPSIS
-        Adds an AWS::ECS::TaskDefinition.HostEntry resource property to the template
+        Adds an AWS::ECS::TaskDefinition.HostEntry resource property to the template. The HostEntry property specifies a hostname and an IP address that are added to the /etc/hosts file of a container through the extraHosts parameter of its ContainerDefinition resource.
 
     .DESCRIPTION
-        Adds an AWS::ECS::TaskDefinition.HostEntry resource property to the template
+        Adds an AWS::ECS::TaskDefinition.HostEntry resource property to the template.
+The HostEntry property specifies a hostname and an IP address that are added to the /etc/hosts file of a container through the extraHosts parameter of its ContainerDefinition resource.
 
     .LINK
         http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ecs-taskdefinition-containerdefinitions-hostentry.html

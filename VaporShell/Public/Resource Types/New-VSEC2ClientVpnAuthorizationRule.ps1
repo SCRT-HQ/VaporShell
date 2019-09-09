@@ -1,10 +1,10 @@
 function New-VSEC2ClientVpnAuthorizationRule {
     <#
     .SYNOPSIS
-        Adds an AWS::EC2::ClientVpnAuthorizationRule resource to the template
+        Adds an AWS::EC2::ClientVpnAuthorizationRule resource to the template. Specifies an ingress authorization rule to add to a Client VPN endpoint. Ingress authorization rules act as firewall rules that grant access to networks. You must configure ingress authorization rules to enable clients to access resources in AWS or on-premises networks.
 
     .DESCRIPTION
-        Adds an AWS::EC2::ClientVpnAuthorizationRule resource to the template
+        Adds an AWS::EC2::ClientVpnAuthorizationRule resource to the template. Specifies an ingress authorization rule to add to a Client VPN endpoint. Ingress authorization rules act as firewall rules that grant access to networks. You must configure ingress authorization rules to enable clients to access resources in AWS or on-premises networks.
 
     .LINK
         http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ec2-clientvpnauthorizationrule.html

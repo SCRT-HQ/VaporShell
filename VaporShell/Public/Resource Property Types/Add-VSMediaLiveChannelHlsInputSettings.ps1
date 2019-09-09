@@ -1,10 +1,13 @@
 function Add-VSMediaLiveChannelHlsInputSettings {
     <#
     .SYNOPSIS
-        Adds an AWS::MediaLive::Channel.HlsInputSettings resource property to the template
+        Adds an AWS::MediaLive::Channel.HlsInputSettings resource property to the template. Information about how to connect to the upstream system.
 
     .DESCRIPTION
-        Adds an AWS::MediaLive::Channel.HlsInputSettings resource property to the template
+        Adds an AWS::MediaLive::Channel.HlsInputSettings resource property to the template.
+Information about how to connect to the upstream system.
+
+The parent of this entity is NetworkInputSettings.
 
     .LINK
         http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-medialive-channel-hlsinputsettings.html

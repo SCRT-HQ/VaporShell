@@ -1,10 +1,11 @@
 function Add-VSPinpointSegmentSegmentDimensions {
     <#
     .SYNOPSIS
-        Adds an AWS::Pinpoint::Segment.SegmentDimensions resource property to the template
+        Adds an AWS::Pinpoint::Segment.SegmentDimensions resource property to the template. Specifies the dimension settings for a segment.
 
     .DESCRIPTION
-        Adds an AWS::Pinpoint::Segment.SegmentDimensions resource property to the template
+        Adds an AWS::Pinpoint::Segment.SegmentDimensions resource property to the template.
+Specifies the dimension settings for a segment.
 
     .LINK
         http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-pinpoint-segment-segmentdimensions.html

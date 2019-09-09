@@ -1,10 +1,16 @@
 function New-VSSNSTopic {
     <#
     .SYNOPSIS
-        Adds an AWS::SNS::Topic resource to the template
+        Adds an AWS::SNS::Topic resource to the template. The AWS::SNS::Topic resource creates a topic to which notifications can be published.
 
     .DESCRIPTION
-        Adds an AWS::SNS::Topic resource to the template
+        Adds an AWS::SNS::Topic resource to the template. The AWS::SNS::Topic resource creates a topic to which notifications can be published.
+
+**Note**
+
+One user can create a maximum of 100,000 topics.
+
+This action is idempotent: If the requester already owns a topic with the specified name, that topic's ARN is returned without creating a new topic.
 
     .LINK
         http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-sns-topic.html

@@ -1,10 +1,10 @@
 function New-VSApiGatewayResource {
     <#
     .SYNOPSIS
-        Adds an AWS::ApiGateway::Resource resource to the template
+        Adds an AWS::ApiGateway::Resource resource to the template. The AWS::ApiGateway::Resource resource creates a resource in an API.
 
     .DESCRIPTION
-        Adds an AWS::ApiGateway::Resource resource to the template
+        Adds an AWS::ApiGateway::Resource resource to the template. The AWS::ApiGateway::Resource resource creates a resource in an API.
 
     .LINK
         http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-apigateway-resource.html

@@ -1,10 +1,10 @@
 function New-VSServiceCatalogPortfolioShare {
     <#
     .SYNOPSIS
-        Adds an AWS::ServiceCatalog::PortfolioShare resource to the template
+        Adds an AWS::ServiceCatalog::PortfolioShare resource to the template. Shares the specified portfolio with the specified account or organization node. Shares to an organization node can only be created by the master account of an Organization. AWSOrganizationsAccess must be enabled in order to create a portfolio share to an organization node.
 
     .DESCRIPTION
-        Adds an AWS::ServiceCatalog::PortfolioShare resource to the template
+        Adds an AWS::ServiceCatalog::PortfolioShare resource to the template. Shares the specified portfolio with the specified account or organization node. Shares to an organization node can only be created by the master account of an Organization. AWSOrganizationsAccess must be enabled in order to create a portfolio share to an organization node.
 
     .LINK
         http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-servicecatalog-portfolioshare.html

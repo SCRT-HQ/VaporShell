@@ -1,10 +1,13 @@
 function Add-VSSESReceiptRuleStopAction {
     <#
     .SYNOPSIS
-        Adds an AWS::SES::ReceiptRule.StopAction resource property to the template
+        Adds an AWS::SES::ReceiptRule.StopAction resource property to the template. When included in a receipt rule, this action terminates the evaluation of the receipt rule set and, optionally, publishes a notification to Amazon Simple Notification Service (Amazon SNS.
 
     .DESCRIPTION
-        Adds an AWS::SES::ReceiptRule.StopAction resource property to the template
+        Adds an AWS::SES::ReceiptRule.StopAction resource property to the template.
+When included in a receipt rule, this action terminates the evaluation of the receipt rule set and, optionally, publishes a notification to Amazon Simple Notification Service (Amazon SNS.
+
+For information about setting a stop action in a receipt rule, see the Amazon SES Developer Guide: https://docs.aws.amazon.com/ses/latest/DeveloperGuide/receiving-email-action-stop.html.
 
     .LINK
         http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ses-receiptrule-stopaction.html

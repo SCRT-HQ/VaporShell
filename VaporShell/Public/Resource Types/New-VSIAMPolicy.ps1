@@ -1,10 +1,16 @@
 function New-VSIAMPolicy {
     <#
     .SYNOPSIS
-        Adds an AWS::IAM::Policy resource to the template
+        Adds an AWS::IAM::Policy resource to the template. Adds or updates an inline policy document that is embedded in the specified IAM user, group, or role.
 
     .DESCRIPTION
-        Adds an AWS::IAM::Policy resource to the template
+        Adds an AWS::IAM::Policy resource to the template. Adds or updates an inline policy document that is embedded in the specified IAM user, group, or role.
+
+An IAM user can also have a managed policy attached to it. For information about policies, see Managed Policies and Inline Policies: https://docs.aws.amazon.com/IAM/latest/UserGuide/policies-managed-vs-inline.html in the *IAM User Guide*.
+
+The Groups, Roles, and Users properties are optional. However, you must specify at least one of these properties.
+
+For information about limits on the number of inline policies that you can embed in an identity, see Limitations on IAM Entities: https://docs.aws.amazon.com/IAM/latest/UserGuide/LimitationsOnEntities.html in the *IAM User Guide*.
 
     .LINK
         http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-iam-policy.html

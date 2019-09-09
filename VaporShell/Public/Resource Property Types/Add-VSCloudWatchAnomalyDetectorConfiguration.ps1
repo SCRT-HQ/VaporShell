@@ -1,10 +1,11 @@
 function Add-VSCloudWatchAnomalyDetectorConfiguration {
     <#
     .SYNOPSIS
-        Adds an AWS::CloudWatch::AnomalyDetector.Configuration resource property to the template
+        Adds an AWS::CloudWatch::AnomalyDetector.Configuration resource property to the template. Specifies details about how the anomaly detection model is to be trained, including time ranges to exclude when training and updating the model. The configuration can also include the time zone to use for the metric.
 
     .DESCRIPTION
-        Adds an AWS::CloudWatch::AnomalyDetector.Configuration resource property to the template
+        Adds an AWS::CloudWatch::AnomalyDetector.Configuration resource property to the template.
+Specifies details about how the anomaly detection model is to be trained, including time ranges to exclude when training and updating the model. The configuration can also include the time zone to use for the metric.
 
     .LINK
         http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-cloudwatch-anomalydetector-configuration.html

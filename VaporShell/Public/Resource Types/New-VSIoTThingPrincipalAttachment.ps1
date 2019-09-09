@@ -1,10 +1,12 @@
 function New-VSIoTThingPrincipalAttachment {
     <#
     .SYNOPSIS
-        Adds an AWS::IoT::ThingPrincipalAttachment resource to the template
+        Adds an AWS::IoT::ThingPrincipalAttachment resource to the template. Use the AWS::IoT::ThingPrincipalAttachment resource to attach a principal (an X.509 certificate or another credential to a thing.
 
     .DESCRIPTION
-        Adds an AWS::IoT::ThingPrincipalAttachment resource to the template
+        Adds an AWS::IoT::ThingPrincipalAttachment resource to the template. Use the AWS::IoT::ThingPrincipalAttachment resource to attach a principal (an X.509 certificate or another credential to a thing.
+
+For more information about working with AWS IoT things and principals, see Authorization: https://docs.aws.amazon.com/iot/latest/developerguide/authorization.html in the *AWS IoT Developer Guide*.
 
     .LINK
         http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-iot-thingprincipalattachment.html

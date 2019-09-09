@@ -1,10 +1,11 @@
 function Add-VSKinesisFirehoseDeliveryStreamInputFormatConfiguration {
     <#
     .SYNOPSIS
-        Adds an AWS::KinesisFirehose::DeliveryStream.InputFormatConfiguration resource property to the template
+        Adds an AWS::KinesisFirehose::DeliveryStream.InputFormatConfiguration resource property to the template. Specifies the deserializer you want to use to convert the format of the input data.
 
     .DESCRIPTION
-        Adds an AWS::KinesisFirehose::DeliveryStream.InputFormatConfiguration resource property to the template
+        Adds an AWS::KinesisFirehose::DeliveryStream.InputFormatConfiguration resource property to the template.
+Specifies the deserializer you want to use to convert the format of the input data.
 
     .LINK
         http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-kinesisfirehose-deliverystream-inputformatconfiguration.html

@@ -1,10 +1,11 @@
 function Add-VSIoTAnalyticsPipelineAddAttributes {
     <#
     .SYNOPSIS
-        Adds an AWS::IoTAnalytics::Pipeline.AddAttributes resource property to the template
+        Adds an AWS::IoTAnalytics::Pipeline.AddAttributes resource property to the template. An activity that adds other attributes based on existing attributes in the message.
 
     .DESCRIPTION
-        Adds an AWS::IoTAnalytics::Pipeline.AddAttributes resource property to the template
+        Adds an AWS::IoTAnalytics::Pipeline.AddAttributes resource property to the template.
+An activity that adds other attributes based on existing attributes in the message.
 
     .LINK
         http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iotanalytics-pipeline-addattributes.html

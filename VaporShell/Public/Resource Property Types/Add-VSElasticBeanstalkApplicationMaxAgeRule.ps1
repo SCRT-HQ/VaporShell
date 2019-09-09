@@ -1,10 +1,13 @@
 function Add-VSElasticBeanstalkApplicationMaxAgeRule {
     <#
     .SYNOPSIS
-        Adds an AWS::ElasticBeanstalk::Application.MaxAgeRule resource property to the template
+        Adds an AWS::ElasticBeanstalk::Application.MaxAgeRule resource property to the template. A lifecycle rule that deletes application versions after the specified number of days.
 
     .DESCRIPTION
-        Adds an AWS::ElasticBeanstalk::Application.MaxAgeRule resource property to the template
+        Adds an AWS::ElasticBeanstalk::Application.MaxAgeRule resource property to the template.
+A lifecycle rule that deletes application versions after the specified number of days.
+
+MaxAgeRule is a property of the ApplicationVersionLifecycleConfig: https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-elasticbeanstalk-application-applicationversionlifecycleconfig.html property type.
 
     .LINK
         http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-elasticbeanstalk-application-maxagerule.html

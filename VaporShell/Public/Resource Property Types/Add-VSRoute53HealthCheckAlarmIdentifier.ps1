@@ -1,10 +1,11 @@
 function Add-VSRoute53HealthCheckAlarmIdentifier {
     <#
     .SYNOPSIS
-        Adds an AWS::Route53::HealthCheck.AlarmIdentifier resource property to the template
+        Adds an AWS::Route53::HealthCheck.AlarmIdentifier resource property to the template. A complex type that identifies the CloudWatch alarm that you want Amazon Route 53 health checkers to use to determine whether the specified health check is healthy.
 
     .DESCRIPTION
-        Adds an AWS::Route53::HealthCheck.AlarmIdentifier resource property to the template
+        Adds an AWS::Route53::HealthCheck.AlarmIdentifier resource property to the template.
+A complex type that identifies the CloudWatch alarm that you want Amazon Route 53 health checkers to use to determine whether the specified health check is healthy.
 
     .LINK
         http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-route53-healthcheck-alarmidentifier.html

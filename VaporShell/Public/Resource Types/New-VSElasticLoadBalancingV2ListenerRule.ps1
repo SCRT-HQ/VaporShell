@@ -1,10 +1,10 @@
 function New-VSElasticLoadBalancingV2ListenerRule {
     <#
     .SYNOPSIS
-        Adds an AWS::ElasticLoadBalancingV2::ListenerRule resource to the template
+        Adds an AWS::ElasticLoadBalancingV2::ListenerRule resource to the template. Specifies a listener rule.
 
     .DESCRIPTION
-        Adds an AWS::ElasticLoadBalancingV2::ListenerRule resource to the template
+        Adds an AWS::ElasticLoadBalancingV2::ListenerRule resource to the template. Specifies a listener rule.
 
     .LINK
         http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-elasticloadbalancingv2-listenerrule.html

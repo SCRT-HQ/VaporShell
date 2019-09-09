@@ -1,10 +1,10 @@
 function New-VSRDSEventSubscription {
     <#
     .SYNOPSIS
-        Adds an AWS::RDS::EventSubscription resource to the template
+        Adds an AWS::RDS::EventSubscription resource to the template. The AWS::RDS::EventSubscription resource allows you to receive notifications for Amazon Relational Database Service events through the Amazon Simple Notification Service (Amazon SNS. For more information, see Using Amazon RDS Event Notification: https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_Events.html in the *Amazon RDS User Guide*.
 
     .DESCRIPTION
-        Adds an AWS::RDS::EventSubscription resource to the template
+        Adds an AWS::RDS::EventSubscription resource to the template. The AWS::RDS::EventSubscription resource allows you to receive notifications for Amazon Relational Database Service events through the Amazon Simple Notification Service (Amazon SNS. For more information, see Using Amazon RDS Event Notification: https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_Events.html in the *Amazon RDS User Guide*.
 
     .LINK
         http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-rds-eventsubscription.html

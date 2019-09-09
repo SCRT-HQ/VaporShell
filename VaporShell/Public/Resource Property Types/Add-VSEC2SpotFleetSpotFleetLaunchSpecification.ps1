@@ -1,10 +1,11 @@
 function Add-VSEC2SpotFleetSpotFleetLaunchSpecification {
     <#
     .SYNOPSIS
-        Adds an AWS::EC2::SpotFleet.SpotFleetLaunchSpecification resource property to the template
+        Adds an AWS::EC2::SpotFleet.SpotFleetLaunchSpecification resource property to the template. Specifies the launch specification for one or more Spot Instances. If you include On-Demand capacity in your fleet request, you can't use SpotFleetLaunchSpecification; you must use  LaunchTemplateConfig: https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-spotfleet-launchtemplateconfig.html.
 
     .DESCRIPTION
-        Adds an AWS::EC2::SpotFleet.SpotFleetLaunchSpecification resource property to the template
+        Adds an AWS::EC2::SpotFleet.SpotFleetLaunchSpecification resource property to the template.
+Specifies the launch specification for one or more Spot Instances. If you include On-Demand capacity in your fleet request, you can't use SpotFleetLaunchSpecification; you must use  LaunchTemplateConfig: https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-spotfleet-launchtemplateconfig.html.
 
     .LINK
         http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-spotfleet-spotfleetrequestconfigdata-launchspecifications.html

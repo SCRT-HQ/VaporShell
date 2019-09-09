@@ -1,10 +1,12 @@
 function New-VSOpsWorksInstance {
     <#
     .SYNOPSIS
-        Adds an AWS::OpsWorks::Instance resource to the template
+        Adds an AWS::OpsWorks::Instance resource to the template. Creates an instance in a specified stack. For more information, see Adding an Instance to a Layer: https://docs.aws.amazon.com/opsworks/latest/userguide/workinginstances-add.html.
 
     .DESCRIPTION
-        Adds an AWS::OpsWorks::Instance resource to the template
+        Adds an AWS::OpsWorks::Instance resource to the template. Creates an instance in a specified stack. For more information, see Adding an Instance to a Layer: https://docs.aws.amazon.com/opsworks/latest/userguide/workinginstances-add.html.
+
+**Required Permissions**: To use this action, an IAM user must have a Manage permissions level for the stack, or an attached policy that explicitly grants permissions. For more information on user permissions, see Managing User Permissions: https://docs.aws.amazon.com/opsworks/latest/userguide/opsworks-security-users.html.
 
     .LINK
         http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-opsworks-instance.html

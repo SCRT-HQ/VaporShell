@@ -1,10 +1,10 @@
 function New-VSDMSCertificate {
     <#
     .SYNOPSIS
-        Adds an AWS::DMS::Certificate resource to the template
+        Adds an AWS::DMS::Certificate resource to the template. The AWS::DMS::Certificate resource creates an SSL certificate that encrypts connections between AWS DMS endpoints and the replication instance.
 
     .DESCRIPTION
-        Adds an AWS::DMS::Certificate resource to the template
+        Adds an AWS::DMS::Certificate resource to the template. The AWS::DMS::Certificate resource creates an SSL certificate that encrypts connections between AWS DMS endpoints and the replication instance.
 
     .LINK
         http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-dms-certificate.html

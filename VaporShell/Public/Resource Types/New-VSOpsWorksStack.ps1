@@ -1,10 +1,12 @@
 function New-VSOpsWorksStack {
     <#
     .SYNOPSIS
-        Adds an AWS::OpsWorks::Stack resource to the template
+        Adds an AWS::OpsWorks::Stack resource to the template. Creates a new stack. For more information, see Create a New Stack: https://docs.aws.amazon.com/opsworks/latest/userguide/workingstacks-edit.html.
 
     .DESCRIPTION
-        Adds an AWS::OpsWorks::Stack resource to the template
+        Adds an AWS::OpsWorks::Stack resource to the template. Creates a new stack. For more information, see Create a New Stack: https://docs.aws.amazon.com/opsworks/latest/userguide/workingstacks-edit.html.
+
+**Required Permissions**: To use this action, an IAM user must have an attached policy that explicitly grants permissions. For more information about user permissions, see Managing User Permissions: https://docs.aws.amazon.com/opsworks/latest/userguide/opsworks-security-users.html.
 
     .LINK
         http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-opsworks-stack.html

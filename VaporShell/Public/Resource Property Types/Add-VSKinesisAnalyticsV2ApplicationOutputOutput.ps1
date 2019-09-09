@@ -1,10 +1,11 @@
 function Add-VSKinesisAnalyticsV2ApplicationOutputOutput {
     <#
     .SYNOPSIS
-        Adds an AWS::KinesisAnalyticsV2::ApplicationOutput.Output resource property to the template
+        Adds an AWS::KinesisAnalyticsV2::ApplicationOutput.Output resource property to the template. Describes an SQL-based Amazon Kinesis Data Analytics application's output configuration, in which you identify an in-application stream and a destination where you want the in-application stream data to be written. The destination can be a Kinesis data stream or a Kinesis Data Firehose delivery stream.
 
     .DESCRIPTION
-        Adds an AWS::KinesisAnalyticsV2::ApplicationOutput.Output resource property to the template
+        Adds an AWS::KinesisAnalyticsV2::ApplicationOutput.Output resource property to the template.
+Describes an SQL-based Amazon Kinesis Data Analytics application's output configuration, in which you identify an in-application stream and a destination where you want the in-application stream data to be written. The destination can be a Kinesis data stream or a Kinesis Data Firehose delivery stream.
 
     .LINK
         http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-kinesisanalyticsv2-applicationoutput-output.html

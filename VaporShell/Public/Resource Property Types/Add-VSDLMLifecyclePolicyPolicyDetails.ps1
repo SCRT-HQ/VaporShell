@@ -1,10 +1,11 @@
 function Add-VSDLMLifecyclePolicyPolicyDetails {
     <#
     .SYNOPSIS
-        Adds an AWS::DLM::LifecyclePolicy.PolicyDetails resource property to the template
+        Adds an AWS::DLM::LifecyclePolicy.PolicyDetails resource property to the template. Specifies the configuration of a lifecycle policy.
 
     .DESCRIPTION
-        Adds an AWS::DLM::LifecyclePolicy.PolicyDetails resource property to the template
+        Adds an AWS::DLM::LifecyclePolicy.PolicyDetails resource property to the template.
+Specifies the configuration of a lifecycle policy.
 
     .LINK
         http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-dlm-lifecyclepolicy-policydetails.html

@@ -1,10 +1,13 @@
 function Add-VSCodeStarGitHubRepositoryCode {
     <#
     .SYNOPSIS
-        Adds an AWS::CodeStar::GitHubRepository.Code resource property to the template
+        Adds an AWS::CodeStar::GitHubRepository.Code resource property to the template. The Code property type specifies information about code to be committed.
 
     .DESCRIPTION
-        Adds an AWS::CodeStar::GitHubRepository.Code resource property to the template
+        Adds an AWS::CodeStar::GitHubRepository.Code resource property to the template.
+The Code property type specifies information about code to be committed.
+
+Code is a property of the AWS::CodeStar::GitHubRepository resource.
 
     .LINK
         http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-codestar-githubrepository-code.html

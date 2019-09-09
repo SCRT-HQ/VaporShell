@@ -1,10 +1,12 @@
 function New-VSMediaStoreContainer {
     <#
     .SYNOPSIS
-        Adds an AWS::MediaStore::Container resource to the template
+        Adds an AWS::MediaStore::Container resource to the template. The AWS::MediaStore::Container resource specifies a storage container to hold objects. A container is similar to a bucket in Amazon S3.
 
     .DESCRIPTION
-        Adds an AWS::MediaStore::Container resource to the template
+        Adds an AWS::MediaStore::Container resource to the template. The AWS::MediaStore::Container resource specifies a storage container to hold objects. A container is similar to a bucket in Amazon S3.
+
+When you create a container using AWS CloudFormation, the template manages data for five API actions: creating a container, setting access logging, updating the default container policy, adding a cross-origin resource sharing (CORS policy, and adding an object lifecycle policy.
 
     .LINK
         http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-mediastore-container.html

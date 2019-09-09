@@ -1,10 +1,11 @@
 function Add-VSWAFByteMatchSetFieldToMatch {
     <#
     .SYNOPSIS
-        Adds an AWS::WAF::ByteMatchSet.FieldToMatch resource property to the template
+        Adds an AWS::WAF::ByteMatchSet.FieldToMatch resource property to the template. Specifies where in a web request to look for TargetString.
 
     .DESCRIPTION
-        Adds an AWS::WAF::ByteMatchSet.FieldToMatch resource property to the template
+        Adds an AWS::WAF::ByteMatchSet.FieldToMatch resource property to the template.
+Specifies where in a web request to look for TargetString.
 
     .LINK
         http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-waf-bytematchset-bytematchtuples-fieldtomatch.html

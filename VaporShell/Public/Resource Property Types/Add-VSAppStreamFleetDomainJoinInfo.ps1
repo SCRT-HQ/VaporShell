@@ -1,10 +1,11 @@
 function Add-VSAppStreamFleetDomainJoinInfo {
     <#
     .SYNOPSIS
-        Adds an AWS::AppStream::Fleet.DomainJoinInfo resource property to the template
+        Adds an AWS::AppStream::Fleet.DomainJoinInfo resource property to the template. The name of the directory and organizational unit (OU to use to join a fleet to a Microsoft Active Directory domain.
 
     .DESCRIPTION
-        Adds an AWS::AppStream::Fleet.DomainJoinInfo resource property to the template
+        Adds an AWS::AppStream::Fleet.DomainJoinInfo resource property to the template.
+The name of the directory and organizational unit (OU to use to join a fleet to a Microsoft Active Directory domain.
 
     .LINK
         http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-appstream-fleet-domainjoininfo.html

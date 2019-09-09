@@ -1,10 +1,13 @@
 function Add-VSApiGatewayDomainNameEndpointConfiguration {
     <#
     .SYNOPSIS
-        Adds an AWS::ApiGateway::DomainName.EndpointConfiguration resource property to the template
+        Adds an AWS::ApiGateway::DomainName.EndpointConfiguration resource property to the template. The EndpointConfiguration property type specifies the endpoint types of an Amazon API Gateway domain name.
 
     .DESCRIPTION
-        Adds an AWS::ApiGateway::DomainName.EndpointConfiguration resource property to the template
+        Adds an AWS::ApiGateway::DomainName.EndpointConfiguration resource property to the template.
+The EndpointConfiguration property type specifies the endpoint types of an Amazon API Gateway domain name.
+
+EndpointConfiguration is a property of the AWS::ApiGateway::DomainName: https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-apigateway-domainname.html resource.
 
     .LINK
         http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-apigateway-domainname-endpointconfiguration.html

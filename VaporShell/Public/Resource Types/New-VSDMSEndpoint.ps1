@@ -1,10 +1,10 @@
 function New-VSDMSEndpoint {
     <#
     .SYNOPSIS
-        Adds an AWS::DMS::Endpoint resource to the template
+        Adds an AWS::DMS::Endpoint resource to the template. The AWS::DMS::Endpoint resource creates an AWS DMS endpoint.
 
     .DESCRIPTION
-        Adds an AWS::DMS::Endpoint resource to the template
+        Adds an AWS::DMS::Endpoint resource to the template. The AWS::DMS::Endpoint resource creates an AWS DMS endpoint.
 
     .LINK
         http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-dms-endpoint.html

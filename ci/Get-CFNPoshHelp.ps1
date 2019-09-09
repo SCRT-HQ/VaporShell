@@ -1,4 +1,6 @@
 function Get-CFNPoshHelp {
+    # Updated version of the function found @ https://gist.github.com/ScriptAutomate/28712f09f5726394e55e5790d8c8ac62
+    # Thank you, @ScriptAutomate!
     [CmdletBinding()]
     param (
         [Parameter(Mandatory = $true, ValueFromPipelineByPropertyName = $true)]
@@ -73,7 +75,7 @@ function Get-CFNPoshHelp {
             'FunctionName' = $FunctionName
             'Links'        = $Links
             'Synopsis'     = $Description[0]
-            'Description'  = $Description -join "`n"
+            'Description'  = $Description -join "`n`n"
         }
         if ($ParamHelp.Count) {
             $DocHash['Parameters'] = $ParamHelp
@@ -81,6 +83,8 @@ function Get-CFNPoshHelp {
         [PSCustomObject]$DocHash
     }
     else {
-        Write-Warning "[$ResourceName] No documentation found in user-guide repository matching parsed link!`n     Parsed link: $($Link)`n     Expected: $($DocPath.Replace("$PSScriptRoot\",''))"
+        if ($ResourceName -ne 'Tag') {
+            Write-Warning "[$ResourceName] No documentation found in user-guide repository matching parsed link!`n     Parsed link: $($Link)`n     Expected: $($DocPath.Replace("$PSScriptRoot\",''))"
+        }
     }
 }

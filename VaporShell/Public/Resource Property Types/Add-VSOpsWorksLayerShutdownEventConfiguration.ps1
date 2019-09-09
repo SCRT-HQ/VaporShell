@@ -1,10 +1,11 @@
 function Add-VSOpsWorksLayerShutdownEventConfiguration {
     <#
     .SYNOPSIS
-        Adds an AWS::OpsWorks::Layer.ShutdownEventConfiguration resource property to the template
+        Adds an AWS::OpsWorks::Layer.ShutdownEventConfiguration resource property to the template. The Shutdown event configuration.
 
     .DESCRIPTION
-        Adds an AWS::OpsWorks::Layer.ShutdownEventConfiguration resource property to the template
+        Adds an AWS::OpsWorks::Layer.ShutdownEventConfiguration resource property to the template.
+The Shutdown event configuration.
 
     .LINK
         http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-opsworks-layer-lifecycleeventconfiguration-shutdowneventconfiguration.html

@@ -1,10 +1,10 @@
 function New-VSApiGatewayStage {
     <#
     .SYNOPSIS
-        Adds an AWS::ApiGateway::Stage resource to the template
+        Adds an AWS::ApiGateway::Stage resource to the template. The AWS::ApiGateway::Stage resource creates a stage for a deployment.
 
     .DESCRIPTION
-        Adds an AWS::ApiGateway::Stage resource to the template
+        Adds an AWS::ApiGateway::Stage resource to the template. The AWS::ApiGateway::Stage resource creates a stage for a deployment.
 
     .LINK
         http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-apigateway-stage.html

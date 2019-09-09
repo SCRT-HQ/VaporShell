@@ -1,10 +1,13 @@
 function Add-VSMediaLiveChannelOutputDestinationSettings {
     <#
     .SYNOPSIS
-        Adds an AWS::MediaLive::Channel.OutputDestinationSettings resource property to the template
+        Adds an AWS::MediaLive::Channel.OutputDestinationSettings resource property to the template. The configuration information for this output.
 
     .DESCRIPTION
-        Adds an AWS::MediaLive::Channel.OutputDestinationSettings resource property to the template
+        Adds an AWS::MediaLive::Channel.OutputDestinationSettings resource property to the template.
+The configuration information for this output.
+
+The parent of this entity is OutputDestination.
 
     .LINK
         http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-medialive-channel-outputdestinationsettings.html

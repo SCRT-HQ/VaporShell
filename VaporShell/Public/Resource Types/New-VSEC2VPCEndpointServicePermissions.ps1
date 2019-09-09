@@ -1,10 +1,12 @@
 function New-VSEC2VPCEndpointServicePermissions {
     <#
     .SYNOPSIS
-        Adds an AWS::EC2::VPCEndpointServicePermissions resource to the template
+        Adds an AWS::EC2::VPCEndpointServicePermissions resource to the template. Grant or revoke permissions for service consumers (IAM users, IAM roles, and AWS accounts to connect to a VPC endpoint service.
 
     .DESCRIPTION
-        Adds an AWS::EC2::VPCEndpointServicePermissions resource to the template
+        Adds an AWS::EC2::VPCEndpointServicePermissions resource to the template. Grant or revoke permissions for service consumers (IAM users, IAM roles, and AWS accounts to connect to a VPC endpoint service.
+
+If you grant permissions to all principals, the service is public. Any users who know the name of a public service can send a request to attach an endpoint. If the service does not require manual approval, attachments are automatically approved.
 
     .LINK
         http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ec2-vpcendpointservicepermissions.html

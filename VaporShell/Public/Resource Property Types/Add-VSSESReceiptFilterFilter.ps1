@@ -1,10 +1,11 @@
 function Add-VSSESReceiptFilterFilter {
     <#
     .SYNOPSIS
-        Adds an AWS::SES::ReceiptFilter.Filter resource property to the template
+        Adds an AWS::SES::ReceiptFilter.Filter resource property to the template. A data structure that describes the IP address filter that you want to specify. This structure consists of a name, an IP address range, and whether to allow or block mail from it.
 
     .DESCRIPTION
-        Adds an AWS::SES::ReceiptFilter.Filter resource property to the template
+        Adds an AWS::SES::ReceiptFilter.Filter resource property to the template.
+A data structure that describes the IP address filter that you want to specify. This structure consists of a name, an IP address range, and whether to allow or block mail from it.
 
     .LINK
         http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ses-receiptfilter-filter.html

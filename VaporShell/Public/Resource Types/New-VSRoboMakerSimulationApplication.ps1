@@ -1,10 +1,10 @@
 function New-VSRoboMakerSimulationApplication {
     <#
     .SYNOPSIS
-        Adds an AWS::RoboMaker::SimulationApplication resource to the template
+        Adds an AWS::RoboMaker::SimulationApplication resource to the template. The AWS::RoboMaker::SimulationApplication resource creates an AWS RoboMaker simulation application.
 
     .DESCRIPTION
-        Adds an AWS::RoboMaker::SimulationApplication resource to the template
+        Adds an AWS::RoboMaker::SimulationApplication resource to the template. The AWS::RoboMaker::SimulationApplication resource creates an AWS RoboMaker simulation application.
 
     .LINK
         http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-robomaker-simulationapplication.html

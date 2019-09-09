@@ -1,10 +1,11 @@
 function Add-VSDynamoDBTableGlobalSecondaryIndex {
     <#
     .SYNOPSIS
-        Adds an AWS::DynamoDB::Table.GlobalSecondaryIndex resource property to the template
+        Adds an AWS::DynamoDB::Table.GlobalSecondaryIndex resource property to the template. Represents the properties of a global secondary index.
 
     .DESCRIPTION
-        Adds an AWS::DynamoDB::Table.GlobalSecondaryIndex resource property to the template
+        Adds an AWS::DynamoDB::Table.GlobalSecondaryIndex resource property to the template.
+Represents the properties of a global secondary index.
 
     .LINK
         http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-dynamodb-gsi.html

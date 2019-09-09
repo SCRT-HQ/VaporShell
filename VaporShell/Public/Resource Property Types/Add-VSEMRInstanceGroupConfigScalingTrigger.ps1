@@ -1,10 +1,11 @@
 function Add-VSEMRInstanceGroupConfigScalingTrigger {
     <#
     .SYNOPSIS
-        Adds an AWS::EMR::InstanceGroupConfig.ScalingTrigger resource property to the template
+        Adds an AWS::EMR::InstanceGroupConfig.ScalingTrigger resource property to the template. ScalingTrigger is a subproperty of the ScalingRule property type. ScalingTrigger determines the conditions that trigger an automatic scaling activity.
 
     .DESCRIPTION
-        Adds an AWS::EMR::InstanceGroupConfig.ScalingTrigger resource property to the template
+        Adds an AWS::EMR::InstanceGroupConfig.ScalingTrigger resource property to the template.
+ScalingTrigger is a subproperty of the ScalingRule property type. ScalingTrigger determines the conditions that trigger an automatic scaling activity.
 
     .LINK
         http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-elasticmapreduce-instancegroupconfig-scalingtrigger.html

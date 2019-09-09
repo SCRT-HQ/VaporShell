@@ -1,10 +1,11 @@
 function Add-VSManagedBlockchainNodeNodeConfiguration {
     <#
     .SYNOPSIS
-        Adds an AWS::ManagedBlockchain::Node.NodeConfiguration resource property to the template
+        Adds an AWS::ManagedBlockchain::Node.NodeConfiguration resource property to the template. Configuration properties of a peer node within a membership.
 
     .DESCRIPTION
-        Adds an AWS::ManagedBlockchain::Node.NodeConfiguration resource property to the template
+        Adds an AWS::ManagedBlockchain::Node.NodeConfiguration resource property to the template.
+Configuration properties of a peer node within a membership.
 
     .LINK
         http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-managedblockchain-node-nodeconfiguration.html

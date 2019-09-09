@@ -1,10 +1,10 @@
 function New-VSAppSyncFunctionConfiguration {
     <#
     .SYNOPSIS
-        Adds an AWS::AppSync::FunctionConfiguration resource to the template
+        Adds an AWS::AppSync::FunctionConfiguration resource to the template. The AWS::AppSync::FunctionConfiguration resource defines the functions in GraphQL APIs to perform certain operations. You can use pipeline resolvers to attach functions. For more information, see Pipeline Resolvers: https://docs.aws.amazon.com/appsync/latest/devguide/pipeline-resolvers.html in the *AWS AppSync Developer Guide*.
 
     .DESCRIPTION
-        Adds an AWS::AppSync::FunctionConfiguration resource to the template
+        Adds an AWS::AppSync::FunctionConfiguration resource to the template. The AWS::AppSync::FunctionConfiguration resource defines the functions in GraphQL APIs to perform certain operations. You can use pipeline resolvers to attach functions. For more information, see Pipeline Resolvers: https://docs.aws.amazon.com/appsync/latest/devguide/pipeline-resolvers.html in the *AWS AppSync Developer Guide*.
 
     .LINK
         http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-appsync-functionconfiguration.html

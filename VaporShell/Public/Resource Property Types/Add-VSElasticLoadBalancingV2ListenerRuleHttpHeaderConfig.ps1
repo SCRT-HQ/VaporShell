@@ -1,10 +1,13 @@
 function Add-VSElasticLoadBalancingV2ListenerRuleHttpHeaderConfig {
     <#
     .SYNOPSIS
-        Adds an AWS::ElasticLoadBalancingV2::ListenerRule.HttpHeaderConfig resource property to the template
+        Adds an AWS::ElasticLoadBalancingV2::ListenerRule.HttpHeaderConfig resource property to the template. Information about an HTTP header condition.
 
     .DESCRIPTION
-        Adds an AWS::ElasticLoadBalancingV2::ListenerRule.HttpHeaderConfig resource property to the template
+        Adds an AWS::ElasticLoadBalancingV2::ListenerRule.HttpHeaderConfig resource property to the template.
+Information about an HTTP header condition.
+
+There is a set of standard HTTP header fields. You can also define custom HTTP header fields.
 
     .LINK
         http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-elasticloadbalancingv2-listenerrule-httpheaderconfig.html

@@ -1,10 +1,16 @@
 function New-VSRDSDBCluster {
     <#
     .SYNOPSIS
-        Adds an AWS::RDS::DBCluster resource to the template
+        Adds an AWS::RDS::DBCluster resource to the template. The AWS::RDS::DBCluster resource creates an Amazon Aurora DB cluster. For more information, see Managing an Amazon Aurora DB Cluster: https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/CHAP_Aurora.html in the *Amazon Aurora User Guide*.
 
     .DESCRIPTION
-        Adds an AWS::RDS::DBCluster resource to the template
+        Adds an AWS::RDS::DBCluster resource to the template. The AWS::RDS::DBCluster resource creates an Amazon Aurora DB cluster. For more information, see Managing an Amazon Aurora DB Cluster: https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/CHAP_Aurora.html in the *Amazon Aurora User Guide*.
+
+**Note**
+
+You can only create this resource in regions where Amazon Aurora is supported.
+
+The default DeletionPolicy for AWS::RDS::DBCluster resources is Snapshot. For more information about how AWS CloudFormation deletes resources, see  DeletionPolicy Attribute: https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-attribute-deletionpolicy.html.
 
     .LINK
         http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-rds-dbcluster.html

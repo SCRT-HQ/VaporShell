@@ -1,10 +1,11 @@
 function Add-VSElasticsearchDomainZoneAwarenessConfig {
     <#
     .SYNOPSIS
-        Adds an AWS::Elasticsearch::Domain.ZoneAwarenessConfig resource property to the template
+        Adds an AWS::Elasticsearch::Domain.ZoneAwarenessConfig resource property to the template. Specifies zone awareness configuration options. Only required if ZoneAwarenessEnabled is true.
 
     .DESCRIPTION
-        Adds an AWS::Elasticsearch::Domain.ZoneAwarenessConfig resource property to the template
+        Adds an AWS::Elasticsearch::Domain.ZoneAwarenessConfig resource property to the template.
+Specifies zone awareness configuration options. Only required if ZoneAwarenessEnabled is true.
 
     .LINK
         http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-elasticsearch-domain-zoneawarenessconfig.html

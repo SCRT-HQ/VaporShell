@@ -1,10 +1,11 @@
 function Add-VSCloudFrontDistributionS3OriginConfig {
     <#
     .SYNOPSIS
-        Adds an AWS::CloudFront::Distribution.S3OriginConfig resource property to the template
+        Adds an AWS::CloudFront::Distribution.S3OriginConfig resource property to the template. A complex type that contains information about the Amazon S3 origin. If the origin is a custom origin, use the CustomOriginConfig element instead.
 
     .DESCRIPTION
-        Adds an AWS::CloudFront::Distribution.S3OriginConfig resource property to the template
+        Adds an AWS::CloudFront::Distribution.S3OriginConfig resource property to the template.
+A complex type that contains information about the Amazon S3 origin. If the origin is a custom origin, use the CustomOriginConfig element instead.
 
     .LINK
         http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-cloudfront-distribution-s3originconfig.html

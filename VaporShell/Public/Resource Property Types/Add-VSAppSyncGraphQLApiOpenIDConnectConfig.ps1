@@ -1,10 +1,13 @@
 function Add-VSAppSyncGraphQLApiOpenIDConnectConfig {
     <#
     .SYNOPSIS
-        Adds an AWS::AppSync::GraphQLApi.OpenIDConnectConfig resource property to the template
+        Adds an AWS::AppSync::GraphQLApi.OpenIDConnectConfig resource property to the template. The OpenIDConnectConfig property type specifies the optional authorization configuration for using an OpenID Connect compliant service with your GraphQL endpoint for an AWS AppSync GraphQL API.
 
     .DESCRIPTION
-        Adds an AWS::AppSync::GraphQLApi.OpenIDConnectConfig resource property to the template
+        Adds an AWS::AppSync::GraphQLApi.OpenIDConnectConfig resource property to the template.
+The OpenIDConnectConfig property type specifies the optional authorization configuration for using an OpenID Connect compliant service with your GraphQL endpoint for an AWS AppSync GraphQL API.
+
+OpenIDConnectConfig is a property of the AWS::AppSync::GraphQLApi: https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-appsync-graphqlapi.html property type.
 
     .LINK
         http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-appsync-graphqlapi-openidconnectconfig.html

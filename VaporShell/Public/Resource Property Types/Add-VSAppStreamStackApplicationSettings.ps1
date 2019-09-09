@@ -1,10 +1,11 @@
 function Add-VSAppStreamStackApplicationSettings {
     <#
     .SYNOPSIS
-        Adds an AWS::AppStream::Stack.ApplicationSettings resource property to the template
+        Adds an AWS::AppStream::Stack.ApplicationSettings resource property to the template. The persistent application settings for users of a stack.
 
     .DESCRIPTION
-        Adds an AWS::AppStream::Stack.ApplicationSettings resource property to the template
+        Adds an AWS::AppStream::Stack.ApplicationSettings resource property to the template.
+The persistent application settings for users of a stack.
 
     .LINK
         http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-appstream-stack-applicationsettings.html

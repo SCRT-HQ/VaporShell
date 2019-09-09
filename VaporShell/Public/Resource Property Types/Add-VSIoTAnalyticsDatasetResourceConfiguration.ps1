@@ -1,10 +1,11 @@
 function Add-VSIoTAnalyticsDatasetResourceConfiguration {
     <#
     .SYNOPSIS
-        Adds an AWS::IoTAnalytics::Dataset.ResourceConfiguration resource property to the template
+        Adds an AWS::IoTAnalytics::Dataset.ResourceConfiguration resource property to the template. The configuration of the resource used to execute the "containerAction".
 
     .DESCRIPTION
-        Adds an AWS::IoTAnalytics::Dataset.ResourceConfiguration resource property to the template
+        Adds an AWS::IoTAnalytics::Dataset.ResourceConfiguration resource property to the template.
+The configuration of the resource used to execute the "containerAction".
 
     .LINK
         http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iotanalytics-dataset-resourceconfiguration.html

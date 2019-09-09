@@ -1,10 +1,11 @@
 function Add-VSBatchJobDefinitionContainerProperties {
     <#
     .SYNOPSIS
-        Adds an AWS::Batch::JobDefinition.ContainerProperties resource property to the template
+        Adds an AWS::Batch::JobDefinition.ContainerProperties resource property to the template. Container properties are used in job definitions to describe the container that is launched as part of a job.
 
     .DESCRIPTION
-        Adds an AWS::Batch::JobDefinition.ContainerProperties resource property to the template
+        Adds an AWS::Batch::JobDefinition.ContainerProperties resource property to the template.
+Container properties are used in job definitions to describe the container that is launched as part of a job.
 
     .LINK
         http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-batch-jobdefinition-containerproperties.html

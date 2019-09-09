@@ -1,10 +1,11 @@
 function Add-VSIoTEventsDetectorModelSetTimer {
     <#
     .SYNOPSIS
-        Adds an AWS::IoTEvents::DetectorModel.SetTimer resource property to the template
+        Adds an AWS::IoTEvents::DetectorModel.SetTimer resource property to the template. Information needed to set the timer.
 
     .DESCRIPTION
-        Adds an AWS::IoTEvents::DetectorModel.SetTimer resource property to the template
+        Adds an AWS::IoTEvents::DetectorModel.SetTimer resource property to the template.
+Information needed to set the timer.
 
     .LINK
         http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iotevents-detectormodel-settimer.html

@@ -1,10 +1,11 @@
 function Add-VSCognitoIdentityPoolRoleAttachmentRoleMapping {
     <#
     .SYNOPSIS
-        Adds an AWS::Cognito::IdentityPoolRoleAttachment.RoleMapping resource property to the template
+        Adds an AWS::Cognito::IdentityPoolRoleAttachment.RoleMapping resource property to the template. RoleMapping is a property of the AWS::Cognito::IdentityPoolRoleAttachment: https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-cognito-identitypoolroleattachment.html resource that defines the role mapping attributes of an Amazon Cognito identity pool.
 
     .DESCRIPTION
-        Adds an AWS::Cognito::IdentityPoolRoleAttachment.RoleMapping resource property to the template
+        Adds an AWS::Cognito::IdentityPoolRoleAttachment.RoleMapping resource property to the template.
+RoleMapping is a property of the AWS::Cognito::IdentityPoolRoleAttachment: https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-cognito-identitypoolroleattachment.html resource that defines the role mapping attributes of an Amazon Cognito identity pool.
 
     .LINK
         http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-cognito-identitypoolroleattachment-rolemapping.html

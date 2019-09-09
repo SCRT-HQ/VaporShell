@@ -1,10 +1,11 @@
 function Add-VSPinpointCampaignCampaignSmsMessage {
     <#
     .SYNOPSIS
-        Adds an AWS::Pinpoint::Campaign.CampaignSmsMessage resource property to the template
+        Adds an AWS::Pinpoint::Campaign.CampaignSmsMessage resource property to the template. Specifies the content and settings for an SMS message that's sent to recipients of a campaign.
 
     .DESCRIPTION
-        Adds an AWS::Pinpoint::Campaign.CampaignSmsMessage resource property to the template
+        Adds an AWS::Pinpoint::Campaign.CampaignSmsMessage resource property to the template.
+Specifies the content and settings for an SMS message that's sent to recipients of a campaign.
 
     .LINK
         http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-pinpoint-campaign-campaignsmsmessage.html

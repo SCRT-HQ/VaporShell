@@ -1,10 +1,11 @@
 function Add-VSBackupBackupSelectionBackupSelectionResourceType {
     <#
     .SYNOPSIS
-        Adds an AWS::Backup::BackupSelection.BackupSelectionResourceType resource property to the template
+        Adds an AWS::Backup::BackupSelection.BackupSelectionResourceType resource property to the template. Specifies an object containing properties used to assign a set of resources to a backup plan.
 
     .DESCRIPTION
-        Adds an AWS::Backup::BackupSelection.BackupSelectionResourceType resource property to the template
+        Adds an AWS::Backup::BackupSelection.BackupSelectionResourceType resource property to the template.
+Specifies an object containing properties used to assign a set of resources to a backup plan.
 
     .LINK
         http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-backup-backupselection-backupselectionresourcetype.html

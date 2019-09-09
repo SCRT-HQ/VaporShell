@@ -1,10 +1,13 @@
 function Add-VSLambdaFunctionCode {
     <#
     .SYNOPSIS
-        Adds an AWS::Lambda::Function.Code resource property to the template
+        Adds an AWS::Lambda::Function.Code resource property to the template. The deployment package for a Lambda function. For all runtimes, you can specify the location of an object in Amazon S3. For Node.js and Python functions, you can specify the function code inline in the template.
 
     .DESCRIPTION
-        Adds an AWS::Lambda::Function.Code resource property to the template
+        Adds an AWS::Lambda::Function.Code resource property to the template.
+The deployment package for a Lambda function. For all runtimes, you can specify the location of an object in Amazon S3. For Node.js and Python functions, you can specify the function code inline in the template.
+
+Changes to a deployment package in Amazon S3 are not detected automatically during stack updates. To update the function code, change the object key or version in the template.
 
     .LINK
         http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-lambda-function-code.html

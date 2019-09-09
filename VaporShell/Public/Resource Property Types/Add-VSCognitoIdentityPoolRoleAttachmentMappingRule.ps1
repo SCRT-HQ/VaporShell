@@ -1,10 +1,11 @@
 function Add-VSCognitoIdentityPoolRoleAttachmentMappingRule {
     <#
     .SYNOPSIS
-        Adds an AWS::Cognito::IdentityPoolRoleAttachment.MappingRule resource property to the template
+        Adds an AWS::Cognito::IdentityPoolRoleAttachment.MappingRule resource property to the template. Defines how to map a claim to a role ARN.
 
     .DESCRIPTION
-        Adds an AWS::Cognito::IdentityPoolRoleAttachment.MappingRule resource property to the template
+        Adds an AWS::Cognito::IdentityPoolRoleAttachment.MappingRule resource property to the template.
+Defines how to map a claim to a role ARN.
 
     .LINK
         http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-cognito-identitypoolroleattachment-mappingrule.html

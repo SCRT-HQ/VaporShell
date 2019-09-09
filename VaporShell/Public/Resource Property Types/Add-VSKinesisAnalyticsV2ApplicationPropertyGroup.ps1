@@ -1,10 +1,11 @@
 function Add-VSKinesisAnalyticsV2ApplicationPropertyGroup {
     <#
     .SYNOPSIS
-        Adds an AWS::KinesisAnalyticsV2::Application.PropertyGroup resource property to the template
+        Adds an AWS::KinesisAnalyticsV2::Application.PropertyGroup resource property to the template. Property key-value pairs passed into a Java-based Kinesis Data Analytics application.
 
     .DESCRIPTION
-        Adds an AWS::KinesisAnalyticsV2::Application.PropertyGroup resource property to the template
+        Adds an AWS::KinesisAnalyticsV2::Application.PropertyGroup resource property to the template.
+Property key-value pairs passed into a Java-based Kinesis Data Analytics application.
 
     .LINK
         http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-kinesisanalyticsv2-application-propertygroup.html

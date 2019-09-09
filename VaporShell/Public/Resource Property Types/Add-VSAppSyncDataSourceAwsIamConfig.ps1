@@ -1,10 +1,13 @@
 function Add-VSAppSyncDataSourceAwsIamConfig {
     <#
     .SYNOPSIS
-        Adds an AWS::AppSync::DataSource.AwsIamConfig resource property to the template
+        Adds an AWS::AppSync::DataSource.AwsIamConfig resource property to the template. Use the AwsIamConfig property type to specify AwsIamConfig for a AWS AppSync authorizaton.
 
     .DESCRIPTION
-        Adds an AWS::AppSync::DataSource.AwsIamConfig resource property to the template
+        Adds an AWS::AppSync::DataSource.AwsIamConfig resource property to the template.
+Use the AwsIamConfig property type to specify AwsIamConfig for a AWS AppSync authorizaton.
+
+AwsIamConfig is a property of the AWS AppSync DataSource AuthorizationConfig: https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-appsync-datasource-httpconfig-authorizationconfig.html resource.
 
     .LINK
         http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-appsync-datasource-awsiamconfig.html

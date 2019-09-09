@@ -1,10 +1,11 @@
 function Add-VSCloudFrontDistributionLogging {
     <#
     .SYNOPSIS
-        Adds an AWS::CloudFront::Distribution.Logging resource property to the template
+        Adds an AWS::CloudFront::Distribution.Logging resource property to the template. A complex type that controls whether access logs are written for the distribution.
 
     .DESCRIPTION
-        Adds an AWS::CloudFront::Distribution.Logging resource property to the template
+        Adds an AWS::CloudFront::Distribution.Logging resource property to the template.
+A complex type that controls whether access logs are written for the distribution.
 
     .LINK
         http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-cloudfront-distribution-logging.html

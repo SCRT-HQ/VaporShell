@@ -1,10 +1,10 @@
 function New-VSStepFunctionsStateMachine {
     <#
     .SYNOPSIS
-        Adds an AWS::StepFunctions::StateMachine resource to the template
+        Adds an AWS::StepFunctions::StateMachine resource to the template. Provisions a state machine. A state machine consists of a collection of states that can do work (Task states, determine to which states to transition next (Choice states, stop an execution with an error (Fail states, and so on. State machines are specified using a JSON-based, structured language.
 
     .DESCRIPTION
-        Adds an AWS::StepFunctions::StateMachine resource to the template
+        Adds an AWS::StepFunctions::StateMachine resource to the template. Provisions a state machine. A state machine consists of a collection of states that can do work (Task states, determine to which states to transition next (Choice states, stop an execution with an error (Fail states, and so on. State machines are specified using a JSON-based, structured language.
 
     .LINK
         http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-stepfunctions-statemachine.html

@@ -1,10 +1,11 @@
 function Add-VSManagedBlockchainMemberNetworkFabricConfiguration {
     <#
     .SYNOPSIS
-        Adds an AWS::ManagedBlockchain::Member.NetworkFabricConfiguration resource property to the template
+        Adds an AWS::ManagedBlockchain::Member.NetworkFabricConfiguration resource property to the template. Hyperledger Fabric configuration properties for the network.
 
     .DESCRIPTION
-        Adds an AWS::ManagedBlockchain::Member.NetworkFabricConfiguration resource property to the template
+        Adds an AWS::ManagedBlockchain::Member.NetworkFabricConfiguration resource property to the template.
+Hyperledger Fabric configuration properties for the network.
 
     .LINK
         http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-managedblockchain-member-networkfabricconfiguration.html

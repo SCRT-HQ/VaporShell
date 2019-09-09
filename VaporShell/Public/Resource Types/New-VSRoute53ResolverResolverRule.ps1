@@ -1,10 +1,10 @@
 function New-VSRoute53ResolverResolverRule {
     <#
     .SYNOPSIS
-        Adds an AWS::Route53Resolver::ResolverRule resource to the template
+        Adds an AWS::Route53Resolver::ResolverRule resource to the template. For DNS queries that originate in your VPCs, specifies which resolver endpoint the queries pass through, one domain name that you want to forward to your network, and the IP addresses of the DNS resolvers in your network.
 
     .DESCRIPTION
-        Adds an AWS::Route53Resolver::ResolverRule resource to the template
+        Adds an AWS::Route53Resolver::ResolverRule resource to the template. For DNS queries that originate in your VPCs, specifies which resolver endpoint the queries pass through, one domain name that you want to forward to your network, and the IP addresses of the DNS resolvers in your network.
 
     .LINK
         http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-route53resolver-resolverrule.html

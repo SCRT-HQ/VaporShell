@@ -1,10 +1,24 @@
 function New-VSDataPipelinePipeline {
     <#
     .SYNOPSIS
-        Adds an AWS::DataPipeline::Pipeline resource to the template
+        Adds an AWS::DataPipeline::Pipeline resource to the template. The AWS::DataPipeline::Pipeline resource specifies a data pipeline that you can use to automate the movement and transformation of data. In each pipeline, you define pipeline objects, such as activities, schedules, data nodes, and resources. For information about pipeline objects and components that you can use, see Pipeline Object Reference: https://docs.aws.amazon.com/datapipeline/latest/DeveloperGuide/dp-pipeline-objects.html in the *AWS Data Pipeline Developer Guide*.
 
     .DESCRIPTION
-        Adds an AWS::DataPipeline::Pipeline resource to the template
+        Adds an AWS::DataPipeline::Pipeline resource to the template. The AWS::DataPipeline::Pipeline resource specifies a data pipeline that you can use to automate the movement and transformation of data. In each pipeline, you define pipeline objects, such as activities, schedules, data nodes, and resources. For information about pipeline objects and components that you can use, see Pipeline Object Reference: https://docs.aws.amazon.com/datapipeline/latest/DeveloperGuide/dp-pipeline-objects.html in the *AWS Data Pipeline Developer Guide*.
+
+The AWS::DataPipeline::Pipeline resource adds tasks, schedules, and preconditions to the specified pipeline. You can use PutPipelineDefinition to populate a new pipeline.
+
+PutPipelineDefinition also validates the configuration as it adds it to the pipeline. Changes to the pipeline are saved unless one of the following validation errors exist in the pipeline.
+
++ An object is missing a name or identifier field.
+
++ A string or reference field is empty.
+
++ The number of objects in the pipeline exceeds the allowed maximum number of objects.
+
++ The pipeline is in a FINISHED state.
+
+Pipeline object definitions are passed to the PutPipelineDefinition: https://docs.aws.amazon.com/datapipeline/latest/APIReference/API_PutPipelineDefinition.html action and returned by the GetPipelineDefinition: https://docs.aws.amazon.com/datapipeline/latest/APIReference/API_GetPipelineDefinition.html action.
 
     .LINK
         http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-datapipeline-pipeline.html

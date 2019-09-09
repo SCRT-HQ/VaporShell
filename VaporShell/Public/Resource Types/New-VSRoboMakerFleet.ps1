@@ -1,10 +1,10 @@
 function New-VSRoboMakerFleet {
     <#
     .SYNOPSIS
-        Adds an AWS::RoboMaker::Fleet resource to the template
+        Adds an AWS::RoboMaker::Fleet resource to the template. The AWS::RoboMaker::Fleet resource creates an AWS RoboMaker fleet. Fleets contain robots and can receive deployments.
 
     .DESCRIPTION
-        Adds an AWS::RoboMaker::Fleet resource to the template
+        Adds an AWS::RoboMaker::Fleet resource to the template. The AWS::RoboMaker::Fleet resource creates an AWS RoboMaker fleet. Fleets contain robots and can receive deployments.
 
     .LINK
         http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-robomaker-fleet.html

@@ -1,10 +1,10 @@
 function New-VSManagedBlockchainMember {
     <#
     .SYNOPSIS
-        Adds an AWS::ManagedBlockchain::Member resource to the template
+        Adds an AWS::ManagedBlockchain::Member resource to the template. Creates a member within a Managed Blockchain network.
 
     .DESCRIPTION
-        Adds an AWS::ManagedBlockchain::Member resource to the template
+        Adds an AWS::ManagedBlockchain::Member resource to the template. Creates a member within a Managed Blockchain network.
 
     .LINK
         http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-managedblockchain-member.html

@@ -1,10 +1,10 @@
 function New-VSIoT1ClickProject {
     <#
     .SYNOPSIS
-        Adds an AWS::IoT1Click::Project resource to the template
+        Adds an AWS::IoT1Click::Project resource to the template. The AWS::IoT1Click::Project resource creates an empty project with a placement template. A project contains zero or more placements that adhere to the placement template defined in the project. For more information, see CreateProject: https://docs.aws.amazon.com/iot-1-click/latest/projects-apireference/API_CreateProject.html in the *AWS IoT 1-Click Projects API Reference*.
 
     .DESCRIPTION
-        Adds an AWS::IoT1Click::Project resource to the template
+        Adds an AWS::IoT1Click::Project resource to the template. The AWS::IoT1Click::Project resource creates an empty project with a placement template. A project contains zero or more placements that adhere to the placement template defined in the project. For more information, see CreateProject: https://docs.aws.amazon.com/iot-1-click/latest/projects-apireference/API_CreateProject.html in the *AWS IoT 1-Click Projects API Reference*.
 
     .LINK
         http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-iot1click-project.html

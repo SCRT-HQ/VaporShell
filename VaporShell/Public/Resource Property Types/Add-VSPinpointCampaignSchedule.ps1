@@ -1,10 +1,11 @@
 function Add-VSPinpointCampaignSchedule {
     <#
     .SYNOPSIS
-        Adds an AWS::Pinpoint::Campaign.Schedule resource property to the template
+        Adds an AWS::Pinpoint::Campaign.Schedule resource property to the template. Specifies the schedule settings for a campaign.
 
     .DESCRIPTION
-        Adds an AWS::Pinpoint::Campaign.Schedule resource property to the template
+        Adds an AWS::Pinpoint::Campaign.Schedule resource property to the template.
+Specifies the schedule settings for a campaign.
 
     .LINK
         http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-pinpoint-campaign-schedule.html

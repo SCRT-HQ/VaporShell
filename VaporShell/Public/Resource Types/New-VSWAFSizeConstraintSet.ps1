@@ -1,10 +1,10 @@
 function New-VSWAFSizeConstraintSet {
     <#
     .SYNOPSIS
-        Adds an AWS::WAF::SizeConstraintSet resource to the template
+        Adds an AWS::WAF::SizeConstraintSet resource to the template. A complex type that contains SizeConstraint objects, which specify the parts of web requests that you want AWS WAF to inspect the size of. If a SizeConstraintSet contains more than one SizeConstraint object, a request only needs to match one constraint to be considered a match.
 
     .DESCRIPTION
-        Adds an AWS::WAF::SizeConstraintSet resource to the template
+        Adds an AWS::WAF::SizeConstraintSet resource to the template. A complex type that contains SizeConstraint objects, which specify the parts of web requests that you want AWS WAF to inspect the size of. If a SizeConstraintSet contains more than one SizeConstraint object, a request only needs to match one constraint to be considered a match.
 
     .LINK
         http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-waf-sizeconstraintset.html

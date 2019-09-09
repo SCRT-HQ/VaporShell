@@ -1,10 +1,10 @@
 function New-VSAlexaASKSkill {
     <#
     .SYNOPSIS
-        Adds an Alexa::ASK::Skill resource to the template
+        Adds an Alexa::ASK::Skill resource to the template. The Alexa::ASK::Skill resource creates an Alexa skill that enables customers to access new abilities. For more information about developing a skill, see the Build Skills with the Alexa Skills Kit developer documentation: https://developer.amazon.com/docs/ask-overviews/build-skills-with-the-alexa-skills-kit.html.
 
     .DESCRIPTION
-        Adds an Alexa::ASK::Skill resource to the template
+        Adds an Alexa::ASK::Skill resource to the template. The Alexa::ASK::Skill resource creates an Alexa skill that enables customers to access new abilities. For more information about developing a skill, see the Build Skills with the Alexa Skills Kit developer documentation: https://developer.amazon.com/docs/ask-overviews/build-skills-with-the-alexa-skills-kit.html.
 
     .LINK
         http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ask-skill.html

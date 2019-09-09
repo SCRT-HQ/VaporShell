@@ -1,10 +1,13 @@
 function Add-VSElasticBeanstalkApplicationMaxCountRule {
     <#
     .SYNOPSIS
-        Adds an AWS::ElasticBeanstalk::Application.MaxCountRule resource property to the template
+        Adds an AWS::ElasticBeanstalk::Application.MaxCountRule resource property to the template. A lifecycle rule that deletes the oldest application version when the maximum count is exceeded.
 
     .DESCRIPTION
-        Adds an AWS::ElasticBeanstalk::Application.MaxCountRule resource property to the template
+        Adds an AWS::ElasticBeanstalk::Application.MaxCountRule resource property to the template.
+A lifecycle rule that deletes the oldest application version when the maximum count is exceeded.
+
+MaxCountRule is a property of the ApplicationVersionLifecycleConfig: https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-elasticbeanstalk-application-applicationversionlifecycleconfig.html property type.
 
     .LINK
         http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-elasticbeanstalk-application-maxcountrule.html

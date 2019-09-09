@@ -1,10 +1,19 @@
 function Add-VSAutoScalingScalingPolicyStepAdjustment {
     <#
     .SYNOPSIS
-        Adds an AWS::AutoScaling::ScalingPolicy.StepAdjustment resource property to the template
+        Adds an AWS::AutoScaling::ScalingPolicy.StepAdjustment resource property to the template. StepAdjustments is a subproperty of ScalingPolicy: https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-as-policy.html that represents a step adjustment for a step scaling policy.
 
     .DESCRIPTION
-        Adds an AWS::AutoScaling::ScalingPolicy.StepAdjustment resource property to the template
+        Adds an AWS::AutoScaling::ScalingPolicy.StepAdjustment resource property to the template.
+StepAdjustments is a subproperty of ScalingPolicy: https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-as-policy.html that represents a step adjustment for a step scaling policy.
+
+For the following examples, suppose that you have an alarm with a breach threshold of 50:
+
++ To trigger a step adjustment when the metric is greater than or equal to 50 and less than 60, specify a lower bound of 0 and an upper bound of 10.
+
++ To trigger a step adjustment when the metric is greater than 40 and less than or equal to 50, specify a lower bound of -10 and an upper bound of 0.
+
+For more information, see Step Adjustments: https://docs.aws.amazon.com/autoscaling/ec2/userguide/as-scaling-simple-step.html#as-scaling-steps in the *Amazon EC2 Auto Scaling User Guide*.
 
     .LINK
         http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-autoscaling-scalingpolicy-stepadjustments.html

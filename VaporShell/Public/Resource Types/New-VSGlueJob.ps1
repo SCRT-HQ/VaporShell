@@ -1,10 +1,10 @@
 function New-VSGlueJob {
     <#
     .SYNOPSIS
-        Adds an AWS::Glue::Job resource to the template
+        Adds an AWS::Glue::Job resource to the template. The AWS::Glue::Job resource specifies an AWS Glue job in the data catalog. For more information, see Adding Jobs in AWS Glue: https://docs.aws.amazon.com/glue/latest/dg/add-job.html and Job Structure: https://docs.aws.amazon.com/glue/latest/dg/aws-glue-api-jobs-job.html#aws-glue-api-jobs-job-Job in the *AWS Glue Developer Guide.*
 
     .DESCRIPTION
-        Adds an AWS::Glue::Job resource to the template
+        Adds an AWS::Glue::Job resource to the template. The AWS::Glue::Job resource specifies an AWS Glue job in the data catalog. For more information, see Adding Jobs in AWS Glue: https://docs.aws.amazon.com/glue/latest/dg/add-job.html and Job Structure: https://docs.aws.amazon.com/glue/latest/dg/aws-glue-api-jobs-job.html#aws-glue-api-jobs-job-Job in the *AWS Glue Developer Guide.*
 
     .LINK
         http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-glue-job.html

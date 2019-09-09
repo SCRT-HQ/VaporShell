@@ -1,10 +1,10 @@
 function New-VSServiceCatalogPortfolioPrincipalAssociation {
     <#
     .SYNOPSIS
-        Adds an AWS::ServiceCatalog::PortfolioPrincipalAssociation resource to the template
+        Adds an AWS::ServiceCatalog::PortfolioPrincipalAssociation resource to the template. Associates the specified principal ARN with the specified portfolio.
 
     .DESCRIPTION
-        Adds an AWS::ServiceCatalog::PortfolioPrincipalAssociation resource to the template
+        Adds an AWS::ServiceCatalog::PortfolioPrincipalAssociation resource to the template. Associates the specified principal ARN with the specified portfolio.
 
     .LINK
         http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-servicecatalog-portfolioprincipalassociation.html

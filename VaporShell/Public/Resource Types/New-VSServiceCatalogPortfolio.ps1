@@ -1,10 +1,10 @@
 function New-VSServiceCatalogPortfolio {
     <#
     .SYNOPSIS
-        Adds an AWS::ServiceCatalog::Portfolio resource to the template
+        Adds an AWS::ServiceCatalog::Portfolio resource to the template. Specifies a portfolio.
 
     .DESCRIPTION
-        Adds an AWS::ServiceCatalog::Portfolio resource to the template
+        Adds an AWS::ServiceCatalog::Portfolio resource to the template. Specifies a portfolio.
 
     .LINK
         http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-servicecatalog-portfolio.html

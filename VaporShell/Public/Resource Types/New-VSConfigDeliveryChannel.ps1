@@ -1,10 +1,26 @@
 function New-VSConfigDeliveryChannel {
     <#
     .SYNOPSIS
-        Adds an AWS::Config::DeliveryChannel resource to the template
+        Adds an AWS::Config::DeliveryChannel resource to the template. Specifies a delivery channel object to deliver configuration information to an Amazon S3 bucket and Amazon SNS topic.
 
     .DESCRIPTION
-        Adds an AWS::Config::DeliveryChannel resource to the template
+        Adds an AWS::Config::DeliveryChannel resource to the template. Specifies a delivery channel object to deliver configuration information to an Amazon S3 bucket and Amazon SNS topic.
+
+Before you can create a delivery channel, you must create a configuration recorder.
+
+You can use this action to change the Amazon S3 bucket or an Amazon SNS topic of the existing delivery channel. To change the Amazon S3 bucket or an Amazon SNS topic, call this action and specify the changed values for the S3 bucket and the SNS topic. If you specify a different value for either the S3 bucket or the SNS topic, this action will keep the existing value for the parameter that is not changed.
+
+**Note**
+
+You can have only one delivery channel per region in your account.
+
+When you create the delivery channel, you can specify; how often AWS Config delivers configuration snapshots to your Amazon S3 bucket (for example, 24 hours, the S3 bucket to which AWS Config sends configuration snapshots and configuration history files, and the Amazon SNS topic to which AWS Config sends notifications about configuration changes, such as updated resources, AWS Config rule evaluations, and when AWS Config delivers the configuration snapshot to your S3 bucket. For more information, see Deliver Configuration Items: https://docs.aws.amazon.com/config/latest/developerguide/how-does-config-work.html#delivery-channel in the AWS Config Developer Guide.
+
+**Note**
+
+To enable AWS Config, you must create a configuration recorder and a delivery channel. If you want to create the resources separately, you must create a configuration recorder before you can create a delivery channel. AWS Config uses the configuration recorder to capture configuration changes to your resources. For more information, see AWS::Config::ConfigurationRecorder: https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-config-configurationrecorder.html.
+
+For more information, see Managing the Delivery Channel: https://docs.aws.amazon.com/config/latest/developerguide/manage-delivery-channel.html in the AWS Config Developer Guide.
 
     .LINK
         http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-config-deliverychannel.html

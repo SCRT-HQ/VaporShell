@@ -1,10 +1,11 @@
 function Add-VSRDSDBInstanceDBInstanceRole {
     <#
     .SYNOPSIS
-        Adds an AWS::RDS::DBInstance.DBInstanceRole resource property to the template
+        Adds an AWS::RDS::DBInstance.DBInstanceRole resource property to the template. Describes an AWS Identity and Access Management (IAM role that is associated with a DB instance.
 
     .DESCRIPTION
-        Adds an AWS::RDS::DBInstance.DBInstanceRole resource property to the template
+        Adds an AWS::RDS::DBInstance.DBInstanceRole resource property to the template.
+Describes an AWS Identity and Access Management (IAM role that is associated with a DB instance.
 
     .LINK
         http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-rds-dbinstance-dbinstancerole.html

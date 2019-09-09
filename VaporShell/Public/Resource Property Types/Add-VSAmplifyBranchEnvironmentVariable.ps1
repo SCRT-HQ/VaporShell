@@ -1,10 +1,11 @@
 function Add-VSAmplifyBranchEnvironmentVariable {
     <#
     .SYNOPSIS
-        Adds an AWS::Amplify::Branch.EnvironmentVariable resource property to the template
+        Adds an AWS::Amplify::Branch.EnvironmentVariable resource property to the template. The EnvironmentVariable property type sets environment variables for a specific branch. Environment variables are key-value pairs that are available at build time.
 
     .DESCRIPTION
-        Adds an AWS::Amplify::Branch.EnvironmentVariable resource property to the template
+        Adds an AWS::Amplify::Branch.EnvironmentVariable resource property to the template.
+The EnvironmentVariable property type sets environment variables for a specific branch. Environment variables are key-value pairs that are available at build time.
 
     .LINK
         http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-amplify-branch-environmentvariable.html

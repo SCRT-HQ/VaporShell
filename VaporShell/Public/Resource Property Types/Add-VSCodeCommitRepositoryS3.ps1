@@ -1,10 +1,11 @@
 function Add-VSCodeCommitRepositoryS3 {
     <#
     .SYNOPSIS
-        Adds an AWS::CodeCommit::Repository.S3 resource property to the template
+        Adds an AWS::CodeCommit::Repository.S3 resource property to the template. Information about the Amazon S3 bucket that contains the code that will be committed to the new repository.
 
     .DESCRIPTION
-        Adds an AWS::CodeCommit::Repository.S3 resource property to the template
+        Adds an AWS::CodeCommit::Repository.S3 resource property to the template.
+Information about the Amazon S3 bucket that contains the code that will be committed to the new repository.
 
     .LINK
         http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-codecommit-repository-s3.html

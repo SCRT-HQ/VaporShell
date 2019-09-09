@@ -1,10 +1,11 @@
 function Add-VSKinesisFirehoseDeliveryStreamHiveJsonSerDe {
     <#
     .SYNOPSIS
-        Adds an AWS::KinesisFirehose::DeliveryStream.HiveJsonSerDe resource property to the template
+        Adds an AWS::KinesisFirehose::DeliveryStream.HiveJsonSerDe resource property to the template. The native Hive / HCatalog JsonSerDe. Used by Kinesis Data Firehose for deserializing data, which means converting it from the JSON format in preparation for serializing it to the Parquet or ORC format. This is one of two deserializers you can choose, depending on which one offers the functionality you need. The other option is the OpenX SerDe.
 
     .DESCRIPTION
-        Adds an AWS::KinesisFirehose::DeliveryStream.HiveJsonSerDe resource property to the template
+        Adds an AWS::KinesisFirehose::DeliveryStream.HiveJsonSerDe resource property to the template.
+The native Hive / HCatalog JsonSerDe. Used by Kinesis Data Firehose for deserializing data, which means converting it from the JSON format in preparation for serializing it to the Parquet or ORC format. This is one of two deserializers you can choose, depending on which one offers the functionality you need. The other option is the OpenX SerDe.
 
     .LINK
         http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-kinesisfirehose-deliverystream-hivejsonserde.html

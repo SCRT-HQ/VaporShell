@@ -1,10 +1,11 @@
 function Add-VSWAFRegionalSqlInjectionMatchSetSqlInjectionMatchTuple {
     <#
     .SYNOPSIS
-        Adds an AWS::WAFRegional::SqlInjectionMatchSet.SqlInjectionMatchTuple resource property to the template
+        Adds an AWS::WAFRegional::SqlInjectionMatchSet.SqlInjectionMatchTuple resource property to the template. Specifies the part of a web request that you want AWS WAF to inspect for snippets of malicious SQL code and, if you want AWS WAF to inspect a header, the name of the header.
 
     .DESCRIPTION
-        Adds an AWS::WAFRegional::SqlInjectionMatchSet.SqlInjectionMatchTuple resource property to the template
+        Adds an AWS::WAFRegional::SqlInjectionMatchSet.SqlInjectionMatchTuple resource property to the template.
+Specifies the part of a web request that you want AWS WAF to inspect for snippets of malicious SQL code and, if you want AWS WAF to inspect a header, the name of the header.
 
     .LINK
         http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-wafregional-sqlinjectionmatchset-sqlinjectionmatchtuple.html

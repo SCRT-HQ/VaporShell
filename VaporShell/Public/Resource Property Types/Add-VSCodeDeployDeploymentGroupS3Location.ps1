@@ -1,10 +1,11 @@
 function Add-VSCodeDeployDeploymentGroupS3Location {
     <#
     .SYNOPSIS
-        Adds an AWS::CodeDeploy::DeploymentGroup.S3Location resource property to the template
+        Adds an AWS::CodeDeploy::DeploymentGroup.S3Location resource property to the template. S3Location is a property of the  CodeDeploy DeploymentGroup Revision : https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-codedeploy-deploymentgroup-deployment-revision.html property that specifies the location of an application revision that is stored in Amazon Simple Storage Service (S3.
 
     .DESCRIPTION
-        Adds an AWS::CodeDeploy::DeploymentGroup.S3Location resource property to the template
+        Adds an AWS::CodeDeploy::DeploymentGroup.S3Location resource property to the template.
+S3Location is a property of the  CodeDeploy DeploymentGroup Revision : https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-codedeploy-deploymentgroup-deployment-revision.html property that specifies the location of an application revision that is stored in Amazon Simple Storage Service (S3.
 
     .LINK
         http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-codedeploy-deploymentgroup-deployment-revision-s3location.html

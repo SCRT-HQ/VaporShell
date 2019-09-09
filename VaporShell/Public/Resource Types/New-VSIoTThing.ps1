@@ -1,10 +1,12 @@
 function New-VSIoTThing {
     <#
     .SYNOPSIS
-        Adds an AWS::IoT::Thing resource to the template
+        Adds an AWS::IoT::Thing resource to the template. Use the AWS::IoT::Thing resource to declare an AWS IoT thing.
 
     .DESCRIPTION
-        Adds an AWS::IoT::Thing resource to the template
+        Adds an AWS::IoT::Thing resource to the template. Use the AWS::IoT::Thing resource to declare an AWS IoT thing.
+
+For information about working with things, see How AWS IoT Works: https://docs.aws.amazon.com/iot/latest/developerguide/aws-iot-how-it-works.html and Device Registry for AWS IoT: https://docs.aws.amazon.com/iot/latest/developerguide/thing-registry.html in the *AWS IoT Developer Guide*.
 
     .LINK
         http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-iot-thing.html

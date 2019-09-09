@@ -1,10 +1,15 @@
 function Add-VSSecretsManagerSecretGenerateSecretString {
     <#
     .SYNOPSIS
-        Adds an AWS::SecretsManager::Secret.GenerateSecretString resource property to the template
+        Adds an AWS::SecretsManager::Secret.GenerateSecretString resource property to the template. Use the GenerateSecretStringproperty as part of the AWS::SecretsManager::Secret: https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-secretsmanager-secret.html resource type to dynamically generate a random text string to use as a password. It is an alternative to hardcoding a password directly in the SecretString property. When you generate a AWS::SecretsManager::Secret: https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-secretsmanager-secret.html resource type, you must include one or the other, but not both.
 
     .DESCRIPTION
-        Adds an AWS::SecretsManager::Secret.GenerateSecretString resource property to the template
+        Adds an AWS::SecretsManager::Secret.GenerateSecretString resource property to the template.
+Use the GenerateSecretStringproperty as part of the AWS::SecretsManager::Secret: https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-secretsmanager-secret.html resource type to dynamically generate a random text string to use as a password. It is an alternative to hardcoding a password directly in the SecretString property. When you generate a AWS::SecretsManager::Secret: https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-secretsmanager-secret.html resource type, you must include one or the other, but not both.
+
+SecretString enables you to place a literal value directly into the secret (a technique that we recommend you avoid. Instead, we recommend that you use the GenerateSecretString property to dynamically generate a random password. The operation returns a complete JSON structure to use as the secret value. The structure begins with the string that you supply using the SecretStringTemplate. This template string must be a properly formatted JSON string that contains all of the secret value information except the password. The operation then generates a random password using the rules specified by the other parameters. Finally, the operations inserts the generated password into the secret value structure along with the JSON key name that's specified by the GenerateStringKey parameter.
+
+For examples, see AWS::SecretsManager::Secret: https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-secretsmanager-secret.html.
 
     .LINK
         http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-secretsmanager-secret-generatesecretstring.html

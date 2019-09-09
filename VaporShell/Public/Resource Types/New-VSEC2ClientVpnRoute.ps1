@@ -1,10 +1,10 @@
 function New-VSEC2ClientVpnRoute {
     <#
     .SYNOPSIS
-        Adds an AWS::EC2::ClientVpnRoute resource to the template
+        Adds an AWS::EC2::ClientVpnRoute resource to the template. Specifies a network route to add to a Client VPN endpoint. Each Client VPN endpoint has a route table that describes the available destination network routes. Each route in the route table specifies the path for traﬃc to speciﬁc resources or networks.
 
     .DESCRIPTION
-        Adds an AWS::EC2::ClientVpnRoute resource to the template
+        Adds an AWS::EC2::ClientVpnRoute resource to the template. Specifies a network route to add to a Client VPN endpoint. Each Client VPN endpoint has a route table that describes the available destination network routes. Each route in the route table specifies the path for traﬃc to speciﬁc resources or networks.
 
     .LINK
         http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ec2-clientvpnroute.html

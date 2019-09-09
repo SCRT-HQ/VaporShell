@@ -1,10 +1,11 @@
 function Add-VSKinesisAnalyticsV2ApplicationInput {
     <#
     .SYNOPSIS
-        Adds an AWS::KinesisAnalyticsV2::Application.Input resource property to the template
+        Adds an AWS::KinesisAnalyticsV2::Application.Input resource property to the template. When you configure the application input for an SQL-based Amazon Kinesis Data Analytics application, you specify the streaming source, the in-application stream name that is created, and the mapping between the two.
 
     .DESCRIPTION
-        Adds an AWS::KinesisAnalyticsV2::Application.Input resource property to the template
+        Adds an AWS::KinesisAnalyticsV2::Application.Input resource property to the template.
+When you configure the application input for an SQL-based Amazon Kinesis Data Analytics application, you specify the streaming source, the in-application stream name that is created, and the mapping between the two.
 
     .LINK
         http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-kinesisanalyticsv2-application-input.html

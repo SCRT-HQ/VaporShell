@@ -1,10 +1,17 @@
 function Add-VSGreengrassResourceDefinitionResourceDataContainer {
     <#
     .SYNOPSIS
-        Adds an AWS::Greengrass::ResourceDefinition.ResourceDataContainer resource property to the template
+        Adds an AWS::Greengrass::ResourceDefinition.ResourceDataContainer resource property to the template. <a name="aws-properties-greengrass-resourcedefinition-resourcedatacontainer-description"></a>A container for resource data, which defines the resource type. The container takes only one of the following supported resource data types: LocalDeviceResourceData, LocalVolumeResourceData, SageMakerMachineLearningModelResourceData, S3MachineLearningModelResourceData, or SecretsManagerSecretResourceData.
 
     .DESCRIPTION
-        Adds an AWS::Greengrass::ResourceDefinition.ResourceDataContainer resource property to the template
+        Adds an AWS::Greengrass::ResourceDefinition.ResourceDataContainer resource property to the template.
+<a name="aws-properties-greengrass-resourcedefinition-resourcedatacontainer-description"></a>A container for resource data, which defines the resource type. The container takes only one of the following supported resource data types: LocalDeviceResourceData, LocalVolumeResourceData, SageMakerMachineLearningModelResourceData, S3MachineLearningModelResourceData, or SecretsManagerSecretResourceData.
+
+**Note**
+
+Only one resource type can be defined for a ResourceDataContainer instance.
+
+<a name="aws-properties-greengrass-resourcedefinition-resourcedatacontainer-inheritance"></a> In an AWS CloudFormation template, ResourceDataContainer is a property of the https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-greengrass-resourcedefinition-resourceinstance.html: https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-greengrass-resourcedefinition-resourceinstance.html property type.
 
     .LINK
         http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-greengrass-resourcedefinition-resourcedatacontainer.html

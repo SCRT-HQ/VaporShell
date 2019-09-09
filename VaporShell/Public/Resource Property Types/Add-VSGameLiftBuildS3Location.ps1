@@ -1,10 +1,11 @@
 function Add-VSGameLiftBuildS3Location {
     <#
     .SYNOPSIS
-        Adds an AWS::GameLift::Build.S3Location resource property to the template
+        Adds an AWS::GameLift::Build.S3Location resource property to the template. Location in Amazon Simple Storage Service (Amazon S3 where build files can be stored for access by Amazon GameLift. For more details, see the Uploading a Build to Amazon GameLift: https://docs.aws.amazon.com/gamelift/latest/developerguide/gamelift-build-cli-uploading.html in the *Amazon GameLift Developer Guide*.
 
     .DESCRIPTION
-        Adds an AWS::GameLift::Build.S3Location resource property to the template
+        Adds an AWS::GameLift::Build.S3Location resource property to the template.
+Location in Amazon Simple Storage Service (Amazon S3 where build files can be stored for access by Amazon GameLift. For more details, see the Uploading a Build to Amazon GameLift: https://docs.aws.amazon.com/gamelift/latest/developerguide/gamelift-build-cli-uploading.html in the *Amazon GameLift Developer Guide*.
 
     .LINK
         http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-gamelift-build-storagelocation.html

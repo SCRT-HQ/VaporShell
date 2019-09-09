@@ -1,10 +1,10 @@
 function New-VSRDSDBSubnetGroup {
     <#
     .SYNOPSIS
-        Adds an AWS::RDS::DBSubnetGroup resource to the template
+        Adds an AWS::RDS::DBSubnetGroup resource to the template. The AWS::RDS::DBSubnetGroup resource creates a database subnet group. Subnet groups must contain at least two subnets in two different Availability Zones in the same region.
 
     .DESCRIPTION
-        Adds an AWS::RDS::DBSubnetGroup resource to the template
+        Adds an AWS::RDS::DBSubnetGroup resource to the template. The AWS::RDS::DBSubnetGroup resource creates a database subnet group. Subnet groups must contain at least two subnets in two different Availability Zones in the same region.
 
     .LINK
         http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-rds-dbsubnet-group.html

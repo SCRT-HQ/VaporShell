@@ -1,10 +1,11 @@
 function Add-VSBatchJobDefinitionResourceRequirement {
     <#
     .SYNOPSIS
-        Adds an AWS::Batch::JobDefinition.ResourceRequirement resource property to the template
+        Adds an AWS::Batch::JobDefinition.ResourceRequirement resource property to the template. The type and amount of a resource to assign to a container. Currently, the only supported resource type is GPU.
 
     .DESCRIPTION
-        Adds an AWS::Batch::JobDefinition.ResourceRequirement resource property to the template
+        Adds an AWS::Batch::JobDefinition.ResourceRequirement resource property to the template.
+The type and amount of a resource to assign to a container. Currently, the only supported resource type is GPU.
 
     .LINK
         http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-batch-jobdefinition-resourcerequirement.html

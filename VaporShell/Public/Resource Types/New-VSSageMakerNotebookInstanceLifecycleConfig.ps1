@@ -1,10 +1,10 @@
 function New-VSSageMakerNotebookInstanceLifecycleConfig {
     <#
     .SYNOPSIS
-        Adds an AWS::SageMaker::NotebookInstanceLifecycleConfig resource to the template
+        Adds an AWS::SageMaker::NotebookInstanceLifecycleConfig resource to the template. The AWS::SageMaker::NotebookInstanceLifecycleConfig resource creates shell scripts that run when you create and/or start a notebook instance. For information about notebook instance lifestyle configurations, see Customize a Notebook Instance: https://docs.aws.amazon.com/sagemaker/latest/dg/notebook-lifecycle-config.html in the *Amazon SageMaker Developer Guide*.
 
     .DESCRIPTION
-        Adds an AWS::SageMaker::NotebookInstanceLifecycleConfig resource to the template
+        Adds an AWS::SageMaker::NotebookInstanceLifecycleConfig resource to the template. The AWS::SageMaker::NotebookInstanceLifecycleConfig resource creates shell scripts that run when you create and/or start a notebook instance. For information about notebook instance lifestyle configurations, see Customize a Notebook Instance: https://docs.aws.amazon.com/sagemaker/latest/dg/notebook-lifecycle-config.html in the *Amazon SageMaker Developer Guide*.
 
     .LINK
         http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-sagemaker-notebookinstancelifecycleconfig.html

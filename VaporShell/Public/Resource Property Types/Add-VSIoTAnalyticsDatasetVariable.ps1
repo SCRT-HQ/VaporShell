@@ -1,10 +1,11 @@
 function Add-VSIoTAnalyticsDatasetVariable {
     <#
     .SYNOPSIS
-        Adds an AWS::IoTAnalytics::Dataset.Variable resource property to the template
+        Adds an AWS::IoTAnalytics::Dataset.Variable resource property to the template. An instance of a variable to be passed to the "containerAction" execution. Each variable must have a name and a value given by one of "stringValue", "datasetContentVersionValue", or "outputFileUriValue".
 
     .DESCRIPTION
-        Adds an AWS::IoTAnalytics::Dataset.Variable resource property to the template
+        Adds an AWS::IoTAnalytics::Dataset.Variable resource property to the template.
+An instance of a variable to be passed to the "containerAction" execution. Each variable must have a name and a value given by one of "stringValue", "datasetContentVersionValue", or "outputFileUriValue".
 
     .LINK
         http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iotanalytics-dataset-variable.html

@@ -1,10 +1,11 @@
 function Add-VSDynamoDBTableProjection {
     <#
     .SYNOPSIS
-        Adds an AWS::DynamoDB::Table.Projection resource property to the template
+        Adds an AWS::DynamoDB::Table.Projection resource property to the template. Represents attributes that are copied (projected from the table into an index. These are in addition to the primary key attributes and index key attributes, which are automatically projected.
 
     .DESCRIPTION
-        Adds an AWS::DynamoDB::Table.Projection resource property to the template
+        Adds an AWS::DynamoDB::Table.Projection resource property to the template.
+Represents attributes that are copied (projected from the table into an index. These are in addition to the primary key attributes and index key attributes, which are automatically projected.
 
     .LINK
         http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-dynamodb-projectionobject.html

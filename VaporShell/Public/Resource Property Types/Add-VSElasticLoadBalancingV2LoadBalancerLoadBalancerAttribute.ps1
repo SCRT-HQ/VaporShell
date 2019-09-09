@@ -1,10 +1,11 @@
 function Add-VSElasticLoadBalancingV2LoadBalancerLoadBalancerAttribute {
     <#
     .SYNOPSIS
-        Adds an AWS::ElasticLoadBalancingV2::LoadBalancer.LoadBalancerAttribute resource property to the template
+        Adds an AWS::ElasticLoadBalancingV2::LoadBalancer.LoadBalancerAttribute resource property to the template. Specifies an attribute for an Application Load Balancer or a Network Load Balancer.
 
     .DESCRIPTION
-        Adds an AWS::ElasticLoadBalancingV2::LoadBalancer.LoadBalancerAttribute resource property to the template
+        Adds an AWS::ElasticLoadBalancingV2::LoadBalancer.LoadBalancerAttribute resource property to the template.
+Specifies an attribute for an Application Load Balancer or a Network Load Balancer.
 
     .LINK
         http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-elasticloadbalancingv2-loadbalancer-loadbalancerattributes.html

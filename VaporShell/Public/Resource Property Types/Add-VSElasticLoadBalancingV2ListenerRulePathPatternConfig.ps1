@@ -1,10 +1,11 @@
 function Add-VSElasticLoadBalancingV2ListenerRulePathPatternConfig {
     <#
     .SYNOPSIS
-        Adds an AWS::ElasticLoadBalancingV2::ListenerRule.PathPatternConfig resource property to the template
+        Adds an AWS::ElasticLoadBalancingV2::ListenerRule.PathPatternConfig resource property to the template. Information about a path pattern condition.
 
     .DESCRIPTION
-        Adds an AWS::ElasticLoadBalancingV2::ListenerRule.PathPatternConfig resource property to the template
+        Adds an AWS::ElasticLoadBalancingV2::ListenerRule.PathPatternConfig resource property to the template.
+Information about a path pattern condition.
 
     .LINK
         http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-elasticloadbalancingv2-listenerrule-pathpatternconfig.html

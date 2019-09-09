@@ -1,10 +1,11 @@
 function Add-VSPinpointCampaignCampaignEventFilter {
     <#
     .SYNOPSIS
-        Adds an AWS::Pinpoint::Campaign.CampaignEventFilter resource property to the template
+        Adds an AWS::Pinpoint::Campaign.CampaignEventFilter resource property to the template. Specifies the settings for events that cause a campaign to be sent.
 
     .DESCRIPTION
-        Adds an AWS::Pinpoint::Campaign.CampaignEventFilter resource property to the template
+        Adds an AWS::Pinpoint::Campaign.CampaignEventFilter resource property to the template.
+Specifies the settings for events that cause a campaign to be sent.
 
     .LINK
         http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-pinpoint-campaign-campaigneventfilter.html

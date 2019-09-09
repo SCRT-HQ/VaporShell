@@ -1,10 +1,14 @@
 function New-VSRDSDBClusterParameterGroup {
     <#
     .SYNOPSIS
-        Adds an AWS::RDS::DBClusterParameterGroup resource to the template
+        Adds an AWS::RDS::DBClusterParameterGroup resource to the template. The AWS::RDS::DBClusterParameterGroup resource creates a new Amazon RDS DB cluster parameter group. For more information, see Managing an Amazon Aurora DB Cluster: https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/CHAP_Aurora.html in the *Amazon Aurora User Guide*.
 
     .DESCRIPTION
-        Adds an AWS::RDS::DBClusterParameterGroup resource to the template
+        Adds an AWS::RDS::DBClusterParameterGroup resource to the template. The AWS::RDS::DBClusterParameterGroup resource creates a new Amazon RDS DB cluster parameter group. For more information, see Managing an Amazon Aurora DB Cluster: https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/CHAP_Aurora.html in the *Amazon Aurora User Guide*.
+
+**Note**
+
+If you apply a parameter group to a DB cluster, then its DB instances might need to reboot. This can result in an outage while the instances are rebooting.
 
     .LINK
         http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-rds-dbclusterparametergroup.html

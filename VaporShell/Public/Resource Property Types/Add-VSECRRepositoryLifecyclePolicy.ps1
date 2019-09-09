@@ -1,10 +1,11 @@
 function Add-VSECRRepositoryLifecyclePolicy {
     <#
     .SYNOPSIS
-        Adds an AWS::ECR::Repository.LifecyclePolicy resource property to the template
+        Adds an AWS::ECR::Repository.LifecyclePolicy resource property to the template. The LifecyclePolicy property type specifies a lifecycle policy. For information about lifecycle policy syntax, see Lifecycle Policy Template: https://docs.aws.amazon.com/AmazonECR/latest/userguide/LifecyclePolicies.html.
 
     .DESCRIPTION
-        Adds an AWS::ECR::Repository.LifecyclePolicy resource property to the template
+        Adds an AWS::ECR::Repository.LifecyclePolicy resource property to the template.
+The LifecyclePolicy property type specifies a lifecycle policy. For information about lifecycle policy syntax, see Lifecycle Policy Template: https://docs.aws.amazon.com/AmazonECR/latest/userguide/LifecyclePolicies.html.
 
     .LINK
         http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ecr-repository-lifecyclepolicy.html

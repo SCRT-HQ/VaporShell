@@ -1,10 +1,11 @@
 function Add-VSEC2SpotFleetEbsBlockDevice {
     <#
     .SYNOPSIS
-        Adds an AWS::EC2::SpotFleet.EbsBlockDevice resource property to the template
+        Adds an AWS::EC2::SpotFleet.EbsBlockDevice resource property to the template. Describes a block device for an EBS volume.
 
     .DESCRIPTION
-        Adds an AWS::EC2::SpotFleet.EbsBlockDevice resource property to the template
+        Adds an AWS::EC2::SpotFleet.EbsBlockDevice resource property to the template.
+Describes a block device for an EBS volume.
 
     .LINK
         http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-spotfleet-spotfleetrequestconfigdata-launchspecifications-blockdevicemappings-ebs.html

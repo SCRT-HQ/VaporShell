@@ -1,10 +1,23 @@
 function Add-VSBudgetsBudgetNotification {
     <#
     .SYNOPSIS
-        Adds an AWS::Budgets::Budget.Notification resource property to the template
+        Adds an AWS::Budgets::Budget.Notification resource property to the template. A notification that is associated with a budget. A budget can have up to five notifications.
 
     .DESCRIPTION
-        Adds an AWS::Budgets::Budget.Notification resource property to the template
+        Adds an AWS::Budgets::Budget.Notification resource property to the template.
+A notification that is associated with a budget. A budget can have up to five notifications.
+
+Each notification must have at least one subscriber. A notification can have one SNS subscriber and up to 10 email subscribers, for a total of 11 subscribers.
+
+For example, if you have a budget for 200 dollars and you want to be notified when you go over 160 dollars, create a notification with the following parameters:
+
++ A notificationType of ACTUAL
+
++ A thresholdType of PERCENTAGE
+
++ A comparisonOperator of GREATER_THAN
+
++ A notification threshold of 80
 
     .LINK
         http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-budgets-budget-notification.html

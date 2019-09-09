@@ -1,10 +1,12 @@
 function New-VSSSMMaintenanceWindow {
     <#
     .SYNOPSIS
-        Adds an AWS::SSM::MaintenanceWindow resource to the template
+        Adds an AWS::SSM::MaintenanceWindow resource to the template. The AWS::SSM::MaintenanceWindow resource represents general information about a maintenance window for AWS Systems Manager. Maintenance Windows let you define a schedule for when to perform potentially disruptive actions on your instances, such as patching an operating system (OS, updating drivers, or installing software. Each maintenance window has a schedule, a duration, a set of registered targets, and a set of registered tasks.
 
     .DESCRIPTION
-        Adds an AWS::SSM::MaintenanceWindow resource to the template
+        Adds an AWS::SSM::MaintenanceWindow resource to the template. The AWS::SSM::MaintenanceWindow resource represents general information about a maintenance window for AWS Systems Manager. Maintenance Windows let you define a schedule for when to perform potentially disruptive actions on your instances, such as patching an operating system (OS, updating drivers, or installing software. Each maintenance window has a schedule, a duration, a set of registered targets, and a set of registered tasks.
+
+For more information, see Systems Manager Maintenance Windows: https://docs.aws.amazon.com/systems-manager/latest/userguide/systems-manager-maintenance.html in the *AWS Systems Manager User Guide* and  CreateMaintenanceWindow: https://docs.aws.amazon.com/systems-manager/latest/APIReference/API_CreateMaintenanceWindow.html in the *AWS Systems Manager API Reference*.
 
     .LINK
         http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ssm-maintenancewindow.html

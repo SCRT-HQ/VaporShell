@@ -1,10 +1,11 @@
 function Add-VSIoTEventsDetectorModelSqs {
     <#
     .SYNOPSIS
-        Adds an AWS::IoTEvents::DetectorModel.Sqs resource property to the template
+        Adds an AWS::IoTEvents::DetectorModel.Sqs resource property to the template. Sends information about the detector model instance and the event which triggered the action to an Amazon SQS queue.
 
     .DESCRIPTION
-        Adds an AWS::IoTEvents::DetectorModel.Sqs resource property to the template
+        Adds an AWS::IoTEvents::DetectorModel.Sqs resource property to the template.
+Sends information about the detector model instance and the event which triggered the action to an Amazon SQS queue.
 
     .LINK
         http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iotevents-detectormodel-sqs.html

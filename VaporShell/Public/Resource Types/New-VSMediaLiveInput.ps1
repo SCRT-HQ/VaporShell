@@ -1,10 +1,12 @@
 function New-VSMediaLiveInput {
     <#
     .SYNOPSIS
-        Adds an AWS::MediaLive::Input resource to the template
+        Adds an AWS::MediaLive::Input resource to the template. The AWS::MediaLive::Input resource is a MediaLive resource type that creates an input.
 
     .DESCRIPTION
-        Adds an AWS::MediaLive::Input resource to the template
+        Adds an AWS::MediaLive::Input resource to the template. The AWS::MediaLive::Input resource is a MediaLive resource type that creates an input.
+
+A MediaLive input holds information that describes how the MediaLive channel is connected to the upstream system that is providing the source content that is to be transcoded.
 
     .LINK
         http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-medialive-input.html

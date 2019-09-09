@@ -1,10 +1,11 @@
 function Add-VSEMRInstanceGroupConfigEbsConfiguration {
     <#
     .SYNOPSIS
-        Adds an AWS::EMR::InstanceGroupConfig.EbsConfiguration resource property to the template
+        Adds an AWS::EMR::InstanceGroupConfig.EbsConfiguration resource property to the template. The Amazon EBS configuration of a cluster instance.
 
     .DESCRIPTION
-        Adds an AWS::EMR::InstanceGroupConfig.EbsConfiguration resource property to the template
+        Adds an AWS::EMR::InstanceGroupConfig.EbsConfiguration resource property to the template.
+The Amazon EBS configuration of a cluster instance.
 
     .LINK
         http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-emr-ebsconfiguration.html

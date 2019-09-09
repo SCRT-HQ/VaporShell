@@ -1,10 +1,11 @@
 function Add-VSIoTEventsDetectorModelSetVariable {
     <#
     .SYNOPSIS
-        Adds an AWS::IoTEvents::DetectorModel.SetVariable resource property to the template
+        Adds an AWS::IoTEvents::DetectorModel.SetVariable resource property to the template. Sets a variable to a specified value.
 
     .DESCRIPTION
-        Adds an AWS::IoTEvents::DetectorModel.SetVariable resource property to the template
+        Adds an AWS::IoTEvents::DetectorModel.SetVariable resource property to the template.
+Sets a variable to a specified value.
 
     .LINK
         http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iotevents-detectormodel-setvariable.html

@@ -1,10 +1,11 @@
 function Add-VSEventsRuleAwsVpcConfiguration {
     <#
     .SYNOPSIS
-        Adds an AWS::Events::Rule.AwsVpcConfiguration resource property to the template
+        Adds an AWS::Events::Rule.AwsVpcConfiguration resource property to the template. This structure specifies the VPC subnets and security groups for the task and whether a public IP address is to be used. This structure is relevant only for ECS tasks that use the awsvpc network mode.
 
     .DESCRIPTION
-        Adds an AWS::Events::Rule.AwsVpcConfiguration resource property to the template
+        Adds an AWS::Events::Rule.AwsVpcConfiguration resource property to the template.
+This structure specifies the VPC subnets and security groups for the task and whether a public IP address is to be used. This structure is relevant only for ECS tasks that use the awsvpc network mode.
 
     .LINK
         http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-events-rule-awsvpcconfiguration.html

@@ -1,10 +1,10 @@
 function New-VSIoT1ClickDevice {
     <#
     .SYNOPSIS
-        Adds an AWS::IoT1Click::Device resource to the template
+        Adds an AWS::IoT1Click::Device resource to the template. The AWS::IoT1Click::Device resource controls the enabled state of an AWS IoT 1-Click compatible device. For more information, see Device: https://docs.aws.amazon.com/iot-1-click/1.0/devices-apireference/devices-deviceid.html in the *AWS IoT 1-Click Devices API Reference*.
 
     .DESCRIPTION
-        Adds an AWS::IoT1Click::Device resource to the template
+        Adds an AWS::IoT1Click::Device resource to the template. The AWS::IoT1Click::Device resource controls the enabled state of an AWS IoT 1-Click compatible device. For more information, see Device: https://docs.aws.amazon.com/iot-1-click/1.0/devices-apireference/devices-deviceid.html in the *AWS IoT 1-Click Devices API Reference*.
 
     .LINK
         http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-iot1click-device.html

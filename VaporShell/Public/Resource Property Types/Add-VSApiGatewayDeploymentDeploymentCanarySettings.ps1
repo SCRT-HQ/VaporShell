@@ -1,10 +1,11 @@
 function Add-VSApiGatewayDeploymentDeploymentCanarySettings {
     <#
     .SYNOPSIS
-        Adds an AWS::ApiGateway::Deployment.DeploymentCanarySettings resource property to the template
+        Adds an AWS::ApiGateway::Deployment.DeploymentCanarySettings resource property to the template. The DeploymentCanarySettings property type specifies settings for the canary deployment.
 
     .DESCRIPTION
-        Adds an AWS::ApiGateway::Deployment.DeploymentCanarySettings resource property to the template
+        Adds an AWS::ApiGateway::Deployment.DeploymentCanarySettings resource property to the template.
+The DeploymentCanarySettings property type specifies settings for the canary deployment.
 
     .LINK
         http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-apigateway-deployment-deploymentcanarysettings.html

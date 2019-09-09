@@ -1,10 +1,11 @@
 function Add-VSKinesisAnalyticsV2ApplicationApplicationConfiguration {
     <#
     .SYNOPSIS
-        Adds an AWS::KinesisAnalyticsV2::Application.ApplicationConfiguration resource property to the template
+        Adds an AWS::KinesisAnalyticsV2::Application.ApplicationConfiguration resource property to the template. Specifies the creation parameters for an Amazon Kinesis Data Analytics application.
 
     .DESCRIPTION
-        Adds an AWS::KinesisAnalyticsV2::Application.ApplicationConfiguration resource property to the template
+        Adds an AWS::KinesisAnalyticsV2::Application.ApplicationConfiguration resource property to the template.
+Specifies the creation parameters for an Amazon Kinesis Data Analytics application.
 
     .LINK
         http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-kinesisanalyticsv2-application-applicationconfiguration.html

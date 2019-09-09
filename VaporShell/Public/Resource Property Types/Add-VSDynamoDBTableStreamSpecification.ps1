@@ -1,10 +1,11 @@
 function Add-VSDynamoDBTableStreamSpecification {
     <#
     .SYNOPSIS
-        Adds an AWS::DynamoDB::Table.StreamSpecification resource property to the template
+        Adds an AWS::DynamoDB::Table.StreamSpecification resource property to the template. Represents the DynamoDB Streams configuration for a table in DynamoDB.
 
     .DESCRIPTION
-        Adds an AWS::DynamoDB::Table.StreamSpecification resource property to the template
+        Adds an AWS::DynamoDB::Table.StreamSpecification resource property to the template.
+Represents the DynamoDB Streams configuration for a table in DynamoDB.
 
     .LINK
         http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-dynamodb-streamspecification.html

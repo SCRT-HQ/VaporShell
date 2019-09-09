@@ -1,10 +1,10 @@
 function New-VSWAFXssMatchSet {
     <#
     .SYNOPSIS
-        Adds an AWS::WAF::XssMatchSet resource to the template
+        Adds an AWS::WAF::XssMatchSet resource to the template. A complex type that contains XssMatchTuple objects, which specify the parts of web requests that you want AWS WAF to inspect for cross-site scripting attacks and, if you want AWS WAF to inspect a header, the name of the header. If a XssMatchSet contains more than one XssMatchTuple object, a request needs to include cross-site scripting attacks in only one of the specified parts of the request to be considered a match.
 
     .DESCRIPTION
-        Adds an AWS::WAF::XssMatchSet resource to the template
+        Adds an AWS::WAF::XssMatchSet resource to the template. A complex type that contains XssMatchTuple objects, which specify the parts of web requests that you want AWS WAF to inspect for cross-site scripting attacks and, if you want AWS WAF to inspect a header, the name of the header. If a XssMatchSet contains more than one XssMatchTuple object, a request needs to include cross-site scripting attacks in only one of the specified parts of the request to be considered a match.
 
     .LINK
         http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-waf-xssmatchset.html

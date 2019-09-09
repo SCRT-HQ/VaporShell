@@ -1,10 +1,11 @@
 function Add-VSCognitoUserPoolVerificationMessageTemplate {
     <#
     .SYNOPSIS
-        Adds an AWS::Cognito::UserPool.VerificationMessageTemplate resource property to the template
+        Adds an AWS::Cognito::UserPool.VerificationMessageTemplate resource property to the template. VerificationMessageTemplate is a property of the AWS::Cognito::UserPool: https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-cognito-userpool.html resource that defines the template for verification messages.
 
     .DESCRIPTION
-        Adds an AWS::Cognito::UserPool.VerificationMessageTemplate resource property to the template
+        Adds an AWS::Cognito::UserPool.VerificationMessageTemplate resource property to the template.
+VerificationMessageTemplate is a property of the AWS::Cognito::UserPool: https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-cognito-userpool.html resource that defines the template for verification messages.
 
     .LINK
         http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-cognito-userpool-verificationmessagetemplate.html

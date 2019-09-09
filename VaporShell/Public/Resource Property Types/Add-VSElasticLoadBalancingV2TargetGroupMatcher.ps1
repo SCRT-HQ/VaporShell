@@ -1,10 +1,11 @@
 function Add-VSElasticLoadBalancingV2TargetGroupMatcher {
     <#
     .SYNOPSIS
-        Adds an AWS::ElasticLoadBalancingV2::TargetGroup.Matcher resource property to the template
+        Adds an AWS::ElasticLoadBalancingV2::TargetGroup.Matcher resource property to the template. Specifies the HTTP codes that healthy targets must use when responding to an HTTP health check.
 
     .DESCRIPTION
-        Adds an AWS::ElasticLoadBalancingV2::TargetGroup.Matcher resource property to the template
+        Adds an AWS::ElasticLoadBalancingV2::TargetGroup.Matcher resource property to the template.
+Specifies the HTTP codes that healthy targets must use when responding to an HTTP health check.
 
     .LINK
         http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-elasticloadbalancingv2-targetgroup-matcher.html

@@ -1,10 +1,11 @@
 function Add-VSIoTAnalyticsDatasetOutputFileUriValue {
     <#
     .SYNOPSIS
-        Adds an AWS::IoTAnalytics::Dataset.OutputFileUriValue resource property to the template
+        Adds an AWS::IoTAnalytics::Dataset.OutputFileUriValue resource property to the template. The value of the variable as a structure that specifies an output file URI.
 
     .DESCRIPTION
-        Adds an AWS::IoTAnalytics::Dataset.OutputFileUriValue resource property to the template
+        Adds an AWS::IoTAnalytics::Dataset.OutputFileUriValue resource property to the template.
+The value of the variable as a structure that specifies an output file URI.
 
     .LINK
         http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iotanalytics-dataset-variable-outputfileurivalue.html

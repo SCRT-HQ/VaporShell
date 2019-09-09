@@ -1,10 +1,22 @@
 function New-VSAutoScalingPlansScalingPlan {
     <#
     .SYNOPSIS
-        Adds an AWS::AutoScalingPlans::ScalingPlan resource to the template
+        Adds an AWS::AutoScalingPlans::ScalingPlan resource to the template. The AWS::AutoScalingPlans::ScalingPlan resource defines a scaling plan that AWS Auto Scaling uses to scale the following application resources:
 
     .DESCRIPTION
-        Adds an AWS::AutoScalingPlans::ScalingPlan resource to the template
+        Adds an AWS::AutoScalingPlans::ScalingPlan resource to the template. The AWS::AutoScalingPlans::ScalingPlan resource defines a scaling plan that AWS Auto Scaling uses to scale the following application resources:
+
++ Amazon EC2 Auto Scaling groups
+
++ Amazon EC2 Spot Fleet requests
+
++ Amazon ECS services
+
++ Amazon DynamoDB tables and global secondary indexes
+
++ Amazon Aurora Replicas
+
+For more information, see the AWS Auto Scaling User Guide: https://docs.aws.amazon.com/autoscaling/plans/userguide/what-is-aws-auto-scaling.html.
 
     .LINK
         http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-autoscalingplans-scalingplan.html

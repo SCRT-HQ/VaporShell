@@ -1,10 +1,14 @@
 function New-VSElasticLoadBalancingLoadBalancer {
     <#
     .SYNOPSIS
-        Adds an AWS::ElasticLoadBalancing::LoadBalancer resource to the template
+        Adds an AWS::ElasticLoadBalancing::LoadBalancer resource to the template. Specifies a Classic Load Balancer.
 
     .DESCRIPTION
-        Adds an AWS::ElasticLoadBalancing::LoadBalancer resource to the template
+        Adds an AWS::ElasticLoadBalancing::LoadBalancer resource to the template. Specifies a Classic Load Balancer.
+
+You can specify the AvailabilityZones or Subnets property, but not both.
+
+If this resource has a public IP address and is also in a VPC that is defined in the same template, you must use the DependsOn attribute: https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-attribute-dependson.html to declare a dependency on the VPC-gateway attachment.
 
     .LINK
         http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-elb.html

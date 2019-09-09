@@ -1,10 +1,10 @@
 function New-VSEMRCluster {
     <#
     .SYNOPSIS
-        Adds an AWS::EMR::Cluster resource to the template
+        Adds an AWS::EMR::Cluster resource to the template. The AWS::EMR::Cluster resource specifies an Amazon EMR cluster. This cluster is a collection of Amazon EC2 instances that run open source big data frameworks and applications to process and analyze vast amounts of data. For more information, see the Amazon EMR Management Guide: https://docs.aws.amazon.com/emr/latest/ManagementGuide/.
 
     .DESCRIPTION
-        Adds an AWS::EMR::Cluster resource to the template
+        Adds an AWS::EMR::Cluster resource to the template. The AWS::EMR::Cluster resource specifies an Amazon EMR cluster. This cluster is a collection of Amazon EC2 instances that run open source big data frameworks and applications to process and analyze vast amounts of data. For more information, see the Amazon EMR Management Guide: https://docs.aws.amazon.com/emr/latest/ManagementGuide/.
 
     .LINK
         http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-elasticmapreduce-cluster.html

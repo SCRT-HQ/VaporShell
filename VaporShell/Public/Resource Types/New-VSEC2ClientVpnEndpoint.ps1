@@ -1,10 +1,10 @@
 function New-VSEC2ClientVpnEndpoint {
     <#
     .SYNOPSIS
-        Adds an AWS::EC2::ClientVpnEndpoint resource to the template
+        Adds an AWS::EC2::ClientVpnEndpoint resource to the template. Specifies a Client VPN endpoint. A Client VPN endpoint is the resource you create and configure to enable and manage client VPN sessions. It is the destination endpoint at which all client VPN sessions are terminated.
 
     .DESCRIPTION
-        Adds an AWS::EC2::ClientVpnEndpoint resource to the template
+        Adds an AWS::EC2::ClientVpnEndpoint resource to the template. Specifies a Client VPN endpoint. A Client VPN endpoint is the resource you create and configure to enable and manage client VPN sessions. It is the destination endpoint at which all client VPN sessions are terminated.
 
     .LINK
         http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ec2-clientvpnendpoint.html

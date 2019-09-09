@@ -1,10 +1,10 @@
 function New-VSApiGatewayGatewayResponse {
     <#
     .SYNOPSIS
-        Adds an AWS::ApiGateway::GatewayResponse resource to the template
+        Adds an AWS::ApiGateway::GatewayResponse resource to the template. The AWS::ApiGateway::GatewayResponse resource creates a gateway response for your API. For more information, see API Gateway Responses: https://docs.aws.amazon.com/apigateway/latest/developerguide/customize-gateway-responses.html#api-gateway-gatewayResponse-definition in the *API Gateway Developer Guide*.
 
     .DESCRIPTION
-        Adds an AWS::ApiGateway::GatewayResponse resource to the template
+        Adds an AWS::ApiGateway::GatewayResponse resource to the template. The AWS::ApiGateway::GatewayResponse resource creates a gateway response for your API. For more information, see API Gateway Responses: https://docs.aws.amazon.com/apigateway/latest/developerguide/customize-gateway-responses.html#api-gateway-gatewayResponse-definition in the *API Gateway Developer Guide*.
 
     .LINK
         http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-apigateway-gatewayresponse.html

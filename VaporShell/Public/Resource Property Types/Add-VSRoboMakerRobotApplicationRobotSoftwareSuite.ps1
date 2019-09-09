@@ -1,10 +1,11 @@
 function Add-VSRoboMakerRobotApplicationRobotSoftwareSuite {
     <#
     .SYNOPSIS
-        Adds an AWS::RoboMaker::RobotApplication.RobotSoftwareSuite resource property to the template
+        Adds an AWS::RoboMaker::RobotApplication.RobotSoftwareSuite resource property to the template. Information about a robot software suite.
 
     .DESCRIPTION
-        Adds an AWS::RoboMaker::RobotApplication.RobotSoftwareSuite resource property to the template
+        Adds an AWS::RoboMaker::RobotApplication.RobotSoftwareSuite resource property to the template.
+Information about a robot software suite.
 
     .LINK
         http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-robomaker-robotapplication-robotsoftwaresuite.html

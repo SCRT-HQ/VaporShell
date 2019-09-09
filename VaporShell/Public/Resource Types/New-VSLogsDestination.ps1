@@ -1,10 +1,10 @@
 function New-VSLogsDestination {
     <#
     .SYNOPSIS
-        Adds an AWS::Logs::Destination resource to the template
+        Adds an AWS::Logs::Destination resource to the template. The AWS::Logs::Destination resource specifies a CloudWatch Logs destination. A destination encapsulates a physical resource (such as an Amazon Kinesis data stream and enables you to subscribe that resource to a stream of log events.
 
     .DESCRIPTION
-        Adds an AWS::Logs::Destination resource to the template
+        Adds an AWS::Logs::Destination resource to the template. The AWS::Logs::Destination resource specifies a CloudWatch Logs destination. A destination encapsulates a physical resource (such as an Amazon Kinesis data stream and enables you to subscribe that resource to a stream of log events.
 
     .LINK
         http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-logs-destination.html

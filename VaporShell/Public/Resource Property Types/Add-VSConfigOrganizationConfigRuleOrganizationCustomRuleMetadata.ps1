@@ -1,10 +1,11 @@
 function Add-VSConfigOrganizationConfigRuleOrganizationCustomRuleMetadata {
     <#
     .SYNOPSIS
-        Adds an AWS::Config::OrganizationConfigRule.OrganizationCustomRuleMetadata resource property to the template
+        Adds an AWS::Config::OrganizationConfigRule.OrganizationCustomRuleMetadata resource property to the template. An object that specifies organization custom rule metadata such as resource type, resource ID of AWS resource, Lamdba function ARN, and organization trigger types that trigger AWS Config to evaluate your AWS resources against a rule. It also provides the frequency with which you want AWS Config to run evaluations for the rule if the trigger type is periodic.
 
     .DESCRIPTION
-        Adds an AWS::Config::OrganizationConfigRule.OrganizationCustomRuleMetadata resource property to the template
+        Adds an AWS::Config::OrganizationConfigRule.OrganizationCustomRuleMetadata resource property to the template.
+An object that specifies organization custom rule metadata such as resource type, resource ID of AWS resource, Lamdba function ARN, and organization trigger types that trigger AWS Config to evaluate your AWS resources against a rule. It also provides the frequency with which you want AWS Config to run evaluations for the rule if the trigger type is periodic.
 
     .LINK
         http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-config-organizationconfigrule-organizationcustomrulemetadata.html

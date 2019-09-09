@@ -1,10 +1,16 @@
 function New-VSOpsWorksLayer {
     <#
     .SYNOPSIS
-        Adds an AWS::OpsWorks::Layer resource to the template
+        Adds an AWS::OpsWorks::Layer resource to the template. Creates a layer. For more information, see How to Create a Layer: https://docs.aws.amazon.com/opsworks/latest/userguide/workinglayers-basics-create.html.
 
     .DESCRIPTION
-        Adds an AWS::OpsWorks::Layer resource to the template
+        Adds an AWS::OpsWorks::Layer resource to the template. Creates a layer. For more information, see How to Create a Layer: https://docs.aws.amazon.com/opsworks/latest/userguide/workinglayers-basics-create.html.
+
+**Note**
+
+You should use **CreateLayer** for noncustom layer types such as PHP App Server only if the stack does not have an existing layer of that type. A stack can have at most one instance of each noncustom layer; if you attempt to create a second instance, **CreateLayer** fails. A stack can have an arbitrary number of custom layers, so you can call **CreateLayer** as many times as you like for that layer type.
+
+**Required Permissions**: To use this action, an IAM user must have a Manage permissions level for the stack, or an attached policy that explicitly grants permissions. For more information on user permissions, see Managing User Permissions: https://docs.aws.amazon.com/opsworks/latest/userguide/opsworks-security-users.html.
 
     .LINK
         http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-opsworks-layer.html

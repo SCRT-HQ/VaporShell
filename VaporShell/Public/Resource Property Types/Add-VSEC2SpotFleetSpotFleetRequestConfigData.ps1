@@ -1,10 +1,13 @@
 function Add-VSEC2SpotFleetSpotFleetRequestConfigData {
     <#
     .SYNOPSIS
-        Adds an AWS::EC2::SpotFleet.SpotFleetRequestConfigData resource property to the template
+        Adds an AWS::EC2::SpotFleet.SpotFleetRequestConfigData resource property to the template. Specifies the configuration of a Spot Fleet request. For more information, see How Spot Fleet Works: https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/spot-fleet.html in the *Amazon EC2 User Guide for Linux Instances*.
 
     .DESCRIPTION
-        Adds an AWS::EC2::SpotFleet.SpotFleetRequestConfigData resource property to the template
+        Adds an AWS::EC2::SpotFleet.SpotFleetRequestConfigData resource property to the template.
+Specifies the configuration of a Spot Fleet request. For more information, see How Spot Fleet Works: https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/spot-fleet.html in the *Amazon EC2 User Guide for Linux Instances*.
+
+You must specify either LaunchSpecifications or LaunchTemplateConfigs.
 
     .LINK
         http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-spotfleet-spotfleetrequestconfigdata.html

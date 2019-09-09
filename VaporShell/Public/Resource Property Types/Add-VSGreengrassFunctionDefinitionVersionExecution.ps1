@@ -1,10 +1,13 @@
 function Add-VSGreengrassFunctionDefinitionVersionExecution {
     <#
     .SYNOPSIS
-        Adds an AWS::Greengrass::FunctionDefinitionVersion.Execution resource property to the template
+        Adds an AWS::Greengrass::FunctionDefinitionVersion.Execution resource property to the template. <a name="aws-properties-greengrass-functiondefinitionversion-execution-description"></a>Configuration settings for the Lambda execution environment on the AWS IoT Greengrass core.
 
     .DESCRIPTION
-        Adds an AWS::Greengrass::FunctionDefinitionVersion.Execution resource property to the template
+        Adds an AWS::Greengrass::FunctionDefinitionVersion.Execution resource property to the template.
+<a name="aws-properties-greengrass-functiondefinitionversion-execution-description"></a>Configuration settings for the Lambda execution environment on the AWS IoT Greengrass core.
+
+<a name="aws-properties-greengrass-functiondefinitionversion-execution-inheritance"></a> In an AWS CloudFormation template, Execution is a property of the  DefaultConfig : https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-greengrass-functiondefinitionversion-defaultconfig.html property type for a function definition version and the  Environment : https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-greengrass-functiondefinitionversion-environment.html property type for a function.
 
     .LINK
         http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-greengrass-functiondefinitionversion-execution.html

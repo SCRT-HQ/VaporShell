@@ -1,10 +1,14 @@
 function New-VSServiceCatalogCloudFormationProvisionedProduct {
     <#
     .SYNOPSIS
-        Adds an AWS::ServiceCatalog::CloudFormationProvisionedProduct resource to the template
+        Adds an AWS::ServiceCatalog::CloudFormationProvisionedProduct resource to the template. Provisions the specified product.
 
     .DESCRIPTION
-        Adds an AWS::ServiceCatalog::CloudFormationProvisionedProduct resource to the template
+        Adds an AWS::ServiceCatalog::CloudFormationProvisionedProduct resource to the template. Provisions the specified product.
+
+A provisioned product is a resourced instance of a product. For example, provisioning a product based on a CloudFormation template launches a CloudFormation stack and its underlying resources. You can check the status of this request using DescribeRecord: https://docs.aws.amazon.com/servicecatalog/latest/dg/API_DescribeRecord.html.
+
+If the request contains a tag key with an empty list of values, there is a tag conflict for that key. Do not include conflicted keys as tags, or this causes the error "Parameter validation failed: Missing required parameter in Tags*N*]:*Value*".
 
     .LINK
         http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-servicecatalog-cloudformationprovisionedproduct.html

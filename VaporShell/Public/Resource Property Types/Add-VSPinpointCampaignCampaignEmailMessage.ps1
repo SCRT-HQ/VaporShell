@@ -1,10 +1,11 @@
 function Add-VSPinpointCampaignCampaignEmailMessage {
     <#
     .SYNOPSIS
-        Adds an AWS::Pinpoint::Campaign.CampaignEmailMessage resource property to the template
+        Adds an AWS::Pinpoint::Campaign.CampaignEmailMessage resource property to the template. Specifies the content and "From" address for an email message that's sent to recipients of a campaign.
 
     .DESCRIPTION
-        Adds an AWS::Pinpoint::Campaign.CampaignEmailMessage resource property to the template
+        Adds an AWS::Pinpoint::Campaign.CampaignEmailMessage resource property to the template.
+Specifies the content and "From" address for an email message that's sent to recipients of a campaign.
 
     .LINK
         http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-pinpoint-campaign-campaignemailmessage.html

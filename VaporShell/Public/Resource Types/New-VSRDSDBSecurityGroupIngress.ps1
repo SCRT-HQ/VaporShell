@@ -1,10 +1,14 @@
 function New-VSRDSDBSecurityGroupIngress {
     <#
     .SYNOPSIS
-        Adds an AWS::RDS::DBSecurityGroupIngress resource to the template
+        Adds an AWS::RDS::DBSecurityGroupIngress resource to the template. The AWS::RDS::DBSecurityGroupIngress resource enables ingress to a DB security group using one of two forms of authorization. First, you can add EC2 or VPC security groups to the DB security group if the application using the database is running on EC2 or VPC instances. Second, IP ranges are available if the application accessing your database is running on the Internet.
 
     .DESCRIPTION
-        Adds an AWS::RDS::DBSecurityGroupIngress resource to the template
+        Adds an AWS::RDS::DBSecurityGroupIngress resource to the template. The AWS::RDS::DBSecurityGroupIngress resource enables ingress to a DB security group using one of two forms of authorization. First, you can add EC2 or VPC security groups to the DB security group if the application using the database is running on EC2 or VPC instances. Second, IP ranges are available if the application accessing your database is running on the Internet.
+
+This type supports updates. For more information about updating stacks, see AWS CloudFormation Stacks Updates: https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks.html.
+
+For details about the settings for DB security group ingress, see AuthorizeDBSecurityGroupIngress: https://docs.aws.amazon.com/AmazonRDS/latest/APIReference/API_AuthorizeDBSecurityGroupIngress.html.
 
     .LINK
         http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-rds-security-group-ingress.html

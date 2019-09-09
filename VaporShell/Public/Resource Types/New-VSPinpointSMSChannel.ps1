@@ -1,10 +1,12 @@
 function New-VSPinpointSMSChannel {
     <#
     .SYNOPSIS
-        Adds an AWS::Pinpoint::SMSChannel resource to the template
+        Adds an AWS::Pinpoint::SMSChannel resource to the template. A channel is a type of platform that you can deliver messages to. To send an SMS text message, you send the message through the SMS channel. Before you use Amazon Pinpoint to send text messages, you have enable the SMS channel for an Amazon Pinpoint application.
 
     .DESCRIPTION
-        Adds an AWS::Pinpoint::SMSChannel resource to the template
+        Adds an AWS::Pinpoint::SMSChannel resource to the template. A channel is a type of platform that you can deliver messages to. To send an SMS text message, you send the message through the SMS channel. Before you use Amazon Pinpoint to send text messages, you have enable the SMS channel for an Amazon Pinpoint application.
+
+The SMS Channel resource represents the status, sender ID, and other settings for the SMS channel for a specific application. You can use this resource to retrieve information about, update, or disable (delete the SMS channel for an application.
 
     .LINK
         http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-pinpoint-smschannel.html

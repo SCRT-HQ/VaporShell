@@ -1,10 +1,11 @@
 function Add-VSCodeCommitRepositoryRepositoryTrigger {
     <#
     .SYNOPSIS
-        Adds an AWS::CodeCommit::Repository.RepositoryTrigger resource property to the template
+        Adds an AWS::CodeCommit::Repository.RepositoryTrigger resource property to the template. Information about a trigger for a repository.
 
     .DESCRIPTION
-        Adds an AWS::CodeCommit::Repository.RepositoryTrigger resource property to the template
+        Adds an AWS::CodeCommit::Repository.RepositoryTrigger resource property to the template.
+Information about a trigger for a repository.
 
     .LINK
         http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-codecommit-repository-repositorytrigger.html

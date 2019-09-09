@@ -1,10 +1,16 @@
 function New-VSEC2EIPAssociation {
     <#
     .SYNOPSIS
-        Adds an AWS::EC2::EIPAssociation resource to the template
+        Adds an AWS::EC2::EIPAssociation resource to the template. Associates an Elastic IP address with an instance or a network interface. Before you can use an Elastic IP address, you must allocate it to your account.
 
     .DESCRIPTION
-        Adds an AWS::EC2::EIPAssociation resource to the template
+        Adds an AWS::EC2::EIPAssociation resource to the template. Associates an Elastic IP address with an instance or a network interface. Before you can use an Elastic IP address, you must allocate it to your account.
+
+An Elastic IP address is for use in either the EC2-Classic platform or in a VPC. For more information, see Elastic IP Addresses: https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/elastic-ip-addresses-eip.html in the *Amazon Elastic Compute Cloud User Guide*.
+
+EC2-Classic, VPC in an EC2-VPC-only account] If the Elastic IP address is already associated with a different instance, it is disassociated from that instance and associated with the specified instance. If you associate an Elastic IP address with an instance that has an existing Elastic IP address, the existing address is disassociated from the instance, but remains allocated to your account.
+
+VPC in an EC2-Classic account] If you don't specify a private IP address, the Elastic IP address is associated with the primary IP address. If the Elastic IP address is already associated with a different instance or a network interface, you get an error unless you allow reassociation. You cannot associate an Elastic IP address with an instance or network interface that has an existing Elastic IP address.
 
     .LINK
         http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-eip-association.html

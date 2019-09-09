@@ -1,10 +1,10 @@
 function New-VSSNSTopicPolicy {
     <#
     .SYNOPSIS
-        Adds an AWS::SNS::TopicPolicy resource to the template
+        Adds an AWS::SNS::TopicPolicy resource to the template. The AWS::SNS::TopicPolicy resource associates Amazon SNS topics with a policy. For an example snippet, see Declaring an Amazon SNS Policy: https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/quickref-iam.html#scenario-sns-policy in the *AWS CloudFormation User Guide*.
 
     .DESCRIPTION
-        Adds an AWS::SNS::TopicPolicy resource to the template
+        Adds an AWS::SNS::TopicPolicy resource to the template. The AWS::SNS::TopicPolicy resource associates Amazon SNS topics with a policy. For an example snippet, see Declaring an Amazon SNS Policy: https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/quickref-iam.html#scenario-sns-policy in the *AWS CloudFormation User Guide*.
 
     .LINK
         http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-sns-policy.html

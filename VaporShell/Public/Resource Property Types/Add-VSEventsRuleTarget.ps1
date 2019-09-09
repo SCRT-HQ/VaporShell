@@ -1,10 +1,13 @@
 function Add-VSEventsRuleTarget {
     <#
     .SYNOPSIS
-        Adds an AWS::Events::Rule.Target resource property to the template
+        Adds an AWS::Events::Rule.Target resource property to the template. The Target property type specifies a target, such as an AWS Lambda function or an Amazon Kinesis data stream, that CloudWatch Events invokes when a rule is triggered.
 
     .DESCRIPTION
-        Adds an AWS::Events::Rule.Target resource property to the template
+        Adds an AWS::Events::Rule.Target resource property to the template.
+The Target property type specifies a target, such as an AWS Lambda function or an Amazon Kinesis data stream, that CloudWatch Events invokes when a rule is triggered.
+
+Targets property of the AWS::Events::Rule: https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-events-rule.html resource contains a list of one or more Target property types.
 
     .LINK
         http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-events-rule-target.html

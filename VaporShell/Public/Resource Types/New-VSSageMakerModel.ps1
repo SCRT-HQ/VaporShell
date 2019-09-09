@@ -1,10 +1,10 @@
 function New-VSSageMakerModel {
     <#
     .SYNOPSIS
-        Adds an AWS::SageMaker::Model resource to the template
+        Adds an AWS::SageMaker::Model resource to the template. The AWS::SageMaker::Model resource to create a model to host at an Amazon SageMaker endpoint. For more information, see Deploying a Model on Amazon SageMaker Hosting Services: https://docs.aws.amazon.com/sagemaker/latest/dg/how-it-works-hosting.html in the *Amazon SageMaker Developer Guide*.
 
     .DESCRIPTION
-        Adds an AWS::SageMaker::Model resource to the template
+        Adds an AWS::SageMaker::Model resource to the template. The AWS::SageMaker::Model resource to create a model to host at an Amazon SageMaker endpoint. For more information, see Deploying a Model on Amazon SageMaker Hosting Services: https://docs.aws.amazon.com/sagemaker/latest/dg/how-it-works-hosting.html in the *Amazon SageMaker Developer Guide*.
 
     .LINK
         http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-sagemaker-model.html

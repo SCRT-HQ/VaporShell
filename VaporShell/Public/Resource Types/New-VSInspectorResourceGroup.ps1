@@ -1,10 +1,10 @@
 function New-VSInspectorResourceGroup {
     <#
     .SYNOPSIS
-        Adds an AWS::Inspector::ResourceGroup resource to the template
+        Adds an AWS::Inspector::ResourceGroup resource to the template. The AWS::Inspector::ResourceGroup resource is used to create Amazon Inspector resource groups. A resource group defines a set of tags that, when queried, identify the AWS resources that make up the assessment target.
 
     .DESCRIPTION
-        Adds an AWS::Inspector::ResourceGroup resource to the template
+        Adds an AWS::Inspector::ResourceGroup resource to the template. The AWS::Inspector::ResourceGroup resource is used to create Amazon Inspector resource groups. A resource group defines a set of tags that, when queried, identify the AWS resources that make up the assessment target.
 
     .LINK
         http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-inspector-resourcegroup.html

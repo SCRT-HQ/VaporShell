@@ -1,10 +1,11 @@
 function Add-VSEC2SpotFleetSpotPlacement {
     <#
     .SYNOPSIS
-        Adds an AWS::EC2::SpotFleet.SpotPlacement resource property to the template
+        Adds an AWS::EC2::SpotFleet.SpotPlacement resource property to the template. Describes Spot Instance placement.
 
     .DESCRIPTION
-        Adds an AWS::EC2::SpotFleet.SpotPlacement resource property to the template
+        Adds an AWS::EC2::SpotFleet.SpotPlacement resource property to the template.
+Describes Spot Instance placement.
 
     .LINK
         http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-spotfleet-spotfleetrequestconfigdata-launchspecifications-placement.html

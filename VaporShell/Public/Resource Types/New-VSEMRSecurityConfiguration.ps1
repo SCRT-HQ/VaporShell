@@ -1,10 +1,10 @@
 function New-VSEMRSecurityConfiguration {
     <#
     .SYNOPSIS
-        Adds an AWS::EMR::SecurityConfiguration resource to the template
+        Adds an AWS::EMR::SecurityConfiguration resource to the template. Use a SecurityConfiguration resource to configure data encryption, Kerberos authentication (available in Amazon EMR release version 5.10.0 and later, and Amazon S3 authorization for EMRFS (available in EMR 5.10.0 and later. You can re-use a security configuration for any number of clusters in your account. For more information and example security configuration JSON objects, see Create a Security Configuration: https://docs.aws.amazon.com/emr/latest/ManagementGuide/emr-create-security-configuration.html in the *Amazon EMR Management Guide*.
 
     .DESCRIPTION
-        Adds an AWS::EMR::SecurityConfiguration resource to the template
+        Adds an AWS::EMR::SecurityConfiguration resource to the template. Use a SecurityConfiguration resource to configure data encryption, Kerberos authentication (available in Amazon EMR release version 5.10.0 and later, and Amazon S3 authorization for EMRFS (available in EMR 5.10.0 and later. You can re-use a security configuration for any number of clusters in your account. For more information and example security configuration JSON objects, see Create a Security Configuration: https://docs.aws.amazon.com/emr/latest/ManagementGuide/emr-create-security-configuration.html in the *Amazon EMR Management Guide*.
 
     .LINK
         http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-emr-securityconfiguration.html

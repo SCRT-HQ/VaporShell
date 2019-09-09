@@ -1,10 +1,10 @@
 function New-VSCloudTrailTrail {
     <#
     .SYNOPSIS
-        Adds an AWS::CloudTrail::Trail resource to the template
+        Adds an AWS::CloudTrail::Trail resource to the template. Creates a trail that specifies the settings for delivery of log data to an Amazon S3 bucket. A maximum of five trails can exist in a region, irrespective of the region in which they were created.
 
     .DESCRIPTION
-        Adds an AWS::CloudTrail::Trail resource to the template
+        Adds an AWS::CloudTrail::Trail resource to the template. Creates a trail that specifies the settings for delivery of log data to an Amazon S3 bucket. A maximum of five trails can exist in a region, irrespective of the region in which they were created.
 
     .LINK
         http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-cloudtrail-trail.html

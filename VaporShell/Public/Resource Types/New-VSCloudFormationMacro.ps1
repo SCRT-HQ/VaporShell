@@ -1,10 +1,10 @@
 function New-VSCloudFormationMacro {
     <#
     .SYNOPSIS
-        Adds an AWS::CloudFormation::Macro resource to the template
+        Adds an AWS::CloudFormation::Macro resource to the template. The AWS::CloudFormation::Macro resource is an CloudFormation resource type that creates an CloudFormation macro to perform custom processing on CloudFormation templates. For more information, see Using AWS CloudFormation Macros to Perform Custom Processing on Templates: https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/template-macros.html.
 
     .DESCRIPTION
-        Adds an AWS::CloudFormation::Macro resource to the template
+        Adds an AWS::CloudFormation::Macro resource to the template. The AWS::CloudFormation::Macro resource is an CloudFormation resource type that creates an CloudFormation macro to perform custom processing on CloudFormation templates. For more information, see Using AWS CloudFormation Macros to Perform Custom Processing on Templates: https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/template-macros.html.
 
     .LINK
         http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-cloudformation-macro.html

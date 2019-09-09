@@ -1,10 +1,15 @@
 function Add-VSEMRInstanceFleetConfigConfiguration {
     <#
     .SYNOPSIS
-        Adds an AWS::EMR::InstanceFleetConfig.Configuration resource property to the template
+        Adds an AWS::EMR::InstanceFleetConfig.Configuration resource property to the template. **Note**
 
     .DESCRIPTION
-        Adds an AWS::EMR::InstanceFleetConfig.Configuration resource property to the template
+        Adds an AWS::EMR::InstanceFleetConfig.Configuration resource property to the template.
+**Note**
+
+Used only with Amazon EMR release 4.0 and later.
+
+Configuration specifies optional configurations for customizing open-source big data applications and environment parameters. A configuration consists of a classification, properties, and optional nested configurations. A classification refers to an application-specific configuration file. Properties are the settings you want to change in that file. For more information, see Configuring Applications: https://docs.aws.amazon.com/emr/latest/ReleaseGuide/emr-configure-apps.html in the *Amazon EMR Release Guide*.
 
     .LINK
         http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-elasticmapreduce-instancefleetconfig-configuration.html

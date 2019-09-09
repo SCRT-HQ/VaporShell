@@ -1,10 +1,11 @@
 function Add-VSRedshiftClusterLoggingProperties {
     <#
     .SYNOPSIS
-        Adds an AWS::Redshift::Cluster.LoggingProperties resource property to the template
+        Adds an AWS::Redshift::Cluster.LoggingProperties resource property to the template. Specifies logging information, such as queries and connection attempts, for the specified Amazon Redshift cluster.
 
     .DESCRIPTION
-        Adds an AWS::Redshift::Cluster.LoggingProperties resource property to the template
+        Adds an AWS::Redshift::Cluster.LoggingProperties resource property to the template.
+Specifies logging information, such as queries and connection attempts, for the specified Amazon Redshift cluster.
 
     .LINK
         http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-redshift-cluster-loggingproperties.html

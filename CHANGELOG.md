@@ -2,6 +2,7 @@
 
 <!-- TOC -->
 
+* [2.9.1 - 2019-09-09](#291---2019-09-09)
 * [2.9.0 - 2019-09-08](#290---2019-09-08)
 * [2.8.1 - 2019-08-24](#281---2019-08-24)
 * [2.8.0 - 2019-08-08](#280---2019-08-08)
@@ -46,6 +47,11 @@
 * [0.7.02](#0702)
 
 <!-- /TOC -->
+
+## 2.9.1 - 2019-09-09
+
+* [Issue #61](https://github.com/scrthq/VaporShell/issues/61) -- _Thanks, [@ScriptAutomate](https://github.com/ScriptAutomate)!_
+  * Updated Synopsis and Description for all Resource Type and Property Type functions to include the information from the parsed documentation.
 
 ## 2.9.0 - 2019-09-08
 

@@ -1,10 +1,10 @@
 function New-VSIoTTopicRule {
     <#
     .SYNOPSIS
-        Adds an AWS::IoT::TopicRule resource to the template
+        Adds an AWS::IoT::TopicRule resource to the template. Use the AWS::IoT::TopicRule resource to declare an AWS IoT rule. For information about working with AWS IoT rules, see Rules for AWS IoT: https://docs.aws.amazon.com/iot/latest/developerguide/iot-rules.html in the *AWS IoT Developer Guide*.
 
     .DESCRIPTION
-        Adds an AWS::IoT::TopicRule resource to the template
+        Adds an AWS::IoT::TopicRule resource to the template. Use the AWS::IoT::TopicRule resource to declare an AWS IoT rule. For information about working with AWS IoT rules, see Rules for AWS IoT: https://docs.aws.amazon.com/iot/latest/developerguide/iot-rules.html in the *AWS IoT Developer Guide*.
 
     .LINK
         http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-iot-topicrule.html

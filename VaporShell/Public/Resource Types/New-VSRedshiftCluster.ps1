@@ -1,10 +1,12 @@
 function New-VSRedshiftCluster {
     <#
     .SYNOPSIS
-        Adds an AWS::Redshift::Cluster resource to the template
+        Adds an AWS::Redshift::Cluster resource to the template. Specifies a cluster. A *cluster* is a fully managed data warehouse that consists of a set of compute nodes.
 
     .DESCRIPTION
-        Adds an AWS::Redshift::Cluster resource to the template
+        Adds an AWS::Redshift::Cluster resource to the template. Specifies a cluster. A *cluster* is a fully managed data warehouse that consists of a set of compute nodes.
+
+To create a cluster in Virtual Private Cloud (VPC, you must provide a cluster subnet group name. The cluster subnet group identifies the subnets of your VPC that Amazon Redshift uses when creating the cluster. For more information about managing clusters, go to Amazon Redshift Clusters: https://docs.aws.amazon.com/redshift/latest/mgmt/working-with-clusters.html in the *Amazon Redshift Cluster Management Guide*.
 
     .LINK
         http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-redshift-cluster.html

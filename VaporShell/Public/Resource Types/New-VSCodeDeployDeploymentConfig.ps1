@@ -1,10 +1,10 @@
 function New-VSCodeDeployDeploymentConfig {
     <#
     .SYNOPSIS
-        Adds an AWS::CodeDeploy::DeploymentConfig resource to the template
+        Adds an AWS::CodeDeploy::DeploymentConfig resource to the template. The AWS::CodeDeploy::DeploymentConfig resource creates a set of deployment rules, deployment success conditions, and deployment failure conditions that AWS CodeDeploy uses during a deployment. The deployment configuration specifies, through the use of a MinimumHealthyHosts value, the number or percentage of instances that must remain available at any time during a deployment.
 
     .DESCRIPTION
-        Adds an AWS::CodeDeploy::DeploymentConfig resource to the template
+        Adds an AWS::CodeDeploy::DeploymentConfig resource to the template. The AWS::CodeDeploy::DeploymentConfig resource creates a set of deployment rules, deployment success conditions, and deployment failure conditions that AWS CodeDeploy uses during a deployment. The deployment configuration specifies, through the use of a MinimumHealthyHosts value, the number or percentage of instances that must remain available at any time during a deployment.
 
     .LINK
         http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-codedeploy-deploymentconfig.html

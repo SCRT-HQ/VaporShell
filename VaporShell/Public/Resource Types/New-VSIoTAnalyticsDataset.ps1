@@ -1,10 +1,10 @@
 function New-VSIoTAnalyticsDataset {
     <#
     .SYNOPSIS
-        Adds an AWS::IoTAnalytics::Dataset resource to the template
+        Adds an AWS::IoTAnalytics::Dataset resource to the template. The AWS::IoTAnalytics::Dataset resource stores data retrieved from a data store by applying a "queryAction" (an SQL query or a "containerAction" (executing a containerized application. The data set can be populated manually by calling "CreateDatasetContent" or automatically according to a "trigger" you specify. For more information, see  How to Use AWS IoT Analytics: https://docs.aws.amazon.com/iotanalytics/latest/userguide/welcome.html#aws-iot-analytics-how in the *AWS IoT Analytics User Guide*.
 
     .DESCRIPTION
-        Adds an AWS::IoTAnalytics::Dataset resource to the template
+        Adds an AWS::IoTAnalytics::Dataset resource to the template. The AWS::IoTAnalytics::Dataset resource stores data retrieved from a data store by applying a "queryAction" (an SQL query or a "containerAction" (executing a containerized application. The data set can be populated manually by calling "CreateDatasetContent" or automatically according to a "trigger" you specify. For more information, see  How to Use AWS IoT Analytics: https://docs.aws.amazon.com/iotanalytics/latest/userguide/welcome.html#aws-iot-analytics-how in the *AWS IoT Analytics User Guide*.
 
     .LINK
         http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-iotanalytics-dataset.html

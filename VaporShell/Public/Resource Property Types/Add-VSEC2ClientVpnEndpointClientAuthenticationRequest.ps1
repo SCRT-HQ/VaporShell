@@ -1,10 +1,11 @@
 function Add-VSEC2ClientVpnEndpointClientAuthenticationRequest {
     <#
     .SYNOPSIS
-        Adds an AWS::EC2::ClientVpnEndpoint.ClientAuthenticationRequest resource property to the template
+        Adds an AWS::EC2::ClientVpnEndpoint.ClientAuthenticationRequest resource property to the template. Describes the authentication method to be used by a Client VPN endpoint. Client VPN supports Active Directory and mutual authentication. For more information, see Authentication: https://docs.aws.amazon.com/vpn/latest/clientvpn-admin/authentication-authrization.html#client-authentication in the *AWS Client VPN Administrator Guide*.
 
     .DESCRIPTION
-        Adds an AWS::EC2::ClientVpnEndpoint.ClientAuthenticationRequest resource property to the template
+        Adds an AWS::EC2::ClientVpnEndpoint.ClientAuthenticationRequest resource property to the template.
+Describes the authentication method to be used by a Client VPN endpoint. Client VPN supports Active Directory and mutual authentication. For more information, see Authentication: https://docs.aws.amazon.com/vpn/latest/clientvpn-admin/authentication-authrization.html#client-authentication in the *AWS Client VPN Administrator Guide*.
 
     .LINK
         http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-clientvpnendpoint-clientauthenticationrequest.html

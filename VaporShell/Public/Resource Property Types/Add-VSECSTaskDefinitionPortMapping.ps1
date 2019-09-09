@@ -1,10 +1,15 @@
 function Add-VSECSTaskDefinitionPortMapping {
     <#
     .SYNOPSIS
-        Adds an AWS::ECS::TaskDefinition.PortMapping resource property to the template
+        Adds an AWS::ECS::TaskDefinition.PortMapping resource property to the template. The PortMapping property specifies a port mapping. Port mappings allow containers to access ports on the host container instance to send or receive traffic. Port mappings are specified as part of the container definition.
 
     .DESCRIPTION
-        Adds an AWS::ECS::TaskDefinition.PortMapping resource property to the template
+        Adds an AWS::ECS::TaskDefinition.PortMapping resource property to the template.
+The PortMapping property specifies a port mapping. Port mappings allow containers to access ports on the host container instance to send or receive traffic. Port mappings are specified as part of the container definition.
+
+If you are using containers in a task with the awsvpc or host network mode, exposed ports should be specified using containerPort. The hostPort can be left blank or it must be the same value as the containerPort.
+
+After a task reaches the RUNNING status, manual and automatic host and container port assignments are visible in the networkBindings section of DescribeTasks: https://docs.aws.amazon.com/AmazonECS/latest/APIReference/API_DescribeTasks.html API responses.
 
     .LINK
         http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ecs-taskdefinition-containerdefinitions-portmappings.html

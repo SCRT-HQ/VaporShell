@@ -1,10 +1,13 @@
 function Add-VSMediaLiveChannelScte20SourceSettings {
     <#
     .SYNOPSIS
-        Adds an AWS::MediaLive::Channel.Scte20SourceSettings resource property to the template
+        Adds an AWS::MediaLive::Channel.Scte20SourceSettings resource property to the template. Information about the SCTE-20 captions to extract from the input.
 
     .DESCRIPTION
-        Adds an AWS::MediaLive::Channel.Scte20SourceSettings resource property to the template
+        Adds an AWS::MediaLive::Channel.Scte20SourceSettings resource property to the template.
+Information about the SCTE-20 captions to extract from the input.
+
+The parent of this entity is CaptionSelectorSettings.
 
     .LINK
         http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-medialive-channel-scte20sourcesettings.html

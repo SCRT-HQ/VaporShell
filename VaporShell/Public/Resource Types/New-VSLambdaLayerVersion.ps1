@@ -1,10 +1,10 @@
 function New-VSLambdaLayerVersion {
     <#
     .SYNOPSIS
-        Adds an AWS::Lambda::LayerVersion resource to the template
+        Adds an AWS::Lambda::LayerVersion resource to the template. The AWS::Lambda::LayerVersion resource creates an AWS Lambda layer: https://docs.aws.amazon.com/lambda/latest/dg/configuration-layers.html from a ZIP archive.
 
     .DESCRIPTION
-        Adds an AWS::Lambda::LayerVersion resource to the template
+        Adds an AWS::Lambda::LayerVersion resource to the template. The AWS::Lambda::LayerVersion resource creates an AWS Lambda layer: https://docs.aws.amazon.com/lambda/latest/dg/configuration-layers.html from a ZIP archive.
 
     .LINK
         http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-lambda-layerversion.html

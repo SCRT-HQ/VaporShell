@@ -1,10 +1,10 @@
 function New-VSInspectorAssessmentTemplate {
     <#
     .SYNOPSIS
-        Adds an AWS::Inspector::AssessmentTemplate resource to the template
+        Adds an AWS::Inspector::AssessmentTemplate resource to the template. The AWS::Inspector::AssessmentTemplate resource creates an Amazon Inspector assessment template, which specifies the Inspector assessment targets that will be evaluated by an assessment run and its related configurations.
 
     .DESCRIPTION
-        Adds an AWS::Inspector::AssessmentTemplate resource to the template
+        Adds an AWS::Inspector::AssessmentTemplate resource to the template. The AWS::Inspector::AssessmentTemplate resource creates an Amazon Inspector assessment template, which specifies the Inspector assessment targets that will be evaluated by an assessment run and its related configurations.
 
     .LINK
         http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-inspector-assessmenttemplate.html

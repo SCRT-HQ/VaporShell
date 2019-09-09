@@ -1,10 +1,11 @@
 function Add-VSBackupBackupPlanLifecycleResourceType {
     <#
     .SYNOPSIS
-        Adds an AWS::Backup::BackupPlan.LifecycleResourceType resource property to the template
+        Adds an AWS::Backup::BackupPlan.LifecycleResourceType resource property to the template. Specifies an object containing an array of Transition objects that determine how long in days before a recovery point transitions to cold storage or is deleted.
 
     .DESCRIPTION
-        Adds an AWS::Backup::BackupPlan.LifecycleResourceType resource property to the template
+        Adds an AWS::Backup::BackupPlan.LifecycleResourceType resource property to the template.
+Specifies an object containing an array of Transition objects that determine how long in days before a recovery point transitions to cold storage or is deleted.
 
     .LINK
         http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-backup-backupplan-lifecycleresourcetype.html

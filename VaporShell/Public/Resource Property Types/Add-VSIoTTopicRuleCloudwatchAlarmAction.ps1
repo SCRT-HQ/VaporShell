@@ -1,10 +1,11 @@
 function Add-VSIoTTopicRuleCloudwatchAlarmAction {
     <#
     .SYNOPSIS
-        Adds an AWS::IoT::TopicRule.CloudwatchAlarmAction resource property to the template
+        Adds an AWS::IoT::TopicRule.CloudwatchAlarmAction resource property to the template. Describes an action that updates a CloudWatch alarm.
 
     .DESCRIPTION
-        Adds an AWS::IoT::TopicRule.CloudwatchAlarmAction resource property to the template
+        Adds an AWS::IoT::TopicRule.CloudwatchAlarmAction resource property to the template.
+Describes an action that updates a CloudWatch alarm.
 
     .LINK
         http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iot-topicrule-cloudwatchalarmaction.html

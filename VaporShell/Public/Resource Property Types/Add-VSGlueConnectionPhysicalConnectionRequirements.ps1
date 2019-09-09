@@ -1,10 +1,11 @@
 function Add-VSGlueConnectionPhysicalConnectionRequirements {
     <#
     .SYNOPSIS
-        Adds an AWS::Glue::Connection.PhysicalConnectionRequirements resource property to the template
+        Adds an AWS::Glue::Connection.PhysicalConnectionRequirements resource property to the template. Specifies the physical requirements for a connection.
 
     .DESCRIPTION
-        Adds an AWS::Glue::Connection.PhysicalConnectionRequirements resource property to the template
+        Adds an AWS::Glue::Connection.PhysicalConnectionRequirements resource property to the template.
+Specifies the physical requirements for a connection.
 
     .LINK
         http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-glue-connection-physicalconnectionrequirements.html

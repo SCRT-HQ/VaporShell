@@ -1,10 +1,18 @@
 function New-VSLambdaEventSourceMapping {
     <#
     .SYNOPSIS
-        Adds an AWS::Lambda::EventSourceMapping resource to the template
+        Adds an AWS::Lambda::EventSourceMapping resource to the template. The AWS::Lambda::EventSourceMapping resource creates a mapping between an event source and an AWS Lambda function. Lambda reads items from the event source and triggers the function.
 
     .DESCRIPTION
-        Adds an AWS::Lambda::EventSourceMapping resource to the template
+        Adds an AWS::Lambda::EventSourceMapping resource to the template. The AWS::Lambda::EventSourceMapping resource creates a mapping between an event source and an AWS Lambda function. Lambda reads items from the event source and triggers the function.
+
+For details about each event source type, see the following topics.
+
++  Using AWS Lambda with Amazon Kinesis: https://docs.aws.amazon.com/lambda/latest/dg/with-kinesis.html
+
++  Using AWS Lambda with Amazon SQS: https://docs.aws.amazon.com/lambda/latest/dg/with-sqs.html
+
++  Using AWS Lambda with Amazon DynamoDB: https://docs.aws.amazon.com/lambda/latest/dg/with-ddb.html
 
     .LINK
         http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-lambda-eventsourcemapping.html

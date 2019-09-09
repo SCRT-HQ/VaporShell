@@ -1,10 +1,11 @@
 function Add-VSGuardDutyFilterCondition {
     <#
     .SYNOPSIS
-        Adds an AWS::GuardDuty::Filter.Condition resource property to the template
+        Adds an AWS::GuardDuty::Filter.Condition resource property to the template. Specifies the condition to apply to a single field when filtering through GuardDuty findings.
 
     .DESCRIPTION
-        Adds an AWS::GuardDuty::Filter.Condition resource property to the template
+        Adds an AWS::GuardDuty::Filter.Condition resource property to the template.
+Specifies the condition to apply to a single field when filtering through GuardDuty findings.
 
     .LINK
         http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-guardduty-filter-condition.html

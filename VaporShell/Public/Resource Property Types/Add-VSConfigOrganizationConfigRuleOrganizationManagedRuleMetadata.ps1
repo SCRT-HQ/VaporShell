@@ -1,10 +1,11 @@
 function Add-VSConfigOrganizationConfigRuleOrganizationManagedRuleMetadata {
     <#
     .SYNOPSIS
-        Adds an AWS::Config::OrganizationConfigRule.OrganizationManagedRuleMetadata resource property to the template
+        Adds an AWS::Config::OrganizationConfigRule.OrganizationManagedRuleMetadata resource property to the template. An object that specifies organization managed rule metadata such as resource type and ID of AWS resource along with the rule identifier. It also provides the frequency with which you want AWS Config to run evaluations for the rule if the trigger type is periodic.
 
     .DESCRIPTION
-        Adds an AWS::Config::OrganizationConfigRule.OrganizationManagedRuleMetadata resource property to the template
+        Adds an AWS::Config::OrganizationConfigRule.OrganizationManagedRuleMetadata resource property to the template.
+An object that specifies organization managed rule metadata such as resource type and ID of AWS resource along with the rule identifier. It also provides the frequency with which you want AWS Config to run evaluations for the rule if the trigger type is periodic.
 
     .LINK
         http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-config-organizationconfigrule-organizationmanagedrulemetadata.html

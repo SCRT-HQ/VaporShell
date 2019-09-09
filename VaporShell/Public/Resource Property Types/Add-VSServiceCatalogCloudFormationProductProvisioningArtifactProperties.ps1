@@ -1,10 +1,11 @@
 function Add-VSServiceCatalogCloudFormationProductProvisioningArtifactProperties {
     <#
     .SYNOPSIS
-        Adds an AWS::ServiceCatalog::CloudFormationProduct.ProvisioningArtifactProperties resource property to the template
+        Adds an AWS::ServiceCatalog::CloudFormationProduct.ProvisioningArtifactProperties resource property to the template. Information about a provisioning artifact (also known as a version for a product.
 
     .DESCRIPTION
-        Adds an AWS::ServiceCatalog::CloudFormationProduct.ProvisioningArtifactProperties resource property to the template
+        Adds an AWS::ServiceCatalog::CloudFormationProduct.ProvisioningArtifactProperties resource property to the template.
+Information about a provisioning artifact (also known as a version for a product.
 
     .LINK
         http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-servicecatalog-cloudformationproduct-provisioningartifactproperties.html

@@ -1,10 +1,11 @@
 function Add-VSPinpointEmailConfigurationSetEventDestinationSnsDestination {
     <#
     .SYNOPSIS
-        Adds an AWS::PinpointEmail::ConfigurationSetEventDestination.SnsDestination resource property to the template
+        Adds an AWS::PinpointEmail::ConfigurationSetEventDestination.SnsDestination resource property to the template. An object that defines an Amazon SNS destination for email events. You can use Amazon SNS to send notification when certain email events occur.
 
     .DESCRIPTION
-        Adds an AWS::PinpointEmail::ConfigurationSetEventDestination.SnsDestination resource property to the template
+        Adds an AWS::PinpointEmail::ConfigurationSetEventDestination.SnsDestination resource property to the template.
+An object that defines an Amazon SNS destination for email events. You can use Amazon SNS to send notification when certain email events occur.
 
     .LINK
         http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-pinpointemail-configurationseteventdestination-snsdestination.html

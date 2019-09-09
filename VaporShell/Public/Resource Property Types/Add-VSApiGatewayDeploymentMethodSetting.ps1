@@ -1,10 +1,13 @@
 function Add-VSApiGatewayDeploymentMethodSetting {
     <#
     .SYNOPSIS
-        Adds an AWS::ApiGateway::Deployment.MethodSetting resource property to the template
+        Adds an AWS::ApiGateway::Deployment.MethodSetting resource property to the template. The MethodSetting property type configures settings for all methods in a stage.
 
     .DESCRIPTION
-        Adds an AWS::ApiGateway::Deployment.MethodSetting resource property to the template
+        Adds an AWS::ApiGateway::Deployment.MethodSetting resource property to the template.
+The MethodSetting property type configures settings for all methods in a stage.
+
+The MethodSettings property of the Amazon API Gateway Deployment StageDescription: https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-apigateway-deployment-stagedescription.html property type contains a list of MethodSetting property types.
 
     .LINK
         http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-apigateway-deployment-stagedescription-methodsetting.html

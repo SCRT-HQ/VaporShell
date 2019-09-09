@@ -1,10 +1,13 @@
 function Add-VSKinesisAnalyticsV2ApplicationReferenceDataSourceRecordColumn {
     <#
     .SYNOPSIS
-        Adds an AWS::KinesisAnalyticsV2::ApplicationReferenceDataSource.RecordColumn resource property to the template
+        Adds an AWS::KinesisAnalyticsV2::ApplicationReferenceDataSource.RecordColumn resource property to the template. For an SQL-based Amazon Kinesis Data Analytics application, describes the mapping of each data element in the streaming source to the corresponding column in the in-application stream.
 
     .DESCRIPTION
-        Adds an AWS::KinesisAnalyticsV2::ApplicationReferenceDataSource.RecordColumn resource property to the template
+        Adds an AWS::KinesisAnalyticsV2::ApplicationReferenceDataSource.RecordColumn resource property to the template.
+For an SQL-based Amazon Kinesis Data Analytics application, describes the mapping of each data element in the streaming source to the corresponding column in the in-application stream.
+
+Also used to describe the format of the reference data source.
 
     .LINK
         http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-kinesisanalyticsv2-applicationreferencedatasource-recordcolumn.html

@@ -1,10 +1,11 @@
 function Add-VSPinpointEmailConfigurationSetEventDestinationPinpointDestination {
     <#
     .SYNOPSIS
-        Adds an AWS::PinpointEmail::ConfigurationSetEventDestination.PinpointDestination resource property to the template
+        Adds an AWS::PinpointEmail::ConfigurationSetEventDestination.PinpointDestination resource property to the template. An object that defines a Amazon Pinpoint destination for email events. You can use Amazon Pinpoint events to create attributes in Amazon Pinpoint projects. You can use these attributes to create segments for your campaigns.
 
     .DESCRIPTION
-        Adds an AWS::PinpointEmail::ConfigurationSetEventDestination.PinpointDestination resource property to the template
+        Adds an AWS::PinpointEmail::ConfigurationSetEventDestination.PinpointDestination resource property to the template.
+An object that defines a Amazon Pinpoint destination for email events. You can use Amazon Pinpoint events to create attributes in Amazon Pinpoint projects. You can use these attributes to create segments for your campaigns.
 
     .LINK
         http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-pinpointemail-configurationseteventdestination-pinpointdestination.html

@@ -1,10 +1,11 @@
 function Add-VSBatchJobDefinitionLinuxParameters {
     <#
     .SYNOPSIS
-        Adds an AWS::Batch::JobDefinition.LinuxParameters resource property to the template
+        Adds an AWS::Batch::JobDefinition.LinuxParameters resource property to the template. Linux-specific modifications that are applied to the container, such as details for device mappings.
 
     .DESCRIPTION
-        Adds an AWS::Batch::JobDefinition.LinuxParameters resource property to the template
+        Adds an AWS::Batch::JobDefinition.LinuxParameters resource property to the template.
+Linux-specific modifications that are applied to the container, such as details for device mappings.
 
     .LINK
         http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-batch-jobdefinition-containerproperties-linuxparameters.html

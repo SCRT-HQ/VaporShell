@@ -1,10 +1,11 @@
 function Add-VSOpsWorksAppEnvironmentVariable {
     <#
     .SYNOPSIS
-        Adds an AWS::OpsWorks::App.EnvironmentVariable resource property to the template
+        Adds an AWS::OpsWorks::App.EnvironmentVariable resource property to the template. Represents an app's environment variable.
 
     .DESCRIPTION
-        Adds an AWS::OpsWorks::App.EnvironmentVariable resource property to the template
+        Adds an AWS::OpsWorks::App.EnvironmentVariable resource property to the template.
+Represents an app's environment variable.
 
     .LINK
         http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-opsworks-app-environment.html

@@ -1,10 +1,11 @@
 function Add-VSECSTaskDefinitionMountPoint {
     <#
     .SYNOPSIS
-        Adds an AWS::ECS::TaskDefinition.MountPoint resource property to the template
+        Adds an AWS::ECS::TaskDefinition.MountPoint resource property to the template. The MountPoint property specifies details on a volume mount point that is used in a container definition.
 
     .DESCRIPTION
-        Adds an AWS::ECS::TaskDefinition.MountPoint resource property to the template
+        Adds an AWS::ECS::TaskDefinition.MountPoint resource property to the template.
+The MountPoint property specifies details on a volume mount point that is used in a container definition.
 
     .LINK
         http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ecs-taskdefinition-containerdefinitions-mountpoints.html

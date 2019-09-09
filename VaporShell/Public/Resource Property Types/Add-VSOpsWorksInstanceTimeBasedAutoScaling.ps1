@@ -1,10 +1,11 @@
 function Add-VSOpsWorksInstanceTimeBasedAutoScaling {
     <#
     .SYNOPSIS
-        Adds an AWS::OpsWorks::Instance.TimeBasedAutoScaling resource property to the template
+        Adds an AWS::OpsWorks::Instance.TimeBasedAutoScaling resource property to the template. Describes an instance's time-based auto scaling configuration.
 
     .DESCRIPTION
-        Adds an AWS::OpsWorks::Instance.TimeBasedAutoScaling resource property to the template
+        Adds an AWS::OpsWorks::Instance.TimeBasedAutoScaling resource property to the template.
+Describes an instance's time-based auto scaling configuration.
 
     .LINK
         http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-opsworks-instance-timebasedautoscaling.html

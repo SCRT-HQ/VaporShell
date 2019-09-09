@@ -1,10 +1,11 @@
 function Add-VSRDSDBSecurityGroupIngress {
     <#
     .SYNOPSIS
-        Adds an AWS::RDS::DBSecurityGroup.Ingress resource property to the template
+        Adds an AWS::RDS::DBSecurityGroup.Ingress resource property to the template. The Ingress property type specifies an individual ingress rule within an AWS::RDS::DBSecurityGroup resource.
 
     .DESCRIPTION
-        Adds an AWS::RDS::DBSecurityGroup.Ingress resource property to the template
+        Adds an AWS::RDS::DBSecurityGroup.Ingress resource property to the template.
+The Ingress property type specifies an individual ingress rule within an AWS::RDS::DBSecurityGroup resource.
 
     .LINK
         http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-rds-security-group-rule.html

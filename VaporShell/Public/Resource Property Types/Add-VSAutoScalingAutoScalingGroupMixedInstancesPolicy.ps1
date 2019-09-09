@@ -1,10 +1,11 @@
 function Add-VSAutoScalingAutoScalingGroupMixedInstancesPolicy {
     <#
     .SYNOPSIS
-        Adds an AWS::AutoScaling::AutoScalingGroup.MixedInstancesPolicy resource property to the template
+        Adds an AWS::AutoScaling::AutoScalingGroup.MixedInstancesPolicy resource property to the template. 
 
     .DESCRIPTION
-        Adds an AWS::AutoScaling::AutoScalingGroup.MixedInstancesPolicy resource property to the template
+        Adds an AWS::AutoScaling::AutoScalingGroup.MixedInstancesPolicy resource property to the template.
+
 
     .LINK
         http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/cfn-as-group-mixedinstancespolicy.html

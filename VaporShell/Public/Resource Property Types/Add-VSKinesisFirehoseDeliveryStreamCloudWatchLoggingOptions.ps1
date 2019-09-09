@@ -1,10 +1,11 @@
 function Add-VSKinesisFirehoseDeliveryStreamCloudWatchLoggingOptions {
     <#
     .SYNOPSIS
-        Adds an AWS::KinesisFirehose::DeliveryStream.CloudWatchLoggingOptions resource property to the template
+        Adds an AWS::KinesisFirehose::DeliveryStream.CloudWatchLoggingOptions resource property to the template. The CloudWatchLoggingOptions property type specifies Amazon CloudWatch Logs (CloudWatch Logs logging options that Amazon Kinesis Data Firehose (Kinesis Data Firehose uses for the delivery stream.
 
     .DESCRIPTION
-        Adds an AWS::KinesisFirehose::DeliveryStream.CloudWatchLoggingOptions resource property to the template
+        Adds an AWS::KinesisFirehose::DeliveryStream.CloudWatchLoggingOptions resource property to the template.
+The CloudWatchLoggingOptions property type specifies Amazon CloudWatch Logs (CloudWatch Logs logging options that Amazon Kinesis Data Firehose (Kinesis Data Firehose uses for the delivery stream.
 
     .LINK
         http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-kinesisfirehose-deliverystream-cloudwatchloggingoptions.html

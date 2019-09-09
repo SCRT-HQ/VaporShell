@@ -1,10 +1,11 @@
 function Add-VSConfigConfigurationAggregatorAccountAggregationSource {
     <#
     .SYNOPSIS
-        Adds an AWS::Config::ConfigurationAggregator.AccountAggregationSource resource property to the template
+        Adds an AWS::Config::ConfigurationAggregator.AccountAggregationSource resource property to the template. A collection of accounts and regions.
 
     .DESCRIPTION
-        Adds an AWS::Config::ConfigurationAggregator.AccountAggregationSource resource property to the template
+        Adds an AWS::Config::ConfigurationAggregator.AccountAggregationSource resource property to the template.
+A collection of accounts and regions.
 
     .LINK
         http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-config-configurationaggregator-accountaggregationsource.html

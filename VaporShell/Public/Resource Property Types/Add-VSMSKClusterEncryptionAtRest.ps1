@@ -1,10 +1,11 @@
 function Add-VSMSKClusterEncryptionAtRest {
     <#
     .SYNOPSIS
-        Adds an AWS::MSK::Cluster.EncryptionAtRest resource property to the template
+        Adds an AWS::MSK::Cluster.EncryptionAtRest resource property to the template. The data volume encryption details.
 
     .DESCRIPTION
-        Adds an AWS::MSK::Cluster.EncryptionAtRest resource property to the template
+        Adds an AWS::MSK::Cluster.EncryptionAtRest resource property to the template.
+The data volume encryption details.
 
     .LINK
         http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-msk-cluster-encryptionatrest.html

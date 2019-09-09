@@ -1,10 +1,11 @@
 function Add-VSIoTAnalyticsDatastoreDatastoreStorage {
     <#
     .SYNOPSIS
-        Adds an AWS::IoTAnalytics::Datastore.DatastoreStorage resource property to the template
+        Adds an AWS::IoTAnalytics::Datastore.DatastoreStorage resource property to the template. Where data store data is stored.
 
     .DESCRIPTION
-        Adds an AWS::IoTAnalytics::Datastore.DatastoreStorage resource property to the template
+        Adds an AWS::IoTAnalytics::Datastore.DatastoreStorage resource property to the template.
+Where data store data is stored.
 
     .LINK
         http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iotanalytics-datastore-datastorestorage.html

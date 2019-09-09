@@ -1,10 +1,11 @@
 function Add-VSEC2SpotFleetSpotFleetTagSpecification {
     <#
     .SYNOPSIS
-        Adds an AWS::EC2::SpotFleet.SpotFleetTagSpecification resource property to the template
+        Adds an AWS::EC2::SpotFleet.SpotFleetTagSpecification resource property to the template. The tags for a Spot Fleet resource.
 
     .DESCRIPTION
-        Adds an AWS::EC2::SpotFleet.SpotFleetTagSpecification resource property to the template
+        Adds an AWS::EC2::SpotFleet.SpotFleetTagSpecification resource property to the template.
+The tags for a Spot Fleet resource.
 
     .LINK
         http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-spotfleet-spotfleetrequestconfigdata-launchspecifications-tagspecifications.html

@@ -1,10 +1,11 @@
 function Add-VSTag {
     <#
     .SYNOPSIS
-        Adds an Tag resource property to the template
+        Adds an Tag resource property to the template. 
 
     .DESCRIPTION
-        Adds an Tag resource property to the template
+        Adds an Tag resource property to the template.
+
 
     .LINK
         http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iotevents-input-tag.html

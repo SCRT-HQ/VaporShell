@@ -1,10 +1,11 @@
 function Add-VSIoTTopicRuleSqsAction {
     <#
     .SYNOPSIS
-        Adds an AWS::IoT::TopicRule.SqsAction resource property to the template
+        Adds an AWS::IoT::TopicRule.SqsAction resource property to the template. Describes an action to publish data to an Amazon SQS queue.
 
     .DESCRIPTION
-        Adds an AWS::IoT::TopicRule.SqsAction resource property to the template
+        Adds an AWS::IoT::TopicRule.SqsAction resource property to the template.
+Describes an action to publish data to an Amazon SQS queue.
 
     .LINK
         http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iot-topicrule-sqsaction.html

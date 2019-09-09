@@ -1,10 +1,11 @@
 function Add-VSCodeBuildProjectVpcConfig {
     <#
     .SYNOPSIS
-        Adds an AWS::CodeBuild::Project.VpcConfig resource property to the template
+        Adds an AWS::CodeBuild::Project.VpcConfig resource property to the template. VpcConfig is a property of the AWS::CodeBuild::Project: https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-codebuild-project.html resource that enable AWS CodeBuild to access resources in an Amazon VPC. For more information, see Use AWS CodeBuild with Amazon Virtual Private Cloud: https://docs.aws.amazon.com/codebuild/latest/userguide/vpc-support.html in the *AWS CodeBuild User Guide*.
 
     .DESCRIPTION
-        Adds an AWS::CodeBuild::Project.VpcConfig resource property to the template
+        Adds an AWS::CodeBuild::Project.VpcConfig resource property to the template.
+VpcConfig is a property of the AWS::CodeBuild::Project: https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-codebuild-project.html resource that enable AWS CodeBuild to access resources in an Amazon VPC. For more information, see Use AWS CodeBuild with Amazon Virtual Private Cloud: https://docs.aws.amazon.com/codebuild/latest/userguide/vpc-support.html in the *AWS CodeBuild User Guide*.
 
     .LINK
         http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-codebuild-project-vpcconfig.html

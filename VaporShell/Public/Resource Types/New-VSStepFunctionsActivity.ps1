@@ -1,10 +1,12 @@
 function New-VSStepFunctionsActivity {
     <#
     .SYNOPSIS
-        Adds an AWS::StepFunctions::Activity resource to the template
+        Adds an AWS::StepFunctions::Activity resource to the template. An activity is a task that you write in any programming language and host on any machine that has access to AWS Step Functions. Activities must poll Step Functions using the GetActivityTask API action and respond using SendTask* API actions. This function lets Step Functions know the existence of your activity and returns an identifier for use in a state machine and when polling from the activity.
 
     .DESCRIPTION
-        Adds an AWS::StepFunctions::Activity resource to the template
+        Adds an AWS::StepFunctions::Activity resource to the template. An activity is a task that you write in any programming language and host on any machine that has access to AWS Step Functions. Activities must poll Step Functions using the GetActivityTask API action and respond using SendTask* API actions. This function lets Step Functions know the existence of your activity and returns an identifier for use in a state machine and when polling from the activity.
+
+For information about creating an activity, see Creating an Activity State Machine: https://docs.aws.amazon.com/step-functions/latest/dg/tutorial-creating-activity-state-machine.html in the *AWS Step Functions Developer Guide* and CreateActivity: https://docs.aws.amazon.com/step-functions/latest/apireference/API_CreateActivity.html in the *AWS Step Functions API Reference*.
 
     .LINK
         http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-stepfunctions-activity.html

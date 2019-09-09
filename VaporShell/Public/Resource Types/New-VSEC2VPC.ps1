@@ -1,10 +1,10 @@
 function New-VSEC2VPC {
     <#
     .SYNOPSIS
-        Adds an AWS::EC2::VPC resource to the template
+        Adds an AWS::EC2::VPC resource to the template. Specifies a VPC with the specified IPv4 CIDR block. The smallest VPC you can create uses a /28 netmask (16 IPv4 addresses, and the largest uses a /16 netmask (65,536 IPv4 addresses. For more information about how large to make your VPC, see Your VPC and Subnets: https://docs.aws.amazon.com/AmazonVPC/latest/UserGuide/VPC_Subnets.html in the *Amazon Virtual Private Cloud User Guide*.
 
     .DESCRIPTION
-        Adds an AWS::EC2::VPC resource to the template
+        Adds an AWS::EC2::VPC resource to the template. Specifies a VPC with the specified IPv4 CIDR block. The smallest VPC you can create uses a /28 netmask (16 IPv4 addresses, and the largest uses a /16 netmask (65,536 IPv4 addresses. For more information about how large to make your VPC, see Your VPC and Subnets: https://docs.aws.amazon.com/AmazonVPC/latest/UserGuide/VPC_Subnets.html in the *Amazon Virtual Private Cloud User Guide*.
 
     .LINK
         http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ec2-vpc.html

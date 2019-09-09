@@ -1,10 +1,11 @@
 function Add-VSServiceCatalogCloudFormationProvisionedProductProvisioningPreferences {
     <#
     .SYNOPSIS
-        Adds an AWS::ServiceCatalog::CloudFormationProvisionedProduct.ProvisioningPreferences resource property to the template
+        Adds an AWS::ServiceCatalog::CloudFormationProvisionedProduct.ProvisioningPreferences resource property to the template. The user-defined preferences that will be applied when updating a provisioned product. Not all preferences are applicable to all provisioned product types.
 
     .DESCRIPTION
-        Adds an AWS::ServiceCatalog::CloudFormationProvisionedProduct.ProvisioningPreferences resource property to the template
+        Adds an AWS::ServiceCatalog::CloudFormationProvisionedProduct.ProvisioningPreferences resource property to the template.
+The user-defined preferences that will be applied when updating a provisioned product. Not all preferences are applicable to all provisioned product types.
 
     .LINK
         http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-servicecatalog-cloudformationprovisionedproduct-provisioningpreferences.html

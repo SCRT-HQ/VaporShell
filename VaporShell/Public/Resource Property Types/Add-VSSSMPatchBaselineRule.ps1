@@ -1,10 +1,13 @@
 function Add-VSSSMPatchBaselineRule {
     <#
     .SYNOPSIS
-        Adds an AWS::SSM::PatchBaseline.Rule resource property to the template
+        Adds an AWS::SSM::PatchBaseline.Rule resource property to the template. The Rule property type specifies an approval rule for a Systems Manager patch baseline.
 
     .DESCRIPTION
-        Adds an AWS::SSM::PatchBaseline.Rule resource property to the template
+        Adds an AWS::SSM::PatchBaseline.Rule resource property to the template.
+The Rule property type specifies an approval rule for a Systems Manager patch baseline.
+
+The PatchRules property of the RuleGroup: https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ssm-patchbaseline-rulegroup.html property type contains a list of Rule property types.
 
     .LINK
         http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ssm-patchbaseline-rule.html

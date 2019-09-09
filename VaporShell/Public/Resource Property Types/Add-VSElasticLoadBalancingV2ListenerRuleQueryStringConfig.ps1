@@ -1,10 +1,13 @@
 function Add-VSElasticLoadBalancingV2ListenerRuleQueryStringConfig {
     <#
     .SYNOPSIS
-        Adds an AWS::ElasticLoadBalancingV2::ListenerRule.QueryStringConfig resource property to the template
+        Adds an AWS::ElasticLoadBalancingV2::ListenerRule.QueryStringConfig resource property to the template. Information about a query string condition.
 
     .DESCRIPTION
-        Adds an AWS::ElasticLoadBalancingV2::ListenerRule.QueryStringConfig resource property to the template
+        Adds an AWS::ElasticLoadBalancingV2::ListenerRule.QueryStringConfig resource property to the template.
+Information about a query string condition.
+
+The query string component of a URI starts after the first '?' character and is terminated by either a '#' character or the end of the URI. A typical query string contains key/value pairs separated by '&' characters. The allowed characters are specified by RFC 3986. Any character can be percentage encoded.
 
     .LINK
         http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-elasticloadbalancingv2-listenerrule-querystringconfig.html

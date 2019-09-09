@@ -1,10 +1,10 @@
 function New-VSApiGatewayV2Stage {
     <#
     .SYNOPSIS
-        Adds an AWS::ApiGatewayV2::Stage resource to the template
+        Adds an AWS::ApiGatewayV2::Stage resource to the template. The AWS::ApiGatewayV2::Stage resource updates a stage for a WebSocket API. For more information, see Deploy a WebSocket API in API Gateway: https://docs.aws.amazon.com/apigateway/latest/developerguide/apigateway-set-up-websocket-deployment.html in the *API Gateway Developer Guide*.
 
     .DESCRIPTION
-        Adds an AWS::ApiGatewayV2::Stage resource to the template
+        Adds an AWS::ApiGatewayV2::Stage resource to the template. The AWS::ApiGatewayV2::Stage resource updates a stage for a WebSocket API. For more information, see Deploy a WebSocket API in API Gateway: https://docs.aws.amazon.com/apigateway/latest/developerguide/apigateway-set-up-websocket-deployment.html in the *API Gateway Developer Guide*.
 
     .LINK
         http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-apigatewayv2-stage.html

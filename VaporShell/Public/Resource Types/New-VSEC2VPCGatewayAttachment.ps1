@@ -1,10 +1,10 @@
 function New-VSEC2VPCGatewayAttachment {
     <#
     .SYNOPSIS
-        Adds an AWS::EC2::VPCGatewayAttachment resource to the template
+        Adds an AWS::EC2::VPCGatewayAttachment resource to the template. Attaches an internet gateway to a VPC, enabling connectivity between the internet and the VPC.
 
     .DESCRIPTION
-        Adds an AWS::EC2::VPCGatewayAttachment resource to the template
+        Adds an AWS::EC2::VPCGatewayAttachment resource to the template. Attaches an internet gateway to a VPC, enabling connectivity between the internet and the VPC.
 
     .LINK
         http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ec2-vpc-gateway-attachment.html

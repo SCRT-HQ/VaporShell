@@ -1,10 +1,11 @@
 function Add-VSPinpointEmailConfigurationSetDeliveryOptions {
     <#
     .SYNOPSIS
-        Adds an AWS::PinpointEmail::ConfigurationSet.DeliveryOptions resource property to the template
+        Adds an AWS::PinpointEmail::ConfigurationSet.DeliveryOptions resource property to the template. Used to associate a configuration set with a dedicated IP pool.
 
     .DESCRIPTION
-        Adds an AWS::PinpointEmail::ConfigurationSet.DeliveryOptions resource property to the template
+        Adds an AWS::PinpointEmail::ConfigurationSet.DeliveryOptions resource property to the template.
+Used to associate a configuration set with a dedicated IP pool.
 
     .LINK
         http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-pinpointemail-configurationset-deliveryoptions.html

@@ -1,10 +1,11 @@
 function Add-VSGluePartitionSerdeInfo {
     <#
     .SYNOPSIS
-        Adds an AWS::Glue::Partition.SerdeInfo resource property to the template
+        Adds an AWS::Glue::Partition.SerdeInfo resource property to the template. Information about a serialization/deserialization program (SerDe that serves as an extractor and loader.
 
     .DESCRIPTION
-        Adds an AWS::Glue::Partition.SerdeInfo resource property to the template
+        Adds an AWS::Glue::Partition.SerdeInfo resource property to the template.
+Information about a serialization/deserialization program (SerDe that serves as an extractor and loader.
 
     .LINK
         http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-glue-partition-serdeinfo.html

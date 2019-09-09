@@ -1,10 +1,17 @@
 function Add-VSCodeBuildProjectRegistryCredential {
     <#
     .SYNOPSIS
-        Adds an AWS::CodeBuild::Project.RegistryCredential resource property to the template
+        Adds an AWS::CodeBuild::Project.RegistryCredential resource property to the template. RegistryCredential is a property of the AWS CodeBuild Project Environment : https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-codebuild-project-environment.html property type that specifies information about credentials that provide access to a private Docker registry. When this is set:
 
     .DESCRIPTION
-        Adds an AWS::CodeBuild::Project.RegistryCredential resource property to the template
+        Adds an AWS::CodeBuild::Project.RegistryCredential resource property to the template.
+RegistryCredential is a property of the AWS CodeBuild Project Environment : https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-codebuild-project-environment.html property type that specifies information about credentials that provide access to a private Docker registry. When this is set:
+
++  imagePullCredentialsType must be set to SERVICE_ROLE.
+
++  images cannot be curated or an Amazon ECR image.
+
+For more information, see Private Registry with AWS Secrets Manager Sample for AWS CodeBuild: https://docs.aws.amazon.com/codebuild/latest/userguide/sample-private-registry.html.
 
     .LINK
         http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-codebuild-project-registrycredential.html

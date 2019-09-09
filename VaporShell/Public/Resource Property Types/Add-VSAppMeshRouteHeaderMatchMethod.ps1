@@ -1,10 +1,11 @@
 function Add-VSAppMeshRouteHeaderMatchMethod {
     <#
     .SYNOPSIS
-        Adds an AWS::AppMesh::Route.HeaderMatchMethod resource property to the template
+        Adds an AWS::AppMesh::Route.HeaderMatchMethod resource property to the template. An object representing the method and value to match the header value sent with a request. Specify one match method.
 
     .DESCRIPTION
-        Adds an AWS::AppMesh::Route.HeaderMatchMethod resource property to the template
+        Adds an AWS::AppMesh::Route.HeaderMatchMethod resource property to the template.
+An object representing the method and value to match the header value sent with a request. Specify one match method.
 
     .LINK
         http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-appmesh-route-headermatchmethod.html

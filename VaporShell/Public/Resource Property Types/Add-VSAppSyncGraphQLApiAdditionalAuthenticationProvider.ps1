@@ -1,10 +1,11 @@
 function Add-VSAppSyncGraphQLApiAdditionalAuthenticationProvider {
     <#
     .SYNOPSIS
-        Adds an AWS::AppSync::GraphQLApi.AdditionalAuthenticationProvider resource property to the template
+        Adds an AWS::AppSync::GraphQLApi.AdditionalAuthenticationProvider resource property to the template. Describes an additional authentication provider.
 
     .DESCRIPTION
-        Adds an AWS::AppSync::GraphQLApi.AdditionalAuthenticationProvider resource property to the template
+        Adds an AWS::AppSync::GraphQLApi.AdditionalAuthenticationProvider resource property to the template.
+Describes an additional authentication provider.
 
     .LINK
         http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-appsync-graphqlapi-additionalauthenticationprovider.html

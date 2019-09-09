@@ -1,10 +1,10 @@
 function New-VSEC2CapacityReservation {
     <#
     .SYNOPSIS
-        Adds an AWS::EC2::CapacityReservation resource to the template
+        Adds an AWS::EC2::CapacityReservation resource to the template. Creates a new Capacity Reservation with the specified attributes. For more information, see Capacity Reservations: https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-capacity-reservations.html in the *Amazon Elastic Compute Cloud User Guide*.
 
     .DESCRIPTION
-        Adds an AWS::EC2::CapacityReservation resource to the template
+        Adds an AWS::EC2::CapacityReservation resource to the template. Creates a new Capacity Reservation with the specified attributes. For more information, see Capacity Reservations: https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-capacity-reservations.html in the *Amazon Elastic Compute Cloud User Guide*.
 
     .LINK
         http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ec2-capacityreservation.html

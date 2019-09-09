@@ -1,10 +1,14 @@
 function New-VSEC2Subnet {
     <#
     .SYNOPSIS
-        Adds an AWS::EC2::Subnet resource to the template
+        Adds an AWS::EC2::Subnet resource to the template. Specifies a subnet for a VPC.
 
     .DESCRIPTION
-        Adds an AWS::EC2::Subnet resource to the template
+        Adds an AWS::EC2::Subnet resource to the template. Specifies a subnet for a VPC.
+
+When you create each subnet, you provide the VPC ID and IPv4 CIDR block for the subnet. After you create a subnet, you can't change its CIDR block. The size of the subnet's IPv4 CIDR block can be the same as a VPC's IPv4 CIDR block, or a subset of a VPC's IPv4 CIDR block. If you create more than one subnet in a VPC, the subnets' CIDR blocks must not overlap. The smallest IPv4 subnet (and VPC you can create uses a /28 netmask (16 IPv4 addresses, and the largest uses a /16 netmask (65,536 IPv4 addresses.
+
+If you've associated an IPv6 CIDR block with your VPC, you can create a subnet with an IPv6 CIDR block that uses a /64 prefix length.
 
     .LINK
         http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ec2-subnet.html

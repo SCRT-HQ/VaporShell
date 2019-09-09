@@ -1,10 +1,12 @@
 function New-VSKinesisAnalyticsV2ApplicationReferenceDataSource {
     <#
     .SYNOPSIS
-        Adds an AWS::KinesisAnalyticsV2::ApplicationReferenceDataSource resource to the template
+        Adds an AWS::KinesisAnalyticsV2::ApplicationReferenceDataSource resource to the template. Adds a reference data source to an existing SQL-based Amazon Kinesis Data Analytics application.
 
     .DESCRIPTION
-        Adds an AWS::KinesisAnalyticsV2::ApplicationReferenceDataSource resource to the template
+        Adds an AWS::KinesisAnalyticsV2::ApplicationReferenceDataSource resource to the template. Adds a reference data source to an existing SQL-based Amazon Kinesis Data Analytics application.
+
+Kinesis Data Analytics reads reference data (that is, an Amazon S3 object and creates an in-application table within your application. In the request, you provide the source (S3 bucket name and object key name, name of the in-application table to create, and the necessary mapping information that describes how data in an Amazon S3 object maps to columns in the resulting in-application table.
 
     .LINK
         http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-kinesisanalyticsv2-applicationreferencedatasource.html

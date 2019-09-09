@@ -1,10 +1,11 @@
 function Add-VSAmazonMQBrokerMaintenanceWindow {
     <#
     .SYNOPSIS
-        Adds an AWS::AmazonMQ::Broker.MaintenanceWindow resource property to the template
+        Adds an AWS::AmazonMQ::Broker.MaintenanceWindow resource property to the template. The parameters that determine the WeeklyStartTime to apply pending updates or patches to the broker.
 
     .DESCRIPTION
-        Adds an AWS::AmazonMQ::Broker.MaintenanceWindow resource property to the template
+        Adds an AWS::AmazonMQ::Broker.MaintenanceWindow resource property to the template.
+The parameters that determine the WeeklyStartTime to apply pending updates or patches to the broker.
 
     .LINK
         http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-amazonmq-broker-maintenancewindow.html

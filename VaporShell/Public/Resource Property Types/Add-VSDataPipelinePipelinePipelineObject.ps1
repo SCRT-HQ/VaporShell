@@ -1,10 +1,11 @@
 function Add-VSDataPipelinePipelinePipelineObject {
     <#
     .SYNOPSIS
-        Adds an AWS::DataPipeline::Pipeline.PipelineObject resource property to the template
+        Adds an AWS::DataPipeline::Pipeline.PipelineObject resource property to the template. PipelineObject is property of the AWS::DataPipeline::Pipeline resource that contains information about a pipeline object. This can be a logical, physical, or physical attempt pipeline object. The complete set of components of a pipeline defines the pipeline.
 
     .DESCRIPTION
-        Adds an AWS::DataPipeline::Pipeline.PipelineObject resource property to the template
+        Adds an AWS::DataPipeline::Pipeline.PipelineObject resource property to the template.
+PipelineObject is property of the AWS::DataPipeline::Pipeline resource that contains information about a pipeline object. This can be a logical, physical, or physical attempt pipeline object. The complete set of components of a pipeline defines the pipeline.
 
     .LINK
         http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-datapipeline-pipeline-pipelineobjects.html

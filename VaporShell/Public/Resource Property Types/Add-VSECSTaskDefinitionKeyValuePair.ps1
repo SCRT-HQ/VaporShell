@@ -1,10 +1,11 @@
 function Add-VSECSTaskDefinitionKeyValuePair {
     <#
     .SYNOPSIS
-        Adds an AWS::ECS::TaskDefinition.KeyValuePair resource property to the template
+        Adds an AWS::ECS::TaskDefinition.KeyValuePair resource property to the template. The KeyValuePair property specifies a key-value pair object.
 
     .DESCRIPTION
-        Adds an AWS::ECS::TaskDefinition.KeyValuePair resource property to the template
+        Adds an AWS::ECS::TaskDefinition.KeyValuePair resource property to the template.
+The KeyValuePair property specifies a key-value pair object.
 
     .LINK
         http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ecs-taskdefinition-containerdefinitions-environment.html

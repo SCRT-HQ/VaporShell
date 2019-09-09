@@ -1,10 +1,11 @@
 function Add-VSEC2VPNConnectionVpnTunnelOptionsSpecification {
     <#
     .SYNOPSIS
-        Adds an AWS::EC2::VPNConnection.VpnTunnelOptionsSpecification resource property to the template
+        Adds an AWS::EC2::VPNConnection.VpnTunnelOptionsSpecification resource property to the template. The tunnel options for a VPN connection.
 
     .DESCRIPTION
-        Adds an AWS::EC2::VPNConnection.VpnTunnelOptionsSpecification resource property to the template
+        Adds an AWS::EC2::VPNConnection.VpnTunnelOptionsSpecification resource property to the template.
+The tunnel options for a VPN connection.
 
     .LINK
         http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-vpnconnection-vpntunneloptionsspecification.html

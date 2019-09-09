@@ -1,10 +1,11 @@
 function Add-VSAmazonMQBrokerEncryptionOptions {
     <#
     .SYNOPSIS
-        Adds an AWS::AmazonMQ::Broker.EncryptionOptions resource property to the template
+        Adds an AWS::AmazonMQ::Broker.EncryptionOptions resource property to the template. Encryption options for the broker.
 
     .DESCRIPTION
-        Adds an AWS::AmazonMQ::Broker.EncryptionOptions resource property to the template
+        Adds an AWS::AmazonMQ::Broker.EncryptionOptions resource property to the template.
+Encryption options for the broker.
 
     .LINK
         http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-amazonmq-broker-encryptionoptions.html

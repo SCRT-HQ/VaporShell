@@ -1,10 +1,13 @@
 function Add-VSElasticLoadBalancingV2ListenerRuleHttpRequestMethodConfig {
     <#
     .SYNOPSIS
-        Adds an AWS::ElasticLoadBalancingV2::ListenerRule.HttpRequestMethodConfig resource property to the template
+        Adds an AWS::ElasticLoadBalancingV2::ListenerRule.HttpRequestMethodConfig resource property to the template. Information about an HTTP method condition.
 
     .DESCRIPTION
-        Adds an AWS::ElasticLoadBalancingV2::ListenerRule.HttpRequestMethodConfig resource property to the template
+        Adds an AWS::ElasticLoadBalancingV2::ListenerRule.HttpRequestMethodConfig resource property to the template.
+Information about an HTTP method condition.
+
+HTTP defines a set of request methods, also referred to as HTTP verbs. For more information, see the HTTP Method Registry: https://www.iana.org/assignments/http-methods/http-methods.xhtml. You can also define custom HTTP methods.
 
     .LINK
         http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-elasticloadbalancingv2-listenerrule-httprequestmethodconfig.html

@@ -1,10 +1,14 @@
 function New-VSRoute53ResolverResolverEndpoint {
     <#
     .SYNOPSIS
-        Adds an AWS::Route53Resolver::ResolverEndpoint resource to the template
+        Adds an AWS::Route53Resolver::ResolverEndpoint resource to the template. Creates a resolver endpoint. There are two types of resolver endpoints, inbound and outbound:
 
     .DESCRIPTION
-        Adds an AWS::Route53Resolver::ResolverEndpoint resource to the template
+        Adds an AWS::Route53Resolver::ResolverEndpoint resource to the template. Creates a resolver endpoint. There are two types of resolver endpoints, inbound and outbound:
+
++ An *inbound resolver endpoint* forwards DNS queries to the DNS service for a VPC from your network or another VPC.
+
++ An *outbound resolver endpoint* forwards DNS queries from the DNS service for a VPC to your network or another VPC.
 
     .LINK
         http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-route53resolver-resolverendpoint.html

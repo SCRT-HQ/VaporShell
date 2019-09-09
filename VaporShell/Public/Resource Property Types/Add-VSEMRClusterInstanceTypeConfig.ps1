@@ -1,10 +1,15 @@
 function Add-VSEMRClusterInstanceTypeConfig {
     <#
     .SYNOPSIS
-        Adds an AWS::EMR::Cluster.InstanceTypeConfig resource property to the template
+        Adds an AWS::EMR::Cluster.InstanceTypeConfig resource property to the template. **Note**
 
     .DESCRIPTION
-        Adds an AWS::EMR::Cluster.InstanceTypeConfig resource property to the template
+        Adds an AWS::EMR::Cluster.InstanceTypeConfig resource property to the template.
+**Note**
+
+The instance fleet configuration is available only in Amazon EMR versions 4.8.0 and later, excluding 5.0.x versions.
+
+InstanceTypeConfig is a sub-property of InstanceFleetConfig. InstanceTypeConfig determines the EC2 instances that Amazon EMR attempts to provision to fulfill On-Demand and Spot target capacities. There can be a maximum of 5 instance type configurations in a fleet.
 
     .LINK
         http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-elasticmapreduce-cluster-instancetypeconfig.html

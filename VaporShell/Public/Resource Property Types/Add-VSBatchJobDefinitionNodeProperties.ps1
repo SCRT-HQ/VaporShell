@@ -1,10 +1,11 @@
 function Add-VSBatchJobDefinitionNodeProperties {
     <#
     .SYNOPSIS
-        Adds an AWS::Batch::JobDefinition.NodeProperties resource property to the template
+        Adds an AWS::Batch::JobDefinition.NodeProperties resource property to the template. An object representing the node properties of a multi-node parallel job.
 
     .DESCRIPTION
-        Adds an AWS::Batch::JobDefinition.NodeProperties resource property to the template
+        Adds an AWS::Batch::JobDefinition.NodeProperties resource property to the template.
+An object representing the node properties of a multi-node parallel job.
 
     .LINK
         http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-batch-jobdefinition-nodeproperties.html

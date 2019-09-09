@@ -1,10 +1,11 @@
 function Add-VSAmplifyBranchBasicAuthConfig {
     <#
     .SYNOPSIS
-        Adds an AWS::Amplify::Branch.BasicAuthConfig resource property to the template
+        Adds an AWS::Amplify::Branch.BasicAuthConfig resource property to the template. Use the BasicAuthConfig property type to set password protection for a specific branch.
 
     .DESCRIPTION
-        Adds an AWS::Amplify::Branch.BasicAuthConfig resource property to the template
+        Adds an AWS::Amplify::Branch.BasicAuthConfig resource property to the template.
+Use the BasicAuthConfig property type to set password protection for a specific branch.
 
     .LINK
         http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-amplify-branch-basicauthconfig.html

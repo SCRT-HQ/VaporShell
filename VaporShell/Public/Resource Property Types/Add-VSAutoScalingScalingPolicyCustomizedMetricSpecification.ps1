@@ -1,10 +1,13 @@
 function Add-VSAutoScalingScalingPolicyCustomizedMetricSpecification {
     <#
     .SYNOPSIS
-        Adds an AWS::AutoScaling::ScalingPolicy.CustomizedMetricSpecification resource property to the template
+        Adds an AWS::AutoScaling::ScalingPolicy.CustomizedMetricSpecification resource property to the template. CustomizedMetricSpecification is a subproperty of TargetTrackingConfiguration: https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-autoscaling-scalingpolicy-targettrackingconfiguration.html that configures a customized metric for a target tracking policy to use with Amazon EC2 Auto Scaling.
 
     .DESCRIPTION
-        Adds an AWS::AutoScaling::ScalingPolicy.CustomizedMetricSpecification resource property to the template
+        Adds an AWS::AutoScaling::ScalingPolicy.CustomizedMetricSpecification resource property to the template.
+CustomizedMetricSpecification is a subproperty of TargetTrackingConfiguration: https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-autoscaling-scalingpolicy-targettrackingconfiguration.html that configures a customized metric for a target tracking policy to use with Amazon EC2 Auto Scaling.
+
+For more information, see CustomizedMetricSpecification: https://docs.aws.amazon.com/autoscaling/ec2/APIReference/API_CustomizedMetricSpecification.html in the *Amazon EC2 Auto Scaling API Reference*.
 
     .LINK
         http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-autoscaling-scalingpolicy-customizedmetricspecification.html

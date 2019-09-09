@@ -1,10 +1,15 @@
 function Add-VSApiGatewayRestApiS3Location {
     <#
     .SYNOPSIS
-        Adds an AWS::ApiGateway::RestApi.S3Location resource property to the template
+        Adds an AWS::ApiGateway::RestApi.S3Location resource property to the template. S3Location is a property of the AWS::ApiGateway::RestApi: https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-apigateway-restapi.html resource that specifies the Amazon S3 location of a OpenAPI (formerly Swagger file that defines a set of RESTful APIs in JSON or YAML.
 
     .DESCRIPTION
-        Adds an AWS::ApiGateway::RestApi.S3Location resource property to the template
+        Adds an AWS::ApiGateway::RestApi.S3Location resource property to the template.
+S3Location is a property of the AWS::ApiGateway::RestApi: https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-apigateway-restapi.html resource that specifies the Amazon S3 location of a OpenAPI (formerly Swagger file that defines a set of RESTful APIs in JSON or YAML.
+
+**Note**
+
+On January 1, 2016, the Swagger Specification was donated to the OpenAPI initiative: https://www.openapis.org/, becoming the foundation of the OpenAPI Specification.
 
     .LINK
         http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-apigateway-restapi-s3location.html

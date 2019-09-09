@@ -1,10 +1,11 @@
 function Add-VSEMRClusterKerberosAttributes {
     <#
     .SYNOPSIS
-        Adds an AWS::EMR::Cluster.KerberosAttributes resource property to the template
+        Adds an AWS::EMR::Cluster.KerberosAttributes resource property to the template. KerberosAttributes is a property of the AWS::EMR::Cluster resource. KerberosAttributes define the cluster-specific Kerberos configuration when Kerberos authentication is enabled using a security configuration. The cluster-specific configuration must be compatible with the security configuration. For more information see Use Kerberos Authentication: https://docs.aws.amazon.com/emr/latest/ManagementGuide/emr-kerberos.html in the *EMR Management Guide*.
 
     .DESCRIPTION
-        Adds an AWS::EMR::Cluster.KerberosAttributes resource property to the template
+        Adds an AWS::EMR::Cluster.KerberosAttributes resource property to the template.
+KerberosAttributes is a property of the AWS::EMR::Cluster resource. KerberosAttributes define the cluster-specific Kerberos configuration when Kerberos authentication is enabled using a security configuration. The cluster-specific configuration must be compatible with the security configuration. For more information see Use Kerberos Authentication: https://docs.aws.amazon.com/emr/latest/ManagementGuide/emr-kerberos.html in the *EMR Management Guide*.
 
     .LINK
         http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-elasticmapreduce-cluster-kerberosattributes.html

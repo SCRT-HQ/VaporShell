@@ -1,10 +1,11 @@
 function Add-VSKinesisFirehoseDeliveryStreamElasticsearchRetryOptions {
     <#
     .SYNOPSIS
-        Adds an AWS::KinesisFirehose::DeliveryStream.ElasticsearchRetryOptions resource property to the template
+        Adds an AWS::KinesisFirehose::DeliveryStream.ElasticsearchRetryOptions resource property to the template. The ElasticsearchRetryOptions property type configures the retry behavior for when Amazon Kinesis Data Firehose (Kinesis Data Firehose can't deliver data to Amazon Elasticsearch Service (Amazon ES.
 
     .DESCRIPTION
-        Adds an AWS::KinesisFirehose::DeliveryStream.ElasticsearchRetryOptions resource property to the template
+        Adds an AWS::KinesisFirehose::DeliveryStream.ElasticsearchRetryOptions resource property to the template.
+The ElasticsearchRetryOptions property type configures the retry behavior for when Amazon Kinesis Data Firehose (Kinesis Data Firehose can't deliver data to Amazon Elasticsearch Service (Amazon ES.
 
     .LINK
         http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-kinesisfirehose-deliverystream-elasticsearchretryoptions.html

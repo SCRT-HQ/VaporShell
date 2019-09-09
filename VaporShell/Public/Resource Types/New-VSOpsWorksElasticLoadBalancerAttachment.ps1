@@ -1,10 +1,10 @@
 function New-VSOpsWorksElasticLoadBalancerAttachment {
     <#
     .SYNOPSIS
-        Adds an AWS::OpsWorks::ElasticLoadBalancerAttachment resource to the template
+        Adds an AWS::OpsWorks::ElasticLoadBalancerAttachment resource to the template. Attaches an Elastic Load Balancing load balancer to an AWS OpsWorks layer that you specify.
 
     .DESCRIPTION
-        Adds an AWS::OpsWorks::ElasticLoadBalancerAttachment resource to the template
+        Adds an AWS::OpsWorks::ElasticLoadBalancerAttachment resource to the template. Attaches an Elastic Load Balancing load balancer to an AWS OpsWorks layer that you specify.
 
     .LINK
         http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-opsworks-elbattachment.html

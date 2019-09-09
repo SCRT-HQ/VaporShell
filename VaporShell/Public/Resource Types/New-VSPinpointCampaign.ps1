@@ -1,10 +1,10 @@
 function New-VSPinpointCampaign {
     <#
     .SYNOPSIS
-        Adds an AWS::Pinpoint::Campaign resource to the template
+        Adds an AWS::Pinpoint::Campaign resource to the template. Updates the settings for a campaign.
 
     .DESCRIPTION
-        Adds an AWS::Pinpoint::Campaign resource to the template
+        Adds an AWS::Pinpoint::Campaign resource to the template. Updates the settings for a campaign.
 
     .LINK
         http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-pinpoint-campaign.html

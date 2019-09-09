@@ -1,10 +1,11 @@
 function Add-VSElasticBeanstalkEnvironmentTier {
     <#
     .SYNOPSIS
-        Adds an AWS::ElasticBeanstalk::Environment.Tier resource property to the template
+        Adds an AWS::ElasticBeanstalk::Environment.Tier resource property to the template. Describes the environment tier for an AWS::ElasticBeanstalk::Environment: https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-beanstalk-environment.html resource. For more information, see Environment Tiers: https://docs.aws.amazon.com/elasticbeanstalk/latest/dg/using-features-managing-env-tiers.html in the *AWS Elastic Beanstalk Developer Guide*.
 
     .DESCRIPTION
-        Adds an AWS::ElasticBeanstalk::Environment.Tier resource property to the template
+        Adds an AWS::ElasticBeanstalk::Environment.Tier resource property to the template.
+Describes the environment tier for an AWS::ElasticBeanstalk::Environment: https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-beanstalk-environment.html resource. For more information, see Environment Tiers: https://docs.aws.amazon.com/elasticbeanstalk/latest/dg/using-features-managing-env-tiers.html in the *AWS Elastic Beanstalk Developer Guide*.
 
     .LINK
         http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-beanstalk-environment-tier.html

@@ -1,10 +1,11 @@
 function Add-VSECSTaskDefinitionKernelCapabilities {
     <#
     .SYNOPSIS
-        Adds an AWS::ECS::TaskDefinition.KernelCapabilities resource property to the template
+        Adds an AWS::ECS::TaskDefinition.KernelCapabilities resource property to the template. The KernelCapabilities property specifies the Linux capabilities for the container that are added to or dropped from the default configuration that is provided by Docker. For more information on the default capabilities and the non-default available capabilities, see Runtime privilege and Linux capabilities: https://docs.docker.com/engine/reference/run/#runtime-privilege-and-linux-capabilities in the *Docker run reference*. For more detailed information on these Linux capabilities, see the capabilities(7: http://man7.org/linux/man-pages/man7/capabilities.7.html Linux manual page.
 
     .DESCRIPTION
-        Adds an AWS::ECS::TaskDefinition.KernelCapabilities resource property to the template
+        Adds an AWS::ECS::TaskDefinition.KernelCapabilities resource property to the template.
+The KernelCapabilities property specifies the Linux capabilities for the container that are added to or dropped from the default configuration that is provided by Docker. For more information on the default capabilities and the non-default available capabilities, see Runtime privilege and Linux capabilities: https://docs.docker.com/engine/reference/run/#runtime-privilege-and-linux-capabilities in the *Docker run reference*. For more detailed information on these Linux capabilities, see the capabilities(7: http://man7.org/linux/man-pages/man7/capabilities.7.html Linux manual page.
 
     .LINK
         http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ecs-taskdefinition-kernelcapabilities.html

@@ -1,10 +1,10 @@
 function New-VSBatchComputeEnvironment {
     <#
     .SYNOPSIS
-        Adds an AWS::Batch::ComputeEnvironment resource to the template
+        Adds an AWS::Batch::ComputeEnvironment resource to the template. The AWS::Batch::ComputeEnvironment resource defines your AWS Batch compute environment. For more information, see Compute Environments: https://docs.aws.amazon.com/batch/latest/userguide/compute_environments.html in the *AWS Batch User Guide*.
 
     .DESCRIPTION
-        Adds an AWS::Batch::ComputeEnvironment resource to the template
+        Adds an AWS::Batch::ComputeEnvironment resource to the template. The AWS::Batch::ComputeEnvironment resource defines your AWS Batch compute environment. For more information, see Compute Environments: https://docs.aws.amazon.com/batch/latest/userguide/compute_environments.html in the *AWS Batch User Guide*.
 
     .LINK
         http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-batch-computeenvironment.html

@@ -1,10 +1,11 @@
 function Add-VSIoTAnalyticsChannelChannelStorage {
     <#
     .SYNOPSIS
-        Adds an AWS::IoTAnalytics::Channel.ChannelStorage resource property to the template
+        Adds an AWS::IoTAnalytics::Channel.ChannelStorage resource property to the template. Where channel data is stored.
 
     .DESCRIPTION
-        Adds an AWS::IoTAnalytics::Channel.ChannelStorage resource property to the template
+        Adds an AWS::IoTAnalytics::Channel.ChannelStorage resource property to the template.
+Where channel data is stored.
 
     .LINK
         http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iotanalytics-channel-channelstorage.html

@@ -1,10 +1,11 @@
 function Add-VSCognitoIdentityPoolPushSync {
     <#
     .SYNOPSIS
-        Adds an AWS::Cognito::IdentityPool.PushSync resource property to the template
+        Adds an AWS::Cognito::IdentityPool.PushSync resource property to the template. PushSync is a property of the AWS::Cognito::IdentityPool: https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-cognito-identitypool.html resource that defines the configuration options to be applied to an Amazon Cognito identity pool.
 
     .DESCRIPTION
-        Adds an AWS::Cognito::IdentityPool.PushSync resource property to the template
+        Adds an AWS::Cognito::IdentityPool.PushSync resource property to the template.
+PushSync is a property of the AWS::Cognito::IdentityPool: https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-cognito-identitypool.html resource that defines the configuration options to be applied to an Amazon Cognito identity pool.
 
     .LINK
         http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-cognito-identitypool-pushsync.html

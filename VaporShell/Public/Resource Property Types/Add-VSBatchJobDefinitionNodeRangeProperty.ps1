@@ -1,10 +1,11 @@
 function Add-VSBatchJobDefinitionNodeRangeProperty {
     <#
     .SYNOPSIS
-        Adds an AWS::Batch::JobDefinition.NodeRangeProperty resource property to the template
+        Adds an AWS::Batch::JobDefinition.NodeRangeProperty resource property to the template. An object representing the properties of the node range for a multi-node parallel job.
 
     .DESCRIPTION
-        Adds an AWS::Batch::JobDefinition.NodeRangeProperty resource property to the template
+        Adds an AWS::Batch::JobDefinition.NodeRangeProperty resource property to the template.
+An object representing the properties of the node range for a multi-node parallel job.
 
     .LINK
         http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-batch-jobdefinition-noderangeproperty.html

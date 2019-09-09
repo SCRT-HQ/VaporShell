@@ -1,10 +1,11 @@
 function Add-VSGlueSecurityConfigurationJobBookmarksEncryption {
     <#
     .SYNOPSIS
-        Adds an AWS::Glue::SecurityConfiguration.JobBookmarksEncryption resource property to the template
+        Adds an AWS::Glue::SecurityConfiguration.JobBookmarksEncryption resource property to the template. Specifies how job bookmark data should be encrypted.
 
     .DESCRIPTION
-        Adds an AWS::Glue::SecurityConfiguration.JobBookmarksEncryption resource property to the template
+        Adds an AWS::Glue::SecurityConfiguration.JobBookmarksEncryption resource property to the template.
+Specifies how job bookmark data should be encrypted.
 
     .LINK
         http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-glue-securityconfiguration-jobbookmarksencryption.html

@@ -1,10 +1,10 @@
 function New-VSSSMDocument {
     <#
     .SYNOPSIS
-        Adds an AWS::SSM::Document resource to the template
+        Adds an AWS::SSM::Document resource to the template. The AWS::SSM::Document resource creates an SSM document in AWS Systems Manager that defines the actions that Systems Manager performs, which you can use to set up and run commands on your instances.
 
     .DESCRIPTION
-        Adds an AWS::SSM::Document resource to the template
+        Adds an AWS::SSM::Document resource to the template. The AWS::SSM::Document resource creates an SSM document in AWS Systems Manager that defines the actions that Systems Manager performs, which you can use to set up and run commands on your instances.
 
     .LINK
         http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ssm-document.html

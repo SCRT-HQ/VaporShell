@@ -1,10 +1,11 @@
 function Add-VSKinesisAnalyticsV2ApplicationMonitoringConfiguration {
     <#
     .SYNOPSIS
-        Adds an AWS::KinesisAnalyticsV2::Application.MonitoringConfiguration resource property to the template
+        Adds an AWS::KinesisAnalyticsV2::Application.MonitoringConfiguration resource property to the template. Describes configuration parameters for Amazon CloudWatch logging for a Java-based Kinesis Data Analytics application. For more information about CloudWatch logging, see Monitoring: https://docs.aws.amazon.com/kinesisanalytics/latest/java/monitoring-overview.html.
 
     .DESCRIPTION
-        Adds an AWS::KinesisAnalyticsV2::Application.MonitoringConfiguration resource property to the template
+        Adds an AWS::KinesisAnalyticsV2::Application.MonitoringConfiguration resource property to the template.
+Describes configuration parameters for Amazon CloudWatch logging for a Java-based Kinesis Data Analytics application. For more information about CloudWatch logging, see Monitoring: https://docs.aws.amazon.com/kinesisanalytics/latest/java/monitoring-overview.html.
 
     .LINK
         http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-kinesisanalyticsv2-application-monitoringconfiguration.html

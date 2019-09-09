@@ -1,10 +1,15 @@
 function Add-VSEMRClusterApplication {
     <#
     .SYNOPSIS
-        Adds an AWS::EMR::Cluster.Application resource property to the template
+        Adds an AWS::EMR::Cluster.Application resource property to the template. Application is a property of AWS::EMR::Cluster. The Application property type defines the open-source big data applications for EMR to install and configure when a cluster is created.
 
     .DESCRIPTION
-        Adds an AWS::EMR::Cluster.Application resource property to the template
+        Adds an AWS::EMR::Cluster.Application resource property to the template.
+Application is a property of AWS::EMR::Cluster. The Application property type defines the open-source big data applications for EMR to install and configure when a cluster is created.
+
+With Amazon EMR release version 4.0 and later, the only accepted parameter is the application Name. To pass arguments to these applications, you use configuration classifications specified using JSON objects in a Configuration property. For more information, see Configuring Applications: https://docs.aws.amazon.com/emr/latest/ReleaseGuide/emr-configure-apps.html.
+
+With earlier Amazon EMR releases, the application is any Amazon or third-party software that you can add to the cluster. You can specify the version of the application and arguments to pass to it. Amazon EMR accepts and forwards the argument list to the corresponding installation script as a bootstrap action argument.
 
     .LINK
         http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-elasticmapreduce-cluster-application.html

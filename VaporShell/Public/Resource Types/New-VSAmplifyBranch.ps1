@@ -1,10 +1,10 @@
 function New-VSAmplifyBranch {
     <#
     .SYNOPSIS
-        Adds an AWS::Amplify::Branch resource to the template
+        Adds an AWS::Amplify::Branch resource to the template. The AWS::Amplify::Branch resource creates a new branch within an app.
 
     .DESCRIPTION
-        Adds an AWS::Amplify::Branch resource to the template
+        Adds an AWS::Amplify::Branch resource to the template. The AWS::Amplify::Branch resource creates a new branch within an app.
 
     .LINK
         http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-amplify-branch.html

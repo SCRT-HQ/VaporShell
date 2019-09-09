@@ -1,10 +1,11 @@
 function Add-VSEMRInstanceGroupConfigEbsBlockDeviceConfig {
     <#
     .SYNOPSIS
-        Adds an AWS::EMR::InstanceGroupConfig.EbsBlockDeviceConfig resource property to the template
+        Adds an AWS::EMR::InstanceGroupConfig.EbsBlockDeviceConfig resource property to the template. Configuration of requested EBS block device associated with the instance group with count of volumes that will be associated to every instance.
 
     .DESCRIPTION
-        Adds an AWS::EMR::InstanceGroupConfig.EbsBlockDeviceConfig resource property to the template
+        Adds an AWS::EMR::InstanceGroupConfig.EbsBlockDeviceConfig resource property to the template.
+Configuration of requested EBS block device associated with the instance group with count of volumes that will be associated to every instance.
 
     .LINK
         http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-emr-ebsconfiguration-ebsblockdeviceconfig.html

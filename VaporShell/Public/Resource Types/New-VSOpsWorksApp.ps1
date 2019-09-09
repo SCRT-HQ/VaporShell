@@ -1,10 +1,12 @@
 function New-VSOpsWorksApp {
     <#
     .SYNOPSIS
-        Adds an AWS::OpsWorks::App resource to the template
+        Adds an AWS::OpsWorks::App resource to the template. Creates an app for a specified stack. For more information, see Creating Apps: https://docs.aws.amazon.com/opsworks/latest/userguide/workingapps-creating.html.
 
     .DESCRIPTION
-        Adds an AWS::OpsWorks::App resource to the template
+        Adds an AWS::OpsWorks::App resource to the template. Creates an app for a specified stack. For more information, see Creating Apps: https://docs.aws.amazon.com/opsworks/latest/userguide/workingapps-creating.html.
+
+**Required Permissions**: To use this action, an IAM user must have a Manage permissions level for the stack, or an attached policy that explicitly grants permissions. For more information on user permissions, see Managing User Permissions: https://docs.aws.amazon.com/opsworks/latest/userguide/opsworks-security-users.html.
 
     .LINK
         http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-opsworks-app.html

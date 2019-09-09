@@ -1,10 +1,10 @@
 function New-VSGlueCrawler {
     <#
     .SYNOPSIS
-        Adds an AWS::Glue::Crawler resource to the template
+        Adds an AWS::Glue::Crawler resource to the template. The AWS::Glue::Crawler resource specifies an AWS Glue crawler. For more information, see Cataloging Tables with a Crawler: https://docs.aws.amazon.com/glue/latest/dg/add-crawler.html and Crawler Structure: https://docs.aws.amazon.com/glue/latest/dg/aws-glue-api-crawler-crawling.html#aws-glue-api-crawler-crawling-Crawler in the *AWS Glue Developer Guide*.
 
     .DESCRIPTION
-        Adds an AWS::Glue::Crawler resource to the template
+        Adds an AWS::Glue::Crawler resource to the template. The AWS::Glue::Crawler resource specifies an AWS Glue crawler. For more information, see Cataloging Tables with a Crawler: https://docs.aws.amazon.com/glue/latest/dg/add-crawler.html and Crawler Structure: https://docs.aws.amazon.com/glue/latest/dg/aws-glue-api-crawler-crawling.html#aws-glue-api-crawler-crawling-Crawler in the *AWS Glue Developer Guide*.
 
     .LINK
         http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-glue-crawler.html

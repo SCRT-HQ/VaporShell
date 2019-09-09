@@ -1,10 +1,13 @@
 function Add-VSEventsEventBusPolicyCondition {
     <#
     .SYNOPSIS
-        Adds an AWS::Events::EventBusPolicy.Condition resource property to the template
+        Adds an AWS::Events::EventBusPolicy.Condition resource property to the template. A JSON string which you can use to limit the event bus permissions you are granting to only accounts that fulfill the condition. Currently, the only supported condition is membership in a certain AWS organization. The string must contain Type, Key, and Value fields. The Value field specifies the ID of the AWS organization. Following is an example value for Condition:
 
     .DESCRIPTION
-        Adds an AWS::Events::EventBusPolicy.Condition resource property to the template
+        Adds an AWS::Events::EventBusPolicy.Condition resource property to the template.
+A JSON string which you can use to limit the event bus permissions you are granting to only accounts that fulfill the condition. Currently, the only supported condition is membership in a certain AWS organization. The string must contain Type, Key, and Value fields. The Value field specifies the ID of the AWS organization. Following is an example value for Condition:
+
+'{"Type" : "StringEquals", "Key": "aws:PrincipalOrgID", "Value": "o-1234567890"}'
 
     .LINK
         http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-events-eventbuspolicy-condition.html

@@ -1,10 +1,10 @@
 function New-VSCognitoIdentityPoolRoleAttachment {
     <#
     .SYNOPSIS
-        Adds an AWS::Cognito::IdentityPoolRoleAttachment resource to the template
+        Adds an AWS::Cognito::IdentityPoolRoleAttachment resource to the template. The AWS::Cognito::IdentityPoolRoleAttachment resource manages the role configuration for an Amazon Cognito identity pool.
 
     .DESCRIPTION
-        Adds an AWS::Cognito::IdentityPoolRoleAttachment resource to the template
+        Adds an AWS::Cognito::IdentityPoolRoleAttachment resource to the template. The AWS::Cognito::IdentityPoolRoleAttachment resource manages the role configuration for an Amazon Cognito identity pool.
 
     .LINK
         http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-cognito-identitypoolroleattachment.html

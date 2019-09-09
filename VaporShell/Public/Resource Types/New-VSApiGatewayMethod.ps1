@@ -1,10 +1,10 @@
 function New-VSApiGatewayMethod {
     <#
     .SYNOPSIS
-        Adds an AWS::ApiGateway::Method resource to the template
+        Adds an AWS::ApiGateway::Method resource to the template. The AWS::ApiGateway::Method resource creates API Gateway methods that define the parameters and body that clients must send in their requests.
 
     .DESCRIPTION
-        Adds an AWS::ApiGateway::Method resource to the template
+        Adds an AWS::ApiGateway::Method resource to the template. The AWS::ApiGateway::Method resource creates API Gateway methods that define the parameters and body that clients must send in their requests.
 
     .LINK
         http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-apigateway-method.html

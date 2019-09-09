@@ -1,10 +1,11 @@
 function Add-VSS3BucketNoncurrentVersionTransition {
     <#
     .SYNOPSIS
-        Adds an AWS::S3::Bucket.NoncurrentVersionTransition resource property to the template
+        Adds an AWS::S3::Bucket.NoncurrentVersionTransition resource property to the template. Container for the transition rule that describes when noncurrent objects transition to the STANDARD_IA, ONEZONE_IA, INTELLIGENT_TIERING, GLACIER, or DEEP_ARCHIVE storage class. If your bucket is versioning-enabled (or versioning is suspended, you can set this action to request that Amazon S3 transition noncurrent object versions to the STANDARD_IA, ONEZONE_IA, INTELLIGENT_TIERING, GLACIER, or DEEP_ARCHIVE storage class at a specific period in the object's lifetime.
 
     .DESCRIPTION
-        Adds an AWS::S3::Bucket.NoncurrentVersionTransition resource property to the template
+        Adds an AWS::S3::Bucket.NoncurrentVersionTransition resource property to the template.
+Container for the transition rule that describes when noncurrent objects transition to the STANDARD_IA, ONEZONE_IA, INTELLIGENT_TIERING, GLACIER, or DEEP_ARCHIVE storage class. If your bucket is versioning-enabled (or versioning is suspended, you can set this action to request that Amazon S3 transition noncurrent object versions to the STANDARD_IA, ONEZONE_IA, INTELLIGENT_TIERING, GLACIER, or DEEP_ARCHIVE storage class at a specific period in the object's lifetime.
 
     .LINK
         http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-s3-bucket-lifecycleconfig-rule-noncurrentversiontransition.html

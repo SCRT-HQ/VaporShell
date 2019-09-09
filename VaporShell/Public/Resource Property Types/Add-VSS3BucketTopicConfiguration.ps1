@@ -1,10 +1,11 @@
 function Add-VSS3BucketTopicConfiguration {
     <#
     .SYNOPSIS
-        Adds an AWS::S3::Bucket.TopicConfiguration resource property to the template
+        Adds an AWS::S3::Bucket.TopicConfiguration resource property to the template. A container for specifying the configuration for publication of messages to an Amazon Simple Notification Service (Amazon SNS topic when Amazon S3 detects specified events.
 
     .DESCRIPTION
-        Adds an AWS::S3::Bucket.TopicConfiguration resource property to the template
+        Adds an AWS::S3::Bucket.TopicConfiguration resource property to the template.
+A container for specifying the configuration for publication of messages to an Amazon Simple Notification Service (Amazon SNS topic when Amazon S3 detects specified events.
 
     .LINK
         http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-s3-bucket-notificationconfig-topicconfig.html

@@ -1,10 +1,11 @@
 function Add-VSIoTAnalyticsPipelineDeviceShadowEnrich {
     <#
     .SYNOPSIS
-        Adds an AWS::IoTAnalytics::Pipeline.DeviceShadowEnrich resource property to the template
+        Adds an AWS::IoTAnalytics::Pipeline.DeviceShadowEnrich resource property to the template. An activity that adds information from the AWS IoT Device Shadows service to a message.
 
     .DESCRIPTION
-        Adds an AWS::IoTAnalytics::Pipeline.DeviceShadowEnrich resource property to the template
+        Adds an AWS::IoTAnalytics::Pipeline.DeviceShadowEnrich resource property to the template.
+An activity that adds information from the AWS IoT Device Shadows service to a message.
 
     .LINK
         http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iotanalytics-pipeline-deviceshadowenrich.html

@@ -1,10 +1,11 @@
 function Add-VSBackupBackupPlanBackupRuleResourceType {
     <#
     .SYNOPSIS
-        Adds an AWS::Backup::BackupPlan.BackupRuleResourceType resource property to the template
+        Adds an AWS::Backup::BackupPlan.BackupRuleResourceType resource property to the template. Specifies an object containing properties used to schedule a task to back up a selection of resources.
 
     .DESCRIPTION
-        Adds an AWS::Backup::BackupPlan.BackupRuleResourceType resource property to the template
+        Adds an AWS::Backup::BackupPlan.BackupRuleResourceType resource property to the template.
+Specifies an object containing properties used to schedule a task to back up a selection of resources.
 
     .LINK
         http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-backup-backupplan-backupruleresourcetype.html

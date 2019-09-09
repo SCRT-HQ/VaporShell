@@ -1,10 +1,10 @@
 function New-VSServiceCatalogResourceUpdateConstraint {
     <#
     .SYNOPSIS
-        Adds an AWS::ServiceCatalog::ResourceUpdateConstraint resource to the template
+        Adds an AWS::ServiceCatalog::ResourceUpdateConstraint resource to the template. Specifies a RESOURCE_UPDATE constraint.
 
     .DESCRIPTION
-        Adds an AWS::ServiceCatalog::ResourceUpdateConstraint resource to the template
+        Adds an AWS::ServiceCatalog::ResourceUpdateConstraint resource to the template. Specifies a RESOURCE_UPDATE constraint.
 
     .LINK
         http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-servicecatalog-resourceupdateconstraint.html

@@ -1,10 +1,11 @@
 function Add-VSSSMAssociationTarget {
     <#
     .SYNOPSIS
-        Adds an AWS::SSM::Association.Target resource property to the template
+        Adds an AWS::SSM::Association.Target resource property to the template. Target is a property of the AWS::SSM::Association: https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ssm-association.html resource that specifies the targets for an SSM document in Systems Manager.
 
     .DESCRIPTION
-        Adds an AWS::SSM::Association.Target resource property to the template
+        Adds an AWS::SSM::Association.Target resource property to the template.
+Target is a property of the AWS::SSM::Association: https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ssm-association.html resource that specifies the targets for an SSM document in Systems Manager.
 
     .LINK
         http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ssm-association-target.html

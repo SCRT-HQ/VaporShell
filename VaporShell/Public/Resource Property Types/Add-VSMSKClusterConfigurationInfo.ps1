@@ -1,10 +1,11 @@
 function Add-VSMSKClusterConfigurationInfo {
     <#
     .SYNOPSIS
-        Adds an AWS::MSK::Cluster.ConfigurationInfo resource property to the template
+        Adds an AWS::MSK::Cluster.ConfigurationInfo resource property to the template. Specifies the Amazon MSK configuration to use for the brokers.
 
     .DESCRIPTION
-        Adds an AWS::MSK::Cluster.ConfigurationInfo resource property to the template
+        Adds an AWS::MSK::Cluster.ConfigurationInfo resource property to the template.
+Specifies the Amazon MSK configuration to use for the brokers.
 
     .LINK
         http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-msk-cluster-configurationinfo.html

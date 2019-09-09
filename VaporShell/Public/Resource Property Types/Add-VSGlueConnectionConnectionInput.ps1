@@ -1,10 +1,11 @@
 function Add-VSGlueConnectionConnectionInput {
     <#
     .SYNOPSIS
-        Adds an AWS::Glue::Connection.ConnectionInput resource property to the template
+        Adds an AWS::Glue::Connection.ConnectionInput resource property to the template. A structure that is used to specify a connection to create or update.
 
     .DESCRIPTION
-        Adds an AWS::Glue::Connection.ConnectionInput resource property to the template
+        Adds an AWS::Glue::Connection.ConnectionInput resource property to the template.
+A structure that is used to specify a connection to create or update.
 
     .LINK
         http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-glue-connection-connectioninput.html

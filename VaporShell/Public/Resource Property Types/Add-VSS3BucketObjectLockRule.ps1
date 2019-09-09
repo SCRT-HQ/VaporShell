@@ -1,10 +1,11 @@
 function Add-VSS3BucketObjectLockRule {
     <#
     .SYNOPSIS
-        Adds an AWS::S3::Bucket.ObjectLockRule resource property to the template
+        Adds an AWS::S3::Bucket.ObjectLockRule resource property to the template. The object lock rule in place for the specified object.
 
     .DESCRIPTION
-        Adds an AWS::S3::Bucket.ObjectLockRule resource property to the template
+        Adds an AWS::S3::Bucket.ObjectLockRule resource property to the template.
+The object lock rule in place for the specified object.
 
     .LINK
         http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-s3-bucket-objectlockrule.html

@@ -1,10 +1,11 @@
 function Add-VSS3BucketWebsiteConfiguration {
     <#
     .SYNOPSIS
-        Adds an AWS::S3::Bucket.WebsiteConfiguration resource property to the template
+        Adds an AWS::S3::Bucket.WebsiteConfiguration resource property to the template. Specifies website configuration parameters for an Amazon S3 bucket.
 
     .DESCRIPTION
-        Adds an AWS::S3::Bucket.WebsiteConfiguration resource property to the template
+        Adds an AWS::S3::Bucket.WebsiteConfiguration resource property to the template.
+Specifies website configuration parameters for an Amazon S3 bucket.
 
     .LINK
         http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-s3-websiteconfiguration.html

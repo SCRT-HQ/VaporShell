@@ -1,10 +1,11 @@
 function Add-VSECSTaskDefinitionResourceRequirement {
     <#
     .SYNOPSIS
-        Adds an AWS::ECS::TaskDefinition.ResourceRequirement resource property to the template
+        Adds an AWS::ECS::TaskDefinition.ResourceRequirement resource property to the template. The ResourceRequirement property specifies the type and amount of a resource to assign to a container. The only supported resource is a GPU. For more information, see Working with GPUs on Amazon ECS: https://docs.aws.amazon.com/AmazonECS/latest/developerguide/ecs-gpu.html in the *Amazon Elastic Container Service Developer Guide*
 
     .DESCRIPTION
-        Adds an AWS::ECS::TaskDefinition.ResourceRequirement resource property to the template
+        Adds an AWS::ECS::TaskDefinition.ResourceRequirement resource property to the template.
+The ResourceRequirement property specifies the type and amount of a resource to assign to a container. The only supported resource is a GPU. For more information, see Working with GPUs on Amazon ECS: https://docs.aws.amazon.com/AmazonECS/latest/developerguide/ecs-gpu.html in the *Amazon Elastic Container Service Developer Guide*
 
     .LINK
         http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ecs-taskdefinition-resourcerequirement.html

@@ -1,10 +1,11 @@
 function Add-VSDynamoDBTableTimeToLiveSpecification {
     <#
     .SYNOPSIS
-        Adds an AWS::DynamoDB::Table.TimeToLiveSpecification resource property to the template
+        Adds an AWS::DynamoDB::Table.TimeToLiveSpecification resource property to the template. Represents the settings used to enable or disable Time to Live for the specified table.
 
     .DESCRIPTION
-        Adds an AWS::DynamoDB::Table.TimeToLiveSpecification resource property to the template
+        Adds an AWS::DynamoDB::Table.TimeToLiveSpecification resource property to the template.
+Represents the settings used to enable or disable Time to Live for the specified table.
 
     .LINK
         http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-dynamodb-timetolivespecification.html

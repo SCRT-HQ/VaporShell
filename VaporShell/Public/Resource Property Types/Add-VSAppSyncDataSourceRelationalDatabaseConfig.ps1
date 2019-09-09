@@ -1,10 +1,13 @@
 function Add-VSAppSyncDataSourceRelationalDatabaseConfig {
     <#
     .SYNOPSIS
-        Adds an AWS::AppSync::DataSource.RelationalDatabaseConfig resource property to the template
+        Adds an AWS::AppSync::DataSource.RelationalDatabaseConfig resource property to the template. Use the RelationalDatabaseConfig property type to specify RelationalDatabaseConfig for an AWS AppSync data source.
 
     .DESCRIPTION
-        Adds an AWS::AppSync::DataSource.RelationalDatabaseConfig resource property to the template
+        Adds an AWS::AppSync::DataSource.RelationalDatabaseConfig resource property to the template.
+Use the RelationalDatabaseConfig property type to specify RelationalDatabaseConfig for an AWS AppSync data source.
+
+RelationalDatabaseConfig is a property of the AWS::AppSync::DataSource: https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-appsync-datasource.html property type.
 
     .LINK
         http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-appsync-datasource-relationaldatabaseconfig.html

@@ -1,10 +1,11 @@
 function Add-VSCloudFrontStreamingDistributionS3Origin {
     <#
     .SYNOPSIS
-        Adds an AWS::CloudFront::StreamingDistribution.S3Origin resource property to the template
+        Adds an AWS::CloudFront::StreamingDistribution.S3Origin resource property to the template. A complex type that contains information about the Amazon S3 bucket from which you want CloudFront to get your media files for distribution.
 
     .DESCRIPTION
-        Adds an AWS::CloudFront::StreamingDistribution.S3Origin resource property to the template
+        Adds an AWS::CloudFront::StreamingDistribution.S3Origin resource property to the template.
+A complex type that contains information about the Amazon S3 bucket from which you want CloudFront to get your media files for distribution.
 
     .LINK
         http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-cloudfront-streamingdistribution-s3origin.html

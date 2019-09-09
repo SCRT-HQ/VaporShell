@@ -1,10 +1,10 @@
 function New-VSLambdaVersion {
     <#
     .SYNOPSIS
-        Adds an AWS::Lambda::Version resource to the template
+        Adds an AWS::Lambda::Version resource to the template. The AWS::Lambda::Version resource creates a version: https://docs.aws.amazon.com/lambda/latest/dg/versioning-aliases.html from the current code and configuration of a function. Use versions to create a snapshot of your function code and configuration that doesn't change.
 
     .DESCRIPTION
-        Adds an AWS::Lambda::Version resource to the template
+        Adds an AWS::Lambda::Version resource to the template. The AWS::Lambda::Version resource creates a version: https://docs.aws.amazon.com/lambda/latest/dg/versioning-aliases.html from the current code and configuration of a function. Use versions to create a snapshot of your function code and configuration that doesn't change.
 
     .LINK
         http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-lambda-version.html

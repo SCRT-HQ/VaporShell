@@ -1,10 +1,11 @@
 function Add-VSCodeBuildProjectEnvironmentVariable {
     <#
     .SYNOPSIS
-        Adds an AWS::CodeBuild::Project.EnvironmentVariable resource property to the template
+        Adds an AWS::CodeBuild::Project.EnvironmentVariable resource property to the template. EnvironmentVariable is a property of the AWS CodeBuild Project Environment: https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-codebuild-project-environment.html property type that specifies the name and value of an environment variable for an AWS CodeBuild project environment. When you use the environment to run a build, these variables are available for your builds to use. EnvironmentVariable contains a list of EnvironmentVariable property types.
 
     .DESCRIPTION
-        Adds an AWS::CodeBuild::Project.EnvironmentVariable resource property to the template
+        Adds an AWS::CodeBuild::Project.EnvironmentVariable resource property to the template.
+EnvironmentVariable is a property of the AWS CodeBuild Project Environment: https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-codebuild-project-environment.html property type that specifies the name and value of an environment variable for an AWS CodeBuild project environment. When you use the environment to run a build, these variables are available for your builds to use. EnvironmentVariable contains a list of EnvironmentVariable property types.
 
     .LINK
         http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-codebuild-project-environmentvariable.html

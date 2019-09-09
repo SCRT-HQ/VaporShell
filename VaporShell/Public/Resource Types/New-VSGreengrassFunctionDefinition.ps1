@@ -1,10 +1,18 @@
 function New-VSGreengrassFunctionDefinition {
     <#
     .SYNOPSIS
-        Adds an AWS::Greengrass::FunctionDefinition resource to the template
+        Adds an AWS::Greengrass::FunctionDefinition resource to the template. The AWS::Greengrass::FunctionDefinition resource represents a function definition for AWS IoT Greengrass. Function definitions are used to organize your function definition versions.
 
     .DESCRIPTION
-        Adds an AWS::Greengrass::FunctionDefinition resource to the template
+        Adds an AWS::Greengrass::FunctionDefinition resource to the template. The AWS::Greengrass::FunctionDefinition resource represents a function definition for AWS IoT Greengrass. Function definitions are used to organize your function definition versions.
+
+Function definitions can reference multiple function definition versions. All function definition versions must be associated with a function definition. Each function definition version can contain one or more functions.
+
+**Note**
+
+When you create a function definition, you can optionally include an initial function definition version. To associate a function definition version later, create an https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-greengrass-functiondefinitionversion.html: https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-greengrass-functiondefinitionversion.html resource and specify the ID of this function definition.
+
+After you create the function definition version that contains the functions you want to deploy, you must add it to your group version. For more information, see https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-greengrass-group.html: https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-greengrass-group.html.
 
     .LINK
         http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-greengrass-functiondefinition.html

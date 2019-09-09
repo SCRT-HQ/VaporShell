@@ -1,10 +1,13 @@
 function Add-VSSSMMaintenanceWindowTaskNotificationConfig {
     <#
     .SYNOPSIS
-        Adds an AWS::SSM::MaintenanceWindowTask.NotificationConfig resource property to the template
+        Adds an AWS::SSM::MaintenanceWindowTask.NotificationConfig resource property to the template. The NotificationConfig property type specifies configurations for sending notifications for a maintenance window task in AWS Systems Manager.
 
     .DESCRIPTION
-        Adds an AWS::SSM::MaintenanceWindowTask.NotificationConfig resource property to the template
+        Adds an AWS::SSM::MaintenanceWindowTask.NotificationConfig resource property to the template.
+The NotificationConfig property type specifies configurations for sending notifications for a maintenance window task in AWS Systems Manager.
+
+NotificationConfig is a property of the MaintenanceWindowRunCommandParameters: https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ssm-maintenancewindowtask-maintenancewindowruncommandparameters.html property type.
 
     .LINK
         http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ssm-maintenancewindowtask-notificationconfig.html

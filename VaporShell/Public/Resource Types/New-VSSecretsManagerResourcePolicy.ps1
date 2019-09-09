@@ -1,10 +1,10 @@
 function New-VSSecretsManagerResourcePolicy {
     <#
     .SYNOPSIS
-        Adds an AWS::SecretsManager::ResourcePolicy resource to the template
+        Adds an AWS::SecretsManager::ResourcePolicy resource to the template. Attaches the contents of the specified resource-based permission policy to a secret. A resource-based policy is optional. Alternatively, you can use IAM identity-based policies that specify the secret's Amazon Resource Name (ARN in the policy statement's Resources element. You can also use a combination of both identity-based and resource-based policies. The affected users and roles receive the permissions that are permitted by all relevant policies.
 
     .DESCRIPTION
-        Adds an AWS::SecretsManager::ResourcePolicy resource to the template
+        Adds an AWS::SecretsManager::ResourcePolicy resource to the template. Attaches the contents of the specified resource-based permission policy to a secret. A resource-based policy is optional. Alternatively, you can use IAM identity-based policies that specify the secret's Amazon Resource Name (ARN in the policy statement's Resources element. You can also use a combination of both identity-based and resource-based policies. The affected users and roles receive the permissions that are permitted by all relevant policies.
 
     .LINK
         http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-secretsmanager-resourcepolicy.html

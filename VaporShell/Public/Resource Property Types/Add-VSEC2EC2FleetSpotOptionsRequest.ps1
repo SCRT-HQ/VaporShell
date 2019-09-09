@@ -1,10 +1,13 @@
 function Add-VSEC2EC2FleetSpotOptionsRequest {
     <#
     .SYNOPSIS
-        Adds an AWS::EC2::EC2Fleet.SpotOptionsRequest resource property to the template
+        Adds an AWS::EC2::EC2Fleet.SpotOptionsRequest resource property to the template. Specifies the configuration of Spot Instances for an EC2 Fleet.
 
     .DESCRIPTION
-        Adds an AWS::EC2::EC2Fleet.SpotOptionsRequest resource property to the template
+        Adds an AWS::EC2::EC2Fleet.SpotOptionsRequest resource property to the template.
+Specifies the configuration of Spot Instances for an EC2 Fleet.
+
+SpotOptionsRequest is a property of the  AWS::EC2::EC2Fleet: https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ec2-ec2fleet.html resource.
 
     .LINK
         http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-ec2fleet-spotoptionsrequest.html

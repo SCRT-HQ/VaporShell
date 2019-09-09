@@ -1,10 +1,11 @@
 function Add-VSOpsWorksLayerAutoScalingThresholds {
     <#
     .SYNOPSIS
-        Adds an AWS::OpsWorks::Layer.AutoScalingThresholds resource property to the template
+        Adds an AWS::OpsWorks::Layer.AutoScalingThresholds resource property to the template. Describes a load-based auto scaling upscaling or downscaling threshold configuration, which specifies when AWS OpsWorks Stacks starts or stops load-based instances.
 
     .DESCRIPTION
-        Adds an AWS::OpsWorks::Layer.AutoScalingThresholds resource property to the template
+        Adds an AWS::OpsWorks::Layer.AutoScalingThresholds resource property to the template.
+Describes a load-based auto scaling upscaling or downscaling threshold configuration, which specifies when AWS OpsWorks Stacks starts or stops load-based instances.
 
     .LINK
         http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-opsworks-layer-loadbasedautoscaling-autoscalingthresholds.html

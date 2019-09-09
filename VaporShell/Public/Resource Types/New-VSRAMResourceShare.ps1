@@ -1,10 +1,10 @@
 function New-VSRAMResourceShare {
     <#
     .SYNOPSIS
-        Adds an AWS::RAM::ResourceShare resource to the template
+        Adds an AWS::RAM::ResourceShare resource to the template. Specifies a resource share.
 
     .DESCRIPTION
-        Adds an AWS::RAM::ResourceShare resource to the template
+        Adds an AWS::RAM::ResourceShare resource to the template. Specifies a resource share.
 
     .LINK
         http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ram-resourceshare.html

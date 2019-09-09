@@ -1,10 +1,11 @@
 function Add-VSBudgetsBudgetTimePeriod {
     <#
     .SYNOPSIS
-        Adds an AWS::Budgets::Budget.TimePeriod resource property to the template
+        Adds an AWS::Budgets::Budget.TimePeriod resource property to the template. The period of time that is covered by a budget. The period has a start date and an end date. The start date must come before the end date. There are no restrictions on the end date.
 
     .DESCRIPTION
-        Adds an AWS::Budgets::Budget.TimePeriod resource property to the template
+        Adds an AWS::Budgets::Budget.TimePeriod resource property to the template.
+The period of time that is covered by a budget. The period has a start date and an end date. The start date must come before the end date. There are no restrictions on the end date.
 
     .LINK
         http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-budgets-budget-timeperiod.html

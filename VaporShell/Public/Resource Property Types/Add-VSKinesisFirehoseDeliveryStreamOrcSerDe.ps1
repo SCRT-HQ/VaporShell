@@ -1,10 +1,11 @@
 function Add-VSKinesisFirehoseDeliveryStreamOrcSerDe {
     <#
     .SYNOPSIS
-        Adds an AWS::KinesisFirehose::DeliveryStream.OrcSerDe resource property to the template
+        Adds an AWS::KinesisFirehose::DeliveryStream.OrcSerDe resource property to the template. A serializer to use for converting data to the ORC format before storing it in Amazon S3. For more information, see Apache ORC: https://orc.apache.org/docs/.
 
     .DESCRIPTION
-        Adds an AWS::KinesisFirehose::DeliveryStream.OrcSerDe resource property to the template
+        Adds an AWS::KinesisFirehose::DeliveryStream.OrcSerDe resource property to the template.
+A serializer to use for converting data to the ORC format before storing it in Amazon S3. For more information, see Apache ORC: https://orc.apache.org/docs/.
 
     .LINK
         http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-kinesisfirehose-deliverystream-orcserde.html

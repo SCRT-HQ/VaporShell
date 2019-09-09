@@ -1,10 +1,19 @@
 function Add-VSECSTaskDefinitionHealthCheck {
     <#
     .SYNOPSIS
-        Adds an AWS::ECS::TaskDefinition.HealthCheck resource property to the template
+        Adds an AWS::ECS::TaskDefinition.HealthCheck resource property to the template. The HealthCheck property specifies an object representing a container health check. Health check parameters that are specified in a container definition override any Docker health checks that exist in the container image (such as those specified in a parent image or from the image's Dockerfile.
 
     .DESCRIPTION
-        Adds an AWS::ECS::TaskDefinition.HealthCheck resource property to the template
+        Adds an AWS::ECS::TaskDefinition.HealthCheck resource property to the template.
+The HealthCheck property specifies an object representing a container health check. Health check parameters that are specified in a container definition override any Docker health checks that exist in the container image (such as those specified in a parent image or from the image's Dockerfile.
+
+The following are notes about container health check support:
+
++ Container health checks require version 1.17.0 or greater of the Amazon ECS container agent. For more information, see Updating the Amazon ECS Container Agent: https://docs.aws.amazon.com/AmazonECS/latest/developerguide/ecs-agent-update.html.
+
++ Container health checks are supported for Fargate tasks if you are using platform version 1.1.0 or greater. For more information, see AWS Fargate Platform Versions: https://docs.aws.amazon.com/AmazonECS/latest/developerguide/platform_versions.html.
+
++ Container health checks are not supported for tasks that are part of a service that is configured to use a Classic Load Balancer.
 
     .LINK
         http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ecs-taskdefinition-healthcheck.html

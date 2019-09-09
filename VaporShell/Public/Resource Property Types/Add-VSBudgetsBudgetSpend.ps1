@@ -1,10 +1,17 @@
 function Add-VSBudgetsBudgetSpend {
     <#
     .SYNOPSIS
-        Adds an AWS::Budgets::Budget.Spend resource property to the template
+        Adds an AWS::Budgets::Budget.Spend resource property to the template. The amount of cost or usage that is measured for a budget.
 
     .DESCRIPTION
-        Adds an AWS::Budgets::Budget.Spend resource property to the template
+        Adds an AWS::Budgets::Budget.Spend resource property to the template.
+The amount of cost or usage that is measured for a budget.
+
+For example, a Spend for 3 GB of S3 usage would have the following parameters:
+
++ An Amount of 3
+
++ A unit of GB
 
     .LINK
         http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-budgets-budget-spend.html

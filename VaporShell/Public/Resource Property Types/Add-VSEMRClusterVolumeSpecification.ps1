@@ -1,10 +1,11 @@
 function Add-VSEMRClusterVolumeSpecification {
     <#
     .SYNOPSIS
-        Adds an AWS::EMR::Cluster.VolumeSpecification resource property to the template
+        Adds an AWS::EMR::Cluster.VolumeSpecification resource property to the template. VolumeSpecification is a subproperty of the EbsBlockDeviceConfig property type. VolumeSecification determines the volume type, IOPS, and size (GiB for EBS volumes attached to EC2 instances.
 
     .DESCRIPTION
-        Adds an AWS::EMR::Cluster.VolumeSpecification resource property to the template
+        Adds an AWS::EMR::Cluster.VolumeSpecification resource property to the template.
+VolumeSpecification is a subproperty of the EbsBlockDeviceConfig property type. VolumeSecification determines the volume type, IOPS, and size (GiB for EBS volumes attached to EC2 instances.
 
     .LINK
         http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-elasticmapreduce-cluster-volumespecification.html

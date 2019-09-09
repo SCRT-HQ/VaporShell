@@ -1,10 +1,11 @@
 function Add-VSServiceDiscoveryServiceDnsConfig {
     <#
     .SYNOPSIS
-        Adds an AWS::ServiceDiscovery::Service.DnsConfig resource property to the template
+        Adds an AWS::ServiceDiscovery::Service.DnsConfig resource property to the template. A complex type that contains information about the Amazon Route 53 DNS records that you want AWS Cloud Map to create when you register an instance.
 
     .DESCRIPTION
-        Adds an AWS::ServiceDiscovery::Service.DnsConfig resource property to the template
+        Adds an AWS::ServiceDiscovery::Service.DnsConfig resource property to the template.
+A complex type that contains information about the Amazon Route 53 DNS records that you want AWS Cloud Map to create when you register an instance.
 
     .LINK
         http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-servicediscovery-service-dnsconfig.html

@@ -1,10 +1,18 @@
 function New-VSEC2TransitGateway {
     <#
     .SYNOPSIS
-        Adds an AWS::EC2::TransitGateway resource to the template
+        Adds an AWS::EC2::TransitGateway resource to the template. Specifies a transit gateway.
 
     .DESCRIPTION
-        Adds an AWS::EC2::TransitGateway resource to the template
+        Adds an AWS::EC2::TransitGateway resource to the template. Specifies a transit gateway.
+
+You can use a transit gateway to interconnect your virtual private clouds (VPC and on-premises networks. After the transit gateway enters the available state, you can attach your VPCs and VPN connections to the transit gateway.
+
+To attach your VPCs, use AWS::EC2::TransitGatewayAttachment: https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ec2-transitgatewayattachment.html.
+
+To attach a VPN connection, use AWS::EC2::CustomerGateway: https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ec2-customer-gateway.html to create a customer gateway and specify the ID of the customer gateway and the ID of the transit gateway in a call to AWS::EC2::VPNConnection: https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ec2-vpn-connection.html.
+
+When you create a transit gateway, we create a default transit gateway route table and use it as the default association route table and the default propagation route table. You can use AWS::EC2::TransitGatewayRouteTable: https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ec2-transitgatewayroutetable.html to create additional transit gateway route tables. If you disable automatic route propagation, we do not create a default transit gateway route table. You can use AWS::EC2::TransitGatewayRouteTablePropagation: https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ec2-transitgatewayroutetablepropagation.html to propagate routes from a resource attachment to a transit gateway route table. If you disable automatic associations, you can use AWS::EC2::TransitGatewayRouteTableAssociation: https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ec2-transitgatewayroutetableassociation.html to associate a resource attachment with a transit gateway route table.
 
     .LINK
         http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ec2-transitgateway.html

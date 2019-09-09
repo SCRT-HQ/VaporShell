@@ -1,10 +1,13 @@
 function Add-VSApiGatewayStageCanarySetting {
     <#
     .SYNOPSIS
-        Adds an AWS::ApiGateway::Stage.CanarySetting resource property to the template
+        Adds an AWS::ApiGateway::Stage.CanarySetting resource property to the template. The CanarySetting property type specifies settings for the canary deployment in this stage.
 
     .DESCRIPTION
-        Adds an AWS::ApiGateway::Stage.CanarySetting resource property to the template
+        Adds an AWS::ApiGateway::Stage.CanarySetting resource property to the template.
+The CanarySetting property type specifies settings for the canary deployment in this stage.
+
+CanarySetting is a property of the AWS::ApiGateway::Stage: https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-apigateway-stage.html resource.
 
     .LINK
         http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-apigateway-stage-canarysetting.html

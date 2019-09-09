@@ -1,10 +1,10 @@
 function New-VSWAFRegionalGeoMatchSet {
     <#
     .SYNOPSIS
-        Adds an AWS::WAFRegional::GeoMatchSet resource to the template
+        Adds an AWS::WAFRegional::GeoMatchSet resource to the template. Contains one or more countries that AWS WAF will search for.
 
     .DESCRIPTION
-        Adds an AWS::WAFRegional::GeoMatchSet resource to the template
+        Adds an AWS::WAFRegional::GeoMatchSet resource to the template. Contains one or more countries that AWS WAF will search for.
 
     .LINK
         http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-wafregional-geomatchset.html

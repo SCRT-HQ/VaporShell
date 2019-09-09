@@ -1,10 +1,10 @@
 function New-VSGameLiftFleet {
     <#
     .SYNOPSIS
-        Adds an AWS::GameLift::Fleet resource to the template
+        Adds an AWS::GameLift::Fleet resource to the template. The AWS::GameLift::Fleet resource creates an Amazon GameLift (GameLift fleet to host game servers. A fleet is a set of EC2 instances, each of which is a host in the fleet. For more information, see the CreateFleet: https://docs.aws.amazon.com/gamelift/latest/apireference/API_CreateFleet.html action in the *Amazon GameLift API Reference*.
 
     .DESCRIPTION
-        Adds an AWS::GameLift::Fleet resource to the template
+        Adds an AWS::GameLift::Fleet resource to the template. The AWS::GameLift::Fleet resource creates an Amazon GameLift (GameLift fleet to host game servers. A fleet is a set of EC2 instances, each of which is a host in the fleet. For more information, see the CreateFleet: https://docs.aws.amazon.com/gamelift/latest/apireference/API_CreateFleet.html action in the *Amazon GameLift API Reference*.
 
     .LINK
         http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-gamelift-fleet.html

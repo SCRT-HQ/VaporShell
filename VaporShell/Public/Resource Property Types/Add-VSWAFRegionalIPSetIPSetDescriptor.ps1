@@ -1,10 +1,11 @@
 function Add-VSWAFRegionalIPSetIPSetDescriptor {
     <#
     .SYNOPSIS
-        Adds an AWS::WAFRegional::IPSet.IPSetDescriptor resource property to the template
+        Adds an AWS::WAFRegional::IPSet.IPSetDescriptor resource property to the template. Specifies the IP address type (IPV4 or IPV6 and the IP address range (in CIDR format that web requests originate from.
 
     .DESCRIPTION
-        Adds an AWS::WAFRegional::IPSet.IPSetDescriptor resource property to the template
+        Adds an AWS::WAFRegional::IPSet.IPSetDescriptor resource property to the template.
+Specifies the IP address type (IPV4 or IPV6 and the IP address range (in CIDR format that web requests originate from.
 
     .LINK
         http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-wafregional-ipset-ipsetdescriptor.html

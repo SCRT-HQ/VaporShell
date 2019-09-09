@@ -1,10 +1,11 @@
 function Add-VSKinesisFirehoseDeliveryStreamSplunkDestinationConfiguration {
     <#
     .SYNOPSIS
-        Adds an AWS::KinesisFirehose::DeliveryStream.SplunkDestinationConfiguration resource property to the template
+        Adds an AWS::KinesisFirehose::DeliveryStream.SplunkDestinationConfiguration resource property to the template. The SplunkDestinationConfiguration property type specifies the configuration of a destination in Splunk for a Kinesis Data Firehose delivery stream.
 
     .DESCRIPTION
-        Adds an AWS::KinesisFirehose::DeliveryStream.SplunkDestinationConfiguration resource property to the template
+        Adds an AWS::KinesisFirehose::DeliveryStream.SplunkDestinationConfiguration resource property to the template.
+The SplunkDestinationConfiguration property type specifies the configuration of a destination in Splunk for a Kinesis Data Firehose delivery stream.
 
     .LINK
         http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-kinesisfirehose-deliverystream-splunkdestinationconfiguration.html

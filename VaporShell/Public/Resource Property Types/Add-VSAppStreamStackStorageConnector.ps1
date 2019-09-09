@@ -1,10 +1,11 @@
 function Add-VSAppStreamStackStorageConnector {
     <#
     .SYNOPSIS
-        Adds an AWS::AppStream::Stack.StorageConnector resource property to the template
+        Adds an AWS::AppStream::Stack.StorageConnector resource property to the template. A connector that enables persistent storage for users.
 
     .DESCRIPTION
-        Adds an AWS::AppStream::Stack.StorageConnector resource property to the template
+        Adds an AWS::AppStream::Stack.StorageConnector resource property to the template.
+A connector that enables persistent storage for users.
 
     .LINK
         http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-appstream-stack-storageconnector.html

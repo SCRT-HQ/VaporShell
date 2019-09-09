@@ -1,10 +1,10 @@
 function New-VSEC2InternetGateway {
     <#
     .SYNOPSIS
-        Adds an AWS::EC2::InternetGateway resource to the template
+        Adds an AWS::EC2::InternetGateway resource to the template. Allocates an internet gateway for use with a VPC. After creating the Internet gateway, you then attach it to a VPC.
 
     .DESCRIPTION
-        Adds an AWS::EC2::InternetGateway resource to the template
+        Adds an AWS::EC2::InternetGateway resource to the template. Allocates an internet gateway for use with a VPC. After creating the Internet gateway, you then attach it to a VPC.
 
     .LINK
         http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ec2-internetgateway.html

@@ -1,10 +1,14 @@
 function New-VSEventsEventBusPolicy {
     <#
     .SYNOPSIS
-        Adds an AWS::Events::EventBusPolicy resource to the template
+        Adds an AWS::Events::EventBusPolicy resource to the template. The AWS::Events::EventBusPolicy resource creates an event bus policy for Amazon CloudWatch Events. An event bus policy enables your account to receive events from other AWS accounts. These events can trigger CloudWatch Events rules created in your account. For more information, see Sending and Receiving Events Between AWS Accounts: https://docs.aws.amazon.com/AmazonCloudWatch/latest/events/CloudWatchEvents-CrossAccountEventDelivery.html in the *Amazon CloudWatch Events User Guide*.
 
     .DESCRIPTION
-        Adds an AWS::Events::EventBusPolicy resource to the template
+        Adds an AWS::Events::EventBusPolicy resource to the template. The AWS::Events::EventBusPolicy resource creates an event bus policy for Amazon CloudWatch Events. An event bus policy enables your account to receive events from other AWS accounts. These events can trigger CloudWatch Events rules created in your account. For more information, see Sending and Receiving Events Between AWS Accounts: https://docs.aws.amazon.com/AmazonCloudWatch/latest/events/CloudWatchEvents-CrossAccountEventDelivery.html in the *Amazon CloudWatch Events User Guide*.
+
+If you grant permissions using Condition and specifying an organization, then accounts in that organization must specify a RoleArn with proper permissions when they use PutTarget to add your account's event bus as a target.
+
+The permission policy on the default event bus can't exceed 10 KB in size.
 
     .LINK
         http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-events-eventbuspolicy.html

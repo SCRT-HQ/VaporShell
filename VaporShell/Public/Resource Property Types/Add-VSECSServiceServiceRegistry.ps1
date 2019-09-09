@@ -1,10 +1,11 @@
 function Add-VSECSServiceServiceRegistry {
     <#
     .SYNOPSIS
-        Adds an AWS::ECS::Service.ServiceRegistry resource property to the template
+        Adds an AWS::ECS::Service.ServiceRegistry resource property to the template. The ServiceRegistry property specifies details of the service registry.
 
     .DESCRIPTION
-        Adds an AWS::ECS::Service.ServiceRegistry resource property to the template
+        Adds an AWS::ECS::Service.ServiceRegistry resource property to the template.
+The ServiceRegistry property specifies details of the service registry.
 
     .LINK
         http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ecs-service-serviceregistry.html

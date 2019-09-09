@@ -1,10 +1,11 @@
 function Add-VSWAFSizeConstraintSetFieldToMatch {
     <#
     .SYNOPSIS
-        Adds an AWS::WAF::SizeConstraintSet.FieldToMatch resource property to the template
+        Adds an AWS::WAF::SizeConstraintSet.FieldToMatch resource property to the template. Specifies the part of a web request that you want AWS WAF to check for a size constraint, such as a specific header or a query string.
 
     .DESCRIPTION
-        Adds an AWS::WAF::SizeConstraintSet.FieldToMatch resource property to the template
+        Adds an AWS::WAF::SizeConstraintSet.FieldToMatch resource property to the template.
+Specifies the part of a web request that you want AWS WAF to check for a size constraint, such as a specific header or a query string.
 
     .LINK
         http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-waf-sizeconstraintset-sizeconstraint-fieldtomatch.html

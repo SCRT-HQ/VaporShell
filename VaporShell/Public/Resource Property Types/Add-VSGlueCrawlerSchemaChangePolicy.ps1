@@ -1,10 +1,11 @@
 function Add-VSGlueCrawlerSchemaChangePolicy {
     <#
     .SYNOPSIS
-        Adds an AWS::Glue::Crawler.SchemaChangePolicy resource property to the template
+        Adds an AWS::Glue::Crawler.SchemaChangePolicy resource property to the template. A policy that specifies update and deletion behaviors for the crawler.
 
     .DESCRIPTION
-        Adds an AWS::Glue::Crawler.SchemaChangePolicy resource property to the template
+        Adds an AWS::Glue::Crawler.SchemaChangePolicy resource property to the template.
+A policy that specifies update and deletion behaviors for the crawler.
 
     .LINK
         http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-glue-crawler-schemachangepolicy.html

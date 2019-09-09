@@ -1,10 +1,10 @@
 function New-VSApiGatewayV2Api {
     <#
     .SYNOPSIS
-        Adds an AWS::ApiGatewayV2::Api resource to the template
+        Adds an AWS::ApiGatewayV2::Api resource to the template. The AWS::ApiGatewayV2::Api resource creates an API. Currently only WebSocket APIs are supported. For more information about WebSocket APIs, see About WebSocket APIs in API Gateway: https://docs.aws.amazon.com/apigateway/latest/developerguide/apigateway-websocket-api-overview.html in the *API Gateway Developer Guide*.
 
     .DESCRIPTION
-        Adds an AWS::ApiGatewayV2::Api resource to the template
+        Adds an AWS::ApiGatewayV2::Api resource to the template. The AWS::ApiGatewayV2::Api resource creates an API. Currently only WebSocket APIs are supported. For more information about WebSocket APIs, see About WebSocket APIs in API Gateway: https://docs.aws.amazon.com/apigateway/latest/developerguide/apigateway-websocket-api-overview.html in the *API Gateway Developer Guide*.
 
     .LINK
         http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-apigatewayv2-api.html

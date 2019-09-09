@@ -1,10 +1,11 @@
 function Add-VSIoTEventsDetectorModelSns {
     <#
     .SYNOPSIS
-        Adds an AWS::IoTEvents::DetectorModel.Sns resource property to the template
+        Adds an AWS::IoTEvents::DetectorModel.Sns resource property to the template. Sends an Amazon SNS message.
 
     .DESCRIPTION
-        Adds an AWS::IoTEvents::DetectorModel.Sns resource property to the template
+        Adds an AWS::IoTEvents::DetectorModel.Sns resource property to the template.
+Sends an Amazon SNS message.
 
     .LINK
         http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iotevents-detectormodel-sns.html

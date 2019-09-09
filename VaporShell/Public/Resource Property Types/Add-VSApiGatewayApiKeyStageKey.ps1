@@ -1,10 +1,11 @@
 function Add-VSApiGatewayApiKeyStageKey {
     <#
     .SYNOPSIS
-        Adds an AWS::ApiGateway::ApiKey.StageKey resource property to the template
+        Adds an AWS::ApiGateway::ApiKey.StageKey resource property to the template. StageKey is a property of the AWS::ApiGateway::ApiKey: https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-apigateway-apikey.html resource that specifies the stage to associate with the API key. This association allows only clients with the key to make requests to methods in that stage.
 
     .DESCRIPTION
-        Adds an AWS::ApiGateway::ApiKey.StageKey resource property to the template
+        Adds an AWS::ApiGateway::ApiKey.StageKey resource property to the template.
+StageKey is a property of the AWS::ApiGateway::ApiKey: https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-apigateway-apikey.html resource that specifies the stage to associate with the API key. This association allows only clients with the key to make requests to methods in that stage.
 
     .LINK
         http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-apigateway-apikey-stagekey.html

@@ -1,10 +1,10 @@
 function New-VSAppSyncGraphQLSchema {
     <#
     .SYNOPSIS
-        Adds an AWS::AppSync::GraphQLSchema resource to the template
+        Adds an AWS::AppSync::GraphQLSchema resource to the template. The AWS::AppSync::GraphQLSchema resource is used for your AWS AppSync GraphQL schema that controls the data model for your API. Schema files are text written in Schema Definition Language (SDL format. For more information about schema authoring, see Designing a GraphQL API: https://docs.aws.amazon.com/appsync/latest/devguide/designing-a-graphql-api.html in the *AWS AppSync Developer Guide*.
 
     .DESCRIPTION
-        Adds an AWS::AppSync::GraphQLSchema resource to the template
+        Adds an AWS::AppSync::GraphQLSchema resource to the template. The AWS::AppSync::GraphQLSchema resource is used for your AWS AppSync GraphQL schema that controls the data model for your API. Schema files are text written in Schema Definition Language (SDL format. For more information about schema authoring, see Designing a GraphQL API: https://docs.aws.amazon.com/appsync/latest/devguide/designing-a-graphql-api.html in the *AWS AppSync Developer Guide*.
 
     .LINK
         http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-appsync-graphqlschema.html

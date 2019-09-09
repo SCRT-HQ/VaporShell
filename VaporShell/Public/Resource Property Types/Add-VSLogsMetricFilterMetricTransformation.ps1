@@ -1,10 +1,11 @@
 function Add-VSLogsMetricFilterMetricTransformation {
     <#
     .SYNOPSIS
-        Adds an AWS::Logs::MetricFilter.MetricTransformation resource property to the template
+        Adds an AWS::Logs::MetricFilter.MetricTransformation resource property to the template. MetricTransformation is a property of the AWS::Logs::MetricFilter resource that describes how to transform log streams into a CloudWatch metric.
 
     .DESCRIPTION
-        Adds an AWS::Logs::MetricFilter.MetricTransformation resource property to the template
+        Adds an AWS::Logs::MetricFilter.MetricTransformation resource property to the template.
+MetricTransformation is a property of the AWS::Logs::MetricFilter resource that describes how to transform log streams into a CloudWatch metric.
 
     .LINK
         http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-logs-metricfilter-metrictransformation.html

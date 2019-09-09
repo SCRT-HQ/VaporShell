@@ -1,10 +1,12 @@
 function New-VSAutoScalingLifecycleHook {
     <#
     .SYNOPSIS
-        Adds an AWS::AutoScaling::LifecycleHook resource to the template
+        Adds an AWS::AutoScaling::LifecycleHook resource to the template. Defines lifecycle hooks for an Amazon EC2 Auto Scaling group. Lifecycle hooks specify actions to perform when Amazon EC2 Auto Scaling launches or terminates instances. When you use a lifecycle hook, the Auto Scaling group pauses the instance either after it is launched (before it is put into service or as it is terminated (before it is fully terminated.
 
     .DESCRIPTION
-        Adds an AWS::AutoScaling::LifecycleHook resource to the template
+        Adds an AWS::AutoScaling::LifecycleHook resource to the template. Defines lifecycle hooks for an Amazon EC2 Auto Scaling group. Lifecycle hooks specify actions to perform when Amazon EC2 Auto Scaling launches or terminates instances. When you use a lifecycle hook, the Auto Scaling group pauses the instance either after it is launched (before it is put into service or as it is terminated (before it is fully terminated.
+
+For more information, see PutLifecycleHook: https://docs.aws.amazon.com/autoscaling/ec2/APIReference/API_PutLifecycleHook.html in the *Amazon EC2 Auto Scaling API Reference* and Amazon EC2 Auto Scaling Lifecycle Hooks: https://docs.aws.amazon.com/autoscaling/ec2/userguide/lifecycle-hooks.html in the *Amazon EC2 Auto Scaling User Guide*.
 
     .LINK
         http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-as-lifecyclehook.html

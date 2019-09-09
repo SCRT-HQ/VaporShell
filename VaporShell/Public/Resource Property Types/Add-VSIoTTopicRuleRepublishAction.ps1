@@ -1,10 +1,11 @@
 function Add-VSIoTTopicRuleRepublishAction {
     <#
     .SYNOPSIS
-        Adds an AWS::IoT::TopicRule.RepublishAction resource property to the template
+        Adds an AWS::IoT::TopicRule.RepublishAction resource property to the template. Describes an action to republish to another topic.
 
     .DESCRIPTION
-        Adds an AWS::IoT::TopicRule.RepublishAction resource property to the template
+        Adds an AWS::IoT::TopicRule.RepublishAction resource property to the template.
+Describes an action to republish to another topic.
 
     .LINK
         http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iot-topicrule-republishaction.html

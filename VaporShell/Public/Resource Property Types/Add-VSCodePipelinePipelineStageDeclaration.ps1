@@ -1,10 +1,11 @@
 function Add-VSCodePipelinePipelineStageDeclaration {
     <#
     .SYNOPSIS
-        Adds an AWS::CodePipeline::Pipeline.StageDeclaration resource property to the template
+        Adds an AWS::CodePipeline::Pipeline.StageDeclaration resource property to the template. Represents information about a stage and its definition.
 
     .DESCRIPTION
-        Adds an AWS::CodePipeline::Pipeline.StageDeclaration resource property to the template
+        Adds an AWS::CodePipeline::Pipeline.StageDeclaration resource property to the template.
+Represents information about a stage and its definition.
 
     .LINK
         http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-codepipeline-pipeline-stages.html

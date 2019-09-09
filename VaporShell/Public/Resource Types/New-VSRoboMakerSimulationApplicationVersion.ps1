@@ -1,10 +1,10 @@
 function New-VSRoboMakerSimulationApplicationVersion {
     <#
     .SYNOPSIS
-        Adds an AWS::RoboMaker::SimulationApplicationVersion resource to the template
+        Adds an AWS::RoboMaker::SimulationApplicationVersion resource to the template. The AWS::RoboMaker::SimulationApplicationVersion resource creates a version of an AWS RoboMaker simulation application.
 
     .DESCRIPTION
-        Adds an AWS::RoboMaker::SimulationApplicationVersion resource to the template
+        Adds an AWS::RoboMaker::SimulationApplicationVersion resource to the template. The AWS::RoboMaker::SimulationApplicationVersion resource creates a version of an AWS RoboMaker simulation application.
 
     .LINK
         http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-robomaker-simulationapplicationversion.html

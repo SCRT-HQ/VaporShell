@@ -1,10 +1,11 @@
 function Add-VSRoute53RecordSetGroupGeoLocation {
     <#
     .SYNOPSIS
-        Adds an AWS::Route53::RecordSetGroup.GeoLocation resource property to the template
+        Adds an AWS::Route53::RecordSetGroup.GeoLocation resource property to the template. A complex type that contains information about a geographic location.
 
     .DESCRIPTION
-        Adds an AWS::Route53::RecordSetGroup.GeoLocation resource property to the template
+        Adds an AWS::Route53::RecordSetGroup.GeoLocation resource property to the template.
+A complex type that contains information about a geographic location.
 
     .LINK
         http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-route53-recordset-geolocation.html

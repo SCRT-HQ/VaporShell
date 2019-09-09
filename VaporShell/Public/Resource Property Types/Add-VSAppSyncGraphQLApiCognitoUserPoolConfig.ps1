@@ -1,10 +1,11 @@
 function Add-VSAppSyncGraphQLApiCognitoUserPoolConfig {
     <#
     .SYNOPSIS
-        Adds an AWS::AppSync::GraphQLApi.CognitoUserPoolConfig resource property to the template
+        Adds an AWS::AppSync::GraphQLApi.CognitoUserPoolConfig resource property to the template. Describes an Amazon Cognito user pool configuration.
 
     .DESCRIPTION
-        Adds an AWS::AppSync::GraphQLApi.CognitoUserPoolConfig resource property to the template
+        Adds an AWS::AppSync::GraphQLApi.CognitoUserPoolConfig resource property to the template.
+Describes an Amazon Cognito user pool configuration.
 
     .LINK
         http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-appsync-graphqlapi-cognitouserpoolconfig.html

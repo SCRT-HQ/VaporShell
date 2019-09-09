@@ -1,10 +1,11 @@
 function Add-VSBatchJobDefinitionDevice {
     <#
     .SYNOPSIS
-        Adds an AWS::Batch::JobDefinition.Device resource property to the template
+        Adds an AWS::Batch::JobDefinition.Device resource property to the template. An object representing a container instance host device.
 
     .DESCRIPTION
-        Adds an AWS::Batch::JobDefinition.Device resource property to the template
+        Adds an AWS::Batch::JobDefinition.Device resource property to the template.
+An object representing a container instance host device.
 
     .LINK
         http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-batch-jobdefinition-device.html

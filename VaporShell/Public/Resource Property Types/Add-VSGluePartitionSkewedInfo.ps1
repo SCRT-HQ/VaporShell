@@ -1,10 +1,11 @@
 function Add-VSGluePartitionSkewedInfo {
     <#
     .SYNOPSIS
-        Adds an AWS::Glue::Partition.SkewedInfo resource property to the template
+        Adds an AWS::Glue::Partition.SkewedInfo resource property to the template. Specifies skewed values in a table. Skewed values are those that occur with very high frequency.
 
     .DESCRIPTION
-        Adds an AWS::Glue::Partition.SkewedInfo resource property to the template
+        Adds an AWS::Glue::Partition.SkewedInfo resource property to the template.
+Specifies skewed values in a table. Skewed values are those that occur with very high frequency.
 
     .LINK
         http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-glue-partition-skewedinfo.html

@@ -1,10 +1,11 @@
 function Add-VSIoTAnalyticsDatasetVersioningConfiguration {
     <#
     .SYNOPSIS
-        Adds an AWS::IoTAnalytics::Dataset.VersioningConfiguration resource property to the template
+        Adds an AWS::IoTAnalytics::Dataset.VersioningConfiguration resource property to the template. Information about the versioning of data set contents.
 
     .DESCRIPTION
-        Adds an AWS::IoTAnalytics::Dataset.VersioningConfiguration resource property to the template
+        Adds an AWS::IoTAnalytics::Dataset.VersioningConfiguration resource property to the template.
+Information about the versioning of data set contents.
 
     .LINK
         http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iotanalytics-dataset-versioningconfiguration.html

@@ -1,10 +1,11 @@
 function Add-VSKinesisAnalyticsApplicationOutputKinesisFirehoseOutput {
     <#
     .SYNOPSIS
-        Adds an AWS::KinesisAnalytics::ApplicationOutput.KinesisFirehoseOutput resource property to the template
+        Adds an AWS::KinesisAnalytics::ApplicationOutput.KinesisFirehoseOutput resource property to the template. When configuring application output, identifies an Amazon Kinesis Firehose delivery stream as the destination. You provide the stream Amazon Resource Name (ARN and an IAM role that enables Amazon Kinesis Analytics to write to the stream on your behalf.
 
     .DESCRIPTION
-        Adds an AWS::KinesisAnalytics::ApplicationOutput.KinesisFirehoseOutput resource property to the template
+        Adds an AWS::KinesisAnalytics::ApplicationOutput.KinesisFirehoseOutput resource property to the template.
+When configuring application output, identifies an Amazon Kinesis Firehose delivery stream as the destination. You provide the stream Amazon Resource Name (ARN and an IAM role that enables Amazon Kinesis Analytics to write to the stream on your behalf.
 
     .LINK
         http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-kinesisanalytics-applicationoutput-kinesisfirehoseoutput.html

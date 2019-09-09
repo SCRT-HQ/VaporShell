@@ -1,10 +1,11 @@
 function Add-VSBatchJobDefinitionUlimit {
     <#
     .SYNOPSIS
-        Adds an AWS::Batch::JobDefinition.Ulimit resource property to the template
+        Adds an AWS::Batch::JobDefinition.Ulimit resource property to the template. The ulimit settings to pass to the container.
 
     .DESCRIPTION
-        Adds an AWS::Batch::JobDefinition.Ulimit resource property to the template
+        Adds an AWS::Batch::JobDefinition.Ulimit resource property to the template.
+The ulimit settings to pass to the container.
 
     .LINK
         http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-batch-jobdefinition-ulimit.html

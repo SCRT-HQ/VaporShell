@@ -1,10 +1,11 @@
 function Add-VSKinesisAnalyticsApplicationJSONMappingParameters {
     <#
     .SYNOPSIS
-        Adds an AWS::KinesisAnalytics::Application.JSONMappingParameters resource property to the template
+        Adds an AWS::KinesisAnalytics::Application.JSONMappingParameters resource property to the template. Provides additional mapping information when JSON is the record format on the streaming source.
 
     .DESCRIPTION
-        Adds an AWS::KinesisAnalytics::Application.JSONMappingParameters resource property to the template
+        Adds an AWS::KinesisAnalytics::Application.JSONMappingParameters resource property to the template.
+Provides additional mapping information when JSON is the record format on the streaming source.
 
     .LINK
         http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-kinesisanalytics-application-jsonmappingparameters.html

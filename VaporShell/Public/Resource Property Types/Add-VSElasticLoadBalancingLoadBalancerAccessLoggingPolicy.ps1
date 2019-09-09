@@ -1,10 +1,11 @@
 function Add-VSElasticLoadBalancingLoadBalancerAccessLoggingPolicy {
     <#
     .SYNOPSIS
-        Adds an AWS::ElasticLoadBalancing::LoadBalancer.AccessLoggingPolicy resource property to the template
+        Adds an AWS::ElasticLoadBalancing::LoadBalancer.AccessLoggingPolicy resource property to the template. Specifies where and how access logs are stored for your Classic Load Balancer.
 
     .DESCRIPTION
-        Adds an AWS::ElasticLoadBalancing::LoadBalancer.AccessLoggingPolicy resource property to the template
+        Adds an AWS::ElasticLoadBalancing::LoadBalancer.AccessLoggingPolicy resource property to the template.
+Specifies where and how access logs are stored for your Classic Load Balancer.
 
     .LINK
         http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-elb-accessloggingpolicy.html

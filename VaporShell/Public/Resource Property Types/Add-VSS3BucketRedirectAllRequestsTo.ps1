@@ -1,10 +1,11 @@
 function Add-VSS3BucketRedirectAllRequestsTo {
     <#
     .SYNOPSIS
-        Adds an AWS::S3::Bucket.RedirectAllRequestsTo resource property to the template
+        Adds an AWS::S3::Bucket.RedirectAllRequestsTo resource property to the template. Specifies the redirect behavior of all requests to a website endpoint of an Amazon S3 bucket.
 
     .DESCRIPTION
-        Adds an AWS::S3::Bucket.RedirectAllRequestsTo resource property to the template
+        Adds an AWS::S3::Bucket.RedirectAllRequestsTo resource property to the template.
+Specifies the redirect behavior of all requests to a website endpoint of an Amazon S3 bucket.
 
     .LINK
         http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-s3-websiteconfiguration-redirectallrequeststo.html

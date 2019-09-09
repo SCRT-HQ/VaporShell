@@ -1,10 +1,10 @@
 function New-VSAppSyncResolver {
     <#
     .SYNOPSIS
-        Adds an AWS::AppSync::Resolver resource to the template
+        Adds an AWS::AppSync::Resolver resource to the template. The AWS::AppSync::Resolver resource defines the logical GraphQL resolver that you attach to fields in a schema. Request and response templates for resolvers are written in Apache Velocity Template Language (VTL format. For more information about resolvers, see Resolver Mapping Template Reference: https://docs.aws.amazon.com/appsync/latest/devguide/resolver-mapping-template-reference.html.
 
     .DESCRIPTION
-        Adds an AWS::AppSync::Resolver resource to the template
+        Adds an AWS::AppSync::Resolver resource to the template. The AWS::AppSync::Resolver resource defines the logical GraphQL resolver that you attach to fields in a schema. Request and response templates for resolvers are written in Apache Velocity Template Language (VTL format. For more information about resolvers, see Resolver Mapping Template Reference: https://docs.aws.amazon.com/appsync/latest/devguide/resolver-mapping-template-reference.html.
 
     .LINK
         http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-appsync-resolver.html

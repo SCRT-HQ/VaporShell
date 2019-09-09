@@ -1,10 +1,11 @@
 function Add-VSElasticLoadBalancingV2ListenerAction {
     <#
     .SYNOPSIS
-        Adds an AWS::ElasticLoadBalancingV2::Listener.Action resource property to the template
+        Adds an AWS::ElasticLoadBalancingV2::Listener.Action resource property to the template. Specifies an action for a listener rule.
 
     .DESCRIPTION
-        Adds an AWS::ElasticLoadBalancingV2::Listener.Action resource property to the template
+        Adds an AWS::ElasticLoadBalancingV2::Listener.Action resource property to the template.
+Specifies an action for a listener rule.
 
     .LINK
         http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-elasticloadbalancingv2-listener-defaultactions.html

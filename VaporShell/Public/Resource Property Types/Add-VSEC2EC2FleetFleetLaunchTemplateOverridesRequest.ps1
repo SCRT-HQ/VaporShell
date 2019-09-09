@@ -1,10 +1,13 @@
 function Add-VSEC2EC2FleetFleetLaunchTemplateOverridesRequest {
     <#
     .SYNOPSIS
-        Adds an AWS::EC2::EC2Fleet.FleetLaunchTemplateOverridesRequest resource property to the template
+        Adds an AWS::EC2::EC2Fleet.FleetLaunchTemplateOverridesRequest resource property to the template. Specifies overrides for a launch template for an EC2 Fleet.
 
     .DESCRIPTION
-        Adds an AWS::EC2::EC2Fleet.FleetLaunchTemplateOverridesRequest resource property to the template
+        Adds an AWS::EC2::EC2Fleet.FleetLaunchTemplateOverridesRequest resource property to the template.
+Specifies overrides for a launch template for an EC2 Fleet.
+
+FleetLaunchTemplateOverridesRequest is a property of the  FleetLaunchTemplateConfigRequest: https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-ec2fleet-fleetlaunchtemplateconfigrequest.html property type.
 
     .LINK
         http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-ec2fleet-fleetlaunchtemplateoverridesrequest.html

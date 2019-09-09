@@ -1,10 +1,11 @@
 function Add-VSMediaStoreContainerCorsRule {
     <#
     .SYNOPSIS
-        Adds an AWS::MediaStore::Container.CorsRule resource property to the template
+        Adds an AWS::MediaStore::Container.CorsRule resource property to the template. A rule for a CORS policy. You can add up to 100 rules to a CORS policy. If more than one rule applies, the service uses the first applicable rule listed.
 
     .DESCRIPTION
-        Adds an AWS::MediaStore::Container.CorsRule resource property to the template
+        Adds an AWS::MediaStore::Container.CorsRule resource property to the template.
+A rule for a CORS policy. You can add up to 100 rules to a CORS policy. If more than one rule applies, the service uses the first applicable rule listed.
 
     .LINK
         http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-mediastore-container-corsrule.html

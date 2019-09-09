@@ -1,10 +1,13 @@
 function Add-VSEC2InstanceNetworkInterface {
     <#
     .SYNOPSIS
-        Adds an AWS::EC2::Instance.NetworkInterface resource property to the template
+        Adds an AWS::EC2::Instance.NetworkInterface resource property to the template. Specifies a network interface that is to be attached to an instance.
 
     .DESCRIPTION
-        Adds an AWS::EC2::Instance.NetworkInterface resource property to the template
+        Adds an AWS::EC2::Instance.NetworkInterface resource property to the template.
+Specifies a network interface that is to be attached to an instance.
+
+NetworkInterface is a property of the AWS::EC2::Instance: https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-instance.html resource.
 
     .LINK
         http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-network-iface-embedded.html

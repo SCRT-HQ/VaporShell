@@ -1,10 +1,11 @@
 function Add-VSRoute53HealthCheckHealthCheckConfig {
     <#
     .SYNOPSIS
-        Adds an AWS::Route53::HealthCheck.HealthCheckConfig resource property to the template
+        Adds an AWS::Route53::HealthCheck.HealthCheckConfig resource property to the template. A complex type that contains information about the health check.
 
     .DESCRIPTION
-        Adds an AWS::Route53::HealthCheck.HealthCheckConfig resource property to the template
+        Adds an AWS::Route53::HealthCheck.HealthCheckConfig resource property to the template.
+A complex type that contains information about the health check.
 
     .LINK
         http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-route53-healthcheck-healthcheckconfig.html

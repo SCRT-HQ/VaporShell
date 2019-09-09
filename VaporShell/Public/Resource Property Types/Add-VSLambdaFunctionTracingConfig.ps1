@@ -1,10 +1,11 @@
 function Add-VSLambdaFunctionTracingConfig {
     <#
     .SYNOPSIS
-        Adds an AWS::Lambda::Function.TracingConfig resource property to the template
+        Adds an AWS::Lambda::Function.TracingConfig resource property to the template. The function's AWS X-Ray tracing configuration.
 
     .DESCRIPTION
-        Adds an AWS::Lambda::Function.TracingConfig resource property to the template
+        Adds an AWS::Lambda::Function.TracingConfig resource property to the template.
+The function's AWS X-Ray tracing configuration.
 
     .LINK
         http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-lambda-function-tracingconfig.html

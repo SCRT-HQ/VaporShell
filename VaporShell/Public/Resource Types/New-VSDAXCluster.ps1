@@ -1,10 +1,10 @@
 function New-VSDAXCluster {
     <#
     .SYNOPSIS
-        Adds an AWS::DAX::Cluster resource to the template
+        Adds an AWS::DAX::Cluster resource to the template. Creates a DAX cluster. All nodes in the cluster run the same DAX caching software.
 
     .DESCRIPTION
-        Adds an AWS::DAX::Cluster resource to the template
+        Adds an AWS::DAX::Cluster resource to the template. Creates a DAX cluster. All nodes in the cluster run the same DAX caching software.
 
     .LINK
         http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-dax-cluster.html

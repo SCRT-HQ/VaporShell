@@ -1,10 +1,12 @@
 function New-VSPinpointAPNSVoipChannel {
     <#
     .SYNOPSIS
-        Adds an AWS::Pinpoint::APNSVoipChannel resource to the template
+        Adds an AWS::Pinpoint::APNSVoipChannel resource to the template. A *channel* is a type of platform that you can deliver messages to. You can use the APNs VoIP channel to send VoIP notification messages to the Apple Push Notification service (APNs. Before you use Amazon Pinpoint to send VoIP notifications to APNs, you have to enable the APNs VoIP channel for an Amazon Pinpoint app.
 
     .DESCRIPTION
-        Adds an AWS::Pinpoint::APNSVoipChannel resource to the template
+        Adds an AWS::Pinpoint::APNSVoipChannel resource to the template. A *channel* is a type of platform that you can deliver messages to. You can use the APNs VoIP channel to send VoIP notification messages to the Apple Push Notification service (APNs. Before you use Amazon Pinpoint to send VoIP notifications to APNs, you have to enable the APNs VoIP channel for an Amazon Pinpoint app.
+
+The APNs VoIP Channel resource represents the status and authentication settings of the APNs VoIP channel for a specific application. You can use this resource to retrieve information about, update, or disable (delete the APNs VoIP channel for an application.
 
     .LINK
         http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-pinpoint-apnsvoipchannel.html

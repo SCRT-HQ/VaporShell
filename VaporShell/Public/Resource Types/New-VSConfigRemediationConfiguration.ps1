@@ -1,10 +1,10 @@
 function New-VSConfigRemediationConfiguration {
     <#
     .SYNOPSIS
-        Adds an AWS::Config::RemediationConfiguration resource to the template
+        Adds an AWS::Config::RemediationConfiguration resource to the template. An object that represents the details about the remediation configuration that includes the remediation action, parameters, and data to execute the action.
 
     .DESCRIPTION
-        Adds an AWS::Config::RemediationConfiguration resource to the template
+        Adds an AWS::Config::RemediationConfiguration resource to the template. An object that represents the details about the remediation configuration that includes the remediation action, parameters, and data to execute the action.
 
     .LINK
         http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-config-remediationconfiguration.html

@@ -1,10 +1,11 @@
 function Add-VSElasticLoadBalancingV2ListenerFixedResponseConfig {
     <#
     .SYNOPSIS
-        Adds an AWS::ElasticLoadBalancingV2::Listener.FixedResponseConfig resource property to the template
+        Adds an AWS::ElasticLoadBalancingV2::Listener.FixedResponseConfig resource property to the template. Specifies information required when returning a custom HTTP response.
 
     .DESCRIPTION
-        Adds an AWS::ElasticLoadBalancingV2::Listener.FixedResponseConfig resource property to the template
+        Adds an AWS::ElasticLoadBalancingV2::Listener.FixedResponseConfig resource property to the template.
+Specifies information required when returning a custom HTTP response.
 
     .LINK
         http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-elasticloadbalancingv2-listener-fixedresponseconfig.html

@@ -1,10 +1,10 @@
 function New-VSCognitoUserPoolGroup {
     <#
     .SYNOPSIS
-        Adds an AWS::Cognito::UserPoolGroup resource to the template
+        Adds an AWS::Cognito::UserPoolGroup resource to the template. The AWS::Cognito::UserPoolGroup resource creates a user group in an Amazon Cognito user pool.
 
     .DESCRIPTION
-        Adds an AWS::Cognito::UserPoolGroup resource to the template
+        Adds an AWS::Cognito::UserPoolGroup resource to the template. The AWS::Cognito::UserPoolGroup resource creates a user group in an Amazon Cognito user pool.
 
     .LINK
         http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-cognito-userpoolgroup.html

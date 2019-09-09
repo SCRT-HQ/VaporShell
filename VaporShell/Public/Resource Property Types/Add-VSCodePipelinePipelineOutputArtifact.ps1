@@ -1,10 +1,11 @@
 function Add-VSCodePipelinePipelineOutputArtifact {
     <#
     .SYNOPSIS
-        Adds an AWS::CodePipeline::Pipeline.OutputArtifact resource property to the template
+        Adds an AWS::CodePipeline::Pipeline.OutputArtifact resource property to the template. Represents information about the output of an action.
 
     .DESCRIPTION
-        Adds an AWS::CodePipeline::Pipeline.OutputArtifact resource property to the template
+        Adds an AWS::CodePipeline::Pipeline.OutputArtifact resource property to the template.
+Represents information about the output of an action.
 
     .LINK
         http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-codepipeline-pipeline-stages-actions-outputartifacts.html

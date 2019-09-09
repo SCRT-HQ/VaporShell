@@ -1,10 +1,10 @@
 function New-VSSSMAssociation {
     <#
     .SYNOPSIS
-        Adds an AWS::SSM::Association resource to the template
+        Adds an AWS::SSM::Association resource to the template. The AWS::SSM::Association resource associates an SSM document in AWS Systems Manager with managed instances that contain a configuration agent to process the document.
 
     .DESCRIPTION
-        Adds an AWS::SSM::Association resource to the template
+        Adds an AWS::SSM::Association resource to the template. The AWS::SSM::Association resource associates an SSM document in AWS Systems Manager with managed instances that contain a configuration agent to process the document.
 
     .LINK
         http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ssm-association.html

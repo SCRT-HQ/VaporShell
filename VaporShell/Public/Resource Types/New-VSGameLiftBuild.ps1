@@ -1,10 +1,10 @@
 function New-VSGameLiftBuild {
     <#
     .SYNOPSIS
-        Adds an AWS::GameLift::Build resource to the template
+        Adds an AWS::GameLift::Build resource to the template. The AWS::GameLift::Build resource creates a build that includes all of the components to run your game server in an Amazon GameLift (GameLift fleet.
 
     .DESCRIPTION
-        Adds an AWS::GameLift::Build resource to the template
+        Adds an AWS::GameLift::Build resource to the template. The AWS::GameLift::Build resource creates a build that includes all of the components to run your game server in an Amazon GameLift (GameLift fleet.
 
     .LINK
         http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-gamelift-build.html

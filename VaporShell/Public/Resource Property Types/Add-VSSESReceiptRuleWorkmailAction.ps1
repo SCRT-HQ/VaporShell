@@ -1,10 +1,13 @@
 function Add-VSSESReceiptRuleWorkmailAction {
     <#
     .SYNOPSIS
-        Adds an AWS::SES::ReceiptRule.WorkmailAction resource property to the template
+        Adds an AWS::SES::ReceiptRule.WorkmailAction resource property to the template. When included in a receipt rule, this action calls Amazon WorkMail and, optionally, publishes a notification to Amazon Simple Notification Service (Amazon SNS. It usually isn't necessary to use this action directly, because Amazon WorkMail adds the rule automatically during its setup procedure.
 
     .DESCRIPTION
-        Adds an AWS::SES::ReceiptRule.WorkmailAction resource property to the template
+        Adds an AWS::SES::ReceiptRule.WorkmailAction resource property to the template.
+When included in a receipt rule, this action calls Amazon WorkMail and, optionally, publishes a notification to Amazon Simple Notification Service (Amazon SNS. It usually isn't necessary to use this action directly, because Amazon WorkMail adds the rule automatically during its setup procedure.
+
+For information using a receipt rule to call Amazon WorkMail, see the Amazon SES Developer Guide: https://docs.aws.amazon.com/ses/latest/DeveloperGuide/receiving-email-action-workmail.html.
 
     .LINK
         http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ses-receiptrule-workmailaction.html

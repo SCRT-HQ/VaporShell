@@ -1,10 +1,12 @@
 function New-VSPinpointGCMChannel {
     <#
     .SYNOPSIS
-        Adds an AWS::Pinpoint::GCMChannel resource to the template
+        Adds an AWS::Pinpoint::GCMChannel resource to the template. A *channel* is a type of platform that you can deliver messages to. You can use the GCM channel to send push notification messages to the Firebase Cloud Messaging (FCM service, which replaced the Google Cloud Messaging (GCM service. Before you use Amazon Pinpoint to send notifications to FCM, you have to enable the GCM channel for an Amazon Pinpoint application.
 
     .DESCRIPTION
-        Adds an AWS::Pinpoint::GCMChannel resource to the template
+        Adds an AWS::Pinpoint::GCMChannel resource to the template. A *channel* is a type of platform that you can deliver messages to. You can use the GCM channel to send push notification messages to the Firebase Cloud Messaging (FCM service, which replaced the Google Cloud Messaging (GCM service. Before you use Amazon Pinpoint to send notifications to FCM, you have to enable the GCM channel for an Amazon Pinpoint application.
+
+The GCM Channel resource represents the status and authentication settings of the GCM channel for a specific application. You can use this resource to retrieve information about, update, or disable (delete the GCM channel for an application.
 
     .LINK
         http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-pinpoint-gcmchannel.html

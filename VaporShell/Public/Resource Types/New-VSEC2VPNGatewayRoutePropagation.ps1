@@ -1,10 +1,12 @@
 function New-VSEC2VPNGatewayRoutePropagation {
     <#
     .SYNOPSIS
-        Adds an AWS::EC2::VPNGatewayRoutePropagation resource to the template
+        Adds an AWS::EC2::VPNGatewayRoutePropagation resource to the template. Enables a virtual private gateway (VGW to propagate routes to the specified route table of a VPC.
 
     .DESCRIPTION
-        Adds an AWS::EC2::VPNGatewayRoutePropagation resource to the template
+        Adds an AWS::EC2::VPNGatewayRoutePropagation resource to the template. Enables a virtual private gateway (VGW to propagate routes to the specified route table of a VPC.
+
+If you reference a VPN gateway that is in the same template as your VPN gateway route propagation, you must explicitly declare a dependency on the VPN gateway attachment. The AWS::EC2::VPNGatewayRoutePropagation resource cannot use the VPN gateway until it has successfully attached to the VPC. Add a  DependsOn Attribute: https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-attribute-dependson.html in the AWS::EC2::VPNGatewayRoutePropagation resource to explicitly declare a dependency on the VPN gateway attachment.
 
     .LINK
         http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ec2-vpn-gatewayrouteprop.html

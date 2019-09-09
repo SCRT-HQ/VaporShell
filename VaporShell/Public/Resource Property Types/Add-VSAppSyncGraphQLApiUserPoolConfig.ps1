@@ -1,10 +1,13 @@
 function Add-VSAppSyncGraphQLApiUserPoolConfig {
     <#
     .SYNOPSIS
-        Adds an AWS::AppSync::GraphQLApi.UserPoolConfig resource property to the template
+        Adds an AWS::AppSync::GraphQLApi.UserPoolConfig resource property to the template. The UserPoolConfig property type specifies the optional authorization configuration for using Amazon Cognito user pools with your GraphQL endpoint for an AWS AppSync GraphQL API.
 
     .DESCRIPTION
-        Adds an AWS::AppSync::GraphQLApi.UserPoolConfig resource property to the template
+        Adds an AWS::AppSync::GraphQLApi.UserPoolConfig resource property to the template.
+The UserPoolConfig property type specifies the optional authorization configuration for using Amazon Cognito user pools with your GraphQL endpoint for an AWS AppSync GraphQL API.
+
+LogConfig is a property of the AWS::AppSync::GraphQLApi: https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-appsync-graphqlapi.html property type.
 
     .LINK
         http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-appsync-graphqlapi-userpoolconfig.html

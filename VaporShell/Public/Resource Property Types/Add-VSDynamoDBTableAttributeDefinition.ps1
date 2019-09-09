@@ -1,10 +1,11 @@
 function Add-VSDynamoDBTableAttributeDefinition {
     <#
     .SYNOPSIS
-        Adds an AWS::DynamoDB::Table.AttributeDefinition resource property to the template
+        Adds an AWS::DynamoDB::Table.AttributeDefinition resource property to the template. Represents an attribute for describing the key schema for the table and indexes.
 
     .DESCRIPTION
-        Adds an AWS::DynamoDB::Table.AttributeDefinition resource property to the template
+        Adds an AWS::DynamoDB::Table.AttributeDefinition resource property to the template.
+Represents an attribute for describing the key schema for the table and indexes.
 
     .LINK
         http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-dynamodb-attributedef.html

@@ -1,10 +1,11 @@
 function Add-VSBackupBackupVaultNotificationObjectType {
     <#
     .SYNOPSIS
-        Adds an AWS::Backup::BackupVault.NotificationObjectType resource property to the template
+        Adds an AWS::Backup::BackupVault.NotificationObjectType resource property to the template. Specifies an object containing SNS event notification properties for the target backup vault.
 
     .DESCRIPTION
-        Adds an AWS::Backup::BackupVault.NotificationObjectType resource property to the template
+        Adds an AWS::Backup::BackupVault.NotificationObjectType resource property to the template.
+Specifies an object containing SNS event notification properties for the target backup vault.
 
     .LINK
         http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-backup-backupvault-notificationobjecttype.html

@@ -1,10 +1,10 @@
 function New-VSGlueDevEndpoint {
     <#
     .SYNOPSIS
-        Adds an AWS::Glue::DevEndpoint resource to the template
+        Adds an AWS::Glue::DevEndpoint resource to the template. The AWS::Glue::DevEndpoint resource specifies a development endpoint where a developer can remotely debug ETL scripts for AWS Glue. For more information, see DevEndpoint Structure: https://docs.aws.amazon.com/glue/latest/dg/aws-glue-api-jobs-dev-endpoint.html#aws-glue-api-jobs-dev-endpoint-DevEndpoint in the AWS Glue Developer Guide.
 
     .DESCRIPTION
-        Adds an AWS::Glue::DevEndpoint resource to the template
+        Adds an AWS::Glue::DevEndpoint resource to the template. The AWS::Glue::DevEndpoint resource specifies a development endpoint where a developer can remotely debug ETL scripts for AWS Glue. For more information, see DevEndpoint Structure: https://docs.aws.amazon.com/glue/latest/dg/aws-glue-api-jobs-dev-endpoint.html#aws-glue-api-jobs-dev-endpoint-DevEndpoint in the AWS Glue Developer Guide.
 
     .LINK
         http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-glue-devendpoint.html

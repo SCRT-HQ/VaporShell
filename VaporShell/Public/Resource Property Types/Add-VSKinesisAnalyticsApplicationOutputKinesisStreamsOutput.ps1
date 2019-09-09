@@ -1,10 +1,11 @@
 function Add-VSKinesisAnalyticsApplicationOutputKinesisStreamsOutput {
     <#
     .SYNOPSIS
-        Adds an AWS::KinesisAnalytics::ApplicationOutput.KinesisStreamsOutput resource property to the template
+        Adds an AWS::KinesisAnalytics::ApplicationOutput.KinesisStreamsOutput resource property to the template. When configuring application output, identifies an Amazon Kinesis stream as the destination. You provide the stream Amazon Resource Name (ARN and also an IAM role ARN that Amazon Kinesis Analytics can use to write to the stream on your behalf.
 
     .DESCRIPTION
-        Adds an AWS::KinesisAnalytics::ApplicationOutput.KinesisStreamsOutput resource property to the template
+        Adds an AWS::KinesisAnalytics::ApplicationOutput.KinesisStreamsOutput resource property to the template.
+When configuring application output, identifies an Amazon Kinesis stream as the destination. You provide the stream Amazon Resource Name (ARN and also an IAM role ARN that Amazon Kinesis Analytics can use to write to the stream on your behalf.
 
     .LINK
         http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-kinesisanalytics-applicationoutput-kinesisstreamsoutput.html

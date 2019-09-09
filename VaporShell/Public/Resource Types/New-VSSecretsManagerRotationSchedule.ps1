@@ -1,10 +1,14 @@
 function New-VSSecretsManagerRotationSchedule {
     <#
     .SYNOPSIS
-        Adds an AWS::SecretsManager::RotationSchedule resource to the template
+        Adds an AWS::SecretsManager::RotationSchedule resource to the template. The AWS::SecretsManager::RotationSchedule resource configures rotation for a secret. The secret must already be configured with the details of the database or service. If you define both the secret and the database or service in an AWS CloudFormation template, then define the AWS::SecretsManager::SecretTargetAttachment: https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-secretsmanager-secrettargetattachment.html resource to populate the secret with the connection details of the database or service before you attempt to configure rotation.
 
     .DESCRIPTION
-        Adds an AWS::SecretsManager::RotationSchedule resource to the template
+        Adds an AWS::SecretsManager::RotationSchedule resource to the template. The AWS::SecretsManager::RotationSchedule resource configures rotation for a secret. The secret must already be configured with the details of the database or service. If you define both the secret and the database or service in an AWS CloudFormation template, then define the AWS::SecretsManager::SecretTargetAttachment: https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-secretsmanager-secrettargetattachment.html resource to populate the secret with the connection details of the database or service before you attempt to configure rotation.
+
+**Important**
+
+When you configure rotation for a secret, AWS CloudFormation automatically rotates the secret one time. Ensure that you configure all your clients to retrieve the secret using Secrets Manager before configuring rotation to prevent breaking them.
 
     .LINK
         http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-secretsmanager-rotationschedule.html

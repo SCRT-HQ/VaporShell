@@ -1,10 +1,11 @@
 function Add-VSEMRClusterKeyValue {
     <#
     .SYNOPSIS
-        Adds an AWS::EMR::Cluster.KeyValue resource property to the template
+        Adds an AWS::EMR::Cluster.KeyValue resource property to the template. KeyValue is a subproperty of the HadoopJarStepConfig property type. KeyValue is used to pass parameters to a step.
 
     .DESCRIPTION
-        Adds an AWS::EMR::Cluster.KeyValue resource property to the template
+        Adds an AWS::EMR::Cluster.KeyValue resource property to the template.
+KeyValue is a subproperty of the HadoopJarStepConfig property type. KeyValue is used to pass parameters to a step.
 
     .LINK
         http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-elasticmapreduce-cluster-keyvalue.html

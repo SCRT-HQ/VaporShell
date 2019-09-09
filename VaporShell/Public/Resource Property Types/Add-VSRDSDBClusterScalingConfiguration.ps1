@@ -1,10 +1,13 @@
 function Add-VSRDSDBClusterScalingConfiguration {
     <#
     .SYNOPSIS
-        Adds an AWS::RDS::DBCluster.ScalingConfiguration resource property to the template
+        Adds an AWS::RDS::DBCluster.ScalingConfiguration resource property to the template. The ScalingConfiguration property type specifies the scaling configuration of an Aurora Serverless DB cluster.
 
     .DESCRIPTION
-        Adds an AWS::RDS::DBCluster.ScalingConfiguration resource property to the template
+        Adds an AWS::RDS::DBCluster.ScalingConfiguration resource property to the template.
+The ScalingConfiguration property type specifies the scaling configuration of an Aurora Serverless DB cluster.
+
+For more information, see Using Amazon Aurora Serverless: https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/aurora-serverless.html in the *Amazon Aurora User Guide*.
 
     .LINK
         http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-rds-dbcluster-scalingconfiguration.html

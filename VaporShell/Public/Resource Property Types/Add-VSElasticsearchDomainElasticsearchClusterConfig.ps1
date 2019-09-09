@@ -1,10 +1,11 @@
 function Add-VSElasticsearchDomainElasticsearchClusterConfig {
     <#
     .SYNOPSIS
-        Adds an AWS::Elasticsearch::Domain.ElasticsearchClusterConfig resource property to the template
+        Adds an AWS::Elasticsearch::Domain.ElasticsearchClusterConfig resource property to the template. The cluster configuration for the Amazon ES domain. You can specify options such as the instance type and the number of instances. For more information, see Configuring Amazon ES Domains: https://docs.aws.amazon.com/elasticsearch-service/latest/developerguide/es-createupdatedomains.html#es-createdomains-configure-cluster-cli in the *Amazon Elasticsearch Service Developer Guide*.
 
     .DESCRIPTION
-        Adds an AWS::Elasticsearch::Domain.ElasticsearchClusterConfig resource property to the template
+        Adds an AWS::Elasticsearch::Domain.ElasticsearchClusterConfig resource property to the template.
+The cluster configuration for the Amazon ES domain. You can specify options such as the instance type and the number of instances. For more information, see Configuring Amazon ES Domains: https://docs.aws.amazon.com/elasticsearch-service/latest/developerguide/es-createupdatedomains.html#es-createdomains-configure-cluster-cli in the *Amazon Elasticsearch Service Developer Guide*.
 
     .LINK
         http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-elasticsearch-domain-elasticsearchclusterconfig.html

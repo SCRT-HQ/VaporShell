@@ -1,10 +1,11 @@
 function Add-VSKinesisFirehoseDeliveryStreamExtendedS3DestinationConfiguration {
     <#
     .SYNOPSIS
-        Adds an AWS::KinesisFirehose::DeliveryStream.ExtendedS3DestinationConfiguration resource property to the template
+        Adds an AWS::KinesisFirehose::DeliveryStream.ExtendedS3DestinationConfiguration resource property to the template. The ExtendedS3DestinationConfiguration property type configures an Amazon S3 destination for an Amazon Kinesis Data Firehose delivery stream.
 
     .DESCRIPTION
-        Adds an AWS::KinesisFirehose::DeliveryStream.ExtendedS3DestinationConfiguration resource property to the template
+        Adds an AWS::KinesisFirehose::DeliveryStream.ExtendedS3DestinationConfiguration resource property to the template.
+The ExtendedS3DestinationConfiguration property type configures an Amazon S3 destination for an Amazon Kinesis Data Firehose delivery stream.
 
     .LINK
         http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-kinesisfirehose-deliverystream-extendeds3destinationconfiguration.html

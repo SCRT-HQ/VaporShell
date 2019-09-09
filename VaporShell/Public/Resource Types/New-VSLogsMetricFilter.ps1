@@ -1,10 +1,12 @@
 function New-VSLogsMetricFilter {
     <#
     .SYNOPSIS
-        Adds an AWS::Logs::MetricFilter resource to the template
+        Adds an AWS::Logs::MetricFilter resource to the template. The AWS::Logs::MetricFilter resource specifies a metric filter that describes how CloudWatch Logs extracts information from logs and transforms it into Amazon CloudWatch metrics. If you have multiple metric filters that are associated with a log group, all the filters are applied to the log streams in that group.
 
     .DESCRIPTION
-        Adds an AWS::Logs::MetricFilter resource to the template
+        Adds an AWS::Logs::MetricFilter resource to the template. The AWS::Logs::MetricFilter resource specifies a metric filter that describes how CloudWatch Logs extracts information from logs and transforms it into Amazon CloudWatch metrics. If you have multiple metric filters that are associated with a log group, all the filters are applied to the log streams in that group.
+
+The maximum number of metric filters that can be associated with a log group is 100.
 
     .LINK
         http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-logs-metricfilter.html

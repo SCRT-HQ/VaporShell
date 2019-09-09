@@ -1,10 +1,11 @@
 function Add-VSKinesisFirehoseDeliveryStreamEncryptionConfiguration {
     <#
     .SYNOPSIS
-        Adds an AWS::KinesisFirehose::DeliveryStream.EncryptionConfiguration resource property to the template
+        Adds an AWS::KinesisFirehose::DeliveryStream.EncryptionConfiguration resource property to the template. The EncryptionConfiguration property type specifies the encryption settings that Amazon Kinesis Data Firehose (Kinesis Data Firehose uses when delivering data to Amazon Simple Storage Service (Amazon S3.
 
     .DESCRIPTION
-        Adds an AWS::KinesisFirehose::DeliveryStream.EncryptionConfiguration resource property to the template
+        Adds an AWS::KinesisFirehose::DeliveryStream.EncryptionConfiguration resource property to the template.
+The EncryptionConfiguration property type specifies the encryption settings that Amazon Kinesis Data Firehose (Kinesis Data Firehose uses when delivering data to Amazon Simple Storage Service (Amazon S3.
 
     .LINK
         http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-kinesisfirehose-deliverystream-encryptionconfiguration.html

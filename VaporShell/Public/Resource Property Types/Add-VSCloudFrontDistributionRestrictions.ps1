@@ -1,10 +1,11 @@
 function Add-VSCloudFrontDistributionRestrictions {
     <#
     .SYNOPSIS
-        Adds an AWS::CloudFront::Distribution.Restrictions resource property to the template
+        Adds an AWS::CloudFront::Distribution.Restrictions resource property to the template. A complex type that identifies ways in which you want to restrict distribution of your content.
 
     .DESCRIPTION
-        Adds an AWS::CloudFront::Distribution.Restrictions resource property to the template
+        Adds an AWS::CloudFront::Distribution.Restrictions resource property to the template.
+A complex type that identifies ways in which you want to restrict distribution of your content.
 
     .LINK
         http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-cloudfront-distribution-restrictions.html

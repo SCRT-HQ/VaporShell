@@ -1,10 +1,13 @@
 function Add-VSGreengrassResourceDefinitionVersionGroupOwnerSetting {
     <#
     .SYNOPSIS
-        Adds an AWS::Greengrass::ResourceDefinitionVersion.GroupOwnerSetting resource property to the template
+        Adds an AWS::Greengrass::ResourceDefinitionVersion.GroupOwnerSetting resource property to the template. <a name="aws-properties-greengrass-resourcedefinitionversion-groupownersetting-description"></a>Settings that define additional Linux OS group permissions to give to the Lambda function process. You can give the permissions of the Linux group that owns the resource or choose another Linux group. These permissions are in addition to the function's RunAs permissions.
 
     .DESCRIPTION
-        Adds an AWS::Greengrass::ResourceDefinitionVersion.GroupOwnerSetting resource property to the template
+        Adds an AWS::Greengrass::ResourceDefinitionVersion.GroupOwnerSetting resource property to the template.
+<a name="aws-properties-greengrass-resourcedefinitionversion-groupownersetting-description"></a>Settings that define additional Linux OS group permissions to give to the Lambda function process. You can give the permissions of the Linux group that owns the resource or choose another Linux group. These permissions are in addition to the function's RunAs permissions.
+
+<a name="aws-properties-greengrass-resourcedefinitionversion-groupownersetting-inheritance"></a> In an AWS CloudFormation template, GroupOwnerSetting is a property of the https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-greengrass-resourcedefinitionversion-localdeviceresourcedata.html: https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-greengrass-resourcedefinitionversion-localdeviceresourcedata.html and https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-greengrass-resourcedefinitionversion-localvolumeresourcedata.html: https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-greengrass-resourcedefinitionversion-localvolumeresourcedata.html property types.
 
     .LINK
         http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-greengrass-resourcedefinitionversion-groupownersetting.html

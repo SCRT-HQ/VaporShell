@@ -1,10 +1,11 @@
 function Add-VSBatchJobQueueComputeEnvironmentOrder {
     <#
     .SYNOPSIS
-        Adds an AWS::Batch::JobQueue.ComputeEnvironmentOrder resource property to the template
+        Adds an AWS::Batch::JobQueue.ComputeEnvironmentOrder resource property to the template. The order in which compute environments are tried for job placement within a queue. Compute environments are tried in ascending order. For example, if two compute environments are associated with a job queue, the compute environment with a lower order integer value is tried for job placement first.
 
     .DESCRIPTION
-        Adds an AWS::Batch::JobQueue.ComputeEnvironmentOrder resource property to the template
+        Adds an AWS::Batch::JobQueue.ComputeEnvironmentOrder resource property to the template.
+The order in which compute environments are tried for job placement within a queue. Compute environments are tried in ascending order. For example, if two compute environments are associated with a job queue, the compute environment with a lower order integer value is tried for job placement first.
 
     .LINK
         http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-batch-jobqueue-computeenvironmentorder.html

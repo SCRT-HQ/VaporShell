@@ -1,10 +1,18 @@
 function New-VSAutoScalingLaunchConfiguration {
     <#
     .SYNOPSIS
-        Adds an AWS::AutoScaling::LaunchConfiguration resource to the template
+        Adds an AWS::AutoScaling::LaunchConfiguration resource to the template. Specifies an Amazon EC2 Auto Scaling launch configuration that can be used by an Auto Scaling group to configure Amazon EC2 instances.
 
     .DESCRIPTION
-        Adds an AWS::AutoScaling::LaunchConfiguration resource to the template
+        Adds an AWS::AutoScaling::LaunchConfiguration resource to the template. Specifies an Amazon EC2 Auto Scaling launch configuration that can be used by an Auto Scaling group to configure Amazon EC2 instances.
+
+**Important**
+
+When you update the launch configuration, AWS CloudFormation deletes that resource and creates a new launch configuration with the updated properties and a new name. This update action does not deploy any change across the running Amazon EC2 instances in the Auto Scaling group. In other words, after you associate a new launch configuration with an Auto Scaling group, all new instances will get the updated configuration, but existing instances continue to run with the configuration that they were originally launched with. This works the same way as any other Auto Scaling group that uses a launch configuration.
+
+If you want to update existing instances when you update the LaunchConfiguration resource, you must specify an UpdatePolicy attribute: https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-attribute-updatepolicy.html for the Auto Scaling group. You can find sample update policies for rolling updates in the Examples: https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-as-group.html#aws-properties-as-group--examples section of the AWS::AutoScaling::AutoScalingGroup documentation.
+
+For more information, see CreateLaunchConfiguration: https://docs.aws.amazon.com/autoscaling/ec2/APIReference/API_CreateLaunchConfiguration.html in the *Amazon EC2 Auto Scaling API Reference* and Launch Configurations: https://docs.aws.amazon.com/autoscaling/ec2/userguide/LaunchConfiguration.html in the *Amazon EC2 Auto Scaling User Guide*.
 
     .LINK
         http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-as-launchconfig.html

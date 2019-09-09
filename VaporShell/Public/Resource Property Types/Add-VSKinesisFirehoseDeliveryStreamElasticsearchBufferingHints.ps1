@@ -1,10 +1,13 @@
 function Add-VSKinesisFirehoseDeliveryStreamElasticsearchBufferingHints {
     <#
     .SYNOPSIS
-        Adds an AWS::KinesisFirehose::DeliveryStream.ElasticsearchBufferingHints resource property to the template
+        Adds an AWS::KinesisFirehose::DeliveryStream.ElasticsearchBufferingHints resource property to the template. The ElasticsearchBufferingHints property type specifies how Amazon Kinesis Data Firehose (Kinesis Data Firehose buffers incoming data while delivering it to the destination. The first buffer condition that is satisfied triggers Kinesis Data Firehose to deliver the data.
 
     .DESCRIPTION
-        Adds an AWS::KinesisFirehose::DeliveryStream.ElasticsearchBufferingHints resource property to the template
+        Adds an AWS::KinesisFirehose::DeliveryStream.ElasticsearchBufferingHints resource property to the template.
+The ElasticsearchBufferingHints property type specifies how Amazon Kinesis Data Firehose (Kinesis Data Firehose buffers incoming data while delivering it to the destination. The first buffer condition that is satisfied triggers Kinesis Data Firehose to deliver the data.
+
+ElasticsearchBufferingHints is the property type for the BufferingHints property of the Amazon Kinesis Data Firehose DeliveryStream ElasticsearchDestinationConfiguration: https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-kinesisfirehose-deliverystream-elasticsearchdestinationconfiguration.html property type.
 
     .LINK
         http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-kinesisfirehose-deliverystream-elasticsearchbufferinghints.html

@@ -1,10 +1,11 @@
 function Add-VSPinpointEmailConfigurationSetEventDestinationEventDestination {
     <#
     .SYNOPSIS
-        Adds an AWS::PinpointEmail::ConfigurationSetEventDestination.EventDestination resource property to the template
+        Adds an AWS::PinpointEmail::ConfigurationSetEventDestination.EventDestination resource property to the template. In Amazon Pinpoint, *events* include message sends, deliveries, opens, clicks, bounces, and complaints. *Event destinations* are places that you can send information about these events to. For example, you can send event data to Amazon SNS to receive notifications when you receive bounces or complaints, or you can use Amazon Kinesis Data Firehose to stream data to Amazon S3 for long-term storage.
 
     .DESCRIPTION
-        Adds an AWS::PinpointEmail::ConfigurationSetEventDestination.EventDestination resource property to the template
+        Adds an AWS::PinpointEmail::ConfigurationSetEventDestination.EventDestination resource property to the template.
+In Amazon Pinpoint, *events* include message sends, deliveries, opens, clicks, bounces, and complaints. *Event destinations* are places that you can send information about these events to. For example, you can send event data to Amazon SNS to receive notifications when you receive bounces or complaints, or you can use Amazon Kinesis Data Firehose to stream data to Amazon S3 for long-term storage.
 
     .LINK
         http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-pinpointemail-configurationseteventdestination-eventdestination.html

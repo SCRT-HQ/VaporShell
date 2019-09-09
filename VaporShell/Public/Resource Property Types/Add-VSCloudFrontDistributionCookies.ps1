@@ -1,10 +1,11 @@
 function Add-VSCloudFrontDistributionCookies {
     <#
     .SYNOPSIS
-        Adds an AWS::CloudFront::Distribution.Cookies resource property to the template
+        Adds an AWS::CloudFront::Distribution.Cookies resource property to the template. A complex type that specifies whether you want CloudFront to forward cookies to the origin and, if so, which ones. For more information about forwarding cookies to the origin, see How CloudFront Forwards, Caches, and Logs Cookies: https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/Cookies.html in the *Amazon CloudFront Developer Guide*.
 
     .DESCRIPTION
-        Adds an AWS::CloudFront::Distribution.Cookies resource property to the template
+        Adds an AWS::CloudFront::Distribution.Cookies resource property to the template.
+A complex type that specifies whether you want CloudFront to forward cookies to the origin and, if so, which ones. For more information about forwarding cookies to the origin, see How CloudFront Forwards, Caches, and Logs Cookies: https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/Cookies.html in the *Amazon CloudFront Developer Guide*.
 
     .LINK
         http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-cloudfront-distribution-cookies.html

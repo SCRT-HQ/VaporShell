@@ -1,10 +1,13 @@
 function Add-VSMediaLiveChannelInputSettings {
     <#
     .SYNOPSIS
-        Adds an AWS::MediaLive::Channel.InputSettings resource property to the template
+        Adds an AWS::MediaLive::Channel.InputSettings resource property to the template. Information about extracting content from the input and about handling the content.
 
     .DESCRIPTION
-        Adds an AWS::MediaLive::Channel.InputSettings resource property to the template
+        Adds an AWS::MediaLive::Channel.InputSettings resource property to the template.
+Information about extracting content from the input and about handling the content.
+
+The parent of this entity is InputAttachment.
 
     .LINK
         http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-medialive-channel-inputsettings.html

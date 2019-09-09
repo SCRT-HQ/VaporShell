@@ -1,10 +1,11 @@
 function Add-VSEC2SpotFleetPrivateIpAddressSpecification {
     <#
     .SYNOPSIS
-        Adds an AWS::EC2::SpotFleet.PrivateIpAddressSpecification resource property to the template
+        Adds an AWS::EC2::SpotFleet.PrivateIpAddressSpecification resource property to the template. Describes a secondary private IPv4 address for a network interface.
 
     .DESCRIPTION
-        Adds an AWS::EC2::SpotFleet.PrivateIpAddressSpecification resource property to the template
+        Adds an AWS::EC2::SpotFleet.PrivateIpAddressSpecification resource property to the template.
+Describes a secondary private IPv4 address for a network interface.
 
     .LINK
         http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-spotfleet-spotfleetrequestconfigdata-launchspecifications-networkinterfaces-privateipaddresses.html

@@ -1,10 +1,18 @@
 function New-VSGreengrassConnectorDefinition {
     <#
     .SYNOPSIS
-        Adds an AWS::Greengrass::ConnectorDefinition resource to the template
+        Adds an AWS::Greengrass::ConnectorDefinition resource to the template. The AWS::Greengrass::ConnectorDefinition resource represents a connector definition for AWS IoT Greengrass. Connector definitions are used to organize your connector definition versions.
 
     .DESCRIPTION
-        Adds an AWS::Greengrass::ConnectorDefinition resource to the template
+        Adds an AWS::Greengrass::ConnectorDefinition resource to the template. The AWS::Greengrass::ConnectorDefinition resource represents a connector definition for AWS IoT Greengrass. Connector definitions are used to organize your connector definition versions.
+
+Connector definitions can reference multiple connector definition versions. All connector definition versions must be associated with a connector definition. Each connector definition version can contain one or more connectors.
+
+**Note**
+
+When you create a connector definition, you can optionally include an initial connector definition version. To associate a connector definition version later, create an https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-greengrass-connectordefinitionversion.html: https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-greengrass-connectordefinitionversion.html resource and specify the ID of this connector definition.
+
+After you create the connector definition version that contains the connectors you want to deploy, you must add it to your group version. For more information, see https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-greengrass-group.html: https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-greengrass-group.html.
 
     .LINK
         http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-greengrass-connectordefinition.html

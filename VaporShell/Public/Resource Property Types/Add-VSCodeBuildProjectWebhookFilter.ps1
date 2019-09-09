@@ -1,10 +1,11 @@
 function Add-VSCodeBuildProjectWebhookFilter {
     <#
     .SYNOPSIS
-        Adds an AWS::CodeBuild::Project.WebhookFilter resource property to the template
+        Adds an AWS::CodeBuild::Project.WebhookFilter resource property to the template. WebhookFilter is a structure of the FilterGroups property on the AWS CodeBuild Project ProjectTriggers: https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-codebuild-project-projecttriggers.html property type that specifies which webhooks trigger an AWS CodeBuild build.
 
     .DESCRIPTION
-        Adds an AWS::CodeBuild::Project.WebhookFilter resource property to the template
+        Adds an AWS::CodeBuild::Project.WebhookFilter resource property to the template.
+WebhookFilter is a structure of the FilterGroups property on the AWS CodeBuild Project ProjectTriggers: https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-codebuild-project-projecttriggers.html property type that specifies which webhooks trigger an AWS CodeBuild build.
 
     .LINK
         http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-codebuild-project-webhookfilter.html

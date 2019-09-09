@@ -1,10 +1,12 @@
 function New-VSEC2VPNConnection {
     <#
     .SYNOPSIS
-        Adds an AWS::EC2::VPNConnection resource to the template
+        Adds an AWS::EC2::VPNConnection resource to the template. Specifies a VPN connection between a virtual private gateway and a VPN customer gateway.
 
     .DESCRIPTION
-        Adds an AWS::EC2::VPNConnection resource to the template
+        Adds an AWS::EC2::VPNConnection resource to the template. Specifies a VPN connection between a virtual private gateway and a VPN customer gateway.
+
+For more information, see AWS Site-to-Site VPN: https://docs.aws.amazon.com/vpn/latest/s2svpn/VPC_VPN.html in the *AWS Site-to-Site VPN User Guide*.
 
     .LINK
         http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ec2-vpn-connection.html

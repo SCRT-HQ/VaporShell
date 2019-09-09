@@ -1,10 +1,11 @@
 function Add-VSIoTAnalyticsDatasetDeltaTime {
     <#
     .SYNOPSIS
-        Adds an AWS::IoTAnalytics::Dataset.DeltaTime resource property to the template
+        Adds an AWS::IoTAnalytics::Dataset.DeltaTime resource property to the template. Used to limit data to that which has arrived since the last execution of the action.
 
     .DESCRIPTION
-        Adds an AWS::IoTAnalytics::Dataset.DeltaTime resource property to the template
+        Adds an AWS::IoTAnalytics::Dataset.DeltaTime resource property to the template.
+Used to limit data to that which has arrived since the last execution of the action.
 
     .LINK
         http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iotanalytics-dataset-deltatime.html

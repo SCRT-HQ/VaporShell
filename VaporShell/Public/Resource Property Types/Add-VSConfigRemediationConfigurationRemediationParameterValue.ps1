@@ -1,10 +1,11 @@
 function Add-VSConfigRemediationConfigurationRemediationParameterValue {
     <#
     .SYNOPSIS
-        Adds an AWS::Config::RemediationConfiguration.RemediationParameterValue resource property to the template
+        Adds an AWS::Config::RemediationConfiguration.RemediationParameterValue resource property to the template. The value is either a dynamic (resource value or a static value. You must select either a dynamic value or a static value.
 
     .DESCRIPTION
-        Adds an AWS::Config::RemediationConfiguration.RemediationParameterValue resource property to the template
+        Adds an AWS::Config::RemediationConfiguration.RemediationParameterValue resource property to the template.
+The value is either a dynamic (resource value or a static value. You must select either a dynamic value or a static value.
 
     .LINK
         http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-config-remediationconfiguration-remediationparametervalue.html

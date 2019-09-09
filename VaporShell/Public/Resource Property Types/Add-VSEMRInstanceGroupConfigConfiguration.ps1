@@ -1,10 +1,17 @@
 function Add-VSEMRInstanceGroupConfigConfiguration {
     <#
     .SYNOPSIS
-        Adds an AWS::EMR::InstanceGroupConfig.Configuration resource property to the template
+        Adds an AWS::EMR::InstanceGroupConfig.Configuration resource property to the template. Configurations is a property of the AWS::EMR::Cluster resource that specifies the configuration of applications on an Amazon EMR cluster.
 
     .DESCRIPTION
-        Adds an AWS::EMR::InstanceGroupConfig.Configuration resource property to the template
+        Adds an AWS::EMR::InstanceGroupConfig.Configuration resource property to the template.
+Configurations is a property of the AWS::EMR::Cluster resource that specifies the configuration of applications on an Amazon EMR cluster.
+
+Configurations are optional. You can use them to have EMR customize applications and software bundled with Amazon EMR when a cluster is created. A configuration consists of a classification, properties, and optional nested configurations. A classification refers to an application-specific configuration file. Properties are the settings you want to change in that file. For more information, see Configuring Applications: https://docs.aws.amazon.com/emr/latest/ReleaseGuide/emr-configure-apps.html.
+
+**Note**
+
+Applies only to Amazon EMR releases 4.0 and later.
 
     .LINK
         http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-emr-cluster-configuration.html

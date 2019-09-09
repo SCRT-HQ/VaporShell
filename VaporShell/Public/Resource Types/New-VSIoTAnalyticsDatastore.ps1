@@ -1,10 +1,10 @@
 function New-VSIoTAnalyticsDatastore {
     <#
     .SYNOPSIS
-        Adds an AWS::IoTAnalytics::Datastore resource to the template
+        Adds an AWS::IoTAnalytics::Datastore resource to the template. AWS::IoTAnalytics::Datastore resource is a repository for messages. For more information, see  How to Use AWS IoT Analytics: https://docs.aws.amazon.com/iotanalytics/latest/userguide/welcome.html#aws-iot-analytics-how in the *AWS IoT Analytics User Guide*.
 
     .DESCRIPTION
-        Adds an AWS::IoTAnalytics::Datastore resource to the template
+        Adds an AWS::IoTAnalytics::Datastore resource to the template. AWS::IoTAnalytics::Datastore resource is a repository for messages. For more information, see  How to Use AWS IoT Analytics: https://docs.aws.amazon.com/iotanalytics/latest/userguide/welcome.html#aws-iot-analytics-how in the *AWS IoT Analytics User Guide*.
 
     .LINK
         http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-iotanalytics-datastore.html

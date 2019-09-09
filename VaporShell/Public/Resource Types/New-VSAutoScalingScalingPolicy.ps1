@@ -1,10 +1,16 @@
 function New-VSAutoScalingScalingPolicy {
     <#
     .SYNOPSIS
-        Adds an AWS::AutoScaling::ScalingPolicy resource to the template
+        Adds an AWS::AutoScaling::ScalingPolicy resource to the template. Specifies a scaling policy for an Amazon EC2 Auto Scaling group.
 
     .DESCRIPTION
-        Adds an AWS::AutoScaling::ScalingPolicy resource to the template
+        Adds an AWS::AutoScaling::ScalingPolicy resource to the template. Specifies a scaling policy for an Amazon EC2 Auto Scaling group.
+
+To update an existing scaling policy, use the existing policy name and set the property to change. If you leave a property unspecified when updating a scaling policy, the corresponding value remains unchanged.
+
+If you create either a step scaling policy or a simple scaling policy, you must also create a CloudWatch alarm that monitors a CloudWatch metric for your Auto Scaling group. Note that you can associate a CloudWatch alarm with only one scaling policy.
+
+For more information about using scaling policies to scale your Auto Scaling group automatically, see Dynamic Scaling: https://docs.aws.amazon.com/autoscaling/ec2/userguide/as-scale-based-on-demand.html in the *Amazon EC2 Auto Scaling User Guide*.
 
     .LINK
         http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-as-policy.html

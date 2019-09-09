@@ -1,10 +1,10 @@
 function New-VSManagedBlockchainNode {
     <#
     .SYNOPSIS
-        Adds an AWS::ManagedBlockchain::Node resource to the template
+        Adds an AWS::ManagedBlockchain::Node resource to the template. Creates a peer node in a member.
 
     .DESCRIPTION
-        Adds an AWS::ManagedBlockchain::Node resource to the template
+        Adds an AWS::ManagedBlockchain::Node resource to the template. Creates a peer node in a member.
 
     .LINK
         http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-managedblockchain-node.html

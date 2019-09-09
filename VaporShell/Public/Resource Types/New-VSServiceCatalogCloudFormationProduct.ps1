@@ -1,10 +1,10 @@
 function New-VSServiceCatalogCloudFormationProduct {
     <#
     .SYNOPSIS
-        Adds an AWS::ServiceCatalog::CloudFormationProduct resource to the template
+        Adds an AWS::ServiceCatalog::CloudFormationProduct resource to the template. Specifies a product.
 
     .DESCRIPTION
-        Adds an AWS::ServiceCatalog::CloudFormationProduct resource to the template
+        Adds an AWS::ServiceCatalog::CloudFormationProduct resource to the template. Specifies a product.
 
     .LINK
         http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-servicecatalog-cloudformationproduct.html

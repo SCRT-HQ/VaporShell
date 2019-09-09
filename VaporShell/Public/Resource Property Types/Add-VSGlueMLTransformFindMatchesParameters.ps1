@@ -1,10 +1,11 @@
 function Add-VSGlueMLTransformFindMatchesParameters {
     <#
     .SYNOPSIS
-        Adds an AWS::Glue::MLTransform.FindMatchesParameters resource property to the template
+        Adds an AWS::Glue::MLTransform.FindMatchesParameters resource property to the template. The parameters to configure the find matches transform.
 
     .DESCRIPTION
-        Adds an AWS::Glue::MLTransform.FindMatchesParameters resource property to the template
+        Adds an AWS::Glue::MLTransform.FindMatchesParameters resource property to the template.
+The parameters to configure the find matches transform.
 
     .LINK
         http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-glue-mltransform-transformparameters-findmatchesparameters.html

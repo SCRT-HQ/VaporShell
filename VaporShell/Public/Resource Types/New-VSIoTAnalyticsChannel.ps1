@@ -1,10 +1,10 @@
 function New-VSIoTAnalyticsChannel {
     <#
     .SYNOPSIS
-        Adds an AWS::IoTAnalytics::Channel resource to the template
+        Adds an AWS::IoTAnalytics::Channel resource to the template. The AWS::IoTAnalytics::Channel resource collects data from an MQTT topic and archives the raw, unprocessed messages before publishing the data to a pipeline. For more information, see  How to Use AWS IoT Analytics: https://docs.aws.amazon.com/iotanalytics/latest/userguide/welcome.html#aws-iot-analytics-how in the *AWS IoT Analytics User Guide*.
 
     .DESCRIPTION
-        Adds an AWS::IoTAnalytics::Channel resource to the template
+        Adds an AWS::IoTAnalytics::Channel resource to the template. The AWS::IoTAnalytics::Channel resource collects data from an MQTT topic and archives the raw, unprocessed messages before publishing the data to a pipeline. For more information, see  How to Use AWS IoT Analytics: https://docs.aws.amazon.com/iotanalytics/latest/userguide/welcome.html#aws-iot-analytics-how in the *AWS IoT Analytics User Guide*.
 
     .LINK
         http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-iotanalytics-channel.html

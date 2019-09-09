@@ -1,10 +1,13 @@
 function Add-VSIoT1ClickProjectDeviceTemplate {
     <#
     .SYNOPSIS
-        Adds an AWS::IoT1Click::Project.DeviceTemplate resource property to the template
+        Adds an AWS::IoT1Click::Project.DeviceTemplate resource property to the template. In AWS CloudFormation, use the DeviceTemplate property type to define the template for an AWS IoT 1-Click project.
 
     .DESCRIPTION
-        Adds an AWS::IoT1Click::Project.DeviceTemplate resource property to the template
+        Adds an AWS::IoT1Click::Project.DeviceTemplate resource property to the template.
+In AWS CloudFormation, use the DeviceTemplate property type to define the template for an AWS IoT 1-Click project.
+
+DeviceTemplate is a property of the AWS::IoT1Click::Project resource.
 
     .LINK
         http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iot1click-project-devicetemplate.html

@@ -1,10 +1,10 @@
 function New-VSEC2EgressOnlyInternetGateway {
     <#
     .SYNOPSIS
-        Adds an AWS::EC2::EgressOnlyInternetGateway resource to the template
+        Adds an AWS::EC2::EgressOnlyInternetGateway resource to the template. IPv6 only] Specifies an egress-only internet gateway for your VPC. An egress-only internet gateway is used to enable outbound communication over IPv6 from instances in your VPC to the internet, and prevents hosts outside of your VPC from initiating an IPv6 connection with your instance.
 
     .DESCRIPTION
-        Adds an AWS::EC2::EgressOnlyInternetGateway resource to the template
+        Adds an AWS::EC2::EgressOnlyInternetGateway resource to the template. IPv6 only] Specifies an egress-only internet gateway for your VPC. An egress-only internet gateway is used to enable outbound communication over IPv6 from instances in your VPC to the internet, and prevents hosts outside of your VPC from initiating an IPv6 connection with your instance.
 
     .LINK
         http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ec2-egressonlyinternetgateway.html

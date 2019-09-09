@@ -1,10 +1,14 @@
 function New-VSElasticBeanstalkApplicationVersion {
     <#
     .SYNOPSIS
-        Adds an AWS::ElasticBeanstalk::ApplicationVersion resource to the template
+        Adds an AWS::ElasticBeanstalk::ApplicationVersion resource to the template. The AWS::ElasticBeanstalk::ApplicationVersion resource is an AWS Elastic Beanstalk resource type that specifies an application version, an iteration of deployable code, for an Elastic Beanstalk application.
 
     .DESCRIPTION
-        Adds an AWS::ElasticBeanstalk::ApplicationVersion resource to the template
+        Adds an AWS::ElasticBeanstalk::ApplicationVersion resource to the template. The AWS::ElasticBeanstalk::ApplicationVersion resource is an AWS Elastic Beanstalk resource type that specifies an application version, an iteration of deployable code, for an Elastic Beanstalk application.
+
+**Note**
+
+After you create an application version with a specified Amazon S3 bucket and key location, you can't change that Amazon S3 location. If you change the Amazon S3 location, an attempt to launch an environment from the application version will fail.
 
     .LINK
         http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-beanstalk-version.html

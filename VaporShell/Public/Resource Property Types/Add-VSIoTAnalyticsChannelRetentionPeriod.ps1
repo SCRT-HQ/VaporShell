@@ -1,10 +1,11 @@
 function Add-VSIoTAnalyticsChannelRetentionPeriod {
     <#
     .SYNOPSIS
-        Adds an AWS::IoTAnalytics::Channel.RetentionPeriod resource property to the template
+        Adds an AWS::IoTAnalytics::Channel.RetentionPeriod resource property to the template. How long, in days, message data is kept.
 
     .DESCRIPTION
-        Adds an AWS::IoTAnalytics::Channel.RetentionPeriod resource property to the template
+        Adds an AWS::IoTAnalytics::Channel.RetentionPeriod resource property to the template.
+How long, in days, message data is kept.
 
     .LINK
         http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iotanalytics-channel-retentionperiod.html

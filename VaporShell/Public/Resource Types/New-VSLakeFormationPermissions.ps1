@@ -1,10 +1,10 @@
 function New-VSLakeFormationPermissions {
     <#
     .SYNOPSIS
-        Adds an AWS::LakeFormation::Permissions resource to the template
+        Adds an AWS::LakeFormation::Permissions resource to the template. The AWS::LakeFormation::Permissions resource is an AWS Lake Formation resource type that grants or revokes AWS Lake Formation permissions.
 
     .DESCRIPTION
-        Adds an AWS::LakeFormation::Permissions resource to the template
+        Adds an AWS::LakeFormation::Permissions resource to the template. The AWS::LakeFormation::Permissions resource is an AWS Lake Formation resource type that grants or revokes AWS Lake Formation permissions.
 
     .LINK
         http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-lakeformation-permissions.html

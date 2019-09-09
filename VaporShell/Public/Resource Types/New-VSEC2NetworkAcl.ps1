@@ -1,10 +1,10 @@
 function New-VSEC2NetworkAcl {
     <#
     .SYNOPSIS
-        Adds an AWS::EC2::NetworkAcl resource to the template
+        Adds an AWS::EC2::NetworkAcl resource to the template. Specifies a network ACL for your VPC.
 
     .DESCRIPTION
-        Adds an AWS::EC2::NetworkAcl resource to the template
+        Adds an AWS::EC2::NetworkAcl resource to the template. Specifies a network ACL for your VPC.
 
     .LINK
         http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ec2-network-acl.html

@@ -1,10 +1,11 @@
 function Add-VSAmplifyAppAutoBranchCreationConfig {
     <#
     .SYNOPSIS
-        Adds an AWS::Amplify::App.AutoBranchCreationConfig resource property to the template
+        Adds an AWS::Amplify::App.AutoBranchCreationConfig resource property to the template. Use the AutoBranchCreationConfig property type to automatically create branches that match a certain pattern.
 
     .DESCRIPTION
-        Adds an AWS::Amplify::App.AutoBranchCreationConfig resource property to the template
+        Adds an AWS::Amplify::App.AutoBranchCreationConfig resource property to the template.
+Use the AutoBranchCreationConfig property type to automatically create branches that match a certain pattern.
 
     .LINK
         http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-amplify-app-autobranchcreationconfig.html

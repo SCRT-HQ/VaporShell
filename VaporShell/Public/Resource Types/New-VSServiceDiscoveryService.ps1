@@ -1,10 +1,24 @@
 function New-VSServiceDiscoveryService {
     <#
     .SYNOPSIS
-        Adds an AWS::ServiceDiscovery::Service resource to the template
+        Adds an AWS::ServiceDiscovery::Service resource to the template. A complex type that contains information about a service, which defines the configuration of the following entities:
 
     .DESCRIPTION
-        Adds an AWS::ServiceDiscovery::Service resource to the template
+        Adds an AWS::ServiceDiscovery::Service resource to the template. A complex type that contains information about a service, which defines the configuration of the following entities:
+
++ For public and private DNS namespaces, one of the following combinations of DNS records in Amazon Route 53:
+
++ A
+
++ AAAA
+
++ A and AAAA
+
++ SRV
+
++ CNAME
+
++ Optionally, a health check
 
     .LINK
         http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-servicediscovery-service.html

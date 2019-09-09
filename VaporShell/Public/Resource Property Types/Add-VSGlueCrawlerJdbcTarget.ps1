@@ -1,10 +1,11 @@
 function Add-VSGlueCrawlerJdbcTarget {
     <#
     .SYNOPSIS
-        Adds an AWS::Glue::Crawler.JdbcTarget resource property to the template
+        Adds an AWS::Glue::Crawler.JdbcTarget resource property to the template. Specifies a JDBC data store to crawl.
 
     .DESCRIPTION
-        Adds an AWS::Glue::Crawler.JdbcTarget resource property to the template
+        Adds an AWS::Glue::Crawler.JdbcTarget resource property to the template.
+Specifies a JDBC data store to crawl.
 
     .LINK
         http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-glue-crawler-jdbctarget.html

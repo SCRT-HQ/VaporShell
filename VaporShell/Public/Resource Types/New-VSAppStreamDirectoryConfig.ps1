@@ -1,10 +1,10 @@
 function New-VSAppStreamDirectoryConfig {
     <#
     .SYNOPSIS
-        Adds an AWS::AppStream::DirectoryConfig resource to the template
+        Adds an AWS::AppStream::DirectoryConfig resource to the template. The AWS::AppStream::DirectoryConfig resource specifies the configuration information required to join Amazon AppStream 2.0 fleets and image builders to Microsoft Active Directory domains.
 
     .DESCRIPTION
-        Adds an AWS::AppStream::DirectoryConfig resource to the template
+        Adds an AWS::AppStream::DirectoryConfig resource to the template. The AWS::AppStream::DirectoryConfig resource specifies the configuration information required to join Amazon AppStream 2.0 fleets and image builders to Microsoft Active Directory domains.
 
     .LINK
         http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-appstream-directoryconfig.html

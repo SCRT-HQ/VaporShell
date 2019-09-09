@@ -1,10 +1,11 @@
 function Add-VSGluePartitionPartitionInput {
     <#
     .SYNOPSIS
-        Adds an AWS::Glue::Partition.PartitionInput resource property to the template
+        Adds an AWS::Glue::Partition.PartitionInput resource property to the template. The structure used to create and update a partition.
 
     .DESCRIPTION
-        Adds an AWS::Glue::Partition.PartitionInput resource property to the template
+        Adds an AWS::Glue::Partition.PartitionInput resource property to the template.
+The structure used to create and update a partition.
 
     .LINK
         http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-glue-partition-partitioninput.html

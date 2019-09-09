@@ -1,10 +1,11 @@
 function Add-VSLambdaLayerVersionContent {
     <#
     .SYNOPSIS
-        Adds an AWS::Lambda::LayerVersion.Content resource property to the template
+        Adds an AWS::Lambda::LayerVersion.Content resource property to the template. A ZIP archive that contains the contents of an AWS Lambda layer: https://docs.aws.amazon.com/lambda/latest/dg/configuration-layers.html.
 
     .DESCRIPTION
-        Adds an AWS::Lambda::LayerVersion.Content resource property to the template
+        Adds an AWS::Lambda::LayerVersion.Content resource property to the template.
+A ZIP archive that contains the contents of an AWS Lambda layer: https://docs.aws.amazon.com/lambda/latest/dg/configuration-layers.html.
 
     .LINK
         http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-lambda-layerversion-content.html

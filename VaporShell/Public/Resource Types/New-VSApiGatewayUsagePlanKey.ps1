@@ -1,10 +1,10 @@
 function New-VSApiGatewayUsagePlanKey {
     <#
     .SYNOPSIS
-        Adds an AWS::ApiGateway::UsagePlanKey resource to the template
+        Adds an AWS::ApiGateway::UsagePlanKey resource to the template. The AWS::ApiGateway::UsagePlanKey resource associates an API key with a usage plan. This association determines which users the usage plan is applied to.
 
     .DESCRIPTION
-        Adds an AWS::ApiGateway::UsagePlanKey resource to the template
+        Adds an AWS::ApiGateway::UsagePlanKey resource to the template. The AWS::ApiGateway::UsagePlanKey resource associates an API key with a usage plan. This association determines which users the usage plan is applied to.
 
     .LINK
         http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-apigateway-usageplankey.html

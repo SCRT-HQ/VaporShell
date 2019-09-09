@@ -1,10 +1,10 @@
 function New-VSWAFRegionalWebACLAssociation {
     <#
     .SYNOPSIS
-        Adds an AWS::WAFRegional::WebACLAssociation resource to the template
+        Adds an AWS::WAFRegional::WebACLAssociation resource to the template. The AWS::WAFRegional::WebACLAssociation resource associates an AWS WAF Regional web access control group (ACL with a resource.
 
     .DESCRIPTION
-        Adds an AWS::WAFRegional::WebACLAssociation resource to the template
+        Adds an AWS::WAFRegional::WebACLAssociation resource to the template. The AWS::WAFRegional::WebACLAssociation resource associates an AWS WAF Regional web access control group (ACL with a resource.
 
     .LINK
         http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-wafregional-webaclassociation.html

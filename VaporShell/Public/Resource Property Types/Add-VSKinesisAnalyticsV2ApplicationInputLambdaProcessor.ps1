@@ -1,10 +1,11 @@
 function Add-VSKinesisAnalyticsV2ApplicationInputLambdaProcessor {
     <#
     .SYNOPSIS
-        Adds an AWS::KinesisAnalyticsV2::Application.InputLambdaProcessor resource property to the template
+        Adds an AWS::KinesisAnalyticsV2::Application.InputLambdaProcessor resource property to the template. An object that contains the Amazon Resource Name (ARN of the AWS Lambda function that is used to preprocess records in the stream in an SQL-based Amazon Kinesis Data Analytics application.
 
     .DESCRIPTION
-        Adds an AWS::KinesisAnalyticsV2::Application.InputLambdaProcessor resource property to the template
+        Adds an AWS::KinesisAnalyticsV2::Application.InputLambdaProcessor resource property to the template.
+An object that contains the Amazon Resource Name (ARN of the AWS Lambda function that is used to preprocess records in the stream in an SQL-based Amazon Kinesis Data Analytics application.
 
     .LINK
         http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-kinesisanalyticsv2-application-inputlambdaprocessor.html

@@ -1,10 +1,11 @@
 function Add-VSSageMakerModelContainerDefinition {
     <#
     .SYNOPSIS
-        Adds an AWS::SageMaker::Model.ContainerDefinition resource property to the template
+        Adds an AWS::SageMaker::Model.ContainerDefinition resource property to the template. Describes the container, as part of model definition.
 
     .DESCRIPTION
-        Adds an AWS::SageMaker::Model.ContainerDefinition resource property to the template
+        Adds an AWS::SageMaker::Model.ContainerDefinition resource property to the template.
+Describes the container, as part of model definition.
 
     .LINK
         http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-sagemaker-model-containerdefinition.html

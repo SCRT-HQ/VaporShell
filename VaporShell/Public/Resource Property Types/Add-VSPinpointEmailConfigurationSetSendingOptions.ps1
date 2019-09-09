@@ -1,10 +1,11 @@
 function Add-VSPinpointEmailConfigurationSetSendingOptions {
     <#
     .SYNOPSIS
-        Adds an AWS::PinpointEmail::ConfigurationSet.SendingOptions resource property to the template
+        Adds an AWS::PinpointEmail::ConfigurationSet.SendingOptions resource property to the template. Used to enable or disable email sending for messages that use this configuration set in the current AWS Region.
 
     .DESCRIPTION
-        Adds an AWS::PinpointEmail::ConfigurationSet.SendingOptions resource property to the template
+        Adds an AWS::PinpointEmail::ConfigurationSet.SendingOptions resource property to the template.
+Used to enable or disable email sending for messages that use this configuration set in the current AWS Region.
 
     .LINK
         http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-pinpointemail-configurationset-sendingoptions.html

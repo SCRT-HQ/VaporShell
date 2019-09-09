@@ -1,10 +1,10 @@
 function New-VSElastiCacheCacheCluster {
     <#
     .SYNOPSIS
-        Adds an AWS::ElastiCache::CacheCluster resource to the template
+        Adds an AWS::ElastiCache::CacheCluster resource to the template. The AWS::ElastiCache::CacheCluster type creates an Amazon ElastiCache cache cluster.
 
     .DESCRIPTION
-        Adds an AWS::ElastiCache::CacheCluster resource to the template
+        Adds an AWS::ElastiCache::CacheCluster resource to the template. The AWS::ElastiCache::CacheCluster type creates an Amazon ElastiCache cache cluster.
 
     .LINK
         http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-elasticache-cache-cluster.html

@@ -1,10 +1,10 @@
 function New-VSCodePipelineCustomActionType {
     <#
     .SYNOPSIS
-        Adds an AWS::CodePipeline::CustomActionType resource to the template
+        Adds an AWS::CodePipeline::CustomActionType resource to the template. The AWS::CodePipeline::CustomActionType resource creates a custom action for activities that aren't included in the CodePipeline default actions, such as running an internally developed build process or a test suite. You can use these custom actions in the stage of a pipeline. For more information, see Create and Add a Custom Action in AWS CodePipeline: https://docs.aws.amazon.com/codepipeline/latest/userguide/how-to-create-custom-action.html in the *AWS CodePipeline User Guide*.
 
     .DESCRIPTION
-        Adds an AWS::CodePipeline::CustomActionType resource to the template
+        Adds an AWS::CodePipeline::CustomActionType resource to the template. The AWS::CodePipeline::CustomActionType resource creates a custom action for activities that aren't included in the CodePipeline default actions, such as running an internally developed build process or a test suite. You can use these custom actions in the stage of a pipeline. For more information, see Create and Add a Custom Action in AWS CodePipeline: https://docs.aws.amazon.com/codepipeline/latest/userguide/how-to-create-custom-action.html in the *AWS CodePipeline User Guide*.
 
     .LINK
         http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-codepipeline-customactiontype.html

@@ -1,10 +1,11 @@
 function Add-VSIoTAnalyticsPipelineSelectAttributes {
     <#
     .SYNOPSIS
-        Adds an AWS::IoTAnalytics::Pipeline.SelectAttributes resource property to the template
+        Adds an AWS::IoTAnalytics::Pipeline.SelectAttributes resource property to the template. Creates a new message using only the specified attributes from the original message.
 
     .DESCRIPTION
-        Adds an AWS::IoTAnalytics::Pipeline.SelectAttributes resource property to the template
+        Adds an AWS::IoTAnalytics::Pipeline.SelectAttributes resource property to the template.
+Creates a new message using only the specified attributes from the original message.
 
     .LINK
         http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iotanalytics-pipeline-selectattributes.html

@@ -1,10 +1,11 @@
 function Add-VSIoTAnalyticsDatasetFilter {
     <#
     .SYNOPSIS
-        Adds an AWS::IoTAnalytics::Dataset.Filter resource property to the template
+        Adds an AWS::IoTAnalytics::Dataset.Filter resource property to the template. Information which is used to filter message data, to segregate it according to the time frame in which it arrives.
 
     .DESCRIPTION
-        Adds an AWS::IoTAnalytics::Dataset.Filter resource property to the template
+        Adds an AWS::IoTAnalytics::Dataset.Filter resource property to the template.
+Information which is used to filter message data, to segregate it according to the time frame in which it arrives.
 
     .LINK
         http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iotanalytics-dataset-filter.html

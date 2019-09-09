@@ -1,10 +1,11 @@
 function Add-VSTransferServerEndpointDetails {
     <#
     .SYNOPSIS
-        Adds an AWS::Transfer::Server.EndpointDetails resource property to the template
+        Adds an AWS::Transfer::Server.EndpointDetails resource property to the template. The virtual private cloud (VPC endpoint settings that you want to configure for your SFTP server. This parameter is required when you specify a value for the EndpointType parameter.
 
     .DESCRIPTION
-        Adds an AWS::Transfer::Server.EndpointDetails resource property to the template
+        Adds an AWS::Transfer::Server.EndpointDetails resource property to the template.
+The virtual private cloud (VPC endpoint settings that you want to configure for your SFTP server. This parameter is required when you specify a value for the EndpointType parameter.
 
     .LINK
         http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-transfer-server-endpointdetails.html

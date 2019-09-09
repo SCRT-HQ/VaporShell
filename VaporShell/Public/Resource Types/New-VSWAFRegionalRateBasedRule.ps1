@@ -1,10 +1,18 @@
 function New-VSWAFRegionalRateBasedRule {
     <#
     .SYNOPSIS
-        Adds an AWS::WAFRegional::RateBasedRule resource to the template
+        Adds an AWS::WAFRegional::RateBasedRule resource to the template. A RateBasedRule is identical to a regular Rule, with one addition: a RateBasedRule counts the number of requests that arrive from a specified IP address every five minutes. For example, based on recent requests that you've seen from an attacker, you might create a RateBasedRule that includes the following conditions:
 
     .DESCRIPTION
-        Adds an AWS::WAFRegional::RateBasedRule resource to the template
+        Adds an AWS::WAFRegional::RateBasedRule resource to the template. A RateBasedRule is identical to a regular Rule, with one addition: a RateBasedRule counts the number of requests that arrive from a specified IP address every five minutes. For example, based on recent requests that you've seen from an attacker, you might create a RateBasedRule that includes the following conditions:
+
++ The requests come from 192.0.2.44.
+
++ They contain the value BadBot in the User-Agent header.
+
+In the rule, you also define the rate limit as 15,000.
+
+Requests that meet both of these conditions and exceed 15,000 requests every five minutes trigger the rule's action (block or count, which is defined in the web ACL.
 
     .LINK
         http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-wafregional-ratebasedrule.html

@@ -1,10 +1,11 @@
 function Add-VSElasticLoadBalancingV2LoadBalancerSubnetMapping {
     <#
     .SYNOPSIS
-        Adds an AWS::ElasticLoadBalancingV2::LoadBalancer.SubnetMapping resource property to the template
+        Adds an AWS::ElasticLoadBalancingV2::LoadBalancer.SubnetMapping resource property to the template. Specifies a subnet to attach to an Application Load Balancer or a Network Load Balancer.
 
     .DESCRIPTION
-        Adds an AWS::ElasticLoadBalancingV2::LoadBalancer.SubnetMapping resource property to the template
+        Adds an AWS::ElasticLoadBalancingV2::LoadBalancer.SubnetMapping resource property to the template.
+Specifies a subnet to attach to an Application Load Balancer or a Network Load Balancer.
 
     .LINK
         http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-elasticloadbalancingv2-loadbalancer-subnetmapping.html

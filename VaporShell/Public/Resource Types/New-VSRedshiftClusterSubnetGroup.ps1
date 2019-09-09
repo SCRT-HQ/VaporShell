@@ -1,10 +1,12 @@
 function New-VSRedshiftClusterSubnetGroup {
     <#
     .SYNOPSIS
-        Adds an AWS::Redshift::ClusterSubnetGroup resource to the template
+        Adds an AWS::Redshift::ClusterSubnetGroup resource to the template. Specifies an Amazon Redshift subnet group. You must provide a list of one or more subnets in your existing Amazon Virtual Private Cloud (Amazon VPC when creating Amazon Redshift subnet group.
 
     .DESCRIPTION
-        Adds an AWS::Redshift::ClusterSubnetGroup resource to the template
+        Adds an AWS::Redshift::ClusterSubnetGroup resource to the template. Specifies an Amazon Redshift subnet group. You must provide a list of one or more subnets in your existing Amazon Virtual Private Cloud (Amazon VPC when creating Amazon Redshift subnet group.
+
+For information about subnet groups, go to Amazon Redshift Cluster Subnet Groups: https://docs.aws.amazon.com/redshift/latest/mgmt/working-with-cluster-subnet-groups.html in the *Amazon Redshift Cluster Management Guide*.
 
     .LINK
         http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-redshift-clustersubnetgroup.html

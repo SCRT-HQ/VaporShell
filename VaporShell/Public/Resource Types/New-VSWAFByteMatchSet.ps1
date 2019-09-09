@@ -1,10 +1,10 @@
 function New-VSWAFByteMatchSet {
     <#
     .SYNOPSIS
-        Adds an AWS::WAF::ByteMatchSet resource to the template
+        Adds an AWS::WAF::ByteMatchSet resource to the template. The AWS::WAF::ByteMatchSet resource creates an AWS WAF ByteMatchSet that identifies a part of a web request that you want to inspect.
 
     .DESCRIPTION
-        Adds an AWS::WAF::ByteMatchSet resource to the template
+        Adds an AWS::WAF::ByteMatchSet resource to the template. The AWS::WAF::ByteMatchSet resource creates an AWS WAF ByteMatchSet that identifies a part of a web request that you want to inspect.
 
     .LINK
         http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-waf-bytematchset.html

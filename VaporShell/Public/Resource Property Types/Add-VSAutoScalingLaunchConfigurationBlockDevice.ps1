@@ -1,10 +1,13 @@
 function Add-VSAutoScalingLaunchConfigurationBlockDevice {
     <#
     .SYNOPSIS
-        Adds an AWS::AutoScaling::LaunchConfiguration.BlockDevice resource property to the template
+        Adds an AWS::AutoScaling::LaunchConfiguration.BlockDevice resource property to the template. BlockDevice is a subproperty of BlockDeviceMapping: https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-as-launchconfig-blockdev-mapping.html that describes an Amazon EBS volume.
 
     .DESCRIPTION
-        Adds an AWS::AutoScaling::LaunchConfiguration.BlockDevice resource property to the template
+        Adds an AWS::AutoScaling::LaunchConfiguration.BlockDevice resource property to the template.
+BlockDevice is a subproperty of BlockDeviceMapping: https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-as-launchconfig-blockdev-mapping.html that describes an Amazon EBS volume.
+
+For Amazon EC2 Auto Scaling EBS Block Device snippets, see Auto Scaling Launch Configuration Resource: https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/quickref-autoscaling.html#scenario-as-launch-config.
 
     .LINK
         http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-as-launchconfig-blockdev-template.html

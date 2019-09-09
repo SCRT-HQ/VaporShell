@@ -1,10 +1,13 @@
 function Add-VSCodeBuildProjectSourceAuth {
     <#
     .SYNOPSIS
-        Adds an AWS::CodeBuild::Project.SourceAuth resource property to the template
+        Adds an AWS::CodeBuild::Project.SourceAuth resource property to the template. SourceAuth is a property of the AWS CodeBuild Project Source : https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-codebuild-project-source.html property type that specifies authorization settings for AWS CodeBuild to access the source code to be built.
 
     .DESCRIPTION
-        Adds an AWS::CodeBuild::Project.SourceAuth resource property to the template
+        Adds an AWS::CodeBuild::Project.SourceAuth resource property to the template.
+SourceAuth is a property of the AWS CodeBuild Project Source : https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-codebuild-project-source.html property type that specifies authorization settings for AWS CodeBuild to access the source code to be built.
+
+SourceAuth is for use by the CodeBuild console only. Do not get or set it directly.
 
     .LINK
         http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-codebuild-project-sourceauth.html

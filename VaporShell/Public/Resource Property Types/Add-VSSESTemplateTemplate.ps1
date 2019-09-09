@@ -1,10 +1,11 @@
 function Add-VSSESTemplateTemplate {
     <#
     .SYNOPSIS
-        Adds an AWS::SES::Template.Template resource property to the template
+        Adds an AWS::SES::Template.Template resource property to the template. The content of the email, composed of a subject line, an HTML part, and a text-only part.
 
     .DESCRIPTION
-        Adds an AWS::SES::Template.Template resource property to the template
+        Adds an AWS::SES::Template.Template resource property to the template.
+The content of the email, composed of a subject line, an HTML part, and a text-only part.
 
     .LINK
         http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ses-template-template.html

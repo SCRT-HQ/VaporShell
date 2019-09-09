@@ -1,10 +1,15 @@
 function Add-VSAutoScalingLaunchConfigurationBlockDeviceMapping {
     <#
     .SYNOPSIS
-        Adds an AWS::AutoScaling::LaunchConfiguration.BlockDeviceMapping resource property to the template
+        Adds an AWS::AutoScaling::LaunchConfiguration.BlockDeviceMapping resource property to the template. BlockDeviceMapping is a property of LaunchConfiguration: https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-as-launchconfig.html that describes a block device mapping for an Amazon EC2 Auto Scaling group.
 
     .DESCRIPTION
-        Adds an AWS::AutoScaling::LaunchConfiguration.BlockDeviceMapping resource property to the template
+        Adds an AWS::AutoScaling::LaunchConfiguration.BlockDeviceMapping resource property to the template.
+BlockDeviceMapping is a property of LaunchConfiguration: https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-as-launchconfig.html that describes a block device mapping for an Amazon EC2 Auto Scaling group.
+
+Each instance that is launched has an associated root device volume, either an Amazon EBS volume or an instance store volume. You can use block device mappings to specify additional EBS volumes or instance store volumes to attach to an instance when it is launched.
+
+For more information, see Example Block Device Mapping: https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/block-device-mapping-concepts.html#block-device-mapping-ex in the *Amazon EC2 User Guide for Linux Instances*.
 
     .LINK
         http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-as-launchconfig-blockdev-mapping.html

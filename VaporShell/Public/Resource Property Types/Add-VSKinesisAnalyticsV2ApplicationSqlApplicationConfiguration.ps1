@@ -1,10 +1,11 @@
 function Add-VSKinesisAnalyticsV2ApplicationSqlApplicationConfiguration {
     <#
     .SYNOPSIS
-        Adds an AWS::KinesisAnalyticsV2::Application.SqlApplicationConfiguration resource property to the template
+        Adds an AWS::KinesisAnalyticsV2::Application.SqlApplicationConfiguration resource property to the template. Describes the inputs, outputs, and reference data sources for an SQL-based Kinesis Data Analytics application.
 
     .DESCRIPTION
-        Adds an AWS::KinesisAnalyticsV2::Application.SqlApplicationConfiguration resource property to the template
+        Adds an AWS::KinesisAnalyticsV2::Application.SqlApplicationConfiguration resource property to the template.
+Describes the inputs, outputs, and reference data sources for an SQL-based Kinesis Data Analytics application.
 
     .LINK
         http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-kinesisanalyticsv2-application-sqlapplicationconfiguration.html

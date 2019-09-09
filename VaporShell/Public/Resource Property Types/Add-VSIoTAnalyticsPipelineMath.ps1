@@ -1,10 +1,11 @@
 function Add-VSIoTAnalyticsPipelineMath {
     <#
     .SYNOPSIS
-        Adds an AWS::IoTAnalytics::Pipeline.Math resource property to the template
+        Adds an AWS::IoTAnalytics::Pipeline.Math resource property to the template. An activity that computes an arithmetic expression using the message's attributes.
 
     .DESCRIPTION
-        Adds an AWS::IoTAnalytics::Pipeline.Math resource property to the template
+        Adds an AWS::IoTAnalytics::Pipeline.Math resource property to the template.
+An activity that computes an arithmetic expression using the message's attributes.
 
     .LINK
         http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iotanalytics-pipeline-math.html

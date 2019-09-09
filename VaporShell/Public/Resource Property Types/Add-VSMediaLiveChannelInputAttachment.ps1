@@ -1,10 +1,13 @@
 function Add-VSMediaLiveChannelInputAttachment {
     <#
     .SYNOPSIS
-        Adds an AWS::MediaLive::Channel.InputAttachment resource property to the template
+        Adds an AWS::MediaLive::Channel.InputAttachment resource property to the template. An input to attach to this channel.
 
     .DESCRIPTION
-        Adds an AWS::MediaLive::Channel.InputAttachment resource property to the template
+        Adds an AWS::MediaLive::Channel.InputAttachment resource property to the template.
+An input to attach to this channel.
+
+This entity is at the top level in the channel.
 
     .LINK
         http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-medialive-channel-inputattachment.html

@@ -1,10 +1,11 @@
 function Add-VSEMRInstanceGroupConfigAutoScalingPolicy {
     <#
     .SYNOPSIS
-        Adds an AWS::EMR::InstanceGroupConfig.AutoScalingPolicy resource property to the template
+        Adds an AWS::EMR::InstanceGroupConfig.AutoScalingPolicy resource property to the template. AutoScalingPolicy defines how an instance group dynamically adds and terminates EC2 instances in response to the value of a CloudWatch metric. For more information, see Using Automatic Scaling in Amazon EMR: https://docs.aws.amazon.com/emr/latest/ManagementGuide/emr-automatic-scaling.html in the *Amazon EMR Management Guide*.
 
     .DESCRIPTION
-        Adds an AWS::EMR::InstanceGroupConfig.AutoScalingPolicy resource property to the template
+        Adds an AWS::EMR::InstanceGroupConfig.AutoScalingPolicy resource property to the template.
+AutoScalingPolicy defines how an instance group dynamically adds and terminates EC2 instances in response to the value of a CloudWatch metric. For more information, see Using Automatic Scaling in Amazon EMR: https://docs.aws.amazon.com/emr/latest/ManagementGuide/emr-automatic-scaling.html in the *Amazon EMR Management Guide*.
 
     .LINK
         http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-elasticmapreduce-instancegroupconfig-autoscalingpolicy.html

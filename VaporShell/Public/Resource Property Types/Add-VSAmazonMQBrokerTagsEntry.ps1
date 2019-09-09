@@ -1,10 +1,11 @@
 function Add-VSAmazonMQBrokerTagsEntry {
     <#
     .SYNOPSIS
-        Adds an AWS::AmazonMQ::Broker.TagsEntry resource property to the template
+        Adds an AWS::AmazonMQ::Broker.TagsEntry resource property to the template. A key-value pair to associate with the broker.
 
     .DESCRIPTION
-        Adds an AWS::AmazonMQ::Broker.TagsEntry resource property to the template
+        Adds an AWS::AmazonMQ::Broker.TagsEntry resource property to the template.
+A key-value pair to associate with the broker.
 
     .LINK
         http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-amazonmq-broker-tagsentry.html

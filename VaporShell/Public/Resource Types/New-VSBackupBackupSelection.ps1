@@ -1,10 +1,10 @@
 function New-VSBackupBackupSelection {
     <#
     .SYNOPSIS
-        Adds an AWS::Backup::BackupSelection resource to the template
+        Adds an AWS::Backup::BackupSelection resource to the template. Specifies a set of resources to assign to a backup plan.
 
     .DESCRIPTION
-        Adds an AWS::Backup::BackupSelection resource to the template
+        Adds an AWS::Backup::BackupSelection resource to the template. Specifies a set of resources to assign to a backup plan.
 
     .LINK
         http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-backup-backupselection.html

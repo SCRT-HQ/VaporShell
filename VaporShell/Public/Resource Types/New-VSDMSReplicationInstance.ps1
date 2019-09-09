@@ -1,10 +1,10 @@
 function New-VSDMSReplicationInstance {
     <#
     .SYNOPSIS
-        Adds an AWS::DMS::ReplicationInstance resource to the template
+        Adds an AWS::DMS::ReplicationInstance resource to the template. The AWS::DMS::ReplicationInstance resource creates an AWS DMS replication instance.
 
     .DESCRIPTION
-        Adds an AWS::DMS::ReplicationInstance resource to the template
+        Adds an AWS::DMS::ReplicationInstance resource to the template. The AWS::DMS::ReplicationInstance resource creates an AWS DMS replication instance.
 
     .LINK
         http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-dms-replicationinstance.html

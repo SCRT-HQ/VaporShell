@@ -1,10 +1,11 @@
 function Add-VSPinpointEmailConfigurationSetTags {
     <#
     .SYNOPSIS
-        Adds an AWS::PinpointEmail::ConfigurationSet.Tags resource property to the template
+        Adds an AWS::PinpointEmail::ConfigurationSet.Tags resource property to the template. An object that defines the tags (keys and values that you want to associate with the configuration set.
 
     .DESCRIPTION
-        Adds an AWS::PinpointEmail::ConfigurationSet.Tags resource property to the template
+        Adds an AWS::PinpointEmail::ConfigurationSet.Tags resource property to the template.
+An object that defines the tags (keys and values that you want to associate with the configuration set.
 
     .LINK
         http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-pinpointemail-configurationset-tags.html

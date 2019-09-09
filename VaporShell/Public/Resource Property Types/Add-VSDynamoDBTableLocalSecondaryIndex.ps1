@@ -1,10 +1,11 @@
 function Add-VSDynamoDBTableLocalSecondaryIndex {
     <#
     .SYNOPSIS
-        Adds an AWS::DynamoDB::Table.LocalSecondaryIndex resource property to the template
+        Adds an AWS::DynamoDB::Table.LocalSecondaryIndex resource property to the template. Represents the properties of a local secondary index.
 
     .DESCRIPTION
-        Adds an AWS::DynamoDB::Table.LocalSecondaryIndex resource property to the template
+        Adds an AWS::DynamoDB::Table.LocalSecondaryIndex resource property to the template.
+Represents the properties of a local secondary index.
 
     .LINK
         http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-dynamodb-lsi.html

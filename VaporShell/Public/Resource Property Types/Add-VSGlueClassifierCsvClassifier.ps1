@@ -1,10 +1,11 @@
 function Add-VSGlueClassifierCsvClassifier {
     <#
     .SYNOPSIS
-        Adds an AWS::Glue::Classifier.CsvClassifier resource property to the template
+        Adds an AWS::Glue::Classifier.CsvClassifier resource property to the template. A classifier for custom CSV content.
 
     .DESCRIPTION
-        Adds an AWS::Glue::Classifier.CsvClassifier resource property to the template
+        Adds an AWS::Glue::Classifier.CsvClassifier resource property to the template.
+A classifier for custom CSV content.
 
     .LINK
         http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-glue-classifier-csvclassifier.html

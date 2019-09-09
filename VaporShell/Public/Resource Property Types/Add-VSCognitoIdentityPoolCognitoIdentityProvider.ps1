@@ -1,10 +1,11 @@
 function Add-VSCognitoIdentityPoolCognitoIdentityProvider {
     <#
     .SYNOPSIS
-        Adds an AWS::Cognito::IdentityPool.CognitoIdentityProvider resource property to the template
+        Adds an AWS::Cognito::IdentityPool.CognitoIdentityProvider resource property to the template. CognitoIdentityProvider is a property of the AWS::Cognito::IdentityPool: https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-cognito-identitypool.html resource that represents an Amazon Cognito user pool and its client ID.
 
     .DESCRIPTION
-        Adds an AWS::Cognito::IdentityPool.CognitoIdentityProvider resource property to the template
+        Adds an AWS::Cognito::IdentityPool.CognitoIdentityProvider resource property to the template.
+CognitoIdentityProvider is a property of the AWS::Cognito::IdentityPool: https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-cognito-identitypool.html resource that represents an Amazon Cognito user pool and its client ID.
 
     .LINK
         http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-cognito-identitypool-cognitoidentityprovider.html

@@ -1,10 +1,11 @@
 function Add-VSIoTEventsDetectorModelFirehose {
     <#
     .SYNOPSIS
-        Adds an AWS::IoTEvents::DetectorModel.Firehose resource property to the template
+        Adds an AWS::IoTEvents::DetectorModel.Firehose resource property to the template. Sends information about the detector model instance and the event which triggered the action to a Kinesis Data Firehose delivery stream.
 
     .DESCRIPTION
-        Adds an AWS::IoTEvents::DetectorModel.Firehose resource property to the template
+        Adds an AWS::IoTEvents::DetectorModel.Firehose resource property to the template.
+Sends information about the detector model instance and the event which triggered the action to a Kinesis Data Firehose delivery stream.
 
     .LINK
         http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iotevents-detectormodel-firehose.html

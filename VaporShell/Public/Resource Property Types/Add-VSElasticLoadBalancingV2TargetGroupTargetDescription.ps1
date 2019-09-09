@@ -1,10 +1,11 @@
 function Add-VSElasticLoadBalancingV2TargetGroupTargetDescription {
     <#
     .SYNOPSIS
-        Adds an AWS::ElasticLoadBalancingV2::TargetGroup.TargetDescription resource property to the template
+        Adds an AWS::ElasticLoadBalancingV2::TargetGroup.TargetDescription resource property to the template. Specifies a target to add to a target group.
 
     .DESCRIPTION
-        Adds an AWS::ElasticLoadBalancingV2::TargetGroup.TargetDescription resource property to the template
+        Adds an AWS::ElasticLoadBalancingV2::TargetGroup.TargetDescription resource property to the template.
+Specifies a target to add to a target group.
 
     .LINK
         http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-elasticloadbalancingv2-targetgroup-targetdescription.html

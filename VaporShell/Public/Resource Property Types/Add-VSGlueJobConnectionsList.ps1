@@ -1,10 +1,11 @@
 function Add-VSGlueJobConnectionsList {
     <#
     .SYNOPSIS
-        Adds an AWS::Glue::Job.ConnectionsList resource property to the template
+        Adds an AWS::Glue::Job.ConnectionsList resource property to the template. Specifies the connections used by a job.
 
     .DESCRIPTION
-        Adds an AWS::Glue::Job.ConnectionsList resource property to the template
+        Adds an AWS::Glue::Job.ConnectionsList resource property to the template.
+Specifies the connections used by a job.
 
     .LINK
         http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-glue-job-connectionslist.html

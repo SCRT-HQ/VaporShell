@@ -1,10 +1,11 @@
 function Add-VSIoTAnalyticsPipelineDeviceRegistryEnrich {
     <#
     .SYNOPSIS
-        Adds an AWS::IoTAnalytics::Pipeline.DeviceRegistryEnrich resource property to the template
+        Adds an AWS::IoTAnalytics::Pipeline.DeviceRegistryEnrich resource property to the template. An activity that adds data from the AWS IoT device registry to your message.
 
     .DESCRIPTION
-        Adds an AWS::IoTAnalytics::Pipeline.DeviceRegistryEnrich resource property to the template
+        Adds an AWS::IoTAnalytics::Pipeline.DeviceRegistryEnrich resource property to the template.
+An activity that adds data from the AWS IoT device registry to your message.
 
     .LINK
         http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iotanalytics-pipeline-deviceregistryenrich.html

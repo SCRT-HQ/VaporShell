@@ -1,10 +1,11 @@
 function Add-VSBatchJobDefinitionEnvironment {
     <#
     .SYNOPSIS
-        Adds an AWS::Batch::JobDefinition.Environment resource property to the template
+        Adds an AWS::Batch::JobDefinition.Environment resource property to the template. The Environment property type specifies environment variables to use in a job definition.
 
     .DESCRIPTION
-        Adds an AWS::Batch::JobDefinition.Environment resource property to the template
+        Adds an AWS::Batch::JobDefinition.Environment resource property to the template.
+The Environment property type specifies environment variables to use in a job definition.
 
     .LINK
         http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-batch-jobdefinition-environment.html

@@ -1,10 +1,14 @@
 function New-VSIAMManagedPolicy {
     <#
     .SYNOPSIS
-        Adds an AWS::IAM::ManagedPolicy resource to the template
+        Adds an AWS::IAM::ManagedPolicy resource to the template. Creates a new managed policy for your AWS account.
 
     .DESCRIPTION
-        Adds an AWS::IAM::ManagedPolicy resource to the template
+        Adds an AWS::IAM::ManagedPolicy resource to the template. Creates a new managed policy for your AWS account.
+
+This operation creates a policy version with a version identifier of v1 and sets v1 as the policy's default version. For more information about policy versions, see Versioning for Managed Policies: https://docs.aws.amazon.com/IAM/latest/UserGuide/policies-managed-versions.html in the *IAM User Guide*.
+
+For more information about managed policies in general, see Managed Policies and Inline Policies: https://docs.aws.amazon.com/IAM/latest/UserGuide/policies-managed-vs-inline.html in the *IAM User Guide*.
 
     .LINK
         http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-iam-managedpolicy.html

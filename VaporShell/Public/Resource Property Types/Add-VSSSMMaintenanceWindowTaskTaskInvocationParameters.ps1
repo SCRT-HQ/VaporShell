@@ -1,10 +1,13 @@
 function Add-VSSSMMaintenanceWindowTaskTaskInvocationParameters {
     <#
     .SYNOPSIS
-        Adds an AWS::SSM::MaintenanceWindowTask.TaskInvocationParameters resource property to the template
+        Adds an AWS::SSM::MaintenanceWindowTask.TaskInvocationParameters resource property to the template. The TaskInvocationParameters property type specifies the task execution parameters for a maintenance window task in AWS Systems Manager.
 
     .DESCRIPTION
-        Adds an AWS::SSM::MaintenanceWindowTask.TaskInvocationParameters resource property to the template
+        Adds an AWS::SSM::MaintenanceWindowTask.TaskInvocationParameters resource property to the template.
+The TaskInvocationParameters property type specifies the task execution parameters for a maintenance window task in AWS Systems Manager.
+
+TaskInvocationParameters is a property of the AWS::SSM::MaintenanceWindowTask: https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ssm-maintenancewindowtask.html property type.
 
     .LINK
         http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ssm-maintenancewindowtask-taskinvocationparameters.html

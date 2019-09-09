@@ -1,10 +1,13 @@
 function Add-VSGreengrassCoreDefinitionCore {
     <#
     .SYNOPSIS
-        Adds an AWS::Greengrass::CoreDefinition.Core resource property to the template
+        Adds an AWS::Greengrass::CoreDefinition.Core resource property to the template. <a name="aws-properties-greengrass-coredefinition-core-description"></a> A core is an AWS IoT device that runs the AWS IoT Greengrass core software and manages local processes for a Greengrass group. For more information, see What Is AWS IoT Greengrass?: https://docs.aws.amazon.com/greengrass/latest/developerguide/what-is-gg.html in the *AWS IoT Greengrass Developer Guide*.
 
     .DESCRIPTION
-        Adds an AWS::Greengrass::CoreDefinition.Core resource property to the template
+        Adds an AWS::Greengrass::CoreDefinition.Core resource property to the template.
+<a name="aws-properties-greengrass-coredefinition-core-description"></a> A core is an AWS IoT device that runs the AWS IoT Greengrass core software and manages local processes for a Greengrass group. For more information, see What Is AWS IoT Greengrass?: https://docs.aws.amazon.com/greengrass/latest/developerguide/what-is-gg.html in the *AWS IoT Greengrass Developer Guide*.
+
+<a name="aws-properties-greengrass-coredefinition-core-inheritance"></a> In an AWS CloudFormation template, the Cores property of the  CoreDefinitionVersion : https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-greengrass-coredefinition-coredefinitionversion.html property type contains a list of Core property types. Currently, the list can contain only one core.
 
     .LINK
         http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-greengrass-coredefinition-core.html

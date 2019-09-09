@@ -1,10 +1,11 @@
 function Add-VSAppMeshVirtualRouterVirtualRouterSpec {
     <#
     .SYNOPSIS
-        Adds an AWS::AppMesh::VirtualRouter.VirtualRouterSpec resource property to the template
+        Adds an AWS::AppMesh::VirtualRouter.VirtualRouterSpec resource property to the template. An object representing the specification of a virtual router.
 
     .DESCRIPTION
-        Adds an AWS::AppMesh::VirtualRouter.VirtualRouterSpec resource property to the template
+        Adds an AWS::AppMesh::VirtualRouter.VirtualRouterSpec resource property to the template.
+An object representing the specification of a virtual router.
 
     .LINK
         http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-appmesh-virtualrouter-virtualrouterspec.html

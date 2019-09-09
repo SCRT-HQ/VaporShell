@@ -1,10 +1,13 @@
 function Add-VSGreengrassResourceDefinitionSecretsManagerSecretResourceData {
     <#
     .SYNOPSIS
-        Adds an AWS::Greengrass::ResourceDefinition.SecretsManagerSecretResourceData resource property to the template
+        Adds an AWS::Greengrass::ResourceDefinition.SecretsManagerSecretResourceData resource property to the template. <a name="aws-properties-greengrass-resourcedefinition-secretsmanagersecretresourcedata-description"></a>Settings for a secret resource, which references a secret from AWS Secrets Manager. AWS IoT Greengrass stores a local, encrypted copy of the secret on the Greengrass core, where it can be securely accessed by connectors and Lambda functions. For more information, see Deploy Secrets to the AWS IoT Greengrass Core: https://docs.aws.amazon.com/greengrass/latest/developerguide/secrets.html in the *AWS IoT Greengrass Developer Guide*.
 
     .DESCRIPTION
-        Adds an AWS::Greengrass::ResourceDefinition.SecretsManagerSecretResourceData resource property to the template
+        Adds an AWS::Greengrass::ResourceDefinition.SecretsManagerSecretResourceData resource property to the template.
+<a name="aws-properties-greengrass-resourcedefinition-secretsmanagersecretresourcedata-description"></a>Settings for a secret resource, which references a secret from AWS Secrets Manager. AWS IoT Greengrass stores a local, encrypted copy of the secret on the Greengrass core, where it can be securely accessed by connectors and Lambda functions. For more information, see Deploy Secrets to the AWS IoT Greengrass Core: https://docs.aws.amazon.com/greengrass/latest/developerguide/secrets.html in the *AWS IoT Greengrass Developer Guide*.
+
+<a name="aws-properties-greengrass-resourcedefinition-secretsmanagersecretresourcedata-inheritance"></a> In an AWS CloudFormation template, SecretsManagerSecretResourceData can be used in the https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-greengrass-resourcedefinition-resourcedatacontainer.html: https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-greengrass-resourcedefinition-resourcedatacontainer.html property type.
 
     .LINK
         http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-greengrass-resourcedefinition-secretsmanagersecretresourcedata.html

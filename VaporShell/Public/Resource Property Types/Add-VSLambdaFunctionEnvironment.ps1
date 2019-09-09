@@ -1,10 +1,11 @@
 function Add-VSLambdaFunctionEnvironment {
     <#
     .SYNOPSIS
-        Adds an AWS::Lambda::Function.Environment resource property to the template
+        Adds an AWS::Lambda::Function.Environment resource property to the template. A function's environment variable settings.
 
     .DESCRIPTION
-        Adds an AWS::Lambda::Function.Environment resource property to the template
+        Adds an AWS::Lambda::Function.Environment resource property to the template.
+A function's environment variable settings.
 
     .LINK
         http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-lambda-function-environment.html

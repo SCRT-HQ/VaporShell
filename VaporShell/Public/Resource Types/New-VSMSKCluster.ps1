@@ -1,10 +1,10 @@
 function New-VSMSKCluster {
     <#
     .SYNOPSIS
-        Adds an AWS::MSK::Cluster resource to the template
+        Adds an AWS::MSK::Cluster resource to the template. The AWS::MSK::Cluster resource creates an Amazon MSK cluster. For more information, see What Is Amazon MSK?: https://docs.aws.amazon.com/msk/latest/developerguide/what-is-msk.html in the *Amazon MSK Developer Guide*.
 
     .DESCRIPTION
-        Adds an AWS::MSK::Cluster resource to the template
+        Adds an AWS::MSK::Cluster resource to the template. The AWS::MSK::Cluster resource creates an Amazon MSK cluster. For more information, see What Is Amazon MSK?: https://docs.aws.amazon.com/msk/latest/developerguide/what-is-msk.html in the *Amazon MSK Developer Guide*.
 
     .LINK
         http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-msk-cluster.html

@@ -1,10 +1,12 @@
 function New-VSEC2RouteTable {
     <#
     .SYNOPSIS
-        Adds an AWS::EC2::RouteTable resource to the template
+        Adds an AWS::EC2::RouteTable resource to the template. Specifies a route table for a specified VPC. After you create a route table, you can add routes and associate the table with a subnet.
 
     .DESCRIPTION
-        Adds an AWS::EC2::RouteTable resource to the template
+        Adds an AWS::EC2::RouteTable resource to the template. Specifies a route table for a specified VPC. After you create a route table, you can add routes and associate the table with a subnet.
+
+For more information, see Route Tables: https://docs.aws.amazon.com/AmazonVPC/latest/UserGuide/VPC_Route_Tables.html in the *Amazon Virtual Private Cloud User Guide*.
 
     .LINK
         http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ec2-route-table.html

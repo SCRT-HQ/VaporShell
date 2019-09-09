@@ -22,12 +22,14 @@ function Convert-SpecToFunction {
         Resource {
             $Dir = "$folder\Resource Types"
             $FunctionName = "New-VS" + ($ShortName -replace "\..*").Replace("::","")
-            $Synopsis = "Adds an $Name resource to the template"
+            $Synopsis = "Adds an $Name resource to the template. $($HelpDoc.Synopsis)"
+            $Description = "Adds an $Name resource to the template. $($HelpDoc.Description)"
         }
         Property {
             $Dir = "$folder\Resource Property Types"
             $FunctionName = "Add-VS" + $ShortName.Replace("::","").Replace(".","")
-            $Synopsis = "Adds an $Name resource property to the template"
+            $Synopsis = "Adds an $Name resource property to the template. $($HelpDoc.Synopsis)"
+            $Description = "Adds an $Name resource property to the template.`n$($HelpDoc.Description)"
         }
     }
     $PS1Path = "$Dir\$FunctionName.ps1"
@@ -39,7 +41,7 @@ function $FunctionName {
         $Synopsis
 
     .DESCRIPTION
-        $Synopsis
+        $Description
 
     .LINK
         $Link

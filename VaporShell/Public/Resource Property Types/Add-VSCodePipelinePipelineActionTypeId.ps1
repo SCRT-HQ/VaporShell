@@ -1,10 +1,11 @@
 function Add-VSCodePipelinePipelineActionTypeId {
     <#
     .SYNOPSIS
-        Adds an AWS::CodePipeline::Pipeline.ActionTypeId resource property to the template
+        Adds an AWS::CodePipeline::Pipeline.ActionTypeId resource property to the template. Represents information about an action type.
 
     .DESCRIPTION
-        Adds an AWS::CodePipeline::Pipeline.ActionTypeId resource property to the template
+        Adds an AWS::CodePipeline::Pipeline.ActionTypeId resource property to the template.
+Represents information about an action type.
 
     .LINK
         http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-codepipeline-pipeline-stages-actions-actiontypeid.html

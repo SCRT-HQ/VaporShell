@@ -1,10 +1,16 @@
 function New-VSEC2SecurityGroup {
     <#
     .SYNOPSIS
-        Adds an AWS::EC2::SecurityGroup resource to the template
+        Adds an AWS::EC2::SecurityGroup resource to the template. Specifies a security group. To create a VPC security group, use the VpcId: https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-security-group.html#cfn-ec2-securitygroup-vpcid property.
 
     .DESCRIPTION
-        Adds an AWS::EC2::SecurityGroup resource to the template
+        Adds an AWS::EC2::SecurityGroup resource to the template. Specifies a security group. To create a VPC security group, use the VpcId: https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-security-group.html#cfn-ec2-securitygroup-vpcid property.
+
+This type supports updates. For more information about updating stacks, see AWS CloudFormation Stacks Updates: https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks.html.
+
+**Important**
+
+If you want to cross-reference two security groups in the ingress and egress rules of those security groups, use the AWS::EC2::SecurityGroupEgress: https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ec2-security-group-egress.html and AWS::EC2::SecurityGroupIngress: https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ec2-security-group-ingress.html resources to define your rules. Do not use the embedded ingress and egress rules in the AWS::EC2::SecurityGroup. Doing so creates a circular dependency, which CloudFormation doesn't allow.
 
     .LINK
         http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-security-group.html

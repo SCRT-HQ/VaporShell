@@ -1,10 +1,11 @@
 function Add-VSCodePipelineWebhookWebhookAuthConfiguration {
     <#
     .SYNOPSIS
-        Adds an AWS::CodePipeline::Webhook.WebhookAuthConfiguration resource property to the template
+        Adds an AWS::CodePipeline::Webhook.WebhookAuthConfiguration resource property to the template. The authentication applied to incoming webhook trigger requests.
 
     .DESCRIPTION
-        Adds an AWS::CodePipeline::Webhook.WebhookAuthConfiguration resource property to the template
+        Adds an AWS::CodePipeline::Webhook.WebhookAuthConfiguration resource property to the template.
+The authentication applied to incoming webhook trigger requests.
 
     .LINK
         http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-codepipeline-webhook-webhookauthconfiguration.html

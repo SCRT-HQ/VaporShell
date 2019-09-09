@@ -1,10 +1,13 @@
 function Add-VSWAFWebACLActivatedRule {
     <#
     .SYNOPSIS
-        Adds an AWS::WAF::WebACL.ActivatedRule resource property to the template
+        Adds an AWS::WAF::WebACL.ActivatedRule resource property to the template. The ActivatedRule object in an UpdateWebACL request specifies a Rule that you want to insert or delete, the priority of the Rule in the WebACL, and the action that you want AWS WAF to take when a web request matches the Rule (ALLOW, BLOCK, or COUNT.
 
     .DESCRIPTION
-        Adds an AWS::WAF::WebACL.ActivatedRule resource property to the template
+        Adds an AWS::WAF::WebACL.ActivatedRule resource property to the template.
+The ActivatedRule object in an UpdateWebACL request specifies a Rule that you want to insert or delete, the priority of the Rule in the WebACL, and the action that you want AWS WAF to take when a web request matches the Rule (ALLOW, BLOCK, or COUNT.
+
+To specify whether to insert or delete a Rule, use the Action parameter in the WebACLUpdate data type.
 
     .LINK
         http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-waf-webacl-rules.html

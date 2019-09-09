@@ -1,10 +1,10 @@
 function New-VSNeptuneDBSubnetGroup {
     <#
     .SYNOPSIS
-        Adds an AWS::Neptune::DBSubnetGroup resource to the template
+        Adds an AWS::Neptune::DBSubnetGroup resource to the template. The AWS::Neptune::DBSubnetGroup type creates an Amazon Neptune DB subnet group. Subnet groups must contain at least two subnets in two different Availability Zones in the same AWS Region.
 
     .DESCRIPTION
-        Adds an AWS::Neptune::DBSubnetGroup resource to the template
+        Adds an AWS::Neptune::DBSubnetGroup resource to the template. The AWS::Neptune::DBSubnetGroup type creates an Amazon Neptune DB subnet group. Subnet groups must contain at least two subnets in two different Availability Zones in the same AWS Region.
 
     .LINK
         http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-neptune-dbsubnetgroup.html

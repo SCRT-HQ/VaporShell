@@ -1,10 +1,10 @@
 function New-VSApiGatewayBasePathMapping {
     <#
     .SYNOPSIS
-        Adds an AWS::ApiGateway::BasePathMapping resource to the template
+        Adds an AWS::ApiGateway::BasePathMapping resource to the template. The AWS::ApiGateway::BasePathMapping resource creates a base path that clients who call your API must use in the invocation URL.
 
     .DESCRIPTION
-        Adds an AWS::ApiGateway::BasePathMapping resource to the template
+        Adds an AWS::ApiGateway::BasePathMapping resource to the template. The AWS::ApiGateway::BasePathMapping resource creates a base path that clients who call your API must use in the invocation URL.
 
     .LINK
         http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-apigateway-basepathmapping.html

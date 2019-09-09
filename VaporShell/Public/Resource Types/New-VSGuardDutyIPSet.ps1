@@ -1,10 +1,10 @@
 function New-VSGuardDutyIPSet {
     <#
     .SYNOPSIS
-        Adds an AWS::GuardDuty::IPSet resource to the template
+        Adds an AWS::GuardDuty::IPSet resource to the template. The AWS::GuardDuty::IPSet resource specifies a new IPSet. An IPSet is a list of trusted IP addresses from which secure communication is allowed with AWS infrastructure and applications.
 
     .DESCRIPTION
-        Adds an AWS::GuardDuty::IPSet resource to the template
+        Adds an AWS::GuardDuty::IPSet resource to the template. The AWS::GuardDuty::IPSet resource specifies a new IPSet. An IPSet is a list of trusted IP addresses from which secure communication is allowed with AWS infrastructure and applications.
 
     .LINK
         http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-guardduty-ipset.html

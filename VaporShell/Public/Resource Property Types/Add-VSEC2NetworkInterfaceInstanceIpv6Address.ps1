@@ -1,10 +1,11 @@
 function Add-VSEC2NetworkInterfaceInstanceIpv6Address {
     <#
     .SYNOPSIS
-        Adds an AWS::EC2::NetworkInterface.InstanceIpv6Address resource property to the template
+        Adds an AWS::EC2::NetworkInterface.InstanceIpv6Address resource property to the template. Describes an IPv6 address to associate with the network interface.
 
     .DESCRIPTION
-        Adds an AWS::EC2::NetworkInterface.InstanceIpv6Address resource property to the template
+        Adds an AWS::EC2::NetworkInterface.InstanceIpv6Address resource property to the template.
+Describes an IPv6 address to associate with the network interface.
 
     .LINK
         http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-networkinterface-instanceipv6address.html

@@ -1,10 +1,11 @@
 function Add-VSKinesisAnalyticsV2ApplicationCodeContent {
     <#
     .SYNOPSIS
-        Adds an AWS::KinesisAnalyticsV2::Application.CodeContent resource property to the template
+        Adds an AWS::KinesisAnalyticsV2::Application.CodeContent resource property to the template. Specifies either the application code, or the location of the application code, for a Java-based Amazon Kinesis Data Analytics application.
 
     .DESCRIPTION
-        Adds an AWS::KinesisAnalyticsV2::Application.CodeContent resource property to the template
+        Adds an AWS::KinesisAnalyticsV2::Application.CodeContent resource property to the template.
+Specifies either the application code, or the location of the application code, for a Java-based Amazon Kinesis Data Analytics application.
 
     .LINK
         http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-kinesisanalyticsv2-application-codecontent.html

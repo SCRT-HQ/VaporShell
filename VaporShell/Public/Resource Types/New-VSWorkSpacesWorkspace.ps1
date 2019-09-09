@@ -1,10 +1,12 @@
 function New-VSWorkSpacesWorkspace {
     <#
     .SYNOPSIS
-        Adds an AWS::WorkSpaces::Workspace resource to the template
+        Adds an AWS::WorkSpaces::Workspace resource to the template. Specifies a WorkSpace.
 
     .DESCRIPTION
-        Adds an AWS::WorkSpaces::Workspace resource to the template
+        Adds an AWS::WorkSpaces::Workspace resource to the template. Specifies a WorkSpace.
+
+Updates are not supported for the BundleId, RootVolumeEncryptionEnabled, UserVolumeEncryptionEnabled, or VolumeEncryptionKey properties. To update these properties, you must also update a property that triggers a replacement, such as the UserName property.
 
     .LINK
         http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-workspaces-workspace.html

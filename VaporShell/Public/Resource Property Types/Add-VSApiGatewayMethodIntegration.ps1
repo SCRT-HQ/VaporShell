@@ -1,10 +1,11 @@
 function Add-VSApiGatewayMethodIntegration {
     <#
     .SYNOPSIS
-        Adds an AWS::ApiGateway::Method.Integration resource property to the template
+        Adds an AWS::ApiGateway::Method.Integration resource property to the template. Integration is a property of the AWS::ApiGateway::Method: https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-apigateway-method.html resource that specifies information about the target backend that a method calls.
 
     .DESCRIPTION
-        Adds an AWS::ApiGateway::Method.Integration resource property to the template
+        Adds an AWS::ApiGateway::Method.Integration resource property to the template.
+Integration is a property of the AWS::ApiGateway::Method: https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-apigateway-method.html resource that specifies information about the target backend that a method calls.
 
     .LINK
         http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-apitgateway-method-integration.html

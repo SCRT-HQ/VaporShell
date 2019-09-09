@@ -1,10 +1,11 @@
 function Add-VSCloudFrontDistributionForwardedValues {
     <#
     .SYNOPSIS
-        Adds an AWS::CloudFront::Distribution.ForwardedValues resource property to the template
+        Adds an AWS::CloudFront::Distribution.ForwardedValues resource property to the template. A complex type that specifies how CloudFront handles query strings and cookies.
 
     .DESCRIPTION
-        Adds an AWS::CloudFront::Distribution.ForwardedValues resource property to the template
+        Adds an AWS::CloudFront::Distribution.ForwardedValues resource property to the template.
+A complex type that specifies how CloudFront handles query strings and cookies.
 
     .LINK
         http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-cloudfront-distribution-forwardedvalues.html

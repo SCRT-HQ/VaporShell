@@ -1,10 +1,11 @@
 function Add-VSECSTaskDefinitionDevice {
     <#
     .SYNOPSIS
-        Adds an AWS::ECS::TaskDefinition.Device resource property to the template
+        Adds an AWS::ECS::TaskDefinition.Device resource property to the template. The Device property specifies an object representing a container instance host device.
 
     .DESCRIPTION
-        Adds an AWS::ECS::TaskDefinition.Device resource property to the template
+        Adds an AWS::ECS::TaskDefinition.Device resource property to the template.
+The Device property specifies an object representing a container instance host device.
 
     .LINK
         http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ecs-taskdefinition-device.html

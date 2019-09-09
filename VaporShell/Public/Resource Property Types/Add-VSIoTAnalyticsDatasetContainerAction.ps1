@@ -1,10 +1,11 @@
 function Add-VSIoTAnalyticsDatasetContainerAction {
     <#
     .SYNOPSIS
-        Adds an AWS::IoTAnalytics::Dataset.ContainerAction resource property to the template
+        Adds an AWS::IoTAnalytics::Dataset.ContainerAction resource property to the template. Information needed to run the "containerAction" to produce data set contents.
 
     .DESCRIPTION
-        Adds an AWS::IoTAnalytics::Dataset.ContainerAction resource property to the template
+        Adds an AWS::IoTAnalytics::Dataset.ContainerAction resource property to the template.
+Information needed to run the "containerAction" to produce data set contents.
 
     .LINK
         http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iotanalytics-dataset-containeraction.html

@@ -1,10 +1,11 @@
 function Add-VSGlueJobExecutionProperty {
     <#
     .SYNOPSIS
-        Adds an AWS::Glue::Job.ExecutionProperty resource property to the template
+        Adds an AWS::Glue::Job.ExecutionProperty resource property to the template. An execution property of a job.
 
     .DESCRIPTION
-        Adds an AWS::Glue::Job.ExecutionProperty resource property to the template
+        Adds an AWS::Glue::Job.ExecutionProperty resource property to the template.
+An execution property of a job.
 
     .LINK
         http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-glue-job-executionproperty.html

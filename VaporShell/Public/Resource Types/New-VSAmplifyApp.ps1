@@ -1,10 +1,10 @@
 function New-VSAmplifyApp {
     <#
     .SYNOPSIS
-        Adds an AWS::Amplify::App resource to the template
+        Adds an AWS::Amplify::App resource to the template. The AWS::Amplify::App resource creates Apps in the Amplify Console. An App is a collection of branches.
 
     .DESCRIPTION
-        Adds an AWS::Amplify::App resource to the template
+        Adds an AWS::Amplify::App resource to the template. The AWS::Amplify::App resource creates Apps in the Amplify Console. An App is a collection of branches.
 
     .LINK
         http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-amplify-app.html

@@ -1,10 +1,17 @@
 function Add-VSGreengrassFunctionDefinitionVersionResourceAccessPolicy {
     <#
     .SYNOPSIS
-        Adds an AWS::Greengrass::FunctionDefinitionVersion.ResourceAccessPolicy resource property to the template
+        Adds an AWS::Greengrass::FunctionDefinitionVersion.ResourceAccessPolicy resource property to the template. <a name="aws-properties-greengrass-functiondefinitionversion-resourceaccesspolicy-description"></a>A list of the resources: https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-greengrass-resourcedefinitionversion-resourceinstance.html in the group that the function can access, with the corresponding read-only or read-write permissions. The maximum is 10 resources.
 
     .DESCRIPTION
-        Adds an AWS::Greengrass::FunctionDefinitionVersion.ResourceAccessPolicy resource property to the template
+        Adds an AWS::Greengrass::FunctionDefinitionVersion.ResourceAccessPolicy resource property to the template.
+<a name="aws-properties-greengrass-functiondefinitionversion-resourceaccesspolicy-description"></a>A list of the resources: https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-greengrass-resourcedefinitionversion-resourceinstance.html in the group that the function can access, with the corresponding read-only or read-write permissions. The maximum is 10 resources.
+
+**Note**
+
+This property applies only to Lambda functions that run in a Greengrass container.
+
+<a name="aws-properties-greengrass-functiondefinitionversion-resourceaccesspolicy-inheritance"></a> In an AWS CloudFormation template, ResourceAccessPolicy is a property of the  Environment : https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-greengrass-functiondefinitionversion-environment.html property type.
 
     .LINK
         http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-greengrass-functiondefinitionversion-resourceaccesspolicy.html

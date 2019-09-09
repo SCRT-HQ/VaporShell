@@ -1,10 +1,13 @@
 function Add-VSEC2InstanceLaunchTemplateSpecification {
     <#
     .SYNOPSIS
-        Adds an AWS::EC2::Instance.LaunchTemplateSpecification resource property to the template
+        Adds an AWS::EC2::Instance.LaunchTemplateSpecification resource property to the template. Specifies a launch template. You must specify either the launch template ID or launch template name.
 
     .DESCRIPTION
-        Adds an AWS::EC2::Instance.LaunchTemplateSpecification resource property to the template
+        Adds an AWS::EC2::Instance.LaunchTemplateSpecification resource property to the template.
+Specifies a launch template. You must specify either the launch template ID or launch template name.
+
+LaunchTemplateSpecification is a property of the AWS::EC2::Instance: https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-instance.html resource.
 
     .LINK
         http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-instance-launchtemplatespecification.html

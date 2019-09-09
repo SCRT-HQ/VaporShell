@@ -1,10 +1,11 @@
 function Add-VSCodePipelineWebhookWebhookFilterRule {
     <#
     .SYNOPSIS
-        Adds an AWS::CodePipeline::Webhook.WebhookFilterRule resource property to the template
+        Adds an AWS::CodePipeline::Webhook.WebhookFilterRule resource property to the template. The event criteria that specify when a webhook notification is sent to your URL.
 
     .DESCRIPTION
-        Adds an AWS::CodePipeline::Webhook.WebhookFilterRule resource property to the template
+        Adds an AWS::CodePipeline::Webhook.WebhookFilterRule resource property to the template.
+The event criteria that specify when a webhook notification is sent to your URL.
 
     .LINK
         http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-codepipeline-webhook-webhookfilterrule.html

@@ -1,10 +1,11 @@
 function Add-VSAppStreamStackUserSetting {
     <#
     .SYNOPSIS
-        Adds an AWS::AppStream::Stack.UserSetting resource property to the template
+        Adds an AWS::AppStream::Stack.UserSetting resource property to the template. Specifies an action and whether the action is enabled or disabled for users during their streaming sessions.
 
     .DESCRIPTION
-        Adds an AWS::AppStream::Stack.UserSetting resource property to the template
+        Adds an AWS::AppStream::Stack.UserSetting resource property to the template.
+Specifies an action and whether the action is enabled or disabled for users during their streaming sessions.
 
     .LINK
         http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-appstream-stack-usersetting.html

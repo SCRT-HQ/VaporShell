@@ -1,10 +1,10 @@
 function New-VSServiceCatalogTagOptionAssociation {
     <#
     .SYNOPSIS
-        Adds an AWS::ServiceCatalog::TagOptionAssociation resource to the template
+        Adds an AWS::ServiceCatalog::TagOptionAssociation resource to the template. Associate the specified TagOption with the specified portfolio or product.
 
     .DESCRIPTION
-        Adds an AWS::ServiceCatalog::TagOptionAssociation resource to the template
+        Adds an AWS::ServiceCatalog::TagOptionAssociation resource to the template. Associate the specified TagOption with the specified portfolio or product.
 
     .LINK
         http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-servicecatalog-tagoptionassociation.html

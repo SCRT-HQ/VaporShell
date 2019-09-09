@@ -1,10 +1,11 @@
 function Add-VSEKSClusterResourcesVpcConfig {
     <#
     .SYNOPSIS
-        Adds an AWS::EKS::Cluster.ResourcesVpcConfig resource property to the template
+        Adds an AWS::EKS::Cluster.ResourcesVpcConfig resource property to the template. An object representing the VPC configuration to use for an Amazon EKS cluster.
 
     .DESCRIPTION
-        Adds an AWS::EKS::Cluster.ResourcesVpcConfig resource property to the template
+        Adds an AWS::EKS::Cluster.ResourcesVpcConfig resource property to the template.
+An object representing the VPC configuration to use for an Amazon EKS cluster.
 
     .LINK
         http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-eks-cluster-resourcesvpcconfig.html

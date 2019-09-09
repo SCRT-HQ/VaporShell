@@ -1,10 +1,13 @@
 function Add-VSEC2InstanceCreditSpecification {
     <#
     .SYNOPSIS
-        Adds an AWS::EC2::Instance.CreditSpecification resource property to the template
+        Adds an AWS::EC2::Instance.CreditSpecification resource property to the template. Specifies the credit option for CPU usage of a T2 or T3 instance.
 
     .DESCRIPTION
-        Adds an AWS::EC2::Instance.CreditSpecification resource property to the template
+        Adds an AWS::EC2::Instance.CreditSpecification resource property to the template.
+Specifies the credit option for CPU usage of a T2 or T3 instance.
+
+CreditSpecification is a property of the AWS::EC2::Instance: https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-instance.html resource.
 
     .LINK
         http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-instance-creditspecification.html

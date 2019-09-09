@@ -1,10 +1,10 @@
 function New-VSEC2NetworkInterfacePermission {
     <#
     .SYNOPSIS
-        Adds an AWS::EC2::NetworkInterfacePermission resource to the template
+        Adds an AWS::EC2::NetworkInterfacePermission resource to the template. Specifies a permission for an Amazon EC2 network interface. For example, you can grant an AWS authorized partner account permission to attach the specified network interface to an instance in their account.
 
     .DESCRIPTION
-        Adds an AWS::EC2::NetworkInterfacePermission resource to the template
+        Adds an AWS::EC2::NetworkInterfacePermission resource to the template. Specifies a permission for an Amazon EC2 network interface. For example, you can grant an AWS authorized partner account permission to attach the specified network interface to an instance in their account.
 
     .LINK
         http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ec2-networkinterfacepermission.html

@@ -1,10 +1,11 @@
 function Add-VSCodePipelinePipelineArtifactStore {
     <#
     .SYNOPSIS
-        Adds an AWS::CodePipeline::Pipeline.ArtifactStore resource property to the template
+        Adds an AWS::CodePipeline::Pipeline.ArtifactStore resource property to the template. The Amazon S3 bucket where artifacts are stored for the pipeline.
 
     .DESCRIPTION
-        Adds an AWS::CodePipeline::Pipeline.ArtifactStore resource property to the template
+        Adds an AWS::CodePipeline::Pipeline.ArtifactStore resource property to the template.
+The Amazon S3 bucket where artifacts are stored for the pipeline.
 
     .LINK
         http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-codepipeline-pipeline-artifactstore.html

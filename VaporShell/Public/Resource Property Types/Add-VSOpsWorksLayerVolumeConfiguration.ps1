@@ -1,10 +1,11 @@
 function Add-VSOpsWorksLayerVolumeConfiguration {
     <#
     .SYNOPSIS
-        Adds an AWS::OpsWorks::Layer.VolumeConfiguration resource property to the template
+        Adds an AWS::OpsWorks::Layer.VolumeConfiguration resource property to the template. Describes an Amazon EBS volume configuration.
 
     .DESCRIPTION
-        Adds an AWS::OpsWorks::Layer.VolumeConfiguration resource property to the template
+        Adds an AWS::OpsWorks::Layer.VolumeConfiguration resource property to the template.
+Describes an Amazon EBS volume configuration.
 
     .LINK
         http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-opsworks-layer-volumeconfiguration.html

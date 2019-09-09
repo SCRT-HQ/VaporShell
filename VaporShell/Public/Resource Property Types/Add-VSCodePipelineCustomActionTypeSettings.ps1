@@ -1,10 +1,11 @@
 function Add-VSCodePipelineCustomActionTypeSettings {
     <#
     .SYNOPSIS
-        Adds an AWS::CodePipeline::CustomActionType.Settings resource property to the template
+        Adds an AWS::CodePipeline::CustomActionType.Settings resource property to the template. Settings is a property of the AWS::CodePipeline::CustomActionType resource that provides URLs that users can access to view information about the CodePipeline custom action.
 
     .DESCRIPTION
-        Adds an AWS::CodePipeline::CustomActionType.Settings resource property to the template
+        Adds an AWS::CodePipeline::CustomActionType.Settings resource property to the template.
+Settings is a property of the AWS::CodePipeline::CustomActionType resource that provides URLs that users can access to view information about the CodePipeline custom action.
 
     .LINK
         http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-codepipeline-customactiontype-settings.html

@@ -1,10 +1,11 @@
 function Add-VSAppMeshVirtualNodeVirtualNodeSpec {
     <#
     .SYNOPSIS
-        Adds an AWS::AppMesh::VirtualNode.VirtualNodeSpec resource property to the template
+        Adds an AWS::AppMesh::VirtualNode.VirtualNodeSpec resource property to the template. An object representing the specification of a virtual node.
 
     .DESCRIPTION
-        Adds an AWS::AppMesh::VirtualNode.VirtualNodeSpec resource property to the template
+        Adds an AWS::AppMesh::VirtualNode.VirtualNodeSpec resource property to the template.
+An object representing the specification of a virtual node.
 
     .LINK
         http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-appmesh-virtualnode-virtualnodespec.html

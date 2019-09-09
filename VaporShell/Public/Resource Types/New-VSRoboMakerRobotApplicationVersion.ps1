@@ -1,10 +1,10 @@
 function New-VSRoboMakerRobotApplicationVersion {
     <#
     .SYNOPSIS
-        Adds an AWS::RoboMaker::RobotApplicationVersion resource to the template
+        Adds an AWS::RoboMaker::RobotApplicationVersion resource to the template. The AWS::RoboMaker::RobotApplicationVersion resource creates an AWS RoboMaker robot version.
 
     .DESCRIPTION
-        Adds an AWS::RoboMaker::RobotApplicationVersion resource to the template
+        Adds an AWS::RoboMaker::RobotApplicationVersion resource to the template. The AWS::RoboMaker::RobotApplicationVersion resource creates an AWS RoboMaker robot version.
 
     .LINK
         http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-robomaker-robotapplicationversion.html

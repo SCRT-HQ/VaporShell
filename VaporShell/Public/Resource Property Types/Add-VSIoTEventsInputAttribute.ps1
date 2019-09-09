@@ -1,10 +1,11 @@
 function Add-VSIoTEventsInputAttribute {
     <#
     .SYNOPSIS
-        Adds an AWS::IoTEvents::Input.Attribute resource property to the template
+        Adds an AWS::IoTEvents::Input.Attribute resource property to the template. The attributes from the JSON payload that are made available by the input. Inputs are derived from messages sent to the AWS IoT Events system using BatchPutMessage. Each such message contains a JSON payload, and those attributes (and their paired values specified here are available for use in the condition expressions used by detectors.
 
     .DESCRIPTION
-        Adds an AWS::IoTEvents::Input.Attribute resource property to the template
+        Adds an AWS::IoTEvents::Input.Attribute resource property to the template.
+The attributes from the JSON payload that are made available by the input. Inputs are derived from messages sent to the AWS IoT Events system using BatchPutMessage. Each such message contains a JSON payload, and those attributes (and their paired values specified here are available for use in the condition expressions used by detectors.
 
     .LINK
         http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iotevents-input-attribute.html

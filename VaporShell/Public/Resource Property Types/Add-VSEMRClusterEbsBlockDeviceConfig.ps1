@@ -1,10 +1,11 @@
 function Add-VSEMRClusterEbsBlockDeviceConfig {
     <#
     .SYNOPSIS
-        Adds an AWS::EMR::Cluster.EbsBlockDeviceConfig resource property to the template
+        Adds an AWS::EMR::Cluster.EbsBlockDeviceConfig resource property to the template. EbsBlockDeviceConfig is a subproperty of the EbsConfiguration property type. EbsBlockDeviceConfig defines the number and type of EBS volumes to associate with all EC2 instances in an EMR cluster.
 
     .DESCRIPTION
-        Adds an AWS::EMR::Cluster.EbsBlockDeviceConfig resource property to the template
+        Adds an AWS::EMR::Cluster.EbsBlockDeviceConfig resource property to the template.
+EbsBlockDeviceConfig is a subproperty of the EbsConfiguration property type. EbsBlockDeviceConfig defines the number and type of EBS volumes to associate with all EC2 instances in an EMR cluster.
 
     .LINK
         http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-elasticmapreduce-cluster-ebsblockdeviceconfig.html

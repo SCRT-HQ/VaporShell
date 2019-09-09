@@ -1,10 +1,11 @@
 function Add-VSCodeDeployDeploymentGroupAlarmConfiguration {
     <#
     .SYNOPSIS
-        Adds an AWS::CodeDeploy::DeploymentGroup.AlarmConfiguration resource property to the template
+        Adds an AWS::CodeDeploy::DeploymentGroup.AlarmConfiguration resource property to the template. The AlarmConfiguration property type configuresCloudWatch alarms for an AWS CodeDeploy deployment group. AlarmConfiguration is a property of the DeploymentGroup: https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-codedeploy-deploymentgroup.html resource.
 
     .DESCRIPTION
-        Adds an AWS::CodeDeploy::DeploymentGroup.AlarmConfiguration resource property to the template
+        Adds an AWS::CodeDeploy::DeploymentGroup.AlarmConfiguration resource property to the template.
+The AlarmConfiguration property type configuresCloudWatch alarms for an AWS CodeDeploy deployment group. AlarmConfiguration is a property of the DeploymentGroup: https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-codedeploy-deploymentgroup.html resource.
 
     .LINK
         http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-codedeploy-deploymentgroup-alarmconfiguration.html

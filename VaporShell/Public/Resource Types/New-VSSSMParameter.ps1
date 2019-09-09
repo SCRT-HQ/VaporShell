@@ -1,10 +1,18 @@
 function New-VSSSMParameter {
     <#
     .SYNOPSIS
-        Adds an AWS::SSM::Parameter resource to the template
+        Adds an AWS::SSM::Parameter resource to the template. The AWS::SSM::Parameter resource creates an SSM parameter in AWS Systems Manager Parameter Store.
 
     .DESCRIPTION
-        Adds an AWS::SSM::Parameter resource to the template
+        Adds an AWS::SSM::Parameter resource to the template. The AWS::SSM::Parameter resource creates an SSM parameter in AWS Systems Manager Parameter Store.
+
+**Important**
+
+To create an SSM parameter, you must have the AWS Identity and Access Management (IAM permissions ssm:PutParameter and ssm:AddTagsToResource. On stack creation, AWS CloudFormation adds the following three tags to the parameter: aws:cloudformation:stack-name, aws:cloudformation:logical-id, and aws:cloudformation:stack-id, in addition to any custom tags you specify.
+
+To add, update, or remove tags during stack update, you must have IAM permissions for both ssm:AddTagsToResource and ssm:RemoveTagsFromResource. For more information, see AWS Systems Manager Permissions Reference: https://docs.aws.amazon.com/systems-manager/latest/userguide/auth-and-access-control-permissions-reference.html in the *AWS Systems Manager User Guide*.
+
+For information about valid values for parameters, see Requirements and Constraints for Parameter Names: https://docs.aws.amazon.com/systems-manager/latest/userguide/sysman-parameter-name-constraints.html in the *AWS Systems Manager User Guide* and PutParameter: https://docs.aws.amazon.com/systems-manager/latest/APIReference/API_PutParameter.html in the *AWS Systems Manager API Reference*.
 
     .LINK
         http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ssm-parameter.html

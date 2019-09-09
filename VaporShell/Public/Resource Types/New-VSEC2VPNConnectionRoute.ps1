@@ -1,10 +1,12 @@
 function New-VSEC2VPNConnectionRoute {
     <#
     .SYNOPSIS
-        Adds an AWS::EC2::VPNConnectionRoute resource to the template
+        Adds an AWS::EC2::VPNConnectionRoute resource to the template. Specifies a static route for a VPN connection between an existing virtual private gateway and a VPN customer gateway. The static route allows traffic to be routed from the virtual private gateway to the VPN customer gateway.
 
     .DESCRIPTION
-        Adds an AWS::EC2::VPNConnectionRoute resource to the template
+        Adds an AWS::EC2::VPNConnectionRoute resource to the template. Specifies a static route for a VPN connection between an existing virtual private gateway and a VPN customer gateway. The static route allows traffic to be routed from the virtual private gateway to the VPN customer gateway.
+
+For more information, see AWS Site-to-Site VPN: https://docs.aws.amazon.com/vpn/latest/s2svpn/VPC_VPN.html in the *AWS Site-to-Site VPN User Guide*.
 
     .LINK
         http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ec2-vpn-connection-route.html

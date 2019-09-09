@@ -1,10 +1,11 @@
 function Add-VSCloudFrontDistributionCustomOriginConfig {
     <#
     .SYNOPSIS
-        Adds an AWS::CloudFront::Distribution.CustomOriginConfig resource property to the template
+        Adds an AWS::CloudFront::Distribution.CustomOriginConfig resource property to the template. A custom origin or an Amazon S3 bucket configured as a website endpoint.
 
     .DESCRIPTION
-        Adds an AWS::CloudFront::Distribution.CustomOriginConfig resource property to the template
+        Adds an AWS::CloudFront::Distribution.CustomOriginConfig resource property to the template.
+A custom origin or an Amazon S3 bucket configured as a website endpoint.
 
     .LINK
         http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-cloudfront-distribution-customoriginconfig.html

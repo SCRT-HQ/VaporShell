@@ -1,10 +1,11 @@
 function Add-VSIoTTopicRuleStepFunctionsAction {
     <#
     .SYNOPSIS
-        Adds an AWS::IoT::TopicRule.StepFunctionsAction resource property to the template
+        Adds an AWS::IoT::TopicRule.StepFunctionsAction resource property to the template. Starts execution of a Step Functions state machine.
 
     .DESCRIPTION
-        Adds an AWS::IoT::TopicRule.StepFunctionsAction resource property to the template
+        Adds an AWS::IoT::TopicRule.StepFunctionsAction resource property to the template.
+Starts execution of a Step Functions state machine.
 
     .LINK
         http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iot-topicrule-stepfunctionsaction.html

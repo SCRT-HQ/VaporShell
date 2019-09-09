@@ -1,10 +1,11 @@
 function Add-VSIoTTopicRuleAction {
     <#
     .SYNOPSIS
-        Adds an AWS::IoT::TopicRule.Action resource property to the template
+        Adds an AWS::IoT::TopicRule.Action resource property to the template. Describes the actions associated with a rule.
 
     .DESCRIPTION
-        Adds an AWS::IoT::TopicRule.Action resource property to the template
+        Adds an AWS::IoT::TopicRule.Action resource property to the template.
+Describes the actions associated with a rule.
 
     .LINK
         http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iot-topicrule-action.html

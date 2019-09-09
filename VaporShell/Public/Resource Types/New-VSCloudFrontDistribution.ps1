@@ -1,10 +1,10 @@
 function New-VSCloudFrontDistribution {
     <#
     .SYNOPSIS
-        Adds an AWS::CloudFront::Distribution resource to the template
+        Adds an AWS::CloudFront::Distribution resource to the template. The distribution's information.
 
     .DESCRIPTION
-        Adds an AWS::CloudFront::Distribution resource to the template
+        Adds an AWS::CloudFront::Distribution resource to the template. The distribution's information.
 
     .LINK
         http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-cloudfront-distribution.html

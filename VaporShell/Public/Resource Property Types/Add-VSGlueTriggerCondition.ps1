@@ -1,10 +1,11 @@
 function Add-VSGlueTriggerCondition {
     <#
     .SYNOPSIS
-        Adds an AWS::Glue::Trigger.Condition resource property to the template
+        Adds an AWS::Glue::Trigger.Condition resource property to the template. Defines a condition under which a trigger fires.
 
     .DESCRIPTION
-        Adds an AWS::Glue::Trigger.Condition resource property to the template
+        Adds an AWS::Glue::Trigger.Condition resource property to the template.
+Defines a condition under which a trigger fires.
 
     .LINK
         http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-glue-trigger-condition.html

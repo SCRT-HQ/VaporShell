@@ -1,10 +1,11 @@
 function Add-VSS3BucketCorsRule {
     <#
     .SYNOPSIS
-        Adds an AWS::S3::Bucket.CorsRule resource property to the template
+        Adds an AWS::S3::Bucket.CorsRule resource property to the template. Specifies a cross-origin access rule for an Amazon S3 bucket.
 
     .DESCRIPTION
-        Adds an AWS::S3::Bucket.CorsRule resource property to the template
+        Adds an AWS::S3::Bucket.CorsRule resource property to the template.
+Specifies a cross-origin access rule for an Amazon S3 bucket.
 
     .LINK
         http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-s3-bucket-cors-corsrule.html

@@ -1,10 +1,11 @@
 function Add-VSS3BucketRule {
     <#
     .SYNOPSIS
-        Adds an AWS::S3::Bucket.Rule resource property to the template
+        Adds an AWS::S3::Bucket.Rule resource property to the template. Specifies lifecycle rules for an Amazon S3 bucket. For more information, see PUT Bucket lifecycle: https://docs.aws.amazon.com/AmazonS3/latest/API/RESTBucketPUTlifecycle.html in the *Amazon Simple Storage Service API Reference*.
 
     .DESCRIPTION
-        Adds an AWS::S3::Bucket.Rule resource property to the template
+        Adds an AWS::S3::Bucket.Rule resource property to the template.
+Specifies lifecycle rules for an Amazon S3 bucket. For more information, see PUT Bucket lifecycle: https://docs.aws.amazon.com/AmazonS3/latest/API/RESTBucketPUTlifecycle.html in the *Amazon Simple Storage Service API Reference*.
 
     .LINK
         http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-s3-bucket-lifecycleconfig-rule.html

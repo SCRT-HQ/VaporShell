@@ -1,10 +1,11 @@
 function Add-VSOpsWorksStackChefConfiguration {
     <#
     .SYNOPSIS
-        Adds an AWS::OpsWorks::Stack.ChefConfiguration resource property to the template
+        Adds an AWS::OpsWorks::Stack.ChefConfiguration resource property to the template. Describes the Chef configuration.
 
     .DESCRIPTION
-        Adds an AWS::OpsWorks::Stack.ChefConfiguration resource property to the template
+        Adds an AWS::OpsWorks::Stack.ChefConfiguration resource property to the template.
+Describes the Chef configuration.
 
     .LINK
         http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-opsworks-stack-chefconfiguration.html

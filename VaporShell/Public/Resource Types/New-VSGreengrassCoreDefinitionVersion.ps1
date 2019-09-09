@@ -1,10 +1,16 @@
 function New-VSGreengrassCoreDefinitionVersion {
     <#
     .SYNOPSIS
-        Adds an AWS::Greengrass::CoreDefinitionVersion resource to the template
+        Adds an AWS::Greengrass::CoreDefinitionVersion resource to the template. The AWS::Greengrass::CoreDefinitionVersion resource represents a core definition version for AWS IoT Greengrass. A core definition version contains a Greengrass core.
 
     .DESCRIPTION
-        Adds an AWS::Greengrass::CoreDefinitionVersion resource to the template
+        Adds an AWS::Greengrass::CoreDefinitionVersion resource to the template. The AWS::Greengrass::CoreDefinitionVersion resource represents a core definition version for AWS IoT Greengrass. A core definition version contains a Greengrass core.
+
+**Note**
+
+To create a core definition version, you must specify the ID of the core definition that you want to associate with the version. For information about creating a core definition, see https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-greengrass-coredefinition.html: https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-greengrass-coredefinition.html.
+
+After you create a core definition version that contains the core you want to deploy, you must add it to your group version. For more information, see https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-greengrass-group.html: https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-greengrass-group.html.
 
     .LINK
         http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-greengrass-coredefinitionversion.html

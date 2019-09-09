@@ -1,10 +1,15 @@
 function Add-VSCodeDeployDeploymentGroupELBInfo {
     <#
     .SYNOPSIS
-        Adds an AWS::CodeDeploy::DeploymentGroup.ELBInfo resource property to the template
+        Adds an AWS::CodeDeploy::DeploymentGroup.ELBInfo resource property to the template. The ELBInfo property type specifies information about the Elastic Load Balancing load balancer used for an AWS CodeDelpoy deployment group.
 
     .DESCRIPTION
-        Adds an AWS::CodeDeploy::DeploymentGroup.ELBInfo resource property to the template
+        Adds an AWS::CodeDeploy::DeploymentGroup.ELBInfo resource property to the template.
+The ELBInfo property type specifies information about the Elastic Load Balancing load balancer used for an AWS CodeDelpoy deployment group.
+
+If you specify the ELBInfo property, the DeploymentStyle.DeploymentOption property must be set to WITH_TRAFFIC_CONTROL for AWS CodeDeploy to route your traffic using the specified load balancers.
+
+ELBInfo is a property of the AWS CodeDeploy DeploymentGroup LoadBalancerInfo : https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-codedeploy-deploymentgroup-loadbalancerinfo.html property type.
 
     .LINK
         http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-codedeploy-deploymentgroup-elbinfo.html

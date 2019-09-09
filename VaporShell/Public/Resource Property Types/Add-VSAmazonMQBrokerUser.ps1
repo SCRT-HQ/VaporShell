@@ -1,10 +1,11 @@
 function Add-VSAmazonMQBrokerUser {
     <#
     .SYNOPSIS
-        Adds an AWS::AmazonMQ::Broker.User resource property to the template
+        Adds an AWS::AmazonMQ::Broker.User resource property to the template. The list of ActiveMQ users (persons or applications who can access queues and topics. This value can contain only alphanumeric characters, dashes, periods, underscores, and tildes (- . _ ~. This value must be 2-100 characters long.
 
     .DESCRIPTION
-        Adds an AWS::AmazonMQ::Broker.User resource property to the template
+        Adds an AWS::AmazonMQ::Broker.User resource property to the template.
+The list of ActiveMQ users (persons or applications who can access queues and topics. This value can contain only alphanumeric characters, dashes, periods, underscores, and tildes (- . _ ~. This value must be 2-100 characters long.
 
     .LINK
         http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-amazonmq-broker-user.html

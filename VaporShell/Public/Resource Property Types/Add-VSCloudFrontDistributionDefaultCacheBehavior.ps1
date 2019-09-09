@@ -1,10 +1,11 @@
 function Add-VSCloudFrontDistributionDefaultCacheBehavior {
     <#
     .SYNOPSIS
-        Adds an AWS::CloudFront::Distribution.DefaultCacheBehavior resource property to the template
+        Adds an AWS::CloudFront::Distribution.DefaultCacheBehavior resource property to the template. A complex type that describes the default cache behavior if you don't specify a CacheBehavior element or if files don't match any of the values of PathPattern in CacheBehavior elements. You must create exactly one default cache behavior.
 
     .DESCRIPTION
-        Adds an AWS::CloudFront::Distribution.DefaultCacheBehavior resource property to the template
+        Adds an AWS::CloudFront::Distribution.DefaultCacheBehavior resource property to the template.
+A complex type that describes the default cache behavior if you don't specify a CacheBehavior element or if files don't match any of the values of PathPattern in CacheBehavior elements. You must create exactly one default cache behavior.
 
     .LINK
         http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-cloudfront-distribution-defaultcachebehavior.html

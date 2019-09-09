@@ -1,10 +1,11 @@
 function Add-VSAmplifyAppCustomRule {
     <#
     .SYNOPSIS
-        Adds an AWS::Amplify::App.CustomRule resource property to the template
+        Adds an AWS::Amplify::App.CustomRule resource property to the template. The CustomRule property type allows you to specify redirects, rewrites, and reverse proxies. Redirects enable a web app to reroute navigation from one URL to another.
 
     .DESCRIPTION
-        Adds an AWS::Amplify::App.CustomRule resource property to the template
+        Adds an AWS::Amplify::App.CustomRule resource property to the template.
+The CustomRule property type allows you to specify redirects, rewrites, and reverse proxies. Redirects enable a web app to reroute navigation from one URL to another.
 
     .LINK
         http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-amplify-app-customrule.html

@@ -1,10 +1,11 @@
 function Add-VSIoTAnalyticsDatasetDatasetContentDeliveryRuleDestination {
     <#
     .SYNOPSIS
-        Adds an AWS::IoTAnalytics::Dataset.DatasetContentDeliveryRuleDestination resource property to the template
+        Adds an AWS::IoTAnalytics::Dataset.DatasetContentDeliveryRuleDestination resource property to the template. The destination to which data set contents are delivered.
 
     .DESCRIPTION
-        Adds an AWS::IoTAnalytics::Dataset.DatasetContentDeliveryRuleDestination resource property to the template
+        Adds an AWS::IoTAnalytics::Dataset.DatasetContentDeliveryRuleDestination resource property to the template.
+The destination to which data set contents are delivered.
 
     .LINK
         http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iotanalytics-dataset-datasetcontentdeliveryruledestination.html

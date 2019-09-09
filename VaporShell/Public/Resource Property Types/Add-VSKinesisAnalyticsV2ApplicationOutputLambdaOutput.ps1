@@ -1,10 +1,11 @@
 function Add-VSKinesisAnalyticsV2ApplicationOutputLambdaOutput {
     <#
     .SYNOPSIS
-        Adds an AWS::KinesisAnalyticsV2::ApplicationOutput.LambdaOutput resource property to the template
+        Adds an AWS::KinesisAnalyticsV2::ApplicationOutput.LambdaOutput resource property to the template. When you configure an SQL-based Amazon Kinesis Data Analytics application's output, identifies an AWS Lambda function as the destination. You provide the function Amazon Resource Name (ARN of the Lambda function.
 
     .DESCRIPTION
-        Adds an AWS::KinesisAnalyticsV2::ApplicationOutput.LambdaOutput resource property to the template
+        Adds an AWS::KinesisAnalyticsV2::ApplicationOutput.LambdaOutput resource property to the template.
+When you configure an SQL-based Amazon Kinesis Data Analytics application's output, identifies an AWS Lambda function as the destination. You provide the function Amazon Resource Name (ARN of the Lambda function.
 
     .LINK
         http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-kinesisanalyticsv2-applicationoutput-lambdaoutput.html

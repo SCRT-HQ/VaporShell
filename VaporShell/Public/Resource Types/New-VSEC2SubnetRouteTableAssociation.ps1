@@ -1,10 +1,10 @@
 function New-VSEC2SubnetRouteTableAssociation {
     <#
     .SYNOPSIS
-        Adds an AWS::EC2::SubnetRouteTableAssociation resource to the template
+        Adds an AWS::EC2::SubnetRouteTableAssociation resource to the template. Associates a subnet with a route table. The subnet and route table must be in the same VPC. This association causes traffic originating from the subnet to be routed according to the routes in the route table. A route table can be associated with multiple subnets.
 
     .DESCRIPTION
-        Adds an AWS::EC2::SubnetRouteTableAssociation resource to the template
+        Adds an AWS::EC2::SubnetRouteTableAssociation resource to the template. Associates a subnet with a route table. The subnet and route table must be in the same VPC. This association causes traffic originating from the subnet to be routed according to the routes in the route table. A route table can be associated with multiple subnets.
 
     .LINK
         http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ec2-subnet-route-table-assoc.html

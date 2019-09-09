@@ -1,10 +1,11 @@
 function Add-VSIoTThingAttributePayload {
     <#
     .SYNOPSIS
-        Adds an AWS::IoT::Thing.AttributePayload resource property to the template
+        Adds an AWS::IoT::Thing.AttributePayload resource property to the template. The AttributePayload property specifies up to three attributes for an AWS IoT as key–value pairs. AttributePayload is a property of the AWS::IoT::Thing: https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-iot-thing.html resource.
 
     .DESCRIPTION
-        Adds an AWS::IoT::Thing.AttributePayload resource property to the template
+        Adds an AWS::IoT::Thing.AttributePayload resource property to the template.
+The AttributePayload property specifies up to three attributes for an AWS IoT as key–value pairs. AttributePayload is a property of the AWS::IoT::Thing: https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-iot-thing.html resource.
 
     .LINK
         http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iot-thing-attributepayload.html

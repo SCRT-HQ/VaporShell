@@ -1,10 +1,11 @@
 function Add-VSSageMakerNotebookInstanceLifecycleConfigNotebookInstanceLifecycleHook {
     <#
     .SYNOPSIS
-        Adds an AWS::SageMaker::NotebookInstanceLifecycleConfig.NotebookInstanceLifecycleHook resource property to the template
+        Adds an AWS::SageMaker::NotebookInstanceLifecycleConfig.NotebookInstanceLifecycleHook resource property to the template. Specifies the notebook instance lifecycle configuration script. Each lifecycle configuration script has a limit of 16384 characters.
 
     .DESCRIPTION
-        Adds an AWS::SageMaker::NotebookInstanceLifecycleConfig.NotebookInstanceLifecycleHook resource property to the template
+        Adds an AWS::SageMaker::NotebookInstanceLifecycleConfig.NotebookInstanceLifecycleHook resource property to the template.
+Specifies the notebook instance lifecycle configuration script. Each lifecycle configuration script has a limit of 16384 characters.
 
     .LINK
         http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-sagemaker-notebookinstancelifecycleconfig-notebookinstancelifecyclehook.html

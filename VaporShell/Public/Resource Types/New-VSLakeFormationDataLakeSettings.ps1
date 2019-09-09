@@ -1,10 +1,10 @@
 function New-VSLakeFormationDataLakeSettings {
     <#
     .SYNOPSIS
-        Adds an AWS::LakeFormation::DataLakeSettings resource to the template
+        Adds an AWS::LakeFormation::DataLakeSettings resource to the template. The AWS::LakeFormation::DataLakeSettings resource is an AWS Lake Formation resource type that manages data lake settings.
 
     .DESCRIPTION
-        Adds an AWS::LakeFormation::DataLakeSettings resource to the template
+        Adds an AWS::LakeFormation::DataLakeSettings resource to the template. The AWS::LakeFormation::DataLakeSettings resource is an AWS Lake Formation resource type that manages data lake settings.
 
     .LINK
         http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-lakeformation-datalakesettings.html

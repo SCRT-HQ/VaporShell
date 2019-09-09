@@ -1,10 +1,10 @@
 function New-VSGuardDutyDetector {
     <#
     .SYNOPSIS
-        Adds an AWS::GuardDuty::Detector resource to the template
+        Adds an AWS::GuardDuty::Detector resource to the template. The AWS::GuardDuty::Detector resource specifies a new Amazon GuardDuty detector. A detector is an object that represents the Amazon GuardDuty service. A detector is required for Amazon GuardDuty to become operational.
 
     .DESCRIPTION
-        Adds an AWS::GuardDuty::Detector resource to the template
+        Adds an AWS::GuardDuty::Detector resource to the template. The AWS::GuardDuty::Detector resource specifies a new Amazon GuardDuty detector. A detector is an object that represents the Amazon GuardDuty service. A detector is required for Amazon GuardDuty to become operational.
 
     .LINK
         http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-guardduty-detector.html

@@ -1,10 +1,11 @@
 function Add-VSCodePipelinePipelineStageTransition {
     <#
     .SYNOPSIS
-        Adds an AWS::CodePipeline::Pipeline.StageTransition resource property to the template
+        Adds an AWS::CodePipeline::Pipeline.StageTransition resource property to the template. The name of the pipeline in which you want to disable the flow of artifacts from one stage to another.
 
     .DESCRIPTION
-        Adds an AWS::CodePipeline::Pipeline.StageTransition resource property to the template
+        Adds an AWS::CodePipeline::Pipeline.StageTransition resource property to the template.
+The name of the pipeline in which you want to disable the flow of artifacts from one stage to another.
 
     .LINK
         http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-codepipeline-pipeline-disableinboundstagetransitions.html

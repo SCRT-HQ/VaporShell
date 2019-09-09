@@ -1,10 +1,11 @@
 function Add-VSDLMLifecyclePolicyCreateRule {
     <#
     .SYNOPSIS
-        Adds an AWS::DLM::LifecyclePolicy.CreateRule resource property to the template
+        Adds an AWS::DLM::LifecyclePolicy.CreateRule resource property to the template. Specifies when to create snapshots of EBS volumes.
 
     .DESCRIPTION
-        Adds an AWS::DLM::LifecyclePolicy.CreateRule resource property to the template
+        Adds an AWS::DLM::LifecyclePolicy.CreateRule resource property to the template.
+Specifies when to create snapshots of EBS volumes.
 
     .LINK
         http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-dlm-lifecyclepolicy-createrule.html

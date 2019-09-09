@@ -1,10 +1,11 @@
 function Add-VSCodeDeployDeploymentConfigMinimumHealthyHosts {
     <#
     .SYNOPSIS
-        Adds an AWS::CodeDeploy::DeploymentConfig.MinimumHealthyHosts resource property to the template
+        Adds an AWS::CodeDeploy::DeploymentConfig.MinimumHealthyHosts resource property to the template. MinimumHealthyHosts is a property of the DeploymentConfig: https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-codedeploy-deploymentconfig.html resource that defines how many instances must remain healthy during an AWS CodeDeploy deployment.
 
     .DESCRIPTION
-        Adds an AWS::CodeDeploy::DeploymentConfig.MinimumHealthyHosts resource property to the template
+        Adds an AWS::CodeDeploy::DeploymentConfig.MinimumHealthyHosts resource property to the template.
+MinimumHealthyHosts is a property of the DeploymentConfig: https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-codedeploy-deploymentconfig.html resource that defines how many instances must remain healthy during an AWS CodeDeploy deployment.
 
     .LINK
         http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-codedeploy-deploymentconfig-minimumhealthyhosts.html

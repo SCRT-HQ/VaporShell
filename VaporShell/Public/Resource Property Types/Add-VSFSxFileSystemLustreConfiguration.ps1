@@ -1,10 +1,11 @@
 function Add-VSFSxFileSystemLustreConfiguration {
     <#
     .SYNOPSIS
-        Adds an AWS::FSx::FileSystem.LustreConfiguration resource property to the template
+        Adds an AWS::FSx::FileSystem.LustreConfiguration resource property to the template. The configuration for the Amazon FSx for Lustre file system.
 
     .DESCRIPTION
-        Adds an AWS::FSx::FileSystem.LustreConfiguration resource property to the template
+        Adds an AWS::FSx::FileSystem.LustreConfiguration resource property to the template.
+The configuration for the Amazon FSx for Lustre file system.
 
     .LINK
         http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-fsx-filesystem-lustreconfiguration.html

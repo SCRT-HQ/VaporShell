@@ -1,10 +1,10 @@
 function New-VSAmplifyDomain {
     <#
     .SYNOPSIS
-        Adds an AWS::Amplify::Domain resource to the template
+        Adds an AWS::Amplify::Domain resource to the template. The AWS::Amplify::Domain resource allows you to connect a custom domain to your app.
 
     .DESCRIPTION
-        Adds an AWS::Amplify::Domain resource to the template
+        Adds an AWS::Amplify::Domain resource to the template. The AWS::Amplify::Domain resource allows you to connect a custom domain to your app.
 
     .LINK
         http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-amplify-domain.html

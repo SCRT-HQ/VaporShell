@@ -1,10 +1,11 @@
 function Add-VSWAFWebACLWafAction {
     <#
     .SYNOPSIS
-        Adds an AWS::WAF::WebACL.WafAction resource property to the template
+        Adds an AWS::WAF::WebACL.WafAction resource property to the template. For the action that is associated with a rule in a WebACL, specifies the action that you want AWS WAF to perform when a web request matches all of the conditions in a rule. For the default action in a WebACL, specifies the action that you want AWS WAF to take when a web request doesn't match all of the conditions in any of the rules in a WebACL.
 
     .DESCRIPTION
-        Adds an AWS::WAF::WebACL.WafAction resource property to the template
+        Adds an AWS::WAF::WebACL.WafAction resource property to the template.
+For the action that is associated with a rule in a WebACL, specifies the action that you want AWS WAF to perform when a web request matches all of the conditions in a rule. For the default action in a WebACL, specifies the action that you want AWS WAF to take when a web request doesn't match all of the conditions in any of the rules in a WebACL.
 
     .LINK
         http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-waf-webacl-action.html

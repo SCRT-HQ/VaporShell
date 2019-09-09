@@ -1,10 +1,11 @@
 function Add-VSS3BucketSourceSelectionCriteria {
     <#
     .SYNOPSIS
-        Adds an AWS::S3::Bucket.SourceSelectionCriteria resource property to the template
+        Adds an AWS::S3::Bucket.SourceSelectionCriteria resource property to the template. A container that describes additional filters for identifying the source objects that you want to replicate. You can choose to enable or disable the replication of these objects. Currently, Amazon S3 supports only the filter that you can specify for objects created with server-side encryption using an AWS KMS-Managed Key (SSE-KMS.
 
     .DESCRIPTION
-        Adds an AWS::S3::Bucket.SourceSelectionCriteria resource property to the template
+        Adds an AWS::S3::Bucket.SourceSelectionCriteria resource property to the template.
+A container that describes additional filters for identifying the source objects that you want to replicate. You can choose to enable or disable the replication of these objects. Currently, Amazon S3 supports only the filter that you can specify for objects created with server-side encryption using an AWS KMS-Managed Key (SSE-KMS.
 
     .LINK
         http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-s3-bucket-sourceselectioncriteria.html

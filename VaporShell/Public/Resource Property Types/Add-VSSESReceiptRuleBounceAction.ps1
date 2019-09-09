@@ -1,10 +1,13 @@
 function Add-VSSESReceiptRuleBounceAction {
     <#
     .SYNOPSIS
-        Adds an AWS::SES::ReceiptRule.BounceAction resource property to the template
+        Adds an AWS::SES::ReceiptRule.BounceAction resource property to the template. When included in a receipt rule, this action rejects the received email by returning a bounce response to the sender and, optionally, publishes a notification to Amazon Simple Notification Service (Amazon SNS.
 
     .DESCRIPTION
-        Adds an AWS::SES::ReceiptRule.BounceAction resource property to the template
+        Adds an AWS::SES::ReceiptRule.BounceAction resource property to the template.
+When included in a receipt rule, this action rejects the received email by returning a bounce response to the sender and, optionally, publishes a notification to Amazon Simple Notification Service (Amazon SNS.
+
+For information about sending a bounce message in response to a received email, see the Amazon SES Developer Guide: https://docs.aws.amazon.com/ses/latest/DeveloperGuide/receiving-email-action-bounce.html.
 
     .LINK
         http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ses-receiptrule-bounceaction.html

@@ -1,10 +1,13 @@
 function Add-VSCodePipelinePipelineArtifactStoreMap {
     <#
     .SYNOPSIS
-        Adds an AWS::CodePipeline::Pipeline.ArtifactStoreMap resource property to the template
+        Adds an AWS::CodePipeline::Pipeline.ArtifactStoreMap resource property to the template. A mapping of artifactStore objects and their corresponding regions. There must be an artifact store for the pipeline region and for each cross-region action within the pipeline. You can only use either artifactStore or artifactStores, not both.
 
     .DESCRIPTION
-        Adds an AWS::CodePipeline::Pipeline.ArtifactStoreMap resource property to the template
+        Adds an AWS::CodePipeline::Pipeline.ArtifactStoreMap resource property to the template.
+A mapping of artifactStore objects and their corresponding regions. There must be an artifact store for the pipeline region and for each cross-region action within the pipeline. You can only use either artifactStore or artifactStores, not both.
+
+If you create a cross-region action in your pipeline, you must use artifactStores.
 
     .LINK
         http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-codepipeline-pipeline-artifactstoremap.html

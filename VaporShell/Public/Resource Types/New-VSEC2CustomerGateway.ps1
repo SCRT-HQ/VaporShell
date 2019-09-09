@@ -1,10 +1,10 @@
 function New-VSEC2CustomerGateway {
     <#
     .SYNOPSIS
-        Adds an AWS::EC2::CustomerGateway resource to the template
+        Adds an AWS::EC2::CustomerGateway resource to the template. Specifies a customer gateway.
 
     .DESCRIPTION
-        Adds an AWS::EC2::CustomerGateway resource to the template
+        Adds an AWS::EC2::CustomerGateway resource to the template. Specifies a customer gateway.
 
     .LINK
         http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ec2-customer-gateway.html

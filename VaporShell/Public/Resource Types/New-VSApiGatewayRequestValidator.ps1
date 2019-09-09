@@ -1,10 +1,10 @@
 function New-VSApiGatewayRequestValidator {
     <#
     .SYNOPSIS
-        Adds an AWS::ApiGateway::RequestValidator resource to the template
+        Adds an AWS::ApiGateway::RequestValidator resource to the template. The AWS::ApiGateway::RequestValidator resource sets up basic validation rules for incoming requests to your API. For more information, see Enable Basic Request Validation for an API in API Gateway: https://docs.aws.amazon.com/apigateway/latest/developerguide/api-gateway-method-request-validation.html in the *API Gateway Developer Guide*.
 
     .DESCRIPTION
-        Adds an AWS::ApiGateway::RequestValidator resource to the template
+        Adds an AWS::ApiGateway::RequestValidator resource to the template. The AWS::ApiGateway::RequestValidator resource sets up basic validation rules for incoming requests to your API. For more information, see Enable Basic Request Validation for an API in API Gateway: https://docs.aws.amazon.com/apigateway/latest/developerguide/api-gateway-method-request-validation.html in the *API Gateway Developer Guide*.
 
     .LINK
         http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-apigateway-requestvalidator.html

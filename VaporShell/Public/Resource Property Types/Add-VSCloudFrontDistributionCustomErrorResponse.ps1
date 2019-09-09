@@ -1,10 +1,17 @@
 function Add-VSCloudFrontDistributionCustomErrorResponse {
     <#
     .SYNOPSIS
-        Adds an AWS::CloudFront::Distribution.CustomErrorResponse resource property to the template
+        Adds an AWS::CloudFront::Distribution.CustomErrorResponse resource property to the template. A complex type that controls:
 
     .DESCRIPTION
-        Adds an AWS::CloudFront::Distribution.CustomErrorResponse resource property to the template
+        Adds an AWS::CloudFront::Distribution.CustomErrorResponse resource property to the template.
+A complex type that controls:
+
++ Whether CloudFront replaces HTTP status codes in the 4xx and 5xx range with custom error messages before returning the response to the viewer.
+
++ How long CloudFront caches HTTP status codes in the 4xx and 5xx range.
+
+For more information about custom error pages, see Customizing Error Responses: https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/custom-error-pages.html in the *Amazon CloudFront Developer Guide*.
 
     .LINK
         http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-cloudfront-distribution-customerrorresponse.html

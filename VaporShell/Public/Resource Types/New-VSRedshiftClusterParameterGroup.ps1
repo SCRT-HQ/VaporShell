@@ -1,10 +1,10 @@
 function New-VSRedshiftClusterParameterGroup {
     <#
     .SYNOPSIS
-        Adds an AWS::Redshift::ClusterParameterGroup resource to the template
+        Adds an AWS::Redshift::ClusterParameterGroup resource to the template. Describes a parameter group.
 
     .DESCRIPTION
-        Adds an AWS::Redshift::ClusterParameterGroup resource to the template
+        Adds an AWS::Redshift::ClusterParameterGroup resource to the template. Describes a parameter group.
 
     .LINK
         http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-redshift-clusterparametergroup.html

@@ -1,10 +1,16 @@
 function New-VSEC2SecurityGroupIngress {
     <#
     .SYNOPSIS
-        Adds an AWS::EC2::SecurityGroupIngress resource to the template
+        Adds an AWS::EC2::SecurityGroupIngress resource to the template. Adds the specified ingress rules to a security group.
 
     .DESCRIPTION
-        Adds an AWS::EC2::SecurityGroupIngress resource to the template
+        Adds an AWS::EC2::SecurityGroupIngress resource to the template. Adds the specified ingress rules to a security group.
+
+An inbound rule permits instances to receive traffic from the specified destination IPv4 or IPv6 CIDR address ranges, or from the specified destination security groups.
+
+You specify a protocol for each rule (for example, TCP. For TCP and UDP, you must also specify the destination port or port range. For ICMP/ICMPv6, you must also specify the ICMP/ICMPv6 type and code. You can use -1 to mean all types or all codes.
+
+Rule changes are propagated to instances within the security group as quickly as possible. However, a small delay might occur.
 
     .LINK
         http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-security-group-ingress.html

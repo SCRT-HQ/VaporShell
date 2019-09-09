@@ -1,10 +1,38 @@
 function New-VSNeptuneDBInstance {
     <#
     .SYNOPSIS
-        Adds an AWS::Neptune::DBInstance resource to the template
+        Adds an AWS::Neptune::DBInstance resource to the template. The AWS::Neptune::DBInstance type creates an Amazon Neptune DB instance.
 
     .DESCRIPTION
-        Adds an AWS::Neptune::DBInstance resource to the template
+        Adds an AWS::Neptune::DBInstance resource to the template. The AWS::Neptune::DBInstance type creates an Amazon Neptune DB instance.
+
+**Updating DB Instances**
+
+You can set a deletion policy for your DB instance to control how AWS CloudFormation handles the instance when the stack is deleted. For Neptune DB instances, you can choose to *retain* the instance, to *delete* the instance, or to *create a snapshot* of the instance. The default AWS CloudFormation behavior depends on the DBClusterIdentifier property:
+
++ For AWS::Neptune::DBInstance resources that don't specify the DBClusterIdentifier property, AWS CloudFormation saves a snapshot of the DB instance.
+
++ For AWS::Neptune::DBInstance resources that do specify the DBClusterIdentifier property, AWS CloudFormation deletes the DB instance.
+
+**Deleting DB Instances**
+
+**Important**
+
+If a DB instance is deleted or replaced during an update, AWS CloudFormation deletes all automated snapshots. However, it retains manual DB snapshots. During an update that requires replacement, you can apply a stack policy to prevent DB instances from being replaced.
+
+When properties labeled *Update requires: Replacement* are updated, AWS CloudFormation first creates a replacement DB instance, changes references from other dependent resources to point to the replacement DB instance, and finally deletes the old DB instance.
+
+**Important**
+
+We highly recommend that you take a snapshot of the database before updating the stack. If you don't, you lose the data when AWS CloudFormation replaces your DB instance. To preserve your data, perform the following procedure:
+
+Deactivate any applications that are using the DB instance so that there's no activity on the DB instance.
+
+Create a snapshot of the DB instance.
+
+If you want to restore your instance using a DB snapshot, modify the updated template with your DB instance changes and add the DBSnapshotIdentifier property with the ID of the DB snapshot that you want to use.
+
+Update the stack.
 
     .LINK
         http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-neptune-dbinstance.html

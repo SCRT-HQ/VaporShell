@@ -1,10 +1,11 @@
 function Add-VSEMRInstanceGroupConfigScalingRule {
     <#
     .SYNOPSIS
-        Adds an AWS::EMR::InstanceGroupConfig.ScalingRule resource property to the template
+        Adds an AWS::EMR::InstanceGroupConfig.ScalingRule resource property to the template. ScalingRule is a subproperty of the AutoScalingPolicy property type. ScalingRule defines the scale-in or scale-out rules for scaling activity, including the CloudWatch metric alarm that triggers activity, how EC2 instances are added or removed, and the periodicity of adjustments. The automatic scaling policy for an instance group can comprise one or more automatic scaling rules.
 
     .DESCRIPTION
-        Adds an AWS::EMR::InstanceGroupConfig.ScalingRule resource property to the template
+        Adds an AWS::EMR::InstanceGroupConfig.ScalingRule resource property to the template.
+ScalingRule is a subproperty of the AutoScalingPolicy property type. ScalingRule defines the scale-in or scale-out rules for scaling activity, including the CloudWatch metric alarm that triggers activity, how EC2 instances are added or removed, and the periodicity of adjustments. The automatic scaling policy for an instance group can comprise one or more automatic scaling rules.
 
     .LINK
         http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-elasticmapreduce-instancegroupconfig-scalingrule.html

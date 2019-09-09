@@ -1,10 +1,11 @@
 function Add-VSCognitoIdentityPoolCognitoStreams {
     <#
     .SYNOPSIS
-        Adds an AWS::Cognito::IdentityPool.CognitoStreams resource property to the template
+        Adds an AWS::Cognito::IdentityPool.CognitoStreams resource property to the template. CognitoStreams is a property of the AWS::Cognito::IdentityPool: https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-cognito-identitypool.html resource that defines configuration options for Amazon Cognito streams.
 
     .DESCRIPTION
-        Adds an AWS::Cognito::IdentityPool.CognitoStreams resource property to the template
+        Adds an AWS::Cognito::IdentityPool.CognitoStreams resource property to the template.
+CognitoStreams is a property of the AWS::Cognito::IdentityPool: https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-cognito-identitypool.html resource that defines configuration options for Amazon Cognito streams.
 
     .LINK
         http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-cognito-identitypool-cognitostreams.html

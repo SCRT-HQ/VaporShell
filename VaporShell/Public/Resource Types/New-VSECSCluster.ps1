@@ -1,10 +1,10 @@
 function New-VSECSCluster {
     <#
     .SYNOPSIS
-        Adds an AWS::ECS::Cluster resource to the template
+        Adds an AWS::ECS::Cluster resource to the template. The AWS::ECS::Cluster resource creates an Amazon Elastic Container Service (Amazon ECS cluster.
 
     .DESCRIPTION
-        Adds an AWS::ECS::Cluster resource to the template
+        Adds an AWS::ECS::Cluster resource to the template. The AWS::ECS::Cluster resource creates an Amazon Elastic Container Service (Amazon ECS cluster.
 
     .LINK
         http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ecs-cluster.html

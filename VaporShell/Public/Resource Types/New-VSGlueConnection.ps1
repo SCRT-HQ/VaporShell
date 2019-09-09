@@ -1,10 +1,10 @@
 function New-VSGlueConnection {
     <#
     .SYNOPSIS
-        Adds an AWS::Glue::Connection resource to the template
+        Adds an AWS::Glue::Connection resource to the template. The AWS::Glue::Connection resource specifies an AWS Glue connection to a data source. For more information, see Adding a Connection to Your Data Store: https://docs.aws.amazon.com/dg/populate-add-connection.html and Connection Structure: https://docs.aws.amazon.com/dg/aws-glue-api-catalog-connections.html#aws-glue-api-catalog-connections-Connection in the *AWS Glue Developer Guide*.
 
     .DESCRIPTION
-        Adds an AWS::Glue::Connection resource to the template
+        Adds an AWS::Glue::Connection resource to the template. The AWS::Glue::Connection resource specifies an AWS Glue connection to a data source. For more information, see Adding a Connection to Your Data Store: https://docs.aws.amazon.com/dg/populate-add-connection.html and Connection Structure: https://docs.aws.amazon.com/dg/aws-glue-api-catalog-connections.html#aws-glue-api-catalog-connections-Connection in the *AWS Glue Developer Guide*.
 
     .LINK
         http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-glue-connection.html

@@ -1,10 +1,10 @@
 function New-VSECSService {
     <#
     .SYNOPSIS
-        Adds an AWS::ECS::Service resource to the template
+        Adds an AWS::ECS::Service resource to the template. The AWS::ECS::Service resource creates an Amazon Elastic Container Service (Amazon ECS service that runs and maintains the requested number of tasks and associated load balancers.
 
     .DESCRIPTION
-        Adds an AWS::ECS::Service resource to the template
+        Adds an AWS::ECS::Service resource to the template. The AWS::ECS::Service resource creates an Amazon Elastic Container Service (Amazon ECS service that runs and maintains the requested number of tasks and associated load balancers.
 
     .LINK
         http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ecs-service.html

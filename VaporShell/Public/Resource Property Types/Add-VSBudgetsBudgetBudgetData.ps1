@@ -1,10 +1,15 @@
 function Add-VSBudgetsBudgetBudgetData {
     <#
     .SYNOPSIS
-        Adds an AWS::Budgets::Budget.BudgetData resource property to the template
+        Adds an AWS::Budgets::Budget.BudgetData resource property to the template. Represents the output of the CreateBudget operation. The content consists of the detailed metadata and data file information, and the current status of the budget object.
 
     .DESCRIPTION
-        Adds an AWS::Budgets::Budget.BudgetData resource property to the template
+        Adds an AWS::Budgets::Budget.BudgetData resource property to the template.
+Represents the output of the CreateBudget operation. The content consists of the detailed metadata and data file information, and the current status of the budget object.
+
+This is the ARN pattern for a budget:
+
+arn:aws:budgetservice::AccountId:budget/budgetName
 
     .LINK
         http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-budgets-budget-budgetdata.html

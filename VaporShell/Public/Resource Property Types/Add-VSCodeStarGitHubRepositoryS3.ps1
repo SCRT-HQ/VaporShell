@@ -1,10 +1,13 @@
 function Add-VSCodeStarGitHubRepositoryS3 {
     <#
     .SYNOPSIS
-        Adds an AWS::CodeStar::GitHubRepository.S3 resource property to the template
+        Adds an AWS::CodeStar::GitHubRepository.S3 resource property to the template. The S3 property type specifies information about the Amazon S3 bucket that contains the code to be committed to the new repository.
 
     .DESCRIPTION
-        Adds an AWS::CodeStar::GitHubRepository.S3 resource property to the template
+        Adds an AWS::CodeStar::GitHubRepository.S3 resource property to the template.
+The S3 property type specifies information about the Amazon S3 bucket that contains the code to be committed to the new repository.
+
+S3 is a property of the AWS::CodeStar::GitHubRepository resource.
 
     .LINK
         http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-codestar-githubrepository-s3.html

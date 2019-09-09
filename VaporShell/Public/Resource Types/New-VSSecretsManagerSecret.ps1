@@ -1,10 +1,28 @@
 function New-VSSecretsManagerSecret {
     <#
     .SYNOPSIS
-        Adds an AWS::SecretsManager::Secret resource to the template
+        Adds an AWS::SecretsManager::Secret resource to the template. The AWS::SecretsManager::Secret resource creates a secret and stores it in Secrets Manager. For more information, see Secret: https://docs.aws.amazon.com/secretsmanager/latest/userguide/terms-concepts.html#term_secret in the *AWS Secrets Manager User Guide*, and the CreateSecret API: https://docs.aws.amazon.com/secretsmanager/latest/apireference/API_CreateSecret.html in the *AWS Secrets Manager API Reference*.
 
     .DESCRIPTION
-        Adds an AWS::SecretsManager::Secret resource to the template
+        Adds an AWS::SecretsManager::Secret resource to the template. The AWS::SecretsManager::Secret resource creates a secret and stores it in Secrets Manager. For more information, see Secret: https://docs.aws.amazon.com/secretsmanager/latest/userguide/terms-concepts.html#term_secret in the *AWS Secrets Manager User Guide*, and the CreateSecret API: https://docs.aws.amazon.com/secretsmanager/latest/apireference/API_CreateSecret.html in the *AWS Secrets Manager API Reference*.
+
+To specify the SecretString encrypted value for the secret, specify either the SecretString or the GenerateSecretString property in this resource. You must specify one or the other, but you can't specify both. See the first two examples: https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-secretsmanager-secret.html#aws-resource-secretsmanager-secret-hardcoded later in this topic.
+
+**Note**
+
+You can't generate a secret with a SecretBinary secret value using AWS CloudFormation. You can create only a SecretString text-based secret value.
+
+**Note**
+
+Do not create a dynamic reference that has a backslash (as the final value. AWS CloudFormation cannot resolve those references, which results in a resource failure.
+
+After you create the basic secret, you can do any of the following:
+
++ Configure your secret with details of the Secrets Manager supported database or service: https://docs.aws.amazon.com/secretsmanager/latest/userguide/intro.html#full-rotation-support whose credentials are stored in this secret.
+
++ Attach a resource-based permissions policy to the secret. To do this, define a AWS::SecretsManager::ResourcePolicy: https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-secretsmanager-resourcepolicy.html resource type.
+
++ You can optionally configure a secret to rotate after a specified number of days. See AWS::SecretsManager::RotationSchedule: https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-secretsmanager-rotationschedule.html.
 
     .LINK
         http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-secretsmanager-secret.html

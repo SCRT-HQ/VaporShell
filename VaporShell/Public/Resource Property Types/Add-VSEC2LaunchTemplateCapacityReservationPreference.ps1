@@ -1,10 +1,11 @@
 function Add-VSEC2LaunchTemplateCapacityReservationPreference {
     <#
     .SYNOPSIS
-        Adds an AWS::EC2::LaunchTemplate.CapacityReservationPreference resource property to the template
+        Adds an AWS::EC2::LaunchTemplate.CapacityReservationPreference resource property to the template. 
 
     .DESCRIPTION
-        Adds an AWS::EC2::LaunchTemplate.CapacityReservationPreference resource property to the template
+        Adds an AWS::EC2::LaunchTemplate.CapacityReservationPreference resource property to the template.
+
 
     .LINK
         

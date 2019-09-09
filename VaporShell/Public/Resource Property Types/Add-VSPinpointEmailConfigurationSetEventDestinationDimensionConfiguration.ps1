@@ -1,10 +1,11 @@
 function Add-VSPinpointEmailConfigurationSetEventDestinationDimensionConfiguration {
     <#
     .SYNOPSIS
-        Adds an AWS::PinpointEmail::ConfigurationSetEventDestination.DimensionConfiguration resource property to the template
+        Adds an AWS::PinpointEmail::ConfigurationSetEventDestination.DimensionConfiguration resource property to the template. An array of objects that define the dimensions to use when you send email events to Amazon CloudWatch.
 
     .DESCRIPTION
-        Adds an AWS::PinpointEmail::ConfigurationSetEventDestination.DimensionConfiguration resource property to the template
+        Adds an AWS::PinpointEmail::ConfigurationSetEventDestination.DimensionConfiguration resource property to the template.
+An array of objects that define the dimensions to use when you send email events to Amazon CloudWatch.
 
     .LINK
         http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-pinpointemail-configurationseteventdestination-dimensionconfiguration.html

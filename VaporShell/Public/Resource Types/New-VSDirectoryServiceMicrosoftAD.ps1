@@ -1,10 +1,10 @@
 function New-VSDirectoryServiceMicrosoftAD {
     <#
     .SYNOPSIS
-        Adds an AWS::DirectoryService::MicrosoftAD resource to the template
+        Adds an AWS::DirectoryService::MicrosoftAD resource to the template. The AWS::DirectoryService::MicrosoftAD resource specifies a Microsoft Active Directory in AWS so that your directory users and groups can access the AWS Management Console and AWS applications using their existing credentials. For more information, see AWS Managed Microsoft AD: https://docs.aws.amazon.com/directoryservice/latest/admin-guide/directory_microsoft_ad.html in the *AWS Directory Service Admin Guide*.
 
     .DESCRIPTION
-        Adds an AWS::DirectoryService::MicrosoftAD resource to the template
+        Adds an AWS::DirectoryService::MicrosoftAD resource to the template. The AWS::DirectoryService::MicrosoftAD resource specifies a Microsoft Active Directory in AWS so that your directory users and groups can access the AWS Management Console and AWS applications using their existing credentials. For more information, see AWS Managed Microsoft AD: https://docs.aws.amazon.com/directoryservice/latest/admin-guide/directory_microsoft_ad.html in the *AWS Directory Service Admin Guide*.
 
     .LINK
         http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-directoryservice-microsoftad.html

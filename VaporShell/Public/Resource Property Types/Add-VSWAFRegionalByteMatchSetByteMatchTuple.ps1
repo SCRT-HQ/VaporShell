@@ -1,10 +1,11 @@
 function Add-VSWAFRegionalByteMatchSetByteMatchTuple {
     <#
     .SYNOPSIS
-        Adds an AWS::WAFRegional::ByteMatchSet.ByteMatchTuple resource property to the template
+        Adds an AWS::WAFRegional::ByteMatchSet.ByteMatchTuple resource property to the template. The bytes (typically a string that corresponds with ASCII characters that you want AWS WAF to search for in web requests, the location in requests that you want AWS WAF to search, and other settings.
 
     .DESCRIPTION
-        Adds an AWS::WAFRegional::ByteMatchSet.ByteMatchTuple resource property to the template
+        Adds an AWS::WAFRegional::ByteMatchSet.ByteMatchTuple resource property to the template.
+The bytes (typically a string that corresponds with ASCII characters that you want AWS WAF to search for in web requests, the location in requests that you want AWS WAF to search, and other settings.
 
     .LINK
         http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-wafregional-bytematchset-bytematchtuple.html

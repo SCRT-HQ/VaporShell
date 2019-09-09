@@ -1,10 +1,11 @@
 function Add-VSECSServiceAwsVpcConfiguration {
     <#
     .SYNOPSIS
-        Adds an AWS::ECS::Service.AwsVpcConfiguration resource property to the template
+        Adds an AWS::ECS::Service.AwsVpcConfiguration resource property to the template. The AwsVpcConfiguration property specifies an object representing the networking details for a task or service.
 
     .DESCRIPTION
-        Adds an AWS::ECS::Service.AwsVpcConfiguration resource property to the template
+        Adds an AWS::ECS::Service.AwsVpcConfiguration resource property to the template.
+The AwsVpcConfiguration property specifies an object representing the networking details for a task or service.
 
     .LINK
         http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ecs-service-awsvpcconfiguration.html

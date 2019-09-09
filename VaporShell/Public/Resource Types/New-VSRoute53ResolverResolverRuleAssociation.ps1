@@ -1,10 +1,10 @@
 function New-VSRoute53ResolverResolverRuleAssociation {
     <#
     .SYNOPSIS
-        Adds an AWS::Route53Resolver::ResolverRuleAssociation resource to the template
+        Adds an AWS::Route53Resolver::ResolverRuleAssociation resource to the template. In the response to an AssociateResolverRule: https://docs.aws.amazon.com/Route53/latest/APIReference/API_route53resolver_AssociateResolverRule.html, DisassociateResolverRule: https://docs.aws.amazon.com/Route53/latest/APIReference/API_route53resolver_DisassociateResolverRule.html, or ListResolverRuleAssociations: https://docs.aws.amazon.com/Route53/latest/APIReference/API_route53resolver_ListResolverRuleAssociations.html request, information about an association between a resolver rule and a VPC.
 
     .DESCRIPTION
-        Adds an AWS::Route53Resolver::ResolverRuleAssociation resource to the template
+        Adds an AWS::Route53Resolver::ResolverRuleAssociation resource to the template. In the response to an AssociateResolverRule: https://docs.aws.amazon.com/Route53/latest/APIReference/API_route53resolver_AssociateResolverRule.html, DisassociateResolverRule: https://docs.aws.amazon.com/Route53/latest/APIReference/API_route53resolver_DisassociateResolverRule.html, or ListResolverRuleAssociations: https://docs.aws.amazon.com/Route53/latest/APIReference/API_route53resolver_ListResolverRuleAssociations.html request, information about an association between a resolver rule and a VPC.
 
     .LINK
         http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-route53resolver-resolverruleassociation.html

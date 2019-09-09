@@ -1,10 +1,11 @@
 function Add-VSIoTEventsDetectorModelIotTopicPublish {
     <#
     .SYNOPSIS
-        Adds an AWS::IoTEvents::DetectorModel.IotTopicPublish resource property to the template
+        Adds an AWS::IoTEvents::DetectorModel.IotTopicPublish resource property to the template. Sends information about the detector model instance and the event which triggered the action in an MQTT message with the given topic to the AWS IoT message broker.
 
     .DESCRIPTION
-        Adds an AWS::IoTEvents::DetectorModel.IotTopicPublish resource property to the template
+        Adds an AWS::IoTEvents::DetectorModel.IotTopicPublish resource property to the template.
+Sends information about the detector model instance and the event which triggered the action in an MQTT message with the given topic to the AWS IoT message broker.
 
     .LINK
         http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iotevents-detectormodel-iottopicpublish.html

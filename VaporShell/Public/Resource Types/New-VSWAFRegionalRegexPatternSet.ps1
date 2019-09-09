@@ -1,10 +1,10 @@
 function New-VSWAFRegionalRegexPatternSet {
     <#
     .SYNOPSIS
-        Adds an AWS::WAFRegional::RegexPatternSet resource to the template
+        Adds an AWS::WAFRegional::RegexPatternSet resource to the template. The RegexPatternSet specifies the regular expression (regex pattern that you want AWS WAF to search for, such as Ba@]dBo0]t. You can then configure AWS WAF to reject those requests.
 
     .DESCRIPTION
-        Adds an AWS::WAFRegional::RegexPatternSet resource to the template
+        Adds an AWS::WAFRegional::RegexPatternSet resource to the template. The RegexPatternSet specifies the regular expression (regex pattern that you want AWS WAF to search for, such as Ba@]dBo0]t. You can then configure AWS WAF to reject those requests.
 
     .LINK
         http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-wafregional-regexpatternset.html

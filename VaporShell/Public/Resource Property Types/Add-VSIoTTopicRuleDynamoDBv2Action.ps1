@@ -1,10 +1,13 @@
 function Add-VSIoTTopicRuleDynamoDBv2Action {
     <#
     .SYNOPSIS
-        Adds an AWS::IoT::TopicRule.DynamoDBv2Action resource property to the template
+        Adds an AWS::IoT::TopicRule.DynamoDBv2Action resource property to the template. Describes an action to write to a DynamoDB table.
 
     .DESCRIPTION
-        Adds an AWS::IoT::TopicRule.DynamoDBv2Action resource property to the template
+        Adds an AWS::IoT::TopicRule.DynamoDBv2Action resource property to the template.
+Describes an action to write to a DynamoDB table.
+
+This DynamoDB action writes each attribute in the message payload into it's own column in the DynamoDB table.
 
     .LINK
         http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iot-topicrule-dynamodbv2action.html

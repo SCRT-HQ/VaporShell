@@ -1,10 +1,11 @@
 function Add-VSECSTaskDefinitionRepositoryCredentials {
     <#
     .SYNOPSIS
-        Adds an AWS::ECS::TaskDefinition.RepositoryCredentials resource property to the template
+        Adds an AWS::ECS::TaskDefinition.RepositoryCredentials resource property to the template. The RepositoryCredentials property specifies the repository credentials for private registry authentication.
 
     .DESCRIPTION
-        Adds an AWS::ECS::TaskDefinition.RepositoryCredentials resource property to the template
+        Adds an AWS::ECS::TaskDefinition.RepositoryCredentials resource property to the template.
+The RepositoryCredentials property specifies the repository credentials for private registry authentication.
 
     .LINK
         http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ecs-taskdefinition-repositorycredentials.html

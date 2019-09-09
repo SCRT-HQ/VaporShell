@@ -1,10 +1,11 @@
 function Add-VSEC2NetworkAclEntryPortRange {
     <#
     .SYNOPSIS
-        Adds an AWS::EC2::NetworkAclEntry.PortRange resource property to the template
+        Adds an AWS::EC2::NetworkAclEntry.PortRange resource property to the template. Describes a range of ports.
 
     .DESCRIPTION
-        Adds an AWS::EC2::NetworkAclEntry.PortRange resource property to the template
+        Adds an AWS::EC2::NetworkAclEntry.PortRange resource property to the template.
+Describes a range of ports.
 
     .LINK
         http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-networkaclentry-portrange.html

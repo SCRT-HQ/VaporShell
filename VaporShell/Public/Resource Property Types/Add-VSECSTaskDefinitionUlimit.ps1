@@ -1,10 +1,11 @@
 function Add-VSECSTaskDefinitionUlimit {
     <#
     .SYNOPSIS
-        Adds an AWS::ECS::TaskDefinition.Ulimit resource property to the template
+        Adds an AWS::ECS::TaskDefinition.Ulimit resource property to the template. The Ulimit property specifies the ulimit settings to pass to the container.
 
     .DESCRIPTION
-        Adds an AWS::ECS::TaskDefinition.Ulimit resource property to the template
+        Adds an AWS::ECS::TaskDefinition.Ulimit resource property to the template.
+The Ulimit property specifies the ulimit settings to pass to the container.
 
     .LINK
         http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ecs-taskdefinition-containerdefinitions-ulimit.html

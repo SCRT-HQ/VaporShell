@@ -1,10 +1,11 @@
 function Add-VSGlueTableStorageDescriptor {
     <#
     .SYNOPSIS
-        Adds an AWS::Glue::Table.StorageDescriptor resource property to the template
+        Adds an AWS::Glue::Table.StorageDescriptor resource property to the template. Describes the physical storage of table data.
 
     .DESCRIPTION
-        Adds an AWS::Glue::Table.StorageDescriptor resource property to the template
+        Adds an AWS::Glue::Table.StorageDescriptor resource property to the template.
+Describes the physical storage of table data.
 
     .LINK
         http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-glue-table-storagedescriptor.html

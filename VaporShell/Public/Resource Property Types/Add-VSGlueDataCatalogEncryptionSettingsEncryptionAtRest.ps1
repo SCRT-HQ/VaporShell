@@ -1,10 +1,11 @@
 function Add-VSGlueDataCatalogEncryptionSettingsEncryptionAtRest {
     <#
     .SYNOPSIS
-        Adds an AWS::Glue::DataCatalogEncryptionSettings.EncryptionAtRest resource property to the template
+        Adds an AWS::Glue::DataCatalogEncryptionSettings.EncryptionAtRest resource property to the template. Specifies the encryption-at-rest configuration for the Data Catalog.
 
     .DESCRIPTION
-        Adds an AWS::Glue::DataCatalogEncryptionSettings.EncryptionAtRest resource property to the template
+        Adds an AWS::Glue::DataCatalogEncryptionSettings.EncryptionAtRest resource property to the template.
+Specifies the encryption-at-rest configuration for the Data Catalog.
 
     .LINK
         http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-glue-datacatalogencryptionsettings-encryptionatrest.html

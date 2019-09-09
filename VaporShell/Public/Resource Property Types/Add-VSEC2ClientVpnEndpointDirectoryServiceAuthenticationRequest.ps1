@@ -1,10 +1,11 @@
 function Add-VSEC2ClientVpnEndpointDirectoryServiceAuthenticationRequest {
     <#
     .SYNOPSIS
-        Adds an AWS::EC2::ClientVpnEndpoint.DirectoryServiceAuthenticationRequest resource property to the template
+        Adds an AWS::EC2::ClientVpnEndpoint.DirectoryServiceAuthenticationRequest resource property to the template. Describes the Active Directory to be used for client authentication.
 
     .DESCRIPTION
-        Adds an AWS::EC2::ClientVpnEndpoint.DirectoryServiceAuthenticationRequest resource property to the template
+        Adds an AWS::EC2::ClientVpnEndpoint.DirectoryServiceAuthenticationRequest resource property to the template.
+Describes the Active Directory to be used for client authentication.
 
     .LINK
         http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-clientvpnendpoint-directoryserviceauthenticationrequest.html

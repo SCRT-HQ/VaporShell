@@ -1,10 +1,10 @@
 function New-VSAmazonMQConfigurationAssociation {
     <#
     .SYNOPSIS
-        Adds an AWS::AmazonMQ::ConfigurationAssociation resource to the template
+        Adds an AWS::AmazonMQ::ConfigurationAssociation resource to the template. Use the AWS CloudFormation AWS::AmazonMQ::ConfigurationAssociation resource to associate a configuration with a broker, or return information about the specified ConfigurationAssociation. Only use one per broker, and don't use a configuration on the broker resource if you have associated a configuration with that broker.
 
     .DESCRIPTION
-        Adds an AWS::AmazonMQ::ConfigurationAssociation resource to the template
+        Adds an AWS::AmazonMQ::ConfigurationAssociation resource to the template. Use the AWS CloudFormation AWS::AmazonMQ::ConfigurationAssociation resource to associate a configuration with a broker, or return information about the specified ConfigurationAssociation. Only use one per broker, and don't use a configuration on the broker resource if you have associated a configuration with that broker.
 
     .LINK
         http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-amazonmq-configurationassociation.html

@@ -1,10 +1,11 @@
 function Add-VSGlueDataCatalogEncryptionSettingsDataCatalogEncryptionSettings {
     <#
     .SYNOPSIS
-        Adds an AWS::Glue::DataCatalogEncryptionSettings.DataCatalogEncryptionSettings resource property to the template
+        Adds an AWS::Glue::DataCatalogEncryptionSettings.DataCatalogEncryptionSettings resource property to the template. Contains configuration information for maintaining Data Catalog security.
 
     .DESCRIPTION
-        Adds an AWS::Glue::DataCatalogEncryptionSettings.DataCatalogEncryptionSettings resource property to the template
+        Adds an AWS::Glue::DataCatalogEncryptionSettings.DataCatalogEncryptionSettings resource property to the template.
+Contains configuration information for maintaining Data Catalog security.
 
     .LINK
         http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-glue-datacatalogencryptionsettings-datacatalogencryptionsettings.html

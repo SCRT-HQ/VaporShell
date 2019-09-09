@@ -1,10 +1,13 @@
 function Add-VSGreengrassConnectorDefinitionVersionConnector {
     <#
     .SYNOPSIS
-        Adds an AWS::Greengrass::ConnectorDefinitionVersion.Connector resource property to the template
+        Adds an AWS::Greengrass::ConnectorDefinitionVersion.Connector resource property to the template. <a name="aws-properties-greengrass-connectordefinitionversion-connector-description"></a>Connectors are modules that provide built-in integration with local infrastructure, device protocols, AWS, and other cloud services. For more information, see Integrate with Services and Protocols Using Greengrass Connectors: https://docs.aws.amazon.com/greengrass/latest/developerguide/connectors.html in the *AWS IoT Greengrass Developer Guide*.
 
     .DESCRIPTION
-        Adds an AWS::Greengrass::ConnectorDefinitionVersion.Connector resource property to the template
+        Adds an AWS::Greengrass::ConnectorDefinitionVersion.Connector resource property to the template.
+<a name="aws-properties-greengrass-connectordefinitionversion-connector-description"></a>Connectors are modules that provide built-in integration with local infrastructure, device protocols, AWS, and other cloud services. For more information, see Integrate with Services and Protocols Using Greengrass Connectors: https://docs.aws.amazon.com/greengrass/latest/developerguide/connectors.html in the *AWS IoT Greengrass Developer Guide*.
+
+<a name="aws-properties-greengrass-connectordefinitionversion-connector-inheritance"></a> In an AWS CloudFormation template, the Connectors property of the  AWS::Greengrass::ConnectorDefinitionVersion : https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-greengrass-connectordefinitionversion.html resource contains a list of Connector property types.
 
     .LINK
         http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-greengrass-connectordefinitionversion-connector.html

@@ -1,10 +1,11 @@
 function Add-VSConfigRemediationConfigurationExecutionControls {
     <#
     .SYNOPSIS
-        Adds an AWS::Config::RemediationConfiguration.ExecutionControls resource property to the template
+        Adds an AWS::Config::RemediationConfiguration.ExecutionControls resource property to the template. 
 
     .DESCRIPTION
-        Adds an AWS::Config::RemediationConfiguration.ExecutionControls resource property to the template
+        Adds an AWS::Config::RemediationConfiguration.ExecutionControls resource property to the template.
+
 
     .LINK
         http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-config-remediationconfiguration-executioncontrols.html

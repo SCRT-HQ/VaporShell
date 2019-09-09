@@ -1,10 +1,10 @@
 function New-VSEFSMountTarget {
     <#
     .SYNOPSIS
-        Adds an AWS::EFS::MountTarget resource to the template
+        Adds an AWS::EFS::MountTarget resource to the template. The AWS::EFS::MountTarget resource is an Amazon EFS resource that creates a mount target for an EFS file system. You can then mount the file system on Amazon EC2 instances or other resources by using the mount target.
 
     .DESCRIPTION
-        Adds an AWS::EFS::MountTarget resource to the template
+        Adds an AWS::EFS::MountTarget resource to the template. The AWS::EFS::MountTarget resource is an Amazon EFS resource that creates a mount target for an EFS file system. You can then mount the file system on Amazon EC2 instances or other resources by using the mount target.
 
     .LINK
         http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-efs-mounttarget.html

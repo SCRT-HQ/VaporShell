@@ -1,10 +1,10 @@
 function New-VSCloudWatchAnomalyDetector {
     <#
     .SYNOPSIS
-        Adds an AWS::CloudWatch::AnomalyDetector resource to the template
+        Adds an AWS::CloudWatch::AnomalyDetector resource to the template. The AWS::CloudWatch::AnomalyDetector type specifies an anomaly detection band for a certain metric and statistic. The band represents the expected "normal" range for the metric values. Anomaly detection bands can be used for visualization of a metric's expected values, and for alarms.
 
     .DESCRIPTION
-        Adds an AWS::CloudWatch::AnomalyDetector resource to the template
+        Adds an AWS::CloudWatch::AnomalyDetector resource to the template. The AWS::CloudWatch::AnomalyDetector type specifies an anomaly detection band for a certain metric and statistic. The band represents the expected "normal" range for the metric values. Anomaly detection bands can be used for visualization of a metric's expected values, and for alarms.
 
     .LINK
         http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-cloudwatch-anomalydetector.html

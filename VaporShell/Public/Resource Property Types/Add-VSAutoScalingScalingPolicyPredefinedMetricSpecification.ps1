@@ -1,10 +1,11 @@
 function Add-VSAutoScalingScalingPolicyPredefinedMetricSpecification {
     <#
     .SYNOPSIS
-        Adds an AWS::AutoScaling::ScalingPolicy.PredefinedMetricSpecification resource property to the template
+        Adds an AWS::AutoScaling::ScalingPolicy.PredefinedMetricSpecification resource property to the template. PredefinedMetricSpecification is a subproperty of TargetTrackingConfiguration: https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-autoscaling-scalingpolicy-targettrackingconfiguration.html that configures a predefined metric for a target tracking policy to use with Amazon EC2 Auto Scaling.
 
     .DESCRIPTION
-        Adds an AWS::AutoScaling::ScalingPolicy.PredefinedMetricSpecification resource property to the template
+        Adds an AWS::AutoScaling::ScalingPolicy.PredefinedMetricSpecification resource property to the template.
+PredefinedMetricSpecification is a subproperty of TargetTrackingConfiguration: https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-autoscaling-scalingpolicy-targettrackingconfiguration.html that configures a predefined metric for a target tracking policy to use with Amazon EC2 Auto Scaling.
 
     .LINK
         http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-autoscaling-scalingpolicy-predefinedmetricspecification.html

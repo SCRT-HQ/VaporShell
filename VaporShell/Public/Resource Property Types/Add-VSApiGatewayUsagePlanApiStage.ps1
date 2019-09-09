@@ -1,10 +1,11 @@
 function Add-VSApiGatewayUsagePlanApiStage {
     <#
     .SYNOPSIS
-        Adds an AWS::ApiGateway::UsagePlan.ApiStage resource property to the template
+        Adds an AWS::ApiGateway::UsagePlan.ApiStage resource property to the template. ApiStage is a property of the AWS::ApiGateway::UsagePlan: https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-apigateway-usageplan.html resource that specifies which stages and APIs to associate with a usage plan.
 
     .DESCRIPTION
-        Adds an AWS::ApiGateway::UsagePlan.ApiStage resource property to the template
+        Adds an AWS::ApiGateway::UsagePlan.ApiStage resource property to the template.
+ApiStage is a property of the AWS::ApiGateway::UsagePlan: https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-apigateway-usageplan.html resource that specifies which stages and APIs to associate with a usage plan.
 
     .LINK
         http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-apigateway-usageplan-apistage.html

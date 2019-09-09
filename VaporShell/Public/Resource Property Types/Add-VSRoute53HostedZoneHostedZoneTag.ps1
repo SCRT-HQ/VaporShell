@@ -1,10 +1,11 @@
 function Add-VSRoute53HostedZoneHostedZoneTag {
     <#
     .SYNOPSIS
-        Adds an AWS::Route53::HostedZone.HostedZoneTag resource property to the template
+        Adds an AWS::Route53::HostedZone.HostedZoneTag resource property to the template. A complex type that contains information about a tag that you want to add or edit for the specified health check or hosted zone.
 
     .DESCRIPTION
-        Adds an AWS::Route53::HostedZone.HostedZoneTag resource property to the template
+        Adds an AWS::Route53::HostedZone.HostedZoneTag resource property to the template.
+A complex type that contains information about a tag that you want to add or edit for the specified health check or hosted zone.
 
     .LINK
         http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-route53-hostedzone-hostedzonetags.html

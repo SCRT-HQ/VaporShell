@@ -1,10 +1,11 @@
 function Add-VSCodeBuildProjectGitSubmodulesConfig {
     <#
     .SYNOPSIS
-        Adds an AWS::CodeBuild::Project.GitSubmodulesConfig resource property to the template
+        Adds an AWS::CodeBuild::Project.GitSubmodulesConfig resource property to the template. GitSubmodulesConfig is a property of the AWS CodeBuild Project Source: https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-codebuild-project-source.html property type that specifies information about the Git submodules configuration for the build project.
 
     .DESCRIPTION
-        Adds an AWS::CodeBuild::Project.GitSubmodulesConfig resource property to the template
+        Adds an AWS::CodeBuild::Project.GitSubmodulesConfig resource property to the template.
+GitSubmodulesConfig is a property of the AWS CodeBuild Project Source: https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-codebuild-project-source.html property type that specifies information about the Git submodules configuration for the build project.
 
     .LINK
         http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-codebuild-project-gitsubmodulesconfig.html

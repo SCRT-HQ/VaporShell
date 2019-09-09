@@ -1,10 +1,11 @@
 function Add-VSIoTTopicRuleElasticsearchAction {
     <#
     .SYNOPSIS
-        Adds an AWS::IoT::TopicRule.ElasticsearchAction resource property to the template
+        Adds an AWS::IoT::TopicRule.ElasticsearchAction resource property to the template. Describes an action that writes data to an Amazon Elasticsearch Service domain.
 
     .DESCRIPTION
-        Adds an AWS::IoT::TopicRule.ElasticsearchAction resource property to the template
+        Adds an AWS::IoT::TopicRule.ElasticsearchAction resource property to the template.
+Describes an action that writes data to an Amazon Elasticsearch Service domain.
 
     .LINK
         http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iot-topicrule-elasticsearchaction.html

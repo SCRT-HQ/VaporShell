@@ -1,10 +1,10 @@
 function New-VSConfigAggregationAuthorization {
     <#
     .SYNOPSIS
-        Adds an AWS::Config::AggregationAuthorization resource to the template
+        Adds an AWS::Config::AggregationAuthorization resource to the template. An object that represents the authorizations granted to aggregator accounts and regions.
 
     .DESCRIPTION
-        Adds an AWS::Config::AggregationAuthorization resource to the template
+        Adds an AWS::Config::AggregationAuthorization resource to the template. An object that represents the authorizations granted to aggregator accounts and regions.
 
     .LINK
         http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-config-aggregationauthorization.html

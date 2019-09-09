@@ -1,10 +1,10 @@
 function New-VSGlueTrigger {
     <#
     .SYNOPSIS
-        Adds an AWS::Glue::Trigger resource to the template
+        Adds an AWS::Glue::Trigger resource to the template. The AWS::Glue::Trigger resource specifies triggers that run AWS Glue jobs. For more information, see Triggering Jobs in AWS Glue: https://docs.aws.amazon.com/glue/latest/dg/trigger-job.html and Trigger Structure: https://docs.aws.amazon.com/glue/latest/dg/aws-glue-api-jobs-trigger.html#aws-glue-api-jobs-trigger-Trigger in the *AWS Glue Developer Guide*.
 
     .DESCRIPTION
-        Adds an AWS::Glue::Trigger resource to the template
+        Adds an AWS::Glue::Trigger resource to the template. The AWS::Glue::Trigger resource specifies triggers that run AWS Glue jobs. For more information, see Triggering Jobs in AWS Glue: https://docs.aws.amazon.com/glue/latest/dg/trigger-job.html and Trigger Structure: https://docs.aws.amazon.com/glue/latest/dg/aws-glue-api-jobs-trigger.html#aws-glue-api-jobs-trigger-Trigger in the *AWS Glue Developer Guide*.
 
     .LINK
         http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-glue-trigger.html

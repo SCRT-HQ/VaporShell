@@ -1,10 +1,10 @@
 function New-VSBackupBackupPlan {
     <#
     .SYNOPSIS
-        Adds an AWS::Backup::BackupPlan resource to the template
+        Adds an AWS::Backup::BackupPlan resource to the template. Contains an optional backup plan display name and an array of BackupRule objects, each of which specifies a backup rule. Each rule in a backup plan is a separate scheduled task and can back up a different selection of AWS resources.
 
     .DESCRIPTION
-        Adds an AWS::Backup::BackupPlan resource to the template
+        Adds an AWS::Backup::BackupPlan resource to the template. Contains an optional backup plan display name and an array of BackupRule objects, each of which specifies a backup rule. Each rule in a backup plan is a separate scheduled task and can back up a different selection of AWS resources.
 
     .LINK
         http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-backup-backupplan.html

@@ -1,10 +1,10 @@
 function New-VSSNSSubscription {
     <#
     .SYNOPSIS
-        Adds an AWS::SNS::Subscription resource to the template
+        Adds an AWS::SNS::Subscription resource to the template. The AWS::SNS::Subscription resource subscribes an endpoint to an Amazon Simple Notification Service (Amazon SNS topic. For a subscription to be created, the owner of the endpoint must confirm the subscription.
 
     .DESCRIPTION
-        Adds an AWS::SNS::Subscription resource to the template
+        Adds an AWS::SNS::Subscription resource to the template. The AWS::SNS::Subscription resource subscribes an endpoint to an Amazon Simple Notification Service (Amazon SNS topic. For a subscription to be created, the owner of the endpoint must confirm the subscription.
 
     .LINK
         http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-sns-subscription.html

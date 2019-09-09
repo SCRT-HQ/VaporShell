@@ -1,10 +1,11 @@
 function Add-VSECSTaskDefinitionLogConfiguration {
     <#
     .SYNOPSIS
-        Adds an AWS::ECS::TaskDefinition.LogConfiguration resource property to the template
+        Adds an AWS::ECS::TaskDefinition.LogConfiguration resource property to the template. The LogConfiguration property specifies log configuration options to send to a custom log driver for the container.
 
     .DESCRIPTION
-        Adds an AWS::ECS::TaskDefinition.LogConfiguration resource property to the template
+        Adds an AWS::ECS::TaskDefinition.LogConfiguration resource property to the template.
+The LogConfiguration property specifies log configuration options to send to a custom log driver for the container.
 
     .LINK
         http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ecs-taskdefinition-containerdefinitions-logconfiguration.html

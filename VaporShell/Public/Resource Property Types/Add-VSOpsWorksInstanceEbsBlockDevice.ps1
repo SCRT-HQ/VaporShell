@@ -1,10 +1,11 @@
 function Add-VSOpsWorksInstanceEbsBlockDevice {
     <#
     .SYNOPSIS
-        Adds an AWS::OpsWorks::Instance.EbsBlockDevice resource property to the template
+        Adds an AWS::OpsWorks::Instance.EbsBlockDevice resource property to the template. Describes an Amazon EBS volume. This data type maps directly to the Amazon EC2 EbsBlockDevice: https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_EbsBlockDevice.html data type.
 
     .DESCRIPTION
-        Adds an AWS::OpsWorks::Instance.EbsBlockDevice resource property to the template
+        Adds an AWS::OpsWorks::Instance.EbsBlockDevice resource property to the template.
+Describes an Amazon EBS volume. This data type maps directly to the Amazon EC2 EbsBlockDevice: https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_EbsBlockDevice.html data type.
 
     .LINK
         http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-opsworks-instance-ebsblockdevice.html

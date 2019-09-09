@@ -1,10 +1,13 @@
 function Add-VSSSMMaintenanceWindowTaskMaintenanceWindowAutomationParameters {
     <#
     .SYNOPSIS
-        Adds an AWS::SSM::MaintenanceWindowTask.MaintenanceWindowAutomationParameters resource property to the template
+        Adds an AWS::SSM::MaintenanceWindowTask.MaintenanceWindowAutomationParameters resource property to the template. The MaintenanceWindowAutomationParameters property type specifies the parameters for an AUTOMATION task type for a maintenance window task in AWS Systems Manager.
 
     .DESCRIPTION
-        Adds an AWS::SSM::MaintenanceWindowTask.MaintenanceWindowAutomationParameters resource property to the template
+        Adds an AWS::SSM::MaintenanceWindowTask.MaintenanceWindowAutomationParameters resource property to the template.
+The MaintenanceWindowAutomationParameters property type specifies the parameters for an AUTOMATION task type for a maintenance window task in AWS Systems Manager.
+
+MaintenanceWindowAutomationParameters is a property of the TaskInvocationParameters: https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ssm-maintenancewindowtask-taskinvocationparameters.html property type.
 
     .LINK
         http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ssm-maintenancewindowtask-maintenancewindowautomationparameters.html

@@ -1,10 +1,10 @@
 function New-VSOpsWorksVolume {
     <#
     .SYNOPSIS
-        Adds an AWS::OpsWorks::Volume resource to the template
+        Adds an AWS::OpsWorks::Volume resource to the template. Describes an instance's Amazon EBS volume.
 
     .DESCRIPTION
-        Adds an AWS::OpsWorks::Volume resource to the template
+        Adds an AWS::OpsWorks::Volume resource to the template. Describes an instance's Amazon EBS volume.
 
     .LINK
         http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-opsworks-volume.html

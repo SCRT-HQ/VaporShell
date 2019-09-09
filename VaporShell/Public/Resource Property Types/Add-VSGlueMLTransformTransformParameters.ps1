@@ -1,10 +1,11 @@
 function Add-VSGlueMLTransformTransformParameters {
     <#
     .SYNOPSIS
-        Adds an AWS::Glue::MLTransform.TransformParameters resource property to the template
+        Adds an AWS::Glue::MLTransform.TransformParameters resource property to the template. The algorithm-specific parameters that are associated with the machine learning transform.
 
     .DESCRIPTION
-        Adds an AWS::Glue::MLTransform.TransformParameters resource property to the template
+        Adds an AWS::Glue::MLTransform.TransformParameters resource property to the template.
+The algorithm-specific parameters that are associated with the machine learning transform.
 
     .LINK
         http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-glue-mltransform-transformparameters.html

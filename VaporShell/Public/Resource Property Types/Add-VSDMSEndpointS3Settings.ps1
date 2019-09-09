@@ -1,10 +1,11 @@
 function Add-VSDMSEndpointS3Settings {
     <#
     .SYNOPSIS
-        Adds an AWS::DMS::Endpoint.S3Settings resource property to the template
+        Adds an AWS::DMS::Endpoint.S3Settings resource property to the template. Settings for exporting data to Amazon S3.
 
     .DESCRIPTION
-        Adds an AWS::DMS::Endpoint.S3Settings resource property to the template
+        Adds an AWS::DMS::Endpoint.S3Settings resource property to the template.
+Settings for exporting data to Amazon S3.
 
     .LINK
         http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-dms-endpoint-s3settings.html

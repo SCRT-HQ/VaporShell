@@ -1,10 +1,11 @@
 function Add-VSEMRClusterMetricDimension {
     <#
     .SYNOPSIS
-        Adds an AWS::EMR::Cluster.MetricDimension resource property to the template
+        Adds an AWS::EMR::Cluster.MetricDimension resource property to the template. MetricDimension is a subproperty of the CloudWatchAlarmDefinition property type. MetricDimension specifies a CloudWatch dimension, which is specified with a Key Value pair. The key is known as a Name in CloudWatch. By default, Amazon EMR uses one dimension whose Key is JobFlowID and Value is a variable representing the cluster ID, which is ${emr.clusterId}. This enables the automatic scaling rule for EMR to bootstrap when the cluster ID becomes available during cluster creation.
 
     .DESCRIPTION
-        Adds an AWS::EMR::Cluster.MetricDimension resource property to the template
+        Adds an AWS::EMR::Cluster.MetricDimension resource property to the template.
+MetricDimension is a subproperty of the CloudWatchAlarmDefinition property type. MetricDimension specifies a CloudWatch dimension, which is specified with a Key Value pair. The key is known as a Name in CloudWatch. By default, Amazon EMR uses one dimension whose Key is JobFlowID and Value is a variable representing the cluster ID, which is ${emr.clusterId}. This enables the automatic scaling rule for EMR to bootstrap when the cluster ID becomes available during cluster creation.
 
     .LINK
         http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-elasticmapreduce-cluster-metricdimension.html

@@ -1,10 +1,10 @@
 function New-VSSageMakerEndpointConfig {
     <#
     .SYNOPSIS
-        Adds an AWS::SageMaker::EndpointConfig resource to the template
+        Adds an AWS::SageMaker::EndpointConfig resource to the template. The AWS::SageMaker::EndpointConfig resource creates a configuration for an Amazon SageMaker endpoint. For more information, see CreateEndpointConfig: https://docs-aws.amazon.com/sagemaker/latest/dg/API_CreateEndpointConfig.html in the *SageMaker Developer Guide*.
 
     .DESCRIPTION
-        Adds an AWS::SageMaker::EndpointConfig resource to the template
+        Adds an AWS::SageMaker::EndpointConfig resource to the template. The AWS::SageMaker::EndpointConfig resource creates a configuration for an Amazon SageMaker endpoint. For more information, see CreateEndpointConfig: https://docs-aws.amazon.com/sagemaker/latest/dg/API_CreateEndpointConfig.html in the *SageMaker Developer Guide*.
 
     .LINK
         http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-sagemaker-endpointconfig.html

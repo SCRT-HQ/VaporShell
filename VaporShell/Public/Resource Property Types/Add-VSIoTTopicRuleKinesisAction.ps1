@@ -1,10 +1,11 @@
 function Add-VSIoTTopicRuleKinesisAction {
     <#
     .SYNOPSIS
-        Adds an AWS::IoT::TopicRule.KinesisAction resource property to the template
+        Adds an AWS::IoT::TopicRule.KinesisAction resource property to the template. Describes an action to write data to an Amazon Kinesis stream.
 
     .DESCRIPTION
-        Adds an AWS::IoT::TopicRule.KinesisAction resource property to the template
+        Adds an AWS::IoT::TopicRule.KinesisAction resource property to the template.
+Describes an action to write data to an Amazon Kinesis stream.
 
     .LINK
         http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iot-topicrule-kinesisaction.html

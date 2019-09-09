@@ -1,10 +1,10 @@
 function New-VSGuardDutyMaster {
     <#
     .SYNOPSIS
-        Adds an AWS::GuardDuty::Master resource to the template
+        Adds an AWS::GuardDuty::Master resource to the template. You can use the AWS::GuardDuty::Master resource in a GuardDuty member account to accept an invitation from a GuardDuty master account. The invitation to the member account must be sent prior to using the AWS::GuardDuty::Master resource to accept the master account's invitation. You can invite a member account by using the InviteMembers operation of the Amazon GuardDuty API, or by creating an AWS::GuardDuty::Member resource.
 
     .DESCRIPTION
-        Adds an AWS::GuardDuty::Master resource to the template
+        Adds an AWS::GuardDuty::Master resource to the template. You can use the AWS::GuardDuty::Master resource in a GuardDuty member account to accept an invitation from a GuardDuty master account. The invitation to the member account must be sent prior to using the AWS::GuardDuty::Master resource to accept the master account's invitation. You can invite a member account by using the InviteMembers operation of the Amazon GuardDuty API, or by creating an AWS::GuardDuty::Member resource.
 
     .LINK
         http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-guardduty-master.html

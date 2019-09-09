@@ -1,10 +1,13 @@
 function Add-VSSSMMaintenanceWindowTaskMaintenanceWindowLambdaParameters {
     <#
     .SYNOPSIS
-        Adds an AWS::SSM::MaintenanceWindowTask.MaintenanceWindowLambdaParameters resource property to the template
+        Adds an AWS::SSM::MaintenanceWindowTask.MaintenanceWindowLambdaParameters resource property to the template. The MaintenanceWindowLambdaParameters property type specifies the parameters for a LAMBDA task type for a maintenance window task in AWS Systems Manager.
 
     .DESCRIPTION
-        Adds an AWS::SSM::MaintenanceWindowTask.MaintenanceWindowLambdaParameters resource property to the template
+        Adds an AWS::SSM::MaintenanceWindowTask.MaintenanceWindowLambdaParameters resource property to the template.
+The MaintenanceWindowLambdaParameters property type specifies the parameters for a LAMBDA task type for a maintenance window task in AWS Systems Manager.
+
+MaintenanceWindowLambdaParameters is a property of the TaskInvocationParameters: https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ssm-maintenancewindowtask-taskinvocationparameters.html property type.
 
     .LINK
         http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ssm-maintenancewindowtask-maintenancewindowlambdaparameters.html

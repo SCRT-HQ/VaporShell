@@ -1,10 +1,10 @@
 function New-VSCodePipelinePipeline {
     <#
     .SYNOPSIS
-        Adds an AWS::CodePipeline::Pipeline resource to the template
+        Adds an AWS::CodePipeline::Pipeline resource to the template. The AWS::CodePipeline::Pipeline resource creates a CodePipeline pipeline that describes how software changes go through a release process. For more information, see What Is CodePipeline?: https://docs.aws.amazon.com/codepipeline/latest/userguide/welcome.html in the *AWS CodePipeline User Guide*.
 
     .DESCRIPTION
-        Adds an AWS::CodePipeline::Pipeline resource to the template
+        Adds an AWS::CodePipeline::Pipeline resource to the template. The AWS::CodePipeline::Pipeline resource creates a CodePipeline pipeline that describes how software changes go through a release process. For more information, see What Is CodePipeline?: https://docs.aws.amazon.com/codepipeline/latest/userguide/welcome.html in the *AWS CodePipeline User Guide*.
 
     .LINK
         http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-codepipeline-pipeline.html

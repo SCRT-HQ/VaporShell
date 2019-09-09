@@ -1,10 +1,13 @@
 function Add-VSGreengrassResourceDefinitionS3MachineLearningModelResourceData {
     <#
     .SYNOPSIS
-        Adds an AWS::Greengrass::ResourceDefinition.S3MachineLearningModelResourceData resource property to the template
+        Adds an AWS::Greengrass::ResourceDefinition.S3MachineLearningModelResourceData resource property to the template. <a name="aws-properties-greengrass-resourcedefinition-s3machinelearningmodelresourcedata-description"></a>Settings for an Amazon S3 machine learning resource. For more information, see Perform Machine Learning Inference: https://docs.aws.amazon.com/greengrass/latest/developerguide/ml-inference.html in the *AWS IoT Greengrass Developer Guide*.
 
     .DESCRIPTION
-        Adds an AWS::Greengrass::ResourceDefinition.S3MachineLearningModelResourceData resource property to the template
+        Adds an AWS::Greengrass::ResourceDefinition.S3MachineLearningModelResourceData resource property to the template.
+<a name="aws-properties-greengrass-resourcedefinition-s3machinelearningmodelresourcedata-description"></a>Settings for an Amazon S3 machine learning resource. For more information, see Perform Machine Learning Inference: https://docs.aws.amazon.com/greengrass/latest/developerguide/ml-inference.html in the *AWS IoT Greengrass Developer Guide*.
+
+<a name="aws-properties-greengrass-resourcedefinition-s3machinelearningmodelresourcedata-inheritance"></a> In an AWS CloudFormation template, S3MachineLearningModelResourceData can be used in the https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-greengrass-resourcedefinition-resourcedatacontainer.html: https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-greengrass-resourcedefinition-resourcedatacontainer.html property type.
 
     .LINK
         http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-greengrass-resourcedefinition-s3machinelearningmodelresourcedata.html

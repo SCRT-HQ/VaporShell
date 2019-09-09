@@ -1,10 +1,13 @@
 function Add-VSApiGatewayStageAccessLogSetting {
     <#
     .SYNOPSIS
-        Adds an AWS::ApiGateway::Stage.AccessLogSetting resource property to the template
+        Adds an AWS::ApiGateway::Stage.AccessLogSetting resource property to the template. The AccessLogSetting property type specifies settings for logging access in this stage.
 
     .DESCRIPTION
-        Adds an AWS::ApiGateway::Stage.AccessLogSetting resource property to the template
+        Adds an AWS::ApiGateway::Stage.AccessLogSetting resource property to the template.
+The AccessLogSetting property type specifies settings for logging access in this stage.
+
+AccessLogSetting is a property of the AWS::ApiGateway::Stage: https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-apigateway-stage.html resource.
 
     .LINK
         http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-apigateway-stage-accesslogsetting.html

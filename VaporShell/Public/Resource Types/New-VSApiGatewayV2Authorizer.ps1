@@ -1,10 +1,10 @@
 function New-VSApiGatewayV2Authorizer {
     <#
     .SYNOPSIS
-        Adds an AWS::ApiGatewayV2::Authorizer resource to the template
+        Adds an AWS::ApiGatewayV2::Authorizer resource to the template. The AWS::ApiGatewayV2::Authorizer resource updates a Lambda authorizer function. For more information about Lambda authorizer functions for WebSocket APIs, see Create a Lambda REQUEST Authorizer Function: https://docs.aws.amazon.com/apigateway/latest/developerguide/apigateway-websocket-api-lambda-auth.html in the *API Gateway Developer Guide*.
 
     .DESCRIPTION
-        Adds an AWS::ApiGatewayV2::Authorizer resource to the template
+        Adds an AWS::ApiGatewayV2::Authorizer resource to the template. The AWS::ApiGatewayV2::Authorizer resource updates a Lambda authorizer function. For more information about Lambda authorizer functions for WebSocket APIs, see Create a Lambda REQUEST Authorizer Function: https://docs.aws.amazon.com/apigateway/latest/developerguide/apigateway-websocket-api-lambda-auth.html in the *API Gateway Developer Guide*.
 
     .LINK
         http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-apigatewayv2-authorizer.html

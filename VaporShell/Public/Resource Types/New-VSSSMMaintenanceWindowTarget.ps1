@@ -1,10 +1,10 @@
 function New-VSSSMMaintenanceWindowTarget {
     <#
     .SYNOPSIS
-        Adds an AWS::SSM::MaintenanceWindowTarget resource to the template
+        Adds an AWS::SSM::MaintenanceWindowTarget resource to the template. The AWS::SSM::MaintenanceWindowTarget resource registers a target with a maintenance window for AWS Systems Manager. For more information, see  RegisterTargetWithMaintenanceWindow: https://docs.aws.amazon.com/systems-manager/latest/APIReference/API_RegisterTargetWithMaintenanceWindow.html in the *AWS Systems Manager API Reference*.
 
     .DESCRIPTION
-        Adds an AWS::SSM::MaintenanceWindowTarget resource to the template
+        Adds an AWS::SSM::MaintenanceWindowTarget resource to the template. The AWS::SSM::MaintenanceWindowTarget resource registers a target with a maintenance window for AWS Systems Manager. For more information, see  RegisterTargetWithMaintenanceWindow: https://docs.aws.amazon.com/systems-manager/latest/APIReference/API_RegisterTargetWithMaintenanceWindow.html in the *AWS Systems Manager API Reference*.
 
     .LINK
         http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ssm-maintenancewindowtarget.html

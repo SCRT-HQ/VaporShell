@@ -1,10 +1,13 @@
 function Add-VSAppSyncDataSourceDynamoDBConfig {
     <#
     .SYNOPSIS
-        Adds an AWS::AppSync::DataSource.DynamoDBConfig resource property to the template
+        Adds an AWS::AppSync::DataSource.DynamoDBConfig resource property to the template. The DynamoDBConfig property type specifies the AwsRegion and TableName for an Amazon DynamoDB table in your account for an AWS AppSync data source.
 
     .DESCRIPTION
-        Adds an AWS::AppSync::DataSource.DynamoDBConfig resource property to the template
+        Adds an AWS::AppSync::DataSource.DynamoDBConfig resource property to the template.
+The DynamoDBConfig property type specifies the AwsRegion and TableName for an Amazon DynamoDB table in your account for an AWS AppSync data source.
+
+DynamoDBConfig is a property of the AWS::AppSync::DataSource: https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-appsync-datasource.html property type.
 
     .LINK
         http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-appsync-datasource-dynamodbconfig.html

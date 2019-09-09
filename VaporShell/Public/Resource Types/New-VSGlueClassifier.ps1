@@ -1,10 +1,10 @@
 function New-VSGlueClassifier {
     <#
     .SYNOPSIS
-        Adds an AWS::Glue::Classifier resource to the template
+        Adds an AWS::Glue::Classifier resource to the template. The AWS::Glue::Classifier resource creates an AWS Glue classifier that categorizes data sources and specifies schemas. For more information, see Adding Classifiers to a Crawler: https://docs.aws.amazon.com/glue/latest/dg/add-classifier.html and Classifier Structure: https://docs.aws.amazon.com/glue/latest/aws-glue-api-crawler-classifiers.html#aws-glue-api-crawler-classifiers-Classifier in the *AWS Glue Developer Guide*.
 
     .DESCRIPTION
-        Adds an AWS::Glue::Classifier resource to the template
+        Adds an AWS::Glue::Classifier resource to the template. The AWS::Glue::Classifier resource creates an AWS Glue classifier that categorizes data sources and specifies schemas. For more information, see Adding Classifiers to a Crawler: https://docs.aws.amazon.com/glue/latest/dg/add-classifier.html and Classifier Structure: https://docs.aws.amazon.com/glue/latest/aws-glue-api-crawler-classifiers.html#aws-glue-api-crawler-classifiers-Classifier in the *AWS Glue Developer Guide*.
 
     .LINK
         http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-glue-classifier.html

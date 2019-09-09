@@ -1,10 +1,11 @@
 function Add-VSDLMLifecyclePolicyParameters {
     <#
     .SYNOPSIS
-        Adds an AWS::DLM::LifecyclePolicy.Parameters resource property to the template
+        Adds an AWS::DLM::LifecyclePolicy.Parameters resource property to the template. 
 
     .DESCRIPTION
-        Adds an AWS::DLM::LifecyclePolicy.Parameters resource property to the template
+        Adds an AWS::DLM::LifecyclePolicy.Parameters resource property to the template.
+
 
     .LINK
         http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-dlm-lifecyclepolicy-parameters.html

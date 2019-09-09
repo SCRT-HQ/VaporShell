@@ -1,10 +1,11 @@
 function Add-VSGlueClassifierXMLClassifier {
     <#
     .SYNOPSIS
-        Adds an AWS::Glue::Classifier.XMLClassifier resource property to the template
+        Adds an AWS::Glue::Classifier.XMLClassifier resource property to the template. A classifier for XML content.
 
     .DESCRIPTION
-        Adds an AWS::Glue::Classifier.XMLClassifier resource property to the template
+        Adds an AWS::Glue::Classifier.XMLClassifier resource property to the template.
+A classifier for XML content.
 
     .LINK
         http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-glue-classifier-xmlclassifier.html

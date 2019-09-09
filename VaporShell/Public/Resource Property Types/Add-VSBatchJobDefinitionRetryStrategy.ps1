@@ -1,10 +1,11 @@
 function Add-VSBatchJobDefinitionRetryStrategy {
     <#
     .SYNOPSIS
-        Adds an AWS::Batch::JobDefinition.RetryStrategy resource property to the template
+        Adds an AWS::Batch::JobDefinition.RetryStrategy resource property to the template. The retry strategy associated with a job.
 
     .DESCRIPTION
-        Adds an AWS::Batch::JobDefinition.RetryStrategy resource property to the template
+        Adds an AWS::Batch::JobDefinition.RetryStrategy resource property to the template.
+The retry strategy associated with a job.
 
     .LINK
         http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-batch-jobdefinition-retrystrategy.html

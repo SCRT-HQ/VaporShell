@@ -1,10 +1,11 @@
 function Add-VSIoTTopicRuleS3Action {
     <#
     .SYNOPSIS
-        Adds an AWS::IoT::TopicRule.S3Action resource property to the template
+        Adds an AWS::IoT::TopicRule.S3Action resource property to the template. Describes an action to write data to an Amazon S3 bucket.
 
     .DESCRIPTION
-        Adds an AWS::IoT::TopicRule.S3Action resource property to the template
+        Adds an AWS::IoT::TopicRule.S3Action resource property to the template.
+Describes an action to write data to an Amazon S3 bucket.
 
     .LINK
         http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iot-topicrule-s3action.html

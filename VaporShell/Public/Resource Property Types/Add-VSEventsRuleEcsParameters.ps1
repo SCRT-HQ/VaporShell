@@ -1,10 +1,13 @@
 function Add-VSEventsRuleEcsParameters {
     <#
     .SYNOPSIS
-        Adds an AWS::Events::Rule.EcsParameters resource property to the template
+        Adds an AWS::Events::Rule.EcsParameters resource property to the template. The EcsParameters property type specifies custom parameters to be used when the target is an Amazon ECS task.
 
     .DESCRIPTION
-        Adds an AWS::Events::Rule.EcsParameters resource property to the template
+        Adds an AWS::Events::Rule.EcsParameters resource property to the template.
+The EcsParameters property type specifies custom parameters to be used when the target is an Amazon ECS task.
+
+EcsParameters is a property of the Target: https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-events-rule-target.html property type.
 
     .LINK
         http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-events-rule-ecsparameters.html

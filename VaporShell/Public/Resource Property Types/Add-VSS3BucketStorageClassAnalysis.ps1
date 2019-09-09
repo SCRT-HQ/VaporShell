@@ -1,10 +1,11 @@
 function Add-VSS3BucketStorageClassAnalysis {
     <#
     .SYNOPSIS
-        Adds an AWS::S3::Bucket.StorageClassAnalysis resource property to the template
+        Adds an AWS::S3::Bucket.StorageClassAnalysis resource property to the template. Specifies data related to access patterns to be collected and made available to analyze the tradeoffs between different storage classes for an Amazon S3 bucket.
 
     .DESCRIPTION
-        Adds an AWS::S3::Bucket.StorageClassAnalysis resource property to the template
+        Adds an AWS::S3::Bucket.StorageClassAnalysis resource property to the template.
+Specifies data related to access patterns to be collected and made available to analyze the tradeoffs between different storage classes for an Amazon S3 bucket.
 
     .LINK
         http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-s3-bucket-storageclassanalysis.html

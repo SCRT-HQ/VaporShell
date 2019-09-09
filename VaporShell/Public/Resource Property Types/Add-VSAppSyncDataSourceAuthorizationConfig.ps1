@@ -1,10 +1,13 @@
 function Add-VSAppSyncDataSourceAuthorizationConfig {
     <#
     .SYNOPSIS
-        Adds an AWS::AppSync::DataSource.AuthorizationConfig resource property to the template
+        Adds an AWS::AppSync::DataSource.AuthorizationConfig resource property to the template. The AuthorizationConfig property type specifies the authorization type and configuration for an AWS AppSync http data source.
 
     .DESCRIPTION
-        Adds an AWS::AppSync::DataSource.AuthorizationConfig resource property to the template
+        Adds an AWS::AppSync::DataSource.AuthorizationConfig resource property to the template.
+The AuthorizationConfig property type specifies the authorization type and configuration for an AWS AppSync http data source.
+
+AuthorizationConfig is a property of the AWS AppSync DataSource HttpConfig: https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-appsync-datasource-httpconfig.html property type.
 
     .LINK
         http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-appsync-datasource-authorizationconfig.html

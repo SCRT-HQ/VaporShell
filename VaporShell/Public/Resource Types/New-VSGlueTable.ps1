@@ -1,10 +1,10 @@
 function New-VSGlueTable {
     <#
     .SYNOPSIS
-        Adds an AWS::Glue::Table resource to the template
+        Adds an AWS::Glue::Table resource to the template. The AWS::Glue::Table resource specifies tabular data in the AWS Glue data catalog. For more information, see Defining Tables in the AWS Glue Data Catalog: https://docs.aws.amazon.com/glue/latest/dg/tables-described.html and Table Structure : https://docs.aws.amazon.com/glue/latest/dg/aws-glue-api-catalog-tables.html#aws-glue-api-catalog-tables-Table in the *AWS Glue Developer Guide*.
 
     .DESCRIPTION
-        Adds an AWS::Glue::Table resource to the template
+        Adds an AWS::Glue::Table resource to the template. The AWS::Glue::Table resource specifies tabular data in the AWS Glue data catalog. For more information, see Defining Tables in the AWS Glue Data Catalog: https://docs.aws.amazon.com/glue/latest/dg/tables-described.html and Table Structure : https://docs.aws.amazon.com/glue/latest/dg/aws-glue-api-catalog-tables.html#aws-glue-api-catalog-tables-Table in the *AWS Glue Developer Guide*.
 
     .LINK
         http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-glue-table.html

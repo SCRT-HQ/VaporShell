@@ -1,10 +1,11 @@
 function Add-VSS3BucketNotificationFilter {
     <#
     .SYNOPSIS
-        Adds an AWS::S3::Bucket.NotificationFilter resource property to the template
+        Adds an AWS::S3::Bucket.NotificationFilter resource property to the template. Specifies object key name filtering rules. For information about key name filtering, see Configuring Event Notifications: https://docs.aws.amazon.com/AmazonS3/latest/dev/NotificationHowTo.html in the *Amazon Simple Storage Service Developer Guide*.
 
     .DESCRIPTION
-        Adds an AWS::S3::Bucket.NotificationFilter resource property to the template
+        Adds an AWS::S3::Bucket.NotificationFilter resource property to the template.
+Specifies object key name filtering rules. For information about key name filtering, see Configuring Event Notifications: https://docs.aws.amazon.com/AmazonS3/latest/dev/NotificationHowTo.html in the *Amazon Simple Storage Service Developer Guide*.
 
     .LINK
         http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-s3-bucket-notificationconfiguration-config-filter.html

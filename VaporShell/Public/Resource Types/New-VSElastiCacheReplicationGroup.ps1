@@ -1,10 +1,10 @@
 function New-VSElastiCacheReplicationGroup {
     <#
     .SYNOPSIS
-        Adds an AWS::ElastiCache::ReplicationGroup resource to the template
+        Adds an AWS::ElastiCache::ReplicationGroup resource to the template. The AWS::ElastiCache::ReplicationGroup resource creates an Amazon ElastiCache Redis replication group. A replication group is a collection of cache clusters, where one of the clusters is a primary read-write cluster and the others are read-only replicas.
 
     .DESCRIPTION
-        Adds an AWS::ElastiCache::ReplicationGroup resource to the template
+        Adds an AWS::ElastiCache::ReplicationGroup resource to the template. The AWS::ElastiCache::ReplicationGroup resource creates an Amazon ElastiCache Redis replication group. A replication group is a collection of cache clusters, where one of the clusters is a primary read-write cluster and the others are read-only replicas.
 
     .LINK
         http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-elasticache-replicationgroup.html

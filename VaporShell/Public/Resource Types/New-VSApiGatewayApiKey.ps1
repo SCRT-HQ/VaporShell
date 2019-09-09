@@ -1,10 +1,10 @@
 function New-VSApiGatewayApiKey {
     <#
     .SYNOPSIS
-        Adds an AWS::ApiGateway::ApiKey resource to the template
+        Adds an AWS::ApiGateway::ApiKey resource to the template. The AWS::ApiGateway::ApiKey resource creates a unique key that you can distribute to clients who are executing API Gateway Method resources that require an API key. To specify which API key clients must use, map the API key with the RestApi and Stage resources that include the methods that require a key.
 
     .DESCRIPTION
-        Adds an AWS::ApiGateway::ApiKey resource to the template
+        Adds an AWS::ApiGateway::ApiKey resource to the template. The AWS::ApiGateway::ApiKey resource creates a unique key that you can distribute to clients who are executing API Gateway Method resources that require an API key. To specify which API key clients must use, map the API key with the RestApi and Stage resources that include the methods that require a key.
 
     .LINK
         http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-apigateway-apikey.html

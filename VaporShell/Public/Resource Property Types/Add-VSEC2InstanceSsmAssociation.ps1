@@ -1,10 +1,13 @@
 function Add-VSEC2InstanceSsmAssociation {
     <#
     .SYNOPSIS
-        Adds an AWS::EC2::Instance.SsmAssociation resource property to the template
+        Adds an AWS::EC2::Instance.SsmAssociation resource property to the template. Specifies the SSM document and parameter values in AWS Systems Manager to associate with an instance.
 
     .DESCRIPTION
-        Adds an AWS::EC2::Instance.SsmAssociation resource property to the template
+        Adds an AWS::EC2::Instance.SsmAssociation resource property to the template.
+Specifies the SSM document and parameter values in AWS Systems Manager to associate with an instance.
+
+SsmAssociations is a property of the AWS::EC2::Instance: https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-instance.html resource.
 
     .LINK
         http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-instance-ssmassociations.html

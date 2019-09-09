@@ -1,10 +1,11 @@
 function Add-VSGlueCrawlerS3Target {
     <#
     .SYNOPSIS
-        Adds an AWS::Glue::Crawler.S3Target resource property to the template
+        Adds an AWS::Glue::Crawler.S3Target resource property to the template. Specifies a data store in Amazon Simple Storage Service (Amazon S3.
 
     .DESCRIPTION
-        Adds an AWS::Glue::Crawler.S3Target resource property to the template
+        Adds an AWS::Glue::Crawler.S3Target resource property to the template.
+Specifies a data store in Amazon Simple Storage Service (Amazon S3.
 
     .LINK
         http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-glue-crawler-s3target.html

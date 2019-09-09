@@ -1,10 +1,11 @@
 function Add-VSCodePipelinePipelineInputArtifact {
     <#
     .SYNOPSIS
-        Adds an AWS::CodePipeline::Pipeline.InputArtifact resource property to the template
+        Adds an AWS::CodePipeline::Pipeline.InputArtifact resource property to the template. Represents information about an artifact to be worked on, such as a test or build artifact.
 
     .DESCRIPTION
-        Adds an AWS::CodePipeline::Pipeline.InputArtifact resource property to the template
+        Adds an AWS::CodePipeline::Pipeline.InputArtifact resource property to the template.
+Represents information about an artifact to be worked on, such as a test or build artifact.
 
     .LINK
         http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-codepipeline-pipeline-stages-actions-inputartifacts.html

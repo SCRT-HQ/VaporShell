@@ -1,10 +1,10 @@
 function New-VSServiceCatalogStackSetConstraint {
     <#
     .SYNOPSIS
-        Adds an AWS::ServiceCatalog::StackSetConstraint resource to the template
+        Adds an AWS::ServiceCatalog::StackSetConstraint resource to the template. Specifies a StackSet constraint.
 
     .DESCRIPTION
-        Adds an AWS::ServiceCatalog::StackSetConstraint resource to the template
+        Adds an AWS::ServiceCatalog::StackSetConstraint resource to the template. Specifies a StackSet constraint.
 
     .LINK
         http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-servicecatalog-stacksetconstraint.html

@@ -1,10 +1,10 @@
 function New-VSAppSyncDataSource {
     <#
     .SYNOPSIS
-        Adds an AWS::AppSync::DataSource resource to the template
+        Adds an AWS::AppSync::DataSource resource to the template. The AWS::AppSync::DataSource resource creates data sources for resolvers in AWS AppSync to connect to, such as Amazon DynamoDB, AWS Lambda, and Amazon Elasticsearch Service. Resolvers use these data sources to fetch data when clients make GraphQL calls.
 
     .DESCRIPTION
-        Adds an AWS::AppSync::DataSource resource to the template
+        Adds an AWS::AppSync::DataSource resource to the template. The AWS::AppSync::DataSource resource creates data sources for resolvers in AWS AppSync to connect to, such as Amazon DynamoDB, AWS Lambda, and Amazon Elasticsearch Service. Resolvers use these data sources to fetch data when clients make GraphQL calls.
 
     .LINK
         http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-appsync-datasource.html

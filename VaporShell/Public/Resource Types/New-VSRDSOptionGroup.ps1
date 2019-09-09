@@ -1,10 +1,10 @@
 function New-VSRDSOptionGroup {
     <#
     .SYNOPSIS
-        Adds an AWS::RDS::OptionGroup resource to the template
+        Adds an AWS::RDS::OptionGroup resource to the template. The AWS::RDS::OptionGroup resource creates an option group, to enable and configure features that are specific to a particular DB engine.
 
     .DESCRIPTION
-        Adds an AWS::RDS::OptionGroup resource to the template
+        Adds an AWS::RDS::OptionGroup resource to the template. The AWS::RDS::OptionGroup resource creates an option group, to enable and configure features that are specific to a particular DB engine.
 
     .LINK
         http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-rds-optiongroup.html

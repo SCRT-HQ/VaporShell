@@ -1,10 +1,10 @@
 function New-VSBudgetsBudget {
     <#
     .SYNOPSIS
-        Adds an AWS::Budgets::Budget resource to the template
+        Adds an AWS::Budgets::Budget resource to the template. The AWS::Budgets::Budget resource creates, replaces, or deletes budgets for Billing and Cost Management. For more information, see Managing Your Costs with Budgets: https://docs.aws.amazon.com/awsaccountbilling/latest/aboutv2/budgets-managing-costs.html in the *AWS Billing and Cost Management User Guide*.
 
     .DESCRIPTION
-        Adds an AWS::Budgets::Budget resource to the template
+        Adds an AWS::Budgets::Budget resource to the template. The AWS::Budgets::Budget resource creates, replaces, or deletes budgets for Billing and Cost Management. For more information, see Managing Your Costs with Budgets: https://docs.aws.amazon.com/awsaccountbilling/latest/aboutv2/budgets-managing-costs.html in the *AWS Billing and Cost Management User Guide*.
 
     .LINK
         http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-budgets-budget.html

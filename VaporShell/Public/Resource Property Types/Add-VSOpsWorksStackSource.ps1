@@ -1,10 +1,11 @@
 function Add-VSOpsWorksStackSource {
     <#
     .SYNOPSIS
-        Adds an AWS::OpsWorks::Stack.Source resource property to the template
+        Adds an AWS::OpsWorks::Stack.Source resource property to the template. Contains the information required to retrieve an app or cookbook from a repository. For more information, see Creating Apps: https://docs.aws.amazon.com/opsworks/latest/userguide/workingapps-creating.html or Custom Recipes and Cookbooks: https://docs.aws.amazon.com/opsworks/latest/userguide/workingcookbook.html.
 
     .DESCRIPTION
-        Adds an AWS::OpsWorks::Stack.Source resource property to the template
+        Adds an AWS::OpsWorks::Stack.Source resource property to the template.
+Contains the information required to retrieve an app or cookbook from a repository. For more information, see Creating Apps: https://docs.aws.amazon.com/opsworks/latest/userguide/workingapps-creating.html or Custom Recipes and Cookbooks: https://docs.aws.amazon.com/opsworks/latest/userguide/workingcookbook.html.
 
     .LINK
         http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-opsworks-stack-source.html

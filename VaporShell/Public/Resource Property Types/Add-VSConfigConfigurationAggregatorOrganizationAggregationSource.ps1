@@ -1,10 +1,11 @@
 function Add-VSConfigConfigurationAggregatorOrganizationAggregationSource {
     <#
     .SYNOPSIS
-        Adds an AWS::Config::ConfigurationAggregator.OrganizationAggregationSource resource property to the template
+        Adds an AWS::Config::ConfigurationAggregator.OrganizationAggregationSource resource property to the template. This object contains regions to set up the aggregator and an IAM role to retrieve organization details.
 
     .DESCRIPTION
-        Adds an AWS::Config::ConfigurationAggregator.OrganizationAggregationSource resource property to the template
+        Adds an AWS::Config::ConfigurationAggregator.OrganizationAggregationSource resource property to the template.
+This object contains regions to set up the aggregator and an IAM role to retrieve organization details.
 
     .LINK
         http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-config-configurationaggregator-organizationaggregationsource.html

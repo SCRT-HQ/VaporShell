@@ -1,10 +1,13 @@
 function Add-VSMediaLiveChannelAudioLanguageSelection {
     <#
     .SYNOPSIS
-        Adds an AWS::MediaLive::Channel.AudioLanguageSelection resource property to the template
+        Adds an AWS::MediaLive::Channel.AudioLanguageSelection resource property to the template. Information about the audio language to extract.
 
     .DESCRIPTION
-        Adds an AWS::MediaLive::Channel.AudioLanguageSelection resource property to the template
+        Adds an AWS::MediaLive::Channel.AudioLanguageSelection resource property to the template.
+Information about the audio language to extract.
+
+The parent of this entity is AudioSelectorSettings.
 
     .LINK
         http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-medialive-channel-audiolanguageselection.html

@@ -1,10 +1,11 @@
 function Add-VSElasticsearchDomainSnapshotOptions {
     <#
     .SYNOPSIS
-        Adds an AWS::Elasticsearch::Domain.SnapshotOptions resource property to the template
+        Adds an AWS::Elasticsearch::Domain.SnapshotOptions resource property to the template. The automated snapshot configuration for the Amazon ES domain indices.
 
     .DESCRIPTION
-        Adds an AWS::Elasticsearch::Domain.SnapshotOptions resource property to the template
+        Adds an AWS::Elasticsearch::Domain.SnapshotOptions resource property to the template.
+The automated snapshot configuration for the Amazon ES domain indices.
 
     .LINK
         http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-elasticsearch-domain-snapshotoptions.html

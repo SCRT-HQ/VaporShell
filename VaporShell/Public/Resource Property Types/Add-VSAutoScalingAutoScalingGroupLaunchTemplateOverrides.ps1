@@ -1,10 +1,11 @@
 function Add-VSAutoScalingAutoScalingGroupLaunchTemplateOverrides {
     <#
     .SYNOPSIS
-        Adds an AWS::AutoScaling::AutoScalingGroup.LaunchTemplateOverrides resource property to the template
+        Adds an AWS::AutoScaling::AutoScalingGroup.LaunchTemplateOverrides resource property to the template. 
 
     .DESCRIPTION
-        Adds an AWS::AutoScaling::AutoScalingGroup.LaunchTemplateOverrides resource property to the template
+        Adds an AWS::AutoScaling::AutoScalingGroup.LaunchTemplateOverrides resource property to the template.
+
 
     .LINK
         http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/cfn-as-mixedinstancespolicy-launchtemplateoverrides.html

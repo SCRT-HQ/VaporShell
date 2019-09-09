@@ -1,10 +1,10 @@
 function New-VSTransferServer {
     <#
     .SYNOPSIS
-        Adds an AWS::Transfer::Server resource to the template
+        Adds an AWS::Transfer::Server resource to the template. Instantiates an autoscaling virtual server based on Secure File Transfer Protocol (SFTP in AWS. When you make updates to your server or when you work with users, use the service-generated ServerId property that is assigned to the newly created server.
 
     .DESCRIPTION
-        Adds an AWS::Transfer::Server resource to the template
+        Adds an AWS::Transfer::Server resource to the template. Instantiates an autoscaling virtual server based on Secure File Transfer Protocol (SFTP in AWS. When you make updates to your server or when you work with users, use the service-generated ServerId property that is assigned to the newly created server.
 
     .LINK
         http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-transfer-server.html

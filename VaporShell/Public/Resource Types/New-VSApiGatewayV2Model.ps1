@@ -1,10 +1,10 @@
 function New-VSApiGatewayV2Model {
     <#
     .SYNOPSIS
-        Adds an AWS::ApiGatewayV2::Model resource to the template
+        Adds an AWS::ApiGatewayV2::Model resource to the template. The AWS::ApiGatewayV2::Model resource updates data model for a WebSocket API. For more information, see Model Selection Expressions: https://docs.aws.amazon.com/apigateway/latest/developerguide/apigateway-websocket-api-selection-expressions.html#apigateway-websocket-api-model-selection-expressions in the *API Gateway Developer Guide*.
 
     .DESCRIPTION
-        Adds an AWS::ApiGatewayV2::Model resource to the template
+        Adds an AWS::ApiGatewayV2::Model resource to the template. The AWS::ApiGatewayV2::Model resource updates data model for a WebSocket API. For more information, see Model Selection Expressions: https://docs.aws.amazon.com/apigateway/latest/developerguide/apigateway-websocket-api-selection-expressions.html#apigateway-websocket-api-model-selection-expressions in the *API Gateway Developer Guide*.
 
     .LINK
         http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-apigatewayv2-model.html

@@ -1,10 +1,11 @@
 function Add-VSS3BucketQueueConfiguration {
     <#
     .SYNOPSIS
-        Adds an AWS::S3::Bucket.QueueConfiguration resource property to the template
+        Adds an AWS::S3::Bucket.QueueConfiguration resource property to the template. Specifies the configuration for publishing messages to an Amazon Simple Queue Service (Amazon SQS queue when Amazon S3 detects specified events.
 
     .DESCRIPTION
-        Adds an AWS::S3::Bucket.QueueConfiguration resource property to the template
+        Adds an AWS::S3::Bucket.QueueConfiguration resource property to the template.
+Specifies the configuration for publishing messages to an Amazon Simple Queue Service (Amazon SQS queue when Amazon S3 detects specified events.
 
     .LINK
         http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-s3-bucket-notificationconfig-queueconfig.html

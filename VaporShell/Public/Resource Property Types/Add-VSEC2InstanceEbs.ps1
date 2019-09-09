@@ -1,10 +1,13 @@
 function Add-VSEC2InstanceEbs {
     <#
     .SYNOPSIS
-        Adds an AWS::EC2::Instance.Ebs resource property to the template
+        Adds an AWS::EC2::Instance.Ebs resource property to the template. Specifies a block device for an EBS volume.
 
     .DESCRIPTION
-        Adds an AWS::EC2::Instance.Ebs resource property to the template
+        Adds an AWS::EC2::Instance.Ebs resource property to the template.
+Specifies a block device for an EBS volume.
+
+Ebs is a property of the  Amazon EC2 BlockDeviceMapping: https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-blockdev-mapping.html property.
 
     .LINK
         http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-blockdev-template.html

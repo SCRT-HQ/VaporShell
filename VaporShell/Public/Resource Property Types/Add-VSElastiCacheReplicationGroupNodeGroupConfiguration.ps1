@@ -1,10 +1,11 @@
 function Add-VSElastiCacheReplicationGroupNodeGroupConfiguration {
     <#
     .SYNOPSIS
-        Adds an AWS::ElastiCache::ReplicationGroup.NodeGroupConfiguration resource property to the template
+        Adds an AWS::ElastiCache::ReplicationGroup.NodeGroupConfiguration resource property to the template. NodeGroupConfiguration is a property of the AWS::ElastiCache::ReplicationGroup resource that configures an Amazon ElastiCache (ElastiCache Redis cluster node group.
 
     .DESCRIPTION
-        Adds an AWS::ElastiCache::ReplicationGroup.NodeGroupConfiguration resource property to the template
+        Adds an AWS::ElastiCache::ReplicationGroup.NodeGroupConfiguration resource property to the template.
+NodeGroupConfiguration is a property of the AWS::ElastiCache::ReplicationGroup resource that configures an Amazon ElastiCache (ElastiCache Redis cluster node group.
 
     .LINK
         http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-elasticache-replicationgroup-nodegroupconfiguration.html

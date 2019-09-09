@@ -1,10 +1,11 @@
 function Add-VSEMRClusterStepConfig {
     <#
     .SYNOPSIS
-        Adds an AWS::EMR::Cluster.StepConfig resource property to the template
+        Adds an AWS::EMR::Cluster.StepConfig resource property to the template. StepConfig is a property of the AWS::EMR::Cluster resource. The StepConfig property type specifies a cluster (job flow step, which runs only on the master node. Steps are used to submit data processing jobs to the cluster.
 
     .DESCRIPTION
-        Adds an AWS::EMR::Cluster.StepConfig resource property to the template
+        Adds an AWS::EMR::Cluster.StepConfig resource property to the template.
+StepConfig is a property of the AWS::EMR::Cluster resource. The StepConfig property type specifies a cluster (job flow step, which runs only on the master node. Steps are used to submit data processing jobs to the cluster.
 
     .LINK
         http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-elasticmapreduce-cluster-stepconfig.html

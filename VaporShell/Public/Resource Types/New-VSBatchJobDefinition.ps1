@@ -1,10 +1,10 @@
 function New-VSBatchJobDefinition {
     <#
     .SYNOPSIS
-        Adds an AWS::Batch::JobDefinition resource to the template
+        Adds an AWS::Batch::JobDefinition resource to the template. The AWS::Batch::JobDefinition resource specifies the parameters for an AWS Batch job definition. For more information, see Job Definitions: https://docs.aws.amazon.com/batch/latest/userguide/job_definitions.html in the *AWS Batch User Guide*.
 
     .DESCRIPTION
-        Adds an AWS::Batch::JobDefinition resource to the template
+        Adds an AWS::Batch::JobDefinition resource to the template. The AWS::Batch::JobDefinition resource specifies the parameters for an AWS Batch job definition. For more information, see Job Definitions: https://docs.aws.amazon.com/batch/latest/userguide/job_definitions.html in the *AWS Batch User Guide*.
 
     .LINK
         http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-batch-jobdefinition.html

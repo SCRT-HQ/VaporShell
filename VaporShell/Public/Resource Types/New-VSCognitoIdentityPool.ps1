@@ -1,10 +1,10 @@
 function New-VSCognitoIdentityPool {
     <#
     .SYNOPSIS
-        Adds an AWS::Cognito::IdentityPool resource to the template
+        Adds an AWS::Cognito::IdentityPool resource to the template. The AWS::Cognito::IdentityPool resource creates an Amazon Cognito identity pool.
 
     .DESCRIPTION
-        Adds an AWS::Cognito::IdentityPool resource to the template
+        Adds an AWS::Cognito::IdentityPool resource to the template. The AWS::Cognito::IdentityPool resource creates an Amazon Cognito identity pool.
 
     .LINK
         http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-cognito-identitypool.html

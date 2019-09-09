@@ -1,10 +1,11 @@
 function Add-VSElasticBeanstalkConfigurationTemplateSourceConfiguration {
     <#
     .SYNOPSIS
-        Adds an AWS::ElasticBeanstalk::ConfigurationTemplate.SourceConfiguration resource property to the template
+        Adds an AWS::ElasticBeanstalk::ConfigurationTemplate.SourceConfiguration resource property to the template. An AWS Elastic Beanstalk configuration template to base a new one on. You can use it to define a AWS::ElasticBeanstalk::ConfigurationTemplate: https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-beanstalk-configurationtemplate.html resource.
 
     .DESCRIPTION
-        Adds an AWS::ElasticBeanstalk::ConfigurationTemplate.SourceConfiguration resource property to the template
+        Adds an AWS::ElasticBeanstalk::ConfigurationTemplate.SourceConfiguration resource property to the template.
+An AWS Elastic Beanstalk configuration template to base a new one on. You can use it to define a AWS::ElasticBeanstalk::ConfigurationTemplate: https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-beanstalk-configurationtemplate.html resource.
 
     .LINK
         http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-elasticbeanstalk-configurationtemplate-sourceconfiguration.html

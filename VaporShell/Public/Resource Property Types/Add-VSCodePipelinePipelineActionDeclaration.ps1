@@ -1,10 +1,11 @@
 function Add-VSCodePipelinePipelineActionDeclaration {
     <#
     .SYNOPSIS
-        Adds an AWS::CodePipeline::Pipeline.ActionDeclaration resource property to the template
+        Adds an AWS::CodePipeline::Pipeline.ActionDeclaration resource property to the template. Represents information about an action declaration.
 
     .DESCRIPTION
-        Adds an AWS::CodePipeline::Pipeline.ActionDeclaration resource property to the template
+        Adds an AWS::CodePipeline::Pipeline.ActionDeclaration resource property to the template.
+Represents information about an action declaration.
 
     .LINK
         http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-codepipeline-pipeline-stages-actions.html

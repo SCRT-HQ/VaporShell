@@ -1,10 +1,11 @@
 function Add-VSCodeBuildProjectProjectCache {
     <#
     .SYNOPSIS
-        Adds an AWS::CodeBuild::Project.ProjectCache resource property to the template
+        Adds an AWS::CodeBuild::Project.ProjectCache resource property to the template. ProjectCache is a property of the AWS CodeBuild Project: https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-codebuild-project.html resource that specifies information about the cache for the build project.
 
     .DESCRIPTION
-        Adds an AWS::CodeBuild::Project.ProjectCache resource property to the template
+        Adds an AWS::CodeBuild::Project.ProjectCache resource property to the template.
+ProjectCache is a property of the AWS CodeBuild Project: https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-codebuild-project.html resource that specifies information about the cache for the build project.
 
     .LINK
         http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-codebuild-project-projectcache.html

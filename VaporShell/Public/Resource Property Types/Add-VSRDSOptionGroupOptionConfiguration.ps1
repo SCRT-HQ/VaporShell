@@ -1,10 +1,11 @@
 function Add-VSRDSOptionGroupOptionConfiguration {
     <#
     .SYNOPSIS
-        Adds an AWS::RDS::OptionGroup.OptionConfiguration resource property to the template
+        Adds an AWS::RDS::OptionGroup.OptionConfiguration resource property to the template. The OptionConfiguration property type specifies an individual option, and its settings, within an AWS::RDS::OptionGroup resource.
 
     .DESCRIPTION
-        Adds an AWS::RDS::OptionGroup.OptionConfiguration resource property to the template
+        Adds an AWS::RDS::OptionGroup.OptionConfiguration resource property to the template.
+The OptionConfiguration property type specifies an individual option, and its settings, within an AWS::RDS::OptionGroup resource.
 
     .LINK
         http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-rds-optiongroup-optionconfigurations.html

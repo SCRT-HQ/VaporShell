@@ -1,10 +1,10 @@
 function New-VSPinpointEmailConfigurationSet {
     <#
     .SYNOPSIS
-        Adds an AWS::PinpointEmail::ConfigurationSet resource to the template
+        Adds an AWS::PinpointEmail::ConfigurationSet resource to the template. Create a configuration set. *Configuration sets* are groups of rules that you can apply to the emails you send using Amazon Pinpoint. You apply a configuration set to an email by including a reference to the configuration set in the headers of the email. When you apply a configuration set to an email, all of the rules in that configuration set are applied to the email.
 
     .DESCRIPTION
-        Adds an AWS::PinpointEmail::ConfigurationSet resource to the template
+        Adds an AWS::PinpointEmail::ConfigurationSet resource to the template. Create a configuration set. *Configuration sets* are groups of rules that you can apply to the emails you send using Amazon Pinpoint. You apply a configuration set to an email by including a reference to the configuration set in the headers of the email. When you apply a configuration set to an email, all of the rules in that configuration set are applied to the email.
 
     .LINK
         http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-pinpointemail-configurationset.html

@@ -1,10 +1,10 @@
 function New-VSCodeCommitRepository {
     <#
     .SYNOPSIS
-        Adds an AWS::CodeCommit::Repository resource to the template
+        Adds an AWS::CodeCommit::Repository resource to the template. Creates a new, empty repository.
 
     .DESCRIPTION
-        Adds an AWS::CodeCommit::Repository resource to the template
+        Adds an AWS::CodeCommit::Repository resource to the template. Creates a new, empty repository.
 
     .LINK
         http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-codecommit-repository.html

@@ -1,10 +1,11 @@
 function Add-VSEC2SpotFleetSpotFleetMonitoring {
     <#
     .SYNOPSIS
-        Adds an AWS::EC2::SpotFleet.SpotFleetMonitoring resource property to the template
+        Adds an AWS::EC2::SpotFleet.SpotFleetMonitoring resource property to the template. Describes whether monitoring is enabled.
 
     .DESCRIPTION
-        Adds an AWS::EC2::SpotFleet.SpotFleetMonitoring resource property to the template
+        Adds an AWS::EC2::SpotFleet.SpotFleetMonitoring resource property to the template.
+Describes whether monitoring is enabled.
 
     .LINK
         http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-spotfleet-spotfleetrequestconfigdata-launchspecifications-monitoring.html

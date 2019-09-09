@@ -1,10 +1,11 @@
 function Add-VSElasticsearchDomainVPCOptions {
     <#
     .SYNOPSIS
-        Adds an AWS::Elasticsearch::Domain.VPCOptions resource property to the template
+        Adds an AWS::Elasticsearch::Domain.VPCOptions resource property to the template. The virtual private cloud (VPC configuration for the Amazon ES domain. For more information, see VPC Support for Amazon Elasticsearch Service Domains: https://docs.aws.amazon.com/elasticsearch-service/latest/developerguide/es-vpc.html in the *Amazon Elasticsearch Service Developer Guide*.
 
     .DESCRIPTION
-        Adds an AWS::Elasticsearch::Domain.VPCOptions resource property to the template
+        Adds an AWS::Elasticsearch::Domain.VPCOptions resource property to the template.
+The virtual private cloud (VPC configuration for the Amazon ES domain. For more information, see VPC Support for Amazon Elasticsearch Service Domains: https://docs.aws.amazon.com/elasticsearch-service/latest/developerguide/es-vpc.html in the *Amazon Elasticsearch Service Developer Guide*.
 
     .LINK
         http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-elasticsearch-domain-vpcoptions.html

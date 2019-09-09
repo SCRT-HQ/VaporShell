@@ -1,10 +1,11 @@
 function Add-VSEC2NetworkAclEntryIcmp {
     <#
     .SYNOPSIS
-        Adds an AWS::EC2::NetworkAclEntry.Icmp resource property to the template
+        Adds an AWS::EC2::NetworkAclEntry.Icmp resource property to the template. Describes the ICMP type and code.
 
     .DESCRIPTION
-        Adds an AWS::EC2::NetworkAclEntry.Icmp resource property to the template
+        Adds an AWS::EC2::NetworkAclEntry.Icmp resource property to the template.
+Describes the ICMP type and code.
 
     .LINK
         http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-networkaclentry-icmp.html

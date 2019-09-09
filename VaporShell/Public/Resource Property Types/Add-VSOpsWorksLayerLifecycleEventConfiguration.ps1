@@ -1,10 +1,11 @@
 function Add-VSOpsWorksLayerLifecycleEventConfiguration {
     <#
     .SYNOPSIS
-        Adds an AWS::OpsWorks::Layer.LifecycleEventConfiguration resource property to the template
+        Adds an AWS::OpsWorks::Layer.LifecycleEventConfiguration resource property to the template. Specifies the lifecycle event configuration
 
     .DESCRIPTION
-        Adds an AWS::OpsWorks::Layer.LifecycleEventConfiguration resource property to the template
+        Adds an AWS::OpsWorks::Layer.LifecycleEventConfiguration resource property to the template.
+Specifies the lifecycle event configuration
 
     .LINK
         http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-opsworks-layer-lifecycleeventconfiguration.html

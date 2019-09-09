@@ -1,10 +1,11 @@
 function Add-VSECSTaskDefinitionLinuxParameters {
     <#
     .SYNOPSIS
-        Adds an AWS::ECS::TaskDefinition.LinuxParameters resource property to the template
+        Adds an AWS::ECS::TaskDefinition.LinuxParameters resource property to the template. The LinuxParameters property specifies Linux-specific options that are applied to the container, such as Linux KernelCapabilities: https://docs.aws.amazon.com/AmazonECS/latest/APIReference/API_KernelCapabilities.html.
 
     .DESCRIPTION
-        Adds an AWS::ECS::TaskDefinition.LinuxParameters resource property to the template
+        Adds an AWS::ECS::TaskDefinition.LinuxParameters resource property to the template.
+The LinuxParameters property specifies Linux-specific options that are applied to the container, such as Linux KernelCapabilities: https://docs.aws.amazon.com/AmazonECS/latest/APIReference/API_KernelCapabilities.html.
 
     .LINK
         http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ecs-taskdefinition-linuxparameters.html

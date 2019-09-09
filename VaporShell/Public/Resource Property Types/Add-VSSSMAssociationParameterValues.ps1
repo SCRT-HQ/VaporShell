@@ -1,10 +1,11 @@
 function Add-VSSSMAssociationParameterValues {
     <#
     .SYNOPSIS
-        Adds an AWS::SSM::Association.ParameterValues resource property to the template
+        Adds an AWS::SSM::Association.ParameterValues resource property to the template. ParameterValues is a property of the AWS::SSM::Association: https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ssm-association.html resource that specifies the parameters for the runtime configuration of the document.
 
     .DESCRIPTION
-        Adds an AWS::SSM::Association.ParameterValues resource property to the template
+        Adds an AWS::SSM::Association.ParameterValues resource property to the template.
+ParameterValues is a property of the AWS::SSM::Association: https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ssm-association.html resource that specifies the parameters for the runtime configuration of the document.
 
     .LINK
         http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ssm-association-parametervalues.html

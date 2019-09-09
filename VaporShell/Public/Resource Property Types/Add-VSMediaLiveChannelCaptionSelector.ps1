@@ -1,10 +1,13 @@
 function Add-VSMediaLiveChannelCaptionSelector {
     <#
     .SYNOPSIS
-        Adds an AWS::MediaLive::Channel.CaptionSelector resource property to the template
+        Adds an AWS::MediaLive::Channel.CaptionSelector resource property to the template. Information about one caption to extract from the input.
 
     .DESCRIPTION
-        Adds an AWS::MediaLive::Channel.CaptionSelector resource property to the template
+        Adds an AWS::MediaLive::Channel.CaptionSelector resource property to the template.
+Information about one caption to extract from the input.
+
+The parent of this entity is InputSettings.
 
     .LINK
         http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-medialive-channel-captionselector.html

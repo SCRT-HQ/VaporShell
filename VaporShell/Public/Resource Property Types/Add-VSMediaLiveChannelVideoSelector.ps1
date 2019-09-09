@@ -1,10 +1,13 @@
 function Add-VSMediaLiveChannelVideoSelector {
     <#
     .SYNOPSIS
-        Adds an AWS::MediaLive::Channel.VideoSelector resource property to the template
+        Adds an AWS::MediaLive::Channel.VideoSelector resource property to the template. Information about the video to extract from the input. An input can contain only one video selector.
 
     .DESCRIPTION
-        Adds an AWS::MediaLive::Channel.VideoSelector resource property to the template
+        Adds an AWS::MediaLive::Channel.VideoSelector resource property to the template.
+Information about the video to extract from the input. An input can contain only one video selector.
+
+The parent of this entity is InputSettings.
 
     .LINK
         http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-medialive-channel-videoselector.html

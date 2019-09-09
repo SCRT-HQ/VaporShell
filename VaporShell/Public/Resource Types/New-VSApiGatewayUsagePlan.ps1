@@ -1,10 +1,10 @@
 function New-VSApiGatewayUsagePlan {
     <#
     .SYNOPSIS
-        Adds an AWS::ApiGateway::UsagePlan resource to the template
+        Adds an AWS::ApiGateway::UsagePlan resource to the template. The AWS::ApiGateway::UsagePlan resource creates a usage plan for deployed APIs. A usage plan enforces throttling and quota limits on individual client API keys. For more information, see Creating and Using API Usage Plans in Amazon API Gateway: https://docs.aws.amazon.com/apigateway/latest/developerguide/api-gateway-api-usage-plans.html in the *API Gateway Developer Guide*.
 
     .DESCRIPTION
-        Adds an AWS::ApiGateway::UsagePlan resource to the template
+        Adds an AWS::ApiGateway::UsagePlan resource to the template. The AWS::ApiGateway::UsagePlan resource creates a usage plan for deployed APIs. A usage plan enforces throttling and quota limits on individual client API keys. For more information, see Creating and Using API Usage Plans in Amazon API Gateway: https://docs.aws.amazon.com/apigateway/latest/developerguide/api-gateway-api-usage-plans.html in the *API Gateway Developer Guide*.
 
     .LINK
         http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-apigateway-usageplan.html

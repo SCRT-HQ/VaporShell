@@ -1,10 +1,10 @@
 function New-VSElasticsearchDomain {
     <#
     .SYNOPSIS
-        Adds an AWS::Elasticsearch::Domain resource to the template
+        Adds an AWS::Elasticsearch::Domain resource to the template. The AWS::Elasticsearch::Domain resource creates an Amazon Elasticsearch Service (Amazon ES domain that encapsulates the Amazon ES engine instances.
 
     .DESCRIPTION
-        Adds an AWS::Elasticsearch::Domain resource to the template
+        Adds an AWS::Elasticsearch::Domain resource to the template. The AWS::Elasticsearch::Domain resource creates an Amazon Elasticsearch Service (Amazon ES domain that encapsulates the Amazon ES engine instances.
 
     .LINK
         http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-elasticsearch-domain.html

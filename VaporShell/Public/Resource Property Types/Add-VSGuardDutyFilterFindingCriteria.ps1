@@ -1,10 +1,11 @@
 function Add-VSGuardDutyFilterFindingCriteria {
     <#
     .SYNOPSIS
-        Adds an AWS::GuardDuty::Filter.FindingCriteria resource property to the template
+        Adds an AWS::GuardDuty::Filter.FindingCriteria resource property to the template. Represents a map of finding properties that match specified conditions and values when querying findings.
 
     .DESCRIPTION
-        Adds an AWS::GuardDuty::Filter.FindingCriteria resource property to the template
+        Adds an AWS::GuardDuty::Filter.FindingCriteria resource property to the template.
+Represents a map of finding properties that match specified conditions and values when querying findings.
 
     .LINK
         http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-guardduty-filter-findingcriteria.html

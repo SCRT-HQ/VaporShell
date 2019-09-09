@@ -1,10 +1,11 @@
 function Add-VSIoTAnalyticsDatasetGlueConfiguration {
     <#
     .SYNOPSIS
-        Adds an AWS::IoTAnalytics::Dataset.GlueConfiguration resource property to the template
+        Adds an AWS::IoTAnalytics::Dataset.GlueConfiguration resource property to the template. Configuration information for coordination with the AWS Glue ETL (extract, transform and load service.
 
     .DESCRIPTION
-        Adds an AWS::IoTAnalytics::Dataset.GlueConfiguration resource property to the template
+        Adds an AWS::IoTAnalytics::Dataset.GlueConfiguration resource property to the template.
+Configuration information for coordination with the AWS Glue ETL (extract, transform and load service.
 
     .LINK
         http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iotanalytics-dataset-glueconfiguration.html

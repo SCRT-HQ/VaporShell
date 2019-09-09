@@ -1,10 +1,10 @@
 function New-VSBatchJobQueue {
     <#
     .SYNOPSIS
-        Adds an AWS::Batch::JobQueue resource to the template
+        Adds an AWS::Batch::JobQueue resource to the template. The AWS::Batch::JobQueue resource specifies the parameters for an AWS Batch job queue definition. For more information, see Job Queues: https://docs.aws.amazon.com/batch/latest/userguide/job_queues.html in the *AWS Batch User Guide*.
 
     .DESCRIPTION
-        Adds an AWS::Batch::JobQueue resource to the template
+        Adds an AWS::Batch::JobQueue resource to the template. The AWS::Batch::JobQueue resource specifies the parameters for an AWS Batch job queue definition. For more information, see Job Queues: https://docs.aws.amazon.com/batch/latest/userguide/job_queues.html in the *AWS Batch User Guide*.
 
     .LINK
         http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-batch-jobqueue.html

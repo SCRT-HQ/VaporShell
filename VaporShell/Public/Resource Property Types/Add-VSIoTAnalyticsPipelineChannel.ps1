@@ -1,10 +1,11 @@
 function Add-VSIoTAnalyticsPipelineChannel {
     <#
     .SYNOPSIS
-        Adds an AWS::IoTAnalytics::Pipeline.Channel resource property to the template
+        Adds an AWS::IoTAnalytics::Pipeline.Channel resource property to the template. Determines the source of the messages to be processed.
 
     .DESCRIPTION
-        Adds an AWS::IoTAnalytics::Pipeline.Channel resource property to the template
+        Adds an AWS::IoTAnalytics::Pipeline.Channel resource property to the template.
+Determines the source of the messages to be processed.
 
     .LINK
         http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iotanalytics-pipeline-channel.html

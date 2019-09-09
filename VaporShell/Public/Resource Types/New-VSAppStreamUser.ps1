@@ -1,10 +1,10 @@
 function New-VSAppStreamUser {
     <#
     .SYNOPSIS
-        Adds an AWS::AppStream::User resource to the template
+        Adds an AWS::AppStream::User resource to the template. The AWS::AppStream::User resource creates a new user in the AppStream 2.0 user pool.
 
     .DESCRIPTION
-        Adds an AWS::AppStream::User resource to the template
+        Adds an AWS::AppStream::User resource to the template. The AWS::AppStream::User resource creates a new user in the AppStream 2.0 user pool.
 
     .LINK
         http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-appstream-user.html

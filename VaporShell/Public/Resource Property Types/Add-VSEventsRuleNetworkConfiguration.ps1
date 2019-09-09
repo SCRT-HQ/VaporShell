@@ -1,10 +1,11 @@
 function Add-VSEventsRuleNetworkConfiguration {
     <#
     .SYNOPSIS
-        Adds an AWS::Events::Rule.NetworkConfiguration resource property to the template
+        Adds an AWS::Events::Rule.NetworkConfiguration resource property to the template. This structure specifies the network configuration for an ECS task.
 
     .DESCRIPTION
-        Adds an AWS::Events::Rule.NetworkConfiguration resource property to the template
+        Adds an AWS::Events::Rule.NetworkConfiguration resource property to the template.
+This structure specifies the network configuration for an ECS task.
 
     .LINK
         http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-events-rule-networkconfiguration.html

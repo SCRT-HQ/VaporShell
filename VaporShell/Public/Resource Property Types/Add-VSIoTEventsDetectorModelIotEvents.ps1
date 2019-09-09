@@ -1,10 +1,11 @@
 function Add-VSIoTEventsDetectorModelIotEvents {
     <#
     .SYNOPSIS
-        Adds an AWS::IoTEvents::DetectorModel.IotEvents resource property to the template
+        Adds an AWS::IoTEvents::DetectorModel.IotEvents resource property to the template. Sends an IoT Events input, passing in information about the detector model instance and the event which triggered the action.
 
     .DESCRIPTION
-        Adds an AWS::IoTEvents::DetectorModel.IotEvents resource property to the template
+        Adds an AWS::IoTEvents::DetectorModel.IotEvents resource property to the template.
+Sends an IoT Events input, passing in information about the detector model instance and the event which triggered the action.
 
     .LINK
         http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iotevents-detectormodel-iotevents.html

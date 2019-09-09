@@ -1,10 +1,11 @@
 function Add-VSECSServiceDeploymentConfiguration {
     <#
     .SYNOPSIS
-        Adds an AWS::ECS::Service.DeploymentConfiguration resource property to the template
+        Adds an AWS::ECS::Service.DeploymentConfiguration resource property to the template. The DeploymentConfiguration property specifies optional deployment parameters that control how many tasks run during the deploymentand the ordering of stopping and starting tasks.
 
     .DESCRIPTION
-        Adds an AWS::ECS::Service.DeploymentConfiguration resource property to the template
+        Adds an AWS::ECS::Service.DeploymentConfiguration resource property to the template.
+The DeploymentConfiguration property specifies optional deployment parameters that control how many tasks run during the deploymentand the ordering of stopping and starting tasks.
 
     .LINK
         http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ecs-service-deploymentconfiguration.html

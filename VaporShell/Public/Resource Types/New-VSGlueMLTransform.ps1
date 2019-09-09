@@ -1,10 +1,10 @@
 function New-VSGlueMLTransform {
     <#
     .SYNOPSIS
-        Adds an AWS::Glue::MLTransform resource to the template
+        Adds an AWS::Glue::MLTransform resource to the template. The AWS::Glue::MLTransform is an AWS Glue resource type that manages machine learning transforms.
 
     .DESCRIPTION
-        Adds an AWS::Glue::MLTransform resource to the template
+        Adds an AWS::Glue::MLTransform resource to the template. The AWS::Glue::MLTransform is an AWS Glue resource type that manages machine learning transforms.
 
     .LINK
         http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-glue-mltransform.html

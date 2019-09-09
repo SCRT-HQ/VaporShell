@@ -1,10 +1,11 @@
 function Add-VSElasticsearchDomainEBSOptions {
     <#
     .SYNOPSIS
-        Adds an AWS::Elasticsearch::Domain.EBSOptions resource property to the template
+        Adds an AWS::Elasticsearch::Domain.EBSOptions resource property to the template. The configurations of Amazon Elastic Block Store (Amazon EBS volumes that are attached to data nodes in the Amazon ES domain. For more information, see Configuring EBS-based Storage: https://docs.aws.amazon.com/elasticsearch-service/latest/developerguide/es-createupdatedomains.html#es-createdomain-configure-ebs in the *Amazon Elasticsearch Service Developer Guide*.
 
     .DESCRIPTION
-        Adds an AWS::Elasticsearch::Domain.EBSOptions resource property to the template
+        Adds an AWS::Elasticsearch::Domain.EBSOptions resource property to the template.
+The configurations of Amazon Elastic Block Store (Amazon EBS volumes that are attached to data nodes in the Amazon ES domain. For more information, see Configuring EBS-based Storage: https://docs.aws.amazon.com/elasticsearch-service/latest/developerguide/es-createupdatedomains.html#es-createdomain-configure-ebs in the *Amazon Elasticsearch Service Developer Guide*.
 
     .LINK
         http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-elasticsearch-domain-ebsoptions.html

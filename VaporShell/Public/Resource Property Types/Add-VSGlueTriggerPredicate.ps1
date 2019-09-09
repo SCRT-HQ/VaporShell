@@ -1,10 +1,11 @@
 function Add-VSGlueTriggerPredicate {
     <#
     .SYNOPSIS
-        Adds an AWS::Glue::Trigger.Predicate resource property to the template
+        Adds an AWS::Glue::Trigger.Predicate resource property to the template. Defines the predicate of the trigger, which determines when it fires.
 
     .DESCRIPTION
-        Adds an AWS::Glue::Trigger.Predicate resource property to the template
+        Adds an AWS::Glue::Trigger.Predicate resource property to the template.
+Defines the predicate of the trigger, which determines when it fires.
 
     .LINK
         http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-glue-trigger-predicate.html

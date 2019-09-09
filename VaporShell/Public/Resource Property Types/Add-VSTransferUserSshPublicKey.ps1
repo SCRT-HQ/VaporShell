@@ -1,10 +1,11 @@
 function Add-VSTransferUserSshPublicKey {
     <#
     .SYNOPSIS
-        Adds an AWS::Transfer::User.SshPublicKey resource property to the template
+        Adds an AWS::Transfer::User.SshPublicKey resource property to the template. 
 
     .DESCRIPTION
-        Adds an AWS::Transfer::User.SshPublicKey resource property to the template
+        Adds an AWS::Transfer::User.SshPublicKey resource property to the template.
+
 
     .LINK
         

@@ -1,10 +1,11 @@
 function Add-VSKinesisFirehoseDeliveryStreamElasticsearchDestinationConfiguration {
     <#
     .SYNOPSIS
-        Adds an AWS::KinesisFirehose::DeliveryStream.ElasticsearchDestinationConfiguration resource property to the template
+        Adds an AWS::KinesisFirehose::DeliveryStream.ElasticsearchDestinationConfiguration resource property to the template. The ElasticsearchDestinationConfiguration property type specifies an Amazon Elasticsearch Service (Amazon ES domain that Amazon Kinesis Data Firehose (Kinesis Data Firehose delivers data to.
 
     .DESCRIPTION
-        Adds an AWS::KinesisFirehose::DeliveryStream.ElasticsearchDestinationConfiguration resource property to the template
+        Adds an AWS::KinesisFirehose::DeliveryStream.ElasticsearchDestinationConfiguration resource property to the template.
+The ElasticsearchDestinationConfiguration property type specifies an Amazon Elasticsearch Service (Amazon ES domain that Amazon Kinesis Data Firehose (Kinesis Data Firehose delivers data to.
 
     .LINK
         http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-kinesisfirehose-deliverystream-elasticsearchdestinationconfiguration.html

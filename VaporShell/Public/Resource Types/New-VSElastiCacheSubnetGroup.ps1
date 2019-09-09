@@ -1,10 +1,10 @@
 function New-VSElastiCacheSubnetGroup {
     <#
     .SYNOPSIS
-        Adds an AWS::ElastiCache::SubnetGroup resource to the template
+        Adds an AWS::ElastiCache::SubnetGroup resource to the template. Creates a cache subnet group. For more information about cache subnet groups, go to Cache Subnet Groups in the *Amazon ElastiCache User Guide* or go to CreateCacheSubnetGroup: https://docs.aws.amazon.com/AmazonElastiCache/latest/APIReference/API_CreateCacheSubnetGroup.html in the *Amazon ElastiCache API Reference Guide*.
 
     .DESCRIPTION
-        Adds an AWS::ElastiCache::SubnetGroup resource to the template
+        Adds an AWS::ElastiCache::SubnetGroup resource to the template. Creates a cache subnet group. For more information about cache subnet groups, go to Cache Subnet Groups in the *Amazon ElastiCache User Guide* or go to CreateCacheSubnetGroup: https://docs.aws.amazon.com/AmazonElastiCache/latest/APIReference/API_CreateCacheSubnetGroup.html in the *Amazon ElastiCache API Reference Guide*.
 
     .LINK
         http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-elasticache-subnetgroup.html

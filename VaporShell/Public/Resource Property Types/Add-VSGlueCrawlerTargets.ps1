@@ -1,10 +1,11 @@
 function Add-VSGlueCrawlerTargets {
     <#
     .SYNOPSIS
-        Adds an AWS::Glue::Crawler.Targets resource property to the template
+        Adds an AWS::Glue::Crawler.Targets resource property to the template. Specifies data stores to crawl.
 
     .DESCRIPTION
-        Adds an AWS::Glue::Crawler.Targets resource property to the template
+        Adds an AWS::Glue::Crawler.Targets resource property to the template.
+Specifies data stores to crawl.
 
     .LINK
         http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-glue-crawler-targets.html

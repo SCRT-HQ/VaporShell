@@ -1,10 +1,14 @@
 function New-VSBackupBackupVault {
     <#
     .SYNOPSIS
-        Adds an AWS::Backup::BackupVault resource to the template
+        Adds an AWS::Backup::BackupVault resource to the template. Creates a logical container where backups are stored. A CreateBackupVault request includes a name, optionally one or more resource tags, an encryption key, and a request ID.
 
     .DESCRIPTION
-        Adds an AWS::Backup::BackupVault resource to the template
+        Adds an AWS::Backup::BackupVault resource to the template. Creates a logical container where backups are stored. A CreateBackupVault request includes a name, optionally one or more resource tags, an encryption key, and a request ID.
+
+**Note**
+
+Sensitive data, such as passport numbers, should not be included the name of a backup vault.
 
     .LINK
         http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-backup-backupvault.html

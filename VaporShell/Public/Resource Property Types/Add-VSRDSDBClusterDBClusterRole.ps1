@@ -1,10 +1,11 @@
 function Add-VSRDSDBClusterDBClusterRole {
     <#
     .SYNOPSIS
-        Adds an AWS::RDS::DBCluster.DBClusterRole resource property to the template
+        Adds an AWS::RDS::DBCluster.DBClusterRole resource property to the template. Describes an AWS Identity and Access Management (IAM role that is associated with a DB cluster.
 
     .DESCRIPTION
-        Adds an AWS::RDS::DBCluster.DBClusterRole resource property to the template
+        Adds an AWS::RDS::DBCluster.DBClusterRole resource property to the template.
+Describes an AWS Identity and Access Management (IAM role that is associated with a DB cluster.
 
     .LINK
         http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-rds-dbcluster-dbclusterrole.html

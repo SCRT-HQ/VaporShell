@@ -1,10 +1,11 @@
 function Add-VSS3BucketTagFilter {
     <#
     .SYNOPSIS
-        Adds an AWS::S3::Bucket.TagFilter resource property to the template
+        Adds an AWS::S3::Bucket.TagFilter resource property to the template. Specifies tags to use to identify a subset of objects for an Amazon S3 bucket.
 
     .DESCRIPTION
-        Adds an AWS::S3::Bucket.TagFilter resource property to the template
+        Adds an AWS::S3::Bucket.TagFilter resource property to the template.
+Specifies tags to use to identify a subset of objects for an Amazon S3 bucket.
 
     .LINK
         http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-s3-bucket-tagfilter.html

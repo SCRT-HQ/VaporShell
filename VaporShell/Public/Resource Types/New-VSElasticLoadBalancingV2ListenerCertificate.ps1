@@ -1,10 +1,10 @@
 function New-VSElasticLoadBalancingV2ListenerCertificate {
     <#
     .SYNOPSIS
-        Adds an AWS::ElasticLoadBalancingV2::ListenerCertificate resource to the template
+        Adds an AWS::ElasticLoadBalancingV2::ListenerCertificate resource to the template. Specifies a certificate list for an HTTPS listener.
 
     .DESCRIPTION
-        Adds an AWS::ElasticLoadBalancingV2::ListenerCertificate resource to the template
+        Adds an AWS::ElasticLoadBalancingV2::ListenerCertificate resource to the template. Specifies a certificate list for an HTTPS listener.
 
     .LINK
         http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-elasticloadbalancingv2-listenercertificate.html

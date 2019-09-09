@@ -1,10 +1,11 @@
 function Add-VSManagedBlockchainMemberNetworkConfiguration {
     <#
     .SYNOPSIS
-        Adds an AWS::ManagedBlockchain::Member.NetworkConfiguration resource property to the template
+        Adds an AWS::ManagedBlockchain::Member.NetworkConfiguration resource property to the template. Configuration properties of the network to which the member belongs.
 
     .DESCRIPTION
-        Adds an AWS::ManagedBlockchain::Member.NetworkConfiguration resource property to the template
+        Adds an AWS::ManagedBlockchain::Member.NetworkConfiguration resource property to the template.
+Configuration properties of the network to which the member belongs.
 
     .LINK
         http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-managedblockchain-member-networkconfiguration.html

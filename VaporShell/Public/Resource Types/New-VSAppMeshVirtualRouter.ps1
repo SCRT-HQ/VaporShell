@@ -1,10 +1,14 @@
 function New-VSAppMeshVirtualRouter {
     <#
     .SYNOPSIS
-        Adds an AWS::AppMesh::VirtualRouter resource to the template
+        Adds an AWS::AppMesh::VirtualRouter resource to the template. Creates a virtual router within a service mesh.
 
     .DESCRIPTION
-        Adds an AWS::AppMesh::VirtualRouter resource to the template
+        Adds an AWS::AppMesh::VirtualRouter resource to the template. Creates a virtual router within a service mesh.
+
+Any inbound traffic that your virtual router expects should be specified as a listener.
+
+Virtual routers handle traffic for one or more virtual services within your mesh. After you create your virtual router, create and associate routes for your virtual router that direct incoming requests to different virtual nodes.
 
     .LINK
         http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-appmesh-virtualrouter.html

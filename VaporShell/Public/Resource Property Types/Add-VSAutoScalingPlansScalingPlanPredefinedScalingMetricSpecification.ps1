@@ -1,10 +1,11 @@
 function Add-VSAutoScalingPlansScalingPlanPredefinedScalingMetricSpecification {
     <#
     .SYNOPSIS
-        Adds an AWS::AutoScalingPlans::ScalingPlan.PredefinedScalingMetricSpecification resource property to the template
+        Adds an AWS::AutoScalingPlans::ScalingPlan.PredefinedScalingMetricSpecification resource property to the template. PredefinedScalingMetricSpecification is a subproperty of TargetTrackingConfiguration: https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-autoscalingplans-scalingplan-targettrackingconfiguration.html that specifies a customized scaling metric for a target tracking configuration to use with AWS Auto Scaling.
 
     .DESCRIPTION
-        Adds an AWS::AutoScalingPlans::ScalingPlan.PredefinedScalingMetricSpecification resource property to the template
+        Adds an AWS::AutoScalingPlans::ScalingPlan.PredefinedScalingMetricSpecification resource property to the template.
+PredefinedScalingMetricSpecification is a subproperty of TargetTrackingConfiguration: https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-autoscalingplans-scalingplan-targettrackingconfiguration.html that specifies a customized scaling metric for a target tracking configuration to use with AWS Auto Scaling.
 
     .LINK
         http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-autoscalingplans-scalingplan-predefinedscalingmetricspecification.html

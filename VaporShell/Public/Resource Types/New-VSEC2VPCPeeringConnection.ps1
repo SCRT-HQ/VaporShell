@@ -1,10 +1,18 @@
 function New-VSEC2VPCPeeringConnection {
     <#
     .SYNOPSIS
-        Adds an AWS::EC2::VPCPeeringConnection resource to the template
+        Adds an AWS::EC2::VPCPeeringConnection resource to the template. Requests a VPC peering connection between two VPCs: a requester VPC that you own and an accepter VPC with which to create the connection. The accepter VPC can belong to another AWS account and can be in a different Region to the requester VPC. The requester VPC and accepter VPC cannot have overlapping CIDR blocks.
 
     .DESCRIPTION
-        Adds an AWS::EC2::VPCPeeringConnection resource to the template
+        Adds an AWS::EC2::VPCPeeringConnection resource to the template. Requests a VPC peering connection between two VPCs: a requester VPC that you own and an accepter VPC with which to create the connection. The accepter VPC can belong to another AWS account and can be in a different Region to the requester VPC. The requester VPC and accepter VPC cannot have overlapping CIDR blocks.
+
+**Note**
+
+Limitations and rules apply to a VPC peering connection. For more information, see the limitations: https://docs.aws.amazon.com/vpc/latest/peering/vpc-peering-basics.html#vpc-peering-limitations section in the *VPC Peering Guide*.
+
+The owner of the accepter VPC must accept the peering request to activate the peering connection. The VPC peering connection request expires after 7 days, after which it cannot be accepted or rejected.
+
+If you create a VPC peering connection request between VPCs with overlapping CIDR blocks, the VPC peering connection has a status of failed.
 
     .LINK
         http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ec2-vpcpeeringconnection.html

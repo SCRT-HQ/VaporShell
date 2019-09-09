@@ -1,10 +1,11 @@
 function Add-VSKinesisAnalyticsV2ApplicationS3ContentLocation {
     <#
     .SYNOPSIS
-        Adds an AWS::KinesisAnalyticsV2::Application.S3ContentLocation resource property to the template
+        Adds an AWS::KinesisAnalyticsV2::Application.S3ContentLocation resource property to the template. For a Java-based Amazon Kinesis Data Analytics application, provides a description of an Amazon S3 object, including the Amazon Resource Name (ARN of the S3 bucket, the name of the Amazon S3 object that contains the data, and the version number of the Amazon S3 object that contains the data.
 
     .DESCRIPTION
-        Adds an AWS::KinesisAnalyticsV2::Application.S3ContentLocation resource property to the template
+        Adds an AWS::KinesisAnalyticsV2::Application.S3ContentLocation resource property to the template.
+For a Java-based Amazon Kinesis Data Analytics application, provides a description of an Amazon S3 object, including the Amazon Resource Name (ARN of the S3 bucket, the name of the Amazon S3 object that contains the data, and the version number of the Amazon S3 object that contains the data.
 
     .LINK
         http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-kinesisanalyticsv2-application-s3contentlocation.html

@@ -1,10 +1,11 @@
 function Add-VSOpsWorksLayerLoadBasedAutoScaling {
     <#
     .SYNOPSIS
-        Adds an AWS::OpsWorks::Layer.LoadBasedAutoScaling resource property to the template
+        Adds an AWS::OpsWorks::Layer.LoadBasedAutoScaling resource property to the template. Describes a layer's load-based auto scaling configuration.
 
     .DESCRIPTION
-        Adds an AWS::OpsWorks::Layer.LoadBasedAutoScaling resource property to the template
+        Adds an AWS::OpsWorks::Layer.LoadBasedAutoScaling resource property to the template.
+Describes a layer's load-based auto scaling configuration.
 
     .LINK
         http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-opsworks-layer-loadbasedautoscaling.html

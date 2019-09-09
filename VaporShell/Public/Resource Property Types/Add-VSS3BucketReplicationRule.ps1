@@ -1,10 +1,11 @@
 function Add-VSS3BucketReplicationRule {
     <#
     .SYNOPSIS
-        Adds an AWS::S3::Bucket.ReplicationRule resource property to the template
+        Adds an AWS::S3::Bucket.ReplicationRule resource property to the template. Specifies which Amazon S3 objects to replicate and where to store the replicas.
 
     .DESCRIPTION
-        Adds an AWS::S3::Bucket.ReplicationRule resource property to the template
+        Adds an AWS::S3::Bucket.ReplicationRule resource property to the template.
+Specifies which Amazon S3 objects to replicate and where to store the replicas.
 
     .LINK
         http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-s3-bucket-replicationconfiguration-rules.html

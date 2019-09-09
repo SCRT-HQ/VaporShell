@@ -1,10 +1,10 @@
 function New-VSSageMakerNotebookInstance {
     <#
     .SYNOPSIS
-        Adds an AWS::SageMaker::NotebookInstance resource to the template
+        Adds an AWS::SageMaker::NotebookInstance resource to the template. The AWS::SageMaker::NotebookInstance resource creates an Amazon SageMaker notebook instance. A notebook instance is a machine learning (ML compute instance running on a Jupyter notebook. For more information, see Use Notebook Instances: https://docs.aws.amazon.com/sagemaker/latest/dg/nbi.html.
 
     .DESCRIPTION
-        Adds an AWS::SageMaker::NotebookInstance resource to the template
+        Adds an AWS::SageMaker::NotebookInstance resource to the template. The AWS::SageMaker::NotebookInstance resource creates an Amazon SageMaker notebook instance. A notebook instance is a machine learning (ML compute instance running on a Jupyter notebook. For more information, see Use Notebook Instances: https://docs.aws.amazon.com/sagemaker/latest/dg/nbi.html.
 
     .LINK
         http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-sagemaker-notebookinstance.html

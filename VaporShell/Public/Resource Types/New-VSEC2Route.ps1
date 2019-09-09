@@ -1,10 +1,12 @@
 function New-VSEC2Route {
     <#
     .SYNOPSIS
-        Adds an AWS::EC2::Route resource to the template
+        Adds an AWS::EC2::Route resource to the template. Specifies a route in a route table within a VPC.
 
     .DESCRIPTION
-        Adds an AWS::EC2::Route resource to the template
+        Adds an AWS::EC2::Route resource to the template. Specifies a route in a route table within a VPC.
+
+You must specify one of the following targets: internet gateway or virtual private gateway, NAT instance, NAT gateway, VPC peering connection, network interface, or egress-only internet gateway.
 
     .LINK
         http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ec2-route.html

@@ -1,10 +1,11 @@
 function Add-VSEMRInstanceGroupConfigCloudWatchAlarmDefinition {
     <#
     .SYNOPSIS
-        Adds an AWS::EMR::InstanceGroupConfig.CloudWatchAlarmDefinition resource property to the template
+        Adds an AWS::EMR::InstanceGroupConfig.CloudWatchAlarmDefinition resource property to the template. CloudWatchAlarmDefinition is a subproperty of the ScalingTrigger property, which determines when to trigger an automatic scaling activity. Scaling activity begins when you satisfy the defined alarm conditions.
 
     .DESCRIPTION
-        Adds an AWS::EMR::InstanceGroupConfig.CloudWatchAlarmDefinition resource property to the template
+        Adds an AWS::EMR::InstanceGroupConfig.CloudWatchAlarmDefinition resource property to the template.
+CloudWatchAlarmDefinition is a subproperty of the ScalingTrigger property, which determines when to trigger an automatic scaling activity. Scaling activity begins when you satisfy the defined alarm conditions.
 
     .LINK
         http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-elasticmapreduce-instancegroupconfig-cloudwatchalarmdefinition.html

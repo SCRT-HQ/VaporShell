@@ -1,10 +1,10 @@
 function New-VSAppStreamFleet {
     <#
     .SYNOPSIS
-        Adds an AWS::AppStream::Fleet resource to the template
+        Adds an AWS::AppStream::Fleet resource to the template. The AWS::AppStream::Fleet resource creates a fleet for Amazon AppStream 2.0. A fleet consists of streaming instances that run a specified image.
 
     .DESCRIPTION
-        Adds an AWS::AppStream::Fleet resource to the template
+        Adds an AWS::AppStream::Fleet resource to the template. The AWS::AppStream::Fleet resource creates a fleet for Amazon AppStream 2.0. A fleet consists of streaming instances that run a specified image.
 
     .LINK
         http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-appstream-fleet.html

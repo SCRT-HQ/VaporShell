@@ -1,10 +1,10 @@
 function New-VSSQSQueuePolicy {
     <#
     .SYNOPSIS
-        Adds an AWS::SQS::QueuePolicy resource to the template
+        Adds an AWS::SQS::QueuePolicy resource to the template. The AWS::SQS::QueuePolicy type applies a policy to Amazon SQS queues. For an example snippet, see Declaring an Amazon SQS Policy: https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/quickref-iam.html#scenario-sqs-policy in the *AWS CloudFormation User Guide*.
 
     .DESCRIPTION
-        Adds an AWS::SQS::QueuePolicy resource to the template
+        Adds an AWS::SQS::QueuePolicy resource to the template. The AWS::SQS::QueuePolicy type applies a policy to Amazon SQS queues. For an example snippet, see Declaring an Amazon SQS Policy: https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/quickref-iam.html#scenario-sqs-policy in the *AWS CloudFormation User Guide*.
 
     .LINK
         http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-sqs-policy.html

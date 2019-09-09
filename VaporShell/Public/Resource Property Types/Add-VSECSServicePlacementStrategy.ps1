@@ -1,10 +1,11 @@
 function Add-VSECSServicePlacementStrategy {
     <#
     .SYNOPSIS
-        Adds an AWS::ECS::Service.PlacementStrategy resource property to the template
+        Adds an AWS::ECS::Service.PlacementStrategy resource property to the template. The PlacementStrategy property specifies the task placement strategy for a task or service. For more information, see Task Placement Strategies: https://docs.aws.amazon.com/AmazonECS/latest/developerguide/task-placement-strategies.html in the *Amazon Elastic Container Service Developer Guide*.
 
     .DESCRIPTION
-        Adds an AWS::ECS::Service.PlacementStrategy resource property to the template
+        Adds an AWS::ECS::Service.PlacementStrategy resource property to the template.
+The PlacementStrategy property specifies the task placement strategy for a task or service. For more information, see Task Placement Strategies: https://docs.aws.amazon.com/AmazonECS/latest/developerguide/task-placement-strategies.html in the *Amazon Elastic Container Service Developer Guide*.
 
     .LINK
         http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ecs-service-placementstrategy.html

@@ -1,10 +1,11 @@
 function Add-VSIoTTopicRuleTopicRulePayload {
     <#
     .SYNOPSIS
-        Adds an AWS::IoT::TopicRule.TopicRulePayload resource property to the template
+        Adds an AWS::IoT::TopicRule.TopicRulePayload resource property to the template. Describes a rule.
 
     .DESCRIPTION
-        Adds an AWS::IoT::TopicRule.TopicRulePayload resource property to the template
+        Adds an AWS::IoT::TopicRule.TopicRulePayload resource property to the template.
+Describes a rule.
 
     .LINK
         http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iot-topicrule-topicrulepayload.html

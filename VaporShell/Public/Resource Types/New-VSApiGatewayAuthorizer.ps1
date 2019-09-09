@@ -1,10 +1,10 @@
 function New-VSApiGatewayAuthorizer {
     <#
     .SYNOPSIS
-        Adds an AWS::ApiGateway::Authorizer resource to the template
+        Adds an AWS::ApiGateway::Authorizer resource to the template. The AWS::ApiGateway::Authorizer resource creates an authorization layer that API Gateway activates for methods that have authorization enabled. API Gateway activates the authorizer when a client calls those methods.
 
     .DESCRIPTION
-        Adds an AWS::ApiGateway::Authorizer resource to the template
+        Adds an AWS::ApiGateway::Authorizer resource to the template. The AWS::ApiGateway::Authorizer resource creates an authorization layer that API Gateway activates for methods that have authorization enabled. API Gateway activates the authorizer when a client calls those methods.
 
     .LINK
         http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-apigateway-authorizer.html

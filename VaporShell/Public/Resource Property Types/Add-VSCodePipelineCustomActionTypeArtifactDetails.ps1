@@ -1,10 +1,11 @@
 function Add-VSCodePipelineCustomActionTypeArtifactDetails {
     <#
     .SYNOPSIS
-        Adds an AWS::CodePipeline::CustomActionType.ArtifactDetails resource property to the template
+        Adds an AWS::CodePipeline::CustomActionType.ArtifactDetails resource property to the template. Returns information about the details of an artifact.
 
     .DESCRIPTION
-        Adds an AWS::CodePipeline::CustomActionType.ArtifactDetails resource property to the template
+        Adds an AWS::CodePipeline::CustomActionType.ArtifactDetails resource property to the template.
+Returns information about the details of an artifact.
 
     .LINK
         http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-codepipeline-customactiontype-artifactdetails.html

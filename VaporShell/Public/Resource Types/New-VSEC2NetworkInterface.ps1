@@ -1,10 +1,10 @@
 function New-VSEC2NetworkInterface {
     <#
     .SYNOPSIS
-        Adds an AWS::EC2::NetworkInterface resource to the template
+        Adds an AWS::EC2::NetworkInterface resource to the template. Describes a network interface in an Elastic Compute Cloud (EC2 instance for AWS CloudFormation.
 
     .DESCRIPTION
-        Adds an AWS::EC2::NetworkInterface resource to the template
+        Adds an AWS::EC2::NetworkInterface resource to the template. Describes a network interface in an Elastic Compute Cloud (EC2 instance for AWS CloudFormation.
 
     .LINK
         http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ec2-network-interface.html

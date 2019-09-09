@@ -1,10 +1,12 @@
 function New-VSPinpointAPNSVoipSandboxChannel {
     <#
     .SYNOPSIS
-        Adds an AWS::Pinpoint::APNSVoipSandboxChannel resource to the template
+        Adds an AWS::Pinpoint::APNSVoipSandboxChannel resource to the template. A *channel* is a type of platform that you can deliver messages to. You can use the APNs VoIP sandbox channel to send VoIP notification messages to the sandbox environment of the Apple Push Notification service (APNs. Before you use Amazon Pinpoint to send VoIP notifications to the APNs sandbox environment, you have to enable the APNs VoIP sandbox channel for an Amazon Pinpoint app.
 
     .DESCRIPTION
-        Adds an AWS::Pinpoint::APNSVoipSandboxChannel resource to the template
+        Adds an AWS::Pinpoint::APNSVoipSandboxChannel resource to the template. A *channel* is a type of platform that you can deliver messages to. You can use the APNs VoIP sandbox channel to send VoIP notification messages to the sandbox environment of the Apple Push Notification service (APNs. Before you use Amazon Pinpoint to send VoIP notifications to the APNs sandbox environment, you have to enable the APNs VoIP sandbox channel for an Amazon Pinpoint app.
+
+The APNs VoIP Sandbox Channel resource represents the status and authentication settings of the APNs VoIP sandbox channel for a specific app. You can use this resource to retrieve information about, update, or disable (delete the APNs VoIP sandbox channel for an app.
 
     .LINK
         http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-pinpoint-apnsvoipsandboxchannel.html

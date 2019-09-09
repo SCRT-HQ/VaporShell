@@ -1,10 +1,10 @@
 function New-VSCloud9EnvironmentEC2 {
     <#
     .SYNOPSIS
-        Adds an AWS::Cloud9::EnvironmentEC2 resource to the template
+        Adds an AWS::Cloud9::EnvironmentEC2 resource to the template. The AWS::Cloud9::EnvironmentEC2 resource creates an Amazon EC2 development environment in AWS Cloud9. For more information, see Creating an Environment: https://docs.aws.amazon.com/cloud9/latest/user-guide/create-environment.html in the *AWS Cloud9 User Guide*.
 
     .DESCRIPTION
-        Adds an AWS::Cloud9::EnvironmentEC2 resource to the template
+        Adds an AWS::Cloud9::EnvironmentEC2 resource to the template. The AWS::Cloud9::EnvironmentEC2 resource creates an Amazon EC2 development environment in AWS Cloud9. For more information, see Creating an Environment: https://docs.aws.amazon.com/cloud9/latest/user-guide/create-environment.html in the *AWS Cloud9 User Guide*.
 
     .LINK
         http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-cloud9-environmentec2.html

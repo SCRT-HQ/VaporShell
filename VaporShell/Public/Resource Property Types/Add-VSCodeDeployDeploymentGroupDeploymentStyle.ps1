@@ -1,10 +1,11 @@
 function Add-VSCodeDeployDeploymentGroupDeploymentStyle {
     <#
     .SYNOPSIS
-        Adds an AWS::CodeDeploy::DeploymentGroup.DeploymentStyle resource property to the template
+        Adds an AWS::CodeDeploy::DeploymentGroup.DeploymentStyle resource property to the template. Information about the type of deployment, either in-place or blue/green, you want to run and whether to route deployment traffic behind a load balancer.
 
     .DESCRIPTION
-        Adds an AWS::CodeDeploy::DeploymentGroup.DeploymentStyle resource property to the template
+        Adds an AWS::CodeDeploy::DeploymentGroup.DeploymentStyle resource property to the template.
+Information about the type of deployment, either in-place or blue/green, you want to run and whether to route deployment traffic behind a load balancer.
 
     .LINK
         http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-codedeploy-deploymentgroup-deploymentstyle.html

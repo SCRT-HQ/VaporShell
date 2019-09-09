@@ -1,10 +1,10 @@
 function New-VSServiceCatalogPortfolioProductAssociation {
     <#
     .SYNOPSIS
-        Adds an AWS::ServiceCatalog::PortfolioProductAssociation resource to the template
+        Adds an AWS::ServiceCatalog::PortfolioProductAssociation resource to the template. Associates the specified product with the specified portfolio.
 
     .DESCRIPTION
-        Adds an AWS::ServiceCatalog::PortfolioProductAssociation resource to the template
+        Adds an AWS::ServiceCatalog::PortfolioProductAssociation resource to the template. Associates the specified product with the specified portfolio.
 
     .LINK
         http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-servicecatalog-portfolioproductassociation.html

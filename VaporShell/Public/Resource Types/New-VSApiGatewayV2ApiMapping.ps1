@@ -1,10 +1,10 @@
 function New-VSApiGatewayV2ApiMapping {
     <#
     .SYNOPSIS
-        Adds an AWS::ApiGatewayV2::ApiMapping resource to the template
+        Adds an AWS::ApiGatewayV2::ApiMapping resource to the template. The AWS::ApiGatewayV2::ApiMapping resource contains an API mapping. For more information, see CreateApiMapping: https://docs.aws.amazon.com/apigatewayv2/latest/api-reference/domainnames-domainname-apimappings.html#CreateApiMapping in the *Amazon API Gateway V2 API Reference*.
 
     .DESCRIPTION
-        Adds an AWS::ApiGatewayV2::ApiMapping resource to the template
+        Adds an AWS::ApiGatewayV2::ApiMapping resource to the template. The AWS::ApiGatewayV2::ApiMapping resource contains an API mapping. For more information, see CreateApiMapping: https://docs.aws.amazon.com/apigatewayv2/latest/api-reference/domainnames-domainname-apimappings.html#CreateApiMapping in the *Amazon API Gateway V2 API Reference*.
 
     .LINK
         http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-apigatewayv2-apimapping.html

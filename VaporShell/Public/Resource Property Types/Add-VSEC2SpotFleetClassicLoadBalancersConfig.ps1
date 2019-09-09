@@ -1,10 +1,11 @@
 function Add-VSEC2SpotFleetClassicLoadBalancersConfig {
     <#
     .SYNOPSIS
-        Adds an AWS::EC2::SpotFleet.ClassicLoadBalancersConfig resource property to the template
+        Adds an AWS::EC2::SpotFleet.ClassicLoadBalancersConfig resource property to the template. Specifies the Classic Load Balancers to attach to a Spot Fleet. Spot Fleet registers the running Spot Instances with these Classic Load Balancers.
 
     .DESCRIPTION
-        Adds an AWS::EC2::SpotFleet.ClassicLoadBalancersConfig resource property to the template
+        Adds an AWS::EC2::SpotFleet.ClassicLoadBalancersConfig resource property to the template.
+Specifies the Classic Load Balancers to attach to a Spot Fleet. Spot Fleet registers the running Spot Instances with these Classic Load Balancers.
 
     .LINK
         http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-spotfleet-classicloadbalancersconfig.html

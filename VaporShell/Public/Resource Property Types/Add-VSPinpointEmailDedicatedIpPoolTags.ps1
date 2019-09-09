@@ -1,10 +1,11 @@
 function Add-VSPinpointEmailDedicatedIpPoolTags {
     <#
     .SYNOPSIS
-        Adds an AWS::PinpointEmail::DedicatedIpPool.Tags resource property to the template
+        Adds an AWS::PinpointEmail::DedicatedIpPool.Tags resource property to the template. An object that defines the tags (keys and values that you want to associate with the dedicated IP pool.
 
     .DESCRIPTION
-        Adds an AWS::PinpointEmail::DedicatedIpPool.Tags resource property to the template
+        Adds an AWS::PinpointEmail::DedicatedIpPool.Tags resource property to the template.
+An object that defines the tags (keys and values that you want to associate with the dedicated IP pool.
 
     .LINK
         http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-pinpointemail-dedicatedippool-tags.html

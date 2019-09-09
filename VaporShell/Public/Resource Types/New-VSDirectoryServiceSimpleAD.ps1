@@ -1,10 +1,10 @@
 function New-VSDirectoryServiceSimpleAD {
     <#
     .SYNOPSIS
-        Adds an AWS::DirectoryService::SimpleAD resource to the template
+        Adds an AWS::DirectoryService::SimpleAD resource to the template. The AWS::DirectoryService::SimpleAD resource specifies an AWS Directory Service Simple Active Directory (Simple AD in AWS so that your directory users and groups can access the AWS Management Console and AWS applications using their existing credentials. Simple AD is a Microsoft Active Directory–compatible directory. For more information, see Simple Active Directory: https://docs.aws.amazon.com/directoryservice/latest/admin-guide/directory_simple_ad.html in the *AWS Directory Service Admin Guide*.
 
     .DESCRIPTION
-        Adds an AWS::DirectoryService::SimpleAD resource to the template
+        Adds an AWS::DirectoryService::SimpleAD resource to the template. The AWS::DirectoryService::SimpleAD resource specifies an AWS Directory Service Simple Active Directory (Simple AD in AWS so that your directory users and groups can access the AWS Management Console and AWS applications using their existing credentials. Simple AD is a Microsoft Active Directory–compatible directory. For more information, see Simple Active Directory: https://docs.aws.amazon.com/directoryservice/latest/admin-guide/directory_simple_ad.html in the *AWS Directory Service Admin Guide*.
 
     .LINK
         http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-directoryservice-simplead.html

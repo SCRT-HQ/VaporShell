@@ -1,10 +1,11 @@
 function Add-VSEMRClusterScalingAction {
     <#
     .SYNOPSIS
-        Adds an AWS::EMR::Cluster.ScalingAction resource property to the template
+        Adds an AWS::EMR::Cluster.ScalingAction resource property to the template. ScalingAction is a subproperty of the ScalingRule property type. ScalingAction determines the type of adjustment the automatic scaling activity makes when triggered, and the periodicity of the adjustment.
 
     .DESCRIPTION
-        Adds an AWS::EMR::Cluster.ScalingAction resource property to the template
+        Adds an AWS::EMR::Cluster.ScalingAction resource property to the template.
+ScalingAction is a subproperty of the ScalingRule property type. ScalingAction determines the type of adjustment the automatic scaling activity makes when triggered, and the periodicity of the adjustment.
 
     .LINK
         http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-elasticmapreduce-cluster-scalingaction.html

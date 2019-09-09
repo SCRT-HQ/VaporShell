@@ -1,10 +1,11 @@
 function Add-VSKinesisAnalyticsApplicationKinesisFirehoseInput {
     <#
     .SYNOPSIS
-        Adds an AWS::KinesisAnalytics::Application.KinesisFirehoseInput resource property to the template
+        Adds an AWS::KinesisAnalytics::Application.KinesisFirehoseInput resource property to the template. Identifies an Amazon Kinesis Firehose delivery stream as the streaming source. You provide the delivery stream's Amazon Resource Name (ARN and an IAM role ARN that enables Amazon Kinesis Analytics to access the stream on your behalf.
 
     .DESCRIPTION
-        Adds an AWS::KinesisAnalytics::Application.KinesisFirehoseInput resource property to the template
+        Adds an AWS::KinesisAnalytics::Application.KinesisFirehoseInput resource property to the template.
+Identifies an Amazon Kinesis Firehose delivery stream as the streaming source. You provide the delivery stream's Amazon Resource Name (ARN and an IAM role ARN that enables Amazon Kinesis Analytics to access the stream on your behalf.
 
     .LINK
         http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-kinesisanalytics-application-kinesisfirehoseinput.html

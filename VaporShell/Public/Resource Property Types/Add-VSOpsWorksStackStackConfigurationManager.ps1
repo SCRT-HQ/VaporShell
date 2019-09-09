@@ -1,10 +1,11 @@
 function Add-VSOpsWorksStackStackConfigurationManager {
     <#
     .SYNOPSIS
-        Adds an AWS::OpsWorks::Stack.StackConfigurationManager resource property to the template
+        Adds an AWS::OpsWorks::Stack.StackConfigurationManager resource property to the template. Describes the configuration manager.
 
     .DESCRIPTION
-        Adds an AWS::OpsWorks::Stack.StackConfigurationManager resource property to the template
+        Adds an AWS::OpsWorks::Stack.StackConfigurationManager resource property to the template.
+Describes the configuration manager.
 
     .LINK
         http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-opsworks-stack-stackconfigmanager.html

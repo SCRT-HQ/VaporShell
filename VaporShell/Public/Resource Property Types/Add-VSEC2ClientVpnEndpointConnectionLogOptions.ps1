@@ -1,10 +1,11 @@
 function Add-VSEC2ClientVpnEndpointConnectionLogOptions {
     <#
     .SYNOPSIS
-        Adds an AWS::EC2::ClientVpnEndpoint.ConnectionLogOptions resource property to the template
+        Adds an AWS::EC2::ClientVpnEndpoint.ConnectionLogOptions resource property to the template. Describes the client connection logging options for the Client VPN endpoint.
 
     .DESCRIPTION
-        Adds an AWS::EC2::ClientVpnEndpoint.ConnectionLogOptions resource property to the template
+        Adds an AWS::EC2::ClientVpnEndpoint.ConnectionLogOptions resource property to the template.
+Describes the client connection logging options for the Client VPN endpoint.
 
     .LINK
         http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-clientvpnendpoint-connectionlogoptions.html

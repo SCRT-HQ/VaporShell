@@ -1,10 +1,10 @@
 function New-VSWAFSqlInjectionMatchSet {
     <#
     .SYNOPSIS
-        Adds an AWS::WAF::SqlInjectionMatchSet resource to the template
+        Adds an AWS::WAF::SqlInjectionMatchSet resource to the template. A complex type that contains SqlInjectionMatchTuple objects, which specify the parts of web requests that you want AWS WAF to inspect for snippets of malicious SQL code and, if you want AWS WAF to inspect a header, the name of the header. If a SqlInjectionMatchSet contains more than one SqlInjectionMatchTuple object, a request needs to include snippets of SQL code in only one of the specified parts of the request to be considered a match.
 
     .DESCRIPTION
-        Adds an AWS::WAF::SqlInjectionMatchSet resource to the template
+        Adds an AWS::WAF::SqlInjectionMatchSet resource to the template. A complex type that contains SqlInjectionMatchTuple objects, which specify the parts of web requests that you want AWS WAF to inspect for snippets of malicious SQL code and, if you want AWS WAF to inspect a header, the name of the header. If a SqlInjectionMatchSet contains more than one SqlInjectionMatchTuple object, a request needs to include snippets of SQL code in only one of the specified parts of the request to be considered a match.
 
     .LINK
         http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-waf-sqlinjectionmatchset.html

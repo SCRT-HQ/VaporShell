@@ -1,10 +1,13 @@
 function Add-VSSSMMaintenanceWindowTargetTargets {
     <#
     .SYNOPSIS
-        Adds an AWS::SSM::MaintenanceWindowTarget.Targets resource property to the template
+        Adds an AWS::SSM::MaintenanceWindowTarget.Targets resource property to the template. The Targets property type specifies adding a target to a maintenance window target in AWS Systems Manager.
 
     .DESCRIPTION
-        Adds an AWS::SSM::MaintenanceWindowTarget.Targets resource property to the template
+        Adds an AWS::SSM::MaintenanceWindowTarget.Targets resource property to the template.
+The Targets property type specifies adding a target to a maintenance window target in AWS Systems Manager.
+
+Targets is a property of the AWS::SSM::MaintenanceWindowTarget: https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ssm-maintenancewindowtarget.html resource.
 
     .LINK
         http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ssm-maintenancewindowtarget-targets.html

@@ -1,10 +1,13 @@
 function Add-VSGreengrassResourceDefinitionVersionLocalVolumeResourceData {
     <#
     .SYNOPSIS
-        Adds an AWS::Greengrass::ResourceDefinitionVersion.LocalVolumeResourceData resource property to the template
+        Adds an AWS::Greengrass::ResourceDefinitionVersion.LocalVolumeResourceData resource property to the template. <a name="aws-properties-greengrass-resourcedefinitionversion-localvolumeresourcedata-description"></a>Settings for a local volume resource, which represents a file or directory on the root file system. For more information, see Access Local Resources with Lambda Functions: https://docs.aws.amazon.com/greengrass/latest/developerguide/access-local-resources.html in the *AWS IoT Greengrass Developer Guide*.
 
     .DESCRIPTION
-        Adds an AWS::Greengrass::ResourceDefinitionVersion.LocalVolumeResourceData resource property to the template
+        Adds an AWS::Greengrass::ResourceDefinitionVersion.LocalVolumeResourceData resource property to the template.
+<a name="aws-properties-greengrass-resourcedefinitionversion-localvolumeresourcedata-description"></a>Settings for a local volume resource, which represents a file or directory on the root file system. For more information, see Access Local Resources with Lambda Functions: https://docs.aws.amazon.com/greengrass/latest/developerguide/access-local-resources.html in the *AWS IoT Greengrass Developer Guide*.
+
+<a name="aws-properties-greengrass-resourcedefinitionversion-localvolumeresourcedata-inheritance"></a> In an AWS CloudFormation template, LocalVolumeResourceData can be used in the https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-greengrass-resourcedefinitionversion-resourcedatacontainer.html: https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-greengrass-resourcedefinitionversion-resourcedatacontainer.html property type.
 
     .LINK
         http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-greengrass-resourcedefinitionversion-localvolumeresourcedata.html

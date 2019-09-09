@@ -1,10 +1,11 @@
 function Add-VSRoute53HealthCheckHealthCheckTag {
     <#
     .SYNOPSIS
-        Adds an AWS::Route53::HealthCheck.HealthCheckTag resource property to the template
+        Adds an AWS::Route53::HealthCheck.HealthCheckTag resource property to the template. The HealthCheckTag property describes one key-value pair that is associated with an AWS::Route53::HealthCheck resource.
 
     .DESCRIPTION
-        Adds an AWS::Route53::HealthCheck.HealthCheckTag resource property to the template
+        Adds an AWS::Route53::HealthCheck.HealthCheckTag resource property to the template.
+The HealthCheckTag property describes one key-value pair that is associated with an AWS::Route53::HealthCheck resource.
 
     .LINK
         http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-route53-healthcheck-healthchecktag.html

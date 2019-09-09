@@ -1,10 +1,11 @@
 function Add-VSElasticLoadBalancingLoadBalancerConnectionSettings {
     <#
     .SYNOPSIS
-        Adds an AWS::ElasticLoadBalancing::LoadBalancer.ConnectionSettings resource property to the template
+        Adds an AWS::ElasticLoadBalancing::LoadBalancer.ConnectionSettings resource property to the template. Specifies the idle timeout value for your Classic Load Balancer.
 
     .DESCRIPTION
-        Adds an AWS::ElasticLoadBalancing::LoadBalancer.ConnectionSettings resource property to the template
+        Adds an AWS::ElasticLoadBalancing::LoadBalancer.ConnectionSettings resource property to the template.
+Specifies the idle timeout value for your Classic Load Balancer.
 
     .LINK
         http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-elb-connectionsettings.html

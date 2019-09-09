@@ -1,10 +1,12 @@
 function New-VSSSMResourceDataSync {
     <#
     .SYNOPSIS
-        Adds an AWS::SSM::ResourceDataSync resource to the template
+        Adds an AWS::SSM::ResourceDataSync resource to the template. The AWS::SSM::ResourceDataSync resource creates or deletes a Resource Data Sync for AWS Systems Manager Inventory. You can use Resource Data Sync to send Inventory data collected from all of your Systems Manager managed instances to a single Amazon S3 bucket that you have already created in your account. Resource Data Sync then automatically updates the centralized data when new Inventory data is collected.
 
     .DESCRIPTION
-        Adds an AWS::SSM::ResourceDataSync resource to the template
+        Adds an AWS::SSM::ResourceDataSync resource to the template. The AWS::SSM::ResourceDataSync resource creates or deletes a Resource Data Sync for AWS Systems Manager Inventory. You can use Resource Data Sync to send Inventory data collected from all of your Systems Manager managed instances to a single Amazon S3 bucket that you have already created in your account. Resource Data Sync then automatically updates the centralized data when new Inventory data is collected.
+
+For more information, see Configuring Inventory Collection: https://docs.aws.amazon.com/systems-manager/latest/userguide/sysman-inventory-configuring.html#sysman-inventory-datasync in the *AWS Systems Manager User Guide*.
 
     .LINK
         http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ssm-resourcedatasync.html

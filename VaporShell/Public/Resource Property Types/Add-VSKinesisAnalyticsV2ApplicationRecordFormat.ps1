@@ -1,10 +1,11 @@
 function Add-VSKinesisAnalyticsV2ApplicationRecordFormat {
     <#
     .SYNOPSIS
-        Adds an AWS::KinesisAnalyticsV2::Application.RecordFormat resource property to the template
+        Adds an AWS::KinesisAnalyticsV2::Application.RecordFormat resource property to the template. For an SQL-based Amazon Kinesis Data Analytics application, describes the record format and relevant mapping information that should be applied to schematize the records on the stream.
 
     .DESCRIPTION
-        Adds an AWS::KinesisAnalyticsV2::Application.RecordFormat resource property to the template
+        Adds an AWS::KinesisAnalyticsV2::Application.RecordFormat resource property to the template.
+For an SQL-based Amazon Kinesis Data Analytics application, describes the record format and relevant mapping information that should be applied to schematize the records on the stream.
 
     .LINK
         http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-kinesisanalyticsv2-application-recordformat.html

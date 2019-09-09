@@ -1,10 +1,11 @@
 function Add-VSBatchComputeEnvironmentLaunchTemplateSpecification {
     <#
     .SYNOPSIS
-        Adds an AWS::Batch::ComputeEnvironment.LaunchTemplateSpecification resource property to the template
+        Adds an AWS::Batch::ComputeEnvironment.LaunchTemplateSpecification resource property to the template. An object representing a launch template associated with a compute resource. You must specify either the launch template ID or launch template name in the request, but not both.
 
     .DESCRIPTION
-        Adds an AWS::Batch::ComputeEnvironment.LaunchTemplateSpecification resource property to the template
+        Adds an AWS::Batch::ComputeEnvironment.LaunchTemplateSpecification resource property to the template.
+An object representing a launch template associated with a compute resource. You must specify either the launch template ID or launch template name in the request, but not both.
 
     .LINK
         http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-batch-computeenvironment-launchtemplatespecification.html

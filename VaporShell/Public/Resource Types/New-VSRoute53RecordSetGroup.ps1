@@ -1,10 +1,10 @@
 function New-VSRoute53RecordSetGroup {
     <#
     .SYNOPSIS
-        Adds an AWS::Route53::RecordSetGroup resource to the template
+        Adds an AWS::Route53::RecordSetGroup resource to the template. A complex type that contains an optional comment, the name and ID of the hosted zone that you want to make changes in, and values for the resource record sets that you want to add, update, or delete.
 
     .DESCRIPTION
-        Adds an AWS::Route53::RecordSetGroup resource to the template
+        Adds an AWS::Route53::RecordSetGroup resource to the template. A complex type that contains an optional comment, the name and ID of the hosted zone that you want to make changes in, and values for the resource record sets that you want to add, update, or delete.
 
     .LINK
         http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-route53-recordsetgroup.html

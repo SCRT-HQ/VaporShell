@@ -1,10 +1,10 @@
 function New-VSServiceCatalogLaunchRoleConstraint {
     <#
     .SYNOPSIS
-        Adds an AWS::ServiceCatalog::LaunchRoleConstraint resource to the template
+        Adds an AWS::ServiceCatalog::LaunchRoleConstraint resource to the template. Specifies a launch constraint.
 
     .DESCRIPTION
-        Adds an AWS::ServiceCatalog::LaunchRoleConstraint resource to the template
+        Adds an AWS::ServiceCatalog::LaunchRoleConstraint resource to the template. Specifies a launch constraint.
 
     .LINK
         http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-servicecatalog-launchroleconstraint.html

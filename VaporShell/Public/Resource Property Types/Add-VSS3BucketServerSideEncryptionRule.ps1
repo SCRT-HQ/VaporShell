@@ -1,10 +1,11 @@
 function Add-VSS3BucketServerSideEncryptionRule {
     <#
     .SYNOPSIS
-        Adds an AWS::S3::Bucket.ServerSideEncryptionRule resource property to the template
+        Adds an AWS::S3::Bucket.ServerSideEncryptionRule resource property to the template. Specifies the default server-side encryption configuration.
 
     .DESCRIPTION
-        Adds an AWS::S3::Bucket.ServerSideEncryptionRule resource property to the template
+        Adds an AWS::S3::Bucket.ServerSideEncryptionRule resource property to the template.
+Specifies the default server-side encryption configuration.
 
     .LINK
         http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-s3-bucket-serversideencryptionrule.html

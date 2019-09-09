@@ -1,10 +1,11 @@
 function Add-VSEC2ClientVpnEndpointCertificateAuthenticationRequest {
     <#
     .SYNOPSIS
-        Adds an AWS::EC2::ClientVpnEndpoint.CertificateAuthenticationRequest resource property to the template
+        Adds an AWS::EC2::ClientVpnEndpoint.CertificateAuthenticationRequest resource property to the template. Information about the client certificate to be used for authentication.
 
     .DESCRIPTION
-        Adds an AWS::EC2::ClientVpnEndpoint.CertificateAuthenticationRequest resource property to the template
+        Adds an AWS::EC2::ClientVpnEndpoint.CertificateAuthenticationRequest resource property to the template.
+Information about the client certificate to be used for authentication.
 
     .LINK
         http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-clientvpnendpoint-certificateauthenticationrequest.html

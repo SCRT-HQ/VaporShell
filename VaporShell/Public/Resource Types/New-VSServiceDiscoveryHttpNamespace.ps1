@@ -1,10 +1,12 @@
 function New-VSServiceDiscoveryHttpNamespace {
     <#
     .SYNOPSIS
-        Adds an AWS::ServiceDiscovery::HttpNamespace resource to the template
+        Adds an AWS::ServiceDiscovery::HttpNamespace resource to the template. The HttpNamespace resource is a Cloud Map resource type that contains information about an HTTP namespace. Service instances that you register using an HTTP namespace can be discovered using a DiscoverInstances request but can't be discovered using DNS.
 
     .DESCRIPTION
-        Adds an AWS::ServiceDiscovery::HttpNamespace resource to the template
+        Adds an AWS::ServiceDiscovery::HttpNamespace resource to the template. The HttpNamespace resource is a Cloud Map resource type that contains information about an HTTP namespace. Service instances that you register using an HTTP namespace can be discovered using a DiscoverInstances request but can't be discovered using DNS.
+
+For the current limit on the number of namespaces that you can create using the same AWS account, see AWS Cloud Map Limits: https://docs.aws.amazon.com/cloud-map/latest/dg/cloud-map-limits.html in the *AWS Cloud Map Developer Guide*.
 
     .LINK
         http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-servicediscovery-httpnamespace.html

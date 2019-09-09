@@ -1,10 +1,10 @@
 function New-VSPinpointVoiceChannel {
     <#
     .SYNOPSIS
-        Adds an AWS::Pinpoint::VoiceChannel resource to the template
+        Adds an AWS::Pinpoint::VoiceChannel resource to the template. Updates the status and settings of the voice channel for an application.
 
     .DESCRIPTION
-        Adds an AWS::Pinpoint::VoiceChannel resource to the template
+        Adds an AWS::Pinpoint::VoiceChannel resource to the template. Updates the status and settings of the voice channel for an application.
 
     .LINK
         http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-pinpoint-voicechannel.html

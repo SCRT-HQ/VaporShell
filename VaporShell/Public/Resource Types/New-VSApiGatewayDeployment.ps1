@@ -1,10 +1,10 @@
 function New-VSApiGatewayDeployment {
     <#
     .SYNOPSIS
-        Adds an AWS::ApiGateway::Deployment resource to the template
+        Adds an AWS::ApiGateway::Deployment resource to the template. The AWS::ApiGateway::Deployment resource deploys an API Gateway RestApi resource to a stage so that clients can call the API over the internet. The stage acts as an environment.
 
     .DESCRIPTION
-        Adds an AWS::ApiGateway::Deployment resource to the template
+        Adds an AWS::ApiGateway::Deployment resource to the template. The AWS::ApiGateway::Deployment resource deploys an API Gateway RestApi resource to a stage so that clients can call the API over the internet. The stage acts as an environment.
 
     .LINK
         http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-apigateway-deployment.html

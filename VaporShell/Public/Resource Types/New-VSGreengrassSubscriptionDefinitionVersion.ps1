@@ -1,10 +1,16 @@
 function New-VSGreengrassSubscriptionDefinitionVersion {
     <#
     .SYNOPSIS
-        Adds an AWS::Greengrass::SubscriptionDefinitionVersion resource to the template
+        Adds an AWS::Greengrass::SubscriptionDefinitionVersion resource to the template. The AWS::Greengrass::SubscriptionDefinitionVersion resource represents a subscription definition version for AWS IoT Greengrass. A subscription definition version contains a list of subscriptions.
 
     .DESCRIPTION
-        Adds an AWS::Greengrass::SubscriptionDefinitionVersion resource to the template
+        Adds an AWS::Greengrass::SubscriptionDefinitionVersion resource to the template. The AWS::Greengrass::SubscriptionDefinitionVersion resource represents a subscription definition version for AWS IoT Greengrass. A subscription definition version contains a list of subscriptions.
+
+**Note**
+
+To create a subscription definition version, you must specify the ID of the subscription definition that you want to associate with the version. For information about creating a subscription definition, see https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-greengrass-subscriptiondefinition.html: https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-greengrass-subscriptiondefinition.html.
+
+After you create a subscription definition version that contains the subscriptions you want to deploy, you must add it to your group version. For more information, see https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-greengrass-group.html: https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-greengrass-group.html.
 
     .LINK
         http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-greengrass-subscriptiondefinitionversion.html

@@ -1,10 +1,11 @@
 function Add-VSElasticLoadBalancingLoadBalancerHealthCheck {
     <#
     .SYNOPSIS
-        Adds an AWS::ElasticLoadBalancing::LoadBalancer.HealthCheck resource property to the template
+        Adds an AWS::ElasticLoadBalancing::LoadBalancer.HealthCheck resource property to the template. Specifies health check settings for your Classic Load Balancer.
 
     .DESCRIPTION
-        Adds an AWS::ElasticLoadBalancing::LoadBalancer.HealthCheck resource property to the template
+        Adds an AWS::ElasticLoadBalancing::LoadBalancer.HealthCheck resource property to the template.
+Specifies health check settings for your Classic Load Balancer.
 
     .LINK
         http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-elb-health-check.html

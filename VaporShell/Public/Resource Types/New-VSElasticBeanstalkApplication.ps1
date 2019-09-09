@@ -1,10 +1,10 @@
 function New-VSElasticBeanstalkApplication {
     <#
     .SYNOPSIS
-        Adds an AWS::ElasticBeanstalk::Application resource to the template
+        Adds an AWS::ElasticBeanstalk::Application resource to the template. The AWS::ElasticBeanstalk::Application resource is an AWS Elastic Beanstalk resource type that specifies an Elastic Beanstalk application.
 
     .DESCRIPTION
-        Adds an AWS::ElasticBeanstalk::Application resource to the template
+        Adds an AWS::ElasticBeanstalk::Application resource to the template. The AWS::ElasticBeanstalk::Application resource is an AWS Elastic Beanstalk resource type that specifies an Elastic Beanstalk application.
 
     .LINK
         http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-beanstalk.html

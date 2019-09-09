@@ -1,10 +1,11 @@
 function Add-VSBackupBackupPlanBackupPlanResourceType {
     <#
     .SYNOPSIS
-        Adds an AWS::Backup::BackupPlan.BackupPlanResourceType resource property to the template
+        Adds an AWS::Backup::BackupPlan.BackupPlanResourceType resource property to the template. Specifies an object containing properties used to create a backup plan.
 
     .DESCRIPTION
-        Adds an AWS::Backup::BackupPlan.BackupPlanResourceType resource property to the template
+        Adds an AWS::Backup::BackupPlan.BackupPlanResourceType resource property to the template.
+Specifies an object containing properties used to create a backup plan.
 
     .LINK
         http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-backup-backupplan-backupplanresourcetype.html

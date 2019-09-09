@@ -1,10 +1,11 @@
 function Add-VSConfigConfigRuleSourceDetail {
     <#
     .SYNOPSIS
-        Adds an AWS::Config::ConfigRule.SourceDetail resource property to the template
+        Adds an AWS::Config::ConfigRule.SourceDetail resource property to the template. Provides the source and the message types that trigger AWS Config to evaluate your AWS resources against a rule. It also provides the frequency with which you want AWS Config to run evaluations for the rule if the trigger type is periodic. You can specify the parameter values for SourceDetail only for custom rules.
 
     .DESCRIPTION
-        Adds an AWS::Config::ConfigRule.SourceDetail resource property to the template
+        Adds an AWS::Config::ConfigRule.SourceDetail resource property to the template.
+Provides the source and the message types that trigger AWS Config to evaluate your AWS resources against a rule. It also provides the frequency with which you want AWS Config to run evaluations for the rule if the trigger type is periodic. You can specify the parameter values for SourceDetail only for custom rules.
 
     .LINK
         http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-config-configrule-source-sourcedetails.html

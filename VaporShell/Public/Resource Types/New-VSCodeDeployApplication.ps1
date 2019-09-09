@@ -1,10 +1,10 @@
 function New-VSCodeDeployApplication {
     <#
     .SYNOPSIS
-        Adds an AWS::CodeDeploy::Application resource to the template
+        Adds an AWS::CodeDeploy::Application resource to the template. The AWS::CodeDeploy::Application resource creates an AWS CodeDeploy application. In CodeDeploy, an application is a name that functions as a container to ensure that the correct combination of revision, deployment configuration, and deployment group are referenced during a deployment. You can use the AWS::CodeDeploy::DeploymentGroup resource to associate the application with a CodeDeploy deployment group. For more information, see CodeDeploy Deployments: https://docs.aws.amazon.com/codedeploy/latest/userguide/deployment-steps.html in the *AWS CodeDeploy User Guide*.
 
     .DESCRIPTION
-        Adds an AWS::CodeDeploy::Application resource to the template
+        Adds an AWS::CodeDeploy::Application resource to the template. The AWS::CodeDeploy::Application resource creates an AWS CodeDeploy application. In CodeDeploy, an application is a name that functions as a container to ensure that the correct combination of revision, deployment configuration, and deployment group are referenced during a deployment. You can use the AWS::CodeDeploy::DeploymentGroup resource to associate the application with a CodeDeploy deployment group. For more information, see CodeDeploy Deployments: https://docs.aws.amazon.com/codedeploy/latest/userguide/deployment-steps.html in the *AWS CodeDeploy User Guide*.
 
     .LINK
         http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-codedeploy-application.html

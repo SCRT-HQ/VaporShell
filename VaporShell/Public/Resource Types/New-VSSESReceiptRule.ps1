@@ -1,10 +1,14 @@
 function New-VSSESReceiptRule {
     <#
     .SYNOPSIS
-        Adds an AWS::SES::ReceiptRule resource to the template
+        Adds an AWS::SES::ReceiptRule resource to the template. Specifies a receipt rule.
 
     .DESCRIPTION
-        Adds an AWS::SES::ReceiptRule resource to the template
+        Adds an AWS::SES::ReceiptRule resource to the template. Specifies a receipt rule.
+
+For information about setting up receipt rules, see the Amazon SES Developer Guide: https://docs.aws.amazon.com/ses/latest/DeveloperGuide/receiving-email-receipt-rules.html.
+
+You can execute this operation no more than once per second.
 
     .LINK
         http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ses-receiptrule.html

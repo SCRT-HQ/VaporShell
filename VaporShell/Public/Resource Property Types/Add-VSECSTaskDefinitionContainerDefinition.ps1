@@ -1,10 +1,11 @@
 function Add-VSECSTaskDefinitionContainerDefinition {
     <#
     .SYNOPSIS
-        Adds an AWS::ECS::TaskDefinition.ContainerDefinition resource property to the template
+        Adds an AWS::ECS::TaskDefinition.ContainerDefinition resource property to the template. The ContainerDefinition property specifies a container definition. Container definitions are used in task definitions to describe the different containers that are launched as part of a task.
 
     .DESCRIPTION
-        Adds an AWS::ECS::TaskDefinition.ContainerDefinition resource property to the template
+        Adds an AWS::ECS::TaskDefinition.ContainerDefinition resource property to the template.
+The ContainerDefinition property specifies a container definition. Container definitions are used in task definitions to describe the different containers that are launched as part of a task.
 
     .LINK
         http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ecs-taskdefinition-containerdefinitions.html

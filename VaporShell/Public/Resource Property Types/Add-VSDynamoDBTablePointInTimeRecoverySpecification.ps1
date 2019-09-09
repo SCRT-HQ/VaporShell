@@ -1,10 +1,11 @@
 function Add-VSDynamoDBTablePointInTimeRecoverySpecification {
     <#
     .SYNOPSIS
-        Adds an AWS::DynamoDB::Table.PointInTimeRecoverySpecification resource property to the template
+        Adds an AWS::DynamoDB::Table.PointInTimeRecoverySpecification resource property to the template. The settings used to enable point in time recovery.
 
     .DESCRIPTION
-        Adds an AWS::DynamoDB::Table.PointInTimeRecoverySpecification resource property to the template
+        Adds an AWS::DynamoDB::Table.PointInTimeRecoverySpecification resource property to the template.
+The settings used to enable point in time recovery.
 
     .LINK
         http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-dynamodb-table-pointintimerecoveryspecification.html

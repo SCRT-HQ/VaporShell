@@ -1,10 +1,10 @@
 function New-VSServiceCatalogLaunchTemplateConstraint {
     <#
     .SYNOPSIS
-        Adds an AWS::ServiceCatalog::LaunchTemplateConstraint resource to the template
+        Adds an AWS::ServiceCatalog::LaunchTemplateConstraint resource to the template. Specifies a template constraint.
 
     .DESCRIPTION
-        Adds an AWS::ServiceCatalog::LaunchTemplateConstraint resource to the template
+        Adds an AWS::ServiceCatalog::LaunchTemplateConstraint resource to the template. Specifies a template constraint.
 
     .LINK
         http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-servicecatalog-launchtemplateconstraint.html

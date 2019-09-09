@@ -1,10 +1,14 @@
 function New-VSDMSReplicationSubnetGroup {
     <#
     .SYNOPSIS
-        Adds an AWS::DMS::ReplicationSubnetGroup resource to the template
+        Adds an AWS::DMS::ReplicationSubnetGroup resource to the template. The AWS::DMS::ReplicationSubnetGroup resource creates an AWS DMS replication subnet group. Subnet groups must contain at least two subnets in two different Availability Zones in the same region.
 
     .DESCRIPTION
-        Adds an AWS::DMS::ReplicationSubnetGroup resource to the template
+        Adds an AWS::DMS::ReplicationSubnetGroup resource to the template. The AWS::DMS::ReplicationSubnetGroup resource creates an AWS DMS replication subnet group. Subnet groups must contain at least two subnets in two different Availability Zones in the same region.
+
+**Note**
+
+Resource creation will fail if the dms-vpc-role IAM role doesn't already exist. For more information, see Creating the IAM Roles to Use With the AWS CLI and AWS DMS API: https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Security.APIRole.html in the *AWS Database Migration Service User Guide.*
 
     .LINK
         http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-dms-replicationsubnetgroup.html

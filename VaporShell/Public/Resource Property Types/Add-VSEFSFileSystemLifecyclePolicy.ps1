@@ -1,10 +1,11 @@
 function Add-VSEFSFileSystemLifecyclePolicy {
     <#
     .SYNOPSIS
-        Adds an AWS::EFS::FileSystem.LifecyclePolicy resource property to the template
+        Adds an AWS::EFS::FileSystem.LifecyclePolicy resource property to the template. 
 
     .DESCRIPTION
-        Adds an AWS::EFS::FileSystem.LifecyclePolicy resource property to the template
+        Adds an AWS::EFS::FileSystem.LifecyclePolicy resource property to the template.
+
 
     .LINK
         http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-elasticfilesystem-filesystem-lifecyclepolicy.html

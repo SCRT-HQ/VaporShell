@@ -1,10 +1,12 @@
 function New-VSSESTemplate {
     <#
     .SYNOPSIS
-        Adds an AWS::SES::Template resource to the template
+        Adds an AWS::SES::Template resource to the template. Specifies an email template. Email templates enable you to send personalized email to one or more destinations in a single API operation. For more information, see the Amazon SES Developer Guide: https://docs.aws.amazon.com/ses/latest/DeveloperGuide/send-personalized-email-api.html.
 
     .DESCRIPTION
-        Adds an AWS::SES::Template resource to the template
+        Adds an AWS::SES::Template resource to the template. Specifies an email template. Email templates enable you to send personalized email to one or more destinations in a single API operation. For more information, see the Amazon SES Developer Guide: https://docs.aws.amazon.com/ses/latest/DeveloperGuide/send-personalized-email-api.html.
+
+You can execute this operation no more than once per second.
 
     .LINK
         http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ses-template.html

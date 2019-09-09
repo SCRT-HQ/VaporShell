@@ -1,10 +1,25 @@
 function Add-VSIoTTopicRuleDynamoDBAction {
     <#
     .SYNOPSIS
-        Adds an AWS::IoT::TopicRule.DynamoDBAction resource property to the template
+        Adds an AWS::IoT::TopicRule.DynamoDBAction resource property to the template. Describes an action to write to a DynamoDB table.
 
     .DESCRIPTION
-        Adds an AWS::IoT::TopicRule.DynamoDBAction resource property to the template
+        Adds an AWS::IoT::TopicRule.DynamoDBAction resource property to the template.
+Describes an action to write to a DynamoDB table.
+
+The tableName, hashKeyField, and rangeKeyField values must match the values used when you created the table.
+
+The hashKeyValue and rangeKeyvalue fields use a substitution template syntax. These templates provide data at runtime. The syntax is as follows: ${*sql-expression*}.
+
+You can specify any valid expression in a WHERE or SELECT clause, including JSON properties, comparisons, calculations, and functions. For example, the following field uses the third level of the topic:
+
+"hashKeyValue": "${topic(3}"
+
+The following field uses the timestamp:
+
+"rangeKeyValue": "${timestamp(}"
+
+For more information, see DynamoDBv2 Action: https://docs.aws.amazon.com/iot/latest/developerguide/iot-rule-actions.html in the *AWS IoT Developer Guide*.
 
     .LINK
         http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iot-topicrule-dynamodbaction.html

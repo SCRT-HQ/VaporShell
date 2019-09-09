@@ -1,10 +1,11 @@
 function Add-VSLambdaFunctionVpcConfig {
     <#
     .SYNOPSIS
-        Adds an AWS::Lambda::Function.VpcConfig resource property to the template
+        Adds an AWS::Lambda::Function.VpcConfig resource property to the template. The VPC security groups and subnets that are attached to a Lambda function.
 
     .DESCRIPTION
-        Adds an AWS::Lambda::Function.VpcConfig resource property to the template
+        Adds an AWS::Lambda::Function.VpcConfig resource property to the template.
+The VPC security groups and subnets that are attached to a Lambda function.
 
     .LINK
         http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-lambda-function-vpcconfig.html

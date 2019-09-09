@@ -1,10 +1,10 @@
 function New-VSKinesisStream {
     <#
     .SYNOPSIS
-        Adds an AWS::Kinesis::Stream resource to the template
+        Adds an AWS::Kinesis::Stream resource to the template. Creates a Kinesis stream that captures and transports data records that are emitted from data sources. For information about creating streams, see CreateStream: https://docs.aws.amazon.com/kinesis/latest/APIReference/API_CreateStream.html in the Amazon Kinesis API Reference.
 
     .DESCRIPTION
-        Adds an AWS::Kinesis::Stream resource to the template
+        Adds an AWS::Kinesis::Stream resource to the template. Creates a Kinesis stream that captures and transports data records that are emitted from data sources. For information about creating streams, see CreateStream: https://docs.aws.amazon.com/kinesis/latest/APIReference/API_CreateStream.html in the Amazon Kinesis API Reference.
 
     .LINK
         http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-kinesis-stream.html

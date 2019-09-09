@@ -1,10 +1,11 @@
 function Add-VSS3BucketRoutingRule {
     <#
     .SYNOPSIS
-        Adds an AWS::S3::Bucket.RoutingRule resource property to the template
+        Adds an AWS::S3::Bucket.RoutingRule resource property to the template. Specifies the redirect behavior and when a redirect is applied.
 
     .DESCRIPTION
-        Adds an AWS::S3::Bucket.RoutingRule resource property to the template
+        Adds an AWS::S3::Bucket.RoutingRule resource property to the template.
+Specifies the redirect behavior and when a redirect is applied.
 
     .LINK
         http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-s3-websiteconfiguration-routingrules.html

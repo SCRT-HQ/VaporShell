@@ -1,10 +1,10 @@
 function New-VSConfigConfigurationAggregator {
     <#
     .SYNOPSIS
-        Adds an AWS::Config::ConfigurationAggregator resource to the template
+        Adds an AWS::Config::ConfigurationAggregator resource to the template. The details about the configuration aggregator, including information about source accounts, regions, and metadata of the aggregator.
 
     .DESCRIPTION
-        Adds an AWS::Config::ConfigurationAggregator resource to the template
+        Adds an AWS::Config::ConfigurationAggregator resource to the template. The details about the configuration aggregator, including information about source accounts, regions, and metadata of the aggregator.
 
     .LINK
         http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-config-configurationaggregator.html

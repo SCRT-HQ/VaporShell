@@ -1,10 +1,12 @@
 function New-VSApplicationAutoScalingScalingPolicy {
     <#
     .SYNOPSIS
-        Adds an AWS::ApplicationAutoScaling::ScalingPolicy resource to the template
+        Adds an AWS::ApplicationAutoScaling::ScalingPolicy resource to the template. The AWS::ApplicationAutoScaling::ScalingPolicy resource defines a scaling policy that Application Auto Scaling uses to adjust your application resources.
 
     .DESCRIPTION
-        Adds an AWS::ApplicationAutoScaling::ScalingPolicy resource to the template
+        Adds an AWS::ApplicationAutoScaling::ScalingPolicy resource to the template. The AWS::ApplicationAutoScaling::ScalingPolicy resource defines a scaling policy that Application Auto Scaling uses to adjust your application resources.
+
+For more information, see PutScalingPolicy: https://docs.aws.amazon.com/autoscaling/application/APIReference/API_PutScalingPolicy.html in the *Application Auto Scaling API Reference*. For more information about scaling policies, see the Application Auto Scaling User Guide: https://docs.aws.amazon.com/autoscaling/application/userguide/what-is-application-auto-scaling.html.
 
     .LINK
         http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-applicationautoscaling-scalingpolicy.html

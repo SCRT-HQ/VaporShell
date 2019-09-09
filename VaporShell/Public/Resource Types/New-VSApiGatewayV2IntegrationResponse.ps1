@@ -1,10 +1,10 @@
 function New-VSApiGatewayV2IntegrationResponse {
     <#
     .SYNOPSIS
-        Adds an AWS::ApiGatewayV2::IntegrationResponse resource to the template
+        Adds an AWS::ApiGatewayV2::IntegrationResponse resource to the template. The AWS::ApiGatewayV2::IntegrationResponse resource updates an integration response for an API. For more information, see Set up WebSocket API Integration Responses in API Gateway: https://docs.aws.amazon.com/apigateway/latest/developerguide/apigateway-websocket-api-integration-responses.html in the *API Gateway Developer Guide*.
 
     .DESCRIPTION
-        Adds an AWS::ApiGatewayV2::IntegrationResponse resource to the template
+        Adds an AWS::ApiGatewayV2::IntegrationResponse resource to the template. The AWS::ApiGatewayV2::IntegrationResponse resource updates an integration response for an API. For more information, see Set up WebSocket API Integration Responses in API Gateway: https://docs.aws.amazon.com/apigateway/latest/developerguide/apigateway-websocket-api-integration-responses.html in the *API Gateway Developer Guide*.
 
     .LINK
         http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-apigatewayv2-integrationresponse.html

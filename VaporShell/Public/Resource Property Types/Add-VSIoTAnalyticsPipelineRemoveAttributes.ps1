@@ -1,10 +1,11 @@
 function Add-VSIoTAnalyticsPipelineRemoveAttributes {
     <#
     .SYNOPSIS
-        Adds an AWS::IoTAnalytics::Pipeline.RemoveAttributes resource property to the template
+        Adds an AWS::IoTAnalytics::Pipeline.RemoveAttributes resource property to the template. An activity that removes attributes from a message.
 
     .DESCRIPTION
-        Adds an AWS::IoTAnalytics::Pipeline.RemoveAttributes resource property to the template
+        Adds an AWS::IoTAnalytics::Pipeline.RemoveAttributes resource property to the template.
+An activity that removes attributes from a message.
 
     .LINK
         http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iotanalytics-pipeline-removeattributes.html

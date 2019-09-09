@@ -1,10 +1,11 @@
 function Add-VSWorkSpacesWorkspaceWorkspaceProperties {
     <#
     .SYNOPSIS
-        Adds an AWS::WorkSpaces::Workspace.WorkspaceProperties resource property to the template
+        Adds an AWS::WorkSpaces::Workspace.WorkspaceProperties resource property to the template. Information about a WorkSpace.
 
     .DESCRIPTION
-        Adds an AWS::WorkSpaces::Workspace.WorkspaceProperties resource property to the template
+        Adds an AWS::WorkSpaces::Workspace.WorkspaceProperties resource property to the template.
+Information about a WorkSpace.
 
     .LINK
         http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-workspaces-workspace-workspaceproperties.html

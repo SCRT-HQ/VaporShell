@@ -1,10 +1,10 @@
 function New-VSKinesisAnalyticsV2Application {
     <#
     .SYNOPSIS
-        Adds an AWS::KinesisAnalyticsV2::Application resource to the template
+        Adds an AWS::KinesisAnalyticsV2::Application resource to the template. Creates an Amazon Kinesis Data Analytics application. For information about creating a Kinesis Data Analytics application, see Creating an Application: https://docs.aws.amazon.com/kinesisanalytics/latest/java/getting-started.html.
 
     .DESCRIPTION
-        Adds an AWS::KinesisAnalyticsV2::Application resource to the template
+        Adds an AWS::KinesisAnalyticsV2::Application resource to the template. Creates an Amazon Kinesis Data Analytics application. For information about creating a Kinesis Data Analytics application, see Creating an Application: https://docs.aws.amazon.com/kinesisanalytics/latest/java/getting-started.html.
 
     .LINK
         http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-kinesisanalyticsv2-application.html

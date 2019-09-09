@@ -1,10 +1,11 @@
 function Add-VSPinpointCampaignEventDimensions {
     <#
     .SYNOPSIS
-        Adds an AWS::Pinpoint::Campaign.EventDimensions resource property to the template
+        Adds an AWS::Pinpoint::Campaign.EventDimensions resource property to the template. Specifies the dimensions for an event filter that determines when a campaign is sent.
 
     .DESCRIPTION
-        Adds an AWS::Pinpoint::Campaign.EventDimensions resource property to the template
+        Adds an AWS::Pinpoint::Campaign.EventDimensions resource property to the template.
+Specifies the dimensions for an event filter that determines when a campaign is sent.
 
     .LINK
         http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-pinpoint-campaign-eventdimensions.html

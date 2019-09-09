@@ -1,10 +1,11 @@
 function Add-VSECSServicePlacementConstraint {
     <#
     .SYNOPSIS
-        Adds an AWS::ECS::Service.PlacementConstraint resource property to the template
+        Adds an AWS::ECS::Service.PlacementConstraint resource property to the template. The PlacementConstraint property specifies an object representing a constraint on task placement in the task definition. For more information, see Task Placement Constraints: https://docs.aws.amazon.com/AmazonECS/latest/developerguide/task-placement-constraints.html in the *Amazon Elastic Container Service Developer Guide*.
 
     .DESCRIPTION
-        Adds an AWS::ECS::Service.PlacementConstraint resource property to the template
+        Adds an AWS::ECS::Service.PlacementConstraint resource property to the template.
+The PlacementConstraint property specifies an object representing a constraint on task placement in the task definition. For more information, see Task Placement Constraints: https://docs.aws.amazon.com/AmazonECS/latest/developerguide/task-placement-constraints.html in the *Amazon Elastic Container Service Developer Guide*.
 
     .LINK
         http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ecs-service-placementconstraint.html

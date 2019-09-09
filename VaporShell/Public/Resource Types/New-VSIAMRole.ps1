@@ -1,10 +1,10 @@
 function New-VSIAMRole {
     <#
     .SYNOPSIS
-        Adds an AWS::IAM::Role resource to the template
+        Adds an AWS::IAM::Role resource to the template. Creates a new role for your AWS account. For more information about roles, go to IAM Roles: https://docs.aws.amazon.com/IAM/latest/UserGuide/WorkingWithRoles.html. For information about limitations on role names and the number of roles you can create, go to Limitations on IAM Entities: https://docs.aws.amazon.com/IAM/latest/UserGuide/LimitationsOnEntities.html in the *IAM User Guide*.
 
     .DESCRIPTION
-        Adds an AWS::IAM::Role resource to the template
+        Adds an AWS::IAM::Role resource to the template. Creates a new role for your AWS account. For more information about roles, go to IAM Roles: https://docs.aws.amazon.com/IAM/latest/UserGuide/WorkingWithRoles.html. For information about limitations on role names and the number of roles you can create, go to Limitations on IAM Entities: https://docs.aws.amazon.com/IAM/latest/UserGuide/LimitationsOnEntities.html in the *IAM User Guide*.
 
     .LINK
         http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-iam-role.html

@@ -1,10 +1,11 @@
 function Add-VSAmplifyAppEnvironmentVariable {
     <#
     .SYNOPSIS
-        Adds an AWS::Amplify::App.EnvironmentVariable resource property to the template
+        Adds an AWS::Amplify::App.EnvironmentVariable resource property to the template. Environment variables are key-value pairs that are available at build time. Set environment variables for all branches in your app.
 
     .DESCRIPTION
-        Adds an AWS::Amplify::App.EnvironmentVariable resource property to the template
+        Adds an AWS::Amplify::App.EnvironmentVariable resource property to the template.
+Environment variables are key-value pairs that are available at build time. Set environment variables for all branches in your app.
 
     .LINK
         http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-amplify-app-environmentvariable.html

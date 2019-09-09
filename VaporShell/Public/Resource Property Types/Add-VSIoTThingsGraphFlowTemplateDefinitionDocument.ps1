@@ -1,10 +1,11 @@
 function Add-VSIoTThingsGraphFlowTemplateDefinitionDocument {
     <#
     .SYNOPSIS
-        Adds an AWS::IoTThingsGraph::FlowTemplate.DefinitionDocument resource property to the template
+        Adds an AWS::IoTThingsGraph::FlowTemplate.DefinitionDocument resource property to the template. A document that defines an entity.
 
     .DESCRIPTION
-        Adds an AWS::IoTThingsGraph::FlowTemplate.DefinitionDocument resource property to the template
+        Adds an AWS::IoTThingsGraph::FlowTemplate.DefinitionDocument resource property to the template.
+A document that defines an entity.
 
     .LINK
         http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iotthingsgraph-flowtemplate-definitiondocument.html

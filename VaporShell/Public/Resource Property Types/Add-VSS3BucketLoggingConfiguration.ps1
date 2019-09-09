@@ -1,10 +1,11 @@
 function Add-VSS3BucketLoggingConfiguration {
     <#
     .SYNOPSIS
-        Adds an AWS::S3::Bucket.LoggingConfiguration resource property to the template
+        Adds an AWS::S3::Bucket.LoggingConfiguration resource property to the template. Describes where logs are stored and the prefix that Amazon S3 assigns to all log object keys for a bucket. For more information, see PUT Bucket logging: https://docs.aws.amazon.com/AmazonS3/latest/API/RESTBucketPUTlogging.html in the *Amazon Simple Storage Service API Reference*.
 
     .DESCRIPTION
-        Adds an AWS::S3::Bucket.LoggingConfiguration resource property to the template
+        Adds an AWS::S3::Bucket.LoggingConfiguration resource property to the template.
+Describes where logs are stored and the prefix that Amazon S3 assigns to all log object keys for a bucket. For more information, see PUT Bucket logging: https://docs.aws.amazon.com/AmazonS3/latest/API/RESTBucketPUTlogging.html in the *Amazon Simple Storage Service API Reference*.
 
     .LINK
         http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-s3-bucket-loggingconfig.html

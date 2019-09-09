@@ -1,10 +1,11 @@
 function Add-VSIoTAnalyticsPipelineActivity {
     <#
     .SYNOPSIS
-        Adds an AWS::IoTAnalytics::Pipeline.Activity resource property to the template
+        Adds an AWS::IoTAnalytics::Pipeline.Activity resource property to the template. An activity that performs a transformation on a message.
 
     .DESCRIPTION
-        Adds an AWS::IoTAnalytics::Pipeline.Activity resource property to the template
+        Adds an AWS::IoTAnalytics::Pipeline.Activity resource property to the template.
+An activity that performs a transformation on a message.
 
     .LINK
         http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iotanalytics-pipeline-activity.html

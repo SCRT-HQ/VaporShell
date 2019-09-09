@@ -1,10 +1,10 @@
 function New-VSSSMMaintenanceWindowTask {
     <#
     .SYNOPSIS
-        Adds an AWS::SSM::MaintenanceWindowTask resource to the template
+        Adds an AWS::SSM::MaintenanceWindowTask resource to the template. The AWS::SSM::MaintenanceWindowTask resource defines information about a task for an AWS Systems Manager maintenance window. For more information, see RegisterTaskWithMaintenanceWindow: https://docs.aws.amazon.com/systems-manager/latest/APIReference/API_RegisterTaskWithMaintenanceWindow.html in the *AWS Systems Manager API Reference*.
 
     .DESCRIPTION
-        Adds an AWS::SSM::MaintenanceWindowTask resource to the template
+        Adds an AWS::SSM::MaintenanceWindowTask resource to the template. The AWS::SSM::MaintenanceWindowTask resource defines information about a task for an AWS Systems Manager maintenance window. For more information, see RegisterTaskWithMaintenanceWindow: https://docs.aws.amazon.com/systems-manager/latest/APIReference/API_RegisterTaskWithMaintenanceWindow.html in the *AWS Systems Manager API Reference*.
 
     .LINK
         http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ssm-maintenancewindowtask.html

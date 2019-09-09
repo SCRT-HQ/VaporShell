@@ -1,10 +1,11 @@
 function Add-VSServiceCatalogCloudFormationProvisionedProductProvisioningParameter {
     <#
     .SYNOPSIS
-        Adds an AWS::ServiceCatalog::CloudFormationProvisionedProduct.ProvisioningParameter resource property to the template
+        Adds an AWS::ServiceCatalog::CloudFormationProvisionedProduct.ProvisioningParameter resource property to the template. Information about a parameter used to provision a product.
 
     .DESCRIPTION
-        Adds an AWS::ServiceCatalog::CloudFormationProvisionedProduct.ProvisioningParameter resource property to the template
+        Adds an AWS::ServiceCatalog::CloudFormationProvisionedProduct.ProvisioningParameter resource property to the template.
+Information about a parameter used to provision a product.
 
     .LINK
         http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-servicecatalog-cloudformationprovisionedproduct-provisioningparameter.html

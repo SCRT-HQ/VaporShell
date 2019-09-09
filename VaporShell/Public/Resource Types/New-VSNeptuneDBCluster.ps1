@@ -1,10 +1,16 @@
 function New-VSNeptuneDBCluster {
     <#
     .SYNOPSIS
-        Adds an AWS::Neptune::DBCluster resource to the template
+        Adds an AWS::Neptune::DBCluster resource to the template. The AWS::Neptune::DBCluster resource creates an Amazon Neptune DB cluster. Neptune is a fully managed graph database.
 
     .DESCRIPTION
-        Adds an AWS::Neptune::DBCluster resource to the template
+        Adds an AWS::Neptune::DBCluster resource to the template. The AWS::Neptune::DBCluster resource creates an Amazon Neptune DB cluster. Neptune is a fully managed graph database.
+
+**Note**
+
+Currently, you can create this resource only in AWS Regions in which Amazon Neptune is supported.
+
+If no DeletionPolicy is set for AWS::Neptune::DBCluster resources, the default deletion behavior is that the entire volume will be deleted without a snapshot. To retain a backup of the volume, the DeletionPolicy should be set to Snapshot. For more information about how AWS CloudFormation deletes resources, see DeletionPolicy Attribute: https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-attribute-deletionpolicy.html.
 
     .LINK
         http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-neptune-dbcluster.html

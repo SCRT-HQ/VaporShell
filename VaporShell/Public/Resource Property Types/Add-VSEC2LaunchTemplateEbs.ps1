@@ -1,10 +1,13 @@
 function Add-VSEC2LaunchTemplateEbs {
     <#
     .SYNOPSIS
-        Adds an AWS::EC2::LaunchTemplate.Ebs resource property to the template
+        Adds an AWS::EC2::LaunchTemplate.Ebs resource property to the template. Parameters for a block device for an EBS volume in an Amazon EC2 launch template.
 
     .DESCRIPTION
-        Adds an AWS::EC2::LaunchTemplate.Ebs resource property to the template
+        Adds an AWS::EC2::LaunchTemplate.Ebs resource property to the template.
+Parameters for a block device for an EBS volume in an Amazon EC2 launch template.
+
+Ebs is a property of the  Amazon EC2 LaunchTemplate BlockDeviceMapping: https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-launchtemplate-blockdevicemapping.html property type.
 
     .LINK
         http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-launchtemplate-blockdevicemapping-ebs.html

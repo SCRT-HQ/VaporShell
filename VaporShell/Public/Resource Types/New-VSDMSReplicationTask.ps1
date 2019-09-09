@@ -1,10 +1,10 @@
 function New-VSDMSReplicationTask {
     <#
     .SYNOPSIS
-        Adds an AWS::DMS::ReplicationTask resource to the template
+        Adds an AWS::DMS::ReplicationTask resource to the template. The AWS::DMS::ReplicationTask resource creates an AWS DMS replication task.
 
     .DESCRIPTION
-        Adds an AWS::DMS::ReplicationTask resource to the template
+        Adds an AWS::DMS::ReplicationTask resource to the template. The AWS::DMS::ReplicationTask resource creates an AWS DMS replication task.
 
     .LINK
         http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-dms-replicationtask.html

@@ -1,10 +1,11 @@
 function Add-VSS3BucketAbortIncompleteMultipartUpload {
     <#
     .SYNOPSIS
-        Adds an AWS::S3::Bucket.AbortIncompleteMultipartUpload resource property to the template
+        Adds an AWS::S3::Bucket.AbortIncompleteMultipartUpload resource property to the template. Specifies the days since the initiation of an incomplete multipart upload that Amazon S3 will wait before permanently removing all parts of the upload. For more information, see  Aborting Incomplete Multipart Uploads Using a Bucket Lifecycle Policy: https://docs.aws.amazon.com/AmazonS3/latest/dev/mpuoverview.html#mpu-abort-incomplete-mpu-lifecycle-config in the *Amazon Simple Storage Service Developer Guide*.
 
     .DESCRIPTION
-        Adds an AWS::S3::Bucket.AbortIncompleteMultipartUpload resource property to the template
+        Adds an AWS::S3::Bucket.AbortIncompleteMultipartUpload resource property to the template.
+Specifies the days since the initiation of an incomplete multipart upload that Amazon S3 will wait before permanently removing all parts of the upload. For more information, see  Aborting Incomplete Multipart Uploads Using a Bucket Lifecycle Policy: https://docs.aws.amazon.com/AmazonS3/latest/dev/mpuoverview.html#mpu-abort-incomplete-mpu-lifecycle-config in the *Amazon Simple Storage Service Developer Guide*.
 
     .LINK
         http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-s3-bucket-abortincompletemultipartupload.html

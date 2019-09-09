@@ -1,10 +1,12 @@
 function New-VSAppMeshVirtualService {
     <#
     .SYNOPSIS
-        Adds an AWS::AppMesh::VirtualService resource to the template
+        Adds an AWS::AppMesh::VirtualService resource to the template. Creates a virtual service within a service mesh.
 
     .DESCRIPTION
-        Adds an AWS::AppMesh::VirtualService resource to the template
+        Adds an AWS::AppMesh::VirtualService resource to the template. Creates a virtual service within a service mesh.
+
+A virtual service is an abstraction of a real service that is provided by a virtual node directly or indirectly by means of a virtual router. Dependent services call your virtual service by its virtualServiceName, and those requests are routed to the virtual node or virtual router that is specified as the provider for the virtual service.
 
     .LINK
         http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-appmesh-virtualservice.html

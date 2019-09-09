@@ -1,10 +1,12 @@
 function New-VSApplicationAutoScalingScalableTarget {
     <#
     .SYNOPSIS
-        Adds an AWS::ApplicationAutoScaling::ScalableTarget resource to the template
+        Adds an AWS::ApplicationAutoScaling::ScalableTarget resource to the template. The AWS::ApplicationAutoScaling::ScalableTarget resource specifies a resource that Application Auto Scaling can scale.
 
     .DESCRIPTION
-        Adds an AWS::ApplicationAutoScaling::ScalableTarget resource to the template
+        Adds an AWS::ApplicationAutoScaling::ScalableTarget resource to the template. The AWS::ApplicationAutoScaling::ScalableTarget resource specifies a resource that Application Auto Scaling can scale.
+
+For more information, see RegisterScalableTarget: https://docs.aws.amazon.com/autoscaling/application/APIReference/API_RegisterScalableTarget.html in the *Application Auto Scaling API Reference*.
 
     .LINK
         http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-applicationautoscaling-scalabletarget.html

@@ -1,10 +1,11 @@
 function Add-VSOpsWorksStackRdsDbInstance {
     <#
     .SYNOPSIS
-        Adds an AWS::OpsWorks::Stack.RdsDbInstance resource property to the template
+        Adds an AWS::OpsWorks::Stack.RdsDbInstance resource property to the template. Describes an Amazon RDS instance.
 
     .DESCRIPTION
-        Adds an AWS::OpsWorks::Stack.RdsDbInstance resource property to the template
+        Adds an AWS::OpsWorks::Stack.RdsDbInstance resource property to the template.
+Describes an Amazon RDS instance.
 
     .LINK
         http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-opsworks-stack-rdsdbinstance.html

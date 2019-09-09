@@ -1,10 +1,13 @@
 function Add-VSApiGatewayRestApiEndpointConfiguration {
     <#
     .SYNOPSIS
-        Adds an AWS::ApiGateway::RestApi.EndpointConfiguration resource property to the template
+        Adds an AWS::ApiGateway::RestApi.EndpointConfiguration resource property to the template. The EndpointConfiguration property type specifies the endpoint types of a REST API.
 
     .DESCRIPTION
-        Adds an AWS::ApiGateway::RestApi.EndpointConfiguration resource property to the template
+        Adds an AWS::ApiGateway::RestApi.EndpointConfiguration resource property to the template.
+The EndpointConfiguration property type specifies the endpoint types of a REST API.
+
+EndpointConfiguration is a property of the AWS::ApiGateway::RestApi: https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-apigateway-restapi.html resource.
 
     .LINK
         http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-apigateway-restapi-endpointconfiguration.html

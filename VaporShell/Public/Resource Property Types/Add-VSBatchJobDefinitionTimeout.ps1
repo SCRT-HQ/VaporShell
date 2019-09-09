@@ -1,10 +1,11 @@
 function Add-VSBatchJobDefinitionTimeout {
     <#
     .SYNOPSIS
-        Adds an AWS::Batch::JobDefinition.Timeout resource property to the template
+        Adds an AWS::Batch::JobDefinition.Timeout resource property to the template. An object representing a job timeout configuration.
 
     .DESCRIPTION
-        Adds an AWS::Batch::JobDefinition.Timeout resource property to the template
+        Adds an AWS::Batch::JobDefinition.Timeout resource property to the template.
+An object representing a job timeout configuration.
 
     .LINK
         http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-batch-jobdefinition-timeout.html

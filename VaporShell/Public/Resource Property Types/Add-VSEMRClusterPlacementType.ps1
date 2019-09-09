@@ -1,10 +1,11 @@
 function Add-VSEMRClusterPlacementType {
     <#
     .SYNOPSIS
-        Adds an AWS::EMR::Cluster.PlacementType resource property to the template
+        Adds an AWS::EMR::Cluster.PlacementType resource property to the template. PlacementType is a property of the AWS::EMR::Cluster resource. PlacementType determines the Amazon EC2 Availability Zone configuration of the cluster (job flow.
 
     .DESCRIPTION
-        Adds an AWS::EMR::Cluster.PlacementType resource property to the template
+        Adds an AWS::EMR::Cluster.PlacementType resource property to the template.
+PlacementType is a property of the AWS::EMR::Cluster resource. PlacementType determines the Amazon EC2 Availability Zone configuration of the cluster (job flow.
 
     .LINK
         http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-elasticmapreduce-cluster-placementtype.html

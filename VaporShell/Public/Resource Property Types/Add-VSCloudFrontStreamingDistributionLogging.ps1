@@ -1,10 +1,11 @@
 function Add-VSCloudFrontStreamingDistributionLogging {
     <#
     .SYNOPSIS
-        Adds an AWS::CloudFront::StreamingDistribution.Logging resource property to the template
+        Adds an AWS::CloudFront::StreamingDistribution.Logging resource property to the template. A complex type that controls whether access logs are written for the streaming distribution.
 
     .DESCRIPTION
-        Adds an AWS::CloudFront::StreamingDistribution.Logging resource property to the template
+        Adds an AWS::CloudFront::StreamingDistribution.Logging resource property to the template.
+A complex type that controls whether access logs are written for the streaming distribution.
 
     .LINK
         http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-cloudfront-streamingdistribution-logging.html

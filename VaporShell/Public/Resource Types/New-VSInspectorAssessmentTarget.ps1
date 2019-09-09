@@ -1,10 +1,10 @@
 function New-VSInspectorAssessmentTarget {
     <#
     .SYNOPSIS
-        Adds an AWS::Inspector::AssessmentTarget resource to the template
+        Adds an AWS::Inspector::AssessmentTarget resource to the template. The AWS::Inspector::AssessmentTarget resource is used to create Amazon Inspector assessment targets, which specify the Amazon EC2 instances that will be analyzed during an assessment run.
 
     .DESCRIPTION
-        Adds an AWS::Inspector::AssessmentTarget resource to the template
+        Adds an AWS::Inspector::AssessmentTarget resource to the template. The AWS::Inspector::AssessmentTarget resource is used to create Amazon Inspector assessment targets, which specify the Amazon EC2 instances that will be analyzed during an assessment run.
 
     .LINK
         http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-inspector-assessmenttarget.html

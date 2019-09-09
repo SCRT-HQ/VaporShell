@@ -1,4 +1,6 @@
 function ConvertTo-CFNBasePoshObject {
+    # Updated version of the function found @ https://gist.github.com/ScriptAutomate/28712f09f5726394e55e5790d8c8ac62
+    # Thank you, @ScriptAutomate!
     [CmdletBinding()]
     param(
         [Parameter(Mandatory = $true, ValueFromPipeline = $true)]

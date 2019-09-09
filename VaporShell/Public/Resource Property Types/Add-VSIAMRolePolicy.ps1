@@ -1,10 +1,15 @@
 function Add-VSIAMRolePolicy {
     <#
     .SYNOPSIS
-        Adds an AWS::IAM::Role.Policy resource property to the template
+        Adds an AWS::IAM::Role.Policy resource property to the template. Contains information about an attached policy.
 
     .DESCRIPTION
-        Adds an AWS::IAM::Role.Policy resource property to the template
+        Adds an AWS::IAM::Role.Policy resource property to the template.
+Contains information about an attached policy.
+
+An attached policy is a managed policy that has been attached to a user, group, or role.
+
+For more information about managed policies, refer to Managed Policies and Inline Policies: https://docs.aws.amazon.com/IAM/latest/UserGuide/policies-managed-vs-inline.html in the *Using IAM* guide.
 
     .LINK
         http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iam-policy.html

@@ -1,10 +1,12 @@
 function New-VSConfigOrganizationConfigRule {
     <#
     .SYNOPSIS
-        Adds an AWS::Config::OrganizationConfigRule resource to the template
+        Adds an AWS::Config::OrganizationConfigRule resource to the template. An organization config rule that has information about config rules that AWS Config creates in member accounts. Only a master account can create or update an organization config rule.
 
     .DESCRIPTION
-        Adds an AWS::Config::OrganizationConfigRule resource to the template
+        Adds an AWS::Config::OrganizationConfigRule resource to the template. An organization config rule that has information about config rules that AWS Config creates in member accounts. Only a master account can create or update an organization config rule.
+
+OrganizationConfigRule resource enables organization service access through EnableAWSServiceAccess action and creates a service linked role in the master account of your organization. The service linked role is created only when the role does not exist in the master account. AWS Config verifies the existence of role with GetRole action.
 
     .LINK
         http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-config-organizationconfigrule.html

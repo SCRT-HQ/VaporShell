@@ -1,10 +1,11 @@
 function Add-VSWAFRegionalByteMatchSetFieldToMatch {
     <#
     .SYNOPSIS
-        Adds an AWS::WAFRegional::ByteMatchSet.FieldToMatch resource property to the template
+        Adds an AWS::WAFRegional::ByteMatchSet.FieldToMatch resource property to the template. Specifies where in a web request to look for TargetString.
 
     .DESCRIPTION
-        Adds an AWS::WAFRegional::ByteMatchSet.FieldToMatch resource property to the template
+        Adds an AWS::WAFRegional::ByteMatchSet.FieldToMatch resource property to the template.
+Specifies where in a web request to look for TargetString.
 
     .LINK
         http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-wafregional-bytematchset-fieldtomatch.html

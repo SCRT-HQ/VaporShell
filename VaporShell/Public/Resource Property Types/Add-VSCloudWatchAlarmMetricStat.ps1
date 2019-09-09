@@ -1,10 +1,13 @@
 function Add-VSCloudWatchAlarmMetricStat {
     <#
     .SYNOPSIS
-        Adds an AWS::CloudWatch::Alarm.MetricStat resource property to the template
+        Adds an AWS::CloudWatch::Alarm.MetricStat resource property to the template. This structure defines the metric to be returned, along with the statistics, period, and units.
 
     .DESCRIPTION
-        Adds an AWS::CloudWatch::Alarm.MetricStat resource property to the template
+        Adds an AWS::CloudWatch::Alarm.MetricStat resource property to the template.
+This structure defines the metric to be returned, along with the statistics, period, and units.
+
+MetricStat is a property of the MetricDataQuery: https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-cloudwatch-alarm-metricdataquery.html property type.
 
     .LINK
         http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-cloudwatch-alarm-metricstat.html

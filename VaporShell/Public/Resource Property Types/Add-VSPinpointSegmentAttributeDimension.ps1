@@ -1,10 +1,11 @@
 function Add-VSPinpointSegmentAttributeDimension {
     <#
     .SYNOPSIS
-        Adds an AWS::Pinpoint::Segment.AttributeDimension resource property to the template
+        Adds an AWS::Pinpoint::Segment.AttributeDimension resource property to the template. Specifies the criteria for including or excluding endpoints from a segment.
 
     .DESCRIPTION
-        Adds an AWS::Pinpoint::Segment.AttributeDimension resource property to the template
+        Adds an AWS::Pinpoint::Segment.AttributeDimension resource property to the template.
+Specifies the criteria for including or excluding endpoints from a segment.
 
     .LINK
         http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-pinpoint-segment-attributedimension.html

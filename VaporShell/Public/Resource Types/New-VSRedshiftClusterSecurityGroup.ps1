@@ -1,10 +1,12 @@
 function New-VSRedshiftClusterSecurityGroup {
     <#
     .SYNOPSIS
-        Adds an AWS::Redshift::ClusterSecurityGroup resource to the template
+        Adds an AWS::Redshift::ClusterSecurityGroup resource to the template. Specifies a new Amazon Redshift security group. You use security groups to control access to non-VPC clusters.
 
     .DESCRIPTION
-        Adds an AWS::Redshift::ClusterSecurityGroup resource to the template
+        Adds an AWS::Redshift::ClusterSecurityGroup resource to the template. Specifies a new Amazon Redshift security group. You use security groups to control access to non-VPC clusters.
+
+For information about managing security groups, go to Amazon Redshift Cluster Security Groups: https://docs.aws.amazon.com/redshift/latest/mgmt/working-with-security-groups.html in the *Amazon Redshift Cluster Management Guide*.
 
     .LINK
         http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-redshift-clustersecuritygroup.html

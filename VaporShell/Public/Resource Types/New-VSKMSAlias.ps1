@@ -1,10 +1,22 @@
 function New-VSKMSAlias {
     <#
     .SYNOPSIS
-        Adds an AWS::KMS::Alias resource to the template
+        Adds an AWS::KMS::Alias resource to the template. The AWS::KMS::Alias resource specifies a display name for a customer master key: https://docs.aws.amazon.com/kms/latest/developerguide/concepts.html#master_keys (CMK in AWS Key Management Service (AWS KMS. You can use an alias to identify a CMK in cryptographic operations.
 
     .DESCRIPTION
-        Adds an AWS::KMS::Alias resource to the template
+        Adds an AWS::KMS::Alias resource to the template. The AWS::KMS::Alias resource specifies a display name for a customer master key: https://docs.aws.amazon.com/kms/latest/developerguide/concepts.html#master_keys (CMK in AWS Key Management Service (AWS KMS. You can use an alias to identify a CMK in cryptographic operations.
+
+Using an alias to refer to a CMK can help you simplify key management. For example, an alias in your code can map to different CMKs in different AWS Regions. For more information, see Working with Aliases: https://docs.aws.amazon.com/kms/latest/developerguide/programming-aliases.html in the *AWS Key Management Service Developer Guide*.
+
+When specifying an alias, observe the following rules.
+
++ Each alias can point to only one CMK, but multiple aliases can point to the same CMK.
+
++ The alias and the CMK it points to must be in the same AWS account and Region.
+
++ The alias name must be unique in the AWS account and Region. However, you can create aliases with the same name in different AWS Regions. For example, you can have an alias/projectKey in multiple Regions, each of which points to a CMK in that Region.
+
++ Each alias name must begin with alias/ followed by a name, such as alias/exampleKey. The alias name can contain only alphanumeric characters, forward slashes (/, underscores (_, and dashes (-. Alias names cannot begin with **alias/aws/**. That alias name prefix is reserved for AWS managed CMKs: https://docs.aws.amazon.com/kms/latest/developerguide/concepts.html#aws-managed-cmk.
 
     .LINK
         http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-kms-alias.html

@@ -1,10 +1,11 @@
 function Add-VSAppMeshVirtualNodeHealthCheck {
     <#
     .SYNOPSIS
-        Adds an AWS::AppMesh::VirtualNode.HealthCheck resource property to the template
+        Adds an AWS::AppMesh::VirtualNode.HealthCheck resource property to the template. An object representing the health check policy for a virtual node's listener.
 
     .DESCRIPTION
-        Adds an AWS::AppMesh::VirtualNode.HealthCheck resource property to the template
+        Adds an AWS::AppMesh::VirtualNode.HealthCheck resource property to the template.
+An object representing the health check policy for a virtual node's listener.
 
     .LINK
         http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-appmesh-virtualnode-healthcheck.html

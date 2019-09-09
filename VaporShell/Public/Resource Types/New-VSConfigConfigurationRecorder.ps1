@@ -1,10 +1,16 @@
 function New-VSConfigConfigurationRecorder {
     <#
     .SYNOPSIS
-        Adds an AWS::Config::ConfigurationRecorder resource to the template
+        Adds an AWS::Config::ConfigurationRecorder resource to the template. The AWS::Config::ConfigurationRecorder resource describes the AWS resource types for which AWS Config records configuration changes. The configuration recorder stores the configurations of the supported resources in your account as configuration items.
 
     .DESCRIPTION
-        Adds an AWS::Config::ConfigurationRecorder resource to the template
+        Adds an AWS::Config::ConfigurationRecorder resource to the template. The AWS::Config::ConfigurationRecorder resource describes the AWS resource types for which AWS Config records configuration changes. The configuration recorder stores the configurations of the supported resources in your account as configuration items.
+
+**Note**
+
+To enable AWS Config, you must create a configuration recorder and a delivery channel. AWS Config uses the delivery channel to deliver the configuration changes to your Amazon S3 bucket or Amazon SNS topic. For more information, see AWS::Config::DeliveryChannel: https://docs.aws.amazon.com/config/latest/UserGuide/aws-resource-config-deliverychannel.html.
+
+AWS CloudFormation starts the recorder as soon as the delivery channel is available. To stop the recorder, delete the configuration recorder from your stack. For more information, see Configuration Recorder: https://docs.aws.amazon.com/config/latest/developerguide/config-concepts.html#config-recorder in the AWS Config Developer Guide.
 
     .LINK
         http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-config-configurationrecorder.html

@@ -1,10 +1,11 @@
 function Add-VSIoTTopicRuleLambdaAction {
     <#
     .SYNOPSIS
-        Adds an AWS::IoT::TopicRule.LambdaAction resource property to the template
+        Adds an AWS::IoT::TopicRule.LambdaAction resource property to the template. Describes an action to invoke a Lambda function.
 
     .DESCRIPTION
-        Adds an AWS::IoT::TopicRule.LambdaAction resource property to the template
+        Adds an AWS::IoT::TopicRule.LambdaAction resource property to the template.
+Describes an action to invoke a Lambda function.
 
     .LINK
         http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iot-topicrule-lambdaaction.html

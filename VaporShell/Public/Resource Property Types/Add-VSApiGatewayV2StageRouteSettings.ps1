@@ -1,10 +1,11 @@
 function Add-VSApiGatewayV2StageRouteSettings {
     <#
     .SYNOPSIS
-        Adds an AWS::ApiGatewayV2::Stage.RouteSettings resource property to the template
+        Adds an AWS::ApiGatewayV2::Stage.RouteSettings resource property to the template. Represents a collection of route settings.
 
     .DESCRIPTION
-        Adds an AWS::ApiGatewayV2::Stage.RouteSettings resource property to the template
+        Adds an AWS::ApiGatewayV2::Stage.RouteSettings resource property to the template.
+Represents a collection of route settings.
 
     .LINK
         http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-apigatewayv2-stage-routesettings.html

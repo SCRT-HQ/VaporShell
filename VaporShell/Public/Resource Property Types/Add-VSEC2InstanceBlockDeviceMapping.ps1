@@ -1,10 +1,13 @@
 function Add-VSEC2InstanceBlockDeviceMapping {
     <#
     .SYNOPSIS
-        Adds an AWS::EC2::Instance.BlockDeviceMapping resource property to the template
+        Adds an AWS::EC2::Instance.BlockDeviceMapping resource property to the template. Specifies a block device mapping for an instance.
 
     .DESCRIPTION
-        Adds an AWS::EC2::Instance.BlockDeviceMapping resource property to the template
+        Adds an AWS::EC2::Instance.BlockDeviceMapping resource property to the template.
+Specifies a block device mapping for an instance.
+
+BlockDeviceMapping is a property of the AWS::EC2::Instance: https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-instance.html resource.
 
     .LINK
         http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-blockdev-mapping.html

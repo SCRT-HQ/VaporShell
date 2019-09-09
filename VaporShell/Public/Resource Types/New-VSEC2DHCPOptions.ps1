@@ -1,10 +1,12 @@
 function New-VSEC2DHCPOptions {
     <#
     .SYNOPSIS
-        Adds an AWS::EC2::DHCPOptions resource to the template
+        Adds an AWS::EC2::DHCPOptions resource to the template. Specifies a set of DHCP options for your VPC.
 
     .DESCRIPTION
-        Adds an AWS::EC2::DHCPOptions resource to the template
+        Adds an AWS::EC2::DHCPOptions resource to the template. Specifies a set of DHCP options for your VPC.
+
+You must specify at least one of the following properties: DomainNameServers, NetbiosNameServers, NtpServers. If you specify NetbiosNameServers, you must specify NetbiosNodeType.
 
     .LINK
         http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ec2-dhcp-options.html

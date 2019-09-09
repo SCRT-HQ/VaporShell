@@ -1,10 +1,13 @@
 function Add-VSMediaLiveChannelNetworkInputSettings {
     <#
     .SYNOPSIS
-        Adds an AWS::MediaLive::Channel.NetworkInputSettings resource property to the template
+        Adds an AWS::MediaLive::Channel.NetworkInputSettings resource property to the template. Information about how to connect to the upstream system.
 
     .DESCRIPTION
-        Adds an AWS::MediaLive::Channel.NetworkInputSettings resource property to the template
+        Adds an AWS::MediaLive::Channel.NetworkInputSettings resource property to the template.
+Information about how to connect to the upstream system.
+
+The parent of this entity is InputSettings.
 
     .LINK
         http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-medialive-channel-networkinputsettings.html

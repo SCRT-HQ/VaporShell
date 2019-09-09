@@ -1,10 +1,11 @@
 function Add-VSCodeDeployDeploymentGroupTriggerConfig {
     <#
     .SYNOPSIS
-        Adds an AWS::CodeDeploy::DeploymentGroup.TriggerConfig resource property to the template
+        Adds an AWS::CodeDeploy::DeploymentGroup.TriggerConfig resource property to the template. Information about notification triggers for the deployment group.
 
     .DESCRIPTION
-        Adds an AWS::CodeDeploy::DeploymentGroup.TriggerConfig resource property to the template
+        Adds an AWS::CodeDeploy::DeploymentGroup.TriggerConfig resource property to the template.
+Information about notification triggers for the deployment group.
 
     .LINK
         http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-codedeploy-deploymentgroup-triggerconfig.html

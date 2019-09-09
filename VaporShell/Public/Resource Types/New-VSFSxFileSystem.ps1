@@ -1,10 +1,10 @@
 function New-VSFSxFileSystem {
     <#
     .SYNOPSIS
-        Adds an AWS::FSx::FileSystem resource to the template
+        Adds an AWS::FSx::FileSystem resource to the template. The AWS::FSx::FileSystem resource is an Amazon FSx resource type that creates either an Amazon FSx for Windows File Server file system or an Amazon FSx for Lustre file system.
 
     .DESCRIPTION
-        Adds an AWS::FSx::FileSystem resource to the template
+        Adds an AWS::FSx::FileSystem resource to the template. The AWS::FSx::FileSystem resource is an Amazon FSx resource type that creates either an Amazon FSx for Windows File Server file system or an Amazon FSx for Lustre file system.
 
     .LINK
         http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-fsx-filesystem.html

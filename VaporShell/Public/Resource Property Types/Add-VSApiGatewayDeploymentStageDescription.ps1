@@ -1,10 +1,11 @@
 function Add-VSApiGatewayDeploymentStageDescription {
     <#
     .SYNOPSIS
-        Adds an AWS::ApiGateway::Deployment.StageDescription resource property to the template
+        Adds an AWS::ApiGateway::Deployment.StageDescription resource property to the template. StageDescription is a property of the AWS::ApiGateway::Deployment: https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-apigateway-deployment.html resource that configures a deployment stage.
 
     .DESCRIPTION
-        Adds an AWS::ApiGateway::Deployment.StageDescription resource property to the template
+        Adds an AWS::ApiGateway::Deployment.StageDescription resource property to the template.
+StageDescription is a property of the AWS::ApiGateway::Deployment: https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-apigateway-deployment.html resource that configures a deployment stage.
 
     .LINK
         http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-apigateway-deployment-stagedescription.html

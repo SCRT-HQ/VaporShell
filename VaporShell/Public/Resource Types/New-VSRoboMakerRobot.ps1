@@ -1,10 +1,10 @@
 function New-VSRoboMakerRobot {
     <#
     .SYNOPSIS
-        Adds an AWS::RoboMaker::Robot resource to the template
+        Adds an AWS::RoboMaker::Robot resource to the template. The AWS::RoboMaker::RobotApplication resource creates an AWS RoboMaker robot.
 
     .DESCRIPTION
-        Adds an AWS::RoboMaker::Robot resource to the template
+        Adds an AWS::RoboMaker::Robot resource to the template. The AWS::RoboMaker::RobotApplication resource creates an AWS RoboMaker robot.
 
     .LINK
         http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-robomaker-robot.html

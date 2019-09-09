@@ -1,10 +1,11 @@
 function Add-VSIoTEventsDetectorModelState {
     <#
     .SYNOPSIS
-        Adds an AWS::IoTEvents::DetectorModel.State resource property to the template
+        Adds an AWS::IoTEvents::DetectorModel.State resource property to the template. Information that defines a state of a detector.
 
     .DESCRIPTION
-        Adds an AWS::IoTEvents::DetectorModel.State resource property to the template
+        Adds an AWS::IoTEvents::DetectorModel.State resource property to the template.
+Information that defines a state of a detector.
 
     .LINK
         http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iotevents-detectormodel-state.html

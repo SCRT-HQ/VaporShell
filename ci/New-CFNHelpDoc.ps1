@@ -1,4 +1,6 @@
 function New-CFNHelpDoc {
+    # Updated version of the function found @ https://gist.github.com/ScriptAutomate/28712f09f5726394e55e5790d8c8ac62
+    # Thank you, @ScriptAutomate!
     Param (
         [parameter(Mandatory,ValueFromPipeline)]
         [Object]

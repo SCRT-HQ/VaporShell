@@ -1,10 +1,11 @@
 function Add-VSElasticLoadBalancingV2ListenerRuleAuthenticateOidcConfig {
     <#
     .SYNOPSIS
-        Adds an AWS::ElasticLoadBalancingV2::ListenerRule.AuthenticateOidcConfig resource property to the template
+        Adds an AWS::ElasticLoadBalancingV2::ListenerRule.AuthenticateOidcConfig resource property to the template. Specifies information required using an identity provide (IdP that is compliant with OpenID Connect (OIDC to authenticate users.
 
     .DESCRIPTION
-        Adds an AWS::ElasticLoadBalancingV2::ListenerRule.AuthenticateOidcConfig resource property to the template
+        Adds an AWS::ElasticLoadBalancingV2::ListenerRule.AuthenticateOidcConfig resource property to the template.
+Specifies information required using an identity provide (IdP that is compliant with OpenID Connect (OIDC to authenticate users.
 
     .LINK
         http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-elasticloadbalancingv2-listenerrule-authenticateoidcconfig.html

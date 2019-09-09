@@ -1,10 +1,10 @@
 function New-VSPinpointEmailDedicatedIpPool {
     <#
     .SYNOPSIS
-        Adds an AWS::PinpointEmail::DedicatedIpPool resource to the template
+        Adds an AWS::PinpointEmail::DedicatedIpPool resource to the template. A request to create a new dedicated IP pool.
 
     .DESCRIPTION
-        Adds an AWS::PinpointEmail::DedicatedIpPool resource to the template
+        Adds an AWS::PinpointEmail::DedicatedIpPool resource to the template. A request to create a new dedicated IP pool.
 
     .LINK
         http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-pinpointemail-dedicatedippool.html

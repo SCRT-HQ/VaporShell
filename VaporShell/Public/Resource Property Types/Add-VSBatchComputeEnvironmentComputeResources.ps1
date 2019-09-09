@@ -1,10 +1,11 @@
 function Add-VSBatchComputeEnvironmentComputeResources {
     <#
     .SYNOPSIS
-        Adds an AWS::Batch::ComputeEnvironment.ComputeResources resource property to the template
+        Adds an AWS::Batch::ComputeEnvironment.ComputeResources resource property to the template. Details of the compute resources managed by the compute environment. This parameter is required for managed compute environments. For more information, see Compute Environments: https://docs.aws.amazon.com/batch/latest/userguide/compute_environments.html in the *AWS Batch User Guide*.
 
     .DESCRIPTION
-        Adds an AWS::Batch::ComputeEnvironment.ComputeResources resource property to the template
+        Adds an AWS::Batch::ComputeEnvironment.ComputeResources resource property to the template.
+Details of the compute resources managed by the compute environment. This parameter is required for managed compute environments. For more information, see Compute Environments: https://docs.aws.amazon.com/batch/latest/userguide/compute_environments.html in the *AWS Batch User Guide*.
 
     .LINK
         http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-batch-computeenvironment-computeresources.html

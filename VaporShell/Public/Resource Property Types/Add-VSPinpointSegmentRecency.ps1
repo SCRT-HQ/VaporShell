@@ -1,10 +1,11 @@
 function Add-VSPinpointSegmentRecency {
     <#
     .SYNOPSIS
-        Adds an AWS::Pinpoint::Segment.Recency resource property to the template
+        Adds an AWS::Pinpoint::Segment.Recency resource property to the template. Specifies how recently segment members were active.
 
     .DESCRIPTION
-        Adds an AWS::Pinpoint::Segment.Recency resource property to the template
+        Adds an AWS::Pinpoint::Segment.Recency resource property to the template.
+Specifies how recently segment members were active.
 
     .LINK
         http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-pinpoint-segment-segmentdimensions-behavior-recency.html

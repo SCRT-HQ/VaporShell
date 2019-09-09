@@ -1,10 +1,19 @@
 function Add-VSCodeDeployDeploymentGroupLoadBalancerInfo {
     <#
     .SYNOPSIS
-        Adds an AWS::CodeDeploy::DeploymentGroup.LoadBalancerInfo resource property to the template
+        Adds an AWS::CodeDeploy::DeploymentGroup.LoadBalancerInfo resource property to the template. The LoadBalancerInfo property type specifies information about the load balancer or target group used for an AWS CodeDeploy deployment group. For more information, see  Integrating CodeDeploy with Elastic Load Balancing : https://docs.aws.amazon.com/codedeploy/latest/userguide/integrations-aws-elastic-load-balancing.html in the *AWS CodeDeploy User Guide*.
 
     .DESCRIPTION
-        Adds an AWS::CodeDeploy::DeploymentGroup.LoadBalancerInfo resource property to the template
+        Adds an AWS::CodeDeploy::DeploymentGroup.LoadBalancerInfo resource property to the template.
+The LoadBalancerInfo property type specifies information about the load balancer or target group used for an AWS CodeDeploy deployment group. For more information, see  Integrating CodeDeploy with Elastic Load Balancing : https://docs.aws.amazon.com/codedeploy/latest/userguide/integrations-aws-elastic-load-balancing.html in the *AWS CodeDeploy User Guide*.
+
+For AWS CloudFormation to use the properties specified in LoadBalancerInfo, the DeploymentStyle.DeploymentOption property must be set to WITH_TRAFFIC_CONTROL. If DeploymentStyle.DeploymentOption is not set to WITH_TRAFFIC_CONTROL, AWS CloudFormation ignores any settings specified in LoadBalancerInfo.
+
+**Note**
+
+AWS CloudFormation supports blue/green deployments on EC2/On-premises compute platforms only.
+
+LoadBalancerInfo is a property of the DeploymentGroup: https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-codedeploy-deploymentgroup.html resource.
 
     .LINK
         http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-codedeploy-deploymentgroup-loadbalancerinfo.html

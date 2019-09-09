@@ -1,10 +1,11 @@
 function Add-VSIoTAnalyticsDatasetDatasetContentVersionValue {
     <#
     .SYNOPSIS
-        Adds an AWS::IoTAnalytics::Dataset.DatasetContentVersionValue resource property to the template
+        Adds an AWS::IoTAnalytics::Dataset.DatasetContentVersionValue resource property to the template. The data set whose latest contents are used as input to the notebook or application.
 
     .DESCRIPTION
-        Adds an AWS::IoTAnalytics::Dataset.DatasetContentVersionValue resource property to the template
+        Adds an AWS::IoTAnalytics::Dataset.DatasetContentVersionValue resource property to the template.
+The data set whose latest contents are used as input to the notebook or application.
 
     .LINK
         http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iotanalytics-dataset-variable-datasetcontentversionvalue.html

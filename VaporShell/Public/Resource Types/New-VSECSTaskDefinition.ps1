@@ -1,10 +1,10 @@
 function New-VSECSTaskDefinition {
     <#
     .SYNOPSIS
-        Adds an AWS::ECS::TaskDefinition resource to the template
+        Adds an AWS::ECS::TaskDefinition resource to the template. The AWS::ECS::TaskDefinition resource describes the container and volume definitions of an Amazon Elastic Container Service (Amazon ECS task. You can specify which Docker images to use, the required resources, and other configurations related to launching the task definition through an Amazon ECS service or task.
 
     .DESCRIPTION
-        Adds an AWS::ECS::TaskDefinition resource to the template
+        Adds an AWS::ECS::TaskDefinition resource to the template. The AWS::ECS::TaskDefinition resource describes the container and volume definitions of an Amazon Elastic Container Service (Amazon ECS task. You can specify which Docker images to use, the required resources, and other configurations related to launching the task definition through an Amazon ECS service or task.
 
     .LINK
         http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ecs-taskdefinition.html

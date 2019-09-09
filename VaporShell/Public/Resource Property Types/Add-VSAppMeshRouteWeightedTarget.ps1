@@ -1,10 +1,11 @@
 function Add-VSAppMeshRouteWeightedTarget {
     <#
     .SYNOPSIS
-        Adds an AWS::AppMesh::Route.WeightedTarget resource property to the template
+        Adds an AWS::AppMesh::Route.WeightedTarget resource property to the template. An object representing a target and its relative weight. Traffic is distributed across targets according to their relative weight. For example, a weighted target with a relative weight of 50 receives five times as much traffic as one with a relative weight of 10.
 
     .DESCRIPTION
-        Adds an AWS::AppMesh::Route.WeightedTarget resource property to the template
+        Adds an AWS::AppMesh::Route.WeightedTarget resource property to the template.
+An object representing a target and its relative weight. Traffic is distributed across targets according to their relative weight. For example, a weighted target with a relative weight of 50 receives five times as much traffic as one with a relative weight of 10.
 
     .LINK
         http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-appmesh-route-weightedtarget.html

@@ -1,10 +1,11 @@
 function Add-VSConfigConfigRuleSource {
     <#
     .SYNOPSIS
-        Adds an AWS::Config::ConfigRule.Source resource property to the template
+        Adds an AWS::Config::ConfigRule.Source resource property to the template. Provides the AWS Config rule owner (AWS or customer, the rule identifier, and the events that trigger the evaluation of your AWS resources.
 
     .DESCRIPTION
-        Adds an AWS::Config::ConfigRule.Source resource property to the template
+        Adds an AWS::Config::ConfigRule.Source resource property to the template.
+Provides the AWS Config rule owner (AWS or customer, the rule identifier, and the events that trigger the evaluation of your AWS resources.
 
     .LINK
         http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-config-configrule-source.html

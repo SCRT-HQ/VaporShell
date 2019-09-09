@@ -1,10 +1,14 @@
 function New-VSApiGatewayRestApi {
     <#
     .SYNOPSIS
-        Adds an AWS::ApiGateway::RestApi resource to the template
+        Adds an AWS::ApiGateway::RestApi resource to the template. The AWS::ApiGateway::RestApi resource creates a REST API. For more information, see restapi:create: https://docs.aws.amazon.com/apigateway/api-reference/link-relation/restapi-create/ in the *Amazon API Gateway REST API Reference*.
 
     .DESCRIPTION
-        Adds an AWS::ApiGateway::RestApi resource to the template
+        Adds an AWS::ApiGateway::RestApi resource to the template. The AWS::ApiGateway::RestApi resource creates a REST API. For more information, see restapi:create: https://docs.aws.amazon.com/apigateway/api-reference/link-relation/restapi-create/ in the *Amazon API Gateway REST API Reference*.
+
+**Note**
+
+On January 1, 2016, the Swagger Specification was donated to the OpenAPI initiative: https://www.openapis.org/, becoming the foundation of the OpenAPI Specification.
 
     .LINK
         http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-apigateway-restapi.html

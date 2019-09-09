@@ -1,10 +1,11 @@
 function Add-VSIoTEventsDetectorModelAction {
     <#
     .SYNOPSIS
-        Adds an AWS::IoTEvents::DetectorModel.Action resource property to the template
+        Adds an AWS::IoTEvents::DetectorModel.Action resource property to the template. An action to be performed when the "condition" is TRUE.
 
     .DESCRIPTION
-        Adds an AWS::IoTEvents::DetectorModel.Action resource property to the template
+        Adds an AWS::IoTEvents::DetectorModel.Action resource property to the template.
+An action to be performed when the "condition" is TRUE.
 
     .LINK
         http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iotevents-detectormodel-action.html

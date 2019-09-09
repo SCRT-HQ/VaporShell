@@ -1,10 +1,10 @@
 function New-VSGameLiftAlias {
     <#
     .SYNOPSIS
-        Adds an AWS::GameLift::Alias resource to the template
+        Adds an AWS::GameLift::Alias resource to the template. The AWS::GameLift::Alias resource creates an alias for an Amazon GameLift (GameLift fleet, which you can use to anonymize your fleet. You can reference the alias instead of a specific fleet when you create game sessions. For more information, see the CreateAlias: https://docs.aws.amazon.com/gamelift/latest/apireference/API_CreateAlias.html action in the *Amazon GameLift API Reference*.
 
     .DESCRIPTION
-        Adds an AWS::GameLift::Alias resource to the template
+        Adds an AWS::GameLift::Alias resource to the template. The AWS::GameLift::Alias resource creates an alias for an Amazon GameLift (GameLift fleet, which you can use to anonymize your fleet. You can reference the alias instead of a specific fleet when you create game sessions. For more information, see the CreateAlias: https://docs.aws.amazon.com/gamelift/latest/apireference/API_CreateAlias.html action in the *Amazon GameLift API Reference*.
 
     .LINK
         http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-gamelift-alias.html

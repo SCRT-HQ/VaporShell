@@ -1,10 +1,10 @@
 function New-VSEC2LaunchTemplate {
     <#
     .SYNOPSIS
-        Adds an AWS::EC2::LaunchTemplate resource to the template
+        Adds an AWS::EC2::LaunchTemplate resource to the template. Specifies a launch template for an Amazon EC2 instance. A launch template contains the parameters to launch an instance.
 
     .DESCRIPTION
-        Adds an AWS::EC2::LaunchTemplate resource to the template
+        Adds an AWS::EC2::LaunchTemplate resource to the template. Specifies a launch template for an Amazon EC2 instance. A launch template contains the parameters to launch an instance.
 
     .LINK
         http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ec2-launchtemplate.html

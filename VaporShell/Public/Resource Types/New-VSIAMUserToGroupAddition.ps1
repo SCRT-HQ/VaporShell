@@ -1,10 +1,10 @@
 function New-VSIAMUserToGroupAddition {
     <#
     .SYNOPSIS
-        Adds an AWS::IAM::UserToGroupAddition resource to the template
+        Adds an AWS::IAM::UserToGroupAddition resource to the template. Adds the specified user to the specified group.
 
     .DESCRIPTION
-        Adds an AWS::IAM::UserToGroupAddition resource to the template
+        Adds an AWS::IAM::UserToGroupAddition resource to the template. Adds the specified user to the specified group.
 
     .LINK
         http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iam-addusertogroup.html

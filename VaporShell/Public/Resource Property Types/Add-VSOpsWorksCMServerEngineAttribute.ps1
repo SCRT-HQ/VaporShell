@@ -1,10 +1,11 @@
 function Add-VSOpsWorksCMServerEngineAttribute {
     <#
     .SYNOPSIS
-        Adds an AWS::OpsWorksCM::Server.EngineAttribute resource property to the template
+        Adds an AWS::OpsWorksCM::Server.EngineAttribute resource property to the template. The EngineAttribute property type specifies administrator credentials for an AWS OpsWorks for Chef Automate or OpsWorks for Puppet Enterprise server. EngineAttribute is a property of the AWS::OpsWorksCM::Server resource type.
 
     .DESCRIPTION
-        Adds an AWS::OpsWorksCM::Server.EngineAttribute resource property to the template
+        Adds an AWS::OpsWorksCM::Server.EngineAttribute resource property to the template.
+The EngineAttribute property type specifies administrator credentials for an AWS OpsWorks for Chef Automate or OpsWorks for Puppet Enterprise server. EngineAttribute is a property of the AWS::OpsWorksCM::Server resource type.
 
     .LINK
         http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-opsworkscm-server-engineattribute.html

@@ -1,10 +1,11 @@
 function Add-VSElasticsearchDomainNodeToNodeEncryptionOptions {
     <#
     .SYNOPSIS
-        Adds an AWS::Elasticsearch::Domain.NodeToNodeEncryptionOptions resource property to the template
+        Adds an AWS::Elasticsearch::Domain.NodeToNodeEncryptionOptions resource property to the template. Specifies whether node-to-node encryption is enabled.
 
     .DESCRIPTION
-        Adds an AWS::Elasticsearch::Domain.NodeToNodeEncryptionOptions resource property to the template
+        Adds an AWS::Elasticsearch::Domain.NodeToNodeEncryptionOptions resource property to the template.
+Specifies whether node-to-node encryption is enabled.
 
     .LINK
         http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-elasticsearch-domain-nodetonodeencryptionoptions.html

@@ -1,10 +1,10 @@
 function New-VSOpsWorksUserProfile {
     <#
     .SYNOPSIS
-        Adds an AWS::OpsWorks::UserProfile resource to the template
+        Adds an AWS::OpsWorks::UserProfile resource to the template. Describes a user's SSH information.
 
     .DESCRIPTION
-        Adds an AWS::OpsWorks::UserProfile resource to the template
+        Adds an AWS::OpsWorks::UserProfile resource to the template. Describes a user's SSH information.
 
     .LINK
         http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-opsworks-userprofile.html

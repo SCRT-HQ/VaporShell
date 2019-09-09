@@ -1,10 +1,11 @@
 function Add-VSCertificateManagerCertificateDomainValidationOption {
     <#
     .SYNOPSIS
-        Adds an AWS::CertificateManager::Certificate.DomainValidationOption resource property to the template
+        Adds an AWS::CertificateManager::Certificate.DomainValidationOption resource property to the template. DomainValidationOption is a property of the AWS::CertificateManager::Certificate: https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-certificatemanager-certificate.html resource that specifies the AWS Certificate Manager (ACM certificate domain to which ACM will send validation emails.
 
     .DESCRIPTION
-        Adds an AWS::CertificateManager::Certificate.DomainValidationOption resource property to the template
+        Adds an AWS::CertificateManager::Certificate.DomainValidationOption resource property to the template.
+DomainValidationOption is a property of the AWS::CertificateManager::Certificate: https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-certificatemanager-certificate.html resource that specifies the AWS Certificate Manager (ACM certificate domain to which ACM will send validation emails.
 
     .LINK
         http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-certificatemanager-certificate-domainvalidationoption.html

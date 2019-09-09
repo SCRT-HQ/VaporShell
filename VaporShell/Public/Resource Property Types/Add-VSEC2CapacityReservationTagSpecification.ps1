@@ -1,10 +1,13 @@
 function Add-VSEC2CapacityReservationTagSpecification {
     <#
     .SYNOPSIS
-        Adds an AWS::EC2::CapacityReservation.TagSpecification resource property to the template
+        Adds an AWS::EC2::CapacityReservation.TagSpecification resource property to the template. An array of key-value pairs to apply to this resource.
 
     .DESCRIPTION
-        Adds an AWS::EC2::CapacityReservation.TagSpecification resource property to the template
+        Adds an AWS::EC2::CapacityReservation.TagSpecification resource property to the template.
+An array of key-value pairs to apply to this resource.
+
+For more information, see Tag: https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-resource-tags.html.
 
     .LINK
         http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-capacityreservation-tagspecification.html

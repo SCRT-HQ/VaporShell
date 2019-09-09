@@ -1,10 +1,10 @@
 function New-VSSecurityHubHub {
     <#
     .SYNOPSIS
-        Adds an AWS::SecurityHub::Hub resource to the template
+        Adds an AWS::SecurityHub::Hub resource to the template. The AWS::SecurityHub::Hub resource represents the implementation of the AWS Security Hub service in your account. One hub resource is created for each Region in which you enable Security Hub.
 
     .DESCRIPTION
-        Adds an AWS::SecurityHub::Hub resource to the template
+        Adds an AWS::SecurityHub::Hub resource to the template. The AWS::SecurityHub::Hub resource represents the implementation of the AWS Security Hub service in your account. One hub resource is created for each Region in which you enable Security Hub.
 
     .LINK
         http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-securityhub-hub.html

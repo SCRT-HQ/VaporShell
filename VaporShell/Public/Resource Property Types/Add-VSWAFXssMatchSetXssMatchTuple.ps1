@@ -1,10 +1,11 @@
 function Add-VSWAFXssMatchSetXssMatchTuple {
     <#
     .SYNOPSIS
-        Adds an AWS::WAF::XssMatchSet.XssMatchTuple resource property to the template
+        Adds an AWS::WAF::XssMatchSet.XssMatchTuple resource property to the template. Specifies the part of a web request that you want AWS WAF to inspect for cross-site scripting attacks and, if you want AWS WAF to inspect a header, the name of the header.
 
     .DESCRIPTION
-        Adds an AWS::WAF::XssMatchSet.XssMatchTuple resource property to the template
+        Adds an AWS::WAF::XssMatchSet.XssMatchTuple resource property to the template.
+Specifies the part of a web request that you want AWS WAF to inspect for cross-site scripting attacks and, if you want AWS WAF to inspect a header, the name of the header.
 
     .LINK
         http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-waf-xssmatchset-xssmatchtuple.html

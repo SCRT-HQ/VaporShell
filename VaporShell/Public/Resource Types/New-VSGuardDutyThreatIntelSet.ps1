@@ -1,10 +1,10 @@
 function New-VSGuardDutyThreatIntelSet {
     <#
     .SYNOPSIS
-        Adds an AWS::GuardDuty::ThreatIntelSet resource to the template
+        Adds an AWS::GuardDuty::ThreatIntelSet resource to the template. The AWS::GuardDuty::ThreatIntelSet resource specifies a new ThreatIntelSet. A ThreatIntelSet consists of known malicious IP addresses. GuardDuty generates findings based on the ThreatIntelSet when it is activated.
 
     .DESCRIPTION
-        Adds an AWS::GuardDuty::ThreatIntelSet resource to the template
+        Adds an AWS::GuardDuty::ThreatIntelSet resource to the template. The AWS::GuardDuty::ThreatIntelSet resource specifies a new ThreatIntelSet. A ThreatIntelSet consists of known malicious IP addresses. GuardDuty generates findings based on the ThreatIntelSet when it is activated.
 
     .LINK
         http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-guardduty-threatintelset.html

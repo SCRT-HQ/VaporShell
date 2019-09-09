@@ -1,10 +1,11 @@
 function Add-VSS3BucketFilterRule {
     <#
     .SYNOPSIS
-        Adds an AWS::S3::Bucket.FilterRule resource property to the template
+        Adds an AWS::S3::Bucket.FilterRule resource property to the template. Specifies the Amazon S3 object key name to filter on and whether to filter on the suffix or prefix of the key name.
 
     .DESCRIPTION
-        Adds an AWS::S3::Bucket.FilterRule resource property to the template
+        Adds an AWS::S3::Bucket.FilterRule resource property to the template.
+Specifies the Amazon S3 object key name to filter on and whether to filter on the suffix or prefix of the key name.
 
     .LINK
         http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-s3-bucket-notificationconfiguration-config-filter-s3key-rules.html

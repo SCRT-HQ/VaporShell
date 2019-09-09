@@ -1,10 +1,13 @@
 function Add-VSApplicationAutoScalingScalableTargetScheduledAction {
     <#
     .SYNOPSIS
-        Adds an AWS::ApplicationAutoScaling::ScalableTarget.ScheduledAction resource property to the template
+        Adds an AWS::ApplicationAutoScaling::ScalableTarget.ScheduledAction resource property to the template. ScheduledAction is a property of ScalableTarget: https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-applicationautoscaling-scalabletarget.html that specifies a scheduled action for a scalable target.
 
     .DESCRIPTION
-        Adds an AWS::ApplicationAutoScaling::ScalableTarget.ScheduledAction resource property to the template
+        Adds an AWS::ApplicationAutoScaling::ScalableTarget.ScheduledAction resource property to the template.
+ScheduledAction is a property of ScalableTarget: https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-applicationautoscaling-scalabletarget.html that specifies a scheduled action for a scalable target.
+
+For more information, see PutScheduledAction: https://docs.aws.amazon.com/autoscaling/application/APIReference/API_PutScheduledAction.html in the *Application Auto Scaling API Reference*.
 
     .LINK
         http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-applicationautoscaling-scalabletarget-scheduledaction.html

@@ -1,10 +1,10 @@
 function New-VSGuardDutyFilter {
     <#
     .SYNOPSIS
-        Adds an AWS::GuardDuty::Filter resource to the template
+        Adds an AWS::GuardDuty::Filter resource to the template. The AWS::GuardDuty::Filter resource specifies a new filter defined by the provided findingCriteria.
 
     .DESCRIPTION
-        Adds an AWS::GuardDuty::Filter resource to the template
+        Adds an AWS::GuardDuty::Filter resource to the template. The AWS::GuardDuty::Filter resource specifies a new filter defined by the provided findingCriteria.
 
     .LINK
         http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-guardduty-filter.html

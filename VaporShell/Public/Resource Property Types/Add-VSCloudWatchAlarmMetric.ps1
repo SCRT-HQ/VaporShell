@@ -1,10 +1,11 @@
 function Add-VSCloudWatchAlarmMetric {
     <#
     .SYNOPSIS
-        Adds an AWS::CloudWatch::Alarm.Metric resource property to the template
+        Adds an AWS::CloudWatch::Alarm.Metric resource property to the template. The Metric property type represents a specific metric. Metric is a property of the MetricStat: https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-cloudwatch-alarm-metricstat.html property type.
 
     .DESCRIPTION
-        Adds an AWS::CloudWatch::Alarm.Metric resource property to the template
+        Adds an AWS::CloudWatch::Alarm.Metric resource property to the template.
+The Metric property type represents a specific metric. Metric is a property of the MetricStat: https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-cloudwatch-alarm-metricstat.html property type.
 
     .LINK
         http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-cloudwatch-alarm-metric.html

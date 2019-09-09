@@ -1,10 +1,10 @@
 function New-VSCodeBuildProject {
     <#
     .SYNOPSIS
-        Adds an AWS::CodeBuild::Project resource to the template
+        Adds an AWS::CodeBuild::Project resource to the template. The AWS::CodeBuild::Project resource configures how AWS CodeBuild builds your source code. For example, it tells CodeBuild where to get the source code and which build environment to use.
 
     .DESCRIPTION
-        Adds an AWS::CodeBuild::Project resource to the template
+        Adds an AWS::CodeBuild::Project resource to the template. The AWS::CodeBuild::Project resource configures how AWS CodeBuild builds your source code. For example, it tells CodeBuild where to get the source code and which build environment to use.
 
     .LINK
         http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-codebuild-project.html

@@ -1,10 +1,10 @@
 function New-VSCodeDeployDeploymentGroup {
     <#
     .SYNOPSIS
-        Adds an AWS::CodeDeploy::DeploymentGroup resource to the template
+        Adds an AWS::CodeDeploy::DeploymentGroup resource to the template. The AWS::CodeDeploy::DeploymentGroup resource creates an AWS CodeDeploy deployment group that specifies which instances your application revisions are deployed to, along with other deployment options. For more information, see CreateDeploymentGroup: https://docs.aws.amazon.com/codedeploy/latest/APIReference/API_CreateDeploymentGroup.html in the *CodeDeploy API Reference*.
 
     .DESCRIPTION
-        Adds an AWS::CodeDeploy::DeploymentGroup resource to the template
+        Adds an AWS::CodeDeploy::DeploymentGroup resource to the template. The AWS::CodeDeploy::DeploymentGroup resource creates an AWS CodeDeploy deployment group that specifies which instances your application revisions are deployed to, along with other deployment options. For more information, see CreateDeploymentGroup: https://docs.aws.amazon.com/codedeploy/latest/APIReference/API_CreateDeploymentGroup.html in the *CodeDeploy API Reference*.
 
     .LINK
         http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-codedeploy-deploymentgroup.html

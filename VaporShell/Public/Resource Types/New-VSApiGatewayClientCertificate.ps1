@@ -1,10 +1,10 @@
 function New-VSApiGatewayClientCertificate {
     <#
     .SYNOPSIS
-        Adds an AWS::ApiGateway::ClientCertificate resource to the template
+        Adds an AWS::ApiGateway::ClientCertificate resource to the template. The AWS::ApiGateway::ClientCertificate resource creates a client certificate that API Gateway uses to configure client-side SSL authentication for sending requests to the integration endpoint.
 
     .DESCRIPTION
-        Adds an AWS::ApiGateway::ClientCertificate resource to the template
+        Adds an AWS::ApiGateway::ClientCertificate resource to the template. The AWS::ApiGateway::ClientCertificate resource creates a client certificate that API Gateway uses to configure client-side SSL authentication for sending requests to the integration endpoint.
 
     .LINK
         http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-apigateway-clientcertificate.html

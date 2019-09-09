@@ -1,10 +1,10 @@
 function New-VSAppStreamStackUserAssociation {
     <#
     .SYNOPSIS
-        Adds an AWS::AppStream::StackUserAssociation resource to the template
+        Adds an AWS::AppStream::StackUserAssociation resource to the template. The AWS::AppStream::StackUserAssociation resource associates the specified users with the specified stacks for Amazon AppStream 2.0. Users in an AppStream 2.0 user pool cannot be assigned to stacks with fleets that are joined to an Active Directory domain.
 
     .DESCRIPTION
-        Adds an AWS::AppStream::StackUserAssociation resource to the template
+        Adds an AWS::AppStream::StackUserAssociation resource to the template. The AWS::AppStream::StackUserAssociation resource associates the specified users with the specified stacks for Amazon AppStream 2.0. Users in an AppStream 2.0 user pool cannot be assigned to stacks with fleets that are joined to an Active Directory domain.
 
     .LINK
         http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-appstream-stackuserassociation.html

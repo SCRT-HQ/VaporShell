@@ -1,10 +1,10 @@
 function New-VSAthenaNamedQuery {
     <#
     .SYNOPSIS
-        Adds an AWS::Athena::NamedQuery resource to the template
+        Adds an AWS::Athena::NamedQuery resource to the template. The AWS::Athena::NamedQuery resource specifies an Amazon Athena query, where QueryString is the list of SQL query statements that comprise the query. For more information, see CreateNamedQuery: https://docs.aws.amazon.com/athena/latest/APIReference/API_CreateNamedQuery.html in the *Amazon Athena API Reference*.
 
     .DESCRIPTION
-        Adds an AWS::Athena::NamedQuery resource to the template
+        Adds an AWS::Athena::NamedQuery resource to the template. The AWS::Athena::NamedQuery resource specifies an Amazon Athena query, where QueryString is the list of SQL query statements that comprise the query. For more information, see CreateNamedQuery: https://docs.aws.amazon.com/athena/latest/APIReference/API_CreateNamedQuery.html in the *Amazon Athena API Reference*.
 
     .LINK
         http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-athena-namedquery.html

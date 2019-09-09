@@ -1,10 +1,11 @@
 function Add-VSECSTaskDefinitionDockerVolumeConfiguration {
     <#
     .SYNOPSIS
-        Adds an AWS::ECS::TaskDefinition.DockerVolumeConfiguration resource property to the template
+        Adds an AWS::ECS::TaskDefinition.DockerVolumeConfiguration resource property to the template. The DockerVolumeConfiguration property specifies a Docker volume configuration and is used when you use Docker volumes. Docker volumes are only supported when you are using the EC2 launch type. Windows containers only support the use of the local driver. To use bind mounts, specify a host instead.
 
     .DESCRIPTION
-        Adds an AWS::ECS::TaskDefinition.DockerVolumeConfiguration resource property to the template
+        Adds an AWS::ECS::TaskDefinition.DockerVolumeConfiguration resource property to the template.
+The DockerVolumeConfiguration property specifies a Docker volume configuration and is used when you use Docker volumes. Docker volumes are only supported when you are using the EC2 launch type. Windows containers only support the use of the local driver. To use bind mounts, specify a host instead.
 
     .LINK
         http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ecs-taskdefinition-dockervolumeconfiguration.html

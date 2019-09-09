@@ -1,10 +1,11 @@
 function Add-VSS3BucketMetricsConfiguration {
     <#
     .SYNOPSIS
-        Adds an AWS::S3::Bucket.MetricsConfiguration resource property to the template
+        Adds an AWS::S3::Bucket.MetricsConfiguration resource property to the template. Specifies a metrics configuration for the CloudWatch request metrics (specified by the metrics configuration ID from an Amazon S3 bucket. If you're updating an existing metrics configuration, note that this is a full replacement of the existing metrics configuration. If you don't include the elements you want to keep, they are erased. For more information, see  PUT Bucket metrics: https://docs.aws.amazon.com/AmazonS3/latest/API/RESTBucketPUTMetricConfiguration.html in the *Amazon Simple Storage Service API Reference*.
 
     .DESCRIPTION
-        Adds an AWS::S3::Bucket.MetricsConfiguration resource property to the template
+        Adds an AWS::S3::Bucket.MetricsConfiguration resource property to the template.
+Specifies a metrics configuration for the CloudWatch request metrics (specified by the metrics configuration ID from an Amazon S3 bucket. If you're updating an existing metrics configuration, note that this is a full replacement of the existing metrics configuration. If you don't include the elements you want to keep, they are erased. For more information, see  PUT Bucket metrics: https://docs.aws.amazon.com/AmazonS3/latest/API/RESTBucketPUTMetricConfiguration.html in the *Amazon Simple Storage Service API Reference*.
 
     .LINK
         http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-s3-bucket-metricsconfiguration.html

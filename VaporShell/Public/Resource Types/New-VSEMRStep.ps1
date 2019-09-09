@@ -1,10 +1,10 @@
 function New-VSEMRStep {
     <#
     .SYNOPSIS
-        Adds an AWS::EMR::Step resource to the template
+        Adds an AWS::EMR::Step resource to the template. Use Step to specify a cluster (job flow step, which runs only on the master node. Steps are used to submit data processing jobs to a cluster.
 
     .DESCRIPTION
-        Adds an AWS::EMR::Step resource to the template
+        Adds an AWS::EMR::Step resource to the template. Use Step to specify a cluster (job flow step, which runs only on the master node. Steps are used to submit data processing jobs to a cluster.
 
     .LINK
         http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-emr-step.html

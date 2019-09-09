@@ -1,10 +1,10 @@
 function New-VSPinpointEmailChannel {
     <#
     .SYNOPSIS
-        Adds an AWS::Pinpoint::EmailChannel resource to the template
+        Adds an AWS::Pinpoint::EmailChannel resource to the template. Updates the status and settings of the email channel for an application.
 
     .DESCRIPTION
-        Adds an AWS::Pinpoint::EmailChannel resource to the template
+        Adds an AWS::Pinpoint::EmailChannel resource to the template. Updates the status and settings of the email channel for an application.
 
     .LINK
         http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-pinpoint-emailchannel.html

@@ -1,10 +1,11 @@
 function Add-VSEMRClusterScriptBootstrapActionConfig {
     <#
     .SYNOPSIS
-        Adds an AWS::EMR::Cluster.ScriptBootstrapActionConfig resource property to the template
+        Adds an AWS::EMR::Cluster.ScriptBootstrapActionConfig resource property to the template. ScriptBootstrapActionConfig is a subproperty of the BootstrapActionConfig property type. ScriptBootstrapActionConfig specifies the arguments and location of the bootstrap script for EMR to run on all cluster nodes before it installs open-source big data applications on them.
 
     .DESCRIPTION
-        Adds an AWS::EMR::Cluster.ScriptBootstrapActionConfig resource property to the template
+        Adds an AWS::EMR::Cluster.ScriptBootstrapActionConfig resource property to the template.
+ScriptBootstrapActionConfig is a subproperty of the BootstrapActionConfig property type. ScriptBootstrapActionConfig specifies the arguments and location of the bootstrap script for EMR to run on all cluster nodes before it installs open-source big data applications on them.
 
     .LINK
         http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-elasticmapreduce-cluster-scriptbootstrapactionconfig.html

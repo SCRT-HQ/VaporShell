@@ -1,10 +1,11 @@
 function Add-VSPinpointEmailIdentityTags {
     <#
     .SYNOPSIS
-        Adds an AWS::PinpointEmail::Identity.Tags resource property to the template
+        Adds an AWS::PinpointEmail::Identity.Tags resource property to the template. An object that defines the tags (keys and values that you want to associate with the identity.
 
     .DESCRIPTION
-        Adds an AWS::PinpointEmail::Identity.Tags resource property to the template
+        Adds an AWS::PinpointEmail::Identity.Tags resource property to the template.
+An object that defines the tags (keys and values that you want to associate with the identity.
 
     .LINK
         http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-pinpointemail-identity-tags.html

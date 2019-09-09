@@ -1,10 +1,11 @@
 function Add-VSKinesisAnalyticsV2ApplicationInputProcessingConfiguration {
     <#
     .SYNOPSIS
-        Adds an AWS::KinesisAnalyticsV2::Application.InputProcessingConfiguration resource property to the template
+        Adds an AWS::KinesisAnalyticsV2::Application.InputProcessingConfiguration resource property to the template. For an SQL-based Amazon Kinesis Data Analytics application, describes a processor that is used to preprocess the records in the stream before being processed by your application code. Currently, the only input processor available is AWS Lambda: https://docs.aws.amazon.com/lambda/.
 
     .DESCRIPTION
-        Adds an AWS::KinesisAnalyticsV2::Application.InputProcessingConfiguration resource property to the template
+        Adds an AWS::KinesisAnalyticsV2::Application.InputProcessingConfiguration resource property to the template.
+For an SQL-based Amazon Kinesis Data Analytics application, describes a processor that is used to preprocess the records in the stream before being processed by your application code. Currently, the only input processor available is AWS Lambda: https://docs.aws.amazon.com/lambda/.
 
     .LINK
         http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-kinesisanalyticsv2-application-inputprocessingconfiguration.html

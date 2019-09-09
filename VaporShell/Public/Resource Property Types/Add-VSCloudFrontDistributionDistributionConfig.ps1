@@ -1,10 +1,11 @@
 function Add-VSCloudFrontDistributionDistributionConfig {
     <#
     .SYNOPSIS
-        Adds an AWS::CloudFront::Distribution.DistributionConfig resource property to the template
+        Adds an AWS::CloudFront::Distribution.DistributionConfig resource property to the template. A distribution configuration.
 
     .DESCRIPTION
-        Adds an AWS::CloudFront::Distribution.DistributionConfig resource property to the template
+        Adds an AWS::CloudFront::Distribution.DistributionConfig resource property to the template.
+A distribution configuration.
 
     .LINK
         http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-cloudfront-distribution-distributionconfig.html

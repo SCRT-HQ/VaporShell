@@ -1,10 +1,11 @@
 function Add-VSMSKClusterBrokerNodeGroupInfo {
     <#
     .SYNOPSIS
-        Adds an AWS::MSK::Cluster.BrokerNodeGroupInfo resource property to the template
+        Adds an AWS::MSK::Cluster.BrokerNodeGroupInfo resource property to the template. The setup to be used for brokers in the cluster.
 
     .DESCRIPTION
-        Adds an AWS::MSK::Cluster.BrokerNodeGroupInfo resource property to the template
+        Adds an AWS::MSK::Cluster.BrokerNodeGroupInfo resource property to the template.
+The setup to be used for brokers in the cluster.
 
     .LINK
         http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-msk-cluster-brokernodegroupinfo.html

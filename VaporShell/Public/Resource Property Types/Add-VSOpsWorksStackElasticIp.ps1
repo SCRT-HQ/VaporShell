@@ -1,10 +1,11 @@
 function Add-VSOpsWorksStackElasticIp {
     <#
     .SYNOPSIS
-        Adds an AWS::OpsWorks::Stack.ElasticIp resource property to the template
+        Adds an AWS::OpsWorks::Stack.ElasticIp resource property to the template. Describes an Elastic IP address.
 
     .DESCRIPTION
-        Adds an AWS::OpsWorks::Stack.ElasticIp resource property to the template
+        Adds an AWS::OpsWorks::Stack.ElasticIp resource property to the template.
+Describes an Elastic IP address.
 
     .LINK
         http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-opsworks-stack-elasticip.html

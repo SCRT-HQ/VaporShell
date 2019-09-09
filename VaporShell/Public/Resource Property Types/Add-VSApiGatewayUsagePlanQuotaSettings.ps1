@@ -1,10 +1,11 @@
 function Add-VSApiGatewayUsagePlanQuotaSettings {
     <#
     .SYNOPSIS
-        Adds an AWS::ApiGateway::UsagePlan.QuotaSettings resource property to the template
+        Adds an AWS::ApiGateway::UsagePlan.QuotaSettings resource property to the template. QuotaSettings is a property of the AWS::ApiGateway::UsagePlan: https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-apigateway-usageplan.html resource that specifies the maximum number of requests users can make to your REST APIs.
 
     .DESCRIPTION
-        Adds an AWS::ApiGateway::UsagePlan.QuotaSettings resource property to the template
+        Adds an AWS::ApiGateway::UsagePlan.QuotaSettings resource property to the template.
+QuotaSettings is a property of the AWS::ApiGateway::UsagePlan: https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-apigateway-usageplan.html resource that specifies the maximum number of requests users can make to your REST APIs.
 
     .LINK
         http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-apigateway-usageplan-quotasettings.html

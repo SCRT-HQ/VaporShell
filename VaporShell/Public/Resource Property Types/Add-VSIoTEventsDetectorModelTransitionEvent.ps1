@@ -1,10 +1,11 @@
 function Add-VSIoTEventsDetectorModelTransitionEvent {
     <#
     .SYNOPSIS
-        Adds an AWS::IoTEvents::DetectorModel.TransitionEvent resource property to the template
+        Adds an AWS::IoTEvents::DetectorModel.TransitionEvent resource property to the template. Specifies the actions performed and the next state entered when a "condition" evaluates to TRUE.
 
     .DESCRIPTION
-        Adds an AWS::IoTEvents::DetectorModel.TransitionEvent resource property to the template
+        Adds an AWS::IoTEvents::DetectorModel.TransitionEvent resource property to the template.
+Specifies the actions performed and the next state entered when a "condition" evaluates to TRUE.
 
     .LINK
         http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iotevents-detectormodel-transitionevent.html

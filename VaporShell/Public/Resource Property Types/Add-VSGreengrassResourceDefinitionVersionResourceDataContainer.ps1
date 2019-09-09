@@ -1,10 +1,17 @@
 function Add-VSGreengrassResourceDefinitionVersionResourceDataContainer {
     <#
     .SYNOPSIS
-        Adds an AWS::Greengrass::ResourceDefinitionVersion.ResourceDataContainer resource property to the template
+        Adds an AWS::Greengrass::ResourceDefinitionVersion.ResourceDataContainer resource property to the template. <a name="aws-properties-greengrass-resourcedefinitionversion-resourcedatacontainer-description"></a>A container for resource data, which defines the resource type. The container takes only one of the following supported resource data types: LocalDeviceResourceData, LocalVolumeResourceData, SageMakerMachineLearningModelResourceData, S3MachineLearningModelResourceData, or SecretsManagerSecretResourceData.
 
     .DESCRIPTION
-        Adds an AWS::Greengrass::ResourceDefinitionVersion.ResourceDataContainer resource property to the template
+        Adds an AWS::Greengrass::ResourceDefinitionVersion.ResourceDataContainer resource property to the template.
+<a name="aws-properties-greengrass-resourcedefinitionversion-resourcedatacontainer-description"></a>A container for resource data, which defines the resource type. The container takes only one of the following supported resource data types: LocalDeviceResourceData, LocalVolumeResourceData, SageMakerMachineLearningModelResourceData, S3MachineLearningModelResourceData, or SecretsManagerSecretResourceData.
+
+**Note**
+
+Only one resource type can be defined for a ResourceDataContainer instance.
+
+<a name="aws-properties-greengrass-resourcedefinitionversion-resourcedatacontainer-inheritance"></a> In an AWS CloudFormation template, ResourceDataContainer is a property of the https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-greengrass-resourcedefinitionversion-resourceinstance.html: https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-greengrass-resourcedefinitionversion-resourceinstance.html property type.
 
     .LINK
         http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-greengrass-resourcedefinitionversion-resourcedatacontainer.html

@@ -1,10 +1,12 @@
 function New-VSElasticLoadBalancingV2TargetGroup {
     <#
     .SYNOPSIS
-        Adds an AWS::ElasticLoadBalancingV2::TargetGroup resource to the template
+        Adds an AWS::ElasticLoadBalancingV2::TargetGroup resource to the template. Specifies a target group for an Application Load Balancer or Network Load Balancer.
 
     .DESCRIPTION
-        Adds an AWS::ElasticLoadBalancingV2::TargetGroup resource to the template
+        Adds an AWS::ElasticLoadBalancingV2::TargetGroup resource to the template. Specifies a target group for an Application Load Balancer or Network Load Balancer.
+
+Before you register a Lambda function as a target, you must create a AWS::Lambda::Permission resource that grants the Elastic Load Balancing service principal permission to invoke the Lambda function.
 
     .LINK
         http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-elasticloadbalancingv2-targetgroup.html

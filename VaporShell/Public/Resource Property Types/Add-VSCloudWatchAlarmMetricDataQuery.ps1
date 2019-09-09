@@ -1,10 +1,13 @@
 function Add-VSCloudWatchAlarmMetricDataQuery {
     <#
     .SYNOPSIS
-        Adds an AWS::CloudWatch::Alarm.MetricDataQuery resource property to the template
+        Adds an AWS::CloudWatch::Alarm.MetricDataQuery resource property to the template. The MetricDataQuery property type specifies the metric data to return, and whether this call is just retrieving a batch set of data for one metric, or is performing a math expression on metric data.
 
     .DESCRIPTION
-        Adds an AWS::CloudWatch::Alarm.MetricDataQuery resource property to the template
+        Adds an AWS::CloudWatch::Alarm.MetricDataQuery resource property to the template.
+The MetricDataQuery property type specifies the metric data to return, and whether this call is just retrieving a batch set of data for one metric, or is performing a math expression on metric data.
+
+Any expression used must return a single time series. For more information, see Metric Math Syntax and Functions: https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/using-metric-math.html#metric-math-syntax in the *Amazon CloudWatch User Guide*.
 
     .LINK
         http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-cloudwatch-alarm-metricdataquery.html

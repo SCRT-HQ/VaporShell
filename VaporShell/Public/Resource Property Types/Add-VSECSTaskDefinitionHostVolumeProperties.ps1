@@ -1,10 +1,11 @@
 function Add-VSECSTaskDefinitionHostVolumeProperties {
     <#
     .SYNOPSIS
-        Adds an AWS::ECS::TaskDefinition.HostVolumeProperties resource property to the template
+        Adds an AWS::ECS::TaskDefinition.HostVolumeProperties resource property to the template. The HostVolumeProperties property specifies details on a container instance bind mount host volume.
 
     .DESCRIPTION
-        Adds an AWS::ECS::TaskDefinition.HostVolumeProperties resource property to the template
+        Adds an AWS::ECS::TaskDefinition.HostVolumeProperties resource property to the template.
+The HostVolumeProperties property specifies details on a container instance bind mount host volume.
 
     .LINK
         http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ecs-taskdefinition-volumes-host.html

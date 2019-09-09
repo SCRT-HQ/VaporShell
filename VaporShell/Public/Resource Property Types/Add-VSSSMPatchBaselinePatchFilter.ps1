@@ -1,10 +1,13 @@
 function Add-VSSSMPatchBaselinePatchFilter {
     <#
     .SYNOPSIS
-        Adds an AWS::SSM::PatchBaseline.PatchFilter resource property to the template
+        Adds an AWS::SSM::PatchBaseline.PatchFilter resource property to the template. The PatchFilter property type defines a patch filter for an AWS Systems Manager patch baseline.
 
     .DESCRIPTION
-        Adds an AWS::SSM::PatchBaseline.PatchFilter resource property to the template
+        Adds an AWS::SSM::PatchBaseline.PatchFilter resource property to the template.
+The PatchFilter property type defines a patch filter for an AWS Systems Manager patch baseline.
+
+The PatchFilters property of the PatchFilterGroup: https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ssm-patchbaseline-patchfiltergroup.html property type contains a list of PatchFilter property types.
 
     .LINK
         http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ssm-patchbaseline-patchfilter.html

@@ -1,10 +1,10 @@
 function New-VSEC2TransitGatewayRouteTableAssociation {
     <#
     .SYNOPSIS
-        Adds an AWS::EC2::TransitGatewayRouteTableAssociation resource to the template
+        Adds an AWS::EC2::TransitGatewayRouteTableAssociation resource to the template. Associates the specified attachment with the specified transit gateway route table. You can associate only one route table with an attachment.
 
     .DESCRIPTION
-        Adds an AWS::EC2::TransitGatewayRouteTableAssociation resource to the template
+        Adds an AWS::EC2::TransitGatewayRouteTableAssociation resource to the template. Associates the specified attachment with the specified transit gateway route table. You can associate only one route table with an attachment.
 
     .LINK
         http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ec2-transitgatewayroutetableassociation.html

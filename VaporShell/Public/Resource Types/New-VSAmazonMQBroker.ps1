@@ -1,10 +1,40 @@
 function New-VSAmazonMQBroker {
     <#
     .SYNOPSIS
-        Adds an AWS::AmazonMQ::Broker resource to the template
+        Adds an AWS::AmazonMQ::Broker resource to the template. A *broker* is a message broker environment running on Amazon MQ. It is the basic building block of Amazon MQ.
 
     .DESCRIPTION
-        Adds an AWS::AmazonMQ::Broker resource to the template
+        Adds an AWS::AmazonMQ::Broker resource to the template. A *broker* is a message broker environment running on Amazon MQ. It is the basic building block of Amazon MQ.
+
+The AWS::AmazonMQ::Broker resource lets you create Amazon MQ brokers, add configuration changes or modify users for the specified broker, return information about the specified broker, and delete the specified broker. For more information, see Amazon MQ Basic Elements: https://docs.aws.amazon.com/amazon-mq/latest/developer-guide/amazon-mq-basic-elements.html in the *Amazon MQ Developer Guide*.
+
++ ec2:CreateNetworkInterface
+
+This permission is required to allow Amazon MQ to create an elastic network interface (ENI on behalf of your account.
+
++ ec2:CreateNetworkInterfacePermission
+
+This permission is required to attach the ENI to the broker instance.
+
++ ec2:DeleteNetworkInterface
+
++ ec2:DeleteNetworkInterfacePermission
+
++ ec2:DetachNetworkInterface
+
++ ec2:DescribeInternetGateways
+
++ ec2:DescribeNetworkInterfaces
+
++ ec2:DescribeNetworkInterfacePermissions
+
++ ec2:DescribeRouteTables
+
++ ec2:DescribeSecurityGroups
+
++ ec2:DescribeSubnets
+
++ ec2:DescribeVpcs
 
     .LINK
         http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-amazonmq-broker.html

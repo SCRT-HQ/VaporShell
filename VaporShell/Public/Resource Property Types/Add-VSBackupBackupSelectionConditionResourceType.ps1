@@ -1,10 +1,11 @@
 function Add-VSBackupBackupSelectionConditionResourceType {
     <#
     .SYNOPSIS
-        Adds an AWS::Backup::BackupSelection.ConditionResourceType resource property to the template
+        Adds an AWS::Backup::BackupSelection.ConditionResourceType resource property to the template. Specifies an object that contains an array of triplets made up of a condition type (such as StringEquals, a key, and a value. Conditions are used to filter resources in a selection that is assigned to a backup plan.
 
     .DESCRIPTION
-        Adds an AWS::Backup::BackupSelection.ConditionResourceType resource property to the template
+        Adds an AWS::Backup::BackupSelection.ConditionResourceType resource property to the template.
+Specifies an object that contains an array of triplets made up of a condition type (such as StringEquals, a key, and a value. Conditions are used to filter resources in a selection that is assigned to a backup plan.
 
     .LINK
         http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-backup-backupselection-conditionresourcetype.html

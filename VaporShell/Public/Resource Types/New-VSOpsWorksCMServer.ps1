@@ -1,10 +1,10 @@
 function New-VSOpsWorksCMServer {
     <#
     .SYNOPSIS
-        Adds an AWS::OpsWorksCM::Server resource to the template
+        Adds an AWS::OpsWorksCM::Server resource to the template. The AWS::OpsWorksCM::Server resource creates an AWS OpsWorks for Chef Automate or AWS OpsWorks for Puppet Enterprise configuration management server. For more information, see Create a Chef Automate Server in AWS CloudFormation: https://docs.aws.amazon.com/opsworks/latest/userguide/opscm-create-server-cfn.html or Create a Puppet Enterprise Master in AWS CloudFormation: https://docs.aws.amazon.com/opsworks/latest/userguide/opspup-create-server-cfn.html in the *AWS OpsWorks User Guide*, and CreateServer: https://docs.aws.amazon.com/opsworks-cm/latest/APIReference/API_CreateServer.html in the *AWS OpsWorks CM API Reference*.
 
     .DESCRIPTION
-        Adds an AWS::OpsWorksCM::Server resource to the template
+        Adds an AWS::OpsWorksCM::Server resource to the template. The AWS::OpsWorksCM::Server resource creates an AWS OpsWorks for Chef Automate or AWS OpsWorks for Puppet Enterprise configuration management server. For more information, see Create a Chef Automate Server in AWS CloudFormation: https://docs.aws.amazon.com/opsworks/latest/userguide/opscm-create-server-cfn.html or Create a Puppet Enterprise Master in AWS CloudFormation: https://docs.aws.amazon.com/opsworks/latest/userguide/opspup-create-server-cfn.html in the *AWS OpsWorks User Guide*, and CreateServer: https://docs.aws.amazon.com/opsworks-cm/latest/APIReference/API_CreateServer.html in the *AWS OpsWorks CM API Reference*.
 
     .LINK
         http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-opsworkscm-server.html

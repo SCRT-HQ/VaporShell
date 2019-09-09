@@ -1,10 +1,16 @@
 function New-VSSecretsManagerSecretTargetAttachment {
     <#
     .SYNOPSIS
-        Adds an AWS::SecretsManager::SecretTargetAttachment resource to the template
+        Adds an AWS::SecretsManager::SecretTargetAttachment resource to the template. The AWS::SecretsManager::SecretTargetAttachmentresource completes the final link between a Secrets Manager secret and its associated database. This is required because each has a dependency on the other. No matter which one you create first, the other doesn't exist yet. To resolve this, you must create the resources in the following order:
 
     .DESCRIPTION
-        Adds an AWS::SecretsManager::SecretTargetAttachment resource to the template
+        Adds an AWS::SecretsManager::SecretTargetAttachment resource to the template. The AWS::SecretsManager::SecretTargetAttachmentresource completes the final link between a Secrets Manager secret and its associated database. This is required because each has a dependency on the other. No matter which one you create first, the other doesn't exist yet. To resolve this, you must create the resources in the following order:
+
+1. Define the secret without referencing the service or database. You can't reference the service or database because it doesn't exist yet.
+
+1. Next, define the service or database. Include the reference to the secret to use its stored credentials to define the database's master user and password.
+
+1. Finally, define a SecretTargetAttachmentresource type to finish configuring the secret with the required database engine type and the connection details of the service or database. These details are required by a rotation function, if one is attached later by defining a AWS::SecretsManager::RotationSchedule : https://docs.aws.amazon.com/AWSCloudFormation/latest/userguide/aws-resource-secretsmanager-rotationschedule.html resource type.
 
     .LINK
         http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-secretsmanager-secrettargetattachment.html

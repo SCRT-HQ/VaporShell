@@ -1,10 +1,18 @@
 function New-VSAutoScalingAutoScalingGroup {
     <#
     .SYNOPSIS
-        Adds an AWS::AutoScaling::AutoScalingGroup resource to the template
+        Adds an AWS::AutoScaling::AutoScalingGroup resource to the template. Defines an Amazon EC2 Auto Scaling group with the specified name and attributes.
 
     .DESCRIPTION
-        Adds an AWS::AutoScaling::AutoScalingGroup resource to the template
+        Adds an AWS::AutoScaling::AutoScalingGroup resource to the template. Defines an Amazon EC2 Auto Scaling group with the specified name and attributes.
+
+To configure Amazon EC2 instances launched as part of the group, you can specify a launch template or a launch configuration. We recommend that you use a launch template to make sure that you can use the latest features of Amazon EC2, such as T2 Unlimited instances. For more information, see Creating a Launch Template for an Auto Scaling Group: https://docs.aws.amazon.com/autoscaling/ec2/userguide/create-launch-template.html.
+
+**Important**
+
+You can add an UpdatePolicy attribute: https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-attribute-updatepolicy.html to your Auto Scaling group to perform rolling updates (or replace the group when a change has been made to the group. You can find sample update policies for rolling updates in the Examples: https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-as-group.html#aws-properties-as-group--examples section.
+
+For more information, see CreateAutoScalingGroup: https://docs.aws.amazon.com/autoscaling/ec2/APIReference/API_CreateAutoScalingGroup.html and UpdateAutoScalingGroup: https://docs.aws.amazon.com/autoscaling/ec2/APIReference/API_UpdateAutoScalingGroup.html in the *Amazon EC2 Auto Scaling API Reference*. For more information about Amazon EC2 Auto Scaling, see the Amazon EC2 Auto Scaling User Guide: https://docs.aws.amazon.com/autoscaling/ec2/userguide/what-is-amazon-ec2-auto-scaling.html.
 
     .LINK
         http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-as-group.html

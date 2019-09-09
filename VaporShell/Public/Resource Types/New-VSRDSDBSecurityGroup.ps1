@@ -1,10 +1,16 @@
 function New-VSRDSDBSecurityGroup {
     <#
     .SYNOPSIS
-        Adds an AWS::RDS::DBSecurityGroup resource to the template
+        Adds an AWS::RDS::DBSecurityGroup resource to the template. The AWS::RDS::DBSecurityGroup resource creates or updates an Amazon RDS DB security group.
 
     .DESCRIPTION
-        Adds an AWS::RDS::DBSecurityGroup resource to the template
+        Adds an AWS::RDS::DBSecurityGroup resource to the template. The AWS::RDS::DBSecurityGroup resource creates or updates an Amazon RDS DB security group.
+
+**Note**
+
+If you use DB security groups, the settings that you can specify for your DB instances are limited. For more information, see the DBSecurityGroups: https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-rds-database-instance.html#cfn-rds-dbinstance-dbsecuritygroups property of the AWS::RDS::DBInstance resource.
+
+When you specify an AWS::RDS::DBSecurityGroup as an argument to the Ref function, AWS CloudFormation returns the value of the DBSecurityGroupName.
 
     .LINK
         http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-rds-security-group.html

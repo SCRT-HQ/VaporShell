@@ -1,10 +1,11 @@
 function Add-VSKinesisFirehoseDeliveryStreamBufferingHints {
     <#
     .SYNOPSIS
-        Adds an AWS::KinesisFirehose::DeliveryStream.BufferingHints resource property to the template
+        Adds an AWS::KinesisFirehose::DeliveryStream.BufferingHints resource property to the template. The BufferingHints property type specifies how Amazon Kinesis Data Firehose (Kinesis Data Firehose buffers incoming data before delivering it to the destination. The first buffer condition that is satisfied triggers Kinesis Data Firehose to deliver the data.
 
     .DESCRIPTION
-        Adds an AWS::KinesisFirehose::DeliveryStream.BufferingHints resource property to the template
+        Adds an AWS::KinesisFirehose::DeliveryStream.BufferingHints resource property to the template.
+The BufferingHints property type specifies how Amazon Kinesis Data Firehose (Kinesis Data Firehose buffers incoming data before delivering it to the destination. The first buffer condition that is satisfied triggers Kinesis Data Firehose to deliver the data.
 
     .LINK
         http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-kinesisfirehose-deliverystream-bufferinghints.html

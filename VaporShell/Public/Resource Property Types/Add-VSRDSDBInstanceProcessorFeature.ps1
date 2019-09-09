@@ -1,10 +1,11 @@
 function Add-VSRDSDBInstanceProcessorFeature {
     <#
     .SYNOPSIS
-        Adds an AWS::RDS::DBInstance.ProcessorFeature resource property to the template
+        Adds an AWS::RDS::DBInstance.ProcessorFeature resource property to the template. The ProcessorFeature property type specifies the processor features of a DB instance class status.
 
     .DESCRIPTION
-        Adds an AWS::RDS::DBInstance.ProcessorFeature resource property to the template
+        Adds an AWS::RDS::DBInstance.ProcessorFeature resource property to the template.
+The ProcessorFeature property type specifies the processor features of a DB instance class status.
 
     .LINK
         http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-rds-dbinstance-processorfeature.html

@@ -1,10 +1,10 @@
 function New-VSIoT1ClickPlacement {
     <#
     .SYNOPSIS
-        Adds an AWS::IoT1Click::Placement resource to the template
+        Adds an AWS::IoT1Click::Placement resource to the template. The AWS::IoT1Click::Placement resource creates a placement to be associated with an AWS IoT 1-Click project. A placement is an instance of a device in a location. For more information, see Projects, Templates, and Placements: https://docs.aws.amazon.com/iot-1-click/latest/developerguide/1click-PTP.html in the *AWS IoT 1-Click Developer Guide*.
 
     .DESCRIPTION
-        Adds an AWS::IoT1Click::Placement resource to the template
+        Adds an AWS::IoT1Click::Placement resource to the template. The AWS::IoT1Click::Placement resource creates a placement to be associated with an AWS IoT 1-Click project. A placement is an instance of a device in a location. For more information, see Projects, Templates, and Placements: https://docs.aws.amazon.com/iot-1-click/latest/developerguide/1click-PTP.html in the *AWS IoT 1-Click Developer Guide*.
 
     .LINK
         http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-iot1click-placement.html

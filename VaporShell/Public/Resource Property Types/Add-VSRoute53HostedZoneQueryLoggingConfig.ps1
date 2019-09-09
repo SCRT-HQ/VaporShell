@@ -1,10 +1,11 @@
 function Add-VSRoute53HostedZoneQueryLoggingConfig {
     <#
     .SYNOPSIS
-        Adds an AWS::Route53::HostedZone.QueryLoggingConfig resource property to the template
+        Adds an AWS::Route53::HostedZone.QueryLoggingConfig resource property to the template. A complex type that contains information about a configuration for DNS query logging.
 
     .DESCRIPTION
-        Adds an AWS::Route53::HostedZone.QueryLoggingConfig resource property to the template
+        Adds an AWS::Route53::HostedZone.QueryLoggingConfig resource property to the template.
+A complex type that contains information about a configuration for DNS query logging.
 
     .LINK
         http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-route53-hostedzone-queryloggingconfig.html

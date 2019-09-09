@@ -1,10 +1,11 @@
 function Add-VSIoTAnalyticsDatasetIotEventsDestinationConfiguration {
     <#
     .SYNOPSIS
-        Adds an AWS::IoTAnalytics::Dataset.IotEventsDestinationConfiguration resource property to the template
+        Adds an AWS::IoTAnalytics::Dataset.IotEventsDestinationConfiguration resource property to the template. Configuration information for delivery of data set contents to AWS IoT Events.
 
     .DESCRIPTION
-        Adds an AWS::IoTAnalytics::Dataset.IotEventsDestinationConfiguration resource property to the template
+        Adds an AWS::IoTAnalytics::Dataset.IotEventsDestinationConfiguration resource property to the template.
+Configuration information for delivery of data set contents to AWS IoT Events.
 
     .LINK
         http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iotanalytics-dataset-ioteventsdestinationconfiguration.html

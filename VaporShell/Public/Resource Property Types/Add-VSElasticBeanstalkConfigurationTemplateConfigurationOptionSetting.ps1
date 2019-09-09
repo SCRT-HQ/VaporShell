@@ -1,10 +1,15 @@
 function Add-VSElasticBeanstalkConfigurationTemplateConfigurationOptionSetting {
     <#
     .SYNOPSIS
-        Adds an AWS::ElasticBeanstalk::ConfigurationTemplate.ConfigurationOptionSetting resource property to the template
+        Adds an AWS::ElasticBeanstalk::ConfigurationTemplate.ConfigurationOptionSetting resource property to the template. The ConfigurationOptionSetting property type specifies an option for an AWS Elastic Beanstalk configuration template.
 
     .DESCRIPTION
-        Adds an AWS::ElasticBeanstalk::ConfigurationTemplate.ConfigurationOptionSetting resource property to the template
+        Adds an AWS::ElasticBeanstalk::ConfigurationTemplate.ConfigurationOptionSetting resource property to the template.
+The ConfigurationOptionSetting property type specifies an option for an AWS Elastic Beanstalk configuration template.
+
+The OptionSettings property of the AWS::ElasticBeanstalk::ConfigurationTemplate: https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-beanstalk-configurationtemplate.html resource contains a list of ConfigurationOptionSetting property types.
+
+For a list of possible namespaces and option values, see Option Values: https://docs.aws.amazon.com/elasticbeanstalk/latest/dg/command-options.html in the *AWS Elastic Beanstalk Developer Guide*.
 
     .LINK
         http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-elasticbeanstalk-configurationtemplate-configurationoptionsetting.html

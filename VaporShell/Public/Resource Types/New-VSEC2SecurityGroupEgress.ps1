@@ -1,10 +1,20 @@
 function New-VSEC2SecurityGroupEgress {
     <#
     .SYNOPSIS
-        Adds an AWS::EC2::SecurityGroupEgress resource to the template
+        Adds an AWS::EC2::SecurityGroupEgress resource to the template. EC2-VPC only] Adds the specified egress rules to a security group for use with a VPC.
 
     .DESCRIPTION
-        Adds an AWS::EC2::SecurityGroupEgress resource to the template
+        Adds an AWS::EC2::SecurityGroupEgress resource to the template. EC2-VPC only] Adds the specified egress rules to a security group for use with a VPC.
+
+An outbound rule permits instances to send traffic to the specified destination IPv4 or IPv6 CIDR address ranges, or to the specified destination security groups for the same VPC.
+
+You specify a protocol for each rule (for example, TCP. For the TCP and UDP protocols, you must also specify the destination port or port range. For the ICMP protocol, you must also specify the ICMP type and code. You can use -1 for the type or code to mean all types or all codes.
+
+Rule changes are propagated to affected instances as quickly as possible. However, a small delay might occur.
+
+For more information about VPC security group limits, see Amazon VPC Limits: https://docs.aws.amazon.com/vpc/latest/userguide/amazon-vpc-limits.html.
+
+Use AWS::EC2::SecurityGroupIngress and AWS::EC2::SecurityGroupEgress only when necessary, typically to allow security groups to reference each other in ingress and egress rules. Otherwise, use the embedded ingress and egress rules of the security group. For more information, see Amazon EC2 Security Groups: https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/using-network-security.html.
 
     .LINK
         http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ec2-security-group-egress.html

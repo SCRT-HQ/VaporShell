@@ -1,10 +1,11 @@
 function Add-VSIoTTopicRuleSnsAction {
     <#
     .SYNOPSIS
-        Adds an AWS::IoT::TopicRule.SnsAction resource property to the template
+        Adds an AWS::IoT::TopicRule.SnsAction resource property to the template. Describes an action to publish to an Amazon SNS topic.
 
     .DESCRIPTION
-        Adds an AWS::IoT::TopicRule.SnsAction resource property to the template
+        Adds an AWS::IoT::TopicRule.SnsAction resource property to the template.
+Describes an action to publish to an Amazon SNS topic.
 
     .LINK
         http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iot-topicrule-snsaction.html

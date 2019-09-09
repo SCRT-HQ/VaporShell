@@ -1,10 +1,11 @@
 function Add-VSECSTaskDefinitionVolume {
     <#
     .SYNOPSIS
-        Adds an AWS::ECS::TaskDefinition.Volume resource property to the template
+        Adds an AWS::ECS::TaskDefinition.Volume resource property to the template. The Volume property specifies a data volume used in a task definition. For tasks that use a Docker volume, specify a DockerVolumeConfiguration. For tasks that use a bind mount host volume, specify a host and optional sourcePath. For more information, see Using Data Volumes in Tasks: https://docs.aws.amazon.com/AmazonECS/latest/developerguide/using_data_volumes.html.
 
     .DESCRIPTION
-        Adds an AWS::ECS::TaskDefinition.Volume resource property to the template
+        Adds an AWS::ECS::TaskDefinition.Volume resource property to the template.
+The Volume property specifies a data volume used in a task definition. For tasks that use a Docker volume, specify a DockerVolumeConfiguration. For tasks that use a bind mount host volume, specify a host and optional sourcePath. For more information, see Using Data Volumes in Tasks: https://docs.aws.amazon.com/AmazonECS/latest/developerguide/using_data_volumes.html.
 
     .LINK
         http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ecs-taskdefinition-volumes.html

@@ -1,10 +1,11 @@
 function Add-VSWAFRegionalXssMatchSetFieldToMatch {
     <#
     .SYNOPSIS
-        Adds an AWS::WAFRegional::XssMatchSet.FieldToMatch resource property to the template
+        Adds an AWS::WAFRegional::XssMatchSet.FieldToMatch resource property to the template. Specifies the part of a web request that you want AWS WAF to search, such as a specific header or a query string.
 
     .DESCRIPTION
-        Adds an AWS::WAFRegional::XssMatchSet.FieldToMatch resource property to the template
+        Adds an AWS::WAFRegional::XssMatchSet.FieldToMatch resource property to the template.
+Specifies the part of a web request that you want AWS WAF to search, such as a specific header or a query string.
 
     .LINK
         http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-wafregional-xssmatchset-fieldtomatch.html

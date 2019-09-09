@@ -1,10 +1,11 @@
 function Add-VSAmazonMQConfigurationTagsEntry {
     <#
     .SYNOPSIS
-        Adds an AWS::AmazonMQ::Configuration.TagsEntry resource property to the template
+        Adds an AWS::AmazonMQ::Configuration.TagsEntry resource property to the template. A key-value pair to associate with the configuration.
 
     .DESCRIPTION
-        Adds an AWS::AmazonMQ::Configuration.TagsEntry resource property to the template
+        Adds an AWS::AmazonMQ::Configuration.TagsEntry resource property to the template.
+A key-value pair to associate with the configuration.
 
     .LINK
         http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-amazonmq-configuration-tagsentry.html

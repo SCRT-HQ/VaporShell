@@ -1,10 +1,11 @@
 function Add-VSKinesisFirehoseDeliveryStreamS3DestinationConfiguration {
     <#
     .SYNOPSIS
-        Adds an AWS::KinesisFirehose::DeliveryStream.S3DestinationConfiguration resource property to the template
+        Adds an AWS::KinesisFirehose::DeliveryStream.S3DestinationConfiguration resource property to the template. The S3DestinationConfiguration property type specifies an Amazon Simple Storage Service (Amazon S3 destination to which Amazon Kinesis Data Firehose (Kinesis Data Firehose delivers data.
 
     .DESCRIPTION
-        Adds an AWS::KinesisFirehose::DeliveryStream.S3DestinationConfiguration resource property to the template
+        Adds an AWS::KinesisFirehose::DeliveryStream.S3DestinationConfiguration resource property to the template.
+The S3DestinationConfiguration property type specifies an Amazon Simple Storage Service (Amazon S3 destination to which Amazon Kinesis Data Firehose (Kinesis Data Firehose delivers data.
 
     .LINK
         http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-kinesisfirehose-deliverystream-s3destinationconfiguration.html

@@ -1,10 +1,11 @@
 function Add-VSIoTAnalyticsDatasetS3DestinationConfiguration {
     <#
     .SYNOPSIS
-        Adds an AWS::IoTAnalytics::Dataset.S3DestinationConfiguration resource property to the template
+        Adds an AWS::IoTAnalytics::Dataset.S3DestinationConfiguration resource property to the template. Configuration information for delivery of data set contents to Amazon S3.
 
     .DESCRIPTION
-        Adds an AWS::IoTAnalytics::Dataset.S3DestinationConfiguration resource property to the template
+        Adds an AWS::IoTAnalytics::Dataset.S3DestinationConfiguration resource property to the template.
+Configuration information for delivery of data set contents to Amazon S3.
 
     .LINK
         http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iotanalytics-dataset-s3destinationconfiguration.html

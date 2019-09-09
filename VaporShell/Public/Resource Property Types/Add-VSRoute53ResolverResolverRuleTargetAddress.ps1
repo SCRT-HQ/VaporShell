@@ -1,10 +1,11 @@
 function Add-VSRoute53ResolverResolverRuleTargetAddress {
     <#
     .SYNOPSIS
-        Adds an AWS::Route53Resolver::ResolverRule.TargetAddress resource property to the template
+        Adds an AWS::Route53Resolver::ResolverRule.TargetAddress resource property to the template. In a CreateResolverRule: https://docs.aws.amazon.com/Route53/latest/APIReference/API_route53resolver_CreateResolverRule.html request, an array of the IPs that you want to forward DNS queries to.
 
     .DESCRIPTION
-        Adds an AWS::Route53Resolver::ResolverRule.TargetAddress resource property to the template
+        Adds an AWS::Route53Resolver::ResolverRule.TargetAddress resource property to the template.
+In a CreateResolverRule: https://docs.aws.amazon.com/Route53/latest/APIReference/API_route53resolver_CreateResolverRule.html request, an array of the IPs that you want to forward DNS queries to.
 
     .LINK
         http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-route53resolver-resolverrule-targetaddress.html

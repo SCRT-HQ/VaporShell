@@ -1,10 +1,22 @@
 function New-VSCloudFormationStack {
     <#
     .SYNOPSIS
-        Adds an AWS::CloudFormation::Stack resource to the template
+        Adds an AWS::CloudFormation::Stack resource to the template. The AWS::CloudFormation::Stack type nests a stack as a resource in a top-level template.
 
     .DESCRIPTION
-        Adds an AWS::CloudFormation::Stack resource to the template
+        Adds an AWS::CloudFormation::Stack resource to the template. The AWS::CloudFormation::Stack type nests a stack as a resource in a top-level template.
+
+You can add output values from a nested stack within the containing template. You use the GetAtt: https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/intrinsic-function-reference-getatt.html function with the nested stack's logical name and the name of the output value in the nested stack in the format Outputs.NestedStackOutputName.
+
+**Important**
+
+We strongly recommend that updates to nested stacks are run from the parent stack.
+
+When you apply template changes to update a top-level stack, CloudFormation updates the top-level stack and initiates an update to its nested stacks. CloudFormation updates the resources of modified nested stacks, but does not update the resources of unmodified nested stacks. For more information, see CloudFormation Stacks Updates: https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks.html.
+
+**Note**
+
+You must acknowledge IAM capabilities for nested stacks that contain IAM resources. Also, verify that you have cancel update stack permissions, which is required if an update rolls back. For more information about IAM and CloudFormation, see Controlling Access with AWS Identity and Access Management: https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-iam-template.html.
 
     .LINK
         http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-stack.html

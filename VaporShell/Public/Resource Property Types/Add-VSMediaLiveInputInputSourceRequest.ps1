@@ -1,10 +1,11 @@
 function Add-VSMediaLiveInputInputSourceRequest {
     <#
     .SYNOPSIS
-        Adds an AWS::MediaLive::Input.InputSourceRequest resource property to the template
+        Adds an AWS::MediaLive::Input.InputSourceRequest resource property to the template. The settings for a pull input.
 
     .DESCRIPTION
-        Adds an AWS::MediaLive::Input.InputSourceRequest resource property to the template
+        Adds an AWS::MediaLive::Input.InputSourceRequest resource property to the template.
+The settings for a pull input.
 
     .LINK
         http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-medialive-input-inputsourcerequest.html

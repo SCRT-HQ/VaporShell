@@ -1,10 +1,11 @@
 function Add-VSCloudFrontDistributionOriginCustomHeader {
     <#
     .SYNOPSIS
-        Adds an AWS::CloudFront::Distribution.OriginCustomHeader resource property to the template
+        Adds an AWS::CloudFront::Distribution.OriginCustomHeader resource property to the template. A complex type that contains HeaderName and HeaderValue elements, if any, for this distribution.
 
     .DESCRIPTION
-        Adds an AWS::CloudFront::Distribution.OriginCustomHeader resource property to the template
+        Adds an AWS::CloudFront::Distribution.OriginCustomHeader resource property to the template.
+A complex type that contains HeaderName and HeaderValue elements, if any, for this distribution.
 
     .LINK
         http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-cloudfront-distribution-origincustomheader.html

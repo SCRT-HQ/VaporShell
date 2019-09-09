@@ -1,10 +1,13 @@
 function Add-VSGreengrassDeviceDefinitionDevice {
     <#
     .SYNOPSIS
-        Adds an AWS::Greengrass::DeviceDefinition.Device resource property to the template
+        Adds an AWS::Greengrass::DeviceDefinition.Device resource property to the template. <a name="aws-properties-greengrass-devicedefinition-device-description"></a> A device is an AWS IoT device (thing that's added to a Greengrass group. Greengrass devices can communicate with the Greengrass core in the same group. For more information, see What Is AWS IoT Greengrass?: https://docs.aws.amazon.com/greengrass/latest/developerguide/what-is-gg.html in the *AWS IoT Greengrass Developer Guide*.
 
     .DESCRIPTION
-        Adds an AWS::Greengrass::DeviceDefinition.Device resource property to the template
+        Adds an AWS::Greengrass::DeviceDefinition.Device resource property to the template.
+<a name="aws-properties-greengrass-devicedefinition-device-description"></a> A device is an AWS IoT device (thing that's added to a Greengrass group. Greengrass devices can communicate with the Greengrass core in the same group. For more information, see What Is AWS IoT Greengrass?: https://docs.aws.amazon.com/greengrass/latest/developerguide/what-is-gg.html in the *AWS IoT Greengrass Developer Guide*.
+
+<a name="aws-properties-greengrass-devicedefinition-device-inheritance"></a> In an AWS CloudFormation template, the Devices property of the  DeviceDefinitionVersion : https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-greengrass-devicedefinition-devicedefinitionversion.html property type contains a list of Device property types.
 
     .LINK
         http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-greengrass-devicedefinition-device.html

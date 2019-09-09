@@ -1,10 +1,11 @@
 function Add-VSAppMeshRouteHttpRouteAction {
     <#
     .SYNOPSIS
-        Adds an AWS::AppMesh::Route.HttpRouteAction resource property to the template
+        Adds an AWS::AppMesh::Route.HttpRouteAction resource property to the template. An object representing the traffic distribution requirements for matched HTTP requests.
 
     .DESCRIPTION
-        Adds an AWS::AppMesh::Route.HttpRouteAction resource property to the template
+        Adds an AWS::AppMesh::Route.HttpRouteAction resource property to the template.
+An object representing the traffic distribution requirements for matched HTTP requests.
 
     .LINK
         http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-appmesh-route-httprouteaction.html

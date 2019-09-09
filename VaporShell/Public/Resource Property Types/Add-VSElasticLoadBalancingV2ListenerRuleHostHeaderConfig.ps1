@@ -1,10 +1,11 @@
 function Add-VSElasticLoadBalancingV2ListenerRuleHostHeaderConfig {
     <#
     .SYNOPSIS
-        Adds an AWS::ElasticLoadBalancingV2::ListenerRule.HostHeaderConfig resource property to the template
+        Adds an AWS::ElasticLoadBalancingV2::ListenerRule.HostHeaderConfig resource property to the template. Information about a host header condition.
 
     .DESCRIPTION
-        Adds an AWS::ElasticLoadBalancingV2::ListenerRule.HostHeaderConfig resource property to the template
+        Adds an AWS::ElasticLoadBalancingV2::ListenerRule.HostHeaderConfig resource property to the template.
+Information about a host header condition.
 
     .LINK
         http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-elasticloadbalancingv2-listenerrule-hostheaderconfig.html

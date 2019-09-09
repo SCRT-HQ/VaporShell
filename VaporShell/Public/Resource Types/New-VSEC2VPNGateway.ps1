@@ -1,10 +1,12 @@
 function New-VSEC2VPNGateway {
     <#
     .SYNOPSIS
-        Adds an AWS::EC2::VPNGateway resource to the template
+        Adds an AWS::EC2::VPNGateway resource to the template. Specifies a virtual private gateway. A virtual private gateway is the endpoint on the VPC side of your VPN connection. You can create a virtual private gateway before creating the VPC itself.
 
     .DESCRIPTION
-        Adds an AWS::EC2::VPNGateway resource to the template
+        Adds an AWS::EC2::VPNGateway resource to the template. Specifies a virtual private gateway. A virtual private gateway is the endpoint on the VPC side of your VPN connection. You can create a virtual private gateway before creating the VPC itself.
+
+For more information, see AWS Site-to-Site VPN: https://docs.aws.amazon.com/vpn/latest/s2svpn/VPC_VPN.html in the *AWS Site-to-Site VPN User Guide*.
 
     .LINK
         http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ec2-vpn-gateway.html

@@ -1,10 +1,10 @@
 function New-VSAppSyncGraphQLApi {
     <#
     .SYNOPSIS
-        Adds an AWS::AppSync::GraphQLApi resource to the template
+        Adds an AWS::AppSync::GraphQLApi resource to the template. The AWS::AppSync::GraphQLApi resource creates a new AppSync GraphQL API. This is the top-level construct for your application. For more information, see Quick Start: https://docs.aws.amazon.com/appsync/latest/devguide/quickstart.html in the *AWS AppSync Developer Guide*.
 
     .DESCRIPTION
-        Adds an AWS::AppSync::GraphQLApi resource to the template
+        Adds an AWS::AppSync::GraphQLApi resource to the template. The AWS::AppSync::GraphQLApi resource creates a new AppSync GraphQL API. This is the top-level construct for your application. For more information, see Quick Start: https://docs.aws.amazon.com/appsync/latest/devguide/quickstart.html in the *AWS AppSync Developer Guide*.
 
     .LINK
         http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-appsync-graphqlapi.html

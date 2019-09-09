@@ -1,10 +1,11 @@
 function Add-VSOpsWorksAppSslConfiguration {
     <#
     .SYNOPSIS
-        Adds an AWS::OpsWorks::App.SslConfiguration resource property to the template
+        Adds an AWS::OpsWorks::App.SslConfiguration resource property to the template. Describes an app's SSL configuration.
 
     .DESCRIPTION
-        Adds an AWS::OpsWorks::App.SslConfiguration resource property to the template
+        Adds an AWS::OpsWorks::App.SslConfiguration resource property to the template.
+Describes an app's SSL configuration.
 
     .LINK
         http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-opsworks-app-sslconfiguration.html

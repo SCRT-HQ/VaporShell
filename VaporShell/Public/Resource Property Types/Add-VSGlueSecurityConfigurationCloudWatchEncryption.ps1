@@ -1,10 +1,11 @@
 function Add-VSGlueSecurityConfigurationCloudWatchEncryption {
     <#
     .SYNOPSIS
-        Adds an AWS::Glue::SecurityConfiguration.CloudWatchEncryption resource property to the template
+        Adds an AWS::Glue::SecurityConfiguration.CloudWatchEncryption resource property to the template. Specifies how Amazon CloudWatch data should be encrypted.
 
     .DESCRIPTION
-        Adds an AWS::Glue::SecurityConfiguration.CloudWatchEncryption resource property to the template
+        Adds an AWS::Glue::SecurityConfiguration.CloudWatchEncryption resource property to the template.
+Specifies how Amazon CloudWatch data should be encrypted.
 
     .LINK
         http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-glue-securityconfiguration-cloudwatchencryption.html

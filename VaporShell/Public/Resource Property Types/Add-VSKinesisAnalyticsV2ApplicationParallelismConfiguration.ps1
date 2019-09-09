@@ -1,10 +1,11 @@
 function Add-VSKinesisAnalyticsV2ApplicationParallelismConfiguration {
     <#
     .SYNOPSIS
-        Adds an AWS::KinesisAnalyticsV2::Application.ParallelismConfiguration resource property to the template
+        Adds an AWS::KinesisAnalyticsV2::Application.ParallelismConfiguration resource property to the template. Describes parameters for how a Java-based Amazon Kinesis Data Analytics application executes multiple tasks simultaneously. For more information about parallelism, see Parallel Execution: https://ci.apache.org/projects/flink/flink-docs-stable/dev/parallel.html in the Apache Flink Documentation: https://ci.apache.org/projects/flink/flink-docs-release-1.6/.
 
     .DESCRIPTION
-        Adds an AWS::KinesisAnalyticsV2::Application.ParallelismConfiguration resource property to the template
+        Adds an AWS::KinesisAnalyticsV2::Application.ParallelismConfiguration resource property to the template.
+Describes parameters for how a Java-based Amazon Kinesis Data Analytics application executes multiple tasks simultaneously. For more information about parallelism, see Parallel Execution: https://ci.apache.org/projects/flink/flink-docs-stable/dev/parallel.html in the Apache Flink Documentation: https://ci.apache.org/projects/flink/flink-docs-release-1.6/.
 
     .LINK
         http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-kinesisanalyticsv2-application-parallelismconfiguration.html

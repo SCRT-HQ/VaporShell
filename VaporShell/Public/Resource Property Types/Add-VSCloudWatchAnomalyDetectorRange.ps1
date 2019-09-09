@@ -1,10 +1,11 @@
 function Add-VSCloudWatchAnomalyDetectorRange {
     <#
     .SYNOPSIS
-        Adds an AWS::CloudWatch::AnomalyDetector.Range resource property to the template
+        Adds an AWS::CloudWatch::AnomalyDetector.Range resource property to the template. Each Range specifies one range of days or times to exclude from use for training or updating an anomaly detection model.
 
     .DESCRIPTION
-        Adds an AWS::CloudWatch::AnomalyDetector.Range resource property to the template
+        Adds an AWS::CloudWatch::AnomalyDetector.Range resource property to the template.
+Each Range specifies one range of days or times to exclude from use for training or updating an anomaly detection model.
 
     .LINK
         http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-cloudwatch-anomalydetector-range.html

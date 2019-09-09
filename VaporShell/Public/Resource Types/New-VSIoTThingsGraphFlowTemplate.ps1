@@ -1,10 +1,10 @@
 function New-VSIoTThingsGraphFlowTemplate {
     <#
     .SYNOPSIS
-        Adds an AWS::IoTThingsGraph::FlowTemplate resource to the template
+        Adds an AWS::IoTThingsGraph::FlowTemplate resource to the template. Represents a workflow template. Workflows can be created only in the user's namespace. (The public namespace contains only entities. The workflow can contain only entities in the specified namespace. The workflow is validated against the entities in the latest version of the user's namespace unless another namespace version is specified in the request.
 
     .DESCRIPTION
-        Adds an AWS::IoTThingsGraph::FlowTemplate resource to the template
+        Adds an AWS::IoTThingsGraph::FlowTemplate resource to the template. Represents a workflow template. Workflows can be created only in the user's namespace. (The public namespace contains only entities. The workflow can contain only entities in the specified namespace. The workflow is validated against the entities in the latest version of the user's namespace unless another namespace version is specified in the request.
 
     .LINK
         http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-iotthingsgraph-flowtemplate.html

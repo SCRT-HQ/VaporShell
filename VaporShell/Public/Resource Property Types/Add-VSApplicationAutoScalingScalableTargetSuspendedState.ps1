@@ -1,10 +1,11 @@
 function Add-VSApplicationAutoScalingScalableTargetSuspendedState {
     <#
     .SYNOPSIS
-        Adds an AWS::ApplicationAutoScaling::ScalableTarget.SuspendedState resource property to the template
+        Adds an AWS::ApplicationAutoScaling::ScalableTarget.SuspendedState resource property to the template. Specifies whether the scaling activities for a scalable target are in a suspended state.
 
     .DESCRIPTION
-        Adds an AWS::ApplicationAutoScaling::ScalableTarget.SuspendedState resource property to the template
+        Adds an AWS::ApplicationAutoScaling::ScalableTarget.SuspendedState resource property to the template.
+Specifies whether the scaling activities for a scalable target are in a suspended state.
 
     .LINK
         http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-applicationautoscaling-scalabletarget-suspendedstate.html

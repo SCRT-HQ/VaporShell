@@ -1,10 +1,19 @@
 function Add-VSS3BucketNotificationConfiguration {
     <#
     .SYNOPSIS
-        Adds an AWS::S3::Bucket.NotificationConfiguration resource property to the template
+        Adds an AWS::S3::Bucket.NotificationConfiguration resource property to the template. Describes the notification configuration for an Amazon S3 bucket.
 
     .DESCRIPTION
-        Adds an AWS::S3::Bucket.NotificationConfiguration resource property to the template
+        Adds an AWS::S3::Bucket.NotificationConfiguration resource property to the template.
+Describes the notification configuration for an Amazon S3 bucket.
+
+**Note**
+
+If you create the target resource and related permissions in the same template, you might have a circular dependency.
+
+For example, you might use the AWS::Lambda::Permission resource to grant the bucket permission to invoke an AWS Lambda function. However, AWS CloudFormation can't create the bucket until the bucket has permission to invoke the function (AWS CloudFormation checks whether the bucket can invoke the function. If you're using Refs to pass the bucket name, this leads to a circular dependency.
+
+To avoid this dependency, you can create all resources without specifying the notification configuration. Then, update the stack with a notification configuration.
 
     .LINK
         http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-s3-bucket-notificationconfig.html

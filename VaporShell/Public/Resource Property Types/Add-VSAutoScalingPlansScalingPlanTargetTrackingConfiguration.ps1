@@ -1,10 +1,11 @@
 function Add-VSAutoScalingPlansScalingPlanTargetTrackingConfiguration {
     <#
     .SYNOPSIS
-        Adds an AWS::AutoScalingPlans::ScalingPlan.TargetTrackingConfiguration resource property to the template
+        Adds an AWS::AutoScalingPlans::ScalingPlan.TargetTrackingConfiguration resource property to the template. TargetTrackingConfiguration is a subproperty of ScalingInstruction: https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-autoscalingplans-scalingplan-scalinginstruction.html that specifies a target tracking configuration to use with AWS Auto Scaling.
 
     .DESCRIPTION
-        Adds an AWS::AutoScalingPlans::ScalingPlan.TargetTrackingConfiguration resource property to the template
+        Adds an AWS::AutoScalingPlans::ScalingPlan.TargetTrackingConfiguration resource property to the template.
+TargetTrackingConfiguration is a subproperty of ScalingInstruction: https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-autoscalingplans-scalingplan-scalinginstruction.html that specifies a target tracking configuration to use with AWS Auto Scaling.
 
     .LINK
         http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-autoscalingplans-scalingplan-targettrackingconfiguration.html

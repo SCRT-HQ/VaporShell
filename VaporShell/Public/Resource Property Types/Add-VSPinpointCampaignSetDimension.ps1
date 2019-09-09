@@ -1,10 +1,11 @@
 function Add-VSPinpointCampaignSetDimension {
     <#
     .SYNOPSIS
-        Adds an AWS::Pinpoint::Campaign.SetDimension resource property to the template
+        Adds an AWS::Pinpoint::Campaign.SetDimension resource property to the template. Specifies the dimension type and values for a segment.
 
     .DESCRIPTION
-        Adds an AWS::Pinpoint::Campaign.SetDimension resource property to the template
+        Adds an AWS::Pinpoint::Campaign.SetDimension resource property to the template.
+Specifies the dimension type and values for a segment.
 
     .LINK
         http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-pinpoint-campaign-setdimension.html

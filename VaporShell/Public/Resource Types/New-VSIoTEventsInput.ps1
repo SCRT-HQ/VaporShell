@@ -1,10 +1,10 @@
 function New-VSIoTEventsInput {
     <#
     .SYNOPSIS
-        Adds an AWS::IoTEvents::Input resource to the template
+        Adds an AWS::IoTEvents::Input resource to the template. The AWS::IoTEvents::Input resource creates an input. To monitor your devices and processes, they must have a way to get telemetry data into AWS IoT Events. This is done by sending messages as *inputs* to AWS IoT Events. For more information, see  How to Use AWS IoT Events: https://docs.aws.amazon.com/iotevents/latest/developerguide/how-to-use-iotevents.html in the *AWS IoT Events Developer Guide*.
 
     .DESCRIPTION
-        Adds an AWS::IoTEvents::Input resource to the template
+        Adds an AWS::IoTEvents::Input resource to the template. The AWS::IoTEvents::Input resource creates an input. To monitor your devices and processes, they must have a way to get telemetry data into AWS IoT Events. This is done by sending messages as *inputs* to AWS IoT Events. For more information, see  How to Use AWS IoT Events: https://docs.aws.amazon.com/iotevents/latest/developerguide/how-to-use-iotevents.html in the *AWS IoT Events Developer Guide*.
 
     .LINK
         http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-iotevents-input.html

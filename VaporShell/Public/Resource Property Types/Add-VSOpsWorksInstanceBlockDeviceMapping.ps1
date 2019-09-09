@@ -1,10 +1,11 @@
 function Add-VSOpsWorksInstanceBlockDeviceMapping {
     <#
     .SYNOPSIS
-        Adds an AWS::OpsWorks::Instance.BlockDeviceMapping resource property to the template
+        Adds an AWS::OpsWorks::Instance.BlockDeviceMapping resource property to the template. Describes a block device mapping. This data type maps directly to the Amazon EC2 BlockDeviceMapping: https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_BlockDeviceMapping.html data type.
 
     .DESCRIPTION
-        Adds an AWS::OpsWorks::Instance.BlockDeviceMapping resource property to the template
+        Adds an AWS::OpsWorks::Instance.BlockDeviceMapping resource property to the template.
+Describes a block device mapping. This data type maps directly to the Amazon EC2 BlockDeviceMapping: https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_BlockDeviceMapping.html data type.
 
     .LINK
         http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-opsworks-instance-blockdevicemapping.html

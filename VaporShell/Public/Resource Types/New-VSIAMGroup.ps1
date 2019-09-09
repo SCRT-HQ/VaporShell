@@ -1,10 +1,12 @@
 function New-VSIAMGroup {
     <#
     .SYNOPSIS
-        Adds an AWS::IAM::Group resource to the template
+        Adds an AWS::IAM::Group resource to the template. Creates a new group.
 
     .DESCRIPTION
-        Adds an AWS::IAM::Group resource to the template
+        Adds an AWS::IAM::Group resource to the template. Creates a new group.
+
+For information about the number of groups you can create, see Limitations on IAM Entities: https://docs.aws.amazon.com/IAM/latest/UserGuide/LimitationsOnEntities.html in the *IAM User Guide*.
 
     .LINK
         http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iam-group.html

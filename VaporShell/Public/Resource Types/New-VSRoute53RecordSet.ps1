@@ -1,10 +1,12 @@
 function New-VSRoute53RecordSet {
     <#
     .SYNOPSIS
-        Adds an AWS::Route53::RecordSet resource to the template
+        Adds an AWS::Route53::RecordSet resource to the template. Information about the resource record set to create, update, or delete. The AWS::Route53::RecordSet type can be used as a standalone resource or as an embedded property in the AWS::Route53::RecordSetGroup type. Note that some AWS::Route53::RecordSet properties are valid only when used within AWS::Route53::RecordSetGroup.
 
     .DESCRIPTION
-        Adds an AWS::Route53::RecordSet resource to the template
+        Adds an AWS::Route53::RecordSet resource to the template. Information about the resource record set to create, update, or delete. The AWS::Route53::RecordSet type can be used as a standalone resource or as an embedded property in the AWS::Route53::RecordSetGroup type. Note that some AWS::Route53::RecordSet properties are valid only when used within AWS::Route53::RecordSetGroup.
+
+For more information, see ChangeResourceRecordSets: https://docs.aws.amazon.com/Route53/latest/APIReference/API_ChangeResourceRecordSets.html in the *Amazon Route 53 API Reference*.
 
     .LINK
         http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-route53-recordset.html

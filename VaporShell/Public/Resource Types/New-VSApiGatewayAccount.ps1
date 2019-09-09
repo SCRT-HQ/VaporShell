@@ -1,10 +1,16 @@
 function New-VSApiGatewayAccount {
     <#
     .SYNOPSIS
-        Adds an AWS::ApiGateway::Account resource to the template
+        Adds an AWS::ApiGateway::Account resource to the template. The AWS::ApiGateway::Account resource specifies the IAM role that Amazon API Gateway uses to write API logs to Amazon CloudWatch Logs.
 
     .DESCRIPTION
-        Adds an AWS::ApiGateway::Account resource to the template
+        Adds an AWS::ApiGateway::Account resource to the template. The AWS::ApiGateway::Account resource specifies the IAM role that Amazon API Gateway uses to write API logs to Amazon CloudWatch Logs.
+
+**Important**
+
+If an API Gateway resource has never been created in your AWS account, you must add a dependency on another API Gateway resource, such as an AWS::ApiGateway::RestApi: https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-apigateway-restapi.html or AWS::ApiGateway::ApiKey: https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-apigateway-apikey.html resource.
+
+If an API Gateway resource has been created in your AWS account, no dependency is required (even if the resource was deleted.
 
     .LINK
         http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-apigateway-account.html

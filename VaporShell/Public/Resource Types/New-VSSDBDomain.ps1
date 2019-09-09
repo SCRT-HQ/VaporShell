@@ -1,10 +1,14 @@
 function New-VSSDBDomain {
     <#
     .SYNOPSIS
-        Adds an AWS::SDB::Domain resource to the template
+        Adds an AWS::SDB::Domain resource to the template. Use the AWS::SDB::Domain resource to declare a SimpleDB domain. When you specify AWS::SDB::Domain as an argument in a Ref function, AWS CloudFormation returns the value of the DomainName.
 
     .DESCRIPTION
-        Adds an AWS::SDB::Domain resource to the template
+        Adds an AWS::SDB::Domain resource to the template. Use the AWS::SDB::Domain resource to declare a SimpleDB domain. When you specify AWS::SDB::Domain as an argument in a Ref function, AWS CloudFormation returns the value of the DomainName.
+
+**Important**
+
+The AWS::SDB::Domain resource does not allow any updates, including metadata updates.
 
     .LINK
         http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-simpledb.html

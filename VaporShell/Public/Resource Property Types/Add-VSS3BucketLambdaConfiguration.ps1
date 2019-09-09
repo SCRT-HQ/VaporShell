@@ -1,10 +1,11 @@
 function Add-VSS3BucketLambdaConfiguration {
     <#
     .SYNOPSIS
-        Adds an AWS::S3::Bucket.LambdaConfiguration resource property to the template
+        Adds an AWS::S3::Bucket.LambdaConfiguration resource property to the template. Describes the AWS Lambda functions to invoke and the events for which to invoke them.
 
     .DESCRIPTION
-        Adds an AWS::S3::Bucket.LambdaConfiguration resource property to the template
+        Adds an AWS::S3::Bucket.LambdaConfiguration resource property to the template.
+Describes the AWS Lambda functions to invoke and the events for which to invoke them.
 
     .LINK
         http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-s3-bucket-notificationconfig-lambdaconfig.html

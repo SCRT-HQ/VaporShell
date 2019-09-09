@@ -1,10 +1,11 @@
 function Add-VSKinesisAnalyticsV2ApplicationCloudWatchLoggingOptionCloudWatchLoggingOption {
     <#
     .SYNOPSIS
-        Adds an AWS::KinesisAnalyticsV2::ApplicationCloudWatchLoggingOption.CloudWatchLoggingOption resource property to the template
+        Adds an AWS::KinesisAnalyticsV2::ApplicationCloudWatchLoggingOption.CloudWatchLoggingOption resource property to the template. Provides a description of Amazon CloudWatch logging options, including the log stream Amazon Resource Name (ARN.
 
     .DESCRIPTION
-        Adds an AWS::KinesisAnalyticsV2::ApplicationCloudWatchLoggingOption.CloudWatchLoggingOption resource property to the template
+        Adds an AWS::KinesisAnalyticsV2::ApplicationCloudWatchLoggingOption.CloudWatchLoggingOption resource property to the template.
+Provides a description of Amazon CloudWatch logging options, including the log stream Amazon Resource Name (ARN.
 
     .LINK
         http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-kinesisanalyticsv2-applicationcloudwatchloggingoption-cloudwatchloggingoption.html

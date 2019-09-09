@@ -1,10 +1,11 @@
 function Add-VSPinpointEmailConfigurationSetEventDestinationKinesisFirehoseDestination {
     <#
     .SYNOPSIS
-        Adds an AWS::PinpointEmail::ConfigurationSetEventDestination.KinesisFirehoseDestination resource property to the template
+        Adds an AWS::PinpointEmail::ConfigurationSetEventDestination.KinesisFirehoseDestination resource property to the template. An object that defines an Amazon Kinesis Data Firehose destination for email events. You can use Amazon Kinesis Data Firehose to stream data to other services, such as Amazon S3 and Amazon Redshift.
 
     .DESCRIPTION
-        Adds an AWS::PinpointEmail::ConfigurationSetEventDestination.KinesisFirehoseDestination resource property to the template
+        Adds an AWS::PinpointEmail::ConfigurationSetEventDestination.KinesisFirehoseDestination resource property to the template.
+An object that defines an Amazon Kinesis Data Firehose destination for email events. You can use Amazon Kinesis Data Firehose to stream data to other services, such as Amazon S3 and Amazon Redshift.
 
     .LINK
         http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-pinpointemail-configurationseteventdestination-kinesisfirehosedestination.html

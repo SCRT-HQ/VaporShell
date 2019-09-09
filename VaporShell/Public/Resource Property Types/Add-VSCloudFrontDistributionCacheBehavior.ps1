@@ -1,10 +1,23 @@
 function Add-VSCloudFrontDistributionCacheBehavior {
     <#
     .SYNOPSIS
-        Adds an AWS::CloudFront::Distribution.CacheBehavior resource property to the template
+        Adds an AWS::CloudFront::Distribution.CacheBehavior resource property to the template. A complex type that describes how CloudFront processes requests.
 
     .DESCRIPTION
-        Adds an AWS::CloudFront::Distribution.CacheBehavior resource property to the template
+        Adds an AWS::CloudFront::Distribution.CacheBehavior resource property to the template.
+A complex type that describes how CloudFront processes requests.
+
+You must create at least as many cache behaviors (including the default cache behavior as you have origins if you want CloudFront to distribute objects from all of the origins. Each cache behavior specifies the one origin from which you want CloudFront to get objects. If you have two origins and only the default cache behavior, the default cache behavior will cause CloudFront to get objects from one of the origins, but the other origin is never used.
+
+For the current limit on the number of cache behaviors that you can add to a distribution, see Amazon CloudFront Limits: https://docs.aws.amazon.com/general/latest/gr/aws_service_limits.html#limits_cloudfront in the *AWS General Reference*.
+
+If you don't want to specify any cache behaviors, include only an empty CacheBehaviors element. Don't include an empty CacheBehavior element, or CloudFront returns a MalformedXML error.
+
+To delete all cache behaviors in an existing distribution, update the distribution configuration and include only an empty CacheBehaviors element.
+
+To add, change, or remove one or more cache behaviors, update the distribution configuration and specify all of the cache behaviors that you want to include in the updated distribution.
+
+For more information about cache behaviors, see Cache Behaviors: https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/distribution-web-values-specify.html#DownloadDistValuesCacheBehavior in the *Amazon CloudFront Developer Guide*.
 
     .LINK
         http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-cloudfront-distribution-cachebehavior.html

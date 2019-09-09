@@ -1,10 +1,13 @@
 function Add-VSAlexaASKSkillSkillPackage {
     <#
     .SYNOPSIS
-        Adds an Alexa::ASK::Skill.SkillPackage resource property to the template
+        Adds an Alexa::ASK::Skill.SkillPackage resource property to the template. The SkillPackage property type contains configuration details for the skill package that contains the components of the Alexa skill. Skill packages are retrieved from an Amazon S3 bucket and key and used to create and update the skill. More details about the skill package format are located in the Skill Package API Reference: https://developer.amazon.com/docs/smapi/skill-package-api-reference.html#skill-package-format.
 
     .DESCRIPTION
-        Adds an Alexa::ASK::Skill.SkillPackage resource property to the template
+        Adds an Alexa::ASK::Skill.SkillPackage resource property to the template.
+The SkillPackage property type contains configuration details for the skill package that contains the components of the Alexa skill. Skill packages are retrieved from an Amazon S3 bucket and key and used to create and update the skill. More details about the skill package format are located in the Skill Package API Reference: https://developer.amazon.com/docs/smapi/skill-package-api-reference.html#skill-package-format.
+
+SkillPackage is a property of the Alexa::ASK::Skill resource.
 
     .LINK
         http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ask-skill-skillpackage.html

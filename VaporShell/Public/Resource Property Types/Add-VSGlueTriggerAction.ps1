@@ -1,10 +1,11 @@
 function Add-VSGlueTriggerAction {
     <#
     .SYNOPSIS
-        Adds an AWS::Glue::Trigger.Action resource property to the template
+        Adds an AWS::Glue::Trigger.Action resource property to the template. Defines an action to be initiated by a trigger.
 
     .DESCRIPTION
-        Adds an AWS::Glue::Trigger.Action resource property to the template
+        Adds an AWS::Glue::Trigger.Action resource property to the template.
+Defines an action to be initiated by a trigger.
 
     .LINK
         http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-glue-trigger-action.html

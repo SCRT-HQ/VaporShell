@@ -1,10 +1,11 @@
 function Add-VSS3BucketDataExport {
     <#
     .SYNOPSIS
-        Adds an AWS::S3::Bucket.DataExport resource property to the template
+        Adds an AWS::S3::Bucket.DataExport resource property to the template. Specifies how data related to the storage class analysis for an Amazon S3 bucket should be exported.
 
     .DESCRIPTION
-        Adds an AWS::S3::Bucket.DataExport resource property to the template
+        Adds an AWS::S3::Bucket.DataExport resource property to the template.
+Specifies how data related to the storage class analysis for an Amazon S3 bucket should be exported.
 
     .LINK
         http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-s3-bucket-dataexport.html

@@ -1,10 +1,13 @@
 function Add-VSAutoScalingAutoScalingGroupLaunchTemplateSpecification {
     <#
     .SYNOPSIS
-        Adds an AWS::AutoScaling::AutoScalingGroup.LaunchTemplateSpecification resource property to the template
+        Adds an AWS::AutoScaling::AutoScalingGroup.LaunchTemplateSpecification resource property to the template. LaunchTemplateSpecification is a property of AutoScalingGroup: https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-as-group.html that specifies the launch template to use to launch instances.
 
     .DESCRIPTION
-        Adds an AWS::AutoScaling::AutoScalingGroup.LaunchTemplateSpecification resource property to the template
+        Adds an AWS::AutoScaling::AutoScalingGroup.LaunchTemplateSpecification resource property to the template.
+LaunchTemplateSpecification is a property of AutoScalingGroup: https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-as-group.html that specifies the launch template to use to launch instances.
+
+For information about creating a launch template, see Creating a Launch Template for an Auto Scaling Group: https://docs.aws.amazon.com/autoscaling/ec2/userguide/create-launch-template.html in the *Amazon EC2 Auto Scaling User Guide*.
 
     .LINK
         http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-autoscaling-autoscalinggroup-launchtemplatespecification.html

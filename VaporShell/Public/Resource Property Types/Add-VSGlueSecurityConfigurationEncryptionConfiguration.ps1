@@ -1,10 +1,11 @@
 function Add-VSGlueSecurityConfigurationEncryptionConfiguration {
     <#
     .SYNOPSIS
-        Adds an AWS::Glue::SecurityConfiguration.EncryptionConfiguration resource property to the template
+        Adds an AWS::Glue::SecurityConfiguration.EncryptionConfiguration resource property to the template. Specifies an encryption configuration.
 
     .DESCRIPTION
-        Adds an AWS::Glue::SecurityConfiguration.EncryptionConfiguration resource property to the template
+        Adds an AWS::Glue::SecurityConfiguration.EncryptionConfiguration resource property to the template.
+Specifies an encryption configuration.
 
     .LINK
         http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-glue-securityconfiguration-encryptionconfiguration.html

@@ -1,10 +1,11 @@
 function Add-VSKinesisFirehoseDeliveryStreamParquetSerDe {
     <#
     .SYNOPSIS
-        Adds an AWS::KinesisFirehose::DeliveryStream.ParquetSerDe resource property to the template
+        Adds an AWS::KinesisFirehose::DeliveryStream.ParquetSerDe resource property to the template. A serializer to use for converting data to the Parquet format before storing it in Amazon S3. For more information, see Apache Parquet: https://parquet.apache.org/documentation/latest/.
 
     .DESCRIPTION
-        Adds an AWS::KinesisFirehose::DeliveryStream.ParquetSerDe resource property to the template
+        Adds an AWS::KinesisFirehose::DeliveryStream.ParquetSerDe resource property to the template.
+A serializer to use for converting data to the Parquet format before storing it in Amazon S3. For more information, see Apache Parquet: https://parquet.apache.org/documentation/latest/.
 
     .LINK
         http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-kinesisfirehose-deliverystream-parquetserde.html

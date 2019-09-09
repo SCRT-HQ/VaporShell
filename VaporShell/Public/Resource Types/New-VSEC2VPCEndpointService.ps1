@@ -1,10 +1,12 @@
 function New-VSEC2VPCEndpointService {
     <#
     .SYNOPSIS
-        Adds an AWS::EC2::VPCEndpointService resource to the template
+        Adds an AWS::EC2::VPCEndpointService resource to the template. Specifies a VPC endpoint service configuration to which service consumers (AWS accounts, IAM users, and IAM roles can connect. Service consumers can create an interface VPC endpoint to connect to your service.
 
     .DESCRIPTION
-        Adds an AWS::EC2::VPCEndpointService resource to the template
+        Adds an AWS::EC2::VPCEndpointService resource to the template. Specifies a VPC endpoint service configuration to which service consumers (AWS accounts, IAM users, and IAM roles can connect. Service consumers can create an interface VPC endpoint to connect to your service.
+
+To create an endpoint service configuration, you must first create a Network Load Balancer for your service.
 
     .LINK
         http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ec2-vpcendpointservice.html

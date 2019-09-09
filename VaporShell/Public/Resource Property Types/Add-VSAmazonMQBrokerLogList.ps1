@@ -1,10 +1,11 @@
 function Add-VSAmazonMQBrokerLogList {
     <#
     .SYNOPSIS
-        Adds an AWS::AmazonMQ::Broker.LogList resource property to the template
+        Adds an AWS::AmazonMQ::Broker.LogList resource property to the template. The list of information about logs to be enabled for the specified broker.
 
     .DESCRIPTION
-        Adds an AWS::AmazonMQ::Broker.LogList resource property to the template
+        Adds an AWS::AmazonMQ::Broker.LogList resource property to the template.
+The list of information about logs to be enabled for the specified broker.
 
     .LINK
         http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-amazonmq-broker-loglist.html

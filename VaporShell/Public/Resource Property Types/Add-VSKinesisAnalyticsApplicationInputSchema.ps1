@@ -1,10 +1,13 @@
 function Add-VSKinesisAnalyticsApplicationInputSchema {
     <#
     .SYNOPSIS
-        Adds an AWS::KinesisAnalytics::Application.InputSchema resource property to the template
+        Adds an AWS::KinesisAnalytics::Application.InputSchema resource property to the template. Describes the format of the data in the streaming source, and how each data element maps to corresponding columns in the in-application stream that is being created.
 
     .DESCRIPTION
-        Adds an AWS::KinesisAnalytics::Application.InputSchema resource property to the template
+        Adds an AWS::KinesisAnalytics::Application.InputSchema resource property to the template.
+Describes the format of the data in the streaming source, and how each data element maps to corresponding columns in the in-application stream that is being created.
+
+Also used to describe the format of the reference data source.
 
     .LINK
         http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-kinesisanalytics-application-inputschema.html

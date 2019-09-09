@@ -1,10 +1,11 @@
 function Add-VSPinpointCampaignQuietTime {
     <#
     .SYNOPSIS
-        Adds an AWS::Pinpoint::Campaign.QuietTime resource property to the template
+        Adds an AWS::Pinpoint::Campaign.QuietTime resource property to the template. Specifies the start and end times that define a time range when messages aren't sent to endpoints.
 
     .DESCRIPTION
-        Adds an AWS::Pinpoint::Campaign.QuietTime resource property to the template
+        Adds an AWS::Pinpoint::Campaign.QuietTime resource property to the template.
+Specifies the start and end times that define a time range when messages aren't sent to endpoints.
 
     .LINK
         http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-pinpoint-campaign-schedule-quiettime.html

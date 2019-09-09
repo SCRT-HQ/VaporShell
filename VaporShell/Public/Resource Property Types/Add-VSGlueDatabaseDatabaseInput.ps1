@@ -1,10 +1,11 @@
 function Add-VSGlueDatabaseDatabaseInput {
     <#
     .SYNOPSIS
-        Adds an AWS::Glue::Database.DatabaseInput resource property to the template
+        Adds an AWS::Glue::Database.DatabaseInput resource property to the template. The structure used to create or update a database.
 
     .DESCRIPTION
-        Adds an AWS::Glue::Database.DatabaseInput resource property to the template
+        Adds an AWS::Glue::Database.DatabaseInput resource property to the template.
+The structure used to create or update a database.
 
     .LINK
         http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-glue-database-databaseinput.html

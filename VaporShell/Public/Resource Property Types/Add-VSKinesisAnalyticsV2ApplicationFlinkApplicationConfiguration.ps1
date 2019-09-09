@@ -1,10 +1,11 @@
 function Add-VSKinesisAnalyticsV2ApplicationFlinkApplicationConfiguration {
     <#
     .SYNOPSIS
-        Adds an AWS::KinesisAnalyticsV2::Application.FlinkApplicationConfiguration resource property to the template
+        Adds an AWS::KinesisAnalyticsV2::Application.FlinkApplicationConfiguration resource property to the template. Describes configuration parameters for a Java-based Amazon Kinesis Data Analytics application.
 
     .DESCRIPTION
-        Adds an AWS::KinesisAnalyticsV2::Application.FlinkApplicationConfiguration resource property to the template
+        Adds an AWS::KinesisAnalyticsV2::Application.FlinkApplicationConfiguration resource property to the template.
+Describes configuration parameters for a Java-based Amazon Kinesis Data Analytics application.
 
     .LINK
         http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-kinesisanalyticsv2-application-flinkapplicationconfiguration.html

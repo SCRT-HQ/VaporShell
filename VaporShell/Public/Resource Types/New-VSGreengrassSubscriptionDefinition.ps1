@@ -1,10 +1,18 @@
 function New-VSGreengrassSubscriptionDefinition {
     <#
     .SYNOPSIS
-        Adds an AWS::Greengrass::SubscriptionDefinition resource to the template
+        Adds an AWS::Greengrass::SubscriptionDefinition resource to the template. The AWS::Greengrass::SubscriptionDefinition resource represents a subscription definition for AWS IoT Greengrass. Subscription definitions are used to organize your subscription definition versions.
 
     .DESCRIPTION
-        Adds an AWS::Greengrass::SubscriptionDefinition resource to the template
+        Adds an AWS::Greengrass::SubscriptionDefinition resource to the template. The AWS::Greengrass::SubscriptionDefinition resource represents a subscription definition for AWS IoT Greengrass. Subscription definitions are used to organize your subscription definition versions.
+
+Subscription definitions can reference multiple subscription definition versions. All subscription definition versions must be associated with a subscription definition. Each subscription definition version can contain one or more subscriptions.
+
+**Note**
+
+When you create a subscription definition, you can optionally include an initial subscription definition version. To associate a subscription definition version later, create an https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-greengrass-subscriptiondefinitionversion.html: https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-greengrass-subscriptiondefinitionversion.html resource and specify the ID of this subscription definition.
+
+After you create the subscription definition version that contains the subscriptions you want to deploy, you must add it to your group version. For more information, see https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-greengrass-group.html: https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-greengrass-group.html.
 
     .LINK
         http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-greengrass-subscriptiondefinition.html

@@ -1,10 +1,11 @@
 function Add-VSElasticLoadBalancingV2ListenerRuleAuthenticateCognitoConfig {
     <#
     .SYNOPSIS
-        Adds an AWS::ElasticLoadBalancingV2::ListenerRule.AuthenticateCognitoConfig resource property to the template
+        Adds an AWS::ElasticLoadBalancingV2::ListenerRule.AuthenticateCognitoConfig resource property to the template. Specifies information required when integrating with Amazon Cognito to authenticate users.
 
     .DESCRIPTION
-        Adds an AWS::ElasticLoadBalancingV2::ListenerRule.AuthenticateCognitoConfig resource property to the template
+        Adds an AWS::ElasticLoadBalancingV2::ListenerRule.AuthenticateCognitoConfig resource property to the template.
+Specifies information required when integrating with Amazon Cognito to authenticate users.
 
     .LINK
         http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-elasticloadbalancingv2-listenerrule-authenticatecognitoconfig.html

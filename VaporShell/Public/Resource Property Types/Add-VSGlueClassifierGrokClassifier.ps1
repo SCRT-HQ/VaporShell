@@ -1,10 +1,11 @@
 function Add-VSGlueClassifierGrokClassifier {
     <#
     .SYNOPSIS
-        Adds an AWS::Glue::Classifier.GrokClassifier resource property to the template
+        Adds an AWS::Glue::Classifier.GrokClassifier resource property to the template. A classifier that uses grok patterns.
 
     .DESCRIPTION
-        Adds an AWS::Glue::Classifier.GrokClassifier resource property to the template
+        Adds an AWS::Glue::Classifier.GrokClassifier resource property to the template.
+A classifier that uses grok patterns.
 
     .LINK
         http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-glue-classifier-grokclassifier.html

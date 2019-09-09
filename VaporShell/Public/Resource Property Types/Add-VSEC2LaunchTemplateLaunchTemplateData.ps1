@@ -1,10 +1,11 @@
 function Add-VSEC2LaunchTemplateLaunchTemplateData {
     <#
     .SYNOPSIS
-        Adds an AWS::EC2::LaunchTemplate.LaunchTemplateData resource property to the template
+        Adds an AWS::EC2::LaunchTemplate.LaunchTemplateData resource property to the template. The information to include in the launch template.
 
     .DESCRIPTION
-        Adds an AWS::EC2::LaunchTemplate.LaunchTemplateData resource property to the template
+        Adds an AWS::EC2::LaunchTemplate.LaunchTemplateData resource property to the template.
+The information to include in the launch template.
 
     .LINK
         http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-launchtemplate-launchtemplatedata.html

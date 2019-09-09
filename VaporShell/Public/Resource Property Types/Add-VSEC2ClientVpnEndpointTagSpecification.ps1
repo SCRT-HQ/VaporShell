@@ -1,10 +1,11 @@
 function Add-VSEC2ClientVpnEndpointTagSpecification {
     <#
     .SYNOPSIS
-        Adds an AWS::EC2::ClientVpnEndpoint.TagSpecification resource property to the template
+        Adds an AWS::EC2::ClientVpnEndpoint.TagSpecification resource property to the template. The tags to apply to a resource when the resource is being created.
 
     .DESCRIPTION
-        Adds an AWS::EC2::ClientVpnEndpoint.TagSpecification resource property to the template
+        Adds an AWS::EC2::ClientVpnEndpoint.TagSpecification resource property to the template.
+The tags to apply to a resource when the resource is being created.
 
     .LINK
         http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-clientvpnendpoint-tagspecification.html

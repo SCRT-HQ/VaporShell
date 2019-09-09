@@ -1,10 +1,11 @@
 function Add-VSIoTTopicRuleIotAnalyticsAction {
     <#
     .SYNOPSIS
-        Adds an AWS::IoT::TopicRule.IotAnalyticsAction resource property to the template
+        Adds an AWS::IoT::TopicRule.IotAnalyticsAction resource property to the template. Sends message data to an AWS IoT Analytics channel.
 
     .DESCRIPTION
-        Adds an AWS::IoT::TopicRule.IotAnalyticsAction resource property to the template
+        Adds an AWS::IoT::TopicRule.IotAnalyticsAction resource property to the template.
+Sends message data to an AWS IoT Analytics channel.
 
     .LINK
         http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iot-topicrule-iotanalyticsaction.html

@@ -1,10 +1,11 @@
 function Add-VSCodeDeployDeploymentGroupRevisionLocation {
     <#
     .SYNOPSIS
-        Adds an AWS::CodeDeploy::DeploymentGroup.RevisionLocation resource property to the template
+        Adds an AWS::CodeDeploy::DeploymentGroup.RevisionLocation resource property to the template. RevisionLocation is a property that defines the location of the CodeDeploy application revision to deploy.
 
     .DESCRIPTION
-        Adds an AWS::CodeDeploy::DeploymentGroup.RevisionLocation resource property to the template
+        Adds an AWS::CodeDeploy::DeploymentGroup.RevisionLocation resource property to the template.
+RevisionLocation is a property that defines the location of the CodeDeploy application revision to deploy.
 
     .LINK
         http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-codedeploy-deploymentgroup-deployment-revision.html

@@ -1,10 +1,13 @@
 function Add-VSAppSyncDataSourceRdsHttpEndpointConfig {
     <#
     .SYNOPSIS
-        Adds an AWS::AppSync::DataSource.RdsHttpEndpointConfig resource property to the template
+        Adds an AWS::AppSync::DataSource.RdsHttpEndpointConfig resource property to the template. Use the RdsHttpEndpointConfig property type to specify RdsHttpEndpoint for an AWS AppSync relational database.
 
     .DESCRIPTION
-        Adds an AWS::AppSync::DataSource.RdsHttpEndpointConfig resource property to the template
+        Adds an AWS::AppSync::DataSource.RdsHttpEndpointConfig resource property to the template.
+Use the RdsHttpEndpointConfig property type to specify RdsHttpEndpoint for an AWS AppSync relational database.
+
+RdsHttpEndpointConfig is a property of the AWS AppSync DataSource RelationalDatabaseConfig: https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-appsync-datasource-relationaldatabaseconfig.html resource.
 
     .LINK
         http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-appsync-datasource-rdshttpendpointconfig.html

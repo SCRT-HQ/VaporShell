@@ -1,10 +1,13 @@
 function Add-VSSESReceiptFilterIpFilter {
     <#
     .SYNOPSIS
-        Adds an AWS::SES::ReceiptFilter.IpFilter resource property to the template
+        Adds an AWS::SES::ReceiptFilter.IpFilter resource property to the template. Receipt IP address filters enable you to specifically accept or reject incoming email that originates from an IP address or range of IP addresses.
 
     .DESCRIPTION
-        Adds an AWS::SES::ReceiptFilter.IpFilter resource property to the template
+        Adds an AWS::SES::ReceiptFilter.IpFilter resource property to the template.
+Receipt IP address filters enable you to specifically accept or reject incoming email that originates from an IP address or range of IP addresses.
+
+For information about setting up IP address filters, see the Amazon SES Developer Guide: https://docs.aws.amazon.com/ses/latest/DeveloperGuide/receiving-email-ip-filters.html.
 
     .LINK
         http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ses-receiptfilter-ipfilter.html

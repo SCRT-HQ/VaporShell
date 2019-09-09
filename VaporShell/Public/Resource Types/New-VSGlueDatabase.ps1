@@ -1,10 +1,10 @@
 function New-VSGlueDatabase {
     <#
     .SYNOPSIS
-        Adds an AWS::Glue::Database resource to the template
+        Adds an AWS::Glue::Database resource to the template. The AWS::Glue::Database resource specifies a logical grouping of tables in AWS Glue. For more information, see Defining a Database in Your Data Catalog: https://docs.aws.amazon.com/glue/latest/dg/define-database.html and Database Structure: https://docs.aws.amazon.com/glue/latest/dg/aws-glue-api-catalog-databases.html#aws-glue-api-catalog-databases-Database in the *AWS Glue Developer Guide*.
 
     .DESCRIPTION
-        Adds an AWS::Glue::Database resource to the template
+        Adds an AWS::Glue::Database resource to the template. The AWS::Glue::Database resource specifies a logical grouping of tables in AWS Glue. For more information, see Defining a Database in Your Data Catalog: https://docs.aws.amazon.com/glue/latest/dg/define-database.html and Database Structure: https://docs.aws.amazon.com/glue/latest/dg/aws-glue-api-catalog-databases.html#aws-glue-api-catalog-databases-Database in the *AWS Glue Developer Guide*.
 
     .LINK
         http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-glue-database.html

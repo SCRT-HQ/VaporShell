@@ -1,10 +1,10 @@
 function New-VSGlueDataCatalogEncryptionSettings {
     <#
     .SYNOPSIS
-        Adds an AWS::Glue::DataCatalogEncryptionSettings resource to the template
+        Adds an AWS::Glue::DataCatalogEncryptionSettings resource to the template. Sets the security configuration for a specified catalog. After the configuration has been set, the specified encryption is applied to every catalog write thereafter.
 
     .DESCRIPTION
-        Adds an AWS::Glue::DataCatalogEncryptionSettings resource to the template
+        Adds an AWS::Glue::DataCatalogEncryptionSettings resource to the template. Sets the security configuration for a specified catalog. After the configuration has been set, the specified encryption is applied to every catalog write thereafter.
 
     .LINK
         http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-glue-datacatalogencryptionsettings.html

@@ -1,10 +1,13 @@
 function Add-VSSSMMaintenanceWindowTaskTarget {
     <#
     .SYNOPSIS
-        Adds an AWS::SSM::MaintenanceWindowTask.Target resource property to the template
+        Adds an AWS::SSM::MaintenanceWindowTask.Target resource property to the template. The Target property type specifies targets (either instances or window target IDs. You specify instances by using Key=InstanceIds,Values=<instanceid1>,<instanceid2>. You specify window target IDs using Key=WindowTargetIds,Values=<window-target-id-1>,<window-target-id-2> for a maintenance window task in AWS Systems Manager.
 
     .DESCRIPTION
-        Adds an AWS::SSM::MaintenanceWindowTask.Target resource property to the template
+        Adds an AWS::SSM::MaintenanceWindowTask.Target resource property to the template.
+The Target property type specifies targets (either instances or window target IDs. You specify instances by using Key=InstanceIds,Values=<instanceid1>,<instanceid2>. You specify window target IDs using Key=WindowTargetIds,Values=<window-target-id-1>,<window-target-id-2> for a maintenance window task in AWS Systems Manager.
+
+Target is a property of the AWS::SSM::MaintenanceWindowTask: https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ssm-maintenancewindowtask.html property type.
 
     .LINK
         http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ssm-maintenancewindowtask-target.html

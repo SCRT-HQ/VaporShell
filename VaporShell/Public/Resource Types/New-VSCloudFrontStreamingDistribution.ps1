@@ -1,10 +1,10 @@
 function New-VSCloudFrontStreamingDistribution {
     <#
     .SYNOPSIS
-        Adds an AWS::CloudFront::StreamingDistribution resource to the template
+        Adds an AWS::CloudFront::StreamingDistribution resource to the template. A streaming distribution.
 
     .DESCRIPTION
-        Adds an AWS::CloudFront::StreamingDistribution resource to the template
+        Adds an AWS::CloudFront::StreamingDistribution resource to the template. A streaming distribution.
 
     .LINK
         http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-cloudfront-streamingdistribution.html

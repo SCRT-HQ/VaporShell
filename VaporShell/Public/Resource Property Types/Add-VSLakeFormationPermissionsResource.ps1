@@ -1,10 +1,11 @@
 function Add-VSLakeFormationPermissionsResource {
     <#
     .SYNOPSIS
-        Adds an AWS::LakeFormation::Permissions.Resource resource property to the template
+        Adds an AWS::LakeFormation::Permissions.Resource resource property to the template. A structure for the resource.
 
     .DESCRIPTION
-        Adds an AWS::LakeFormation::Permissions.Resource resource property to the template
+        Adds an AWS::LakeFormation::Permissions.Resource resource property to the template.
+A structure for the resource.
 
     .LINK
         http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-lakeformation-permissions-resource.html

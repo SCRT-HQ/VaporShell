@@ -1,10 +1,13 @@
 function Add-VSKinesisAnalyticsApplicationReferenceDataSourceS3ReferenceDataSource {
     <#
     .SYNOPSIS
-        Adds an AWS::KinesisAnalytics::ApplicationReferenceDataSource.S3ReferenceDataSource resource property to the template
+        Adds an AWS::KinesisAnalytics::ApplicationReferenceDataSource.S3ReferenceDataSource resource property to the template. Identifies the S3 bucket and object that contains the reference data. Also identifies the IAM role Amazon Kinesis Analytics can assume to read this object on your behalf.
 
     .DESCRIPTION
-        Adds an AWS::KinesisAnalytics::ApplicationReferenceDataSource.S3ReferenceDataSource resource property to the template
+        Adds an AWS::KinesisAnalytics::ApplicationReferenceDataSource.S3ReferenceDataSource resource property to the template.
+Identifies the S3 bucket and object that contains the reference data. Also identifies the IAM role Amazon Kinesis Analytics can assume to read this object on your behalf.
+
+An Amazon Kinesis Analytics application loads reference data only once. If the data changes, you call the UpdateApplication: https://docs.aws.amazon.com/kinesisanalytics/latest/dev/API_UpdateApplication.html operation to trigger reloading of data into your application.
 
     .LINK
         http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-kinesisanalytics-applicationreferencedatasource-s3referencedatasource.html

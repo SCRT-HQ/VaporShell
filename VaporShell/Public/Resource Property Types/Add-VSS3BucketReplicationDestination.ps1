@@ -1,10 +1,11 @@
 function Add-VSS3BucketReplicationDestination {
     <#
     .SYNOPSIS
-        Adds an AWS::S3::Bucket.ReplicationDestination resource property to the template
+        Adds an AWS::S3::Bucket.ReplicationDestination resource property to the template. Specifies which Amazon S3 bucket to store replicated objects in and their storage class.
 
     .DESCRIPTION
-        Adds an AWS::S3::Bucket.ReplicationDestination resource property to the template
+        Adds an AWS::S3::Bucket.ReplicationDestination resource property to the template.
+Specifies which Amazon S3 bucket to store replicated objects in and their storage class.
 
     .LINK
         http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-s3-bucket-replicationconfiguration-rules-destination.html

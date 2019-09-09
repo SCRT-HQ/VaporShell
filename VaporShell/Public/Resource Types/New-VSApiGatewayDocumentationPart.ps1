@@ -1,10 +1,10 @@
 function New-VSApiGatewayDocumentationPart {
     <#
     .SYNOPSIS
-        Adds an AWS::ApiGateway::DocumentationPart resource to the template
+        Adds an AWS::ApiGateway::DocumentationPart resource to the template. The AWS::ApiGateway::DocumentationPart resource creates a documentation part for an API. For more information, see Representation of API Documentation in API Gateway: https://docs.aws.amazon.com/apigateway/latest/developerguide/api-gateway-documenting-api-content-representation.html in the *API Gateway Developer Guide*.
 
     .DESCRIPTION
-        Adds an AWS::ApiGateway::DocumentationPart resource to the template
+        Adds an AWS::ApiGateway::DocumentationPart resource to the template. The AWS::ApiGateway::DocumentationPart resource creates a documentation part for an API. For more information, see Representation of API Documentation in API Gateway: https://docs.aws.amazon.com/apigateway/latest/developerguide/api-gateway-documenting-api-content-representation.html in the *API Gateway Developer Guide*.
 
     .LINK
         http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-apigateway-documentationpart.html

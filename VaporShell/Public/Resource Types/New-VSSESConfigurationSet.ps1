@@ -1,10 +1,10 @@
 function New-VSSESConfigurationSet {
     <#
     .SYNOPSIS
-        Adds an AWS::SES::ConfigurationSet resource to the template
+        Adds an AWS::SES::ConfigurationSet resource to the template. Specifies a configuration set. Configuration sets let you create groups of rules that you can apply to the emails you send using Amazon SES. For more information about using configuration sets, see Using Amazon SES Configuration Sets: https://docs.aws.amazon.com/ses/latest/DeveloperGuide/using-configuration-sets.html in the Amazon SES Developer Guide: https://docs.aws.amazon.com/ses/latest/DeveloperGuide/.
 
     .DESCRIPTION
-        Adds an AWS::SES::ConfigurationSet resource to the template
+        Adds an AWS::SES::ConfigurationSet resource to the template. Specifies a configuration set. Configuration sets let you create groups of rules that you can apply to the emails you send using Amazon SES. For more information about using configuration sets, see Using Amazon SES Configuration Sets: https://docs.aws.amazon.com/ses/latest/DeveloperGuide/using-configuration-sets.html in the Amazon SES Developer Guide: https://docs.aws.amazon.com/ses/latest/DeveloperGuide/.
 
     .LINK
         http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ses-configurationset.html

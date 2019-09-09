@@ -1,10 +1,12 @@
 function New-VSPinpointBaiduChannel {
     <#
     .SYNOPSIS
-        Adds an AWS::Pinpoint::BaiduChannel resource to the template
+        Adds an AWS::Pinpoint::BaiduChannel resource to the template. A *channel* is a type of platform that you can deliver messages to. You can use the Baidu channel to send notifications to the Baidu notification service. Before you use Amazon Pinpoint to send notifications to Baidu, you have to enable the Baidu channel for an Amazon Pinpoint app.
 
     .DESCRIPTION
-        Adds an AWS::Pinpoint::BaiduChannel resource to the template
+        Adds an AWS::Pinpoint::BaiduChannel resource to the template. A *channel* is a type of platform that you can deliver messages to. You can use the Baidu channel to send notifications to the Baidu notification service. Before you use Amazon Pinpoint to send notifications to Baidu, you have to enable the Baidu channel for an Amazon Pinpoint app.
+
+The Baidu Channel resource represents the status and authentication settings of the Baidu channel for a specific application. You can use this resource to retrieve information about, update, or disable (delete the Baidu channel for an app.
 
     .LINK
         http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-pinpoint-baiduchannel.html

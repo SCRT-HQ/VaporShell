@@ -1,10 +1,11 @@
 function Add-VSBatchJobDefinitionVolumes {
     <#
     .SYNOPSIS
-        Adds an AWS::Batch::JobDefinition.Volumes resource property to the template
+        Adds an AWS::Batch::JobDefinition.Volumes resource property to the template. A list of volumes associated with the job.
 
     .DESCRIPTION
-        Adds an AWS::Batch::JobDefinition.Volumes resource property to the template
+        Adds an AWS::Batch::JobDefinition.Volumes resource property to the template.
+A list of volumes associated with the job.
 
     .LINK
         http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-batch-jobdefinition-volumes.html

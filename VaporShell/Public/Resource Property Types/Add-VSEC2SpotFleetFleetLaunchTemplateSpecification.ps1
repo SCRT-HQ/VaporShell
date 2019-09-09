@@ -1,10 +1,11 @@
 function Add-VSEC2SpotFleetFleetLaunchTemplateSpecification {
     <#
     .SYNOPSIS
-        Adds an AWS::EC2::SpotFleet.FleetLaunchTemplateSpecification resource property to the template
+        Adds an AWS::EC2::SpotFleet.FleetLaunchTemplateSpecification resource property to the template. Describes a launch template.
 
     .DESCRIPTION
-        Adds an AWS::EC2::SpotFleet.FleetLaunchTemplateSpecification resource property to the template
+        Adds an AWS::EC2::SpotFleet.FleetLaunchTemplateSpecification resource property to the template.
+Describes a launch template.
 
     .LINK
         http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-spotfleet-fleetlaunchtemplatespecification.html

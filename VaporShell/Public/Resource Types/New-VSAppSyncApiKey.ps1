@@ -1,10 +1,10 @@
 function New-VSAppSyncApiKey {
     <#
     .SYNOPSIS
-        Adds an AWS::AppSync::ApiKey resource to the template
+        Adds an AWS::AppSync::ApiKey resource to the template. The AWS::AppSync::ApiKey resource creates a unique key that you can distribute to clients who are executing GraphQL operations with AWS AppSync that require an API key.
 
     .DESCRIPTION
-        Adds an AWS::AppSync::ApiKey resource to the template
+        Adds an AWS::AppSync::ApiKey resource to the template. The AWS::AppSync::ApiKey resource creates a unique key that you can distribute to clients who are executing GraphQL operations with AWS AppSync that require an API key.
 
     .LINK
         http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-appsync-apikey.html

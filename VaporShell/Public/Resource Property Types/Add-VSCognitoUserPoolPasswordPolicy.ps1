@@ -1,10 +1,11 @@
 function Add-VSCognitoUserPoolPasswordPolicy {
     <#
     .SYNOPSIS
-        Adds an AWS::Cognito::UserPool.PasswordPolicy resource property to the template
+        Adds an AWS::Cognito::UserPool.PasswordPolicy resource property to the template. PasswordPolicy is a subproperty of the Policies: https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-cognito-userpool-policies.html property that defines the password policy of an Amazon Cognito User Pool.
 
     .DESCRIPTION
-        Adds an AWS::Cognito::UserPool.PasswordPolicy resource property to the template
+        Adds an AWS::Cognito::UserPool.PasswordPolicy resource property to the template.
+PasswordPolicy is a subproperty of the Policies: https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-cognito-userpool-policies.html property that defines the password policy of an Amazon Cognito User Pool.
 
     .LINK
         http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-cognito-userpool-passwordpolicy.html

@@ -1,10 +1,10 @@
 function New-VSDocDBDBCluster {
     <#
     .SYNOPSIS
-        Adds an AWS::DocDB::DBCluster resource to the template
+        Adds an AWS::DocDB::DBCluster resource to the template. The AWS::DocDB::DBCluster Amazon DocumentDB (with MongoDB compatibility resource describes a DBCluster. Amazon DocumentDB is a fully managed, MongoDB-compatible document database engine. For more information, see DBCluster: https://docs.aws.amazon.com/documentdb/latest/developerguide/API_DBCluster.html in the *Amazon DocumentDB Developer Guide*.
 
     .DESCRIPTION
-        Adds an AWS::DocDB::DBCluster resource to the template
+        Adds an AWS::DocDB::DBCluster resource to the template. The AWS::DocDB::DBCluster Amazon DocumentDB (with MongoDB compatibility resource describes a DBCluster. Amazon DocumentDB is a fully managed, MongoDB-compatible document database engine. For more information, see DBCluster: https://docs.aws.amazon.com/documentdb/latest/developerguide/API_DBCluster.html in the *Amazon DocumentDB Developer Guide*.
 
     .LINK
         http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-docdb-dbcluster.html

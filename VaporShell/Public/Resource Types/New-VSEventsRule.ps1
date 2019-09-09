@@ -1,10 +1,14 @@
 function New-VSEventsRule {
     <#
     .SYNOPSIS
-        Adds an AWS::Events::Rule resource to the template
+        Adds an AWS::Events::Rule resource to the template. The AWS::Events::Rule resource creates a rule that matches incoming events and routes them to one or more targets for processing. For more information, see What Is Amazon CloudWatch Events?: https://docs.aws.amazon.com/AmazonCloudWatch/latest/events/WhatIsCloudWatchEvents.html.
 
     .DESCRIPTION
-        Adds an AWS::Events::Rule resource to the template
+        Adds an AWS::Events::Rule resource to the template. The AWS::Events::Rule resource creates a rule that matches incoming events and routes them to one or more targets for processing. For more information, see What Is Amazon CloudWatch Events?: https://docs.aws.amazon.com/AmazonCloudWatch/latest/events/WhatIsCloudWatchEvents.html.
+
+A rule must contain at least an EventPattern or ScheduleExpression. Rules with EventPattern are triggered when a matching event is observed. Rules with ScheduleExpression self-trigger based on the given schedule. A rule can have both an EventPattern and a ScheduleExpression, in which case the rule triggers on matching events as well as on a schedule.
+
+Most services in AWS treat : or / as the same character in Amazon Resource Names (ARNs. However, CloudWatch Events uses an exact match in event patterns and rules. Be sure to use the correct ARN characters when creating event patterns so that they match the ARN syntax in the event that you want to match.
 
     .LINK
         http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-events-rule.html

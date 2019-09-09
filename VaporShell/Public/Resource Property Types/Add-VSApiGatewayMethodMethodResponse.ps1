@@ -1,10 +1,11 @@
 function Add-VSApiGatewayMethodMethodResponse {
     <#
     .SYNOPSIS
-        Adds an AWS::ApiGateway::Method.MethodResponse resource property to the template
+        Adds an AWS::ApiGateway::Method.MethodResponse resource property to the template. MethodResponse is a property of the AWS::ApiGateway::Method: https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-apigateway-method.html resource that defines the responses that can be sent to the client that calls a method.
 
     .DESCRIPTION
-        Adds an AWS::ApiGateway::Method.MethodResponse resource property to the template
+        Adds an AWS::ApiGateway::Method.MethodResponse resource property to the template.
+MethodResponse is a property of the AWS::ApiGateway::Method: https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-apigateway-method.html resource that defines the responses that can be sent to the client that calls a method.
 
     .LINK
         http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-apitgateway-method-methodresponse.html

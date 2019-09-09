@@ -1,10 +1,12 @@
 function New-VSMediaLiveInputSecurityGroup {
     <#
     .SYNOPSIS
-        Adds an AWS::MediaLive::InputSecurityGroup resource to the template
+        Adds an AWS::MediaLive::InputSecurityGroup resource to the template. The AWS::MediaLive::InputSecurityGroup is a MediaLive resource type that creates an input security group.
 
     .DESCRIPTION
-        Adds an AWS::MediaLive::InputSecurityGroup resource to the template
+        Adds an AWS::MediaLive::InputSecurityGroup resource to the template. The AWS::MediaLive::InputSecurityGroup is a MediaLive resource type that creates an input security group.
+
+A MediaLive input security group is associated with a MediaLive input. The input security group is an "allow list" of IP addresses that controls whether an external IP address can push content to the associated MediaLive input.
 
     .LINK
         http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-medialive-inputsecuritygroup.html

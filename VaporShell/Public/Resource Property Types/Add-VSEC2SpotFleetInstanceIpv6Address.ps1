@@ -1,10 +1,11 @@
 function Add-VSEC2SpotFleetInstanceIpv6Address {
     <#
     .SYNOPSIS
-        Adds an AWS::EC2::SpotFleet.InstanceIpv6Address resource property to the template
+        Adds an AWS::EC2::SpotFleet.InstanceIpv6Address resource property to the template. Describes an IPv6 address.
 
     .DESCRIPTION
-        Adds an AWS::EC2::SpotFleet.InstanceIpv6Address resource property to the template
+        Adds an AWS::EC2::SpotFleet.InstanceIpv6Address resource property to the template.
+Describes an IPv6 address.
 
     .LINK
         http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-spotfleet-instanceipv6address.html

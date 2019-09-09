@@ -1,10 +1,10 @@
 function New-VSAmazonMQConfiguration {
     <#
     .SYNOPSIS
-        Adds an AWS::AmazonMQ::Configuration resource to the template
+        Adds an AWS::AmazonMQ::Configuration resource to the template. Creates a new configuration for the specified configuration name. Amazon MQ uses the default configuration (the engine type and version.
 
     .DESCRIPTION
-        Adds an AWS::AmazonMQ::Configuration resource to the template
+        Adds an AWS::AmazonMQ::Configuration resource to the template. Creates a new configuration for the specified configuration name. Amazon MQ uses the default configuration (the engine type and version.
 
     .LINK
         http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-amazonmq-configuration.html

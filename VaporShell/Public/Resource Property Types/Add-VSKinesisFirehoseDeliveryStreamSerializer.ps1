@@ -1,10 +1,11 @@
 function Add-VSKinesisFirehoseDeliveryStreamSerializer {
     <#
     .SYNOPSIS
-        Adds an AWS::KinesisFirehose::DeliveryStream.Serializer resource property to the template
+        Adds an AWS::KinesisFirehose::DeliveryStream.Serializer resource property to the template. The serializer that you want Kinesis Data Firehose to use to convert data to the target format before writing it to Amazon S3. Kinesis Data Firehose supports two types of serializers: the ORC SerDe: https://hive.apache.org/javadocs/r1.2.2/api/org/apache/hadoop/hive/ql/io/orc/OrcSerde.html and the Parquet SerDe: https://hive.apache.org/javadocs/r1.2.2/api/org/apache/hadoop/hive/ql/io/parquet/serde/ParquetHiveSerDe.html.
 
     .DESCRIPTION
-        Adds an AWS::KinesisFirehose::DeliveryStream.Serializer resource property to the template
+        Adds an AWS::KinesisFirehose::DeliveryStream.Serializer resource property to the template.
+The serializer that you want Kinesis Data Firehose to use to convert data to the target format before writing it to Amazon S3. Kinesis Data Firehose supports two types of serializers: the ORC SerDe: https://hive.apache.org/javadocs/r1.2.2/api/org/apache/hadoop/hive/ql/io/orc/OrcSerde.html and the Parquet SerDe: https://hive.apache.org/javadocs/r1.2.2/api/org/apache/hadoop/hive/ql/io/parquet/serde/ParquetHiveSerDe.html.
 
     .LINK
         http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-kinesisfirehose-deliverystream-serializer.html

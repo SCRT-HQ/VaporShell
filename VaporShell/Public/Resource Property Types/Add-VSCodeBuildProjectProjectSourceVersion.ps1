@@ -1,10 +1,11 @@
 function Add-VSCodeBuildProjectProjectSourceVersion {
     <#
     .SYNOPSIS
-        Adds an AWS::CodeBuild::Project.ProjectSourceVersion resource property to the template
+        Adds an AWS::CodeBuild::Project.ProjectSourceVersion resource property to the template. A source identifier and its corresponding version.
 
     .DESCRIPTION
-        Adds an AWS::CodeBuild::Project.ProjectSourceVersion resource property to the template
+        Adds an AWS::CodeBuild::Project.ProjectSourceVersion resource property to the template.
+A source identifier and its corresponding version.
 
     .LINK
         http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-codebuild-project-projectsourceversion.html
