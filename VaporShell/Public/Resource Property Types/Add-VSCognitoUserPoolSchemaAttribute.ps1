@@ -68,10 +68,26 @@ For any user pool attribute that's mapped to an identity provider attribute, you
     Param
     (
         [parameter(Mandatory = $false)]
-        [System.Boolean]
+        [ValidateScript( {
+                $allowedTypes = "System.Boolean","Vaporshell.Function"
+                if ([string]$($_.PSTypeNames) -match "($(($allowedTypes|ForEach-Object{[RegEx]::Escape($_)}) -join '|'))") {
+                    $true
+                }
+                else {
+                    $PSCmdlet.ThrowTerminatingError((New-VSError -String "This parameter only accepts the following types: $($allowedTypes -join ", "). The current types of the value are: $($_.PSTypeNames -join ", ")."))
+                }
+            })]
         $DeveloperOnlyAttribute,
         [parameter(Mandatory = $false)]
-        [System.Boolean]
+        [ValidateScript( {
+                $allowedTypes = "System.Boolean","Vaporshell.Function"
+                if ([string]$($_.PSTypeNames) -match "($(($allowedTypes|ForEach-Object{[RegEx]::Escape($_)}) -join '|'))") {
+                    $true
+                }
+                else {
+                    $PSCmdlet.ThrowTerminatingError((New-VSError -String "This parameter only accepts the following types: $($allowedTypes -join ", "). The current types of the value are: $($_.PSTypeNames -join ", ")."))
+                }
+            })]
         $Mutable,
         [parameter(Mandatory = $false)]
         [ValidateScript( {
@@ -87,7 +103,15 @@ For any user pool attribute that's mapped to an identity provider attribute, you
         [parameter(Mandatory = $false)]
         $StringAttributeConstraints,
         [parameter(Mandatory = $false)]
-        [System.Boolean]
+        [ValidateScript( {
+                $allowedTypes = "System.Boolean","Vaporshell.Function"
+                if ([string]$($_.PSTypeNames) -match "($(($allowedTypes|ForEach-Object{[RegEx]::Escape($_)}) -join '|'))") {
+                    $true
+                }
+                else {
+                    $PSCmdlet.ThrowTerminatingError((New-VSError -String "This parameter only accepts the following types: $($allowedTypes -join ", "). The current types of the value are: $($_.PSTypeNames -join ", ")."))
+                }
+            })]
         $Required,
         [parameter(Mandatory = $false)]
         $NumberAttributeConstraints,

@@ -147,10 +147,26 @@ Environment variables must not start with AWS_BATCH; this naming convention is r
             })]
         $User,
         [parameter(Mandatory = $true)]
-        [Int]
+        [ValidateScript( {
+                $allowedTypes = "System.Int32","Vaporshell.Function"
+                if ([string]$($_.PSTypeNames) -match "($(($allowedTypes|ForEach-Object{[RegEx]::Escape($_)}) -join '|'))") {
+                    $true
+                }
+                else {
+                    $PSCmdlet.ThrowTerminatingError((New-VSError -String "This parameter only accepts the following types: $($allowedTypes -join ", "). The current types of the value are: $($_.PSTypeNames -join ", ")."))
+                }
+            })]
         $Memory,
         [parameter(Mandatory = $false)]
-        [System.Boolean]
+        [ValidateScript( {
+                $allowedTypes = "System.Boolean","Vaporshell.Function"
+                if ([string]$($_.PSTypeNames) -match "($(($allowedTypes|ForEach-Object{[RegEx]::Escape($_)}) -join '|'))") {
+                    $true
+                }
+                else {
+                    $PSCmdlet.ThrowTerminatingError((New-VSError -String "This parameter only accepts the following types: $($allowedTypes -join ", "). The current types of the value are: $($_.PSTypeNames -join ", ")."))
+                }
+            })]
         $Privileged,
         [parameter(Mandatory = $false)]
         $LinuxParameters,
@@ -166,10 +182,26 @@ Environment variables must not start with AWS_BATCH; this naming convention is r
             })]
         $JobRoleArn,
         [parameter(Mandatory = $false)]
-        [System.Boolean]
+        [ValidateScript( {
+                $allowedTypes = "System.Boolean","Vaporshell.Function"
+                if ([string]$($_.PSTypeNames) -match "($(($allowedTypes|ForEach-Object{[RegEx]::Escape($_)}) -join '|'))") {
+                    $true
+                }
+                else {
+                    $PSCmdlet.ThrowTerminatingError((New-VSError -String "This parameter only accepts the following types: $($allowedTypes -join ", "). The current types of the value are: $($_.PSTypeNames -join ", ")."))
+                }
+            })]
         $ReadonlyRootFilesystem,
         [parameter(Mandatory = $true)]
-        [Int]
+        [ValidateScript( {
+                $allowedTypes = "System.Int32","Vaporshell.Function"
+                if ([string]$($_.PSTypeNames) -match "($(($allowedTypes|ForEach-Object{[RegEx]::Escape($_)}) -join '|'))") {
+                    $true
+                }
+                else {
+                    $PSCmdlet.ThrowTerminatingError((New-VSError -String "This parameter only accepts the following types: $($allowedTypes -join ", "). The current types of the value are: $($_.PSTypeNames -join ", ")."))
+                }
+            })]
         $Vcpus,
         [parameter(Mandatory = $true)]
         [ValidateScript( {

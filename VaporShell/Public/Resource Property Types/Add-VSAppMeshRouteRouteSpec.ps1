@@ -24,6 +24,20 @@ An object representing the specification of a route.
         PrimitiveType: Integer
         UpdateType: Mutable
 
+    .PARAMETER Http2Route
+        *Update requires*: No interruption: https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt
+
+        Type: HttpRoute
+        Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-appmesh-route-routespec.html#cfn-appmesh-route-routespec-http2route
+        UpdateType: Mutable
+
+    .PARAMETER GrpcRoute
+        *Update requires*: No interruption: https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt
+
+        Type: GrpcRoute
+        Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-appmesh-route-routespec.html#cfn-appmesh-route-routespec-grpcroute
+        UpdateType: Mutable
+
     .PARAMETER TcpRoute
         The TCP routing information for the route.
 
@@ -41,8 +55,20 @@ An object representing the specification of a route.
         [parameter(Mandatory = $false)]
         $HttpRoute,
         [parameter(Mandatory = $false)]
-        [Int]
+        [ValidateScript( {
+                $allowedTypes = "System.Int32","Vaporshell.Function"
+                if ([string]$($_.PSTypeNames) -match "($(($allowedTypes|ForEach-Object{[RegEx]::Escape($_)}) -join '|'))") {
+                    $true
+                }
+                else {
+                    $PSCmdlet.ThrowTerminatingError((New-VSError -String "This parameter only accepts the following types: $($allowedTypes -join ", "). The current types of the value are: $($_.PSTypeNames -join ", ")."))
+                }
+            })]
         $Priority,
+        [parameter(Mandatory = $false)]
+        $Http2Route,
+        [parameter(Mandatory = $false)]
+        $GrpcRoute,
         [parameter(Mandatory = $false)]
         $TcpRoute
     )

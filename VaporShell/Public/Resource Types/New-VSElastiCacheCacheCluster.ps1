@@ -287,7 +287,15 @@ Use this parameter only when you are creating a cluster in an Amazon Virtual Pri
             })]
         $AZMode,
         [parameter(Mandatory = $false)]
-        [System.Boolean]
+        [ValidateScript( {
+                $allowedTypes = "System.Boolean","Vaporshell.Function"
+                if ([string]$($_.PSTypeNames) -match "($(($allowedTypes|ForEach-Object{[RegEx]::Escape($_)}) -join '|'))") {
+                    $true
+                }
+                else {
+                    $PSCmdlet.ThrowTerminatingError((New-VSError -String "This parameter only accepts the following types: $($allowedTypes -join ", "). The current types of the value are: $($_.PSTypeNames -join ", ")."))
+                }
+            })]
         $AutoMinorVersionUpgrade,
         [parameter(Mandatory = $true)]
         [ValidateScript( {
@@ -369,10 +377,26 @@ Use this parameter only when you are creating a cluster in an Amazon Virtual Pri
             })]
         $NotificationTopicArn,
         [parameter(Mandatory = $true)]
-        [Int]
+        [ValidateScript( {
+                $allowedTypes = "System.Int32","Vaporshell.Function"
+                if ([string]$($_.PSTypeNames) -match "($(($allowedTypes|ForEach-Object{[RegEx]::Escape($_)}) -join '|'))") {
+                    $true
+                }
+                else {
+                    $PSCmdlet.ThrowTerminatingError((New-VSError -String "This parameter only accepts the following types: $($allowedTypes -join ", "). The current types of the value are: $($_.PSTypeNames -join ", ")."))
+                }
+            })]
         $NumCacheNodes,
         [parameter(Mandatory = $false)]
-        [Int]
+        [ValidateScript( {
+                $allowedTypes = "System.Int32","Vaporshell.Function"
+                if ([string]$($_.PSTypeNames) -match "($(($allowedTypes|ForEach-Object{[RegEx]::Escape($_)}) -join '|'))") {
+                    $true
+                }
+                else {
+                    $PSCmdlet.ThrowTerminatingError((New-VSError -String "This parameter only accepts the following types: $($allowedTypes -join ", "). The current types of the value are: $($_.PSTypeNames -join ", ")."))
+                }
+            })]
         $Port,
         [parameter(Mandatory = $false)]
         [ValidateScript( {
@@ -412,7 +436,15 @@ Use this parameter only when you are creating a cluster in an Amazon Virtual Pri
             })]
         $SnapshotName,
         [parameter(Mandatory = $false)]
-        [Int]
+        [ValidateScript( {
+                $allowedTypes = "System.Int32","Vaporshell.Function"
+                if ([string]$($_.PSTypeNames) -match "($(($allowedTypes|ForEach-Object{[RegEx]::Escape($_)}) -join '|'))") {
+                    $true
+                }
+                else {
+                    $PSCmdlet.ThrowTerminatingError((New-VSError -String "This parameter only accepts the following types: $($allowedTypes -join ", "). The current types of the value are: $($_.PSTypeNames -join ", ")."))
+                }
+            })]
         $SnapshotRetentionLimit,
         [parameter(Mandatory = $false)]
         [ValidateScript( {

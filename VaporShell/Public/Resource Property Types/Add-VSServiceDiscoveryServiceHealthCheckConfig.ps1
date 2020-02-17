@@ -107,7 +107,15 @@ If you specify TCP for Type, you must *not* specify a value for ResourcePath.
             })]
         $ResourcePath,
         [parameter(Mandatory = $false)]
-        [System.Double]
+        [ValidateScript( {
+                $allowedTypes = "System.Double","Vaporshell.Function"
+                if ([string]$($_.PSTypeNames) -match "($(($allowedTypes|ForEach-Object{[RegEx]::Escape($_)}) -join '|'))") {
+                    $true
+                }
+                else {
+                    $PSCmdlet.ThrowTerminatingError((New-VSError -String "This parameter only accepts the following types: $($allowedTypes -join ", "). The current types of the value are: $($_.PSTypeNames -join ", ")."))
+                }
+            })]
         $FailureThreshold
     )
     Begin {

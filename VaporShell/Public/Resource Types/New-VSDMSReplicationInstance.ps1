@@ -226,7 +226,15 @@ Valid Values: dms.t2.micro | dms.t2.small | dms.t2.medium | dms.t2.large | dms.c
             })]
         $PreferredMaintenanceWindow,
         [parameter(Mandatory = $false)]
-        [System.Boolean]
+        [ValidateScript( {
+                $allowedTypes = "System.Boolean","Vaporshell.Function"
+                if ([string]$($_.PSTypeNames) -match "($(($allowedTypes|ForEach-Object{[RegEx]::Escape($_)}) -join '|'))") {
+                    $true
+                }
+                else {
+                    $PSCmdlet.ThrowTerminatingError((New-VSError -String "This parameter only accepts the following types: $($allowedTypes -join ", "). The current types of the value are: $($_.PSTypeNames -join ", ")."))
+                }
+            })]
         $AutoMinorVersionUpgrade,
         [parameter(Mandatory = $false)]
         [ValidateScript( {
@@ -240,12 +248,28 @@ Valid Values: dms.t2.micro | dms.t2.small | dms.t2.medium | dms.t2.large | dms.c
             })]
         $ReplicationSubnetGroupIdentifier,
         [parameter(Mandatory = $false)]
-        [Int]
+        [ValidateScript( {
+                $allowedTypes = "System.Int32","Vaporshell.Function"
+                if ([string]$($_.PSTypeNames) -match "($(($allowedTypes|ForEach-Object{[RegEx]::Escape($_)}) -join '|'))") {
+                    $true
+                }
+                else {
+                    $PSCmdlet.ThrowTerminatingError((New-VSError -String "This parameter only accepts the following types: $($allowedTypes -join ", "). The current types of the value are: $($_.PSTypeNames -join ", ")."))
+                }
+            })]
         $AllocatedStorage,
         [parameter(Mandatory = $false)]
         $VpcSecurityGroupIds,
         [parameter(Mandatory = $false)]
-        [System.Boolean]
+        [ValidateScript( {
+                $allowedTypes = "System.Boolean","Vaporshell.Function"
+                if ([string]$($_.PSTypeNames) -match "($(($allowedTypes|ForEach-Object{[RegEx]::Escape($_)}) -join '|'))") {
+                    $true
+                }
+                else {
+                    $PSCmdlet.ThrowTerminatingError((New-VSError -String "This parameter only accepts the following types: $($allowedTypes -join ", "). The current types of the value are: $($_.PSTypeNames -join ", ")."))
+                }
+            })]
         $AllowMajorVersionUpgrade,
         [parameter(Mandatory = $true)]
         [ValidateScript( {
@@ -259,10 +283,26 @@ Valid Values: dms.t2.micro | dms.t2.small | dms.t2.medium | dms.t2.large | dms.c
             })]
         $ReplicationInstanceClass,
         [parameter(Mandatory = $false)]
-        [System.Boolean]
+        [ValidateScript( {
+                $allowedTypes = "System.Boolean","Vaporshell.Function"
+                if ([string]$($_.PSTypeNames) -match "($(($allowedTypes|ForEach-Object{[RegEx]::Escape($_)}) -join '|'))") {
+                    $true
+                }
+                else {
+                    $PSCmdlet.ThrowTerminatingError((New-VSError -String "This parameter only accepts the following types: $($allowedTypes -join ", "). The current types of the value are: $($_.PSTypeNames -join ", ")."))
+                }
+            })]
         $PubliclyAccessible,
         [parameter(Mandatory = $false)]
-        [System.Boolean]
+        [ValidateScript( {
+                $allowedTypes = "System.Boolean","Vaporshell.Function"
+                if ([string]$($_.PSTypeNames) -match "($(($allowedTypes|ForEach-Object{[RegEx]::Escape($_)}) -join '|'))") {
+                    $true
+                }
+                else {
+                    $PSCmdlet.ThrowTerminatingError((New-VSError -String "This parameter only accepts the following types: $($allowedTypes -join ", "). The current types of the value are: $($_.PSTypeNames -join ", ")."))
+                }
+            })]
         $MultiAZ,
         [parameter(Mandatory = $false)]
         [ValidateScript( {

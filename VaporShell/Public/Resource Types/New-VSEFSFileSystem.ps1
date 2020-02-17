@@ -109,7 +109,15 @@ function New-VSEFSFileSystem {
         [System.String]
         $LogicalId,
         [parameter(Mandatory = $false)]
-        [System.Boolean]
+        [ValidateScript( {
+                $allowedTypes = "System.Boolean","Vaporshell.Function"
+                if ([string]$($_.PSTypeNames) -match "($(($allowedTypes|ForEach-Object{[RegEx]::Escape($_)}) -join '|'))") {
+                    $true
+                }
+                else {
+                    $PSCmdlet.ThrowTerminatingError((New-VSError -String "This parameter only accepts the following types: $($allowedTypes -join ", "). The current types of the value are: $($_.PSTypeNames -join ", ")."))
+                }
+            })]
         $Encrypted,
         [parameter(Mandatory = $false)]
         [ValidateScript( {
@@ -156,7 +164,15 @@ function New-VSEFSFileSystem {
             })]
         $PerformanceMode,
         [parameter(Mandatory = $false)]
-        [System.Double]
+        [ValidateScript( {
+                $allowedTypes = "System.Double","Vaporshell.Function"
+                if ([string]$($_.PSTypeNames) -match "($(($allowedTypes|ForEach-Object{[RegEx]::Escape($_)}) -join '|'))") {
+                    $true
+                }
+                else {
+                    $PSCmdlet.ThrowTerminatingError((New-VSError -String "This parameter only accepts the following types: $($allowedTypes -join ", "). The current types of the value are: $($_.PSTypeNames -join ", ")."))
+                }
+            })]
         $ProvisionedThroughputInMibps,
         [parameter(Mandatory = $false)]
         [ValidateScript( {

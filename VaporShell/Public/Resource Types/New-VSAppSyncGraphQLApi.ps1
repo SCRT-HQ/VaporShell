@@ -19,6 +19,13 @@ function New-VSAppSyncGraphQLApi {
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-appsync-graphqlapi.html#cfn-appsync-graphqlapi-openidconnectconfig
         UpdateType: Mutable
 
+    .PARAMETER XrayEnabled
+        +  CreateGraphqlApi: https://docs.aws.amazon.com/appsync/latest/APIReference/API_CreateGraphqlApi.html operation in the *AWS AppSync API Reference*.
+
+        Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-appsync-graphqlapi.html#cfn-appsync-graphqlapi-xrayenabled
+        PrimitiveType: Boolean
+        UpdateType: Mutable
+
     .PARAMETER UserPoolConfig
         Optional authorization configuration for using Amazon Cognito user pools with your GraphQL endpoint.
 
@@ -108,6 +115,17 @@ function New-VSAppSyncGraphQLApi {
         $LogicalId,
         [parameter(Mandatory = $false)]
         $OpenIDConnectConfig,
+        [parameter(Mandatory = $false)]
+        [ValidateScript( {
+                $allowedTypes = "System.Boolean","Vaporshell.Function"
+                if ([string]$($_.PSTypeNames) -match "($(($allowedTypes|ForEach-Object{[RegEx]::Escape($_)}) -join '|'))") {
+                    $true
+                }
+                else {
+                    $PSCmdlet.ThrowTerminatingError((New-VSError -String "This parameter only accepts the following types: $($allowedTypes -join ", "). The current types of the value are: $($_.PSTypeNames -join ", ")."))
+                }
+            })]
+        $XrayEnabled,
         [parameter(Mandatory = $false)]
         $UserPoolConfig,
         [parameter(Mandatory = $false)]

@@ -92,6 +92,14 @@ The initial state of the image builder is PENDING. When it is ready, the state i
         PrimitiveType: String
         UpdateType: Mutable
 
+    .PARAMETER AccessEndpoints
+        +  CreateImageBuilder: https://docs.aws.amazon.com/appstream2/latest/APIReference/API_CreateImageBuilder.html in the *Amazon AppStream 2.0 API Reference*
+
+        Type: List
+        Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-appstream-imagebuilder.html#cfn-appstream-imagebuilder-accessendpoints
+        ItemType: AccessEndpoint
+        UpdateType: Mutable
+
     .PARAMETER DeletionPolicy
         With the DeletionPolicy attribute you can preserve or (in some cases) backup a resource when its stack is deleted. You specify a DeletionPolicy attribute for each resource that you want to control. If a resource has no DeletionPolicy attribute, AWS CloudFormation deletes the resource by default.
 
@@ -162,7 +170,15 @@ The initial state of the image builder is PENDING. When it is ready, the state i
         [parameter(Mandatory = $false)]
         $VpcConfig,
         [parameter(Mandatory = $false)]
-        [System.Boolean]
+        [ValidateScript( {
+                $allowedTypes = "System.Boolean","Vaporshell.Function"
+                if ([string]$($_.PSTypeNames) -match "($(($allowedTypes|ForEach-Object{[RegEx]::Escape($_)}) -join '|'))") {
+                    $true
+                }
+                else {
+                    $PSCmdlet.ThrowTerminatingError((New-VSError -String "This parameter only accepts the following types: $($allowedTypes -join ", "). The current types of the value are: $($_.PSTypeNames -join ", ")."))
+                }
+            })]
         $EnableDefaultInternetAccess,
         [parameter(Mandatory = $false)]
         [ValidateScript( {
@@ -210,7 +226,7 @@ The initial state of the image builder is PENDING. When it is ready, the state i
                 }
             })]
         $Tags,
-        [parameter(Mandatory = $false)]
+        [parameter(Mandatory = $true)]
         [ValidateScript( {
                 $allowedTypes = "System.String","Vaporshell.Function","Vaporshell.Condition"
                 if ([string]$($_.PSTypeNames) -match "($(($allowedTypes|ForEach-Object{[RegEx]::Escape($_)}) -join '|'))") {
@@ -232,6 +248,17 @@ The initial state of the image builder is PENDING. When it is ready, the state i
                 }
             })]
         $ImageArn,
+        [parameter(Mandatory = $false)]
+        [ValidateScript( {
+                $allowedTypes = "Vaporshell.Resource.AppStream.ImageBuilder.AccessEndpoint"
+                if ([string]$($_.PSTypeNames) -match "($(($allowedTypes|ForEach-Object{[RegEx]::Escape($_)}) -join '|'))") {
+                    $true
+                }
+                else {
+                    $PSCmdlet.ThrowTerminatingError((New-VSError -String "This parameter only accepts the following types: $($allowedTypes -join ", "). The current types of the value are: $($_.PSTypeNames -join ", ")."))
+                }
+            })]
+        $AccessEndpoints,
         [ValidateSet("Delete","Retain","Snapshot")]
         [System.String]
         $DeletionPolicy,
@@ -294,6 +321,12 @@ The initial state of the image builder is PENDING. When it is ready, the state i
                         $ResourceParams.Add("Properties",([PSCustomObject]@{}))
                     }
                     $ResourceParams["Properties"] | Add-Member -MemberType NoteProperty -Name Tags -Value @($Tags)
+                }
+                AccessEndpoints {
+                    if (!($ResourceParams["Properties"])) {
+                        $ResourceParams.Add("Properties",([PSCustomObject]@{}))
+                    }
+                    $ResourceParams["Properties"] | Add-Member -MemberType NoteProperty -Name AccessEndpoints -Value @($AccessEndpoints)
                 }
                 Default {
                     if (!($ResourceParams["Properties"])) {

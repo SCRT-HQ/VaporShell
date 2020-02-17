@@ -2,6 +2,7 @@
 
 <!-- TOC -->
 
+* [2.9.5 - 2020-02-17](#295---2020-02-17)
 * [2.9.4 - 2019-12-11](#294---2019-12-11)
 * [2.9.3 - 2019-11-24](#293---2019-11-24)
 * [2.9.2 - 2019-10-06](#292---2019-10-06)
@@ -50,6 +51,13 @@
 * [0.7.02](#0702)
 
 <!-- /TOC -->
+
+## 2.9.5 - 2020-02-17
+
+* [Issue #66](https://github.com/scrthq/VaporShell/issues/66)
+    * Fixed: `Int`,`Double`, and `Boolean` parameters now accept CloudFormation Intrinsic Functions as parameter values.
+* Miscellaneous
+  * Brought Resource Type and Property Type functions up to current spec sheet.
 
 ## 2.9.4 - 2019-12-11
 

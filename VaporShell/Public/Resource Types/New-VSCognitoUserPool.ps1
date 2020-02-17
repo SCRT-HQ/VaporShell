@@ -49,7 +49,7 @@ OPTIONAL - Users have the option when registering to create an MFA token.
         Type: List
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-cognito-userpool.html#cfn-cognito-userpool-schema
         ItemType: SchemaAttribute
-        UpdateType: Immutable
+        UpdateType: Mutable
 
     .PARAMETER AdminCreateUserConfig
         The type of configuration for creating a new user profile.
@@ -70,7 +70,7 @@ OPTIONAL - Users have the option when registering to create an MFA token.
 
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-cognito-userpool.html#cfn-cognito-userpool-userpoolname
         PrimitiveType: String
-        UpdateType: Immutable
+        UpdateType: Mutable
 
     .PARAMETER SmsVerificationMessage
         A string representing the SMS verification message.
@@ -106,7 +106,15 @@ OPTIONAL - Users have the option when registering to create an MFA token.
         PrimitiveItemType: String
         Type: List
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-cognito-userpool.html#cfn-cognito-userpool-aliasattributes
-        UpdateType: Immutable
+        UpdateType: Mutable
+
+    .PARAMETER EnabledMfas
+        The URL of the provider of the Amazon Cognito user pool, specified as a String.
+
+        PrimitiveItemType: String
+        Type: List
+        Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-cognito-userpool.html#cfn-cognito-userpool-enabledmfas
+        UpdateType: Mutable
 
     .PARAMETER EmailVerificationSubject
         A string representing the email verification subject.
@@ -131,7 +139,7 @@ For adding permission using the AWS CLI, see  add-permission : https://docs.aws.
         PrimitiveItemType: String
         Type: List
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-cognito-userpool.html#cfn-cognito-userpool-usernameattributes
-        UpdateType: Immutable
+        UpdateType: Mutable
 
     .PARAMETER AutoVerifiedAttributes
         The attributes to be auto-verified. Possible values: **email**, **phone_number**.
@@ -153,6 +161,13 @@ For adding permission using the AWS CLI, see  add-permission : https://docs.aws.
 
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-cognito-userpool.html#cfn-cognito-userpool-emailverificationmessage
         PrimitiveType: String
+        UpdateType: Mutable
+
+    .PARAMETER AccountRecoverySetting
+        The URL of the provider of the Amazon Cognito user pool, specified as a String.
+
+        Type: AccountRecoverySetting
+        Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-cognito-userpool.html#cfn-cognito-userpool-accountrecoverysetting
         UpdateType: Mutable
 
     .PARAMETER DeletionPolicy
@@ -281,6 +296,8 @@ For adding permission using the AWS CLI, see  add-permission : https://docs.aws.
         [parameter(Mandatory = $false)]
         $AliasAttributes,
         [parameter(Mandatory = $false)]
+        $EnabledMfas,
+        [parameter(Mandatory = $false)]
         [ValidateScript( {
                 $allowedTypes = "System.String","Vaporshell.Function","Vaporshell.Condition"
                 if ([string]$($_.PSTypeNames) -match "($(($allowedTypes|ForEach-Object{[RegEx]::Escape($_)}) -join '|'))") {
@@ -310,6 +327,8 @@ For adding permission using the AWS CLI, see  add-permission : https://docs.aws.
                 }
             })]
         $EmailVerificationMessage,
+        [parameter(Mandatory = $false)]
+        $AccountRecoverySetting,
         [ValidateSet("Delete","Retain","Snapshot")]
         [System.String]
         $DeletionPolicy,
@@ -378,6 +397,12 @@ For adding permission using the AWS CLI, see  add-permission : https://docs.aws.
                         $ResourceParams.Add("Properties",([PSCustomObject]@{}))
                     }
                     $ResourceParams["Properties"] | Add-Member -MemberType NoteProperty -Name AliasAttributes -Value @($AliasAttributes)
+                }
+                EnabledMfas {
+                    if (!($ResourceParams["Properties"])) {
+                        $ResourceParams.Add("Properties",([PSCustomObject]@{}))
+                    }
+                    $ResourceParams["Properties"] | Add-Member -MemberType NoteProperty -Name EnabledMfas -Value @($EnabledMfas)
                 }
                 UsernameAttributes {
                     if (!($ResourceParams["Properties"])) {

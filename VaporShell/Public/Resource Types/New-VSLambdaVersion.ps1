@@ -38,6 +38,11 @@ The length constraint applies only to the full ARN. If you specify only the func
         PrimitiveType: String
         UpdateType: Immutable
 
+    .PARAMETER ProvisionedConcurrencyConfig
+        Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-lambda-version.html#cfn-lambda-version-provisionedconcurrencyconfig
+        Type: ProvisionedConcurrencyConfiguration
+        UpdateType: Mutable
+
     .PARAMETER DeletionPolicy
         With the DeletionPolicy attribute you can preserve or (in some cases) backup a resource when its stack is deleted. You specify a DeletionPolicy attribute for each resource that you want to control. If a resource has no DeletionPolicy attribute, AWS CloudFormation deletes the resource by default.
 
@@ -116,6 +121,8 @@ The length constraint applies only to the full ARN. If you specify only the func
                 }
             })]
         $FunctionName,
+        [parameter(Mandatory = $false)]
+        $ProvisionedConcurrencyConfig,
         [ValidateSet("Delete","Retain","Snapshot")]
         [System.String]
         $DeletionPolicy,

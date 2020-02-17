@@ -28,6 +28,11 @@ function New-VSElasticsearchDomain {
         Type: Map
         UpdateType: Mutable
 
+    .PARAMETER CognitoOptions
+        Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-elasticsearch-domain.html#cfn-elasticsearch-domain-cognitooptions
+        Type: CognitoOptions
+        UpdateType: Mutable
+
     .PARAMETER DomainName
         A name for the Amazon ES domain. For valid values, see the DomainName: https://docs.aws.amazon.com/elasticsearch-service/latest/developerguide/es-configuration-api.html#es-configuration-api-datatypes-domainname data type in the *Amazon Elasticsearch Service Developer Guide*. If you don't specify a name, AWS CloudFormation generates a unique physical ID and uses that ID for the domain name. For more information, see Name Type: https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-name.html.
 If you specify a name, you cannot perform updates that require replacement of this resource. You can perform updates that require no or some interruption. If you must replace the resource, specify a new name.
@@ -55,7 +60,7 @@ If you specify a name, you cannot perform updates that require replacement of th
 
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-elasticsearch-domain.html#cfn-elasticsearch-domain-elasticsearchversion
         PrimitiveType: String
-        UpdateType: Immutable
+        UpdateType: Conditional
 
     .PARAMETER EncryptionAtRestOptions
         Whether the domain should encrypt data at rest, and if so, the AWS Key Management Service KMS key to use. Can only be used to create a new domain, not update an existing one.
@@ -63,6 +68,13 @@ If you specify a name, you cannot perform updates that require replacement of th
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-elasticsearch-domain.html#cfn-elasticsearch-domain-encryptionatrestoptions
         Type: EncryptionAtRestOptions
         UpdateType: Immutable
+
+    .PARAMETER LogPublishingOptions
+        Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-elasticsearch-domain.html#cfn-elasticsearch-domain-logpublishingoptions
+        DuplicatesAllowed: False
+        ItemType: LogPublishingOption
+        Type: Map
+        UpdateType: Mutable
 
     .PARAMETER NodeToNodeEncryptionOptions
         Specifies whether node-to-node encryption is enabled.
@@ -154,6 +166,8 @@ If you specify a name, you cannot perform updates that require replacement of th
         [System.Collections.Hashtable]
         $AdvancedOptions,
         [parameter(Mandatory = $false)]
+        $CognitoOptions,
+        [parameter(Mandatory = $false)]
         [ValidateScript( {
                 $allowedTypes = "System.String","Vaporshell.Function","Vaporshell.Condition"
                 if ([string]$($_.PSTypeNames) -match "($(($allowedTypes|ForEach-Object{[RegEx]::Escape($_)}) -join '|'))") {
@@ -181,6 +195,17 @@ If you specify a name, you cannot perform updates that require replacement of th
         $ElasticsearchVersion,
         [parameter(Mandatory = $false)]
         $EncryptionAtRestOptions,
+        [parameter(Mandatory = $false)]
+        [ValidateScript( {
+                $allowedTypes = "Vaporshell.Resource.Elasticsearch.Domain.LogPublishingOption"
+                if ([string]$($_.PSTypeNames) -match "($(($allowedTypes|ForEach-Object{[RegEx]::Escape($_)}) -join '|'))") {
+                    $true
+                }
+                else {
+                    $PSCmdlet.ThrowTerminatingError((New-VSError -String "This parameter only accepts the following types: $($allowedTypes -join ", "). The current types of the value are: $($_.PSTypeNames -join ", ")."))
+                }
+            })]
+        $LogPublishingOptions,
         [parameter(Mandatory = $false)]
         $NodeToNodeEncryptionOptions,
         [parameter(Mandatory = $false)]

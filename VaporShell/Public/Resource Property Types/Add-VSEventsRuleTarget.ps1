@@ -19,6 +19,11 @@ Targets property of the AWS::Events::Rule: https://docs.aws.amazon.com/AWSCloudF
         PrimitiveType: String
         UpdateType: Mutable
 
+    .PARAMETER BatchParameters
+        Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-events-rule-target.html#cfn-events-rule-target-batchparameters
+        Type: BatchParameters
+        UpdateType: Mutable
+
     .PARAMETER EcsParameters
         Contains the Amazon ECS task definition and task count to be used, if the event target is an Amazon ECS task. For more information about Amazon ECS tasks, see Task Definitions : https://docs.aws.amazon.com/AmazonECS/latest/developerguide/task_defintions.html in the *Amazon EC2 Container Service Developer Guide*.
 
@@ -101,6 +106,8 @@ If you specify an SQS FIFO queue as a target, the queue must have content-based 
                 }
             })]
         $Arn,
+        [parameter(Mandatory = $false)]
+        $BatchParameters,
         [parameter(Mandatory = $false)]
         $EcsParameters,
         [parameter(Mandatory = $true)]

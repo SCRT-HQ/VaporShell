@@ -82,7 +82,15 @@ Specifies a model that you want to host and the resources to deploy for hosting 
             })]
         $VariantName,
         [parameter(Mandatory = $true)]
-        [Int]
+        [ValidateScript( {
+                $allowedTypes = "System.Int32","Vaporshell.Function"
+                if ([string]$($_.PSTypeNames) -match "($(($allowedTypes|ForEach-Object{[RegEx]::Escape($_)}) -join '|'))") {
+                    $true
+                }
+                else {
+                    $PSCmdlet.ThrowTerminatingError((New-VSError -String "This parameter only accepts the following types: $($allowedTypes -join ", "). The current types of the value are: $($_.PSTypeNames -join ", ")."))
+                }
+            })]
         $InitialInstanceCount,
         [parameter(Mandatory = $true)]
         [ValidateScript( {
@@ -107,7 +115,15 @@ Specifies a model that you want to host and the resources to deploy for hosting 
             })]
         $AcceleratorType,
         [parameter(Mandatory = $true)]
-        [System.Double]
+        [ValidateScript( {
+                $allowedTypes = "System.Double","Vaporshell.Function"
+                if ([string]$($_.PSTypeNames) -match "($(($allowedTypes|ForEach-Object{[RegEx]::Escape($_)}) -join '|'))") {
+                    $true
+                }
+                else {
+                    $PSCmdlet.ThrowTerminatingError((New-VSError -String "This parameter only accepts the following types: $($allowedTypes -join ", "). The current types of the value are: $($_.PSTypeNames -join ", ")."))
+                }
+            })]
         $InitialVariantWeight
     )
     Begin {

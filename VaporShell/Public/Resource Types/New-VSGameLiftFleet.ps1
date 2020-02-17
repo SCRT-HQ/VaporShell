@@ -19,6 +19,13 @@ function New-VSGameLiftFleet {
         PrimitiveType: String
         UpdateType: Immutable
 
+    .PARAMETER CertificateConfiguration
+        +  CreateFleet: https://docs.aws.amazon.com/gamelift/latest/apireference/API_CreateFleet.html in the *Amazon GameLift API Reference*
+
+        Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-gamelift-fleet.html#cfn-gamelift-fleet-certificateconfiguration
+        Type: CertificateConfiguration
+        UpdateType: Immutable
+
     .PARAMETER Description
         Human-readable description of a fleet.
 
@@ -49,6 +56,20 @@ function New-VSGameLiftFleet {
         PrimitiveType: String
         UpdateType: Immutable
 
+    .PARAMETER FleetType
+        +  CreateFleet: https://docs.aws.amazon.com/gamelift/latest/apireference/API_CreateFleet.html in the *Amazon GameLift API Reference*
+
+        Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-gamelift-fleet.html#cfn-gamelift-fleet-fleettype
+        PrimitiveType: String
+        UpdateType: Immutable
+
+    .PARAMETER InstanceRoleARN
+        +  CreateFleet: https://docs.aws.amazon.com/gamelift/latest/apireference/API_CreateFleet.html in the *Amazon GameLift API Reference*
+
+        Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-gamelift-fleet.html#cfn-gamelift-fleet-instancerolearn
+        PrimitiveType: String
+        UpdateType: Immutable
+
     .PARAMETER LogPaths
         This parameter is no longer used. Instead, to specify where Amazon GameLift should store log files once a server process shuts down, use the Amazon GameLift server API ProcessReady and specify one or more directory paths in logParameters. See more information in the Server API Reference: https://docs.aws.amazon.com/gamelift/latest/developerguide/gamelift-sdk-server-api-ref.html#gamelift-sdk-server-api-ref-dataypes-process.
 
@@ -65,6 +86,15 @@ function New-VSGameLiftFleet {
         PrimitiveType: Integer
         UpdateType: Mutable
 
+    .PARAMETER MetricGroups
+        +  CreateFleet: https://docs.aws.amazon.com/gamelift/latest/apireference/API_CreateFleet.html in the *Amazon GameLift API Reference*
+
+        Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-gamelift-fleet.html#cfn-gamelift-fleet-metricgroups
+        DuplicatesAllowed: False
+        PrimitiveItemType: String
+        Type: List
+        UpdateType: Mutable
+
     .PARAMETER MinSize
         Minimum value allowed for the fleet's instance count. Default if not set is 0.
 
@@ -78,6 +108,48 @@ function New-VSGameLiftFleet {
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-gamelift-fleet.html#cfn-gamelift-fleet-name
         PrimitiveType: String
         UpdateType: Mutable
+
+    .PARAMETER NewGameSessionProtectionPolicy
+        +  CreateFleet: https://docs.aws.amazon.com/gamelift/latest/apireference/API_CreateFleet.html in the *Amazon GameLift API Reference*
+
+        Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-gamelift-fleet.html#cfn-gamelift-fleet-newgamesessionprotectionpolicy
+        PrimitiveType: String
+        UpdateType: Mutable
+
+    .PARAMETER PeerVpcAwsAccountId
+        +  CreateFleet: https://docs.aws.amazon.com/gamelift/latest/apireference/API_CreateFleet.html in the *Amazon GameLift API Reference*
+
+        Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-gamelift-fleet.html#cfn-gamelift-fleet-peervpcawsaccountid
+        PrimitiveType: String
+        UpdateType: Immutable
+
+    .PARAMETER PeerVpcId
+        +  CreateFleet: https://docs.aws.amazon.com/gamelift/latest/apireference/API_CreateFleet.html in the *Amazon GameLift API Reference*
+
+        Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-gamelift-fleet.html#cfn-gamelift-fleet-peervpcid
+        PrimitiveType: String
+        UpdateType: Immutable
+
+    .PARAMETER ResourceCreationLimitPolicy
+        +  CreateFleet: https://docs.aws.amazon.com/gamelift/latest/apireference/API_CreateFleet.html in the *Amazon GameLift API Reference*
+
+        Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-gamelift-fleet.html#cfn-gamelift-fleet-resourcecreationlimitpolicy
+        Type: ResourceCreationLimitPolicy
+        UpdateType: Mutable
+
+    .PARAMETER RuntimeConfiguration
+        +  CreateFleet: https://docs.aws.amazon.com/gamelift/latest/apireference/API_CreateFleet.html in the *Amazon GameLift API Reference*
+
+        Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-gamelift-fleet.html#cfn-gamelift-fleet-runtimeconfiguration
+        Type: RuntimeConfiguration
+        UpdateType: Mutable
+
+    .PARAMETER ScriptId
+        +  CreateFleet: https://docs.aws.amazon.com/gamelift/latest/apireference/API_CreateFleet.html in the *Amazon GameLift API Reference*
+
+        Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-gamelift-fleet.html#cfn-gamelift-fleet-scriptid
+        PrimitiveType: String
+        UpdateType: Immutable
 
     .PARAMETER ServerLaunchParameters
         The parameters that are required to launch your game server. Specify these parameters as a string of command-line parameters, such as +sv_port 33435 +start_lobby.
@@ -138,7 +210,7 @@ function New-VSGameLiftFleet {
             })]
         [System.String]
         $LogicalId,
-        [parameter(Mandatory = $true)]
+        [parameter(Mandatory = $false)]
         [ValidateScript( {
                 $allowedTypes = "System.String","Vaporshell.Function","Vaporshell.Condition"
                 if ([string]$($_.PSTypeNames) -match "($(($allowedTypes|ForEach-Object{[RegEx]::Escape($_)}) -join '|'))") {
@@ -150,6 +222,8 @@ function New-VSGameLiftFleet {
             })]
         $BuildId,
         [parameter(Mandatory = $false)]
+        $CertificateConfiguration,
+        [parameter(Mandatory = $false)]
         [ValidateScript( {
                 $allowedTypes = "System.String","Vaporshell.Function","Vaporshell.Condition"
                 if ([string]$($_.PSTypeNames) -match "($(($allowedTypes|ForEach-Object{[RegEx]::Escape($_)}) -join '|'))") {
@@ -160,8 +234,16 @@ function New-VSGameLiftFleet {
                 }
             })]
         $Description,
-        [parameter(Mandatory = $true)]
-        [Int]
+        [parameter(Mandatory = $false)]
+        [ValidateScript( {
+                $allowedTypes = "System.Int32","Vaporshell.Function"
+                if ([string]$($_.PSTypeNames) -match "($(($allowedTypes|ForEach-Object{[RegEx]::Escape($_)}) -join '|'))") {
+                    $true
+                }
+                else {
+                    $PSCmdlet.ThrowTerminatingError((New-VSError -String "This parameter only accepts the following types: $($allowedTypes -join ", "). The current types of the value are: $($_.PSTypeNames -join ", ")."))
+                }
+            })]
         $DesiredEC2Instances,
         [parameter(Mandatory = $false)]
         [ValidateScript( {
@@ -186,12 +268,52 @@ function New-VSGameLiftFleet {
             })]
         $EC2InstanceType,
         [parameter(Mandatory = $false)]
+        [ValidateScript( {
+                $allowedTypes = "System.String","Vaporshell.Function","Vaporshell.Condition"
+                if ([string]$($_.PSTypeNames) -match "($(($allowedTypes|ForEach-Object{[RegEx]::Escape($_)}) -join '|'))") {
+                    $true
+                }
+                else {
+                    $PSCmdlet.ThrowTerminatingError((New-VSError -String "This parameter only accepts the following types: $($allowedTypes -join ", "). The current types of the value are: $($_.PSTypeNames -join ", ")."))
+                }
+            })]
+        $FleetType,
+        [parameter(Mandatory = $false)]
+        [ValidateScript( {
+                $allowedTypes = "System.String","Vaporshell.Function","Vaporshell.Condition"
+                if ([string]$($_.PSTypeNames) -match "($(($allowedTypes|ForEach-Object{[RegEx]::Escape($_)}) -join '|'))") {
+                    $true
+                }
+                else {
+                    $PSCmdlet.ThrowTerminatingError((New-VSError -String "This parameter only accepts the following types: $($allowedTypes -join ", "). The current types of the value are: $($_.PSTypeNames -join ", ")."))
+                }
+            })]
+        $InstanceRoleARN,
+        [parameter(Mandatory = $false)]
         $LogPaths,
         [parameter(Mandatory = $false)]
-        [Int]
+        [ValidateScript( {
+                $allowedTypes = "System.Int32","Vaporshell.Function"
+                if ([string]$($_.PSTypeNames) -match "($(($allowedTypes|ForEach-Object{[RegEx]::Escape($_)}) -join '|'))") {
+                    $true
+                }
+                else {
+                    $PSCmdlet.ThrowTerminatingError((New-VSError -String "This parameter only accepts the following types: $($allowedTypes -join ", "). The current types of the value are: $($_.PSTypeNames -join ", ")."))
+                }
+            })]
         $MaxSize,
         [parameter(Mandatory = $false)]
-        [Int]
+        $MetricGroups,
+        [parameter(Mandatory = $false)]
+        [ValidateScript( {
+                $allowedTypes = "System.Int32","Vaporshell.Function"
+                if ([string]$($_.PSTypeNames) -match "($(($allowedTypes|ForEach-Object{[RegEx]::Escape($_)}) -join '|'))") {
+                    $true
+                }
+                else {
+                    $PSCmdlet.ThrowTerminatingError((New-VSError -String "This parameter only accepts the following types: $($allowedTypes -join ", "). The current types of the value are: $($_.PSTypeNames -join ", ")."))
+                }
+            })]
         $MinSize,
         [parameter(Mandatory = $true)]
         [ValidateScript( {
@@ -214,8 +336,56 @@ function New-VSGameLiftFleet {
                     $PSCmdlet.ThrowTerminatingError((New-VSError -String "This parameter only accepts the following types: $($allowedTypes -join ", "). The current types of the value are: $($_.PSTypeNames -join ", ")."))
                 }
             })]
+        $NewGameSessionProtectionPolicy,
+        [parameter(Mandatory = $false)]
+        [ValidateScript( {
+                $allowedTypes = "System.String","Vaporshell.Function","Vaporshell.Condition"
+                if ([string]$($_.PSTypeNames) -match "($(($allowedTypes|ForEach-Object{[RegEx]::Escape($_)}) -join '|'))") {
+                    $true
+                }
+                else {
+                    $PSCmdlet.ThrowTerminatingError((New-VSError -String "This parameter only accepts the following types: $($allowedTypes -join ", "). The current types of the value are: $($_.PSTypeNames -join ", ")."))
+                }
+            })]
+        $PeerVpcAwsAccountId,
+        [parameter(Mandatory = $false)]
+        [ValidateScript( {
+                $allowedTypes = "System.String","Vaporshell.Function","Vaporshell.Condition"
+                if ([string]$($_.PSTypeNames) -match "($(($allowedTypes|ForEach-Object{[RegEx]::Escape($_)}) -join '|'))") {
+                    $true
+                }
+                else {
+                    $PSCmdlet.ThrowTerminatingError((New-VSError -String "This parameter only accepts the following types: $($allowedTypes -join ", "). The current types of the value are: $($_.PSTypeNames -join ", ")."))
+                }
+            })]
+        $PeerVpcId,
+        [parameter(Mandatory = $false)]
+        $ResourceCreationLimitPolicy,
+        [parameter(Mandatory = $false)]
+        $RuntimeConfiguration,
+        [parameter(Mandatory = $false)]
+        [ValidateScript( {
+                $allowedTypes = "System.String","Vaporshell.Function","Vaporshell.Condition"
+                if ([string]$($_.PSTypeNames) -match "($(($allowedTypes|ForEach-Object{[RegEx]::Escape($_)}) -join '|'))") {
+                    $true
+                }
+                else {
+                    $PSCmdlet.ThrowTerminatingError((New-VSError -String "This parameter only accepts the following types: $($allowedTypes -join ", "). The current types of the value are: $($_.PSTypeNames -join ", ")."))
+                }
+            })]
+        $ScriptId,
+        [parameter(Mandatory = $false)]
+        [ValidateScript( {
+                $allowedTypes = "System.String","Vaporshell.Function","Vaporshell.Condition"
+                if ([string]$($_.PSTypeNames) -match "($(($allowedTypes|ForEach-Object{[RegEx]::Escape($_)}) -join '|'))") {
+                    $true
+                }
+                else {
+                    $PSCmdlet.ThrowTerminatingError((New-VSError -String "This parameter only accepts the following types: $($allowedTypes -join ", "). The current types of the value are: $($_.PSTypeNames -join ", ")."))
+                }
+            })]
         $ServerLaunchParameters,
-        [parameter(Mandatory = $true)]
+        [parameter(Mandatory = $false)]
         [ValidateScript( {
                 $allowedTypes = "System.String","Vaporshell.Function","Vaporshell.Condition"
                 if ([string]$($_.PSTypeNames) -match "($(($allowedTypes|ForEach-Object{[RegEx]::Escape($_)}) -join '|'))") {
@@ -294,6 +464,12 @@ function New-VSGameLiftFleet {
                         $ResourceParams.Add("Properties",([PSCustomObject]@{}))
                     }
                     $ResourceParams["Properties"] | Add-Member -MemberType NoteProperty -Name LogPaths -Value @($LogPaths)
+                }
+                MetricGroups {
+                    if (!($ResourceParams["Properties"])) {
+                        $ResourceParams.Add("Properties",([PSCustomObject]@{}))
+                    }
+                    $ResourceParams["Properties"] | Add-Member -MemberType NoteProperty -Name MetricGroups -Value @($MetricGroups)
                 }
                 Default {
                     if (!($ResourceParams["Properties"])) {

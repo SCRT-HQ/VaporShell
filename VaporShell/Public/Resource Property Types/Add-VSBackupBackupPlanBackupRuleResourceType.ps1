@@ -31,6 +31,14 @@ Specifies an object containing properties used to schedule a task to back up a s
         PrimitiveType: Json
         UpdateType: Mutable
 
+    .PARAMETER CopyActions
+        *Update requires*: No interruption: https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt
+
+        Type: List
+        Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-backup-backupplan-backupruleresourcetype.html#cfn-backup-backupplan-backupruleresourcetype-copyactions
+        ItemType: CopyActionResourceType
+        UpdateType: Mutable
+
     .PARAMETER Lifecycle
         The lifecycle defines when a protected resource is transitioned to cold storage and when it expires. AWS Backup transitions and expires backups automatically according to the lifecycle that you define.
 
@@ -67,7 +75,15 @@ Specifies an object containing properties used to schedule a task to back up a s
     Param
     (
         [parameter(Mandatory = $false)]
-        [System.Double]
+        [ValidateScript( {
+                $allowedTypes = "System.Double","Vaporshell.Function"
+                if ([string]$($_.PSTypeNames) -match "($(($allowedTypes|ForEach-Object{[RegEx]::Escape($_)}) -join '|'))") {
+                    $true
+                }
+                else {
+                    $PSCmdlet.ThrowTerminatingError((New-VSError -String "This parameter only accepts the following types: $($allowedTypes -join ", "). The current types of the value are: $($_.PSTypeNames -join ", ")."))
+                }
+            })]
         $CompletionWindowMinutes,
         [parameter(Mandatory = $false)]
         [ValidateScript( {
@@ -92,6 +108,17 @@ Specifies an object containing properties used to schedule a task to back up a s
             })]
         $RecoveryPointTags,
         [parameter(Mandatory = $false)]
+        [ValidateScript( {
+                $allowedTypes = "Vaporshell.Resource.Backup.BackupPlan.CopyActionResourceType"
+                if ([string]$($_.PSTypeNames) -match "($(($allowedTypes|ForEach-Object{[RegEx]::Escape($_)}) -join '|'))") {
+                    $true
+                }
+                else {
+                    $PSCmdlet.ThrowTerminatingError((New-VSError -String "This parameter only accepts the following types: $($allowedTypes -join ", "). The current types of the value are: $($_.PSTypeNames -join ", ")."))
+                }
+            })]
+        $CopyActions,
+        [parameter(Mandatory = $false)]
         $Lifecycle,
         [parameter(Mandatory = $true)]
         [ValidateScript( {
@@ -105,7 +132,15 @@ Specifies an object containing properties used to schedule a task to back up a s
             })]
         $TargetBackupVault,
         [parameter(Mandatory = $false)]
-        [System.Double]
+        [ValidateScript( {
+                $allowedTypes = "System.Double","Vaporshell.Function"
+                if ([string]$($_.PSTypeNames) -match "($(($allowedTypes|ForEach-Object{[RegEx]::Escape($_)}) -join '|'))") {
+                    $true
+                }
+                else {
+                    $PSCmdlet.ThrowTerminatingError((New-VSError -String "This parameter only accepts the following types: $($allowedTypes -join ", "). The current types of the value are: $($_.PSTypeNames -join ", ")."))
+                }
+            })]
         $StartWindowMinutes,
         [parameter(Mandatory = $true)]
         [ValidateScript( {

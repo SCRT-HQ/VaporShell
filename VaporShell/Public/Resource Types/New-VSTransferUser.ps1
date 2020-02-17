@@ -36,6 +36,13 @@ For more information, see AssumeRole: https://docs.aws.amazon.com/STS/latest/API
         PrimitiveType: String
         UpdateType: Mutable
 
+    .PARAMETER HomeDirectoryType
+        An example UserName is sftp-user-1.
+
+        Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-transfer-user.html#cfn-transfer-user-homedirectorytype
+        PrimitiveType: String
+        UpdateType: Mutable
+
     .PARAMETER ServerId
         A system-assigned unique identifier for an SFTP server instance. This is the specific SFTP server that you added your user to.
 
@@ -49,6 +56,14 @@ For more information, see AssumeRole: https://docs.aws.amazon.com/STS/latest/API
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-transfer-user.html#cfn-transfer-user-username
         PrimitiveType: String
         UpdateType: Immutable
+
+    .PARAMETER HomeDirectoryMappings
+        An example UserName is sftp-user-1.
+
+        Type: List
+        Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-transfer-user.html#cfn-transfer-user-homedirectorymappings
+        ItemType: HomeDirectoryMapEntry
+        UpdateType: Mutable
 
     .PARAMETER SshPublicKeys
         This property contains the public key portion of the Secure Shell SSH keys stored for the described user.
@@ -144,6 +159,17 @@ For more information, see AssumeRole: https://docs.aws.amazon.com/STS/latest/API
                 }
             })]
         $HomeDirectory,
+        [parameter(Mandatory = $false)]
+        [ValidateScript( {
+                $allowedTypes = "System.String","Vaporshell.Function","Vaporshell.Condition"
+                if ([string]$($_.PSTypeNames) -match "($(($allowedTypes|ForEach-Object{[RegEx]::Escape($_)}) -join '|'))") {
+                    $true
+                }
+                else {
+                    $PSCmdlet.ThrowTerminatingError((New-VSError -String "This parameter only accepts the following types: $($allowedTypes -join ", "). The current types of the value are: $($_.PSTypeNames -join ", ")."))
+                }
+            })]
+        $HomeDirectoryType,
         [parameter(Mandatory = $true)]
         [ValidateScript( {
                 $allowedTypes = "System.String","Vaporshell.Function","Vaporshell.Condition"
@@ -166,6 +192,17 @@ For more information, see AssumeRole: https://docs.aws.amazon.com/STS/latest/API
                 }
             })]
         $UserName,
+        [parameter(Mandatory = $false)]
+        [ValidateScript( {
+                $allowedTypes = "Vaporshell.Resource.Transfer.User.HomeDirectoryMapEntry"
+                if ([string]$($_.PSTypeNames) -match "($(($allowedTypes|ForEach-Object{[RegEx]::Escape($_)}) -join '|'))") {
+                    $true
+                }
+                else {
+                    $PSCmdlet.ThrowTerminatingError((New-VSError -String "This parameter only accepts the following types: $($allowedTypes -join ", "). The current types of the value are: $($_.PSTypeNames -join ", ")."))
+                }
+            })]
+        $HomeDirectoryMappings,
         [parameter(Mandatory = $false)]
         [ValidateScript( {
                 $allowedTypes = "Vaporshell.Resource.Transfer.User.SshPublicKey"
@@ -244,6 +281,12 @@ For more information, see AssumeRole: https://docs.aws.amazon.com/STS/latest/API
                 }
                 Condition {
                     $ResourceParams.Add("Condition",$Condition)
+                }
+                HomeDirectoryMappings {
+                    if (!($ResourceParams["Properties"])) {
+                        $ResourceParams.Add("Properties",([PSCustomObject]@{}))
+                    }
+                    $ResourceParams["Properties"] | Add-Member -MemberType NoteProperty -Name HomeDirectoryMappings -Value @($HomeDirectoryMappings)
                 }
                 SshPublicKeys {
                     if (!($ResourceParams["Properties"])) {

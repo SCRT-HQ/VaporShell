@@ -24,6 +24,15 @@ EndpointConfiguration is a property of the AWS::ApiGateway::RestApi: https://doc
         Type: List
         UpdateType: Mutable
 
+    .PARAMETER VpcEndpointIds
+        + RestApi: https://docs.aws.amazon.com/apigateway/api-reference/resource/rest-api/ in the *Amazon API Gateway REST API Reference*
+
+        Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-apigateway-restapi-endpointconfiguration.html#cfn-apigateway-restapi-endpointconfiguration-vpcendpointids
+        DuplicatesAllowed: False
+        PrimitiveItemType: String
+        Type: List
+        UpdateType: Mutable
+
     .FUNCTIONALITY
         Vaporshell
     #>
@@ -32,7 +41,9 @@ EndpointConfiguration is a property of the AWS::ApiGateway::RestApi: https://doc
     Param
     (
         [parameter(Mandatory = $false)]
-        $Types
+        $Types,
+        [parameter(Mandatory = $false)]
+        $VpcEndpointIds
     )
     Begin {
         $obj = [PSCustomObject]@{}

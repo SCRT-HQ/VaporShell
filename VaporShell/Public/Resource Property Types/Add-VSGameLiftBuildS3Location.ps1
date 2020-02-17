@@ -24,6 +24,13 @@ Location in Amazon Simple Storage Service (Amazon S3 where build files can be st
         PrimitiveType: String
         UpdateType: Immutable
 
+    .PARAMETER ObjectVersion
+        +  S3Location: https://docs.aws.amazon.com/gamelift/latest/apireference/API_S3Location.html in the *Amazon GameLift API Reference*
+
+        Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-gamelift-build-storagelocation.html#cfn-gamelift-build-object-verison
+        PrimitiveType: String
+        UpdateType: Immutable
+
     .PARAMETER RoleArn
         Amazon Resource Name ARN: https://docs.aws.amazon.com/AmazonS3/latest/dev/s3-arn-format.html for an IAM role that allows Amazon GameLift to access the S3 bucket.
 
@@ -60,6 +67,17 @@ Location in Amazon Simple Storage Service (Amazon S3 where build files can be st
                 }
             })]
         $Key,
+        [parameter(Mandatory = $false)]
+        [ValidateScript( {
+                $allowedTypes = "System.String","Vaporshell.Function","Vaporshell.Condition"
+                if ([string]$($_.PSTypeNames) -match "($(($allowedTypes|ForEach-Object{[RegEx]::Escape($_)}) -join '|'))") {
+                    $true
+                }
+                else {
+                    $PSCmdlet.ThrowTerminatingError((New-VSError -String "This parameter only accepts the following types: $($allowedTypes -join ", "). The current types of the value are: $($_.PSTypeNames -join ", ")."))
+                }
+            })]
+        $ObjectVersion,
         [parameter(Mandatory = $true)]
         [ValidateScript( {
                 $allowedTypes = "System.String","Vaporshell.Function","Vaporshell.Condition"

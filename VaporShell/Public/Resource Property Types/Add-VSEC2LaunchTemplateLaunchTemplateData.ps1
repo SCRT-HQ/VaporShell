@@ -122,6 +122,13 @@ We recommend that you use PV-GRUB instead of kernels and RAM disks. For more inf
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-launchtemplate-launchtemplatedata.html#cfn-ec2-launchtemplate-launchtemplatedata-hibernationoptions
         UpdateType: Mutable
 
+    .PARAMETER MetadataOptions
+        +  RequestLaunchTemplateData: https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_RequestLaunchTemplateData.html in the *Amazon Elastic Compute Cloud API Reference*
+
+        Type: MetadataOptions
+        Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-launchtemplate-launchtemplatedata.html#cfn-ec2-launchtemplate-launchtemplatedata-metadataoptions
+        UpdateType: Mutable
+
     .PARAMETER LicenseSpecifications
         The license configurations.
 
@@ -253,7 +260,15 @@ We recommend that you use PV-GRUB instead of kernels and RAM disks. For more inf
             })]
         $KernelId,
         [parameter(Mandatory = $false)]
-        [System.Boolean]
+        [ValidateScript( {
+                $allowedTypes = "System.Boolean","Vaporshell.Function"
+                if ([string]$($_.PSTypeNames) -match "($(($allowedTypes|ForEach-Object{[RegEx]::Escape($_)}) -join '|'))") {
+                    $true
+                }
+                else {
+                    $PSCmdlet.ThrowTerminatingError((New-VSError -String "This parameter only accepts the following types: $($allowedTypes -join ", "). The current types of the value are: $($_.PSTypeNames -join ", ")."))
+                }
+            })]
         $EbsOptimized,
         [parameter(Mandatory = $false)]
         [ValidateScript( {
@@ -317,6 +332,8 @@ We recommend that you use PV-GRUB instead of kernels and RAM disks. For more inf
         [parameter(Mandatory = $false)]
         $HibernationOptions,
         [parameter(Mandatory = $false)]
+        $MetadataOptions,
+        [parameter(Mandatory = $false)]
         [ValidateScript( {
                 $allowedTypes = "Vaporshell.Resource.EC2.LaunchTemplate.LicenseSpecification"
                 if ([string]$($_.PSTypeNames) -match "($(($allowedTypes|ForEach-Object{[RegEx]::Escape($_)}) -join '|'))") {
@@ -354,7 +371,15 @@ We recommend that you use PV-GRUB instead of kernels and RAM disks. For more inf
             })]
         $KeyName,
         [parameter(Mandatory = $false)]
-        [System.Boolean]
+        [ValidateScript( {
+                $allowedTypes = "System.Boolean","Vaporshell.Function"
+                if ([string]$($_.PSTypeNames) -match "($(($allowedTypes|ForEach-Object{[RegEx]::Escape($_)}) -join '|'))") {
+                    $true
+                }
+                else {
+                    $PSCmdlet.ThrowTerminatingError((New-VSError -String "This parameter only accepts the following types: $($allowedTypes -join ", "). The current types of the value are: $($_.PSTypeNames -join ", ")."))
+                }
+            })]
         $DisableApiTermination,
         [parameter(Mandatory = $false)]
         $InstanceMarketOptions,

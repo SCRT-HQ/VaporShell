@@ -19,6 +19,11 @@ function New-VSConfigRemediationConfiguration {
         PrimitiveType: String
         UpdateType: Mutable
 
+    .PARAMETER ExecutionControls
+        Type: ExecutionControls
+        Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-config-remediationconfiguration.html#cfn-config-remediationconfiguration-executioncontrols
+        UpdateType: Mutable
+
     .PARAMETER Parameters
         An object of the RemediationParameterValue.
 The type is a map of strings to RemediationParameterValue.
@@ -48,11 +53,26 @@ The type is a map of strings to RemediationParameterValue.
         PrimitiveType: String
         UpdateType: Mutable
 
+    .PARAMETER RetryAttemptSeconds
+        Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-config-remediationconfiguration.html#cfn-config-remediationconfiguration-retryattemptseconds
+        PrimitiveType: Integer
+        UpdateType: Mutable
+
+    .PARAMETER MaximumAutomaticAttempts
+        Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-config-remediationconfiguration.html#cfn-config-remediationconfiguration-maximumautomaticattempts
+        PrimitiveType: Integer
+        UpdateType: Mutable
+
     .PARAMETER TargetId
         Target ID is the name of the public document.
 
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-config-remediationconfiguration.html#cfn-config-remediationconfiguration-targetid
         PrimitiveType: String
+        UpdateType: Mutable
+
+    .PARAMETER Automatic
+        Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-config-remediationconfiguration.html#cfn-config-remediationconfiguration-automatic
+        PrimitiveType: Boolean
         UpdateType: Mutable
 
     .PARAMETER DeletionPolicy
@@ -112,6 +132,8 @@ The type is a map of strings to RemediationParameterValue.
             })]
         $TargetVersion,
         [parameter(Mandatory = $false)]
+        $ExecutionControls,
+        [parameter(Mandatory = $false)]
         [ValidateScript( {
                 $allowedTypes = "System.String","System.Collections.Hashtable","System.Management.Automation.PSCustomObject"
                 if ([string]$($_.PSTypeNames) -match "($(($allowedTypes|ForEach-Object{[RegEx]::Escape($_)}) -join '|'))") {
@@ -155,6 +177,28 @@ The type is a map of strings to RemediationParameterValue.
                 }
             })]
         $ResourceType,
+        [parameter(Mandatory = $false)]
+        [ValidateScript( {
+                $allowedTypes = "System.Int32","Vaporshell.Function"
+                if ([string]$($_.PSTypeNames) -match "($(($allowedTypes|ForEach-Object{[RegEx]::Escape($_)}) -join '|'))") {
+                    $true
+                }
+                else {
+                    $PSCmdlet.ThrowTerminatingError((New-VSError -String "This parameter only accepts the following types: $($allowedTypes -join ", "). The current types of the value are: $($_.PSTypeNames -join ", ")."))
+                }
+            })]
+        $RetryAttemptSeconds,
+        [parameter(Mandatory = $false)]
+        [ValidateScript( {
+                $allowedTypes = "System.Int32","Vaporshell.Function"
+                if ([string]$($_.PSTypeNames) -match "($(($allowedTypes|ForEach-Object{[RegEx]::Escape($_)}) -join '|'))") {
+                    $true
+                }
+                else {
+                    $PSCmdlet.ThrowTerminatingError((New-VSError -String "This parameter only accepts the following types: $($allowedTypes -join ", "). The current types of the value are: $($_.PSTypeNames -join ", ")."))
+                }
+            })]
+        $MaximumAutomaticAttempts,
         [parameter(Mandatory = $true)]
         [ValidateScript( {
                 $allowedTypes = "System.String","Vaporshell.Function","Vaporshell.Condition"
@@ -166,6 +210,17 @@ The type is a map of strings to RemediationParameterValue.
                 }
             })]
         $TargetId,
+        [parameter(Mandatory = $false)]
+        [ValidateScript( {
+                $allowedTypes = "System.Boolean","Vaporshell.Function"
+                if ([string]$($_.PSTypeNames) -match "($(($allowedTypes|ForEach-Object{[RegEx]::Escape($_)}) -join '|'))") {
+                    $true
+                }
+                else {
+                    $PSCmdlet.ThrowTerminatingError((New-VSError -String "This parameter only accepts the following types: $($allowedTypes -join ", "). The current types of the value are: $($_.PSTypeNames -join ", ")."))
+                }
+            })]
+        $Automatic,
         [ValidateSet("Delete","Retain","Snapshot")]
         [System.String]
         $DeletionPolicy,

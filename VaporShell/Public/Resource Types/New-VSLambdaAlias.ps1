@@ -47,6 +47,11 @@ The length constraint applies only to the full ARN. If you specify only the func
         PrimitiveType: String
         UpdateType: Immutable
 
+    .PARAMETER ProvisionedConcurrencyConfig
+        Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-lambda-alias.html#cfn-lambda-alias-provisionedconcurrencyconfig
+        Type: ProvisionedConcurrencyConfiguration
+        UpdateType: Mutable
+
     .PARAMETER RoutingConfig
         The routing configuration: https://docs.aws.amazon.com/lambda/latest/dg/lambda-traffic-shifting-using-aliases.html of the alias.
 
@@ -143,6 +148,8 @@ The length constraint applies only to the full ARN. If you specify only the func
                 }
             })]
         $Name,
+        [parameter(Mandatory = $false)]
+        $ProvisionedConcurrencyConfig,
         [parameter(Mandatory = $false)]
         $RoutingConfig,
         [ValidateSet("Delete","Retain","Snapshot")]

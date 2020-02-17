@@ -225,7 +225,15 @@ If you omit this parameter, the default behavior of missing is used.
         [System.String]
         $LogicalId,
         [parameter(Mandatory = $false)]
-        [System.Boolean]
+        [ValidateScript( {
+                $allowedTypes = "System.Boolean","Vaporshell.Function"
+                if ([string]$($_.PSTypeNames) -match "($(($allowedTypes|ForEach-Object{[RegEx]::Escape($_)}) -join '|'))") {
+                    $true
+                }
+                else {
+                    $PSCmdlet.ThrowTerminatingError((New-VSError -String "This parameter only accepts the following types: $($allowedTypes -join ", "). The current types of the value are: $($_.PSTypeNames -join ", ")."))
+                }
+            })]
         $ActionsEnabled,
         [parameter(Mandatory = $false)]
         $AlarmActions,
@@ -263,7 +271,15 @@ If you omit this parameter, the default behavior of missing is used.
             })]
         $ComparisonOperator,
         [parameter(Mandatory = $false)]
-        [Int]
+        [ValidateScript( {
+                $allowedTypes = "System.Int32","Vaporshell.Function"
+                if ([string]$($_.PSTypeNames) -match "($(($allowedTypes|ForEach-Object{[RegEx]::Escape($_)}) -join '|'))") {
+                    $true
+                }
+                else {
+                    $PSCmdlet.ThrowTerminatingError((New-VSError -String "This parameter only accepts the following types: $($allowedTypes -join ", "). The current types of the value are: $($_.PSTypeNames -join ", ")."))
+                }
+            })]
         $DatapointsToAlarm,
         [parameter(Mandatory = $false)]
         [ValidateScript( {
@@ -288,7 +304,15 @@ If you omit this parameter, the default behavior of missing is used.
             })]
         $EvaluateLowSampleCountPercentile,
         [parameter(Mandatory = $true)]
-        [Int]
+        [ValidateScript( {
+                $allowedTypes = "System.Int32","Vaporshell.Function"
+                if ([string]$($_.PSTypeNames) -match "($(($allowedTypes|ForEach-Object{[RegEx]::Escape($_)}) -join '|'))") {
+                    $true
+                }
+                else {
+                    $PSCmdlet.ThrowTerminatingError((New-VSError -String "This parameter only accepts the following types: $($allowedTypes -join ", "). The current types of the value are: $($_.PSTypeNames -join ", ")."))
+                }
+            })]
         $EvaluationPeriods,
         [parameter(Mandatory = $false)]
         [ValidateScript( {
@@ -339,7 +363,15 @@ If you omit this parameter, the default behavior of missing is used.
         [parameter(Mandatory = $false)]
         $OKActions,
         [parameter(Mandatory = $false)]
-        [Int]
+        [ValidateScript( {
+                $allowedTypes = "System.Int32","Vaporshell.Function"
+                if ([string]$($_.PSTypeNames) -match "($(($allowedTypes|ForEach-Object{[RegEx]::Escape($_)}) -join '|'))") {
+                    $true
+                }
+                else {
+                    $PSCmdlet.ThrowTerminatingError((New-VSError -String "This parameter only accepts the following types: $($allowedTypes -join ", "). The current types of the value are: $($_.PSTypeNames -join ", ")."))
+                }
+            })]
         $Period,
         [parameter(Mandatory = $false)]
         [ValidateScript( {
@@ -353,7 +385,15 @@ If you omit this parameter, the default behavior of missing is used.
             })]
         $Statistic,
         [parameter(Mandatory = $false)]
-        [System.Double]
+        [ValidateScript( {
+                $allowedTypes = "System.Double","Vaporshell.Function"
+                if ([string]$($_.PSTypeNames) -match "($(($allowedTypes|ForEach-Object{[RegEx]::Escape($_)}) -join '|'))") {
+                    $true
+                }
+                else {
+                    $PSCmdlet.ThrowTerminatingError((New-VSError -String "This parameter only accepts the following types: $($allowedTypes -join ", "). The current types of the value are: $($_.PSTypeNames -join ", ")."))
+                }
+            })]
         $Threshold,
         [parameter(Mandatory = $false)]
         [ValidateScript( {

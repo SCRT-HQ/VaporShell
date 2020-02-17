@@ -24,7 +24,7 @@ function New-VSMSKCluster {
 
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-msk-cluster.html#cfn-msk-cluster-enhancedmonitoring
         PrimitiveType: String
-        UpdateType: Immutable
+        UpdateType: Mutable
 
     .PARAMETER KafkaVersion
         The version of Apache Kafka.
@@ -38,7 +38,7 @@ function New-VSMSKCluster {
 
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-msk-cluster.html#cfn-msk-cluster-numberofbrokernodes
         PrimitiveType: Integer
-        UpdateType: Immutable
+        UpdateType: Mutable
 
     .PARAMETER EncryptionInfo
         Includes all encryption-related information.
@@ -46,6 +46,11 @@ function New-VSMSKCluster {
         Type: EncryptionInfo
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-msk-cluster.html#cfn-msk-cluster-encryptioninfo
         UpdateType: Immutable
+
+    .PARAMETER OpenMonitoring
+        Type: OpenMonitoring
+        Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-msk-cluster.html#cfn-msk-cluster-openmonitoring
+        UpdateType: Mutable
 
     .PARAMETER ClusterName
         The name of the cluster.
@@ -146,10 +151,20 @@ For more information, see Tag: https://docs.aws.amazon.com/AWSCloudFormation/lat
             })]
         $KafkaVersion,
         [parameter(Mandatory = $true)]
-        [Int]
+        [ValidateScript( {
+                $allowedTypes = "System.Int32","Vaporshell.Function"
+                if ([string]$($_.PSTypeNames) -match "($(($allowedTypes|ForEach-Object{[RegEx]::Escape($_)}) -join '|'))") {
+                    $true
+                }
+                else {
+                    $PSCmdlet.ThrowTerminatingError((New-VSError -String "This parameter only accepts the following types: $($allowedTypes -join ", "). The current types of the value are: $($_.PSTypeNames -join ", ")."))
+                }
+            })]
         $NumberOfBrokerNodes,
         [parameter(Mandatory = $false)]
         $EncryptionInfo,
+        [parameter(Mandatory = $false)]
+        $OpenMonitoring,
         [parameter(Mandatory = $true)]
         [ValidateScript( {
                 $allowedTypes = "System.String","Vaporshell.Function","Vaporshell.Condition"

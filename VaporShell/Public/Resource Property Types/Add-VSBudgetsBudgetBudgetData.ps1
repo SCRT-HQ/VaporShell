@@ -39,6 +39,13 @@ After the end date, AWS deletes the budget and all associated notifications and 
         PrimitiveType: String
         UpdateType: Mutable
 
+    .PARAMETER PlannedBudgetLimits
+        +  Budget: https://docs.aws.amazon.com/aws-cost-management/latest/APIReference/API_budgets_budget.html in the *AWS Cost Explorer Service Cost Management APIs*
+
+        Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-budgets-budget-budgetdata.html#cfn-budgets-budget-budgetdata-plannedbudgetlimits
+        PrimitiveType: Json
+        UpdateType: Immutable
+
     .PARAMETER CostFilters
         The cost filters, such as service or tag, that are applied to a budget.
 AWS Budgets supports the following services as a filter for RI budgets:
@@ -106,6 +113,17 @@ USAGE, RI_UTILIZATION, and RI_COVERAGE budgets do not have CostTypes.
                     $PSCmdlet.ThrowTerminatingError((New-VSError -String "This parameter only accepts the following types: $($allowedTypes -join ", "). The current types of the value are: $($_.PSTypeNames -join ", ")."))
                 }
             })]
+        $PlannedBudgetLimits,
+        [parameter(Mandatory = $false)]
+        [ValidateScript( {
+                $allowedTypes = "System.String","System.Collections.Hashtable","System.Management.Automation.PSCustomObject"
+                if ([string]$($_.PSTypeNames) -match "($(($allowedTypes|ForEach-Object{[RegEx]::Escape($_)}) -join '|'))") {
+                    $true
+                }
+                else {
+                    $PSCmdlet.ThrowTerminatingError((New-VSError -String "This parameter only accepts the following types: $($allowedTypes -join ", "). The current types of the value are: $($_.PSTypeNames -join ", ")."))
+                }
+            })]
         $CostFilters,
         [parameter(Mandatory = $false)]
         [ValidateScript( {
@@ -139,6 +157,20 @@ USAGE, RI_UTILIZATION, and RI_COVERAGE budgets do not have CostTypes.
     Process {
         foreach ($key in $PSBoundParameters.Keys | Where-Object {$commonParams -notcontains $_}) {
             switch ($key) {
+                PlannedBudgetLimits {
+                    if (($PSBoundParameters[$key]).PSObject.TypeNames -contains "System.String"){
+                        try {
+                            $JSONObject = (ConvertFrom-Json -InputObject $PSBoundParameters[$key] -ErrorAction Stop)
+                        }
+                        catch {
+                            $PSCmdlet.ThrowTerminatingError((New-VSError -String "Unable to convert parameter '$key' string value to PSObject! Please use a JSON string OR provide a Hashtable or PSCustomObject instead!"))
+                        }
+                    }
+                    else {
+                        $JSONObject = ([PSCustomObject]$PSBoundParameters[$key])
+                    }
+                    $obj | Add-Member -MemberType NoteProperty -Name $key -Value $JSONObject
+                }
                 CostFilters {
                     if (($PSBoundParameters[$key]).PSObject.TypeNames -contains "System.String"){
                         try {

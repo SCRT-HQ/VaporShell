@@ -55,7 +55,15 @@ An instance of a variable to be passed to the "containerAction" execution. Each 
         [parameter(Mandatory = $false)]
         $DatasetContentVersionValue,
         [parameter(Mandatory = $false)]
-        [System.Double]
+        [ValidateScript( {
+                $allowedTypes = "System.Double","Vaporshell.Function"
+                if ([string]$($_.PSTypeNames) -match "($(($allowedTypes|ForEach-Object{[RegEx]::Escape($_)}) -join '|'))") {
+                    $true
+                }
+                else {
+                    $PSCmdlet.ThrowTerminatingError((New-VSError -String "This parameter only accepts the following types: $($allowedTypes -join ", "). The current types of the value are: $($_.PSTypeNames -join ", ")."))
+                }
+            })]
         $DoubleValue,
         [parameter(Mandatory = $false)]
         $OutputFileUriValue,

@@ -63,6 +63,20 @@ function New-VSAppSyncResolver {
         PrimitiveType: String
         UpdateType: Mutable
 
+    .PARAMETER CachingConfig
+        +  CreateResolver: https://docs.aws.amazon.com/appsync/latest/APIReference/API_CreateResolver.html operation in the *AWS AppSync API Reference*.
+
+        Type: CachingConfig
+        Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-appsync-resolver.html#cfn-appsync-resolver-cachingconfig
+        UpdateType: Mutable
+
+    .PARAMETER SyncConfig
+        +  CreateResolver: https://docs.aws.amazon.com/appsync/latest/APIReference/API_CreateResolver.html operation in the *AWS AppSync API Reference*.
+
+        Type: SyncConfig
+        Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-appsync-resolver.html#cfn-appsync-resolver-syncconfig
+        UpdateType: Mutable
+
     .PARAMETER RequestMappingTemplateS3Location
         The location of a request mapping template in an Amazon S3 bucket. Use this if you want to provision with a template file in Amazon S3 rather than embedding it in your CloudFormation template.
 
@@ -197,6 +211,10 @@ function New-VSAppSyncResolver {
                 }
             })]
         $Kind,
+        [parameter(Mandatory = $false)]
+        $CachingConfig,
+        [parameter(Mandatory = $false)]
+        $SyncConfig,
         [parameter(Mandatory = $false)]
         [ValidateScript( {
                 $allowedTypes = "System.String","Vaporshell.Function","Vaporshell.Condition"

@@ -140,7 +140,15 @@ Updates are not supported for the BundleId, RootVolumeEncryptionEnabled, UserVol
             })]
         $DirectoryId,
         [parameter(Mandatory = $false)]
-        [System.Boolean]
+        [ValidateScript( {
+                $allowedTypes = "System.Boolean","Vaporshell.Function"
+                if ([string]$($_.PSTypeNames) -match "($(($allowedTypes|ForEach-Object{[RegEx]::Escape($_)}) -join '|'))") {
+                    $true
+                }
+                else {
+                    $PSCmdlet.ThrowTerminatingError((New-VSError -String "This parameter only accepts the following types: $($allowedTypes -join ", "). The current types of the value are: $($_.PSTypeNames -join ", ")."))
+                }
+            })]
         $RootVolumeEncryptionEnabled,
         [parameter(Mandatory = $false)]
         [ValidateScript( {
@@ -165,7 +173,15 @@ Updates are not supported for the BundleId, RootVolumeEncryptionEnabled, UserVol
             })]
         $UserName,
         [parameter(Mandatory = $false)]
-        [System.Boolean]
+        [ValidateScript( {
+                $allowedTypes = "System.Boolean","Vaporshell.Function"
+                if ([string]$($_.PSTypeNames) -match "($(($allowedTypes|ForEach-Object{[RegEx]::Escape($_)}) -join '|'))") {
+                    $true
+                }
+                else {
+                    $PSCmdlet.ThrowTerminatingError((New-VSError -String "This parameter only accepts the following types: $($allowedTypes -join ", "). The current types of the value are: $($_.PSTypeNames -join ", ")."))
+                }
+            })]
         $UserVolumeEncryptionEnabled,
         [parameter(Mandatory = $false)]
         [ValidateScript( {

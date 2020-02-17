@@ -23,6 +23,11 @@ Most services in AWS treat : or / as the same character in Amazon Resource Names
         PrimitiveType: String
         UpdateType: Mutable
 
+    .PARAMETER EventBusName
+        Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-events-rule.html#cfn-events-rule-eventbusname
+        PrimitiveType: String
+        UpdateType: Immutable
+
     .PARAMETER EventPattern
         Describes which events CloudWatch Events routes to the specified target. For more information, see Event Patterns in CloudWatch Events: https://docs.aws.amazon.com/AmazonCloudWatch/latest/events/CloudWatchEventsandEventPatterns.html in the *Amazon CloudWatch Events User Guide*.
 
@@ -125,6 +130,17 @@ If you're setting the event bus of another account as the target and that accoun
                 }
             })]
         $Description,
+        [parameter(Mandatory = $false)]
+        [ValidateScript( {
+                $allowedTypes = "System.String","Vaporshell.Function","Vaporshell.Condition"
+                if ([string]$($_.PSTypeNames) -match "($(($allowedTypes|ForEach-Object{[RegEx]::Escape($_)}) -join '|'))") {
+                    $true
+                }
+                else {
+                    $PSCmdlet.ThrowTerminatingError((New-VSError -String "This parameter only accepts the following types: $($allowedTypes -join ", "). The current types of the value are: $($_.PSTypeNames -join ", ")."))
+                }
+            })]
+        $EventBusName,
         [parameter(Mandatory = $false)]
         [ValidateScript( {
                 $allowedTypes = "System.String","System.Collections.Hashtable","System.Management.Automation.PSCustomObject"

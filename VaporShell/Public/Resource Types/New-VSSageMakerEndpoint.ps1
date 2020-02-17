@@ -12,12 +12,23 @@ function New-VSSageMakerEndpoint {
     .PARAMETER LogicalId
         The logical ID must be alphanumeric (A-Za-z0-9) and unique within the template. Use the logical name to reference the resource in other parts of the template. For example, if you want to map an Amazon Elastic Block Store volume to an Amazon EC2 instance, you reference the logical IDs to associate the block stores with the instance.
 
+    .PARAMETER RetainAllVariantProperties
+        Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-sagemaker-endpoint.html#cfn-sagemaker-endpoint-retainallvariantproperties
+        PrimitiveType: Boolean
+        UpdateType: Mutable
+
     .PARAMETER EndpointName
         The name of the endpoint. The name must be unique within an AWS Region in your AWS account.
 
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-sagemaker-endpoint.html#cfn-sagemaker-endpoint-endpointname
         PrimitiveType: String
         UpdateType: Immutable
+
+    .PARAMETER ExcludeRetainedVariantProperties
+        Type: List
+        Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-sagemaker-endpoint.html#cfn-sagemaker-endpoint-excluderetainedvariantproperties
+        ItemType: VariantProperty
+        UpdateType: Mutable
 
     .PARAMETER EndpointConfigName
         The name of the AWS::SageMaker::EndpointConfig: https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-sagemaker-endpointconfig.html resource that specifies the configuration for the endpoint. For more information, see CreateEndpointConfig: https://docs.aws.amazon.com/sagemaker/latest/dg/API_CreateEndpointConfig.html.
@@ -82,6 +93,17 @@ For more information, see Resource Tag: https://docs.aws.amazon.com/AWSCloudForm
         $LogicalId,
         [parameter(Mandatory = $false)]
         [ValidateScript( {
+                $allowedTypes = "System.Boolean","Vaporshell.Function"
+                if ([string]$($_.PSTypeNames) -match "($(($allowedTypes|ForEach-Object{[RegEx]::Escape($_)}) -join '|'))") {
+                    $true
+                }
+                else {
+                    $PSCmdlet.ThrowTerminatingError((New-VSError -String "This parameter only accepts the following types: $($allowedTypes -join ", "). The current types of the value are: $($_.PSTypeNames -join ", ")."))
+                }
+            })]
+        $RetainAllVariantProperties,
+        [parameter(Mandatory = $false)]
+        [ValidateScript( {
                 $allowedTypes = "System.String","Vaporshell.Function","Vaporshell.Condition"
                 if ([string]$($_.PSTypeNames) -match "($(($allowedTypes|ForEach-Object{[RegEx]::Escape($_)}) -join '|'))") {
                     $true
@@ -91,6 +113,17 @@ For more information, see Resource Tag: https://docs.aws.amazon.com/AWSCloudForm
                 }
             })]
         $EndpointName,
+        [parameter(Mandatory = $false)]
+        [ValidateScript( {
+                $allowedTypes = "Vaporshell.Resource.SageMaker.Endpoint.VariantProperty"
+                if ([string]$($_.PSTypeNames) -match "($(($allowedTypes|ForEach-Object{[RegEx]::Escape($_)}) -join '|'))") {
+                    $true
+                }
+                else {
+                    $PSCmdlet.ThrowTerminatingError((New-VSError -String "This parameter only accepts the following types: $($allowedTypes -join ", "). The current types of the value are: $($_.PSTypeNames -join ", ")."))
+                }
+            })]
+        $ExcludeRetainedVariantProperties,
         [parameter(Mandatory = $true)]
         [ValidateScript( {
                 $allowedTypes = "System.String","Vaporshell.Function","Vaporshell.Condition"
@@ -169,6 +202,12 @@ For more information, see Resource Tag: https://docs.aws.amazon.com/AWSCloudForm
                 }
                 Condition {
                     $ResourceParams.Add("Condition",$Condition)
+                }
+                ExcludeRetainedVariantProperties {
+                    if (!($ResourceParams["Properties"])) {
+                        $ResourceParams.Add("Properties",([PSCustomObject]@{}))
+                    }
+                    $ResourceParams["Properties"] | Add-Member -MemberType NoteProperty -Name ExcludeRetainedVariantProperties -Value @($ExcludeRetainedVariantProperties)
                 }
                 Tags {
                     if (!($ResourceParams["Properties"])) {

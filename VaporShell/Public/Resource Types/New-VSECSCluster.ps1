@@ -19,6 +19,13 @@ function New-VSECSCluster {
         PrimitiveType: String
         UpdateType: Immutable
 
+    .PARAMETER ClusterSettings
+        Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ecs-cluster.html#cfn-ecs-cluster-clustersettings
+        DuplicatesAllowed: False
+        ItemType: ClusterSetting
+        Type: List
+        UpdateType: Mutable
+
     .PARAMETER Tags
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ecs-cluster.html#cfn-ecs-cluster-tags
         DuplicatesAllowed: True
@@ -82,6 +89,17 @@ function New-VSECSCluster {
                 }
             })]
         $ClusterName,
+        [parameter(Mandatory = $false)]
+        [ValidateScript( {
+                $allowedTypes = "Vaporshell.Resource.ECS.Cluster.ClusterSetting"
+                if ([string]$($_.PSTypeNames) -match "($(($allowedTypes|ForEach-Object{[RegEx]::Escape($_)}) -join '|'))") {
+                    $true
+                }
+                else {
+                    $PSCmdlet.ThrowTerminatingError((New-VSError -String "This parameter only accepts the following types: $($allowedTypes -join ", "). The current types of the value are: $($_.PSTypeNames -join ", ")."))
+                }
+            })]
+        $ClusterSettings,
         [parameter(Mandatory = $false)]
         [ValidateScript( {
                 $allowedTypes = "Vaporshell.Resource.Tag","System.Management.Automation.PSCustomObject"
@@ -149,6 +167,12 @@ function New-VSECSCluster {
                 }
                 Condition {
                     $ResourceParams.Add("Condition",$Condition)
+                }
+                ClusterSettings {
+                    if (!($ResourceParams["Properties"])) {
+                        $ResourceParams.Add("Properties",([PSCustomObject]@{}))
+                    }
+                    $ResourceParams["Properties"] | Add-Member -MemberType NoteProperty -Name ClusterSettings -Value @($ClusterSettings)
                 }
                 Tags {
                     if (!($ResourceParams["Properties"])) {

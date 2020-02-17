@@ -14,12 +14,26 @@ For more information, see Configuring Inventory Collection: https://docs.aws.ama
     .PARAMETER LogicalId
         The logical ID must be alphanumeric (A-Za-z0-9) and unique within the template. Use the logical name to reference the resource in other parts of the template. For example, if you want to map an Amazon Elastic Block Store volume to an Amazon EC2 instance, you reference the logical IDs to associate the block stores with the instance.
 
+    .PARAMETER S3Destination
+        +  Configuring Inventory Collection: https://docs.aws.amazon.com/systems-manager/latest/userguide/sysman-inventory-configuring.html
+
+        Type: S3Destination
+        Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ssm-resourcedatasync.html#cfn-ssm-resourcedatasync-s3destination
+        UpdateType: Immutable
+
     .PARAMETER KMSKeyArn
         The ARN of an encryption key for a destination in Amazon S3. You can use a KMS key to encrypt inventory data in Amazon S3. You must specify a key that exist in the same region as the destination Amazon S3 bucket.
 
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ssm-resourcedatasync.html#cfn-ssm-resourcedatasync-kmskeyarn
         PrimitiveType: String
         UpdateType: Immutable
+
+    .PARAMETER SyncSource
+        +  Configuring Inventory Collection: https://docs.aws.amazon.com/systems-manager/latest/userguide/sysman-inventory-configuring.html
+
+        Type: SyncSource
+        Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ssm-resourcedatasync.html#cfn-ssm-resourcedatasync-syncsource
+        UpdateType: Mutable
 
     .PARAMETER BucketName
         The name of the Amazon S3 bucket where the aggregated data is stored.
@@ -46,6 +60,13 @@ For more information, see Configuring Inventory Collection: https://docs.aws.ama
         A name for the Resource Data Sync.
 
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ssm-resourcedatasync.html#cfn-ssm-resourcedatasync-syncname
+        PrimitiveType: String
+        UpdateType: Immutable
+
+    .PARAMETER SyncType
+        +  Configuring Inventory Collection: https://docs.aws.amazon.com/systems-manager/latest/userguide/sysman-inventory-configuring.html
+
+        Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ssm-resourcedatasync.html#cfn-ssm-resourcedatasync-synctype
         PrimitiveType: String
         UpdateType: Immutable
 
@@ -102,6 +123,8 @@ For more information, see Configuring Inventory Collection: https://docs.aws.ama
         [System.String]
         $LogicalId,
         [parameter(Mandatory = $false)]
+        $S3Destination,
+        [parameter(Mandatory = $false)]
         [ValidateScript( {
                 $allowedTypes = "System.String","Vaporshell.Function","Vaporshell.Condition"
                 if ([string]$($_.PSTypeNames) -match "($(($allowedTypes|ForEach-Object{[RegEx]::Escape($_)}) -join '|'))") {
@@ -112,7 +135,9 @@ For more information, see Configuring Inventory Collection: https://docs.aws.ama
                 }
             })]
         $KMSKeyArn,
-        [parameter(Mandatory = $true)]
+        [parameter(Mandatory = $false)]
+        $SyncSource,
+        [parameter(Mandatory = $false)]
         [ValidateScript( {
                 $allowedTypes = "System.String","Vaporshell.Function","Vaporshell.Condition"
                 if ([string]$($_.PSTypeNames) -match "($(($allowedTypes|ForEach-Object{[RegEx]::Escape($_)}) -join '|'))") {
@@ -123,7 +148,7 @@ For more information, see Configuring Inventory Collection: https://docs.aws.ama
                 }
             })]
         $BucketName,
-        [parameter(Mandatory = $true)]
+        [parameter(Mandatory = $false)]
         [ValidateScript( {
                 $allowedTypes = "System.String","Vaporshell.Function","Vaporshell.Condition"
                 if ([string]$($_.PSTypeNames) -match "($(($allowedTypes|ForEach-Object{[RegEx]::Escape($_)}) -join '|'))") {
@@ -134,7 +159,7 @@ For more information, see Configuring Inventory Collection: https://docs.aws.ama
                 }
             })]
         $BucketRegion,
-        [parameter(Mandatory = $true)]
+        [parameter(Mandatory = $false)]
         [ValidateScript( {
                 $allowedTypes = "System.String","Vaporshell.Function","Vaporshell.Condition"
                 if ([string]$($_.PSTypeNames) -match "($(($allowedTypes|ForEach-Object{[RegEx]::Escape($_)}) -join '|'))") {
@@ -156,6 +181,17 @@ For more information, see Configuring Inventory Collection: https://docs.aws.ama
                 }
             })]
         $SyncName,
+        [parameter(Mandatory = $false)]
+        [ValidateScript( {
+                $allowedTypes = "System.String","Vaporshell.Function","Vaporshell.Condition"
+                if ([string]$($_.PSTypeNames) -match "($(($allowedTypes|ForEach-Object{[RegEx]::Escape($_)}) -join '|'))") {
+                    $true
+                }
+                else {
+                    $PSCmdlet.ThrowTerminatingError((New-VSError -String "This parameter only accepts the following types: $($allowedTypes -join ", "). The current types of the value are: $($_.PSTypeNames -join ", ")."))
+                }
+            })]
+        $SyncType,
         [parameter(Mandatory = $false)]
         [ValidateScript( {
                 $allowedTypes = "System.String","Vaporshell.Function","Vaporshell.Condition"

@@ -26,6 +26,13 @@ function New-VSSSMDocument {
         PrimitiveType: String
         UpdateType: Immutable
 
+    .PARAMETER Name
+        +  AWS Systems Manager Documents: https://docs.aws.amazon.com/systems-manager/latest/userguide/sysman-ssm-docs.html
+
+        Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ssm-document.html#cfn-ssm-document-name
+        PrimitiveType: String
+        UpdateType: Immutable
+
     .PARAMETER Tags
         AWS CloudFormation resource tags to apply to the document. Use tags to help you identify and categorize resources.
 
@@ -102,6 +109,17 @@ function New-VSSSMDocument {
                 }
             })]
         $DocumentType,
+        [parameter(Mandatory = $false)]
+        [ValidateScript( {
+                $allowedTypes = "System.String","Vaporshell.Function","Vaporshell.Condition"
+                if ([string]$($_.PSTypeNames) -match "($(($allowedTypes|ForEach-Object{[RegEx]::Escape($_)}) -join '|'))") {
+                    $true
+                }
+                else {
+                    $PSCmdlet.ThrowTerminatingError((New-VSError -String "This parameter only accepts the following types: $($allowedTypes -join ", "). The current types of the value are: $($_.PSTypeNames -join ", ")."))
+                }
+            })]
+        $Name,
         [parameter(Mandatory = $false)]
         [ValidateScript( {
                 $allowedTypes = "Vaporshell.Resource.Tag","System.Management.Automation.PSCustomObject"

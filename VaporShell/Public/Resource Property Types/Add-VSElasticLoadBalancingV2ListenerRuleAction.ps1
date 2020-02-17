@@ -31,6 +31,13 @@ Specifies an action for a listener rule.
         Type: FixedResponseConfig
         UpdateType: Mutable
 
+    .PARAMETER ForwardConfig
+        *Update requires*: No interruption: https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt
+
+        Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-elasticloadbalancingv2-listenerrule-actions.html#cfn-elasticloadbalancingv2-listenerrule-action-forwardconfig
+        Type: ForwardConfig
+        UpdateType: Mutable
+
     .PARAMETER Order
         The order for the action. This value is required for rules with multiple actions. The action with the lowest value for order is performed first. The final action to be performed must be a forward or a fixed-response action.
 
@@ -73,7 +80,17 @@ Specifies an action for a listener rule.
         [parameter(Mandatory = $false)]
         $FixedResponseConfig,
         [parameter(Mandatory = $false)]
-        [Int]
+        $ForwardConfig,
+        [parameter(Mandatory = $false)]
+        [ValidateScript( {
+                $allowedTypes = "System.Int32","Vaporshell.Function"
+                if ([string]$($_.PSTypeNames) -match "($(($allowedTypes|ForEach-Object{[RegEx]::Escape($_)}) -join '|'))") {
+                    $true
+                }
+                else {
+                    $PSCmdlet.ThrowTerminatingError((New-VSError -String "This parameter only accepts the following types: $($allowedTypes -join ", "). The current types of the value are: $($_.PSTypeNames -join ", ")."))
+                }
+            })]
         $Order,
         [parameter(Mandatory = $false)]
         $RedirectConfig,

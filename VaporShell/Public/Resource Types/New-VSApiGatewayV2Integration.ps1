@@ -64,6 +64,13 @@ WHEN_NO_TEMPLATES allows pass-through when the integration has no content types 
         PrimitiveType: String
         UpdateType: Mutable
 
+    .PARAMETER PayloadFormatVersion
+        + CreateIntegration: https://docs.aws.amazon.com/apigatewayv2/latest/api-reference/apis-apiid-integrations.html#CreateIntegration in the *Amazon API Gateway Version 2 API Reference*
+
+        Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-apigatewayv2-integration.html#cfn-apigatewayv2-integration-payloadformatversion
+        PrimitiveType: String
+        UpdateType: Mutable
+
     .PARAMETER CredentialsArn
         Specifies the credentials required for the integration, if any. For AWS integrations, three options are available. To specify an IAM Role for API Gateway to assume, use the role's Amazon Resource Name ARN. To require that the caller's identity be passed through from the request, specify the string arn:aws:iam::*:user/*. To use resource-based permissions on supported AWS services, specify null.
 
@@ -248,6 +255,17 @@ MOCK: for integrating the route or method request with API Gateway as a "loopbac
                     $PSCmdlet.ThrowTerminatingError((New-VSError -String "This parameter only accepts the following types: $($allowedTypes -join ", "). The current types of the value are: $($_.PSTypeNames -join ", ")."))
                 }
             })]
+        $PayloadFormatVersion,
+        [parameter(Mandatory = $false)]
+        [ValidateScript( {
+                $allowedTypes = "System.String","Vaporshell.Function","Vaporshell.Condition"
+                if ([string]$($_.PSTypeNames) -match "($(($allowedTypes|ForEach-Object{[RegEx]::Escape($_)}) -join '|'))") {
+                    $true
+                }
+                else {
+                    $PSCmdlet.ThrowTerminatingError((New-VSError -String "This parameter only accepts the following types: $($allowedTypes -join ", "). The current types of the value are: $($_.PSTypeNames -join ", ")."))
+                }
+            })]
         $CredentialsArn,
         [parameter(Mandatory = $false)]
         [ValidateScript( {
@@ -261,7 +279,15 @@ MOCK: for integrating the route or method request with API Gateway as a "loopbac
             })]
         $RequestTemplates,
         [parameter(Mandatory = $false)]
-        [Int]
+        [ValidateScript( {
+                $allowedTypes = "System.Int32","Vaporshell.Function"
+                if ([string]$($_.PSTypeNames) -match "($(($allowedTypes|ForEach-Object{[RegEx]::Escape($_)}) -join '|'))") {
+                    $true
+                }
+                else {
+                    $PSCmdlet.ThrowTerminatingError((New-VSError -String "This parameter only accepts the following types: $($allowedTypes -join ", "). The current types of the value are: $($_.PSTypeNames -join ", ")."))
+                }
+            })]
         $TimeoutInMillis,
         [parameter(Mandatory = $false)]
         [ValidateScript( {

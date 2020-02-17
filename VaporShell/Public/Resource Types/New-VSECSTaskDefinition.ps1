@@ -41,6 +41,13 @@ To use revision numbers when you update a task definition, specify this property
         PrimitiveType: String
         UpdateType: Immutable
 
+    .PARAMETER InferenceAccelerators
+        Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ecs-taskdefinition.html#cfn-ecs-taskdefinition-inferenceaccelerators
+        DuplicatesAllowed: False
+        ItemType: InferenceAccelerator
+        Type: List
+        UpdateType: Immutable
+
     .PARAMETER IpcMode
         The IPC resource namespace to use for the containers in the task. The valid values are host, task, or none. If host is specified, then all containers within the tasks that specified the host IPC mode on the same container instance share the same IPC resources with the host Amazon EC2 instance. If task is specified, all containers within the specified task share the same IPC resources. If none is specified, then IPC resources within the containers of a task are private and not shared with other containers in a task or on the container instance. If no value is specified, then the IPC resource namespace sharing depends on the Docker daemon setting on the container instance. For more information, see IPC settings: https://docs.docker.com/engine/reference/run/#ipc-settings---ipc in the *Docker run reference*.
 If the host IPC mode is used, be aware that there is a heightened risk of undesired IPC namespace expose. For more information, see Docker security: https://docs.docker.com/engine/security/security/.
@@ -236,6 +243,17 @@ For more information about volume definition parameters and defaults, see Amazon
         $Family,
         [parameter(Mandatory = $false)]
         [ValidateScript( {
+                $allowedTypes = "Vaporshell.Resource.ECS.TaskDefinition.InferenceAccelerator"
+                if ([string]$($_.PSTypeNames) -match "($(($allowedTypes|ForEach-Object{[RegEx]::Escape($_)}) -join '|'))") {
+                    $true
+                }
+                else {
+                    $PSCmdlet.ThrowTerminatingError((New-VSError -String "This parameter only accepts the following types: $($allowedTypes -join ", "). The current types of the value are: $($_.PSTypeNames -join ", ")."))
+                }
+            })]
+        $InferenceAccelerators,
+        [parameter(Mandatory = $false)]
+        [ValidateScript( {
                 $allowedTypes = "System.String","Vaporshell.Function","Vaporshell.Condition"
                 if ([string]$($_.PSTypeNames) -match "($(($allowedTypes|ForEach-Object{[RegEx]::Escape($_)}) -join '|'))") {
                     $true
@@ -388,6 +406,12 @@ For more information about volume definition parameters and defaults, see Amazon
                         $ResourceParams.Add("Properties",([PSCustomObject]@{}))
                     }
                     $ResourceParams["Properties"] | Add-Member -MemberType NoteProperty -Name ContainerDefinitions -Value @($ContainerDefinitions)
+                }
+                InferenceAccelerators {
+                    if (!($ResourceParams["Properties"])) {
+                        $ResourceParams.Add("Properties",([PSCustomObject]@{}))
+                    }
+                    $ResourceParams["Properties"] | Add-Member -MemberType NoteProperty -Name InferenceAccelerators -Value @($InferenceAccelerators)
                 }
                 PlacementConstraints {
                     if (!($ResourceParams["Properties"])) {

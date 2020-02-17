@@ -33,6 +33,11 @@ function New-VSGlueJob {
         PrimitiveType: String
         UpdateType: Mutable
 
+    .PARAMETER Timeout
+        Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-glue-job.html#cfn-glue-job-timeout
+        PrimitiveType: Integer
+        UpdateType: Mutable
+
     .PARAMETER AllocatedCapacity
         The number of capacity units that are allocated to this job.
 
@@ -62,6 +67,11 @@ For information about the key-value pairs that AWS Glue consumes to set up your 
 
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-glue-job.html#cfn-glue-job-defaultarguments
         PrimitiveType: Json
+        UpdateType: Mutable
+
+    .PARAMETER NotificationProperty
+        Type: NotificationProperty
+        Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-glue-job.html#cfn-glue-job-notificationproperty
         UpdateType: Mutable
 
     .PARAMETER WorkerType
@@ -185,7 +195,15 @@ The value that can be allocated for MaxCapacity depends on whether you are runni
         [parameter(Mandatory = $false)]
         $Connections,
         [parameter(Mandatory = $false)]
-        [System.Double]
+        [ValidateScript( {
+                $allowedTypes = "System.Double","Vaporshell.Function"
+                if ([string]$($_.PSTypeNames) -match "($(($allowedTypes|ForEach-Object{[RegEx]::Escape($_)}) -join '|'))") {
+                    $true
+                }
+                else {
+                    $PSCmdlet.ThrowTerminatingError((New-VSError -String "This parameter only accepts the following types: $($allowedTypes -join ", "). The current types of the value are: $($_.PSTypeNames -join ", ")."))
+                }
+            })]
         $MaxRetries,
         [parameter(Mandatory = $false)]
         [ValidateScript( {
@@ -199,7 +217,26 @@ The value that can be allocated for MaxCapacity depends on whether you are runni
             })]
         $Description,
         [parameter(Mandatory = $false)]
-        [System.Double]
+        [ValidateScript( {
+                $allowedTypes = "System.Int32","Vaporshell.Function"
+                if ([string]$($_.PSTypeNames) -match "($(($allowedTypes|ForEach-Object{[RegEx]::Escape($_)}) -join '|'))") {
+                    $true
+                }
+                else {
+                    $PSCmdlet.ThrowTerminatingError((New-VSError -String "This parameter only accepts the following types: $($allowedTypes -join ", "). The current types of the value are: $($_.PSTypeNames -join ", ")."))
+                }
+            })]
+        $Timeout,
+        [parameter(Mandatory = $false)]
+        [ValidateScript( {
+                $allowedTypes = "System.Double","Vaporshell.Function"
+                if ([string]$($_.PSTypeNames) -match "($(($allowedTypes|ForEach-Object{[RegEx]::Escape($_)}) -join '|'))") {
+                    $true
+                }
+                else {
+                    $PSCmdlet.ThrowTerminatingError((New-VSError -String "This parameter only accepts the following types: $($allowedTypes -join ", "). The current types of the value are: $($_.PSTypeNames -join ", ")."))
+                }
+            })]
         $AllocatedCapacity,
         [parameter(Mandatory = $false)]
         [ValidateScript( {
@@ -234,6 +271,8 @@ The value that can be allocated for MaxCapacity depends on whether you are runni
                 }
             })]
         $DefaultArguments,
+        [parameter(Mandatory = $false)]
+        $NotificationProperty,
         [parameter(Mandatory = $false)]
         [ValidateScript( {
                 $allowedTypes = "System.String","Vaporshell.Function","Vaporshell.Condition"
@@ -283,7 +322,15 @@ The value that can be allocated for MaxCapacity depends on whether you are runni
             })]
         $SecurityConfiguration,
         [parameter(Mandatory = $false)]
-        [Int]
+        [ValidateScript( {
+                $allowedTypes = "System.Int32","Vaporshell.Function"
+                if ([string]$($_.PSTypeNames) -match "($(($allowedTypes|ForEach-Object{[RegEx]::Escape($_)}) -join '|'))") {
+                    $true
+                }
+                else {
+                    $PSCmdlet.ThrowTerminatingError((New-VSError -String "This parameter only accepts the following types: $($allowedTypes -join ", "). The current types of the value are: $($_.PSTypeNames -join ", ")."))
+                }
+            })]
         $NumberOfWorkers,
         [parameter(Mandatory = $false)]
         [ValidateScript( {
@@ -297,7 +344,15 @@ The value that can be allocated for MaxCapacity depends on whether you are runni
             })]
         $Tags,
         [parameter(Mandatory = $false)]
-        [System.Double]
+        [ValidateScript( {
+                $allowedTypes = "System.Double","Vaporshell.Function"
+                if ([string]$($_.PSTypeNames) -match "($(($allowedTypes|ForEach-Object{[RegEx]::Escape($_)}) -join '|'))") {
+                    $true
+                }
+                else {
+                    $PSCmdlet.ThrowTerminatingError((New-VSError -String "This parameter only accepts the following types: $($allowedTypes -join ", "). The current types of the value are: $($_.PSTypeNames -join ", ")."))
+                }
+            })]
         $MaxCapacity,
         [ValidateSet("Delete","Retain","Snapshot")]
         [System.String]

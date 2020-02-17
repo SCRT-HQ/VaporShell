@@ -35,6 +35,15 @@ function New-VSApiGatewayUsagePlan {
         Type: QuotaSettings
         UpdateType: Mutable
 
+    .PARAMETER Tags
+        + usageplan:create: https://docs.aws.amazon.com/apigateway/api-reference/link-relation/usageplan-create/ in the *Amazon API Gateway REST API Reference*
+
+        Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-apigateway-usageplan.html#cfn-apigateway-usageplan-tags
+        DuplicatesAllowed: True
+        ItemType: Tag
+        Type: List
+        UpdateType: Mutable
+
     .PARAMETER Throttle
         Configures the overall request rate average requests per second and burst capacity.
 
@@ -119,6 +128,17 @@ function New-VSApiGatewayUsagePlan {
         [parameter(Mandatory = $false)]
         $Quota,
         [parameter(Mandatory = $false)]
+        [ValidateScript( {
+                $allowedTypes = "Vaporshell.Resource.Tag","System.Management.Automation.PSCustomObject"
+                if ([string]$($_.PSTypeNames) -match "($(($allowedTypes|ForEach-Object{[RegEx]::Escape($_)}) -join '|'))") {
+                    $true
+                }
+                else {
+                    $PSCmdlet.ThrowTerminatingError((New-VSError -String "This parameter only accepts the following types: $($allowedTypes -join ", "). The current types of the value are: $($_.PSTypeNames -join ", ")."))
+                }
+            })]
+        $Tags,
+        [parameter(Mandatory = $false)]
         $Throttle,
         [parameter(Mandatory = $false)]
         [ValidateScript( {
@@ -193,6 +213,12 @@ function New-VSApiGatewayUsagePlan {
                         $ResourceParams.Add("Properties",([PSCustomObject]@{}))
                     }
                     $ResourceParams["Properties"] | Add-Member -MemberType NoteProperty -Name ApiStages -Value @($ApiStages)
+                }
+                Tags {
+                    if (!($ResourceParams["Properties"])) {
+                        $ResourceParams.Add("Properties",([PSCustomObject]@{}))
+                    }
+                    $ResourceParams["Properties"] | Add-Member -MemberType NoteProperty -Name Tags -Value @($Tags)
                 }
                 Default {
                     if (!($ResourceParams["Properties"])) {

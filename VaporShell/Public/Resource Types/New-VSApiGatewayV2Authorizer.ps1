@@ -40,6 +40,13 @@ function New-VSApiGatewayV2Authorizer {
         PrimitiveType: String
         UpdateType: Mutable
 
+    .PARAMETER JwtConfiguration
+        + CreateAuthorizer: https://docs.aws.amazon.com/apigatewayv2/latest/api-reference/apis-apiid-authorizers.html#CreateAuthorizer in the *Amazon API Gateway Version 2 API Reference*
+
+        Type: JWTConfiguration
+        Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-apigatewayv2-authorizer.html#cfn-apigatewayv2-authorizer-jwtconfiguration
+        UpdateType: Mutable
+
     .PARAMETER AuthorizerResultTtlInSeconds
         The time to live TTL, in seconds, of cached authorizer results. If it is zero, authorization caching is disabled. If it is greater than zero, API Gateway will cache authorizer responses. If this field is not set, the default value is 300. The maximum value is 3600, or 1 hour.
 
@@ -128,7 +135,7 @@ For the REQUEST authorizer, this is required when authorization caching is enabl
                 }
             })]
         $IdentityValidationExpression,
-        [parameter(Mandatory = $true)]
+        [parameter(Mandatory = $false)]
         [ValidateScript( {
                 $allowedTypes = "System.String","Vaporshell.Function","Vaporshell.Condition"
                 if ([string]$($_.PSTypeNames) -match "($(($allowedTypes|ForEach-Object{[RegEx]::Escape($_)}) -join '|'))") {
@@ -162,7 +169,17 @@ For the REQUEST authorizer, this is required when authorization caching is enabl
             })]
         $AuthorizerType,
         [parameter(Mandatory = $false)]
-        [Int]
+        $JwtConfiguration,
+        [parameter(Mandatory = $false)]
+        [ValidateScript( {
+                $allowedTypes = "System.Int32","Vaporshell.Function"
+                if ([string]$($_.PSTypeNames) -match "($(($allowedTypes|ForEach-Object{[RegEx]::Escape($_)}) -join '|'))") {
+                    $true
+                }
+                else {
+                    $PSCmdlet.ThrowTerminatingError((New-VSError -String "This parameter only accepts the following types: $($allowedTypes -join ", "). The current types of the value are: $($_.PSTypeNames -join ", ")."))
+                }
+            })]
         $AuthorizerResultTtlInSeconds,
         [parameter(Mandatory = $true)]
         $IdentitySource,

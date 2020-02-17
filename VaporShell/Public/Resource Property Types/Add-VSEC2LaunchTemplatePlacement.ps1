@@ -26,6 +26,20 @@ Placement is a property of the Amazon EC2 LaunchTemplate LaunchTemplateData: htt
         PrimitiveType: String
         UpdateType: Mutable
 
+    .PARAMETER SpreadDomain
+        +   LaunchTemplatePlacementRequest: https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_LaunchTemplatePlacementRequest.html in the *Amazon Elastic Compute Cloud API Reference*
+
+        Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-launchtemplate-launchtemplatedata-placement.html#cfn-ec2-launchtemplate-launchtemplatedata-placement-spreaddomain
+        PrimitiveType: String
+        UpdateType: Mutable
+
+    .PARAMETER PartitionNumber
+        +   LaunchTemplatePlacementRequest: https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_LaunchTemplatePlacementRequest.html in the *Amazon Elastic Compute Cloud API Reference*
+
+        Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-launchtemplate-launchtemplatedata-placement.html#cfn-ec2-launchtemplate-launchtemplatedata-placement-partitionnumber
+        PrimitiveType: Integer
+        UpdateType: Mutable
+
     .PARAMETER AvailabilityZone
         The Availability Zone for the instance.
 
@@ -44,6 +58,13 @@ Placement is a property of the Amazon EC2 LaunchTemplate LaunchTemplateData: htt
         The ID of the Dedicated Host for the instance.
 
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-launchtemplate-launchtemplatedata-placement.html#cfn-ec2-launchtemplate-launchtemplatedata-placement-hostid
+        PrimitiveType: String
+        UpdateType: Mutable
+
+    .PARAMETER HostResourceGroupArn
+        +   LaunchTemplatePlacementRequest: https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_LaunchTemplatePlacementRequest.html in the *Amazon Elastic Compute Cloud API Reference*
+
+        Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-launchtemplate-launchtemplatedata-placement.html#cfn-ec2-launchtemplate-launchtemplatedata-placement-hostresourcegrouparn
         PrimitiveType: String
         UpdateType: Mutable
 
@@ -86,6 +107,28 @@ Placement is a property of the Amazon EC2 LaunchTemplate LaunchTemplateData: htt
                     $PSCmdlet.ThrowTerminatingError((New-VSError -String "This parameter only accepts the following types: $($allowedTypes -join ", "). The current types of the value are: $($_.PSTypeNames -join ", ")."))
                 }
             })]
+        $SpreadDomain,
+        [parameter(Mandatory = $false)]
+        [ValidateScript( {
+                $allowedTypes = "System.Int32","Vaporshell.Function"
+                if ([string]$($_.PSTypeNames) -match "($(($allowedTypes|ForEach-Object{[RegEx]::Escape($_)}) -join '|'))") {
+                    $true
+                }
+                else {
+                    $PSCmdlet.ThrowTerminatingError((New-VSError -String "This parameter only accepts the following types: $($allowedTypes -join ", "). The current types of the value are: $($_.PSTypeNames -join ", ")."))
+                }
+            })]
+        $PartitionNumber,
+        [parameter(Mandatory = $false)]
+        [ValidateScript( {
+                $allowedTypes = "System.String","Vaporshell.Function","Vaporshell.Condition"
+                if ([string]$($_.PSTypeNames) -match "($(($allowedTypes|ForEach-Object{[RegEx]::Escape($_)}) -join '|'))") {
+                    $true
+                }
+                else {
+                    $PSCmdlet.ThrowTerminatingError((New-VSError -String "This parameter only accepts the following types: $($allowedTypes -join ", "). The current types of the value are: $($_.PSTypeNames -join ", ")."))
+                }
+            })]
         $AvailabilityZone,
         [parameter(Mandatory = $false)]
         [ValidateScript( {
@@ -108,7 +151,18 @@ Placement is a property of the Amazon EC2 LaunchTemplate LaunchTemplateData: htt
                     $PSCmdlet.ThrowTerminatingError((New-VSError -String "This parameter only accepts the following types: $($allowedTypes -join ", "). The current types of the value are: $($_.PSTypeNames -join ", ")."))
                 }
             })]
-        $HostId
+        $HostId,
+        [parameter(Mandatory = $false)]
+        [ValidateScript( {
+                $allowedTypes = "System.String","Vaporshell.Function","Vaporshell.Condition"
+                if ([string]$($_.PSTypeNames) -match "($(($allowedTypes|ForEach-Object{[RegEx]::Escape($_)}) -join '|'))") {
+                    $true
+                }
+                else {
+                    $PSCmdlet.ThrowTerminatingError((New-VSError -String "This parameter only accepts the following types: $($allowedTypes -join ", "). The current types of the value are: $($_.PSTypeNames -join ", ")."))
+                }
+            })]
+        $HostResourceGroupArn
     )
     Begin {
         $obj = [PSCustomObject]@{}

@@ -16,6 +16,11 @@ The permission policy on the default event bus can't exceed 10 KB in size.
     .PARAMETER LogicalId
         The logical ID must be alphanumeric (A-Za-z0-9) and unique within the template. Use the logical name to reference the resource in other parts of the template. For example, if you want to map an Amazon Elastic Block Store volume to an Amazon EC2 instance, you reference the logical IDs to associate the block stores with the instance.
 
+    .PARAMETER EventBusName
+        Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-events-eventbuspolicy.html#cfn-events-eventbuspolicy-eventbusname
+        PrimitiveType: String
+        UpdateType: Immutable
+
     .PARAMETER Condition
         Condition is a JSON string that you can use to limit the event bus permissions that you're granting only to accounts that fulfill the condition. Currently, the only supported condition is membership in a certain AWS organization. For more information about AWS Organizations, see What Is AWS Organizations?: https://docs.aws.amazon.com/organizations/latest/userguide/orgs_introduction.html in the *AWS Organizations User Guide*.
 Condition is a property of the  AWS::Events::EventBusPolicy: https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-events-eventbuspolicy.html resource type.
@@ -89,6 +94,17 @@ If you specify "*" without specifying Condition, avoid creating rules that may m
             })]
         [System.String]
         $LogicalId,
+        [parameter(Mandatory = $false)]
+        [ValidateScript( {
+                $allowedTypes = "System.String","Vaporshell.Function","Vaporshell.Condition"
+                if ([string]$($_.PSTypeNames) -match "($(($allowedTypes|ForEach-Object{[RegEx]::Escape($_)}) -join '|'))") {
+                    $true
+                }
+                else {
+                    $PSCmdlet.ThrowTerminatingError((New-VSError -String "This parameter only accepts the following types: $($allowedTypes -join ", "). The current types of the value are: $($_.PSTypeNames -join ", ")."))
+                }
+            })]
+        $EventBusName,
         [parameter(Mandatory = $false)]
         $Condition,
         [parameter(Mandatory = $true)]

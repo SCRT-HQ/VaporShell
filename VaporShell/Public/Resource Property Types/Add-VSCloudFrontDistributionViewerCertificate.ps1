@@ -120,7 +120,15 @@ If you specify ACMCertificateArn, you must also specify a value for SSLSupportMe
             })]
         $MinimumProtocolVersion,
         [parameter(Mandatory = $false)]
-        [System.Boolean]
+        [ValidateScript( {
+                $allowedTypes = "System.Boolean","Vaporshell.Function"
+                if ([string]$($_.PSTypeNames) -match "($(($allowedTypes|ForEach-Object{[RegEx]::Escape($_)}) -join '|'))") {
+                    $true
+                }
+                else {
+                    $PSCmdlet.ThrowTerminatingError((New-VSError -String "This parameter only accepts the following types: $($allowedTypes -join ", "). The current types of the value are: $($_.PSTypeNames -join ", ")."))
+                }
+            })]
         $CloudFrontDefaultCertificate,
         [parameter(Mandatory = $false)]
         [ValidateScript( {

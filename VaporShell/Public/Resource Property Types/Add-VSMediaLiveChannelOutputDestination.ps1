@@ -12,6 +12,13 @@ This entity is at the top level in the channel.
     .LINK
         http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-medialive-channel-outputdestination.html
 
+    .PARAMETER MultiplexSettings
+        *Update requires*: No interruption: https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt
+
+        Type: MultiplexProgramChannelDestinationSettings
+        Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-medialive-channel-outputdestination.html#cfn-medialive-channel-outputdestination-multiplexsettings
+        UpdateType: Mutable
+
     .PARAMETER Id
         The ID for this destination.
 
@@ -42,6 +49,8 @@ This entity is at the top level in the channel.
     [cmdletbinding()]
     Param
     (
+        [parameter(Mandatory = $false)]
+        $MultiplexSettings,
         [parameter(Mandatory = $false)]
         [ValidateScript( {
                 $allowedTypes = "System.String","Vaporshell.Function","Vaporshell.Condition"

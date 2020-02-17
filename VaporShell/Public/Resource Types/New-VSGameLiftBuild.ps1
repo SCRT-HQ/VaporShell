@@ -19,6 +19,13 @@ function New-VSGameLiftBuild {
         PrimitiveType: String
         UpdateType: Mutable
 
+    .PARAMETER OperatingSystem
+        +  CreateBuild: https://docs.aws.amazon.com/gamelift/latest/apireference/API_CreateBuild.html in the *Amazon GameLift API Reference*
+
+        Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-gamelift-build.html#cfn-gamelift-build-operatingsystem
+        PrimitiveType: String
+        UpdateType: Immutable
+
     .PARAMETER StorageLocation
         Information indicating where your game build files are stored. Use this parameter only when creating a build with files stored in an Amazon S3 bucket that you own. The storage location must specify an Amazon S3 bucket name and key, as well as a the ARN for a role that you set up to allow Amazon GameLift to access your Amazon S3 bucket. The S3 bucket must be in the same region that you want to create a new build in.
 
@@ -89,6 +96,17 @@ function New-VSGameLiftBuild {
                 }
             })]
         $Name,
+        [parameter(Mandatory = $false)]
+        [ValidateScript( {
+                $allowedTypes = "System.String","Vaporshell.Function","Vaporshell.Condition"
+                if ([string]$($_.PSTypeNames) -match "($(($allowedTypes|ForEach-Object{[RegEx]::Escape($_)}) -join '|'))") {
+                    $true
+                }
+                else {
+                    $PSCmdlet.ThrowTerminatingError((New-VSError -String "This parameter only accepts the following types: $($allowedTypes -join ", "). The current types of the value are: $($_.PSTypeNames -join ", ")."))
+                }
+            })]
+        $OperatingSystem,
         [parameter(Mandatory = $false)]
         $StorageLocation,
         [parameter(Mandatory = $false)]

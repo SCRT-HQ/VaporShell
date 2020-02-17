@@ -76,6 +76,13 @@ function New-VSOpsWorksCMServer {
         PrimitiveType: String
         UpdateType: Immutable
 
+    .PARAMETER CustomCertificate
+        +   CreateServer : https://docs.aws.amazon.com/opsworks-cm/latest/APIReference/API_CreateServer.html in the *AWS OpsWorks CM API Reference*
+
+        Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-opsworkscm-server.html#cfn-opsworkscm-server-customcertificate
+        PrimitiveType: String
+        UpdateType: Immutable
+
     .PARAMETER PreferredBackupWindow
         The start time for a one-hour period during which AWS OpsWorks CM backs up application-level data on your server if automated backups are enabled. Valid values must be specified in one of the following formats:
 +  HH:MM for daily backups
@@ -106,6 +113,20 @@ For more information about supported Amazon EC2 platforms, see Supported Platfor
         PrimitiveItemType: String
         Type: List
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-opsworkscm-server.html#cfn-opsworkscm-server-subnetids
+        UpdateType: Immutable
+
+    .PARAMETER CustomDomain
+        +   CreateServer : https://docs.aws.amazon.com/opsworks-cm/latest/APIReference/API_CreateServer.html in the *AWS OpsWorks CM API Reference*
+
+        Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-opsworkscm-server.html#cfn-opsworkscm-server-customdomain
+        PrimitiveType: String
+        UpdateType: Immutable
+
+    .PARAMETER CustomPrivateKey
+        +   CreateServer : https://docs.aws.amazon.com/opsworks-cm/latest/APIReference/API_CreateServer.html in the *AWS OpsWorks CM API Reference*
+
+        Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-opsworkscm-server.html#cfn-opsworkscm-server-customprivatekey
+        PrimitiveType: String
         UpdateType: Immutable
 
     .PARAMETER ServerName
@@ -143,6 +164,14 @@ For more information about supported Amazon EC2 platforms, see Supported Platfor
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-opsworkscm-server.html#cfn-opsworkscm-server-instancetype
         PrimitiveType: String
         UpdateType: Immutable
+
+    .PARAMETER Tags
+        +   CreateServer : https://docs.aws.amazon.com/opsworks-cm/latest/APIReference/API_CreateServer.html in the *AWS OpsWorks CM API Reference*
+
+        Type: List
+        Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-opsworkscm-server.html#cfn-opsworkscm-server-tags
+        ItemType: Tag
+        UpdateType: Mutable
 
     .PARAMETER Engine
         The configuration management engine to use. Valid values include ChefAutomate and Puppet.
@@ -230,7 +259,15 @@ For more information about supported Amazon EC2 platforms, see Supported Platfor
             })]
         $ServiceRoleArn,
         [parameter(Mandatory = $false)]
-        [System.Boolean]
+        [ValidateScript( {
+                $allowedTypes = "System.Boolean","Vaporshell.Function"
+                if ([string]$($_.PSTypeNames) -match "($(($allowedTypes|ForEach-Object{[RegEx]::Escape($_)}) -join '|'))") {
+                    $true
+                }
+                else {
+                    $PSCmdlet.ThrowTerminatingError((New-VSError -String "This parameter only accepts the following types: $($allowedTypes -join ", "). The current types of the value are: $($_.PSTypeNames -join ", ")."))
+                }
+            })]
         $DisableAutomatedBackup,
         [parameter(Mandatory = $false)]
         [ValidateScript( {
@@ -266,7 +303,15 @@ For more information about supported Amazon EC2 platforms, see Supported Platfor
             })]
         $PreferredMaintenanceWindow,
         [parameter(Mandatory = $false)]
-        [System.Boolean]
+        [ValidateScript( {
+                $allowedTypes = "System.Boolean","Vaporshell.Function"
+                if ([string]$($_.PSTypeNames) -match "($(($allowedTypes|ForEach-Object{[RegEx]::Escape($_)}) -join '|'))") {
+                    $true
+                }
+                else {
+                    $PSCmdlet.ThrowTerminatingError((New-VSError -String "This parameter only accepts the following types: $($allowedTypes -join ", "). The current types of the value are: $($_.PSTypeNames -join ", ")."))
+                }
+            })]
         $AssociatePublicIpAddress,
         [parameter(Mandatory = $true)]
         [ValidateScript( {
@@ -279,6 +324,17 @@ For more information about supported Amazon EC2 platforms, see Supported Platfor
                 }
             })]
         $InstanceProfileArn,
+        [parameter(Mandatory = $false)]
+        [ValidateScript( {
+                $allowedTypes = "System.String","Vaporshell.Function","Vaporshell.Condition"
+                if ([string]$($_.PSTypeNames) -match "($(($allowedTypes|ForEach-Object{[RegEx]::Escape($_)}) -join '|'))") {
+                    $true
+                }
+                else {
+                    $PSCmdlet.ThrowTerminatingError((New-VSError -String "This parameter only accepts the following types: $($allowedTypes -join ", "). The current types of the value are: $($_.PSTypeNames -join ", ")."))
+                }
+            })]
+        $CustomCertificate,
         [parameter(Mandatory = $false)]
         [ValidateScript( {
                 $allowedTypes = "System.String","Vaporshell.Function","Vaporshell.Condition"
@@ -304,6 +360,28 @@ For more information about supported Amazon EC2 platforms, see Supported Platfor
                     $PSCmdlet.ThrowTerminatingError((New-VSError -String "This parameter only accepts the following types: $($allowedTypes -join ", "). The current types of the value are: $($_.PSTypeNames -join ", ")."))
                 }
             })]
+        $CustomDomain,
+        [parameter(Mandatory = $false)]
+        [ValidateScript( {
+                $allowedTypes = "System.String","Vaporshell.Function","Vaporshell.Condition"
+                if ([string]$($_.PSTypeNames) -match "($(($allowedTypes|ForEach-Object{[RegEx]::Escape($_)}) -join '|'))") {
+                    $true
+                }
+                else {
+                    $PSCmdlet.ThrowTerminatingError((New-VSError -String "This parameter only accepts the following types: $($allowedTypes -join ", "). The current types of the value are: $($_.PSTypeNames -join ", ")."))
+                }
+            })]
+        $CustomPrivateKey,
+        [parameter(Mandatory = $false)]
+        [ValidateScript( {
+                $allowedTypes = "System.String","Vaporshell.Function","Vaporshell.Condition"
+                if ([string]$($_.PSTypeNames) -match "($(($allowedTypes|ForEach-Object{[RegEx]::Escape($_)}) -join '|'))") {
+                    $true
+                }
+                else {
+                    $PSCmdlet.ThrowTerminatingError((New-VSError -String "This parameter only accepts the following types: $($allowedTypes -join ", "). The current types of the value are: $($_.PSTypeNames -join ", ")."))
+                }
+            })]
         $ServerName,
         [parameter(Mandatory = $false)]
         [ValidateScript( {
@@ -317,7 +395,15 @@ For more information about supported Amazon EC2 platforms, see Supported Platfor
             })]
         $EngineAttributes,
         [parameter(Mandatory = $false)]
-        [Int]
+        [ValidateScript( {
+                $allowedTypes = "System.Int32","Vaporshell.Function"
+                if ([string]$($_.PSTypeNames) -match "($(($allowedTypes|ForEach-Object{[RegEx]::Escape($_)}) -join '|'))") {
+                    $true
+                }
+                else {
+                    $PSCmdlet.ThrowTerminatingError((New-VSError -String "This parameter only accepts the following types: $($allowedTypes -join ", "). The current types of the value are: $($_.PSTypeNames -join ", ")."))
+                }
+            })]
         $BackupRetentionCount,
         [parameter(Mandatory = $true)]
         [ValidateScript( {
@@ -330,6 +416,17 @@ For more information about supported Amazon EC2 platforms, see Supported Platfor
                 }
             })]
         $InstanceType,
+        [parameter(Mandatory = $false)]
+        [ValidateScript( {
+                $allowedTypes = "Vaporshell.Resource.Tag","System.Management.Automation.PSCustomObject"
+                if ([string]$($_.PSTypeNames) -match "($(($allowedTypes|ForEach-Object{[RegEx]::Escape($_)}) -join '|'))") {
+                    $true
+                }
+                else {
+                    $PSCmdlet.ThrowTerminatingError((New-VSError -String "This parameter only accepts the following types: $($allowedTypes -join ", "). The current types of the value are: $($_.PSTypeNames -join ", ")."))
+                }
+            })]
+        $Tags,
         [parameter(Mandatory = $false)]
         [ValidateScript( {
                 $allowedTypes = "System.String","Vaporshell.Function","Vaporshell.Condition"
@@ -415,6 +512,12 @@ For more information about supported Amazon EC2 platforms, see Supported Platfor
                         $ResourceParams.Add("Properties",([PSCustomObject]@{}))
                     }
                     $ResourceParams["Properties"] | Add-Member -MemberType NoteProperty -Name EngineAttributes -Value @($EngineAttributes)
+                }
+                Tags {
+                    if (!($ResourceParams["Properties"])) {
+                        $ResourceParams.Add("Properties",([PSCustomObject]@{}))
+                    }
+                    $ResourceParams["Properties"] | Add-Member -MemberType NoteProperty -Name Tags -Value @($Tags)
                 }
                 Default {
                     if (!($ResourceParams["Properties"])) {

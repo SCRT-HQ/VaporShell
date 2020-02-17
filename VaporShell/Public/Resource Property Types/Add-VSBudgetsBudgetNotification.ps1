@@ -80,7 +80,15 @@ For example, if you have a budget for 200 dollars and you want to be notified wh
             })]
         $NotificationType,
         [parameter(Mandatory = $true)]
-        [System.Double]
+        [ValidateScript( {
+                $allowedTypes = "System.Double","Vaporshell.Function"
+                if ([string]$($_.PSTypeNames) -match "($(($allowedTypes|ForEach-Object{[RegEx]::Escape($_)}) -join '|'))") {
+                    $true
+                }
+                else {
+                    $PSCmdlet.ThrowTerminatingError((New-VSError -String "This parameter only accepts the following types: $($allowedTypes -join ", "). The current types of the value are: $($_.PSTypeNames -join ", ")."))
+                }
+            })]
         $Threshold,
         [parameter(Mandatory = $false)]
         [ValidateScript( {

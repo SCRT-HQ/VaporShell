@@ -19,6 +19,11 @@ function New-VSGlueTrigger {
         PrimitiveType: String
         UpdateType: Mutable
 
+    .PARAMETER StartOnCreation
+        Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-glue-trigger.html#cfn-glue-trigger-startoncreation
+        PrimitiveType: Boolean
+        UpdateType: Mutable
+
     .PARAMETER Description
         A description of this trigger.
 
@@ -33,6 +38,11 @@ function New-VSGlueTrigger {
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-glue-trigger.html#cfn-glue-trigger-actions
         ItemType: Action
         UpdateType: Mutable
+
+    .PARAMETER WorkflowName
+        Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-glue-trigger.html#cfn-glue-trigger-workflowname
+        PrimitiveType: String
+        UpdateType: Immutable
 
     .PARAMETER Schedule
         A cron expression used to specify the schedule. For more information, see Time-Based Schedules for Jobs and Crawlers: https://docs.aws.amazon.com/glue/latest/dg/monitor-data-warehouse-schedule.html in the *AWS Glue Developer Guide*. For example, to run something every day at 12:15 UTC, specify cron15 12 * * ? *.
@@ -120,6 +130,17 @@ function New-VSGlueTrigger {
         $Type,
         [parameter(Mandatory = $false)]
         [ValidateScript( {
+                $allowedTypes = "System.Boolean","Vaporshell.Function"
+                if ([string]$($_.PSTypeNames) -match "($(($allowedTypes|ForEach-Object{[RegEx]::Escape($_)}) -join '|'))") {
+                    $true
+                }
+                else {
+                    $PSCmdlet.ThrowTerminatingError((New-VSError -String "This parameter only accepts the following types: $($allowedTypes -join ", "). The current types of the value are: $($_.PSTypeNames -join ", ")."))
+                }
+            })]
+        $StartOnCreation,
+        [parameter(Mandatory = $false)]
+        [ValidateScript( {
                 $allowedTypes = "System.String","Vaporshell.Function","Vaporshell.Condition"
                 if ([string]$($_.PSTypeNames) -match "($(($allowedTypes|ForEach-Object{[RegEx]::Escape($_)}) -join '|'))") {
                     $true
@@ -140,6 +161,17 @@ function New-VSGlueTrigger {
                 }
             })]
         $Actions,
+        [parameter(Mandatory = $false)]
+        [ValidateScript( {
+                $allowedTypes = "System.String","Vaporshell.Function","Vaporshell.Condition"
+                if ([string]$($_.PSTypeNames) -match "($(($allowedTypes|ForEach-Object{[RegEx]::Escape($_)}) -join '|'))") {
+                    $true
+                }
+                else {
+                    $PSCmdlet.ThrowTerminatingError((New-VSError -String "This parameter only accepts the following types: $($allowedTypes -join ", "). The current types of the value are: $($_.PSTypeNames -join ", ")."))
+                }
+            })]
+        $WorkflowName,
         [parameter(Mandatory = $false)]
         [ValidateScript( {
                 $allowedTypes = "System.String","Vaporshell.Function","Vaporshell.Condition"

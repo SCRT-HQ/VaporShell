@@ -41,7 +41,7 @@ If the service includes HealthCheckConfig, the port on the endpoint that you wan
 This value is required if you specified settings for an SRV record or a Route 53 health check when you created the service.
 
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-servicediscovery-instance.html#cfn-servicediscovery-instance-instanceattributes
-        PrimitiveType: Map
+        PrimitiveType: Json
         UpdateType: Mutable
 
     .PARAMETER InstanceId
@@ -110,6 +110,15 @@ The health check isn't deleted immediately, so it will still appear for a while 
         [System.String]
         $LogicalId,
         [parameter(Mandatory = $true)]
+        [ValidateScript( {
+                $allowedTypes = "System.String","System.Collections.Hashtable","System.Management.Automation.PSCustomObject"
+                if ([string]$($_.PSTypeNames) -match "($(($allowedTypes|ForEach-Object{[RegEx]::Escape($_)}) -join '|'))") {
+                    $true
+                }
+                else {
+                    $PSCmdlet.ThrowTerminatingError((New-VSError -String "This parameter only accepts the following types: $($allowedTypes -join ", "). The current types of the value are: $($_.PSTypeNames -join ", ")."))
+                }
+            })]
         $InstanceAttributes,
         [parameter(Mandatory = $false)]
         [ValidateScript( {
@@ -189,6 +198,23 @@ The health check isn't deleted immediately, so it will still appear for a while 
                 }
                 Condition {
                     $ResourceParams.Add("Condition",$Condition)
+                }
+                InstanceAttributes {
+                    if (($PSBoundParameters[$key]).PSObject.TypeNames -contains "System.String"){
+                        try {
+                            $JSONObject = (ConvertFrom-Json -InputObject $PSBoundParameters[$key] -ErrorAction Stop)
+                        }
+                        catch {
+                            $PSCmdlet.ThrowTerminatingError((New-VSError -String "Unable to convert parameter '$key' string value to PSObject! Please use a JSON string OR provide a Hashtable or PSCustomObject instead!"))
+                        }
+                    }
+                    else {
+                        $JSONObject = ([PSCustomObject]$PSBoundParameters[$key])
+                    }
+                    if (!($ResourceParams["Properties"])) {
+                        $ResourceParams.Add("Properties",([PSCustomObject]@{}))
+                    }
+                    $ResourceParams["Properties"] | Add-Member -MemberType NoteProperty -Name $key -Value $JSONObject
                 }
                 Default {
                     if (!($ResourceParams["Properties"])) {

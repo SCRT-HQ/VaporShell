@@ -117,7 +117,15 @@ To override the default quiet time settings for a specific campaign, use the Cam
         [parameter(Mandatory = $false)]
         $CampaignHook,
         [parameter(Mandatory = $false)]
-        [System.Boolean]
+        [ValidateScript( {
+                $allowedTypes = "System.Boolean","Vaporshell.Function"
+                if ([string]$($_.PSTypeNames) -match "($(($allowedTypes|ForEach-Object{[RegEx]::Escape($_)}) -join '|'))") {
+                    $true
+                }
+                else {
+                    $PSCmdlet.ThrowTerminatingError((New-VSError -String "This parameter only accepts the following types: $($allowedTypes -join ", "). The current types of the value are: $($_.PSTypeNames -join ", ")."))
+                }
+            })]
         $CloudWatchMetricsEnabled,
         [ValidateSet("Delete","Retain","Snapshot")]
         [System.String]
