@@ -181,8 +181,8 @@ Task Build Update, {
     'S3'
 ) | ForEach-Object {
     `$assemblyName = "AWSSDK.`$(`$_).dll"
-    if (!([AppDomain]::CurrentDomain.GetAssemblies() | Where-Object {$_.Location -like "*`$(`$assemblyName)"})) {
-        Get-ChildItem `$Script:VaporshellPath -Filter "*`$($`assemblyName)" | ForEach-Object {
+    if (!([AppDomain]::CurrentDomain.GetAssemblies() | Where-Object {`$_.Location -like "*`$(`$assemblyName)"})) {
+        Get-ChildItem `$Script:VaporshellPath -Filter "*`$(`$assemblyName)" | ForEach-Object {
             [System.Reflection.Assembly]::LoadFrom("`$(`$_.FullName)") | Out-Null
         }
     }
