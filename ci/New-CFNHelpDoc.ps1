@@ -15,7 +15,7 @@ function New-CFNHelpDoc {
         switch ($ResourceType) {
             Resource {
                 $ResourceBase = $Resource | ConvertTo-CFNBasePoshObject -ResourceType $ResourceType -Verbose:$false
-                Get-CFNPoshHelp -FunctionName "$($ResourceBase.FunctionName)" -Link "$($ResourceBase.Link)" -Parameters $ResourceBase.Parameters.ParameterName -Verbose:$false
+                Get-CFNPoshHelp -ResourceName $Resource.Name -FunctionName "$($ResourceBase.FunctionName)" -Link "$($ResourceBase.Link)" -Parameters $ResourceBase.Parameters.ParameterName -Verbose:$false
             }
             Property {
                 $ResourcePropertyBase = $Resource | ConvertTo-CFNBasePoshObject -ResourceType $ResourceType -Verbose:$false
@@ -31,7 +31,7 @@ function New-CFNHelpDoc {
                     Get-CFNPoshHelp @ParamSplat -Verbose:$false
                 }
                 else {
-                    Write-Warning "[$($Resource.Name)] No Link property for type on specification sheet, unable to match to document in user-guide repository."
+                    Write-Host -ForegroundColor Yellow "WARNING: [$($Resource.Name)] No Link property for type on specification sheet, unable to match to document in user-guide repository."
                 }
             }
         }

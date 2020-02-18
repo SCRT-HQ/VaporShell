@@ -84,7 +84,7 @@ function Get-CFNPoshHelp {
     }
     else {
         if ($ResourceName -ne 'Tag') {
-            Write-Warning "[$ResourceName] No documentation found in user-guide repository matching parsed link!`n     Parsed link: $($Link)`n     Expected: $($DocPath.Replace("$PSScriptRoot\",''))"
+            Write-Host -ForegroundColor Yellow "WARNING: [$ResourceName] No documentation found in user-guide repository matching parsed link!`n     Parsed link: $($Link)`n     Expected: $($DocPath.Replace("$PSScriptRoot\",''))"
         }
     }
 }

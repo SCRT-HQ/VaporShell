@@ -13,5 +13,13 @@ trigger:
     include:
     - refs/heads/*
 
+schedules:
+  - cron: "0 16 * * 2"
+    displayName: Weekly build on Tuesdays
+    always: true
+    branches:
+      include:
+        - master
+
 stages:
 - template: BuildTestDeployModule/azure-pipelines.yml@templates

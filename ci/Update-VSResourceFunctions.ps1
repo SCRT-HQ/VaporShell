@@ -15,8 +15,12 @@ function Update-VSResourceFunctions {
     [CmdletBinding()]
     Param()
     $vsPath = (Resolve-Path "$PSScriptRoot\..\VaporShell").Path
-    $BeforeTypeCount = (Get-ChildItem -Path (Resolve-Path "$vsPath\Public\Resource Types").Path).Count
-    $BeforePropCount = (Get-ChildItem -Path (Resolve-Path "$vsPath\Public\Resource Property Types").Path).Count
+    $vsTypeFuncPath = (Resolve-Path "$vsPath\Public\Resource Types").Path
+    $vsPropFuncPath = (Resolve-Path "$vsPath\Public\Resource Property Types").Path
+    $vsSdkFunctions = (Get-ChildItem (Resolve-Path "$vsPath\Public\SDK Wrappers").Path -Recurse -Filter '*.ps1').BaseName
+    $current = Find-Module VaporShell -Repository PSGallery -AllowPrerelease | Select-Object -ExpandProperty Includes | Select-Object -ExpandProperty Command
+    $BeforeTypeCount = ($current | Where-Object {$_ -match '^New\-VS' -and $_ -notin $vsSdkFunctions}).Count
+    $BeforePropCount = ($current | Where-Object {$_ -match '^Add\-VS' -and $_ -notin $vsSdkFunctions}).Count
     $regHash = @{
         'us-east-1 (N. Virginia)'     = 'https://d1uauaxba7bl26.cloudfront.net/latest/gzip/CloudFormationResourceSpecification.json'
         'ap-east-1 (Hong Kong)' = 'https://cfn-resource-specifications-ap-east-1-prod.s3.ap-east-1.amazonaws.com/latest/gzip/CloudFormationResourceSpecification.json'
@@ -76,7 +80,7 @@ function Update-VSResourceFunctions {
             }
         }
         catch {
-            Write-Warning "Failed to get specs from region: $($_.Key)"
+            Write-Host -ForegroundColor Yellow "WARNING: Failed to get specs from region: $($_.Key)"
         }
     }
     foreach ($resource in $final['ResourceTypes'].Values | Sort-Object Name) {

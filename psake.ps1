@@ -18,7 +18,10 @@ Properties {
     $outputDir = $env:BHBuildOutput
     $outputModDir = Join-Path -Path $outputDir -ChildPath $env:BHProjectName
     $manifest = Import-PowerShellDataFile -Path $env:BHPSModuleManifest
-    $outputModVerDir = Join-Path -Path $outputModDir -ChildPath $manifest.ModuleVersion
+    $galleryVersion = (Get-PSGalleryVersion $ModuleName).Version
+    $manifestVersion = $manifest.ModuleVersion
+    $nextModuleVersion = Get-NextModuleVersion -GalleryVersion $galleryVersion -ManifestVersion $manifestVersion
+    $outputModVerDir = Join-Path -Path $outputModDir -ChildPath $nextModuleVersion
     $pathSeperator = [IO.Path]::PathSeparator
     $Verbose = @{}
     if ($ENV:BHCommitMessage -match "!verbose") {
@@ -52,7 +55,7 @@ task Clean -depends Init {
 
 task Update -depends Clean {
     '    Updating Resource and Property Type functions with current AWS spec sheet...'
-    Get-ChildItem (Join-Path $PSScriptRoot 'ci') -Filter '*.ps1' | ForEach-Object {
+    Get-ChildItem (Join-Path $PSScriptRoot 'ci') -Filter '*.ps1' | Where-Object {$_.BaseName -notmatch ([RegEx]::Escape('https___gist.githubusercontent.com_scrthq'))} | ForEach-Object {
         . $_.FullName
     }
     Update-VSResourceFunctions
