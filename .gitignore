@@ -7,6 +7,7 @@ launch.json
 vaporshell-snippets**
 TestResults**.xml
 VaporShell.zip
+ci/https*
 
 # User-specific files
 *.suo

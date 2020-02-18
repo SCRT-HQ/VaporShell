@@ -2,6 +2,7 @@
 
 <!-- TOC -->
 
+* [2.10.0.X - 2020-02-18](#2100x---2020-02-18)
 * [2.9.5 - 2020-02-17](#295---2020-02-17)
 * [2.9.4 - 2019-12-11](#294---2019-12-11)
 * [2.9.3 - 2019-11-24](#293---2019-11-24)
@@ -51,6 +52,14 @@
 * [0.7.02](#0702)
 
 <!-- /TOC -->
+
+## 2.10.0.X - 2020-02-18
+
+* **Brought minimum .NET version to 4.7.2**
+* Updated build process to use InvokeBuild instead of psake
+* Updated tasks to pull down the latest dependent assemblies during build
+* Added scheduled build triggers for weekly deployments
+* Changed the version scheme so it includes the date stamp as the build version
 
 ## 2.9.5 - 2020-02-17
 

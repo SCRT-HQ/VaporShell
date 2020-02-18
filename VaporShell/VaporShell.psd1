@@ -12,7 +12,7 @@
     RootModule             = 'VaporShell.psm1'
 
     # Version number of this module.
-    ModuleVersion          = '2.9.5'
+    ModuleVersion          = '2.10.0'
 
     # ID used to uniquely identify this module
     GUID                   = 'd526494c-6e59-41ff-ad05-eedbc1473b6a'
@@ -33,7 +33,7 @@ Prerequisites
 
 - PowerShell 3+
     - On Linux or macOS? Grab PowerShell 6 here: https://github.com/powershell/powershell#get-powershell
-- .NET 4.5.0+ OR .netstandard 1.3+
+- .NET 4.7.2+ OR .netstandard 1.3+
     - if you have PowerShell 4 or greater, you're covered!
 
 For further information, please checkout the README on the GitHub page and the module website:
@@ -52,7 +52,7 @@ Website: https://vaporshell.io/
     # PowerShellHostVersion = ''
 
     # Minimum version of Microsoft .NET Framework required by this module
-    DotNetFrameworkVersion = '4.5.0'
+    DotNetFrameworkVersion = '4.7.2'
 
     # Minimum version of the common language runtime (CLR) required by this module
     # CLRVersion = ''
@@ -61,10 +61,10 @@ Website: https://vaporshell.io/
     ProcessorArchitecture  = 'None'
 
     # Modules that must be imported into the global environment prior to importing this module
-    # RequiredModules = @()
+    RequiredModules        = @()
 
     # Assemblies that must be loaded prior to importing this module
-    RequiredAssemblies     = @()
+    RequiredAssemblies     = @('AWSSDK.Core.dll','AWSSDK.SecurityToken.dll','AWSSDK.CloudFormation.dll','AWSSDK.S3.dll')
 
     # Script files (.ps1) that are run in the caller's environment prior to importing this module.
     ScriptsToProcess       = @()
@@ -76,7 +76,7 @@ Website: https://vaporshell.io/
     FormatsToProcess       = @()
 
     # Modules to import as nested modules of the module specified in RootModule/ModuleToProcess
-    # NestedModules = @()
+    # NestedModules          = @('VaporShell.DSL.psm1')
 
     # Functions to export from this module
     FunctionsToExport      = '*'
@@ -105,7 +105,7 @@ Website: https://vaporshell.io/
         PSData = @{
 
             # Tags applied to this module. These help with module discovery in online galleries.
-            Tags       = 'AWS','CloudFormation','CFN','DevOps','Automation','JSON','YAML','IaC','InfrastructureAsCode','PSEdition_Core','PSEdition_Desktop','Windows','Mac','Linux'
+            Tags       = 'AWS', 'CloudFormation', 'CFN', 'DevOps', 'Automation', 'JSON', 'YAML', 'IaC', 'InfrastructureAsCode', 'PSEdition_Core', 'PSEdition_Desktop', 'Windows', 'Mac', 'Linux'
 
             # A URL to the license for this module.
             LicenseUri = 'https://github.com/scrthq/VaporShell/blob/master/LICENSE'
