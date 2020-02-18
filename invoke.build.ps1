@@ -85,7 +85,7 @@ task Clean Init,{
 # Synopsis: Updates module functions before compilation
 Task Update Clean, {
     Write-BuildLog 'Updating Resource and Property Type functions with current AWS spec sheet...'
-    Get-ChildItem (Join-Path $PSScriptRoot 'ci') -Filter '*.ps1' | Where-Object { $_.BaseName -notmatch ([RegEx]::Escape('https___gist.githubusercontent.com_scrthq')) } | ForEach-Object {
+    Get-ChildItem (Join-Path $PSScriptRoot 'ci') -Filter '*.ps1' | Where-Object { $_.BaseName -notmatch "(GitHubReleaseNotes|$(([RegEx]::Escape('https___gist.githubusercontent.com_scrthq'))))" } | ForEach-Object {
         . $_.FullName
     }
     Update-VSResourceFunctions
