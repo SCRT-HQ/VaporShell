@@ -3,7 +3,7 @@ Param(
     # Process-specific parameters
     [Parameter()]
     [string]
-    $ModuleName = (Get-Item $PSScriptRoot).BaseName,
+    $ModuleName = 'VaporShell',
     [Parameter()]
     [hashtable]
     $Dependencies = @{
