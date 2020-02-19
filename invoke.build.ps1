@@ -384,7 +384,7 @@ task PublishToGitHub -If $gitHubConditions {
     [System.IO.Compression.ZipFile]::CreateFromDirectory($TargetModuleDirectory,$zipPath)
     Write-BuildLog "Publishing Release v$($NextModuleVersion) @ commit Id [$($commitId)] to GitHub..."
 
-    $ReleaseNotes = . .\ci\GitHubReleaseNotes.ps1
+    $ReleaseNotes = . .\ci\GitHubReleaseNotes.ps1 -ModuleName $ModuleName -ModuleVersion $NextModuleVersion
 
     $gitHubParams = @{
         VersionNumber    = $NextModuleVersion.ToString()
