@@ -1,40 +1,32 @@
 function Add-VSBackupBackupSelectionBackupSelectionResourceType {
     <#
     .SYNOPSIS
-        Adds an AWS::Backup::BackupSelection.BackupSelectionResourceType resource property to the template. Specifies an object containing properties used to assign a set of resources to a backup plan.
+        Adds an AWS::Backup::BackupSelection.BackupSelectionResourceType resource property to the template. 
 
     .DESCRIPTION
         Adds an AWS::Backup::BackupSelection.BackupSelectionResourceType resource property to the template.
-Specifies an object containing properties used to assign a set of resources to a backup plan.
+
 
     .LINK
         http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-backup-backupselection-backupselectionresourcetype.html
 
     .PARAMETER ListOfTags
-        An array of conditions used to specify a set of resources to assign to a backup plan; for example, "StringEquals": {"ec2:ResourceTag/Department": "accounting".
-
         Type: List
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-backup-backupselection-backupselectionresourcetype.html#cfn-backup-backupselection-backupselectionresourcetype-listoftags
         ItemType: ConditionResourceType
         UpdateType: Mutable
 
     .PARAMETER SelectionName
-        The display name of a resource selection document.
-
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-backup-backupselection-backupselectionresourcetype.html#cfn-backup-backupselection-backupselectionresourcetype-selectionname
         PrimitiveType: String
         UpdateType: Mutable
 
     .PARAMETER IamRoleArn
-        The ARN of the IAM role that AWS Backup uses to authenticate when restoring the target resource; for example, arn:aws:iam::123456789012:role/S3Access.
-
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-backup-backupselection-backupselectionresourcetype.html#cfn-backup-backupselection-backupselectionresourcetype-iamrolearn
         PrimitiveType: String
         UpdateType: Mutable
 
     .PARAMETER Resources
-        An array of strings that either contain Amazon Resource Names ARNs or match patterns such as "arn:aws:ec2:us-east-1:123456789012:volume/*" of resources to assign to a backup plan.
-
         PrimitiveItemType: String
         Type: List
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-backup-backupselection-backupselectionresourcetype.html#cfn-backup-backupselection-backupselectionresourcetype-resources

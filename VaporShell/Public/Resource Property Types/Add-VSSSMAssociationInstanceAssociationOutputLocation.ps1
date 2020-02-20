@@ -1,18 +1,16 @@
 function Add-VSSSMAssociationInstanceAssociationOutputLocation {
     <#
     .SYNOPSIS
-        Adds an AWS::SSM::Association.InstanceAssociationOutputLocation resource property to the template. InstanceAssociationOutputLocation is a property of the AWS::SSM::Association: https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ssm-association.html resource that specifies an Amazon S3 bucket where you want to store the results of this association request.
+        Adds an AWS::SSM::Association.InstanceAssociationOutputLocation resource property to the template. 
 
     .DESCRIPTION
         Adds an AWS::SSM::Association.InstanceAssociationOutputLocation resource property to the template.
-InstanceAssociationOutputLocation is a property of the AWS::SSM::Association: https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ssm-association.html resource that specifies an Amazon S3 bucket where you want to store the results of this association request.
+
 
     .LINK
         http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ssm-association-instanceassociationoutputlocation.html
 
     .PARAMETER S3Location
-        S3OutputLocation is a property of the InstanceAssociationOutputLocation: https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ssm-association-instanceassociationoutputlocation.html property that specifies an Amazon S3 bucket where you want to store the results of this request.
-
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ssm-association-instanceassociationoutputlocation.html#cfn-ssm-association-instanceassociationoutputlocation-s3location
         Type: S3OutputLocation
         UpdateType: Mutable

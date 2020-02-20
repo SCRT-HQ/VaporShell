@@ -1,12 +1,10 @@
 function New-VSApiGatewayDomainName {
     <#
     .SYNOPSIS
-        Adds an AWS::ApiGateway::DomainName resource to the template. The AWS::ApiGateway::DomainName resource specifies a custom domain name for your API in API Gateway.
+        Adds an AWS::ApiGateway::DomainName resource to the template. 
 
     .DESCRIPTION
-        Adds an AWS::ApiGateway::DomainName resource to the template. The AWS::ApiGateway::DomainName resource specifies a custom domain name for your API in API Gateway.
-
-You can use a custom domain name to provide a URL that's more intuitive and easier to recall. For more information about using custom domain names, see Set up Custom Domain Name for an API in API Gateway: https://docs.aws.amazon.com/apigateway/latest/developerguide/how-to-custom-domains.html in the *API Gateway Developer Guide*.
+        Adds an AWS::ApiGateway::DomainName resource to the template. 
 
     .LINK
         http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-apigateway-domainname.html
@@ -15,43 +13,31 @@ You can use a custom domain name to provide a URL that's more intuitive and easi
         The logical ID must be alphanumeric (A-Za-z0-9) and unique within the template. Use the logical name to reference the resource in other parts of the template. For example, if you want to map an Amazon Elastic Block Store volume to an Amazon EC2 instance, you reference the logical IDs to associate the block stores with the instance.
 
     .PARAMETER CertificateArn
-        The reference to an AWS-managed certificate for use by the edge-optimized endpoint for this domain name. AWS Certificate Manager is the only supported source. For requirements and additional information about setting up certificates, see Get Certificates Ready in AWS Certificate Manager: https://docs.aws.amazon.com/apigateway/latest/developerguide/how-to-custom-domains.html#how-to-custom-domains-prerequisites in the *API Gateway Developer Guide*.
-
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-apigateway-domainname.html#cfn-apigateway-domainname-certificatearn
         PrimitiveType: String
         UpdateType: Mutable
 
     .PARAMETER DomainName
-        The custom domain name for your API. Uppercase letters are not supported.
-
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-apigateway-domainname.html#cfn-apigateway-domainname-domainname
         PrimitiveType: String
         UpdateType: Immutable
 
     .PARAMETER EndpointConfiguration
-        A list of the endpoint types of the domain name.
-
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-apigateway-domainname.html#cfn-apigateway-domainname-endpointconfiguration
         Type: EndpointConfiguration
         UpdateType: Mutable
 
     .PARAMETER RegionalCertificateArn
-        The reference to an AWS-managed certificate for use by the regional endpoint for the domain name. AWS Certificate Manager is the only supported source.
-
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-apigateway-domainname.html#cfn-apigateway-domainname-regionalcertificatearn
         PrimitiveType: String
         UpdateType: Mutable
 
     .PARAMETER SecurityPolicy
-        + domainname:create: https://docs.aws.amazon.com/apigateway/api-reference/link-relation/domainname-create/ in the *Amazon API Gateway REST API Reference*
-
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-apigateway-domainname.html#cfn-apigateway-domainname-securitypolicy
         PrimitiveType: String
         UpdateType: Mutable
 
     .PARAMETER Tags
-        + domainname:create: https://docs.aws.amazon.com/apigateway/api-reference/link-relation/domainname-create/ in the *Amazon API Gateway REST API Reference*
-
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-apigateway-domainname.html#cfn-apigateway-domainname-tags
         DuplicatesAllowed: True
         ItemType: Tag

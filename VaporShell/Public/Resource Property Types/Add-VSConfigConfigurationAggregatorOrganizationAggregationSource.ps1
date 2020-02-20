@@ -1,33 +1,27 @@
 function Add-VSConfigConfigurationAggregatorOrganizationAggregationSource {
     <#
     .SYNOPSIS
-        Adds an AWS::Config::ConfigurationAggregator.OrganizationAggregationSource resource property to the template. This object contains regions to set up the aggregator and an IAM role to retrieve organization details.
+        Adds an AWS::Config::ConfigurationAggregator.OrganizationAggregationSource resource property to the template. 
 
     .DESCRIPTION
         Adds an AWS::Config::ConfigurationAggregator.OrganizationAggregationSource resource property to the template.
-This object contains regions to set up the aggregator and an IAM role to retrieve organization details.
+
 
     .LINK
         http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-config-configurationaggregator-organizationaggregationsource.html
 
     .PARAMETER AllAwsRegions
-        If true, aggregate existing AWS Config regions and future regions.
-
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-config-configurationaggregator-organizationaggregationsource.html#cfn-config-configurationaggregator-organizationaggregationsource-allawsregions
         PrimitiveType: Boolean
         UpdateType: Mutable
 
     .PARAMETER AwsRegions
-        The source regions being aggregated.
-
         PrimitiveItemType: String
         Type: List
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-config-configurationaggregator-organizationaggregationsource.html#cfn-config-configurationaggregator-organizationaggregationsource-awsregions
         UpdateType: Mutable
 
     .PARAMETER RoleArn
-        ARN of the IAM role used to retrieve AWS Organization details associated with the aggregator account.
-
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-config-configurationaggregator-organizationaggregationsource.html#cfn-config-configurationaggregator-organizationaggregationsource-rolearn
         PrimitiveType: String
         UpdateType: Mutable

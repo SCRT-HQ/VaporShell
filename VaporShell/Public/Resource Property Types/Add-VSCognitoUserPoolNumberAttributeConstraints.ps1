@@ -1,25 +1,21 @@
 function Add-VSCognitoUserPoolNumberAttributeConstraints {
     <#
     .SYNOPSIS
-        Adds an AWS::Cognito::UserPool.NumberAttributeConstraints resource property to the template. The NumberAttributeConstraints property type defines the number attribute constraints of an Amazon Cognito User Pool. NumberAttributeConstraints is a subproperty of the SchemaAttribute: https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-cognito-userpool-schemaattribute.html property type.
+        Adds an AWS::Cognito::UserPool.NumberAttributeConstraints resource property to the template. 
 
     .DESCRIPTION
         Adds an AWS::Cognito::UserPool.NumberAttributeConstraints resource property to the template.
-The NumberAttributeConstraints property type defines the number attribute constraints of an Amazon Cognito User Pool. NumberAttributeConstraints is a subproperty of the SchemaAttribute: https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-cognito-userpool-schemaattribute.html property type.
+
 
     .LINK
         http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-cognito-userpool-numberattributeconstraints.html
 
     .PARAMETER MinValue
-        The minimum value of an attribute that is of the number data type.
-
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-cognito-userpool-numberattributeconstraints.html#cfn-cognito-userpool-numberattributeconstraints-minvalue
         PrimitiveType: String
         UpdateType: Mutable
 
     .PARAMETER MaxValue
-        The maximum value of an attribute that is of the number data type.
-
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-cognito-userpool-numberattributeconstraints.html#cfn-cognito-userpool-numberattributeconstraints-maxvalue
         PrimitiveType: String
         UpdateType: Mutable

@@ -1,10 +1,10 @@
 function New-VSCodePipelineCustomActionType {
     <#
     .SYNOPSIS
-        Adds an AWS::CodePipeline::CustomActionType resource to the template. The AWS::CodePipeline::CustomActionType resource creates a custom action for activities that aren't included in the CodePipeline default actions, such as running an internally developed build process or a test suite. You can use these custom actions in the stage of a pipeline. For more information, see Create and Add a Custom Action in AWS CodePipeline: https://docs.aws.amazon.com/codepipeline/latest/userguide/how-to-create-custom-action.html in the *AWS CodePipeline User Guide*.
+        Adds an AWS::CodePipeline::CustomActionType resource to the template. 
 
     .DESCRIPTION
-        Adds an AWS::CodePipeline::CustomActionType resource to the template. The AWS::CodePipeline::CustomActionType resource creates a custom action for activities that aren't included in the CodePipeline default actions, such as running an internally developed build process or a test suite. You can use these custom actions in the stage of a pipeline. For more information, see Create and Add a Custom Action in AWS CodePipeline: https://docs.aws.amazon.com/codepipeline/latest/userguide/how-to-create-custom-action.html in the *AWS CodePipeline User Guide*.
+        Adds an AWS::CodePipeline::CustomActionType resource to the template. 
 
     .LINK
         http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-codepipeline-customactiontype.html
@@ -13,17 +13,11 @@ function New-VSCodePipelineCustomActionType {
         The logical ID must be alphanumeric (A-Za-z0-9) and unique within the template. Use the logical name to reference the resource in other parts of the template. For example, if you want to map an Amazon Elastic Block Store volume to an Amazon EC2 instance, you reference the logical IDs to associate the block stores with the instance.
 
     .PARAMETER Category
-        The category of the custom action, such as a build action or a test action.
-Although Source and Approval are listed as valid values, they are not currently functional. These values are reserved for future use.
-
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-codepipeline-customactiontype.html#cfn-codepipeline-customactiontype-category
         PrimitiveType: String
         UpdateType: Immutable
 
     .PARAMETER ConfigurationProperties
-        The configuration properties for the custom action.
-You can refer to a name in the configuration properties of the custom action within the URL templates by following the format of {Config:name}, as long as the configuration property is both required and not secret. For more information, see Create a Custom Action for a Pipeline: https://docs.aws.amazon.com/codepipeline/latest/userguide/how-to-create-custom-action.html.
-
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-codepipeline-customactiontype.html#cfn-codepipeline-customactiontype-configurationproperties
         DuplicatesAllowed: False
         ItemType: ConfigurationProperties
@@ -31,29 +25,21 @@ You can refer to a name in the configuration properties of the custom action wit
         UpdateType: Immutable
 
     .PARAMETER InputArtifactDetails
-        The details of the input artifact for the action, such as its commit ID.
-
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-codepipeline-customactiontype.html#cfn-codepipeline-customactiontype-inputartifactdetails
         Type: ArtifactDetails
         UpdateType: Immutable
 
     .PARAMETER OutputArtifactDetails
-        The details of the output artifact of the action, such as its commit ID.
-
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-codepipeline-customactiontype.html#cfn-codepipeline-customactiontype-outputartifactdetails
         Type: ArtifactDetails
         UpdateType: Immutable
 
     .PARAMETER Provider
-        The provider of the service used in the custom action, such as AWS CodeDeploy.
-
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-codepipeline-customactiontype.html#cfn-codepipeline-customactiontype-provider
         PrimitiveType: String
         UpdateType: Immutable
 
     .PARAMETER Settings
-        URLs that provide users information about this custom action.
-
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-codepipeline-customactiontype.html#cfn-codepipeline-customactiontype-settings
         Type: Settings
         UpdateType: Immutable
@@ -66,8 +52,6 @@ You can refer to a name in the configuration properties of the custom action wit
         UpdateType: Mutable
 
     .PARAMETER Version
-        The version identifier of the custom action.
-
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-codepipeline-customactiontype.html#cfn-codepipeline-customactiontype-version
         PrimitiveType: String
         UpdateType: Immutable

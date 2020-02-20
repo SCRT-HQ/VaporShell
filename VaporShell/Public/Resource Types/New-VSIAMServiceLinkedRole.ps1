@@ -1,12 +1,10 @@
 function New-VSIAMServiceLinkedRole {
     <#
     .SYNOPSIS
-        Adds an AWS::IAM::ServiceLinkedRole resource to the template. Creates an IAM role that is linked to a specific AWS service. The service controls the attached policies and when the role can be deleted. This helps ensure that the service is not broken by an unexpectedly changed or deleted role, which could put your AWS resources into an unknown state. Allowing the service to control the role helps improve service stability and proper cleanup when a service and its role are no longer needed. For more information, see Using Service-Linked Roles: https://docs.aws.amazon.com/IAM/latest/UserGuide/using-service-linked-roles.html in the *IAM User Guide*.
+        Adds an AWS::IAM::ServiceLinkedRole resource to the template. 
 
     .DESCRIPTION
-        Adds an AWS::IAM::ServiceLinkedRole resource to the template. Creates an IAM role that is linked to a specific AWS service. The service controls the attached policies and when the role can be deleted. This helps ensure that the service is not broken by an unexpectedly changed or deleted role, which could put your AWS resources into an unknown state. Allowing the service to control the role helps improve service stability and proper cleanup when a service and its role are no longer needed. For more information, see Using Service-Linked Roles: https://docs.aws.amazon.com/IAM/latest/UserGuide/using-service-linked-roles.html in the *IAM User Guide*.
-
-To attach a policy to this service-linked role, you must make the request using the AWS service that depends on this role.
+        Adds an AWS::IAM::ServiceLinkedRole resource to the template. 
 
     .LINK
         http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-iam-servicelinkedrole.html
@@ -15,24 +13,16 @@ To attach a policy to this service-linked role, you must make the request using 
         The logical ID must be alphanumeric (A-Za-z0-9) and unique within the template. Use the logical name to reference the resource in other parts of the template. For example, if you want to map an Amazon Elastic Block Store volume to an Amazon EC2 instance, you reference the logical IDs to associate the block stores with the instance.
 
     .PARAMETER CustomSuffix
-        A string that you provide, which is combined with the service-provided prefix to form the complete role name. If you make multiple requests for the same service, then you must supply a different CustomSuffix for each request. Otherwise the request fails with a duplicate role name error. For example, you could add -1 or -debug to the suffix.
-Some services do not support the CustomSuffix parameter. If you provide an optional suffix and the operation fails, try the operation again without the suffix.
-
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-iam-servicelinkedrole.html#cfn-iam-servicelinkedrole-customsuffix
         PrimitiveType: String
         UpdateType: Immutable
 
     .PARAMETER Description
-        The description of the role.
-
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-iam-servicelinkedrole.html#cfn-iam-servicelinkedrole-description
         PrimitiveType: String
         UpdateType: Mutable
 
     .PARAMETER AWSServiceName
-        The service principal for the AWS service to which this role is attached. You use a string similar to a URL but without the http:// in front. For example: elasticbeanstalk.amazonaws.com.
-Service principals are unique and case-sensitive. To find the exact service principal for your service-linked role, see AWS Services That Work with IAM: https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_aws-services-that-work-with-iam.html in the *IAM User Guide*. Look for the services that have **Yes **in the **Service-Linked Role** column. Choose the **Yes** link to view the service-linked role documentation for that service.
-
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-iam-servicelinkedrole.html#cfn-iam-servicelinkedrole-awsservicename
         PrimitiveType: String
         UpdateType: Immutable

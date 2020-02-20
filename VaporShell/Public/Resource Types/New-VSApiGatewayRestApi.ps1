@@ -1,14 +1,10 @@
 function New-VSApiGatewayRestApi {
     <#
     .SYNOPSIS
-        Adds an AWS::ApiGateway::RestApi resource to the template. The AWS::ApiGateway::RestApi resource creates a REST API. For more information, see restapi:create: https://docs.aws.amazon.com/apigateway/api-reference/link-relation/restapi-create/ in the *Amazon API Gateway REST API Reference*.
+        Adds an AWS::ApiGateway::RestApi resource to the template. 
 
     .DESCRIPTION
-        Adds an AWS::ApiGateway::RestApi resource to the template. The AWS::ApiGateway::RestApi resource creates a REST API. For more information, see restapi:create: https://docs.aws.amazon.com/apigateway/api-reference/link-relation/restapi-create/ in the *Amazon API Gateway REST API Reference*.
-
-**Note**
-
-On January 1, 2016, the Swagger Specification was donated to the OpenAPI initiative: https://www.openapis.org/, becoming the foundation of the OpenAPI Specification.
+        Adds an AWS::ApiGateway::RestApi resource to the template. 
 
     .LINK
         http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-apigateway-restapi.html
@@ -17,17 +13,11 @@ On January 1, 2016, the Swagger Specification was donated to the OpenAPI initiat
         The logical ID must be alphanumeric (A-Za-z0-9) and unique within the template. Use the logical name to reference the resource in other parts of the template. For example, if you want to map an Amazon Elastic Block Store volume to an Amazon EC2 instance, you reference the logical IDs to associate the block stores with the instance.
 
     .PARAMETER ApiKeySourceType
-        The source of the API key for metering requests according to a usage plan. Valid values are:
-+ HEADER to read the API key from the X-API-Key header of a request.
-+ AUTHORIZER to read the API key from the UsageIdentifierKey from a Lambda authorizer.
-
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-apigateway-restapi.html#cfn-apigateway-restapi-apikeysourcetype
         PrimitiveType: String
         UpdateType: Mutable
 
     .PARAMETER BinaryMediaTypes
-        The list of binary media types that are supported by the RestApi resource, such as image/png or application/octet-stream. By default, RestApi supports only UTF-8-encoded text payloads. For more information, see Enable Support for Binary Payloads in API Gateway: https://docs.aws.amazon.com/apigateway/latest/developerguide/api-gateway-payload-encodings.html in the *API Gateway Developer Guide*. Duplicates are not allowed.
-
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-apigateway-restapi.html#cfn-apigateway-restapi-binarymediatypes
         DuplicatesAllowed: False
         PrimitiveItemType: String
@@ -35,64 +25,46 @@ On January 1, 2016, the Swagger Specification was donated to the OpenAPI initiat
         UpdateType: Mutable
 
     .PARAMETER Body
-        An OpenAPI specification that defines a set of RESTful APIs in JSON format. For YAML templates, you can also provide the specification in YAML format.
-
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-apigateway-restapi.html#cfn-apigateway-restapi-body
         PrimitiveType: Json
         UpdateType: Mutable
 
     .PARAMETER BodyS3Location
-        The Amazon Simple Storage Service Amazon S3 location that points to an OpenAPI file, which defines a set of RESTful APIs in JSON or YAML format.
-
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-apigateway-restapi.html#cfn-apigateway-restapi-bodys3location
         Type: S3Location
         UpdateType: Mutable
 
     .PARAMETER CloneFrom
-        The ID of the RestApi resource that you want to clone.
-
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-apigateway-restapi.html#cfn-apigateway-restapi-clonefrom
         PrimitiveType: String
         UpdateType: Mutable
 
     .PARAMETER Description
-        A description of the RestApi resource.
-
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-apigateway-restapi.html#cfn-apigateway-restapi-description
         PrimitiveType: String
         UpdateType: Mutable
 
     .PARAMETER EndpointConfiguration
-        A list of the endpoint types of the API. Use this property when creating an API. When importing an existing API, specify the endpoint configuration types using the Parameters property.
-
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-apigateway-restapi.html#cfn-apigateway-restapi-endpointconfiguration
         Type: EndpointConfiguration
         UpdateType: Mutable
 
     .PARAMETER FailOnWarnings
-        Indicates whether to roll back the resource if a warning occurs while API Gateway is creating the RestApi resource.
-
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-apigateway-restapi.html#cfn-apigateway-restapi-failonwarnings
         PrimitiveType: Boolean
         UpdateType: Mutable
 
     .PARAMETER MinimumCompressionSize
-        A nullable integer that is used to enable compression with non-negative between 0 and 10485760 10M bytes, inclusive or disable compression with a null value on an API. When compression is enabled, compression or decompression is not applied on the payload if the payload size is smaller than this value. Setting it to zero allows compression for any payload size.
-
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-apigateway-restapi.html#cfn-apigateway-restapi-minimumcompressionsize
         PrimitiveType: Integer
         UpdateType: Mutable
 
     .PARAMETER Name
-        A name for the RestApi resource.
-
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-apigateway-restapi.html#cfn-apigateway-restapi-name
         PrimitiveType: String
         UpdateType: Mutable
 
     .PARAMETER Parameters
-        Custom header parameters for the request.
-
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-apigateway-restapi.html#cfn-apigateway-restapi-parameters
         DuplicatesAllowed: False
         PrimitiveItemType: String
@@ -100,15 +72,11 @@ On January 1, 2016, the Swagger Specification was donated to the OpenAPI initiat
         UpdateType: Mutable
 
     .PARAMETER Policy
-        A policy document that contains the permissions for the RestApi resource, in JSON format.
-
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-apigateway-restapi.html#cfn-apigateway-restapi-policy
         PrimitiveType: Json
         UpdateType: Mutable
 
     .PARAMETER Tags
-        + restapi:create: https://docs.aws.amazon.com/apigateway/api-reference/link-relation/restapi-create/ in the *Amazon API Gateway REST API Reference*
-
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-apigateway-restapi.html#cfn-apigateway-restapi-tags
         DuplicatesAllowed: True
         ItemType: Tag

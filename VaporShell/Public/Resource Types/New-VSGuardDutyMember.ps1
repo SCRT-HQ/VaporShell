@@ -1,10 +1,10 @@
 function New-VSGuardDutyMember {
     <#
     .SYNOPSIS
-        Adds an AWS::GuardDuty::Member resource to the template. You can use the AWS::GuardDuty::Member resource to add an AWS account as a GuardDuty member account to the current GuardDuty master account. If the value of the Status property is not provided or is set to Created, a member account is created but not invited. If the value of the Status property is set to Invited, a member account is created and invited. A AWS::GuardDuty::Member resource must be created with the Status property set to Invited before the AWS::GuardDuty::Master resource can be created in a GuardDuty member account.
+        Adds an AWS::GuardDuty::Member resource to the template. 
 
     .DESCRIPTION
-        Adds an AWS::GuardDuty::Member resource to the template. You can use the AWS::GuardDuty::Member resource to add an AWS account as a GuardDuty member account to the current GuardDuty master account. If the value of the Status property is not provided or is set to Created, a member account is created but not invited. If the value of the Status property is set to Invited, a member account is created and invited. A AWS::GuardDuty::Member resource must be created with the Status property set to Invited before the AWS::GuardDuty::Master resource can be created in a GuardDuty member account.
+        Adds an AWS::GuardDuty::Member resource to the template. 
 
     .LINK
         http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-guardduty-member.html
@@ -13,43 +13,31 @@ function New-VSGuardDutyMember {
         The logical ID must be alphanumeric (A-Za-z0-9) and unique within the template. Use the logical name to reference the resource in other parts of the template. For example, if you want to map an Amazon Elastic Block Store volume to an Amazon EC2 instance, you reference the logical IDs to associate the block stores with the instance.
 
     .PARAMETER Status
-        You can use the Status property to update the status of the relationship between the member account and its master account. Valid values are Created and Invited when using a AWS::GuardDuty::Member resource. If the value for this property is not provided or set to Created, a member account is created but not invited. If the value of this property is set to Invited, a member account is created and invited.
-
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-guardduty-member.html#cfn-guardduty-member-status
         PrimitiveType: String
         UpdateType: Mutable
 
     .PARAMETER MemberId
-        The AWS account ID of the account to designate as a member.
-
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-guardduty-member.html#cfn-guardduty-member-memberid
         PrimitiveType: String
         UpdateType: Immutable
 
     .PARAMETER Email
-        The email address associated with the member account.
-
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-guardduty-member.html#cfn-guardduty-member-email
         PrimitiveType: String
         UpdateType: Immutable
 
     .PARAMETER Message
-        The message to include with the invitation sent to the member accounts.
-
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-guardduty-member.html#cfn-guardduty-member-message
         PrimitiveType: String
         UpdateType: Mutable
 
     .PARAMETER DisableEmailNotification
-        Specifies whether or not to disable email notification for the member account that you invite.
-
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-guardduty-member.html#cfn-guardduty-member-disableemailnotification
         PrimitiveType: Boolean
         UpdateType: Mutable
 
     .PARAMETER DetectorId
-        The ID of the detector associated with the GuardDuty service to add the member to.
-
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-guardduty-member.html#cfn-guardduty-member-detectorid
         PrimitiveType: String
         UpdateType: Immutable

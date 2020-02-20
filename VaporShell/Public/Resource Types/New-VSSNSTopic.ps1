@@ -1,16 +1,10 @@
 function New-VSSNSTopic {
     <#
     .SYNOPSIS
-        Adds an AWS::SNS::Topic resource to the template. The AWS::SNS::Topic resource creates a topic to which notifications can be published.
+        Adds an AWS::SNS::Topic resource to the template. 
 
     .DESCRIPTION
-        Adds an AWS::SNS::Topic resource to the template. The AWS::SNS::Topic resource creates a topic to which notifications can be published.
-
-**Note**
-
-One user can create a maximum of 100,000 topics.
-
-This action is idempotent: If the requester already owns a topic with the specified name, that topic's ARN is returned without creating a new topic.
+        Adds an AWS::SNS::Topic resource to the template. 
 
     .LINK
         http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-sns-topic.html
@@ -19,23 +13,16 @@ This action is idempotent: If the requester already owns a topic with the specif
         The logical ID must be alphanumeric (A-Za-z0-9) and unique within the template. Use the logical name to reference the resource in other parts of the template. For example, if you want to map an Amazon Elastic Block Store volume to an Amazon EC2 instance, you reference the logical IDs to associate the block stores with the instance.
 
     .PARAMETER DisplayName
-        The display name to use for an Amazon SNS topic with SMS subscriptions.
-
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-sns-topic.html#cfn-sns-topic-displayname
         PrimitiveType: String
         UpdateType: Mutable
 
     .PARAMETER KmsMasterKeyId
-        The ID of an AWS-managed customer master key CMK for Amazon SNS or a custom CMK. For more information, see Key Terms: https://docs.aws.amazon.com/sns/latest/dg/sns-server-side-encryption.html#sse-key-terms. For more examples, see  KeyId: https://docs.aws.amazon.com/kms/latest/APIReference/API_DescribeKey.html#API_DescribeKey_RequestParameters  in the *AWS Key Management Service API Reference*.
-This property applies only to server-side-encryption: https://docs.aws.amazon.com/sns/latest/dg/sns-server-side-encryption.html.
-
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-sns-topic.html#cfn-sns-topic-kmsmasterkeyid
         PrimitiveType: String
         UpdateType: Mutable
 
     .PARAMETER Subscription
-        The SNS subscriptions endpoints for this topic.
-
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-sns-topic.html#cfn-sns-topic-subscription
         DuplicatesAllowed: True
         ItemType: Subscription
@@ -43,8 +30,6 @@ This property applies only to server-side-encryption: https://docs.aws.amazon.co
         UpdateType: Mutable
 
     .PARAMETER Tags
-        +  Using an AWS CloudFormation Template to Create a Topic that Sends Messages to Amazon SQS Queues: https://docs.aws.amazon.com/sns/latest/dg/SendMessageToSQS.cloudformation.html in the *Amazon Simple Notification Service Developer Guide*
-
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-sns-topic.html#cfn-sns-topic-tags
         DuplicatesAllowed: True
         ItemType: Tag
@@ -52,10 +37,6 @@ This property applies only to server-side-encryption: https://docs.aws.amazon.co
         UpdateType: Mutable
 
     .PARAMETER TopicName
-        The name of the topic you want to create. Topic names must include only uppercase and lowercase ASCII letters, numbers, underscores, and hyphens, and must be between 1 and 256 characters long.
-If you don't specify a name, AWS CloudFormation generates a unique physical ID and uses that ID for the topic name. For more information, see Name Type: https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-name.html.
-If you specify a name, you can't perform updates that require replacement of this resource. You can perform updates that require no or some interruption. If you must replace the resource, specify a new name.
-
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-sns-topic.html#cfn-sns-topic-topicname
         PrimitiveType: String
         UpdateType: Immutable

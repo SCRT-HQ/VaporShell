@@ -1,25 +1,21 @@
 function Add-VSIoTEventsDetectorModelSetTimer {
     <#
     .SYNOPSIS
-        Adds an AWS::IoTEvents::DetectorModel.SetTimer resource property to the template. Information needed to set the timer.
+        Adds an AWS::IoTEvents::DetectorModel.SetTimer resource property to the template. 
 
     .DESCRIPTION
         Adds an AWS::IoTEvents::DetectorModel.SetTimer resource property to the template.
-Information needed to set the timer.
+
 
     .LINK
         http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iotevents-detectormodel-settimer.html
 
     .PARAMETER Seconds
-        The number of seconds until the timer expires. The minimum value is 60 seconds to ensure accuracy.
-
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iotevents-detectormodel-settimer.html#cfn-iotevents-detectormodel-settimer-seconds
         PrimitiveType: Integer
         UpdateType: Mutable
 
     .PARAMETER TimerName
-        The name of the timer.
-
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iotevents-detectormodel-settimer.html#cfn-iotevents-detectormodel-settimer-timername
         PrimitiveType: String
         UpdateType: Mutable

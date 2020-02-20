@@ -1,10 +1,10 @@
 function New-VSTransferServer {
     <#
     .SYNOPSIS
-        Adds an AWS::Transfer::Server resource to the template. Instantiates an autoscaling virtual server based on Secure File Transfer Protocol (SFTP in AWS. When you make updates to your server or when you work with users, use the service-generated ServerId property that is assigned to the newly created server.
+        Adds an AWS::Transfer::Server resource to the template. 
 
     .DESCRIPTION
-        Adds an AWS::Transfer::Server resource to the template. Instantiates an autoscaling virtual server based on Secure File Transfer Protocol (SFTP in AWS. When you make updates to your server or when you work with users, use the service-generated ServerId property that is assigned to the newly created server.
+        Adds an AWS::Transfer::Server resource to the template. 
 
     .LINK
         http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-transfer-server.html
@@ -13,43 +13,31 @@ function New-VSTransferServer {
         The logical ID must be alphanumeric (A-Za-z0-9) and unique within the template. Use the logical name to reference the resource in other parts of the template. For example, if you want to map an Amazon Elastic Block Store volume to an Amazon EC2 instance, you reference the logical IDs to associate the block stores with the instance.
 
     .PARAMETER LoggingRole
-        A value that allows the service to write your SFTP users' activity to your Amazon CloudWatch logs for monitoring and auditing purposes.
-
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-transfer-server.html#cfn-transfer-server-loggingrole
         PrimitiveType: String
         UpdateType: Mutable
 
     .PARAMETER IdentityProviderDetails
-        This parameter is required when the IdentityProviderType is set to API_GATEWAY. Accepts an array containing all of the information required to call a customer-supplied authentication API, including the API Gateway URL. This property is not required when the IdentityProviderType is set to SERVICE_MANAGED.
-
         Type: IdentityProviderDetails
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-transfer-server.html#cfn-transfer-server-identityproviderdetails
         UpdateType: Mutable
 
     .PARAMETER EndpointType
-        The type of VPC endpoint that you want your SFTP server to connect to. If you connect to a VPC endpoint, your SFTP server isn't accessible over the public internet.
-
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-transfer-server.html#cfn-transfer-server-endpointtype
         PrimitiveType: String
         UpdateType: Mutable
 
     .PARAMETER EndpointDetails
-        The virtual private cloud VPC endpoint settings that you want to configure for your SFTP server. This parameter is required when you specify a value for the EndpointType parameter.
-
         Type: EndpointDetails
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-transfer-server.html#cfn-transfer-server-endpointdetails
         UpdateType: Mutable
 
     .PARAMETER IdentityProviderType
-        Specifies the mode of authentication for the SFTP server. The default value is SERVICE_MANAGED, which allows you to store and access SFTP user credentials within the AWS Transfer for SFTP service. Use the API_GATEWAY value to integrate with an identity provider of your choosing. The API_GATEWAY setting requires you to provide an API Gateway endpoint URL to call for authentication using the IdentityProviderDetails parameter.
-
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-transfer-server.html#cfn-transfer-server-identityprovidertype
         PrimitiveType: String
         UpdateType: Immutable
 
     .PARAMETER Tags
-        Key-value pairs that can be used to group and search for servers.
-
         Type: List
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-transfer-server.html#cfn-transfer-server-tags
         ItemType: Tag

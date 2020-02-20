@@ -1,25 +1,21 @@
 function Add-VSAppStreamStackApplicationSettings {
     <#
     .SYNOPSIS
-        Adds an AWS::AppStream::Stack.ApplicationSettings resource property to the template. The persistent application settings for users of a stack.
+        Adds an AWS::AppStream::Stack.ApplicationSettings resource property to the template. 
 
     .DESCRIPTION
         Adds an AWS::AppStream::Stack.ApplicationSettings resource property to the template.
-The persistent application settings for users of a stack.
+
 
     .LINK
         http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-appstream-stack-applicationsettings.html
 
     .PARAMETER SettingsGroup
-        The path prefix for the S3 bucket where users’ persistent application settings are stored. You can allow the same persistent application settings to be used across multiple stacks by specifying the same settings group for each stack.
-
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-appstream-stack-applicationsettings.html#cfn-appstream-stack-applicationsettings-settingsgroup
         PrimitiveType: String
         UpdateType: Mutable
 
     .PARAMETER Enabled
-        Enables or disables persistent application settings for users during their streaming sessions.
-
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-appstream-stack-applicationsettings.html#cfn-appstream-stack-applicationsettings-enabled
         PrimitiveType: Boolean
         UpdateType: Mutable

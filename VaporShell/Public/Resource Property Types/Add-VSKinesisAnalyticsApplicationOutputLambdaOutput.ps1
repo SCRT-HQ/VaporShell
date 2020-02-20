@@ -1,26 +1,21 @@
 function Add-VSKinesisAnalyticsApplicationOutputLambdaOutput {
     <#
     .SYNOPSIS
-        Adds an AWS::KinesisAnalytics::ApplicationOutput.LambdaOutput resource property to the template. When configuring application output, identifies an AWS Lambda function as the destination. You provide the function Amazon Resource Name (ARN and also an IAM role ARN that Amazon Kinesis Analytics can use to write to the function on your behalf.
+        Adds an AWS::KinesisAnalytics::ApplicationOutput.LambdaOutput resource property to the template. 
 
     .DESCRIPTION
         Adds an AWS::KinesisAnalytics::ApplicationOutput.LambdaOutput resource property to the template.
-When configuring application output, identifies an AWS Lambda function as the destination. You provide the function Amazon Resource Name (ARN and also an IAM role ARN that Amazon Kinesis Analytics can use to write to the function on your behalf.
+
 
     .LINK
         http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-kinesisanalytics-applicationoutput-lambdaoutput.html
 
     .PARAMETER ResourceARN
-        Amazon Resource Name ARN of the destination Lambda function to write to.
-To specify an earlier version of the Lambda function than the latest, include the Lambda function version in the Lambda function ARN. For more information about Lambda ARNs, see Example ARNs: AWS Lambda: /general/latest/gr/aws-arns-and-namespaces.html#arn-syntax-lambda
-
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-kinesisanalytics-applicationoutput-lambdaoutput.html#cfn-kinesisanalytics-applicationoutput-lambdaoutput-resourcearn
         PrimitiveType: String
         UpdateType: Mutable
 
     .PARAMETER RoleARN
-        ARN of the IAM role that Amazon Kinesis Analytics can assume to write to the destination function on your behalf. You need to grant the necessary permissions to this role.
-
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-kinesisanalytics-applicationoutput-lambdaoutput.html#cfn-kinesisanalytics-applicationoutput-lambdaoutput-rolearn
         PrimitiveType: String
         UpdateType: Mutable

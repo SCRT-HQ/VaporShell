@@ -1,25 +1,21 @@
 function Add-VSCloudFrontDistributionOriginCustomHeader {
     <#
     .SYNOPSIS
-        Adds an AWS::CloudFront::Distribution.OriginCustomHeader resource property to the template. A complex type that contains HeaderName and HeaderValue elements, if any, for this distribution.
+        Adds an AWS::CloudFront::Distribution.OriginCustomHeader resource property to the template. 
 
     .DESCRIPTION
         Adds an AWS::CloudFront::Distribution.OriginCustomHeader resource property to the template.
-A complex type that contains HeaderName and HeaderValue elements, if any, for this distribution.
+
 
     .LINK
         http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-cloudfront-distribution-origincustomheader.html
 
     .PARAMETER HeaderValue
-        The value for the header that you specified in the HeaderName field.
-
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-cloudfront-distribution-origincustomheader.html#cfn-cloudfront-distribution-origincustomheader-headervalue
         PrimitiveType: String
         UpdateType: Mutable
 
     .PARAMETER HeaderName
-        The name of a header that you want CloudFront to forward to your origin. For more information, see Forwarding Custom Headers to Your Origin Web Distributions Only: https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/forward-custom-headers.html in the * Amazon CloudFront Developer Guide*.
-
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-cloudfront-distribution-origincustomheader.html#cfn-cloudfront-distribution-origincustomheader-headername
         PrimitiveType: String
         UpdateType: Mutable

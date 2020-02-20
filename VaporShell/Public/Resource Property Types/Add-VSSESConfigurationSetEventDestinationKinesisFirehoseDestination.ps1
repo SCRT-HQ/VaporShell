@@ -1,27 +1,21 @@
 function Add-VSSESConfigurationSetEventDestinationKinesisFirehoseDestination {
     <#
     .SYNOPSIS
-        Adds an AWS::SES::ConfigurationSetEventDestination.KinesisFirehoseDestination resource property to the template. Contains the delivery stream ARN and the IAM role ARN associated with an Amazon Kinesis Data Firehose event destination.
+        Adds an AWS::SES::ConfigurationSetEventDestination.KinesisFirehoseDestination resource property to the template. 
 
     .DESCRIPTION
         Adds an AWS::SES::ConfigurationSetEventDestination.KinesisFirehoseDestination resource property to the template.
-Contains the delivery stream ARN and the IAM role ARN associated with an Amazon Kinesis Data Firehose event destination.
 
-Event destinations, such as Amazon Kinesis Data Firehose, are associated with configuration sets, which enable you to publish email sending events. For information about using configuration sets, see the Amazon SES Developer Guide: https://docs.aws.amazon.com/ses/latest/DeveloperGuide/monitor-sending-activity.html.
 
     .LINK
         http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ses-configurationseteventdestination-kinesisfirehosedestination.html
 
     .PARAMETER IAMRoleARN
-        The ARN of the IAM role that Amazon SES uses to publish email sending events to the Amazon Kinesis Data Firehose stream.
-
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ses-configurationseteventdestination-kinesisfirehosedestination.html#cfn-ses-configurationseteventdestination-kinesisfirehosedestination-iamrolearn
         PrimitiveType: String
         UpdateType: Mutable
 
     .PARAMETER DeliveryStreamARN
-        The ARN of the Amazon Kinesis Data Firehose stream that email sending events should be published to.
-
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ses-configurationseteventdestination-kinesisfirehosedestination.html#cfn-ses-configurationseteventdestination-kinesisfirehosedestination-deliverystreamarn
         PrimitiveType: String
         UpdateType: Mutable

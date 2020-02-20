@@ -1,14 +1,10 @@
 function New-VSEventsRule {
     <#
     .SYNOPSIS
-        Adds an AWS::Events::Rule resource to the template. The AWS::Events::Rule resource creates a rule that matches incoming events and routes them to one or more targets for processing. For more information, see What Is Amazon CloudWatch Events?: https://docs.aws.amazon.com/AmazonCloudWatch/latest/events/WhatIsCloudWatchEvents.html.
+        Adds an AWS::Events::Rule resource to the template. 
 
     .DESCRIPTION
-        Adds an AWS::Events::Rule resource to the template. The AWS::Events::Rule resource creates a rule that matches incoming events and routes them to one or more targets for processing. For more information, see What Is Amazon CloudWatch Events?: https://docs.aws.amazon.com/AmazonCloudWatch/latest/events/WhatIsCloudWatchEvents.html.
-
-A rule must contain at least an EventPattern or ScheduleExpression. Rules with EventPattern are triggered when a matching event is observed. Rules with ScheduleExpression self-trigger based on the given schedule. A rule can have both an EventPattern and a ScheduleExpression, in which case the rule triggers on matching events as well as on a schedule.
-
-Most services in AWS treat : or / as the same character in Amazon Resource Names (ARNs. However, CloudWatch Events uses an exact match in event patterns and rules. Be sure to use the correct ARN characters when creating event patterns so that they match the ARN syntax in the event that you want to match.
+        Adds an AWS::Events::Rule resource to the template. 
 
     .LINK
         http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-events-rule.html
@@ -17,8 +13,6 @@ Most services in AWS treat : or / as the same character in Amazon Resource Names
         The logical ID must be alphanumeric (A-Za-z0-9) and unique within the template. Use the logical name to reference the resource in other parts of the template. For example, if you want to map an Amazon Elastic Block Store volume to an Amazon EC2 instance, you reference the logical IDs to associate the block stores with the instance.
 
     .PARAMETER Description
-        The description of the rule.
-
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-events-rule.html#cfn-events-rule-description
         PrimitiveType: String
         UpdateType: Mutable
@@ -29,45 +23,31 @@ Most services in AWS treat : or / as the same character in Amazon Resource Names
         UpdateType: Immutable
 
     .PARAMETER EventPattern
-        Describes which events CloudWatch Events routes to the specified target. For more information, see Event Patterns in CloudWatch Events: https://docs.aws.amazon.com/AmazonCloudWatch/latest/events/CloudWatchEventsandEventPatterns.html in the *Amazon CloudWatch Events User Guide*.
-
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-events-rule.html#cfn-events-rule-eventpattern
         PrimitiveType: Json
         UpdateType: Mutable
 
     .PARAMETER Name
-        The name of the rule. If you don't specify a name, AWS CloudFormation generates a unique physical ID and uses that ID for the rule name.
-If you specify a name, you can't perform updates that require replacement of this resource. You can perform updates that require no or some interruption. If you must replace the resource, specify a new name.
-
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-events-rule.html#cfn-events-rule-name
         PrimitiveType: String
         UpdateType: Immutable
 
     .PARAMETER RoleArn
-        The Amazon Resource Name ARN of the role that is used for target invocation.
-
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-events-rule.html#cfn-events-rule-rolearn
         PrimitiveType: String
         UpdateType: Mutable
 
     .PARAMETER ScheduleExpression
-        The scheduling expression that determines when and how often the rule runs. For more information, see Schedule Expressions for Rules: https://docs.aws.amazon.com/AmazonCloudWatch/latest/events/ScheduledEvents.html.
-
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-events-rule.html#cfn-events-rule-scheduleexpression
         PrimitiveType: String
         UpdateType: Mutable
 
     .PARAMETER State
-        Indicates whether the rule is enabled.
-
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-events-rule.html#cfn-events-rule-state
         PrimitiveType: String
         UpdateType: Mutable
 
     .PARAMETER Targets
-        The resources that CloudWatch Events routes events to and invokes when the rule is triggered. For information about valid targets, see PutTargets: https://docs.aws.amazon.com/AmazonCloudWatchEvents/latest/APIReference/API_PutTargets.html.
-If you're setting the event bus of another account as the target and that account granted permission to your account through an organization instead of directly by the account ID, you must specify a RoleArn with proper permissions in the Target structure. For more information, see Sending and Receiving Events Between AWS Accounts: https://docs.aws.amazon.com/AmazonCloudWatch/latest/events/CloudWatchEvents-CrossAccountEventDelivery.html in the *Amazon CloudWatch Events User Guide*.
-
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-events-rule.html#cfn-events-rule-targets
         DuplicatesAllowed: False
         ItemType: Target

@@ -1,46 +1,36 @@
 function Add-VSS3BucketRedirectRule {
     <#
     .SYNOPSIS
-        Adds an AWS::S3::Bucket.RedirectRule resource property to the template. Specifies how requests are redirected. In the event of an error, you can specify a different error code to return.
+        Adds an AWS::S3::Bucket.RedirectRule resource property to the template. 
 
     .DESCRIPTION
         Adds an AWS::S3::Bucket.RedirectRule resource property to the template.
-Specifies how requests are redirected. In the event of an error, you can specify a different error code to return.
+
 
     .LINK
         http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-s3-websiteconfiguration-routingrules-redirectrule.html
 
     .PARAMETER HostName
-        The host name to use in the redirect request.
-
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-s3-websiteconfiguration-routingrules-redirectrule.html#cfn-s3-websiteconfiguration-redirectrule-hostname
         PrimitiveType: String
         UpdateType: Mutable
 
     .PARAMETER HttpRedirectCode
-        The HTTP redirect code to use on the response. Not required if one of the siblings is present.
-
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-s3-websiteconfiguration-routingrules-redirectrule.html#cfn-s3-websiteconfiguration-redirectrule-httpredirectcode
         PrimitiveType: String
         UpdateType: Mutable
 
     .PARAMETER Protocol
-        Protocol to use when redirecting requests. The default is the protocol that is used in the original request.
-
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-s3-websiteconfiguration-routingrules-redirectrule.html#cfn-s3-websiteconfiguration-redirectrule-protocol
         PrimitiveType: String
         UpdateType: Mutable
 
     .PARAMETER ReplaceKeyPrefixWith
-        The object key prefix to use in the redirect request. For example, to redirect requests for all pages with prefix docs/ objects in the docs/ folder to documents/, you can set a condition block with KeyPrefixEquals set to docs/ and in the Redirect set ReplaceKeyPrefixWith to /documents. Not required if one of the siblings is present. Can be present only if ReplaceKeyWith is not provided.
-
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-s3-websiteconfiguration-routingrules-redirectrule.html#cfn-s3-websiteconfiguration-redirectrule-replacekeyprefixwith
         PrimitiveType: String
         UpdateType: Mutable
 
     .PARAMETER ReplaceKeyWith
-        The specific object key to use in the redirect request. For example, redirect request to error.html. Not required if one of the siblings is present. Can be present only if ReplaceKeyPrefixWith is not provided.
-
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-s3-websiteconfiguration-routingrules-redirectrule.html#cfn-s3-websiteconfiguration-redirectrule-replacekeywith
         PrimitiveType: String
         UpdateType: Mutable

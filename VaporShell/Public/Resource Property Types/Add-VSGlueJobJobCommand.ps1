@@ -1,32 +1,26 @@
 function Add-VSGlueJobJobCommand {
     <#
     .SYNOPSIS
-        Adds an AWS::Glue::Job.JobCommand resource property to the template. Specifies code executed when a job is run.
+        Adds an AWS::Glue::Job.JobCommand resource property to the template. 
 
     .DESCRIPTION
         Adds an AWS::Glue::Job.JobCommand resource property to the template.
-Specifies code executed when a job is run.
+
 
     .LINK
         http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-glue-job-jobcommand.html
 
     .PARAMETER PythonVersion
-        The Python version being used to execute a Python shell job. Allowed values are 2 or 3.
-
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-glue-job-jobcommand.html#cfn-glue-job-jobcommand-pythonversion
         PrimitiveType: String
         UpdateType: Mutable
 
     .PARAMETER ScriptLocation
-        Specifies the Amazon Simple Storage Service Amazon S3 path to a script that executes a job required.
-
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-glue-job-jobcommand.html#cfn-glue-job-jobcommand-scriptlocation
         PrimitiveType: String
         UpdateType: Mutable
 
     .PARAMETER Name
-        The name of the job command. For an Apache Spark ETL job, this must be glueetl. For a Python shell job, it must be pythonshell.
-
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-glue-job-jobcommand.html#cfn-glue-job-jobcommand-name
         PrimitiveType: String
         UpdateType: Mutable

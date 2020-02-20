@@ -1,18 +1,16 @@
 function Add-VSLakeFormationDataLakeSettingsDataLakePrincipal {
     <#
     .SYNOPSIS
-        Adds an AWS::LakeFormation::DataLakeSettings.DataLakePrincipal resource property to the template. The AWS Lake Formation principal.
+        Adds an AWS::LakeFormation::DataLakeSettings.DataLakePrincipal resource property to the template. 
 
     .DESCRIPTION
         Adds an AWS::LakeFormation::DataLakeSettings.DataLakePrincipal resource property to the template.
-The AWS Lake Formation principal.
+
 
     .LINK
         http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-lakeformation-datalakesettings-datalakeprincipal.html
 
     .PARAMETER DataLakePrincipalIdentifier
-        An identifier for the AWS Lake Formation principal.
-
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-lakeformation-datalakesettings-datalakeprincipal.html#cfn-lakeformation-datalakesettings-datalakeprincipal-datalakeprincipalidentifier
         PrimitiveType: String
         UpdateType: Mutable

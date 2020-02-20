@@ -1,43 +1,31 @@
 function Add-VSElasticBeanstalkEnvironmentOptionSetting {
     <#
     .SYNOPSIS
-        Adds an AWS::ElasticBeanstalk::Environment.OptionSetting resource property to the template. The OptionSetting property type specifies an option for an AWS Elastic Beanstalk environment.
+        Adds an AWS::ElasticBeanstalk::Environment.OptionSetting resource property to the template. 
 
     .DESCRIPTION
         Adds an AWS::ElasticBeanstalk::Environment.OptionSetting resource property to the template.
-The OptionSetting property type specifies an option for an AWS Elastic Beanstalk environment.
 
-The OptionSettings property of the AWS::ElasticBeanstalk::Environment: https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-beanstalk-environment.html resource contains a list of OptionSetting property types.
-
-For a list of possible namespaces and option values, see Option Values: https://docs.aws.amazon.com/elasticbeanstalk/latest/dg/command-options.html in the *AWS Elastic Beanstalk Developer Guide*.
 
     .LINK
         http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-beanstalk-option-settings.html
 
     .PARAMETER Namespace
-        A unique namespace that identifies the option's associated AWS resource.
-
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-beanstalk-option-settings.html#cfn-beanstalk-optionsettings-namespace
         PrimitiveType: String
         UpdateType: Mutable
 
     .PARAMETER OptionName
-        The name of the configuration option.
-
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-beanstalk-option-settings.html#cfn-beanstalk-optionsettings-optionname
         PrimitiveType: String
         UpdateType: Mutable
 
     .PARAMETER ResourceName
-        A unique resource name for the option setting. Use it for a time–based scaling configuration option.
-
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-beanstalk-option-settings.html#cfn-elasticbeanstalk-environment-optionsetting-resourcename
         PrimitiveType: String
         UpdateType: Mutable
 
     .PARAMETER Value
-        The current value for the configuration option.
-
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-beanstalk-option-settings.html#cfn-beanstalk-optionsettings-value
         PrimitiveType: String
         UpdateType: Mutable

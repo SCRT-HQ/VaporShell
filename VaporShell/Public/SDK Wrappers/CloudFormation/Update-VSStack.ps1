@@ -115,6 +115,9 @@ function Update-VSStack {
         [String]
         $ProfileName = $env:AWS_PROFILE
     )
+    Begin {
+        Import-AWSSDK
+    }
     Process {
         $method = "UpdateStack"
         $requestType = "Amazon.CloudFormation.Model.$($method)Request"

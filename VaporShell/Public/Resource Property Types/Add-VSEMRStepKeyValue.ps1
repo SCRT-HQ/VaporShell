@@ -1,25 +1,21 @@
 function Add-VSEMRStepKeyValue {
     <#
     .SYNOPSIS
-        Adds an AWS::EMR::Step.KeyValue resource property to the template. KeyValue is a subproperty of the HadoopJarStepConfig property type. KeyValue is used to pass parameters to a step.
+        Adds an AWS::EMR::Step.KeyValue resource property to the template. 
 
     .DESCRIPTION
         Adds an AWS::EMR::Step.KeyValue resource property to the template.
-KeyValue is a subproperty of the HadoopJarStepConfig property type. KeyValue is used to pass parameters to a step.
+
 
     .LINK
         http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-elasticmapreduce-step-keyvalue.html
 
     .PARAMETER Key
-        The unique identifier of a key value pair.
-
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-elasticmapreduce-step-keyvalue.html#cfn-elasticmapreduce-step-keyvalue-key
         PrimitiveType: String
         UpdateType: Immutable
 
     .PARAMETER Value
-        The value part of the identified key.
-
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-elasticmapreduce-step-keyvalue.html#cfn-elasticmapreduce-step-keyvalue-value
         PrimitiveType: String
         UpdateType: Immutable

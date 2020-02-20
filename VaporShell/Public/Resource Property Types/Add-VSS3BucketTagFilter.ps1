@@ -1,25 +1,21 @@
 function Add-VSS3BucketTagFilter {
     <#
     .SYNOPSIS
-        Adds an AWS::S3::Bucket.TagFilter resource property to the template. Specifies tags to use to identify a subset of objects for an Amazon S3 bucket.
+        Adds an AWS::S3::Bucket.TagFilter resource property to the template. 
 
     .DESCRIPTION
         Adds an AWS::S3::Bucket.TagFilter resource property to the template.
-Specifies tags to use to identify a subset of objects for an Amazon S3 bucket.
+
 
     .LINK
         http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-s3-bucket-tagfilter.html
 
     .PARAMETER Key
-        The tag key.
-
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-s3-bucket-tagfilter.html#cfn-s3-bucket-tagfilter-key
         PrimitiveType: String
         UpdateType: Mutable
 
     .PARAMETER Value
-        The tag value.
-
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-s3-bucket-tagfilter.html#cfn-s3-bucket-tagfilter-value
         PrimitiveType: String
         UpdateType: Mutable

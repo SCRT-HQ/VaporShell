@@ -1,10 +1,10 @@
 function New-VSCodePipelinePipeline {
     <#
     .SYNOPSIS
-        Adds an AWS::CodePipeline::Pipeline resource to the template. The AWS::CodePipeline::Pipeline resource creates a CodePipeline pipeline that describes how software changes go through a release process. For more information, see What Is CodePipeline?: https://docs.aws.amazon.com/codepipeline/latest/userguide/welcome.html in the *AWS CodePipeline User Guide*.
+        Adds an AWS::CodePipeline::Pipeline resource to the template. 
 
     .DESCRIPTION
-        Adds an AWS::CodePipeline::Pipeline resource to the template. The AWS::CodePipeline::Pipeline resource creates a CodePipeline pipeline that describes how software changes go through a release process. For more information, see What Is CodePipeline?: https://docs.aws.amazon.com/codepipeline/latest/userguide/welcome.html in the *AWS CodePipeline User Guide*.
+        Adds an AWS::CodePipeline::Pipeline resource to the template. 
 
     .LINK
         http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-codepipeline-pipeline.html
@@ -13,16 +13,11 @@ function New-VSCodePipelinePipeline {
         The logical ID must be alphanumeric (A-Za-z0-9) and unique within the template. Use the logical name to reference the resource in other parts of the template. For example, if you want to map an Amazon Elastic Block Store volume to an Amazon EC2 instance, you reference the logical IDs to associate the block stores with the instance.
 
     .PARAMETER ArtifactStore
-        The Amazon S3 bucket where artifacts are stored for the pipeline.
-
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-codepipeline-pipeline.html#cfn-codepipeline-pipeline-artifactstore
         Type: ArtifactStore
         UpdateType: Mutable
 
     .PARAMETER ArtifactStores
-        A mapping of artifactStore objects and their corresponding regions. There must be an artifact store for the pipeline region and for each cross-region action within the pipeline. You can only use either artifactStore or artifactStores, not both.
-If you create a cross-region action in your pipeline, you must use artifactStores.
-
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-codepipeline-pipeline.html#cfn-codepipeline-pipeline-artifactstores
         DuplicatesAllowed: False
         ItemType: ArtifactStoreMap
@@ -30,8 +25,6 @@ If you create a cross-region action in your pipeline, you must use artifactStore
         UpdateType: Mutable
 
     .PARAMETER DisableInboundStageTransitions
-        Represents the input of a DisableStageTransition action.
-
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-codepipeline-pipeline.html#cfn-codepipeline-pipeline-disableinboundstagetransitions
         DuplicatesAllowed: False
         ItemType: StageTransition
@@ -39,29 +32,21 @@ If you create a cross-region action in your pipeline, you must use artifactStore
         UpdateType: Mutable
 
     .PARAMETER Name
-        The name of the pipeline.
-
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-codepipeline-pipeline.html#cfn-codepipeline-pipeline-name
         PrimitiveType: String
         UpdateType: Immutable
 
     .PARAMETER RestartExecutionOnUpdate
-        Indicates whether to rerun the CodePipeline pipeline after you update it.
-
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-codepipeline-pipeline.html#cfn-codepipeline-pipeline-restartexecutiononupdate
         PrimitiveType: Boolean
         UpdateType: Mutable
 
     .PARAMETER RoleArn
-        The Amazon Resource Name ARN for AWS CodePipeline to use to either perform actions with no actionRoleArn, or to use to assume roles for actions with an actionRoleArn.
-
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-codepipeline-pipeline.html#cfn-codepipeline-pipeline-rolearn
         PrimitiveType: String
         UpdateType: Mutable
 
     .PARAMETER Stages
-        Represents information about a stage and its definition.
-
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-codepipeline-pipeline.html#cfn-codepipeline-pipeline-stages
         DuplicatesAllowed: False
         ItemType: StageDeclaration

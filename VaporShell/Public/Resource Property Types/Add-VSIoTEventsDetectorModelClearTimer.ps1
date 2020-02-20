@@ -1,18 +1,16 @@
 function Add-VSIoTEventsDetectorModelClearTimer {
     <#
     .SYNOPSIS
-        Adds an AWS::IoTEvents::DetectorModel.ClearTimer resource property to the template. Information needed to clear the timer.
+        Adds an AWS::IoTEvents::DetectorModel.ClearTimer resource property to the template. 
 
     .DESCRIPTION
         Adds an AWS::IoTEvents::DetectorModel.ClearTimer resource property to the template.
-Information needed to clear the timer.
+
 
     .LINK
         http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iotevents-detectormodel-cleartimer.html
 
     .PARAMETER TimerName
-        The name of the timer.
-
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iotevents-detectormodel-cleartimer.html#cfn-iotevents-detectormodel-cleartimer-timername
         PrimitiveType: String
         UpdateType: Mutable

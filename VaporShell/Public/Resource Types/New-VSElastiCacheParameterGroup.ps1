@@ -1,14 +1,10 @@
 function New-VSElastiCacheParameterGroup {
     <#
     .SYNOPSIS
-        Adds an AWS::ElastiCache::ParameterGroup resource to the template. The AWS::ElastiCache::ParameterGroup type creates a new cache parameter group. Cache parameter groups control the parameters for a cache cluster.
+        Adds an AWS::ElastiCache::ParameterGroup resource to the template. 
 
     .DESCRIPTION
-        Adds an AWS::ElastiCache::ParameterGroup resource to the template. The AWS::ElastiCache::ParameterGroup type creates a new cache parameter group. Cache parameter groups control the parameters for a cache cluster.
-
-**Note**
-
-Updates are not supported.
+        Adds an AWS::ElastiCache::ParameterGroup resource to the template. 
 
     .LINK
         http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-elasticache-parameter-group.html
@@ -17,30 +13,16 @@ Updates are not supported.
         The logical ID must be alphanumeric (A-Za-z0-9) and unique within the template. Use the logical name to reference the resource in other parts of the template. For example, if you want to map an Amazon Elastic Block Store volume to an Amazon EC2 instance, you reference the logical IDs to associate the block stores with the instance.
 
     .PARAMETER CacheParameterGroupFamily
-        The name of the cache parameter group family that this cache parameter group is compatible with.
-Valid values are: memcached1.4 | memcached1.5 | redis2.6 | redis2.8 | redis3.2 | redis4.0 | redis5.0 |
-
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-elasticache-parameter-group.html#cfn-elasticache-parametergroup-cacheparametergroupfamily
         PrimitiveType: String
         UpdateType: Mutable
 
     .PARAMETER Description
-        The description for this cache parameter group.
-
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-elasticache-parameter-group.html#cfn-elasticache-parametergroup-description
         PrimitiveType: String
         UpdateType: Mutable
 
     .PARAMETER Properties
-        A comma-delimited list of parameter name/value pairs. For more information, see ModifyCacheParameterGroup: https://docs.aws.amazon.com/AmazonElastiCache/latest/APIReference/API_ModifyCacheParameterGroup.html in the *Amazon ElastiCache API Reference Guide*.
-For example:
-
-"Properties" : {
-"cas_disabled" : "1",
-"chunk_size_growth_factor" : "1.02"
-}
-
-
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-elasticache-parameter-group.html#cfn-elasticache-parametergroup-properties
         DuplicatesAllowed: False
         PrimitiveItemType: String

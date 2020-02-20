@@ -1,20 +1,16 @@
 function Add-VSSSMPatchBaselinePatchFilterGroup {
     <#
     .SYNOPSIS
-        Adds an AWS::SSM::PatchBaseline.PatchFilterGroup resource property to the template. The PatchFilterGroup property type specifies a set of patch filters for an AWS Systems Manager patch baseline, typically used for approval rules for a Systems Manager patch baseline.
+        Adds an AWS::SSM::PatchBaseline.PatchFilterGroup resource property to the template. 
 
     .DESCRIPTION
         Adds an AWS::SSM::PatchBaseline.PatchFilterGroup resource property to the template.
-The PatchFilterGroup property type specifies a set of patch filters for an AWS Systems Manager patch baseline, typically used for approval rules for a Systems Manager patch baseline.
 
-PatchFilterGroup is the property type for the GlobalFilters property of the AWS::SSM::PatchBaseline: https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ssm-patchbaseline.html resource and the PatchFilterGroup property of the Rule: https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ssm-patchbaseline-rule.html property type.
 
     .LINK
         http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ssm-patchbaseline-patchfiltergroup.html
 
     .PARAMETER PatchFilters
-        The set of patch filters that make up the group.
-
         Type: List
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ssm-patchbaseline-patchfiltergroup.html#cfn-ssm-patchbaseline-patchfiltergroup-patchfilters
         ItemType: PatchFilter

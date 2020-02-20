@@ -1,42 +1,31 @@
 function Add-VSMediaLiveChannelOutputDestinationSettings {
     <#
     .SYNOPSIS
-        Adds an AWS::MediaLive::Channel.OutputDestinationSettings resource property to the template. The configuration information for this output.
+        Adds an AWS::MediaLive::Channel.OutputDestinationSettings resource property to the template. 
 
     .DESCRIPTION
         Adds an AWS::MediaLive::Channel.OutputDestinationSettings resource property to the template.
-The configuration information for this output.
 
-The parent of this entity is OutputDestination.
 
     .LINK
         http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-medialive-channel-outputdestinationsettings.html
 
     .PARAMETER StreamName
-        The stream name for the content. This applies only to RTMP outputs.
-
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-medialive-channel-outputdestinationsettings.html#cfn-medialive-channel-outputdestinationsettings-streamname
         PrimitiveType: String
         UpdateType: Mutable
 
     .PARAMETER Username
-        The user name for the downstream system. This applies only if the downstream system requires credentials.
-user name for destination
-
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-medialive-channel-outputdestinationsettings.html#cfn-medialive-channel-outputdestinationsettings-username
         PrimitiveType: String
         UpdateType: Mutable
 
     .PARAMETER PasswordParam
-        The password parameter that holds the password for accessing the downstream system. This password parameter applies only if the downstream system requires credentials.
-
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-medialive-channel-outputdestinationsettings.html#cfn-medialive-channel-outputdestinationsettings-passwordparam
         PrimitiveType: String
         UpdateType: Mutable
 
     .PARAMETER Url
-        The URL for the destination.
-
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-medialive-channel-outputdestinationsettings.html#cfn-medialive-channel-outputdestinationsettings-url
         PrimitiveType: String
         UpdateType: Mutable

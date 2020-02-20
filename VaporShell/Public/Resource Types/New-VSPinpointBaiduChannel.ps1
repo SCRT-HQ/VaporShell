@@ -1,12 +1,10 @@
 function New-VSPinpointBaiduChannel {
     <#
     .SYNOPSIS
-        Adds an AWS::Pinpoint::BaiduChannel resource to the template. A *channel* is a type of platform that you can deliver messages to. You can use the Baidu channel to send notifications to the Baidu notification service. Before you use Amazon Pinpoint to send notifications to Baidu, you have to enable the Baidu channel for an Amazon Pinpoint app.
+        Adds an AWS::Pinpoint::BaiduChannel resource to the template. 
 
     .DESCRIPTION
-        Adds an AWS::Pinpoint::BaiduChannel resource to the template. A *channel* is a type of platform that you can deliver messages to. You can use the Baidu channel to send notifications to the Baidu notification service. Before you use Amazon Pinpoint to send notifications to Baidu, you have to enable the Baidu channel for an Amazon Pinpoint app.
-
-The Baidu Channel resource represents the status and authentication settings of the Baidu channel for a specific application. You can use this resource to retrieve information about, update, or disable (delete the Baidu channel for an app.
+        Adds an AWS::Pinpoint::BaiduChannel resource to the template. 
 
     .LINK
         http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-pinpoint-baiduchannel.html
@@ -15,29 +13,21 @@ The Baidu Channel resource represents the status and authentication settings of 
         The logical ID must be alphanumeric (A-Za-z0-9) and unique within the template. Use the logical name to reference the resource in other parts of the template. For example, if you want to map an Amazon Elastic Block Store volume to an Amazon EC2 instance, you reference the logical IDs to associate the block stores with the instance.
 
     .PARAMETER SecretKey
-        The secret key that you received from the Baidu Cloud Push service to communicate with the service.
-
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-pinpoint-baiduchannel.html#cfn-pinpoint-baiduchannel-secretkey
         PrimitiveType: String
         UpdateType: Mutable
 
     .PARAMETER ApiKey
-        The API key that you received from the Baidu Cloud Push service to communicate with the service.
-
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-pinpoint-baiduchannel.html#cfn-pinpoint-baiduchannel-apikey
         PrimitiveType: String
         UpdateType: Mutable
 
     .PARAMETER Enabled
-        Specifies whether to enable the Baidu channel for the application.
-
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-pinpoint-baiduchannel.html#cfn-pinpoint-baiduchannel-enabled
         PrimitiveType: Boolean
         UpdateType: Mutable
 
     .PARAMETER ApplicationId
-        The unique ID of the Amazon Pinpoint app that you're configuring the Baidu channel for.
-
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-pinpoint-baiduchannel.html#cfn-pinpoint-baiduchannel-applicationid
         PrimitiveType: String
         UpdateType: Immutable

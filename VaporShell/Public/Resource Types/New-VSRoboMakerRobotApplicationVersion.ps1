@@ -1,10 +1,10 @@
 function New-VSRoboMakerRobotApplicationVersion {
     <#
     .SYNOPSIS
-        Adds an AWS::RoboMaker::RobotApplicationVersion resource to the template. The AWS::RoboMaker::RobotApplicationVersion resource creates an AWS RoboMaker robot version.
+        Adds an AWS::RoboMaker::RobotApplicationVersion resource to the template. 
 
     .DESCRIPTION
-        Adds an AWS::RoboMaker::RobotApplicationVersion resource to the template. The AWS::RoboMaker::RobotApplicationVersion resource creates an AWS RoboMaker robot version.
+        Adds an AWS::RoboMaker::RobotApplicationVersion resource to the template. 
 
     .LINK
         http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-robomaker-robotapplicationversion.html
@@ -13,15 +13,11 @@ function New-VSRoboMakerRobotApplicationVersion {
         The logical ID must be alphanumeric (A-Za-z0-9) and unique within the template. Use the logical name to reference the resource in other parts of the template. For example, if you want to map an Amazon Elastic Block Store volume to an Amazon EC2 instance, you reference the logical IDs to associate the block stores with the instance.
 
     .PARAMETER CurrentRevisionId
-        The current revision id for the robot application. If you provide a value and it matches the latest revision ID, a new version will be created.
-
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-robomaker-robotapplicationversion.html#cfn-robomaker-robotapplicationversion-currentrevisionid
         PrimitiveType: String
         UpdateType: Immutable
 
     .PARAMETER Application
-        The application information for the robot application.
-
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-robomaker-robotapplicationversion.html#cfn-robomaker-robotapplicationversion-application
         PrimitiveType: String
         UpdateType: Immutable

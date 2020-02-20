@@ -1,18 +1,16 @@
 function Add-VSLambdaAliasAliasRoutingConfiguration {
     <#
     .SYNOPSIS
-        Adds an AWS::Lambda::Alias.AliasRoutingConfiguration resource property to the template. The traffic-shifting: https://docs.aws.amazon.com/lambda/latest/dg/lambda-traffic-shifting-using-aliases.html configuration of a Lambda function alias.
+        Adds an AWS::Lambda::Alias.AliasRoutingConfiguration resource property to the template. 
 
     .DESCRIPTION
         Adds an AWS::Lambda::Alias.AliasRoutingConfiguration resource property to the template.
-The traffic-shifting: https://docs.aws.amazon.com/lambda/latest/dg/lambda-traffic-shifting-using-aliases.html configuration of a Lambda function alias.
+
 
     .LINK
         http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-lambda-alias-aliasroutingconfiguration.html
 
     .PARAMETER AdditionalVersionWeights
-        The name of the second alias, and the percentage of traffic that's routed to it.
-
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-lambda-alias-aliasroutingconfiguration.html#cfn-lambda-alias-aliasroutingconfiguration-additionalversionweights
         DuplicatesAllowed: False
         ItemType: VersionWeight

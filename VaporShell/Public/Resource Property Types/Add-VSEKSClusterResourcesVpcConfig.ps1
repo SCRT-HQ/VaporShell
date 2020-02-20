@@ -1,26 +1,22 @@
 function Add-VSEKSClusterResourcesVpcConfig {
     <#
     .SYNOPSIS
-        Adds an AWS::EKS::Cluster.ResourcesVpcConfig resource property to the template. An object representing the VPC configuration to use for an Amazon EKS cluster.
+        Adds an AWS::EKS::Cluster.ResourcesVpcConfig resource property to the template. 
 
     .DESCRIPTION
         Adds an AWS::EKS::Cluster.ResourcesVpcConfig resource property to the template.
-An object representing the VPC configuration to use for an Amazon EKS cluster.
+
 
     .LINK
         http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-eks-cluster-resourcesvpcconfig.html
 
     .PARAMETER SecurityGroupIds
-        Specify one or more security groups for the cross-account elastic network interfaces that Amazon EKS creates to use to allow communication between your worker nodes and the Kubernetes control plane. If you don't specify a security group, the default security group for your VPC is used.
-
         PrimitiveItemType: String
         Type: List
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-eks-cluster-resourcesvpcconfig.html#cfn-eks-cluster-resourcesvpcconfig-securitygroupids
         UpdateType: Mutable
 
     .PARAMETER SubnetIds
-        Specify subnets for your Amazon EKS worker nodes. Amazon EKS creates cross-account elastic network interfaces in these subnets to allow communication between your worker nodes and the Kubernetes control plane.
-
         PrimitiveItemType: String
         Type: List
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-eks-cluster-resourcesvpcconfig.html#cfn-eks-cluster-resourcesvpcconfig-subnetids

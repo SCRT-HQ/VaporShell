@@ -1,18 +1,16 @@
 function Add-VSKinesisAnalyticsV2ApplicationCloudWatchLoggingOptionCloudWatchLoggingOption {
     <#
     .SYNOPSIS
-        Adds an AWS::KinesisAnalyticsV2::ApplicationCloudWatchLoggingOption.CloudWatchLoggingOption resource property to the template. Provides a description of Amazon CloudWatch logging options, including the log stream Amazon Resource Name (ARN.
+        Adds an AWS::KinesisAnalyticsV2::ApplicationCloudWatchLoggingOption.CloudWatchLoggingOption resource property to the template. 
 
     .DESCRIPTION
         Adds an AWS::KinesisAnalyticsV2::ApplicationCloudWatchLoggingOption.CloudWatchLoggingOption resource property to the template.
-Provides a description of Amazon CloudWatch logging options, including the log stream Amazon Resource Name (ARN.
+
 
     .LINK
         http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-kinesisanalyticsv2-applicationcloudwatchloggingoption-cloudwatchloggingoption.html
 
     .PARAMETER LogStreamARN
-        The ARN of the CloudWatch log to receive application messages.
-
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-kinesisanalyticsv2-applicationcloudwatchloggingoption-cloudwatchloggingoption.html#cfn-kinesisanalyticsv2-applicationcloudwatchloggingoption-cloudwatchloggingoption-logstreamarn
         PrimitiveType: String
         UpdateType: Mutable

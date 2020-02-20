@@ -1,25 +1,21 @@
 function Add-VSDataPipelinePipelineParameterValue {
     <#
     .SYNOPSIS
-        Adds an AWS::DataPipeline::Pipeline.ParameterValue resource property to the template. A value or list of parameter values.
+        Adds an AWS::DataPipeline::Pipeline.ParameterValue resource property to the template. 
 
     .DESCRIPTION
         Adds an AWS::DataPipeline::Pipeline.ParameterValue resource property to the template.
-A value or list of parameter values.
+
 
     .LINK
         http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-datapipeline-pipeline-parametervalues.html
 
     .PARAMETER Id
-        The ID of the parameter value.
-
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-datapipeline-pipeline-parametervalues.html#cfn-datapipeline-pipeline-parametervalues-id
         PrimitiveType: String
         UpdateType: Mutable
 
     .PARAMETER StringValue
-        The field value, expressed as a String.
-
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-datapipeline-pipeline-parametervalues.html#cfn-datapipeline-pipeline-parametervalues-stringvalue
         PrimitiveType: String
         UpdateType: Mutable

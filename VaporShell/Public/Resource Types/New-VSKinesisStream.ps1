@@ -1,10 +1,10 @@
 function New-VSKinesisStream {
     <#
     .SYNOPSIS
-        Adds an AWS::Kinesis::Stream resource to the template. Creates a Kinesis stream that captures and transports data records that are emitted from data sources. For information about creating streams, see CreateStream: https://docs.aws.amazon.com/kinesis/latest/APIReference/API_CreateStream.html in the Amazon Kinesis API Reference.
+        Adds an AWS::Kinesis::Stream resource to the template. 
 
     .DESCRIPTION
-        Adds an AWS::Kinesis::Stream resource to the template. Creates a Kinesis stream that captures and transports data records that are emitted from data sources. For information about creating streams, see CreateStream: https://docs.aws.amazon.com/kinesis/latest/APIReference/API_CreateStream.html in the Amazon Kinesis API Reference.
+        Adds an AWS::Kinesis::Stream resource to the template. 
 
     .LINK
         http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-kinesis-stream.html
@@ -13,37 +13,26 @@ function New-VSKinesisStream {
         The logical ID must be alphanumeric (A-Za-z0-9) and unique within the template. Use the logical name to reference the resource in other parts of the template. For example, if you want to map an Amazon Elastic Block Store volume to an Amazon EC2 instance, you reference the logical IDs to associate the block stores with the instance.
 
     .PARAMETER Name
-        The name of the Kinesis stream. If you don't specify a name, AWS CloudFormation generates a unique physical ID and uses that ID for the stream name. For more information, see Name Type: https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-name.html.
-If you specify a name, you cannot perform updates that require replacement of this resource. You can perform updates that require no or some interruption. If you must replace the resource, specify a new name.
-
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-kinesis-stream.html#cfn-kinesis-stream-name
         PrimitiveType: String
         UpdateType: Immutable
 
     .PARAMETER RetentionPeriodHours
-        The number of hours for the data records that are stored in shards to remain accessible. The default value is 24. For more information about the stream retention period, see Changing the Data Retention Period: https://docs.aws.amazon.com/streams/latest/dev/kinesis-extended-retention.html in the Amazon Kinesis Developer Guide.
-
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-kinesis-stream.html#cfn-kinesis-stream-retentionperiodhours
         PrimitiveType: Integer
         UpdateType: Mutable
 
     .PARAMETER ShardCount
-        The number of shards that the stream uses. For greater provisioned throughput, increase the number of shards.
-
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-kinesis-stream.html#cfn-kinesis-stream-shardcount
         PrimitiveType: Integer
         UpdateType: Mutable
 
     .PARAMETER StreamEncryption
-        Enables or updates server-side encryption using an AWS KMS key for a specified stream.
-
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-kinesis-stream.html#cfn-kinesis-stream-streamencryption
         Type: StreamEncryption
         UpdateType: Mutable
 
     .PARAMETER Tags
-        An arbitrary set of tags key–value pairs to associate with the Kinesis stream. For information about constraints for this property, see Tag Restrictions: https://docs.aws.amazon.com/streams/latest/dev/tagging.html#tagging-restrictions in the *Amazon Kinesis Developer Guide*.
-
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-kinesis-stream.html#cfn-kinesis-stream-tags
         DuplicatesAllowed: True
         ItemType: Tag

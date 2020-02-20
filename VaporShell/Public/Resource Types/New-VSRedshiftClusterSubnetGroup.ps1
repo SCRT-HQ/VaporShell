@@ -1,12 +1,10 @@
 function New-VSRedshiftClusterSubnetGroup {
     <#
     .SYNOPSIS
-        Adds an AWS::Redshift::ClusterSubnetGroup resource to the template. Specifies an Amazon Redshift subnet group. You must provide a list of one or more subnets in your existing Amazon Virtual Private Cloud (Amazon VPC when creating Amazon Redshift subnet group.
+        Adds an AWS::Redshift::ClusterSubnetGroup resource to the template. 
 
     .DESCRIPTION
-        Adds an AWS::Redshift::ClusterSubnetGroup resource to the template. Specifies an Amazon Redshift subnet group. You must provide a list of one or more subnets in your existing Amazon Virtual Private Cloud (Amazon VPC when creating Amazon Redshift subnet group.
-
-For information about subnet groups, go to Amazon Redshift Cluster Subnet Groups: https://docs.aws.amazon.com/redshift/latest/mgmt/working-with-cluster-subnet-groups.html in the *Amazon Redshift Cluster Management Guide*.
+        Adds an AWS::Redshift::ClusterSubnetGroup resource to the template. 
 
     .LINK
         http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-redshift-clustersubnetgroup.html
@@ -15,15 +13,11 @@ For information about subnet groups, go to Amazon Redshift Cluster Subnet Groups
         The logical ID must be alphanumeric (A-Za-z0-9) and unique within the template. Use the logical name to reference the resource in other parts of the template. For example, if you want to map an Amazon Elastic Block Store volume to an Amazon EC2 instance, you reference the logical IDs to associate the block stores with the instance.
 
     .PARAMETER Description
-        A description for the subnet group.
-
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-redshift-clustersubnetgroup.html#cfn-redshift-clustersubnetgroup-description
         PrimitiveType: String
         UpdateType: Mutable
 
     .PARAMETER SubnetIds
-        An array of VPC subnet IDs. A maximum of 20 subnets can be modified in a single request.
-
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-redshift-clustersubnetgroup.html#cfn-redshift-clustersubnetgroup-subnetids
         DuplicatesAllowed: True
         PrimitiveItemType: String
@@ -31,8 +25,6 @@ For information about subnet groups, go to Amazon Redshift Cluster Subnet Groups
         UpdateType: Mutable
 
     .PARAMETER Tags
-        Specifies an arbitrary set of tags key–value pairs to associate with this subnet group. Use tags to manage your resources.
-
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-redshift-clustersubnetgroup.html#cfn-redshift-clustersubnetgroup-tags
         DuplicatesAllowed: True
         ItemType: Tag

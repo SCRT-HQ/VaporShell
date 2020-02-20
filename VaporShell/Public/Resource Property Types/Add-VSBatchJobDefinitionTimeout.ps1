@@ -1,18 +1,16 @@
 function Add-VSBatchJobDefinitionTimeout {
     <#
     .SYNOPSIS
-        Adds an AWS::Batch::JobDefinition.Timeout resource property to the template. An object representing a job timeout configuration.
+        Adds an AWS::Batch::JobDefinition.Timeout resource property to the template. 
 
     .DESCRIPTION
         Adds an AWS::Batch::JobDefinition.Timeout resource property to the template.
-An object representing a job timeout configuration.
+
 
     .LINK
         http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-batch-jobdefinition-timeout.html
 
     .PARAMETER AttemptDurationSeconds
-        The time duration in seconds measured from the job attempt's startedAt timestamp after which AWS Batch terminates your jobs if they have not finished.
-
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-batch-jobdefinition-timeout.html#cfn-batch-jobdefinition-timeout-attemptdurationseconds
         PrimitiveType: Integer
         UpdateType: Mutable

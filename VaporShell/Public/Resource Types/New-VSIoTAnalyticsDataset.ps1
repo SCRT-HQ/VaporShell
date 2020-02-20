@@ -1,10 +1,10 @@
 function New-VSIoTAnalyticsDataset {
     <#
     .SYNOPSIS
-        Adds an AWS::IoTAnalytics::Dataset resource to the template. The AWS::IoTAnalytics::Dataset resource stores data retrieved from a data store by applying a "queryAction" (an SQL query or a "containerAction" (executing a containerized application. The data set can be populated manually by calling "CreateDatasetContent" or automatically according to a "trigger" you specify. For more information, see  How to Use AWS IoT Analytics: https://docs.aws.amazon.com/iotanalytics/latest/userguide/welcome.html#aws-iot-analytics-how in the *AWS IoT Analytics User Guide*.
+        Adds an AWS::IoTAnalytics::Dataset resource to the template. 
 
     .DESCRIPTION
-        Adds an AWS::IoTAnalytics::Dataset resource to the template. The AWS::IoTAnalytics::Dataset resource stores data retrieved from a data store by applying a "queryAction" (an SQL query or a "containerAction" (executing a containerized application. The data set can be populated manually by calling "CreateDatasetContent" or automatically according to a "trigger" you specify. For more information, see  How to Use AWS IoT Analytics: https://docs.aws.amazon.com/iotanalytics/latest/userguide/welcome.html#aws-iot-analytics-how in the *AWS IoT Analytics User Guide*.
+        Adds an AWS::IoTAnalytics::Dataset resource to the template. 
 
     .LINK
         http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-iotanalytics-dataset.html
@@ -13,54 +13,39 @@ function New-VSIoTAnalyticsDataset {
         The logical ID must be alphanumeric (A-Za-z0-9) and unique within the template. Use the logical name to reference the resource in other parts of the template. For example, if you want to map an Amazon Elastic Block Store volume to an Amazon EC2 instance, you reference the logical IDs to associate the block stores with the instance.
 
     .PARAMETER Actions
-        The "DatasetAction" objects that automatically create the data set contents.
-
         Type: List
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-iotanalytics-dataset.html#cfn-iotanalytics-dataset-actions
         ItemType: Action
         UpdateType: Mutable
 
     .PARAMETER DatasetName
-        The name of the data set.
-
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-iotanalytics-dataset.html#cfn-iotanalytics-dataset-datasetname
         PrimitiveType: String
         UpdateType: Immutable
 
     .PARAMETER ContentDeliveryRules
-        When data set contents are created they are delivered to destinations specified here.
-
         Type: List
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-iotanalytics-dataset.html#cfn-iotanalytics-dataset-contentdeliveryrules
         ItemType: DatasetContentDeliveryRule
         UpdateType: Mutable
 
     .PARAMETER Triggers
-        The "DatasetTrigger" objects that specify when the data set is automatically updated.
-
         Type: List
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-iotanalytics-dataset.html#cfn-iotanalytics-dataset-triggers
         ItemType: Trigger
         UpdateType: Mutable
 
     .PARAMETER VersioningConfiguration
-        Optional] How many versions of data set contents are kept. If not specified or set to null, only the latest version plus the latest succeeded version if they are different are kept for the time period specified by the "retentionPeriod" parameter. For more information, see https://docs.aws.amazon.com/iotanalytics/latest/userguide/getting-started.html#aws-iot-analytics-dataset-versions
-
         Type: VersioningConfiguration
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-iotanalytics-dataset.html#cfn-iotanalytics-dataset-versioningconfiguration
         UpdateType: Mutable
 
     .PARAMETER RetentionPeriod
-        Optional] How long, in days, message data is kept for the data set.
-
         Type: RetentionPeriod
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-iotanalytics-dataset.html#cfn-iotanalytics-dataset-retentionperiod
         UpdateType: Mutable
 
     .PARAMETER Tags
-        Metadata which can be used to manage the data set.
-For more information, see Tag: https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-resource-tags.html.
-
         Type: List
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-iotanalytics-dataset.html#cfn-iotanalytics-dataset-tags
         ItemType: Tag

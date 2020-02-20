@@ -2,16 +2,16 @@ function Get-VSS3ObjectMetadata {
     <#
     .SYNOPSIS
     Gets an S3 object's metadata
-    
+
     .PARAMETER BucketName
     The name of the bucket containing the object.
-    
+
     .PARAMETER Key
     The name (including prefix, if applicable) of the object.
-    
+
     .PARAMETER ProfileName
     The name of the configuration profile to deploy the stack with. Defaults to $env:AWS_PROFILE, if set.
-    
+
     .FUNCTIONALITY
     Vaporshell
     #>
@@ -28,6 +28,9 @@ function Get-VSS3ObjectMetadata {
         [String]
         $ProfileName = $env:AWS_PROFILE
     )
+    Begin {
+        Import-AWSSDK
+    }
     Process {
         $method = "GetObjectMetadata"
         $requestType = "Amazon.S3.Model.$($method)Request"

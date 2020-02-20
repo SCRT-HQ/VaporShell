@@ -1,25 +1,21 @@
 function Add-VSAmazonMQConfigurationAssociationConfigurationId {
     <#
     .SYNOPSIS
-        Adds an AWS::AmazonMQ::ConfigurationAssociation.ConfigurationId resource property to the template. The ConfigurationId property type specifies a configuration Id and the revision of a configuration.
+        Adds an AWS::AmazonMQ::ConfigurationAssociation.ConfigurationId resource property to the template. 
 
     .DESCRIPTION
         Adds an AWS::AmazonMQ::ConfigurationAssociation.ConfigurationId resource property to the template.
-The ConfigurationId property type specifies a configuration Id and the revision of a configuration.
+
 
     .LINK
         http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-amazonmq-configurationassociation-configurationid.html
 
     .PARAMETER Revision
-        The revision number of the configuration.
-
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-amazonmq-configurationassociation-configurationid.html#cfn-amazonmq-configurationassociation-configurationid-revision
         PrimitiveType: Integer
         UpdateType: Mutable
 
     .PARAMETER Id
-        The unique ID that Amazon MQ generates for the configuration.
-
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-amazonmq-configurationassociation-configurationid.html#cfn-amazonmq-configurationassociation-configurationid-id
         PrimitiveType: String
         UpdateType: Mutable

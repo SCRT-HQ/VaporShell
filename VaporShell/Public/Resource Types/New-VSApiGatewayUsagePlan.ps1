@@ -1,10 +1,10 @@
 function New-VSApiGatewayUsagePlan {
     <#
     .SYNOPSIS
-        Adds an AWS::ApiGateway::UsagePlan resource to the template. The AWS::ApiGateway::UsagePlan resource creates a usage plan for deployed APIs. A usage plan enforces throttling and quota limits on individual client API keys. For more information, see Creating and Using API Usage Plans in Amazon API Gateway: https://docs.aws.amazon.com/apigateway/latest/developerguide/api-gateway-api-usage-plans.html in the *API Gateway Developer Guide*.
+        Adds an AWS::ApiGateway::UsagePlan resource to the template. 
 
     .DESCRIPTION
-        Adds an AWS::ApiGateway::UsagePlan resource to the template. The AWS::ApiGateway::UsagePlan resource creates a usage plan for deployed APIs. A usage plan enforces throttling and quota limits on individual client API keys. For more information, see Creating and Using API Usage Plans in Amazon API Gateway: https://docs.aws.amazon.com/apigateway/latest/developerguide/api-gateway-api-usage-plans.html in the *API Gateway Developer Guide*.
+        Adds an AWS::ApiGateway::UsagePlan resource to the template. 
 
     .LINK
         http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-apigateway-usageplan.html
@@ -13,8 +13,6 @@ function New-VSApiGatewayUsagePlan {
         The logical ID must be alphanumeric (A-Za-z0-9) and unique within the template. Use the logical name to reference the resource in other parts of the template. For example, if you want to map an Amazon Elastic Block Store volume to an Amazon EC2 instance, you reference the logical IDs to associate the block stores with the instance.
 
     .PARAMETER ApiStages
-        The API stages to associate with this usage plan.
-
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-apigateway-usageplan.html#cfn-apigateway-usageplan-apistages
         DuplicatesAllowed: False
         ItemType: ApiStage
@@ -22,22 +20,16 @@ function New-VSApiGatewayUsagePlan {
         UpdateType: Mutable
 
     .PARAMETER Description
-        A description of the usage plan.
-
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-apigateway-usageplan.html#cfn-apigateway-usageplan-description
         PrimitiveType: String
         UpdateType: Mutable
 
     .PARAMETER Quota
-        Configures the number of requests that users can make within a given interval.
-
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-apigateway-usageplan.html#cfn-apigateway-usageplan-quota
         Type: QuotaSettings
         UpdateType: Mutable
 
     .PARAMETER Tags
-        + usageplan:create: https://docs.aws.amazon.com/apigateway/api-reference/link-relation/usageplan-create/ in the *Amazon API Gateway REST API Reference*
-
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-apigateway-usageplan.html#cfn-apigateway-usageplan-tags
         DuplicatesAllowed: True
         ItemType: Tag
@@ -45,15 +37,11 @@ function New-VSApiGatewayUsagePlan {
         UpdateType: Mutable
 
     .PARAMETER Throttle
-        Configures the overall request rate average requests per second and burst capacity.
-
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-apigateway-usageplan.html#cfn-apigateway-usageplan-throttle
         Type: ThrottleSettings
         UpdateType: Mutable
 
     .PARAMETER UsagePlanName
-        A name for the usage plan.
-
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-apigateway-usageplan.html#cfn-apigateway-usageplan-usageplanname
         PrimitiveType: String
         UpdateType: Mutable

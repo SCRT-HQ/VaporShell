@@ -1,18 +1,16 @@
 function Add-VSKinesisFirehoseDeliveryStreamKMSEncryptionConfig {
     <#
     .SYNOPSIS
-        Adds an AWS::KinesisFirehose::DeliveryStream.KMSEncryptionConfig resource property to the template. The KMSEncryptionConfig property type specifies the AWS Key Management Service (AWS KMS encryption key that Amazon Simple Storage Service (Amazon S3 uses to encrypt data delivered by the Amazon Kinesis Data Firehose (Kinesis Data Firehose stream.
+        Adds an AWS::KinesisFirehose::DeliveryStream.KMSEncryptionConfig resource property to the template. 
 
     .DESCRIPTION
         Adds an AWS::KinesisFirehose::DeliveryStream.KMSEncryptionConfig resource property to the template.
-The KMSEncryptionConfig property type specifies the AWS Key Management Service (AWS KMS encryption key that Amazon Simple Storage Service (Amazon S3 uses to encrypt data delivered by the Amazon Kinesis Data Firehose (Kinesis Data Firehose stream.
+
 
     .LINK
         http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-kinesisfirehose-deliverystream-kmsencryptionconfig.html
 
     .PARAMETER AWSKMSKeyARN
-        The Amazon Resource Name ARN of the AWS KMS encryption key that Amazon S3 uses to encrypt data delivered by the Kinesis Data Firehose stream. The key must belong to the same region as the destination S3 bucket.
-
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-kinesisfirehose-deliverystream-kmsencryptionconfig.html#cfn-kinesisfirehose-deliverystream-kmsencryptionconfig-awskmskeyarn
         PrimitiveType: String
         UpdateType: Mutable

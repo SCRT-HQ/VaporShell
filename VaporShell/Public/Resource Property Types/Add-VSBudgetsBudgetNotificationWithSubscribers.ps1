@@ -1,26 +1,22 @@
 function Add-VSBudgetsBudgetNotificationWithSubscribers {
     <#
     .SYNOPSIS
-        Adds an AWS::Budgets::Budget.NotificationWithSubscribers resource property to the template. A notification with subscribers. A notification can have one SNS subscriber and up to 10 email subscribers, for a total of 11 subscribers.
+        Adds an AWS::Budgets::Budget.NotificationWithSubscribers resource property to the template. 
 
     .DESCRIPTION
         Adds an AWS::Budgets::Budget.NotificationWithSubscribers resource property to the template.
-A notification with subscribers. A notification can have one SNS subscriber and up to 10 email subscribers, for a total of 11 subscribers.
+
 
     .LINK
         http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-budgets-budget-notificationwithsubscribers.html
 
     .PARAMETER Subscribers
-        A list of subscribers who are subscribed to this notification.
-
         Type: List
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-budgets-budget-notificationwithsubscribers.html#cfn-budgets-budget-notificationwithsubscribers-subscribers
         ItemType: Subscriber
         UpdateType: Mutable
 
     .PARAMETER Notification
-        The notification that is associated with a budget.
-
         Type: Notification
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-budgets-budget-notificationwithsubscribers.html#cfn-budgets-budget-notificationwithsubscribers-notification
         UpdateType: Mutable

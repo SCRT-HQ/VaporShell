@@ -1,10 +1,10 @@
 function New-VSEFSMountTarget {
     <#
     .SYNOPSIS
-        Adds an AWS::EFS::MountTarget resource to the template. The AWS::EFS::MountTarget resource is an Amazon EFS resource that creates a mount target for an EFS file system. You can then mount the file system on Amazon EC2 instances or other resources by using the mount target.
+        Adds an AWS::EFS::MountTarget resource to the template. 
 
     .DESCRIPTION
-        Adds an AWS::EFS::MountTarget resource to the template. The AWS::EFS::MountTarget resource is an Amazon EFS resource that creates a mount target for an EFS file system. You can then mount the file system on Amazon EC2 instances or other resources by using the mount target.
+        Adds an AWS::EFS::MountTarget resource to the template. 
 
     .LINK
         http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-efs-mounttarget.html
@@ -13,22 +13,16 @@ function New-VSEFSMountTarget {
         The logical ID must be alphanumeric (A-Za-z0-9) and unique within the template. Use the logical name to reference the resource in other parts of the template. For example, if you want to map an Amazon Elastic Block Store volume to an Amazon EC2 instance, you reference the logical IDs to associate the block stores with the instance.
 
     .PARAMETER FileSystemId
-        The ID of the file system for which to create the mount target.
-
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-efs-mounttarget.html#cfn-efs-mounttarget-filesystemid
         PrimitiveType: String
         UpdateType: Immutable
 
     .PARAMETER IpAddress
-        Valid IPv4 address within the address range of the specified subnet.
-
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-efs-mounttarget.html#cfn-efs-mounttarget-ipaddress
         PrimitiveType: String
         UpdateType: Immutable
 
     .PARAMETER SecurityGroups
-        Up to five VPC security group IDs, of the form sg-xxxxxxxx. These must be for the same VPC as subnet specified.
-
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-efs-mounttarget.html#cfn-efs-mounttarget-securitygroups
         DuplicatesAllowed: False
         PrimitiveItemType: String
@@ -36,8 +30,6 @@ function New-VSEFSMountTarget {
         UpdateType: Mutable
 
     .PARAMETER SubnetId
-        The ID of the subnet to add the mount target in.
-
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-efs-mounttarget.html#cfn-efs-mounttarget-subnetid
         PrimitiveType: String
         UpdateType: Immutable

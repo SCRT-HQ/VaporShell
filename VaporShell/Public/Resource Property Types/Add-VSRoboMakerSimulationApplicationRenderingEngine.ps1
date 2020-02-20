@@ -1,25 +1,21 @@
 function Add-VSRoboMakerSimulationApplicationRenderingEngine {
     <#
     .SYNOPSIS
-        Adds an AWS::RoboMaker::SimulationApplication.RenderingEngine resource property to the template. Information about a rendering engine.
+        Adds an AWS::RoboMaker::SimulationApplication.RenderingEngine resource property to the template. 
 
     .DESCRIPTION
         Adds an AWS::RoboMaker::SimulationApplication.RenderingEngine resource property to the template.
-Information about a rendering engine.
+
 
     .LINK
         http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-robomaker-simulationapplication-renderingengine.html
 
     .PARAMETER Version
-        The version of the rendering engine.
-
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-robomaker-simulationapplication-renderingengine.html#cfn-robomaker-simulationapplication-renderingengine-version
         PrimitiveType: String
         UpdateType: Mutable
 
     .PARAMETER Name
-        The name of the rendering engine.
-
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-robomaker-simulationapplication-renderingengine.html#cfn-robomaker-simulationapplication-renderingengine-name
         PrimitiveType: String
         UpdateType: Mutable

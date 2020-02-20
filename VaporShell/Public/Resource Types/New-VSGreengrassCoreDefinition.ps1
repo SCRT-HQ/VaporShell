@@ -1,18 +1,10 @@
 function New-VSGreengrassCoreDefinition {
     <#
     .SYNOPSIS
-        Adds an AWS::Greengrass::CoreDefinition resource to the template. The AWS::Greengrass::CoreDefinition resource represents a core definition for AWS IoT Greengrass. Core definitions are used to organize your core definition versions.
+        Adds an AWS::Greengrass::CoreDefinition resource to the template. 
 
     .DESCRIPTION
-        Adds an AWS::Greengrass::CoreDefinition resource to the template. The AWS::Greengrass::CoreDefinition resource represents a core definition for AWS IoT Greengrass. Core definitions are used to organize your core definition versions.
-
-Core definitions can reference multiple core definition versions. All core definition versions must be associated with a core definition. Each core definition version can contain one Greengrass core.
-
-**Note**
-
-When you create a core definition, you can optionally include an initial core definition version. To associate a core definition version later, create an https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-greengrass-coredefinitionversion.html: https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-greengrass-coredefinitionversion.html resource and specify the ID of this core definition.
-
-After you create the core definition version that contains the core you want to deploy, you must add it to your group version. For more information, see https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-greengrass-group.html: https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-greengrass-group.html.
+        Adds an AWS::Greengrass::CoreDefinition resource to the template. 
 
     .LINK
         http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-greengrass-coredefinition.html
@@ -21,31 +13,16 @@ After you create the core definition version that contains the core you want to 
         The logical ID must be alphanumeric (A-Za-z0-9) and unique within the template. Use the logical name to reference the resource in other parts of the template. For example, if you want to map an Amazon Elastic Block Store volume to an Amazon EC2 instance, you reference the logical IDs to associate the block stores with the instance.
 
     .PARAMETER InitialVersion
-        The core definition version to include when the core definition is created. Currently, a core definition version can contain only one https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-greengrass-coredefinition-core.html: https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-greengrass-coredefinition-core.html.
-To associate a core definition version after the core definition is created, create an https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-greengrass-coredefinitionversion.html: https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-greengrass-coredefinitionversion.html resource and specify the ID of this core definition.
-
         Type: CoreDefinitionVersion
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-greengrass-coredefinition.html#cfn-greengrass-coredefinition-initialversion
         UpdateType: Immutable
 
     .PARAMETER Tags
-        Application-specific metadata to attach to the core definition. You can use tags in IAM policies to control access to AWS IoT Greengrass resources. You can also use tags to categorize your resources. For more information, see Tagging Your AWS IoT Greengrass Resources: https://docs.aws.amazon.com/greengrass/latest/developerguide/tagging.html in the *AWS IoT Greengrass Developer Guide*.
-This Json property type is processed as a map of key-value pairs. It uses the following format, which is different from most Tags implementations in AWS CloudFormation templates.
-
-"Tags": {
-"KeyName0": "value",
-"KeyName1": "value",
-"KeyName2": "value"
-}
-
-
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-greengrass-coredefinition.html#cfn-greengrass-coredefinition-tags
         PrimitiveType: Json
         UpdateType: Mutable
 
     .PARAMETER Name
-        The name of the core definition.
-
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-greengrass-coredefinition.html#cfn-greengrass-coredefinition-name
         PrimitiveType: String
         UpdateType: Mutable

@@ -1,10 +1,10 @@
 function New-VSEC2Host {
     <#
     .SYNOPSIS
-        Adds an AWS::EC2::Host resource to the template. Allocates a fully dedicated physical server for launching EC2 instances. Because the host is fully dedicated for your use, it can help you address compliance requirements and reduce costs by allowing you to use your existing server-bound software licenses. For more information, see  Dedicated Hosts: https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/dedicated-hosts-overview.html in the *Amazon EC2 User Guide for Linux Instances*.
+        Adds an AWS::EC2::Host resource to the template. 
 
     .DESCRIPTION
-        Adds an AWS::EC2::Host resource to the template. Allocates a fully dedicated physical server for launching EC2 instances. Because the host is fully dedicated for your use, it can help you address compliance requirements and reduce costs by allowing you to use your existing server-bound software licenses. For more information, see  Dedicated Hosts: https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/dedicated-hosts-overview.html in the *Amazon EC2 User Guide for Linux Instances*.
+        Adds an AWS::EC2::Host resource to the template. 
 
     .LINK
         http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ec2-host.html
@@ -13,31 +13,21 @@ function New-VSEC2Host {
         The logical ID must be alphanumeric (A-Za-z0-9) and unique within the template. Use the logical name to reference the resource in other parts of the template. For example, if you want to map an Amazon Elastic Block Store volume to an Amazon EC2 instance, you reference the logical IDs to associate the block stores with the instance.
 
     .PARAMETER AutoPlacement
-        Indicates whether the host accepts any untargeted instance launches that match its instance type configuration, or if it only accepts Host tenancy instance launches that specify its unique host ID. For more information, see  Understanding Instance Placement and Host Affinity: https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/how-dedicated-hosts-work.html#dedicated-hosts-understanding in the *Amazon EC2 User Guide for Linux Instances*.
-Default: on
-
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ec2-host.html#cfn-ec2-host-autoplacement
         PrimitiveType: String
         UpdateType: Mutable
 
     .PARAMETER AvailabilityZone
-        The Availability Zone in which to allocate the Dedicated Host.
-
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ec2-host.html#cfn-ec2-host-availabilityzone
         PrimitiveType: String
         UpdateType: Immutable
 
     .PARAMETER HostRecovery
-        Indicates whether to enable or disable host recovery for the Dedicated Host. Host recovery is disabled by default. For more information, see  Host Recovery: https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/dedicated-hosts-recovery.html in the *Amazon Elastic Compute Cloud User Guide*.
-Default: off
-
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ec2-host.html#cfn-ec2-host-hostrecovery
         PrimitiveType: String
         UpdateType: Mutable
 
     .PARAMETER InstanceType
-        Specifies the instance type for which to configure your Dedicated Hosts. When you specify the instance type, that is the only instance type that you can launch onto that host.
-
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ec2-host.html#cfn-ec2-host-instancetype
         PrimitiveType: String
         UpdateType: Immutable

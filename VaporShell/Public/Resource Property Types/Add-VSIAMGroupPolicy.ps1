@@ -1,29 +1,21 @@
 function Add-VSIAMGroupPolicy {
     <#
     .SYNOPSIS
-        Adds an AWS::IAM::Group.Policy resource property to the template. Contains information about an attached policy.
+        Adds an AWS::IAM::Group.Policy resource property to the template. 
 
     .DESCRIPTION
         Adds an AWS::IAM::Group.Policy resource property to the template.
-Contains information about an attached policy.
 
-An attached policy is a managed policy that has been attached to a user, group, or role.
-
-For more information about managed policies, refer to Managed Policies and Inline Policies: https://docs.aws.amazon.com/IAM/latest/UserGuide/policies-managed-vs-inline.html in the *Using IAM* guide.
 
     .LINK
         http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iam-policy.html
 
     .PARAMETER PolicyDocument
-        The policy document.
-
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iam-policy.html#cfn-iam-policies-policydocument
         PrimitiveType: Json
         UpdateType: Mutable
 
     .PARAMETER PolicyName
-        The friendly name not ARN identifying the policy.
-
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iam-policy.html#cfn-iam-policies-policyname
         PrimitiveType: String
         UpdateType: Mutable

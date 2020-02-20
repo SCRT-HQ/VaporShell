@@ -1,20 +1,16 @@
 function Add-VSMediaLiveChannelVideoSelectorPid {
     <#
     .SYNOPSIS
-        Adds an AWS::MediaLive::Channel.VideoSelectorPid resource property to the template. Selects a specific PID from within a video source.
+        Adds an AWS::MediaLive::Channel.VideoSelectorPid resource property to the template. 
 
     .DESCRIPTION
         Adds an AWS::MediaLive::Channel.VideoSelectorPid resource property to the template.
-Selects a specific PID from within a video source.
 
-The parent of this entity is VideoSelectorSettings.
 
     .LINK
         http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-medialive-channel-videoselectorpid.html
 
     .PARAMETER Pid
-        Selects a specific PID from within a video source.
-
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-medialive-channel-videoselectorpid.html#cfn-medialive-channel-videoselectorpid-pid
         PrimitiveType: Integer
         UpdateType: Mutable

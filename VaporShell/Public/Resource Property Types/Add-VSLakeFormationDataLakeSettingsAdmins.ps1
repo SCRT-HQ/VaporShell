@@ -1,11 +1,11 @@
 function Add-VSLakeFormationDataLakeSettingsAdmins {
     <#
     .SYNOPSIS
-        Adds an AWS::LakeFormation::DataLakeSettings.Admins resource property to the template. A list of AWS Lake Formation principals.
+        Adds an AWS::LakeFormation::DataLakeSettings.Admins resource property to the template. 
 
     .DESCRIPTION
         Adds an AWS::LakeFormation::DataLakeSettings.Admins resource property to the template.
-A list of AWS Lake Formation principals.
+
 
     .LINK
         http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-lakeformation-datalakesettings-admins.html

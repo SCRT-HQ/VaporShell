@@ -1,20 +1,16 @@
 function Add-VSAppSyncDataSourceLambdaConfig {
     <#
     .SYNOPSIS
-        Adds an AWS::AppSync::DataSource.LambdaConfig resource property to the template. The LambdaConfig property type specifies the Lambda function ARN for an AWS AppSync data source.
+        Adds an AWS::AppSync::DataSource.LambdaConfig resource property to the template. 
 
     .DESCRIPTION
         Adds an AWS::AppSync::DataSource.LambdaConfig resource property to the template.
-The LambdaConfig property type specifies the Lambda function ARN for an AWS AppSync data source.
 
-LambdaConfig is a property of the AWS::AppSync::DataSource: https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-appsync-datasource.html property type.
 
     .LINK
         http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-appsync-datasource-lambdaconfig.html
 
     .PARAMETER LambdaFunctionArn
-        The ARN for the Lambda function.
-
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-appsync-datasource-lambdaconfig.html#cfn-appsync-datasource-lambdaconfig-lambdafunctionarn
         PrimitiveType: String
         UpdateType: Mutable

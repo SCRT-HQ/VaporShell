@@ -1,10 +1,10 @@
 function New-VSRoboMakerRobotApplication {
     <#
     .SYNOPSIS
-        Adds an AWS::RoboMaker::RobotApplication resource to the template. The AWS::RoboMaker::RobotApplication resource creates an AWS RoboMaker robot application.
+        Adds an AWS::RoboMaker::RobotApplication resource to the template. 
 
     .DESCRIPTION
-        Adds an AWS::RoboMaker::RobotApplication resource to the template. The AWS::RoboMaker::RobotApplication resource creates an AWS RoboMaker robot application.
+        Adds an AWS::RoboMaker::RobotApplication resource to the template. 
 
     .LINK
         http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-robomaker-robotapplication.html
@@ -13,37 +13,27 @@ function New-VSRoboMakerRobotApplication {
         The logical ID must be alphanumeric (A-Za-z0-9) and unique within the template. Use the logical name to reference the resource in other parts of the template. For example, if you want to map an Amazon Elastic Block Store volume to an Amazon EC2 instance, you reference the logical IDs to associate the block stores with the instance.
 
     .PARAMETER CurrentRevisionId
-        The current revision id.
-
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-robomaker-robotapplication.html#cfn-robomaker-robotapplication-currentrevisionid
         PrimitiveType: String
         UpdateType: Mutable
 
     .PARAMETER RobotSoftwareSuite
-        The robot software suite used by the robot application.
-
         Type: RobotSoftwareSuite
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-robomaker-robotapplication.html#cfn-robomaker-robotapplication-robotsoftwaresuite
         UpdateType: Immutable
 
     .PARAMETER Sources
-        The sources of the robot application.
-
         Type: List
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-robomaker-robotapplication.html#cfn-robomaker-robotapplication-sources
         ItemType: SourceConfig
         UpdateType: Mutable
 
     .PARAMETER Tags
-        A map that contains tag keys and tag values that are attached to the robot application.
-
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-robomaker-robotapplication.html#cfn-robomaker-robotapplication-tags
         PrimitiveType: Json
         UpdateType: Mutable
 
     .PARAMETER Name
-        The name of the robot application.
-
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-robomaker-robotapplication.html#cfn-robomaker-robotapplication-name
         PrimitiveType: String
         UpdateType: Immutable

@@ -1,18 +1,16 @@
 function Add-VSKinesisAnalyticsV2ApplicationInputParallelism {
     <#
     .SYNOPSIS
-        Adds an AWS::KinesisAnalyticsV2::Application.InputParallelism resource property to the template. For an SQL-based Amazon Kinesis Data Analytics application, describes the number of in-application streams to create for a given streaming source.
+        Adds an AWS::KinesisAnalyticsV2::Application.InputParallelism resource property to the template. 
 
     .DESCRIPTION
         Adds an AWS::KinesisAnalyticsV2::Application.InputParallelism resource property to the template.
-For an SQL-based Amazon Kinesis Data Analytics application, describes the number of in-application streams to create for a given streaming source.
+
 
     .LINK
         http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-kinesisanalyticsv2-application-inputparallelism.html
 
     .PARAMETER Count
-        The number of in-application streams to create.
-
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-kinesisanalyticsv2-application-inputparallelism.html#cfn-kinesisanalyticsv2-application-inputparallelism-count
         PrimitiveType: Integer
         UpdateType: Mutable

@@ -1,10 +1,10 @@
 function New-VSAlexaASKSkill {
     <#
     .SYNOPSIS
-        Adds an Alexa::ASK::Skill resource to the template. The Alexa::ASK::Skill resource creates an Alexa skill that enables customers to access new abilities. For more information about developing a skill, see the Build Skills with the Alexa Skills Kit developer documentation: https://developer.amazon.com/docs/ask-overviews/build-skills-with-the-alexa-skills-kit.html.
+        Adds an Alexa::ASK::Skill resource to the template. 
 
     .DESCRIPTION
-        Adds an Alexa::ASK::Skill resource to the template. The Alexa::ASK::Skill resource creates an Alexa skill that enables customers to access new abilities. For more information about developing a skill, see the Build Skills with the Alexa Skills Kit developer documentation: https://developer.amazon.com/docs/ask-overviews/build-skills-with-the-alexa-skills-kit.html.
+        Adds an Alexa::ASK::Skill resource to the template. 
 
     .LINK
         http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ask-skill.html
@@ -13,22 +13,16 @@ function New-VSAlexaASKSkill {
         The logical ID must be alphanumeric (A-Za-z0-9) and unique within the template. Use the logical name to reference the resource in other parts of the template. For example, if you want to map an Amazon Elastic Block Store volume to an Amazon EC2 instance, you reference the logical IDs to associate the block stores with the instance.
 
     .PARAMETER AuthenticationConfiguration
-        Login with Amazon LWA configuration used to authenticate with the Alexa service. Only Login with Amazon clients created through the Amazon Developer Console: https://developer.amazon.com/lwa/sp/overview.html are supported. The client ID, client secret, and refresh token are required.
-
         Type: AuthenticationConfiguration
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ask-skill.html#cfn-ask-skill-authenticationconfiguration
         UpdateType: Mutable
 
     .PARAMETER VendorId
-        The vendor ID associated with the Amazon developer account that will host the skill. Details for retrieving the vendor ID are in How to get your vendor ID: https://github.com/alexa/alexa-smarthome/wiki/How-to-get-your-vendor-ID. The provided LWA credentials must be linked to the developer account associated with this vendor ID.
-
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ask-skill.html#cfn-ask-skill-vendorid
         PrimitiveType: String
         UpdateType: Immutable
 
     .PARAMETER SkillPackage
-        Configuration for the skill package that contains the components of the Alexa skill. Skill packages are retrieved from an Amazon S3 bucket and key and used to create and update the skill. For more information about the skill package format, see the Skill Package API Reference: https://developer.amazon.com/docs/smapi/skill-package-api-reference.html#skill-package-format.
-
         Type: SkillPackage
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ask-skill.html#cfn-ask-skill-skillpackage
         UpdateType: Mutable

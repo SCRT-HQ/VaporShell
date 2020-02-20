@@ -1,10 +1,10 @@
 function New-VSGlueDataCatalogEncryptionSettings {
     <#
     .SYNOPSIS
-        Adds an AWS::Glue::DataCatalogEncryptionSettings resource to the template. Sets the security configuration for a specified catalog. After the configuration has been set, the specified encryption is applied to every catalog write thereafter.
+        Adds an AWS::Glue::DataCatalogEncryptionSettings resource to the template. 
 
     .DESCRIPTION
-        Adds an AWS::Glue::DataCatalogEncryptionSettings resource to the template. Sets the security configuration for a specified catalog. After the configuration has been set, the specified encryption is applied to every catalog write thereafter.
+        Adds an AWS::Glue::DataCatalogEncryptionSettings resource to the template. 
 
     .LINK
         http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-glue-datacatalogencryptionsettings.html
@@ -13,15 +13,11 @@ function New-VSGlueDataCatalogEncryptionSettings {
         The logical ID must be alphanumeric (A-Za-z0-9) and unique within the template. Use the logical name to reference the resource in other parts of the template. For example, if you want to map an Amazon Elastic Block Store volume to an Amazon EC2 instance, you reference the logical IDs to associate the block stores with the instance.
 
     .PARAMETER DataCatalogEncryptionSettings
-        Contains configuration information for maintaining Data Catalog security.
-
         Type: DataCatalogEncryptionSettings
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-glue-datacatalogencryptionsettings.html#cfn-glue-datacatalogencryptionsettings-datacatalogencryptionsettings
         UpdateType: Mutable
 
     .PARAMETER CatalogId
-        The ID of the Data Catalog in which the settings are created.
-
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-glue-datacatalogencryptionsettings.html#cfn-glue-datacatalogencryptionsettings-catalogid
         PrimitiveType: String
         UpdateType: Immutable

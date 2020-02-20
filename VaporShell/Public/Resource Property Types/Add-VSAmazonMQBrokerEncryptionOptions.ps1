@@ -1,25 +1,21 @@
 function Add-VSAmazonMQBrokerEncryptionOptions {
     <#
     .SYNOPSIS
-        Adds an AWS::AmazonMQ::Broker.EncryptionOptions resource property to the template. Encryption options for the broker.
+        Adds an AWS::AmazonMQ::Broker.EncryptionOptions resource property to the template. 
 
     .DESCRIPTION
         Adds an AWS::AmazonMQ::Broker.EncryptionOptions resource property to the template.
-Encryption options for the broker.
+
 
     .LINK
         http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-amazonmq-broker-encryptionoptions.html
 
     .PARAMETER KmsKeyId
-        The customer master key CMK to use for the AWS Key Management Service KMS. This key is used to encrypt your data at rest. If not provided, Amazon MQ will use a default CMK to encrypt your data.
-
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-amazonmq-broker-encryptionoptions.html#cfn-amazonmq-broker-encryptionoptions-kmskeyid
         PrimitiveType: String
         UpdateType: Mutable
 
     .PARAMETER UseAwsOwnedKey
-        Enables the use of an AWS owned CMK using AWS Key Management Service KMS.
-
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-amazonmq-broker-encryptionoptions.html#cfn-amazonmq-broker-encryptionoptions-useawsownedkey
         PrimitiveType: Boolean
         UpdateType: Mutable

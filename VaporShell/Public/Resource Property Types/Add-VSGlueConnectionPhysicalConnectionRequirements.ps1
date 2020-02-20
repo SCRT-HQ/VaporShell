@@ -1,33 +1,27 @@
 function Add-VSGlueConnectionPhysicalConnectionRequirements {
     <#
     .SYNOPSIS
-        Adds an AWS::Glue::Connection.PhysicalConnectionRequirements resource property to the template. Specifies the physical requirements for a connection.
+        Adds an AWS::Glue::Connection.PhysicalConnectionRequirements resource property to the template. 
 
     .DESCRIPTION
         Adds an AWS::Glue::Connection.PhysicalConnectionRequirements resource property to the template.
-Specifies the physical requirements for a connection.
+
 
     .LINK
         http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-glue-connection-physicalconnectionrequirements.html
 
     .PARAMETER AvailabilityZone
-        The connection's Availability Zone. This field is redundant because the specified subnet implies the Availability Zone to be used. Currently the field must be populated, but it will be deprecated in the future.
-
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-glue-connection-physicalconnectionrequirements.html#cfn-glue-connection-physicalconnectionrequirements-availabilityzone
         PrimitiveType: String
         UpdateType: Mutable
 
     .PARAMETER SecurityGroupIdList
-        The security group ID list used by the connection.
-
         PrimitiveItemType: String
         Type: List
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-glue-connection-physicalconnectionrequirements.html#cfn-glue-connection-physicalconnectionrequirements-securitygroupidlist
         UpdateType: Mutable
 
     .PARAMETER SubnetId
-        The subnet ID used by the connection.
-
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-glue-connection-physicalconnectionrequirements.html#cfn-glue-connection-physicalconnectionrequirements-subnetid
         PrimitiveType: String
         UpdateType: Mutable

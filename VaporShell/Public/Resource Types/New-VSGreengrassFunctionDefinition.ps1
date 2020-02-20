@@ -1,18 +1,10 @@
 function New-VSGreengrassFunctionDefinition {
     <#
     .SYNOPSIS
-        Adds an AWS::Greengrass::FunctionDefinition resource to the template. The AWS::Greengrass::FunctionDefinition resource represents a function definition for AWS IoT Greengrass. Function definitions are used to organize your function definition versions.
+        Adds an AWS::Greengrass::FunctionDefinition resource to the template. 
 
     .DESCRIPTION
-        Adds an AWS::Greengrass::FunctionDefinition resource to the template. The AWS::Greengrass::FunctionDefinition resource represents a function definition for AWS IoT Greengrass. Function definitions are used to organize your function definition versions.
-
-Function definitions can reference multiple function definition versions. All function definition versions must be associated with a function definition. Each function definition version can contain one or more functions.
-
-**Note**
-
-When you create a function definition, you can optionally include an initial function definition version. To associate a function definition version later, create an https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-greengrass-functiondefinitionversion.html: https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-greengrass-functiondefinitionversion.html resource and specify the ID of this function definition.
-
-After you create the function definition version that contains the functions you want to deploy, you must add it to your group version. For more information, see https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-greengrass-group.html: https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-greengrass-group.html.
+        Adds an AWS::Greengrass::FunctionDefinition resource to the template. 
 
     .LINK
         http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-greengrass-functiondefinition.html
@@ -21,31 +13,16 @@ After you create the function definition version that contains the functions you
         The logical ID must be alphanumeric (A-Za-z0-9) and unique within the template. Use the logical name to reference the resource in other parts of the template. For example, if you want to map an Amazon Elastic Block Store volume to an Amazon EC2 instance, you reference the logical IDs to associate the block stores with the instance.
 
     .PARAMETER InitialVersion
-        The function definition version to include when the function definition is created. A function definition version contains a list of https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-greengrass-functiondefinition-function.html: https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-greengrass-functiondefinition-function.html property types.
-To associate a function definition version after the function definition is created, create an https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-greengrass-functiondefinitionversion.html: https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-greengrass-functiondefinitionversion.html resource and specify the ID of this function definition.
-
         Type: FunctionDefinitionVersion
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-greengrass-functiondefinition.html#cfn-greengrass-functiondefinition-initialversion
         UpdateType: Immutable
 
     .PARAMETER Tags
-        Application-specific metadata to attach to the function definition. You can use tags in IAM policies to control access to AWS IoT Greengrass resources. You can also use tags to categorize your resources. For more information, see Tagging Your AWS IoT Greengrass Resources: https://docs.aws.amazon.com/greengrass/latest/developerguide/tagging.html in the *AWS IoT Greengrass Developer Guide*.
-This Json property type is processed as a map of key-value pairs. It uses the following format, which is different from most Tags implementations in AWS CloudFormation templates.
-
-"Tags": {
-"KeyName0": "value",
-"KeyName1": "value",
-"KeyName2": "value"
-}
-
-
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-greengrass-functiondefinition.html#cfn-greengrass-functiondefinition-tags
         PrimitiveType: Json
         UpdateType: Mutable
 
     .PARAMETER Name
-        The name of the function definition.
-
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-greengrass-functiondefinition.html#cfn-greengrass-functiondefinition-name
         PrimitiveType: String
         UpdateType: Mutable

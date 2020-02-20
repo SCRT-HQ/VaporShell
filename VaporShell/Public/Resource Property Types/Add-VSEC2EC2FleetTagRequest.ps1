@@ -1,29 +1,21 @@
 function Add-VSEC2EC2FleetTagRequest {
     <#
     .SYNOPSIS
-        Adds an AWS::EC2::EC2Fleet.TagRequest resource property to the template. Specifies the tag key and value pair to use.
+        Adds an AWS::EC2::EC2Fleet.TagRequest resource property to the template. 
 
     .DESCRIPTION
         Adds an AWS::EC2::EC2Fleet.TagRequest resource property to the template.
-Specifies the tag key and value pair to use.
 
-TagRequest is a property of the  AWS::EC2::TagSpecification: https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-ec2fleet-tagspecification.html resource.
 
     .LINK
         http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-ec2fleet-tagrequest.html
 
     .PARAMETER Value
-        The key of the tag.
-Constraints: Tag keys are case-sensitive and accept a maximum of 127 Unicode characters. May not begin with aws:.
-
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-ec2fleet-tagrequest.html#cfn-ec2-ec2fleet-tagrequest-value
         PrimitiveType: String
         UpdateType: Mutable
 
     .PARAMETER Key
-        The value of the tag.
-Constraints: Tag values are case-sensitive and accept a maximum of 255 Unicode characters.
-
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-ec2fleet-tagrequest.html#cfn-ec2-ec2fleet-tagrequest-key
         PrimitiveType: String
         UpdateType: Mutable

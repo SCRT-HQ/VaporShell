@@ -1,46 +1,36 @@
 function Add-VSAppMeshRouteHeaderMatchMethod {
     <#
     .SYNOPSIS
-        Adds an AWS::AppMesh::Route.HeaderMatchMethod resource property to the template. An object representing the method and value to match the header value sent with a request. Specify one match method.
+        Adds an AWS::AppMesh::Route.HeaderMatchMethod resource property to the template. 
 
     .DESCRIPTION
         Adds an AWS::AppMesh::Route.HeaderMatchMethod resource property to the template.
-An object representing the method and value to match the header value sent with a request. Specify one match method.
+
 
     .LINK
         http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-appmesh-route-headermatchmethod.html
 
     .PARAMETER Suffix
-        The header value sent by the client must end with the specified characters.
-
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-appmesh-route-headermatchmethod.html#cfn-appmesh-route-headermatchmethod-suffix
         PrimitiveType: String
         UpdateType: Mutable
 
     .PARAMETER Regex
-        The header value sent by the client must include the specified characters.
-
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-appmesh-route-headermatchmethod.html#cfn-appmesh-route-headermatchmethod-regex
         PrimitiveType: String
         UpdateType: Mutable
 
     .PARAMETER Exact
-        The header value sent by the client must match the specified value exactly.
-
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-appmesh-route-headermatchmethod.html#cfn-appmesh-route-headermatchmethod-exact
         PrimitiveType: String
         UpdateType: Mutable
 
     .PARAMETER Prefix
-        The header value sent by the client must begin with the specified characters.
-
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-appmesh-route-headermatchmethod.html#cfn-appmesh-route-headermatchmethod-prefix
         PrimitiveType: String
         UpdateType: Mutable
 
     .PARAMETER Range
-        The object that specifies the range of numbers that the header value sent by the client must be included in.
-
         Type: MatchRange
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-appmesh-route-headermatchmethod.html#cfn-appmesh-route-headermatchmethod-range
         UpdateType: Mutable

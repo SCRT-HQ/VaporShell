@@ -1,18 +1,16 @@
 function Add-VSRoute53HostedZoneHostedZoneConfig {
     <#
     .SYNOPSIS
-        Adds an AWS::Route53::HostedZone.HostedZoneConfig resource property to the template. A complex type that contains an optional comment about your hosted zone. If you don't want to specify a comment, omit both the HostedZoneConfig and Comment elements.
+        Adds an AWS::Route53::HostedZone.HostedZoneConfig resource property to the template. 
 
     .DESCRIPTION
         Adds an AWS::Route53::HostedZone.HostedZoneConfig resource property to the template.
-A complex type that contains an optional comment about your hosted zone. If you don't want to specify a comment, omit both the HostedZoneConfig and Comment elements.
+
 
     .LINK
         http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-route53-hostedzone-hostedzoneconfig.html
 
     .PARAMETER Comment
-        Any comments that you want to include about the hosted zone.
-
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-route53-hostedzone-hostedzoneconfig.html#cfn-route53-hostedzone-hostedzoneconfig-comment
         PrimitiveType: String
         UpdateType: Mutable

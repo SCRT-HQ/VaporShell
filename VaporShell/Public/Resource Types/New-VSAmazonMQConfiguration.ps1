@@ -1,10 +1,10 @@
 function New-VSAmazonMQConfiguration {
     <#
     .SYNOPSIS
-        Adds an AWS::AmazonMQ::Configuration resource to the template. Creates a new configuration for the specified configuration name. Amazon MQ uses the default configuration (the engine type and version.
+        Adds an AWS::AmazonMQ::Configuration resource to the template. 
 
     .DESCRIPTION
-        Adds an AWS::AmazonMQ::Configuration resource to the template. Creates a new configuration for the specified configuration name. Amazon MQ uses the default configuration (the engine type and version.
+        Adds an AWS::AmazonMQ::Configuration resource to the template. 
 
     .LINK
         http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-amazonmq-configuration.html
@@ -13,44 +13,32 @@ function New-VSAmazonMQConfiguration {
         The logical ID must be alphanumeric (A-Za-z0-9) and unique within the template. Use the logical name to reference the resource in other parts of the template. For example, if you want to map an Amazon Elastic Block Store volume to an Amazon EC2 instance, you reference the logical IDs to associate the block stores with the instance.
 
     .PARAMETER EngineVersion
-        The version of the broker engine. For a list of supported engine versions, see https://docs.aws.amazon.com/amazon-mq/latest/developer-guide/broker-engine.html
-
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-amazonmq-configuration.html#cfn-amazonmq-configuration-engineversion
         PrimitiveType: String
         UpdateType: Immutable
 
     .PARAMETER Description
-        The description of the configuration.
-
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-amazonmq-configuration.html#cfn-amazonmq-configuration-description
         PrimitiveType: String
         UpdateType: Mutable
 
     .PARAMETER EngineType
-        The type of broker engine. Note: Currently, Amazon MQ supports only ACTIVEMQ.
-
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-amazonmq-configuration.html#cfn-amazonmq-configuration-enginetype
         PrimitiveType: String
         UpdateType: Immutable
 
     .PARAMETER Data
-        The base64-encoded XML configuration.
-
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-amazonmq-configuration.html#cfn-amazonmq-configuration-data
         PrimitiveType: String
         UpdateType: Mutable
 
     .PARAMETER Tags
-        Create tags when creating the configuration.
-
         Type: List
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-amazonmq-configuration.html#cfn-amazonmq-configuration-tags
         ItemType: TagsEntry
         UpdateType: Mutable
 
     .PARAMETER Name
-        The name of the configuration. This value can contain only alphanumeric characters, dashes, periods, underscores, and tildes - . _ ~. This value must be 1-150 characters long.
-
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-amazonmq-configuration.html#cfn-amazonmq-configuration-name
         PrimitiveType: String
         UpdateType: Immutable

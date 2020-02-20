@@ -208,6 +208,9 @@ function Get-VSStack {
         [String]
         $ProfileName = $env:AWS_PROFILE
     )
+    Begin {
+        Import-AWSSDK
+    }
     Process {
         $method = switch ($PSCmdlet.ParameterSetName) {
             Description {

@@ -1,60 +1,46 @@
 function Add-VSAppMeshVirtualNodeHealthCheck {
     <#
     .SYNOPSIS
-        Adds an AWS::AppMesh::VirtualNode.HealthCheck resource property to the template. An object representing the health check policy for a virtual node's listener.
+        Adds an AWS::AppMesh::VirtualNode.HealthCheck resource property to the template. 
 
     .DESCRIPTION
         Adds an AWS::AppMesh::VirtualNode.HealthCheck resource property to the template.
-An object representing the health check policy for a virtual node's listener.
+
 
     .LINK
         http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-appmesh-virtualnode-healthcheck.html
 
     .PARAMETER Path
-        The destination path for the health check request. This is required only if the specified protocol is HTTP. If the protocol is TCP, this parameter is ignored.
-
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-appmesh-virtualnode-healthcheck.html#cfn-appmesh-virtualnode-healthcheck-path
         PrimitiveType: String
         UpdateType: Mutable
 
     .PARAMETER UnhealthyThreshold
-        The number of consecutive failed health checks that must occur before declaring a virtual node unhealthy.
-
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-appmesh-virtualnode-healthcheck.html#cfn-appmesh-virtualnode-healthcheck-unhealthythreshold
         PrimitiveType: Integer
         UpdateType: Mutable
 
     .PARAMETER Port
-        The destination port for the health check request. This port must match the port defined in the PortMapping: https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-appmesh-virtualrouter-virtualrouterlistener.html#cfn-appmesh-virtualrouter-virtualrouterlistener-portmapping for the listener.
-
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-appmesh-virtualnode-healthcheck.html#cfn-appmesh-virtualnode-healthcheck-port
         PrimitiveType: Integer
         UpdateType: Mutable
 
     .PARAMETER HealthyThreshold
-        The number of consecutive successful health checks that must occur before declaring listener healthy.
-
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-appmesh-virtualnode-healthcheck.html#cfn-appmesh-virtualnode-healthcheck-healthythreshold
         PrimitiveType: Integer
         UpdateType: Mutable
 
     .PARAMETER TimeoutMillis
-        The amount of time to wait when receiving a response from the health check, in milliseconds.
-
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-appmesh-virtualnode-healthcheck.html#cfn-appmesh-virtualnode-healthcheck-timeoutmillis
         PrimitiveType: Integer
         UpdateType: Mutable
 
     .PARAMETER Protocol
-        The protocol for the health check request.
-
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-appmesh-virtualnode-healthcheck.html#cfn-appmesh-virtualnode-healthcheck-protocol
         PrimitiveType: String
         UpdateType: Mutable
 
     .PARAMETER IntervalMillis
-        The time period in milliseconds between each health check execution.
-
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-appmesh-virtualnode-healthcheck.html#cfn-appmesh-virtualnode-healthcheck-intervalmillis
         PrimitiveType: Integer
         UpdateType: Mutable

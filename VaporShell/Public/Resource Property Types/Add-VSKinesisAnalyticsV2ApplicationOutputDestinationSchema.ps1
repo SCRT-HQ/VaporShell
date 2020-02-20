@@ -1,18 +1,16 @@
 function Add-VSKinesisAnalyticsV2ApplicationOutputDestinationSchema {
     <#
     .SYNOPSIS
-        Adds an AWS::KinesisAnalyticsV2::ApplicationOutput.DestinationSchema resource property to the template. Describes the data format when records are written to the destination in an SQL-based Amazon Kinesis Data Analytics application.
+        Adds an AWS::KinesisAnalyticsV2::ApplicationOutput.DestinationSchema resource property to the template. 
 
     .DESCRIPTION
         Adds an AWS::KinesisAnalyticsV2::ApplicationOutput.DestinationSchema resource property to the template.
-Describes the data format when records are written to the destination in an SQL-based Amazon Kinesis Data Analytics application.
+
 
     .LINK
         http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-kinesisanalyticsv2-applicationoutput-destinationschema.html
 
     .PARAMETER RecordFormatType
-        Specifies the format of the records on the output stream.
-
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-kinesisanalyticsv2-applicationoutput-destinationschema.html#cfn-kinesisanalyticsv2-applicationoutput-destinationschema-recordformattype
         PrimitiveType: String
         UpdateType: Mutable

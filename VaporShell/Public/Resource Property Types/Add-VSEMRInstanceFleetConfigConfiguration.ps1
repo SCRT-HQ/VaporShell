@@ -1,29 +1,21 @@
 function Add-VSEMRInstanceFleetConfigConfiguration {
     <#
     .SYNOPSIS
-        Adds an AWS::EMR::InstanceFleetConfig.Configuration resource property to the template. **Note**
+        Adds an AWS::EMR::InstanceFleetConfig.Configuration resource property to the template. 
 
     .DESCRIPTION
         Adds an AWS::EMR::InstanceFleetConfig.Configuration resource property to the template.
-**Note**
 
-Used only with Amazon EMR release 4.0 and later.
-
-Configuration specifies optional configurations for customizing open-source big data applications and environment parameters. A configuration consists of a classification, properties, and optional nested configurations. A classification refers to an application-specific configuration file. Properties are the settings you want to change in that file. For more information, see Configuring Applications: https://docs.aws.amazon.com/emr/latest/ReleaseGuide/emr-configure-apps.html in the *Amazon EMR Release Guide*.
 
     .LINK
         http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-elasticmapreduce-instancefleetconfig-configuration.html
 
     .PARAMETER Classification
-        The classification within a configuration.
-
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-elasticmapreduce-instancefleetconfig-configuration.html#cfn-elasticmapreduce-instancefleetconfig-configuration-classification
         PrimitiveType: String
         UpdateType: Immutable
 
     .PARAMETER ConfigurationProperties
-        Within a configuration classification, a set of properties that represent the settings that you want to change in the configuration file. Duplicates not allowed.
-
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-elasticmapreduce-instancefleetconfig-configuration.html#cfn-elasticmapreduce-instancefleetconfig-configuration-configurationproperties
         DuplicatesAllowed: False
         PrimitiveItemType: String
@@ -31,8 +23,6 @@ Configuration specifies optional configurations for customizing open-source big 
         UpdateType: Immutable
 
     .PARAMETER Configurations
-        A list of additional configurations to apply within a configuration object.
-
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-elasticmapreduce-instancefleetconfig-configuration.html#cfn-elasticmapreduce-instancefleetconfig-configuration-configurations
         DuplicatesAllowed: False
         ItemType: Configuration

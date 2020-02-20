@@ -1,32 +1,26 @@
 function Add-VSEMRInstanceFleetConfigVolumeSpecification {
     <#
     .SYNOPSIS
-        Adds an AWS::EMR::InstanceFleetConfig.VolumeSpecification resource property to the template. VolumeSpecification is a subproperty of the EbsBlockDeviceConfig property type. VolumeSecification determines the volume type, IOPS, and size (GiB for EBS volumes attached to EC2 instances.
+        Adds an AWS::EMR::InstanceFleetConfig.VolumeSpecification resource property to the template. 
 
     .DESCRIPTION
         Adds an AWS::EMR::InstanceFleetConfig.VolumeSpecification resource property to the template.
-VolumeSpecification is a subproperty of the EbsBlockDeviceConfig property type. VolumeSecification determines the volume type, IOPS, and size (GiB for EBS volumes attached to EC2 instances.
+
 
     .LINK
         http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-elasticmapreduce-instancefleetconfig-volumespecification.html
 
     .PARAMETER Iops
-        The number of I/O operations per second IOPS that the volume supports.
-
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-elasticmapreduce-instancefleetconfig-volumespecification.html#cfn-elasticmapreduce-instancefleetconfig-volumespecification-iops
         PrimitiveType: Integer
         UpdateType: Immutable
 
     .PARAMETER SizeInGB
-        The volume size, in gibibytes GiB. This can be a number from 1 - 1024. If the volume type is EBS-optimized, the minimum value is 10.
-
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-elasticmapreduce-instancefleetconfig-volumespecification.html#cfn-elasticmapreduce-instancefleetconfig-volumespecification-sizeingb
         PrimitiveType: Integer
         UpdateType: Immutable
 
     .PARAMETER VolumeType
-        The volume type. Volume types supported are gp2, io1, standard.
-
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-elasticmapreduce-instancefleetconfig-volumespecification.html#cfn-elasticmapreduce-instancefleetconfig-volumespecification-volumetype
         PrimitiveType: String
         UpdateType: Immutable

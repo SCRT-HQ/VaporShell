@@ -1,27 +1,21 @@
 function Add-VSSESReceiptFilterIpFilter {
     <#
     .SYNOPSIS
-        Adds an AWS::SES::ReceiptFilter.IpFilter resource property to the template. Receipt IP address filters enable you to specifically accept or reject incoming email that originates from an IP address or range of IP addresses.
+        Adds an AWS::SES::ReceiptFilter.IpFilter resource property to the template. 
 
     .DESCRIPTION
         Adds an AWS::SES::ReceiptFilter.IpFilter resource property to the template.
-Receipt IP address filters enable you to specifically accept or reject incoming email that originates from an IP address or range of IP addresses.
 
-For information about setting up IP address filters, see the Amazon SES Developer Guide: https://docs.aws.amazon.com/ses/latest/DeveloperGuide/receiving-email-ip-filters.html.
 
     .LINK
         http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ses-receiptfilter-ipfilter.html
 
     .PARAMETER Policy
-        Indicates whether to block or allow incoming mail from the specified IP addresses.
-
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ses-receiptfilter-ipfilter.html#cfn-ses-receiptfilter-ipfilter-policy
         PrimitiveType: String
         UpdateType: Mutable
 
     .PARAMETER Cidr
-        An IP address or a range of IP addresses that you want to block or allow, specified in Classless Inter-Domain Routing CIDR notation. An example of a single email address is 10.0.0.1. An example of a range of IP addresses is 10.0.0.1/24. For more information about CIDR notation, see RFC 2317: https://tools.ietf.org/html/rfc2317.
-
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ses-receiptfilter-ipfilter.html#cfn-ses-receiptfilter-ipfilter-cidr
         PrimitiveType: String
         UpdateType: Mutable

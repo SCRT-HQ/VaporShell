@@ -1,42 +1,31 @@
 function Add-VSElasticLoadBalancingLoadBalancerListeners {
     <#
     .SYNOPSIS
-        Adds an AWS::ElasticLoadBalancing::LoadBalancer.Listeners resource property to the template. Specifies a listener for your Classic Load Balancer.
+        Adds an AWS::ElasticLoadBalancing::LoadBalancer.Listeners resource property to the template. 
 
     .DESCRIPTION
         Adds an AWS::ElasticLoadBalancing::LoadBalancer.Listeners resource property to the template.
-Specifies a listener for your Classic Load Balancer.
+
 
     .LINK
         http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-elb-listener.html
 
     .PARAMETER InstancePort
-        The port on which the instance is listening.
-
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-elb-listener.html#cfn-ec2-elb-listener-instanceport
         PrimitiveType: String
         UpdateType: Mutable
 
     .PARAMETER InstanceProtocol
-        The protocol to use for routing traffic to instances: HTTP, HTTPS, TCP, or SSL.
-If the front-end protocol is HTTP, HTTPS, TCP, or SSL, InstanceProtocol must be at the same protocol.
-If there is another listener with the same InstancePort whose InstanceProtocol is secure, HTTPS or SSL, the listener's InstanceProtocol must also be secure.
-If there is another listener with the same InstancePort whose InstanceProtocol is HTTP or TCP, the listener's InstanceProtocol must be HTTP or TCP.
-
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-elb-listener.html#cfn-ec2-elb-listener-instanceprotocol
         PrimitiveType: String
         UpdateType: Mutable
 
     .PARAMETER LoadBalancerPort
-        The port on which the load balancer is listening. On EC2-VPC, you can specify any port from the range 1-65535. On EC2-Classic, you can specify any port from the following list: 25, 80, 443, 465, 587, 1024-65535.
-
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-elb-listener.html#cfn-ec2-elb-listener-loadbalancerport
         PrimitiveType: String
         UpdateType: Mutable
 
     .PARAMETER PolicyNames
-        The names of the policies to associate with the listener.
-
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-elb-listener.html#cfn-ec2-elb-listener-policynames
         DuplicatesAllowed: False
         PrimitiveItemType: String
@@ -44,15 +33,11 @@ If there is another listener with the same InstancePort whose InstanceProtocol i
         UpdateType: Mutable
 
     .PARAMETER Protocol
-        The load balancer transport protocol to use for routing: HTTP, HTTPS, TCP, or SSL.
-
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-elb-listener.html#cfn-ec2-elb-listener-protocol
         PrimitiveType: String
         UpdateType: Mutable
 
     .PARAMETER SSLCertificateId
-        The Amazon Resource Name ARN of the server certificate.
-
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-elb-listener.html#cfn-ec2-elb-listener-sslcertificateid
         PrimitiveType: String
         UpdateType: Mutable

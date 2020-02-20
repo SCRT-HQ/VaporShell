@@ -1,10 +1,10 @@
 function New-VSGuardDutyDetector {
     <#
     .SYNOPSIS
-        Adds an AWS::GuardDuty::Detector resource to the template. The AWS::GuardDuty::Detector resource specifies a new Amazon GuardDuty detector. A detector is an object that represents the Amazon GuardDuty service. A detector is required for Amazon GuardDuty to become operational.
+        Adds an AWS::GuardDuty::Detector resource to the template. 
 
     .DESCRIPTION
-        Adds an AWS::GuardDuty::Detector resource to the template. The AWS::GuardDuty::Detector resource specifies a new Amazon GuardDuty detector. A detector is an object that represents the Amazon GuardDuty service. A detector is required for Amazon GuardDuty to become operational.
+        Adds an AWS::GuardDuty::Detector resource to the template. 
 
     .LINK
         http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-guardduty-detector.html
@@ -13,15 +13,11 @@ function New-VSGuardDutyDetector {
         The logical ID must be alphanumeric (A-Za-z0-9) and unique within the template. Use the logical name to reference the resource in other parts of the template. For example, if you want to map an Amazon Elastic Block Store volume to an Amazon EC2 instance, you reference the logical IDs to associate the block stores with the instance.
 
     .PARAMETER FindingPublishingFrequency
-        A enumeration value that specifies how frequently finding updates are published.
-
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-guardduty-detector.html#cfn-guardduty-detector-findingpublishingfrequency
         PrimitiveType: String
         UpdateType: Mutable
 
     .PARAMETER Enable
-        Specifies whether or not to enable the detector.
-
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-guardduty-detector.html#cfn-guardduty-detector-enable
         PrimitiveType: Boolean
         UpdateType: Mutable

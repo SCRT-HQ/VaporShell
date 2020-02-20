@@ -1,53 +1,41 @@
 function Add-VSManagedBlockchainMemberNetworkConfiguration {
     <#
     .SYNOPSIS
-        Adds an AWS::ManagedBlockchain::Member.NetworkConfiguration resource property to the template. Configuration properties of the network to which the member belongs.
+        Adds an AWS::ManagedBlockchain::Member.NetworkConfiguration resource property to the template. 
 
     .DESCRIPTION
         Adds an AWS::ManagedBlockchain::Member.NetworkConfiguration resource property to the template.
-Configuration properties of the network to which the member belongs.
+
 
     .LINK
         http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-managedblockchain-member-networkconfiguration.html
 
     .PARAMETER Description
-        Attributes of the blockchain framework for the network.
-
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-managedblockchain-member-networkconfiguration.html#cfn-managedblockchain-member-networkconfiguration-description
         PrimitiveType: String
         UpdateType: Mutable
 
     .PARAMETER FrameworkVersion
-        The version of the blockchain framework that the network uses.
-
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-managedblockchain-member-networkconfiguration.html#cfn-managedblockchain-member-networkconfiguration-frameworkversion
         PrimitiveType: String
         UpdateType: Mutable
 
     .PARAMETER VotingPolicy
-        The voting rules for the network to decide if a proposal is accepted.
-
         Type: VotingPolicy
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-managedblockchain-member-networkconfiguration.html#cfn-managedblockchain-member-networkconfiguration-votingpolicy
         UpdateType: Mutable
 
     .PARAMETER Framework
-        The blockchain framework that the network uses.
-
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-managedblockchain-member-networkconfiguration.html#cfn-managedblockchain-member-networkconfiguration-framework
         PrimitiveType: String
         UpdateType: Mutable
 
     .PARAMETER Name
-        The name of the network.
-
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-managedblockchain-member-networkconfiguration.html#cfn-managedblockchain-member-networkconfiguration-name
         PrimitiveType: String
         UpdateType: Mutable
 
     .PARAMETER NetworkFrameworkConfiguration
-        Configuration properties relevant to the network for the blockchain framework that the network uses.
-
         Type: NetworkFrameworkConfiguration
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-managedblockchain-member-networkconfiguration.html#cfn-managedblockchain-member-networkconfiguration-networkframeworkconfiguration
         UpdateType: Mutable

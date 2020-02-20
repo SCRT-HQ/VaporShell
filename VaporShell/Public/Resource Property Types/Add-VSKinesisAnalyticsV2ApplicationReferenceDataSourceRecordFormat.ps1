@@ -1,25 +1,21 @@
 function Add-VSKinesisAnalyticsV2ApplicationReferenceDataSourceRecordFormat {
     <#
     .SYNOPSIS
-        Adds an AWS::KinesisAnalyticsV2::ApplicationReferenceDataSource.RecordFormat resource property to the template. For an SQL-based Amazon Kinesis Data Analytics application, describes the record format and relevant mapping information that should be applied to schematize the records on the stream.
+        Adds an AWS::KinesisAnalyticsV2::ApplicationReferenceDataSource.RecordFormat resource property to the template. 
 
     .DESCRIPTION
         Adds an AWS::KinesisAnalyticsV2::ApplicationReferenceDataSource.RecordFormat resource property to the template.
-For an SQL-based Amazon Kinesis Data Analytics application, describes the record format and relevant mapping information that should be applied to schematize the records on the stream.
+
 
     .LINK
         http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-kinesisanalyticsv2-applicationreferencedatasource-recordformat.html
 
     .PARAMETER MappingParameters
-        When you configure application input at the time of creating or updating an application, provides additional mapping information specific to the record format such as JSON, CSV, or record fields delimited by some delimiter on the streaming source.
-
         Type: MappingParameters
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-kinesisanalyticsv2-applicationreferencedatasource-recordformat.html#cfn-kinesisanalyticsv2-applicationreferencedatasource-recordformat-mappingparameters
         UpdateType: Mutable
 
     .PARAMETER RecordFormatType
-        The type of record format.
-
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-kinesisanalyticsv2-applicationreferencedatasource-recordformat.html#cfn-kinesisanalyticsv2-applicationreferencedatasource-recordformat-recordformattype
         PrimitiveType: String
         UpdateType: Mutable

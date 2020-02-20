@@ -1,18 +1,16 @@
 function Add-VSMediaLiveInputInputDestinationRequest {
     <#
     .SYNOPSIS
-        Adds an AWS::MediaLive::Input.InputDestinationRequest resource property to the template. The settings for a push input, to set up the destination addresses on MediaLive.
+        Adds an AWS::MediaLive::Input.InputDestinationRequest resource property to the template. 
 
     .DESCRIPTION
         Adds an AWS::MediaLive::Input.InputDestinationRequest resource property to the template.
-The settings for a push input, to set up the destination addresses on MediaLive.
+
 
     .LINK
         http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-medialive-input-inputdestinationrequest.html
 
     .PARAMETER StreamName
-        The stream name application name/application instance for the location the RTMP source content will be pushed to in MediaLive.
-
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-medialive-input-inputdestinationrequest.html#cfn-medialive-input-inputdestinationrequest-streamname
         PrimitiveType: String
         UpdateType: Mutable

@@ -1,32 +1,26 @@
 function Add-VSIoTTopicRuleKinesisAction {
     <#
     .SYNOPSIS
-        Adds an AWS::IoT::TopicRule.KinesisAction resource property to the template. Describes an action to write data to an Amazon Kinesis stream.
+        Adds an AWS::IoT::TopicRule.KinesisAction resource property to the template. 
 
     .DESCRIPTION
         Adds an AWS::IoT::TopicRule.KinesisAction resource property to the template.
-Describes an action to write data to an Amazon Kinesis stream.
+
 
     .LINK
         http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iot-topicrule-kinesisaction.html
 
     .PARAMETER PartitionKey
-        The partition key.
-
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iot-topicrule-kinesisaction.html#cfn-iot-topicrule-kinesisaction-partitionkey
         PrimitiveType: String
         UpdateType: Mutable
 
     .PARAMETER RoleArn
-        The ARN of the IAM role that grants access to the Amazon Kinesis stream.
-
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iot-topicrule-kinesisaction.html#cfn-iot-topicrule-kinesisaction-rolearn
         PrimitiveType: String
         UpdateType: Mutable
 
     .PARAMETER StreamName
-        The name of the Amazon Kinesis stream.
-
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iot-topicrule-kinesisaction.html#cfn-iot-topicrule-kinesisaction-streamname
         PrimitiveType: String
         UpdateType: Mutable

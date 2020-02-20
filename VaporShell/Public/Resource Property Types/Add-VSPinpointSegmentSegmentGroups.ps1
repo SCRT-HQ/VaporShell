@@ -1,26 +1,22 @@
 function Add-VSPinpointSegmentSegmentGroups {
     <#
     .SYNOPSIS
-        Adds an AWS::Pinpoint::Segment.SegmentGroups resource property to the template. Specifies the set of segment criteria to evaluate when handling segment groups for the segment.
+        Adds an AWS::Pinpoint::Segment.SegmentGroups resource property to the template. 
 
     .DESCRIPTION
         Adds an AWS::Pinpoint::Segment.SegmentGroups resource property to the template.
-Specifies the set of segment criteria to evaluate when handling segment groups for the segment.
+
 
     .LINK
         http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-pinpoint-segment-segmentgroups.html
 
     .PARAMETER Groups
-        Specifies the set of segment criteria to evaluate when handling segment groups for the segment.
-
         Type: List
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-pinpoint-segment-segmentgroups.html#cfn-pinpoint-segment-segmentgroups-groups
         ItemType: Groups
         UpdateType: Mutable
 
     .PARAMETER Include
-        Specifies how to handle multiple segment groups for the segment. For example, if the segment includes three segment groups, whether the resulting segment includes endpoints that match all, any, or none of the segment groups.
-
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-pinpoint-segment-segmentgroups.html#cfn-pinpoint-segment-segmentgroups-include
         PrimitiveType: String
         UpdateType: Mutable

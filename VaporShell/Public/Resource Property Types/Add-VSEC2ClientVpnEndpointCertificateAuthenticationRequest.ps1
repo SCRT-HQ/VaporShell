@@ -1,18 +1,16 @@
 function Add-VSEC2ClientVpnEndpointCertificateAuthenticationRequest {
     <#
     .SYNOPSIS
-        Adds an AWS::EC2::ClientVpnEndpoint.CertificateAuthenticationRequest resource property to the template. Information about the client certificate to be used for authentication.
+        Adds an AWS::EC2::ClientVpnEndpoint.CertificateAuthenticationRequest resource property to the template. 
 
     .DESCRIPTION
         Adds an AWS::EC2::ClientVpnEndpoint.CertificateAuthenticationRequest resource property to the template.
-Information about the client certificate to be used for authentication.
+
 
     .LINK
         http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-clientvpnendpoint-certificateauthenticationrequest.html
 
     .PARAMETER ClientRootCertificateChainArn
-        The ARN of the client certificate. The certificate must be signed by a certificate authority CA and it must be provisioned in AWS Certificate Manager ACM.
-
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-clientvpnendpoint-certificateauthenticationrequest.html#cfn-ec2-clientvpnendpoint-certificateauthenticationrequest-clientrootcertificatechainarn
         PrimitiveType: String
         UpdateType: Mutable

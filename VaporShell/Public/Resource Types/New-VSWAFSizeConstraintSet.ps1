@@ -1,10 +1,10 @@
 function New-VSWAFSizeConstraintSet {
     <#
     .SYNOPSIS
-        Adds an AWS::WAF::SizeConstraintSet resource to the template. A complex type that contains SizeConstraint objects, which specify the parts of web requests that you want AWS WAF to inspect the size of. If a SizeConstraintSet contains more than one SizeConstraint object, a request only needs to match one constraint to be considered a match.
+        Adds an AWS::WAF::SizeConstraintSet resource to the template. 
 
     .DESCRIPTION
-        Adds an AWS::WAF::SizeConstraintSet resource to the template. A complex type that contains SizeConstraint objects, which specify the parts of web requests that you want AWS WAF to inspect the size of. If a SizeConstraintSet contains more than one SizeConstraint object, a request only needs to match one constraint to be considered a match.
+        Adds an AWS::WAF::SizeConstraintSet resource to the template. 
 
     .LINK
         http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-waf-sizeconstraintset.html
@@ -13,15 +13,11 @@ function New-VSWAFSizeConstraintSet {
         The logical ID must be alphanumeric (A-Za-z0-9) and unique within the template. Use the logical name to reference the resource in other parts of the template. For example, if you want to map an Amazon Elastic Block Store volume to an Amazon EC2 instance, you reference the logical IDs to associate the block stores with the instance.
 
     .PARAMETER Name
-        The name, if any, of the SizeConstraintSet.
-
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-waf-sizeconstraintset.html#cfn-waf-sizeconstraintset-name
         PrimitiveType: String
         UpdateType: Immutable
 
     .PARAMETER SizeConstraints
-        The size constraint and the part of the web request to check.
-
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-waf-sizeconstraintset.html#cfn-waf-sizeconstraintset-sizeconstraints
         DuplicatesAllowed: False
         ItemType: SizeConstraint

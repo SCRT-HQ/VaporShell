@@ -135,6 +135,7 @@ function New-VSStack {
         $Force
     )
     Begin {
+        Import-AWSSDK
         $tagList = New-Object 'System.Collections.Generic.List[Amazon.CloudFormation.Model.Tag]'
         $tagList.Add((VSStackTag -Key BuiltWith -Value VaporShell))
     }

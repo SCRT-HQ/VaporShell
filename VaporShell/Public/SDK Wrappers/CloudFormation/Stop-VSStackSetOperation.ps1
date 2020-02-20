@@ -2,16 +2,16 @@ function Stop-VSStackSetOperation {
     <#
     .SYNOPSIS
     Stops an in-progress operation on a stack set and its associated stack instances.
-    
+
     .PARAMETER StackSetName
     The name or unique ID of the stack set that you want to stop the operation for.
-    
+
     .PARAMETER OperationId
     The ID of the stack operation.
 
     .PARAMETER ProfileName
     The name of the configuration profile to deploy the stack with. Defaults to $env:AWS_PROFILE, if set.
-    
+
     .FUNCTIONALITY
     Vaporshell
     #>
@@ -28,6 +28,9 @@ function Stop-VSStackSetOperation {
         [String]
         $ProfileName = $env:AWS_PROFILE
     )
+    Begin {
+        Import-AWSSDK
+    }
     Process {
         $method = 'StopStackSetOperation'
         $requestType = "Amazon.CloudFormation.Model.$($method)Request"

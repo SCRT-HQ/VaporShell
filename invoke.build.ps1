@@ -84,11 +84,16 @@ task Clean Init,{
 
 # Synopsis: Updates module functions before compilation
 Task Update Clean, {
-    Write-BuildLog 'Updating Resource and Property Type functions with current AWS spec sheet...'
     Get-ChildItem (Join-Path $PSScriptRoot 'ci') -Filter '*.ps1' | Where-Object { $_.BaseName -notmatch "(GitHubReleaseNotes|$(([RegEx]::Escape('https___gist.githubusercontent.com_scrthq'))))" } | ForEach-Object {
         . $_.FullName
     }
-    Update-VSResourceFunctions
+    if ($NoUpdate) {
+        Write-BuildLog 'Skipping Spec Sheet update!'
+    }
+    else {
+        Write-BuildLog 'Updating Resource and Property Type functions with current AWS spec sheet...'
+        Update-VSResourceFunctions
+    }
 }
 
 # Synopsis: Compiles module from source
@@ -170,24 +175,8 @@ Task Build Update, {
     }
     $aliasHash += "}"
 
-    '    Setting remainder of PSM1 contents...'
-    @"
-
-# Load AWS .NET SDK if not already loaded
-@(
-    'Common',
-    'Core',
-    'CloudFormation',
-    'S3'
-) | ForEach-Object {
-    `$assemblyName = "AWSSDK.`$(`$_).dll"
-    if (!([AppDomain]::CurrentDomain.GetAssemblies() | Where-Object {`$_.Location -like "*`$(`$assemblyName)"})) {
-        Get-ChildItem `$Script:VaporshellPath -Filter "*`$(`$assemblyName)" | ForEach-Object {
-            [System.Reflection.Assembly]::LoadFrom("`$(`$_.FullName)") | Out-Null
-        }
-    }
-}
-
+    Write-BuildLog 'Setting remainder of PSM1 contents'
+@"
 `$aliases = @()
 `$aliasHash = $($aliasHash -join "`n")
 foreach (`$key in `$aliasHash.Keys) {

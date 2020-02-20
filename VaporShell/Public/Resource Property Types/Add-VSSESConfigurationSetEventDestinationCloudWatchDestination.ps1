@@ -1,20 +1,16 @@
 function Add-VSSESConfigurationSetEventDestinationCloudWatchDestination {
     <#
     .SYNOPSIS
-        Adds an AWS::SES::ConfigurationSetEventDestination.CloudWatchDestination resource property to the template. Contains information associated with an Amazon CloudWatch event destination to which email sending events are published.
+        Adds an AWS::SES::ConfigurationSetEventDestination.CloudWatchDestination resource property to the template. 
 
     .DESCRIPTION
         Adds an AWS::SES::ConfigurationSetEventDestination.CloudWatchDestination resource property to the template.
-Contains information associated with an Amazon CloudWatch event destination to which email sending events are published.
 
-Event destinations, such as Amazon CloudWatch, are associated with configuration sets, which enable you to publish email sending events. For information about using configuration sets, see the Amazon SES Developer Guide: https://docs.aws.amazon.com/ses/latest/DeveloperGuide/monitor-sending-activity.html.
 
     .LINK
         http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ses-configurationseteventdestination-cloudwatchdestination.html
 
     .PARAMETER DimensionConfigurations
-        A list of dimensions upon which to categorize your emails when you publish email sending events to Amazon CloudWatch.
-
         Type: List
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ses-configurationseteventdestination-cloudwatchdestination.html#cfn-ses-configurationseteventdestination-cloudwatchdestination-dimensionconfigurations
         ItemType: DimensionConfiguration

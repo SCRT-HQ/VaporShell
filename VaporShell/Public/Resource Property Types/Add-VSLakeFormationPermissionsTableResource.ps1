@@ -1,25 +1,21 @@
 function Add-VSLakeFormationPermissionsTableResource {
     <#
     .SYNOPSIS
-        Adds an AWS::LakeFormation::Permissions.TableResource resource property to the template. A structure for the table object. A table is a metadata definition that represents your data. You can Grant and Revoke table privileges to a principal.
+        Adds an AWS::LakeFormation::Permissions.TableResource resource property to the template. 
 
     .DESCRIPTION
         Adds an AWS::LakeFormation::Permissions.TableResource resource property to the template.
-A structure for the table object. A table is a metadata definition that represents your data. You can Grant and Revoke table privileges to a principal.
+
 
     .LINK
         http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-lakeformation-permissions-tableresource.html
 
     .PARAMETER DatabaseName
-        The name of the database for the table. Unique to a Data Catalog. A database is a set of associated table definitions organized into a logical group. You can Grant and Revoke database privileges to a principal.
-
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-lakeformation-permissions-tableresource.html#cfn-lakeformation-permissions-tableresource-databasename
         PrimitiveType: String
         UpdateType: Mutable
 
     .PARAMETER Name
-        The name of the table.
-
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-lakeformation-permissions-tableresource.html#cfn-lakeformation-permissions-tableresource-name
         PrimitiveType: String
         UpdateType: Mutable

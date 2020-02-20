@@ -2,7 +2,8 @@
 
 <!-- TOC -->
 
-* [2.10.0.X - 2020-02-18](#2100x---2020-02-18)
+* [2.10.1 - 2020-02-20](#2101---2020-02-20)
+* [2.10.0 - 2020-02-18](#2100---2020-02-18)
 * [2.9.5 - 2020-02-17](#295---2020-02-17)
 * [2.9.4 - 2019-12-11](#294---2019-12-11)
 * [2.9.3 - 2019-11-24](#293---2019-11-24)
@@ -53,18 +54,26 @@
 
 <!-- /TOC -->
 
-## 2.10.0.X - 2020-02-18
+## 2.10.1 - 2020-02-20
 
-* **Brought minimum .NET version to 4.7.2**
-* Updated build process to use InvokeBuild instead of psake
-* Updated tasks to pull down the latest dependent assemblies during build
-* Added scheduled build triggers for weekly deployments
-* Changed the version scheme so it includes the date stamp as the build version
+* Miscellaneous
+  * Removed `RequiredAssemblies` from the module manifest due to collisions with existing AWS modules.
+  * Moved the Assembly import to a private function `Import-AWSSDK` and added a call to that function in the `Begin` block of each function wrapping AWS SDK calls.
+  * Removed the process that imports the assemblies on module load so they're only imported if needed for SDK wrapper calls.
+
+## 2.10.0 - 2020-02-18
+
+* Miscellaneous
+  * **Brought minimum .NET version to 4.7.2**
+  * Updated build process to use InvokeBuild instead of psake
+  * Updated tasks to pull down the latest dependent assemblies during build
+  * Added scheduled build triggers for weekly deployments
+  * Changed the version scheme so it includes the date stamp as the build version
 
 ## 2.9.5 - 2020-02-17
 
 * [Issue #66](https://github.com/scrthq/VaporShell/issues/66)
-    * Fixed: `Int`,`Double`, and `Boolean` parameters now accept CloudFormation Intrinsic Functions as parameter values.
+  * Fixed: `Int`,`Double`, and `Boolean` parameters now accept CloudFormation Intrinsic Functions as parameter values.
 * Miscellaneous
   * Brought Resource Type and Property Type functions up to current spec sheet.
 

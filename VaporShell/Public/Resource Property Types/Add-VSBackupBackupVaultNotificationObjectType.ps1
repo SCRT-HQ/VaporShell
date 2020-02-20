@@ -1,25 +1,21 @@
 function Add-VSBackupBackupVaultNotificationObjectType {
     <#
     .SYNOPSIS
-        Adds an AWS::Backup::BackupVault.NotificationObjectType resource property to the template. Specifies an object containing SNS event notification properties for the target backup vault.
+        Adds an AWS::Backup::BackupVault.NotificationObjectType resource property to the template. 
 
     .DESCRIPTION
         Adds an AWS::Backup::BackupVault.NotificationObjectType resource property to the template.
-Specifies an object containing SNS event notification properties for the target backup vault.
+
 
     .LINK
         http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-backup-backupvault-notificationobjecttype.html
 
     .PARAMETER SNSTopicArn
-        An ARN that uniquely identifies an Amazon Simple Notification Service Amazon SNS topic; for example, arn:aws:sns:us-west-2:111122223333:MyTopic.
-
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-backup-backupvault-notificationobjecttype.html#cfn-backup-backupvault-notificationobjecttype-snstopicarn
         PrimitiveType: String
         UpdateType: Mutable
 
     .PARAMETER BackupVaultEvents
-        An array of events that indicate the status of jobs to back up resources to the backup vault.
-
         PrimitiveItemType: String
         Type: List
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-backup-backupvault-notificationobjecttype.html#cfn-backup-backupvault-notificationobjecttype-backupvaultevents

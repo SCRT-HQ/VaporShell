@@ -1,10 +1,10 @@
 function New-VSApiGatewayDocumentationPart {
     <#
     .SYNOPSIS
-        Adds an AWS::ApiGateway::DocumentationPart resource to the template. The AWS::ApiGateway::DocumentationPart resource creates a documentation part for an API. For more information, see Representation of API Documentation in API Gateway: https://docs.aws.amazon.com/apigateway/latest/developerguide/api-gateway-documenting-api-content-representation.html in the *API Gateway Developer Guide*.
+        Adds an AWS::ApiGateway::DocumentationPart resource to the template. 
 
     .DESCRIPTION
-        Adds an AWS::ApiGateway::DocumentationPart resource to the template. The AWS::ApiGateway::DocumentationPart resource creates a documentation part for an API. For more information, see Representation of API Documentation in API Gateway: https://docs.aws.amazon.com/apigateway/latest/developerguide/api-gateway-documenting-api-content-representation.html in the *API Gateway Developer Guide*.
+        Adds an AWS::ApiGateway::DocumentationPart resource to the template. 
 
     .LINK
         http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-apigateway-documentationpart.html
@@ -13,22 +13,16 @@ function New-VSApiGatewayDocumentationPart {
         The logical ID must be alphanumeric (A-Za-z0-9) and unique within the template. Use the logical name to reference the resource in other parts of the template. For example, if you want to map an Amazon Elastic Block Store volume to an Amazon EC2 instance, you reference the logical IDs to associate the block stores with the instance.
 
     .PARAMETER Location
-        The location of the API entity that the documentation applies to.
-
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-apigateway-documentationpart.html#cfn-apigateway-documentationpart-location
         Type: Location
         UpdateType: Immutable
 
     .PARAMETER Properties
-        The documentation content map of the targeted API entity.
-
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-apigateway-documentationpart.html#cfn-apigateway-documentationpart-properties
         PrimitiveType: String
         UpdateType: Mutable
 
     .PARAMETER RestApiId
-        The identifier of the targeted API entity.
-
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-apigateway-documentationpart.html#cfn-apigateway-documentationpart-restapiid
         PrimitiveType: String
         UpdateType: Immutable

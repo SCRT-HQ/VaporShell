@@ -1,53 +1,41 @@
 function Add-VSIoTTopicRuleCloudwatchMetricAction {
     <#
     .SYNOPSIS
-        Adds an AWS::IoT::TopicRule.CloudwatchMetricAction resource property to the template. Describes an action that captures a CloudWatch metric.
+        Adds an AWS::IoT::TopicRule.CloudwatchMetricAction resource property to the template. 
 
     .DESCRIPTION
         Adds an AWS::IoT::TopicRule.CloudwatchMetricAction resource property to the template.
-Describes an action that captures a CloudWatch metric.
+
 
     .LINK
         http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iot-topicrule-cloudwatchmetricaction.html
 
     .PARAMETER MetricName
-        The CloudWatch metric name.
-
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iot-topicrule-cloudwatchmetricaction.html#cfn-iot-topicrule-cloudwatchmetricaction-metricname
         PrimitiveType: String
         UpdateType: Mutable
 
     .PARAMETER MetricNamespace
-        The CloudWatch metric namespace name.
-
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iot-topicrule-cloudwatchmetricaction.html#cfn-iot-topicrule-cloudwatchmetricaction-metricnamespace
         PrimitiveType: String
         UpdateType: Mutable
 
     .PARAMETER MetricTimestamp
-        An optional Unix timestamp: https://docs.aws.amazon.com/AmazonCloudWatch/latest/DeveloperGuide/cloudwatch_concepts.html#about_timestamp.
-
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iot-topicrule-cloudwatchmetricaction.html#cfn-iot-topicrule-cloudwatchmetricaction-metrictimestamp
         PrimitiveType: String
         UpdateType: Mutable
 
     .PARAMETER MetricUnit
-        The metric unit: https://docs.aws.amazon.com/AmazonCloudWatch/latest/DeveloperGuide/cloudwatch_concepts.html#Unit supported by CloudWatch.
-
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iot-topicrule-cloudwatchmetricaction.html#cfn-iot-topicrule-cloudwatchmetricaction-metricunit
         PrimitiveType: String
         UpdateType: Mutable
 
     .PARAMETER MetricValue
-        The CloudWatch metric value.
-
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iot-topicrule-cloudwatchmetricaction.html#cfn-iot-topicrule-cloudwatchmetricaction-metricvalue
         PrimitiveType: String
         UpdateType: Mutable
 
     .PARAMETER RoleArn
-        The IAM role that allows access to the CloudWatch metric.
-
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iot-topicrule-cloudwatchmetricaction.html#cfn-iot-topicrule-cloudwatchmetricaction-rolearn
         PrimitiveType: String
         UpdateType: Mutable

@@ -47,6 +47,9 @@ function Remove-VSStack {
         [String]
         $ProfileName = $env:AWS_PROFILE
     )
+    Begin {
+        Import-AWSSDK
+    }
     Process {
         $method = "DeleteStack"
         $requestType = "Amazon.CloudFormation.Model.$($method)Request"

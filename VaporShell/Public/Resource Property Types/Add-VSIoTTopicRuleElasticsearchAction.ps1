@@ -1,46 +1,36 @@
 function Add-VSIoTTopicRuleElasticsearchAction {
     <#
     .SYNOPSIS
-        Adds an AWS::IoT::TopicRule.ElasticsearchAction resource property to the template. Describes an action that writes data to an Amazon Elasticsearch Service domain.
+        Adds an AWS::IoT::TopicRule.ElasticsearchAction resource property to the template. 
 
     .DESCRIPTION
         Adds an AWS::IoT::TopicRule.ElasticsearchAction resource property to the template.
-Describes an action that writes data to an Amazon Elasticsearch Service domain.
+
 
     .LINK
         http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iot-topicrule-elasticsearchaction.html
 
     .PARAMETER Endpoint
-        The endpoint of your Elasticsearch domain.
-
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iot-topicrule-elasticsearchaction.html#cfn-iot-topicrule-elasticsearchaction-endpoint
         PrimitiveType: String
         UpdateType: Mutable
 
     .PARAMETER Id
-        The unique identifier for the document you are storing.
-
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iot-topicrule-elasticsearchaction.html#cfn-iot-topicrule-elasticsearchaction-id
         PrimitiveType: String
         UpdateType: Mutable
 
     .PARAMETER Index
-        The Elasticsearch index where you want to store your data.
-
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iot-topicrule-elasticsearchaction.html#cfn-iot-topicrule-elasticsearchaction-index
         PrimitiveType: String
         UpdateType: Mutable
 
     .PARAMETER RoleArn
-        The IAM role ARN that has access to Elasticsearch.
-
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iot-topicrule-elasticsearchaction.html#cfn-iot-topicrule-elasticsearchaction-rolearn
         PrimitiveType: String
         UpdateType: Mutable
 
     .PARAMETER Type
-        The type of document you are storing.
-
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iot-topicrule-elasticsearchaction.html#cfn-iot-topicrule-elasticsearchaction-type
         PrimitiveType: String
         UpdateType: Mutable

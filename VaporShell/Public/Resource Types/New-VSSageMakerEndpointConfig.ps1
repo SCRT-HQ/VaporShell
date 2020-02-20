@@ -1,10 +1,10 @@
 function New-VSSageMakerEndpointConfig {
     <#
     .SYNOPSIS
-        Adds an AWS::SageMaker::EndpointConfig resource to the template. The AWS::SageMaker::EndpointConfig resource creates a configuration for an Amazon SageMaker endpoint. For more information, see CreateEndpointConfig: https://docs-aws.amazon.com/sagemaker/latest/dg/API_CreateEndpointConfig.html in the *SageMaker Developer Guide*.
+        Adds an AWS::SageMaker::EndpointConfig resource to the template. 
 
     .DESCRIPTION
-        Adds an AWS::SageMaker::EndpointConfig resource to the template. The AWS::SageMaker::EndpointConfig resource creates a configuration for an Amazon SageMaker endpoint. For more information, see CreateEndpointConfig: https://docs-aws.amazon.com/sagemaker/latest/dg/API_CreateEndpointConfig.html in the *SageMaker Developer Guide*.
+        Adds an AWS::SageMaker::EndpointConfig resource to the template. 
 
     .LINK
         http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-sagemaker-endpointconfig.html
@@ -13,31 +13,22 @@ function New-VSSageMakerEndpointConfig {
         The logical ID must be alphanumeric (A-Za-z0-9) and unique within the template. Use the logical name to reference the resource in other parts of the template. For example, if you want to map an Amazon Elastic Block Store volume to an Amazon EC2 instance, you reference the logical IDs to associate the block stores with the instance.
 
     .PARAMETER ProductionVariants
-        A list of ProductionVariant objects, one for each model that you want to host at this endpoint.
-
         Type: List
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-sagemaker-endpointconfig.html#cfn-sagemaker-endpointconfig-productionvariants
         ItemType: ProductionVariant
         UpdateType: Immutable
 
     .PARAMETER KmsKeyId
-        The Amazon Resource Name ARN of a AWS Key Management Service key that Amazon SageMaker uses to encrypt data on the storage volume attached to the ML compute instance that hosts the endpoint.
-
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-sagemaker-endpointconfig.html#cfn-sagemaker-endpointconfig-kmskeyid
         PrimitiveType: String
         UpdateType: Immutable
 
     .PARAMETER EndpointConfigName
-        The name of the endpoint configuration. You specify this name in a CreateEndpoint: https://docs.aws.amazon.com/sagemaker/latest/dg/API_CreateEndpoint.html request.
-
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-sagemaker-endpointconfig.html#cfn-sagemaker-endpointconfig-endpointconfigname
         PrimitiveType: String
         UpdateType: Immutable
 
     .PARAMETER Tags
-        A list of key-value pairs to apply to this resource.
-For more information, see Resource Tag: https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-resource-tags.html and Using Cost Allocation Tags: https://docs.aws.amazon.com/awsaccountbilling/latest/aboutv2/cost-alloc-tags.html#allocation-what.
-
         Type: List
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-sagemaker-endpointconfig.html#cfn-sagemaker-endpointconfig-tags
         ItemType: Tag

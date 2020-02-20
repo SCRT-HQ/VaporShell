@@ -1,32 +1,26 @@
 function Add-VSGlueCrawlerJdbcTarget {
     <#
     .SYNOPSIS
-        Adds an AWS::Glue::Crawler.JdbcTarget resource property to the template. Specifies a JDBC data store to crawl.
+        Adds an AWS::Glue::Crawler.JdbcTarget resource property to the template. 
 
     .DESCRIPTION
         Adds an AWS::Glue::Crawler.JdbcTarget resource property to the template.
-Specifies a JDBC data store to crawl.
+
 
     .LINK
         http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-glue-crawler-jdbctarget.html
 
     .PARAMETER ConnectionName
-        The name of the connection to use to connect to the JDBC target.
-
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-glue-crawler-jdbctarget.html#cfn-glue-crawler-jdbctarget-connectionname
         PrimitiveType: String
         UpdateType: Mutable
 
     .PARAMETER Path
-        The path of the JDBC target.
-
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-glue-crawler-jdbctarget.html#cfn-glue-crawler-jdbctarget-path
         PrimitiveType: String
         UpdateType: Mutable
 
     .PARAMETER Exclusions
-        A list of glob patterns used to exclude from the crawl. For more information, see Catalog Tables with a Crawler: https://docs.aws.amazon.com/glue/latest/dg/add-crawler.html.
-
         PrimitiveItemType: String
         Type: List
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-glue-crawler-jdbctarget.html#cfn-glue-crawler-jdbctarget-exclusions

@@ -1,16 +1,10 @@
 function New-VSElastiCacheSecurityGroup {
     <#
     .SYNOPSIS
-        Adds an AWS::ElastiCache::SecurityGroup resource to the template. The AWS::ElastiCache::SecurityGroup resource creates a cache security group. For more information about cache security groups, go to CacheSecurityGroups: https://docs.aws.amazon.com/AmazonElastiCache/latest/mem-ug/VPCs.html in the *Amazon ElastiCache User Guide* or go to CreateCacheSecurityGroup: https://docs.aws.amazon.com/AmazonElastiCache/latest/APIReference/API_CreateCacheSecurityGroup.html in the *Amazon ElastiCache API Reference Guide*.
+        Adds an AWS::ElastiCache::SecurityGroup resource to the template. 
 
     .DESCRIPTION
-        Adds an AWS::ElastiCache::SecurityGroup resource to the template. The AWS::ElastiCache::SecurityGroup resource creates a cache security group. For more information about cache security groups, go to CacheSecurityGroups: https://docs.aws.amazon.com/AmazonElastiCache/latest/mem-ug/VPCs.html in the *Amazon ElastiCache User Guide* or go to CreateCacheSecurityGroup: https://docs.aws.amazon.com/AmazonElastiCache/latest/APIReference/API_CreateCacheSecurityGroup.html in the *Amazon ElastiCache API Reference Guide*.
-
-For more information, see CreateCacheSubnetGroup: https://docs.aws.amazon.com/AmazonElastiCache/latest/APIReference/API_CreateCacheSubnetGroup.html.
-
-**Note**
-
-Updates are not supported.
+        Adds an AWS::ElastiCache::SecurityGroup resource to the template. 
 
     .LINK
         http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-elasticache-security-group.html
@@ -19,8 +13,6 @@ Updates are not supported.
         The logical ID must be alphanumeric (A-Za-z0-9) and unique within the template. Use the logical name to reference the resource in other parts of the template. For example, if you want to map an Amazon Elastic Block Store volume to an Amazon EC2 instance, you reference the logical IDs to associate the block stores with the instance.
 
     .PARAMETER Description
-        A description for the cache security group.
-
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-elasticache-security-group.html#cfn-elasticache-securitygroup-description
         PrimitiveType: String
         UpdateType: Mutable

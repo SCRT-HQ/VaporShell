@@ -1,25 +1,21 @@
 function Add-VSCognitoUserPoolUserAttributeType {
     <#
     .SYNOPSIS
-        Adds an AWS::Cognito::UserPoolUser.AttributeType resource property to the template. AttributeType is a property of the AWS::Cognito::UserPoolUser: https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-cognito-userpooluser.html resource that defines name-value pairs for a user in an Amazon Cognito User Pool.
+        Adds an AWS::Cognito::UserPoolUser.AttributeType resource property to the template. 
 
     .DESCRIPTION
         Adds an AWS::Cognito::UserPoolUser.AttributeType resource property to the template.
-AttributeType is a property of the AWS::Cognito::UserPoolUser: https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-cognito-userpooluser.html resource that defines name-value pairs for a user in an Amazon Cognito User Pool.
+
 
     .LINK
         http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-cognito-userpooluser-attributetype.html
 
     .PARAMETER Value
-        The value of the attribute.
-
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-cognito-userpooluser-attributetype.html#cfn-cognito-userpooluser-attributetype-value
         PrimitiveType: String
         UpdateType: Mutable
 
     .PARAMETER Name
-        The name of the attribute.
-
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-cognito-userpooluser-attributetype.html#cfn-cognito-userpooluser-attributetype-name
         PrimitiveType: String
         UpdateType: Mutable

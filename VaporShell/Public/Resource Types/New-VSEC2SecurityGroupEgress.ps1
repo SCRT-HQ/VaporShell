@@ -1,20 +1,10 @@
 function New-VSEC2SecurityGroupEgress {
     <#
     .SYNOPSIS
-        Adds an AWS::EC2::SecurityGroupEgress resource to the template. EC2-VPC only] Adds the specified egress rules to a security group for use with a VPC.
+        Adds an AWS::EC2::SecurityGroupEgress resource to the template. 
 
     .DESCRIPTION
-        Adds an AWS::EC2::SecurityGroupEgress resource to the template. EC2-VPC only] Adds the specified egress rules to a security group for use with a VPC.
-
-An outbound rule permits instances to send traffic to the specified destination IPv4 or IPv6 CIDR address ranges, or to the specified destination security groups for the same VPC.
-
-You specify a protocol for each rule (for example, TCP. For the TCP and UDP protocols, you must also specify the destination port or port range. For the ICMP protocol, you must also specify the ICMP type and code. You can use -1 for the type or code to mean all types or all codes.
-
-Rule changes are propagated to affected instances as quickly as possible. However, a small delay might occur.
-
-For more information about VPC security group limits, see Amazon VPC Limits: https://docs.aws.amazon.com/vpc/latest/userguide/amazon-vpc-limits.html.
-
-Use AWS::EC2::SecurityGroupIngress and AWS::EC2::SecurityGroupEgress only when necessary, typically to allow security groups to reference each other in ingress and egress rules. Otherwise, use the embedded ingress and egress rules of the security group. For more information, see Amazon EC2 Security Groups: https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/using-network-security.html.
+        Adds an AWS::EC2::SecurityGroupEgress resource to the template. 
 
     .LINK
         http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ec2-security-group-egress.html
@@ -23,69 +13,46 @@ Use AWS::EC2::SecurityGroupIngress and AWS::EC2::SecurityGroupEgress only when n
         The logical ID must be alphanumeric (A-Za-z0-9) and unique within the template. Use the logical name to reference the resource in other parts of the template. For example, if you want to map an Amazon Elastic Block Store volume to an Amazon EC2 instance, you reference the logical IDs to associate the block stores with the instance.
 
     .PARAMETER CidrIp
-        The IPv4 ranges.
-You must specify a destination security group DestinationPrefixListId or DestinationSecurityGroupId or a CIDR range CidrIp or CidrIpv6.
-
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ec2-security-group-egress.html#cfn-ec2-securitygroupegress-cidrip
         PrimitiveType: String
         UpdateType: Immutable
 
     .PARAMETER CidrIpv6
-        The IPv6 ranges.
-You must specify a destination security group DestinationPrefixListId or DestinationSecurityGroupId or a CIDR range CidrIp or CidrIpv6.
-
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ec2-security-group-egress.html#cfn-ec2-securitygroupegress-cidripv6
         PrimitiveType: String
         UpdateType: Immutable
 
     .PARAMETER Description
-        The description of an egress outbound security group rule.
-
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ec2-security-group-egress.html#cfn-ec2-securitygroupegress-description
         PrimitiveType: String
         UpdateType: Mutable
 
     .PARAMETER DestinationPrefixListId
-        EC2-VPC only] The prefix list IDs for an AWS service. This is the AWS service that you want to access through a VPC endpoint from instances associated with the security group.
-You must specify a destination security group DestinationPrefixListId or DestinationSecurityGroupId or a CIDR range CidrIp or CidrIpv6.
-
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ec2-security-group-egress.html#cfn-ec2-securitygroupegress-destinationprefixlistid
         PrimitiveType: String
         UpdateType: Immutable
 
     .PARAMETER DestinationSecurityGroupId
-        The ID of the security group.
-You must specify a destination security group DestinationPrefixListId or DestinationSecurityGroupId or a CIDR range CidrIp or CidrIpv6.
-
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ec2-security-group-egress.html#cfn-ec2-securitygroupegress-destinationsecuritygroupid
         PrimitiveType: String
         UpdateType: Immutable
 
     .PARAMETER FromPort
-        The start of port range for the TCP and UDP protocols, or an ICMP/ICMPv6 type number. A value of -1 indicates all ICMP/ICMPv6 types. If you specify all ICMP/ICMPv6 types, you must specify all codes.
-
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ec2-security-group-egress.html#cfn-ec2-securitygroupegress-fromport
         PrimitiveType: Integer
         UpdateType: Immutable
 
     .PARAMETER GroupId
-        The ID of the security group. You must specify either the security group ID or the security group name in the request. For security groups in a nondefault VPC, you must specify the security group ID.
-
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ec2-security-group-egress.html#cfn-ec2-securitygroupegress-groupid
         PrimitiveType: String
         UpdateType: Immutable
 
     .PARAMETER IpProtocol
-        The IP protocol name tcp, udp, icmp, icmpv6 or number see Protocol Numbers: http://www.iana.org/assignments/protocol-numbers/protocol-numbers.xhtml.
-VPC only] Use -1 to specify all protocols. When authorizing security group rules, specifying -1 or a protocol number other than tcp, udp, icmp, or icmpv6 allows traffic on all ports, regardless of any port range you specify. For tcp, udp, and icmp, you must specify a port range. For icmpv6, the port range is optional; if you omit the port range, traffic for all types and codes is allowed.
-
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ec2-security-group-egress.html#cfn-ec2-securitygroupegress-ipprotocol
         PrimitiveType: String
         UpdateType: Immutable
 
     .PARAMETER ToPort
-        The end of port range for the TCP and UDP protocols, or an ICMP/ICMPv6 code. A value of -1 indicates all ICMP/ICMPv6 codes. If you specify all ICMP/ICMPv6 types, you must specify all codes.
-
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ec2-security-group-egress.html#cfn-ec2-securitygroupegress-toport
         PrimitiveType: Integer
         UpdateType: Immutable

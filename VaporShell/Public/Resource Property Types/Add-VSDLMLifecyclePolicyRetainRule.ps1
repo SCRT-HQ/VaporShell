@@ -1,32 +1,26 @@
 function Add-VSDLMLifecyclePolicyRetainRule {
     <#
     .SYNOPSIS
-        Adds an AWS::DLM::LifecyclePolicy.RetainRule resource property to the template. Specifies the number of snapshots to keep for each EBS volume.
+        Adds an AWS::DLM::LifecyclePolicy.RetainRule resource property to the template. 
 
     .DESCRIPTION
         Adds an AWS::DLM::LifecyclePolicy.RetainRule resource property to the template.
-Specifies the number of snapshots to keep for each EBS volume.
+
 
     .LINK
         http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-dlm-lifecyclepolicy-retainrule.html
 
     .PARAMETER IntervalUnit
-        *Update requires*: No interruption: https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt
-
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-dlm-lifecyclepolicy-retainrule.html#cfn-dlm-lifecyclepolicy-retainrule-intervalunit
         PrimitiveType: String
         UpdateType: Mutable
 
     .PARAMETER Count
-        The number of snapshots to keep for each volume, up to a maximum of 1000.
-
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-dlm-lifecyclepolicy-retainrule.html#cfn-dlm-lifecyclepolicy-retainrule-count
         PrimitiveType: Integer
         UpdateType: Mutable
 
     .PARAMETER Interval
-        *Update requires*: No interruption: https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt
-
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-dlm-lifecyclepolicy-retainrule.html#cfn-dlm-lifecyclepolicy-retainrule-interval
         PrimitiveType: Integer
         UpdateType: Mutable

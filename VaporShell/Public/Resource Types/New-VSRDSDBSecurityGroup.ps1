@@ -1,16 +1,10 @@
 function New-VSRDSDBSecurityGroup {
     <#
     .SYNOPSIS
-        Adds an AWS::RDS::DBSecurityGroup resource to the template. The AWS::RDS::DBSecurityGroup resource creates or updates an Amazon RDS DB security group.
+        Adds an AWS::RDS::DBSecurityGroup resource to the template. 
 
     .DESCRIPTION
-        Adds an AWS::RDS::DBSecurityGroup resource to the template. The AWS::RDS::DBSecurityGroup resource creates or updates an Amazon RDS DB security group.
-
-**Note**
-
-If you use DB security groups, the settings that you can specify for your DB instances are limited. For more information, see the DBSecurityGroups: https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-rds-database-instance.html#cfn-rds-dbinstance-dbsecuritygroups property of the AWS::RDS::DBInstance resource.
-
-When you specify an AWS::RDS::DBSecurityGroup as an argument to the Ref function, AWS CloudFormation returns the value of the DBSecurityGroupName.
+        Adds an AWS::RDS::DBSecurityGroup resource to the template. 
 
     .LINK
         http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-rds-security-group.html
@@ -19,8 +13,6 @@ When you specify an AWS::RDS::DBSecurityGroup as an argument to the Ref function
         The logical ID must be alphanumeric (A-Za-z0-9) and unique within the template. Use the logical name to reference the resource in other parts of the template. For example, if you want to map an Amazon Elastic Block Store volume to an Amazon EC2 instance, you reference the logical IDs to associate the block stores with the instance.
 
     .PARAMETER DBSecurityGroupIngress
-        Ingress rules to be applied to the DB security group.
-
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-rds-security-group.html#cfn-rds-dbsecuritygroup-dbsecuritygroupingress
         DuplicatesAllowed: False
         ItemType: Ingress
@@ -28,23 +20,16 @@ When you specify an AWS::RDS::DBSecurityGroup as an argument to the Ref function
         UpdateType: Mutable
 
     .PARAMETER EC2VpcId
-        The identifier of an Amazon VPC. This property indicates the VPC that this DB security group belongs to.
-The EC2VpcId property is for backward compatibility with older regions, and is no longer recommended for providing security information to an RDS DB instance.
-
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-rds-security-group.html#cfn-rds-dbsecuritygroup-ec2vpcid
         PrimitiveType: String
         UpdateType: Immutable
 
     .PARAMETER GroupDescription
-        Provides the description of the DB Security Group.
-
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-rds-security-group.html#cfn-rds-dbsecuritygroup-groupdescription
         PrimitiveType: String
         UpdateType: Immutable
 
     .PARAMETER Tags
-        Tags to assign to the DB security group.
-
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-rds-security-group.html#cfn-rds-dbsecuritygroup-tags
         DuplicatesAllowed: True
         ItemType: Tag

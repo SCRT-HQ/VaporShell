@@ -1,32 +1,26 @@
 function Add-VSIoTTopicRuleSnsAction {
     <#
     .SYNOPSIS
-        Adds an AWS::IoT::TopicRule.SnsAction resource property to the template. Describes an action to publish to an Amazon SNS topic.
+        Adds an AWS::IoT::TopicRule.SnsAction resource property to the template. 
 
     .DESCRIPTION
         Adds an AWS::IoT::TopicRule.SnsAction resource property to the template.
-Describes an action to publish to an Amazon SNS topic.
+
 
     .LINK
         http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iot-topicrule-snsaction.html
 
     .PARAMETER MessageFormat
-        Optional The message format of the message to publish. Accepted values are "JSON" and "RAW". The default value of the attribute is "RAW". SNS uses this setting to determine if the payload should be parsed and relevant platform-specific bits of the payload should be extracted. For more information, see Amazon SNS Message and JSON Formats: https://docs.aws.amazon.com/sns/latest/dg/json-formats.html in the *Amazon Simple Notification Service Developer Guide*.
-
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iot-topicrule-snsaction.html#cfn-iot-topicrule-snsaction-messageformat
         PrimitiveType: String
         UpdateType: Mutable
 
     .PARAMETER RoleArn
-        The ARN of the IAM role that grants access.
-
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iot-topicrule-snsaction.html#cfn-iot-topicrule-snsaction-rolearn
         PrimitiveType: String
         UpdateType: Mutable
 
     .PARAMETER TargetArn
-        The ARN of the SNS topic.
-
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iot-topicrule-snsaction.html#cfn-iot-topicrule-snsaction-targetarn
         PrimitiveType: String
         UpdateType: Mutable

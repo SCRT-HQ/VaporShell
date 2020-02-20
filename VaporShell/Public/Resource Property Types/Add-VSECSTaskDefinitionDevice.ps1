@@ -1,32 +1,26 @@
 function Add-VSECSTaskDefinitionDevice {
     <#
     .SYNOPSIS
-        Adds an AWS::ECS::TaskDefinition.Device resource property to the template. The Device property specifies an object representing a container instance host device.
+        Adds an AWS::ECS::TaskDefinition.Device resource property to the template. 
 
     .DESCRIPTION
         Adds an AWS::ECS::TaskDefinition.Device resource property to the template.
-The Device property specifies an object representing a container instance host device.
+
 
     .LINK
         http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ecs-taskdefinition-device.html
 
     .PARAMETER ContainerPath
-        The path inside the container at which to expose the host device.
-
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ecs-taskdefinition-device.html#cfn-ecs-taskdefinition-device-containerpath
         PrimitiveType: String
         UpdateType: Immutable
 
     .PARAMETER HostPath
-        The path for the device on the host container instance.
-
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ecs-taskdefinition-device.html#cfn-ecs-taskdefinition-device-hostpath
         PrimitiveType: String
         UpdateType: Immutable
 
     .PARAMETER Permissions
-        The explicit permissions to provide to the container for the device. By default, the container has permissions for read, write, and mknod for the device.
-
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ecs-taskdefinition-device.html#cfn-ecs-taskdefinition-device-permissions
         DuplicatesAllowed: False
         PrimitiveItemType: String

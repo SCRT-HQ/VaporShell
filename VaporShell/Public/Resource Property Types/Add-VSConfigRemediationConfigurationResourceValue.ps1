@@ -1,18 +1,16 @@
 function Add-VSConfigRemediationConfigurationResourceValue {
     <#
     .SYNOPSIS
-        Adds an AWS::Config::RemediationConfiguration.ResourceValue resource property to the template. The dynamic value of the resource.
+        Adds an AWS::Config::RemediationConfiguration.ResourceValue resource property to the template. 
 
     .DESCRIPTION
         Adds an AWS::Config::RemediationConfiguration.ResourceValue resource property to the template.
-The dynamic value of the resource.
+
 
     .LINK
         http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-config-remediationconfiguration-resourcevalue.html
 
     .PARAMETER Value
-        The value is a resource ID.
-
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-config-remediationconfiguration-resourcevalue.html#cfn-config-remediationconfiguration-resourcevalue-value
         PrimitiveType: String
         UpdateType: Mutable

@@ -1,18 +1,16 @@
 function Add-VSIoTTopicRulePutItemInput {
     <#
     .SYNOPSIS
-        Adds an AWS::IoT::TopicRule.PutItemInput resource property to the template. The input for the DynamoActionVS action that specifies the DynamoDB table to which the message data will be written.
+        Adds an AWS::IoT::TopicRule.PutItemInput resource property to the template. 
 
     .DESCRIPTION
         Adds an AWS::IoT::TopicRule.PutItemInput resource property to the template.
-The input for the DynamoActionVS action that specifies the DynamoDB table to which the message data will be written.
+
 
     .LINK
         http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iot-topicrule-putiteminput.html
 
     .PARAMETER TableName
-        The table where the message data will be written.
-
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iot-topicrule-putiteminput.html#cfn-iot-topicrule-putiteminput-tablename
         PrimitiveType: String
         UpdateType: Mutable

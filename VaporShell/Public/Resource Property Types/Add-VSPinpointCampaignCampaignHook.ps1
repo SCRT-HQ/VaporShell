@@ -1,32 +1,26 @@
 function Add-VSPinpointCampaignCampaignHook {
     <#
     .SYNOPSIS
-        Adds an AWS::Pinpoint::Campaign.CampaignHook resource property to the template. Specifies the AWS Lambda function to use as a code hook for a campaign.
+        Adds an AWS::Pinpoint::Campaign.CampaignHook resource property to the template. 
 
     .DESCRIPTION
         Adds an AWS::Pinpoint::Campaign.CampaignHook resource property to the template.
-Specifies the AWS Lambda function to use as a code hook for a campaign.
+
 
     .LINK
         http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-pinpoint-campaign-campaignhook.html
 
     .PARAMETER Mode
-        Specifies which Lambda mode to use when invoking the AWS Lambda function.
-
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-pinpoint-campaign-campaignhook.html#cfn-pinpoint-campaign-campaignhook-mode
         PrimitiveType: String
         UpdateType: Mutable
 
     .PARAMETER WebUrl
-        The web URL that Amazon Pinpoint calls to invoke the AWS Lambda function over HTTPS.
-
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-pinpoint-campaign-campaignhook.html#cfn-pinpoint-campaign-campaignhook-weburl
         PrimitiveType: String
         UpdateType: Mutable
 
     .PARAMETER LambdaFunctionName
-        The name or Amazon Resource Name ARN of the AWS Lambda function that Amazon Pinpoint invokes to send messages for a campaign.
-
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-pinpoint-campaign-campaignhook.html#cfn-pinpoint-campaign-campaignhook-lambdafunctionname
         PrimitiveType: String
         UpdateType: Mutable

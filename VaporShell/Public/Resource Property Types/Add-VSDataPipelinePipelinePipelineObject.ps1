@@ -1,18 +1,16 @@
 function Add-VSDataPipelinePipelinePipelineObject {
     <#
     .SYNOPSIS
-        Adds an AWS::DataPipeline::Pipeline.PipelineObject resource property to the template. PipelineObject is property of the AWS::DataPipeline::Pipeline resource that contains information about a pipeline object. This can be a logical, physical, or physical attempt pipeline object. The complete set of components of a pipeline defines the pipeline.
+        Adds an AWS::DataPipeline::Pipeline.PipelineObject resource property to the template. 
 
     .DESCRIPTION
         Adds an AWS::DataPipeline::Pipeline.PipelineObject resource property to the template.
-PipelineObject is property of the AWS::DataPipeline::Pipeline resource that contains information about a pipeline object. This can be a logical, physical, or physical attempt pipeline object. The complete set of components of a pipeline defines the pipeline.
+
 
     .LINK
         http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-datapipeline-pipeline-pipelineobjects.html
 
     .PARAMETER Fields
-        Key-value pairs that define the properties of the object.
-
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-datapipeline-pipeline-pipelineobjects.html#cfn-datapipeline-pipeline-pipelineobjects-fields
         DuplicatesAllowed: True
         ItemType: Field
@@ -20,15 +18,11 @@ PipelineObject is property of the AWS::DataPipeline::Pipeline resource that cont
         UpdateType: Mutable
 
     .PARAMETER Id
-        The ID of the object.
-
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-datapipeline-pipeline-pipelineobjects.html#cfn-datapipeline-pipeline-pipelineobjects-id
         PrimitiveType: String
         UpdateType: Mutable
 
     .PARAMETER Name
-        The name of the object.
-
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-datapipeline-pipeline-pipelineobjects.html#cfn-datapipeline-pipeline-pipelineobjects-name
         PrimitiveType: String
         UpdateType: Mutable

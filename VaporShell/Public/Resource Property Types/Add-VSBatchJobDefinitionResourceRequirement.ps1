@@ -1,25 +1,21 @@
 function Add-VSBatchJobDefinitionResourceRequirement {
     <#
     .SYNOPSIS
-        Adds an AWS::Batch::JobDefinition.ResourceRequirement resource property to the template. The type and amount of a resource to assign to a container. Currently, the only supported resource type is GPU.
+        Adds an AWS::Batch::JobDefinition.ResourceRequirement resource property to the template. 
 
     .DESCRIPTION
         Adds an AWS::Batch::JobDefinition.ResourceRequirement resource property to the template.
-The type and amount of a resource to assign to a container. Currently, the only supported resource type is GPU.
+
 
     .LINK
         http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-batch-jobdefinition-resourcerequirement.html
 
     .PARAMETER Type
-        The type of resource to assign to a container. Currently, the only supported resource type is GPU.
-
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-batch-jobdefinition-resourcerequirement.html#cfn-batch-jobdefinition-resourcerequirement-type
         PrimitiveType: String
         UpdateType: Mutable
 
     .PARAMETER Value
-        The number of physical GPUs to reserve for the container. The number of GPUs reserved for all containers in a job should not exceed the number of available GPUs on the compute resource that the job is launched on.
-
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-batch-jobdefinition-resourcerequirement.html#cfn-batch-jobdefinition-resourcerequirement-value
         PrimitiveType: String
         UpdateType: Mutable

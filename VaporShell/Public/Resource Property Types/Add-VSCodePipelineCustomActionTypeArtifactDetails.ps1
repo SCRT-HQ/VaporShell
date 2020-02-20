@@ -1,25 +1,21 @@
 function Add-VSCodePipelineCustomActionTypeArtifactDetails {
     <#
     .SYNOPSIS
-        Adds an AWS::CodePipeline::CustomActionType.ArtifactDetails resource property to the template. Returns information about the details of an artifact.
+        Adds an AWS::CodePipeline::CustomActionType.ArtifactDetails resource property to the template. 
 
     .DESCRIPTION
         Adds an AWS::CodePipeline::CustomActionType.ArtifactDetails resource property to the template.
-Returns information about the details of an artifact.
+
 
     .LINK
         http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-codepipeline-customactiontype-artifactdetails.html
 
     .PARAMETER MaximumCount
-        The maximum number of artifacts allowed for the action type.
-
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-codepipeline-customactiontype-artifactdetails.html#cfn-codepipeline-customactiontype-artifactdetails-maximumcount
         PrimitiveType: Integer
         UpdateType: Mutable
 
     .PARAMETER MinimumCount
-        The minimum number of artifacts allowed for the action type.
-
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-codepipeline-customactiontype-artifactdetails.html#cfn-codepipeline-customactiontype-artifactdetails-minimumcount
         PrimitiveType: Integer
         UpdateType: Mutable

@@ -1,12 +1,10 @@
 function New-VSPinpointAPNSVoipSandboxChannel {
     <#
     .SYNOPSIS
-        Adds an AWS::Pinpoint::APNSVoipSandboxChannel resource to the template. A *channel* is a type of platform that you can deliver messages to. You can use the APNs VoIP sandbox channel to send VoIP notification messages to the sandbox environment of the Apple Push Notification service (APNs. Before you use Amazon Pinpoint to send VoIP notifications to the APNs sandbox environment, you have to enable the APNs VoIP sandbox channel for an Amazon Pinpoint app.
+        Adds an AWS::Pinpoint::APNSVoipSandboxChannel resource to the template. 
 
     .DESCRIPTION
-        Adds an AWS::Pinpoint::APNSVoipSandboxChannel resource to the template. A *channel* is a type of platform that you can deliver messages to. You can use the APNs VoIP sandbox channel to send VoIP notification messages to the sandbox environment of the Apple Push Notification service (APNs. Before you use Amazon Pinpoint to send VoIP notifications to the APNs sandbox environment, you have to enable the APNs VoIP sandbox channel for an Amazon Pinpoint app.
-
-The APNs VoIP Sandbox Channel resource represents the status and authentication settings of the APNs VoIP sandbox channel for a specific app. You can use this resource to retrieve information about, update, or disable (delete the APNs VoIP sandbox channel for an app.
+        Adds an AWS::Pinpoint::APNSVoipSandboxChannel resource to the template. 
 
     .LINK
         http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-pinpoint-apnsvoipsandboxchannel.html
@@ -15,64 +13,46 @@ The APNs VoIP Sandbox Channel resource represents the status and authentication 
         The logical ID must be alphanumeric (A-Za-z0-9) and unique within the template. Use the logical name to reference the resource in other parts of the template. For example, if you want to map an Amazon Elastic Block Store volume to an Amazon EC2 instance, you reference the logical IDs to associate the block stores with the instance.
 
     .PARAMETER BundleId
-        The bundle identifier that's assigned to your iOS app. This identifier is used for APNs tokens.
-
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-pinpoint-apnsvoipsandboxchannel.html#cfn-pinpoint-apnsvoipsandboxchannel-bundleid
         PrimitiveType: String
         UpdateType: Mutable
 
     .PARAMETER PrivateKey
-        The private key for the APNs client certificate that you want Amazon Pinpoint to use to communicate with the APNs sandbox environment.
-
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-pinpoint-apnsvoipsandboxchannel.html#cfn-pinpoint-apnsvoipsandboxchannel-privatekey
         PrimitiveType: String
         UpdateType: Mutable
 
     .PARAMETER Enabled
-        Specifies whether the APNs VoIP sandbox channel is enabled for the application.
-
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-pinpoint-apnsvoipsandboxchannel.html#cfn-pinpoint-apnsvoipsandboxchannel-enabled
         PrimitiveType: Boolean
         UpdateType: Mutable
 
     .PARAMETER DefaultAuthenticationMethod
-        The default authentication method that you want Amazon Pinpoint to use when authenticating with APNs. Valid options are key or certificate.
-
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-pinpoint-apnsvoipsandboxchannel.html#cfn-pinpoint-apnsvoipsandboxchannel-defaultauthenticationmethod
         PrimitiveType: String
         UpdateType: Mutable
 
     .PARAMETER TokenKey
-        The authentication key to use for APNs tokens.
-
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-pinpoint-apnsvoipsandboxchannel.html#cfn-pinpoint-apnsvoipsandboxchannel-tokenkey
         PrimitiveType: String
         UpdateType: Mutable
 
     .PARAMETER ApplicationId
-        The unique identifier for the application that the APNs VoIP sandbox channel applies to.
-
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-pinpoint-apnsvoipsandboxchannel.html#cfn-pinpoint-apnsvoipsandboxchannel-applicationid
         PrimitiveType: String
         UpdateType: Immutable
 
     .PARAMETER TeamId
-        The identifier that's assigned to your Apple developer account team. This identifier is used for APNs tokens.
-
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-pinpoint-apnsvoipsandboxchannel.html#cfn-pinpoint-apnsvoipsandboxchannel-teamid
         PrimitiveType: String
         UpdateType: Mutable
 
     .PARAMETER Certificate
-        The APNs client certificate that you received from Apple. Specify this value if you want Amazon Pinpoint to communicate with the APNs sandbox environment by using an APNs certificate.
-
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-pinpoint-apnsvoipsandboxchannel.html#cfn-pinpoint-apnsvoipsandboxchannel-certificate
         PrimitiveType: String
         UpdateType: Mutable
 
     .PARAMETER TokenKeyId
-        The key identifier that's assigned to your APNs signing key. Specify this value if you want Amazon Pinpoint to communicate with the APNs sandbox environment by using APNs tokens.
-
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-pinpoint-apnsvoipsandboxchannel.html#cfn-pinpoint-apnsvoipsandboxchannel-tokenkeyid
         PrimitiveType: String
         UpdateType: Mutable

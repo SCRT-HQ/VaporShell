@@ -1,29 +1,21 @@
 function Add-VSIoTTopicRuleDynamoDBv2Action {
     <#
     .SYNOPSIS
-        Adds an AWS::IoT::TopicRule.DynamoDBv2Action resource property to the template. Describes an action to write to a DynamoDB table.
+        Adds an AWS::IoT::TopicRule.DynamoDBv2Action resource property to the template. 
 
     .DESCRIPTION
         Adds an AWS::IoT::TopicRule.DynamoDBv2Action resource property to the template.
-Describes an action to write to a DynamoDB table.
 
-This DynamoDB action writes each attribute in the message payload into it's own column in the DynamoDB table.
 
     .LINK
         http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iot-topicrule-dynamodbv2action.html
 
     .PARAMETER PutItem
-        Specifies the DynamoDB table to which the message data will be written. For example:
-{ "dynamoDBv2": { "roleArn": "aws:iam:12341251:my-role" "putItem": { "tableName": "my-table" } } }
-Each attribute in the message payload will be written to a separate column in the DynamoDB database.
-
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iot-topicrule-dynamodbv2action.html#cfn-iot-topicrule-dynamodbv2action-putitem
         Type: PutItemInput
         UpdateType: Mutable
 
     .PARAMETER RoleArn
-        The ARN of the IAM role that grants access to the DynamoDB table.
-
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iot-topicrule-dynamodbv2action.html#cfn-iot-topicrule-dynamodbv2action-rolearn
         PrimitiveType: String
         UpdateType: Mutable

@@ -1,40 +1,32 @@
 function Add-VSTransferServerEndpointDetails {
     <#
     .SYNOPSIS
-        Adds an AWS::Transfer::Server.EndpointDetails resource property to the template. The virtual private cloud (VPC endpoint settings that you want to configure for your SFTP server. This parameter is required when you specify a value for the EndpointType parameter.
+        Adds an AWS::Transfer::Server.EndpointDetails resource property to the template. 
 
     .DESCRIPTION
         Adds an AWS::Transfer::Server.EndpointDetails resource property to the template.
-The virtual private cloud (VPC endpoint settings that you want to configure for your SFTP server. This parameter is required when you specify a value for the EndpointType parameter.
+
 
     .LINK
         http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-transfer-server-endpointdetails.html
 
     .PARAMETER AddressAllocationIds
-        *Update requires*: No interruption: https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt
-
         PrimitiveItemType: String
         Type: List
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-transfer-server-endpointdetails.html#cfn-transfer-server-endpointdetails-addressallocationids
         UpdateType: Conditional
 
     .PARAMETER VpcId
-        *Update requires*: No interruption: https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt
-
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-transfer-server-endpointdetails.html#cfn-transfer-server-endpointdetails-vpcid
         PrimitiveType: String
         UpdateType: Mutable
 
     .PARAMETER VpcEndpointId
-        The ID of the VPC endpoint.
-
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-transfer-server-endpointdetails.html#cfn-transfer-server-endpointdetails-vpcendpointid
         PrimitiveType: String
         UpdateType: Mutable
 
     .PARAMETER SubnetIds
-        *Update requires*: No interruption: https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt
-
         PrimitiveItemType: String
         Type: List
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-transfer-server-endpointdetails.html#cfn-transfer-server-endpointdetails-subnetids

@@ -1,10 +1,10 @@
 function New-VSAppStreamDirectoryConfig {
     <#
     .SYNOPSIS
-        Adds an AWS::AppStream::DirectoryConfig resource to the template. The AWS::AppStream::DirectoryConfig resource specifies the configuration information required to join Amazon AppStream 2.0 fleets and image builders to Microsoft Active Directory domains.
+        Adds an AWS::AppStream::DirectoryConfig resource to the template. 
 
     .DESCRIPTION
-        Adds an AWS::AppStream::DirectoryConfig resource to the template. The AWS::AppStream::DirectoryConfig resource specifies the configuration information required to join Amazon AppStream 2.0 fleets and image builders to Microsoft Active Directory domains.
+        Adds an AWS::AppStream::DirectoryConfig resource to the template. 
 
     .LINK
         http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-appstream-directoryconfig.html
@@ -13,23 +13,17 @@ function New-VSAppStreamDirectoryConfig {
         The logical ID must be alphanumeric (A-Za-z0-9) and unique within the template. Use the logical name to reference the resource in other parts of the template. For example, if you want to map an Amazon Elastic Block Store volume to an Amazon EC2 instance, you reference the logical IDs to associate the block stores with the instance.
 
     .PARAMETER OrganizationalUnitDistinguishedNames
-        The distinguished names of the organizational units for computer accounts.
-
         PrimitiveItemType: String
         Type: List
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-appstream-directoryconfig.html#cfn-appstream-directoryconfig-organizationalunitdistinguishednames
         UpdateType: Mutable
 
     .PARAMETER ServiceAccountCredentials
-        The credentials for the service account used by the streaming instance to connect to the directory. Do not use this parameter directly. Use ServiceAccountCredentials as an input parameter with noEcho as shown in the Parameters: https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/parameters-section-structure.html. For best practices information, see Do Not Embed Credentials in Your Templates: https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/best-practices.html#creds.
-
         Type: ServiceAccountCredentials
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-appstream-directoryconfig.html#cfn-appstream-directoryconfig-serviceaccountcredentials
         UpdateType: Mutable
 
     .PARAMETER DirectoryName
-        The fully qualified name of the directory for example, corp.example.com.
-
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-appstream-directoryconfig.html#cfn-appstream-directoryconfig-directoryname
         PrimitiveType: String
         UpdateType: Immutable

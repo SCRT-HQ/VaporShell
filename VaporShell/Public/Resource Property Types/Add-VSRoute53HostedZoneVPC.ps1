@@ -1,25 +1,21 @@
 function Add-VSRoute53HostedZoneVPC {
     <#
     .SYNOPSIS
-        Adds an AWS::Route53::HostedZone.VPC resource property to the template. (Private hosted zones only A complex type that contains information about an Amazon VPC.
+        Adds an AWS::Route53::HostedZone.VPC resource property to the template. 
 
     .DESCRIPTION
         Adds an AWS::Route53::HostedZone.VPC resource property to the template.
-(Private hosted zones only A complex type that contains information about an Amazon VPC.
+
 
     .LINK
         http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-route53-hostedzone-hostedzonevpcs.html
 
     .PARAMETER VPCId
-        Private hosted zones only The ID of an Amazon VPC.
-
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-route53-hostedzone-hostedzonevpcs.html#cfn-route53-hostedzone-hostedzonevpcs-vpcid
         PrimitiveType: String
         UpdateType: Mutable
 
     .PARAMETER VPCRegion
-        Private hosted zones only The region that an Amazon VPC was created in.
-
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-route53-hostedzone-hostedzonevpcs.html#cfn-route53-hostedzone-hostedzonevpcs-vpcregion
         PrimitiveType: String
         UpdateType: Mutable

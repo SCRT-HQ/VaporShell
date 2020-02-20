@@ -1,12 +1,10 @@
 function New-VSApiGatewayV2DomainName {
     <#
     .SYNOPSIS
-        Adds an AWS::ApiGatewayV2::DomainName resource to the template. The AWS::ApiGatewayV2::DomainName resource specifies a custom domain name for your API in Amazon API Gateway (API Gateway.
+        Adds an AWS::ApiGatewayV2::DomainName resource to the template. 
 
     .DESCRIPTION
-        Adds an AWS::ApiGatewayV2::DomainName resource to the template. The AWS::ApiGatewayV2::DomainName resource specifies a custom domain name for your API in Amazon API Gateway (API Gateway.
-
-You can use a custom domain name to provide a URL that's more intuitive and easier to recall. For more information about using custom domain names, see Set up Custom Domain Name for an API in API Gateway: https://docs.aws.amazon.com/apigateway/latest/developerguide/how-to-custom-domains.html in the *API Gateway Developer Guide*.
+        Adds an AWS::ApiGatewayV2::DomainName resource to the template. 
 
     .LINK
         http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-apigatewayv2-domainname.html
@@ -15,23 +13,17 @@ You can use a custom domain name to provide a URL that's more intuitive and easi
         The logical ID must be alphanumeric (A-Za-z0-9) and unique within the template. Use the logical name to reference the resource in other parts of the template. For example, if you want to map an Amazon Elastic Block Store volume to an Amazon EC2 instance, you reference the logical IDs to associate the block stores with the instance.
 
     .PARAMETER DomainName
-        The custom domain name for your API in Amazon API Gateway. Uppercase letters are not supported.
-
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-apigatewayv2-domainname.html#cfn-apigatewayv2-domainname-domainname
         PrimitiveType: String
         UpdateType: Immutable
 
     .PARAMETER DomainNameConfigurations
-        The domain name configurations.
-
         Type: List
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-apigatewayv2-domainname.html#cfn-apigatewayv2-domainname-domainnameconfigurations
         ItemType: DomainNameConfiguration
         UpdateType: Mutable
 
     .PARAMETER Tags
-        + CreateDomainName: https://docs.aws.amazon.com/apigatewayv2/latest/api-reference/domainnames.html#CreateDomainName in the *Amazon API Gateway Version 2 API Reference*
-
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-apigatewayv2-domainname.html#cfn-apigatewayv2-domainname-tags
         PrimitiveType: Json
         UpdateType: Mutable

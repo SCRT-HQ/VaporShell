@@ -1,25 +1,21 @@
 function Add-VSGlueDataCatalogEncryptionSettingsEncryptionAtRest {
     <#
     .SYNOPSIS
-        Adds an AWS::Glue::DataCatalogEncryptionSettings.EncryptionAtRest resource property to the template. Specifies the encryption-at-rest configuration for the Data Catalog.
+        Adds an AWS::Glue::DataCatalogEncryptionSettings.EncryptionAtRest resource property to the template. 
 
     .DESCRIPTION
         Adds an AWS::Glue::DataCatalogEncryptionSettings.EncryptionAtRest resource property to the template.
-Specifies the encryption-at-rest configuration for the Data Catalog.
+
 
     .LINK
         http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-glue-datacatalogencryptionsettings-encryptionatrest.html
 
     .PARAMETER CatalogEncryptionMode
-        The encryption-at-rest mode for encrypting Data Catalog data.
-
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-glue-datacatalogencryptionsettings-encryptionatrest.html#cfn-glue-datacatalogencryptionsettings-encryptionatrest-catalogencryptionmode
         PrimitiveType: String
         UpdateType: Mutable
 
     .PARAMETER SseAwsKmsKeyId
-        The ID of the AWS KMS key to use for encryption at rest.
-
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-glue-datacatalogencryptionsettings-encryptionatrest.html#cfn-glue-datacatalogencryptionsettings-encryptionatrest-sseawskmskeyid
         PrimitiveType: String
         UpdateType: Mutable

@@ -1,10 +1,10 @@
 function New-VSBatchComputeEnvironment {
     <#
     .SYNOPSIS
-        Adds an AWS::Batch::ComputeEnvironment resource to the template. The AWS::Batch::ComputeEnvironment resource defines your AWS Batch compute environment. For more information, see Compute Environments: https://docs.aws.amazon.com/batch/latest/userguide/compute_environments.html in the *AWS Batch User Guide*.
+        Adds an AWS::Batch::ComputeEnvironment resource to the template. 
 
     .DESCRIPTION
-        Adds an AWS::Batch::ComputeEnvironment resource to the template. The AWS::Batch::ComputeEnvironment resource defines your AWS Batch compute environment. For more information, see Compute Environments: https://docs.aws.amazon.com/batch/latest/userguide/compute_environments.html in the *AWS Batch User Guide*.
+        Adds an AWS::Batch::ComputeEnvironment resource to the template. 
 
     .LINK
         http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-batch-computeenvironment.html
@@ -13,38 +13,26 @@ function New-VSBatchComputeEnvironment {
         The logical ID must be alphanumeric (A-Za-z0-9) and unique within the template. Use the logical name to reference the resource in other parts of the template. For example, if you want to map an Amazon Elastic Block Store volume to an Amazon EC2 instance, you reference the logical IDs to associate the block stores with the instance.
 
     .PARAMETER Type
-        The type of the compute environment. For more information, see Compute Environments: https://docs.aws.amazon.com/batch/latest/userguide/compute_environments.html in the *AWS Batch User Guide*.
-
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-batch-computeenvironment.html#cfn-batch-computeenvironment-type
         PrimitiveType: String
         UpdateType: Immutable
 
     .PARAMETER ServiceRole
-        The full Amazon Resource Name ARN of the IAM role that allows AWS Batch to make calls to other AWS services on your behalf.
-If your specified role has a path other than /, then you must either specify the full role ARN this is recommended or prefix the role name with the path.
-Depending on how you created your AWS Batch service role, its ARN may contain the service-role path prefix. When you only specify the name of the service role, AWS Batch assumes that your ARN does not use the service-role path prefix. Because of this, we recommend that you specify the full ARN of your service role when you create compute environments.
-
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-batch-computeenvironment.html#cfn-batch-computeenvironment-servicerole
         PrimitiveType: String
         UpdateType: Mutable
 
     .PARAMETER ComputeEnvironmentName
-        The name for your compute environment. Up to 128 letters uppercase and lowercase, numbers, hyphens, and underscores are allowed.
-
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-batch-computeenvironment.html#cfn-batch-computeenvironment-computeenvironmentname
         PrimitiveType: String
         UpdateType: Immutable
 
     .PARAMETER ComputeResources
-        The ComputeResources property type specifies details of the compute resources managed by the compute environment. This parameter is required for managed compute environments. For more information, see Compute Environments: https://docs.aws.amazon.com/batch/latest/userguide/compute_environments.html in the *AWS Batch User Guide*.
-
         Type: ComputeResources
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-batch-computeenvironment.html#cfn-batch-computeenvironment-computeresources
         UpdateType: Mutable
 
     .PARAMETER State
-        The state of the compute environment. If the state is ENABLED, then the compute environment accepts jobs from a queue and can scale out automatically based on queues.
-
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-batch-computeenvironment.html#cfn-batch-computeenvironment-state
         PrimitiveType: String
         UpdateType: Mutable

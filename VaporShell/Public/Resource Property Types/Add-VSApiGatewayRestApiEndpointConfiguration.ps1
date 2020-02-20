@@ -1,23 +1,16 @@
 function Add-VSApiGatewayRestApiEndpointConfiguration {
     <#
     .SYNOPSIS
-        Adds an AWS::ApiGateway::RestApi.EndpointConfiguration resource property to the template. The EndpointConfiguration property type specifies the endpoint types of a REST API.
+        Adds an AWS::ApiGateway::RestApi.EndpointConfiguration resource property to the template. 
 
     .DESCRIPTION
         Adds an AWS::ApiGateway::RestApi.EndpointConfiguration resource property to the template.
-The EndpointConfiguration property type specifies the endpoint types of a REST API.
 
-EndpointConfiguration is a property of the AWS::ApiGateway::RestApi: https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-apigateway-restapi.html resource.
 
     .LINK
         http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-apigateway-restapi-endpointconfiguration.html
 
     .PARAMETER Types
-        A list of endpoint types of an API or its custom domain name. Valid values include:
-+ EDGE: For an edge-optimized API and its custom domain name.
-+ REGIONAL: For a regional API and its custom domain name.
-+ PRIVATE: For a private API.
-
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-apigateway-restapi-endpointconfiguration.html#cfn-apigateway-restapi-endpointconfiguration-types
         DuplicatesAllowed: False
         PrimitiveItemType: String
@@ -25,8 +18,6 @@ EndpointConfiguration is a property of the AWS::ApiGateway::RestApi: https://doc
         UpdateType: Mutable
 
     .PARAMETER VpcEndpointIds
-        + RestApi: https://docs.aws.amazon.com/apigateway/api-reference/resource/rest-api/ in the *Amazon API Gateway REST API Reference*
-
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-apigateway-restapi-endpointconfiguration.html#cfn-apigateway-restapi-endpointconfiguration-vpcendpointids
         DuplicatesAllowed: False
         PrimitiveItemType: String

@@ -1,39 +1,31 @@
 function Add-VSRDSDBSecurityGroupIngress {
     <#
     .SYNOPSIS
-        Adds an AWS::RDS::DBSecurityGroup.Ingress resource property to the template. The Ingress property type specifies an individual ingress rule within an AWS::RDS::DBSecurityGroup resource.
+        Adds an AWS::RDS::DBSecurityGroup.Ingress resource property to the template. 
 
     .DESCRIPTION
         Adds an AWS::RDS::DBSecurityGroup.Ingress resource property to the template.
-The Ingress property type specifies an individual ingress rule within an AWS::RDS::DBSecurityGroup resource.
+
 
     .LINK
         http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-rds-security-group-rule.html
 
     .PARAMETER CIDRIP
-        The IP range to authorize.
-
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-rds-security-group-rule.html#cfn-rds-securitygroup-cidrip
         PrimitiveType: String
         UpdateType: Mutable
 
     .PARAMETER EC2SecurityGroupId
-        Id of the EC2 Security Group to authorize. For VPC DB Security Groups, EC2SecurityGroupId must be provided. Otherwise, EC2SecurityGroupOwnerId and either EC2SecurityGroupName or EC2SecurityGroupId must be provided.
-
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-rds-security-group-rule.html#cfn-rds-securitygroup-ec2securitygroupid
         PrimitiveType: String
         UpdateType: Immutable
 
     .PARAMETER EC2SecurityGroupName
-        Name of the EC2 Security Group to authorize. For VPC DB Security Groups, EC2SecurityGroupId must be provided. Otherwise, EC2SecurityGroupOwnerId and either EC2SecurityGroupName or EC2SecurityGroupId must be provided.
-
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-rds-security-group-rule.html#cfn-rds-securitygroup-ec2securitygroupname
         PrimitiveType: String
         UpdateType: Immutable
 
     .PARAMETER EC2SecurityGroupOwnerId
-        AWS Account Number of the owner of the EC2 Security Group specified in the EC2SecurityGroupName parameter. The AWS Access Key ID is not an acceptable value. For VPC DB Security Groups, EC2SecurityGroupId must be provided. Otherwise, EC2SecurityGroupOwnerId and either EC2SecurityGroupName or EC2SecurityGroupId must be provided.
-
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-rds-security-group-rule.html#cfn-rds-securitygroup-ec2securitygroupownerid
         PrimitiveType: String
         UpdateType: Immutable

@@ -1,10 +1,10 @@
 function New-VSWAFSqlInjectionMatchSet {
     <#
     .SYNOPSIS
-        Adds an AWS::WAF::SqlInjectionMatchSet resource to the template. A complex type that contains SqlInjectionMatchTuple objects, which specify the parts of web requests that you want AWS WAF to inspect for snippets of malicious SQL code and, if you want AWS WAF to inspect a header, the name of the header. If a SqlInjectionMatchSet contains more than one SqlInjectionMatchTuple object, a request needs to include snippets of SQL code in only one of the specified parts of the request to be considered a match.
+        Adds an AWS::WAF::SqlInjectionMatchSet resource to the template. 
 
     .DESCRIPTION
-        Adds an AWS::WAF::SqlInjectionMatchSet resource to the template. A complex type that contains SqlInjectionMatchTuple objects, which specify the parts of web requests that you want AWS WAF to inspect for snippets of malicious SQL code and, if you want AWS WAF to inspect a header, the name of the header. If a SqlInjectionMatchSet contains more than one SqlInjectionMatchTuple object, a request needs to include snippets of SQL code in only one of the specified parts of the request to be considered a match.
+        Adds an AWS::WAF::SqlInjectionMatchSet resource to the template. 
 
     .LINK
         http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-waf-sqlinjectionmatchset.html
@@ -13,15 +13,11 @@ function New-VSWAFSqlInjectionMatchSet {
         The logical ID must be alphanumeric (A-Za-z0-9) and unique within the template. Use the logical name to reference the resource in other parts of the template. For example, if you want to map an Amazon Elastic Block Store volume to an Amazon EC2 instance, you reference the logical IDs to associate the block stores with the instance.
 
     .PARAMETER Name
-        The name, if any, of the SqlInjectionMatchSet.
-
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-waf-sqlinjectionmatchset.html#cfn-waf-sqlinjectionmatchset-name
         PrimitiveType: String
         UpdateType: Immutable
 
     .PARAMETER SqlInjectionMatchTuples
-        Specifies the parts of web requests that you want to inspect for snippets of malicious SQL code.
-
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-waf-sqlinjectionmatchset.html#cfn-waf-sqlinjectionmatchset-sqlinjectionmatchtuples
         DuplicatesAllowed: False
         ItemType: SqlInjectionMatchTuple

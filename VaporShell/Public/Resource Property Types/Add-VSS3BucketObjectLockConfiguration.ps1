@@ -1,25 +1,21 @@
 function Add-VSS3BucketObjectLockConfiguration {
     <#
     .SYNOPSIS
-        Adds an AWS::S3::Bucket.ObjectLockConfiguration resource property to the template. Places an object lock configuration on the specified bucket. The rule specified in the object lock configuration will be applied by default to every new object placed in the specified bucket.
+        Adds an AWS::S3::Bucket.ObjectLockConfiguration resource property to the template. 
 
     .DESCRIPTION
         Adds an AWS::S3::Bucket.ObjectLockConfiguration resource property to the template.
-Places an object lock configuration on the specified bucket. The rule specified in the object lock configuration will be applied by default to every new object placed in the specified bucket.
+
 
     .LINK
         http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-s3-bucket-objectlockconfiguration.html
 
     .PARAMETER ObjectLockEnabled
-        Indicates whether this bucket has an object lock configuration enabled.
-
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-s3-bucket-objectlockconfiguration.html#cfn-s3-bucket-objectlockconfiguration-objectlockenabled
         PrimitiveType: String
         UpdateType: Mutable
 
     .PARAMETER Rule
-        The object lock rule in place for the specified object.
-
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-s3-bucket-objectlockconfiguration.html#cfn-s3-bucket-objectlockconfiguration-rule
         Type: ObjectLockRule
         UpdateType: Mutable

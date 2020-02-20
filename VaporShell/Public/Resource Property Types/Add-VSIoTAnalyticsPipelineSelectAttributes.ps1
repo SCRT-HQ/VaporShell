@@ -1,33 +1,27 @@
 function Add-VSIoTAnalyticsPipelineSelectAttributes {
     <#
     .SYNOPSIS
-        Adds an AWS::IoTAnalytics::Pipeline.SelectAttributes resource property to the template. Creates a new message using only the specified attributes from the original message.
+        Adds an AWS::IoTAnalytics::Pipeline.SelectAttributes resource property to the template. 
 
     .DESCRIPTION
         Adds an AWS::IoTAnalytics::Pipeline.SelectAttributes resource property to the template.
-Creates a new message using only the specified attributes from the original message.
+
 
     .LINK
         http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iotanalytics-pipeline-selectattributes.html
 
     .PARAMETER Next
-        The next activity in the pipeline.
-
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iotanalytics-pipeline-selectattributes.html#cfn-iotanalytics-pipeline-selectattributes-next
         PrimitiveType: String
         UpdateType: Mutable
 
     .PARAMETER Attributes
-        A list of the attributes to select from the message.
-
         PrimitiveItemType: String
         Type: List
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iotanalytics-pipeline-selectattributes.html#cfn-iotanalytics-pipeline-selectattributes-attributes
         UpdateType: Mutable
 
     .PARAMETER Name
-        The name of the 'selectAttributes' activity.
-
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iotanalytics-pipeline-selectattributes.html#cfn-iotanalytics-pipeline-selectattributes-name
         PrimitiveType: String
         UpdateType: Mutable

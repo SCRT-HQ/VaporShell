@@ -1,18 +1,16 @@
 function Add-VSAppMeshVirtualNodeBackend {
     <#
     .SYNOPSIS
-        Adds an AWS::AppMesh::VirtualNode.Backend resource property to the template. An object representing the backends that a virtual node is expected to send outbound traffic to.
+        Adds an AWS::AppMesh::VirtualNode.Backend resource property to the template. 
 
     .DESCRIPTION
         Adds an AWS::AppMesh::VirtualNode.Backend resource property to the template.
-An object representing the backends that a virtual node is expected to send outbound traffic to.
+
 
     .LINK
         http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-appmesh-virtualnode-backend.html
 
     .PARAMETER VirtualService
-        Specifies a virtual service to use as a backend for a virtual node.
-
         Type: VirtualServiceBackend
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-appmesh-virtualnode-backend.html#cfn-appmesh-virtualnode-backend-virtualservice
         UpdateType: Mutable

@@ -1,27 +1,21 @@
 function Add-VSGreengrassResourceDefinitionSageMakerMachineLearningModelResourceData {
     <#
     .SYNOPSIS
-        Adds an AWS::Greengrass::ResourceDefinition.SageMakerMachineLearningModelResourceData resource property to the template. <a name="aws-properties-greengrass-resourcedefinition-sagemakermachinelearningmodelresourcedata-description"></a>Settings for an Secrets Manager machine learning resource. For more information, see Perform Machine Learning Inference: https://docs.aws.amazon.com/greengrass/latest/developerguide/ml-inference.html in the *AWS IoT Greengrass Developer Guide*.
+        Adds an AWS::Greengrass::ResourceDefinition.SageMakerMachineLearningModelResourceData resource property to the template. 
 
     .DESCRIPTION
         Adds an AWS::Greengrass::ResourceDefinition.SageMakerMachineLearningModelResourceData resource property to the template.
-<a name="aws-properties-greengrass-resourcedefinition-sagemakermachinelearningmodelresourcedata-description"></a>Settings for an Secrets Manager machine learning resource. For more information, see Perform Machine Learning Inference: https://docs.aws.amazon.com/greengrass/latest/developerguide/ml-inference.html in the *AWS IoT Greengrass Developer Guide*.
 
-<a name="aws-properties-greengrass-resourcedefinition-sagemakermachinelearningmodelresourcedata-inheritance"></a> In an AWS CloudFormation template, SageMakerMachineLearningModelResourceData can be used in the https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-greengrass-resourcedefinition-resourcedatacontainer.html: https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-greengrass-resourcedefinition-resourcedatacontainer.html property type.
 
     .LINK
         http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-greengrass-resourcedefinition-sagemakermachinelearningmodelresourcedata.html
 
     .PARAMETER DestinationPath
-        The absolute local path of the resource inside the Lambda environment.
-
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-greengrass-resourcedefinition-sagemakermachinelearningmodelresourcedata.html#cfn-greengrass-resourcedefinition-sagemakermachinelearningmodelresourcedata-destinationpath
         PrimitiveType: String
         UpdateType: Immutable
 
     .PARAMETER SageMakerJobArn
-        The Amazon Resource Name ARN of the Secrets Manager training job that represents the source model.
-
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-greengrass-resourcedefinition-sagemakermachinelearningmodelresourcedata.html#cfn-greengrass-resourcedefinition-sagemakermachinelearningmodelresourcedata-sagemakerjobarn
         PrimitiveType: String
         UpdateType: Immutable

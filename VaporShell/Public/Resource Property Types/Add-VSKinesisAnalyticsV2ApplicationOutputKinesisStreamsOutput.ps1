@@ -1,18 +1,16 @@
 function Add-VSKinesisAnalyticsV2ApplicationOutputKinesisStreamsOutput {
     <#
     .SYNOPSIS
-        Adds an AWS::KinesisAnalyticsV2::ApplicationOutput.KinesisStreamsOutput resource property to the template. When you configure an SQL-based Amazon Kinesis Data Analytics application's output, identifies a Kinesis data stream as the destination. You provide the stream Amazon Resource Name (ARN.
+        Adds an AWS::KinesisAnalyticsV2::ApplicationOutput.KinesisStreamsOutput resource property to the template. 
 
     .DESCRIPTION
         Adds an AWS::KinesisAnalyticsV2::ApplicationOutput.KinesisStreamsOutput resource property to the template.
-When you configure an SQL-based Amazon Kinesis Data Analytics application's output, identifies a Kinesis data stream as the destination. You provide the stream Amazon Resource Name (ARN.
+
 
     .LINK
         http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-kinesisanalyticsv2-applicationoutput-kinesisstreamsoutput.html
 
     .PARAMETER ResourceARN
-        The ARN of the destination Kinesis data stream to write to.
-
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-kinesisanalyticsv2-applicationoutput-kinesisstreamsoutput.html#cfn-kinesisanalyticsv2-applicationoutput-kinesisstreamsoutput-resourcearn
         PrimitiveType: String
         UpdateType: Mutable

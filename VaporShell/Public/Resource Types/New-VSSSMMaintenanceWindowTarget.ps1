@@ -1,10 +1,10 @@
 function New-VSSSMMaintenanceWindowTarget {
     <#
     .SYNOPSIS
-        Adds an AWS::SSM::MaintenanceWindowTarget resource to the template. The AWS::SSM::MaintenanceWindowTarget resource registers a target with a maintenance window for AWS Systems Manager. For more information, see  RegisterTargetWithMaintenanceWindow: https://docs.aws.amazon.com/systems-manager/latest/APIReference/API_RegisterTargetWithMaintenanceWindow.html in the *AWS Systems Manager API Reference*.
+        Adds an AWS::SSM::MaintenanceWindowTarget resource to the template. 
 
     .DESCRIPTION
-        Adds an AWS::SSM::MaintenanceWindowTarget resource to the template. The AWS::SSM::MaintenanceWindowTarget resource registers a target with a maintenance window for AWS Systems Manager. For more information, see  RegisterTargetWithMaintenanceWindow: https://docs.aws.amazon.com/systems-manager/latest/APIReference/API_RegisterTargetWithMaintenanceWindow.html in the *AWS Systems Manager API Reference*.
+        Adds an AWS::SSM::MaintenanceWindowTarget resource to the template. 
 
     .LINK
         http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ssm-maintenancewindowtarget.html
@@ -13,52 +13,32 @@ function New-VSSSMMaintenanceWindowTarget {
         The logical ID must be alphanumeric (A-Za-z0-9) and unique within the template. Use the logical name to reference the resource in other parts of the template. For example, if you want to map an Amazon Elastic Block Store volume to an Amazon EC2 instance, you reference the logical IDs to associate the block stores with the instance.
 
     .PARAMETER OwnerInformation
-        A user-provided value that will be included in any CloudWatch events that are raised while running tasks for these targets in this maintenance window.
-
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ssm-maintenancewindowtarget.html#cfn-ssm-maintenancewindowtarget-ownerinformation
         PrimitiveType: String
         UpdateType: Mutable
 
     .PARAMETER Description
-        A description for the target.
-
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ssm-maintenancewindowtarget.html#cfn-ssm-maintenancewindowtarget-description
         PrimitiveType: String
         UpdateType: Mutable
 
     .PARAMETER WindowId
-        The ID of the maintenance window to register the target with.
-
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ssm-maintenancewindowtarget.html#cfn-ssm-maintenancewindowtarget-windowid
         PrimitiveType: String
         UpdateType: Immutable
 
     .PARAMETER ResourceType
-        The type of target that is being registered with the maintenance window.
-
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ssm-maintenancewindowtarget.html#cfn-ssm-maintenancewindowtarget-resourcetype
         PrimitiveType: String
         UpdateType: Mutable
 
     .PARAMETER Targets
-        The targets to register with the maintenance window. In other words, the instances to run commands on when the maintenance window runs.
-You can specify targets using either instance IDs or tags that have been applied to instances.
-**Example 1**: Specify instance IDs
-Key=InstanceIds,Values=instance-id-1,instance-id-2,instance-id-3 
-**Example 2**: Use tag key-pairs applied to instances
-Key=tag:my-tag-key,Values=my-tag-value-1,my-tag-value-2 
-**Example 3**: Use tag-keys applied to instances
-Key=tag-key,Values=my-tag-key-1,my-tag-key-2 
-For more information about these examples formats, including the best use case for each one, see Examples: Register Targets with a Maintenance Window: https://docs.aws.amazon.com/systems-manager/latest/userguide/mw-cli-tutorial-targets-examples.html in the *AWS Systems Manager User Guide*.
-
         Type: List
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ssm-maintenancewindowtarget.html#cfn-ssm-maintenancewindowtarget-targets
         ItemType: Targets
         UpdateType: Mutable
 
     .PARAMETER Name
-        The name for the maintenance window target.
-
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ssm-maintenancewindowtarget.html#cfn-ssm-maintenancewindowtarget-name
         PrimitiveType: String
         UpdateType: Mutable

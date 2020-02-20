@@ -1,25 +1,21 @@
 function Add-VSGlueSecurityConfigurationCloudWatchEncryption {
     <#
     .SYNOPSIS
-        Adds an AWS::Glue::SecurityConfiguration.CloudWatchEncryption resource property to the template. Specifies how Amazon CloudWatch data should be encrypted.
+        Adds an AWS::Glue::SecurityConfiguration.CloudWatchEncryption resource property to the template. 
 
     .DESCRIPTION
         Adds an AWS::Glue::SecurityConfiguration.CloudWatchEncryption resource property to the template.
-Specifies how Amazon CloudWatch data should be encrypted.
+
 
     .LINK
         http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-glue-securityconfiguration-cloudwatchencryption.html
 
     .PARAMETER KmsKeyArn
-        The Amazon Resource Name ARN of the KMS key to be used to encrypt the data.
-
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-glue-securityconfiguration-cloudwatchencryption.html#cfn-glue-securityconfiguration-cloudwatchencryption-kmskeyarn
         PrimitiveType: String
         UpdateType: Mutable
 
     .PARAMETER CloudWatchEncryptionMode
-        The encryption mode to use for CloudWatch data.
-
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-glue-securityconfiguration-cloudwatchencryption.html#cfn-glue-securityconfiguration-cloudwatchencryption-cloudwatchencryptionmode
         PrimitiveType: String
         UpdateType: Mutable

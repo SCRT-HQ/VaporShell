@@ -1,10 +1,10 @@
 function New-VSServiceCatalogLaunchNotificationConstraint {
     <#
     .SYNOPSIS
-        Adds an AWS::ServiceCatalog::LaunchNotificationConstraint resource to the template. Specifies a notification constraint.
+        Adds an AWS::ServiceCatalog::LaunchNotificationConstraint resource to the template. 
 
     .DESCRIPTION
-        Adds an AWS::ServiceCatalog::LaunchNotificationConstraint resource to the template. Specifies a notification constraint.
+        Adds an AWS::ServiceCatalog::LaunchNotificationConstraint resource to the template. 
 
     .LINK
         http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-servicecatalog-launchnotificationconstraint.html
@@ -13,40 +13,27 @@ function New-VSServiceCatalogLaunchNotificationConstraint {
         The logical ID must be alphanumeric (A-Za-z0-9) and unique within the template. Use the logical name to reference the resource in other parts of the template. For example, if you want to map an Amazon Elastic Block Store volume to an Amazon EC2 instance, you reference the logical IDs to associate the block stores with the instance.
 
     .PARAMETER Description
-        The description of the constraint.
-
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-servicecatalog-launchnotificationconstraint.html#cfn-servicecatalog-launchnotificationconstraint-description
         PrimitiveType: String
         UpdateType: Mutable
 
     .PARAMETER NotificationArns
-        The notification ARNs.
-
         PrimitiveItemType: String
         Type: List
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-servicecatalog-launchnotificationconstraint.html#cfn-servicecatalog-launchnotificationconstraint-notificationarns
         UpdateType: Mutable
 
     .PARAMETER AcceptLanguage
-        The language code.
-+  en - English default
-+  jp - Japanese
-+  zh - Chinese
-
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-servicecatalog-launchnotificationconstraint.html#cfn-servicecatalog-launchnotificationconstraint-acceptlanguage
         PrimitiveType: String
         UpdateType: Mutable
 
     .PARAMETER PortfolioId
-        The portfolio identifier.
-
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-servicecatalog-launchnotificationconstraint.html#cfn-servicecatalog-launchnotificationconstraint-portfolioid
         PrimitiveType: String
         UpdateType: Immutable
 
     .PARAMETER ProductId
-        The product identifier.
-
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-servicecatalog-launchnotificationconstraint.html#cfn-servicecatalog-launchnotificationconstraint-productid
         PrimitiveType: String
         UpdateType: Immutable

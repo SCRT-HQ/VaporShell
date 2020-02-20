@@ -1,24 +1,10 @@
 function New-VSDataPipelinePipeline {
     <#
     .SYNOPSIS
-        Adds an AWS::DataPipeline::Pipeline resource to the template. The AWS::DataPipeline::Pipeline resource specifies a data pipeline that you can use to automate the movement and transformation of data. In each pipeline, you define pipeline objects, such as activities, schedules, data nodes, and resources. For information about pipeline objects and components that you can use, see Pipeline Object Reference: https://docs.aws.amazon.com/datapipeline/latest/DeveloperGuide/dp-pipeline-objects.html in the *AWS Data Pipeline Developer Guide*.
+        Adds an AWS::DataPipeline::Pipeline resource to the template. 
 
     .DESCRIPTION
-        Adds an AWS::DataPipeline::Pipeline resource to the template. The AWS::DataPipeline::Pipeline resource specifies a data pipeline that you can use to automate the movement and transformation of data. In each pipeline, you define pipeline objects, such as activities, schedules, data nodes, and resources. For information about pipeline objects and components that you can use, see Pipeline Object Reference: https://docs.aws.amazon.com/datapipeline/latest/DeveloperGuide/dp-pipeline-objects.html in the *AWS Data Pipeline Developer Guide*.
-
-The AWS::DataPipeline::Pipeline resource adds tasks, schedules, and preconditions to the specified pipeline. You can use PutPipelineDefinition to populate a new pipeline.
-
-PutPipelineDefinition also validates the configuration as it adds it to the pipeline. Changes to the pipeline are saved unless one of the following validation errors exist in the pipeline.
-
-+ An object is missing a name or identifier field.
-
-+ A string or reference field is empty.
-
-+ The number of objects in the pipeline exceeds the allowed maximum number of objects.
-
-+ The pipeline is in a FINISHED state.
-
-Pipeline object definitions are passed to the PutPipelineDefinition: https://docs.aws.amazon.com/datapipeline/latest/APIReference/API_PutPipelineDefinition.html action and returned by the GetPipelineDefinition: https://docs.aws.amazon.com/datapipeline/latest/APIReference/API_GetPipelineDefinition.html action.
+        Adds an AWS::DataPipeline::Pipeline resource to the template. 
 
     .LINK
         http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-datapipeline-pipeline.html
@@ -27,29 +13,21 @@ Pipeline object definitions are passed to the PutPipelineDefinition: https://doc
         The logical ID must be alphanumeric (A-Za-z0-9) and unique within the template. Use the logical name to reference the resource in other parts of the template. For example, if you want to map an Amazon Elastic Block Store volume to an Amazon EC2 instance, you reference the logical IDs to associate the block stores with the instance.
 
     .PARAMETER Activate
-        Indicates whether to validate and start the pipeline or stop an active pipeline. By default, the value is set to true.
-
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-datapipeline-pipeline.html#cfn-datapipeline-pipeline-activate
         PrimitiveType: Boolean
         UpdateType: Mutable
 
     .PARAMETER Description
-        A description of the pipeline.
-
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-datapipeline-pipeline.html#cfn-datapipeline-pipeline-description
         PrimitiveType: String
         UpdateType: Immutable
 
     .PARAMETER Name
-        The name of the pipeline.
-
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-datapipeline-pipeline.html#cfn-datapipeline-pipeline-name
         PrimitiveType: String
         UpdateType: Immutable
 
     .PARAMETER ParameterObjects
-        The parameter objects used with the pipeline.
-
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-datapipeline-pipeline.html#cfn-datapipeline-pipeline-parameterobjects
         DuplicatesAllowed: True
         ItemType: ParameterObject
@@ -57,8 +35,6 @@ Pipeline object definitions are passed to the PutPipelineDefinition: https://doc
         UpdateType: Mutable
 
     .PARAMETER ParameterValues
-        The parameter values used with the pipeline.
-
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-datapipeline-pipeline.html#cfn-datapipeline-pipeline-parametervalues
         DuplicatesAllowed: True
         ItemType: ParameterValue
@@ -66,8 +42,6 @@ Pipeline object definitions are passed to the PutPipelineDefinition: https://doc
         UpdateType: Mutable
 
     .PARAMETER PipelineObjects
-        The objects that define the pipeline. These objects overwrite the existing pipeline definition. Not all objects, fields, and values can be updated. For information about restrictions, see Editing Your Pipeline: https://docs.aws.amazon.com/datapipeline/latest/DeveloperGuide/dp-manage-pipeline-modify-console.html in the *AWS Data Pipeline Developer Guide*.
-
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-datapipeline-pipeline.html#cfn-datapipeline-pipeline-pipelineobjects
         DuplicatesAllowed: True
         ItemType: PipelineObject
@@ -75,8 +49,6 @@ Pipeline object definitions are passed to the PutPipelineDefinition: https://doc
         UpdateType: Mutable
 
     .PARAMETER PipelineTags
-        A list of arbitrary tags key-value pairs to associate with the pipeline, which you can use to control permissions. For more information, see Controlling Access to Pipelines and Resources: https://docs.aws.amazon.com/datapipeline/latest/DeveloperGuide/dp-control-access.html in the *AWS Data Pipeline Developer Guide*.
-
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-datapipeline-pipeline.html#cfn-datapipeline-pipeline-pipelinetags
         DuplicatesAllowed: True
         ItemType: PipelineTag

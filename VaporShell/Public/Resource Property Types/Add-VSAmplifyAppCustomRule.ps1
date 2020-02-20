@@ -1,39 +1,31 @@
 function Add-VSAmplifyAppCustomRule {
     <#
     .SYNOPSIS
-        Adds an AWS::Amplify::App.CustomRule resource property to the template. The CustomRule property type allows you to specify redirects, rewrites, and reverse proxies. Redirects enable a web app to reroute navigation from one URL to another.
+        Adds an AWS::Amplify::App.CustomRule resource property to the template. 
 
     .DESCRIPTION
         Adds an AWS::Amplify::App.CustomRule resource property to the template.
-The CustomRule property type allows you to specify redirects, rewrites, and reverse proxies. Redirects enable a web app to reroute navigation from one URL to another.
+
 
     .LINK
         http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-amplify-app-customrule.html
 
     .PARAMETER Condition
-        The condition for a URL rewrite or redirect rule, e.g. country code.
-
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-amplify-app-customrule.html#cfn-amplify-app-customrule-condition
         PrimitiveType: String
         UpdateType: Mutable
 
     .PARAMETER Status
-        The status code for a URL rewrite or redirect rule.
-
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-amplify-app-customrule.html#cfn-amplify-app-customrule-status
         PrimitiveType: String
         UpdateType: Mutable
 
     .PARAMETER Target
-        The target pattern for a URL rewrite or redirect rule.
-
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-amplify-app-customrule.html#cfn-amplify-app-customrule-target
         PrimitiveType: String
         UpdateType: Mutable
 
     .PARAMETER Source
-        The source pattern for a URL rewrite or redirect rule.
-
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-amplify-app-customrule.html#cfn-amplify-app-customrule-source
         PrimitiveType: String
         UpdateType: Mutable

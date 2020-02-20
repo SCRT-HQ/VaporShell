@@ -1,25 +1,21 @@
 function Add-VSGlueTableOrder {
     <#
     .SYNOPSIS
-        Adds an AWS::Glue::Table.Order resource property to the template. Specifies the sort order of a sorted column.
+        Adds an AWS::Glue::Table.Order resource property to the template. 
 
     .DESCRIPTION
         Adds an AWS::Glue::Table.Order resource property to the template.
-Specifies the sort order of a sorted column.
+
 
     .LINK
         http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-glue-table-order.html
 
     .PARAMETER Column
-        The name of the column.
-
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-glue-table-order.html#cfn-glue-table-order-column
         PrimitiveType: String
         UpdateType: Mutable
 
     .PARAMETER SortOrder
-        Indicates that the column is sorted in ascending order == 1, or in descending order ==0.
-
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-glue-table-order.html#cfn-glue-table-order-sortorder
         PrimitiveType: Integer
         UpdateType: Mutable

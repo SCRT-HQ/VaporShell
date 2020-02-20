@@ -1,20 +1,16 @@
 function Add-VSMediaLiveChannelVideoSelectorProgramId {
     <#
     .SYNOPSIS
-        Adds an AWS::MediaLive::Channel.VideoSelectorProgramId resource property to the template. Used to extract video by the program ID.
+        Adds an AWS::MediaLive::Channel.VideoSelectorProgramId resource property to the template. 
 
     .DESCRIPTION
         Adds an AWS::MediaLive::Channel.VideoSelectorProgramId resource property to the template.
-Used to extract video by the program ID.
 
-The parent of this entity is VideoSelectorSettings.
 
     .LINK
         http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-medialive-channel-videoselectorprogramid.html
 
     .PARAMETER ProgramId
-        Selects a specific program from within a multi-program transport stream. If the program doesn't exist, MediaLive selects the first program within the transport stream by default.
-
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-medialive-channel-videoselectorprogramid.html#cfn-medialive-channel-videoselectorprogramid-programid
         PrimitiveType: Integer
         UpdateType: Mutable

@@ -1,34 +1,26 @@
 function Add-VSRoute53RecordSetGeoLocation {
     <#
     .SYNOPSIS
-        Adds an AWS::Route53::RecordSet.GeoLocation resource property to the template. A complex type that contains information about a geographic location.
+        Adds an AWS::Route53::RecordSet.GeoLocation resource property to the template. 
 
     .DESCRIPTION
         Adds an AWS::Route53::RecordSet.GeoLocation resource property to the template.
-A complex type that contains information about a geographic location.
+
 
     .LINK
         http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-route53-recordset-geolocation.html
 
     .PARAMETER ContinentCode
-        The two-letter code for the continent.
-Valid values: AF | AN | AS | EU | OC | NA | SA
-Constraint: Specifying ContinentCode with either CountryCode or SubdivisionCode returns an InvalidInput error.
-
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-route53-recordset-geolocation.html#cfn-route53-recordset-geolocation-continentcode
         PrimitiveType: String
         UpdateType: Mutable
 
     .PARAMETER CountryCode
-        The two-letter code for the country.
-
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-route53-recordset-geolocation.html#cfn-route53-recordset-geolocation-countrycode
         PrimitiveType: String
         UpdateType: Mutable
 
     .PARAMETER SubdivisionCode
-        The code for the subdivision. Route 53 currently supports only states in the United States.
-
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-route53-recordset-geolocation.html#cfn-route53-recordset-geolocation-subdivisioncode
         PrimitiveType: String
         UpdateType: Mutable

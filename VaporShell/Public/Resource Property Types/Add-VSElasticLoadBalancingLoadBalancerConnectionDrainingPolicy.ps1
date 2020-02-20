@@ -1,25 +1,21 @@
 function Add-VSElasticLoadBalancingLoadBalancerConnectionDrainingPolicy {
     <#
     .SYNOPSIS
-        Adds an AWS::ElasticLoadBalancing::LoadBalancer.ConnectionDrainingPolicy resource property to the template. Specifies the connection draining settings for your Classic Load Balancer.
+        Adds an AWS::ElasticLoadBalancing::LoadBalancer.ConnectionDrainingPolicy resource property to the template. 
 
     .DESCRIPTION
         Adds an AWS::ElasticLoadBalancing::LoadBalancer.ConnectionDrainingPolicy resource property to the template.
-Specifies the connection draining settings for your Classic Load Balancer.
+
 
     .LINK
         http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-elb-connectiondrainingpolicy.html
 
     .PARAMETER Enabled
-        Specifies whether connection draining is enabled for the load balancer.
-
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-elb-connectiondrainingpolicy.html#cfn-elb-connectiondrainingpolicy-enabled
         PrimitiveType: Boolean
         UpdateType: Mutable
 
     .PARAMETER Timeout
-        The maximum time, in seconds, to keep the existing connections open before deregistering the instances.
-
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-elb-connectiondrainingpolicy.html#cfn-elb-connectiondrainingpolicy-timeout
         PrimitiveType: Integer
         UpdateType: Mutable

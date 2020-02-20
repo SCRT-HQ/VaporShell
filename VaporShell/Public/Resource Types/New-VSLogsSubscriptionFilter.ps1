@@ -1,20 +1,10 @@
 function New-VSLogsSubscriptionFilter {
     <#
     .SYNOPSIS
-        Adds an AWS::Logs::SubscriptionFilter resource to the template. The AWS::Logs::SubscriptionFilter resource specifies a subscription filter and associates it with the specified log group. Subscription filters allow you to subscribe to a real-time stream of log events and have them delivered to a specific destination. Currently, the supported destinations are:
+        Adds an AWS::Logs::SubscriptionFilter resource to the template. 
 
     .DESCRIPTION
-        Adds an AWS::Logs::SubscriptionFilter resource to the template. The AWS::Logs::SubscriptionFilter resource specifies a subscription filter and associates it with the specified log group. Subscription filters allow you to subscribe to a real-time stream of log events and have them delivered to a specific destination. Currently, the supported destinations are:
-
-+ An Amazon Kinesis data stream belonging to the same account as the subscription filter, for same-account delivery.
-
-+ A logical destination that belongs to a different account, for cross-account delivery.
-
-+ An Amazon Kinesis Firehose delivery stream that belongs to the same account as the subscription filter, for same-account delivery.
-
-+ An AWS Lambda function that belongs to the same account as the subscription filter, for same-account delivery.
-
-There can only be one subscription filter associated with a log group.
+        Adds an AWS::Logs::SubscriptionFilter resource to the template. 
 
     .LINK
         http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-logs-subscriptionfilter.html
@@ -23,29 +13,21 @@ There can only be one subscription filter associated with a log group.
         The logical ID must be alphanumeric (A-Za-z0-9) and unique within the template. Use the logical name to reference the resource in other parts of the template. For example, if you want to map an Amazon Elastic Block Store volume to an Amazon EC2 instance, you reference the logical IDs to associate the block stores with the instance.
 
     .PARAMETER DestinationArn
-        The Amazon Resource Name ARN of the destination.
-
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-logs-subscriptionfilter.html#cfn-cwl-subscriptionfilter-destinationarn
         PrimitiveType: String
         UpdateType: Immutable
 
     .PARAMETER FilterPattern
-        The filtering expressions that restrict what gets delivered to the destination AWS resource. For more information about the filter pattern syntax, see Filter and Pattern Syntax: https://docs.aws.amazon.com/AmazonCloudWatch/latest/logs/FilterAndPatternSyntax.html.
-
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-logs-subscriptionfilter.html#cfn-cwl-subscriptionfilter-filterpattern
         PrimitiveType: String
         UpdateType: Immutable
 
     .PARAMETER LogGroupName
-        The log group to associate with the subscription filter. All log events that are uploaded to this log group are filtered and delivered to the specified AWS resource if the filter pattern matches the log events.
-
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-logs-subscriptionfilter.html#cfn-cwl-subscriptionfilter-loggroupname
         PrimitiveType: String
         UpdateType: Immutable
 
     .PARAMETER RoleArn
-        The ARN of an IAM role that grants CloudWatch Logs permissions to deliver ingested log events to the destination stream.
-
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-logs-subscriptionfilter.html#cfn-cwl-subscriptionfilter-rolearn
         PrimitiveType: String
         UpdateType: Immutable

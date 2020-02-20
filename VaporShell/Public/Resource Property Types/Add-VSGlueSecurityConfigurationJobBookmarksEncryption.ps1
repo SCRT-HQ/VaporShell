@@ -1,25 +1,21 @@
 function Add-VSGlueSecurityConfigurationJobBookmarksEncryption {
     <#
     .SYNOPSIS
-        Adds an AWS::Glue::SecurityConfiguration.JobBookmarksEncryption resource property to the template. Specifies how job bookmark data should be encrypted.
+        Adds an AWS::Glue::SecurityConfiguration.JobBookmarksEncryption resource property to the template. 
 
     .DESCRIPTION
         Adds an AWS::Glue::SecurityConfiguration.JobBookmarksEncryption resource property to the template.
-Specifies how job bookmark data should be encrypted.
+
 
     .LINK
         http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-glue-securityconfiguration-jobbookmarksencryption.html
 
     .PARAMETER KmsKeyArn
-        The Amazon Resource Name ARN of the KMS key to be used to encrypt the data.
-
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-glue-securityconfiguration-jobbookmarksencryption.html#cfn-glue-securityconfiguration-jobbookmarksencryption-kmskeyarn
         PrimitiveType: String
         UpdateType: Mutable
 
     .PARAMETER JobBookmarksEncryptionMode
-        The encryption mode to use for job bookmarks data.
-
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-glue-securityconfiguration-jobbookmarksencryption.html#cfn-glue-securityconfiguration-jobbookmarksencryption-jobbookmarksencryptionmode
         PrimitiveType: String
         UpdateType: Mutable

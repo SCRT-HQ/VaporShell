@@ -1,25 +1,21 @@
 function Add-VSOpsWorksStackStackConfigurationManager {
     <#
     .SYNOPSIS
-        Adds an AWS::OpsWorks::Stack.StackConfigurationManager resource property to the template. Describes the configuration manager.
+        Adds an AWS::OpsWorks::Stack.StackConfigurationManager resource property to the template. 
 
     .DESCRIPTION
         Adds an AWS::OpsWorks::Stack.StackConfigurationManager resource property to the template.
-Describes the configuration manager.
+
 
     .LINK
         http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-opsworks-stack-stackconfigmanager.html
 
     .PARAMETER Name
-        The name. This parameter must be set to "Chef".
-
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-opsworks-stack-stackconfigmanager.html#cfn-opsworks-configmanager-name
         PrimitiveType: String
         UpdateType: Mutable
 
     .PARAMETER Version
-        The Chef version. This parameter must be set to 12, 11.10, or 11.4 for Linux stacks, and to 12.2 for Windows stacks. The default value for Linux stacks is 11.4.
-
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-opsworks-stack-stackconfigmanager.html#cfn-opsworks-configmanager-version
         PrimitiveType: String
         UpdateType: Mutable

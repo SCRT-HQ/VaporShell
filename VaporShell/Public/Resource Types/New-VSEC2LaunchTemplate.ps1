@@ -1,10 +1,10 @@
 function New-VSEC2LaunchTemplate {
     <#
     .SYNOPSIS
-        Adds an AWS::EC2::LaunchTemplate resource to the template. Specifies a launch template for an Amazon EC2 instance. A launch template contains the parameters to launch an instance.
+        Adds an AWS::EC2::LaunchTemplate resource to the template. 
 
     .DESCRIPTION
-        Adds an AWS::EC2::LaunchTemplate resource to the template. Specifies a launch template for an Amazon EC2 instance. A launch template contains the parameters to launch an instance.
+        Adds an AWS::EC2::LaunchTemplate resource to the template. 
 
     .LINK
         http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ec2-launchtemplate.html
@@ -13,15 +13,11 @@ function New-VSEC2LaunchTemplate {
         The logical ID must be alphanumeric (A-Za-z0-9) and unique within the template. Use the logical name to reference the resource in other parts of the template. For example, if you want to map an Amazon Elastic Block Store volume to an Amazon EC2 instance, you reference the logical IDs to associate the block stores with the instance.
 
     .PARAMETER LaunchTemplateName
-        A name for the launch template.
-
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ec2-launchtemplate.html#cfn-ec2-launchtemplate-launchtemplatename
         PrimitiveType: String
         UpdateType: Immutable
 
     .PARAMETER LaunchTemplateData
-        The information for the launch template.
-
         Type: LaunchTemplateData
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ec2-launchtemplate.html#cfn-ec2-launchtemplate-launchtemplatedata
         UpdateType: Mutable

@@ -1,16 +1,10 @@
 function New-VSApiGatewayAccount {
     <#
     .SYNOPSIS
-        Adds an AWS::ApiGateway::Account resource to the template. The AWS::ApiGateway::Account resource specifies the IAM role that Amazon API Gateway uses to write API logs to Amazon CloudWatch Logs.
+        Adds an AWS::ApiGateway::Account resource to the template. 
 
     .DESCRIPTION
-        Adds an AWS::ApiGateway::Account resource to the template. The AWS::ApiGateway::Account resource specifies the IAM role that Amazon API Gateway uses to write API logs to Amazon CloudWatch Logs.
-
-**Important**
-
-If an API Gateway resource has never been created in your AWS account, you must add a dependency on another API Gateway resource, such as an AWS::ApiGateway::RestApi: https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-apigateway-restapi.html or AWS::ApiGateway::ApiKey: https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-apigateway-apikey.html resource.
-
-If an API Gateway resource has been created in your AWS account, no dependency is required (even if the resource was deleted.
+        Adds an AWS::ApiGateway::Account resource to the template. 
 
     .LINK
         http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-apigateway-account.html
@@ -19,8 +13,6 @@ If an API Gateway resource has been created in your AWS account, no dependency i
         The logical ID must be alphanumeric (A-Za-z0-9) and unique within the template. Use the logical name to reference the resource in other parts of the template. For example, if you want to map an Amazon Elastic Block Store volume to an Amazon EC2 instance, you reference the logical IDs to associate the block stores with the instance.
 
     .PARAMETER CloudWatchRoleArn
-        The Amazon Resource Name ARN of an IAM role that has write access to CloudWatch Logs in your account.
-
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-apigateway-account.html#cfn-apigateway-account-cloudwatchrolearn
         PrimitiveType: String
         UpdateType: Mutable

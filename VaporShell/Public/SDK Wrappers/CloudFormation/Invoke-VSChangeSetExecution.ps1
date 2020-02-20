@@ -43,6 +43,9 @@ function Invoke-VSChangeSetExecution {
         [String]
         $ProfileName = $env:AWS_PROFILE
     )
+    Begin {
+        Import-AWSSDK
+    }
     Process {
         $method = 'ExecuteChangeSet'
         $requestType = "Amazon.CloudFormation.Model.$($method)Request"

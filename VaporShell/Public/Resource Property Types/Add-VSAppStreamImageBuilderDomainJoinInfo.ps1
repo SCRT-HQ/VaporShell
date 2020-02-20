@@ -1,25 +1,21 @@
 function Add-VSAppStreamImageBuilderDomainJoinInfo {
     <#
     .SYNOPSIS
-        Adds an AWS::AppStream::ImageBuilder.DomainJoinInfo resource property to the template. The name of the directory and organizational unit (OU to use to join the image builder to a Microsoft Active Directory domain.
+        Adds an AWS::AppStream::ImageBuilder.DomainJoinInfo resource property to the template. 
 
     .DESCRIPTION
         Adds an AWS::AppStream::ImageBuilder.DomainJoinInfo resource property to the template.
-The name of the directory and organizational unit (OU to use to join the image builder to a Microsoft Active Directory domain.
+
 
     .LINK
         http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-appstream-imagebuilder-domainjoininfo.html
 
     .PARAMETER OrganizationalUnitDistinguishedName
-        The distinguished name of the organizational unit for computer accounts.
-
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-appstream-imagebuilder-domainjoininfo.html#cfn-appstream-imagebuilder-domainjoininfo-organizationalunitdistinguishedname
         PrimitiveType: String
         UpdateType: Mutable
 
     .PARAMETER DirectoryName
-        The fully qualified name of the directory for example, corp.example.com.
-
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-appstream-imagebuilder-domainjoininfo.html#cfn-appstream-imagebuilder-domainjoininfo-directoryname
         PrimitiveType: String
         UpdateType: Mutable

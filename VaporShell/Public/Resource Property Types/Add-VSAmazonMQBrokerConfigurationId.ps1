@@ -1,25 +1,21 @@
 function Add-VSAmazonMQBrokerConfigurationId {
     <#
     .SYNOPSIS
-        Adds an AWS::AmazonMQ::Broker.ConfigurationId resource property to the template. A list of information about the configuration.
+        Adds an AWS::AmazonMQ::Broker.ConfigurationId resource property to the template. 
 
     .DESCRIPTION
         Adds an AWS::AmazonMQ::Broker.ConfigurationId resource property to the template.
-A list of information about the configuration.
+
 
     .LINK
         http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-amazonmq-broker-configurationid.html
 
     .PARAMETER Revision
-        The revision number of the configuration.
-
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-amazonmq-broker-configurationid.html#cfn-amazonmq-broker-configurationid-revision
         PrimitiveType: Integer
         UpdateType: Mutable
 
     .PARAMETER Id
-        The unique ID that Amazon MQ generates for the configuration.
-
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-amazonmq-broker-configurationid.html#cfn-amazonmq-broker-configurationid-id
         PrimitiveType: String
         UpdateType: Mutable

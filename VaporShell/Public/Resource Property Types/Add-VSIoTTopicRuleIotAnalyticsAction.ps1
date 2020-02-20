@@ -1,25 +1,21 @@
 function Add-VSIoTTopicRuleIotAnalyticsAction {
     <#
     .SYNOPSIS
-        Adds an AWS::IoT::TopicRule.IotAnalyticsAction resource property to the template. Sends message data to an AWS IoT Analytics channel.
+        Adds an AWS::IoT::TopicRule.IotAnalyticsAction resource property to the template. 
 
     .DESCRIPTION
         Adds an AWS::IoT::TopicRule.IotAnalyticsAction resource property to the template.
-Sends message data to an AWS IoT Analytics channel.
+
 
     .LINK
         http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iot-topicrule-iotanalyticsaction.html
 
     .PARAMETER ChannelName
-        The name of the IoT Analytics channel to which message data will be sent.
-
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iot-topicrule-iotanalyticsaction.html#cfn-iot-topicrule-iotanalyticsaction-channelname
         PrimitiveType: String
         UpdateType: Mutable
 
     .PARAMETER RoleArn
-        The ARN of the role which has a policy that grants IoT Analytics permission to send message data via IoT Analytics iotanalytics:BatchPutMessage.
-
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iot-topicrule-iotanalyticsaction.html#cfn-iot-topicrule-iotanalyticsaction-rolearn
         PrimitiveType: String
         UpdateType: Mutable

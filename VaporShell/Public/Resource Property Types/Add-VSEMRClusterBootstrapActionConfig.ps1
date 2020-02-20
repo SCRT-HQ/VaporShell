@@ -1,25 +1,21 @@
 function Add-VSEMRClusterBootstrapActionConfig {
     <#
     .SYNOPSIS
-        Adds an AWS::EMR::Cluster.BootstrapActionConfig resource property to the template. BootstrapActionConfig is a property of AWS::EMR::Cluster that can be used to run bootstrap actions on EMR clusters. You can use a bootstrap action to install software and configure EC2 instances for all cluster nodes before EMR installs and configures open-source big data applications on cluster instances. For more information, see Create Bootstrap Actions to Install Additional Software: https://docs.aws.amazon.com/emr/latest/ManagementGuide/emr-plan-bootstrap.html in the *Amazon EMR Management Guide*.
+        Adds an AWS::EMR::Cluster.BootstrapActionConfig resource property to the template. 
 
     .DESCRIPTION
         Adds an AWS::EMR::Cluster.BootstrapActionConfig resource property to the template.
-BootstrapActionConfig is a property of AWS::EMR::Cluster that can be used to run bootstrap actions on EMR clusters. You can use a bootstrap action to install software and configure EC2 instances for all cluster nodes before EMR installs and configures open-source big data applications on cluster instances. For more information, see Create Bootstrap Actions to Install Additional Software: https://docs.aws.amazon.com/emr/latest/ManagementGuide/emr-plan-bootstrap.html in the *Amazon EMR Management Guide*.
+
 
     .LINK
         http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-elasticmapreduce-cluster-bootstrapactionconfig.html
 
     .PARAMETER Name
-        The name of the bootstrap action.
-
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-elasticmapreduce-cluster-bootstrapactionconfig.html#cfn-elasticmapreduce-cluster-bootstrapactionconfig-name
         PrimitiveType: String
         UpdateType: Mutable
 
     .PARAMETER ScriptBootstrapAction
-        The script run by the bootstrap action.
-
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-elasticmapreduce-cluster-bootstrapactionconfig.html#cfn-elasticmapreduce-cluster-bootstrapactionconfig-scriptbootstrapaction
         Type: ScriptBootstrapActionConfig
         UpdateType: Mutable

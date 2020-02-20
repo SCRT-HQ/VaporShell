@@ -1,32 +1,26 @@
 function Add-VSEC2ClientVpnEndpointConnectionLogOptions {
     <#
     .SYNOPSIS
-        Adds an AWS::EC2::ClientVpnEndpoint.ConnectionLogOptions resource property to the template. Describes the client connection logging options for the Client VPN endpoint.
+        Adds an AWS::EC2::ClientVpnEndpoint.ConnectionLogOptions resource property to the template. 
 
     .DESCRIPTION
         Adds an AWS::EC2::ClientVpnEndpoint.ConnectionLogOptions resource property to the template.
-Describes the client connection logging options for the Client VPN endpoint.
+
 
     .LINK
         http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-clientvpnendpoint-connectionlogoptions.html
 
     .PARAMETER CloudwatchLogStream
-        The name of the CloudWatch Logs log stream to which the connection data is published.
-
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-clientvpnendpoint-connectionlogoptions.html#cfn-ec2-clientvpnendpoint-connectionlogoptions-cloudwatchlogstream
         PrimitiveType: String
         UpdateType: Mutable
 
     .PARAMETER Enabled
-        Indicates whether connection logging is enabled.
-
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-clientvpnendpoint-connectionlogoptions.html#cfn-ec2-clientvpnendpoint-connectionlogoptions-enabled
         PrimitiveType: Boolean
         UpdateType: Mutable
 
     .PARAMETER CloudwatchLogGroup
-        The name of the CloudWatch Logs log group.
-
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-clientvpnendpoint-connectionlogoptions.html#cfn-ec2-clientvpnendpoint-connectionlogoptions-cloudwatchloggroup
         PrimitiveType: String
         UpdateType: Mutable

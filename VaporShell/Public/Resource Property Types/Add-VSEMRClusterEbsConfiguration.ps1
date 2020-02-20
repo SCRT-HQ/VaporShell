@@ -1,18 +1,16 @@
 function Add-VSEMRClusterEbsConfiguration {
     <#
     .SYNOPSIS
-        Adds an AWS::EMR::Cluster.EbsConfiguration resource property to the template. EbsConfiguration is a subproperty of InstanceFleetConfig or InstanceGroupConfig. EbsConfiguration determines the EBS volumes to attach to EMR cluster instances.
+        Adds an AWS::EMR::Cluster.EbsConfiguration resource property to the template. 
 
     .DESCRIPTION
         Adds an AWS::EMR::Cluster.EbsConfiguration resource property to the template.
-EbsConfiguration is a subproperty of InstanceFleetConfig or InstanceGroupConfig. EbsConfiguration determines the EBS volumes to attach to EMR cluster instances.
+
 
     .LINK
         http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-elasticmapreduce-cluster-ebsconfiguration.html
 
     .PARAMETER EbsBlockDeviceConfigs
-        An array of Amazon EBS volume specifications attached to a cluster instance.
-
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-elasticmapreduce-cluster-ebsconfiguration.html#cfn-elasticmapreduce-cluster-ebsconfiguration-ebsblockdeviceconfigs
         DuplicatesAllowed: False
         ItemType: EbsBlockDeviceConfig
@@ -20,8 +18,6 @@ EbsConfiguration is a subproperty of InstanceFleetConfig or InstanceGroupConfig.
         UpdateType: Mutable
 
     .PARAMETER EbsOptimized
-        Indicates whether an Amazon EBS volume is EBS-optimized.
-
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-elasticmapreduce-cluster-ebsconfiguration.html#cfn-elasticmapreduce-cluster-ebsconfiguration-ebsoptimized
         PrimitiveType: Boolean
         UpdateType: Mutable

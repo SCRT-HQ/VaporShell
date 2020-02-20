@@ -1,12 +1,10 @@
 function New-VSPinpointGCMChannel {
     <#
     .SYNOPSIS
-        Adds an AWS::Pinpoint::GCMChannel resource to the template. A *channel* is a type of platform that you can deliver messages to. You can use the GCM channel to send push notification messages to the Firebase Cloud Messaging (FCM service, which replaced the Google Cloud Messaging (GCM service. Before you use Amazon Pinpoint to send notifications to FCM, you have to enable the GCM channel for an Amazon Pinpoint application.
+        Adds an AWS::Pinpoint::GCMChannel resource to the template. 
 
     .DESCRIPTION
-        Adds an AWS::Pinpoint::GCMChannel resource to the template. A *channel* is a type of platform that you can deliver messages to. You can use the GCM channel to send push notification messages to the Firebase Cloud Messaging (FCM service, which replaced the Google Cloud Messaging (GCM service. Before you use Amazon Pinpoint to send notifications to FCM, you have to enable the GCM channel for an Amazon Pinpoint application.
-
-The GCM Channel resource represents the status and authentication settings of the GCM channel for a specific application. You can use this resource to retrieve information about, update, or disable (delete the GCM channel for an application.
+        Adds an AWS::Pinpoint::GCMChannel resource to the template. 
 
     .LINK
         http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-pinpoint-gcmchannel.html
@@ -15,22 +13,16 @@ The GCM Channel resource represents the status and authentication settings of th
         The logical ID must be alphanumeric (A-Za-z0-9) and unique within the template. Use the logical name to reference the resource in other parts of the template. For example, if you want to map an Amazon Elastic Block Store volume to an Amazon EC2 instance, you reference the logical IDs to associate the block stores with the instance.
 
     .PARAMETER ApiKey
-        The API key, also called the *server key*, that you received from Google to communicate with Google services.
-
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-pinpoint-gcmchannel.html#cfn-pinpoint-gcmchannel-apikey
         PrimitiveType: String
         UpdateType: Mutable
 
     .PARAMETER Enabled
-        Specifies whether to enable the GCM channel for the Amazon Pinpoint application.
-
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-pinpoint-gcmchannel.html#cfn-pinpoint-gcmchannel-enabled
         PrimitiveType: Boolean
         UpdateType: Mutable
 
     .PARAMETER ApplicationId
-        The unique identifier for the Amazon Pinpoint app that the GCM channel applies to.
-
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-pinpoint-gcmchannel.html#cfn-pinpoint-gcmchannel-applicationid
         PrimitiveType: String
         UpdateType: Immutable

@@ -1,10 +1,10 @@
 function New-VSServiceCatalogCloudFormationProduct {
     <#
     .SYNOPSIS
-        Adds an AWS::ServiceCatalog::CloudFormationProduct resource to the template. Specifies a product.
+        Adds an AWS::ServiceCatalog::CloudFormationProduct resource to the template. 
 
     .DESCRIPTION
-        Adds an AWS::ServiceCatalog::CloudFormationProduct resource to the template. Specifies a product.
+        Adds an AWS::ServiceCatalog::CloudFormationProduct resource to the template. 
 
     .LINK
         http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-servicecatalog-cloudformationproduct.html
@@ -13,75 +13,52 @@ function New-VSServiceCatalogCloudFormationProduct {
         The logical ID must be alphanumeric (A-Za-z0-9) and unique within the template. Use the logical name to reference the resource in other parts of the template. For example, if you want to map an Amazon Elastic Block Store volume to an Amazon EC2 instance, you reference the logical IDs to associate the block stores with the instance.
 
     .PARAMETER Owner
-        The owner of the product.
-
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-servicecatalog-cloudformationproduct.html#cfn-servicecatalog-cloudformationproduct-owner
         PrimitiveType: String
         UpdateType: Mutable
 
     .PARAMETER SupportDescription
-        The support information about the product.
-
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-servicecatalog-cloudformationproduct.html#cfn-servicecatalog-cloudformationproduct-supportdescription
         PrimitiveType: String
         UpdateType: Mutable
 
     .PARAMETER Description
-        The description of the product.
-
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-servicecatalog-cloudformationproduct.html#cfn-servicecatalog-cloudformationproduct-description
         PrimitiveType: String
         UpdateType: Mutable
 
     .PARAMETER Distributor
-        The distributor of the product.
-
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-servicecatalog-cloudformationproduct.html#cfn-servicecatalog-cloudformationproduct-distributor
         PrimitiveType: String
         UpdateType: Mutable
 
     .PARAMETER SupportEmail
-        The contact email for product support.
-
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-servicecatalog-cloudformationproduct.html#cfn-servicecatalog-cloudformationproduct-supportemail
         PrimitiveType: String
         UpdateType: Mutable
 
     .PARAMETER AcceptLanguage
-        The language code.
-+  en - English default
-+  jp - Japanese
-+  zh - Chinese
-
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-servicecatalog-cloudformationproduct.html#cfn-servicecatalog-cloudformationproduct-acceptlanguage
         PrimitiveType: String
         UpdateType: Mutable
 
     .PARAMETER SupportUrl
-        The contact URL for product support.
-
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-servicecatalog-cloudformationproduct.html#cfn-servicecatalog-cloudformationproduct-supporturl
         PrimitiveType: String
         UpdateType: Mutable
 
     .PARAMETER Tags
-        One or more tags.
-
         Type: List
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-servicecatalog-cloudformationproduct.html#cfn-servicecatalog-cloudformationproduct-tags
         ItemType: Tag
         UpdateType: Mutable
 
     .PARAMETER Name
-        The name of the product.
-
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-servicecatalog-cloudformationproduct.html#cfn-servicecatalog-cloudformationproduct-name
         PrimitiveType: String
         UpdateType: Mutable
 
     .PARAMETER ProvisioningArtifactParameters
-        The configuration of the provisioning artifact also known as a version.
-
         Type: List
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-servicecatalog-cloudformationproduct.html#cfn-servicecatalog-cloudformationproduct-provisioningartifactparameters
         ItemType: ProvisioningArtifactProperties

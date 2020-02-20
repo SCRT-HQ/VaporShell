@@ -1,27 +1,21 @@
 function Add-VSSSMMaintenanceWindowTaskMaintenanceWindowAutomationParameters {
     <#
     .SYNOPSIS
-        Adds an AWS::SSM::MaintenanceWindowTask.MaintenanceWindowAutomationParameters resource property to the template. The MaintenanceWindowAutomationParameters property type specifies the parameters for an AUTOMATION task type for a maintenance window task in AWS Systems Manager.
+        Adds an AWS::SSM::MaintenanceWindowTask.MaintenanceWindowAutomationParameters resource property to the template. 
 
     .DESCRIPTION
         Adds an AWS::SSM::MaintenanceWindowTask.MaintenanceWindowAutomationParameters resource property to the template.
-The MaintenanceWindowAutomationParameters property type specifies the parameters for an AUTOMATION task type for a maintenance window task in AWS Systems Manager.
 
-MaintenanceWindowAutomationParameters is a property of the TaskInvocationParameters: https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ssm-maintenancewindowtask-taskinvocationparameters.html property type.
 
     .LINK
         http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ssm-maintenancewindowtask-maintenancewindowautomationparameters.html
 
     .PARAMETER Parameters
-        The parameters for the AUTOMATION task.
-
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ssm-maintenancewindowtask-maintenancewindowautomationparameters.html#cfn-ssm-maintenancewindowtask-maintenancewindowautomationparameters-parameters
         PrimitiveType: Json
         UpdateType: Mutable
 
     .PARAMETER DocumentVersion
-        The version of an Automation document to use during task execution.
-
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ssm-maintenancewindowtask-maintenancewindowautomationparameters.html#cfn-ssm-maintenancewindowtask-maintenancewindowautomationparameters-documentversion
         PrimitiveType: String
         UpdateType: Mutable

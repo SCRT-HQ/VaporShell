@@ -1,10 +1,10 @@
 function New-VSCognitoUserPoolGroup {
     <#
     .SYNOPSIS
-        Adds an AWS::Cognito::UserPoolGroup resource to the template. The AWS::Cognito::UserPoolGroup resource creates a user group in an Amazon Cognito user pool.
+        Adds an AWS::Cognito::UserPoolGroup resource to the template. 
 
     .DESCRIPTION
-        Adds an AWS::Cognito::UserPoolGroup resource to the template. The AWS::Cognito::UserPoolGroup resource creates a user group in an Amazon Cognito user pool.
+        Adds an AWS::Cognito::UserPoolGroup resource to the template. 
 
     .LINK
         http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-cognito-userpoolgroup.html
@@ -13,38 +13,26 @@ function New-VSCognitoUserPoolGroup {
         The logical ID must be alphanumeric (A-Za-z0-9) and unique within the template. Use the logical name to reference the resource in other parts of the template. For example, if you want to map an Amazon Elastic Block Store volume to an Amazon EC2 instance, you reference the logical IDs to associate the block stores with the instance.
 
     .PARAMETER GroupName
-        The name of the group. Must be unique.
-
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-cognito-userpoolgroup.html#cfn-cognito-userpoolgroup-groupname
         PrimitiveType: String
         UpdateType: Immutable
 
     .PARAMETER Description
-        A string containing the description of the group.
-
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-cognito-userpoolgroup.html#cfn-cognito-userpoolgroup-description
         PrimitiveType: String
         UpdateType: Mutable
 
     .PARAMETER UserPoolId
-        The user pool ID for the user pool.
-
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-cognito-userpoolgroup.html#cfn-cognito-userpoolgroup-userpoolid
         PrimitiveType: String
         UpdateType: Immutable
 
     .PARAMETER Precedence
-        A nonnegative integer value that specifies the precedence of this group relative to the other groups that a user can belong to in the user pool. Zero is the highest precedence value. Groups with lower Precedence values take precedence over groups with higher or null Precedence values. If a user belongs to two or more groups, it is the group with the lowest precedence value whose role ARN will be used in the cognito:roles and cognito:preferred_role claims in the user's tokens.
-Two groups can have the same Precedence value. If this happens, neither group takes precedence over the other. If two groups with the same Precedence have the same role ARN, that role is used in the cognito:preferred_role claim in tokens for users in each group. If the two groups have different role ARNs, the cognito:preferred_role claim is not set in users' tokens.
-The default Precedence value is null.
-
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-cognito-userpoolgroup.html#cfn-cognito-userpoolgroup-precedence
         PrimitiveType: Double
         UpdateType: Mutable
 
     .PARAMETER RoleArn
-        The role ARN for the group.
-
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-cognito-userpoolgroup.html#cfn-cognito-userpoolgroup-rolearn
         PrimitiveType: String
         UpdateType: Mutable

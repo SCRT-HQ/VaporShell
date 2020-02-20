@@ -1,18 +1,16 @@
 function Add-VSAppMeshRouteTcpRoute {
     <#
     .SYNOPSIS
-        Adds an AWS::AppMesh::Route.TcpRoute resource property to the template. An object representing the TCP routing specification for a route.
+        Adds an AWS::AppMesh::Route.TcpRoute resource property to the template. 
 
     .DESCRIPTION
         Adds an AWS::AppMesh::Route.TcpRoute resource property to the template.
-An object representing the TCP routing specification for a route.
+
 
     .LINK
         http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-appmesh-route-tcproute.html
 
     .PARAMETER Action
-        The action to take if a match is determined.
-
         Type: TcpRouteAction
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-appmesh-route-tcproute.html#cfn-appmesh-route-tcproute-action
         UpdateType: Mutable

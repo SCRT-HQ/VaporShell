@@ -1,33 +1,26 @@
 function Add-VSEC2SpotFleetSpotPlacement {
     <#
     .SYNOPSIS
-        Adds an AWS::EC2::SpotFleet.SpotPlacement resource property to the template. Describes Spot Instance placement.
+        Adds an AWS::EC2::SpotFleet.SpotPlacement resource property to the template. 
 
     .DESCRIPTION
         Adds an AWS::EC2::SpotFleet.SpotPlacement resource property to the template.
-Describes Spot Instance placement.
+
 
     .LINK
         http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-spotfleet-spotfleetrequestconfigdata-launchspecifications-placement.html
 
     .PARAMETER AvailabilityZone
-        The Availability Zone.
-To specify multiple Availability Zones, separate them using commas; for example, "us-west-2a, us-west-2b".
-
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-spotfleet-spotfleetrequestconfigdata-launchspecifications-placement.html#cfn-ec2-spotfleet-spotplacement-availabilityzone
         PrimitiveType: String
         UpdateType: Mutable
 
     .PARAMETER GroupName
-        The name of the placement group.
-
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-spotfleet-spotfleetrequestconfigdata-launchspecifications-placement.html#cfn-ec2-spotfleet-spotplacement-groupname
         PrimitiveType: String
         UpdateType: Mutable
 
     .PARAMETER Tenancy
-        The tenancy of the instance if the instance is running in a VPC. An instance with a tenancy of dedicated runs on single-tenant hardware. The host tenancy is not supported for Spot Instances.
-
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-spotfleet-spotfleetrequestconfigdata-launchspecifications-placement.html#cfn-ec2-spotfleet-spotplacement-tenancy
         PrimitiveType: String
         UpdateType: Mutable

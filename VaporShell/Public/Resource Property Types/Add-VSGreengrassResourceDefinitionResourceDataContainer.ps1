@@ -1,52 +1,36 @@
 function Add-VSGreengrassResourceDefinitionResourceDataContainer {
     <#
     .SYNOPSIS
-        Adds an AWS::Greengrass::ResourceDefinition.ResourceDataContainer resource property to the template. <a name="aws-properties-greengrass-resourcedefinition-resourcedatacontainer-description"></a>A container for resource data, which defines the resource type. The container takes only one of the following supported resource data types: LocalDeviceResourceData, LocalVolumeResourceData, SageMakerMachineLearningModelResourceData, S3MachineLearningModelResourceData, or SecretsManagerSecretResourceData.
+        Adds an AWS::Greengrass::ResourceDefinition.ResourceDataContainer resource property to the template. 
 
     .DESCRIPTION
         Adds an AWS::Greengrass::ResourceDefinition.ResourceDataContainer resource property to the template.
-<a name="aws-properties-greengrass-resourcedefinition-resourcedatacontainer-description"></a>A container for resource data, which defines the resource type. The container takes only one of the following supported resource data types: LocalDeviceResourceData, LocalVolumeResourceData, SageMakerMachineLearningModelResourceData, S3MachineLearningModelResourceData, or SecretsManagerSecretResourceData.
 
-**Note**
-
-Only one resource type can be defined for a ResourceDataContainer instance.
-
-<a name="aws-properties-greengrass-resourcedefinition-resourcedatacontainer-inheritance"></a> In an AWS CloudFormation template, ResourceDataContainer is a property of the https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-greengrass-resourcedefinition-resourceinstance.html: https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-greengrass-resourcedefinition-resourceinstance.html property type.
 
     .LINK
         http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-greengrass-resourcedefinition-resourcedatacontainer.html
 
     .PARAMETER SecretsManagerSecretResourceData
-        Settings for a secret resource.
-
         Type: SecretsManagerSecretResourceData
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-greengrass-resourcedefinition-resourcedatacontainer.html#cfn-greengrass-resourcedefinition-resourcedatacontainer-secretsmanagersecretresourcedata
         UpdateType: Immutable
 
     .PARAMETER SageMakerMachineLearningModelResourceData
-        Settings for a machine learning resource saved as an Amazon SageMaker training job.
-
         Type: SageMakerMachineLearningModelResourceData
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-greengrass-resourcedefinition-resourcedatacontainer.html#cfn-greengrass-resourcedefinition-resourcedatacontainer-sagemakermachinelearningmodelresourcedata
         UpdateType: Immutable
 
     .PARAMETER LocalVolumeResourceData
-        Settings for a local volume resource.
-
         Type: LocalVolumeResourceData
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-greengrass-resourcedefinition-resourcedatacontainer.html#cfn-greengrass-resourcedefinition-resourcedatacontainer-localvolumeresourcedata
         UpdateType: Immutable
 
     .PARAMETER LocalDeviceResourceData
-        Settings for a local device resource.
-
         Type: LocalDeviceResourceData
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-greengrass-resourcedefinition-resourcedatacontainer.html#cfn-greengrass-resourcedefinition-resourcedatacontainer-localdeviceresourcedata
         UpdateType: Immutable
 
     .PARAMETER S3MachineLearningModelResourceData
-        Settings for a machine learning resource stored in Amazon S3.
-
         Type: S3MachineLearningModelResourceData
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-greengrass-resourcedefinition-resourcedatacontainer.html#cfn-greengrass-resourcedefinition-resourcedatacontainer-s3machinelearningmodelresourcedata
         UpdateType: Immutable

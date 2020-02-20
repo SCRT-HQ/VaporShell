@@ -85,6 +85,9 @@ function Update-VSStackSet {
         [String]
         $ProfileName = $env:AWS_PROFILE
     )
+    Begin {
+        Import-AWSSDK
+    }
     Process {
         if ($PSBoundParameters.Keys -contains "Tags") {
             $PSBoundParameters["Tags"] += (VSStackTag BuiltWith VaporShell)

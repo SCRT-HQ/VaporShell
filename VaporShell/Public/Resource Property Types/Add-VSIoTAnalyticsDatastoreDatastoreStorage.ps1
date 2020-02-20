@@ -1,25 +1,21 @@
 function Add-VSIoTAnalyticsDatastoreDatastoreStorage {
     <#
     .SYNOPSIS
-        Adds an AWS::IoTAnalytics::Datastore.DatastoreStorage resource property to the template. Where data store data is stored.
+        Adds an AWS::IoTAnalytics::Datastore.DatastoreStorage resource property to the template. 
 
     .DESCRIPTION
         Adds an AWS::IoTAnalytics::Datastore.DatastoreStorage resource property to the template.
-Where data store data is stored.
+
 
     .LINK
         http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iotanalytics-datastore-datastorestorage.html
 
     .PARAMETER CustomerManagedS3
-        Use this to store data store data in an S3 bucket that you manage. The choice of service-managed or customer-managed S3 storage cannot be changed after creation of the data store.
-
         Type: CustomerManagedS3
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iotanalytics-datastore-datastorestorage.html#cfn-iotanalytics-datastore-datastorestorage-customermanageds3
         UpdateType: Mutable
 
     .PARAMETER ServiceManagedS3
-        Use this to store data store data in an S3 bucket managed by the AWS IoT Analytics service. The choice of service-managed or customer-managed S3 storage cannot be changed after creation of the data store.
-
         Type: ServiceManagedS3
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iotanalytics-datastore-datastorestorage.html#cfn-iotanalytics-datastore-datastorestorage-servicemanageds3
         UpdateType: Mutable

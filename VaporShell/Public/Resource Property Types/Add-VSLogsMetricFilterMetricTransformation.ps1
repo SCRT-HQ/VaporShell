@@ -1,39 +1,31 @@
 function Add-VSLogsMetricFilterMetricTransformation {
     <#
     .SYNOPSIS
-        Adds an AWS::Logs::MetricFilter.MetricTransformation resource property to the template. MetricTransformation is a property of the AWS::Logs::MetricFilter resource that describes how to transform log streams into a CloudWatch metric.
+        Adds an AWS::Logs::MetricFilter.MetricTransformation resource property to the template. 
 
     .DESCRIPTION
         Adds an AWS::Logs::MetricFilter.MetricTransformation resource property to the template.
-MetricTransformation is a property of the AWS::Logs::MetricFilter resource that describes how to transform log streams into a CloudWatch metric.
+
 
     .LINK
         http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-logs-metricfilter-metrictransformation.html
 
     .PARAMETER DefaultValue
-        Optional The value to emit when a filter pattern does not match a log event. This value can be null.
-
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-logs-metricfilter-metrictransformation.html#cfn-cwl-metricfilter-metrictransformation-defaultvalue
         PrimitiveType: Double
         UpdateType: Mutable
 
     .PARAMETER MetricName
-        The name of the CloudWatch metric.
-
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-logs-metricfilter-metrictransformation.html#cfn-cwl-metricfilter-metrictransformation-metricname
         PrimitiveType: String
         UpdateType: Mutable
 
     .PARAMETER MetricNamespace
-        The namespace of the CloudWatch metric.
-
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-logs-metricfilter-metrictransformation.html#cfn-cwl-metricfilter-metrictransformation-metricnamespace
         PrimitiveType: String
         UpdateType: Mutable
 
     .PARAMETER MetricValue
-        The value that is published to the CloudWatch metric. For example, if you're counting the occurrences of a particular term like Error, specify 1 for the metric value. If you're counting the number of bytes transferred, reference the value that is in the log event by using $ followed by the name of the field that you specified in the filter pattern, such as $size.
-
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-logs-metricfilter-metrictransformation.html#cfn-cwl-metricfilter-metrictransformation-metricvalue
         PrimitiveType: String
         UpdateType: Mutable

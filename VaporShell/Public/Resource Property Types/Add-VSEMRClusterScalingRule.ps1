@@ -1,39 +1,31 @@
 function Add-VSEMRClusterScalingRule {
     <#
     .SYNOPSIS
-        Adds an AWS::EMR::Cluster.ScalingRule resource property to the template. ScalingRule is a subproperty of the AutoScalingPolicy property type. ScalingRule defines the scale-in or scale-out rules for scaling activity, including the CloudWatch metric alarm that triggers activity, how EC2 instances are added or removed, and the periodicity of adjustments. The automatic scaling policy for an instance group can comprise one or more automatic scaling rules.
+        Adds an AWS::EMR::Cluster.ScalingRule resource property to the template. 
 
     .DESCRIPTION
         Adds an AWS::EMR::Cluster.ScalingRule resource property to the template.
-ScalingRule is a subproperty of the AutoScalingPolicy property type. ScalingRule defines the scale-in or scale-out rules for scaling activity, including the CloudWatch metric alarm that triggers activity, how EC2 instances are added or removed, and the periodicity of adjustments. The automatic scaling policy for an instance group can comprise one or more automatic scaling rules.
+
 
     .LINK
         http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-elasticmapreduce-cluster-scalingrule.html
 
     .PARAMETER Action
-        The conditions that trigger an automatic scaling activity.
-
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-elasticmapreduce-cluster-scalingrule.html#cfn-elasticmapreduce-cluster-scalingrule-action
         Type: ScalingAction
         UpdateType: Mutable
 
     .PARAMETER Description
-        A friendly, more verbose description of the automatic scaling rule.
-
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-elasticmapreduce-cluster-scalingrule.html#cfn-elasticmapreduce-cluster-scalingrule-description
         PrimitiveType: String
         UpdateType: Mutable
 
     .PARAMETER Name
-        The name used to identify an automatic scaling rule. Rule names must be unique within a scaling policy.
-
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-elasticmapreduce-cluster-scalingrule.html#cfn-elasticmapreduce-cluster-scalingrule-name
         PrimitiveType: String
         UpdateType: Mutable
 
     .PARAMETER Trigger
-        The CloudWatch alarm definition that determines when automatic scaling activity is triggered.
-
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-elasticmapreduce-cluster-scalingrule.html#cfn-elasticmapreduce-cluster-scalingrule-trigger
         Type: ScalingTrigger
         UpdateType: Mutable

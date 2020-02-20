@@ -1,14 +1,10 @@
 function New-VSCodeBuildSourceCredential {
     <#
     .SYNOPSIS
-        Adds an AWS::CodeBuild::SourceCredential resource to the template. Information about the credentials for a GitHub, GitHub Enterprise, or Bitbucket repository. We strongly recommend that you use AWS Secrets Manager to store your credentials or the NoEcho parameter to mask your credentials. If you use Secrets Manager, you must have secrets in your secrets manager. For more information, see  Using Dynamic References to Specify Template Values: https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/dynamic-references.html#dynamic-references-secretsmanager.
+        Adds an AWS::CodeBuild::SourceCredential resource to the template. 
 
     .DESCRIPTION
-        Adds an AWS::CodeBuild::SourceCredential resource to the template. Information about the credentials for a GitHub, GitHub Enterprise, or Bitbucket repository. We strongly recommend that you use AWS Secrets Manager to store your credentials or the NoEcho parameter to mask your credentials. If you use Secrets Manager, you must have secrets in your secrets manager. For more information, see  Using Dynamic References to Specify Template Values: https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/dynamic-references.html#dynamic-references-secretsmanager.
-
-**Important**
-
-For security purposes, do not use plain text in your CloudFormation template to store your credentials.
+        Adds an AWS::CodeBuild::SourceCredential resource to the template. 
 
     .LINK
         http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-codebuild-sourcecredential.html
@@ -17,29 +13,21 @@ For security purposes, do not use plain text in your CloudFormation template to 
         The logical ID must be alphanumeric (A-Za-z0-9) and unique within the template. Use the logical name to reference the resource in other parts of the template. For example, if you want to map an Amazon Elastic Block Store volume to an Amazon EC2 instance, you reference the logical IDs to associate the block stores with the instance.
 
     .PARAMETER ServerType
-        The type of source provider. The valid options are GITHUB, GITHUB_ENTERPRISE, or BITBUCKET.
-
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-codebuild-sourcecredential.html#cfn-codebuild-sourcecredential-servertype
         PrimitiveType: String
         UpdateType: Immutable
 
     .PARAMETER Username
-        The Bitbucket username when the authType is BASIC_AUTH. This parameter is not valid for other types of source providers or connections.
-
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-codebuild-sourcecredential.html#cfn-codebuild-sourcecredential-username
         PrimitiveType: String
         UpdateType: Mutable
 
     .PARAMETER Token
-        For GitHub or GitHub Enterprise, this is the personal access token. For Bitbucket, this is the app password.
-
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-codebuild-sourcecredential.html#cfn-codebuild-sourcecredential-token
         PrimitiveType: String
         UpdateType: Mutable
 
     .PARAMETER AuthType
-        The type of authentication used by the credentials. Valid options are OAUTH, BASIC_AUTH, or PERSONAL_ACCESS_TOKEN.
-
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-codebuild-sourcecredential.html#cfn-codebuild-sourcecredential-authtype
         PrimitiveType: String
         UpdateType: Mutable

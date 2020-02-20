@@ -2,22 +2,22 @@ function Get-VSChangeSet {
     <#
     .SYNOPSIS
     Gets the list of change sets for a stack or describes a specific change set.
-    
+
     .PARAMETER Description
     Switch to get a change set description.
-    
+
     .PARAMETER List
     Switch to get the list of change sets for a specific stack.
-    
+
     .PARAMETER ChangeSetName
     The name or ID of the change set that you are trying to describe.
-    
+
     .PARAMETER StackName
     The name or ID of the stack that you are trying to get change set info for.
-    
+
     .PARAMETER ProfileName
     The name of the configuration profile to deploy the stack with. Defaults to $env:AWS_PROFILE, if set.
-    
+
     .FUNCTIONALITY
     Vaporshell
     #>
@@ -40,6 +40,9 @@ function Get-VSChangeSet {
         [String]
         $ProfileName = $env:AWS_PROFILE
     )
+    Begin {
+        Import-AWSSDK
+    }
     Process {
         $method = switch ($PSCmdlet.ParameterSetName) {
             Description {

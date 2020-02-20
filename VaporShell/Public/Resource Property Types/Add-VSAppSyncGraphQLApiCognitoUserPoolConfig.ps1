@@ -1,32 +1,26 @@
 function Add-VSAppSyncGraphQLApiCognitoUserPoolConfig {
     <#
     .SYNOPSIS
-        Adds an AWS::AppSync::GraphQLApi.CognitoUserPoolConfig resource property to the template. Describes an Amazon Cognito user pool configuration.
+        Adds an AWS::AppSync::GraphQLApi.CognitoUserPoolConfig resource property to the template. 
 
     .DESCRIPTION
         Adds an AWS::AppSync::GraphQLApi.CognitoUserPoolConfig resource property to the template.
-Describes an Amazon Cognito user pool configuration.
+
 
     .LINK
         http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-appsync-graphqlapi-cognitouserpoolconfig.html
 
     .PARAMETER AppIdClientRegex
-        A regular expression for validating the incoming Amazon Cognito user pool app client ID.
-
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-appsync-graphqlapi-cognitouserpoolconfig.html#cfn-appsync-graphqlapi-cognitouserpoolconfig-appidclientregex
         PrimitiveType: String
         UpdateType: Mutable
 
     .PARAMETER UserPoolId
-        The user pool ID.
-
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-appsync-graphqlapi-cognitouserpoolconfig.html#cfn-appsync-graphqlapi-cognitouserpoolconfig-userpoolid
         PrimitiveType: String
         UpdateType: Mutable
 
     .PARAMETER AwsRegion
-        The AWS Region in which the user pool was created.
-
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-appsync-graphqlapi-cognitouserpoolconfig.html#cfn-appsync-graphqlapi-cognitouserpoolconfig-awsregion
         PrimitiveType: String
         UpdateType: Mutable

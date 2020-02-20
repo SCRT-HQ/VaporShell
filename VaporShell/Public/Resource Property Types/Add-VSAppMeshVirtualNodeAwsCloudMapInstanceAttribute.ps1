@@ -1,25 +1,21 @@
 function Add-VSAppMeshVirtualNodeAwsCloudMapInstanceAttribute {
     <#
     .SYNOPSIS
-        Adds an AWS::AppMesh::VirtualNode.AwsCloudMapInstanceAttribute resource property to the template. An object representing the AWS Cloud Map attribute information for your virtual node.
+        Adds an AWS::AppMesh::VirtualNode.AwsCloudMapInstanceAttribute resource property to the template. 
 
     .DESCRIPTION
         Adds an AWS::AppMesh::VirtualNode.AwsCloudMapInstanceAttribute resource property to the template.
-An object representing the AWS Cloud Map attribute information for your virtual node.
+
 
     .LINK
         http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-appmesh-virtualnode-awscloudmapinstanceattribute.html
 
     .PARAMETER Value
-        The value of an AWS Cloud Map service instance attribute key. Any AWS Cloud Map service instance that contains the specified key and value is returned.
-
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-appmesh-virtualnode-awscloudmapinstanceattribute.html#cfn-appmesh-virtualnode-awscloudmapinstanceattribute-value
         PrimitiveType: String
         UpdateType: Mutable
 
     .PARAMETER Key
-        The name of an AWS Cloud Map service instance attribute key. Any AWS Cloud Map service instance that contains the specified key and value is returned.
-
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-appmesh-virtualnode-awscloudmapinstanceattribute.html#cfn-appmesh-virtualnode-awscloudmapinstanceattribute-key
         PrimitiveType: String
         UpdateType: Mutable

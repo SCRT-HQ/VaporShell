@@ -1,18 +1,16 @@
 function Add-VSKinesisAnalyticsV2ApplicationApplicationSnapshotConfiguration {
     <#
     .SYNOPSIS
-        Adds an AWS::KinesisAnalyticsV2::Application.ApplicationSnapshotConfiguration resource property to the template. Describes whether snapshots are enabled for a Java-based Kinesis Data Analytics application.
+        Adds an AWS::KinesisAnalyticsV2::Application.ApplicationSnapshotConfiguration resource property to the template. 
 
     .DESCRIPTION
         Adds an AWS::KinesisAnalyticsV2::Application.ApplicationSnapshotConfiguration resource property to the template.
-Describes whether snapshots are enabled for a Java-based Kinesis Data Analytics application.
+
 
     .LINK
         http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-kinesisanalyticsv2-application-applicationsnapshotconfiguration.html
 
     .PARAMETER SnapshotsEnabled
-        Describes whether snapshots are enabled for a Java-based Kinesis Data Analytics application.
-
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-kinesisanalyticsv2-application-applicationsnapshotconfiguration.html#cfn-kinesisanalyticsv2-application-applicationsnapshotconfiguration-snapshotsenabled
         PrimitiveType: Boolean
         UpdateType: Mutable

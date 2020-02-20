@@ -1,10 +1,10 @@
 function New-VSSESConfigurationSet {
     <#
     .SYNOPSIS
-        Adds an AWS::SES::ConfigurationSet resource to the template. Specifies a configuration set. Configuration sets let you create groups of rules that you can apply to the emails you send using Amazon SES. For more information about using configuration sets, see Using Amazon SES Configuration Sets: https://docs.aws.amazon.com/ses/latest/DeveloperGuide/using-configuration-sets.html in the Amazon SES Developer Guide: https://docs.aws.amazon.com/ses/latest/DeveloperGuide/.
+        Adds an AWS::SES::ConfigurationSet resource to the template. 
 
     .DESCRIPTION
-        Adds an AWS::SES::ConfigurationSet resource to the template. Specifies a configuration set. Configuration sets let you create groups of rules that you can apply to the emails you send using Amazon SES. For more information about using configuration sets, see Using Amazon SES Configuration Sets: https://docs.aws.amazon.com/ses/latest/DeveloperGuide/using-configuration-sets.html in the Amazon SES Developer Guide: https://docs.aws.amazon.com/ses/latest/DeveloperGuide/.
+        Adds an AWS::SES::ConfigurationSet resource to the template. 
 
     .LINK
         http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ses-configurationset.html
@@ -13,10 +13,6 @@ function New-VSSESConfigurationSet {
         The logical ID must be alphanumeric (A-Za-z0-9) and unique within the template. Use the logical name to reference the resource in other parts of the template. For example, if you want to map an Amazon Elastic Block Store volume to an Amazon EC2 instance, you reference the logical IDs to associate the block stores with the instance.
 
     .PARAMETER Name
-        The name of the configuration set. The name must:
-+ Only contain ASCII letters a–z, A–Z, numbers 0–9, underscores _, or dashes -.
-+ Contain 64 characters or fewer.
-
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ses-configurationset.html#cfn-ses-configurationset-name
         UpdateType: Immutable
         PrimitiveType: String

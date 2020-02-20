@@ -1,42 +1,31 @@
 function Add-VSCloudWatchAlarmMetricStat {
     <#
     .SYNOPSIS
-        Adds an AWS::CloudWatch::Alarm.MetricStat resource property to the template. This structure defines the metric to be returned, along with the statistics, period, and units.
+        Adds an AWS::CloudWatch::Alarm.MetricStat resource property to the template. 
 
     .DESCRIPTION
         Adds an AWS::CloudWatch::Alarm.MetricStat resource property to the template.
-This structure defines the metric to be returned, along with the statistics, period, and units.
 
-MetricStat is a property of the MetricDataQuery: https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-cloudwatch-alarm-metricdataquery.html property type.
 
     .LINK
         http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-cloudwatch-alarm-metricstat.html
 
     .PARAMETER Metric
-        The metric to return, including the metric name, namespace, and dimensions.
-
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-cloudwatch-alarm-metricstat.html#cfn-cloudwatch-alarm-metricstat-metric
         Type: Metric
         UpdateType: Mutable
 
     .PARAMETER Period
-        The period, in seconds, to use when retrieving the metric.
-
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-cloudwatch-alarm-metricstat.html#cfn-cloudwatch-alarm-metricstat-period
         PrimitiveType: Integer
         UpdateType: Mutable
 
     .PARAMETER Stat
-        The statistic to return. It can include any CloudWatch statistic or extended statistic.
-
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-cloudwatch-alarm-metricstat.html#cfn-cloudwatch-alarm-metricstat-stat
         PrimitiveType: String
         UpdateType: Mutable
 
     .PARAMETER Unit
-        The unit to use for the returned data points.
-Valid values are: Seconds, Microseconds, Milliseconds, Bytes, Kilobytes, Megabytes, Gigabytes, Terabytes, Bits, Kilobits, Megabits, Gigabits, Terabits, Percent, Count, Bytes/Second, Kilobytes/Second, Megabytes/Second, Gigabytes/Second, Terabytes/Second, Bits/Second, Kilobits/Second, Megabits/Second, Gigabits/Second, Terabits/Second, Count/Second, or None.
-
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-cloudwatch-alarm-metricstat.html#cfn-cloudwatch-alarm-metricstat-unit
         PrimitiveType: String
         UpdateType: Mutable

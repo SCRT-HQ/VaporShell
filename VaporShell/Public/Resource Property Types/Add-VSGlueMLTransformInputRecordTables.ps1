@@ -1,18 +1,16 @@
 function Add-VSGlueMLTransformInputRecordTables {
     <#
     .SYNOPSIS
-        Adds an AWS::Glue::MLTransform.InputRecordTables resource property to the template. A list of AWS Glue table definitions used by the transform.
+        Adds an AWS::Glue::MLTransform.InputRecordTables resource property to the template. 
 
     .DESCRIPTION
         Adds an AWS::Glue::MLTransform.InputRecordTables resource property to the template.
-A list of AWS Glue table definitions used by the transform.
+
 
     .LINK
         http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-glue-mltransform-inputrecordtables.html
 
     .PARAMETER GlueTables
-        The database and table in the AWS Glue Data Catalog that is used for input or output data.
-
         Type: List
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-glue-mltransform-inputrecordtables.html#cfn-glue-mltransform-inputrecordtables-gluetables
         ItemType: GlueTables

@@ -1,32 +1,26 @@
 function Add-VSGluePartitionPartitionInput {
     <#
     .SYNOPSIS
-        Adds an AWS::Glue::Partition.PartitionInput resource property to the template. The structure used to create and update a partition.
+        Adds an AWS::Glue::Partition.PartitionInput resource property to the template. 
 
     .DESCRIPTION
         Adds an AWS::Glue::Partition.PartitionInput resource property to the template.
-The structure used to create and update a partition.
+
 
     .LINK
         http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-glue-partition-partitioninput.html
 
     .PARAMETER Parameters
-        These key-value pairs define partition parameters.
-
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-glue-partition-partitioninput.html#cfn-glue-partition-partitioninput-parameters
         PrimitiveType: Json
         UpdateType: Mutable
 
     .PARAMETER StorageDescriptor
-        Provides information about the physical location where the partition is stored.
-
         Type: StorageDescriptor
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-glue-partition-partitioninput.html#cfn-glue-partition-partitioninput-storagedescriptor
         UpdateType: Mutable
 
     .PARAMETER Values
-        The values of the partition. Although this parameter is not required by the SDK, you must specify this parameter for a valid input.
-
         PrimitiveItemType: String
         Type: List
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-glue-partition-partitioninput.html#cfn-glue-partition-partitioninput-values

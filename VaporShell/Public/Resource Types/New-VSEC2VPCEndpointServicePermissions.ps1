@@ -1,12 +1,10 @@
 function New-VSEC2VPCEndpointServicePermissions {
     <#
     .SYNOPSIS
-        Adds an AWS::EC2::VPCEndpointServicePermissions resource to the template. Grant or revoke permissions for service consumers (IAM users, IAM roles, and AWS accounts to connect to a VPC endpoint service.
+        Adds an AWS::EC2::VPCEndpointServicePermissions resource to the template. 
 
     .DESCRIPTION
-        Adds an AWS::EC2::VPCEndpointServicePermissions resource to the template. Grant or revoke permissions for service consumers (IAM users, IAM roles, and AWS accounts to connect to a VPC endpoint service.
-
-If you grant permissions to all principals, the service is public. Any users who know the name of a public service can send a request to attach an endpoint. If the service does not require manual approval, attachments are automatically approved.
+        Adds an AWS::EC2::VPCEndpointServicePermissions resource to the template. 
 
     .LINK
         http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ec2-vpcendpointservicepermissions.html
@@ -15,16 +13,12 @@ If you grant permissions to all principals, the service is public. Any users who
         The logical ID must be alphanumeric (A-Za-z0-9) and unique within the template. Use the logical name to reference the resource in other parts of the template. For example, if you want to map an Amazon Elastic Block Store volume to an Amazon EC2 instance, you reference the logical IDs to associate the block stores with the instance.
 
     .PARAMETER AllowedPrincipals
-        The Amazon Resource Names ARN of one or more principals IAM users, IAM roles, and AWS accounts. Permissions are granted to the principals in this list. To grant permissions to all principals, specify an asterisk *. Permissions are revoked for principals not in this list. If the list is empty, then all permissions are revoked.
-
         PrimitiveItemType: String
         Type: List
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ec2-vpcendpointservicepermissions.html#cfn-ec2-vpcendpointservicepermissions-allowedprincipals
         UpdateType: Mutable
 
     .PARAMETER ServiceId
-        The ID of the service.
-
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ec2-vpcendpointservicepermissions.html#cfn-ec2-vpcendpointservicepermissions-serviceid
         PrimitiveType: String
         UpdateType: Immutable

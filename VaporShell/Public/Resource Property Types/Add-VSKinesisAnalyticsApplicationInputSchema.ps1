@@ -1,35 +1,27 @@
 function Add-VSKinesisAnalyticsApplicationInputSchema {
     <#
     .SYNOPSIS
-        Adds an AWS::KinesisAnalytics::Application.InputSchema resource property to the template. Describes the format of the data in the streaming source, and how each data element maps to corresponding columns in the in-application stream that is being created.
+        Adds an AWS::KinesisAnalytics::Application.InputSchema resource property to the template. 
 
     .DESCRIPTION
         Adds an AWS::KinesisAnalytics::Application.InputSchema resource property to the template.
-Describes the format of the data in the streaming source, and how each data element maps to corresponding columns in the in-application stream that is being created.
 
-Also used to describe the format of the reference data source.
 
     .LINK
         http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-kinesisanalytics-application-inputschema.html
 
     .PARAMETER RecordEncoding
-        Specifies the encoding of the records in the streaming source. For example, UTF-8.
-
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-kinesisanalytics-application-inputschema.html#cfn-kinesisanalytics-application-inputschema-recordencoding
         PrimitiveType: String
         UpdateType: Mutable
 
     .PARAMETER RecordColumns
-        A list of RecordColumn objects.
-
         Type: List
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-kinesisanalytics-application-inputschema.html#cfn-kinesisanalytics-application-inputschema-recordcolumns
         ItemType: RecordColumn
         UpdateType: Mutable
 
     .PARAMETER RecordFormat
-        Specifies the format of the records on the streaming source.
-
         Type: RecordFormat
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-kinesisanalytics-application-inputschema.html#cfn-kinesisanalytics-application-inputschema-recordformat
         UpdateType: Mutable

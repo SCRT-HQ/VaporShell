@@ -1,18 +1,16 @@
 function Add-VSIoTEventsDetectorModelResetTimer {
     <#
     .SYNOPSIS
-        Adds an AWS::IoTEvents::DetectorModel.ResetTimer resource property to the template. Information needed to reset the timer.
+        Adds an AWS::IoTEvents::DetectorModel.ResetTimer resource property to the template. 
 
     .DESCRIPTION
         Adds an AWS::IoTEvents::DetectorModel.ResetTimer resource property to the template.
-Information needed to reset the timer.
+
 
     .LINK
         http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iotevents-detectormodel-resettimer.html
 
     .PARAMETER TimerName
-        The name of the timer.
-
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iotevents-detectormodel-resettimer.html#cfn-iotevents-detectormodel-resettimer-timername
         PrimitiveType: String
         UpdateType: Mutable

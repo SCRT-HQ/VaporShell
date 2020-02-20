@@ -1,10 +1,10 @@
 function New-VSApiGatewayV2Api {
     <#
     .SYNOPSIS
-        Adds an AWS::ApiGatewayV2::Api resource to the template. The AWS::ApiGatewayV2::Api resource creates an API. Currently only WebSocket APIs are supported. For more information about WebSocket APIs, see About WebSocket APIs in API Gateway: https://docs.aws.amazon.com/apigateway/latest/developerguide/apigateway-websocket-api-overview.html in the *API Gateway Developer Guide*.
+        Adds an AWS::ApiGatewayV2::Api resource to the template. 
 
     .DESCRIPTION
-        Adds an AWS::ApiGatewayV2::Api resource to the template. The AWS::ApiGatewayV2::Api resource creates an API. Currently only WebSocket APIs are supported. For more information about WebSocket APIs, see About WebSocket APIs in API Gateway: https://docs.aws.amazon.com/apigateway/latest/developerguide/apigateway-websocket-api-overview.html in the *API Gateway Developer Guide*.
+        Adds an AWS::ApiGatewayV2::Api resource to the template. 
 
     .LINK
         http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-apigatewayv2-api.html
@@ -13,113 +13,81 @@ function New-VSApiGatewayV2Api {
         The logical ID must be alphanumeric (A-Za-z0-9) and unique within the template. Use the logical name to reference the resource in other parts of the template. For example, if you want to map an Amazon Elastic Block Store volume to an Amazon EC2 instance, you reference the logical IDs to associate the block stores with the instance.
 
     .PARAMETER RouteSelectionExpression
-        The route selection expression for the API.
-
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-apigatewayv2-api.html#cfn-apigatewayv2-api-routeselectionexpression
         PrimitiveType: String
         UpdateType: Mutable
 
     .PARAMETER BodyS3Location
-        + CreateApi: https://docs.aws.amazon.com/apigatewayv2/latest/api-reference/apis.html#CreateApi in the *Amazon API Gateway Version 2 API Reference*
-
         Type: BodyS3Location
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-apigatewayv2-api.html#cfn-apigatewayv2-api-bodys3location
         UpdateType: Mutable
 
     .PARAMETER Description
-        The description of the API.
-
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-apigatewayv2-api.html#cfn-apigatewayv2-api-description
         PrimitiveType: String
         UpdateType: Mutable
 
     .PARAMETER BasePath
-        + CreateApi: https://docs.aws.amazon.com/apigatewayv2/latest/api-reference/apis.html#CreateApi in the *Amazon API Gateway Version 2 API Reference*
-
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-apigatewayv2-api.html#cfn-apigatewayv2-api-basepath
         PrimitiveType: String
         UpdateType: Mutable
 
     .PARAMETER FailOnWarnings
-        + CreateApi: https://docs.aws.amazon.com/apigatewayv2/latest/api-reference/apis.html#CreateApi in the *Amazon API Gateway Version 2 API Reference*
-
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-apigatewayv2-api.html#cfn-apigatewayv2-api-failonwarnings
         PrimitiveType: Boolean
         UpdateType: Mutable
 
     .PARAMETER DisableSchemaValidation
-        Avoid validating models when creating a deployment.
-
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-apigatewayv2-api.html#cfn-apigatewayv2-api-disableschemavalidation
         PrimitiveType: Boolean
         UpdateType: Mutable
 
     .PARAMETER Name
-        The name of the API.
-
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-apigatewayv2-api.html#cfn-apigatewayv2-api-name
         PrimitiveType: String
         UpdateType: Mutable
 
     .PARAMETER Target
-        + CreateApi: https://docs.aws.amazon.com/apigatewayv2/latest/api-reference/apis.html#CreateApi in the *Amazon API Gateway Version 2 API Reference*
-
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-apigatewayv2-api.html#cfn-apigatewayv2-api-target
         PrimitiveType: String
         UpdateType: Mutable
 
     .PARAMETER CredentialsArn
-        + CreateApi: https://docs.aws.amazon.com/apigatewayv2/latest/api-reference/apis.html#CreateApi in the *Amazon API Gateway Version 2 API Reference*
-
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-apigatewayv2-api.html#cfn-apigatewayv2-api-credentialsarn
         PrimitiveType: String
         UpdateType: Mutable
 
     .PARAMETER CorsConfiguration
-        + CreateApi: https://docs.aws.amazon.com/apigatewayv2/latest/api-reference/apis.html#CreateApi in the *Amazon API Gateway Version 2 API Reference*
-
         Type: Cors
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-apigatewayv2-api.html#cfn-apigatewayv2-api-corsconfiguration
         UpdateType: Mutable
 
     .PARAMETER Version
-        A version identifier for the API.
-
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-apigatewayv2-api.html#cfn-apigatewayv2-api-version
         PrimitiveType: String
         UpdateType: Mutable
 
     .PARAMETER ProtocolType
-        The API protocol: Currently only WEBSOCKET is supported.
-
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-apigatewayv2-api.html#cfn-apigatewayv2-api-protocoltype
         PrimitiveType: String
         UpdateType: Immutable
 
     .PARAMETER RouteKey
-        + CreateApi: https://docs.aws.amazon.com/apigatewayv2/latest/api-reference/apis.html#CreateApi in the *Amazon API Gateway Version 2 API Reference*
-
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-apigatewayv2-api.html#cfn-apigatewayv2-api-routekey
         PrimitiveType: String
         UpdateType: Mutable
 
     .PARAMETER Body
-        + CreateApi: https://docs.aws.amazon.com/apigatewayv2/latest/api-reference/apis.html#CreateApi in the *Amazon API Gateway Version 2 API Reference*
-
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-apigatewayv2-api.html#cfn-apigatewayv2-api-body
         PrimitiveType: Json
         UpdateType: Mutable
 
     .PARAMETER Tags
-        + CreateApi: https://docs.aws.amazon.com/apigatewayv2/latest/api-reference/apis.html#CreateApi in the *Amazon API Gateway Version 2 API Reference*
-
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-apigatewayv2-api.html#cfn-apigatewayv2-api-tags
         PrimitiveType: Json
         UpdateType: Mutable
 
     .PARAMETER ApiKeySelectionExpression
-        An API key selection expression. See API Key Selection Expressions: https://docs.aws.amazon.com/apigateway/latest/developerguide/apigateway-websocket-api-selection-expressions.html#apigateway-websocket-api-apikey-selection-expressions.
-
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-apigatewayv2-api.html#cfn-apigatewayv2-api-apikeyselectionexpression
         PrimitiveType: String
         UpdateType: Mutable

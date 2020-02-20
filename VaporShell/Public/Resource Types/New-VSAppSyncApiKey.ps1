@@ -1,10 +1,10 @@
 function New-VSAppSyncApiKey {
     <#
     .SYNOPSIS
-        Adds an AWS::AppSync::ApiKey resource to the template. The AWS::AppSync::ApiKey resource creates a unique key that you can distribute to clients who are executing GraphQL operations with AWS AppSync that require an API key.
+        Adds an AWS::AppSync::ApiKey resource to the template. 
 
     .DESCRIPTION
-        Adds an AWS::AppSync::ApiKey resource to the template. The AWS::AppSync::ApiKey resource creates a unique key that you can distribute to clients who are executing GraphQL operations with AWS AppSync that require an API key.
+        Adds an AWS::AppSync::ApiKey resource to the template. 
 
     .LINK
         http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-appsync-apikey.html
@@ -13,22 +13,16 @@ function New-VSAppSyncApiKey {
         The logical ID must be alphanumeric (A-Za-z0-9) and unique within the template. Use the logical name to reference the resource in other parts of the template. For example, if you want to map an Amazon Elastic Block Store volume to an Amazon EC2 instance, you reference the logical IDs to associate the block stores with the instance.
 
     .PARAMETER Description
-        Unique description of your API key.
-
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-appsync-apikey.html#cfn-appsync-apikey-description
         PrimitiveType: String
         UpdateType: Mutable
 
     .PARAMETER Expires
-        Expiration time of the API key in seconds using Unix Epoch time, with a minimum of 1 day and a maximum of 365 days. The default value is 7 days.
-
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-appsync-apikey.html#cfn-appsync-apikey-expires
         PrimitiveType: Double
         UpdateType: Mutable
 
     .PARAMETER ApiId
-        Unique AWS AppSync GraphQL API ID for this API key.
-
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-appsync-apikey.html#cfn-appsync-apikey-apiid
         PrimitiveType: String
         UpdateType: Immutable

@@ -1,10 +1,10 @@
 function New-VSCloudFrontStreamingDistribution {
     <#
     .SYNOPSIS
-        Adds an AWS::CloudFront::StreamingDistribution resource to the template. A streaming distribution.
+        Adds an AWS::CloudFront::StreamingDistribution resource to the template. 
 
     .DESCRIPTION
-        Adds an AWS::CloudFront::StreamingDistribution resource to the template. A streaming distribution.
+        Adds an AWS::CloudFront::StreamingDistribution resource to the template. 
 
     .LINK
         http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-cloudfront-streamingdistribution.html
@@ -13,15 +13,11 @@ function New-VSCloudFrontStreamingDistribution {
         The logical ID must be alphanumeric (A-Za-z0-9) and unique within the template. Use the logical name to reference the resource in other parts of the template. For example, if you want to map an Amazon Elastic Block Store volume to an Amazon EC2 instance, you reference the logical IDs to associate the block stores with the instance.
 
     .PARAMETER StreamingDistributionConfig
-        The current configuration information for the RTMP distribution.
-
         Type: StreamingDistributionConfig
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-cloudfront-streamingdistribution.html#cfn-cloudfront-streamingdistribution-streamingdistributionconfig
         UpdateType: Mutable
 
     .PARAMETER Tags
-        A complex type that contains zero or more Tag elements.
-
         Type: List
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-cloudfront-streamingdistribution.html#cfn-cloudfront-streamingdistribution-tags
         ItemType: Tag

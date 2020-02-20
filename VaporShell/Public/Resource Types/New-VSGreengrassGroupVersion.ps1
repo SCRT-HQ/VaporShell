@@ -1,14 +1,10 @@
 function New-VSGreengrassGroupVersion {
     <#
     .SYNOPSIS
-        Adds an AWS::Greengrass::GroupVersion resource to the template. The AWS::Greengrass::GroupVersion resource represents a group version in AWS IoT Greengrass. A group version references a core definition version, device definition version, subscription definition version, and other version types that contain the components you want to deploy to a Greengrass core device. The group version must reference a core definition version that contains one core. Other version types are optionally included, depending on your business need.
+        Adds an AWS::Greengrass::GroupVersion resource to the template. 
 
     .DESCRIPTION
-        Adds an AWS::Greengrass::GroupVersion resource to the template. The AWS::Greengrass::GroupVersion resource represents a group version in AWS IoT Greengrass. A group version references a core definition version, device definition version, subscription definition version, and other version types that contain the components you want to deploy to a Greengrass core device. The group version must reference a core definition version that contains one core. Other version types are optionally included, depending on your business need.
-
-**Note**
-
-To create a group version, you must specify the ID of the group that you want to associate with the version. For information about creating a group, see https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-greengrass-group.html: https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-greengrass-group.html.
+        Adds an AWS::Greengrass::GroupVersion resource to the template. 
 
     .LINK
         http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-greengrass-groupversion.html
@@ -17,57 +13,41 @@ To create a group version, you must specify the ID of the group that you want to
         The logical ID must be alphanumeric (A-Za-z0-9) and unique within the template. Use the logical name to reference the resource in other parts of the template. For example, if you want to map an Amazon Elastic Block Store volume to an Amazon EC2 instance, you reference the logical IDs to associate the block stores with the instance.
 
     .PARAMETER LoggerDefinitionVersionArn
-        The ARN of the logger definition version that contains the loggers you want to deploy with the group version.
-
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-greengrass-groupversion.html#cfn-greengrass-groupversion-loggerdefinitionversionarn
         PrimitiveType: String
         UpdateType: Immutable
 
     .PARAMETER DeviceDefinitionVersionArn
-        The ARN of the device definition version that contains the devices you want to deploy with the group version.
-
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-greengrass-groupversion.html#cfn-greengrass-groupversion-devicedefinitionversionarn
         PrimitiveType: String
         UpdateType: Immutable
 
     .PARAMETER FunctionDefinitionVersionArn
-        The ARN of the function definition version that contains the functions you want to deploy with the group version.
-
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-greengrass-groupversion.html#cfn-greengrass-groupversion-functiondefinitionversionarn
         PrimitiveType: String
         UpdateType: Immutable
 
     .PARAMETER CoreDefinitionVersionArn
-        The ARN of the core definition version that contains the core you want to deploy with the group version. Currently, the core definition version can contain only one core.
-
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-greengrass-groupversion.html#cfn-greengrass-groupversion-coredefinitionversionarn
         PrimitiveType: String
         UpdateType: Immutable
 
     .PARAMETER ResourceDefinitionVersionArn
-        The ARN of the resource definition version that contains the resources you want to deploy with the group version.
-
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-greengrass-groupversion.html#cfn-greengrass-groupversion-resourcedefinitionversionarn
         PrimitiveType: String
         UpdateType: Immutable
 
     .PARAMETER ConnectorDefinitionVersionArn
-        The Amazon Resource Name ARN of the connector definition version that contains the connectors you want to deploy with the group version.
-
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-greengrass-groupversion.html#cfn-greengrass-groupversion-connectordefinitionversionarn
         PrimitiveType: String
         UpdateType: Immutable
 
     .PARAMETER SubscriptionDefinitionVersionArn
-        The ARN of the subscription definition version that contains the subscriptions you want to deploy with the group version.
-
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-greengrass-groupversion.html#cfn-greengrass-groupversion-subscriptiondefinitionversionarn
         PrimitiveType: String
         UpdateType: Immutable
 
     .PARAMETER GroupId
-        The ID of the group associated with this version. This value is a GUID.
-
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-greengrass-groupversion.html#cfn-greengrass-groupversion-groupid
         PrimitiveType: String
         UpdateType: Immutable

@@ -1,18 +1,16 @@
 function Add-VSEC2SpotFleetTargetGroupsConfig {
     <#
     .SYNOPSIS
-        Adds an AWS::EC2::SpotFleet.TargetGroupsConfig resource property to the template. Describes the target groups to attach to a Spot Fleet. Spot Fleet registers the running Spot Instances with these target groups.
+        Adds an AWS::EC2::SpotFleet.TargetGroupsConfig resource property to the template. 
 
     .DESCRIPTION
         Adds an AWS::EC2::SpotFleet.TargetGroupsConfig resource property to the template.
-Describes the target groups to attach to a Spot Fleet. Spot Fleet registers the running Spot Instances with these target groups.
+
 
     .LINK
         http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-spotfleet-targetgroupsconfig.html
 
     .PARAMETER TargetGroups
-        One or more target groups.
-
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-spotfleet-targetgroupsconfig.html#cfn-ec2-spotfleet-targetgroupsconfig-targetgroups
         DuplicatesAllowed: False
         ItemType: TargetGroup

@@ -1,20 +1,16 @@
 function Add-VSCodeDeployDeploymentGroupOnPremisesTagSetListObject {
     <#
     .SYNOPSIS
-        Adds an AWS::CodeDeploy::DeploymentGroup.OnPremisesTagSetListObject resource property to the template. The OnPremisesTagSetListObject property type specifies lists of on-premises instance tag groups. In order for an instance to be included in the deployment group, it must be identified by all the tag groups in the list.
+        Adds an AWS::CodeDeploy::DeploymentGroup.OnPremisesTagSetListObject resource property to the template. 
 
     .DESCRIPTION
         Adds an AWS::CodeDeploy::DeploymentGroup.OnPremisesTagSetListObject resource property to the template.
-The OnPremisesTagSetListObject property type specifies lists of on-premises instance tag groups. In order for an instance to be included in the deployment group, it must be identified by all the tag groups in the list.
 
-OnPremisesTagSetListObject is a property of the CodeDeploy DeploymentGroup OnPremisesTagSet: https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-codedeploy-deploymentgroup-onpremisestagset.html property type.
 
     .LINK
         http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-codedeploy-deploymentgroup-onpremisestagsetlistobject.html
 
     .PARAMETER OnPremisesTagGroup
-        Information about groups of on-premises instance tags.
-
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-codedeploy-deploymentgroup-onpremisestagsetlistobject.html#cfn-codedeploy-deploymentgroup-onpremisestagsetlistobject-onpremisestaggroup
         DuplicatesAllowed: False
         ItemType: TagFilter

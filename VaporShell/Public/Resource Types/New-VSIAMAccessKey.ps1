@@ -1,18 +1,10 @@
 function New-VSIAMAccessKey {
     <#
     .SYNOPSIS
-        Adds an AWS::IAM::AccessKey resource to the template. Creates a new AWS secret access key and corresponding AWS access key ID for the specified user. The default status for new keys is Active.
+        Adds an AWS::IAM::AccessKey resource to the template. 
 
     .DESCRIPTION
-        Adds an AWS::IAM::AccessKey resource to the template. Creates a new AWS secret access key and corresponding AWS access key ID for the specified user. The default status for new keys is Active.
-
-If you do not specify a user name, IAM determines the user name implicitly based on the AWS access key ID signing the request. This operation works for access keys under the AWS account. Consequently, you can use this operation to manage AWS account root user credentials. This is true even if the AWS account has no associated users.
-
-For information about limits on the number of keys you can create, see Limitations on IAM Entities: https://docs.aws.amazon.com/IAM/latest/UserGuide/LimitationsOnEntities.html in the *IAM User Guide*.
-
-**Important**
-
-To ensure the security of your AWS account, the secret access key is accessible only during key and user creation. You must save the key (for example, in a text file if you want to be able to access it again. If a secret key is lost, you can delete the access keys for the associated user and then create new keys.
+        Adds an AWS::IAM::AccessKey resource to the template. 
 
     .LINK
         http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iam-accesskey.html
@@ -21,23 +13,16 @@ To ensure the security of your AWS account, the secret access key is accessible 
         The logical ID must be alphanumeric (A-Za-z0-9) and unique within the template. Use the logical name to reference the resource in other parts of the template. For example, if you want to map an Amazon Elastic Block Store volume to an Amazon EC2 instance, you reference the logical IDs to associate the block stores with the instance.
 
     .PARAMETER Serial
-        This value is specific to CloudFormation and can only be *incremented*. Incrementing this value notifies CloudFormation that you want to rotate your access key. When you update your stack, CloudFormation will replace the existing access key with a new key.
-
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iam-accesskey.html#cfn-iam-accesskey-serial
         PrimitiveType: Integer
         UpdateType: Immutable
 
     .PARAMETER Status
-        The status of the access key. Active means that the key is valid for API calls, while Inactive means it is not.
-
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iam-accesskey.html#cfn-iam-accesskey-status
         PrimitiveType: String
         UpdateType: Mutable
 
     .PARAMETER UserName
-        The name of the IAM user that the new key will belong to.
-This parameter allows through its regex pattern: http://wikipedia.org/wiki/regex a string of characters consisting of upper and lowercase alphanumeric characters with no spaces. You can also include any of the following characters: _+=,.@-
-
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iam-accesskey.html#cfn-iam-accesskey-username
         PrimitiveType: String
         UpdateType: Immutable

@@ -1,10 +1,10 @@
 function New-VSAppStreamStackUserAssociation {
     <#
     .SYNOPSIS
-        Adds an AWS::AppStream::StackUserAssociation resource to the template. The AWS::AppStream::StackUserAssociation resource associates the specified users with the specified stacks for Amazon AppStream 2.0. Users in an AppStream 2.0 user pool cannot be assigned to stacks with fleets that are joined to an Active Directory domain.
+        Adds an AWS::AppStream::StackUserAssociation resource to the template. 
 
     .DESCRIPTION
-        Adds an AWS::AppStream::StackUserAssociation resource to the template. The AWS::AppStream::StackUserAssociation resource associates the specified users with the specified stacks for Amazon AppStream 2.0. Users in an AppStream 2.0 user pool cannot be assigned to stacks with fleets that are joined to an Active Directory domain.
+        Adds an AWS::AppStream::StackUserAssociation resource to the template. 
 
     .LINK
         http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-appstream-stackuserassociation.html
@@ -13,30 +13,21 @@ function New-VSAppStreamStackUserAssociation {
         The logical ID must be alphanumeric (A-Za-z0-9) and unique within the template. Use the logical name to reference the resource in other parts of the template. For example, if you want to map an Amazon Elastic Block Store volume to an Amazon EC2 instance, you reference the logical IDs to associate the block stores with the instance.
 
     .PARAMETER SendEmailNotification
-        Specifies whether a welcome email is sent to a user after the user is created in the user pool.
-
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-appstream-stackuserassociation.html#cfn-appstream-stackuserassociation-sendemailnotification
         PrimitiveType: Boolean
         UpdateType: Immutable
 
     .PARAMETER UserName
-        The email address of the user who is associated with the stack.
-Users' email addresses are case-sensitive.
-
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-appstream-stackuserassociation.html#cfn-appstream-stackuserassociation-username
         PrimitiveType: String
         UpdateType: Immutable
 
     .PARAMETER StackName
-        The name of the stack that is associated with the user.
-
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-appstream-stackuserassociation.html#cfn-appstream-stackuserassociation-stackname
         PrimitiveType: String
         UpdateType: Immutable
 
     .PARAMETER AuthenticationType
-        The authentication type for the user who is associated with the stack. You must specify USERPOOL.
-
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-appstream-stackuserassociation.html#cfn-appstream-stackuserassociation-authenticationtype
         PrimitiveType: String
         UpdateType: Immutable

@@ -1,10 +1,10 @@
 function New-VSIoTThingsGraphFlowTemplate {
     <#
     .SYNOPSIS
-        Adds an AWS::IoTThingsGraph::FlowTemplate resource to the template. Represents a workflow template. Workflows can be created only in the user's namespace. (The public namespace contains only entities. The workflow can contain only entities in the specified namespace. The workflow is validated against the entities in the latest version of the user's namespace unless another namespace version is specified in the request.
+        Adds an AWS::IoTThingsGraph::FlowTemplate resource to the template. 
 
     .DESCRIPTION
-        Adds an AWS::IoTThingsGraph::FlowTemplate resource to the template. Represents a workflow template. Workflows can be created only in the user's namespace. (The public namespace contains only entities. The workflow can contain only entities in the specified namespace. The workflow is validated against the entities in the latest version of the user's namespace unless another namespace version is specified in the request.
+        Adds an AWS::IoTThingsGraph::FlowTemplate resource to the template. 
 
     .LINK
         http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-iotthingsgraph-flowtemplate.html
@@ -13,15 +13,11 @@ function New-VSIoTThingsGraphFlowTemplate {
         The logical ID must be alphanumeric (A-Za-z0-9) and unique within the template. Use the logical name to reference the resource in other parts of the template. For example, if you want to map an Amazon Elastic Block Store volume to an Amazon EC2 instance, you reference the logical IDs to associate the block stores with the instance.
 
     .PARAMETER CompatibleNamespaceVersion
-        The version of the user's namespace against which the workflow was validated. Use this value in your system instance.
-
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-iotthingsgraph-flowtemplate.html#cfn-iotthingsgraph-flowtemplate-compatiblenamespaceversion
         PrimitiveType: Double
         UpdateType: Mutable
 
     .PARAMETER Definition
-        A workflow's definition document.
-
         Type: DefinitionDocument
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-iotthingsgraph-flowtemplate.html#cfn-iotthingsgraph-flowtemplate-definition
         UpdateType: Mutable

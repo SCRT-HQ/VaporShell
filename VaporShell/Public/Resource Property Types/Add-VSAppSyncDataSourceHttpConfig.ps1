@@ -1,27 +1,21 @@
 function Add-VSAppSyncDataSourceHttpConfig {
     <#
     .SYNOPSIS
-        Adds an AWS::AppSync::DataSource.HttpConfig resource property to the template. Use the HttpConfig property type to specify HttpConfig for an AWS AppSync data source.
+        Adds an AWS::AppSync::DataSource.HttpConfig resource property to the template. 
 
     .DESCRIPTION
         Adds an AWS::AppSync::DataSource.HttpConfig resource property to the template.
-Use the HttpConfig property type to specify HttpConfig for an AWS AppSync data source.
 
-HttpConfig is a property of the AWS::AppSync::DataSource: https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-appsync-datasource.html resource.
 
     .LINK
         http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-appsync-datasource-httpconfig.html
 
     .PARAMETER Endpoint
-        The endpoint.
-
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-appsync-datasource-httpconfig.html#cfn-appsync-datasource-httpconfig-endpoint
         PrimitiveType: String
         UpdateType: Mutable
 
     .PARAMETER AuthorizationConfig
-        The authorization configuration.
-
         Type: AuthorizationConfig
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-appsync-datasource-httpconfig.html#cfn-appsync-datasource-httpconfig-authorizationconfig
         UpdateType: Mutable

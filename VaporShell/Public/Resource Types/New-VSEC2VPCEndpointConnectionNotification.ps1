@@ -1,12 +1,10 @@
 function New-VSEC2VPCEndpointConnectionNotification {
     <#
     .SYNOPSIS
-        Adds an AWS::EC2::VPCEndpointConnectionNotification resource to the template. Specifies a connection notification for a VPC endpoint or VPC endpoint service. A connection notification notifies you of specific endpoint events. You must create an SNS topic to receive notifications. For more information, see Create a Topic: https://docs.aws.amazon.com/sns/latest/dg/CreateTopic.html in the *Amazon Simple Notification Service Developer Guide*.
+        Adds an AWS::EC2::VPCEndpointConnectionNotification resource to the template. 
 
     .DESCRIPTION
-        Adds an AWS::EC2::VPCEndpointConnectionNotification resource to the template. Specifies a connection notification for a VPC endpoint or VPC endpoint service. A connection notification notifies you of specific endpoint events. You must create an SNS topic to receive notifications. For more information, see Create a Topic: https://docs.aws.amazon.com/sns/latest/dg/CreateTopic.html in the *Amazon Simple Notification Service Developer Guide*.
-
-You can create a connection notification for interface endpoints only.
+        Adds an AWS::EC2::VPCEndpointConnectionNotification resource to the template. 
 
     .LINK
         http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ec2-vpcendpointconnectionnotification.html
@@ -15,30 +13,22 @@ You can create a connection notification for interface endpoints only.
         The logical ID must be alphanumeric (A-Za-z0-9) and unique within the template. Use the logical name to reference the resource in other parts of the template. For example, if you want to map an Amazon Elastic Block Store volume to an Amazon EC2 instance, you reference the logical IDs to associate the block stores with the instance.
 
     .PARAMETER ConnectionEvents
-        One or more endpoint events for which to receive notifications. Valid values are Accept, Connect, Delete, and Reject.
-
         PrimitiveItemType: String
         Type: List
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ec2-vpcendpointconnectionnotification.html#cfn-ec2-vpcendpointconnectionnotification-connectionevents
         UpdateType: Mutable
 
     .PARAMETER VPCEndpointId
-        The ID of the endpoint.
-
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ec2-vpcendpointconnectionnotification.html#cfn-ec2-vpcendpointconnectionnotification-vpcendpointid
         PrimitiveType: String
         UpdateType: Immutable
 
     .PARAMETER ServiceId
-        The ID of the endpoint service.
-
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ec2-vpcendpointconnectionnotification.html#cfn-ec2-vpcendpointconnectionnotification-serviceid
         PrimitiveType: String
         UpdateType: Immutable
 
     .PARAMETER ConnectionNotificationArn
-        The ARN of the SNS topic for the notifications.
-
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ec2-vpcendpointconnectionnotification.html#cfn-ec2-vpcendpointconnectionnotification-connectionnotificationarn
         PrimitiveType: String
         UpdateType: Mutable

@@ -1,10 +1,10 @@
 function New-VSCodeDeployDeploymentConfig {
     <#
     .SYNOPSIS
-        Adds an AWS::CodeDeploy::DeploymentConfig resource to the template. The AWS::CodeDeploy::DeploymentConfig resource creates a set of deployment rules, deployment success conditions, and deployment failure conditions that AWS CodeDeploy uses during a deployment. The deployment configuration specifies, through the use of a MinimumHealthyHosts value, the number or percentage of instances that must remain available at any time during a deployment.
+        Adds an AWS::CodeDeploy::DeploymentConfig resource to the template. 
 
     .DESCRIPTION
-        Adds an AWS::CodeDeploy::DeploymentConfig resource to the template. The AWS::CodeDeploy::DeploymentConfig resource creates a set of deployment rules, deployment success conditions, and deployment failure conditions that AWS CodeDeploy uses during a deployment. The deployment configuration specifies, through the use of a MinimumHealthyHosts value, the number or percentage of instances that must remain available at any time during a deployment.
+        Adds an AWS::CodeDeploy::DeploymentConfig resource to the template. 
 
     .LINK
         http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-codedeploy-deploymentconfig.html
@@ -13,22 +13,11 @@ function New-VSCodeDeployDeploymentConfig {
         The logical ID must be alphanumeric (A-Za-z0-9) and unique within the template. Use the logical name to reference the resource in other parts of the template. For example, if you want to map an Amazon Elastic Block Store volume to an Amazon EC2 instance, you reference the logical IDs to associate the block stores with the instance.
 
     .PARAMETER DeploymentConfigName
-        A name for the deployment configuration. If you don't specify a name, AWS CloudFormation generates a unique physical ID and uses that ID for the deployment configuration name. For more information, see Name Type: https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-name.html.
-If you specify a name, you cannot perform updates that require replacement of this resource. You can perform updates that require no or some interruption. If you must replace the resource, specify a new name.
-
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-codedeploy-deploymentconfig.html#cfn-codedeploy-deploymentconfig-deploymentconfigname
         PrimitiveType: String
         UpdateType: Immutable
 
     .PARAMETER MinimumHealthyHosts
-        The minimum number of healthy instances that should be available at any time during the deployment. There are two parameters expected in the input: type and value.
-The type parameter takes either of the following values:
-+ HOST_COUNT: The value parameter represents the minimum number of healthy instances as an absolute value.
-+ FLEET_PERCENT: The value parameter represents the minimum number of healthy instances as a percentage of the total number of instances in the deployment. If you specify FLEET_PERCENT, at the start of the deployment, AWS CodeDeploy converts the percentage to the equivalent number of instance and rounds up fractional instances.
-The value parameter takes an integer.
-For example, to set a minimum of 95% healthy instance, specify a type of FLEET_PERCENT and a value of 95.
-For more information about instance health, see CodeDeploy Instance Health: https://docs.aws.amazon.com/codedeploy/latest/userguide/instances-health.html in the AWS CodeDeploy User Guide.
-
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-codedeploy-deploymentconfig.html#cfn-codedeploy-deploymentconfig-minimumhealthyhosts
         Type: MinimumHealthyHosts
         UpdateType: Immutable

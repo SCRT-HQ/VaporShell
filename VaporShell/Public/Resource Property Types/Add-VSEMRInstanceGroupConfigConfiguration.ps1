@@ -1,31 +1,21 @@
 function Add-VSEMRInstanceGroupConfigConfiguration {
     <#
     .SYNOPSIS
-        Adds an AWS::EMR::InstanceGroupConfig.Configuration resource property to the template. Configurations is a property of the AWS::EMR::Cluster resource that specifies the configuration of applications on an Amazon EMR cluster.
+        Adds an AWS::EMR::InstanceGroupConfig.Configuration resource property to the template. 
 
     .DESCRIPTION
         Adds an AWS::EMR::InstanceGroupConfig.Configuration resource property to the template.
-Configurations is a property of the AWS::EMR::Cluster resource that specifies the configuration of applications on an Amazon EMR cluster.
 
-Configurations are optional. You can use them to have EMR customize applications and software bundled with Amazon EMR when a cluster is created. A configuration consists of a classification, properties, and optional nested configurations. A classification refers to an application-specific configuration file. Properties are the settings you want to change in that file. For more information, see Configuring Applications: https://docs.aws.amazon.com/emr/latest/ReleaseGuide/emr-configure-apps.html.
-
-**Note**
-
-Applies only to Amazon EMR releases 4.0 and later.
 
     .LINK
         http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-emr-cluster-configuration.html
 
     .PARAMETER Classification
-        The classification within a configuration.
-
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-emr-cluster-configuration.html#cfn-emr-cluster-configuration-classification
         PrimitiveType: String
         UpdateType: Immutable
 
     .PARAMETER ConfigurationProperties
-        Within a configuration classification, a set of properties that represent the settings that you want to change in the configuration file. Duplicates not allowed.
-
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-emr-cluster-configuration.html#cfn-emr-cluster-configuration-configurationproperties
         DuplicatesAllowed: False
         PrimitiveItemType: String
@@ -33,8 +23,6 @@ Applies only to Amazon EMR releases 4.0 and later.
         UpdateType: Immutable
 
     .PARAMETER Configurations
-        A list of additional configurations to apply within a configuration object.
-
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-emr-cluster-configuration.html#cfn-emr-cluster-configuration-configurations
         DuplicatesAllowed: False
         ItemType: Configuration

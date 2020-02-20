@@ -1,26 +1,10 @@
 function New-VSRoute53HealthCheck {
     <#
     .SYNOPSIS
-        Adds an AWS::Route53::HealthCheck resource to the template. The AWS::Route53::HealthCheck resource is a Route 53 resource type that contains settings for a Route 53 health check.
+        Adds an AWS::Route53::HealthCheck resource to the template. 
 
     .DESCRIPTION
-        Adds an AWS::Route53::HealthCheck resource to the template. The AWS::Route53::HealthCheck resource is a Route 53 resource type that contains settings for a Route 53 health check.
-
-For information about associating health checks with resource record sets, see HealthCheckId: https://docs.aws.amazon.com/Route53/latest/APIReference/API_ResourceRecordSet.html#Route53-Type-ResourceRecordSet-HealthCheckId in ChangeResourceRecordSets: https://docs.aws.amazon.com/Route53/latest/APIReference/API_ChangeResourceRecordSets.html.
-
-**ELB Load Balancers**
-
-If you're registering EC2 instances with an Elastic Load Balancing (ELB load balancer, do not create Amazon Route 53 health checks for the EC2 instances. When you register an EC2 instance with a load balancer, you configure settings for an ELB health check, which performs a similar function to a Route 53 health check.
-
-**Private Hosted Zones**
-
-You can associate health checks with failover resource record sets in a private hosted zone. Note the following:
-
-+ Route 53 health checkers are outside the VPC. To check the health of an endpoint within a VPC by IP address, you must assign a public IP address to the instance in the VPC.
-
-+ You can configure a health checker to check the health of an external resource that the instance relies on, such as a database server.
-
-+ You can create a CloudWatch metric, associate an alarm with the metric, and then create a health check that is based on the state of the alarm. For example, you might create a CloudWatch metric that checks the status of the Amazon EC2 StatusCheckFailed metric, add an alarm to the metric, and then create a health check that is based on the state of the alarm. For information about creating CloudWatch metrics and alarms by using the CloudWatch console, see the Amazon CloudWatch User Guide: https://docs.aws.amazon.com/AmazonCloudWatch/latest/DeveloperGuide/WhatIsCloudWatch.html.
+        Adds an AWS::Route53::HealthCheck resource to the template. 
 
     .LINK
         http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-route53-healthcheck.html
@@ -29,15 +13,11 @@ You can associate health checks with failover resource record sets in a private 
         The logical ID must be alphanumeric (A-Za-z0-9) and unique within the template. Use the logical name to reference the resource in other parts of the template. For example, if you want to map an Amazon Elastic Block Store volume to an Amazon EC2 instance, you reference the logical IDs to associate the block stores with the instance.
 
     .PARAMETER HealthCheckConfig
-        A complex type that contains detailed information about one health check.
-
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-route53-healthcheck.html#cfn-route53-healthcheck-healthcheckconfig
         Type: HealthCheckConfig
         UpdateType: Mutable
 
     .PARAMETER HealthCheckTags
-        The HealthCheckTags property describes key-value pairs that are associated with an AWS::Route53::HealthCheck resource.
-
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-route53-healthcheck.html#cfn-route53-healthcheck-healthchecktags
         DuplicatesAllowed: True
         ItemType: HealthCheckTag

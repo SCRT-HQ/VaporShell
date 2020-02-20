@@ -1,10 +1,10 @@
 function New-VSEC2ClientVpnAuthorizationRule {
     <#
     .SYNOPSIS
-        Adds an AWS::EC2::ClientVpnAuthorizationRule resource to the template. Specifies an ingress authorization rule to add to a Client VPN endpoint. Ingress authorization rules act as firewall rules that grant access to networks. You must configure ingress authorization rules to enable clients to access resources in AWS or on-premises networks.
+        Adds an AWS::EC2::ClientVpnAuthorizationRule resource to the template. 
 
     .DESCRIPTION
-        Adds an AWS::EC2::ClientVpnAuthorizationRule resource to the template. Specifies an ingress authorization rule to add to a Client VPN endpoint. Ingress authorization rules act as firewall rules that grant access to networks. You must configure ingress authorization rules to enable clients to access resources in AWS or on-premises networks.
+        Adds an AWS::EC2::ClientVpnAuthorizationRule resource to the template. 
 
     .LINK
         http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ec2-clientvpnauthorizationrule.html
@@ -13,36 +13,26 @@ function New-VSEC2ClientVpnAuthorizationRule {
         The logical ID must be alphanumeric (A-Za-z0-9) and unique within the template. Use the logical name to reference the resource in other parts of the template. For example, if you want to map an Amazon Elastic Block Store volume to an Amazon EC2 instance, you reference the logical IDs to associate the block stores with the instance.
 
     .PARAMETER ClientVpnEndpointId
-        The ID of the Client VPN endpoint.
-
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ec2-clientvpnauthorizationrule.html#cfn-ec2-clientvpnauthorizationrule-clientvpnendpointid
         PrimitiveType: String
         UpdateType: Immutable
 
     .PARAMETER Description
-        A brief description of the authorization rule.
-
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ec2-clientvpnauthorizationrule.html#cfn-ec2-clientvpnauthorizationrule-description
         PrimitiveType: String
         UpdateType: Immutable
 
     .PARAMETER AccessGroupId
-        The ID of the Active Directory group to grant access.
-
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ec2-clientvpnauthorizationrule.html#cfn-ec2-clientvpnauthorizationrule-accessgroupid
         PrimitiveType: String
         UpdateType: Immutable
 
     .PARAMETER TargetNetworkCidr
-        The IPv4 address range, in CIDR notation, of the network for which access is being authorized.
-
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ec2-clientvpnauthorizationrule.html#cfn-ec2-clientvpnauthorizationrule-targetnetworkcidr
         PrimitiveType: String
         UpdateType: Immutable
 
     .PARAMETER AuthorizeAllGroups
-        Indicates whether to grant access to all clients. Use true to grant all clients who successfully establish a VPN connection access to the network.
-
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ec2-clientvpnauthorizationrule.html#cfn-ec2-clientvpnauthorizationrule-authorizeallgroups
         PrimitiveType: Boolean
         UpdateType: Immutable

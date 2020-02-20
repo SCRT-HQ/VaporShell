@@ -1,27 +1,21 @@
 function Add-VSEC2InstanceAssociationParameter {
     <#
     .SYNOPSIS
-        Adds an AWS::EC2::Instance.AssociationParameter resource property to the template. Specifies input parameter values for an SSM document in AWS Systems Manager.
+        Adds an AWS::EC2::Instance.AssociationParameter resource property to the template. 
 
     .DESCRIPTION
         Adds an AWS::EC2::Instance.AssociationParameter resource property to the template.
-Specifies input parameter values for an SSM document in AWS Systems Manager.
 
-AssociationParameter is a property of the  Amazon EC2 Instance SsmAssociation: https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-instance-ssmassociations.html property.
 
     .LINK
         http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-instance-ssmassociations-associationparameters.html
 
     .PARAMETER Key
-        The name of an input parameter that is in the associated SSM document.
-
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-instance-ssmassociations-associationparameters.html#cfn-ec2-instance-ssmassociations-associationparameters-key
         PrimitiveType: String
         UpdateType: Mutable
 
     .PARAMETER Value
-        The value of an input parameter.
-
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-instance-ssmassociations-associationparameters.html#cfn-ec2-instance-ssmassociations-associationparameters-value
         DuplicatesAllowed: True
         PrimitiveItemType: String

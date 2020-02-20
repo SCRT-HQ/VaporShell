@@ -1,12 +1,10 @@
 function New-VSAppStreamImageBuilder {
     <#
     .SYNOPSIS
-        Adds an AWS::AppStream::ImageBuilder resource to the template. The AWS::AppStream::ImageBuilder resource creates an image builder for Amazon AppStream 2.0. An image builder is a virtual machine that is used to create an image.
+        Adds an AWS::AppStream::ImageBuilder resource to the template. 
 
     .DESCRIPTION
-        Adds an AWS::AppStream::ImageBuilder resource to the template. The AWS::AppStream::ImageBuilder resource creates an image builder for Amazon AppStream 2.0. An image builder is a virtual machine that is used to create an image.
-
-The initial state of the image builder is PENDING. When it is ready, the state is RUNNING.
+        Adds an AWS::AppStream::ImageBuilder resource to the template. 
 
     .LINK
         http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-appstream-imagebuilder.html
@@ -15,86 +13,62 @@ The initial state of the image builder is PENDING. When it is ready, the state i
         The logical ID must be alphanumeric (A-Za-z0-9) and unique within the template. Use the logical name to reference the resource in other parts of the template. For example, if you want to map an Amazon Elastic Block Store volume to an Amazon EC2 instance, you reference the logical IDs to associate the block stores with the instance.
 
     .PARAMETER ImageName
-        The name of the image used to create the image builder.
-
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-appstream-imagebuilder.html#cfn-appstream-imagebuilder-imagename
         PrimitiveType: String
         UpdateType: Mutable
 
     .PARAMETER Description
-        The description to display.
-
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-appstream-imagebuilder.html#cfn-appstream-imagebuilder-description
         PrimitiveType: String
         UpdateType: Mutable
 
     .PARAMETER VpcConfig
-        The VPC configuration for the image builder. You can specify only one subnet.
-
         Type: VpcConfig
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-appstream-imagebuilder.html#cfn-appstream-imagebuilder-vpcconfig
         UpdateType: Mutable
 
     .PARAMETER EnableDefaultInternetAccess
-        Enables or disables default internet access for the image builder.
-
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-appstream-imagebuilder.html#cfn-appstream-imagebuilder-enabledefaultinternetaccess
         PrimitiveType: Boolean
         UpdateType: Mutable
 
     .PARAMETER DisplayName
-        The image builder name to display.
-
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-appstream-imagebuilder.html#cfn-appstream-imagebuilder-displayname
         PrimitiveType: String
         UpdateType: Mutable
 
     .PARAMETER DomainJoinInfo
-        The name of the directory and organizational unit OU to use to join the image builder to a Microsoft Active Directory domain.
-
         Type: DomainJoinInfo
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-appstream-imagebuilder.html#cfn-appstream-imagebuilder-domainjoininfo
         UpdateType: Mutable
 
     .PARAMETER AppstreamAgentVersion
-        The version of the AppStream 2.0 agent to use for this image builder. To use the latest version of the AppStream 2.0 agent, specify LATEST].
-
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-appstream-imagebuilder.html#cfn-appstream-imagebuilder-appstreamagentversion
         PrimitiveType: String
         UpdateType: Mutable
 
     .PARAMETER InstanceType
-        The instance type to use when launching the image builder.
-
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-appstream-imagebuilder.html#cfn-appstream-imagebuilder-instancetype
         PrimitiveType: String
         UpdateType: Mutable
 
     .PARAMETER Tags
-        An array of key-value pairs. For more information, see Using Cost Allocation Tags: https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-resource-tags.html in the *AWS Billing and Cost Management User Guide*.
-
         Type: List
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-appstream-imagebuilder.html#cfn-appstream-imagebuilder-tags
         ItemType: Tag
         UpdateType: Mutable
 
     .PARAMETER Name
-        A unique name for the image builder.
-
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-appstream-imagebuilder.html#cfn-appstream-imagebuilder-name
         PrimitiveType: String
         UpdateType: Mutable
 
     .PARAMETER ImageArn
-        The ARN of the public, private, or shared image to use.
-
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-appstream-imagebuilder.html#cfn-appstream-imagebuilder-imagearn
         PrimitiveType: String
         UpdateType: Mutable
 
     .PARAMETER AccessEndpoints
-        +  CreateImageBuilder: https://docs.aws.amazon.com/appstream2/latest/APIReference/API_CreateImageBuilder.html in the *Amazon AppStream 2.0 API Reference*
-
         Type: List
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-appstream-imagebuilder.html#cfn-appstream-imagebuilder-accessendpoints
         ItemType: AccessEndpoint

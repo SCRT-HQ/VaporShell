@@ -1,10 +1,10 @@
 function New-VSGameLiftFleet {
     <#
     .SYNOPSIS
-        Adds an AWS::GameLift::Fleet resource to the template. The AWS::GameLift::Fleet resource creates an Amazon GameLift (GameLift fleet to host game servers. A fleet is a set of EC2 instances, each of which is a host in the fleet. For more information, see the CreateFleet: https://docs.aws.amazon.com/gamelift/latest/apireference/API_CreateFleet.html action in the *Amazon GameLift API Reference*.
+        Adds an AWS::GameLift::Fleet resource to the template. 
 
     .DESCRIPTION
-        Adds an AWS::GameLift::Fleet resource to the template. The AWS::GameLift::Fleet resource creates an Amazon GameLift (GameLift fleet to host game servers. A fleet is a set of EC2 instances, each of which is a host in the fleet. For more information, see the CreateFleet: https://docs.aws.amazon.com/gamelift/latest/apireference/API_CreateFleet.html action in the *Amazon GameLift API Reference*.
+        Adds an AWS::GameLift::Fleet resource to the template. 
 
     .LINK
         http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-gamelift-fleet.html
@@ -13,36 +13,26 @@ function New-VSGameLiftFleet {
         The logical ID must be alphanumeric (A-Za-z0-9) and unique within the template. Use the logical name to reference the resource in other parts of the template. For example, if you want to map an Amazon Elastic Block Store volume to an Amazon EC2 instance, you reference the logical IDs to associate the block stores with the instance.
 
     .PARAMETER BuildId
-        Unique identifier for a build to be deployed on the new fleet. The custom game server build must have been successfully uploaded to Amazon GameLift and be in a READY status. This fleet setting cannot be changed once the fleet is created.
-
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-gamelift-fleet.html#cfn-gamelift-fleet-buildid
         PrimitiveType: String
         UpdateType: Immutable
 
     .PARAMETER CertificateConfiguration
-        +  CreateFleet: https://docs.aws.amazon.com/gamelift/latest/apireference/API_CreateFleet.html in the *Amazon GameLift API Reference*
-
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-gamelift-fleet.html#cfn-gamelift-fleet-certificateconfiguration
         Type: CertificateConfiguration
         UpdateType: Immutable
 
     .PARAMETER Description
-        Human-readable description of a fleet.
-
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-gamelift-fleet.html#cfn-gamelift-fleet-description
         PrimitiveType: String
         UpdateType: Mutable
 
     .PARAMETER DesiredEC2Instances
-        Number of EC2 instances you want this fleet to host.
-
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-gamelift-fleet.html#cfn-gamelift-fleet-desiredec2instances
         PrimitiveType: Integer
         UpdateType: Mutable
 
     .PARAMETER EC2InboundPermissions
-        Range of IP addresses and port settings that permit inbound traffic to access game sessions that running on the fleet. For fleets using a custom game build, this parameter is required before game sessions running on the fleet can accept connections. For Realtime Servers fleets, Amazon GameLift automatically sets TCP and UDP ranges for use by the Realtime servers. You can specify multiple permission settings or add more by updating the fleet.
-
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-gamelift-fleet.html#cfn-gamelift-fleet-ec2inboundpermissions
         DuplicatesAllowed: False
         ItemType: IpPermission
@@ -50,29 +40,21 @@ function New-VSGameLiftFleet {
         UpdateType: Mutable
 
     .PARAMETER EC2InstanceType
-        Name of an EC2 instance type that is supported in Amazon GameLift. A fleet instance type determines the computing resources of each instance in the fleet, including CPU, memory, storage, and networking capacity. For more information about the instance types that are supported by GameLift, see the EC2InstanceType: https://docs.aws.amazon.com/gamelift/latest/apireference/API_CreateFleet.html#gamelift-CreateFleet-request-EC2InstanceType parameter in the *Amazon GameLift API Reference*.
-
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-gamelift-fleet.html#cfn-gamelift-fleet-ec2instancetype
         PrimitiveType: String
         UpdateType: Immutable
 
     .PARAMETER FleetType
-        +  CreateFleet: https://docs.aws.amazon.com/gamelift/latest/apireference/API_CreateFleet.html in the *Amazon GameLift API Reference*
-
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-gamelift-fleet.html#cfn-gamelift-fleet-fleettype
         PrimitiveType: String
         UpdateType: Immutable
 
     .PARAMETER InstanceRoleARN
-        +  CreateFleet: https://docs.aws.amazon.com/gamelift/latest/apireference/API_CreateFleet.html in the *Amazon GameLift API Reference*
-
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-gamelift-fleet.html#cfn-gamelift-fleet-instancerolearn
         PrimitiveType: String
         UpdateType: Immutable
 
     .PARAMETER LogPaths
-        This parameter is no longer used. Instead, to specify where Amazon GameLift should store log files once a server process shuts down, use the Amazon GameLift server API ProcessReady and specify one or more directory paths in logParameters. See more information in the Server API Reference: https://docs.aws.amazon.com/gamelift/latest/developerguide/gamelift-sdk-server-api-ref.html#gamelift-sdk-server-api-ref-dataypes-process.
-
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-gamelift-fleet.html#cfn-gamelift-fleet-logpaths
         DuplicatesAllowed: False
         PrimitiveItemType: String
@@ -80,15 +62,11 @@ function New-VSGameLiftFleet {
         UpdateType: Immutable
 
     .PARAMETER MaxSize
-        Maximum value allowed for the fleet's instance count. Default if not set is 1.
-
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-gamelift-fleet.html#cfn-gamelift-fleet-maxsize
         PrimitiveType: Integer
         UpdateType: Mutable
 
     .PARAMETER MetricGroups
-        +  CreateFleet: https://docs.aws.amazon.com/gamelift/latest/apireference/API_CreateFleet.html in the *Amazon GameLift API Reference*
-
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-gamelift-fleet.html#cfn-gamelift-fleet-metricgroups
         DuplicatesAllowed: False
         PrimitiveItemType: String
@@ -96,71 +74,51 @@ function New-VSGameLiftFleet {
         UpdateType: Mutable
 
     .PARAMETER MinSize
-        Minimum value allowed for the fleet's instance count. Default if not set is 0.
-
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-gamelift-fleet.html#cfn-gamelift-fleet-minsize
         PrimitiveType: Integer
         UpdateType: Mutable
 
     .PARAMETER Name
-        Descriptive label that is associated with a fleet. Fleet names do not need to be unique.
-
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-gamelift-fleet.html#cfn-gamelift-fleet-name
         PrimitiveType: String
         UpdateType: Mutable
 
     .PARAMETER NewGameSessionProtectionPolicy
-        +  CreateFleet: https://docs.aws.amazon.com/gamelift/latest/apireference/API_CreateFleet.html in the *Amazon GameLift API Reference*
-
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-gamelift-fleet.html#cfn-gamelift-fleet-newgamesessionprotectionpolicy
         PrimitiveType: String
         UpdateType: Mutable
 
     .PARAMETER PeerVpcAwsAccountId
-        +  CreateFleet: https://docs.aws.amazon.com/gamelift/latest/apireference/API_CreateFleet.html in the *Amazon GameLift API Reference*
-
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-gamelift-fleet.html#cfn-gamelift-fleet-peervpcawsaccountid
         PrimitiveType: String
         UpdateType: Immutable
 
     .PARAMETER PeerVpcId
-        +  CreateFleet: https://docs.aws.amazon.com/gamelift/latest/apireference/API_CreateFleet.html in the *Amazon GameLift API Reference*
-
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-gamelift-fleet.html#cfn-gamelift-fleet-peervpcid
         PrimitiveType: String
         UpdateType: Immutable
 
     .PARAMETER ResourceCreationLimitPolicy
-        +  CreateFleet: https://docs.aws.amazon.com/gamelift/latest/apireference/API_CreateFleet.html in the *Amazon GameLift API Reference*
-
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-gamelift-fleet.html#cfn-gamelift-fleet-resourcecreationlimitpolicy
         Type: ResourceCreationLimitPolicy
         UpdateType: Mutable
 
     .PARAMETER RuntimeConfiguration
-        +  CreateFleet: https://docs.aws.amazon.com/gamelift/latest/apireference/API_CreateFleet.html in the *Amazon GameLift API Reference*
-
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-gamelift-fleet.html#cfn-gamelift-fleet-runtimeconfiguration
         Type: RuntimeConfiguration
         UpdateType: Mutable
 
     .PARAMETER ScriptId
-        +  CreateFleet: https://docs.aws.amazon.com/gamelift/latest/apireference/API_CreateFleet.html in the *Amazon GameLift API Reference*
-
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-gamelift-fleet.html#cfn-gamelift-fleet-scriptid
         PrimitiveType: String
         UpdateType: Immutable
 
     .PARAMETER ServerLaunchParameters
-        The parameters that are required to launch your game server. Specify these parameters as a string of command-line parameters, such as +sv_port 33435 +start_lobby.
-
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-gamelift-fleet.html#cfn-gamelift-fleet-serverlaunchparameters
         PrimitiveType: String
         UpdateType: Immutable
 
     .PARAMETER ServerLaunchPath
-        The location of your game server that GameLift launches. You must escape the slashes  and use the following pattern: C:gamelaunchpath. For example, if your game server files are in the MyGame folder, the path should be C:gameMyGameserver.exe.
-
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-gamelift-fleet.html#cfn-gamelift-fleet-serverlaunchpath
         PrimitiveType: String
         UpdateType: Immutable

@@ -1,53 +1,41 @@
 function Add-VSPinpointSegmentSegmentDimensions {
     <#
     .SYNOPSIS
-        Adds an AWS::Pinpoint::Segment.SegmentDimensions resource property to the template. Specifies the dimension settings for a segment.
+        Adds an AWS::Pinpoint::Segment.SegmentDimensions resource property to the template. 
 
     .DESCRIPTION
         Adds an AWS::Pinpoint::Segment.SegmentDimensions resource property to the template.
-Specifies the dimension settings for a segment.
+
 
     .LINK
         http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-pinpoint-segment-segmentdimensions.html
 
     .PARAMETER Demographic
-        The demographic-based criteria, such as device platform, for the segment.
-
         Type: Demographic
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-pinpoint-segment-segmentdimensions.html#cfn-pinpoint-segment-segmentdimensions-demographic
         UpdateType: Mutable
 
     .PARAMETER Metrics
-        One or more custom metrics to use as criteria for the segment.
-
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-pinpoint-segment-segmentdimensions.html#cfn-pinpoint-segment-segmentdimensions-metrics
         PrimitiveType: Json
         UpdateType: Mutable
 
     .PARAMETER Attributes
-        One or more custom attributes to use as criteria for the segment.
-
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-pinpoint-segment-segmentdimensions.html#cfn-pinpoint-segment-segmentdimensions-attributes
         PrimitiveType: Json
         UpdateType: Mutable
 
     .PARAMETER Behavior
-        The behavior-based criteria, such as how recently users have used your app, for the segment.
-
         Type: Behavior
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-pinpoint-segment-segmentdimensions.html#cfn-pinpoint-segment-segmentdimensions-behavior
         UpdateType: Mutable
 
     .PARAMETER UserAttributes
-        One or more custom user attributes to use as criteria for the segment.
-
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-pinpoint-segment-segmentdimensions.html#cfn-pinpoint-segment-segmentdimensions-userattributes
         PrimitiveType: Json
         UpdateType: Mutable
 
     .PARAMETER Location
-        The location-based criteria, such as region or GPS coordinates, for the segment.
-
         Type: Location
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-pinpoint-segment-segmentdimensions.html#cfn-pinpoint-segment-segmentdimensions-location
         UpdateType: Mutable

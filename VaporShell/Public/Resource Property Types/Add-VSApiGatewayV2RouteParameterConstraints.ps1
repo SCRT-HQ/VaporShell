@@ -1,18 +1,16 @@
 function Add-VSApiGatewayV2RouteParameterConstraints {
     <#
     .SYNOPSIS
-        Adds an AWS::ApiGatewayV2::Route.ParameterConstraints resource property to the template. Specifies whether the parameter is required.
+        Adds an AWS::ApiGatewayV2::Route.ParameterConstraints resource property to the template. 
 
     .DESCRIPTION
         Adds an AWS::ApiGatewayV2::Route.ParameterConstraints resource property to the template.
-Specifies whether the parameter is required.
+
 
     .LINK
         http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-apigatewayv2-route-parameterconstraints.html
 
     .PARAMETER Required
-        Specifies whether the parameter is required.
-
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-apigatewayv2-route-parameterconstraints.html#cfn-apigatewayv2-route-parameterconstraints-required
         PrimitiveType: Boolean
         UpdateType: Mutable

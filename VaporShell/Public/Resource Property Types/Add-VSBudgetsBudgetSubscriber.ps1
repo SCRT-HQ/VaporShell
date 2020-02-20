@@ -1,32 +1,21 @@
 function Add-VSBudgetsBudgetSubscriber {
     <#
     .SYNOPSIS
-        Adds an AWS::Budgets::Budget.Subscriber resource property to the template. The Subscriber property type specifies who to notify for a Billing and Cost Management budget notification. The subscriber consists of a subscription type, and either an Amazon SNS topic or an email address.
+        Adds an AWS::Budgets::Budget.Subscriber resource property to the template. 
 
     .DESCRIPTION
         Adds an AWS::Budgets::Budget.Subscriber resource property to the template.
-The Subscriber property type specifies who to notify for a Billing and Cost Management budget notification. The subscriber consists of a subscription type, and either an Amazon SNS topic or an email address.
 
-For example, an email subscriber would have the following parameters:
-
-+ A subscriptionType of EMAIL
-
-+ An address of example@example.com
 
     .LINK
         http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-budgets-budget-subscriber.html
 
     .PARAMETER SubscriptionType
-        The type of notification that AWS sends to a subscriber.
-
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-budgets-budget-subscriber.html#cfn-budgets-budget-subscriber-subscriptiontype
         PrimitiveType: String
         UpdateType: Mutable
 
     .PARAMETER Address
-        The address that AWS sends budget notifications to, either an SNS topic or an email.
-When you create a subscriber, the value of Address can't contain line breaks.
-
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-budgets-budget-subscriber.html#cfn-budgets-budget-subscriber-address
         PrimitiveType: String
         UpdateType: Mutable

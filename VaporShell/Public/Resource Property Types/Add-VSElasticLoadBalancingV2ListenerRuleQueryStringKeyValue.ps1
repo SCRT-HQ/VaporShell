@@ -1,25 +1,21 @@
 function Add-VSElasticLoadBalancingV2ListenerRuleQueryStringKeyValue {
     <#
     .SYNOPSIS
-        Adds an AWS::ElasticLoadBalancingV2::ListenerRule.QueryStringKeyValue resource property to the template. Information about a key/value pair.
+        Adds an AWS::ElasticLoadBalancingV2::ListenerRule.QueryStringKeyValue resource property to the template. 
 
     .DESCRIPTION
         Adds an AWS::ElasticLoadBalancingV2::ListenerRule.QueryStringKeyValue resource property to the template.
-Information about a key/value pair.
+
 
     .LINK
         http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-elasticloadbalancingv2-listenerrule-querystringkeyvalue.html
 
     .PARAMETER Key
-        The key. You can omit the key.
-
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-elasticloadbalancingv2-listenerrule-querystringkeyvalue.html#cfn-elasticloadbalancingv2-listenerrule-querystringkeyvalue-key
         PrimitiveType: String
         UpdateType: Mutable
 
     .PARAMETER Value
-        The value.
-
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-elasticloadbalancingv2-listenerrule-querystringkeyvalue.html#cfn-elasticloadbalancingv2-listenerrule-querystringkeyvalue-value
         PrimitiveType: String
         UpdateType: Mutable

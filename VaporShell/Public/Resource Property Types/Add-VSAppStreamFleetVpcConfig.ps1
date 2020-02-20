@@ -1,26 +1,22 @@
 function Add-VSAppStreamFleetVpcConfig {
     <#
     .SYNOPSIS
-        Adds an AWS::AppStream::Fleet.VpcConfig resource property to the template. The VPC configuration information for the fleet.
+        Adds an AWS::AppStream::Fleet.VpcConfig resource property to the template. 
 
     .DESCRIPTION
         Adds an AWS::AppStream::Fleet.VpcConfig resource property to the template.
-The VPC configuration information for the fleet.
+
 
     .LINK
         http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-appstream-fleet-vpcconfig.html
 
     .PARAMETER SubnetIds
-        The identifiers of the subnets to which a network interface is attached from the fleet instance. Fleet instances can use one or two subnets.
-
         PrimitiveItemType: String
         Type: List
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-appstream-fleet-vpcconfig.html#cfn-appstream-fleet-vpcconfig-subnetids
         UpdateType: Mutable
 
     .PARAMETER SecurityGroupIds
-        The identifiers of the security groups for the fleet.
-
         PrimitiveItemType: String
         Type: List
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-appstream-fleet-vpcconfig.html#cfn-appstream-fleet-vpcconfig-securitygroupids

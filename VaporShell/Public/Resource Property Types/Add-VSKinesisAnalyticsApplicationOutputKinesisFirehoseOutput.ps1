@@ -1,25 +1,21 @@
 function Add-VSKinesisAnalyticsApplicationOutputKinesisFirehoseOutput {
     <#
     .SYNOPSIS
-        Adds an AWS::KinesisAnalytics::ApplicationOutput.KinesisFirehoseOutput resource property to the template. When configuring application output, identifies an Amazon Kinesis Firehose delivery stream as the destination. You provide the stream Amazon Resource Name (ARN and an IAM role that enables Amazon Kinesis Analytics to write to the stream on your behalf.
+        Adds an AWS::KinesisAnalytics::ApplicationOutput.KinesisFirehoseOutput resource property to the template. 
 
     .DESCRIPTION
         Adds an AWS::KinesisAnalytics::ApplicationOutput.KinesisFirehoseOutput resource property to the template.
-When configuring application output, identifies an Amazon Kinesis Firehose delivery stream as the destination. You provide the stream Amazon Resource Name (ARN and an IAM role that enables Amazon Kinesis Analytics to write to the stream on your behalf.
+
 
     .LINK
         http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-kinesisanalytics-applicationoutput-kinesisfirehoseoutput.html
 
     .PARAMETER ResourceARN
-        ARN of the destination Amazon Kinesis Firehose delivery stream to write to.
-
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-kinesisanalytics-applicationoutput-kinesisfirehoseoutput.html#cfn-kinesisanalytics-applicationoutput-kinesisfirehoseoutput-resourcearn
         PrimitiveType: String
         UpdateType: Mutable
 
     .PARAMETER RoleARN
-        ARN of the IAM role that Amazon Kinesis Analytics can assume to write to the destination stream on your behalf. You need to grant the necessary permissions to this role.
-
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-kinesisanalytics-applicationoutput-kinesisfirehoseoutput.html#cfn-kinesisanalytics-applicationoutput-kinesisfirehoseoutput-rolearn
         PrimitiveType: String
         UpdateType: Mutable

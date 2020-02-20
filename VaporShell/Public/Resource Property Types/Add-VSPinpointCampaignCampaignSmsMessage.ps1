@@ -1,32 +1,26 @@
 function Add-VSPinpointCampaignCampaignSmsMessage {
     <#
     .SYNOPSIS
-        Adds an AWS::Pinpoint::Campaign.CampaignSmsMessage resource property to the template. Specifies the content and settings for an SMS message that's sent to recipients of a campaign.
+        Adds an AWS::Pinpoint::Campaign.CampaignSmsMessage resource property to the template. 
 
     .DESCRIPTION
         Adds an AWS::Pinpoint::Campaign.CampaignSmsMessage resource property to the template.
-Specifies the content and settings for an SMS message that's sent to recipients of a campaign.
+
 
     .LINK
         http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-pinpoint-campaign-campaignsmsmessage.html
 
     .PARAMETER SenderId
-        The sender ID to display on recipients' devices when they receive the SMS message.
-
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-pinpoint-campaign-campaignsmsmessage.html#cfn-pinpoint-campaign-campaignsmsmessage-senderid
         PrimitiveType: String
         UpdateType: Mutable
 
     .PARAMETER Body
-        The body of the SMS message.
-
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-pinpoint-campaign-campaignsmsmessage.html#cfn-pinpoint-campaign-campaignsmsmessage-body
         PrimitiveType: String
         UpdateType: Mutable
 
     .PARAMETER MessageType
-        The type of SMS message. Valid values are: TRANSACTIONAL, the message is critical or time-sensitive, such as a one-time password that supports a customer transaction; and, PROMOTIONAL, the message isn't critical or time-sensitive, such as a marketing message.
-
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-pinpoint-campaign-campaignsmsmessage.html#cfn-pinpoint-campaign-campaignsmsmessage-messagetype
         PrimitiveType: String
         UpdateType: Mutable

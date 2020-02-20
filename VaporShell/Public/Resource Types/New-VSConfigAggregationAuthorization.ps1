@@ -1,10 +1,10 @@
 function New-VSConfigAggregationAuthorization {
     <#
     .SYNOPSIS
-        Adds an AWS::Config::AggregationAuthorization resource to the template. An object that represents the authorizations granted to aggregator accounts and regions.
+        Adds an AWS::Config::AggregationAuthorization resource to the template. 
 
     .DESCRIPTION
-        Adds an AWS::Config::AggregationAuthorization resource to the template. An object that represents the authorizations granted to aggregator accounts and regions.
+        Adds an AWS::Config::AggregationAuthorization resource to the template. 
 
     .LINK
         http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-config-aggregationauthorization.html
@@ -13,15 +13,11 @@ function New-VSConfigAggregationAuthorization {
         The logical ID must be alphanumeric (A-Za-z0-9) and unique within the template. Use the logical name to reference the resource in other parts of the template. For example, if you want to map an Amazon Elastic Block Store volume to an Amazon EC2 instance, you reference the logical IDs to associate the block stores with the instance.
 
     .PARAMETER AuthorizedAccountId
-        The 12-digit account ID of the account authorized to aggregate data.
-
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-config-aggregationauthorization.html#cfn-config-aggregationauthorization-authorizedaccountid
         PrimitiveType: String
         UpdateType: Immutable
 
     .PARAMETER AuthorizedAwsRegion
-        The region authorized to collect aggregated data.
-
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-config-aggregationauthorization.html#cfn-config-aggregationauthorization-authorizedawsregion
         PrimitiveType: String
         UpdateType: Immutable

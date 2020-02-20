@@ -1,25 +1,21 @@
 function Add-VSGlueCrawlerS3Target {
     <#
     .SYNOPSIS
-        Adds an AWS::Glue::Crawler.S3Target resource property to the template. Specifies a data store in Amazon Simple Storage Service (Amazon S3.
+        Adds an AWS::Glue::Crawler.S3Target resource property to the template. 
 
     .DESCRIPTION
         Adds an AWS::Glue::Crawler.S3Target resource property to the template.
-Specifies a data store in Amazon Simple Storage Service (Amazon S3.
+
 
     .LINK
         http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-glue-crawler-s3target.html
 
     .PARAMETER Path
-        The path to the Amazon S3 target.
-
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-glue-crawler-s3target.html#cfn-glue-crawler-s3target-path
         PrimitiveType: String
         UpdateType: Mutable
 
     .PARAMETER Exclusions
-        A list of glob patterns used to exclude from the crawl. For more information, see Catalog Tables with a Crawler: https://docs.aws.amazon.com/glue/latest/dg/add-crawler.html.
-
         PrimitiveItemType: String
         Type: List
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-glue-crawler-s3target.html#cfn-glue-crawler-s3target-exclusions

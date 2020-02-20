@@ -1,34 +1,26 @@
 function Add-VSMediaLiveChannelCaptionSelector {
     <#
     .SYNOPSIS
-        Adds an AWS::MediaLive::Channel.CaptionSelector resource property to the template. Information about one caption to extract from the input.
+        Adds an AWS::MediaLive::Channel.CaptionSelector resource property to the template. 
 
     .DESCRIPTION
         Adds an AWS::MediaLive::Channel.CaptionSelector resource property to the template.
-Information about one caption to extract from the input.
 
-The parent of this entity is InputSettings.
 
     .LINK
         http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-medialive-channel-captionselector.html
 
     .PARAMETER LanguageCode
-        When specified, this field indicates the three-letter language code of the captions track to extract from the source.
-
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-medialive-channel-captionselector.html#cfn-medialive-channel-captionselector-languagecode
         PrimitiveType: String
         UpdateType: Mutable
 
     .PARAMETER SelectorSettings
-        Information about the specific audio to extract from the input.
-
         Type: CaptionSelectorSettings
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-medialive-channel-captionselector.html#cfn-medialive-channel-captionselector-selectorsettings
         UpdateType: Mutable
 
     .PARAMETER Name
-        The name identifier for a captions selector. This name is used to associate this captions selector with one or more captions descriptions. Names must be unique within a channel.
-
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-medialive-channel-captionselector.html#cfn-medialive-channel-captionselector-name
         PrimitiveType: String
         UpdateType: Mutable

@@ -1,10 +1,10 @@
 function New-VSEC2SubnetCidrBlock {
     <#
     .SYNOPSIS
-        Adds an AWS::EC2::SubnetCidrBlock resource to the template. Associates a single IPv6 CIDR block with a VPC subnet.
+        Adds an AWS::EC2::SubnetCidrBlock resource to the template. 
 
     .DESCRIPTION
-        Adds an AWS::EC2::SubnetCidrBlock resource to the template. Associates a single IPv6 CIDR block with a VPC subnet.
+        Adds an AWS::EC2::SubnetCidrBlock resource to the template. 
 
     .LINK
         http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ec2-subnetcidrblock.html
@@ -13,15 +13,11 @@ function New-VSEC2SubnetCidrBlock {
         The logical ID must be alphanumeric (A-Za-z0-9) and unique within the template. Use the logical name to reference the resource in other parts of the template. For example, if you want to map an Amazon Elastic Block Store volume to an Amazon EC2 instance, you reference the logical IDs to associate the block stores with the instance.
 
     .PARAMETER Ipv6CidrBlock
-        The IPv6 network range for the subnet, in CIDR notation. The subnet size must use a /64 prefix length.
-
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ec2-subnetcidrblock.html#cfn-ec2-subnetcidrblock-ipv6cidrblock
         PrimitiveType: String
         UpdateType: Immutable
 
     .PARAMETER SubnetId
-        The ID of the subnet.
-
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ec2-subnetcidrblock.html#cfn-ec2-subnetcidrblock-subnetid
         PrimitiveType: String
         UpdateType: Immutable

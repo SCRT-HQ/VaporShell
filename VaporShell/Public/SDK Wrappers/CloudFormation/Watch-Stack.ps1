@@ -41,6 +41,9 @@ function Watch-Stack {
         [String]
         $ProfileName = $env:AWS_PROFILE
     )
+    Begin {
+        Import-AWSSDK
+    }
     Process {
         if ($InNewWindow) {
             foreach ($stckName in $StackName) {

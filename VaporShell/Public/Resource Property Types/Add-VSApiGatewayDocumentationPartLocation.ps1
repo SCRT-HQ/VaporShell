@@ -1,50 +1,36 @@
 function Add-VSApiGatewayDocumentationPartLocation {
     <#
     .SYNOPSIS
-        Adds an AWS::ApiGateway::DocumentationPart.Location resource property to the template. The Location property specifies the location of the Amazon API Gateway API entity that the documentation applies to. Location is a property of the AWS::ApiGateway::DocumentationPart: https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-apigateway-documentationpart.html resource.
+        Adds an AWS::ApiGateway::DocumentationPart.Location resource property to the template. 
 
     .DESCRIPTION
         Adds an AWS::ApiGateway::DocumentationPart.Location resource property to the template.
-The Location property specifies the location of the Amazon API Gateway API entity that the documentation applies to. Location is a property of the AWS::ApiGateway::DocumentationPart: https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-apigateway-documentationpart.html resource.
 
-**Note**
-
-For more information about each property, including constraints and valid values, see DocumentationPart: https://docs.aws.amazon.com/apigateway/api-reference/resource/documentation-part/#location in the *Amazon API Gateway REST API Reference*.
 
     .LINK
         http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-apigateway-documentationpart-location.html
 
     .PARAMETER Method
-        The HTTP verb of a method.
-
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-apigateway-documentationpart-location.html#cfn-apigateway-documentationpart-location-method
         PrimitiveType: String
         UpdateType: Immutable
 
     .PARAMETER Name
-        The name of the targeted API entity.
-
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-apigateway-documentationpart-location.html#cfn-apigateway-documentationpart-location-name
         PrimitiveType: String
         UpdateType: Immutable
 
     .PARAMETER Path
-        The URL path of the target.
-
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-apigateway-documentationpart-location.html#cfn-apigateway-documentationpart-location-path
         PrimitiveType: String
         UpdateType: Immutable
 
     .PARAMETER StatusCode
-        The HTTP status code of a response.
-
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-apigateway-documentationpart-location.html#cfn-apigateway-documentationpart-location-statuscode
         PrimitiveType: String
         UpdateType: Immutable
 
     .PARAMETER Type
-        The type of API entity that the documentation content applies to.
-
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-apigateway-documentationpart-location.html#cfn-apigateway-documentationpart-location-type
         PrimitiveType: String
         UpdateType: Immutable

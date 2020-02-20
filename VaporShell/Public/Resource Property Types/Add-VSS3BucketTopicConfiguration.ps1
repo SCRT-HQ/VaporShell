@@ -1,32 +1,26 @@
 function Add-VSS3BucketTopicConfiguration {
     <#
     .SYNOPSIS
-        Adds an AWS::S3::Bucket.TopicConfiguration resource property to the template. A container for specifying the configuration for publication of messages to an Amazon Simple Notification Service (Amazon SNS topic when Amazon S3 detects specified events.
+        Adds an AWS::S3::Bucket.TopicConfiguration resource property to the template. 
 
     .DESCRIPTION
         Adds an AWS::S3::Bucket.TopicConfiguration resource property to the template.
-A container for specifying the configuration for publication of messages to an Amazon Simple Notification Service (Amazon SNS topic when Amazon S3 detects specified events.
+
 
     .LINK
         http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-s3-bucket-notificationconfig-topicconfig.html
 
     .PARAMETER Event
-        The Amazon S3 bucket event about which to send notifications. For more information, see Supported Event Types: https://docs.aws.amazon.com/AmazonS3/latest/dev/NotificationHowTo.html in the *Amazon Simple Storage Service Developer Guide*.
-
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-s3-bucket-notificationconfig-topicconfig.html#cfn-s3-bucket-notificationconfig-topicconfig-event
         PrimitiveType: String
         UpdateType: Mutable
 
     .PARAMETER Filter
-        The filtering rules that determine for which objects to send notifications. For example, you can create a filter so that Amazon S3 sends notifications only when image files with a .jpg extension are added to the bucket.
-
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-s3-bucket-notificationconfig-topicconfig.html#cfn-s3-bucket-notificationconfig-topicconfig-filter
         Type: NotificationFilter
         UpdateType: Mutable
 
     .PARAMETER Topic
-        The Amazon Resource Name ARN of the Amazon SNS topic to which Amazon S3 publishes a message when it detects events of the specified type.
-
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-s3-bucket-notificationconfig-topicconfig.html#cfn-s3-bucket-notificationconfig-topicconfig-topic
         PrimitiveType: String
         UpdateType: Mutable

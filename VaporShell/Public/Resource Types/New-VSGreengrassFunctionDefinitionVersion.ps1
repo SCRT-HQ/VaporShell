@@ -1,16 +1,10 @@
 function New-VSGreengrassFunctionDefinitionVersion {
     <#
     .SYNOPSIS
-        Adds an AWS::Greengrass::FunctionDefinitionVersion resource to the template. The AWS::Greengrass::FunctionDefinitionVersion resource represents a function definition version for AWS IoT Greengrass. A function definition version contains contain a list of functions.
+        Adds an AWS::Greengrass::FunctionDefinitionVersion resource to the template. 
 
     .DESCRIPTION
-        Adds an AWS::Greengrass::FunctionDefinitionVersion resource to the template. The AWS::Greengrass::FunctionDefinitionVersion resource represents a function definition version for AWS IoT Greengrass. A function definition version contains contain a list of functions.
-
-**Note**
-
-To create a function definition version, you must specify the ID of the function definition that you want to associate with the version. For information about creating a function definition, see https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-greengrass-functiondefinition.html: https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-greengrass-functiondefinition.html.
-
-After you create a function definition version that contains the functions you want to deploy, you must add it to your group version. For more information, see https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-greengrass-group.html: https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-greengrass-group.html.
+        Adds an AWS::Greengrass::FunctionDefinitionVersion resource to the template. 
 
     .LINK
         http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-greengrass-functiondefinitionversion.html
@@ -19,23 +13,17 @@ After you create a function definition version that contains the functions you w
         The logical ID must be alphanumeric (A-Za-z0-9) and unique within the template. Use the logical name to reference the resource in other parts of the template. For example, if you want to map an Amazon Elastic Block Store volume to an Amazon EC2 instance, you reference the logical IDs to associate the block stores with the instance.
 
     .PARAMETER DefaultConfig
-        The default configuration that applies to all Lambda functions in the group. Individual Lambda functions can override these settings.
-
         Type: DefaultConfig
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-greengrass-functiondefinitionversion.html#cfn-greengrass-functiondefinitionversion-defaultconfig
         UpdateType: Immutable
 
     .PARAMETER Functions
-        The functions in this version.
-
         Type: List
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-greengrass-functiondefinitionversion.html#cfn-greengrass-functiondefinitionversion-functions
         ItemType: Function
         UpdateType: Immutable
 
     .PARAMETER FunctionDefinitionId
-        The ID of the function definition associated with this version. This value is a GUID.
-
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-greengrass-functiondefinitionversion.html#cfn-greengrass-functiondefinitionversion-functiondefinitionid
         PrimitiveType: String
         UpdateType: Immutable

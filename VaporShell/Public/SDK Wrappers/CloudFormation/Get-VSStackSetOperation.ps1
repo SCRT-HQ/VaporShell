@@ -2,31 +2,31 @@ function Get-VSStackSetOperation {
     <#
     .SYNOPSIS
     Gets information about Stack Set Operations
-    
+
     .DESCRIPTION
     Gets information about Stack Set Operations
-    
+
     .PARAMETER Description
     Returns the description of the specified stack set operation.
-    
+
     .PARAMETER List
     Returns summary information about operations performed on a stack set.
-    
+
     .PARAMETER ListResults
     Returns summary information about the results of a stack set operation.
-    
+
     .PARAMETER StackSetName
     The name or unique ID of the stack set that you want to list stack instances for.
-    
+
     .PARAMETER OperationId
     The unique ID of the stack set operation.
-    
+
     .PARAMETER MaxResults
     The maximum number of results to be returned with a single call.
 
     .PARAMETER ProfileName
     The name of the configuration profile to deploy the stack with. Defaults to $env:AWS_PROFILE, if set.
-    
+
     .FUNCTIONALITY
     Vaporshell
     #>
@@ -57,6 +57,9 @@ function Get-VSStackSetOperation {
         [String]
         $ProfileName = $env:AWS_PROFILE
     )
+    Begin {
+        Import-AWSSDK
+    }
     Process {
         $method = switch ($PSCmdlet.ParameterSetName) {
             Description {

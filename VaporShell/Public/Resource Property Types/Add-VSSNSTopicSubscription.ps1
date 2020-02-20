@@ -1,29 +1,21 @@
 function Add-VSSNSTopicSubscription {
     <#
     .SYNOPSIS
-        Adds an AWS::SNS::Topic.Subscription resource property to the template. Subscription is an embedded property that describes the subscription endpoints of an Amazon SNS topic.
+        Adds an AWS::SNS::Topic.Subscription resource property to the template. 
 
     .DESCRIPTION
         Adds an AWS::SNS::Topic.Subscription resource property to the template.
-Subscription is an embedded property that describes the subscription endpoints of an Amazon SNS topic.
 
-**Note**
-
-For full control over subscription behavior such as delivery policy, filtering, raw message delivery, cross-region subscriptions, etc. use  AWS::SNS::Subscription: https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-sns-subscription.html  resource instead of this embedded property .
 
     .LINK
         http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-sns-subscription.html
 
     .PARAMETER Endpoint
-        The endpoint that receives notifications from the Amazon SNS topic. The endpoint value depends on the protocol that you specify. For more information, see the Endpoint parameter of the  Subscribe: https://docs.aws.amazon.com/sns/latest/api/API_Subscribe.html  action in the *Amazon Simple Notification Service API Reference*.
-
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-sns-subscription.html#cfn-sns-topic-subscription-endpoint
         PrimitiveType: String
         UpdateType: Immutable
 
     .PARAMETER Protocol
-        The subscription's protocol. For more information, see the Protocol parameter of the  Subscribe: https://docs.aws.amazon.com/sns/latest/api/API_Subscribe.html  action in the *Amazon Simple Notification Service API Reference*.
-
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-sns-subscription.html#cfn-sns-topic-subscription-protocol
         PrimitiveType: String
         UpdateType: Immutable

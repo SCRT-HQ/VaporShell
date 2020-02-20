@@ -1,18 +1,16 @@
 function Add-VSSageMakerWorkteamNotificationConfiguration {
     <#
     .SYNOPSIS
-        Adds an AWS::SageMaker::Workteam.NotificationConfiguration resource property to the template. Configures SNS notifications of available or expiring work items for work teams.
+        Adds an AWS::SageMaker::Workteam.NotificationConfiguration resource property to the template. 
 
     .DESCRIPTION
         Adds an AWS::SageMaker::Workteam.NotificationConfiguration resource property to the template.
-Configures SNS notifications of available or expiring work items for work teams.
+
 
     .LINK
         http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-sagemaker-workteam-notificationconfiguration.html
 
     .PARAMETER NotificationTopicArn
-        The ARN for the SNS topic to which notifications should be published.
-
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-sagemaker-workteam-notificationconfiguration.html#cfn-sagemaker-workteam-notificationconfiguration-notificationtopicarn
         PrimitiveType: String
         UpdateType: Mutable

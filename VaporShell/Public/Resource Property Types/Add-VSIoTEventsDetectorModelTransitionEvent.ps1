@@ -1,40 +1,32 @@
 function Add-VSIoTEventsDetectorModelTransitionEvent {
     <#
     .SYNOPSIS
-        Adds an AWS::IoTEvents::DetectorModel.TransitionEvent resource property to the template. Specifies the actions performed and the next state entered when a "condition" evaluates to TRUE.
+        Adds an AWS::IoTEvents::DetectorModel.TransitionEvent resource property to the template. 
 
     .DESCRIPTION
         Adds an AWS::IoTEvents::DetectorModel.TransitionEvent resource property to the template.
-Specifies the actions performed and the next state entered when a "condition" evaluates to TRUE.
+
 
     .LINK
         http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iotevents-detectormodel-transitionevent.html
 
     .PARAMETER Condition
-        Required] A Boolean expression that when TRUE causes the actions to be performed and the "nextState" to be entered.
-
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iotevents-detectormodel-transitionevent.html#cfn-iotevents-detectormodel-transitionevent-condition
         PrimitiveType: String
         UpdateType: Mutable
 
     .PARAMETER Actions
-        The actions to be performed.
-
         Type: List
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iotevents-detectormodel-transitionevent.html#cfn-iotevents-detectormodel-transitionevent-actions
         ItemType: Action
         UpdateType: Mutable
 
     .PARAMETER NextState
-        The next state to enter.
-
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iotevents-detectormodel-transitionevent.html#cfn-iotevents-detectormodel-transitionevent-nextstate
         PrimitiveType: String
         UpdateType: Mutable
 
     .PARAMETER EventName
-        The name of the transition event.
-
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iotevents-detectormodel-transitionevent.html#cfn-iotevents-detectormodel-transitionevent-eventname
         PrimitiveType: String
         UpdateType: Mutable

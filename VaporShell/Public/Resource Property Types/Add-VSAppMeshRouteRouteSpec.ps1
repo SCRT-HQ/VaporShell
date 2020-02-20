@@ -1,46 +1,36 @@
 function Add-VSAppMeshRouteRouteSpec {
     <#
     .SYNOPSIS
-        Adds an AWS::AppMesh::Route.RouteSpec resource property to the template. An object representing the specification of a route.
+        Adds an AWS::AppMesh::Route.RouteSpec resource property to the template. 
 
     .DESCRIPTION
         Adds an AWS::AppMesh::Route.RouteSpec resource property to the template.
-An object representing the specification of a route.
+
 
     .LINK
         http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-appmesh-route-routespec.html
 
     .PARAMETER HttpRoute
-        The HTTP routing information for the route.
-
         Type: HttpRoute
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-appmesh-route-routespec.html#cfn-appmesh-route-routespec-httproute
         UpdateType: Mutable
 
     .PARAMETER Priority
-        *Update requires*: No interruption: https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt
-
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-appmesh-route-routespec.html#cfn-appmesh-route-routespec-priority
         PrimitiveType: Integer
         UpdateType: Mutable
 
     .PARAMETER Http2Route
-        *Update requires*: No interruption: https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt
-
         Type: HttpRoute
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-appmesh-route-routespec.html#cfn-appmesh-route-routespec-http2route
         UpdateType: Mutable
 
     .PARAMETER GrpcRoute
-        *Update requires*: No interruption: https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt
-
         Type: GrpcRoute
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-appmesh-route-routespec.html#cfn-appmesh-route-routespec-grpcroute
         UpdateType: Mutable
 
     .PARAMETER TcpRoute
-        The TCP routing information for the route.
-
         Type: TcpRoute
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-appmesh-route-routespec.html#cfn-appmesh-route-routespec-tcproute
         UpdateType: Mutable

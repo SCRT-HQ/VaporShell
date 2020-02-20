@@ -2,10 +2,10 @@ function Get-VSAccountLimits {
     <#
     .SYNOPSIS
     Retrieves your account's AWS CloudFormation limits, such as the maximum number of stacks that you can create in your account.
-    
+
     .PARAMETER ProfileName
     The name of the configuration profile to deploy the stack with. Defaults to $env:AWS_PROFILE, if set.
-    
+
     .FUNCTIONALITY
     Vaporshell
     #>
@@ -16,6 +16,9 @@ function Get-VSAccountLimits {
         [String]
         $ProfileName = $env:AWS_PROFILE
     )
+    Begin {
+        Import-AWSSDK
+    }
     Process {
         $method = 'DescribeAccountLimits'
         $expand = 'AccountLimits'

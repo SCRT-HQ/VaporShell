@@ -1,18 +1,16 @@
 function Add-VSAppMeshVirtualServiceVirtualServiceSpec {
     <#
     .SYNOPSIS
-        Adds an AWS::AppMesh::VirtualService.VirtualServiceSpec resource property to the template. An object representing the specification of a virtual service.
+        Adds an AWS::AppMesh::VirtualService.VirtualServiceSpec resource property to the template. 
 
     .DESCRIPTION
         Adds an AWS::AppMesh::VirtualService.VirtualServiceSpec resource property to the template.
-An object representing the specification of a virtual service.
+
 
     .LINK
         http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-appmesh-virtualservice-virtualservicespec.html
 
     .PARAMETER Provider
-        The App Mesh object that is acting as the provider for a virtual service. You can specify a single virtual node or virtual router.
-
         Type: VirtualServiceProvider
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-appmesh-virtualservice-virtualservicespec.html#cfn-appmesh-virtualservice-virtualservicespec-provider
         UpdateType: Mutable

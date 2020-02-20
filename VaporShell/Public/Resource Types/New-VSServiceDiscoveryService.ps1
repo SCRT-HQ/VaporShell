@@ -1,24 +1,10 @@
 function New-VSServiceDiscoveryService {
     <#
     .SYNOPSIS
-        Adds an AWS::ServiceDiscovery::Service resource to the template. A complex type that contains information about a service, which defines the configuration of the following entities:
+        Adds an AWS::ServiceDiscovery::Service resource to the template. 
 
     .DESCRIPTION
-        Adds an AWS::ServiceDiscovery::Service resource to the template. A complex type that contains information about a service, which defines the configuration of the following entities:
-
-+ For public and private DNS namespaces, one of the following combinations of DNS records in Amazon Route 53:
-
-+ A
-
-+ AAAA
-
-+ A and AAAA
-
-+ SRV
-
-+ CNAME
-
-+ Optionally, a health check
+        Adds an AWS::ServiceDiscovery::Service resource to the template. 
 
     .LINK
         http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-servicediscovery-service.html
@@ -27,45 +13,31 @@ function New-VSServiceDiscoveryService {
         The logical ID must be alphanumeric (A-Za-z0-9) and unique within the template. Use the logical name to reference the resource in other parts of the template. For example, if you want to map an Amazon Elastic Block Store volume to an Amazon EC2 instance, you reference the logical IDs to associate the block stores with the instance.
 
     .PARAMETER Description
-        The description of the service.
-
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-servicediscovery-service.html#cfn-servicediscovery-service-description
         PrimitiveType: String
         UpdateType: Mutable
 
     .PARAMETER HealthCheckCustomConfig
-        A complex type that contains information about an optional custom health check.
-If you specify a health check configuration, you can specify either HealthCheckCustomConfig or HealthCheckConfig but not both.
-
         Type: HealthCheckCustomConfig
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-servicediscovery-service.html#cfn-servicediscovery-service-healthcheckcustomconfig
         UpdateType: Immutable
 
     .PARAMETER DnsConfig
-        A complex type that contains information about the Route 53 DNS records that you want AWS Cloud Map to create when you register an instance.
-
         Type: DnsConfig
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-servicediscovery-service.html#cfn-servicediscovery-service-dnsconfig
         UpdateType: Mutable
 
     .PARAMETER NamespaceId
-        The ID of the namespace that was used to create the service.
-
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-servicediscovery-service.html#cfn-servicediscovery-service-namespaceid
         PrimitiveType: String
         UpdateType: Immutable
 
     .PARAMETER HealthCheckConfig
-        *Public DNS namespaces only.* A complex type that contains settings for an optional health check. If you specify settings for a health check, AWS Cloud Map associates the health check with the records that you specify in DnsConfig.
-For information about the charges for health checks, see Amazon Route 53 Pricing: http://aws.amazon.com/route53/pricing/.
-
         Type: HealthCheckConfig
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-servicediscovery-service.html#cfn-servicediscovery-service-healthcheckconfig
         UpdateType: Mutable
 
     .PARAMETER Name
-        The name of the service.
-
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-servicediscovery-service.html#cfn-servicediscovery-service-name
         PrimitiveType: String
         UpdateType: Immutable

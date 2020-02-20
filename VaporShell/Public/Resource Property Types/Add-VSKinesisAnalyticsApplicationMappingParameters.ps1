@@ -1,25 +1,21 @@
 function Add-VSKinesisAnalyticsApplicationMappingParameters {
     <#
     .SYNOPSIS
-        Adds an AWS::KinesisAnalytics::Application.MappingParameters resource property to the template. When configuring application input at the time of creating or updating an application, provides additional mapping information specific to the record format (such as JSON, CSV, or record fields delimited by some delimiter on the streaming source.
+        Adds an AWS::KinesisAnalytics::Application.MappingParameters resource property to the template. 
 
     .DESCRIPTION
         Adds an AWS::KinesisAnalytics::Application.MappingParameters resource property to the template.
-When configuring application input at the time of creating or updating an application, provides additional mapping information specific to the record format (such as JSON, CSV, or record fields delimited by some delimiter on the streaming source.
+
 
     .LINK
         http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-kinesisanalytics-application-mappingparameters.html
 
     .PARAMETER JSONMappingParameters
-        Provides additional mapping information when JSON is the record format on the streaming source.
-
         Type: JSONMappingParameters
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-kinesisanalytics-application-mappingparameters.html#cfn-kinesisanalytics-application-mappingparameters-jsonmappingparameters
         UpdateType: Mutable
 
     .PARAMETER CSVMappingParameters
-        Provides additional mapping information when the record format uses delimiters for example, CSV.
-
         Type: CSVMappingParameters
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-kinesisanalytics-application-mappingparameters.html#cfn-kinesisanalytics-application-mappingparameters-csvmappingparameters
         UpdateType: Mutable

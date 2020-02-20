@@ -1,12 +1,10 @@
 function New-VSLogsMetricFilter {
     <#
     .SYNOPSIS
-        Adds an AWS::Logs::MetricFilter resource to the template. The AWS::Logs::MetricFilter resource specifies a metric filter that describes how CloudWatch Logs extracts information from logs and transforms it into Amazon CloudWatch metrics. If you have multiple metric filters that are associated with a log group, all the filters are applied to the log streams in that group.
+        Adds an AWS::Logs::MetricFilter resource to the template. 
 
     .DESCRIPTION
-        Adds an AWS::Logs::MetricFilter resource to the template. The AWS::Logs::MetricFilter resource specifies a metric filter that describes how CloudWatch Logs extracts information from logs and transforms it into Amazon CloudWatch metrics. If you have multiple metric filters that are associated with a log group, all the filters are applied to the log streams in that group.
-
-The maximum number of metric filters that can be associated with a log group is 100.
+        Adds an AWS::Logs::MetricFilter resource to the template. 
 
     .LINK
         http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-logs-metricfilter.html
@@ -15,22 +13,16 @@ The maximum number of metric filters that can be associated with a log group is 
         The logical ID must be alphanumeric (A-Za-z0-9) and unique within the template. Use the logical name to reference the resource in other parts of the template. For example, if you want to map an Amazon Elastic Block Store volume to an Amazon EC2 instance, you reference the logical IDs to associate the block stores with the instance.
 
     .PARAMETER FilterPattern
-        A filter pattern for extracting metric data out of ingested log events.
-
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-logs-metricfilter.html#cfn-cwl-metricfilter-filterpattern
         PrimitiveType: String
         UpdateType: Mutable
 
     .PARAMETER LogGroupName
-        The name of an existing log group that you want to associate with this metric filter.
-
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-logs-metricfilter.html#cfn-cwl-metricfilter-loggroupname
         PrimitiveType: String
         UpdateType: Immutable
 
     .PARAMETER MetricTransformations
-        The metric transformations.
-
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-logs-metricfilter.html#cfn-cwl-metricfilter-metrictransformations
         DuplicatesAllowed: False
         ItemType: MetricTransformation

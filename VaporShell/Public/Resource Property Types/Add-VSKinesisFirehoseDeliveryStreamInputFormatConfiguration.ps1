@@ -1,18 +1,16 @@
 function Add-VSKinesisFirehoseDeliveryStreamInputFormatConfiguration {
     <#
     .SYNOPSIS
-        Adds an AWS::KinesisFirehose::DeliveryStream.InputFormatConfiguration resource property to the template. Specifies the deserializer you want to use to convert the format of the input data.
+        Adds an AWS::KinesisFirehose::DeliveryStream.InputFormatConfiguration resource property to the template. 
 
     .DESCRIPTION
         Adds an AWS::KinesisFirehose::DeliveryStream.InputFormatConfiguration resource property to the template.
-Specifies the deserializer you want to use to convert the format of the input data.
+
 
     .LINK
         http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-kinesisfirehose-deliverystream-inputformatconfiguration.html
 
     .PARAMETER Deserializer
-        Specifies which deserializer to use. You can choose either the Apache Hive JSON SerDe or the OpenX JSON SerDe. If both are non-null, the server rejects the request.
-
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-kinesisfirehose-deliverystream-inputformatconfiguration.html#cfn-kinesisfirehose-deliverystream-inputformatconfiguration-deserializer
         Type: Deserializer
         UpdateType: Mutable

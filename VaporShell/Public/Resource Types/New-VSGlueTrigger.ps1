@@ -1,10 +1,10 @@
 function New-VSGlueTrigger {
     <#
     .SYNOPSIS
-        Adds an AWS::Glue::Trigger resource to the template. The AWS::Glue::Trigger resource specifies triggers that run AWS Glue jobs. For more information, see Triggering Jobs in AWS Glue: https://docs.aws.amazon.com/glue/latest/dg/trigger-job.html and Trigger Structure: https://docs.aws.amazon.com/glue/latest/dg/aws-glue-api-jobs-trigger.html#aws-glue-api-jobs-trigger-Trigger in the *AWS Glue Developer Guide*.
+        Adds an AWS::Glue::Trigger resource to the template. 
 
     .DESCRIPTION
-        Adds an AWS::Glue::Trigger resource to the template. The AWS::Glue::Trigger resource specifies triggers that run AWS Glue jobs. For more information, see Triggering Jobs in AWS Glue: https://docs.aws.amazon.com/glue/latest/dg/trigger-job.html and Trigger Structure: https://docs.aws.amazon.com/glue/latest/dg/aws-glue-api-jobs-trigger.html#aws-glue-api-jobs-trigger-Trigger in the *AWS Glue Developer Guide*.
+        Adds an AWS::Glue::Trigger resource to the template. 
 
     .LINK
         http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-glue-trigger.html
@@ -13,8 +13,6 @@ function New-VSGlueTrigger {
         The logical ID must be alphanumeric (A-Za-z0-9) and unique within the template. Use the logical name to reference the resource in other parts of the template. For example, if you want to map an Amazon Elastic Block Store volume to an Amazon EC2 instance, you reference the logical IDs to associate the block stores with the instance.
 
     .PARAMETER Type
-        The type of trigger that this is.
-
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-glue-trigger.html#cfn-glue-trigger-type
         PrimitiveType: String
         UpdateType: Mutable
@@ -25,15 +23,11 @@ function New-VSGlueTrigger {
         UpdateType: Mutable
 
     .PARAMETER Description
-        A description of this trigger.
-
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-glue-trigger.html#cfn-glue-trigger-description
         PrimitiveType: String
         UpdateType: Mutable
 
     .PARAMETER Actions
-        The actions initiated by this trigger.
-
         Type: List
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-glue-trigger.html#cfn-glue-trigger-actions
         ItemType: Action
@@ -45,29 +39,21 @@ function New-VSGlueTrigger {
         UpdateType: Immutable
 
     .PARAMETER Schedule
-        A cron expression used to specify the schedule. For more information, see Time-Based Schedules for Jobs and Crawlers: https://docs.aws.amazon.com/glue/latest/dg/monitor-data-warehouse-schedule.html in the *AWS Glue Developer Guide*. For example, to run something every day at 12:15 UTC, specify cron15 12 * * ? *.
-
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-glue-trigger.html#cfn-glue-trigger-schedule
         PrimitiveType: String
         UpdateType: Mutable
 
     .PARAMETER Tags
-        The tags to use with this trigger. You can use tags to limit access to the trigger. For more information about tags in AWS Glue, see AWS Tags in AWS Glue: https://docs.aws.amazon.com/glue/latest/dg/monitor-tags.html in the developer guide..
-
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-glue-trigger.html#cfn-glue-trigger-tags
         PrimitiveType: Json
         UpdateType: Mutable
 
     .PARAMETER Name
-        The name of the trigger.
-
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-glue-trigger.html#cfn-glue-trigger-name
         PrimitiveType: String
         UpdateType: Immutable
 
     .PARAMETER Predicate
-        The predicate of this trigger, which defines when it will fire.
-
         Type: Predicate
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-glue-trigger.html#cfn-glue-trigger-predicate
         UpdateType: Mutable

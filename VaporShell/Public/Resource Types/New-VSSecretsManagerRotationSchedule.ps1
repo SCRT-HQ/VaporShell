@@ -1,14 +1,10 @@
 function New-VSSecretsManagerRotationSchedule {
     <#
     .SYNOPSIS
-        Adds an AWS::SecretsManager::RotationSchedule resource to the template. The AWS::SecretsManager::RotationSchedule resource configures rotation for a secret. The secret must already be configured with the details of the database or service. If you define both the secret and the database or service in an AWS CloudFormation template, then define the AWS::SecretsManager::SecretTargetAttachment: https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-secretsmanager-secrettargetattachment.html resource to populate the secret with the connection details of the database or service before you attempt to configure rotation.
+        Adds an AWS::SecretsManager::RotationSchedule resource to the template. 
 
     .DESCRIPTION
-        Adds an AWS::SecretsManager::RotationSchedule resource to the template. The AWS::SecretsManager::RotationSchedule resource configures rotation for a secret. The secret must already be configured with the details of the database or service. If you define both the secret and the database or service in an AWS CloudFormation template, then define the AWS::SecretsManager::SecretTargetAttachment: https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-secretsmanager-secrettargetattachment.html resource to populate the secret with the connection details of the database or service before you attempt to configure rotation.
-
-**Important**
-
-When you configure rotation for a secret, AWS CloudFormation automatically rotates the secret one time. Ensure that you configure all your clients to retrieve the secret using Secrets Manager before configuring rotation to prevent breaking them.
+        Adds an AWS::SecretsManager::RotationSchedule resource to the template. 
 
     .LINK
         http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-secretsmanager-rotationschedule.html
@@ -17,22 +13,16 @@ When you configure rotation for a secret, AWS CloudFormation automatically rotat
         The logical ID must be alphanumeric (A-Za-z0-9) and unique within the template. Use the logical name to reference the resource in other parts of the template. For example, if you want to map an Amazon Elastic Block Store volume to an Amazon EC2 instance, you reference the logical IDs to associate the block stores with the instance.
 
     .PARAMETER SecretId
-        Specifies the Amazon Resource Name ARN or the friendly name of the secret that you want to rotate. To reference a secret also that's created in this template, use the Ref: https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/intrinsic-function-reference-ref.html function with the secret's logical ID.
-
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-secretsmanager-rotationschedule.html#cfn-secretsmanager-rotationschedule-secretid
         PrimitiveType: String
         UpdateType: Immutable
 
     .PARAMETER RotationLambdaARN
-        Specifies the ARN of the Lambda function that can rotate the secret. If you don't specify this parameter, then the secret must already have the ARN of a Lambda function configured. To reference a Lambda function that's also created in this template, use the Ref: https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/intrinsic-function-reference-ref.html function with the function's logical ID.
-
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-secretsmanager-rotationschedule.html#cfn-secretsmanager-rotationschedule-rotationlambdaarn
         PrimitiveType: String
         UpdateType: Mutable
 
     .PARAMETER RotationRules
-        Specifies a structure that defines the rotation schedule for this secret.
-
         Type: RotationRules
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-secretsmanager-rotationschedule.html#cfn-secretsmanager-rotationschedule-rotationrules
         UpdateType: Mutable

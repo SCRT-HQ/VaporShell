@@ -1,24 +1,16 @@
 function Add-VSGreengrassResourceDefinitionResourceDefinitionVersion {
     <#
     .SYNOPSIS
-        Adds an AWS::Greengrass::ResourceDefinition.ResourceDefinitionVersion resource property to the template. <a name="aws-properties-greengrass-resourcedefinition-resourcedefinitionversion-description"></a>A resource definition version contains a list of resources. (In AWS CloudFormation, resources are named *resource instances*.
+        Adds an AWS::Greengrass::ResourceDefinition.ResourceDefinitionVersion resource property to the template. 
 
     .DESCRIPTION
         Adds an AWS::Greengrass::ResourceDefinition.ResourceDefinitionVersion resource property to the template.
-<a name="aws-properties-greengrass-resourcedefinition-resourcedefinitionversion-description"></a>A resource definition version contains a list of resources. (In AWS CloudFormation, resources are named *resource instances*.
 
-**Note**
-
-After you create a resource definition version that contains the resources you want to deploy, you must add it to your group version. For more information, see https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-greengrass-group.html: https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-greengrass-group.html.
-
-<a name="aws-properties-greengrass-resourcedefinition-resourcedefinitionversion-inheritance"></a> In an AWS CloudFormation template, ResourceDefinitionVersion is the property type of the InitialVersion property in the https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-greengrass-resourcedefinition.html: https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-greengrass-resourcedefinition.html resource.
 
     .LINK
         http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-greengrass-resourcedefinition-resourcedefinitionversion.html
 
     .PARAMETER Resources
-        The resources in this version.
-
         Type: List
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-greengrass-resourcedefinition-resourcedefinitionversion.html#cfn-greengrass-resourcedefinition-resourcedefinitionversion-resources
         ItemType: ResourceInstance

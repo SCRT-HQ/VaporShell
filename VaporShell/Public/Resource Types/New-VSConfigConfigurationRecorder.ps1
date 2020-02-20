@@ -1,16 +1,10 @@
 function New-VSConfigConfigurationRecorder {
     <#
     .SYNOPSIS
-        Adds an AWS::Config::ConfigurationRecorder resource to the template. The AWS::Config::ConfigurationRecorder resource describes the AWS resource types for which AWS Config records configuration changes. The configuration recorder stores the configurations of the supported resources in your account as configuration items.
+        Adds an AWS::Config::ConfigurationRecorder resource to the template. 
 
     .DESCRIPTION
-        Adds an AWS::Config::ConfigurationRecorder resource to the template. The AWS::Config::ConfigurationRecorder resource describes the AWS resource types for which AWS Config records configuration changes. The configuration recorder stores the configurations of the supported resources in your account as configuration items.
-
-**Note**
-
-To enable AWS Config, you must create a configuration recorder and a delivery channel. AWS Config uses the delivery channel to deliver the configuration changes to your Amazon S3 bucket or Amazon SNS topic. For more information, see AWS::Config::DeliveryChannel: https://docs.aws.amazon.com/config/latest/UserGuide/aws-resource-config-deliverychannel.html.
-
-AWS CloudFormation starts the recorder as soon as the delivery channel is available. To stop the recorder, delete the configuration recorder from your stack. For more information, see Configuration Recorder: https://docs.aws.amazon.com/config/latest/developerguide/config-concepts.html#config-recorder in the AWS Config Developer Guide.
+        Adds an AWS::Config::ConfigurationRecorder resource to the template. 
 
     .LINK
         http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-config-configurationrecorder.html
@@ -19,24 +13,16 @@ AWS CloudFormation starts the recorder as soon as the delivery channel is availa
         The logical ID must be alphanumeric (A-Za-z0-9) and unique within the template. Use the logical name to reference the resource in other parts of the template. For example, if you want to map an Amazon Elastic Block Store volume to an Amazon EC2 instance, you reference the logical IDs to associate the block stores with the instance.
 
     .PARAMETER Name
-        A name for the configuration recorder. If you don't specify a name, AWS CloudFormation generates a unique physical ID and uses that ID for the configuration recorder name. For more information, see Name Type: https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-name.html.
-After you create a configuration recorder, you cannot rename it. If you don't want a name that AWS CloudFormation generates, specify a value for this property.
-Updates are not supported.
-
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-config-configurationrecorder.html#cfn-config-configurationrecorder-name
         PrimitiveType: String
         UpdateType: Immutable
 
     .PARAMETER RecordingGroup
-        Indicates whether to record configurations for all supported resources or for a list of resource types. The resource types that you list must be supported by AWS Config.
-
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-config-configurationrecorder.html#cfn-config-configurationrecorder-recordinggroup
         Type: RecordingGroup
         UpdateType: Mutable
 
     .PARAMETER RoleARN
-        The Amazon Resource Name ARN of the AWS Identity and Access Management IAM role that is used to make read or write requests to the delivery channel that you specify and to get configuration details for supported AWS resources. For more information, see Permissions for the IAM Role Assigned: https://docs.aws.amazon.com/config/latest/developerguide/iamrole-permissions.html to AWS Config in the AWS Config Developer Guide.
-
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-config-configurationrecorder.html#cfn-config-configurationrecorder-rolearn
         PrimitiveType: String
         UpdateType: Mutable

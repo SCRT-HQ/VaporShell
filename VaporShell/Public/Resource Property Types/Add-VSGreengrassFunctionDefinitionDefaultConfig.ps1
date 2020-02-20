@@ -1,20 +1,16 @@
 function Add-VSGreengrassFunctionDefinitionDefaultConfig {
     <#
     .SYNOPSIS
-        Adds an AWS::Greengrass::FunctionDefinition.DefaultConfig resource property to the template. <a name="aws-properties-greengrass-functiondefinition-defaultconfig-description"></a>The default configuration that applies to all Lambda functions in the function definition version. Individual Lambda functions can override these settings.
+        Adds an AWS::Greengrass::FunctionDefinition.DefaultConfig resource property to the template. 
 
     .DESCRIPTION
         Adds an AWS::Greengrass::FunctionDefinition.DefaultConfig resource property to the template.
-<a name="aws-properties-greengrass-functiondefinition-defaultconfig-description"></a>The default configuration that applies to all Lambda functions in the function definition version. Individual Lambda functions can override these settings.
 
-<a name="aws-properties-greengrass-functiondefinition-defaultconfig-inheritance"></a> In an AWS CloudFormation template, DefaultConfig is a property of the  FunctionDefinitionVersion : https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-greengrass-functiondefinition-functiondefinitionversion.html property type.
 
     .LINK
         http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-greengrass-functiondefinition-defaultconfig.html
 
     .PARAMETER Execution
-        Configuration settings for the Lambda execution environment on the AWS IoT Greengrass core.
-
         Type: Execution
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-greengrass-functiondefinition-defaultconfig.html#cfn-greengrass-functiondefinition-defaultconfig-execution
         UpdateType: Mutable

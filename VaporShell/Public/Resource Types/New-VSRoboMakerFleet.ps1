@@ -1,10 +1,10 @@
 function New-VSRoboMakerFleet {
     <#
     .SYNOPSIS
-        Adds an AWS::RoboMaker::Fleet resource to the template. The AWS::RoboMaker::Fleet resource creates an AWS RoboMaker fleet. Fleets contain robots and can receive deployments.
+        Adds an AWS::RoboMaker::Fleet resource to the template. 
 
     .DESCRIPTION
-        Adds an AWS::RoboMaker::Fleet resource to the template. The AWS::RoboMaker::Fleet resource creates an AWS RoboMaker fleet. Fleets contain robots and can receive deployments.
+        Adds an AWS::RoboMaker::Fleet resource to the template. 
 
     .LINK
         http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-robomaker-fleet.html
@@ -13,15 +13,11 @@ function New-VSRoboMakerFleet {
         The logical ID must be alphanumeric (A-Za-z0-9) and unique within the template. Use the logical name to reference the resource in other parts of the template. For example, if you want to map an Amazon Elastic Block Store volume to an Amazon EC2 instance, you reference the logical IDs to associate the block stores with the instance.
 
     .PARAMETER Tags
-        The list of all tags added to the fleet.
-
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-robomaker-fleet.html#cfn-robomaker-fleet-tags
         PrimitiveType: Json
         UpdateType: Mutable
 
     .PARAMETER Name
-        The name of the fleet.
-
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-robomaker-fleet.html#cfn-robomaker-fleet-name
         PrimitiveType: String
         UpdateType: Immutable

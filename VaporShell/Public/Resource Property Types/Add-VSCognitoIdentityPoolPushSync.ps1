@@ -1,26 +1,22 @@
 function Add-VSCognitoIdentityPoolPushSync {
     <#
     .SYNOPSIS
-        Adds an AWS::Cognito::IdentityPool.PushSync resource property to the template. PushSync is a property of the AWS::Cognito::IdentityPool: https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-cognito-identitypool.html resource that defines the configuration options to be applied to an Amazon Cognito identity pool.
+        Adds an AWS::Cognito::IdentityPool.PushSync resource property to the template. 
 
     .DESCRIPTION
         Adds an AWS::Cognito::IdentityPool.PushSync resource property to the template.
-PushSync is a property of the AWS::Cognito::IdentityPool: https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-cognito-identitypool.html resource that defines the configuration options to be applied to an Amazon Cognito identity pool.
+
 
     .LINK
         http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-cognito-identitypool-pushsync.html
 
     .PARAMETER ApplicationArns
-        List of Amazon SNS platform application ARNs that could be used by clients.
-
         PrimitiveItemType: String
         Type: List
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-cognito-identitypool-pushsync.html#cfn-cognito-identitypool-pushsync-applicationarns
         UpdateType: Mutable
 
     .PARAMETER RoleArn
-        An IAM role configured to allow Amazon Cognito to call SNS on behalf of the developer.
-
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-cognito-identitypool-pushsync.html#cfn-cognito-identitypool-pushsync-rolearn
         PrimitiveType: String
         UpdateType: Mutable

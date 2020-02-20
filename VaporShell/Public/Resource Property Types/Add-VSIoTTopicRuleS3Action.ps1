@@ -1,32 +1,26 @@
 function Add-VSIoTTopicRuleS3Action {
     <#
     .SYNOPSIS
-        Adds an AWS::IoT::TopicRule.S3Action resource property to the template. Describes an action to write data to an Amazon S3 bucket.
+        Adds an AWS::IoT::TopicRule.S3Action resource property to the template. 
 
     .DESCRIPTION
         Adds an AWS::IoT::TopicRule.S3Action resource property to the template.
-Describes an action to write data to an Amazon S3 bucket.
+
 
     .LINK
         http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iot-topicrule-s3action.html
 
     .PARAMETER BucketName
-        The Amazon S3 bucket.
-
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iot-topicrule-s3action.html#cfn-iot-topicrule-s3action-bucketname
         PrimitiveType: String
         UpdateType: Mutable
 
     .PARAMETER Key
-        The object key.
-
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iot-topicrule-s3action.html#cfn-iot-topicrule-s3action-key
         PrimitiveType: String
         UpdateType: Mutable
 
     .PARAMETER RoleArn
-        The ARN of the IAM role that grants access.
-
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iot-topicrule-s3action.html#cfn-iot-topicrule-s3action-rolearn
         PrimitiveType: String
         UpdateType: Mutable

@@ -1,18 +1,16 @@
 function Add-VSMSKClusterTls {
     <#
     .SYNOPSIS
-        Adds an AWS::MSK::Cluster.Tls resource property to the template. Details for client authentication using TLS.
+        Adds an AWS::MSK::Cluster.Tls resource property to the template. 
 
     .DESCRIPTION
         Adds an AWS::MSK::Cluster.Tls resource property to the template.
-Details for client authentication using TLS.
+
 
     .LINK
         http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-msk-cluster-tls.html
 
     .PARAMETER CertificateAuthorityArnList
-        List of ACM Certificate Authority ARNs.
-
         PrimitiveItemType: String
         Type: List
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-msk-cluster-tls.html#cfn-msk-cluster-tls-certificateauthorityarnlist

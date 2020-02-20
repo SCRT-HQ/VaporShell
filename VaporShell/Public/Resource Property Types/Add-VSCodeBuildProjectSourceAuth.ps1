@@ -1,29 +1,21 @@
 function Add-VSCodeBuildProjectSourceAuth {
     <#
     .SYNOPSIS
-        Adds an AWS::CodeBuild::Project.SourceAuth resource property to the template. SourceAuth is a property of the AWS CodeBuild Project Source : https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-codebuild-project-source.html property type that specifies authorization settings for AWS CodeBuild to access the source code to be built.
+        Adds an AWS::CodeBuild::Project.SourceAuth resource property to the template. 
 
     .DESCRIPTION
         Adds an AWS::CodeBuild::Project.SourceAuth resource property to the template.
-SourceAuth is a property of the AWS CodeBuild Project Source : https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-codebuild-project-source.html property type that specifies authorization settings for AWS CodeBuild to access the source code to be built.
 
-SourceAuth is for use by the CodeBuild console only. Do not get or set it directly.
 
     .LINK
         http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-codebuild-project-sourceauth.html
 
     .PARAMETER Type
-        The authorization type to use. The only valid value is OAUTH, which represents the OAuth authorization type.
-This data type is used by the AWS CodeBuild console only.
-
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-codebuild-project-sourceauth.html#cfn-codebuild-project-sourceauth-type
         PrimitiveType: String
         UpdateType: Mutable
 
     .PARAMETER Resource
-        The resource value that applies to the specified authorization type.
-This data type is used by the AWS CodeBuild console only.
-
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-codebuild-project-sourceauth.html#cfn-codebuild-project-sourceauth-resource
         PrimitiveType: String
         UpdateType: Mutable

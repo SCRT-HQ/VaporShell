@@ -1,18 +1,16 @@
 function Add-VSEC2SpotFleetTargetGroup {
     <#
     .SYNOPSIS
-        Adds an AWS::EC2::SpotFleet.TargetGroup resource property to the template. Describes a load balancer target group.
+        Adds an AWS::EC2::SpotFleet.TargetGroup resource property to the template. 
 
     .DESCRIPTION
         Adds an AWS::EC2::SpotFleet.TargetGroup resource property to the template.
-Describes a load balancer target group.
+
 
     .LINK
         http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-spotfleet-targetgroup.html
 
     .PARAMETER Arn
-        The Amazon Resource Name ARN of the target group.
-
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-spotfleet-targetgroup.html#cfn-ec2-spotfleet-targetgroup-arn
         PrimitiveType: String
         UpdateType: Mutable

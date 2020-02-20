@@ -1,10 +1,10 @@
 function New-VSConfigRemediationConfiguration {
     <#
     .SYNOPSIS
-        Adds an AWS::Config::RemediationConfiguration resource to the template. An object that represents the details about the remediation configuration that includes the remediation action, parameters, and data to execute the action.
+        Adds an AWS::Config::RemediationConfiguration resource to the template. 
 
     .DESCRIPTION
-        Adds an AWS::Config::RemediationConfiguration resource to the template. An object that represents the details about the remediation configuration that includes the remediation action, parameters, and data to execute the action.
+        Adds an AWS::Config::RemediationConfiguration resource to the template. 
 
     .LINK
         http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-config-remediationconfiguration.html
@@ -13,8 +13,6 @@ function New-VSConfigRemediationConfiguration {
         The logical ID must be alphanumeric (A-Za-z0-9) and unique within the template. Use the logical name to reference the resource in other parts of the template. For example, if you want to map an Amazon Elastic Block Store volume to an Amazon EC2 instance, you reference the logical IDs to associate the block stores with the instance.
 
     .PARAMETER TargetVersion
-        Version of the target. For example, version of the SSM document.
-
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-config-remediationconfiguration.html#cfn-config-remediationconfiguration-targetversion
         PrimitiveType: String
         UpdateType: Mutable
@@ -25,30 +23,21 @@ function New-VSConfigRemediationConfiguration {
         UpdateType: Mutable
 
     .PARAMETER Parameters
-        An object of the RemediationParameterValue.
-The type is a map of strings to RemediationParameterValue.
-
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-config-remediationconfiguration.html#cfn-config-remediationconfiguration-parameters
         PrimitiveType: Json
         UpdateType: Mutable
 
     .PARAMETER TargetType
-        The type of the target. Target executes remediation. For example, SSM document.
-
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-config-remediationconfiguration.html#cfn-config-remediationconfiguration-targettype
         PrimitiveType: String
         UpdateType: Mutable
 
     .PARAMETER ConfigRuleName
-        The name of the AWS Config rule.
-
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-config-remediationconfiguration.html#cfn-config-remediationconfiguration-configrulename
         PrimitiveType: String
         UpdateType: Immutable
 
     .PARAMETER ResourceType
-        The type of a resource.
-
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-config-remediationconfiguration.html#cfn-config-remediationconfiguration-resourcetype
         PrimitiveType: String
         UpdateType: Mutable
@@ -64,8 +53,6 @@ The type is a map of strings to RemediationParameterValue.
         UpdateType: Mutable
 
     .PARAMETER TargetId
-        Target ID is the name of the public document.
-
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-config-remediationconfiguration.html#cfn-config-remediationconfiguration-targetid
         PrimitiveType: String
         UpdateType: Mutable

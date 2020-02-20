@@ -1,34 +1,26 @@
 function Add-VSKinesisFirehoseDeliveryStreamCloudWatchLoggingOptions {
     <#
     .SYNOPSIS
-        Adds an AWS::KinesisFirehose::DeliveryStream.CloudWatchLoggingOptions resource property to the template. The CloudWatchLoggingOptions property type specifies Amazon CloudWatch Logs (CloudWatch Logs logging options that Amazon Kinesis Data Firehose (Kinesis Data Firehose uses for the delivery stream.
+        Adds an AWS::KinesisFirehose::DeliveryStream.CloudWatchLoggingOptions resource property to the template. 
 
     .DESCRIPTION
         Adds an AWS::KinesisFirehose::DeliveryStream.CloudWatchLoggingOptions resource property to the template.
-The CloudWatchLoggingOptions property type specifies Amazon CloudWatch Logs (CloudWatch Logs logging options that Amazon Kinesis Data Firehose (Kinesis Data Firehose uses for the delivery stream.
+
 
     .LINK
         http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-kinesisfirehose-deliverystream-cloudwatchloggingoptions.html
 
     .PARAMETER Enabled
-        Indicates whether CloudWatch Logs logging is enabled.
-
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-kinesisfirehose-deliverystream-cloudwatchloggingoptions.html#cfn-kinesisfirehose-deliverystream-cloudwatchloggingoptions-enabled
         PrimitiveType: Boolean
         UpdateType: Mutable
 
     .PARAMETER LogGroupName
-        The name of the CloudWatch Logs log group that contains the log stream that Kinesis Data Firehose will use.
-Conditional. If you enable logging, you must specify this property.
-
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-kinesisfirehose-deliverystream-cloudwatchloggingoptions.html#cfn-kinesisfirehose-deliverystream-cloudwatchloggingoptions-loggroupname
         PrimitiveType: String
         UpdateType: Mutable
 
     .PARAMETER LogStreamName
-        The name of the CloudWatch Logs log stream that Kinesis Data Firehose uses to send logs about data delivery.
-Conditional. If you enable logging, you must specify this property.
-
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-kinesisfirehose-deliverystream-cloudwatchloggingoptions.html#cfn-kinesisfirehose-deliverystream-cloudwatchloggingoptions-logstreamname
         PrimitiveType: String
         UpdateType: Mutable

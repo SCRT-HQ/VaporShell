@@ -1,12 +1,10 @@
 function New-VSPinpointApp {
     <#
     .SYNOPSIS
-        Adds an AWS::Pinpoint::App resource to the template. Specifies an app. In Amazon Pinpoint, an *app* (also referred to as a *project* is a collection of settings, customer information, segments, and campaigns.
+        Adds an AWS::Pinpoint::App resource to the template. 
 
     .DESCRIPTION
-        Adds an AWS::Pinpoint::App resource to the template. Specifies an app. In Amazon Pinpoint, an *app* (also referred to as a *project* is a collection of settings, customer information, segments, and campaigns.
-
-You can use the App resource to retrieve information about or delete an existing application. To create a new application, use the Apps resource and send a POST request to the /apps URI.
+        Adds an AWS::Pinpoint::App resource to the template. 
 
     .LINK
         http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-pinpoint-app.html
@@ -15,15 +13,11 @@ You can use the App resource to retrieve information about or delete an existing
         The logical ID must be alphanumeric (A-Za-z0-9) and unique within the template. Use the logical name to reference the resource in other parts of the template. For example, if you want to map an Amazon Elastic Block Store volume to an Amazon EC2 instance, you reference the logical IDs to associate the block stores with the instance.
 
     .PARAMETER Tags
-        For more information about using the Ref function, see Ref: https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/intrinsic-function-reference-ref.html.
-
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-pinpoint-app.html#cfn-pinpoint-app-tags
         PrimitiveType: Json
         UpdateType: Mutable
 
     .PARAMETER Name
-        The display name of the application.
-
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-pinpoint-app.html#cfn-pinpoint-app-name
         PrimitiveType: String
         UpdateType: Immutable

@@ -1,25 +1,21 @@
 function Add-VSKinesisAnalyticsApplicationOutputKinesisStreamsOutput {
     <#
     .SYNOPSIS
-        Adds an AWS::KinesisAnalytics::ApplicationOutput.KinesisStreamsOutput resource property to the template. When configuring application output, identifies an Amazon Kinesis stream as the destination. You provide the stream Amazon Resource Name (ARN and also an IAM role ARN that Amazon Kinesis Analytics can use to write to the stream on your behalf.
+        Adds an AWS::KinesisAnalytics::ApplicationOutput.KinesisStreamsOutput resource property to the template. 
 
     .DESCRIPTION
         Adds an AWS::KinesisAnalytics::ApplicationOutput.KinesisStreamsOutput resource property to the template.
-When configuring application output, identifies an Amazon Kinesis stream as the destination. You provide the stream Amazon Resource Name (ARN and also an IAM role ARN that Amazon Kinesis Analytics can use to write to the stream on your behalf.
+
 
     .LINK
         http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-kinesisanalytics-applicationoutput-kinesisstreamsoutput.html
 
     .PARAMETER ResourceARN
-        ARN of the destination Amazon Kinesis stream to write to.
-
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-kinesisanalytics-applicationoutput-kinesisstreamsoutput.html#cfn-kinesisanalytics-applicationoutput-kinesisstreamsoutput-resourcearn
         PrimitiveType: String
         UpdateType: Mutable
 
     .PARAMETER RoleARN
-        ARN of the IAM role that Amazon Kinesis Analytics can assume to write to the destination stream on your behalf. You need to grant the necessary permissions to this role.
-
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-kinesisanalytics-applicationoutput-kinesisstreamsoutput.html#cfn-kinesisanalytics-applicationoutput-kinesisstreamsoutput-rolearn
         PrimitiveType: String
         UpdateType: Mutable

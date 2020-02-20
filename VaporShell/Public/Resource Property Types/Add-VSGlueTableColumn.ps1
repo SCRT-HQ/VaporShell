@@ -1,32 +1,26 @@
 function Add-VSGlueTableColumn {
     <#
     .SYNOPSIS
-        Adds an AWS::Glue::Table.Column resource property to the template. A column in a Table.
+        Adds an AWS::Glue::Table.Column resource property to the template. 
 
     .DESCRIPTION
         Adds an AWS::Glue::Table.Column resource property to the template.
-A column in a Table.
+
 
     .LINK
         http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-glue-table-column.html
 
     .PARAMETER Comment
-        A free-form text comment.
-
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-glue-table-column.html#cfn-glue-table-column-comment
         PrimitiveType: String
         UpdateType: Mutable
 
     .PARAMETER Type
-        The data type of the Column.
-
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-glue-table-column.html#cfn-glue-table-column-type
         PrimitiveType: String
         UpdateType: Mutable
 
     .PARAMETER Name
-        The name of the Column.
-
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-glue-table-column.html#cfn-glue-table-column-name
         PrimitiveType: String
         UpdateType: Mutable

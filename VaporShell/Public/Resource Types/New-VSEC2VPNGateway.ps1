@@ -1,12 +1,10 @@
 function New-VSEC2VPNGateway {
     <#
     .SYNOPSIS
-        Adds an AWS::EC2::VPNGateway resource to the template. Specifies a virtual private gateway. A virtual private gateway is the endpoint on the VPC side of your VPN connection. You can create a virtual private gateway before creating the VPC itself.
+        Adds an AWS::EC2::VPNGateway resource to the template. 
 
     .DESCRIPTION
-        Adds an AWS::EC2::VPNGateway resource to the template. Specifies a virtual private gateway. A virtual private gateway is the endpoint on the VPC side of your VPN connection. You can create a virtual private gateway before creating the VPC itself.
-
-For more information, see AWS Site-to-Site VPN: https://docs.aws.amazon.com/vpn/latest/s2svpn/VPC_VPN.html in the *AWS Site-to-Site VPN User Guide*.
+        Adds an AWS::EC2::VPNGateway resource to the template. 
 
     .LINK
         http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ec2-vpn-gateway.html
@@ -15,15 +13,11 @@ For more information, see AWS Site-to-Site VPN: https://docs.aws.amazon.com/vpn/
         The logical ID must be alphanumeric (A-Za-z0-9) and unique within the template. Use the logical name to reference the resource in other parts of the template. For example, if you want to map an Amazon Elastic Block Store volume to an Amazon EC2 instance, you reference the logical IDs to associate the block stores with the instance.
 
     .PARAMETER AmazonSideAsn
-        The private Autonomous System Number ASN for the Amazon side of a BGP session.
-
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ec2-vpn-gateway.html#cfn-ec2-vpngateway-amazonsideasn
         PrimitiveType: Long
         UpdateType: Immutable
 
     .PARAMETER Tags
-        Any tags assigned to the virtual private gateway.
-
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ec2-vpn-gateway.html#cfn-ec2-vpngateway-tags
         DuplicatesAllowed: True
         ItemType: Tag
@@ -31,8 +25,6 @@ For more information, see AWS Site-to-Site VPN: https://docs.aws.amazon.com/vpn/
         UpdateType: Mutable
 
     .PARAMETER Type
-        The type of VPN connection the virtual private gateway supports.
-
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ec2-vpn-gateway.html#cfn-ec2-vpngateway-type
         PrimitiveType: String
         UpdateType: Immutable

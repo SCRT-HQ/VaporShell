@@ -1,25 +1,21 @@
 function Add-VSIoTAnalyticsDatasetTrigger {
     <#
     .SYNOPSIS
-        Adds an AWS::IoTAnalytics::Dataset.Trigger resource property to the template. The "DatasetTrigger" that specifies when the data set is automatically updated.
+        Adds an AWS::IoTAnalytics::Dataset.Trigger resource property to the template. 
 
     .DESCRIPTION
         Adds an AWS::IoTAnalytics::Dataset.Trigger resource property to the template.
-The "DatasetTrigger" that specifies when the data set is automatically updated.
+
 
     .LINK
         http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iotanalytics-dataset-trigger.html
 
     .PARAMETER Schedule
-        The "Schedule" when the trigger is initiated.
-
         Type: Schedule
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iotanalytics-dataset-trigger.html#cfn-iotanalytics-dataset-trigger-schedule
         UpdateType: Mutable
 
     .PARAMETER TriggeringDataset
-        Information about the data set whose content generation triggers the new data set content generation.
-
         Type: TriggeringDataset
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iotanalytics-dataset-trigger.html#cfn-iotanalytics-dataset-trigger-triggeringdataset
         UpdateType: Mutable

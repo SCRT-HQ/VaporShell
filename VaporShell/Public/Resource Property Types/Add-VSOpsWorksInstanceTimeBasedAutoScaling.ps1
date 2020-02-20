@@ -1,18 +1,16 @@
 function Add-VSOpsWorksInstanceTimeBasedAutoScaling {
     <#
     .SYNOPSIS
-        Adds an AWS::OpsWorks::Instance.TimeBasedAutoScaling resource property to the template. Describes an instance's time-based auto scaling configuration.
+        Adds an AWS::OpsWorks::Instance.TimeBasedAutoScaling resource property to the template. 
 
     .DESCRIPTION
         Adds an AWS::OpsWorks::Instance.TimeBasedAutoScaling resource property to the template.
-Describes an instance's time-based auto scaling configuration.
+
 
     .LINK
         http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-opsworks-instance-timebasedautoscaling.html
 
     .PARAMETER Friday
-        The schedule for Friday.
-
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-opsworks-instance-timebasedautoscaling.html#cfn-opsworks-instance-timebasedautoscaling-friday
         DuplicatesAllowed: False
         PrimitiveItemType: String
@@ -20,8 +18,6 @@ Describes an instance's time-based auto scaling configuration.
         UpdateType: Mutable
 
     .PARAMETER Monday
-        The schedule for Monday.
-
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-opsworks-instance-timebasedautoscaling.html#cfn-opsworks-instance-timebasedautoscaling-monday
         DuplicatesAllowed: False
         PrimitiveItemType: String
@@ -29,8 +25,6 @@ Describes an instance's time-based auto scaling configuration.
         UpdateType: Mutable
 
     .PARAMETER Saturday
-        The schedule for Saturday.
-
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-opsworks-instance-timebasedautoscaling.html#cfn-opsworks-instance-timebasedautoscaling-saturday
         DuplicatesAllowed: False
         PrimitiveItemType: String
@@ -38,8 +32,6 @@ Describes an instance's time-based auto scaling configuration.
         UpdateType: Mutable
 
     .PARAMETER Sunday
-        The schedule for Sunday.
-
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-opsworks-instance-timebasedautoscaling.html#cfn-opsworks-instance-timebasedautoscaling-sunday
         DuplicatesAllowed: False
         PrimitiveItemType: String
@@ -47,8 +39,6 @@ Describes an instance's time-based auto scaling configuration.
         UpdateType: Mutable
 
     .PARAMETER Thursday
-        The schedule for Thursday.
-
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-opsworks-instance-timebasedautoscaling.html#cfn-opsworks-instance-timebasedautoscaling-thursday
         DuplicatesAllowed: False
         PrimitiveItemType: String
@@ -56,8 +46,6 @@ Describes an instance's time-based auto scaling configuration.
         UpdateType: Mutable
 
     .PARAMETER Tuesday
-        The schedule for Tuesday.
-
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-opsworks-instance-timebasedautoscaling.html#cfn-opsworks-instance-timebasedautoscaling-tuesday
         DuplicatesAllowed: False
         PrimitiveItemType: String
@@ -65,8 +53,6 @@ Describes an instance's time-based auto scaling configuration.
         UpdateType: Mutable
 
     .PARAMETER Wednesday
-        The schedule for Wednesday.
-
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-opsworks-instance-timebasedautoscaling.html#cfn-opsworks-instance-timebasedautoscaling-wednesday
         DuplicatesAllowed: False
         PrimitiveItemType: String

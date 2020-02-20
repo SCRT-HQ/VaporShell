@@ -1,12 +1,10 @@
 function New-VSEC2DHCPOptions {
     <#
     .SYNOPSIS
-        Adds an AWS::EC2::DHCPOptions resource to the template. Specifies a set of DHCP options for your VPC.
+        Adds an AWS::EC2::DHCPOptions resource to the template. 
 
     .DESCRIPTION
-        Adds an AWS::EC2::DHCPOptions resource to the template. Specifies a set of DHCP options for your VPC.
-
-You must specify at least one of the following properties: DomainNameServers, NetbiosNameServers, NtpServers. If you specify NetbiosNameServers, you must specify NetbiosNodeType.
+        Adds an AWS::EC2::DHCPOptions resource to the template. 
 
     .LINK
         http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ec2-dhcp-options.html
@@ -15,15 +13,11 @@ You must specify at least one of the following properties: DomainNameServers, Ne
         The logical ID must be alphanumeric (A-Za-z0-9) and unique within the template. Use the logical name to reference the resource in other parts of the template. For example, if you want to map an Amazon Elastic Block Store volume to an Amazon EC2 instance, you reference the logical IDs to associate the block stores with the instance.
 
     .PARAMETER DomainName
-        This value is used to complete unqualified DNS hostnames. If you're using AmazonProvidedDNS in us-east-1, specify ec2.internal. If you're using AmazonProvidedDNS in another Region, specify *region*.compute.internal for example, ap-northeast-1.compute.internal. Otherwise, specify a domain name for example, *MyCompany.com*.
-
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ec2-dhcp-options.html#cfn-ec2-dhcpoptions-domainname
         PrimitiveType: String
         UpdateType: Immutable
 
     .PARAMETER DomainNameServers
-        The IPv4 addresses of up to four domain name servers, or AmazonProvidedDNS. The default DHCP option set specifies AmazonProvidedDNS. If specifying more than one domain name server, specify the IP addresses in a single parameter, separated by commas. To have your instance to receive a custom DNS hostname as specified in DomainName, you must set this to a custom DNS server.
-
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ec2-dhcp-options.html#cfn-ec2-dhcpoptions-domainnameservers
         DuplicatesAllowed: False
         PrimitiveItemType: String
@@ -31,8 +25,6 @@ You must specify at least one of the following properties: DomainNameServers, Ne
         UpdateType: Immutable
 
     .PARAMETER NetbiosNameServers
-        The IPv4 addresses of up to four NetBIOS name servers.
-
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ec2-dhcp-options.html#cfn-ec2-dhcpoptions-netbiosnameservers
         DuplicatesAllowed: False
         PrimitiveItemType: String
@@ -40,15 +32,11 @@ You must specify at least one of the following properties: DomainNameServers, Ne
         UpdateType: Immutable
 
     .PARAMETER NetbiosNodeType
-        The NetBIOS node type 1, 2, 4, or 8. We recommend that you specify 2 broadcast and multicast are not currently supported.
-
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ec2-dhcp-options.html#cfn-ec2-dhcpoptions-netbiosnodetype
         PrimitiveType: Integer
         UpdateType: Immutable
 
     .PARAMETER NtpServers
-        The IPv4 addresses of up to four Network Time Protocol NTP servers.
-
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ec2-dhcp-options.html#cfn-ec2-dhcpoptions-ntpservers
         DuplicatesAllowed: True
         PrimitiveItemType: String
@@ -56,8 +44,6 @@ You must specify at least one of the following properties: DomainNameServers, Ne
         UpdateType: Immutable
 
     .PARAMETER Tags
-        Any tags assigned to the DHCP options set.
-
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ec2-dhcp-options.html#cfn-ec2-dhcpoptions-tags
         DuplicatesAllowed: True
         ItemType: Tag

@@ -1,26 +1,21 @@
 function Add-VSECSServiceAwsVpcConfiguration {
     <#
     .SYNOPSIS
-        Adds an AWS::ECS::Service.AwsVpcConfiguration resource property to the template. The AwsVpcConfiguration property specifies an object representing the networking details for a task or service.
+        Adds an AWS::ECS::Service.AwsVpcConfiguration resource property to the template. 
 
     .DESCRIPTION
         Adds an AWS::ECS::Service.AwsVpcConfiguration resource property to the template.
-The AwsVpcConfiguration property specifies an object representing the networking details for a task or service.
+
 
     .LINK
         http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ecs-service-awsvpcconfiguration.html
 
     .PARAMETER AssignPublicIp
-        Whether the task's elastic network interface receives a public IP address. The default value is DISABLED.
-
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ecs-service-awsvpcconfiguration.html#cfn-ecs-service-awsvpcconfiguration-assignpublicip
         PrimitiveType: String
         UpdateType: Mutable
 
     .PARAMETER SecurityGroups
-        The security groups associated with the task or service. If you do not specify a security group, the default security group for the VPC is used. There is a limit of 5 security groups that can be specified per AwsVpcConfiguration.
-All specified security groups must be from the same VPC.
-
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ecs-service-awsvpcconfiguration.html#cfn-ecs-service-awsvpcconfiguration-securitygroups
         DuplicatesAllowed: False
         PrimitiveItemType: String
@@ -28,9 +23,6 @@ All specified security groups must be from the same VPC.
         UpdateType: Mutable
 
     .PARAMETER Subnets
-        The subnets associated with the task or service. There is a limit of 16 subnets that can be specified per AwsVpcConfiguration.
-All specified subnets must be from the same VPC.
-
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ecs-service-awsvpcconfiguration.html#cfn-ecs-service-awsvpcconfiguration-subnets
         DuplicatesAllowed: False
         PrimitiveItemType: String

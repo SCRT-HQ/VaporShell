@@ -1,25 +1,21 @@
 function Add-VSCloudWatchAnomalyDetectorDimension {
     <#
     .SYNOPSIS
-        Adds an AWS::CloudWatch::AnomalyDetector.Dimension resource property to the template. Expands the identity of a metric.
+        Adds an AWS::CloudWatch::AnomalyDetector.Dimension resource property to the template. 
 
     .DESCRIPTION
         Adds an AWS::CloudWatch::AnomalyDetector.Dimension resource property to the template.
-Expands the identity of a metric.
+
 
     .LINK
         http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-cloudwatch-anomalydetector-dimension.html
 
     .PARAMETER Value
-        The value representing the dimension measurement.
-
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-cloudwatch-anomalydetector-dimension.html#cfn-cloudwatch-anomalydetector-dimension-value
         PrimitiveType: String
         UpdateType: Immutable
 
     .PARAMETER Name
-        The name of the dimension.
-
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-cloudwatch-anomalydetector-dimension.html#cfn-cloudwatch-anomalydetector-dimension-name
         PrimitiveType: String
         UpdateType: Immutable

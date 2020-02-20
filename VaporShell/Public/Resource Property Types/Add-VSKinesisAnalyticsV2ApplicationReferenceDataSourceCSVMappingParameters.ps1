@@ -1,29 +1,21 @@
 function Add-VSKinesisAnalyticsV2ApplicationReferenceDataSourceCSVMappingParameters {
     <#
     .SYNOPSIS
-        Adds an AWS::KinesisAnalyticsV2::ApplicationReferenceDataSource.CSVMappingParameters resource property to the template. For an SQL-based application, provides additional mapping information when the record format uses delimiters, such as CSV. For example, the following sample records use CSV format, where the records use the *'n'* as the row delimiter and a comma ("," as the column delimiter:
+        Adds an AWS::KinesisAnalyticsV2::ApplicationReferenceDataSource.CSVMappingParameters resource property to the template. 
 
     .DESCRIPTION
         Adds an AWS::KinesisAnalyticsV2::ApplicationReferenceDataSource.CSVMappingParameters resource property to the template.
-For an SQL-based application, provides additional mapping information when the record format uses delimiters, such as CSV. For example, the following sample records use CSV format, where the records use the *'n'* as the row delimiter and a comma ("," as the column delimiter:
 
-"name1", "address1"
-
-"name2", "address2"
 
     .LINK
         http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-kinesisanalyticsv2-applicationreferencedatasource-csvmappingparameters.html
 
     .PARAMETER RecordRowDelimiter
-        The row delimiter. For example, in a CSV format, *'n'* is the typical row delimiter.
-
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-kinesisanalyticsv2-applicationreferencedatasource-csvmappingparameters.html#cfn-kinesisanalyticsv2-applicationreferencedatasource-csvmappingparameters-recordrowdelimiter
         PrimitiveType: String
         UpdateType: Mutable
 
     .PARAMETER RecordColumnDelimiter
-        The column delimiter. For example, in a CSV format, a comma "," is the typical column delimiter.
-
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-kinesisanalyticsv2-applicationreferencedatasource-csvmappingparameters.html#cfn-kinesisanalyticsv2-applicationreferencedatasource-csvmappingparameters-recordcolumndelimiter
         PrimitiveType: String
         UpdateType: Mutable

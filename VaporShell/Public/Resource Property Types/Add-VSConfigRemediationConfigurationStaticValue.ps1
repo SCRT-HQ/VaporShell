@@ -1,18 +1,16 @@
 function Add-VSConfigRemediationConfigurationStaticValue {
     <#
     .SYNOPSIS
-        Adds an AWS::Config::RemediationConfiguration.StaticValue resource property to the template. The static value of the resource.
+        Adds an AWS::Config::RemediationConfiguration.StaticValue resource property to the template. 
 
     .DESCRIPTION
         Adds an AWS::Config::RemediationConfiguration.StaticValue resource property to the template.
-The static value of the resource.
+
 
     .LINK
         http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-config-remediationconfiguration-staticvalue.html
 
     .PARAMETER Values
-        A list of values. For example, the ARN of the assumed role.
-
         PrimitiveItemType: String
         Type: List
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-config-remediationconfiguration-staticvalue.html#cfn-config-remediationconfiguration-staticvalue-values

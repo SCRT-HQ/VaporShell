@@ -1,10 +1,10 @@
 function New-VSIoTTopicRule {
     <#
     .SYNOPSIS
-        Adds an AWS::IoT::TopicRule resource to the template. Use the AWS::IoT::TopicRule resource to declare an AWS IoT rule. For information about working with AWS IoT rules, see Rules for AWS IoT: https://docs.aws.amazon.com/iot/latest/developerguide/iot-rules.html in the *AWS IoT Developer Guide*.
+        Adds an AWS::IoT::TopicRule resource to the template. 
 
     .DESCRIPTION
-        Adds an AWS::IoT::TopicRule resource to the template. Use the AWS::IoT::TopicRule resource to declare an AWS IoT rule. For information about working with AWS IoT rules, see Rules for AWS IoT: https://docs.aws.amazon.com/iot/latest/developerguide/iot-rules.html in the *AWS IoT Developer Guide*.
+        Adds an AWS::IoT::TopicRule resource to the template. 
 
     .LINK
         http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-iot-topicrule.html
@@ -13,15 +13,11 @@ function New-VSIoTTopicRule {
         The logical ID must be alphanumeric (A-Za-z0-9) and unique within the template. Use the logical name to reference the resource in other parts of the template. For example, if you want to map an Amazon Elastic Block Store volume to an Amazon EC2 instance, you reference the logical IDs to associate the block stores with the instance.
 
     .PARAMETER RuleName
-        The name of the rule.
-
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-iot-topicrule.html#cfn-iot-topicrule-rulename
         PrimitiveType: String
         UpdateType: Immutable
 
     .PARAMETER TopicRulePayload
-        The rule payload.
-
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-iot-topicrule.html#cfn-iot-topicrule-topicrulepayload
         Type: TopicRulePayload
         UpdateType: Mutable

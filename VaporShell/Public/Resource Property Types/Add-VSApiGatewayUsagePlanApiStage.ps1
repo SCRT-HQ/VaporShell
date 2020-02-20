@@ -1,33 +1,26 @@
 function Add-VSApiGatewayUsagePlanApiStage {
     <#
     .SYNOPSIS
-        Adds an AWS::ApiGateway::UsagePlan.ApiStage resource property to the template. ApiStage is a property of the AWS::ApiGateway::UsagePlan: https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-apigateway-usageplan.html resource that specifies which stages and APIs to associate with a usage plan.
+        Adds an AWS::ApiGateway::UsagePlan.ApiStage resource property to the template. 
 
     .DESCRIPTION
         Adds an AWS::ApiGateway::UsagePlan.ApiStage resource property to the template.
-ApiStage is a property of the AWS::ApiGateway::UsagePlan: https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-apigateway-usageplan.html resource that specifies which stages and APIs to associate with a usage plan.
+
 
     .LINK
         http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-apigateway-usageplan-apistage.html
 
     .PARAMETER ApiId
-        The ID of an API that is in the specified Stage property that you want to associate with the usage plan.
-
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-apigateway-usageplan-apistage.html#cfn-apigateway-usageplan-apistage-apiid
         PrimitiveType: String
         UpdateType: Mutable
 
     .PARAMETER Stage
-        The name of the stage to associate with the usage plan.
-
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-apigateway-usageplan-apistage.html#cfn-apigateway-usageplan-apistage-stage
         PrimitiveType: String
         UpdateType: Mutable
 
     .PARAMETER Throttle
-        Map containing method-level throttling information for API stage in a usage plan.
-Duplicates are not allowed.
-
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-apigateway-usageplan-apistage.html#cfn-apigateway-usageplan-apistage-throttle
         DuplicatesAllowed: False
         ItemType: ThrottleSettings

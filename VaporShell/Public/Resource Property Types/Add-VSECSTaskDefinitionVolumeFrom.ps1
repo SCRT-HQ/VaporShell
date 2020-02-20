@@ -1,25 +1,21 @@
 function Add-VSECSTaskDefinitionVolumeFrom {
     <#
     .SYNOPSIS
-        Adds an AWS::ECS::TaskDefinition.VolumeFrom resource property to the template. The VolumeFrom property specifies details on a data volume from another container in the same task definition.
+        Adds an AWS::ECS::TaskDefinition.VolumeFrom resource property to the template. 
 
     .DESCRIPTION
         Adds an AWS::ECS::TaskDefinition.VolumeFrom resource property to the template.
-The VolumeFrom property specifies details on a data volume from another container in the same task definition.
+
 
     .LINK
         http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ecs-taskdefinition-containerdefinitions-volumesfrom.html
 
     .PARAMETER ReadOnly
-        If this value is true, the container has read-only access to the volume. If this value is false, then the container can write to the volume. The default value is false.
-
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ecs-taskdefinition-containerdefinitions-volumesfrom.html#cfn-ecs-taskdefinition-containerdefinition-volumesfrom-readonly
         PrimitiveType: Boolean
         UpdateType: Immutable
 
     .PARAMETER SourceContainer
-        The name of another container within the same task definition from which to mount volumes.
-
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ecs-taskdefinition-containerdefinitions-volumesfrom.html#cfn-ecs-taskdefinition-containerdefinition-volumesfrom-sourcecontainer
         PrimitiveType: String
         UpdateType: Immutable

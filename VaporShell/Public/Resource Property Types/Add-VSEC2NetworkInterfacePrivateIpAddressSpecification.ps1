@@ -1,25 +1,21 @@
 function Add-VSEC2NetworkInterfacePrivateIpAddressSpecification {
     <#
     .SYNOPSIS
-        Adds an AWS::EC2::NetworkInterface.PrivateIpAddressSpecification resource property to the template. Describes a secondary private IPv4 address for a network interface.
+        Adds an AWS::EC2::NetworkInterface.PrivateIpAddressSpecification resource property to the template. 
 
     .DESCRIPTION
         Adds an AWS::EC2::NetworkInterface.PrivateIpAddressSpecification resource property to the template.
-Describes a secondary private IPv4 address for a network interface.
+
 
     .LINK
         http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-network-interface-privateipspec.html
 
     .PARAMETER Primary
-        Sets the private IP address as the primary private address. You can set only one primary private IP address. If you don't specify a primary private IP address, Amazon EC2 automatically assigns a primary private IP address.
-
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-network-interface-privateipspec.html#cfn-ec2-networkinterface-privateipspecification-primary
         PrimitiveType: Boolean
         UpdateType: Mutable
 
     .PARAMETER PrivateIpAddress
-        The private IP address of the network interface.
-
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-network-interface-privateipspec.html#cfn-ec2-networkinterface-privateipspecification-privateipaddress
         PrimitiveType: String
         UpdateType: Mutable

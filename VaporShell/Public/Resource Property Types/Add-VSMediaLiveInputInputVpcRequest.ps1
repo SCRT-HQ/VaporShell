@@ -1,26 +1,22 @@
 function Add-VSMediaLiveInputInputVpcRequest {
     <#
     .SYNOPSIS
-        Adds an AWS::MediaLive::Input.InputVpcRequest resource property to the template. The settings for an Amazon VPC input.
+        Adds an AWS::MediaLive::Input.InputVpcRequest resource property to the template. 
 
     .DESCRIPTION
         Adds an AWS::MediaLive::Input.InputVpcRequest resource property to the template.
-The settings for an Amazon VPC input.
+
 
     .LINK
         http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-medialive-input-inputvpcrequest.html
 
     .PARAMETER SecurityGroupIds
-        The list of up to five VPC security group IDs to attach to the input VPC network interfaces. The security groups require subnet IDs. If none are specified, MediaLive uses the VPC default security group.
-
         PrimitiveItemType: String
         Type: List
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-medialive-input-inputvpcrequest.html#cfn-medialive-input-inputvpcrequest-securitygroupids
         UpdateType: Mutable
 
     .PARAMETER SubnetIds
-        The list of two VPC subnet IDs from the same VPC. You must associate subnet IDs to two unique Availability Zones.
-
         PrimitiveItemType: String
         Type: List
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-medialive-input-inputvpcrequest.html#cfn-medialive-input-inputvpcrequest-subnetids

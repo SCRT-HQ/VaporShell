@@ -1,32 +1,26 @@
 function Add-VSKinesisFirehoseDeliveryStreamCopyCommand {
     <#
     .SYNOPSIS
-        Adds an AWS::KinesisFirehose::DeliveryStream.CopyCommand resource property to the template. The CopyCommand property type configures the Amazon Redshift COPY command that Amazon Kinesis Data Firehose (Kinesis Data Firehose uses to load data into an Amazon Redshift cluster from an Amazon S3 bucket.
+        Adds an AWS::KinesisFirehose::DeliveryStream.CopyCommand resource property to the template. 
 
     .DESCRIPTION
         Adds an AWS::KinesisFirehose::DeliveryStream.CopyCommand resource property to the template.
-The CopyCommand property type configures the Amazon Redshift COPY command that Amazon Kinesis Data Firehose (Kinesis Data Firehose uses to load data into an Amazon Redshift cluster from an Amazon S3 bucket.
+
 
     .LINK
         http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-kinesisfirehose-deliverystream-copycommand.html
 
     .PARAMETER CopyOptions
-        Parameters to use with the Amazon Redshift COPY command. For examples, see the CopyOptions content for the CopyCommand: https://docs.aws.amazon.com/firehose/latest/APIReference/API_CopyCommand.html data type in the *Amazon Kinesis Data Firehose API Reference*.
-
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-kinesisfirehose-deliverystream-copycommand.html#cfn-kinesisfirehose-deliverystream-copycommand-copyoptions
         PrimitiveType: String
         UpdateType: Mutable
 
     .PARAMETER DataTableColumns
-        A comma-separated list of column names.
-
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-kinesisfirehose-deliverystream-copycommand.html#cfn-kinesisfirehose-deliverystream-copycommand-datatablecolumns
         PrimitiveType: String
         UpdateType: Mutable
 
     .PARAMETER DataTableName
-        The name of the target table. The table must already exist in the database.
-
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-kinesisfirehose-deliverystream-copycommand.html#cfn-kinesisfirehose-deliverystream-copycommand-datatablename
         PrimitiveType: String
         UpdateType: Mutable

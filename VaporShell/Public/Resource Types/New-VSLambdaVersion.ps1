@@ -1,10 +1,10 @@
 function New-VSLambdaVersion {
     <#
     .SYNOPSIS
-        Adds an AWS::Lambda::Version resource to the template. The AWS::Lambda::Version resource creates a version: https://docs.aws.amazon.com/lambda/latest/dg/versioning-aliases.html from the current code and configuration of a function. Use versions to create a snapshot of your function code and configuration that doesn't change.
+        Adds an AWS::Lambda::Version resource to the template. 
 
     .DESCRIPTION
-        Adds an AWS::Lambda::Version resource to the template. The AWS::Lambda::Version resource creates a version: https://docs.aws.amazon.com/lambda/latest/dg/versioning-aliases.html from the current code and configuration of a function. Use versions to create a snapshot of your function code and configuration that doesn't change.
+        Adds an AWS::Lambda::Version resource to the template. 
 
     .LINK
         http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-lambda-version.html
@@ -13,27 +13,16 @@ function New-VSLambdaVersion {
         The logical ID must be alphanumeric (A-Za-z0-9) and unique within the template. Use the logical name to reference the resource in other parts of the template. For example, if you want to map an Amazon Elastic Block Store volume to an Amazon EC2 instance, you reference the logical IDs to associate the block stores with the instance.
 
     .PARAMETER CodeSha256
-        Only publish a version if the hash value matches the value that's specified. Use this option to avoid publishing a version if the function code has changed since you last updated it.
-
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-lambda-version.html#cfn-lambda-version-codesha256
         PrimitiveType: String
         UpdateType: Mutable
 
     .PARAMETER Description
-        A description for the version to override the description in the function configuration.
-
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-lambda-version.html#cfn-lambda-version-description
         PrimitiveType: String
         UpdateType: Mutable
 
     .PARAMETER FunctionName
-        The name of the Lambda function.
-**Name formats**
-+  **Function name** - MyFunction.
-+  **Function ARN** - arn:aws:lambda:us-west-2:123456789012:function:MyFunction.
-+  **Partial ARN** - 123456789012:function:MyFunction.
-The length constraint applies only to the full ARN. If you specify only the function name, it is limited to 64 characters in length.
-
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-lambda-version.html#cfn-lambda-version-functionname
         PrimitiveType: String
         UpdateType: Immutable

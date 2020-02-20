@@ -1,25 +1,21 @@
 function Add-VSIoTAnalyticsDatasetIotEventsDestinationConfiguration {
     <#
     .SYNOPSIS
-        Adds an AWS::IoTAnalytics::Dataset.IotEventsDestinationConfiguration resource property to the template. Configuration information for delivery of data set contents to AWS IoT Events.
+        Adds an AWS::IoTAnalytics::Dataset.IotEventsDestinationConfiguration resource property to the template. 
 
     .DESCRIPTION
         Adds an AWS::IoTAnalytics::Dataset.IotEventsDestinationConfiguration resource property to the template.
-Configuration information for delivery of data set contents to AWS IoT Events.
+
 
     .LINK
         http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iotanalytics-dataset-ioteventsdestinationconfiguration.html
 
     .PARAMETER InputName
-        The name of the AWS IoT Events input to which data set contents are delivered.
-
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iotanalytics-dataset-ioteventsdestinationconfiguration.html#cfn-iotanalytics-dataset-ioteventsdestinationconfiguration-inputname
         PrimitiveType: String
         UpdateType: Mutable
 
     .PARAMETER RoleArn
-        The ARN of the role which grants AWS IoT Analytics permission to deliver data set contents to an AWS IoT Events input.
-
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iotanalytics-dataset-ioteventsdestinationconfiguration.html#cfn-iotanalytics-dataset-ioteventsdestinationconfiguration-rolearn
         PrimitiveType: String
         UpdateType: Mutable

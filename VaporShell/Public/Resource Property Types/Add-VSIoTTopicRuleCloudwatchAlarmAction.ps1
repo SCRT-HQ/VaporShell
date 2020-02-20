@@ -1,39 +1,31 @@
 function Add-VSIoTTopicRuleCloudwatchAlarmAction {
     <#
     .SYNOPSIS
-        Adds an AWS::IoT::TopicRule.CloudwatchAlarmAction resource property to the template. Describes an action that updates a CloudWatch alarm.
+        Adds an AWS::IoT::TopicRule.CloudwatchAlarmAction resource property to the template. 
 
     .DESCRIPTION
         Adds an AWS::IoT::TopicRule.CloudwatchAlarmAction resource property to the template.
-Describes an action that updates a CloudWatch alarm.
+
 
     .LINK
         http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iot-topicrule-cloudwatchalarmaction.html
 
     .PARAMETER AlarmName
-        The CloudWatch alarm name.
-
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iot-topicrule-cloudwatchalarmaction.html#cfn-iot-topicrule-cloudwatchalarmaction-alarmname
         PrimitiveType: String
         UpdateType: Mutable
 
     .PARAMETER RoleArn
-        The IAM role that allows access to the CloudWatch alarm.
-
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iot-topicrule-cloudwatchalarmaction.html#cfn-iot-topicrule-cloudwatchalarmaction-rolearn
         PrimitiveType: String
         UpdateType: Mutable
 
     .PARAMETER StateReason
-        The reason for the alarm change.
-
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iot-topicrule-cloudwatchalarmaction.html#cfn-iot-topicrule-cloudwatchalarmaction-statereason
         PrimitiveType: String
         UpdateType: Mutable
 
     .PARAMETER StateValue
-        The value of the alarm state. Acceptable values are: OK, ALARM, INSUFFICIENT_DATA.
-
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iot-topicrule-cloudwatchalarmaction.html#cfn-iot-topicrule-cloudwatchalarmaction-statevalue
         PrimitiveType: String
         UpdateType: Mutable

@@ -1,26 +1,21 @@
 function Add-VSECSTaskDefinitionSecret {
     <#
     .SYNOPSIS
-        Adds an AWS::ECS::TaskDefinition.Secret resource property to the template. The Secret property specifies an object representing the secret to expose to your container. For more information, see Specifying Sensitive Data: https://docs.aws.amazon.com/AmazonECS/latest/developerguide/specifying-sensitive-data.html in the *Amazon Elastic Container Service Developer Guide*.
+        Adds an AWS::ECS::TaskDefinition.Secret resource property to the template. 
 
     .DESCRIPTION
         Adds an AWS::ECS::TaskDefinition.Secret resource property to the template.
-The Secret property specifies an object representing the secret to expose to your container. For more information, see Specifying Sensitive Data: https://docs.aws.amazon.com/AmazonECS/latest/developerguide/specifying-sensitive-data.html in the *Amazon Elastic Container Service Developer Guide*.
+
 
     .LINK
         http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ecs-taskdefinition-secret.html
 
     .PARAMETER Name
-        The name of the secret.
-
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ecs-taskdefinition-secret.html#cfn-ecs-taskdefinition-secret-name
         PrimitiveType: String
         UpdateType: Immutable
 
     .PARAMETER ValueFrom
-        The secret to expose to the container. The supported values are either the full ARN of the AWS Secrets Manager secret or the full ARN of the parameter in the AWS Systems Manager Parameter Store.
-If the AWS Systems Manager Parameter Store parameter exists in the same Region as the task you are launching, then you can use either the full ARN or name of the parameter. If the parameter exists in a different Region, then the full ARN must be specified.
-
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ecs-taskdefinition-secret.html#cfn-ecs-taskdefinition-secret-valuefrom
         PrimitiveType: String
         UpdateType: Immutable

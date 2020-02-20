@@ -1,12 +1,10 @@
 function New-VSAutoScalingLifecycleHook {
     <#
     .SYNOPSIS
-        Adds an AWS::AutoScaling::LifecycleHook resource to the template. Defines lifecycle hooks for an Amazon EC2 Auto Scaling group. Lifecycle hooks specify actions to perform when Amazon EC2 Auto Scaling launches or terminates instances. When you use a lifecycle hook, the Auto Scaling group pauses the instance either after it is launched (before it is put into service or as it is terminated (before it is fully terminated.
+        Adds an AWS::AutoScaling::LifecycleHook resource to the template. 
 
     .DESCRIPTION
-        Adds an AWS::AutoScaling::LifecycleHook resource to the template. Defines lifecycle hooks for an Amazon EC2 Auto Scaling group. Lifecycle hooks specify actions to perform when Amazon EC2 Auto Scaling launches or terminates instances. When you use a lifecycle hook, the Auto Scaling group pauses the instance either after it is launched (before it is put into service or as it is terminated (before it is fully terminated.
-
-For more information, see PutLifecycleHook: https://docs.aws.amazon.com/autoscaling/ec2/APIReference/API_PutLifecycleHook.html in the *Amazon EC2 Auto Scaling API Reference* and Amazon EC2 Auto Scaling Lifecycle Hooks: https://docs.aws.amazon.com/autoscaling/ec2/userguide/lifecycle-hooks.html in the *Amazon EC2 Auto Scaling User Guide*.
+        Adds an AWS::AutoScaling::LifecycleHook resource to the template. 
 
     .LINK
         http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-as-lifecyclehook.html
@@ -15,59 +13,41 @@ For more information, see PutLifecycleHook: https://docs.aws.amazon.com/autoscal
         The logical ID must be alphanumeric (A-Za-z0-9) and unique within the template. Use the logical name to reference the resource in other parts of the template. For example, if you want to map an Amazon Elastic Block Store volume to an Amazon EC2 instance, you reference the logical IDs to associate the block stores with the instance.
 
     .PARAMETER AutoScalingGroupName
-        The name of the Auto Scaling group for the lifecycle hook.
-
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-as-lifecyclehook.html#cfn-as-lifecyclehook-autoscalinggroupname
         PrimitiveType: String
         UpdateType: Immutable
 
     .PARAMETER DefaultResult
-        The action the Auto Scaling group takes when the lifecycle hook timeout elapses or if an unexpected failure occurs. The valid values are CONTINUE and ABANDON default.
-
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-as-lifecyclehook.html#cfn-as-lifecyclehook-defaultresult
         PrimitiveType: String
         UpdateType: Mutable
 
     .PARAMETER HeartbeatTimeout
-        The amount of time, in seconds, that can elapse before the lifecycle hook times out. If the lifecycle hook times out, Amazon EC2 Auto Scaling performs the action that you specified in the DefaultResult property.
-
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-as-lifecyclehook.html#cfn-as-lifecyclehook-heartbeattimeout
         PrimitiveType: Integer
         UpdateType: Mutable
 
     .PARAMETER LifecycleHookName
-        The name of the lifecycle hook.
-
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-as-lifecyclehook.html#cfn-autoscaling-lifecyclehook-lifecyclehookname
         PrimitiveType: String
         UpdateType: Immutable
 
     .PARAMETER LifecycleTransition
-        The instance state to which you want to attach the lifecycle hook. The valid values are:
-+ autoscaling:EC2_INSTANCE_LAUNCHING
-+ autoscaling:EC2_INSTANCE_TERMINATING
-
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-as-lifecyclehook.html#cfn-as-lifecyclehook-lifecycletransition
         PrimitiveType: String
         UpdateType: Mutable
 
     .PARAMETER NotificationMetadata
-        Additional information that is included any time Amazon EC2 Auto Scaling sends a message to the notification target.
-
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-as-lifecyclehook.html#cfn-as-lifecyclehook-notificationmetadata
         PrimitiveType: String
         UpdateType: Mutable
 
     .PARAMETER NotificationTargetARN
-        The Amazon Resource Name ARN of the notification target that Amazon EC2 Auto Scaling uses to notify you when an instance is in the transition state for the lifecycle hook. You can specify an Amazon SQS queue or an Amazon SNS topic. The notification message includes the following information: lifecycle action token, user account ID, Auto Scaling group name, lifecycle hook name, instance ID, lifecycle transition, and notification metadata.
-
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-as-lifecyclehook.html#cfn-as-lifecyclehook-notificationtargetarn
         PrimitiveType: String
         UpdateType: Mutable
 
     .PARAMETER RoleARN
-        The ARN of the IAM role that allows the Auto Scaling group to publish to the specified notification target, for example, an Amazon SNS topic or an Amazon SQS queue. For information about creating this role, see Preparing for Notifications: https://docs.aws.amazon.com/autoscaling/ec2/userguide/lifecycle-hooks.html#preparing-for-notification in the *Amazon EC2 Auto Scaling User Guide*.
-
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-as-lifecyclehook.html#cfn-as-lifecyclehook-rolearn
         PrimitiveType: String
         UpdateType: Mutable

@@ -1,28 +1,21 @@
 function Add-VSAppSyncDataSourceAuthorizationConfig {
     <#
     .SYNOPSIS
-        Adds an AWS::AppSync::DataSource.AuthorizationConfig resource property to the template. The AuthorizationConfig property type specifies the authorization type and configuration for an AWS AppSync http data source.
+        Adds an AWS::AppSync::DataSource.AuthorizationConfig resource property to the template. 
 
     .DESCRIPTION
         Adds an AWS::AppSync::DataSource.AuthorizationConfig resource property to the template.
-The AuthorizationConfig property type specifies the authorization type and configuration for an AWS AppSync http data source.
 
-AuthorizationConfig is a property of the AWS AppSync DataSource HttpConfig: https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-appsync-datasource-httpconfig.html property type.
 
     .LINK
         http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-appsync-datasource-authorizationconfig.html
 
     .PARAMETER AwsIamConfig
-        The AWS IAM settings.
-
         Type: AwsIamConfig
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-appsync-datasource-authorizationconfig.html#cfn-appsync-datasource-authorizationconfig-awsiamconfig
         UpdateType: Mutable
 
     .PARAMETER AuthorizationType
-        The authorization type required by the HTTP endpoint.
-+  **AWS_IAM**: The authorization type is Sigv4.
-
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-appsync-datasource-authorizationconfig.html#cfn-appsync-datasource-authorizationconfig-authorizationtype
         PrimitiveType: String
         UpdateType: Mutable

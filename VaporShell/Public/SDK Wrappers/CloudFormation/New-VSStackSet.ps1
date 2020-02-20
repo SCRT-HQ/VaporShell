@@ -82,6 +82,7 @@ If you don't specify an operation ID, the SDK generates one automatically.
         $ProfileName = $env:AWS_PROFILE
     )
     Begin {
+        Import-AWSSDK
         $tagList = New-Object 'System.Collections.Generic.List[Amazon.CloudFormation.Model.Tag]'
         $tagList.Add((VSStackTag -Key BuiltWith -Value VaporShell))
     }

@@ -1,30 +1,22 @@
 function Add-VSSSMPatchBaselinePatchFilter {
     <#
     .SYNOPSIS
-        Adds an AWS::SSM::PatchBaseline.PatchFilter resource property to the template. The PatchFilter property type defines a patch filter for an AWS Systems Manager patch baseline.
+        Adds an AWS::SSM::PatchBaseline.PatchFilter resource property to the template. 
 
     .DESCRIPTION
         Adds an AWS::SSM::PatchBaseline.PatchFilter resource property to the template.
-The PatchFilter property type defines a patch filter for an AWS Systems Manager patch baseline.
 
-The PatchFilters property of the PatchFilterGroup: https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ssm-patchbaseline-patchfiltergroup.html property type contains a list of PatchFilter property types.
 
     .LINK
         http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ssm-patchbaseline-patchfilter.html
 
     .PARAMETER Values
-        The value for the filter key.
-For information about valid values for each key based on operating system type, see PatchFilter: https://docs.aws.amazon.com/systems-manager/latest/APIReference/API_PatchFilter.html in the *AWS Systems Manager API Reference*.
-
         PrimitiveItemType: String
         Type: List
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ssm-patchbaseline-patchfilter.html#cfn-ssm-patchbaseline-patchfilter-values
         UpdateType: Mutable
 
     .PARAMETER Key
-        The key for the filter.
-For information about valid keys, see PatchFilter: https://docs.aws.amazon.com/systems-manager/latest/APIReference/API_PatchFilter.html in the *AWS Systems Manager API Reference*.
-
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ssm-patchbaseline-patchfilter.html#cfn-ssm-patchbaseline-patchfilter-key
         PrimitiveType: String
         UpdateType: Mutable

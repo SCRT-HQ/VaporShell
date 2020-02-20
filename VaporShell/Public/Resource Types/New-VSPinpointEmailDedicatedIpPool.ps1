@@ -1,10 +1,10 @@
 function New-VSPinpointEmailDedicatedIpPool {
     <#
     .SYNOPSIS
-        Adds an AWS::PinpointEmail::DedicatedIpPool resource to the template. A request to create a new dedicated IP pool.
+        Adds an AWS::PinpointEmail::DedicatedIpPool resource to the template. 
 
     .DESCRIPTION
-        Adds an AWS::PinpointEmail::DedicatedIpPool resource to the template. A request to create a new dedicated IP pool.
+        Adds an AWS::PinpointEmail::DedicatedIpPool resource to the template. 
 
     .LINK
         http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-pinpointemail-dedicatedippool.html
@@ -13,15 +13,11 @@ function New-VSPinpointEmailDedicatedIpPool {
         The logical ID must be alphanumeric (A-Za-z0-9) and unique within the template. Use the logical name to reference the resource in other parts of the template. For example, if you want to map an Amazon Elastic Block Store volume to an Amazon EC2 instance, you reference the logical IDs to associate the block stores with the instance.
 
     .PARAMETER PoolName
-        The name of the dedicated IP pool.
-
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-pinpointemail-dedicatedippool.html#cfn-pinpointemail-dedicatedippool-poolname
         PrimitiveType: String
         UpdateType: Immutable
 
     .PARAMETER Tags
-        An object that defines the tags keys and values that you want to associate with the dedicated IP pool.
-
         Type: List
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-pinpointemail-dedicatedippool.html#cfn-pinpointemail-dedicatedippool-tags
         ItemType: Tags

@@ -1,10 +1,10 @@
 function New-VSServiceCatalogPortfolio {
     <#
     .SYNOPSIS
-        Adds an AWS::ServiceCatalog::Portfolio resource to the template. Specifies a portfolio.
+        Adds an AWS::ServiceCatalog::Portfolio resource to the template. 
 
     .DESCRIPTION
-        Adds an AWS::ServiceCatalog::Portfolio resource to the template. Specifies a portfolio.
+        Adds an AWS::ServiceCatalog::Portfolio resource to the template. 
 
     .LINK
         http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-servicecatalog-portfolio.html
@@ -13,39 +13,26 @@ function New-VSServiceCatalogPortfolio {
         The logical ID must be alphanumeric (A-Za-z0-9) and unique within the template. Use the logical name to reference the resource in other parts of the template. For example, if you want to map an Amazon Elastic Block Store volume to an Amazon EC2 instance, you reference the logical IDs to associate the block stores with the instance.
 
     .PARAMETER ProviderName
-        The name of the portfolio provider.
-
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-servicecatalog-portfolio.html#cfn-servicecatalog-portfolio-providername
         PrimitiveType: String
         UpdateType: Mutable
 
     .PARAMETER Description
-        The description of the portfolio.
-
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-servicecatalog-portfolio.html#cfn-servicecatalog-portfolio-description
         PrimitiveType: String
         UpdateType: Mutable
 
     .PARAMETER DisplayName
-        The name to use for display purposes.
-
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-servicecatalog-portfolio.html#cfn-servicecatalog-portfolio-displayname
         PrimitiveType: String
         UpdateType: Mutable
 
     .PARAMETER AcceptLanguage
-        The language code.
-+  en - English default
-+  jp - Japanese
-+  zh - Chinese
-
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-servicecatalog-portfolio.html#cfn-servicecatalog-portfolio-acceptlanguage
         PrimitiveType: String
         UpdateType: Mutable
 
     .PARAMETER Tags
-        One or more tags.
-
         Type: List
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-servicecatalog-portfolio.html#cfn-servicecatalog-portfolio-tags
         ItemType: Tag

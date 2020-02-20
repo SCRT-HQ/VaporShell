@@ -1,10 +1,10 @@
 function New-VSApiGatewayGatewayResponse {
     <#
     .SYNOPSIS
-        Adds an AWS::ApiGateway::GatewayResponse resource to the template. The AWS::ApiGateway::GatewayResponse resource creates a gateway response for your API. For more information, see API Gateway Responses: https://docs.aws.amazon.com/apigateway/latest/developerguide/customize-gateway-responses.html#api-gateway-gatewayResponse-definition in the *API Gateway Developer Guide*.
+        Adds an AWS::ApiGateway::GatewayResponse resource to the template. 
 
     .DESCRIPTION
-        Adds an AWS::ApiGateway::GatewayResponse resource to the template. The AWS::ApiGateway::GatewayResponse resource creates a gateway response for your API. For more information, see API Gateway Responses: https://docs.aws.amazon.com/apigateway/latest/developerguide/customize-gateway-responses.html#api-gateway-gatewayResponse-definition in the *API Gateway Developer Guide*.
+        Adds an AWS::ApiGateway::GatewayResponse resource to the template. 
 
     .LINK
         http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-apigateway-gatewayresponse.html
@@ -13,8 +13,6 @@ function New-VSApiGatewayGatewayResponse {
         The logical ID must be alphanumeric (A-Za-z0-9) and unique within the template. Use the logical name to reference the resource in other parts of the template. For example, if you want to map an Amazon Elastic Block Store volume to an Amazon EC2 instance, you reference the logical IDs to associate the block stores with the instance.
 
     .PARAMETER ResponseParameters
-        The response parameters paths, query strings, and headers for the response. Duplicates not allowed.
-
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-apigateway-gatewayresponse.html#cfn-apigateway-gatewayresponse-responseparameters
         DuplicatesAllowed: False
         PrimitiveItemType: String
@@ -22,8 +20,6 @@ function New-VSApiGatewayGatewayResponse {
         UpdateType: Mutable
 
     .PARAMETER ResponseTemplates
-        The response templates for the response. Duplicates not allowed.
-
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-apigateway-gatewayresponse.html#cfn-apigateway-gatewayresponse-responsetemplates
         DuplicatesAllowed: False
         PrimitiveItemType: String
@@ -31,22 +27,16 @@ function New-VSApiGatewayGatewayResponse {
         UpdateType: Mutable
 
     .PARAMETER ResponseType
-        The response type. For valid values, see GatewayResponse: https://docs.aws.amazon.com/apigateway/api-reference/resource/gateway-response/ in the *API Gateway API Reference*.
-
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-apigateway-gatewayresponse.html#cfn-apigateway-gatewayresponse-responsetype
         PrimitiveType: String
         UpdateType: Immutable
 
     .PARAMETER RestApiId
-        The identifier of the API.
-
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-apigateway-gatewayresponse.html#cfn-apigateway-gatewayresponse-restapiid
         PrimitiveType: String
         UpdateType: Immutable
 
     .PARAMETER StatusCode
-        The HTTP status code for the response.
-
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-apigateway-gatewayresponse.html#cfn-apigateway-gatewayresponse-statuscode
         PrimitiveType: String
         UpdateType: Mutable

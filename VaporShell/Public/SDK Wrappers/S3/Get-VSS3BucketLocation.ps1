@@ -2,13 +2,13 @@ function Get-VSS3BucketLocation {
     <#
     .SYNOPSIS
     Gets the location of a specific S3 bucket
-    
+
     .PARAMETER BucketName
     The name of the bucket you are trying to locate.
-    
+
     .PARAMETER ProfileName
     The name of the configuration profile to deploy the stack with. Defaults to $env:AWS_PROFILE, if set.
-    
+
     .FUNCTIONALITY
     Vaporshell
     #>
@@ -22,6 +22,9 @@ function Get-VSS3BucketLocation {
         [String]
         $ProfileName = $env:AWS_PROFILE
     )
+    Begin {
+        Import-AWSSDK
+    }
     Process {
         $method = "GetBucketLocation"
         $requestType = "Amazon.S3.Model.$($method)Request"

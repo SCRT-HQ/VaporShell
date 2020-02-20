@@ -1,18 +1,16 @@
 function Add-VSS3BucketAccelerateConfiguration {
     <#
     .SYNOPSIS
-        Adds an AWS::S3::Bucket.AccelerateConfiguration resource property to the template. Configures the transfer acceleration state for an Amazon S3 bucket. For more information, see Amazon S3 Transfer Acceleration: https://docs.aws.amazon.com/AmazonS3/latest/dev/transfer-acceleration.html in the *Amazon Simple Storage Service Developer Guide*.
+        Adds an AWS::S3::Bucket.AccelerateConfiguration resource property to the template. 
 
     .DESCRIPTION
         Adds an AWS::S3::Bucket.AccelerateConfiguration resource property to the template.
-Configures the transfer acceleration state for an Amazon S3 bucket. For more information, see Amazon S3 Transfer Acceleration: https://docs.aws.amazon.com/AmazonS3/latest/dev/transfer-acceleration.html in the *Amazon Simple Storage Service Developer Guide*.
+
 
     .LINK
         http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-s3-bucket-accelerateconfiguration.html
 
     .PARAMETER AccelerationStatus
-        Specifies the transfer acceleration status of the bucket.
-
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-s3-bucket-accelerateconfiguration.html#cfn-s3-bucket-accelerateconfiguration-accelerationstatus
         PrimitiveType: String
         UpdateType: Mutable

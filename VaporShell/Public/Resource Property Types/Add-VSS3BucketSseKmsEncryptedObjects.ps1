@@ -1,18 +1,16 @@
 function Add-VSS3BucketSseKmsEncryptedObjects {
     <#
     .SYNOPSIS
-        Adds an AWS::S3::Bucket.SseKmsEncryptedObjects resource property to the template. A container for filter information for the selection of S3 objects encrypted with AWS KMS.
+        Adds an AWS::S3::Bucket.SseKmsEncryptedObjects resource property to the template. 
 
     .DESCRIPTION
         Adds an AWS::S3::Bucket.SseKmsEncryptedObjects resource property to the template.
-A container for filter information for the selection of S3 objects encrypted with AWS KMS.
+
 
     .LINK
         http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-s3-bucket-ssekmsencryptedobjects.html
 
     .PARAMETER Status
-        Specifies whether Amazon S3 replicates objects created with server-side encryption using an AWS KMS-managed key.
-
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-s3-bucket-ssekmsencryptedobjects.html#cfn-s3-bucket-ssekmsencryptedobjects-status
         PrimitiveType: String
         UpdateType: Mutable

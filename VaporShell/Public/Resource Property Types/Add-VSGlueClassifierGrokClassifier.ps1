@@ -1,39 +1,31 @@
 function Add-VSGlueClassifierGrokClassifier {
     <#
     .SYNOPSIS
-        Adds an AWS::Glue::Classifier.GrokClassifier resource property to the template. A classifier that uses grok patterns.
+        Adds an AWS::Glue::Classifier.GrokClassifier resource property to the template. 
 
     .DESCRIPTION
         Adds an AWS::Glue::Classifier.GrokClassifier resource property to the template.
-A classifier that uses grok patterns.
+
 
     .LINK
         http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-glue-classifier-grokclassifier.html
 
     .PARAMETER CustomPatterns
-        Optional custom grok patterns defined by this classifier. For more information, see custom patterns in Writing Custom Classifiers: https://docs.aws.amazon.com/glue/latest/dg/custom-classifier.html.
-
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-glue-classifier-grokclassifier.html#cfn-glue-classifier-grokclassifier-custompatterns
         PrimitiveType: String
         UpdateType: Mutable
 
     .PARAMETER GrokPattern
-        The grok pattern applied to a data store by this classifier. For more information, see built-in patterns in Writing Custom Classifiers: https://docs.aws.amazon.com/glue/latest/dg/custom-classifier.html.
-
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-glue-classifier-grokclassifier.html#cfn-glue-classifier-grokclassifier-grokpattern
         PrimitiveType: String
         UpdateType: Mutable
 
     .PARAMETER Classification
-        An identifier of the data format that the classifier matches, such as Twitter, JSON, Omniture logs, and so on.
-
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-glue-classifier-grokclassifier.html#cfn-glue-classifier-grokclassifier-classification
         PrimitiveType: String
         UpdateType: Mutable
 
     .PARAMETER Name
-        The name of the classifier.
-
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-glue-classifier-grokclassifier.html#cfn-glue-classifier-grokclassifier-name
         PrimitiveType: String
         UpdateType: Immutable

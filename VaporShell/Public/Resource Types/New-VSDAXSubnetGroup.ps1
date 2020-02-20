@@ -1,10 +1,10 @@
 function New-VSDAXSubnetGroup {
     <#
     .SYNOPSIS
-        Adds an AWS::DAX::SubnetGroup resource to the template. Creates a new subnet group.
+        Adds an AWS::DAX::SubnetGroup resource to the template. 
 
     .DESCRIPTION
-        Adds an AWS::DAX::SubnetGroup resource to the template. Creates a new subnet group.
+        Adds an AWS::DAX::SubnetGroup resource to the template. 
 
     .LINK
         http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-dax-subnetgroup.html
@@ -13,22 +13,16 @@ function New-VSDAXSubnetGroup {
         The logical ID must be alphanumeric (A-Za-z0-9) and unique within the template. Use the logical name to reference the resource in other parts of the template. For example, if you want to map an Amazon Elastic Block Store volume to an Amazon EC2 instance, you reference the logical IDs to associate the block stores with the instance.
 
     .PARAMETER Description
-        The description of the subnet group.
-
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-dax-subnetgroup.html#cfn-dax-subnetgroup-description
         PrimitiveType: String
         UpdateType: Mutable
 
     .PARAMETER SubnetGroupName
-        The name of the subnet group.
-
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-dax-subnetgroup.html#cfn-dax-subnetgroup-subnetgroupname
         PrimitiveType: String
         UpdateType: Immutable
 
     .PARAMETER SubnetIds
-        A list of VPC subnet IDs for the subnet group.
-
         PrimitiveItemType: String
         Type: List
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-dax-subnetgroup.html#cfn-dax-subnetgroup-subnetids

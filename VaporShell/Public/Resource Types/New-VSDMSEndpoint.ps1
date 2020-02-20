@@ -1,10 +1,10 @@
 function New-VSDMSEndpoint {
     <#
     .SYNOPSIS
-        Adds an AWS::DMS::Endpoint resource to the template. The AWS::DMS::Endpoint resource creates an AWS DMS endpoint.
+        Adds an AWS::DMS::Endpoint resource to the template. 
 
     .DESCRIPTION
-        Adds an AWS::DMS::Endpoint resource to the template. The AWS::DMS::Endpoint resource creates an AWS DMS endpoint.
+        Adds an AWS::DMS::Endpoint resource to the template. 
 
     .LINK
         http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-dms-endpoint.html
@@ -13,128 +13,92 @@ function New-VSDMSEndpoint {
         The logical ID must be alphanumeric (A-Za-z0-9) and unique within the template. Use the logical name to reference the resource in other parts of the template. For example, if you want to map an Amazon Elastic Block Store volume to an Amazon EC2 instance, you reference the logical IDs to associate the block stores with the instance.
 
     .PARAMETER KmsKeyId
-        The AWS KMS key identifier to use to encrypt the connection parameters. If you don't specify a value for the KmsKeyId parameter, then AWS DMS uses your default encryption key. AWS KMS creates the default encryption key for your AWS account. Your AWS account has a different default encryption key for each AWS Region.
-
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-dms-endpoint.html#cfn-dms-endpoint-kmskeyid
         PrimitiveType: String
         UpdateType: Immutable
 
     .PARAMETER Port
-        The port used by the endpoint database.
-
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-dms-endpoint.html#cfn-dms-endpoint-port
         PrimitiveType: Integer
         UpdateType: Mutable
 
     .PARAMETER DatabaseName
-        The name of the endpoint database.
-
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-dms-endpoint.html#cfn-dms-endpoint-databasename
         PrimitiveType: String
         UpdateType: Mutable
 
     .PARAMETER ElasticsearchSettings
-        Settings in JSON format for the target Elasticsearch endpoint. For more information about the available settings, see Extra Connection Attributes When Using Elasticsearch as a Target for AWS DMS: https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Target.Elasticsearch.html#CHAP_Target.Elasticsearch.Configuration in the *AWS Database Migration User Guide.*
-
         Type: ElasticsearchSettings
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-dms-endpoint.html#cfn-dms-endpoint-elasticsearchsettings
         UpdateType: Mutable
 
     .PARAMETER S3Settings
-        Settings in JSON format for the target Amazon S3 endpoint. For more information about the available settings, see Extra Connection Attributes When Using Amazon S3 as a Target for AWS DMS: https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Target.S3.html#CHAP_Target.S3.Configuring in the *AWS Database Migration Service User Guide.*
-
         Type: S3Settings
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-dms-endpoint.html#cfn-dms-endpoint-s3settings
         UpdateType: Mutable
 
     .PARAMETER EngineName
-        The type of engine for the endpoint. Valid values, depending on the EndPointType value, include mysql, oracle, postgres, mariadb, aurora, aurora-postgresql, redshift, s3, db2, azuredb, sybase, dynamodb, mongodb, and sqlserver.
-
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-dms-endpoint.html#cfn-dms-endpoint-enginename
         PrimitiveType: String
         UpdateType: Mutable
 
     .PARAMETER DynamoDbSettings
-        Settings in JSON format for the target Amazon DynamoDB endpoint. For more information about the available settings, see Using Object Mapping to Migrate Data to DynamoDB: https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Target.DynamoDB.html in the *AWS Database Migration Service User Guide.*
-
         Type: DynamoDbSettings
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-dms-endpoint.html#cfn-dms-endpoint-dynamodbsettings
         UpdateType: Mutable
 
     .PARAMETER KinesisSettings
-        Settings in JSON format for the target Amazon Kinesis Data Streams endpoint. For more information about the available settings, see Using Object Mapping to Migrate Data to a Kinesis Data Stream: https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Target.Kinesis.html#CHAP_Target.Kinesis.ObjectMapping              in the *AWS Database Migration User Guide.*
-
         Type: KinesisSettings
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-dms-endpoint.html#cfn-dms-endpoint-kinesissettings
         UpdateType: Mutable
 
     .PARAMETER Username
-        The user name to be used to log in to the endpoint database.
-
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-dms-endpoint.html#cfn-dms-endpoint-username
         PrimitiveType: String
         UpdateType: Mutable
 
     .PARAMETER SslMode
-        The Secure Sockets Layer SSL mode to use for the SSL connection. The SSL mode can be one of four values: none, require, verify-ca, verify-full. The default value is none.
-
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-dms-endpoint.html#cfn-dms-endpoint-sslmode
         PrimitiveType: String
         UpdateType: Mutable
 
     .PARAMETER ServerName
-        The name of the server where the endpoint database resides.
-
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-dms-endpoint.html#cfn-dms-endpoint-servername
         PrimitiveType: String
         UpdateType: Mutable
 
     .PARAMETER ExtraConnectionAttributes
-        Additional attributes associated with the connection.
-
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-dms-endpoint.html#cfn-dms-endpoint-extraconnectionattributes
         PrimitiveType: String
         UpdateType: Mutable
 
     .PARAMETER EndpointType
-        The type of endpoint.
-
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-dms-endpoint.html#cfn-dms-endpoint-endpointtype
         PrimitiveType: String
         UpdateType: Mutable
 
     .PARAMETER Tags
-        Tags to be added to the endpoint.
-
         Type: List
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-dms-endpoint.html#cfn-dms-endpoint-tags
         ItemType: Tag
         UpdateType: Immutable
 
     .PARAMETER EndpointIdentifier
-        The database endpoint identifier. Identifiers must begin with a letter; must contain only ASCII letters, digits, and hyphens; and must not end with a hyphen or contain two consecutive hyphens.
-
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-dms-endpoint.html#cfn-dms-endpoint-endpointidentifier
         PrimitiveType: String
         UpdateType: Mutable
 
     .PARAMETER Password
-        The password to be used to log in to the endpoint database.
-
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-dms-endpoint.html#cfn-dms-endpoint-password
         PrimitiveType: String
         UpdateType: Mutable
 
     .PARAMETER CertificateArn
-        The Amazon Resource Name ARN for the certificate.
-
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-dms-endpoint.html#cfn-dms-endpoint-certificatearn
         PrimitiveType: String
         UpdateType: Mutable
 
     .PARAMETER MongoDbSettings
-        Settings in JSON format for the source MongoDB endpoint. For more information about the available settings, see the configuration properties section in  Using MongoDB as a Target for AWS Database Migration Service: https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Source.MongoDB.html in the *AWS Database Migration Service User Guide.*
-
         Type: MongoDbSettings
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-dms-endpoint.html#cfn-dms-endpoint-mongodbsettings
         UpdateType: Mutable

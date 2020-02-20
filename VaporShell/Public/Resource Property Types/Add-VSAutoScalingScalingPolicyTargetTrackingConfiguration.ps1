@@ -1,41 +1,31 @@
 function Add-VSAutoScalingScalingPolicyTargetTrackingConfiguration {
     <#
     .SYNOPSIS
-        Adds an AWS::AutoScaling::ScalingPolicy.TargetTrackingConfiguration resource property to the template. TargetTrackingConfiguration is a subproperty of ScalingPolicy: https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-as-policy.html that specifies a target tracking scaling policy to use with Amazon EC2 Auto Scaling.
+        Adds an AWS::AutoScaling::ScalingPolicy.TargetTrackingConfiguration resource property to the template. 
 
     .DESCRIPTION
         Adds an AWS::AutoScaling::ScalingPolicy.TargetTrackingConfiguration resource property to the template.
-TargetTrackingConfiguration is a subproperty of ScalingPolicy: https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-as-policy.html that specifies a target tracking scaling policy to use with Amazon EC2 Auto Scaling.
 
-For more information, see PutScalingPolicy: https://docs.aws.amazon.com/autoscaling/ec2/APIReference/API_PutScalingPolicy.html in the *Amazon EC2 Auto Scaling API Reference*. For more information about scaling policies, see Dynamic Scaling: https://docs.aws.amazon.com/autoscaling/ec2/userguide/as-scale-based-on-demand.html in the *Amazon EC2 Auto Scaling User Guide*.
 
     .LINK
         http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-autoscaling-scalingpolicy-targettrackingconfiguration.html
 
     .PARAMETER CustomizedMetricSpecification
-        A customized metric. You must specify either a predefined metric or a customized metric.
-
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-autoscaling-scalingpolicy-targettrackingconfiguration.html#cfn-autoscaling-scalingpolicy-targettrackingconfiguration-customizedmetricspecification
         Type: CustomizedMetricSpecification
         UpdateType: Mutable
 
     .PARAMETER DisableScaleIn
-        Indicates whether scaling in by the target tracking scaling policy is disabled. If scaling in is disabled, the target tracking scaling policy doesn't remove instances from the Auto Scaling group. Otherwise, the target tracking scaling policy can remove instances from the Auto Scaling group. The default is false.
-
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-autoscaling-scalingpolicy-targettrackingconfiguration.html#cfn-autoscaling-scalingpolicy-targettrackingconfiguration-disablescalein
         PrimitiveType: Boolean
         UpdateType: Mutable
 
     .PARAMETER PredefinedMetricSpecification
-        A predefined metric. You must specify either a predefined metric or a customized metric.
-
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-autoscaling-scalingpolicy-targettrackingconfiguration.html#cfn-autoscaling-scalingpolicy-targettrackingconfiguration-predefinedmetricspecification
         Type: PredefinedMetricSpecification
         UpdateType: Mutable
 
     .PARAMETER TargetValue
-        The target value for the metric.
-
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-autoscaling-scalingpolicy-targettrackingconfiguration.html#cfn-autoscaling-scalingpolicy-targettrackingconfiguration-targetvalue
         PrimitiveType: Double
         UpdateType: Mutable

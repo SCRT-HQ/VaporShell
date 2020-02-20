@@ -1,34 +1,27 @@
 function Add-VSDLMLifecyclePolicyCreateRule {
     <#
     .SYNOPSIS
-        Adds an AWS::DLM::LifecyclePolicy.CreateRule resource property to the template. Specifies when to create snapshots of EBS volumes.
+        Adds an AWS::DLM::LifecyclePolicy.CreateRule resource property to the template. 
 
     .DESCRIPTION
         Adds an AWS::DLM::LifecyclePolicy.CreateRule resource property to the template.
-Specifies when to create snapshots of EBS volumes.
+
 
     .LINK
         http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-dlm-lifecyclepolicy-createrule.html
 
     .PARAMETER IntervalUnit
-        The interval unit.
-
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-dlm-lifecyclepolicy-createrule.html#cfn-dlm-lifecyclepolicy-createrule-intervalunit
         PrimitiveType: String
         UpdateType: Mutable
 
     .PARAMETER Times
-        The time, in UTC, to start the operation. The supported format is hh:mm.
-The operation occurs within a one-hour window following the specified time.
-
         PrimitiveItemType: String
         Type: List
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-dlm-lifecyclepolicy-createrule.html#cfn-dlm-lifecyclepolicy-createrule-times
         UpdateType: Mutable
 
     .PARAMETER Interval
-        The interval between snapshots. The supported values are 2, 3, 4, 6, 8, 12, and 24.
-
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-dlm-lifecyclepolicy-createrule.html#cfn-dlm-lifecyclepolicy-createrule-interval
         PrimitiveType: Integer
         UpdateType: Mutable

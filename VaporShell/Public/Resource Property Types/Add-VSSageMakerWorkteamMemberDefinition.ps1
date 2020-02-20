@@ -1,18 +1,16 @@
 function Add-VSSageMakerWorkteamMemberDefinition {
     <#
     .SYNOPSIS
-        Adds an AWS::SageMaker::Workteam.MemberDefinition resource property to the template. Defines the Amazon Cognito user group that is part of a work team.
+        Adds an AWS::SageMaker::Workteam.MemberDefinition resource property to the template. 
 
     .DESCRIPTION
         Adds an AWS::SageMaker::Workteam.MemberDefinition resource property to the template.
-Defines the Amazon Cognito user group that is part of a work team.
+
 
     .LINK
         http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-sagemaker-workteam-memberdefinition.html
 
     .PARAMETER CognitoMemberDefinition
-        The Amazon Cognito user group that is part of the work team.
-
         Type: CognitoMemberDefinition
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-sagemaker-workteam-memberdefinition.html#cfn-sagemaker-workteam-memberdefinition-cognitomemberdefinition
         UpdateType: Mutable

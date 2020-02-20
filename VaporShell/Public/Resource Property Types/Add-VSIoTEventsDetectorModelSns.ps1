@@ -1,18 +1,16 @@
 function Add-VSIoTEventsDetectorModelSns {
     <#
     .SYNOPSIS
-        Adds an AWS::IoTEvents::DetectorModel.Sns resource property to the template. Sends an Amazon SNS message.
+        Adds an AWS::IoTEvents::DetectorModel.Sns resource property to the template. 
 
     .DESCRIPTION
         Adds an AWS::IoTEvents::DetectorModel.Sns resource property to the template.
-Sends an Amazon SNS message.
+
 
     .LINK
         http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iotevents-detectormodel-sns.html
 
     .PARAMETER TargetArn
-        The ARN of the Amazon SNS target where the message is sent.
-
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iotevents-detectormodel-sns.html#cfn-iotevents-detectormodel-sns-targetarn
         PrimitiveType: String
         UpdateType: Mutable

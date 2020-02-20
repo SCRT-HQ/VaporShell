@@ -1,22 +1,10 @@
 function New-VSEC2SpotFleet {
     <#
     .SYNOPSIS
-        Adds an AWS::EC2::SpotFleet resource to the template. Specifies a Spot Fleet request. A Spot Fleet request contains the configuration information to launch a fleet, or group, of instances.
+        Adds an AWS::EC2::SpotFleet resource to the template. 
 
     .DESCRIPTION
-        Adds an AWS::EC2::SpotFleet resource to the template. Specifies a Spot Fleet request. A Spot Fleet request contains the configuration information to launch a fleet, or group, of instances.
-
-The Spot Fleet request specifies the total target capacity and the On-Demand target capacity for the fleet. Amazon EC2 calculates the difference between the total capacity and On-Demand capacity, and launches the difference as Spot capacity.
-
-The Spot Fleet request can include multiple launch specifications that vary by instance type, AMI, Availability Zone, or subnet.
-
-By default, the Spot Fleet requests Spot Instances in the Spot pool where the price per unit is the lowest. Each launch specification can include its own instance weighting that reflects the value of the instance type to your application workload.
-
-Alternatively, you can specify that the Spot Fleet distribute the target capacity across the Spot pools included in its launch specifications. By ensuring that the Spot Instances in your Spot Fleet are in different Spot pools, you can improve the availability of your fleet.
-
-You can specify tags for the Spot Instances. You cannot tag other resource types in a Spot Fleet request because only the instance resource type is supported.
-
-For more information, see Spot Fleet Requests: https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/spot-fleet-requests.html in the *Amazon EC2 User Guide for Linux Instances*.
+        Adds an AWS::EC2::SpotFleet resource to the template. 
 
     .LINK
         http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ec2-spotfleet.html
@@ -25,8 +13,6 @@ For more information, see Spot Fleet Requests: https://docs.aws.amazon.com/AWSEC
         The logical ID must be alphanumeric (A-Za-z0-9) and unique within the template. Use the logical name to reference the resource in other parts of the template. For example, if you want to map an Amazon Elastic Block Store volume to an Amazon EC2 instance, you reference the logical IDs to associate the block stores with the instance.
 
     .PARAMETER SpotFleetRequestConfigData
-        Describes the configuration of a Spot Fleet request.
-
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ec2-spotfleet.html#cfn-ec2-spotfleet-spotfleetrequestconfigdata
         Type: SpotFleetRequestConfigData
         UpdateType: Conditional

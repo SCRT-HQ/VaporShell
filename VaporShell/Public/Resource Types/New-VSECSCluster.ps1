@@ -1,10 +1,10 @@
 function New-VSECSCluster {
     <#
     .SYNOPSIS
-        Adds an AWS::ECS::Cluster resource to the template. The AWS::ECS::Cluster resource creates an Amazon Elastic Container Service (Amazon ECS cluster.
+        Adds an AWS::ECS::Cluster resource to the template. 
 
     .DESCRIPTION
-        Adds an AWS::ECS::Cluster resource to the template. The AWS::ECS::Cluster resource creates an Amazon Elastic Container Service (Amazon ECS cluster.
+        Adds an AWS::ECS::Cluster resource to the template. 
 
     .LINK
         http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ecs-cluster.html
@@ -13,8 +13,6 @@ function New-VSECSCluster {
         The logical ID must be alphanumeric (A-Za-z0-9) and unique within the template. Use the logical name to reference the resource in other parts of the template. For example, if you want to map an Amazon Elastic Block Store volume to an Amazon EC2 instance, you reference the logical IDs to associate the block stores with the instance.
 
     .PARAMETER ClusterName
-        A user-generated string that you use to identify your cluster. If you don't specify a name, AWS CloudFormation generates a unique physical ID for the name.
-
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ecs-cluster.html#cfn-ecs-cluster-clustername
         PrimitiveType: String
         UpdateType: Immutable

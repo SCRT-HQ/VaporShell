@@ -1,32 +1,26 @@
 function Add-VSLambdaLayerVersionContent {
     <#
     .SYNOPSIS
-        Adds an AWS::Lambda::LayerVersion.Content resource property to the template. A ZIP archive that contains the contents of an AWS Lambda layer: https://docs.aws.amazon.com/lambda/latest/dg/configuration-layers.html.
+        Adds an AWS::Lambda::LayerVersion.Content resource property to the template. 
 
     .DESCRIPTION
         Adds an AWS::Lambda::LayerVersion.Content resource property to the template.
-A ZIP archive that contains the contents of an AWS Lambda layer: https://docs.aws.amazon.com/lambda/latest/dg/configuration-layers.html.
+
 
     .LINK
         http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-lambda-layerversion-content.html
 
     .PARAMETER S3ObjectVersion
-        For versioned objects, the version of the layer archive object to use.
-
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-lambda-layerversion-content.html#cfn-lambda-layerversion-content-s3objectversion
         PrimitiveType: String
         UpdateType: Immutable
 
     .PARAMETER S3Bucket
-        The Amazon S3 bucket of the layer archive.
-
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-lambda-layerversion-content.html#cfn-lambda-layerversion-content-s3bucket
         PrimitiveType: String
         UpdateType: Immutable
 
     .PARAMETER S3Key
-        The Amazon S3 key of the layer archive.
-
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-lambda-layerversion-content.html#cfn-lambda-layerversion-content-s3key
         PrimitiveType: String
         UpdateType: Immutable

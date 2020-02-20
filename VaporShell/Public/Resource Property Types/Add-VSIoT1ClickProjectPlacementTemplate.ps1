@@ -1,27 +1,21 @@
 function Add-VSIoT1ClickProjectPlacementTemplate {
     <#
     .SYNOPSIS
-        Adds an AWS::IoT1Click::Project.PlacementTemplate resource property to the template. In AWS CloudFormation, use the PlacementTemplate property type to define the template for an AWS IoT 1-Click project.
+        Adds an AWS::IoT1Click::Project.PlacementTemplate resource property to the template. 
 
     .DESCRIPTION
         Adds an AWS::IoT1Click::Project.PlacementTemplate resource property to the template.
-In AWS CloudFormation, use the PlacementTemplate property type to define the template for an AWS IoT 1-Click project.
 
-PlacementTemplate is a property of the AWS::IoT1Click::Project resource.
 
     .LINK
         http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iot1click-project-placementtemplate.html
 
     .PARAMETER DeviceTemplates
-        An object specifying the DeviceTemplate: https://docs.aws.amazon.com/iot-1-click/latest/projects-apireference/API_DeviceTemplate.html for all placements using this PlacementTemplate: https://docs.aws.amazon.com/iot-1-click/latest/projects-apireference/API_PlacementTemplate.html template.
-
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iot1click-project-placementtemplate.html#cfn-iot1click-project-placementtemplate-devicetemplates
         PrimitiveType: Json
         UpdateType: Immutable
 
     .PARAMETER DefaultAttributes
-        The default attributes key-value pairs to be applied to all placements using this template.
-
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iot1click-project-placementtemplate.html#cfn-iot1click-project-placementtemplate-defaultattributes
         PrimitiveType: Json
         UpdateType: Mutable

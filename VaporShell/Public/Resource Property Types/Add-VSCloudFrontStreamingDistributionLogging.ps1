@@ -1,32 +1,26 @@
 function Add-VSCloudFrontStreamingDistributionLogging {
     <#
     .SYNOPSIS
-        Adds an AWS::CloudFront::StreamingDistribution.Logging resource property to the template. A complex type that controls whether access logs are written for the streaming distribution.
+        Adds an AWS::CloudFront::StreamingDistribution.Logging resource property to the template. 
 
     .DESCRIPTION
         Adds an AWS::CloudFront::StreamingDistribution.Logging resource property to the template.
-A complex type that controls whether access logs are written for the streaming distribution.
+
 
     .LINK
         http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-cloudfront-streamingdistribution-logging.html
 
     .PARAMETER Bucket
-        The Amazon S3 bucket to store the access logs in, for example, myawslogbucket.s3.amazonaws.com.
-
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-cloudfront-streamingdistribution-logging.html#cfn-cloudfront-streamingdistribution-logging-bucket
         PrimitiveType: String
         UpdateType: Mutable
 
     .PARAMETER Enabled
-        Specifies whether you want CloudFront to save access logs to an Amazon S3 bucket. If you don't want to enable logging when you create a streaming distribution or if you want to disable logging for an existing streaming distribution, specify false for Enabled, and specify empty Bucket and Prefix elements. If you specify false for Enabled but you specify values for Bucket and Prefix, the values are automatically deleted.
-
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-cloudfront-streamingdistribution-logging.html#cfn-cloudfront-streamingdistribution-logging-enabled
         PrimitiveType: Boolean
         UpdateType: Mutable
 
     .PARAMETER Prefix
-        An optional string that you want CloudFront to prefix to the access log filenames for this streaming distribution, for example, myprefix/. If you want to enable logging, but you don't want to specify a prefix, you still must include an empty Prefix element in the Logging element.
-
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-cloudfront-streamingdistribution-logging.html#cfn-cloudfront-streamingdistribution-logging-prefix
         PrimitiveType: String
         UpdateType: Mutable

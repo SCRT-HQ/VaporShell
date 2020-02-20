@@ -1,10 +1,10 @@
 function New-VSRDSOptionGroup {
     <#
     .SYNOPSIS
-        Adds an AWS::RDS::OptionGroup resource to the template. The AWS::RDS::OptionGroup resource creates an option group, to enable and configure features that are specific to a particular DB engine.
+        Adds an AWS::RDS::OptionGroup resource to the template. 
 
     .DESCRIPTION
-        Adds an AWS::RDS::OptionGroup resource to the template. The AWS::RDS::OptionGroup resource creates an option group, to enable and configure features that are specific to a particular DB engine.
+        Adds an AWS::RDS::OptionGroup resource to the template. 
 
     .LINK
         http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-rds-optiongroup.html
@@ -13,22 +13,16 @@ function New-VSRDSOptionGroup {
         The logical ID must be alphanumeric (A-Za-z0-9) and unique within the template. Use the logical name to reference the resource in other parts of the template. For example, if you want to map an Amazon Elastic Block Store volume to an Amazon EC2 instance, you reference the logical IDs to associate the block stores with the instance.
 
     .PARAMETER EngineName
-        Specifies the name of the engine that this option group should be associated with.
-
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-rds-optiongroup.html#cfn-rds-optiongroup-enginename
         PrimitiveType: String
         UpdateType: Immutable
 
     .PARAMETER MajorEngineVersion
-        Specifies the major version of the engine that this option group should be associated with.
-
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-rds-optiongroup.html#cfn-rds-optiongroup-majorengineversion
         PrimitiveType: String
         UpdateType: Immutable
 
     .PARAMETER OptionConfigurations
-        A list of all available options
-
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-rds-optiongroup.html#cfn-rds-optiongroup-optionconfigurations
         DuplicatesAllowed: True
         ItemType: OptionConfiguration
@@ -36,15 +30,11 @@ function New-VSRDSOptionGroup {
         UpdateType: Immutable
 
     .PARAMETER OptionGroupDescription
-        The description of the option group.
-
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-rds-optiongroup.html#cfn-rds-optiongroup-optiongroupdescription
         PrimitiveType: String
         UpdateType: Immutable
 
     .PARAMETER Tags
-        Tags to assign to the option group.
-
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-rds-optiongroup.html#cfn-rds-optiongroup-tags
         DuplicatesAllowed: True
         ItemType: Tag

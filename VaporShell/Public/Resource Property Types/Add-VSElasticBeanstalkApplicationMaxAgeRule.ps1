@@ -1,34 +1,26 @@
 function Add-VSElasticBeanstalkApplicationMaxAgeRule {
     <#
     .SYNOPSIS
-        Adds an AWS::ElasticBeanstalk::Application.MaxAgeRule resource property to the template. A lifecycle rule that deletes application versions after the specified number of days.
+        Adds an AWS::ElasticBeanstalk::Application.MaxAgeRule resource property to the template. 
 
     .DESCRIPTION
         Adds an AWS::ElasticBeanstalk::Application.MaxAgeRule resource property to the template.
-A lifecycle rule that deletes application versions after the specified number of days.
 
-MaxAgeRule is a property of the ApplicationVersionLifecycleConfig: https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-elasticbeanstalk-application-applicationversionlifecycleconfig.html property type.
 
     .LINK
         http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-elasticbeanstalk-application-maxagerule.html
 
     .PARAMETER DeleteSourceFromS3
-        Set to true to delete a version's source bundle from Amazon S3 when Elastic Beanstalk deletes the application version.
-
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-elasticbeanstalk-application-maxagerule.html#cfn-elasticbeanstalk-application-maxagerule-deletesourcefroms3
         PrimitiveType: Boolean
         UpdateType: Mutable
 
     .PARAMETER Enabled
-        Specify true to apply the rule, or false to disable it.
-
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-elasticbeanstalk-application-maxagerule.html#cfn-elasticbeanstalk-application-maxagerule-enabled
         PrimitiveType: Boolean
         UpdateType: Mutable
 
     .PARAMETER MaxAgeInDays
-        Specify the number of days to retain an application versions.
-
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-elasticbeanstalk-application-maxagerule.html#cfn-elasticbeanstalk-application-maxagerule-maxageindays
         PrimitiveType: Integer
         UpdateType: Mutable

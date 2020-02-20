@@ -1,12 +1,10 @@
 function New-VSEC2VPNConnection {
     <#
     .SYNOPSIS
-        Adds an AWS::EC2::VPNConnection resource to the template. Specifies a VPN connection between a virtual private gateway and a VPN customer gateway.
+        Adds an AWS::EC2::VPNConnection resource to the template. 
 
     .DESCRIPTION
-        Adds an AWS::EC2::VPNConnection resource to the template. Specifies a VPN connection between a virtual private gateway and a VPN customer gateway.
-
-For more information, see AWS Site-to-Site VPN: https://docs.aws.amazon.com/vpn/latest/s2svpn/VPC_VPN.html in the *AWS Site-to-Site VPN User Guide*.
+        Adds an AWS::EC2::VPNConnection resource to the template. 
 
     .LINK
         http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ec2-vpn-connection.html
@@ -15,23 +13,16 @@ For more information, see AWS Site-to-Site VPN: https://docs.aws.amazon.com/vpn/
         The logical ID must be alphanumeric (A-Za-z0-9) and unique within the template. Use the logical name to reference the resource in other parts of the template. For example, if you want to map an Amazon Elastic Block Store volume to an Amazon EC2 instance, you reference the logical IDs to associate the block stores with the instance.
 
     .PARAMETER CustomerGatewayId
-        The ID of the customer gateway at your end of the VPN connection.
-
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ec2-vpn-connection.html#cfn-ec2-vpnconnection-customergatewayid
         PrimitiveType: String
         UpdateType: Immutable
 
     .PARAMETER StaticRoutesOnly
-        Indicates whether the VPN connection uses static routes only. Static routes must be used for devices that don't support BGP.
-If you are creating a VPN connection for a device that does not support Border Gateway Protocol BGP, you must specify true.
-
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ec2-vpn-connection.html#cfn-ec2-vpnconnection-StaticRoutesOnly
         PrimitiveType: Boolean
         UpdateType: Immutable
 
     .PARAMETER Tags
-        Any tags assigned to the VPN connection.
-
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ec2-vpn-connection.html#cfn-ec2-vpnconnection-tags
         DuplicatesAllowed: True
         ItemType: Tag
@@ -39,31 +30,21 @@ If you are creating a VPN connection for a device that does not support Border G
         UpdateType: Mutable
 
     .PARAMETER TransitGatewayId
-        The ID of the transit gateway associated with the VPN connection.
-You must specify either TransitGatewayId or VpnGatewayId, but not both.
-
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ec2-vpn-connection.html#cfn-ec2-vpnconnection-transitgatewayid
         PrimitiveType: String
         UpdateType: Immutable
 
     .PARAMETER Type
-        The type of VPN connection.
-
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ec2-vpn-connection.html#cfn-ec2-vpnconnection-type
         PrimitiveType: String
         UpdateType: Immutable
 
     .PARAMETER VpnGatewayId
-        The ID of the virtual private gateway at the AWS side of the VPN connection.
-You must specify either TransitGatewayId or VpnGatewayId, but not both.
-
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ec2-vpn-connection.html#cfn-ec2-vpnconnection-vpngatewayid
         PrimitiveType: String
         UpdateType: Immutable
 
     .PARAMETER VpnTunnelOptionsSpecifications
-        The tunnel options for a VPN connection.
-
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ec2-vpn-connection.html#cfn-ec2-vpnconnection-vpntunneloptionsspecifications
         DuplicatesAllowed: False
         ItemType: VpnTunnelOptionsSpecification

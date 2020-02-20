@@ -1,10 +1,10 @@
 function New-VSEC2TransitGatewayRoute {
     <#
     .SYNOPSIS
-        Adds an AWS::EC2::TransitGatewayRoute resource to the template. Specifies a static route for a transit gateway route table.
+        Adds an AWS::EC2::TransitGatewayRoute resource to the template. 
 
     .DESCRIPTION
-        Adds an AWS::EC2::TransitGatewayRoute resource to the template. Specifies a static route for a transit gateway route table.
+        Adds an AWS::EC2::TransitGatewayRoute resource to the template. 
 
     .LINK
         http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ec2-transitgatewayroute.html
@@ -13,29 +13,21 @@ function New-VSEC2TransitGatewayRoute {
         The logical ID must be alphanumeric (A-Za-z0-9) and unique within the template. Use the logical name to reference the resource in other parts of the template. For example, if you want to map an Amazon Elastic Block Store volume to an Amazon EC2 instance, you reference the logical IDs to associate the block stores with the instance.
 
     .PARAMETER TransitGatewayRouteTableId
-        The ID of the transit gateway route table.
-
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ec2-transitgatewayroute.html#cfn-ec2-transitgatewayroute-transitgatewayroutetableid
         PrimitiveType: String
         UpdateType: Immutable
 
     .PARAMETER DestinationCidrBlock
-        The CIDR block used for destination matches.
-
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ec2-transitgatewayroute.html#cfn-ec2-transitgatewayroute-destinationcidrblock
         PrimitiveType: String
         UpdateType: Immutable
 
     .PARAMETER Blackhole
-        Indicates whether to drop traffic that matches this route.
-
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ec2-transitgatewayroute.html#cfn-ec2-transitgatewayroute-blackhole
         PrimitiveType: Boolean
         UpdateType: Immutable
 
     .PARAMETER TransitGatewayAttachmentId
-        The ID of the attachment.
-
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ec2-transitgatewayroute.html#cfn-ec2-transitgatewayroute-transitgatewayattachmentid
         PrimitiveType: String
         UpdateType: Immutable

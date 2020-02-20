@@ -1,25 +1,21 @@
 function Add-VSMSKClusterEncryptionInfo {
     <#
     .SYNOPSIS
-        Adds an AWS::MSK::Cluster.EncryptionInfo resource property to the template. Includes encryption-related information, such as the AWS KMS key used for encrypting data at rest and whether you want MSK to encrypt your data in transit.
+        Adds an AWS::MSK::Cluster.EncryptionInfo resource property to the template. 
 
     .DESCRIPTION
         Adds an AWS::MSK::Cluster.EncryptionInfo resource property to the template.
-Includes encryption-related information, such as the AWS KMS key used for encrypting data at rest and whether you want MSK to encrypt your data in transit.
+
 
     .LINK
         http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-msk-cluster-encryptioninfo.html
 
     .PARAMETER EncryptionAtRest
-        The data-volume encryption details.
-
         Type: EncryptionAtRest
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-msk-cluster-encryptioninfo.html#cfn-msk-cluster-encryptioninfo-encryptionatrest
         UpdateType: Immutable
 
     .PARAMETER EncryptionInTransit
-        The details for encryption in transit.
-
         Type: EncryptionInTransit
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-msk-cluster-encryptioninfo.html#cfn-msk-cluster-encryptioninfo-encryptionintransit
         UpdateType: Immutable

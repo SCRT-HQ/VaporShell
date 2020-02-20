@@ -1,18 +1,16 @@
 function Add-VSGlueJobExecutionProperty {
     <#
     .SYNOPSIS
-        Adds an AWS::Glue::Job.ExecutionProperty resource property to the template. An execution property of a job.
+        Adds an AWS::Glue::Job.ExecutionProperty resource property to the template. 
 
     .DESCRIPTION
         Adds an AWS::Glue::Job.ExecutionProperty resource property to the template.
-An execution property of a job.
+
 
     .LINK
         http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-glue-job-executionproperty.html
 
     .PARAMETER MaxConcurrentRuns
-        The maximum number of concurrent runs allowed for the job. The default is 1. An error is returned when this threshold is reached. The maximum value you can specify is controlled by a service limit.
-
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-glue-job-executionproperty.html#cfn-glue-job-executionproperty-maxconcurrentruns
         PrimitiveType: Double
         UpdateType: Mutable

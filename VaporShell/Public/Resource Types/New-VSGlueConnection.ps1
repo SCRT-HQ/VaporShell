@@ -1,10 +1,10 @@
 function New-VSGlueConnection {
     <#
     .SYNOPSIS
-        Adds an AWS::Glue::Connection resource to the template. The AWS::Glue::Connection resource specifies an AWS Glue connection to a data source. For more information, see Adding a Connection to Your Data Store: https://docs.aws.amazon.com/dg/populate-add-connection.html and Connection Structure: https://docs.aws.amazon.com/dg/aws-glue-api-catalog-connections.html#aws-glue-api-catalog-connections-Connection in the *AWS Glue Developer Guide*.
+        Adds an AWS::Glue::Connection resource to the template. 
 
     .DESCRIPTION
-        Adds an AWS::Glue::Connection resource to the template. The AWS::Glue::Connection resource specifies an AWS Glue connection to a data source. For more information, see Adding a Connection to Your Data Store: https://docs.aws.amazon.com/dg/populate-add-connection.html and Connection Structure: https://docs.aws.amazon.com/dg/aws-glue-api-catalog-connections.html#aws-glue-api-catalog-connections-Connection in the *AWS Glue Developer Guide*.
+        Adds an AWS::Glue::Connection resource to the template. 
 
     .LINK
         http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-glue-connection.html
@@ -13,16 +13,11 @@ function New-VSGlueConnection {
         The logical ID must be alphanumeric (A-Za-z0-9) and unique within the template. Use the logical name to reference the resource in other parts of the template. For example, if you want to map an Amazon Elastic Block Store volume to an Amazon EC2 instance, you reference the logical IDs to associate the block stores with the instance.
 
     .PARAMETER ConnectionInput
-        The connection that you want to create.
-
         Type: ConnectionInput
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-glue-connection.html#cfn-glue-connection-connectioninput
         UpdateType: Mutable
 
     .PARAMETER CatalogId
-        The ID of the data catalog to create the catalog object in. Currently, this should be the AWS account ID.
-To specify the account ID, you can use the Ref intrinsic function with the AWS::AccountId pseudo parameter. For example: !Ref AWS::AccountId.
-
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-glue-connection.html#cfn-glue-connection-catalogid
         PrimitiveType: String
         UpdateType: Immutable

@@ -1,27 +1,21 @@
 function Add-VSMediaLiveChannelAudioSelectorSettings {
     <#
     .SYNOPSIS
-        Adds an AWS::MediaLive::Channel.AudioSelectorSettings resource property to the template. Information about the audio to extract from the input.
+        Adds an AWS::MediaLive::Channel.AudioSelectorSettings resource property to the template. 
 
     .DESCRIPTION
         Adds an AWS::MediaLive::Channel.AudioSelectorSettings resource property to the template.
-Information about the audio to extract from the input.
 
-The parent of this entity is AudioSelector.
 
     .LINK
         http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-medialive-channel-audioselectorsettings.html
 
     .PARAMETER AudioPidSelection
-        The PID of the audio to select.
-
         Type: AudioPidSelection
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-medialive-channel-audioselectorsettings.html#cfn-medialive-channel-audioselectorsettings-audiopidselection
         UpdateType: Mutable
 
     .PARAMETER AudioLanguageSelection
-        The language code of the audio to select.
-
         Type: AudioLanguageSelection
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-medialive-channel-audioselectorsettings.html#cfn-medialive-channel-audioselectorsettings-audiolanguageselection
         UpdateType: Mutable

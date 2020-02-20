@@ -1,12 +1,10 @@
 function New-VSWAFIPSet {
     <#
     .SYNOPSIS
-        Adds an AWS::WAF::IPSet resource to the template. Contains one or more IP addresses or blocks of IP addresses specified in Classless Inter-Domain Routing (CIDR notation. AWS WAF supports IPv4 address ranges: /8 and any range between /16 through /32. AWS WAF supports IPv6 address ranges: /24, /32, /48, /56, /64, and /128.
+        Adds an AWS::WAF::IPSet resource to the template. 
 
     .DESCRIPTION
-        Adds an AWS::WAF::IPSet resource to the template. Contains one or more IP addresses or blocks of IP addresses specified in Classless Inter-Domain Routing (CIDR notation. AWS WAF supports IPv4 address ranges: /8 and any range between /16 through /32. AWS WAF supports IPv6 address ranges: /24, /32, /48, /56, /64, and /128.
-
-To specify an individual IP address, you specify the four-part IP address followed by a /32, for example, 192.0.2.0/31. To block a range of IP addresses, you can specify /8 or any range between /16 through /32 (for IPv4 or /24, /32, /48, /56, /64, or /128 (for IPv6. For more information about CIDR notation, see the Wikipedia entry Classless Inter-Domain Routing: https://en.wikipedia.org/wiki/Classless_Inter-Domain_Routing.
+        Adds an AWS::WAF::IPSet resource to the template. 
 
     .LINK
         http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-waf-ipset.html
@@ -15,8 +13,6 @@ To specify an individual IP address, you specify the four-part IP address follow
         The logical ID must be alphanumeric (A-Za-z0-9) and unique within the template. Use the logical name to reference the resource in other parts of the template. For example, if you want to map an Amazon Elastic Block Store volume to an Amazon EC2 instance, you reference the logical IDs to associate the block stores with the instance.
 
     .PARAMETER IPSetDescriptors
-        The IP address type IPV4 or IPV6 and the IP address range in CIDR notation that web requests originate from. If the WebACL is associated with a CloudFront distribution and the viewer did not use an HTTP proxy or a load balancer to send the request, this is the value of the c-ip field in the CloudFront access logs.
-
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-waf-ipset.html#cfn-waf-ipset-ipsetdescriptors
         DuplicatesAllowed: False
         ItemType: IPSetDescriptor
@@ -24,8 +20,6 @@ To specify an individual IP address, you specify the four-part IP address follow
         UpdateType: Mutable
 
     .PARAMETER Name
-        A friendly name or description of the IPSet. You can't change the name of an IPSet after you create it.
-
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-waf-ipset.html#cfn-waf-ipset-name
         PrimitiveType: String
         UpdateType: Immutable

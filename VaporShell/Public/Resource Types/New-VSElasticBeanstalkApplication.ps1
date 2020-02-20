@@ -1,10 +1,10 @@
 function New-VSElasticBeanstalkApplication {
     <#
     .SYNOPSIS
-        Adds an AWS::ElasticBeanstalk::Application resource to the template. The AWS::ElasticBeanstalk::Application resource is an AWS Elastic Beanstalk resource type that specifies an Elastic Beanstalk application.
+        Adds an AWS::ElasticBeanstalk::Application resource to the template. 
 
     .DESCRIPTION
-        Adds an AWS::ElasticBeanstalk::Application resource to the template. The AWS::ElasticBeanstalk::Application resource is an AWS Elastic Beanstalk resource type that specifies an Elastic Beanstalk application.
+        Adds an AWS::ElasticBeanstalk::Application resource to the template. 
 
     .LINK
         http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-beanstalk.html
@@ -13,23 +13,16 @@ function New-VSElasticBeanstalkApplication {
         The logical ID must be alphanumeric (A-Za-z0-9) and unique within the template. Use the logical name to reference the resource in other parts of the template. For example, if you want to map an Amazon Elastic Block Store volume to an Amazon EC2 instance, you reference the logical IDs to associate the block stores with the instance.
 
     .PARAMETER ApplicationName
-        A name for the Elastic Beanstalk application. If you don't specify a name, AWS CloudFormation generates a unique physical ID and uses that ID for the application name. For more information, see Name Type: https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-name.html.
-If you specify a name, you cannot perform updates that require replacement of this resource. You can perform updates that require no or some interruption. If you must replace the resource, specify a new name.
-
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-beanstalk.html#cfn-elasticbeanstalk-application-name
         PrimitiveType: String
         UpdateType: Immutable
 
     .PARAMETER Description
-        Your description of the application.
-
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-beanstalk.html#cfn-elasticbeanstalk-application-description
         PrimitiveType: String
         UpdateType: Mutable
 
     .PARAMETER ResourceLifecycleConfig
-        Specifies an application resource lifecycle configuration to prevent your application from accumulating too many versions.
-
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-beanstalk.html#cfn-elasticbeanstalk-application-resourcelifecycleconfig
         Type: ApplicationResourceLifecycleConfig
         UpdateType: Mutable

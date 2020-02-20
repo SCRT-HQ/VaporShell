@@ -1,10 +1,10 @@
 function New-VSAmazonMQConfigurationAssociation {
     <#
     .SYNOPSIS
-        Adds an AWS::AmazonMQ::ConfigurationAssociation resource to the template. Use the AWS CloudFormation AWS::AmazonMQ::ConfigurationAssociation resource to associate a configuration with a broker, or return information about the specified ConfigurationAssociation. Only use one per broker, and don't use a configuration on the broker resource if you have associated a configuration with that broker.
+        Adds an AWS::AmazonMQ::ConfigurationAssociation resource to the template. 
 
     .DESCRIPTION
-        Adds an AWS::AmazonMQ::ConfigurationAssociation resource to the template. Use the AWS CloudFormation AWS::AmazonMQ::ConfigurationAssociation resource to associate a configuration with a broker, or return information about the specified ConfigurationAssociation. Only use one per broker, and don't use a configuration on the broker resource if you have associated a configuration with that broker.
+        Adds an AWS::AmazonMQ::ConfigurationAssociation resource to the template. 
 
     .LINK
         http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-amazonmq-configurationassociation.html
@@ -13,15 +13,11 @@ function New-VSAmazonMQConfigurationAssociation {
         The logical ID must be alphanumeric (A-Za-z0-9) and unique within the template. Use the logical name to reference the resource in other parts of the template. For example, if you want to map an Amazon Elastic Block Store volume to an Amazon EC2 instance, you reference the logical IDs to associate the block stores with the instance.
 
     .PARAMETER Broker
-        The broker to associate with a configuration.
-
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-amazonmq-configurationassociation.html#cfn-amazonmq-configurationassociation-broker
         PrimitiveType: String
         UpdateType: Immutable
 
     .PARAMETER Configuration
-        The configuration to associate with a broker.
-
         Type: ConfigurationId
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-amazonmq-configurationassociation.html#cfn-amazonmq-configurationassociation-configuration
         UpdateType: Mutable

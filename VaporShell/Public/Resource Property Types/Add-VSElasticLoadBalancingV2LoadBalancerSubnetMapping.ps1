@@ -1,25 +1,21 @@
 function Add-VSElasticLoadBalancingV2LoadBalancerSubnetMapping {
     <#
     .SYNOPSIS
-        Adds an AWS::ElasticLoadBalancingV2::LoadBalancer.SubnetMapping resource property to the template. Specifies a subnet to attach to an Application Load Balancer or a Network Load Balancer.
+        Adds an AWS::ElasticLoadBalancingV2::LoadBalancer.SubnetMapping resource property to the template. 
 
     .DESCRIPTION
         Adds an AWS::ElasticLoadBalancingV2::LoadBalancer.SubnetMapping resource property to the template.
-Specifies a subnet to attach to an Application Load Balancer or a Network Load Balancer.
+
 
     .LINK
         http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-elasticloadbalancingv2-loadbalancer-subnetmapping.html
 
     .PARAMETER AllocationId
-        Network Load Balancers] The allocation ID of the Elastic IP address.
-
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-elasticloadbalancingv2-loadbalancer-subnetmapping.html#cfn-elasticloadbalancingv2-loadbalancer-subnetmapping-allocationid
         PrimitiveType: String
         UpdateType: Mutable
 
     .PARAMETER SubnetId
-        The ID of the subnet.
-
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-elasticloadbalancingv2-loadbalancer-subnetmapping.html#cfn-elasticloadbalancingv2-loadbalancer-subnetmapping-subnetid
         PrimitiveType: String
         UpdateType: Mutable
