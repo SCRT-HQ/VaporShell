@@ -6,30 +6,20 @@ Param(
     [String]
     $ModuleVersion = $Script:ModuleVersion
 )
-$changeLog = if ($env:BUILD_REASON -eq 'Schedule') {
-    @(
-        "## $ModuleVersion - $(Get-Date -Format 'yyyy-MM-dd') (Scheduled Release)"
-        ''
+$changeLog = @(
+    '# Changelog'
+    ''
+)
+if ($env:BUILD_REASON -eq 'Schedule') {
+    $changeLog += @(
         '> _This is a standard scheduled release to bring this module up to the current CloudFormation specification sheet._'
         ''
-        '* Miscellaneous'
-        '  * Brought Resource Type and Property Type functions up to current spec sheet.'
-        ''
-        '***'
-        ''
-        '# Last Changelog Entry'
-        ''
     )
-}
-else {
-    @()
 }
 $cl = Get-Content "$PSScriptRoot\..\CHANGELOG.md"
 $lastClEntries = $cl | Where-Object {$_ -match '^## .* - \d{4}-\d{2}-\d{2}'} | Select-Object -First 2
 $changeLog += ($cl[($cl.IndexOf($lastClEntries[0]))..(($cl.IndexOf($lastClEntries[1]) - 1))])
 @"
-# Changelog
-
 $($changeLog -join "`n")
 ***
 
