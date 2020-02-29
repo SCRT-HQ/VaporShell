@@ -1,36 +1,46 @@
 function Add-VSGlueTriggerCondition {
     <#
     .SYNOPSIS
-        Adds an AWS::Glue::Trigger.Condition resource property to the template. 
+        Adds an AWS::Glue::Trigger.Condition resource property to the template. Defines a condition under which a trigger fires.
 
     .DESCRIPTION
         Adds an AWS::Glue::Trigger.Condition resource property to the template.
-
+Defines a condition under which a trigger fires.
 
     .LINK
         http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-glue-trigger-condition.html
 
     .PARAMETER CrawlerName
+        +  Condition Structure: https://docs.aws.amazon.com/glue/latest/dg/aws-glue-api-jobs-trigger.html#aws-glue-api-jobs-trigger-Condition in the *AWS Glue Developer Guide*
+
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-glue-trigger-condition.html#cfn-glue-trigger-condition-crawlername
         PrimitiveType: String
         UpdateType: Mutable
 
     .PARAMETER State
+        The condition state. Currently, the values supported are SUCCEEDED, STOPPED, TIMEOUT, and FAILED.
+
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-glue-trigger-condition.html#cfn-glue-trigger-condition-state
         PrimitiveType: String
         UpdateType: Mutable
 
     .PARAMETER CrawlState
+        +  Condition Structure: https://docs.aws.amazon.com/glue/latest/dg/aws-glue-api-jobs-trigger.html#aws-glue-api-jobs-trigger-Condition in the *AWS Glue Developer Guide*
+
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-glue-trigger-condition.html#cfn-glue-trigger-condition-crawlstate
         PrimitiveType: String
         UpdateType: Mutable
 
     .PARAMETER LogicalOperator
+        A logical operator.
+
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-glue-trigger-condition.html#cfn-glue-trigger-condition-logicaloperator
         PrimitiveType: String
         UpdateType: Mutable
 
     .PARAMETER JobName
+        The name of the job whose JobRuns this condition applies to, and on which this trigger waits.
+
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-glue-trigger-condition.html#cfn-glue-trigger-condition-jobname
         PrimitiveType: String
         UpdateType: Mutable

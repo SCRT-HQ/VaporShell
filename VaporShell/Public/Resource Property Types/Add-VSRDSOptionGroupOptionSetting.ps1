@@ -1,21 +1,25 @@
 function Add-VSRDSOptionGroupOptionSetting {
     <#
     .SYNOPSIS
-        Adds an AWS::RDS::OptionGroup.OptionSetting resource property to the template. 
+        Adds an AWS::RDS::OptionGroup.OptionSetting resource property to the template. The OptionSetting property type specifies the value for an option within an OptionSetting property.
 
     .DESCRIPTION
         Adds an AWS::RDS::OptionGroup.OptionSetting resource property to the template.
-
+The OptionSetting property type specifies the value for an option within an OptionSetting property.
 
     .LINK
         http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-rds-optiongroup-optionconfigurations-optionsettings.html
 
     .PARAMETER Name
+        The name of the option that has settings that you can set.
+
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-rds-optiongroup-optionconfigurations-optionsettings.html#cfn-rds-optiongroup-optionconfigurations-optionsettings-name
         PrimitiveType: String
         UpdateType: Mutable
 
     .PARAMETER Value
+        The current value of the option setting.
+
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-rds-optiongroup-optionconfigurations-optionsettings.html#cfn-rds-optiongroup-optionconfigurations-optionsettings-value
         PrimitiveType: String
         UpdateType: Mutable

@@ -1,26 +1,32 @@
 function Add-VSGlueClassifierXMLClassifier {
     <#
     .SYNOPSIS
-        Adds an AWS::Glue::Classifier.XMLClassifier resource property to the template. 
+        Adds an AWS::Glue::Classifier.XMLClassifier resource property to the template. A classifier for XML content.
 
     .DESCRIPTION
         Adds an AWS::Glue::Classifier.XMLClassifier resource property to the template.
-
+A classifier for XML content.
 
     .LINK
         http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-glue-classifier-xmlclassifier.html
 
     .PARAMETER RowTag
+        The XML tag designating the element that contains each record in an XML document being parsed. This can't identify a self-closing element closed by />. An empty row element that contains only attributes can be parsed as long as it ends with a closing tag for example, <row item_a="A" item_b="B"></row> is okay, but <row item_a="A" item_b="B" /> is not.
+
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-glue-classifier-xmlclassifier.html#cfn-glue-classifier-xmlclassifier-rowtag
         PrimitiveType: String
         UpdateType: Mutable
 
     .PARAMETER Classification
+        An identifier of the data format that the classifier matches.
+
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-glue-classifier-xmlclassifier.html#cfn-glue-classifier-xmlclassifier-classification
         PrimitiveType: String
         UpdateType: Mutable
 
     .PARAMETER Name
+        The name of the classifier.
+
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-glue-classifier-xmlclassifier.html#cfn-glue-classifier-xmlclassifier-name
         PrimitiveType: String
         UpdateType: Immutable

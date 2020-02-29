@@ -1,26 +1,34 @@
 function Add-VSApiGatewayV2DomainNameDomainNameConfiguration {
     <#
     .SYNOPSIS
-        Adds an AWS::ApiGatewayV2::DomainName.DomainNameConfiguration resource property to the template. 
+        Adds an AWS::ApiGatewayV2::DomainName.DomainNameConfiguration resource property to the template. The DomainNameConfiguration property type specifies the configuration for a WebSocket's domain name.
 
     .DESCRIPTION
         Adds an AWS::ApiGatewayV2::DomainName.DomainNameConfiguration resource property to the template.
+The DomainNameConfiguration property type specifies the configuration for a WebSocket's domain name.
 
+DomainNameConfiguration is a property of the AWS::ApiGatewayV2::DomainName: https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-apigatewayv2-domainname.html resource.
 
     .LINK
         http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-apigatewayv2-domainname-domainnameconfiguration.html
 
     .PARAMETER EndpointType
+        The endpoint type.
+
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-apigatewayv2-domainname-domainnameconfiguration.html#cfn-apigatewayv2-domainname-domainnameconfiguration-endpointtype
         PrimitiveType: String
         UpdateType: Mutable
 
     .PARAMETER CertificateName
+        The user-friendly name of the certificate that will be used by the edge-optimized endpoint for this domain name.
+
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-apigatewayv2-domainname-domainnameconfiguration.html#cfn-apigatewayv2-domainname-domainnameconfiguration-certificatename
         PrimitiveType: String
         UpdateType: Mutable
 
     .PARAMETER CertificateArn
+        An AWS-managed certificate that will be used by the edge-optimized endpoint for this domain name. AWS Certificate Manager is the only supported source.
+
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-apigatewayv2-domainname-domainnameconfiguration.html#cfn-apigatewayv2-domainname-domainnameconfiguration-certificatearn
         PrimitiveType: String
         UpdateType: Mutable

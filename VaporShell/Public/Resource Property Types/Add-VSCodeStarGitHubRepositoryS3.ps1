@@ -1,26 +1,34 @@
 function Add-VSCodeStarGitHubRepositoryS3 {
     <#
     .SYNOPSIS
-        Adds an AWS::CodeStar::GitHubRepository.S3 resource property to the template. 
+        Adds an AWS::CodeStar::GitHubRepository.S3 resource property to the template. The S3 property type specifies information about the Amazon S3 bucket that contains the code to be committed to the new repository.
 
     .DESCRIPTION
         Adds an AWS::CodeStar::GitHubRepository.S3 resource property to the template.
+The S3 property type specifies information about the Amazon S3 bucket that contains the code to be committed to the new repository.
 
+S3 is a property of the AWS::CodeStar::GitHubRepository resource.
 
     .LINK
         http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-codestar-githubrepository-s3.html
 
     .PARAMETER ObjectVersion
+        The object version of the ZIP file, if versioning is enabled for the Amazon S3 bucket.
+
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-codestar-githubrepository-s3.html#cfn-codestar-githubrepository-s3-objectversion
         PrimitiveType: String
         UpdateType: Mutable
 
     .PARAMETER Bucket
+        The name of the Amazon S3 bucket that contains the ZIP file with the content to be committed to the new repository.
+
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-codestar-githubrepository-s3.html#cfn-codestar-githubrepository-s3-bucket
         PrimitiveType: String
         UpdateType: Mutable
 
     .PARAMETER Key
+        The S3 object key or file name for the ZIP file.
+
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-codestar-githubrepository-s3.html#cfn-codestar-githubrepository-s3-key
         PrimitiveType: String
         UpdateType: Mutable

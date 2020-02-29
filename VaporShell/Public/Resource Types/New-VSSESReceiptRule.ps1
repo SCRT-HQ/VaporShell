@@ -1,10 +1,14 @@
 function New-VSSESReceiptRule {
     <#
     .SYNOPSIS
-        Adds an AWS::SES::ReceiptRule resource to the template. 
+        Adds an AWS::SES::ReceiptRule resource to the template. Specifies a receipt rule.
 
     .DESCRIPTION
-        Adds an AWS::SES::ReceiptRule resource to the template. 
+        Adds an AWS::SES::ReceiptRule resource to the template. Specifies a receipt rule.
+
+For information about setting up receipt rules, see the Amazon SES Developer Guide: https://docs.aws.amazon.com/ses/latest/DeveloperGuide/receiving-email-receipt-rules.html.
+
+You can execute this operation no more than once per second.
 
     .LINK
         http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ses-receiptrule.html
@@ -13,16 +17,22 @@ function New-VSSESReceiptRule {
         The logical ID must be alphanumeric (A-Za-z0-9) and unique within the template. Use the logical name to reference the resource in other parts of the template. For example, if you want to map an Amazon Elastic Block Store volume to an Amazon EC2 instance, you reference the logical IDs to associate the block stores with the instance.
 
     .PARAMETER After
+        The name of the existing rule that you want to place the current rule after. If this parameter is null, the new rule is added as the first entry in the receipt rule set.
+
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ses-receiptrule.html#cfn-ses-receiptrule-after
         PrimitiveType: String
         UpdateType: Mutable
 
     .PARAMETER Rule
+        A data structure that contains the specified rule's name, actions, recipients, domains, enabled status, scan status, and TLS policy.
+
         Type: Rule
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ses-receiptrule.html#cfn-ses-receiptrule-rule
         UpdateType: Mutable
 
     .PARAMETER RuleSetName
+        The name of the rule set that you want to add the receipt rule to.
+
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ses-receiptrule.html#cfn-ses-receiptrule-rulesetname
         PrimitiveType: String
         UpdateType: Immutable

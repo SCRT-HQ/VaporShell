@@ -1,10 +1,16 @@
 function New-VSNeptuneDBCluster {
     <#
     .SYNOPSIS
-        Adds an AWS::Neptune::DBCluster resource to the template. 
+        Adds an AWS::Neptune::DBCluster resource to the template. The AWS::Neptune::DBCluster resource creates an Amazon Neptune DB cluster. Neptune is a fully managed graph database.
 
     .DESCRIPTION
-        Adds an AWS::Neptune::DBCluster resource to the template. 
+        Adds an AWS::Neptune::DBCluster resource to the template. The AWS::Neptune::DBCluster resource creates an Amazon Neptune DB cluster. Neptune is a fully managed graph database.
+
+**Note**
+
+Currently, you can create this resource only in AWS Regions in which Amazon Neptune is supported.
+
+If no DeletionPolicy is set for AWS::Neptune::DBCluster resources, the default deletion behavior is that the entire volume will be deleted without a snapshot. To retain a backup of the volume, the DeletionPolicy should be set to Snapshot. For more information about how AWS CloudFormation deletes resources, see DeletionPolicy Attribute: https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-attribute-deletionpolicy.html.
 
     .LINK
         http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-neptune-dbcluster.html
@@ -13,89 +19,128 @@ function New-VSNeptuneDBCluster {
         The logical ID must be alphanumeric (A-Za-z0-9) and unique within the template. Use the logical name to reference the resource in other parts of the template. For example, if you want to map an Amazon Elastic Block Store volume to an Amazon EC2 instance, you reference the logical IDs to associate the block stores with the instance.
 
     .PARAMETER StorageEncrypted
+        Indicates whether the DB cluster is encrypted.
+If you specify the DBClusterIdentifier, DBSnapshotIdentifier, or SourceDBInstanceIdentifier property, don't specify this property. The value is inherited from the cluster, snapshot, or source DB instance. If you specify the KmsKeyId property, you must enable encryption.
+If you specify the KmsKeyId, you must enable encryption by setting StorageEncrypted to true.
+
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-neptune-dbcluster.html#cfn-neptune-dbcluster-storageencrypted
         PrimitiveType: Boolean
         UpdateType: Immutable
 
     .PARAMETER EngineVersion
+        The reader endpoint for the DB cluster. For example: mystack-mydbcluster-ro-1apw1j4phylrk.cg034hpkmmjt.us-east-2.rds.amazonaws.com
+
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-neptune-dbcluster.html#cfn-neptune-dbcluster-engineversion
         PrimitiveType: String
         UpdateType: Immutable
 
     .PARAMETER KmsKeyId
+        If StorageEncrypted is true, the AWS KMS key identifier for the encrypted DB cluster.
+
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-neptune-dbcluster.html#cfn-neptune-dbcluster-kmskeyid
         PrimitiveType: String
         UpdateType: Immutable
 
     .PARAMETER AvailabilityZones
+        Provides the list of EC2 Availability Zones that instances in the DB cluster can be created in.
+
         PrimitiveItemType: String
         Type: List
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-neptune-dbcluster.html#cfn-neptune-dbcluster-availabilityzones
         UpdateType: Immutable
 
     .PARAMETER SnapshotIdentifier
+        Not supported by Neptune.
+
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-neptune-dbcluster.html#cfn-neptune-dbcluster-snapshotidentifier
         PrimitiveType: String
         UpdateType: Immutable
 
     .PARAMETER Port
+        Specifies the port that the database engine is listening on.
+
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-neptune-dbcluster.html#cfn-neptune-dbcluster-port
         PrimitiveType: Integer
         UpdateType: Mutable
 
     .PARAMETER DBClusterIdentifier
+        Contains a user-supplied DB cluster identifier. This identifier is the unique key that identifies a DB cluster.
+
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-neptune-dbcluster.html#cfn-neptune-dbcluster-dbclusteridentifier
         PrimitiveType: String
         UpdateType: Immutable
 
     .PARAMETER PreferredMaintenanceWindow
+        Specifies the weekly time range during which system maintenance can occur, in Universal Coordinated Time UTC.
+
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-neptune-dbcluster.html#cfn-neptune-dbcluster-preferredmaintenancewindow
         PrimitiveType: String
         UpdateType: Mutable
 
     .PARAMETER IamAuthEnabled
+        True if mapping of AWS Identity and Access Management IAM accounts to database accounts is enabled, and otherwise false.
+
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-neptune-dbcluster.html#cfn-neptune-dbcluster-iamauthenabled
         PrimitiveType: Boolean
         UpdateType: Mutable
 
     .PARAMETER DBSubnetGroupName
+        Specifies information on the subnet group associated with the DB cluster, including the name, description, and subnets in the subnet group.
+
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-neptune-dbcluster.html#cfn-neptune-dbcluster-dbsubnetgroupname
         PrimitiveType: String
         UpdateType: Immutable
 
     .PARAMETER DeletionProtection
+        The reader endpoint for the DB cluster. For example: mystack-mydbcluster-ro-1apw1j4phylrk.cg034hpkmmjt.us-east-2.rds.amazonaws.com
+
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-neptune-dbcluster.html#cfn-neptune-dbcluster-deletionprotection
         PrimitiveType: Boolean
         UpdateType: Mutable
 
     .PARAMETER PreferredBackupWindow
+        Specifies the daily time range during which automated backups are created if automated backups are enabled, as determined by the BackupRetentionPeriod.
+An update may require some interruption.
+
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-neptune-dbcluster.html#cfn-neptune-dbcluster-preferredbackupwindow
         PrimitiveType: String
         UpdateType: Mutable
 
     .PARAMETER VpcSecurityGroupIds
+        Provides a list of VPC security groups that the DB cluster belongs to.
+
         PrimitiveItemType: String
         Type: List
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-neptune-dbcluster.html#cfn-neptune-dbcluster-vpcsecuritygroupids
         UpdateType: Mutable
 
     .PARAMETER DBClusterParameterGroupName
+        Provides the name of the DB cluster parameter group.
+An update may require some interruption. See ModifyDBInstance: https://docs.aws.amazon.com/neptune/latest/userguide/api-instances.html#ModifyDBInstance in the Amazon Neptune User Guide for more information.
+
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-neptune-dbcluster.html#cfn-neptune-dbcluster-dbclusterparametergroupname
         PrimitiveType: String
         UpdateType: Mutable
 
     .PARAMETER BackupRetentionPeriod
+        Specifies the number of days for which automatic DB snapshots are retained.
+An update may require some interruption. See ModifyDBInstance: https://docs.aws.amazon.com/neptune/latest/userguide/api-instances.html#ModifyDBInstance in the Amazon Neptune User Guide for more information.
+
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-neptune-dbcluster.html#cfn-neptune-dbcluster-backupretentionperiod
         PrimitiveType: Integer
         UpdateType: Mutable
 
     .PARAMETER Tags
+        The tags assigned to this cluster.
+
         Type: List
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-neptune-dbcluster.html#cfn-neptune-dbcluster-tags
         ItemType: Tag
         UpdateType: Mutable
 
     .PARAMETER EnableCloudwatchLogsExports
+        Specifies a list of log types that are enabled for export to CloudWatch Logs.
+
         PrimitiveItemType: String
         Type: List
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-neptune-dbcluster.html#cfn-neptune-dbcluster-enablecloudwatchlogsexports

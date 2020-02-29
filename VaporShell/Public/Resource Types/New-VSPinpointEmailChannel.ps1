@@ -1,10 +1,10 @@
 function New-VSPinpointEmailChannel {
     <#
     .SYNOPSIS
-        Adds an AWS::Pinpoint::EmailChannel resource to the template. 
+        Adds an AWS::Pinpoint::EmailChannel resource to the template. Updates the status and settings of the email channel for an application.
 
     .DESCRIPTION
-        Adds an AWS::Pinpoint::EmailChannel resource to the template. 
+        Adds an AWS::Pinpoint::EmailChannel resource to the template. Updates the status and settings of the email channel for an application.
 
     .LINK
         http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-pinpoint-emailchannel.html
@@ -13,31 +13,43 @@ function New-VSPinpointEmailChannel {
         The logical ID must be alphanumeric (A-Za-z0-9) and unique within the template. Use the logical name to reference the resource in other parts of the template. For example, if you want to map an Amazon Elastic Block Store volume to an Amazon EC2 instance, you reference the logical IDs to associate the block stores with the instance.
 
     .PARAMETER ConfigurationSet
+        The configuration set that you want to apply to email that you send through the channel by using the Amazon Pinpoint Email API: emailAPIreference.html.
+
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-pinpoint-emailchannel.html#cfn-pinpoint-emailchannel-configurationset
         PrimitiveType: String
         UpdateType: Mutable
 
     .PARAMETER FromAddress
+        The verified email address that you want to send email from when you send email through the channel.
+
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-pinpoint-emailchannel.html#cfn-pinpoint-emailchannel-fromaddress
         PrimitiveType: String
         UpdateType: Mutable
 
     .PARAMETER Enabled
+        Specifies whether to enable the email channel for the application.
+
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-pinpoint-emailchannel.html#cfn-pinpoint-emailchannel-enabled
         PrimitiveType: Boolean
         UpdateType: Mutable
 
     .PARAMETER ApplicationId
+        The unique ID of the Amazon Pinpoint app that you're specifying the email channel for.
+
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-pinpoint-emailchannel.html#cfn-pinpoint-emailchannel-applicationid
         PrimitiveType: String
         UpdateType: Immutable
 
     .PARAMETER Identity
+        The Amazon Resource Name ARN of the identity, verified with Amazon Simple Email Service Amazon SES, that you want to use when you send email through the channel.
+
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-pinpoint-emailchannel.html#cfn-pinpoint-emailchannel-identity
         PrimitiveType: String
         UpdateType: Mutable
 
     .PARAMETER RoleArn
+        The ARN of the AWS Identity and Access Management IAM role that you want Amazon Pinpoint to use when it submits email-related event data for the channel.
+
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-pinpoint-emailchannel.html#cfn-pinpoint-emailchannel-rolearn
         PrimitiveType: String
         UpdateType: Mutable

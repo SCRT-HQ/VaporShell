@@ -1,10 +1,10 @@
 function New-VSServiceCatalogAcceptedPortfolioShare {
     <#
     .SYNOPSIS
-        Adds an AWS::ServiceCatalog::AcceptedPortfolioShare resource to the template. 
+        Adds an AWS::ServiceCatalog::AcceptedPortfolioShare resource to the template. Accepts an offer to share the specified portfolio.
 
     .DESCRIPTION
-        Adds an AWS::ServiceCatalog::AcceptedPortfolioShare resource to the template. 
+        Adds an AWS::ServiceCatalog::AcceptedPortfolioShare resource to the template. Accepts an offer to share the specified portfolio.
 
     .LINK
         http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-servicecatalog-acceptedportfolioshare.html
@@ -13,11 +13,18 @@ function New-VSServiceCatalogAcceptedPortfolioShare {
         The logical ID must be alphanumeric (A-Za-z0-9) and unique within the template. Use the logical name to reference the resource in other parts of the template. For example, if you want to map an Amazon Elastic Block Store volume to an Amazon EC2 instance, you reference the logical IDs to associate the block stores with the instance.
 
     .PARAMETER AcceptLanguage
+        The language code.
++  en - English default
++  jp - Japanese
++  zh - Chinese
+
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-servicecatalog-acceptedportfolioshare.html#cfn-servicecatalog-acceptedportfolioshare-acceptlanguage
         PrimitiveType: String
         UpdateType: Immutable
 
     .PARAMETER PortfolioId
+        The portfolio identifier.
+
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-servicecatalog-acceptedportfolioshare.html#cfn-servicecatalog-acceptedportfolioshare-portfolioid
         PrimitiveType: String
         UpdateType: Immutable

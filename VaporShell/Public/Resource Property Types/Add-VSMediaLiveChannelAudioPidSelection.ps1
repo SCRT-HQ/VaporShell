@@ -1,16 +1,20 @@
 function Add-VSMediaLiveChannelAudioPidSelection {
     <#
     .SYNOPSIS
-        Adds an AWS::MediaLive::Channel.AudioPidSelection resource property to the template. 
+        Adds an AWS::MediaLive::Channel.AudioPidSelection resource property to the template. Used to extract audio by The PID.
 
     .DESCRIPTION
         Adds an AWS::MediaLive::Channel.AudioPidSelection resource property to the template.
+Used to extract audio by The PID.
 
+The parent of this entity is AudioSelectorSettings.
 
     .LINK
         http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-medialive-channel-audiopidselection.html
 
     .PARAMETER Pid
+        Select the audio by this PID.
+
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-medialive-channel-audiopidselection.html#cfn-medialive-channel-audiopidselection-pid
         PrimitiveType: Integer
         UpdateType: Mutable

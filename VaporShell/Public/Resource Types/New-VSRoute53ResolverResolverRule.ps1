@@ -1,10 +1,10 @@
 function New-VSRoute53ResolverResolverRule {
     <#
     .SYNOPSIS
-        Adds an AWS::Route53Resolver::ResolverRule resource to the template. 
+        Adds an AWS::Route53Resolver::ResolverRule resource to the template. For DNS queries that originate in your VPCs, specifies which resolver endpoint the queries pass through, one domain name that you want to forward to your network, and the IP addresses of the DNS resolvers in your network.
 
     .DESCRIPTION
-        Adds an AWS::Route53Resolver::ResolverRule resource to the template. 
+        Adds an AWS::Route53Resolver::ResolverRule resource to the template. For DNS queries that originate in your VPCs, specifies which resolver endpoint the queries pass through, one domain name that you want to forward to your network, and the IP addresses of the DNS resolvers in your network.
 
     .LINK
         http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-route53resolver-resolverrule.html
@@ -13,33 +13,45 @@ function New-VSRoute53ResolverResolverRule {
         The logical ID must be alphanumeric (A-Za-z0-9) and unique within the template. Use the logical name to reference the resource in other parts of the template. For example, if you want to map an Amazon Elastic Block Store volume to an Amazon EC2 instance, you reference the logical IDs to associate the block stores with the instance.
 
     .PARAMETER ResolverEndpointId
+        The ID of the endpoint that the rule is associated with.
+
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-route53resolver-resolverrule.html#cfn-route53resolver-resolverrule-resolverendpointid
         PrimitiveType: String
         UpdateType: Mutable
 
     .PARAMETER DomainName
+        DNS queries for this domain name are forwarded to the IP addresses that are specified in TargetIps. If a query matches multiple resolver rules example.com and www.example.com, the query is routed using the resolver rule that contains the most specific domain name www.example.com.
+
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-route53resolver-resolverrule.html#cfn-route53resolver-resolverrule-domainname
         PrimitiveType: String
         UpdateType: Immutable
 
     .PARAMETER RuleType
+        This value is always FORWARD. Other resolver rule types aren't supported.
+
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-route53resolver-resolverrule.html#cfn-route53resolver-resolverrule-ruletype
         PrimitiveType: String
         UpdateType: Immutable
 
     .PARAMETER TargetIps
+        An array that contains the IP addresses and ports that an outbound endpoint forwards DNS queries to. Typically, these are the IP addresses of DNS resolvers on your network. Specify IPv4 addresses. IPv6 is not supported.
+
         Type: List
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-route53resolver-resolverrule.html#cfn-route53resolver-resolverrule-targetips
         ItemType: TargetAddress
         UpdateType: Mutable
 
     .PARAMETER Tags
+        A list of the tag keys and values that you want to associate with the endpoint.
+
         Type: List
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-route53resolver-resolverrule.html#cfn-route53resolver-resolverrule-tags
         ItemType: Tag
         UpdateType: Mutable
 
     .PARAMETER Name
+        The name for the resolver rule, which you specified when you created the resolver rule.
+
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-route53resolver-resolverrule.html#cfn-route53resolver-resolverrule-name
         PrimitiveType: String
         UpdateType: Mutable

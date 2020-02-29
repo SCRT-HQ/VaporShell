@@ -1,10 +1,16 @@
 function New-VSAutoScalingScalingPolicy {
     <#
     .SYNOPSIS
-        Adds an AWS::AutoScaling::ScalingPolicy resource to the template. 
+        Adds an AWS::AutoScaling::ScalingPolicy resource to the template. Specifies a scaling policy for an Amazon EC2 Auto Scaling group.
 
     .DESCRIPTION
-        Adds an AWS::AutoScaling::ScalingPolicy resource to the template. 
+        Adds an AWS::AutoScaling::ScalingPolicy resource to the template. Specifies a scaling policy for an Amazon EC2 Auto Scaling group.
+
+To update an existing scaling policy, use the existing policy name and set the property to change. If you leave a property unspecified when updating a scaling policy, the corresponding value remains unchanged.
+
+If you create either a step scaling policy or a simple scaling policy, you must also create a CloudWatch alarm that monitors a CloudWatch metric for your Auto Scaling group. Note that you can associate a CloudWatch alarm with only one scaling policy.
+
+For more information about using scaling policies to scale your Auto Scaling group automatically, see Dynamic Scaling: https://docs.aws.amazon.com/autoscaling/ec2/userguide/as-scale-based-on-demand.html in the *Amazon EC2 Auto Scaling User Guide*.
 
     .LINK
         http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-as-policy.html
@@ -13,46 +19,72 @@ function New-VSAutoScalingScalingPolicy {
         The logical ID must be alphanumeric (A-Za-z0-9) and unique within the template. Use the logical name to reference the resource in other parts of the template. For example, if you want to map an Amazon Elastic Block Store volume to an Amazon EC2 instance, you reference the logical IDs to associate the block stores with the instance.
 
     .PARAMETER AdjustmentType
+        Specifies whether the ScalingAdjustment property is an absolute number or a percentage of the current capacity. The valid values are ChangeInCapacity, ExactCapacity, and PercentChangeInCapacity.
+Valid only if the policy type is StepScaling or SimpleScaling. For more information, see Scaling Adjustment Types: https://docs.aws.amazon.com/autoscaling/ec2/userguide/as-scaling-simple-step.html#as-scaling-adjustment in the *Amazon EC2 Auto Scaling User Guide*.
+
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-as-policy.html#cfn-as-scalingpolicy-adjustmenttype
         PrimitiveType: String
         UpdateType: Mutable
 
     .PARAMETER AutoScalingGroupName
+        The name or Amazon Resource Name ARN of the Auto Scaling group that you want to attach the policy to.
+
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-as-policy.html#cfn-as-scalingpolicy-autoscalinggroupname
         PrimitiveType: String
         UpdateType: Mutable
 
     .PARAMETER Cooldown
+        The amount of time, in seconds, after a scaling activity completes before any further dynamic scaling activities can start. If this property is not specified, the default cooldown period for the group applies.
+Valid only if the policy type is SimpleScaling. For more information, see Scaling Cooldowns: https://docs.aws.amazon.com/autoscaling/ec2/userguide/Cooldown.html in the *Amazon EC2 Auto Scaling User Guide*.
+
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-as-policy.html#cfn-as-scalingpolicy-cooldown
         PrimitiveType: String
         UpdateType: Mutable
 
     .PARAMETER EstimatedInstanceWarmup
+        The estimated time, in seconds, until a newly launched instance can contribute to the CloudWatch metrics. The default is to use the value specified for the default cooldown period for the group.
+Valid only if the policy type is StepScaling or TargetTrackingScaling.
+
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-as-policy.html#cfn-as-scalingpolicy-estimatedinstancewarmup
         PrimitiveType: Integer
         UpdateType: Mutable
 
     .PARAMETER MetricAggregationType
+        The aggregation type for the CloudWatch metrics. The valid values are Minimum, Maximum, and Average. By default, AWS CloudFormation specifies Average.
+Valid only if the policy type is StepScaling.
+
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-as-policy.html#cfn-as-scalingpolicy-metricaggregationtype
         PrimitiveType: String
         UpdateType: Mutable
 
     .PARAMETER MinAdjustmentMagnitude
+        The minimum number of instances to scale. If the value of AdjustmentType is PercentChangeInCapacity, the scaling policy changes the DesiredCapacity of the Auto Scaling group by at least this many instances. This property replaces the MinAdjustmentStep property.
+For example, suppose that you create a step scaling policy to scale out an Auto Scaling group by 25 percent and you specify a MinAdjustmentMagnitude of 2. If the group has 4 instances and the scaling policy is performed, 25 percent of 4 is 1. However, because you specified a MinAdjustmentMagnitude of 2, Amazon EC2 Auto Scaling scales out the group by 2 instances.
+Valid only if the policy type is StepScaling or SimpleScaling.
+
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-as-policy.html#cfn-as-scalingpolicy-minadjustmentmagnitude
         PrimitiveType: Integer
         UpdateType: Mutable
 
     .PARAMETER PolicyType
+        The policy type. The valid values are SimpleScaling, StepScaling, and TargetTrackingScaling. By default, AWS CloudFormation specifies SimpleScaling.
+
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-as-policy.html#cfn-as-scalingpolicy-policytype
         PrimitiveType: String
         UpdateType: Mutable
 
     .PARAMETER ScalingAdjustment
+        The amount by which a simple scaling policy scales the Auto Scaling group in response to an alarm breach. The adjustment is based on the value that you specified in the AdjustmentType property either an absolute number or a percentage. A positive value adds to the current capacity and a negative value subtracts from the current capacity. For exact capacity, you must specify a positive value.
+If you specify SimpleScaling for the policy type, you must specify this property. Not used with any other policy type.
+
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-as-policy.html#cfn-as-scalingpolicy-scalingadjustment
         PrimitiveType: Integer
         UpdateType: Mutable
 
     .PARAMETER StepAdjustments
+        A set of adjustments that enable you to scale based on the size of the alarm breach.
+If you specify StepScaling for the policy type, you must specify this property. Not used with any other policy type.
+
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-as-policy.html#cfn-as-scalingpolicy-stepadjustments
         DuplicatesAllowed: False
         ItemType: StepAdjustment
@@ -60,6 +92,9 @@ function New-VSAutoScalingScalingPolicy {
         UpdateType: Mutable
 
     .PARAMETER TargetTrackingConfiguration
+        Configures a target tracking scaling policy.
+If you specify TargetTrackingScaling for the policy type, you must specify this property. Not used with any other policy type.
+
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-as-policy.html#cfn-autoscaling-scalingpolicy-targettrackingconfiguration
         Type: TargetTrackingConfiguration
         UpdateType: Mutable

@@ -1,27 +1,33 @@
 function Add-VSBatchJobDefinitionDevice {
     <#
     .SYNOPSIS
-        Adds an AWS::Batch::JobDefinition.Device resource property to the template. 
+        Adds an AWS::Batch::JobDefinition.Device resource property to the template. An object representing a container instance host device.
 
     .DESCRIPTION
         Adds an AWS::Batch::JobDefinition.Device resource property to the template.
-
+An object representing a container instance host device.
 
     .LINK
         http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-batch-jobdefinition-device.html
 
     .PARAMETER HostPath
+        The path for the device on the host container instance.
+
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-batch-jobdefinition-device.html#cfn-batch-jobdefinition-device-hostpath
         PrimitiveType: String
         UpdateType: Mutable
 
     .PARAMETER Permissions
+        The explicit permissions to provide to the container for the device. By default, the container has permissions for read, write, and mknod for the device.
+
         PrimitiveItemType: String
         Type: List
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-batch-jobdefinition-device.html#cfn-batch-jobdefinition-device-permissions
         UpdateType: Mutable
 
     .PARAMETER ContainerPath
+        The path inside the container at which to expose the host device. By default the hostPath value is used.
+
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-batch-jobdefinition-device.html#cfn-batch-jobdefinition-device-containerpath
         PrimitiveType: String
         UpdateType: Mutable

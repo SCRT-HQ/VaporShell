@@ -1,10 +1,12 @@
 function New-VSPinpointSMSChannel {
     <#
     .SYNOPSIS
-        Adds an AWS::Pinpoint::SMSChannel resource to the template. 
+        Adds an AWS::Pinpoint::SMSChannel resource to the template. A channel is a type of platform that you can deliver messages to. To send an SMS text message, you send the message through the SMS channel. Before you use Amazon Pinpoint to send text messages, you have enable the SMS channel for an Amazon Pinpoint application.
 
     .DESCRIPTION
-        Adds an AWS::Pinpoint::SMSChannel resource to the template. 
+        Adds an AWS::Pinpoint::SMSChannel resource to the template. A channel is a type of platform that you can deliver messages to. To send an SMS text message, you send the message through the SMS channel. Before you use Amazon Pinpoint to send text messages, you have enable the SMS channel for an Amazon Pinpoint application.
+
+The SMS Channel resource represents the status, sender ID, and other settings for the SMS channel for a specific application. You can use this resource to retrieve information about, update, or disable (delete the SMS channel for an application.
 
     .LINK
         http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-pinpoint-smschannel.html
@@ -13,21 +15,31 @@ function New-VSPinpointSMSChannel {
         The logical ID must be alphanumeric (A-Za-z0-9) and unique within the template. Use the logical name to reference the resource in other parts of the template. For example, if you want to map an Amazon Elastic Block Store volume to an Amazon EC2 instance, you reference the logical IDs to associate the block stores with the instance.
 
     .PARAMETER ShortCode
+        The registered short code that you want to use when you send messages through the SMS channel.
+For information about obtaining a dedicated short code for sending SMS messages, see Requesting Dedicated Short Codes for SMS Messaging with Amazon Pinpoint: https://docs.aws.amazon.com/pinpoint/latest/userguide/channels-sms-awssupport-short-code.html in the *Amazon Pinpoint User Guide*.
+
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-pinpoint-smschannel.html#cfn-pinpoint-smschannel-shortcode
         PrimitiveType: String
         UpdateType: Mutable
 
     .PARAMETER Enabled
+        Specifies whether to enable the SMS channel for the app.
+
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-pinpoint-smschannel.html#cfn-pinpoint-smschannel-enabled
         PrimitiveType: Boolean
         UpdateType: Mutable
 
     .PARAMETER ApplicationId
+        The unique identifier for the Amazon Pinpoint app that the SMS channel applies to.
+
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-pinpoint-smschannel.html#cfn-pinpoint-smschannel-applicationid
         PrimitiveType: String
         UpdateType: Immutable
 
     .PARAMETER SenderId
+        The identity that you want to display on recipients' devices when they receive messages from the SMS channel.
+SenderIDs are only supported in certain countries and regions. For more information, see Supported Countries and Regions: https://docs.aws.amazon.com/pinpoint/latest/userguide/channels-sms-countries.html in the *Amazon Pinpoint User Guide*.
+
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-pinpoint-smschannel.html#cfn-pinpoint-smschannel-senderid
         PrimitiveType: String
         UpdateType: Mutable

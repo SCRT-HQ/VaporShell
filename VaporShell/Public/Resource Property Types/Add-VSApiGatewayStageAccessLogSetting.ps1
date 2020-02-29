@@ -1,21 +1,27 @@
 function Add-VSApiGatewayStageAccessLogSetting {
     <#
     .SYNOPSIS
-        Adds an AWS::ApiGateway::Stage.AccessLogSetting resource property to the template. 
+        Adds an AWS::ApiGateway::Stage.AccessLogSetting resource property to the template. The AccessLogSetting property type specifies settings for logging access in this stage.
 
     .DESCRIPTION
         Adds an AWS::ApiGateway::Stage.AccessLogSetting resource property to the template.
+The AccessLogSetting property type specifies settings for logging access in this stage.
 
+AccessLogSetting is a property of the AWS::ApiGateway::Stage: https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-apigateway-stage.html resource.
 
     .LINK
         http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-apigateway-stage-accesslogsetting.html
 
     .PARAMETER DestinationArn
+        The Amazon Resource Name ARN of the CloudWatch Logs log group to receive access logs.
+
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-apigateway-stage-accesslogsetting.html#cfn-apigateway-stage-accesslogsetting-destinationarn
         PrimitiveType: String
         UpdateType: Mutable
 
     .PARAMETER Format
+        A single line format of the access logs of data, as specified by selected $context variables: https://docs.aws.amazon.com/apigateway/latest/developerguide/api-gateway-mapping-template-reference.html#context-variable-reference. The format must include at least $context.requestId.
+
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-apigateway-stage-accesslogsetting.html#cfn-apigateway-stage-accesslogsetting-format
         PrimitiveType: String
         UpdateType: Mutable

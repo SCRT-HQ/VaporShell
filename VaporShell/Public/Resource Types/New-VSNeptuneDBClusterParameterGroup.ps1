@@ -1,10 +1,14 @@
 function New-VSNeptuneDBClusterParameterGroup {
     <#
     .SYNOPSIS
-        Adds an AWS::Neptune::DBClusterParameterGroup resource to the template. 
+        Adds an AWS::Neptune::DBClusterParameterGroup resource to the template. The AWS::Neptune::DBClusterParameterGroup resource creates a new Amazon Neptune DB cluster parameter group.
 
     .DESCRIPTION
-        Adds an AWS::Neptune::DBClusterParameterGroup resource to the template. 
+        Adds an AWS::Neptune::DBClusterParameterGroup resource to the template. The AWS::Neptune::DBClusterParameterGroup resource creates a new Amazon Neptune DB cluster parameter group.
+
+**Note**
+
+Applying a parameter group to a DB cluster might require instances to reboot, resulting in a database outage while the instances reboot.
 
     .LINK
         http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-neptune-dbclusterparametergroup.html
@@ -13,27 +17,39 @@ function New-VSNeptuneDBClusterParameterGroup {
         The logical ID must be alphanumeric (A-Za-z0-9) and unique within the template. Use the logical name to reference the resource in other parts of the template. For example, if you want to map an Amazon Elastic Block Store volume to an Amazon EC2 instance, you reference the logical IDs to associate the block stores with the instance.
 
     .PARAMETER Description
+        Provides the customer-specified description for this DB cluster parameter group.
+
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-neptune-dbclusterparametergroup.html#cfn-neptune-dbclusterparametergroup-description
         PrimitiveType: String
         UpdateType: Immutable
 
     .PARAMETER Parameters
+        The parameters to set for this DB cluster parameter group.
+The parameters are expressed as a JSON object consisting of key-value pairs.
+If you update the parameters, some interruption may occur depending on which parameters you update.
+
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-neptune-dbclusterparametergroup.html#cfn-neptune-dbclusterparametergroup-parameters
         PrimitiveType: Json
         UpdateType: Mutable
 
     .PARAMETER Family
+        Must be neptune1.
+
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-neptune-dbclusterparametergroup.html#cfn-neptune-dbclusterparametergroup-family
         PrimitiveType: String
         UpdateType: Immutable
 
     .PARAMETER Tags
+        The tags that you want to attach to this parameter group.
+
         Type: List
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-neptune-dbclusterparametergroup.html#cfn-neptune-dbclusterparametergroup-tags
         ItemType: Tag
         UpdateType: Mutable
 
     .PARAMETER Name
+        Provides the name of the DB cluster parameter group.
+
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-neptune-dbclusterparametergroup.html#cfn-neptune-dbclusterparametergroup-name
         PrimitiveType: String
         UpdateType: Immutable

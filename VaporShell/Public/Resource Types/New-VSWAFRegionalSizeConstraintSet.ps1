@@ -1,10 +1,10 @@
 function New-VSWAFRegionalSizeConstraintSet {
     <#
     .SYNOPSIS
-        Adds an AWS::WAFRegional::SizeConstraintSet resource to the template. 
+        Adds an AWS::WAFRegional::SizeConstraintSet resource to the template. A complex type that contains SizeConstraint objects, which specify the parts of web requests that you want AWS WAF to inspect the size of. If a SizeConstraintSet contains more than one SizeConstraint object, a request only needs to match one constraint to be considered a match.
 
     .DESCRIPTION
-        Adds an AWS::WAFRegional::SizeConstraintSet resource to the template. 
+        Adds an AWS::WAFRegional::SizeConstraintSet resource to the template. A complex type that contains SizeConstraint objects, which specify the parts of web requests that you want AWS WAF to inspect the size of. If a SizeConstraintSet contains more than one SizeConstraint object, a request only needs to match one constraint to be considered a match.
 
     .LINK
         http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-wafregional-sizeconstraintset.html
@@ -13,12 +13,16 @@ function New-VSWAFRegionalSizeConstraintSet {
         The logical ID must be alphanumeric (A-Za-z0-9) and unique within the template. Use the logical name to reference the resource in other parts of the template. For example, if you want to map an Amazon Elastic Block Store volume to an Amazon EC2 instance, you reference the logical IDs to associate the block stores with the instance.
 
     .PARAMETER SizeConstraints
+        The size constraint and the part of the web request to check.
+
         Type: List
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-wafregional-sizeconstraintset.html#cfn-wafregional-sizeconstraintset-sizeconstraints
         ItemType: SizeConstraint
         UpdateType: Mutable
 
     .PARAMETER Name
+        The name, if any, of the SizeConstraintSet.
+
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-wafregional-sizeconstraintset.html#cfn-wafregional-sizeconstraintset-name
         PrimitiveType: String
         UpdateType: Immutable

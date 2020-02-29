@@ -1,10 +1,10 @@
 function New-VSLakeFormationResource {
     <#
     .SYNOPSIS
-        Adds an AWS::LakeFormation::Resource resource to the template. 
+        Adds an AWS::LakeFormation::Resource resource to the template. The AWS::LakeFormation::Resource is an AWS Lake Formation resource type that defines the resources to which permissions are to be granted.
 
     .DESCRIPTION
-        Adds an AWS::LakeFormation::Resource resource to the template. 
+        Adds an AWS::LakeFormation::Resource resource to the template. The AWS::LakeFormation::Resource is an AWS Lake Formation resource type that defines the resources to which permissions are to be granted.
 
     .LINK
         http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-lakeformation-resource.html
@@ -13,16 +13,22 @@ function New-VSLakeFormationResource {
         The logical ID must be alphanumeric (A-Za-z0-9) and unique within the template. Use the logical name to reference the resource in other parts of the template. For example, if you want to map an Amazon Elastic Block Store volume to an Amazon EC2 instance, you reference the logical IDs to associate the block stores with the instance.
 
     .PARAMETER ResourceArn
+        The Amazon Resource Name ARN of the resource.
+
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-lakeformation-resource.html#cfn-lakeformation-resource-resourcearn
         PrimitiveType: String
         UpdateType: Mutable
 
     .PARAMETER UseServiceLinkedRole
+        Designates a trusted caller, an IAM principal, by registering this caller with the Data Catalog.
+
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-lakeformation-resource.html#cfn-lakeformation-resource-useservicelinkedrole
         PrimitiveType: Boolean
         UpdateType: Mutable
 
     .PARAMETER RoleArn
+        The IAM role that registered a resource.
+
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-lakeformation-resource.html#cfn-lakeformation-resource-rolearn
         PrimitiveType: String
         UpdateType: Mutable

@@ -1,22 +1,26 @@
 function Add-VSIoTAnalyticsDatasetQueryAction {
     <#
     .SYNOPSIS
-        Adds an AWS::IoTAnalytics::Dataset.QueryAction resource property to the template. 
+        Adds an AWS::IoTAnalytics::Dataset.QueryAction resource property to the template. An "SqlQueryDatasetAction" object that uses an SQL query to automatically create data set contents.
 
     .DESCRIPTION
         Adds an AWS::IoTAnalytics::Dataset.QueryAction resource property to the template.
-
+An "SqlQueryDatasetAction" object that uses an SQL query to automatically create data set contents.
 
     .LINK
         http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iotanalytics-dataset-queryaction.html
 
     .PARAMETER Filters
+        Pre-filters applied to message data.
+
         Type: List
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iotanalytics-dataset-queryaction.html#cfn-iotanalytics-dataset-queryaction-filters
         ItemType: Filter
         UpdateType: Mutable
 
     .PARAMETER SqlQuery
+        An "SqlQueryDatasetAction" object that uses an SQL query to automatically create data set contents.
+
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iotanalytics-dataset-queryaction.html#cfn-iotanalytics-dataset-queryaction-sqlquery
         PrimitiveType: String
         UpdateType: Mutable

@@ -1,10 +1,12 @@
 function New-VSEC2VPCEndpointService {
     <#
     .SYNOPSIS
-        Adds an AWS::EC2::VPCEndpointService resource to the template. 
+        Adds an AWS::EC2::VPCEndpointService resource to the template. Specifies a VPC endpoint service configuration to which service consumers (AWS accounts, IAM users, and IAM roles can connect. Service consumers can create an interface VPC endpoint to connect to your service.
 
     .DESCRIPTION
-        Adds an AWS::EC2::VPCEndpointService resource to the template. 
+        Adds an AWS::EC2::VPCEndpointService resource to the template. Specifies a VPC endpoint service configuration to which service consumers (AWS accounts, IAM users, and IAM roles can connect. Service consumers can create an interface VPC endpoint to connect to your service.
+
+To create an endpoint service configuration, you must first create a Network Load Balancer for your service.
 
     .LINK
         http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ec2-vpcendpointservice.html
@@ -13,12 +15,16 @@ function New-VSEC2VPCEndpointService {
         The logical ID must be alphanumeric (A-Za-z0-9) and unique within the template. Use the logical name to reference the resource in other parts of the template. For example, if you want to map an Amazon Elastic Block Store volume to an Amazon EC2 instance, you reference the logical IDs to associate the block stores with the instance.
 
     .PARAMETER NetworkLoadBalancerArns
+        The Amazon Resource Names ARNs of one or more Network Load Balancers for your service.
+
         PrimitiveItemType: String
         Type: List
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ec2-vpcendpointservice.html#cfn-ec2-vpcendpointservice-networkloadbalancerarns
         UpdateType: Mutable
 
     .PARAMETER AcceptanceRequired
+        Indicates whether requests from service consumers to create an endpoint to your service must be accepted.
+
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ec2-vpcendpointservice.html#cfn-ec2-vpcendpointservice-acceptancerequired
         PrimitiveType: Boolean
         UpdateType: Mutable

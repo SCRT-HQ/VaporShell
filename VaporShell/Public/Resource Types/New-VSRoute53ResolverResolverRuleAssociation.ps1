@@ -1,10 +1,10 @@
 function New-VSRoute53ResolverResolverRuleAssociation {
     <#
     .SYNOPSIS
-        Adds an AWS::Route53Resolver::ResolverRuleAssociation resource to the template. 
+        Adds an AWS::Route53Resolver::ResolverRuleAssociation resource to the template. In the response to an AssociateResolverRule: https://docs.aws.amazon.com/Route53/latest/APIReference/API_route53resolver_AssociateResolverRule.html, DisassociateResolverRule: https://docs.aws.amazon.com/Route53/latest/APIReference/API_route53resolver_DisassociateResolverRule.html, or ListResolverRuleAssociations: https://docs.aws.amazon.com/Route53/latest/APIReference/API_route53resolver_ListResolverRuleAssociations.html request, information about an association between a resolver rule and a VPC.
 
     .DESCRIPTION
-        Adds an AWS::Route53Resolver::ResolverRuleAssociation resource to the template. 
+        Adds an AWS::Route53Resolver::ResolverRuleAssociation resource to the template. In the response to an AssociateResolverRule: https://docs.aws.amazon.com/Route53/latest/APIReference/API_route53resolver_AssociateResolverRule.html, DisassociateResolverRule: https://docs.aws.amazon.com/Route53/latest/APIReference/API_route53resolver_DisassociateResolverRule.html, or ListResolverRuleAssociations: https://docs.aws.amazon.com/Route53/latest/APIReference/API_route53resolver_ListResolverRuleAssociations.html request, information about an association between a resolver rule and a VPC.
 
     .LINK
         http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-route53resolver-resolverruleassociation.html
@@ -13,16 +13,22 @@ function New-VSRoute53ResolverResolverRuleAssociation {
         The logical ID must be alphanumeric (A-Za-z0-9) and unique within the template. Use the logical name to reference the resource in other parts of the template. For example, if you want to map an Amazon Elastic Block Store volume to an Amazon EC2 instance, you reference the logical IDs to associate the block stores with the instance.
 
     .PARAMETER VPCId
+        The ID of the VPC that you associated the resolver rule with.
+
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-route53resolver-resolverruleassociation.html#cfn-route53resolver-resolverruleassociation-vpcid
         PrimitiveType: String
         UpdateType: Immutable
 
     .PARAMETER ResolverRuleId
+        The ID of the resolver rule that you associated with the VPC that is specified by VPCId.
+
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-route53resolver-resolverruleassociation.html#cfn-route53resolver-resolverruleassociation-resolverruleid
         PrimitiveType: String
         UpdateType: Immutable
 
     .PARAMETER Name
+        The name of an association between a resolver rule and a VPC.
+
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-route53resolver-resolverruleassociation.html#cfn-route53resolver-resolverruleassociation-name
         PrimitiveType: String
         UpdateType: Immutable

@@ -1,21 +1,25 @@
 function Add-VSIoTAnalyticsChannelRetentionPeriod {
     <#
     .SYNOPSIS
-        Adds an AWS::IoTAnalytics::Channel.RetentionPeriod resource property to the template. 
+        Adds an AWS::IoTAnalytics::Channel.RetentionPeriod resource property to the template. How long, in days, message data is kept.
 
     .DESCRIPTION
         Adds an AWS::IoTAnalytics::Channel.RetentionPeriod resource property to the template.
-
+How long, in days, message data is kept.
 
     .LINK
         http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iotanalytics-channel-retentionperiod.html
 
     .PARAMETER NumberOfDays
+        The number of days that message data is kept. The "unlimited" parameter must be false.
+
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iotanalytics-channel-retentionperiod.html#cfn-iotanalytics-channel-retentionperiod-numberofdays
         PrimitiveType: Integer
         UpdateType: Mutable
 
     .PARAMETER Unlimited
+        If true, message data is kept indefinitely.
+
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iotanalytics-channel-retentionperiod.html#cfn-iotanalytics-channel-retentionperiod-unlimited
         PrimitiveType: Boolean
         UpdateType: Mutable

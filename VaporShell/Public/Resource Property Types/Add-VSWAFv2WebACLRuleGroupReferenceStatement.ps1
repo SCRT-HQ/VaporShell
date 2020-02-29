@@ -18,7 +18,8 @@ function Add-VSWAFv2WebACLRuleGroupReferenceStatement {
     .PARAMETER ExcludedRules
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-wafv2-webacl-rulegroupreferencestatement.html#cfn-wafv2-webacl-rulegroupreferencestatement-excludedrules
         UpdateType: Mutable
-        Type: ExcludedRules
+        Type: List
+        ItemType: ExcludedRule
 
     .FUNCTIONALITY
         Vaporshell
@@ -27,7 +28,7 @@ function Add-VSWAFv2WebACLRuleGroupReferenceStatement {
     [cmdletbinding()]
     Param
     (
-        [parameter(Mandatory = $false)]
+        [parameter(Mandatory = $true)]
         [ValidateScript( {
                 $allowedTypes = "System.String","Vaporshell.Function","Vaporshell.Condition"
                 if ([string]$($_.PSTypeNames) -match "($(($allowedTypes|ForEach-Object{[RegEx]::Escape($_)}) -join '|'))") {
@@ -39,6 +40,15 @@ function Add-VSWAFv2WebACLRuleGroupReferenceStatement {
             })]
         $Arn,
         [parameter(Mandatory = $false)]
+        [ValidateScript( {
+                $allowedTypes = "Vaporshell.Resource.WAFv2.WebACL.ExcludedRule"
+                if ([string]$($_.PSTypeNames) -match "($(($allowedTypes|ForEach-Object{[RegEx]::Escape($_)}) -join '|'))") {
+                    $true
+                }
+                else {
+                    $PSCmdlet.ThrowTerminatingError((New-VSError -String "This parameter only accepts the following types: $($allowedTypes -join ", "). The current types of the value are: $($_.PSTypeNames -join ", ")."))
+                }
+            })]
         $ExcludedRules
     )
     Begin {

@@ -1,21 +1,25 @@
 function Add-VSAppMeshVirtualNodeListener {
     <#
     .SYNOPSIS
-        Adds an AWS::AppMesh::VirtualNode.Listener resource property to the template. 
+        Adds an AWS::AppMesh::VirtualNode.Listener resource property to the template. An object representing a listener for a virtual node.
 
     .DESCRIPTION
         Adds an AWS::AppMesh::VirtualNode.Listener resource property to the template.
-
+An object representing a listener for a virtual node.
 
     .LINK
         http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-appmesh-virtualnode-listener.html
 
     .PARAMETER HealthCheck
+        The health check information for the listener.
+
         Type: HealthCheck
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-appmesh-virtualnode-listener.html#cfn-appmesh-virtualnode-listener-healthcheck
         UpdateType: Mutable
 
     .PARAMETER PortMapping
+        The port mapping information for the listener.
+
         Type: PortMapping
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-appmesh-virtualnode-listener.html#cfn-appmesh-virtualnode-listener-portmapping
         UpdateType: Mutable

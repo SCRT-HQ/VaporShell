@@ -1,26 +1,32 @@
 function Add-VSGlueTableSerdeInfo {
     <#
     .SYNOPSIS
-        Adds an AWS::Glue::Table.SerdeInfo resource property to the template. 
+        Adds an AWS::Glue::Table.SerdeInfo resource property to the template. Information about a serialization/deserialization program (SerDe that serves as an extractor and loader.
 
     .DESCRIPTION
         Adds an AWS::Glue::Table.SerdeInfo resource property to the template.
-
+Information about a serialization/deserialization program (SerDe that serves as an extractor and loader.
 
     .LINK
         http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-glue-table-serdeinfo.html
 
     .PARAMETER Parameters
+        These key-value pairs define initialization parameters for the SerDe.
+
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-glue-table-serdeinfo.html#cfn-glue-table-serdeinfo-parameters
         PrimitiveType: Json
         UpdateType: Mutable
 
     .PARAMETER SerializationLibrary
+        Usually the class that implements the SerDe. An example is org.apache.hadoop.hive.serde2.columnar.ColumnarSerDe.
+
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-glue-table-serdeinfo.html#cfn-glue-table-serdeinfo-serializationlibrary
         PrimitiveType: String
         UpdateType: Mutable
 
     .PARAMETER Name
+        Name of the SerDe.
+
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-glue-table-serdeinfo.html#cfn-glue-table-serdeinfo-name
         PrimitiveType: String
         UpdateType: Mutable

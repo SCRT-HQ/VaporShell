@@ -1,10 +1,10 @@
 function New-VSRoute53RecordSetGroup {
     <#
     .SYNOPSIS
-        Adds an AWS::Route53::RecordSetGroup resource to the template. 
+        Adds an AWS::Route53::RecordSetGroup resource to the template. A complex type that contains an optional comment, the name and ID of the hosted zone that you want to make changes in, and values for the resource record sets that you want to add, update, or delete.
 
     .DESCRIPTION
-        Adds an AWS::Route53::RecordSetGroup resource to the template. 
+        Adds an AWS::Route53::RecordSetGroup resource to the template. A complex type that contains an optional comment, the name and ID of the hosted zone that you want to make changes in, and values for the resource record sets that you want to add, update, or delete.
 
     .LINK
         http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-route53-recordsetgroup.html
@@ -13,21 +13,29 @@ function New-VSRoute53RecordSetGroup {
         The logical ID must be alphanumeric (A-Za-z0-9) and unique within the template. Use the logical name to reference the resource in other parts of the template. For example, if you want to map an Amazon Elastic Block Store volume to an Amazon EC2 instance, you reference the logical IDs to associate the block stores with the instance.
 
     .PARAMETER Comment
+        *Optional:* Any comments you want to include about a change batch request.
+
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-route53-recordsetgroup.html#cfn-route53-recordsetgroup-comment
         PrimitiveType: String
         UpdateType: Mutable
 
     .PARAMETER HostedZoneId
+        The ID of the hosted zone that contains the resource record sets that you want to change.
+
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-route53-recordsetgroup.html#cfn-route53-recordsetgroup-hostedzoneid
         PrimitiveType: String
         UpdateType: Immutable
 
     .PARAMETER HostedZoneName
+        The name of the hosted zone that you want to create, update, or delete resource record sets in.
+
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-route53-recordsetgroup.html#cfn-route53-recordsetgroup-hostedzonename
         PrimitiveType: String
         UpdateType: Immutable
 
     .PARAMETER RecordSets
+        A complex type that contains one RecordSet element for each resource record set that you want to add, update, or delete.
+
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-route53-recordsetgroup.html#cfn-route53-recordsetgroup-recordsets
         DuplicatesAllowed: False
         ItemType: RecordSet

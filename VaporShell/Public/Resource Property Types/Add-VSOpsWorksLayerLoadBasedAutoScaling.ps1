@@ -1,26 +1,32 @@
 function Add-VSOpsWorksLayerLoadBasedAutoScaling {
     <#
     .SYNOPSIS
-        Adds an AWS::OpsWorks::Layer.LoadBasedAutoScaling resource property to the template. 
+        Adds an AWS::OpsWorks::Layer.LoadBasedAutoScaling resource property to the template. Describes a layer's load-based auto scaling configuration.
 
     .DESCRIPTION
         Adds an AWS::OpsWorks::Layer.LoadBasedAutoScaling resource property to the template.
-
+Describes a layer's load-based auto scaling configuration.
 
     .LINK
         http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-opsworks-layer-loadbasedautoscaling.html
 
     .PARAMETER DownScaling
+        An AutoScalingThresholds object that describes the downscaling configuration, which defines how and when AWS OpsWorks Stacks reduces the number of instances.
+
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-opsworks-layer-loadbasedautoscaling.html#cfn-opsworks-layer-loadbasedautoscaling-downscaling
         Type: AutoScalingThresholds
         UpdateType: Mutable
 
     .PARAMETER Enable
+        Whether load-based auto scaling is enabled for the layer.
+
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-opsworks-layer-loadbasedautoscaling.html#cfn-opsworks-layer-loadbasedautoscaling-enable
         PrimitiveType: Boolean
         UpdateType: Mutable
 
     .PARAMETER UpScaling
+        An AutoScalingThresholds object that describes the upscaling configuration, which defines how and when AWS OpsWorks Stacks increases the number of instances.
+
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-opsworks-layer-loadbasedautoscaling.html#cfn-opsworks-layer-loadbasedautoscaling-upscaling
         Type: AutoScalingThresholds
         UpdateType: Mutable

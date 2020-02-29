@@ -1,10 +1,10 @@
 function New-VSSageMakerEndpoint {
     <#
     .SYNOPSIS
-        Adds an AWS::SageMaker::Endpoint resource to the template. 
+        Adds an AWS::SageMaker::Endpoint resource to the template. Use the AWS::SageMaker::Endpoint resource to create an endpoint using the specified configuration in the request. Amazon SageMaker uses the endpoint to provision resources and deploy models. You create the endpoint configuration with the AWS::SageMaker::EndpointConfig: https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-sagemaker-endpointconfig.html resource. For more information, see Deploy a Model on Amazon SageMaker Hosting Services: https://docs.aws.amazon.com/sagemaker/latest/dg/how-it-works-hosting.html in the *Amazon SageMaker Developer Guide*.
 
     .DESCRIPTION
-        Adds an AWS::SageMaker::Endpoint resource to the template. 
+        Adds an AWS::SageMaker::Endpoint resource to the template. Use the AWS::SageMaker::Endpoint resource to create an endpoint using the specified configuration in the request. Amazon SageMaker uses the endpoint to provision resources and deploy models. You create the endpoint configuration with the AWS::SageMaker::EndpointConfig: https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-sagemaker-endpointconfig.html resource. For more information, see Deploy a Model on Amazon SageMaker Hosting Services: https://docs.aws.amazon.com/sagemaker/latest/dg/how-it-works-hosting.html in the *Amazon SageMaker Developer Guide*.
 
     .LINK
         http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-sagemaker-endpoint.html
@@ -18,6 +18,8 @@ function New-VSSageMakerEndpoint {
         UpdateType: Mutable
 
     .PARAMETER EndpointName
+        The name of the endpoint. The name must be unique within an AWS Region in your AWS account.
+
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-sagemaker-endpoint.html#cfn-sagemaker-endpoint-endpointname
         PrimitiveType: String
         UpdateType: Immutable
@@ -29,11 +31,16 @@ function New-VSSageMakerEndpoint {
         UpdateType: Mutable
 
     .PARAMETER EndpointConfigName
+        The name of the AWS::SageMaker::EndpointConfig: https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-sagemaker-endpointconfig.html resource that specifies the configuration for the endpoint. For more information, see CreateEndpointConfig: https://docs.aws.amazon.com/sagemaker/latest/dg/API_CreateEndpointConfig.html.
+
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-sagemaker-endpoint.html#cfn-sagemaker-endpoint-endpointconfigname
         PrimitiveType: String
         UpdateType: Mutable
 
     .PARAMETER Tags
+        A list of key-value pairs to apply to this resource.
+For more information, see Resource Tag: https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-resource-tags.html and Using Cost Allocation Tags: https://docs.aws.amazon.com/awsaccountbilling/latest/aboutv2/cost-alloc-tags.html#allocation-what in the * AWS Billing and Cost Management User Guide*.
+
         Type: List
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-sagemaker-endpoint.html#cfn-sagemaker-endpoint-tags
         ItemType: Tag

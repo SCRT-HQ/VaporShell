@@ -1,10 +1,10 @@
 function New-VSDirectoryServiceSimpleAD {
     <#
     .SYNOPSIS
-        Adds an AWS::DirectoryService::SimpleAD resource to the template. 
+        Adds an AWS::DirectoryService::SimpleAD resource to the template. The AWS::DirectoryService::SimpleAD resource specifies an AWS Directory Service Simple Active Directory (Simple AD in AWS so that your directory users and groups can access the AWS Management Console and AWS applications using their existing credentials. Simple AD is a Microsoft Active Directory–compatible directory. For more information, see Simple Active Directory: https://docs.aws.amazon.com/directoryservice/latest/admin-guide/directory_simple_ad.html in the *AWS Directory Service Admin Guide*.
 
     .DESCRIPTION
-        Adds an AWS::DirectoryService::SimpleAD resource to the template. 
+        Adds an AWS::DirectoryService::SimpleAD resource to the template. The AWS::DirectoryService::SimpleAD resource specifies an AWS Directory Service Simple Active Directory (Simple AD in AWS so that your directory users and groups can access the AWS Management Console and AWS applications using their existing credentials. Simple AD is a Microsoft Active Directory–compatible directory. For more information, see Simple Active Directory: https://docs.aws.amazon.com/directoryservice/latest/admin-guide/directory_simple_ad.html in the *AWS Directory Service Admin Guide*.
 
     .LINK
         http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-directoryservice-simplead.html
@@ -13,41 +13,58 @@ function New-VSDirectoryServiceSimpleAD {
         The logical ID must be alphanumeric (A-Za-z0-9) and unique within the template. Use the logical name to reference the resource in other parts of the template. For example, if you want to map an Amazon Elastic Block Store volume to an Amazon EC2 instance, you reference the logical IDs to associate the block stores with the instance.
 
     .PARAMETER CreateAlias
+        If set to true, specifies an alias for a directory and assigns the alias to the directory. The alias is used to construct the access URL for the directory, such as http://<alias>.awsapps.com. By default, this property is set to false.
+After an alias has been created, it cannot be deleted or reused, so this operation should only be used when absolutely necessary.
+
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-directoryservice-simplead.html#cfn-directoryservice-simplead-createalias
         PrimitiveType: Boolean
         UpdateType: Immutable
 
     .PARAMETER Description
+        A textual description for the directory.
+
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-directoryservice-simplead.html#cfn-directoryservice-simplead-description
         PrimitiveType: String
         UpdateType: Immutable
 
     .PARAMETER EnableSso
+        Whether to enable single sign-on for a directory. If you don't specify a value, AWS CloudFormation disables single sign-on by default.
+
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-directoryservice-simplead.html#cfn-directoryservice-simplead-enablesso
         PrimitiveType: Boolean
         UpdateType: Mutable
 
     .PARAMETER Name
+        The fully qualified name for the directory, such as corp.example.com.
+
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-directoryservice-simplead.html#cfn-directoryservice-simplead-name
         PrimitiveType: String
         UpdateType: Immutable
 
     .PARAMETER Password
+        The password for the directory administrator. The directory creation process creates a directory administrator account with the user name Administrator and this password.
+
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-directoryservice-simplead.html#cfn-directoryservice-simplead-password
         PrimitiveType: String
         UpdateType: Immutable
 
     .PARAMETER ShortName
+        The short name of the directory, such as CORP.
+
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-directoryservice-simplead.html#cfn-directoryservice-simplead-shortname
         PrimitiveType: String
         UpdateType: Immutable
 
     .PARAMETER Size
+        The size of the directory. For valid values, see CreateDirectory: https://docs.aws.amazon.com/directoryservice/latest/devguide/API_CreateDirectory.html in the *AWS Directory Service API Reference*.
+
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-directoryservice-simplead.html#cfn-directoryservice-simplead-size
         PrimitiveType: String
         UpdateType: Immutable
 
     .PARAMETER VpcSettings
+        A DirectoryVpcSettings: https://docs.aws.amazon.com/directoryservice/latest/devguide/API_DirectoryVpcSettings.html object that contains additional information for the operation.
+
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-directoryservice-simplead.html#cfn-directoryservice-simplead-vpcsettings
         Type: VpcSettings
         UpdateType: Immutable

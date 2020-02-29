@@ -1,21 +1,25 @@
 function Add-VSKinesisAnalyticsV2ApplicationApplicationCodeConfiguration {
     <#
     .SYNOPSIS
-        Adds an AWS::KinesisAnalyticsV2::Application.ApplicationCodeConfiguration resource property to the template. 
+        Adds an AWS::KinesisAnalyticsV2::Application.ApplicationCodeConfiguration resource property to the template. Describes code configuration for a Java-based Kinesis Data Analytics application.
 
     .DESCRIPTION
         Adds an AWS::KinesisAnalyticsV2::Application.ApplicationCodeConfiguration resource property to the template.
-
+Describes code configuration for a Java-based Kinesis Data Analytics application.
 
     .LINK
         http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-kinesisanalyticsv2-application-applicationcodeconfiguration.html
 
     .PARAMETER CodeContentType
+        Specifies whether the code content is in text or zip format.
+
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-kinesisanalyticsv2-application-applicationcodeconfiguration.html#cfn-kinesisanalyticsv2-application-applicationcodeconfiguration-codecontenttype
         PrimitiveType: String
         UpdateType: Mutable
 
     .PARAMETER CodeContent
+        The location and type of the application code.
+
         Type: CodeContent
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-kinesisanalyticsv2-application-applicationcodeconfiguration.html#cfn-kinesisanalyticsv2-application-applicationcodeconfiguration-codecontent
         UpdateType: Mutable

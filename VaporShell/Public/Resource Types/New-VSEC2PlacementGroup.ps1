@@ -1,10 +1,14 @@
 function New-VSEC2PlacementGroup {
     <#
     .SYNOPSIS
-        Adds an AWS::EC2::PlacementGroup resource to the template. 
+        Adds an AWS::EC2::PlacementGroup resource to the template. Specifies a placement group in which to launch instances. The strategy of the placement group determines how the instances are organized within the group.
 
     .DESCRIPTION
-        Adds an AWS::EC2::PlacementGroup resource to the template. 
+        Adds an AWS::EC2::PlacementGroup resource to the template. Specifies a placement group in which to launch instances. The strategy of the placement group determines how the instances are organized within the group.
+
+A cluster placement group is a logical grouping of instances within a single Availability Zone that benefit from low network latency, high network throughput. A spread placement group places instances on distinct hardware. A partition placement group places groups of instances in different partitions, where instances in one partition do not share the same hardware with instances in another partition.
+
+For more information, see Placement Groups: https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/placement-groups.html in the *Amazon Elastic Compute Cloud User Guide*.
 
     .LINK
         http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ec2-placementgroup.html
@@ -13,6 +17,8 @@ function New-VSEC2PlacementGroup {
         The logical ID must be alphanumeric (A-Za-z0-9) and unique within the template. Use the logical name to reference the resource in other parts of the template. For example, if you want to map an Amazon Elastic Block Store volume to an Amazon EC2 instance, you reference the logical IDs to associate the block stores with the instance.
 
     .PARAMETER Strategy
+        The placement strategy.
+
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ec2-placementgroup.html#cfn-ec2-placementgroup-strategy
         PrimitiveType: String
         UpdateType: Immutable

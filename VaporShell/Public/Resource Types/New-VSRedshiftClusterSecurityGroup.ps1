@@ -1,10 +1,12 @@
 function New-VSRedshiftClusterSecurityGroup {
     <#
     .SYNOPSIS
-        Adds an AWS::Redshift::ClusterSecurityGroup resource to the template. 
+        Adds an AWS::Redshift::ClusterSecurityGroup resource to the template. Specifies a new Amazon Redshift security group. You use security groups to control access to non-VPC clusters.
 
     .DESCRIPTION
-        Adds an AWS::Redshift::ClusterSecurityGroup resource to the template. 
+        Adds an AWS::Redshift::ClusterSecurityGroup resource to the template. Specifies a new Amazon Redshift security group. You use security groups to control access to non-VPC clusters.
+
+For information about managing security groups, go to Amazon Redshift Cluster Security Groups: https://docs.aws.amazon.com/redshift/latest/mgmt/working-with-security-groups.html in the *Amazon Redshift Cluster Management Guide*.
 
     .LINK
         http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-redshift-clustersecuritygroup.html
@@ -13,11 +15,15 @@ function New-VSRedshiftClusterSecurityGroup {
         The logical ID must be alphanumeric (A-Za-z0-9) and unique within the template. Use the logical name to reference the resource in other parts of the template. For example, if you want to map an Amazon Elastic Block Store volume to an Amazon EC2 instance, you reference the logical IDs to associate the block stores with the instance.
 
     .PARAMETER Description
+        A description for the security group.
+
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-redshift-clustersecuritygroup.html#cfn-redshift-clustersecuritygroup-description
         PrimitiveType: String
         UpdateType: Immutable
 
     .PARAMETER Tags
+        Specifies an arbitrary set of tags key–value pairs to associate with this security group. Use tags to manage your resources.
+
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-redshift-clustersecuritygroup.html#cfn-redshift-clustersecuritygroup-tags
         DuplicatesAllowed: True
         ItemType: Tag

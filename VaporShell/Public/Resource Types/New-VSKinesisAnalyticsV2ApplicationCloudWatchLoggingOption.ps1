@@ -1,10 +1,10 @@
 function New-VSKinesisAnalyticsV2ApplicationCloudWatchLoggingOption {
     <#
     .SYNOPSIS
-        Adds an AWS::KinesisAnalyticsV2::ApplicationCloudWatchLoggingOption resource to the template. 
+        Adds an AWS::KinesisAnalyticsV2::ApplicationCloudWatchLoggingOption resource to the template. Adds an Amazon CloudWatch log stream to monitor application configuration errors.
 
     .DESCRIPTION
-        Adds an AWS::KinesisAnalyticsV2::ApplicationCloudWatchLoggingOption resource to the template. 
+        Adds an AWS::KinesisAnalyticsV2::ApplicationCloudWatchLoggingOption resource to the template. Adds an Amazon CloudWatch log stream to monitor application configuration errors.
 
     .LINK
         http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-kinesisanalyticsv2-applicationcloudwatchloggingoption.html
@@ -13,11 +13,15 @@ function New-VSKinesisAnalyticsV2ApplicationCloudWatchLoggingOption {
         The logical ID must be alphanumeric (A-Za-z0-9) and unique within the template. Use the logical name to reference the resource in other parts of the template. For example, if you want to map an Amazon Elastic Block Store volume to an Amazon EC2 instance, you reference the logical IDs to associate the block stores with the instance.
 
     .PARAMETER ApplicationName
+        The name of the application.
+
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-kinesisanalyticsv2-applicationcloudwatchloggingoption.html#cfn-kinesisanalyticsv2-applicationcloudwatchloggingoption-applicationname
         PrimitiveType: String
         UpdateType: Immutable
 
     .PARAMETER CloudWatchLoggingOption
+        Provides a description of Amazon CloudWatch logging options, including the log stream Amazon Resource Name ARN.
+
         Type: CloudWatchLoggingOption
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-kinesisanalyticsv2-applicationcloudwatchloggingoption.html#cfn-kinesisanalyticsv2-applicationcloudwatchloggingoption-cloudwatchloggingoption
         UpdateType: Mutable

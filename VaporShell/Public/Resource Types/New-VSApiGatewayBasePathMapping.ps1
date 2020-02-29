@@ -1,10 +1,10 @@
 function New-VSApiGatewayBasePathMapping {
     <#
     .SYNOPSIS
-        Adds an AWS::ApiGateway::BasePathMapping resource to the template. 
+        Adds an AWS::ApiGateway::BasePathMapping resource to the template. The AWS::ApiGateway::BasePathMapping resource creates a base path that clients who call your API must use in the invocation URL.
 
     .DESCRIPTION
-        Adds an AWS::ApiGateway::BasePathMapping resource to the template. 
+        Adds an AWS::ApiGateway::BasePathMapping resource to the template. The AWS::ApiGateway::BasePathMapping resource creates a base path that clients who call your API must use in the invocation URL.
 
     .LINK
         http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-apigateway-basepathmapping.html
@@ -13,21 +13,29 @@ function New-VSApiGatewayBasePathMapping {
         The logical ID must be alphanumeric (A-Za-z0-9) and unique within the template. Use the logical name to reference the resource in other parts of the template. For example, if you want to map an Amazon Elastic Block Store volume to an Amazon EC2 instance, you reference the logical IDs to associate the block stores with the instance.
 
     .PARAMETER BasePath
+        The base path name that callers of the API must provide in the URL after the domain name. If you specify this property, it can't be an empty string.
+
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-apigateway-basepathmapping.html#cfn-apigateway-basepathmapping-basepath
         PrimitiveType: String
         UpdateType: Immutable
 
     .PARAMETER DomainName
+        The DomainName of an AWS::ApiGateway::DomainName: https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-apigateway-domainname.html resource.
+
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-apigateway-basepathmapping.html#cfn-apigateway-basepathmapping-domainname
         PrimitiveType: String
         UpdateType: Immutable
 
     .PARAMETER RestApiId
+        The name of the API.
+
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-apigateway-basepathmapping.html#cfn-apigateway-basepathmapping-restapiid
         PrimitiveType: String
         UpdateType: Mutable
 
     .PARAMETER Stage
+        The name of the API's stage.
+
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-apigateway-basepathmapping.html#cfn-apigateway-basepathmapping-stage
         PrimitiveType: String
         UpdateType: Mutable

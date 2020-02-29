@@ -1,21 +1,25 @@
 function Add-VSEC2SpotFleetLaunchTemplateConfig {
     <#
     .SYNOPSIS
-        Adds an AWS::EC2::SpotFleet.LaunchTemplateConfig resource property to the template. 
+        Adds an AWS::EC2::SpotFleet.LaunchTemplateConfig resource property to the template. Specifies a launch template and overrides.
 
     .DESCRIPTION
         Adds an AWS::EC2::SpotFleet.LaunchTemplateConfig resource property to the template.
-
+Specifies a launch template and overrides.
 
     .LINK
         http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-spotfleet-launchtemplateconfig.html
 
     .PARAMETER LaunchTemplateSpecification
+        The launch template.
+
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-spotfleet-launchtemplateconfig.html#cfn-ec2-spotfleet-launchtemplateconfig-launchtemplatespecification
         Type: FleetLaunchTemplateSpecification
         UpdateType: Mutable
 
     .PARAMETER Overrides
+        Any parameters that you specify override the same parameters in the launch template.
+
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-spotfleet-launchtemplateconfig.html#cfn-ec2-spotfleet-launchtemplateconfig-overrides
         DuplicatesAllowed: False
         ItemType: LaunchTemplateOverrides

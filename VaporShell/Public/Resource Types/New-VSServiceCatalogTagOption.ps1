@@ -1,10 +1,10 @@
 function New-VSServiceCatalogTagOption {
     <#
     .SYNOPSIS
-        Adds an AWS::ServiceCatalog::TagOption resource to the template. 
+        Adds an AWS::ServiceCatalog::TagOption resource to the template. Specifies a TagOption. A TagOption is a key-value pair managed by AWS Service Catalog that serves as a template for creating an AWS tag.
 
     .DESCRIPTION
-        Adds an AWS::ServiceCatalog::TagOption resource to the template. 
+        Adds an AWS::ServiceCatalog::TagOption resource to the template. Specifies a TagOption. A TagOption is a key-value pair managed by AWS Service Catalog that serves as a template for creating an AWS tag.
 
     .LINK
         http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-servicecatalog-tagoption.html
@@ -13,16 +13,22 @@ function New-VSServiceCatalogTagOption {
         The logical ID must be alphanumeric (A-Za-z0-9) and unique within the template. Use the logical name to reference the resource in other parts of the template. For example, if you want to map an Amazon Elastic Block Store volume to an Amazon EC2 instance, you reference the logical IDs to associate the block stores with the instance.
 
     .PARAMETER Active
+        The TagOption active state.
+
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-servicecatalog-tagoption.html#cfn-servicecatalog-tagoption-active
         PrimitiveType: Boolean
         UpdateType: Mutable
 
     .PARAMETER Value
+        The TagOption value.
+
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-servicecatalog-tagoption.html#cfn-servicecatalog-tagoption-value
         PrimitiveType: String
         UpdateType: Immutable
 
     .PARAMETER Key
+        The TagOption key.
+
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-servicecatalog-tagoption.html#cfn-servicecatalog-tagoption-key
         PrimitiveType: String
         UpdateType: Immutable

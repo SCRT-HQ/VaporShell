@@ -1,10 +1,10 @@
 function New-VSServiceCatalogResourceUpdateConstraint {
     <#
     .SYNOPSIS
-        Adds an AWS::ServiceCatalog::ResourceUpdateConstraint resource to the template. 
+        Adds an AWS::ServiceCatalog::ResourceUpdateConstraint resource to the template. Specifies a RESOURCE_UPDATE constraint.
 
     .DESCRIPTION
-        Adds an AWS::ServiceCatalog::ResourceUpdateConstraint resource to the template. 
+        Adds an AWS::ServiceCatalog::ResourceUpdateConstraint resource to the template. Specifies a RESOURCE_UPDATE constraint.
 
     .LINK
         http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-servicecatalog-resourceupdateconstraint.html
@@ -13,26 +13,40 @@ function New-VSServiceCatalogResourceUpdateConstraint {
         The logical ID must be alphanumeric (A-Za-z0-9) and unique within the template. Use the logical name to reference the resource in other parts of the template. For example, if you want to map an Amazon Elastic Block Store volume to an Amazon EC2 instance, you reference the logical IDs to associate the block stores with the instance.
 
     .PARAMETER Description
+        The description of the constraint.
+
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-servicecatalog-resourceupdateconstraint.html#cfn-servicecatalog-resourceupdateconstraint-description
         PrimitiveType: String
         UpdateType: Mutable
 
     .PARAMETER AcceptLanguage
+        The language code.
++  en - English default
++  jp - Japanese
++  zh - Chinese
+
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-servicecatalog-resourceupdateconstraint.html#cfn-servicecatalog-resourceupdateconstraint-acceptlanguage
         PrimitiveType: String
         UpdateType: Mutable
 
     .PARAMETER TagUpdateOnProvisionedProduct
+        If set to ALLOWED, lets users change tags in a CloudFormationProvisionedProduct: https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-servicecatalog-cloudformationprovisionedproduct.html resource.
+If set to NOT_ALLOWED, prevents users from changing tags in a CloudFormationProvisionedProduct: https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-servicecatalog-cloudformationprovisionedproduct.html resource.
+
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-servicecatalog-resourceupdateconstraint.html#cfn-servicecatalog-resourceupdateconstraint-tagupdateonprovisionedproduct
         PrimitiveType: String
         UpdateType: Mutable
 
     .PARAMETER PortfolioId
+        The portfolio identifier.
+
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-servicecatalog-resourceupdateconstraint.html#cfn-servicecatalog-resourceupdateconstraint-portfolioid
         PrimitiveType: String
         UpdateType: Immutable
 
     .PARAMETER ProductId
+        The product identifier.
+
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-servicecatalog-resourceupdateconstraint.html#cfn-servicecatalog-resourceupdateconstraint-productid
         PrimitiveType: String
         UpdateType: Immutable

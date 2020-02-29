@@ -1,34 +1,42 @@
 function Add-VSGlueCrawlerTargets {
     <#
     .SYNOPSIS
-        Adds an AWS::Glue::Crawler.Targets resource property to the template. 
+        Adds an AWS::Glue::Crawler.Targets resource property to the template. Specifies data stores to crawl.
 
     .DESCRIPTION
         Adds an AWS::Glue::Crawler.Targets resource property to the template.
-
+Specifies data stores to crawl.
 
     .LINK
         http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-glue-crawler-targets.html
 
     .PARAMETER S3Targets
+        Specifies Amazon Simple Storage Service Amazon S3 targets.
+
         Type: List
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-glue-crawler-targets.html#cfn-glue-crawler-targets-s3targets
         ItemType: S3Target
         UpdateType: Mutable
 
     .PARAMETER CatalogTargets
+        *Update requires*: No interruption: https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt
+
         Type: List
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-glue-crawler-targets.html#cfn-glue-crawler-targets-catalogtargets
         ItemType: CatalogTarget
         UpdateType: Mutable
 
     .PARAMETER JdbcTargets
+        Specifies JDBC targets.
+
         Type: List
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-glue-crawler-targets.html#cfn-glue-crawler-targets-jdbctargets
         ItemType: JdbcTarget
         UpdateType: Mutable
 
     .PARAMETER DynamoDBTargets
+        *Update requires*: No interruption: https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt
+
         Type: List
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-glue-crawler-targets.html#cfn-glue-crawler-targets-dynamodbtargets
         ItemType: DynamoDBTarget

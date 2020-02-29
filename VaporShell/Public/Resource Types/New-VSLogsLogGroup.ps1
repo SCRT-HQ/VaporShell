@@ -1,10 +1,22 @@
 function New-VSLogsLogGroup {
     <#
     .SYNOPSIS
-        Adds an AWS::Logs::LogGroup resource to the template. 
+        Adds an AWS::Logs::LogGroup resource to the template. The AWS::Logs::LogGroup resource specifies a log group. A log group defines common properties for log streams, such as their retention and access control rules. Each log stream must belong to one log group.
 
     .DESCRIPTION
-        Adds an AWS::Logs::LogGroup resource to the template. 
+        Adds an AWS::Logs::LogGroup resource to the template. The AWS::Logs::LogGroup resource specifies a log group. A log group defines common properties for log streams, such as their retention and access control rules. Each log stream must belong to one log group.
+
+You can create up to 5000 log groups per account. You must use the following guidelines when naming a log group:
+
++ Log group names must be unique within a Region for an AWS account.
+
++ Log group names can be between 1 and 512 characters long.
+
++ Log group names consist of the following characters: a-z, A-Z, 0-9, '_' (underscore, '-' (hyphen, '/' (forward slash, and '.' (period.
+
+If you associate a AWS Key Management Service (AWS KMS customer master key (CMK with the log group, ingested data is encrypted using the CMK. This association is stored as long as the data encrypted with the CMK is still within Amazon CloudWatch Logs. This enables Amazon CloudWatch Logs to decrypt this data whenever it is requested.
+
+If you attempt to associate a CMK with the log group but the CMK doesn't exist or the CMK is disabled, you will receive an InvalidParameterException error.
 
     .LINK
         http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-logs-loggroup.html
@@ -13,11 +25,15 @@ function New-VSLogsLogGroup {
         The logical ID must be alphanumeric (A-Za-z0-9) and unique within the template. Use the logical name to reference the resource in other parts of the template. For example, if you want to map an Amazon Elastic Block Store volume to an Amazon EC2 instance, you reference the logical IDs to associate the block stores with the instance.
 
     .PARAMETER LogGroupName
+        The name of the log group. If you don't specify a name, AWS CloudFormation generates a unique ID for the log group.
+
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-logs-loggroup.html#cfn-cwl-loggroup-loggroupname
         PrimitiveType: String
         UpdateType: Immutable
 
     .PARAMETER RetentionInDays
+        The number of days to retain the log events in the specified log group. Possible values are: 1, 3, 5, 7, 14, 30, 60, 90, 120, 150, 180, 365, 400, 545, 731, 1827, and 3653.
+
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-logs-loggroup.html#cfn-cwl-loggroup-retentionindays
         PrimitiveType: Integer
         UpdateType: Mutable

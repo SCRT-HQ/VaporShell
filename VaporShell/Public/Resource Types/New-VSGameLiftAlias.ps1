@@ -1,10 +1,10 @@
 function New-VSGameLiftAlias {
     <#
     .SYNOPSIS
-        Adds an AWS::GameLift::Alias resource to the template. 
+        Adds an AWS::GameLift::Alias resource to the template. The AWS::GameLift::Alias resource creates an alias for an Amazon GameLift (GameLift fleet, which you can use to anonymize your fleet. You can reference the alias instead of a specific fleet when you create game sessions. For more information, see the CreateAlias: https://docs.aws.amazon.com/gamelift/latest/apireference/API_CreateAlias.html action in the *Amazon GameLift API Reference*.
 
     .DESCRIPTION
-        Adds an AWS::GameLift::Alias resource to the template. 
+        Adds an AWS::GameLift::Alias resource to the template. The AWS::GameLift::Alias resource creates an alias for an Amazon GameLift (GameLift fleet, which you can use to anonymize your fleet. You can reference the alias instead of a specific fleet when you create game sessions. For more information, see the CreateAlias: https://docs.aws.amazon.com/gamelift/latest/apireference/API_CreateAlias.html action in the *Amazon GameLift API Reference*.
 
     .LINK
         http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-gamelift-alias.html
@@ -13,16 +13,22 @@ function New-VSGameLiftAlias {
         The logical ID must be alphanumeric (A-Za-z0-9) and unique within the template. Use the logical name to reference the resource in other parts of the template. For example, if you want to map an Amazon Elastic Block Store volume to an Amazon EC2 instance, you reference the logical IDs to associate the block stores with the instance.
 
     .PARAMETER Description
+        Human-readable description of an alias.
+
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-gamelift-alias.html#cfn-gamelift-alias-description
         PrimitiveType: String
         UpdateType: Mutable
 
     .PARAMETER Name
+        Descriptive label that is associated with an alias. Alias names do not need to be unique.
+
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-gamelift-alias.html#cfn-gamelift-alias-name
         PrimitiveType: String
         UpdateType: Mutable
 
     .PARAMETER RoutingStrategy
+        A routing configuration that specifies where traffic is directed for this alias, such as to a fleet or to a message.
+
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-gamelift-alias.html#cfn-gamelift-alias-routingstrategy
         Type: RoutingStrategy
         UpdateType: Mutable

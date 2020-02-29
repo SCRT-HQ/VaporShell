@@ -1,10 +1,10 @@
 function New-VSPinpointEventStream {
     <#
     .SYNOPSIS
-        Adds an AWS::Pinpoint::EventStream resource to the template. 
+        Adds an AWS::Pinpoint::EventStream resource to the template. Creates a new event stream for an application or updates the settings of an existing event stream for an application.
 
     .DESCRIPTION
-        Adds an AWS::Pinpoint::EventStream resource to the template. 
+        Adds an AWS::Pinpoint::EventStream resource to the template. Creates a new event stream for an application or updates the settings of an existing event stream for an application.
 
     .LINK
         http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-pinpoint-eventstream.html
@@ -13,16 +13,24 @@ function New-VSPinpointEventStream {
         The logical ID must be alphanumeric (A-Za-z0-9) and unique within the template. Use the logical name to reference the resource in other parts of the template. For example, if you want to map an Amazon Elastic Block Store volume to an Amazon EC2 instance, you reference the logical IDs to associate the block stores with the instance.
 
     .PARAMETER ApplicationId
+        The unique ID of the Amazon Pinpoint app that you want to export data from.
+
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-pinpoint-eventstream.html#cfn-pinpoint-eventstream-applicationid
         PrimitiveType: String
         UpdateType: Immutable
 
     .PARAMETER DestinationStreamArn
+        The Amazon Resource Name ARN of the Amazon Kinesis data stream or Amazon Kinesis Data Firehose delivery stream that you want to publish event data to.
+For a Kinesis data stream, the ARN format is: arn:aws:kinesis:region:account-id:stream/stream_name 
+For a Kinesis Data Firehose delivery stream, the ARN format is: arn:aws:firehose:region:account-id:deliverystream/stream_name 
+
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-pinpoint-eventstream.html#cfn-pinpoint-eventstream-destinationstreamarn
         PrimitiveType: String
         UpdateType: Mutable
 
     .PARAMETER RoleArn
+        The AWS Identity and Access Management IAM role that authorizes Amazon Pinpoint to publish event data to the stream in your AWS account.
+
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-pinpoint-eventstream.html#cfn-pinpoint-eventstream-rolearn
         PrimitiveType: String
         UpdateType: Mutable

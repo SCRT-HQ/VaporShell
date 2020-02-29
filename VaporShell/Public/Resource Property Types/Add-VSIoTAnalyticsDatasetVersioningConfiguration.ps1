@@ -1,21 +1,25 @@
 function Add-VSIoTAnalyticsDatasetVersioningConfiguration {
     <#
     .SYNOPSIS
-        Adds an AWS::IoTAnalytics::Dataset.VersioningConfiguration resource property to the template. 
+        Adds an AWS::IoTAnalytics::Dataset.VersioningConfiguration resource property to the template. Information about the versioning of data set contents.
 
     .DESCRIPTION
         Adds an AWS::IoTAnalytics::Dataset.VersioningConfiguration resource property to the template.
-
+Information about the versioning of data set contents.
 
     .LINK
         http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iotanalytics-dataset-versioningconfiguration.html
 
     .PARAMETER MaxVersions
+        How many versions of data set contents will be kept. The "unlimited" parameter must be false.
+
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iotanalytics-dataset-versioningconfiguration.html#cfn-iotanalytics-dataset-versioningconfiguration-maxversions
         PrimitiveType: Integer
         UpdateType: Mutable
 
     .PARAMETER Unlimited
+        If true, unlimited versions of data set contents will be kept.
+
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iotanalytics-dataset-versioningconfiguration.html#cfn-iotanalytics-dataset-versioningconfiguration-unlimited
         PrimitiveType: Boolean
         UpdateType: Mutable

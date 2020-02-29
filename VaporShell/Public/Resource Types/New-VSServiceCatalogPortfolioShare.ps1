@@ -1,10 +1,10 @@
 function New-VSServiceCatalogPortfolioShare {
     <#
     .SYNOPSIS
-        Adds an AWS::ServiceCatalog::PortfolioShare resource to the template. 
+        Adds an AWS::ServiceCatalog::PortfolioShare resource to the template. Shares the specified portfolio with the specified account or organization node. Shares to an organization node can only be created by the master account of an Organization. AWSOrganizationsAccess must be enabled in order to create a portfolio share to an organization node.
 
     .DESCRIPTION
-        Adds an AWS::ServiceCatalog::PortfolioShare resource to the template. 
+        Adds an AWS::ServiceCatalog::PortfolioShare resource to the template. Shares the specified portfolio with the specified account or organization node. Shares to an organization node can only be created by the master account of an Organization. AWSOrganizationsAccess must be enabled in order to create a portfolio share to an organization node.
 
     .LINK
         http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-servicecatalog-portfolioshare.html
@@ -13,16 +13,25 @@ function New-VSServiceCatalogPortfolioShare {
         The logical ID must be alphanumeric (A-Za-z0-9) and unique within the template. Use the logical name to reference the resource in other parts of the template. For example, if you want to map an Amazon Elastic Block Store volume to an Amazon EC2 instance, you reference the logical IDs to associate the block stores with the instance.
 
     .PARAMETER AccountId
+        The AWS account ID. For example, 123456789012.
+
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-servicecatalog-portfolioshare.html#cfn-servicecatalog-portfolioshare-accountid
         PrimitiveType: String
         UpdateType: Immutable
 
     .PARAMETER AcceptLanguage
+        The language code.
++  en - English default
++  jp - Japanese
++  zh - Chinese
+
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-servicecatalog-portfolioshare.html#cfn-servicecatalog-portfolioshare-acceptlanguage
         PrimitiveType: String
         UpdateType: Immutable
 
     .PARAMETER PortfolioId
+        The portfolio identifier.
+
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-servicecatalog-portfolioshare.html#cfn-servicecatalog-portfolioshare-portfolioid
         PrimitiveType: String
         UpdateType: Immutable

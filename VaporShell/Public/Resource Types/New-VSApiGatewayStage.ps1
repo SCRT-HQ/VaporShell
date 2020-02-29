@@ -1,10 +1,10 @@
 function New-VSApiGatewayStage {
     <#
     .SYNOPSIS
-        Adds an AWS::ApiGateway::Stage resource to the template. 
+        Adds an AWS::ApiGateway::Stage resource to the template. The AWS::ApiGateway::Stage resource creates a stage for a deployment.
 
     .DESCRIPTION
-        Adds an AWS::ApiGateway::Stage resource to the template. 
+        Adds an AWS::ApiGateway::Stage resource to the template. The AWS::ApiGateway::Stage resource creates a stage for a deployment.
 
     .LINK
         http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-apigateway-stage.html
@@ -13,46 +13,64 @@ function New-VSApiGatewayStage {
         The logical ID must be alphanumeric (A-Za-z0-9) and unique within the template. Use the logical name to reference the resource in other parts of the template. For example, if you want to map an Amazon Elastic Block Store volume to an Amazon EC2 instance, you reference the logical IDs to associate the block stores with the instance.
 
     .PARAMETER AccessLogSetting
+        Specifies settings for logging access in this stage.
+
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-apigateway-stage.html#cfn-apigateway-stage-accesslogsetting
         Type: AccessLogSetting
         UpdateType: Mutable
 
     .PARAMETER CacheClusterEnabled
+        Indicates whether cache clustering is enabled for the stage.
+
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-apigateway-stage.html#cfn-apigateway-stage-cacheclusterenabled
         PrimitiveType: Boolean
         UpdateType: Mutable
 
     .PARAMETER CacheClusterSize
+        The stage's cache cluster size.
+
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-apigateway-stage.html#cfn-apigateway-stage-cacheclustersize
         PrimitiveType: String
         UpdateType: Mutable
 
     .PARAMETER CanarySetting
+        Specifies settings for the canary deployment in this stage.
+
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-apigateway-stage.html#cfn-apigateway-stage-canarysetting
         Type: CanarySetting
         UpdateType: Mutable
 
     .PARAMETER ClientCertificateId
+        The ID of the client certificate that API Gateway uses to call your integration endpoints in the stage.
+
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-apigateway-stage.html#cfn-apigateway-stage-clientcertificateid
         PrimitiveType: String
         UpdateType: Mutable
 
     .PARAMETER DeploymentId
+        The ID of the deployment that the stage is associated with.
+
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-apigateway-stage.html#cfn-apigateway-stage-deploymentid
         PrimitiveType: String
         UpdateType: Mutable
 
     .PARAMETER Description
+        A description of the stage.
+
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-apigateway-stage.html#cfn-apigateway-stage-description
         PrimitiveType: String
         UpdateType: Mutable
 
     .PARAMETER DocumentationVersion
+        The version ID of the API documentation snapshot.
+
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-apigateway-stage.html#cfn-apigateway-stage-documentationversion
         PrimitiveType: String
         UpdateType: Mutable
 
     .PARAMETER MethodSettings
+        Settings for all methods in the stage.
+
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-apigateway-stage.html#cfn-apigateway-stage-methodsettings
         DuplicatesAllowed: False
         ItemType: MethodSetting
@@ -60,16 +78,22 @@ function New-VSApiGatewayStage {
         UpdateType: Mutable
 
     .PARAMETER RestApiId
+        The ID of the RestApi resource that you're deploying with this stage.
+
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-apigateway-stage.html#cfn-apigateway-stage-restapiid
         PrimitiveType: String
         UpdateType: Immutable
 
     .PARAMETER StageName
+        The name of the stage, which API Gateway uses as the first path segment in the invoked Uniform Resource Identifier URI.
+
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-apigateway-stage.html#cfn-apigateway-stage-stagename
         PrimitiveType: String
         UpdateType: Immutable
 
     .PARAMETER Tags
+        An array of arbitrary tags key-value pairs to associate with the stage.
+
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-apigateway-stage.html#cfn-apigateway-stage-tags
         DuplicatesAllowed: True
         ItemType: Tag
@@ -77,11 +101,16 @@ function New-VSApiGatewayStage {
         UpdateType: Mutable
 
     .PARAMETER TracingEnabled
+        Specifies whether active X-Ray tracing is enabled for this stage.
+For more information, see Trace API Gateway API Execution with AWS X-Ray: https://docs.aws.amazon.com/apigateway/latest/developerguide/apigateway-xray.html in the *API Gateway Developer Guide*.
+
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-apigateway-stage.html#cfn-apigateway-stage-tracingenabled
         PrimitiveType: Boolean
         UpdateType: Mutable
 
     .PARAMETER Variables
+        A map string-to-string map that defines the stage variables, where the variable name is the key and the variable value is the value. Variable names are limited to alphanumeric characters. Values must match the following regular expression: A-Za-z0-9-._~:/?#&=,]+.
+
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-apigateway-stage.html#cfn-apigateway-stage-variables
         DuplicatesAllowed: False
         PrimitiveItemType: String

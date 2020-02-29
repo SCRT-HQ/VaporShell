@@ -1,31 +1,40 @@
 function Add-VSGlueDatabaseDatabaseInput {
     <#
     .SYNOPSIS
-        Adds an AWS::Glue::Database.DatabaseInput resource property to the template. 
+        Adds an AWS::Glue::Database.DatabaseInput resource property to the template. The structure used to create or update a database.
 
     .DESCRIPTION
         Adds an AWS::Glue::Database.DatabaseInput resource property to the template.
-
+The structure used to create or update a database.
 
     .LINK
         http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-glue-database-databaseinput.html
 
     .PARAMETER LocationUri
+        The location of the database for example, an HDFS path.
+
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-glue-database-databaseinput.html#cfn-glue-database-databaseinput-locationuri
         PrimitiveType: String
         UpdateType: Mutable
 
     .PARAMETER Description
+        A description of the database.
+
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-glue-database-databaseinput.html#cfn-glue-database-databaseinput-description
         PrimitiveType: String
         UpdateType: Mutable
 
     .PARAMETER Parameters
+        These key-value pairs define parameters and properties of the database.
+These key-value pairs define parameters and properties of the database.
+
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-glue-database-databaseinput.html#cfn-glue-database-databaseinput-parameters
         PrimitiveType: Json
         UpdateType: Mutable
 
     .PARAMETER Name
+        The name of the database. For Hive compatibility, this is folded to lowercase when it is stored.
+
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-glue-database-databaseinput.html#cfn-glue-database-databaseinput-name
         PrimitiveType: String
         UpdateType: Immutable

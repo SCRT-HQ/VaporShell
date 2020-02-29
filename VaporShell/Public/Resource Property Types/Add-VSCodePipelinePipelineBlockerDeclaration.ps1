@@ -1,21 +1,25 @@
 function Add-VSCodePipelinePipelineBlockerDeclaration {
     <#
     .SYNOPSIS
-        Adds an AWS::CodePipeline::Pipeline.BlockerDeclaration resource property to the template. 
+        Adds an AWS::CodePipeline::Pipeline.BlockerDeclaration resource property to the template. Reserved for future use.
 
     .DESCRIPTION
         Adds an AWS::CodePipeline::Pipeline.BlockerDeclaration resource property to the template.
-
+Reserved for future use.
 
     .LINK
         http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-codepipeline-pipeline-stages-blockers.html
 
     .PARAMETER Name
+        Reserved for future use.
+
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-codepipeline-pipeline-stages-blockers.html#cfn-codepipeline-pipeline-stages-blockers-name
         PrimitiveType: String
         UpdateType: Mutable
 
     .PARAMETER Type
+        Reserved for future use.
+
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-codepipeline-pipeline-stages-blockers.html#cfn-codepipeline-pipeline-stages-blockers-type
         PrimitiveType: String
         UpdateType: Mutable

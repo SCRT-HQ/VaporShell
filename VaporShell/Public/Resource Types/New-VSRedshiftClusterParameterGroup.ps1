@@ -1,10 +1,10 @@
 function New-VSRedshiftClusterParameterGroup {
     <#
     .SYNOPSIS
-        Adds an AWS::Redshift::ClusterParameterGroup resource to the template. 
+        Adds an AWS::Redshift::ClusterParameterGroup resource to the template. Describes a parameter group.
 
     .DESCRIPTION
-        Adds an AWS::Redshift::ClusterParameterGroup resource to the template. 
+        Adds an AWS::Redshift::ClusterParameterGroup resource to the template. Describes a parameter group.
 
     .LINK
         http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-redshift-clusterparametergroup.html
@@ -13,16 +13,24 @@ function New-VSRedshiftClusterParameterGroup {
         The logical ID must be alphanumeric (A-Za-z0-9) and unique within the template. Use the logical name to reference the resource in other parts of the template. For example, if you want to map an Amazon Elastic Block Store volume to an Amazon EC2 instance, you reference the logical IDs to associate the block stores with the instance.
 
     .PARAMETER Description
+        The description of the parameter group.
+
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-redshift-clusterparametergroup.html#cfn-redshift-clusterparametergroup-description
         PrimitiveType: String
         UpdateType: Immutable
 
     .PARAMETER ParameterGroupFamily
+        The name of the cluster parameter group family that this cluster parameter group is compatible with.
+
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-redshift-clusterparametergroup.html#cfn-redshift-clusterparametergroup-parametergroupfamily
         PrimitiveType: String
         UpdateType: Immutable
 
     .PARAMETER Parameters
+        An array of parameters to be modified. A maximum of 20 parameters can be modified in a single request.
+For each parameter to be modified, you must supply at least the parameter name and parameter value; other name-value pairs of the parameter are optional.
+For the workload management WLM configuration, you must supply all the name-value pairs in the wlm_json_configuration parameter.
+
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-redshift-clusterparametergroup.html#cfn-redshift-clusterparametergroup-parameters
         DuplicatesAllowed: True
         ItemType: Parameter
@@ -30,6 +38,8 @@ function New-VSRedshiftClusterParameterGroup {
         UpdateType: Mutable
 
     .PARAMETER Tags
+        The list of tags for the cluster parameter group.
+
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-redshift-clusterparametergroup.html#cfn-redshift-clusterparametergroup-tags
         DuplicatesAllowed: True
         ItemType: Tag

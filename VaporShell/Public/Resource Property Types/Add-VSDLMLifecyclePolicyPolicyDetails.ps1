@@ -1,38 +1,48 @@
 function Add-VSDLMLifecyclePolicyPolicyDetails {
     <#
     .SYNOPSIS
-        Adds an AWS::DLM::LifecyclePolicy.PolicyDetails resource property to the template. 
+        Adds an AWS::DLM::LifecyclePolicy.PolicyDetails resource property to the template. Specifies the configuration of a lifecycle policy.
 
     .DESCRIPTION
         Adds an AWS::DLM::LifecyclePolicy.PolicyDetails resource property to the template.
-
+Specifies the configuration of a lifecycle policy.
 
     .LINK
         http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-dlm-lifecyclepolicy-policydetails.html
 
     .PARAMETER ResourceTypes
+        The resource type. Specify one of INSTANCE or VOLUME.
+
         PrimitiveItemType: String
         Type: List
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-dlm-lifecyclepolicy-policydetails.html#cfn-dlm-lifecyclepolicy-policydetails-resourcetypes
         UpdateType: Mutable
 
     .PARAMETER Schedules
+        The schedule of policy-defined actions.
+
         Type: List
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-dlm-lifecyclepolicy-policydetails.html#cfn-dlm-lifecyclepolicy-policydetails-schedules
         ItemType: Schedule
         UpdateType: Mutable
 
     .PARAMETER PolicyType
+        *Update requires*: No interruption: https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt
+
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-dlm-lifecyclepolicy-policydetails.html#cfn-dlm-lifecyclepolicy-policydetails-policytype
         PrimitiveType: String
         UpdateType: Mutable
 
     .PARAMETER Parameters
+        *Update requires*: No interruption: https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt
+
         Type: Parameters
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-dlm-lifecyclepolicy-policydetails.html#cfn-dlm-lifecyclepolicy-policydetails-parameters
         UpdateType: Mutable
 
     .PARAMETER TargetTags
+        The single tag that identifies targeted resources for this policy.
+
         Type: List
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-dlm-lifecyclepolicy-policydetails.html#cfn-dlm-lifecyclepolicy-policydetails-targettags
         ItemType: Tag

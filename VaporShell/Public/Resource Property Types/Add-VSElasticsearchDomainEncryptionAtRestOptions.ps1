@@ -1,21 +1,25 @@
 function Add-VSElasticsearchDomainEncryptionAtRestOptions {
     <#
     .SYNOPSIS
-        Adds an AWS::Elasticsearch::Domain.EncryptionAtRestOptions resource property to the template. 
+        Adds an AWS::Elasticsearch::Domain.EncryptionAtRestOptions resource property to the template. Whether the domain should encrypt data at rest, and if so, the AWS Key Management Service (KMS key to use. Can only be used to create a new domain, not update an existing one.
 
     .DESCRIPTION
         Adds an AWS::Elasticsearch::Domain.EncryptionAtRestOptions resource property to the template.
-
+Whether the domain should encrypt data at rest, and if so, the AWS Key Management Service (KMS key to use. Can only be used to create a new domain, not update an existing one.
 
     .LINK
         http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-elasticsearch-domain-encryptionatrestoptions.html
 
     .PARAMETER Enabled
+        Specify true to enable encryption at rest.
+
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-elasticsearch-domain-encryptionatrestoptions.html#cfn-elasticsearch-domain-encryptionatrestoptions-enabled
         PrimitiveType: Boolean
         UpdateType: Immutable
 
     .PARAMETER KmsKeyId
+        The KMS key ID. Takes the form 1a2a3a4-1a2a-3a4a-5a6a-1a2a3a4a5a6a.
+
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-elasticsearch-domain-encryptionatrestoptions.html#cfn-elasticsearch-domain-encryptionatrestoptions-kmskeyid
         PrimitiveType: String
         UpdateType: Immutable

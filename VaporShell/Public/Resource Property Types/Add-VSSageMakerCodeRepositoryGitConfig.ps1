@@ -1,26 +1,33 @@
 function Add-VSSageMakerCodeRepositoryGitConfig {
     <#
     .SYNOPSIS
-        Adds an AWS::SageMaker::CodeRepository.GitConfig resource property to the template. 
+        Adds an AWS::SageMaker::CodeRepository.GitConfig resource property to the template. Specifies configuration details for a Git repository in your AWS account.
 
     .DESCRIPTION
         Adds an AWS::SageMaker::CodeRepository.GitConfig resource property to the template.
-
+Specifies configuration details for a Git repository in your AWS account.
 
     .LINK
         http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-sagemaker-coderepository-gitconfig.html
 
     .PARAMETER SecretArn
+        The Amazon Resource Name ARN of the AWS Secrets Manager secret that contains the credentials used to access the git repository. The secret must have a staging label of AWSCURRENT and must be in the following format:
+{"username": UserName, "password": Password}
+
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-sagemaker-coderepository-gitconfig.html#cfn-sagemaker-coderepository-gitconfig-secretarn
         PrimitiveType: String
         UpdateType: Mutable
 
     .PARAMETER Branch
+        The default branch for the Git repository.
+
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-sagemaker-coderepository-gitconfig.html#cfn-sagemaker-coderepository-gitconfig-branch
         PrimitiveType: String
         UpdateType: Immutable
 
     .PARAMETER RepositoryUrl
+        The URL where the Git repository is located.
+
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-sagemaker-coderepository-gitconfig.html#cfn-sagemaker-coderepository-gitconfig-repositoryurl
         PrimitiveType: String
         UpdateType: Immutable

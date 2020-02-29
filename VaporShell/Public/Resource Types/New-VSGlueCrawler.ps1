@@ -1,10 +1,10 @@
 function New-VSGlueCrawler {
     <#
     .SYNOPSIS
-        Adds an AWS::Glue::Crawler resource to the template. 
+        Adds an AWS::Glue::Crawler resource to the template. The AWS::Glue::Crawler resource specifies an AWS Glue crawler. For more information, see Cataloging Tables with a Crawler: https://docs.aws.amazon.com/glue/latest/dg/add-crawler.html and Crawler Structure: https://docs.aws.amazon.com/glue/latest/dg/aws-glue-api-crawler-crawling.html#aws-glue-api-crawler-crawling-Crawler in the *AWS Glue Developer Guide*.
 
     .DESCRIPTION
-        Adds an AWS::Glue::Crawler resource to the template. 
+        Adds an AWS::Glue::Crawler resource to the template. The AWS::Glue::Crawler resource specifies an AWS Glue crawler. For more information, see Cataloging Tables with a Crawler: https://docs.aws.amazon.com/glue/latest/dg/add-crawler.html and Crawler Structure: https://docs.aws.amazon.com/glue/latest/dg/aws-glue-api-crawler-crawling.html#aws-glue-api-crawler-crawling-Crawler in the *AWS Glue Developer Guide*.
 
     .LINK
         http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-glue-crawler.html
@@ -13,62 +13,86 @@ function New-VSGlueCrawler {
         The logical ID must be alphanumeric (A-Za-z0-9) and unique within the template. Use the logical name to reference the resource in other parts of the template. For example, if you want to map an Amazon Elastic Block Store volume to an Amazon EC2 instance, you reference the logical IDs to associate the block stores with the instance.
 
     .PARAMETER Role
+        The Amazon Resource Name ARN of an IAM role that's used to access customer resources, such as Amazon Simple Storage Service Amazon S3 data.
+
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-glue-crawler.html#cfn-glue-crawler-role
         PrimitiveType: String
         UpdateType: Mutable
 
     .PARAMETER Classifiers
+        A list of UTF-8 strings that specify the custom classifiers that are associated with the crawler.
+
         PrimitiveItemType: String
         Type: List
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-glue-crawler.html#cfn-glue-crawler-classifiers
         UpdateType: Mutable
 
     .PARAMETER Description
+        A description of the crawler.
+
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-glue-crawler.html#cfn-glue-crawler-description
         PrimitiveType: String
         UpdateType: Mutable
 
     .PARAMETER SchemaChangePolicy
+        The policy that specifies update and delete behaviors for the crawler.
+
         Type: SchemaChangePolicy
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-glue-crawler.html#cfn-glue-crawler-schemachangepolicy
         UpdateType: Mutable
 
     .PARAMETER Configuration
+        Crawler configuration information. This versioned JSON string allows users to specify aspects of a crawler's behavior. For more information, see Configuring a Crawler: https://docs.aws.amazon.com/glue/latest/dg/crawler-configuration.html.
+
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-glue-crawler.html#cfn-glue-crawler-configuration
         PrimitiveType: String
         UpdateType: Mutable
 
     .PARAMETER Schedule
+        For scheduled crawlers, the schedule when the crawler runs.
+
         Type: Schedule
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-glue-crawler.html#cfn-glue-crawler-schedule
         UpdateType: Mutable
 
     .PARAMETER DatabaseName
+        The name of the database in which the crawler's output is stored.
+
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-glue-crawler.html#cfn-glue-crawler-databasename
         PrimitiveType: String
         UpdateType: Mutable
 
     .PARAMETER Targets
+        A collection of targets to crawl.
+
         Type: Targets
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-glue-crawler.html#cfn-glue-crawler-targets
         UpdateType: Mutable
 
     .PARAMETER CrawlerSecurityConfiguration
+        The name of the SecurityConfiguration structure to be used by this crawler.
+
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-glue-crawler.html#cfn-glue-crawler-crawlersecurityconfiguration
         PrimitiveType: String
         UpdateType: Mutable
 
     .PARAMETER TablePrefix
+        The prefix added to the names of tables that are created.
+
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-glue-crawler.html#cfn-glue-crawler-tableprefix
         PrimitiveType: String
         UpdateType: Mutable
 
     .PARAMETER Tags
+        The tags to use with this crawler request. You can use tags to limit access to the crawler. For more information about tags in AWS Glue, see AWS Tags in AWS Glue: https://docs.aws.amazon.com/glue/latest/dg/monitor-tags.html in the developer guide.
+
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-glue-crawler.html#cfn-glue-crawler-tags
         PrimitiveType: Json
         UpdateType: Mutable
 
     .PARAMETER Name
+        The name of the crawler.
+
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-glue-crawler.html#cfn-glue-crawler-name
         PrimitiveType: String
         UpdateType: Immutable

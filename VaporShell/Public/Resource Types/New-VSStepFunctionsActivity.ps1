@@ -1,10 +1,12 @@
 function New-VSStepFunctionsActivity {
     <#
     .SYNOPSIS
-        Adds an AWS::StepFunctions::Activity resource to the template. 
+        Adds an AWS::StepFunctions::Activity resource to the template. An activity is a task that you write in any programming language and host on any machine that has access to AWS Step Functions. Activities must poll Step Functions using the GetActivityTask API action and respond using SendTask* API actions. This function lets Step Functions know the existence of your activity and returns an identifier for use in a state machine and when polling from the activity.
 
     .DESCRIPTION
-        Adds an AWS::StepFunctions::Activity resource to the template. 
+        Adds an AWS::StepFunctions::Activity resource to the template. An activity is a task that you write in any programming language and host on any machine that has access to AWS Step Functions. Activities must poll Step Functions using the GetActivityTask API action and respond using SendTask* API actions. This function lets Step Functions know the existence of your activity and returns an identifier for use in a state machine and when polling from the activity.
+
+For information about creating an activity, see Creating an Activity State Machine: https://docs.aws.amazon.com/step-functions/latest/dg/tutorial-creating-activity-state-machine.html in the *AWS Step Functions Developer Guide* and CreateActivity: https://docs.aws.amazon.com/step-functions/latest/apireference/API_CreateActivity.html in the *AWS Step Functions API Reference*.
 
     .LINK
         http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-stepfunctions-activity.html
@@ -13,12 +15,23 @@ function New-VSStepFunctionsActivity {
         The logical ID must be alphanumeric (A-Za-z0-9) and unique within the template. Use the logical name to reference the resource in other parts of the template. For example, if you want to map an Amazon Elastic Block Store volume to an Amazon EC2 instance, you reference the logical IDs to associate the block stores with the instance.
 
     .PARAMETER Tags
+        The list of tags to add to a resource.
+Tags may only contain Unicode letters, digits, white space, or these symbols: _ . : / = + - @.
+
         Type: List
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-stepfunctions-activity.html#cfn-stepfunctions-activity-tags
         ItemType: TagsEntry
         UpdateType: Mutable
 
     .PARAMETER Name
+        The name of the activity.
+A name must *not* contain:
++ white space
++ brackets < > { }  ]
++ wildcard characters ? *
++ special characters " # %  ^ | ~  $ & , ; : /
++ control characters U+0000-001F, U+007F-009F
+
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-stepfunctions-activity.html#cfn-stepfunctions-activity-name
         PrimitiveType: String
         UpdateType: Immutable

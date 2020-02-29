@@ -1,10 +1,16 @@
 function New-VSRDSDBParameterGroup {
     <#
     .SYNOPSIS
-        Adds an AWS::RDS::DBParameterGroup resource to the template. 
+        Adds an AWS::RDS::DBParameterGroup resource to the template. The AWS::RDS::DBParameterGroup resource creates a custom parameter group for an RDS database family.
 
     .DESCRIPTION
-        Adds an AWS::RDS::DBParameterGroup resource to the template. 
+        Adds an AWS::RDS::DBParameterGroup resource to the template. The AWS::RDS::DBParameterGroup resource creates a custom parameter group for an RDS database family.
+
+This type can be declared in a template and referenced in the DBParameterGroupName property of an  AWS::RDS::DBInstance: https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-rds-database-instance.html resource.
+
+**Note**
+
+Applying a parameter group to a DB instance may require the instance to reboot, resulting in a database outage for the duration of the reboot.
 
     .LINK
         http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-rds-dbparametergroup.html
@@ -13,16 +19,27 @@ function New-VSRDSDBParameterGroup {
         The logical ID must be alphanumeric (A-Za-z0-9) and unique within the template. Use the logical name to reference the resource in other parts of the template. For example, if you want to map an Amazon Elastic Block Store volume to an Amazon EC2 instance, you reference the logical IDs to associate the block stores with the instance.
 
     .PARAMETER Description
+        Provides the customer-specified description for this DB Parameter Group.
+
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-rds-dbparametergroup.html#cfn-rds-dbparametergroup-description
         PrimitiveType: String
         UpdateType: Mutable
 
     .PARAMETER Family
+        Provides the name of the DB Parameter Group Family that this DB Parameter Group is compatible with.
+
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-rds-dbparametergroup.html#cfn-rds-dbparametergroup-family
         PrimitiveType: String
         UpdateType: Mutable
 
     .PARAMETER Parameters
+        An array of parameter names, values, and the apply method for the parameter update. At least one parameter name, value, and apply method must be supplied; subsequent arguments are optional. A maximum of 20 parameters may be modified in a single request.
+**MySQL**
+Valid Values for Apply method: immediate | pending-reboot
+You can use the immediate value with dynamic parameters only. You can use the pending-reboot value for both dynamic and static parameters, and changes are applied when DB Instance reboots.
+**Oracle**
+Valid Values for Apply method: pending-reboot
+
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-rds-dbparametergroup.html#cfn-rds-dbparametergroup-parameters
         DuplicatesAllowed: False
         PrimitiveItemType: String
@@ -30,6 +47,8 @@ function New-VSRDSDBParameterGroup {
         UpdateType: Mutable
 
     .PARAMETER Tags
+        Tags to assign to the DB parameter group.
+
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-rds-dbparametergroup.html#cfn-rds-dbparametergroup-tags
         DuplicatesAllowed: True
         ItemType: Tag

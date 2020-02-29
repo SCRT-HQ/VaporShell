@@ -1,10 +1,18 @@
 function New-VSEC2VPCPeeringConnection {
     <#
     .SYNOPSIS
-        Adds an AWS::EC2::VPCPeeringConnection resource to the template. 
+        Adds an AWS::EC2::VPCPeeringConnection resource to the template. Requests a VPC peering connection between two VPCs: a requester VPC that you own and an accepter VPC with which to create the connection. The accepter VPC can belong to another AWS account and can be in a different Region to the requester VPC. The requester VPC and accepter VPC cannot have overlapping CIDR blocks.
 
     .DESCRIPTION
-        Adds an AWS::EC2::VPCPeeringConnection resource to the template. 
+        Adds an AWS::EC2::VPCPeeringConnection resource to the template. Requests a VPC peering connection between two VPCs: a requester VPC that you own and an accepter VPC with which to create the connection. The accepter VPC can belong to another AWS account and can be in a different Region to the requester VPC. The requester VPC and accepter VPC cannot have overlapping CIDR blocks.
+
+**Note**
+
+Limitations and rules apply to a VPC peering connection. For more information, see the limitations: https://docs.aws.amazon.com/vpc/latest/peering/vpc-peering-basics.html#vpc-peering-limitations section in the *VPC Peering Guide*.
+
+The owner of the accepter VPC must accept the peering request to activate the peering connection. The VPC peering connection request expires after 7 days, after which it cannot be accepted or rejected.
+
+If you create a VPC peering connection request between VPCs with overlapping CIDR blocks, the VPC peering connection has a status of failed.
 
     .LINK
         http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ec2-vpcpeeringconnection.html
@@ -13,26 +21,38 @@ function New-VSEC2VPCPeeringConnection {
         The logical ID must be alphanumeric (A-Za-z0-9) and unique within the template. Use the logical name to reference the resource in other parts of the template. For example, if you want to map an Amazon Elastic Block Store volume to an Amazon EC2 instance, you reference the logical IDs to associate the block stores with the instance.
 
     .PARAMETER PeerOwnerId
+        The AWS account ID of the owner of the accepter VPC.
+Default: Your AWS account ID
+
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ec2-vpcpeeringconnection.html#cfn-ec2-vpcpeeringconnection-peerownerid
         PrimitiveType: String
         UpdateType: Immutable
 
     .PARAMETER PeerRegion
+        The Region code for the accepter VPC, if the accepter VPC is located in a Region other than the Region in which you make the request.
+Default: The Region in which you make the request.
+
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ec2-vpcpeeringconnection.html#cfn-ec2-vpcpeeringconnection-peerregion
         PrimitiveType: String
         UpdateType: Immutable
 
     .PARAMETER PeerRoleArn
+        The Amazon Resource Name ARN of the VPC peer role for the peering connection in another AWS account.
+
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ec2-vpcpeeringconnection.html#cfn-ec2-vpcpeeringconnection-peerrolearn
         PrimitiveType: String
         UpdateType: Immutable
 
     .PARAMETER PeerVpcId
+        The ID of the VPC with which you are creating the VPC peering connection. You must specify this parameter in the request.
+
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ec2-vpcpeeringconnection.html#cfn-ec2-vpcpeeringconnection-peervpcid
         PrimitiveType: String
         UpdateType: Immutable
 
     .PARAMETER Tags
+        Any tags assigned to the resource.
+
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ec2-vpcpeeringconnection.html#cfn-ec2-vpcpeeringconnection-tags
         DuplicatesAllowed: True
         ItemType: Tag
@@ -40,6 +60,8 @@ function New-VSEC2VPCPeeringConnection {
         UpdateType: Mutable
 
     .PARAMETER VpcId
+        The ID of the VPC.
+
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ec2-vpcpeeringconnection.html#cfn-ec2-vpcpeeringconnection-vpcid
         PrimitiveType: String
         UpdateType: Immutable

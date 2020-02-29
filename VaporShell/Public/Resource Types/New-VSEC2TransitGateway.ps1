@@ -1,10 +1,18 @@
 function New-VSEC2TransitGateway {
     <#
     .SYNOPSIS
-        Adds an AWS::EC2::TransitGateway resource to the template. 
+        Adds an AWS::EC2::TransitGateway resource to the template. Specifies a transit gateway.
 
     .DESCRIPTION
-        Adds an AWS::EC2::TransitGateway resource to the template. 
+        Adds an AWS::EC2::TransitGateway resource to the template. Specifies a transit gateway.
+
+You can use a transit gateway to interconnect your virtual private clouds (VPC and on-premises networks. After the transit gateway enters the available state, you can attach your VPCs and VPN connections to the transit gateway.
+
+To attach your VPCs, use AWS::EC2::TransitGatewayAttachment: https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ec2-transitgatewayattachment.html.
+
+To attach a VPN connection, use AWS::EC2::CustomerGateway: https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ec2-customer-gateway.html to create a customer gateway and specify the ID of the customer gateway and the ID of the transit gateway in a call to AWS::EC2::VPNConnection: https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ec2-vpn-connection.html.
+
+When you create a transit gateway, we create a default transit gateway route table and use it as the default association route table and the default propagation route table. You can use AWS::EC2::TransitGatewayRouteTable: https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ec2-transitgatewayroutetable.html to create additional transit gateway route tables. If you disable automatic route propagation, we do not create a default transit gateway route table. You can use AWS::EC2::TransitGatewayRouteTablePropagation: https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ec2-transitgatewayroutetablepropagation.html to propagate routes from a resource attachment to a transit gateway route table. If you disable automatic associations, you can use AWS::EC2::TransitGatewayRouteTableAssociation: https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ec2-transitgatewayroutetableassociation.html to associate a resource attachment with a transit gateway route table.
 
     .LINK
         http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ec2-transitgateway.html
@@ -13,41 +21,57 @@ function New-VSEC2TransitGateway {
         The logical ID must be alphanumeric (A-Za-z0-9) and unique within the template. Use the logical name to reference the resource in other parts of the template. For example, if you want to map an Amazon Elastic Block Store volume to an Amazon EC2 instance, you reference the logical IDs to associate the block stores with the instance.
 
     .PARAMETER DefaultRouteTablePropagation
+        Indicates whether resource attachments automatically propagate routes to the default propagation route table.
+
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ec2-transitgateway.html#cfn-ec2-transitgateway-defaultroutetablepropagation
         PrimitiveType: String
         UpdateType: Immutable
 
     .PARAMETER Description
+        The description of the transit gateway.
+
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ec2-transitgateway.html#cfn-ec2-transitgateway-description
         PrimitiveType: String
         UpdateType: Immutable
 
     .PARAMETER AutoAcceptSharedAttachments
+        Indicates whether attachment requests are automatically accepted.
+
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ec2-transitgateway.html#cfn-ec2-transitgateway-autoacceptsharedattachments
         PrimitiveType: String
         UpdateType: Immutable
 
     .PARAMETER DefaultRouteTableAssociation
+        Indicates whether resource attachments are automatically associated with the default association route table.
+
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ec2-transitgateway.html#cfn-ec2-transitgateway-defaultroutetableassociation
         PrimitiveType: String
         UpdateType: Immutable
 
     .PARAMETER VpnEcmpSupport
+        Indicates whether Equal Cost Multipath Protocol support is enabled.
+
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ec2-transitgateway.html#cfn-ec2-transitgateway-vpnecmpsupport
         PrimitiveType: String
         UpdateType: Immutable
 
     .PARAMETER DnsSupport
+        Indicates whether DNS support is enabled.
+
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ec2-transitgateway.html#cfn-ec2-transitgateway-dnssupport
         PrimitiveType: String
         UpdateType: Immutable
 
     .PARAMETER AmazonSideAsn
+        A private Autonomous System Number ASN for the Amazon side of a BGP session. The range is 64512 to 65534 for 16-bit ASNs and 4200000000 to 4294967294 for 32-bit ASNs.
+
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ec2-transitgateway.html#cfn-ec2-transitgateway-amazonsideasn
         PrimitiveType: Integer
         UpdateType: Immutable
 
     .PARAMETER Tags
+        The tags for the transit gateway.
+
         Type: List
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ec2-transitgateway.html#cfn-ec2-transitgateway-tags
         ItemType: Tag

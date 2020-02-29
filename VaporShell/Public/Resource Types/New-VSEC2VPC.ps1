@@ -1,10 +1,10 @@
 function New-VSEC2VPC {
     <#
     .SYNOPSIS
-        Adds an AWS::EC2::VPC resource to the template. 
+        Adds an AWS::EC2::VPC resource to the template. Specifies a VPC with the specified IPv4 CIDR block. The smallest VPC you can create uses a /28 netmask (16 IPv4 addresses, and the largest uses a /16 netmask (65,536 IPv4 addresses. For more information about how large to make your VPC, see Your VPC and Subnets: https://docs.aws.amazon.com/AmazonVPC/latest/UserGuide/VPC_Subnets.html in the *Amazon Virtual Private Cloud User Guide*.
 
     .DESCRIPTION
-        Adds an AWS::EC2::VPC resource to the template. 
+        Adds an AWS::EC2::VPC resource to the template. Specifies a VPC with the specified IPv4 CIDR block. The smallest VPC you can create uses a /28 netmask (16 IPv4 addresses, and the largest uses a /16 netmask (65,536 IPv4 addresses. For more information about how large to make your VPC, see Your VPC and Subnets: https://docs.aws.amazon.com/AmazonVPC/latest/UserGuide/VPC_Subnets.html in the *Amazon Virtual Private Cloud User Guide*.
 
     .LINK
         http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ec2-vpc.html
@@ -13,26 +13,40 @@ function New-VSEC2VPC {
         The logical ID must be alphanumeric (A-Za-z0-9) and unique within the template. Use the logical name to reference the resource in other parts of the template. For example, if you want to map an Amazon Elastic Block Store volume to an Amazon EC2 instance, you reference the logical IDs to associate the block stores with the instance.
 
     .PARAMETER CidrBlock
+        The primary IPv4 CIDR block for the VPC.
+
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ec2-vpc.html#cfn-aws-ec2-vpc-cidrblock
         PrimitiveType: String
         UpdateType: Immutable
 
     .PARAMETER EnableDnsHostnames
+        Indicates whether the instances launched in the VPC get DNS hostnames. If enabled, instances in the VPC get DNS hostnames; otherwise, they do not.
+You can only enable DNS hostnames if you've enabled DNS support.
+
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ec2-vpc.html#cfn-aws-ec2-vpc-EnableDnsHostnames
         PrimitiveType: Boolean
         UpdateType: Mutable
 
     .PARAMETER EnableDnsSupport
+        Indicates whether the DNS resolution is supported for the VPC. If enabled, queries to the Amazon provided DNS server at the 169.254.169.253 IP address, or the reserved IP address at the base of the VPC network range "plus two" succeed. If disabled, the Amazon provided DNS service in the VPC that resolves public DNS hostnames to IP addresses is not enabled.
+
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ec2-vpc.html#cfn-aws-ec2-vpc-EnableDnsSupport
         PrimitiveType: Boolean
         UpdateType: Mutable
 
     .PARAMETER InstanceTenancy
+        The allowed tenancy of instances launched into the VPC.
++ "default": Instances can be launched with any tenancy.
++ "dedicated": Any instance launched into the VPC automatically has dedicated tenancy, unless you launch it with the default tenancy.
+Updating InstanceTenancy requires no replacement only if you are updating its value from "dedicated" to "default". Updating InstanceTenancy from "default" to "dedicated" requires replacement.
+
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ec2-vpc.html#cfn-aws-ec2-vpc-instancetenancy
         PrimitiveType: String
         UpdateType: Mutable
 
     .PARAMETER Tags
+        The tags for the VPC.
+
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ec2-vpc.html#cfn-aws-ec2-vpc-tags
         DuplicatesAllowed: True
         ItemType: Tag

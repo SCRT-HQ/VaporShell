@@ -1,51 +1,69 @@
 function Add-VSEC2LaunchTemplatePlacement {
     <#
     .SYNOPSIS
-        Adds an AWS::EC2::LaunchTemplate.Placement resource property to the template. 
+        Adds an AWS::EC2::LaunchTemplate.Placement resource property to the template. Specifies the placement of an instance.
 
     .DESCRIPTION
         Adds an AWS::EC2::LaunchTemplate.Placement resource property to the template.
+Specifies the placement of an instance.
 
+Placement is a property of the Amazon EC2 LaunchTemplate LaunchTemplateData: https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-launchtemplate-launchtemplatedata.html property type.
 
     .LINK
         http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-launchtemplate-launchtemplatedata-placement.html
 
     .PARAMETER GroupName
+        The name of the placement group for the instance.
+
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-launchtemplate-launchtemplatedata-placement.html#cfn-ec2-launchtemplate-launchtemplatedata-placement-groupname
         PrimitiveType: String
         UpdateType: Mutable
 
     .PARAMETER Tenancy
+        The tenancy of the instance if the instance is running in a VPC. An instance with a tenancy of dedicated runs on single-tenant hardware.
+
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-launchtemplate-launchtemplatedata-placement.html#cfn-ec2-launchtemplate-launchtemplatedata-placement-tenancy
         PrimitiveType: String
         UpdateType: Mutable
 
     .PARAMETER SpreadDomain
+        +   LaunchTemplatePlacementRequest: https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_LaunchTemplatePlacementRequest.html in the *Amazon Elastic Compute Cloud API Reference*
+
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-launchtemplate-launchtemplatedata-placement.html#cfn-ec2-launchtemplate-launchtemplatedata-placement-spreaddomain
         PrimitiveType: String
         UpdateType: Mutable
 
     .PARAMETER PartitionNumber
+        +   LaunchTemplatePlacementRequest: https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_LaunchTemplatePlacementRequest.html in the *Amazon Elastic Compute Cloud API Reference*
+
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-launchtemplate-launchtemplatedata-placement.html#cfn-ec2-launchtemplate-launchtemplatedata-placement-partitionnumber
         PrimitiveType: Integer
         UpdateType: Mutable
 
     .PARAMETER AvailabilityZone
+        The Availability Zone for the instance.
+
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-launchtemplate-launchtemplatedata-placement.html#cfn-ec2-launchtemplate-launchtemplatedata-placement-availabilityzone
         PrimitiveType: String
         UpdateType: Mutable
 
     .PARAMETER Affinity
+        The affinity setting for an instance on a Dedicated Host.
+
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-launchtemplate-launchtemplatedata-placement.html#cfn-ec2-launchtemplate-launchtemplatedata-placement-affinity
         PrimitiveType: String
         UpdateType: Mutable
 
     .PARAMETER HostId
+        The ID of the Dedicated Host for the instance.
+
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-launchtemplate-launchtemplatedata-placement.html#cfn-ec2-launchtemplate-launchtemplatedata-placement-hostid
         PrimitiveType: String
         UpdateType: Mutable
 
     .PARAMETER HostResourceGroupArn
+        +   LaunchTemplatePlacementRequest: https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_LaunchTemplatePlacementRequest.html in the *Amazon Elastic Compute Cloud API Reference*
+
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-launchtemplate-launchtemplatedata-placement.html#cfn-ec2-launchtemplate-launchtemplatedata-placement-hostresourcegrouparn
         PrimitiveType: String
         UpdateType: Mutable

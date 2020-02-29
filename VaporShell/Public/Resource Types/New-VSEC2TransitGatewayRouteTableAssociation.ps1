@@ -1,10 +1,10 @@
 function New-VSEC2TransitGatewayRouteTableAssociation {
     <#
     .SYNOPSIS
-        Adds an AWS::EC2::TransitGatewayRouteTableAssociation resource to the template. 
+        Adds an AWS::EC2::TransitGatewayRouteTableAssociation resource to the template. Associates the specified attachment with the specified transit gateway route table. You can associate only one route table with an attachment.
 
     .DESCRIPTION
-        Adds an AWS::EC2::TransitGatewayRouteTableAssociation resource to the template. 
+        Adds an AWS::EC2::TransitGatewayRouteTableAssociation resource to the template. Associates the specified attachment with the specified transit gateway route table. You can associate only one route table with an attachment.
 
     .LINK
         http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ec2-transitgatewayroutetableassociation.html
@@ -13,11 +13,15 @@ function New-VSEC2TransitGatewayRouteTableAssociation {
         The logical ID must be alphanumeric (A-Za-z0-9) and unique within the template. Use the logical name to reference the resource in other parts of the template. For example, if you want to map an Amazon Elastic Block Store volume to an Amazon EC2 instance, you reference the logical IDs to associate the block stores with the instance.
 
     .PARAMETER TransitGatewayRouteTableId
+        The ID of the route table for the transit gateway.
+
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ec2-transitgatewayroutetableassociation.html#cfn-ec2-transitgatewayroutetableassociation-transitgatewayroutetableid
         PrimitiveType: String
         UpdateType: Immutable
 
     .PARAMETER TransitGatewayAttachmentId
+        The ID of the attachment.
+
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ec2-transitgatewayroutetableassociation.html#cfn-ec2-transitgatewayroutetableassociation-transitgatewayattachmentid
         PrimitiveType: String
         UpdateType: Immutable

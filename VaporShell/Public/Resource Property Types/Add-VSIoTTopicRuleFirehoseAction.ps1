@@ -1,26 +1,32 @@
 function Add-VSIoTTopicRuleFirehoseAction {
     <#
     .SYNOPSIS
-        Adds an AWS::IoT::TopicRule.FirehoseAction resource property to the template. 
+        Adds an AWS::IoT::TopicRule.FirehoseAction resource property to the template. Describes an action that writes data to an Amazon Kinesis Firehose stream.
 
     .DESCRIPTION
         Adds an AWS::IoT::TopicRule.FirehoseAction resource property to the template.
-
+Describes an action that writes data to an Amazon Kinesis Firehose stream.
 
     .LINK
         http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iot-topicrule-firehoseaction.html
 
     .PARAMETER DeliveryStreamName
+        The delivery stream name.
+
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iot-topicrule-firehoseaction.html#cfn-iot-topicrule-firehoseaction-deliverystreamname
         PrimitiveType: String
         UpdateType: Mutable
 
     .PARAMETER RoleArn
+        The IAM role that grants access to the Amazon Kinesis Firehose stream.
+
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iot-topicrule-firehoseaction.html#cfn-iot-topicrule-firehoseaction-rolearn
         PrimitiveType: String
         UpdateType: Mutable
 
     .PARAMETER Separator
+        A character separator that will be used to separate records written to the Firehose stream. Valid values are: 'n' newline, 't' tab, 'rn' Windows newline, ',' comma.
+
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iot-topicrule-firehoseaction.html#cfn-iot-topicrule-firehoseaction-separator
         PrimitiveType: String
         UpdateType: Mutable

@@ -1,21 +1,25 @@
 function Add-VSRoute53ResolverResolverRuleTargetAddress {
     <#
     .SYNOPSIS
-        Adds an AWS::Route53Resolver::ResolverRule.TargetAddress resource property to the template. 
+        Adds an AWS::Route53Resolver::ResolverRule.TargetAddress resource property to the template. In a CreateResolverRule: https://docs.aws.amazon.com/Route53/latest/APIReference/API_route53resolver_CreateResolverRule.html request, an array of the IPs that you want to forward DNS queries to.
 
     .DESCRIPTION
         Adds an AWS::Route53Resolver::ResolverRule.TargetAddress resource property to the template.
-
+In a CreateResolverRule: https://docs.aws.amazon.com/Route53/latest/APIReference/API_route53resolver_CreateResolverRule.html request, an array of the IPs that you want to forward DNS queries to.
 
     .LINK
         http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-route53resolver-resolverrule-targetaddress.html
 
     .PARAMETER Ip
+        One IP address that you want to forward DNS queries to. You can specify only IPv4 addresses.
+
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-route53resolver-resolverrule-targetaddress.html#cfn-route53resolver-resolverrule-targetaddress-ip
         PrimitiveType: String
         UpdateType: Mutable
 
     .PARAMETER Port
+        The port at Ip that you want to forward DNS queries to.
+
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-route53resolver-resolverrule-targetaddress.html#cfn-route53resolver-resolverrule-targetaddress-port
         PrimitiveType: String
         UpdateType: Mutable

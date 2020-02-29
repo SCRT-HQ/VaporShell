@@ -1,26 +1,32 @@
 function Add-VSCodePipelinePipelineActionDeclaration {
     <#
     .SYNOPSIS
-        Adds an AWS::CodePipeline::Pipeline.ActionDeclaration resource property to the template. 
+        Adds an AWS::CodePipeline::Pipeline.ActionDeclaration resource property to the template. Represents information about an action declaration.
 
     .DESCRIPTION
         Adds an AWS::CodePipeline::Pipeline.ActionDeclaration resource property to the template.
-
+Represents information about an action declaration.
 
     .LINK
         http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-codepipeline-pipeline-stages-actions.html
 
     .PARAMETER ActionTypeId
+        The configuration information for the action type.
+
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-codepipeline-pipeline-stages-actions.html#cfn-codepipeline-pipeline-stages-actions-actiontypeid
         Type: ActionTypeId
         UpdateType: Mutable
 
     .PARAMETER Configuration
+        The action declaration's configuration.
+
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-codepipeline-pipeline-stages-actions.html#cfn-codepipeline-pipeline-stages-actions-configuration
         PrimitiveType: Json
         UpdateType: Mutable
 
     .PARAMETER InputArtifacts
+        The name or ID of the artifact consumed by the action, such as a test or build artifact.
+
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-codepipeline-pipeline-stages-actions.html#cfn-codepipeline-pipeline-stages-actions-inputartifacts
         DuplicatesAllowed: False
         ItemType: InputArtifact
@@ -28,16 +34,22 @@ function Add-VSCodePipelinePipelineActionDeclaration {
         UpdateType: Mutable
 
     .PARAMETER Name
+        The action declaration's name.
+
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-codepipeline-pipeline-stages-actions.html#cfn-codepipeline-pipeline-stages-actions-name
         PrimitiveType: String
         UpdateType: Mutable
 
     .PARAMETER Namespace
+        *Update requires*: No interruption: https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt
+
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-codepipeline-pipeline-stages-actions.html#cfn-codepipeline-pipeline-actiondeclaration-namespace
         PrimitiveType: String
         UpdateType: Mutable
 
     .PARAMETER OutputArtifacts
+        The name or ID of the result of the action declaration, such as a test or build artifact.
+
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-codepipeline-pipeline-stages-actions.html#cfn-codepipeline-pipeline-stages-actions-outputartifacts
         DuplicatesAllowed: False
         ItemType: OutputArtifact
@@ -45,16 +57,22 @@ function Add-VSCodePipelinePipelineActionDeclaration {
         UpdateType: Mutable
 
     .PARAMETER Region
+        The action declaration's AWS Region, such as us-east-1.
+
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-codepipeline-pipeline-stages-actions.html#cfn-codepipeline-pipeline-stages-actions-region
         PrimitiveType: String
         UpdateType: Mutable
 
     .PARAMETER RoleArn
+        The ARN of the IAM service role that will perform the declared action. This is assumed through the roleArn for the pipeline.
+
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-codepipeline-pipeline-stages-actions.html#cfn-codepipeline-pipeline-stages-actions-rolearn
         PrimitiveType: String
         UpdateType: Mutable
 
     .PARAMETER RunOrder
+        The order in which actions are run.
+
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-codepipeline-pipeline-stages-actions.html#cfn-codepipeline-pipeline-stages-actions-runorder
         PrimitiveType: Integer
         UpdateType: Mutable

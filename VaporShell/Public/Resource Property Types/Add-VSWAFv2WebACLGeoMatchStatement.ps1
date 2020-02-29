@@ -13,7 +13,8 @@ function Add-VSWAFv2WebACLGeoMatchStatement {
     .PARAMETER CountryCodes
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-wafv2-webacl-geomatchstatement.html#cfn-wafv2-webacl-geomatchstatement-countrycodes
         UpdateType: Mutable
-        Type: CountryCodes
+        Type: List
+        PrimitiveItemType: String
 
     .FUNCTIONALITY
         Vaporshell

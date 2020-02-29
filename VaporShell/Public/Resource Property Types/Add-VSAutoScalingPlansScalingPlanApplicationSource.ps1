@@ -1,21 +1,25 @@
 function Add-VSAutoScalingPlansScalingPlanApplicationSource {
     <#
     .SYNOPSIS
-        Adds an AWS::AutoScalingPlans::ScalingPlan.ApplicationSource resource property to the template. 
+        Adds an AWS::AutoScalingPlans::ScalingPlan.ApplicationSource resource property to the template. ApplicationSource is a property of ScalingPlan: https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-autoscalingplans-scalingplan.html that specifies the application source to use with AWS Auto Scaling. You can create one scaling plan per application source.
 
     .DESCRIPTION
         Adds an AWS::AutoScalingPlans::ScalingPlan.ApplicationSource resource property to the template.
-
+ApplicationSource is a property of ScalingPlan: https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-autoscalingplans-scalingplan.html that specifies the application source to use with AWS Auto Scaling. You can create one scaling plan per application source.
 
     .LINK
         http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-autoscalingplans-scalingplan-applicationsource.html
 
     .PARAMETER CloudFormationStackARN
+        The Amazon Resource Name ARN of a CloudFormation stack.
+
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-autoscalingplans-scalingplan-applicationsource.html#cfn-autoscalingplans-scalingplan-applicationsource-cloudformationstackarn
         PrimitiveType: String
         UpdateType: Mutable
 
     .PARAMETER TagFilters
+        A set of tags up to 50.
+
         Type: List
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-autoscalingplans-scalingplan-applicationsource.html#cfn-autoscalingplans-scalingplan-applicationsource-tagfilters
         ItemType: TagFilter

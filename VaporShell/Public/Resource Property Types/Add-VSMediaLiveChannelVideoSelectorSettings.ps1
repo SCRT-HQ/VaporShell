@@ -1,21 +1,27 @@
 function Add-VSMediaLiveChannelVideoSelectorSettings {
     <#
     .SYNOPSIS
-        Adds an AWS::MediaLive::Channel.VideoSelectorSettings resource property to the template. 
+        Adds an AWS::MediaLive::Channel.VideoSelectorSettings resource property to the template. Information about the video to extract from the input.
 
     .DESCRIPTION
         Adds an AWS::MediaLive::Channel.VideoSelectorSettings resource property to the template.
+Information about the video to extract from the input.
 
+The parent of this entity is VideoSelector.
 
     .LINK
         http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-medialive-channel-videoselectorsettings.html
 
     .PARAMETER VideoSelectorProgramId
+        Used to extract video by program ID.
+
         Type: VideoSelectorProgramId
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-medialive-channel-videoselectorsettings.html#cfn-medialive-channel-videoselectorsettings-videoselectorprogramid
         UpdateType: Mutable
 
     .PARAMETER VideoSelectorPid
+        Used to extract video by PID.
+
         Type: VideoSelectorPid
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-medialive-channel-videoselectorsettings.html#cfn-medialive-channel-videoselectorsettings-videoselectorpid
         UpdateType: Mutable

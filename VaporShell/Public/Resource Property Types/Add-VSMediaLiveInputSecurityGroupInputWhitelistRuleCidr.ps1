@@ -1,16 +1,18 @@
 function Add-VSMediaLiveInputSecurityGroupInputWhitelistRuleCidr {
     <#
     .SYNOPSIS
-        Adds an AWS::MediaLive::InputSecurityGroup.InputWhitelistRuleCidr resource property to the template. 
+        Adds an AWS::MediaLive::InputSecurityGroup.InputWhitelistRuleCidr resource property to the template. An IPv4 CIDR range to include in this input security group.
 
     .DESCRIPTION
         Adds an AWS::MediaLive::InputSecurityGroup.InputWhitelistRuleCidr resource property to the template.
-
+An IPv4 CIDR range to include in this input security group.
 
     .LINK
         http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-medialive-inputsecuritygroup-inputwhitelistrulecidr.html
 
     .PARAMETER Cidr
+        An IPv4 CIDR range to include in this input security group.
+
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-medialive-inputsecuritygroup-inputwhitelistrulecidr.html#cfn-medialive-inputsecuritygroup-inputwhitelistrulecidr-cidr
         PrimitiveType: String
         UpdateType: Mutable

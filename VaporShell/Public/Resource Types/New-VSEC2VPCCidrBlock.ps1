@@ -1,10 +1,12 @@
 function New-VSEC2VPCCidrBlock {
     <#
     .SYNOPSIS
-        Adds an AWS::EC2::VPCCidrBlock resource to the template. 
+        Adds an AWS::EC2::VPCCidrBlock resource to the template. Associates a CIDR block with your VPC. You can only associate a single IPv6 CIDR block with your VPC. An IPv6 CIDR block must have a prefix length of /64.
 
     .DESCRIPTION
-        Adds an AWS::EC2::VPCCidrBlock resource to the template. 
+        Adds an AWS::EC2::VPCCidrBlock resource to the template. Associates a CIDR block with your VPC. You can only associate a single IPv6 CIDR block with your VPC. An IPv6 CIDR block must have a prefix length of /64.
+
+For more information about associating CIDR blocks with your VPC and applicable restrictions, see VPC and Subnet Sizing: https://docs.aws.amazon.com/vpc/latest/userguide/VPC_Subnets.html#VPC_Sizing in the *Amazon Virtual Private Cloud User Guide*.
 
     .LINK
         http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ec2-vpccidrblock.html
@@ -13,16 +15,22 @@ function New-VSEC2VPCCidrBlock {
         The logical ID must be alphanumeric (A-Za-z0-9) and unique within the template. Use the logical name to reference the resource in other parts of the template. For example, if you want to map an Amazon Elastic Block Store volume to an Amazon EC2 instance, you reference the logical IDs to associate the block stores with the instance.
 
     .PARAMETER AmazonProvidedIpv6CidrBlock
+        Requests an Amazon-provided IPv6 CIDR block with a /56 prefix length for the VPC. You cannot specify the range of IPv6 addresses, or the size of the CIDR block.
+
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ec2-vpccidrblock.html#cfn-ec2-vpccidrblock-amazonprovidedipv6cidrblock
         PrimitiveType: Boolean
         UpdateType: Immutable
 
     .PARAMETER CidrBlock
+        An IPv4 CIDR block to associate with the VPC.
+
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ec2-vpccidrblock.html#cfn-ec2-vpccidrblock-cidrblock
         PrimitiveType: String
         UpdateType: Immutable
 
     .PARAMETER VpcId
+        The ID of the VPC.
+
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ec2-vpccidrblock.html#cfn-ec2-vpccidrblock-vpcid
         PrimitiveType: String
         UpdateType: Immutable

@@ -1,31 +1,39 @@
 function Add-VSCodePipelinePipelineActionTypeId {
     <#
     .SYNOPSIS
-        Adds an AWS::CodePipeline::Pipeline.ActionTypeId resource property to the template. 
+        Adds an AWS::CodePipeline::Pipeline.ActionTypeId resource property to the template. Represents information about an action type.
 
     .DESCRIPTION
         Adds an AWS::CodePipeline::Pipeline.ActionTypeId resource property to the template.
-
+Represents information about an action type.
 
     .LINK
         http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-codepipeline-pipeline-stages-actions-actiontypeid.html
 
     .PARAMETER Category
+        A category defines what kind of action can be taken in the stage, and constrains the provider type for the action. Valid categories are limited to one of the values below.
+
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-codepipeline-pipeline-stages-actions-actiontypeid.html#cfn-codepipeline-pipeline-stages-actions-actiontypeid-category
         PrimitiveType: String
         UpdateType: Mutable
 
     .PARAMETER Owner
+        The creator of the action being called.
+
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-codepipeline-pipeline-stages-actions-actiontypeid.html#cfn-codepipeline-pipeline-stages-actions-actiontypeid-owner
         PrimitiveType: String
         UpdateType: Mutable
 
     .PARAMETER Provider
+        The provider of the service being called by the action. Valid providers are determined by the action category. For example, an action in the Deploy category type might have a provider of AWS CodeDeploy, which would be specified as CodeDeploy. To reference a list of action providers by action type, see Valid Action Types and Providers in CodePipeline: https://docs.aws.amazon.com/codepipeline/latest/userguide/reference-pipeline-structure.html#actions-valid-providers.
+
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-codepipeline-pipeline-stages-actions-actiontypeid.html#cfn-codepipeline-pipeline-stages-actions-actiontypeid-provider
         PrimitiveType: String
         UpdateType: Mutable
 
     .PARAMETER Version
+        A string that describes the action version.
+
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-codepipeline-pipeline-stages-actions-actiontypeid.html#cfn-codepipeline-pipeline-stages-actions-actiontypeid-version
         PrimitiveType: String
         UpdateType: Mutable

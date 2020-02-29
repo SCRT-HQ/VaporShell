@@ -1,10 +1,10 @@
 function New-VSCodeDeployApplication {
     <#
     .SYNOPSIS
-        Adds an AWS::CodeDeploy::Application resource to the template. 
+        Adds an AWS::CodeDeploy::Application resource to the template. The AWS::CodeDeploy::Application resource creates an AWS CodeDeploy application. In CodeDeploy, an application is a name that functions as a container to ensure that the correct combination of revision, deployment configuration, and deployment group are referenced during a deployment. You can use the AWS::CodeDeploy::DeploymentGroup resource to associate the application with a CodeDeploy deployment group. For more information, see CodeDeploy Deployments: https://docs.aws.amazon.com/codedeploy/latest/userguide/deployment-steps.html in the *AWS CodeDeploy User Guide*.
 
     .DESCRIPTION
-        Adds an AWS::CodeDeploy::Application resource to the template. 
+        Adds an AWS::CodeDeploy::Application resource to the template. The AWS::CodeDeploy::Application resource creates an AWS CodeDeploy application. In CodeDeploy, an application is a name that functions as a container to ensure that the correct combination of revision, deployment configuration, and deployment group are referenced during a deployment. You can use the AWS::CodeDeploy::DeploymentGroup resource to associate the application with a CodeDeploy deployment group. For more information, see CodeDeploy Deployments: https://docs.aws.amazon.com/codedeploy/latest/userguide/deployment-steps.html in the *AWS CodeDeploy User Guide*.
 
     .LINK
         http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-codedeploy-application.html
@@ -13,11 +13,16 @@ function New-VSCodeDeployApplication {
         The logical ID must be alphanumeric (A-Za-z0-9) and unique within the template. Use the logical name to reference the resource in other parts of the template. For example, if you want to map an Amazon Elastic Block Store volume to an Amazon EC2 instance, you reference the logical IDs to associate the block stores with the instance.
 
     .PARAMETER ApplicationName
+        A name for the application. If you don't specify a name, AWS CloudFormation generates a unique physical ID and uses that ID for the application name. For more information, see Name Type: https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-name.html.
+Updates to ApplicationName are not supported.
+
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-codedeploy-application.html#cfn-codedeploy-application-applicationname
         PrimitiveType: String
         UpdateType: Immutable
 
     .PARAMETER ComputePlatform
+        The compute platform that CodeDeploy deploys the application to.
+
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-codedeploy-application.html#cfn-codedeploy-application-computeplatform
         PrimitiveType: String
         UpdateType: Immutable

@@ -1,16 +1,20 @@
 function Add-VSEC2LaunchTemplateCapacityReservationTarget {
     <#
     .SYNOPSIS
-        Adds an AWS::EC2::LaunchTemplate.CapacityReservationTarget resource property to the template. 
+        Adds an AWS::EC2::LaunchTemplate.CapacityReservationTarget resource property to the template. Specifies a target Capacity Reservation.
 
     .DESCRIPTION
         Adds an AWS::EC2::LaunchTemplate.CapacityReservationTarget resource property to the template.
+Specifies a target Capacity Reservation.
 
+CapacityReservationTarget is a property of the  Amazon EC2 LaunchTemplate LaunchTemplateData: https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-launchtemplate-launchtemplatedata.html property type.
 
     .LINK
         http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-launchtemplate-capacityreservationtarget.html
 
     .PARAMETER CapacityReservationId
+        The ID of the Capacity Reservation.
+
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-launchtemplate-capacityreservationtarget.html#cfn-ec2-launchtemplate-capacityreservationtarget-capacityreservationid
         PrimitiveType: String
         UpdateType: Mutable

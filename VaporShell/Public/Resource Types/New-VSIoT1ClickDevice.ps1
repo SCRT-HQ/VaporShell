@@ -1,10 +1,10 @@
 function New-VSIoT1ClickDevice {
     <#
     .SYNOPSIS
-        Adds an AWS::IoT1Click::Device resource to the template. 
+        Adds an AWS::IoT1Click::Device resource to the template. The AWS::IoT1Click::Device resource controls the enabled state of an AWS IoT 1-Click compatible device. For more information, see Device: https://docs.aws.amazon.com/iot-1-click/1.0/devices-apireference/devices-deviceid.html in the *AWS IoT 1-Click Devices API Reference*.
 
     .DESCRIPTION
-        Adds an AWS::IoT1Click::Device resource to the template. 
+        Adds an AWS::IoT1Click::Device resource to the template. The AWS::IoT1Click::Device resource controls the enabled state of an AWS IoT 1-Click compatible device. For more information, see Device: https://docs.aws.amazon.com/iot-1-click/1.0/devices-apireference/devices-deviceid.html in the *AWS IoT 1-Click Devices API Reference*.
 
     .LINK
         http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-iot1click-device.html
@@ -13,11 +13,15 @@ function New-VSIoT1ClickDevice {
         The logical ID must be alphanumeric (A-Za-z0-9) and unique within the template. Use the logical name to reference the resource in other parts of the template. For example, if you want to map an Amazon Elastic Block Store volume to an Amazon EC2 instance, you reference the logical IDs to associate the block stores with the instance.
 
     .PARAMETER DeviceId
+        The ID of the device, such as G030PX0312744DWM.
+
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-iot1click-device.html#cfn-iot1click-device-deviceid
         PrimitiveType: String
         UpdateType: Immutable
 
     .PARAMETER Enabled
+        A Boolean value indicating whether the device is enabled true or not false.
+
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-iot1click-device.html#cfn-iot1click-device-enabled
         PrimitiveType: Boolean
         UpdateType: Mutable

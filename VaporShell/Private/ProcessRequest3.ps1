@@ -30,18 +30,50 @@ function ProcessRequest3 {
         try {
             $service = ($request.PSObject.TypeNames)[0].split('.')[1]
             $sharedFile = New-Object Amazon.Runtime.CredentialManagement.SharedCredentialsFile -ErrorAction Stop
-            $endPoint = ($sharedFile.ListProfiles() | Where-Object {$_.Name -eq $ProfileName}).Region
-            $storedCreds = New-Object Amazon.Runtime.StoredProfileAWSCredentials $ProfileName -ErrorAction Stop
+            $matchedProfile = $sharedFile.ListProfiles() | Where-Object {$_.Name -eq $ProfileName}
+            if ($null -eq $matchedProfile) {
+                $creds = [Amazon.Runtime.FallbackCredentialsFactory]::GetCredentials()
+                $endPoint = if ([Amazon.Runtime.FallbackRegionFactory]::GetRegionEndpoint()) {
+                    [Amazon.Runtime.FallbackRegionFactory]::GetRegionEndpoint()
+                }
+                else {
+                    # Need to set a default if we can't resolve the region
+                    Write-Warning "Unable to resolve target region! Defaulting to us-east-1 and continuing in 5 seconds."
+                    Write-Warning "If you do not want to execute method [$Method] on service [$service] in this region,"
+                    Write-Warning "please set the environment variable 'AWS_REGION' or run the following to set a region"
+                    Write-Warning "on the shared credential file:`n`n`tSet-VSCredential -ProfileName $ProfileName -Region <PREFERRED REGION>"
+                    Start-Sleep -Seconds 5
+                    [Amazon.RegionEndpoint]::USEast1
+                }
+            }
+            else {
+                $creds = New-Object Amazon.Runtime.StoredProfileAWSCredentials $ProfileName -ErrorAction Stop
+                $endPoint = if ($matchedProfile.Region) {
+                    $matchedProfile.Region
+                }
+                elseif ([Amazon.Runtime.FallbackRegionFactory]::GetRegionEndpoint()) {
+                    [Amazon.Runtime.FallbackRegionFactory]::GetRegionEndpoint()
+                }
+                else {
+                    # Need to set a default if we can't resolve the region
+                    Write-Warning "Unable to resolve target region! Defaulting to us-east-1 and continuing in 5 seconds."
+                    Write-Warning "If you do not want to execute method [$Method] on service [$service] in this region,"
+                    Write-Warning "please set the environment variable 'AWS_REGION' or run the following to set a region"
+                    Write-Warning "on the shared credential file:`n`n`tSet-VSCredential -ProfileName $ProfileName -Region <PREFERRED REGION>"
+                    Start-Sleep -Seconds 5
+                    [Amazon.RegionEndpoint]::USEast1
+                }
+            }
             Write-Verbose "Building '$service' client in region '$($endPoint.DisplayName)' [$($endPoint.SystemName)]"
             if ($endPoint) {
-                $client = New-Object "Amazon.$($service).Amazon$($service)Client" $storedCreds,$endPoint -ErrorAction Stop
+                $client = New-Object "Amazon.$($service).Amazon$($service)Client" $creds,$endPoint -ErrorAction Stop
             }
             else {
                 return (New-VSError -String "No region set for profile '$ProfileName'! Please run the following to set a region:`n`nSet-VSCredential -ProfileName $ProfileName -Region <PREFERRED REGION>")
             }
         }
         catch {
-            return (New-VSError -String "$($Error[0].Exception.Message)")
+            return (New-VSError -String "$($_.Exception.Message)")
         }
         Write-Verbose "Processing request:`n$($PSBoundParameters | Format-Table -AutoSize | Out-String)"
         $i = 0

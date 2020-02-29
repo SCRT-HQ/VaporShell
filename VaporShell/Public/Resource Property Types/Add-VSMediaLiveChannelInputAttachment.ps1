@@ -1,26 +1,34 @@
 function Add-VSMediaLiveChannelInputAttachment {
     <#
     .SYNOPSIS
-        Adds an AWS::MediaLive::Channel.InputAttachment resource property to the template. 
+        Adds an AWS::MediaLive::Channel.InputAttachment resource property to the template. An input to attach to this channel.
 
     .DESCRIPTION
         Adds an AWS::MediaLive::Channel.InputAttachment resource property to the template.
+An input to attach to this channel.
 
+This entity is at the top level in the channel.
 
     .LINK
         http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-medialive-channel-inputattachment.html
 
     .PARAMETER InputAttachmentName
+        A name for the attachment. This is required if you want to use this input in an input switch action.
+
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-medialive-channel-inputattachment.html#cfn-medialive-channel-inputattachment-inputattachmentname
         PrimitiveType: String
         UpdateType: Mutable
 
     .PARAMETER InputId
+        The ID of the input to attach.
+
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-medialive-channel-inputattachment.html#cfn-medialive-channel-inputattachment-inputid
         PrimitiveType: String
         UpdateType: Immutable
 
     .PARAMETER InputSettings
+        Information about the content to extract from the input and about the general handling of the content.
+
         Type: InputSettings
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-medialive-channel-inputattachment.html#cfn-medialive-channel-inputattachment-inputsettings
         UpdateType: Mutable

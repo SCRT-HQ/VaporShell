@@ -1,26 +1,32 @@
 function Add-VSSageMakerWorkteamCognitoMemberDefinition {
     <#
     .SYNOPSIS
-        Adds an AWS::SageMaker::Workteam.CognitoMemberDefinition resource property to the template. 
+        Adds an AWS::SageMaker::Workteam.CognitoMemberDefinition resource property to the template. Identifies a Amazon Cognito user group. A user group can be used in on or more work teams.
 
     .DESCRIPTION
         Adds an AWS::SageMaker::Workteam.CognitoMemberDefinition resource property to the template.
-
+Identifies a Amazon Cognito user group. A user group can be used in on or more work teams.
 
     .LINK
         http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-sagemaker-workteam-cognitomemberdefinition.html
 
     .PARAMETER CognitoUserPool
+        An identifier for a user pool. The user pool must be in the same region as the service that you are calling.
+
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-sagemaker-workteam-cognitomemberdefinition.html#cfn-sagemaker-workteam-cognitomemberdefinition-cognitouserpool
         PrimitiveType: String
         UpdateType: Immutable
 
     .PARAMETER CognitoClientId
+        An identifier for an application client. You must create the app client ID using Amazon Cognito.
+
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-sagemaker-workteam-cognitomemberdefinition.html#cfn-sagemaker-workteam-cognitomemberdefinition-cognitoclientid
         PrimitiveType: String
         UpdateType: Mutable
 
     .PARAMETER CognitoUserGroup
+        An identifier for a user group.
+
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-sagemaker-workteam-cognitomemberdefinition.html#cfn-sagemaker-workteam-cognitomemberdefinition-cognitousergroup
         PrimitiveType: String
         UpdateType: Mutable

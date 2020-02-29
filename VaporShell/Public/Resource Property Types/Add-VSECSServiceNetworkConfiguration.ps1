@@ -1,16 +1,19 @@
 function Add-VSECSServiceNetworkConfiguration {
     <#
     .SYNOPSIS
-        Adds an AWS::ECS::Service.NetworkConfiguration resource property to the template. 
+        Adds an AWS::ECS::Service.NetworkConfiguration resource property to the template. The NetworkConfiguration property specifies an object representing the network configuration for a task or service.
 
     .DESCRIPTION
         Adds an AWS::ECS::Service.NetworkConfiguration resource property to the template.
-
+The NetworkConfiguration property specifies an object representing the network configuration for a task or service.
 
     .LINK
         http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ecs-service-networkconfiguration.html
 
     .PARAMETER AwsvpcConfiguration
+        The VPC subnets and security groups associated with a task.
+All specified subnets and security groups must be from the same VPC.
+
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ecs-service-networkconfiguration.html#cfn-ecs-service-networkconfiguration-awsvpcconfiguration
         Type: AwsVpcConfiguration
         UpdateType: Mutable

@@ -1,21 +1,25 @@
 function Add-VSPinpointSegmentCoordinates {
     <#
     .SYNOPSIS
-        Adds an AWS::Pinpoint::Segment.Coordinates resource property to the template. 
+        Adds an AWS::Pinpoint::Segment.Coordinates resource property to the template. The latitude and longitude of the location.
 
     .DESCRIPTION
         Adds an AWS::Pinpoint::Segment.Coordinates resource property to the template.
-
+The latitude and longitude of the location.
 
     .LINK
         http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-pinpoint-segment-segmentdimensions-location-gpspoint-coordinates.html
 
     .PARAMETER Latitude
+        The latitude coordinate of the location.
+
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-pinpoint-segment-segmentdimensions-location-gpspoint-coordinates.html#cfn-pinpoint-segment-segmentdimensions-location-gpspoint-coordinates-latitude
         PrimitiveType: Double
         UpdateType: Mutable
 
     .PARAMETER Longitude
+        The longitude coordinate of the location.
+
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-pinpoint-segment-segmentdimensions-location-gpspoint-coordinates.html#cfn-pinpoint-segment-segmentdimensions-location-gpspoint-coordinates-longitude
         PrimitiveType: Double
         UpdateType: Mutable

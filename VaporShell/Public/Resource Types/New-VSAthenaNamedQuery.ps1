@@ -1,10 +1,10 @@
 function New-VSAthenaNamedQuery {
     <#
     .SYNOPSIS
-        Adds an AWS::Athena::NamedQuery resource to the template. 
+        Adds an AWS::Athena::NamedQuery resource to the template. The AWS::Athena::NamedQuery resource specifies an Amazon Athena query, where QueryString is the list of SQL query statements that comprise the query. For more information, see CreateNamedQuery: https://docs.aws.amazon.com/athena/latest/APIReference/API_CreateNamedQuery.html in the *Amazon Athena API Reference*.
 
     .DESCRIPTION
-        Adds an AWS::Athena::NamedQuery resource to the template. 
+        Adds an AWS::Athena::NamedQuery resource to the template. The AWS::Athena::NamedQuery resource specifies an Amazon Athena query, where QueryString is the list of SQL query statements that comprise the query. For more information, see CreateNamedQuery: https://docs.aws.amazon.com/athena/latest/APIReference/API_CreateNamedQuery.html in the *Amazon Athena API Reference*.
 
     .LINK
         http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-athena-namedquery.html
@@ -13,21 +13,29 @@ function New-VSAthenaNamedQuery {
         The logical ID must be alphanumeric (A-Za-z0-9) and unique within the template. Use the logical name to reference the resource in other parts of the template. For example, if you want to map an Amazon Elastic Block Store volume to an Amazon EC2 instance, you reference the logical IDs to associate the block stores with the instance.
 
     .PARAMETER Description
+        The query description.
+
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-athena-namedquery.html#cfn-athena-namedquery-description
         PrimitiveType: String
         UpdateType: Immutable
 
     .PARAMETER QueryString
+        The SQL query statements that comprise the query.
+
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-athena-namedquery.html#cfn-athena-namedquery-querystring
         PrimitiveType: String
         UpdateType: Immutable
 
     .PARAMETER Database
+        The database to which the query belongs.
+
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-athena-namedquery.html#cfn-athena-namedquery-database
         PrimitiveType: String
         UpdateType: Immutable
 
     .PARAMETER Name
+        The query name.
+
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-athena-namedquery.html#cfn-athena-namedquery-name
         PrimitiveType: String
         UpdateType: Immutable

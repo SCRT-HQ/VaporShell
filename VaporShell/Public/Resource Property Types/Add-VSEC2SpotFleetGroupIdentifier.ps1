@@ -1,16 +1,18 @@
 function Add-VSEC2SpotFleetGroupIdentifier {
     <#
     .SYNOPSIS
-        Adds an AWS::EC2::SpotFleet.GroupIdentifier resource property to the template. 
+        Adds an AWS::EC2::SpotFleet.GroupIdentifier resource property to the template. Describes a security group.
 
     .DESCRIPTION
         Adds an AWS::EC2::SpotFleet.GroupIdentifier resource property to the template.
-
+Describes a security group.
 
     .LINK
         http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-spotfleet-spotfleetrequestconfigdata-launchspecifications-securitygroups.html
 
     .PARAMETER GroupId
+        The ID of the security group.
+
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-spotfleet-spotfleetrequestconfigdata-launchspecifications-securitygroups.html#cfn-ec2-spotfleet-groupidentifier-groupid
         PrimitiveType: String
         UpdateType: Mutable

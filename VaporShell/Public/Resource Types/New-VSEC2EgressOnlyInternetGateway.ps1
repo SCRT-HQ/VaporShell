@@ -1,10 +1,10 @@
 function New-VSEC2EgressOnlyInternetGateway {
     <#
     .SYNOPSIS
-        Adds an AWS::EC2::EgressOnlyInternetGateway resource to the template. 
+        Adds an AWS::EC2::EgressOnlyInternetGateway resource to the template. IPv6 only] Specifies an egress-only internet gateway for your VPC. An egress-only internet gateway is used to enable outbound communication over IPv6 from instances in your VPC to the internet, and prevents hosts outside of your VPC from initiating an IPv6 connection with your instance.
 
     .DESCRIPTION
-        Adds an AWS::EC2::EgressOnlyInternetGateway resource to the template. 
+        Adds an AWS::EC2::EgressOnlyInternetGateway resource to the template. IPv6 only] Specifies an egress-only internet gateway for your VPC. An egress-only internet gateway is used to enable outbound communication over IPv6 from instances in your VPC to the internet, and prevents hosts outside of your VPC from initiating an IPv6 connection with your instance.
 
     .LINK
         http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ec2-egressonlyinternetgateway.html
@@ -13,6 +13,8 @@ function New-VSEC2EgressOnlyInternetGateway {
         The logical ID must be alphanumeric (A-Za-z0-9) and unique within the template. Use the logical name to reference the resource in other parts of the template. For example, if you want to map an Amazon Elastic Block Store volume to an Amazon EC2 instance, you reference the logical IDs to associate the block stores with the instance.
 
     .PARAMETER VpcId
+        The ID of the VPC for which to create the egress-only internet gateway.
+
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ec2-egressonlyinternetgateway.html#cfn-ec2-egressonlyinternetgateway-vpcid
         PrimitiveType: String
         UpdateType: Immutable

@@ -1,10 +1,10 @@
 function New-VSIoTCertificate {
     <#
     .SYNOPSIS
-        Adds an AWS::IoT::Certificate resource to the template. 
+        Adds an AWS::IoT::Certificate resource to the template. Use the AWS::IoT::Certificate resource to declare an AWS IoT X.509 certificate. For information about working with X.509 certificates, see Authentication in AWS IoT: https://docs.aws.amazon.com/iot/latest/developerguide/x509-certs.html in the *AWS IoT Developer Guide*.
 
     .DESCRIPTION
-        Adds an AWS::IoT::Certificate resource to the template. 
+        Adds an AWS::IoT::Certificate resource to the template. Use the AWS::IoT::Certificate resource to declare an AWS IoT X.509 certificate. For information about working with X.509 certificates, see Authentication in AWS IoT: https://docs.aws.amazon.com/iot/latest/developerguide/x509-certs.html in the *AWS IoT Developer Guide*.
 
     .LINK
         http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-iot-certificate.html
@@ -13,11 +13,16 @@ function New-VSIoTCertificate {
         The logical ID must be alphanumeric (A-Za-z0-9) and unique within the template. Use the logical name to reference the resource in other parts of the template. For example, if you want to map an Amazon Elastic Block Store volume to an Amazon EC2 instance, you reference the logical IDs to associate the block stores with the instance.
 
     .PARAMETER CertificateSigningRequest
+        The certificate signing request CSR.
+
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-iot-certificate.html#cfn-iot-certificate-certificatesigningrequest
         PrimitiveType: String
         UpdateType: Immutable
 
     .PARAMETER Status
+        The status of the certificate.
+The status value REGISTER_INACTIVE is deprecated and should not be used.
+
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-iot-certificate.html#cfn-iot-certificate-status
         PrimitiveType: String
         UpdateType: Mutable

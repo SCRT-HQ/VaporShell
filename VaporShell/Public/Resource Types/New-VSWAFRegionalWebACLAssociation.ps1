@@ -1,10 +1,10 @@
 function New-VSWAFRegionalWebACLAssociation {
     <#
     .SYNOPSIS
-        Adds an AWS::WAFRegional::WebACLAssociation resource to the template. 
+        Adds an AWS::WAFRegional::WebACLAssociation resource to the template. The AWS::WAFRegional::WebACLAssociation resource associates an AWS WAF Regional web access control group (ACL with a resource.
 
     .DESCRIPTION
-        Adds an AWS::WAFRegional::WebACLAssociation resource to the template. 
+        Adds an AWS::WAFRegional::WebACLAssociation resource to the template. The AWS::WAFRegional::WebACLAssociation resource associates an AWS WAF Regional web access control group (ACL with a resource.
 
     .LINK
         http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-wafregional-webaclassociation.html
@@ -13,11 +13,15 @@ function New-VSWAFRegionalWebACLAssociation {
         The logical ID must be alphanumeric (A-Za-z0-9) and unique within the template. Use the logical name to reference the resource in other parts of the template. For example, if you want to map an Amazon Elastic Block Store volume to an Amazon EC2 instance, you reference the logical IDs to associate the block stores with the instance.
 
     .PARAMETER ResourceArn
+        The Amazon Resource Name ARN of the resource to protect with the web ACL.
+
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-wafregional-webaclassociation.html#cfn-wafregional-webaclassociation-resourcearn
         PrimitiveType: String
         UpdateType: Immutable
 
     .PARAMETER WebACLId
+        A unique identifier ID for the web ACL.
+
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-wafregional-webaclassociation.html#cfn-wafregional-webaclassociation-webaclid
         PrimitiveType: String
         UpdateType: Immutable

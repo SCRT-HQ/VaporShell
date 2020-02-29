@@ -1,10 +1,10 @@
 function New-VSServiceCatalogPortfolioProductAssociation {
     <#
     .SYNOPSIS
-        Adds an AWS::ServiceCatalog::PortfolioProductAssociation resource to the template. 
+        Adds an AWS::ServiceCatalog::PortfolioProductAssociation resource to the template. Associates the specified product with the specified portfolio.
 
     .DESCRIPTION
-        Adds an AWS::ServiceCatalog::PortfolioProductAssociation resource to the template. 
+        Adds an AWS::ServiceCatalog::PortfolioProductAssociation resource to the template. Associates the specified product with the specified portfolio.
 
     .LINK
         http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-servicecatalog-portfolioproductassociation.html
@@ -13,21 +13,32 @@ function New-VSServiceCatalogPortfolioProductAssociation {
         The logical ID must be alphanumeric (A-Za-z0-9) and unique within the template. Use the logical name to reference the resource in other parts of the template. For example, if you want to map an Amazon Elastic Block Store volume to an Amazon EC2 instance, you reference the logical IDs to associate the block stores with the instance.
 
     .PARAMETER SourcePortfolioId
+        The identifier of the source portfolio.
+
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-servicecatalog-portfolioproductassociation.html#cfn-servicecatalog-portfolioproductassociation-sourceportfolioid
         PrimitiveType: String
         UpdateType: Immutable
 
     .PARAMETER AcceptLanguage
+        The language code.
++  en - English default
++  jp - Japanese
++  zh - Chinese
+
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-servicecatalog-portfolioproductassociation.html#cfn-servicecatalog-portfolioproductassociation-acceptlanguage
         PrimitiveType: String
         UpdateType: Immutable
 
     .PARAMETER PortfolioId
+        The portfolio identifier.
+
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-servicecatalog-portfolioproductassociation.html#cfn-servicecatalog-portfolioproductassociation-portfolioid
         PrimitiveType: String
         UpdateType: Immutable
 
     .PARAMETER ProductId
+        The product identifier.
+
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-servicecatalog-portfolioproductassociation.html#cfn-servicecatalog-portfolioproductassociation-productid
         PrimitiveType: String
         UpdateType: Immutable

@@ -1,10 +1,10 @@
 function New-VSServiceCatalogLaunchTemplateConstraint {
     <#
     .SYNOPSIS
-        Adds an AWS::ServiceCatalog::LaunchTemplateConstraint resource to the template. 
+        Adds an AWS::ServiceCatalog::LaunchTemplateConstraint resource to the template. Specifies a template constraint.
 
     .DESCRIPTION
-        Adds an AWS::ServiceCatalog::LaunchTemplateConstraint resource to the template. 
+        Adds an AWS::ServiceCatalog::LaunchTemplateConstraint resource to the template. Specifies a template constraint.
 
     .LINK
         http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-servicecatalog-launchtemplateconstraint.html
@@ -13,26 +13,39 @@ function New-VSServiceCatalogLaunchTemplateConstraint {
         The logical ID must be alphanumeric (A-Za-z0-9) and unique within the template. Use the logical name to reference the resource in other parts of the template. For example, if you want to map an Amazon Elastic Block Store volume to an Amazon EC2 instance, you reference the logical IDs to associate the block stores with the instance.
 
     .PARAMETER Description
+        The description of the constraint.
+
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-servicecatalog-launchtemplateconstraint.html#cfn-servicecatalog-launchtemplateconstraint-description
         PrimitiveType: String
         UpdateType: Mutable
 
     .PARAMETER AcceptLanguage
+        The language code.
++  en - English default
++  jp - Japanese
++  zh - Chinese
+
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-servicecatalog-launchtemplateconstraint.html#cfn-servicecatalog-launchtemplateconstraint-acceptlanguage
         PrimitiveType: String
         UpdateType: Mutable
 
     .PARAMETER PortfolioId
+        The portfolio identifier.
+
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-servicecatalog-launchtemplateconstraint.html#cfn-servicecatalog-launchtemplateconstraint-portfolioid
         PrimitiveType: String
         UpdateType: Immutable
 
     .PARAMETER ProductId
+        The product identifier.
+
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-servicecatalog-launchtemplateconstraint.html#cfn-servicecatalog-launchtemplateconstraint-productid
         PrimitiveType: String
         UpdateType: Immutable
 
     .PARAMETER Rules
+        The constraint rules.
+
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-servicecatalog-launchtemplateconstraint.html#cfn-servicecatalog-launchtemplateconstraint-rules
         PrimitiveType: String
         UpdateType: Mutable

@@ -1,10 +1,10 @@
 function New-VSEC2CustomerGateway {
     <#
     .SYNOPSIS
-        Adds an AWS::EC2::CustomerGateway resource to the template. 
+        Adds an AWS::EC2::CustomerGateway resource to the template. Specifies a customer gateway.
 
     .DESCRIPTION
-        Adds an AWS::EC2::CustomerGateway resource to the template. 
+        Adds an AWS::EC2::CustomerGateway resource to the template. Specifies a customer gateway.
 
     .LINK
         http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ec2-customer-gateway.html
@@ -13,16 +13,23 @@ function New-VSEC2CustomerGateway {
         The logical ID must be alphanumeric (A-Za-z0-9) and unique within the template. Use the logical name to reference the resource in other parts of the template. For example, if you want to map an Amazon Elastic Block Store volume to an Amazon EC2 instance, you reference the logical IDs to associate the block stores with the instance.
 
     .PARAMETER BgpAsn
+        For devices that support BGP, the customer gateway's BGP ASN.
+Default: 65000
+
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ec2-customer-gateway.html#cfn-ec2-customergateway-bgpasn
         PrimitiveType: Integer
         UpdateType: Immutable
 
     .PARAMETER IpAddress
+        The Internet-routable IP address for the customer gateway's outside interface. The address must be static.
+
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ec2-customer-gateway.html#cfn-ec2-customergateway-ipaddress
         PrimitiveType: String
         UpdateType: Immutable
 
     .PARAMETER Tags
+        One or more tags for the customer gateway.
+
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ec2-customer-gateway.html#cfn-ec2-customergateway-tags
         DuplicatesAllowed: True
         ItemType: Tag
@@ -30,6 +37,8 @@ function New-VSEC2CustomerGateway {
         UpdateType: Mutable
 
     .PARAMETER Type
+        The type of VPN connection that this customer gateway supports ipsec.1.
+
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ec2-customer-gateway.html#cfn-ec2-customergateway-type
         PrimitiveType: String
         UpdateType: Immutable

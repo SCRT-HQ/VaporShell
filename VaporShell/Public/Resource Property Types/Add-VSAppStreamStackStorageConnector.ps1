@@ -1,27 +1,33 @@
 function Add-VSAppStreamStackStorageConnector {
     <#
     .SYNOPSIS
-        Adds an AWS::AppStream::Stack.StorageConnector resource property to the template. 
+        Adds an AWS::AppStream::Stack.StorageConnector resource property to the template. A connector that enables persistent storage for users.
 
     .DESCRIPTION
         Adds an AWS::AppStream::Stack.StorageConnector resource property to the template.
-
+A connector that enables persistent storage for users.
 
     .LINK
         http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-appstream-stack-storageconnector.html
 
     .PARAMETER Domains
+        The names of the domains for the account.
+
         PrimitiveItemType: String
         Type: List
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-appstream-stack-storageconnector.html#cfn-appstream-stack-storageconnector-domains
         UpdateType: Mutable
 
     .PARAMETER ResourceIdentifier
+        The ARN of the storage connector.
+
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-appstream-stack-storageconnector.html#cfn-appstream-stack-storageconnector-resourceidentifier
         PrimitiveType: String
         UpdateType: Mutable
 
     .PARAMETER ConnectorType
+        The type of storage connector.
+
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-appstream-stack-storageconnector.html#cfn-appstream-stack-storageconnector-connectortype
         PrimitiveType: String
         UpdateType: Mutable

@@ -1,26 +1,33 @@
 function Add-VSElasticLoadBalancingV2ListenerFixedResponseConfig {
     <#
     .SYNOPSIS
-        Adds an AWS::ElasticLoadBalancingV2::Listener.FixedResponseConfig resource property to the template. 
+        Adds an AWS::ElasticLoadBalancingV2::Listener.FixedResponseConfig resource property to the template. Specifies information required when returning a custom HTTP response.
 
     .DESCRIPTION
         Adds an AWS::ElasticLoadBalancingV2::Listener.FixedResponseConfig resource property to the template.
-
+Specifies information required when returning a custom HTTP response.
 
     .LINK
         http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-elasticloadbalancingv2-listener-fixedresponseconfig.html
 
     .PARAMETER ContentType
+        The content type.
+Valid Values: text/plain | text/css | text/html | application/javascript | application/json
+
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-elasticloadbalancingv2-listener-fixedresponseconfig.html#cfn-elasticloadbalancingv2-listener-fixedresponseconfig-contenttype
         PrimitiveType: String
         UpdateType: Mutable
 
     .PARAMETER MessageBody
+        The message.
+
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-elasticloadbalancingv2-listener-fixedresponseconfig.html#cfn-elasticloadbalancingv2-listener-fixedresponseconfig-messagebody
         PrimitiveType: String
         UpdateType: Mutable
 
     .PARAMETER StatusCode
+        The HTTP response code 2XX, 4XX, or 5XX.
+
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-elasticloadbalancingv2-listener-fixedresponseconfig.html#cfn-elasticloadbalancingv2-listener-fixedresponseconfig-statuscode
         PrimitiveType: String
         UpdateType: Mutable

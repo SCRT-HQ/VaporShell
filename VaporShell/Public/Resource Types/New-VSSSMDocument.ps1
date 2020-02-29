@@ -1,10 +1,10 @@
 function New-VSSSMDocument {
     <#
     .SYNOPSIS
-        Adds an AWS::SSM::Document resource to the template. 
+        Adds an AWS::SSM::Document resource to the template. The AWS::SSM::Document resource creates an SSM document in AWS Systems Manager that defines the actions that Systems Manager performs, which you can use to set up and run commands on your instances.
 
     .DESCRIPTION
-        Adds an AWS::SSM::Document resource to the template. 
+        Adds an AWS::SSM::Document resource to the template. The AWS::SSM::Document resource creates an SSM document in AWS Systems Manager that defines the actions that Systems Manager performs, which you can use to set up and run commands on your instances.
 
     .LINK
         http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ssm-document.html
@@ -13,21 +13,29 @@ function New-VSSSMDocument {
         The logical ID must be alphanumeric (A-Za-z0-9) and unique within the template. Use the logical name to reference the resource in other parts of the template. For example, if you want to map an Amazon Elastic Block Store volume to an Amazon EC2 instance, you reference the logical IDs to associate the block stores with the instance.
 
     .PARAMETER Content
+        A valid JSON or YAML string.
+
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ssm-document.html#cfn-ssm-document-content
         PrimitiveType: Json
         UpdateType: Immutable
 
     .PARAMETER DocumentType
+        The type of document to create. Valid document types include: Command, Policy, Automation, Session, and Package.
+
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ssm-document.html#cfn-ssm-document-documenttype
         PrimitiveType: String
         UpdateType: Immutable
 
     .PARAMETER Name
+        +  AWS Systems Manager Documents: https://docs.aws.amazon.com/systems-manager/latest/userguide/sysman-ssm-docs.html
+
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ssm-document.html#cfn-ssm-document-name
         PrimitiveType: String
         UpdateType: Immutable
 
     .PARAMETER Tags
+        AWS CloudFormation resource tags to apply to the document. Use tags to help you identify and categorize resources.
+
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ssm-document.html#cfn-ssm-document-tags
         DuplicatesAllowed: True
         ItemType: Tag

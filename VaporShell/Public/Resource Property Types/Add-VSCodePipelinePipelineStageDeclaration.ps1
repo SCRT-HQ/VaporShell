@@ -1,16 +1,18 @@
 function Add-VSCodePipelinePipelineStageDeclaration {
     <#
     .SYNOPSIS
-        Adds an AWS::CodePipeline::Pipeline.StageDeclaration resource property to the template. 
+        Adds an AWS::CodePipeline::Pipeline.StageDeclaration resource property to the template. Represents information about a stage and its definition.
 
     .DESCRIPTION
         Adds an AWS::CodePipeline::Pipeline.StageDeclaration resource property to the template.
-
+Represents information about a stage and its definition.
 
     .LINK
         http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-codepipeline-pipeline-stages.html
 
     .PARAMETER Actions
+        The actions included in a stage.
+
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-codepipeline-pipeline-stages.html#cfn-codepipeline-pipeline-stages-actions
         DuplicatesAllowed: False
         ItemType: ActionDeclaration
@@ -18,6 +20,8 @@ function Add-VSCodePipelinePipelineStageDeclaration {
         UpdateType: Mutable
 
     .PARAMETER Blockers
+        Reserved for future use.
+
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-codepipeline-pipeline-stages.html#cfn-codepipeline-pipeline-stages-blockers
         DuplicatesAllowed: False
         ItemType: BlockerDeclaration
@@ -25,6 +29,8 @@ function Add-VSCodePipelinePipelineStageDeclaration {
         UpdateType: Mutable
 
     .PARAMETER Name
+        The name of the stage.
+
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-codepipeline-pipeline-stages.html#cfn-codepipeline-pipeline-stages-name
         PrimitiveType: String
         UpdateType: Mutable

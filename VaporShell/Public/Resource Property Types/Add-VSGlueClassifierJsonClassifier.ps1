@@ -1,21 +1,25 @@
 function Add-VSGlueClassifierJsonClassifier {
     <#
     .SYNOPSIS
-        Adds an AWS::Glue::Classifier.JsonClassifier resource property to the template. 
+        Adds an AWS::Glue::Classifier.JsonClassifier resource property to the template. A classifier for JSON content.
 
     .DESCRIPTION
         Adds an AWS::Glue::Classifier.JsonClassifier resource property to the template.
-
+A classifier for JSON content.
 
     .LINK
         http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-glue-classifier-jsonclassifier.html
 
     .PARAMETER JsonPath
+        A JsonPath string defining the JSON data for the classifier to classify. AWS Glue supports a subset of JsonPath, as described in Writing JsonPath Custom Classifiers: https://docs.aws.amazon.com/glue/latest/dg/custom-classifier.html#custom-classifier-json.
+
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-glue-classifier-jsonclassifier.html#cfn-glue-classifier-jsonclassifier-jsonpath
         PrimitiveType: String
         UpdateType: Mutable
 
     .PARAMETER Name
+        The name of the classifier.
+
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-glue-classifier-jsonclassifier.html#cfn-glue-classifier-jsonclassifier-name
         PrimitiveType: String
         UpdateType: Immutable

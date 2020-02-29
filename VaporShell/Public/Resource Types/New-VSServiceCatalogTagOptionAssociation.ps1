@@ -1,10 +1,10 @@
 function New-VSServiceCatalogTagOptionAssociation {
     <#
     .SYNOPSIS
-        Adds an AWS::ServiceCatalog::TagOptionAssociation resource to the template. 
+        Adds an AWS::ServiceCatalog::TagOptionAssociation resource to the template. Associate the specified TagOption with the specified portfolio or product.
 
     .DESCRIPTION
-        Adds an AWS::ServiceCatalog::TagOptionAssociation resource to the template. 
+        Adds an AWS::ServiceCatalog::TagOptionAssociation resource to the template. Associate the specified TagOption with the specified portfolio or product.
 
     .LINK
         http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-servicecatalog-tagoptionassociation.html
@@ -13,11 +13,15 @@ function New-VSServiceCatalogTagOptionAssociation {
         The logical ID must be alphanumeric (A-Za-z0-9) and unique within the template. Use the logical name to reference the resource in other parts of the template. For example, if you want to map an Amazon Elastic Block Store volume to an Amazon EC2 instance, you reference the logical IDs to associate the block stores with the instance.
 
     .PARAMETER TagOptionId
+        The TagOption identifier.
+
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-servicecatalog-tagoptionassociation.html#cfn-servicecatalog-tagoptionassociation-tagoptionid
         PrimitiveType: String
         UpdateType: Immutable
 
     .PARAMETER ResourceId
+        The resource identifier.
+
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-servicecatalog-tagoptionassociation.html#cfn-servicecatalog-tagoptionassociation-resourceid
         PrimitiveType: String
         UpdateType: Immutable

@@ -1,10 +1,10 @@
 function New-VSElasticLoadBalancingV2Listener {
     <#
     .SYNOPSIS
-        Adds an AWS::ElasticLoadBalancingV2::Listener resource to the template. 
+        Adds an AWS::ElasticLoadBalancingV2::Listener resource to the template. Specifies a listener for an Application Load Balancer or Network Load Balancer.
 
     .DESCRIPTION
-        Adds an AWS::ElasticLoadBalancingV2::Listener resource to the template. 
+        Adds an AWS::ElasticLoadBalancingV2::Listener resource to the template. Specifies a listener for an Application Load Balancer or Network Load Balancer.
 
     .LINK
         http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-elasticloadbalancingv2-listener.html
@@ -13,6 +13,8 @@ function New-VSElasticLoadBalancingV2Listener {
         The logical ID must be alphanumeric (A-Za-z0-9) and unique within the template. Use the logical name to reference the resource in other parts of the template. For example, if you want to map an Amazon Elastic Block Store volume to an Amazon EC2 instance, you reference the logical IDs to associate the block stores with the instance.
 
     .PARAMETER Certificates
+        The default SSL server certificate. You must provide exactly one certificate if the listener protocol is HTTPS or TLS.
+
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-elasticloadbalancingv2-listener.html#cfn-elasticloadbalancingv2-listener-certificates
         DuplicatesAllowed: False
         ItemType: Certificate
@@ -20,6 +22,8 @@ function New-VSElasticLoadBalancingV2Listener {
         UpdateType: Mutable
 
     .PARAMETER DefaultActions
+        The actions for the default rule.
+
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-elasticloadbalancingv2-listener.html#cfn-elasticloadbalancingv2-listener-defaultactions
         DuplicatesAllowed: False
         ItemType: Action
@@ -27,21 +31,29 @@ function New-VSElasticLoadBalancingV2Listener {
         UpdateType: Mutable
 
     .PARAMETER LoadBalancerArn
+        The Amazon Resource Name ARN of the load balancer.
+
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-elasticloadbalancingv2-listener.html#cfn-elasticloadbalancingv2-listener-loadbalancerarn
         PrimitiveType: String
         UpdateType: Immutable
 
     .PARAMETER Port
+        The port on which the load balancer is listening.
+
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-elasticloadbalancingv2-listener.html#cfn-elasticloadbalancingv2-listener-port
         PrimitiveType: Integer
         UpdateType: Mutable
 
     .PARAMETER Protocol
+        The protocol for connections from clients to the load balancer. For Application Load Balancers, the supported protocols are HTTP and HTTPS. For Network Load Balancers, the supported protocols are TCP and TLS.
+
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-elasticloadbalancingv2-listener.html#cfn-elasticloadbalancingv2-listener-protocol
         PrimitiveType: String
         UpdateType: Mutable
 
     .PARAMETER SslPolicy
+        HTTPS and TLS listeners] The security policy that defines which ciphers and protocols are supported. The default is the current predefined security policy.
+
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-elasticloadbalancingv2-listener.html#cfn-elasticloadbalancingv2-listener-sslpolicy
         PrimitiveType: String
         UpdateType: Mutable

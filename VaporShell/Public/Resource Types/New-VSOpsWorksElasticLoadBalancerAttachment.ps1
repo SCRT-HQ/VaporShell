@@ -1,10 +1,10 @@
 function New-VSOpsWorksElasticLoadBalancerAttachment {
     <#
     .SYNOPSIS
-        Adds an AWS::OpsWorks::ElasticLoadBalancerAttachment resource to the template. 
+        Adds an AWS::OpsWorks::ElasticLoadBalancerAttachment resource to the template. Attaches an Elastic Load Balancing load balancer to an AWS OpsWorks layer that you specify.
 
     .DESCRIPTION
-        Adds an AWS::OpsWorks::ElasticLoadBalancerAttachment resource to the template. 
+        Adds an AWS::OpsWorks::ElasticLoadBalancerAttachment resource to the template. Attaches an Elastic Load Balancing load balancer to an AWS OpsWorks layer that you specify.
 
     .LINK
         http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-opsworks-elbattachment.html
@@ -13,11 +13,15 @@ function New-VSOpsWorksElasticLoadBalancerAttachment {
         The logical ID must be alphanumeric (A-Za-z0-9) and unique within the template. Use the logical name to reference the resource in other parts of the template. For example, if you want to map an Amazon Elastic Block Store volume to an Amazon EC2 instance, you reference the logical IDs to associate the block stores with the instance.
 
     .PARAMETER ElasticLoadBalancerName
+        The Elastic Load Balancing instance's name.
+
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-opsworks-elbattachment.html#cfn-opsworks-elbattachment-elbname
         PrimitiveType: String
         UpdateType: Mutable
 
     .PARAMETER LayerId
+        The AWS OpsWorks layer ID that the Elastic Load Balancing load balancer will be attached to.
+
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-opsworks-elbattachment.html#cfn-opsworks-elbattachment-layerid
         PrimitiveType: String
         UpdateType: Mutable

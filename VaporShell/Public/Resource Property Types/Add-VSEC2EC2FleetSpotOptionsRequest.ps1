@@ -1,26 +1,34 @@
 function Add-VSEC2EC2FleetSpotOptionsRequest {
     <#
     .SYNOPSIS
-        Adds an AWS::EC2::EC2Fleet.SpotOptionsRequest resource property to the template. 
+        Adds an AWS::EC2::EC2Fleet.SpotOptionsRequest resource property to the template. Specifies the configuration of Spot Instances for an EC2 Fleet.
 
     .DESCRIPTION
         Adds an AWS::EC2::EC2Fleet.SpotOptionsRequest resource property to the template.
+Specifies the configuration of Spot Instances for an EC2 Fleet.
 
+SpotOptionsRequest is a property of the  AWS::EC2::EC2Fleet: https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ec2-ec2fleet.html resource.
 
     .LINK
         http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-ec2fleet-spotoptionsrequest.html
 
     .PARAMETER AllocationStrategy
+        Indicates how to allocate the target capacity across the Spot pools specified by the Spot Fleet request. The default is lowestPrice.
+
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-ec2fleet-spotoptionsrequest.html#cfn-ec2-ec2fleet-spotoptionsrequest-allocationstrategy
         PrimitiveType: String
         UpdateType: Mutable
 
     .PARAMETER InstanceInterruptionBehavior
+        The behavior when a Spot Instance is interrupted. The default is terminate.
+
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-ec2fleet-spotoptionsrequest.html#cfn-ec2-ec2fleet-spotoptionsrequest-instanceinterruptionbehavior
         PrimitiveType: String
         UpdateType: Mutable
 
     .PARAMETER InstancePoolsToUseCount
+        The number of Spot pools across which to allocate your target Spot capacity. Valid only when Spot **AllocationStrategy** is set to lowest-price. EC2 Fleet selects the cheapest Spot pools and evenly allocates your target Spot capacity across the number of Spot pools that you specify.
+
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-ec2fleet-spotoptionsrequest.html#cfn-ec2-ec2fleet-spotoptionsrequest-instancepoolstousecount
         PrimitiveType: Integer
         UpdateType: Mutable

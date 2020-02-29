@@ -22,7 +22,7 @@ function Add-VSWAFv2WebACLNotStatementTwo {
     [cmdletbinding()]
     Param
     (
-        [parameter(Mandatory = $false)]
+        [parameter(Mandatory = $true)]
         $Statement
     )
     Begin {

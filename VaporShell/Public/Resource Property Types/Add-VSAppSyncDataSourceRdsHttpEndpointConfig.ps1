@@ -1,36 +1,48 @@
 function Add-VSAppSyncDataSourceRdsHttpEndpointConfig {
     <#
     .SYNOPSIS
-        Adds an AWS::AppSync::DataSource.RdsHttpEndpointConfig resource property to the template. 
+        Adds an AWS::AppSync::DataSource.RdsHttpEndpointConfig resource property to the template. Use the RdsHttpEndpointConfig property type to specify RdsHttpEndpoint for an AWS AppSync relational database.
 
     .DESCRIPTION
         Adds an AWS::AppSync::DataSource.RdsHttpEndpointConfig resource property to the template.
+Use the RdsHttpEndpointConfig property type to specify RdsHttpEndpoint for an AWS AppSync relational database.
 
+RdsHttpEndpointConfig is a property of the AWS AppSync DataSource RelationalDatabaseConfig: https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-appsync-datasource-relationaldatabaseconfig.html resource.
 
     .LINK
         http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-appsync-datasource-rdshttpendpointconfig.html
 
     .PARAMETER AwsRegion
+        AWS Region for RDS HTTP endpoint.
+
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-appsync-datasource-rdshttpendpointconfig.html#cfn-appsync-datasource-rdshttpendpointconfig-awsregion
         PrimitiveType: String
         UpdateType: Mutable
 
     .PARAMETER Schema
+        Logical schema name.
+
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-appsync-datasource-rdshttpendpointconfig.html#cfn-appsync-datasource-rdshttpendpointconfig-schema
         PrimitiveType: String
         UpdateType: Mutable
 
     .PARAMETER DatabaseName
+        Logical database name.
+
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-appsync-datasource-rdshttpendpointconfig.html#cfn-appsync-datasource-rdshttpendpointconfig-databasename
         PrimitiveType: String
         UpdateType: Mutable
 
     .PARAMETER DbClusterIdentifier
+        Amazon RDS cluster identifier.
+
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-appsync-datasource-rdshttpendpointconfig.html#cfn-appsync-datasource-rdshttpendpointconfig-dbclusteridentifier
         PrimitiveType: String
         UpdateType: Mutable
 
     .PARAMETER AwsSecretStoreArn
+        AWS secret store ARN for database credentials.
+
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-appsync-datasource-rdshttpendpointconfig.html#cfn-appsync-datasource-rdshttpendpointconfig-awssecretstorearn
         PrimitiveType: String
         UpdateType: Mutable

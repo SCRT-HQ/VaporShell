@@ -1,26 +1,32 @@
 function Add-VSOpsWorksAppDataSource {
     <#
     .SYNOPSIS
-        Adds an AWS::OpsWorks::App.DataSource resource property to the template. 
+        Adds an AWS::OpsWorks::App.DataSource resource property to the template. Describes an app's data source.
 
     .DESCRIPTION
         Adds an AWS::OpsWorks::App.DataSource resource property to the template.
-
+Describes an app's data source.
 
     .LINK
         http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-opsworks-app-datasource.html
 
     .PARAMETER Arn
+        The data source's ARN.
+
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-opsworks-app-datasource.html#cfn-opsworks-app-datasource-arn
         PrimitiveType: String
         UpdateType: Mutable
 
     .PARAMETER DatabaseName
+        The database name.
+
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-opsworks-app-datasource.html#cfn-opsworks-app-datasource-databasename
         PrimitiveType: String
         UpdateType: Mutable
 
     .PARAMETER Type
+        The data source's type, AutoSelectOpsworksMysqlInstance, OpsworksMysqlInstance, RdsDbInstance, or None.
+
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-opsworks-app-datasource.html#cfn-opsworks-app-datasource-type
         PrimitiveType: String
         UpdateType: Mutable

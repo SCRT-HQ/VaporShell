@@ -1,11 +1,13 @@
 function Add-VSMediaLiveChannelAribSourceSettings {
     <#
     .SYNOPSIS
-        Adds an AWS::MediaLive::Channel.AribSourceSettings resource property to the template. 
+        Adds an AWS::MediaLive::Channel.AribSourceSettings resource property to the template. Information about the ARIB captions to extract from the input.
 
     .DESCRIPTION
         Adds an AWS::MediaLive::Channel.AribSourceSettings resource property to the template.
+Information about the ARIB captions to extract from the input.
 
+The parent of this entity is CaptionSelectorSettings.
 
     .LINK
         http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-medialive-channel-aribsourcesettings.html

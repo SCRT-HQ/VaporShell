@@ -1,21 +1,25 @@
 function Add-VSAutoScalingPlansScalingPlanMetricDimension {
     <#
     .SYNOPSIS
-        Adds an AWS::AutoScalingPlans::ScalingPlan.MetricDimension resource property to the template. 
+        Adds an AWS::AutoScalingPlans::ScalingPlan.MetricDimension resource property to the template. MetricDimension is a subproperty of CustomizedScalingMetricSpecification: https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-autoscalingplans-scalingplan-customizedscalingmetricspecification.html that specifies a dimension for a customized metric to use with AWS Auto Scaling. Dimensions are arbitrary name/value pairs that can be associated with a CloudWatch metric. Duplicate dimensions are not allowed.
 
     .DESCRIPTION
         Adds an AWS::AutoScalingPlans::ScalingPlan.MetricDimension resource property to the template.
-
+MetricDimension is a subproperty of CustomizedScalingMetricSpecification: https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-autoscalingplans-scalingplan-customizedscalingmetricspecification.html that specifies a dimension for a customized metric to use with AWS Auto Scaling. Dimensions are arbitrary name/value pairs that can be associated with a CloudWatch metric. Duplicate dimensions are not allowed.
 
     .LINK
         http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-autoscalingplans-scalingplan-metricdimension.html
 
     .PARAMETER Value
+        The value of the dimension.
+
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-autoscalingplans-scalingplan-metricdimension.html#cfn-autoscalingplans-scalingplan-metricdimension-value
         PrimitiveType: String
         UpdateType: Mutable
 
     .PARAMETER Name
+        The name of the dimension.
+
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-autoscalingplans-scalingplan-metricdimension.html#cfn-autoscalingplans-scalingplan-metricdimension-name
         PrimitiveType: String
         UpdateType: Mutable

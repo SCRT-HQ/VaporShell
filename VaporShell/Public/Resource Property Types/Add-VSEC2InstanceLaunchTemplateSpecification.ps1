@@ -1,26 +1,34 @@
 function Add-VSEC2InstanceLaunchTemplateSpecification {
     <#
     .SYNOPSIS
-        Adds an AWS::EC2::Instance.LaunchTemplateSpecification resource property to the template. 
+        Adds an AWS::EC2::Instance.LaunchTemplateSpecification resource property to the template. Specifies a launch template. You must specify either the launch template ID or launch template name.
 
     .DESCRIPTION
         Adds an AWS::EC2::Instance.LaunchTemplateSpecification resource property to the template.
+Specifies a launch template. You must specify either the launch template ID or launch template name.
 
+LaunchTemplateSpecification is a property of the AWS::EC2::Instance: https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-instance.html resource.
 
     .LINK
         http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-instance-launchtemplatespecification.html
 
     .PARAMETER LaunchTemplateId
+        The ID of the launch template.
+
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-instance-launchtemplatespecification.html#cfn-ec2-instance-launchtemplatespecification-launchtemplateid
         PrimitiveType: String
         UpdateType: Mutable
 
     .PARAMETER LaunchTemplateName
+        The name of the launch template.
+
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-instance-launchtemplatespecification.html#cfn-ec2-instance-launchtemplatespecification-launchtemplatename
         PrimitiveType: String
         UpdateType: Mutable
 
     .PARAMETER Version
+        The version number of the launch template.AWS CloudFormation does not support specifying $Latest, or $Default for the template version number.
+
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-instance-launchtemplatespecification.html#cfn-ec2-instance-launchtemplatespecification-version
         PrimitiveType: String
         UpdateType: Mutable

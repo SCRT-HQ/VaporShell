@@ -1,26 +1,32 @@
 function Add-VSAppMeshRouteHttpRouteHeader {
     <#
     .SYNOPSIS
-        Adds an AWS::AppMesh::Route.HttpRouteHeader resource property to the template. 
+        Adds an AWS::AppMesh::Route.HttpRouteHeader resource property to the template. An object representing the HTTP header in the request.
 
     .DESCRIPTION
         Adds an AWS::AppMesh::Route.HttpRouteHeader resource property to the template.
-
+An object representing the HTTP header in the request.
 
     .LINK
         http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-appmesh-route-httprouteheader.html
 
     .PARAMETER Invert
+        Specify True to match the opposite of the HeaderMatchMethod method and value. The default value is False.
+
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-appmesh-route-httprouteheader.html#cfn-appmesh-route-httprouteheader-invert
         PrimitiveType: Boolean
         UpdateType: Mutable
 
     .PARAMETER Name
+        A name for the HTTP header in the client request that will be matched on.
+
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-appmesh-route-httprouteheader.html#cfn-appmesh-route-httprouteheader-name
         PrimitiveType: String
         UpdateType: Mutable
 
     .PARAMETER Match
+        The HeaderMatchMethod object.
+
         Type: HeaderMatchMethod
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-appmesh-route-httprouteheader.html#cfn-appmesh-route-httprouteheader-match
         UpdateType: Mutable

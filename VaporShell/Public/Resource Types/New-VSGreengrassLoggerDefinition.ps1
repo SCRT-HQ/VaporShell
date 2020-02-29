@@ -1,10 +1,18 @@
 function New-VSGreengrassLoggerDefinition {
     <#
     .SYNOPSIS
-        Adds an AWS::Greengrass::LoggerDefinition resource to the template. 
+        Adds an AWS::Greengrass::LoggerDefinition resource to the template. The AWS::Greengrass::LoggerDefinition resource represents a logger definition for AWS IoT Greengrass. Logger definitions are used to organize your logger definition versions.
 
     .DESCRIPTION
-        Adds an AWS::Greengrass::LoggerDefinition resource to the template. 
+        Adds an AWS::Greengrass::LoggerDefinition resource to the template. The AWS::Greengrass::LoggerDefinition resource represents a logger definition for AWS IoT Greengrass. Logger definitions are used to organize your logger definition versions.
+
+Logger definitions can reference multiple logger definition versions. All logger definition versions must be associated with a logger definition. Each logger definition version can contain one or more loggers.
+
+**Note**
+
+When you create a logger definition, you can optionally include an initial logger definition version. To associate a logger definition version later, create an https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-greengrass-loggerdefinitionversion.html: https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-greengrass-loggerdefinitionversion.html resource and specify the ID of this logger definition.
+
+After you create the logger definition version that contains the loggers you want to deploy, you must add it to your group version. For more information, see https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-greengrass-group.html: https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-greengrass-group.html.
 
     .LINK
         http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-greengrass-loggerdefinition.html
@@ -13,16 +21,31 @@ function New-VSGreengrassLoggerDefinition {
         The logical ID must be alphanumeric (A-Za-z0-9) and unique within the template. Use the logical name to reference the resource in other parts of the template. For example, if you want to map an Amazon Elastic Block Store volume to an Amazon EC2 instance, you reference the logical IDs to associate the block stores with the instance.
 
     .PARAMETER InitialVersion
+        The logger definition version to include when the logger definition is created. A logger definition version contains a list of https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-greengrass-loggerdefinition-logger.html: https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-greengrass-loggerdefinition-logger.html property types.
+To associate a logger definition version after the logger definition is created, create an  AWS::Greengrass::LoggerDefinitionVersion : https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-greengrass-loggerdefinitionversion.html resource and specify the ID of this logger definition.
+
         Type: LoggerDefinitionVersion
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-greengrass-loggerdefinition.html#cfn-greengrass-loggerdefinition-initialversion
         UpdateType: Immutable
 
     .PARAMETER Tags
+        Application-specific metadata to attach to the logger definition. You can use tags in IAM policies to control access to AWS IoT Greengrass resources. You can also use tags to categorize your resources. For more information, see Tagging Your AWS IoT Greengrass Resources: https://docs.aws.amazon.com/greengrass/latest/developerguide/tagging.html in the *AWS IoT Greengrass Developer Guide*.
+This Json property type is processed as a map of key-value pairs. It uses the following format, which is different from most Tags implementations in AWS CloudFormation templates.
+
+"Tags": {
+"KeyName0": "value",
+"KeyName1": "value",
+"KeyName2": "value"
+}
+
+
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-greengrass-loggerdefinition.html#cfn-greengrass-loggerdefinition-tags
         PrimitiveType: Json
         UpdateType: Mutable
 
     .PARAMETER Name
+        The name of the logger definition.
+
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-greengrass-loggerdefinition.html#cfn-greengrass-loggerdefinition-name
         PrimitiveType: String
         UpdateType: Mutable

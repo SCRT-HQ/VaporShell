@@ -1,22 +1,26 @@
 function Add-VSAutoScalingPlansScalingPlanTagFilter {
     <#
     .SYNOPSIS
-        Adds an AWS::AutoScalingPlans::ScalingPlan.TagFilter resource property to the template. 
+        Adds an AWS::AutoScalingPlans::ScalingPlan.TagFilter resource property to the template. TagFilter is a subproperty of ApplicationSource: https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-autoscalingplans-scalingplan-applicationsource.html that specifies a tag for an application source to use with AWS Auto Scaling.
 
     .DESCRIPTION
         Adds an AWS::AutoScalingPlans::ScalingPlan.TagFilter resource property to the template.
-
+TagFilter is a subproperty of ApplicationSource: https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-autoscalingplans-scalingplan-applicationsource.html that specifies a tag for an application source to use with AWS Auto Scaling.
 
     .LINK
         http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-autoscalingplans-scalingplan-tagfilter.html
 
     .PARAMETER Values
+        The tag values 0 to 20.
+
         PrimitiveItemType: String
         Type: List
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-autoscalingplans-scalingplan-tagfilter.html#cfn-autoscalingplans-scalingplan-tagfilter-values
         UpdateType: Mutable
 
     .PARAMETER Key
+        The tag key.
+
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-autoscalingplans-scalingplan-tagfilter.html#cfn-autoscalingplans-scalingplan-tagfilter-key
         PrimitiveType: String
         UpdateType: Mutable

@@ -1,10 +1,10 @@
 function New-VSApiGatewayUsagePlanKey {
     <#
     .SYNOPSIS
-        Adds an AWS::ApiGateway::UsagePlanKey resource to the template. 
+        Adds an AWS::ApiGateway::UsagePlanKey resource to the template. The AWS::ApiGateway::UsagePlanKey resource associates an API key with a usage plan. This association determines which users the usage plan is applied to.
 
     .DESCRIPTION
-        Adds an AWS::ApiGateway::UsagePlanKey resource to the template. 
+        Adds an AWS::ApiGateway::UsagePlanKey resource to the template. The AWS::ApiGateway::UsagePlanKey resource associates an API key with a usage plan. This association determines which users the usage plan is applied to.
 
     .LINK
         http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-apigateway-usageplankey.html
@@ -13,16 +13,22 @@ function New-VSApiGatewayUsagePlanKey {
         The logical ID must be alphanumeric (A-Za-z0-9) and unique within the template. Use the logical name to reference the resource in other parts of the template. For example, if you want to map an Amazon Elastic Block Store volume to an Amazon EC2 instance, you reference the logical IDs to associate the block stores with the instance.
 
     .PARAMETER KeyId
+        The ID of the usage plan key.
+
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-apigateway-usageplankey.html#cfn-apigateway-usageplankey-keyid
         PrimitiveType: String
         UpdateType: Immutable
 
     .PARAMETER KeyType
+        The type of usage plan key. Currently, the only valid key type is API_KEY.
+
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-apigateway-usageplankey.html#cfn-apigateway-usageplankey-keytype
         PrimitiveType: String
         UpdateType: Immutable
 
     .PARAMETER UsagePlanId
+        The value of the usage plan key.
+
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-apigateway-usageplankey.html#cfn-apigateway-usageplankey-usageplanid
         PrimitiveType: String
         UpdateType: Immutable

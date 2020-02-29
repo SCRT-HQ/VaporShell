@@ -1,21 +1,27 @@
 function Add-VSAppSyncDataSourceElasticsearchConfig {
     <#
     .SYNOPSIS
-        Adds an AWS::AppSync::DataSource.ElasticsearchConfig resource property to the template. 
+        Adds an AWS::AppSync::DataSource.ElasticsearchConfig resource property to the template. The ElasticsearchConfig property type specifies the AwsRegion and Endpoints for an Amazon Elasticsearch Service domain in your account for an AWS AppSync data source.
 
     .DESCRIPTION
         Adds an AWS::AppSync::DataSource.ElasticsearchConfig resource property to the template.
+The ElasticsearchConfig property type specifies the AwsRegion and Endpoints for an Amazon Elasticsearch Service domain in your account for an AWS AppSync data source.
 
+ElasticsearchConfig is a property of the AWS::AppSync::DataSource: https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-appsync-datasource.html property type.
 
     .LINK
         http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-appsync-datasource-elasticsearchconfig.html
 
     .PARAMETER AwsRegion
+        The AWS Region.
+
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-appsync-datasource-elasticsearchconfig.html#cfn-appsync-datasource-elasticsearchconfig-awsregion
         PrimitiveType: String
         UpdateType: Mutable
 
     .PARAMETER Endpoint
+        The endpoint.
+
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-appsync-datasource-elasticsearchconfig.html#cfn-appsync-datasource-elasticsearchconfig-endpoint
         PrimitiveType: String
         UpdateType: Mutable

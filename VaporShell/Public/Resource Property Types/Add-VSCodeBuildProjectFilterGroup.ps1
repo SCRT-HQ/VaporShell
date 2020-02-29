@@ -1,11 +1,17 @@
 function Add-VSCodeBuildProjectFilterGroup {
     <#
     .SYNOPSIS
-        Adds an AWS::CodeBuild::Project.FilterGroup resource property to the template. 
+        Adds an AWS::CodeBuild::Project.FilterGroup resource property to the template. A list of WebhookFilter objects used to determine which webhook events are triggered. At least one WebhookFilter in the list must specify EVENT as its type. The FilterGroups property of the  AWS CodeBuild Project ProjectTriggers: https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-codebuild-project-projecttriggers.html property type is a list of FilterGroup objects.
 
     .DESCRIPTION
         Adds an AWS::CodeBuild::Project.FilterGroup resource property to the template.
+A list of WebhookFilter objects used to determine which webhook events are triggered. At least one WebhookFilter in the list must specify EVENT as its type. The FilterGroups property of the  AWS CodeBuild Project ProjectTriggers: https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-codebuild-project-projecttriggers.html property type is a list of FilterGroup objects.
 
+*Required:* No
+
+*Type:* A list of of WebhookFilter: https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-codebuild-project-webhookfilter.html objects
+
+*Update requires:* No interruption
 
     .LINK
         http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-codebuild-project-filtergroup.html

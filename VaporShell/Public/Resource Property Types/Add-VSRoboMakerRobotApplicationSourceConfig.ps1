@@ -1,26 +1,32 @@
 function Add-VSRoboMakerRobotApplicationSourceConfig {
     <#
     .SYNOPSIS
-        Adds an AWS::RoboMaker::RobotApplication.SourceConfig resource property to the template. 
+        Adds an AWS::RoboMaker::RobotApplication.SourceConfig resource property to the template. Information about a source configuration.
 
     .DESCRIPTION
         Adds an AWS::RoboMaker::RobotApplication.SourceConfig resource property to the template.
-
+Information about a source configuration.
 
     .LINK
         http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-robomaker-robotapplication-sourceconfig.html
 
     .PARAMETER S3Bucket
+        The Amazon S3 bucket name.
+
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-robomaker-robotapplication-sourceconfig.html#cfn-robomaker-robotapplication-sourceconfig-s3bucket
         PrimitiveType: String
         UpdateType: Mutable
 
     .PARAMETER Architecture
+        The target processor architecture for the application.
+
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-robomaker-robotapplication-sourceconfig.html#cfn-robomaker-robotapplication-sourceconfig-architecture
         PrimitiveType: String
         UpdateType: Mutable
 
     .PARAMETER S3Key
+        The s3 object key.
+
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-robomaker-robotapplication-sourceconfig.html#cfn-robomaker-robotapplication-sourceconfig-s3key
         PrimitiveType: String
         UpdateType: Mutable

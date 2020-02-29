@@ -23,7 +23,8 @@ function Add-VSWAFv2WebACLRegexPatternSetReferenceStatement {
     .PARAMETER TextTransformations
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-wafv2-webacl-regexpatternsetreferencestatement.html#cfn-wafv2-webacl-regexpatternsetreferencestatement-texttransformations
         UpdateType: Mutable
-        Type: TextTransformations
+        Type: List
+        ItemType: TextTransformation
 
     .FUNCTIONALITY
         Vaporshell
@@ -32,7 +33,7 @@ function Add-VSWAFv2WebACLRegexPatternSetReferenceStatement {
     [cmdletbinding()]
     Param
     (
-        [parameter(Mandatory = $false)]
+        [parameter(Mandatory = $true)]
         [ValidateScript( {
                 $allowedTypes = "System.String","Vaporshell.Function","Vaporshell.Condition"
                 if ([string]$($_.PSTypeNames) -match "($(($allowedTypes|ForEach-Object{[RegEx]::Escape($_)}) -join '|'))") {
@@ -43,9 +44,18 @@ function Add-VSWAFv2WebACLRegexPatternSetReferenceStatement {
                 }
             })]
         $Arn,
-        [parameter(Mandatory = $false)]
+        [parameter(Mandatory = $true)]
         $FieldToMatch,
-        [parameter(Mandatory = $false)]
+        [parameter(Mandatory = $true)]
+        [ValidateScript( {
+                $allowedTypes = "Vaporshell.Resource.WAFv2.WebACL.TextTransformation"
+                if ([string]$($_.PSTypeNames) -match "($(($allowedTypes|ForEach-Object{[RegEx]::Escape($_)}) -join '|'))") {
+                    $true
+                }
+                else {
+                    $PSCmdlet.ThrowTerminatingError((New-VSError -String "This parameter only accepts the following types: $($allowedTypes -join ", "). The current types of the value are: $($_.PSTypeNames -join ", ")."))
+                }
+            })]
         $TextTransformations
     )
     Begin {

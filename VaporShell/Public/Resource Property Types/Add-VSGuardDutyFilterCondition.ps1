@@ -1,38 +1,48 @@
 function Add-VSGuardDutyFilterCondition {
     <#
     .SYNOPSIS
-        Adds an AWS::GuardDuty::Filter.Condition resource property to the template. 
+        Adds an AWS::GuardDuty::Filter.Condition resource property to the template. Specifies the condition to apply to a single field when filtering through GuardDuty findings.
 
     .DESCRIPTION
         Adds an AWS::GuardDuty::Filter.Condition resource property to the template.
-
+Specifies the condition to apply to a single field when filtering through GuardDuty findings.
 
     .LINK
         http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-guardduty-filter-condition.html
 
     .PARAMETER Lt
+        Represents the less than condition to apply to a single field when querying for findings.
+
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-guardduty-filter-condition.html#cfn-guardduty-filter-condition-lt
         PrimitiveType: Integer
         UpdateType: Mutable
 
     .PARAMETER Gte
+        Represents the greater than or equal condition to apply to a single field when querying for findings.
+
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-guardduty-filter-condition.html#cfn-guardduty-filter-condition-gte
         PrimitiveType: Integer
         UpdateType: Mutable
 
     .PARAMETER Neq
+        Represents the not equal condition to apply to a single field when querying for findings.
+
         PrimitiveItemType: String
         Type: List
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-guardduty-filter-condition.html#cfn-guardduty-filter-condition-neq
         UpdateType: Mutable
 
     .PARAMETER Eq
+        Represents the equal condition to apply to a single field when querying for findings.
+
         PrimitiveItemType: String
         Type: List
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-guardduty-filter-condition.html#cfn-guardduty-filter-condition-eq
         UpdateType: Mutable
 
     .PARAMETER Lte
+        Represents the less than or equal condition to apply to a single field when querying for findings.
+
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-guardduty-filter-condition.html#cfn-guardduty-filter-condition-lte
         PrimitiveType: Integer
         UpdateType: Mutable

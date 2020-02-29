@@ -1,10 +1,14 @@
 function New-VSEC2Subnet {
     <#
     .SYNOPSIS
-        Adds an AWS::EC2::Subnet resource to the template. 
+        Adds an AWS::EC2::Subnet resource to the template. Specifies a subnet for a VPC.
 
     .DESCRIPTION
-        Adds an AWS::EC2::Subnet resource to the template. 
+        Adds an AWS::EC2::Subnet resource to the template. Specifies a subnet for a VPC.
+
+When you create each subnet, you provide the VPC ID and IPv4 CIDR block for the subnet. After you create a subnet, you can't change its CIDR block. The size of the subnet's IPv4 CIDR block can be the same as a VPC's IPv4 CIDR block, or a subset of a VPC's IPv4 CIDR block. If you create more than one subnet in a VPC, the subnets' CIDR blocks must not overlap. The smallest IPv4 subnet (and VPC you can create uses a /28 netmask (16 IPv4 addresses, and the largest uses a /16 netmask (65,536 IPv4 addresses.
+
+If you've associated an IPv6 CIDR block with your VPC, you can create a subnet with an IPv6 CIDR block that uses a /64 prefix length.
 
     .LINK
         http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ec2-subnet.html
@@ -13,31 +17,49 @@ function New-VSEC2Subnet {
         The logical ID must be alphanumeric (A-Za-z0-9) and unique within the template. Use the logical name to reference the resource in other parts of the template. For example, if you want to map an Amazon Elastic Block Store volume to an Amazon EC2 instance, you reference the logical IDs to associate the block stores with the instance.
 
     .PARAMETER AssignIpv6AddressOnCreation
+        Indicates whether a network interface created in this subnet receives an IPv6 address. The default value is false.
+If you specify a true or false value for AssignIpv6AddressOnCreation, Ipv6CidrBlock must also be specified.
+If AssignIpv6AddressOnCreation is specified, MapPublicIpOnLaunch cannot be specified.
+
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ec2-subnet.html#cfn-ec2-subnet-assignipv6addressoncreation
         PrimitiveType: Boolean
         UpdateType: Mutable
 
     .PARAMETER AvailabilityZone
+        The Availability Zone of the subnet.
+If you update this property, you must also update the CidrBlock property.
+
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ec2-subnet.html#cfn-ec2-subnet-availabilityzone
         PrimitiveType: String
         UpdateType: Immutable
 
     .PARAMETER CidrBlock
+        The IPv4 CIDR block assigned to the subnet.
+If you update this property, you must also update the AvailabilityZone property.
+
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ec2-subnet.html#cfn-ec2-subnet-cidrblock
         PrimitiveType: String
         UpdateType: Immutable
 
     .PARAMETER Ipv6CidrBlock
+        The IPv6 CIDR block.
+If you specify a true or false value for AssignIpv6AddressOnCreation, Ipv6CidrBlock must be specified.
+
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ec2-subnet.html#cfn-ec2-subnet-ipv6cidrblock
         PrimitiveType: String
         UpdateType: Mutable
 
     .PARAMETER MapPublicIpOnLaunch
+        Indicates whether instances launched in this subnet receive a public IPv4 address.
+If MapPublicIpOnLaunch is specified. AssignIpv6AddressOnCreation cannot be specified.
+
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ec2-subnet.html#cfn-ec2-subnet-mappubliciponlaunch
         PrimitiveType: Boolean
         UpdateType: Mutable
 
     .PARAMETER Tags
+        Any tags assigned to the subnet.
+
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ec2-subnet.html#cfn-ec2-subnet-tags
         DuplicatesAllowed: True
         ItemType: Tag
@@ -45,6 +67,9 @@ function New-VSEC2Subnet {
         UpdateType: Mutable
 
     .PARAMETER VpcId
+        The ID of the VPC the subnet is in.
+If you update this property, you must also update the CidrBlock property.
+
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ec2-subnet.html#cfn-awsec2subnet-prop-vpcid
         PrimitiveType: String
         UpdateType: Immutable

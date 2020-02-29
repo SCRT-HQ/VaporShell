@@ -1,10 +1,10 @@
 function New-VSApiGatewayApiKey {
     <#
     .SYNOPSIS
-        Adds an AWS::ApiGateway::ApiKey resource to the template. 
+        Adds an AWS::ApiGateway::ApiKey resource to the template. The AWS::ApiGateway::ApiKey resource creates a unique key that you can distribute to clients who are executing API Gateway Method resources that require an API key. To specify which API key clients must use, map the API key with the RestApi and Stage resources that include the methods that require a key.
 
     .DESCRIPTION
-        Adds an AWS::ApiGateway::ApiKey resource to the template. 
+        Adds an AWS::ApiGateway::ApiKey resource to the template. The AWS::ApiGateway::ApiKey resource creates a unique key that you can distribute to clients who are executing API Gateway Method resources that require an API key. To specify which API key clients must use, map the API key with the RestApi and Stage resources that include the methods that require a key.
 
     .LINK
         http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-apigateway-apikey.html
@@ -13,31 +13,44 @@ function New-VSApiGatewayApiKey {
         The logical ID must be alphanumeric (A-Za-z0-9) and unique within the template. Use the logical name to reference the resource in other parts of the template. For example, if you want to map an Amazon Elastic Block Store volume to an Amazon EC2 instance, you reference the logical IDs to associate the block stores with the instance.
 
     .PARAMETER CustomerId
+        An AWS Marketplace customer identifier to use when integrating with the AWS SaaS Marketplace.
+
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-apigateway-apikey.html#cfn-apigateway-apikey-customerid
         PrimitiveType: String
         UpdateType: Mutable
 
     .PARAMETER Description
+        A description of the purpose of the API key.
+
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-apigateway-apikey.html#cfn-apigateway-apikey-description
         PrimitiveType: String
         UpdateType: Mutable
 
     .PARAMETER Enabled
+        Indicates whether the API key can be used by clients.
+
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-apigateway-apikey.html#cfn-apigateway-apikey-enabled
         PrimitiveType: Boolean
         UpdateType: Mutable
 
     .PARAMETER GenerateDistinctId
+        Specifies whether the key identifier is distinct from the created API key value.
+
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-apigateway-apikey.html#cfn-apigateway-apikey-generatedistinctid
         PrimitiveType: Boolean
         UpdateType: Immutable
 
     .PARAMETER Name
+        A name for the API key. If you don't specify a name, AWS CloudFormation generates a unique physical ID and uses that ID for the API key name. For more information, see Name Type: https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-name.html.
+If you specify a name, you cannot perform updates that require replacement of this resource. You can perform updates that require no or some interruption. If you must replace the resource, specify a new name.
+
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-apigateway-apikey.html#cfn-apigateway-apikey-name
         PrimitiveType: String
         UpdateType: Immutable
 
     .PARAMETER StageKeys
+        A list of stages to associate with this API key.
+
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-apigateway-apikey.html#cfn-apigateway-apikey-stagekeys
         DuplicatesAllowed: False
         ItemType: StageKey
@@ -45,6 +58,8 @@ function New-VSApiGatewayApiKey {
         UpdateType: Mutable
 
     .PARAMETER Tags
+        + apikey:create: https://docs.aws.amazon.com/apigateway/api-reference/link-relation/apikey-create/ in the *Amazon API Gateway REST API Reference*
+
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-apigateway-apikey.html#cfn-apigateway-apikey-tags
         DuplicatesAllowed: True
         ItemType: Tag
@@ -52,6 +67,8 @@ function New-VSApiGatewayApiKey {
         UpdateType: Mutable
 
     .PARAMETER Value
+        The value of the API key.
+
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-apigateway-apikey.html#cfn-apigateway-apikey-value
         PrimitiveType: String
         UpdateType: Immutable

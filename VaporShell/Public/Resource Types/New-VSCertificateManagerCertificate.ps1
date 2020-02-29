@@ -1,10 +1,14 @@
 function New-VSCertificateManagerCertificate {
     <#
     .SYNOPSIS
-        Adds an AWS::CertificateManager::Certificate resource to the template. 
+        Adds an AWS::CertificateManager::Certificate resource to the template. The AWS::CertificateManager::Certificate resource requests an AWS Certificate Manager (ACM certificate that you can use to enable secure connections. For example, you can deploy an ACM certificate to an Elastic Load Balancer to enable HTTPS support. For more information, see RequestCertificate: https://docs.aws.amazon.com/acm/latest/APIReference/API_RequestCertificate.html in the AWS Certificate Manager API Reference.
 
     .DESCRIPTION
-        Adds an AWS::CertificateManager::Certificate resource to the template. 
+        Adds an AWS::CertificateManager::Certificate resource to the template. The AWS::CertificateManager::Certificate resource requests an AWS Certificate Manager (ACM certificate that you can use to enable secure connections. For example, you can deploy an ACM certificate to an Elastic Load Balancer to enable HTTPS support. For more information, see RequestCertificate: https://docs.aws.amazon.com/acm/latest/APIReference/API_RequestCertificate.html in the AWS Certificate Manager API Reference.
+
+**Important**
+
+When you use the AWS::CertificateManager::Certificate resource in an AWS CloudFormation stack, the stack will remain in the CREATE_IN_PROGRESS state. Further stack operations will be delayed until you validate the certificate request, either by acting upon the instructions in the validation email, or by adding a CNAME record to your DNS configuration. For more information, see Use Email to Validate Domain Ownership: https://docs.aws.amazon.com/acm/latest/userguide/gs-acm-validate-email.html and Use DNS to Validate Domain Ownership: https://docs.aws.amazon.com/acm/latest/userguide/gs-acm-validate-dns.html.
 
     .LINK
         http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-certificatemanager-certificate.html
@@ -13,11 +17,15 @@ function New-VSCertificateManagerCertificate {
         The logical ID must be alphanumeric (A-Za-z0-9) and unique within the template. Use the logical name to reference the resource in other parts of the template. For example, if you want to map an Amazon Elastic Block Store volume to an Amazon EC2 instance, you reference the logical IDs to associate the block stores with the instance.
 
     .PARAMETER DomainName
+        The fully qualified domain name FQDN, such as www.example.com, with which you want to secure an ACM certificate. Use an asterisk * to create a wildcard certificate that protects several sites in the same domain. For example, *.example.com protects www.example.com, site.example.com, and images.example.com.
+
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-certificatemanager-certificate.html#cfn-certificatemanager-certificate-domainname
         PrimitiveType: String
         UpdateType: Immutable
 
     .PARAMETER DomainValidationOptions
+        Domain information that domain name registrars use to verify your identity.
+
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-certificatemanager-certificate.html#cfn-certificatemanager-certificate-domainvalidationoptions
         DuplicatesAllowed: False
         ItemType: DomainValidationOption
@@ -25,6 +33,8 @@ function New-VSCertificateManagerCertificate {
         UpdateType: Immutable
 
     .PARAMETER SubjectAlternativeNames
+        Additional FQDNs to be included in the Subject Alternative Name extension of the ACM certificate. For example, you can add www.example.net to a certificate for which the DomainName field is www.example.com if users can reach your site by using either name.
+
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-certificatemanager-certificate.html#cfn-certificatemanager-certificate-subjectalternativenames
         DuplicatesAllowed: False
         PrimitiveItemType: String
@@ -32,6 +42,8 @@ function New-VSCertificateManagerCertificate {
         UpdateType: Immutable
 
     .PARAMETER Tags
+        Key-value pairs that can identity the certificate.
+
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-certificatemanager-certificate.html#cfn-certificatemanager-certificate-tags
         DuplicatesAllowed: True
         ItemType: Tag
@@ -39,6 +51,8 @@ function New-VSCertificateManagerCertificate {
         UpdateType: Mutable
 
     .PARAMETER ValidationMethod
+        The method you want to use to validate that you own or control the domain associated with a public certificate. You can validate with DNS: https://docs.aws.amazon.com/acm/latest/userguide/gs-acm-validate-dns.html or validate with email: https://docs.aws.amazon.com/acm/latest/userguide/gs-acm-validate-email.html. We recommend that you use DNS validation.
+
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-certificatemanager-certificate.html#cfn-certificatemanager-certificate-validationmethod
         PrimitiveType: String
         UpdateType: Immutable

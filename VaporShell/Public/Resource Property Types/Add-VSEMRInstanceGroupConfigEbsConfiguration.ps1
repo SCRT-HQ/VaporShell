@@ -1,16 +1,18 @@
 function Add-VSEMRInstanceGroupConfigEbsConfiguration {
     <#
     .SYNOPSIS
-        Adds an AWS::EMR::InstanceGroupConfig.EbsConfiguration resource property to the template. 
+        Adds an AWS::EMR::InstanceGroupConfig.EbsConfiguration resource property to the template. The Amazon EBS configuration of a cluster instance.
 
     .DESCRIPTION
         Adds an AWS::EMR::InstanceGroupConfig.EbsConfiguration resource property to the template.
-
+The Amazon EBS configuration of a cluster instance.
 
     .LINK
         http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-emr-ebsconfiguration.html
 
     .PARAMETER EbsBlockDeviceConfigs
+        An array of Amazon EBS volume specifications attached to a cluster instance.
+
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-emr-ebsconfiguration.html#cfn-emr-ebsconfiguration-ebsblockdeviceconfigs
         DuplicatesAllowed: False
         ItemType: EbsBlockDeviceConfig
@@ -18,6 +20,8 @@ function Add-VSEMRInstanceGroupConfigEbsConfiguration {
         UpdateType: Mutable
 
     .PARAMETER EbsOptimized
+        Indicates whether an Amazon EBS volume is EBS-optimized.
+
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-emr-ebsconfiguration.html#cfn-emr-ebsconfiguration-ebsoptimized
         PrimitiveType: Boolean
         UpdateType: Mutable

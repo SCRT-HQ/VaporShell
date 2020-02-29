@@ -1,16 +1,18 @@
 function Add-VSKinesisFirehoseDeliveryStreamProcessor {
     <#
     .SYNOPSIS
-        Adds an AWS::KinesisFirehose::DeliveryStream.Processor resource property to the template. 
+        Adds an AWS::KinesisFirehose::DeliveryStream.Processor resource property to the template. The Processor property specifies a data processor for an Amazon Kinesis Data Firehose delivery stream.
 
     .DESCRIPTION
         Adds an AWS::KinesisFirehose::DeliveryStream.Processor resource property to the template.
-
+The Processor property specifies a data processor for an Amazon Kinesis Data Firehose delivery stream.
 
     .LINK
         http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-kinesisfirehose-deliverystream-processor.html
 
     .PARAMETER Parameters
+        The processor parameters.
+
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-kinesisfirehose-deliverystream-processor.html#cfn-kinesisfirehose-deliverystream-processor-parameters
         DuplicatesAllowed: False
         ItemType: ProcessorParameter
@@ -18,6 +20,8 @@ function Add-VSKinesisFirehoseDeliveryStreamProcessor {
         UpdateType: Mutable
 
     .PARAMETER Type
+        The type of processor. Valid values: Lambda.
+
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-kinesisfirehose-deliverystream-processor.html#cfn-kinesisfirehose-deliverystream-processor-type
         PrimitiveType: String
         UpdateType: Mutable

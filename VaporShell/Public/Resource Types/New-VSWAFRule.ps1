@@ -1,10 +1,16 @@
 function New-VSWAFRule {
     <#
     .SYNOPSIS
-        Adds an AWS::WAF::Rule resource to the template. 
+        Adds an AWS::WAF::Rule resource to the template. A combination of ByteMatchSet, IPSet, and/or SqlInjectionMatchSet objects that identify the web requests that you want to allow, block, or count. For example, you might create a Rule that includes the following predicates:
 
     .DESCRIPTION
-        Adds an AWS::WAF::Rule resource to the template. 
+        Adds an AWS::WAF::Rule resource to the template. A combination of ByteMatchSet, IPSet, and/or SqlInjectionMatchSet objects that identify the web requests that you want to allow, block, or count. For example, you might create a Rule that includes the following predicates:
+
++ An IPSet that causes AWS WAF to search for web requests that originate from the IP address 192.0.2.44
+
++ A ByteMatchSet that causes AWS WAF to search for web requests for which the value of the User-Agent header is BadBot.
+
+To match the settings in this Rule, a request must originate from 192.0.2.44 AND include a User-Agent header for which the value is BadBot.
 
     .LINK
         http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-waf-rule.html
@@ -13,16 +19,22 @@ function New-VSWAFRule {
         The logical ID must be alphanumeric (A-Za-z0-9) and unique within the template. Use the logical name to reference the resource in other parts of the template. For example, if you want to map an Amazon Elastic Block Store volume to an Amazon EC2 instance, you reference the logical IDs to associate the block stores with the instance.
 
     .PARAMETER MetricName
+        A friendly name or description for the metrics for this Rule. The name can contain only alphanumeric characters A-Z, a-z, 0-9, with maximum length 128 and minimum length one. It can't contain whitespace or metric names reserved for AWS WAF, including "All" and "Default_Action." You can't change MetricName after you create the Rule.
+
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-waf-rule.html#cfn-waf-rule-metricname
         PrimitiveType: String
         UpdateType: Immutable
 
     .PARAMETER Name
+        The friendly name or description for the Rule. You can't change the name of a Rule after you create it.
+
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-waf-rule.html#cfn-waf-rule-name
         PrimitiveType: String
         UpdateType: Immutable
 
     .PARAMETER Predicates
+        The Predicates object contains one Predicate element for each ByteMatchSet, IPSet, or SqlInjectionMatchSet object that you want to include in a Rule.
+
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-waf-rule.html#cfn-waf-rule-predicates
         DuplicatesAllowed: False
         ItemType: Predicate

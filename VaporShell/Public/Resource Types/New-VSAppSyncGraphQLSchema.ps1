@@ -1,10 +1,10 @@
 function New-VSAppSyncGraphQLSchema {
     <#
     .SYNOPSIS
-        Adds an AWS::AppSync::GraphQLSchema resource to the template. 
+        Adds an AWS::AppSync::GraphQLSchema resource to the template. The AWS::AppSync::GraphQLSchema resource is used for your AWS AppSync GraphQL schema that controls the data model for your API. Schema files are text written in Schema Definition Language (SDL format. For more information about schema authoring, see Designing a GraphQL API: https://docs.aws.amazon.com/appsync/latest/devguide/designing-a-graphql-api.html in the *AWS AppSync Developer Guide*.
 
     .DESCRIPTION
-        Adds an AWS::AppSync::GraphQLSchema resource to the template. 
+        Adds an AWS::AppSync::GraphQLSchema resource to the template. The AWS::AppSync::GraphQLSchema resource is used for your AWS AppSync GraphQL schema that controls the data model for your API. Schema files are text written in Schema Definition Language (SDL format. For more information about schema authoring, see Designing a GraphQL API: https://docs.aws.amazon.com/appsync/latest/devguide/designing-a-graphql-api.html in the *AWS AppSync Developer Guide*.
 
     .LINK
         http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-appsync-graphqlschema.html
@@ -13,16 +13,23 @@ function New-VSAppSyncGraphQLSchema {
         The logical ID must be alphanumeric (A-Za-z0-9) and unique within the template. Use the logical name to reference the resource in other parts of the template. For example, if you want to map an Amazon Elastic Block Store volume to an Amazon EC2 instance, you reference the logical IDs to associate the block stores with the instance.
 
     .PARAMETER Definition
+        The text representation of a GraphQL schema in SDL format.
+For more information about using the Ref function, see Ref: https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/intrinsic-function-reference-ref.
+
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-appsync-graphqlschema.html#cfn-appsync-graphqlschema-definition
         PrimitiveType: String
         UpdateType: Mutable
 
     .PARAMETER DefinitionS3Location
+        The location of a GraphQL schema file in an Amazon S3 bucket. Use this if you want to provision with the schema living in Amazon S3 rather than embedding it in your CloudFormation template.
+
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-appsync-graphqlschema.html#cfn-appsync-graphqlschema-definitions3location
         PrimitiveType: String
         UpdateType: Mutable
 
     .PARAMETER ApiId
+        The AWS AppSync GraphQL API identifier to which you want to apply this schema.
+
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-appsync-graphqlschema.html#cfn-appsync-graphqlschema-apiid
         PrimitiveType: String
         UpdateType: Immutable

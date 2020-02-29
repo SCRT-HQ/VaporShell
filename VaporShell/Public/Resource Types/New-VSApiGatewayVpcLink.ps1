@@ -1,10 +1,10 @@
 function New-VSApiGatewayVpcLink {
     <#
     .SYNOPSIS
-        Adds an AWS::ApiGateway::VpcLink resource to the template. 
+        Adds an AWS::ApiGateway::VpcLink resource to the template. The AWS::ApiGateway::VpcLink resource creates an API Gateway VPC link for a REST API to access resources in an Amazon Virtual Private Cloud (VPC. For more information, see vpclink:create: https://docs.aws.amazon.com/apigateway/api-reference/link-relation/vpclink-create/ in the Amazon API Gateway REST API Reference.
 
     .DESCRIPTION
-        Adds an AWS::ApiGateway::VpcLink resource to the template. 
+        Adds an AWS::ApiGateway::VpcLink resource to the template. The AWS::ApiGateway::VpcLink resource creates an API Gateway VPC link for a REST API to access resources in an Amazon Virtual Private Cloud (VPC. For more information, see vpclink:create: https://docs.aws.amazon.com/apigateway/api-reference/link-relation/vpclink-create/ in the Amazon API Gateway REST API Reference.
 
     .LINK
         http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-apigateway-vpclink.html
@@ -13,17 +13,23 @@ function New-VSApiGatewayVpcLink {
         The logical ID must be alphanumeric (A-Za-z0-9) and unique within the template. Use the logical name to reference the resource in other parts of the template. For example, if you want to map an Amazon Elastic Block Store volume to an Amazon EC2 instance, you reference the logical IDs to associate the block stores with the instance.
 
     .PARAMETER Description
+        A description of the VPC link.
+
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-apigateway-vpclink.html#cfn-apigateway-vpclink-description
         PrimitiveType: String
         UpdateType: Mutable
 
     .PARAMETER TargetArns
+        The ARNs of network load balancers of the VPC targeted by the VPC link. The network load balancers must be owned by the same AWS account of the API owner.
+
         PrimitiveItemType: String
         Type: List
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-apigateway-vpclink.html#cfn-apigateway-vpclink-targetarns
         UpdateType: Immutable
 
     .PARAMETER Name
+        A name for the VPC link.
+
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-apigateway-vpclink.html#cfn-apigateway-vpclink-name
         PrimitiveType: String
         UpdateType: Mutable

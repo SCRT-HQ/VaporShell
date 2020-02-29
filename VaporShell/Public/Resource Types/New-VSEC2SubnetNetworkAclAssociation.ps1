@@ -1,10 +1,12 @@
 function New-VSEC2SubnetNetworkAclAssociation {
     <#
     .SYNOPSIS
-        Adds an AWS::EC2::SubnetNetworkAclAssociation resource to the template. 
+        Adds an AWS::EC2::SubnetNetworkAclAssociation resource to the template. Associates a subnet with a network ACL. For more information, see ReplaceNetworkAclAssociation: https://docs.aws.amazon.com/AWSEC2/latest/APIReference/ApiReference-query-ReplaceNetworkAclAssociation.html in the *Amazon Elastic Compute Cloud API Reference*.
 
     .DESCRIPTION
-        Adds an AWS::EC2::SubnetNetworkAclAssociation resource to the template. 
+        Adds an AWS::EC2::SubnetNetworkAclAssociation resource to the template. Associates a subnet with a network ACL. For more information, see ReplaceNetworkAclAssociation: https://docs.aws.amazon.com/AWSEC2/latest/APIReference/ApiReference-query-ReplaceNetworkAclAssociation.html in the *Amazon Elastic Compute Cloud API Reference*.
+
+When AWS::EC2::SubnetNetworkAclAssociation resources are created during create or update operations, AWS CloudFormation adopts existing resources that share the same key properties (the properties that contribute to uniquely identify the resource. However, if the operation fails and rolls back, AWS CloudFormation deletes the previously out-of-band resources. You can protect against this behavior by using Retain deletion policies. For more information, see DeletionPolicy Attribute: https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-attribute-deletionpolicy.html.
 
     .LINK
         http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ec2-subnet-network-acl-assoc.html
@@ -13,11 +15,15 @@ function New-VSEC2SubnetNetworkAclAssociation {
         The logical ID must be alphanumeric (A-Za-z0-9) and unique within the template. Use the logical name to reference the resource in other parts of the template. For example, if you want to map an Amazon Elastic Block Store volume to an Amazon EC2 instance, you reference the logical IDs to associate the block stores with the instance.
 
     .PARAMETER NetworkAclId
+        The ID of the network ACL.
+
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ec2-subnet-network-acl-assoc.html#cfn-ec2-subnetnetworkaclassociation-networkaclid
         PrimitiveType: String
         UpdateType: Immutable
 
     .PARAMETER SubnetId
+        The ID of the subnet.
+
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ec2-subnet-network-acl-assoc.html#cfn-ec2-subnetnetworkaclassociation-associationid
         PrimitiveType: String
         UpdateType: Immutable

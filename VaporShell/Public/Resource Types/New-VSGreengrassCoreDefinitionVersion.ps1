@@ -1,10 +1,16 @@
 function New-VSGreengrassCoreDefinitionVersion {
     <#
     .SYNOPSIS
-        Adds an AWS::Greengrass::CoreDefinitionVersion resource to the template. 
+        Adds an AWS::Greengrass::CoreDefinitionVersion resource to the template. The AWS::Greengrass::CoreDefinitionVersion resource represents a core definition version for AWS IoT Greengrass. A core definition version contains a Greengrass core.
 
     .DESCRIPTION
-        Adds an AWS::Greengrass::CoreDefinitionVersion resource to the template. 
+        Adds an AWS::Greengrass::CoreDefinitionVersion resource to the template. The AWS::Greengrass::CoreDefinitionVersion resource represents a core definition version for AWS IoT Greengrass. A core definition version contains a Greengrass core.
+
+**Note**
+
+To create a core definition version, you must specify the ID of the core definition that you want to associate with the version. For information about creating a core definition, see https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-greengrass-coredefinition.html: https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-greengrass-coredefinition.html.
+
+After you create a core definition version that contains the core you want to deploy, you must add it to your group version. For more information, see https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-greengrass-group.html: https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-greengrass-group.html.
 
     .LINK
         http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-greengrass-coredefinitionversion.html
@@ -13,12 +19,16 @@ function New-VSGreengrassCoreDefinitionVersion {
         The logical ID must be alphanumeric (A-Za-z0-9) and unique within the template. Use the logical name to reference the resource in other parts of the template. For example, if you want to map an Amazon Elastic Block Store volume to an Amazon EC2 instance, you reference the logical IDs to associate the block stores with the instance.
 
     .PARAMETER Cores
+        The Greengrass core in this version. Currently, the Cores property for a core definition version can contain only one core.
+
         Type: List
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-greengrass-coredefinitionversion.html#cfn-greengrass-coredefinitionversion-cores
         ItemType: Core
         UpdateType: Immutable
 
     .PARAMETER CoreDefinitionId
+        The ID of the core definition associated with this version. This value is a GUID.
+
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-greengrass-coredefinitionversion.html#cfn-greengrass-coredefinitionversion-coredefinitionid
         PrimitiveType: String
         UpdateType: Immutable

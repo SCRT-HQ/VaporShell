@@ -1,16 +1,20 @@
 function Add-VSEC2InstanceLicenseSpecification {
     <#
     .SYNOPSIS
-        Adds an AWS::EC2::Instance.LicenseSpecification resource property to the template. 
+        Adds an AWS::EC2::Instance.LicenseSpecification resource property to the template. Specifies the license configuration to use.
 
     .DESCRIPTION
         Adds an AWS::EC2::Instance.LicenseSpecification resource property to the template.
+Specifies the license configuration to use.
 
+LicenseSpecification is a property of the AWS::EC2::Instance: https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-instance.html resource.
 
     .LINK
         http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-instance-licensespecification.html
 
     .PARAMETER LicenseConfigurationArn
+        The Amazon Resource Name ARN of the license configuration.
+
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-instance-licensespecification.html#cfn-ec2-instance-licensespecification-licenseconfigurationarn
         PrimitiveType: String
         UpdateType: Mutable

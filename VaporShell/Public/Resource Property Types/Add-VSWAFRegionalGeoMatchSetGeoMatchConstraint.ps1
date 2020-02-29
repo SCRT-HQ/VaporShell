@@ -1,21 +1,25 @@
 function Add-VSWAFRegionalGeoMatchSetGeoMatchConstraint {
     <#
     .SYNOPSIS
-        Adds an AWS::WAFRegional::GeoMatchSet.GeoMatchConstraint resource property to the template. 
+        Adds an AWS::WAFRegional::GeoMatchSet.GeoMatchConstraint resource property to the template. The country from which web requests originate that you want AWS WAF to search for.
 
     .DESCRIPTION
         Adds an AWS::WAFRegional::GeoMatchSet.GeoMatchConstraint resource property to the template.
-
+The country from which web requests originate that you want AWS WAF to search for.
 
     .LINK
         http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-wafregional-geomatchset-geomatchconstraint.html
 
     .PARAMETER Type
+        The type of geographical area you want AWS WAF to search for. Currently Country is the only valid value.
+
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-wafregional-geomatchset-geomatchconstraint.html#cfn-wafregional-geomatchset-geomatchconstraint-type
         PrimitiveType: String
         UpdateType: Mutable
 
     .PARAMETER Value
+        The country that you want AWS WAF to search for.
+
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-wafregional-geomatchset-geomatchconstraint.html#cfn-wafregional-geomatchset-geomatchconstraint-value
         PrimitiveType: String
         UpdateType: Mutable

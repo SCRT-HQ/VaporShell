@@ -1,10 +1,10 @@
 function New-VSServiceDiscoveryPrivateDnsNamespace {
     <#
     .SYNOPSIS
-        Adds an AWS::ServiceDiscovery::PrivateDnsNamespace resource to the template. 
+        Adds an AWS::ServiceDiscovery::PrivateDnsNamespace resource to the template. Creates a private namespace based on DNS, which will be visible only inside a specified Amazon VPC. The namespace defines your service naming scheme. For example, if you name your namespace example.com and name your service backend, the resulting DNS name for the service will be backend.example.com. For the current limit on the number of namespaces that you can create using the same AWS account, see AWS Cloud Map Limits: https://docs.aws.amazon.com/cloud-map/latest/dg/cloud-map-limits.html in the *AWS Cloud Map Developer Guide*.
 
     .DESCRIPTION
-        Adds an AWS::ServiceDiscovery::PrivateDnsNamespace resource to the template. 
+        Adds an AWS::ServiceDiscovery::PrivateDnsNamespace resource to the template. Creates a private namespace based on DNS, which will be visible only inside a specified Amazon VPC. The namespace defines your service naming scheme. For example, if you name your namespace example.com and name your service backend, the resulting DNS name for the service will be backend.example.com. For the current limit on the number of namespaces that you can create using the same AWS account, see AWS Cloud Map Limits: https://docs.aws.amazon.com/cloud-map/latest/dg/cloud-map-limits.html in the *AWS Cloud Map Developer Guide*.
 
     .LINK
         http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-servicediscovery-privatednsnamespace.html
@@ -13,16 +13,22 @@ function New-VSServiceDiscoveryPrivateDnsNamespace {
         The logical ID must be alphanumeric (A-Za-z0-9) and unique within the template. Use the logical name to reference the resource in other parts of the template. For example, if you want to map an Amazon Elastic Block Store volume to an Amazon EC2 instance, you reference the logical IDs to associate the block stores with the instance.
 
     .PARAMETER Description
+        A description for the namespace.
+
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-servicediscovery-privatednsnamespace.html#cfn-servicediscovery-privatednsnamespace-description
         PrimitiveType: String
         UpdateType: Immutable
 
     .PARAMETER Vpc
+        The ID of the Amazon VPC that you want to associate the namespace with.
+
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-servicediscovery-privatednsnamespace.html#cfn-servicediscovery-privatednsnamespace-vpc
         PrimitiveType: String
         UpdateType: Immutable
 
     .PARAMETER Name
+        The name that you want to assign to this namespace. When you create a private DNS namespace, AWS Cloud Map automatically creates an Amazon Route 53 private hosted zone that has the same name as the namespace.
+
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-servicediscovery-privatednsnamespace.html#cfn-servicediscovery-privatednsnamespace-name
         PrimitiveType: String
         UpdateType: Immutable

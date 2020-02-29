@@ -1,26 +1,32 @@
 function Add-VSIoTAnalyticsPipelineFilter {
     <#
     .SYNOPSIS
-        Adds an AWS::IoTAnalytics::Pipeline.Filter resource property to the template. 
+        Adds an AWS::IoTAnalytics::Pipeline.Filter resource property to the template. An activity that filters a message based on its attributes.
 
     .DESCRIPTION
         Adds an AWS::IoTAnalytics::Pipeline.Filter resource property to the template.
-
+An activity that filters a message based on its attributes.
 
     .LINK
         http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iotanalytics-pipeline-filter.html
 
     .PARAMETER Filter
+        An expression that looks like an SQL WHERE clause that must return a Boolean value.
+
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iotanalytics-pipeline-filter.html#cfn-iotanalytics-pipeline-filter-filter
         PrimitiveType: String
         UpdateType: Mutable
 
     .PARAMETER Next
+        The next activity in the pipeline.
+
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iotanalytics-pipeline-filter.html#cfn-iotanalytics-pipeline-filter-next
         PrimitiveType: String
         UpdateType: Mutable
 
     .PARAMETER Name
+        The name of the 'filter' activity.
+
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iotanalytics-pipeline-filter.html#cfn-iotanalytics-pipeline-filter-name
         PrimitiveType: String
         UpdateType: Mutable

@@ -1,10 +1,14 @@
 function New-VSRDSDBClusterParameterGroup {
     <#
     .SYNOPSIS
-        Adds an AWS::RDS::DBClusterParameterGroup resource to the template. 
+        Adds an AWS::RDS::DBClusterParameterGroup resource to the template. The AWS::RDS::DBClusterParameterGroup resource creates a new Amazon RDS DB cluster parameter group. For more information, see Managing an Amazon Aurora DB Cluster: https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/CHAP_Aurora.html in the *Amazon Aurora User Guide*.
 
     .DESCRIPTION
-        Adds an AWS::RDS::DBClusterParameterGroup resource to the template. 
+        Adds an AWS::RDS::DBClusterParameterGroup resource to the template. The AWS::RDS::DBClusterParameterGroup resource creates a new Amazon RDS DB cluster parameter group. For more information, see Managing an Amazon Aurora DB Cluster: https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/CHAP_Aurora.html in the *Amazon Aurora User Guide*.
+
+**Note**
+
+If you apply a parameter group to a DB cluster, then its DB instances might need to reboot. This can result in an outage while the instances are rebooting.
 
     .LINK
         http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-rds-dbclusterparametergroup.html
@@ -13,21 +17,29 @@ function New-VSRDSDBClusterParameterGroup {
         The logical ID must be alphanumeric (A-Za-z0-9) and unique within the template. Use the logical name to reference the resource in other parts of the template. For example, if you want to map an Amazon Elastic Block Store volume to an Amazon EC2 instance, you reference the logical IDs to associate the block stores with the instance.
 
     .PARAMETER Description
+        A friendly description for this DB cluster parameter group.
+
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-rds-dbclusterparametergroup.html#cfn-rds-dbclusterparametergroup-description
         PrimitiveType: String
         UpdateType: Immutable
 
     .PARAMETER Family
+        Provides the name of the DB parameter group family that this DB cluster parameter group is compatible with.
+
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-rds-dbclusterparametergroup.html#cfn-rds-dbclusterparametergroup-family
         PrimitiveType: String
         UpdateType: Immutable
 
     .PARAMETER Parameters
+        Provides a list of parameters for the DB cluster parameter group.
+
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-rds-dbclusterparametergroup.html#cfn-rds-dbclusterparametergroup-parameters
         PrimitiveType: Json
         UpdateType: Mutable
 
     .PARAMETER Tags
+        Tags to assign to the DB cluster parameter group.
+
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-rds-dbclusterparametergroup.html#cfn-rds-dbclusterparametergroup-tags
         DuplicatesAllowed: True
         ItemType: Tag

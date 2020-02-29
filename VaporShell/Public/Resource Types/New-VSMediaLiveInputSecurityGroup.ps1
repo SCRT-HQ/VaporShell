@@ -1,10 +1,12 @@
 function New-VSMediaLiveInputSecurityGroup {
     <#
     .SYNOPSIS
-        Adds an AWS::MediaLive::InputSecurityGroup resource to the template. 
+        Adds an AWS::MediaLive::InputSecurityGroup resource to the template. The AWS::MediaLive::InputSecurityGroup is a MediaLive resource type that creates an input security group.
 
     .DESCRIPTION
-        Adds an AWS::MediaLive::InputSecurityGroup resource to the template. 
+        Adds an AWS::MediaLive::InputSecurityGroup resource to the template. The AWS::MediaLive::InputSecurityGroup is a MediaLive resource type that creates an input security group.
+
+A MediaLive input security group is associated with a MediaLive input. The input security group is an "allow list" of IP addresses that controls whether an external IP address can push content to the associated MediaLive input.
 
     .LINK
         http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-medialive-inputsecuritygroup.html
@@ -13,12 +15,16 @@ function New-VSMediaLiveInputSecurityGroup {
         The logical ID must be alphanumeric (A-Za-z0-9) and unique within the template. Use the logical name to reference the resource in other parts of the template. For example, if you want to map an Amazon Elastic Block Store volume to an Amazon EC2 instance, you reference the logical IDs to associate the block stores with the instance.
 
     .PARAMETER WhitelistRules
+        The list of IPv4 CIDR addresses to include in the input security group as "allowed" addresses.
+
         Type: List
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-medialive-inputsecuritygroup.html#cfn-medialive-inputsecuritygroup-whitelistrules
         ItemType: InputWhitelistRuleCidr
         UpdateType: Mutable
 
     .PARAMETER Tags
+        A collection of tags for this input security group. Each tag is a key-value pair.
+
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-medialive-inputsecuritygroup.html#cfn-medialive-inputsecuritygroup-tags
         PrimitiveType: Json
         UpdateType: Mutable

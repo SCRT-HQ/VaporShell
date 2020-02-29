@@ -1,21 +1,27 @@
 function Add-VSSSMMaintenanceWindowTaskMaintenanceWindowStepFunctionsParameters {
     <#
     .SYNOPSIS
-        Adds an AWS::SSM::MaintenanceWindowTask.MaintenanceWindowStepFunctionsParameters resource property to the template. 
+        Adds an AWS::SSM::MaintenanceWindowTask.MaintenanceWindowStepFunctionsParameters resource property to the template. The MaintenanceWindowStepFunctionsParameters property type specifies the parameters for execution of the STEP_FUNCTION for a maintenance window task in AWS Systems Manager.
 
     .DESCRIPTION
         Adds an AWS::SSM::MaintenanceWindowTask.MaintenanceWindowStepFunctionsParameters resource property to the template.
+The MaintenanceWindowStepFunctionsParameters property type specifies the parameters for execution of the STEP_FUNCTION for a maintenance window task in AWS Systems Manager.
 
+MaintenanceWindowStepFunctionsParameters is a property of the TaskInvocationParameters: https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ssm-maintenancewindowtask-taskinvocationparameters.html property type.
 
     .LINK
         http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ssm-maintenancewindowtask-maintenancewindowstepfunctionsparameters.html
 
     .PARAMETER Input
+        The inputs for the STEP_FUNCTION task.
+
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ssm-maintenancewindowtask-maintenancewindowstepfunctionsparameters.html#cfn-ssm-maintenancewindowtask-maintenancewindowstepfunctionsparameters-input
         PrimitiveType: String
         UpdateType: Mutable
 
     .PARAMETER Name
+        The name of the STEP_FUNCTION task.
+
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ssm-maintenancewindowtask-maintenancewindowstepfunctionsparameters.html#cfn-ssm-maintenancewindowtask-maintenancewindowstepfunctionsparameters-name
         PrimitiveType: String
         UpdateType: Mutable

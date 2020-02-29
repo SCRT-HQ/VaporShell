@@ -1,10 +1,10 @@
 function New-VSDAXParameterGroup {
     <#
     .SYNOPSIS
-        Adds an AWS::DAX::ParameterGroup resource to the template. 
+        Adds an AWS::DAX::ParameterGroup resource to the template. A named set of parameters that are applied to all of the nodes in a DAX cluster.
 
     .DESCRIPTION
-        Adds an AWS::DAX::ParameterGroup resource to the template. 
+        Adds an AWS::DAX::ParameterGroup resource to the template. A named set of parameters that are applied to all of the nodes in a DAX cluster.
 
     .LINK
         http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-dax-parametergroup.html
@@ -13,16 +13,22 @@ function New-VSDAXParameterGroup {
         The logical ID must be alphanumeric (A-Za-z0-9) and unique within the template. Use the logical name to reference the resource in other parts of the template. For example, if you want to map an Amazon Elastic Block Store volume to an Amazon EC2 instance, you reference the logical IDs to associate the block stores with the instance.
 
     .PARAMETER ParameterNameValues
+        An array of name-value pairs for the parameters in the group. Each element in the array represents a single parameter.
+
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-dax-parametergroup.html#cfn-dax-parametergroup-parameternamevalues
         PrimitiveType: Json
         UpdateType: Mutable
 
     .PARAMETER Description
+        A description of the parameter group.
+
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-dax-parametergroup.html#cfn-dax-parametergroup-description
         PrimitiveType: String
         UpdateType: Mutable
 
     .PARAMETER ParameterGroupName
+        The name of the parameter group.
+
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-dax-parametergroup.html#cfn-dax-parametergroup-parametergroupname
         PrimitiveType: String
         UpdateType: Immutable

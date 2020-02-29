@@ -1,16 +1,18 @@
 function Add-VSAppMeshMeshMeshSpec {
     <#
     .SYNOPSIS
-        Adds an AWS::AppMesh::Mesh.MeshSpec resource property to the template. 
+        Adds an AWS::AppMesh::Mesh.MeshSpec resource property to the template. An object representing the specification of a service mesh.
 
     .DESCRIPTION
         Adds an AWS::AppMesh::Mesh.MeshSpec resource property to the template.
-
+An object representing the specification of a service mesh.
 
     .LINK
         http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-appmesh-mesh-meshspec.html
 
     .PARAMETER EgressFilter
+        The egress filter rules for the service mesh.
+
         Type: EgressFilter
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-appmesh-mesh-meshspec.html#cfn-appmesh-mesh-meshspec-egressfilter
         UpdateType: Mutable

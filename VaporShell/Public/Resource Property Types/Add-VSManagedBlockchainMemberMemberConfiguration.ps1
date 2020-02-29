@@ -1,26 +1,32 @@
 function Add-VSManagedBlockchainMemberMemberConfiguration {
     <#
     .SYNOPSIS
-        Adds an AWS::ManagedBlockchain::Member.MemberConfiguration resource property to the template. 
+        Adds an AWS::ManagedBlockchain::Member.MemberConfiguration resource property to the template. Configuration properties of the member.
 
     .DESCRIPTION
         Adds an AWS::ManagedBlockchain::Member.MemberConfiguration resource property to the template.
-
+Configuration properties of the member.
 
     .LINK
         http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-managedblockchain-member-memberconfiguration.html
 
     .PARAMETER Description
+        An optional description of the member.
+
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-managedblockchain-member-memberconfiguration.html#cfn-managedblockchain-member-memberconfiguration-description
         PrimitiveType: String
         UpdateType: Mutable
 
     .PARAMETER MemberFrameworkConfiguration
+        Configuration properties of the blockchain framework relevant to the member.
+
         Type: MemberFrameworkConfiguration
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-managedblockchain-member-memberconfiguration.html#cfn-managedblockchain-member-memberconfiguration-memberframeworkconfiguration
         UpdateType: Mutable
 
     .PARAMETER Name
+        The name of the member.
+
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-managedblockchain-member-memberconfiguration.html#cfn-managedblockchain-member-memberconfiguration-name
         PrimitiveType: String
         UpdateType: Mutable

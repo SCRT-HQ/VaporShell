@@ -1,21 +1,25 @@
 function Add-VSEC2NetworkAclEntryIcmp {
     <#
     .SYNOPSIS
-        Adds an AWS::EC2::NetworkAclEntry.Icmp resource property to the template. 
+        Adds an AWS::EC2::NetworkAclEntry.Icmp resource property to the template. Describes the ICMP type and code.
 
     .DESCRIPTION
         Adds an AWS::EC2::NetworkAclEntry.Icmp resource property to the template.
-
+Describes the ICMP type and code.
 
     .LINK
         http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-networkaclentry-icmp.html
 
     .PARAMETER Code
+        The Internet Control Message Protocol ICMP code. You can use -1 to specify all ICMP codes for the given ICMP type. Requirement is conditional: Required if you specify 1 ICMP for the protocol parameter.
+
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-networkaclentry-icmp.html#cfn-ec2-networkaclentry-icmp-code
         PrimitiveType: Integer
         UpdateType: Mutable
 
     .PARAMETER Type
+        The Internet Control Message Protocol ICMP type. You can use -1 to specify all ICMP types. Conditional requirement: Required if you specify 1 ICMP for the CreateNetworkAclEntry protocol parameter.
+
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-networkaclentry-icmp.html#cfn-ec2-networkaclentry-icmp-type
         PrimitiveType: Integer
         UpdateType: Mutable

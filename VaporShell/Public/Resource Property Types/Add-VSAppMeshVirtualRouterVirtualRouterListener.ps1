@@ -1,16 +1,18 @@
 function Add-VSAppMeshVirtualRouterVirtualRouterListener {
     <#
     .SYNOPSIS
-        Adds an AWS::AppMesh::VirtualRouter.VirtualRouterListener resource property to the template. 
+        Adds an AWS::AppMesh::VirtualRouter.VirtualRouterListener resource property to the template. An object representing a virtual router listener.
 
     .DESCRIPTION
         Adds an AWS::AppMesh::VirtualRouter.VirtualRouterListener resource property to the template.
-
+An object representing a virtual router listener.
 
     .LINK
         http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-appmesh-virtualrouter-virtualrouterlistener.html
 
     .PARAMETER PortMapping
+        The port mapping information for the listener.
+
         Type: PortMapping
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-appmesh-virtualrouter-virtualrouterlistener.html#cfn-appmesh-virtualrouter-virtualrouterlistener-portmapping
         UpdateType: Mutable

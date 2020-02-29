@@ -1,16 +1,18 @@
 function Add-VSElasticLoadBalancingV2ListenerRuleAuthenticateOidcConfig {
     <#
     .SYNOPSIS
-        Adds an AWS::ElasticLoadBalancingV2::ListenerRule.AuthenticateOidcConfig resource property to the template. 
+        Adds an AWS::ElasticLoadBalancingV2::ListenerRule.AuthenticateOidcConfig resource property to the template. Specifies information required using an identity provide (IdP that is compliant with OpenID Connect (OIDC to authenticate users.
 
     .DESCRIPTION
         Adds an AWS::ElasticLoadBalancingV2::ListenerRule.AuthenticateOidcConfig resource property to the template.
-
+Specifies information required using an identity provide (IdP that is compliant with OpenID Connect (OIDC to authenticate users.
 
     .LINK
         http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-elasticloadbalancingv2-listenerrule-authenticateoidcconfig.html
 
     .PARAMETER AuthenticationRequestExtraParams
+        The query parameters up to 10 to include in the redirect request to the authorization endpoint.
+
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-elasticloadbalancingv2-listenerrule-authenticateoidcconfig.html#cfn-elasticloadbalancingv2-listenerrule-authenticateoidcconfig-authenticationrequestextraparams
         DuplicatesAllowed: False
         PrimitiveItemType: String
@@ -18,51 +20,75 @@ function Add-VSElasticLoadBalancingV2ListenerRuleAuthenticateOidcConfig {
         UpdateType: Mutable
 
     .PARAMETER AuthorizationEndpoint
+        The authorization endpoint of the IdP. This must be a full URL, including the HTTPS protocol, the domain, and the path.
+
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-elasticloadbalancingv2-listenerrule-authenticateoidcconfig.html#cfn-elasticloadbalancingv2-listenerrule-authenticateoidcconfig-authorizationendpoint
         PrimitiveType: String
         UpdateType: Mutable
 
     .PARAMETER ClientId
+        The OAuth 2.0 client identifier.
+
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-elasticloadbalancingv2-listenerrule-authenticateoidcconfig.html#cfn-elasticloadbalancingv2-listenerrule-authenticateoidcconfig-clientid
         PrimitiveType: String
         UpdateType: Mutable
 
     .PARAMETER ClientSecret
+        The OAuth 2.0 client secret. This parameter is required if you are creating a rule. If you are modifying a rule, you can omit this parameter if you set UseExistingClientSecret to true.
+
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-elasticloadbalancingv2-listenerrule-authenticateoidcconfig.html#cfn-elasticloadbalancingv2-listenerrule-authenticateoidcconfig-clientsecret
         PrimitiveType: String
         UpdateType: Mutable
 
     .PARAMETER Issuer
+        The OIDC issuer identifier of the IdP. This must be a full URL, including the HTTPS protocol, the domain, and the path.
+
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-elasticloadbalancingv2-listenerrule-authenticateoidcconfig.html#cfn-elasticloadbalancingv2-listenerrule-authenticateoidcconfig-issuer
         PrimitiveType: String
         UpdateType: Mutable
 
     .PARAMETER OnUnauthenticatedRequest
+        The behavior if the user is not authenticated. The following are possible values:
++ deny - Return an HTTP 401 Unauthorized error.
++ allow - Allow the request to be forwarded to the target.
++ authenticate - Redirect the request to the IdP authorization endpoint. This is the default value.
+
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-elasticloadbalancingv2-listenerrule-authenticateoidcconfig.html#cfn-elasticloadbalancingv2-listenerrule-authenticateoidcconfig-onunauthenticatedrequest
         PrimitiveType: String
         UpdateType: Mutable
 
     .PARAMETER Scope
+        The set of user claims to be requested from the IdP. The default is openid.
+To verify which scope values your IdP supports and how to separate multiple values, see the documentation for your IdP.
+
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-elasticloadbalancingv2-listenerrule-authenticateoidcconfig.html#cfn-elasticloadbalancingv2-listenerrule-authenticateoidcconfig-scope
         PrimitiveType: String
         UpdateType: Mutable
 
     .PARAMETER SessionCookieName
+        The name of the cookie used to maintain session information. The default is AWSELBAuthSessionCookie.
+
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-elasticloadbalancingv2-listenerrule-authenticateoidcconfig.html#cfn-elasticloadbalancingv2-listenerrule-authenticateoidcconfig-sessioncookiename
         PrimitiveType: String
         UpdateType: Mutable
 
     .PARAMETER SessionTimeout
+        The maximum duration of the authentication session, in seconds. The default is 604800 seconds 7 days.
+
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-elasticloadbalancingv2-listenerrule-authenticateoidcconfig.html#cfn-elasticloadbalancingv2-listenerrule-authenticateoidcconfig-sessiontimeout
         PrimitiveType: Long
         UpdateType: Mutable
 
     .PARAMETER TokenEndpoint
+        The token endpoint of the IdP. This must be a full URL, including the HTTPS protocol, the domain, and the path.
+
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-elasticloadbalancingv2-listenerrule-authenticateoidcconfig.html#cfn-elasticloadbalancingv2-listenerrule-authenticateoidcconfig-tokenendpoint
         PrimitiveType: String
         UpdateType: Mutable
 
     .PARAMETER UserInfoEndpoint
+        The user info endpoint of the IdP. This must be a full URL, including the HTTPS protocol, the domain, and the path.
+
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-elasticloadbalancingv2-listenerrule-authenticateoidcconfig.html#cfn-elasticloadbalancingv2-listenerrule-authenticateoidcconfig-userinfoendpoint
         PrimitiveType: String
         UpdateType: Mutable

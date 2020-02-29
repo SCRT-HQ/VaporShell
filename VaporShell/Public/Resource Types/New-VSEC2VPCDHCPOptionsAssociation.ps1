@@ -1,10 +1,12 @@
 function New-VSEC2VPCDHCPOptionsAssociation {
     <#
     .SYNOPSIS
-        Adds an AWS::EC2::VPCDHCPOptionsAssociation resource to the template. 
+        Adds an AWS::EC2::VPCDHCPOptionsAssociation resource to the template. Associates a set of DHCP options with a VPC, or associates no DHCP options with the VPC.
 
     .DESCRIPTION
-        Adds an AWS::EC2::VPCDHCPOptionsAssociation resource to the template. 
+        Adds an AWS::EC2::VPCDHCPOptionsAssociation resource to the template. Associates a set of DHCP options with a VPC, or associates no DHCP options with the VPC.
+
+After you associate the options with the VPC, any existing instances and all new instances that you launch in that VPC use the options. You don't need to restart or relaunch the instances. They automatically pick up the changes within a few hours, depending on how frequently the instance renews its DHCP lease. You can explicitly renew the lease using the operating system on the instance.
 
     .LINK
         http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ec2-vpc-dhcp-options-assoc.html
@@ -13,11 +15,15 @@ function New-VSEC2VPCDHCPOptionsAssociation {
         The logical ID must be alphanumeric (A-Za-z0-9) and unique within the template. Use the logical name to reference the resource in other parts of the template. For example, if you want to map an Amazon Elastic Block Store volume to an Amazon EC2 instance, you reference the logical IDs to associate the block stores with the instance.
 
     .PARAMETER DhcpOptionsId
+        The ID of the DHCP options set, or default to associate no DHCP options with the VPC.
+
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ec2-vpc-dhcp-options-assoc.html#cfn-ec2-vpcdhcpoptionsassociation-dhcpoptionsid
         PrimitiveType: String
         UpdateType: Mutable
 
     .PARAMETER VpcId
+        The ID of the VPC.
+
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ec2-vpc-dhcp-options-assoc.html#cfn-ec2-vpcdhcpoptionsassociation-vpcid
         PrimitiveType: String
         UpdateType: Immutable

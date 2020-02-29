@@ -1,21 +1,25 @@
 function Add-VSGlueTriggerPredicate {
     <#
     .SYNOPSIS
-        Adds an AWS::Glue::Trigger.Predicate resource property to the template. 
+        Adds an AWS::Glue::Trigger.Predicate resource property to the template. Defines the predicate of the trigger, which determines when it fires.
 
     .DESCRIPTION
         Adds an AWS::Glue::Trigger.Predicate resource property to the template.
-
+Defines the predicate of the trigger, which determines when it fires.
 
     .LINK
         http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-glue-trigger-predicate.html
 
     .PARAMETER Logical
+        An optional field if only one condition is listed. If multiple conditions are listed, then this field is required.
+
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-glue-trigger-predicate.html#cfn-glue-trigger-predicate-logical
         PrimitiveType: String
         UpdateType: Mutable
 
     .PARAMETER Conditions
+        A list of the conditions that determine when the trigger will fire.
+
         Type: List
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-glue-trigger-predicate.html#cfn-glue-trigger-predicate-conditions
         ItemType: Condition

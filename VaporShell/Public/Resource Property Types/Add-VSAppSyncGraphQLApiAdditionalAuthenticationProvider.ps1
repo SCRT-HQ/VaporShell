@@ -1,26 +1,32 @@
 function Add-VSAppSyncGraphQLApiAdditionalAuthenticationProvider {
     <#
     .SYNOPSIS
-        Adds an AWS::AppSync::GraphQLApi.AdditionalAuthenticationProvider resource property to the template. 
+        Adds an AWS::AppSync::GraphQLApi.AdditionalAuthenticationProvider resource property to the template. Describes an additional authentication provider.
 
     .DESCRIPTION
         Adds an AWS::AppSync::GraphQLApi.AdditionalAuthenticationProvider resource property to the template.
-
+Describes an additional authentication provider.
 
     .LINK
         http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-appsync-graphqlapi-additionalauthenticationprovider.html
 
     .PARAMETER OpenIDConnectConfig
+        The OpenID Connect configuration.
+
         Type: OpenIDConnectConfig
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-appsync-graphqlapi-additionalauthenticationprovider.html#cfn-appsync-graphqlapi-additionalauthenticationprovider-openidconnectconfig
         UpdateType: Mutable
 
     .PARAMETER UserPoolConfig
+        The Amazon Cognito user pool configuration.
+
         Type: CognitoUserPoolConfig
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-appsync-graphqlapi-additionalauthenticationprovider.html#cfn-appsync-graphqlapi-additionalauthenticationprovider-userpoolconfig
         UpdateType: Mutable
 
     .PARAMETER AuthenticationType
+        The authentication type: API key, AWS IAM, OIDC, or Amazon Cognito user pools.
+
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-appsync-graphqlapi-additionalauthenticationprovider.html#cfn-appsync-graphqlapi-additionalauthenticationprovider-authenticationtype
         PrimitiveType: String
         UpdateType: Mutable

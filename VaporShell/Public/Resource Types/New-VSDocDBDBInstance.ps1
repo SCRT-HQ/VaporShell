@@ -1,10 +1,10 @@
 function New-VSDocDBDBInstance {
     <#
     .SYNOPSIS
-        Adds an AWS::DocDB::DBInstance resource to the template. 
+        Adds an AWS::DocDB::DBInstance resource to the template. The AWS::DocDB::DBInstance Amazon DocumentDB (with MongoDB compatibility resource describes a DBInstance. For more information, see DBInstance: https://docs.aws.amazon.com/documentdb/latest/developerguide/API_DBInstance.html in the *Amazon DocumentDB Developer Guide*.
 
     .DESCRIPTION
-        Adds an AWS::DocDB::DBInstance resource to the template. 
+        Adds an AWS::DocDB::DBInstance resource to the template. The AWS::DocDB::DBInstance Amazon DocumentDB (with MongoDB compatibility resource describes a DBInstance. For more information, see DBInstance: https://docs.aws.amazon.com/documentdb/latest/developerguide/API_DBInstance.html in the *Amazon DocumentDB Developer Guide*.
 
     .LINK
         http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-docdb-dbinstance.html
@@ -13,36 +13,63 @@ function New-VSDocDBDBInstance {
         The logical ID must be alphanumeric (A-Za-z0-9) and unique within the template. Use the logical name to reference the resource in other parts of the template. For example, if you want to map an Amazon Elastic Block Store volume to an Amazon EC2 instance, you reference the logical IDs to associate the block stores with the instance.
 
     .PARAMETER DBInstanceClass
+        The compute and memory capacity of the DB instance; for example, db.m4.large. If you change the class of an instance there can be some interruption in the cluster's service.
+
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-docdb-dbinstance.html#cfn-docdb-dbinstance-dbinstanceclass
         PrimitiveType: String
         UpdateType: Mutable
 
     .PARAMETER DBClusterIdentifier
+        The identifier of the DB cluster that the instance will belong to.
+
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-docdb-dbinstance.html#cfn-docdb-dbinstance-dbclusteridentifier
         PrimitiveType: String
         UpdateType: Immutable
 
     .PARAMETER AvailabilityZone
+        The Amazon EC2 Availability Zone that the DB instance is created in.
+Default: A random, system-chosen Availability Zone in the endpoint's AWS Region.
+Example: us-east-1d
+Constraint: The AvailabilityZone parameter can't be specified if the MultiAZ parameter is set to true. The specified Availability Zone must be in the same AWS Region as the current endpoint.
+
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-docdb-dbinstance.html#cfn-docdb-dbinstance-availabilityzone
         PrimitiveType: String
         UpdateType: Immutable
 
     .PARAMETER PreferredMaintenanceWindow
+        The time range each week during which system maintenance can occur, in Universal Coordinated Time UTC.
+Format: ddd:hh24:mi-ddd:hh24:mi
+The default is a 30-minute window selected at random from an 8-hour block of time for each AWS Region, occurring on a random day of the week.
+Valid days: Mon, Tue, Wed, Thu, Fri, Sat, Sun
+Constraints: Minimum 30-minute window.
+
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-docdb-dbinstance.html#cfn-docdb-dbinstance-preferredmaintenancewindow
         PrimitiveType: String
         UpdateType: Mutable
 
     .PARAMETER AutoMinorVersionUpgrade
+        Indicates that minor engine upgrades are applied automatically to the DB instance during the maintenance window.
+Default: true
+
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-docdb-dbinstance.html#cfn-docdb-dbinstance-autominorversionupgrade
         PrimitiveType: Boolean
         UpdateType: Mutable
 
     .PARAMETER DBInstanceIdentifier
+        The DB instance identifier. This parameter is stored as a lowercase string.
+Constraints:
++ Must contain from 1 to 63 letters, numbers, or hyphens.
++ The first character must be a letter.
++ Cannot end with a hyphen or contain two consecutive hyphens.
+Example: mydbinstance
+
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-docdb-dbinstance.html#cfn-docdb-dbinstance-dbinstanceidentifier
         PrimitiveType: String
         UpdateType: Immutable
 
     .PARAMETER Tags
+        The tags to be assigned to the DB instance.
+
         Type: List
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-docdb-dbinstance.html#cfn-docdb-dbinstance-tags
         ItemType: Tag

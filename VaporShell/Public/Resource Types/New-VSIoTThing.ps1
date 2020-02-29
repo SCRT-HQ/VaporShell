@@ -1,10 +1,12 @@
 function New-VSIoTThing {
     <#
     .SYNOPSIS
-        Adds an AWS::IoT::Thing resource to the template. 
+        Adds an AWS::IoT::Thing resource to the template. Use the AWS::IoT::Thing resource to declare an AWS IoT thing.
 
     .DESCRIPTION
-        Adds an AWS::IoT::Thing resource to the template. 
+        Adds an AWS::IoT::Thing resource to the template. Use the AWS::IoT::Thing resource to declare an AWS IoT thing.
+
+For information about working with things, see How AWS IoT Works: https://docs.aws.amazon.com/iot/latest/developerguide/aws-iot-how-it-works.html and Device Registry for AWS IoT: https://docs.aws.amazon.com/iot/latest/developerguide/thing-registry.html in the *AWS IoT Developer Guide*.
 
     .LINK
         http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-iot-thing.html
@@ -13,11 +15,15 @@ function New-VSIoTThing {
         The logical ID must be alphanumeric (A-Za-z0-9) and unique within the template. Use the logical name to reference the resource in other parts of the template. For example, if you want to map an Amazon Elastic Block Store volume to an Amazon EC2 instance, you reference the logical IDs to associate the block stores with the instance.
 
     .PARAMETER AttributePayload
+        A string that contains up to three key–value pairs. Maximum length of 800. Duplicates not allowed.
+
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-iot-thing.html#cfn-iot-thing-attributepayload
         Type: AttributePayload
         UpdateType: Mutable
 
     .PARAMETER ThingName
+        The name of the thing to update.
+
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-iot-thing.html#cfn-iot-thing-thingname
         PrimitiveType: String
         UpdateType: Immutable

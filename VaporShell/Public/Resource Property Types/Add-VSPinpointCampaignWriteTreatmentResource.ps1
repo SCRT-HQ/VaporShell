@@ -1,36 +1,46 @@
 function Add-VSPinpointCampaignWriteTreatmentResource {
     <#
     .SYNOPSIS
-        Adds an AWS::Pinpoint::Campaign.WriteTreatmentResource resource property to the template. 
+        Adds an AWS::Pinpoint::Campaign.WriteTreatmentResource resource property to the template. Specifies the settings for a campaign treatment. A treatment is a variation of a campaign that's used for A/B testing of a campaign.
 
     .DESCRIPTION
         Adds an AWS::Pinpoint::Campaign.WriteTreatmentResource resource property to the template.
-
+Specifies the settings for a campaign treatment. A treatment is a variation of a campaign that's used for A/B testing of a campaign.
 
     .LINK
         http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-pinpoint-campaign-writetreatmentresource.html
 
     .PARAMETER TreatmentDescription
+        The custom description of the treatment.
+
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-pinpoint-campaign-writetreatmentresource.html#cfn-pinpoint-campaign-writetreatmentresource-treatmentdescription
         PrimitiveType: String
         UpdateType: Mutable
 
     .PARAMETER MessageConfiguration
+        The message configuration settings for the treatment.
+
         Type: MessageConfiguration
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-pinpoint-campaign-writetreatmentresource.html#cfn-pinpoint-campaign-writetreatmentresource-messageconfiguration
         UpdateType: Mutable
 
     .PARAMETER Schedule
+        The schedule settings for the treatment.
+
         Type: Schedule
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-pinpoint-campaign-writetreatmentresource.html#cfn-pinpoint-campaign-writetreatmentresource-schedule
         UpdateType: Mutable
 
     .PARAMETER SizePercent
+        The allocated percentage of users segment members to send the treatment to.
+
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-pinpoint-campaign-writetreatmentresource.html#cfn-pinpoint-campaign-writetreatmentresource-sizepercent
         PrimitiveType: Integer
         UpdateType: Mutable
 
     .PARAMETER TreatmentName
+        The custom name of the treatment. A treatment is a variation of a campaign that's used for A/B testing of a campaign.
+
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-pinpoint-campaign-writetreatmentresource.html#cfn-pinpoint-campaign-writetreatmentresource-treatmentname
         PrimitiveType: String
         UpdateType: Mutable

@@ -1,21 +1,25 @@
 function Add-VSEMRInstanceGroupConfigScalingConstraints {
     <#
     .SYNOPSIS
-        Adds an AWS::EMR::InstanceGroupConfig.ScalingConstraints resource property to the template. 
+        Adds an AWS::EMR::InstanceGroupConfig.ScalingConstraints resource property to the template. ScalingConstraints is a subproperty of the AutoScalingPolicy property type. ScalingConstraints defines the upper and lower EC2 instance limits for an automatic scaling policy. Automatic scaling activities triggered by automatic scaling rules will not cause an instance group to grow above or shrink below these limits.
 
     .DESCRIPTION
         Adds an AWS::EMR::InstanceGroupConfig.ScalingConstraints resource property to the template.
-
+ScalingConstraints is a subproperty of the AutoScalingPolicy property type. ScalingConstraints defines the upper and lower EC2 instance limits for an automatic scaling policy. Automatic scaling activities triggered by automatic scaling rules will not cause an instance group to grow above or shrink below these limits.
 
     .LINK
         http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-elasticmapreduce-instancegroupconfig-scalingconstraints.html
 
     .PARAMETER MaxCapacity
+        The upper boundary of EC2 instances in an instance group beyond which scaling activities are not allowed to grow. Scale-out activities will not add instances beyond this boundary.
+
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-elasticmapreduce-instancegroupconfig-scalingconstraints.html#cfn-elasticmapreduce-instancegroupconfig-scalingconstraints-maxcapacity
         PrimitiveType: Integer
         UpdateType: Mutable
 
     .PARAMETER MinCapacity
+        The lower boundary of EC2 instances in an instance group below which scaling activities are not allowed to shrink. Scale-in activities will not terminate instances below this boundary.
+
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-elasticmapreduce-instancegroupconfig-scalingconstraints.html#cfn-elasticmapreduce-instancegroupconfig-scalingconstraints-mincapacity
         PrimitiveType: Integer
         UpdateType: Mutable

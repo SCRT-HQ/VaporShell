@@ -1,10 +1,10 @@
 function New-VSRoboMakerSimulationApplication {
     <#
     .SYNOPSIS
-        Adds an AWS::RoboMaker::SimulationApplication resource to the template. 
+        Adds an AWS::RoboMaker::SimulationApplication resource to the template. The AWS::RoboMaker::SimulationApplication resource creates an AWS RoboMaker simulation application.
 
     .DESCRIPTION
-        Adds an AWS::RoboMaker::SimulationApplication resource to the template. 
+        Adds an AWS::RoboMaker::SimulationApplication resource to the template. The AWS::RoboMaker::SimulationApplication resource creates an AWS RoboMaker simulation application.
 
     .LINK
         http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-robomaker-simulationapplication.html
@@ -13,37 +13,51 @@ function New-VSRoboMakerSimulationApplication {
         The logical ID must be alphanumeric (A-Za-z0-9) and unique within the template. Use the logical name to reference the resource in other parts of the template. For example, if you want to map an Amazon Elastic Block Store volume to an Amazon EC2 instance, you reference the logical IDs to associate the block stores with the instance.
 
     .PARAMETER RenderingEngine
+        The rendering engine for the simulation application.
+
         Type: RenderingEngine
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-robomaker-simulationapplication.html#cfn-robomaker-simulationapplication-renderingengine
         UpdateType: Immutable
 
     .PARAMETER SimulationSoftwareSuite
+        The simulation software suite used by the simulation application.
+
         Type: SimulationSoftwareSuite
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-robomaker-simulationapplication.html#cfn-robomaker-simulationapplication-simulationsoftwaresuite
         UpdateType: Immutable
 
     .PARAMETER CurrentRevisionId
+        The current revision id.
+
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-robomaker-simulationapplication.html#cfn-robomaker-simulationapplication-currentrevisionid
         PrimitiveType: String
         UpdateType: Mutable
 
     .PARAMETER RobotSoftwareSuite
+        The robot software suite of the simulation application.
+
         Type: RobotSoftwareSuite
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-robomaker-simulationapplication.html#cfn-robomaker-simulationapplication-robotsoftwaresuite
         UpdateType: Immutable
 
     .PARAMETER Sources
+        The sources of the simulation application.
+
         Type: List
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-robomaker-simulationapplication.html#cfn-robomaker-simulationapplication-sources
         ItemType: SourceConfig
         UpdateType: Mutable
 
     .PARAMETER Tags
+        A map that contains tag keys and tag values that are attached to the simulation application.
+
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-robomaker-simulationapplication.html#cfn-robomaker-simulationapplication-tags
         PrimitiveType: Json
         UpdateType: Mutable
 
     .PARAMETER Name
+        The name of the simulation application.
+
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-robomaker-simulationapplication.html#cfn-robomaker-simulationapplication-name
         PrimitiveType: String
         UpdateType: Immutable

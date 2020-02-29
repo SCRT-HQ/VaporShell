@@ -1,21 +1,25 @@
 function Add-VSCognitoUserPoolStringAttributeConstraints {
     <#
     .SYNOPSIS
-        Adds an AWS::Cognito::UserPool.StringAttributeConstraints resource property to the template. 
+        Adds an AWS::Cognito::UserPool.StringAttributeConstraints resource property to the template. The StringAttributeConstraints property type defines the string attribute constraints of an Amazon Cognito User Pool. StringAttributeConstraints is a subproperty of the SchemaAttribute: https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-cognito-userpool-schemaattribute.html property type.
 
     .DESCRIPTION
         Adds an AWS::Cognito::UserPool.StringAttributeConstraints resource property to the template.
-
+The StringAttributeConstraints property type defines the string attribute constraints of an Amazon Cognito User Pool. StringAttributeConstraints is a subproperty of the SchemaAttribute: https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-cognito-userpool-schemaattribute.html property type.
 
     .LINK
         http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-cognito-userpool-stringattributeconstraints.html
 
     .PARAMETER MinLength
+        The minimum length.
+
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-cognito-userpool-stringattributeconstraints.html#cfn-cognito-userpool-stringattributeconstraints-minlength
         PrimitiveType: String
         UpdateType: Mutable
 
     .PARAMETER MaxLength
+        The maximum length.
+
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-cognito-userpool-stringattributeconstraints.html#cfn-cognito-userpool-stringattributeconstraints-maxlength
         PrimitiveType: String
         UpdateType: Mutable

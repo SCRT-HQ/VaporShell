@@ -1,10 +1,10 @@
 function New-VSWAFRegionalByteMatchSet {
     <#
     .SYNOPSIS
-        Adds an AWS::WAFRegional::ByteMatchSet resource to the template. 
+        Adds an AWS::WAFRegional::ByteMatchSet resource to the template. The AWS::WAFRegional::ByteMatchSet resource creates an AWS WAF ByteMatchSet that identifies a part of a web request that you want to inspect.
 
     .DESCRIPTION
-        Adds an AWS::WAFRegional::ByteMatchSet resource to the template. 
+        Adds an AWS::WAFRegional::ByteMatchSet resource to the template. The AWS::WAFRegional::ByteMatchSet resource creates an AWS WAF ByteMatchSet that identifies a part of a web request that you want to inspect.
 
     .LINK
         http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-wafregional-bytematchset.html
@@ -13,12 +13,16 @@ function New-VSWAFRegionalByteMatchSet {
         The logical ID must be alphanumeric (A-Za-z0-9) and unique within the template. Use the logical name to reference the resource in other parts of the template. For example, if you want to map an Amazon Elastic Block Store volume to an Amazon EC2 instance, you reference the logical IDs to associate the block stores with the instance.
 
     .PARAMETER ByteMatchTuples
+        Specifies the bytes typically a string that corresponds with ASCII characters that you want AWS WAF to search for in web requests, the location in requests that you want AWS WAF to search, and other settings.
+
         Type: List
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-wafregional-bytematchset.html#cfn-wafregional-bytematchset-bytematchtuples
         ItemType: ByteMatchTuple
         UpdateType: Mutable
 
     .PARAMETER Name
+        A friendly name or description of the ByteMatchSet. You can't change Name after you create a ByteMatchSet.
+
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-wafregional-bytematchset.html#cfn-wafregional-bytematchset-name
         PrimitiveType: String
         UpdateType: Immutable

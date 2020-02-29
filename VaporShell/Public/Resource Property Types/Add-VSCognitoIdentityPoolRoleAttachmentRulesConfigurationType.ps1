@@ -1,16 +1,18 @@
 function Add-VSCognitoIdentityPoolRoleAttachmentRulesConfigurationType {
     <#
     .SYNOPSIS
-        Adds an AWS::Cognito::IdentityPoolRoleAttachment.RulesConfigurationType resource property to the template. 
+        Adds an AWS::Cognito::IdentityPoolRoleAttachment.RulesConfigurationType resource property to the template. RulesConfigurationType is a subproperty of the RoleMapping: https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-cognito-identitypoolroleattachment-rolemapping.html property that defines the rules to be used for mapping users to roles.
 
     .DESCRIPTION
         Adds an AWS::Cognito::IdentityPoolRoleAttachment.RulesConfigurationType resource property to the template.
-
+RulesConfigurationType is a subproperty of the RoleMapping: https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-cognito-identitypoolroleattachment-rolemapping.html property that defines the rules to be used for mapping users to roles.
 
     .LINK
         http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-cognito-identitypoolroleattachment-rulesconfigurationtype.html
 
     .PARAMETER Rules
+        A list of rules. You can specify up to 25 rules per identity provider.
+
         Type: List
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-cognito-identitypoolroleattachment-rulesconfigurationtype.html#cfn-cognito-identitypoolroleattachment-rulesconfigurationtype-rules
         ItemType: MappingRule

@@ -1,10 +1,12 @@
 function New-VSSageMakerCodeRepository {
     <#
     .SYNOPSIS
-        Adds an AWS::SageMaker::CodeRepository resource to the template. 
+        Adds an AWS::SageMaker::CodeRepository resource to the template. Creates a Git repository as a resource in your Amazon SageMaker account. You can associate the repository with notebook instances so that you can use Git source control for the notebooks you create. The Git repository is a resource in your Amazon SageMaker account, so it can be associated with more than one notebook instance, and it persists independently from the lifecycle of any notebook instances it is associated with.
 
     .DESCRIPTION
-        Adds an AWS::SageMaker::CodeRepository resource to the template. 
+        Adds an AWS::SageMaker::CodeRepository resource to the template. Creates a Git repository as a resource in your Amazon SageMaker account. You can associate the repository with notebook instances so that you can use Git source control for the notebooks you create. The Git repository is a resource in your Amazon SageMaker account, so it can be associated with more than one notebook instance, and it persists independently from the lifecycle of any notebook instances it is associated with.
+
+The repository can be hosted either in AWS CodeCommit: https://docs.aws.amazon.com/codecommit/latest/userguide/welcome.html or in any other Git repository.
 
     .LINK
         http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-sagemaker-coderepository.html
@@ -13,11 +15,15 @@ function New-VSSageMakerCodeRepository {
         The logical ID must be alphanumeric (A-Za-z0-9) and unique within the template. Use the logical name to reference the resource in other parts of the template. For example, if you want to map an Amazon Elastic Block Store volume to an Amazon EC2 instance, you reference the logical IDs to associate the block stores with the instance.
 
     .PARAMETER CodeRepositoryName
+        The name of the Git repository.
+
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-sagemaker-coderepository.html#cfn-sagemaker-coderepository-coderepositoryname
         PrimitiveType: String
         UpdateType: Immutable
 
     .PARAMETER GitConfig
+        Configuration details for the Git repository, including the URL where it is located and the ARN of the AWS Secrets Manager secret that contains the credentials used to access the repository.
+
         Type: GitConfig
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-sagemaker-coderepository.html#cfn-sagemaker-coderepository-gitconfig
         UpdateType: Mutable

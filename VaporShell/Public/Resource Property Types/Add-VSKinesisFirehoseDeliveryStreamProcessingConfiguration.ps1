@@ -1,21 +1,25 @@
 function Add-VSKinesisFirehoseDeliveryStreamProcessingConfiguration {
     <#
     .SYNOPSIS
-        Adds an AWS::KinesisFirehose::DeliveryStream.ProcessingConfiguration resource property to the template. 
+        Adds an AWS::KinesisFirehose::DeliveryStream.ProcessingConfiguration resource property to the template. The ProcessingConfiguration property configures data processing for an Amazon Kinesis Data Firehose delivery stream.
 
     .DESCRIPTION
         Adds an AWS::KinesisFirehose::DeliveryStream.ProcessingConfiguration resource property to the template.
-
+The ProcessingConfiguration property configures data processing for an Amazon Kinesis Data Firehose delivery stream.
 
     .LINK
         http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-kinesisfirehose-deliverystream-processingconfiguration.html
 
     .PARAMETER Enabled
+        Indicates whether data processing is enabled true or disabled false.
+
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-kinesisfirehose-deliverystream-processingconfiguration.html#cfn-kinesisfirehose-deliverystream-processingconfiguration-enabled
         PrimitiveType: Boolean
         UpdateType: Mutable
 
     .PARAMETER Processors
+        The data processors.
+
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-kinesisfirehose-deliverystream-processingconfiguration.html#cfn-kinesisfirehose-deliverystream-processingconfiguration-processors
         DuplicatesAllowed: False
         ItemType: Processor

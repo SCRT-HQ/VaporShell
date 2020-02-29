@@ -1,10 +1,10 @@
 function New-VSSecretsManagerResourcePolicy {
     <#
     .SYNOPSIS
-        Adds an AWS::SecretsManager::ResourcePolicy resource to the template. 
+        Adds an AWS::SecretsManager::ResourcePolicy resource to the template. Attaches the contents of the specified resource-based permission policy to a secret. A resource-based policy is optional. Alternatively, you can use IAM identity-based policies that specify the secret's Amazon Resource Name (ARN in the policy statement's Resources element. You can also use a combination of both identity-based and resource-based policies. The affected users and roles receive the permissions that are permitted by all relevant policies.
 
     .DESCRIPTION
-        Adds an AWS::SecretsManager::ResourcePolicy resource to the template. 
+        Adds an AWS::SecretsManager::ResourcePolicy resource to the template. Attaches the contents of the specified resource-based permission policy to a secret. A resource-based policy is optional. Alternatively, you can use IAM identity-based policies that specify the secret's Amazon Resource Name (ARN in the policy statement's Resources element. You can also use a combination of both identity-based and resource-based policies. The affected users and roles receive the permissions that are permitted by all relevant policies.
 
     .LINK
         http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-secretsmanager-resourcepolicy.html
@@ -13,11 +13,16 @@ function New-VSSecretsManagerResourcePolicy {
         The logical ID must be alphanumeric (A-Za-z0-9) and unique within the template. Use the logical name to reference the resource in other parts of the template. For example, if you want to map an Amazon Elastic Block Store volume to an Amazon EC2 instance, you reference the logical IDs to associate the block stores with the instance.
 
     .PARAMETER SecretId
+        Specifies the Amazon Resource Name ARN or the friendly name of the secret that you want to attach a resource-based permissions policy to.
+If you use this property to change the SecretId for an existing resource-based policy, it removes the policy from the original secret, and then attaches the policy to the secret with the specified SecretId. This results in changing the permissions for two secrets.
+
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-secretsmanager-resourcepolicy.html#cfn-secretsmanager-resourcepolicy-secretid
         PrimitiveType: String
         UpdateType: Immutable
 
     .PARAMETER ResourcePolicy
+        Specifies a JSON object that's constructed according to the grammar and syntax for a resource-based policy. The policy identifies who can access or manage this secret and its versions. For information on how to format a JSON object as a parameter for this resource type, see Using Resource-based Policies for Secrets Manager: https://docs.aws.amazon.com/secretsmanager/latest/UserGuide/auth-and-access-resource-based-policies.htmlin the AWS Secrets Manager User Guide. Those same rules apply here.
+
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-secretsmanager-resourcepolicy.html#cfn-secretsmanager-resourcepolicy-resourcepolicy
         PrimitiveType: Json
         UpdateType: Mutable

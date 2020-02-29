@@ -1,10 +1,12 @@
 function New-VSSSMResourceDataSync {
     <#
     .SYNOPSIS
-        Adds an AWS::SSM::ResourceDataSync resource to the template. 
+        Adds an AWS::SSM::ResourceDataSync resource to the template. The AWS::SSM::ResourceDataSync resource creates or deletes a Resource Data Sync for AWS Systems Manager Inventory. You can use Resource Data Sync to send Inventory data collected from all of your Systems Manager managed instances to a single Amazon S3 bucket that you have already created in your account. Resource Data Sync then automatically updates the centralized data when new Inventory data is collected.
 
     .DESCRIPTION
-        Adds an AWS::SSM::ResourceDataSync resource to the template. 
+        Adds an AWS::SSM::ResourceDataSync resource to the template. The AWS::SSM::ResourceDataSync resource creates or deletes a Resource Data Sync for AWS Systems Manager Inventory. You can use Resource Data Sync to send Inventory data collected from all of your Systems Manager managed instances to a single Amazon S3 bucket that you have already created in your account. Resource Data Sync then automatically updates the centralized data when new Inventory data is collected.
+
+For more information, see Configuring Inventory Collection: https://docs.aws.amazon.com/systems-manager/latest/userguide/sysman-inventory-configuring.html#sysman-inventory-datasync in the *AWS Systems Manager User Guide*.
 
     .LINK
         http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ssm-resourcedatasync.html
@@ -13,46 +15,64 @@ function New-VSSSMResourceDataSync {
         The logical ID must be alphanumeric (A-Za-z0-9) and unique within the template. Use the logical name to reference the resource in other parts of the template. For example, if you want to map an Amazon Elastic Block Store volume to an Amazon EC2 instance, you reference the logical IDs to associate the block stores with the instance.
 
     .PARAMETER S3Destination
+        +  Configuring Inventory Collection: https://docs.aws.amazon.com/systems-manager/latest/userguide/sysman-inventory-configuring.html
+
         Type: S3Destination
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ssm-resourcedatasync.html#cfn-ssm-resourcedatasync-s3destination
         UpdateType: Immutable
 
     .PARAMETER KMSKeyArn
+        The ARN of an encryption key for a destination in Amazon S3. You can use a KMS key to encrypt inventory data in Amazon S3. You must specify a key that exist in the same region as the destination Amazon S3 bucket.
+
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ssm-resourcedatasync.html#cfn-ssm-resourcedatasync-kmskeyarn
         PrimitiveType: String
         UpdateType: Immutable
 
     .PARAMETER SyncSource
+        +  Configuring Inventory Collection: https://docs.aws.amazon.com/systems-manager/latest/userguide/sysman-inventory-configuring.html
+
         Type: SyncSource
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ssm-resourcedatasync.html#cfn-ssm-resourcedatasync-syncsource
         UpdateType: Mutable
 
     .PARAMETER BucketName
+        The name of the Amazon S3 bucket where the aggregated data is stored.
+
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ssm-resourcedatasync.html#cfn-ssm-resourcedatasync-bucketname
         PrimitiveType: String
         UpdateType: Immutable
 
     .PARAMETER BucketRegion
+        The AWS Region with the Amazon S3 bucket targeted by the Resource Data Sync.
+
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ssm-resourcedatasync.html#cfn-ssm-resourcedatasync-bucketregion
         PrimitiveType: String
         UpdateType: Immutable
 
     .PARAMETER SyncFormat
+        A supported sync format. The following format is currently supported: JsonSerDe
+
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ssm-resourcedatasync.html#cfn-ssm-resourcedatasync-syncformat
         PrimitiveType: String
         UpdateType: Immutable
 
     .PARAMETER SyncName
+        A name for the Resource Data Sync.
+
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ssm-resourcedatasync.html#cfn-ssm-resourcedatasync-syncname
         PrimitiveType: String
         UpdateType: Immutable
 
     .PARAMETER SyncType
+        +  Configuring Inventory Collection: https://docs.aws.amazon.com/systems-manager/latest/userguide/sysman-inventory-configuring.html
+
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ssm-resourcedatasync.html#cfn-ssm-resourcedatasync-synctype
         PrimitiveType: String
         UpdateType: Immutable
 
     .PARAMETER BucketPrefix
+        An Amazon S3 prefix for the bucket.
+
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ssm-resourcedatasync.html#cfn-ssm-resourcedatasync-bucketprefix
         PrimitiveType: String
         UpdateType: Immutable

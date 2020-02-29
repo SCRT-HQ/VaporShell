@@ -1,16 +1,18 @@
 function Add-VSLakeFormationPermissionsDatabaseResource {
     <#
     .SYNOPSIS
-        Adds an AWS::LakeFormation::Permissions.DatabaseResource resource property to the template. 
+        Adds an AWS::LakeFormation::Permissions.DatabaseResource resource property to the template. A structure for the database object.
 
     .DESCRIPTION
         Adds an AWS::LakeFormation::Permissions.DatabaseResource resource property to the template.
-
+A structure for the database object.
 
     .LINK
         http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-lakeformation-permissions-databaseresource.html
 
     .PARAMETER Name
+        The name of the database resource. Unique to the Data Catalog.
+
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-lakeformation-permissions-databaseresource.html#cfn-lakeformation-permissions-databaseresource-name
         PrimitiveType: String
         UpdateType: Mutable

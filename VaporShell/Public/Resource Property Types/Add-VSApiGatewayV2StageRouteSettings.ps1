@@ -1,36 +1,46 @@
 function Add-VSApiGatewayV2StageRouteSettings {
     <#
     .SYNOPSIS
-        Adds an AWS::ApiGatewayV2::Stage.RouteSettings resource property to the template. 
+        Adds an AWS::ApiGatewayV2::Stage.RouteSettings resource property to the template. Represents a collection of route settings.
 
     .DESCRIPTION
         Adds an AWS::ApiGatewayV2::Stage.RouteSettings resource property to the template.
-
+Represents a collection of route settings.
 
     .LINK
         http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-apigatewayv2-stage-routesettings.html
 
     .PARAMETER LoggingLevel
+        Specifies the logging level for this route: DEBUG, INFO, or WARN. This property affects the log entries pushed to Amazon CloudWatch Logs.
+
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-apigatewayv2-stage-routesettings.html#cfn-apigatewayv2-stage-routesettings-logginglevel
         PrimitiveType: String
         UpdateType: Mutable
 
     .PARAMETER DataTraceEnabled
+        Specifies whether true or not false data trace logging is enabled for this route. This property affects the log entries pushed to Amazon CloudWatch Logs.
+
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-apigatewayv2-stage-routesettings.html#cfn-apigatewayv2-stage-routesettings-datatraceenabled
         PrimitiveType: Boolean
         UpdateType: Mutable
 
     .PARAMETER ThrottlingBurstLimit
+        Specifies the throttling burst limit.
+
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-apigatewayv2-stage-routesettings.html#cfn-apigatewayv2-stage-routesettings-throttlingburstlimit
         PrimitiveType: Integer
         UpdateType: Mutable
 
     .PARAMETER DetailedMetricsEnabled
+        Specifies whether detailed metrics are enabled.
+
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-apigatewayv2-stage-routesettings.html#cfn-apigatewayv2-stage-routesettings-detailedmetricsenabled
         PrimitiveType: Boolean
         UpdateType: Mutable
 
     .PARAMETER ThrottlingRateLimit
+        Specifies the throttling rate limit.
+
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-apigatewayv2-stage-routesettings.html#cfn-apigatewayv2-stage-routesettings-throttlingratelimit
         PrimitiveType: Double
         UpdateType: Mutable

@@ -1,21 +1,25 @@
 function Add-VSRoute53ResolverResolverEndpointIpAddressRequest {
     <#
     .SYNOPSIS
-        Adds an AWS::Route53Resolver::ResolverEndpoint.IpAddressRequest resource property to the template. 
+        Adds an AWS::Route53Resolver::ResolverEndpoint.IpAddressRequest resource property to the template. In a CreateResolverEndpoint: https://docs.aws.amazon.com/Route53/latest/APIReference/API_route53resolver_CreateResolverEndpoint.html request, the IP address that DNS queries originate from (for outbound endpoints or that you forward DNS queries to (for inbound endpoints. IpAddressRequest also includes the ID of the subnet that contains the IP address.
 
     .DESCRIPTION
         Adds an AWS::Route53Resolver::ResolverEndpoint.IpAddressRequest resource property to the template.
-
+In a CreateResolverEndpoint: https://docs.aws.amazon.com/Route53/latest/APIReference/API_route53resolver_CreateResolverEndpoint.html request, the IP address that DNS queries originate from (for outbound endpoints or that you forward DNS queries to (for inbound endpoints. IpAddressRequest also includes the ID of the subnet that contains the IP address.
 
     .LINK
         http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-route53resolver-resolverendpoint-ipaddressrequest.html
 
     .PARAMETER Ip
+        The IP address that you want to use for DNS queries.
+
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-route53resolver-resolverendpoint-ipaddressrequest.html#cfn-route53resolver-resolverendpoint-ipaddressrequest-ip
         PrimitiveType: String
         UpdateType: Mutable
 
     .PARAMETER SubnetId
+        The ID of the subnet that contains the IP address.
+
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-route53resolver-resolverendpoint-ipaddressrequest.html#cfn-route53resolver-resolverendpoint-ipaddressrequest-subnetid
         PrimitiveType: String
         UpdateType: Mutable

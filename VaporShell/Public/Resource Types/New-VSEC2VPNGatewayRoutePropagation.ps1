@@ -1,10 +1,12 @@
 function New-VSEC2VPNGatewayRoutePropagation {
     <#
     .SYNOPSIS
-        Adds an AWS::EC2::VPNGatewayRoutePropagation resource to the template. 
+        Adds an AWS::EC2::VPNGatewayRoutePropagation resource to the template. Enables a virtual private gateway (VGW to propagate routes to the specified route table of a VPC.
 
     .DESCRIPTION
-        Adds an AWS::EC2::VPNGatewayRoutePropagation resource to the template. 
+        Adds an AWS::EC2::VPNGatewayRoutePropagation resource to the template. Enables a virtual private gateway (VGW to propagate routes to the specified route table of a VPC.
+
+If you reference a VPN gateway that is in the same template as your VPN gateway route propagation, you must explicitly declare a dependency on the VPN gateway attachment. The AWS::EC2::VPNGatewayRoutePropagation resource cannot use the VPN gateway until it has successfully attached to the VPC. Add a  DependsOn Attribute: https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-attribute-dependson.html in the AWS::EC2::VPNGatewayRoutePropagation resource to explicitly declare a dependency on the VPN gateway attachment.
 
     .LINK
         http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ec2-vpn-gatewayrouteprop.html
@@ -13,6 +15,8 @@ function New-VSEC2VPNGatewayRoutePropagation {
         The logical ID must be alphanumeric (A-Za-z0-9) and unique within the template. Use the logical name to reference the resource in other parts of the template. For example, if you want to map an Amazon Elastic Block Store volume to an Amazon EC2 instance, you reference the logical IDs to associate the block stores with the instance.
 
     .PARAMETER RouteTableIds
+        The ID of the route table. The routing table must be associated with the same VPC that the virtual private gateway is attached to.
+
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ec2-vpn-gatewayrouteprop.html#cfn-ec2-vpngatewayrouteprop-routetableids
         DuplicatesAllowed: True
         PrimitiveItemType: String
@@ -20,6 +24,8 @@ function New-VSEC2VPNGatewayRoutePropagation {
         UpdateType: Mutable
 
     .PARAMETER VpnGatewayId
+        The ID of the virtual private gateway that is attached to a VPC. The virtual private gateway must be attached to the same VPC that the routing tables are associated with.
+
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ec2-vpn-gatewayrouteprop.html#cfn-ec2-vpngatewayrouteprop-vpngatewayid
         PrimitiveType: String
         UpdateType: Mutable

@@ -1,10 +1,10 @@
 function New-VSApiGatewayV2RouteResponse {
     <#
     .SYNOPSIS
-        Adds an AWS::ApiGatewayV2::RouteResponse resource to the template. 
+        Adds an AWS::ApiGatewayV2::RouteResponse resource to the template. The AWS::ApiGatewayV2::RouteResponse resource creates a route response for a WebSocket API. For more information, see Set up Route Responses for a WebSocket API in API Gateway: https://docs.aws.amazon.com/apigateway/latest/developerguide/apigateway-websocket-api-route-response.html in the *API Gateway Developer Guide*.
 
     .DESCRIPTION
-        Adds an AWS::ApiGatewayV2::RouteResponse resource to the template. 
+        Adds an AWS::ApiGatewayV2::RouteResponse resource to the template. The AWS::ApiGatewayV2::RouteResponse resource creates a route response for a WebSocket API. For more information, see Set up Route Responses for a WebSocket API in API Gateway: https://docs.aws.amazon.com/apigateway/latest/developerguide/apigateway-websocket-api-route-response.html in the *API Gateway Developer Guide*.
 
     .LINK
         http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-apigatewayv2-routeresponse.html
@@ -13,31 +13,43 @@ function New-VSApiGatewayV2RouteResponse {
         The logical ID must be alphanumeric (A-Za-z0-9) and unique within the template. Use the logical name to reference the resource in other parts of the template. For example, if you want to map an Amazon Elastic Block Store volume to an Amazon EC2 instance, you reference the logical IDs to associate the block stores with the instance.
 
     .PARAMETER RouteResponseKey
+        The route response key.
+
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-apigatewayv2-routeresponse.html#cfn-apigatewayv2-routeresponse-routeresponsekey
         PrimitiveType: String
         UpdateType: Mutable
 
     .PARAMETER ResponseParameters
+        The route response parameters.
+
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-apigatewayv2-routeresponse.html#cfn-apigatewayv2-routeresponse-responseparameters
         PrimitiveType: Json
         UpdateType: Mutable
 
     .PARAMETER RouteId
+        The route ID.
+
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-apigatewayv2-routeresponse.html#cfn-apigatewayv2-routeresponse-routeid
         PrimitiveType: String
         UpdateType: Immutable
 
     .PARAMETER ModelSelectionExpression
+        The model selection expression for the route response.
+
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-apigatewayv2-routeresponse.html#cfn-apigatewayv2-routeresponse-modelselectionexpression
         PrimitiveType: String
         UpdateType: Mutable
 
     .PARAMETER ApiId
+        The API identifier.
+
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-apigatewayv2-routeresponse.html#cfn-apigatewayv2-routeresponse-apiid
         PrimitiveType: String
         UpdateType: Immutable
 
     .PARAMETER ResponseModels
+        The response models for the route response.
+
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-apigatewayv2-routeresponse.html#cfn-apigatewayv2-routeresponse-responsemodels
         PrimitiveType: Json
         UpdateType: Mutable

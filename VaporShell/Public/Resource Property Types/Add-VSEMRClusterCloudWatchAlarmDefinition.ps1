@@ -1,21 +1,25 @@
 function Add-VSEMRClusterCloudWatchAlarmDefinition {
     <#
     .SYNOPSIS
-        Adds an AWS::EMR::Cluster.CloudWatchAlarmDefinition resource property to the template. 
+        Adds an AWS::EMR::Cluster.CloudWatchAlarmDefinition resource property to the template. CloudWatchAlarmDefinition is a subproperty of the ScalingTrigger property, which determines when to trigger an automatic scaling activity. Scaling activity begins when you satisfy the defined alarm conditions.
 
     .DESCRIPTION
         Adds an AWS::EMR::Cluster.CloudWatchAlarmDefinition resource property to the template.
-
+CloudWatchAlarmDefinition is a subproperty of the ScalingTrigger property, which determines when to trigger an automatic scaling activity. Scaling activity begins when you satisfy the defined alarm conditions.
 
     .LINK
         http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-elasticmapreduce-cluster-cloudwatchalarmdefinition.html
 
     .PARAMETER ComparisonOperator
+        Determines how the metric specified by MetricName is compared to the value specified by Threshold.
+
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-elasticmapreduce-cluster-cloudwatchalarmdefinition.html#cfn-elasticmapreduce-cluster-cloudwatchalarmdefinition-comparisonoperator
         PrimitiveType: String
         UpdateType: Mutable
 
     .PARAMETER Dimensions
+        A CloudWatch metric dimension.
+
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-elasticmapreduce-cluster-cloudwatchalarmdefinition.html#cfn-elasticmapreduce-cluster-cloudwatchalarmdefinition-dimensions
         DuplicatesAllowed: False
         ItemType: MetricDimension
@@ -23,36 +27,50 @@ function Add-VSEMRClusterCloudWatchAlarmDefinition {
         UpdateType: Mutable
 
     .PARAMETER EvaluationPeriods
+        The number of periods, expressed in seconds using Period, during which the alarm condition must exist before the alarm triggers automatic scaling activity. The default value is 1.
+
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-elasticmapreduce-cluster-cloudwatchalarmdefinition.html#cfn-elasticmapreduce-cluster-cloudwatchalarmdefinition-evaluationperiods
         PrimitiveType: Integer
         UpdateType: Mutable
 
     .PARAMETER MetricName
+        The name of the CloudWatch metric that is watched to determine an alarm condition.
+
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-elasticmapreduce-cluster-cloudwatchalarmdefinition.html#cfn-elasticmapreduce-cluster-cloudwatchalarmdefinition-metricname
         PrimitiveType: String
         UpdateType: Mutable
 
     .PARAMETER Namespace
+        The namespace for the CloudWatch metric. The default is AWS/ElasticMapReduce.
+
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-elasticmapreduce-cluster-cloudwatchalarmdefinition.html#cfn-elasticmapreduce-cluster-cloudwatchalarmdefinition-namespace
         PrimitiveType: String
         UpdateType: Mutable
 
     .PARAMETER Period
+        The period, in seconds, over which the statistic is applied. EMR CloudWatch metrics are emitted every five minutes 300 seconds, so if an EMR CloudWatch metric is specified, specify 300.
+
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-elasticmapreduce-cluster-cloudwatchalarmdefinition.html#cfn-elasticmapreduce-cluster-cloudwatchalarmdefinition-period
         PrimitiveType: Integer
         UpdateType: Mutable
 
     .PARAMETER Statistic
+        The statistic to apply to the metric associated with the alarm. The default is AVERAGE.
+
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-elasticmapreduce-cluster-cloudwatchalarmdefinition.html#cfn-elasticmapreduce-cluster-cloudwatchalarmdefinition-statistic
         PrimitiveType: String
         UpdateType: Mutable
 
     .PARAMETER Threshold
+        The value against which the specified statistic is compared.
+
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-elasticmapreduce-cluster-cloudwatchalarmdefinition.html#cfn-elasticmapreduce-cluster-cloudwatchalarmdefinition-threshold
         PrimitiveType: Double
         UpdateType: Mutable
 
     .PARAMETER Unit
+        The unit of measure associated with the CloudWatch metric being watched. The value specified for Unit must correspond to the units specified in the CloudWatch metric.
+
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-elasticmapreduce-cluster-cloudwatchalarmdefinition.html#cfn-elasticmapreduce-cluster-cloudwatchalarmdefinition-unit
         PrimitiveType: String
         UpdateType: Mutable

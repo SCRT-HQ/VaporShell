@@ -1,10 +1,12 @@
 function New-VSAppMeshVirtualService {
     <#
     .SYNOPSIS
-        Adds an AWS::AppMesh::VirtualService resource to the template. 
+        Adds an AWS::AppMesh::VirtualService resource to the template. Creates a virtual service within a service mesh.
 
     .DESCRIPTION
-        Adds an AWS::AppMesh::VirtualService resource to the template. 
+        Adds an AWS::AppMesh::VirtualService resource to the template. Creates a virtual service within a service mesh.
+
+A virtual service is an abstraction of a real service that is provided by a virtual node directly or indirectly by means of a virtual router. Dependent services call your virtual service by its virtualServiceName, and those requests are routed to the virtual node or virtual router that is specified as the provider for the virtual service.
 
     .LINK
         http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-appmesh-virtualservice.html
@@ -13,21 +15,29 @@ function New-VSAppMeshVirtualService {
         The logical ID must be alphanumeric (A-Za-z0-9) and unique within the template. Use the logical name to reference the resource in other parts of the template. For example, if you want to map an Amazon Elastic Block Store volume to an Amazon EC2 instance, you reference the logical IDs to associate the block stores with the instance.
 
     .PARAMETER MeshName
+        The name of the service mesh to create the virtual service in.
+
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-appmesh-virtualservice.html#cfn-appmesh-virtualservice-meshname
         PrimitiveType: String
         UpdateType: Immutable
 
     .PARAMETER VirtualServiceName
+        The name to use for the virtual service.
+
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-appmesh-virtualservice.html#cfn-appmesh-virtualservice-virtualservicename
         PrimitiveType: String
         UpdateType: Immutable
 
     .PARAMETER Spec
+        The virtual service specification to apply.
+
         Type: VirtualServiceSpec
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-appmesh-virtualservice.html#cfn-appmesh-virtualservice-spec
         UpdateType: Mutable
 
     .PARAMETER Tags
+        Optional metadata that you can apply to the virtual service to assist with categorization and organization. Each tag consists of a key and an optional value, both of which you define. Tag keys can have a maximum character length of 128 characters, and tag values can have a maximum length of 256 characters.
+
         Type: List
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-appmesh-virtualservice.html#cfn-appmesh-virtualservice-tags
         ItemType: Tag

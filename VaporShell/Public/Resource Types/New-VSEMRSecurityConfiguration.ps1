@@ -1,10 +1,10 @@
 function New-VSEMRSecurityConfiguration {
     <#
     .SYNOPSIS
-        Adds an AWS::EMR::SecurityConfiguration resource to the template. 
+        Adds an AWS::EMR::SecurityConfiguration resource to the template. Use a SecurityConfiguration resource to configure data encryption, Kerberos authentication (available in Amazon EMR release version 5.10.0 and later, and Amazon S3 authorization for EMRFS (available in EMR 5.10.0 and later. You can re-use a security configuration for any number of clusters in your account. For more information and example security configuration JSON objects, see Create a Security Configuration: https://docs.aws.amazon.com/emr/latest/ManagementGuide/emr-create-security-configuration.html in the *Amazon EMR Management Guide*.
 
     .DESCRIPTION
-        Adds an AWS::EMR::SecurityConfiguration resource to the template. 
+        Adds an AWS::EMR::SecurityConfiguration resource to the template. Use a SecurityConfiguration resource to configure data encryption, Kerberos authentication (available in Amazon EMR release version 5.10.0 and later, and Amazon S3 authorization for EMRFS (available in EMR 5.10.0 and later. You can re-use a security configuration for any number of clusters in your account. For more information and example security configuration JSON objects, see Create a Security Configuration: https://docs.aws.amazon.com/emr/latest/ManagementGuide/emr-create-security-configuration.html in the *Amazon EMR Management Guide*.
 
     .LINK
         http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-emr-securityconfiguration.html
@@ -13,11 +13,15 @@ function New-VSEMRSecurityConfiguration {
         The logical ID must be alphanumeric (A-Za-z0-9) and unique within the template. Use the logical name to reference the resource in other parts of the template. For example, if you want to map an Amazon Elastic Block Store volume to an Amazon EC2 instance, you reference the logical IDs to associate the block stores with the instance.
 
     .PARAMETER Name
+        The name of the security configuration.
+
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-emr-securityconfiguration.html#cfn-emr-securityconfiguration-name
         PrimitiveType: String
         UpdateType: Immutable
 
     .PARAMETER SecurityConfiguration
+        The security configuration details in JSON format.
+
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-emr-securityconfiguration.html#cfn-emr-securityconfiguration-securityconfiguration
         PrimitiveType: Json
         UpdateType: Immutable

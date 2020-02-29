@@ -1,21 +1,25 @@
 function Add-VSTransferServerIdentityProviderDetails {
     <#
     .SYNOPSIS
-        Adds an AWS::Transfer::Server.IdentityProviderDetails resource property to the template. 
+        Adds an AWS::Transfer::Server.IdentityProviderDetails resource property to the template. This parameter is required when the IdentityProviderType is set to API_GATEWAY. Accepts an array containing all of the information required to call a customer-supplied authentication API, including the API Gateway URL. This property is not required when the IdentityProviderType is set to SERVICE_MANAGED.
 
     .DESCRIPTION
         Adds an AWS::Transfer::Server.IdentityProviderDetails resource property to the template.
-
+This parameter is required when the IdentityProviderType is set to API_GATEWAY. Accepts an array containing all of the information required to call a customer-supplied authentication API, including the API Gateway URL. This property is not required when the IdentityProviderType is set to SERVICE_MANAGED.
 
     .LINK
         http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-transfer-server-identityproviderdetails.html
 
     .PARAMETER InvocationRole
+        The InvocationRole parameter provides the type of InvocationRole used to authenticate the user account.
+
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-transfer-server-identityproviderdetails.html#cfn-transfer-server-identityproviderdetails-invocationrole
         PrimitiveType: String
         UpdateType: Mutable
 
     .PARAMETER Url
+        The Url parameter provides contains the location of the service endpoint used to authenticate users.
+
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-transfer-server-identityproviderdetails.html#cfn-transfer-server-identityproviderdetails-url
         PrimitiveType: String
         UpdateType: Mutable

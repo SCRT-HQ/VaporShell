@@ -1,10 +1,10 @@
 function New-VSApiGatewayModel {
     <#
     .SYNOPSIS
-        Adds an AWS::ApiGateway::Model resource to the template. 
+        Adds an AWS::ApiGateway::Model resource to the template. The AWS::ApiGateway::Model resource defines the structure of a request or response payload for an API method.
 
     .DESCRIPTION
-        Adds an AWS::ApiGateway::Model resource to the template. 
+        Adds an AWS::ApiGateway::Model resource to the template. The AWS::ApiGateway::Model resource defines the structure of a request or response payload for an API method.
 
     .LINK
         http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-apigateway-model.html
@@ -13,26 +13,37 @@ function New-VSApiGatewayModel {
         The logical ID must be alphanumeric (A-Za-z0-9) and unique within the template. Use the logical name to reference the resource in other parts of the template. For example, if you want to map an Amazon Elastic Block Store volume to an Amazon EC2 instance, you reference the logical IDs to associate the block stores with the instance.
 
     .PARAMETER ContentType
+        The content type for the model.
+
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-apigateway-model.html#cfn-apigateway-model-contenttype
         PrimitiveType: String
         UpdateType: Immutable
 
     .PARAMETER Description
+        A description that identifies this model.
+
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-apigateway-model.html#cfn-apigateway-model-description
         PrimitiveType: String
         UpdateType: Mutable
 
     .PARAMETER Name
+        A name for the model. If you don't specify a name, AWS CloudFormation generates a unique physical ID and uses that ID for the model name. For more information, see Name Type: https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-name.html.
+If you specify a name, you cannot perform updates that require replacement of this resource. You can perform updates that require no or some interruption. If you must replace the resource, specify a new name.
+
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-apigateway-model.html#cfn-apigateway-model-name
         PrimitiveType: String
         UpdateType: Immutable
 
     .PARAMETER RestApiId
+        The ID of a REST API with which to associate this model.
+
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-apigateway-model.html#cfn-apigateway-model-restapiid
         PrimitiveType: String
         UpdateType: Immutable
 
     .PARAMETER Schema
+        The schema to use to transform data to one or more output formats. Specify null {} if you don't want to specify a schema.
+
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-apigateway-model.html#cfn-apigateway-model-schema
         PrimitiveType: Json
         UpdateType: Mutable

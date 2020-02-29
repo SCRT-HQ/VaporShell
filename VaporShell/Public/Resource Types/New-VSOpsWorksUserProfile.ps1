@@ -1,10 +1,10 @@
 function New-VSOpsWorksUserProfile {
     <#
     .SYNOPSIS
-        Adds an AWS::OpsWorks::UserProfile resource to the template. 
+        Adds an AWS::OpsWorks::UserProfile resource to the template. Describes a user's SSH information.
 
     .DESCRIPTION
-        Adds an AWS::OpsWorks::UserProfile resource to the template. 
+        Adds an AWS::OpsWorks::UserProfile resource to the template. Describes a user's SSH information.
 
     .LINK
         http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-opsworks-userprofile.html
@@ -13,21 +13,29 @@ function New-VSOpsWorksUserProfile {
         The logical ID must be alphanumeric (A-Za-z0-9) and unique within the template. Use the logical name to reference the resource in other parts of the template. For example, if you want to map an Amazon Elastic Block Store volume to an Amazon EC2 instance, you reference the logical IDs to associate the block stores with the instance.
 
     .PARAMETER AllowSelfManagement
+        Whether users can specify their own SSH public key through the My Settings page. For more information, see Managing User Permissions: https://docs.aws.amazon.com/opsworks/latest/userguide/security-settingsshkey.html.
+
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-opsworks-userprofile.html#cfn-opsworks-userprofile-allowselfmanagement
         PrimitiveType: Boolean
         UpdateType: Mutable
 
     .PARAMETER IamUserArn
+        The user's IAM ARN.
+
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-opsworks-userprofile.html#cfn-opsworks-userprofile-iamuserarn
         PrimitiveType: String
         UpdateType: Immutable
 
     .PARAMETER SshPublicKey
+        The user's SSH public key.
+
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-opsworks-userprofile.html#cfn-opsworks-userprofile-sshpublickey
         PrimitiveType: String
         UpdateType: Mutable
 
     .PARAMETER SshUsername
+        The user's SSH user name.
+
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-opsworks-userprofile.html#cfn-opsworks-userprofile-sshusername
         PrimitiveType: String
         UpdateType: Mutable

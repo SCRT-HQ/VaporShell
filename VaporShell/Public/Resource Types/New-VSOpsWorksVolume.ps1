@@ -1,10 +1,10 @@
 function New-VSOpsWorksVolume {
     <#
     .SYNOPSIS
-        Adds an AWS::OpsWorks::Volume resource to the template. 
+        Adds an AWS::OpsWorks::Volume resource to the template. Describes an instance's Amazon EBS volume.
 
     .DESCRIPTION
-        Adds an AWS::OpsWorks::Volume resource to the template. 
+        Adds an AWS::OpsWorks::Volume resource to the template. Describes an instance's Amazon EBS volume.
 
     .LINK
         http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-opsworks-volume.html
@@ -13,21 +13,29 @@ function New-VSOpsWorksVolume {
         The logical ID must be alphanumeric (A-Za-z0-9) and unique within the template. Use the logical name to reference the resource in other parts of the template. For example, if you want to map an Amazon Elastic Block Store volume to an Amazon EC2 instance, you reference the logical IDs to associate the block stores with the instance.
 
     .PARAMETER Ec2VolumeId
+        The Amazon EC2 volume ID.
+
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-opsworks-volume.html#cfn-opsworks-volume-ec2volumeid
         PrimitiveType: String
         UpdateType: Immutable
 
     .PARAMETER MountPoint
+        The volume mount point. For example, "/mnt/disk1".
+
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-opsworks-volume.html#cfn-opsworks-volume-mountpoint
         PrimitiveType: String
         UpdateType: Mutable
 
     .PARAMETER Name
+        The volume name.
+
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-opsworks-volume.html#cfn-opsworks-volume-name
         PrimitiveType: String
         UpdateType: Mutable
 
     .PARAMETER StackId
+        The stack ID.
+
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-opsworks-volume.html#cfn-opsworks-volume-stackid
         PrimitiveType: String
         UpdateType: Immutable

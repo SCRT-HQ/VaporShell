@@ -1,10 +1,10 @@
 function New-VSS3BucketPolicy {
     <#
     .SYNOPSIS
-        Adds an AWS::S3::BucketPolicy resource to the template. 
+        Adds an AWS::S3::BucketPolicy resource to the template. Applies an Amazon S3 bucket policy to an Amazon S3 bucket.
 
     .DESCRIPTION
-        Adds an AWS::S3::BucketPolicy resource to the template. 
+        Adds an AWS::S3::BucketPolicy resource to the template. Applies an Amazon S3 bucket policy to an Amazon S3 bucket.
 
     .LINK
         http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-s3-policy.html
@@ -13,11 +13,15 @@ function New-VSS3BucketPolicy {
         The logical ID must be alphanumeric (A-Za-z0-9) and unique within the template. Use the logical name to reference the resource in other parts of the template. For example, if you want to map an Amazon Elastic Block Store volume to an Amazon EC2 instance, you reference the logical IDs to associate the block stores with the instance.
 
     .PARAMETER Bucket
+        The name of the Amazon S3 bucket to which the policy applies.
+
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-s3-policy.html#aws-properties-s3-policy-bucket
         PrimitiveType: String
         UpdateType: Immutable
 
     .PARAMETER PolicyDocument
+        A policy document containing permissions to add to the specified bucket. For more information, see Access Policy Language Overview: https://docs.aws.amazon.com/AmazonS3/latest/dev/access-policy-language-overview.html in the *Amazon Simple Storage Service Developer Guide*.
+
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-s3-policy.html#aws-properties-s3-policy-policydocument
         PrimitiveType: Json
         UpdateType: Mutable

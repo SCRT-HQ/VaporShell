@@ -1,16 +1,24 @@
 function Add-VSGreengrassDeviceDefinitionDeviceDefinitionVersion {
     <#
     .SYNOPSIS
-        Adds an AWS::Greengrass::DeviceDefinition.DeviceDefinitionVersion resource property to the template. 
+        Adds an AWS::Greengrass::DeviceDefinition.DeviceDefinitionVersion resource property to the template. <a name="aws-properties-greengrass-devicedefinition-devicedefinitionversion-description"></a> A device definition version contains a list of devices: https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-greengrass-devicedefinition-device.html.
 
     .DESCRIPTION
         Adds an AWS::Greengrass::DeviceDefinition.DeviceDefinitionVersion resource property to the template.
+<a name="aws-properties-greengrass-devicedefinition-devicedefinitionversion-description"></a> A device definition version contains a list of devices: https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-greengrass-devicedefinition-device.html.
 
+**Note**
+
+After you create a device definition version that contains the devices you want to deploy, you must add it to your group version. For more information, see https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-greengrass-group.html: https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-greengrass-group.html.
+
+<a name="aws-properties-greengrass-devicedefinition-devicedefinitionversion-inheritance"></a> In an AWS CloudFormation template, DeviceDefinitionVersion is the property type of the InitialVersion property in the  AWS::Greengrass::DeviceDefinition : https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-greengrass-devicedefinition.html resource.
 
     .LINK
         http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-greengrass-devicedefinition-devicedefinitionversion.html
 
     .PARAMETER Devices
+        The devices in this version.
+
         Type: List
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-greengrass-devicedefinition-devicedefinitionversion.html#cfn-greengrass-devicedefinition-devicedefinitionversion-devices
         ItemType: Device

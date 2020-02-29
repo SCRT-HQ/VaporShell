@@ -1,21 +1,25 @@
 function Add-VSConfigRemediationConfigurationRemediationParameterValue {
     <#
     .SYNOPSIS
-        Adds an AWS::Config::RemediationConfiguration.RemediationParameterValue resource property to the template. 
+        Adds an AWS::Config::RemediationConfiguration.RemediationParameterValue resource property to the template. The value is either a dynamic (resource value or a static value. You must select either a dynamic value or a static value.
 
     .DESCRIPTION
         Adds an AWS::Config::RemediationConfiguration.RemediationParameterValue resource property to the template.
-
+The value is either a dynamic (resource value or a static value. You must select either a dynamic value or a static value.
 
     .LINK
         http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-config-remediationconfiguration-remediationparametervalue.html
 
     .PARAMETER ResourceValue
+        The value is dynamic and changes at run-time.
+
         Type: ResourceValue
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-config-remediationconfiguration-remediationparametervalue.html#cfn-config-remediationconfiguration-remediationparametervalue-resourcevalue
         UpdateType: Mutable
 
     .PARAMETER StaticValue
+        The value is static and does not change at run-time.
+
         Type: StaticValue
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-config-remediationconfiguration-remediationparametervalue.html#cfn-config-remediationconfiguration-remediationparametervalue-staticvalue
         UpdateType: Mutable

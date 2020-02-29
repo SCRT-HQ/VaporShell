@@ -1,10 +1,10 @@
 function New-VSGameLiftBuild {
     <#
     .SYNOPSIS
-        Adds an AWS::GameLift::Build resource to the template. 
+        Adds an AWS::GameLift::Build resource to the template. The AWS::GameLift::Build resource creates a build that includes all of the components to run your game server in an Amazon GameLift (GameLift fleet.
 
     .DESCRIPTION
-        Adds an AWS::GameLift::Build resource to the template. 
+        Adds an AWS::GameLift::Build resource to the template. The AWS::GameLift::Build resource creates a build that includes all of the components to run your game server in an Amazon GameLift (GameLift fleet.
 
     .LINK
         http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-gamelift-build.html
@@ -13,21 +13,29 @@ function New-VSGameLiftBuild {
         The logical ID must be alphanumeric (A-Za-z0-9) and unique within the template. Use the logical name to reference the resource in other parts of the template. For example, if you want to map an Amazon Elastic Block Store volume to an Amazon EC2 instance, you reference the logical IDs to associate the block stores with the instance.
 
     .PARAMETER Name
+        Descriptive label that is associated with a build. Build names do not need to be unique.
+
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-gamelift-build.html#cfn-gamelift-build-name
         PrimitiveType: String
         UpdateType: Mutable
 
     .PARAMETER OperatingSystem
+        +  CreateBuild: https://docs.aws.amazon.com/gamelift/latest/apireference/API_CreateBuild.html in the *Amazon GameLift API Reference*
+
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-gamelift-build.html#cfn-gamelift-build-operatingsystem
         PrimitiveType: String
         UpdateType: Immutable
 
     .PARAMETER StorageLocation
+        Information indicating where your game build files are stored. Use this parameter only when creating a build with files stored in an Amazon S3 bucket that you own. The storage location must specify an Amazon S3 bucket name and key, as well as a the ARN for a role that you set up to allow Amazon GameLift to access your Amazon S3 bucket. The S3 bucket must be in the same region that you want to create a new build in.
+
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-gamelift-build.html#cfn-gamelift-build-storagelocation
         Type: S3Location
         UpdateType: Immutable
 
     .PARAMETER Version
+        Version that is associated with this build. Version strings do not need to be unique.
+
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-gamelift-build.html#cfn-gamelift-build-version
         PrimitiveType: String
         UpdateType: Mutable

@@ -1,10 +1,16 @@
 function New-VSEC2SecurityGroup {
     <#
     .SYNOPSIS
-        Adds an AWS::EC2::SecurityGroup resource to the template. 
+        Adds an AWS::EC2::SecurityGroup resource to the template. Specifies a security group. To create a VPC security group, use the VpcId: https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-security-group.html#cfn-ec2-securitygroup-vpcid property.
 
     .DESCRIPTION
-        Adds an AWS::EC2::SecurityGroup resource to the template. 
+        Adds an AWS::EC2::SecurityGroup resource to the template. Specifies a security group. To create a VPC security group, use the VpcId: https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-security-group.html#cfn-ec2-securitygroup-vpcid property.
+
+This type supports updates. For more information about updating stacks, see AWS CloudFormation Stacks Updates: https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks.html.
+
+**Important**
+
+If you want to cross-reference two security groups in the ingress and egress rules of those security groups, use the AWS::EC2::SecurityGroupEgress: https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ec2-security-group-egress.html and AWS::EC2::SecurityGroupIngress: https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ec2-security-group-ingress.html resources to define your rules. Do not use the embedded ingress and egress rules in the AWS::EC2::SecurityGroup. Doing so creates a circular dependency, which CloudFormation doesn't allow.
 
     .LINK
         http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-security-group.html
@@ -13,16 +19,28 @@ function New-VSEC2SecurityGroup {
         The logical ID must be alphanumeric (A-Za-z0-9) and unique within the template. Use the logical name to reference the resource in other parts of the template. For example, if you want to map an Amazon Elastic Block Store volume to an Amazon EC2 instance, you reference the logical IDs to associate the block stores with the instance.
 
     .PARAMETER GroupDescription
+        A description for the security group. This is informational only.
+Constraints: Up to 255 characters in length
+Constraints for EC2-Classic: ASCII characters
+Constraints for EC2-VPC: a-z, A-Z, 0-9, spaces, and ._-:/#,@]+=&;{}!$*
+
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-security-group.html#cfn-ec2-securitygroup-groupdescription
         PrimitiveType: String
         UpdateType: Immutable
 
     .PARAMETER GroupName
+        The name of the security group.
+Constraints: Up to 255 characters in length. Cannot start with sg-.
+Constraints for EC2-Classic: ASCII characters
+Constraints for EC2-VPC: a-z, A-Z, 0-9, spaces, and ._-:/#,@]+=&;{}!$*
+
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-security-group.html#cfn-ec2-securitygroup-groupname
         PrimitiveType: String
         UpdateType: Immutable
 
     .PARAMETER SecurityGroupEgress
+        VPC only] The outbound rules associated with the security group.
+
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-security-group.html#cfn-ec2-securitygroup-securitygroupegress
         DuplicatesAllowed: True
         ItemType: Egress
@@ -30,6 +48,8 @@ function New-VSEC2SecurityGroup {
         UpdateType: Mutable
 
     .PARAMETER SecurityGroupIngress
+        The inbound rules associated with the security group.
+
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-security-group.html#cfn-ec2-securitygroup-securitygroupingress
         DuplicatesAllowed: True
         ItemType: Ingress
@@ -37,6 +57,8 @@ function New-VSEC2SecurityGroup {
         UpdateType: Mutable
 
     .PARAMETER Tags
+        Any tags assigned to the security group.
+
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-security-group.html#cfn-ec2-securitygroup-tags
         DuplicatesAllowed: True
         ItemType: Tag
@@ -44,6 +66,8 @@ function New-VSEC2SecurityGroup {
         UpdateType: Mutable
 
     .PARAMETER VpcId
+        VPC only] The ID of the VPC for the security group.
+
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-security-group.html#cfn-ec2-securitygroup-vpcid
         PrimitiveType: String
         UpdateType: Immutable

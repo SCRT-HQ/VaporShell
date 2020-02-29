@@ -1,21 +1,25 @@
 function Add-VSKinesisFirehoseDeliveryStreamKinesisStreamSourceConfiguration {
     <#
     .SYNOPSIS
-        Adds an AWS::KinesisFirehose::DeliveryStream.KinesisStreamSourceConfiguration resource property to the template. 
+        Adds an AWS::KinesisFirehose::DeliveryStream.KinesisStreamSourceConfiguration resource property to the template. The KinesisStreamSourceConfiguration property type specifies the stream and role Amazon Resource Names (ARNs for a Kinesis stream used as the source for a delivery stream.
 
     .DESCRIPTION
         Adds an AWS::KinesisFirehose::DeliveryStream.KinesisStreamSourceConfiguration resource property to the template.
-
+The KinesisStreamSourceConfiguration property type specifies the stream and role Amazon Resource Names (ARNs for a Kinesis stream used as the source for a delivery stream.
 
     .LINK
         http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-kinesisfirehose-deliverystream-kinesisstreamsourceconfiguration.html
 
     .PARAMETER KinesisStreamARN
+        The ARN of the source Kinesis data stream.
+
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-kinesisfirehose-deliverystream-kinesisstreamsourceconfiguration.html#cfn-kinesisfirehose-deliverystream-kinesisstreamsourceconfiguration-kinesisstreamarn
         PrimitiveType: String
         UpdateType: Mutable
 
     .PARAMETER RoleARN
+        The ARN of the role that provides access to the source Kinesis data stream.
+
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-kinesisfirehose-deliverystream-kinesisstreamsourceconfiguration.html#cfn-kinesisfirehose-deliverystream-kinesisstreamsourceconfiguration-rolearn
         PrimitiveType: String
         UpdateType: Mutable

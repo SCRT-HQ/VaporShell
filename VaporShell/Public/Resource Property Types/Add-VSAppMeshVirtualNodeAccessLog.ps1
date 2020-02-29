@@ -1,16 +1,18 @@
 function Add-VSAppMeshVirtualNodeAccessLog {
     <#
     .SYNOPSIS
-        Adds an AWS::AppMesh::VirtualNode.AccessLog resource property to the template. 
+        Adds an AWS::AppMesh::VirtualNode.AccessLog resource property to the template. An object representing the access logging information for a virtual node.
 
     .DESCRIPTION
         Adds an AWS::AppMesh::VirtualNode.AccessLog resource property to the template.
-
+An object representing the access logging information for a virtual node.
 
     .LINK
         http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-appmesh-virtualnode-accesslog.html
 
     .PARAMETER File
+        The file object to send virtual node access logs to.
+
         Type: FileAccessLog
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-appmesh-virtualnode-accesslog.html#cfn-appmesh-virtualnode-accesslog-file
         UpdateType: Mutable

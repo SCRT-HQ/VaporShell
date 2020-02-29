@@ -1,16 +1,18 @@
 function Add-VSKinesisAnalyticsV2ApplicationOutputKinesisFirehoseOutput {
     <#
     .SYNOPSIS
-        Adds an AWS::KinesisAnalyticsV2::ApplicationOutput.KinesisFirehoseOutput resource property to the template. 
+        Adds an AWS::KinesisAnalyticsV2::ApplicationOutput.KinesisFirehoseOutput resource property to the template. For an SQL-based Amazon Kinesis Data Analytics application, when configuring application output, identifies a Kinesis Data Firehose delivery stream as the destination. You provide the stream Amazon Resource Name (ARN of the delivery stream.
 
     .DESCRIPTION
         Adds an AWS::KinesisAnalyticsV2::ApplicationOutput.KinesisFirehoseOutput resource property to the template.
-
+For an SQL-based Amazon Kinesis Data Analytics application, when configuring application output, identifies a Kinesis Data Firehose delivery stream as the destination. You provide the stream Amazon Resource Name (ARN of the delivery stream.
 
     .LINK
         http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-kinesisanalyticsv2-applicationoutput-kinesisfirehoseoutput.html
 
     .PARAMETER ResourceARN
+        The ARN of the destination delivery stream to write to.
+
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-kinesisanalyticsv2-applicationoutput-kinesisfirehoseoutput.html#cfn-kinesisanalyticsv2-applicationoutput-kinesisfirehoseoutput-resourcearn
         PrimitiveType: String
         UpdateType: Mutable

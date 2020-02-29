@@ -1,10 +1,14 @@
 function New-VSRDSDBSecurityGroupIngress {
     <#
     .SYNOPSIS
-        Adds an AWS::RDS::DBSecurityGroupIngress resource to the template. 
+        Adds an AWS::RDS::DBSecurityGroupIngress resource to the template. The AWS::RDS::DBSecurityGroupIngress resource enables ingress to a DB security group using one of two forms of authorization. First, you can add EC2 or VPC security groups to the DB security group if the application using the database is running on EC2 or VPC instances. Second, IP ranges are available if the application accessing your database is running on the Internet.
 
     .DESCRIPTION
-        Adds an AWS::RDS::DBSecurityGroupIngress resource to the template. 
+        Adds an AWS::RDS::DBSecurityGroupIngress resource to the template. The AWS::RDS::DBSecurityGroupIngress resource enables ingress to a DB security group using one of two forms of authorization. First, you can add EC2 or VPC security groups to the DB security group if the application using the database is running on EC2 or VPC instances. Second, IP ranges are available if the application accessing your database is running on the Internet.
+
+This type supports updates. For more information about updating stacks, see AWS CloudFormation Stacks Updates: https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks.html.
+
+For details about the settings for DB security group ingress, see AuthorizeDBSecurityGroupIngress: https://docs.aws.amazon.com/AmazonRDS/latest/APIReference/API_AuthorizeDBSecurityGroupIngress.html.
 
     .LINK
         http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-rds-security-group-ingress.html
@@ -13,26 +17,36 @@ function New-VSRDSDBSecurityGroupIngress {
         The logical ID must be alphanumeric (A-Za-z0-9) and unique within the template. Use the logical name to reference the resource in other parts of the template. For example, if you want to map an Amazon Elastic Block Store volume to an Amazon EC2 instance, you reference the logical IDs to associate the block stores with the instance.
 
     .PARAMETER CIDRIP
+        The IP range to authorize.
+
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-rds-security-group-ingress.html#cfn-rds-securitygroup-ingress-cidrip
         PrimitiveType: String
         UpdateType: Mutable
 
     .PARAMETER DBSecurityGroupName
+        The name of the DB Security Group to add authorization to.
+
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-rds-security-group-ingress.html#cfn-rds-securitygroup-ingress-dbsecuritygroupname
         PrimitiveType: String
         UpdateType: Mutable
 
     .PARAMETER EC2SecurityGroupId
+        Id of the EC2 Security Group to authorize. For VPC DB Security Groups, EC2SecurityGroupId must be provided. Otherwise, EC2SecurityGroupOwnerId and either EC2SecurityGroupName or EC2SecurityGroupId must be provided.
+
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-rds-security-group-ingress.html#cfn-rds-securitygroup-ingress-ec2securitygroupid
         PrimitiveType: String
         UpdateType: Mutable
 
     .PARAMETER EC2SecurityGroupName
+        Name of the EC2 Security Group to authorize. For VPC DB Security Groups, EC2SecurityGroupId must be provided. Otherwise, EC2SecurityGroupOwnerId and either EC2SecurityGroupName or EC2SecurityGroupId must be provided.
+
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-rds-security-group-ingress.html#cfn-rds-securitygroup-ingress-ec2securitygroupname
         PrimitiveType: String
         UpdateType: Mutable
 
     .PARAMETER EC2SecurityGroupOwnerId
+        AWS Account Number of the owner of the EC2 Security Group specified in the EC2SecurityGroupName parameter. The AWS Access Key ID is not an acceptable value. For VPC DB Security Groups, EC2SecurityGroupId must be provided. Otherwise, EC2SecurityGroupOwnerId and either EC2SecurityGroupName or EC2SecurityGroupId must be provided.
+
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-rds-security-group-ingress.html#cfn-rds-securitygroup-ingress-ec2securitygroupownerid
         PrimitiveType: String
         UpdateType: Mutable

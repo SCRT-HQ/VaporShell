@@ -1,10 +1,12 @@
 function New-VSIoTPolicyPrincipalAttachment {
     <#
     .SYNOPSIS
-        Adds an AWS::IoT::PolicyPrincipalAttachment resource to the template. 
+        Adds an AWS::IoT::PolicyPrincipalAttachment resource to the template. Use the AWS::IoT::PolicyPrincipalAttachment resource to attach an AWS IoT policy to a principal (an X.509 certificate or other credential.
 
     .DESCRIPTION
-        Adds an AWS::IoT::PolicyPrincipalAttachment resource to the template. 
+        Adds an AWS::IoT::PolicyPrincipalAttachment resource to the template. Use the AWS::IoT::PolicyPrincipalAttachment resource to attach an AWS IoT policy to a principal (an X.509 certificate or other credential.
+
+For information about working with AWS IoT policies and principals, see Authorization: https://docs.aws.amazon.com/iot/latest/developerguide/authorization.html in the *AWS IoT Developer Guide*.
 
     .LINK
         http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-iot-policyprincipalattachment.html
@@ -13,11 +15,15 @@ function New-VSIoTPolicyPrincipalAttachment {
         The logical ID must be alphanumeric (A-Za-z0-9) and unique within the template. Use the logical name to reference the resource in other parts of the template. For example, if you want to map an Amazon Elastic Block Store volume to an Amazon EC2 instance, you reference the logical IDs to associate the block stores with the instance.
 
     .PARAMETER PolicyName
+        The name of the AWS IoT policy.
+
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-iot-policyprincipalattachment.html#cfn-iot-policyprincipalattachment-policyname
         PrimitiveType: String
         UpdateType: Immutable
 
     .PARAMETER Principal
+        The principal, which can be a certificate ARN as returned from the CreateCertificate operation or an Amazon Cognito ID.
+
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-iot-policyprincipalattachment.html#cfn-iot-policyprincipalattachment-principal
         PrimitiveType: String
         UpdateType: Immutable

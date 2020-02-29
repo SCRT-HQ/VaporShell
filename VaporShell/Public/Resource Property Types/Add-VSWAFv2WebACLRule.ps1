@@ -47,7 +47,7 @@ function Add-VSWAFv2WebACLRule {
     [cmdletbinding()]
     Param
     (
-        [parameter(Mandatory = $false)]
+        [parameter(Mandatory = $true)]
         [ValidateScript( {
                 $allowedTypes = "System.String","Vaporshell.Function","Vaporshell.Condition"
                 if ([string]$($_.PSTypeNames) -match "($(($allowedTypes|ForEach-Object{[RegEx]::Escape($_)}) -join '|'))") {
@@ -58,7 +58,7 @@ function Add-VSWAFv2WebACLRule {
                 }
             })]
         $Name,
-        [parameter(Mandatory = $false)]
+        [parameter(Mandatory = $true)]
         [ValidateScript( {
                 $allowedTypes = "System.Int32","Vaporshell.Function"
                 if ([string]$($_.PSTypeNames) -match "($(($allowedTypes|ForEach-Object{[RegEx]::Escape($_)}) -join '|'))") {
@@ -69,13 +69,13 @@ function Add-VSWAFv2WebACLRule {
                 }
             })]
         $Priority,
-        [parameter(Mandatory = $false)]
+        [parameter(Mandatory = $true)]
         $Statement,
         [parameter(Mandatory = $false)]
         $Action,
         [parameter(Mandatory = $false)]
         $OverrideAction,
-        [parameter(Mandatory = $false)]
+        [parameter(Mandatory = $true)]
         $VisibilityConfig
     )
     Begin {

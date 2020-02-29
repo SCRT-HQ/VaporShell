@@ -1,10 +1,20 @@
 function New-VSKinesisAnalyticsApplicationOutput {
     <#
     .SYNOPSIS
-        Adds an AWS::KinesisAnalytics::ApplicationOutput resource to the template. 
+        Adds an AWS::KinesisAnalytics::ApplicationOutput resource to the template. Adds an external destination to your Amazon Kinesis Analytics application.
 
     .DESCRIPTION
-        Adds an AWS::KinesisAnalytics::ApplicationOutput resource to the template. 
+        Adds an AWS::KinesisAnalytics::ApplicationOutput resource to the template. Adds an external destination to your Amazon Kinesis Analytics application.
+
+If you want Amazon Kinesis Analytics to deliver data from an in-application stream within your application to an external destination (such as an Amazon Kinesis stream, an Amazon Kinesis Firehose delivery stream, or an AWS Lambda function, you add the relevant configuration to your application using this operation. You can configure one or more outputs for your application. Each output configuration maps an in-application stream and an external destination.
+
+You can use one of the output configurations to deliver data from your in-application error stream to an external destination so that you can analyze the errors. For more information, see Understanding Application Output (Destination: https://docs.aws.amazon.com/kinesisanalytics/latest/dev/how-it-works-output.html.
+
+Any configuration update, including adding a streaming source using this operation, results in a new version of the application. You can use the DescribeApplication operation to find the current application version.
+
+For the limits on the number of application inputs and outputs you can configure, see Limits: https://docs.aws.amazon.com/kinesisanalytics/latest/dev/limits.html.
+
+This operation requires permissions to perform the kinesisanalytics:AddApplicationOutput action.
 
     .LINK
         http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-kinesisanalytics-applicationoutput.html
@@ -13,11 +23,15 @@ function New-VSKinesisAnalyticsApplicationOutput {
         The logical ID must be alphanumeric (A-Za-z0-9) and unique within the template. Use the logical name to reference the resource in other parts of the template. For example, if you want to map an Amazon Elastic Block Store volume to an Amazon EC2 instance, you reference the logical IDs to associate the block stores with the instance.
 
     .PARAMETER ApplicationName
+        Name of the application to which you want to add the output configuration.
+
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-kinesisanalytics-applicationoutput.html#cfn-kinesisanalytics-applicationoutput-applicationname
         PrimitiveType: String
         UpdateType: Immutable
 
     .PARAMETER Output
+        An array of objects, each describing one output configuration. In the output configuration, you specify the name of an in-application stream, a destination that is, an Amazon Kinesis stream, an Amazon Kinesis Firehose delivery stream, or an AWS Lambda function, and record the formation to use when writing to the destination.
+
         Type: Output
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-kinesisanalytics-applicationoutput.html#cfn-kinesisanalytics-applicationoutput-output
         UpdateType: Mutable

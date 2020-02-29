@@ -1,10 +1,10 @@
 function New-VSGluePartition {
     <#
     .SYNOPSIS
-        Adds an AWS::Glue::Partition resource to the template. 
+        Adds an AWS::Glue::Partition resource to the template. The AWS::Glue::Partition resource creates an AWS Glue partition, which represents a slice of table data. For more information, see CreatePartition Action: https://docs.aws.amazon.com/glue/latest/dg/aws-glue-api-catalog-partitions.html#aws-glue-api-catalog-partitions-CreatePartition and Partition Structure: https://docs.aws.amazon.com/glue/latest/dg/aws-glue-api-catalog-partitions.html#aws-glue-api-catalog-partitions-Partition in the *AWS Glue Developer Guide*.
 
     .DESCRIPTION
-        Adds an AWS::Glue::Partition resource to the template. 
+        Adds an AWS::Glue::Partition resource to the template. The AWS::Glue::Partition resource creates an AWS Glue partition, which represents a slice of table data. For more information, see CreatePartition Action: https://docs.aws.amazon.com/glue/latest/dg/aws-glue-api-catalog-partitions.html#aws-glue-api-catalog-partitions-CreatePartition and Partition Structure: https://docs.aws.amazon.com/glue/latest/dg/aws-glue-api-catalog-partitions.html#aws-glue-api-catalog-partitions-Partition in the *AWS Glue Developer Guide*.
 
     .LINK
         http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-glue-partition.html
@@ -13,21 +13,30 @@ function New-VSGluePartition {
         The logical ID must be alphanumeric (A-Za-z0-9) and unique within the template. Use the logical name to reference the resource in other parts of the template. For example, if you want to map an Amazon Elastic Block Store volume to an Amazon EC2 instance, you reference the logical IDs to associate the block stores with the instance.
 
     .PARAMETER TableName
+        The name of the metadata table in which the partition is to be created.
+
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-glue-partition.html#cfn-glue-partition-tablename
         PrimitiveType: String
         UpdateType: Immutable
 
     .PARAMETER DatabaseName
+        The name of the catalog database in which to create the partition.
+
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-glue-partition.html#cfn-glue-partition-databasename
         PrimitiveType: String
         UpdateType: Immutable
 
     .PARAMETER CatalogId
+        The AWS account ID of the catalog in which the partion is to be created.
+To specify the account ID, you can use the Ref intrinsic function with the AWS::AccountId pseudo parameter. For example: !Ref AWS::AccountId
+
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-glue-partition.html#cfn-glue-partition-catalogid
         PrimitiveType: String
         UpdateType: Immutable
 
     .PARAMETER PartitionInput
+        The structure used to create and update a partition.
+
         Type: PartitionInput
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-glue-partition.html#cfn-glue-partition-partitioninput
         UpdateType: Mutable

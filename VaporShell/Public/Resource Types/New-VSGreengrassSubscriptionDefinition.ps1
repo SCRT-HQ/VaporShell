@@ -1,10 +1,18 @@
 function New-VSGreengrassSubscriptionDefinition {
     <#
     .SYNOPSIS
-        Adds an AWS::Greengrass::SubscriptionDefinition resource to the template. 
+        Adds an AWS::Greengrass::SubscriptionDefinition resource to the template. The AWS::Greengrass::SubscriptionDefinition resource represents a subscription definition for AWS IoT Greengrass. Subscription definitions are used to organize your subscription definition versions.
 
     .DESCRIPTION
-        Adds an AWS::Greengrass::SubscriptionDefinition resource to the template. 
+        Adds an AWS::Greengrass::SubscriptionDefinition resource to the template. The AWS::Greengrass::SubscriptionDefinition resource represents a subscription definition for AWS IoT Greengrass. Subscription definitions are used to organize your subscription definition versions.
+
+Subscription definitions can reference multiple subscription definition versions. All subscription definition versions must be associated with a subscription definition. Each subscription definition version can contain one or more subscriptions.
+
+**Note**
+
+When you create a subscription definition, you can optionally include an initial subscription definition version. To associate a subscription definition version later, create an https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-greengrass-subscriptiondefinitionversion.html: https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-greengrass-subscriptiondefinitionversion.html resource and specify the ID of this subscription definition.
+
+After you create the subscription definition version that contains the subscriptions you want to deploy, you must add it to your group version. For more information, see https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-greengrass-group.html: https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-greengrass-group.html.
 
     .LINK
         http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-greengrass-subscriptiondefinition.html
@@ -13,16 +21,31 @@ function New-VSGreengrassSubscriptionDefinition {
         The logical ID must be alphanumeric (A-Za-z0-9) and unique within the template. Use the logical name to reference the resource in other parts of the template. For example, if you want to map an Amazon Elastic Block Store volume to an Amazon EC2 instance, you reference the logical IDs to associate the block stores with the instance.
 
     .PARAMETER InitialVersion
+        The subscription definition version to include when the subscription definition is created. A subscription definition version contains a list of  subscription : https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-greengrass-subscriptiondefinition-subscription.html property types.
+To associate a subscription definition version after the subscription definition is created, create an  AWS::Greengrass::SubscriptionDefinitionVersion : https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-greengrass-subscriptiondefinitionversion.html resource and specify the ID of this subscription definition.
+
         Type: SubscriptionDefinitionVersion
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-greengrass-subscriptiondefinition.html#cfn-greengrass-subscriptiondefinition-initialversion
         UpdateType: Immutable
 
     .PARAMETER Tags
+        Application-specific metadata to attach to the subscription definition. You can use tags in IAM policies to control access to AWS IoT Greengrass resources. You can also use tags to categorize your resources. For more information, see Tagging Your AWS IoT Greengrass Resources: https://docs.aws.amazon.com/greengrass/latest/developerguide/tagging.html in the *AWS IoT Greengrass Developer Guide*.
+This Json property type is processed as a map of key-value pairs. It uses the following format, which is different from most Tags implementations in AWS CloudFormation templates.
+
+"Tags": {
+"KeyName0": "value",
+"KeyName1": "value",
+"KeyName2": "value"
+}
+
+
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-greengrass-subscriptiondefinition.html#cfn-greengrass-subscriptiondefinition-tags
         PrimitiveType: Json
         UpdateType: Mutable
 
     .PARAMETER Name
+        The name of the subscription definition.
+
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-greengrass-subscriptiondefinition.html#cfn-greengrass-subscriptiondefinition-name
         PrimitiveType: String
         UpdateType: Mutable

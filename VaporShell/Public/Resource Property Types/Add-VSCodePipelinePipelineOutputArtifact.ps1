@@ -1,16 +1,20 @@
 function Add-VSCodePipelinePipelineOutputArtifact {
     <#
     .SYNOPSIS
-        Adds an AWS::CodePipeline::Pipeline.OutputArtifact resource property to the template. 
+        Adds an AWS::CodePipeline::Pipeline.OutputArtifact resource property to the template. Represents information about the output of an action.
 
     .DESCRIPTION
         Adds an AWS::CodePipeline::Pipeline.OutputArtifact resource property to the template.
-
+Represents information about the output of an action.
 
     .LINK
         http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-codepipeline-pipeline-stages-actions-outputartifacts.html
 
     .PARAMETER Name
+        The name of the output of an artifact, such as "My App".
+The input artifact of an action must exactly match the output artifact declared in a preceding action, but the input artifact does not have to be the next action in strict sequence from the action that provided the output artifact. Actions in parallel can declare different output artifacts, which are in turn consumed by different following actions.
+Output artifact names must be unique within a pipeline.
+
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-codepipeline-pipeline-stages-actions-outputartifacts.html#cfn-codepipeline-pipeline-stages-actions-outputartifacts-name
         PrimitiveType: String
         UpdateType: Mutable

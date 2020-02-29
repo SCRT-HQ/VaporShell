@@ -1,21 +1,25 @@
 function Add-VSPinpointSegmentGPSPoint {
     <#
     .SYNOPSIS
-        Adds an AWS::Pinpoint::Segment.GPSPoint resource property to the template. 
+        Adds an AWS::Pinpoint::Segment.GPSPoint resource property to the template. The GPS coordinates of the endpoint location.
 
     .DESCRIPTION
         Adds an AWS::Pinpoint::Segment.GPSPoint resource property to the template.
-
+The GPS coordinates of the endpoint location.
 
     .LINK
         http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-pinpoint-segment-segmentdimensions-location-gpspoint.html
 
     .PARAMETER RangeInKilometers
+        The range, in kilometers, from the GPS coordinates.
+
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-pinpoint-segment-segmentdimensions-location-gpspoint.html#cfn-pinpoint-segment-segmentdimensions-location-gpspoint-rangeinkilometers
         PrimitiveType: Double
         UpdateType: Mutable
 
     .PARAMETER Coordinates
+        The GPS coordinates to measure distance from.
+
         Type: Coordinates
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-pinpoint-segment-segmentdimensions-location-gpspoint.html#cfn-pinpoint-segment-segmentdimensions-location-gpspoint-coordinates
         UpdateType: Mutable

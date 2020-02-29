@@ -1,21 +1,26 @@
 function Add-VSGlueMLTransformTransformParameters {
     <#
     .SYNOPSIS
-        Adds an AWS::Glue::MLTransform.TransformParameters resource property to the template. 
+        Adds an AWS::Glue::MLTransform.TransformParameters resource property to the template. The algorithm-specific parameters that are associated with the machine learning transform.
 
     .DESCRIPTION
         Adds an AWS::Glue::MLTransform.TransformParameters resource property to the template.
-
+The algorithm-specific parameters that are associated with the machine learning transform.
 
     .LINK
         http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-glue-mltransform-transformparameters.html
 
     .PARAMETER TransformType
+        The type of machine learning transform. FIND_MATCHES is the only option.
+For information about the types of machine learning transforms, see Creating Machine Learning Transforms: https://docs.aws.amazon.com/glue/latest/dg/add-job-machine-learning-transform.html.
+
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-glue-mltransform-transformparameters.html#cfn-glue-mltransform-transformparameters-transformtype
         PrimitiveType: String
         UpdateType: Mutable
 
     .PARAMETER FindMatchesParameters
+        The parameters for the find matches algorithm.
+
         Type: FindMatchesParameters
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-glue-mltransform-transformparameters.html#cfn-glue-mltransform-transformparameters-findmatchesparameters
         UpdateType: Mutable

@@ -1,10 +1,12 @@
 function New-VSIoTThingPrincipalAttachment {
     <#
     .SYNOPSIS
-        Adds an AWS::IoT::ThingPrincipalAttachment resource to the template. 
+        Adds an AWS::IoT::ThingPrincipalAttachment resource to the template. Use the AWS::IoT::ThingPrincipalAttachment resource to attach a principal (an X.509 certificate or another credential to a thing.
 
     .DESCRIPTION
-        Adds an AWS::IoT::ThingPrincipalAttachment resource to the template. 
+        Adds an AWS::IoT::ThingPrincipalAttachment resource to the template. Use the AWS::IoT::ThingPrincipalAttachment resource to attach a principal (an X.509 certificate or another credential to a thing.
+
+For more information about working with AWS IoT things and principals, see Authorization: https://docs.aws.amazon.com/iot/latest/developerguide/authorization.html in the *AWS IoT Developer Guide*.
 
     .LINK
         http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-iot-thingprincipalattachment.html
@@ -13,11 +15,15 @@ function New-VSIoTThingPrincipalAttachment {
         The logical ID must be alphanumeric (A-Za-z0-9) and unique within the template. Use the logical name to reference the resource in other parts of the template. For example, if you want to map an Amazon Elastic Block Store volume to an Amazon EC2 instance, you reference the logical IDs to associate the block stores with the instance.
 
     .PARAMETER Principal
+        The principal, which can be a certificate ARN as returned from the CreateCertificate operation or an Amazon Cognito ID.
+
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-iot-thingprincipalattachment.html#cfn-iot-thingprincipalattachment-principal
         PrimitiveType: String
         UpdateType: Immutable
 
     .PARAMETER ThingName
+        The name of the AWS IoT thing.
+
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-iot-thingprincipalattachment.html#cfn-iot-thingprincipalattachment-thingname
         PrimitiveType: String
         UpdateType: Immutable

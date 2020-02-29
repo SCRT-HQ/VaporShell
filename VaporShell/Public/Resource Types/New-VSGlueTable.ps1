@@ -1,10 +1,10 @@
 function New-VSGlueTable {
     <#
     .SYNOPSIS
-        Adds an AWS::Glue::Table resource to the template. 
+        Adds an AWS::Glue::Table resource to the template. The AWS::Glue::Table resource specifies tabular data in the AWS Glue data catalog. For more information, see Defining Tables in the AWS Glue Data Catalog: https://docs.aws.amazon.com/glue/latest/dg/tables-described.html and Table Structure : https://docs.aws.amazon.com/glue/latest/dg/aws-glue-api-catalog-tables.html#aws-glue-api-catalog-tables-Table in the *AWS Glue Developer Guide*.
 
     .DESCRIPTION
-        Adds an AWS::Glue::Table resource to the template. 
+        Adds an AWS::Glue::Table resource to the template. The AWS::Glue::Table resource specifies tabular data in the AWS Glue data catalog. For more information, see Defining Tables in the AWS Glue Data Catalog: https://docs.aws.amazon.com/glue/latest/dg/tables-described.html and Table Structure : https://docs.aws.amazon.com/glue/latest/dg/aws-glue-api-catalog-tables.html#aws-glue-api-catalog-tables-Table in the *AWS Glue Developer Guide*.
 
     .LINK
         http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-glue-table.html
@@ -13,16 +13,22 @@ function New-VSGlueTable {
         The logical ID must be alphanumeric (A-Za-z0-9) and unique within the template. Use the logical name to reference the resource in other parts of the template. For example, if you want to map an Amazon Elastic Block Store volume to an Amazon EC2 instance, you reference the logical IDs to associate the block stores with the instance.
 
     .PARAMETER TableInput
+        A structure used to define a table.
+
         Type: TableInput
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-glue-table.html#cfn-glue-table-tableinput
         UpdateType: Mutable
 
     .PARAMETER DatabaseName
+        The name of the database where the table metadata resides. For Hive compatibility, this must be all lowercase.
+
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-glue-table.html#cfn-glue-table-databasename
         PrimitiveType: String
         UpdateType: Immutable
 
     .PARAMETER CatalogId
+        The ID of the Data Catalog in which to create the Table. If none is supplied, the AWS account ID is used by default.
+
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-glue-table.html#cfn-glue-table-catalogid
         PrimitiveType: String
         UpdateType: Immutable

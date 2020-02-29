@@ -1,16 +1,18 @@
 function Add-VSKinesisAnalyticsV2ApplicationJSONMappingParameters {
     <#
     .SYNOPSIS
-        Adds an AWS::KinesisAnalyticsV2::Application.JSONMappingParameters resource property to the template. 
+        Adds an AWS::KinesisAnalyticsV2::Application.JSONMappingParameters resource property to the template. For an SQL-based Amazon Kinesis Data Analytics application, provides additional mapping information when JSON is the record format on the streaming source.
 
     .DESCRIPTION
         Adds an AWS::KinesisAnalyticsV2::Application.JSONMappingParameters resource property to the template.
-
+For an SQL-based Amazon Kinesis Data Analytics application, provides additional mapping information when JSON is the record format on the streaming source.
 
     .LINK
         http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-kinesisanalyticsv2-application-jsonmappingparameters.html
 
     .PARAMETER RecordRowPath
+        The path to the top-level parent that contains the records.
+
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-kinesisanalyticsv2-application-jsonmappingparameters.html#cfn-kinesisanalyticsv2-application-jsonmappingparameters-recordrowpath
         PrimitiveType: String
         UpdateType: Mutable

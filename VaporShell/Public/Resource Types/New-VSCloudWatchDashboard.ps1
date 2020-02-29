@@ -1,10 +1,12 @@
 function New-VSCloudWatchDashboard {
     <#
     .SYNOPSIS
-        Adds an AWS::CloudWatch::Dashboard resource to the template. 
+        Adds an AWS::CloudWatch::Dashboard resource to the template. The AWS::CloudWatch::Dashboard resource specifies an Amazon CloudWatch dashboard. A dashboard is a customizable home page in the CloudWatch console that you can use to monitor your AWS resources in a single view.
 
     .DESCRIPTION
-        Adds an AWS::CloudWatch::Dashboard resource to the template. 
+        Adds an AWS::CloudWatch::Dashboard resource to the template. The AWS::CloudWatch::Dashboard resource specifies an Amazon CloudWatch dashboard. A dashboard is a customizable home page in the CloudWatch console that you can use to monitor your AWS resources in a single view.
+
+There is no limit to the number of dashboards in your account. All dashboards in your account are global, not region-specific.
 
     .LINK
         http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-cloudwatch-dashboard.html
@@ -13,11 +15,16 @@ function New-VSCloudWatchDashboard {
         The logical ID must be alphanumeric (A-Za-z0-9) and unique within the template. Use the logical name to reference the resource in other parts of the template. For example, if you want to map an Amazon Elastic Block Store volume to an Amazon EC2 instance, you reference the logical IDs to associate the block stores with the instance.
 
     .PARAMETER DashboardName
+        The name of the dashboard. The name must be between 1 and 255 characters. If you do not specify a name, one will be generated automatically.
+
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-cloudwatch-dashboard.html#cfn-cloudwatch-dashboard-dashboardname
         PrimitiveType: String
         UpdateType: Immutable
 
     .PARAMETER DashboardBody
+        The detailed information about the dashboard in JSON format, including the widgets to include and their location on the dashboard. This parameter is required.
+For more information about the syntax, see Dashboard Body Structure and Syntax: https://docs.aws.amazon.com/AmazonCloudWatch/latest/APIReference/CloudWatch-Dashboard-Body-Structure.html.
+
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-cloudwatch-dashboard.html#cfn-cloudwatch-dashboard-dashboardbody
         PrimitiveType: String
         UpdateType: Mutable

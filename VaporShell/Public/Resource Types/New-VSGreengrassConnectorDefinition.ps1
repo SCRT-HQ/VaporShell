@@ -1,10 +1,18 @@
 function New-VSGreengrassConnectorDefinition {
     <#
     .SYNOPSIS
-        Adds an AWS::Greengrass::ConnectorDefinition resource to the template. 
+        Adds an AWS::Greengrass::ConnectorDefinition resource to the template. The AWS::Greengrass::ConnectorDefinition resource represents a connector definition for AWS IoT Greengrass. Connector definitions are used to organize your connector definition versions.
 
     .DESCRIPTION
-        Adds an AWS::Greengrass::ConnectorDefinition resource to the template. 
+        Adds an AWS::Greengrass::ConnectorDefinition resource to the template. The AWS::Greengrass::ConnectorDefinition resource represents a connector definition for AWS IoT Greengrass. Connector definitions are used to organize your connector definition versions.
+
+Connector definitions can reference multiple connector definition versions. All connector definition versions must be associated with a connector definition. Each connector definition version can contain one or more connectors.
+
+**Note**
+
+When you create a connector definition, you can optionally include an initial connector definition version. To associate a connector definition version later, create an https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-greengrass-connectordefinitionversion.html: https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-greengrass-connectordefinitionversion.html resource and specify the ID of this connector definition.
+
+After you create the connector definition version that contains the connectors you want to deploy, you must add it to your group version. For more information, see https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-greengrass-group.html: https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-greengrass-group.html.
 
     .LINK
         http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-greengrass-connectordefinition.html
@@ -13,16 +21,31 @@ function New-VSGreengrassConnectorDefinition {
         The logical ID must be alphanumeric (A-Za-z0-9) and unique within the template. Use the logical name to reference the resource in other parts of the template. For example, if you want to map an Amazon Elastic Block Store volume to an Amazon EC2 instance, you reference the logical IDs to associate the block stores with the instance.
 
     .PARAMETER InitialVersion
+        The connector definition version to include when the connector definition is created. A connector definition version contains a list of https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-greengrass-connectordefinition-connector.html: https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-greengrass-connectordefinition-connector.html property types.
+To associate a connector definition version after the connector definition is created, create an https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-greengrass-connectordefinitionversion.html: https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-greengrass-connectordefinitionversion.html resource and specify the ID of this connector definition.
+
         Type: ConnectorDefinitionVersion
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-greengrass-connectordefinition.html#cfn-greengrass-connectordefinition-initialversion
         UpdateType: Immutable
 
     .PARAMETER Tags
+        Application-specific metadata to attach to the connector definition. You can use tags in IAM policies to control access to AWS IoT Greengrass resources. You can also use tags to categorize your resources. For more information, see Tagging Your AWS IoT Greengrass Resources: https://docs.aws.amazon.com/greengrass/latest/developerguide/tagging.html in the *AWS IoT Greengrass Developer Guide*.
+This Json property type is processed as a map of key-value pairs. It uses the following format, which is different from most Tags implementations in AWS CloudFormation templates.
+
+"Tags": {
+"KeyName0": "value",
+"KeyName1": "value",
+"KeyName2": "value"
+}
+
+
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-greengrass-connectordefinition.html#cfn-greengrass-connectordefinition-tags
         PrimitiveType: Json
         UpdateType: Mutable
 
     .PARAMETER Name
+        The name of the connector definition.
+
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-greengrass-connectordefinition.html#cfn-greengrass-connectordefinition-name
         PrimitiveType: String
         UpdateType: Mutable

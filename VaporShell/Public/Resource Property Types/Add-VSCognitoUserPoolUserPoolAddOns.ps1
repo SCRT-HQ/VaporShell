@@ -1,16 +1,18 @@
 function Add-VSCognitoUserPoolUserPoolAddOns {
     <#
     .SYNOPSIS
-        Adds an AWS::Cognito::UserPool.UserPoolAddOns resource property to the template. 
+        Adds an AWS::Cognito::UserPool.UserPoolAddOns resource property to the template. UserPoolAddOns is a property of the AWS::Cognito::UserPool: https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-cognito-userpool.html resource that enables advanced security risk detection.
 
     .DESCRIPTION
         Adds an AWS::Cognito::UserPool.UserPoolAddOns resource property to the template.
-
+UserPoolAddOns is a property of the AWS::Cognito::UserPool: https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-cognito-userpool.html resource that enables advanced security risk detection.
 
     .LINK
         http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-cognito-userpool-userpooladdons.html
 
     .PARAMETER AdvancedSecurityMode
+        The advanced security mode.
+
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-cognito-userpool-userpooladdons.html#cfn-cognito-userpool-userpooladdons-advancedsecuritymode
         PrimitiveType: String
         UpdateType: Mutable

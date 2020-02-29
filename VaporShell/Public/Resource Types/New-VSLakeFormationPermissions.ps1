@@ -1,10 +1,10 @@
 function New-VSLakeFormationPermissions {
     <#
     .SYNOPSIS
-        Adds an AWS::LakeFormation::Permissions resource to the template. 
+        Adds an AWS::LakeFormation::Permissions resource to the template. The AWS::LakeFormation::Permissions resource is an AWS Lake Formation resource type that grants or revokes AWS Lake Formation permissions.
 
     .DESCRIPTION
-        Adds an AWS::LakeFormation::Permissions resource to the template. 
+        Adds an AWS::LakeFormation::Permissions resource to the template. The AWS::LakeFormation::Permissions resource is an AWS Lake Formation resource type that grants or revokes AWS Lake Formation permissions.
 
     .LINK
         http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-lakeformation-permissions.html
@@ -13,22 +13,30 @@ function New-VSLakeFormationPermissions {
         The logical ID must be alphanumeric (A-Za-z0-9) and unique within the template. Use the logical name to reference the resource in other parts of the template. For example, if you want to map an Amazon Elastic Block Store volume to an Amazon EC2 instance, you reference the logical IDs to associate the block stores with the instance.
 
     .PARAMETER DataLakePrincipal
+        The AWS Lake Formation principal.
+
         Type: DataLakePrincipal
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-lakeformation-permissions.html#cfn-lakeformation-permissions-datalakeprincipal
         UpdateType: Mutable
 
     .PARAMETER Resource
+        A structure for the resource.
+
         Type: Resource
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-lakeformation-permissions.html#cfn-lakeformation-permissions-resource
         UpdateType: Mutable
 
     .PARAMETER Permissions
+        The permissions granted or revoked.
+
         PrimitiveItemType: String
         Type: List
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-lakeformation-permissions.html#cfn-lakeformation-permissions-permissions
         UpdateType: Mutable
 
     .PARAMETER PermissionsWithGrantOption
+        Indicates whether to grant the ability to grant permissions as a subset of permissions granted.
+
         PrimitiveItemType: String
         Type: List
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-lakeformation-permissions.html#cfn-lakeformation-permissions-permissionswithgrantoption

@@ -1,21 +1,25 @@
 function Add-VSIoTThingsGraphFlowTemplateDefinitionDocument {
     <#
     .SYNOPSIS
-        Adds an AWS::IoTThingsGraph::FlowTemplate.DefinitionDocument resource property to the template. 
+        Adds an AWS::IoTThingsGraph::FlowTemplate.DefinitionDocument resource property to the template. A document that defines an entity.
 
     .DESCRIPTION
         Adds an AWS::IoTThingsGraph::FlowTemplate.DefinitionDocument resource property to the template.
-
+A document that defines an entity.
 
     .LINK
         http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iotthingsgraph-flowtemplate-definitiondocument.html
 
     .PARAMETER Language
+        The language used to define the entity. GRAPHQL is the only valid value.
+
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iotthingsgraph-flowtemplate-definitiondocument.html#cfn-iotthingsgraph-flowtemplate-definitiondocument-language
         PrimitiveType: String
         UpdateType: Mutable
 
     .PARAMETER Text
+        The GraphQL text that defines the entity.
+
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iotthingsgraph-flowtemplate-definitiondocument.html#cfn-iotthingsgraph-flowtemplate-definitiondocument-text
         PrimitiveType: String
         UpdateType: Mutable
