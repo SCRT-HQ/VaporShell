@@ -1,10 +1,12 @@
 function New-VSPinpointVoiceChannel {
     <#
     .SYNOPSIS
-        Adds an AWS::Pinpoint::VoiceChannel resource to the template. Updates the status and settings of the voice channel for an application.
+        Adds an AWS::Pinpoint::VoiceChannel resource to the template. A *channel* is a type of platform that you can deliver messages to. To send a voice message, you send the message through the voice channel. Before you can use Amazon Pinpoint to send voice messages, you have to enable the voice channel for an Amazon Pinpoint application.
 
     .DESCRIPTION
-        Adds an AWS::Pinpoint::VoiceChannel resource to the template. Updates the status and settings of the voice channel for an application.
+        Adds an AWS::Pinpoint::VoiceChannel resource to the template. A *channel* is a type of platform that you can deliver messages to. To send a voice message, you send the message through the voice channel. Before you can use Amazon Pinpoint to send voice messages, you have to enable the voice channel for an Amazon Pinpoint application.
+
+The AWS::Pinpoint::VoiceChannel resource defines the status and other settings of the voice channel for an application.
 
     .LINK
         http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-pinpoint-voicechannel.html
@@ -20,7 +22,7 @@ function New-VSPinpointVoiceChannel {
         UpdateType: Mutable
 
     .PARAMETER ApplicationId
-        The unique ID of the Amazon Pinpoint app that you're setting up the voice channel for.
+        The unique identifier for the Amazon Pinpoint application that the voice channel applies to.
 
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-pinpoint-voicechannel.html#cfn-pinpoint-voicechannel-applicationid
         PrimitiveType: String

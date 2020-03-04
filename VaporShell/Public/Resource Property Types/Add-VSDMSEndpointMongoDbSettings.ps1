@@ -77,7 +77,7 @@ The authentication mechanism you use to access the MongoDB source endpoint.
 
 Valid values: DEFAULT, MONGODB_CR, SCRAM_SHA_1
 
-DEFAULT – For MongoDB version 2.x, use MONGODB_CR. For MongoDB version 3.x, use SCRAM_SHA_1. This attribute is not used when authType=No.
+DEFAULT – For MongoDB version 2.x, use MONGODB_CR. For MongoDB version 3.x, use SCRAM_SHA_1. This setting is not used when authType=No.
 
 *Required*: No
 
@@ -89,7 +89,7 @@ DEFAULT – For MongoDB version 2.x, use MONGODB_CR. For MongoDB version 3.x, us
 
 AuthSource  <a name="cfn-dms-endpoint-mongodbsettings-authsource"></a>
 
-The MongoDB database name. This attribute is not used when authType=NO.
+The MongoDB database name. This setting is not used when authType=NO.
 
 The default is admin.
 
@@ -127,7 +127,7 @@ The database name on the MongoDB source endpoint.
 
 DocsToInvestigate  <a name="cfn-dms-endpoint-mongodbsettings-docstoinvestigate"></a>
 
-Indicates the number of documents to preview to determine the document organization. Use this attribute when NestingLevel is set to ONE.
+Indicates the number of documents to preview to determine the document organization. Use this setting when NestingLevel is set to ONE.
 
 Must be a positive value greater than 0. Default value is 1000.
 
@@ -139,7 +139,7 @@ Must be a positive value greater than 0. Default value is 1000.
 
 ExtractDocId  <a name="cfn-dms-endpoint-mongodbsettings-extractdocid"></a>
 
-Specifies the document ID. Use this attribute when NestingLevel is set to NONE.
+Specifies the document ID. Use this setting when NestingLevel is set to NONE.
 
 Default value is false.
 

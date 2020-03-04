@@ -1,12 +1,12 @@
 function New-VSPinpointAPNSVoipSandboxChannel {
     <#
     .SYNOPSIS
-        Adds an AWS::Pinpoint::APNSVoipSandboxChannel resource to the template. A *channel* is a type of platform that you can deliver messages to. You can use the APNs VoIP sandbox channel to send VoIP notification messages to the sandbox environment of the Apple Push Notification service (APNs. Before you use Amazon Pinpoint to send VoIP notifications to the APNs sandbox environment, you have to enable the APNs VoIP sandbox channel for an Amazon Pinpoint app.
+        Adds an AWS::Pinpoint::APNSVoipSandboxChannel resource to the template. A *channel* is a type of platform that you can deliver messages to. You can use the APNs VoIP sandbox channel to send VoIP notification messages to the sandbox environment of the Apple Push Notification service (APNs. Before you can use Amazon Pinpoint to send VoIP notifications to the APNs sandbox environment, you have to enable the APNs VoIP sandbox channel for an Amazon Pinpoint application.
 
     .DESCRIPTION
-        Adds an AWS::Pinpoint::APNSVoipSandboxChannel resource to the template. A *channel* is a type of platform that you can deliver messages to. You can use the APNs VoIP sandbox channel to send VoIP notification messages to the sandbox environment of the Apple Push Notification service (APNs. Before you use Amazon Pinpoint to send VoIP notifications to the APNs sandbox environment, you have to enable the APNs VoIP sandbox channel for an Amazon Pinpoint app.
+        Adds an AWS::Pinpoint::APNSVoipSandboxChannel resource to the template. A *channel* is a type of platform that you can deliver messages to. You can use the APNs VoIP sandbox channel to send VoIP notification messages to the sandbox environment of the Apple Push Notification service (APNs. Before you can use Amazon Pinpoint to send VoIP notifications to the APNs sandbox environment, you have to enable the APNs VoIP sandbox channel for an Amazon Pinpoint application.
 
-The APNs VoIP Sandbox Channel resource represents the status and authentication settings of the APNs VoIP sandbox channel for a specific app. You can use this resource to retrieve information about, update, or disable (delete the APNs VoIP sandbox channel for an app.
+The AWS::Pinpoint::APNSVoipSandboxChannel resource defines the status and authentication settings of the APNs VoIP sandbox channel for an application.
 
     .LINK
         http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-pinpoint-apnsvoipsandboxchannel.html
@@ -36,7 +36,7 @@ The APNs VoIP Sandbox Channel resource represents the status and authentication 
         UpdateType: Mutable
 
     .PARAMETER DefaultAuthenticationMethod
-        The default authentication method that you want Amazon Pinpoint to use when authenticating with APNs. Valid options are key or certificate.
+        The default authentication method that you want Amazon Pinpoint to use when authenticating with the APNs sandbox environment for this channel, key or certificate.
 
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-pinpoint-apnsvoipsandboxchannel.html#cfn-pinpoint-apnsvoipsandboxchannel-defaultauthenticationmethod
         PrimitiveType: String
@@ -64,14 +64,14 @@ The APNs VoIP Sandbox Channel resource represents the status and authentication 
         UpdateType: Mutable
 
     .PARAMETER Certificate
-        The APNs client certificate that you received from Apple. Specify this value if you want Amazon Pinpoint to communicate with the APNs sandbox environment by using an APNs certificate.
+        The APNs client certificate that you received from Apple, if you want Amazon Pinpoint to communicate with the APNs sandbox environment by using an APNs certificate.
 
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-pinpoint-apnsvoipsandboxchannel.html#cfn-pinpoint-apnsvoipsandboxchannel-certificate
         PrimitiveType: String
         UpdateType: Mutable
 
     .PARAMETER TokenKeyId
-        The key identifier that's assigned to your APNs signing key. Specify this value if you want Amazon Pinpoint to communicate with the APNs sandbox environment by using APNs tokens.
+        The key identifier that's assigned to your APNs signing key, if you want Amazon Pinpoint to communicate with the APNs sandbox environment by using APNs tokens.
 
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-pinpoint-apnsvoipsandboxchannel.html#cfn-pinpoint-apnsvoipsandboxchannel-tokenkeyid
         PrimitiveType: String

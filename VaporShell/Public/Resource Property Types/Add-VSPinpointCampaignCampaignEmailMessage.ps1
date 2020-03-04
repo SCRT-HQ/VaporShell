@@ -18,7 +18,7 @@ Specifies the content and "From" address for an email message that's sent to rec
         UpdateType: Mutable
 
     .PARAMETER HtmlBody
-        The body of the email, in HTML format, for recipients whose email clients support HTML content.
+        The body of the email, in HTML format, for recipients whose email clients render HTML content.
 
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-pinpoint-campaign-campaignemailmessage.html#cfn-pinpoint-campaign-campaignemailmessage-htmlbody
         PrimitiveType: String
@@ -32,7 +32,7 @@ Specifies the content and "From" address for an email message that's sent to rec
         UpdateType: Mutable
 
     .PARAMETER Body
-        The body of the email for recipients whose email clients don't support HTML content.
+        The body of the email for recipients whose email clients don't render HTML content.
 
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-pinpoint-campaign-campaignemailmessage.html#cfn-pinpoint-campaign-campaignemailmessage-body
         PrimitiveType: String

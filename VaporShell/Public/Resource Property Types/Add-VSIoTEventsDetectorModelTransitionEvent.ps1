@@ -1,17 +1,17 @@
 function Add-VSIoTEventsDetectorModelTransitionEvent {
     <#
     .SYNOPSIS
-        Adds an AWS::IoTEvents::DetectorModel.TransitionEvent resource property to the template. Specifies the actions performed and the next state entered when a "condition" evaluates to TRUE.
+        Adds an AWS::IoTEvents::DetectorModel.TransitionEvent resource property to the template. Specifies the actions performed and the next state entered when a condition evaluates to TRUE.
 
     .DESCRIPTION
         Adds an AWS::IoTEvents::DetectorModel.TransitionEvent resource property to the template.
-Specifies the actions performed and the next state entered when a "condition" evaluates to TRUE.
+Specifies the actions performed and the next state entered when a condition evaluates to TRUE.
 
     .LINK
         http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iotevents-detectormodel-transitionevent.html
 
     .PARAMETER Condition
-        Required] A Boolean expression that when TRUE causes the actions to be performed and the "nextState" to be entered.
+        Required. A Boolean expression that when TRUE causes the actions to be performed and the nextState to be entered.
 
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iotevents-detectormodel-transitionevent.html#cfn-iotevents-detectormodel-transitionevent-condition
         PrimitiveType: String

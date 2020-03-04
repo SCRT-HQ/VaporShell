@@ -66,6 +66,7 @@ If you specify a network interface when launching an instance, you must specify 
 
     .PARAMETER NetworkInterfaceId
         The ID of the network interface.
+If you are creating a Spot Fleet, omit this parameter because you can’t specify a network interface ID in a launch specification.
 
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-spotfleet-spotfleetrequestconfigdata-launchspecifications-networkinterfaces.html#cfn-ec2-spotfleet-instancenetworkinterfacespecification-networkinterfaceid
         PrimitiveType: String
@@ -88,7 +89,7 @@ If you specify a network interface when launching an instance, you must specify 
         UpdateType: Mutable
 
     .PARAMETER SubnetId
-        The ID of the subnet associated with the network string. Applies only if creating a network interface when launching an instance.
+        The ID of the subnet associated with the network interface. Applies only if creating a network interface when launching an instance.
 
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-spotfleet-spotfleetrequestconfigdata-launchspecifications-networkinterfaces.html#cfn-ec2-spotfleet-instancenetworkinterfacespecification-subnetid
         PrimitiveType: String

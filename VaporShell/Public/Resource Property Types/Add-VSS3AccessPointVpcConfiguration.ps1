@@ -1,16 +1,18 @@
 function Add-VSS3AccessPointVpcConfiguration {
     <#
     .SYNOPSIS
-        Adds an AWS::S3::AccessPoint.VpcConfiguration resource property to the template. 
+        Adds an AWS::S3::AccessPoint.VpcConfiguration resource property to the template. The Virtual Private Cloud (VPC configuration for this access point.
 
     .DESCRIPTION
         Adds an AWS::S3::AccessPoint.VpcConfiguration resource property to the template.
-
+The Virtual Private Cloud (VPC configuration for this access point.
 
     .LINK
         http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-s3-accesspoint-vpcconfiguration.html
 
     .PARAMETER VpcId
+        If this field is specified, the access point will only allow connections from the specified VPC ID.
+
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-s3-accesspoint-vpcconfiguration.html#cfn-s3-accesspoint-vpcconfiguration-vpcid
         UpdateType: Immutable
         PrimitiveType: String

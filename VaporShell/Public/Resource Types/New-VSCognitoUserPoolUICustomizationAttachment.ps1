@@ -1,10 +1,18 @@
 function New-VSCognitoUserPoolUICustomizationAttachment {
     <#
     .SYNOPSIS
-        Adds an AWS::Cognito::UserPoolUICustomizationAttachment resource to the template. 
+        Adds an AWS::Cognito::UserPoolUICustomizationAttachment resource to the template. The AWS::Cognito::UserPoolUICustomizationAttachment resource sets the UI customization information for a user pool's built-in app UI.
 
     .DESCRIPTION
-        Adds an AWS::Cognito::UserPoolUICustomizationAttachment resource to the template. 
+        Adds an AWS::Cognito::UserPoolUICustomizationAttachment resource to the template. The AWS::Cognito::UserPoolUICustomizationAttachment resource sets the UI customization information for a user pool's built-in app UI.
+
+You can specify app UI customization settings for a single client (with a specific clientId or for all clients (by setting the clientId to ALL. If you specify ALL, the default configuration is used for every client that has had no UI customization set previously. If you specify UI customization settings for a particular client, it no longer falls back to the ALL configuration.
+
+**Note**
+
+Before you create this resource, your user pool must have a domain associated with it. You can create an AWS::Cognito::UserPoolDomain resource first in this user pool.
+
+Setting a logo image isn't supported from AWS CloudFormation. Use the Amazon Cognito SetUICustomization: https://docs.aws.amazon.com/cognito-user-identity-pools/latest/APIReference/API_SetUICustomization.html#API_SetUICustomization_RequestSyntax API operation to set the image.
 
     .LINK
         http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-cognito-userpooluicustomizationattachment.html
@@ -13,16 +21,22 @@ function New-VSCognitoUserPoolUICustomizationAttachment {
         The logical ID must be alphanumeric (A-Za-z0-9) and unique within the template. Use the logical name to reference the resource in other parts of the template. For example, if you want to map an Amazon Elastic Block Store volume to an Amazon EC2 instance, you reference the logical IDs to associate the block stores with the instance.
 
     .PARAMETER CSS
+        The CSS values in the UI customization.
+
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-cognito-userpooluicustomizationattachment.html#cfn-cognito-userpooluicustomizationattachment-css
         PrimitiveType: String
         UpdateType: Mutable
 
     .PARAMETER UserPoolId
+        The user pool ID for the user pool.
+
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-cognito-userpooluicustomizationattachment.html#cfn-cognito-userpooluicustomizationattachment-userpoolid
         PrimitiveType: String
         UpdateType: Immutable
 
     .PARAMETER ClientId
+        The client ID for the client app. You can specify the UI customization settings for a single client with a specific clientId or for all clients by setting the clientId to ALL.
+
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-cognito-userpooluicustomizationattachment.html#cfn-cognito-userpooluicustomizationattachment-clientid
         PrimitiveType: String
         UpdateType: Immutable

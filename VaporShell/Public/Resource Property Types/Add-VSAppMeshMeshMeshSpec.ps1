@@ -1,11 +1,11 @@
 function Add-VSAppMeshMeshMeshSpec {
     <#
     .SYNOPSIS
-        Adds an AWS::AppMesh::Mesh.MeshSpec resource property to the template. An object representing the specification of a service mesh.
+        Adds an AWS::AppMesh::Mesh.MeshSpec resource property to the template. An object that represents the specification of a service mesh.
 
     .DESCRIPTION
         Adds an AWS::AppMesh::Mesh.MeshSpec resource property to the template.
-An object representing the specification of a service mesh.
+An object that represents the specification of a service mesh.
 
     .LINK
         http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-appmesh-mesh-meshspec.html

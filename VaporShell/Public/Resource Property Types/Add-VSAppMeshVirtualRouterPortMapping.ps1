@@ -18,7 +18,7 @@ An object representing a virtual router listener port mapping.
         UpdateType: Mutable
 
     .PARAMETER Protocol
-        The protocol used for the port mapping.
+        The protocol used for the port mapping. Specify one protocol.
 
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-appmesh-virtualrouter-portmapping.html#cfn-appmesh-virtualrouter-portmapping-protocol
         PrimitiveType: String

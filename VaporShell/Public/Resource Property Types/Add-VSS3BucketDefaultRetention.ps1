@@ -18,7 +18,7 @@ The default retention period that you want to apply to new objects placed in the
         UpdateType: Mutable
 
     .PARAMETER Mode
-        The default object lock retention mode you want to apply to new objects placed in the specified bucket.
+        The default Object Lock retention mode you want to apply to new objects placed in the specified bucket.
 
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-s3-bucket-defaultretention.html#cfn-s3-bucket-defaultretention-mode
         PrimitiveType: String

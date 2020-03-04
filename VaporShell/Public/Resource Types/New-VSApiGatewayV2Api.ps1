@@ -1,10 +1,10 @@
 function New-VSApiGatewayV2Api {
     <#
     .SYNOPSIS
-        Adds an AWS::ApiGatewayV2::Api resource to the template. The AWS::ApiGatewayV2::Api resource creates an API. Currently only WebSocket APIs are supported. For more information about WebSocket APIs, see About WebSocket APIs in API Gateway: https://docs.aws.amazon.com/apigateway/latest/developerguide/apigateway-websocket-api-overview.html in the *API Gateway Developer Guide*.
+        Adds an AWS::ApiGatewayV2::Api resource to the template. The AWS::ApiGatewayV2::Api resource creates an API. WebSocket APIs and HTTP APIs (beta are supported. For more information about WebSocket APIs, see About WebSocket APIs in API Gateway: https://docs.aws.amazon.com/apigateway/latest/developerguide/apigateway-websocket-api-overview.html in the *API Gateway Developer Guide*. For more information about HTTP APIs, see HTTP APIs: https://docs.aws.amazon.com/apigateway/latest/developerguide/http-api.html in the *API Gateway Developer Guide.*
 
     .DESCRIPTION
-        Adds an AWS::ApiGatewayV2::Api resource to the template. The AWS::ApiGatewayV2::Api resource creates an API. Currently only WebSocket APIs are supported. For more information about WebSocket APIs, see About WebSocket APIs in API Gateway: https://docs.aws.amazon.com/apigateway/latest/developerguide/apigateway-websocket-api-overview.html in the *API Gateway Developer Guide*.
+        Adds an AWS::ApiGatewayV2::Api resource to the template. The AWS::ApiGatewayV2::Api resource creates an API. WebSocket APIs and HTTP APIs (beta are supported. For more information about WebSocket APIs, see About WebSocket APIs in API Gateway: https://docs.aws.amazon.com/apigateway/latest/developerguide/apigateway-websocket-api-overview.html in the *API Gateway Developer Guide*. For more information about HTTP APIs, see HTTP APIs: https://docs.aws.amazon.com/apigateway/latest/developerguide/http-api.html in the *API Gateway Developer Guide.*
 
     .LINK
         http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-apigatewayv2-api.html
@@ -13,14 +13,14 @@ function New-VSApiGatewayV2Api {
         The logical ID must be alphanumeric (A-Za-z0-9) and unique within the template. Use the logical name to reference the resource in other parts of the template. For example, if you want to map an Amazon Elastic Block Store volume to an Amazon EC2 instance, you reference the logical IDs to associate the block stores with the instance.
 
     .PARAMETER RouteSelectionExpression
-        The route selection expression for the API.
+        The route selection expression for the API. For HTTP APIs, the routeSelectionExpression must be ${request.method} ${request.path}. If not provided, this will be the default for HTTP APIs. This property is required for WebSocket APIs.
 
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-apigatewayv2-api.html#cfn-apigatewayv2-api-routeselectionexpression
         PrimitiveType: String
         UpdateType: Mutable
 
     .PARAMETER BodyS3Location
-        + CreateApi: https://docs.aws.amazon.com/apigatewayv2/latest/api-reference/apis.html#CreateApi in the *Amazon API Gateway Version 2 API Reference*
+        The S3 location of an OpenAPI definition. Supported only for HTTP APIs. To import an HTTP API, you must specify a Body or BodyS3Location.
 
         Type: BodyS3Location
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-apigatewayv2-api.html#cfn-apigatewayv2-api-bodys3location
@@ -34,49 +34,49 @@ function New-VSApiGatewayV2Api {
         UpdateType: Mutable
 
     .PARAMETER BasePath
-        + CreateApi: https://docs.aws.amazon.com/apigatewayv2/latest/api-reference/apis.html#CreateApi in the *Amazon API Gateway Version 2 API Reference*
+        Specifies how to interpret the base path of the API during import. Valid values are ignore, prepend, and split. The default value is ignore. To learn more, see Set the OpenAPI basePath Property: https://docs.aws.amazon.com/apigateway/latest/developerguide/api-gateway-import-api-basePath.html. Supported only for HTTP APIs.
 
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-apigatewayv2-api.html#cfn-apigatewayv2-api-basepath
         PrimitiveType: String
         UpdateType: Mutable
 
     .PARAMETER FailOnWarnings
-        + CreateApi: https://docs.aws.amazon.com/apigatewayv2/latest/api-reference/apis.html#CreateApi in the *Amazon API Gateway Version 2 API Reference*
+        Specifies whether to rollback the API creation true or not false when a warning is encountered. The default value is false.
 
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-apigatewayv2-api.html#cfn-apigatewayv2-api-failonwarnings
         PrimitiveType: Boolean
         UpdateType: Mutable
 
     .PARAMETER DisableSchemaValidation
-        Avoid validating models when creating a deployment.
+        Avoid validating models when creating a deployment. Supported only for WebSocket APIs.
 
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-apigatewayv2-api.html#cfn-apigatewayv2-api-disableschemavalidation
         PrimitiveType: Boolean
         UpdateType: Mutable
 
     .PARAMETER Name
-        The name of the API.
+        The name of the API. Required unless you specify an OpenAPI definition for Body or S3BodyLocation.
 
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-apigatewayv2-api.html#cfn-apigatewayv2-api-name
         PrimitiveType: String
         UpdateType: Mutable
 
     .PARAMETER Target
-        + CreateApi: https://docs.aws.amazon.com/apigatewayv2/latest/api-reference/apis.html#CreateApi in the *Amazon API Gateway Version 2 API Reference*
+        This property is part of quick create. Quick create produces an API with an integration, a default catch-all route, and a default stage which is configured to automatically deploy changes. For HTTP integrations, specify a fully qualified URL. For Lambda integrations, specify a function ARN. The type of the integration will be HTTP_PROXY or AWS_PROXY, respectively. Supported only for HTTP APIs.
 
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-apigatewayv2-api.html#cfn-apigatewayv2-api-target
         PrimitiveType: String
         UpdateType: Mutable
 
     .PARAMETER CredentialsArn
-        + CreateApi: https://docs.aws.amazon.com/apigatewayv2/latest/api-reference/apis.html#CreateApi in the *Amazon API Gateway Version 2 API Reference*
+        This property is part of quick create. It specifies the credentials required for the integration, if any. For a Lambda integration, three options are available. To specify an IAM Role for API Gateway to assume, use the role's Amazon Resource Name ARN. To require that the caller's identity be passed through from the request, specify arn:aws:iam::*:user/*. To use resource-based permissions on supported AWS services, specify null. Currently, this property is not used for HTTP integrations. Supported only for HTTP APIs.
 
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-apigatewayv2-api.html#cfn-apigatewayv2-api-credentialsarn
         PrimitiveType: String
         UpdateType: Mutable
 
     .PARAMETER CorsConfiguration
-        + CreateApi: https://docs.aws.amazon.com/apigatewayv2/latest/api-reference/apis.html#CreateApi in the *Amazon API Gateway Version 2 API Reference*
+        A CORS configuration. Supported only for HTTP APIs. See Configuring CORS: https://docs.aws.amazon.com/apigateway/latest/developerguide/http-api-cors.html for more information.
 
         Type: Cors
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-apigatewayv2-api.html#cfn-apigatewayv2-api-corsconfiguration
@@ -90,35 +90,35 @@ function New-VSApiGatewayV2Api {
         UpdateType: Mutable
 
     .PARAMETER ProtocolType
-        The API protocol: Currently only WEBSOCKET is supported.
+        The API protocol. Required unless you specify an OpenAPI definition for Body or S3BodyLocation.
 
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-apigatewayv2-api.html#cfn-apigatewayv2-api-protocoltype
         PrimitiveType: String
         UpdateType: Immutable
 
     .PARAMETER RouteKey
-        + CreateApi: https://docs.aws.amazon.com/apigatewayv2/latest/api-reference/apis.html#CreateApi in the *Amazon API Gateway Version 2 API Reference*
+        This property is part of quick create. If you don't specify a routeKey, a default route of $default is created. The $default route acts as a catch-all for any request made to your API, for a particular stage. The $default route key can't be modified. You can add routes after creating the API, and you can update the route keys of additional routes. Supported only for HTTP APIs.
 
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-apigatewayv2-api.html#cfn-apigatewayv2-api-routekey
         PrimitiveType: String
         UpdateType: Mutable
 
     .PARAMETER Body
-        + CreateApi: https://docs.aws.amazon.com/apigatewayv2/latest/api-reference/apis.html#CreateApi in the *Amazon API Gateway Version 2 API Reference*
+        The OpenAPI definition. Supported only for HTTP APIs. To import an HTTP API, you must specify a Body or BodyS3Location.
 
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-apigatewayv2-api.html#cfn-apigatewayv2-api-body
         PrimitiveType: Json
         UpdateType: Mutable
 
     .PARAMETER Tags
-        + CreateApi: https://docs.aws.amazon.com/apigatewayv2/latest/api-reference/apis.html#CreateApi in the *Amazon API Gateway Version 2 API Reference*
+        The collection of tags. Each tag element is associated with a given resource.
 
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-apigatewayv2-api.html#cfn-apigatewayv2-api-tags
         PrimitiveType: Json
         UpdateType: Mutable
 
     .PARAMETER ApiKeySelectionExpression
-        An API key selection expression. See API Key Selection Expressions: https://docs.aws.amazon.com/apigateway/latest/developerguide/apigateway-websocket-api-selection-expressions.html#apigateway-websocket-api-apikey-selection-expressions.
+        An API key selection expression. Supported only for WebSocket APIs. See API Key Selection Expressions: https://docs.aws.amazon.com/apigateway/latest/developerguide/apigateway-websocket-api-selection-expressions.html#apigateway-websocket-api-apikey-selection-expressions.
 
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-apigatewayv2-api.html#cfn-apigatewayv2-api-apikeyselectionexpression
         PrimitiveType: String

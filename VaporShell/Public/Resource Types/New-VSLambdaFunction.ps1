@@ -20,7 +20,7 @@ function New-VSLambdaFunction {
         UpdateType: Mutable
 
     .PARAMETER DeadLetterConfig
-        A dead letter queue configuration that specifies the queue or topic where Lambda sends asynchronous events when they fail processing. For more information, see Dead Letter Queues: https://docs.aws.amazon.com/lambda/latest/dg/dlq.html.
+        A dead letter queue configuration that specifies the queue or topic where Lambda sends asynchronous events when they fail processing. For more information, see Dead Letter Queues: https://docs.aws.amazon.com/lambda/latest/dg/invocation-async.html#dlq.
 
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-lambda-function.html#cfn-lambda-function-deadletterconfig
         Type: DeadLetterConfig
@@ -123,7 +123,7 @@ If you specify a name, you cannot perform updates that require replacement of th
         UpdateType: Mutable
 
     .PARAMETER VpcConfig
-        For network connectivity to AWS resources in a VPC, specify a list of security groups and subnets in the VPC. When you connect a function to a VPC, it can only access resources and the internet through that VPC. For more information, see VPC Settings: https://docs.aws.amazon.com/lambda/latest/dg/vpc.html.
+        For network connectivity to AWS resources in a VPC, specify a list of security groups and subnets in the VPC.
 
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-lambda-function.html#cfn-lambda-function-vpcconfig
         Type: VpcConfig
@@ -270,16 +270,8 @@ If you specify a name, you cannot perform updates that require replacement of th
                 }
             })]
         $Runtime,
+        [VaporShell.Core.TransformTag()]
         [parameter(Mandatory = $false)]
-        [ValidateScript( {
-                $allowedTypes = "Vaporshell.Resource.Tag","System.Management.Automation.PSCustomObject"
-                if ([string]$($_.PSTypeNames) -match "($(($allowedTypes|ForEach-Object{[RegEx]::Escape($_)}) -join '|'))") {
-                    $true
-                }
-                else {
-                    $PSCmdlet.ThrowTerminatingError((New-VSError -String "This parameter only accepts the following types: $($allowedTypes -join ", "). The current types of the value are: $($_.PSTypeNames -join ", ")."))
-                }
-            })]
         $Tags,
         [parameter(Mandatory = $false)]
         [ValidateScript( {

@@ -39,6 +39,7 @@ For more information about the weighted routing policy, see Weighted Routing: ht
 
     .PARAMETER NamespaceId
         The ID of the namespace to use for DNS configuration.
+You must specify a value for NamespaceId either for DnsConfig or for the service properties: https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-servicediscovery-service.html. Don't specify a value in both places.
 
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-servicediscovery-service-dnsconfig.html#cfn-servicediscovery-service-dnsconfig-namespaceid
         PrimitiveType: String

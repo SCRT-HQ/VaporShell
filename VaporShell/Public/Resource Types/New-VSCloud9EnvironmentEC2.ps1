@@ -56,7 +56,7 @@ function New-VSCloud9EnvironmentEC2 {
         UpdateType: Immutable
 
     .PARAMETER Tags
-        The name of the environment.
+        An array of key-value pairs that will be associated with the new AWS Cloud9 development environment.
 
         Type: List
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-cloud9-environmentec2.html#cfn-cloud9-environmentec2-tags
@@ -181,16 +181,8 @@ function New-VSCloud9EnvironmentEC2 {
                 }
             })]
         $InstanceType,
+        [VaporShell.Core.TransformTag()]
         [parameter(Mandatory = $false)]
-        [ValidateScript( {
-                $allowedTypes = "Vaporshell.Resource.Tag","System.Management.Automation.PSCustomObject"
-                if ([string]$($_.PSTypeNames) -match "($(($allowedTypes|ForEach-Object{[RegEx]::Escape($_)}) -join '|'))") {
-                    $true
-                }
-                else {
-                    $PSCmdlet.ThrowTerminatingError((New-VSError -String "This parameter only accepts the following types: $($allowedTypes -join ", "). The current types of the value are: $($_.PSTypeNames -join ", ")."))
-                }
-            })]
         $Tags,
         [parameter(Mandatory = $false)]
         [ValidateScript( {

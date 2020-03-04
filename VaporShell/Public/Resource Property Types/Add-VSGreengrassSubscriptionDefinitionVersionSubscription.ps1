@@ -13,7 +13,7 @@ function Add-VSGreengrassSubscriptionDefinitionVersionSubscription {
         http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-greengrass-subscriptiondefinitionversion-subscription.html
 
     .PARAMETER Target
-        The destination of the message. The value can be a thing ARN, a Lambda function ARN, a connector ARN, cloud which represents the AWS IoT cloud, or GGShadowService.
+        The destination of the message. The value can be a thing ARN, the ARN of a Lambda function alias recommended or version, a connector ARN, cloud which represents the AWS IoT cloud, or GGShadowService.
 
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-greengrass-subscriptiondefinitionversion-subscription.html#cfn-greengrass-subscriptiondefinitionversion-subscription-target
         PrimitiveType: String
@@ -27,7 +27,7 @@ function Add-VSGreengrassSubscriptionDefinitionVersionSubscription {
         UpdateType: Immutable
 
     .PARAMETER Source
-        The originator of the message. The value can be a thing ARN, a Lambda function ARN, a connector ARN, cloud which represents the AWS IoT cloud, or GGShadowService.
+        The originator of the message. The value can be a thing ARN, the ARN of a Lambda function alias recommended or version, a connector ARN, cloud which represents the AWS IoT cloud, or GGShadowService.
 
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-greengrass-subscriptiondefinitionversion-subscription.html#cfn-greengrass-subscriptiondefinitionversion-subscription-source
         PrimitiveType: String

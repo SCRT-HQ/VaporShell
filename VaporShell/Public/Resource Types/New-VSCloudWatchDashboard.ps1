@@ -6,7 +6,7 @@ function New-VSCloudWatchDashboard {
     .DESCRIPTION
         Adds an AWS::CloudWatch::Dashboard resource to the template. The AWS::CloudWatch::Dashboard resource specifies an Amazon CloudWatch dashboard. A dashboard is a customizable home page in the CloudWatch console that you can use to monitor your AWS resources in a single view.
 
-There is no limit to the number of dashboards in your account. All dashboards in your account are global, not region-specific.
+All dashboards in your account are global, not region-specific.
 
     .LINK
         http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-cloudwatch-dashboard.html

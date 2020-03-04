@@ -15,7 +15,7 @@ The EC2 Security Group Rule is an embedded property of the AWS::EC2::SecurityGro
         http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-security-group-rule.html
 
     .PARAMETER CidrIp
-        The IPv4 address range, in CIDR format.
+        The destination IPv4 address range, in CIDR format.
 
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-security-group-rule.html#cfn-ec2-security-group-rule-cidrip
         PrimitiveType: String
@@ -23,7 +23,7 @@ The EC2 Security Group Rule is an embedded property of the AWS::EC2::SecurityGro
 
     .PARAMETER CidrIpv6
         EC2-VPC only] The IPv6 ranges.
-The IPv6 address range, in CIDR format.
+The destination IPv6 address range, in CIDR format.
 
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-security-group-rule.html#cfn-ec2-security-group-rule-cidripv6
         PrimitiveType: String
@@ -38,7 +38,7 @@ Constraints: Up to 255 characters in length. Allowed characters are a-z, A-Z, 0-
         UpdateType: Mutable
 
     .PARAMETER DestinationPrefixListId
-        EC2-VPC only] The prefix list IDs for an AWS service. This is the AWS service that you want to access through a VPC endpoint from instances associated with the security group.
+        EC2-VPC only] The prefix list IDs for the destination AWS service. This is the AWS service that you want to access through a VPC endpoint from instances associated with the security group.
 
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-security-group-rule.html#cfn-ec2-security-group-rule-destinationprefixlistid
         PrimitiveType: String

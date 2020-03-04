@@ -87,7 +87,7 @@ We recommend that you use PV-GRUB instead of kernels and RAM disks. For more inf
         UpdateType: Mutable
 
     .PARAMETER NetworkInterfaces
-        One or more network interfaces. If you specify a network interface, you must specify any security groups as part of the network interface.
+        One or more network interfaces. If you specify a network interface, you must specify any security groups and subnets as part of the network interface.
 
         Type: List
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-launchtemplate-launchtemplatedata.html#cfn-ec2-launchtemplate-launchtemplatedata-networkinterfaces
@@ -116,14 +116,14 @@ We recommend that you use PV-GRUB instead of kernels and RAM disks. For more inf
         UpdateType: Mutable
 
     .PARAMETER HibernationOptions
-        Indicates whether an instance is enabled for hibernation. This parameter is valid only if the instance meets the hibernation prerequisites: https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/Hibernate.html#hibernating-prerequisites. Hibernation is currently supported only for Amazon Linux. For more information, see Hibernate Your Instance: https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/Hibernate.html in the *Amazon Elastic Compute Cloud User Guide*.
+        Indicates whether an instance is enabled for hibernation. This parameter is valid only if the instance meets the hibernation prerequisites: https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/Hibernate.html#hibernating-prerequisites. For more information, see Hibernate Your Instance: https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/Hibernate.html in the *Amazon Elastic Compute Cloud User Guide*.
 
         Type: HibernationOptions
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-launchtemplate-launchtemplatedata.html#cfn-ec2-launchtemplate-launchtemplatedata-hibernationoptions
         UpdateType: Mutable
 
     .PARAMETER MetadataOptions
-        +  RequestLaunchTemplateData: https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_RequestLaunchTemplateData.html in the *Amazon Elastic Compute Cloud API Reference*
+        The metadata options for the instance. For more information, see Instance Metadata and User Data: https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-instance-metadata.html in the *Amazon Elastic Compute Cloud User Guide*.
 
         Type: MetadataOptions
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-launchtemplate-launchtemplatedata.html#cfn-ec2-launchtemplate-launchtemplatedata-metadataoptions

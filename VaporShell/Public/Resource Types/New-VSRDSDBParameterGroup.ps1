@@ -19,21 +19,26 @@ Applying a parameter group to a DB instance may require the instance to reboot, 
         The logical ID must be alphanumeric (A-Za-z0-9) and unique within the template. Use the logical name to reference the resource in other parts of the template. For example, if you want to map an Amazon Elastic Block Store volume to an Amazon EC2 instance, you reference the logical IDs to associate the block stores with the instance.
 
     .PARAMETER Description
-        Provides the customer-specified description for this DB Parameter Group.
+        Provides the customer-specified description for this DB parameter group.
 
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-rds-dbparametergroup.html#cfn-rds-dbparametergroup-description
         PrimitiveType: String
         UpdateType: Mutable
 
     .PARAMETER Family
-        Provides the name of the DB Parameter Group Family that this DB Parameter Group is compatible with.
+        The DB parameter group family name. A DB parameter group can be associated with one and only one DB parameter group family, and can be applied only to a DB instance running a DB engine and engine version compatible with that DB parameter group family.
+The DB parameter group family can't be changed when updating a DB parameter group.
+To list all of the available parameter group families, use the following command:
+aws rds describe-db-engine-versions --query "DBEngineVersions].DBParameterGroupFamily"
+The output contains duplicates.
+For more information, see CreateDBParameterGroup: https://docs.aws.amazon.com/AmazonRDS/latest/APIReference/API_CreateDBParameterGroup.html.
 
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-rds-dbparametergroup.html#cfn-rds-dbparametergroup-family
         PrimitiveType: String
         UpdateType: Mutable
 
     .PARAMETER Parameters
-        An array of parameter names, values, and the apply method for the parameter update. At least one parameter name, value, and apply method must be supplied; subsequent arguments are optional. A maximum of 20 parameters may be modified in a single request.
+        An array of parameter names, values, and the apply method for the parameter update. At least one parameter name, value, and apply method must be supplied; subsequent arguments are optional. A maximum of 20 parameters may be modified in a single request. For more information, see  Working with DB Parameter Groups: https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_WorkingWithParamGroups.html in the *Amazon RDS User Guide*.
 **MySQL**
 Valid Values for Apply method: immediate | pending-reboot
 You can use the immediate value with dynamic parameters only. You can use the pending-reboot value for both dynamic and static parameters, and changes are applied when DB Instance reboots.
@@ -125,16 +130,8 @@ Valid Values for Apply method: pending-reboot
         [parameter(Mandatory = $false)]
         [System.Collections.Hashtable]
         $Parameters,
+        [VaporShell.Core.TransformTag()]
         [parameter(Mandatory = $false)]
-        [ValidateScript( {
-                $allowedTypes = "Vaporshell.Resource.Tag","System.Management.Automation.PSCustomObject"
-                if ([string]$($_.PSTypeNames) -match "($(($allowedTypes|ForEach-Object{[RegEx]::Escape($_)}) -join '|'))") {
-                    $true
-                }
-                else {
-                    $PSCmdlet.ThrowTerminatingError((New-VSError -String "This parameter only accepts the following types: $($allowedTypes -join ", "). The current types of the value are: $($_.PSTypeNames -join ", ")."))
-                }
-            })]
         $Tags,
         [ValidateSet("Delete","Retain","Snapshot")]
         [System.String]

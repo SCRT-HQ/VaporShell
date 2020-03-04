@@ -1,38 +1,48 @@
 function Add-VSAccessAnalyzerAnalyzerFilter {
     <#
     .SYNOPSIS
-        Adds an AWS::AccessAnalyzer::Analyzer.Filter resource property to the template. 
+        Adds an AWS::AccessAnalyzer::Analyzer.Filter resource property to the template. The criteria that defines the rule.
 
     .DESCRIPTION
         Adds an AWS::AccessAnalyzer::Analyzer.Filter resource property to the template.
-
+The criteria that defines the rule.
 
     .LINK
         http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-accessanalyzer-analyzer-filter.html
 
     .PARAMETER Contains
+        A "contains" condition to match for the rule.
+
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-accessanalyzer-analyzer-filter.html#cfn-accessanalyzer-analyzer-filter-contains
         UpdateType: Mutable
         Type: List
         PrimitiveItemType: String
 
     .PARAMETER Eq
+        An "equals" condition to match for the rule.
+
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-accessanalyzer-analyzer-filter.html#cfn-accessanalyzer-analyzer-filter-eq
         UpdateType: Mutable
         Type: List
         PrimitiveItemType: String
 
     .PARAMETER Exists
+        An "exists" condition to match for the rule.
+
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-accessanalyzer-analyzer-filter.html#cfn-accessanalyzer-analyzer-filter-exists
         UpdateType: Mutable
         PrimitiveType: Boolean
 
     .PARAMETER Property
+        The property used to define the criteria in the filter for the rule.
+
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-accessanalyzer-analyzer-filter.html#cfn-accessanalyzer-analyzer-filter-property
         UpdateType: Mutable
         PrimitiveType: String
 
     .PARAMETER Neq
+        A "not equal" condition to match for the rule.
+
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-accessanalyzer-analyzer-filter.html#cfn-accessanalyzer-analyzer-filter-neq
         UpdateType: Mutable
         Type: List

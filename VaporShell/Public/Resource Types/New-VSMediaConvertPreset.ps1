@@ -1,10 +1,14 @@
 function New-VSMediaConvertPreset {
     <#
     .SYNOPSIS
-        Adds an AWS::MediaConvert::Preset resource to the template. 
+        Adds an AWS::MediaConvert::Preset resource to the template. The AWS::MediaConvert::Preset resource is an AWS Elemental MediaConvert resource type that you can use to specify encoding settings for a single output in a transcoding job.
 
     .DESCRIPTION
-        Adds an AWS::MediaConvert::Preset resource to the template. 
+        Adds an AWS::MediaConvert::Preset resource to the template. The AWS::MediaConvert::Preset resource is an AWS Elemental MediaConvert resource type that you can use to specify encoding settings for a single output in a transcoding job.
+
+When you declare this entity in your AWS CloudFormation template, you pass in your transcoding job settings in JSON or YAML format. This settings specification must be formed in a particular way that conforms to AWS Elemental MediaConvert job validation. For more information about creating an output preset model for the SettingsJson property, see the Remarks section later in this topic.
+
+For more information about output MediaConvert presets, see Working with AWS Elemental MediaConvert Output Presets: https://docs.aws.amazon.com/mediaconvert/latest/ug/working-with-presets.html in the *AWS Elemental MediaConvert User Guide*.
 
     .LINK
         http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-mediaconvert-preset.html
@@ -13,26 +17,38 @@ function New-VSMediaConvertPreset {
         The logical ID must be alphanumeric (A-Za-z0-9) and unique within the template. Use the logical name to reference the resource in other parts of the template. For example, if you want to map an Amazon Elastic Block Store volume to an Amazon EC2 instance, you reference the logical IDs to associate the block stores with the instance.
 
     .PARAMETER Category
+        The new category for the preset, if you are changing it.
+
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-mediaconvert-preset.html#cfn-mediaconvert-preset-category
         PrimitiveType: String
         UpdateType: Mutable
 
     .PARAMETER Description
+        The new description for the preset, if you are changing it.
+
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-mediaconvert-preset.html#cfn-mediaconvert-preset-description
         PrimitiveType: String
         UpdateType: Mutable
 
     .PARAMETER SettingsJson
+        Specify, in JSON format, the transcoding job settings for this output preset. This specification must conform to the AWS Elemental MediaConvert job validation. For information about forming this specification, see the Remarks section later in this topic.
+For more information about MediaConvert output presets, see Working with AWS Elemental MediaConvert Output Presets: https://docs.aws.amazon.com/mediaconvert/latest/ug/working-with-presets.html in the *AWS Elemental MediaConvert User Guide*.
+
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-mediaconvert-preset.html#cfn-mediaconvert-preset-settingsjson
         PrimitiveType: Json
         UpdateType: Mutable
 
     .PARAMETER Tags
+        An array of key-value pairs to apply to this resource.
+For more information, see Tag: https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-resource-tags.html.
+
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-mediaconvert-preset.html#cfn-mediaconvert-preset-tags
         PrimitiveType: Json
         UpdateType: Mutable
 
     .PARAMETER Name
+        The name of the preset that you are modifying.
+
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-mediaconvert-preset.html#cfn-mediaconvert-preset-name
         PrimitiveType: String
         UpdateType: Immutable

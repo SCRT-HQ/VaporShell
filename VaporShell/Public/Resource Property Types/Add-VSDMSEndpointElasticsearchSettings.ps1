@@ -45,7 +45,7 @@ ServiceAccessRoleArn: #cfn-dms-endpoint-elasticsearchsettings-serviceaccessrolea
 
 EndpointUri  <a name="cfn-dms-endpoint-elasticsearchsettings-endpointuri"></a>
 
-The endpoint for the ElasticSearch cluster.
+The endpoint for the Elasticsearch cluster.
 
 *Required*: No
 

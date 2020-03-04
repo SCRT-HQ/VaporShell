@@ -22,7 +22,7 @@ For more information, see Task Placement Constraints: https://docs.aws.amazon.co
         UpdateType: Immutable
 
     .PARAMETER Type
-        The type of constraint. The DistinctInstance constraint ensures that each task in a particular group is running on a different container instance. The MemberOf constraint restricts selection to be from a group of valid candidates.
+        The type of constraint. The MemberOf constraint restricts selection to be from a group of valid candidates.
 
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ecs-taskdefinition-taskdefinitionplacementconstraint.html#cfn-ecs-taskdefinition-taskdefinitionplacementconstraint-type
         PrimitiveType: String

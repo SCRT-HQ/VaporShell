@@ -13,21 +13,30 @@ function New-VSSSMDocument {
         The logical ID must be alphanumeric (A-Za-z0-9) and unique within the template. Use the logical name to reference the resource in other parts of the template. For example, if you want to map an Amazon Elastic Block Store volume to an Amazon EC2 instance, you reference the logical IDs to associate the block stores with the instance.
 
     .PARAMETER Content
-        A valid JSON or YAML string.
+        The content for the new SSM document, in valid JSON or YAML format.
+We recommend storing the contents for your new document in an external JSON or YAML file and referencing the file in a command.
+For examples, see the following topics in the *AWS Systems Manager User Guide*.
++  Create an SSM Document AWS API: https://docs.aws.amazon.com/systems-manager/latest/userguide/create-ssm-document-api.html
++  Create an SSM Document AWS CLI: https://docs.aws.amazon.com/systems-manager/latest/userguide/create-ssm-document-cli.html
++  Create an SSM Document Tools for Windows PowerShell: https://docs.aws.amazon.com/systems-manager/latest/userguide/create-ssm-document-ps.html
 
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ssm-document.html#cfn-ssm-document-content
         PrimitiveType: Json
         UpdateType: Immutable
 
     .PARAMETER DocumentType
-        The type of document to create. Valid document types include: Command, Policy, Automation, Session, and Package.
+        The type of document to create.
 
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ssm-document.html#cfn-ssm-document-documenttype
         PrimitiveType: String
         UpdateType: Immutable
 
     .PARAMETER Name
-        +  AWS Systems Manager Documents: https://docs.aws.amazon.com/systems-manager/latest/userguide/sysman-ssm-docs.html
+        A name for the Systems Manager document.
+Do not use the following to begin the names of documents you create. They are reserved by AWS for use as document prefixes:
++  aws
++  amazon
++  amzn
 
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ssm-document.html#cfn-ssm-document-name
         PrimitiveType: String
@@ -120,16 +129,8 @@ function New-VSSSMDocument {
                 }
             })]
         $Name,
+        [VaporShell.Core.TransformTag()]
         [parameter(Mandatory = $false)]
-        [ValidateScript( {
-                $allowedTypes = "Vaporshell.Resource.Tag","System.Management.Automation.PSCustomObject"
-                if ([string]$($_.PSTypeNames) -match "($(($allowedTypes|ForEach-Object{[RegEx]::Escape($_)}) -join '|'))") {
-                    $true
-                }
-                else {
-                    $PSCmdlet.ThrowTerminatingError((New-VSError -String "This parameter only accepts the following types: $($allowedTypes -join ", "). The current types of the value are: $($_.PSTypeNames -join ", ")."))
-                }
-            })]
         $Tags,
         [ValidateSet("Delete","Retain","Snapshot")]
         [System.String]

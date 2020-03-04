@@ -13,7 +13,7 @@ function New-VSIAMRole {
         The logical ID must be alphanumeric (A-Za-z0-9) and unique within the template. Use the logical name to reference the resource in other parts of the template. For example, if you want to map an Amazon Elastic Block Store volume to an Amazon EC2 instance, you reference the logical IDs to associate the block stores with the instance.
 
     .PARAMETER AssumeRolePolicyDocument
-        The trust policy that is associated with this role. Trust policies define which entities can assume the role. You can associate only one trust policy with a role. For an example of a policy that can be used to assume a role, see Template Examples: https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-iam-role.html#cfn-iam-role-templateexamples. For more information about the elements that you can use in an IAM policy, see IAM Policy Elements Reference: https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements.html in the *IAM User Guide*.
+        The trust policy that is associated with this role. Trust policies define which entities can assume the role. You can associate only one trust policy with a role. For an example of a policy that can be used to assume a role, see Template Examples: https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-iam-role.html#aws-resource-iam-role--examples. For more information about the elements that you can use in an IAM policy, see IAM Policy Elements Reference: https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements.html in the *IAM User Guide*.
 
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-iam-role.html#cfn-iam-role-assumerolepolicydocument
         PrimitiveType: Json
@@ -218,16 +218,8 @@ Naming an IAM resource can cause an unrecoverable error if you reuse the same te
                 }
             })]
         $RoleName,
+        [VaporShell.Core.TransformTag()]
         [parameter(Mandatory = $false)]
-        [ValidateScript( {
-                $allowedTypes = "Vaporshell.Resource.Tag","System.Management.Automation.PSCustomObject"
-                if ([string]$($_.PSTypeNames) -match "($(($allowedTypes|ForEach-Object{[RegEx]::Escape($_)}) -join '|'))") {
-                    $true
-                }
-                else {
-                    $PSCmdlet.ThrowTerminatingError((New-VSError -String "This parameter only accepts the following types: $($allowedTypes -join ", "). The current types of the value are: $($_.PSTypeNames -join ", ")."))
-                }
-            })]
         $Tags,
         [ValidateSet("Delete","Retain","Snapshot")]
         [System.String]

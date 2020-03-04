@@ -17,7 +17,7 @@ When you update an existing alarm, its state is left unchanged, but the update c
         The logical ID must be alphanumeric (A-Za-z0-9) and unique within the template. Use the logical name to reference the resource in other parts of the template. For example, if you want to map an Amazon Elastic Block Store volume to an Amazon EC2 instance, you reference the logical IDs to associate the block stores with the instance.
 
     .PARAMETER ActionsEnabled
-        Indicates whether actions should be executed during any changes to the alarm state.
+        Indicates whether actions should be executed during any changes to the alarm state. The default is TRUE.
 
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-cw-alarm.html#cfn-cloudwatch-alarms-actionsenabled
         PrimitiveType: Boolean
@@ -136,7 +136,8 @@ If you specify the Metrics parameter, you cannot specify MetricName, Dimensions,
         UpdateType: Mutable
 
     .PARAMETER Period
-        The period, in seconds, over which the statistic is applied. This is required for an alarm based on a metric. For an alarm based on a math expression, you can't specify Period, and instead you use the Metrics parameter.
+        The period, in seconds, over which the statistic is applied. This is required for an alarm based on a metric. Valid values are 10, 30, 60, and any multiple of 60.
+For an alarm based on a math expression, you can't specify Period, and instead you use the Metrics parameter.
 
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-cw-alarm.html#cfn-cloudwatch-alarms-period
         PrimitiveType: Integer

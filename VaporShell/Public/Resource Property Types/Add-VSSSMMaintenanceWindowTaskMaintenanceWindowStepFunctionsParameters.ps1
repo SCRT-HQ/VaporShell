@@ -1,11 +1,11 @@
 function Add-VSSSMMaintenanceWindowTaskMaintenanceWindowStepFunctionsParameters {
     <#
     .SYNOPSIS
-        Adds an AWS::SSM::MaintenanceWindowTask.MaintenanceWindowStepFunctionsParameters resource property to the template. The MaintenanceWindowStepFunctionsParameters property type specifies the parameters for execution of the STEP_FUNCTION for a maintenance window task in AWS Systems Manager.
+        Adds an AWS::SSM::MaintenanceWindowTask.MaintenanceWindowStepFunctionsParameters resource property to the template. The MaintenanceWindowStepFunctionsParameters property type specifies the parameters for the execution of a STEP_FUNCTIONS task in a Systems Manager maintenance window.
 
     .DESCRIPTION
         Adds an AWS::SSM::MaintenanceWindowTask.MaintenanceWindowStepFunctionsParameters resource property to the template.
-The MaintenanceWindowStepFunctionsParameters property type specifies the parameters for execution of the STEP_FUNCTION for a maintenance window task in AWS Systems Manager.
+The MaintenanceWindowStepFunctionsParameters property type specifies the parameters for the execution of a STEP_FUNCTIONS task in a Systems Manager maintenance window.
 
 MaintenanceWindowStepFunctionsParameters is a property of the TaskInvocationParameters: https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ssm-maintenancewindowtask-taskinvocationparameters.html property type.
 
@@ -13,14 +13,14 @@ MaintenanceWindowStepFunctionsParameters is a property of the TaskInvocationPara
         http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ssm-maintenancewindowtask-maintenancewindowstepfunctionsparameters.html
 
     .PARAMETER Input
-        The inputs for the STEP_FUNCTION task.
+        The inputs for the STEP_FUNCTIONS task.
 
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ssm-maintenancewindowtask-maintenancewindowstepfunctionsparameters.html#cfn-ssm-maintenancewindowtask-maintenancewindowstepfunctionsparameters-input
         PrimitiveType: String
         UpdateType: Mutable
 
     .PARAMETER Name
-        The name of the STEP_FUNCTION task.
+        The name of the STEP_FUNCTIONS task.
 
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ssm-maintenancewindowtask-maintenancewindowstepfunctionsparameters.html#cfn-ssm-maintenancewindowtask-maintenancewindowstepfunctionsparameters-name
         PrimitiveType: String

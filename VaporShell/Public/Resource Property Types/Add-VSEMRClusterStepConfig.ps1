@@ -11,7 +11,7 @@ StepConfig is a property of the AWS::EMR::Cluster resource. The StepConfig prope
         http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-elasticmapreduce-cluster-stepconfig.html
 
     .PARAMETER ActionOnFailure
-        The action to take when the cluster step fails. Possible values are TERMINATE_CLUSTER, CANCEL_AND_WAIT, and CONTINUE. TERMINATE_JOB_FLOW is provided for backward compatibility. We recommend using TERMINATE_CLUSTER instead.
+        The action to take when the cluster step fails. Possible values are CANCEL_AND_WAIT and CONTINUE.
 
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-elasticmapreduce-cluster-stepconfig.html#cfn-elasticmapreduce-cluster-stepconfig-actiononfailure
         PrimitiveType: String

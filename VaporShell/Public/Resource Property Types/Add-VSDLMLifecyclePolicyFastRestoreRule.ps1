@@ -1,32 +1,40 @@
 function Add-VSDLMLifecyclePolicyFastRestoreRule {
     <#
     .SYNOPSIS
-        Adds an AWS::DLM::LifecyclePolicy.FastRestoreRule resource property to the template. 
+        Adds an AWS::DLM::LifecyclePolicy.FastRestoreRule resource property to the template. Specifies a rule for enabling fast snapshot restore. You can enable fast snapshot restore based on either a count or a time interval.
 
     .DESCRIPTION
         Adds an AWS::DLM::LifecyclePolicy.FastRestoreRule resource property to the template.
-
+Specifies a rule for enabling fast snapshot restore. You can enable fast snapshot restore based on either a count or a time interval.
 
     .LINK
         http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-dlm-lifecyclepolicy-fastrestorerule.html
 
     .PARAMETER IntervalUnit
+        The unit of time for enabling fast snapshot restore.
+
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-dlm-lifecyclepolicy-fastrestorerule.html#cfn-dlm-lifecyclepolicy-fastrestorerule-intervalunit
         PrimitiveType: String
         UpdateType: Mutable
 
     .PARAMETER AvailabilityZones
+        The Availability Zones in which to enable fast snapshot restore.
+
         PrimitiveItemType: String
         Type: List
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-dlm-lifecyclepolicy-fastrestorerule.html#cfn-dlm-lifecyclepolicy-fastrestorerule-availabilityzones
         UpdateType: Mutable
 
     .PARAMETER Count
+        The number of snapshots to be enabled with fast snapshot restore.
+
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-dlm-lifecyclepolicy-fastrestorerule.html#cfn-dlm-lifecyclepolicy-fastrestorerule-count
         PrimitiveType: Integer
         UpdateType: Mutable
 
     .PARAMETER Interval
+        The amount of time to enable fast snapshot restore. The maximum is 100 years. This is equivalent to 1200 months, 5200 weeks, or 36500 days.
+
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-dlm-lifecyclepolicy-fastrestorerule.html#cfn-dlm-lifecyclepolicy-fastrestorerule-interval
         PrimitiveType: Integer
         UpdateType: Mutable

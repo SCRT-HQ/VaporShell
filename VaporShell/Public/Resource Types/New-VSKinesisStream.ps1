@@ -35,7 +35,7 @@ If you specify a name, you cannot perform updates that require replacement of th
         UpdateType: Mutable
 
     .PARAMETER StreamEncryption
-        Enables or updates server-side encryption using an AWS KMS key for a specified stream.
+        When specified, enables or updates server-side encryption using an AWS KMS key for a specified stream. Removing this property from your stack template and updating your stack disables encryption.
 
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-kinesis-stream.html#cfn-kinesis-stream-streamencryption
         Type: StreamEncryption
@@ -130,16 +130,8 @@ If you specify a name, you cannot perform updates that require replacement of th
         $ShardCount,
         [parameter(Mandatory = $false)]
         $StreamEncryption,
+        [VaporShell.Core.TransformTag()]
         [parameter(Mandatory = $false)]
-        [ValidateScript( {
-                $allowedTypes = "Vaporshell.Resource.Tag","System.Management.Automation.PSCustomObject"
-                if ([string]$($_.PSTypeNames) -match "($(($allowedTypes|ForEach-Object{[RegEx]::Escape($_)}) -join '|'))") {
-                    $true
-                }
-                else {
-                    $PSCmdlet.ThrowTerminatingError((New-VSError -String "This parameter only accepts the following types: $($allowedTypes -join ", "). The current types of the value are: $($_.PSTypeNames -join ", ")."))
-                }
-            })]
         $Tags,
         [ValidateSet("Delete","Retain","Snapshot")]
         [System.String]

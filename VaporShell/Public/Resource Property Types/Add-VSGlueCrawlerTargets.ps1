@@ -19,7 +19,7 @@ Specifies data stores to crawl.
         UpdateType: Mutable
 
     .PARAMETER CatalogTargets
-        *Update requires*: No interruption: https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt
+        Specifies AWS Glue Data Catalog targets.
 
         Type: List
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-glue-crawler-targets.html#cfn-glue-crawler-targets-catalogtargets
@@ -35,7 +35,7 @@ Specifies data stores to crawl.
         UpdateType: Mutable
 
     .PARAMETER DynamoDBTargets
-        *Update requires*: No interruption: https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt
+        Specifies Amazon DynamoDB targets.
 
         Type: List
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-glue-crawler-targets.html#cfn-glue-crawler-targets-dynamodbtargets

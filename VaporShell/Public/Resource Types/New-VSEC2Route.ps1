@@ -6,7 +6,7 @@ function New-VSEC2Route {
     .DESCRIPTION
         Adds an AWS::EC2::Route resource to the template. Specifies a route in a route table within a VPC.
 
-You must specify one of the following targets: internet gateway or virtual private gateway, NAT instance, NAT gateway, VPC peering connection, network interface, or egress-only internet gateway.
+You must specify one of the following targets: EgressOnlyInternetGatewayId, GatewayId, InstanceId, NatGatewayId, NetworkInterfaceId, TransitGatewayId, or VpcPeeringConnectionId.
 
     .LINK
         http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ec2-route.html
@@ -38,8 +38,7 @@ You must specify the DestinationCidrBlock or DestinationIpv6CidrBlock property.
         UpdateType: Mutable
 
     .PARAMETER GatewayId
-        The ID of a gateway attached to your VPC.
-You must specify only one of the following properties: EgressOnlyInternetGatewayId, GatewayId, InstanceId, NatGatewayId, NetworkInterfaceId, or VpcPeeringConnectionId.
+        The ID of an internet gateway or virtual private gateway attached to your VPC.
 
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ec2-route.html#cfn-ec2-route-gatewayid
         PrimitiveType: String
@@ -47,7 +46,6 @@ You must specify only one of the following properties: EgressOnlyInternetGateway
 
     .PARAMETER InstanceId
         The ID of a NAT instance in your VPC.
-You must specify only one of the following properties: EgressOnlyInternetGatewayId, GatewayId, InstanceId, NatGatewayId, NetworkInterfaceId, or VpcPeeringConnectionId.
 
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ec2-route.html#cfn-ec2-route-instanceid
         PrimitiveType: String
@@ -55,7 +53,6 @@ You must specify only one of the following properties: EgressOnlyInternetGateway
 
     .PARAMETER NatGatewayId
         The ID of a NAT gateway.
-You must specify only one of the following properties: EgressOnlyInternetGatewayId, GatewayId, InstanceId, NatGatewayId, NetworkInterfaceId, or VpcPeeringConnectionId.
 
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ec2-route.html#cfn-ec2-route-natgatewayid
         PrimitiveType: String
@@ -63,7 +60,6 @@ You must specify only one of the following properties: EgressOnlyInternetGateway
 
     .PARAMETER NetworkInterfaceId
         The ID of the network interface.
-You must specify only one of the following properties: EgressOnlyInternetGatewayId, GatewayId, InstanceId, NatGatewayId, NetworkInterfaceId, or VpcPeeringConnectionId.
 
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ec2-route.html#cfn-ec2-route-networkinterfaceid
         PrimitiveType: String

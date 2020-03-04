@@ -1,32 +1,42 @@
 function Add-VSLakeFormationPermissionsTableWithColumnsResource {
     <#
     .SYNOPSIS
-        Adds an AWS::LakeFormation::Permissions.TableWithColumnsResource resource property to the template. 
+        Adds an AWS::LakeFormation::Permissions.TableWithColumnsResource resource property to the template. A structure for a table with columns object. This object is only used when granting a SELECT permission.
 
     .DESCRIPTION
         Adds an AWS::LakeFormation::Permissions.TableWithColumnsResource resource property to the template.
+A structure for a table with columns object. This object is only used when granting a SELECT permission.
 
+This object must take a value for at least one of ColumnsNames, ColumnsIndexes, or ColumnsWildcard.
 
     .LINK
         http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-lakeformation-permissions-tablewithcolumnsresource.html
 
     .PARAMETER ColumnNames
+        The list of column names for the table. At least one of ColumnNames or ColumnWildcard is required.
+
         PrimitiveItemType: String
         Type: List
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-lakeformation-permissions-tablewithcolumnsresource.html#cfn-lakeformation-permissions-tablewithcolumnsresource-columnnames
         UpdateType: Mutable
 
     .PARAMETER DatabaseName
+        The name of the database for the table with columns resource. Unique to the Data Catalog. A database is a set of associated table definitions organized into a logical group. You can Grant and Revoke database privileges to a principal.
+
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-lakeformation-permissions-tablewithcolumnsresource.html#cfn-lakeformation-permissions-tablewithcolumnsresource-databasename
         PrimitiveType: String
         UpdateType: Mutable
 
     .PARAMETER Name
+        The name of the table resource. A table is a metadata definition that represents your data. You can Grant and Revoke table privileges to a principal.
+
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-lakeformation-permissions-tablewithcolumnsresource.html#cfn-lakeformation-permissions-tablewithcolumnsresource-name
         PrimitiveType: String
         UpdateType: Mutable
 
     .PARAMETER ColumnWildcard
+        A wildcard specified by a ColumnWildcard object. At least one of ColumnNames or ColumnWildcard is required.
+
         Type: ColumnWildcard
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-lakeformation-permissions-tablewithcolumnsresource.html#cfn-lakeformation-permissions-tablewithcolumnsresource-columnwildcard
         UpdateType: Mutable

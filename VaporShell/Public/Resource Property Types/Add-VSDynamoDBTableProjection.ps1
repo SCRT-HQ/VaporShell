@@ -23,7 +23,7 @@ For local secondary indexes, the total count of NonKeyAttributes summed across a
     .PARAMETER ProjectionType
         The set of attributes that are projected into the index:
 +  KEYS_ONLY - Only the index and primary keys are projected into the index.
-+  INCLUDE - Only the specified table attributes are projected into the index. The list of projected attributes are in NonKeyAttributes.
++  INCLUDE - Only the specified table attributes are projected into the index. The list of projected attributes is in NonKeyAttributes.
 +  ALL - All of the table attributes are projected into the index.
 
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-dynamodb-projectionobject.html#cfn-dynamodb-projectionobj-projtype

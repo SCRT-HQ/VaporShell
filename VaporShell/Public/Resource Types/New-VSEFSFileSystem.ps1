@@ -34,7 +34,7 @@ function New-VSEFSFileSystem {
         UpdateType: Immutable
 
     .PARAMETER LifecyclePolicies
-        +  Creating an Amazon Elastic File System: https://docs.aws.amazon.com/efs/latest/ug/creating-using-fs.html
+        A list of policies used by EFS lifecycle management to transition files to the Infrequent Access IA storage class.
 
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-efs-filesystem.html#cfn-elasticfilesystem-filesystem-lifecyclepolicies
         DuplicatesAllowed: False

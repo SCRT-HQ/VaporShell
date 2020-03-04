@@ -20,7 +20,8 @@ LaunchTemplateElasticInferenceAccelerator is a property of the Amazon EC2 Launch
         UpdateType: Mutable
 
     .PARAMETER Count
-        *Update requires*: No interruption: https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt
+        The number of elastic inference accelerators to attach to the instance.
+Default: 1
 
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-launchtemplate-launchtemplateelasticinferenceaccelerator.html#cfn-ec2-launchtemplate-launchtemplateelasticinferenceaccelerator-count
         PrimitiveType: Integer

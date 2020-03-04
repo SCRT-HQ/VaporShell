@@ -67,7 +67,8 @@ Valid only if the policy type is StepScaling or SimpleScaling.
         UpdateType: Mutable
 
     .PARAMETER PolicyType
-        The policy type. The valid values are SimpleScaling, StepScaling, and TargetTrackingScaling. By default, AWS CloudFormation specifies SimpleScaling.
+        The policy type. The default value is SimpleScaling.
+*Allowed Values*: SimpleScaling, StepScaling, or TargetTrackingScaling
 
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-as-policy.html#cfn-as-scalingpolicy-policytype
         PrimitiveType: String

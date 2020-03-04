@@ -1,31 +1,39 @@
 function Add-VSApiGatewayV2ApiBodyS3Location {
     <#
     .SYNOPSIS
-        Adds an AWS::ApiGatewayV2::Api.BodyS3Location resource property to the template. 
+        Adds an AWS::ApiGatewayV2::Api.BodyS3Location resource property to the template. The BodyS3Location property specifies an S3 location from which to import an OpenAPI definition. Supported only for HTTP APIs.
 
     .DESCRIPTION
         Adds an AWS::ApiGatewayV2::Api.BodyS3Location resource property to the template.
-
+The BodyS3Location property specifies an S3 location from which to import an OpenAPI definition. Supported only for HTTP APIs.
 
     .LINK
         http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-apigatewayv2-api-bodys3location.html
 
     .PARAMETER Etag
+        The Etag of the S3 object.
+
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-apigatewayv2-api-bodys3location.html#cfn-apigatewayv2-api-bodys3location-etag
         PrimitiveType: String
         UpdateType: Mutable
 
     .PARAMETER Bucket
+        The S3 bucket that contains the OpenAPI definition to import. Required if you specify a BodyS3Location for an API.
+
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-apigatewayv2-api-bodys3location.html#cfn-apigatewayv2-api-bodys3location-bucket
         PrimitiveType: String
         UpdateType: Mutable
 
     .PARAMETER Version
+        The version of the S3 object.
+
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-apigatewayv2-api-bodys3location.html#cfn-apigatewayv2-api-bodys3location-version
         PrimitiveType: String
         UpdateType: Mutable
 
     .PARAMETER Key
+        The key of the S3 object. Required if you specify a BodyS3Location for an API.
+
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-apigatewayv2-api-bodys3location.html#cfn-apigatewayv2-api-bodys3location-key
         PrimitiveType: String
         UpdateType: Mutable

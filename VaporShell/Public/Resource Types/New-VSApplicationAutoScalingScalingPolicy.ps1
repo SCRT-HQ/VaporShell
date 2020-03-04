@@ -22,8 +22,10 @@ For more information, see PutScalingPolicy: https://docs.aws.amazon.com/autoscal
         UpdateType: Immutable
 
     .PARAMETER PolicyType
-        The Application Auto Scaling policy type. Valid values are StepScaling and TargetTrackingScaling.
-For DynamoDB, only TargetTrackingScaling is supported. For Amazon ECS, Spot Fleet, and Amazon RDS, both StepScaling and TargetTrackingScaling are supported. For any other service, only StepScaling is supported.
+        The Application Auto Scaling policy type.
+The following policy types are supported:
+TargetTrackingScaling—Not supported for Amazon EMR
+StepScaling—Not supported for DynamoDB, Comprehend, or Lambda
 
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-applicationautoscaling-scalingpolicy.html#cfn-applicationautoscaling-scalingpolicy-policytype
         PrimitiveType: String

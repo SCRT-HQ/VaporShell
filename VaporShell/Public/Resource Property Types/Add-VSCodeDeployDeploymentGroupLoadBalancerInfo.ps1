@@ -11,7 +11,7 @@ For AWS CloudFormation to use the properties specified in LoadBalancerInfo, the 
 
 **Note**
 
-AWS CloudFormation supports blue/green deployments on EC2/On-premises compute platforms only.
+AWS CloudFormation supports blue/green deployments on the AWS Lambda compute platform only.
 
 LoadBalancerInfo is a property of the DeploymentGroup: https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-codedeploy-deploymentgroup.html resource.
 

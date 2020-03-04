@@ -13,7 +13,7 @@ NetworkInterface is a property of the AWS::EC2::Instance: https://docs.aws.amazo
         http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-network-iface-embedded.html
 
     .PARAMETER AssociatePublicIpAddress
-        Whether or not to associates a public IPv4 address with eth0.
+        Indicates whether to assign a public IPv4 address to an instance you launch in a VPC. The public IP address can only be assigned to a network interface for eth0, and can only be assigned to a new network interface, not an existing one. You cannot specify more than one network interface in the request. If launching into a default subnet, the default value is true.
 
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-network-iface-embedded.html#aws-properties-ec2-network-iface-embedded-associatepubip
         PrimitiveType: Boolean
@@ -68,6 +68,7 @@ If you specify a network interface when launching an instance, you must specify 
 
     .PARAMETER NetworkInterfaceId
         The ID of the network interface.
+If you are creating a Spot Fleet, omit this parameter because you can’t specify a network interface ID in a launch specification.
 
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-network-iface-embedded.html#aws-properties-ec2-network-iface-embedded-network-iface
         PrimitiveType: String

@@ -1,11 +1,15 @@
 function Add-VSCognitoUserPoolClientAnalyticsConfiguration {
     <#
     .SYNOPSIS
-        Adds an AWS::Cognito::UserPoolClient.AnalyticsConfiguration resource property to the template. AnalyticsConfiguration is a property of the AWS::Cognito::UserPoolClient: https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-cognito-userpoolclient.html resource that defines the Amazon Pinpoint analytics configuration for collecting metrics for this user pool.
+        Adds an AWS::Cognito::UserPoolClient.AnalyticsConfiguration resource property to the template. The Amazon Pinpoint analytics configuration for collecting metrics for a user pool.
 
     .DESCRIPTION
         Adds an AWS::Cognito::UserPoolClient.AnalyticsConfiguration resource property to the template.
-AnalyticsConfiguration is a property of the AWS::Cognito::UserPoolClient: https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-cognito-userpoolclient.html resource that defines the Amazon Pinpoint analytics configuration for collecting metrics for this user pool.
+The Amazon Pinpoint analytics configuration for collecting metrics for a user pool.
+
+**Note**
+
+Cognito User Pools only supports sending events to Amazon Pinpoint projects in the US East (N. Virginia us-east-1 Region, regardless of the region in which the user pool resides.
 
     .LINK
         http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-cognito-userpoolclient-analyticsconfiguration.html

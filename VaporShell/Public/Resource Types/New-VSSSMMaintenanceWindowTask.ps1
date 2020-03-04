@@ -68,7 +68,7 @@ function New-VSSSMMaintenanceWindowTask {
         The resource that the task uses during execution.
 For RUN_COMMAND and AUTOMATION task types, TaskArn is the SSM document name or Amazon Resource Name ARN.
 For LAMBDA tasks, TaskArn is the function name or ARN.
-For STEP_FUNCTION tasks, TaskArn is the state machine ARN.
+For STEP_FUNCTIONS tasks, TaskArn is the state machine ARN.
 
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ssm-maintenancewindowtask.html#cfn-ssm-maintenancewindowtask-taskarn
         PrimitiveType: String
@@ -97,7 +97,7 @@ TaskParameters has been deprecated. To specify parameters to pass to a task when
         UpdateType: Mutable
 
     .PARAMETER TaskType
-        The type of task. Valid values: RUN_COMMAND, AUTOMATION, LAMBDA, STEP_FUNCTION.
+        The type of task. Valid values: RUN_COMMAND, AUTOMATION, LAMBDA, STEP_FUNCTIONS.
 
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ssm-maintenancewindowtask.html#cfn-ssm-maintenancewindowtask-tasktype
         PrimitiveType: String

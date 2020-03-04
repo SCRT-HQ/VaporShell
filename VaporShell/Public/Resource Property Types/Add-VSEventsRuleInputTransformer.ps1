@@ -1,11 +1,11 @@
 function Add-VSEventsRuleInputTransformer {
     <#
     .SYNOPSIS
-        Adds an AWS::Events::Rule.InputTransformer resource property to the template. The InputTransformer property type specifies settings that provide custom input to an Amazon CloudWatch Events target based on certain event data.
+        Adds an AWS::Events::Rule.InputTransformer resource property to the template. The InputTransformer property type specifies settings that provide custom input to an EventBridge target based on certain event data.
 
     .DESCRIPTION
         Adds an AWS::Events::Rule.InputTransformer resource property to the template.
-The InputTransformer property type specifies settings that provide custom input to an Amazon CloudWatch Events target based on certain event data.
+The InputTransformer property type specifies settings that provide custom input to an EventBridge target based on certain event data.
 
 InputTransformer is a property of the Target: https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-events-rule-target.html property type.
 

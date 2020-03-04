@@ -11,7 +11,7 @@ Specifies a subnet to attach to an Application Load Balancer or a Network Load B
         http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-elasticloadbalancingv2-loadbalancer-subnetmapping.html
 
     .PARAMETER AllocationId
-        Network Load Balancers] The allocation ID of the Elastic IP address.
+        Network Load Balancers] The allocation ID of the Elastic IP address for an internet-facing load balancer.
 
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-elasticloadbalancingv2-loadbalancer-subnetmapping.html#cfn-elasticloadbalancingv2-loadbalancer-subnetmapping-allocationid
         PrimitiveType: String

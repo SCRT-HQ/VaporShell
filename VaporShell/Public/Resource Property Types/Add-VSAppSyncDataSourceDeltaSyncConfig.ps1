@@ -1,26 +1,32 @@
 function Add-VSAppSyncDataSourceDeltaSyncConfig {
     <#
     .SYNOPSIS
-        Adds an AWS::AppSync::DataSource.DeltaSyncConfig resource property to the template. 
+        Adds an AWS::AppSync::DataSource.DeltaSyncConfig resource property to the template. Describes a Delta Sync configuration.
 
     .DESCRIPTION
         Adds an AWS::AppSync::DataSource.DeltaSyncConfig resource property to the template.
-
+Describes a Delta Sync configuration.
 
     .LINK
         http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-appsync-datasource-deltasyncconfig.html
 
     .PARAMETER BaseTableTTL
+        The number of minutes an Item is stored in the datasource.
+
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-appsync-datasource-deltasyncconfig.html#cfn-appsync-datasource-deltasyncconfig-basetablettl
         PrimitiveType: String
         UpdateType: Mutable
 
     .PARAMETER DeltaSyncTableTTL
+        The number of minutes a Delta Sync log entry is stored in the Delta Sync table.
+
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-appsync-datasource-deltasyncconfig.html#cfn-appsync-datasource-deltasyncconfig-deltasynctablettl
         PrimitiveType: String
         UpdateType: Mutable
 
     .PARAMETER DeltaSyncTableName
+        The Delta Sync table name.
+
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-appsync-datasource-deltasyncconfig.html#cfn-appsync-datasource-deltasyncconfig-deltasynctablename
         PrimitiveType: String
         UpdateType: Mutable

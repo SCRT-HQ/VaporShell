@@ -14,6 +14,7 @@ SpotOptions is a property of the Amazon EC2 LaunchTemplate InstanceMarketOptions
 
     .PARAMETER SpotInstanceType
         The Spot Instance request type.
+If you are using Spot Instances with an Auto Scaling group, use one-time requests, as the Amazon EC2 Auto Scaling service handles requesting new Spot Instances whenever the group is below its desired capacity.
 
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-launchtemplate-launchtemplatedata-instancemarketoptions-spotoptions.html#cfn-ec2-launchtemplate-launchtemplatedata-instancemarketoptions-spotoptions-spotinstancetype
         PrimitiveType: String

@@ -11,7 +11,7 @@ Your Amazon ECS container instances require at least version 1.26.0 of the conta
 
 **Note**
 
-If you are using tasks that use the Fargate launch type, container dependency parameters are not supported.
+For tasks using the Fargate launch type, this parameter requires that the task or service uses platform version 1.3.0 or later.
 
     .LINK
         http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ecs-taskdefinition-containerdependency.html

@@ -32,7 +32,7 @@ Specifies an object containing properties used to schedule a task to back up a s
         UpdateType: Mutable
 
     .PARAMETER CopyActions
-        *Update requires*: No interruption: https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt
+        Not currently supported by AWS CloudFormation.
 
         Type: List
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-backup-backupplan-backupruleresourcetype.html#cfn-backup-backupplan-backupruleresourcetype-copyactions
@@ -61,7 +61,7 @@ Specifies an object containing properties used to schedule a task to back up a s
         UpdateType: Mutable
 
     .PARAMETER RuleName
-        An optional display name for a backup rule.
+        A display name for a backup rule.
 
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-backup-backupplan-backupruleresourcetype.html#cfn-backup-backupplan-backupruleresourcetype-rulename
         PrimitiveType: String

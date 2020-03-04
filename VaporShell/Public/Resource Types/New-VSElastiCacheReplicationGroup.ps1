@@ -29,7 +29,7 @@ For HIPAA compliance, you must specify TransitEncryptionEnabled as true, an Auth
 Password constraints:
 + Must be only printable ASCII characters.
 + Must be at least 16 characters and no more than 128 characters in length.
-+ Cannot contain any of the following characters: '/', '"', or '@'.
++ The only permitted printable special characters are !, &, #, $, ^, <, >, and -. Other printable special characters cannot be used in the AUTH token.
 For more information, see AUTH password: http://redis.io/commands/AUTH at http://redis.io/commands/AUTH.
 
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-elasticache-replicationgroup.html#cfn-elasticache-replicationgroup-authtoken
@@ -136,6 +136,7 @@ If you're going to launch your cluster in an Amazon VPC, you need to create a su
 
     .PARAMETER NodeGroupConfiguration
         NodeGroupConfiguration  is a property of the AWS::ElastiCache::ReplicationGroup resource that configures an Amazon ElastiCache ElastiCache Redis cluster node group.
+If you set UseOnlineResharding: https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-attribute-updatepolicy.html#cfn-attributes-updatepolicy-useonlineresharding to true, you can update NodeGroupConfiguration without interruption. When UseOnlineResharding is set to false, or is not specified, updating NodeGroupConfiguration results in replacement: https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-replacement.
 
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-elasticache-replicationgroup.html#cfn-elasticache-replicationgroup-nodegroupconfiguration
         DuplicatesAllowed: False
@@ -163,6 +164,7 @@ The maximum permitted value for NumCacheClusters is 6 1 primary plus 5 replicas.
 
     .PARAMETER NumNodeGroups
         An optional parameter that specifies the number of node groups shards for this Redis cluster mode enabled replication group. For Redis cluster mode disabled either omit this parameter or set it to 1.
+If you set UseOnlineResharding: https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-attribute-updatepolicy.html#cfn-attributes-updatepolicy-useonlineresharding to true, you can update NumNodeGroups without interruption. When UseOnlineResharding is set to false, or is not specified, updating NumNodeGroups results in replacement: https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-replacement.
 Default: 1
 
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-elasticache-replicationgroup.html#cfn-elasticache-replicationgroup-numnodegroups
@@ -629,16 +631,8 @@ For HIPAA compliance, you must specify TransitEncryptionEnabled as true, an Auth
                 }
             })]
         $SnapshottingClusterId,
+        [VaporShell.Core.TransformTag()]
         [parameter(Mandatory = $false)]
-        [ValidateScript( {
-                $allowedTypes = "Vaporshell.Resource.Tag","System.Management.Automation.PSCustomObject"
-                if ([string]$($_.PSTypeNames) -match "($(($allowedTypes|ForEach-Object{[RegEx]::Escape($_)}) -join '|'))") {
-                    $true
-                }
-                else {
-                    $PSCmdlet.ThrowTerminatingError((New-VSError -String "This parameter only accepts the following types: $($allowedTypes -join ", "). The current types of the value are: $($_.PSTypeNames -join ", ")."))
-                }
-            })]
         $Tags,
         [parameter(Mandatory = $false)]
         [ValidateScript( {

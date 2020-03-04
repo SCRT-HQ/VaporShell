@@ -21,7 +21,7 @@ After an alias has been created, it cannot be deleted or reused, so this operati
         UpdateType: Immutable
 
     .PARAMETER Description
-        A textual description for the directory.
+        A description for the directory.
 
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-directoryservice-simplead.html#cfn-directoryservice-simplead-description
         PrimitiveType: String
@@ -43,13 +43,14 @@ After an alias has been created, it cannot be deleted or reused, so this operati
 
     .PARAMETER Password
         The password for the directory administrator. The directory creation process creates a directory administrator account with the user name Administrator and this password.
+If you need to change the password for the administrator account, see the ResetUserPassword: https://docs.aws.amazon.com/directoryservice/latest/devguide/API_ResetUserPassword.html API call in the *AWS Directory Service API Reference*.
 
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-directoryservice-simplead.html#cfn-directoryservice-simplead-password
         PrimitiveType: String
         UpdateType: Immutable
 
     .PARAMETER ShortName
-        The short name of the directory, such as CORP.
+        The NetBIOS name of the directory, such as CORP.
 
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-directoryservice-simplead.html#cfn-directoryservice-simplead-shortname
         PrimitiveType: String

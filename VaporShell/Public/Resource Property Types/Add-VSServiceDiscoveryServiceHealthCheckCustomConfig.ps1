@@ -39,8 +39,6 @@ AWS Cloud Map doesn't check the health of the resource directly.
 
 1. If another UpdateInstanceCustomHealthStatus request doesn't arrive during that time to change the status back to healthy, AWS Cloud Map stops routing traffic to the resource.
 
-Note the following about configuring custom health checks.
-
     .LINK
         http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-servicediscovery-service-healthcheckcustomconfig.html
 

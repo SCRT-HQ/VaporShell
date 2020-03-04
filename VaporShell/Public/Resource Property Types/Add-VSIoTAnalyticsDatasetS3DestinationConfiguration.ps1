@@ -1,38 +1,38 @@
 function Add-VSIoTAnalyticsDatasetS3DestinationConfiguration {
     <#
     .SYNOPSIS
-        Adds an AWS::IoTAnalytics::Dataset.S3DestinationConfiguration resource property to the template. Configuration information for delivery of data set contents to Amazon S3.
+        Adds an AWS::IoTAnalytics::Dataset.S3DestinationConfiguration resource property to the template. Configuration information for delivery of dataset contents to Amazon S3.
 
     .DESCRIPTION
         Adds an AWS::IoTAnalytics::Dataset.S3DestinationConfiguration resource property to the template.
-Configuration information for delivery of data set contents to Amazon S3.
+Configuration information for delivery of dataset contents to Amazon S3.
 
     .LINK
         http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iotanalytics-dataset-s3destinationconfiguration.html
 
     .PARAMETER GlueConfiguration
-        Configuration information for coordination with the AWS Glue ETL extract, transform and load service.
+        Configuration information for coordination with AWS Glue, a fully managed extract, transform and load ETL service.
 
         Type: GlueConfiguration
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iotanalytics-dataset-s3destinationconfiguration.html#cfn-iotanalytics-dataset-s3destinationconfiguration-glueconfiguration
         UpdateType: Mutable
 
     .PARAMETER Bucket
-        The name of the Amazon S3 bucket to which data set contents are delivered.
+        The name of the S3 bucket to which dataset contents are delivered.
 
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iotanalytics-dataset-s3destinationconfiguration.html#cfn-iotanalytics-dataset-s3destinationconfiguration-bucket
         PrimitiveType: String
         UpdateType: Mutable
 
     .PARAMETER Key
-        The key of the data set contents object. Each object in an Amazon S3 bucket has a key that is its unique identifier within the bucket each object in a bucket has exactly one key. To produce a unique key, you can use "!{iotanalytics:scheduledTime}" to insert the time of the scheduled SQL query run, or "!{iotanalytics:versioned} to insert a unique hash identifying the data set, for example: "/DataSet/!{iotanalytics:scheduledTime}/!{iotanalytics:versioned}.csv".
+        The key of the dataset contents object. Each object in an S3 bucket has a key that is its unique identifier in the bucket. Each object in a bucket has exactly one key. To produce a unique key, you can use !{iotanalytics:scheduleTime} to insert the time of the scheduled SQL query run, or !{iotanalytics:versionId} to insert a unique hash identifying the dataset for example, /DataSet/!{iotanalytics:scheduleTime}/!{iotanalytics:versionId}.csv.
 
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iotanalytics-dataset-s3destinationconfiguration.html#cfn-iotanalytics-dataset-s3destinationconfiguration-key
         PrimitiveType: String
         UpdateType: Mutable
 
     .PARAMETER RoleArn
-        The ARN of the role which grants AWS IoT Analytics permission to interact with your Amazon S3 and AWS Glue resources.
+        The ARN of the role that grants AWS IoT Analytics permission to interact with your Amazon S3 and AWS Glue resources.
 
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iotanalytics-dataset-s3destinationconfiguration.html#cfn-iotanalytics-dataset-s3destinationconfiguration-rolearn
         PrimitiveType: String

@@ -34,7 +34,7 @@ RdsHttpEndpointConfig is a property of the AWS AppSync DataSource RelationalData
         UpdateType: Mutable
 
     .PARAMETER DbClusterIdentifier
-        Amazon RDS cluster identifier.
+        Amazon RDS cluster ARN.
 
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-appsync-datasource-rdshttpendpointconfig.html#cfn-appsync-datasource-rdshttpendpointconfig-dbclusteridentifier
         PrimitiveType: String

@@ -34,7 +34,7 @@ function New-VSApiGatewayApiKey {
         UpdateType: Mutable
 
     .PARAMETER GenerateDistinctId
-        Specifies whether the key identifier is distinct from the created API key value.
+        Specifies whether the key identifier is distinct from the created API key value. This parameter is deprecated and should not be used.
 
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-apigateway-apikey.html#cfn-apigateway-apikey-generatedistinctid
         PrimitiveType: Boolean
@@ -58,7 +58,7 @@ If you specify a name, you cannot perform updates that require replacement of th
         UpdateType: Mutable
 
     .PARAMETER Tags
-        + apikey:create: https://docs.aws.amazon.com/apigateway/api-reference/link-relation/apikey-create/ in the *Amazon API Gateway REST API Reference*
+        An array of arbitrary tags key-value pairs to associate with the API key.
 
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-apigateway-apikey.html#cfn-apigateway-apikey-tags
         DuplicatesAllowed: True
@@ -67,7 +67,7 @@ If you specify a name, you cannot perform updates that require replacement of th
         UpdateType: Mutable
 
     .PARAMETER Value
-        The value of the API key.
+        The value of the API key. Must be at least 20 characters long.
 
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-apigateway-apikey.html#cfn-apigateway-apikey-value
         PrimitiveType: String
@@ -184,16 +184,8 @@ If you specify a name, you cannot perform updates that require replacement of th
                 }
             })]
         $StageKeys,
+        [VaporShell.Core.TransformTag()]
         [parameter(Mandatory = $false)]
-        [ValidateScript( {
-                $allowedTypes = "Vaporshell.Resource.Tag","System.Management.Automation.PSCustomObject"
-                if ([string]$($_.PSTypeNames) -match "($(($allowedTypes|ForEach-Object{[RegEx]::Escape($_)}) -join '|'))") {
-                    $true
-                }
-                else {
-                    $PSCmdlet.ThrowTerminatingError((New-VSError -String "This parameter only accepts the following types: $($allowedTypes -join ", "). The current types of the value are: $($_.PSTypeNames -join ", ")."))
-                }
-            })]
         $Tags,
         [parameter(Mandatory = $false)]
         [ValidateScript( {

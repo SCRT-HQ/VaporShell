@@ -34,6 +34,8 @@ function New-VSGlueJob {
         UpdateType: Mutable
 
     .PARAMETER Timeout
+        The job timeout in minutes. This is the maximum time that a job run can consume resources before it is terminated and enters TIMEOUT status. The default is 2,880 minutes 48 hours.
+
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-glue-job.html#cfn-glue-job-timeout
         PrimitiveType: Integer
         UpdateType: Mutable
@@ -70,6 +72,8 @@ For information about the key-value pairs that AWS Glue consumes to set up your 
         UpdateType: Mutable
 
     .PARAMETER NotificationProperty
+        Specifies configuration properties of a notification.
+
         Type: NotificationProperty
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-glue-job.html#cfn-glue-job-notificationproperty
         UpdateType: Mutable

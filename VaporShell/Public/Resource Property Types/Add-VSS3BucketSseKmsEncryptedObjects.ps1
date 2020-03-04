@@ -11,7 +11,7 @@ A container for filter information for the selection of S3 objects encrypted wit
         http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-s3-bucket-ssekmsencryptedobjects.html
 
     .PARAMETER Status
-        Specifies whether Amazon S3 replicates objects created with server-side encryption using an AWS KMS-managed key.
+        Specifies whether Amazon S3 replicates objects created with server-side encryption using a customer master key CMK stored in AWS Key Management Service.
 
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-s3-bucket-ssekmsencryptedobjects.html#cfn-s3-bucket-ssekmsencryptedobjects-status
         PrimitiveType: String

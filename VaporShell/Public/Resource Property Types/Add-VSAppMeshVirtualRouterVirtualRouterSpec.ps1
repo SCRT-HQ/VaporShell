@@ -1,17 +1,17 @@
 function Add-VSAppMeshVirtualRouterVirtualRouterSpec {
     <#
     .SYNOPSIS
-        Adds an AWS::AppMesh::VirtualRouter.VirtualRouterSpec resource property to the template. An object representing the specification of a virtual router.
+        Adds an AWS::AppMesh::VirtualRouter.VirtualRouterSpec resource property to the template. An object that represents the specification of a virtual router.
 
     .DESCRIPTION
         Adds an AWS::AppMesh::VirtualRouter.VirtualRouterSpec resource property to the template.
-An object representing the specification of a virtual router.
+An object that represents the specification of a virtual router.
 
     .LINK
         http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-appmesh-virtualrouter-virtualrouterspec.html
 
     .PARAMETER Listeners
-        The listeners that the virtual router is expected to receive inbound traffic from. Currently only one listener is supported per virtual router.
+        The listeners that the virtual router is expected to receive inbound traffic from. You can specify one listener.
 
         Type: List
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-appmesh-virtualrouter-virtualrouterspec.html#cfn-appmesh-virtualrouter-virtualrouterspec-listeners

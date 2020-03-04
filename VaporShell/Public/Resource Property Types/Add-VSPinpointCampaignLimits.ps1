@@ -1,11 +1,11 @@
 function Add-VSPinpointCampaignLimits {
     <#
     .SYNOPSIS
-        Adds an AWS::Pinpoint::Campaign.Limits resource property to the template. Specifies the limits on the messages that a campaign can send.
+        Adds an AWS::Pinpoint::Campaign.Limits resource property to the template. Specifies limits on the messages that a campaign can send.
 
     .DESCRIPTION
         Adds an AWS::Pinpoint::Campaign.Limits resource property to the template.
-Specifies the limits on the messages that a campaign can send.
+Specifies limits on the messages that a campaign can send.
 
     .LINK
         http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-pinpoint-campaign-limits.html

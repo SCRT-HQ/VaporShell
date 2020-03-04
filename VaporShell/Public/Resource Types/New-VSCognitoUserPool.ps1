@@ -34,17 +34,18 @@ function New-VSCognitoUserPool {
         UpdateType: Mutable
 
     .PARAMETER MfaConfiguration
-        Specifies multi-factor authentication MFA configuration details. Can be one of the following values:
-OFF - MFA tokens are not required and cannot be specified during user registration.
-ON - MFA tokens are required for all user registrations. You can only specify required when you are initially creating a user pool.
-OPTIONAL - Users have the option when registering to create an MFA token.
+        The multi-factor MFA configuration. Valid values include:
++  OFF MFA will not be used for any users.
++  ON MFA is required for all users to sign in.
++  OPTIONAL MFA will be required only for individual users who have an MFA factor enabled.
 
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-cognito-userpool.html#cfn-cognito-userpool-mfaconfiguration
         PrimitiveType: String
         UpdateType: Mutable
 
     .PARAMETER Schema
-        An array of schema attributes for the new user pool. These attributes can be standard or custom attributes.
+        The schema attributes for the new user pool. These attributes can be standard or custom attributes.
+During a user pool update, you can add new schema attributes but you cannot modify or delete an existing schema attribute.
 
         Type: List
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-cognito-userpool.html#cfn-cognito-userpool-schema
@@ -52,7 +53,7 @@ OPTIONAL - Users have the option when registering to create an MFA token.
         UpdateType: Mutable
 
     .PARAMETER AdminCreateUserConfig
-        The type of configuration for creating a new user profile.
+        The configuration for creating a new user profile.
 
         Type: AdminCreateUserConfig
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-cognito-userpool.html#cfn-cognito-userpool-admincreateuserconfig
@@ -66,7 +67,7 @@ OPTIONAL - Users have the option when registering to create an MFA token.
         UpdateType: Mutable
 
     .PARAMETER UsernameConfiguration
-        The URL of the provider of the Amazon Cognito user pool, specified as a String.
+        You can choose to set case sensitivity on the username input for the selected sign-in option. For example, when this is set to False, users will be able to sign in using either "username" or "Username". This configuration is immutable once it has been set.
 
         Type: UsernameConfiguration
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-cognito-userpool.html#cfn-cognito-userpool-usernameconfiguration
@@ -109,6 +110,7 @@ OPTIONAL - Users have the option when registering to create an MFA token.
 
     .PARAMETER AliasAttributes
         Attributes supported as an alias for this user pool. Possible values: **phone_number**, **email**, or **preferred_username**.
+This user pool property cannot be updated.
 
         PrimitiveItemType: String
         Type: List
@@ -116,7 +118,10 @@ OPTIONAL - Users have the option when registering to create an MFA token.
         UpdateType: Mutable
 
     .PARAMETER EnabledMfas
-        The URL of the provider of the Amazon Cognito user pool, specified as a String.
+        Enables MFA on a specified user pool. To disable all MFAs after it has been enabled, set MfaConfiguration to “OFF” and remove EnabledMfas. MFAs can only be all disabled if MfaConfiguration is OFF. Once SMS_MFA is enabled, SMS_MFA can only be disabled by setting MfaConfiguration to “OFF”. Can be one of the following values:
++ SMS_MFA - Enables SMS MFA for the user pool. SMS_MFA can only be enabled if SMS configuration is provided.
++ SOFTWARE_TOKEN_MFA - Enables software token MFA for the user pool.
+Allowed values: SMS_MFA | SOFTWARE_TOKEN_MFA
 
         PrimitiveItemType: String
         Type: List
@@ -141,7 +146,8 @@ For adding permission using the AWS CLI, see  add-permission : https://docs.aws.
         UpdateType: Mutable
 
     .PARAMETER UsernameAttributes
-        Specifies whether email addresses or phone numbers can be specified as user names when a user signs up. Possible values: phone_number or email.
+        Determines whether email addresses or phone numbers can be specified as user names when a user signs up. Possible values: phone_number or email.
+This user pool property cannot be updated.
 
         PrimitiveItemType: String
         Type: List
@@ -157,7 +163,7 @@ For adding permission using the AWS CLI, see  add-permission : https://docs.aws.
         UpdateType: Mutable
 
     .PARAMETER DeviceConfiguration
-        The type of configuration for the user pool's device tracking.
+        The device configuration.
 
         Type: DeviceConfiguration
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-cognito-userpool.html#cfn-cognito-userpool-deviceconfiguration
@@ -171,7 +177,7 @@ For adding permission using the AWS CLI, see  add-permission : https://docs.aws.
         UpdateType: Mutable
 
     .PARAMETER AccountRecoverySetting
-        The URL of the provider of the Amazon Cognito user pool, specified as a String.
+        Use this setting to define which verified available method a user can use to recover their password when they call ForgotPassword. It allows you to define a preferred method when a user has more than one method available. With this setting, SMS does not qualify for a valid password recovery mechanism if the user also has SMS MFA enabled. In the absence of this setting, Cognito uses the legacy behavior to determine the recovery method where SMS is preferred over email.
 
         Type: AccountRecoverySetting
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-cognito-userpool.html#cfn-cognito-userpool-accountrecoverysetting

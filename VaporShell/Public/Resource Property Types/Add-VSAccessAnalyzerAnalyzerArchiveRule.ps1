@@ -1,22 +1,26 @@
 function Add-VSAccessAnalyzerAnalyzerArchiveRule {
     <#
     .SYNOPSIS
-        Adds an AWS::AccessAnalyzer::Analyzer.ArchiveRule resource property to the template. 
+        Adds an AWS::AccessAnalyzer::Analyzer.ArchiveRule resource property to the template. The criteria for an archive rule.
 
     .DESCRIPTION
         Adds an AWS::AccessAnalyzer::Analyzer.ArchiveRule resource property to the template.
-
+The criteria for an archive rule.
 
     .LINK
         http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-accessanalyzer-analyzer-archiverule.html
 
     .PARAMETER Filter
+        The criteria for the rule.
+
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-accessanalyzer-analyzer-archiverule.html#cfn-accessanalyzer-analyzer-archiverule-filter
         UpdateType: Mutable
         Type: List
         ItemType: Filter
 
     .PARAMETER RuleName
+        The name of the archive rule.
+
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-accessanalyzer-analyzer-archiverule.html#cfn-accessanalyzer-analyzer-archiverule-rulename
         UpdateType: Mutable
         PrimitiveType: String

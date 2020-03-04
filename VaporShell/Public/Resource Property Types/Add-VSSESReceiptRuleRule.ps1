@@ -22,7 +22,7 @@ For information about setting up receipt rules, see the Amazon SES Developer Gui
         UpdateType: Mutable
 
     .PARAMETER Recipients
-        Containts the recipient domains and email addresses that the receipt rule applies to. If this field isn't specified, this rule matches all recipients on all verified domains.
+        Contains the recipient domains and email addresses that the receipt rule applies to. If this field isn't specified, this rule matches all recipients on all verified domains.
 
         PrimitiveItemType: String
         Type: List

@@ -1,16 +1,21 @@
 function Add-VSEC2InstanceHibernationOptions {
     <#
     .SYNOPSIS
-        Adds an AWS::EC2::Instance.HibernationOptions resource property to the template. 
+        Adds an AWS::EC2::Instance.HibernationOptions resource property to the template. Specifies the hibernation options for the instance.
 
     .DESCRIPTION
         Adds an AWS::EC2::Instance.HibernationOptions resource property to the template.
+Specifies the hibernation options for the instance.
 
+HibernationOptions is a property of the AWS::EC2::Instance: https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-instance.html resource.
 
     .LINK
         http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-instance-hibernationoptions.html
 
     .PARAMETER Configured
+        If you set this parameter to true, your instance is enabled for hibernation.
+Default: false
+
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-instance-hibernationoptions.html#cfn-ec2-instance-hibernationoptions-configured
         PrimitiveType: Boolean
         UpdateType: Mutable

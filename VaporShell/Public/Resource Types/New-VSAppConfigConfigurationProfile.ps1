@@ -1,10 +1,30 @@
 function New-VSAppConfigConfigurationProfile {
     <#
     .SYNOPSIS
-        Adds an AWS::AppConfig::ConfigurationProfile resource to the template. 
+        Adds an AWS::AppConfig::ConfigurationProfile resource to the template. The AWS::AppConfig::ConfigurationProfile resource creates a configuration profile that enables AppConfig to access the configuration source. Valid configuration sources include Systems Manager (SSM documents and SSM Parameter Store parameters. A configuration profile includes the following information.
 
     .DESCRIPTION
-        Adds an AWS::AppConfig::ConfigurationProfile resource to the template. 
+        Adds an AWS::AppConfig::ConfigurationProfile resource to the template. The AWS::AppConfig::ConfigurationProfile resource creates a configuration profile that enables AppConfig to access the configuration source. Valid configuration sources include Systems Manager (SSM documents and SSM Parameter Store parameters. A configuration profile includes the following information.
+
++ The Uri location of the configuration data.
+
++ The AWS Identity and Access Management (IAM role that provides access to the configuration data.
+
++ A validator for the configuration data. Available validators include either a JSON Schema or the Amazon Resource Name (ARN of an AWS Lambda function.
+
+AppConfig requires that you create resources and deploy a configuration in the following order:
+
+1. Create an application
+
+1. Create an environment
+
+1. Create a configuration profile
+
+1. Create a deployment strategy
+
+1. Deploy the configuration
+
+For more information, see AWS AppConfig: https://docs.aws.amazon.com/systems-manager/latest/userguide/appconfig.html in the *AWS Systems Manager User Guide*.
 
     .LINK
         http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-appconfig-configurationprofile.html
@@ -13,38 +33,52 @@ function New-VSAppConfigConfigurationProfile {
         The logical ID must be alphanumeric (A-Za-z0-9) and unique within the template. Use the logical name to reference the resource in other parts of the template. For example, if you want to map an Amazon Elastic Block Store volume to an Amazon EC2 instance, you reference the logical IDs to associate the block stores with the instance.
 
     .PARAMETER LocationUri
+        A URI to locate the configuration. You can specify either a Systems Manager SSM document or an SSM Parameter Store parameter. For an SSM document, specify either the document name in the format ssm-document://<Document name> or the Amazon Resource Name ARN. For a parameter, specify either the parameter name in the format ssm-parameter://<Parameter name> or the ARN.
+
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-appconfig-configurationprofile.html#cfn-appconfig-configurationprofile-locationuri
         PrimitiveType: String
         UpdateType: Immutable
 
     .PARAMETER Description
+        A description of the configuration profile.
+
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-appconfig-configurationprofile.html#cfn-appconfig-configurationprofile-description
         PrimitiveType: String
         UpdateType: Mutable
 
     .PARAMETER Validators
+        A list of methods for validating the configuration.
+
         Type: List
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-appconfig-configurationprofile.html#cfn-appconfig-configurationprofile-validators
         ItemType: Validators
         UpdateType: Mutable
 
     .PARAMETER RetrievalRoleArn
+        The ARN of an IAM role with permission to access the configuration at the specified LocationUri.
+
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-appconfig-configurationprofile.html#cfn-appconfig-configurationprofile-retrievalrolearn
         PrimitiveType: String
         UpdateType: Mutable
 
     .PARAMETER ApplicationId
+        The application ID.
+
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-appconfig-configurationprofile.html#cfn-appconfig-configurationprofile-applicationid
         PrimitiveType: String
         UpdateType: Immutable
 
     .PARAMETER Tags
+        Metadata to assign to the configuration profile. Tags help organize and categorize your AppConfig resources. Each tag consists of a key and an optional value, both of which you define.
+
         Type: List
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-appconfig-configurationprofile.html#cfn-appconfig-configurationprofile-tags
         ItemType: Tags
         UpdateType: Mutable
 
     .PARAMETER Name
+        A name for the configuration profile.
+
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-appconfig-configurationprofile.html#cfn-appconfig-configurationprofile-name
         PrimitiveType: String
         UpdateType: Mutable

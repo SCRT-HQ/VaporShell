@@ -11,14 +11,14 @@ The traffic-shifting: https://docs.aws.amazon.com/lambda/latest/dg/lambda-traffi
         http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-lambda-alias-versionweight.html
 
     .PARAMETER FunctionVersion
-        The name of the second alias.
+        The qualifier of the second version.
 
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-lambda-alias-versionweight.html#cfn-lambda-alias-versionweight-functionversion
         PrimitiveType: String
         UpdateType: Mutable
 
     .PARAMETER FunctionWeight
-        The percentage of traffic that's routed to the second alias.
+        The percentage of traffic that the alias routes to the second version.
 
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-lambda-alias-versionweight.html#cfn-lambda-alias-versionweight-functionweight
         PrimitiveType: Double

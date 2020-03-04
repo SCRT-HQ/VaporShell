@@ -1,11 +1,11 @@
 function Add-VSEventsRuleAwsVpcConfiguration {
     <#
     .SYNOPSIS
-        Adds an AWS::Events::Rule.AwsVpcConfiguration resource property to the template. This structure specifies the VPC subnets and security groups for the task and whether a public IP address is to be used. This structure is relevant only for ECS tasks that use the awsvpc network mode.
+        Adds an AWS::Events::Rule.AwsVpcConfiguration resource property to the template. This structure specifies the VPC subnets and security groups for the task, and whether a public IP address is to be used. This structure is relevant only for ECS tasks that use the awsvpc network mode.
 
     .DESCRIPTION
         Adds an AWS::Events::Rule.AwsVpcConfiguration resource property to the template.
-This structure specifies the VPC subnets and security groups for the task and whether a public IP address is to be used. This structure is relevant only for ECS tasks that use the awsvpc network mode.
+This structure specifies the VPC subnets and security groups for the task, and whether a public IP address is to be used. This structure is relevant only for ECS tasks that use the awsvpc network mode.
 
     .LINK
         http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-events-rule-awsvpcconfiguration.html
@@ -18,7 +18,7 @@ This structure specifies the VPC subnets and security groups for the task and wh
         UpdateType: Mutable
 
     .PARAMETER SecurityGroups
-        Specifies the security groups associated with the task. These security groups must all be in the same VPC. You can specify as many as five security groups. If you don't specify a security group, the default security group for the VPC is used.
+        Specifies the security groups associated with the task. These security groups must all be in the same VPC. You can specify as many as five security groups. If you do not specify a security group, the default security group for the VPC is used.
 
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-events-rule-awsvpcconfiguration.html#cfn-events-rule-awsvpcconfiguration-securitygroups
         DuplicatesAllowed: False

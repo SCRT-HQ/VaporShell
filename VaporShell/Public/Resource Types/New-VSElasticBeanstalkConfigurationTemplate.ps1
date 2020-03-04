@@ -6,6 +6,10 @@ function New-VSElasticBeanstalkConfigurationTemplate {
     .DESCRIPTION
         Adds an AWS::ElasticBeanstalk::ConfigurationTemplate resource to the template. The AWS::ElasticBeanstalk::ConfigurationTemplate resource is an AWS Elastic Beanstalk resource type that specifies an Elastic Beanstalk configuration template, associated with a specific Elastic Beanstalk application. You define application configuration settings in a configuration template. You can then use the configuration template to deploy different versions of the application with the same configuration settings.
 
+**Note**
+
+The Elastic Beanstalk console and documentation often refer to configuration templates as *saved configurations*. When you set configuration options in a saved configuration (configuration template, Elastic Beanstalk applies them with a particular precedence as part of applying options from multiple sources. For more information, see  Configuration Options: https://docs.aws.amazon.com/elasticbeanstalk/latest/dg/command-options.html in the *AWS Elastic Beanstalk Developer Guide*.
+
     .LINK
         http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-elasticbeanstalk-configurationtemplate.html
 

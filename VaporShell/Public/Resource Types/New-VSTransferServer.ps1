@@ -1,10 +1,10 @@
 function New-VSTransferServer {
     <#
     .SYNOPSIS
-        Adds an AWS::Transfer::Server resource to the template. Instantiates an autoscaling virtual server based on Secure File Transfer Protocol (SFTP in AWS. When you make updates to your server or when you work with users, use the service-generated ServerId property that is assigned to the newly created server.
+        Adds an AWS::Transfer::Server resource to the template. The AWS::Transfer::Server resource instantiates an autoscaling virtual server based on Secure File Transfer Protocol (SFTP in AWS. When you make updates to your server or when you work with users, use the service-generated ServerId property that is assigned to the newly created server.
 
     .DESCRIPTION
-        Adds an AWS::Transfer::Server resource to the template. Instantiates an autoscaling virtual server based on Secure File Transfer Protocol (SFTP in AWS. When you make updates to your server or when you work with users, use the service-generated ServerId property that is assigned to the newly created server.
+        Adds an AWS::Transfer::Server resource to the template. The AWS::Transfer::Server resource instantiates an autoscaling virtual server based on Secure File Transfer Protocol (SFTP in AWS. When you make updates to your server or when you work with users, use the service-generated ServerId property that is assigned to the newly created server.
 
     .LINK
         http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-transfer-server.html
@@ -27,14 +27,15 @@ function New-VSTransferServer {
         UpdateType: Mutable
 
     .PARAMETER EndpointType
-        The type of VPC endpoint that you want your SFTP server to connect to. If you connect to a VPC endpoint, your SFTP server isn't accessible over the public internet.
+        The type of VPC endpoint that you want your SFTP server to connect to. You can choose to connect to the public internet or a virtual private cloud VPC endpoint. With a VPC endpoint, you can restrict access to your SFTP server and resources only within your VPC.
+It is recommended that you use VPC as the EndpointType. With this endpoint type, you have the option to directly associate up to three Elastic IPv4 addresses BYO IP included with your server's endpoint and use VPC security groups to restrict traffic by the client's public IP address. This is not possible with EndpointType set to VPC_ENDPOINT.
 
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-transfer-server.html#cfn-transfer-server-endpointtype
         PrimitiveType: String
         UpdateType: Mutable
 
     .PARAMETER EndpointDetails
-        The virtual private cloud VPC endpoint settings that you want to configure for your SFTP server. This parameter is required when you specify a value for the EndpointType parameter.
+        The virtual private cloud VPC endpoint settings that are configured for your SFTP server. When you host your endpoint within your VPC, you can make it accessible only to resources within your VPC, or you can attach Elastic IPs and make it accessible to clients over the internet. You VPC's default security groups are automatically assigned to your endpoint.
 
         Type: EndpointDetails
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-transfer-server.html#cfn-transfer-server-endpointdetails
@@ -137,16 +138,8 @@ function New-VSTransferServer {
                 }
             })]
         $IdentityProviderType,
+        [VaporShell.Core.TransformTag()]
         [parameter(Mandatory = $false)]
-        [ValidateScript( {
-                $allowedTypes = "Vaporshell.Resource.Tag","System.Management.Automation.PSCustomObject"
-                if ([string]$($_.PSTypeNames) -match "($(($allowedTypes|ForEach-Object{[RegEx]::Escape($_)}) -join '|'))") {
-                    $true
-                }
-                else {
-                    $PSCmdlet.ThrowTerminatingError((New-VSError -String "This parameter only accepts the following types: $($allowedTypes -join ", "). The current types of the value are: $($_.PSTypeNames -join ", ")."))
-                }
-            })]
         $Tags,
         [ValidateSet("Delete","Retain","Snapshot")]
         [System.String]

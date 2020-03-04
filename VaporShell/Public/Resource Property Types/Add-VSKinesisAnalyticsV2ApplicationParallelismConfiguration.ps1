@@ -1,17 +1,17 @@
 function Add-VSKinesisAnalyticsV2ApplicationParallelismConfiguration {
     <#
     .SYNOPSIS
-        Adds an AWS::KinesisAnalyticsV2::Application.ParallelismConfiguration resource property to the template. Describes parameters for how a Java-based Amazon Kinesis Data Analytics application executes multiple tasks simultaneously. For more information about parallelism, see Parallel Execution: https://ci.apache.org/projects/flink/flink-docs-stable/dev/parallel.html in the Apache Flink Documentation: https://ci.apache.org/projects/flink/flink-docs-release-1.6/.
+        Adds an AWS::KinesisAnalyticsV2::Application.ParallelismConfiguration resource property to the template. Describes parameters for how a Java-based Amazon Kinesis Data Analytics application executes multiple tasks simultaneously. For more information about parallelism, see Parallel Execution: https://ci.apache.org/projects/flink/flink-docs-release-1.8/dev/parallel.html in the Apache Flink Documentation: https://ci.apache.org/projects/flink/flink-docs-release-1.8/.
 
     .DESCRIPTION
         Adds an AWS::KinesisAnalyticsV2::Application.ParallelismConfiguration resource property to the template.
-Describes parameters for how a Java-based Amazon Kinesis Data Analytics application executes multiple tasks simultaneously. For more information about parallelism, see Parallel Execution: https://ci.apache.org/projects/flink/flink-docs-stable/dev/parallel.html in the Apache Flink Documentation: https://ci.apache.org/projects/flink/flink-docs-release-1.6/.
+Describes parameters for how a Java-based Amazon Kinesis Data Analytics application executes multiple tasks simultaneously. For more information about parallelism, see Parallel Execution: https://ci.apache.org/projects/flink/flink-docs-release-1.8/dev/parallel.html in the Apache Flink Documentation: https://ci.apache.org/projects/flink/flink-docs-release-1.8/.
 
     .LINK
         http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-kinesisanalyticsv2-application-parallelismconfiguration.html
 
     .PARAMETER ConfigurationType
-        Describes whether the application uses the default parallelism for the Kinesis Data Analytics service.
+        Describes whether the application uses the default parallelism for the Kinesis Data Analytics service. You must set this property to CUSTOM in order to change your application's AutoScalingEnabled, Parallelism, or ParallelismPerKPU properties.
 
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-kinesisanalyticsv2-application-parallelismconfiguration.html#cfn-kinesisanalyticsv2-application-parallelismconfiguration-configurationtype
         PrimitiveType: String

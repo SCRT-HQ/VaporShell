@@ -31,6 +31,7 @@ If an Elastic IP address is attached to your instance, AWS CloudFormation reatta
     .PARAMETER AvailabilityZone
         The Availability Zone of the instance.
 If not specified, an Availability Zone will be automatically chosen for you based on the load balancing criteria for the Region.
+This parameter is not supported by DescribeImageAttribute: https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_DescribeImageAttribute.html.
 
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-instance.html#cfn-ec2-instance-availabilityzone
         PrimitiveType: String
@@ -54,8 +55,8 @@ By default, the block devices specified in the block device mapping for the AMI 
         UpdateType: Immutable
 
     .PARAMETER CreditSpecification
-        The credit option for CPU usage of the T2 or T3 instance. Valid values are standard and unlimited. To change this attribute after launch, use  ModifyInstanceCreditSpecification: https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_ModifyInstanceCreditSpecification.html. For more information, see Burstable Performance Instances: https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/burstable-performance-instances.html in the *Amazon Elastic Compute Cloud User Guide*.
-Default: standard T2 instances or unlimited T3 instances
+        The credit option for CPU usage of the burstable performance instance. Valid values are standard and unlimited. To change this attribute after launch, use  ModifyInstanceCreditSpecification: https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_ModifyInstanceCreditSpecification.html. For more information, see Burstable Performance Instances: https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/burstable-performance-instances.html in the *Amazon Elastic Compute Cloud User Guide*.
+Default: standard T2 instances or unlimited T3/T3a instances
 
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-instance.html#cfn-ec2-instance-creditspecification
         Type: CreditSpecification
@@ -96,7 +97,7 @@ Default: false
         UpdateType: Immutable
 
     .PARAMETER HibernationOptions
-        +   EBS-Optimized Instances: https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/instance-types.html#EBSOptimized in the *Amazon EC2 API Reference*
+        Indicates whether an instance is enabled for hibernation. For more information, see Hibernate Your Instance: https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/Hibernate.html in the *Amazon Elastic Compute Cloud User Guide*.
 
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-instance.html#cfn-ec2-instance-hibernationoptions
         Type: HibernationOptions
@@ -110,7 +111,8 @@ Default: false
         UpdateType: Conditional
 
     .PARAMETER HostResourceGroupArn
-        +   EBS-Optimized Instances: https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/instance-types.html#EBSOptimized in the *Amazon EC2 API Reference*
+        The ARN of the host resource group in which to launch the instances. If you specify a host resource group ARN, omit the **Tenancy** parameter or set it to host.
+This parameter is not supported by CreateFleet: https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_CreateFleet.html.
 
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-instance.html#cfn-ec2-instance-hostresourcegrouparn
         PrimitiveType: String
@@ -676,16 +678,8 @@ If you specify a network interface, you must specify any subnets as part of the 
                 }
             })]
         $SubnetId,
+        [VaporShell.Core.TransformTag()]
         [parameter(Mandatory = $false)]
-        [ValidateScript( {
-                $allowedTypes = "Vaporshell.Resource.Tag","System.Management.Automation.PSCustomObject"
-                if ([string]$($_.PSTypeNames) -match "($(($allowedTypes|ForEach-Object{[RegEx]::Escape($_)}) -join '|'))") {
-                    $true
-                }
-                else {
-                    $PSCmdlet.ThrowTerminatingError((New-VSError -String "This parameter only accepts the following types: $($allowedTypes -join ", "). The current types of the value are: $($_.PSTypeNames -join ", ")."))
-                }
-            })]
         $Tags,
         [parameter(Mandatory = $false)]
         [ValidateScript( {

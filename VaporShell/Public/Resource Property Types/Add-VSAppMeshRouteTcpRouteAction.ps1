@@ -1,17 +1,17 @@
 function Add-VSAppMeshRouteTcpRouteAction {
     <#
     .SYNOPSIS
-        Adds an AWS::AppMesh::Route.TcpRouteAction resource property to the template. An object representing the traffic distribution requirements for matched TCP requests.
+        Adds an AWS::AppMesh::Route.TcpRouteAction resource property to the template. An object that represents the action to take if a match is determined.
 
     .DESCRIPTION
         Adds an AWS::AppMesh::Route.TcpRouteAction resource property to the template.
-An object representing the traffic distribution requirements for matched TCP requests.
+An object that represents the action to take if a match is determined.
 
     .LINK
         http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-appmesh-route-tcprouteaction.html
 
     .PARAMETER WeightedTargets
-        The targets that traffic is routed to when a request matches the route. You can specify one or more targets and their relative weights to distribute traffic with.
+        An object that represents the targets that traffic is routed to when a request matches the route.
 
         Type: List
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-appmesh-route-tcprouteaction.html#cfn-appmesh-route-tcprouteaction-weightedtargets

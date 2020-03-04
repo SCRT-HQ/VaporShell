@@ -11,7 +11,7 @@ Specifies the settings for a campaign treatment. A treatment is a variation of a
         http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-pinpoint-campaign-writetreatmentresource.html
 
     .PARAMETER TreatmentDescription
-        The custom description of the treatment.
+        A custom description of the treatment.
 
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-pinpoint-campaign-writetreatmentresource.html#cfn-pinpoint-campaign-writetreatmentresource-treatmentdescription
         PrimitiveType: String

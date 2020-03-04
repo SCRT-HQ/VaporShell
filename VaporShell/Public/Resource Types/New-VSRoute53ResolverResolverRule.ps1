@@ -1,10 +1,10 @@
 function New-VSRoute53ResolverResolverRule {
     <#
     .SYNOPSIS
-        Adds an AWS::Route53Resolver::ResolverRule resource to the template. For DNS queries that originate in your VPCs, specifies which resolver endpoint the queries pass through, one domain name that you want to forward to your network, and the IP addresses of the DNS resolvers in your network.
+        Adds an AWS::Route53Resolver::ResolverRule resource to the template. For DNS queries that originate in your VPCs, specifies which Resolver endpoint the queries pass through, one domain name that you want to forward to your network, and the IP addresses of the DNS resolvers in your network.
 
     .DESCRIPTION
-        Adds an AWS::Route53Resolver::ResolverRule resource to the template. For DNS queries that originate in your VPCs, specifies which resolver endpoint the queries pass through, one domain name that you want to forward to your network, and the IP addresses of the DNS resolvers in your network.
+        Adds an AWS::Route53Resolver::ResolverRule resource to the template. For DNS queries that originate in your VPCs, specifies which Resolver endpoint the queries pass through, one domain name that you want to forward to your network, and the IP addresses of the DNS resolvers in your network.
 
     .LINK
         http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-route53resolver-resolverrule.html
@@ -20,14 +20,16 @@ function New-VSRoute53ResolverResolverRule {
         UpdateType: Mutable
 
     .PARAMETER DomainName
-        DNS queries for this domain name are forwarded to the IP addresses that are specified in TargetIps. If a query matches multiple resolver rules example.com and www.example.com, the query is routed using the resolver rule that contains the most specific domain name www.example.com.
+        DNS queries for this domain name are forwarded to the IP addresses that are specified in TargetIps. If a query matches multiple Resolver rules example.com and www.example.com, the query is routed using the Resolver rule that contains the most specific domain name www.example.com.
 
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-route53resolver-resolverrule.html#cfn-route53resolver-resolverrule-domainname
         PrimitiveType: String
         UpdateType: Immutable
 
     .PARAMETER RuleType
-        This value is always FORWARD. Other resolver rule types aren't supported.
+        When you want to forward DNS queries for specified domain name to resolvers on your network, specify FORWARD.
+When you have a forwarding rule to forward DNS queries for a domain to your network and you want Resolver to process queries for a subdomain of that domain, choose SYSTEM.
+For example, to forward DNS queries for example.com to resolvers on your network, you create a rule and specify FORWARD for RuleType. To then have Resolver process queries for apex.example.com, you create a rule and specify SYSTEM for RuleType.
 
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-route53resolver-resolverrule.html#cfn-route53resolver-resolverrule-ruletype
         PrimitiveType: String
@@ -50,7 +52,7 @@ function New-VSRoute53ResolverResolverRule {
         UpdateType: Mutable
 
     .PARAMETER Name
-        The name for the resolver rule, which you specified when you created the resolver rule.
+        The name for the Resolver rule, which you specified when you created the Resolver rule.
 
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-route53resolver-resolverrule.html#cfn-route53resolver-resolverrule-name
         PrimitiveType: String
@@ -145,16 +147,8 @@ function New-VSRoute53ResolverResolverRule {
                 }
             })]
         $TargetIps,
+        [VaporShell.Core.TransformTag()]
         [parameter(Mandatory = $false)]
-        [ValidateScript( {
-                $allowedTypes = "Vaporshell.Resource.Tag","System.Management.Automation.PSCustomObject"
-                if ([string]$($_.PSTypeNames) -match "($(($allowedTypes|ForEach-Object{[RegEx]::Escape($_)}) -join '|'))") {
-                    $true
-                }
-                else {
-                    $PSCmdlet.ThrowTerminatingError((New-VSError -String "This parameter only accepts the following types: $($allowedTypes -join ", "). The current types of the value are: $($_.PSTypeNames -join ", ")."))
-                }
-            })]
         $Tags,
         [parameter(Mandatory = $false)]
         [ValidateScript( {

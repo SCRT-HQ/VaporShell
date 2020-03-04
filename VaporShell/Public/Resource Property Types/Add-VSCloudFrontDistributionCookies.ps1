@@ -11,7 +11,7 @@ A complex type that specifies whether you want CloudFront to forward cookies to 
         http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-cloudfront-distribution-cookies.html
 
     .PARAMETER WhitelistedNames
-        Required if you specify whitelist for the value of Forward:. A complex type that specifies how many different cookies you want CloudFront to forward to the origin for this cache behavior and, if you want to forward selected cookies, the names of those cookies.
+        Required if you specify whitelist for the value of Forward. A complex type that specifies how many different cookies you want CloudFront to forward to the origin for this cache behavior and, if you want to forward selected cookies, the names of those cookies.
 If you specify all or none for the value of Forward, omit WhitelistedNames. If you change the value of Forward from whitelist to all or none and you don't delete the WhitelistedNames element and its child elements, CloudFront deletes them automatically.
 For the current limit on the number of cookie names that you can whitelist for each cache behavior, see  CloudFront Limits: https://docs.aws.amazon.com/general/latest/gr/xrefaws_service_limits.html#limits_cloudfront in the *AWS General Reference*.
 

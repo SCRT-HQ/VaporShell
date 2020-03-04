@@ -36,7 +36,9 @@ If you are using tasks that use the Fargate launch type, the devices parameter i
         UpdateType: Immutable
 
     .PARAMETER MaxSwap
-        *Update requires*: Replacement: https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-replacement
+        The total amount of swap memory in MiB a container can use. This parameter will be translated to the --memory-swap option to docker run: https://docs.docker.com/engine/reference/run/ where the value would be the sum of the container memory plus the maxSwap value.
+If a maxSwap value of 0 is specified, the container will not use swap. Accepted values are 0 or any positive integer. If the maxSwap parameter is omitted, the container will use the swap configuration for the container instance it is running on. A maxSwap value must be set for the swappiness parameter to be used.
+If you are using tasks that use the Fargate launch type, the maxSwap parameter is not supported.
 
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ecs-taskdefinition-linuxparameters.html#cfn-ecs-taskdefinition-linuxparameters-maxswap
         PrimitiveType: Integer
@@ -51,7 +53,8 @@ If you are using tasks that use the Fargate launch type, the sharedMemorySize pa
         UpdateType: Immutable
 
     .PARAMETER Swappiness
-        *Update requires*: Replacement: https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-replacement
+        This allows you to tune a container's memory swappiness behavior. A swappiness value of 0 will cause swapping to not happen unless absolutely necessary. A swappiness value of 100 will cause pages to be swapped very aggressively. Accepted values are whole numbers between 0 and 100. If the swappiness parameter is not specified, a default value of 60 is used. If a value is not specified for maxSwap then this parameter is ignored. This parameter maps to the --memory-swappiness option to docker run: https://docs.docker.com/engine/reference/run/.
+If you are using tasks that use the Fargate launch type, the swappiness parameter is not supported.
 
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ecs-taskdefinition-linuxparameters.html#cfn-ecs-taskdefinition-linuxparameters-swappiness
         PrimitiveType: Integer

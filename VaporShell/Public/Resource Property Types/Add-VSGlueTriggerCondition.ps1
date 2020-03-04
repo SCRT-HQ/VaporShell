@@ -11,7 +11,7 @@ Defines a condition under which a trigger fires.
         http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-glue-trigger-condition.html
 
     .PARAMETER CrawlerName
-        +  Condition Structure: https://docs.aws.amazon.com/glue/latest/dg/aws-glue-api-jobs-trigger.html#aws-glue-api-jobs-trigger-Condition in the *AWS Glue Developer Guide*
+        The name of the crawler to which this condition applies.
 
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-glue-trigger-condition.html#cfn-glue-trigger-condition-crawlername
         PrimitiveType: String
@@ -25,7 +25,7 @@ Defines a condition under which a trigger fires.
         UpdateType: Mutable
 
     .PARAMETER CrawlState
-        +  Condition Structure: https://docs.aws.amazon.com/glue/latest/dg/aws-glue-api-jobs-trigger.html#aws-glue-api-jobs-trigger-Condition in the *AWS Glue Developer Guide*
+        The state of the crawler to which this condition applies.
 
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-glue-trigger-condition.html#cfn-glue-trigger-condition-crawlstate
         PrimitiveType: String

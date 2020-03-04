@@ -46,7 +46,7 @@ The cluster configuration for the Amazon ES domain. You can specify options such
         UpdateType: Mutable
 
     .PARAMETER ZoneAwarenessConfig
-        Specifies zone awareness configuration options. Only required if ZoneAwarenessEnabled is true.
+        Specifies zone awareness configuration options. Only use if ZoneAwarenessEnabled is true.
 
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-elasticsearch-domain-elasticsearchclusterconfig.html#cfn-elasticsearch-domain-elasticsearchclusterconfig-zoneawarenessconfig
         Type: ZoneAwarenessConfig

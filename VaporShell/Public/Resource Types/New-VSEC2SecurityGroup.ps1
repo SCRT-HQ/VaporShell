@@ -1,10 +1,10 @@
 function New-VSEC2SecurityGroup {
     <#
     .SYNOPSIS
-        Adds an AWS::EC2::SecurityGroup resource to the template. Specifies a security group. To create a VPC security group, use the VpcId: https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-security-group.html#cfn-ec2-securitygroup-vpcid property.
+        Adds an AWS::EC2::SecurityGroup resource to the template. Specifies a security group. To create a security group, use the VpcId: https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-security-group.html#cfn-ec2-securitygroup-vpcid property to specify the VPC for which to create the security group.
 
     .DESCRIPTION
-        Adds an AWS::EC2::SecurityGroup resource to the template. Specifies a security group. To create a VPC security group, use the VpcId: https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-security-group.html#cfn-ec2-securitygroup-vpcid property.
+        Adds an AWS::EC2::SecurityGroup resource to the template. Specifies a security group. To create a security group, use the VpcId: https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-security-group.html#cfn-ec2-securitygroup-vpcid property to specify the VPC for which to create the security group.
 
 This type supports updates. For more information about updating stacks, see AWS CloudFormation Stacks Updates: https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks.html.
 
@@ -161,16 +161,8 @@ Constraints for EC2-VPC: a-z, A-Z, 0-9, spaces, and ._-:/#,@]+=&;{}!$*
                 }
             })]
         $SecurityGroupIngress,
+        [VaporShell.Core.TransformTag()]
         [parameter(Mandatory = $false)]
-        [ValidateScript( {
-                $allowedTypes = "Vaporshell.Resource.Tag","System.Management.Automation.PSCustomObject"
-                if ([string]$($_.PSTypeNames) -match "($(($allowedTypes|ForEach-Object{[RegEx]::Escape($_)}) -join '|'))") {
-                    $true
-                }
-                else {
-                    $PSCmdlet.ThrowTerminatingError((New-VSError -String "This parameter only accepts the following types: $($allowedTypes -join ", "). The current types of the value are: $($_.PSTypeNames -join ", ")."))
-                }
-            })]
         $Tags,
         [parameter(Mandatory = $false)]
         [ValidateScript( {

@@ -13,14 +13,14 @@ function New-VSLambdaVersion {
         The logical ID must be alphanumeric (A-Za-z0-9) and unique within the template. Use the logical name to reference the resource in other parts of the template. For example, if you want to map an Amazon Elastic Block Store volume to an Amazon EC2 instance, you reference the logical IDs to associate the block stores with the instance.
 
     .PARAMETER CodeSha256
-        Only publish a version if the hash value matches the value that's specified. Use this option to avoid publishing a version if the function code has changed since you last updated it.
+        Only publish a version if the hash value matches the value that's specified. Use this option to avoid publishing a version if the function code has changed since you last updated it. Updates are not supported for this property.
 
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-lambda-version.html#cfn-lambda-version-codesha256
         PrimitiveType: String
         UpdateType: Mutable
 
     .PARAMETER Description
-        A description for the version to override the description in the function configuration.
+        A description for the version to override the description in the function configuration. Updates are not supported for this property.
 
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-lambda-version.html#cfn-lambda-version-description
         PrimitiveType: String
@@ -39,6 +39,8 @@ The length constraint applies only to the full ARN. If you specify only the func
         UpdateType: Immutable
 
     .PARAMETER ProvisionedConcurrencyConfig
+        Specifies a provisioned concurrency configuration for a function's version. Updates are not supported for this property.
+
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-lambda-version.html#cfn-lambda-version-provisionedconcurrencyconfig
         Type: ProvisionedConcurrencyConfiguration
         UpdateType: Mutable

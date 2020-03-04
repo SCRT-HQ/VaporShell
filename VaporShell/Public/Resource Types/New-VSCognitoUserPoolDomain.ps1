@@ -1,10 +1,10 @@
 function New-VSCognitoUserPoolDomain {
     <#
     .SYNOPSIS
-        Adds an AWS::Cognito::UserPoolDomain resource to the template. 
+        Adds an AWS::Cognito::UserPoolDomain resource to the template. The AWS::Cognito::UserPoolDomain resource creates a new domain for a user pool.
 
     .DESCRIPTION
-        Adds an AWS::Cognito::UserPoolDomain resource to the template. 
+        Adds an AWS::Cognito::UserPoolDomain resource to the template. The AWS::Cognito::UserPoolDomain resource creates a new domain for a user pool.
 
     .LINK
         http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-cognito-userpooldomain.html
@@ -13,16 +13,23 @@ function New-VSCognitoUserPoolDomain {
         The logical ID must be alphanumeric (A-Za-z0-9) and unique within the template. Use the logical name to reference the resource in other parts of the template. For example, if you want to map an Amazon Elastic Block Store volume to an Amazon EC2 instance, you reference the logical IDs to associate the block stores with the instance.
 
     .PARAMETER UserPoolId
+        The user pool ID for the user pool where you want to associate a user pool domain.
+
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-cognito-userpooldomain.html#cfn-cognito-userpooldomain-userpoolid
         PrimitiveType: String
         UpdateType: Immutable
 
     .PARAMETER CustomDomainConfig
+        The configuration for a custom domain that hosts the sign-up and sign-in pages for your application. Use this object to specify an SSL certificate that is managed by ACM.
+
         Type: CustomDomainConfigType
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-cognito-userpooldomain.html#cfn-cognito-userpooldomain-customdomainconfig
         UpdateType: Mutable
 
     .PARAMETER Domain
+        The domain name for the domain that hosts the sign-up and sign-in pages for your application. For example: auth.example.com. If you're using a prefix domain, this field denotes the first part of the domain before .auth.region].amazoncognito.com.
+This string can include only lowercase letters, numbers, and hyphens. Don't use a hyphen for the first or last character. Use periods to separate subdomain names.
+
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-cognito-userpooldomain.html#cfn-cognito-userpooldomain-domain
         PrimitiveType: String
         UpdateType: Immutable

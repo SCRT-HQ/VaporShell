@@ -22,7 +22,8 @@ If a DB cluster is paused for more than seven days, the DB cluster might be back
 
     .PARAMETER MaxCapacity
         The maximum capacity for an Aurora DB cluster in serverless DB engine mode.
-Valid capacity values are 1, 2, 4, 8, 16, 32, 64, 128, and 256.
+For Aurora MySQL, valid capacity values are 1, 2, 4, 8, 16, 32, 64, 128, and 256.
+For Aurora PostgreSQL, valid capacity values are 2, 4, 8, 16, 32, 64, 192, and 384.
 The maximum capacity must be greater than or equal to the minimum capacity.
 
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-rds-dbcluster-scalingconfiguration.html#cfn-rds-dbcluster-scalingconfiguration-maxcapacity
@@ -31,7 +32,8 @@ The maximum capacity must be greater than or equal to the minimum capacity.
 
     .PARAMETER MinCapacity
         The minimum capacity for an Aurora DB cluster in serverless DB engine mode.
-Valid capacity values are 1, 2, 4, 8, 16, 32, 64, 128, and 256.
+For Aurora MySQL, valid capacity values are 1, 2, 4, 8, 16, 32, 64, 128, and 256.
+For Aurora PostgreSQL, valid capacity values are 2, 4, 8, 16, 32, 64, 192, and 384.
 The minimum capacity must be less than or equal to the maximum capacity.
 
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-rds-dbcluster-scalingconfiguration.html#cfn-rds-dbcluster-scalingconfiguration-mincapacity

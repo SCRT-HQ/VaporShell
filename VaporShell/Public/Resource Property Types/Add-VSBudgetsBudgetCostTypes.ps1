@@ -7,7 +7,7 @@ function Add-VSBudgetsBudgetCostTypes {
         Adds an AWS::Budgets::Budget.CostTypes resource property to the template.
 The types of cost that are included in a COST budget, such as tax and subscriptions.
 
-USAGE, RI_UTILIZATION, and RI_COVERAGE budgets do not have CostTypes.
+USAGE, RI_UTILIZATION, RI_COVERAGE, SAVINGS_PLANS_UTILIZATION, and SAVINGS_PLANS_COVERAGE budgets do not have CostTypes.
 
     .LINK
         http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-budgets-budget-costtypes.html

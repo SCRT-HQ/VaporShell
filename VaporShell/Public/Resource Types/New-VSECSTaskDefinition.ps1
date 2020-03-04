@@ -34,7 +34,8 @@ function New-VSECSTaskDefinition {
         UpdateType: Immutable
 
     .PARAMETER Family
-        The name of a family that this task definition is registered to. A family groups multiple versions of a task definition. Amazon ECS gives the first task definition that you registered to a family a revision number of 1. Amazon ECS gives sequential revision numbers to each task definition that you add.
+        The name of a family that this task definition is registered to. Up to 255 letters uppercase and lowercase, numbers, hyphens, and underscores are allowed.
+A family groups multiple versions of a task definition. Amazon ECS gives the first task definition that you registered to a family a revision number of 1. Amazon ECS gives sequential revision numbers to each task definition that you add.
 To use revision numbers when you update a task definition, specify this property. If you don't specify a value, AWS CloudFormation generates a new task definition each time that you update it.
 
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ecs-taskdefinition.html#cfn-ecs-taskdefinition-family
@@ -42,6 +43,8 @@ To use revision numbers when you update a task definition, specify this property
         UpdateType: Immutable
 
     .PARAMETER InferenceAccelerators
+        The Elastic Inference accelerators to use for the containers in the task.
+
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ecs-taskdefinition.html#cfn-ecs-taskdefinition-inferenceaccelerators
         DuplicatesAllowed: False
         ItemType: InferenceAccelerator
@@ -82,7 +85,7 @@ For more information, see Network settings: https://docs.docker.com/engine/refer
         UpdateType: Immutable
 
     .PARAMETER PidMode
-        The process namespace to use for the containers in the task. The valid values are host or task. If host is specified, then all containers within the tasks that specified the host PID mode on the same container instance share the same IPC resources with the host Amazon EC2 instance. If task is specified, all containers within the specified task share the same process namespace. If no value is specified, the default is a private namespace. For more information, see PID settings: https://docs.docker.com/engine/reference/run/#pid-settings---pid in the *Docker run reference*.
+        The process namespace to use for the containers in the task. The valid values are host or task. If host is specified, then all containers within the tasks that specified the host PID mode on the same container instance share the same process namespace with the host Amazon EC2 instance. If task is specified, all containers within the specified task share the same process namespace. If no value is specified, the default is a private namespace. For more information, see PID settings: https://docs.docker.com/engine/reference/run/#pid-settings---pid in the *Docker run reference*.
 If the host PID mode is used, be aware that there is a heightened risk of undesired process namespace expose. For more information, see Docker security: https://docs.docker.com/engine/security/security/.
 This parameter is not supported for Windows containers or tasks using the Fargate launch type.
 
@@ -311,16 +314,8 @@ For more information about volume definition parameters and defaults, see Amazon
         $ProxyConfiguration,
         [parameter(Mandatory = $false)]
         $RequiresCompatibilities,
+        [VaporShell.Core.TransformTag()]
         [parameter(Mandatory = $false)]
-        [ValidateScript( {
-                $allowedTypes = "Vaporshell.Resource.Tag","System.Management.Automation.PSCustomObject"
-                if ([string]$($_.PSTypeNames) -match "($(($allowedTypes|ForEach-Object{[RegEx]::Escape($_)}) -join '|'))") {
-                    $true
-                }
-                else {
-                    $PSCmdlet.ThrowTerminatingError((New-VSError -String "This parameter only accepts the following types: $($allowedTypes -join ", "). The current types of the value are: $($_.PSTypeNames -join ", ")."))
-                }
-            })]
         $Tags,
         [parameter(Mandatory = $false)]
         [ValidateScript( {

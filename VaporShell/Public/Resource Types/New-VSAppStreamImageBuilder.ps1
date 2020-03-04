@@ -64,7 +64,33 @@ The initial state of the image builder is PENDING. When it is ready, the state i
         UpdateType: Mutable
 
     .PARAMETER InstanceType
-        The instance type to use when launching the image builder.
+        The instance type to use when launching the image builder. The following instance types are available:
++ stream.standard.medium
++ stream.standard.large
++ stream.compute.large
++ stream.compute.xlarge
++ stream.compute.2xlarge
++ stream.compute.4xlarge
++ stream.compute.8xlarge
++ stream.memory.large
++ stream.memory.xlarge
++ stream.memory.2xlarge
++ stream.memory.4xlarge
++ stream.memory.8xlarge
++ stream.memory.z1d.large
++ stream.memory.z1d.xlarge
++ stream.memory.z1d.2xlarge
++ stream.memory.z1d.3xlarge
++ stream.memory.z1d.6xlarge
++ stream.memory.z1d.12xlarge
++ stream.graphics-design.large
++ stream.graphics-design.xlarge
++ stream.graphics-design.2xlarge
++ stream.graphics-design.4xlarge
++ stream.graphics-desktop.2xlarge
++ stream.graphics-pro.4xlarge
++ stream.graphics-pro.8xlarge
++ stream.graphics-pro.16xlarge
 
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-appstream-imagebuilder.html#cfn-appstream-imagebuilder-instancetype
         PrimitiveType: String
@@ -93,7 +119,7 @@ The initial state of the image builder is PENDING. When it is ready, the state i
         UpdateType: Mutable
 
     .PARAMETER AccessEndpoints
-        +  CreateImageBuilder: https://docs.aws.amazon.com/appstream2/latest/APIReference/API_CreateImageBuilder.html in the *Amazon AppStream 2.0 API Reference*
+        The list of virtual private cloud VPC interface endpoint objects. Administrators can connect to the image builder only through the specified endpoints.
 
         Type: List
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-appstream-imagebuilder.html#cfn-appstream-imagebuilder-accessendpoints
@@ -215,16 +241,8 @@ The initial state of the image builder is PENDING. When it is ready, the state i
                 }
             })]
         $InstanceType,
+        [VaporShell.Core.TransformTag()]
         [parameter(Mandatory = $false)]
-        [ValidateScript( {
-                $allowedTypes = "Vaporshell.Resource.Tag","System.Management.Automation.PSCustomObject"
-                if ([string]$($_.PSTypeNames) -match "($(($allowedTypes|ForEach-Object{[RegEx]::Escape($_)}) -join '|'))") {
-                    $true
-                }
-                else {
-                    $PSCmdlet.ThrowTerminatingError((New-VSError -String "This parameter only accepts the following types: $($allowedTypes -join ", "). The current types of the value are: $($_.PSTypeNames -join ", ")."))
-                }
-            })]
         $Tags,
         [parameter(Mandatory = $true)]
         [ValidateScript( {

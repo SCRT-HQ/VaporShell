@@ -21,8 +21,9 @@ For information about valid values for parameters, see Requirements and Constrai
         The logical ID must be alphanumeric (A-Za-z0-9) and unique within the template. Use the logical name to reference the resource in other parts of the template. For example, if you want to map an Amazon Elastic Block Store volume to an Amazon EC2 instance, you reference the logical IDs to associate the block stores with the instance.
 
     .PARAMETER Type
-        The type of parameter. Valid values include the following: String or StringList.
-AWS CloudFormation doesn't support the SecureString parameter type.
+        The type of parameter.
+AWS CloudFormation doesn't support creating a SecureString parameter type.
+*Allowed Values*: String | StringList
 
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ssm-parameter.html#cfn-ssm-parameter-type
         PrimitiveType: String
@@ -65,8 +66,7 @@ Working with Parameter Policies: https://docs.aws.amazon.com/systems-manager/lat
         UpdateType: Mutable
 
     .PARAMETER Tags
-        An array of key-value pairs to apply to this resource.
-For more information, see Tag: https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-resource-tags.html.
+        Optional metadata that you assign to a resource in the form of an arbitrary set of tags key-value pairs. Tags enable you to categorize a resource in different ways, such as by purpose, owner, or environment. For example, you might want to tag a Systems Manager parameter to identify the type of resource to which it applies, the environment, or the type of configuration data referenced by the parameter.
 
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ssm-parameter.html#cfn-ssm-parameter-tags
         PrimitiveType: Json

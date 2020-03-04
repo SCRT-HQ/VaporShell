@@ -1,10 +1,12 @@
 function New-VSCognitoUserPoolUserToGroupAttachment {
     <#
     .SYNOPSIS
-        Adds an AWS::Cognito::UserPoolUserToGroupAttachment resource to the template. The AWS::Cognito::UserPoolUserToGroupAttachment resource attaches a user to an Amazon Cognito user pool user group.
+        Adds an AWS::Cognito::UserPoolUserToGroupAttachment resource to the template. Adds the specified user to the specified group.
 
     .DESCRIPTION
-        Adds an AWS::Cognito::UserPoolUserToGroupAttachment resource to the template. The AWS::Cognito::UserPoolUserToGroupAttachment resource attaches a user to an Amazon Cognito user pool user group.
+        Adds an AWS::Cognito::UserPoolUserToGroupAttachment resource to the template. Adds the specified user to the specified group.
+
+Calling this action requires developer credentials.
 
     .LINK
         http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-cognito-userpoolusertogroupattachment.html

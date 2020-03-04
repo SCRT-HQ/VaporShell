@@ -1,10 +1,10 @@
 function New-VSEC2GatewayRouteTableAssociation {
     <#
     .SYNOPSIS
-        Adds an AWS::EC2::GatewayRouteTableAssociation resource to the template. 
+        Adds an AWS::EC2::GatewayRouteTableAssociation resource to the template. Associates a virtual private gateway or internet gateway with a route table. The gateway and route table must be in the same VPC. This association causes the incoming traffic to the gateway to be routed according to the routes in the route table.
 
     .DESCRIPTION
-        Adds an AWS::EC2::GatewayRouteTableAssociation resource to the template. 
+        Adds an AWS::EC2::GatewayRouteTableAssociation resource to the template. Associates a virtual private gateway or internet gateway with a route table. The gateway and route table must be in the same VPC. This association causes the incoming traffic to the gateway to be routed according to the routes in the route table.
 
     .LINK
         http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ec2-gatewayroutetableassociation.html
@@ -13,11 +13,15 @@ function New-VSEC2GatewayRouteTableAssociation {
         The logical ID must be alphanumeric (A-Za-z0-9) and unique within the template. Use the logical name to reference the resource in other parts of the template. For example, if you want to map an Amazon Elastic Block Store volume to an Amazon EC2 instance, you reference the logical IDs to associate the block stores with the instance.
 
     .PARAMETER RouteTableId
+        The ID of the route table.
+
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ec2-gatewayroutetableassociation.html#cfn-ec2-gatewayroutetableassociation-routetableid
         UpdateType: Mutable
         PrimitiveType: String
 
     .PARAMETER GatewayId
+        The ID of the gateway.
+
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ec2-gatewayroutetableassociation.html#cfn-ec2-gatewayroutetableassociation-gatewayid
         UpdateType: Immutable
         PrimitiveType: String

@@ -11,14 +11,14 @@ Information that defines a state of a detector.
         http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iotevents-detectormodel-state.html
 
     .PARAMETER OnInput
-        When an input is received and the "condition" is TRUE, perform the specified "actions".
+        When an input is received and the condition is TRUE, perform the specified actions.
 
         Type: OnInput
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iotevents-detectormodel-state.html#cfn-iotevents-detectormodel-state-oninput
         UpdateType: Mutable
 
     .PARAMETER OnExit
-        When exiting this state, perform these "actions" if the specified "condition" is TRUE.
+        When exiting this state, perform these actions if the specified condition is TRUE.
 
         Type: OnExit
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iotevents-detectormodel-state.html#cfn-iotevents-detectormodel-state-onexit
@@ -32,7 +32,7 @@ Information that defines a state of a detector.
         UpdateType: Mutable
 
     .PARAMETER OnEnter
-        When entering this state, perform these "actions" if the "condition" is TRUE.
+        When entering this state, perform these actions if the condition is TRUE.
 
         Type: OnEnter
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iotevents-detectormodel-state.html#cfn-iotevents-detectormodel-state-onenter

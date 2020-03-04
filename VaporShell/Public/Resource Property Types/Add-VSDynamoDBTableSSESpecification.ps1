@@ -11,7 +11,7 @@ Represents the settings used to enable server-side encryption.
         http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-dynamodb-table-ssespecification.html
 
     .PARAMETER KMSMasterKeyId
-        The KMS customer master key CMK that should be used for the AWS KMS encryption. To specify a CMK, use its key ID, Amazon Resource Name ARN, alias name, or alias ARN. Note that you should only provide this parameter if the key is different from the default DynamoDB customer master key alias/aws/dynamodb.
+        The AWS KMS customer master key CMK that should be used for the AWS KMS encryption. To specify a CMK, use its key ID, Amazon Resource Name ARN, alias name, or alias ARN. Note that you should only provide this parameter if the key is different from the default DynamoDB customer master key alias/aws/dynamodb.
 
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-dynamodb-table-ssespecification.html#cfn-dynamodb-table-ssespecification-kmsmasterkeyid
         PrimitiveType: String

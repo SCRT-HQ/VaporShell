@@ -1,11 +1,11 @@
 function Add-VSAppMeshVirtualServiceVirtualServiceSpec {
     <#
     .SYNOPSIS
-        Adds an AWS::AppMesh::VirtualService.VirtualServiceSpec resource property to the template. An object representing the specification of a virtual service.
+        Adds an AWS::AppMesh::VirtualService.VirtualServiceSpec resource property to the template. An object that represents the specification of a virtual service.
 
     .DESCRIPTION
         Adds an AWS::AppMesh::VirtualService.VirtualServiceSpec resource property to the template.
-An object representing the specification of a virtual service.
+An object that represents the specification of a virtual service.
 
     .LINK
         http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-appmesh-virtualservice-virtualservicespec.html

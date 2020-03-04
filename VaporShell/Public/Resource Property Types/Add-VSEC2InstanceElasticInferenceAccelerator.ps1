@@ -13,14 +13,14 @@ ElasticInferenceAccelerator is a property of the AWS::EC2::Instance: https://doc
         http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-instance-elasticinferenceaccelerator.html
 
     .PARAMETER Count
-        *Update requires*: No interruption: https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt
+        The number of elastic inference accelerators to attach to the instance.
 
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-instance-elasticinferenceaccelerator.html#cfn-ec2-instance-elasticinferenceaccelerator-count
         PrimitiveType: Integer
         UpdateType: Mutable
 
     .PARAMETER Type
-        The type of elastic inference accelerator. The possible values are eia1.small, eia1.medium, and eia1.large.
+        The type of elastic inference accelerator. The possible values are eia1.medium, eia1.large, and eia1.xlarge.
 
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-instance-elasticinferenceaccelerator.html#cfn-ec2-instance-elasticinferenceaccelerator-type
         PrimitiveType: String

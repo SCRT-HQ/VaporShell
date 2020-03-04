@@ -1,10 +1,14 @@
 function New-VSEC2VPNConnection {
     <#
     .SYNOPSIS
-        Adds an AWS::EC2::VPNConnection resource to the template. Specifies a VPN connection between a virtual private gateway and a VPN customer gateway.
+        Adds an AWS::EC2::VPNConnection resource to the template. Specifies a VPN connection between a virtual private gateway and a VPN customer gateway or a transit gateway and a VPN customer gateway.
 
     .DESCRIPTION
-        Adds an AWS::EC2::VPNConnection resource to the template. Specifies a VPN connection between a virtual private gateway and a VPN customer gateway.
+        Adds an AWS::EC2::VPNConnection resource to the template. Specifies a VPN connection between a virtual private gateway and a VPN customer gateway or a transit gateway and a VPN customer gateway.
+
+To specify a VPN connection between a transit gateway and customer gateway, use the TransitGatewayId and CustomerGatewayId properties.
+
+To specify a VPN connection between a virtual private gateway and customer gateway, use the VpnGatewayId and CustomerGatewayId properties.
 
 For more information, see AWS Site-to-Site VPN: https://docs.aws.amazon.com/vpn/latest/s2svpn/VPC_VPN.html in the *AWS Site-to-Site VPN User Guide*.
 
@@ -62,7 +66,7 @@ You must specify either TransitGatewayId or VpnGatewayId, but not both.
         UpdateType: Immutable
 
     .PARAMETER VpnTunnelOptionsSpecifications
-        The tunnel options for a VPN connection.
+        The tunnel options for the VPN connection.
 
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ec2-vpn-connection.html#cfn-ec2-vpnconnection-vpntunneloptionsspecifications
         DuplicatesAllowed: False
@@ -137,16 +141,8 @@ You must specify either TransitGatewayId or VpnGatewayId, but not both.
                 }
             })]
         $StaticRoutesOnly,
+        [VaporShell.Core.TransformTag()]
         [parameter(Mandatory = $false)]
-        [ValidateScript( {
-                $allowedTypes = "Vaporshell.Resource.Tag","System.Management.Automation.PSCustomObject"
-                if ([string]$($_.PSTypeNames) -match "($(($allowedTypes|ForEach-Object{[RegEx]::Escape($_)}) -join '|'))") {
-                    $true
-                }
-                else {
-                    $PSCmdlet.ThrowTerminatingError((New-VSError -String "This parameter only accepts the following types: $($allowedTypes -join ", "). The current types of the value are: $($_.PSTypeNames -join ", ")."))
-                }
-            })]
         $Tags,
         [parameter(Mandatory = $false)]
         [ValidateScript( {

@@ -1,11 +1,11 @@
 function Add-VSCloudFrontDistributionForwardedValues {
     <#
     .SYNOPSIS
-        Adds an AWS::CloudFront::Distribution.ForwardedValues resource property to the template. A complex type that specifies how CloudFront handles query strings and cookies.
+        Adds an AWS::CloudFront::Distribution.ForwardedValues resource property to the template. A complex type that specifies how CloudFront handles query strings, cookies, and HTTP headers.
 
     .DESCRIPTION
         Adds an AWS::CloudFront::Distribution.ForwardedValues resource property to the template.
-A complex type that specifies how CloudFront handles query strings and cookies.
+A complex type that specifies how CloudFront handles query strings, cookies, and HTTP headers.
 
     .LINK
         http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-cloudfront-distribution-forwardedvalues.html
@@ -19,7 +19,7 @@ A complex type that specifies how CloudFront handles query strings and cookies.
 
     .PARAMETER Headers
         A complex type that specifies the Headers, if any, that you want CloudFront to forward to the origin for this cache behavior whitelisted headers. For the headers that you specify, CloudFront also caches separate versions of a specified object that is based on the header values in viewer requests.
-For more information, see Caching Content Based on Request Headers: https://docs.aws.amazon.com/Cookies.html in the *Amazon CloudFront Developer Guide*.
+For more information, see  Caching Content Based on Request Headers: https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/header-caching.html in the *Amazon CloudFront Developer Guide*.
 
         PrimitiveItemType: String
         Type: List

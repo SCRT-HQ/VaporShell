@@ -27,8 +27,8 @@ function New-VSSSMAssociation {
         UpdateType: Mutable
 
     .PARAMETER InstanceId
-        The ID of the instance that the SSM document is associated with.
-You must specify the InstanceId or Targets property.
+        The ID of the instance that the SSM document is associated with. You must specify the InstanceId or Targets property.
+InstanceId has been deprecated. To specify an instance ID for an association, use the Targets parameter. If you use the parameter InstanceId, you cannot use the parameters AssociationName, DocumentVersion, MaxErrors, MaxConcurrency, OutputLocation, or ScheduleExpression. To use these parameters, you must use the Targets parameter.
 
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ssm-association.html#cfn-ssm-association-instanceid
         PrimitiveType: String
@@ -65,8 +65,7 @@ You must specify the InstanceId or Targets property.
         UpdateType: Mutable
 
     .PARAMETER Targets
-        The targets that the SSM document sends commands to.
-You must specify the InstanceId or Targets property.
+        The targets for the association. You must specify the InstanceId or Targets property.
 
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ssm-association.html#cfn-ssm-association-targets
         DuplicatesAllowed: False

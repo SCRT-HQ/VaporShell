@@ -34,7 +34,7 @@ function New-VSRoboMakerSimulationApplication {
         UpdateType: Mutable
 
     .PARAMETER RobotSoftwareSuite
-        The robot software suite of the simulation application.
+        The robot software suite ROS distribution used by the simulation application.
 
         Type: RobotSoftwareSuite
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-robomaker-simulationapplication.html#cfn-robomaker-simulationapplication-robotsoftwaresuite

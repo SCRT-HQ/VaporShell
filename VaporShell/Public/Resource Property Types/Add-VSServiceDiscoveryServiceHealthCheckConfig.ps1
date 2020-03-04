@@ -1,11 +1,11 @@
 function Add-VSServiceDiscoveryServiceHealthCheckConfig {
     <#
     .SYNOPSIS
-        Adds an AWS::ServiceDiscovery::Service.HealthCheckConfig resource property to the template. *Public DNS namespaces only.* A complex type that contains settings for an optional health check. If you specify settings for a health check, AWS Cloud Map associates the health check with the records that you specify in DnsConfig.
+        Adds an AWS::ServiceDiscovery::Service.HealthCheckConfig resource property to the template. *Public DNS and HTTP namespaces only.* A complex type that contains settings for an optional health check. If you specify settings for a health check, AWS Cloud Map associates the health check with the records that you specify in DnsConfig.
 
     .DESCRIPTION
         Adds an AWS::ServiceDiscovery::Service.HealthCheckConfig resource property to the template.
-*Public DNS namespaces only.* A complex type that contains settings for an optional health check. If you specify settings for a health check, AWS Cloud Map associates the health check with the records that you specify in DnsConfig.
+*Public DNS and HTTP namespaces only.* A complex type that contains settings for an optional health check. If you specify settings for a health check, AWS Cloud Map associates the health check with the records that you specify in DnsConfig.
 
 **Important**
 

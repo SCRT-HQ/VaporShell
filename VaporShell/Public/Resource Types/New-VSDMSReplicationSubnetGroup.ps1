@@ -31,7 +31,7 @@ Resource creation will fail if the dms-vpc-role IAM role doesn't already exist. 
         UpdateType: Immutable
 
     .PARAMETER SubnetIds
-        The EC2 subnet IDs for the subnet group.
+        One or more subnet IDs to be assigned to the subnet group.
 
         PrimitiveItemType: String
         Type: List
@@ -39,7 +39,7 @@ Resource creation will fail if the dms-vpc-role IAM role doesn't already exist. 
         UpdateType: Mutable
 
     .PARAMETER Tags
-        The tag to be assigned to the subnet group.
+        One or more tags to be assigned to the subnet group.
 
         Type: List
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-dms-replicationsubnetgroup.html#cfn-dms-replicationsubnetgroup-tags
@@ -115,16 +115,8 @@ Resource creation will fail if the dms-vpc-role IAM role doesn't already exist. 
         $ReplicationSubnetGroupIdentifier,
         [parameter(Mandatory = $true)]
         $SubnetIds,
+        [VaporShell.Core.TransformTag()]
         [parameter(Mandatory = $false)]
-        [ValidateScript( {
-                $allowedTypes = "Vaporshell.Resource.Tag","System.Management.Automation.PSCustomObject"
-                if ([string]$($_.PSTypeNames) -match "($(($allowedTypes|ForEach-Object{[RegEx]::Escape($_)}) -join '|'))") {
-                    $true
-                }
-                else {
-                    $PSCmdlet.ThrowTerminatingError((New-VSError -String "This parameter only accepts the following types: $($allowedTypes -join ", "). The current types of the value are: $($_.PSTypeNames -join ", ")."))
-                }
-            })]
         $Tags,
         [ValidateSet("Delete","Retain","Snapshot")]
         [System.String]

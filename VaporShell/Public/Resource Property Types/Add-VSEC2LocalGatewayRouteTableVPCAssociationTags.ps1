@@ -1,16 +1,18 @@
 function Add-VSEC2LocalGatewayRouteTableVPCAssociationTags {
     <#
     .SYNOPSIS
-        Adds an AWS::EC2::LocalGatewayRouteTableVPCAssociation.Tags resource property to the template. 
+        Adds an AWS::EC2::LocalGatewayRouteTableVPCAssociation.Tags resource property to the template. The tags assigned to the association.
 
     .DESCRIPTION
         Adds an AWS::EC2::LocalGatewayRouteTableVPCAssociation.Tags resource property to the template.
-
+The tags assigned to the association.
 
     .LINK
         http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-localgatewayroutetablevpcassociation-tags.html
 
     .PARAMETER Tags
+        The tags assigned to the association.
+
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-localgatewayroutetablevpcassociation-tags.html#cfn-ec2-localgatewayroutetablevpcassociation-tags-tags
         UpdateType: Mutable
         Type: List
@@ -24,16 +26,8 @@ function Add-VSEC2LocalGatewayRouteTableVPCAssociationTags {
     [cmdletbinding()]
     Param
     (
+        [VaporShell.Core.TransformTag()]
         [parameter(Mandatory = $false)]
-        [ValidateScript( {
-                $allowedTypes = "Vaporshell.Resource.Tag","System.Management.Automation.PSCustomObject"
-                if ([string]$($_.PSTypeNames) -match "($(($allowedTypes|ForEach-Object{[RegEx]::Escape($_)}) -join '|'))") {
-                    $true
-                }
-                else {
-                    $PSCmdlet.ThrowTerminatingError((New-VSError -String "This parameter only accepts the following types: $($allowedTypes -join ", "). The current types of the value are: $($_.PSTypeNames -join ", ")."))
-                }
-            })]
         $Tags
     )
     Begin {

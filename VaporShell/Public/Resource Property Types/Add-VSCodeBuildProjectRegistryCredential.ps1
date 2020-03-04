@@ -18,7 +18,7 @@ For more information, see Private Registry with AWS Secrets Manager Sample for A
 
     .PARAMETER Credential
         The Amazon Resource Name ARN or name of credentials created using AWS Secrets Manager.
-The credential can use the name of the credentials only if they exist in your current region.
+The credential can use the name of the credentials only if they exist in your current AWS Region.
 
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-codebuild-project-registrycredential.html#cfn-codebuild-project-registrycredential-credential
         PrimitiveType: String

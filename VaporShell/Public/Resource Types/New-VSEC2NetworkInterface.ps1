@@ -29,7 +29,7 @@ function New-VSEC2NetworkInterface {
         UpdateType: Mutable
 
     .PARAMETER InterfaceType
-        The type of network interface.
+        Indicates the type of network interface. To create an Elastic Fabric Adapter EFA, specify efa. For more information, see  Elastic Fabric Adapter: https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/efa.html in the *Amazon Elastic Compute Cloud User Guide*.
 
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ec2-network-interface.html#cfn-ec2-networkinterface-interfacetype
         PrimitiveType: String
@@ -233,16 +233,8 @@ The number of IP addresses you can assign to a network interface varies by insta
                 }
             })]
         $SubnetId,
+        [VaporShell.Core.TransformTag()]
         [parameter(Mandatory = $false)]
-        [ValidateScript( {
-                $allowedTypes = "Vaporshell.Resource.Tag","System.Management.Automation.PSCustomObject"
-                if ([string]$($_.PSTypeNames) -match "($(($allowedTypes|ForEach-Object{[RegEx]::Escape($_)}) -join '|'))") {
-                    $true
-                }
-                else {
-                    $PSCmdlet.ThrowTerminatingError((New-VSError -String "This parameter only accepts the following types: $($allowedTypes -join ", "). The current types of the value are: $($_.PSTypeNames -join ", ")."))
-                }
-            })]
         $Tags,
         [ValidateSet("Delete","Retain","Snapshot")]
         [System.String]

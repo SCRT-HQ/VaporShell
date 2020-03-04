@@ -11,28 +11,28 @@ Details of the compute resources managed by the compute environment. This parame
         http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-batch-computeenvironment-computeresources.html
 
     .PARAMETER SpotIamFleetRole
-        The Amazon Resource Name ARN of the Amazon EC2 Spot Fleet IAM role applied to a SPOT compute environment. For more information, see Amazon EC2 Spot Fleet Role: https://docs.aws.amazon.com/batch/latest/userguide/spot_fleet_IAM_role.html in the *AWS Batch User Guide*.
+        The Amazon Resource Name ARN of the Amazon EC2 Spot Fleet IAM role applied to a SPOT compute environment. This role is required if the allocation strategy set to BEST_FIT or if the allocation strategy is not specified. For more information, see Amazon EC2 Spot Fleet Role: https://docs.aws.amazon.com/batch/latest/userguide/spot_fleet_IAM_role.html in the *AWS Batch User Guide*.
 
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-batch-computeenvironment-computeresources.html#cfn-batch-computeenvironment-computeresources-spotiamfleetrole
         PrimitiveType: String
         UpdateType: Immutable
 
     .PARAMETER MaxvCpus
-        The maximum number of EC2 vCPUs that an environment can reach.
+        The maximum number of Amazon EC2 vCPUs that an environment can reach.
 
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-batch-computeenvironment-computeresources.html#cfn-batch-computeenvironment-computeresources-maxvcpus
         PrimitiveType: Integer
         UpdateType: Mutable
 
     .PARAMETER BidPercentage
-        The maximum percentage that a Spot Instance price can be when compared with the On-Demand price for that instance type before instances are launched. For example, if your maximum percentage is 20%, then the Spot price must be below 20% of the current On-Demand price for that EC2 instance. You always pay the lowest market price and never more than your maximum percentage. If you leave this field empty, the default value is 100% of the On-Demand price.
+        The maximum percentage that a Spot Instance price can be when compared with the On-Demand price for that instance type before instances are launched. For example, if your maximum percentage is 20%, then the Spot price must be below 20% of the current On-Demand price for that Amazon EC2 instance. You always pay the lowest market price and never more than your maximum percentage. If you leave this field empty, the default value is 100% of the On-Demand price.
 
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-batch-computeenvironment-computeresources.html#cfn-batch-computeenvironment-computeresources-bidpercentage
         PrimitiveType: Integer
         UpdateType: Immutable
 
     .PARAMETER SecurityGroupIds
-        The EC2 security group that is associated with instances launched in the compute environment.
+        The Amazon EC2 security groups associated with instances launched in the compute environment. One or more security groups must be specified, either in securityGroupIds or using a launch template referenced in launchTemplate. If security groups are specified using both securityGroupIds and launchTemplate, the values in securityGroupIds will be used.
 
         PrimitiveItemType: String
         Type: List
@@ -55,14 +55,14 @@ Details of the compute resources managed by the compute environment. This parame
         UpdateType: Immutable
 
     .PARAMETER AllocationStrategy
-        +  Compute Environments: https://docs.aws.amazon.com/batch/latest/userguide/compute_environments.html in the *AWS Batch User Guide*.
+        The allocation strategy to use for the compute resource in case not enough instances of the best fitting instance type can be allocated. This could be due to availability of the instance type in the region or Amazon EC2 service limits: https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-resource-limits.html. If this is not specified, the default is BEST_FIT, which will use only the best fitting instance type, waiting for additional capacity if it's not available. This allocation strategy keeps costs lower but can limit scaling. If you are using Spot Fleets with BEST_FIT then the Spot Fleet IAM Role must be specified. BEST_FIT_PROGRESSIVE will select additional instance types that are large enough to meet the requirements of the jobs in the queue, with a preference for instance types with a lower cost per vCPU. SPOT_CAPACITY_OPTIMIZED is only available for Spot Instance compute resources and will select additional instance types that are large enough to meet the requirements of the jobs in the queue, with a preference for instance types that are less likely to be interrupted. For more information, see Allocation Strategies: https://docs.aws.amazon.com/batch/latest/userguide/allocation-strategies.html  in the *AWS Batch User Guide*.
 
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-batch-computeenvironment-computeresources.html#cfn-batch-computeenvironment-computeresources-allocationstrategy
         PrimitiveType: String
         UpdateType: Immutable
 
     .PARAMETER MinvCpus
-        The minimum number of EC2 vCPUs that an environment should maintain even if the compute environment is DISABLED.
+        The minimum number of Amazon EC2 vCPUs that an environment should maintain even if the compute environment is DISABLED.
 
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-batch-computeenvironment-computeresources.html#cfn-batch-computeenvironment-computeresources-minvcpus
         PrimitiveType: Integer
@@ -90,7 +90,7 @@ Details of the compute resources managed by the compute environment. This parame
         UpdateType: Immutable
 
     .PARAMETER InstanceTypes
-        The instances types that may be launched. You can specify instance families to launch any instance type within those families for example, c4 or p3, or you can specify specific sizes within a family such as c4.8xlarge. You can also choose optimal to pick instance types from the C, M, and R instance families on the fly that match the demand of your job queues.
+        The instances types that may be launched. You can specify instance families to launch any instance type within those families for example, c5 or p3, or you can specify specific sizes within a family such as c5.8xlarge. You can also choose optimal to pick instance types from the C, M, and R instance families on the fly that match the demand of your job queues.
 
         PrimitiveItemType: String
         Type: List
@@ -98,7 +98,7 @@ Details of the compute resources managed by the compute environment. This parame
         UpdateType: Immutable
 
     .PARAMETER Ec2KeyPair
-        The EC2 key pair that is used for instances launched in the compute environment.
+        The Amazon EC2 key pair that is used for instances launched in the compute environment.
 
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-batch-computeenvironment-computeresources.html#cfn-batch-computeenvironment-computeresources-ec2keypair
         PrimitiveType: String
@@ -119,7 +119,7 @@ Details of the compute resources managed by the compute environment. This parame
         UpdateType: Immutable
 
     .PARAMETER DesiredvCpus
-        The desired number of EC2 vCPUS in the compute environment.
+        The desired number of Amazon EC2 vCPUS in the compute environment.
 
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-batch-computeenvironment-computeresources.html#cfn-batch-computeenvironment-computeresources-desiredvcpus
         PrimitiveType: Integer

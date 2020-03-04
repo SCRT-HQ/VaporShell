@@ -1,10 +1,16 @@
 function Add-VSWAFXssMatchSetXssMatchTuple {
     <#
     .SYNOPSIS
-        Adds an AWS::WAF::XssMatchSet.XssMatchTuple resource property to the template. Specifies the part of a web request that you want AWS WAF to inspect for cross-site scripting attacks and, if you want AWS WAF to inspect a header, the name of the header.
+        Adds an AWS::WAF::XssMatchSet.XssMatchTuple resource property to the template. **Note**
 
     .DESCRIPTION
         Adds an AWS::WAF::XssMatchSet.XssMatchTuple resource property to the template.
+**Note**
+
+This is **AWS WAF Classic** documentation. For more information, see AWS WAF Classic: https://docs.aws.amazon.com/waf/latest/developerguide/classic-waf-chapter.html in the developer guide.
+
+**For the latest version of AWS WAF**, use the AWS WAFV2 API and see the AWS WAF Developer Guide: https://docs.aws.amazon.com/waf/latest/developerguide/waf-chapter.html. With the latest version, AWS WAF has a single set of endpoints for regional and global use.
+
 Specifies the part of a web request that you want AWS WAF to inspect for cross-site scripting attacks and, if you want AWS WAF to inspect a header, the name of the header.
 
     .LINK
@@ -18,7 +24,7 @@ Specifies the part of a web request that you want AWS WAF to inspect for cross-s
         UpdateType: Mutable
 
     .PARAMETER TextTransformation
-        Text transformations eliminate some of the unusual formatting that attackers use in web requests in an effort to bypass AWS WAF. If you specify a transformation, AWS WAF performs the transformation on FieldToMatch before inspecting a request for a match.
+        Text transformations eliminate some of the unusual formatting that attackers use in web requests in an effort to bypass AWS WAF. If you specify a transformation, AWS WAF performs the transformation on FieldToMatch before inspecting it for a match.
 You can only specify a single type of TextTransformation.
 **CMD_LINE**
 When you're concerned that attackers are injecting an operating system command line command and using unusual formatting to disguise some or all of the command, use this option to perform the following transformations:

@@ -11,7 +11,7 @@ Integration is a property of the AWS::ApiGateway::Method: https://docs.aws.amazo
         http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-apitgateway-method-integration.html
 
     .PARAMETER CacheKeyParameters
-        A list of request parameters whose values API Gateway caches. These parameters must also be specified in RequestParameters: https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-apigateway-method.html#cfn-apigateway-method-requestparameters to be supported in CacheKeyParameters.
+        A list of request parameters whose values API Gateway caches. For cases where the integration type allows for RequestParameters to be set, these parameters must also be specified in RequestParameters: https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-apigateway-method.html#cfn-apigateway-method-requestparameters to be supported in CacheKeyParameters.
 
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-apitgateway-method-integration.html#cfn-apigateway-method-integration-cachekeyparameters
         DuplicatesAllowed: False

@@ -11,7 +11,7 @@ The value of the variable as a structure that specifies an output file URI.
         http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iotanalytics-dataset-variable-outputfileurivalue.html
 
     .PARAMETER FileName
-        The URI of the location where data set contents are stored, usually the URI of a file in an S3 bucket.
+        The URI of the location where dataset contents are stored, usually the URI of a file in an S3 bucket.
 
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iotanalytics-dataset-variable-outputfileurivalue.html#cfn-iotanalytics-dataset-variable-outputfileurivalue-filename
         PrimitiveType: String

@@ -6,7 +6,7 @@ function New-VSAppMeshVirtualNode {
     .DESCRIPTION
         Adds an AWS::AppMesh::VirtualNode resource to the template. Creates a virtual node within a service mesh.
 
-A virtual node acts as a logical pointer to a particular task group, such as an Amazon ECS service or a Kubernetes deployment. When you create a virtual node, you must specify the DNS service discovery hostname for your task group.
+A virtual node acts as a logical pointer to a particular task group, such as an Amazon ECS service or a Kubernetes deployment. When you create a virtual node, you can specify the service discovery information for your task group.
 
 Any inbound traffic that your virtual node expects should be specified as a listener. Any outbound traffic that your virtual node expects to reach should be specified as a backend.
 
@@ -120,16 +120,8 @@ If you require your Envoy stats or tracing to use a different name, you can over
                 }
             })]
         $VirtualNodeName,
+        [VaporShell.Core.TransformTag()]
         [parameter(Mandatory = $false)]
-        [ValidateScript( {
-                $allowedTypes = "Vaporshell.Resource.Tag","System.Management.Automation.PSCustomObject"
-                if ([string]$($_.PSTypeNames) -match "($(($allowedTypes|ForEach-Object{[RegEx]::Escape($_)}) -join '|'))") {
-                    $true
-                }
-                else {
-                    $PSCmdlet.ThrowTerminatingError((New-VSError -String "This parameter only accepts the following types: $($allowedTypes -join ", "). The current types of the value are: $($_.PSTypeNames -join ", ")."))
-                }
-            })]
         $Tags,
         [ValidateSet("Delete","Retain","Snapshot")]
         [System.String]

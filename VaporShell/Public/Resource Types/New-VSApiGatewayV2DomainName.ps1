@@ -30,7 +30,7 @@ You can use a custom domain name to provide a URL that's more intuitive and easi
         UpdateType: Mutable
 
     .PARAMETER Tags
-        + CreateDomainName: https://docs.aws.amazon.com/apigatewayv2/latest/api-reference/domainnames.html#CreateDomainName in the *Amazon API Gateway Version 2 API Reference*
+        The collection of tags associated with a domain name.
 
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-apigatewayv2-domainname.html#cfn-apigatewayv2-domainname-tags
         PrimitiveType: Json

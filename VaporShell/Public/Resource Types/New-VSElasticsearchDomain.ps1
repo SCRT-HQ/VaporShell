@@ -29,6 +29,8 @@ function New-VSElasticsearchDomain {
         UpdateType: Mutable
 
     .PARAMETER CognitoOptions
+        Configures Amazon ES to use Amazon Cognito authentication for Kibana.
+
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-elasticsearch-domain.html#cfn-elasticsearch-domain-cognitooptions
         Type: CognitoOptions
         UpdateType: Mutable
@@ -57,6 +59,7 @@ If you specify a name, you cannot perform updates that require replacement of th
 
     .PARAMETER ElasticsearchVersion
         The version of Elasticsearch to use, such as 2.3. If not specified, 1.5 is used as the default. For information about the versions that Amazon ES supports, see the Elasticsearch-Version parameter for the CreateElasticsearchDomain: https://docs.aws.amazon.com/elasticsearch-service/latest/developerguide/es-configuration-api.html#es-configuration-api-actions-createelasticsearchdomain action in the *Amazon Elasticsearch Service Developer Guide*.
+If you set the UpgradeElasticsearchVersion: https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-attribute-updatepolicy.html#cfn-attributes-updatepolicy-upgradeelasticsearchversion update policy to true, you can update ElasticsearchVersion without interruption. When UpgradeElasticsearchVersion is set to false, or is not specified, updating ElasticsearchVersion results in replacement: https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-replacement.
 
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-elasticsearch-domain.html#cfn-elasticsearch-domain-elasticsearchversion
         PrimitiveType: String
@@ -70,6 +73,8 @@ If you specify a name, you cannot perform updates that require replacement of th
         UpdateType: Immutable
 
     .PARAMETER LogPublishingOptions
+        Key-value pairs to configure slow log publishing.
+
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-elasticsearch-domain.html#cfn-elasticsearch-domain-logpublishingoptions
         DuplicatesAllowed: False
         ItemType: LogPublishingOption
@@ -210,16 +215,8 @@ If you specify a name, you cannot perform updates that require replacement of th
         $NodeToNodeEncryptionOptions,
         [parameter(Mandatory = $false)]
         $SnapshotOptions,
+        [VaporShell.Core.TransformTag()]
         [parameter(Mandatory = $false)]
-        [ValidateScript( {
-                $allowedTypes = "Vaporshell.Resource.Tag","System.Management.Automation.PSCustomObject"
-                if ([string]$($_.PSTypeNames) -match "($(($allowedTypes|ForEach-Object{[RegEx]::Escape($_)}) -join '|'))") {
-                    $true
-                }
-                else {
-                    $PSCmdlet.ThrowTerminatingError((New-VSError -String "This parameter only accepts the following types: $($allowedTypes -join ", "). The current types of the value are: $($_.PSTypeNames -join ", ")."))
-                }
-            })]
         $Tags,
         [parameter(Mandatory = $false)]
         $VPCOptions,

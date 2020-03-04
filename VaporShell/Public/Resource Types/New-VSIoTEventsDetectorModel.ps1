@@ -30,7 +30,7 @@ Also, be aware that if you attempt to update several detector models at once usi
         UpdateType: Mutable
 
     .PARAMETER EvaluationMethod
-        +   CreateDetectorModel: https://docs.aws.amazon.com/iotevents/latest/apireference/API_CreateDetectorModel.html in the *AWS IoT Events API Reference*
+        Information about the order in which events are evaluated and how actions are executed.
 
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-iotevents-detectormodel.html#cfn-iotevents-detectormodel-evaluationmethod
         PrimitiveType: String
@@ -51,7 +51,7 @@ Also, be aware that if you attempt to update several detector models at once usi
         UpdateType: Mutable
 
     .PARAMETER Key
-        The input attribute key used to identify a device or system to create a detector an instance of the detector model and then to route each input received to the appropriate detector instance. This parameter uses a JSON-path expression to specify the attribute-value pair in the message payload of each input that is used to identify the device associated with the input.
+        The input attribute key used to identify a device or system to create a detector an instance of the detector model and then to route each input received to the appropriate detector instance. This parameter uses a JSON-path expression in the message payload of each input to specify the attribute-value pair that is used to identify the device associated with the input.
 
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-iotevents-detectormodel.html#cfn-iotevents-detectormodel-key
         PrimitiveType: String
@@ -175,16 +175,8 @@ For more information, see Tag: https://docs.aws.amazon.com/AWSCloudFormation/lat
                 }
             })]
         $RoleArn,
+        [VaporShell.Core.TransformTag()]
         [parameter(Mandatory = $false)]
-        [ValidateScript( {
-                $allowedTypes = "Vaporshell.Resource.Tag","System.Management.Automation.PSCustomObject"
-                if ([string]$($_.PSTypeNames) -match "($(($allowedTypes|ForEach-Object{[RegEx]::Escape($_)}) -join '|'))") {
-                    $true
-                }
-                else {
-                    $PSCmdlet.ThrowTerminatingError((New-VSError -String "This parameter only accepts the following types: $($allowedTypes -join ", "). The current types of the value are: $($_.PSTypeNames -join ", ")."))
-                }
-            })]
         $Tags,
         [ValidateSet("Delete","Retain","Snapshot")]
         [System.String]

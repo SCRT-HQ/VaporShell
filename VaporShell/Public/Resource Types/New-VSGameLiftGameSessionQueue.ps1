@@ -1,10 +1,10 @@
 function New-VSGameLiftGameSessionQueue {
     <#
     .SYNOPSIS
-        Adds an AWS::GameLift::GameSessionQueue resource to the template. 
+        Adds an AWS::GameLift::GameSessionQueue resource to the template. The AWS::GameLift::GameSessionQueue resource establishes a queue for processing requests to create new game sessions. A queue identifies where new game sessions can be hosted by specifying a list of destinations (fleets or aliases. It also sets how long requests can wait in the queue before timing out. You can set up a queue with destinations in multiple Regions.
 
     .DESCRIPTION
-        Adds an AWS::GameLift::GameSessionQueue resource to the template. 
+        Adds an AWS::GameLift::GameSessionQueue resource to the template. The AWS::GameLift::GameSessionQueue resource establishes a queue for processing requests to create new game sessions. A queue identifies where new game sessions can be hosted by specifying a list of destinations (fleets or aliases. It also sets how long requests can wait in the queue before timing out. You can set up a queue with destinations in multiple Regions.
 
     .LINK
         http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-gamelift-gamesessionqueue.html
@@ -13,23 +13,31 @@ function New-VSGameLiftGameSessionQueue {
         The logical ID must be alphanumeric (A-Za-z0-9) and unique within the template. Use the logical name to reference the resource in other parts of the template. For example, if you want to map an Amazon Elastic Block Store volume to an Amazon EC2 instance, you reference the logical IDs to associate the block stores with the instance.
 
     .PARAMETER TimeoutInSeconds
+        The maximum time, in seconds, that a new game session placement request remains in the queue. When a request exceeds this time, the game session placement changes to a TIMED_OUT status.
+
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-gamelift-gamesessionqueue.html#cfn-gamelift-gamesessionqueue-timeoutinseconds
         PrimitiveType: Integer
         UpdateType: Mutable
 
     .PARAMETER PlayerLatencyPolicies
+        A collection of latency policies to apply when processing game sessions placement requests with player latency information. Multiple policies are evaluated in order of the maximum latency value, starting with the lowest latency values. With just one policy, the policy is enforced at the start of the game session placement for the duration period. With multiple policies, each policy is enforced consecutively for its duration period. For example, a queue might enforce a 60-second policy followed by a 120-second policy, and then no policy for the remainder of the placement. A player latency policy must set a value for MaximumIndividualPlayerLatencyMilliseconds. If none is set, this API request fails.
+
         Type: List
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-gamelift-gamesessionqueue.html#cfn-gamelift-gamesessionqueue-playerlatencypolicies
         ItemType: PlayerLatencyPolicy
         UpdateType: Mutable
 
     .PARAMETER Destinations
+        A list of fleets that can be used to fulfill game session placement requests in the queue. Fleets are identified by either a fleet ARN or a fleet alias ARN. Destinations are listed in default preference order.
+
         Type: List
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-gamelift-gamesessionqueue.html#cfn-gamelift-gamesessionqueue-destinations
         ItemType: Destination
         UpdateType: Mutable
 
     .PARAMETER Name
+        A descriptive label that is associated with game session queue. Queue names must be unique within each Region.
+
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-gamelift-gamesessionqueue.html#cfn-gamelift-gamesessionqueue-name
         PrimitiveType: String
         UpdateType: Immutable

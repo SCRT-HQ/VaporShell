@@ -20,7 +20,7 @@ function New-VSAppSyncGraphQLApi {
         UpdateType: Mutable
 
     .PARAMETER XrayEnabled
-        +  CreateGraphqlApi: https://docs.aws.amazon.com/appsync/latest/APIReference/API_CreateGraphqlApi.html operation in the *AWS AppSync API Reference*.
+        A flag representing whether X-Ray tracing is enabled for this GraphqlApi.
 
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-appsync-graphqlapi.html#cfn-appsync-graphqlapi-xrayenabled
         PrimitiveType: Boolean

@@ -30,7 +30,8 @@ You can specify either VirtualName or Ebs, but not both.
         UpdateType: Mutable
 
     .PARAMETER NoDevice
-        Suppresses the device mapping. If this property is set to true for the root device, the instance might fail the Amazon EC2 health check. Amazon EC2 Auto Scaling launches a replacement instance if the instance fails the health check.
+        Suppresses the device mapping. The only permitted value for this property is true.
+If this property is set to true for the root device, the instance might fail the Amazon EC2 health check. Amazon EC2 Auto Scaling launches a replacement instance if the instance fails the health check.
 
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-as-launchconfig-blockdev-mapping.html#cfn-as-launchconfig-blockdev-mapping-nodevice
         PrimitiveType: Boolean

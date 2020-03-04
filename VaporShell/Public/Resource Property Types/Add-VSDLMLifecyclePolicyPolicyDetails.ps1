@@ -11,7 +11,7 @@ Specifies the configuration of a lifecycle policy.
         http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-dlm-lifecyclepolicy-policydetails.html
 
     .PARAMETER ResourceTypes
-        The resource type. Specify one of INSTANCE or VOLUME.
+        The resource type.
 
         PrimitiveItemType: String
         Type: List
@@ -27,14 +27,14 @@ Specifies the configuration of a lifecycle policy.
         UpdateType: Mutable
 
     .PARAMETER PolicyType
-        *Update requires*: No interruption: https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt
+        The valid target resource types and actions a policy can manage. The default is EBS_SNAPSHOT_MANAGEMENT.
 
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-dlm-lifecyclepolicy-policydetails.html#cfn-dlm-lifecyclepolicy-policydetails-policytype
         PrimitiveType: String
         UpdateType: Mutable
 
     .PARAMETER Parameters
-        *Update requires*: No interruption: https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt
+        A set of optional parameters for the policy.
 
         Type: Parameters
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-dlm-lifecyclepolicy-policydetails.html#cfn-dlm-lifecyclepolicy-policydetails-parameters
@@ -81,16 +81,8 @@ Specifies the configuration of a lifecycle policy.
         $PolicyType,
         [parameter(Mandatory = $false)]
         $Parameters,
+        [VaporShell.Core.TransformTag()]
         [parameter(Mandatory = $true)]
-        [ValidateScript( {
-                $allowedTypes = "Vaporshell.Resource.Tag","System.Management.Automation.PSCustomObject"
-                if ([string]$($_.PSTypeNames) -match "($(($allowedTypes|ForEach-Object{[RegEx]::Escape($_)}) -join '|'))") {
-                    $true
-                }
-                else {
-                    $PSCmdlet.ThrowTerminatingError((New-VSError -String "This parameter only accepts the following types: $($allowedTypes -join ", "). The current types of the value are: $($_.PSTypeNames -join ", ")."))
-                }
-            })]
         $TargetTags
     )
     Begin {

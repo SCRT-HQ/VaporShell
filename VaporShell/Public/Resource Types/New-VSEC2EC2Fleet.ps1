@@ -13,14 +13,14 @@ function New-VSEC2EC2Fleet {
         The logical ID must be alphanumeric (A-Za-z0-9) and unique within the template. Use the logical name to reference the resource in other parts of the template. For example, if you want to map an Amazon Elastic Block Store volume to an Amazon EC2 instance, you reference the logical IDs to associate the block stores with the instance.
 
     .PARAMETER TargetCapacitySpecification
-        The TotalTargetCapacity, OnDemandTargetCapacity, SpotTargetCapacity, and DefaultCapacityType structure.
+        The number of units to request.
 
         Type: TargetCapacitySpecificationRequest
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ec2-ec2fleet.html#cfn-ec2-ec2fleet-targetcapacityspecification
         UpdateType: Mutable
 
     .PARAMETER OnDemandOptions
-        The allocation strategy of On-Demand Instances in an EC2 Fleet.
+        Describes the configuration of On-Demand Instances in an EC2 Fleet.
 
         Type: OnDemandOptionsRequest
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ec2-ec2fleet.html#cfn-ec2-ec2fleet-ondemandoptions

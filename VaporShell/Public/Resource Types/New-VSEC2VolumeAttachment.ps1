@@ -26,14 +26,14 @@ If the root volume is detached from an instance with an AWS Marketplace product 
         UpdateType: Immutable
 
     .PARAMETER InstanceId
-        The ID of the instance to which the volume attaches. This value can be a reference to an AWS::EC2::Instance resource, or it can be the physical ID of an existing EC2 instance.
+        The ID of the instance to which the volume attaches. This value can be a reference to an https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-instance.html: https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-instance.html resource, or it can be the physical ID of an existing EC2 instance.
 
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-ebs-volumeattachment.html#cfn-ec2-ebs-volumeattachment-instanceid
         PrimitiveType: String
         UpdateType: Immutable
 
     .PARAMETER VolumeId
-        The ID of the Amazon EBS volume. The volume and instance must be within the same Availability Zone. This value can be a reference to an AWS::EC2::Volume resource, or it can be the volume ID of an existing Amazon EBS volume.
+        The ID of the Amazon EBS volume. The volume and instance must be within the same Availability Zone. This value can be a reference to an https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-ebs-volume.html: https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-ebs-volume.html resource, or it can be the volume ID of an existing Amazon EBS volume.
 
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-ebs-volumeattachment.html#cfn-ec2-ebs-volumeattachment-volumeid
         PrimitiveType: String

@@ -26,7 +26,7 @@ On January 1, 2016, the Swagger Specification was donated to the OpenAPI initiat
         UpdateType: Mutable
 
     .PARAMETER BinaryMediaTypes
-        The list of binary media types that are supported by the RestApi resource, such as image/png or application/octet-stream. By default, RestApi supports only UTF-8-encoded text payloads. For more information, see Enable Support for Binary Payloads in API Gateway: https://docs.aws.amazon.com/apigateway/latest/developerguide/api-gateway-payload-encodings.html in the *API Gateway Developer Guide*. Duplicates are not allowed.
+        The list of binary media types that are supported by the RestApi resource, such as image/png or application/octet-stream. By default, RestApi supports only UTF-8-encoded text payloads. Duplicates are not allowed. Slashes must be escaped with ~1. For example, image/png would be image~1png in the BinaryMediaTypes list. For more information, see Enable Support for Binary Payloads in API Gateway: https://docs.aws.amazon.com/apigateway/latest/developerguide/api-gateway-payload-encodings.html in the *API Gateway Developer Guide*.
 
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-apigateway-restapi.html#cfn-apigateway-restapi-binarymediatypes
         DuplicatesAllowed: False
@@ -100,14 +100,14 @@ On January 1, 2016, the Swagger Specification was donated to the OpenAPI initiat
         UpdateType: Mutable
 
     .PARAMETER Policy
-        A policy document that contains the permissions for the RestApi resource, in JSON format.
+        A policy document that contains the permissions for the RestApi resource, in JSON format. To set the ARN for the policy, use the !Join intrinsic function with "" as delimiter and values of "execute-api:/" and "*".
 
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-apigateway-restapi.html#cfn-apigateway-restapi-policy
         PrimitiveType: Json
         UpdateType: Mutable
 
     .PARAMETER Tags
-        + restapi:create: https://docs.aws.amazon.com/apigateway/api-reference/link-relation/restapi-create/ in the *Amazon API Gateway REST API Reference*
+        An array of arbitrary tags key-value pairs to associate with the API.
 
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-apigateway-restapi.html#cfn-apigateway-restapi-tags
         DuplicatesAllowed: True
@@ -257,16 +257,8 @@ On January 1, 2016, the Swagger Specification was donated to the OpenAPI initiat
                 }
             })]
         $Policy,
+        [VaporShell.Core.TransformTag()]
         [parameter(Mandatory = $false)]
-        [ValidateScript( {
-                $allowedTypes = "Vaporshell.Resource.Tag","System.Management.Automation.PSCustomObject"
-                if ([string]$($_.PSTypeNames) -match "($(($allowedTypes|ForEach-Object{[RegEx]::Escape($_)}) -join '|'))") {
-                    $true
-                }
-                else {
-                    $PSCmdlet.ThrowTerminatingError((New-VSError -String "This parameter only accepts the following types: $($allowedTypes -join ", "). The current types of the value are: $($_.PSTypeNames -join ", ")."))
-                }
-            })]
         $Tags,
         [ValidateSet("Delete","Retain","Snapshot")]
         [System.String]

@@ -55,7 +55,7 @@ Specifies the inventory configuration for an Amazon S3 bucket. For more informat
         UpdateType: Mutable
 
     .PARAMETER ScheduleFrequency
-        Specifies the schedule for generating inventory results.
+        Specifies the schedule for generating inventory results. Valid Values: Daily | Weekly.
 
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-s3-bucket-inventoryconfiguration.html#cfn-s3-bucket-inventoryconfiguration-schedulefrequency
         PrimitiveType: String

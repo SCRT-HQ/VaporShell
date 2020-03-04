@@ -1,21 +1,25 @@
 function Add-VSCognitoUserPoolRecoveryOption {
     <#
     .SYNOPSIS
-        Adds an AWS::Cognito::UserPool.RecoveryOption resource property to the template. 
+        Adds an AWS::Cognito::UserPool.RecoveryOption resource property to the template. A map containing a priority as a key, and recovery method name as a value.
 
     .DESCRIPTION
         Adds an AWS::Cognito::UserPool.RecoveryOption resource property to the template.
-
+A map containing a priority as a key, and recovery method name as a value.
 
     .LINK
         http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-cognito-userpool-recoveryoption.html
 
     .PARAMETER Priority
+        A positive integer specifying priority of a method with 1 being the highest priority.
+
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-cognito-userpool-recoveryoption.html#cfn-cognito-userpool-recoveryoption-priority
         PrimitiveType: Integer
         UpdateType: Mutable
 
     .PARAMETER Name
+        Specifies the recovery method for a user.
+
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-cognito-userpool-recoveryoption.html#cfn-cognito-userpool-recoveryoption-name
         PrimitiveType: String
         UpdateType: Mutable

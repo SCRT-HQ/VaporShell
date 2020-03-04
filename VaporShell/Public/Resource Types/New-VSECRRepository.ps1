@@ -13,7 +13,7 @@ function New-VSECRRepository {
         The logical ID must be alphanumeric (A-Za-z0-9) and unique within the template. Use the logical name to reference the resource in other parts of the template. For example, if you want to map an Amazon Elastic Block Store volume to an Amazon EC2 instance, you reference the logical IDs to associate the block stores with the instance.
 
     .PARAMETER LifecyclePolicy
-        Creates or updates a lifecycle policy. For information about lifecycle policy syntax, see Lifecycle Policy Template: https://docs.aws.amazon.com/AmazonECR/latest/userguide/LifecyclePolicies.html.
+        Creates or updates the lifecycle policy for the specified repository. For more information, see Lifecycle Policy Template: https://docs.aws.amazon.com/AmazonECR/latest/userguide/LifecyclePolicies.html.
 
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ecr-repository.html#cfn-ecr-repository-lifecyclepolicy
         Type: LifecyclePolicy
@@ -112,16 +112,8 @@ If you specify a name, you cannot perform updates that require replacement of th
                 }
             })]
         $RepositoryPolicyText,
+        [VaporShell.Core.TransformTag()]
         [parameter(Mandatory = $false)]
-        [ValidateScript( {
-                $allowedTypes = "Vaporshell.Resource.Tag","System.Management.Automation.PSCustomObject"
-                if ([string]$($_.PSTypeNames) -match "($(($allowedTypes|ForEach-Object{[RegEx]::Escape($_)}) -join '|'))") {
-                    $true
-                }
-                else {
-                    $PSCmdlet.ThrowTerminatingError((New-VSError -String "This parameter only accepts the following types: $($allowedTypes -join ", "). The current types of the value are: $($_.PSTypeNames -join ", ")."))
-                }
-            })]
         $Tags,
         [ValidateSet("Delete","Retain","Snapshot")]
         [System.String]

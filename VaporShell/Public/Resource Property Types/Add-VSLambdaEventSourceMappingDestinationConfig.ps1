@@ -1,16 +1,18 @@
 function Add-VSLambdaEventSourceMappingDestinationConfig {
     <#
     .SYNOPSIS
-        Adds an AWS::Lambda::EventSourceMapping.DestinationConfig resource property to the template. 
+        Adds an AWS::Lambda::EventSourceMapping.DestinationConfig resource property to the template. (Streams An Amazon SQS queue or Amazon SNS topic destination for discarded records.
 
     .DESCRIPTION
         Adds an AWS::Lambda::EventSourceMapping.DestinationConfig resource property to the template.
-
+(Streams An Amazon SQS queue or Amazon SNS topic destination for discarded records.
 
     .LINK
         http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-lambda-eventsourcemapping-destinationconfig.html
 
     .PARAMETER OnFailure
+        The destination configuration for failed invocations.
+
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-lambda-eventsourcemapping-destinationconfig.html#cfn-lambda-eventsourcemapping-destinationconfig-onfailure
         Type: OnFailure
         UpdateType: Mutable

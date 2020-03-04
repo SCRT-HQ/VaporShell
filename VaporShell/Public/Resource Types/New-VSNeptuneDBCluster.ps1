@@ -12,6 +12,8 @@ Currently, you can create this resource only in AWS Regions in which Amazon Nept
 
 If no DeletionPolicy is set for AWS::Neptune::DBCluster resources, the default deletion behavior is that the entire volume will be deleted without a snapshot. To retain a backup of the volume, the DeletionPolicy should be set to Snapshot. For more information about how AWS CloudFormation deletes resources, see DeletionPolicy Attribute: https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-attribute-deletionpolicy.html.
 
+You can use AWS::Neptune::DBCluster.DeletionProtection to help guard against unintended deletion of your DB cluster.
+
     .LINK
         http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-neptune-dbcluster.html
 
@@ -28,7 +30,7 @@ If you specify the KmsKeyId, you must enable encryption by setting StorageEncryp
         UpdateType: Immutable
 
     .PARAMETER EngineVersion
-        The reader endpoint for the DB cluster. For example: mystack-mydbcluster-ro-1apw1j4phylrk.cg034hpkmmjt.us-east-2.rds.amazonaws.com
+        Indicates the database engine version.
 
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-neptune-dbcluster.html#cfn-neptune-dbcluster-engineversion
         PrimitiveType: String
@@ -50,7 +52,9 @@ If you specify the KmsKeyId, you must enable encryption by setting StorageEncryp
         UpdateType: Immutable
 
     .PARAMETER SnapshotIdentifier
-        Not supported by Neptune.
+        Specifies the identifier for a DB cluster snapshot. Must match the identifier of an existing snapshot.
+After you restore a DB cluster using a SnapshotIdentifier, you must specify the same SnapshotIdentifier for any future updates to the DB cluster. When you specify this property for an update, the DB cluster is not restored from the snapshot again, and the data in the database is not changed.
+However, if you don't specify the SnapshotIdentifier, an empty DB cluster is created, and the original DB cluster is deleted. If you specify a property that is different from the previous snapshot restore property, the DB cluster is restored from the snapshot specified by the SnapshotIdentifier, and the original DB cluster is deleted.
 
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-neptune-dbcluster.html#cfn-neptune-dbcluster-snapshotidentifier
         PrimitiveType: String
@@ -92,7 +96,7 @@ If you specify the KmsKeyId, you must enable encryption by setting StorageEncryp
         UpdateType: Immutable
 
     .PARAMETER DeletionProtection
-        The reader endpoint for the DB cluster. For example: mystack-mydbcluster-ro-1apw1j4phylrk.cg034hpkmmjt.us-east-2.rds.amazonaws.com
+        Indicates whether or not the DB cluster has deletion protection enabled. The database can't be deleted when deletion protection is enabled.
 
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-neptune-dbcluster.html#cfn-neptune-dbcluster-deletionprotection
         PrimitiveType: Boolean
@@ -338,16 +342,8 @@ An update may require some interruption. See ModifyDBInstance: https://docs.aws.
                 }
             })]
         $BackupRetentionPeriod,
+        [VaporShell.Core.TransformTag()]
         [parameter(Mandatory = $false)]
-        [ValidateScript( {
-                $allowedTypes = "Vaporshell.Resource.Tag","System.Management.Automation.PSCustomObject"
-                if ([string]$($_.PSTypeNames) -match "($(($allowedTypes|ForEach-Object{[RegEx]::Escape($_)}) -join '|'))") {
-                    $true
-                }
-                else {
-                    $PSCmdlet.ThrowTerminatingError((New-VSError -String "This parameter only accepts the following types: $($allowedTypes -join ", "). The current types of the value are: $($_.PSTypeNames -join ", ")."))
-                }
-            })]
         $Tags,
         [parameter(Mandatory = $false)]
         $EnableCloudwatchLogsExports,

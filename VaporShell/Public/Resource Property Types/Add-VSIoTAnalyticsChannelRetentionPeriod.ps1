@@ -11,7 +11,7 @@ How long, in days, message data is kept.
         http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iotanalytics-channel-retentionperiod.html
 
     .PARAMETER NumberOfDays
-        The number of days that message data is kept. The "unlimited" parameter must be false.
+        The number of days that message data is kept. The unlimited parameter must be false.
 
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iotanalytics-channel-retentionperiod.html#cfn-iotanalytics-channel-retentionperiod-numberofdays
         PrimitiveType: Integer

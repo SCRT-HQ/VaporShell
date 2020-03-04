@@ -57,10 +57,8 @@ The only way to guarantee that viewers retrieve an object that was fetched from 
         UpdateType: Mutable
 
     .PARAMETER TrustedSigners
-        A complex type that specifies the AWS accounts, if any, that you want to allow to create signed URLs for private content.
-If you want to require signed URLs in requests for objects in the target origin that match the PathPattern for this cache behavior, specify true for Enabled, and specify the applicable values for Quantity and Items. For more information, see Serving Private Content through CloudFront: https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/PrivateContent.html in the *Amazon CloudFront Developer Guide*.
-If you don't want to require signed URLs in requests for objects that match PathPattern, specify false for Enabled and 0 for Quantity. Omit Items.
-To add, change, or remove one or more trusted signers, change Enabled to true if it's currently false, change Quantity as applicable, and specify all of the trusted signers that you want to include in the updated distribution.
+        Specifies the AWS accounts, if any, that you want to allow to create signed URLs for private content.
+If you want to require signed URLs in requests for objects in the target origin that match the PathPattern for this cache behavior, specify a list of AWS account IDs. For more information, see Serving Private Content through CloudFront: https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/PrivateContent.html in the *Amazon CloudFront Developer Guide*.
 
         PrimitiveItemType: String
         Type: List
@@ -122,7 +120,7 @@ If you pick the second choice for your Amazon S3 Origin, you may need to forward
         UpdateType: Mutable
 
     .PARAMETER ForwardedValues
-        A complex type that specifies how CloudFront handles query strings and cookies.
+        A complex type that specifies how CloudFront handles query strings, cookies, and HTTP headers.
 
         Type: ForwardedValues
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-cloudfront-distribution-cachebehavior.html#cfn-cloudfront-distribution-cachebehavior-forwardedvalues

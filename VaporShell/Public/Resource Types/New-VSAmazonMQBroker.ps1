@@ -51,12 +51,14 @@ This permission is required to attach the ENI to the broker instance.
         UpdateType: Mutable
 
     .PARAMETER StorageType
+        The broker's storage type.
+
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-amazonmq-broker.html#cfn-amazonmq-broker-storagetype
         PrimitiveType: String
         UpdateType: Immutable
 
     .PARAMETER EngineVersion
-        The version of the broker engine. For a list of supported engine versions, see https://docs.aws.amazon.com/amazon-mq/latest/developer-guide/broker-engine.html.
+        The version of the broker engine. For a list of supported engine versions, see Engine: https://docs.aws.amazon.com/amazon-mq/latest/developer-guide/broker-engine.html in the *Amazon MQ Developer Guide*.
 
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-amazonmq-broker.html#cfn-amazonmq-broker-engineversion
         PrimitiveType: String

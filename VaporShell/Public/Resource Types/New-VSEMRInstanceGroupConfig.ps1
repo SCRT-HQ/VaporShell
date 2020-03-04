@@ -20,8 +20,7 @@ function New-VSEMRInstanceGroupConfig {
         UpdateType: Mutable
 
     .PARAMETER BidPrice
-        The maximum Spot price your are willing to pay for EC2 instances.
-If BidPrice is specified, Amazon EMR uses Spot Instances for the instance group. Specified in USD. Alternatively, a value of OnDemandPrice indicates that the maximum Spot price is set equal to the On-Demand price.
+        The bid price for each EC2 Spot instance type as defined by InstanceType. Expressed in USD. If neither BidPrice nor BidPriceAsPercentageOfOnDemandPrice is provided, BidPriceAsPercentageOfOnDemandPrice defaults to 100%.
 
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-emr-instancegroupconfig.html#cfn-emr-instancegroupconfig-bidprice
         PrimitiveType: String

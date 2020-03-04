@@ -1,10 +1,12 @@
 function New-VSQLDBLedger {
     <#
     .SYNOPSIS
-        Adds an AWS::QLDB::Ledger resource to the template. 
+        Adds an AWS::QLDB::Ledger resource to the template. The AWS::QLDB::Ledger resource creates a new Amazon Quantum Ledger Database (Amazon QLDB ledger in your AWS account. Amazon QLDB is a fully managed ledger database owned by a central trusted authority that provides a transparent, immutable, and cryptographically verifiable transaction log of all of your application changes.
 
     .DESCRIPTION
-        Adds an AWS::QLDB::Ledger resource to the template. 
+        Adds an AWS::QLDB::Ledger resource to the template. The AWS::QLDB::Ledger resource creates a new Amazon Quantum Ledger Database (Amazon QLDB ledger in your AWS account. Amazon QLDB is a fully managed ledger database owned by a central trusted authority that provides a transparent, immutable, and cryptographically verifiable transaction log of all of your application changes.
+
+For more information, see CreateLedger: https://docs.aws.amazon.com/qldb/latest/developerguide/API_CreateLedger.html in the *Amazon QLDB API Reference*.
 
     .LINK
         http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-qldb-ledger.html
@@ -13,22 +15,32 @@ function New-VSQLDBLedger {
         The logical ID must be alphanumeric (A-Za-z0-9) and unique within the template. Use the logical name to reference the resource in other parts of the template. For example, if you want to map an Amazon Elastic Block Store volume to an Amazon EC2 instance, you reference the logical IDs to associate the block stores with the instance.
 
     .PARAMETER PermissionsMode
+        The permissions mode to assign to the ledger that you want to create.
+
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-qldb-ledger.html#cfn-qldb-ledger-permissionsmode
         PrimitiveType: String
         UpdateType: Immutable
 
     .PARAMETER DeletionProtection
+        The flag that prevents a ledger from being deleted by any user. If not provided on ledger creation, this feature is enabled true by default.
+If deletion protection is enabled, you must first disable it before you can delete the ledger using the QLDB API or the AWS Command Line Interface AWS CLI. You can disable it by calling the UpdateLedger operation to set the flag to false. The QLDB console disables deletion protection for you when you use it to delete a ledger.
+
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-qldb-ledger.html#cfn-qldb-ledger-deletionprotection
         PrimitiveType: Boolean
         UpdateType: Mutable
 
     .PARAMETER Tags
+        An array of key-value pairs to apply to this resource.
+For more information, see Tag: https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-resource-tags.html.
+
         Type: List
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-qldb-ledger.html#cfn-qldb-ledger-tags
         ItemType: Tag
         UpdateType: Mutable
 
     .PARAMETER Name
+        The name of the ledger that you want to create. The name must be unique among all of your ledgers in the current AWS Region.
+
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-qldb-ledger.html#cfn-qldb-ledger-name
         PrimitiveType: String
         UpdateType: Immutable
@@ -100,16 +112,8 @@ function New-VSQLDBLedger {
                 }
             })]
         $DeletionProtection,
+        [VaporShell.Core.TransformTag()]
         [parameter(Mandatory = $false)]
-        [ValidateScript( {
-                $allowedTypes = "Vaporshell.Resource.Tag","System.Management.Automation.PSCustomObject"
-                if ([string]$($_.PSTypeNames) -match "($(($allowedTypes|ForEach-Object{[RegEx]::Escape($_)}) -join '|'))") {
-                    $true
-                }
-                else {
-                    $PSCmdlet.ThrowTerminatingError((New-VSError -String "This parameter only accepts the following types: $($allowedTypes -join ", "). The current types of the value are: $($_.PSTypeNames -join ", ")."))
-                }
-            })]
         $Tags,
         [parameter(Mandatory = $false)]
         [ValidateScript( {

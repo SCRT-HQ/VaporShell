@@ -13,7 +13,11 @@ SpotOptionsRequest is a property of the  AWS::EC2::EC2Fleet: https://docs.aws.am
         http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-ec2fleet-spotoptionsrequest.html
 
     .PARAMETER AllocationStrategy
-        Indicates how to allocate the target capacity across the Spot pools specified by the Spot Fleet request. The default is lowestPrice.
+        Indicates how to allocate the target Spot Instance capacity across the Spot Instance pools specified by the EC2 Fleet.
+If the allocation strategy is lowestPrice, EC2 Fleet launches instances from the Spot Instance pools with the lowest price. This is the default allocation strategy.
+If the allocation strategy is diversified, EC2 Fleet launches instances from all the Spot Instance pools that you specify.
+If the allocation strategy is capacityOptimized, EC2 Fleet launches instances from Spot Instance pools that are optimally chosen based on the available Spot Instance capacity.
+*Allowed Values*: lowestPrice | diversified | capacityOptimized
 
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-ec2fleet-spotoptionsrequest.html#cfn-ec2-ec2fleet-spotoptionsrequest-allocationstrategy
         PrimitiveType: String

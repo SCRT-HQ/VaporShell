@@ -1,10 +1,10 @@
 function New-VSACMPCACertificate {
     <#
     .SYNOPSIS
-        Adds an AWS::ACMPCA::Certificate resource to the template. 
+        Adds an AWS::ACMPCA::Certificate resource to the template. The AWS::ACMPCA::Certificate resource is used to issue a certificate using your private certificate authority. For more information, see the IssueCertificate: https://docs.aws.amazon.com/acm-pca/latest/APIReference/API_IssueCertificate.html action.
 
     .DESCRIPTION
-        Adds an AWS::ACMPCA::Certificate resource to the template. 
+        Adds an AWS::ACMPCA::Certificate resource to the template. The AWS::ACMPCA::Certificate resource is used to issue a certificate using your private certificate authority. For more information, see the IssueCertificate: https://docs.aws.amazon.com/acm-pca/latest/APIReference/API_IssueCertificate.html action.
 
     .LINK
         http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-acmpca-certificate.html
@@ -13,26 +13,37 @@ function New-VSACMPCACertificate {
         The logical ID must be alphanumeric (A-Za-z0-9) and unique within the template. Use the logical name to reference the resource in other parts of the template. For example, if you want to map an Amazon Elastic Block Store volume to an Amazon EC2 instance, you reference the logical IDs to associate the block stores with the instance.
 
     .PARAMETER CertificateAuthorityArn
+        The Amazon Resource Name ARN for the private CA used to issue the certificate.
+
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-acmpca-certificate.html#cfn-acmpca-certificate-certificateauthorityarn
         UpdateType: Immutable
         PrimitiveType: String
 
     .PARAMETER CertificateSigningRequest
+        The certificate signing request CSR for the certificate.
+
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-acmpca-certificate.html#cfn-acmpca-certificate-certificatesigningrequest
         UpdateType: Immutable
         PrimitiveType: String
 
     .PARAMETER SigningAlgorithm
+        The name of the algorithm that will be used to sign the certificate to be issued.
+This parameter should not be confused with the SigningAlgorithm parameter used to sign a CSR .
+
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-acmpca-certificate.html#cfn-acmpca-certificate-signingalgorithm
         UpdateType: Immutable
         PrimitiveType: String
 
     .PARAMETER TemplateArn
+        Specifies a custom configuration template to use when issuing a certificate. If this parameter is not provided, ACM Private CA defaults to the EndEntityCertificate/V1 template. For more information about ACM Private CA templates, see Using Templates: https://docs.aws.amazon.com/acm-pca/latest/userguide/UsingTemplates.html.
+
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-acmpca-certificate.html#cfn-acmpca-certificate-templatearn
         UpdateType: Immutable
         PrimitiveType: String
 
     .PARAMETER Validity
+        The period of time during which the certificate will be valid.
+
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-acmpca-certificate.html#cfn-acmpca-certificate-validity
         UpdateType: Immutable
         Type: Validity

@@ -118,6 +118,12 @@ Specify a value between 60 and 360000.
 + stream.memory.2xlarge
 + stream.memory.4xlarge
 + stream.memory.8xlarge
++ stream.memory.z1d.large
++ stream.memory.z1d.xlarge
++ stream.memory.z1d.2xlarge
++ stream.memory.z1d.3xlarge
++ stream.memory.z1d.6xlarge
++ stream.memory.z1d.12xlarge
 + stream.graphics-design.large
 + stream.graphics-design.xlarge
 + stream.graphics-design.2xlarge
@@ -307,16 +313,8 @@ Specify a value between 60 and 360000.
                 }
             })]
         $InstanceType,
+        [VaporShell.Core.TransformTag()]
         [parameter(Mandatory = $false)]
-        [ValidateScript( {
-                $allowedTypes = "Vaporshell.Resource.Tag","System.Management.Automation.PSCustomObject"
-                if ([string]$($_.PSTypeNames) -match "($(($allowedTypes|ForEach-Object{[RegEx]::Escape($_)}) -join '|'))") {
-                    $true
-                }
-                else {
-                    $PSCmdlet.ThrowTerminatingError((New-VSError -String "This parameter only accepts the following types: $($allowedTypes -join ", "). The current types of the value are: $($_.PSTypeNames -join ", ")."))
-                }
-            })]
         $Tags,
         [parameter(Mandatory = $false)]
         [ValidateScript( {

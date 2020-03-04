@@ -27,7 +27,7 @@ function New-VSDAXCluster {
         UpdateType: Mutable
 
     .PARAMETER ReplicationFactor
-        The number of nodes in the DAX cluster. A replication factor of 1 will create a single-node cluster, without any read replicas. For additional fault tolerance, you can create a multiple node cluster with one or more read replicas. To do this, set *ReplicationFactor* to 2 or more.
+        The number of nodes in the DAX cluster. A replication factor of 1 will create a single-node cluster, without any read replicas. For additional fault tolerance, you can create a multiple node cluster with one or more read replicas. To do this, set ReplicationFactor to a number between 3 one primary and two read replicas and 10 one primary and nine read replicas. If the AvailabilityZones parameter is provided, its length must equal the ReplicationFactor.
 AWS recommends that you have at least two read replicas per cluster.
 
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-dax-cluster.html#cfn-dax-cluster-replicationfactor
@@ -42,7 +42,7 @@ AWS recommends that you have at least two read replicas per cluster.
         UpdateType: Mutable
 
     .PARAMETER AvailabilityZones
-        The Availability Zones AZs in which the cluster nodes will be created. All nodes belonging to the cluster are placed in these Availability Zones. Use this parameter if you want to distribute the nodes across multiple AZs.
+        The Availability Zones AZs in which the cluster nodes will reside after the cluster has been created or updated. If provided, the length of this list must equal the ReplicationFactor parameter. If you omit this parameter, DAX will spread the nodes across Availability Zones for the highest availability.
 
         PrimitiveItemType: String
         Type: List
@@ -51,7 +51,6 @@ AWS recommends that you have at least two read replicas per cluster.
 
     .PARAMETER IAMRoleARN
         A valid Amazon Resource Name ARN that identifies an IAM role. At runtime, DAX will assume this role and use the role's permissions to access DynamoDB on your behalf.
-Updates are not supported for this property.
 
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-dax-cluster.html#cfn-dax-cluster-iamrolearn
         PrimitiveType: String
@@ -60,7 +59,6 @@ Updates are not supported for this property.
     .PARAMETER SubnetGroupName
         The name of the subnet group to be used for the replication group.
 DAX clusters can only run in an Amazon VPC environment. All of the subnets that you specify in a subnet group must exist in the same VPC.
-Updates are not supported for this property.
 
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-dax-cluster.html#cfn-dax-cluster-subnetgroupname
         PrimitiveType: String
@@ -92,7 +90,6 @@ If this parameter is not specified, DAX assigns the default VPC security group t
 
     .PARAMETER NodeType
         The node type for the nodes in the cluster. All nodes in a DAX cluster are of the same type.
-Updates are not supported for this property.
 
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-dax-cluster.html#cfn-dax-cluster-nodetype
         PrimitiveType: String
@@ -100,7 +97,6 @@ Updates are not supported for this property.
 
     .PARAMETER ClusterName
         The name of the DAX cluster.
-Updates are not supported for this property.
 
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-dax-cluster.html#cfn-dax-cluster-clustername
         PrimitiveType: String

@@ -14,7 +14,6 @@ function New-VSCodePipelineCustomActionType {
 
     .PARAMETER Category
         The category of the custom action, such as a build action or a test action.
-Although Source and Approval are listed as valid values, they are not currently functional. These values are reserved for future use.
 
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-codepipeline-customactiontype.html#cfn-codepipeline-customactiontype-category
         PrimitiveType: String
@@ -59,6 +58,8 @@ You can refer to a name in the configuration properties of the custom action wit
         UpdateType: Immutable
 
     .PARAMETER Tags
+        The tags for the custom action.
+
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-codepipeline-customactiontype.html#cfn-codepipeline-customactiontype-tags
         DuplicatesAllowed: True
         ItemType: Tag
@@ -156,16 +157,8 @@ You can refer to a name in the configuration properties of the custom action wit
         $Provider,
         [parameter(Mandatory = $false)]
         $Settings,
+        [VaporShell.Core.TransformTag()]
         [parameter(Mandatory = $false)]
-        [ValidateScript( {
-                $allowedTypes = "Vaporshell.Resource.Tag","System.Management.Automation.PSCustomObject"
-                if ([string]$($_.PSTypeNames) -match "($(($allowedTypes|ForEach-Object{[RegEx]::Escape($_)}) -join '|'))") {
-                    $true
-                }
-                else {
-                    $PSCmdlet.ThrowTerminatingError((New-VSError -String "This parameter only accepts the following types: $($allowedTypes -join ", "). The current types of the value are: $($_.PSTypeNames -join ", ")."))
-                }
-            })]
         $Tags,
         [parameter(Mandatory = $true)]
         [ValidateScript( {

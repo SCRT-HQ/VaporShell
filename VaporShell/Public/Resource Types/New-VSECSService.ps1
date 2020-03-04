@@ -27,24 +27,30 @@ function New-VSECSService {
         UpdateType: Mutable
 
     .PARAMETER DeploymentController
+        The deployment controller to use for the service.
+
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ecs-service.html#cfn-ecs-service-deploymentcontroller
         Type: DeploymentController
         UpdateType: Immutable
 
     .PARAMETER DesiredCount
         The number of instantiations of the specified task definition to place and keep running on your cluster.
+This is required if schedulingStrategy is REPLICA or is not specified. If schedulingStrategy is DAEMON then this is not required.
 
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ecs-service.html#cfn-ecs-service-desiredcount
         PrimitiveType: Integer
         UpdateType: Mutable
 
     .PARAMETER EnableECSManagedTags
+        Specifies whether to enable Amazon ECS managed tags for the tasks within the service. For more information, see Tagging Your Amazon ECS Resources: https://docs.aws.amazon.com/AmazonECS/latest/developerguide/ecs-using-tags.html in the *Amazon Elastic Container Service Developer Guide*.
+
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ecs-service.html#cfn-ecs-service-enableecsmanagedtags
         PrimitiveType: Boolean
         UpdateType: Immutable
 
     .PARAMETER HealthCheckGracePeriodSeconds
-        The period of time, in seconds, that the Amazon ECS service scheduler should ignore unhealthy Elastic Load Balancing target health checks after a task has first started. This is only valid if your service is configured to use a load balancer. If your service's tasks take a while to start and respond to Elastic Load Balancing health checks, you can specify a health check grace period of up to 2,147,483,647 seconds. During that time, the ECS service scheduler ignores health check status. This grace period can prevent the ECS service scheduler from marking tasks as unhealthy and stopping them before they have time to come up.
+        The period of time, in seconds, that the Amazon ECS service scheduler should ignore unhealthy Elastic Load Balancing target health checks after a task has first started. This is only used when your service is configured to use a load balancer. If your service has a load balancer defined and you don't specify a health check grace period value, the default value of 0 is used.
+If your service's tasks take a while to start and respond to Elastic Load Balancing health checks, you can specify a health check grace period of up to 2,147,483,647 seconds. During that time, the Amazon ECS service scheduler ignores health check status. This grace period can prevent the service scheduler from marking tasks as unhealthy and stopping them before they have time to come up.
 
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ecs-service.html#cfn-ecs-service-healthcheckgraceperiodseconds
         PrimitiveType: Integer
@@ -99,13 +105,15 @@ function New-VSECSService {
         UpdateType: Immutable
 
     .PARAMETER PropagateTags
+        Specifies whether to propagate the tags from the task definition or the service to the tasks in the service. If no value is specified, the tags are not propagated. Tags can only be propagated to the tasks within the service during service creation. To add tags to a task after service creation, use the TagResource: https://docs.aws.amazon.com/AmazonECS/latest/APIReference/API_TagResource.html API action.
+
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ecs-service.html#cfn-ecs-service-propagatetags
         PrimitiveType: String
         UpdateType: Immutable
 
     .PARAMETER Role
         The name or full Amazon Resource Name ARN of the IAM role that allows Amazon ECS to make calls to your load balancer on your behalf. This parameter is only permitted if you are using a load balancer with your service and your task definition does not use the awsvpc network mode. If you specify the role parameter, you must also specify a load balancer object with the loadBalancers parameter.
-If your account has already created the Amazon ECS service-linked role, that role is used by default for your service unless you specify a role here. The service-linked role is required if your task definition uses the awsvpc network mode, in which case you should not specify a role here. For more information, see Using Service-Linked Roles for Amazon ECS: https://docs.aws.amazon.com/AmazonECS/latest/developerguide/using-service-linked-roles.html in the *Amazon Elastic Container Service Developer Guide*.
+If your account has already created the Amazon ECS service-linked role, that role is used by default for your service unless you specify a role here. The service-linked role is required if your task definition uses the awsvpc network mode or if the service is configured to use service discovery, an external deployment controller, multiple target groups, or Elastic Inference accelerators in which case you should not specify a role here. For more information, see Using Service-Linked Roles for Amazon ECS: https://docs.aws.amazon.com/AmazonECS/latest/developerguide/using-service-linked-roles.html in the *Amazon Elastic Container Service Developer Guide*.
 If your specified role has a path other than /, then you must either specify the full role ARN this is recommended or prefix the role name with the path. For example, if a role with the name bar has a path of /foo/ then you would specify /foo/bar as the role name. For more information, see Friendly Names and Paths: https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_identifiers.html#identifiers-friendly-names in the *IAM User Guide*.
 
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ecs-service.html#cfn-ecs-service-role
@@ -142,6 +150,16 @@ Service discovery is supported for Fargate tasks if you are using platform versi
         UpdateType: Immutable
 
     .PARAMETER Tags
+        The metadata that you apply to the service to help you categorize and organize them. Each tag consists of a key and an optional value, both of which you define. When a service is deleted, the tags are deleted as well.
+The following basic restrictions apply to tags:
++ Maximum number of tags per resource - 50
++ For each resource, each tag key must be unique, and each tag key can have only one value.
++ Maximum key length - 128 Unicode characters in UTF-8
++ Maximum value length - 256 Unicode characters in UTF-8
++ If your tagging schema is used across multiple services and resources, remember that other services may have restrictions on allowed characters. Generally allowed characters are: letters, numbers, and spaces representable in UTF-8, and the following characters: + - = . _ : / @.
++ Tag keys and values are case-sensitive.
++ Do not use aws:, AWS:, or any upper or lowercase combination of such as a prefix for either keys or values as it is reserved for AWS use. You cannot edit or delete tag keys or values with this prefix. Tags with this prefix do not count against your tags per resource limit.
+
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ecs-service.html#cfn-ecs-service-tags
         DuplicatesAllowed: True
         ItemType: Tag
@@ -149,7 +167,7 @@ Service discovery is supported for Fargate tasks if you are using platform versi
         UpdateType: Mutable
 
     .PARAMETER TaskDefinition
-        The family and revision family:revision or full ARN of the task definition to run in your service. If a revision is not specified, the latest ACTIVE revision is used.
+        The family and revision family:revision or full ARN of the task definition to run in your service. The revision is required in order for the resource to stabilize.
 A task definition must be specified if the service is using the ECS deployment controller.
 
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ecs-service.html#cfn-ecs-service-taskdefinition
@@ -361,16 +379,8 @@ A task definition must be specified if the service is using the ECS deployment c
                 }
             })]
         $ServiceRegistries,
+        [VaporShell.Core.TransformTag()]
         [parameter(Mandatory = $false)]
-        [ValidateScript( {
-                $allowedTypes = "Vaporshell.Resource.Tag","System.Management.Automation.PSCustomObject"
-                if ([string]$($_.PSTypeNames) -match "($(($allowedTypes|ForEach-Object{[RegEx]::Escape($_)}) -join '|'))") {
-                    $true
-                }
-                else {
-                    $PSCmdlet.ThrowTerminatingError((New-VSError -String "This parameter only accepts the following types: $($allowedTypes -join ", "). The current types of the value are: $($_.PSTypeNames -join ", ")."))
-                }
-            })]
         $Tags,
         [parameter(Mandatory = $false)]
         [ValidateScript( {

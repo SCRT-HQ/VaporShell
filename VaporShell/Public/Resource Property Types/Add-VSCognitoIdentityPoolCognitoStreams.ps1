@@ -18,7 +18,7 @@ CognitoStreams is a property of the AWS::Cognito::IdentityPool: https://docs.aws
         UpdateType: Mutable
 
     .PARAMETER StreamName
-        The name of the Amazon Cognito stream to receive updates. This stream must be in the developer's account and in the same region as the identity pool.
+        The name of the Amazon Cognito stream to receive updates. This stream must be in the developer's account and in the same Region as the identity pool.
 
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-cognito-identitypool-cognitostreams.html#cfn-cognito-identitypool-cognitostreams-streamname
         PrimitiveType: String

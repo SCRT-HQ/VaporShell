@@ -1,21 +1,25 @@
 function Add-VSEventSchemasSchemaTagsEntry {
     <#
     .SYNOPSIS
-        Adds an AWS::EventSchemas::Schema.TagsEntry resource property to the template. 
+        Adds an AWS::EventSchemas::Schema.TagsEntry resource property to the template. Tags to associate with the schema.
 
     .DESCRIPTION
         Adds an AWS::EventSchemas::Schema.TagsEntry resource property to the template.
-
+Tags to associate with the schema.
 
     .LINK
         http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-eventschemas-schema-tagsentry.html
 
     .PARAMETER Value
+        They value of a key-value pair.
+
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-eventschemas-schema-tagsentry.html#cfn-eventschemas-schema-tagsentry-value
         PrimitiveType: String
         UpdateType: Mutable
 
     .PARAMETER Key
+        They key of a key-value pair.
+
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-eventschemas-schema-tagsentry.html#cfn-eventschemas-schema-tagsentry-key
         PrimitiveType: String
         UpdateType: Mutable

@@ -1,10 +1,10 @@
 function New-VSCloudFrontDistribution {
     <#
     .SYNOPSIS
-        Adds an AWS::CloudFront::Distribution resource to the template. The distribution's information.
+        Adds an AWS::CloudFront::Distribution resource to the template. A distribution tells CloudFront where you want content to be delivered from, and the details about how to track and manage content delivery.
 
     .DESCRIPTION
-        Adds an AWS::CloudFront::Distribution resource to the template. The distribution's information.
+        Adds an AWS::CloudFront::Distribution resource to the template. A distribution tells CloudFront where you want content to be delivered from, and the details about how to track and manage content delivery.
 
     .LINK
         http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-cloudfront-distribution.html
@@ -74,16 +74,8 @@ function New-VSCloudFrontDistribution {
         $LogicalId,
         [parameter(Mandatory = $true)]
         $DistributionConfig,
+        [VaporShell.Core.TransformTag()]
         [parameter(Mandatory = $false)]
-        [ValidateScript( {
-                $allowedTypes = "Vaporshell.Resource.Tag","System.Management.Automation.PSCustomObject"
-                if ([string]$($_.PSTypeNames) -match "($(($allowedTypes|ForEach-Object{[RegEx]::Escape($_)}) -join '|'))") {
-                    $true
-                }
-                else {
-                    $PSCmdlet.ThrowTerminatingError((New-VSError -String "This parameter only accepts the following types: $($allowedTypes -join ", "). The current types of the value are: $($_.PSTypeNames -join ", ")."))
-                }
-            })]
         $Tags,
         [ValidateSet("Delete","Retain","Snapshot")]
         [System.String]

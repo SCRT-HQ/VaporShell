@@ -1,10 +1,10 @@
 function New-VSCloudFrontCloudFrontOriginAccessIdentity {
     <#
     .SYNOPSIS
-        Adds an AWS::CloudFront::CloudFrontOriginAccessIdentity resource to the template. The request to create a new origin access identity.
+        Adds an AWS::CloudFront::CloudFrontOriginAccessIdentity resource to the template. The request to create a new origin access identity (OAI. An origin access identity is a special CloudFront user that you can associate with Amazon S3 origins, so that you can secure all or just some of your Amazon S3 content. For more information, see  Restricting Access to Amazon S3 Content by Using an Origin Access Identity: https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/private-content-restricting-access-to-s3.html in the *Amazon CloudFront Developer Guide*.
 
     .DESCRIPTION
-        Adds an AWS::CloudFront::CloudFrontOriginAccessIdentity resource to the template. The request to create a new origin access identity.
+        Adds an AWS::CloudFront::CloudFrontOriginAccessIdentity resource to the template. The request to create a new origin access identity (OAI. An origin access identity is a special CloudFront user that you can associate with Amazon S3 origins, so that you can secure all or just some of your Amazon S3 content. For more information, see  Restricting Access to Amazon S3 Content by Using an Origin Access Identity: https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/private-content-restricting-access-to-s3.html in the *Amazon CloudFront Developer Guide*.
 
     .LINK
         http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-cloudfront-cloudfrontoriginaccessidentity.html

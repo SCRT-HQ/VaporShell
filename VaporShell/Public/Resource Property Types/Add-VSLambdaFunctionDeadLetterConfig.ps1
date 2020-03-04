@@ -1,11 +1,11 @@
 function Add-VSLambdaFunctionDeadLetterConfig {
     <#
     .SYNOPSIS
-        Adds an AWS::Lambda::Function.DeadLetterConfig resource property to the template. The dead letter queue: https://docs.aws.amazon.com/lambda/latest/dg/dlq.html for failed asynchronous invocations.
+        Adds an AWS::Lambda::Function.DeadLetterConfig resource property to the template. The dead-letter queue: https://docs.aws.amazon.com/lambda/latest/dg/invocation-async.html#dlq for failed asynchronous invocations.
 
     .DESCRIPTION
         Adds an AWS::Lambda::Function.DeadLetterConfig resource property to the template.
-The dead letter queue: https://docs.aws.amazon.com/lambda/latest/dg/dlq.html for failed asynchronous invocations.
+The dead-letter queue: https://docs.aws.amazon.com/lambda/latest/dg/invocation-async.html#dlq for failed asynchronous invocations.
 
     .LINK
         http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-lambda-function-deadletterconfig.html

@@ -1,10 +1,10 @@
 function New-VSGlueWorkflow {
     <#
     .SYNOPSIS
-        Adds an AWS::Glue::Workflow resource to the template. 
+        Adds an AWS::Glue::Workflow resource to the template. The AWS::Glue::Workflow is an AWS Glue resource type that manages AWS Glue workflows. A workflow is a container for a set of related jobs, crawlers, and triggers in AWS Glue. Using a workflow, you can design a complex multi-job extract, transform, and load (ETL activity that AWS Glue can execute and track as single entity
 
     .DESCRIPTION
-        Adds an AWS::Glue::Workflow resource to the template. 
+        Adds an AWS::Glue::Workflow resource to the template. The AWS::Glue::Workflow is an AWS Glue resource type that manages AWS Glue workflows. A workflow is a container for a set of related jobs, crawlers, and triggers in AWS Glue. Using a workflow, you can design a complex multi-job extract, transform, and load (ETL activity that AWS Glue can execute and track as single entity
 
     .LINK
         http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-glue-workflow.html
@@ -13,21 +13,29 @@ function New-VSGlueWorkflow {
         The logical ID must be alphanumeric (A-Za-z0-9) and unique within the template. Use the logical name to reference the resource in other parts of the template. For example, if you want to map an Amazon Elastic Block Store volume to an Amazon EC2 instance, you reference the logical IDs to associate the block stores with the instance.
 
     .PARAMETER Description
+        A description of the workflow
+
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-glue-workflow.html#cfn-glue-workflow-description
         PrimitiveType: String
         UpdateType: Mutable
 
     .PARAMETER DefaultRunProperties
+        A collection of properties to be used as part of each execution of the workflow
+
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-glue-workflow.html#cfn-glue-workflow-defaultrunproperties
         PrimitiveType: Json
         UpdateType: Mutable
 
     .PARAMETER Tags
+        The tags to use with this workflow.
+
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-glue-workflow.html#cfn-glue-workflow-tags
         PrimitiveType: Json
         UpdateType: Mutable
 
     .PARAMETER Name
+        The name of the workflow representing the flow
+
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-glue-workflow.html#cfn-glue-workflow-name
         PrimitiveType: String
         UpdateType: Immutable

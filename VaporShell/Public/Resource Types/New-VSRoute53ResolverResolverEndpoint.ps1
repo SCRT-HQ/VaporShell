@@ -1,14 +1,14 @@
 function New-VSRoute53ResolverResolverEndpoint {
     <#
     .SYNOPSIS
-        Adds an AWS::Route53Resolver::ResolverEndpoint resource to the template. Creates a resolver endpoint. There are two types of resolver endpoints, inbound and outbound:
+        Adds an AWS::Route53Resolver::ResolverEndpoint resource to the template. Creates a Resolver endpoint. There are two types of Resolver endpoints, inbound and outbound:
 
     .DESCRIPTION
-        Adds an AWS::Route53Resolver::ResolverEndpoint resource to the template. Creates a resolver endpoint. There are two types of resolver endpoints, inbound and outbound:
+        Adds an AWS::Route53Resolver::ResolverEndpoint resource to the template. Creates a Resolver endpoint. There are two types of Resolver endpoints, inbound and outbound:
 
-+ An *inbound resolver endpoint* forwards DNS queries to the DNS service for a VPC from your network or another VPC.
++ An *inbound Resolver endpoint* forwards DNS queries to the DNS service for a VPC from your network.
 
-+ An *outbound resolver endpoint* forwards DNS queries from the DNS service for a VPC to your network or another VPC.
++ An *outbound Resolver endpoint* forwards DNS queries from the DNS service for a VPC to your network.
 
     .LINK
         http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-route53resolver-resolverendpoint.html
@@ -25,9 +25,9 @@ function New-VSRoute53ResolverResolverEndpoint {
         UpdateType: Mutable
 
     .PARAMETER Direction
-        Indicates whether the resolver endpoint allows inbound or outbound DNS queries:
-+  INBOUND: allows DNS queries to your VPC from your network or another VPC
-+  OUTBOUND: allows DNS queries from your VPC to your network or another VPC
+        Indicates whether the Resolver endpoint allows inbound or outbound DNS queries:
++  INBOUND: allows DNS queries to your VPC from your network
++  OUTBOUND: allows DNS queries from your VPC to your network
 
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-route53resolver-resolverendpoint.html#cfn-route53resolver-resolverendpoint-direction
         PrimitiveType: String
@@ -125,16 +125,8 @@ function New-VSRoute53ResolverResolverEndpoint {
         $Direction,
         [parameter(Mandatory = $true)]
         $SecurityGroupIds,
+        [VaporShell.Core.TransformTag()]
         [parameter(Mandatory = $false)]
-        [ValidateScript( {
-                $allowedTypes = "Vaporshell.Resource.Tag","System.Management.Automation.PSCustomObject"
-                if ([string]$($_.PSTypeNames) -match "($(($allowedTypes|ForEach-Object{[RegEx]::Escape($_)}) -join '|'))") {
-                    $true
-                }
-                else {
-                    $PSCmdlet.ThrowTerminatingError((New-VSError -String "This parameter only accepts the following types: $($allowedTypes -join ", "). The current types of the value are: $($_.PSTypeNames -join ", ")."))
-                }
-            })]
         $Tags,
         [parameter(Mandatory = $false)]
         [ValidateScript( {

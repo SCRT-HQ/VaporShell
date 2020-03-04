@@ -1,11 +1,11 @@
 function Add-VSCognitoUserPoolUserAttributeType {
     <#
     .SYNOPSIS
-        Adds an AWS::Cognito::UserPoolUser.AttributeType resource property to the template. AttributeType is a property of the AWS::Cognito::UserPoolUser: https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-cognito-userpooluser.html resource that defines name-value pairs for a user in an Amazon Cognito User Pool.
+        Adds an AWS::Cognito::UserPoolUser.AttributeType resource property to the template. Specifies whether the attribute is standard or custom.
 
     .DESCRIPTION
         Adds an AWS::Cognito::UserPoolUser.AttributeType resource property to the template.
-AttributeType is a property of the AWS::Cognito::UserPoolUser: https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-cognito-userpooluser.html resource that defines name-value pairs for a user in an Amazon Cognito User Pool.
+Specifies whether the attribute is standard or custom.
 
     .LINK
         http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-cognito-userpooluser-attributetype.html

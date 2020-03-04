@@ -11,14 +11,17 @@ Represents information about an action declaration.
         http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-codepipeline-pipeline-stages-actions.html
 
     .PARAMETER ActionTypeId
-        The configuration information for the action type.
+        Specifies the action type and the provider of the action.
 
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-codepipeline-pipeline-stages-actions.html#cfn-codepipeline-pipeline-stages-actions-actiontypeid
         Type: ActionTypeId
         UpdateType: Mutable
 
     .PARAMETER Configuration
-        The action declaration's configuration.
+        The action's configuration. These are key-value pairs that specify input values for an action. For more information, see Action Structure Requirements in CodePipeline: https://docs.aws.amazon.com/codepipeline/latest/userguide/reference-pipeline-structure.html#action-requirements. For the list of configuration properties for the AWS CloudFormation action type in CodePipeline, see Configuration Properties Reference: https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/continuous-delivery-codepipeline-action-reference.html in the *AWS CloudFormation User Guide*. For template snippets with examples, see Using Parameter Override Functions with CodePipeline Pipelines: https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/continuous-delivery-codepipeline-parameter-override-functions.html in the *AWS CloudFormation User Guide*.
+The values can be represented in either JSON or YAML format. For example, the JSON configuration item format is as follows:
+*JSON:*
+"Configuration" : { Key : Value },
 
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-codepipeline-pipeline-stages-actions.html#cfn-codepipeline-pipeline-stages-actions-configuration
         PrimitiveType: Json
@@ -41,7 +44,7 @@ Represents information about an action declaration.
         UpdateType: Mutable
 
     .PARAMETER Namespace
-        *Update requires*: No interruption: https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt
+        The variable namespace associated with the action. All variables produced as output by this action fall under this namespace.
 
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-codepipeline-pipeline-stages-actions.html#cfn-codepipeline-pipeline-actiondeclaration-namespace
         PrimitiveType: String
@@ -64,7 +67,7 @@ Represents information about an action declaration.
         UpdateType: Mutable
 
     .PARAMETER RoleArn
-        The ARN of the IAM service role that will perform the declared action. This is assumed through the roleArn for the pipeline.
+        The ARN of the IAM service role that performs the declared action. This is assumed through the roleArn for the pipeline.
 
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-codepipeline-pipeline-stages-actions.html#cfn-codepipeline-pipeline-stages-actions-rolearn
         PrimitiveType: String

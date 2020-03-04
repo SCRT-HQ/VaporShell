@@ -1,10 +1,10 @@
 function New-VSGameLiftMatchmakingRuleSet {
     <#
     .SYNOPSIS
-        Adds an AWS::GameLift::MatchmakingRuleSet resource to the template. 
+        Adds an AWS::GameLift::MatchmakingRuleSet resource to the template. The AWS::GameLift::MatchmakingRuleSet resource creates a new rule set for FlexMatch matchmaking. A rule set describes the type of match to create, such as the number and size of teams. It also sets the parameters for acceptable player matches, such as minimum skill level or character type. A rule set is used by a matchmaking configuration.
 
     .DESCRIPTION
-        Adds an AWS::GameLift::MatchmakingRuleSet resource to the template. 
+        Adds an AWS::GameLift::MatchmakingRuleSet resource to the template. The AWS::GameLift::MatchmakingRuleSet resource creates a new rule set for FlexMatch matchmaking. A rule set describes the type of match to create, such as the number and size of teams. It also sets the parameters for acceptable player matches, such as minimum skill level or character type. A rule set is used by a matchmaking configuration.
 
     .LINK
         http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-gamelift-matchmakingruleset.html
@@ -13,11 +13,15 @@ function New-VSGameLiftMatchmakingRuleSet {
         The logical ID must be alphanumeric (A-Za-z0-9) and unique within the template. Use the logical name to reference the resource in other parts of the template. For example, if you want to map an Amazon Elastic Block Store volume to an Amazon EC2 instance, you reference the logical IDs to associate the block stores with the instance.
 
     .PARAMETER RuleSetBody
+        A collection of matchmaking rules, formatted as a JSON string. Comments are not allowed in JSON, but most elements support a description field.
+
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-gamelift-matchmakingruleset.html#cfn-gamelift-matchmakingruleset-rulesetbody
         PrimitiveType: String
         UpdateType: Immutable
 
     .PARAMETER Name
+        A unique identifier for a matchmaking rule set. A matchmaking configuration identifies the rule set it uses by this name value. Note that the rule set name is different from the optional name field in the rule set body.
+
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-gamelift-matchmakingruleset.html#cfn-gamelift-matchmakingruleset-name
         PrimitiveType: String
         UpdateType: Immutable

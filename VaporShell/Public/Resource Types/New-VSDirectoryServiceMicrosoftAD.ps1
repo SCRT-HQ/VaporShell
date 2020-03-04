@@ -35,7 +35,7 @@ After an alias has been created, it cannot be deleted or reused, so this operati
         UpdateType: Mutable
 
     .PARAMETER Name
-        The fully qualified domain name for the directory, such as corp.example.com. This name will resolve inside your VPC only. It does not need to be publicly resolvable.
+        The fully qualified domain name for the AWS Managed Microsoft AD directory, such as corp.example.com. This name will resolve inside your VPC only. It does not need to be publicly resolvable.
 
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-directoryservice-microsoftad.html#cfn-directoryservice-microsoftad-name
         PrimitiveType: String
@@ -43,13 +43,14 @@ After an alias has been created, it cannot be deleted or reused, so this operati
 
     .PARAMETER Password
         The password for the default administrative user named Admin.
+If you need to change the password for the administrator account, see the ResetUserPassword: https://docs.aws.amazon.com/directoryservice/latest/devguide/API_ResetUserPassword.html API call in the *AWS Directory Service API Reference*.
 
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-directoryservice-microsoftad.html#cfn-directoryservice-microsoftad-password
         PrimitiveType: String
         UpdateType: Immutable
 
     .PARAMETER ShortName
-        The NetBIOS name for your domain. A short identifier for your domain, such as CORP. If you don't specify a NetBIOS name, it will default to the first part of your directory DNS. For example, CORP for the directory DNS corp.example.com.
+        The NetBIOS name for your domain, such as CORP. If you don't specify a NetBIOS name, it will default to the first part of your directory DNS. For example, CORP for the directory DNS corp.example.com.
 
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-directoryservice-microsoftad.html#cfn-directoryservice-microsoftad-shortname
         PrimitiveType: String

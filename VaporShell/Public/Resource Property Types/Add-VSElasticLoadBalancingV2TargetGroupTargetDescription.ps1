@@ -29,7 +29,7 @@ If the target type is lambda, this parameter is optional and the only supported 
         UpdateType: Mutable
 
     .PARAMETER Port
-        The port on which the target is listening.
+        The port on which the target is listening. Not used if the target is a Lambda function.
 
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-elasticloadbalancingv2-targetgroup-targetdescription.html#cfn-elasticloadbalancingv2-targetgroup-targetdescription-port
         PrimitiveType: Integer

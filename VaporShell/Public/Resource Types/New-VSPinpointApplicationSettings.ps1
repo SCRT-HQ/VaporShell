@@ -1,12 +1,10 @@
 function New-VSPinpointApplicationSettings {
     <#
     .SYNOPSIS
-        Adds an AWS::Pinpoint::ApplicationSettings resource to the template. Specifies the settings for an Amazon Pinpoint app.
+        Adds an AWS::Pinpoint::ApplicationSettings resource to the template. The AWS::Pinpoint::ApplicationSettings resource defines the default settings for an Amazon Pinpoint application. In Amazon Pinpoint, an *application* (also referred to as an *app* or *project* is a collection of related settings, customer information, segments, and campaigns, and other types of Amazon Pinpoint resources.
 
     .DESCRIPTION
-        Adds an AWS::Pinpoint::ApplicationSettings resource to the template. Specifies the settings for an Amazon Pinpoint app.
-
-In Amazon Pinpoint, an *app* (also referred to as a *project* is a collection of settings, customer information, segments, and campaigns.
+        Adds an AWS::Pinpoint::ApplicationSettings resource to the template. The AWS::Pinpoint::ApplicationSettings resource defines the default settings for an Amazon Pinpoint application. In Amazon Pinpoint, an *application* (also referred to as an *app* or *project* is a collection of related settings, customer information, segments, and campaigns, and other types of Amazon Pinpoint resources.
 
     .LINK
         http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-pinpoint-applicationsettings.html
@@ -15,33 +13,33 @@ In Amazon Pinpoint, an *app* (also referred to as a *project* is a collection of
         The logical ID must be alphanumeric (A-Za-z0-9) and unique within the template. Use the logical name to reference the resource in other parts of the template. For example, if you want to map an Amazon Elastic Block Store volume to an Amazon EC2 instance, you reference the logical IDs to associate the block stores with the instance.
 
     .PARAMETER QuietTime
-        The default quiet time for campaigns in the application. Quiet time is a specific time range when campaigns don't send messages to endpoints, if all the following conditions are met:
-- The EndpointDemographic.Timezone property of the endpoint is set to a valid value.
-- The current time in the endpoint's time zone is later than or equal to the time specified by the QuietTime.Start property for the application or a campaign that has custom quiet time settings.
-- The current time in the endpoint's time zone is earlier than or equal to the time specified by the QuietTime.End property for the application or a campaign that has custom quiet time settings.
-If any of the preceding conditions isn't met, the endpoint will receive messages from a campaign, even if quiet time is enabled.
-To override the default quiet time settings for a specific campaign, use the Campaign resource to define a custom quiet time for the campaign.
+        The default quiet time for campaigns and journeys in the application. Quiet time is a specific time range when messages aren't sent to endpoints, if all the following conditions are met:
++ The EndpointDemographic.Timezone property of the endpoint is set to a valid value.
++ The current time in the endpoint's time zone is later than or equal to the time specified by the QuietTime.Start property for the application or a campaign or journey that has custom quiet time settings.
++ The current time in the endpoint's time zone is earlier than or equal to the time specified by the QuietTime.End property for the application or a campaign or journey that has custom quiet time settings.
+If any of the preceding conditions isn't met, the endpoint will receive messages from a campaign or journey, even if quiet time is enabled.
+You can override the default quiet time settings for a specific campaign or journey.
 
         Type: QuietTime
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-pinpoint-applicationsettings.html#cfn-pinpoint-applicationsettings-quiettime
         UpdateType: Mutable
 
     .PARAMETER Limits
-        The default sending limits for campaigns in the application. To override these limits for a specific campaign, use the Campaign resource to define custom limits for the campaign.
+        The default sending limits for campaigns in the application. You can override these limits for a specific campaign.
 
         Type: Limits
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-pinpoint-applicationsettings.html#cfn-pinpoint-applicationsettings-limits
         UpdateType: Mutable
 
     .PARAMETER ApplicationId
-        The unique ID of the Amazon Pinpoint app.
+        The unique identifier for the Amazon Pinpoint application.
 
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-pinpoint-applicationsettings.html#cfn-pinpoint-applicationsettings-applicationid
         PrimitiveType: String
         UpdateType: Immutable
 
     .PARAMETER CampaignHook
-        The settings for the AWS Lambda function to use by default as a code hook for campaigns in the application. To override these settings for a specific campaign, use the Campaign resource to define custom Lambda function settings for the campaign.
+        The settings for the AWS Lambda function to use by default as a code hook for campaigns in the application. You can override these settings for a specific campaign.
 
         Type: CampaignHook
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-pinpoint-applicationsettings.html#cfn-pinpoint-applicationsettings-campaignhook

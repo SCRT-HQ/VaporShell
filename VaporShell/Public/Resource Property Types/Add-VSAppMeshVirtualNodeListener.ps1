@@ -1,11 +1,11 @@
 function Add-VSAppMeshVirtualNodeListener {
     <#
     .SYNOPSIS
-        Adds an AWS::AppMesh::VirtualNode.Listener resource property to the template. An object representing a listener for a virtual node.
+        Adds an AWS::AppMesh::VirtualNode.Listener resource property to the template. An object that represents a listener for a virtual node.
 
     .DESCRIPTION
         Adds an AWS::AppMesh::VirtualNode.Listener resource property to the template.
-An object representing a listener for a virtual node.
+An object that represents a listener for a virtual node.
 
     .LINK
         http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-appmesh-virtualnode-listener.html
@@ -15,6 +15,13 @@ An object representing a listener for a virtual node.
 
         Type: HealthCheck
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-appmesh-virtualnode-listener.html#cfn-appmesh-virtualnode-listener-healthcheck
+        UpdateType: Mutable
+
+    .PARAMETER TLS
+        *Update requires*: No interruption: https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt
+
+        Type: ListenerTls
+        Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-appmesh-virtualnode-listener.html#cfn-appmesh-virtualnode-listener-tls
         UpdateType: Mutable
 
     .PARAMETER PortMapping
@@ -33,6 +40,8 @@ An object representing a listener for a virtual node.
     (
         [parameter(Mandatory = $false)]
         $HealthCheck,
+        [parameter(Mandatory = $false)]
+        $TLS,
         [parameter(Mandatory = $true)]
         $PortMapping
     )

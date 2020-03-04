@@ -6,6 +6,8 @@ function New-VSEC2ClientVpnRoute {
     .DESCRIPTION
         Adds an AWS::EC2::ClientVpnRoute resource to the template. Specifies a network route to add to a Client VPN endpoint. Each Client VPN endpoint has a route table that describes the available destination network routes. Each route in the route table specifies the path for traﬃc to speciﬁc resources or networks.
 
+A target network association must be created before you can specify a route. If you're setting up all the components of a Client VPN endpoint at the same time, you must use the DependsOn Attribute: https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-attribute-dependson.html to declare a dependency on the AWS::EC2::ClientVpnTargetNetworkAssociation resource.
+
     .LINK
         http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ec2-clientvpnroute.html
 

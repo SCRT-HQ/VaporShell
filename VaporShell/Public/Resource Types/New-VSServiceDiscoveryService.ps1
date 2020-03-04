@@ -50,13 +50,14 @@ If you specify a health check configuration, you can specify either HealthCheckC
 
     .PARAMETER NamespaceId
         The ID of the namespace that was used to create the service.
+You must specify a value for NamespaceId either for the service properties or for DnsConfig: https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-servicediscovery-service-dnsconfig.html. Don't specify a value in both places.
 
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-servicediscovery-service.html#cfn-servicediscovery-service-namespaceid
         PrimitiveType: String
         UpdateType: Immutable
 
     .PARAMETER HealthCheckConfig
-        *Public DNS namespaces only.* A complex type that contains settings for an optional health check. If you specify settings for a health check, AWS Cloud Map associates the health check with the records that you specify in DnsConfig.
+        *Public DNS and HTTP namespaces only.* A complex type that contains settings for an optional health check. If you specify settings for a health check, AWS Cloud Map associates the health check with the records that you specify in DnsConfig.
 For information about the charges for health checks, see Amazon Route 53 Pricing: http://aws.amazon.com/route53/pricing/.
 
         Type: HealthCheckConfig

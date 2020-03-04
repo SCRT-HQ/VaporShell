@@ -12,6 +12,7 @@ Information about the type of deployment, either in-place or blue/green, you wan
 
     .PARAMETER DeploymentOption
         Indicates whether to route deployment traffic behind a load balancer.
+An EC2 Application Load Balancer or Network Load Balancer is required for an Amazon ECS deployment.
 
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-codedeploy-deploymentgroup-deploymentstyle.html#cfn-codedeploy-deploymentgroup-deploymentstyle-deploymentoption
         PrimitiveType: String

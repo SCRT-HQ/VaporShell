@@ -77,7 +77,12 @@ function New-VSOpsWorksCMServer {
         UpdateType: Immutable
 
     .PARAMETER CustomCertificate
-        +   CreateServer : https://docs.aws.amazon.com/opsworks-cm/latest/APIReference/API_CreateServer.html in the *AWS OpsWorks CM API Reference*
+        Supported on servers running Chef Automate 2.0 only. A PEM-formatted HTTPS certificate. The value can be be a single, self-signed certificate, or a certificate chain. If you specify a custom certificate, you must also specify values for CustomDomain and CustomPrivateKey. The following are requirements for the CustomCertificate value:
++ You can provide either a self-signed, custom certificate, or the full certificate chain.
++ The certificate must be a valid X509 certificate, or a certificate chain in PEM format.
++ The certificate must be valid at the time of upload. A certificate can't be used before its validity period begins the certificate's NotBefore date, or after it expires the certificate's NotAfter date.
++ The certificate’s common name or subject alternative names SANs, if present, must match the value of CustomDomain.
++ The certificate must match the value of CustomPrivateKey.
 
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-opsworkscm-server.html#cfn-opsworkscm-server-customcertificate
         PrimitiveType: String
@@ -116,14 +121,14 @@ For more information about supported Amazon EC2 platforms, see Supported Platfor
         UpdateType: Immutable
 
     .PARAMETER CustomDomain
-        +   CreateServer : https://docs.aws.amazon.com/opsworks-cm/latest/APIReference/API_CreateServer.html in the *AWS OpsWorks CM API Reference*
+        Supported on servers running Chef Automate 2.0 only. An optional public endpoint of a server, such as https://aws.my-company.com. To access the server, create a CNAME DNS record in your preferred DNS service that points the custom domain to the endpoint that is generated when the server is created the value of the CreateServer Endpoint attribute. You cannot access the server by using the generated Endpoint value if the server is using a custom domain. If you specify a custom domain, you must also specify values for CustomCertificate and CustomPrivateKey.
 
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-opsworkscm-server.html#cfn-opsworkscm-server-customdomain
         PrimitiveType: String
         UpdateType: Immutable
 
     .PARAMETER CustomPrivateKey
-        +   CreateServer : https://docs.aws.amazon.com/opsworks-cm/latest/APIReference/API_CreateServer.html in the *AWS OpsWorks CM API Reference*
+        Supported on servers running Chef Automate 2.0 only. A private key in PEM format for connecting to the server by using HTTPS. The private key must not be encrypted; it cannot be protected by a password or passphrase. If you specify a custom private key, you must also specify values for CustomDomain and CustomCertificate.
 
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-opsworkscm-server.html#cfn-opsworkscm-server-customprivatekey
         PrimitiveType: String
@@ -139,7 +144,7 @@ For more information about supported Amazon EC2 platforms, see Supported Platfor
     .PARAMETER EngineAttributes
         Optional engine attributes on a specified server.
 **Attributes accepted in a Chef createServer request:**
-+  CHEF_AUTOMATE_PIVOTAL_KEY: A base64-encoded RSA public key. The corresponding private key is required to access the Chef API. When no CHEF_AUTOMATE_PIVOTAL_KEY is set, a private key is generated and returned in the response.
++  CHEF_AUTOMATE_PIVOTAL_KEY: A base64-encoded RSA public key. The corresponding private key is required to access the Chef API. When no CHEF_AUTOMATE_PIVOTAL_KEY is set, a private key is generated and returned in the response. When you are specifying the value of CHEF_AUTOMATE_PIVOTAL_KEY as a parameter in the AWS CloudFormation console, you must add newline n characters at the end of each line of the pivotal key value.
 +  CHEF_AUTOMATE_ADMIN_PASSWORD: The password for the administrative user in the Chef Automate web-based dashboard. The password length is a minimum of eight characters, and a maximum of 32. The password can contain letters, numbers, and special characters !/@#$%^&+=_. The password must contain at least one lower case letter, one upper case letter, one number, and one special character. When no CHEF_AUTOMATE_ADMIN_PASSWORD is set, one is generated and returned in the response.
 **Attributes accepted in a Puppet createServer request:**
 +  PUPPET_ADMIN_PASSWORD: To work with the Puppet Enterprise console, a password must use ASCII characters.
@@ -166,7 +171,12 @@ For more information about supported Amazon EC2 platforms, see Supported Platfor
         UpdateType: Immutable
 
     .PARAMETER Tags
-        +   CreateServer : https://docs.aws.amazon.com/opsworks-cm/latest/APIReference/API_CreateServer.html in the *AWS OpsWorks CM API Reference*
+        A map that contains tag keys and tag values to attach to an AWS OpsWorks for Chef Automate or AWS OpsWorks for Puppet Enterprise server.
++ The key cannot be empty.
++ The key can be a maximum of 127 characters, and can contain only Unicode letters, numbers, or separators, or the following special characters: + - = . _ : /
++ The value can be a maximum 255 characters, and contain only Unicode letters, numbers, or separators, or the following special characters: + - = . _ : /
++ Leading and trailing white spaces are trimmed from both the key and value.
++ A maximum of 50 user-applied tags is allowed for any AWS OpsWorks-CM server.
 
         Type: List
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-opsworkscm-server.html#cfn-opsworkscm-server-tags
@@ -416,16 +426,8 @@ For more information about supported Amazon EC2 platforms, see Supported Platfor
                 }
             })]
         $InstanceType,
+        [VaporShell.Core.TransformTag()]
         [parameter(Mandatory = $false)]
-        [ValidateScript( {
-                $allowedTypes = "Vaporshell.Resource.Tag","System.Management.Automation.PSCustomObject"
-                if ([string]$($_.PSTypeNames) -match "($(($allowedTypes|ForEach-Object{[RegEx]::Escape($_)}) -join '|'))") {
-                    $true
-                }
-                else {
-                    $PSCmdlet.ThrowTerminatingError((New-VSError -String "This parameter only accepts the following types: $($allowedTypes -join ", "). The current types of the value are: $($_.PSTypeNames -join ", ")."))
-                }
-            })]
         $Tags,
         [parameter(Mandatory = $false)]
         [ValidateScript( {

@@ -11,7 +11,7 @@ Describes an AWS Identity and Access Management (IAM role that is associated wit
         http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-rds-dbinstance-dbinstancerole.html
 
     .PARAMETER FeatureName
-        The name of the feature associated with the AWS Identity and Access Management IAM role. For the list of supported feature names, see DBEngineVersion.
+        The name of the feature associated with the AWS Identity and Access Management IAM role. For the list of supported feature names, see DBEngineVersion: https://docs.aws.amazon.com/AmazonRDS/latest/APIReference/API_DBEngineVersion.html in the *Amazon RDS API Reference*.
 
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-rds-dbinstance-dbinstancerole.html#cfn-rds-dbinstance-dbinstancerole-featurename
         PrimitiveType: String

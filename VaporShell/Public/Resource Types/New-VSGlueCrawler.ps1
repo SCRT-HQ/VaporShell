@@ -84,7 +84,7 @@ function New-VSGlueCrawler {
         UpdateType: Mutable
 
     .PARAMETER Tags
-        The tags to use with this crawler request. You can use tags to limit access to the crawler. For more information about tags in AWS Glue, see AWS Tags in AWS Glue: https://docs.aws.amazon.com/glue/latest/dg/monitor-tags.html in the developer guide.
+        The tags to use with this crawler.
 
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-glue-crawler.html#cfn-glue-crawler-tags
         PrimitiveType: Json

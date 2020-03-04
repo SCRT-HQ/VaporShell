@@ -1,11 +1,11 @@
 function Add-VSAppMeshVirtualNodeServiceDiscovery {
     <#
     .SYNOPSIS
-        Adds an AWS::AppMesh::VirtualNode.ServiceDiscovery resource property to the template. An object representing the service discovery information for a virtual node.
+        Adds an AWS::AppMesh::VirtualNode.ServiceDiscovery resource property to the template. An object that represents the service discovery information for a virtual node.
 
     .DESCRIPTION
         Adds an AWS::AppMesh::VirtualNode.ServiceDiscovery resource property to the template.
-An object representing the service discovery information for a virtual node.
+An object that represents the service discovery information for a virtual node.
 
     .LINK
         http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-appmesh-virtualnode-servicediscovery.html

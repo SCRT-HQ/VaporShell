@@ -108,6 +108,10 @@ If this argument is omitted, default.aurora5.6 is used. If default.aurora5.6 is 
         UpdateType: Mutable
 
     .PARAMETER EnableHttpEndpoint
+        A value that indicates whether to enable the HTTP endpoint for an Aurora Serverless DB cluster. By default, the HTTP endpoint is disabled.
+When enabled, the HTTP endpoint provides a connectionless web service API for running SQL queries on the Aurora Serverless DB cluster. You can also query your database from inside the RDS console with the query editor.
+For more information, see Using the Data API for Aurora Serverless: https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/data-api.html in the *Amazon Aurora User Guide*.
+
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-rds-dbcluster.html#cfn-rds-dbcluster-enablehttpendpoint
         PrimitiveType: Boolean
         UpdateType: Mutable
@@ -130,6 +134,11 @@ Valid Values: aurora for MySQL 5.6-compatible Aurora, aurora-mysql for MySQL 5.7
 
     .PARAMETER EngineMode
         The DB engine mode of the DB cluster, either provisioned, serverless, parallelquery, global, or multimaster.
+Limitations and requirements apply to some DB engine modes. For more information, see the following sections in the *Amazon Aurora User Guide*:
++   Limitations of Aurora Serverless: https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/aurora-serverless.html#aurora-serverless.limitations
++   Limitations of Parallel Query: https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/aurora-mysql-parallel-query.html#aurora-mysql-parallel-query-limitations
++   Requirements for Aurora Global Databases: https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/aurora-global-database.html#aurora-global-database.limitations
++   Limitations of Multi-Master Clusters: https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/aurora-multi-master.html#aurora-multi-master-limitations
 
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-rds-dbcluster.html#cfn-rds-dbcluster-enginemode
         PrimitiveType: String
@@ -157,7 +166,7 @@ aws rds describe-db-engine-versions --engine aurora-postgresql --query "DBEngine
 
     .PARAMETER MasterUserPassword
         The master password for the DB instance.
-If you specify the SourceDBInstanceIdentifier or DBSnapshotIdentifier property, don't specify this property. The value is inherited from the source DB instance or snapshot.
+If you specify the SourceDBInstanceIdentifier or SnapshotIdentifier property, don't specify this property. The value is inherited from the source DB instance or snapshot.
 
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-rds-dbcluster.html#cfn-rds-dbcluster-masteruserpassword
         PrimitiveType: String
@@ -257,7 +266,7 @@ Constraints:
 
     .PARAMETER StorageEncrypted
         Indicates whether the DB instance is encrypted.
-If you specify the DBClusterIdentifier, DBSnapshotIdentifier, or SourceDBInstanceIdentifier property, don't specify this property. The value is inherited from the cluster, snapshot, or source DB instance.
+If you specify the DBClusterIdentifier, SnapshotIdentifier, or SourceDBInstanceIdentifier property, don't specify this property. The value is inherited from the cluster, snapshot, or source DB instance.
 If you specify the KmsKeyId property, then you must enable encryption.
 
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-rds-dbcluster.html#cfn-rds-dbcluster-storageencrypted
@@ -275,7 +284,6 @@ If you specify the KmsKeyId property, then you must enable encryption.
 
     .PARAMETER UseLatestRestorableTime
         A value that indicates whether to restore the DB cluster to the latest restorable backup time. By default, the DB cluster is not restored to the latest restorable backup time.
-Constraints: Can't be specified if RestoreToTime parameter is provided.
 
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-rds-dbcluster.html#cfn-rds-dbcluster-uselatestrestorabletime
         PrimitiveType: Boolean
@@ -609,16 +617,8 @@ Constraints: Can't be specified if RestoreToTime parameter is provided.
                 }
             })]
         $StorageEncrypted,
+        [VaporShell.Core.TransformTag()]
         [parameter(Mandatory = $false)]
-        [ValidateScript( {
-                $allowedTypes = "Vaporshell.Resource.Tag","System.Management.Automation.PSCustomObject"
-                if ([string]$($_.PSTypeNames) -match "($(($allowedTypes|ForEach-Object{[RegEx]::Escape($_)}) -join '|'))") {
-                    $true
-                }
-                else {
-                    $PSCmdlet.ThrowTerminatingError((New-VSError -String "This parameter only accepts the following types: $($allowedTypes -join ", "). The current types of the value are: $($_.PSTypeNames -join ", ")."))
-                }
-            })]
         $Tags,
         [parameter(Mandatory = $false)]
         [ValidateScript( {

@@ -1,16 +1,18 @@
 function Add-VSMSKClusterOpenMonitoring {
     <#
     .SYNOPSIS
-        Adds an AWS::MSK::Cluster.OpenMonitoring resource property to the template. 
+        Adds an AWS::MSK::Cluster.OpenMonitoring resource property to the template. JMX and Node monitoring for the MSK cluster.
 
     .DESCRIPTION
         Adds an AWS::MSK::Cluster.OpenMonitoring resource property to the template.
-
+JMX and Node monitoring for the MSK cluster.
 
     .LINK
         http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-msk-cluster-openmonitoring.html
 
     .PARAMETER Prometheus
+        Prometheus exporter settings.
+
         Type: Prometheus
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-msk-cluster-openmonitoring.html#cfn-msk-cluster-openmonitoring-prometheus
         UpdateType: Mutable

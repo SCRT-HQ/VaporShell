@@ -37,7 +37,6 @@ The properties are required when you add a lifecycle policy and optional when yo
 
     .PARAMETER PolicyDetails
         The configuration details of the lifecycle policy.
-Target tags cannot be re-used across lifecycle policies.
 
         Type: PolicyDetails
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-dlm-lifecyclepolicy.html#cfn-dlm-lifecyclepolicy-policydetails

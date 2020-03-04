@@ -1,11 +1,11 @@
 function Add-VSSageMakerEndpointConfigProductionVariant {
     <#
     .SYNOPSIS
-        Adds an AWS::SageMaker::EndpointConfig.ProductionVariant resource property to the template. Specifies a model that you want to host and the resources to deploy for hosting it. If you are deploying multiple models, tell Amazon SageMaker how to distribute traffic among the models by specifying the InitiaVariantWeight objects.
+        Adds an AWS::SageMaker::EndpointConfig.ProductionVariant resource property to the template. Specifies a model that you want to host and the resources to deploy for hosting it. If you are deploying multiple models, tell Amazon SageMaker how to distribute traffic among the models by specifying the InitialVariantWeight objects.
 
     .DESCRIPTION
         Adds an AWS::SageMaker::EndpointConfig.ProductionVariant resource property to the template.
-Specifies a model that you want to host and the resources to deploy for hosting it. If you are deploying multiple models, tell Amazon SageMaker how to distribute traffic among the models by specifying the InitiaVariantWeight objects.
+Specifies a model that you want to host and the resources to deploy for hosting it. If you are deploying multiple models, tell Amazon SageMaker how to distribute traffic among the models by specifying the InitialVariantWeight objects.
 
     .LINK
         http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-sagemaker-endpointconfig-productionvariant.html
@@ -39,7 +39,7 @@ Specifies a model that you want to host and the resources to deploy for hosting 
         UpdateType: Immutable
 
     .PARAMETER AcceleratorType
-        The size of the Elastic Inference EI instance to use for the production variant. EI instances provide on-demand GPU computing for inference. For more information, see Using Elastic Inference in Amazon SageMaker: http://docs.aws.amazon.com/sagemaker/latest/dg/ei.html. For more information, see Using Elastic Inference in Amazon SageMaker: http://docs.aws.amazon.com/sagemaker/latest/dg/ei.html.
+        The size of the Elastic Inference EI instance to use for the production variant. EI instances provide on-demand GPU computing for inference. For more information, see Using Elastic Inference in Amazon SageMaker: https://docs.aws.amazon.com/sagemaker/latest/dg/ei.html.
 
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-sagemaker-endpointconfig-productionvariant.html#cfn-sagemaker-endpointconfig-productionvariant-acceleratortype
         PrimitiveType: String

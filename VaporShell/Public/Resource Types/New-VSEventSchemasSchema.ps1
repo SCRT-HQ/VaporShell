@@ -1,10 +1,10 @@
 function New-VSEventSchemasSchema {
     <#
     .SYNOPSIS
-        Adds an AWS::EventSchemas::Schema resource to the template. 
+        Adds an AWS::EventSchemas::Schema resource to the template. Use the AWS::EventSchemas::Schema resource to specify an event schema.
 
     .DESCRIPTION
-        Adds an AWS::EventSchemas::Schema resource to the template. 
+        Adds an AWS::EventSchemas::Schema resource to the template. Use the AWS::EventSchemas::Schema resource to specify an event schema.
 
     .LINK
         http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-eventschemas-schema.html
@@ -13,31 +13,43 @@ function New-VSEventSchemasSchema {
         The logical ID must be alphanumeric (A-Za-z0-9) and unique within the template. Use the logical name to reference the resource in other parts of the template. For example, if you want to map an Amazon Elastic Block Store volume to an Amazon EC2 instance, you reference the logical IDs to associate the block stores with the instance.
 
     .PARAMETER Type
+        The type of schema.
+
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-eventschemas-schema.html#cfn-eventschemas-schema-type
         PrimitiveType: String
         UpdateType: Mutable
 
     .PARAMETER Description
+        A description of the schema.
+
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-eventschemas-schema.html#cfn-eventschemas-schema-description
         PrimitiveType: String
         UpdateType: Mutable
 
     .PARAMETER Content
+        The source of the schema definition.
+
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-eventschemas-schema.html#cfn-eventschemas-schema-content
         PrimitiveType: String
         UpdateType: Mutable
 
     .PARAMETER RegistryName
+        The name of the schema registry.
+
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-eventschemas-schema.html#cfn-eventschemas-schema-registryname
         PrimitiveType: String
         UpdateType: Immutable
 
     .PARAMETER SchemaName
+        The name of the schema.
+
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-eventschemas-schema.html#cfn-eventschemas-schema-schemaname
         PrimitiveType: String
         UpdateType: Immutable
 
     .PARAMETER Tags
+        Tags associated with the schema.
+
         Type: List
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-eventschemas-schema.html#cfn-eventschemas-schema-tags
         ItemType: TagsEntry

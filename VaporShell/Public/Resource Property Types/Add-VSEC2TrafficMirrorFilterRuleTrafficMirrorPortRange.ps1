@@ -1,21 +1,25 @@
 function Add-VSEC2TrafficMirrorFilterRuleTrafficMirrorPortRange {
     <#
     .SYNOPSIS
-        Adds an AWS::EC2::TrafficMirrorFilterRule.TrafficMirrorPortRange resource property to the template. 
+        Adds an AWS::EC2::TrafficMirrorFilterRule.TrafficMirrorPortRange resource property to the template. Describes the Traffic Mirror port range.
 
     .DESCRIPTION
         Adds an AWS::EC2::TrafficMirrorFilterRule.TrafficMirrorPortRange resource property to the template.
-
+Describes the Traffic Mirror port range.
 
     .LINK
         http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-trafficmirrorfilterrule-trafficmirrorportrange.html
 
     .PARAMETER FromPort
+        The start of the Traffic Mirror port range. This applies to the TCP and UDP protocols.
+
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-trafficmirrorfilterrule-trafficmirrorportrange.html#cfn-ec2-trafficmirrorfilterrule-trafficmirrorportrange-fromport
         PrimitiveType: Integer
         UpdateType: Mutable
 
     .PARAMETER ToPort
+        The end of the Traffic Mirror port range. This applies to the TCP and UDP protocols.
+
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-trafficmirrorfilterrule-trafficmirrorportrange.html#cfn-ec2-trafficmirrorfilterrule-trafficmirrorportrange-toport
         PrimitiveType: Integer
         UpdateType: Mutable

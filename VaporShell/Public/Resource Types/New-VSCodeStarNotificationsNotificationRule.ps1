@@ -1,10 +1,10 @@
 function New-VSCodeStarNotificationsNotificationRule {
     <#
     .SYNOPSIS
-        Adds an AWS::CodeStarNotifications::NotificationRule resource to the template. 
+        Adds an AWS::CodeStarNotifications::NotificationRule resource to the template. Creates a notification rule for a resource. The rule specifies the events you want notifications about and the targets (such as SNS topics where you want to receive them.
 
     .DESCRIPTION
-        Adds an AWS::CodeStarNotifications::NotificationRule resource to the template. 
+        Adds an AWS::CodeStarNotifications::NotificationRule resource to the template. Creates a notification rule for a resource. The rule specifies the events you want notifications about and the targets (such as SNS topics where you want to receive them.
 
     .LINK
         http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-codestarnotifications-notificationrule.html
@@ -13,38 +13,52 @@ function New-VSCodeStarNotificationsNotificationRule {
         The logical ID must be alphanumeric (A-Za-z0-9) and unique within the template. Use the logical name to reference the resource in other parts of the template. For example, if you want to map an Amazon Elastic Block Store volume to an Amazon EC2 instance, you reference the logical IDs to associate the block stores with the instance.
 
     .PARAMETER EventTypeIds
+        A list of event types associated with this notification rule.
+
         PrimitiveItemType: String
         Type: List
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-codestarnotifications-notificationrule.html#cfn-codestarnotifications-notificationrule-eventtypeids
         UpdateType: Mutable
 
     .PARAMETER Status
+        The status of the notification rule. The default value is ENABLED. If the status is set to DISABLED, notifications aren't sent for the notification rule.
+
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-codestarnotifications-notificationrule.html#cfn-codestarnotifications-notificationrule-status
         PrimitiveType: String
         UpdateType: Mutable
 
     .PARAMETER DetailType
+        The level of detail to include in the notifications for this resource. BASIC will include only the contents of the event as it would appear in AWS CloudWatch. FULL will include any supplemental information provided by AWS CodeStar Notifications and/or the service for the resource for which the notification is created.
+
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-codestarnotifications-notificationrule.html#cfn-codestarnotifications-notificationrule-detailtype
         PrimitiveType: String
         UpdateType: Mutable
 
     .PARAMETER Resource
+        The Amazon Resource Name ARN of the resource to associate with the notification rule. Supported resources include pipelines in AWS CodePipeline, repositories in AWS CodeCommit, and build projects in AWS CodeBuild.
+
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-codestarnotifications-notificationrule.html#cfn-codestarnotifications-notificationrule-resource
         PrimitiveType: String
         UpdateType: Immutable
 
     .PARAMETER Targets
+        A list of Amazon Resource Names ARNs of SNS topics to associate with the notification rule.
+
         Type: List
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-codestarnotifications-notificationrule.html#cfn-codestarnotifications-notificationrule-targets
         ItemType: Target
         UpdateType: Mutable
 
     .PARAMETER Tags
+        A list of tags to apply to this notification rule. Key names cannot start with "aws".
+
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-codestarnotifications-notificationrule.html#cfn-codestarnotifications-notificationrule-tags
         PrimitiveType: Json
         UpdateType: Immutable
 
     .PARAMETER Name
+        The name for the notification rule. Notification rule names must be unique in your AWS account.
+
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-codestarnotifications-notificationrule.html#cfn-codestarnotifications-notificationrule-name
         PrimitiveType: String
         UpdateType: Mutable

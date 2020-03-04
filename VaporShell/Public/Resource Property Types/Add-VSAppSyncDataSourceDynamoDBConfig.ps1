@@ -27,14 +27,14 @@ DynamoDBConfig is a property of the AWS::AppSync::DataSource: https://docs.aws.a
         UpdateType: Mutable
 
     .PARAMETER Versioned
-        *Update requires*: No interruption: https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt
+        Set to TRUE to use Conflict Detection and Resolution with this data source.
 
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-appsync-datasource-dynamodbconfig.html#cfn-appsync-datasource-dynamodbconfig-versioned
         PrimitiveType: Boolean
         UpdateType: Mutable
 
     .PARAMETER DeltaSyncConfig
-        *Update requires*: No interruption: https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt
+        The DeltaSyncConfig for a versioned datasource.
 
         Type: DeltaSyncConfig
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-appsync-datasource-dynamodbconfig.html#cfn-appsync-datasource-dynamodbconfig-deltasyncconfig

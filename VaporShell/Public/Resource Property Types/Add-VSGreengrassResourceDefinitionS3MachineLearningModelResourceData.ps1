@@ -12,6 +12,13 @@ function Add-VSGreengrassResourceDefinitionS3MachineLearningModelResourceData {
     .LINK
         http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-greengrass-resourcedefinition-s3machinelearningmodelresourcedata.html
 
+    .PARAMETER OwnerSetting
+        +  AWS IoT Greengrass Developer Guide: https://docs.aws.amazon.com/greengrass/latest/developerguide/
+
+        Type: ResourceDownloadOwnerSetting
+        Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-greengrass-resourcedefinition-s3machinelearningmodelresourcedata.html#cfn-greengrass-resourcedefinition-s3machinelearningmodelresourcedata-ownersetting
+        UpdateType: Immutable
+
     .PARAMETER DestinationPath
         The absolute local path of the resource inside the Lambda environment.
 
@@ -33,6 +40,8 @@ function Add-VSGreengrassResourceDefinitionS3MachineLearningModelResourceData {
     [cmdletbinding()]
     Param
     (
+        [parameter(Mandatory = $false)]
+        $OwnerSetting,
         [parameter(Mandatory = $true)]
         [ValidateScript( {
                 $allowedTypes = "System.String","Vaporshell.Function","Vaporshell.Condition"

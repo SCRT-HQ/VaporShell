@@ -1,13 +1,13 @@
 function Add-VSEventsRuleTarget {
     <#
     .SYNOPSIS
-        Adds an AWS::Events::Rule.Target resource property to the template. The Target property type specifies a target, such as an AWS Lambda function or an Amazon Kinesis data stream, that CloudWatch Events invokes when a rule is triggered.
+        Adds an AWS::Events::Rule.Target resource property to the template. The Target property type specifies a target, such as an AWS Lambda function or an Amazon Kinesis data stream, that EventBridge invokes when a rule is triggered.
 
     .DESCRIPTION
         Adds an AWS::Events::Rule.Target resource property to the template.
-The Target property type specifies a target, such as an AWS Lambda function or an Amazon Kinesis data stream, that CloudWatch Events invokes when a rule is triggered.
+The Target property type specifies a target, such as an AWS Lambda function or an Amazon Kinesis data stream, that EventBridge invokes when a rule is triggered.
 
-Targets property of the AWS::Events::Rule: https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-events-rule.html resource contains a list of one or more Target property types.
+The Targets property of the AWS::Events::Rule: https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-events-rule.html resource contains a list of one or more Target property types.
 
     .LINK
         http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-events-rule-target.html
@@ -20,6 +20,8 @@ Targets property of the AWS::Events::Rule: https://docs.aws.amazon.com/AWSCloudF
         UpdateType: Mutable
 
     .PARAMETER BatchParameters
+        If the event target is an AWS Batch job, this contains the job definition, job name, and other parameters. For more information, see Jobs: https://docs.aws.amazon.com/batch/latest/userguide/jobs.html in the *AWS Batch User Guide*.
+
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-events-rule-target.html#cfn-events-rule-target-batchparameters
         Type: BatchParameters
         UpdateType: Mutable
@@ -32,7 +34,8 @@ Targets property of the AWS::Events::Rule: https://docs.aws.amazon.com/AWSCloudF
         UpdateType: Mutable
 
     .PARAMETER Id
-        The ID of the target. It can include alphanumeric characters, periods ., hyphens -, and underscores _.
+        A name for the target. Use a string that will help you identify the target. Each target associated with a rule must have an Id unique for that rule.
+The Id can include alphanumeric characters, periods ., hyphens -, and underscores _.
 
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-events-rule-target.html#cfn-events-rule-target-id
         PrimitiveType: String
@@ -68,6 +71,7 @@ Targets property of the AWS::Events::Rule: https://docs.aws.amazon.com/AWSCloudF
 
     .PARAMETER RoleArn
         The Amazon Resource Name ARN of the IAM role to be used for this target when the rule is triggered. If one rule triggers multiple targets, you can use a different IAM role for each target.
+If you're setting an event bus in another account as the target and that account granted permission to your account through an organization instead of directly by the account ID, you must specify a RoleArn with proper permissions here in this parameter.
 
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-events-rule-target.html#cfn-events-rule-target-rolearn
         PrimitiveType: String

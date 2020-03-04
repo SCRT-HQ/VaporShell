@@ -1,10 +1,10 @@
 function New-VSTransferUser {
     <#
     .SYNOPSIS
-        Adds an AWS::Transfer::User resource to the template. Creates a user and associates them with an existing Secure File Transfer Protocol (SFTP server. You can only create and associate users with SFTP servers that have the IdentityProviderType set to SERVICE_MANAGED. Using parameters for CreateUser, you can specify the user name, set the home directory, store the user's public key, and assign the user's AWS Identity and Access Management (IAM role. You can also optionally add a scope-down policy, and assign metadata with tags that can be used to group and search for users.
+        Adds an AWS::Transfer::User resource to the template. The AWS::Transfer::User resource creates a user and associates them with an existing Secure File Transfer Protocol (SFTP server. You can only create and associate users with SFTP servers that have the IdentityProviderType set to SERVICE_MANAGED. Using parameters for CreateUser, you can specify the user name, set the home directory, store the user's public key, and assign the user's AWS Identity and Access Management (IAM role. You can also optionally add a scope-down policy, and assign metadata with tags that can be used to group and search for users.
 
     .DESCRIPTION
-        Adds an AWS::Transfer::User resource to the template. Creates a user and associates them with an existing Secure File Transfer Protocol (SFTP server. You can only create and associate users with SFTP servers that have the IdentityProviderType set to SERVICE_MANAGED. Using parameters for CreateUser, you can specify the user name, set the home directory, store the user's public key, and assign the user's AWS Identity and Access Management (IAM role. You can also optionally add a scope-down policy, and assign metadata with tags that can be used to group and search for users.
+        Adds an AWS::Transfer::User resource to the template. The AWS::Transfer::User resource creates a user and associates them with an existing Secure File Transfer Protocol (SFTP server. You can only create and associate users with SFTP servers that have the IdentityProviderType set to SERVICE_MANAGED. Using parameters for CreateUser, you can specify the user name, set the home directory, store the user's public key, and assign the user's AWS Identity and Access Management (IAM role. You can also optionally add a scope-down policy, and assign metadata with tags that can be used to group and search for users.
 
     .LINK
         http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-transfer-user.html
@@ -30,14 +30,15 @@ For more information, see AssumeRole: https://docs.aws.amazon.com/STS/latest/API
         UpdateType: Mutable
 
     .PARAMETER HomeDirectory
-        The landing directory folder for a user when they log in to the server using their SFTP client. An example is /home/username .
+        The landing directory folder for a user when they log in to the server using their SFTP client.
+An example is <your-Amazon-S3-bucket-name>/home/username.
 
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-transfer-user.html#cfn-transfer-user-homedirectory
         PrimitiveType: String
         UpdateType: Mutable
 
     .PARAMETER HomeDirectoryType
-        An example UserName is sftp-user-1.
+        The type of landing directory folder you want your users' home directory to be when they log into the SFTP server. If you set it to PATH, the user will see the absolute Amazon S3 bucket paths as is in their SFTP clients. If you set it LOGICAL, you will need to provide mappings in the HomeDirectoryMappings for how you want to make S3 paths visible to your user.
 
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-transfer-user.html#cfn-transfer-user-homedirectorytype
         PrimitiveType: String
@@ -58,7 +59,10 @@ For more information, see AssumeRole: https://docs.aws.amazon.com/STS/latest/API
         UpdateType: Immutable
 
     .PARAMETER HomeDirectoryMappings
-        An example UserName is sftp-user-1.
+        Logical directory mappings that specify what S3 paths and keys should be visible to your user and how you want to make them visible. You will need to specify the "Entry" and "Target" pair, where Entry shows how the path is made visible and Target is the actual S3 path. If you only specify a target, it will be displayed as is. You will need to also make sure that your AWS IAM Role provides access to paths in Target. The following is an example.
+' "/bucket2/documentation", { "Entry": "your-personal-report.pdf", "Target": "/bucket3/customized-reports/${transfer:UserName}.pdf" } ]'
+In most cases, you can use this value instead of the scope down policy to lock your user down to the designated home directory "chroot". To do this, you can set Entry to '/' and set Target to the HomeDirectory parameter value.
+If the target of a logical directory entry does not exist in S3, the entry will be ignored. As a workaround, you can use the S3 api to create 0 byte objects as place holders for your directory. If using the CLI, use the s3api call instead of s3 so you can use the put-object operation. For example, you use the following: aws s3api put-object --bucket bucketname --key path/to/folder/. Make sure that the end of the key name ends in a / for it to be considered a folder.
 
         Type: List
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-transfer-user.html#cfn-transfer-user-homedirectorymappings
@@ -214,16 +218,8 @@ For more information, see AssumeRole: https://docs.aws.amazon.com/STS/latest/API
                 }
             })]
         $SshPublicKeys,
+        [VaporShell.Core.TransformTag()]
         [parameter(Mandatory = $false)]
-        [ValidateScript( {
-                $allowedTypes = "Vaporshell.Resource.Tag","System.Management.Automation.PSCustomObject"
-                if ([string]$($_.PSTypeNames) -match "($(($allowedTypes|ForEach-Object{[RegEx]::Escape($_)}) -join '|'))") {
-                    $true
-                }
-                else {
-                    $PSCmdlet.ThrowTerminatingError((New-VSError -String "This parameter only accepts the following types: $($allowedTypes -join ", "). The current types of the value are: $($_.PSTypeNames -join ", ")."))
-                }
-            })]
         $Tags,
         [ValidateSet("Delete","Retain","Snapshot")]
         [System.String]

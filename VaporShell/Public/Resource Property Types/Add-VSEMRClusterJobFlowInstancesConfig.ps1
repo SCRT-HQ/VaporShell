@@ -50,8 +50,7 @@ JobFlowInstancesConfig is a property of the AWS::EMR::Cluster resource. JobFlowI
         UpdateType: Immutable
 
     .PARAMETER Ec2SubnetId
-        Applies to clusters that use the uniform instance group configuration. To launch the cluster in Amazon Virtual Private Cloud Amazon VPC, set this parameter to the identifier of the Amazon VPC subnet where you want the cluster to launch. If you do not specify this value, the cluster launches in the normal Amazon Web Services cloud, outside of an Amazon VPC, if the account launching the cluster supports EC2 Classic networks in the region where the cluster launches.
-Amazon VPC currently does not support cluster compute quadruple extra large cc1.4xlarge instances. Thus you cannot specify the cc1.4xlarge instance type for clusters launched in an Amazon VPC.
+        Applies to clusters that use the uniform instance group configuration. To launch the cluster in Amazon Virtual Private Cloud Amazon VPC, set this parameter to the identifier of the Amazon VPC subnet where you want the cluster to launch. If you do not specify this value and your account supports EC2-Classic, the cluster launches in EC2-Classic.
 
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-elasticmapreduce-cluster-jobflowinstancesconfig.html#cfn-elasticmapreduce-cluster-jobflowinstancesconfig-ec2subnetid
         PrimitiveType: String

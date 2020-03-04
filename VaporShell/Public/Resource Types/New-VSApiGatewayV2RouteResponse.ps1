@@ -34,7 +34,7 @@ function New-VSApiGatewayV2RouteResponse {
         UpdateType: Immutable
 
     .PARAMETER ModelSelectionExpression
-        The model selection expression for the route response.
+        The model selection expression for the route response. Supported only for WebSocket APIs.
 
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-apigatewayv2-routeresponse.html#cfn-apigatewayv2-routeresponse-modelselectionexpression
         PrimitiveType: String

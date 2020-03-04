@@ -1,21 +1,29 @@
 function Add-VSCognitoUserPoolRiskConfigurationAttachmentAccountTakeoverActionType {
     <#
     .SYNOPSIS
-        Adds an AWS::Cognito::UserPoolRiskConfigurationAttachment.AccountTakeoverActionType resource property to the template. 
+        Adds an AWS::Cognito::UserPoolRiskConfigurationAttachment.AccountTakeoverActionType resource property to the template. Account takeover action type.
 
     .DESCRIPTION
         Adds an AWS::Cognito::UserPoolRiskConfigurationAttachment.AccountTakeoverActionType resource property to the template.
-
+Account takeover action type.
 
     .LINK
         http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-cognito-userpoolriskconfigurationattachment-accounttakeoveractiontype.html
 
     .PARAMETER Notify
+        Flag specifying whether to send a notification.
+
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-cognito-userpoolriskconfigurationattachment-accounttakeoveractiontype.html#cfn-cognito-userpoolriskconfigurationattachment-accounttakeoveractiontype-notify
         PrimitiveType: Boolean
         UpdateType: Mutable
 
     .PARAMETER EventAction
+        The event action.
++  BLOCK Choosing this action will block the request.
++  MFA_IF_CONFIGURED Throw MFA challenge if user has configured it, else allow the request.
++  MFA_REQUIRED Throw MFA challenge if user has configured it, else block the request.
++  NO_ACTION Allow the user sign-in.
+
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-cognito-userpoolriskconfigurationattachment-accounttakeoveractiontype.html#cfn-cognito-userpoolriskconfigurationattachment-accounttakeoveractiontype-eventaction
         PrimitiveType: String
         UpdateType: Mutable

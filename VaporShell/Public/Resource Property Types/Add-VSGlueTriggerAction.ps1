@@ -11,21 +11,21 @@ Defines an action to be initiated by a trigger.
         http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-glue-trigger-action.html
 
     .PARAMETER NotificationProperty
-        +  Action Structure: https://docs.aws.amazon.com/glue/latest/dg/aws-glue-api-jobs-trigger.html#aws-glue-api-jobs-trigger-Action in the *AWS Glue Developer Guide*
+        Specifies configuration properties of a job run notification.
 
         Type: NotificationProperty
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-glue-trigger-action.html#cfn-glue-trigger-action-notificationproperty
         UpdateType: Mutable
 
     .PARAMETER CrawlerName
-        +  Action Structure: https://docs.aws.amazon.com/glue/latest/dg/aws-glue-api-jobs-trigger.html#aws-glue-api-jobs-trigger-Action in the *AWS Glue Developer Guide*
+        The name of the crawler to be used with this action.
 
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-glue-trigger-action.html#cfn-glue-trigger-action-crawlername
         PrimitiveType: String
         UpdateType: Mutable
 
     .PARAMETER Timeout
-        +  Action Structure: https://docs.aws.amazon.com/glue/latest/dg/aws-glue-api-jobs-trigger.html#aws-glue-api-jobs-trigger-Action in the *AWS Glue Developer Guide*
+        The JobRun timeout in minutes. This is the maximum time that a job run can consume resources before it is terminated and enters TIMEOUT status. The default is 2,880 minutes 48 hours. This overrides the timeout value set in the parent job.
 
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-glue-trigger-action.html#cfn-glue-trigger-action-timeout
         PrimitiveType: Integer

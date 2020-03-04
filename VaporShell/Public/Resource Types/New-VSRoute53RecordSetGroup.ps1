@@ -1,10 +1,10 @@
 function New-VSRoute53RecordSetGroup {
     <#
     .SYNOPSIS
-        Adds an AWS::Route53::RecordSetGroup resource to the template. A complex type that contains an optional comment, the name and ID of the hosted zone that you want to make changes in, and values for the resource record sets that you want to add, update, or delete.
+        Adds an AWS::Route53::RecordSetGroup resource to the template. A complex type that contains an optional comment, the name and ID of the hosted zone that you want to make changes in, and values for the records that you want to create.
 
     .DESCRIPTION
-        Adds an AWS::Route53::RecordSetGroup resource to the template. A complex type that contains an optional comment, the name and ID of the hosted zone that you want to make changes in, and values for the resource record sets that you want to add, update, or delete.
+        Adds an AWS::Route53::RecordSetGroup resource to the template. A complex type that contains an optional comment, the name and ID of the hosted zone that you want to make changes in, and values for the records that you want to create.
 
     .LINK
         http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-route53-recordsetgroup.html
@@ -20,21 +20,24 @@ function New-VSRoute53RecordSetGroup {
         UpdateType: Mutable
 
     .PARAMETER HostedZoneId
-        The ID of the hosted zone that contains the resource record sets that you want to change.
+        The ID of the hosted zone that you want to create records in.
+Specify either HostedZoneName or HostedZoneId, but not both. If you have multiple hosted zones with the same domain name, you must specify the hosted zone using HostedZoneId.
 
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-route53-recordsetgroup.html#cfn-route53-recordsetgroup-hostedzoneid
         PrimitiveType: String
         UpdateType: Immutable
 
     .PARAMETER HostedZoneName
-        The name of the hosted zone that you want to create, update, or delete resource record sets in.
+        The name of the hosted zone that you want to create records in.
+When you create a stack using an AWS::Route53::RecordSet that specifies HostedZoneName, AWS CloudFormation attempts to find a hosted zone whose name matches the HostedZoneName. If AWS CloudFormation can't find a hosted zone with a matching domain name, or if there is more than one hosted zone with the specified domain name, AWS CloudFormation will not create the stack.
+Specify either HostedZoneName or HostedZoneId, but not both. If you have multiple hosted zones with the same domain name, you must specify the hosted zone using HostedZoneId.
 
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-route53-recordsetgroup.html#cfn-route53-recordsetgroup-hostedzonename
         PrimitiveType: String
         UpdateType: Immutable
 
     .PARAMETER RecordSets
-        A complex type that contains one RecordSet element for each resource record set that you want to add, update, or delete.
+        A complex type that contains one RecordSet element for each record that you want to create.
 
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-route53-recordsetgroup.html#cfn-route53-recordsetgroup-recordsets
         DuplicatesAllowed: False

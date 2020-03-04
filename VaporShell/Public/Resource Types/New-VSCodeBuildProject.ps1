@@ -45,7 +45,7 @@ You can specify either the Amazon Resource Name ARN of the CMK or, if available,
 
     .PARAMETER SourceVersion
         A version of the build input to be built for this project. If not specified, the latest version is used. If specified, it must be one of:
-+ For AWS CodeCommit: the commit ID to use.
++ For AWS CodeCommit: the commit ID, branch, or Git tag to use.
 + For GitHub: the commit ID, pull request ID, branch name, or tag name that corresponds to the version of the source code you want to build. If a pull request ID is specified, it must use the format pr/pull-request-ID for example pr/25. If a branch name is specified, the branch's HEAD commit ID is used. If not specified, the default branch's HEAD commit ID is used.
 + For Bitbucket: the commit ID, branch name, or tag name that corresponds to the version of the source code you want to build. If a branch name is specified, the branch's HEAD commit ID is used. If not specified, the default branch's HEAD commit ID is used.
 + For Amazon Simple Storage Service Amazon S3: the version ID of the object that represents the build input ZIP file to use.
@@ -122,7 +122,7 @@ Including build badges with your project is currently not supported if the sourc
         UpdateType: Mutable
 
     .PARAMETER FileSystemLocations
-        +   CreateProject: https://docs.aws.amazon.com/codebuild/latest/APIReference/API_CreateProject.html in the *AWS CodeBuild API Reference*
+        An array of ProjectFileSystemLocation objects for a CodeBuild build project. A ProjectFileSystemLocation object specifies the identifier, location, mountOptions, mountPoint, and type of a file system created using Amazon Elastic File System.
 
         Type: List
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-codebuild-project.html#cfn-codebuild-project-filesystemlocations
@@ -345,16 +345,8 @@ These tags are available for use by AWS services that support AWS CodeBuild buil
                 }
             })]
         $SecondarySourceVersions,
+        [VaporShell.Core.TransformTag()]
         [parameter(Mandatory = $false)]
-        [ValidateScript( {
-                $allowedTypes = "Vaporshell.Resource.Tag","System.Management.Automation.PSCustomObject"
-                if ([string]$($_.PSTypeNames) -match "($(($allowedTypes|ForEach-Object{[RegEx]::Escape($_)}) -join '|'))") {
-                    $true
-                }
-                else {
-                    $PSCmdlet.ThrowTerminatingError((New-VSError -String "This parameter only accepts the following types: $($allowedTypes -join ", "). The current types of the value are: $($_.PSTypeNames -join ", ")."))
-                }
-            })]
         $Tags,
         [parameter(Mandatory = $false)]
         [ValidateScript( {

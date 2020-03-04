@@ -6,6 +6,12 @@ function New-VSCodePipelineWebhook {
     .DESCRIPTION
         Adds an AWS::CodePipeline::Webhook resource to the template. The AWS::CodePipeline::Webhook resource creates and registers your webhook. After the webhook is created and registered, it triggers your pipeline to start every time an external event occurs. For more information, see Configure Your GitHub Pipelines to Use Webhooks for Change Detection: https://docs.aws.amazon.com/codepipeline/latest/userguide/pipelines-webhooks-migration.html in the *AWS CodePipeline User Guide*.
 
+We strongly recommend that you use AWS Secrets Manager to store your credentials. If you use Secrets Manager, you must have already configured and stored your secret parameters in Secrets Manager. For more information, see  Using Dynamic References to Specify Template Values: https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/dynamic-references.html#dynamic-references-secretsmanager.
+
+**Important**
+
+When passing secret parameters, do not enter the value directly into the template. The value is rendered as plaintext and is therefore readable. For security reasons, do not use plaintext in your AWS CloudFormation template to store your credentials.
+
     .LINK
         http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-codepipeline-webhook.html
 
@@ -28,10 +34,10 @@ function New-VSCodePipelineWebhook {
         UpdateType: Mutable
 
     .PARAMETER Authentication
-        Supported options are GITHUB_HMAC, IP and UNAUTHENTICATED.
+        Supported options are GITHUB_HMAC, IP, and UNAUTHENTICATED.
 + For information about the authentication scheme implemented by GITHUB_HMAC, see Securing your webhooks: https://developer.github.com/webhooks/securing/ on the GitHub Developer website.
-+  IP will reject webhooks trigger requests unless they originate from an IP within the IP range whitelisted in the authentication configuration.
-+  UNAUTHENTICATED will accept all webhook trigger requests regardless of origin.
++  IP rejects webhooks trigger requests unless they originate from an IP address in the IP range whitelisted in the authentication configuration.
++  UNAUTHENTICATED accepts all webhook trigger requests regardless of origin.
 
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-codepipeline-webhook.html#cfn-codepipeline-webhook-authentication
         PrimitiveType: String

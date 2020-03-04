@@ -44,7 +44,13 @@ The user's validation data is not persisted.
         UpdateType: Immutable
 
     .PARAMETER ClientMetadata
-        For more information about using the Ref function, see Ref: https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/intrinsic-function-reference-ref.html.
+        A map of custom key-value pairs that you can provide as input for the custom workflow that is invoked by the *pre sign-up* trigger.
+You create custom workflows by assigning AWS Lambda functions to user pool triggers. When you create a UserPoolUser resource and include the ClientMetadata property, Amazon Cognito invokes the function that is assigned to the *pre sign-up* trigger. When Amazon Cognito invokes this function, it passes a JSON payload, which the function receives as input. This payload contains a clientMetadata attribute, which provides the data that you assigned to the ClientMetadata property. In your function code in AWS Lambda, you can process the clientMetadata value to enhance your workflow for your specific needs.
+For more information, see Customizing User Pool Workflows with Lambda Triggers: https://docs.aws.amazon.com/cognito/latest/developerguide/cognito-user-identity-pools-working-with-aws-lambda-triggers.html in the *Amazon Cognito Developer Guide*.
+Take the following limitations into consideration when you use the ClientMetadata parameter:
++ Amazon Cognito does not store the ClientMetadata value. This data is available only to AWS Lambda triggers that are assigned to a user pool to support custom workflows. If your user pool configuration does not include triggers, the ClientMetadata parameter serves no purpose.
++ Amazon Cognito does not validate the ClientMetadata value.
++ Amazon Cognito does not encrypt the the ClientMetadata value, so don't use it to provide sensitive information.
 
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-cognito-userpooluser.html#cfn-cognito-userpooluser-clientmetadata
         PrimitiveType: Json
@@ -68,12 +74,12 @@ If this parameter is set to False, the API throws an AliasExistsException error 
         UpdateType: Immutable
 
     .PARAMETER UserAttributes
-        An array of name-value pairs that contain user attributes and attribute values to be set for the user to be created. You can create a user without specifying any attributes other than Username. However, any attributes that you specify as required in https://docs.aws.amazon.com/cognito-user-identity-pools/latest/APIReference/API_CreateUserPool.html: https://docs.aws.amazon.com/cognito-user-identity-pools/latest/APIReference/API_CreateUserPool.html or in the **Attributes** tab of the console must be supplied either by you in your call to AdminCreateUser or by the user when he or she signs up in response to your welcome message.
+        The user attributes and attribute values to be set for the user to be created. These are name-value pairs You can create a user without specifying any attributes other than Username. However, any attributes that you specify as required in https://docs.aws.amazon.com/cognito-user-identity-pools/latest/APIReference/API_CreateUserPool.html: https://docs.aws.amazon.com/cognito-user-identity-pools/latest/APIReference/API_CreateUserPool.html or in the **Attributes** tab of the console must be supplied either by you in your call to AdminCreateUser or by the user when they sign up in response to your welcome message.
 For custom attributes, you must prepend the custom: prefix to the attribute name.
 To send a message inviting the user to sign up, you must specify the user's email address or phone number. This can be done in your call to AdminCreateUser or in the **Users** tab of the Amazon Cognito console for managing your user pools.
 In your call to AdminCreateUser, you can set the email_verified attribute to True, and you can set the phone_number_verified attribute to True. You can also do this by calling https://docs.aws.amazon.com/cognito-user-identity-pools/latest/APIReference/API_AdminUpdateUserAttributes.html: https://docs.aws.amazon.com/cognito-user-identity-pools/latest/APIReference/API_AdminUpdateUserAttributes.html.
-+  **email**: The email address of the user to whom the message that contains the code and username will be sent. Required if the email_verified attribute is set to True, or if "EMAIL" is specified in the DesiredDeliveryMediums parameter.
-+  **phone_number**: The phone number of the user to whom the message that contains the code and username will be sent. Required if the phone_number_verified attribute is set to True, or if "SMS" is specified in the DesiredDeliveryMediums parameter.
++  **email**: The email address of the user to whom the message that contains the code and user name will be sent. Required if the email_verified attribute is set to True, or if "EMAIL" is specified in the DesiredDeliveryMediums parameter.
++  **phone_number**: The phone number of the user to whom the message that contains the code and user name will be sent. Required if the phone_number_verified attribute is set to True, or if "SMS" is specified in the DesiredDeliveryMediums parameter.
 
         Type: List
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-cognito-userpooluser.html#cfn-cognito-userpooluser-userattributes

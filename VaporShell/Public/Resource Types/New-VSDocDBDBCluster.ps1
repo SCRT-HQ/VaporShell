@@ -13,7 +13,7 @@ function New-VSDocDBDBCluster {
         The logical ID must be alphanumeric (A-Za-z0-9) and unique within the template. Use the logical name to reference the resource in other parts of the template. For example, if you want to map an Amazon Elastic Block Store volume to an Amazon EC2 instance, you reference the logical IDs to associate the block stores with the instance.
 
     .PARAMETER StorageEncrypted
-        Specifies whether the DB cluster is encrypted.
+        Specifies whether the cluster is encrypted.
 
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-docdb-dbcluster.html#cfn-docdb-dbcluster-storageencrypted
         PrimitiveType: Boolean
@@ -27,20 +27,20 @@ function New-VSDocDBDBCluster {
         UpdateType: Immutable
 
     .PARAMETER KmsKeyId
-        The AWS KMS key identifier for an encrypted DB cluster.
-The AWS KMS key identifier is the Amazon Resource Name ARN for the AWS KMS encryption key. If you are creating a DB cluster using the same AWS account that owns the AWS KMS encryption key that is used to encrypt the new DB cluster, you can use the AWS KMS key alias instead of the ARN for the AWS KMS encryption key.
+        The AWS KMS key identifier for an encrypted cluster.
+The AWS KMS key identifier is the Amazon Resource Name ARN for the AWS KMS encryption key. If you are creating a cluster using the same AWS account that owns the AWS KMS encryption key that is used to encrypt the new cluster, you can use the AWS KMS key alias instead of the ARN for the AWS KMS encryption key.
 If an encryption key is not specified in KmsKeyId:
 + If ReplicationSourceIdentifier identifies an encrypted source, then Amazon DocumentDB uses the encryption key that is used to encrypt the source. Otherwise, Amazon DocumentDB uses your default encryption key.
 + If the StorageEncrypted parameter is true and ReplicationSourceIdentifier is not specified, Amazon DocumentDB uses your default encryption key.
 AWS KMS creates the default encryption key for your AWS account. Your AWS account has a different default encryption key for each AWS Region.
-If you create a replica of an encrypted DB cluster in another AWS Region, you must set KmsKeyId to a KMS key ID that is valid in the destination AWS Region. This key is used to encrypt the replica in that AWS Region.
+If you create a replica of an encrypted cluster in another AWS Region, you must set KmsKeyId to a KMS key ID that is valid in the destination AWS Region. This key is used to encrypt the replica in that AWS Region.
 
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-docdb-dbcluster.html#cfn-docdb-dbcluster-kmskeyid
         PrimitiveType: String
         UpdateType: Immutable
 
     .PARAMETER AvailabilityZones
-        A list of Amazon EC2 Availability Zones that instances in the DB cluster can be created in.
+        A list of Amazon EC2 Availability Zones that instances in the cluster can be created in.
 
         PrimitiveItemType: String
         Type: List
@@ -48,8 +48,8 @@ If you create a replica of an encrypted DB cluster in another AWS Region, you mu
         UpdateType: Immutable
 
     .PARAMETER SnapshotIdentifier
-        The identifier for the DB snapshot or DB cluster snapshot to restore from.
-You can use either the name or the Amazon Resource Name ARN to specify a DB cluster snapshot. However, you can use only the ARN to specify a DB snapshot.
+        The identifier for the snapshot or cluster snapshot to restore from.
+You can use either the name or the Amazon Resource Name ARN to specify a cluster snapshot. However, you can use only the ARN to specify a snapshot.
 Constraints:
 + Must match the identifier of an existing snapshot.
 
@@ -65,7 +65,7 @@ Constraints:
         UpdateType: Mutable
 
     .PARAMETER DBClusterIdentifier
-        The DB cluster identifier. This parameter is stored as a lowercase string.
+        The cluster identifier. This parameter is stored as a lowercase string.
 Constraints:
 + Must contain from 1 to 63 letters, numbers, or hyphens.
 + The first character must be a letter.
@@ -88,7 +88,7 @@ Constraints: Minimum 30-minute window.
         UpdateType: Mutable
 
     .PARAMETER DBSubnetGroupName
-        A DB subnet group to associate with this DB cluster.
+        A subnet group to associate with this cluster.
 Constraints: Must match the name of an existing DBSubnetGroup. Must not be default.
 Example: mySubnetgroup
 
@@ -111,14 +111,14 @@ Constraints:
 
     .PARAMETER MasterUserPassword
         The password for the master database user. This password can contain any printable ASCII character except forward slash /, double quote ", or the "at" symbol @.
-Constraints: Must contain from 8 to 41 characters.
+Constraints: Must contain from 8 to 100 characters.
 
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-docdb-dbcluster.html#cfn-docdb-dbcluster-masteruserpassword
         PrimitiveType: String
         UpdateType: Mutable
 
     .PARAMETER VpcSecurityGroupIds
-        A list of EC2 VPC security groups to associate with this DB cluster.
+        A list of EC2 VPC security groups to associate with this cluster.
 
         PrimitiveItemType: String
         Type: List
@@ -126,9 +126,9 @@ Constraints: Must contain from 8 to 41 characters.
         UpdateType: Mutable
 
     .PARAMETER MasterUsername
-        The name of the master user for the DB cluster.
+        The name of the master user for the cluster.
 Constraints:
-+ Must be from 1 to 16 letters or numbers.
++ Must be from 1 to 63 letters or numbers.
 + The first character must be a letter.
 + Cannot be a reserved word for the chosen database engine.
 
@@ -137,7 +137,7 @@ Constraints:
         UpdateType: Immutable
 
     .PARAMETER DBClusterParameterGroupName
-        The name of the DB cluster parameter group to associate with this DB cluster.
+        The name of the cluster parameter group to associate with this cluster.
 
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-docdb-dbcluster.html#cfn-docdb-dbcluster-dbclusterparametergroupname
         PrimitiveType: String
@@ -154,7 +154,7 @@ Constraints:
         UpdateType: Mutable
 
     .PARAMETER Tags
-        The tags to be assigned to the DB cluster.
+        The tags to be assigned to the cluster.
 
         Type: List
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-docdb-dbcluster.html#cfn-docdb-dbcluster-tags
@@ -162,7 +162,7 @@ Constraints:
         UpdateType: Mutable
 
     .PARAMETER EnableCloudwatchLogsExports
-        +  ModifyDBCluster: https://docs.aws.amazon.com/documentdb/latest/developerguide/API_ModifyDBCluster.html
+        A list of log types that need to be enabled for exporting to Amazon CloudWatch Logs.
 
         PrimitiveItemType: String
         Type: List
@@ -363,16 +363,8 @@ Constraints:
                 }
             })]
         $BackupRetentionPeriod,
+        [VaporShell.Core.TransformTag()]
         [parameter(Mandatory = $false)]
-        [ValidateScript( {
-                $allowedTypes = "Vaporshell.Resource.Tag","System.Management.Automation.PSCustomObject"
-                if ([string]$($_.PSTypeNames) -match "($(($allowedTypes|ForEach-Object{[RegEx]::Escape($_)}) -join '|'))") {
-                    $true
-                }
-                else {
-                    $PSCmdlet.ThrowTerminatingError((New-VSError -String "This parameter only accepts the following types: $($allowedTypes -join ", "). The current types of the value are: $($_.PSTypeNames -join ", ")."))
-                }
-            })]
         $Tags,
         [parameter(Mandatory = $false)]
         $EnableCloudwatchLogsExports,

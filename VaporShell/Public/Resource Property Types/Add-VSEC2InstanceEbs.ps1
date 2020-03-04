@@ -13,7 +13,7 @@ Ebs is a property of the  Amazon EC2 BlockDeviceMapping: https://docs.aws.amazon
         http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-blockdev-template.html
 
     .PARAMETER DeleteOnTermination
-        Indicates whether the EBS volume is deleted on instance termination. For more information, see Preserving Amazon EBS Volumes on Instance Termination: url-doc-domain;AWSEC2/latest/UserGuide/terminating-instances.html#preserving-volumes-on-termination in the Amazon Elastic Compute Cloud User Guide.
+        Indicates whether the EBS volume is deleted on instance termination. For more information, see Preserving Amazon EBS Volumes on Instance Termination: https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/terminating-instances.html#preserving-volumes-on-termination in the Amazon Elastic Compute Cloud User Guide.
 
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-blockdev-template.html#cfn-ec2-blockdev-template-deleteontermination
         PrimitiveType: Boolean
@@ -61,7 +61,7 @@ Constraints: 1-16384 for General Purpose SSD gp2, 4-16384 for Provisioned IOPS S
         UpdateType: Mutable
 
     .PARAMETER VolumeType
-        The volume type. If you set the type to io1, you must also specify the IOPS that the volume supports.
+        The volume type. If you set the type to io1, you must also specify the **Iops** parameter. If you set the type to gp2, st1, sc1, or standard, you must omit the **Iops** parameter.
 Default: gp2
 
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-blockdev-template.html#cfn-ec2-blockdev-template-volumetype

@@ -48,6 +48,8 @@ The length constraint applies only to the full ARN. If you specify only the func
         UpdateType: Immutable
 
     .PARAMETER ProvisionedConcurrencyConfig
+        Specifies a provisioned concurrency configuration for a function's alias.
+
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-lambda-alias.html#cfn-lambda-alias-provisionedconcurrencyconfig
         Type: ProvisionedConcurrencyConfiguration
         UpdateType: Mutable

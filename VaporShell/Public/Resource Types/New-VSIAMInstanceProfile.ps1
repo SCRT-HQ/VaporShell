@@ -32,7 +32,7 @@ This parameter allows through its regex pattern: http://wikipedia.org/wiki/regex
         UpdateType: Immutable
 
     .PARAMETER Roles
-        The role associated with the instance profile.
+        The name of the role to associate with the instance profile. Only one role can be assigned to an EC2 instance at a time, and all applications on the instance share the same role and permissions.
 
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-iam-instanceprofile.html#cfn-iam-instanceprofile-roles
         DuplicatesAllowed: True

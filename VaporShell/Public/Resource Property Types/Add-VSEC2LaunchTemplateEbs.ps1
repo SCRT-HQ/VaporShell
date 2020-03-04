@@ -27,7 +27,7 @@ Ebs is a property of the  Amazon EC2 LaunchTemplate BlockDeviceMapping: https://
         UpdateType: Mutable
 
     .PARAMETER KmsKeyId
-        The ARN of the AWS Key Management Service AWS KMS CMK used for encryption.
+        The ARN of the symmetric AWS Key Management Service AWS KMS CMK used for encryption.
 
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-launchtemplate-blockdevicemapping-ebs.html#cfn-ec2-launchtemplate-blockdevicemapping-ebs-kmskeyid
         PrimitiveType: String

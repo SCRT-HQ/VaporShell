@@ -11,7 +11,7 @@ PushSync is a property of the AWS::Cognito::IdentityPool: https://docs.aws.amazo
         http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-cognito-identitypool-pushsync.html
 
     .PARAMETER ApplicationArns
-        List of Amazon SNS platform application ARNs that could be used by clients.
+        The ARNs of the Amazon SNS platform applications that could be used by clients.
 
         PrimitiveItemType: String
         Type: List
@@ -19,7 +19,7 @@ PushSync is a property of the AWS::Cognito::IdentityPool: https://docs.aws.amazo
         UpdateType: Mutable
 
     .PARAMETER RoleArn
-        An IAM role configured to allow Amazon Cognito to call SNS on behalf of the developer.
+        An IAM role configured to allow Amazon Cognito to call Amazon SNS on behalf of the developer.
 
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-cognito-identitypool-pushsync.html#cfn-cognito-identitypool-pushsync-rolearn
         PrimitiveType: String

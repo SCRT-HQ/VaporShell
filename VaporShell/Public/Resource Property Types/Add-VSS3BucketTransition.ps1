@@ -1,11 +1,11 @@
 function Add-VSS3BucketTransition {
     <#
     .SYNOPSIS
-        Adds an AWS::S3::Bucket.Transition resource property to the template. Specifies when an object transitions to a specified storage class.
+        Adds an AWS::S3::Bucket.Transition resource property to the template. Specifies when an object transitions to a specified storage class. For more information about Amazon S3 lifecycle configuration rules, see Transitioning Objects Using Amazon S3 Lifecycle: https://docs.aws.amazon.com/AmazonS3/latest/dev/lifecycle-transition-general-considerations.html in the *Amazon Simple Storage Service Developer Guide*.
 
     .DESCRIPTION
         Adds an AWS::S3::Bucket.Transition resource property to the template.
-Specifies when an object transitions to a specified storage class.
+Specifies when an object transitions to a specified storage class. For more information about Amazon S3 lifecycle configuration rules, see Transitioning Objects Using Amazon S3 Lifecycle: https://docs.aws.amazon.com/AmazonS3/latest/dev/lifecycle-transition-general-considerations.html in the *Amazon Simple Storage Service Developer Guide*.
 
     .LINK
         http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-s3-bucket-lifecycleconfig-rule-transition.html

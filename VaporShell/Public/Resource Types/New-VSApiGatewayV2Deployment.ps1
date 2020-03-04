@@ -1,10 +1,10 @@
 function New-VSApiGatewayV2Deployment {
     <#
     .SYNOPSIS
-        Adds an AWS::ApiGatewayV2::Deployment resource to the template. The AWS::ApiGatewayV2::Deployment resource creates a deployment for an API. For more information, see Deploy a WebSocket API in API Gateway: https://docs.aws.amazon.com/apigateway/latest/developerguide/apigateway-set-up-websocket-deployment.html in the *API Gateway Developer Guide*.
+        Adds an AWS::ApiGatewayV2::Deployment resource to the template. The AWS::ApiGatewayV2::Deployment resource creates a deployment for an API.
 
     .DESCRIPTION
-        Adds an AWS::ApiGatewayV2::Deployment resource to the template. The AWS::ApiGatewayV2::Deployment resource creates a deployment for an API. For more information, see Deploy a WebSocket API in API Gateway: https://docs.aws.amazon.com/apigateway/latest/developerguide/apigateway-set-up-websocket-deployment.html in the *API Gateway Developer Guide*.
+        Adds an AWS::ApiGatewayV2::Deployment resource to the template. The AWS::ApiGatewayV2::Deployment resource creates a deployment for an API.
 
     .LINK
         http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-apigatewayv2-deployment.html

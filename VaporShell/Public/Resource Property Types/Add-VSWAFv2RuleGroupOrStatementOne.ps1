@@ -1,16 +1,18 @@
 function Add-VSWAFv2RuleGroupOrStatementOne {
     <#
     .SYNOPSIS
-        Adds an AWS::WAFv2::RuleGroup.OrStatementOne resource property to the template. 
+        Adds an AWS::WAFv2::RuleGroup.OrStatementOne resource property to the template. Logical OR statement.
 
     .DESCRIPTION
         Adds an AWS::WAFv2::RuleGroup.OrStatementOne resource property to the template.
-
+Logical OR statement.
 
     .LINK
         http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-wafv2-rulegroup-orstatementone.html
 
     .PARAMETER Statements
+        Logical OR statements.
+
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-wafv2-rulegroup-orstatementone.html#cfn-wafv2-rulegroup-orstatementone-statements
         UpdateType: Mutable
         Type: List

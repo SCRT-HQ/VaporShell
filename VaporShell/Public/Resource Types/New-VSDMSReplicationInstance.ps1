@@ -32,7 +32,9 @@ Example: myrepinstance
         UpdateType: Mutable
 
     .PARAMETER KmsKeyId
-        The AWS KMS key identifier that is used to encrypt the content on the replication instance. If you don't specify a value for the KmsKeyId parameter, then AWS DMS uses your default encryption key. AWS KMS creates the default encryption key for your AWS account. Your AWS account has a different default encryption key for each AWS Region.
+        An AWS KMS key identifier that is used to encrypt the data on the replication instance.
+If you don't specify a value for the KmsKeyId parameter, then AWS DMS uses your default encryption key.
+AWS KMS creates the default encryption key for your AWS account. Your AWS account has a different default encryption key for each AWS Region.
 
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-dms-replicationinstance.html#cfn-dms-replicationinstance-kmskeyid
         PrimitiveType: String
@@ -49,7 +51,7 @@ The default value is a random, system-chosen Availability Zone in the endpoint's
     .PARAMETER PreferredMaintenanceWindow
         The weekly time range during which system maintenance can occur, in Universal Coordinated Time UTC.
 Format: ddd:hh24:mi-ddd:hh24:mi
-Default: A 30-minute window selected at random from an 8-hour block of time per region, occurring on a random day of the week.
+Default: A 30-minute window selected at random from an 8-hour block of time per AWS Region, occurring on a random day of the week.
 Valid Days: Mon, Tue, Wed, Thu, Fri, Sat, Sun
 Constraints: Minimum 30-minute window.
 
@@ -58,7 +60,7 @@ Constraints: Minimum 30-minute window.
         UpdateType: Mutable
 
     .PARAMETER AutoMinorVersionUpgrade
-        Indicates that minor engine upgrades will be applied automatically to the replication instance during the maintenance window.
+        Indicates whether minor engine upgrades will be applied automatically to the replication instance during the maintenance window. This parameter defaults to true.
 Default: true
 
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-dms-replicationinstance.html#cfn-dms-replicationinstance-autominorversionupgrade
@@ -88,8 +90,8 @@ Default: true
         UpdateType: Mutable
 
     .PARAMETER AllowMajorVersionUpgrade
-        Indicates that major version upgrades are allowed. Changing this parameter does not result in an outage and the change is asynchronously applied as soon as possible.
-Constraints: This parameter must be set to true when specifying a value for the EngineVersion parameter that is a different major version than the replication instance's current version.
+        Indicates that major version upgrades are allowed. Changing this parameter does not result in an outage, and the change is asynchronously applied as soon as possible.
+This parameter must be set to true when specifying a value for the EngineVersion parameter that is a different major version than the replication instance's current version.
 
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-dms-replicationinstance.html#cfn-dms-replicationinstance-allowmajorversionupgrade
         PrimitiveType: Boolean
@@ -111,14 +113,14 @@ Valid Values: dms.t2.micro | dms.t2.small | dms.t2.medium | dms.t2.large | dms.c
         UpdateType: Immutable
 
     .PARAMETER MultiAZ
-        Specifies if the replication instance is a Multi-AZ deployment. You cannot set the AvailabilityZone parameter if the Multi-AZ parameter is set to true.
+        Specifies whether the replication instance is a Multi-AZ deployment. You cannot set the AvailabilityZone parameter if the Multi-AZ parameter is set to true.
 
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-dms-replicationinstance.html#cfn-dms-replicationinstance-multiaz
         PrimitiveType: Boolean
         UpdateType: Mutable
 
     .PARAMETER Tags
-        Tags to be associated with the replication instance.
+        One or more tags to be assigned to the replication instance.
 
         Type: List
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-dms-replicationinstance.html#cfn-dms-replicationinstance-tags
@@ -304,16 +306,8 @@ Valid Values: dms.t2.micro | dms.t2.small | dms.t2.medium | dms.t2.large | dms.c
                 }
             })]
         $MultiAZ,
+        [VaporShell.Core.TransformTag()]
         [parameter(Mandatory = $false)]
-        [ValidateScript( {
-                $allowedTypes = "Vaporshell.Resource.Tag","System.Management.Automation.PSCustomObject"
-                if ([string]$($_.PSTypeNames) -match "($(($allowedTypes|ForEach-Object{[RegEx]::Escape($_)}) -join '|'))") {
-                    $true
-                }
-                else {
-                    $PSCmdlet.ThrowTerminatingError((New-VSError -String "This parameter only accepts the following types: $($allowedTypes -join ", "). The current types of the value are: $($_.PSTypeNames -join ", ")."))
-                }
-            })]
         $Tags,
         [ValidateSet("Delete","Retain","Snapshot")]
         [System.String]

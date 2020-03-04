@@ -1,17 +1,18 @@
 function Add-VSCognitoUserPoolSchemaAttribute {
     <#
     .SYNOPSIS
-        Adds an AWS::Cognito::UserPool.SchemaAttribute resource property to the template. SchemaAttribute is a property of the AWS::Cognito::UserPool: https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-cognito-userpool.html resource that defines the schema attributes of an Amazon Cognito User Pool.
+        Adds an AWS::Cognito::UserPool.SchemaAttribute resource property to the template. Contains information about the schema attribute.
 
     .DESCRIPTION
         Adds an AWS::Cognito::UserPool.SchemaAttribute resource property to the template.
-SchemaAttribute is a property of the AWS::Cognito::UserPool: https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-cognito-userpool.html resource that defines the schema attributes of an Amazon Cognito User Pool.
+Contains information about the schema attribute.
 
     .LINK
         http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-cognito-userpool-schemaattribute.html
 
     .PARAMETER DeveloperOnlyAttribute
-        Specifies whether the attribute type is developer only.
+        We recommend that you use WriteAttributes: https://docs.aws.amazon.com/cognito-user-identity-pools/latest/APIReference/API_UserPoolClientType.html#CognitoUserPools-Type-UserPoolClientType-WriteAttributes in the user pool client to control how attributes can be mutated for new use cases instead of using DeveloperOnlyAttribute.
+Specifies whether the attribute type is developer only. This attribute can only be modified by an administrator. Users will not be able to modify this attribute using their access token.
 
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-cognito-userpool-schemaattribute.html#cfn-cognito-userpool-schemaattribute-developeronlyattribute
         PrimitiveType: Boolean

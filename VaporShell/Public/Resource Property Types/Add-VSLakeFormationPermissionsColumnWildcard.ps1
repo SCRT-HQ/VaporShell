@@ -1,16 +1,18 @@
 function Add-VSLakeFormationPermissionsColumnWildcard {
     <#
     .SYNOPSIS
-        Adds an AWS::LakeFormation::Permissions.ColumnWildcard resource property to the template. 
+        Adds an AWS::LakeFormation::Permissions.ColumnWildcard resource property to the template. A wildcard object, consisting of an optional list of excluded column names or indexes.
 
     .DESCRIPTION
         Adds an AWS::LakeFormation::Permissions.ColumnWildcard resource property to the template.
-
+A wildcard object, consisting of an optional list of excluded column names or indexes.
 
     .LINK
         http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-lakeformation-permissions-columnwildcard.html
 
     .PARAMETER ExcludedColumnNames
+        Excludes column names. Any column with this name will be excluded.
+
         PrimitiveItemType: String
         Type: List
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-lakeformation-permissions-columnwildcard.html#cfn-lakeformation-permissions-columnwildcard-excludedcolumnnames

@@ -55,8 +55,8 @@ If any value is set in the Iops parameter, AllocatedStorage must be at least 100
         UpdateType: Mutable
 
     .PARAMETER AllowMajorVersionUpgrade
-        Indicates that major version upgrades are allowed. Changing this parameter does not result in an outage and the change is asynchronously applied as soon as possible.
-Constraints: This parameter must be set to true when specifying a value for the EngineVersion parameter that is a different major version than the DB Instance's current version.
+        A value that indicates whether major version upgrades are allowed. Changing this parameter doesn't result in an outage and the change is asynchronously applied as soon as possible.
+Constraints: Major version upgrades must be allowed when specifying a value for the EngineVersion parameter that is a different major version than the DB instance's current version.
 
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-rds-database-instance.html#cfn-rds-dbinstance-allowmajorversionupgrade
         PrimitiveType: Boolean
@@ -72,18 +72,19 @@ Constraints: This parameter must be set to true when specifying a value for the 
         UpdateType: Mutable
 
     .PARAMETER AutoMinorVersionUpgrade
-        Indicates that minor engine upgrades will be applied automatically to the DB Instance during the maintenance window.
-Default: true
+        A value that indicates whether minor engine upgrades are applied automatically to the DB instance during the maintenance window. By default, minor engine upgrades are applied automatically.
 
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-rds-database-instance.html#cfn-rds-dbinstance-autominorversionupgrade
         PrimitiveType: Boolean
         UpdateType: Conditional
 
     .PARAMETER AvailabilityZone
-        The Availability Zone that the database instance will be created in.
-Default: A random, system-chosen Availability Zone in the endpoint's region.
+        The Availability Zone AZ where the database will be created. For information on AWS Regions and Availability Zones, see Regions and Availability Zones: https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/Concepts.RegionsAndAvailabilityZones.html.
+Default: A random, system-chosen Availability Zone in the endpoint's AWS Region.
 Example: us-east-1d
-Constraint: The AvailabilityZone parameter cannot be specified if the MultiAZ parameter is set to true. The specified Availability Zone must be in the same region as the current endpoint.
+Constraint: The AvailabilityZone parameter can't be specified if the DB instance is a Multi-AZ deployment. The specified Availability Zone must be in the same AWS Region as the current endpoint.
+If you're creating a DB instance in an RDS on VMware environment, specify the identifier of the custom Availability Zone to create the DB instance in.
+For more information about RDS on VMware, see the  *RDS on VMware User Guide.* : https://docs.aws.amazon.com/AmazonRDS/latest/RDSonVMwareUserGuide/rds-on-vmware.html
 
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-rds-database-instance.html#cfn-rds-dbinstance-availabilityzone
         PrimitiveType: String
@@ -91,22 +92,29 @@ Constraint: The AvailabilityZone parameter cannot be specified if the MultiAZ pa
 
     .PARAMETER BackupRetentionPeriod
         The number of days for which automated backups are retained. Setting this parameter to a positive number enables backups. Setting this parameter to 0 disables automated backups.
+**Amazon Aurora**
+Not applicable. The retention period for automated backups is managed by the DB cluster.
 Default: 1
 Constraints:
-+ Must be a value from 0 to 8
-+ Cannot be set to 0 if the DB Instance is a master instance with read replicas
++ Must be a value from 0 to 35
++ Can't be set to 0 if the DB instance is a source to Read Replicas
 
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-rds-database-instance.html#cfn-rds-dbinstance-backupretentionperiod
         PrimitiveType: Integer
         UpdateType: Conditional
 
     .PARAMETER CACertificateIdentifier
+        The identifier of the CA certificate for this DB instance.
+Specifying or updating this property triggers a reboot.
+
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-rds-database-instance.html#cfn-rds-dbinstance-cacertificateidentifier
         PrimitiveType: String
         UpdateType: Mutable
 
     .PARAMETER CharacterSetName
-        For supported engines, indicates that the DB Instance should be associated with the specified CharacterSet.
+        For supported engines, indicates that the DB instance should be associated with the specified CharacterSet.
+**Amazon Aurora**
+Not applicable. The character set is managed by the DB cluster. For more information, see CreateDBCluster.
 
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-rds-database-instance.html#cfn-rds-dbinstance-charactersetname
         PrimitiveType: String
@@ -265,13 +273,17 @@ For more information about using Amazon RDS in a VPC, see Using Amazon RDS with 
 
     .PARAMETER DeletionProtection
         A value that indicates whether the DB instance has deletion protection enabled. The database can't be deleted when deletion protection is enabled. By default, deletion protection is disabled. For more information, see  Deleting a DB Instance: https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_DeleteInstance.html.
+**Amazon Aurora**
+Not applicable. You can enable or disable deletion protection for the DB cluster. For more information, see CreateDBCluster. DB instances in a DB cluster can be deleted even when deletion protection is enabled for the DB cluster.
 
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-rds-database-instance.html#cfn-rds-dbinstance-deletionprotection
         PrimitiveType: Boolean
         UpdateType: Mutable
 
     .PARAMETER Domain
-        For an Amazon RDS DB instance that's running Microsoft SQL Server, this parameter specifies the Active Directory directory ID to create the instance in. Amazon RDS uses Windows Authentication to authenticate users that connect to the DB instance. For more information, see Using Windows Authentication with an Amazon RDS DB Instance Running Microsoft SQL Server: https://docs.aws.amazon.com/AmazonRDS/latest/DeveloperGuide/USER_SQLServerWinAuth.html in the *Amazon RDS User Guide*.
+        The Active Directory directory ID to create the DB instance in. Currently, only Microsoft SQL Server and Oracle DB instances can be created in an Active Directory Domain.
+For Microsoft SQL Server DB instances, Amazon RDS can use Windows Authentication to authenticate users that connect to the DB instance. For more information, see  Using Windows Authentication with an Amazon RDS DB Instance Running Microsoft SQL Server: https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_SQLServerWinAuth.html in the *Amazon RDS User Guide*.
+For Oracle DB instance, Amazon RDS can use Kerberos Authentication to authenticate users that connect to the DB instance. For more information, see  Using Kerberos Authentication with Amazon RDS for Oracle: https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/oracle-kerberos.html in the *Amazon RDS User Guide*.
 
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-rds-database-instance.html#cfn-rds-dbinstance-domain
         PrimitiveType: String
@@ -330,14 +342,20 @@ If you don't specify a value for the DBParameterGroupName property, the default 
 
     .PARAMETER EngineVersion
         The version number of the database engine to use.
+For a list of valid engine versions, use the DescribeDBEngineVersions action.
+The following are the database engines and links to information about the major and minor versions that are available with Amazon RDS. Not every database engine is available for every AWS Region.
+**Amazon Aurora**
+Not applicable. The version number of the database engine to be used by the DB instance is managed by the DB cluster.
+**MariaDB**
+See MariaDB on Amazon RDS Versions: https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/CHAP_MariaDB.html#MariaDB.Concepts.VersionMgmt in the *Amazon RDS User Guide.*
+**Microsoft SQL Server**
+See Version and Feature Support on Amazon RDS: https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/CHAP_SQLServer.html#SQLServer.Concepts.General.FeatureSupport in the *Amazon RDS User Guide.*
 **MySQL**
-Example: 5.1.42
-Type: String
+See MySQL on Amazon RDS Versions: https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/CHAP_MySQL.html#MySQL.Concepts.VersionMgmt in the *Amazon RDS User Guide.*
 **Oracle**
-Example: 11.2.0.2.v2
-Type: String
-**SQL Server**
-Example: 10.50.2789.0.v1
+See Oracle Database Engine Release Notes: https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/Appendix.Oracle.PatchComposition.html in the *Amazon RDS User Guide.*
+**PostgreSQL**
+See Supported PostgreSQL Database Versions: https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/CHAP_PostgreSQL.html#PostgreSQL.Concepts.General.DBVersions in the *Amazon RDS User Guide.*
 
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-rds-database-instance.html#cfn-rds-dbinstance-engineversion
         PrimitiveType: String
@@ -371,14 +389,19 @@ If you've specified DBSecurityGroups and then you update the license model, AWS 
         UpdateType: Mutable
 
     .PARAMETER MasterUserPassword
-        The password for the master database user. Can be any printable ASCII character except "/", "", or "@".
-Type: String
+        The password for the master user. The password can include any printable ASCII character except "/", """, or "@".
+**Amazon Aurora**
+Not applicable. The password for the master user is managed by the DB cluster.
+**MariaDB**
+Constraints: Must contain from 8 to 41 characters.
+**Microsoft SQL Server**
+Constraints: Must contain from 8 to 128 characters.
 **MySQL**
-Constraints: Must contain from 8 to 41 alphanumeric characters.
+Constraints: Must contain from 8 to 41 characters.
 **Oracle**
-Constraints: Must contain from 8 to 30 alphanumeric characters.
-**SQL Server**
-Constraints: Must contain from 8 to 128 alphanumeric characters.
+Constraints: Must contain from 8 to 30 characters.
+**PostgreSQL**
+Constraints: Must contain from 8 to 128 characters.
 
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-rds-database-instance.html#cfn-rds-dbinstance-masteruserpassword
         PrimitiveType: String
@@ -393,6 +416,8 @@ If you specify the SourceDBInstanceIdentifier or DBSnapshotIdentifier property, 
         UpdateType: Immutable
 
     .PARAMETER MaxAllocatedStorage
+        The upper limit to which Amazon RDS can automatically scale the storage of the DB instance.
+
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-rds-database-instance.html#cfn-rds-dbinstance-maxallocatedstorage
         PrimitiveType: Integer
         UpdateType: Mutable
@@ -422,7 +447,8 @@ If MonitoringInterval is set to a value other than 0, then you must supply a Mon
         UpdateType: Mutable
 
     .PARAMETER OptionGroupName
-        Indicates that the DB Instance should be associated with the specified option group.
+        Indicates that the DB instance should be associated with the specified option group.
+Permanent options, such as the TDE option for Oracle Advanced Security TDE, can't be removed from an option group. Also, that option group can't be removed from a DB instance once it is associated with a DB instance
 
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-rds-database-instance.html#cfn-rds-dbinstance-optiongroupname
         PrimitiveType: String
@@ -451,14 +477,15 @@ If you do not specify a value for PerformanceInsightsKMSKeyId, then Amazon RDS u
         UpdateType: Immutable
 
     .PARAMETER PreferredBackupWindow
-        The daily time range during which automated backups are created if automated backups are enabled, using the BackupRetentionPeriod parameter.
-Default: A 30-minute window selected at random from an 8-hour block of time per region. The following list shows the time blocks for each region from which the default backup windows are assigned.
-+  **US-East Northern Virginia Region:** 03:00-11:00 UTC
-+  **US-West Northern California Region:** 06:00-14:00 UTC
-+  **EU Ireland Region:** 22:00-06:00 UTC
-+  **Asia Pacific Singapore Region:** 14:00-22:00 UTC
-+  **Asia Pacific Tokyo Region: ** 17:00-03:00 UTC
-Constraints: Must be in the format hh24:mi-hh24:mi. Times should be Universal Time Coordinated UTC. Must not conflict with the preferred maintenance window. Must be at least 30 minutes.
+        The daily time range during which automated backups are created if automated backups are enabled, using the BackupRetentionPeriod parameter. For more information, see The Backup Window: https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_WorkingWithAutomatedBackups.html#USER_WorkingWithAutomatedBackups.BackupWindow in the *Amazon RDS User Guide*.
+**Amazon Aurora**
+Not applicable. The daily time range for creating automated backups is managed by the DB cluster.
+The default is a 30-minute window selected at random from an 8-hour block of time for each AWS Region. To see the time blocks available, see  Adjusting the Preferred DB Instance Maintenance Window: https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_UpgradeDBInstance.Maintenance.html#AdjustingTheMaintenanceWindow in the *Amazon RDS User Guide*.
+Constraints:
++ Must be in the format hh24:mi-hh24:mi.
++ Must be in Universal Coordinated Time UTC.
++ Must not conflict with the preferred maintenance window.
++ Must be at least 30 minutes.
 
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-rds-database-instance.html#cfn-rds-dbinstance-preferredbackupwindow
         PrimitiveType: String
@@ -508,7 +535,7 @@ If you specify DBSecurityGroups, AWS CloudFormation ignores this property. To sp
 The SourceDBInstanceIdentifier property determines whether a DB instance is a Read Replica. If you remove the SourceDBInstanceIdentifier property from your template and then update your stack, AWS CloudFormation deletes the Read Replica and creates a new DB instance not a Read Replica.
 + If you specify a source DB instance that uses VPC security groups, we recommend that you specify the VPCSecurityGroups property. If you don't specify the property, the Read Replica inherits the value of the VPCSecurityGroups property from the source DB when you create the replica. However, if you update the stack, AWS CloudFormation reverts the replica's VPCSecurityGroups property to the default value because it's not defined in the stack's template. This change might cause unexpected issues.
 + Read Replicas don't support deletion policies. AWS CloudFormation ignores any deletion policy that's associated with a Read Replica.
-+ If you specify SourceDBInstanceIdentifier, don't set the MultiAZ property to true, and don't specify the DBSnapshotIdentifier property. You can't deploy Read Replicas in multiple Availability Zones, and you can't create a Read Replica from a snapshot.
++ If you specify SourceDBInstanceIdentifier, don't specify the DBSnapshotIdentifier property. You can't create a Read Replica from a snapshot.
 +  Don't set the BackupRetentionPeriod, DBName, MasterUsername, MasterUserPassword, and PreferredBackupWindow properties. The database attributes are inherited from the source DB instance, and backups are disabled for Read Replicas.
 + If the source DB instance is in a different region than the Read Replica, specify the source region in SourceRegion, and specify an ARN for a valid DB instance in SourceDBInstanceIdentifier. For more information, see Constructing a Amazon RDS Amazon Resource Name ARN: https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_Tagging.html#USER_Tagging.ARN in the *Amazon RDS User Guide*.
 + For DB instances in Amazon Aurora clusters, don't specify this property. Amazon RDS automatically assigns writer and reader DB instances.
@@ -525,7 +552,7 @@ The SourceDBInstanceIdentifier property determines whether a DB instance is a Re
         UpdateType: Immutable
 
     .PARAMETER StorageEncrypted
-        A value that indicates whether the DB instance is encrypted. By default, it is not encrypted.
+        A value that indicates whether the DB instance is encrypted. By default, it isn't encrypted.
 **Amazon Aurora**
 Not applicable. The encryption for DB instances is managed by the DB cluster.
 
@@ -534,7 +561,11 @@ Not applicable. The encryption for DB instances is managed by the DB cluster.
         UpdateType: Immutable
 
     .PARAMETER StorageType
-        Specifies storage type to be associated with the DB Instance.
+        Specifies the storage type to be associated with the DB instance.
+Valid values: standard | gp2 | io1
+If you specify io1, you must also include a value for the Iops parameter.
+Default: io1 if the Iops parameter is specified, otherwise standard
+For more information, see Amazon RDS DB Instance Storage: https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/CHAP_Storage.html in the *Amazon RDS User Guide*.
 
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-rds-database-instance.html#cfn-rds-dbinstance-storagetype
         PrimitiveType: String
@@ -1135,16 +1166,8 @@ To avoid this situation, migrate your DB instance to using VPC security groups o
                 }
             })]
         $StorageType,
+        [VaporShell.Core.TransformTag()]
         [parameter(Mandatory = $false)]
-        [ValidateScript( {
-                $allowedTypes = "Vaporshell.Resource.Tag","System.Management.Automation.PSCustomObject"
-                if ([string]$($_.PSTypeNames) -match "($(($allowedTypes|ForEach-Object{[RegEx]::Escape($_)}) -join '|'))") {
-                    $true
-                }
-                else {
-                    $PSCmdlet.ThrowTerminatingError((New-VSError -String "This parameter only accepts the following types: $($allowedTypes -join ", "). The current types of the value are: $($_.PSTypeNames -join ", ")."))
-                }
-            })]
         $Tags,
         [parameter(Mandatory = $false)]
         [ValidateScript( {

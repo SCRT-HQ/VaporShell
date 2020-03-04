@@ -11,7 +11,7 @@ A container for object key name prefix and suffix filtering rules.
         http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-s3-bucket-notificationconfiguration-config-filter-s3key.html
 
     .PARAMETER Rules
-        A list of containers for the key value pair that defines the criteria for the filter rule.
+        A list of containers for the key-value pair that defines the criteria for the filter rule.
 
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-s3-bucket-notificationconfiguration-config-filter-s3key.html#cfn-s3-bucket-notificationconfiguraiton-config-filter-s3key-rules
         DuplicatesAllowed: False

@@ -68,7 +68,8 @@ For information about limits on the number of inline policies that you can embed
         UpdateType: Mutable
 
     .PARAMETER Tags
-        +  CreateUser: https://docs.aws.amazon.com/IAM/latest/APIReference/API_CreateUser.html in the *AWS Identity and Access Management API Reference*
+        A list of tags that you want to attach to the newly created user. Each tag consists of a key name and an associated value. For more information about tagging, see Tagging IAM Identities: https://docs.aws.amazon.com/IAM/latest/UserGuide/id_tags.html in the *IAM User Guide*.
+If any one of the tags is invalid or if you exceed the allowed number of tags per user, then the entire request fails and the user is not created.
 
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iam-user.html#cfn-iam-user-tags
         DuplicatesAllowed: True
@@ -171,16 +172,8 @@ Naming an IAM resource can cause an unrecoverable error if you reuse the same te
                 }
             })]
         $Policies,
+        [VaporShell.Core.TransformTag()]
         [parameter(Mandatory = $false)]
-        [ValidateScript( {
-                $allowedTypes = "Vaporshell.Resource.Tag","System.Management.Automation.PSCustomObject"
-                if ([string]$($_.PSTypeNames) -match "($(($allowedTypes|ForEach-Object{[RegEx]::Escape($_)}) -join '|'))") {
-                    $true
-                }
-                else {
-                    $PSCmdlet.ThrowTerminatingError((New-VSError -String "This parameter only accepts the following types: $($allowedTypes -join ", "). The current types of the value are: $($_.PSTypeNames -join ", ")."))
-                }
-            })]
         $Tags,
         [parameter(Mandatory = $false)]
         [ValidateScript( {

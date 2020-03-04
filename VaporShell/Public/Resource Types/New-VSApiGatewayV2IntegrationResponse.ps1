@@ -1,10 +1,10 @@
 function New-VSApiGatewayV2IntegrationResponse {
     <#
     .SYNOPSIS
-        Adds an AWS::ApiGatewayV2::IntegrationResponse resource to the template. The AWS::ApiGatewayV2::IntegrationResponse resource updates an integration response for an API. For more information, see Set up WebSocket API Integration Responses in API Gateway: https://docs.aws.amazon.com/apigateway/latest/developerguide/apigateway-websocket-api-integration-responses.html in the *API Gateway Developer Guide*.
+        Adds an AWS::ApiGatewayV2::IntegrationResponse resource to the template. The AWS::ApiGatewayV2::IntegrationResponse resource updates an integration response for an WebSocket API. For more information, see Set up WebSocket API Integration Responses in API Gateway: https://docs.aws.amazon.com/apigateway/latest/developerguide/apigateway-websocket-api-integration-responses.html in the *API Gateway Developer Guide*.
 
     .DESCRIPTION
-        Adds an AWS::ApiGatewayV2::IntegrationResponse resource to the template. The AWS::ApiGatewayV2::IntegrationResponse resource updates an integration response for an API. For more information, see Set up WebSocket API Integration Responses in API Gateway: https://docs.aws.amazon.com/apigateway/latest/developerguide/apigateway-websocket-api-integration-responses.html in the *API Gateway Developer Guide*.
+        Adds an AWS::ApiGatewayV2::IntegrationResponse resource to the template. The AWS::ApiGatewayV2::IntegrationResponse resource updates an integration response for an WebSocket API. For more information, see Set up WebSocket API Integration Responses in API Gateway: https://docs.aws.amazon.com/apigateway/latest/developerguide/apigateway-websocket-api-integration-responses.html in the *API Gateway Developer Guide*.
 
     .LINK
         http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-apigatewayv2-integrationresponse.html
@@ -20,7 +20,7 @@ function New-VSApiGatewayV2IntegrationResponse {
         UpdateType: Mutable
 
     .PARAMETER TemplateSelectionExpression
-        The template selection expression for the integration response.
+        The template selection expression for the integration response. Supported only for WebSocket APIs.
 
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-apigatewayv2-integrationresponse.html#cfn-apigatewayv2-integrationresponse-templateselectionexpression
         PrimitiveType: String
@@ -34,7 +34,7 @@ function New-VSApiGatewayV2IntegrationResponse {
         UpdateType: Mutable
 
     .PARAMETER ContentHandlingStrategy
-        Specifies how to handle response payload content type conversions. Supported values are CONVERT_TO_BINARY and CONVERT_TO_TEXT, with the following behaviors:
+        Supported only for WebSocket APIs. Specifies how to handle response payload content type conversions. Supported values are CONVERT_TO_BINARY and CONVERT_TO_TEXT, with the following behaviors:
 CONVERT_TO_BINARY: Converts a response payload from a Base64-encoded string to the corresponding binary blob.
 CONVERT_TO_TEXT: Converts a response payload from a binary blob to a Base64-encoded string.
 If this property is not defined, the response payload will be passed through from the integration response to the route response or method response without modification.

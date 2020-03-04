@@ -37,7 +37,7 @@ For example, if you have a budget for 200 dollars and you want to be notified wh
         UpdateType: Mutable
 
     .PARAMETER Threshold
-        The threshold that is associated with a notification. Thresholds are always a percentage.
+        The threshold that is associated with a notification. Thresholds are always a percentage, and many customers find value being alerted between 50% - 200% of the budgeted amount. The maximum limit for your threshold is 1,000,000% above the budgeted amount.
 
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-budgets-budget-notification.html#cfn-budgets-budget-notification-threshold
         PrimitiveType: Double

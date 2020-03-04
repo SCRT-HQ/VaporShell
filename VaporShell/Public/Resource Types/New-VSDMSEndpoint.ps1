@@ -13,7 +13,9 @@ function New-VSDMSEndpoint {
         The logical ID must be alphanumeric (A-Za-z0-9) and unique within the template. Use the logical name to reference the resource in other parts of the template. For example, if you want to map an Amazon Elastic Block Store volume to an Amazon EC2 instance, you reference the logical IDs to associate the block stores with the instance.
 
     .PARAMETER KmsKeyId
-        The AWS KMS key identifier to use to encrypt the connection parameters. If you don't specify a value for the KmsKeyId parameter, then AWS DMS uses your default encryption key. AWS KMS creates the default encryption key for your AWS account. Your AWS account has a different default encryption key for each AWS Region.
+        An AWS KMS key identifier that is used to encrypt the connection parameters for the endpoint.
+If you don't specify a value for the KmsKeyId parameter, then AWS DMS uses your default encryption key.
+AWS KMS creates the default encryption key for your AWS account. Your AWS account has a different default encryption key for each AWS Region.
 
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-dms-endpoint.html#cfn-dms-endpoint-kmskeyid
         PrimitiveType: String
@@ -48,7 +50,7 @@ function New-VSDMSEndpoint {
         UpdateType: Mutable
 
     .PARAMETER EngineName
-        The type of engine for the endpoint. Valid values, depending on the EndPointType value, include mysql, oracle, postgres, mariadb, aurora, aurora-postgresql, redshift, s3, db2, azuredb, sybase, dynamodb, mongodb, and sqlserver.
+        The type of engine for the endpoint. Valid values, depending on the EndpointType value, include mysql, oracle, postgres, mariadb, aurora, aurora-postgresql, redshift, s3, db2, azuredb, sybase, dynamodb, mongodb, and sqlserver.
 
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-dms-endpoint.html#cfn-dms-endpoint-enginename
         PrimitiveType: String
@@ -62,7 +64,7 @@ function New-VSDMSEndpoint {
         UpdateType: Mutable
 
     .PARAMETER KinesisSettings
-        Settings in JSON format for the target Amazon Kinesis Data Streams endpoint. For more information about the available settings, see Using Object Mapping to Migrate Data to a Kinesis Data Stream: https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Target.Kinesis.html#CHAP_Target.Kinesis.ObjectMapping              in the *AWS Database Migration User Guide.*
+        Settings in JSON format for the target Amazon Kinesis Data Streams endpoint. For more information about the available settings, see Using Object Mapping to Migrate Data to a Kinesis Data Stream: https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Target.Kinesis.html#CHAP_Target.Kinesis.ObjectMapping in the *AWS Database Migration User Guide.*
 
         Type: KinesisSettings
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-dms-endpoint.html#cfn-dms-endpoint-kinesissettings
@@ -76,7 +78,7 @@ function New-VSDMSEndpoint {
         UpdateType: Mutable
 
     .PARAMETER SslMode
-        The Secure Sockets Layer SSL mode to use for the SSL connection. The SSL mode can be one of four values: none, require, verify-ca, verify-full. The default value is none.
+        The Secure Sockets Layer SSL mode to use for the SSL connection. The default is none
 
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-dms-endpoint.html#cfn-dms-endpoint-sslmode
         PrimitiveType: String
@@ -90,21 +92,21 @@ function New-VSDMSEndpoint {
         UpdateType: Mutable
 
     .PARAMETER ExtraConnectionAttributes
-        Additional attributes associated with the connection.
+        Additional attributes associated with the connection. Each attribute is specified as a name-value pair associated by an equal sign =. Multiple attributes are separated by a semicolon ; with no additional white space. For information on the attributes available for connecting your source or target endpoint, see Working with AWS DMS Endpoints: https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Endpoints.html in the *AWS Database Migration Service User Guide.*
 
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-dms-endpoint.html#cfn-dms-endpoint-extraconnectionattributes
         PrimitiveType: String
         UpdateType: Mutable
 
     .PARAMETER EndpointType
-        The type of endpoint.
+        The type of endpoint. Valid values are source and target.
 
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-dms-endpoint.html#cfn-dms-endpoint-endpointtype
         PrimitiveType: String
         UpdateType: Mutable
 
     .PARAMETER Tags
-        Tags to be added to the endpoint.
+        One or more tags to be assigned to the endpoint.
 
         Type: List
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-dms-endpoint.html#cfn-dms-endpoint-tags
@@ -293,16 +295,8 @@ function New-VSDMSEndpoint {
                 }
             })]
         $EndpointType,
+        [VaporShell.Core.TransformTag()]
         [parameter(Mandatory = $false)]
-        [ValidateScript( {
-                $allowedTypes = "Vaporshell.Resource.Tag","System.Management.Automation.PSCustomObject"
-                if ([string]$($_.PSTypeNames) -match "($(($allowedTypes|ForEach-Object{[RegEx]::Escape($_)}) -join '|'))") {
-                    $true
-                }
-                else {
-                    $PSCmdlet.ThrowTerminatingError((New-VSError -String "This parameter only accepts the following types: $($allowedTypes -join ", "). The current types of the value are: $($_.PSTypeNames -join ", ")."))
-                }
-            })]
         $Tags,
         [parameter(Mandatory = $false)]
         [ValidateScript( {

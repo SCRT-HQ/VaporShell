@@ -20,7 +20,7 @@ For information about limits on the number of inline policies that you can embed
 
     .PARAMETER Groups
         The name of the group to associate the policy with.
-&regex-name;.
+This parameter allows through its regex pattern: http://wikipedia.org/wiki/regex a string of characters consisting of upper and lowercase alphanumeric characters with no spaces. You can also include any of the following characters: _+=,.@-.
 
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-iam-policy.html#cfn-iam-policy-groups
         DuplicatesAllowed: True

@@ -18,8 +18,8 @@ If you've associated an IPv6 CIDR block with your VPC, you can create a subnet w
 
     .PARAMETER AssignIpv6AddressOnCreation
         Indicates whether a network interface created in this subnet receives an IPv6 address. The default value is false.
-If you specify a true or false value for AssignIpv6AddressOnCreation, Ipv6CidrBlock must also be specified.
-If AssignIpv6AddressOnCreation is specified, MapPublicIpOnLaunch cannot be specified.
+If you specify AssignIpv6AddressOnCreation, you must also specify Ipv6CidrBlock.
+If you specify AssignIpv6AddressOnCreation, you cannot specify MapPublicIpOnLaunch.
 
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ec2-subnet.html#cfn-ec2-subnet-assignipv6addressoncreation
         PrimitiveType: Boolean
@@ -43,7 +43,7 @@ If you update this property, you must also update the AvailabilityZone property.
 
     .PARAMETER Ipv6CidrBlock
         The IPv6 CIDR block.
-If you specify a true or false value for AssignIpv6AddressOnCreation, Ipv6CidrBlock must be specified.
+If you specify AssignIpv6AddressOnCreation, you must also specify Ipv6CidrBlock.
 
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ec2-subnet.html#cfn-ec2-subnet-ipv6cidrblock
         PrimitiveType: String
@@ -51,7 +51,7 @@ If you specify a true or false value for AssignIpv6AddressOnCreation, Ipv6CidrBl
 
     .PARAMETER MapPublicIpOnLaunch
         Indicates whether instances launched in this subnet receive a public IPv4 address.
-If MapPublicIpOnLaunch is specified. AssignIpv6AddressOnCreation cannot be specified.
+If you specify MapPublicIpOnLaunch, you cannot specify AssignIpv6AddressOnCreation.
 
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ec2-subnet.html#cfn-ec2-subnet-mappubliciponlaunch
         PrimitiveType: Boolean
@@ -174,16 +174,8 @@ If you update this property, you must also update the CidrBlock property.
                 }
             })]
         $MapPublicIpOnLaunch,
+        [VaporShell.Core.TransformTag()]
         [parameter(Mandatory = $false)]
-        [ValidateScript( {
-                $allowedTypes = "Vaporshell.Resource.Tag","System.Management.Automation.PSCustomObject"
-                if ([string]$($_.PSTypeNames) -match "($(($allowedTypes|ForEach-Object{[RegEx]::Escape($_)}) -join '|'))") {
-                    $true
-                }
-                else {
-                    $PSCmdlet.ThrowTerminatingError((New-VSError -String "This parameter only accepts the following types: $($allowedTypes -join ", "). The current types of the value are: $($_.PSTypeNames -join ", ")."))
-                }
-            })]
         $Tags,
         [parameter(Mandatory = $true)]
         [ValidateScript( {

@@ -12,7 +12,7 @@ function New-VSRoute53HostedZone {
 
 **Important**
 
-You can't convert a public hosted zone to a private hosted zone or vice versa. Instead, you must create a new hosted zone with the same name and create new resource record sets.
+You can't convert a public hosted zone to a private hosted zone or vice versa. Instead, you must create a new hosted zone with the same name and create new records.
 
 For more information about charges for hosted zones, see Amazon Route 53 Pricing: http://aws.amazon.com/route53/pricing/.
 
@@ -22,7 +22,13 @@ Note the following:
 
 + For public hosted zones, Amazon Route 53 automatically creates a default SOA record and four NS records for the zone. For more information about SOA and NS records, see NS and SOA Records that Route 53 Creates for a Hosted Zone: https://docs.aws.amazon.com/Route53/latest/DeveloperGuide/SOA-NSrecords.html in the *Amazon Route 53 Developer Guide*.
 
-If you want to use the same name servers for multiple public hosted zones, you can optionally associate a reusable delegation set with the hosted zone. See the DelegationSetId element.
+If you want to use the same name servers for multiple public hosted zones, you can optionally associate a reusable delegation set with the hosted zone. Using CloudFormation to create reusable delegation sets isn't supported, but you can create them programmatically using other methods, such as the Route 53 API: https://docs.aws.amazon.com/Route53/latest/APIReference/API_CreateReusableDelegationSet.html, the AWS CLI: https://docs.aws.amazon.com/cli/latest/reference/route53/create-reusable-delegation-set.html, or AWS SDKs: https://docs.aws.amazon.com/ (see the "SDKs & Toolkits" section.
+
++ To create a private hosted zone, specify the VPC ID and Region for one VPC in the VPCs: https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-route53-hostedzone.html#cfn-route53-hostedzone-vpcs object.
+
+**Note**
+
+You can specify only one Amazon VPC when you create a private hosted zone. To associate additional Amazon VPCs with the hosted zone, use AssociateVPCWithHostedZone: https://docs.aws.amazon.com/Route53/latest/APIReference/API_AssociateVPCWithHostedZone.html after you create the hosted zone.
 
 + If your domain is registered with a registrar other than Route 53, you must update the name servers with your registrar to make Route 53 the DNS service for the domain. For more information, see Making Amazon Route 53 the DNS Service for an Existing Domain: https://docs.aws.amazon.com/Route53/latest/DeveloperGuide/MigratingDNS.html in the *Amazon Route 53 Developer Guide*.
 
@@ -35,10 +41,8 @@ When you submit a CreateHostedZone request, the initial status of the hosted zon
         The logical ID must be alphanumeric (A-Za-z0-9) and unique within the template. Use the logical name to reference the resource in other parts of the template. For example, if you want to map an Amazon Elastic Block Store volume to an Amazon EC2 instance, you reference the logical IDs to associate the block stores with the instance.
 
     .PARAMETER HostedZoneConfig
-        Optional A complex type that contains the following optional values:
-+ For public and private hosted zones, an optional comment
-+ For private hosted zones, an optional PrivateZone element
-If you don't specify a comment or the PrivateZone element, omit HostedZoneConfig and the other elements.
+        A complex type that contains an optional comment.
+If you don't want to specify a comment, omit the HostedZoneConfig and Comment elements.
 
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-route53-hostedzone.html#cfn-route53-hostedzone-hostedzoneconfig
         Type: HostedZoneConfig
@@ -56,7 +60,7 @@ For information about using tags for cost allocation, see Using Cost Allocation 
 
     .PARAMETER Name
         The name of the domain. Specify a fully qualified domain name, for example, *www.example.com*. The trailing dot is optional; Amazon Route 53 assumes that the domain name is fully qualified. This means that Route 53 treats *www.example.com* without a trailing dot and *www.example.com.* with a trailing dot as identical.
-If you're creating a public hosted zone, this is the name you have registered with your DNS registrar. If your domain name is registered with a registrar other than Route 53, change the name servers for your domain to the set of NameServers that CreateHostedZone returns in DelegationSet.
+If you're creating a public hosted zone, this is the name you have registered with your DNS registrar. If your domain name is registered with a registrar other than Route 53, change the name servers for your domain to the set of NameServers that are returned by the Fn::GetAtt intrinsic function.
 
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-route53-hostedzone.html#cfn-route53-hostedzone-name
         PrimitiveType: String
@@ -103,7 +107,8 @@ If you want Route 53 to stop sending query logs to CloudWatch Logs, delete the q
         UpdateType: Mutable
 
     .PARAMETER VPCs
-        A complex type that contains information about the VPCs that are associated with the specified hosted zone.
+        *Private hosted zones:* A complex type that contains information about the VPCs that are associated with the specified hosted zone.
+For public hosted zones, omit VPCs, VPCId, and VPCRegion.
 
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-route53-hostedzone.html#cfn-route53-hostedzone-vpcs
         DuplicatesAllowed: True

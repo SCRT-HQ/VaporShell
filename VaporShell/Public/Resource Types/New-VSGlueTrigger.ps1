@@ -20,6 +20,8 @@ function New-VSGlueTrigger {
         UpdateType: Mutable
 
     .PARAMETER StartOnCreation
+        Set to true to start SCHEDULED and CONDITIONAL triggers when created. True is not supported for ON_DEMAND triggers.
+
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-glue-trigger.html#cfn-glue-trigger-startoncreation
         PrimitiveType: Boolean
         UpdateType: Mutable
@@ -40,6 +42,8 @@ function New-VSGlueTrigger {
         UpdateType: Mutable
 
     .PARAMETER WorkflowName
+        The name of the workflow associated with the trigger.
+
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-glue-trigger.html#cfn-glue-trigger-workflowname
         PrimitiveType: String
         UpdateType: Immutable
@@ -52,7 +56,7 @@ function New-VSGlueTrigger {
         UpdateType: Mutable
 
     .PARAMETER Tags
-        The tags to use with this trigger. You can use tags to limit access to the trigger. For more information about tags in AWS Glue, see AWS Tags in AWS Glue: https://docs.aws.amazon.com/glue/latest/dg/monitor-tags.html in the developer guide..
+        The tags to use with this trigger.
 
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-glue-trigger.html#cfn-glue-trigger-tags
         PrimitiveType: Json

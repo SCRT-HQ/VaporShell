@@ -45,7 +45,7 @@ Updates are not supported for the BundleId, RootVolumeEncryptionEnabled, UserVol
         UpdateType: Mutable
 
     .PARAMETER UserName
-        The username of the user for the WorkSpace. This username must exist in the AWS Directory Service directory for the WorkSpace.
+        The user name of the user for the WorkSpace. This user name must exist in the AWS Directory Service directory for the WorkSpace.
 
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-workspaces-workspace.html#cfn-workspaces-workspace-username
         PrimitiveType: String
@@ -59,7 +59,7 @@ Updates are not supported for the BundleId, RootVolumeEncryptionEnabled, UserVol
         UpdateType: Conditional
 
     .PARAMETER VolumeEncryptionKey
-        The KMS key used to encrypt data stored on your WorkSpace.
+        The symmetric AWS KMS customer master key CMK used to encrypt data stored on your WorkSpace. Amazon WorkSpaces does not support asymmetric CMKs.
 
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-workspaces-workspace.html#cfn-workspaces-workspace-volumeencryptionkey
         PrimitiveType: String
@@ -150,16 +150,8 @@ Updates are not supported for the BundleId, RootVolumeEncryptionEnabled, UserVol
                 }
             })]
         $RootVolumeEncryptionEnabled,
+        [VaporShell.Core.TransformTag()]
         [parameter(Mandatory = $false)]
-        [ValidateScript( {
-                $allowedTypes = "Vaporshell.Resource.Tag","System.Management.Automation.PSCustomObject"
-                if ([string]$($_.PSTypeNames) -match "($(($allowedTypes|ForEach-Object{[RegEx]::Escape($_)}) -join '|'))") {
-                    $true
-                }
-                else {
-                    $PSCmdlet.ThrowTerminatingError((New-VSError -String "This parameter only accepts the following types: $($allowedTypes -join ", "). The current types of the value are: $($_.PSTypeNames -join ", ")."))
-                }
-            })]
         $Tags,
         [parameter(Mandatory = $true)]
         [ValidateScript( {

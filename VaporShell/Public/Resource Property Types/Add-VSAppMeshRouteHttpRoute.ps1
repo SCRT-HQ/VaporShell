@@ -1,31 +1,31 @@
 function Add-VSAppMeshRouteHttpRoute {
     <#
     .SYNOPSIS
-        Adds an AWS::AppMesh::Route.HttpRoute resource property to the template. An object representing the HTTP routing specification for a route.
+        Adds an AWS::AppMesh::Route.HttpRoute resource property to the template. An object that represents an HTTP or HTTP/2 route type.
 
     .DESCRIPTION
         Adds an AWS::AppMesh::Route.HttpRoute resource property to the template.
-An object representing the HTTP routing specification for a route.
+An object that represents an HTTP or HTTP/2 route type.
 
     .LINK
         http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-appmesh-route-httproute.html
 
     .PARAMETER Action
-        The action to take if a match is determined.
+        An object that represents the action to take if a match is determined.
 
         Type: HttpRouteAction
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-appmesh-route-httproute.html#cfn-appmesh-route-httproute-action
         UpdateType: Mutable
 
     .PARAMETER RetryPolicy
-        *Update requires*: No interruption: https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt
+        An object that represents a retry policy.
 
         Type: HttpRetryPolicy
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-appmesh-route-httproute.html#cfn-appmesh-route-httproute-retrypolicy
         UpdateType: Mutable
 
     .PARAMETER Match
-        The criteria for determining an HTTP request match.
+        An object that represents the criteria for determining a request match.
 
         Type: HttpRouteMatch
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-appmesh-route-httproute.html#cfn-appmesh-route-httproute-match

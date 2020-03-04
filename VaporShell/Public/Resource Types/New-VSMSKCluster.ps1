@@ -27,14 +27,14 @@ function New-VSMSKCluster {
         UpdateType: Mutable
 
     .PARAMETER KafkaVersion
-        The version of Apache Kafka.
+        The version of Apache Kafka. You can use Amazon MSK to create clusters that use Apache Kafka versions 1.1.1 and 2.2.1.
 
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-msk-cluster.html#cfn-msk-cluster-kafkaversion
         PrimitiveType: String
         UpdateType: Immutable
 
     .PARAMETER NumberOfBrokerNodes
-        The number of broker nodes you want in the Amazon MSK cluster.
+        The number of broker nodes you want in the Amazon MSK cluster. You can submit an update to increase the number of broker nodes in a cluster.
 
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-msk-cluster.html#cfn-msk-cluster-numberofbrokernodes
         PrimitiveType: Integer
@@ -48,6 +48,8 @@ function New-VSMSKCluster {
         UpdateType: Immutable
 
     .PARAMETER OpenMonitoring
+        The settings for open monitoring.
+
         Type: OpenMonitoring
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-msk-cluster.html#cfn-msk-cluster-openmonitoring
         UpdateType: Mutable
@@ -67,8 +69,7 @@ function New-VSMSKCluster {
         UpdateType: Immutable
 
     .PARAMETER Tags
-        An array of key-value pairs to apply to this resource. You can specify tags in JSON or in YAML, depending on which format you use for your template.
-For more information, see Tag: https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-resource-tags.html.
+        A map of key:value pairs to apply to this resource. Both key and value are of type String.
 
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-msk-cluster.html#cfn-msk-cluster-tags
         PrimitiveType: Json

@@ -1,10 +1,10 @@
 function New-VSApiGatewayV2Stage {
     <#
     .SYNOPSIS
-        Adds an AWS::ApiGatewayV2::Stage resource to the template. The AWS::ApiGatewayV2::Stage resource updates a stage for a WebSocket API. For more information, see Deploy a WebSocket API in API Gateway: https://docs.aws.amazon.com/apigateway/latest/developerguide/apigateway-set-up-websocket-deployment.html in the *API Gateway Developer Guide*.
+        Adds an AWS::ApiGatewayV2::Stage resource to the template. The AWS::ApiGatewayV2::Stage resource updates a stage for an API.
 
     .DESCRIPTION
-        Adds an AWS::ApiGatewayV2::Stage resource to the template. The AWS::ApiGatewayV2::Stage resource updates a stage for a WebSocket API. For more information, see Deploy a WebSocket API in API Gateway: https://docs.aws.amazon.com/apigateway/latest/developerguide/apigateway-set-up-websocket-deployment.html in the *API Gateway Developer Guide*.
+        Adds an AWS::ApiGatewayV2::Stage resource to the template. The AWS::ApiGatewayV2::Stage resource updates a stage for an API.
 
     .LINK
         http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-apigatewayv2-stage.html
@@ -13,14 +13,14 @@ function New-VSApiGatewayV2Stage {
         The logical ID must be alphanumeric (A-Za-z0-9) and unique within the template. Use the logical name to reference the resource in other parts of the template. For example, if you want to map an Amazon Elastic Block Store volume to an Amazon EC2 instance, you reference the logical IDs to associate the block stores with the instance.
 
     .PARAMETER ClientCertificateId
-        The identifier of a client certificate for a Stage.
+        The identifier of a client certificate for a Stage. Supported only for WebSocket APIs.
 
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-apigatewayv2-stage.html#cfn-apigatewayv2-stage-clientcertificateid
         PrimitiveType: String
         UpdateType: Mutable
 
     .PARAMETER DeploymentId
-        The deployment identifier for the API stage.
+        The deployment identifier for the API stage. Can't be updated if autoDeploy is enabled.
 
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-apigatewayv2-stage.html#cfn-apigatewayv2-stage-deploymentid
         PrimitiveType: String
@@ -41,7 +41,7 @@ function New-VSApiGatewayV2Stage {
         UpdateType: Mutable
 
     .PARAMETER AutoDeploy
-        + CreateStage: https://docs.aws.amazon.com/apigatewayv2/latest/api-reference/apis-apiid-stages.html#CreateStage in the *Amazon API Gateway Version 2 API Reference*
+        Specifies whether updates to an API automatically trigger a new deployment. The default value is false.
 
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-apigatewayv2-stage.html#cfn-apigatewayv2-stage-autodeploy
         PrimitiveType: Boolean
@@ -62,7 +62,7 @@ function New-VSApiGatewayV2Stage {
         UpdateType: Immutable
 
     .PARAMETER StageVariables
-        A map that defines the stage variables for a Stage. Variable names can have alphanumeric and underscore characters, and the values must match A-Za-z0-9-._~:/?#&=,]+.
+        A map that defines the stage variables for a Stage. Variable names can have alphanumeric and underscore characters, and the values must match A-Za-z0-9-._~:/?#&=,]+. Supported only for WebSocket APIs.
 
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-apigatewayv2-stage.html#cfn-apigatewayv2-stage-stagevariables
         PrimitiveType: Json
@@ -83,7 +83,7 @@ function New-VSApiGatewayV2Stage {
         UpdateType: Mutable
 
     .PARAMETER Tags
-        + CreateStage: https://docs.aws.amazon.com/apigatewayv2/latest/api-reference/apis-apiid-stages.html#CreateStage in the *Amazon API Gateway Version 2 API Reference*
+        The collection of tags. Each tag element is associated with a given resource.
 
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-apigatewayv2-stage.html#cfn-apigatewayv2-stage-tags
         PrimitiveType: Json

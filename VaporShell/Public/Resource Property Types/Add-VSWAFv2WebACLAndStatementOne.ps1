@@ -1,16 +1,18 @@
 function Add-VSWAFv2WebACLAndStatementOne {
     <#
     .SYNOPSIS
-        Adds an AWS::WAFv2::WebACL.AndStatementOne resource property to the template. 
+        Adds an AWS::WAFv2::WebACL.AndStatementOne resource property to the template. Logical AND statement used in statement nesting.
 
     .DESCRIPTION
         Adds an AWS::WAFv2::WebACL.AndStatementOne resource property to the template.
-
+Logical AND statement used in statement nesting.
 
     .LINK
         http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-wafv2-webacl-andstatementone.html
 
     .PARAMETER Statements
+        Logical AND statements used in statement nesting.
+
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-wafv2-webacl-andstatementone.html#cfn-wafv2-webacl-andstatementone-statements
         UpdateType: Mutable
         Type: List

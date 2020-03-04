@@ -27,7 +27,7 @@ TaskInvocationParameters is a property of the AWS::SSM::MaintenanceWindowTask: h
         UpdateType: Mutable
 
     .PARAMETER MaintenanceWindowStepFunctionsParameters
-        The parameters for a STEP_FUNCTION task type.
+        The parameters for a STEP_FUNCTIONS task type.
 
         Type: MaintenanceWindowStepFunctionsParameters
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ssm-maintenancewindowtask-taskinvocationparameters.html#cfn-ssm-maintenancewindowtask-taskinvocationparameters-maintenancewindowstepfunctionsparameters

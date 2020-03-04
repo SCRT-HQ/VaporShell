@@ -1,16 +1,18 @@
 function Add-VSLambdaEventSourceMappingOnFailure {
     <#
     .SYNOPSIS
-        Adds an AWS::Lambda::EventSourceMapping.OnFailure resource property to the template. 
+        Adds an AWS::Lambda::EventSourceMapping.OnFailure resource property to the template. A destination for events that failed processing.
 
     .DESCRIPTION
         Adds an AWS::Lambda::EventSourceMapping.OnFailure resource property to the template.
-
+A destination for events that failed processing.
 
     .LINK
         http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-lambda-eventsourcemapping-onfailure.html
 
     .PARAMETER Destination
+        The Amazon Resource Name ARN of the destination resource.
+
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-lambda-eventsourcemapping-onfailure.html#cfn-lambda-eventsourcemapping-onfailure-destination
         PrimitiveType: String
         UpdateType: Mutable

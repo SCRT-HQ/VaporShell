@@ -1,12 +1,12 @@
 function New-VSPinpointADMChannel {
     <#
     .SYNOPSIS
-        Adds an AWS::Pinpoint::ADMChannel resource to the template. A *channel* is a type of platform that you can deliver messages to. You can use the ADM channel to send push notifications through the Amazon Device Messaging (ADM service to apps that run on Amazon devices, such as Kindle Fire tablets. Before you use Amazon Pinpoint to send messages to Amazon devices, you have to enable the ADM channel for an Amazon Pinpoint application.
+        Adds an AWS::Pinpoint::ADMChannel resource to the template. A *channel* is a type of platform that you can deliver messages to. You can use the ADM channel to send push notifications through the Amazon Device Messaging (ADM service to apps that run on Amazon devices, such as Kindle Fire tablets. Before you can use Amazon Pinpoint to send messages to Amazon devices, you have to enable the ADM channel for an Amazon Pinpoint application.
 
     .DESCRIPTION
-        Adds an AWS::Pinpoint::ADMChannel resource to the template. A *channel* is a type of platform that you can deliver messages to. You can use the ADM channel to send push notifications through the Amazon Device Messaging (ADM service to apps that run on Amazon devices, such as Kindle Fire tablets. Before you use Amazon Pinpoint to send messages to Amazon devices, you have to enable the ADM channel for an Amazon Pinpoint application.
+        Adds an AWS::Pinpoint::ADMChannel resource to the template. A *channel* is a type of platform that you can deliver messages to. You can use the ADM channel to send push notifications through the Amazon Device Messaging (ADM service to apps that run on Amazon devices, such as Kindle Fire tablets. Before you can use Amazon Pinpoint to send messages to Amazon devices, you have to enable the ADM channel for an Amazon Pinpoint application.
 
-The ADM Channel resource represents the status and authentication settings for the ADM channel for a specific application. You can use this resource to retrieve information about, update, or disable (delete the ADM channel for an application.
+The AWS::Pinpoint::ADMChannel resource defines the status and authentication settings of the ADM channel for an application.
 
     .LINK
         http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-pinpoint-admchannel.html
@@ -36,7 +36,7 @@ The ADM Channel resource represents the status and authentication settings for t
         UpdateType: Mutable
 
     .PARAMETER ApplicationId
-        The unique identifier of the Amazon Pinpoint application that the ADM channel applies to.
+        The unique identifier for the application that the ADM channel applies to.
 
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-pinpoint-admchannel.html#cfn-pinpoint-admchannel-applicationid
         PrimitiveType: String

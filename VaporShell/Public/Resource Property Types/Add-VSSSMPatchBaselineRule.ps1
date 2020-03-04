@@ -28,6 +28,7 @@ The PatchRules property of the RuleGroup: https://docs.aws.amazon.com/AWSCloudFo
 
     .PARAMETER ApproveAfterDays
         The number of days after the release date of each patch matched by the rule that the patch is marked as approved in the patch baseline. For example, a value of 7 means that patches are approved seven days after they are released.
+You must specify a value for ApproveAfterDays.
 
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ssm-patchbaseline-rule.html#cfn-ssm-patchbaseline-rule-approveafterdays
         PrimitiveType: Integer

@@ -1,11 +1,11 @@
 function Add-VSIoTAnalyticsDatasetTriggeringDataset {
     <#
     .SYNOPSIS
-        Adds an AWS::IoTAnalytics::Dataset.TriggeringDataset resource property to the template. Information about the data set whose content generation triggers the new data set content generation.
+        Adds an AWS::IoTAnalytics::Dataset.TriggeringDataset resource property to the template. Information about the dataset whose content generation triggers the new dataset content generation.
 
     .DESCRIPTION
         Adds an AWS::IoTAnalytics::Dataset.TriggeringDataset resource property to the template.
-Information about the data set whose content generation triggers the new data set content generation.
+Information about the dataset whose content generation triggers the new dataset content generation.
 
     .LINK
         http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iotanalytics-dataset-triggeringdataset.html

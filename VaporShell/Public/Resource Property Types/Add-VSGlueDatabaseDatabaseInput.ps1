@@ -26,7 +26,6 @@ The structure used to create or update a database.
 
     .PARAMETER Parameters
         These key-value pairs define parameters and properties of the database.
-These key-value pairs define parameters and properties of the database.
 
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-glue-database-databaseinput.html#cfn-glue-database-databaseinput-parameters
         PrimitiveType: Json

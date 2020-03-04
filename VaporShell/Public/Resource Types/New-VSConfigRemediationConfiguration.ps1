@@ -20,6 +20,8 @@ function New-VSConfigRemediationConfiguration {
         UpdateType: Mutable
 
     .PARAMETER ExecutionControls
+        An ExecutionControls object.
+
         Type: ExecutionControls
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-config-remediationconfiguration.html#cfn-config-remediationconfiguration-executioncontrols
         UpdateType: Mutable
@@ -54,11 +56,17 @@ The type is a map of strings to RemediationParameterValue.
         UpdateType: Mutable
 
     .PARAMETER RetryAttemptSeconds
+        Maximum time in seconds that AWS Config runs auto-remediation. If you do not select a number, the default is 60 seconds.
+For example, if you specify RetryAttemptsSeconds as 50 seconds and MaximumAutomaticAttempts as 5, AWS Config will run auto-remediations 5 times within 50 seconds before throwing an exception.
+
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-config-remediationconfiguration.html#cfn-config-remediationconfiguration-retryattemptseconds
         PrimitiveType: Integer
         UpdateType: Mutable
 
     .PARAMETER MaximumAutomaticAttempts
+        The maximum number of failed attempts for auto-remediation. If you do not select a number, the default is 5.
+For example, if you specify MaximumAutomaticAttempts as 5 with RetryAttemptsSeconds as 50 seconds, AWS Config throws an exception after the 5th failed attempt within 50 seconds.
+
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-config-remediationconfiguration.html#cfn-config-remediationconfiguration-maximumautomaticattempts
         PrimitiveType: Integer
         UpdateType: Mutable
@@ -71,6 +79,8 @@ The type is a map of strings to RemediationParameterValue.
         UpdateType: Mutable
 
     .PARAMETER Automatic
+        The remediation is triggered automatically.
+
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-config-remediationconfiguration.html#cfn-config-remediationconfiguration-automatic
         PrimitiveType: Boolean
         UpdateType: Mutable

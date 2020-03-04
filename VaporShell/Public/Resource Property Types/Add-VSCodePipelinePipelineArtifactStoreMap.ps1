@@ -1,19 +1,22 @@
 function Add-VSCodePipelinePipelineArtifactStoreMap {
     <#
     .SYNOPSIS
-        Adds an AWS::CodePipeline::Pipeline.ArtifactStoreMap resource property to the template. A mapping of artifactStore objects and their corresponding regions. There must be an artifact store for the pipeline region and for each cross-region action within the pipeline. You can only use either artifactStore or artifactStores, not both.
+        Adds an AWS::CodePipeline::Pipeline.ArtifactStoreMap resource property to the template. A mapping of artifactStore objects and their corresponding AWS Regions. There must be an artifact store for the pipeline Region and for each cross-region action in the pipeline.
 
     .DESCRIPTION
         Adds an AWS::CodePipeline::Pipeline.ArtifactStoreMap resource property to the template.
-A mapping of artifactStore objects and their corresponding regions. There must be an artifact store for the pipeline region and for each cross-region action within the pipeline. You can only use either artifactStore or artifactStores, not both.
+A mapping of artifactStore objects and their corresponding AWS Regions. There must be an artifact store for the pipeline Region and for each cross-region action in the pipeline.
 
-If you create a cross-region action in your pipeline, you must use artifactStores.
+**Note**
+
+You must include either artifactStore or artifactStores in your pipeline, but you cannot use both. If you create a cross-region action in your pipeline, you must use artifactStores.
 
     .LINK
         http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-codepipeline-pipeline-artifactstoremap.html
 
     .PARAMETER ArtifactStore
-        Represents information about the Amazon S3 bucket where artifacts are stored for the pipeline.
+        Represents information about the S3 bucket where artifacts are stored for the pipeline.
+You must include either artifactStore or artifactStores in your pipeline, but you cannot use both. If you create a cross-region action in your pipeline, you must use artifactStores.
 
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-codepipeline-pipeline-artifactstoremap.html#cfn-codepipeline-pipeline-artifactstoremap-artifactstore
         Type: ArtifactStore

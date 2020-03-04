@@ -1,16 +1,18 @@
 function Add-VSWAFv2RuleGroupOrStatementTwo {
     <#
     .SYNOPSIS
-        Adds an AWS::WAFv2::RuleGroup.OrStatementTwo resource property to the template. 
+        Adds an AWS::WAFv2::RuleGroup.OrStatementTwo resource property to the template. Logical OR statement used in statement nesting.
 
     .DESCRIPTION
         Adds an AWS::WAFv2::RuleGroup.OrStatementTwo resource property to the template.
-
+Logical OR statement used in statement nesting.
 
     .LINK
         http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-wafv2-rulegroup-orstatementtwo.html
 
     .PARAMETER Statements
+        Logical OR statements used in statement nesting.
+
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-wafv2-rulegroup-orstatementtwo.html#cfn-wafv2-rulegroup-orstatementtwo-statements
         UpdateType: Mutable
         Type: List

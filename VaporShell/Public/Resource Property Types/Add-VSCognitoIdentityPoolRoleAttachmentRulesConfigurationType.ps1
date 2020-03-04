@@ -11,7 +11,7 @@ RulesConfigurationType is a subproperty of the RoleMapping: https://docs.aws.ama
         http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-cognito-identitypoolroleattachment-rulesconfigurationtype.html
 
     .PARAMETER Rules
-        A list of rules. You can specify up to 25 rules per identity provider.
+        The rules. You can specify up to 25 rules per identity provider.
 
         Type: List
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-cognito-identitypoolroleattachment-rulesconfigurationtype.html#cfn-cognito-identitypoolroleattachment-rulesconfigurationtype-rules

@@ -1,17 +1,17 @@
 function Add-VSPinpointSegmentLocation {
     <#
     .SYNOPSIS
-        Adds an AWS::Pinpoint::Segment.Location resource property to the template. The location-based criteria, such as region or GPS coordinates, for the segment.
+        Adds an AWS::Pinpoint::Segment.Location resource property to the template. Specifies location-based criteria, such as country or region, for a segment.
 
     .DESCRIPTION
         Adds an AWS::Pinpoint::Segment.Location resource property to the template.
-The location-based criteria, such as region or GPS coordinates, for the segment.
+Specifies location-based criteria, such as country or region, for a segment.
 
     .LINK
         http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-pinpoint-segment-segmentdimensions-location.html
 
     .PARAMETER GPSPoint
-        The GPS point dimension for the segment.
+        The GPS location and range for the segment.
 
         Type: GPSPoint
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-pinpoint-segment-segmentdimensions-location.html#cfn-pinpoint-segment-segmentdimensions-location-gpspoint

@@ -11,7 +11,7 @@ The OptionConfiguration property type specifies an individual option, and its se
         http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-rds-optiongroup-optionconfigurations.html
 
     .PARAMETER DBSecurityGroupMemberships
-        A list of DBSecurityGroupMemebrship name strings used for this option.
+        A list of DBSecurityGroupMembership name strings used for this option.
 
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-rds-optiongroup-optionconfigurations.html#cfn-rds-optiongroup-optionconfigurations-dbsecuritygroupmemberships
         DuplicatesAllowed: True

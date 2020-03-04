@@ -1,10 +1,14 @@
 function New-VSEventsEventBus {
     <#
     .SYNOPSIS
-        Adds an AWS::Events::EventBus resource to the template. 
+        Adds an AWS::Events::EventBus resource to the template. The AWS::Events::EventBus resource creates or updates a partner event bus or custom event bus. Partner event buses can receive events from applications and services created by AWS SaaS partners. You need to create a partner event bus for each partner event source that you want to receive events from.
 
     .DESCRIPTION
-        Adds an AWS::Events::EventBus resource to the template. 
+        Adds an AWS::Events::EventBus resource to the template. The AWS::Events::EventBus resource creates or updates a partner event bus or custom event bus. Partner event buses can receive events from applications and services created by AWS SaaS partners. You need to create a partner event bus for each partner event source that you want to receive events from.
+
+Custom event buses can receive events from your own custom applications.
+
+To review the limit for how many rules each event bus may have, see Service Limits: https://docs.aws.amazon.com/eventbridge/latest/userguide/cloudwatch-limits-eventbridge.html.
 
     .LINK
         http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-events-eventbus.html
@@ -13,11 +17,16 @@ function New-VSEventsEventBus {
         The logical ID must be alphanumeric (A-Za-z0-9) and unique within the template. Use the logical name to reference the resource in other parts of the template. For example, if you want to map an Amazon Elastic Block Store volume to an Amazon EC2 instance, you reference the logical IDs to associate the block stores with the instance.
 
     .PARAMETER EventSourceName
+        The name of the partner event source to associate with this event bus, if you are creating a partner event bus.
+
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-events-eventbus.html#cfn-events-eventbus-eventsourcename
         PrimitiveType: String
         UpdateType: Immutable
 
     .PARAMETER Name
+        The name of the event bus you are creating. The names of custom event buses can't contain the / character. You can't use the name default for a custom event bus.
+If you are creating a partner event bus, this name must exactly match the name of the partner event source that this bus is matched to.
+
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-events-eventbus.html#cfn-events-eventbus-name
         PrimitiveType: String
         UpdateType: Immutable

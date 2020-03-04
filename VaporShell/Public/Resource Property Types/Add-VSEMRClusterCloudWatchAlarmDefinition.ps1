@@ -27,7 +27,7 @@ CloudWatchAlarmDefinition is a subproperty of the ScalingTrigger property, which
         UpdateType: Mutable
 
     .PARAMETER EvaluationPeriods
-        The number of periods, expressed in seconds using Period, during which the alarm condition must exist before the alarm triggers automatic scaling activity. The default value is 1.
+        The number of periods, in five-minute increments, during which the alarm condition must exist before the alarm triggers automatic scaling activity. The default value is 1.
 
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-elasticmapreduce-cluster-cloudwatchalarmdefinition.html#cfn-elasticmapreduce-cluster-cloudwatchalarmdefinition-evaluationperiods
         PrimitiveType: Integer

@@ -85,7 +85,7 @@ This value doesn't apply to messages that are sent through the Amazon Device Mes
         UpdateType: Mutable
 
     .PARAMETER RawContent
-        The raw, JSON-formatted string to use as the payload for the notification message. This value overrides other values for the message.
+        The raw, JSON-formatted string to use as the payload for the notification message. If specified, this value overrides all other content for the message.
 
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-pinpoint-campaign-message.html#cfn-pinpoint-campaign-message-rawcontent
         PrimitiveType: String

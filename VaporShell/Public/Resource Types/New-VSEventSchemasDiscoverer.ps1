@@ -1,10 +1,10 @@
 function New-VSEventSchemasDiscoverer {
     <#
     .SYNOPSIS
-        Adds an AWS::EventSchemas::Discoverer resource to the template. 
+        Adds an AWS::EventSchemas::Discoverer resource to the template. Use the AWS::EventSchemas::Discoverer resource to specify a *discoverer* that is associated with an event bus. A discoverer allows the Amazon EventBridge Schema Registry to automatically generate schemas based on events on an event bus.
 
     .DESCRIPTION
-        Adds an AWS::EventSchemas::Discoverer resource to the template. 
+        Adds an AWS::EventSchemas::Discoverer resource to the template. Use the AWS::EventSchemas::Discoverer resource to specify a *discoverer* that is associated with an event bus. A discoverer allows the Amazon EventBridge Schema Registry to automatically generate schemas based on events on an event bus.
 
     .LINK
         http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-eventschemas-discoverer.html
@@ -13,16 +13,22 @@ function New-VSEventSchemasDiscoverer {
         The logical ID must be alphanumeric (A-Za-z0-9) and unique within the template. Use the logical name to reference the resource in other parts of the template. For example, if you want to map an Amazon Elastic Block Store volume to an Amazon EC2 instance, you reference the logical IDs to associate the block stores with the instance.
 
     .PARAMETER Description
+        A description for the discoverer.
+
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-eventschemas-discoverer.html#cfn-eventschemas-discoverer-description
         PrimitiveType: String
         UpdateType: Mutable
 
     .PARAMETER SourceArn
+        The ARN of the event bus.
+
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-eventschemas-discoverer.html#cfn-eventschemas-discoverer-sourcearn
         PrimitiveType: String
         UpdateType: Immutable
 
     .PARAMETER Tags
+        Tags associated with the resource.
+
         Type: List
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-eventschemas-discoverer.html#cfn-eventschemas-discoverer-tags
         ItemType: TagsEntry

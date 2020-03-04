@@ -27,7 +27,7 @@ function New-VSIoTAnalyticsDatastore {
         UpdateType: Immutable
 
     .PARAMETER RetentionPeriod
-        How long, in days, message data is kept for the data store. When "customerManagedS3" storage is selected, this parameter is ignored.
+        How long, in days, message data is kept for the data store. When customerManagedS3 storage is selected, this parameter is ignored.
 
         Type: RetentionPeriod
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-iotanalytics-datastore.html#cfn-iotanalytics-datastore-retentionperiod
@@ -102,16 +102,8 @@ For more information, see Tag: https://docs.aws.amazon.com/AWSCloudFormation/lat
         $DatastoreName,
         [parameter(Mandatory = $false)]
         $RetentionPeriod,
+        [VaporShell.Core.TransformTag()]
         [parameter(Mandatory = $false)]
-        [ValidateScript( {
-                $allowedTypes = "Vaporshell.Resource.Tag","System.Management.Automation.PSCustomObject"
-                if ([string]$($_.PSTypeNames) -match "($(($allowedTypes|ForEach-Object{[RegEx]::Escape($_)}) -join '|'))") {
-                    $true
-                }
-                else {
-                    $PSCmdlet.ThrowTerminatingError((New-VSError -String "This parameter only accepts the following types: $($allowedTypes -join ", "). The current types of the value are: $($_.PSTypeNames -join ", ")."))
-                }
-            })]
         $Tags,
         [ValidateSet("Delete","Retain","Snapshot")]
         [System.String]

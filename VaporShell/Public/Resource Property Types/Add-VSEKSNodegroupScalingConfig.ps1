@@ -1,26 +1,32 @@
 function Add-VSEKSNodegroupScalingConfig {
     <#
     .SYNOPSIS
-        Adds an AWS::EKS::Nodegroup.ScalingConfig resource property to the template. 
+        Adds an AWS::EKS::Nodegroup.ScalingConfig resource property to the template. An object representing the scaling configuration details for the Auto Scaling group that is associated with your node group.
 
     .DESCRIPTION
         Adds an AWS::EKS::Nodegroup.ScalingConfig resource property to the template.
-
+An object representing the scaling configuration details for the Auto Scaling group that is associated with your node group.
 
     .LINK
         http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-eks-nodegroup-scalingconfig.html
 
     .PARAMETER MinSize
+        The minimum number of worker nodes that the managed node group can scale in to. This number must be greater than zero.
+
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-eks-nodegroup-scalingconfig.html#cfn-eks-nodegroup-scalingconfig-minsize
         PrimitiveType: Double
         UpdateType: Mutable
 
     .PARAMETER DesiredSize
+        The current number of worker nodes that the managed node group should maintain.
+
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-eks-nodegroup-scalingconfig.html#cfn-eks-nodegroup-scalingconfig-desiredsize
         PrimitiveType: Double
         UpdateType: Mutable
 
     .PARAMETER MaxSize
+        The maximum number of worker nodes that the managed node group can scale out to. Managed node groups can support up to 100 nodes by default.
+
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-eks-nodegroup-scalingconfig.html#cfn-eks-nodegroup-scalingconfig-maxsize
         PrimitiveType: Double
         UpdateType: Mutable

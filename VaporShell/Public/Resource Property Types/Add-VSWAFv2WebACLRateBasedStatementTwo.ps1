@@ -1,26 +1,32 @@
 function Add-VSWAFv2WebACLRateBasedStatementTwo {
     <#
     .SYNOPSIS
-        Adds an AWS::WAFv2::WebACL.RateBasedStatementTwo resource property to the template. 
+        Adds an AWS::WAFv2::WebACL.RateBasedStatementTwo resource property to the template. Rules statement.
 
     .DESCRIPTION
         Adds an AWS::WAFv2::WebACL.RateBasedStatementTwo resource property to the template.
-
+Rules statement.
 
     .LINK
         http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-wafv2-webacl-ratebasedstatementtwo.html
 
     .PARAMETER Limit
+        Limit on the web request that match any nested statement criteria in any 5 minute period.
+
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-wafv2-webacl-ratebasedstatementtwo.html#cfn-wafv2-webacl-ratebasedstatementtwo-limit
         UpdateType: Mutable
         PrimitiveType: Integer
 
     .PARAMETER AggregateKeyType
+        Setting that indicates how to aggregate the request counts. Currently, you must set this to IP. The request counts are aggregated on IP addresses.
+
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-wafv2-webacl-ratebasedstatementtwo.html#cfn-wafv2-webacl-ratebasedstatementtwo-aggregatekeytype
         UpdateType: Mutable
         PrimitiveType: String
 
     .PARAMETER ScopeDownStatement
+        Statement nested inside a rate-based statement to narrow the scope of the requests that AWS WAF counts.
+
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-wafv2-webacl-ratebasedstatementtwo.html#cfn-wafv2-webacl-ratebasedstatementtwo-scopedownstatement
         UpdateType: Mutable
         Type: StatementThree

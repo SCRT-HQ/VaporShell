@@ -14,6 +14,7 @@ function New-VSElasticLoadBalancingV2Listener {
 
     .PARAMETER Certificates
         The default SSL server certificate. You must provide exactly one certificate if the listener protocol is HTTPS or TLS.
+To create a certificate list for the listener, use AWS::ElasticLoadBalancingV2::ListenerCertificate: https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-elasticloadbalancingv2-listenercertificate.html.
 
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-elasticloadbalancingv2-listener.html#cfn-elasticloadbalancingv2-listener-certificates
         DuplicatesAllowed: False
@@ -45,14 +46,24 @@ function New-VSElasticLoadBalancingV2Listener {
         UpdateType: Mutable
 
     .PARAMETER Protocol
-        The protocol for connections from clients to the load balancer. For Application Load Balancers, the supported protocols are HTTP and HTTPS. For Network Load Balancers, the supported protocols are TCP and TLS.
+        The protocol for connections from clients to the load balancer. For Application Load Balancers, the supported protocols are HTTP and HTTPS. For Network Load Balancers, the supported protocols are TCP, TLS, UDP, and TCP_UDP.
 
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-elasticloadbalancingv2-listener.html#cfn-elasticloadbalancingv2-listener-protocol
         PrimitiveType: String
         UpdateType: Mutable
 
     .PARAMETER SslPolicy
-        HTTPS and TLS listeners] The security policy that defines which ciphers and protocols are supported. The default is the current predefined security policy.
+        HTTPS and TLS listeners] The security policy that defines which protocols and ciphers are supported. The following are the possible values:
++  ELBSecurityPolicy-2016-08
++  ELBSecurityPolicy-TLS-1-0-2015-04
++  ELBSecurityPolicy-TLS-1-1-2017-01
++  ELBSecurityPolicy-TLS-1-2-2017-01
++  ELBSecurityPolicy-TLS-1-2-Ext-2018-06
++  ELBSecurityPolicy-FS-2018-06
++  ELBSecurityPolicy-FS-1-1-2019-08
++  ELBSecurityPolicy-FS-1-2-2019-08
++  ELBSecurityPolicy-FS-1-2-Res-2019-08
+For more information, see Security Policies: https://docs.aws.amazon.com/elasticloadbalancing/latest/application/create-https-listener.html#describe-ssl-policies in the *Application Load Balancers Guide* and Security Policies: https://docs.aws.amazon.com/elasticloadbalancing/latest/network/create-tls-listener.html#describe-ssl-policies in the *Network Load Balancers Guide*.
 
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-elasticloadbalancingv2-listener.html#cfn-elasticloadbalancingv2-listener-sslpolicy
         PrimitiveType: String

@@ -27,14 +27,14 @@ Placement is a property of the Amazon EC2 LaunchTemplate LaunchTemplateData: htt
         UpdateType: Mutable
 
     .PARAMETER SpreadDomain
-        +   LaunchTemplatePlacementRequest: https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_LaunchTemplatePlacementRequest.html in the *Amazon Elastic Compute Cloud API Reference*
+        Reserved for future use.
 
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-launchtemplate-launchtemplatedata-placement.html#cfn-ec2-launchtemplate-launchtemplatedata-placement-spreaddomain
         PrimitiveType: String
         UpdateType: Mutable
 
     .PARAMETER PartitionNumber
-        +   LaunchTemplatePlacementRequest: https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_LaunchTemplatePlacementRequest.html in the *Amazon Elastic Compute Cloud API Reference*
+        The number of the partition the instance should launch in. Valid only if the placement group strategy is set to partition.
 
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-launchtemplate-launchtemplatedata-placement.html#cfn-ec2-launchtemplate-launchtemplatedata-placement-partitionnumber
         PrimitiveType: Integer
@@ -62,7 +62,7 @@ Placement is a property of the Amazon EC2 LaunchTemplate LaunchTemplateData: htt
         UpdateType: Mutable
 
     .PARAMETER HostResourceGroupArn
-        +   LaunchTemplatePlacementRequest: https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_LaunchTemplatePlacementRequest.html in the *Amazon Elastic Compute Cloud API Reference*
+        The ARN of the host resource group in which to launch the instances. If you specify a host resource group ARN, omit the **Tenancy** parameter or set it to host.
 
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-launchtemplate-launchtemplatedata-placement.html#cfn-ec2-launchtemplate-launchtemplatedata-placement-hostresourcegrouparn
         PrimitiveType: String

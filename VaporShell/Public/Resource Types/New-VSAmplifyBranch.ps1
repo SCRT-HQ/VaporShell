@@ -35,14 +35,19 @@ function New-VSAmplifyBranch {
         UpdateType: Immutable
 
     .PARAMETER PullRequestEnvironmentName
-        Name for a branch, part of an Amplify App.
+        If pull request previews are enabled for this branch, you can use this property to specify a dedicated backend environment for your previews. For example, you could specify an environment named prod, test, or dev that you initialized with the Amplify CLI and mapped to this branch.
+To enable pull request previews, set the EnablePullRequestPreview property to true.
+If you don't specify an environment, the Amplify Console provides backend support for each preview by automatically provisioning a temporary backend environment. Amplify Console deletes this environment when the pull request is closed.
+For more information about creating backend environments, see Feature Branch Deployments and Team Workflows: https://docs.aws.amazon.com/amplify/latest/userguide/multi-environments.html in the *AWS Amplify Console User Guide*.
 
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-amplify-branch.html#cfn-amplify-branch-pullrequestenvironmentname
         PrimitiveType: String
         UpdateType: Mutable
 
     .PARAMETER EnablePullRequestPreview
-        Name for a branch, part of an Amplify App.
+        Sets whether the Amplify Console creates a preview for each pull request that is made for this branch. If this property is enabled, the Amplify Console deploys your app to a unique preview URL after each pull request is opened. Development and QA teams can use this preview to test the pull request before it's merged into a production or integration branch.
+To provide backend support for your preview, the Amplify Console automatically provisions a temporary backend environment that it deletes when the pull request is closed. If you want to specify a dedicated backend environment for your previews, use the PullRequestEnvironmentName property.
+For more information, see Web Previews: https://docs.aws.amazon.com/amplify/latest/userguide/pr-previews.html in the *AWS Amplify Console User Guide*.
 
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-amplify-branch.html#cfn-amplify-branch-enablepullrequestpreview
         PrimitiveType: Boolean
@@ -237,16 +242,8 @@ function New-VSAmplifyBranch {
         $BranchName,
         [parameter(Mandatory = $false)]
         $BasicAuthConfig,
+        [VaporShell.Core.TransformTag()]
         [parameter(Mandatory = $false)]
-        [ValidateScript( {
-                $allowedTypes = "Vaporshell.Resource.Tag","System.Management.Automation.PSCustomObject"
-                if ([string]$($_.PSTypeNames) -match "($(($allowedTypes|ForEach-Object{[RegEx]::Escape($_)}) -join '|'))") {
-                    $true
-                }
-                else {
-                    $PSCmdlet.ThrowTerminatingError((New-VSError -String "This parameter only accepts the following types: $($allowedTypes -join ", "). The current types of the value are: $($_.PSTypeNames -join ", ")."))
-                }
-            })]
         $Tags,
         [ValidateSet("Delete","Retain","Snapshot")]
         [System.String]

@@ -1,11 +1,11 @@
 function Add-VSAppMeshVirtualNodeDnsServiceDiscovery {
     <#
     .SYNOPSIS
-        Adds an AWS::AppMesh::VirtualNode.DnsServiceDiscovery resource property to the template. An object representing the DNS service discovery information for your virtual node.
+        Adds an AWS::AppMesh::VirtualNode.DnsServiceDiscovery resource property to the template. An object that represents the DNS service discovery information for your virtual node.
 
     .DESCRIPTION
         Adds an AWS::AppMesh::VirtualNode.DnsServiceDiscovery resource property to the template.
-An object representing the DNS service discovery information for your virtual node.
+An object that represents the DNS service discovery information for your virtual node.
 
     .LINK
         http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-appmesh-virtualnode-dnsservicediscovery.html

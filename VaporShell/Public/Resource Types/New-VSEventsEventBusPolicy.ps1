@@ -1,10 +1,10 @@
 function New-VSEventsEventBusPolicy {
     <#
     .SYNOPSIS
-        Adds an AWS::Events::EventBusPolicy resource to the template. The AWS::Events::EventBusPolicy resource creates an event bus policy for Amazon CloudWatch Events. An event bus policy enables your account to receive events from other AWS accounts. These events can trigger CloudWatch Events rules created in your account. For more information, see Sending and Receiving Events Between AWS Accounts: https://docs.aws.amazon.com/AmazonCloudWatch/latest/events/CloudWatchEvents-CrossAccountEventDelivery.html in the *Amazon CloudWatch Events User Guide*.
+        Adds an AWS::Events::EventBusPolicy resource to the template. The AWS::Events::EventBusPolicy resource creates an event bus policy for Amazon EventBridge. An event bus policy enables your account to receive events from other AWS accounts. These events can trigger EventBridge rules created in your account. For more information, see Sending and Receiving Events Between AWS Accounts: https://docs.aws.amazon.com/eventbridge/latest/userguide/eventbridge-cross-account-event-delivery.html in the *Amazon EventBridge User Guide*.
 
     .DESCRIPTION
-        Adds an AWS::Events::EventBusPolicy resource to the template. The AWS::Events::EventBusPolicy resource creates an event bus policy for Amazon CloudWatch Events. An event bus policy enables your account to receive events from other AWS accounts. These events can trigger CloudWatch Events rules created in your account. For more information, see Sending and Receiving Events Between AWS Accounts: https://docs.aws.amazon.com/AmazonCloudWatch/latest/events/CloudWatchEvents-CrossAccountEventDelivery.html in the *Amazon CloudWatch Events User Guide*.
+        Adds an AWS::Events::EventBusPolicy resource to the template. The AWS::Events::EventBusPolicy resource creates an event bus policy for Amazon EventBridge. An event bus policy enables your account to receive events from other AWS accounts. These events can trigger EventBridge rules created in your account. For more information, see Sending and Receiving Events Between AWS Accounts: https://docs.aws.amazon.com/eventbridge/latest/userguide/eventbridge-cross-account-event-delivery.html in the *Amazon EventBridge User Guide*.
 
 If you grant permissions using Condition and specifying an organization, then accounts in that organization must specify a RoleArn with proper permissions when they use PutTarget to add your account's event bus as a target.
 
@@ -17,6 +17,8 @@ The permission policy on the default event bus can't exceed 10 KB in size.
         The logical ID must be alphanumeric (A-Za-z0-9) and unique within the template. Use the logical name to reference the resource in other parts of the template. For example, if you want to map an Amazon Elastic Block Store volume to an Amazon EC2 instance, you reference the logical IDs to associate the block stores with the instance.
 
     .PARAMETER EventBusName
+        The name of the event bus to associate with this policy.
+
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-events-eventbuspolicy.html#cfn-events-eventbuspolicy-eventbusname
         PrimitiveType: String
         UpdateType: Immutable

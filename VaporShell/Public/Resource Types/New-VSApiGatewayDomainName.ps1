@@ -43,14 +43,15 @@ You can use a custom domain name to provide a URL that's more intuitive and easi
         UpdateType: Mutable
 
     .PARAMETER SecurityPolicy
-        + domainname:create: https://docs.aws.amazon.com/apigateway/api-reference/link-relation/domainname-create/ in the *Amazon API Gateway REST API Reference*
+        The Transport Layer Security TLS version + cipher suite for this domain name.
+Valid values include TLS_1_0 and TLS_1_2.
 
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-apigateway-domainname.html#cfn-apigateway-domainname-securitypolicy
         PrimitiveType: String
         UpdateType: Mutable
 
     .PARAMETER Tags
-        + domainname:create: https://docs.aws.amazon.com/apigateway/api-reference/link-relation/domainname-create/ in the *Amazon API Gateway REST API Reference*
+        An array of arbitrary tags key-value pairs to associate with the domain name.
 
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-apigateway-domainname.html#cfn-apigateway-domainname-tags
         DuplicatesAllowed: True
@@ -149,16 +150,8 @@ You can use a custom domain name to provide a URL that's more intuitive and easi
                 }
             })]
         $SecurityPolicy,
+        [VaporShell.Core.TransformTag()]
         [parameter(Mandatory = $false)]
-        [ValidateScript( {
-                $allowedTypes = "Vaporshell.Resource.Tag","System.Management.Automation.PSCustomObject"
-                if ([string]$($_.PSTypeNames) -match "($(($allowedTypes|ForEach-Object{[RegEx]::Escape($_)}) -join '|'))") {
-                    $true
-                }
-                else {
-                    $PSCmdlet.ThrowTerminatingError((New-VSError -String "This parameter only accepts the following types: $($allowedTypes -join ", "). The current types of the value are: $($_.PSTypeNames -join ", ")."))
-                }
-            })]
         $Tags,
         [ValidateSet("Delete","Retain","Snapshot")]
         [System.String]

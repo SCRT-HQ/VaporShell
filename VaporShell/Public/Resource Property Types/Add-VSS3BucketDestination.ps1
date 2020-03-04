@@ -1,11 +1,11 @@
 function Add-VSS3BucketDestination {
     <#
     .SYNOPSIS
-        Adds an AWS::S3::Bucket.Destination resource property to the template. Specifies information about where to publish analysis or configuration results for an Amazon S3 bucket.
+        Adds an AWS::S3::Bucket.Destination resource property to the template. Specifies information about where to publish analysis or configuration results for an Amazon S3 bucket and S3 Replication Time Control (S3 RTC.
 
     .DESCRIPTION
         Adds an AWS::S3::Bucket.Destination resource property to the template.
-Specifies information about where to publish analysis or configuration results for an Amazon S3 bucket.
+Specifies information about where to publish analysis or configuration results for an Amazon S3 bucket and S3 Replication Time Control (S3 RTC.
 
     .LINK
         http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-s3-bucket-destination.html

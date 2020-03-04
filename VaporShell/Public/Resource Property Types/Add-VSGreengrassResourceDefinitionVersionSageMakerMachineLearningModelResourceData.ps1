@@ -12,6 +12,13 @@ function Add-VSGreengrassResourceDefinitionVersionSageMakerMachineLearningModelR
     .LINK
         http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-greengrass-resourcedefinitionversion-sagemakermachinelearningmodelresourcedata.html
 
+    .PARAMETER OwnerSetting
+        +  AWS IoT Greengrass Developer Guide: https://docs.aws.amazon.com/greengrass/latest/developerguide/
+
+        Type: ResourceDownloadOwnerSetting
+        Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-greengrass-resourcedefinitionversion-sagemakermachinelearningmodelresourcedata.html#cfn-greengrass-resourcedefinitionversion-sagemakermachinelearningmodelresourcedata-ownersetting
+        UpdateType: Immutable
+
     .PARAMETER DestinationPath
         The absolute local path of the resource inside the Lambda environment.
 
@@ -20,7 +27,7 @@ function Add-VSGreengrassResourceDefinitionVersionSageMakerMachineLearningModelR
         UpdateType: Immutable
 
     .PARAMETER SageMakerJobArn
-        The Amazon Resource Name ARN of the Secrets Manager training job that represents the source model.
+        The Amazon Resource Name ARN of the Amazon SageMaker training job that represents the source model.
 
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-greengrass-resourcedefinitionversion-sagemakermachinelearningmodelresourcedata.html#cfn-greengrass-resourcedefinitionversion-sagemakermachinelearningmodelresourcedata-sagemakerjobarn
         PrimitiveType: String
@@ -33,6 +40,8 @@ function Add-VSGreengrassResourceDefinitionVersionSageMakerMachineLearningModelR
     [cmdletbinding()]
     Param
     (
+        [parameter(Mandatory = $false)]
+        $OwnerSetting,
         [parameter(Mandatory = $true)]
         [ValidateScript( {
                 $allowedTypes = "System.String","Vaporshell.Function","Vaporshell.Condition"

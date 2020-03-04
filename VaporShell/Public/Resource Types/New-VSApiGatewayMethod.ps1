@@ -29,7 +29,7 @@ function New-VSApiGatewayMethod {
         UpdateType: Mutable
 
     .PARAMETER AuthorizationType
-        The method's authorization type. For valid values, see Method: https://docs.aws.amazon.com/apigateway/api-reference/resource/method/ in the *API Gateway API Reference*.
+        The method's authorization type. This parameter is required. For valid values, see Method: https://docs.aws.amazon.com/apigateway/api-reference/resource/method/ in the *API Gateway API Reference*.
 If you specify the AuthorizerId property, specify CUSTOM for this property.
 
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-apigateway-method.html#cfn-apigateway-method-authorizationtype
@@ -74,7 +74,7 @@ If you specify the AuthorizerId property, specify CUSTOM for this property.
         UpdateType: Mutable
 
     .PARAMETER RequestModels
-        The resources that are used for the response's content type. Specify response models as key-value pairs string-to-string mapping, with a content type as the key and a Model resource name as the value.
+        The resources that are used for the request's content type. Specify request models as key-value pairs string-to-string mapping, with a content type as the key and a Model resource name as the value.
 
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-apigateway-method.html#cfn-apigateway-method-requestmodels
         DuplicatesAllowed: False

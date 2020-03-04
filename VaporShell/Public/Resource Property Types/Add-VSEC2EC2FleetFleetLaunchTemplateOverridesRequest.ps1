@@ -34,7 +34,7 @@ FleetLaunchTemplateOverridesRequest is a property of the  FleetLaunchTemplateCon
         UpdateType: Mutable
 
     .PARAMETER SubnetId
-        The ID of the subnet in which to launch the instances.
+        The IDs of the subnets in which to launch the instances. Separate multiple subnet IDs using commas for example, subnet-1234abcdeexample1, subnet-0987cdef6example2. A request of type instant can have only one subnet ID.
 
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-ec2fleet-fleetlaunchtemplateoverridesrequest.html#cfn-ec2-ec2fleet-fleetlaunchtemplateoverridesrequest-subnetid
         PrimitiveType: String

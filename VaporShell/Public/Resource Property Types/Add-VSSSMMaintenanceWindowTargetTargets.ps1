@@ -13,7 +13,7 @@ Targets is a property of the AWS::SSM::MaintenanceWindowTarget: https://docs.aws
         http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ssm-maintenancewindowtarget-targets.html
 
     .PARAMETER Values
-        User-defined criteria that maps to Key. For example, if you specified tag:ServerRole, you could specify value:WebServer to run a command on instances that include Amazon EC2 tags of ServerRole,WebServer. For more information about how to send commands that target instances using Key,Value parameters, see Using Targets and Rate Controls to Send Commands to a Fleet: https://docs.aws.amazon.com/systems-manager/latest/userguide/send-commands-multiple.html in the *AWS Systems Manager User Guide*.
+        User-defined criteria that maps to Key. For example, if you specified tag:ServerRole, you could specify value:WebServer to run a command on instances that include Amazon EC2 tags of ServerRole,WebServer.
 
         PrimitiveItemType: String
         Type: List
@@ -21,7 +21,7 @@ Targets is a property of the AWS::SSM::MaintenanceWindowTarget: https://docs.aws
         UpdateType: Mutable
 
     .PARAMETER Key
-        User-defined criteria for sending commands that target instances that meet the criteria. Key can be tag:<Amazon EC2 tag> or InstanceIds. For more information about how to send commands that target instances using Key,Value parameters, see Using Targets and Rate Controls to Send Commands to a Fleet: https://docs.aws.amazon.com/systems-manager/latest/userguide/send-commands-multiple.html#send-commands-targeting in the *AWS Systems Manager User Guide*.
+        User-defined criteria for sending commands that target instances that meet the criteria.
 
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ssm-maintenancewindowtarget-targets.html#cfn-ssm-maintenancewindowtarget-targets-key
         PrimitiveType: String

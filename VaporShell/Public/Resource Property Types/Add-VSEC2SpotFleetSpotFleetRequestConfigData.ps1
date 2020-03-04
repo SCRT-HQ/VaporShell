@@ -13,7 +13,10 @@ You must specify either LaunchSpecifications or LaunchTemplateConfigs.
         http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-spotfleet-spotfleetrequestconfigdata.html
 
     .PARAMETER AllocationStrategy
-        Indicates how to allocate the target capacity across the Spot pools specified by the Spot Fleet request. The default is lowestPrice.
+        Indicates how to allocate the target Spot Instance capacity across the Spot Instance pools specified by the Spot Fleet request.
+If the allocation strategy is lowestPrice, Spot Fleet launches instances from the Spot Instance pools with the lowest price. This is the default allocation strategy.
+If the allocation strategy is diversified, Spot Fleet launches instances from all the Spot Instance pools that you specify.
+If the allocation strategy is capacityOptimized, Spot Fleet launches instances from Spot Instance pools with optimal capacity for the number of instances that are launching.
 
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-spotfleet-spotfleetrequestconfigdata.html#cfn-ec2-spotfleet-spotfleetrequestconfigdata-allocationstrategy
         PrimitiveType: String
@@ -41,7 +44,7 @@ You must specify either LaunchSpecifications or LaunchTemplateConfigs.
         UpdateType: Immutable
 
     .PARAMETER LaunchSpecifications
-        The launch specifications for the Spot Fleet request. If you specify LaunchSpecifications, you can't specify LaunchTemplateConfigs. If you include On-Demand capacity in your request, you must use LaunchTemplateConfigs.
+        The launch specifications for the Spot Fleet request. If you specify LaunchSpecifications, you can't specify LaunchTemplateConfigs.
 
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-spotfleet-spotfleetrequestconfigdata.html#cfn-ec2-spotfleet-spotfleetrequestconfigdata-launchspecifications
         DuplicatesAllowed: False
@@ -50,7 +53,7 @@ You must specify either LaunchSpecifications or LaunchTemplateConfigs.
         UpdateType: Immutable
 
     .PARAMETER LaunchTemplateConfigs
-        The launch template and overrides. If you specify LaunchTemplateConfigs, you can't specify LaunchSpecifications. If you include On-Demand capacity in your request, you must use LaunchTemplateConfigs.
+        The launch template and overrides. If you specify LaunchTemplateConfigs, you can't specify LaunchSpecifications.
 
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-spotfleet-spotfleetrequestconfigdata.html#cfn-ec2-spotfleet-spotfleetrequestconfigdata-launchtemplateconfigs
         DuplicatesAllowed: False

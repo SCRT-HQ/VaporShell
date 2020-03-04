@@ -26,8 +26,7 @@ If you specify the AccessControlTranslation property, the Account property is re
         UpdateType: Mutable
 
     .PARAMETER Bucket
-        The Amazon Resource Name ARN of the bucket where you want Amazon S3 to store replicas of the object identified by the rule.
-A replication configuration can replicate objects to only one destination bucket. If there are multiple rules in your replication configuration, all rules must specify the same destination bucket.
+        The Amazon Resource Name ARN of the bucket where you want Amazon S3 to store the results.
 
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-s3-bucket-replicationconfiguration-rules-destination.html#cfn-s3-bucket-replicationconfiguration-rules-destination-bucket
         PrimitiveType: String

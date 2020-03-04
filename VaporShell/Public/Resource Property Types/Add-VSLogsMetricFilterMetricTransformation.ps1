@@ -25,7 +25,7 @@ MetricTransformation is a property of the AWS::Logs::MetricFilter resource that 
         UpdateType: Mutable
 
     .PARAMETER MetricNamespace
-        The namespace of the CloudWatch metric.
+        A custom namespace to contain your metric in CloudWatch. Use namespaces to group together metrics that are similar. For more information, see Namespaces: https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/cloudwatch_concepts.html#Namespace.
 
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-logs-metricfilter-metrictransformation.html#cfn-cwl-metricfilter-metrictransformation-metricnamespace
         PrimitiveType: String

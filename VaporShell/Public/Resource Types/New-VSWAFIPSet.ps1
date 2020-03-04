@@ -1,12 +1,18 @@
 function New-VSWAFIPSet {
     <#
     .SYNOPSIS
-        Adds an AWS::WAF::IPSet resource to the template. Contains one or more IP addresses or blocks of IP addresses specified in Classless Inter-Domain Routing (CIDR notation. AWS WAF supports IPv4 address ranges: /8 and any range between /16 through /32. AWS WAF supports IPv6 address ranges: /24, /32, /48, /56, /64, and /128.
+        Adds an AWS::WAF::IPSet resource to the template. **Note**
 
     .DESCRIPTION
-        Adds an AWS::WAF::IPSet resource to the template. Contains one or more IP addresses or blocks of IP addresses specified in Classless Inter-Domain Routing (CIDR notation. AWS WAF supports IPv4 address ranges: /8 and any range between /16 through /32. AWS WAF supports IPv6 address ranges: /24, /32, /48, /56, /64, and /128.
+        Adds an AWS::WAF::IPSet resource to the template. **Note**
 
-To specify an individual IP address, you specify the four-part IP address followed by a /32, for example, 192.0.2.0/31. To block a range of IP addresses, you can specify /8 or any range between /16 through /32 (for IPv4 or /24, /32, /48, /56, /64, or /128 (for IPv6. For more information about CIDR notation, see the Wikipedia entry Classless Inter-Domain Routing: https://en.wikipedia.org/wiki/Classless_Inter-Domain_Routing.
+This is **AWS WAF Classic** documentation. For more information, see AWS WAF Classic: https://docs.aws.amazon.com/waf/latest/developerguide/classic-waf-chapter.html in the developer guide.
+
+**For the latest version of AWS WAF**, use the AWS WAFV2 API and see the AWS WAF Developer Guide: https://docs.aws.amazon.com/waf/latest/developerguide/waf-chapter.html. With the latest version, AWS WAF has a single set of endpoints for regional and global use.
+
+Contains one or more IP addresses or blocks of IP addresses specified in Classless Inter-Domain Routing (CIDR notation. AWS WAF supports IPv4 address ranges: /8 and any range between /16 through /32. AWS WAF supports IPv6 address ranges: /24, /32, /48, /56, /64, and /128.
+
+To specify an individual IP address, you specify the four-part IP address followed by a /32, for example, 192.0.2.0/32. To block a range of IP addresses, you can specify /8 or any range between /16 through /32 (for IPv4 or /24, /32, /48, /56, /64, or /128 (for IPv6. For more information about CIDR notation, see the Wikipedia entry Classless Inter-Domain Routing: https://en.wikipedia.org/wiki/Classless_Inter-Domain_Routing.
 
     .LINK
         http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-waf-ipset.html

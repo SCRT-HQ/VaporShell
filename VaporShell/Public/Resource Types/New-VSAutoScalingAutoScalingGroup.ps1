@@ -54,7 +54,7 @@ CloudFormation marks the Auto Scaling group as successful by setting its status 
         UpdateType: Mutable
 
     .PARAMETER HealthCheckGracePeriod
-        The amount of time, in seconds, that Amazon EC2 Auto Scaling waits before checking the health status of an EC2 instance that has come into service.
+        The amount of time, in seconds, that Amazon EC2 Auto Scaling waits before checking the health status of an EC2 instance that has come into service. The default value is 0.
 For more information, see Health Checks for Auto Scaling Instances: https://docs.aws.amazon.com/autoscaling/ec2/userguide/healthcheck.html in the *Amazon EC2 Auto Scaling User Guide*.
 If you are adding an ELB health check, you must specify this property.
 

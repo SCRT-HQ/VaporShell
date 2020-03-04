@@ -18,7 +18,7 @@ Container for the transition rule that describes when noncurrent objects transit
         UpdateType: Mutable
 
     .PARAMETER TransitionInDays
-        Specifies the number of days an object is noncurrent before Amazon S3 can perform the associated action. For information about the noncurrent days calculations, see How Amazon S3 Calculates When an Object Became Noncurrent: https://docs.aws.amazon.com/AmazonS3/latest/dev/s3-access-control.html in the *Amazon Simple Storage Service Developer Guide*.
+        Specifies the number of days an object is noncurrent before Amazon S3 can perform the associated action. For information about the noncurrent days calculations, see How Amazon S3 Calculates How Long an Object Has Been Noncurrent: https://docs.aws.amazon.com/AmazonS3/latest/dev/intro-lifecycle-rules.html#non-current-days-calculations in the *Amazon Simple Storage Service Developer Guide*.
 
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-s3-bucket-lifecycleconfig-rule-noncurrentversiontransition.html#cfn-s3-bucket-lifecycleconfig-rule-noncurrentversiontransition-transitionindays
         PrimitiveType: Integer

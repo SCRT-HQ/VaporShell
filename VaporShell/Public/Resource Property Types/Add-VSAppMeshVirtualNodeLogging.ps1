@@ -1,11 +1,11 @@
 function Add-VSAppMeshVirtualNodeLogging {
     <#
     .SYNOPSIS
-        Adds an AWS::AppMesh::VirtualNode.Logging resource property to the template. An object representing the logging information for a virtual node.
+        Adds an AWS::AppMesh::VirtualNode.Logging resource property to the template. An object that represents the logging information for a virtual node.
 
     .DESCRIPTION
         Adds an AWS::AppMesh::VirtualNode.Logging resource property to the template.
-An object representing the logging information for a virtual node.
+An object that represents the logging information for a virtual node.
 
     .LINK
         http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-appmesh-virtualnode-logging.html

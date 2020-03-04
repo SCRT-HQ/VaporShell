@@ -16,6 +16,7 @@ Source is a property of the AWS::CodeBuild::Project: https://docs.aws.amazon.com
 +  CODECOMMIT: The source code is in an AWS CodeCommit repository.
 +  CODEPIPELINE: The source code settings are specified in the source action of a pipeline in AWS CodePipeline.
 +  GITHUB: The source code is in a GitHub repository.
++  GITHUB_ENTERPRISE: The source code is in a GitHub Enterprise repository.
 +  NO_SOURCE: The project does not have input source code.
 +  S3: The source code is in an Amazon Simple Storage Service Amazon S3 input bucket.
 

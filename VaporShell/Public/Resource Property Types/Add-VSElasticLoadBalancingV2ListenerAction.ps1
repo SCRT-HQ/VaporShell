@@ -32,15 +32,13 @@ Specifies an action for a listener rule.
         UpdateType: Mutable
 
     .PARAMETER ForwardConfig
-        *Update requires*: No interruption: https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt
+        Information for creating an action that distributes requests among one or more target groups. For Network Load Balancers, you can specify a single target group. Specify only when Type is forward. If you specify both ForwardConfig and TargetGroupArn, you can specify only one target group using ForwardConfig and it must be the same target group specified in TargetGroupArn.
 
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-elasticloadbalancingv2-listener-defaultactions.html#cfn-elasticloadbalancingv2-listener-action-forwardconfig
         Type: ForwardConfig
         UpdateType: Mutable
 
     .PARAMETER Order
-        The order for the action. This value is required for rules with multiple actions. The action with the lowest value for order is performed first. The final action to be performed must be a forward or a fixed-response action.
-
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-elasticloadbalancingv2-listener-defaultactions.html#cfn-elasticloadbalancingv2-listener-action-order
         PrimitiveType: Integer
         UpdateType: Mutable
@@ -53,14 +51,14 @@ Specifies an action for a listener rule.
         UpdateType: Mutable
 
     .PARAMETER TargetGroupArn
-        The Amazon Resource Name ARN of the target group. Specify only when Type is forward.
+        The Amazon Resource Name ARN of the target group. Specify only when Type is forward and you want to route to a single target group. To route to one or more target groups, use ForwardConfig instead.
 
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-elasticloadbalancingv2-listener-defaultactions.html#cfn-elasticloadbalancingv2-listener-defaultactions-targetgrouparn
         PrimitiveType: String
         UpdateType: Mutable
 
     .PARAMETER Type
-        The type of action. Each rule must include exactly one of the following types of actions: forward, fixed-response, or redirect.
+        The type of action.
 
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-elasticloadbalancingv2-listener-defaultactions.html#cfn-elasticloadbalancingv2-listener-defaultactions-type
         PrimitiveType: String

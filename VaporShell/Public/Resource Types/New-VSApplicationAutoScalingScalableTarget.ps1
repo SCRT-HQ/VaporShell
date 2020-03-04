@@ -36,7 +36,8 @@ For more information, see RegisterScalableTarget: https://docs.aws.amazon.com/au
         UpdateType: Immutable
 
     .PARAMETER RoleARN
-        The Amazon Resource Name ARN of an AWS Identity and Access Management IAM role that allows Application Auto Scaling to modify the scalable target on your behalf.
+        Specify the Amazon Resource Name ARN of an AWS Identity and Access Management IAM role that allows Application Auto Scaling to modify the scalable target on your behalf. This can be either an IAM service role that Application Auto Scaling can assume to make calls to other AWS resources on your behalf, or a service-linked role for the specified service. For more information, see How Application Auto Scaling Works with IAM: https://docs.aws.amazon.com/autoscaling/application/userguide/security_iam_service-with-iam.html in the *Application Auto Scaling User Guide*.
+To automatically create a service-linked role, specify the full ARN of the service-linked role in your stack template. For examples of the ARN format and more information, see Service-Linked Roles: https://docs.aws.amazon.com/autoscaling/application/userguide/application-auto-scaling-service-linked-roles.html in the *Application Auto Scaling User Guide*.
 
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-applicationautoscaling-scalabletarget.html#cfn-applicationautoscaling-scalabletarget-rolearn
         PrimitiveType: String
@@ -51,6 +52,7 @@ For more information, see RegisterScalableTarget: https://docs.aws.amazon.com/au
 
     .PARAMETER ScheduledActions
         The scheduled actions for the scalable target. Duplicates aren't allowed.
+For more information about using scheduled scaling, see Scheduled Scaling: https://docs.aws.amazon.com/autoscaling/application/userguide/application-auto-scaling-scheduled-scaling.html in the *Application Auto Scaling User Guide*.
 
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-applicationautoscaling-scalabletarget.html#cfn-applicationautoscaling-scalabletarget-scheduledactions
         DuplicatesAllowed: False
@@ -71,7 +73,7 @@ For more information, see RegisterScalableTarget: https://docs.aws.amazon.com/au
 + For DynamicScalingInSuspended, while a suspension is in effect, all scale-in activities that are triggered by a scaling policy are suspended.
 + For DynamicScalingOutSuspended, while a suspension is in effect, all scale-out activities that are triggered by a scaling policy are suspended.
 + For ScheduledScalingSuspended, while a suspension is in effect, all scaling activities that involve scheduled actions are suspended.
-For more information, see Suspend and Resume Application Auto Scaling: https://docs.aws.amazon.com/autoscaling/application/userguide/application-auto-scaling-suspend-resume-scaling.html in the *Application Auto Scaling User Guide*.
+For more information, see Suspending and Resuming Scaling: https://docs.aws.amazon.com/autoscaling/application/userguide/application-auto-scaling-suspend-resume-scaling.html in the *Application Auto Scaling User Guide*.
 
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-applicationautoscaling-scalabletarget.html#cfn-applicationautoscaling-scalabletarget-suspendedstate
         Type: SuspendedState

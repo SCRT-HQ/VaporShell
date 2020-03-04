@@ -1,10 +1,10 @@
 function New-VSApiGatewayV2Integration {
     <#
     .SYNOPSIS
-        Adds an AWS::ApiGatewayV2::Integration resource to the template. The AWS::ApiGatewayV2::Integration resource creates an integration for an API. For more information, see Set up a WebSocket API Integration Request in API Gateway: https://docs.aws.amazon.com/apigateway/latest/developerguide/apigateway-websocket-api-integration-requests.html in the *API Gateway Developer Guide*.
+        Adds an AWS::ApiGatewayV2::Integration resource to the template. The AWS::ApiGatewayV2::Integration resource creates an integration for an API.
 
     .DESCRIPTION
-        Adds an AWS::ApiGatewayV2::Integration resource to the template. The AWS::ApiGatewayV2::Integration resource creates an integration for an API. For more information, see Set up a WebSocket API Integration Request in API Gateway: https://docs.aws.amazon.com/apigateway/latest/developerguide/apigateway-websocket-api-integration-requests.html in the *API Gateway Developer Guide*.
+        Adds an AWS::ApiGatewayV2::Integration resource to the template. The AWS::ApiGatewayV2::Integration resource creates an integration for an API.
 
     .LINK
         http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-apigatewayv2-integration.html
@@ -20,7 +20,7 @@ function New-VSApiGatewayV2Integration {
         UpdateType: Mutable
 
     .PARAMETER TemplateSelectionExpression
-        The template selection expression for the integration.
+        The template selection expression for the integration. Supported only for WebSocket APIs.
 
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-apigatewayv2-integration.html#cfn-apigatewayv2-integration-templateselectionexpression
         PrimitiveType: String
@@ -41,7 +41,7 @@ function New-VSApiGatewayV2Integration {
         UpdateType: Mutable
 
     .PARAMETER PassthroughBehavior
-        Specifies the pass-through behavior for incoming requests based on the Content-Type header in the request, and the available mapping templates specified as the requestTemplates property on the Integration resource. There are three valid values: WHEN_NO_MATCH, WHEN_NO_TEMPLATES, and NEVER.
+        Specifies the pass-through behavior for incoming requests based on the Content-Type header in the request, and the available mapping templates specified as the requestTemplates property on the Integration resource. There are three valid values: WHEN_NO_MATCH, WHEN_NO_TEMPLATES, and NEVER. Supported only for WebSocket APIs.
 WHEN_NO_MATCH passes the request body for unmapped content types through to the integration backend without transformation.
 NEVER rejects unmapped content types with an HTTP 415 Unsupported Media Type response.
 WHEN_NO_TEMPLATES allows pass-through when the integration has no content types mapped to templates. However, if there is at least one content type defined, unmapped content types will be rejected with the same HTTP 415 Unsupported Media Type response.
@@ -51,7 +51,7 @@ WHEN_NO_TEMPLATES allows pass-through when the integration has no content types 
         UpdateType: Mutable
 
     .PARAMETER RequestParameters
-        A key-value map specifying request parameters that are passed from the method request to the backend. The key is an integration request parameter name and the associated value is a method request parameter value or static value that must be enclosed within single quotes and pre-encoded as required by the backend. The method request parameter value must match the pattern of method.request.{location}.{name} , where  {location}  is querystring, path, or header; and  {name}  must be a valid and unique method request parameter name.
+        A key-value map specifying request parameters that are passed from the method request to the backend. The key is an integration request parameter name and the associated value is a method request parameter value or static value that must be enclosed within single quotes and pre-encoded as required by the backend. The method request parameter value must match the pattern of method.request.{location}.{name} , where  {location}  is querystring, path, or header; and  {name}  must be a valid and unique method request parameter name. Supported only for WebSocket APIs.
 
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-apigatewayv2-integration.html#cfn-apigatewayv2-integration-requestparameters
         PrimitiveType: Json
@@ -65,7 +65,7 @@ WHEN_NO_TEMPLATES allows pass-through when the integration has no content types 
         UpdateType: Mutable
 
     .PARAMETER PayloadFormatVersion
-        + CreateIntegration: https://docs.aws.amazon.com/apigatewayv2/latest/api-reference/apis-apiid-integrations.html#CreateIntegration in the *Amazon API Gateway Version 2 API Reference*
+        Specifies the format of the payload sent to an integration. Required for HTTP APIs. Currently, the only supported value is 1.0.
 
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-apigatewayv2-integration.html#cfn-apigatewayv2-integration-payloadformatversion
         PrimitiveType: String
@@ -79,21 +79,21 @@ WHEN_NO_TEMPLATES allows pass-through when the integration has no content types 
         UpdateType: Mutable
 
     .PARAMETER RequestTemplates
-        Represents a map of Velocity templates that are applied on the request payload based on the value of the Content-Type header sent by the client. The content type value is the key in this map, and the template as a String is the value.
+        Represents a map of Velocity templates that are applied on the request payload based on the value of the Content-Type header sent by the client. The content type value is the key in this map, and the template as a String is the value. Supported only for WebSocket APIs.
 
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-apigatewayv2-integration.html#cfn-apigatewayv2-integration-requesttemplates
         PrimitiveType: Json
         UpdateType: Mutable
 
     .PARAMETER TimeoutInMillis
-        Custom timeout between 50 and 29,000 milliseconds. The default value is 29,000 milliseconds or 29 seconds.
+        Custom timeout between 50 and 29,000 milliseconds. The default value is 29,000 milliseconds or 29 seconds for WebSocket APIs. The default value is 5,000 milliseconds, or 5 seconds for HTTP APIs.
 
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-apigatewayv2-integration.html#cfn-apigatewayv2-integration-timeoutinmillis
         PrimitiveType: Integer
         UpdateType: Mutable
 
     .PARAMETER ContentHandlingStrategy
-        Specifies how to handle response payload content type conversions. Supported values are CONVERT_TO_BINARY and CONVERT_TO_TEXT, with the following behaviors:
+        Supported only for WebSocket APIs. Specifies how to handle response payload content type conversions. Supported values are CONVERT_TO_BINARY and CONVERT_TO_TEXT, with the following behaviors:
 CONVERT_TO_BINARY: Converts a response payload from a Base64-encoded string to the corresponding binary blob.
 CONVERT_TO_TEXT: Converts a response payload from a binary blob to a Base64-encoded string.
 If this property is not defined, the response payload will be passed through from the integration response to the route response or method response without modification.
@@ -111,11 +111,11 @@ If this property is not defined, the response payload will be passed through fro
 
     .PARAMETER IntegrationType
         The integration type of an integration. One of the following:
-AWS: for integrating the route or method request with an AWS service action, including the Lambda function-invoking action. With the Lambda function-invoking action, this is referred to as the Lambda custom integration. With any other AWS service action, this is known as AWS integration.
+AWS: for integrating the route or method request with an AWS service action, including the Lambda function-invoking action. With the Lambda function-invoking action, this is referred to as the Lambda custom integration. With any other AWS service action, this is known as AWS integration. Supported only for WebSocket APIs.
 AWS_PROXY: for integrating the route or method request with the Lambda function-invoking action with the client request passed through as-is. This integration is also referred to as Lambda proxy integration.
-HTTP: for integrating the route or method request with an HTTP endpoint. This integration is also referred to as HTTP custom integration.
+HTTP: for integrating the route or method request with an HTTP endpoint. This integration is also referred to as the HTTP custom integration. Supported only for WebSocket APIs.
 HTTP_PROXY: for integrating route or method request with an HTTP endpoint, with the client request passed through as-is. This is also referred to as HTTP proxy integration.
-MOCK: for integrating the route or method request with API Gateway as a "loopback" endpoint without invoking any backend.
+MOCK: for integrating the route or method request with API Gateway as a "loopback" endpoint without invoking any backend. Supported only for WebSocket APIs.
 
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-apigatewayv2-integration.html#cfn-apigatewayv2-integration-integrationtype
         PrimitiveType: String

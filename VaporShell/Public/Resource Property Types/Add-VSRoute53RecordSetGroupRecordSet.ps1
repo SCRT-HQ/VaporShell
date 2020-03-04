@@ -1,11 +1,13 @@
 function Add-VSRoute53RecordSetGroupRecordSet {
     <#
     .SYNOPSIS
-        Adds an AWS::Route53::RecordSetGroup.RecordSet resource property to the template. Information about the resource record set to create, update, or delete. The AWS::Route53::RecordSet type can be used as a standalone resource or as an embedded property in the AWS::Route53::RecordSetGroup type. Note that some AWS::Route53::RecordSet properties are valid only when used within AWS::Route53::RecordSetGroup.
+        Adds an AWS::Route53::RecordSetGroup.RecordSet resource property to the template. Information about the record that you want to create.
 
     .DESCRIPTION
         Adds an AWS::Route53::RecordSetGroup.RecordSet resource property to the template.
-Information about the resource record set to create, update, or delete. The AWS::Route53::RecordSet type can be used as a standalone resource or as an embedded property in the AWS::Route53::RecordSetGroup type. Note that some AWS::Route53::RecordSet properties are valid only when used within AWS::Route53::RecordSetGroup.
+Information about the record that you want to create.
+
+The AWS::Route53::RecordSet type can be used as a standalone resource or as an embedded property in the AWS::Route53::RecordSetGroup type. Note that some AWS::Route53::RecordSet properties are valid only when used within AWS::Route53::RecordSetGroup.
 
 For more information, see ChangeResourceRecordSets: https://docs.aws.amazon.com/Route53/latest/APIReference/API_ChangeResourceRecordSets.html in the *Amazon Route 53 API Reference*.
 
@@ -17,7 +19,7 @@ For more information, see ChangeResourceRecordSets: https://docs.aws.amazon.com/
 If you're creating resource records sets for a private hosted zone, note the following:
 + You can't create an alias resource record set in a private hosted zone to route traffic to a CloudFront distribution.
 + Creating geolocation alias resource record sets or latency alias resource record sets in a private hosted zone is unsupported.
-+ For information about creating failover resource record sets in a private hosted zone, see Configuring Failover in a Private Hosted Zone: http://docs.aws.amazon.com/Route53/latest/DeveloperGuide/dns-failover-private-hosted-zones.html in the *Amazon Route 53 Developer Guide*.
++ For information about creating failover resource record sets in a private hosted zone, see Configuring Failover in a Private Hosted Zone: https://docs.aws.amazon.com/Route53/latest/DeveloperGuide/dns-failover-private-hosted-zones.html in the *Amazon Route 53 Developer Guide*.
 
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-route53-recordset.html#cfn-route53-recordset-aliastarget
         Type: AliasTarget
@@ -40,8 +42,8 @@ Except where noted, the following failover behaviors assume that you have includ
 You can't create non-failover resource record sets that have the same values for the Name and Type elements as failover resource record sets.
 For failover alias resource record sets, you must also include the EvaluateTargetHealth element and set the value to true.
 For more information about configuring failover for Route 53, see the following topics in the *Amazon Route 53 Developer Guide*:
-+  Route 53 Health Checks and DNS Failover: http://docs.aws.amazon.com/Route53/latest/DeveloperGuide/dns-failover.html
-+  Configuring Failover in a Private Hosted Zone: http://docs.aws.amazon.com/Route53/latest/DeveloperGuide/dns-failover-private-hosted-zones.html
++  Route 53 Health Checks and DNS Failover: https://docs.aws.amazon.com/Route53/latest/DeveloperGuide/dns-failover.html
++  Configuring Failover in a Private Hosted Zone: https://docs.aws.amazon.com/Route53/latest/DeveloperGuide/dns-failover-private-hosted-zones.html
 
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-route53-recordset.html#cfn-route53-recordset-failover
         PrimitiveType: String
@@ -49,11 +51,11 @@ For more information about configuring failover for Route 53, see the following 
 
     .PARAMETER GeoLocation
         *Geolocation resource record sets only:* A complex type that lets you control how Amazon Route 53 responds to DNS queries based on the geographic origin of the query. For example, if you want all queries from Africa to be routed to a web server with an IP address of 192.0.2.111, create a resource record set with a Type of A and a ContinentCode of AF.
-Creating geolocation and geolocation alias resource record sets in private hosted zones is not supported.
+Although creating geolocation and geolocation alias resource record sets in a private hosted zone is allowed, it's not supported.
 If you create separate resource record sets for overlapping geographic regions for example, one resource record set for a continent and one for a country on the same continent, priority goes to the smallest geographic region. This allows you to route most queries for a continent to one resource and to route queries for a country on that continent to a different resource.
 You can't create two geolocation resource record sets that specify the same geographic location.
 The value * in the CountryCode element matches all geographic locations that aren't specified in other geolocation resource record sets that have the same values for the Name and Type elements.
-Geolocation works by mapping IP addresses to locations. However, some IP addresses aren't mapped to geographic locations, so even if you create geolocation resource record sets that cover all seven continents, Route 53 will receive some DNS queries from locations that it can't identify. We recommend that you create a resource record set for which the value of CountryCode is *, which handles both queries that come from locations for which you haven't created geolocation resource record sets and queries from IP addresses that aren't mapped to a location. If you don't create a * resource record set, Route 53 returns a "no answer" response for queries from those locations.
+Geolocation works by mapping IP addresses to locations. However, some IP addresses aren't mapped to geographic locations, so even if you create geolocation resource record sets that cover all seven continents, Route 53 will receive some DNS queries from locations that it can't identify. We recommend that you create a resource record set for which the value of CountryCode is *. Two groups of queries are routed to the resource that you specify in this record: queries that come from locations for which you haven't created geolocation resource record sets and queries from IP addresses that aren't mapped to a location. If you don't create a * resource record set, Route 53 returns a "no answer" response for queries from those locations.
 You can't create non-geolocation resource record sets that have the same values for the Name and Type elements as geolocation resource record sets.
 
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-route53-recordset.html#cfn-route53-recordset-geolocation
@@ -69,8 +71,8 @@ Route 53 determines whether a resource record set is healthy based on one of the
 Route 53 doesn't check the health of the endpoint that is specified in the resource record set, for example, the endpoint specified by the IP address in the Value element. When you add a HealthCheckId element to a resource record set, Route 53 checks the health of the endpoint that you specified in the health check.
 For more information, see the following topics in the *Amazon Route 53 Developer Guide*:
 +  How Amazon Route 53 Determines Whether an Endpoint Is Healthy: https://docs.aws.amazon.com/Route53/latest/DeveloperGuide/dns-failover-determining-health-of-endpoints.html
-+  Route 53 Health Checks and DNS Failover: http://docs.aws.amazon.com/Route53/latest/DeveloperGuide/dns-failover.html
-+  Configuring Failover in a Private Hosted Zone: http://docs.aws.amazon.com/Route53/latest/DeveloperGuide/dns-failover-private-hosted-zones.html
++  Route 53 Health Checks and DNS Failover: https://docs.aws.amazon.com/Route53/latest/DeveloperGuide/dns-failover.html
++  Configuring Failover in a Private Hosted Zone: https://docs.aws.amazon.com/Route53/latest/DeveloperGuide/dns-failover-private-hosted-zones.html
 **When to Specify HealthCheckId**
 Specifying a value for HealthCheckId is useful only when Route 53 is choosing between two or more resource record sets to respond to a DNS query, and you want Route 53 to base the choice in part on the status of a health check. Configuring health checks makes sense only in the following configurations:
 +  **Non-alias resource record sets**: You're checking the health of a group of non-alias resource record sets that have the same routing policy, name, and type such as multiple weighted records named www.example.com with a type of A and you specify health check IDs for all the resource record sets.
@@ -101,16 +103,17 @@ Health check results will be unpredictable if you do the following:
         UpdateType: Mutable
 
     .PARAMETER HostedZoneId
-        The ID of the hosted zone that contains the resource record sets that you want to change.
+        The ID of the hosted zone that you want to create records in.
+Specify either HostedZoneName or HostedZoneId, but not both. If you have multiple hosted zones with the same domain name, you must specify the hosted zone using HostedZoneId.
 
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-route53-recordset.html#cfn-route53-recordset-hostedzoneid
         PrimitiveType: String
         UpdateType: Mutable
 
     .PARAMETER HostedZoneName
-        The name of the domain for the hosted zone where you want to add the resource record set.
+        The name of the hosted zone that you want to create records in.
 When you create a stack using an AWS::Route53::RecordSet that specifies HostedZoneName, AWS CloudFormation attempts to find a hosted zone whose name matches the HostedZoneName. If AWS CloudFormation cannot find a hosted zone with a matching domain name, or if there is more than one hosted zone with the specified domain name, AWS CloudFormation will not create the stack.
-If you have multiple hosted zones with the same domain name, you must explicitly specify the hosted zone using HostedZoneId.
+Specify either HostedZoneName or HostedZoneId, but not both. If you have multiple hosted zones with the same domain name, you must specify the hosted zone using HostedZoneId.
 
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-route53-recordset.html#cfn-route53-recordset-hostedzonename
         PrimitiveType: String
@@ -134,7 +137,7 @@ You can't create multivalue answer alias records.
         For ChangeResourceRecordSets requests, the name of the record that you want to create, update, or delete. For ListResourceRecordSets responses, the name of a record in the specified hosted zone.
 **ChangeResourceRecordSets Only**
 Enter a fully qualified domain name, for example, www.example.com. You can optionally include a trailing dot. If you omit the trailing dot, Amazon Route 53 assumes that the domain name that you specify is fully qualified. This means that Route 53 treats www.example.com without a trailing dot and www.example.com. with a trailing dot as identical.
-For information about how to specify characters other than a-z, 0-9, and - hyphen and how to specify internationalized domain names, see DNS Domain Name Format: http://docs.aws.amazon.com/Route53/latest/DeveloperGuide/DomainNameFormat.html in the *Amazon Route 53 Developer Guide*.
+For information about how to specify characters other than a-z, 0-9, and - hyphen and how to specify internationalized domain names, see DNS Domain Name Format: https://docs.aws.amazon.com/Route53/latest/DeveloperGuide/DomainNameFormat.html in the *Amazon Route 53 Developer Guide*.
 You can use the asterisk * wildcard to replace the leftmost label in a domain name, for example, *.example.com. Note the following:
 + The * must replace the entire label. For example, you can't specify *prod.example.com or prod*.example.com.
 + The * can't replace any of the middle labels, for example, marketing.*.example.com.
@@ -149,7 +152,7 @@ You can use the * wildcard as the leftmost label in a domain name, for example, 
 
     .PARAMETER Region
         *Latency-based resource record sets only:* The Amazon EC2 Region where you created the resource that this resource record set refers to. The resource typically is an AWS resource, such as an EC2 instance or an ELB load balancer, and is referred to by an IP address or a DNS domain name, depending on the record type.
-Creating latency and latency alias resource record sets in private hosted zones is not supported.
+Although creating latency and latency alias resource record sets in a private hosted zone is allowed, it's not supported.
 When Amazon Route 53 receives a DNS query for a domain name and type for which you have created latency resource record sets, Route 53 selects the latency resource record set that has the lowest latency between the end user and the associated Amazon EC2 Region. Route 53 then returns the value that is associated with the selected resource record set.
 Note the following:
 + You can only specify one ResourceRecord per latency resource record set.
@@ -162,7 +165,11 @@ Note the following:
         UpdateType: Mutable
 
     .PARAMETER ResourceRecords
-        Information about the resource record sets that you want to add to the hosted zone. Each record should be in the format appropriate for the record type specified by the Type property. For information about different record types and their record formats, see Values That You Specify When You Create or Edit Amazon Route 53 Records: https://docs.aws.amazon.com/Route53/latest/DeveloperGuide/resource-record-sets-values.html in the *Amazon Route 53 Developer Guide*.
+        One or more values that correspond with the value that you specified for the Type property. For example, if you specified A for Type, you specify one or more IP addresses in IPv4 format for ResourceRecords. For information about the format of values for each record type, see Supported DNS Resource Record Types: https://docs.aws.amazon.com/Route53/latest/DeveloperGuide/ResourceRecordTypes.html in the *Amazon Route 53 Developer Guide*.
+Note the following:
++ You can specify more than one value for all record types except CNAME and SOA.
++ The maximum length of a value is 4000 characters.
++ If you're creating an alias record, omit ResourceRecords.
 
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-route53-recordset.html#cfn-route53-recordset-resourcerecords
         DuplicatesAllowed: False
@@ -190,7 +197,7 @@ For information about routing policies, see Choosing a Routing Policy: https://d
         UpdateType: Mutable
 
     .PARAMETER Type
-        The DNS record type. For information about different record types and how data is encoded for them, see Supported DNS Resource Record Types: http://docs.aws.amazon.com/Route53/latest/DeveloperGuide/ResourceRecordTypes.html in the *Amazon Route 53 Developer Guide*.
+        The DNS record type. For information about different record types and how data is encoded for them, see Supported DNS Resource Record Types: https://docs.aws.amazon.com/Route53/latest/DeveloperGuide/ResourceRecordTypes.html in the *Amazon Route 53 Developer Guide*.
 Valid values for basic resource record sets: A | AAAA | CAA | CNAME | MX | NAPTR | NS | PTR | SOA | SPF | SRV | TXT
 Values for weighted, latency, geolocation, and failover resource record sets: A | AAAA | CAA | CNAME | MX | NAPTR | PTR | SPF | SRV | TXT. When creating a group of weighted, latency, geolocation, or failover resource record sets, specify the same value for all of the resource record sets in the group.
 Valid values for multivalue answer resource record sets: A | AAAA | MX | NAPTR | PTR | SPF | SRV | TXT
@@ -199,7 +206,7 @@ Values for alias resource record sets:
 +  **Amazon API Gateway custom regional APIs and edge-optimized APIs:** A
 +  **CloudFront distributions:** A
 If IPv6 is enabled for the distribution, create two resource record sets to route traffic to your distribution, one with a value of A and one with a value of AAAA.
-+  **AWS Elastic Beanstalk environment that has a regionalized subdomain**: A
++  **Amazon API Gateway environment that has a regionalized subdomain**: A
 +  **ELB load balancers:** A | AAAA
 +  **Amazon S3 buckets:** A
 +  **Amazon Virtual Private Cloud interface VPC endpoints** A
@@ -218,7 +225,7 @@ If you're creating an alias record that has the same name as the hosted zone kno
 + You can't create latency, failover, or geolocation resource record sets that have the same values for the Name and Type elements as weighted resource record sets.
 + You can create a maximum of 100 weighted resource record sets that have the same values for the Name and Type elements.
 + For weighted but not weighted alias resource record sets, if you set Weight to 0 for a resource record set, Route 53 never responds to queries with the applicable value for that resource record set. However, if you set Weight to 0 for all resource record sets that have the same combination of DNS name and type, traffic is routed to all resources with equal probability.
-The effect of setting Weight to 0 is different when you associate health checks with weighted resource record sets. For more information, see Options for Configuring Route 53 Active-Active and Active-Passive Failover: http://docs.aws.amazon.com/Route53/latest/DeveloperGuide/dns-failover-configuring-options.html in the *Amazon Route 53 Developer Guide*.
+The effect of setting Weight to 0 is different when you associate health checks with weighted resource record sets. For more information, see Options for Configuring Route 53 Active-Active and Active-Passive Failover: https://docs.aws.amazon.com/Route53/latest/DeveloperGuide/dns-failover-configuring-options.html in the *Amazon Route 53 Developer Guide*.
 
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-route53-recordset.html#cfn-route53-recordset-weight
         PrimitiveType: Integer

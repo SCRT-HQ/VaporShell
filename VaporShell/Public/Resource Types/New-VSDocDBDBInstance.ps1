@@ -13,21 +13,21 @@ function New-VSDocDBDBInstance {
         The logical ID must be alphanumeric (A-Za-z0-9) and unique within the template. Use the logical name to reference the resource in other parts of the template. For example, if you want to map an Amazon Elastic Block Store volume to an Amazon EC2 instance, you reference the logical IDs to associate the block stores with the instance.
 
     .PARAMETER DBInstanceClass
-        The compute and memory capacity of the DB instance; for example, db.m4.large. If you change the class of an instance there can be some interruption in the cluster's service.
+        The compute and memory capacity of the instance; for example, db.m4.large. If you change the class of an instance there can be some interruption in the cluster's service.
 
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-docdb-dbinstance.html#cfn-docdb-dbinstance-dbinstanceclass
         PrimitiveType: String
         UpdateType: Mutable
 
     .PARAMETER DBClusterIdentifier
-        The identifier of the DB cluster that the instance will belong to.
+        The identifier of the cluster that the instance will belong to.
 
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-docdb-dbinstance.html#cfn-docdb-dbinstance-dbclusteridentifier
         PrimitiveType: String
         UpdateType: Immutable
 
     .PARAMETER AvailabilityZone
-        The Amazon EC2 Availability Zone that the DB instance is created in.
+        The Amazon EC2 Availability Zone that the instance is created in.
 Default: A random, system-chosen Availability Zone in the endpoint's AWS Region.
 Example: us-east-1d
 Constraint: The AvailabilityZone parameter can't be specified if the MultiAZ parameter is set to true. The specified Availability Zone must be in the same AWS Region as the current endpoint.
@@ -48,7 +48,7 @@ Constraints: Minimum 30-minute window.
         UpdateType: Mutable
 
     .PARAMETER AutoMinorVersionUpgrade
-        Indicates that minor engine upgrades are applied automatically to the DB instance during the maintenance window.
+        Indicates that minor engine upgrades are applied automatically to the instance during the maintenance window.
 Default: true
 
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-docdb-dbinstance.html#cfn-docdb-dbinstance-autominorversionupgrade
@@ -56,7 +56,7 @@ Default: true
         UpdateType: Mutable
 
     .PARAMETER DBInstanceIdentifier
-        The DB instance identifier. This parameter is stored as a lowercase string.
+        The instance identifier. This parameter is stored as a lowercase string.
 Constraints:
 + Must contain from 1 to 63 letters, numbers, or hyphens.
 + The first character must be a letter.
@@ -68,7 +68,7 @@ Example: mydbinstance
         UpdateType: Immutable
 
     .PARAMETER Tags
-        The tags to be assigned to the DB instance.
+        The tags to be assigned to the instance. You can assign up to 10 tags to an instance.
 
         Type: List
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-docdb-dbinstance.html#cfn-docdb-dbinstance-tags
@@ -186,16 +186,8 @@ Example: mydbinstance
                 }
             })]
         $DBInstanceIdentifier,
+        [VaporShell.Core.TransformTag()]
         [parameter(Mandatory = $false)]
-        [ValidateScript( {
-                $allowedTypes = "Vaporshell.Resource.Tag","System.Management.Automation.PSCustomObject"
-                if ([string]$($_.PSTypeNames) -match "($(($allowedTypes|ForEach-Object{[RegEx]::Escape($_)}) -join '|'))") {
-                    $true
-                }
-                else {
-                    $PSCmdlet.ThrowTerminatingError((New-VSError -String "This parameter only accepts the following types: $($allowedTypes -join ", "). The current types of the value are: $($_.PSTypeNames -join ", ")."))
-                }
-            })]
         $Tags,
         [ValidateSet("Delete","Retain","Snapshot")]
         [System.String]

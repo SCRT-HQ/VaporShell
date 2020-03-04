@@ -10,8 +10,6 @@ function New-VSSNSTopic {
 
 One user can create a maximum of 100,000 topics.
 
-This action is idempotent: If the requester already owns a topic with the specified name, that topic's ARN is returned without creating a new topic.
-
     .LINK
         http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-sns-topic.html
 
@@ -43,7 +41,8 @@ This property applies only to server-side-encryption: https://docs.aws.amazon.co
         UpdateType: Mutable
 
     .PARAMETER Tags
-        +  Using an AWS CloudFormation Template to Create a Topic that Sends Messages to Amazon SQS Queues: https://docs.aws.amazon.com/sns/latest/dg/SendMessageToSQS.cloudformation.html in the *Amazon Simple Notification Service Developer Guide*
+        The list of tags to add to a new topic.
+To be able to tag a topic on creation, you must have the sns:CreateTopic and sns:TagResource permissions.
 
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-sns-topic.html#cfn-sns-topic-tags
         DuplicatesAllowed: True
@@ -138,16 +137,8 @@ If you specify a name, you can't perform updates that require replacement of thi
                 }
             })]
         $Subscription,
+        [VaporShell.Core.TransformTag()]
         [parameter(Mandatory = $false)]
-        [ValidateScript( {
-                $allowedTypes = "Vaporshell.Resource.Tag","System.Management.Automation.PSCustomObject"
-                if ([string]$($_.PSTypeNames) -match "($(($allowedTypes|ForEach-Object{[RegEx]::Escape($_)}) -join '|'))") {
-                    $true
-                }
-                else {
-                    $PSCmdlet.ThrowTerminatingError((New-VSError -String "This parameter only accepts the following types: $($allowedTypes -join ", "). The current types of the value are: $($_.PSTypeNames -join ", ")."))
-                }
-            })]
         $Tags,
         [parameter(Mandatory = $false)]
         [ValidateScript( {

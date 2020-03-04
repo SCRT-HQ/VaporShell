@@ -64,14 +64,14 @@ function New-VSAppSyncResolver {
         UpdateType: Mutable
 
     .PARAMETER CachingConfig
-        +  CreateResolver: https://docs.aws.amazon.com/appsync/latest/APIReference/API_CreateResolver.html operation in the *AWS AppSync API Reference*.
+        The caching configuration for the resolver.
 
         Type: CachingConfig
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-appsync-resolver.html#cfn-appsync-resolver-cachingconfig
         UpdateType: Mutable
 
     .PARAMETER SyncConfig
-        +  CreateResolver: https://docs.aws.amazon.com/appsync/latest/APIReference/API_CreateResolver.html operation in the *AWS AppSync API Reference*.
+        The SyncConfig for a resolver attached to a versioned datasource.
 
         Type: SyncConfig
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-appsync-resolver.html#cfn-appsync-resolver-syncconfig

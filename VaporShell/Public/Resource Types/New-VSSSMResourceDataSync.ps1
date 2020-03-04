@@ -1,12 +1,22 @@
 function New-VSSSMResourceDataSync {
     <#
     .SYNOPSIS
-        Adds an AWS::SSM::ResourceDataSync resource to the template. The AWS::SSM::ResourceDataSync resource creates or deletes a Resource Data Sync for AWS Systems Manager Inventory. You can use Resource Data Sync to send Inventory data collected from all of your Systems Manager managed instances to a single Amazon S3 bucket that you have already created in your account. Resource Data Sync then automatically updates the centralized data when new Inventory data is collected.
+        Adds an AWS::SSM::ResourceDataSync resource to the template. The AWS::SSM::ResourceDataSync resource creates, updates, or deletes a Resource Data Sync for AWS Systems Manager. A resource data sync helps you view data from multiple sources in a single location. Systems Manager offers two types of resource data sync: SyncToDestination and SyncFromSource.
 
     .DESCRIPTION
-        Adds an AWS::SSM::ResourceDataSync resource to the template. The AWS::SSM::ResourceDataSync resource creates or deletes a Resource Data Sync for AWS Systems Manager Inventory. You can use Resource Data Sync to send Inventory data collected from all of your Systems Manager managed instances to a single Amazon S3 bucket that you have already created in your account. Resource Data Sync then automatically updates the centralized data when new Inventory data is collected.
+        Adds an AWS::SSM::ResourceDataSync resource to the template. The AWS::SSM::ResourceDataSync resource creates, updates, or deletes a Resource Data Sync for AWS Systems Manager. A resource data sync helps you view data from multiple sources in a single location. Systems Manager offers two types of resource data sync: SyncToDestination and SyncFromSource.
 
-For more information, see Configuring Inventory Collection: https://docs.aws.amazon.com/systems-manager/latest/userguide/sysman-inventory-configuring.html#sysman-inventory-datasync in the *AWS Systems Manager User Guide*.
+You can configure Systems Manager Inventory to use the SyncToDestination type to synchronize Inventory data from multiple AWS Regions to a single Amazon S3 bucket.
+
+You can configure Systems Manager Explorer to use the SyncFromSource type to synchronize operational work items (OpsItems and operational data (OpsData from multiple AWS Regions. This type can synchronize OpsItems and OpsData from multiple AWS accounts and Regions or from an EntireOrganization by using AWS Organizations.
+
+A resource data sync is an asynchronous operation that returns immediately. After a successful initial sync is completed, the system continuously syncs data.
+
+By default, data is not encrypted in Amazon S3. We strongly recommend that you enable encryption in Amazon S3 to ensure secure data storage. We also recommend that you secure access to the Amazon S3 bucket by creating a restrictive bucket policy.
+
+For more information, see Configuring Inventory Collection: https://docs.aws.amazon.com/systems-manager/latest/userguide/sysman-inventory-configuring.html#sysman-inventory-datasync and Setting Up Systems Manager Explorer to Display Data from Multiple Accounts and Regions: https://docs.aws.amazon.com/systems-manager/latest/userguide/Explorer-resource-data-sync.html in the *AWS Systems Manager User Guide*.
+
+Important: The following *Syntax* section shows all fields that are supported for a resource data sync. The *Examples* section below shows the recommended way to specify configurations for each sync type. Please see the *Examples* section when you create your resource data sync.
 
     .LINK
         http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ssm-resourcedatasync.html
@@ -15,7 +25,7 @@ For more information, see Configuring Inventory Collection: https://docs.aws.ama
         The logical ID must be alphanumeric (A-Za-z0-9) and unique within the template. Use the logical name to reference the resource in other parts of the template. For example, if you want to map an Amazon Elastic Block Store volume to an Amazon EC2 instance, you reference the logical IDs to associate the block stores with the instance.
 
     .PARAMETER S3Destination
-        +  Configuring Inventory Collection: https://docs.aws.amazon.com/systems-manager/latest/userguide/sysman-inventory-configuring.html
+        Configuration information for the target Amazon S3 bucket.
 
         Type: S3Destination
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ssm-resourcedatasync.html#cfn-ssm-resourcedatasync-s3destination
@@ -29,7 +39,7 @@ For more information, see Configuring Inventory Collection: https://docs.aws.ama
         UpdateType: Immutable
 
     .PARAMETER SyncSource
-        +  Configuring Inventory Collection: https://docs.aws.amazon.com/systems-manager/latest/userguide/sysman-inventory-configuring.html
+        Information about the source where the data was synchronized.
 
         Type: SyncSource
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ssm-resourcedatasync.html#cfn-ssm-resourcedatasync-syncsource
@@ -64,7 +74,7 @@ For more information, see Configuring Inventory Collection: https://docs.aws.ama
         UpdateType: Immutable
 
     .PARAMETER SyncType
-        +  Configuring Inventory Collection: https://docs.aws.amazon.com/systems-manager/latest/userguide/sysman-inventory-configuring.html
+        The type of resource data sync. If SyncType is SyncToDestination, then the resource data sync synchronizes data to an Amazon S3 bucket. If the SyncType is SyncFromSource then the resource data sync synchronizes data from AWS Organizations or from multiple AWS Regions.
 
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ssm-resourcedatasync.html#cfn-ssm-resourcedatasync-synctype
         PrimitiveType: String

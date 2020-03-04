@@ -1,16 +1,24 @@
 function Add-VSWAFv2WebACLIPSetReferenceStatement {
     <#
     .SYNOPSIS
-        Adds an AWS::WAFv2::WebACL.IPSetReferenceStatement resource property to the template. 
+        Adds an AWS::WAFv2::WebACL.IPSetReferenceStatement resource property to the template. **Note**
 
     .DESCRIPTION
         Adds an AWS::WAFv2::WebACL.IPSetReferenceStatement resource property to the template.
+**Note**
 
+This is the latest version of **AWS WAF**, named AWS WAFV2, released in November, 2019. For information, including how to migrate your AWS WAF resources from the prior release, see the AWS WAF Developer Guide: https://docs.aws.amazon.com/waf/latest/developerguide/waf-chapter.html.
+
+A rule statement used to detect web requests coming from particular IP addresses or address ranges. To use this, create an IPSet that specifies the addresses you want to detect, then use the ARN of that set in this statement. To create an IP set, see CreateIPSet.
+
+Each IP set rule statement references an IP set. You create and maintain the set independent of your rules. This allows you to use the single set in multiple rules. When you update the referenced set, AWS WAF automatically updates all rules that reference it.
 
     .LINK
         http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-wafv2-webacl-ipsetreferencestatement.html
 
     .PARAMETER Arn
+        The Amazon Resource Name ARN of the IPSet that this statement references.
+
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-wafv2-webacl-ipsetreferencestatement.html#cfn-wafv2-webacl-ipsetreferencestatement-arn
         UpdateType: Mutable
         PrimitiveType: String

@@ -15,6 +15,8 @@ For example, you might use the AWS::Lambda::Permission resource to grant the buc
 
 To avoid this dependency, you can create all resources without specifying the notification configuration. Then, update the stack with a notification configuration.
 
+For more information on permissions, see AWS::Lambda::Permission: https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-lambda-permission.html and Granting Permissions to Publish Event Notification Messages to a Destination: https://docs.aws.amazon.com/AmazonS3/latest/dev/NotificationHowTo.html#grant-destinations-permissions-to-s3.
+
     .LINK
         http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-s3-bucket-notificationconfig.html
 

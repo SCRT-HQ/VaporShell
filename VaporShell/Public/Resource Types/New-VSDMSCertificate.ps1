@@ -13,21 +13,21 @@ function New-VSDMSCertificate {
         The logical ID must be alphanumeric (A-Za-z0-9) and unique within the template. Use the logical name to reference the resource in other parts of the template. For example, if you want to map an Amazon Elastic Block Store volume to an Amazon EC2 instance, you reference the logical IDs to associate the block stores with the instance.
 
     .PARAMETER CertificateIdentifier
-        The customer-assigned name of the certificate. Valid characters are A-z and 0-9.
+        A customer-assigned name for the certificate. Identifiers must begin with a letter; must contain only ASCII letters, digits, and hyphens; and must not end with a hyphen or contain two consecutive hyphens.
 
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-dms-certificate.html#cfn-dms-certificate-certificateidentifier
         PrimitiveType: String
         UpdateType: Immutable
 
     .PARAMETER CertificatePem
-        The contents of the .pem X.509 certificate file for the certificate.
+        The contents of a .pem file, which contains an X.509 certificate.
 
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-dms-certificate.html#cfn-dms-certificate-certificatepem
         PrimitiveType: String
         UpdateType: Immutable
 
     .PARAMETER CertificateWallet
-        The location of the imported Oracle Wallet certificate for use with SSL.
+        The location of an imported Oracle Wallet certificate for use with SSL.
 
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-dms-certificate.html#cfn-dms-certificate-certificatewallet
         PrimitiveType: String

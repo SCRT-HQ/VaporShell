@@ -6,7 +6,7 @@ function New-VSRoute53HealthCheck {
     .DESCRIPTION
         Adds an AWS::Route53::HealthCheck resource to the template. The AWS::Route53::HealthCheck resource is a Route 53 resource type that contains settings for a Route 53 health check.
 
-For information about associating health checks with resource record sets, see HealthCheckId: https://docs.aws.amazon.com/Route53/latest/APIReference/API_ResourceRecordSet.html#Route53-Type-ResourceRecordSet-HealthCheckId in ChangeResourceRecordSets: https://docs.aws.amazon.com/Route53/latest/APIReference/API_ChangeResourceRecordSets.html.
+For information about associating health checks with records, see HealthCheckId: https://docs.aws.amazon.com/Route53/latest/APIReference/API_ResourceRecordSet.html#Route53-Type-ResourceRecordSet-HealthCheckId in ChangeResourceRecordSets: https://docs.aws.amazon.com/Route53/latest/APIReference/API_ChangeResourceRecordSets.html.
 
 **ELB Load Balancers**
 
@@ -14,7 +14,7 @@ If you're registering EC2 instances with an Elastic Load Balancing (ELB load bal
 
 **Private Hosted Zones**
 
-You can associate health checks with failover resource record sets in a private hosted zone. Note the following:
+You can associate health checks with failover records in a private hosted zone. Note the following:
 
 + Route 53 health checkers are outside the VPC. To check the health of an endpoint within a VPC by IP address, you must assign a public IP address to the instance in the VPC.
 

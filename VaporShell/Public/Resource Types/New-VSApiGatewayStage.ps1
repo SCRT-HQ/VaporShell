@@ -48,7 +48,7 @@ function New-VSApiGatewayStage {
         UpdateType: Mutable
 
     .PARAMETER DeploymentId
-        The ID of the deployment that the stage is associated with.
+        The ID of the deployment that the stage is associated with. This parameter is required.
 
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-apigateway-stage.html#cfn-apigateway-stage-deploymentid
         PrimitiveType: String
@@ -265,16 +265,8 @@ For more information, see Trace API Gateway API Execution with AWS X-Ray: https:
                 }
             })]
         $StageName,
+        [VaporShell.Core.TransformTag()]
         [parameter(Mandatory = $false)]
-        [ValidateScript( {
-                $allowedTypes = "Vaporshell.Resource.Tag","System.Management.Automation.PSCustomObject"
-                if ([string]$($_.PSTypeNames) -match "($(($allowedTypes|ForEach-Object{[RegEx]::Escape($_)}) -join '|'))") {
-                    $true
-                }
-                else {
-                    $PSCmdlet.ThrowTerminatingError((New-VSError -String "This parameter only accepts the following types: $($allowedTypes -join ", "). The current types of the value are: $($_.PSTypeNames -join ", ")."))
-                }
-            })]
         $Tags,
         [parameter(Mandatory = $false)]
         [ValidateScript( {

@@ -1,21 +1,25 @@
 function Add-VSAppStreamImageBuilderAccessEndpoint {
     <#
     .SYNOPSIS
-        Adds an AWS::AppStream::ImageBuilder.AccessEndpoint resource property to the template. 
+        Adds an AWS::AppStream::ImageBuilder.AccessEndpoint resource property to the template. Describes an interface VPC endpoint (interface endpoint that lets you create a private connection between the virtual private cloud (VPC that you specify and AppStream 2.0. When you specify an interface endpoint for a stack, users of the stack can connect to AppStream 2.0 only through that endpoint. When you specify an interface endpoint for an image builder, administrators can connect to the image builder only through that endpoint.
 
     .DESCRIPTION
         Adds an AWS::AppStream::ImageBuilder.AccessEndpoint resource property to the template.
-
+Describes an interface VPC endpoint (interface endpoint that lets you create a private connection between the virtual private cloud (VPC that you specify and AppStream 2.0. When you specify an interface endpoint for a stack, users of the stack can connect to AppStream 2.0 only through that endpoint. When you specify an interface endpoint for an image builder, administrators can connect to the image builder only through that endpoint.
 
     .LINK
         http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-appstream-imagebuilder-accessendpoint.html
 
     .PARAMETER EndpointType
+        The type of interface endpoint.
+
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-appstream-imagebuilder-accessendpoint.html#cfn-appstream-imagebuilder-accessendpoint-endpointtype
         PrimitiveType: String
         UpdateType: Mutable
 
     .PARAMETER VpceId
+        The identifier ID of the VPC in which the interface endpoint is used.
+
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-appstream-imagebuilder-accessendpoint.html#cfn-appstream-imagebuilder-accessendpoint-vpceid
         PrimitiveType: String
         UpdateType: Mutable

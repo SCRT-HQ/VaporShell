@@ -31,11 +31,15 @@ For details about each event source type, see the following topics.
         UpdateType: Mutable
 
     .PARAMETER BisectBatchOnFunctionError
+        Streams If the function returns an error, split the batch in two and retry.
+
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-lambda-eventsourcemapping.html#cfn-lambda-eventsourcemapping-bisectbatchonfunctionerror
         PrimitiveType: Boolean
         UpdateType: Mutable
 
     .PARAMETER DestinationConfig
+        Streams An Amazon SQS queue or Amazon SNS topic destination for discarded records.
+
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-lambda-eventsourcemapping.html#cfn-lambda-eventsourcemapping-destinationconfig
         Type: DestinationConfig
         UpdateType: Mutable
@@ -71,29 +75,37 @@ The length constraint applies only to the full ARN. If you specify only the func
         UpdateType: Mutable
 
     .PARAMETER MaximumBatchingWindowInSeconds
-        The maximum amount of time to gather records before invoking the function, in seconds.
+        Streams The maximum amount of time to gather records before invoking the function, in seconds.
 
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-lambda-eventsourcemapping.html#cfn-lambda-eventsourcemapping-maximumbatchingwindowinseconds
         PrimitiveType: Integer
         UpdateType: Mutable
 
     .PARAMETER MaximumRecordAgeInSeconds
+        Streams The maximum age of a record that Lambda sends to a function for processing.
+
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-lambda-eventsourcemapping.html#cfn-lambda-eventsourcemapping-maximumrecordageinseconds
         PrimitiveType: Integer
         UpdateType: Mutable
 
     .PARAMETER MaximumRetryAttempts
+        Streams The maximum number of times to retry when the function returns an error.
+
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-lambda-eventsourcemapping.html#cfn-lambda-eventsourcemapping-maximumretryattempts
         PrimitiveType: Integer
         UpdateType: Mutable
 
     .PARAMETER ParallelizationFactor
+        Streams The number of batches to process from each shard concurrently.
+
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-lambda-eventsourcemapping.html#cfn-lambda-eventsourcemapping-parallelizationfactor
         PrimitiveType: Integer
         UpdateType: Mutable
 
     .PARAMETER StartingPosition
-        The position in a stream from which to start reading. Required for Amazon Kinesis and Amazon DynamoDB Streams sources. AT_TIMESTAMP is only supported for Amazon Kinesis streams.
+        The position in a stream from which to start reading. Required for Amazon Kinesis and Amazon DynamoDB Streams sources.
++ **LATEST** - Read only new records.
++ **TRIM_HORIZON** - Process all available records.
 
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-lambda-eventsourcemapping.html#cfn-lambda-eventsourcemapping-startingposition
         PrimitiveType: String

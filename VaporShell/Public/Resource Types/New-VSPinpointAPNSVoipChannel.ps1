@@ -1,12 +1,12 @@
 function New-VSPinpointAPNSVoipChannel {
     <#
     .SYNOPSIS
-        Adds an AWS::Pinpoint::APNSVoipChannel resource to the template. A *channel* is a type of platform that you can deliver messages to. You can use the APNs VoIP channel to send VoIP notification messages to the Apple Push Notification service (APNs. Before you use Amazon Pinpoint to send VoIP notifications to APNs, you have to enable the APNs VoIP channel for an Amazon Pinpoint app.
+        Adds an AWS::Pinpoint::APNSVoipChannel resource to the template. A *channel* is a type of platform that you can deliver messages to. You can use the APNs VoIP channel to send VoIP notification messages to the Apple Push Notification service (APNs. Before you can use Amazon Pinpoint to send VoIP notifications to APNs, you have to enable the APNs VoIP channel for an Amazon Pinpoint application.
 
     .DESCRIPTION
-        Adds an AWS::Pinpoint::APNSVoipChannel resource to the template. A *channel* is a type of platform that you can deliver messages to. You can use the APNs VoIP channel to send VoIP notification messages to the Apple Push Notification service (APNs. Before you use Amazon Pinpoint to send VoIP notifications to APNs, you have to enable the APNs VoIP channel for an Amazon Pinpoint app.
+        Adds an AWS::Pinpoint::APNSVoipChannel resource to the template. A *channel* is a type of platform that you can deliver messages to. You can use the APNs VoIP channel to send VoIP notification messages to the Apple Push Notification service (APNs. Before you can use Amazon Pinpoint to send VoIP notifications to APNs, you have to enable the APNs VoIP channel for an Amazon Pinpoint application.
 
-The APNs VoIP Channel resource represents the status and authentication settings of the APNs VoIP channel for a specific application. You can use this resource to retrieve information about, update, or disable (delete the APNs VoIP channel for an application.
+The AWS::Pinpoint::APNSVoipChannel resource defines the status and authentication settings of the APNs VoIP channel for an application.
 
     .LINK
         http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-pinpoint-apnsvoipchannel.html
@@ -29,49 +29,49 @@ The APNs VoIP Channel resource represents the status and authentication settings
         UpdateType: Mutable
 
     .PARAMETER Enabled
-        Specifies whether to enable the APNs VoIP channel for the Amazon Pinpoint application.
+        Specifies whether to enable the APNs VoIP channel for the application.
 
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-pinpoint-apnsvoipchannel.html#cfn-pinpoint-apnsvoipchannel-enabled
         PrimitiveType: Boolean
         UpdateType: Mutable
 
     .PARAMETER DefaultAuthenticationMethod
-        The default authentication method that you want Amazon Pinpoint to use when authenticating with APNs. Valid options are key or certificate.
+        The default authentication method that you want Amazon Pinpoint to use when authenticating with APNs, key or certificate.
 
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-pinpoint-apnsvoipchannel.html#cfn-pinpoint-apnsvoipchannel-defaultauthenticationmethod
         PrimitiveType: String
         UpdateType: Mutable
 
     .PARAMETER TokenKey
-        The authentication key to use for APNs tokens.
+        The key identifier that's assigned to your APNs signing key, if you want Amazon Pinpoint to communicate with APNs by using APNs tokens.
 
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-pinpoint-apnsvoipchannel.html#cfn-pinpoint-apnsvoipchannel-tokenkey
         PrimitiveType: String
         UpdateType: Mutable
 
     .PARAMETER ApplicationId
-        The unique identifier of the Amazon Pinpoint application that the APNs VoIP channel applies to.
+        The unique identifier for the application that the APNs VoIP channel applies to.
 
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-pinpoint-apnsvoipchannel.html#cfn-pinpoint-apnsvoipchannel-applicationid
         PrimitiveType: String
         UpdateType: Immutable
 
     .PARAMETER TeamId
-        The identifier that's assigned to your Apple Developer Account team. This identifier is used for APNs tokens.
+        The identifier that's assigned to your Apple developer account team. This identifier is used for APNs tokens.
 
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-pinpoint-apnsvoipchannel.html#cfn-pinpoint-apnsvoipchannel-teamid
         PrimitiveType: String
         UpdateType: Mutable
 
     .PARAMETER Certificate
-        The APNs client certificate that you received from Apple. Specify this value if you want Amazon Pinpoint to communicate with APNs by using an APNs certificate.
+        The APNs client certificate that you received from Apple, if you want Amazon Pinpoint to communicate with APNs by using an APNs certificate.
 
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-pinpoint-apnsvoipchannel.html#cfn-pinpoint-apnsvoipchannel-certificate
         PrimitiveType: String
         UpdateType: Mutable
 
     .PARAMETER TokenKeyId
-        The key identifier that's assigned to your APNs signing key. Specify this value if you want Amazon Pinpoint to communicate with APNs by using APNs tokens.
+        The key identifier that's assigned to your APNs signing key, if you want Amazon Pinpoint to communicate with APNs by using APNs tokens.
 
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-pinpoint-apnsvoipchannel.html#cfn-pinpoint-apnsvoipchannel-tokenkeyid
         PrimitiveType: String

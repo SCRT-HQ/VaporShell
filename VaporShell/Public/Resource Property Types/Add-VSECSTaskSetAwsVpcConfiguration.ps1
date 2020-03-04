@@ -1,27 +1,35 @@
 function Add-VSECSTaskSetAwsVpcConfiguration {
     <#
     .SYNOPSIS
-        Adds an AWS::ECS::TaskSet.AwsVpcConfiguration resource property to the template. 
+        Adds an AWS::ECS::TaskSet.AwsVpcConfiguration resource property to the template. The networking details for a task.
 
     .DESCRIPTION
         Adds an AWS::ECS::TaskSet.AwsVpcConfiguration resource property to the template.
-
+The networking details for a task.
 
     .LINK
         http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ecs-taskset-awsvpcconfiguration.html
 
     .PARAMETER AssignPublicIp
+        Whether the task's elastic network interface receives a public IP address. The default value is DISABLED.
+
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ecs-taskset-awsvpcconfiguration.html#cfn-ecs-taskset-awsvpcconfiguration-assignpublicip
         UpdateType: Immutable
         PrimitiveType: String
 
     .PARAMETER SecurityGroups
+        The security groups associated with the task or service. If you do not specify a security group, the default security group for the VPC is used. There is a limit of 5 security groups that can be specified per AwsVpcConfiguration.
+All specified security groups must be from the same VPC.
+
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ecs-taskset-awsvpcconfiguration.html#cfn-ecs-taskset-awsvpcconfiguration-securitygroups
         UpdateType: Immutable
         Type: List
         PrimitiveItemType: String
 
     .PARAMETER Subnets
+        The subnets associated with the task or service. There is a limit of 16 subnets that can be specified per AwsVpcConfiguration.
+All specified subnets must be from the same VPC.
+
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ecs-taskset-awsvpcconfiguration.html#cfn-ecs-taskset-awsvpcconfiguration-subnets
         UpdateType: Immutable
         Type: List

@@ -1,16 +1,18 @@
 function Add-VSCognitoUserPoolAccountRecoverySetting {
     <#
     .SYNOPSIS
-        Adds an AWS::Cognito::UserPool.AccountRecoverySetting resource property to the template. 
+        Adds an AWS::Cognito::UserPool.AccountRecoverySetting resource property to the template. Use this setting to define which verified available method a user can use to recover their password when they call ForgotPassword. It allows you to define a preferred method when a user has more than one method available. With this setting, SMS does not qualify for a valid password recovery mechanism if the user also has SMS MFA enabled. In the absence of this setting, Cognito uses the legacy behavior to determine the recovery method where SMS is preferred over email.
 
     .DESCRIPTION
         Adds an AWS::Cognito::UserPool.AccountRecoverySetting resource property to the template.
-
+Use this setting to define which verified available method a user can use to recover their password when they call ForgotPassword. It allows you to define a preferred method when a user has more than one method available. With this setting, SMS does not qualify for a valid password recovery mechanism if the user also has SMS MFA enabled. In the absence of this setting, Cognito uses the legacy behavior to determine the recovery method where SMS is preferred over email.
 
     .LINK
         http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-cognito-userpool-accountrecoverysetting.html
 
     .PARAMETER RecoveryMechanisms
+        The list of RecoveryOptionTypes.
+
         Type: List
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-cognito-userpool-accountrecoverysetting.html#cfn-cognito-userpool-accountrecoverysetting-recoverymechanisms
         ItemType: RecoveryOption

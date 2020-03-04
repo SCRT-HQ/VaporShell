@@ -11,21 +11,21 @@ Represents a collection of route settings.
         http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-apigatewayv2-stage-routesettings.html
 
     .PARAMETER LoggingLevel
-        Specifies the logging level for this route: DEBUG, INFO, or WARN. This property affects the log entries pushed to Amazon CloudWatch Logs.
+        Specifies the logging level for this route: INFO, ERROR, or OFF. This property affects the log entries pushed to Amazon CloudWatch Logs. Supported only for WebSocket APIs.
 
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-apigatewayv2-stage-routesettings.html#cfn-apigatewayv2-stage-routesettings-logginglevel
         PrimitiveType: String
         UpdateType: Mutable
 
     .PARAMETER DataTraceEnabled
-        Specifies whether true or not false data trace logging is enabled for this route. This property affects the log entries pushed to Amazon CloudWatch Logs.
+        Specifies whether true or not false data trace logging is enabled for this route. This property affects the log entries pushed to Amazon CloudWatch Logs. Supported only for WebSocket APIs.
 
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-apigatewayv2-stage-routesettings.html#cfn-apigatewayv2-stage-routesettings-datatraceenabled
         PrimitiveType: Boolean
         UpdateType: Mutable
 
     .PARAMETER ThrottlingBurstLimit
-        Specifies the throttling burst limit.
+        Specifies the throttling burst limit. Supported only for WebSocket APIs.
 
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-apigatewayv2-stage-routesettings.html#cfn-apigatewayv2-stage-routesettings-throttlingburstlimit
         PrimitiveType: Integer
@@ -39,7 +39,7 @@ Represents a collection of route settings.
         UpdateType: Mutable
 
     .PARAMETER ThrottlingRateLimit
-        Specifies the throttling rate limit.
+        Specifies the throttling rate limit. Supported only for WebSocket APIs.
 
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-apigatewayv2-stage-routesettings.html#cfn-apigatewayv2-stage-routesettings-throttlingratelimit
         PrimitiveType: Double

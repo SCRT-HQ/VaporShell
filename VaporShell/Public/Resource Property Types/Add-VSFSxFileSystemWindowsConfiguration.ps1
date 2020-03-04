@@ -1,59 +1,62 @@
 function Add-VSFSxFileSystemWindowsConfiguration {
     <#
     .SYNOPSIS
-        Adds an AWS::FSx::FileSystem.WindowsConfiguration resource property to the template. The configuration for this Microsoft Windows file system.
+        Adds an AWS::FSx::FileSystem.WindowsConfiguration resource property to the template. The Microsoft Windows configuration for the file system being created. This value is required if FileSystemType is set to WINDOWS.
 
     .DESCRIPTION
         Adds an AWS::FSx::FileSystem.WindowsConfiguration resource property to the template.
-The configuration for this Microsoft Windows file system.
+The Microsoft Windows configuration for the file system being created. This value is required if FileSystemType is set to WINDOWS.
 
     .LINK
         http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-fsx-filesystem-windowsconfiguration.html
 
     .PARAMETER SelfManagedActiveDirectoryConfiguration
-        *Update requires*: No interruption: https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt
+        The configuration that Amazon FSx uses to join the Windows File Server instance to your self-managed including on-premises Microsoft Active Directory AD directory.
 
         Type: SelfManagedActiveDirectoryConfiguration
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-fsx-filesystem-windowsconfiguration.html#cfn-fsx-filesystem-windowsconfiguration-selfmanagedactivedirectoryconfiguration
         UpdateType: Mutable
 
     .PARAMETER WeeklyMaintenanceStartTime
-        The preferred start time to perform weekly maintenance, in the UTC time zone.
+        The preferred start time to perform weekly maintenance, formatted d:HH:MM in the UTC time zone.
 
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-fsx-filesystem-windowsconfiguration.html#cfn-fsx-filesystem-windowsconfiguration-weeklymaintenancestarttime
         PrimitiveType: String
         UpdateType: Mutable
 
     .PARAMETER ActiveDirectoryId
-        The ID for an existing Microsoft Active Directory instance that the file system should join when it's created.
+        The ID for an existing AWS Managed Microsoft Active Directory AD instance that the file system should join when it's created.
 
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-fsx-filesystem-windowsconfiguration.html#cfn-fsx-filesystem-windowsconfiguration-activedirectoryid
         PrimitiveType: String
         UpdateType: Immutable
 
     .PARAMETER DeploymentType
-        *Update requires*: No interruption: https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt
+        Specifies the file system deployment type, valid values are the following:
++ MULTI_AZ_1 - Deploys a high availability file system that is configured for Multi-AZ redundancy to tolerate temporary Availability Zone AZ unavailability. You can only deploy a Multi-AZ file system in AWS Regions that have a minimum of three Availability Zones.
++ SINGLE_AZ_1 - Default Choose to deploy a file system that is configured for single AZ redundancy.
+To learn more about high availability Multi-AZ file systems, see  High Availability for Amazon FSx for Windows File Server: https://docs.aws.amazon.com/fsx/latest/WindowsGuide/high-availability-multiAZ.html.
 
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-fsx-filesystem-windowsconfiguration.html#cfn-fsx-filesystem-windowsconfiguration-deploymenttype
         PrimitiveType: String
         UpdateType: Immutable
 
     .PARAMETER ThroughputCapacity
-        The throughput of an Amazon FSx file system, measured in megabytes per second, in 2 to the nth increments, between 2^3 8 and 2^11 2048.
+        The throughput of an Amazon FSx file system, measured in megabytes per second, in 2 to the *n*th increments, between 2^3 8 and 2^11 2048.
 
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-fsx-filesystem-windowsconfiguration.html#cfn-fsx-filesystem-windowsconfiguration-throughputcapacity
         PrimitiveType: Integer
         UpdateType: Immutable
 
     .PARAMETER CopyTagsToBackups
-        A boolean flag indicating whether tags on the file system should be copied to backups. This value defaults to false. If it's set to true, all tags on the file system are copied to all automatic backups and any user-initiated backups where the user doesn't specify any tags. If this value is true, and you specify one or more tags, only the specified tags are copied to backups.
+        A boolean flag indicating whether tags for the file system should be copied to backups. This value defaults to false. If it's set to true, all tags for the file system are copied to all automatic and user-initiated backups where the user doesn't specify tags. If this value is true, and you specify one or more tags, only the specified tags are copied to backups. If you specify one or more tags when creating a user-initiated backup, no tags are copied from the file system, regardless of this value.
 
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-fsx-filesystem-windowsconfiguration.html#cfn-fsx-filesystem-windowsconfiguration-copytagstobackups
         PrimitiveType: Boolean
         UpdateType: Immutable
 
     .PARAMETER DailyAutomaticBackupStartTime
-        The preferred time to take daily automatic backups, in the UTC time zone.
+        The preferred time to take daily automatic backups, formatted HH:MM in the UTC time zone.
 
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-fsx-filesystem-windowsconfiguration.html#cfn-fsx-filesystem-windowsconfiguration-dailyautomaticbackupstarttime
         PrimitiveType: String
@@ -67,7 +70,7 @@ The configuration for this Microsoft Windows file system.
         UpdateType: Mutable
 
     .PARAMETER PreferredSubnetId
-        *Update requires*: No interruption: https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt
+        Required when DeploymentType is set to MULTI_AZ_1. This specifies the subnet in which you want the preferred file server to be located. For in-AWS applications, we recommend that you launch your clients in the same Availability Zone AZ as your preferred file server to reduce cross-AZ data transfer costs and minimize latency.
 
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-fsx-filesystem-windowsconfiguration.html#cfn-fsx-filesystem-windowsconfiguration-preferredsubnetid
         PrimitiveType: String

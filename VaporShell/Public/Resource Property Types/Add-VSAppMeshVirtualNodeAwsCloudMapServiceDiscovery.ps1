@@ -1,11 +1,11 @@
 function Add-VSAppMeshVirtualNodeAwsCloudMapServiceDiscovery {
     <#
     .SYNOPSIS
-        Adds an AWS::AppMesh::VirtualNode.AwsCloudMapServiceDiscovery resource property to the template. An object representing the AWS Cloud Map service discovery information for your virtual node.
+        Adds an AWS::AppMesh::VirtualNode.AwsCloudMapServiceDiscovery resource property to the template. An object that represents the AWS Cloud Map service discovery information for your virtual node.
 
     .DESCRIPTION
         Adds an AWS::AppMesh::VirtualNode.AwsCloudMapServiceDiscovery resource property to the template.
-An object representing the AWS Cloud Map service discovery information for your virtual node.
+An object that represents the AWS Cloud Map service discovery information for your virtual node.
 
     .LINK
         http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-appmesh-virtualnode-awscloudmapservicediscovery.html

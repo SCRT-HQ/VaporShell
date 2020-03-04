@@ -25,7 +25,7 @@ EndpointConfiguration is a property of the AWS::ApiGateway::RestApi: https://doc
         UpdateType: Mutable
 
     .PARAMETER VpcEndpointIds
-        + RestApi: https://docs.aws.amazon.com/apigateway/api-reference/resource/rest-api/ in the *Amazon API Gateway REST API Reference*
+        A list of VPC endpoint IDs of an API AWS::ApiGateway::RestApi: https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-apigateway-restapi.html against which to create Route53 ALIASes. It is only supported for PRIVATE endpoint type.
 
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-apigateway-restapi-endpointconfiguration.html#cfn-apigateway-restapi-endpointconfiguration-vpcendpointids
         DuplicatesAllowed: False

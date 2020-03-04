@@ -1,16 +1,18 @@
 function Add-VSWAFv2WebACLNotStatementTwo {
     <#
     .SYNOPSIS
-        Adds an AWS::WAFv2::WebACL.NotStatementTwo resource property to the template. 
+        Adds an AWS::WAFv2::WebACL.NotStatementTwo resource property to the template. Logical NOT statement used to negate the match results of a nested statement.
 
     .DESCRIPTION
         Adds an AWS::WAFv2::WebACL.NotStatementTwo resource property to the template.
-
+Logical NOT statement used to negate the match results of a nested statement.
 
     .LINK
         http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-wafv2-webacl-notstatementtwo.html
 
     .PARAMETER Statement
+        Logical NOT statement used to negate the match results of a nested statement.
+
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-wafv2-webacl-notstatementtwo.html#cfn-wafv2-webacl-notstatementtwo-statement
         UpdateType: Mutable
         Type: StatementThree

@@ -42,14 +42,7 @@ function New-VSSSMMaintenanceWindowTarget {
 
     .PARAMETER Targets
         The targets to register with the maintenance window. In other words, the instances to run commands on when the maintenance window runs.
-You can specify targets using either instance IDs or tags that have been applied to instances.
-**Example 1**: Specify instance IDs
-Key=InstanceIds,Values=instance-id-1,instance-id-2,instance-id-3 
-**Example 2**: Use tag key-pairs applied to instances
-Key=tag:my-tag-key,Values=my-tag-value-1,my-tag-value-2 
-**Example 3**: Use tag-keys applied to instances
-Key=tag-key,Values=my-tag-key-1,my-tag-key-2 
-For more information about these examples formats, including the best use case for each one, see Examples: Register Targets with a Maintenance Window: https://docs.aws.amazon.com/systems-manager/latest/userguide/mw-cli-tutorial-targets-examples.html in the *AWS Systems Manager User Guide*.
+You must specify targets by using the WindowTargetIds parameter.
 
         Type: List
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ssm-maintenancewindowtarget.html#cfn-ssm-maintenancewindowtarget-targets

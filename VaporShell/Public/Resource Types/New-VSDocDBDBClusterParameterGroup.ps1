@@ -6,13 +6,13 @@ function New-VSDocDBDBClusterParameterGroup {
     .DESCRIPTION
         Adds an AWS::DocDB::DBClusterParameterGroup resource to the template. The AWS::DocDB::DBClusterParameterGroup Amazon DocumentDB (with MongoDB compatibility resource describes a DBClusterParameterGroup. For more information, see DBClusterParameterGroup: https://docs.aws.amazon.com/documentdb/latest/developerguide/API_DBClusterParameterGroup.html in the *Amazon DocumentDB Developer Guide*.
 
-Parameters in a DB cluster parameter group apply to all of the instances in a DB cluster.
+Parameters in a cluster parameter group apply to all of the instances in a cluster.
 
-A DB cluster parameter group is initially created with the default parameters for the database engine used by instances in the DB cluster. To provide custom values for any of the parameters, you must modify the group after you create it. After you create a DB cluster parameter group, you must associate it with your DB cluster. For the new DB cluster parameter group and associated settings to take effect, you must then reboot the DB instances in the DB cluster without failover.
+A cluster parameter group is initially created with the default parameters for the database engine used by instances in the cluster. To provide custom values for any of the parameters, you must modify the group after you create it. After you create a DB cluster parameter group, you must associate it with your cluster. For the new cluster parameter group and associated settings to take effect, you must then reboot the DB instances in the cluster without failover.
 
 **Important**
 
-After you create a DB cluster parameter group, you should wait at least 5 minutes before creating your first DB cluster that uses that DB cluster parameter group as the default parameter group. This allows Amazon DocumentDB to fully complete the create action before the DB cluster parameter group is used as the default for a new DB cluster. This step is especially important for parameters that are critical when creating the default database for a DB cluster, such as the character set for the default database defined by the character_set_database parameter.
+After you create a cluster parameter group, you should wait at least 5 minutes before creating your first cluster that uses that cluster parameter group as the default parameter group. This allows Amazon DocumentDB to fully complete the create action before the cluster parameter group is used as the default for a new cluster. This step is especially important for parameters that are critical when creating the default database for a cluster, such as the character set for the default database defined by the character_set_database parameter.
 
     .LINK
         http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-docdb-dbclusterparametergroup.html
@@ -21,28 +21,28 @@ After you create a DB cluster parameter group, you should wait at least 5 minute
         The logical ID must be alphanumeric (A-Za-z0-9) and unique within the template. Use the logical name to reference the resource in other parts of the template. For example, if you want to map an Amazon Elastic Block Store volume to an Amazon EC2 instance, you reference the logical IDs to associate the block stores with the instance.
 
     .PARAMETER Description
-        The description for the DB cluster parameter group.
+        The description for the cluster parameter group.
 
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-docdb-dbclusterparametergroup.html#cfn-docdb-dbclusterparametergroup-description
         PrimitiveType: String
         UpdateType: Immutable
 
     .PARAMETER Parameters
-        Provides a list of parameters for the DB cluster parameter group.
+        Provides a list of parameters for the cluster parameter group.
 
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-docdb-dbclusterparametergroup.html#cfn-docdb-dbclusterparametergroup-parameters
         PrimitiveType: Json
         UpdateType: Mutable
 
     .PARAMETER Family
-        The DB cluster parameter group family name.
+        The cluster parameter group family name.
 
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-docdb-dbclusterparametergroup.html#cfn-docdb-dbclusterparametergroup-family
         PrimitiveType: String
         UpdateType: Immutable
 
     .PARAMETER Tags
-        The tags to be assigned to the DB cluster parameter group.
+        The tags to be assigned to the cluster parameter group.
 
         Type: List
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-docdb-dbclusterparametergroup.html#cfn-docdb-dbclusterparametergroup-tags
@@ -50,7 +50,7 @@ After you create a DB cluster parameter group, you should wait at least 5 minute
         UpdateType: Mutable
 
     .PARAMETER Name
-        The name of the DB cluster parameter group.
+        The name of the cluster parameter group.
 Constraints:
 + Must match the name of an existing DBClusterParameterGroup.
 This value is stored as a lowercase string.
@@ -137,16 +137,8 @@ This value is stored as a lowercase string.
                 }
             })]
         $Family,
+        [VaporShell.Core.TransformTag()]
         [parameter(Mandatory = $false)]
-        [ValidateScript( {
-                $allowedTypes = "Vaporshell.Resource.Tag","System.Management.Automation.PSCustomObject"
-                if ([string]$($_.PSTypeNames) -match "($(($allowedTypes|ForEach-Object{[RegEx]::Escape($_)}) -join '|'))") {
-                    $true
-                }
-                else {
-                    $PSCmdlet.ThrowTerminatingError((New-VSError -String "This parameter only accepts the following types: $($allowedTypes -join ", "). The current types of the value are: $($_.PSTypeNames -join ", ")."))
-                }
-            })]
         $Tags,
         [parameter(Mandatory = $false)]
         [ValidateScript( {

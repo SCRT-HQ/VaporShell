@@ -32,6 +32,7 @@ Required when allocating an address to a VPC
 
     .PARAMETER InstanceId
         The ID of the instance.
+Updates to the InstanceId property may require *some interruptions*. Updates on an EIP reassociates the address on its associated resource.
 
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-eip.html#cfn-ec2-eip-instanceid
         PrimitiveType: String
@@ -39,12 +40,16 @@ Required when allocating an address to a VPC
 
     .PARAMETER PublicIpv4Pool
         The ID of an address pool that you own. Use this parameter to let Amazon EC2 select an address from the address pool.
+Updates to the PublicIpv4Pool property may require *some interruptions*. Updates on an EIP reassociates the address on its associated resource.
 
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-eip.html#cfn-ec2-eip-publicipv4pool
         PrimitiveType: String
         UpdateType: Conditional
 
     .PARAMETER Tags
+        Any tags assigned to the Elastic IP address.
+Updates to the Tags property may require *some interruptions*. Updates on an EIP reassociates the address on its associated resource.
+
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-eip.html#cfn-ec2-eip-tags
         DuplicatesAllowed: True
         ItemType: Tag
@@ -129,16 +134,8 @@ Required when allocating an address to a VPC
                 }
             })]
         $PublicIpv4Pool,
+        [VaporShell.Core.TransformTag()]
         [parameter(Mandatory = $false)]
-        [ValidateScript( {
-                $allowedTypes = "Vaporshell.Resource.Tag","System.Management.Automation.PSCustomObject"
-                if ([string]$($_.PSTypeNames) -match "($(($allowedTypes|ForEach-Object{[RegEx]::Escape($_)}) -join '|'))") {
-                    $true
-                }
-                else {
-                    $PSCmdlet.ThrowTerminatingError((New-VSError -String "This parameter only accepts the following types: $($allowedTypes -join ", "). The current types of the value are: $($_.PSTypeNames -join ", ")."))
-                }
-            })]
         $Tags,
         [ValidateSet("Delete","Retain","Snapshot")]
         [System.String]

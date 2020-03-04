@@ -1,10 +1,10 @@
 function New-VSCloudTrailTrail {
     <#
     .SYNOPSIS
-        Adds an AWS::CloudTrail::Trail resource to the template. Creates a trail that specifies the settings for delivery of log data to an Amazon S3 bucket. A maximum of five trails can exist in a region, irrespective of the region in which they were created.
+        Adds an AWS::CloudTrail::Trail resource to the template. Creates a trail that specifies the settings for delivery of log data to an Amazon S3 bucket.
 
     .DESCRIPTION
-        Adds an AWS::CloudTrail::Trail resource to the template. Creates a trail that specifies the settings for delivery of log data to an Amazon S3 bucket. A maximum of five trails can exist in a region, irrespective of the region in which they were created.
+        Adds an AWS::CloudTrail::Trail resource to the template. Creates a trail that specifies the settings for delivery of log data to an Amazon S3 bucket.
 
     .LINK
         http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-cloudtrail-trail.html
@@ -287,16 +287,8 @@ arn:aws:cloudtrail:us-east-2:123456789012:trail/MyTrail
                 }
             })]
         $SnsTopicName,
+        [VaporShell.Core.TransformTag()]
         [parameter(Mandatory = $false)]
-        [ValidateScript( {
-                $allowedTypes = "Vaporshell.Resource.Tag","System.Management.Automation.PSCustomObject"
-                if ([string]$($_.PSTypeNames) -match "($(($allowedTypes|ForEach-Object{[RegEx]::Escape($_)}) -join '|'))") {
-                    $true
-                }
-                else {
-                    $PSCmdlet.ThrowTerminatingError((New-VSError -String "This parameter only accepts the following types: $($allowedTypes -join ", "). The current types of the value are: $($_.PSTypeNames -join ", ")."))
-                }
-            })]
         $Tags,
         [parameter(Mandatory = $false)]
         [ValidateScript( {

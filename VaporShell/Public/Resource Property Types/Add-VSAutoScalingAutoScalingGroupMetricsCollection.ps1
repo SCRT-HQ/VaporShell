@@ -13,7 +13,8 @@ For more information, see Monitoring Your Auto Scaling Groups and Instances Usin
         http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-as-metricscollection.html
 
     .PARAMETER Granularity
-        The frequency at which Amazon EC2 Auto Scaling sends aggregated data to CloudWatch. The only valid value is 1Minute.
+        The frequency at which Amazon EC2 Auto Scaling sends aggregated data to CloudWatch.
+*Allowed Values*: 1Minute
 
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-as-metricscollection.html#cfn-as-metricscollection-granularity
         PrimitiveType: String
@@ -21,6 +22,7 @@ For more information, see Monitoring Your Auto Scaling Groups and Instances Usin
 
     .PARAMETER Metrics
         The list of Auto Scaling group metrics to collect. If you specify Granularity and don't specify any metrics, all metrics are enabled.
+*Allowed Values*:
 + GroupMinSize
 + GroupMaxSize
 + GroupDesiredCapacity

@@ -1,21 +1,25 @@
 function Add-VSCognitoUserPoolResourceServerResourceServerScopeType {
     <#
     .SYNOPSIS
-        Adds an AWS::Cognito::UserPoolResourceServer.ResourceServerScopeType resource property to the template. 
+        Adds an AWS::Cognito::UserPoolResourceServer.ResourceServerScopeType resource property to the template. A resource server scope.
 
     .DESCRIPTION
         Adds an AWS::Cognito::UserPoolResourceServer.ResourceServerScopeType resource property to the template.
-
+A resource server scope.
 
     .LINK
         http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-cognito-userpoolresourceserver-resourceserverscopetype.html
 
     .PARAMETER ScopeName
+        The name of the scope.
+
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-cognito-userpoolresourceserver-resourceserverscopetype.html#cfn-cognito-userpoolresourceserver-resourceserverscopetype-scopename
         PrimitiveType: String
         UpdateType: Mutable
 
     .PARAMETER ScopeDescription
+        A description of the scope.
+
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-cognito-userpoolresourceserver-resourceserverscopetype.html#cfn-cognito-userpoolresourceserver-resourceserverscopetype-scopedescription
         PrimitiveType: String
         UpdateType: Mutable

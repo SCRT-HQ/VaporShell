@@ -1,16 +1,18 @@
 function Add-VSWAFv2RuleGroupAndStatementTwo {
     <#
     .SYNOPSIS
-        Adds an AWS::WAFv2::RuleGroup.AndStatementTwo resource property to the template. 
+        Adds an AWS::WAFv2::RuleGroup.AndStatementTwo resource property to the template. Logical AND statement used in statement nesting.
 
     .DESCRIPTION
         Adds an AWS::WAFv2::RuleGroup.AndStatementTwo resource property to the template.
-
+Logical AND statement used in statement nesting.
 
     .LINK
         http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-wafv2-rulegroup-andstatementtwo.html
 
     .PARAMETER Statements
+        Logical AND statements used in statement nesting.
+
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-wafv2-rulegroup-andstatementtwo.html#cfn-wafv2-rulegroup-andstatementtwo-statements
         UpdateType: Mutable
         Type: List

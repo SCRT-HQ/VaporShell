@@ -27,6 +27,7 @@ You can only delete empty buckets. Deletion fails for buckets that have contents
 
     .PARAMETER AccessControl
         A canned access control list ACL that grants predefined permissions to the bucket. For more information about canned ACLs, see Canned ACL: https://docs.aws.amazon.com/AmazonS3/latest/dev/acl-overview.html#canned-acl in the *Amazon Simple Storage Service Developer Guide*.
+Be aware that the syntax for this property differs from the information provided in the *Amazon Simple Storage Service Developer Guide*. The AccessControl property is case-sensitive and must be one of the following values: Private, PublicRead, PublicReadWrite, AuthenticatedRead, LogDeliveryWrite, BucketOwnerRead, BucketOwnerFullControl, or AwsExecRead.
 
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-s3-bucket.html#cfn-s3-bucket-accesscontrol
         PrimitiveType: String
@@ -34,7 +35,6 @@ You can only delete empty buckets. Deletion fails for buckets that have contents
 
     .PARAMETER AnalyticsConfigurations
         Specifies the configuration and any analyses for the analytics filter of an Amazon S3 bucket.
-For more information, see GET Bucket analytics: https://docs.aws.amazon.com/AmazonS3/latest/API/RESTBucketGETAnalyticsConfig.html in the *Amazon Simple Storage Service API Reference*.
 
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-s3-bucket.html#cfn-s3-bucket-analyticsconfigurations
         DuplicatesAllowed: False
@@ -104,14 +104,17 @@ If you specify a name, you can't perform updates that require replacement of thi
         UpdateType: Mutable
 
     .PARAMETER ObjectLockConfiguration
-        Places an object lock configuration on the specified bucket. The rule specified in the object lock configuration will be applied by default to every new object placed in the specified bucket.
+        Places an Object Lock configuration on the specified bucket. The rule specified in the Object Lock configuration will be applied by default to every new object placed in the specified bucket.
+DefaultRetention requires either Days or Years. You can't specify both at the same time.
+**Related Resources**
++  Locking Objects: https://docs.aws.amazon.com/AmazonS3/latest/dev/object-lock.html
 
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-s3-bucket.html#cfn-s3-bucket-objectlockconfiguration
         Type: ObjectLockConfiguration
         UpdateType: Mutable
 
     .PARAMETER ObjectLockEnabled
-        Indicates whether this bucket has an object lock configuration enabled.
+        Indicates whether this bucket has an Object Lock configuration enabled.
 
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-s3-bucket.html#cfn-s3-bucket-objectlockenabled
         PrimitiveType: Boolean
@@ -134,7 +137,6 @@ Amazon S3 can store replicated objects in only one destination bucket. The desti
 
     .PARAMETER Tags
         An arbitrary set of tags key-value pairs for this S3 bucket.
-We recommend limiting the number of tags to seven. Applying more than seven tags prevents the AWS CLI and the AWS CloudFormation console and API actions from listing the tags for the bucket.
 
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-s3-bucket.html#cfn-s3-bucket-tags
         DuplicatesAllowed: True
@@ -285,16 +287,8 @@ We recommend limiting the number of tags to seven. Applying more than seven tags
         $PublicAccessBlockConfiguration,
         [parameter(Mandatory = $false)]
         $ReplicationConfiguration,
+        [VaporShell.Core.TransformTag()]
         [parameter(Mandatory = $false)]
-        [ValidateScript( {
-                $allowedTypes = "Vaporshell.Resource.Tag","System.Management.Automation.PSCustomObject"
-                if ([string]$($_.PSTypeNames) -match "($(($allowedTypes|ForEach-Object{[RegEx]::Escape($_)}) -join '|'))") {
-                    $true
-                }
-                else {
-                    $PSCmdlet.ThrowTerminatingError((New-VSError -String "This parameter only accepts the following types: $($allowedTypes -join ", "). The current types of the value are: $($_.PSTypeNames -join ", ")."))
-                }
-            })]
         $Tags,
         [parameter(Mandatory = $false)]
         $VersioningConfiguration,

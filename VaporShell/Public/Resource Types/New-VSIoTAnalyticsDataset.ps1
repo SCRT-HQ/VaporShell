@@ -13,7 +13,7 @@ function New-VSIoTAnalyticsDataset {
         The logical ID must be alphanumeric (A-Za-z0-9) and unique within the template. Use the logical name to reference the resource in other parts of the template. For example, if you want to map an Amazon Elastic Block Store volume to an Amazon EC2 instance, you reference the logical IDs to associate the block stores with the instance.
 
     .PARAMETER Actions
-        The "DatasetAction" objects that automatically create the data set contents.
+        The DatasetAction objects that automatically create the data set contents.
 
         Type: List
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-iotanalytics-dataset.html#cfn-iotanalytics-dataset-actions
@@ -28,7 +28,7 @@ function New-VSIoTAnalyticsDataset {
         UpdateType: Immutable
 
     .PARAMETER ContentDeliveryRules
-        When data set contents are created they are delivered to destinations specified here.
+        When dataset contents are created they are delivered to destinations specified here.
 
         Type: List
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-iotanalytics-dataset.html#cfn-iotanalytics-dataset-contentdeliveryrules
@@ -36,7 +36,7 @@ function New-VSIoTAnalyticsDataset {
         UpdateType: Mutable
 
     .PARAMETER Triggers
-        The "DatasetTrigger" objects that specify when the data set is automatically updated.
+        The DatasetTrigger objects that specify when the data set is automatically updated.
 
         Type: List
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-iotanalytics-dataset.html#cfn-iotanalytics-dataset-triggers
@@ -44,14 +44,14 @@ function New-VSIoTAnalyticsDataset {
         UpdateType: Mutable
 
     .PARAMETER VersioningConfiguration
-        Optional] How many versions of data set contents are kept. If not specified or set to null, only the latest version plus the latest succeeded version if they are different are kept for the time period specified by the "retentionPeriod" parameter. For more information, see https://docs.aws.amazon.com/iotanalytics/latest/userguide/getting-started.html#aws-iot-analytics-dataset-versions
+        Optional. How many versions of dataset contents are kept. If not specified or set to null, only the latest version plus the latest succeeded version if they are different are kept for the time period specified by the retentionPeriod parameter. For more information, see Keeping Multiple Versions of AWS IoT Analytics Data Sets: https://docs.aws.amazon.com/iotanalytics/latest/userguide/getting-started.html#aws-iot-analytics-dataset-versions in the *AWS IoT Analytics User Guide*.
 
         Type: VersioningConfiguration
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-iotanalytics-dataset.html#cfn-iotanalytics-dataset-versioningconfiguration
         UpdateType: Mutable
 
     .PARAMETER RetentionPeriod
-        Optional] How long, in days, message data is kept for the data set.
+        Optional. How long, in days, message data is kept for the data set.
 
         Type: RetentionPeriod
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-iotanalytics-dataset.html#cfn-iotanalytics-dataset-retentionperiod
@@ -159,16 +159,8 @@ For more information, see Tag: https://docs.aws.amazon.com/AWSCloudFormation/lat
         $VersioningConfiguration,
         [parameter(Mandatory = $false)]
         $RetentionPeriod,
+        [VaporShell.Core.TransformTag()]
         [parameter(Mandatory = $false)]
-        [ValidateScript( {
-                $allowedTypes = "Vaporshell.Resource.Tag","System.Management.Automation.PSCustomObject"
-                if ([string]$($_.PSTypeNames) -match "($(($allowedTypes|ForEach-Object{[RegEx]::Escape($_)}) -join '|'))") {
-                    $true
-                }
-                else {
-                    $PSCmdlet.ThrowTerminatingError((New-VSError -String "This parameter only accepts the following types: $($allowedTypes -join ", "). The current types of the value are: $($_.PSTypeNames -join ", ")."))
-                }
-            })]
         $Tags,
         [ValidateSet("Delete","Retain","Snapshot")]
         [System.String]

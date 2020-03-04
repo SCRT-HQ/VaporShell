@@ -13,7 +13,7 @@ AccessLogSetting is a property of the AWS::ApiGateway::Stage: https://docs.aws.a
         http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-apigateway-stage-accesslogsetting.html
 
     .PARAMETER DestinationArn
-        The Amazon Resource Name ARN of the CloudWatch Logs log group to receive access logs.
+        The Amazon Resource Name ARN of the CloudWatch Logs log group or Kinesis Data Firehose delivery stream to receive access logs. If you specify a Kinesis Data Firehose delivery stream, the stream name must begin with amazon-apigateway-.
 
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-apigateway-stage-accesslogsetting.html#cfn-apigateway-stage-accesslogsetting-destinationarn
         PrimitiveType: String

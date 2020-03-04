@@ -1,21 +1,25 @@
 function Add-VSGlueCrawlerCatalogTarget {
     <#
     .SYNOPSIS
-        Adds an AWS::Glue::Crawler.CatalogTarget resource property to the template. 
+        Adds an AWS::Glue::Crawler.CatalogTarget resource property to the template. Specifies an AWS Glue Data Catalog target.
 
     .DESCRIPTION
         Adds an AWS::Glue::Crawler.CatalogTarget resource property to the template.
-
+Specifies an AWS Glue Data Catalog target.
 
     .LINK
         http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-glue-crawler-catalogtarget.html
 
     .PARAMETER DatabaseName
+        The name of the database to be synchronized.
+
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-glue-crawler-catalogtarget.html#cfn-glue-crawler-catalogtarget-databasename
         PrimitiveType: String
         UpdateType: Mutable
 
     .PARAMETER Tables
+        A list of the tables to be synchronized.
+
         PrimitiveItemType: String
         Type: List
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-glue-crawler-catalogtarget.html#cfn-glue-crawler-catalogtarget-tables

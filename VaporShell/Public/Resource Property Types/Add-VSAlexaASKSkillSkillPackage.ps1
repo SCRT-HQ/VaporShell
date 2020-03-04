@@ -13,7 +13,7 @@ SkillPackage is a property of the Alexa::ASK::Skill resource.
         http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ask-skill-skillpackage.html
 
     .PARAMETER S3BucketRole
-        ARN of the role that grants the Alexa service permission to access the bucket and retrieve the skill package. This role is optional. If you do not provide it, the bucket must be publicly accessible or configured with a policy that allows this access. Otherwise, AWS CloudFormation cannot create the skill.
+        ARN of the IAM role that grants the Alexa service alexa-appkit.amazon.com permission to access the bucket and retrieve the skill package. This property is optional. If you do not provide it, the bucket must be publicly accessible or configured with a policy that allows this access. Otherwise, AWS CloudFormation cannot create the skill.
 
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ask-skill-skillpackage.html#cfn-ask-skill-skillpackage-s3bucketrole
         PrimitiveType: String

@@ -6,6 +6,8 @@ function New-VSCognitoIdentityPool {
     .DESCRIPTION
         Adds an AWS::Cognito::IdentityPool resource to the template. The AWS::Cognito::IdentityPool resource creates an Amazon Cognito identity pool.
 
+To avoid deleting the resource accidentally from AWS CloudFormation, use DeletionPolicy Attribute: https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-attribute-deletionpolicy.html and the UpdateReplacePolicy Attribute: https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-attribute-updatereplacepolicy.html to retain the resource on deletion or replacement.
+
     .LINK
         http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-cognito-identitypool.html
 
@@ -13,14 +15,14 @@ function New-VSCognitoIdentityPool {
         The logical ID must be alphanumeric (A-Za-z0-9) and unique within the template. Use the logical name to reference the resource in other parts of the template. For example, if you want to map an Amazon Elastic Block Store volume to an Amazon EC2 instance, you reference the logical IDs to associate the block stores with the instance.
 
     .PARAMETER PushSync
-        Configuration options to be applied to the identity pool.
+        The configuration options to be applied to the identity pool.
 
         Type: PushSync
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-cognito-identitypool.html#cfn-cognito-identitypool-pushsync
         UpdateType: Mutable
 
     .PARAMETER CognitoIdentityProviders
-        An array of Amazon Cognito user pools and their client IDs.
+        The Amazon Cognito user pools and their client IDs.
 
         Type: List
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-cognito-identitypool.html#cfn-cognito-identitypool-cognitoidentityproviders
@@ -35,7 +37,7 @@ function New-VSCognitoIdentityPool {
         UpdateType: Mutable
 
     .PARAMETER DeveloperProviderName
-        The "domain" by which Amazon Cognito will refer to your users. This name acts as a placeholder that allows your backend and the Amazon Cognito service to communicate about the developer provider. For the DeveloperProviderName, you can use letters and periods ., underscores _, and dashes -.
+        The "domain" Amazon Cognito uses when referencing your users. This name acts as a placeholder that allows your backend and the Amazon Cognito service to communicate about the developer provider. For the DeveloperProviderName, you can use letters and periods ., underscores _, and dashes -.
 *Minimum length*: 1
 *Maximum length*: 100
 
@@ -54,7 +56,7 @@ function New-VSCognitoIdentityPool {
         The name of your Amazon Cognito identity pool.
 *Minimum length*: 1
 *Maximum length*: 128
-*Pattern*: w ]+
+*Pattern*: ws+=,.@-]+
 
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-cognito-identitypool.html#cfn-cognito-identitypool-identitypoolname
         PrimitiveType: String
@@ -75,7 +77,7 @@ function New-VSCognitoIdentityPool {
         UpdateType: Mutable
 
     .PARAMETER SamlProviderARNs
-        A list of Amazon Resource Names ARNs of Security Assertion Markup Language SAML providers.
+        The Amazon Resource Names ARNs of the Security Assertion Markup Language SAML providers.
 
         PrimitiveItemType: String
         Type: List
@@ -83,7 +85,7 @@ function New-VSCognitoIdentityPool {
         UpdateType: Mutable
 
     .PARAMETER OpenIdConnectProviderARNs
-        A list of ARNs for the OpendID Connect provider.
+        The Amazon Resource Names ARNs of the OpenID connect providers.
 
         PrimitiveItemType: String
         Type: List
@@ -91,7 +93,7 @@ function New-VSCognitoIdentityPool {
         UpdateType: Mutable
 
     .PARAMETER AllowClassicFlow
-        The name of the Amazon Cognito identity pool, returned as a string.
+        Enables the Basic Classic authentication flow.
 
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-cognito-identitypool.html#cfn-cognito-identitypool-allowclassicflow
         PrimitiveType: Boolean

@@ -20,7 +20,7 @@ function New-VSKinesisAnalyticsV2Application {
         UpdateType: Immutable
 
     .PARAMETER RuntimeEnvironment
-        The runtime environment for the application SQL-1.0 or FLINK-1_6.
+        The runtime environment for the application SQL-1.0, FLINK-1_6, or FLINK-1_8.
 
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-kinesisanalyticsv2-application.html#cfn-kinesisanalyticsv2-application-runtimeenvironment
         PrimitiveType: String

@@ -36,7 +36,7 @@ function New-VSApiGatewayUsagePlan {
         UpdateType: Mutable
 
     .PARAMETER Tags
-        + usageplan:create: https://docs.aws.amazon.com/apigateway/api-reference/link-relation/usageplan-create/ in the *Amazon API Gateway REST API Reference*
+        An array of arbitrary tags key-value pairs to associate with the usage plan.
 
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-apigateway-usageplan.html#cfn-apigateway-usageplan-tags
         DuplicatesAllowed: True
@@ -127,16 +127,8 @@ function New-VSApiGatewayUsagePlan {
         $Description,
         [parameter(Mandatory = $false)]
         $Quota,
+        [VaporShell.Core.TransformTag()]
         [parameter(Mandatory = $false)]
-        [ValidateScript( {
-                $allowedTypes = "Vaporshell.Resource.Tag","System.Management.Automation.PSCustomObject"
-                if ([string]$($_.PSTypeNames) -match "($(($allowedTypes|ForEach-Object{[RegEx]::Escape($_)}) -join '|'))") {
-                    $true
-                }
-                else {
-                    $PSCmdlet.ThrowTerminatingError((New-VSError -String "This parameter only accepts the following types: $($allowedTypes -join ", "). The current types of the value are: $($_.PSTypeNames -join ", ")."))
-                }
-            })]
         $Tags,
         [parameter(Mandatory = $false)]
         $Throttle,

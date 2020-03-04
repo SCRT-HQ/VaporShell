@@ -1,21 +1,25 @@
 function Add-VSAppConfigEnvironmentTags {
     <#
     .SYNOPSIS
-        Adds an AWS::AppConfig::Environment.Tags resource property to the template. 
+        Adds an AWS::AppConfig::Environment.Tags resource property to the template. Metadata to assign to the environment. Tags help organize and categorize your AppConfig resources. Each tag consists of a key and an optional value, both of which you define.
 
     .DESCRIPTION
         Adds an AWS::AppConfig::Environment.Tags resource property to the template.
-
+Metadata to assign to the environment. Tags help organize and categorize your AppConfig resources. Each tag consists of a key and an optional value, both of which you define.
 
     .LINK
         http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-appconfig-environment-tags.html
 
     .PARAMETER Value
+        The tag value can be up to 256 characters.
+
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-appconfig-environment-tags.html#cfn-appconfig-environment-tags-value
         PrimitiveType: String
         UpdateType: Mutable
 
     .PARAMETER Key
+        The key-value string map. The valid character set is a-zA-Z+-=._:/]. The tag key can be up to 128 characters and must not start with aws:.
+
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-appconfig-environment-tags.html#cfn-appconfig-environment-tags-key
         PrimitiveType: String
         UpdateType: Mutable

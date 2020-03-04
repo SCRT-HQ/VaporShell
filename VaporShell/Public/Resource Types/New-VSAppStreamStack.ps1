@@ -36,7 +36,7 @@ Deletes the storage connectors currently enabled for the stack.
         UpdateType: Mutable
 
     .PARAMETER EmbedHostDomains
-        +  CreateStack: https://docs.aws.amazon.com/appstream2/latest/APIReference/API_CreateStack.html in the *Amazon AppStream 2.0 API Reference*
+        The domains where AppStream 2.0 streaming sessions can be embedded in an iframe. You must approve the domains that you want to host embedded AppStream 2.0 streaming sessions.
 
         PrimitiveItemType: String
         Type: List
@@ -103,7 +103,7 @@ Deletes the storage connectors currently enabled for the stack.
         UpdateType: Mutable
 
     .PARAMETER AccessEndpoints
-        +  CreateStack: https://docs.aws.amazon.com/appstream2/latest/APIReference/API_CreateStack.html in the *Amazon AppStream 2.0 API Reference*
+        The list of virtual private cloud VPC interface endpoint objects. Users of the stack can connect to AppStream 2.0 only through the specified endpoints.
 
         Type: List
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-appstream-stack.html#cfn-appstream-stack-accessendpoints
@@ -249,16 +249,8 @@ Deletes the storage connectors currently enabled for the stack.
                 }
             })]
         $DisplayName,
+        [VaporShell.Core.TransformTag()]
         [parameter(Mandatory = $false)]
-        [ValidateScript( {
-                $allowedTypes = "Vaporshell.Resource.Tag","System.Management.Automation.PSCustomObject"
-                if ([string]$($_.PSTypeNames) -match "($(($allowedTypes|ForEach-Object{[RegEx]::Escape($_)}) -join '|'))") {
-                    $true
-                }
-                else {
-                    $PSCmdlet.ThrowTerminatingError((New-VSError -String "This parameter only accepts the following types: $($allowedTypes -join ", "). The current types of the value are: $($_.PSTypeNames -join ", ")."))
-                }
-            })]
         $Tags,
         [parameter(Mandatory = $false)]
         [ValidateScript( {

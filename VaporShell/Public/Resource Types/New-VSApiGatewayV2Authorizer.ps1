@@ -1,10 +1,10 @@
 function New-VSApiGatewayV2Authorizer {
     <#
     .SYNOPSIS
-        Adds an AWS::ApiGatewayV2::Authorizer resource to the template. The AWS::ApiGatewayV2::Authorizer resource updates a Lambda authorizer function. For more information about Lambda authorizer functions for WebSocket APIs, see Create a Lambda REQUEST Authorizer Function: https://docs.aws.amazon.com/apigateway/latest/developerguide/apigateway-websocket-api-lambda-auth.html in the *API Gateway Developer Guide*.
+        Adds an AWS::ApiGatewayV2::Authorizer resource to the template. The AWS::ApiGatewayV2::Authorizer resource updates a Lambda authorizer function for a WebSocket API or a JSON Web Token (JWT authorizer for an HTTP API. For more information about Lambda authorizer functions for WebSocket APIs, see Create a Lambda REQUEST Authorizer Function: https://docs.aws.amazon.com/apigateway/latest/developerguide/apigateway-websocket-api-lambda-auth.html in the *API Gateway Developer Guide*. For more information about JWT authorizers for HTTP APIs, see JWT authorizers: https://docs.aws.amazon.com/apigateway/latest/developerguide/http-api-jwt-authorizer.html in the *API Gateway Developer Guide*.
 
     .DESCRIPTION
-        Adds an AWS::ApiGatewayV2::Authorizer resource to the template. The AWS::ApiGatewayV2::Authorizer resource updates a Lambda authorizer function. For more information about Lambda authorizer functions for WebSocket APIs, see Create a Lambda REQUEST Authorizer Function: https://docs.aws.amazon.com/apigateway/latest/developerguide/apigateway-websocket-api-lambda-auth.html in the *API Gateway Developer Guide*.
+        Adds an AWS::ApiGatewayV2::Authorizer resource to the template. The AWS::ApiGatewayV2::Authorizer resource updates a Lambda authorizer function for a WebSocket API or a JSON Web Token (JWT authorizer for an HTTP API. For more information about Lambda authorizer functions for WebSocket APIs, see Create a Lambda REQUEST Authorizer Function: https://docs.aws.amazon.com/apigateway/latest/developerguide/apigateway-websocket-api-lambda-auth.html in the *API Gateway Developer Guide*. For more information about JWT authorizers for HTTP APIs, see JWT authorizers: https://docs.aws.amazon.com/apigateway/latest/developerguide/http-api-jwt-authorizer.html in the *API Gateway Developer Guide*.
 
     .LINK
         http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-apigatewayv2-authorizer.html
@@ -13,7 +13,7 @@ function New-VSApiGatewayV2Authorizer {
         The logical ID must be alphanumeric (A-Za-z0-9) and unique within the template. Use the logical name to reference the resource in other parts of the template. For example, if you want to map an Amazon Elastic Block Store volume to an Amazon EC2 instance, you reference the logical IDs to associate the block stores with the instance.
 
     .PARAMETER IdentityValidationExpression
-        The validation expression does not apply to the REQUEST authorizer.
+        This parameter is not used.
 
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-apigatewayv2-authorizer.html#cfn-apigatewayv2-authorizer-identityvalidationexpression
         PrimitiveType: String
@@ -27,28 +27,28 @@ function New-VSApiGatewayV2Authorizer {
         UpdateType: Mutable
 
     .PARAMETER AuthorizerCredentialsArn
-        Specifies the required credentials as an IAM role for API Gateway to invoke the authorizer. To specify an IAM role for API Gateway to assume, use the role's Amazon Resource Name ARN. To use resource-based permissions on the Lambda function, specify null.
+        Specifies the required credentials as an IAM role for API Gateway to invoke the authorizer. To specify an IAM role for API Gateway to assume, use the role's Amazon Resource Name ARN. To use resource-based permissions on the Lambda function, specify null. Supported only for REQUEST authorizers.
 
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-apigatewayv2-authorizer.html#cfn-apigatewayv2-authorizer-authorizercredentialsarn
         PrimitiveType: String
         UpdateType: Mutable
 
     .PARAMETER AuthorizerType
-        The authorizer type. Currently the only valid value is REQUEST, for a Lambda function using incoming request parameters.
+        The authorizer type. For WebSocket APIs, specify REQUEST for a Lambda function using incoming request parameters. For HTTP APIs, specify JWT to use JSON Web Tokens.
 
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-apigatewayv2-authorizer.html#cfn-apigatewayv2-authorizer-authorizertype
         PrimitiveType: String
         UpdateType: Mutable
 
     .PARAMETER JwtConfiguration
-        + CreateAuthorizer: https://docs.aws.amazon.com/apigatewayv2/latest/api-reference/apis-apiid-authorizers.html#CreateAuthorizer in the *Amazon API Gateway Version 2 API Reference*
+        The JWTConfiguration property specifies the configuration of a JWT authorizer. Required for the JWT authorizer type. Supported only for HTTP APIs.
 
         Type: JWTConfiguration
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-apigatewayv2-authorizer.html#cfn-apigatewayv2-authorizer-jwtconfiguration
         UpdateType: Mutable
 
     .PARAMETER AuthorizerResultTtlInSeconds
-        The time to live TTL, in seconds, of cached authorizer results. If it is zero, authorization caching is disabled. If it is greater than zero, API Gateway will cache authorizer responses. If this field is not set, the default value is 300. The maximum value is 3600, or 1 hour.
+        Authorizer caching is not currently supported. Don't specify this value for authorizers.
 
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-apigatewayv2-authorizer.html#cfn-apigatewayv2-authorizer-authorizerresultttlinseconds
         PrimitiveType: Integer
@@ -56,7 +56,8 @@ function New-VSApiGatewayV2Authorizer {
 
     .PARAMETER IdentitySource
         The identity source for which authorization is requested.
-For the REQUEST authorizer, this is required when authorization caching is enabled. The value is a comma-separated string of one or more mapping expressions of the specified request parameters. For example, if an Auth header, a Name query string parameter are defined as identity sources, this value is $method.request.header.Auth, $method.request.querystring.Name. These parameters will be used to derive the authorization caching key and to perform runtime validation of the REQUEST authorizer by verifying all of the identity-related request parameters are present, not null and non-empty. Only when this is true does the authorizer invoke the authorizer Lambda function, otherwise, it returns a 401 Unauthorized response without calling the Lambda function. The valid value is a string of comma-separated mapping expressions of the specified request parameters. When the authorization caching is not enabled, this property is optional.
+For a REQUEST authorizer, this is optional. The value is a set of one or more mapping expressions of the specified request parameters. Currently, the identity source can be headers, query string parameters, stage variables, and context parameters. For example, if an Auth header and a Name query string parameter are defined as identity sources, this value is route.request.header.Auth, route.request.querystring.Name. These parameters will be used to perform runtime validation for Lambda-based authorizers by verifying all of the identity-related request parameters are present in the request, not null, and non-empty. Only when this is true does the authorizer invoke the authorizer Lambda function. Otherwise, it returns a 401 Unauthorized response without calling the Lambda function.
+For JWT, a single entry that specifies where to extract the JSON Web Token JWT from inbound requests. Currently only header-based and query parameter-based selections are supported, for example "$request.header.Authorization".
 
         PrimitiveItemType: String
         Type: List

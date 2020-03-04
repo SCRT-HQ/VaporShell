@@ -13,7 +13,8 @@ For example snippets, see Auto Scaling Group with Notifications: https://docs.aw
         http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-as-notificationconfigurations.html
 
     .PARAMETER NotificationTypes
-        A list of event types that trigger a notification. Event types can include any of the following types:
+        A list of event types that trigger a notification. Event types can include any of the following types.
+*Allowed Values*:
 + autoscaling:EC2_INSTANCE_LAUNCH
 + autoscaling:EC2_INSTANCE_LAUNCH_ERROR
 + autoscaling:EC2_INSTANCE_TERMINATE

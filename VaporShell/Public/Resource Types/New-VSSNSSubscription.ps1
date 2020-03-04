@@ -13,7 +13,7 @@ function New-VSSNSSubscription {
         The logical ID must be alphanumeric (A-Za-z0-9) and unique within the template. Use the logical name to reference the resource in other parts of the template. For example, if you want to map an Amazon Elastic Block Store volume to an Amazon EC2 instance, you reference the logical IDs to associate the block stores with the instance.
 
     .PARAMETER DeliveryPolicy
-        The JSON serialization of the subscription's delivery policy. For more information, see  GetSubscriptionAttributes: https://docs.aws.amazon.com/sns/latest/api/API_GetSubscriptionAttributes.html  in the *Amazon Simple Notification Service API Reference*.
+        The delivery policy JSON assigned to the subscription. Enables the subscriber to define the message delivery retry strategy in the case of an HTTP/S endpoint subscribed to the topic. For more information, see  GetSubscriptionAttributes: https://docs.aws.amazon.com/sns/latest/api/API_GetSubscriptionAttributes.html  in the *Amazon Simple Notification Service API Reference* and Message Delivery Retries: https://docs.aws.amazon.com/sns/latest/dg/sns-message-delivery-retries.html in the *Amazon SNS Developer Guide*.
 
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-sns-subscription.html#cfn-sns-subscription-deliverypolicy
         PrimitiveType: Json
@@ -27,7 +27,7 @@ function New-VSSNSSubscription {
         UpdateType: Immutable
 
     .PARAMETER FilterPolicy
-        The filter policy JSON assigned to the subscription. For more information, see  GetSubscriptionAttributes: https://docs.aws.amazon.com/sns/latest/api/API_GetSubscriptionAttributes.html  in the *Amazon Simple Notification Service API Reference*.
+        The filter policy JSON assigned to the subscription. Enables the subscriber to filter out unwanted messages. For more information, see  GetSubscriptionAttributes: https://docs.aws.amazon.com/sns/latest/api/API_GetSubscriptionAttributes.html  in the *Amazon Simple Notification Service API Reference* and Message Filtering: https://docs.aws.amazon.com/sns/latest/dg/sns-message-filtering.html in the *Amazon SNS Developer Guide*.
 
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-sns-subscription.html#cfn-sns-subscription-filterpolicy
         PrimitiveType: Json
@@ -48,6 +48,8 @@ function New-VSSNSSubscription {
         UpdateType: Mutable
 
     .PARAMETER RedrivePolicy
+        When specified, sends undeliverable messages to the specified Amazon SQS dead-letter queue. Messages that can't be delivered due to client errors for example, when the subscribed endpoint is unreachable or server errors for example, when the service that powers the subscribed endpoint becomes unavailable are held in the dead-letter queue for further analysis or reprocessing.
+
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-sns-subscription.html#cfn-sns-subscription-redrivepolicy
         PrimitiveType: Json
         UpdateType: Mutable

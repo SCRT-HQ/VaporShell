@@ -76,18 +76,16 @@ AWS authenticates the CMK asynchronously. Therefore, if you specify an ID, alias
         UpdateType: Mutable
 
     .PARAMETER Size
-        The size of the volume, in GiBs.
+        The size of the volume, in GiBs. You must specify either a snapshot ID or a volume size.
 Constraints: 1-16,384 for gp2, 4-16,384 for io1, 500-16,384 for st1, 500-16,384 for sc1, and 1-1,024 for standard. If you specify a snapshot, the volume size must be equal to or larger than the snapshot size.
 Default: If you're creating the volume from a snapshot and don't specify a volume size, the default is the snapshot size.
-At least one of Size or SnapshotId is required.
 
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-ebs-volume.html#cfn-ec2-ebs-volume-size
         PrimitiveType: Integer
         UpdateType: Mutable
 
     .PARAMETER SnapshotId
-        The snapshot from which to create the volume.
-At least one of Size or SnapshotId are required.
+        The snapshot from which to create the volume. You must specify either a snapshot ID or a volume size.
 
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-ebs-volume.html#cfn-ec2-ebs-volume-snapshotid
         PrimitiveType: String
@@ -104,7 +102,7 @@ At least one of Size or SnapshotId are required.
 
     .PARAMETER VolumeType
         The volume type. This can be gp2 for General Purpose SSD, io1 for Provisioned IOPS SSD, st1 for Throughput Optimized HDD, sc1 for Cold HDD, or standard for Magnetic volumes.
-Defaults: If no volume type is specified, the default is standard in us-east-1, eu-west-1, eu-central-1, us-west-2, us-west-1, sa-east-1, ap-northeast-1, ap-northeast-2, ap-southeast-1, ap-southeast-2, ap-south-1, us-gov-west-1, and cn-north-1. In all other Regions, EBS defaults to gp2.
+Default: gp2
 
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-ebs-volume.html#cfn-ec2-ebs-volume-volumetype
         PrimitiveType: String
@@ -232,16 +230,8 @@ Defaults: If no volume type is specified, the default is standard in us-east-1, 
                 }
             })]
         $SnapshotId,
+        [VaporShell.Core.TransformTag()]
         [parameter(Mandatory = $false)]
-        [ValidateScript( {
-                $allowedTypes = "Vaporshell.Resource.Tag","System.Management.Automation.PSCustomObject"
-                if ([string]$($_.PSTypeNames) -match "($(($allowedTypes|ForEach-Object{[RegEx]::Escape($_)}) -join '|'))") {
-                    $true
-                }
-                else {
-                    $PSCmdlet.ThrowTerminatingError((New-VSError -String "This parameter only accepts the following types: $($allowedTypes -join ", "). The current types of the value are: $($_.PSTypeNames -join ", ")."))
-                }
-            })]
         $Tags,
         [parameter(Mandatory = $false)]
         [ValidateScript( {

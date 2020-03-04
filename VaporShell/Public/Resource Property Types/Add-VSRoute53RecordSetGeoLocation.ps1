@@ -11,8 +11,14 @@ A complex type that contains information about a geographic location.
         http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-route53-recordset-geolocation.html
 
     .PARAMETER ContinentCode
-        The two-letter code for the continent.
-Valid values: AF | AN | AS | EU | OC | NA | SA
+        For geolocation resource record sets, a two-letter abbreviation that identifies a continent. Route 53 supports the following continent codes:
++ **AF**: Africa
++ **AN**: Antarctica
++ **AS**: Asia
++ **EU**: Europe
++ **OC**: Oceania
++ **NA**: North America
++ **SA**: South America
 Constraint: Specifying ContinentCode with either CountryCode or SubdivisionCode returns an InvalidInput error.
 
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-route53-recordset-geolocation.html#cfn-route53-recordset-geolocation-continentcode
@@ -20,14 +26,16 @@ Constraint: Specifying ContinentCode with either CountryCode or SubdivisionCode 
         UpdateType: Mutable
 
     .PARAMETER CountryCode
-        The two-letter code for the country.
+        For geolocation resource record sets, the two-letter code for a country.
+Route 53 uses the two-letter country codes that are specified in ISO standard 3166-1 alpha-2: https://en.wikipedia.org/wiki/ISO_3166-1_alpha-2.
 
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-route53-recordset-geolocation.html#cfn-route53-recordset-geolocation-countrycode
         PrimitiveType: String
         UpdateType: Mutable
 
     .PARAMETER SubdivisionCode
-        The code for the subdivision. Route 53 currently supports only states in the United States.
+        For geolocation resource record sets, the two-letter code for a state of the United States. Route 53 doesn't support any other values for SubdivisionCode. For a list of state abbreviations, see Appendix B: Two–Letter State and Possession Abbreviations: https://pe.usps.com/text/pub28/28apb.htm on the United States Postal Service website.
+If you specify subdivisioncode, you must also specify US for CountryCode.
 
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-route53-recordset-geolocation.html#cfn-route53-recordset-geolocation-subdivisioncode
         PrimitiveType: String

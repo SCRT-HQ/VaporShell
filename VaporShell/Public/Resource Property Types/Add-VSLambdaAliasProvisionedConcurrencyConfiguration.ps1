@@ -1,16 +1,18 @@
 function Add-VSLambdaAliasProvisionedConcurrencyConfiguration {
     <#
     .SYNOPSIS
-        Adds an AWS::Lambda::Alias.ProvisionedConcurrencyConfiguration resource property to the template. 
+        Adds an AWS::Lambda::Alias.ProvisionedConcurrencyConfiguration resource property to the template. A provisioned concurrency configuration for a function's alias.
 
     .DESCRIPTION
         Adds an AWS::Lambda::Alias.ProvisionedConcurrencyConfiguration resource property to the template.
-
+A provisioned concurrency configuration for a function's alias.
 
     .LINK
         http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-lambda-alias-provisionedconcurrencyconfiguration.html
 
     .PARAMETER ProvisionedConcurrentExecutions
+        The amount of provisioned concurrency to allocate for the alias.
+
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-lambda-alias-provisionedconcurrencyconfiguration.html#cfn-lambda-alias-provisionedconcurrencyconfiguration-provisionedconcurrentexecutions
         PrimitiveType: Integer
         UpdateType: Mutable

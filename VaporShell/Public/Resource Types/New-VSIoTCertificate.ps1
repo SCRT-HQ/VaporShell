@@ -1,10 +1,10 @@
 function New-VSIoTCertificate {
     <#
     .SYNOPSIS
-        Adds an AWS::IoT::Certificate resource to the template. Use the AWS::IoT::Certificate resource to declare an AWS IoT X.509 certificate. For information about working with X.509 certificates, see Authentication in AWS IoT: https://docs.aws.amazon.com/iot/latest/developerguide/x509-certs.html in the *AWS IoT Developer Guide*.
+        Adds an AWS::IoT::Certificate resource to the template. Use the AWS::IoT::Certificate resource to declare an AWS IoT X.509 certificate. For information about working with X.509 certificates, see X.509 Client Certificates: https://docs.aws.amazon.com/iot/latest/developerguide/x509-client-certs.html in the *AWS IoT Developer Guide*.
 
     .DESCRIPTION
-        Adds an AWS::IoT::Certificate resource to the template. Use the AWS::IoT::Certificate resource to declare an AWS IoT X.509 certificate. For information about working with X.509 certificates, see Authentication in AWS IoT: https://docs.aws.amazon.com/iot/latest/developerguide/x509-certs.html in the *AWS IoT Developer Guide*.
+        Adds an AWS::IoT::Certificate resource to the template. Use the AWS::IoT::Certificate resource to declare an AWS IoT X.509 certificate. For information about working with X.509 certificates, see X.509 Client Certificates: https://docs.aws.amazon.com/iot/latest/developerguide/x509-client-certs.html in the *AWS IoT Developer Guide*.
 
     .LINK
         http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-iot-certificate.html
@@ -21,6 +21,7 @@ function New-VSIoTCertificate {
 
     .PARAMETER Status
         The status of the certificate.
+Valid values are ACTIVE, INACTIVE, REVOKED, PENDING_TRANSFER, and PENDING_ACTIVATION.
 The status value REGISTER_INACTIVE is deprecated and should not be used.
 
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-iot-certificate.html#cfn-iot-certificate-status

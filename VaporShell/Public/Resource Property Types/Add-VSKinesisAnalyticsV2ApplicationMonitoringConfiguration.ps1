@@ -11,7 +11,7 @@ Describes configuration parameters for Amazon CloudWatch logging for a Java-base
         http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-kinesisanalyticsv2-application-monitoringconfiguration.html
 
     .PARAMETER ConfigurationType
-        Describes whether to use the default CloudWatch logging configuration for an application.
+        Describes whether to use the default CloudWatch logging configuration for an application. You must set this property to CUSTOM in order to set the LogLevel or MetricsLevel parameters.
 
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-kinesisanalyticsv2-application-monitoringconfiguration.html#cfn-kinesisanalyticsv2-application-monitoringconfiguration-configurationtype
         PrimitiveType: String

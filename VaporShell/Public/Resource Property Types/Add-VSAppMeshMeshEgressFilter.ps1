@@ -1,11 +1,11 @@
 function Add-VSAppMeshMeshEgressFilter {
     <#
     .SYNOPSIS
-        Adds an AWS::AppMesh::Mesh.EgressFilter resource property to the template. An object representing the egress filter rules for a service mesh.
+        Adds an AWS::AppMesh::Mesh.EgressFilter resource property to the template. An object that represents the egress filter rules for a service mesh.
 
     .DESCRIPTION
         Adds an AWS::AppMesh::Mesh.EgressFilter resource property to the template.
-An object representing the egress filter rules for a service mesh.
+An object that represents the egress filter rules for a service mesh.
 
     .LINK
         http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-appmesh-mesh-egressfilter.html

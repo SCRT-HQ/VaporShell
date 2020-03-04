@@ -1,16 +1,18 @@
 function Add-VSLambdaEventInvokeConfigOnSuccess {
     <#
     .SYNOPSIS
-        Adds an AWS::Lambda::EventInvokeConfig.OnSuccess resource property to the template. 
+        Adds an AWS::Lambda::EventInvokeConfig.OnSuccess resource property to the template. A destination for events that were processed successfully.
 
     .DESCRIPTION
         Adds an AWS::Lambda::EventInvokeConfig.OnSuccess resource property to the template.
-
+A destination for events that were processed successfully.
 
     .LINK
         http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-lambda-eventinvokeconfig-destinationconfig-onsuccess.html
 
     .PARAMETER Destination
+        The Amazon Resource Name ARN of the destination resource.
+
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-lambda-eventinvokeconfig-destinationconfig-onsuccess.html#cfn-lambda-eventinvokeconfig-destinationconfig-onsuccess-destination
         PrimitiveType: String
         UpdateType: Mutable

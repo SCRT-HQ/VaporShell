@@ -1,10 +1,10 @@
 function New-VSCodeBuildReportGroup {
     <#
     .SYNOPSIS
-        Adds an AWS::CodeBuild::ReportGroup resource to the template. 
+        Adds an AWS::CodeBuild::ReportGroup resource to the template. Creates a report group. A report group contains a collection of reports.
 
     .DESCRIPTION
-        Adds an AWS::CodeBuild::ReportGroup resource to the template. 
+        Adds an AWS::CodeBuild::ReportGroup resource to the template. Creates a report group. A report group contains a collection of reports.
 
     .LINK
         http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-codebuild-reportgroup.html
@@ -13,16 +13,22 @@ function New-VSCodeBuildReportGroup {
         The logical ID must be alphanumeric (A-Za-z0-9) and unique within the template. Use the logical name to reference the resource in other parts of the template. For example, if you want to map an Amazon Elastic Block Store volume to an Amazon EC2 instance, you reference the logical IDs to associate the block stores with the instance.
 
     .PARAMETER Type
+        The type of the ReportGroup. The one valid value is TEST.
+
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-codebuild-reportgroup.html#cfn-codebuild-reportgroup-type
         PrimitiveType: String
         UpdateType: Mutable
 
     .PARAMETER ExportConfig
+        Information about the destination where the raw data of this ReportGroup is exported.
+
         Type: ReportExportConfig
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-codebuild-reportgroup.html#cfn-codebuild-reportgroup-exportconfig
         UpdateType: Mutable
 
     .PARAMETER Name
+        The name of a ReportGroup.
+
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-codebuild-reportgroup.html#cfn-codebuild-reportgroup-name
         PrimitiveType: String
         UpdateType: Immutable

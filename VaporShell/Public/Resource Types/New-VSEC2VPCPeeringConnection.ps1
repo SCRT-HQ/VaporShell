@@ -38,6 +38,7 @@ Default: The Region in which you make the request.
 
     .PARAMETER PeerRoleArn
         The Amazon Resource Name ARN of the VPC peer role for the peering connection in another AWS account.
+This is required when you are peering a VPC in a different AWS account.
 
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ec2-vpcpeeringconnection.html#cfn-ec2-vpcpeeringconnection-peerrolearn
         PrimitiveType: String
@@ -155,16 +156,8 @@ Default: The Region in which you make the request.
                 }
             })]
         $PeerVpcId,
+        [VaporShell.Core.TransformTag()]
         [parameter(Mandatory = $false)]
-        [ValidateScript( {
-                $allowedTypes = "Vaporshell.Resource.Tag","System.Management.Automation.PSCustomObject"
-                if ([string]$($_.PSTypeNames) -match "($(($allowedTypes|ForEach-Object{[RegEx]::Escape($_)}) -join '|'))") {
-                    $true
-                }
-                else {
-                    $PSCmdlet.ThrowTerminatingError((New-VSError -String "This parameter only accepts the following types: $($allowedTypes -join ", "). The current types of the value are: $($_.PSTypeNames -join ", ")."))
-                }
-            })]
         $Tags,
         [parameter(Mandatory = $true)]
         [ValidateScript( {

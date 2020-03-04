@@ -1,11 +1,11 @@
 function Add-VSIoTAnalyticsPipelineDatastore {
     <#
     .SYNOPSIS
-        Adds an AWS::IoTAnalytics::Pipeline.Datastore resource property to the template. The 'datastore' activity that specifies where to store the processed data.
+        Adds an AWS::IoTAnalytics::Pipeline.Datastore resource property to the template. The datastore activity that specifies where to store the processed data.
 
     .DESCRIPTION
         Adds an AWS::IoTAnalytics::Pipeline.Datastore resource property to the template.
-The 'datastore' activity that specifies where to store the processed data.
+The datastore activity that specifies where to store the processed data.
 
     .LINK
         http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iotanalytics-pipeline-datastore.html
@@ -18,7 +18,7 @@ The 'datastore' activity that specifies where to store the processed data.
         UpdateType: Mutable
 
     .PARAMETER Name
-        The name of the 'datastore' activity.
+        The name of the datastore activity.
 
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iotanalytics-pipeline-datastore.html#cfn-iotanalytics-pipeline-datastore-name
         PrimitiveType: String

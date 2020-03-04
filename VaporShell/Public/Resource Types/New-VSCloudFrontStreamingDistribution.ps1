@@ -1,10 +1,10 @@
 function New-VSCloudFrontStreamingDistribution {
     <#
     .SYNOPSIS
-        Adds an AWS::CloudFront::StreamingDistribution resource to the template. A streaming distribution.
+        Adds an AWS::CloudFront::StreamingDistribution resource to the template. A streaming distribution tells CloudFront where you want RTMP content to be delivered from, and the details about how to track and manage content delivery.
 
     .DESCRIPTION
-        Adds an AWS::CloudFront::StreamingDistribution resource to the template. A streaming distribution.
+        Adds an AWS::CloudFront::StreamingDistribution resource to the template. A streaming distribution tells CloudFront where you want RTMP content to be delivered from, and the details about how to track and manage content delivery.
 
     .LINK
         http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-cloudfront-streamingdistribution.html
@@ -74,16 +74,8 @@ function New-VSCloudFrontStreamingDistribution {
         $LogicalId,
         [parameter(Mandatory = $true)]
         $StreamingDistributionConfig,
+        [VaporShell.Core.TransformTag()]
         [parameter(Mandatory = $true)]
-        [ValidateScript( {
-                $allowedTypes = "Vaporshell.Resource.Tag","System.Management.Automation.PSCustomObject"
-                if ([string]$($_.PSTypeNames) -match "($(($allowedTypes|ForEach-Object{[RegEx]::Escape($_)}) -join '|'))") {
-                    $true
-                }
-                else {
-                    $PSCmdlet.ThrowTerminatingError((New-VSError -String "This parameter only accepts the following types: $($allowedTypes -join ", "). The current types of the value are: $($_.PSTypeNames -join ", ")."))
-                }
-            })]
         $Tags,
         [ValidateSet("Delete","Retain","Snapshot")]
         [System.String]

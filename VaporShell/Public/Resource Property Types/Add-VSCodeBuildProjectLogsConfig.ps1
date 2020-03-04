@@ -1,11 +1,11 @@
 function Add-VSCodeBuildProjectLogsConfig {
     <#
     .SYNOPSIS
-        Adds an AWS::CodeBuild::Project.LogsConfig resource property to the template. LogsConfig is a property of the AWS CodeBuild Project: https://docs.aws.amazon.com/aws-properties-codebuild-project-source.html resource that specifies information about logs for a build project. These can be logs in Amazon CloudWatch Logs, built in a specified S3 bucket, or both.
+        Adds an AWS::CodeBuild::Project.LogsConfig resource property to the template. LogsConfig is a property of the AWS CodeBuild Project: https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-codebuild-project.html resource that specifies information about logs for a build project. These can be logs in Amazon CloudWatch Logs, built in a specified S3 bucket, or both.
 
     .DESCRIPTION
         Adds an AWS::CodeBuild::Project.LogsConfig resource property to the template.
-LogsConfig is a property of the AWS CodeBuild Project: https://docs.aws.amazon.com/aws-properties-codebuild-project-source.html resource that specifies information about logs for a build project. These can be logs in Amazon CloudWatch Logs, built in a specified S3 bucket, or both.
+LogsConfig is a property of the AWS CodeBuild Project: https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-codebuild-project.html resource that specifies information about logs for a build project. These can be logs in Amazon CloudWatch Logs, built in a specified S3 bucket, or both.
 
     .LINK
         http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-codebuild-project-logsconfig.html

@@ -20,6 +20,9 @@ function New-VSStepFunctionsStateMachine {
         UpdateType: Mutable
 
     .PARAMETER LoggingConfiguration
+        Defines what execution history events are logged and where they are logged.
+The loggingConfiguration parameter is only valid when StateMachineType is set to EXPRESS. By default, the level is set to OFF. For more information see Log Levels: https://docs.aws.amazon.com/step-functions/latest/dg/cloudwatch-log-level.html in the AWS Step Functions User Guide.
+
         Type: LoggingConfiguration
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-stepfunctions-statemachine.html#cfn-stepfunctions-statemachine-loggingconfiguration
         UpdateType: Mutable
@@ -32,6 +35,7 @@ A name must *not* contain:
 + wildcard characters ? *
 + special characters " # %  ^ | ~  $ & , ; : /
 + control characters U+0000-001F, U+007F-009F
+If you specify a name, you cannot perform updates that require replacement of this resource. You can perform updates that require no or some interruption. If you must replace the resource, specify a new name.
 
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-stepfunctions-statemachine.html#cfn-stepfunctions-statemachine-statemachinename
         PrimitiveType: String
@@ -54,6 +58,8 @@ Tags may only contain Unicode letters, digits, white space, or these symbols: _ 
         UpdateType: Mutable
 
     .PARAMETER StateMachineType
+        Determines whether a STANDARD or EXPRESS state machine is created. The default is STANDARD. You cannot update the type of a state machine once it has been created. For more information on STANDARD and EXPRESS worklfows, see Standard Versus Express Workflows: https://docs.aws.amazon.com/step-functions/latest/dg/concepts-standard-vs-express.html in the AWS Step Functions Developer Guide.
+
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-stepfunctions-statemachine.html#cfn-stepfunctions-statemachine-statemachinetype
         PrimitiveType: String
         UpdateType: Immutable

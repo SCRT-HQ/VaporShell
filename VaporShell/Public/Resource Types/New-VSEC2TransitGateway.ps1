@@ -63,7 +63,7 @@ When you create a transit gateway, we create a default transit gateway route tab
         UpdateType: Immutable
 
     .PARAMETER AmazonSideAsn
-        A private Autonomous System Number ASN for the Amazon side of a BGP session. The range is 64512 to 65534 for 16-bit ASNs and 4200000000 to 4294967294 for 32-bit ASNs.
+        A private Autonomous System Number ASN for the Amazon side of a BGP session. The range is 64512 to 65534 for 16-bit ASNs.
 
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ec2-transitgateway.html#cfn-ec2-transitgateway-amazonsideasn
         PrimitiveType: Integer
@@ -199,16 +199,8 @@ When you create a transit gateway, we create a default transit gateway route tab
                 }
             })]
         $AmazonSideAsn,
+        [VaporShell.Core.TransformTag()]
         [parameter(Mandatory = $false)]
-        [ValidateScript( {
-                $allowedTypes = "Vaporshell.Resource.Tag","System.Management.Automation.PSCustomObject"
-                if ([string]$($_.PSTypeNames) -match "($(($allowedTypes|ForEach-Object{[RegEx]::Escape($_)}) -join '|'))") {
-                    $true
-                }
-                else {
-                    $PSCmdlet.ThrowTerminatingError((New-VSError -String "This parameter only accepts the following types: $($allowedTypes -join ", "). The current types of the value are: $($_.PSTypeNames -join ", ")."))
-                }
-            })]
         $Tags,
         [ValidateSet("Delete","Retain","Snapshot")]
         [System.String]

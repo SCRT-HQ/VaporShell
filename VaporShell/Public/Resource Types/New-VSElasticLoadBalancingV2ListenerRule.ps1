@@ -39,6 +39,7 @@ function New-VSElasticLoadBalancingV2ListenerRule {
 
     .PARAMETER Priority
         The rule priority. A listener can't have multiple rules with the same priority.
+If you try to reorder rules by updating their priorities, do not specify a new priority if an existing rule already uses this priority, as this can cause an error. If you need to reuse a priority with a different rule, you must remove it as a priority first, and then specify it in a subsequent update.
 
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-elasticloadbalancingv2-listenerrule.html#cfn-elasticloadbalancingv2-listenerrule-priority
         PrimitiveType: Integer

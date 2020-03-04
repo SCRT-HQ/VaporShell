@@ -1,21 +1,25 @@
 function Add-VSMediaLiveChannelMultiplexProgramChannelDestinationSettings {
     <#
     .SYNOPSIS
-        Adds an AWS::MediaLive::Channel.MultiplexProgramChannelDestinationSettings resource property to the template. 
+        Adds an AWS::MediaLive::Channel.MultiplexProgramChannelDestinationSettings resource property to the template. <a name="aws-properties-medialive-channel-multiplexprogramchanneldestinationsettings-description"></a>The MultiplexProgramChannelDestinationSettings property type specifies Not currently supported by AWS CloudFormation. for an AWS::MediaLive::Channel: aws-resource-medialive-channel.md.
 
     .DESCRIPTION
         Adds an AWS::MediaLive::Channel.MultiplexProgramChannelDestinationSettings resource property to the template.
-
+<a name="aws-properties-medialive-channel-multiplexprogramchanneldestinationsettings-description"></a>The MultiplexProgramChannelDestinationSettings property type specifies Not currently supported by AWS CloudFormation. for an AWS::MediaLive::Channel: aws-resource-medialive-channel.md.
 
     .LINK
         http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-medialive-channel-multiplexprogramchanneldestinationsettings.html
 
     .PARAMETER MultiplexId
+        Not currently supported by AWS CloudFormation.
+
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-medialive-channel-multiplexprogramchanneldestinationsettings.html#cfn-medialive-channel-multiplexprogramchanneldestinationsettings-multiplexid
         PrimitiveType: String
         UpdateType: Mutable
 
     .PARAMETER ProgramName
+        Not currently supported by AWS CloudFormation.
+
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-medialive-channel-multiplexprogramchanneldestinationsettings.html#cfn-medialive-channel-multiplexprogramchanneldestinationsettings-programname
         PrimitiveType: String
         UpdateType: Mutable

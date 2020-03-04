@@ -36,7 +36,7 @@ Changes to a deployment package in Amazon S3 are not detected automatically duri
     .PARAMETER ZipFile
         Node.js and Python The source code of your Lambda function. If you include your function source inline with this parameter, AWS CloudFormation places it in a file named index and zips it to create a deployment package: https://docs.aws.amazon.com/lambda/latest/dg/deployment-package-v2.html. For the Handler property, the first part of the handler identifier must be index. For example, index.handler.
 Your source code can contain up to 4096 characters. For JSON, you must escape quotes and special characters such as newline n with a backslash.
-If you specify a function that interacts with an AWS CloudFormation custom resource, you don't have to write your own functions to send responses to the custom resource that invoked the function. AWS CloudFormation provides a response module cfn-module that simplifies sending responses.
+If you specify a function that interacts with an AWS CloudFormation custom resource, you don't have to write your own functions to send responses to the custom resource that invoked the function. AWS CloudFormation provides a response module cfn-response: https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/cfn-lambda-function-code-cfnresponsemodule.html that simplifies sending responses. See Using AWS Lambda with AWS CloudFormation: https://docs.aws.amazon.com/lambda/latest/dg/services-cloudformation.html for details.
 
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-lambda-function-code.html#cfn-lambda-function-code-zipfile
         PrimitiveType: String

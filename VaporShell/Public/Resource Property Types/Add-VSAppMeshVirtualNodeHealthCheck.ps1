@@ -1,17 +1,17 @@
 function Add-VSAppMeshVirtualNodeHealthCheck {
     <#
     .SYNOPSIS
-        Adds an AWS::AppMesh::VirtualNode.HealthCheck resource property to the template. An object representing the health check policy for a virtual node's listener.
+        Adds an AWS::AppMesh::VirtualNode.HealthCheck resource property to the template. An object that represents the health check policy for a virtual node's listener.
 
     .DESCRIPTION
         Adds an AWS::AppMesh::VirtualNode.HealthCheck resource property to the template.
-An object representing the health check policy for a virtual node's listener.
+An object that represents the health check policy for a virtual node's listener.
 
     .LINK
         http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-appmesh-virtualnode-healthcheck.html
 
     .PARAMETER Path
-        The destination path for the health check request. This is required only if the specified protocol is HTTP. If the protocol is TCP, this parameter is ignored.
+        The destination path for the health check request. This value is only used if the specified protocol is HTTP or HTTP/2. For any other protocol, this value is ignored.
 
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-appmesh-virtualnode-healthcheck.html#cfn-appmesh-virtualnode-healthcheck-path
         PrimitiveType: String
@@ -46,7 +46,7 @@ An object representing the health check policy for a virtual node's listener.
         UpdateType: Mutable
 
     .PARAMETER Protocol
-        The protocol for the health check request.
+        The protocol for the health check request. If you specify grpc, then your service must conform to the GRPC Health Checking Protocol: https://github.com/grpc/grpc/blob/master/doc/health-checking.md.
 
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-appmesh-virtualnode-healthcheck.html#cfn-appmesh-virtualnode-healthcheck-protocol
         PrimitiveType: String

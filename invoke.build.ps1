@@ -111,6 +111,9 @@ Task Build Update, {
         '    $ForceDotSource = $false'
         ')'
         '$VaporshellPath = $PSScriptRoot'
+        'if ($null -eq ([System.AppDomain]::CurrentDomain.GetAssemblies() | Where-Object {$_.Location -match "VaporShell.Core.dll"})) {'
+        '    Add-Type -Path "$VaporshellPath\VaporShell.Core.dll" -ReferencedAssemblies ([PowerShell].Assembly.Location)'
+        '}'
     ) -join "`n"
     $psm1Header | Add-Content -Path $psm1 -Encoding UTF8
 
@@ -142,6 +145,10 @@ Task Build Update, {
         Update-Metadata -Path $SourceManifestPath -PropertyName ModuleVersion -Value $NextModuleVersion
         ([System.IO.File]::ReadAllText($SourceManifestPath)).Trim() | Set-Content $SourceManifestPath
     }
+
+    Write-BuildLog 'Compiling VaporShell.Core.dll'
+    dotnet build .\VaporShell.Core\
+    Get-Item ".\VaporShell.Core\obj\Debug\netstandard2.0\VaporShell.Core.dll" | Copy-Item -Destination $TargetVersionDirectory -Recurse -ErrorAction SilentlyContinue
 
     Write-BuildLog 'Copying latest AWSSDK assembly dependencies to output path'
     Save-Module 'AWS.Tools.CloudFormation','AWS.Tools.S3' -Path $PSScriptRoot -Repository PSGallery -Force

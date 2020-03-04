@@ -32,7 +32,9 @@ If you enable client connection logging, data about client connections is sent t
         UpdateType: Mutable
 
     .PARAMETER SplitTunnel
-        + Client VPN Endpoints: https://docs.aws.amazon.com/vpn/latest/clientvpn-admin/cvpn-working-endpoints.html in the *AWS Client VPN Administrator Guide*
+        Indicates whether split-tunnel is enabled on the AWS Client VPN endpoint.
+By default, split-tunnel on a VPN endpoint is disabled.
+For information about split-tunnel VPN endpoints, see Split-Tunnel AWS Client VPN Endpoint: https://docs.aws.amazon.com/vpn/latest/clientvpn-admin/split-tunnel-vpn.html in the *AWS Client VPN Administrator Guide*.
 
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ec2-clientvpnendpoint.html#cfn-ec2-clientvpnendpoint-splittunnel
         PrimitiveType: Boolean
@@ -69,7 +71,7 @@ If you enable client connection logging, data about client connections is sent t
         UpdateType: Mutable
 
     .PARAMETER DnsServers
-        Information about the DNS servers to be used for DNS resolution. A Client VPN endpoint can have up to two DNS servers. If no DNS server is specified, the DNS address of the VPC that is to be associated with Client VPN endpoint is used as the DNS server.
+        Information about the DNS servers to be used for DNS resolution. A Client VPN endpoint can have up to two DNS servers. If no DNS server is specified, the DNS address configured on the device is used for the DNS server.
 
         PrimitiveItemType: String
         Type: List
@@ -85,7 +87,9 @@ Default value: udp
         UpdateType: Immutable
 
     .PARAMETER VpnPort
-        + Client VPN Endpoints: https://docs.aws.amazon.com/vpn/latest/clientvpn-admin/cvpn-working-endpoints.html in the *AWS Client VPN Administrator Guide*
+        The port number to assign to the Client VPN endpoint for TCP and UDP traffic.
+Valid Values: 443 | 1194
+Default Value: 443
 
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ec2-clientvpnendpoint.html#cfn-ec2-clientvpnendpoint-vpnport
         PrimitiveType: Integer

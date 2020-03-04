@@ -1,10 +1,10 @@
 function New-VSCodeBuildSourceCredential {
     <#
     .SYNOPSIS
-        Adds an AWS::CodeBuild::SourceCredential resource to the template. Information about the credentials for a GitHub, GitHub Enterprise, or Bitbucket repository. We strongly recommend that you use AWS Secrets Manager to store your credentials or the NoEcho parameter to mask your credentials. If you use Secrets Manager, you must have secrets in your secrets manager. For more information, see  Using Dynamic References to Specify Template Values: https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/dynamic-references.html#dynamic-references-secretsmanager.
+        Adds an AWS::CodeBuild::SourceCredential resource to the template. Information about the credentials for a GitHub, GitHub Enterprise, or Bitbucket repository. We strongly recommend that you use AWS Secrets Manager to store your credentials. If you use Secrets Manager, you must have secrets in your secrets manager. For more information, see  Using Dynamic References to Specify Template Values: https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/dynamic-references.html#dynamic-references-secretsmanager.
 
     .DESCRIPTION
-        Adds an AWS::CodeBuild::SourceCredential resource to the template. Information about the credentials for a GitHub, GitHub Enterprise, or Bitbucket repository. We strongly recommend that you use AWS Secrets Manager to store your credentials or the NoEcho parameter to mask your credentials. If you use Secrets Manager, you must have secrets in your secrets manager. For more information, see  Using Dynamic References to Specify Template Values: https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/dynamic-references.html#dynamic-references-secretsmanager.
+        Adds an AWS::CodeBuild::SourceCredential resource to the template. Information about the credentials for a GitHub, GitHub Enterprise, or Bitbucket repository. We strongly recommend that you use AWS Secrets Manager to store your credentials. If you use Secrets Manager, you must have secrets in your secrets manager. For more information, see  Using Dynamic References to Specify Template Values: https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/dynamic-references.html#dynamic-references-secretsmanager.
 
 **Important**
 

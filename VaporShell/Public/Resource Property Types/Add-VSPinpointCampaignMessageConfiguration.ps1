@@ -11,7 +11,7 @@ Specifies the message configuration settings for a campaign.
         http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-pinpoint-campaign-messageconfiguration.html
 
     .PARAMETER APNSMessage
-        The message that the campaign sends through the APNS Apple Push Notification service channel. This message overrides the default message.
+        The message that the campaign sends through the APNs Apple Push Notification service channel. This message overrides the default message.
 
         Type: Message
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-pinpoint-campaign-messageconfiguration.html#cfn-pinpoint-campaign-messageconfiguration-apnsmessage

@@ -1,11 +1,11 @@
 function Add-VSS3BucketPublicAccessBlockConfiguration {
     <#
     .SYNOPSIS
-        Adds an AWS::S3::Bucket.PublicAccessBlockConfiguration resource property to the template. Specifies the Block Public Access configuration for an Amazon S3 bucket.
+        Adds an AWS::S3::Bucket.PublicAccessBlockConfiguration resource property to the template. The PublicAccessBlock configuration that you want to apply to this Amazon S3 bucket. You can enable the configuration options in any combination. For more information about when Amazon S3 considers a bucket or object public, see The Meaning of "Public": https://docs.aws.amazon.com/AmazonS3/latest/dev/access-control-block-public-access.html#access-control-block-public-access-policy-status in the Amazon Simple Storage Service Developer Guide.
 
     .DESCRIPTION
         Adds an AWS::S3::Bucket.PublicAccessBlockConfiguration resource property to the template.
-Specifies the Block Public Access configuration for an Amazon S3 bucket.
+The PublicAccessBlock configuration that you want to apply to this Amazon S3 bucket. You can enable the configuration options in any combination. For more information about when Amazon S3 considers a bucket or object public, see The Meaning of "Public": https://docs.aws.amazon.com/AmazonS3/latest/dev/access-control-block-public-access.html#access-control-block-public-access-policy-status in the Amazon Simple Storage Service Developer Guide.
 
     .LINK
         http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-s3-bucket-publicaccessblockconfiguration.html
@@ -14,6 +14,7 @@ Specifies the Block Public Access configuration for an Amazon S3 bucket.
         Specifies whether Amazon S3 should block public access control lists ACLs for this bucket and objects in this bucket. Setting this element to TRUE causes the following behavior:
 + PUT Bucket acl and PUT Object acl calls fail if the specified ACL is public.
 + PUT Object calls fail if the request includes a public ACL.
++ PUT Bucket calls fail if the request includes a public ACL.
 Enabling this setting doesn't affect existing policies or ACLs.
 
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-s3-bucket-publicaccessblockconfiguration.html#cfn-s3-bucket-publicaccessblockconfiguration-blockpublicacls

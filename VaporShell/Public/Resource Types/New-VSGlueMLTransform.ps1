@@ -13,7 +13,9 @@ function New-VSGlueMLTransform {
         The logical ID must be alphanumeric (A-Za-z0-9) and unique within the template. Use the logical name to reference the resource in other parts of the template. For example, if you want to map an Amazon Elastic Block Store volume to an Amazon EC2 instance, you reference the logical IDs to associate the block stores with the instance.
 
     .PARAMETER Role
-        The name or Amazon Resource Name ARN of the IAM role with the required permissions. This role needs permission to your Amazon Simple Storage Service Amazon S3 sources, targets, temporary directory, scripts, and any libraries used by the task run for this transform.
+        The name or Amazon Resource Name ARN of the IAM role with the required permissions. The required permissions include both AWS Glue service role permissions to AWS Glue resources, and Amazon S3 permissions required by the transform.
++ This role needs AWS Glue service role permissions to allow access to resources in AWS Glue. See Attach a Policy to IAM Users That Access AWS Glue: https://docs.aws.amazon.com/glue/latest/dg/attach-policy-iam-user.html.
++ This role needs permission to your Amazon Simple Storage Service Amazon S3 sources, targets, temporary directory, scripts, and any libraries used by the task run for this transform.
 
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-glue-mltransform.html#cfn-glue-mltransform-role
         PrimitiveType: String
@@ -56,7 +58,7 @@ MaxCapacity is a mutually exclusive option with NumberOfWorkers and WorkerType.
         UpdateType: Mutable
 
     .PARAMETER GlueVersion
-        For more information about using the Ref function, see Ref: https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/intrinsic-function-reference-ref.html.
+        This value determines which version of AWS Glue this machine learning transform is compatible with. Glue 1.0 is recommended for most customers. If the value is not set, the Glue compatibility defaults to Glue 0.9. For more information, see AWS Glue Versions: https://docs.aws.amazon.com/glue/latest/dg/release-notes.html#release-notes-versions in the developer guide.
 
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-glue-mltransform.html#cfn-glue-mltransform-glueversion
         PrimitiveType: String
@@ -78,14 +80,13 @@ MaxCapacity is a mutually exclusive option with NumberOfWorkers and WorkerType.
 
     .PARAMETER NumberOfWorkers
         The number of workers of a defined workerType that are allocated when a task of the transform runs.
+If WorkerType is set, then NumberOfWorkers is required and vice versa.
 
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-glue-mltransform.html#cfn-glue-mltransform-numberofworkers
         PrimitiveType: Integer
         UpdateType: Mutable
 
     .PARAMETER Name
-        A user-defined name for the machine learning transform. Names are required to be unique. Name is optional. If you supply Name, the stack cannot be repeatedly created.
-
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-glue-mltransform.html#cfn-glue-mltransform-name
         PrimitiveType: String
         UpdateType: Mutable

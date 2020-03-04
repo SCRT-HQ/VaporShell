@@ -1,11 +1,11 @@
 function Add-VSPinpointCampaignMetricDimension {
     <#
     .SYNOPSIS
-        Adds an AWS::Pinpoint::Campaign.MetricDimension resource property to the template. Specifies the dimension settings for custom metrics that your app reports to Amazon Pinpoint.
+        Adds an AWS::Pinpoint::Campaign.MetricDimension resource property to the template. Specifies metric-based criteria for including or excluding endpoints from a segment. These criteria derive from custom metrics that you define for endpoints.
 
     .DESCRIPTION
         Adds an AWS::Pinpoint::Campaign.MetricDimension resource property to the template.
-Specifies the dimension settings for custom metrics that your app reports to Amazon Pinpoint.
+Specifies metric-based criteria for including or excluding endpoints from a segment. These criteria derive from custom metrics that you define for endpoints.
 
     .LINK
         http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-pinpoint-campaign-metricdimension.html

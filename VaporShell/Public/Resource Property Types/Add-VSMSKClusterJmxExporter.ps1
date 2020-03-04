@@ -1,16 +1,18 @@
 function Add-VSMSKClusterJmxExporter {
     <#
     .SYNOPSIS
-        Adds an AWS::MSK::Cluster.JmxExporter resource property to the template. 
+        Adds an AWS::MSK::Cluster.JmxExporter resource property to the template. Indicates whether you want to enable or disable the JMX Exporter.
 
     .DESCRIPTION
         Adds an AWS::MSK::Cluster.JmxExporter resource property to the template.
-
+Indicates whether you want to enable or disable the JMX Exporter.
 
     .LINK
         http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-msk-cluster-jmxexporter.html
 
     .PARAMETER EnabledInBroker
+        Indicates whether you want to enable or disable the JMX Exporter.
+
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-msk-cluster-jmxexporter.html#cfn-msk-cluster-jmxexporter-enabledinbroker
         PrimitiveType: Boolean
         UpdateType: Mutable

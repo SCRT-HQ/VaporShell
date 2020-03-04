@@ -32,7 +32,7 @@ Information about a WorkSpace.
         UpdateType: Mutable
 
     .PARAMETER RunningModeAutoStopTimeoutInMinutes
-        The time after a user logs off when WorkSpaces are automatically stopped. Configured in 60 minute intervals.
+        The time after a user logs off when WorkSpaces are automatically stopped. Configured in 60-minute intervals.
 
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-workspaces-workspace-workspaceproperties.html#cfn-workspaces-workspace-workspaceproperties-runningmodeautostoptimeoutinminutes
         PrimitiveType: Integer

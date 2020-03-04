@@ -1,10 +1,10 @@
 function New-VSPinpointSmsTemplate {
     <#
     .SYNOPSIS
-        Adds an AWS::Pinpoint::SmsTemplate resource to the template. 
+        Adds an AWS::Pinpoint::SmsTemplate resource to the template. The AWS::Pinpoint::SmsTemplate resource is a message template that you can use in messages that are sent through the SMS channel. A *message template* is a set of content and settings that you can define, save, and reuse in messages for one or more Amazon Pinpoint applications.
 
     .DESCRIPTION
-        Adds an AWS::Pinpoint::SmsTemplate resource to the template. 
+        Adds an AWS::Pinpoint::SmsTemplate resource to the template. The AWS::Pinpoint::SmsTemplate resource is a message template that you can use in messages that are sent through the SMS channel. A *message template* is a set of content and settings that you can define, save, and reuse in messages for one or more Amazon Pinpoint applications.
 
     .LINK
         http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-pinpoint-smstemplate.html
@@ -13,26 +13,36 @@ function New-VSPinpointSmsTemplate {
         The logical ID must be alphanumeric (A-Za-z0-9) and unique within the template. Use the logical name to reference the resource in other parts of the template. For example, if you want to map an Amazon Elastic Block Store volume to an Amazon EC2 instance, you reference the logical IDs to associate the block stores with the instance.
 
     .PARAMETER TemplateName
+        The name of the message template.
+
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-pinpoint-smstemplate.html#cfn-pinpoint-smstemplate-templatename
         PrimitiveType: String
         UpdateType: Immutable
 
     .PARAMETER TemplateDescription
+        A custom description of the message template.
+
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-pinpoint-smstemplate.html#cfn-pinpoint-smstemplate-templatedescription
         PrimitiveType: String
         UpdateType: Mutable
 
     .PARAMETER DefaultSubstitutions
+        A JSON object that specifies the default values to use for message variables in the message template. This object is a set of key-value pairs. Each key defines a message variable in the template. The corresponding value defines the default value for that variable. When you create a message that's based on the template, you can override these defaults with message-specific and address-specific variables and values.
+
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-pinpoint-smstemplate.html#cfn-pinpoint-smstemplate-defaultsubstitutions
         PrimitiveType: String
         UpdateType: Mutable
 
     .PARAMETER Body
+        The message body to use in text messages that are based on the message template.
+
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-pinpoint-smstemplate.html#cfn-pinpoint-smstemplate-body
         PrimitiveType: String
         UpdateType: Mutable
 
     .PARAMETER Tags
+        A string-to-string map of key-value pairs that defines the tags to associate with the message template. Each tag consists of a required tag key and an associated tag value.
+
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-pinpoint-smstemplate.html#cfn-pinpoint-smstemplate-tags
         PrimitiveType: Json
         UpdateType: Mutable

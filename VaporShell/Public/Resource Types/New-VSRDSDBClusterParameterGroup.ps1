@@ -8,7 +8,7 @@ function New-VSRDSDBClusterParameterGroup {
 
 **Note**
 
-If you apply a parameter group to a DB cluster, then its DB instances might need to reboot. This can result in an outage while the instances are rebooting.
+If you apply a parameter group to a DB cluster, then its DB instances might need to reboot. This can result in an outage while the DB instances are rebooting.
 
     .LINK
         http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-rds-dbclusterparametergroup.html
@@ -24,7 +24,12 @@ If you apply a parameter group to a DB cluster, then its DB instances might need
         UpdateType: Immutable
 
     .PARAMETER Family
-        Provides the name of the DB parameter group family that this DB cluster parameter group is compatible with.
+        The DB cluster parameter group family name. A DB cluster parameter group can be associated with one and only one DB cluster parameter group family, and can be applied only to a DB cluster running a DB engine and engine version compatible with that DB cluster parameter group family.
+The DB cluster parameter group family can't be changed when updating a DB cluster parameter group.
+To list all of the available parameter group families, use the following command:
+aws rds describe-db-engine-versions --query "DBEngineVersions].DBParameterGroupFamily"
+The output contains duplicates.
+For more information, see CreateDBClusterParameterGroup: https://docs.aws.amazon.com/AmazonRDS/latest/APIReference/API_CreateDBClusterParameterGroup.html.
 
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-rds-dbclusterparametergroup.html#cfn-rds-dbclusterparametergroup-family
         PrimitiveType: String
@@ -124,16 +129,8 @@ If you apply a parameter group to a DB cluster, then its DB instances might need
                 }
             })]
         $Parameters,
+        [VaporShell.Core.TransformTag()]
         [parameter(Mandatory = $false)]
-        [ValidateScript( {
-                $allowedTypes = "Vaporshell.Resource.Tag","System.Management.Automation.PSCustomObject"
-                if ([string]$($_.PSTypeNames) -match "($(($allowedTypes|ForEach-Object{[RegEx]::Escape($_)}) -join '|'))") {
-                    $true
-                }
-                else {
-                    $PSCmdlet.ThrowTerminatingError((New-VSError -String "This parameter only accepts the following types: $($allowedTypes -join ", "). The current types of the value are: $($_.PSTypeNames -join ", ")."))
-                }
-            })]
         $Tags,
         [ValidateSet("Delete","Retain","Snapshot")]
         [System.String]

@@ -38,7 +38,7 @@ If you don't specify a name, AWS CloudFormation generates a unique physical ID f
 
     .PARAMETER Scheme
         The nodes of an Internet-facing load balancer have public IP addresses. The DNS name of an Internet-facing load balancer is publicly resolvable to the public IP addresses of the nodes. Therefore, Internet-facing load balancers can route requests from clients over the internet.
-The nodes of an internal load balancer have only private IP addresses. The DNS name of an internal load balancer is publicly resolvable to the private IP addresses of the nodes. Therefore, internal load balancers can only route requests from clients with access to the VPC for the load balancer.
+The nodes of an internal load balancer have only private IP addresses. The DNS name of an internal load balancer is publicly resolvable to the private IP addresses of the nodes. Therefore, internal load balancers can route requests only from clients with access to the VPC for the load balancer.
 The default is an Internet-facing load balancer.
 
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-elasticloadbalancingv2-loadbalancer.html#cfn-elasticloadbalancingv2-loadbalancer-scheme
@@ -57,7 +57,7 @@ The default is an Internet-facing load balancer.
     .PARAMETER SubnetMappings
         The IDs of the public subnets. You can specify only one subnet per Availability Zone. You must specify either subnets or subnet mappings.
 Application Load Balancers] You must specify subnets from at least two Availability Zones. You cannot specify Elastic IP addresses for your subnets.
-Network Load Balancers] You can specify subnets from one or more Availability Zones. You can specify one Elastic IP address per subnet.
+Network Load Balancers] You can specify subnets from one or more Availability Zones. You can specify one Elastic IP address per subnet if you need static IP addresses for your internet-facing load balancer. For internal load balancers, you can specify one private IP address per subnet from the IPv4 range of the subnet.
 
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-elasticloadbalancingv2-loadbalancer.html#cfn-elasticloadbalancingv2-loadbalancer-subnetmappings
         DuplicatesAllowed: False
@@ -66,7 +66,7 @@ Network Load Balancers] You can specify subnets from one or more Availability Zo
         UpdateType: Immutable
 
     .PARAMETER Subnets
-        The IDs of the public subnets. You can specify only one subnet per Availability Zone. You must specify either subnets or subnet mappings.
+        The IDs of the subnets. You can specify only one subnet per Availability Zone. You must specify either subnets or subnet mappings.
 Application Load Balancers] You must specify subnets from at least two Availability Zones. When you specify subnets for an existing Application Load Balancer, they replace the previously enabled subnets.
 Network Load Balancers] You can specify subnets from one or more Availability Zones when you create the load balancer. You can't change the subnets for an existing Network Load Balancer.
 
@@ -77,7 +77,7 @@ Network Load Balancers] You can specify subnets from one or more Availability Zo
         UpdateType: Mutable
 
     .PARAMETER Tags
-        The tags. Each resource can have a maximum of 10 tags.
+        One or more tags to assign to the load balancer.
 
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-elasticloadbalancingv2-loadbalancer.html#cfn-elasticloadbalancingv2-loadbalancer-tags
         DuplicatesAllowed: True
@@ -196,16 +196,8 @@ Network Load Balancers] You can specify subnets from one or more Availability Zo
         $SubnetMappings,
         [parameter(Mandatory = $false)]
         $Subnets,
+        [VaporShell.Core.TransformTag()]
         [parameter(Mandatory = $false)]
-        [ValidateScript( {
-                $allowedTypes = "Vaporshell.Resource.Tag","System.Management.Automation.PSCustomObject"
-                if ([string]$($_.PSTypeNames) -match "($(($allowedTypes|ForEach-Object{[RegEx]::Escape($_)}) -join '|'))") {
-                    $true
-                }
-                else {
-                    $PSCmdlet.ThrowTerminatingError((New-VSError -String "This parameter only accepts the following types: $($allowedTypes -join ", "). The current types of the value are: $($_.PSTypeNames -join ", ")."))
-                }
-            })]
         $Tags,
         [parameter(Mandatory = $false)]
         [ValidateScript( {
