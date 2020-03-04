@@ -98,6 +98,9 @@ When AWS::EC2::SubnetNetworkAclAssociation resources are created during create o
         [ValidateSet("Delete","Retain","Snapshot")]
         [System.String]
         $DeletionPolicy,
+        [ValidateSet("Delete","Retain","Snapshot")]
+        [System.String]
+        $UpdateReplacePolicy,
         [parameter(Mandatory = $false)]
         [System.String[]]
         $DependsOn,

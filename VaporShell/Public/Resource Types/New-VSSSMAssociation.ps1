@@ -200,6 +200,9 @@ InstanceId has been deprecated. To specify an instance ID for an association, us
         [ValidateSet("Delete","Retain","Snapshot")]
         [System.String]
         $DeletionPolicy,
+        [ValidateSet("Delete","Retain","Snapshot")]
+        [System.String]
+        $UpdateReplacePolicy,
         [parameter(Mandatory = $false)]
         [System.String[]]
         $DependsOn,

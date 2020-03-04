@@ -419,6 +419,9 @@ The effect of setting Weight to 0 is different when you associate health checks 
         [ValidateSet("Delete","Retain","Snapshot")]
         [System.String]
         $DeletionPolicy,
+        [ValidateSet("Delete","Retain","Snapshot")]
+        [System.String]
+        $UpdateReplacePolicy,
         [parameter(Mandatory = $false)]
         [System.String[]]
         $DependsOn,

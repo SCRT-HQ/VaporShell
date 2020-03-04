@@ -103,6 +103,9 @@ After you create a resource definition version that contains the resources you w
         [ValidateSet("Delete","Retain","Snapshot")]
         [System.String]
         $DeletionPolicy,
+        [ValidateSet("Delete","Retain","Snapshot")]
+        [System.String]
+        $UpdateReplacePolicy,
         [parameter(Mandatory = $false)]
         [System.String[]]
         $DependsOn,

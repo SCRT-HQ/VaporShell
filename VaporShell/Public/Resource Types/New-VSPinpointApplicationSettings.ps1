@@ -128,6 +128,9 @@ You can override the default quiet time settings for a specific campaign or jour
         [ValidateSet("Delete","Retain","Snapshot")]
         [System.String]
         $DeletionPolicy,
+        [ValidateSet("Delete","Retain","Snapshot")]
+        [System.String]
+        $UpdateReplacePolicy,
         [parameter(Mandatory = $false)]
         [System.String[]]
         $DependsOn,

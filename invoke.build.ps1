@@ -96,6 +96,13 @@ Task Update Clean, {
     }
 }
 
+# Synopsis: Only compile the dotnet dll
+Task DotnetOnly {
+    Write-BuildLog 'Compiling VaporShell.Core.dll'
+    dotnet build .\VaporShell.Core\
+    Get-Item ".\VaporShell.Core\obj\Debug\netstandard2.0\VaporShell.Core.dll" | Copy-Item -Destination $TargetVersionDirectory -Recurse -ErrorAction SilentlyContinue -Force
+}
+
 # Synopsis: Compiles module from source
 Task Build Update, {
     $functionsToExport = @()

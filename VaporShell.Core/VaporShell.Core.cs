@@ -80,18 +80,9 @@ namespace VaporShell.Core
             }
         }
 
-        private object TransformData(object inputData)
+        private object TransformSingle(object inputData)
         {
-            if (inputData is Array)
-            {
-                var formatted = new List<PSObject>();
-                foreach (object item in inputData as object[])
-                {
-                    formatted.Add((this.TransformData(item) as PSObject));
-                }
-                return formatted;
-            }
-            else if (inputData is IDictionary)
+            if (inputData is IDictionary)
             {
                 return this.TransformHashtable(inputData as IDictionary);
             }
@@ -107,8 +98,22 @@ namespace VaporShell.Core
                     return this.TransformPSObject(psObject);
                 }
             }
+            return null;
+        }
 
-            return inputData;
+        private IEnumerable<object> TransformData(object inputData)
+        {
+            if (inputData is Array)
+            {
+                foreach (object item in inputData as Array)
+                {
+                    yield return this.TransformSingle(item);
+                }
+            }
+            else
+            {
+                yield return this.TransformSingle(inputData);
+            }
         }
 
         public override object Transform(EngineIntrinsics engineIntrinsics, object inputData)

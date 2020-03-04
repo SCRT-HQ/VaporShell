@@ -202,6 +202,9 @@ Required if Type is specified as AWS_LAMBDA, AMAZON_DYNAMODB, or AMAZON_ELASTICS
         [ValidateSet("Delete","Retain","Snapshot")]
         [System.String]
         $DeletionPolicy,
+        [ValidateSet("Delete","Retain","Snapshot")]
+        [System.String]
+        $UpdateReplacePolicy,
         [parameter(Mandatory = $false)]
         [System.String[]]
         $DependsOn,

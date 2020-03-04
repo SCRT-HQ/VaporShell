@@ -312,6 +312,9 @@ Valid Values: dms.t2.micro | dms.t2.small | dms.t2.medium | dms.t2.large | dms.c
         [ValidateSet("Delete","Retain","Snapshot")]
         [System.String]
         $DeletionPolicy,
+        [ValidateSet("Delete","Retain","Snapshot")]
+        [System.String]
+        $UpdateReplacePolicy,
         [parameter(Mandatory = $false)]
         [System.String[]]
         $DependsOn,

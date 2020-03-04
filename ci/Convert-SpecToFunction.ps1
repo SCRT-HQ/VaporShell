@@ -166,7 +166,7 @@ function $FunctionName {
         else {
             $Mandatory = '$false'
         }
-        if ($Prop.Value.ItemType) {bld
+        if ($Prop.Value.ItemType) {
             if ($Prop.Value.ItemType -eq "Tag") {
                 $scriptContents += @"
         [VaporShell.Core.TransformTag()]
